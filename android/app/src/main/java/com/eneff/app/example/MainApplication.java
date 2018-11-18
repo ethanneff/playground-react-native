@@ -1,4 +1,4 @@
-package com.eneff.example;
+package com.eneff.app.example;
 
 import android.app.Application;
 
