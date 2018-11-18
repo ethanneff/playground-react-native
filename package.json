@@ -1,28 +1,46 @@
 {
-  "name": "MyApp",
+  "name": "example",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "react-native start",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
     "test": "jest",
-    "tsc": "tsc"
+    "lint": "tsc && tslint --fix -p tsconfig.json -c tslint.json"
   },
   "dependencies": {
     "react": "16.6.3",
     "react-native": "0.57.5"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.9",
-    "@types/react": "^16.7.6",
-    "@types/react-native": "^0.57.10",
-    "@types/react-test-renderer": "^16.0.3",
+    "@types/jest": "23.3.9",
+    "@types/react": "16.7.6",
+    "@types/react-native": "0.57.10",
+    "@types/react-test-renderer": "16.0.3",
     "babel-jest": "23.6.0",
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.49.2",
+    "prettier": "^1.15.2",
     "react-test-renderer": "16.6.3",
-    "typescript": "^3.1.6"
+    "ts-jest": "23.10.4",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.16.0",
+    "typescript": "3.1.6"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.(jsx?)$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+      "^.+\\.(tsx?)$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)x?$"
   }
 }
