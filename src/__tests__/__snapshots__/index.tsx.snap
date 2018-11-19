@@ -3,7 +3,7 @@
 exports[`Launcher Container renders correctly 1`] = `
 <View>
   <Text>
-    hello
+    hello hello
   </Text>
 </View>
 `;
