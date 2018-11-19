@@ -6,7 +6,7 @@ export class Launcher extends React.PureComponent {
   public render() {
     return (
       <View>
-        <Text>hello</Text>
+        <Text>hello hello</Text>
       </View>
     );
   }
