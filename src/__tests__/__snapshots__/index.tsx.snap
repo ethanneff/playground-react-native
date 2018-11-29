@@ -1,9 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Launcher Container renders correctly 1`] = `
-<RCTSafeAreaView>
+<RCTSafeAreaView
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
   <RCTScrollView>
     <View>
+      <Modal
+        animationType="fade"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(0,0,0,0.2)",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "backgroundColor": "#fafafa",
+                "elevation": 1,
+                "padding": 20,
+                "shadowColor": "#000",
+                "shadowOffset": Object {
+                  "height": 2,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.8,
+                "shadowRadius": 2,
+                "width": 710,
+              }
+            }
+          >
+            <Text>
+              This is content inside of modal component
+            </Text>
+            <View
+              accessibilityRole="button"
+              accessibilityStates={Array []}
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    undefined,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      undefined,
+                    ]
+                  }
+                >
+                  Close modal
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </Modal>
       <Text>
         hello hello
       </Text>
@@ -67,18 +149,11 @@ exports[`Launcher Container renders correctly 1`] = `
         scrollEventThrottle={50}
         stickyHeaderIndices={Array []}
         updateCellsBatchingPeriod={50}
-        viewabilityConfig={
-          Object {
-            "itemVisiblePercentThreshold": 50,
-          }
-        }
         viewabilityConfigCallbackPairs={
           Array [
             Object {
               "onViewableItemsChanged": [Function],
-              "viewabilityConfig": Object {
-                "itemVisiblePercentThreshold": 50,
-              },
+              "viewabilityConfig": undefined,
             },
           ]
         }
@@ -518,6 +593,99 @@ exports[`Launcher Container renders correctly 1`] = `
           </View>
         </View>
       </RCTScrollView>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+            "padding": 20,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#fafafa",
+              "elevation": 1,
+              "padding": 20,
+              "shadowColor": "#000",
+              "shadowOffset": Object {
+                "height": 2,
+                "width": 0,
+              },
+              "shadowOpacity": 0.8,
+              "shadowRadius": 2,
+            }
+          }
+        >
+          <Text>
+            mission
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#666",
+              }
+            }
+          >
+             We strive to offer our customers the lowest possible prices the
+                best available selection and the utmost convenience.
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+            "padding": 20,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#fafafa",
+              "elevation": 1,
+              "padding": 20,
+              "shadowColor": "#000",
+              "shadowOffset": Object {
+                "height": 2,
+                "width": 0,
+              },
+              "shadowOpacity": 0.8,
+              "shadowRadius": 2,
+            }
+          }
+        >
+          <Text>
+            Vision
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#666",
+              }
+            }
+          >
+            To be Earth’s most customer-centric company where customers can find and discover anything they might want to buy online.
+          </Text>
+        </View>
+      </View>
     </View>
   </RCTScrollView>
 </RCTSafeAreaView>
