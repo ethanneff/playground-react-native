@@ -25,17 +25,17 @@
   },
   "devDependencies": {
     "@types/jest": "23.3.10",
-    "@types/react": "16.7.8",
+    "@types/react": "16.7.10",
     "@types/react-native": "0.57.15",
     "@types/react-test-renderer": "16.0.3",
     "babel-jest": "23.6.0",
     "jest": "23.6.0",
-    "prettier": "1.15.2",
+    "prettier": "1.15.3",
     "react-test-renderer": "16.6.3",
     "ts-jest": "23.10.5",
     "tslint": "5.11.0",
     "tslint-config-prettier": "1.17.0",
-    "typescript": "3.1.6"
+    "typescript": "3.2.1"
   },
   "babel": {
     "presets": [
