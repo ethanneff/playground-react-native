@@ -8,7 +8,7 @@
     "android": "react-native run-android",
     "web": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --coverage",
+    "test": "jest --coverage -u",
     "lint": "tsc && tslint --fix -p tsconfig.json -c tslint.json"
   },
   "dependencies": {
