@@ -40,7 +40,7 @@ export const Theme = {
 export const colorWithOpacity = (color: string, opacity = 0.5) => {
   const boundedOpacity = opacity < 0 ? 0 : opacity > 1 ? 1 : opacity;
   const leading = 4;
-  if (!color.startsWith("hsl")) return color;
+  if (!color.startsWith("hsl")) { return color; }
   const substr = color.substring(leading, color.length - 1);
   return `hsla(${substr}, ${boundedOpacity})`;
 };

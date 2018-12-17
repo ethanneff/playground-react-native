@@ -1,7 +1,7 @@
 import * as React from "react";
 import { AppRegistry, Platform } from "react-native";
-import { Config } from "./utils";
 import { OKRs } from "./screens";
+import { Config } from "./utils";
 
 export class Launcher extends React.PureComponent {
   public render() {

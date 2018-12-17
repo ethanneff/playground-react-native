@@ -6,6 +6,10 @@ it("renders correctly", () => {
   const dom = create(<Text title="hello" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
+it("renders empty", () => {
+  const dom = create(<Text title="" />).toJSON();
+  expect(dom).toMatchSnapshot();
+});
 it("renders h1", () => {
   const dom = create(<Text h1 title="hello" />).toJSON();
   expect(dom).toMatchSnapshot();
@@ -48,6 +52,10 @@ it("renders body2", () => {
 });
 it("renders button", () => {
   const dom = create(<Text button title="hello" />).toJSON();
+  expect(dom).toMatchSnapshot();
+});
+it("renders button empty", () => {
+  const dom = create(<Text button title="" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it("renders caption", () => {

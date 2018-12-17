@@ -1,23 +1,21 @@
 import React from "react";
-import { Card, Screen } from "../../components";
+import { Card, Screen, Text } from "../../components";
 
-interface Props {}
-
-export class OKRs extends React.PureComponent<Props> {
-  render() {
+export class OKRs extends React.PureComponent {
+  public render() {
     return (
       <Screen>
-        <Card
-          title="Mission"
-          description="We strive to offer our customers the lowest possible prices the
-                best available selection and the utmost convenience."
-          onPress={() => undefined}
-        />
-        <Card
-          title="Vision"
-          description="To be Earth’s most customer-centric company where customers can find and discover anything they might want to buy online."
-          onPress={() => undefined}
-        />
+        <Card onPress={() => undefined}>
+          <Text h6 title="Mission" />
+          <Text
+            title="We strive to offer our customers the lowest possible prices
+        the best available selection and the utmost convenience."
+          />
+        </Card>
+        <Card onPress={() => undefined}>
+          <Text h6 title="Vision" />
+          <Text title="To be Earth’s most customer-centric company where customers can find and discover anything they might want to buy online." />
+        </Card>
       </Screen>
     );
   }

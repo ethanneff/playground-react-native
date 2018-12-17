@@ -57,6 +57,65 @@ exports[`renders contained 1`] = `
 </View>
 `;
 
+exports[`renders contained disable 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "hsl(210, 17%, 98%)",
+      "borderColor": "transparent",
+      "borderRadius": 4,
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "height": 36,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 14,
+          "fontWeight": "600",
+          "letterSpacing": 0.75,
+        },
+        Object {
+          "textAlign": "center",
+        },
+        undefined,
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "hsl(211, 100%, 50%)",
+          },
+          undefined,
+          Object {
+            "color": "hsl(0, 100%, 100%)",
+          },
+          Object {
+            "color": "hsl(208, 7%, 46%)",
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    HELLO
+  </Text>
+</View>
+`;
+
 exports[`renders correctly 1`] = `
 <View
   accessible={true}
@@ -224,6 +283,195 @@ exports[`renders fab  1`] = `
 </View>
 `;
 
+exports[`renders icon 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderRadius": 4,
+      "borderWidth": 1,
+      "color": "hsl(211, 100%, 50%)",
+      "flexDirection": "row",
+      "height": 36,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        undefined,
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "hsl(211, 100%, 50%)",
+          },
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+      ]
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "color": "hsl(210, 10%, 23%)",
+            "fontSize": 16,
+          },
+          Array [
+            undefined,
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "hsl(211, 100%, 50%)",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+            ],
+          ],
+          Object {
+            "fontFamily": "Material Design Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`renders icon title 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderRadius": 4,
+      "borderWidth": 1,
+      "color": "hsl(211, 100%, 50%)",
+      "flexDirection": "row",
+      "height": 36,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingRight": 4,
+        },
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "hsl(211, 100%, 50%)",
+          },
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+      ]
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "color": "hsl(210, 10%, 23%)",
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "paddingRight": 4,
+            },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "hsl(211, 100%, 50%)",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+            ],
+          ],
+          Object {
+            "fontFamily": "Material Design Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 14,
+          "fontWeight": "600",
+          "letterSpacing": 0.75,
+        },
+        Object {
+          "textAlign": "center",
+        },
+        undefined,
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "hsl(211, 100%, 50%)",
+          },
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+      ]
+    }
+  >
+    HELLO
+  </Text>
+</View>
+`;
+
 exports[`renders outlined 1`] = `
 <View
   accessible={true}
@@ -268,6 +516,68 @@ exports[`renders outlined 1`] = `
           undefined,
           undefined,
           undefined,
+          undefined,
+        ],
+      ]
+    }
+  >
+    HELLO
+  </Text>
+</View>
+`;
+
+exports[`renders sizing 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderRadius": 4,
+      "borderWidth": 1,
+      "color": "hsl(211, 100%, 50%)",
+      "flexDirection": "row",
+      "height": 36,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "width": "50%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 14,
+          "fontWeight": "600",
+          "letterSpacing": 0.75,
+        },
+        Object {
+          "textAlign": "center",
+        },
+        undefined,
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "hsl(211, 100%, 50%)",
+          },
+          Object {
+            "color": "hsl(0, 0%, 0%)",
+          },
+          undefined,
+          Object {
+            "color": "hsl(208, 7%, 46%)",
+          },
           undefined,
         ],
       ]

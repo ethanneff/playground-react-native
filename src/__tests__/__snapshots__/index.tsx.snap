@@ -3,596 +3,52 @@
 exports[`Launcher Container renders correctly 1`] = `
 <RCTSafeAreaView
   style={
-    Object {
-      "flex": 1,
-    }
+    Array [
+      Object {
+        "backgroundColor": "hsl(0, 100%, 100%)",
+        "flex": 1,
+      },
+      undefined,
+    ]
   }
 >
-  <RCTScrollView>
+  <RCTScrollView
+    automaticallyAdjustContentInsets={false}
+    contentContainerStyle={
+      Object {
+        "backgroundColor": "hsl(0, 100%, 100%)",
+        "flex": 1,
+      }
+    }
+    contentInset={
+      Object {
+        "bottom": 0,
+      }
+    }
+    enableAutomaticScroll={true}
+    enableOnAndroid={false}
+    enableResetScrollToCoords={true}
+    extraHeight={75}
+    extraScrollHeight={0}
+    getScrollResponder={[Function]}
+    handleOnScroll={[Function]}
+    keyboardDismissMode="interactive"
+    keyboardOpeningTime={250}
+    keyboardSpace={0}
+    onScroll={[Function]}
+    resetKeyboardSpace={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={1}
+    scrollForExtraHeightOnAndroid={[Function]}
+    scrollIntoView={[Function]}
+    scrollToEnd={[Function]}
+    scrollToFocusedInput={[Function]}
+    scrollToPosition={[Function]}
+    showsVerticalScrollIndicator={true}
+    update={[Function]}
+    viewIsInsideTabBar={false}
+  >
     <View>
-      <Modal
-        animationType="fade"
-        hardwareAccelerated={false}
-        onRequestClose={[Function]}
-        transparent={true}
-        visible={false}
-      >
-        <View
-          style={
-            Object {
-              "backgroundColor": "rgba(0,0,0,0.2)",
-              "flex": 1,
-              "justifyContent": "center",
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "alignSelf": "center",
-                "backgroundColor": "#fafafa",
-                "elevation": 1,
-                "padding": 20,
-                "shadowColor": "#000",
-                "shadowOffset": Object {
-                  "height": 2,
-                  "width": 0,
-                },
-                "shadowOpacity": 0.8,
-                "shadowRadius": 2,
-                "width": 710,
-              }
-            }
-          >
-            <Text>
-              This is content inside of modal component
-            </Text>
-            <View
-              accessibilityRole="button"
-              accessibilityStates={Array []}
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-            >
-              <View
-                style={
-                  Array [
-                    undefined,
-                  ]
-                }
-              >
-                <Text
-                  style={
-                    Array [
-                      undefined,
-                    ]
-                  }
-                >
-                  Close modal
-                </Text>
-              </View>
-            </View>
-          </View>
-        </View>
-      </Modal>
-      <Text>
-        hello hello
-      </Text>
-      <RCTScrollView
-        data={
-          Array [
-            Object {
-              "items": Array [
-                Object {
-                  "title": "individual",
-                },
-                Object {
-                  "title": "couple",
-                },
-                Object {
-                  "title": "teen",
-                },
-              ],
-              "key": "1",
-              "next": "2",
-              "title": "What type of counseling are you looking for",
-            },
-            Object {
-              "key": "2",
-              "title": "2",
-            },
-            Object {
-              "key": "3",
-              "title": "3",
-            },
-            Object {
-              "key": "4",
-              "title": "4",
-            },
-            Object {
-              "key": "5",
-              "title": "5",
-            },
-          ]
-        }
-        disableVirtualization={false}
-        getItem={[Function]}
-        getItemCount={[Function]}
-        horizontal={true}
-        initialNumToRender={10}
-        keyExtractor={[Function]}
-        maxToRenderPerBatch={10}
-        numColumns={1}
-        onContentSizeChange={[Function]}
-        onEndReachedThreshold={2}
-        onLayout={[Function]}
-        onMomentumScrollEnd={[Function]}
-        onScroll={[Function]}
-        onScrollBeginDrag={[Function]}
-        onScrollEndDrag={[Function]}
-        onViewableItemsChanged={[Function]}
-        pagingEnabled={true}
-        removeClippedSubviews={true}
-        renderItem={[Function]}
-        scrollEnabled={false}
-        scrollEventThrottle={50}
-        stickyHeaderIndices={Array []}
-        updateCellsBatchingPeriod={50}
-        viewabilityConfigCallbackPairs={
-          Array [
-            Object {
-              "onViewableItemsChanged": [Function],
-              "viewabilityConfig": undefined,
-            },
-          ]
-        }
-        windowSize={21}
-      >
-        <View>
-          <View
-            onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "row",
-                },
-                null,
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "width": 750,
-                }
-              }
-            >
-              <Text>
-                What type of counseling are you looking for
-              </Text>
-              <View
-                accessibilityRole="button"
-                accessibilityStates={Array []}
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        undefined,
-                      ]
-                    }
-                  >
-                    individual
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessibilityRole="button"
-                accessibilityStates={Array []}
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        undefined,
-                      ]
-                    }
-                  >
-                    couple
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessibilityRole="button"
-                accessibilityStates={Array []}
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        undefined,
-                      ]
-                    }
-                  >
-                    teen
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessibilityRole="button"
-                accessibilityStates={Array []}
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        undefined,
-                      ]
-                    }
-                  >
-                    next
-                  </Text>
-                </View>
-              </View>
-            </View>
-          </View>
-          <View
-            onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "row",
-                },
-                null,
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "width": 750,
-                }
-              }
-            >
-              <Text>
-                2
-              </Text>
-              <View
-                style={
-                  Object {
-                    "backgroundColor": "pink",
-                    "flex": 1,
-                    "height": 20,
-                  }
-                }
-              />
-              <View
-                accessibilityRole="button"
-                accessibilityStates={Array []}
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        undefined,
-                      ]
-                    }
-                  >
-                    next
-                  </Text>
-                </View>
-              </View>
-            </View>
-          </View>
-          <View
-            onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "row",
-                },
-                null,
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "width": 750,
-                }
-              }
-            >
-              <Text>
-                3
-              </Text>
-              <View
-                style={
-                  Object {
-                    "backgroundColor": "pink",
-                    "flex": 1,
-                    "height": 20,
-                  }
-                }
-              />
-              <View
-                accessibilityRole="button"
-                accessibilityStates={Array []}
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        undefined,
-                      ]
-                    }
-                  >
-                    next
-                  </Text>
-                </View>
-              </View>
-            </View>
-          </View>
-          <View
-            onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "row",
-                },
-                null,
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "width": 750,
-                }
-              }
-            >
-              <Text>
-                4
-              </Text>
-              <View
-                style={
-                  Object {
-                    "backgroundColor": "pink",
-                    "flex": 1,
-                    "height": 20,
-                  }
-                }
-              />
-              <View
-                accessibilityRole="button"
-                accessibilityStates={Array []}
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        undefined,
-                      ]
-                    }
-                  >
-                    next
-                  </Text>
-                </View>
-              </View>
-            </View>
-          </View>
-          <View
-            onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "row",
-                },
-                null,
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "width": 750,
-                }
-              }
-            >
-              <Text>
-                5
-              </Text>
-              <View
-                style={
-                  Object {
-                    "backgroundColor": "pink",
-                    "flex": 1,
-                    "height": 20,
-                  }
-                }
-              />
-              <View
-                accessibilityRole="button"
-                accessibilityStates={Array []}
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        undefined,
-                      ]
-                    }
-                  >
-                    next
-                  </Text>
-                </View>
-              </View>
-            </View>
-          </View>
-        </View>
-      </RCTScrollView>
       <View
         accessible={true}
         isTVSelectable={true}
@@ -604,41 +60,57 @@ exports[`Launcher Container renders correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "backgroundColor": "hsl(0, 100%, 100%)",
+            "elevation": 1,
+            "marginHorizontal": 16,
+            "marginVertical": 8,
             "opacity": 1,
-            "padding": 20,
+            "padding": 16,
+            "position": "relative",
+            "shadowColor": "hsl(210, 10%, 23%)",
+            "shadowOffset": Object {
+              "height": 4,
+              "width": 0,
+            },
+            "shadowOpacity": 0.6,
+            "shadowRadius": 6,
+            "zIndex": 1,
           }
         }
       >
-        <View
+        <Text
           style={
-            Object {
-              "backgroundColor": "#fafafa",
-              "elevation": 1,
-              "padding": 20,
-              "shadowColor": "#000",
-              "shadowOffset": Object {
-                "height": 2,
-                "width": 0,
+            Array [
+              Object {
+                "fontSize": 20,
+                "fontWeight": "600",
+                "letterSpacing": 0.15,
               },
-              "shadowOpacity": 0.8,
-              "shadowRadius": 2,
-            }
+              undefined,
+              undefined,
+              undefined,
+            ]
           }
         >
-          <Text>
-            mission
-          </Text>
-          <Text
-            style={
+          Mission
+        </Text>
+        <Text
+          style={
+            Array [
               Object {
-                "color": "#666",
-              }
-            }
-          >
-             We strive to offer our customers the lowest possible prices the
-                best available selection and the utmost convenience.
-          </Text>
-        </View>
+                "fontSize": 14,
+                "fontWeight": "300",
+                "letterSpacing": 0.25,
+              },
+              undefined,
+              undefined,
+              undefined,
+            ]
+          }
+        >
+          We strive to offer our customers the lowest possible prices
+        the best available selection and the utmost convenience.
+        </Text>
       </View>
       <View
         accessible={true}
@@ -651,40 +123,56 @@ exports[`Launcher Container renders correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "backgroundColor": "hsl(0, 100%, 100%)",
+            "elevation": 1,
+            "marginHorizontal": 16,
+            "marginVertical": 8,
             "opacity": 1,
-            "padding": 20,
+            "padding": 16,
+            "position": "relative",
+            "shadowColor": "hsl(210, 10%, 23%)",
+            "shadowOffset": Object {
+              "height": 4,
+              "width": 0,
+            },
+            "shadowOpacity": 0.6,
+            "shadowRadius": 6,
+            "zIndex": 1,
           }
         }
       >
-        <View
+        <Text
           style={
-            Object {
-              "backgroundColor": "#fafafa",
-              "elevation": 1,
-              "padding": 20,
-              "shadowColor": "#000",
-              "shadowOffset": Object {
-                "height": 2,
-                "width": 0,
+            Array [
+              Object {
+                "fontSize": 20,
+                "fontWeight": "600",
+                "letterSpacing": 0.15,
               },
-              "shadowOpacity": 0.8,
-              "shadowRadius": 2,
-            }
+              undefined,
+              undefined,
+              undefined,
+            ]
           }
         >
-          <Text>
-            Vision
-          </Text>
-          <Text
-            style={
+          Vision
+        </Text>
+        <Text
+          style={
+            Array [
               Object {
-                "color": "#666",
-              }
-            }
-          >
-            To be Earth’s most customer-centric company where customers can find and discover anything they might want to buy online.
-          </Text>
-        </View>
+                "fontSize": 14,
+                "fontWeight": "300",
+                "letterSpacing": 0.25,
+              },
+              undefined,
+              undefined,
+              undefined,
+            ]
+          }
+        >
+          To be Earth’s most customer-centric company where customers can find and discover anything they might want to buy online.
+        </Text>
       </View>
     </View>
   </RCTScrollView>

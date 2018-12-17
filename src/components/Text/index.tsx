@@ -167,7 +167,7 @@ export class Text extends React.PureComponent<Props> {
     const { title, style, button, bold, overline, center } = this.props;
     const text = button || overline ? (title || "").toUpperCase() : title;
     const font = this.getFont();
-    if (title === undefined || title.length === 0) return null;
+    if (title === undefined || title.length === 0) { return null; }
     return (
       <Original
         style={[font, center && styles.center, bold && styles.bold, style]}

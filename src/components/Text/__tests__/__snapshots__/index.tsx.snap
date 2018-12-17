@@ -57,6 +57,8 @@ exports[`renders button 1`] = `
 </Text>
 `;
 
+exports[`renders button empty 1`] = `null`;
+
 exports[`renders caption 1`] = `
 <Text
   style={
@@ -94,6 +96,8 @@ exports[`renders correctly 1`] = `
   hello
 </Text>
 `;
+
+exports[`renders empty 1`] = `null`;
 
 exports[`renders h1 1`] = `
 <Text

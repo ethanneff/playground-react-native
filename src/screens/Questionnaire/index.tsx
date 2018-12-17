@@ -1,6 +1,6 @@
 import React from "react";
-import { View, FlatList, Dimensions } from "react-native";
-import { Button, Text, Screen } from "../../components";
+import { Dimensions, FlatList, View } from "react-native";
+import { Button, Screen, Text } from "../../components";
 
 interface Props {
   title: string;
@@ -36,7 +36,7 @@ export class Questionnaire extends React.PureComponent<Props> {
     { key: "4", title: "4" },
     { key: "5", title: "5" }
   ];
-  output = {};
+  public output: any = {};
   public width = Dimensions.get("window").width;
   public tableView: any;
   public currentIndex = 0;
@@ -47,7 +47,7 @@ export class Questionnaire extends React.PureComponent<Props> {
 
   public onProgress = (direction = 1) => {
     const index = this.currentIndex + direction;
-    if (index < 0) return;
+    if (index < 0) { return; }
     if (index >= this.data.length) {
       this.onFinish();
       return;
@@ -58,7 +58,7 @@ export class Questionnaire extends React.PureComponent<Props> {
     });
   };
 
-  onSelection = (item, choice) => {
+  public onSelection = (item: any, choice: any) => {
     this.output = {
       ...this.output,
       [item.key]: {
@@ -72,7 +72,7 @@ export class Questionnaire extends React.PureComponent<Props> {
 
   public onFinish = () => undefined;
 
-  render() {
+  public render() {
     return (
       <Screen>
         <FlatList
