@@ -1,0 +1,267 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders body1 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 16,
+        "fontWeight": "300",
+        "letterSpacing": 0.5,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  hello
+</Text>
+`;
+
+exports[`renders body2 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "300",
+        "letterSpacing": 0.25,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  hello
+</Text>
+`;
+
+exports[`renders button 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "600",
+        "letterSpacing": 0.75,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  HELLO
+</Text>
+`;
+
+exports[`renders caption 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 12,
+        "fontWeight": "300",
+        "letterSpacing": 0.4,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  hello
+</Text>
+`;
+
+exports[`renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "300",
+        "letterSpacing": 0.25,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  hello
+</Text>
+`;
+
+exports[`renders h1 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 96,
+        "fontWeight": "100",
+        "letterSpacing": -1.5,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  hello
+</Text>
+`;
+
+exports[`renders h2 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 60,
+        "fontWeight": "100",
+        "letterSpacing": -0.5,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  hello
+</Text>
+`;
+
+exports[`renders h3 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 48,
+        "fontWeight": "300",
+        "letterSpacing": 0,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  hello
+</Text>
+`;
+
+exports[`renders h4 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 34,
+        "fontWeight": "300",
+        "letterSpacing": 0.25,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  hello
+</Text>
+`;
+
+exports[`renders h5 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 24,
+        "fontWeight": "300",
+        "letterSpacing": 0,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  hello
+</Text>
+`;
+
+exports[`renders h6 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 20,
+        "fontWeight": "600",
+        "letterSpacing": 0.15,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  hello
+</Text>
+`;
+
+exports[`renders overline 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 10,
+        "fontWeight": "300",
+        "letterSpacing": 1.5,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  HELLO
+</Text>
+`;
+
+exports[`renders subtitle1 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 16,
+        "fontWeight": "300",
+        "letterSpacing": 0.15,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  hello
+</Text>
+`;
+
+exports[`renders subtitle2 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "600",
+        "letterSpacing": 0.1,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  hello
+</Text>
+`;
