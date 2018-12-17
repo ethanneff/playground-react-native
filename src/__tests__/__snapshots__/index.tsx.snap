@@ -49,131 +49,765 @@ exports[`Launcher Container renders correctly 1`] = `
     viewIsInsideTabBar={false}
   >
     <View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "backgroundColor": "hsl(0, 100%, 100%)",
-            "elevation": 1,
-            "marginHorizontal": 16,
-            "marginVertical": 8,
-            "opacity": 1,
-            "padding": 16,
-            "position": "relative",
-            "shadowColor": "hsl(210, 10%, 23%)",
-            "shadowOffset": Object {
-              "height": 4,
-              "width": 0,
-            },
-            "shadowOpacity": 0.6,
-            "shadowRadius": 6,
-            "zIndex": 1,
-          }
-        }
-      >
-        <Text
-          style={
-            Array [
+      <RCTScrollView>
+        <View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
               Object {
-                "fontSize": 20,
-                "fontWeight": "600",
-                "letterSpacing": 0.15,
-              },
-              undefined,
-              undefined,
-              undefined,
-            ]
-          }
-        >
-          Mission
-        </Text>
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 14,
-                "fontWeight": "300",
-                "letterSpacing": 0.25,
-              },
-              undefined,
-              undefined,
-              undefined,
-            ]
-          }
-        >
-          We strive to offer our customers the lowest possible prices
+                "backgroundColor": "hsl(0, 100%, 100%)",
+                "elevation": 1,
+                "marginHorizontal": 16,
+                "marginVertical": 8,
+                "opacity": 1,
+                "padding": 16,
+                "position": "relative",
+                "shadowColor": "hsl(210, 10%, 23%)",
+                "shadowOffset": Object {
+                  "height": 4,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.6,
+                "shadowRadius": 6,
+                "zIndex": 1,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 20,
+                    "fontWeight": "600",
+                    "letterSpacing": 0.15,
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                ]
+              }
+            >
+              Company
+            </Text>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "hsl(0, 100%, 100%)",
+                  "elevation": 1,
+                  "marginHorizontal": 16,
+                  "marginVertical": 8,
+                  "opacity": 1,
+                  "padding": 16,
+                  "position": "relative",
+                  "shadowColor": "hsl(210, 10%, 23%)",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.6,
+                  "shadowRadius": 6,
+                  "zIndex": 1,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 20,
+                      "fontWeight": "600",
+                      "letterSpacing": 0.15,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Mission
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                We strive to offer our customers the lowest possible prices
         the best available selection and the utmost convenience.
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "backgroundColor": "hsl(0, 100%, 100%)",
-            "elevation": 1,
-            "marginHorizontal": 16,
-            "marginVertical": 8,
-            "opacity": 1,
-            "padding": 16,
-            "position": "relative",
-            "shadowColor": "hsl(210, 10%, 23%)",
-            "shadowOffset": Object {
-              "height": 4,
-              "width": 0,
-            },
-            "shadowOpacity": 0.6,
-            "shadowRadius": 6,
-            "zIndex": 1,
-          }
-        }
-      >
-        <Text
-          style={
-            Array [
+              </Text>
+            </View>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "hsl(0, 100%, 100%)",
+                  "elevation": 1,
+                  "marginHorizontal": 16,
+                  "marginVertical": 8,
+                  "opacity": 1,
+                  "padding": 16,
+                  "position": "relative",
+                  "shadowColor": "hsl(210, 10%, 23%)",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.6,
+                  "shadowRadius": 6,
+                  "zIndex": 1,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 20,
+                      "fontWeight": "600",
+                      "letterSpacing": 0.15,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Vision
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                To be Earth’s most customer-centric company where customers can find and discover anything they might want to buy online.
+              </Text>
+            </View>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "hsl(0, 100%, 100%)",
+                  "elevation": 1,
+                  "marginHorizontal": 16,
+                  "marginVertical": 8,
+                  "opacity": 1,
+                  "padding": 16,
+                  "position": "relative",
+                  "shadowColor": "hsl(210, 10%, 23%)",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.6,
+                  "shadowRadius": 6,
+                  "zIndex": 1,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 20,
+                      "fontWeight": "600",
+                      "letterSpacing": 0.15,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Values
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Customer Obsession
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Ownership
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Invent and Simplify
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Are Right a Lot
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Learn and Be Curious
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Hire and Develop the Best
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Insist on the Highest Standards
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Think Big
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Bias for Action
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Frugality
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Earn Trust
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Dive Deep
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Have Backbone; Disagree and Commit
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Deliver Results
+              </Text>
+            </View>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
               Object {
-                "fontSize": 20,
-                "fontWeight": "600",
-                "letterSpacing": 0.15,
-              },
-              undefined,
-              undefined,
-              undefined,
-            ]
-          }
-        >
-          Vision
-        </Text>
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 14,
-                "fontWeight": "300",
-                "letterSpacing": 0.25,
-              },
-              undefined,
-              undefined,
-              undefined,
-            ]
-          }
-        >
-          To be Earth’s most customer-centric company where customers can find and discover anything they might want to buy online.
-        </Text>
-      </View>
+                "backgroundColor": "hsl(0, 100%, 100%)",
+                "elevation": 1,
+                "marginHorizontal": 16,
+                "marginVertical": 8,
+                "opacity": 1,
+                "padding": 16,
+                "position": "relative",
+                "shadowColor": "hsl(210, 10%, 23%)",
+                "shadowOffset": Object {
+                  "height": 4,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.6,
+                "shadowRadius": 6,
+                "zIndex": 1,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 20,
+                    "fontWeight": "600",
+                    "letterSpacing": 0.15,
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                ]
+              }
+            >
+              Product
+            </Text>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "hsl(0, 100%, 100%)",
+                  "elevation": 1,
+                  "marginHorizontal": 16,
+                  "marginVertical": 8,
+                  "opacity": 1,
+                  "padding": 16,
+                  "position": "relative",
+                  "shadowColor": "hsl(210, 10%, 23%)",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.6,
+                  "shadowRadius": 6,
+                  "zIndex": 1,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 20,
+                      "fontWeight": "600",
+                      "letterSpacing": 0.15,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                KPIs
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Customer Lifetime Value
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Average Revenue Per user
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Customer Aquisition Cost
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Monthly Recurring Revenue
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Churn
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Cost of Sales
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Contributing Margins
+              </Text>
+            </View>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "hsl(0, 100%, 100%)",
+                  "elevation": 1,
+                  "marginHorizontal": 16,
+                  "marginVertical": 8,
+                  "opacity": 1,
+                  "padding": 16,
+                  "position": "relative",
+                  "shadowColor": "hsl(210, 10%, 23%)",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.6,
+                  "shadowRadius": 6,
+                  "zIndex": 1,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 20,
+                      "fontWeight": "600",
+                      "letterSpacing": 0.15,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Team
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Jim, owner
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Bob, designer
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Steve, engineer
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Greg, engineer
+              </Text>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
     </View>
   </RCTScrollView>
 </RCTSafeAreaView>
