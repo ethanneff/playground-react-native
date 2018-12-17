@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View>
+  <Text
+    allowFontScaling={false}
+    style={
+      Array [
+        Object {
+          "color": "hsl(210, 10%, 23%)",
+          "fontSize": 24,
+        },
+        undefined,
+        Object {
+          "fontFamily": "Material Design Icons",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        Object {},
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`renders correctly with clear and max badge 1`] = `
+<View>
+  <Text
+    allowFontScaling={false}
+    style={
+      Array [
+        Object {
+          "color": "hsl(0, 100%, 100%)",
+          "fontSize": 1,
+        },
+        undefined,
+        Object {
+          "fontFamily": "Material Design Icons",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        Object {},
+      ]
+    }
+  >
+    
+  </Text>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "hsl(211, 100%, 50%)",
+        "borderRadius": 20,
+        "height": 20,
+        "justifyContent": "center",
+        "position": "absolute",
+        "right": -10,
+        "top": -10,
+        "width": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+          },
+          Object {
+            "textAlign": "center",
+          },
+          undefined,
+          Object {
+            "color": "hsl(0, 100%, 100%)",
+            "fontSize": 8,
+          },
+        ]
+      }
+    >
+      !
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`renders correctly without defaults 1`] = `
+<View>
+  <Text
+    allowFontScaling={false}
+    style={
+      Array [
+        Object {
+          "color": "hsl(0, 100%, 100%)",
+          "fontSize": 1,
+        },
+        undefined,
+        Object {
+          "fontFamily": "Material Design Icons",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        Object {},
+      ]
+    }
+  >
+    
+  </Text>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "hsl(211, 100%, 50%)",
+        "borderRadius": 20,
+        "height": 20,
+        "justifyContent": "center",
+        "position": "absolute",
+        "right": -10,
+        "top": -10,
+        "width": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+          },
+          Object {
+            "textAlign": "center",
+          },
+          undefined,
+          Object {
+            "color": "hsl(0, 100%, 100%)",
+            "fontSize": 8,
+          },
+        ]
+      }
+    >
+      1
+    </Text>
+  </View>
+</View>
+`;
