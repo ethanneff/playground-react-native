@@ -11,7 +11,10 @@ export class Card extends React.PureComponent<Props> {
   public render() {
     const { onPress, title, description } = this.props;
     return (
-      <TouchableOpacity style={{ padding: 20 }} onPress={onPress}>
+      <TouchableOpacity
+        style={{ paddingHorizontal: 20, paddingVertical: 10 }}
+        onPress={onPress}
+      >
         <View
           style={{
             padding: 20,
