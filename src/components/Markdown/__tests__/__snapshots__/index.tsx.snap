@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 14,
+          "fontWeight": "300",
+          "letterSpacing": 0.25,
+        },
+        undefined,
+        false,
+        undefined,
+      ]
+    }
+  >
+    hello 
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 14,
+          "fontWeight": "300",
+          "letterSpacing": 0.25,
+        },
+        undefined,
+        Object {
+          "fontWeight": "600",
+        },
+        undefined,
+      ]
+    }
+  >
+    world
+  </Text>
+</View>
+`;
