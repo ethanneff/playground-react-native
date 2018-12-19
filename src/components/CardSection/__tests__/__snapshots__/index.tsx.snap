@@ -14,8 +14,7 @@ exports[`renders correctly 1`] = `
     Object {
       "backgroundColor": "hsl(0, 100%, 100%)",
       "elevation": 1,
-      "marginHorizontal": 16,
-      "marginVertical": 8,
+      "margin": 8,
       "opacity": 1,
       "padding": 16,
       "position": "relative",

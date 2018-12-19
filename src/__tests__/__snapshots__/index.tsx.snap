@@ -12,6 +12,57 @@ exports[`Launcher Container renders correctly 1`] = `
     ]
   }
 >
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "hsl(0, 100%, 100%)",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+          "padding": 12,
+        }
+      }
+    >
+      <View>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "hsl(210, 10%, 23%)",
+                "fontSize": 24,
+              },
+              undefined,
+              Object {
+                "fontFamily": undefined,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
   <RCTScrollView
     automaticallyAdjustContentInsets={false}
     contentContainerStyle={
@@ -49,7 +100,13 @@ exports[`Launcher Container renders correctly 1`] = `
     viewIsInsideTabBar={false}
   >
     <View>
-      <RCTScrollView>
+      <RCTScrollView
+        contentContainerStyle={
+          Object {
+            "paddingHorizontal": 20,
+          }
+        }
+      >
         <View>
           <View
             accessible={true}
@@ -64,8 +121,7 @@ exports[`Launcher Container renders correctly 1`] = `
               Object {
                 "backgroundColor": "hsl(0, 100%, 100%)",
                 "elevation": 1,
-                "marginHorizontal": 16,
-                "marginVertical": 8,
+                "margin": 8,
                 "opacity": 1,
                 "padding": 16,
                 "position": "relative",
@@ -109,8 +165,7 @@ exports[`Launcher Container renders correctly 1`] = `
                 Object {
                   "backgroundColor": "hsl(0, 100%, 100%)",
                   "elevation": 1,
-                  "marginHorizontal": 16,
-                  "marginVertical": 8,
+                  "margin": 8,
                   "opacity": 1,
                   "padding": 16,
                   "position": "relative",
@@ -172,8 +227,7 @@ exports[`Launcher Container renders correctly 1`] = `
                 Object {
                   "backgroundColor": "hsl(0, 100%, 100%)",
                   "elevation": 1,
-                  "marginHorizontal": 16,
-                  "marginVertical": 8,
+                  "margin": 8,
                   "opacity": 1,
                   "padding": 16,
                   "position": "relative",
@@ -234,8 +288,7 @@ exports[`Launcher Container renders correctly 1`] = `
                 Object {
                   "backgroundColor": "hsl(0, 100%, 100%)",
                   "elevation": 1,
-                  "marginHorizontal": 16,
-                  "marginVertical": 8,
+                  "margin": 8,
                   "opacity": 1,
                   "padding": 16,
                   "position": "relative",
@@ -505,8 +558,7 @@ exports[`Launcher Container renders correctly 1`] = `
               Object {
                 "backgroundColor": "hsl(0, 100%, 100%)",
                 "elevation": 1,
-                "marginHorizontal": 16,
-                "marginVertical": 8,
+                "margin": 8,
                 "opacity": 1,
                 "padding": 16,
                 "position": "relative",
@@ -550,8 +602,68 @@ exports[`Launcher Container renders correctly 1`] = `
                 Object {
                   "backgroundColor": "hsl(0, 100%, 100%)",
                   "elevation": 1,
-                  "marginHorizontal": 16,
-                  "marginVertical": 8,
+                  "margin": 8,
+                  "opacity": 1,
+                  "padding": 16,
+                  "position": "relative",
+                  "shadowColor": "hsl(210, 10%, 23%)",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.6,
+                  "shadowRadius": 6,
+                  "zIndex": 1,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 20,
+                      "fontWeight": "600",
+                      "letterSpacing": 0.15,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Vision
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Jim, owner
+              </Text>
+            </View>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "hsl(0, 100%, 100%)",
+                  "elevation": 1,
+                  "margin": 8,
                   "opacity": 1,
                   "padding": 16,
                   "position": "relative",
@@ -708,8 +820,7 @@ exports[`Launcher Container renders correctly 1`] = `
                 Object {
                   "backgroundColor": "hsl(0, 100%, 100%)",
                   "elevation": 1,
-                  "marginHorizontal": 16,
-                  "marginVertical": 8,
+                  "margin": 8,
                   "opacity": 1,
                   "padding": 16,
                   "position": "relative",
@@ -803,6 +914,311 @@ exports[`Launcher Container renders correctly 1`] = `
                 }
               >
                 Greg, engineer
+              </Text>
+            </View>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "hsl(0, 100%, 100%)",
+                  "elevation": 1,
+                  "margin": 8,
+                  "opacity": 1,
+                  "padding": 16,
+                  "position": "relative",
+                  "shadowColor": "hsl(210, 10%, 23%)",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.6,
+                  "shadowRadius": 6,
+                  "zIndex": 1,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 20,
+                      "fontWeight": "600",
+                      "letterSpacing": 0.15,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Objective
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Jim, owner
+              </Text>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "hsl(0, 100%, 100%)",
+                    "elevation": 1,
+                    "margin": 8,
+                    "opacity": 1,
+                    "padding": 16,
+                    "position": "relative",
+                    "shadowColor": "hsl(210, 10%, 23%)",
+                    "shadowOffset": Object {
+                      "height": 4,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.6,
+                    "shadowRadius": 6,
+                    "zIndex": 1,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 20,
+                        "fontWeight": "600",
+                        "letterSpacing": 0.15,
+                      },
+                      undefined,
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  KeyResult
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      undefined,
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  Jim, owner
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "hsl(0, 100%, 100%)",
+                    "elevation": 1,
+                    "margin": 8,
+                    "opacity": 1,
+                    "padding": 16,
+                    "position": "relative",
+                    "shadowColor": "hsl(210, 10%, 23%)",
+                    "shadowOffset": Object {
+                      "height": 4,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.6,
+                    "shadowRadius": 6,
+                    "zIndex": 1,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 20,
+                        "fontWeight": "600",
+                        "letterSpacing": 0.15,
+                      },
+                      undefined,
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  KeyResult
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      undefined,
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  Jim, owner
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "hsl(0, 100%, 100%)",
+                    "elevation": 1,
+                    "margin": 8,
+                    "opacity": 1,
+                    "padding": 16,
+                    "position": "relative",
+                    "shadowColor": "hsl(210, 10%, 23%)",
+                    "shadowOffset": Object {
+                      "height": 4,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.6,
+                    "shadowRadius": 6,
+                    "zIndex": 1,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 20,
+                        "fontWeight": "600",
+                        "letterSpacing": 0.15,
+                      },
+                      undefined,
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  KeyResult
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      undefined,
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  Jim, owner
+                </Text>
+              </View>
+            </View>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "hsl(0, 100%, 100%)",
+                  "elevation": 1,
+                  "margin": 8,
+                  "opacity": 1,
+                  "padding": 16,
+                  "position": "relative",
+                  "shadowColor": "hsl(210, 10%, 23%)",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.6,
+                  "shadowRadius": 6,
+                  "zIndex": 1,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 20,
+                      "fontWeight": "600",
+                      "letterSpacing": 0.15,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Objective
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                Jim, owner
               </Text>
             </View>
           </View>

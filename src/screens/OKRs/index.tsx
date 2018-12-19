@@ -4,7 +4,7 @@ import { Card, Screen, Text } from "../../components";
 
 // TODO: why need scrollview for screen?
 export class OKRs extends React.PureComponent {
-  state = {
+  public state = {
     value: 0
   };
   public render() {
