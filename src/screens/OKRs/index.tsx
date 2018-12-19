@@ -4,10 +4,13 @@ import { Card, Screen, Text } from "../../components";
 
 // TODO: why need scrollview for screen?
 export class OKRs extends React.PureComponent {
+  state = {
+    value: 0
+  };
   public render() {
     return (
-      <Screen>
-        <ScrollView>
+      <Screen onLeftPress={() => undefined}>
+        <ScrollView contentContainerStyle={{ paddingHorizontal: 20 }}>
           <Card>
             <Text h6 title="Company" />
             <Card onPress={() => undefined}>
@@ -42,6 +45,11 @@ export class OKRs extends React.PureComponent {
           <Card>
             <Text h6 title="Product" />
             <Card onPress={() => undefined}>
+              <Text h6 title="Vision" />
+              <Text title="Jim, owner" />
+            </Card>
+
+            <Card onPress={() => undefined}>
               <Text h6 title="KPIs" />
               <Text title="Customer Lifetime Value" />
               <Text title="Average Revenue Per user" />
@@ -57,6 +65,27 @@ export class OKRs extends React.PureComponent {
               <Text title="Bob, designer" />
               <Text title="Steve, engineer" />
               <Text title="Greg, engineer" />
+            </Card>
+
+            <Card onPress={() => undefined}>
+              <Text h6 title="Objective" />
+              <Text title="Jim, owner" />
+              <Card onPress={() => undefined}>
+                <Text h6 title="KeyResult" />
+                <Text title="Jim, owner" />
+              </Card>
+              <Card onPress={() => undefined}>
+                <Text h6 title="KeyResult" />
+                <Text title="Jim, owner" />
+              </Card>
+              <Card onPress={() => undefined}>
+                <Text h6 title="KeyResult" />
+                <Text title="Jim, owner" />
+              </Card>
+            </Card>
+            <Card onPress={() => undefined}>
+              <Text h6 title="Objective" />
+              <Text title="Jim, owner" />
             </Card>
           </Card>
         </ScrollView>

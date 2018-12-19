@@ -5,8 +5,7 @@ import { Theme } from "../../utils";
 const styles = StyleSheet.create({
   containerStyle: {
     padding: Theme.padding.p4,
-    marginHorizontal: Theme.padding.p4,
-    marginVertical: Theme.padding.p2,
+    margin: Theme.padding.p2,
     backgroundColor: Theme.color.background,
     zIndex: 1,
     elevation: 1,
