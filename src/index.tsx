@@ -1,11 +1,15 @@
 import * as React from "react";
 import { AppRegistry, Platform } from "react-native";
 import { OKRs } from "./screens";
-import { Config } from "./utils";
+import { Config, Provider } from "./utils";
 
 export class Launcher extends React.PureComponent {
   public render() {
-    return <OKRs />;
+    return (
+      <Provider>
+        <OKRs />
+      </Provider>
+    );
   }
 }
 
