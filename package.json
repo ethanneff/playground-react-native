@@ -22,13 +22,21 @@
     "react-native-keyboard-aware-scroll-view": "0.8.0",
     "react-native-vector-icons": "6.1.0",
     "react-native-web": "0.9.9",
-    "react-scripts": "2.1.1"
+    "react-redux": "6.0.0",
+    "react-router-dom": "4.3.1",
+    "react-router-native": "4.3.0",
+    "react-scripts": "2.1.1",
+    "redux": "4.0.1",
+    "redux-thunk": "2.3.0"
   },
   "devDependencies": {
     "@types/jest": "23.3.10",
     "@types/react": "16.7.13",
     "@types/react-native": "0.57.19",
     "@types/react-native-vector-icons": "4.6.4",
+    "@types/react-redux": "6.0.11",
+    "@types/react-router-dom": "4.3.1",
+    "@types/react-router-native": "4.2.3",
     "@types/react-test-renderer": "16.0.3",
     "babel-jest": "23.6.0",
     "jest": "23.6.0",
