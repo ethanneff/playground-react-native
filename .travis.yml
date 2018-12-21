@@ -1,0 +1,29 @@
+language: node_js
+node_js: 8
+cache:
+  yarn: true
+  directories:
+    - "~/.npm"
+    - node_modules
+notifications:
+  email: false
+install:
+  - yarn install
+script:
+  - yarn lint
+  - yarn test
+  - CI=false yarn build
+after_success:
+  - codecov
+  - npm run travis-deploy-once "npm run semantic-release"
+branches:
+  except:
+    - "/^v\\d+\\.\\d+\\.\\d+$/"
+deploy:
+  provider: pages
+  local-dir: build
+  skip-cleanup: true
+  keep-history: true
+  github-token: "$GH_TOKEN"
+  on:
+    branch: master
