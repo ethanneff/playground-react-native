@@ -58,6 +58,9 @@
       "^.+\\.(jsx?)$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
       "^.+\\.tsx?$": "ts-jest"
     },
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|react-router-native)/"
+    ],
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
       "ts",
@@ -68,6 +71,7 @@
       "node"
     ],
     "globals": {
+      "window": true,
       "ts-jest": {
         "tsConfig": "./tsconfig.jest.json"
       }
