@@ -4,6 +4,6 @@ target 'example' do
   # Pods for AppCenter
   pod 'AppCenter/Crashes', '~> 1.10.0'
   pod 'AppCenter/Analytics', '~> 1.10.0'
-  pod 'AppCenterReactNativeShared', '~> 1.9.0'
+  pod 'AppCenterReactNativeShared', '~> 1.11.0'
   platform :ios, '9.0'
 end
