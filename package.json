@@ -47,6 +47,39 @@
     "tslint-config-prettier": "1.17.0",
     "typescript": "3.2.2"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "lint-staged && echo 'yarn lint && yarn test'",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "release": {
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/git"
+    ],
+    "prepare": [
+      {
+        "path": "@semantic-release/changelog",
+        "changelogFile": "CHANGELOG.md"
+      },
+      "@semantic-release/git"
+    ],
+    "publish": [
+      "@semantic-release/github"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "babel": {
     "presets": [
       "module:metro-react-native-babel-preset"
