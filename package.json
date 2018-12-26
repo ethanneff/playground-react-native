@@ -4,13 +4,19 @@
   "private": true,
   "homepage": "http://ethanneff.github.io/example",
   "scripts": {
-    "start": "react-native start",
-    "ios": "react-native run-ios",
-    "android": "react-native run-android",
-    "web": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "jest --coverage -u",
-    "lint": "tsc && tslint --fix -p tsconfig.json -c tslint.json"
+    "start": "              echo 'start code watcher';            react-native start --reset-cache",
+    "ios": "                echo 'develop on ios';                react-native run-ios --simulator \"iPhone X\"",
+    "android": "            echo 'develop on android';            react-native run-android",
+    "web": "                echo 'develop on web';                react-scripts start",
+    "build": "              echo 'build production web';          react-scripts build",
+    "debug": "              echo 'run redux debugger';            open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
+    "test": "               echo 'run unit tests';                jest --coverage -u",
+    "watch": "              echo 'run unit tests reloader';       jest --watch",
+    "lint": "               echo 'run code linter';               tsc && tslint --fix -p tsconfig.json -c tslint.json",
+    "upgrade": "            echo 'run react native upgrade'       yarn global add react-native-git-upgrade; react-native-git-upgrade; rm -f .babelrc; rm -f ./.buckconfig; rm -f ./.flowconfig; rm -f ./.watchmanconfig; rm -f ./.gitattributes;",
+    "reset": "              echo 'run react native cache reset';  watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; yarn install; pod install --project-directory=ios; react-native start --reset-cache",
+    "semantic-release": "   echo 'run continuous integration';    semantic-release",
+    "travis-deploy-once": " echo 'prevent multiple deploys';      travis-deploy-once"
   },
   "dependencies": {
     "appcenter": "1.11.0",
