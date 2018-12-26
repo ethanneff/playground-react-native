@@ -68,7 +68,6 @@ yarn build
 
 #### top 1
 
-- [ ] figure out release
 - [ ] add button colors
 
 #### top 3
@@ -109,6 +108,7 @@ yarn build
 
 #### Done
 
+- [x] figure out release
 - [x] add ios push notifications config
 - [x] successful ios archive
 - [x] go though all dependencies and move them to contributing
