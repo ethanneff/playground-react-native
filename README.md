@@ -68,6 +68,7 @@ yarn build
 
 #### top 1
 
+- [ ] figure out release
 - [ ] add button colors
 
 #### top 3
