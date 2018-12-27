@@ -112,7 +112,7 @@ export const onDimensionChange = (payload: DimensionsProps) => ({
 // selectors
 export const selectLandscapeOrientation = (state: RootState) =>
   !state.device.windowDimensions
-    ? false
+    ? WINDOW.height < WINDOW.width
     : state.device.windowDimensions.height <
       state.device.windowDimensions.width;
 
@@ -122,17 +122,17 @@ export const selectSmallestDimension = (state: RootState) =>
       ? WINDOW.width
       : WINDOW.height
     : state.device.windowDimensions.height > state.device.windowDimensions.width
-      ? state.device.windowDimensions.width
-      : state.device.windowDimensions.height;
+    ? state.device.windowDimensions.width
+    : state.device.windowDimensions.height;
 
 export const selectLargestDimension = (state: RootState) =>
   !state.device.windowDimensions
     ? WINDOW.height > WINDOW.width
       ? WINDOW.height
-      : WINDOW.height
+      : WINDOW.width
     : state.device.windowDimensions.height > state.device.windowDimensions.width
-      ? state.device.windowDimensions.height
-      : state.device.windowDimensions.width;
+    ? state.device.windowDimensions.height
+    : state.device.windowDimensions.width;
 
 export const selectWidth = (state: RootState) =>
   !state.device.windowDimensions
