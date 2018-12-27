@@ -1,10 +1,13 @@
 import React from "react";
 import { Dimensions, FlatList, View } from "react-native";
-import { Button, Screen, Text } from "../../components";
+import { RouteComponentProps } from "react-router";
+import { Button, Screen, Text } from "../../../../components";
 
-interface Props {
+interface OwnProps {
   title: string;
 }
+
+type Props = OwnProps & RouteComponentProps;
 
 export class Questionnaire extends React.PureComponent<Props> {
   public data = [
@@ -47,7 +50,9 @@ export class Questionnaire extends React.PureComponent<Props> {
 
   public onProgress = (direction = 1) => {
     const index = this.currentIndex + direction;
-    if (index < 0) { return; }
+    if (index < 0) {
+      return;
+    }
     if (index >= this.data.length) {
       this.onFinish();
       return;
@@ -73,8 +78,9 @@ export class Questionnaire extends React.PureComponent<Props> {
   public onFinish = () => undefined;
 
   public render() {
+    const { history } = this.props;
     return (
-      <Screen>
+      <Screen disableScroll onLeftPress={() => history.goBack()}>
         <FlatList
           scrollEnabled={false}
           ref={(ref: any) => (this.tableView = ref)}

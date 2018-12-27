@@ -1,16 +1,23 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import { Card, Screen, Text } from "../../components";
+import { RouteComponentProps } from "react-router";
+import { Card, Screen, Text } from "../../../../components";
+import { Theme } from "../../../../utils";
+
+type Props = RouteComponentProps;
 
 // TODO: why need scrollview for screen?
-export class OKRs extends React.PureComponent {
+export class OKRs extends React.PureComponent<Props> {
   public state = {
     value: 0
   };
   public render() {
+    const { history } = this.props;
     return (
-      <Screen onLeftPress={() => undefined}>
-        <ScrollView contentContainerStyle={{ paddingHorizontal: 20 }}>
+      <Screen disableScroll onLeftPress={() => history.goBack()}>
+        <ScrollView
+          contentContainerStyle={{ paddingHorizontal: Theme.padding.p5 }}
+        >
           <Card>
             <Text h6 title="Company" />
             <Card onPress={() => undefined}>
