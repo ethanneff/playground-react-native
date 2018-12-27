@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/ethanneff/example/compare/v1.0.0...v1.1.0) (2018-12-27)
+
+### Bug Fixes
+
+- correct device selectors ([d52683a](https://github.com/ethanneff/example/commit/d52683a))
+- point entry to new app container ([cef4a1d](https://github.com/ethanneff/example/commit/cef4a1d))
+- relocate okr and questionnaire to debug ([d9e0e2a](https://github.com/ethanneff/example/commit/d9e0e2a))
+
+### Features
+
+- port over screens from other repo ([9df5d6b](https://github.com/ethanneff/example/commit/9df5d6b))
+
 # 1.0.0 (2018-12-26)
 
 ### Bug Fixes
