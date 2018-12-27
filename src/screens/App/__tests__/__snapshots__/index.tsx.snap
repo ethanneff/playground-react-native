@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Launcher Container renders correctly 1`] = `
+exports[`renders correctly 1`] = `
 <RCTSafeAreaView
   style={
     Array [
@@ -50,7 +50,7 @@ exports[`Launcher Container renders correctly 1`] = `
               },
               undefined,
               Object {
-                "fontFamily": undefined,
+                "fontFamily": "Material Design Icons",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
               },

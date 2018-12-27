@@ -1,0 +1,334 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<RCTSafeAreaView
+  style={
+    Array [
+      Object {
+        "backgroundColor": "hsl(0, 100%, 100%)",
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "hsl(0, 100%, 100%)",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+          "padding": 12,
+        }
+      }
+    >
+      <View>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "hsl(210, 10%, 23%)",
+                "fontSize": 24,
+              },
+              undefined,
+              Object {
+                "fontFamily": "Material Design Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+  <RCTScrollView
+    automaticallyAdjustContentInsets={false}
+    contentContainerStyle={
+      Object {
+        "backgroundColor": "hsl(0, 100%, 100%)",
+        "flex": 1,
+      }
+    }
+    contentInset={
+      Object {
+        "bottom": 0,
+      }
+    }
+    enableAutomaticScroll={true}
+    enableOnAndroid={false}
+    enableResetScrollToCoords={true}
+    extraHeight={75}
+    extraScrollHeight={0}
+    getScrollResponder={[Function]}
+    handleOnScroll={[Function]}
+    keyboardDismissMode="interactive"
+    keyboardOpeningTime={250}
+    keyboardSpace={0}
+    onScroll={[Function]}
+    resetKeyboardSpace={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={1}
+    scrollForExtraHeightOnAndroid={[Function]}
+    scrollIntoView={[Function]}
+    scrollToEnd={[Function]}
+    scrollToFocusedInput={[Function]}
+    scrollToPosition={[Function]}
+    showsVerticalScrollIndicator={true}
+    update={[Function]}
+    viewIsInsideTabBar={false}
+  >
+    <View>
+      <RCTScrollView>
+        <View>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 96,
+                  "fontWeight": "100",
+                  "letterSpacing": -1.5,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            H1: The quick brown fox jumps over the lazy dog.
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 60,
+                  "fontWeight": "100",
+                  "letterSpacing": -0.5,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            H2: The quick brown fox jumps over the lazy dog.
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 48,
+                  "fontWeight": "300",
+                  "letterSpacing": 0,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            H3: The quick brown fox jumps over the lazy dog.
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 34,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            H4: The quick brown fox jumps over the lazy dog.
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 24,
+                  "fontWeight": "300",
+                  "letterSpacing": 0,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            H5: The quick brown fox jumps over the lazy dog.
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 20,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.15,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            H6: The quick brown fox jumps over the lazy dog.
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 16,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.15,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            SUBTITLE1: The quick brown fox jumps over the lazy dog.
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.1,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            SUBTITLE2: The quick brown fox jumps over the lazy dog.
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 16,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.5,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            BODY1: The quick brown fox jumps over the lazy dog.
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            BODY2: The quick brown fox jumps over the lazy dog.
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 10,
+                  "fontWeight": "300",
+                  "letterSpacing": 1.5,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            OVERLINE: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 12,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.4,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            CAPTION: The quick brown fox jumps over the lazy dog.
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            BUTTON: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                },
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            NOTHING: The quick brown fox jumps over the lazy dog.
+          </Text>
+        </View>
+      </RCTScrollView>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;

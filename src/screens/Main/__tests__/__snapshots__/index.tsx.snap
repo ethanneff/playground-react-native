@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<RCTSafeAreaView
+  style={
+    Array [
+      Object {
+        "backgroundColor": "hsl(0, 100%, 100%)",
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <RCTScrollView
+    automaticallyAdjustContentInsets={false}
+    contentContainerStyle={
+      Object {
+        "backgroundColor": "hsl(0, 100%, 100%)",
+        "flex": 1,
+      }
+    }
+    contentInset={
+      Object {
+        "bottom": 0,
+      }
+    }
+    enableAutomaticScroll={true}
+    enableOnAndroid={false}
+    enableResetScrollToCoords={true}
+    extraHeight={75}
+    extraScrollHeight={0}
+    getScrollResponder={[Function]}
+    handleOnScroll={[Function]}
+    keyboardDismissMode="interactive"
+    keyboardOpeningTime={250}
+    keyboardSpace={0}
+    onScroll={[Function]}
+    resetKeyboardSpace={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={1}
+    scrollForExtraHeightOnAndroid={[Function]}
+    scrollIntoView={[Function]}
+    scrollToEnd={[Function]}
+    scrollToFocusedInput={[Function]}
+    scrollToPosition={[Function]}
+    showsVerticalScrollIndicator={true}
+    update={[Function]}
+    viewIsInsideTabBar={false}
+  >
+    <View>
+      <Text
+        style={
+          Array [
+            Object {
+              "fontSize": 14,
+              "fontWeight": "300",
+              "letterSpacing": 0.25,
+            },
+            undefined,
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        Main
+      </Text>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "borderColor": "transparent",
+            "borderRadius": 4,
+            "borderWidth": 1,
+            "color": "hsl(211, 100%, 50%)",
+            "flexDirection": "row",
+            "height": 36,
+            "justifyContent": "center",
+            "opacity": 1,
+            "paddingHorizontal": 16,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontSize": 14,
+                "fontWeight": "600",
+                "letterSpacing": 0.75,
+              },
+              Object {
+                "textAlign": "center",
+              },
+              undefined,
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "hsl(211, 100%, 50%)",
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+              ],
+            ]
+          }
+        >
+          LOGOUT
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;
