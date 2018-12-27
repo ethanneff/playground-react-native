@@ -1,13 +1,13 @@
 import * as React from "react";
 import { AppRegistry, Platform } from "react-native";
-import { OKRs } from "./screens";
+import { App } from "./screens";
 import { Config, Provider } from "./utils";
 
 export class Launcher extends React.PureComponent {
   public render() {
     return (
       <Provider>
-        <OKRs />
+        <App />
       </Provider>
     );
   }
