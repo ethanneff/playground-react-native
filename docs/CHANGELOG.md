@@ -1,9 +1,8 @@
 ## [1.1.2](https://github.com/ethanneff/example/compare/v1.1.1...v1.1.2) (2018-12-28)
 
-
 ### Bug Fixes
 
-* backfill old changelog ([92412ea](https://github.com/ethanneff/example/commit/92412ea))
+- backfill old changelog ([92412ea](https://github.com/ethanneff/example/commit/92412ea))
 
 ## [1.1.1](https://github.com/ethanneff/example/compare/v1.1.0...v1.1.1) (2018-12-28)
 
