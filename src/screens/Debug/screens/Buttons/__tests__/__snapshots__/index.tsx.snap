@@ -2510,6 +2510,63 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   undefined,
+                  false,
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                style={
+                  Array [
+                    Object {
+                      "color": "red",
+                      "fontSize": 16,
+                    },
+                    Array [
+                      undefined,
+                      false,
+                    ],
+                    Object {
+                      "fontFamily": "Material Design Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderColor": "transparent",
+                "borderRadius": 32,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+                "padding": 16,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
