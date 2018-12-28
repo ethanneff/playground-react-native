@@ -514,6 +514,52 @@ exports[`Launcher Container renders correctly 1`] = `
           </Text>
         </View>
       </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={null}
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+                undefined,
+                null,
+              ]
+            }
+          >
+            CHECKLIST
+          </Text>
+        </View>
+      </View>
     </View>
   </RCTScrollView>
 </RCTSafeAreaView>
