@@ -4,7 +4,7 @@
 
 - get changelog working ([67d4be8](https://github.com/ethanneff/example/commit/67d4be8))
 
-# [1.1.0](https://github.com/ethanneff/example/compare/v1.0.0...v1.1.0) (2018-12-27)
+## [1.1.0](https://github.com/ethanneff/example/compare/v1.0.0...v1.1.0) (2018-12-27)
 
 ### Bug Fixes
 
@@ -16,7 +16,7 @@
 
 - port over screens from other repo ([9df5d6b](https://github.com/ethanneff/example/commit/9df5d6b))
 
-# 1.0.0 (2018-12-26)
+## 1.0.0 (2018-12-26)
 
 ### Bug Fixes
 
