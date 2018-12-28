@@ -7,3 +7,4 @@ export * from "./PinchSpread";
 export * from "./SearchBar";
 export * from "./OKRs";
 export * from "./Questionnaire";
+export * from "./Checklist";

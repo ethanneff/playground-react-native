@@ -256,6 +256,7 @@ import {
   Ball,
   Buttons,
   Cards,
+  Checklist,
   Drag,
   Fonts,
   OKRs,
@@ -276,7 +277,8 @@ export class Debug extends React.PureComponent<Props> {
     PinchSpread,
     SearchBar,
     OKRs,
-    Questionnaire
+    Questionnaire,
+    Checklist
   };
 
   public generateRoutes = () => {
