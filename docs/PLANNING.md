@@ -6,8 +6,8 @@
 
 ## Top 3
 
-- [ ] firebase web
-- [ ] firebase pass tests
+- [ ] figure out why not releasing
+- [ ] firebase native
 - [ ] firebase [todo](https://blog.invertase.io/getting-started-with-cloud-firestore-on-react-native-b338fb6525b9)
 
 ## Top 5
@@ -16,6 +16,8 @@
 - [ ] firebase login
 - [ ] firebase search
 - [ ] firebase comments
+- [ ] firebase web
+- [ ] firebase pass tests
 
 ## Rest
 
