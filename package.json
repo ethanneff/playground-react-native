@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "private": true,
   "homepage": "http://ethanneff.github.io/example",
   "repository": {
@@ -87,14 +87,14 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      "@semantic-release/github",
       [
         "@semantic-release/changelog",
         {
           "changelogFile": "docs/CHANGELOG.md"
         }
       ],
-      "@semantic-release/git"
+      "@semantic-release/git",
+      "@semantic-release/github"
     ]
   },
   "commitlint": {
