@@ -114,6 +114,7 @@ export class Buttons extends React.PureComponent<Props> {
           <Button wrap icon="check" contained onPress={() => undefined} />
 
           <Button fab icon="check" onPress={() => undefined} />
+          <Button fab icon="check" iconColor="red" onPress={() => undefined} />
           <Button fab icon="check" neutral onPress={() => undefined} />
           <Button fab icon="check" text onPress={() => undefined} />
           <Button fab icon="check" outlined onPress={() => undefined} />
