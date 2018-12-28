@@ -6,7 +6,6 @@
 
 ## Top 3
 
-- [ ] figure out why not releasing
 - [ ] firebase native
 - [ ] firebase [todo](https://blog.invertase.io/getting-started-with-cloud-firestore-on-react-native-b338fb6525b9)
 
@@ -43,6 +42,8 @@
 
 ## Done
 
+- [x] figure out why not releasing
+- [x] get semantic release and changelog working 
 - [x] make nav buttons larger
 - [x] button icon color
 - [x] pull in button and text update
