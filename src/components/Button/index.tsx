@@ -126,49 +126,38 @@ export class Button extends React.PureComponent<Props> {
       icon,
       iconColor
     } = this.props;
-    const disableBodyStyle =
-      disable && (contained || outlined) ? styles.disableBody : undefined;
-    const disableTextStyle = disable ? styles.disableText : undefined;
-    const wrapStyle = wrap ? styles.nonFlex : undefined;
-    const containedStyle = contained ? styles.containedText : undefined;
-    const fabStyle = fab ? styles.fab : undefined;
-    const neutralStyle = neutral ? styles.neutral : undefined;
-    const halfStyle = half ? styles.half : undefined;
-    const centerStyle = center ? styles.center : undefined;
-    const shapeStyle = this.getShape();
-    const heightStyle = !fab ? styles.height : undefined;
+    const buttonStyleGroup = [
+      styles.container,
+      !fab && styles.height,
+      this.getShape(),
+      disable && (contained || outlined) && styles.disableBody,
+      fab && styles.fab,
+      wrap && styles.nonFlex,
+      half && styles.half,
+      center && styles.center,
+      buttonStyle
+    ];
     const textStyleGroup = [
       styles.text,
-      neutralStyle,
-      containedStyle,
-      disableTextStyle,
+      neutral && styles.neutral,
+      contained && styles.containedText,
+      disable && styles.disableText,
       textStyle
     ];
+    const iconStyleGroup = [title && styles.icon, !iconColor && textStyleGroup];
     return (
       <TouchableOpacity
-        style={[
-          styles.container,
-          heightStyle,
-          shapeStyle,
-          disableBodyStyle,
-          fabStyle,
-          wrapStyle,
-          halfStyle,
-          centerStyle,
-          buttonStyle
-        ]}
+        style={buttonStyleGroup}
         onPress={onPress}
         disabled={disable}
       >
-        {icon && (
-          <Icon
-            color={iconColor}
-            name={icon}
-            size={Theme.padding.p4}
-            style={[title && styles.icon, textStyleGroup]}
-          />
-        )}
-        {title && <Text center button title={title} style={textStyleGroup} />}
+        <Icon
+          color={iconColor}
+          name={icon}
+          size={Theme.padding.p4}
+          style={iconStyleGroup}
+        />
+        <Text center button title={title} style={textStyleGroup} />
       </TouchableOpacity>
     );
   }
