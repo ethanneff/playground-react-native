@@ -2,14 +2,18 @@
 
 ## Top 1
 
-- [ ] firebase [todo](https://blog.invertase.io/getting-started-with-cloud-firestore-on-react-native-b338fb6525b9)
+- [ ] checklist
 
 ## Top 3
 
+- [ ] remove icon && <Component>
+- [ ] checklist redux
+- [ ] button icon color
+- [ ] pull in button and text update
 - [ ] make nav buttons larger
-- [ ] okr branch
 - [ ] firebase web
 - [ ] firebase pass tests
+- [ ] firebase [todo](https://blog.invertase.io/getting-started-with-cloud-firestore-on-react-native-b338fb6525b9)
 
 ## Top 5
 
@@ -20,6 +24,7 @@
 
 ## Rest
 
+- [ ] okr branch
 - [ ] push notifications to firebase and app center
 - [ ] firebase-todo branch
 - [ ] clean all branches
