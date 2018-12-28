@@ -70,6 +70,7 @@ interface Props {
   // styling
   buttonStyle?: ViewStyle | {};
   textStyle?: TextStyle | {};
+  iconColor?: string;
   // state
   active?: boolean;
   disable?: boolean;
@@ -122,7 +123,8 @@ export class Button extends React.PureComponent<Props> {
       neutral,
       half,
       center,
-      icon
+      icon,
+      iconColor
     } = this.props;
     const disableBodyStyle =
       disable && (contained || outlined) ? styles.disableBody : undefined;
@@ -160,6 +162,7 @@ export class Button extends React.PureComponent<Props> {
       >
         {icon && (
           <Icon
+            color={iconColor}
             name={icon}
             size={Theme.padding.p4}
             style={[title && styles.icon, textStyleGroup]}
