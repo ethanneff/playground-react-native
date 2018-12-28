@@ -1,8 +1,8 @@
 import * as React from "react";
 import { FlatList, View } from "react-native";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { RouteComponentProps } from "react-router";
 import { Button, Screen, Text } from "../../../../components";
+import { Theme } from "../../../../utils";
 import { Data } from "./data";
 
 type Props = RouteComponentProps;
@@ -21,16 +21,22 @@ export class Checklist extends React.PureComponent<Props> {
           renderItem={({ item }) => {
             return (
               <View style={{ flexDirection: "row" }}>
-                <Button icon="calendar-check" onPress={() => undefined} />
-                <Button icon="calendar-remove" onPress={() => undefined} />
-                <Icon color="black" name="check" />
-
                 <Button
-                  iconColor={"#f5f5f5"}
-                  icon="calendar-clock"
+                  icon="checkbox-marked-circle"
+                  iconColor={Theme.color.success}
                   onPress={() => undefined}
                 />
-                <Text title={item.title} />
+                <Button
+                  icon="close-circle"
+                  iconColor={Theme.color.danger}
+                  onPress={() => undefined}
+                />
+                <Button
+                  iconColor={Theme.color.warning}
+                  icon="clock"
+                  onPress={() => undefined}
+                />
+                <Button neutral title={item.title} onPress={() => undefined} />
               </View>
             );
           }}
