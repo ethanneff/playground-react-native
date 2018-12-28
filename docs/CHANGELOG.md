@@ -1,3 +1,13 @@
+Changelog
+
+## [1.1.3](https://github.com/ethanneff/example/compare/v1.1.2...v1.1.3) (2018-12-28)
+
+
+### Bug Fixes
+
+* add changelog title ([8506f28](https://github.com/ethanneff/example/commit/8506f28))
+* merge changelog ([ce8f06d](https://github.com/ethanneff/example/commit/ce8f06d))
+
 ## [1.1.2](https://github.com/ethanneff/example/compare/v1.1.1...v1.1.2) (2018-12-28)
 
 ### Bug Fixes
