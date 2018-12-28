@@ -1081,7 +1081,7 @@
     fs-extra "^7.0.0"
     lodash "^4.17.4"
 
-"@semantic-release/commit-analyzer@^6.1.0":
+"@semantic-release/commit-analyzer@6.1.0", "@semantic-release/commit-analyzer@^6.1.0":
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-6.1.0.tgz#32bbe3c23da86e23edf072fbb276fa2f383fcb17"
   integrity sha512-2lb+t6muGenI86mYGpZYOgITx9L3oZYF697tJoqXeQEk0uw0fm+OkkOuDTBA3Oax9ftoNIrCKv9bwgYvxrbM6w==
@@ -1177,7 +1177,7 @@
     read-pkg "^4.0.0"
     registry-auth-token "^3.3.1"
 
-"@semantic-release/release-notes-generator@^7.1.2":
+"@semantic-release/release-notes-generator@7.1.4", "@semantic-release/release-notes-generator@^7.1.2":
   version "7.1.4"
   resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-7.1.4.tgz#8f4f752c5a8385abdaac1256127cef05988bc2ad"
   integrity sha512-pWPouZujddgb6t61t9iA9G3yIfp3TeQ7bPbV1ixYSeP6L7gI1+Du82fY/OHfEwyifpymLUQW0XnIKgKct5IMMw==
@@ -12080,7 +12080,7 @@ selfsigned@^1.9.1:
   dependencies:
     node-forge "0.7.5"
 
-semantic-release@15.13.2:
+semantic-release@^15.13.2:
   version "15.13.2"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.13.2.tgz#a05f1f2ee1a572aca1cde78ef42d15b280b36318"
   integrity sha512-uUQDfD4X+b48x7rYdTYcWrprRpCmo2gNpiIWn2XnpieOrB3/rRrd4Kn5ekvCnqUgMffN0VWBDqDGp5WxoSfweA==
