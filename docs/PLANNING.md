@@ -2,15 +2,10 @@
 
 ## Top 1
 
-- [ ] checklist
+- [ ] checklist redux
 
 ## Top 3
 
-- [ ] remove icon && <Component>
-- [ ] checklist redux
-- [ ] button icon color
-- [ ] pull in button and text update
-- [ ] make nav buttons larger
 - [ ] firebase web
 - [ ] firebase pass tests
 - [ ] firebase [todo](https://blog.invertase.io/getting-started-with-cloud-firestore-on-react-native-b338fb6525b9)
@@ -46,6 +41,10 @@
 
 ## Done
 
+- [x] make nav buttons larger
+- [x] button icon color
+- [x] pull in button and text update
+- [x] remove icon && <Component>
 - [x] add button colors
 - [x] figure out release
 - [x] add ios push notifications config
