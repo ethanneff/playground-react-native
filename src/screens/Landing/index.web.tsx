@@ -19,11 +19,11 @@ const styles = StyleSheet.create({
   }
 });
 
-interface FooterProps {
+interface Props {
   history: any;
 }
 
-class Footer extends React.PureComponent<FooterProps> {
+class Footer extends React.PureComponent<Props> {
   render() {
     const { history } = this.props;
     return (
