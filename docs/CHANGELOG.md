@@ -1,3 +1,18 @@
+# Changelog
+
+# [1.2.0](https://github.com/ethanneff/example/compare/v1.1.3...v1.2.0) (2018-12-29)
+
+
+### Bug Fixes
+
+* update changelog title ([2ad6246](https://github.com/ethanneff/example/commit/2ad6246))
+* update dependencies with a yarn override ([57274d9](https://github.com/ethanneff/example/commit/57274d9))
+
+
+### Features
+
+* add license ([37ed559](https://github.com/ethanneff/example/commit/37ed559))
+
 Changelog
 
 ## [1.1.3](https://github.com/ethanneff/example/compare/v1.1.2...v1.1.3) (2018-12-28)
