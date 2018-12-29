@@ -18,7 +18,7 @@
   <a href="https://github.com/ethanneff/example">
     <img src="https://img.shields.io/github/release/ethanneff/example.svg" alt="Github Release" />
   </a>
-  <a href="https://github.com/ethanneff/example/blob/master/LICENSE.md">
+  <a href="https://github.com/ethanneff/example/blob/master/docs/LICENSE.md">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Github License" />
   </a>
 </div>
