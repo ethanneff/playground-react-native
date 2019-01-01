@@ -12,6 +12,7 @@ export class KeyboardAvoid extends React.PureComponent<Props> {
     const { style, children, scrollEnabled } = this.props;
     return (
       <KeyboardAwareScrollView
+        keyboardShouldPersistTaps="handled"
         contentContainerStyle={style}
         scrollEnabled={scrollEnabled}
       >
