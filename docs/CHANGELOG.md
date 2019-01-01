@@ -1,5 +1,21 @@
 # Changelog
 
+# [1.3.0](https://github.com/ethanneff/example/compare/v1.2.0...v1.3.0) (2019-01-01)
+
+
+### Bug Fixes
+
+* add hidden prop to icon ([5366b3d](https://github.com/ethanneff/example/commit/5366b3d))
+* add hidden prop to text ([d6feff2](https://github.com/ethanneff/example/commit/d6feff2))
+* add hidden prop to text ([8810aa0](https://github.com/ethanneff/example/commit/8810aa0))
+* add titles to inputs on login ([1c77a40](https://github.com/ethanneff/example/commit/1c77a40))
+* relocate font config to util ([17ec0a3](https://github.com/ethanneff/example/commit/17ec0a3))
+
+
+### Features
+
+* add input component ([3607fbd](https://github.com/ethanneff/example/commit/3607fbd))
+
 # [1.2.0](https://github.com/ethanneff/example/compare/v1.1.3...v1.2.0) (2018-12-29)
 
 
