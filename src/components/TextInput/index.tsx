@@ -12,10 +12,8 @@ import { Title } from "./Title";
 
 // styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 const styles = StyleSheet.create({
-  error: {
-    marginTop: Theme.padding.p1,
-    color: Theme.color.danger,
-    marginBottom: Theme.padding.p2
+  row: {
+    flexDirection: "row"
   },
   textInput: {
     flex: 1,
@@ -23,7 +21,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: Theme.padding.p1,
     padding: Theme.padding.p2,
-    paddingRight: Theme.padding.p10,
+    paddingRight: Theme.padding.p8,
     marginTop: Theme.padding.p1,
     backgroundColor: Theme.color.background
   },
@@ -126,9 +124,9 @@ export class TextInput extends React.PureComponent<Props, State> {
     ];
     const noValue = value.length === 0;
     return (
-      <View>
+      <>
         <Title title={title} optional={optional} onPress={this.focusOnInput} />
-        <View style={{ flexDirection: "row" }}>
+        <View style={styles.row}>
           <Original
             ref={input => {
               if (!input) {
@@ -156,7 +154,7 @@ export class TextInput extends React.PureComponent<Props, State> {
           <Clear hidden={noValue} onPress={this.textClear} />
         </View>
         <Error error={error} onPress={this.focusOnInput} />
-      </View>
+      </>
     );
   }
 }
