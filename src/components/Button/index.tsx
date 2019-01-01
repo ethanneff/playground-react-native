@@ -73,6 +73,7 @@ interface Props {
   iconColor?: string;
   // state
   active?: boolean;
+  hidden?: boolean;
   disable?: boolean;
   // shape
   text?: boolean; // low emphasis
@@ -120,6 +121,7 @@ export class Button extends React.PureComponent<Props> {
       outlined,
       wrap,
       fab,
+      hidden,
       neutral,
       half,
       center,
@@ -145,6 +147,9 @@ export class Button extends React.PureComponent<Props> {
       textStyle
     ];
     const iconStyleGroup = [title && styles.icon, !iconColor && textStyleGroup];
+    if (hidden) {
+      return null;
+    }
     return (
       <TouchableOpacity
         style={buttonStyleGroup}
