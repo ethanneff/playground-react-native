@@ -21,6 +21,12 @@ const styles = StyleSheet.create({
   height: {
     height: Theme.padding.p9
   },
+  label: {
+    height: Theme.padding.p5,
+    paddingHorizontal: 0,
+    marginBottom: Theme.padding.p2,
+    justifyContent: "flex-start"
+  },
   containedBody: {
     backgroundColor: Theme.color.primary
   },
@@ -57,8 +63,14 @@ const styles = StyleSheet.create({
   neutral: {
     color: Theme.color.text
   },
+  secondary: {
+    color: Theme.color.secondary
+  },
+  danger: {
+    color: Theme.color.danger
+  },
   icon: {
-    paddingRight: Theme.padding.p1
+    paddingRight: 2
   }
 });
 
@@ -75,19 +87,24 @@ interface Props {
   active?: boolean;
   hidden?: boolean;
   disable?: boolean;
+  activeOpacity?: number;
   // shape
   text?: boolean; // low emphasis
   outlined?: boolean; // mid emphasis
   contained?: boolean; // high emphasis
   fab?: boolean;
   toggle?: boolean;
+  label?: boolean;
   // color
   neutral?: boolean;
+  secondary?: boolean;
+  danger?: boolean;
   // size
   wrap?: boolean;
   half?: boolean;
   full?: boolean;
   center?: boolean;
+  lowercase?: boolean;
   // event
   onPress(): void;
 }
@@ -126,7 +143,12 @@ export class Button extends React.PureComponent<Props> {
       half,
       center,
       icon,
-      iconColor
+      iconColor,
+      secondary,
+      danger,
+      label,
+      lowercase,
+      activeOpacity
     } = this.props;
     const buttonStyleGroup = [
       styles.container,
@@ -137,11 +159,14 @@ export class Button extends React.PureComponent<Props> {
       wrap && styles.nonFlex,
       half && styles.half,
       center && styles.center,
+      label && styles.label,
       buttonStyle
     ];
     const textStyleGroup = [
       styles.text,
       neutral && styles.neutral,
+      secondary && styles.secondary,
+      danger && styles.danger,
       contained && styles.containedText,
       disable && styles.disableText,
       textStyle
@@ -152,6 +177,7 @@ export class Button extends React.PureComponent<Props> {
     }
     return (
       <TouchableOpacity
+        activeOpacity={activeOpacity}
         style={buttonStyleGroup}
         onPress={onPress}
         disabled={disable}
@@ -162,7 +188,7 @@ export class Button extends React.PureComponent<Props> {
           size={Theme.padding.p4}
           style={iconStyleGroup}
         />
-        <Text center button title={title} style={textStyleGroup} />
+        <Text center button={!lowercase} title={title} style={textStyleGroup} />
       </TouchableOpacity>
     );
   }
