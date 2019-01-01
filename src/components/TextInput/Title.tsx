@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { Text } from "..";
 import { Theme } from "../../utils";
@@ -30,6 +30,7 @@ export class Title extends React.PureComponent<Props> {
       return null;
     }
     return (
+      // TODO: remove touchableopacity and move to button component
       <TouchableOpacity
         activeOpacity={1}
         style={styles.container}

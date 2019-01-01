@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { ScrollView } from "react-native";
 import { RouteComponentProps } from "react-router";
 import { Card, Screen, Text } from "../../../../components";

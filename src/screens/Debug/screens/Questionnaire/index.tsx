@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Dimensions, FlatList, View } from "react-native";
 import { RouteComponentProps } from "react-router";
 import { Button, Screen, Text } from "../../../../components";
