@@ -85,6 +85,7 @@ exports[`renders correctly 1`] = `
     handleOnScroll={[Function]}
     keyboardDismissMode="interactive"
     keyboardOpeningTime={250}
+    keyboardShouldPersistTaps="handled"
     keyboardSpace={0}
     onScroll={[Function]}
     resetKeyboardSpace={[Function]}

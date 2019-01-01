@@ -85,6 +85,7 @@ exports[`renders correctly 1`] = `
     handleOnScroll={[Function]}
     keyboardDismissMode="interactive"
     keyboardOpeningTime={250}
+    keyboardShouldPersistTaps="handled"
     keyboardSpace={0}
     onScroll={[Function]}
     resetKeyboardSpace={[Function]}
@@ -170,6 +171,8 @@ exports[`renders correctly 1`] = `
                   undefined,
                   undefined,
                   undefined,
+                  undefined,
+                  undefined,
                 ],
               ]
             }
@@ -219,6 +222,8 @@ exports[`renders correctly 1`] = `
                     "backgroundColor": "transparent",
                     "color": "hsl(211, 100%, 50%)",
                   },
+                  undefined,
+                  undefined,
                   undefined,
                   undefined,
                   undefined,

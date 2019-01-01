@@ -43,6 +43,8 @@ exports[`renders contained 1`] = `
             "color": "hsl(211, 100%, 50%)",
           },
           undefined,
+          undefined,
+          undefined,
           Object {
             "color": "hsl(0, 100%, 100%)",
           },
@@ -99,6 +101,8 @@ exports[`renders contained disable 1`] = `
             "backgroundColor": "transparent",
             "color": "hsl(211, 100%, 50%)",
           },
+          undefined,
+          undefined,
           undefined,
           Object {
             "color": "hsl(0, 100%, 100%)",
@@ -163,6 +167,8 @@ exports[`renders correctly 1`] = `
           undefined,
           undefined,
           undefined,
+          undefined,
+          undefined,
         ],
       ]
     }
@@ -215,6 +221,8 @@ exports[`renders correctly 2`] = `
             "backgroundColor": "transparent",
             "color": "hsl(211, 100%, 50%)",
           },
+          undefined,
+          undefined,
           undefined,
           undefined,
           undefined,
@@ -274,6 +282,8 @@ exports[`renders fab  1`] = `
           undefined,
           undefined,
           undefined,
+          undefined,
+          undefined,
         ],
       ]
     }
@@ -322,6 +332,8 @@ exports[`renders icon 1`] = `
           undefined,
           undefined,
           undefined,
+          undefined,
+          undefined,
         ],
       ]
     }
@@ -341,6 +353,8 @@ exports[`renders icon 1`] = `
                 "backgroundColor": "transparent",
                 "color": "hsl(211, 100%, 50%)",
               },
+              undefined,
+              undefined,
               undefined,
               undefined,
               undefined,
@@ -392,13 +406,15 @@ exports[`renders icon title 1`] = `
     style={
       Array [
         Object {
-          "paddingRight": 4,
+          "paddingRight": 2,
         },
         Array [
           Object {
             "backgroundColor": "transparent",
             "color": "hsl(211, 100%, 50%)",
           },
+          undefined,
+          undefined,
           undefined,
           undefined,
           undefined,
@@ -417,13 +433,15 @@ exports[`renders icon title 1`] = `
           },
           Array [
             Object {
-              "paddingRight": 4,
+              "paddingRight": 2,
             },
             Array [
               Object {
                 "backgroundColor": "transparent",
                 "color": "hsl(211, 100%, 50%)",
               },
+              undefined,
+              undefined,
               undefined,
               undefined,
               undefined,
@@ -459,6 +477,8 @@ exports[`renders icon title 1`] = `
             "backgroundColor": "transparent",
             "color": "hsl(211, 100%, 50%)",
           },
+          undefined,
+          undefined,
           undefined,
           undefined,
           undefined,
@@ -513,6 +533,8 @@ exports[`renders outlined 1`] = `
             "backgroundColor": "transparent",
             "color": "hsl(211, 100%, 50%)",
           },
+          undefined,
+          undefined,
           undefined,
           undefined,
           undefined,
@@ -575,6 +597,8 @@ exports[`renders sizing 1`] = `
             "color": "hsl(0, 0%, 0%)",
           },
           undefined,
+          undefined,
+          undefined,
           Object {
             "color": "hsl(208, 7%, 46%)",
           },
@@ -631,6 +655,8 @@ exports[`renders text 1`] = `
             "backgroundColor": "transparent",
             "color": "hsl(211, 100%, 50%)",
           },
+          undefined,
+          undefined,
           undefined,
           undefined,
           undefined,

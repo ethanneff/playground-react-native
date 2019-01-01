@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<View>
+Array [
   <View
     style={
       Object {
@@ -29,7 +29,7 @@ exports[`renders correctly 1`] = `
             "flex": 1,
             "marginTop": 4,
             "padding": 8,
-            "paddingRight": 40,
+            "paddingRight": 32,
           },
           undefined,
           false,
@@ -67,7 +67,7 @@ exports[`renders correctly 1`] = `
           "opacity": 1,
           "paddingHorizontal": 16,
           "position": "absolute",
-          "right": 0,
+          "right": -6,
           "top": 6,
         }
       }
@@ -81,9 +81,11 @@ exports[`renders correctly 1`] = `
                 "backgroundColor": "transparent",
                 "color": "hsl(211, 100%, 50%)",
               },
+              undefined,
               Object {
-                "color": "hsl(0, 0%, 0%)",
+                "color": "hsl(208, 7%, 46%)",
               },
+              undefined,
               undefined,
               undefined,
               undefined,
@@ -106,9 +108,11 @@ exports[`renders correctly 1`] = `
                     "backgroundColor": "transparent",
                     "color": "hsl(211, 100%, 50%)",
                   },
+                  undefined,
                   Object {
-                    "color": "hsl(0, 0%, 0%)",
+                    "color": "hsl(208, 7%, 46%)",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   undefined,
@@ -123,11 +127,11 @@ exports[`renders correctly 1`] = `
             ]
           }
         >
-          
+          
         </Text>
       </View>
     </View>
-  </View>
+  </View>,
   <View
     accessible={true}
     isTVSelectable={true}
@@ -139,8 +143,19 @@ exports[`renders correctly 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "transparent",
+        "borderColor": "transparent",
+        "borderRadius": 4,
+        "borderWidth": 1,
+        "color": "hsl(211, 100%, 50%)",
         "flexDirection": "row",
+        "height": 20,
+        "justifyContent": "flex-start",
+        "marginBottom": 8,
         "opacity": 1,
+        "paddingHorizontal": 0,
       }
     }
   >
@@ -152,16 +167,29 @@ exports[`renders correctly 1`] = `
             "fontWeight": "300",
             "letterSpacing": 0.25,
           },
-          undefined,
-          undefined,
           Object {
-            "color": "hsl(354, 70%, 54%)",
+            "textAlign": "center",
           },
+          undefined,
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "hsl(211, 100%, 50%)",
+            },
+            undefined,
+            undefined,
+            Object {
+              "color": "hsl(354, 70%, 54%)",
+            },
+            undefined,
+            undefined,
+            undefined,
+          ],
         ]
       }
     >
        
     </Text>
-  </View>
-</View>
+  </View>,
+]
 `;
