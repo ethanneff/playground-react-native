@@ -21,17 +21,19 @@ export class Login extends React.PureComponent<RouteComponentProps, State> {
       <Screen>
         <Text title="Login" />
         <TextInput
-          placeholder="email"
+          title="email"
+          placeholder="example@gmail.com"
           onChangeText={text => this.setState({ email: text })}
           value={this.state.email}
         />
         <TextInput
-          placeholder="password"
+          title="password"
+          placeholder="•••••••"
           onChangeText={text => this.setState({ password: text })}
           value={this.state.password}
         />
         <Button title="Continue with Google" onPress={() => undefined} />
-        <Button title="Continue with Facebook" onPress={() => ""} />
+        <Button title="Continue with Facebook" onPress={() => undefined} />
         <Button
           title="Signup"
           onPress={() => fakeAuth.authenticate(() => history.push(from))}
