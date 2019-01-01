@@ -163,24 +163,95 @@ exports[`renders correctly 1`] = `
               </Text>
             </View>
           </View>
-          <TextInput
-            allowFontScaling={true}
-            onChangeText={[Function]}
-            placeholder="Search"
-            style={
-              Array [
+          <View>
+            <View
+              style={
                 Object {
-                  "flex": 1,
-                  "marginLeft": 8,
-                },
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                blurOnSubmit={true}
+                disableFullscreenUI={true}
+                editable={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onFocus={[Function]}
+                placeholder="Search"
+                placeholderTextColor="hsl(208, 7%, 46%)"
+                selectionColor="hsl(211, 100%, 50%)"
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "hsl(0, 100%, 100%)",
+                      "borderColor": "hsl(208, 7%, 46%)",
+                      "borderRadius": 4,
+                      "borderWidth": 2,
+                      "flex": 1,
+                      "marginTop": 4,
+                      "padding": 8,
+                      "paddingRight": 40,
+                    },
+                    undefined,
+                    false,
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    Array [
+                      Object {
+                        "flex": 1,
+                        "marginLeft": 8,
+                      },
+                      Object {
+                        "fontSize": 24,
+                      },
+                    ],
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </View>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
                 Object {
-                  "fontSize": 24,
-                },
-              ]
-            }
-            underlineColorAndroid="transparent"
-            value=""
-          />
+                  "flexDirection": "row",
+                  "opacity": 1,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    undefined,
+                    undefined,
+                    Object {
+                      "color": "hsl(354, 70%, 54%)",
+                    },
+                  ]
+                }
+              >
+                 
+              </Text>
+            </View>
+          </View>
         </View>
       </View>
       <View

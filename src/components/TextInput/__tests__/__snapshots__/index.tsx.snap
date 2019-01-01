@@ -1,9 +1,167 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<TextInput
-  allowFontScaling={true}
-  underlineColorAndroid="transparent"
-  value="hello"
-/>
+<View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      blurOnSubmit={true}
+      disableFullscreenUI={true}
+      editable={true}
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      placeholderTextColor="hsl(208, 7%, 46%)"
+      selectionColor="hsl(211, 100%, 50%)"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "hsl(0, 100%, 100%)",
+            "borderColor": "hsl(208, 7%, 46%)",
+            "borderRadius": 4,
+            "borderWidth": 2,
+            "flex": 1,
+            "marginTop": 4,
+            "padding": 8,
+            "paddingRight": 40,
+          },
+          undefined,
+          false,
+          Object {
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+          },
+          undefined,
+        ]
+      }
+      underlineColorAndroid="transparent"
+      value="hello"
+    />
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "borderColor": "transparent",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "hsl(211, 100%, 50%)",
+          "flexDirection": "row",
+          "height": 36,
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingHorizontal": 16,
+          "position": "absolute",
+          "right": 0,
+          "top": 6,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            undefined,
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "hsl(211, 100%, 50%)",
+              },
+              Object {
+                "color": "hsl(0, 0%, 0%)",
+              },
+              undefined,
+              undefined,
+              undefined,
+            ],
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "hsl(210, 10%, 23%)",
+                "fontSize": 16,
+              },
+              Array [
+                undefined,
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "hsl(211, 100%, 50%)",
+                  },
+                  Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
+              ],
+              Object {
+                "fontFamily": "Material Design Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "flexDirection": "row",
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+          },
+          undefined,
+          undefined,
+          Object {
+            "color": "hsl(354, 70%, 54%)",
+          },
+        ]
+      }
+    >
+       
+    </Text>
+  </View>
+</View>
 `;

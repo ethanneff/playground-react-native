@@ -1,10 +1,10 @@
 import * as React from "react";
 import { StyleSheet, Text as Original, ViewStyle } from "react-native";
-import { FontSize, FontWeight } from "../../utils";
+import { FontSize } from "../../utils";
 
 const styles = StyleSheet.create({
   bold: {
-    fontWeight: FontWeight.Medium
+    fontWeight: "600" // TODO: figure out why I cannot import FontWeight.Medium with tests
   },
   center: {
     textAlign: "center"
