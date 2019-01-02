@@ -2,27 +2,29 @@
 
 ## Top 1
 
+- [ ] use evernote to make example data structure of checklist and actionables
+
+## Top 3
+
 - [ ] textinput
 - [ ] radio
 - [ ] selection
 
-## Top 3
+## Top 5
 
 - [ ] checklist redux
 - [ ] firebase native
 - [ ] firebase [todo](https://blog.invertase.io/getting-started-with-cloud-firestore-on-react-native-b338fb6525b9)
-
-## Top 5
-
 - [ ] firebase android
 - [ ] firebase login
+
+
+## Rest
+
 - [ ] firebase search
 - [ ] firebase comments
 - [ ] firebase web
 - [ ] firebase pass tests
-
-## Rest
-
 - [ ] okr branch
 - [ ] push notifications to firebase and app center
 - [ ] firebase-todo branch
