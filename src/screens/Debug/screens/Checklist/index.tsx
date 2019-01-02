@@ -36,7 +36,13 @@ export class Checklist extends React.PureComponent<Props> {
                   icon="clock"
                   onPress={() => undefined}
                 />
-                <Button neutral title={item.title} onPress={() => undefined} />
+                <Button
+                  label
+                  neutral
+                  lowercase
+                  title={item.title}
+                  onPress={() => undefined}
+                />
               </View>
             );
           }}
