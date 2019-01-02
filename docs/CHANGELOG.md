@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.1](https://github.com/ethanneff/example/compare/v1.3.0...v1.3.1) (2019-01-01)
+
+
+### Bug Fixes
+
+* add label, danger, and secondary props to button ([cd257ac](https://github.com/ethanneff/example/commit/cd257ac))
+* made screens work with web ([5a07672](https://github.com/ethanneff/example/commit/5a07672))
+* press buttons without losing the keyboard ([fd6804c](https://github.com/ethanneff/example/commit/fd6804c))
+
 # [1.3.0](https://github.com/ethanneff/example/compare/v1.2.0...v1.3.0) (2019-01-01)
 
 
