@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   label: {
     height: Theme.padding.p5,
     paddingHorizontal: 0,
-    marginBottom: Theme.padding.p2,
+    margin: Theme.padding.p1,
     justifyContent: "flex-start"
   },
   containedBody: {
