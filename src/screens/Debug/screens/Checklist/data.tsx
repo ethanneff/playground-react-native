@@ -10,35 +10,52 @@ interface Reminder {
   time: string; // ?
 }
 
-interface Item {
+interface Tag {
   id: string;
+  name: string;
+}
+
+export enum ChecklistAccess {
+  Read = "Read",
+  Write = "Write",
+  Comment = "Comment"
+}
+
+interface ChecklistItem {
+  id: string;
+  checklistId: string;
   active: boolean;
   title: string;
-  status: ItemStatus;
-  history?: ItemHistories;
+  status: ChecklistItemStatus;
+  history?: ChecklistItemHistories;
   reminder?: Reminders;
   source: Sources;
 }
 
-enum ItemStatus {
+enum ChecklistItemStatus {
   Todo = "Todo",
   InProgress = "InProgress",
   Reminded = "Reminded",
   Done = "Done"
 }
 
-interface ItemHistory {
+interface ChecklistItemHistory {
   id: string;
   createdAt: number;
   updatedAt: number;
   itemId: number;
-  status: ItemStatus;
+  status: ChecklistItemStatus;
 }
 
 interface Checklist {
   id: string;
-  item: Items;
-  itemOrder: string[];
+  userId: string;
+  createdAt: string;
+  updatedAt: string;
+  viewedAt: string[];
+  completedAt: string[];
+  items: string[];
+  tags: string[];
 }
 
 interface User {
@@ -46,8 +63,7 @@ interface User {
   firstName: string;
   lastName: string;
   email: string;
-  checklistOrder: string[];
-  checklist: Checklists;
+  checklists: string[];
 }
 
 interface Reminders {
@@ -58,16 +74,20 @@ interface Sources {
   [id: string]: Source;
 }
 
-interface ItemHistories {
-  [id: string]: ItemHistory;
+interface ChecklistItemHistories {
+  [id: string]: ChecklistItemHistory;
 }
 
-interface Items {
-  [id: string]: Item;
+export interface ChecklistItems {
+  [id: string]: ChecklistItem;
 }
 
-interface Checklists {
+export interface Checklists {
   [id: string]: Checklist;
+}
+
+export interface Tags {
+  [id: string]: Tag;
 }
 
 export const User: User | any = {};
