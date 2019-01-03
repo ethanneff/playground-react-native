@@ -166,7 +166,7 @@ exports[`renders correctly 1`] = `
             "flexDirection": "row",
             "height": 20,
             "justifyContent": "flex-start",
-            "marginBottom": 8,
+            "margin": 4,
             "opacity": 1,
             "paddingHorizontal": 0,
           }
@@ -304,7 +304,7 @@ exports[`renders correctly 1`] = `
             "flexDirection": "row",
             "height": 20,
             "justifyContent": "flex-start",
-            "marginBottom": 8,
+            "margin": 4,
             "opacity": 1,
             "paddingHorizontal": 0,
           }
