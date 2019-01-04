@@ -1,7 +1,8 @@
 import * as React from "react";
 import { AppRegistry, Platform } from "react-native";
 import { App } from "./screens";
-import { Config, Provider } from "./utils";
+import { Config } from "./utils";
+import { Provider } from "./models";
 
 export class Launcher extends React.PureComponent {
   public render() {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Provider } from "..";
+import { Provider } from "../../models";
 import { Router } from "../../components";
 
 interface Props {

@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import { Text } from "../../components";
 import { selectWidth } from "../../models";
-import { RootState } from "../../utils";
+import { RootState } from "../../models";
 
 const styles = (width?: number, color?: string) =>
   StyleSheet.create({

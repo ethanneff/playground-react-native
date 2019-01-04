@@ -5,7 +5,7 @@ import {
   EffectiveConnectionType,
   ScaledSize
 } from "react-native";
-import { RootState } from "../../utils";
+import { RootState } from "../../models";
 
 const WINDOW = Dimensions.get("window");
 

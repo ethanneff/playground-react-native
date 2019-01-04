@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Button, Screen } from "../../../../components";
 import { selectHeight, selectWidth } from "../../../../models";
-import { RootState } from "../../../../utils";
+import { RootState } from "../../../../models";
 
 const styles = StyleSheet.create({
   ball: {

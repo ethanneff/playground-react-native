@@ -1,5 +1,5 @@
 import { AppStateStatus } from "react-native";
-import { RootState } from "../../utils";
+import { RootState } from "../../models";
 
 // action types
 export enum AppActionTypes {
