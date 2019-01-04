@@ -259,6 +259,7 @@ import {
   Checklist,
   Drag,
   Fonts,
+  Input,
   OKRs,
   PinchSpread,
   Questionnaire,
@@ -277,6 +278,7 @@ export class Debug extends React.PureComponent<Props> {
     PinchSpread,
     SearchBar,
     OKRs,
+    Input,
     Questionnaire,
     Checklist
   };
