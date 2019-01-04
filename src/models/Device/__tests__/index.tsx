@@ -18,7 +18,7 @@ import {
   selectSmallestDimension,
   selectWidth
 } from "..";
-import { RootState } from "../../../utils";
+import { RootState } from "../../../models";
 
 describe("selectors with no initial state", () => {
   jest.mock("Dimensions", () => undefined);
