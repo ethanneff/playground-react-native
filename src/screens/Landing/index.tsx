@@ -15,9 +15,6 @@ const styles = StyleSheet.create({
 });
 
 export class Landing extends React.PureComponent<RouteComponentProps> {
-  public componentDidMount() {
-    this.props.history.push("/debug");
-  }
   public render() {
     const { history } = this.props;
     return (
