@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Provider } from "../../models";
 import { Router } from "../../components";
+import { Provider } from "../../models";
 
 interface Props {
   Component: any;
