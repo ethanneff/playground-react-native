@@ -2,6 +2,9 @@
 
 ## Top 1
 
+- [ ] catch global errors
+- [ ] make redux clean
+- [ ] update dependenices with new redux tools
 - [ ] use evernote to make example data structure of checklist and actionables
 
 ## Top 3
@@ -17,7 +20,6 @@
 - [ ] firebase [todo](https://blog.invertase.io/getting-started-with-cloud-firestore-on-react-native-b338fb6525b9)
 - [ ] firebase android
 - [ ] firebase login
-
 
 ## Rest
 
