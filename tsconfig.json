@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "preserve",
-    "lib": ["es6", "dom"],
+    "lib": ["es2017", "es6", "dom"],
     "moduleResolution": "node",
     "target": "esnext",
     "module": "esnext",
