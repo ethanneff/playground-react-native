@@ -22,6 +22,7 @@
 
 ## Rest
 
+- [ ] look into [react navigation for web](https://github.com/react-navigation/example-web)
 - [ ] firebase search
 - [ ] firebase comments
 - [ ] firebase web
