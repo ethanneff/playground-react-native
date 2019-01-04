@@ -1,5 +1,22 @@
 # Changelog
 
+# [1.4.0](https://github.com/ethanneff/example/compare/v1.3.3...v1.4.0) (2019-01-04)
+
+
+### Bug Fixes
+
+* allow object.values() ([ee97538](https://github.com/ethanneff/example/commit/ee97538))
+* correct invalid RootState location ([837a764](https://github.com/ethanneff/example/commit/837a764))
+* increase local storage for android ([d03d958](https://github.com/ethanneff/example/commit/d03d958))
+* revert force redirect to debug ([d3f391a](https://github.com/ethanneff/example/commit/d3f391a))
+
+
+### Features
+
+* add input screen to debug ([956472b](https://github.com/ethanneff/example/commit/956472b))
+* add redux helper dependencies ([4236dcf](https://github.com/ethanneff/example/commit/4236dcf))
+* update checklist on debug to use redux ([7af9750](https://github.com/ethanneff/example/commit/7af9750))
+
 ## [1.3.3](https://github.com/ethanneff/example/compare/v1.3.2...v1.3.3) (2019-01-02)
 
 
