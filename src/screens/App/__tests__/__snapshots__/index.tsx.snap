@@ -12,57 +12,6 @@ exports[`renders correctly 1`] = `
     ]
   }
 >
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "hsl(0, 100%, 100%)",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-      }
-    }
-  >
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "flex": 1,
-          "opacity": 1,
-          "padding": 12,
-        }
-      }
-    >
-      <View>
-        <Text
-          allowFontScaling={false}
-          style={
-            Array [
-              Object {
-                "color": "hsl(210, 10%, 23%)",
-                "fontSize": 24,
-              },
-              undefined,
-              Object {
-                "fontFamily": "Material Design Icons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
-    </View>
-  </View>
   <RCTScrollView
     automaticallyAdjustContentInsets={false}
     contentContainerStyle={
@@ -89,7 +38,7 @@ exports[`renders correctly 1`] = `
     keyboardSpace={0}
     onScroll={[Function]}
     resetKeyboardSpace={[Function]}
-    scrollEnabled={false}
+    scrollEnabled={true}
     scrollEventThrottle={1}
     scrollForExtraHeightOnAndroid={[Function]}
     scrollIntoView={[Function]}
@@ -101,47 +50,30 @@ exports[`renders correctly 1`] = `
     viewIsInsideTabBar={false}
   >
     <View>
-      <Text
-        style={
-          Array [
-            Object {
-              "fontSize": 14,
-              "fontWeight": "300",
-              "letterSpacing": 0.25,
-            },
-            undefined,
-            undefined,
-            undefined,
-          ]
-        }
-      >
-        arrive at work
-      </Text>
       <RCTScrollView
         data={
           Array [
             Object {
-              "id": "1",
-              "title": "clean emails",
+              "color": "white",
+              "key": 1,
+              "text": "hello",
             },
             Object {
-              "id": "2",
-              "title": "clean slack",
+              "color": "pink",
+              "key": 2,
+              "text": "bob",
             },
             Object {
-              "id": "3",
-              "title": "look at sentry",
-            },
-            Object {
-              "id": "4",
-              "title": "respond to pull requests",
+              "color": "green",
+              "key": 3,
+              "text": "steve",
             },
           ]
         }
         disableVirtualization={false}
         getItem={[Function]}
         getItemCount={[Function]}
-        horizontal={false}
+        horizontal={true}
         initialNumToRender={10}
         keyExtractor={[Function]}
         maxToRenderPerBatch={10}
@@ -153,6 +85,7 @@ exports[`renders correctly 1`] = `
         onScroll={[Function]}
         onScrollBeginDrag={[Function]}
         onScrollEndDrag={[Function]}
+        pagingEnabled={true}
         renderItem={[Function]}
         scrollEventThrottle={50}
         stickyHeaderIndices={Array []}
@@ -163,1040 +96,301 @@ exports[`renders correctly 1`] = `
         <View>
           <View
             onLayout={[Function]}
-            style={null}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                null,
+              ]
+            }
           >
             <View
               style={
                 Object {
-                  "flexDirection": "row",
+                  "backgroundColor": "white",
+                  "justifyContent": "center",
+                  "width": 750,
                 }
               }
             >
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
                 style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 36,
-                    "justifyContent": "center",
-                    "opacity": 1,
-                    "paddingHorizontal": 16,
-                  }
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    Object {
+                      "textAlign": "center",
+                    },
+                    undefined,
+                    undefined,
+                  ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                      false,
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "hsl(134, 61%, 41%)",
-                          "fontSize": 16,
-                        },
-                        Array [
-                          undefined,
-                          false,
-                        ],
-                        Object {
-                          "fontFamily": "Material Design Icons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 36,
-                    "justifyContent": "center",
-                    "opacity": 1,
-                    "paddingHorizontal": 16,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                      false,
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "hsl(354, 70%, 54%)",
-                          "fontSize": 16,
-                        },
-                        Array [
-                          undefined,
-                          false,
-                        ],
-                        Object {
-                          "fontFamily": "Material Design Icons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 36,
-                    "justifyContent": "center",
-                    "opacity": 1,
-                    "paddingHorizontal": 16,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                      false,
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "hsl(45, 100%, 51%)",
-                          "fontSize": 16,
-                        },
-                        Array [
-                          undefined,
-                          false,
-                        ],
-                        Object {
-                          "fontFamily": "Material Design Icons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    肋
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 20,
-                    "justifyContent": "flex-start",
-                    "margin": 4,
-                    "opacity": 1,
-                    "paddingHorizontal": 0,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 14,
-                        "fontWeight": "300",
-                        "letterSpacing": 0.25,
-                      },
-                      Object {
-                        "textAlign": "center",
-                      },
-                      undefined,
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "hsl(211, 100%, 50%)",
-                        },
-                        Object {
-                          "color": "hsl(0, 0%, 0%)",
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
-                      ],
-                    ]
-                  }
-                >
-                  clean emails
-                </Text>
-              </View>
+                hello
+              </Text>
             </View>
           </View>
           <View
             onLayout={[Function]}
-            style={null}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                null,
+              ]
+            }
           >
             <View
               style={
                 Object {
-                  "flexDirection": "row",
+                  "backgroundColor": "pink",
+                  "justifyContent": "center",
+                  "width": 750,
                 }
               }
             >
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
                 style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 36,
-                    "justifyContent": "center",
-                    "opacity": 1,
-                    "paddingHorizontal": 16,
-                  }
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    Object {
+                      "textAlign": "center",
+                    },
+                    undefined,
+                    undefined,
+                  ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                      false,
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "hsl(134, 61%, 41%)",
-                          "fontSize": 16,
-                        },
-                        Array [
-                          undefined,
-                          false,
-                        ],
-                        Object {
-                          "fontFamily": "Material Design Icons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 36,
-                    "justifyContent": "center",
-                    "opacity": 1,
-                    "paddingHorizontal": 16,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                      false,
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "hsl(354, 70%, 54%)",
-                          "fontSize": 16,
-                        },
-                        Array [
-                          undefined,
-                          false,
-                        ],
-                        Object {
-                          "fontFamily": "Material Design Icons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 36,
-                    "justifyContent": "center",
-                    "opacity": 1,
-                    "paddingHorizontal": 16,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                      false,
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "hsl(45, 100%, 51%)",
-                          "fontSize": 16,
-                        },
-                        Array [
-                          undefined,
-                          false,
-                        ],
-                        Object {
-                          "fontFamily": "Material Design Icons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    肋
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 20,
-                    "justifyContent": "flex-start",
-                    "margin": 4,
-                    "opacity": 1,
-                    "paddingHorizontal": 0,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 14,
-                        "fontWeight": "300",
-                        "letterSpacing": 0.25,
-                      },
-                      Object {
-                        "textAlign": "center",
-                      },
-                      undefined,
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "hsl(211, 100%, 50%)",
-                        },
-                        Object {
-                          "color": "hsl(0, 0%, 0%)",
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
-                      ],
-                    ]
-                  }
-                >
-                  clean slack
-                </Text>
-              </View>
+                bob
+              </Text>
             </View>
           </View>
           <View
             onLayout={[Function]}
-            style={null}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                null,
+              ]
+            }
           >
             <View
               style={
                 Object {
-                  "flexDirection": "row",
+                  "backgroundColor": "green",
+                  "justifyContent": "center",
+                  "width": 750,
                 }
               }
             >
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
                 style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 36,
-                    "justifyContent": "center",
-                    "opacity": 1,
-                    "paddingHorizontal": 16,
-                  }
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    Object {
+                      "textAlign": "center",
+                    },
+                    undefined,
+                    undefined,
+                  ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                      false,
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "hsl(134, 61%, 41%)",
-                          "fontSize": 16,
-                        },
-                        Array [
-                          undefined,
-                          false,
-                        ],
-                        Object {
-                          "fontFamily": "Material Design Icons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 36,
-                    "justifyContent": "center",
-                    "opacity": 1,
-                    "paddingHorizontal": 16,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                      false,
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "hsl(354, 70%, 54%)",
-                          "fontSize": 16,
-                        },
-                        Array [
-                          undefined,
-                          false,
-                        ],
-                        Object {
-                          "fontFamily": "Material Design Icons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 36,
-                    "justifyContent": "center",
-                    "opacity": 1,
-                    "paddingHorizontal": 16,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                      false,
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "hsl(45, 100%, 51%)",
-                          "fontSize": 16,
-                        },
-                        Array [
-                          undefined,
-                          false,
-                        ],
-                        Object {
-                          "fontFamily": "Material Design Icons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    肋
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 20,
-                    "justifyContent": "flex-start",
-                    "margin": 4,
-                    "opacity": 1,
-                    "paddingHorizontal": 0,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 14,
-                        "fontWeight": "300",
-                        "letterSpacing": 0.25,
-                      },
-                      Object {
-                        "textAlign": "center",
-                      },
-                      undefined,
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "hsl(211, 100%, 50%)",
-                        },
-                        Object {
-                          "color": "hsl(0, 0%, 0%)",
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
-                      ],
-                    ]
-                  }
-                >
-                  look at sentry
-                </Text>
-              </View>
-            </View>
-          </View>
-          <View
-            onLayout={[Function]}
-            style={null}
-          >
-            <View
-              style={
-                Object {
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 36,
-                    "justifyContent": "center",
-                    "opacity": 1,
-                    "paddingHorizontal": 16,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                      false,
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "hsl(134, 61%, 41%)",
-                          "fontSize": 16,
-                        },
-                        Array [
-                          undefined,
-                          false,
-                        ],
-                        Object {
-                          "fontFamily": "Material Design Icons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 36,
-                    "justifyContent": "center",
-                    "opacity": 1,
-                    "paddingHorizontal": 16,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                      false,
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "hsl(354, 70%, 54%)",
-                          "fontSize": 16,
-                        },
-                        Array [
-                          undefined,
-                          false,
-                        ],
-                        Object {
-                          "fontFamily": "Material Design Icons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 36,
-                    "justifyContent": "center",
-                    "opacity": 1,
-                    "paddingHorizontal": 16,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      undefined,
-                      false,
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "hsl(45, 100%, 51%)",
-                          "fontSize": 16,
-                        },
-                        Array [
-                          undefined,
-                          false,
-                        ],
-                        Object {
-                          "fontFamily": "Material Design Icons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    肋
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
-                    "borderWidth": 1,
-                    "color": "hsl(211, 100%, 50%)",
-                    "flexDirection": "row",
-                    "height": 20,
-                    "justifyContent": "flex-start",
-                    "margin": 4,
-                    "opacity": 1,
-                    "paddingHorizontal": 0,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 14,
-                        "fontWeight": "300",
-                        "letterSpacing": 0.25,
-                      },
-                      Object {
-                        "textAlign": "center",
-                      },
-                      undefined,
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "hsl(211, 100%, 50%)",
-                        },
-                        Object {
-                          "color": "hsl(0, 0%, 0%)",
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
-                      ],
-                    ]
-                  }
-                >
-                  respond to pull requests
-                </Text>
-              </View>
+                steve
+              </Text>
             </View>
           </View>
         </View>
       </RCTScrollView>
       <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "hsl(211, 100%, 50%)",
             "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
+            "height": 48,
+            "justifyContent": "space-around",
           }
         }
       >
-        <Text
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "fontSize": 14,
-                "fontWeight": "600",
-                "letterSpacing": 0.75,
-              },
-              Object {
-                "textAlign": "center",
-              },
-              undefined,
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "hsl(211, 100%, 50%)",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "color": "hsl(211, 100%, 50%)",
+              "flexDirection": "row",
+              "height": 36,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
           }
         >
-          DONE
-        </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+                undefined,
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "hsl(211, 100%, 50%)",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
+              ]
+            }
+          >
+            SIGN UP
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "color": "hsl(211, 100%, 50%)",
+              "flexDirection": "row",
+              "height": 36,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+                undefined,
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "hsl(211, 100%, 50%)",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
+              ]
+            }
+          >
+            LOG IN
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "color": "hsl(211, 100%, 50%)",
+              "flexDirection": "row",
+              "height": 36,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+                undefined,
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "hsl(211, 100%, 50%)",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
+              ]
+            }
+          >
+            DEBUG
+          </Text>
+        </View>
       </View>
     </View>
   </RCTScrollView>

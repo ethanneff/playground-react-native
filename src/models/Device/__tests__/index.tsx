@@ -25,6 +25,7 @@ describe("selectors with no initial state", () => {
   it("selectLandscapeOrientation null", () => {
     const state: RootState = {
       app: {},
+      items: {},
       device: {}
     };
     expect(selectLandscapeOrientation(state)).toBe(false);
@@ -32,6 +33,7 @@ describe("selectors with no initial state", () => {
   it("selectSmallestDimension null", () => {
     const state: RootState = {
       app: {},
+      items: {},
       device: {}
     };
     expect(selectSmallestDimension(state)).toBe(750);
@@ -39,6 +41,7 @@ describe("selectors with no initial state", () => {
   it("selectLargestDimension null", () => {
     const state: RootState = {
       app: {},
+      items: {},
       device: {}
     };
     expect(selectLargestDimension(state)).toBe(1334);
@@ -46,6 +49,7 @@ describe("selectors with no initial state", () => {
   it("selectHeight null", () => {
     const state: RootState = {
       app: {},
+      items: {},
       device: {}
     };
     expect(selectHeight(state)).toBe(1334);
@@ -53,6 +57,7 @@ describe("selectors with no initial state", () => {
   it("selectWidth null", () => {
     const state: RootState = {
       app: {},
+      items: {},
       device: {}
     };
     expect(selectWidth(state)).toBe(750);
@@ -117,6 +122,7 @@ describe("selectors", () => {
   it("selectLandscapeOrientation", () => {
     const state: RootState = {
       app: {},
+      items: {},
       device: {
         windowDimensions: {
           width: 123,
@@ -131,6 +137,7 @@ describe("selectors", () => {
   it("selectLargestDimension", () => {
     const state: RootState = {
       app: {},
+      items: {},
       device: {
         windowDimensions: {
           width: 123,
@@ -145,6 +152,7 @@ describe("selectors", () => {
   it("selectSmallestDimension", () => {
     const state: RootState = {
       app: {},
+      items: {},
       device: {
         windowDimensions: {
           width: 123,
@@ -159,6 +167,7 @@ describe("selectors", () => {
   it("selectHeight", () => {
     const state: RootState = {
       app: {},
+      items: {},
       device: {
         windowDimensions: {
           width: 123,
@@ -173,6 +182,7 @@ describe("selectors", () => {
   it("selectWidth", () => {
     const state: RootState = {
       app: {},
+      items: {},
       device: {
         windowDimensions: {
           width: 123,

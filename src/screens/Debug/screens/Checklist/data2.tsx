@@ -61,7 +61,11 @@ end
 */
 
 type Date = number; // (new Date).getTime()/1000
-type UUID = string; // uuid/v4
+type UserId = string; // uuid/v4
+type ListId = string;
+type ItemId = string;
+type SourceId = string;
+type ActionId = string;
 
 enum ListVisibility {
   Private = "Private",
@@ -80,36 +84,49 @@ export enum ListFrequency {
 }
 
 export interface User {
-  id: UUID;
+  id: UserId;
   firstName: string;
   lastName: string;
   email: string;
-  lists: UUID[];
+  lists: ListId[];
+}
+
+export interface Action {
+  id: ActionId;
+  userId: UserId;
+  listId: ListId;
+  createdAt: Date;
 }
 
 export interface List {
-  userId: UUID;
-  trigger: string;
+  userId: UserId;
+  name: string;
+  description?: string;
+  active: boolean;
   frequency: ListFrequency;
   visibility: ListVisibility;
-  active: boolean;
   createdAt: Date;
   updatedAt: Date;
-  items: UUID[];
+  item: ItemId[];
+  history: ListId[];
+  viewed: ActionId[];
+  liked: ActionId[];
+  copied: ActionId[];
+  modified: ActionId[];
 }
 
 export interface Item {
-  id: UUID;
-  title: string;
-  active: boolean;
+  id: ItemId;
+  name: string;
   description?: string;
-  sources?: UUID[];
+  active: boolean;
+  sources?: SourceId[];
   createdAt: Date;
   updatedAt: Date;
 }
 
 export interface Source {
-  id: UUID;
+  id: SourceId;
   title: string;
   url?: string;
   image?: string;
@@ -124,6 +141,7 @@ export const a = {
     {
       trigger: "accomplish things",
       frequency: ListFrequency.Multiple,
+      history: [],
       items: [
         "Make bold deadlines and commitments",
         "Get out of comfort zone",

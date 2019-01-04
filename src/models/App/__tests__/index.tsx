@@ -6,7 +6,7 @@ import {
   onAppStateChange,
   selectAppStatus
 } from "..";
-import { RootState } from "../../../utils";
+import { RootState } from "../../../models";
 
 describe("device", () => {
   describe("selectors", () => {
@@ -16,6 +16,7 @@ describe("device", () => {
         app: {
           status
         },
+        items: {},
         device: {}
       };
       expect(selectAppStatus(state)).toEqual(status);
