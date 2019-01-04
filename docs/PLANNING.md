@@ -3,7 +3,7 @@
 ## Top 1
 
 - [ ] catch global errors
-- [ ] make redux clean
+- [ ] convert other reduxes to new syntax
 - [ ] use evernote to make example data structure of checklist and actionables
 
 ## Top 3
@@ -48,6 +48,7 @@
 
 ## Done
 
+- [x] make redux clean
 - [x] update dependencies with new redux tools
 - [x] figure out why not releasing
 - [x] get semantic release and changelog working
