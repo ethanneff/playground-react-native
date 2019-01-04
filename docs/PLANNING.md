@@ -4,7 +4,6 @@
 
 - [ ] catch global errors
 - [ ] make redux clean
-- [ ] update dependenices with new redux tools
 - [ ] use evernote to make example data structure of checklist and actionables
 
 ## Top 3
@@ -49,6 +48,7 @@
 
 ## Done
 
+- [x] update dependencies with new redux tools
 - [x] figure out why not releasing
 - [x] get semantic release and changelog working
 - [x] make nav buttons larger

@@ -17,6 +17,9 @@
 | redux                                     | state                             | state management       |
 | react-redux                               | connector                         | state management       |
 | redux-thunk                               | async state                       | state management       |
+| typesafe-actions                          | reduce action boilerplate         | state management       |
+| utility-types                             | nested read only immutability     | state management       |
+| uuid                                      | v4 unique ids for all             | state management       |
 | react-router                              | navigation                        | navigation             |
 | react-router-dom                          | web                               | navigation             |
 | react-router-native                       | ios and android                   | navigation             |
@@ -41,6 +44,7 @@
 | @types/react-router-dom                   |                                   | type definition        |
 | @types/react-router-native                |                                   | type definition        |
 | @types/react-test-renderer                |                                   | type definition        |
+| @types/uuid                               |                                   | type definition        |
 | codecov                                   | code coverage                     | code quality           |
 | prettier                                  | opinionated code format           | code quality           |
 | tslint                                    | type checking lint                | code quality           |
