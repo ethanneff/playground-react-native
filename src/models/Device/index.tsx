@@ -145,7 +145,10 @@ export const selectHeight = (state: RootState) =>
     : state.device.windowDimensions.height;
 
 // reducers
-export function DeviceReducer(state: DeviceState = {}, action: DeviceActions) {
+export const DeviceReducer = (
+  state: DeviceState = {},
+  action: DeviceActions
+) => {
   switch (action.type) {
     case DeviceActionTypes.DEVICE_UPDATE_BATTERY:
       return {
@@ -177,4 +180,4 @@ export function DeviceReducer(state: DeviceState = {}, action: DeviceActions) {
     default:
       return state;
   }
-}
+};
