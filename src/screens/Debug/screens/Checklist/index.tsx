@@ -9,8 +9,8 @@ import {
   createItem,
   Items,
   removeItem,
-  updateItem,
-  toggleActiveItem
+  toggleActiveItem,
+  updateItem
 } from "./Item";
 
 interface StateProps {
@@ -44,7 +44,12 @@ class Component extends React.PureComponent<Props> {
   };
 
   public render() {
-    const { history, items, removeItem, toggleActiveItem } = this.props;
+    const {
+      history,
+      items,
+      removeItem: remove,
+      toggleActiveItem: toggle
+    } = this.props;
 
     return (
       <Screen disableScroll onLeftPress={() => history.goBack()}>
@@ -63,13 +68,13 @@ class Component extends React.PureComponent<Props> {
                 label
                 icon="close-circle"
                 iconColor={Theme.color.danger}
-                onPress={() => removeItem(item.id)}
+                onPress={() => remove(item.id)}
               />
               <Button
                 label
                 iconColor={Theme.color.warning}
                 icon="clock"
-                onPress={() => toggleActiveItem(item.id)}
+                onPress={() => toggle(item.id)}
               />
               <Button
                 label
