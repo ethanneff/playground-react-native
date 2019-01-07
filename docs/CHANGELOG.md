@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.1](https://github.com/ethanneff/example/compare/v1.4.0...v1.4.1) (2019-01-07)
+
+
+### Bug Fixes
+
+* update interaction with checklist ([7c6f393](https://github.com/ethanneff/example/commit/7c6f393))
+* update linting errors with shadow names ([4457be1](https://github.com/ethanneff/example/commit/4457be1))
+
 # [1.4.0](https://github.com/ethanneff/example/compare/v1.3.3...v1.4.0) (2019-01-04)
 
 
