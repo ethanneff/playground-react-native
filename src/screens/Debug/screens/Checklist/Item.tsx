@@ -1,6 +1,6 @@
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { DeepReadonly } from "utility-types";
-import uuidv4 from "uuid/v4";
+import uuid from "uuid/v4";
 import { RootState } from "../../../../models";
 
 // Interfaces
@@ -15,7 +15,10 @@ type Item = DeepReadonly<{
 }>;
 export type Items = DeepReadonly<{ [key: string]: Item }>;
 type ItemAction = ActionType<
-  typeof createItem | typeof removeItem | typeof updateItem
+  | typeof createItem
+  | typeof removeItem
+  | typeof updateItem
+  | typeof toggleActiveItem
 >;
 interface CreateItem {
   name: string;
@@ -28,6 +31,9 @@ type UpdateItem = CreateItem & { id: string };
 export const createItem = createStandardAction("ITEM/CREATE")<CreateItem>();
 export const updateItem = createStandardAction("ITEM/UPDATE")<UpdateItem>();
 export const removeItem = createStandardAction("ITEM/REMOVE")<string>();
+export const toggleActiveItem = createStandardAction("ITEM/TOGGLE_ACTIVE")<
+  string
+>();
 
 // Selectors
 export const selectItem = (state: RootState, id: string) => state.items[id];
@@ -36,7 +42,7 @@ export const selectItem = (state: RootState, id: string) => state.items[id];
 export const ItemReducer = (state: Items = {}, action: ItemAction): Items => {
   switch (action.type) {
     case getType(createItem):
-      const id = uuidv4();
+      const id = uuid();
       return {
         ...state,
         [id]: {
@@ -68,6 +74,18 @@ export const ItemReducer = (state: Items = {}, action: ItemAction): Items => {
         [action.payload]: {
           ...state[action.payload],
           active: false,
+          updatedAt: Date.now()
+        }
+      };
+    case getType(toggleActiveItem):
+      if (!state[action.payload]) {
+        throw new Error("no item to remove");
+      }
+      return {
+        ...state,
+        [action.payload]: {
+          ...state[action.payload],
+          active: !state[action.payload].active,
           updatedAt: Date.now()
         }
       };

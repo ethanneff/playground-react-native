@@ -5,7 +5,13 @@ import { RouteComponentProps } from "react-router";
 import { Button, Screen } from "../../../../components";
 import { RootState } from "../../../../models";
 import { Theme } from "../../../../utils";
-import { createItem, Items, removeItem, updateItem } from "./Item";
+import {
+  createItem,
+  Items,
+  removeItem,
+  updateItem,
+  toggleActiveItem
+} from "./Item";
 
 interface StateProps {
   items: Items;
@@ -15,6 +21,7 @@ interface DispatchProps {
   createItem: typeof createItem;
   updateItem: typeof updateItem;
   removeItem: typeof removeItem;
+  toggleActiveItem: typeof toggleActiveItem;
 }
 
 type Props = RouteComponentProps & StateProps & DispatchProps;
@@ -35,13 +42,9 @@ class Component extends React.PureComponent<Props> {
       name: "123"
     });
   };
-  public removeItem = (id: string) => {
-    const { removeItem: remove } = this.props;
-    remove(id);
-  };
 
   public render() {
-    const { history, items } = this.props;
+    const { history, items, removeItem, toggleActiveItem } = this.props;
 
     return (
       <Screen disableScroll onLeftPress={() => history.goBack()}>
@@ -51,25 +54,28 @@ class Component extends React.PureComponent<Props> {
           renderItem={({ item }) => (
             <View style={{ flexDirection: "row" }}>
               <Button
+                label
                 icon="checkbox-marked-circle"
                 iconColor={Theme.color.success}
                 onPress={() => undefined}
               />
               <Button
+                label
                 icon="close-circle"
                 iconColor={Theme.color.danger}
-                onPress={() => this.removeItem(item.id)}
+                onPress={() => removeItem(item.id)}
               />
               <Button
+                label
                 iconColor={Theme.color.warning}
                 icon="clock"
-                onPress={() => undefined}
+                onPress={() => toggleActiveItem(item.id)}
               />
               <Button
                 label
                 neutral={item.active}
                 lowercase
-                title={item.name}
+                title={item.id}
                 onPress={() => undefined}
               />
             </View>
@@ -91,6 +97,7 @@ export const Checklist = connect(
   {
     updateItem,
     createItem,
-    removeItem
+    removeItem,
+    toggleActiveItem
   }
 )(Component);
