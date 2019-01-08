@@ -1265,10 +1265,10 @@
     "@types/prop-types" "*"
     "@types/react" "*"
 
-"@types/react-native@0.57.25":
-  version "0.57.25"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.25.tgz#20041561e5c5d6b4a0ed563be37ec3b12d31a8ae"
-  integrity sha512-rCqzVLo45p9nh28a/6nQ/9Td3k2IvOgPc6xVAF9MIdGJAD1ijqpIn6eyhy0NZjvIEdjdO83eBx0+doOmN8Jk0g==
+"@types/react-native@0.57.26":
+  version "0.57.26"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.26.tgz#d0a737d8a2b201d0aac84284c6a001793debc166"
+  integrity sha512-MX+JCT2xwpkanLNjYb5V/TKJE0pj5HHEpgseiCNsxm9txjUdg5X59LZM3CHY1hn53qSssAEQYZYfXHjzRmkFQQ==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -13733,10 +13733,10 @@ utila@^0.4.0, utila@~0.4:
   resolved "https://registry.yarnpkg.com/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
   integrity sha1-ihagXURWV6Oupe7MWxKk+lN5dyw=
 
-utility-types@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/utility-types/-/utility-types-3.2.0.tgz#e0ce64cc278768f0e3230a17e9c22228df099cc8"
-  integrity sha512-pg3spWUFl9NjKuJRfFXvPSBVBsMFGyDujf95HkRGxYa3JoD6bqabcL48FeWjbFdnumDLEh3Lr18U9P1IXL0yXA==
+utility-types@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/utility-types/-/utility-types-3.2.1.tgz#2b0e3086cf347f9d8f8a6dee11a14ee61f70a193"
+  integrity sha512-8XgLAZMb35evcBSF0tsfX3bRqBww+4IORKVi8Z/DK214guYbu7jPyE8zaNLNhfygcoKTtH9cp9IlMStCoOZeLA==
 
 utils-merge@1.0.1:
   version "1.0.1"
