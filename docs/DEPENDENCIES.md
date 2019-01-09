@@ -20,6 +20,7 @@
 | typesafe-actions                          | reduce action boilerplate         | state management       |
 | utility-types                             | nested read only immutability     | state management       |
 | uuid                                      | v4 unique ids for all             | state management       |
+| reselect                                  | memoization reads                 | state management       |
 | react-router                              | navigation                        | navigation             |
 | react-router-dom                          | web                               | navigation             |
 | react-router-native                       | ios and android                   | navigation             |
