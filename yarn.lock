@@ -1265,10 +1265,10 @@
     "@types/prop-types" "*"
     "@types/react" "*"
 
-"@types/react-native@0.57.26":
-  version "0.57.26"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.26.tgz#d0a737d8a2b201d0aac84284c6a001793debc166"
-  integrity sha512-MX+JCT2xwpkanLNjYb5V/TKJE0pj5HHEpgseiCNsxm9txjUdg5X59LZM3CHY1hn53qSssAEQYZYfXHjzRmkFQQ==
+"@types/react-native@0.57.27":
+  version "0.57.27"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.27.tgz#d12a66836f330bf3b6364a44f662b92660170ff4"
+  integrity sha512-uUPwAogiUXeMGoz01RgFLmsZ1wisumMvxI+2VOIspG4sVzg/+jccvgCb4OksnJSLBbTBjtskBYG+yz6iXAbpDg==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -13378,10 +13378,10 @@ tslint-config-prettier@1.17.0:
   resolved "https://registry.yarnpkg.com/tslint-config-prettier/-/tslint-config-prettier-1.17.0.tgz#946ed6117f98f3659a65848279156d87628c33dc"
   integrity sha512-NKWNkThwqE4Snn4Cm6SZB7lV5RMDDFsBwz6fWUkTxOKGjMx8ycOHnjIbhn7dZd5XmssW3CwqUjlANR6EhP9YQw==
 
-tslint@5.12.0:
-  version "5.12.0"
-  resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.12.0.tgz#47f2dba291ed3d580752d109866fb640768fca36"
-  integrity sha512-CKEcH1MHUBhoV43SA/Jmy1l24HJJgI0eyLbBNSRyFlsQvb9v6Zdq+Nz2vEOH00nC5SUx4SneJ59PZUS/ARcokQ==
+tslint@5.12.1:
+  version "5.12.1"
+  resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.12.1.tgz#8cec9d454cf8a1de9b0a26d7bdbad6de362e52c1"
+  integrity sha512-sfodBHOucFg6egff8d1BvuofoOQ/nOeYNfbp7LDlKBcLNrL3lmS5zoiDGyOMdT7YsEXAwWpTdAHwOGOc8eRZAw==
   dependencies:
     babel-code-frame "^6.22.0"
     builtin-modules "^1.1.1"
