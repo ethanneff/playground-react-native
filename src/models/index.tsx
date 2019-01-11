@@ -8,6 +8,7 @@ import {
   Middleware
 } from "redux";
 import thunk from "redux-thunk";
+import { DeepReadonly } from "utility-types";
 import { AppReducer, AppState, DeviceReducer, DeviceState } from ".";
 import { ItemReducer, Items } from "../screens/Debug/screens/Checklist/Item";
 
@@ -16,11 +17,11 @@ export * from "./App";
 export * from "./Device";
 
 // interfaces
-export interface RootState {
+export type RootState = DeepReadonly<{
   app: AppState;
   device: DeviceState;
   items: Items;
-}
+}>;
 
 // reducers
 const reducers = combineReducers<RootState>({

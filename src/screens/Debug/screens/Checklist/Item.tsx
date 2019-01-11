@@ -1,19 +1,23 @@
+import { createSelector } from "reselect";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { DeepReadonly } from "utility-types";
 import uuid from "uuid/v4";
 import { RootState } from "../../../../models";
 
 // Interfaces
-type Item = DeepReadonly<{
+export type Item = DeepReadonly<{
   id: string;
   name: string;
   description?: string;
   active: boolean;
+  userId: string;
   sources?: string[];
+  order?: number;
   createdAt: number;
   updatedAt: number;
 }>;
 export type Items = DeepReadonly<{ [key: string]: Item }>;
+export type ItemsList = DeepReadonly<Item[]>;
 type ItemAction = ActionType<
   | typeof createItem
   | typeof removeItem
@@ -35,22 +39,50 @@ export const toggleActiveItem = createStandardAction("ITEM/TOGGLE_ACTIVE")<
   string
 >();
 
+// Indexes
+export const indexByCreatedAt = (rows: Items) =>
+  Object.values(rows).reduce(
+    (index: any, row) => ((index[row.createdAt] = row.id), index),
+    {}
+  );
+export const indexByUserId = (rows: Items) =>
+  Object.values(rows).reduce(
+    (index: any, row) => (
+      (index[row.userId] = row.hasOwnProperty("userId")
+        ? [...index[row.userId], row.id]
+        : [row.id]),
+      index
+    ),
+    {}
+  );
+
 // Selectors
-export const selectItem = (state: RootState, id: string) => state.items[id];
+export const selectItems = (state: RootState): Items => state.items;
+export const selectItemsFilterByActive = createSelector(
+  [selectItems],
+  items => Object.values(items).filter(item => item.active)
+);
+export const selectItemsByCreatedAt = createSelector(
+  [selectItems],
+  items => Object.values(items).sort((a, b) => a.createdAt - b.createdAt)
+);
 
 // Reducer
 export const ItemReducer = (state: Items = {}, action: ItemAction): Items => {
   switch (action.type) {
     case getType(createItem):
       const id = uuid();
+      const timestamp = Date.now();
       return {
         ...state,
         [id]: {
           ...action.payload,
           id,
+          userId: "1",
           active: true,
-          updatedAt: Date.now(),
-          createdAt: Date.now()
+          order: timestamp,
+          updatedAt: timestamp,
+          createdAt: timestamp
         }
       };
     case getType(updateItem):

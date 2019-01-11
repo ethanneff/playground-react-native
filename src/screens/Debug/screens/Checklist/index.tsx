@@ -7,14 +7,15 @@ import { RootState } from "../../../../models";
 import { Theme } from "../../../../utils";
 import {
   createItem,
-  Items,
+  ItemsList,
   removeItem,
+  selectItemsByCreatedAt,
   toggleActiveItem,
   updateItem
 } from "./Item";
 
 interface StateProps {
-  items: Items;
+  items: ItemsList;
 }
 
 interface DispatchProps {
@@ -55,7 +56,7 @@ class Component extends React.PureComponent<Props> {
       <Screen disableScroll onLeftPress={() => history.goBack()}>
         <FlatList
           keyExtractor={item => item.id}
-          data={Object.values(items)}
+          data={items}
           renderItem={({ item }) => (
             <View style={{ flexDirection: "row" }}>
               <Button
@@ -94,7 +95,7 @@ class Component extends React.PureComponent<Props> {
 }
 
 const mapStateToProps = (state: RootState) => ({
-  items: state.items
+  items: selectItemsByCreatedAt(state)
 });
 
 export const Checklist = connect(
