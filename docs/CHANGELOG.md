@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/ethanneff/example/compare/v1.5.0...v1.5.1) (2019-01-11)
+
+
+### Bug Fixes
+
+* add reselect to prevent list from reordering on update ([a940c90](https://github.com/ethanneff/example/commit/a940c90))
+
 # [1.5.0](https://github.com/ethanneff/example/compare/v1.4.1...v1.5.0) (2019-01-09)
 
 
