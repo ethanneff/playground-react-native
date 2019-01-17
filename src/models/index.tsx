@@ -9,8 +9,17 @@ import {
 } from "redux";
 import thunk from "redux-thunk";
 import { DeepReadonly } from "utility-types";
-import { AppReducer, AppState, DeviceReducer, DeviceState } from ".";
-import { ItemReducer, Items } from "../screens/Debug/screens/Checklist/Item";
+import { appReducer, AppState, deviceReducer, DeviceState } from ".";
+import {
+  ItemActions,
+  itemReducer,
+  Items
+} from "../screens/Debug/screens/Checklist/Item";
+import {
+  ListActions,
+  listReducer,
+  Lists
+} from "../screens/Debug/screens/Checklist/List";
 
 // models
 export * from "./App";
@@ -21,14 +30,19 @@ export type RootState = DeepReadonly<{
   app: AppState;
   device: DeviceState;
   items: Items;
+  lists: Lists;
 }>;
 
 // reducers
 const reducers = combineReducers<RootState>({
-  app: AppReducer,
-  device: DeviceReducer,
-  items: ItemReducer
+  app: appReducer,
+  device: deviceReducer,
+  items: itemReducer,
+  lists: listReducer
 });
+
+// actions
+export type RootAction = ListActions | ItemActions;
 
 // constants
 const middlewares: Middleware[] = [thunk];
