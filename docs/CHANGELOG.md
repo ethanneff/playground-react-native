@@ -1,5 +1,13 @@
 # Changelog
 
+# [1.6.0](https://github.com/ethanneff/example/compare/v1.5.1...v1.6.0) (2019-01-17)
+
+
+### Features
+
+* add list redux ([20df64e](https://github.com/ethanneff/example/commit/20df64e))
+* add list redux ([228409d](https://github.com/ethanneff/example/commit/228409d))
+
 ## [1.5.1](https://github.com/ethanneff/example/compare/v1.5.0...v1.5.1) (2019-01-11)
 
 
