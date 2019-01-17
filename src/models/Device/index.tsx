@@ -145,7 +145,7 @@ export const selectHeight = (state: RootState) =>
     : state.device.windowDimensions.height;
 
 // reducers
-export const DeviceReducer = (
+export const deviceReducer = (
   state: DeviceState = {},
   action: DeviceActions
 ) => {

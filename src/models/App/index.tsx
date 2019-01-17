@@ -43,7 +43,7 @@ export const onAppStateChange = (payload: AppStateStatus) => ({
 export const selectAppStatus = (state: RootState) => state.app.status;
 
 // reducers
-export function AppReducer(state: AppState = {}, action: AppActions): AppState {
+export function appReducer(state: AppState = {}, action: AppActions): AppState {
   switch (action.type) {
     case AppActionTypes.APP_LOAD:
       return {

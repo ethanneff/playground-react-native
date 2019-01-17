@@ -5,7 +5,7 @@ import {
 } from "react-native";
 import {
   DeviceActionTypes,
-  DeviceReducer,
+  deviceReducer,
   DimensionsProps,
   onDeviceLoad,
   onDeviceUpdateBattery,
@@ -26,6 +26,7 @@ describe("selectors with no initial state", () => {
     const state: RootState = {
       app: {},
       items: {},
+      lists: {},
       device: {}
     };
     expect(selectLandscapeOrientation(state)).toBe(false);
@@ -34,6 +35,7 @@ describe("selectors with no initial state", () => {
     const state: RootState = {
       app: {},
       items: {},
+      lists: {},
       device: {}
     };
     expect(selectSmallestDimension(state)).toBe(750);
@@ -42,6 +44,7 @@ describe("selectors with no initial state", () => {
     const state: RootState = {
       app: {},
       items: {},
+      lists: {},
       device: {}
     };
     expect(selectLargestDimension(state)).toBe(1334);
@@ -50,6 +53,7 @@ describe("selectors with no initial state", () => {
     const state: RootState = {
       app: {},
       items: {},
+      lists: {},
       device: {}
     };
     expect(selectHeight(state)).toBe(1334);
@@ -58,6 +62,7 @@ describe("selectors with no initial state", () => {
     const state: RootState = {
       app: {},
       items: {},
+      lists: {},
       device: {}
     };
     expect(selectWidth(state)).toBe(750);
@@ -123,6 +128,7 @@ describe("selectors", () => {
     const state: RootState = {
       app: {},
       items: {},
+      lists: {},
       device: {
         windowDimensions: {
           width: 123,
@@ -138,6 +144,7 @@ describe("selectors", () => {
     const state: RootState = {
       app: {},
       items: {},
+      lists: {},
       device: {
         windowDimensions: {
           width: 123,
@@ -153,6 +160,7 @@ describe("selectors", () => {
     const state: RootState = {
       app: {},
       items: {},
+      lists: {},
       device: {
         windowDimensions: {
           width: 123,
@@ -168,6 +176,7 @@ describe("selectors", () => {
     const state: RootState = {
       app: {},
       items: {},
+      lists: {},
       device: {
         windowDimensions: {
           width: 123,
@@ -182,6 +191,7 @@ describe("selectors", () => {
   it("selectWidth", () => {
     const state: RootState = {
       app: {},
+      lists: {},
       items: {},
       device: {
         windowDimensions: {
@@ -200,7 +210,7 @@ describe("reducer", () => {
   it("DEVICE_UPDATE_BATTERY", () => {
     const value = 22;
     expect(
-      DeviceReducer(
+      deviceReducer(
         {},
         { type: DeviceActionTypes.DEVICE_UPDATE_BATTERY, payload: value }
       )
@@ -209,7 +219,7 @@ describe("reducer", () => {
   it("DEVICE_UPDATE_FINGERPRINT", () => {
     const value = true;
     expect(
-      DeviceReducer(
+      deviceReducer(
         {},
         { type: DeviceActionTypes.DEVICE_UPDATE_FINGERPRINT, payload: value }
       )
@@ -239,7 +249,7 @@ describe("reducer", () => {
       lastUpdateTime: 123
     };
     expect(
-      DeviceReducer({}, { type: DeviceActionTypes.DEVICE_LOAD, payload: data })
+      deviceReducer({}, { type: DeviceActionTypes.DEVICE_LOAD, payload: data })
     ).toEqual({
       brand: "string",
       deviceCountry: "string",
@@ -269,7 +279,7 @@ describe("reducer", () => {
       effectiveType: "2g"
     };
     expect(
-      DeviceReducer(
+      deviceReducer(
         {},
         { type: DeviceActionTypes.DEVICE_UPDATE_NETWORK, payload: value }
       )
@@ -291,7 +301,7 @@ describe("reducer", () => {
       }
     };
     expect(
-      DeviceReducer(
+      deviceReducer(
         {},
         { type: DeviceActionTypes.DEVICE_UPDATE_DIMENSION, payload: data }
       )

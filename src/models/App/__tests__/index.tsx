@@ -1,7 +1,7 @@
 import { AppStateStatus } from "react-native";
 import {
   AppActionTypes,
-  AppReducer,
+  appReducer,
   onAppLoad,
   onAppStateChange,
   selectAppStatus
@@ -16,6 +16,7 @@ describe("device", () => {
         app: {
           status
         },
+        lists: {},
         items: {},
         device: {}
       };
@@ -46,7 +47,7 @@ describe("device", () => {
   describe("reducer", () => {
     it("APP_UPDATE_STATUS", () => {
       expect(
-        AppReducer(undefined, {
+        appReducer(undefined, {
           type: AppActionTypes.APP_UPDATE_STATUS,
           payload: "active"
         })
@@ -55,7 +56,7 @@ describe("device", () => {
 
     it("APP_LOAD", () => {
       expect(
-        AppReducer(
+        appReducer(
           {
             status: "active"
           },
