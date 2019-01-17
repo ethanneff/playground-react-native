@@ -2,7 +2,7 @@ import { createSelector } from "reselect";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { DeepReadonly } from "utility-types";
 import uuid from "uuid/v4";
-import { RootState } from "../../../../models";
+import { RootAction, RootState } from "../../../../models";
 
 // Interfaces
 export type Item = DeepReadonly<{
@@ -17,8 +17,8 @@ export type Item = DeepReadonly<{
   updatedAt: number;
 }>;
 export type Items = DeepReadonly<{ [key: string]: Item }>;
-export type ItemsList = DeepReadonly<Item[]>;
-type ItemAction = ActionType<
+export type ItemsArray = DeepReadonly<Item[]>;
+export type ItemActions = ActionType<
   | typeof createItem
   | typeof removeItem
   | typeof updateItem
@@ -68,7 +68,7 @@ export const selectItemsByCreatedAt = createSelector(
 );
 
 // Reducer
-export const ItemReducer = (state: Items = {}, action: ItemAction): Items => {
+export const itemReducer = (state: Items = {}, action: RootAction): Items => {
   switch (action.type) {
     case getType(createItem):
       const id = uuid();

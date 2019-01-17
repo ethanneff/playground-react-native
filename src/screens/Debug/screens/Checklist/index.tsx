@@ -7,7 +7,7 @@ import { RootState } from "../../../../models";
 import { Theme } from "../../../../utils";
 import {
   createItem,
-  ItemsList,
+  ItemsArray,
   removeItem,
   selectItemsByCreatedAt,
   toggleActiveItem,
@@ -15,7 +15,7 @@ import {
 } from "./Item";
 
 interface StateProps {
-  items: ItemsList;
+  items: ItemsArray;
 }
 
 interface DispatchProps {
@@ -87,8 +87,7 @@ class Component extends React.PureComponent<Props> {
             </View>
           )}
         />
-        <Button title="create" onPress={this.createItem} />
-        <Button title="update" onPress={this.updateItem} />
+        <Button fab contained icon="plus" onPress={this.createItem} />
       </Screen>
     );
   }
