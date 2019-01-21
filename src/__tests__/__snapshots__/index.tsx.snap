@@ -139,30 +139,22 @@ exports[`Launcher Container renders correctly 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "transparent",
+            "alignSelf": "flex-start",
+            "backgroundColor": "hsl(211, 100%, 50%)",
             "borderColor": "transparent",
-            "borderRadius": 4,
+            "borderRadius": 32,
             "borderWidth": 1,
-            "color": "hsl(211, 100%, 50%)",
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 16,
             "paddingHorizontal": 16,
           }
         }
       >
-        <Text
+        <View
           style={
             Array [
-              Object {
-                "fontSize": 14,
-                "fontWeight": "600",
-                "letterSpacing": 0.75,
-              },
-              Object {
-                "textAlign": "center",
-              },
               undefined,
               Array [
                 Object {
@@ -172,70 +164,52 @@ exports[`Launcher Container renders correctly 1`] = `
                 undefined,
                 undefined,
                 undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
-            ]
-          }
-        >
-          CREATE
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "hsl(211, 100%, 50%)",
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 14,
-                "fontWeight": "600",
-                "letterSpacing": 0.75,
-              },
-              Object {
-                "textAlign": "center",
-              },
-              undefined,
-              Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "color": "hsl(211, 100%, 50%)",
+                  "color": "hsl(0, 100%, 100%)",
                 },
                 undefined,
                 undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
               ],
             ]
           }
         >
-          UPDATE
-        </Text>
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "hsl(210, 10%, 23%)",
+                  "fontSize": 16,
+                },
+                Array [
+                  undefined,
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "hsl(211, 100%, 50%)",
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    Object {
+                      "color": "hsl(0, 100%, 100%)",
+                    },
+                    undefined,
+                    undefined,
+                  ],
+                ],
+                Object {
+                  "fontFamily": undefined,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
     </View>
   </RCTScrollView>
