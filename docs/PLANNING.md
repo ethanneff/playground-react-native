@@ -49,6 +49,7 @@
 
 ## Done
 
+- [x] validate commit messages work
 - [x] make redux clean
 - [x] update dependencies with new redux tools
 - [x] figure out why not releasing
