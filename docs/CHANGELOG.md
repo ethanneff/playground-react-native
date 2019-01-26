@@ -1,5 +1,17 @@
 # Changelog
 
+# [1.7.0](https://github.com/ethanneff/example/compare/v1.6.0...v1.7.0) (2019-01-26)
+
+
+### Bug Fixes
+
+* revert jest update to fix web ([b623a4b](https://github.com/ethanneff/example/commit/b623a4b))
+
+
+### Features
+
+* add firebase ([a12c228](https://github.com/ethanneff/example/commit/a12c228))
+
 # [1.6.0](https://github.com/ethanneff/example/compare/v1.5.1...v1.6.0) (2019-01-17)
 
 
