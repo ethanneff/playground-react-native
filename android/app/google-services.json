@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "391302179681",
+    "firebase_url": "https://example-d79fd.firebaseio.com",
+    "project_id": "example-d79fd",
+    "storage_bucket": "example-d79fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391302179681:android:d3009b00b0ca2ce6",
+        "android_client_info": {
+          "package_name": "com.eneff.app.example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "391302179681-pfvp84i5b9krsb9i6b521kn366i4n7kn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfZTZOCe0RCjNe7wPQDWTwjKST1i-jDh8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

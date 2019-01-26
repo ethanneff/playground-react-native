@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-firebase')
     implementation project(':react-native-vector-icons')
     implementation project(':appcenter-crashes')
     implementation project(':appcenter-analytics')
@@ -152,3 +153,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+
+apply plugin: 'com.google.gms.google-services'

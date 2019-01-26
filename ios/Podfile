@@ -1,9 +1,11 @@
 platform :ios, '9.0'
 
 target 'example' do
-  # Pods for AppCenter
-  pod 'AppCenter/Crashes', '~> 1.10.0'
-  pod 'AppCenter/Analytics', '~> 1.10.0'
-  pod 'AppCenterReactNativeShared', '~> 1.11.0'
+  pod 'AppCenter/Crashes', '~> 1.13.0'
+  pod 'AppCenter/Analytics', '~> 1.13.0'
+  pod 'AppCenterReactNativeShared', '~> 1.12.0'
+  pod 'Firebase/Core', '~> 5.15.0'
+  pod 'Firebase/Performance', '~> 5.15.0'
+  pod 'Firebase/Auth', '~> 5.15.0'
   platform :ios, '9.0'
 end
