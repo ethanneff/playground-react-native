@@ -26,12 +26,14 @@ interface Props {
 }
 
 export class Badge extends React.PureComponent<Props> {
-  public badgeLimit = "!";
-  public maxBadgeNumber = 99;
+  private badgeLimit = "!";
+  private maxBadgeNumber = 99;
   public render() {
     const { badge } = this.props;
     const num = badge > this.maxBadgeNumber ? this.badgeLimit : String(badge);
-    if (badge <= 0) { return null; }
+    if (badge <= 0) {
+      return null;
+    }
     return (
       <View style={styles.badgeContainer}>
         <Text center style={styles.badgeText} title={num} />

@@ -16,7 +16,7 @@ interface Props {
 }
 
 export class Clear extends React.PureComponent<Props> {
-  public icon = "close-circle";
+  private icon = "close-circle";
   public render() {
     const { hidden, onPress } = this.props;
     return (

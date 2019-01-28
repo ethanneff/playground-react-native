@@ -2,7 +2,7 @@ import * as React from "react";
 import User from "../../models/User"; // TODO: make models export not export default
 
 export class Auth extends React.PureComponent<any> {
-  public fallback = "/login";
+  private fallback = "/login";
   public render() {
     const {
       component: Component,

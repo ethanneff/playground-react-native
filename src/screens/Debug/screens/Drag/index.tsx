@@ -31,8 +31,8 @@ interface StateProps {
 type Props = StateProps & RouteComponentProps;
 
 class Component extends React.PureComponent<Props> {
-  public ballPosition: Animated.ValueXY;
-  public panGesture: PanResponderInstance;
+  private ballPosition: Animated.ValueXY;
+  private panGesture: PanResponderInstance;
 
   constructor(props: Props) {
     super(props);

@@ -31,19 +31,12 @@ interface StateProps {
 type Props = StateProps & RouteComponentProps;
 
 class Component extends React.PureComponent<Props> {
-  public ballPosition: Animated.ValueXY;
+  private ballPosition: Animated.ValueXY;
 
   constructor(props: Props) {
     super(props);
     const { width, height } = this.props;
     this.ballPosition = new Animated.ValueXY({ x: width / 2, y: height / 2 });
-  }
-
-  public animate(dx: number, dy: number) {
-    const { width, height } = this.props;
-    Animated.spring(this.ballPosition, {
-      toValue: { x: width * dx, y: height * dy }
-    }).start();
   }
 
   public render() {
@@ -60,6 +53,13 @@ class Component extends React.PureComponent<Props> {
         </View>
       </Screen>
     );
+  }
+
+  private animate(dx: number, dy: number) {
+    const { width, height } = this.props;
+    Animated.spring(this.ballPosition, {
+      toValue: { x: width * dx, y: height * dy }
+    }).start();
   }
 }
 

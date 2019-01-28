@@ -22,7 +22,7 @@ interface Props {
 }
 
 export class Title extends React.PureComponent<Props> {
-  public optionalText = " - Optional";
+  private optionalText = " - Optional";
   public render() {
     const { title, optional, onPress } = this.props;
     const stylesOptional = [styles.title, styles.optional];

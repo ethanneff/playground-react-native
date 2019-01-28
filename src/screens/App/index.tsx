@@ -41,30 +41,6 @@ class AppComponent extends React.Component<Props> {
     this.disableListeners();
   }
 
-  public enableListeners() {
-    Dimensions.addEventListener("change", this.onDimensionChange);
-    NetInfo.addEventListener("connectionChange", this.onNetworkChange);
-    AppState.addEventListener("change", this.onAppStateChange);
-  }
-
-  public disableListeners() {
-    NetInfo.removeEventListener("connectionChange", this.onNetworkChange);
-    AppState.removeEventListener("change", this.onAppStateChange);
-    Dimensions.removeEventListener("change", this.onDimensionChange);
-  }
-
-  public onNetworkChange = (change: ConnectionType | ConnectionInfo) => {
-    this.props.onNetworkChange(change);
-  };
-
-  public onDimensionChange = (change: DimensionsProps) => {
-    this.props.onDimensionChange(change);
-  };
-
-  public onAppStateChange = (change: AppStateStatus) => {
-    this.props.onAppStateChange(change);
-  };
-
   public render() {
     return (
       <Router>
@@ -78,6 +54,30 @@ class AppComponent extends React.Component<Props> {
       </Router>
     );
   }
+
+  private enableListeners() {
+    Dimensions.addEventListener("change", this.onDimensionChange);
+    NetInfo.addEventListener("connectionChange", this.onNetworkChange);
+    AppState.addEventListener("change", this.onAppStateChange);
+  }
+
+  private disableListeners() {
+    NetInfo.removeEventListener("connectionChange", this.onNetworkChange);
+    AppState.removeEventListener("change", this.onAppStateChange);
+    Dimensions.removeEventListener("change", this.onDimensionChange);
+  }
+
+  private onNetworkChange = (change: ConnectionType | ConnectionInfo) => {
+    this.props.onNetworkChange(change);
+  };
+
+  private onDimensionChange = (change: DimensionsProps) => {
+    this.props.onDimensionChange(change);
+  };
+
+  private onAppStateChange = (change: AppStateStatus) => {
+    this.props.onAppStateChange(change);
+  };
 }
 
 export const App = connect(

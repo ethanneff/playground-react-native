@@ -72,30 +72,10 @@ export enum ReturnKeyType {
 }
 
 export class TextInput extends React.PureComponent<Props, State> {
-  public textInput?: Original;
   public state = {
     focus: false
   };
-
-  public updateFocus = (focus: boolean) => {
-    this.setState({ focus });
-  };
-
-  public focusOnInput = () => {
-    if (!this.textInput) {
-      return;
-    }
-    this.textInput.focus();
-  };
-
-  public textClear = () => {
-    const { onChangeText } = this.props;
-    if (!this.textInput) {
-      return;
-    }
-    this.textInput.clear();
-    onChangeText("");
-  };
+  private textInput?: Original;
 
   public render() {
     const {
@@ -157,4 +137,24 @@ export class TextInput extends React.PureComponent<Props, State> {
       </>
     );
   }
+
+  private updateFocus = (focus: boolean) => {
+    this.setState({ focus });
+  };
+
+  private focusOnInput = () => {
+    if (!this.textInput) {
+      return;
+    }
+    this.textInput.focus();
+  };
+
+  private textClear = () => {
+    const { onChangeText } = this.props;
+    if (!this.textInput) {
+      return;
+    }
+    this.textInput.clear();
+    onChangeText("");
+  };
 }

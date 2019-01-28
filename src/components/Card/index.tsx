@@ -26,7 +26,7 @@ interface Props {
 }
 
 export class Card extends React.PureComponent<Props> {
-  public touchOpacity = 0.3;
+  private touchOpacity = 0.3;
   public render() {
     const { style, children, onPress } = this.props;
     return (

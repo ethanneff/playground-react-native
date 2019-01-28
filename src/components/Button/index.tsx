@@ -110,22 +110,6 @@ interface Props {
 }
 
 export class Button extends React.PureComponent<Props> {
-  public getShape() {
-    const { contained, outlined, fab, text } = this.props;
-    if (contained) {
-      return styles.containedBody;
-    }
-    if (outlined) {
-      return styles.outlined;
-    }
-    if (fab) {
-      return styles.fab;
-    }
-    if (text) {
-      return styles.text;
-    }
-    return styles.text;
-  }
 
   public render() {
     const {
@@ -191,5 +175,21 @@ export class Button extends React.PureComponent<Props> {
         <Text center button={!lowercase} title={title} style={textStyleGroup} />
       </TouchableOpacity>
     );
+  }
+  private getShape() {
+    const { contained, outlined, fab, text } = this.props;
+    if (contained) {
+      return styles.containedBody;
+    }
+    if (outlined) {
+      return styles.outlined;
+    }
+    if (fab) {
+      return styles.fab;
+    }
+    if (text) {
+      return styles.text;
+    }
+    return styles.text;
   }
 }

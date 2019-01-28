@@ -7,7 +7,7 @@ interface Props {
 }
 
 export class Error extends React.PureComponent<Props> {
-  public icon = "alert-circle";
+  private icon = "alert-circle";
   public render() {
     const { error, onPress } = this.props;
     const icon = error && this.icon;

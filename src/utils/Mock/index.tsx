@@ -7,8 +7,8 @@ interface Props {
 }
 
 export class MockProviderAndRouter extends React.PureComponent<Props> {
-  public mock = jest.fn();
-  public history = {
+  private mock = jest.fn();
+  private history = {
     push: this.mock
   };
   public render() {
