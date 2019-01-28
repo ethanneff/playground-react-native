@@ -74,13 +74,13 @@ interface State {
 type Props = RouteComponentProps;
 
 export class SearchBar extends React.PureComponent<Props, State> {
+  public iconSearch = "magnify";
   public state: State = {
     input: "",
     iconName: this.iconSearch,
     animation: new Animated.Value(0)
   };
   private iconBack = "arrow-left";
-  private iconSearch = "magnify";
   private textInputPlaceHolder = "Search";
   private animationDuration = 400;
   private translateIcon = this.state.animation.interpolate({
