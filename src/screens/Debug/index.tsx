@@ -269,7 +269,7 @@ import {
 type Props = RouteComponentProps;
 
 export class Debug extends React.PureComponent<Props> {
-  public screens: any = {
+  private screens: any = {
     Ball,
     Drag,
     Cards,
@@ -283,7 +283,16 @@ export class Debug extends React.PureComponent<Props> {
     Checklist
   };
 
-  public generateRoutes = () => {
+  public render() {
+    return (
+      <Switch>
+        {this.generateRoutes()}
+        <Route component={this.generateHome()} />
+      </Switch>
+    );
+  }
+
+  private generateRoutes = () => {
     const { match } = this.props;
     return Object.keys(this.screens).map((screen: string) => (
       <Route
@@ -294,14 +303,14 @@ export class Debug extends React.PureComponent<Props> {
     ));
   };
 
-  public generateLinks = () => {
+  private generateLinks = () => {
     const { match } = this.props;
     return Object.keys(this.screens).map((screen: string) => (
       <Link key={screen} to={`${match.path}/${screen}`} title={screen} />
     ));
   };
 
-  public generateHome = () => {
+  private generateHome = () => {
     const { history } = this.props;
     return () => (
       <Screen onLeftPress={() => history.goBack()}>
@@ -309,13 +318,4 @@ export class Debug extends React.PureComponent<Props> {
       </Screen>
     );
   };
-
-  public render() {
-    return (
-      <Switch>
-        {this.generateRoutes()}
-        <Route component={this.generateHome()} />
-      </Switch>
-    );
-  }
 }

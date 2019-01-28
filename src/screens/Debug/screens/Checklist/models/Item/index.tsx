@@ -2,7 +2,7 @@ import { createSelector } from "reselect";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { DeepReadonly } from "utility-types";
 import uuid from "uuid/v4";
-import { RootAction, RootState } from "../../../../models";
+import { RootAction, RootState } from "../../../../../../models";
 
 // Interfaces
 export type Item = DeepReadonly<{
@@ -40,12 +40,12 @@ export const toggleActiveItem = createStandardAction("ITEM/TOGGLE_ACTIVE")<
 >();
 
 // Indexes
-export const indexByCreatedAt = (rows: Items) =>
+export const indexItemsByCreatedAt = (rows: Items): Items =>
   Object.values(rows).reduce(
     (index: any, row) => ((index[row.createdAt] = row.id), index),
     {}
   );
-export const indexByUserId = (rows: Items) =>
+export const indexItemsByUserId = (rows: Items): Items =>
   Object.values(rows).reduce(
     (index: any, row) => (
       (index[row.userId] = row.hasOwnProperty("userId")
@@ -86,9 +86,6 @@ export const itemReducer = (state: Items = {}, action: RootAction): Items => {
         }
       };
     case getType(updateItem):
-      if (!state[action.payload.id]) {
-        throw new Error("no item to update");
-      }
       return {
         ...state,
         [action.payload.id]: {
@@ -98,9 +95,6 @@ export const itemReducer = (state: Items = {}, action: RootAction): Items => {
         }
       };
     case getType(removeItem):
-      if (!state[action.payload]) {
-        throw new Error("no item to remove");
-      }
       return {
         ...state,
         [action.payload]: {
@@ -110,9 +104,6 @@ export const itemReducer = (state: Items = {}, action: RootAction): Items => {
         }
       };
     case getType(toggleActiveItem):
-      if (!state[action.payload]) {
-        throw new Error("no item to remove");
-      }
       return {
         ...state,
         [action.payload]: {

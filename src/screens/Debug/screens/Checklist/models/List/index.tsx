@@ -1,7 +1,7 @@
 import { createSelector } from "reselect";
 import { ActionType, createStandardAction } from "typesafe-actions";
 import { DeepReadonly } from "utility-types";
-import { RootAction, RootState } from "../../../../models";
+import { RootAction, RootState } from "../../../../../../models";
 
 // Interfaces
 export type List = DeepReadonly<{
@@ -44,12 +44,12 @@ export const toggleActiveList = createStandardAction("LIST/TOGGLE_ACTIVE")<
 >();
 
 // Indexes
-export const indexByCreatedAt = (rows: Lists) =>
+export const indexListsByCreatedAt = (rows: Lists) =>
   Object.values(rows).reduce(
     (index: any, row) => ((index[row.createdAt] = row.id), index),
     {}
   );
-export const indexByUserId = (rows: Lists) =>
+export const indexListsByUserId = (rows: Lists) =>
   Object.values(rows).reduce(
     (index: any, row) => (
       (index[row.userId] = row.hasOwnProperty("userId")
@@ -61,13 +61,13 @@ export const indexByUserId = (rows: Lists) =>
   );
 
 // Selectors
-export const selectItems = (state: RootState): Lists => state.lists;
-export const selectItemsFilterByActive = createSelector(
-  [selectItems],
+export const selectLists = (state: RootState): Lists => state.lists;
+export const selectListsFilterByActive = createSelector(
+  [selectLists],
   items => Object.values(items).filter(item => item.active)
 );
-export const selectItemsByCreatedAt = createSelector(
-  [selectItems],
+export const selectListsByCreatedAt = createSelector(
+  [selectLists],
   items => Object.values(items).sort((a, b) => a.createdAt - b.createdAt)
 );
 

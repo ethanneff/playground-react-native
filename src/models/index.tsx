@@ -13,13 +13,11 @@ import { appReducer, AppState, deviceReducer, DeviceState } from ".";
 import {
   ItemActions,
   itemReducer,
-  Items
-} from "../screens/Debug/screens/Checklist/Item";
-import {
+  Items,
   ListActions,
   listReducer,
   Lists
-} from "../screens/Debug/screens/Checklist/List";
+} from "../screens/Debug/screens/Checklist/models";
 
 // models
 export * from "./App";
