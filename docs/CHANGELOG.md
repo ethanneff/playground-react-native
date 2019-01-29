@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.1](https://github.com/ethanneff/example/compare/v1.8.0...v1.8.1) (2019-01-29)
+
+
+### Bug Fixes
+
+* begin checklist list screen with navigation ([db941e9](https://github.com/ethanneff/example/commit/db941e9))
+* correct linting errors ([bcae30e](https://github.com/ethanneff/example/commit/bcae30e))
+
 # [1.8.0](https://github.com/ethanneff/example/compare/v1.7.0...v1.8.0) (2019-01-29)
 
 
