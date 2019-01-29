@@ -27,8 +27,8 @@ type Props = StateProps & RouteComponentProps;
 
 class Component extends React.PureComponent<Props> {
   public state = {
-    spreadCount: 0,
-    pinchCount: 0
+    pinchCount: 0,
+    spreadCount: 0
   };
   private panGesture: PanResponderInstance;
   private gestureHandler: GestureHandler;
@@ -76,8 +76,8 @@ class Component extends React.PureComponent<Props> {
 }
 
 const mapStateToProps = (state: RootState) => ({
-  width: selectWidth(state),
-  height: selectHeight(state)
+  height: selectHeight(state),
+  width: selectWidth(state)
 });
 
 export const PinchSpread = connect(mapStateToProps)(Component);

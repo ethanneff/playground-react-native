@@ -10,38 +10,38 @@ const cardPadding = 10;
 const { height } = Dimensions.get("window");
 const cards = [
   {
-    name: "Shot",
     color: "#a9d0b6",
+    name: "Shot",
     price: "30 CHF"
   },
   {
-    name: "Juice",
     color: "#e9bbd1",
+    name: "Juice",
     price: "64 CHF"
   },
   {
-    name: "Mighty Juice",
     color: "#eba65c",
+    name: "Mighty Juice",
     price: "80 CHF"
   },
   {
-    name: "Sandwich",
     color: "#95c3e4",
+    name: "Sandwich",
     price: "85 CHF"
   },
   {
-    name: "Combi",
     color: "#1c1c1c",
+    name: "Combi",
     price: "145 CHF"
   },
   {
-    name: "Signature",
     color: "#a390bc",
+    name: "Signature",
     price: "92 CHF"
   },
   {
-    name: "Coffee",
     color: "#fef2a0",
+    name: "Coffee",
     price: "47 CHF"
   }
 ];
@@ -71,9 +71,9 @@ export class Cards extends React.PureComponent<Props> {
                 outputRange.push((cardHeight - cardPadding) * -i);
               }
               const translateY = y.interpolate({
+                extrapolateRight: "clamp",
                 inputRange,
-                outputRange,
-                extrapolateRight: "clamp"
+                outputRange
               });
               return (
                 <Animated.View
@@ -106,9 +106,9 @@ export class Cards extends React.PureComponent<Props> {
 }
 
 const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    margin: 16
+  card: {
+    borderRadius: 10,
+    height: cardHeight
   },
   container: {
     flex: 1
@@ -116,8 +116,8 @@ const styles = StyleSheet.create({
   content: {
     height: height * 2
   },
-  card: {
-    height: cardHeight,
-    borderRadius: 10
+  root: {
+    flex: 1,
+    margin: 16
   }
 });

@@ -6,7 +6,7 @@ import { Theme } from "../../utils";
 const styles = StyleSheet.create({
   button: {
     flex: 1,
-    padding: Theme.padding.p3
+    padding: Theme.padding.p03
   },
   buttonRight: {
     alignSelf: "flex-end"

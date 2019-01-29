@@ -77,12 +77,12 @@ export const itemReducer = (state: Items = {}, action: RootAction): Items => {
         ...state,
         [id]: {
           ...action.payload,
-          id,
-          userId: "1",
           active: true,
+          createdAt: timestamp,
+          id,
           order: timestamp,
           updatedAt: timestamp,
-          createdAt: timestamp
+          userId: "1"
         }
       };
     case getType(updateItem):

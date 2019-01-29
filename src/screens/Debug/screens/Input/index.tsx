@@ -14,9 +14,9 @@ type Props = RouteComponentProps;
 export class Input extends React.PureComponent<Props> {
   public state = {
     email: "",
-    password: "",
+    error: "",
     name: "",
-    error: ""
+    password: ""
   };
   public render() {
     const { email, password, name, error } = this.state;

@@ -83,8 +83,8 @@ export class GestureHandler {
   private determineOutcome(): Outcome {
     const numRecordedTouched = Object.keys(this.start).length;
     const outcome = {
-      spread: false,
-      pinch: false
+      pinch: false,
+      spread: false
     };
     if (numRecordedTouched < this.minTouches) {
       return outcome;

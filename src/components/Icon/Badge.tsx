@@ -5,19 +5,19 @@ import { Theme } from "../../utils";
 
 const styles = StyleSheet.create({
   badgeContainer: {
+    alignItems: "center",
+    backgroundColor: Theme.color.primary,
+    borderRadius: 20,
+    height: 20,
+    justifyContent: "center",
     position: "absolute",
     right: -10,
     top: -10,
-    height: 20,
-    width: 20,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: Theme.color.primary,
-    borderRadius: 20
+    width: 20
   },
   badgeText: {
-    fontSize: Theme.padding.p2,
-    color: Theme.color.background
+    color: Theme.color.background,
+    fontSize: Theme.padding.p02
   }
 });
 

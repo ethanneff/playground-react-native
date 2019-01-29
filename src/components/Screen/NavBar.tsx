@@ -6,14 +6,14 @@ import { NavButton } from "./NavButton";
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
+    alignItems: "center",
     backgroundColor: Theme.color.background,
-    justifyContent: "space-between",
-    alignItems: "center"
+    flexDirection: "row",
+    justifyContent: "space-between"
   },
   title: {
     flex: 1,
-    fontSize: Theme.padding.p5,
+    fontSize: Theme.padding.p05,
     textAlign: "center"
   }
 });

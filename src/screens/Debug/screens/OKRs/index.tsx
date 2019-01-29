@@ -16,7 +16,7 @@ export class OKRs extends React.PureComponent<Props> {
     return (
       <Screen disableScroll onLeftPress={() => history.goBack()}>
         <ScrollView
-          contentContainerStyle={{ paddingHorizontal: Theme.padding.p5 }}
+          contentContainerStyle={{ paddingHorizontal: Theme.padding.p05 }}
         >
           <Card>
             <Text h6 title="Company" />

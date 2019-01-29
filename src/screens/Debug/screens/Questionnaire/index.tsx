@@ -12,27 +12,27 @@ type Props = OwnProps & RouteComponentProps;
 export class Questionnaire extends React.PureComponent<Props> {
   public data = [
     {
-      key: "1",
-      title: "What type of counseling are you looking for",
-      next: "2",
-      type: "radio",
       choices: [
         {
           key: "1",
-          title: "individual",
-          selected: false
+          selected: false,
+          title: "individual"
         },
         {
           key: "2",
-          title: "couple",
-          selected: false
+          selected: false,
+          title: "couple"
         },
         {
           key: "3",
-          title: "teen",
-          selected: false
+          selected: false,
+          title: "teen"
         }
-      ]
+      ],
+      key: "1",
+      next: "2",
+      title: "What type of counseling are you looking for",
+      type: "radio"
     },
     { key: "2", title: "2" },
     { key: "3", title: "3" },

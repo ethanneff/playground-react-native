@@ -93,8 +93,20 @@ export interface Tags {
 export const User: User | any = {};
 
 export const Data = {
+  "3": {
+    items: {
+      "1": {
+        sources: {},
+        title: "read"
+      },
+      "2": {
+        title: "remove teeth"
+      }
+    },
+    reminders: {},
+    trigger: "enter train"
+  },
   "4": {
-    trigger: "backlog",
     items: {
       "1": {
         title: "find car outlet"
@@ -102,23 +114,10 @@ export const Data = {
       "2": {
         title: "find and charge battery pack"
       }
-    }
-  },
-  "3": {
-    trigger: "enter train",
-    reminders: {},
-    items: {
-      "1": {
-        title: "read",
-        sources: {}
-      },
-      "2": {
-        title: "remove teeth"
-      }
-    }
+    },
+    trigger: "backlog"
   },
   "5": {
-    trigger: "arrive at work",
     items: {
       "1": {
         id: "1",
@@ -136,6 +135,7 @@ export const Data = {
         id: "4",
         title: "respond to pull requests"
       }
-    }
+    },
+    trigger: "arrive at work"
   }
 };

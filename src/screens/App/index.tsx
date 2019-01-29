@@ -85,10 +85,10 @@ export const App = connect(
   {
     onAppLoad,
     onAppStateChange,
-    onDimensionChange,
-    onNetworkChange,
     onDeviceLoad,
     onDeviceUpdateBattery,
-    onDeviceUpdateFingerprint
+    onDeviceUpdateFingerprint,
+    onDimensionChange,
+    onNetworkChange
   }
 )(AppComponent);

@@ -12,24 +12,24 @@ import { Title } from "./Title";
 
 // styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 const styles = StyleSheet.create({
-  row: {
-    flexDirection: "row"
-  },
-  textInput: {
-    flex: 1,
-    borderColor: Theme.color.secondary,
-    borderWidth: 2,
-    borderRadius: Theme.padding.p1,
-    padding: Theme.padding.p2,
-    paddingRight: Theme.padding.p8,
-    marginTop: Theme.padding.p1,
-    backgroundColor: Theme.color.background
+  borderError: {
+    borderColor: Theme.color.danger
   },
   borderFocus: {
     borderColor: Theme.color.primary
   },
-  borderError: {
-    borderColor: Theme.color.danger
+  row: {
+    flexDirection: "row"
+  },
+  textInput: {
+    backgroundColor: Theme.color.background,
+    borderColor: Theme.color.secondary,
+    borderRadius: Theme.padding.p01,
+    borderWidth: 2,
+    flex: 1,
+    marginTop: Theme.padding.p01,
+    padding: Theme.padding.p02,
+    paddingRight: Theme.padding.p08
   }
 });
 

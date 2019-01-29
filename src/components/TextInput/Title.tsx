@@ -4,14 +4,14 @@ import { Text } from "..";
 import { Theme } from "../../utils";
 
 const styles = StyleSheet.create({
-  title: {
-    textTransform: "capitalize"
+  container: {
+    flexDirection: "row"
   },
   optional: {
     color: Theme.color.secondary
   },
-  container: {
-    flexDirection: "row"
+  title: {
+    textTransform: "capitalize"
   }
 });
 

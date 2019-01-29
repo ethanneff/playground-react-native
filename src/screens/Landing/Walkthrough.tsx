@@ -8,9 +8,9 @@ import { RootState } from "../../models";
 const styles = (width?: number, color?: string) =>
   StyleSheet.create({
     item: {
-      width,
+      backgroundColor: color,
       justifyContent: "center",
-      backgroundColor: color
+      width
     }
   });
 

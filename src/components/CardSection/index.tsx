@@ -4,12 +4,12 @@ import { Theme } from "../../utils";
 
 const styles = StyleSheet.create({
   containerStyle: {
-    borderBottomWidth: 0.5,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
     backgroundColor: Theme.color.background,
+    borderBottomWidth: 0.5,
+    borderColor: Theme.color.dark,
     flexDirection: "row",
-    borderColor: Theme.color.dark
+    paddingHorizontal: 20,
+    paddingVertical: 10
   }
 });
 

@@ -135,11 +135,9 @@ export interface Source {
 }
 
 export const a = {
-  user: "bob",
   email: "bob@gmail.com",
   lists: [
     {
-      trigger: "accomplish things",
       frequency: ListFrequency.Multiple,
       history: [],
       items: [
@@ -149,10 +147,10 @@ export const a = {
         "Do fear setting by Tim ferris",
         "Block out calendar for emails",
         "Make biweekly meeting to clean self"
-      ]
+      ],
+      trigger: "accomplish things"
     },
     {
-      trigger: "wake up",
       frequency: ListFrequency.Multiple,
       items: [
         "Make your bed",
@@ -160,10 +158,10 @@ export const a = {
         "Journal on paper and make checklists",
         "Medication",
         "Practice gratitude"
-      ]
+      ],
+      trigger: "wake up"
     },
     {
-      trigger: "go to sleep",
       frequency: ListFrequency.Multiple,
       items: [
         "make overnight oats",
@@ -171,10 +169,10 @@ export const a = {
         "brush teeth",
         "rogaine",
         "plan tomorrow"
-      ]
+      ],
+      trigger: "go to sleep"
     },
     {
-      trigger: "begin a task",
       frequency: ListFrequency.Multiple,
       items: [
         // https://www.youtube.com/watch?v=sWctLEdIgi4
@@ -182,21 +180,23 @@ export const a = {
         "seek daily improvements (beat yourself)",
         "understand the greater purpose",
         "develop a growth mindset"
-      ]
+      ],
+      trigger: "begin a task"
     },
     {
-      trigger: "running errands",
-      frequency: ListFrequency.Single, // done = complete forever
+      frequency: ListFrequency.Single,
+      // done = complete forever
       items: [
         "find clothing",
         "buy superglue",
         "buy boba ingredients",
         "shop at uniqlo"
-      ]
+      ],
+      trigger: "running errands"
     },
     {
-      trigger: "find downtime (backlog)",
-      frequency: ListFrequency.Single, // done = complete forever
+      frequency: ListFrequency.Single,
+      // done = complete forever
       items: [
         "whiten teeth",
         "Fix jackets",
@@ -216,7 +216,9 @@ export const a = {
         "learn fortnite dances",
         "expense wireframing app",
         "expense amazon kindle unlimited"
-      ]
+      ],
+      trigger: "find downtime (backlog)"
     }
-  ]
+  ],
+  user: "bob"
 };

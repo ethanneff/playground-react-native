@@ -8,13 +8,13 @@ import { RootState } from "../../../../models";
 
 const styles = StyleSheet.create({
   ball: {
-    height: 60,
-    width: 60,
+    borderColor: "black",
     borderRadius: 30,
     borderWidth: 30,
+    height: 60,
     marginLeft: -30,
     marginTop: -30,
-    borderColor: "black"
+    width: 60
   },
   button: {
     flex: 1,
@@ -64,8 +64,8 @@ class Component extends React.PureComponent<Props> {
 }
 
 const mapStateToProps = (state: RootState) => ({
-  width: selectWidth(state),
-  height: selectHeight(state)
+  height: selectHeight(state),
+  width: selectWidth(state)
 });
 
 export const Ball = connect(mapStateToProps)(Component);

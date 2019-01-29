@@ -24,7 +24,7 @@ export class Icon extends React.PureComponent<Props> {
       style,
       badge = 0,
       clear,
-      size = Theme.padding.p6,
+      size = Theme.padding.p06,
       color = Theme.color.dark,
       hidden
     } = this.props;

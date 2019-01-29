@@ -17,29 +17,29 @@ const styles = StyleSheet.create({
     flex: 1
   },
   header: {
-    height: Theme.padding.p20,
     backgroundColor: Theme.color.light,
-    padding: Theme.padding.p2,
-    justifyContent: "center"
+    height: Theme.padding.p20,
+    justifyContent: "center",
+    padding: Theme.padding.p02
   },
-  textContainer: {
-    height: "100%",
-    backgroundColor: Theme.color.background,
-    flexDirection: "row",
-    alignItems: "center",
-    padding: Theme.padding.p2
+  item: {
+    borderBottomColor: Theme.color.light,
+    borderWidth: 0.2,
+    padding: Theme.padding.p06
   },
   text: {
-    fontSize: Theme.padding.p6
+    fontSize: Theme.padding.p06
+  },
+  textContainer: {
+    alignItems: "center",
+    backgroundColor: Theme.color.background,
+    flexDirection: "row",
+    height: "100%",
+    padding: Theme.padding.p02
   },
   textInput: {
     flex: 1,
-    marginLeft: Theme.padding.p2
-  },
-  item: {
-    padding: Theme.padding.p6,
-    borderBottomColor: Theme.color.light,
-    borderWidth: 0.2
+    marginLeft: Theme.padding.p02
   }
 });
 
@@ -76,9 +76,9 @@ type Props = RouteComponentProps;
 export class SearchBar extends React.PureComponent<Props, State> {
   public iconSearch = "magnify";
   public state: State = {
-    input: "",
+    animation: new Animated.Value(0),
     iconName: this.iconSearch,
-    animation: new Animated.Value(0)
+    input: ""
   };
   private iconBack = "arrow-left";
   private textInputPlaceHolder = "Search";
@@ -170,8 +170,8 @@ export class SearchBar extends React.PureComponent<Props, State> {
 
   private animate(value: number) {
     Animated.timing(this.state.animation, {
-      toValue: value,
-      duration: this.animationDuration
+      duration: this.animationDuration,
+      toValue: value
     }).start();
   }
 

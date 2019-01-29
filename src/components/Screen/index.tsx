@@ -6,8 +6,8 @@ import { NavBar } from "./NavBar";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: Theme.color.background
+    backgroundColor: Theme.color.background,
+    flex: 1
   }
 });
 

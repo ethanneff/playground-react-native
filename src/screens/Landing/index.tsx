@@ -7,10 +7,10 @@ import { Walkthrough } from "./Walkthrough";
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    height: Theme.padding.p12,
-    justifyContent: "space-around",
     alignItems: "center",
-    flexDirection: "row"
+    flexDirection: "row",
+    height: Theme.padding.p12,
+    justifyContent: "space-around"
   }
 });
 

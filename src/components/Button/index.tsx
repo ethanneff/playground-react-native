@@ -9,23 +9,8 @@ import { Icon, Text } from "..";
 import { Theme } from "../../utils";
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    paddingHorizontal: Theme.padding.p4,
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: Theme.padding.p1,
-    borderWidth: 1,
-    borderColor: "transparent"
-  },
-  height: {
-    height: Theme.padding.p9
-  },
-  label: {
-    height: Theme.padding.p5,
-    paddingHorizontal: 0,
-    margin: Theme.padding.p1,
-    justifyContent: "flex-start"
+  center: {
+    alignSelf: "center"
   },
   containedBody: {
     backgroundColor: Theme.color.primary
@@ -33,17 +18,17 @@ const styles = StyleSheet.create({
   containedText: {
     color: Theme.color.background
   },
-  outlined: {
-    borderColor: Theme.color.secondary
+  container: {
+    alignItems: "center",
+    borderColor: "transparent",
+    borderRadius: Theme.padding.p01,
+    borderWidth: 1,
+    flexDirection: "row",
+    justifyContent: "center",
+    paddingHorizontal: Theme.padding.p04
   },
-  fab: {
-    padding: Theme.padding.p4,
-    borderRadius: Theme.padding.p8,
-    alignSelf: "flex-start"
-  },
-  text: {
-    backgroundColor: "transparent",
-    color: Theme.color.primary
+  danger: {
+    color: Theme.color.danger
   },
   disableBody: {
     backgroundColor: Theme.color.light
@@ -51,26 +36,41 @@ const styles = StyleSheet.create({
   disableText: {
     color: Theme.color.secondary
   },
+  fab: {
+    alignSelf: "flex-start",
+    borderRadius: Theme.padding.p08,
+    padding: Theme.padding.p04
+  },
   half: {
     width: "50%"
   },
-  nonFlex: {
-    alignSelf: "flex-start"
+  height: {
+    height: Theme.padding.p09
   },
-  center: {
-    alignSelf: "center"
+  icon: {
+    paddingRight: 2
+  },
+  label: {
+    height: Theme.padding.p05,
+    justifyContent: "flex-start",
+    margin: Theme.padding.p01,
+    paddingHorizontal: 0
   },
   neutral: {
     color: Theme.color.text
   },
+  nonFlex: {
+    alignSelf: "flex-start"
+  },
+  outlined: {
+    borderColor: Theme.color.secondary
+  },
   secondary: {
     color: Theme.color.secondary
   },
-  danger: {
-    color: Theme.color.danger
-  },
-  icon: {
-    paddingRight: 2
+  text: {
+    backgroundColor: "transparent",
+    color: Theme.color.primary
   }
 });
 
@@ -110,7 +110,6 @@ interface Props {
 }
 
 export class Button extends React.PureComponent<Props> {
-
   public render() {
     const {
       title,
@@ -169,7 +168,7 @@ export class Button extends React.PureComponent<Props> {
         <Icon
           color={iconColor}
           name={icon}
-          size={Theme.padding.p4}
+          size={Theme.padding.p04}
           style={iconStyleGroup}
         />
         <Text center button={!lowercase} title={title} style={textStyleGroup} />

@@ -89,24 +89,24 @@ export interface DeviceState {
 
 // actions
 export const onDeviceUpdateFingerprint = (payload: boolean) => ({
-  type: DeviceActionTypes.DEVICE_UPDATE_FINGERPRINT,
-  payload
+  payload,
+  type: DeviceActionTypes.DEVICE_UPDATE_FINGERPRINT
 });
 export const onDeviceUpdateBattery = (payload: number) => ({
-  type: DeviceActionTypes.DEVICE_UPDATE_BATTERY,
-  payload
+  payload,
+  type: DeviceActionTypes.DEVICE_UPDATE_BATTERY
 });
 export const onDeviceLoad = (payload: DeviceState) => ({
-  type: DeviceActionTypes.DEVICE_LOAD,
-  payload
+  payload,
+  type: DeviceActionTypes.DEVICE_LOAD
 });
 export const onNetworkChange = (payload: ConnectionType | ConnectionInfo) => ({
-  type: DeviceActionTypes.DEVICE_UPDATE_NETWORK,
-  payload
+  payload,
+  type: DeviceActionTypes.DEVICE_UPDATE_NETWORK
 });
 export const onDimensionChange = (payload: DimensionsProps) => ({
-  type: DeviceActionTypes.DEVICE_UPDATE_DIMENSION,
-  payload
+  payload,
+  type: DeviceActionTypes.DEVICE_UPDATE_DIMENSION
 });
 
 // selectors
@@ -163,14 +163,14 @@ export const deviceReducer = (
     case DeviceActionTypes.DEVICE_UPDATE_NETWORK:
       return {
         ...state,
-        networkType: action.payload.type,
-        networkEffectiveType: action.payload.effectiveType
+        networkEffectiveType: action.payload.effectiveType,
+        networkType: action.payload.type
       };
     case DeviceActionTypes.DEVICE_UPDATE_DIMENSION:
       return {
         ...state,
-        windowDimensions: action.payload.window,
-        screenDimensions: action.payload.screen
+        screenDimensions: action.payload.screen,
+        windowDimensions: action.payload.window
       };
     case DeviceActionTypes.DEVICE_LOAD:
       return {

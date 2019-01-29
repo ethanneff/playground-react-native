@@ -16,9 +16,9 @@ describe("device", () => {
         app: {
           status
         },
-        lists: {},
+        device: {},
         items: {},
-        device: {}
+        lists: {}
       };
       expect(selectAppStatus(state)).toEqual(status);
     });
@@ -28,8 +28,8 @@ describe("device", () => {
     it("onAppLoad", () => {
       const payload = { version: "background" };
       const expectedAction = {
-        type: AppActionTypes.APP_LOAD,
-        payload
+        payload,
+        type: AppActionTypes.APP_LOAD
       };
       expect(onAppLoad(payload)).toEqual(expectedAction);
     });
@@ -37,8 +37,8 @@ describe("device", () => {
     it("onAppStateChange", () => {
       const payload = "background";
       const expectedAction = {
-        type: AppActionTypes.APP_UPDATE_STATUS,
-        payload
+        payload,
+        type: AppActionTypes.APP_UPDATE_STATUS
       };
       expect(onAppStateChange(payload)).toEqual(expectedAction);
     });
@@ -48,8 +48,8 @@ describe("device", () => {
     it("APP_UPDATE_STATUS", () => {
       expect(
         appReducer(undefined, {
-          type: AppActionTypes.APP_UPDATE_STATUS,
-          payload: "active"
+          payload: "active",
+          type: AppActionTypes.APP_UPDATE_STATUS
         })
       ).toEqual({ status: "active" });
     });
@@ -61,16 +61,16 @@ describe("device", () => {
             status: "active"
           },
           {
-            type: AppActionTypes.APP_LOAD,
             payload: {
               appVersion: "string",
-              buildVersion: "string",
-              bundleIdentifier: "string",
               applicationName: "string",
               buildNumber: "string",
-              version: "string",
-              readableVersion: "string"
-            }
+              buildVersion: "string",
+              bundleIdentifier: "string",
+              readableVersion: "string",
+              version: "string"
+            },
+            type: AppActionTypes.APP_LOAD
           }
         )
       ).toEqual({

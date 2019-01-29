@@ -3,8 +3,8 @@ export const Config = {
     name: "example"
   },
   os: {
-    ios: "ios",
     android: "android",
+    ios: "ios",
     web: "web"
   },
   web: {

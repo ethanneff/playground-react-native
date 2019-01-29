@@ -4,19 +4,19 @@ import { Theme } from "../../utils";
 
 const styles = StyleSheet.create({
   containerStyle: {
-    padding: Theme.padding.p4,
-    margin: Theme.padding.p2,
     backgroundColor: Theme.color.background,
-    zIndex: 1,
     elevation: 1,
+    margin: Theme.padding.p02,
+    padding: Theme.padding.p04,
     position: "relative",
     shadowColor: Theme.color.dark,
     shadowOffset: {
-      width: 0,
-      height: 4
+      height: 4,
+      width: 0
     },
+    shadowOpacity: 0.6,
     shadowRadius: 6,
-    shadowOpacity: 0.6
+    zIndex: 1
   }
 });
 

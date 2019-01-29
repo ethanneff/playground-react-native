@@ -271,16 +271,16 @@ type Props = RouteComponentProps;
 export class Debug extends React.PureComponent<Props> {
   private screens: any = {
     Ball,
-    Drag,
-    Cards,
-    Fonts,
     Buttons,
-    PinchSpread,
-    SearchBar,
-    OKRs,
+    Cards,
+    Checklist,
+    Drag,
+    Fonts,
     Input,
+    OKRs,
+    PinchSpread,
     Questionnaire,
-    Checklist
+    SearchBar
   };
 
   public render() {

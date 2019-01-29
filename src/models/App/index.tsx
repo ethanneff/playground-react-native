@@ -31,12 +31,12 @@ type AppLoadPayload = AppState;
 
 // actions
 export const onAppLoad = (payload: AppLoadPayload) => ({
-  type: AppActionTypes.APP_LOAD,
-  payload
+  payload,
+  type: AppActionTypes.APP_LOAD
 });
 export const onAppStateChange = (payload: AppStateStatus) => ({
-  type: AppActionTypes.APP_UPDATE_STATUS,
-  payload
+  payload,
+  type: AppActionTypes.APP_UPDATE_STATUS
 });
 
 // selectors
