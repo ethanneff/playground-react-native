@@ -2,7 +2,7 @@ import * as React from "react";
 import { FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
-import { Button, Link, Screen } from "../../../../../../components";
+import { Button, Screen } from "../../../../../../components";
 import { RootState } from "../../../../../../models";
 import { Theme } from "../../../../../../utils";
 import {

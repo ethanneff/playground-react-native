@@ -2,8 +2,7 @@ import * as React from "react";
 import { FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
-import { Link, Screen, Text, Button } from "../../../../../../components";
-import { Theme } from "../../../../../../utils";
+import { Button, Screen, Text } from "../../../../../../components";
 import { RootState } from "../../../../../../models";
 
 type Props = RouteComponentProps;
