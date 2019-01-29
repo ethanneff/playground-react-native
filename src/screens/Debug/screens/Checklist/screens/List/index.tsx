@@ -12,7 +12,6 @@ class Component extends React.PureComponent<Props> {
     return (
       <Screen onLeftPress={() => history.goBack()}>
         <Text title="checklists" />
-        <Link to={`${match.path}/create`} title={"create"} />
         <Link to={`${match.path}/item`} title={"item"} />
       </Screen>
     );

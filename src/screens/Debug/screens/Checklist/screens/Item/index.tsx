@@ -2,11 +2,10 @@ import * as React from "react";
 import { FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
-import { Button, Screen } from "../../../../../../components";
+import { Button, Link, Screen } from "../../../../../../components";
 import { RootState } from "../../../../../../models";
 import { Theme } from "../../../../../../utils";
 import {
-  createItem,
   ItemsArray,
   removeItem,
   selectItemsByCreatedAt,
@@ -19,7 +18,6 @@ interface StateProps {
 }
 
 interface DispatchProps {
-  createItem: typeof createItem;
   updateItem: typeof updateItem;
   removeItem: typeof removeItem;
   toggleActiveItem: typeof toggleActiveItem;
@@ -71,14 +69,10 @@ class Component extends React.PureComponent<Props> {
             </View>
           )}
         />
-        <Button fab contained icon="plus" onPress={this.createItem} />
+        <Link to={`create`} title={"create"} />
       </Screen>
     );
   }
-  private createItem = () => {
-    const { createItem: create } = this.props;
-    create({ name: Date.now().toString(), description: "hello" });
-  };
 }
 
 export const Item = connect(
@@ -86,9 +80,8 @@ export const Item = connect(
     items: selectItemsByCreatedAt(state)
   }),
   {
-    updateItem,
-    createItem,
     removeItem,
-    toggleActiveItem
+    toggleActiveItem,
+    updateItem
   }
 )(Component);
