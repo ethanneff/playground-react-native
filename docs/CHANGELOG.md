@@ -1,5 +1,18 @@
 # Changelog
 
+# [1.8.0](https://github.com/ethanneff/example/compare/v1.7.0...v1.8.0) (2019-01-29)
+
+
+### Bug Fixes
+
+* add more navigation to checklist ([7e2d55c](https://github.com/ethanneff/example/commit/7e2d55c))
+* reference variable before state ([49047bb](https://github.com/ethanneff/example/commit/49047bb))
+
+
+### Features
+
+* add navigation to checklist ([0c466ee](https://github.com/ethanneff/example/commit/0c466ee))
+
 # [1.7.0](https://github.com/ethanneff/example/compare/v1.6.0...v1.7.0) (2019-01-26)
 
 
