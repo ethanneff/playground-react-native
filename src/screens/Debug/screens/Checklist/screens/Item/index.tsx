@@ -69,7 +69,12 @@ class Component extends React.PureComponent<Props> {
             </View>
           )}
         />
-        <Link to={`create`} title={"create"} />
+        <Button
+          fab
+          contained
+          icon="plus"
+          onPress={() => history.push("create")}
+        />
       </Screen>
     );
   }

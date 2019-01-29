@@ -16,7 +16,7 @@ class Component extends React.PureComponent<Props> {
     return (
       <Screen onLeftPress={() => history.goBack()}>
         <Text title="Create" />
-        <Button fab contained icon="plus" onPress={this.createItem} />
+        <Button title="create" onPress={this.createItem} />
       </Screen>
     );
   }
