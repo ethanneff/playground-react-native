@@ -15,10 +15,13 @@ exports[`renders correctly 1`] = `
   <RCTScrollView
     automaticallyAdjustContentInsets={false}
     contentContainerStyle={
-      Object {
-        "backgroundColor": "hsl(0, 100%, 100%)",
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "backgroundColor": "hsl(0, 100%, 100%)",
+          "flex": 1,
+        },
+        undefined,
+      ]
     }
     contentInset={
       Object {
