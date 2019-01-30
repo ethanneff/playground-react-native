@@ -44,7 +44,10 @@ export class Screen extends React.PureComponent<Props> {
           onLeftPress={onLeftPress && onLeftPress}
           onRightPress={onRightPress && onRightPress}
         />
-        <KeyboardAvoid scrollEnabled={!disableScroll} style={styles.container}>
+        <KeyboardAvoid
+          scrollEnabled={!disableScroll}
+          style={[styles.container, style]}
+        >
           {children}
         </KeyboardAvoid>
       </SafeAreaView>
