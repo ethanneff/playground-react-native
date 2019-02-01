@@ -65,6 +65,9 @@ const styles = StyleSheet.create({
   outlined: {
     borderColor: Theme.color.secondary
   },
+  right: {
+    alignSelf: "flex-end"
+  },
   secondary: {
     color: Theme.color.secondary
   },
@@ -104,6 +107,7 @@ interface Props {
   half?: boolean;
   full?: boolean;
   center?: boolean;
+  right?: boolean;
   lowercase?: boolean;
   // event
   onPress(): void;
@@ -125,6 +129,7 @@ export class Button extends React.PureComponent<Props> {
       neutral,
       half,
       center,
+      right,
       icon,
       iconColor,
       secondary,
@@ -142,6 +147,7 @@ export class Button extends React.PureComponent<Props> {
       wrap && styles.nonFlex,
       half && styles.half,
       center && styles.center,
+      right && styles.right,
       label && styles.label,
       buttonStyle
     ];
