@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.3](https://github.com/ethanneff/example/compare/v1.8.2...v1.8.3) (2019-02-01)
+
+
+### Bug Fixes
+
+* add right justification to button ([9712e4e](https://github.com/ethanneff/example/commit/9712e4e))
+* push footer to the bottom ([7729485](https://github.com/ethanneff/example/commit/7729485))
+
 ## [1.8.2](https://github.com/ethanneff/example/compare/v1.8.1...v1.8.2) (2019-01-30)
 
 
