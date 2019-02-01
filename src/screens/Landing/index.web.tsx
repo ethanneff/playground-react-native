@@ -5,9 +5,8 @@
 
 import * as React from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
-import { Text, Button, Screen } from "../../components";
+import { Text, Button } from "../../components";
 import { RouteComponentProps } from "react-router";
-import { Theme } from "../../utils";
 
 const window = Dimensions.get("window");
 
@@ -16,6 +15,12 @@ const styles = StyleSheet.create({
     flex: 1,
     height: window.height,
     alignItems: "center"
+  },
+  footer: {
+    alignItems: "flex-end",
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "center"
   }
 });
 
@@ -27,15 +32,11 @@ class Footer extends React.PureComponent<Props> {
   render() {
     const { history } = this.props;
     return (
-      <Screen
-        style={{ backgroundColor: Theme.color.primary, flexDirection: "row" }}
-      >
-        <View style={{ flexDirection: "row" }}>
-          <Button title="Sign up" onPress={() => history.push("/login")} />
-          <Button title="Log in" onPress={() => history.push("/login")} />
-          <Button title="Debug" onPress={() => history.push("/debug")} />
-        </View>
-      </Screen>
+      <View style={styles.footer}>
+        <Button title="Sign up" onPress={() => history.push("/login")} />
+        <Button title="Log in" onPress={() => history.push("/login")} />
+        <Button title="Debug" onPress={() => history.push("/debug")} />
+      </View>
     );
   }
 }
@@ -52,7 +53,6 @@ export class Landing extends React.PureComponent<RouteComponentProps> {
     return (
       <View style={styles.container}>
         <Header />
-        <Text title="To get started, edit ./src/containers/App/index.tsx" />
         <Text title={String(window.height)} />
         <Footer history={history} />
       </View>
