@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.2](https://github.com/ethanneff/example/compare/v1.8.1...v1.8.2) (2019-01-30)
+
+
+### Bug Fixes
+
+* pass styles through the screen component ([f7ef3b3](https://github.com/ethanneff/example/commit/f7ef3b3))
+
 ## [1.8.1](https://github.com/ethanneff/example/compare/v1.8.0...v1.8.1) (2019-01-29)
 
 
