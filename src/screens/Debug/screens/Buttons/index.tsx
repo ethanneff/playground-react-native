@@ -53,6 +53,12 @@ export class Buttons extends React.PureComponent<Props> {
             onPress={() => undefined}
           />
 
+          <Button right title="nothing" onPress={() => undefined} />
+          <Button right neutral title="neutral" onPress={() => undefined} />
+          <Button right text title="text" onPress={() => undefined} />
+          <Button right outlined title="outlined" onPress={() => undefined} />
+          <Button right contained title="contained" onPress={() => undefined} />
+
           <Button disable wrap title="nothing" onPress={() => undefined} />
           <Button
             disable

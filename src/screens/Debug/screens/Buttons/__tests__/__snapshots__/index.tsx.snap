@@ -2,6 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <RCTSafeAreaView
+  emulateUnlessSupported={true}
   style={
     Array [
       Object {
@@ -1195,6 +1196,287 @@ exports[`renders correctly 1`] = `
                 "opacity": 1,
                 "paddingHorizontal": 16,
                 "width": "50%",
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "letterSpacing": 0.75,
+                  },
+                  Object {
+                    "textAlign": "center",
+                  },
+                  undefined,
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "hsl(211, 100%, 50%)",
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    Object {
+                      "color": "hsl(0, 100%, 100%)",
+                    },
+                    undefined,
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              CONTAINED
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-end",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "color": "hsl(211, 100%, 50%)",
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "letterSpacing": 0.75,
+                  },
+                  Object {
+                    "textAlign": "center",
+                  },
+                  undefined,
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "hsl(211, 100%, 50%)",
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              NOTHING
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-end",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "color": "hsl(211, 100%, 50%)",
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "letterSpacing": 0.75,
+                  },
+                  Object {
+                    "textAlign": "center",
+                  },
+                  undefined,
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "hsl(211, 100%, 50%)",
+                    },
+                    Object {
+                      "color": "hsl(0, 0%, 0%)",
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              NEUTRAL
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-end",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "color": "hsl(211, 100%, 50%)",
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "letterSpacing": 0.75,
+                  },
+                  Object {
+                    "textAlign": "center",
+                  },
+                  undefined,
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "hsl(211, 100%, 50%)",
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              TEXT
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-end",
+                "borderColor": "hsl(208, 7%, 46%)",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "letterSpacing": 0.75,
+                  },
+                  Object {
+                    "textAlign": "center",
+                  },
+                  undefined,
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "hsl(211, 100%, 50%)",
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              OUTLINED
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-end",
+                "backgroundColor": "hsl(211, 100%, 50%)",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
               }
             }
           >

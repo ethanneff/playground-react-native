@@ -2,6 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <RCTSafeAreaView
+  emulateUnlessSupported={true}
   style={
     Array [
       Object {
@@ -61,6 +62,7 @@ exports[`renders correctly 1`] = `
 
 exports[`renders correctly with header 1`] = `
 <RCTSafeAreaView
+  emulateUnlessSupported={true}
   style={
     Array [
       Object {
@@ -239,6 +241,7 @@ exports[`renders correctly with header 1`] = `
 
 exports[`renders correctly with icons 1`] = `
 <RCTSafeAreaView
+  emulateUnlessSupported={true}
   style={
     Array [
       Object {
