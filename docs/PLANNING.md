@@ -49,6 +49,7 @@
 
 ## Done
 
+- [x] update to react native 58
 - [x] validate commit messages work
 - [x] make redux clean
 - [x] update dependencies with new redux tools
