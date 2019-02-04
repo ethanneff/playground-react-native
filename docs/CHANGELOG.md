@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/ethanneff/example/compare/v1.9.0...v1.9.1) (2019-02-04)
+
+
+### Bug Fixes
+
+* add assets directory ([b960f94](https://github.com/ethanneff/example/commit/b960f94))
+
 # [1.9.0](https://github.com/ethanneff/example/compare/v1.8.3...v1.9.0) (2019-02-02)
 
 
