@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.9.0](https://github.com/ethanneff/example/compare/v1.8.3...v1.9.0) (2019-02-02)
+
+
+### Features
+
+* update to React Native 0.58.3 ([ef24548](https://github.com/ethanneff/example/commit/ef24548))
+
 ## [1.8.3](https://github.com/ethanneff/example/compare/v1.8.2...v1.8.3) (2019-02-01)
 
 
