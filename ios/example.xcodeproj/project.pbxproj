@@ -60,7 +60,7 @@
 		9C634AA722056443006B30C2 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C634A9822056443006B30C2 /* EvilIcons.ttf */; };
 		9C634AA822056443006B30C2 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C634A9922056443006B30C2 /* SimpleLineIcons.ttf */; };
 		9C634AA922056443006B30C2 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C634A9A22056443006B30C2 /* MaterialIcons.ttf */; };
-		9CE4421222062BC200C5B5B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CE441E822062BC200C5B5B5 /* GoogleService-Info.plist */; };
+		9CB708D3220B6129005BF0F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CB708D2220B6129005BF0F1 /* GoogleService-Info.plist */; };
 		AA014D5BB92549879A3D883B /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DDF367D2E9F4D0F8449CB55 /* libRNFirebase.a */; };
 		ABC871304CF142A2B6EC15EA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6390C5F8BC7E415BBA81157E /* FontAwesome.ttf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -433,7 +433,7 @@
 		9C634A9822056443006B30C2 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		9C634A9922056443006B30C2 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		9C634A9A22056443006B30C2 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		9CE441E822062BC200C5B5B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9CB708D2220B6129005BF0F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "example/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F8CF58AA464FA14AFCAF617 /* Pods-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-example/Pods-example.debug.xcconfig"; sourceTree = "<group>"; };
 		A9B39B55147247AFBE2CF800 /* AppCenterReactNativeAnalytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeAnalytics.xcodeproj; path = "../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics.xcodeproj"; sourceTree = "<group>"; };
 		ABEC336444F6411AB0DE02DE /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
@@ -604,7 +604,7 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				9CE441E822062BC200C5B5B5 /* GoogleService-Info.plist */,
+				9CB708D2220B6129005BF0F1 /* GoogleService-Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
@@ -1326,7 +1326,6 @@
 				40BBF5CC0ED24823A1F65FE3 /* EvilIcons.ttf in Resources */,
 				9C634AA422056443006B30C2 /* FontAwesome5_Regular.ttf in Resources */,
 				DC12455813E54E84BE6A9D7D /* Feather.ttf in Resources */,
-				9CE4421222062BC200C5B5B5 /* GoogleService-Info.plist in Resources */,
 				9C634AA022056443006B30C2 /* AntDesign.ttf in Resources */,
 				ABC871304CF142A2B6EC15EA /* FontAwesome.ttf in Resources */,
 				EC81CFB7363641129E682F8D /* FontAwesome5_Brands.ttf in Resources */,
@@ -1347,6 +1346,7 @@
 				BB093F93B8CC4C7288C134DB /* MaterialCommunityIcons.ttf in Resources */,
 				808C7407260149ED9E5AAD8E /* MaterialIcons.ttf in Resources */,
 				9C634AA822056443006B30C2 /* SimpleLineIcons.ttf in Resources */,
+				9CB708D3220B6129005BF0F1 /* GoogleService-Info.plist in Resources */,
 				976570286B9B4F7AA41C3951 /* Octicons.ttf in Resources */,
 				EEF3936F7EB44BDBB1086160 /* SimpleLineIcons.ttf in Resources */,
 				481AEAACBDAA4CA297F6DA3D /* Zocial.ttf in Resources */,
