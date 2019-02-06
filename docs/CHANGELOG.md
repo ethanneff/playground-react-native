@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.2](https://github.com/ethanneff/example/compare/v1.9.1...v1.9.2) (2019-02-06)
+
+
+### Bug Fixes
+
+* add google play services plist into git ([082078c](https://github.com/ethanneff/example/commit/082078c))
+
 ## [1.9.1](https://github.com/ethanneff/example/compare/v1.9.0...v1.9.1) (2019-02-04)
 
 
