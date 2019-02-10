@@ -8,17 +8,17 @@
     "url": "https://github.com/ethanneff/example.git"
   },
   "scripts": {
-    "start": "              echo 'start code watcher';            react-native start --reset-cache",
     "ios": "                echo 'develop on ios';                react-native run-ios --simulator \"iPhone X\"",
     "android": "            echo 'develop on android';            react-native run-android",
     "web": "                echo 'develop on web';                react-scripts start",
     "build": "              echo 'build production web';          react-scripts build",
+    "start": "              echo 'run code watcher';              react-native start --reset-cache",
     "debug": "              echo 'run redux debugger';            open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
     "test": "               echo 'run unit tests';                jest --coverage -u",
     "watch": "              echo 'run unit tests reloader';       jest --watch",
     "lint": "               echo 'run code linter';               tsc && tslint --fix -p tsconfig.json -c tslint.json",
     "upgrade": "            echo 'run react native upgrade'       yarn global add react-native-git-upgrade; react-native-git-upgrade; rm -f .babelrc; rm -f ./.buckconfig; rm -f ./.flowconfig; rm -f ./.watchmanconfig; rm -f ./.gitattributes;",
-    "reset": "              echo 'run react native cache reset';  watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; yarn install; pod install --project-directory=ios; react-native start --reset-cache",
+    "reset": "              echo 'clear react native cache';      watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; yarn install; pod install --project-directory=ios; react-native start --reset-cache",
     "semantic-release": "   echo 'run continuous integration';    semantic-release",
     "travis-deploy-once": " echo 'prevent multiple deploys';      travis-deploy-once"
   },
@@ -30,7 +30,7 @@
     "react-art": "16.8.1",
     "react-dom": "16.8.1",
     "react-native": "0.58.4",
-    "react-native-firebase": "5.2.1",
+    "react-native-firebase": "5.2.2",
     "react-native-keyboard-aware-scroll-view": "0.8.0",
     "react-native-vector-icons": "6.2.0",
     "react-native-web": "0.10.0",
@@ -46,7 +46,7 @@
     "uuid": "3.3.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "7.5.0",
+    "@commitlint/cli": "7.5.1",
     "@commitlint/config-conventional": "7.5.0",
     "@semantic-release/changelog": "3.0.2",
     "@semantic-release/commit-analyzer": "6.1.0",
@@ -74,7 +74,7 @@
     "ts-jest": "23.10.5",
     "tslint": "5.12.1",
     "tslint-config-prettier": "1.18.0",
-    "typescript": "3.3.1"
+    "typescript": "3.3.3"
   },
   "resolutions": {
     "@types/react": "16.8.2"
