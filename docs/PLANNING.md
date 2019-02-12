@@ -2,15 +2,16 @@
 
 ## Top 1
 
-- [ ] catch global errors
-- [ ] convert other reduxes to new syntax
-- [ ] use evernote to make example data structure of checklist and actionables
+- [ ] redux persist test working
+- [ ] checklist mvp with navigation
+- [ ] checklist tests
+- [ ] checklist async tests
 
 ## Top 3
 
-- [ ] textinput
-- [ ] radio
-- [ ] selection
+- [ ] catch global errors
+- [ ] convert other reduxes to new syntax
+- [ ] use evernote to make example data structure of checklist and actionables
 
 ## Top 5
 
@@ -22,7 +23,9 @@
 
 ## Rest
 
-- [ ] look into [react navigation for web](https://github.com/react-navigation/example-web)
+- [ ] textinput
+- [ ] radio
+- [ ] selection
 - [ ] firebase search
 - [ ] firebase comments
 - [ ] firebase web
@@ -49,6 +52,7 @@
 
 ## Done
 
+- [x] look into [react navigation for web](https://github.com/react-navigation/example-web)
 - [x] update to react native 58
 - [x] validate commit messages work
 - [x] make redux clean
