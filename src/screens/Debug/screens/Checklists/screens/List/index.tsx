@@ -33,7 +33,6 @@ class Component extends React.PureComponent<Props> {
       removeItem: remove,
       toggleActiveItem: toggle
     } = this.props;
-
     return (
       <Screen disableScroll onLeftPress={() => history.goBack()}>
         <FlatList
@@ -63,7 +62,7 @@ class Component extends React.PureComponent<Props> {
                 label
                 neutral={item.active}
                 lowercase
-                title={item.id}
+                title={item.name}
                 onPress={() => undefined}
               />
             </View>
@@ -80,7 +79,7 @@ class Component extends React.PureComponent<Props> {
   }
 }
 
-export const Item = connect(
+export const List = connect(
   (state: RootState) => ({
     items: selectItemsByCreatedAt(state)
   }),

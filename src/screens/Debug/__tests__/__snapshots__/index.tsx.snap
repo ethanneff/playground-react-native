@@ -285,7 +285,7 @@ exports[`renders correctly 1`] = `
               ]
             }
           >
-            CHECKLIST
+            CHECKLISTS
           </Text>
         </View>
       </View>

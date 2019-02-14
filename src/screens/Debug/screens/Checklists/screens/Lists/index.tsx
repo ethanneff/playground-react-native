@@ -34,19 +34,25 @@ class Component extends React.PureComponent<Props> {
             <View style={{ flexDirection: "row" }}>
               <Button
                 contained
-                lowercase
                 title={item.id}
-                onPress={() => history.push(`${match.path}/item`)}
+                onPress={() => history.push(`${match.path}/${item.id}`)}
               />
             </View>
           )}
+        />
+        <Button
+          right
+          contained
+          fab
+          icon="plus"
+          onPress={() => history.push(`${match.path}/create`)}
         />
       </Screen>
     );
   }
 }
 
-export const List = connect(
+export const Lists = connect(
   (state: RootState) => ({
     state
   }),

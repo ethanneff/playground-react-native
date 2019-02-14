@@ -256,7 +256,7 @@ import {
   Ball,
   Buttons,
   Cards,
-  Checklist,
+  Checklists,
   Drag,
   Fonts,
   Input,
@@ -273,7 +273,7 @@ export class Debug extends React.PureComponent<Props> {
     Ball,
     Buttons,
     Cards,
-    Checklist,
+    Checklists,
     Drag,
     Fonts,
     Input,
@@ -297,7 +297,7 @@ export class Debug extends React.PureComponent<Props> {
     return Object.keys(this.screens).map((screen: string) => (
       <Route
         key={screen}
-        path={`${match.path}/${screen}`}
+        path={`${match.path}/${screen.toLowerCase()}`}
         component={this.screens[screen]}
       />
     ));

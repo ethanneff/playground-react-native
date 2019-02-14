@@ -17,7 +17,7 @@ import {
   ListActions,
   listReducer,
   Lists
-} from "../screens/Debug/screens/Checklist/models";
+} from "../screens/Debug/screens/Checklists/models";
 
 // models
 export * from "./App";
