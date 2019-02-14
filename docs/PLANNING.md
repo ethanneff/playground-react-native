@@ -2,7 +2,6 @@
 
 ## Top 1
 
-- [ ] redux persist test working
 - [ ] checklist mvp with navigation
 - [ ] checklist tests
 - [ ] checklist async tests
@@ -23,6 +22,7 @@
 
 ## Rest
 
+- [ ] redux persist test working
 - [ ] textinput
 - [ ] radio
 - [ ] selection
