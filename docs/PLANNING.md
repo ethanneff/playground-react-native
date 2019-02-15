@@ -2,6 +2,7 @@
 
 ## Top 1
 
+- [ ] add keyboard listener to device
 - [ ] checklist mvp with navigation
 - [ ] checklist tests
 - [ ] checklist async tests
