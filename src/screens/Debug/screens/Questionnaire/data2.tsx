@@ -8,40 +8,40 @@ export enum ExampleType {
 
 export const data = {
   choices: {
-    "1": {
-      id: "1",
+    "01": {
+      id: "01",
       title: "less than 6 weeks"
     },
-    "2": {
-      id: "2",
+    "02": {
+      id: "02",
       title: "more than 6 weeks but less than 12 weeks"
     },
-    "3": {
-      id: "3",
+    "03": {
+      id: "03",
       title: "more than 12 weeks"
     },
-    "4": {
-      id: "4",
+    "04": {
+      id: "04",
       title: "yes"
     },
-    "5": {
-      id: "5",
+    "05": {
+      id: "05",
       title: "no"
     },
-    "6": {
-      id: "6",
+    "06": {
+      id: "06",
       title: "none"
     },
-    "7": {
-      id: "7",
+    "07": {
+      id: "07",
       title: "mild"
     },
-    "8": {
-      id: "8",
+    "08": {
+      id: "08",
       title: "moderate"
     },
-    "9": {
-      id: "9",
+    "09": {
+      id: "09",
       title: "severe"
     },
     "10": {
@@ -125,40 +125,40 @@ export const data = {
     }
   },
   headers: {
-    "1": {
-      id: "1",
+    "01": {
+      id: "01",
       title:
         "What amount of knee pain have you experienced in the last week during the following activities?"
     },
-    "2": {
-      id: "2",
+    "02": {
+      id: "02",
       title:
         "What degree of difficulty you have experienced in the last week due to your knee problem?"
     },
-    "3": {
-      id: "3",
+    "03": {
+      id: "03",
       title:
         "Everything in this questionnaire will be confidential between you and your Hinge Health coach. No information will be shared with your insurer or employer."
     },
-    "4": {
-      id: "4",
+    "04": {
+      id: "04",
       title:
         "Over the last 2 weeks, how often have you been bothered by the following problems?"
     }
   },
   questionnaires: {
-    "1": {
-      id: "1",
+    "01": {
+      id: "01",
       questions: [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
         "10",
         "11",
         "12",
@@ -216,144 +216,144 @@ export const data = {
     }
   },
   questions: {
-    "1": {
-      choices: ["1", "2", "3"],
-      id: "1",
+    "01": {
+      choices: ["01", "02", "03"],
+      id: "01",
       title: "How long have you been living with knee pain?"
     },
-    "2": {
-      choices: ["4", "5"],
-      id: "2",
+    "02": {
+      choices: ["04", "05"],
+      id: "02",
       title: "Have you had surgery on your knee within the past 6 months?"
     },
-    "3": {
-      choices: ["4", "5"],
-      id: "3",
+    "03": {
+      choices: ["04", "05"],
+      id: "03",
       title: "Have you had surgery on your knee within the past 6 months?"
     },
-    "4": {
-      id: "4",
+    "04": {
+      id: "04",
       subtitle:
         "Including what you think may be causing it, any triggers, how it impacts your daily life, and anything else you think we should know",
       title: "In your own words, please describe your knee pain to us.",
       type: "input"
     },
-    "5": {
+    "05": {
       choices: ["0", "10"],
-      id: "5",
+      id: "05",
       title: "Over the past 24 hours, how bad was your knee pain?",
       type: "slider"
     },
-    "6": {
+    "06": {
       choices: ["0", "10"],
-      id: "6",
+      id: "06",
       title: "Over the past 7 days, how bad was your knee pain?",
       type: "slider"
     },
-    "7": {
+    "07": {
       choices: ["12", "13", "14", "15", "16"],
-      id: "7",
+      id: "07",
       title: "How often do you experience knee pain?"
     },
-    "8": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "1",
-      id: "8",
+    "08": {
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "01",
+      id: "08",
       title: "Twisting/pivoting on your knee"
     },
-    "9": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "1",
-      id: "9",
+    "09": {
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "01",
+      id: "09",
       title: "Straightening knee fully"
     },
     "10": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "1",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "01",
       id: "10",
       title: "Bending knee fully"
     },
     "11": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "1",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "01",
       id: "11",
       title: "Walking on flat surface"
     },
     "12": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "1",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "01",
       id: "12",
       title: "Going up or down stairs"
     },
     "13": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "1",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "01",
       id: "13",
       title: "At night while in bed"
     },
     "14": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "1",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "01",
       id: "14",
       title: "Sitting or lying"
     },
     "15": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "1",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "01",
       id: "15",
       title: "Standing upright"
     },
     "16": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "2",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "02",
       id: "16",
       title: "Rising from bed"
     },
     "17": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "2",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "02",
       id: "17",
       title: "Putting on socks/stockings"
     },
     "18": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "2",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "02",
       id: "18",
       title: "Rising from sitting"
     },
     "19": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "2",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "02",
       id: "19",
       title: "Bending to floor"
     },
     "20": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "2",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "02",
       id: "20",
       title: "Twisting/pivoting on your injured knee"
     },
     "21": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "2",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "02",
       id: "21",
       title: "Kneeling"
     },
     "22": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "2",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "02",
       id: "22",
       title: "Squatting"
     },
     "23": {
-      choices: ["4", "5"],
+      choices: ["04", "05"],
       id: "23",
       title:
         "Has your doctor or physical therapist advised you to avoid any specific exercises or movements?"
     },
     "24": {
-      choices: ["1", "100"],
-      header: "3",
+      choices: ["01", "100"],
+      header: "03",
       id: "24",
       subtitle:
         "Include hours you missed on sick days, times you went in late, left early, etc., because of your knee pain. Do not include time you missed to participate in this program.",
@@ -362,16 +362,16 @@ export const data = {
       type: "dropdown"
     },
     "25": {
-      choices: ["1", "100"],
-      header: "3",
+      choices: ["01", "100"],
+      header: "03",
       id: "25",
       title:
         "During the past seven days, how many hours did you actually work?",
       type: "dropdown"
     },
     "26": {
-      choices: ["6", "7", "8", "9", "10", "11"],
-      header: "3",
+      choices: ["06", "07", "08", "09", "10", "11"],
+      header: "03",
       id: "26",
       subtitle:
         "Think about days you were limited in the amount or kind of work you could do, days you accomplished less than you would like, or days you could not do your work as carefully as usual.",
@@ -406,118 +406,118 @@ export const data = {
       type: "slider"
     },
     "31": {
-      choices: ["4", "5"],
+      choices: ["04", "05"],
       id: "31",
       title:
         "Do you have any upcoming surgeries or procedures scheduled for your knee?"
     },
     "32": {
-      choices: ["4", "5"],
+      choices: ["04", "05"],
       id: "32",
       title: "Do you think you might need knee surgery in the future?"
     },
     "33": {
-      choices: ["4", "5"],
+      choices: ["04", "05"],
       id: "33",
       title:
         "Do you believe that without Hinge Health you currently have the knowledge and tools to manage your knee pain without surgery for at least the next 5 years?"
     },
     "34": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "34",
       title: "Feeling nervous, anxious, or on edge"
     },
     "35": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "35",
       title: "Not being able to stop or control worrying"
     },
     "36": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "36",
       title: "Worrying too much about different things"
     },
     "37": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "37",
       title: "Trouble relaxing"
     },
     "38": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "38",
       title: "Being so restless that it is hard to sit still"
     },
     "39": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "39",
       title: "Becoming easily annoyed or irritable"
     },
     "40": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "40",
       title: "Feeling afraid as if something awful might happen"
     },
     "41": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "41",
       title: "Little interest or pleasure in doing things"
     },
     "42": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "42",
       title: "Feeling down, depressed or hopeless"
     },
     "43": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "43",
       title: "Trouble falling or staying asleep, or sleeping too much"
     },
     "44": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "44",
       title: "Feeling tired or having little energy"
     },
     "45": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "45",
       title: "Poor appetite or overeating"
     },
     "46": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "46",
       title:
         "Feeling bad about yourself - or that you are a failure or have let yourself or your family down"
     },
     "47": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "47",
       title:
         "Trouble concentrating on things, such as reading the newspaper or watching television"
     },
     "48": {
-      choices: ["6", "17", "18", "19"],
-      header: "4",
+      choices: ["06", "17", "18", "19"],
+      header: "04",
       id: "48",
       title:
         "Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual"
     },
     "49": {
-      choices: ["6", "17", "18", "1"],
-      header: "4",
+      choices: ["06", "17", "18", "01"],
+      header: "04",
       id: "49",
       title:
         "Thoughts that you would be better off dead or of hurting yourself in some way"
