@@ -1,0 +1,409 @@
+questionnaires
+  1 
+    id = 1
+    title = knee
+    questions[] = 1,2,3,4,5
+
+headers
+  1 
+    id = 1
+    title = What amount of knee pain have you experienced in the last week during the following activities?
+  2 
+    id = 2
+    title = What degree of difficulty you have experienced in the last week due to your knee problem?
+  3 
+    id = 3 
+    title = Everything in this questionnaire will be confidential between you and your Hinge Health coach. No information will be shared with your insurer or employer.
+  4 
+    id = 4
+    title = Over the last 2 weeks, how often have you been bothered by the following problems?
+
+
+choices
+  1 
+    id = 1
+    title = less than 6 weeks
+  2 
+    id = 2 
+    title = more than 6 weeks but less than 12 weeks
+  3 
+    id = 3
+    title = more than 12 weeks
+  4
+    id = 4
+    title = yes
+  5 
+    id = 5
+    title = no
+  6  
+    id = 6
+    title = none
+  7  
+    id = 7
+    title = mild
+  8  
+    id = 8
+    title = moderate
+  9  
+    id = 9
+    title = severe
+  10  
+    id = 10
+    title = very severe
+  11  
+    id = 11
+    title = worst possible
+  12
+    id = 12
+    title = always
+  13
+    id = 13
+    title = daily
+  14
+    id = 14
+    title = weekly
+  15
+    id = 15
+    title = monthly
+  16
+    id = 16
+    title = never
+  17
+    id = 17
+    title = several days
+  18
+    id = 18
+    title = more than half the days
+  19
+    id = 19
+    title = nearly every day
+  20 
+    id = 20
+    title = female
+  21 
+    id = 21
+    title = male
+  22 
+    id = 22
+    title = prefer not to answer
+  23
+    id = 23
+    title = sms
+  24 
+    id = 24
+    title = call
+  25
+    id = 25
+    title = email
+  26
+    id = 26
+    title = Little or no exercise. Pick this option if you do not currently exercise or you exercise at low intensity (no sweating)
+  27
+    id = 27
+    title = Medium amount of exercise. Pick this option if you do LESS than 150 minutes of moderate (or 75 minutes of vigorous) activity per week
+  28
+    id = 28
+    title = High amount of exercise. Pick this option if you do MORE than 150 minutes of moderate (or 75 minutes of vigorous) activity per week
+
+questions
+  1 
+    id = 1 
+    title = How long have you been living with knee pain?
+    choices[] = 1, 2 ,3
+  2
+    id = 2
+    title = Have you had surgery on your knee within the past 6 months?
+    choices[] = 4,5
+  3 
+    id = 3
+    title = Have you had surgery on your knee within the past 6 months?
+    choices[] = 4,5
+  4 
+    id = 4
+    title = In your own words, please describe your knee pain to us.
+    subtitle = Including what you think may be causing it, any triggers, how it impacts your daily life, and anything else you think we should know 
+    type = input
+  5 
+    id = 5
+    title = Over the past 24 hours, how bad was your knee pain?
+    choices[] = 0,10
+    type = slider
+  6 
+    id = 6
+    title = Over the past 7 days, how bad was your knee pain?
+    choices[] = 0, 10
+    type = slider
+  7 
+    id = 7
+    title = How often do you experience knee pain?
+    choices[] = 12,13,14,15,16
+  8
+    id = 8
+    title = Twisting/pivoting on your knee
+    header = 1
+    choices[] = 6,7,8,9,10,11
+  9
+    id = 9
+    title = Straightening knee fully
+    header = 1
+    choices[] = 6,7,8,9,10,11
+  10
+    id = 10
+    title = Bending knee fully
+    header = 1
+    choices[] = 6,7,8,9,10,11
+  11
+    id = 11
+    title = Walking on flat surface
+    header = 1
+    choices[] = 6,7,8,9,10,11
+  12
+    id = 12
+    title = Going up or down stairs
+    header = 1
+    choices[] = 6,7,8,9,10,11
+  13
+    id = 13
+    title = At night while in bed
+    header = 1
+    choices[] = 6,7,8,9,10,11
+  14
+    id = 14
+    title = Sitting or lying
+    header = 1
+    choices[] = 6,7,8,9,10,11
+  15
+    id = 15
+    title = Standing upright
+    header = 1
+    choices[] = 6,7,8,9,10,11
+  16
+    id = 16
+    header = 2
+    title = Rising from bed
+    choices[] = 6,7,8,9,10,11
+  17
+    id = 17
+    header = 2
+    title = Putting on socks/stockings
+    choices[] = 6,7,8,9,10,11
+  18
+    id = 18
+    header = 2
+    title = Rising from sitting
+    choices[] = 6,7,8,9,10,11
+  19
+    id = 19
+    header = 2
+    title = Bending to floor
+    choices[] = 6,7,8,9,10,11
+  20
+    id = 20
+    header = 2
+    title = Twisting/pivoting on your injured knee
+    choices[] = 6,7,8,9,10,11
+  21
+    id = 21
+    header = 2
+    title = Kneeling
+    choices[] = 6,7,8,9,10,11
+  22
+    id = 22
+    header = 2
+    title = Squatting
+    choices[] = 6,7,8,9,10,11
+  23
+    id = 23
+    title = Has your doctor or physical therapist advised you to avoid any specific exercises or movements?
+    choices[] = 4,5
+  24
+    id = 24
+    title = During the past seven days, how many hours did you miss from work because of problems associated with your knee pain?
+    subtitle = Include hours you missed on sick days, times you went in late, left early, etc., because of your knee pain. Do not include time you missed to participate in this program.
+    header = 3
+    choices[] = 1,100
+    type = dropdown
+  25 
+    id = 25
+    title = During the past seven days, how many hours did you actually work?
+    header = 3
+    choices[] = 1, 100
+    type = dropdown
+  26
+    id = 26
+    title = During the past seven days, how much did your knee pain affect your productivity while you were working? 
+    subtitle = Think about days you were limited in the amount or kind of work you could do, days you accomplished less than you would like, or days you could not do your work as carefully as usual.
+    header = 3
+    choices[] = 6,7,8,9,10,11
+    type = dropdown
+  27 
+    id = 27
+    title = height?
+    choices[] = 4ft, 8ft
+    type = dropdown
+  28 
+    id = 28
+    title = weight?
+    choices[] = 50, 1000
+    type = dropdown
+  29
+    id = 29
+    title = What do you think are the chances you'll have knee surgery in the next year, in %?
+    choices[] = 0,100
+    type = slider
+  30
+    id = 30
+    title = What do you think are the chances you'll have knee surgery in the next 5 years, in %?
+    choices[] = 0,100
+    type = slider
+  31
+    id = 31
+    title = Do you have any upcoming surgeries or procedures scheduled for your knee?
+    choices[] = 4,5
+  32
+    id = 32
+    title = Do you think you might need knee surgery in the future?
+    choices[] = 4,5
+  33
+    id = 33
+    title = Do you believe that without Hinge Health you currently have the knowledge and tools to manage your knee pain without surgery for at least the next 5 years?
+    choices[] = 4,5
+  34    
+    id = 34
+    header = 4
+    title = Feeling nervous, anxious, or on edge
+    choices[] = 6,17,18,19
+  35    
+    id = 35
+    header = 4
+    title = Not being able to stop or control worrying
+    choices[] = 6,17,18,19
+  36    
+    id = 36
+    header = 4
+    title = Worrying too much about different things
+    choices[] = 6,17,18,19
+  37    
+    id = 37
+    header = 4
+    title = Trouble relaxing
+    choices[] = 6,17,18,19
+  38    
+    id = 38
+    header = 4
+    title = Being so restless that it is hard to sit still
+    choices[] = 6,17,18,19
+  39    
+    id = 39
+    header = 4
+    title = Becoming easily annoyed or irritable
+    choices[] = 6,17,18,19
+  40    
+    id = 40
+    header = 4
+    title = Feeling afraid as if something awful might happen
+    choices[] = 6,17,18,19
+  41    
+    id = 41
+    header = 4
+    title = Little interest or pleasure in doing things
+    choices[] = 6,17,18,19
+  42    
+    id = 42
+    header = 4
+    title = Feeling down, depressed or hopeless
+    choices[] = 6,17,18,19
+  43    
+    id = 43
+    header = 4
+    title = Trouble falling or staying asleep, or sleeping too much
+    choices[] = 6,17,18,19
+  44    
+    id = 44
+    header = 4
+    title = Feeling tired or having little energy
+    choices[] = 6,17,18,19
+  45    
+    id = 45
+    header = 4
+    title = Poor appetite or overeating
+    choices[] = 6,17,18,19
+  46    
+    id = 46
+    header = 4
+    title = Feeling bad about yourself - or that you are a failure or have let yourself or your family down
+    choices[] = 6,17,18,19
+  47    
+    id = 47
+    header = 4
+    title = Trouble concentrating on things, such as reading the newspaper or watching television
+    choices[] = 6,17,18,19
+  48    
+    id = 48
+    header = 4
+    title = Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual
+    choices[] = 6,17,18,19
+  49    
+    id = 49
+    header = 4
+    title = Thoughts that you would be better off dead or of hurting yourself in some way
+    choices[] = 6,17,18,1
+  50
+    id = 50
+    title = Gender
+    choices[] = 20,21,22
+  51
+    id = 51
+    title = How much exercise do you usually get in a typical week?
+    choices[] = 26,27,28
+
+  52
+    id = 52
+    title = Job title
+    choices[]
+    type = Input
+  53
+    id = 53
+    title = Who are you? What are your hobbies, likes, and dislikes?
+    choices[]
+    type = Input
+  54
+    id = 54
+    title = What are the key reasons for you to make changes with regard to your health now? In other words, why start a program like this now?
+    choices[]
+    type = Input
+  55
+    id = 55
+    title = Take a moment to imagine your life free from knee pain. How would your life be different than it is now? Please describe what would be possible for you.
+    choices[]
+    type = Input
+  56
+    id = 56
+    title = Do you foresee any barriers or challenges that might hold you back from being successful in this program?
+    choices[]
+    type = Input
+  57 
+    id = 57 
+    title = How would you prefer your health coach to contact you?
+    choices[] = 23,24,25
+    type = checkbox
+  58
+    id = 58
+    title = address
+    choice[] 
+    type = input
+  59
+    id = 59
+    title = city
+    choice[] 
+    type = input
+  60
+    id = 60
+    title = state
+    choice[] 
+    type = dropdown
+  61
+    id = 61
+    title = zip code
+    choice[] 
+    type = input
