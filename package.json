@@ -46,6 +46,7 @@
     "uuid": "3.3.2"
   },
   "devDependencies": {
+    "@babel/plugin-transform-object-assign": "7.2.0",
     "@commitlint/cli": "7.5.2",
     "@commitlint/config-conventional": "7.5.0",
     "@semantic-release/changelog": "3.0.2",
@@ -121,6 +122,9 @@
   "babel": {
     "presets": [
       "module:metro-react-native-babel-preset"
+    ],
+    "plugins": [
+      "transform-object-assign"
     ]
   },
   "jest": {
@@ -129,9 +133,6 @@
       "^.+\\.(jsx?)$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
       "^.+\\.tsx?$": "ts-jest"
     },
-    "plugins": [
-      "transform-object-assign"
-    ],
     "transformIgnorePatterns": [
       "node_modules/(?!react-native)/"
     ],
