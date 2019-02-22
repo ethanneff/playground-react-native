@@ -121,9 +121,6 @@
   "babel": {
     "presets": [
       "module:metro-react-native-babel-preset"
-    ],
-    "plugins": [
-      "transform-object-assign"
     ]
   },
   "jest": {
@@ -132,6 +129,9 @@
       "^.+\\.(jsx?)$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
       "^.+\\.tsx?$": "ts-jest"
     },
+    "plugins": [
+      "transform-object-assign"
+    ],
     "transformIgnorePatterns": [
       "node_modules/(?!react-native)/"
     ],
