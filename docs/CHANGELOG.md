@@ -1,5 +1,30 @@
 # Changelog
 
+# [1.10.0](https://github.com/ethanneff/example/compare/v1.9.2...v1.10.0) (2019-02-22)
+
+
+### Bug Fixes
+
+* attempt to correct failing builds ([4a1c64b](https://github.com/ethanneff/example/commit/4a1c64b))
+* attempt to fix failing travis build ([12ca9ae](https://github.com/ethanneff/example/commit/12ca9ae))
+* attempt to get tests working again ([af09032](https://github.com/ethanneff/example/commit/af09032))
+* correct linting with object key sort ([92ded25](https://github.com/ethanneff/example/commit/92ded25))
+* update depedencies ([758f4aa](https://github.com/ethanneff/example/commit/758f4aa))
+* update dependencies ([0bf381f](https://github.com/ethanneff/example/commit/0bf381f))
+* update dependencies ([e55bfc4](https://github.com/ethanneff/example/commit/e55bfc4))
+* update dependencies ([11e87bc](https://github.com/ethanneff/example/commit/11e87bc))
+* update dependencies ([78d0689](https://github.com/ethanneff/example/commit/78d0689))
+* update dependencies ([a5de0dc](https://github.com/ethanneff/example/commit/a5de0dc))
+* update dependencies ([538a302](https://github.com/ethanneff/example/commit/538a302))
+* update dependencies ([d9bdf46](https://github.com/ethanneff/example/commit/d9bdf46))
+* update dependency ([57c9a82](https://github.com/ethanneff/example/commit/57c9a82))
+
+
+### Features
+
+* add json structure for potential new questionnaire ([90d3894](https://github.com/ethanneff/example/commit/90d3894))
+* add navigation to checklist ([b9f6837](https://github.com/ethanneff/example/commit/b9f6837))
+
 ## [1.9.2](https://github.com/ethanneff/example/compare/v1.9.1...v1.9.2) (2019-02-06)
 
 
