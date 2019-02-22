@@ -23,9 +23,9 @@
     "travis-deploy-once": " echo 'prevent multiple deploys';      travis-deploy-once"
   },
   "dependencies": {
-    "appcenter": "1.12.0",
-    "appcenter-analytics": "1.12.0",
-    "appcenter-crashes": "1.12.0",
+    "appcenter": "1.12.2",
+    "appcenter-analytics": "1.12.2",
+    "appcenter-crashes": "1.12.2",
     "react": "16.8.3",
     "react-art": "16.8.3",
     "react-dom": "16.8.3",
@@ -55,7 +55,7 @@
     "@semantic-release/release-notes-generator": "7.1.4",
     "@types/jest": "24.0.6",
     "@types/react": "16.8.4",
-    "@types/react-native": "0.57.37",
+    "@types/react-native": "0.57.38",
     "@types/react-native-vector-icons": "4.6.4",
     "@types/react-redux": "7.0.1",
     "@types/react-router-dom": "4.3.1",
@@ -74,7 +74,7 @@
     "ts-jest": "23.10.5",
     "tslint": "5.12.1",
     "tslint-config-prettier": "1.18.0",
-    "typescript": "3.3.3"
+    "typescript": "3.3.3333"
   },
   "resolutions": {
     "@types/react": "16.8.3"
