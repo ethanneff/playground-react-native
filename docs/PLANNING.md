@@ -23,6 +23,7 @@
 
 ## Rest
 
+- [ ] remove `@babel/plugin-transform-object-assign` dependency when updating `react` `react-dom` or `react-test-renderer`
 - [ ] redux persist test working
 - [ ] textinput
 - [ ] radio
@@ -53,6 +54,7 @@
 
 ## Done
 
+- [x] fix broken ci
 - [x] look into [react navigation for web](https://github.com/react-navigation/example-web)
 - [x] update to react native 58
 - [x] validate commit messages work
