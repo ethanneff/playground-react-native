@@ -77,9 +77,6 @@
     "tslint-config-prettier": "1.18.0",
     "typescript": "3.3.3333"
   },
-  "resolutions": {
-    "@types/react": "16.8.3"
-  },
   "husky": {
     "hooks": {
       "pre-push": "lint-staged && echo 'yarn lint && yarn test'",
