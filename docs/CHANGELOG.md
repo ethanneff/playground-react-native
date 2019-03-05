@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.2](https://github.com/ethanneff/example/compare/v1.10.1...v1.10.2) (2019-03-05)
+
+
+### Bug Fixes
+
+* update dependencies ([007cf58](https://github.com/ethanneff/example/commit/007cf58))
+
 ## [1.10.1](https://github.com/ethanneff/example/compare/v1.10.0...v1.10.1) (2019-02-26)
 
 
