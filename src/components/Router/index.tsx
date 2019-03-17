@@ -27,7 +27,9 @@ class Router extends React.PureComponent {
         <BackButton>{children}</BackButton>
       </NativeRouter>
     ) : (
-      <NativeRouter>{children}</NativeRouter>
+      <NativeRouter>
+        <>{children}</>
+      </NativeRouter>
     );
   }
 }
