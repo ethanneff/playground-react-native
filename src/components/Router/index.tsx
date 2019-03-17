@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Platform } from "react-native";
 import {
   BackButton,
   NativeRouter,
@@ -6,9 +7,8 @@ import {
   Route as Original,
   Switch
 } from "react-router-native";
-import { Auth } from "./Auth";
-import { Platform } from "react-native";
 import { Config } from "../../utils";
+import { Auth } from "./Auth";
 
 const Route = ({ component, ...rest }: any) => (
   <Auth
