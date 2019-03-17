@@ -9,3 +9,4 @@ export * from "./OKRs";
 export * from "./Input";
 export * from "./Questionnaire";
 export * from "./Checklists";
+export * from "./ImageCollection";

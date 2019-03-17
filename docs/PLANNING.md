@@ -54,6 +54,7 @@
 
 ## Done
 
+- [x] infinite scroll image collection
 - [x] fix broken ci
 - [x] look into [react navigation for web](https://github.com/react-navigation/example-web)
 - [x] update to react native 58

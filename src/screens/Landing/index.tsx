@@ -14,10 +14,12 @@ const styles = StyleSheet.create({
   }
 });
 
-export class Landing extends React.PureComponent<RouteComponentProps> {
+type Props = RouteComponentProps;
+
+export class Landing extends React.PureComponent<Props> {
   public componentDidMount() {
     const { history } = this.props;
-    history.push("/debug/questionnaire");
+    history.push("/debug");
   }
   public render() {
     const { history } = this.props;
