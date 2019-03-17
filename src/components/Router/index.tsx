@@ -7,6 +7,8 @@ import {
   Switch
 } from "react-router-native";
 import { Auth } from "./Auth";
+import { Platform } from "react-native";
+import { Config } from "../../utils";
 
 const Route = ({ component, ...rest }: any) => (
   <Auth
@@ -20,10 +22,12 @@ const Route = ({ component, ...rest }: any) => (
 class Router extends React.PureComponent {
   public render() {
     const { children } = this.props;
-    return (
+    return Platform.OS === Config.os.android ? (
       <NativeRouter>
         <BackButton>{children}</BackButton>
       </NativeRouter>
+    ) : (
+      <NativeRouter>{children}</NativeRouter>
     );
   }
 }
