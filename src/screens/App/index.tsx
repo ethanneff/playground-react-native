@@ -32,7 +32,7 @@ interface DispatchProps {
 
 type Props = DispatchProps;
 
-class AppComponent extends React.Component<Props> {
+class Component extends React.PureComponent<Props> {
   public componentDidMount() {
     this.enableListeners();
   }
@@ -91,4 +91,4 @@ export const App = connect(
     onDimensionChange,
     onNetworkChange
   }
-)(AppComponent);
+)(Component);
