@@ -1,5 +1,20 @@
 # Changelog
 
+# [1.11.0](https://github.com/ethanneff/example/compare/v1.10.3...v1.11.0) (2019-03-18)
+
+
+### Bug Fixes
+
+* correct failing test ([d01bb48](https://github.com/ethanneff/example/commit/d01bb48))
+* make app a pure component ([515bce1](https://github.com/ethanneff/example/commit/515bce1))
+* make image collection animated with fade ([ed71d33](https://github.com/ethanneff/example/commit/ed71d33))
+* remove back button from ios ([b488e86](https://github.com/ethanneff/example/commit/b488e86))
+
+
+### Features
+
+* added infinite scroll image collection screen ([de1e611](https://github.com/ethanneff/example/commit/de1e611))
+
 ## [1.10.3](https://github.com/ethanneff/example/compare/v1.10.2...v1.10.3) (2019-03-17)
 
 
