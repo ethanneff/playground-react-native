@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ActivityIndicator, ImageBackground } from "react-native";
+import { ActivityIndicator, Animated, StyleSheet, View } from "react-native";
 
 interface Props {
   uri: string;
@@ -9,36 +9,49 @@ interface Props {
   size?: number | "small" | "large";
 }
 
-interface State {
-  loaded: boolean;
-}
-
-export class AsyncImage extends React.PureComponent<Props, State> {
-  public state = {
-    loaded: false
-  };
+export class AsyncImage extends React.PureComponent<Props> {
+  private styles = StyleSheet.create({
+    indicatorOverlay: {
+      justifyContent: "center",
+      position: "absolute"
+    }
+  });
+  private imageAnimated = new Animated.Value(0);
+  private indicatorAnimated = new Animated.Value(1);
 
   public render() {
     const { uri, height, width, color = "black", size = "small" } = this.props;
-    const { loaded } = this.state;
-    const opacity = loaded ? 0 : 1;
-
+    const containerStyle = { width, height };
+    const imageStyle = [containerStyle, { opacity: this.imageAnimated }];
+    const indicatorStyle = [
+      containerStyle,
+      { opacity: this.indicatorAnimated },
+      this.styles.indicatorOverlay
+    ];
     return (
-      <ImageBackground
-        source={{ uri }}
-        style={{ width, height }}
-        onLoad={this.onImageLoad}
-      >
-        <ActivityIndicator
-          size={size}
-          color={color}
-          style={{ width, height, opacity }}
+      <View style={containerStyle}>
+        <Animated.Image
+          source={{ uri }}
+          style={imageStyle}
+          onLoad={this.onImageLoad}
         />
-      </ImageBackground>
+        <Animated.View style={indicatorStyle}>
+          <ActivityIndicator size={size} color={color} />
+        </Animated.View>
+      </View>
     );
   }
 
   private onImageLoad = () => {
-    this.setState({ loaded: true });
+    Animated.parallel([
+      Animated.timing(this.indicatorAnimated, {
+        toValue: 0,
+        useNativeDriver: true
+      }),
+      Animated.timing(this.imageAnimated, {
+        toValue: 1,
+        useNativeDriver: true
+      })
+    ]).start();
   };
 }

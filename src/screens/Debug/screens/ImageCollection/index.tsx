@@ -8,20 +8,21 @@ type Props = RouteComponentProps;
 
 export class ImageCollection extends React.PureComponent<Props> {
   private data: number[] = [
-    Date.now(),
-    Date.now(),
-    Date.now(),
-    Date.now(),
-    Date.now(),
-    Date.now(),
-    Date.now(),
-    Date.now()
+    Math.random(),
+    Math.random(),
+    Math.random(),
+    Math.random(),
+    Math.random(),
+    Math.random(),
+    Math.random(),
+    Math.random()
   ];
   private numColumns = 3;
-  private infiniteScrollThreshold = 0.2;
+  private infiniteScrollThreshold = 0.3;
   private columnWidth = Dimensions.get("window").width / this.numColumns;
-  private imageUrl =
-    "http://lorempixel.com/" + this.columnWidth + "/" + this.columnWidth;
+  private imageUrl = `http://lorempixel.com/${this.columnWidth}/${
+    this.columnWidth
+  }`;
 
   public render() {
     const { history } = this.props;
@@ -40,11 +41,11 @@ export class ImageCollection extends React.PureComponent<Props> {
   }
 
   private fetchMore = () => {
-    this.data.push(Date.now());
-    this.data.push(Date.now());
-    this.data.push(Date.now());
-    this.data.push(Date.now());
-    this.data.push(Date.now());
+    this.data.push(Math.random());
+    this.data.push(Math.random());
+    this.data.push(Math.random());
+    this.data.push(Math.random());
+    this.data.push(Math.random());
   };
 
   private renderImage = () => (
