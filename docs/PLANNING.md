@@ -7,6 +7,7 @@
 - [ ] checklist mvp with navigation
 - [ ] checklist tests
 - [ ] checklist async tests
+- [ ] landing page https://www.lemonade.com/ https://www.any.do/
 
 ## Top 3
 
