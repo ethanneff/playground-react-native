@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/ethanneff/example/compare/v1.11.0...v1.11.1) (2019-03-19)
+
+
+### Bug Fixes
+
+* update to react natve 0.59.1 ([de15b2c](https://github.com/ethanneff/example/commit/de15b2c))
+
 # [1.11.0](https://github.com/ethanneff/example/compare/v1.10.3...v1.11.0) (2019-03-18)
 
 
