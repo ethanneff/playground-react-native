@@ -42,24 +42,20 @@ exports[`Launcher Container renders correctly 1`] = `
     >
       <View>
         <Text
-          allowFontScaling={false}
           style={
             Array [
               Object {
-                "color": "hsl(210, 10%, 23%)",
-                "fontSize": 24,
+                "fontSize": 14,
+                "fontWeight": "300",
+                "letterSpacing": 0.25,
               },
               undefined,
-              Object {
-                "fontFamily": undefined,
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
+              undefined,
+              undefined,
             ]
           }
         >
-          
+          arrow-left
         </Text>
       </View>
     </View>

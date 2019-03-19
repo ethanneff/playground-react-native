@@ -122,6 +122,7 @@ exports[`renders correctly 1`] = `
           onFocus={[Function]}
           placeholder="example@gmail.com"
           placeholderTextColor="hsl(208, 7%, 46%)"
+          rejectResponderTermination={true}
           selectionColor="hsl(211, 100%, 50%)"
           style={
             Array [
@@ -260,6 +261,7 @@ exports[`renders correctly 1`] = `
           onFocus={[Function]}
           placeholder="•••••••"
           placeholderTextColor="hsl(208, 7%, 46%)"
+          rejectResponderTermination={true}
           selectionColor="hsl(211, 100%, 50%)"
           style={
             Array [

@@ -102,24 +102,20 @@ exports[`renders correctly with header 1`] = `
     >
       <View>
         <Text
-          allowFontScaling={false}
           style={
             Array [
               Object {
-                "color": "hsl(210, 10%, 23%)",
-                "fontSize": 24,
+                "fontSize": 14,
+                "fontWeight": "300",
+                "letterSpacing": 0.25,
               },
               undefined,
-              Object {
-                "fontFamily": "Material Design Icons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
+              undefined,
+              undefined,
             ]
           }
         >
-          
+          arrow-left
         </Text>
       </View>
     </View>
@@ -168,26 +164,20 @@ exports[`renders correctly with header 1`] = `
         }
       >
         <Text
-          allowFontScaling={false}
           style={
             Array [
               Object {
-                "color": "hsl(210, 10%, 23%)",
-                "fontSize": 24,
+                "fontSize": 14,
+                "fontWeight": "300",
+                "letterSpacing": 0.25,
               },
-              Object {
-                "alignSelf": "flex-end",
-              },
-              Object {
-                "fontFamily": "Material Design Icons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
-          
+          close
         </Text>
       </View>
     </View>
@@ -281,24 +271,20 @@ exports[`renders correctly with icons 1`] = `
     >
       <View>
         <Text
-          allowFontScaling={false}
           style={
             Array [
               Object {
-                "color": "hsl(210, 10%, 23%)",
-                "fontSize": 24,
+                "fontSize": 14,
+                "fontWeight": "300",
+                "letterSpacing": 0.25,
               },
               undefined,
-              Object {
-                "fontFamily": "Material Design Icons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
+              undefined,
+              undefined,
             ]
           }
         >
-          
+          check
         </Text>
       </View>
     </View>
@@ -347,26 +333,20 @@ exports[`renders correctly with icons 1`] = `
         }
       >
         <Text
-          allowFontScaling={false}
           style={
             Array [
               Object {
-                "color": "hsl(210, 10%, 23%)",
-                "fontSize": 24,
+                "fontSize": 14,
+                "fontWeight": "300",
+                "letterSpacing": 0.25,
               },
-              Object {
-                "alignSelf": "flex-end",
-              },
-              Object {
-                "fontFamily": "Material Design Icons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
-          
+          check
         </Text>
       </View>
     </View>

@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
 
 interface Props {
   title?: string;
-  leftIcon: string;
-  rightIcon: string;
+  leftIcon?: string;
+  rightIcon?: string;
   onLeftPress?(): void;
   onRightPress?(): void;
 }
@@ -29,21 +29,20 @@ interface Props {
 export class NavBar extends React.PureComponent<Props> {
   public render() {
     const {
-      title,
-      onLeftPress: left,
-      onRightPress: right,
-      leftIcon,
-      rightIcon
+      title = "",
+      onLeftPress,
+      onRightPress,
+      leftIcon = "arrow-left",
+      rightIcon = "close"
     } = this.props;
-    const isEnabled = !!title || !!left || !!right;
+    const isEnabled = title.length > 0 || onLeftPress || onRightPress;
+    if (!isEnabled) { return null; }
     return (
-      isEnabled && (
-        <View style={styles.container}>
-          {left && <NavButton icon={leftIcon} onPress={left} />}
-          {title && <Text style={styles.title} title={title} />}
-          {right && <NavButton icon={rightIcon} isRight onPress={right} />}
-        </View>
-      )
+      <View style={styles.container}>
+        <NavButton icon={leftIcon} onPress={onLeftPress} />
+        <Text hidden={title.length === 0} style={styles.title} title={title} />
+        <NavButton icon={rightIcon} isRight onPress={onRightPress} />
+      </View>
     );
   }
 }

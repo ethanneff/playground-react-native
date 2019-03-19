@@ -42,24 +42,20 @@ exports[`renders correctly 1`] = `
     >
       <View>
         <Text
-          allowFontScaling={false}
           style={
             Array [
               Object {
-                "color": "hsl(210, 10%, 23%)",
-                "fontSize": 24,
+                "fontSize": 14,
+                "fontWeight": "300",
+                "letterSpacing": 0.25,
               },
               undefined,
-              Object {
-                "fontFamily": "Material Design Icons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
+              undefined,
+              undefined,
             ]
           }
         >
-          
+          arrow-left
         </Text>
       </View>
     </View>
@@ -145,26 +141,20 @@ exports[`renders correctly 1`] = `
               }
             >
               <Text
-                allowFontScaling={false}
                 style={
                   Array [
                     Object {
-                      "color": "hsl(210, 10%, 23%)",
-                      "fontSize": 24,
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
                     },
-                    Object {
-                      "fontSize": 24,
-                    },
-                    Object {
-                      "fontFamily": "Material Design Icons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                    Object {},
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >
-                
+                magnify
               </Text>
             </View>
           </View>
@@ -185,6 +175,7 @@ exports[`renders correctly 1`] = `
               onFocus={[Function]}
               placeholder="Search"
               placeholderTextColor="hsl(208, 7%, 46%)"
+              rejectResponderTermination={true}
               selectionColor="hsl(211, 100%, 50%)"
               style={
                 Array [
@@ -385,6 +376,7 @@ exports[`renders correctly 1`] = `
           onScroll={[Function]}
           onScrollBeginDrag={[Function]}
           onScrollEndDrag={[Function]}
+          removeClippedSubviews={false}
           renderItem={[Function]}
           scrollEventThrottle={50}
           stickyHeaderIndices={Array []}

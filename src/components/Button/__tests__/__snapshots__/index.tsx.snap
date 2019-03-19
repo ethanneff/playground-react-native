@@ -339,38 +339,20 @@ exports[`renders icon 1`] = `
     }
   >
     <Text
-      allowFontScaling={false}
       style={
         Array [
           Object {
-            "color": "hsl(210, 10%, 23%)",
-            "fontSize": 16,
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
           },
-          Array [
-            undefined,
-            Array [
-              Object {
-                "backgroundColor": "transparent",
-                "color": "hsl(211, 100%, 50%)",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-            ],
-          ],
-          Object {
-            "fontFamily": "Material Design Icons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-          Object {},
+          undefined,
+          undefined,
+          undefined,
         ]
       }
     >
-      
+      check
     </Text>
   </View>
 </View>
@@ -424,40 +406,20 @@ exports[`renders icon title 1`] = `
     }
   >
     <Text
-      allowFontScaling={false}
       style={
         Array [
           Object {
-            "color": "hsl(210, 10%, 23%)",
-            "fontSize": 16,
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
           },
-          Array [
-            Object {
-              "paddingRight": 2,
-            },
-            Array [
-              Object {
-                "backgroundColor": "transparent",
-                "color": "hsl(211, 100%, 50%)",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-            ],
-          ],
-          Object {
-            "fontFamily": "Material Design Icons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-          Object {},
+          undefined,
+          undefined,
+          undefined,
         ]
       }
     >
-      
+      check
     </Text>
   </View>
   <Text

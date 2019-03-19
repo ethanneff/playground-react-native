@@ -2,6 +2,7 @@
 
 ## Top 1
 
+- [ ] fix icons on mobile
 - [ ] add keyboard listener to device
 - [ ] checklist mvp with navigation
 - [ ] checklist tests
@@ -54,6 +55,7 @@
 
 ## Done
 
+- [x] update to react native 0.59
 - [x] infinite scroll image collection
 - [x] fix broken ci
 - [x] look into [react navigation for web](https://github.com/react-navigation/example-web)

@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
   container: {
     alignItems: "center",
-    borderColor: "transparent",
+    borderColor: "transparent", // TODO: add border to be same size as outlined
     borderRadius: Theme.padding.p01,
     borderWidth: 1,
     flexDirection: "row",

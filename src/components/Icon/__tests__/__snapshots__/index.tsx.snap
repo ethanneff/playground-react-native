@@ -3,24 +3,20 @@
 exports[`renders correctly 1`] = `
 <View>
   <Text
-    allowFontScaling={false}
     style={
       Array [
         Object {
-          "color": "hsl(210, 10%, 23%)",
-          "fontSize": 24,
+          "fontSize": 14,
+          "fontWeight": "300",
+          "letterSpacing": 0.25,
         },
         undefined,
-        Object {
-          "fontFamily": "Material Design Icons",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
-        },
-        Object {},
+        undefined,
+        undefined,
       ]
     }
   >
-    
+    check
   </Text>
 </View>
 `;
@@ -28,24 +24,20 @@ exports[`renders correctly 1`] = `
 exports[`renders correctly with clear and max badge 1`] = `
 <View>
   <Text
-    allowFontScaling={false}
     style={
       Array [
         Object {
-          "color": "hsl(0, 100%, 100%)",
-          "fontSize": 1,
+          "fontSize": 14,
+          "fontWeight": "300",
+          "letterSpacing": 0.25,
         },
         undefined,
-        Object {
-          "fontFamily": "Material Design Icons",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
-        },
-        Object {},
+        undefined,
+        undefined,
       ]
     }
   >
-    
+    check
   </Text>
   <View
     style={
@@ -90,24 +82,20 @@ exports[`renders correctly with clear and max badge 1`] = `
 exports[`renders correctly without defaults 1`] = `
 <View>
   <Text
-    allowFontScaling={false}
     style={
       Array [
         Object {
-          "color": "hsl(0, 100%, 100%)",
-          "fontSize": 1,
+          "fontSize": 14,
+          "fontWeight": "300",
+          "letterSpacing": 0.25,
         },
         undefined,
-        Object {
-          "fontFamily": "Material Design Icons",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
-        },
-        Object {},
+        undefined,
+        undefined,
       ]
     }
   >
-    
+    check
   </Text>
   <View
     style={

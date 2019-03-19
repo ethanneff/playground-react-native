@@ -90,6 +90,7 @@ exports[`renders correctly 1`] = `
         onScrollBeginDrag={[Function]}
         onScrollEndDrag={[Function]}
         pagingEnabled={true}
+        removeClippedSubviews={false}
         renderItem={[Function]}
         scrollEventThrottle={50}
         stickyHeaderIndices={Array []}

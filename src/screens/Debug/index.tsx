@@ -38,35 +38,31 @@ export class Debug extends React.PureComponent<Props> {
     return (
       <Switch>
         {this.generateRoutes()}
-        <Route component={this.generateHome()} />
+        <Route component={this.showHomeScreen} />
       </Switch>
     );
   }
 
-  private generateRoutes = () => {
-    const { match } = this.props;
-    return Object.keys(this.screens).map((screen: string) => (
+  private generateRoutes = () =>
+    Object.keys(this.screens).map((screen: string) => (
       <Route
         key={screen}
-        path={`${match.path}/${screen.toLowerCase()}`}
+        path={`${this.props.match.path}/${screen.toLowerCase()}`}
         component={this.screens[screen]}
       />
     ));
-  };
 
-  private generateLinks = () => {
-    const { match } = this.props;
-    return Object.keys(this.screens).map((screen: string) => (
-      <Link key={screen} to={`${match.path}/${screen}`} title={screen} />
-    ));
-  };
+  private navBack = () => this.props.history.goBack();
 
-  private generateHome = () => {
-    const { history } = this.props;
-    return () => (
-      <Screen onLeftPress={() => history.goBack()}>
-        {this.generateLinks()}
-      </Screen>
-    );
-  };
+  private showHomeScreen = () => (
+    <Screen onLeftPress={this.navBack}>
+      {Object.keys(this.screens).map((screen: string) => (
+        <Link
+          key={screen}
+          to={`${this.props.match.path}/${screen}`}
+          title={screen}
+        />
+      ))}
+    </Screen>
+  );
 }

@@ -32,8 +32,8 @@ export class Screen extends React.PureComponent<Props> {
       onRightPress,
       children,
       disableScroll,
-      leftIcon = "arrow-left",
-      rightIcon = "close"
+      leftIcon,
+      rightIcon
     } = this.props;
     return (
       <SafeAreaView style={[styles.container, style]}>
@@ -41,8 +41,8 @@ export class Screen extends React.PureComponent<Props> {
           title={title}
           leftIcon={leftIcon}
           rightIcon={rightIcon}
-          onLeftPress={onLeftPress && onLeftPress}
-          onRightPress={onRightPress && onRightPress}
+          onLeftPress={onLeftPress}
+          onRightPress={onRightPress}
         />
         <KeyboardAvoid
           scrollEnabled={!disableScroll}

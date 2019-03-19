@@ -9,7 +9,6 @@ import {
 } from "redux";
 import thunk from "redux-thunk";
 import { DeepReadonly } from "utility-types";
-import { appReducer, AppState, deviceReducer, DeviceState } from ".";
 import {
   ItemActions,
   itemReducer,
@@ -18,6 +17,8 @@ import {
   listReducer,
   Lists
 } from "../screens/Debug/screens/Checklists/models";
+import { appReducer, AppState } from "./App";
+import { deviceReducer, DeviceState } from "./Device";
 
 // models
 export * from "./App";
