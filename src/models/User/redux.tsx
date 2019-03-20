@@ -23,6 +23,12 @@ export const authenticate = () => ({
 export const expire = () => ({
   type: UserActionTypes.USER_EXPIRE
 });
+export const login = () => ({
+  type: UserActionTypes.USER_EXPIRE
+});
+export const logout = () => ({
+  type: UserActionTypes.USER_EXPIRE
+});
 
 // selectors
 // export const isAuth = (state: RootState) => state.user.auth; // TODO:
