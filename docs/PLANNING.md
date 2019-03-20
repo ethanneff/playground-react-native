@@ -2,30 +2,30 @@
 
 ## Top 1
 
-- [ ] fix icons on mobile
 - [ ] add keyboard listener to device
-- [ ] checklist mvp with navigation
-- [ ] checklist tests
-- [ ] checklist async tests
 
 ## Top 3
 
-- [ ] catch global errors
 - [ ] convert other reduxes to new syntax
-- [ ] use evernote to make example data structure of checklist and actionables
+- [ ] logout clear everything
+- [ ] fix icons on mobile
 
 ## Top 5
 
-- [ ] checklist redux
+- [ ] use evernote to make example data structure of checklist and actionables
+- [ ] checklist mvp with navigation
+- [ ] checklist tests
+- [ ] checklist async tests
+- [ ] redux persist test working
+
+## Rest
+
 - [ ] firebase native
 - [ ] firebase [todo](https://blog.invertase.io/getting-started-with-cloud-firestore-on-react-native-b338fb6525b9)
 - [ ] firebase android
 - [ ] firebase login
-
-## Rest
-
+- [ ] catch global errors
 - [ ] remove `@babel/plugin-transform-object-assign` dependency when updating `react` `react-dom` or `react-test-renderer`
-- [ ] redux persist test working
 - [ ] textinput
 - [ ] radio
 - [ ] selection
@@ -36,25 +36,26 @@
 - [ ] okr branch
 - [ ] push notifications to firebase and app center
 - [ ] firebase-todo branch
-- [ ] clean all branches
-- [ ] attempt to replace react-scripts-ts with react-scripts without breaking ci or app center ci
 - [ ] clean up user redux
 - [ ] add transitions react-router-native-stack
 - [ ] add swipe
 - [ ] clean up debug index screen
 - [ ] figure out auto import relative pathing
 - [ ] add locales
-- [ ] remove react-scripts-ts without breaking yarn lint
 - [ ] re-enable prepush? maybe?
 - [ ] create a root initial state for redux tests
 - [ ] add error boundary in app and show error alert
-- [ ] get a working deploy to android/ios
 - [ ] app center ios
-- [ ] clean up all todos
+- [ ] get a working deploy to android/ios
 - [ ] prevent `Trace: The node type SpreadProperty has been renamed to SpreadElement` in app center build
 
 ## Done
 
+- [x] checklist redux
+- [x] clean all branches
+- [x] clean up all todos
+- [x] remove react-scripts-ts without breaking yarn lint
+- [x] attempt to replace react-scripts-ts with react-scripts without breaking ci or app center ci
 - [x] update to react native 0.59
 - [x] infinite scroll image collection
 - [x] fix broken ci
