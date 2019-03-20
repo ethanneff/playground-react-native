@@ -23,16 +23,16 @@
     "travis-deploy-once": " echo 'prevent multiple deploys';      travis-deploy-once"
   },
   "dependencies": {
-    "appcenter": "1.12.2",
-    "appcenter-analytics": "1.12.2",
-    "appcenter-crashes": "1.12.2",
+    "appcenter": "1.13.0",
+    "appcenter-analytics": "1.13.0",
+    "appcenter-crashes": "1.13.0",
     "react": "16.8.4",
     "react-art": "16.8.4",
     "react-dom": "16.8.4",
     "react-native": "0.59.1",
     "react-native-firebase": "5.2.3",
     "react-native-keyboard-aware-scroll-view": "0.8.0",
-    "react-native-vector-icons": "6.4.1",
+    "react-native-vector-icons": "6.4.2",
     "react-native-web": "0.11.1",
     "react-redux": "6.0.1",
     "react-router-dom": "5.0.0",
@@ -75,7 +75,7 @@
     "ts-jest": "24.0.0",
     "tslint": "5.14.0",
     "tslint-config-prettier": "1.18.0",
-    "typescript": "3.3.3333"
+    "typescript": "3.3.4000"
   },
   "husky": {
     "hooks": {

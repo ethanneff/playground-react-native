@@ -2402,24 +2402,24 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-appcenter-analytics@1.12.2:
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/appcenter-analytics/-/appcenter-analytics-1.12.2.tgz#35a2c73979bf2c90f029eab4e94b80c8744e0356"
-  integrity sha512-twX0YhC5B2PHsCPmAmieDAmvvVTBA552MXcoNuHmk6qancaxsxTnXZ10s6uVEWzJ52kNWdm+LI4Yortbwhy7Ng==
+appcenter-analytics@1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/appcenter-analytics/-/appcenter-analytics-1.13.0.tgz#c9ffd6cb103c418425ab6967086a4d085069e4cd"
+  integrity sha512-FTfNXiT/CnXGHqCcqPmP97zmXVq0o+zvTIlpJjFeIJB2N6Cufk3RYohJATjJ40Hc2x1DoBxJ59K3vu4vAtViIA==
   dependencies:
-    appcenter "1.12.2"
+    appcenter "1.13.0"
 
-appcenter-crashes@1.12.2:
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/appcenter-crashes/-/appcenter-crashes-1.12.2.tgz#8fb01370ddbcd1a326fbd3f71cb7273d7c8393cf"
-  integrity sha512-Cg5V1aPTNuqgoHehJ1kVHhYpuA3jW1k8r4CbGr8Iw53NLjJ5Y+Xed90gtNVg544rlpB9sblBmvjKWyw4D5K4Lw==
+appcenter-crashes@1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/appcenter-crashes/-/appcenter-crashes-1.13.0.tgz#c9a5257f71e9c8055494322d4b514e28715debfc"
+  integrity sha512-HlKPbFUgHgWtHjhpZjAKOJnOdLWTzCXKKQ1dWPGlB6M/QA+ssL5gKap1cymPBBwvaL1FwOvWlKW0egVRn6cBTQ==
   dependencies:
-    appcenter "1.12.2"
+    appcenter "1.13.0"
 
-appcenter-link-scripts@1.12.2:
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/appcenter-link-scripts/-/appcenter-link-scripts-1.12.2.tgz#e41898208ca8233c6b4daf07075e769dce7e59c0"
-  integrity sha512-vcQ/cq5zx6kD2y5P8jDhXF6Ek3hCs5HglILX/uDMGHF58rr00gUuDYxmiYqeLo+MzpUEYfPGPsRUVQuRczQrfg==
+appcenter-link-scripts@1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/appcenter-link-scripts/-/appcenter-link-scripts-1.13.0.tgz#5ddd2143df97c055d1d04d97cd59facec367f368"
+  integrity sha512-+09PdeTzPPJyaVAblF8q/p9xhw9IlzN66vWvU/8F71rnxXuNKswuztl7OxTHJevVXCASmpeZNWlekVrXeEyxvg==
   dependencies:
     debug "^2.2.0"
     glob "^5.0.15"
@@ -2427,14 +2427,14 @@ appcenter-link-scripts@1.12.2:
     mkdirp "^0.5.1"
     plist "^3.0.1"
     which "^1.2.11"
-    xcode "^1.0.0"
+    xcode "^2.0.0"
 
-appcenter@1.12.2:
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-1.12.2.tgz#254185f85d04dad32697ced9ec1576089ec56b65"
-  integrity sha512-kYbv6BbNY8VRstOM+paSko+lCoRNuHncz2G9helE+FePW21LMynyoLqG4nIMpd4aQH7loCBemb0irSIgdoI+/g==
+appcenter@1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-1.13.0.tgz#b4bfc38bcdb9d69f20086ad69198d8993d6edb94"
+  integrity sha512-YHWrLPlA7ZBH5Tz8vN6Eux0wjdA8nNRfwGL7IANjx0yv7OvIMftn9SC0/g2CWdVV752dL6a8Rt/rWXN8yeOfdQ==
   dependencies:
-    appcenter-link-scripts "1.12.2"
+    appcenter-link-scripts "1.13.0"
 
 append-transform@^0.4.0:
   version "0.4.0"
@@ -3034,11 +3034,6 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
-
-base64-js@1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.1.2.tgz#d6400cac1c4c660976d90d07a04351d89395f5e8"
-  integrity sha1-1kAMrBxMZgl22Q0HoENR2JOV9eg=
 
 base64-js@^1.0.2, base64-js@^1.1.2, base64-js@^1.2.3:
   version "1.3.0"
@@ -10923,11 +10918,6 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-pegjs@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/pegjs/-/pegjs-0.10.0.tgz#cf8bafae6eddff4b5a7efb185269eaaf4610ddbd"
-  integrity sha1-z4uvrm7d/0tafvsYUmnqr0YQ3b0=
-
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
@@ -11009,15 +10999,6 @@ please-upgrade-node@^3.0.2, please-upgrade-node@^3.1.1:
   integrity sha512-KY1uHnQ2NlQHqIJQpnh/i54rKkuxCEBx+voJIS/Mvb+L2iYd2NMotwduhKTMjfC1uKoX3VXOxLjIYG66dfJTVQ==
   dependencies:
     semver-compare "^1.0.0"
-
-plist@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/plist/-/plist-2.0.1.tgz#0a32ca9481b1c364e92e18dc55c876de9d01da8b"
-  integrity sha1-CjLKlIGxw2TpLhjcVch23p0B2os=
-  dependencies:
-    base64-js "1.1.2"
-    xmlbuilder "8.2.2"
-    xmldom "0.1.x"
 
 plist@^3.0.0, plist@^3.0.1:
   version "3.0.1"
@@ -12182,10 +12163,10 @@ react-native-keyboard-aware-scroll-view@0.8.0:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
 
-react-native-vector-icons@6.4.1:
-  version "6.4.1"
-  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-6.4.1.tgz#bf69b5321b67c5f510e09d39e3bf4d193f2596c5"
-  integrity sha512-FyRESEXcTGeF+G8qRuvRprbgMw64Y66pQHAvkKtFKYsl0GgAQpwFctfZqxv5HRzvkyUGsU57v2FO4OGnM7hfJg==
+react-native-vector-icons@6.4.2:
+  version "6.4.2"
+  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-6.4.2.tgz#ee0b097e783387544ed160a3192a437c097e551d"
+  integrity sha512-G7Y5HksOQkCanFWKJ+fjwP38XL8tQREOSnw7jrbq28AFrrv41YtafOF4uDSDS7HxMRXs17HeEzn24OzJb63iuA==
   dependencies:
     lodash "^4.0.0"
     prop-types "^15.6.2"
@@ -13375,15 +13356,6 @@ simple-git@^1.85.0:
   dependencies:
     debug "^4.0.1"
 
-simple-plist@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/simple-plist/-/simple-plist-0.2.1.tgz#71766db352326928cf3a807242ba762322636723"
-  integrity sha1-cXZts1IyaSjPOoByQrp2IyJjZyM=
-  dependencies:
-    bplist-creator "0.0.7"
-    bplist-parser "0.1.1"
-    plist "2.0.1"
-
 simple-plist@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/simple-plist/-/simple-plist-1.0.0.tgz#bed3085633b22f371e111f45d159a1ccf94b81eb"
@@ -14441,10 +14413,10 @@ typesafe-actions@3.2.1:
   resolved "https://registry.yarnpkg.com/typesafe-actions/-/typesafe-actions-3.2.1.tgz#833623a4079eda5dbcb775113f6dcf02b71c03f8"
   integrity sha512-hvhuNqsai6LzXQ+Hl6vajC9bGd/kHHL1hJvI4GQ0Rs6Fax1cjbNEsuFGy/RbfLPhBAL10n6DECEHUa+Q9E+MxQ==
 
-typescript@3.3.3333:
-  version "3.3.3333"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.3.3333.tgz#171b2c5af66c59e9431199117a3bcadc66fdcfd6"
-  integrity sha512-JjSKsAfuHBE/fB2oZ8NxtRTk5iGcg6hkYXMnZ3Wc+b2RSqejEqTaem11mHASMnFilHrax3sLK0GDzcJrekZYLw==
+typescript@3.3.4000:
+  version "3.3.4000"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.3.4000.tgz#76b0f89cfdbf97827e1112d64f283f1151d6adf0"
+  integrity sha512-jjOcCZvpkl2+z7JFn0yBOoLQyLoIkNZAs/fYJkUG6VKy6zLPHJGfQJYFHzibB6GJaF/8QrcECtlQ5cpvRHSMEA==
 
 ua-parser-js@^0.7.18:
   version "0.7.19"
@@ -14748,11 +14720,6 @@ utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
-
-uuid@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.0.1.tgz#6544bba2dfda8c1cf17e629a3a305e2bb1fee6c1"
-  integrity sha1-ZUS7ot/ajBzxfmKaOjBeK7H+5sE=
 
 uuid@3.3.2, uuid@^3.0.1, uuid@^3.3.2:
   version "3.3.2"
@@ -15278,15 +15245,6 @@ x-is-string@^0.1.0:
   resolved "https://registry.yarnpkg.com/x-is-string/-/x-is-string-0.1.0.tgz#474b50865af3a49a9c4657f05acd145458f77d82"
   integrity sha1-R0tQhlrzpJqcRlfwWs0UVFj3fYI=
 
-xcode@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/xcode/-/xcode-1.0.0.tgz#e1f5b1443245ded38c180796df1a10fdeda084ec"
-  integrity sha1-4fWxRDJF3tOMGAeW3xoQ/e2ghOw=
-  dependencies:
-    pegjs "^0.10.0"
-    simple-plist "^0.2.1"
-    uuid "3.0.1"
-
 xcode@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/xcode/-/xcode-2.0.0.tgz#134f1f94c26fbfe8a9aaa9724bfb2772419da1a2"
@@ -15304,11 +15262,6 @@ xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
   integrity sha512-A5CUptxDsvxKJEU3yO6DuWBSJz/qizqzJKOMIfUJHETbBw/sFaDxgd6fxm1ewUaM0jZ444Fc5vC5ROYurg/4Pw==
-
-xmlbuilder@8.2.2:
-  version "8.2.2"
-  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-8.2.2.tgz#69248673410b4ba42e1a6136551d2922335aa773"
-  integrity sha1-aSSGc0ELS6QuGmE2VR0pIjNap3M=
 
 xmlbuilder@^9.0.7:
   version "9.0.7"
