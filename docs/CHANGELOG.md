@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.11.2](https://github.com/ethanneff/example/compare/v1.11.1...v1.11.2) (2019-03-20)
+
+
+### Bug Fixes
+
+* add more user actions ([fae90d9](https://github.com/ethanneff/example/commit/fae90d9))
+* update dependencies ([506d4b3](https://github.com/ethanneff/example/commit/506d4b3))
+
 ## [1.11.1](https://github.com/ethanneff/example/compare/v1.11.0...v1.11.1) (2019-03-19)
 
 
