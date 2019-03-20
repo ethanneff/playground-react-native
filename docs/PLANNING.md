@@ -20,6 +20,7 @@
 
 ## Rest
 
+- [ ] landing page https://www.lemonade.com/ https://www.any.do/
 - [ ] firebase native
 - [ ] firebase [todo](https://blog.invertase.io/getting-started-with-cloud-firestore-on-react-native-b338fb6525b9)
 - [ ] firebase android
