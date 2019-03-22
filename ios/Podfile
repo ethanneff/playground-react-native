@@ -7,5 +7,4 @@ target 'example' do
   pod 'Firebase/Core', '~> 5.15.0'
   pod 'Firebase/Performance', '~> 5.15.0'
   pod 'Firebase/Auth', '~> 5.15.0'
-  platform :ios, '9.0'
 end
