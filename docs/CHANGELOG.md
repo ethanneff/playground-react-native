@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.3](https://github.com/ethanneff/example/compare/v1.11.2...v1.11.3) (2019-03-22)
+
+
+### Bug Fixes
+
+* add device and app info dependencies ([c38e568](https://github.com/ethanneff/example/commit/c38e568))
+
 ## [1.11.2](https://github.com/ethanneff/example/compare/v1.11.1...v1.11.2) (2019-03-20)
 
 
