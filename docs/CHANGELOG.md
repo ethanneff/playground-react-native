@@ -1,5 +1,24 @@
 # Changelog
 
+# [1.12.0](https://github.com/ethanneff/example/compare/v1.11.3...v1.12.0) (2019-03-23)
+
+
+### Bug Fixes
+
+* hide netinfo warning until it's fixed by react native ([89b97ea](https://github.com/ethanneff/example/commit/89b97ea))
+* import store directly instead of through a provider ([a4dc13f](https://github.com/ethanneff/example/commit/a4dc13f))
+* make snapshots work with device info and version number ([28a98e5](https://github.com/ethanneff/example/commit/28a98e5))
+* make web work with device info and version number ([b92fb7a](https://github.com/ethanneff/example/commit/b92fb7a))
+* prefix selectors with get ([b1842ff](https://github.com/ethanneff/example/commit/b1842ff))
+* remove debug navigation on landing ([d4ef540](https://github.com/ethanneff/example/commit/d4ef540))
+* update dependencies ([d0a5ac1](https://github.com/ethanneff/example/commit/d0a5ac1))
+
+
+### Features
+
+* add device info and version to app component ([238c5be](https://github.com/ethanneff/example/commit/238c5be))
+* add keyboard listener to app component ([7c723c8](https://github.com/ethanneff/example/commit/7c723c8))
+
 ## [1.11.3](https://github.com/ethanneff/example/compare/v1.11.2...v1.11.3) (2019-03-22)
 
 
