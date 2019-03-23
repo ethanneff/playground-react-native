@@ -4,6 +4,9 @@ import { Provider } from "./models";
 import { App } from "./screens";
 import { Config } from "./utils";
 
+// TODO: remove
+YellowBox.ignoreWarnings(["NetInfo"]);
+
 export class Launcher extends React.PureComponent {
   public render() {
     return (
