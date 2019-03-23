@@ -3,69 +3,76 @@ import {
   ConnectionType,
   EffectiveConnectionType
 } from "react-native";
+import { getType } from "typesafe-actions";
 import {
-  DeviceActionTypes,
+  deviceInitialState,
   deviceReducer,
   DimensionsProps,
+  getHeight,
+  getLandscapeOrientation,
+  getLargestDimension,
+  getSmallestDimension,
+  getWidth,
+  onBatteryChange,
   onDeviceLoad,
-  onDeviceUpdateBattery,
-  onDeviceUpdateFingerprint,
   onDimensionChange,
-  onNetworkChange,
-  selectHeight,
-  selectLandscapeOrientation,
-  selectLargestDimension,
-  selectSmallestDimension,
-  selectWidth
+  onFingerprintChange,
+  onNetworkChange
 } from "..";
-import { RootState } from "../../../models";
+import { store } from "../../../models";
+
+describe("selectors", () => {
+  beforeEach(() => {
+    const dimensionChange = {
+      screen: {
+        fontScale: 0,
+        height: 0,
+        scale: 0,
+        width: 0
+      },
+      window: {
+        fontScale: 123,
+        height: 456,
+        scale: 123,
+        width: 123
+      }
+    };
+    store.dispatch(onDimensionChange(dimensionChange));
+  });
+
+  it("getLandscapeOrientation", () => {
+    expect(getLandscapeOrientation(store.getState())).toBe(false);
+  });
+  it("getLargestDimension", () => {
+    expect(getLargestDimension(store.getState())).toBe(456);
+  });
+  it("getSmallestDimension", () => {
+    expect(getSmallestDimension(store.getState())).toBe(123);
+  });
+  it("getHeight", () => {
+    expect(getHeight(store.getState())).toBe(456);
+  });
+  it("getWidth", () => {
+    expect(getWidth(store.getState())).toBe(123);
+  });
+});
 
 describe("selectors with no initial state", () => {
   jest.mock("Dimensions", () => undefined);
-  it("selectLandscapeOrientation null", () => {
-    const state: RootState = {
-      app: {},
-      device: {},
-      items: {},
-      lists: {}
-    };
-    expect(selectLandscapeOrientation(state)).toBe(false);
+  it("getLandscapeOrientation null", () => {
+    expect(getLandscapeOrientation(store.getState())).toBe(false);
   });
-  it("selectSmallestDimension null", () => {
-    const state: RootState = {
-      app: {},
-      device: {},
-      items: {},
-      lists: {}
-    };
-    expect(selectSmallestDimension(state)).toBe(750);
+  it("getSmallestDimension null", () => {
+    expect(getSmallestDimension(store.getState())).toBe(123);
   });
-  it("selectLargestDimension null", () => {
-    const state: RootState = {
-      app: {},
-      device: {},
-      items: {},
-      lists: {}
-    };
-    expect(selectLargestDimension(state)).toBe(1334);
+  it("getLargestDimension null", () => {
+    expect(getLargestDimension(store.getState())).toBe(456);
   });
-  it("selectHeight null", () => {
-    const state: RootState = {
-      app: {},
-      device: {},
-      items: {},
-      lists: {}
-    };
-    expect(selectHeight(state)).toBe(1334);
+  it("getHeight null", () => {
+    expect(getHeight(store.getState())).toBe(456);
   });
-  it("selectWidth null", () => {
-    const state: RootState = {
-      app: {},
-      device: {},
-      items: {},
-      lists: {}
-    };
-    expect(selectWidth(state)).toBe(750);
+  it("getWidth null", () => {
+    expect(getWidth(store.getState())).toBe(123);
   });
 });
 
@@ -74,23 +81,33 @@ describe("actions", () => {
     const payload = true;
     const expectedAction = {
       payload,
-      type: DeviceActionTypes.DEVICE_UPDATE_FINGERPRINT
+      type: getType(onFingerprintChange)
     };
-    expect(onDeviceUpdateFingerprint(payload)).toEqual(expectedAction);
+    expect(onFingerprintChange(payload)).toEqual(expectedAction);
   });
   it("onDeviceUpdateBattery", () => {
     const payload = 2;
     const expectedAction = {
       payload,
-      type: DeviceActionTypes.DEVICE_UPDATE_BATTERY
+      type: getType(onBatteryChange)
     };
-    expect(onDeviceUpdateBattery(payload)).toEqual(expectedAction);
+    expect(onBatteryChange(payload)).toEqual(expectedAction);
   });
   it("onDeviceLoad", () => {
-    const payload = { manufacturer: "apple" };
+    const size = {
+      fontScale: 1,
+      height: 1,
+      scale: 1,
+      width: 1
+    };
+    const payload = {
+      manufacturer: "apple",
+      screenDimensions: size,
+      windowDimensions: size
+    };
     const expectedAction = {
       payload,
-      type: DeviceActionTypes.DEVICE_LOAD
+      type: getType(onDeviceLoad)
     };
     expect(onDeviceLoad(payload)).toEqual(expectedAction);
   });
@@ -103,7 +120,7 @@ describe("actions", () => {
     };
     const expectedAction = {
       payload,
-      type: DeviceActionTypes.DEVICE_UPDATE_NETWORK
+      type: getType(onNetworkChange)
     };
     expect(onNetworkChange(payload)).toEqual(expectedAction);
   });
@@ -117,121 +134,38 @@ describe("actions", () => {
     const payload = { window: size, screen: size };
     const expectedAction = {
       payload,
-      type: DeviceActionTypes.DEVICE_UPDATE_DIMENSION
+      type: getType(onDimensionChange)
     };
     expect(onDimensionChange(payload)).toEqual(expectedAction);
   });
 });
 
-describe("selectors", () => {
-  it("selectLandscapeOrientation", () => {
-    const state: RootState = {
-      app: {},
-      device: {
-        windowDimensions: {
-          fontScale: 123,
-          height: 456,
-          scale: 123,
-          width: 123
-        }
-      },
-      items: {},
-      lists: {}
-    };
-    expect(selectLandscapeOrientation(state)).toBe(false);
-  });
-  it("selectLargestDimension", () => {
-    const state: RootState = {
-      app: {},
-      device: {
-        windowDimensions: {
-          fontScale: 123,
-          height: 456,
-          scale: 123,
-          width: 123
-        }
-      },
-      items: {},
-      lists: {}
-    };
-    expect(selectLargestDimension(state)).toBe(456);
-  });
-  it("selectSmallestDimension", () => {
-    const state: RootState = {
-      app: {},
-      device: {
-        windowDimensions: {
-          fontScale: 123,
-          height: 456,
-          scale: 123,
-          width: 123
-        }
-      },
-      items: {},
-      lists: {}
-    };
-    expect(selectSmallestDimension(state)).toBe(123);
-  });
-  it("selectHeight", () => {
-    const state: RootState = {
-      app: {},
-      device: {
-        windowDimensions: {
-          fontScale: 123,
-          height: 456,
-          scale: 123,
-          width: 123
-        }
-      },
-      items: {},
-      lists: {}
-    };
-    expect(selectHeight(state)).toBe(456);
-  });
-  it("selectWidth", () => {
-    const state: RootState = {
-      app: {},
-      device: {
-        windowDimensions: {
-          fontScale: 123,
-          height: 456,
-          scale: 123,
-          width: 123
-        }
-      },
-      items: {},
-      lists: {}
-    };
-    expect(selectWidth(state)).toBe(123);
-  });
-});
-
 describe("reducer", () => {
-  it("DEVICE_UPDATE_BATTERY", () => {
+  it("onBatteryChange", () => {
     const value = 22;
     expect(
-      deviceReducer(
-        {},
-        {
-          payload: value,
-          type: DeviceActionTypes.DEVICE_UPDATE_BATTERY
-        }
-      )
-    ).toEqual({ batteryLevel: 22 });
+      deviceReducer(deviceInitialState, {
+        payload: value,
+        type: getType(onBatteryChange)
+      })
+    ).toMatchObject({ batteryLevel: 22 });
   });
-  it("DEVICE_UPDATE_FINGERPRINT", () => {
+  it("onFingerprintChange", () => {
     const value = true;
     expect(
-      deviceReducer(
-        {},
-        {
-          payload: value,
-          type: DeviceActionTypes.DEVICE_UPDATE_FINGERPRINT
-        }
-      )
-    ).toEqual({ isPinOrFingerprintSet: value });
+      deviceReducer(deviceInitialState, {
+        payload: value,
+        type: getType(onFingerprintChange)
+      })
+    ).toMatchObject({ isPinOrFingerprintSet: value });
   });
-  it("DEVICE_LOAD", () => {
+  it("onDeviceLoad", () => {
+    const size = {
+      fontScale: 1,
+      height: 1,
+      scale: 1,
+      width: 1
+    };
     const data = {
       brand: "string",
       deviceCountry: "string",
@@ -249,93 +183,48 @@ describe("reducer", () => {
       lastUpdateTime: 123,
       manufacturer: "string",
       model: "string",
+      screenDimensions: size,
       systemName: "string",
       systemVersion: "string",
       timezone: "string",
-      userAgent: "string"
+      userAgent: "string",
+      windowDimensions: size
     };
     expect(
-      deviceReducer(
-        {},
-        {
-          payload: data,
-          type: DeviceActionTypes.DEVICE_LOAD
-        }
-      )
-    ).toEqual({
-      brand: "string",
-      deviceCountry: "string",
-      deviceId: "string",
-      deviceLocale: "string",
-      deviceName: "string",
-      firstInstallTime: 123,
-      fontScale: 123,
-      installReferrer: "string",
-      instanceId: "string",
-      is24Hour: true,
-      isEmulator: true,
-      isPinOrFingerprintSet: true,
-      isTablet: true,
-      lastUpdateTime: 123,
-      manufacturer: "string",
-      model: "string",
-      systemName: "string",
-      systemVersion: "string",
-      timezone: "string",
-      userAgent: "string"
-    });
+      deviceReducer(deviceInitialState, {
+        payload: data,
+        type: getType(onDeviceLoad)
+      })
+    ).toEqual(data);
   });
-  it("DEVICE_UPDATE_NETWORK", () => {
+  it("onNetworkChange", () => {
     const value: ConnectionInfo = {
       effectiveType: "2g",
       type: "wifi"
     };
     expect(
-      deviceReducer(
-        {},
-        {
-          payload: value,
-          type: DeviceActionTypes.DEVICE_UPDATE_NETWORK
-        }
-      )
-    ).toEqual({ networkEffectiveType: "2g", networkType: "wifi" });
+      deviceReducer(deviceInitialState, {
+        payload: value,
+        type: getType(onNetworkChange)
+      })
+    ).toMatchObject({ networkEffectiveType: "2g", networkType: "wifi" });
   });
   it("DEVICE_UPDATE_DIMENSION", () => {
+    const size = {
+      fontScale: 123,
+      height: 123,
+      scale: 123,
+      width: 123
+    };
     const data: DimensionsProps = {
-      screen: {
-        fontScale: 123,
-        height: 123,
-        scale: 123,
-        width: 123
-      },
-      window: {
-        fontScale: 123,
-        height: 123,
-        scale: 123,
-        width: 123
-      }
+      screen: size,
+      window: size
     };
     expect(
-      deviceReducer(
-        {},
-        {
-          payload: data,
-          type: DeviceActionTypes.DEVICE_UPDATE_DIMENSION
-        }
-      )
-    ).toEqual({
-      screenDimensions: {
-        fontScale: 123,
-        height: 123,
-        scale: 123,
-        width: 123
-      },
-      windowDimensions: {
-        fontScale: 123,
-        height: 123,
-        scale: 123,
-        width: 123
-      }
-    });
+      deviceReducer(deviceInitialState, {
+        payload: data,
+        type: getType(onDimensionChange)
+      })
+    ).toMatchObject({ windowDimensions: size, screenDimensions: size });
   });
 });

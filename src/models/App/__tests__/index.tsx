@@ -1,88 +1,101 @@
 import { AppStateStatus } from "react-native";
+import { getType } from "typesafe-actions";
 import {
-  AppActionTypes,
+  appInitialState,
   appReducer,
+  AppState,
+  getAppStatus,
+  getKeyboardVisible,
   onAppLoad,
-  onAppStateChange,
-  selectAppStatus
+  onAppStatusChange,
+  onKeyboardChange
 } from "..";
-import { RootState } from "../../../models";
+import { store } from "../../../models";
 
-describe("device", () => {
-  describe("selectors", () => {
-    it("selectAppStatus", () => {
-      const status: AppStateStatus = "background";
-      const state: RootState = {
-        app: {
-          status
-        },
-        device: {},
-        items: {},
-        lists: {}
-      };
-      expect(selectAppStatus(state)).toEqual(status);
-    });
+describe("selectors", () => {
+  it("getAppStatus", () => {
+    const value = "background";
+    store.dispatch(onAppStatusChange(value));
+    expect(getAppStatus(store.getState())).toEqual(value);
   });
-
-  describe("actions", () => {
-    it("onAppLoad", () => {
-      const payload = { version: "background" };
-      const expectedAction = {
-        payload,
-        type: AppActionTypes.APP_LOAD
-      };
-      expect(onAppLoad(payload)).toEqual(expectedAction);
-    });
-
-    it("onAppStateChange", () => {
-      const payload = "background";
-      const expectedAction = {
-        payload,
-        type: AppActionTypes.APP_UPDATE_STATUS
-      };
-      expect(onAppStateChange(payload)).toEqual(expectedAction);
-    });
+  it("onKeyboardChange", () => {
+    const value = true;
+    store.dispatch(onKeyboardChange(value));
+    expect(getKeyboardVisible(store.getState())).toEqual(value);
   });
+});
 
-  describe("reducer", () => {
-    it("APP_UPDATE_STATUS", () => {
-      expect(
-        appReducer(undefined, {
-          payload: "active",
-          type: AppActionTypes.APP_UPDATE_STATUS
-        })
-      ).toEqual({ status: "active" });
-    });
+describe("actions", () => {
+  it("onAppLoad", () => {
+    const payload: AppState = {
+      ...appInitialState,
+      version: "123"
+    };
+    const expectedAction = {
+      payload,
+      type: getType(onAppLoad)
+    };
+    expect(onAppLoad(payload)).toEqual(expectedAction);
+  });
+  it("onAppStatusChange", () => {
+    const payload = "background";
+    const expectedAction = {
+      payload,
+      type: getType(onAppStatusChange)
+    };
+    expect(onAppStatusChange(payload)).toEqual(expectedAction);
+  });
+  it("onKeyboardChange", () => {
+    const payload = true;
+    const expectedAction = {
+      payload,
+      type: getType(onKeyboardChange)
+    };
+    expect(onKeyboardChange(payload)).toEqual(expectedAction);
+  });
+});
 
-    it("APP_LOAD", () => {
-      expect(
-        appReducer(
-          {
-            status: "active"
-          },
-          {
-            payload: {
-              appVersion: "string",
-              applicationName: "string",
-              buildNumber: "string",
-              buildVersion: "string",
-              bundleIdentifier: "string",
-              readableVersion: "string",
-              version: "string"
-            },
-            type: AppActionTypes.APP_LOAD
-          }
-        )
-      ).toEqual({
+describe("reducer", () => {
+  it("onAppLoad", () => {
+    const status: AppStateStatus = "active";
+    const payload = {
+      appVersion: "12",
+      keyboardVisible: false,
+      status
+    };
+    const action = {
+      payload,
+      type: getType(onAppLoad)
+    };
+    expect(appReducer(appInitialState, action)).toEqual(payload);
+  });
+  it("onKeyboardChange", () => {
+    expect(
+      appReducer(appInitialState, {
+        payload: true,
+        type: getType(onKeyboardChange)
+      })
+    ).toEqual({ ...appInitialState, keyboardVisible: true });
+  });
+  it("onAppLoad", () => {
+    const status: AppStateStatus = "active";
+    const action = {
+      payload: {
         appVersion: "string",
         applicationName: "string",
         buildNumber: "string",
         buildVersion: "string",
         bundleIdentifier: "string",
+        keyboardVisible: false,
         readableVersion: "string",
-        status: "active",
+        status,
         version: "string"
-      });
+      },
+      type: getType(onAppLoad)
+    };
+    expect(appReducer(appInitialState, action)).toEqual({
+      ...appInitialState,
+      ...action.payload
     });
   });
 });
