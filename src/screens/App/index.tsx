@@ -5,6 +5,7 @@ import {
   ConnectionInfo,
   ConnectionType,
   Dimensions,
+  Keyboard,
   NetInfo
 } from "react-native";
 import { connect } from "react-redux";
@@ -16,6 +17,7 @@ import {
   onDeviceUpdateBattery,
   onDeviceUpdateFingerprint,
   onDimensionChange,
+  onKeyboardChange,
   onNetworkChange
 } from "../../models/Device";
 import { Debug, Landing, Login, Main, NotFound } from "../../screens";
@@ -28,6 +30,7 @@ interface DispatchProps {
   onDeviceUpdateFingerprint: typeof onDeviceUpdateFingerprint;
   onDeviceUpdateBattery: typeof onDeviceUpdateBattery;
   onDeviceLoad: typeof onDeviceLoad;
+  onKeyboardChange: typeof onKeyboardChange;
 }
 
 type Props = DispatchProps;
@@ -59,12 +62,16 @@ class Component extends React.PureComponent<Props> {
     Dimensions.addEventListener("change", this.onDimensionChange);
     NetInfo.addEventListener("connectionChange", this.onNetworkChange);
     AppState.addEventListener("change", this.onAppStateChange);
+    Keyboard.addListener("keyboardDidShow", this.onKeyboardDidShow);
+    Keyboard.addListener("keyboardDidHide", this.onKeyboardDidHide);
   }
 
   private disableListeners() {
     NetInfo.removeEventListener("connectionChange", this.onNetworkChange);
     AppState.removeEventListener("change", this.onAppStateChange);
     Dimensions.removeEventListener("change", this.onDimensionChange);
+    Keyboard.removeListener("keyboardDidShow", this.onKeyboardDidShow);
+    Keyboard.removeListener("keyboardDidHide", this.onKeyboardDidHide);
   }
 
   private onNetworkChange = (change: ConnectionType | ConnectionInfo) => {
@@ -77,6 +84,13 @@ class Component extends React.PureComponent<Props> {
 
   private onAppStateChange = (change: AppStateStatus) => {
     this.props.onAppStateChange(change);
+
+  private onKeyboardDidShow = () => {
+    this.props.onKeyboardChange(true);
+  };
+
+  private onKeyboardDidHide = () => {
+    this.props.onKeyboardChange(false);
   };
 }
 
@@ -89,6 +103,7 @@ export const App = connect(
     onDeviceUpdateBattery,
     onDeviceUpdateFingerprint,
     onDimensionChange,
+    onKeyboardChange,
     onNetworkChange
   }
 )(Component);
