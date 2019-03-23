@@ -13,53 +13,6 @@ exports[`Launcher Container renders correctly 1`] = `
     ]
   }
 >
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "hsl(0, 100%, 100%)",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-      }
-    }
-  >
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "flex": 1,
-          "opacity": 1,
-          "padding": 12,
-        }
-      }
-    >
-      <View>
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 14,
-                "fontWeight": "300",
-                "letterSpacing": 0.25,
-              },
-              undefined,
-              undefined,
-              undefined,
-            ]
-          }
-        >
-          arrow-left
-        </Text>
-      </View>
-    </View>
-  </View>
   <RCTScrollView
     automaticallyAdjustContentInsets={false}
     contentContainerStyle={
@@ -101,18 +54,180 @@ exports[`Launcher Container renders correctly 1`] = `
     viewIsInsideTabBar={false}
   >
     <View>
+      <RCTScrollView
+        data={
+          Array [
+            Object {
+              "color": "white",
+              "key": 1,
+              "text": "hello",
+            },
+            Object {
+              "color": "pink",
+              "key": 2,
+              "text": "bob",
+            },
+            Object {
+              "color": "green",
+              "key": 3,
+              "text": "steve",
+            },
+          ]
+        }
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={true}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={10}
+        numColumns={1}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        pagingEnabled={true}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        stickyHeaderIndices={Array []}
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <View>
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "white",
+                  "justifyContent": "center",
+                  "width": 750,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    Object {
+                      "textAlign": "center",
+                    },
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                hello
+              </Text>
+            </View>
+          </View>
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "pink",
+                  "justifyContent": "center",
+                  "width": 750,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    Object {
+                      "textAlign": "center",
+                    },
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                bob
+              </Text>
+            </View>
+          </View>
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "green",
+                  "justifyContent": "center",
+                  "width": 750,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    Object {
+                      "textAlign": "center",
+                    },
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                steve
+              </Text>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
       <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "opacity": 1,
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 48,
+            "justifyContent": "space-around",
           }
         }
       >
@@ -125,7 +240,21 @@ exports[`Launcher Container renders correctly 1`] = `
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={null}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "color": "hsl(211, 100%, 50%)",
+              "flexDirection": "row",
+              "height": 36,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
         >
           <Text
             style={
@@ -139,29 +268,24 @@ exports[`Launcher Container renders correctly 1`] = `
                   "textAlign": "center",
                 },
                 undefined,
-                null,
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "hsl(211, 100%, 50%)",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
               ]
             }
           >
-            BALL
+            SIGN UP
           </Text>
         </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-      >
         <View
           accessible={true}
           isTVSelectable={true}
@@ -171,7 +295,21 @@ exports[`Launcher Container renders correctly 1`] = `
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={null}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "color": "hsl(211, 100%, 50%)",
+              "flexDirection": "row",
+              "height": 36,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
         >
           <Text
             style={
@@ -185,29 +323,24 @@ exports[`Launcher Container renders correctly 1`] = `
                   "textAlign": "center",
                 },
                 undefined,
-                null,
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "hsl(211, 100%, 50%)",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
               ]
             }
           >
-            BUTTONS
+            LOG IN
           </Text>
         </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-      >
         <View
           accessible={true}
           isTVSelectable={true}
@@ -217,7 +350,21 @@ exports[`Launcher Container renders correctly 1`] = `
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={null}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "color": "hsl(211, 100%, 50%)",
+              "flexDirection": "row",
+              "height": 36,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
         >
           <Text
             style={
@@ -231,425 +378,22 @@ exports[`Launcher Container renders correctly 1`] = `
                   "textAlign": "center",
                 },
                 undefined,
-                null,
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "hsl(211, 100%, 50%)",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
               ]
             }
           >
-            CARDS
-          </Text>
-        </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={null}
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                null,
-              ]
-            }
-          >
-            CHECKLISTS
-          </Text>
-        </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={null}
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                null,
-              ]
-            }
-          >
-            DRAG
-          </Text>
-        </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={null}
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                null,
-              ]
-            }
-          >
-            FONTS
-          </Text>
-        </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={null}
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                null,
-              ]
-            }
-          >
-            IMAGECOLLECTION
-          </Text>
-        </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={null}
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                null,
-              ]
-            }
-          >
-            INPUT
-          </Text>
-        </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={null}
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                null,
-              ]
-            }
-          >
-            OKRS
-          </Text>
-        </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={null}
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                null,
-              ]
-            }
-          >
-            PINCHSPREAD
-          </Text>
-        </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={null}
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                null,
-              ]
-            }
-          >
-            QUESTIONNAIRE
-          </Text>
-        </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={null}
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                null,
-              ]
-            }
-          >
-            SEARCHBAR
+            DEBUG
           </Text>
         </View>
       </View>
