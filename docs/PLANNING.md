@@ -2,24 +2,23 @@
 
 ## Top 1
 
-- [ ] add keyboard listener to device
+- [ ] finish redux for user
+- [ ] logout clear everything
 
 ## Top 3
 
-- [ ] convert other reduxes to new syntax
-- [ ] logout clear everything
-- [ ] fix icons on mobile
+- [ ] use evernote to make example data structure of checklist and actionables
+- [ ] checklist mvp with navigation
 
 ## Top 5
 
-- [ ] use evernote to make example data structure of checklist and actionables
-- [ ] checklist mvp with navigation
 - [ ] checklist tests
 - [ ] checklist async tests
-- [ ] redux persist test working
+- [ ] redux persist/offline test working
 
 ## Rest
 
+- [ ] fix icons on mobile
 - [ ] landing page https://www.lemonade.com/ https://www.any.do/
 - [ ] firebase native
 - [ ] firebase [todo](https://blog.invertase.io/getting-started-with-cloud-firestore-on-react-native-b338fb6525b9)
@@ -27,6 +26,7 @@
 - [ ] firebase login
 - [ ] catch global errors
 - [ ] remove `@babel/plugin-transform-object-assign` dependency when updating `react` `react-dom` or `react-test-renderer`
+- [ ] remove `YellowBox` warning after upgrading react native to 0.59.5+
 - [ ] textinput
 - [ ] radio
 - [ ] selection
@@ -52,6 +52,10 @@
 
 ## Done
 
+- [x] add keyboard listener to device
+- [x] convert other reduxes to new syntax
+- [x] fix web for device-info and version-number
+- [x] complete device tests for 100% test coverage
 - [x] checklist redux
 - [x] clean all branches
 - [x] clean up all todos
