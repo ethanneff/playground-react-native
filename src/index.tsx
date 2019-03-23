@@ -1,6 +1,7 @@
 import * as React from "react";
-import { AppRegistry, Platform } from "react-native";
-import { Provider } from "./models";
+import { AppRegistry, Platform, YellowBox } from "react-native";
+import { Provider } from "react-redux";
+import { store } from "./models";
 import { App } from "./screens";
 import { Config } from "./utils";
 
@@ -10,7 +11,7 @@ YellowBox.ignoreWarnings(["NetInfo"]);
 export class Launcher extends React.PureComponent {
   public render() {
     return (
-      <Provider>
+      <Provider store={store}>
         <App />
       </Provider>
     );

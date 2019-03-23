@@ -1,5 +1,3 @@
-import * as React from "react";
-import { Provider as Original } from "react-redux";
 import {
   applyMiddleware,
   combineReducers,
@@ -50,12 +48,4 @@ const composers =
 const enhancers = composers(applyMiddleware(...middlewares));
 
 // store
-const store = createStore(reducers, enhancers);
-
-// provider
-export class Provider extends React.PureComponent {
-  public render() {
-    const { children } = this.props;
-    return <Original store={store}>{children}</Original>;
-  }
-}
+export const store = createStore(reducers, enhancers);
