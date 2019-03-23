@@ -1,10 +1,10 @@
 import { createSelector } from "reselect";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { DeepReadonly } from "utility-types";
-import uuid from "uuid/v4";
+import { v4 } from "uuid";
 import { RootAction, RootState } from "../../../../../../models";
 
-// Interfaces
+// interfaces
 export type Item = DeepReadonly<{
   id: string;
   name: string;
@@ -31,7 +31,7 @@ interface CreateItem {
 }
 type UpdateItem = CreateItem & { id: string };
 
-// Actions
+// actions
 export const createItem = createStandardAction("ITEM/CREATE")<CreateItem>();
 export const updateItem = createStandardAction("ITEM/UPDATE")<UpdateItem>();
 export const removeItem = createStandardAction("ITEM/REMOVE")<string>();
@@ -39,7 +39,7 @@ export const toggleActiveItem = createStandardAction("ITEM/TOGGLE_ACTIVE")<
   string
 >();
 
-// Indexes
+// indexes
 export const indexItemsByCreatedAt = (rows: Items): Items =>
   Object.values(rows).reduce(
     (index: any, row) => ((index[row.createdAt] = row.id), index),
@@ -56,22 +56,26 @@ export const indexItemsByUserId = (rows: Items): Items =>
     {}
   );
 
-// Selectors
-export const selectItems = (state: RootState): Items => state.items;
-export const selectItemsFilterByActive = createSelector(
-  [selectItems],
+// selectors
+export const getItems = (state: RootState): Items => state.items;
+export const getItemsFilterByActive = createSelector(
+  [getItems],
   items => Object.values(items).filter(item => item.active)
 );
-export const selectItemsByCreatedAt = createSelector(
-  [selectItems],
+export const getItemsByCreatedAt = createSelector(
+  [getItems],
   items => Object.values(items).sort((a, b) => a.createdAt - b.createdAt)
 );
 
-// Reducer
-export const itemReducer = (state: Items = {}, action: RootAction): Items => {
+// reducer
+const initialState = {};
+export const itemReducer = (
+  state: Items = initialState,
+  action: RootAction
+): Items => {
   switch (action.type) {
     case getType(createItem):
-      const id = uuid();
+      const id = v4();
       const timestamp = Date.now();
       return {
         ...state,
