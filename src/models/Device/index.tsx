@@ -5,51 +5,14 @@ import {
   EffectiveConnectionType,
   ScaledSize
 } from "react-native";
-import { RootState } from "../../models";
-
-const WINDOW = Dimensions.get("window");
-
-// action types
-export enum DeviceActionTypes {
-  DEVICE_UPDATE_BATTERY = "DEVICE_UPDATE_BATTERY",
-  DEVICE_UPDATE_FINGERPRINT = "DEVICE_UPDATE_FINGERPRINT",
-  DEVICE_LOAD = "DEVICE_LOAD",
-  DEVICE_UPDATE_NETWORK = "DEVICE_UPDATE_NETWORK",
-  DEVICE_UPDATE_DIMENSION = "DEVICE_UPDATE_DIMENSION"
-}
+import { ActionType, createStandardAction, getType } from "typesafe-actions";
+import { RootAction, RootState } from "../../models";
 
 // interfaces
 export interface DimensionsProps {
   window: ScaledSize;
   screen: ScaledSize;
 }
-interface DeviceUpdateBatteryAction {
-  type: DeviceActionTypes.DEVICE_UPDATE_BATTERY;
-  payload: number;
-}
-interface DeviceUpdateFingerprintAction {
-  type: DeviceActionTypes.DEVICE_UPDATE_FINGERPRINT;
-  payload: boolean;
-}
-interface DeviceLoadAction {
-  type: DeviceActionTypes.DEVICE_LOAD;
-  payload: DeviceState;
-}
-interface DeviceNetworkChangeAction {
-  type: DeviceActionTypes.DEVICE_UPDATE_NETWORK;
-  payload: ConnectionInfo;
-}
-interface DeviceDimensionChangeAction {
-  type: DeviceActionTypes.DEVICE_UPDATE_DIMENSION;
-  payload: DimensionsProps;
-}
-type DeviceActions =
-  | DeviceUpdateBatteryAction
-  | DeviceUpdateFingerprintAction
-  | DeviceLoadAction
-  | DeviceNetworkChangeAction
-  | DeviceDimensionChangeAction;
-
 export interface DeviceState {
   uniqueId?: string;
   manufacturer?: string;
@@ -83,96 +46,84 @@ export interface DeviceState {
   batteryLevel?: number;
   networkType?: ConnectionType;
   networkEffectiveType?: EffectiveConnectionType;
-  windowDimensions?: ScaledSize;
-  screenDimensions?: ScaledSize;
+  windowDimensions: ScaledSize;
+  screenDimensions: ScaledSize;
 }
+export type DeviceActions = ActionType<
+  | typeof onBatteryChange
+  | typeof onFingerprintChange
+  | typeof onDeviceLoad
+  | typeof onNetworkChange
+  | typeof onDimensionChange
+>;
 
 // actions
-export const onDeviceUpdateFingerprint = (payload: boolean) => ({
-  payload,
-  type: DeviceActionTypes.DEVICE_UPDATE_FINGERPRINT
-});
-export const onDeviceUpdateBattery = (payload: number) => ({
-  payload,
-  type: DeviceActionTypes.DEVICE_UPDATE_BATTERY
-});
-export const onDeviceLoad = (payload: DeviceState) => ({
-  payload,
-  type: DeviceActionTypes.DEVICE_LOAD
-});
-export const onNetworkChange = (payload: ConnectionType | ConnectionInfo) => ({
-  payload,
-  type: DeviceActionTypes.DEVICE_UPDATE_NETWORK
-});
-export const onDimensionChange = (payload: DimensionsProps) => ({
-  payload,
-  type: DeviceActionTypes.DEVICE_UPDATE_DIMENSION
-});
+export const onBatteryChange = createStandardAction("DEVICE/UPDATE_BATTERY")<
+  number
+>();
+export const onFingerprintChange = createStandardAction(
+  "DEVICE/UPDATE_FINGERPRINT"
+)<boolean>();
+export const onDeviceLoad = createStandardAction("DEVICE/LOAD")<DeviceState>();
+export const onNetworkChange = createStandardAction("DEVICE/UPDATE_NETWORK")<
+  ConnectionInfo
+>();
+export const onDimensionChange = createStandardAction(
+  "DEVICE/UPDATE_DIMENSION"
+)<DimensionsProps>();
+
+const windowDimensions = Dimensions.get("window");
+const screenDimensions = Dimensions.get("screen");
+export const deviceInitialState: DeviceState = {
+  screenDimensions,
+  windowDimensions
+};
 
 // selectors
-export const selectLandscapeOrientation = (state: RootState) =>
-  !state.device.windowDimensions
-    ? WINDOW.height < WINDOW.width
-    : state.device.windowDimensions.height <
-      state.device.windowDimensions.width;
-
-export const selectSmallestDimension = (state: RootState) =>
-  !state.device.windowDimensions
-    ? WINDOW.height > WINDOW.width
-      ? WINDOW.width
-      : WINDOW.height
-    : state.device.windowDimensions.height > state.device.windowDimensions.width
+export const getLandscapeOrientation = (state: RootState): boolean =>
+  state.device.windowDimensions.height < state.device.windowDimensions.width;
+export const getSmallestDimension = (state: RootState): number =>
+  state.device.windowDimensions.height > state.device.windowDimensions.width
     ? state.device.windowDimensions.width
     : state.device.windowDimensions.height;
-
-export const selectLargestDimension = (state: RootState) =>
-  !state.device.windowDimensions
-    ? WINDOW.height > WINDOW.width
-      ? WINDOW.height
-      : WINDOW.width
-    : state.device.windowDimensions.height > state.device.windowDimensions.width
+export const getLargestDimension = (state: RootState): number =>
+  state.device.windowDimensions.height > state.device.windowDimensions.width
     ? state.device.windowDimensions.height
     : state.device.windowDimensions.width;
-
-export const selectWidth = (state: RootState) =>
-  !state.device.windowDimensions
-    ? WINDOW.width
-    : state.device.windowDimensions.width;
-
-export const selectHeight = (state: RootState) =>
-  !state.device.windowDimensions
-    ? WINDOW.height
-    : state.device.windowDimensions.height;
+export const getWidth = (state: RootState): number =>
+  state.device.windowDimensions.width;
+export const getHeight = (state: RootState): number =>
+  state.device.windowDimensions.height;
 
 // reducers
 export const deviceReducer = (
-  state: DeviceState = {},
-  action: DeviceActions
-) => {
+  state: DeviceState = deviceInitialState,
+  action: RootAction
+): DeviceState => {
   switch (action.type) {
-    case DeviceActionTypes.DEVICE_UPDATE_BATTERY:
+    case getType(onBatteryChange):
       return {
         ...state,
         batteryLevel: action.payload
       };
-    case DeviceActionTypes.DEVICE_UPDATE_FINGERPRINT:
+    case getType(onFingerprintChange):
       return {
         ...state,
         isPinOrFingerprintSet: action.payload
       };
-    case DeviceActionTypes.DEVICE_UPDATE_NETWORK:
+    case getType(onNetworkChange):
       return {
         ...state,
         networkEffectiveType: action.payload.effectiveType,
         networkType: action.payload.type
       };
-    case DeviceActionTypes.DEVICE_UPDATE_DIMENSION:
+    case getType(onDimensionChange):
       return {
         ...state,
         screenDimensions: action.payload.screen,
         windowDimensions: action.payload.window
       };
-    case DeviceActionTypes.DEVICE_LOAD:
+    case getType(onDeviceLoad):
       return {
         ...state,
         ...action.payload

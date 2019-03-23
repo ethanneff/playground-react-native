@@ -15,8 +15,8 @@ import {
   listReducer,
   Lists
 } from "../screens/Debug/screens/Checklists/models";
-import { appReducer, AppState } from "./App";
-import { deviceReducer, DeviceState } from "./Device";
+import { AppActions, appReducer, AppState } from "./App";
+import { DeviceActions, deviceReducer, DeviceState } from "./Device";
 
 // models
 export * from "./App";
@@ -39,7 +39,7 @@ const reducers = combineReducers<RootState>({
 });
 
 // actions
-export type RootAction = ListActions | ItemActions;
+export type RootAction = AppActions | DeviceActions | ListActions | ItemActions;
 
 // constants
 const middlewares: Middleware[] = [thunk];

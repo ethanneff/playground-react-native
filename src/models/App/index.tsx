@@ -1,11 +1,7 @@
 import { AppStateStatus } from "react-native";
-import { RootState } from "../../models";
-
-// action types
-export enum AppActionTypes {
-  APP_LOAD = "APP_LOAD",
-  APP_UPDATE_STATUS = "APP_UPDATE_STATUS"
-}
+import { createSelector } from "reselect";
+import { ActionType, createStandardAction, getType } from "typesafe-actions";
+import { RootAction, RootState } from "../../models";
 
 // interfaces
 export interface AppState {
@@ -16,44 +12,57 @@ export interface AppState {
   buildNumber?: string;
   version?: string;
   readableVersion?: string;
-  status?: AppStateStatus;
+  status: AppStateStatus;
+  keyboardVisible: boolean;
 }
-interface AppLoadAction {
-  type: AppActionTypes.APP_LOAD;
-  payload: AppLoadPayload;
-}
-interface AppStateChangeAction {
-  type: AppActionTypes.APP_UPDATE_STATUS;
-  payload: AppStateStatus;
-}
-type AppActions = AppLoadAction | AppStateChangeAction;
-type AppLoadPayload = AppState;
+export type AppActions = ActionType<
+  typeof onAppLoad | typeof onAppStatusChange | typeof onKeyboardChange
+>;
 
 // actions
-export const onAppLoad = (payload: AppLoadPayload) => ({
-  payload,
-  type: AppActionTypes.APP_LOAD
-});
-export const onAppStateChange = (payload: AppStateStatus) => ({
-  payload,
-  type: AppActionTypes.APP_UPDATE_STATUS
-});
+export const onAppLoad = createStandardAction("APP/LOAD")<AppState>();
+export const onAppStatusChange = createStandardAction("APP/UPDATE_STATUS")<
+  AppStateStatus
+>();
+export const onKeyboardChange = createStandardAction(
+  "APP/UPDATE_KEYBOARD_VISIBILITY"
+)<boolean>();
 
 // selectors
-export const selectAppStatus = (state: RootState) => state.app.status;
+export const getAppStatus = (state: RootState): AppStateStatus =>
+  state.app.status;
+export const getKeyboardVisible = (state: RootState): boolean =>
+  state.app.keyboardVisible;
+export const getAppStatusForeground = createSelector(
+  getAppStatus,
+  (status: AppStateStatus): boolean => status === "active"
+);
 
 // reducers
-export function appReducer(state: AppState = {}, action: AppActions): AppState {
+export const appInitialState: AppState = {
+  keyboardVisible: false,
+  status: "inactive"
+};
+
+export function appReducer(
+  state: AppState = appInitialState,
+  action: RootAction
+): AppState {
   switch (action.type) {
-    case AppActionTypes.APP_LOAD:
+    case getType(onAppLoad):
       return {
         ...state,
         ...action.payload
       };
-    case AppActionTypes.APP_UPDATE_STATUS:
+    case getType(onAppStatusChange):
       return {
         ...state,
         status: action.payload
+      };
+    case getType(onKeyboardChange):
+      return {
+        ...state,
+        keyboardVisible: action.payload
       };
     default:
       return state;
