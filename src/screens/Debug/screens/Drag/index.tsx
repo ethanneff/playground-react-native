@@ -8,7 +8,7 @@ import {
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Screen, Text } from "../../../../components";
-import { selectHeight, selectWidth } from "../../../../models";
+import { getHeight, getWidth } from "../../../../models";
 import { RootState } from "../../../../models";
 
 const styles = StyleSheet.create({
@@ -63,8 +63,8 @@ class Component extends React.PureComponent<Props> {
 }
 
 const mapStateToProps = (state: RootState) => ({
-  height: selectHeight(state),
-  width: selectWidth(state)
+  height: getHeight(state),
+  width: getWidth(state)
 });
 
 export const Drag = connect(mapStateToProps)(Component);

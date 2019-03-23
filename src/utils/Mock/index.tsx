@@ -1,6 +1,7 @@
 import * as React from "react";
+import { Provider } from "react-redux";
 import { Router } from "../../components";
-import { Provider } from "../../models";
+import { store } from "../../models";
 
 interface Props {
   Component: any;
@@ -14,7 +15,7 @@ export class MockProviderAndRouter extends React.PureComponent<Props> {
   public render() {
     const { Component } = this.props;
     return (
-      <Provider>
+      <Provider store={store}>
         <Router>
           <Component
             match={this.mock}

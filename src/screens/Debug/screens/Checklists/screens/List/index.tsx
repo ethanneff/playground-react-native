@@ -6,9 +6,9 @@ import { Button, Screen } from "../../../../../../components";
 import { RootState } from "../../../../../../models";
 import { Theme } from "../../../../../../utils";
 import {
+  getItemsByCreatedAt,
   ItemsArray,
   removeItem,
-  selectItemsByCreatedAt,
   toggleActiveItem,
   updateItem
 } from "../../models/Item";
@@ -81,7 +81,7 @@ class Component extends React.PureComponent<Props> {
 
 export const List = connect(
   (state: RootState) => ({
-    items: selectItemsByCreatedAt(state)
+    items: getItemsByCreatedAt(state)
   }),
   {
     removeItem,

@@ -2,7 +2,7 @@ import * as React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import { Text } from "../../components";
-import { selectWidth } from "../../models";
+import { getWidth } from "../../models";
 import { RootState } from "../../models";
 
 const styles = (width?: number, color?: string) =>
@@ -44,6 +44,6 @@ class Component extends React.PureComponent<Props> {
   }
 }
 const mapStateToProps = (state: RootState) => ({
-  width: selectWidth(state)
+  width: getWidth(state)
 });
 export const Walkthrough = connect(mapStateToProps)(Component);

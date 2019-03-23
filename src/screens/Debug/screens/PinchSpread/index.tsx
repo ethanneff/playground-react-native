@@ -8,7 +8,7 @@ import {
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Screen, Text } from "../../../../components";
-import { selectHeight, selectWidth } from "../../../../models";
+import { getHeight, getWidth } from "../../../../models";
 import { RootState } from "../../../../models";
 import { GestureHandler } from "./logic";
 
@@ -76,8 +76,8 @@ class Component extends React.PureComponent<Props> {
 }
 
 const mapStateToProps = (state: RootState) => ({
-  height: selectHeight(state),
-  width: selectWidth(state)
+  height: getHeight(state),
+  width: getWidth(state)
 });
 
 export const PinchSpread = connect(mapStateToProps)(Component);

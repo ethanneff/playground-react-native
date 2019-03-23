@@ -3,7 +3,7 @@ import { Animated, StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Button, Screen } from "../../../../components";
-import { RootState, selectHeight, selectWidth } from "../../../../models";
+import { getHeight, getWidth, RootState } from "../../../../models";
 
 const styles = StyleSheet.create({
   ball: {
@@ -63,8 +63,8 @@ class Component extends React.PureComponent<Props> {
 }
 
 const mapStateToProps = (state: RootState) => ({
-  height: selectHeight(state),
-  width: selectWidth(state)
+  height: getHeight(state),
+  width: getWidth(state)
 });
 
 export const Ball = connect(mapStateToProps)(Component);
