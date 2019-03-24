@@ -4,6 +4,7 @@
 
 - [ ] finish redux for user
 - [ ] logout clear everything
+- [ ] test out redux offline
 
 ## Top 3
 

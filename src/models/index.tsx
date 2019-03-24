@@ -1,3 +1,5 @@
+import { offline } from "@redux-offline/redux-offline";
+import offlineConfig from "@redux-offline/redux-offline/lib/defaults";
 import {
   applyMiddleware,
   combineReducers,
@@ -45,7 +47,10 @@ export type RootAction = AppActions | DeviceActions | ListActions | ItemActions;
 const middlewares: Middleware[] = [thunk];
 const composers =
   (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const enhancers = composers(applyMiddleware(...middlewares));
+const enhancers = composers(
+  applyMiddleware(...middlewares),
+  offline(offlineConfig)
+);
 
 // store
 export const store = createStore(reducers, enhancers);

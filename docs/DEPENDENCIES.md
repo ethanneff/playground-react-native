@@ -21,6 +21,7 @@
 | utility-types                             | nested read only immutability     | state management       |
 | uuid                                      | v4 unique ids for all             | state management       |
 | reselect                                  | memoization reads                 | state management       |
+| @redux-offline/redux-offline              | offline state                     | state management       |
 | react-router                              | navigation                        | navigation             |
 | react-router-dom                          | web                               | navigation             |
 | react-router-native                       | ios and android                   | navigation             |
