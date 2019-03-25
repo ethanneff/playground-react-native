@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../models";
+import { logout } from "../Auth";
 
 // interfaces
 export interface DimensionsProps {
@@ -72,13 +73,6 @@ export const onDimensionChange = createStandardAction(
   "DEVICE/UPDATE_DIMENSION"
 )<DimensionsProps>();
 
-const windowDimensions = Dimensions.get("window");
-const screenDimensions = Dimensions.get("screen");
-export const deviceInitialState: DeviceState = {
-  screenDimensions,
-  windowDimensions
-};
-
 // selectors
 export const getLandscapeOrientation = (state: RootState): boolean =>
   state.device.windowDimensions.height < state.device.windowDimensions.width;
@@ -96,6 +90,12 @@ export const getHeight = (state: RootState): number =>
   state.device.windowDimensions.height;
 
 // reducers
+const windowDimensions = Dimensions.get("window");
+const screenDimensions = Dimensions.get("screen");
+export const deviceInitialState: DeviceState = {
+  screenDimensions,
+  windowDimensions
+};
 export const deviceReducer = (
   state: DeviceState = deviceInitialState,
   action: RootAction
@@ -128,6 +128,8 @@ export const deviceReducer = (
         ...state,
         ...action.payload
       };
+    case getType(logout):
+      return deviceInitialState;
     default:
       return state;
   }
