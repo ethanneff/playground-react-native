@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.13.0](https://github.com/ethanneff/example/compare/v1.12.0...v1.13.0) (2019-03-24)
+
+
+### Features
+
+* add redux offline ([9637e27](https://github.com/ethanneff/example/commit/9637e27))
+
 # [1.12.0](https://github.com/ethanneff/example/compare/v1.11.3...v1.12.0) (2019-03-23)
 
 
