@@ -2,57 +2,129 @@
 
 ## Top 1
 
-- [ ] finish redux for user
-- [ ] logout clear everything
-- [ ] test out redux offline
-
 ## Top 3
-
-- [ ] use evernote to make example data structure of checklist and actionables
-- [ ] checklist mvp with navigation
 
 ## Top 5
 
-- [ ] checklist tests
-- [ ] checklist async tests
-- [ ] redux persist/offline test working
-
 ## Rest
 
+#### v0 merge all code bases
+
+- [ ] slack markdown
+- [ ] main landing page
+- [ ] main tableview
+- [ ] main navigation
+- [ ] main counter
+- [ ] main app statusbar
+- [ ] stopwatch
+
+#### v1 redux async
+
+- [x] finish redux for user (async typeactions)
+- [x] logout clear everything
+- [ ] hook up auth to sign in flow
+- [ ] add tests to auth
+- [ ] test out redux offline
+
+#### v2 core app
+
+- [ ] checklist mvp with navigation
+- [ ] use evernote to make example data structure of checklist and actionables
+- [ ] checklist async tests
+
+#### v3 cross platform
+
+- [ ] landing page https://www.lemonade.com/ https://www.any.do/ https://i.imgur.com/e4svRwy.png https://evernote.com/ https://telegram.org/
+- [ ] welcome screen
+- [ ] logins/signups
 - [ ] fix icons on mobile
-- [ ] landing page https://www.lemonade.com/ https://www.any.do/
-- [ ] firebase native
-- [ ] firebase [todo](https://blog.invertase.io/getting-started-with-cloud-firestore-on-react-native-b338fb6525b9)
-- [ ] firebase android
-- [ ] firebase login
-- [ ] catch global errors
-- [ ] remove `@babel/plugin-transform-object-assign` dependency when updating `react` `react-dom` or `react-test-renderer`
-- [ ] remove `YellowBox` warning after upgrading react native to 0.59.5+
+
+#### v4 proof of concept
+
+- [ ] firebase
+  - [ ] firebase native
+  - [ ] firebase [todo](https://blog.invertase.io/getting-started-with-cloud-firestore-on-react-native-b338fb6525b9)
+  - [ ] firebase android
+  - [ ] firebase login
+  - [ ] firebase search
+  - [ ] firebase comments
+  - [ ] firebase web
+  - [ ] firebase pass tests
+  - [ ] firebase-todo branch
+- [ ] codepush
+- [ ] app center
+- [ ] release
+
+#### v5 revenue
+
+- [ ] payment
+- [ ] google admob
+- [ ] facebook ads
+
+#### v6 dx
+
+- [x] airbnb lint
+- [x] prettier lint
+- [x] github ci
+- [x] deploy ci
+- [x] jest
+- [x] codecov
+- [x] dependency check
+- [x] change log
+- [x] commit restriction
+- [ ] dependency auto update
+
+#### v7 apps
+
+- [ ] splitwise
+- [ ] timer
+- [ ] weekly games
+
+#### v8 components
+
 - [ ] textinput
 - [ ] radio
 - [ ] selection
-- [ ] firebase search
-- [ ] firebase comments
-- [ ] firebase web
-- [ ] firebase pass tests
-- [ ] okr branch
-- [ ] push notifications to firebase and app center
-- [ ] firebase-todo branch
-- [ ] clean up user redux
-- [ ] add transitions react-router-native-stack
-- [ ] add swipe
-- [ ] clean up debug index screen
-- [ ] figure out auto import relative pathing
-- [ ] add locales
-- [ ] re-enable prepush? maybe?
-- [ ] create a root initial state for redux tests
+- [ ] swipe
+
+#### v9 cleanup
+
 - [ ] add error boundary in app and show error alert
-- [ ] app center ios
-- [ ] get a working deploy to android/ios
+- [ ] remove `@babel/plugin-transform-object-assign` dependency when updating `react` `react-dom` or `react-test-renderer`
+- [ ] remove `YellowBox` warning after upgrading react native to 0.59.5+
 - [ ] prevent `Trace: The node type SpreadProperty has been renamed to SpreadElement` in app center build
+
+#### v10 other
+
+- [ ] webpack DLL plugin
+- [ ] checklist tests
+- [ ] push notifications to firebase and app center
+- [ ] add transitions react-router-native-stack
+- [ ] add locales
+- [ ] re-enable prepush?
+- [ ] get a working deploy to android/ios
+
+#### v9 best practices
+
+- [ ] react-native-responsive
+- [x] ~~relay~~
+- [ ] [styled components](https://github.com/styled-components/styled-components)
+- [x] vscode (editor)
+- [x] remote-redux-devtools
+- [x] [typescript](https://medium.com/@rintoj/react-native-with-typescript-40355a90a5d7) (type checking)
+- [ ] [sentry](https://github.com/getsentry/react-native-sentry) (stack traces)
+- [ ] [onesignal](https://github.com/geektimecoil/react-native-onesignal) (notifications)
+- [ ] [snoopy](https://github.com/jondot/rn-snoopy) (profiling)
+- [ ] [storybook](https://github.com/storybooks/storybook/tree/master/app/react-native) (component builder)
+- [x] [duck or duck++](https://github.com/erikras/ducks-modular-redux) (redux management)
+- [x] ~~[react-native-interactable](https://github.com/wix/react-native-interactable) (native animations)~~
+- [x] ~~[redux injectors](http://nicolasgallagher.com/redux-modules-and-code-splitting/)~~
 
 ## Done
 
+- [x] create a root initial state for redux tests
+- [x] figure out auto import relative pathing
+- [x] clean up debug index screen
 - [x] add keyboard listener to device
 - [x] convert other reduxes to new syntax
 - [x] fix web for device-info and version-number
