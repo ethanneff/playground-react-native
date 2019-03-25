@@ -3,7 +3,8 @@ import { Config } from "..";
 it("contains config", () => {
   expect(Config).toEqual({
     app: {
-      name: "example"
+      name: "example",
+      timeout: 5000
     },
     os: {
       android: "android",
