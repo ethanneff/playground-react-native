@@ -36,6 +36,7 @@
 | travis-deploy-once                        | runs ci only once per environment | continuous integration |
 | husky                                     | git hooks                         | continuous integration |
 | lint-staged                               | git hook for prettier             | continuous integration |
+| @types/axios                              |                                   | type definition        |
 | @types/jest                               |                                   | type definition        |
 | @types/react                              |                                   | type definition        |
 | @types/react-native                       |                                   | type definition        |
