@@ -7,7 +7,7 @@ import {
   createStore,
   Middleware
 } from "redux";
-import thunk from "redux-thunk";
+import thunk, { ThunkAction } from "redux-thunk";
 import { DeepReadonly } from "utility-types";
 import {
   ItemActions,
@@ -18,15 +18,18 @@ import {
   Lists
 } from "../screens/Debug/screens/Checklists/models";
 import { AppActions, appReducer, AppState } from "./App";
+import { AuthActions, authReducer, AuthState } from "./Auth";
 import { DeviceActions, deviceReducer, DeviceState } from "./Device";
 
 // models
 export * from "./App";
 export * from "./Device";
+export * from "./Auth";
 
 // interfaces
 export type RootState = DeepReadonly<{
   app: AppState;
+  auth: AuthState;
   device: DeviceState;
   items: Items;
   lists: Lists;
@@ -35,13 +38,20 @@ export type RootState = DeepReadonly<{
 // reducers
 const reducers = combineReducers<RootState>({
   app: appReducer,
+  auth: authReducer,
   device: deviceReducer,
   items: itemReducer,
   lists: listReducer
 });
 
 // actions
-export type RootAction = AppActions | DeviceActions | ListActions | ItemActions;
+export type RootAction =
+  | AppActions
+  | DeviceActions
+  | AuthActions
+  | ListActions
+  | ItemActions;
+export type RootThunkAction<R> = ThunkAction<R, RootState, {}, RootAction>;
 
 // constants
 const middlewares: Middleware[] = [thunk];
