@@ -126,7 +126,7 @@
       "module:metro-react-native-babel-preset"
     ],
     "plugins": [
-      "transform-object-assign"
+      "@babel/plugin-transform-object-assign"
     ]
   },
   "jest": {
