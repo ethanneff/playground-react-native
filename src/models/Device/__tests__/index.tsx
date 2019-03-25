@@ -58,7 +58,6 @@ describe("selectors", () => {
 });
 
 describe("selectors with no initial state", () => {
-  jest.mock("Dimensions", () => undefined);
   it("getLandscapeOrientation null", () => {
     expect(getLandscapeOrientation(store.getState())).toBe(false);
   });

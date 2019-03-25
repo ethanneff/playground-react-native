@@ -21,7 +21,7 @@
 #### v1 redux async
 
 - [x] finish redux for user (async typeactions)
-- [x] logout clear everything
+- [ ] logout clear everything
 - [ ] hook up auth to sign in flow
 - [ ] add tests to auth
 - [ ] test out redux offline

@@ -2,7 +2,7 @@ import { AppStateStatus } from "react-native";
 import { createSelector } from "reselect";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../models";
-import { logout } from "../Auth";
+// import { logout } from "../Auth";
 
 // interfaces
 export interface AppState {
@@ -64,8 +64,8 @@ export function appReducer(
         ...state,
         keyboardVisible: action.payload
       };
-    case getType(logout):
-      return appInitialState;
+    // case getType(logout):
+    //   return appInitialState;
     default:
       return state;
   }
