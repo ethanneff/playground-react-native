@@ -27,6 +27,7 @@
     "appcenter": "1.13.0",
     "appcenter-analytics": "1.13.0",
     "appcenter-crashes": "1.13.0",
+    "axios": "0.18.0",
     "react": "16.8.5",
     "react-art": "16.8.5",
     "react-dom": "16.8.5",
