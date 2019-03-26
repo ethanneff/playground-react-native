@@ -1,5 +1,25 @@
 # Changelog
 
+# [1.14.0](https://github.com/ethanneff/example/compare/v1.13.0...v1.14.0) (2019-03-25)
+
+
+### Bug Fixes
+
+* add axios to dependency doc ([30bcfe3](https://github.com/ethanneff/example/commit/30bcfe3))
+* add global network timeout to config ([a2f8ae5](https://github.com/ethanneff/example/commit/a2f8ae5))
+* add logout on all stores ([6312898](https://github.com/ethanneff/example/commit/6312898))
+* add types for axios ([a5ffbcd](https://github.com/ethanneff/example/commit/a5ffbcd))
+* correct tests for config ([7dcf875](https://github.com/ethanneff/example/commit/7dcf875))
+* remove logout from reducers because broken jest.mock dimensions ([5df1345](https://github.com/ethanneff/example/commit/5df1345))
+* remove warning about async storage relocation ([d9a38d6](https://github.com/ethanneff/example/commit/d9a38d6))
+* remove warning from tests ([b63146f](https://github.com/ethanneff/example/commit/b63146f))
+
+
+### Features
+
+* add auth reducer boilerplate ([f1bcaf5](https://github.com/ethanneff/example/commit/f1bcaf5))
+* add axios dependency ([3d20cf9](https://github.com/ethanneff/example/commit/3d20cf9))
+
 # [1.13.0](https://github.com/ethanneff/example/compare/v1.12.0...v1.13.0) (2019-03-24)
 
 
