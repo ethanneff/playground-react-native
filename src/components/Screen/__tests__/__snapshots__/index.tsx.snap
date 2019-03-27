@@ -77,7 +77,6 @@ exports[`renders correctly with header 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "hsl(0, 100%, 100%)",
         "flexDirection": "row",
         "justifyContent": "space-between",
       }
@@ -246,7 +245,6 @@ exports[`renders correctly with icons 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "hsl(0, 100%, 100%)",
         "flexDirection": "row",
         "justifyContent": "space-between",
       }
