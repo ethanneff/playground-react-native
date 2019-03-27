@@ -16,7 +16,7 @@
 - [ ] main navigation
 - [ ] main counter
 - [ ] main app statusbar
-- [ ] stopwatch
+- [x] stopwatch
 
 #### v1 redux async
 
