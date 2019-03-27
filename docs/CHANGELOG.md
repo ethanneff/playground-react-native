@@ -1,5 +1,18 @@
 # Changelog
 
+# [1.15.0](https://github.com/ethanneff/example/compare/v1.14.1...v1.15.0) (2019-03-27)
+
+
+### Bug Fixes
+
+* remove background color from navbar ([a6f7a0b](https://github.com/ethanneff/example/commit/a6f7a0b))
+
+
+### Features
+
+* add moment dependency ([0aad56a](https://github.com/ethanneff/example/commit/0aad56a))
+* add snapwatch ([000fc33](https://github.com/ethanneff/example/commit/000fc33))
+
 ## [1.14.1](https://github.com/ethanneff/example/compare/v1.14.0...v1.14.1) (2019-03-26)
 
 
