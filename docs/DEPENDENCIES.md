@@ -58,4 +58,5 @@
 | babel-jest                                | prevents errors with jest         | testing                |
 | ts-jest                                   | typescript tests                  | testing                |
 | react-art                                 | react-native-web (remove?)        | other                  |
+| moment                                    | time                              | other                  |
 | axios                                     | async networking                  | networking             |
