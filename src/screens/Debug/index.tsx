@@ -13,7 +13,8 @@ import {
   OKRs,
   PinchSpread,
   Questionnaire,
-  SearchBar
+  SearchBar,
+  Stopwatch
 } from "./screens";
 
 type Props = RouteComponentProps;
@@ -31,7 +32,8 @@ export class Debug extends React.PureComponent<Props> {
     OKRs,
     PinchSpread,
     Questionnaire,
-    SearchBar
+    SearchBar,
+    Stopwatch
   };
 
   public render() {

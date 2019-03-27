@@ -9,10 +9,62 @@ exports[`Launcher Container renders correctly 1`] = `
         "backgroundColor": "hsl(0, 100%, 100%)",
         "flex": 1,
       },
-      undefined,
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#0D0D0D",
+        "flex": 1,
+        "paddingHorizontal": 20,
+        "paddingTop": 130,
+      },
     ]
   }
 >
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+          "padding": 12,
+        }
+      }
+    >
+      <View>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontSize": 14,
+                "fontWeight": "300",
+                "letterSpacing": 0.25,
+              },
+              undefined,
+              undefined,
+              undefined,
+            ]
+          }
+        >
+          arrow-left
+        </Text>
+      </View>
+    </View>
+  </View>
   <RCTScrollView
     automaticallyAdjustContentInsets={false}
     contentContainerStyle={
@@ -21,7 +73,13 @@ exports[`Launcher Container renders correctly 1`] = `
           "backgroundColor": "hsl(0, 100%, 100%)",
           "flex": 1,
         },
-        undefined,
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#0D0D0D",
+          "flex": 1,
+          "paddingHorizontal": 20,
+          "paddingTop": 130,
+        },
       ]
     }
     contentInset={
@@ -54,180 +112,60 @@ exports[`Launcher Container renders correctly 1`] = `
     viewIsInsideTabBar={false}
   >
     <View>
-      <RCTScrollView
-        data={
-          Array [
-            Object {
-              "color": "white",
-              "key": 1,
-              "text": "hello",
-            },
-            Object {
-              "color": "pink",
-              "key": 2,
-              "text": "bob",
-            },
-            Object {
-              "color": "green",
-              "key": 3,
-              "text": "steve",
-            },
-          ]
-        }
-        disableVirtualization={false}
-        getItem={[Function]}
-        getItemCount={[Function]}
-        horizontal={true}
-        initialNumToRender={10}
-        keyExtractor={[Function]}
-        maxToRenderPerBatch={10}
-        numColumns={1}
-        onContentSizeChange={[Function]}
-        onEndReachedThreshold={2}
-        onLayout={[Function]}
-        onMomentumScrollEnd={[Function]}
-        onScroll={[Function]}
-        onScrollBeginDrag={[Function]}
-        onScrollEndDrag={[Function]}
-        pagingEnabled={true}
-        removeClippedSubviews={false}
-        renderItem={[Function]}
-        scrollEventThrottle={50}
-        stickyHeaderIndices={Array []}
-        updateCellsBatchingPeriod={50}
-        viewabilityConfigCallbackPairs={Array []}
-        windowSize={21}
-      >
-        <View>
-          <View
-            onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "row",
-                },
-                null,
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "justifyContent": "center",
-                  "width": 750,
-                }
-              }
-            >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
-                    },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                  ]
-                }
-              >
-                hello
-              </Text>
-            </View>
-          </View>
-          <View
-            onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "row",
-                },
-                null,
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "backgroundColor": "pink",
-                  "justifyContent": "center",
-                  "width": 750,
-                }
-              }
-            >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
-                    },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                  ]
-                }
-              >
-                bob
-              </Text>
-            </View>
-          </View>
-          <View
-            onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "row",
-                },
-                null,
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "backgroundColor": "green",
-                  "justifyContent": "center",
-                  "width": 750,
-                }
-              }
-            >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
-                    },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                  ]
-                }
-              >
-                steve
-              </Text>
-            </View>
-          </View>
-        </View>
-      </RCTScrollView>
       <View
         style={
           Object {
-            "alignItems": "center",
             "flexDirection": "row",
-            "height": 48,
-            "justifyContent": "space-around",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#FFFFFF",
+              "fontFamily": "Courier",
+              "fontSize": 54,
+              "fontWeight": "200",
+            }
+          }
+        >
+          00
+          :
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#FFFFFF",
+              "fontFamily": "Courier",
+              "fontSize": 54,
+              "fontWeight": "200",
+            }
+          }
+        >
+          00
+          .
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#FFFFFF",
+              "fontFamily": "Courier",
+              "fontSize": 54,
+              "fontWeight": "200",
+            }
+          }
+        >
+          00
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 30,
+            "marginTop": 80,
           }
         }
       >
@@ -243,48 +181,42 @@ exports[`Launcher Container renders correctly 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "transparent",
-              "borderColor": "transparent",
-              "borderRadius": 4,
-              "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
-              "flexDirection": "row",
-              "height": 36,
+              "backgroundColor": "#151515",
+              "borderRadius": 40,
+              "height": 80,
               "justifyContent": "center",
               "opacity": 1,
-              "paddingHorizontal": 16,
+              "width": 80,
             }
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "borderRadius": 38,
+                "borderWidth": 1,
+                "height": 76,
+                "justifyContent": "center",
+                "width": 76,
+              }
             }
           >
-            SIGN UP
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "color": "#8B8B90",
+                  },
+                ]
+              }
+            >
+              Lap
+            </Text>
+          </View>
         </View>
         <View
           accessible={true}
@@ -298,105 +230,53 @@ exports[`Launcher Container renders correctly 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "transparent",
-              "borderColor": "transparent",
-              "borderRadius": 4,
-              "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
-              "flexDirection": "row",
-              "height": 36,
+              "backgroundColor": "#1B361F",
+              "borderRadius": 40,
+              "height": 80,
               "justifyContent": "center",
               "opacity": 1,
-              "paddingHorizontal": 16,
+              "width": 80,
             }
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "borderRadius": 38,
+                "borderWidth": 1,
+                "height": 76,
+                "justifyContent": "center",
+                "width": 76,
+              }
             }
           >
-            LOG IN
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "borderColor": "transparent",
-              "borderRadius": 4,
-              "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
-              "flexDirection": "row",
-              "height": 36,
-              "justifyContent": "center",
-              "opacity": 1,
-              "paddingHorizontal": 16,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
+            <Text
+              style={
                 Array [
                   Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
+                    "fontSize": 18,
                   },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
-            }
-          >
-            DEBUG
-          </Text>
+                  Object {
+                    "color": "#50D167",
+                  },
+                ]
+              }
+            >
+              Start
+            </Text>
+          </View>
         </View>
       </View>
+      <RCTScrollView
+        style={
+          Object {
+            "alignSelf": "stretch",
+          }
+        }
+      >
+        <View />
+      </RCTScrollView>
     </View>
   </RCTScrollView>
 </RCTSafeAreaView>

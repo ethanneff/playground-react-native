@@ -17,6 +17,10 @@ const styles = StyleSheet.create({
 type Props = RouteComponentProps;
 
 export class Landing extends React.PureComponent<Props> {
+  public componentDidMount() {
+    this.props.history.push("/debug/stopwatch");
+  }
+
   public render() {
     const { history } = this.props;
     return (
