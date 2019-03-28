@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.1](https://github.com/ethanneff/example/compare/v1.15.0...v1.15.1) (2019-03-27)
+
+
+### Bug Fixes
+
+* update dependencies ([db216c0](https://github.com/ethanneff/example/commit/db216c0))
+
 # [1.15.0](https://github.com/ethanneff/example/compare/v1.14.1...v1.15.0) (2019-03-27)
 
 
