@@ -5,9 +5,8 @@ import {
   TextStyle,
   View
 } from "react-native";
+import { Button } from "..";
 import { FontSize, Theme } from "../../utils";
-import { Clear } from "./Clear";
-import { Error } from "./Error";
 import { Title } from "./Title";
 
 // styling https://uxdesign.cc/design-better-forms-96fadca0f49c
@@ -26,10 +25,14 @@ const styles = StyleSheet.create({
     borderColor: Theme.color.secondary,
     borderRadius: Theme.padding.p01,
     borderWidth: 2,
-    flex: 1,
     marginTop: Theme.padding.p01,
     padding: Theme.padding.p02,
     paddingRight: Theme.padding.p08
+  },
+  clear: {
+    position: "absolute",
+    right: -6,
+    top: 6
   }
 });
 
@@ -37,6 +40,8 @@ interface Props {
   title?: string;
   optional?: boolean;
   error?: string;
+  errorIcon?: string;
+  clearIcon?: string;
   style?: TextStyle | {};
   placeholder?: string;
   value: string;
@@ -92,6 +97,8 @@ export class TextInput extends React.PureComponent<Props, State> {
       onChangeText,
       value,
       disableFullscreenUI = true,
+      errorIcon = "alert-circle",
+      clearIcon = "close-circle",
       style
     } = this.props;
     const { focus } = this.state;
@@ -104,21 +111,16 @@ export class TextInput extends React.PureComponent<Props, State> {
     ];
     const noValue = value.length === 0;
     return (
-      <>
+      <View style={{ backgroundColor: "yellow" }}>
         <Title title={title} optional={optional} onPress={this.focusOnInput} />
         <View style={styles.row}>
           <Original
-            ref={input => {
-              if (!input) {
-                return;
-              }
-              this.textInput = input;
-            }}
+            ref={input => (this.textInput = input ? input : undefined)}
             autoCorrect={autoCorrect}
             selectionColor={Theme.color.primary}
             disableFullscreenUI={disableFullscreenUI}
-            onFocus={() => this.updateFocus(true)}
-            onBlur={() => this.updateFocus(false)}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
             editable={editable}
             placeholderTextColor={Theme.color.secondary}
             blurOnSubmit={blurOnSubmit}
@@ -131,16 +133,30 @@ export class TextInput extends React.PureComponent<Props, State> {
             onChangeText={onChangeText}
             value={value}
           />
-          <Clear hidden={noValue} onPress={this.textClear} />
+          <Button
+            secondary
+            hidden={noValue}
+            icon={clearIcon}
+            buttonStyle={styles.clear}
+            onPress={this.textClear}
+          />
         </View>
-        <Error error={error} onPress={this.focusOnInput} />
-      </>
+        <Button
+          label
+          wrap
+          lowercase
+          activeOpacity={1}
+          icon={errorIcon}
+          title={error}
+          danger
+          onPress={this.focusOnInput}
+        />
+      </View>
     );
   }
 
-  private updateFocus = (focus: boolean) => {
-    this.setState({ focus });
-  };
+  private onFocus = () => this.setState({ focus: true });
+  private onBlur = () => this.setState({ focus: false });
 
   private focusOnInput = () => {
     if (!this.textInput) {

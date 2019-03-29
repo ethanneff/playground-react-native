@@ -21,6 +21,7 @@ interface Props {
   onPress(): void;
 }
 
+// TODO:  remove title and move into index.tsx
 export class Title extends React.PureComponent<Props> {
   private optionalText = " - Optional";
   public render() {

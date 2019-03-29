@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-Array [
+<View
+  style={
+    Object {
+      "backgroundColor": "yellow",
+    }
+  }
+>
   <View
     style={
       Object {
@@ -27,7 +33,6 @@ Array [
             "borderColor": "hsl(208, 7%, 46%)",
             "borderRadius": 4,
             "borderWidth": 2,
-            "flex": 1,
             "marginTop": 4,
             "padding": 8,
             "paddingRight": 32,
@@ -112,7 +117,7 @@ Array [
         </Text>
       </View>
     </View>
-  </View>,
+  </View>
   <View
     accessible={true}
     isTVSelectable={true}
@@ -140,17 +145,9 @@ Array [
       }
     }
   >
-    <Text
+    <View
       style={
         Array [
-          Object {
-            "fontSize": 14,
-            "fontWeight": "300",
-            "letterSpacing": 0.25,
-          },
-          Object {
-            "textAlign": "center",
-          },
           undefined,
           Array [
             Object {
@@ -169,8 +166,23 @@ Array [
         ]
       }
     >
-       
-    </Text>
-  </View>,
-]
+      <Text
+        style={
+          Array [
+            Object {
+              "fontSize": 14,
+              "fontWeight": "300",
+              "letterSpacing": 0.25,
+            },
+            undefined,
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        alert-circle
+      </Text>
+    </View>
+  </View>
+</View>
 `;
