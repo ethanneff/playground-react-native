@@ -225,6 +225,7 @@ exports[`renders correctly 1`] = `
                 undefined,
                 undefined,
                 Object {
+                  "marginTop": 4,
                   "textTransform": "capitalize",
                 },
               ]
