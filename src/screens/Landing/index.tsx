@@ -18,7 +18,7 @@ type Props = RouteComponentProps;
 
 export class Landing extends React.PureComponent<Props> {
   public componentDidMount() {
-    this.props.history.push("/debug/stopwatch");
+    this.props.history.push("/debug/chat");
   }
 
   public render() {

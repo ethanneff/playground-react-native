@@ -128,6 +128,7 @@ export const deviceReducer = (
         ...state,
         ...action.payload
       };
+    // TODO: add back logout
     // case getType(logout):
     // return deviceInitialState;
     default:

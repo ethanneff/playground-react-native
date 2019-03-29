@@ -1,7 +1,7 @@
 import { createSelector } from "reselect";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { DeepReadonly } from "utility-types";
-import { v4 } from "uuid";
+import uuid from "uuid";
 import { RootAction, RootState } from "../../../../../../models";
 
 // interfaces
@@ -75,7 +75,7 @@ export const itemReducer = (
 ): Items => {
   switch (action.type) {
     case getType(createItem):
-      const id = v4();
+      const id = uuid.v4();
       const timestamp = Date.now();
       return {
         ...state,
