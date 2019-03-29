@@ -10,6 +10,7 @@
 
 #### v0 merge all code bases
 
+- [ ] chat app
 - [ ] slack markdown
 - [ ] main landing page
 - [ ] main tableview
