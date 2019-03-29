@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 14,
+          "fontWeight": "300",
+          "letterSpacing": 0.25,
+        },
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    a few seconds ago
+  </Text>
+</View>
+`;
+
+exports[`renders correctly on touch 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 14,
+          "fontWeight": "300",
+          "letterSpacing": 0.25,
+        },
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    Mar 29 2019, 4:39 pm
+  </Text>
+</View>
+`;
