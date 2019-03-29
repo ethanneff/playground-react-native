@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StyleSheet, Text as Original, ViewStyle } from "react-native";
-import { FontSize } from "../../utils";
+import { Theme } from "../../utils";
 
 const styles = StyleSheet.create({
   bold: {
@@ -52,45 +52,45 @@ export class Text extends React.PureComponent<Props> {
       overline
     } = this.props;
     if (h1) {
-      return FontSize.h1;
+      return Theme.fontSize.h1;
     }
     if (h2) {
-      return FontSize.h2;
+      return Theme.fontSize.h2;
     }
     if (h3) {
-      return FontSize.h3;
+      return Theme.fontSize.h3;
     }
     if (h4) {
-      return FontSize.h4;
+      return Theme.fontSize.h4;
     }
     if (h5) {
-      return FontSize.h5;
+      return Theme.fontSize.h5;
     }
     if (h6) {
-      return FontSize.h6;
+      return Theme.fontSize.h6;
     }
     if (subtitle1) {
-      return FontSize.subtitle1;
+      return Theme.fontSize.subtitle1;
     }
     if (subtitle2) {
-      return FontSize.subtitle2;
+      return Theme.fontSize.subtitle2;
     }
     if (body1) {
-      return FontSize.body1;
+      return Theme.fontSize.body1;
     }
     if (body2) {
-      return FontSize.body2;
+      return Theme.fontSize.body2;
     }
     if (button) {
-      return FontSize.button;
+      return Theme.fontSize.button;
     }
     if (caption) {
-      return FontSize.caption;
+      return Theme.fontSize.caption;
     }
     if (overline) {
-      return FontSize.overline;
+      return Theme.fontSize.overline;
     }
-    return FontSize.body2;
+    return Theme.fontSize.body2;
   }
 
   public render() {

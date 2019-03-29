@@ -6,7 +6,7 @@ import {
   View
 } from "react-native";
 import { Button } from "..";
-import { FontSize, Theme } from "../../utils";
+import { Theme } from "../../utils";
 import { Title } from "./Title";
 
 // styling https://uxdesign.cc/design-better-forms-96fadca0f49c
@@ -16,6 +16,11 @@ const styles = StyleSheet.create({
   },
   borderFocus: {
     borderColor: Theme.color.primary
+  },
+  clear: {
+    position: "absolute",
+    right: -6,
+    top: 6
   },
   row: {
     flexDirection: "row"
@@ -28,11 +33,6 @@ const styles = StyleSheet.create({
     marginTop: Theme.padding.p01,
     padding: Theme.padding.p02,
     paddingRight: Theme.padding.p08
-  },
-  clear: {
-    position: "absolute",
-    right: -6,
-    top: 6
   }
 });
 
@@ -106,7 +106,7 @@ export class TextInput extends React.PureComponent<Props, State> {
       styles.textInput,
       error && styles.borderError,
       focus && styles.borderFocus,
-      FontSize.body2,
+      Theme.fontSize.body2,
       style
     ];
     const noValue = value.length === 0;

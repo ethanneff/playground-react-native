@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     color: Theme.color.secondary
   },
   title: {
+    marginTop: Theme.padding.p01,
     textTransform: "capitalize"
   }
 });
