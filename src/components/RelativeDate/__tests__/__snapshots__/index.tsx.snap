@@ -30,7 +30,7 @@ exports[`renders correctly 1`] = `
       ]
     }
   >
-    a few seconds ago
+    an hour ago
   </Text>
 </View>
 `;
