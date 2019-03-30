@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`RelativeDate component renders correctly 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -30,12 +30,12 @@ exports[`renders correctly 1`] = `
       ]
     }
   >
-    an hour ago
+    a few seconds ago
   </Text>
 </View>
 `;
 
-exports[`renders correctly on touch 1`] = `
+exports[`RelativeDate component renders correctly on touch 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}

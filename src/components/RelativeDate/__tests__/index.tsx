@@ -1,33 +1,44 @@
 import * as React from "react";
-import { create } from "react-test-renderer";
+import { create, ReactTestRenderer } from "react-test-renderer";
 import RelativeDate from "..";
 
-const date = 1553904714478;
+describe("RelativeDate component", () => {
+  const date = Date.now();
+  let dom: ReactTestRenderer;
 
-it("renders correctly", () => {
-  const dom = create(<RelativeDate date={date} />).toJSON();
-  expect(dom).toMatchSnapshot();
-});
+  beforeEach(() => {
+    dom = create(<RelativeDate date={date} />);
+  });
 
-it("renders correctly on touch", () => {
-  const dom = create(<RelativeDate date={date} />);
-  dom.root.instance.toggleRelativeDate();
-  expect(dom).toMatchSnapshot();
-});
+  afterEach(() => {
+    dom.unmount();
+  });
 
-it("updates state touch", () => {
-  const dom = create(<RelativeDate date={date} />);
-  expect(dom.root.instance.state.showRelativeDate).toBe(true);
-  dom.root.instance.toggleRelativeDate();
-  expect(dom.root.instance.state.showRelativeDate).toBe(false);
-  dom.root.instance.toggleRelativeDate();
-  expect(dom.root.instance.state.showRelativeDate).toBe(true);
-});
+  it("renders correctly", () => {
+    const dom = create(<RelativeDate date={date} />).toJSON();
+    expect(dom).toMatchSnapshot();
+  });
 
-it("kills timer on unmount", () => {
-  const dom = create(<RelativeDate date={date} />);
-  const timer = dom.root.instance.timer;
-  expect(timer._onTimeout).not.toBeNull();
-  dom.unmount();
-  expect(timer._onTimeout).toBeNull();
+  it("renders correctly on touch", () => {
+    const dom = create(<RelativeDate date={1553904714478} />);
+    dom.root.instance.toggleRelativeDate();
+    expect(dom).toMatchSnapshot();
+  });
+
+  it("updates state touch", () => {
+    const dom = create(<RelativeDate date={date} />);
+    expect(dom.root.instance.state.showRelativeDate).toBe(true);
+    dom.root.instance.toggleRelativeDate();
+    expect(dom.root.instance.state.showRelativeDate).toBe(false);
+    dom.root.instance.toggleRelativeDate();
+    expect(dom.root.instance.state.showRelativeDate).toBe(true);
+  });
+
+  it("kills timer on unmount", () => {
+    const dom = create(<RelativeDate date={date} />);
+    const timer = dom.root.instance.timer;
+    expect(timer._onTimeout).not.toBeNull();
+    dom.unmount();
+    expect(timer._onTimeout).toBeNull();
+  });
 });
