@@ -7,12 +7,12 @@ install: yarn install
 jobs:
   include:
     - stage: validate
-      name: lint
+    - name: lint
       script: yarn lint
-      name: test
-    - script: yarn test
-      name: build    
-    - script: CI=false yarn build
+    - name: test
+      script: yarn test
+    - name: build    
+      script: CI=false yarn build
     - stage: release
       name: npm
       script: codecov
