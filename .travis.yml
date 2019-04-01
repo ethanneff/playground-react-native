@@ -10,8 +10,9 @@ jobs:
       name: lint
       script: yarn lint
     - name: test
-      script: yarn test
-      script: codecov
+      script:
+        - yarn test
+        - codecov
     - stage: release
       name: npm
       script: npm run travis-deploy-once "npm run semantic-release"
