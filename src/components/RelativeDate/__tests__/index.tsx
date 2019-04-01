@@ -14,17 +14,24 @@ describe("RelativeDate component", () => {
     expect(dom).toMatchSnapshot();
   });
 
-  it("renders correctly on touch", () => {
-    const staticDom = create(<RelativeDate date={1553904714478} />);
-    staticDom.root.instance.toggleRelativeDate();
-    expect(staticDom).toMatchSnapshot();
-  });
+  // it("renders correctly on touch", () => {
+  //   const staticDom = create(<RelativeDate date={1553904714478} />);
+  //   staticDom.root.instance.toggleRelativeDate();
+  //   expect(staticDom).toMatchSnapshot();
+  // });
 
-  it("updates state touch", () => {
-    expect(dom.root.instance.state.showRelativeDate).toBe(true);
-    dom.root.instance.toggleRelativeDate();
-    expect(dom.root.instance.state.showRelativeDate).toBe(false);
-    dom.root.instance.toggleRelativeDate();
-    expect(dom.root.instance.state.showRelativeDate).toBe(true);
-  });
+  // it("updates state touch", () => {
+  //   expect(dom.root.instance.state.showRelativeDate).toBe(true);
+  //   dom.root.instance.toggleRelativeDate();
+  //   expect(dom.root.instance.state.showRelativeDate).toBe(false);
+  //   dom.root.instance.toggleRelativeDate();
+  //   expect(dom.root.instance.state.showRelativeDate).toBe(true);
+  // });
+
+  // it("kills timer on unmount", () => {
+  //   const timer = dom.root.instance.timer;
+  //   expect(timer._onTimeout).not.toBeNull();
+  //   dom.unmount();
+  //   expect(timer._onTimeout).toBeNull();
+  // });
 });
