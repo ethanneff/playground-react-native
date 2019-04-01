@@ -8,9 +8,9 @@ jobs:
   include:
     - stage: validate
       name: valitate
-      script: yarn lint
-      script: yarn test
-      script: CI=false yarn build
+    - script: yarn lint
+    - script: yarn test
+    - script: CI=false yarn build
     - stage: release
       name: release
       script: codecov
