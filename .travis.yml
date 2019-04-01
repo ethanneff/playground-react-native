@@ -7,7 +7,7 @@ install: yarn install
 jobs:
   include:
     - stage: validate
-    - name: lint
+      name: lint
       script: yarn lint
     - name: test
       script: yarn test
