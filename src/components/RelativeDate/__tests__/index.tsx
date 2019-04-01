@@ -10,6 +10,10 @@ describe("RelativeDate component", () => {
     dom = create(<RelativeDate date={date} />);
   });
 
+  afterEach(() => {
+    dom.unmount();
+  });
+
   it("renders correctly", () => {
     expect(dom).toMatchSnapshot();
   });
