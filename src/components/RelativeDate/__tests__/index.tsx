@@ -10,10 +10,6 @@ describe("RelativeDate component", () => {
     dom = create(<RelativeDate date={date} />);
   });
 
-  afterEach(() => {
-    dom.unmount();
-  });
-
   it("renders correctly", () => {
     expect(dom).toMatchSnapshot();
   });
@@ -30,12 +26,5 @@ describe("RelativeDate component", () => {
     expect(dom.root.instance.state.showRelativeDate).toBe(false);
     dom.root.instance.toggleRelativeDate();
     expect(dom.root.instance.state.showRelativeDate).toBe(true);
-  });
-
-  it("kills timer on unmount", () => {
-    const timer = dom.root.instance.timer;
-    expect(timer._onTimeout).not.toBeNull();
-    dom.unmount();
-    expect(timer._onTimeout).toBeNull();
   });
 });
