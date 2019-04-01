@@ -2,6 +2,7 @@ import * as React from "react";
 import { create, ReactTestRenderer } from "react-test-renderer";
 import RelativeDate from "..";
 
+jest.useFakeTimers();
 describe("RelativeDate component", () => {
   const date = 1;
   let dom: ReactTestRenderer;
@@ -30,12 +31,5 @@ describe("RelativeDate component", () => {
     expect(dom.root.instance.state.showRelativeDate).toBe(false);
     dom.root.instance.toggleRelativeDate();
     expect(dom.root.instance.state.showRelativeDate).toBe(true);
-  });
-
-  it("kills timer on unmount", () => {
-    const timer = dom.root.instance.timer;
-    expect(timer._onTimeout).not.toBeNull();
-    dom.unmount();
-    expect(timer._onTimeout).toBeNull();
   });
 });
