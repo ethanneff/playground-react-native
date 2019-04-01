@@ -7,9 +7,11 @@ install: yarn install
 jobs:
   include:
     - stage: validate
-      name: valitate
+      name: lint
     - script: yarn lint
+      name: test
     - script: yarn test
+      name: build    
     - script: CI=false yarn build
     - stage: release
       name: release
