@@ -30,7 +30,7 @@ exports[`RelativeDate component renders correctly 1`] = `
       ]
     }
   >
-    a few seconds ago
+    49 years ago
   </Text>
 </View>
 `;
@@ -65,7 +65,7 @@ exports[`RelativeDate component renders correctly on touch 1`] = `
       ]
     }
   >
-    Mar 29 2019, 5:11 pm
+    Dec 31 1969, 4:00 pm
   </Text>
 </View>
 `;

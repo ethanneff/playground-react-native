@@ -2,12 +2,17 @@ import * as React from "react";
 import { create, ReactTestRenderer } from "react-test-renderer";
 import RelativeDate from "..";
 
+jest.useFakeTimers();
 describe("RelativeDate component", () => {
-  const date = Date.now();
+  const date = 1;
   let dom: ReactTestRenderer;
 
   beforeEach(() => {
     dom = create(<RelativeDate date={date} />);
+  });
+
+  afterEach(() => {
+    dom.unmount();
   });
 
   it("renders correctly", () => {
@@ -15,7 +20,7 @@ describe("RelativeDate component", () => {
   });
 
   it("renders correctly on touch", () => {
-    const staticDom = create(<RelativeDate date={1553904714478} />);
+    const staticDom = create(<RelativeDate date={date} />);
     staticDom.root.instance.toggleRelativeDate();
     expect(staticDom).toMatchSnapshot();
   });
@@ -26,12 +31,5 @@ describe("RelativeDate component", () => {
     expect(dom.root.instance.state.showRelativeDate).toBe(false);
     dom.root.instance.toggleRelativeDate();
     expect(dom.root.instance.state.showRelativeDate).toBe(true);
-  });
-
-  it("kills timer on unmount", () => {
-    const timer = dom.root.instance.timer;
-    expect(timer._onTimeout).not.toBeNull();
-    dom.unmount();
-    expect(timer._onTimeout).toBeNull();
   });
 });

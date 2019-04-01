@@ -1,29 +1,29 @@
 language: node_js
 node_js: 10
-cache:
-  yarn: true
-  directories:
-    - "~/.npm"
-    - node_modules
+cache: yarn
 notifications:
   email: false
-install:
-  - yarn install
-script:
-  - yarn lint
-  - yarn test
-  - CI=false yarn build
-after_success:
-  - codecov
-  - npm run travis-deploy-once "npm run semantic-release"
-branches:
-  except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
-deploy:
-  provider: pages
-  local-dir: build
-  skip-cleanup: true
-  keep-history: true
-  github-token: "$GH_TOKEN"
-  on:
-    branch: master
+install: yarn install
+jobs:
+  include:
+    - stage: validate
+      name: lint
+      script: yarn lint
+    - name: test
+      script: yarn test
+    - name: build
+      script: CI=false yarn build
+    - stage: release
+      name: codecov
+      script: codecov
+    - name: npm
+      script: npm run travis-deploy-once "npm run semantic-release"
+    - name: pages
+      deploy:
+        provider: pages
+        local-dir: build
+        skip-cleanup: true
+        keep-history: true
+        github-token: "$GH_TOKEN"
+        on:
+          branch: master
