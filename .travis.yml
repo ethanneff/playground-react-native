@@ -14,11 +14,11 @@ jobs:
       name: build    
     - script: CI=false yarn build
     - stage: release
-      name: release
+      name: npm
       script: codecov
       script: npm run travis-deploy-once "npm run semantic-release"
     - stage: deploy
-      name: deploy
+      name: pages
       deploy:
         provider: pages
         local-dir: build
