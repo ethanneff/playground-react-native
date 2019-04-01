@@ -10,23 +10,17 @@ describe("RelativeDate component", () => {
     dom = create(<RelativeDate date={date} />);
   });
 
-  afterEach(() => {
-    dom.unmount();
-  });
-
   it("renders correctly", () => {
-    const dom = create(<RelativeDate date={date} />).toJSON();
     expect(dom).toMatchSnapshot();
   });
 
   it("renders correctly on touch", () => {
-    const dom = create(<RelativeDate date={1553904714478} />);
-    dom.root.instance.toggleRelativeDate();
-    expect(dom).toMatchSnapshot();
+    const staticDom = create(<RelativeDate date={1553904714478} />);
+    staticDom.root.instance.toggleRelativeDate();
+    expect(staticDom).toMatchSnapshot();
   });
 
   it("updates state touch", () => {
-    const dom = create(<RelativeDate date={date} />);
     expect(dom.root.instance.state.showRelativeDate).toBe(true);
     dom.root.instance.toggleRelativeDate();
     expect(dom.root.instance.state.showRelativeDate).toBe(false);
@@ -35,7 +29,6 @@ describe("RelativeDate component", () => {
   });
 
   it("kills timer on unmount", () => {
-    const dom = create(<RelativeDate date={date} />);
     const timer = dom.root.instance.timer;
     expect(timer._onTimeout).not.toBeNull();
     dom.unmount();
