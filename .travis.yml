@@ -8,7 +8,7 @@ jobs:
   include:
     - stage: validate
       name: lint
-    - script: yarn lint
+      script: yarn lint
       name: test
     - script: yarn test
       name: build    
