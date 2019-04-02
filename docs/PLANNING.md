@@ -10,6 +10,7 @@
 
 #### v0 merge all code bases
 
+- [ ] attempt icons again
 - [ ] chat app
 - [ ] slack markdown
 - [ ] main landing page
@@ -123,6 +124,7 @@
 
 ## Done
 
+- [x] get ci working again
 - [x] create a root initial state for redux tests
 - [x] figure out auto import relative pathing
 - [x] clean up debug index screen
