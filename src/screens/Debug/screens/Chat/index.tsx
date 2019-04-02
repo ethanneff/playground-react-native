@@ -41,16 +41,10 @@ export class Chat extends React.PureComponent<Props, State> {
           keyExtractor={this.keyExtractor}
           renderItem={this.renderItem}
         />
-        {/* <View style={this.styles.row}> */}
-        <Button icon="check" onPress={this.onSubmit} />
-        <TextInput
-          title="bobo"
-          value={message}
-          onChangeText={this.onMessageChange}
-          style={{ width: "100%" }}
-          error="rar"
-        />
-        {/* </View> */}
+        <View style={this.styles.row}>
+          <TextInput value={message} onChangeText={this.onMessageChange} />
+          <Button icon="check" onPress={this.onSubmit} />
+        </View>
       </Screen>
     );
   }
