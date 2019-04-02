@@ -9,33 +9,6 @@ import { Button } from "..";
 import { Theme } from "../../utils";
 import { Title } from "./Title";
 
-// styling https://uxdesign.cc/design-better-forms-96fadca0f49c
-const styles = StyleSheet.create({
-  borderError: {
-    borderColor: Theme.color.danger
-  },
-  borderFocus: {
-    borderColor: Theme.color.primary
-  },
-  clear: {
-    position: "absolute",
-    right: -6,
-    top: 6
-  },
-  row: {
-    flexDirection: "row"
-  },
-  textInput: {
-    backgroundColor: Theme.color.background,
-    borderColor: Theme.color.secondary,
-    borderRadius: Theme.padding.p01,
-    borderWidth: 2,
-    marginTop: Theme.padding.p01,
-    padding: Theme.padding.p02,
-    paddingRight: Theme.padding.p08
-  }
-});
-
 interface Props {
   title?: string;
   optional?: boolean;
@@ -81,6 +54,35 @@ export class TextInput extends React.PureComponent<Props, State> {
   public state = {
     focus: false
   };
+  // styling https://uxdesign.cc/design-better-forms-96fadca0f49c
+  private styles = StyleSheet.create({
+    borderError: {
+      borderColor: Theme.color.danger
+    },
+    borderFocus: {
+      borderColor: Theme.color.primary
+    },
+    clear: {
+      position: "absolute",
+      right: -6,
+      top: 6
+    },
+    container: {
+      flex: 1
+    },
+    row: {
+      flexDirection: "row"
+    },
+    textInput: {
+      backgroundColor: Theme.color.background,
+      borderColor: Theme.color.secondary,
+      borderRadius: Theme.padding.p01,
+      borderWidth: 2,
+      padding: Theme.padding.p02,
+      paddingRight: Theme.padding.p08,
+      width: "100%"
+    }
+  });
   private textInput?: Original;
 
   public render() {
@@ -105,9 +107,9 @@ export class TextInput extends React.PureComponent<Props, State> {
     } = this.props;
     const { focus } = this.state;
     const textInputStyle = [
-      styles.textInput,
-      error && styles.borderError,
-      focus && styles.borderFocus,
+      this.styles.textInput,
+      error && this.styles.borderError,
+      focus && this.styles.borderFocus,
       Theme.fontSize.body2,
       style
     ];
@@ -115,7 +117,7 @@ export class TextInput extends React.PureComponent<Props, State> {
     return (
       <View style={this.styles.container}>
         <Title title={title} optional={optional} onPress={this.focusOnInput} />
-        <View style={styles.row}>
+        <View style={this.styles.row}>
           <Original
             ref={input => (this.textInput = input ? input : undefined)}
             autoCorrect={autoCorrect}
@@ -139,7 +141,7 @@ export class TextInput extends React.PureComponent<Props, State> {
             secondary
             hidden={noValue}
             icon={clearIcon}
-            buttonStyle={styles.clear}
+            buttonStyle={this.styles.clear}
             onPress={this.textClear}
           />
         </View>
@@ -159,6 +161,7 @@ export class TextInput extends React.PureComponent<Props, State> {
   }
 
   private onFocus = () => this.setState({ focus: true });
+
   private onBlur = () => this.setState({ focus: false });
 
   private focusOnInput = () => {
