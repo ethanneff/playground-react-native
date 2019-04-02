@@ -160,7 +160,7 @@ exports[`renders correctly 1`] = `
           <View
             style={
               Object {
-                "backgroundColor": "yellow",
+                "flex": 1,
               }
             }
           >
@@ -190,11 +190,11 @@ exports[`renders correctly 1`] = `
                       "borderColor": "hsl(208, 7%, 46%)",
                       "borderRadius": 4,
                       "borderWidth": 2,
-                      "marginTop": 4,
                       "padding": 8,
                       "paddingRight": 32,
+                      "width": "100%",
                     },
-                    undefined,
+                    "",
                     false,
                     Object {
                       "fontSize": 14,
@@ -215,72 +215,6 @@ exports[`renders correctly 1`] = `
                 underlineColorAndroid="transparent"
                 value=""
               />
-            </View>
-            <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "alignItems": "center",
-                  "alignSelf": "flex-start",
-                  "backgroundColor": "transparent",
-                  "borderColor": "transparent",
-                  "borderRadius": 4,
-                  "borderWidth": 1,
-                  "color": "hsl(211, 100%, 50%)",
-                  "flexDirection": "row",
-                  "height": 20,
-                  "justifyContent": "flex-start",
-                  "margin": 4,
-                  "opacity": 1,
-                  "paddingHorizontal": 0,
-                }
-              }
-            >
-              <View
-                style={
-                  Array [
-                    undefined,
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "color": "hsl(211, 100%, 50%)",
-                      },
-                      undefined,
-                      undefined,
-                      Object {
-                        "color": "hsl(354, 70%, 54%)",
-                      },
-                      undefined,
-                      undefined,
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 14,
-                        "fontWeight": "300",
-                        "letterSpacing": 0.25,
-                      },
-                      undefined,
-                      undefined,
-                      undefined,
-                    ]
-                  }
-                >
-                  alert-circle
-                </Text>
-              </View>
             </View>
           </View>
         </View>
