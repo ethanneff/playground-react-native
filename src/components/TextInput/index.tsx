@@ -40,6 +40,7 @@ interface Props {
   title?: string;
   optional?: boolean;
   error?: string;
+  hasError?: boolean;
   errorIcon?: string;
   clearIcon?: string;
   style?: TextStyle | {};
@@ -86,7 +87,7 @@ export class TextInput extends React.PureComponent<Props, State> {
     const {
       title,
       optional,
-      error,
+      error = "",
       editable = true,
       autoCorrect,
       secureTextEntry,
@@ -96,6 +97,7 @@ export class TextInput extends React.PureComponent<Props, State> {
       placeholder,
       onChangeText,
       value,
+      hasError,
       disableFullscreenUI = true,
       errorIcon = "alert-circle",
       clearIcon = "close-circle",
@@ -142,6 +144,7 @@ export class TextInput extends React.PureComponent<Props, State> {
           />
         </View>
         <Button
+          hidden={!hasError}
           label
           wrap
           lowercase
