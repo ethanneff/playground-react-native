@@ -111,7 +111,7 @@ export class TextInput extends React.PureComponent<Props, State> {
     ];
     const noValue = value.length === 0;
     return (
-      <View style={{ backgroundColor: "yellow" }}>
+      <View style={this.styles.container}>
         <Title title={title} optional={optional} onPress={this.focusOnInput} />
         <View style={styles.row}>
           <Original
