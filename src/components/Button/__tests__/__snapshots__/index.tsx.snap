@@ -324,35 +324,59 @@ exports[`renders icon 1`] = `
       Array [
         undefined,
         Array [
-          Object {
-            "backgroundColor": "transparent",
-            "color": "hsl(211, 100%, 50%)",
-          },
           undefined,
-          undefined,
-          undefined,
-          undefined,
-          undefined,
-          undefined,
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "hsl(211, 100%, 50%)",
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+          ],
         ],
       ]
     }
   >
     <Text
+      allowFontScaling={false}
       style={
         Array [
           Object {
-            "fontSize": 14,
-            "fontWeight": "300",
-            "letterSpacing": 0.25,
+            "color": "hsl(210, 10%, 23%)",
+            "fontSize": 16,
           },
-          undefined,
-          undefined,
-          undefined,
+          Array [
+            undefined,
+            Array [
+              undefined,
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "hsl(211, 100%, 50%)",
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+              ],
+            ],
+          ],
+          Object {
+            "fontFamily": "Material Design Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
         ]
       }
     >
-      check
+      
     </Text>
   </View>
 </View>
@@ -387,39 +411,65 @@ exports[`renders icon title 1`] = `
   <View
     style={
       Array [
-        Object {
-          "paddingRight": 2,
-        },
+        undefined,
         Array [
           Object {
-            "backgroundColor": "transparent",
-            "color": "hsl(211, 100%, 50%)",
+            "paddingRight": 2,
           },
-          undefined,
-          undefined,
-          undefined,
-          undefined,
-          undefined,
-          undefined,
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "hsl(211, 100%, 50%)",
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+          ],
         ],
       ]
     }
   >
     <Text
+      allowFontScaling={false}
       style={
         Array [
           Object {
-            "fontSize": 14,
-            "fontWeight": "300",
-            "letterSpacing": 0.25,
+            "color": "hsl(210, 10%, 23%)",
+            "fontSize": 16,
           },
-          undefined,
-          undefined,
-          undefined,
+          Array [
+            undefined,
+            Array [
+              Object {
+                "paddingRight": 2,
+              },
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "hsl(211, 100%, 50%)",
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+              ],
+            ],
+          ],
+          Object {
+            "fontFamily": "Material Design Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
         ]
       }
     >
-      check
+      
     </Text>
   </View>
   <Text

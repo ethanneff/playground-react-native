@@ -39,22 +39,36 @@ exports[`renders correctly 1`] = `
         }
       }
     >
-      <View>
+      <View
+        style={
+          Array [
+            undefined,
+            undefined,
+          ]
+        }
+      >
         <Text
+          allowFontScaling={false}
           style={
             Array [
               Object {
-                "fontSize": 14,
-                "fontWeight": "300",
-                "letterSpacing": 0.25,
+                "color": "hsl(210, 10%, 23%)",
+                "fontSize": 24,
               },
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                undefined,
+                undefined,
+              ],
+              Object {
+                "fontFamily": "Material Design Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
             ]
           }
         >
-          arrow-left
+          
         </Text>
       </View>
     </View>

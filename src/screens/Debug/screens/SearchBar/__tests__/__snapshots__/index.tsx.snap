@@ -39,22 +39,36 @@ exports[`renders correctly 1`] = `
         }
       }
     >
-      <View>
+      <View
+        style={
+          Array [
+            undefined,
+            undefined,
+          ]
+        }
+      >
         <Text
+          allowFontScaling={false}
           style={
             Array [
               Object {
-                "fontSize": 14,
-                "fontWeight": "300",
-                "letterSpacing": 0.25,
+                "color": "hsl(210, 10%, 23%)",
+                "fontSize": 24,
               },
-              undefined,
-              undefined,
-              undefined,
+              Array [
+                undefined,
+                undefined,
+              ],
+              Object {
+                "fontFamily": "Material Design Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
             ]
           }
         >
-          arrow-left
+          
         </Text>
       </View>
     </View>
@@ -134,36 +148,64 @@ exports[`renders correctly 1`] = `
           >
             <View
               style={
-                Object {
-                  "fontSize": 24,
-                }
+                Array [
+                  undefined,
+                  Object {
+                    "fontSize": 24,
+                  },
+                ]
               }
             >
               <Text
+                allowFontScaling={false}
                 style={
                   Array [
                     Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
+                      "color": "hsl(210, 10%, 23%)",
+                      "fontSize": 24,
                     },
-                    undefined,
-                    undefined,
-                    undefined,
+                    Array [
+                      undefined,
+                      Object {
+                        "fontSize": 24,
+                      },
+                    ],
+                    Object {
+                      "fontFamily": "Material Design Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
                   ]
                 }
               >
-                magnify
+                
               </Text>
             </View>
           </View>
           <View
             style={
-              Object {
-                "flex": 1,
-              }
+              Array [
+                undefined,
+                Array [
+                  Object {
+                    "flex": 1,
+                    "marginLeft": 8,
+                  },
+                  Object {
+                    "fontSize": 24,
+                  },
+                ],
+              ]
             }
           >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            />
             <View
               style={
                 Object {
@@ -201,20 +243,108 @@ exports[`renders correctly 1`] = `
                       "fontWeight": "300",
                       "letterSpacing": 0.25,
                     },
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "marginLeft": 8,
-                      },
-                      Object {
-                        "fontSize": 24,
-                      },
-                    ],
+                    undefined,
                   ]
                 }
                 underlineColorAndroid="transparent"
                 value=""
               />
+            </View>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "backgroundColor": "transparent",
+                  "borderColor": "transparent",
+                  "borderRadius": 4,
+                  "borderWidth": 1,
+                  "color": "hsl(211, 100%, 50%)",
+                  "flexDirection": "row",
+                  "height": 20,
+                  "justifyContent": "flex-start",
+                  "marginVertical": 4,
+                  "opacity": 1,
+                  "paddingHorizontal": 0,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "opacity": 0,
+                    },
+                    Array [
+                      "",
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "hsl(211, 100%, 50%)",
+                        },
+                        undefined,
+                        undefined,
+                        Object {
+                          "color": "hsl(354, 70%, 54%)",
+                        },
+                        undefined,
+                        undefined,
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "color": "hsl(210, 10%, 23%)",
+                        "fontSize": 16,
+                      },
+                      Array [
+                        Object {
+                          "opacity": 0,
+                        },
+                        Array [
+                          "",
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "color": "hsl(211, 100%, 50%)",
+                            },
+                            undefined,
+                            undefined,
+                            Object {
+                              "color": "hsl(354, 70%, 54%)",
+                            },
+                            undefined,
+                            undefined,
+                            undefined,
+                          ],
+                        ],
+                      ],
+                      Object {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
             </View>
           </View>
         </View>

@@ -72,46 +72,78 @@ exports[`renders correctly 1`] = `
       </Text>
       <View
         style={
-          Object {
-            "flex": 1,
-          }
+          Array [
+            undefined,
+            undefined,
+          ]
         }
       >
         <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
               "flexDirection": "row",
-              "opacity": 1,
             }
           }
         >
-          <Text
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "300",
-                  "letterSpacing": 0.25,
-                },
-                undefined,
-                undefined,
-                Object {
-                  "margin": 4,
-                  "textTransform": "capitalize",
-                },
-              ]
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "color": "hsl(211, 100%, 50%)",
+                "flexDirection": "row",
+                "height": 20,
+                "justifyContent": "flex-start",
+                "marginVertical": 4,
+                "opacity": 1,
+                "paddingHorizontal": 0,
+              }
             }
           >
-            email
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 14,
+                    "fontWeight": "300",
+                    "letterSpacing": 0.25,
+                  },
+                  Object {
+                    "textAlign": "center",
+                  },
+                  undefined,
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "hsl(211, 100%, 50%)",
+                    },
+                    Object {
+                      "color": "hsl(0, 0%, 0%)",
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              email
+            </Text>
+          </View>
         </View>
         <View
           style={
@@ -157,14 +189,6 @@ exports[`renders correctly 1`] = `
             value=""
           />
         </View>
-      </View>
-      <View
-        style={
-          Object {
-            "flex": 1,
-          }
-        }
-      >
         <View
           accessible={true}
           isTVSelectable={true}
@@ -176,30 +200,166 @@ exports[`renders correctly 1`] = `
           onStartShouldSetResponder={[Function]}
           style={
             Object {
+              "alignItems": "center",
+              "alignSelf": "flex-start",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "color": "hsl(211, 100%, 50%)",
               "flexDirection": "row",
+              "height": 20,
+              "justifyContent": "flex-start",
+              "marginVertical": 4,
               "opacity": 1,
+              "paddingHorizontal": 0,
             }
           }
         >
-          <Text
+          <View
             style={
               Array [
                 Object {
-                  "fontSize": 14,
-                  "fontWeight": "300",
-                  "letterSpacing": 0.25,
+                  "opacity": 0,
                 },
-                undefined,
-                undefined,
-                Object {
-                  "margin": 4,
-                  "textTransform": "capitalize",
-                },
+                Array [
+                  "",
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "hsl(211, 100%, 50%)",
+                    },
+                    undefined,
+                    undefined,
+                    Object {
+                      "color": "hsl(354, 70%, 54%)",
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ],
+                ],
               ]
             }
           >
-            password
-          </Text>
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": "hsl(210, 10%, 23%)",
+                    "fontSize": 16,
+                  },
+                  Array [
+                    Object {
+                      "opacity": 0,
+                    },
+                    Array [
+                      "",
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "hsl(211, 100%, 50%)",
+                        },
+                        undefined,
+                        undefined,
+                        Object {
+                          "color": "hsl(354, 70%, 54%)",
+                        },
+                        undefined,
+                        undefined,
+                        undefined,
+                      ],
+                    ],
+                  ],
+                  Object {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "color": "hsl(211, 100%, 50%)",
+                "flexDirection": "row",
+                "height": 20,
+                "justifyContent": "flex-start",
+                "marginVertical": 4,
+                "opacity": 1,
+                "paddingHorizontal": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 14,
+                    "fontWeight": "300",
+                    "letterSpacing": 0.25,
+                  },
+                  Object {
+                    "textAlign": "center",
+                  },
+                  undefined,
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "hsl(211, 100%, 50%)",
+                    },
+                    Object {
+                      "color": "hsl(0, 0%, 0%)",
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              password
+            </Text>
+          </View>
         </View>
         <View
           style={
@@ -244,6 +404,102 @@ exports[`renders correctly 1`] = `
             underlineColorAndroid="transparent"
             value=""
           />
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "alignSelf": "flex-start",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "color": "hsl(211, 100%, 50%)",
+              "flexDirection": "row",
+              "height": 20,
+              "justifyContent": "flex-start",
+              "marginVertical": 4,
+              "opacity": 1,
+              "paddingHorizontal": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "opacity": 0,
+                },
+                Array [
+                  "",
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "hsl(211, 100%, 50%)",
+                    },
+                    undefined,
+                    undefined,
+                    Object {
+                      "color": "hsl(354, 70%, 54%)",
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                  ],
+                ],
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": "hsl(210, 10%, 23%)",
+                    "fontSize": 16,
+                  },
+                  Array [
+                    Object {
+                      "opacity": 0,
+                    },
+                    Array [
+                      "",
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "hsl(211, 100%, 50%)",
+                        },
+                        undefined,
+                        undefined,
+                        Object {
+                          "color": "hsl(354, 70%, 54%)",
+                        },
+                        undefined,
+                        undefined,
+                        undefined,
+                      ],
+                    ],
+                  ],
+                  Object {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
         </View>
       </View>
       <View
