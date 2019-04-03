@@ -6,7 +6,7 @@ import { App } from "./screens";
 import { Config } from "./utils";
 
 // TODO: remove
-YellowBox.ignoreWarnings(["NetInfo", "Async Storage"]);
+YellowBox.ignoreWarnings(["NetInfo", "Async Storage", "Battery state"]);
 
 export class Launcher extends React.PureComponent {
   public render() {
