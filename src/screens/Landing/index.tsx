@@ -22,16 +22,17 @@ export class Landing extends React.PureComponent<Props> {
   }
 
   public render() {
-    const { history } = this.props;
     return (
       <Screen>
         <Walkthrough />
         <View style={styles.buttonContainer}>
-          <Button title="Sign up" onPress={() => history.push("/login")} />
-          <Button title="Log in" onPress={() => history.push("/login")} />
-          <Button title="Debug" onPress={() => history.push("/debug")} />
+          <Button title="Sign up" onPress={this.nav("/login")} />
+          <Button title="Log in" onPress={this.nav("/login")} />
+          <Button title="Debug" onPress={this.nav("/debug")} />
         </View>
       </Screen>
     );
   }
+
+  private nav = (path: string) => () => this.props.history.push(path);
 }
