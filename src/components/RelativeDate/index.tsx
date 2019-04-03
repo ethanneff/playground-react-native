@@ -11,7 +11,7 @@ interface State {
   showRelativeDate: boolean;
 }
 
-class RelativeDate extends React.PureComponent<Props, State> {
+export class RelativeDate extends React.PureComponent<Props, State> {
   public state = { showRelativeDate: true };
   private minute = 60 * 1000;
   private timer?: number;
@@ -42,5 +42,3 @@ class RelativeDate extends React.PureComponent<Props, State> {
     this.setState({ showRelativeDate: !this.state.showRelativeDate });
   };
 }
-
-export default RelativeDate;
