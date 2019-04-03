@@ -129,10 +129,9 @@ export class SearchBar extends React.PureComponent<Props, State> {
   }
 
   public render() {
-    const { history } = this.props;
     const { iconName, input } = this.state;
     return (
-      <Screen onLeftPress={() => history.goBack()}>
+      <Screen onLeftPress={this.navBack}>
         <View style={styles.header}>
           <View style={styles.textContainer}>
             <Animated.View
@@ -146,7 +145,7 @@ export class SearchBar extends React.PureComponent<Props, State> {
               value={input}
               onChangeText={(value: string) => this.setState({ input: value })}
               placeholder={this.textInputPlaceHolder}
-              style={[styles.textInput, styles.text]}
+              containerStyle={[styles.textInput, styles.text]}
             />
           </View>
         </View>
@@ -162,6 +161,8 @@ export class SearchBar extends React.PureComponent<Props, State> {
       </Screen>
     );
   }
+
+  private navBack = () => this.props.history.goBack();
 
   private onSearchBarFocus() {
     this.animate(1);
