@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { RouteComponentProps } from "react-router";
 import {
   Button,
@@ -18,6 +18,15 @@ export class Input extends React.PureComponent<Props> {
     name: "",
     password: ""
   };
+
+  private styles = StyleSheet.create({
+    container: {
+      backgroundColor: Theme.color.light,
+      flex: 1,
+      padding: Theme.padding.p04
+    }
+  });
+
   public render() {
     const { email, password, name, error } = this.state;
     return (
@@ -32,7 +41,7 @@ export class Input extends React.PureComponent<Props> {
             error={error}
           />
           <TextInput
-            title="EMAIL"
+            title="Email"
             value={email}
             onChangeText={this.updateState("email")}
             keyboardType={KeyboardType.Email}
