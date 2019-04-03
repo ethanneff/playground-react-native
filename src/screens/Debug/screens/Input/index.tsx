@@ -20,31 +20,28 @@ export class Input extends React.PureComponent<Props> {
   };
   public render() {
     const { email, password, name, error } = this.state;
-    const { history } = this.props;
     return (
-      <Screen onLeftPress={() => history.goBack()}>
-        <View
-          style={{ flex: 1, backgroundColor: Theme.color.light, padding: 20 }}
-        >
+      <Screen onLeftPress={this.navBack}>
+        <View style={this.styles.container}>
           <TextInput
             title="Name"
             placeholder="jane doe"
             optional
             value={name}
-            onChangeText={val => this.setState({ name: val })}
+            onChangeText={this.updateState("name")}
             error={error}
           />
           <TextInput
             title="EMAIL"
             value={email}
-            onChangeText={val => this.setState({ email: val })}
+            onChangeText={this.updateState("email")}
             keyboardType={KeyboardType.Email}
             placeholder="example@gmail.com"
             error={error}
           />
           <TextInput
             value={password}
-            onChangeText={val => this.setState({ password: val })}
+            onChangeText={this.updateState("password")}
             title="Password"
             placeholder="•••••••"
             secureTextEntry
@@ -58,4 +55,9 @@ export class Input extends React.PureComponent<Props> {
       </Screen>
     );
   }
+
+  private updateState = (key: string) => (val: string) =>
+    this.setState({ [key]: val });
+
+  private navBack = () => () => this.props.history.goBack();
 }
