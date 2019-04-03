@@ -8,75 +8,6 @@ import {
 import { Icon, Text } from "..";
 import { Theme } from "../../utils";
 
-const styles = StyleSheet.create({
-  center: {
-    alignSelf: "center"
-  },
-  containedBody: {
-    backgroundColor: Theme.color.primary
-  },
-  containedText: {
-    color: Theme.color.background
-  },
-  container: {
-    alignItems: "center",
-    borderColor: "transparent", // TODO: add border to be same size as outlined
-    borderRadius: Theme.padding.p01,
-    borderWidth: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    paddingHorizontal: Theme.padding.p04
-  },
-  danger: {
-    color: Theme.color.danger
-  },
-  disableBody: {
-    backgroundColor: Theme.color.light
-  },
-  disableText: {
-    color: Theme.color.secondary
-  },
-  fab: {
-    alignSelf: "flex-start",
-    borderRadius: Theme.padding.p08,
-    padding: Theme.padding.p04
-  },
-  half: {
-    width: "50%"
-  },
-  height: {
-    height: Theme.padding.p09
-  },
-  icon: {
-    paddingRight: 2
-  },
-  label: {
-    height: Theme.padding.p05,
-    justifyContent: "flex-start",
-    margin: Theme.padding.p01,
-    paddingHorizontal: 0
-  },
-  neutral: {
-    color: Theme.color.text
-  },
-  nonFlex: {
-    alignSelf: "flex-start"
-  },
-  outlined: {
-    borderColor: Theme.color.secondary
-  },
-  right: {
-    alignSelf: "flex-end"
-  },
-  secondary: {
-    color: Theme.color.secondary
-  },
-  text: {
-    backgroundColor: "transparent",
-    color: Theme.color.primary
-  }
-});
-
 // styling: https://material.io/design/components/buttons.html#usage
 interface Props {
   // content
@@ -91,6 +22,7 @@ interface Props {
   hidden?: boolean;
   disable?: boolean;
   activeOpacity?: number;
+  invisible?: boolean;
   // shape
   text?: boolean; // low emphasis
   outlined?: boolean; // mid emphasis
@@ -114,65 +46,142 @@ interface Props {
 }
 
 export class Button extends React.PureComponent<Props> {
+  public styles = StyleSheet.create({
+    center: {
+      alignSelf: "center"
+    },
+    containedBody: {
+      backgroundColor: Theme.color.primary
+    },
+    containedText: {
+      color: Theme.color.background
+    },
+    container: {
+      alignItems: "center",
+      borderColor: "transparent", // TODO: add border to be same size as outlined
+      borderRadius: Theme.padding.p01,
+      borderWidth: 1,
+      flexDirection: "row",
+      justifyContent: "center",
+      paddingHorizontal: Theme.padding.p04
+    },
+    danger: {
+      color: Theme.color.danger
+    },
+    disableBody: {
+      backgroundColor: Theme.color.light
+    },
+    disableText: {
+      color: Theme.color.secondary
+    },
+    fab: {
+      alignSelf: "flex-start",
+      borderRadius: Theme.padding.p08,
+      padding: Theme.padding.p04
+    },
+    half: {
+      width: "50%"
+    },
+    height: {
+      height: Theme.padding.p09
+    },
+    icon: {
+      paddingRight: 2
+    },
+    invisible: {
+      opacity: 0
+    },
+    label: {
+      height: Theme.padding.p05,
+      justifyContent: "flex-start",
+      marginVertical: Theme.padding.p01,
+      paddingHorizontal: 0
+    },
+    neutral: {
+      color: Theme.color.text
+    },
+    nonFlex: {
+      alignSelf: "flex-start"
+    },
+    outlined: {
+      borderColor: Theme.color.secondary
+    },
+    right: {
+      alignSelf: "flex-end"
+    },
+    secondary: {
+      color: Theme.color.secondary
+    },
+    text: {
+      backgroundColor: "transparent",
+      color: Theme.color.primary
+    }
+  });
+
   public render() {
     const {
-      title,
-      onPress,
-      disable,
+      activeOpacity,
       buttonStyle,
-      textStyle,
-      contained,
-      outlined,
-      wrap,
-      fab,
-      hidden,
-      neutral,
-      half,
       center,
-      right,
+      contained,
+      danger,
+      disable,
+      fab,
+      half,
+      hidden,
       icon,
       iconColor,
-      secondary,
-      danger,
+      invisible,
       label,
       lowercase,
-      activeOpacity
+      neutral,
+      onPress,
+      outlined,
+      right,
+      secondary,
+      textStyle,
+      title,
+      wrap
     } = this.props;
     const buttonStyleGroup = [
-      styles.container,
-      !fab && styles.height,
+      this.styles.container,
+      !fab && this.styles.height,
       this.getShape(),
-      disable && (contained || outlined) && styles.disableBody,
-      fab && styles.fab,
-      wrap && styles.nonFlex,
-      half && styles.half,
-      center && styles.center,
-      right && styles.right,
-      label && styles.label,
+      disable && (contained || outlined) && this.styles.disableBody,
+      fab && this.styles.fab,
+      wrap && this.styles.nonFlex,
+      half && this.styles.half,
+      center && this.styles.center,
+      right && this.styles.right,
+      label && this.styles.label,
       buttonStyle
     ];
     const textStyleGroup = [
-      styles.text,
-      neutral && styles.neutral,
-      secondary && styles.secondary,
-      danger && styles.danger,
-      contained && styles.containedText,
-      disable && styles.disableText,
+      this.styles.text,
+      neutral && this.styles.neutral,
+      secondary && this.styles.secondary,
+      danger && this.styles.danger,
+      contained && this.styles.containedText,
+      disable && this.styles.disableText,
       textStyle
     ];
-    const iconStyleGroup = [title && styles.icon, !iconColor && textStyleGroup];
+    const iconStyleGroup = [
+      title && this.styles.icon,
+      !iconColor && textStyleGroup
+    ];
     if (hidden) {
       return null;
     }
     return (
       <TouchableOpacity
         activeOpacity={activeOpacity}
-        style={buttonStyleGroup}
-        onPress={onPress}
         disabled={disable}
+        onPress={onPress}
+        style={buttonStyleGroup}
       >
         <Icon
           color={iconColor}
+          invisible={invisible}
           name={icon}
           size={Theme.padding.p04}
           style={iconStyleGroup}
@@ -181,20 +190,21 @@ export class Button extends React.PureComponent<Props> {
       </TouchableOpacity>
     );
   }
+
   private getShape() {
     const { contained, outlined, fab, text } = this.props;
     if (contained) {
-      return styles.containedBody;
+      return this.styles.containedBody;
     }
     if (outlined) {
-      return styles.outlined;
+      return this.styles.outlined;
     }
     if (fab) {
-      return styles.fab;
+      return this.styles.fab;
     }
     if (text) {
-      return styles.text;
+      return this.styles.text;
     }
-    return styles.text;
+    return this.styles.text;
   }
 }
