@@ -10,7 +10,7 @@
 
 #### v0 merge all code bases
 
-- [ ] attempt icons again
+- [x] attempt icons again
 - [ ] chat app
 - [ ] slack markdown
 - [ ] main landing page
@@ -84,7 +84,7 @@
 
 #### v8 components
 
-- [ ] textinput
+- [x] textinput
 - [ ] radio
 - [ ] selection
 - [ ] swipe
