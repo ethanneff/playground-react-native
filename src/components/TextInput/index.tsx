@@ -116,7 +116,29 @@ export class TextInput extends React.PureComponent<Props, State> {
     const noValue = value.length === 0;
     return (
       <View style={this.styles.container}>
-        <Title title={title} optional={optional} onPress={this.focusOnInput} />
+      <View style={containerStyles}>
+        <View style={this.styles.row}>
+          <Button
+            activeOpacity={1}
+            hidden={noTitle}
+            label
+            lowercase
+            neutral
+            onPress={this.focusOnInput}
+            title={title}
+            wrap
+          />
+          <Button
+            activeOpacity={1}
+            hidden={!optional}
+            label
+            lowercase
+            onPress={this.focusOnInput}
+            secondary
+            title={this.optionalText}
+            wrap
+          />
+        </View>
         <View style={this.styles.row}>
           <Original
             ref={input => (this.textInput = input ? input : undefined)}
