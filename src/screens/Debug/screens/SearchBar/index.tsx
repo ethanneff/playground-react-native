@@ -94,7 +94,7 @@ export class SearchBar extends React.PureComponent<Props, State> {
       colorWithOpacity(Theme.color.secondary)
     ]
   });
-  private iconChangeTimeout?: number;
+  private iconChangeTimeout?: any;
   private keyboardDidShowListener: EmitterSubscription;
   private keyboardDidHideListener: EmitterSubscription;
   private keyboardWillShowListener: EmitterSubscription;

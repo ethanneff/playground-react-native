@@ -194,7 +194,7 @@ export class Stopwatch extends React.PureComponent<Props> {
     now: 0,
     start: 0
   };
-  public timer?: number;
+  public timer?: any;
 
   public componentWillUnmount() {
     clearInterval(this.timer);

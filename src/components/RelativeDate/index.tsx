@@ -14,7 +14,7 @@ interface State {
 export class RelativeDate extends React.PureComponent<Props, State> {
   public state = { showRelativeDate: true };
   private minute = 60 * 1000;
-  private timer?: number;
+  private timer?: any;
 
   public componentDidMount() {
     this.timer = setInterval(() => this.forceUpdate(), this.minute);
