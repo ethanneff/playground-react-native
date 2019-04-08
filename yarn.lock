@@ -1598,10 +1598,18 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@16.8.12":
+"@types/react@*":
   version "16.8.12"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.12.tgz#ffbdd7bcd2b7037c3f78e26c708922a2befbb71f"
   integrity sha512-MZZiv11BQhsxFp5DHDmRKBi6Nv3jwOhRiFFDE7ZJ1+rb52gdOd9y/qY0+5wyV/PQVK9926wFMjpQj3BJ18pb4Q==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
+"@types/react@16.8.13":
+  version "16.8.13"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.13.tgz#a82b15aad9ab91c40edca0d6889b7745ae24f053"
+  integrity sha512-otJ4ntMuHGrvm67CdDJMAls4WqotmAmW0g3HmWi9LCjSWXrxoXY/nHXrtmMfvPEEmGFNm6NdgMsJmnfH820Qaw==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -11537,10 +11545,10 @@ react-native-device-info@1.4.2:
   resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-1.4.2.tgz#d24b09b7a5ea3c0aaf4446089d6d0e20950d0a6d"
   integrity sha512-esAdN9gl3vQRgnqbBBwHa7r1f6VvgN/SsWQkv+snV2KQXWpR4zdk5FLIw+XT9DdoXCG/O8RKLyaTbVxI/pf2kg==
 
-react-native-firebase@5.2.3:
-  version "5.2.3"
-  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-5.2.3.tgz#1e7867b32028cad24785b181aa9aba07e3787109"
-  integrity sha512-8XLioEQDSN8o0Uiu1cEb4Y50yC5PvECQjSV/+b6A9TzWmLrrfYwXkUWQH1Rua8OUWXAXCobknV6JQeKa3NsvJA==
+react-native-firebase@5.2.5:
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-5.2.5.tgz#109a69aa97b53746cbea6483892a0ed8205677ea"
+  integrity sha512-87BZ6zZaB1283OmgcVYuwMH7A/WpTA9wxCDH2eGfpKCcAmzHN7wXe5a+giXmNo9olojCgULIBcvUBBdGfRSt1A==
   dependencies:
     opencollective-postinstall "^2.0.0"
     prop-types "^15.6.2"
