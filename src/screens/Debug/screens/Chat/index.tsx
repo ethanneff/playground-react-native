@@ -4,6 +4,7 @@ import { RouteComponentProps } from "react-router";
 import uuid from "uuid";
 import { Button, Screen, TextInput } from "../../../../components";
 import { Item } from "./Item";
+import moment from "moment";
 
 export interface Message {
   id: string;
@@ -22,18 +23,69 @@ interface State {
 export class Chat extends React.PureComponent<Props, State> {
   public state = {
     message: "",
-    messages: []
+    messages: [
+      {
+        id: "6",
+        createdBy: "User steve",
+        archive: false,
+        updatedAt: Date.now(),
+        createdAt: moment().subtract({ days: 0, hours: 4, minutes: 4 }),
+        message: "again"
+      },
+      {
+        id: "5",
+        createdBy: "User bob",
+        archive: false,
+        updatedAt: Date.now(),
+        createdAt: moment().subtract({ days: 1, hours: 1, minutes: 0 }),
+        message: "another message"
+      },
+      {
+        id: "4",
+        createdBy: "User steve",
+        archive: false,
+        updatedAt: Date.now(),
+        createdAt: moment().subtract({ days: 2, hours: 8, minutes: 0 }),
+        message: "first message"
+      },
+      {
+        id: "3",
+        createdBy: "User bob",
+        archive: false,
+        updatedAt: Date.now(),
+        createdAt: moment().subtract({ days: 2, hours: 6, minutes: 0 }),
+        message: "third message"
+      },
+      {
+        id: "2",
+        createdBy: "User bob",
+        archive: false,
+        updatedAt: Date.now(),
+        createdAt: moment().subtract({ days: 3, hours: 2, minutes: 0 }),
+        message: "second message"
+      },
+      {
+        id: "1",
+        createdBy: "User bob",
+        archive: false,
+        updatedAt: Date.now(),
+        createdAt: moment().subtract({ days: 3, hours: 1, minutes: 0 }),
+        message:
+          "helloasdinaso dinasdoias daso dinaso dna nasd oiasnd ona niosao ao noinoas ao nodasno d"
+      }
+    ]
   };
   private styles = StyleSheet.create({
     row: {
       flexDirection: "row"
     }
   });
-  private user = "123";
   private sendIcon = "arrow-up-thick";
+  private user = "User bob";
 
   public render() {
     const { message, messages } = this.state;
+
     return (
       <Screen onLeftPress={this.navBack}>
         <FlatList
