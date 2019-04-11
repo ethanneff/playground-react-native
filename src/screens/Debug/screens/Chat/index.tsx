@@ -80,8 +80,8 @@ export class Chat extends React.PureComponent<Props, State> {
       flexDirection: "row"
     }
   });
-  private sendIcon = "arrow-up-thick";
   private user = "User bob";
+  private sendIcon = "send";
 
   public render() {
     const { message, messages } = this.state;
