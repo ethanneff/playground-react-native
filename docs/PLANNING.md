@@ -105,6 +105,7 @@
 - [ ] add locales
 - [ ] re-enable prepush?
 - [ ] get a working deploy to android/ios
+- [ ] set metro.config to `true` without crashing because of `react-native-vector-icons`w
 
 #### v9 best practices
 
