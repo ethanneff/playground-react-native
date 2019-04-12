@@ -1,9 +1,9 @@
-import * as React from "react";
-import { StyleSheet, View, Image } from "react-native";
-import { Message } from ".";
-import { Button, RelativeDate, Text } from "../../../../components";
-import { Theme } from "../../../../utils";
 import moment from "moment";
+import * as React from "react";
+import { Image, View } from "react-native";
+import { Message } from ".";
+import { Text } from "../../../../components";
+import { Theme } from "../../../../utils";
 
 interface Props {
   item: Message;
@@ -11,22 +11,21 @@ interface Props {
 }
 
 export class Item extends React.PureComponent<Props> {
-  image = require("../../../../assets/line-chart.png");
-  private styles = StyleSheet.create({});
+  public image = require("../../../../assets/line-chart.png");
 
   public render() {
-    const { item, onDelete } = this.props;
+    const { item } = this.props;
     return (
       <View key={item.id} style={{ flexDirection: "row" }}>
         <View style={{ width: 40 }}>
           <Image
             source={this.image}
             style={{
-              resizeMode: "contain",
-              paddingTop: 30,
-              width: 20,
+              alignSelf: "center",
               height: 20,
-              alignSelf: "center"
+              paddingTop: 30,
+              resizeMode: "contain",
+              width: 20
             }}
           />
         </View>

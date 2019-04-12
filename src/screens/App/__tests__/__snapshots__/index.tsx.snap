@@ -115,7 +115,58 @@ exports[`renders correctly 1`] = `
   >
     <View>
       <RCTScrollView
-        data={Array []}
+        data={
+          Array [
+            Object {
+              "archive": false,
+              "createdAt": 1555074031542,
+              "createdBy": "User steve",
+              "id": "6",
+              "message": "again",
+              "updatedAt": 1555088671545,
+            },
+            Object {
+              "archive": false,
+              "createdAt": 1554998671545,
+              "createdBy": "User bob",
+              "id": "5",
+              "message": "another message",
+              "updatedAt": 1555088671546,
+            },
+            Object {
+              "archive": false,
+              "createdAt": 1554887071546,
+              "createdBy": "User steve",
+              "id": "4",
+              "message": "first message",
+              "updatedAt": 1555088671547,
+            },
+            Object {
+              "archive": false,
+              "createdAt": 1554894271547,
+              "createdBy": "User bob",
+              "id": "3",
+              "message": "third message",
+              "updatedAt": 1555088671547,
+            },
+            Object {
+              "archive": false,
+              "createdAt": 1554822271547,
+              "createdBy": "User bob",
+              "id": "2",
+              "message": "second message",
+              "updatedAt": 1555088671547,
+            },
+            Object {
+              "archive": false,
+              "createdAt": 1554825871547,
+              "createdBy": "User bob",
+              "id": "1",
+              "message": "helloasdinaso dinasdoias daso dinaso dna nasd oiasnd ona niosao ao noinoas ao nodasno d",
+              "updatedAt": 1555088671547,
+            },
+          ]
+        }
         disableVirtualization={false}
         getItem={[Function]}
         getItemCount={[Function]}
@@ -153,7 +204,728 @@ exports[`renders correctly 1`] = `
         viewabilityConfigCallbackPairs={Array []}
         windowSize={21}
       >
-        <View />
+        <View>
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "column-reverse",
+                },
+                Object {
+                  "transform": Array [
+                    Object {
+                      "scaleY": -1,
+                    },
+                  ],
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "width": 40,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/line-chart.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "alignSelf": "center",
+                      "height": 20,
+                      "paddingTop": 30,
+                      "resizeMode": "contain",
+                      "width": 20,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexShrink": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 20,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.15,
+                        },
+                        undefined,
+                        Object {
+                          "fontWeight": "600",
+                        },
+                        Object {
+                          "paddingRight": 8,
+                        },
+                      ]
+                    }
+                  >
+                    User steve
+                  </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 16,
+                          "fontWeight": "300",
+                          "letterSpacing": 0.15,
+                        },
+                        undefined,
+                        undefined,
+                        undefined,
+                      ]
+                    }
+                  >
+                    6:00 AM
+                  </Text>
+                </View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.5,
+                      },
+                      undefined,
+                      undefined,
+                      Object {
+                        "paddingTop": 5,
+                      },
+                    ]
+                  }
+                >
+                  again
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "column-reverse",
+                },
+                Object {
+                  "transform": Array [
+                    Object {
+                      "scaleY": -1,
+                    },
+                  ],
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "width": 40,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/line-chart.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "alignSelf": "center",
+                      "height": 20,
+                      "paddingTop": 30,
+                      "resizeMode": "contain",
+                      "width": 20,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexShrink": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 20,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.15,
+                        },
+                        undefined,
+                        Object {
+                          "fontWeight": "600",
+                        },
+                        Object {
+                          "paddingRight": 8,
+                        },
+                      ]
+                    }
+                  >
+                    User bob
+                  </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 16,
+                          "fontWeight": "300",
+                          "letterSpacing": 0.15,
+                        },
+                        undefined,
+                        undefined,
+                        undefined,
+                      ]
+                    }
+                  >
+                    9:04 AM
+                  </Text>
+                </View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.5,
+                      },
+                      undefined,
+                      undefined,
+                      Object {
+                        "paddingTop": 5,
+                      },
+                    ]
+                  }
+                >
+                  another message
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "column-reverse",
+                },
+                Object {
+                  "transform": Array [
+                    Object {
+                      "scaleY": -1,
+                    },
+                  ],
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "width": 40,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/line-chart.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "alignSelf": "center",
+                      "height": 20,
+                      "paddingTop": 30,
+                      "resizeMode": "contain",
+                      "width": 20,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexShrink": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 20,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.15,
+                        },
+                        undefined,
+                        Object {
+                          "fontWeight": "600",
+                        },
+                        Object {
+                          "paddingRight": 8,
+                        },
+                      ]
+                    }
+                  >
+                    User steve
+                  </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 16,
+                          "fontWeight": "300",
+                          "letterSpacing": 0.15,
+                        },
+                        undefined,
+                        undefined,
+                        undefined,
+                      ]
+                    }
+                  >
+                    2:04 AM
+                  </Text>
+                </View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.5,
+                      },
+                      undefined,
+                      undefined,
+                      Object {
+                        "paddingTop": 5,
+                      },
+                    ]
+                  }
+                >
+                  first message
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "column-reverse",
+                },
+                Object {
+                  "transform": Array [
+                    Object {
+                      "scaleY": -1,
+                    },
+                  ],
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "width": 40,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/line-chart.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "alignSelf": "center",
+                      "height": 20,
+                      "paddingTop": 30,
+                      "resizeMode": "contain",
+                      "width": 20,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexShrink": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 20,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.15,
+                        },
+                        undefined,
+                        Object {
+                          "fontWeight": "600",
+                        },
+                        Object {
+                          "paddingRight": 8,
+                        },
+                      ]
+                    }
+                  >
+                    User bob
+                  </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 16,
+                          "fontWeight": "300",
+                          "letterSpacing": 0.15,
+                        },
+                        undefined,
+                        undefined,
+                        undefined,
+                      ]
+                    }
+                  >
+                    4:04 AM
+                  </Text>
+                </View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.5,
+                      },
+                      undefined,
+                      undefined,
+                      Object {
+                        "paddingTop": 5,
+                      },
+                    ]
+                  }
+                >
+                  third message
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "column-reverse",
+                },
+                Object {
+                  "transform": Array [
+                    Object {
+                      "scaleY": -1,
+                    },
+                  ],
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "width": 40,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/line-chart.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "alignSelf": "center",
+                      "height": 20,
+                      "paddingTop": 30,
+                      "resizeMode": "contain",
+                      "width": 20,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexShrink": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 20,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.15,
+                        },
+                        undefined,
+                        Object {
+                          "fontWeight": "600",
+                        },
+                        Object {
+                          "paddingRight": 8,
+                        },
+                      ]
+                    }
+                  >
+                    User bob
+                  </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 16,
+                          "fontWeight": "300",
+                          "letterSpacing": 0.15,
+                        },
+                        undefined,
+                        undefined,
+                        undefined,
+                      ]
+                    }
+                  >
+                    8:04 AM
+                  </Text>
+                </View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.5,
+                      },
+                      undefined,
+                      undefined,
+                      Object {
+                        "paddingTop": 5,
+                      },
+                    ]
+                  }
+                >
+                  second message
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "column-reverse",
+                },
+                Object {
+                  "transform": Array [
+                    Object {
+                      "scaleY": -1,
+                    },
+                  ],
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "width": 40,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/line-chart.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "alignSelf": "center",
+                      "height": 20,
+                      "paddingTop": 30,
+                      "resizeMode": "contain",
+                      "width": 20,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexShrink": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 20,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.15,
+                        },
+                        undefined,
+                        Object {
+                          "fontWeight": "600",
+                        },
+                        Object {
+                          "paddingRight": 8,
+                        },
+                      ]
+                    }
+                  >
+                    User bob
+                  </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 16,
+                          "fontWeight": "300",
+                          "letterSpacing": 0.15,
+                        },
+                        undefined,
+                        undefined,
+                        undefined,
+                      ]
+                    }
+                  >
+                    9:04 AM
+                  </Text>
+                </View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.5,
+                      },
+                      undefined,
+                      undefined,
+                      Object {
+                        "paddingTop": 5,
+                      },
+                    ]
+                  }
+                >
+                  helloasdinaso dinasdoias daso dinaso dna nasd oiasnd ona niosao ao noinoas ao nodasno d
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
       </RCTScrollView>
       <View
         style={
@@ -401,7 +1173,7 @@ exports[`renders correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
         </View>

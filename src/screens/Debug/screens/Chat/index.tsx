@@ -1,10 +1,10 @@
+import moment from "moment";
 import * as React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import { RouteComponentProps } from "react-router";
 import uuid from "uuid";
 import { Button, Screen, TextInput } from "../../../../components";
 import { Item } from "./Item";
-import moment from "moment";
 
 export interface Message {
   id: string;
@@ -20,61 +20,100 @@ interface State {
   messages: Message[];
 }
 
+const fakeData: Message[] = [
+  {
+    archive: false,
+    createdAt: moment()
+      .subtract({
+        days: 0,
+        hours: 4,
+        minutes: 4
+      })
+      .valueOf(),
+    createdBy: "User steve",
+    id: "6",
+    message: "again",
+    updatedAt: Date.now()
+  },
+  {
+    archive: false,
+    createdAt: moment()
+      .subtract({
+        days: 1,
+        hours: 1,
+        minutes: 0
+      })
+      .valueOf(),
+    createdBy: "User bob",
+    id: "5",
+    message: "another message",
+    updatedAt: Date.now()
+  },
+  {
+    archive: false,
+    createdAt: moment()
+      .subtract({
+        days: 2,
+        hours: 8,
+        minutes: 0
+      })
+      .valueOf(),
+    createdBy: "User steve",
+    id: "4",
+    message: "first message",
+    updatedAt: Date.now()
+  },
+  {
+    archive: false,
+    createdAt: moment()
+      .subtract({
+        days: 2,
+        hours: 6,
+        minutes: 0
+      })
+      .valueOf(),
+    createdBy: "User bob",
+    id: "3",
+    message: "third message",
+    updatedAt: Date.now()
+  },
+  {
+    archive: false,
+    createdAt: moment()
+      .subtract({
+        days: 3,
+        hours: 2,
+        minutes: 0
+      })
+      .valueOf(),
+    createdBy: "User bob",
+    id: "2",
+    message: "second message",
+    updatedAt: Date.now()
+  },
+  {
+    archive: false,
+    createdAt: moment()
+      .subtract({
+        days: 3,
+        hours: 1,
+        minutes: 0
+      })
+      .valueOf(),
+    createdBy: "User bob",
+    id: "1",
+    message:
+      "helloasdinaso dinasdoias daso dinaso dna nasd oiasnd ona niosao ao noinoas ao nodasno d",
+    updatedAt: Date.now()
+  }
+];
+
 export class Chat extends React.PureComponent<Props, State> {
   public state = {
     message: "",
-    messages: [
-      {
-        id: "6",
-        createdBy: "User steve",
-        archive: false,
-        updatedAt: Date.now(),
-        createdAt: moment().subtract({ days: 0, hours: 4, minutes: 4 }),
-        message: "again"
-      },
-      {
-        id: "5",
-        createdBy: "User bob",
-        archive: false,
-        updatedAt: Date.now(),
-        createdAt: moment().subtract({ days: 1, hours: 1, minutes: 0 }),
-        message: "another message"
-      },
-      {
-        id: "4",
-        createdBy: "User steve",
-        archive: false,
-        updatedAt: Date.now(),
-        createdAt: moment().subtract({ days: 2, hours: 8, minutes: 0 }),
-        message: "first message"
-      },
-      {
-        id: "3",
-        createdBy: "User bob",
-        archive: false,
-        updatedAt: Date.now(),
-        createdAt: moment().subtract({ days: 2, hours: 6, minutes: 0 }),
-        message: "third message"
-      },
-      {
-        id: "2",
-        createdBy: "User bob",
-        archive: false,
-        updatedAt: Date.now(),
-        createdAt: moment().subtract({ days: 3, hours: 2, minutes: 0 }),
-        message: "second message"
-      },
-      {
-        id: "1",
-        createdBy: "User bob",
-        archive: false,
-        updatedAt: Date.now(),
-        createdAt: moment().subtract({ days: 3, hours: 1, minutes: 0 }),
-        message:
-          "helloasdinaso dinasdoias daso dinaso dna nasd oiasnd ona niosao ao noinoas ao nodasno d"
-      }
-    ]
+    messages: fakeData
   };
+
   private styles = StyleSheet.create({
     row: {
       flexDirection: "row"
