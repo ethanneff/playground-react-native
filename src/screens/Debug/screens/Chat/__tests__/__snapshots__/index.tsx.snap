@@ -123,7 +123,7 @@ exports[`renders correctly 1`] = `
               "createdBy": "User steve",
               "id": "6",
               "message": "again",
-              "updatedAt": 1555259859248,
+              "updatedAt": 1555259893685,
             },
             Object {
               "archive": false,
@@ -131,7 +131,7 @@ exports[`renders correctly 1`] = `
               "createdBy": "User bob",
               "id": "5",
               "message": "another message",
-              "updatedAt": 1555259859248,
+              "updatedAt": 1555259893685,
             },
             Object {
               "archive": false,
@@ -139,7 +139,7 @@ exports[`renders correctly 1`] = `
               "createdBy": "User steve",
               "id": "4",
               "message": "first message",
-              "updatedAt": 1555259859248,
+              "updatedAt": 1555259893685,
             },
             Object {
               "archive": false,
@@ -147,7 +147,7 @@ exports[`renders correctly 1`] = `
               "createdBy": "User bob",
               "id": "3",
               "message": "third message",
-              "updatedAt": 1555259859248,
+              "updatedAt": 1555259893685,
             },
             Object {
               "archive": false,
@@ -155,7 +155,7 @@ exports[`renders correctly 1`] = `
               "createdBy": "User bob",
               "id": "2",
               "message": "second message",
-              "updatedAt": 1555259859248,
+              "updatedAt": 1555259893685,
             },
             Object {
               "archive": false,
@@ -163,7 +163,7 @@ exports[`renders correctly 1`] = `
               "createdBy": "User bob",
               "id": "1",
               "message": "helloasdinaso dinasdoias daso dinaso dna nasd oiasnd ona niosao ao noinoas ao nodasno d",
-              "updatedAt": 1555259859248,
+              "updatedAt": 1555259893685,
             },
           ]
         }
