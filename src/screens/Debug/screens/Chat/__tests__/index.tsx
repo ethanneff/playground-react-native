@@ -11,8 +11,8 @@ jest.mock("moment", () => () => ({
   subtract: () => jest.fn()
 }));
 
+Date.now = jest.fn(() => 1555259619262);
 it("renders correctly", () => {
-  Date.now = jest.fn(() => 1555259619262);
   const dom = create(<MockProviderAndRouter Component={Chat} />).toJSON();
   expect(dom).toMatchSnapshot();
 });
