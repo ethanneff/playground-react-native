@@ -119,51 +119,51 @@ exports[`Launcher Container renders correctly 1`] = `
           Array [
             Object {
               "archive": false,
-              "createdAt": 1555074031320,
+              "createdAt": 1555243588852,
               "createdBy": "User steve",
               "id": "6",
               "message": "again",
-              "updatedAt": 1555088671322,
+              "updatedAt": 1555258228855,
             },
             Object {
               "archive": false,
-              "createdAt": 1554998671322,
+              "createdAt": 1555168228855,
               "createdBy": "User bob",
               "id": "5",
               "message": "another message",
-              "updatedAt": 1555088671324,
+              "updatedAt": 1555258228857,
             },
             Object {
               "archive": false,
-              "createdAt": 1554887071324,
+              "createdAt": 1555056628857,
               "createdBy": "User steve",
               "id": "4",
               "message": "first message",
-              "updatedAt": 1555088671324,
+              "updatedAt": 1555258228857,
             },
             Object {
               "archive": false,
-              "createdAt": 1554894271324,
+              "createdAt": 1555063828857,
               "createdBy": "User bob",
               "id": "3",
               "message": "third message",
-              "updatedAt": 1555088671324,
+              "updatedAt": 1555258228857,
             },
             Object {
               "archive": false,
-              "createdAt": 1554822271324,
+              "createdAt": 1554991828857,
               "createdBy": "User bob",
               "id": "2",
               "message": "second message",
-              "updatedAt": 1555088671324,
+              "updatedAt": 1555258228857,
             },
             Object {
               "archive": false,
-              "createdAt": 1554825871324,
+              "createdAt": 1554995428857,
               "createdBy": "User bob",
               "id": "1",
               "message": "helloasdinaso dinasdoias daso dinaso dna nasd oiasnd ona niosao ao noinoas ao nodasno d",
-              "updatedAt": 1555088671324,
+              "updatedAt": 1555258228857,
             },
           ]
         }
@@ -301,7 +301,7 @@ exports[`Launcher Container renders correctly 1`] = `
                       ]
                     }
                   >
-                    6:00 AM
+                    5:06 AM
                   </Text>
                 </View>
                 <Text
@@ -421,7 +421,7 @@ exports[`Launcher Container renders correctly 1`] = `
                       ]
                     }
                   >
-                    9:04 AM
+                    8:10 AM
                   </Text>
                 </View>
                 <Text
@@ -541,7 +541,7 @@ exports[`Launcher Container renders correctly 1`] = `
                       ]
                     }
                   >
-                    2:04 AM
+                    1:10 AM
                   </Text>
                 </View>
                 <Text
@@ -661,7 +661,7 @@ exports[`Launcher Container renders correctly 1`] = `
                       ]
                     }
                   >
-                    4:04 AM
+                    3:10 AM
                   </Text>
                 </View>
                 <Text
@@ -781,7 +781,7 @@ exports[`Launcher Container renders correctly 1`] = `
                       ]
                     }
                   >
-                    8:04 AM
+                    7:10 AM
                   </Text>
                 </View>
                 <Text
@@ -901,7 +901,7 @@ exports[`Launcher Container renders correctly 1`] = `
                       ]
                     }
                   >
-                    9:04 AM
+                    8:10 AM
                   </Text>
                 </View>
                 <Text

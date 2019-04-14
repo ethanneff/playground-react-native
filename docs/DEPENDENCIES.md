@@ -38,6 +38,7 @@
 | lint-staged                               | git hook for prettier             | continuous integration |
 | @types/axios                              |                                   | type definition        |
 | @types/jest                               |                                   | type definition        |
+| @types/mockdate                           |                                   | type definition        |
 | @types/react                              |                                   | type definition        |
 | @types/react-native                       |                                   | type definition        |
 | @types/react-native-vector-icons          |                                   | type definition        |
@@ -56,6 +57,7 @@
 | jest                                      | react testing framework           | testing                |
 | react-test-renderer                       | test components                   | testing                |
 | babel-jest                                | prevents errors with jest         | testing                |
+| mockdate                                  | testing Date.now()                | testing                |
 | ts-jest                                   | typescript tests                  | testing                |
 | react-art                                 | react-native-web (remove?)        | other                  |
 | moment                                    | time                              | other                  |

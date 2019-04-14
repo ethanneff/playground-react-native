@@ -14,7 +14,7 @@
     "build": "              echo 'build production web';          react-scripts build",
     "start": "              echo 'run code watcher';              react-native start --reset-cache",
     "debug": "              echo 'run redux debugger';            open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
-    "test": "               echo 'run unit tests';                jest --coverage --detectOpenHandles -u",
+    "test": "               echo 'run unit tests';                jest --coverage -u",
     "watch": "              echo 'run unit tests reloader';       jest --watch",
     "lint": "               echo 'run code linter';               tsc && tslint --fix -p tsconfig.json -c tslint.json",
     "upgrade": "            echo 'run react native upgrade'       yarn global add react-native-git-upgrade; react-native-git-upgrade; rm -f .babelrc; rm -f ./.buckconfig; rm -f ./.flowconfig; rm -f ./.watchmanconfig; rm -f ./.gitattributes;",
@@ -61,6 +61,7 @@
     "@semantic-release/release-notes-generator": "7.1.4",
     "@types/axios": "0.14.0",
     "@types/jest": "24.0.11",
+    "@types/mockdate": "2.0.0",
     "@types/react": "16.8.13",
     "@types/react-native": "0.57.43",
     "@types/react-native-vector-icons": "6.4.0",
@@ -74,6 +75,7 @@
     "husky": "1.3.1",
     "jest": "23.6.0",
     "lint-staged": "8.1.5",
+    "mockdate": "2.0.2",
     "prettier": "1.17.0",
     "react-test-renderer": "16.8.6",
     "semantic-release": "15.13.3",
@@ -138,6 +140,9 @@
     },
     "transformIgnorePatterns": [
       "node_modules/(?!react-native)/"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.[jt]s?(x)"
     ],
     "globals": {
       "window": {},
