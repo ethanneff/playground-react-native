@@ -119,51 +119,51 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "archive": false,
-              "createdAt": 1555244406095,
+              "createdAt": 1555244568708,
               "createdBy": "User steve",
               "id": "6",
               "message": "again",
-              "updatedAt": 1555259046097,
+              "updatedAt": 1555259208711,
             },
             Object {
               "archive": false,
-              "createdAt": 1555169046097,
+              "createdAt": 1555169208711,
               "createdBy": "User bob",
               "id": "5",
               "message": "another message",
-              "updatedAt": 1555259046099,
+              "updatedAt": 1555259208715,
             },
             Object {
               "archive": false,
-              "createdAt": 1555057446100,
+              "createdAt": 1555057608715,
               "createdBy": "User steve",
               "id": "4",
               "message": "first message",
-              "updatedAt": 1555259046100,
+              "updatedAt": 1555259208715,
             },
             Object {
               "archive": false,
-              "createdAt": 1555064646100,
+              "createdAt": 1555064808715,
               "createdBy": "User bob",
               "id": "3",
               "message": "third message",
-              "updatedAt": 1555259046100,
+              "updatedAt": 1555259208716,
             },
             Object {
               "archive": false,
-              "createdAt": 1554992646100,
+              "createdAt": 1554992808716,
               "createdBy": "User bob",
               "id": "2",
               "message": "second message",
-              "updatedAt": 1555259046100,
+              "updatedAt": 1555259208716,
             },
             Object {
               "archive": false,
-              "createdAt": 1554996246100,
+              "createdAt": 1554996408716,
               "createdBy": "User bob",
               "id": "1",
               "message": "helloasdinaso dinasdoias daso dinaso dna nasd oiasnd ona niosao ao noinoas ao nodasno d",
-              "updatedAt": 1555259046100,
+              "updatedAt": 1555259208716,
             },
           ]
         }
@@ -301,7 +301,7 @@ exports[`renders correctly 1`] = `
                       ]
                     }
                   >
-                    5:20 AM
+                    5:22 AM
                   </Text>
                 </View>
                 <Text
@@ -421,7 +421,7 @@ exports[`renders correctly 1`] = `
                       ]
                     }
                   >
-                    8:24 AM
+                    8:26 AM
                   </Text>
                 </View>
                 <Text
@@ -541,7 +541,7 @@ exports[`renders correctly 1`] = `
                       ]
                     }
                   >
-                    1:24 AM
+                    1:26 AM
                   </Text>
                 </View>
                 <Text
@@ -661,7 +661,7 @@ exports[`renders correctly 1`] = `
                       ]
                     }
                   >
-                    3:24 AM
+                    3:26 AM
                   </Text>
                 </View>
                 <Text
@@ -781,7 +781,7 @@ exports[`renders correctly 1`] = `
                       ]
                     }
                   >
-                    7:24 AM
+                    7:26 AM
                   </Text>
                 </View>
                 <Text
@@ -901,7 +901,7 @@ exports[`renders correctly 1`] = `
                       ]
                     }
                   >
-                    8:24 AM
+                    8:26 AM
                   </Text>
                 </View>
                 <Text
