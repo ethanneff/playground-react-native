@@ -24,41 +24,17 @@ const styles = StyleSheet.create({
   }
 });
 
-interface Props {
-  history: any;
-}
-
-class Footer extends React.PureComponent<Props> {
-  render() {
-    const { history } = this.props;
-    return (
-      <View style={styles.footer}>
-        <Button title="Sign up" onPress={() => history.push("/login")} />
-        <Button title="Log in" onPress={() => history.push("/login")} />
-        <Button title="Debug" onPress={() => history.push("/debug")} />
-      </View>
-    );
-  }
-}
-
-class Header extends React.PureComponent {
-  render() {
-    return <View />;
-  }
-}
-
 export class Landing extends React.PureComponent<RouteComponentProps> {
-  public componentDidMount() {
-    const { history } = this.props;
-    history.push("/debug/checklists");
-  }
   public render() {
     const { history } = this.props;
     return (
       <View style={styles.container}>
-        <Header />
         <Text title={String(window.height)} />
-        <Footer history={history} />
+        <View style={styles.footer}>
+          <Button title="Sign up" onPress={() => history.push("/login")} />
+          <Button title="Log in" onPress={() => history.push("/login")} />
+          <Button title="Debug" onPress={() => history.push("/debug")} />
+        </View>
       </View>
     );
   }
