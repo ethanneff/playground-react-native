@@ -1556,10 +1556,10 @@
     "@types/prop-types" "*"
     "@types/react" "*"
 
-"@types/react-native@0.57.46":
-  version "0.57.46"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.46.tgz#a209b0878ceed10dd6aaa4c19e0a13cb092a81a8"
-  integrity sha512-ldA3P77u6ROmKxVQixCfNoJI/O2qrk+eFRtlenKeZc720gfi1kBBRdT1SzeFgQJAUjmiJf5JCDr69KaBglqWeQ==
+"@types/react-native@0.57.47":
+  version "0.57.47"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.47.tgz#e7b6285ffa445ba474e4fdad4f2e6eda62fb392a"
+  integrity sha512-XeRcyrhPOsYEBOvh2RlLajNFmiDRALwAKiHXqPEEbYWzyJTKz095Cs/coHbUHQnDcKVmib4uHmrDAOK1q0PkmA==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -13838,10 +13838,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typesafe-actions@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/typesafe-actions/-/typesafe-actions-4.0.0.tgz#b41aca3538dd4cf51ed7c7f4e6ee3b517a1d6dc8"
-  integrity sha512-VWIQZpUgEqddDbNi1c9eq5T6nzQVGP01HA74O4PXnyzDrewBL6L6usSigH8ZEpqmM/pw59BKttXeiCu6bF7RNA==
+typesafe-actions@4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/typesafe-actions/-/typesafe-actions-4.1.1.tgz#e351fc08bc88a3687298a37c35735d745a207cc1"
+  integrity sha512-EQpYlITDjgnHDBVBXP5cPdyX8TLQnCCs5akL9IWgrbTn5KWCzgeVomhUwCPTD3DHTntRdWOwtXT6Mmm1+4dwUQ==
 
 typescript@3.4.4:
   version "3.4.4"
