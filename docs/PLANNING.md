@@ -11,6 +11,7 @@
 #### v0 merge all code bases
 
 - [x] attempt icons again
+- [ ] mock date, fix tests, fix releases
 - [ ] chat app
 - [ ] slack markdown
 - [ ] main landing page
