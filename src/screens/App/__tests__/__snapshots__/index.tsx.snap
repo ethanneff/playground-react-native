@@ -13,66 +13,6 @@ exports[`renders correctly 1`] = `
     ]
   }
 >
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-      }
-    }
-  >
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "flex": 1,
-          "opacity": 1,
-          "padding": 12,
-        }
-      }
-    >
-      <View
-        style={
-          Array [
-            undefined,
-            undefined,
-          ]
-        }
-      >
-        <Text
-          allowFontScaling={false}
-          style={
-            Array [
-              Object {
-                "color": "hsl(210, 10%, 23%)",
-                "fontSize": 24,
-              },
-              Array [
-                undefined,
-                undefined,
-              ],
-              Object {
-                "fontFamily": "Material Design Icons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
-    </View>
-  </View>
   <RCTScrollView
     automaticallyAdjustContentInsets={false}
     contentContainerStyle={
@@ -118,62 +58,27 @@ exports[`renders correctly 1`] = `
         data={
           Array [
             Object {
-              "archive": false,
-              "createdAt": 1555537629650,
-              "createdBy": "User steve",
-              "id": "6",
-              "message": "again",
-              "updatedAt": 1555552269654,
+              "color": "white",
+              "key": 1,
+              "text": "hello",
             },
             Object {
-              "archive": false,
-              "createdAt": 1555462269654,
-              "createdBy": "User bob",
-              "id": "5",
-              "message": "another message",
-              "updatedAt": 1555552269657,
+              "color": "pink",
+              "key": 2,
+              "text": "bob",
             },
             Object {
-              "archive": false,
-              "createdAt": 1555350669657,
-              "createdBy": "User steve",
-              "id": "4",
-              "message": "first message",
-              "updatedAt": 1555552269657,
-            },
-            Object {
-              "archive": false,
-              "createdAt": 1555357869657,
-              "createdBy": "User bob",
-              "id": "3",
-              "message": "third message",
-              "updatedAt": 1555552269657,
-            },
-            Object {
-              "archive": false,
-              "createdAt": 1555285869657,
-              "createdBy": "User bob",
-              "id": "2",
-              "message": "second message",
-              "updatedAt": 1555552269657,
-            },
-            Object {
-              "archive": false,
-              "createdAt": 1555289469657,
-              "createdBy": "User bob",
-              "id": "1",
-              "message": "helloasdinaso dinasdoias daso dinaso dna nasd oiasnd ona niosao ao noinoas ao nodasno d",
-              "updatedAt": 1555552269657,
+              "color": "green",
+              "key": 3,
+              "text": "steve",
             },
           ]
         }
         disableVirtualization={false}
         getItem={[Function]}
         getItemCount={[Function]}
-        horizontal={false}
+        horizontal={true}
         initialNumToRender={10}
-        invertStickyHeaders={true}
-        inverted={true}
         keyExtractor={[Function]}
         maxToRenderPerBatch={10}
         numColumns={1}
@@ -184,22 +89,11 @@ exports[`renders correctly 1`] = `
         onScroll={[Function]}
         onScrollBeginDrag={[Function]}
         onScrollEndDrag={[Function]}
+        pagingEnabled={true}
         removeClippedSubviews={false}
         renderItem={[Function]}
         scrollEventThrottle={50}
         stickyHeaderIndices={Array []}
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scaleY": -1,
-                },
-              ],
-            },
-            undefined,
-          ]
-        }
         updateCellsBatchingPeriod={50}
         viewabilityConfigCallbackPairs={Array []}
         windowSize={21}
@@ -210,119 +104,39 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "flexDirection": "column-reverse",
+                  "flexDirection": "row",
                 },
-                Object {
-                  "transform": Array [
-                    Object {
-                      "scaleY": -1,
-                    },
-                  ],
-                },
+                null,
               ]
             }
           >
             <View
               style={
                 Object {
-                  "flexDirection": "row",
+                  "backgroundColor": "white",
+                  "justifyContent": "center",
+                  "width": 750,
                 }
               }
             >
-              <View
+              <Text
                 style={
-                  Object {
-                    "width": 40,
-                  }
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    Object {
+                      "textAlign": "center",
+                    },
+                    undefined,
+                    undefined,
+                  ]
                 }
               >
-                <Image
-                  source={
-                    Object {
-                      "testUri": "../../../src/assets/line-chart.png",
-                    }
-                  }
-                  style={
-                    Object {
-                      "alignSelf": "center",
-                      "height": 20,
-                      "paddingTop": 30,
-                      "resizeMode": "contain",
-                      "width": 20,
-                    }
-                  }
-                />
-              </View>
-              <View
-                style={
-                  Object {
-                    "flexShrink": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "fontSize": 20,
-                          "fontWeight": "600",
-                          "letterSpacing": 0.15,
-                        },
-                        undefined,
-                        Object {
-                          "fontWeight": "600",
-                        },
-                        Object {
-                          "paddingRight": 8,
-                        },
-                      ]
-                    }
-                  >
-                    User steve
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "fontSize": 16,
-                          "fontWeight": "300",
-                          "letterSpacing": 0.15,
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                      ]
-                    }
-                  >
-                    2:47 PM
-                  </Text>
-                </View>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 16,
-                        "fontWeight": "300",
-                        "letterSpacing": 0.5,
-                      },
-                      undefined,
-                      undefined,
-                      Object {
-                        "paddingTop": 5,
-                      },
-                    ]
-                  }
-                >
-                  again
-                </Text>
-              </View>
+                hello
+              </Text>
             </View>
           </View>
           <View
@@ -330,119 +144,39 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "flexDirection": "column-reverse",
+                  "flexDirection": "row",
                 },
-                Object {
-                  "transform": Array [
-                    Object {
-                      "scaleY": -1,
-                    },
-                  ],
-                },
+                null,
               ]
             }
           >
             <View
               style={
                 Object {
-                  "flexDirection": "row",
+                  "backgroundColor": "pink",
+                  "justifyContent": "center",
+                  "width": 750,
                 }
               }
             >
-              <View
+              <Text
                 style={
-                  Object {
-                    "width": 40,
-                  }
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    Object {
+                      "textAlign": "center",
+                    },
+                    undefined,
+                    undefined,
+                  ]
                 }
               >
-                <Image
-                  source={
-                    Object {
-                      "testUri": "../../../src/assets/line-chart.png",
-                    }
-                  }
-                  style={
-                    Object {
-                      "alignSelf": "center",
-                      "height": 20,
-                      "paddingTop": 30,
-                      "resizeMode": "contain",
-                      "width": 20,
-                    }
-                  }
-                />
-              </View>
-              <View
-                style={
-                  Object {
-                    "flexShrink": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "fontSize": 20,
-                          "fontWeight": "600",
-                          "letterSpacing": 0.15,
-                        },
-                        undefined,
-                        Object {
-                          "fontWeight": "600",
-                        },
-                        Object {
-                          "paddingRight": 8,
-                        },
-                      ]
-                    }
-                  >
-                    User bob
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "fontSize": 16,
-                          "fontWeight": "300",
-                          "letterSpacing": 0.15,
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                      ]
-                    }
-                  >
-                    5:51 PM
-                  </Text>
-                </View>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 16,
-                        "fontWeight": "300",
-                        "letterSpacing": 0.5,
-                      },
-                      undefined,
-                      undefined,
-                      Object {
-                        "paddingTop": 5,
-                      },
-                    ]
-                  }
-                >
-                  another message
-                </Text>
-              </View>
+                bob
+              </Text>
             </View>
           </View>
           <View
@@ -450,479 +184,39 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "flexDirection": "column-reverse",
+                  "flexDirection": "row",
                 },
-                Object {
-                  "transform": Array [
-                    Object {
-                      "scaleY": -1,
-                    },
-                  ],
-                },
+                null,
               ]
             }
           >
             <View
               style={
                 Object {
-                  "flexDirection": "row",
+                  "backgroundColor": "green",
+                  "justifyContent": "center",
+                  "width": 750,
                 }
               }
             >
-              <View
+              <Text
                 style={
-                  Object {
-                    "width": 40,
-                  }
-                }
-              >
-                <Image
-                  source={
+                  Array [
                     Object {
-                      "testUri": "../../../src/assets/line-chart.png",
-                    }
-                  }
-                  style={
-                    Object {
-                      "alignSelf": "center",
-                      "height": 20,
-                      "paddingTop": 30,
-                      "resizeMode": "contain",
-                      "width": 20,
-                    }
-                  }
-                />
-              </View>
-              <View
-                style={
-                  Object {
-                    "flexShrink": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "fontSize": 20,
-                          "fontWeight": "600",
-                          "letterSpacing": 0.15,
-                        },
-                        undefined,
-                        Object {
-                          "fontWeight": "600",
-                        },
-                        Object {
-                          "paddingRight": 8,
-                        },
-                      ]
-                    }
-                  >
-                    User steve
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "fontSize": 16,
-                          "fontWeight": "300",
-                          "letterSpacing": 0.15,
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                      ]
-                    }
-                  >
-                    10:51 AM
-                  </Text>
-                </View>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 16,
-                        "fontWeight": "300",
-                        "letterSpacing": 0.5,
-                      },
-                      undefined,
-                      undefined,
-                      Object {
-                        "paddingTop": 5,
-                      },
-                    ]
-                  }
-                >
-                  first message
-                </Text>
-              </View>
-            </View>
-          </View>
-          <View
-            onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "column-reverse",
-                },
-                Object {
-                  "transform": Array [
-                    Object {
-                      "scaleY": -1,
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
                     },
-                  ],
-                },
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "width": 40,
-                  }
-                }
-              >
-                <Image
-                  source={
                     Object {
-                      "testUri": "../../../src/assets/line-chart.png",
-                    }
-                  }
-                  style={
-                    Object {
-                      "alignSelf": "center",
-                      "height": 20,
-                      "paddingTop": 30,
-                      "resizeMode": "contain",
-                      "width": 20,
-                    }
-                  }
-                />
-              </View>
-              <View
-                style={
-                  Object {
-                    "flexShrink": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "fontSize": 20,
-                          "fontWeight": "600",
-                          "letterSpacing": 0.15,
-                        },
-                        undefined,
-                        Object {
-                          "fontWeight": "600",
-                        },
-                        Object {
-                          "paddingRight": 8,
-                        },
-                      ]
-                    }
-                  >
-                    User bob
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "fontSize": 16,
-                          "fontWeight": "300",
-                          "letterSpacing": 0.15,
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                      ]
-                    }
-                  >
-                    12:51 PM
-                  </Text>
-                </View>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 16,
-                        "fontWeight": "300",
-                        "letterSpacing": 0.5,
-                      },
-                      undefined,
-                      undefined,
-                      Object {
-                        "paddingTop": 5,
-                      },
-                    ]
-                  }
-                >
-                  third message
-                </Text>
-              </View>
-            </View>
-          </View>
-          <View
-            onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "column-reverse",
-                },
-                Object {
-                  "transform": Array [
-                    Object {
-                      "scaleY": -1,
+                      "textAlign": "center",
                     },
-                  ],
-                },
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "width": 40,
-                  }
+                    undefined,
+                    undefined,
+                  ]
                 }
               >
-                <Image
-                  source={
-                    Object {
-                      "testUri": "../../../src/assets/line-chart.png",
-                    }
-                  }
-                  style={
-                    Object {
-                      "alignSelf": "center",
-                      "height": 20,
-                      "paddingTop": 30,
-                      "resizeMode": "contain",
-                      "width": 20,
-                    }
-                  }
-                />
-              </View>
-              <View
-                style={
-                  Object {
-                    "flexShrink": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "fontSize": 20,
-                          "fontWeight": "600",
-                          "letterSpacing": 0.15,
-                        },
-                        undefined,
-                        Object {
-                          "fontWeight": "600",
-                        },
-                        Object {
-                          "paddingRight": 8,
-                        },
-                      ]
-                    }
-                  >
-                    User bob
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "fontSize": 16,
-                          "fontWeight": "300",
-                          "letterSpacing": 0.15,
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                      ]
-                    }
-                  >
-                    4:51 PM
-                  </Text>
-                </View>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 16,
-                        "fontWeight": "300",
-                        "letterSpacing": 0.5,
-                      },
-                      undefined,
-                      undefined,
-                      Object {
-                        "paddingTop": 5,
-                      },
-                    ]
-                  }
-                >
-                  second message
-                </Text>
-              </View>
-            </View>
-          </View>
-          <View
-            onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "column-reverse",
-                },
-                Object {
-                  "transform": Array [
-                    Object {
-                      "scaleY": -1,
-                    },
-                  ],
-                },
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "width": 40,
-                  }
-                }
-              >
-                <Image
-                  source={
-                    Object {
-                      "testUri": "../../../src/assets/line-chart.png",
-                    }
-                  }
-                  style={
-                    Object {
-                      "alignSelf": "center",
-                      "height": 20,
-                      "paddingTop": 30,
-                      "resizeMode": "contain",
-                      "width": 20,
-                    }
-                  }
-                />
-              </View>
-              <View
-                style={
-                  Object {
-                    "flexShrink": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "fontSize": 20,
-                          "fontWeight": "600",
-                          "letterSpacing": 0.15,
-                        },
-                        undefined,
-                        Object {
-                          "fontWeight": "600",
-                        },
-                        Object {
-                          "paddingRight": 8,
-                        },
-                      ]
-                    }
-                  >
-                    User bob
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "fontSize": 16,
-                          "fontWeight": "300",
-                          "letterSpacing": 0.15,
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                      ]
-                    }
-                  >
-                    5:51 PM
-                  </Text>
-                </View>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 16,
-                        "fontWeight": "300",
-                        "letterSpacing": 0.5,
-                      },
-                      undefined,
-                      undefined,
-                      Object {
-                        "paddingTop": 5,
-                      },
-                    ]
-                  }
-                >
-                  helloasdinaso dinasdoias daso dinaso dna nasd oiasnd ona niosao ao noinoas ao nodasno d
-                </Text>
-              </View>
+                steve
+              </Text>
             </View>
           </View>
         </View>
@@ -930,166 +224,67 @@ exports[`renders correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "height": 48,
+            "justifyContent": "space-around",
           }
         }
       >
         <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "flex": 1,
-              },
-              undefined,
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "color": "hsl(211, 100%, 50%)",
+              "flexDirection": "row",
+              "height": 36,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
           }
         >
-          <View
+          <Text
             style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          />
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <TextInput
-              allowFontScaling={true}
-              blurOnSubmit={true}
-              disableFullscreenUI={true}
-              editable={true}
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="hsl(208, 7%, 46%)"
-              rejectResponderTermination={true}
-              selectionColor="hsl(211, 100%, 50%)"
-              style={
+              Array [
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+                undefined,
                 Array [
                   Object {
-                    "backgroundColor": "hsl(0, 100%, 100%)",
-                    "borderColor": "hsl(208, 7%, 46%)",
-                    "borderRadius": 4,
-                    "borderWidth": 2,
-                    "padding": 8,
-                    "paddingRight": 32,
-                    "width": "100%",
-                  },
-                  "",
-                  false,
-                  Object {
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
+                    "backgroundColor": "transparent",
+                    "color": "hsl(211, 100%, 50%)",
                   },
                   undefined,
-                ]
-              }
-              underlineColorAndroid="transparent"
-              value=""
-            />
-          </View>
-          <View
-            accessible={true}
-            isTVSelectable={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "transparent",
-                "borderColor": "transparent",
-                "borderRadius": 4,
-                "borderWidth": 1,
-                "color": "hsl(211, 100%, 50%)",
-                "flexDirection": "row",
-                "height": 20,
-                "justifyContent": "flex-start",
-                "marginVertical": 4,
-                "opacity": 1,
-                "paddingHorizontal": 0,
-              }
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
+              ]
             }
           >
-            <View
-              style={
-                Array [
-                  Object {
-                    "opacity": 0,
-                  },
-                  Array [
-                    "",
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "color": "hsl(211, 100%, 50%)",
-                      },
-                      undefined,
-                      undefined,
-                      Object {
-                        "color": "hsl(354, 70%, 54%)",
-                      },
-                      undefined,
-                      undefined,
-                      undefined,
-                    ],
-                  ],
-                ]
-              }
-            >
-              <Text
-                allowFontScaling={false}
-                style={
-                  Array [
-                    Object {
-                      "color": "hsl(210, 10%, 23%)",
-                      "fontSize": 16,
-                    },
-                    Array [
-                      Object {
-                        "opacity": 0,
-                      },
-                      Array [
-                        "",
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          undefined,
-                          undefined,
-                          Object {
-                            "color": "hsl(354, 70%, 54%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
-                    Object {
-                      "fontFamily": "Material Design Icons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                    Object {},
-                  ]
-                }
-              >
-                
-              </Text>
-            </View>
-          </View>
+            SIGN UP
+          </Text>
         </View>
         <View
           accessible={true}
@@ -1116,66 +311,90 @@ exports[`renders correctly 1`] = `
             }
           }
         >
-          <View
+          <Text
             style={
               Array [
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                },
+                Object {
+                  "textAlign": "center",
+                },
                 undefined,
                 Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "hsl(211, 100%, 50%)",
+                  },
                   undefined,
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "hsl(211, 100%, 50%)",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
-                  ],
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
                 ],
               ]
             }
           >
-            <Text
-              allowFontScaling={false}
-              style={
+            LOG IN
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "color": "hsl(211, 100%, 50%)",
+              "flexDirection": "row",
+              "height": 36,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+                undefined,
                 Array [
                   Object {
-                    "color": "hsl(210, 10%, 23%)",
-                    "fontSize": 16,
+                    "backgroundColor": "transparent",
+                    "color": "hsl(211, 100%, 50%)",
                   },
-                  Array [
-                    undefined,
-                    Array [
-                      undefined,
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "hsl(211, 100%, 50%)",
-                        },
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
-                      ],
-                    ],
-                  ],
-                  Object {
-                    "fontFamily": "Material Design Icons",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  Object {},
-                ]
-              }
-            >
-              
-            </Text>
-          </View>
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
+              ]
+            }
+          >
+            DEBUG
+          </Text>
         </View>
       </View>
     </View>
