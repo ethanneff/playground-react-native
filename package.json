@@ -133,7 +133,7 @@
   "jest": {
     "preset": "react-native",
     "transform": {
-      "^.+\\.(jsx?)$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+      "^.+\\.jsx?$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
       "^.+\\.tsx?$": "ts-jest"
     },
     "transformIgnorePatterns": [
