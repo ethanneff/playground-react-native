@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.3](https://github.com/ethanneff/example/compare/v1.16.2...v1.16.3) (2019-05-03)
+
+
+### Bug Fixes
+
+* update dependencies ([a005d96](https://github.com/ethanneff/example/commit/a005d96))
+
 ## [1.16.2](https://github.com/ethanneff/example/compare/v1.16.1...v1.16.2) (2019-05-01)
 
 
