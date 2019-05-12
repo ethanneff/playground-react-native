@@ -1,7 +1,6 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
 import { Text } from "..";
-import { Theme } from "../../utils";
 import { NavButton } from "./NavButton";
 
 const styles = StyleSheet.create({
@@ -11,8 +10,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between"
   },
   title: {
-    flex: 1,
-    fontSize: Theme.padding.p05,
+    flex: 2,
     textAlign: "center"
   }
 });
@@ -28,20 +26,16 @@ interface Props {
 export class NavBar extends React.PureComponent<Props> {
   public render() {
     const {
-      title = "",
+      title,
       onLeftPress,
       onRightPress,
       leftIcon = "arrow-left",
       rightIcon = "close"
     } = this.props;
-    const isEnabled = title.length > 0 || onLeftPress || onRightPress;
-    if (!isEnabled) {
-      return null;
-    }
     return (
       <View style={styles.container}>
         <NavButton icon={leftIcon} onPress={onLeftPress} />
-        <Text hidden={title.length === 0} style={styles.title} title={title} />
+        <Text style={styles.title} title={title} h2 />
         <NavButton icon={rightIcon} isRight onPress={onRightPress} />
       </View>
     );
