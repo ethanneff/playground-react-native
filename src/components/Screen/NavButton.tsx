@@ -22,10 +22,10 @@ interface Props {
 export class NavButton extends React.PureComponent<Props> {
   public render() {
     const { onPress, icon, isRight } = this.props;
-    if (!onPress) { return null; }
     return (
       <TouchableOpacity style={styles.button} onPress={onPress}>
         <Icon
+          hidden={!onPress}
           color={Theme.color.dark}
           style={isRight && styles.buttonRight}
           name={icon}
