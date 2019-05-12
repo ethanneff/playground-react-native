@@ -89,9 +89,8 @@ export class Text extends React.PureComponent<Props> {
       bold && styles.bold,
       style
     ];
-    if (title === undefined || title.length === 0 || hidden) {
-      return null;
-    }
-    return <Original style={textStyle}>{text}</Original>;
+    return title === undefined || hidden ? null : (
+      <Original style={textStyle}>{text}</Original>
+    );
   }
 }
