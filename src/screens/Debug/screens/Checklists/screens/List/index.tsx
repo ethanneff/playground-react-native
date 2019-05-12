@@ -79,13 +79,17 @@ class Component extends React.PureComponent<Props> {
   }
 }
 
+const mapStateToProps = (state: RootState): StateProps => ({
+  items: getItemsByCreatedAt(state)
+});
+
+const mapDispatchToProps: DispatchProps = {
+  removeItem,
+  toggleActiveItem,
+  updateItem
+};
+
 export const List = connect(
-  (state: RootState) => ({
-    items: getItemsByCreatedAt(state)
-  }),
-  {
-    removeItem,
-    toggleActiveItem,
-    updateItem
-  }
+  mapStateToProps,
+  mapDispatchToProps
 )(Component);
