@@ -12,3 +12,4 @@ export * from "./Checklists";
 export * from "./ImageCollection";
 export * from "./Stopwatch";
 export * from "./Chat";
+export * from "./CantHurtMe";

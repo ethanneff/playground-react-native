@@ -4,6 +4,7 @@ import { Link, Route, Screen, Switch } from "../../components";
 import {
   Ball,
   Buttons,
+  CantHurtMe,
   Cards,
   Chat,
   Checklists,
@@ -24,6 +25,7 @@ export class Debug extends React.PureComponent<Props> {
   private screens: any = {
     Ball,
     Buttons,
+    CantHurtMe,
     Cards,
     Chat,
     Checklists,
