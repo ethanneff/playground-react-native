@@ -10,10 +10,7 @@ const styles = StyleSheet.create({
     padding: Theme.padding.p04,
     position: "relative",
     shadowColor: Theme.color.dark,
-    shadowOffset: {
-      height: 4,
-      width: 0
-    },
+    shadowOffset: { height: 4, width: 0 },
     shadowOpacity: 0.6,
     shadowRadius: 6,
     zIndex: 1
