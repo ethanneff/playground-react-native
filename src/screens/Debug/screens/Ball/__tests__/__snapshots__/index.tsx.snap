@@ -72,6 +72,23 @@ exports[`renders correctly 1`] = `
         </Text>
       </View>
     </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+          "padding": 12,
+        }
+      }
+    />
   </View>
   <RCTScrollView
     automaticallyAdjustContentInsets={false}

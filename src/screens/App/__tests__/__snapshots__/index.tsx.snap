@@ -9,10 +9,108 @@ exports[`renders correctly 1`] = `
         "backgroundColor": "hsl(0, 100%, 100%)",
         "flex": 1,
       },
-      undefined,
+      Object {
+        "backgroundColor": "hsl(210, 17%, 98%)",
+      },
     ]
   }
 >
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+          "padding": 12,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "hsl(210, 10%, 23%)",
+                "fontSize": 24,
+              },
+              Array [
+                undefined,
+                undefined,
+              ],
+              Object {
+                "fontFamily": "Material Design Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 30,
+            "fontWeight": "100",
+            "letterSpacing": -0.5,
+          },
+          undefined,
+          undefined,
+          Object {
+            "flex": 2,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Can't Hurt Me
+    </Text>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+          "padding": 12,
+        }
+      }
+    />
+  </View>
   <RCTScrollView
     automaticallyAdjustContentInsets={false}
     contentContainerStyle={
@@ -21,7 +119,9 @@ exports[`renders correctly 1`] = `
           "backgroundColor": "hsl(0, 100%, 100%)",
           "flex": 1,
         },
-        undefined,
+        Object {
+          "backgroundColor": "hsl(210, 17%, 98%)",
+        },
       ]
     }
     contentInset={
@@ -55,33 +155,29 @@ exports[`renders correctly 1`] = `
   >
     <View>
       <RCTScrollView
+        ListFooterComponent={[Function]}
         data={
           Array [
-            Object {
-              "color": "white",
-              "key": 1,
-              "text": "hello",
-            },
-            Object {
-              "color": "pink",
-              "key": 2,
-              "text": "bob",
-            },
-            Object {
-              "color": "green",
-              "key": 3,
-              "text": "steve",
-            },
+            "25800acd-4a54-45e9-a25d-b1afc67597ad",
+            "553c1ff9-c2ef-4ef9-9d6f-2c74c432594e",
+            "17ac2a5c-bbb3-4a5b-b8d9-89c9c883f178",
+            "5fb41268-b76b-4b19-9f98-1dc933480c57",
+            "20b0d913-3395-49d7-a271-75427c5195f2",
+            "f6c5d1e9-2e3c-41a3-811a-385b644f8e10",
+            "bebed7b8-138b-46b8-b4e6-51ef14fc774d",
+            "201b9c25-525d-4e9c-a7f3-25343fe07908",
+            "f78e1fe7-d1d3-4402-8722-b1b37aa5a8bb",
+            "f634e684-798a-4191-9596-fa21b98ccb48",
           ]
         }
         disableVirtualization={false}
         getItem={[Function]}
         getItemCount={[Function]}
-        horizontal={true}
+        horizontal={false}
         initialNumToRender={10}
         keyExtractor={[Function]}
         maxToRenderPerBatch={10}
-        numColumns={1}
+        numColumns={2}
         onContentSizeChange={[Function]}
         onEndReachedThreshold={2}
         onLayout={[Function]}
@@ -89,11 +185,17 @@ exports[`renders correctly 1`] = `
         onScroll={[Function]}
         onScrollBeginDrag={[Function]}
         onScrollEndDrag={[Function]}
-        pagingEnabled={true}
         removeClippedSubviews={false}
         renderItem={[Function]}
         scrollEventThrottle={50}
         stickyHeaderIndices={Array []}
+        style={
+          Object {
+            "backgroundColor": "hsl(210, 17%, 98%)",
+            "padding": 8,
+            "paddingBottom": 80,
+          }
+        }
         updateCellsBatchingPeriod={50}
         viewabilityConfigCallbackPairs={Array []}
         windowSize={21}
@@ -101,302 +203,762 @@ exports[`renders correctly 1`] = `
         <View>
           <View
             onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "row",
-                },
-                null,
-              ]
-            }
+            style={null}
           >
             <View
               style={
                 Object {
-                  "backgroundColor": "white",
-                  "justifyContent": "center",
-                  "width": 750,
+                  "flexDirection": "row",
                 }
               }
             >
-              <Text
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
-                  Array [
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
+                  Object {
+                    "backgroundColor": "hsl(0, 100%, 100%)",
+                    "elevation": 1,
+                    "flex": 1,
+                    "margin": 8,
+                    "opacity": 1,
+                    "padding": 16,
+                    "shadowColor": "hsl(210, 10%, 23%)",
+                    "shadowOffset": Object {
+                      "height": 4,
+                      "width": 0,
                     },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                  ]
+                    "shadowOpacity": 0.5,
+                    "shadowRadius": 2,
+                  }
                 }
               >
-                hello
-              </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 17,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontWeight": "600",
+                      },
+                      Object {
+                        "paddingBottom": 16,
+                      },
+                    ]
+                  }
+                >
+                  Challenge #1
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  Inventory of Excuses
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "hsl(0, 100%, 100%)",
+                    "elevation": 1,
+                    "flex": 1,
+                    "margin": 8,
+                    "opacity": 1,
+                    "padding": 16,
+                    "shadowColor": "hsl(210, 10%, 23%)",
+                    "shadowOffset": Object {
+                      "height": 4,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.5,
+                    "shadowRadius": 2,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 17,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontWeight": "600",
+                      },
+                      Object {
+                        "paddingBottom": 16,
+                      },
+                    ]
+                  }
+                >
+                  Challenge #2
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                   Accountability Mirror
+                </Text>
+              </View>
             </View>
           </View>
           <View
             onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "row",
-                },
-                null,
-              ]
-            }
+            style={null}
           >
             <View
               style={
                 Object {
-                  "backgroundColor": "pink",
-                  "justifyContent": "center",
-                  "width": 750,
+                  "flexDirection": "row",
                 }
               }
             >
-              <Text
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
-                  Array [
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
+                  Object {
+                    "backgroundColor": "hsl(0, 100%, 100%)",
+                    "elevation": 1,
+                    "flex": 1,
+                    "margin": 8,
+                    "opacity": 1,
+                    "padding": 16,
+                    "shadowColor": "hsl(210, 10%, 23%)",
+                    "shadowOffset": Object {
+                      "height": 4,
+                      "width": 0,
                     },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                  ]
+                    "shadowOpacity": 0.5,
+                    "shadowRadius": 2,
+                  }
                 }
               >
-                bob
-              </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 17,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontWeight": "600",
+                      },
+                      Object {
+                        "paddingBottom": 16,
+                      },
+                    ]
+                  }
+                >
+                  Challenge #3
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  Step Outside Your Comfort Zone
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "hsl(0, 100%, 100%)",
+                    "elevation": 1,
+                    "flex": 1,
+                    "margin": 8,
+                    "opacity": 1,
+                    "padding": 16,
+                    "shadowColor": "hsl(210, 10%, 23%)",
+                    "shadowOffset": Object {
+                      "height": 4,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.5,
+                    "shadowRadius": 2,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 17,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontWeight": "600",
+                      },
+                      Object {
+                        "paddingBottom": 16,
+                      },
+                    ]
+                  }
+                >
+                  Challenge #4
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  Taking Souls
+                </Text>
+              </View>
             </View>
           </View>
           <View
             onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "flexDirection": "row",
-                },
-                null,
-              ]
-            }
+            style={null}
           >
             <View
               style={
                 Object {
-                  "backgroundColor": "green",
-                  "justifyContent": "center",
-                  "width": 750,
+                  "flexDirection": "row",
                 }
               }
             >
-              <Text
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
-                  Array [
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
+                  Object {
+                    "backgroundColor": "hsl(0, 100%, 100%)",
+                    "elevation": 1,
+                    "flex": 1,
+                    "margin": 8,
+                    "opacity": 1,
+                    "padding": 16,
+                    "shadowColor": "hsl(210, 10%, 23%)",
+                    "shadowOffset": Object {
+                      "height": 4,
+                      "width": 0,
                     },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                  ]
+                    "shadowOpacity": 0.5,
+                    "shadowRadius": 2,
+                  }
                 }
               >
-                steve
-              </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 17,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontWeight": "600",
+                      },
+                      Object {
+                        "paddingBottom": 16,
+                      },
+                    ]
+                  }
+                >
+                  Challenge #5
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  Visualize Your Goals
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "hsl(0, 100%, 100%)",
+                    "elevation": 1,
+                    "flex": 1,
+                    "margin": 8,
+                    "opacity": 1,
+                    "padding": 16,
+                    "shadowColor": "hsl(210, 10%, 23%)",
+                    "shadowOffset": Object {
+                      "height": 4,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.5,
+                    "shadowRadius": 2,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 17,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontWeight": "600",
+                      },
+                      Object {
+                        "paddingBottom": 16,
+                      },
+                    ]
+                  }
+                >
+                  Challenge #6
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  The Cookie Jar
+                </Text>
+              </View>
             </View>
+          </View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "hsl(0, 100%, 100%)",
+                    "elevation": 1,
+                    "flex": 1,
+                    "margin": 8,
+                    "opacity": 1,
+                    "padding": 16,
+                    "shadowColor": "hsl(210, 10%, 23%)",
+                    "shadowOffset": Object {
+                      "height": 4,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.5,
+                    "shadowRadius": 2,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 17,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontWeight": "600",
+                      },
+                      Object {
+                        "paddingBottom": 16,
+                      },
+                    ]
+                  }
+                >
+                  Challenge #7
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  Remove the Governor
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "hsl(0, 100%, 100%)",
+                    "elevation": 1,
+                    "flex": 1,
+                    "margin": 8,
+                    "opacity": 1,
+                    "padding": 16,
+                    "shadowColor": "hsl(210, 10%, 23%)",
+                    "shadowOffset": Object {
+                      "height": 4,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.5,
+                    "shadowRadius": 2,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 17,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontWeight": "600",
+                      },
+                      Object {
+                        "paddingBottom": 16,
+                      },
+                    ]
+                  }
+                >
+                  Challenge #8
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  Scheduling
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "hsl(0, 100%, 100%)",
+                    "elevation": 1,
+                    "flex": 1,
+                    "margin": 8,
+                    "opacity": 1,
+                    "padding": 16,
+                    "shadowColor": "hsl(210, 10%, 23%)",
+                    "shadowOffset": Object {
+                      "height": 4,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.5,
+                    "shadowRadius": 2,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 17,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontWeight": "600",
+                      },
+                      Object {
+                        "paddingBottom": 16,
+                      },
+                    ]
+                  }
+                >
+                  Challenge #9
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  Be Uncommon Amongst Uncommon
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "hsl(0, 100%, 100%)",
+                    "elevation": 1,
+                    "flex": 1,
+                    "margin": 8,
+                    "opacity": 1,
+                    "padding": 16,
+                    "shadowColor": "hsl(210, 10%, 23%)",
+                    "shadowOffset": Object {
+                      "height": 4,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.5,
+                    "shadowRadius": 2,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 17,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontWeight": "600",
+                      },
+                      Object {
+                        "paddingBottom": 16,
+                      },
+                    ]
+                  }
+                >
+                  Challenge #10
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "300",
+                        "letterSpacing": 0.25,
+                      },
+                      Object {
+                        "textAlign": "center",
+                      },
+                      undefined,
+                      undefined,
+                    ]
+                  }
+                >
+                  After Action Reports
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            onLayout={[Function]}
+          >
+            <View
+              style={
+                Object {
+                  "paddingBottom": 16,
+                }
+              }
+            />
           </View>
         </View>
       </RCTScrollView>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 48,
-            "justifyContent": "space-around",
-          }
-        }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "borderColor": "transparent",
-              "borderRadius": 4,
-              "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
-              "flexDirection": "row",
-              "height": 36,
-              "justifyContent": "center",
-              "opacity": 1,
-              "paddingHorizontal": 16,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
-            }
-          >
-            SIGN UP
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "borderColor": "transparent",
-              "borderRadius": 4,
-              "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
-              "flexDirection": "row",
-              "height": 36,
-              "justifyContent": "center",
-              "opacity": 1,
-              "paddingHorizontal": 16,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
-            }
-          >
-            LOG IN
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "borderColor": "transparent",
-              "borderRadius": 4,
-              "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
-              "flexDirection": "row",
-              "height": 36,
-              "justifyContent": "center",
-              "opacity": 1,
-              "paddingHorizontal": 16,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
-            }
-          >
-            DEBUG
-          </Text>
-        </View>
-      </View>
     </View>
   </RCTScrollView>
 </RCTSafeAreaView>

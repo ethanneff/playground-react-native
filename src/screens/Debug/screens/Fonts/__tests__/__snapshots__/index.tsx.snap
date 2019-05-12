@@ -72,6 +72,23 @@ exports[`renders correctly 1`] = `
         </Text>
       </View>
     </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+          "padding": 12,
+        }
+      }
+    />
   </View>
   <RCTScrollView
     automaticallyAdjustContentInsets={false}
@@ -120,7 +137,7 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "fontSize": 96,
+                  "fontSize": 48,
                   "fontWeight": "100",
                   "letterSpacing": -1.5,
                 },
@@ -136,7 +153,7 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "fontSize": 60,
+                  "fontSize": 30,
                   "fontWeight": "100",
                   "letterSpacing": -0.5,
                 },
@@ -152,7 +169,7 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "fontSize": 48,
+                  "fontSize": 24,
                   "fontWeight": "300",
                   "letterSpacing": 0,
                 },
@@ -168,7 +185,7 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "fontSize": 34,
+                  "fontSize": 17,
                   "fontWeight": "300",
                   "letterSpacing": 0.25,
                 },
@@ -184,7 +201,7 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "fontSize": 24,
+                  "fontSize": 12,
                   "fontWeight": "300",
                   "letterSpacing": 0,
                 },
@@ -200,7 +217,7 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "fontSize": 20,
+                  "fontSize": 10,
                   "fontWeight": "600",
                   "letterSpacing": 0.15,
                 },

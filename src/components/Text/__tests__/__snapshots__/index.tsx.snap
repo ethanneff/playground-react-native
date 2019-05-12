@@ -57,7 +57,24 @@ exports[`renders button 1`] = `
 </Text>
 `;
 
-exports[`renders button empty 1`] = `null`;
+exports[`renders button empty 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "600",
+        "letterSpacing": 0.75,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  
+</Text>
+`;
 
 exports[`renders caption 1`] = `
 <Text
@@ -97,14 +114,31 @@ exports[`renders correctly 1`] = `
 </Text>
 `;
 
-exports[`renders empty 1`] = `null`;
+exports[`renders empty 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "300",
+        "letterSpacing": 0.25,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  
+</Text>
+`;
 
 exports[`renders h1 1`] = `
 <Text
   style={
     Array [
       Object {
-        "fontSize": 96,
+        "fontSize": 48,
         "fontWeight": "100",
         "letterSpacing": -1.5,
       },
@@ -123,7 +157,7 @@ exports[`renders h2 1`] = `
   style={
     Array [
       Object {
-        "fontSize": 60,
+        "fontSize": 30,
         "fontWeight": "100",
         "letterSpacing": -0.5,
       },
@@ -142,7 +176,7 @@ exports[`renders h3 1`] = `
   style={
     Array [
       Object {
-        "fontSize": 48,
+        "fontSize": 24,
         "fontWeight": "300",
         "letterSpacing": 0,
       },
@@ -161,7 +195,7 @@ exports[`renders h4 1`] = `
   style={
     Array [
       Object {
-        "fontSize": 34,
+        "fontSize": 17,
         "fontWeight": "300",
         "letterSpacing": 0.25,
       },
@@ -180,7 +214,7 @@ exports[`renders h5 1`] = `
   style={
     Array [
       Object {
-        "fontSize": 24,
+        "fontSize": 12,
         "fontWeight": "300",
         "letterSpacing": 0,
       },
@@ -199,7 +233,7 @@ exports[`renders h6 1`] = `
   style={
     Array [
       Object {
-        "fontSize": 20,
+        "fontSize": 10,
         "fontWeight": "600",
         "letterSpacing": 0.15,
       },

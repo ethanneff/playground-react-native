@@ -247,6 +247,37 @@ exports[`renders correctly 1`] = `
         
       </Text>
     </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+          },
+          Object {
+            "textAlign": "center",
+          },
+          undefined,
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "hsl(211, 100%, 50%)",
+            },
+            undefined,
+            undefined,
+            Object {
+              "color": "hsl(354, 70%, 54%)",
+            },
+            undefined,
+            undefined,
+            undefined,
+          ],
+        ]
+      }
+    >
+      
+    </Text>
   </View>
 </View>
 `;
