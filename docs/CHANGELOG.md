@@ -1,5 +1,24 @@
 # Changelog
 
+# [1.17.0](https://github.com/ethanneff/example/compare/v1.16.5...v1.17.0) (2019-05-12)
+
+
+### Bug Fixes
+
+* add mapstatetoprops ([b89da9d](https://github.com/ethanneff/example/commit/b89da9d))
+* make screen header show in middle if missing nav buttons ([44f9385](https://github.com/ethanneff/example/commit/44f9385))
+* move fontWeight to Theme to fix typing error in Text ([2616d36](https://github.com/ethanneff/example/commit/2616d36))
+* remove empty space to make Text hidden ([cd62888](https://github.com/ethanneff/example/commit/cd62888))
+* remove unneed hidden prop ([2a849fd](https://github.com/ethanneff/example/commit/2a849fd))
+* remove unused style object ([a9c09cc](https://github.com/ethanneff/example/commit/a9c09cc))
+* update dependencies ([7300dee](https://github.com/ethanneff/example/commit/7300dee))
+* update snapshots for screen update ([652e9dc](https://github.com/ethanneff/example/commit/652e9dc))
+
+
+### Features
+
+* add cant hurt me screen ([ce5eef9](https://github.com/ethanneff/example/commit/ce5eef9))
+
 ## [1.16.5](https://github.com/ethanneff/example/compare/v1.16.4...v1.16.5) (2019-05-08)
 
 
