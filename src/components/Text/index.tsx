@@ -51,46 +51,33 @@ export class Text extends React.PureComponent<Props> {
       caption,
       overline
     } = this.props;
-    if (h1) {
-      return Theme.fontSize.h1;
-    }
-    if (h2) {
-      return Theme.fontSize.h2;
-    }
-    if (h3) {
-      return Theme.fontSize.h3;
-    }
-    if (h4) {
-      return Theme.fontSize.h4;
-    }
-    if (h5) {
-      return Theme.fontSize.h5;
-    }
-    if (h6) {
-      return Theme.fontSize.h6;
-    }
-    if (subtitle1) {
-      return Theme.fontSize.subtitle1;
-    }
-    if (subtitle2) {
-      return Theme.fontSize.subtitle2;
-    }
-    if (body1) {
-      return Theme.fontSize.body1;
-    }
-    if (body2) {
-      return Theme.fontSize.body2;
-    }
-    if (button) {
-      return Theme.fontSize.button;
-    }
-    if (caption) {
-      return Theme.fontSize.caption;
-    }
-    if (overline) {
-      return Theme.fontSize.overline;
-    }
-    return Theme.fontSize.body2;
+    return h1
+      ? Theme.fontSize.h1
+      : h2
+      ? Theme.fontSize.h2
+      : h3
+      ? Theme.fontSize.h3
+      : h4
+      ? Theme.fontSize.h4
+      : h5
+      ? Theme.fontSize.h5
+      : h6
+      ? Theme.fontSize.h6
+      : subtitle1
+      ? Theme.fontSize.subtitle1
+      : subtitle2
+      ? Theme.fontSize.subtitle2
+      : body1
+      ? Theme.fontSize.body1
+      : body2
+      ? Theme.fontSize.body2
+      : button
+      ? Theme.fontSize.button
+      : caption
+      ? Theme.fontSize.caption
+      : overline
+      ? Theme.fontSize.overline
+      : Theme.fontSize.body2;
   }
 
   public render() {
