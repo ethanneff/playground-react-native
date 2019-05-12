@@ -18,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [AppCenterReactNative register];  // Initialize AppCenter
   [FIRApp configure];
   [AppCenterReactNativeCrashes registerWithAutomaticProcessing];
   [AppCenterReactNativeAnalytics registerWithInitiallyEnabled:true];
