@@ -36,77 +36,79 @@ const padding = {
   p20: 80
 };
 
-enum FontWeight {
-  Light = "100",
-  Regular = "300",
-  Medium = "600"
-}
+type FontWeight = "100" | "300" | "600";
+
+const fontWeight: { [key: string]: FontWeight } = {
+  light: "100",
+  medium: "600",
+  regular: "300"
+};
 
 // sizing: https://material.io/design/typography/the-type-system.html#applying-the-type-scale
 const fontSize = {
   body1: {
     fontSize: 16,
-    fontWeight: FontWeight.Regular,
+    fontWeight: fontWeight.regular,
     letterSpacing: 0.5
   },
   body2: {
     fontSize: 14,
-    fontWeight: FontWeight.Regular,
+    fontWeight: fontWeight.regular,
     letterSpacing: 0.25
   },
   button: {
     fontSize: 14,
-    fontWeight: FontWeight.Medium,
+    fontWeight: fontWeight.medium,
     letterSpacing: 0.75
   },
   caption: {
     fontSize: 12,
-    fontWeight: FontWeight.Regular,
+    fontWeight: fontWeight.regular,
     letterSpacing: 0.4
   },
   h1: {
-    fontSize: 96,
-    fontWeight: FontWeight.Light,
+    fontSize: 96 / 2,
+    fontWeight: fontWeight.light,
     letterSpacing: -1.5
   },
   h2: {
-    fontSize: 60,
-    fontWeight: FontWeight.Light,
+    fontSize: 60 / 2,
+    fontWeight: fontWeight.light,
     letterSpacing: -0.5
   },
   h3: {
-    fontSize: 48,
-    fontWeight: FontWeight.Regular,
+    fontSize: 48 / 2,
+    fontWeight: fontWeight.regular,
     letterSpacing: 0
   },
   h4: {
-    fontSize: 34,
-    fontWeight: FontWeight.Regular,
+    fontSize: 34 / 2,
+    fontWeight: fontWeight.regular,
     letterSpacing: 0.25
   },
   h5: {
-    fontSize: 24,
-    fontWeight: FontWeight.Regular,
+    fontSize: 24 / 2,
+    fontWeight: fontWeight.regular,
     letterSpacing: 0
   },
   h6: {
-    fontSize: 20,
-    fontWeight: FontWeight.Medium,
+    fontSize: 20 / 2,
+    fontWeight: fontWeight.medium,
     letterSpacing: 0.15
   },
   overline: {
     fontSize: 10,
-    fontWeight: FontWeight.Regular,
+    fontWeight: fontWeight.regular,
     letterSpacing: 1.5
   },
   subtitle1: {
     fontSize: 16,
-    fontWeight: FontWeight.Regular,
+    fontWeight: fontWeight.regular,
     letterSpacing: 0.15
   },
   subtitle2: {
     fontSize: 14,
-    fontWeight: FontWeight.Medium,
+    fontWeight: fontWeight.medium,
     letterSpacing: 0.1
   }
 };
@@ -114,6 +116,7 @@ const fontSize = {
 export const Theme = {
   color,
   fontSize,
+  fontWeight,
   padding
 };
 

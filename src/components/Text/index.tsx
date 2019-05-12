@@ -4,7 +4,7 @@ import { Theme } from "../../utils";
 
 const styles = StyleSheet.create({
   bold: {
-    fontWeight: "600" // TODO: figure out why I cannot import FontWeight.Medium with tests
+    fontWeight: Theme.fontWeight.medium
   },
   center: {
     textAlign: "center"
