@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
 });
 
 interface OwnProps {
-  style?: ViewStyle | {};
+  style?: ViewStyle;
   title?: string;
   leftIcon?: string;
   rightIcon?: string;
