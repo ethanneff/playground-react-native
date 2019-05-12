@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.16.5](https://github.com/ethanneff/example/compare/v1.16.4...v1.16.5) (2019-05-08)
+
+
+### Bug Fixes
+
+* update cocoapods ([897901b](https://github.com/ethanneff/example/commit/897901b))
+* update dependencies ([be6adcb](https://github.com/ethanneff/example/commit/be6adcb))
+
 ## [1.16.4](https://github.com/ethanneff/example/compare/v1.16.3...v1.16.4) (2019-05-06)
 
 
