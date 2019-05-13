@@ -1,5 +1,18 @@
 # Changelog
 
+# [1.18.0](https://github.com/ethanneff/example/compare/v1.17.0...v1.18.0) (2019-05-13)
+
+
+### Bug Fixes
+
+* correct linting for ordering ([db48ff4](https://github.com/ethanneff/example/commit/db48ff4))
+
+
+### Features
+
+* add progress section ([64562bf](https://github.com/ethanneff/example/commit/64562bf))
+* add progress to cant hurt me ([9a3882e](https://github.com/ethanneff/example/commit/9a3882e))
+
 # [1.17.0](https://github.com/ethanneff/example/compare/v1.16.5...v1.17.0) (2019-05-12)
 
 
