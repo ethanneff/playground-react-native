@@ -32,19 +32,22 @@ class Component extends React.PureComponent<Props> {
     card: {
       backgroundColor: Theme.color.background,
       elevation: 1,
-      zIndex: 1,
       margin: Theme.padding.p02,
       padding: Theme.padding.p04,
       shadowColor: Theme.color.dark,
-      shadowOffset: { height: Theme.padding.p01, width: 0 },
+      shadowOffset: {
+        height: Theme.padding.p01,
+        width: 0
+      },
       shadowOpacity: 0.5,
-      shadowRadius: 2
-    },
-    header: {
-      padding: Theme.padding.p04
+      shadowRadius: 2,
+      zIndex: 1
     },
     flex: {
       flex: 1
+    },
+    header: {
+      padding: Theme.padding.p04
     }
   });
   public readonly image = require("../../../../assets/line-chart.png");
@@ -99,30 +102,33 @@ class Component extends React.PureComponent<Props> {
                 source={this.image}
                 resizeMode="contain"
                 style={{
+                  alignSelf: "center",
                   height: 60,
-                  width: 60,
                   justifyContent: "center",
-                  alignSelf: "center"
+                  width: 60
                 }}
               />
 
               <View style={{ flexDirection: "row" }}>
                 <View
                   style={{
-                    position: "absolute",
-                    bottom: -12,
-                    left: -12,
                     backgroundColor: Theme.color.background,
                     borderRadius: Theme.padding.p20,
-                    width: 36,
-                    height: 36,
-                    zIndex: 2,
+                    bottom: -12,
                     elevation: 2,
+                    height: 36,
                     justifyContent: "center",
+                    left: -12,
+                    position: "absolute",
                     shadowColor: Theme.color.dark,
-                    shadowOffset: { height: Theme.padding.p01, width: 0 },
+                    shadowOffset: {
+                      height: Theme.padding.p01,
+                      width: 0
+                    },
                     shadowOpacity: 0.5,
-                    shadowRadius: 2
+                    shadowRadius: 2,
+                    width: 36,
+                    zIndex: 2
                   }}
                 >
                   <Text title="2" h4 center />
@@ -131,20 +137,20 @@ class Component extends React.PureComponent<Props> {
                 <View
                   style={{
                     alignSelf: "center",
-                    width: 60,
-                    marginLeft: Theme.padding.p06,
-                    height: Theme.padding.p02,
+                    borderColor: Theme.color.secondary,
                     borderRadius: Theme.padding.p20,
                     borderWidth: 1,
-                    borderColor: Theme.color.secondary
+                    height: Theme.padding.p02,
+                    marginLeft: Theme.padding.p06,
+                    width: 60
                   }}
                 >
                   <View
                     style={{
-                      width: "50%",
-                      borderRadius: Theme.padding.p20,
                       backgroundColor: Theme.color.success,
-                      height: "100%"
+                      borderRadius: Theme.padding.p20,
+                      height: "100%",
+                      width: "50%"
                     }}
                   />
                 </View>
