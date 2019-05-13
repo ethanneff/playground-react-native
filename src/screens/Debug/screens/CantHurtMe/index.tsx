@@ -103,9 +103,9 @@ class Component extends React.PureComponent<Props> {
                 resizeMode="contain"
                 style={{
                   alignSelf: "center",
-                  height: 60,
+                  height: Theme.padding.p15,
                   justifyContent: "center",
-                  width: 60
+                  width: Theme.padding.p15
                 }}
               />
 
@@ -114,35 +114,29 @@ class Component extends React.PureComponent<Props> {
                   style={{
                     backgroundColor: Theme.color.background,
                     borderRadius: Theme.padding.p20,
-                    bottom: -12,
+                    borderWidth: 1,
+                    borderColor: Theme.color.secondary,
+                    bottom: -Theme.padding.p03,
                     elevation: 2,
-                    height: 36,
+                    height: Theme.padding.p08,
+                    width: Theme.padding.p08,
                     justifyContent: "center",
-                    left: -12,
+                    left: -Theme.padding.p03,
                     position: "absolute",
-                    shadowColor: Theme.color.dark,
-                    shadowOffset: {
-                      height: Theme.padding.p01,
-                      width: 0
-                    },
-                    shadowOpacity: 0.5,
-                    shadowRadius: 2,
-                    width: 36,
                     zIndex: 2
                   }}
                 >
-                  <Text title="2" h4 center />
+                  <Text title="26" subtitle2 center />
                 </View>
-
                 <View
                   style={{
-                    alignSelf: "center",
                     borderColor: Theme.color.secondary,
                     borderRadius: Theme.padding.p20,
                     borderWidth: 1,
                     height: Theme.padding.p02,
-                    marginLeft: Theme.padding.p06,
-                    width: 60
+                    marginLeft: Theme.padding.p04,
+                    width: Theme.padding.p15,
+                    backgroundColor: Theme.color.background
                   }}
                 >
                   <View
@@ -180,6 +174,13 @@ class Component extends React.PureComponent<Props> {
                         ? "cancel"
                         : "close"
                     }
+                    iconColor={
+                      item.date.isSame(moment(), "day")
+                        ? Theme.color.success
+                        : item.date > moment()
+                        ? Theme.color.secondary
+                        : Theme.color.danger
+                    }
                     onPress={() => undefined}
                     neutral
                   />
@@ -187,8 +188,8 @@ class Component extends React.PureComponent<Props> {
                     style={{
                       borderTopColor: Theme.color.text,
                       borderTopWidth: 2,
-                      margin: 4,
-                      width: 60
+                      margin: Theme.padding.p01,
+                      width: Theme.padding.p15
                     }}
                   >
                     <Text title={item.date.format("MMM DD")} center />
