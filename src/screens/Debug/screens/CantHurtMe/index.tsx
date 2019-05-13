@@ -32,6 +32,7 @@ class Component extends React.PureComponent<Props> {
     card: {
       backgroundColor: Theme.color.background,
       elevation: 1,
+      zIndex: 1,
       margin: Theme.padding.p02,
       padding: Theme.padding.p04,
       shadowColor: Theme.color.dark,
@@ -93,13 +94,61 @@ class Component extends React.PureComponent<Props> {
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <View style={this.styles.card}>
               <Image
                 source={this.image}
                 resizeMode="contain"
-                style={{ height: 50, width: 50 }}
+                style={{
+                  height: 60,
+                  width: 60,
+                  justifyContent: "center",
+                  alignSelf: "center"
+                }}
               />
-              <Text title="email" />
+
+              <View style={{ flexDirection: "row" }}>
+                <View
+                  style={{
+                    position: "absolute",
+                    bottom: -12,
+                    left: -12,
+                    backgroundColor: Theme.color.background,
+                    borderRadius: Theme.padding.p20,
+                    width: 36,
+                    height: 36,
+                    zIndex: 2,
+                    elevation: 2,
+                    justifyContent: "center",
+                    shadowColor: Theme.color.dark,
+                    shadowOffset: { height: Theme.padding.p01, width: 0 },
+                    shadowOpacity: 0.5,
+                    shadowRadius: 2
+                  }}
+                >
+                  <Text title="2" h4 center />
+                </View>
+
+                <View
+                  style={{
+                    alignSelf: "center",
+                    width: 60,
+                    marginLeft: Theme.padding.p06,
+                    height: Theme.padding.p02,
+                    borderRadius: Theme.padding.p20,
+                    borderWidth: 1,
+                    borderColor: Theme.color.secondary
+                  }}
+                >
+                  <View
+                    style={{
+                      width: "50%",
+                      borderRadius: Theme.padding.p20,
+                      backgroundColor: Theme.color.success,
+                      height: "100%"
+                    }}
+                  />
+                </View>
+              </View>
             </View>
             <Button
               icon="settings"
