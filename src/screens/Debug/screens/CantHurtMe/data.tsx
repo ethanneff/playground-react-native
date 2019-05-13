@@ -1,5 +1,6 @@
 interface App {
   goals: Goals;
+  users: Users;
 }
 
 interface Goals {
@@ -7,11 +8,21 @@ interface Goals {
   orderById: string[];
 }
 
+interface Users {
+  byId: { [id: string]: User };
+}
+
+interface User {
+  readonly id: string;
+  readonly email: string;
+  readonly createdAt: number;
+}
+
 interface Goal {
-  id: string;
-  challenge: string;
-  task: string;
-  mission: string;
+  readonly id: string;
+  readonly challenge: string;
+  readonly task: string;
+  readonly mission: string;
 }
 
 export const app: App = {
@@ -64,7 +75,6 @@ export const app: App = {
         task:
           "Identify a competitive situation. Who are you competing against? Earn their respect with excellence. Work harder than you’ve ever worked before. Crush their standards. Take their negativity and use it dominate their task with everything you’ve got."
       },
-
       "bebed7b8-138b-46b8-b4e6-51ef14fc774d": {
         challenge: "Remove the Governor",
         id: "bebed7b8-138b-46b8-b4e6-51ef14fc774d",
@@ -109,5 +119,8 @@ export const app: App = {
       "f78e1fe7-d1d3-4402-8722-b1b37aa5a8bb",
       "f634e684-798a-4191-9596-fa21b98ccb48"
     ]
+  },
+  users: {
+    byId: {}
   }
 };
