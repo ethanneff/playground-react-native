@@ -42,7 +42,7 @@ interface Props {
   right?: boolean;
   lowercase?: boolean;
   // event
-  onPress(): void;
+  onPress?(): void;
 }
 
 export class Button extends React.PureComponent<Props> {
