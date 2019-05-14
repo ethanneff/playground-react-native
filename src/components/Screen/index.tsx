@@ -4,13 +4,6 @@ import { Theme } from "../../utils";
 import { KeyboardAvoid } from "./KeyboardAvoid";
 import { NavBar } from "./NavBar";
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: Theme.color.background,
-    flex: 1
-  }
-});
-
 interface OwnProps {
   style?: ViewStyle;
   title?: string;
@@ -24,6 +17,13 @@ interface OwnProps {
 type Props = OwnProps;
 
 export class Screen extends React.PureComponent<Props> {
+  private readonly styles = StyleSheet.create({
+    container: {
+      backgroundColor: Theme.color.background,
+      flex: 1
+    }
+  });
+
   public render() {
     const {
       title,
@@ -36,7 +36,7 @@ export class Screen extends React.PureComponent<Props> {
       rightIcon
     } = this.props;
     return (
-      <SafeAreaView style={[styles.container, style]}>
+      <SafeAreaView style={[this.styles.container, style]}>
         <NavBar
           title={title}
           leftIcon={leftIcon}
@@ -46,7 +46,7 @@ export class Screen extends React.PureComponent<Props> {
         />
         <KeyboardAvoid
           scrollEnabled={!disableScroll}
-          style={[styles.container, style]}
+          style={[this.styles.container, style]}
         >
           {children}
         </KeyboardAvoid>
