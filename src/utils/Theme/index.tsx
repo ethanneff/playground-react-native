@@ -113,10 +113,15 @@ const fontSize = {
   }
 };
 
+const sizing = {
+  borderRadius: padding.p04
+};
+
 export const Theme = {
   color,
   fontSize,
   fontWeight,
+  sizing,
   padding
 };
 
