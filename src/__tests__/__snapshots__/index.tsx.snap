@@ -247,21 +247,16 @@ exports[`Launcher Container renders correctly 1`] = `
                 style={
                   Object {
                     "backgroundColor": "hsl(0, 100%, 100%)",
+                    "borderColor": "hsl(208, 7%, 46%)",
                     "borderRadius": 80,
+                    "borderWidth": 1,
                     "bottom": -12,
                     "elevation": 2,
-                    "height": 36,
+                    "height": 32,
                     "justifyContent": "center",
                     "left": -12,
                     "position": "absolute",
-                    "shadowColor": "hsl(210, 10%, 23%)",
-                    "shadowOffset": Object {
-                      "height": 4,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.5,
-                    "shadowRadius": 2,
-                    "width": 36,
+                    "width": 32,
                     "zIndex": 2,
                   }
                 }
@@ -270,9 +265,9 @@ exports[`Launcher Container renders correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "fontSize": 17,
-                        "fontWeight": "300",
-                        "letterSpacing": 0.25,
+                        "fontSize": 14,
+                        "fontWeight": "600",
+                        "letterSpacing": 0.1,
                       },
                       Object {
                         "textAlign": "center",
@@ -282,18 +277,18 @@ exports[`Launcher Container renders correctly 1`] = `
                     ]
                   }
                 >
-                  2
+                  26
                 </Text>
               </View>
               <View
                 style={
                   Object {
-                    "alignSelf": "center",
+                    "backgroundColor": "hsl(0, 100%, 100%)",
                     "borderColor": "hsl(208, 7%, 46%)",
                     "borderRadius": 80,
                     "borderWidth": 1,
                     "height": 8,
-                    "marginLeft": 24,
+                    "marginLeft": 16,
                     "width": 60,
                   }
                 }
@@ -405,73 +400,73 @@ exports[`Launcher Container renders correctly 1`] = `
           data={
             Array [
               Object {
-                "date": "2019-05-15T14:52:36.441Z",
+                "date": "2019-05-15T21:52:10.282Z",
               },
               Object {
-                "date": "2019-05-14T14:52:36.441Z",
+                "date": "2019-05-14T21:52:10.283Z",
               },
               Object {
-                "date": "2019-05-13T14:52:36.441Z",
+                "date": "2019-05-13T21:52:10.283Z",
               },
               Object {
-                "date": "2019-05-12T14:52:36.441Z",
+                "date": "2019-05-12T21:52:10.283Z",
               },
               Object {
-                "date": "2019-05-11T14:52:36.441Z",
+                "date": "2019-05-11T21:52:10.283Z",
               },
               Object {
-                "date": "2019-05-10T14:52:36.441Z",
+                "date": "2019-05-10T21:52:10.283Z",
               },
               Object {
-                "date": "2019-05-09T14:52:36.441Z",
+                "date": "2019-05-09T21:52:10.283Z",
               },
               Object {
-                "date": "2019-05-08T14:52:36.441Z",
+                "date": "2019-05-08T21:52:10.283Z",
               },
               Object {
-                "date": "2019-05-07T14:52:36.441Z",
+                "date": "2019-05-07T21:52:10.283Z",
               },
               Object {
-                "date": "2019-05-06T14:52:36.441Z",
+                "date": "2019-05-06T21:52:10.283Z",
               },
               Object {
-                "date": "2019-05-05T14:52:36.441Z",
+                "date": "2019-05-05T21:52:10.283Z",
               },
               Object {
-                "date": "2019-05-04T14:52:36.441Z",
+                "date": "2019-05-04T21:52:10.283Z",
               },
               Object {
-                "date": "2019-05-03T14:52:36.441Z",
+                "date": "2019-05-03T21:52:10.283Z",
               },
               Object {
-                "date": "2019-05-02T14:52:36.442Z",
+                "date": "2019-05-02T21:52:10.283Z",
               },
               Object {
-                "date": "2019-05-01T14:52:36.442Z",
+                "date": "2019-05-01T21:52:10.283Z",
               },
               Object {
-                "date": "2019-04-30T14:52:36.442Z",
+                "date": "2019-04-30T21:52:10.284Z",
               },
               Object {
-                "date": "2019-04-29T14:52:36.442Z",
+                "date": "2019-04-29T21:52:10.284Z",
               },
               Object {
-                "date": "2019-04-28T14:52:36.442Z",
+                "date": "2019-04-28T21:52:10.284Z",
               },
               Object {
-                "date": "2019-04-27T14:52:36.442Z",
+                "date": "2019-04-27T21:52:10.284Z",
               },
               Object {
-                "date": "2019-04-26T14:52:36.442Z",
+                "date": "2019-04-26T21:52:10.284Z",
               },
               Object {
-                "date": "2019-04-25T14:52:36.442Z",
+                "date": "2019-04-25T21:52:10.284Z",
               },
               Object {
-                "date": "2019-04-24T14:52:36.442Z",
+                "date": "2019-04-24T21:52:10.284Z",
               },
               Object {
-                "date": "2019-04-23T14:52:36.442Z",
+                "date": "2019-04-23T21:52:10.284Z",
               },
             ]
           }
@@ -562,20 +557,7 @@ exports[`Launcher Container renders correctly 1`] = `
                         undefined,
                         Array [
                           undefined,
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "hsl(211, 100%, 50%)",
-                            },
-                            Object {
-                              "color": "hsl(0, 0%, 0%)",
-                            },
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                          ],
+                          false,
                         ],
                       ]
                     }
@@ -585,27 +567,14 @@ exports[`Launcher Container renders correctly 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "hsl(210, 10%, 23%)",
+                            "color": "hsl(208, 7%, 46%)",
                             "fontSize": 16,
                           },
                           Array [
                             undefined,
                             Array [
                               undefined,
-                              Array [
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "hsl(211, 100%, 50%)",
-                                },
-                                Object {
-                                  "color": "hsl(0, 0%, 0%)",
-                                },
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                              ],
+                              false,
                             ],
                           ],
                           Object {
@@ -701,20 +670,7 @@ exports[`Launcher Container renders correctly 1`] = `
                         undefined,
                         Array [
                           undefined,
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "hsl(211, 100%, 50%)",
-                            },
-                            Object {
-                              "color": "hsl(0, 0%, 0%)",
-                            },
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                          ],
+                          false,
                         ],
                       ]
                     }
@@ -724,27 +680,14 @@ exports[`Launcher Container renders correctly 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "hsl(210, 10%, 23%)",
+                            "color": "hsl(208, 7%, 46%)",
                             "fontSize": 16,
                           },
                           Array [
                             undefined,
                             Array [
                               undefined,
-                              Array [
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "hsl(211, 100%, 50%)",
-                                },
-                                Object {
-                                  "color": "hsl(0, 0%, 0%)",
-                                },
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                              ],
+                              false,
                             ],
                           ],
                           Object {
@@ -840,20 +783,7 @@ exports[`Launcher Container renders correctly 1`] = `
                         undefined,
                         Array [
                           undefined,
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "hsl(211, 100%, 50%)",
-                            },
-                            Object {
-                              "color": "hsl(0, 0%, 0%)",
-                            },
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                          ],
+                          false,
                         ],
                       ]
                     }
@@ -863,27 +793,14 @@ exports[`Launcher Container renders correctly 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "hsl(210, 10%, 23%)",
+                            "color": "hsl(134, 61%, 41%)",
                             "fontSize": 16,
                           },
                           Array [
                             undefined,
                             Array [
                               undefined,
-                              Array [
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "hsl(211, 100%, 50%)",
-                                },
-                                Object {
-                                  "color": "hsl(0, 0%, 0%)",
-                                },
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                              ],
+                              false,
                             ],
                           ],
                           Object {
@@ -979,20 +896,7 @@ exports[`Launcher Container renders correctly 1`] = `
                         undefined,
                         Array [
                           undefined,
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "hsl(211, 100%, 50%)",
-                            },
-                            Object {
-                              "color": "hsl(0, 0%, 0%)",
-                            },
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                          ],
+                          false,
                         ],
                       ]
                     }
@@ -1002,27 +906,14 @@ exports[`Launcher Container renders correctly 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "hsl(210, 10%, 23%)",
+                            "color": "hsl(354, 70%, 54%)",
                             "fontSize": 16,
                           },
                           Array [
                             undefined,
                             Array [
                               undefined,
-                              Array [
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "hsl(211, 100%, 50%)",
-                                },
-                                Object {
-                                  "color": "hsl(0, 0%, 0%)",
-                                },
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                              ],
+                              false,
                             ],
                           ],
                           Object {
@@ -1118,20 +1009,7 @@ exports[`Launcher Container renders correctly 1`] = `
                         undefined,
                         Array [
                           undefined,
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "hsl(211, 100%, 50%)",
-                            },
-                            Object {
-                              "color": "hsl(0, 0%, 0%)",
-                            },
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                          ],
+                          false,
                         ],
                       ]
                     }
@@ -1141,27 +1019,14 @@ exports[`Launcher Container renders correctly 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "hsl(210, 10%, 23%)",
+                            "color": "hsl(354, 70%, 54%)",
                             "fontSize": 16,
                           },
                           Array [
                             undefined,
                             Array [
                               undefined,
-                              Array [
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "hsl(211, 100%, 50%)",
-                                },
-                                Object {
-                                  "color": "hsl(0, 0%, 0%)",
-                                },
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                              ],
+                              false,
                             ],
                           ],
                           Object {
@@ -1257,20 +1122,7 @@ exports[`Launcher Container renders correctly 1`] = `
                         undefined,
                         Array [
                           undefined,
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "hsl(211, 100%, 50%)",
-                            },
-                            Object {
-                              "color": "hsl(0, 0%, 0%)",
-                            },
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                          ],
+                          false,
                         ],
                       ]
                     }
@@ -1280,27 +1132,14 @@ exports[`Launcher Container renders correctly 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "hsl(210, 10%, 23%)",
+                            "color": "hsl(354, 70%, 54%)",
                             "fontSize": 16,
                           },
                           Array [
                             undefined,
                             Array [
                               undefined,
-                              Array [
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "hsl(211, 100%, 50%)",
-                                },
-                                Object {
-                                  "color": "hsl(0, 0%, 0%)",
-                                },
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                              ],
+                              false,
                             ],
                           ],
                           Object {
@@ -1396,20 +1235,7 @@ exports[`Launcher Container renders correctly 1`] = `
                         undefined,
                         Array [
                           undefined,
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "hsl(211, 100%, 50%)",
-                            },
-                            Object {
-                              "color": "hsl(0, 0%, 0%)",
-                            },
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                          ],
+                          false,
                         ],
                       ]
                     }
@@ -1419,27 +1245,14 @@ exports[`Launcher Container renders correctly 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "hsl(210, 10%, 23%)",
+                            "color": "hsl(354, 70%, 54%)",
                             "fontSize": 16,
                           },
                           Array [
                             undefined,
                             Array [
                               undefined,
-                              Array [
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "hsl(211, 100%, 50%)",
-                                },
-                                Object {
-                                  "color": "hsl(0, 0%, 0%)",
-                                },
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                              ],
+                              false,
                             ],
                           ],
                           Object {
@@ -1535,20 +1348,7 @@ exports[`Launcher Container renders correctly 1`] = `
                         undefined,
                         Array [
                           undefined,
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "hsl(211, 100%, 50%)",
-                            },
-                            Object {
-                              "color": "hsl(0, 0%, 0%)",
-                            },
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                          ],
+                          false,
                         ],
                       ]
                     }
@@ -1558,27 +1358,14 @@ exports[`Launcher Container renders correctly 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "hsl(210, 10%, 23%)",
+                            "color": "hsl(354, 70%, 54%)",
                             "fontSize": 16,
                           },
                           Array [
                             undefined,
                             Array [
                               undefined,
-                              Array [
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "hsl(211, 100%, 50%)",
-                                },
-                                Object {
-                                  "color": "hsl(0, 0%, 0%)",
-                                },
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                              ],
+                              false,
                             ],
                           ],
                           Object {
@@ -1674,20 +1461,7 @@ exports[`Launcher Container renders correctly 1`] = `
                         undefined,
                         Array [
                           undefined,
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "hsl(211, 100%, 50%)",
-                            },
-                            Object {
-                              "color": "hsl(0, 0%, 0%)",
-                            },
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                          ],
+                          false,
                         ],
                       ]
                     }
@@ -1697,27 +1471,14 @@ exports[`Launcher Container renders correctly 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "hsl(210, 10%, 23%)",
+                            "color": "hsl(354, 70%, 54%)",
                             "fontSize": 16,
                           },
                           Array [
                             undefined,
                             Array [
                               undefined,
-                              Array [
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "hsl(211, 100%, 50%)",
-                                },
-                                Object {
-                                  "color": "hsl(0, 0%, 0%)",
-                                },
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                              ],
+                              false,
                             ],
                           ],
                           Object {
@@ -1813,20 +1574,7 @@ exports[`Launcher Container renders correctly 1`] = `
                         undefined,
                         Array [
                           undefined,
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "color": "hsl(211, 100%, 50%)",
-                            },
-                            Object {
-                              "color": "hsl(0, 0%, 0%)",
-                            },
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                            undefined,
-                          ],
+                          false,
                         ],
                       ]
                     }
@@ -1836,27 +1584,14 @@ exports[`Launcher Container renders correctly 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "hsl(210, 10%, 23%)",
+                            "color": "hsl(354, 70%, 54%)",
                             "fontSize": 16,
                           },
                           Array [
                             undefined,
                             Array [
                               undefined,
-                              Array [
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "hsl(211, 100%, 50%)",
-                                },
-                                Object {
-                                  "color": "hsl(0, 0%, 0%)",
-                                },
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                                undefined,
-                              ],
+                              false,
                             ],
                           ],
                           Object {

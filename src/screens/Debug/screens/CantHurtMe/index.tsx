@@ -50,7 +50,7 @@ class Component extends React.PureComponent<Props> {
       padding: Theme.padding.p04
     }
   });
-  public readonly image = require("../../../../assets/line-chart.png");
+  public readonly image = require("../../../../assets/placeholder.png");
 
   public renderItem = (props: { item: string; index: number }) => {
     const { item, index } = props;
@@ -97,45 +97,32 @@ class Component extends React.PureComponent<Props> {
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
-            <View style={this.styles.card}>
+            <View>
               <Image
                 source={this.image}
                 resizeMode="contain"
                 style={{
+                  borderRadius: Theme.padding.p02,
+                  borderColor: Theme.color.secondary,
+                  borderWidth: 1,
                   alignSelf: "center",
-                  height: Theme.padding.p15,
+                  height: Theme.padding.p18,
                   justifyContent: "center",
-                  width: Theme.padding.p15
+                  width: Theme.padding.p18
                 }}
               />
-
-              <View style={{ flexDirection: "row" }}>
-                <View
-                  style={{
-                    backgroundColor: Theme.color.background,
-                    borderRadius: Theme.padding.p20,
-                    borderWidth: 1,
-                    borderColor: Theme.color.secondary,
-                    bottom: -Theme.padding.p03,
-                    elevation: 2,
-                    height: Theme.padding.p08,
-                    width: Theme.padding.p08,
-                    justifyContent: "center",
-                    left: -Theme.padding.p03,
-                    position: "absolute",
-                    zIndex: 2
-                  }}
-                >
-                  <Text title="26" subtitle2 center />
-                </View>
+              <View>
                 <View
                   style={{
                     borderColor: Theme.color.secondary,
                     borderRadius: Theme.padding.p20,
+                    borderTopLeftRadius: 0,
+                    borderBottomLeftRadius: 0,
                     borderWidth: 1,
-                    height: Theme.padding.p02,
-                    marginLeft: Theme.padding.p04,
-                    width: Theme.padding.p15,
+                    marginTop: -Theme.padding.p01,
+                    marginLeft: 30,
+                    height: Theme.padding.p04,
+                    width: Theme.padding.p16,
                     backgroundColor: Theme.color.background
                   }}
                 >
@@ -143,10 +130,29 @@ class Component extends React.PureComponent<Props> {
                     style={{
                       backgroundColor: Theme.color.success,
                       borderRadius: Theme.padding.p20,
+                      borderTopLeftRadius: 0,
+                      borderBottomLeftRadius: 0,
                       height: "100%",
-                      width: "50%"
+                      width: "5%"
                     }}
                   />
+                </View>
+                <View
+                  style={{
+                    backgroundColor: Theme.color.background,
+                    borderRadius: Theme.padding.p20,
+                    borderWidth: 1,
+                    borderColor: Theme.color.secondary,
+                    bottom: -Theme.padding.p02,
+                    elevation: 2,
+                    height: Theme.padding.p08,
+                    width: Theme.padding.p08,
+                    justifyContent: "center",
+                    position: "absolute",
+                    zIndex: 2
+                  }}
+                >
+                  <Text title="1" subtitle2 center />
                 </View>
               </View>
             </View>
