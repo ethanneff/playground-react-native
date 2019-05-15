@@ -411,73 +411,73 @@ exports[`renders correctly 1`] = `
           data={
             Array [
               Object {
-                "date": "2019-05-16T18:09:15.245Z",
+                "date": "2019-05-17T15:42:50.066Z",
               },
               Object {
-                "date": "2019-05-15T18:09:15.245Z",
+                "date": "2019-05-16T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-14T18:09:15.245Z",
+                "date": "2019-05-15T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-13T18:09:15.245Z",
+                "date": "2019-05-14T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-12T18:09:15.245Z",
+                "date": "2019-05-13T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-11T18:09:15.245Z",
+                "date": "2019-05-12T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-10T18:09:15.245Z",
+                "date": "2019-05-11T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-09T18:09:15.245Z",
+                "date": "2019-05-10T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-08T18:09:15.245Z",
+                "date": "2019-05-09T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-07T18:09:15.245Z",
+                "date": "2019-05-08T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-06T18:09:15.245Z",
+                "date": "2019-05-07T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-05T18:09:15.245Z",
+                "date": "2019-05-06T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-04T18:09:15.245Z",
+                "date": "2019-05-05T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-03T18:09:15.246Z",
+                "date": "2019-05-04T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-02T18:09:15.246Z",
+                "date": "2019-05-03T15:42:50.067Z",
               },
               Object {
-                "date": "2019-05-01T18:09:15.246Z",
+                "date": "2019-05-02T15:42:50.067Z",
               },
               Object {
-                "date": "2019-04-30T18:09:15.246Z",
+                "date": "2019-05-01T15:42:50.067Z",
               },
               Object {
-                "date": "2019-04-29T18:09:15.246Z",
+                "date": "2019-04-30T15:42:50.067Z",
               },
               Object {
-                "date": "2019-04-28T18:09:15.246Z",
+                "date": "2019-04-29T15:42:50.067Z",
               },
               Object {
-                "date": "2019-04-27T18:09:15.246Z",
+                "date": "2019-04-28T15:42:50.067Z",
               },
               Object {
-                "date": "2019-04-26T18:09:15.246Z",
+                "date": "2019-04-27T15:42:50.068Z",
               },
               Object {
-                "date": "2019-04-25T18:09:15.246Z",
+                "date": "2019-04-26T15:42:50.068Z",
               },
               Object {
-                "date": "2019-04-24T18:09:15.246Z",
+                "date": "2019-04-25T15:42:50.068Z",
               },
             ]
           }
@@ -519,6 +519,119 @@ exports[`renders correctly 1`] = `
           windowSize={21}
         >
           <View>
+            <View
+              onLayout={[Function]}
+              style={
+                Array [
+                  Object {
+                    "flexDirection": "row-reverse",
+                  },
+                  Object {
+                    "transform": Array [
+                      Object {
+                        "scaleX": -1,
+                      },
+                    ],
+                  },
+                ]
+              }
+            >
+              <View>
+                <View
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "borderColor": "transparent",
+                      "borderRadius": 4,
+                      "borderWidth": 1,
+                      "color": "hsl(211, 100%, 50%)",
+                      "flexDirection": "row",
+                      "height": 36,
+                      "justifyContent": "center",
+                      "opacity": 1,
+                      "paddingHorizontal": 16,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        undefined,
+                        Array [
+                          undefined,
+                          false,
+                        ],
+                      ]
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      style={
+                        Array [
+                          Object {
+                            "color": "hsl(208, 7%, 46%)",
+                            "fontSize": 16,
+                          },
+                          Array [
+                            undefined,
+                            Array [
+                              undefined,
+                              false,
+                            ],
+                          ],
+                          Object {
+                            "fontFamily": "Material Design Icons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      
+                    </Text>
+                  </View>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "borderTopColor": "hsl(0, 0%, 0%)",
+                      "borderTopWidth": 2,
+                      "margin": 4,
+                      "width": 60,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 14,
+                          "fontWeight": "300",
+                          "letterSpacing": 0.25,
+                        },
+                        Object {
+                          "textAlign": "center",
+                        },
+                        undefined,
+                        undefined,
+                      ]
+                    }
+                  >
+                    May 17
+                  </Text>
+                </View>
+              </View>
+            </View>
             <View
               onLayout={[Function]}
               style={
@@ -691,7 +804,7 @@ exports[`renders correctly 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "hsl(208, 7%, 46%)",
+                            "color": "hsl(134, 61%, 41%)",
                             "fontSize": 16,
                           },
                           Array [
@@ -710,7 +823,7 @@ exports[`renders correctly 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                 </View>
@@ -804,7 +917,7 @@ exports[`renders correctly 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "hsl(134, 61%, 41%)",
+                            "color": "hsl(354, 70%, 54%)",
                             "fontSize": 16,
                           },
                           Array [
@@ -823,7 +936,7 @@ exports[`renders correctly 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                 </View>
@@ -1532,119 +1645,6 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     May 08
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View
-              onLayout={[Function]}
-              style={
-                Array [
-                  Object {
-                    "flexDirection": "row-reverse",
-                  },
-                  Object {
-                    "transform": Array [
-                      Object {
-                        "scaleX": -1,
-                      },
-                    ],
-                  },
-                ]
-              }
-            >
-              <View>
-                <View
-                  accessible={true}
-                  isTVSelectable={true}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "transparent",
-                      "borderColor": "transparent",
-                      "borderRadius": 4,
-                      "borderWidth": 1,
-                      "color": "hsl(211, 100%, 50%)",
-                      "flexDirection": "row",
-                      "height": 36,
-                      "justifyContent": "center",
-                      "opacity": 1,
-                      "paddingHorizontal": 16,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Array [
-                        undefined,
-                        Array [
-                          undefined,
-                          false,
-                        ],
-                      ]
-                    }
-                  >
-                    <Text
-                      allowFontScaling={false}
-                      style={
-                        Array [
-                          Object {
-                            "color": "hsl(354, 70%, 54%)",
-                            "fontSize": 16,
-                          },
-                          Array [
-                            undefined,
-                            Array [
-                              undefined,
-                              false,
-                            ],
-                          ],
-                          Object {
-                            "fontFamily": "Material Design Icons",
-                            "fontStyle": "normal",
-                            "fontWeight": "normal",
-                          },
-                          Object {},
-                        ]
-                      }
-                    >
-                      
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "borderTopColor": "hsl(0, 0%, 0%)",
-                      "borderTopWidth": 2,
-                      "margin": 4,
-                      "width": 60,
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "fontSize": 14,
-                          "fontWeight": "300",
-                          "letterSpacing": 0.25,
-                        },
-                        Object {
-                          "textAlign": "center",
-                        },
-                        undefined,
-                        undefined,
-                      ]
-                    }
-                  >
-                    May 07
                   </Text>
                 </View>
               </View>

@@ -23,33 +23,43 @@ interface Props {
 
 class Dialog extends React.PureComponent<Props> {
   private readonly styles = StyleSheet.create({
-    overlay: {
-      flex: 1,
-      flexDirection: "column",
+    alert: {
+      display: "none"
+    },
+    buttonGroup: {
+      flexDirection: "row",
       justifyContent: "center",
-      alignItems: "center",
-      padding: Theme.padding.p08,
-      backgroundColor: colorWithOpacity(Theme.color.text)
+      paddingTop: Theme.padding.p13
+    },
+    cancel: {
+      flex: 1,
+      marginRight: Theme.padding.p02
+    },
+    confirm: {
+      flex: 1,
+      marginLeft: Theme.padding.p02
     },
     modal: {
       backgroundColor: Theme.color.background,
       borderRadius: Theme.sizing.borderRadius,
-      paddingHorizontal: Theme.padding.p09,
-      paddingBottom: Theme.padding.p09,
-      paddingTop: Theme.padding.p13,
       marginHorizontal: Theme.padding.p15,
       maxWidth: 500,
+      paddingBottom: Theme.padding.p09,
+      paddingHorizontal: Theme.padding.p09,
+      paddingTop: Theme.padding.p13,
       width: "100%"
     },
-    buttonGroup: {
-      paddingTop: Theme.padding.p13,
-      flexDirection: "row",
-      justifyContent: "center"
+    overlay: {
+      alignItems: "center",
+      backgroundColor: colorWithOpacity(Theme.color.text),
+      flex: 1,
+      flexDirection: "column",
+      justifyContent: "center",
+      padding: Theme.padding.p08
     },
-    alert: { display: "none" },
-    title: { paddingBottom: Theme.padding.p03 },
-    cancel: { flex: 1, marginRight: Theme.padding.p02 },
-    confirm: { flex: 1, marginLeft: Theme.padding.p02 }
+    title: {
+      paddingBottom: Theme.padding.p03
+    }
   });
 
   private readonly alertTimeoutTime = 3000;

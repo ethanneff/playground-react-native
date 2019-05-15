@@ -121,8 +121,8 @@ export const Theme = {
   color,
   fontSize,
   fontWeight,
-  sizing,
-  padding
+  padding,
+  sizing
 };
 
 export const colorWithOpacity = (colorCode: string, opacity = 0.5) => {

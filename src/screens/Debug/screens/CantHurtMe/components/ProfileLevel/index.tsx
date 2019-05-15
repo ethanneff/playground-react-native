@@ -27,46 +27,46 @@ type Props = OwnProps & StateProps;
 class Component extends React.PureComponent<Props> {
   private readonly styles = StyleSheet.create({
     imageContainer: {
-      borderRadius: Theme.padding.p02,
-      borderColor: Theme.color.secondary,
-      borderWidth: 1,
       alignSelf: "center",
+      borderColor: Theme.color.secondary,
+      borderRadius: Theme.padding.p02,
+      borderWidth: 1,
       height: Theme.padding.p18,
       justifyContent: "center",
-      width: Theme.padding.p18,
-      resizeMode: "contain"
-    },
-    progressContainer: {
-      borderColor: Theme.color.secondary,
-      borderRadius: Theme.padding.p20,
-      borderTopLeftRadius: 0,
-      borderBottomLeftRadius: 0,
-      borderWidth: 1,
-      marginTop: -Theme.padding.p01,
-      marginLeft: 30,
-      height: Theme.padding.p04,
-      width: Theme.padding.p16,
-      backgroundColor: Theme.color.background
-    },
-    progressBar: {
-      backgroundColor: Theme.color.success,
-      borderRadius: Theme.padding.p20,
-      borderTopLeftRadius: 0,
-      borderBottomLeftRadius: 0,
-      height: "100%"
+      resizeMode: "contain",
+      width: Theme.padding.p18
     },
     levelContainer: {
       backgroundColor: Theme.color.background,
+      borderColor: Theme.color.secondary,
       borderRadius: Theme.padding.p20,
       borderWidth: 1,
-      borderColor: Theme.color.secondary,
       bottom: -Theme.padding.p02,
       elevation: 2,
       height: Theme.padding.p08,
-      width: Theme.padding.p08,
       justifyContent: "center",
       position: "absolute",
+      width: Theme.padding.p08,
       zIndex: 2
+    },
+    progressBar: {
+      backgroundColor: Theme.color.success,
+      borderBottomLeftRadius: 0,
+      borderRadius: Theme.padding.p20,
+      borderTopLeftRadius: 0,
+      height: "100%"
+    },
+    progressContainer: {
+      backgroundColor: Theme.color.background,
+      borderBottomLeftRadius: 0,
+      borderColor: Theme.color.secondary,
+      borderRadius: Theme.padding.p20,
+      borderTopLeftRadius: 0,
+      borderWidth: 1,
+      height: Theme.padding.p04,
+      marginLeft: 30,
+      marginTop: -Theme.padding.p01,
+      width: Theme.padding.p16
     }
   });
 
