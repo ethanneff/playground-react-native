@@ -70,7 +70,7 @@
     "@types/react-test-renderer": "16.8.1",
     "@types/uuid": "3.4.4",
     "babel-jest": "24.8.0",
-    "codecov": "3.4.0",
+    "codecov": "3.5.0",
     "husky": "2.3.0",
     "jest": "24.7.1",
     "lint-staged": "8.1.6",
