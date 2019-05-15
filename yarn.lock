@@ -11755,10 +11755,10 @@ react-native-vector-icons@6.4.2:
     prop-types "^15.6.2"
     yargs "^13.2.2"
 
-react-native-version-number@0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/react-native-version-number/-/react-native-version-number-0.3.5.tgz#90f1b49bcb5e72f801bdc22ed6bad6c7cbbc2222"
-  integrity sha512-iANHQrYyDSe5Yts2qVjAjFXpK5EHkJGSFAqnVa3Bu/UKBRUjhnMqvskc3EH+IIvvJH9N2Qpidm1KCq42BWa6jQ==
+react-native-version-number@0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/react-native-version-number/-/react-native-version-number-0.3.6.tgz#dd8b1435fc217df0a166d7e4a61fdc993f3e7437"
+  integrity sha512-TdyXiK90NiwmSbmAUlUBOV6WI1QGoqtvZZzI5zQY4fKl67B3ZrZn/h+Wy/OYIKKFMfePSiyfeIs8LtHGOZ/NgA==
 
 react-native-web@0.11.2:
   version "0.11.2"
