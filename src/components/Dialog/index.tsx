@@ -100,7 +100,11 @@ class Dialog extends React.PureComponent<Props> {
     const confirmButtonStyle = [twoButtons ? this.styles.confirm : undefined];
 
     return (
-      <Modal transparent={true} visible={visible}>
+      <Modal
+        transparent={true}
+        visible={visible}
+        onRequestClose={onCancelButtonPress}
+      >
         <TouchableWithoutFeedback
           testID={testID}
           onPress={this.onBackgroundPress}
