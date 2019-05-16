@@ -165,6 +165,7 @@ exports[`Dialog component renders correctly with defaults and visible 1`] = `
 exports[`Dialog component renders correctly with props 1`] = `
 <Modal
   hardwareAccelerated={false}
+  onRequestClose={[MockFunction]}
   transparent={true}
   visible={true}
 >
@@ -381,6 +382,7 @@ exports[`Dialog component renders correctly with props 1`] = `
 exports[`Dialog component renders dialog to show double buttons beside each other 1`] = `
 <Modal
   hardwareAccelerated={false}
+  onRequestClose={[Function]}
   transparent={true}
   visible={true}
 >
@@ -581,6 +583,7 @@ exports[`Dialog component renders dialog to show double buttons beside each othe
 exports[`Dialog component renders dialog to show single button in center 1`] = `
 <Modal
   hardwareAccelerated={false}
+  onRequestClose={[Function]}
   transparent={true}
   visible={true}
 >
