@@ -1686,10 +1686,10 @@
     "@types/prop-types" "*"
     "@types/react" "*"
 
-"@types/react-native@0.57.56":
-  version "0.57.56"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.56.tgz#433c54f371a0e98297863c652714d262f66f7101"
-  integrity sha512-Pakr71mP9GO7FAN9/OFBt7kq5tABNajg0M7EJj23ezUtstwxnhxm3kP3Tz030PBIiwOpdyDShb9Ku5xyLqs17Q==
+"@types/react-native@0.57.57":
+  version "0.57.57"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.57.tgz#4b59068acf6e542ac8e1e02e8a639b47e3e02c02"
+  integrity sha512-OZyBlMyMeU3gXAmc1nnJhlWGihWUOiVR5Tj0y4TAA0rkKKHJwuNPPba6aaFmEaNcoZ9ejc3G30H+dneDOqICdg==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -11728,10 +11728,10 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-native-device-info@1.6.2:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-1.6.2.tgz#3c867e7be55f59636ebc91cb28e5151dfe5ed352"
-  integrity sha512-Ihhqg/rTeFPkMKnyXRi1rg0TDfTaSmyNS6h1ckKORCb3w5jAtZkqmuJ5zezHFsXr0WCJz1pfmfwUZs8YAF7dcA==
+react-native-device-info@1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-1.7.0.tgz#69809355db89d37cf1582b7a658876ce0cffc6b0"
+  integrity sha512-Ci3YPtMt7+AFYGdZ+pOSwmHw2Qt7IadfFupHMLvZGRpnwgw+ZdSuKrbv8lDGm6RKqEz7f1rXW31qqsuItSvahA==
 
 react-native-firebase@5.3.1:
   version "5.3.1"
