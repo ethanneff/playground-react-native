@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Modal,
+  Animated,
   StyleSheet,
   TouchableWithoutFeedback,
   View
@@ -10,15 +10,14 @@ import { colorWithOpacity, Theme } from "../../utils";
 
 interface Props {
   testID?: string;
-  visible?: boolean;
   title: string;
   message?: string;
   alert?: boolean;
-  backgroundClose?: boolean;
   confirmButtonText?: string;
   cancelButtonText?: string;
   onConfirmButtonPress?(): void;
   onCancelButtonPress?(): void;
+  onBackgroundPress?(): void;
 }
 
 class Dialog extends React.PureComponent<Props> {
@@ -26,7 +25,7 @@ class Dialog extends React.PureComponent<Props> {
     alert: {
       display: "none"
     },
-    buttonGroup: {
+    buttonContainer: {
       flexDirection: "row",
       justifyContent: "center",
       paddingTop: Theme.padding.p13
@@ -38,6 +37,15 @@ class Dialog extends React.PureComponent<Props> {
     confirm: {
       flex: 1,
       marginLeft: Theme.padding.p02
+    },
+    container: {
+      bottom: 0,
+      elevation: 100,
+      left: 0,
+      position: "absolute",
+      right: 0,
+      top: 0,
+      zIndex: 100
     },
     modal: {
       backgroundColor: Theme.color.background,
@@ -61,17 +69,16 @@ class Dialog extends React.PureComponent<Props> {
       paddingBottom: Theme.padding.p03
     }
   });
+  private readonly fade = new Animated.Value(0);
+  private readonly fadeDuration = 200;
 
   private readonly alertTimeoutTime = 3000;
   private alertTimeout?: number;
 
-  public componentDidUpdate(prevProps: Props) {
-    const { alert, visible } = this.props;
-    if (prevProps.visible !== visible && alert && visible) {
-      this.disappearAlert();
-    }
-    if (prevProps.visible !== visible && !visible) {
-      this.clearTimeouts();
+  public componentDidMount() {
+    this.animate(1);
+    if (this.props.alert) {
+      this.alert();
     }
   }
 
@@ -87,12 +94,12 @@ class Dialog extends React.PureComponent<Props> {
       cancelButtonText = "cancel",
       message,
       title,
-      visible,
       alert,
       testID
     } = this.props;
+    const opacity = this.fade;
     const buttonStyles = [
-      this.styles.buttonGroup,
+      this.styles.buttonContainer,
       alert ? this.styles.alert : undefined
     ];
     const twoButtons = !!onConfirmButtonPress && !!onCancelButtonPress;
@@ -100,11 +107,7 @@ class Dialog extends React.PureComponent<Props> {
     const confirmButtonStyle = [twoButtons ? this.styles.confirm : undefined];
 
     return (
-      <Modal
-        transparent={true}
-        visible={visible}
-        onRequestClose={onCancelButtonPress}
-      >
+      <Animated.View style={[this.styles.container, { opacity }]}>
         <TouchableWithoutFeedback
           testID={testID}
           onPress={this.onBackgroundPress}
@@ -118,7 +121,7 @@ class Dialog extends React.PureComponent<Props> {
                   <Button
                     hidden={!!!onCancelButtonPress}
                     title={cancelButtonText}
-                    onPress={onCancelButtonPress}
+                    onPress={this.onCancelButtonPress}
                     buttonStyle={cancelButtonStyle}
                     half={!twoButtons}
                   />
@@ -135,16 +138,30 @@ class Dialog extends React.PureComponent<Props> {
             </TouchableWithoutFeedback>
           </View>
         </TouchableWithoutFeedback>
-      </Modal>
+      </Animated.View>
     );
   }
 
-  private disappearAlert = () => {
+  private animate = (toValue: number) =>
+    new Promise(resolve => {
+      Animated.timing(this.fade, {
+        duration: this.fadeDuration,
+        toValue
+      }).start(() => resolve());
+    });
+
+  private onCancelButtonPress = async () => {
+    const { onCancelButtonPress } = this.props;
+    await this.animate(0);
+    if (onCancelButtonPress) {
+      onCancelButtonPress();
+    }
+  };
+
+  private alert = () => {
     this.alertTimeout = setTimeout(() => {
-      const { onCancelButtonPress } = this.props;
-      if (onCancelButtonPress) {
-        onCancelButtonPress();
-      }
+      const { onBackgroundPress } = this.props;
+      if (onBackgroundPress) { onBackgroundPress(); }
       this.clearTimeouts();
     }, this.alertTimeoutTime);
   };
@@ -153,11 +170,13 @@ class Dialog extends React.PureComponent<Props> {
     clearTimeout(this.alertTimeout);
   };
 
-  private onBackgroundPress = () => {
-    const { backgroundClose, onCancelButtonPress } = this.props;
-    if (backgroundClose && onCancelButtonPress) {
-      onCancelButtonPress();
+  private onBackgroundPress = async () => {
+    const { onBackgroundPress } = this.props;
+    await this.animate(0);
+    if (onBackgroundPress) {
+      onBackgroundPress();
     }
   };
 }
+
 export default Dialog;
