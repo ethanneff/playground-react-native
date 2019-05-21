@@ -96,9 +96,9 @@ class Component extends React.PureComponent<Props> {
 
 const mapStateToProps = (state: RootState): StateProps => ({
   image: require("../../../../../../assets/placeholder.png"),
-  width: 0.2,
   level: 22,
-  state
+  state,
+  width: 0.2
 });
 
 export const ProfileLevel = connect(mapStateToProps)(Component);
