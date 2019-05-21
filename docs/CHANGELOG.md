@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.1](https://github.com/ethanneff/example/compare/v1.19.0...v1.19.1) (2019-05-21)
+
+
+### Bug Fixes
+
+* update dependencies ([1589b6d](https://github.com/ethanneff/example/commit/1589b6d))
+
 # [1.19.0](https://github.com/ethanneff/example/compare/v1.18.0...v1.19.0) (2019-05-21)
 
 
