@@ -80,12 +80,13 @@ class Component extends React.PureComponent<Props> {
           numColumns={column}
           ListFooterComponent={this.renderFooter}
         />
-        <Dialog
-          title="hello"
-          visible={this.state.settings}
-          backgroundClose
-          onCancelButtonPress={() => this.setState({ settings: false })}
-        />
+        {this.state.settings && (
+          <Dialog
+            title="hello"
+            onBackgroundPress={() => this.setState({ settings: false })}
+            onCancelButtonPress={() => this.setState({ settings: false })}
+          />
+        )}
       </Screen>
     );
   }
