@@ -1,5 +1,29 @@
 # Changelog
 
+# [1.19.0](https://github.com/ethanneff/example/compare/v1.18.0...v1.19.0) (2019-05-21)
+
+
+### Bug Fixes
+
+* add better progress section ([b2b0730](https://github.com/ethanneff/example/commit/b2b0730))
+* clean up progress bar ([2616bdc](https://github.com/ethanneff/example/commit/2616bdc))
+* make button onpress optional ([8ea7185](https://github.com/ethanneff/example/commit/8ea7185))
+* make dialog component unmount ([3f67cf9](https://github.com/ethanneff/example/commit/3f67cf9))
+* make modal component work with web ([98b0527](https://github.com/ethanneff/example/commit/98b0527))
+* move styles to container ([c8c2166](https://github.com/ethanneff/example/commit/c8c2166))
+* prevent modal from getting stuck on android ([c6d9ddf](https://github.com/ethanneff/example/commit/c6d9ddf))
+* sort object keys ([fc023db](https://github.com/ethanneff/example/commit/fc023db))
+* update dependencies ([e945cd1](https://github.com/ethanneff/example/commit/e945cd1))
+* update dependencies ([638c4be](https://github.com/ethanneff/example/commit/638c4be))
+* update dependencies ([0f5ec72](https://github.com/ethanneff/example/commit/0f5ec72))
+
+
+### Features
+
+* add border radius to theme ([097e88a](https://github.com/ethanneff/example/commit/097e88a))
+* add dialog component ([7af10c3](https://github.com/ethanneff/example/commit/7af10c3))
+* separate canthurtme into containers ([c307e48](https://github.com/ethanneff/example/commit/c307e48))
+
 # [1.18.0](https://github.com/ethanneff/example/compare/v1.17.0...v1.18.0) (2019-05-13)
 
 
