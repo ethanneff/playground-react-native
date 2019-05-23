@@ -1678,18 +1678,10 @@
     "@types/react" "*"
     "@types/react-native" "*"
 
-"@types/react-native@*":
-  version "0.57.42"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.42.tgz#06ad92cd1378146402b7667de13cb7b935d194d6"
-  integrity sha512-Ms4RI8Oyi8HOIwlteFhgRE7TA9chP/mliLeJCzjKBOywYpile5TrXQF8lRDYzcC1zyTyoopu/u8VMlF+FS7VnA==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/react" "*"
-
-"@types/react-native@0.57.58":
-  version "0.57.58"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.58.tgz#630258e10497772dbbfdf813205d38b76b54fa2a"
-  integrity sha512-SshKU18ajdpQQ5RZrHyUTI3e++pMo4fcrWnnbGFjzgp5ykYhbfUQ005Q93a/UV9ObsAmRppHVuq11d3b4tiDug==
+"@types/react-native@*", "@types/react-native@0.57.59":
+  version "0.57.59"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.59.tgz#84d634dc95932c2fa9f16c229fb891af1bd3c28f"
+  integrity sha512-yPqLbvb4kkz/G3Twx4trEchhalAzOGPXhA3I0uM/6XRBG3fZ3sZ5iAceNOd4fhNGn61g6yuwWjFwy/3hWKj4LA==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -1737,15 +1729,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*":
-  version "16.8.12"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.12.tgz#ffbdd7bcd2b7037c3f78e26c708922a2befbb71f"
-  integrity sha512-MZZiv11BQhsxFp5DHDmRKBi6Nv3jwOhRiFFDE7ZJ1+rb52gdOd9y/qY0+5wyV/PQVK9926wFMjpQj3BJ18pb4Q==
-  dependencies:
-    "@types/prop-types" "*"
-    csstype "^2.2.0"
-
-"@types/react@16.8.18":
+"@types/react@*", "@types/react@16.8.18":
   version "16.8.18"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.18.tgz#fe66fb748b0b6ca9709d38b87b2d1356d960a511"
   integrity sha512-lUXdKzRqWR4FebR5tGHkLCqnvQJS4fdXKCBrNGGbglqZg2gpU+J82pMONevQODUotATs9fc9k66bx3/St8vReg==
