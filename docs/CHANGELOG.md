@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.19.2](https://github.com/ethanneff/example/compare/v1.19.1...v1.19.2) (2019-05-28)
+
+
+### Bug Fixes
+
+* git ignore auto generated android/bin ([eec9bed](https://github.com/ethanneff/example/commit/eec9bed))
+* update cocoapods ([8361ba4](https://github.com/ethanneff/example/commit/8361ba4))
+* update snapshots ([9dc4d99](https://github.com/ethanneff/example/commit/9dc4d99))
+
 ## [1.19.1](https://github.com/ethanneff/example/compare/v1.19.0...v1.19.1) (2019-05-21)
 
 
