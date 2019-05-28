@@ -18,7 +18,7 @@
     "watch": "              echo 'run unit tests reloader';       jest --watch",
     "lint": "               echo 'run code linter';               tsc && tslint --fix -p tsconfig.json -c tslint.json",
     "upgrade": "            echo 'run react native upgrade'       yarn global add react-native-git-upgrade; react-native-git-upgrade; rm -f .babelrc; rm -f ./.buckconfig; rm -f ./.flowconfig; rm -f ./.watchmanconfig; rm -f ./.gitattributes;",
-    "reset": "              echo 'clear react native cache';      watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; yarn install; pod install --project-directory=ios; react-native start --reset-cache",
+    "reset": "              echo 'clear react native cache';      watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; yarn install; gem install cocoapods; pod install --project-directory=ios; react-native start --reset-cache",
     "semantic-release": "   echo 'run continuous integration';    semantic-release",
     "travis-deploy-once": " echo 'prevent multiple deploys';      travis-deploy-once"
   },
