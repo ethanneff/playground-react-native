@@ -27,7 +27,7 @@
     "appcenter": "2.0.0",
     "appcenter-analytics": "2.0.0",
     "appcenter-crashes": "2.0.0",
-    "axios": "0.18.0",
+    "axios": "0.19.0",
     "moment": "2.24.0",
     "react": "16.8.6",
     "react-art": "16.8.6",
