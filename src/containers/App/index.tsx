@@ -14,26 +14,26 @@ import { connect } from "react-redux";
 import { Route, Router, Switch } from "../../components";
 import {
   DimensionsProps,
-  onAppLoad,
-  onAppStatusChange,
-  onBatteryChange,
-  onDeviceLoad,
-  onDimensionChange,
-  onFingerprintChange,
-  onKeyboardChange,
-  onNetworkChange
+  loadApp,
+  changeAppStatus,
+  updateBattery,
+  loadDevice,
+  updateDimensions,
+  updateFingerprint,
+  changeKeyboardStatus,
+  updateNetwork
 } from "../../models";
 import { Debug, Landing, Login, Main, NotFound } from "../../screens";
 
 interface DispatchProps {
-  onAppLoad: typeof onAppLoad;
-  onAppStatusChange: typeof onAppStatusChange;
-  onNetworkChange: typeof onNetworkChange;
-  onDimensionChange: typeof onDimensionChange;
-  onFingerprintChange: typeof onFingerprintChange;
-  onBatteryChange: typeof onBatteryChange;
-  onDeviceLoad: typeof onDeviceLoad;
-  onKeyboardChange: typeof onKeyboardChange;
+  loadApp: typeof loadApp;
+  changeAppStatus: typeof changeAppStatus;
+  updateNetwork: typeof updateNetwork;
+  updateDimensions: typeof updateDimensions;
+  updateFingerprint: typeof updateFingerprint;
+  updateBattery: typeof updateBattery;
+  loadDevice: typeof loadDevice;
+  changeKeyboardStatus: typeof changeKeyboardStatus;
 }
 
 type Props = DispatchProps;
@@ -64,7 +64,7 @@ class Component extends React.PureComponent<Props> {
   }
 
   private setProperties() {
-    this.props.onAppLoad({
+    this.props.loadApp({
       appVersion: VersionNumber.appVersion,
       applicationName: DeviceInfo.getApplicationName(),
       buildNumber: DeviceInfo.getBuildNumber(),
@@ -76,7 +76,7 @@ class Component extends React.PureComponent<Props> {
       status: AppState.currentState,
       version: DeviceInfo.getVersion()
     });
-    this.props.onDeviceLoad({
+    this.props.loadDevice({
       apiLevel: DeviceInfo.getAPILevel(),
       brand: DeviceInfo.getBrand(),
       carrier: DeviceInfo.getCarrier(),
@@ -109,63 +109,63 @@ class Component extends React.PureComponent<Props> {
       windowDimensions: Dimensions.get("window")
     });
     DeviceInfo.isPinOrFingerprintSet((isPinOrFingerprintSet: boolean) =>
-      this.props.onFingerprintChange(isPinOrFingerprintSet)
+      this.props.updateFingerprint(isPinOrFingerprintSet)
     );
     DeviceInfo.getBatteryLevel().then((batteryLevel: number) =>
-      this.props.onBatteryChange(batteryLevel)
+      this.props.updateBattery(batteryLevel)
     );
   }
 
   private enableListeners() {
-    NetInfo.addEventListener("connectionChange", this.onNetworkChange);
-    Dimensions.addEventListener("change", this.onDimensionChange);
+    NetInfo.addEventListener("connectionChange", this.updateNetwork);
+    Dimensions.addEventListener("change", this.updateDimensions);
     AppState.addEventListener("change", this.onAppStateChange);
     Keyboard.addListener("keyboardDidShow", this.onKeyboardDidShow);
     Keyboard.addListener("keyboardDidHide", this.onKeyboardDidHide);
   }
 
   private disableListeners() {
-    NetInfo.removeEventListener("connectionChange", this.onNetworkChange);
-    Dimensions.removeEventListener("change", this.onDimensionChange);
+    NetInfo.removeEventListener("connectionChange", this.updateNetwork);
+    Dimensions.removeEventListener("change", this.updateDimensions);
     AppState.removeEventListener("change", this.onAppStateChange);
     Keyboard.removeListener("keyboardDidShow", this.onKeyboardDidShow);
     Keyboard.removeListener("keyboardDidHide", this.onKeyboardDidHide);
   }
 
-  private onNetworkChange = (change: ConnectionType | ConnectionInfo) => {
+  private updateNetwork = (change: ConnectionType | ConnectionInfo) => {
     if (typeof change === "string") {
       return;
     }
-    this.props.onNetworkChange(change);
+    this.props.updateNetwork(change);
   };
 
-  private onDimensionChange = (change: DimensionsProps) => {
-    this.props.onDimensionChange(change);
+  private updateDimensions = (change: DimensionsProps) => {
+    this.props.updateDimensions(change);
   };
 
   private onAppStateChange = (change: AppStateStatus) => {
-    this.props.onAppStatusChange(change);
+    this.props.changeAppStatus(change);
   };
 
   private onKeyboardDidShow = () => {
-    this.props.onKeyboardChange(true);
+    this.props.changeKeyboardStatus(true);
   };
 
   private onKeyboardDidHide = () => {
-    this.props.onKeyboardChange(false);
+    this.props.changeKeyboardStatus(false);
   };
 }
 
 export const App = connect(
   null,
   {
-    onAppLoad,
-    onAppStatusChange,
-    onBatteryChange,
-    onDeviceLoad,
-    onDimensionChange,
-    onFingerprintChange,
-    onKeyboardChange,
-    onNetworkChange
+    loadApp,
+    changeAppStatus,
+    updateBattery,
+    loadDevice,
+    updateDimensions,
+    updateFingerprint,
+    changeKeyboardStatus,
+    updateNetwork
   }
 )(Component);

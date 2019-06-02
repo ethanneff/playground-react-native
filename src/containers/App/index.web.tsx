@@ -11,16 +11,16 @@ import { connect } from "react-redux";
 import { Route, Router, Switch } from "../../components";
 import {
   DimensionsProps,
-  onAppStatusChange,
-  onDimensionChange,
-  onNetworkChange
+  changeAppStatus,
+  updateDimensions,
+  updateNetwork
 } from "../../models";
 import { Debug, Landing, Login, Main, NotFound } from "../../screens";
 
 interface DispatchProps {
-  onAppStatusChange: typeof onAppStatusChange;
-  onNetworkChange: typeof onNetworkChange;
-  onDimensionChange: typeof onDimensionChange;
+  changeAppStatus: typeof changeAppStatus;
+  updateNetwork: typeof updateNetwork;
+  updateDimensions: typeof updateDimensions;
 }
 
 type Props = DispatchProps;
@@ -50,38 +50,38 @@ class Component extends React.PureComponent<Props> {
   }
 
   private enableListeners() {
-    NetInfo.addEventListener("connectionChange", this.onNetworkChange);
-    Dimensions.addEventListener("change", this.onDimensionChange);
+    NetInfo.addEventListener("connectionChange", this.updateNetwork);
+    Dimensions.addEventListener("change", this.updateDimensions);
     AppState.addEventListener("change", this.onAppStateChange);
   }
 
   private disableListeners() {
-    NetInfo.removeEventListener("connectionChange", this.onNetworkChange);
-    Dimensions.removeEventListener("change", this.onDimensionChange);
+    NetInfo.removeEventListener("connectionChange", this.updateNetwork);
+    Dimensions.removeEventListener("change", this.updateDimensions);
     AppState.removeEventListener("change", this.onAppStateChange);
   }
 
-  private onNetworkChange = (change: ConnectionType | ConnectionInfo) => {
+  private updateNetwork = (change: ConnectionType | ConnectionInfo) => {
     if (typeof change === "string") {
       return;
     }
-    this.props.onNetworkChange(change);
+    this.props.updateNetwork(change);
   };
 
-  private onDimensionChange = (change: DimensionsProps) => {
-    this.props.onDimensionChange(change);
+  private updateDimensions = (change: DimensionsProps) => {
+    this.props.updateDimensions(change);
   };
 
   private onAppStateChange = (change: AppStateStatus) => {
-    this.props.onAppStatusChange(change);
+    this.props.changeAppStatus(change);
   };
 }
 
 export const App = connect(
   null,
   {
-    onAppStatusChange,
-    onDimensionChange,
-    onNetworkChange
+    changeAppStatus,
+    updateDimensions,
+    updateNetwork
   }
 )(Component);
