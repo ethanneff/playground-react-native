@@ -2,7 +2,7 @@ import * as React from "react";
 import { AppRegistry, Platform, YellowBox } from "react-native";
 import { Provider } from "react-redux";
 import { store } from "./models";
-import { App } from "./screens";
+import { App } from "./containers";
 import { Config } from "./utils";
 
 // TODO: remove
