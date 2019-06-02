@@ -1,22 +1,22 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Component from "..";
+import { Dialog } from "..";
 
 jest.useFakeTimers();
 describe("Dialog component", () => {
   it("renders correctly with defaults and hidden", () => {
-    const dom = renderer.create(<Component title="bob" />);
+    const dom = renderer.create(<Dialog title="bob" />);
     expect(dom.toJSON()).toMatchSnapshot();
   });
 
   it("renders correctly with defaults and ", () => {
-    const dom = renderer.create(<Component title="bob" />);
+    const dom = renderer.create(<Dialog title="bob" />);
     expect(dom.toJSON()).toMatchSnapshot();
   });
 
   it("renders correctly with props", () => {
     const dom = renderer.create(
-      <Component
+      <Dialog
         title="nope"
         message="yep"
         alert

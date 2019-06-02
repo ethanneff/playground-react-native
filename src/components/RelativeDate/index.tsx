@@ -1,7 +1,7 @@
 import moment from "moment";
 import * as React from "react";
 import { TouchableOpacity } from "react-native";
-import { Text } from "..";
+import { Text } from "../Text";
 
 interface Props {
   date: number;

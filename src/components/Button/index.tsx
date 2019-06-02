@@ -5,7 +5,8 @@ import {
   TouchableOpacity,
   ViewStyle
 } from "react-native";
-import { Icon, Text } from "..";
+import { Icon } from "../Icon";
+import { Text } from "../Text";
 import { Theme } from "../../utils";
 
 // styling: https://material.io/design/components/buttons.html#usage

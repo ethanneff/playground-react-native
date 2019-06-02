@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
-import { Icon } from "..";
+import { Icon } from "../Icon";
 import { Theme } from "../../utils";
 
 const styles = StyleSheet.create({

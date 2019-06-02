@@ -6,7 +6,7 @@ import {
   View,
   ViewStyle
 } from "react-native";
-import { Button } from "..";
+import { Button } from "../Button";
 import { Theme } from "../../utils";
 
 interface Props {

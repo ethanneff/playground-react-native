@@ -1,7 +1,7 @@
 import * as React from "react";
 import { TextStyle, TouchableOpacity, ViewStyle } from "react-native";
 import { Link as Original } from "react-router-dom";
-import { Text } from "..";
+import { Text } from "../Text";
 import { Theme } from "../../utils";
 
 const styles = {

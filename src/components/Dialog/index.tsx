@@ -5,10 +5,13 @@ import {
   TouchableWithoutFeedback,
   View
 } from "react-native";
-import { Button, Text } from "..";
+import { Text } from "../Text";
+import { Button } from "../Button";
 import { colorWithOpacity, Theme } from "../../utils";
+import { connect } from "react-redux";
+import { hideModal } from "../../models/Navigation";
 
-interface Props {
+interface OwnProps {
   testID?: string;
   title: string;
   message?: string;
@@ -20,7 +23,13 @@ interface Props {
   onBackgroundPress?(): void;
 }
 
-class Dialog extends React.PureComponent<Props> {
+interface DispatchProps {
+  hideModal: typeof hideModal;
+}
+
+type Props = OwnProps & DispatchProps;
+
+class Component extends React.PureComponent<Props> {
   private readonly styles = StyleSheet.create({
     alert: {
       display: "none"
@@ -90,6 +99,7 @@ class Dialog extends React.PureComponent<Props> {
     const {
       onCancelButtonPress,
       onConfirmButtonPress,
+      onBackgroundPress,
       confirmButtonText = "confirm",
       cancelButtonText = "cancel",
       message,
@@ -110,7 +120,7 @@ class Dialog extends React.PureComponent<Props> {
       <Animated.View style={[this.styles.container, { opacity }]}>
         <TouchableWithoutFeedback
           testID={testID}
-          onPress={this.onBackgroundPress}
+          onPress={this.dismiss(onBackgroundPress)}
         >
           <View style={this.styles.overlay}>
             <TouchableWithoutFeedback onPress={undefined}>
@@ -121,14 +131,14 @@ class Dialog extends React.PureComponent<Props> {
                   <Button
                     hidden={!!!onCancelButtonPress}
                     title={cancelButtonText}
-                    onPress={this.onCancelButtonPress}
+                    onPress={this.dismiss(onCancelButtonPress)}
                     buttonStyle={cancelButtonStyle}
                     half={!twoButtons}
                   />
                   <Button
                     hidden={!!!onConfirmButtonPress}
                     title={confirmButtonText}
-                    onPress={onConfirmButtonPress}
+                    onPress={this.dismiss(onConfirmButtonPress)}
                     buttonStyle={confirmButtonStyle}
                     secondary
                     half={!twoButtons}
@@ -150,18 +160,12 @@ class Dialog extends React.PureComponent<Props> {
       }).start(() => resolve());
     });
 
-  private onCancelButtonPress = async () => {
-    const { onCancelButtonPress } = this.props;
-    await this.animate(0);
-    if (onCancelButtonPress) {
-      onCancelButtonPress();
-    }
-  };
-
   private alert = () => {
     this.alertTimeout = setTimeout(() => {
       const { onBackgroundPress } = this.props;
-      if (onBackgroundPress) { onBackgroundPress(); }
+      if (onBackgroundPress) {
+        onBackgroundPress();
+      }
       this.clearTimeouts();
     }, this.alertTimeoutTime);
   };
@@ -170,13 +174,20 @@ class Dialog extends React.PureComponent<Props> {
     clearTimeout(this.alertTimeout);
   };
 
-  private onBackgroundPress = async () => {
-    const { onBackgroundPress } = this.props;
+  private dismiss = (callback: any) => async () => {
     await this.animate(0);
-    if (onBackgroundPress) {
-      onBackgroundPress();
+    this.props.hideModal();
+    if (callback) {
+      callback();
     }
   };
 }
 
-export default Dialog;
+const mapDispatchToProps: DispatchProps = {
+  hideModal
+};
+
+export const Dialog = connect(
+  null,
+  mapDispatchToProps
+)(Component);
