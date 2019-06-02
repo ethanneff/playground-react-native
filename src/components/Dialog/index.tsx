@@ -82,7 +82,7 @@ class Component extends React.PureComponent<Props> {
   private readonly fadeDuration = 200;
 
   private readonly alertTimeoutTime = 3000;
-  private alertTimeout?: number;
+  private alertTimeout?: any;
 
   public componentDidMount() {
     this.animate(1);
