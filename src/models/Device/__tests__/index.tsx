@@ -19,7 +19,7 @@ import {
   updateFingerprint,
   updateNetwork
 } from "..";
-import { store } from "../../../models";
+import { store } from "../../../containers";
 
 describe("selectors", () => {
   beforeEach(() => {

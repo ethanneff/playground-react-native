@@ -2,7 +2,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Button, Screen, TextInput } from "../../../../../../components";
-import { RootState } from "../../../../../../models";
+import { RootState } from "../../../../../../containers";
 import { createItem } from "../../models/Item";
 
 interface DispatchProps {

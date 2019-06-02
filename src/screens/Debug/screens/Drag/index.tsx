@@ -8,8 +8,8 @@ import {
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Screen, Text } from "../../../../components";
-import { getHeight, getWidth } from "../../../../models";
-import { RootState } from "../../../../models";
+import { getHeight, getWidth } from "../../../../models/Device";
+import { RootState } from "../../../../containers";
 
 const styles = StyleSheet.create({
   ball: {

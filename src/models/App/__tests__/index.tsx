@@ -10,7 +10,7 @@ import {
   changeAppStatus,
   changeKeyboardStatus
 } from "..";
-import { store } from "../../../models";
+import { store } from "../../../containers";
 
 describe("selectors", () => {
   it("getAppStatus", () => {

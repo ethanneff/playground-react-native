@@ -8,8 +8,8 @@ import {
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Screen, Text } from "../../../../components";
-import { getHeight, getWidth } from "../../../../models";
-import { RootState } from "../../../../models";
+import { getHeight, getWidth } from "../../../../models/Device";
+import { RootState } from "../../../../containers";
 import { GestureHandler } from "./logic";
 
 const styles = StyleSheet.create({

@@ -6,7 +6,7 @@ import {
   ScaledSize
 } from "react-native";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
-import { RootAction, RootState } from "../../models";
+import { RootAction, RootState } from "../../containers";
 // import { logout } from "../Auth";
 
 // interfaces

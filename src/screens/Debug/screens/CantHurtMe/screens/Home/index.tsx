@@ -3,13 +3,12 @@ import { FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Button, Screen, Text } from "../../../../../../components";
-import Dialog from "../../../../../../components/Dialog";
 import {
   getHeight,
   getLandscapeOrientation,
-  getWidth,
-  RootState
-} from "../../../../../../models";
+  getWidth
+} from "../../../../../../models/Device";
+import { RootState } from "../../../../../../containers";
 import { Theme } from "../../../../../../utils";
 import { DailyProgress, Header, ProfileLevel } from "../../components";
 import { Card } from "../../components/Card";
@@ -80,13 +79,6 @@ class Component extends React.PureComponent<Props> {
           numColumns={column}
           ListFooterComponent={this.renderFooter}
         />
-        {this.state.settings && (
-          <Dialog
-            title="hello"
-            onBackgroundPress={() => this.setState({ settings: false })}
-            onCancelButtonPress={() => this.setState({ settings: false })}
-          />
-        )}
       </Screen>
     );
   }

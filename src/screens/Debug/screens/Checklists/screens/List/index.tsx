@@ -3,7 +3,7 @@ import { FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Button, Screen } from "../../../../../../components";
-import { RootState } from "../../../../../../models";
+import { RootState } from "../../../../../../containers";
 import { Theme } from "../../../../../../utils";
 import {
   getItemsByCreatedAt,

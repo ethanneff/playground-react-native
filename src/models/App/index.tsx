@@ -1,7 +1,6 @@
 import { AppStateStatus } from "react-native";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
-import { RootAction, RootState } from "../../models";
-// import { logout } from "../Auth";
+import { RootAction, RootState } from "../../containers";
 
 // interfaces
 export interface AppState {

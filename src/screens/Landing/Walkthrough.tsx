@@ -2,8 +2,8 @@ import * as React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import { Text } from "../../components";
-import { getWidth } from "../../models";
-import { RootState } from "../../models";
+import { getWidth } from "../../models/Device";
+import { RootState } from "../../containers";
 
 const styles = (width?: number, color?: string) =>
   StyleSheet.create({

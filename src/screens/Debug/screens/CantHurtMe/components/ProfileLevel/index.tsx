@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 import { Text } from "../../../../../../components";
-import { RootState } from "../../../../../../models";
+import { RootState } from "../../../../../../containers";
 import { Theme } from "../../../../../../utils";
 
 interface StateProps {

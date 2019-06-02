@@ -3,7 +3,8 @@ import { Animated, StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Button, Screen } from "../../../../components";
-import { getHeight, getWidth, RootState } from "../../../../models";
+import { getHeight, getWidth } from "../../../../models/Device";
+import { RootState } from "../../../../containers";
 
 const styles = StyleSheet.create({
   ball: {

@@ -1,9 +1,8 @@
 import React from "react";
-
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Screen, Text } from "../../../../../../components";
-import { RootState } from "../../../../../../models";
+import { RootState } from "../../../../../../containers";
 import { Theme } from "../../../../../../utils";
 
 interface StateProps {

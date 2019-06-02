@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
-import { RootAction, RootState, RootThunkAction } from "../../models";
+import { RootAction, RootState, RootThunkAction } from "../../containers";
 import { Config } from "../../utils";
 
 // interfaces

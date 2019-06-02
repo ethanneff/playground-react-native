@@ -2,7 +2,7 @@ import { createSelector } from "reselect";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { DeepReadonly } from "utility-types";
 import uuid from "uuid";
-import { RootAction, RootState } from "../../../../../../models";
+import { RootAction, RootState } from "../../../../../../containers";
 
 // interfaces
 export type Item = DeepReadonly<{
