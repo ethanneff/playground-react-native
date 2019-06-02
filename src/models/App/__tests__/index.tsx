@@ -6,57 +6,57 @@ import {
   AppState,
   getAppStatus,
   getKeyboardVisible,
-  onAppLoad,
-  onAppStatusChange,
-  onKeyboardChange
+  loadApp,
+  changeAppStatus,
+  changeKeyboardStatus
 } from "..";
 import { store } from "../../../models";
 
 describe("selectors", () => {
   it("getAppStatus", () => {
     const value = "background";
-    store.dispatch(onAppStatusChange(value));
+    store.dispatch(changeAppStatus(value));
     expect(getAppStatus(store.getState())).toEqual(value);
   });
-  it("onKeyboardChange", () => {
+  it("changeKeyboardStatus", () => {
     const value = true;
-    store.dispatch(onKeyboardChange(value));
+    store.dispatch(changeKeyboardStatus(value));
     expect(getKeyboardVisible(store.getState())).toEqual(value);
   });
 });
 
 describe("actions", () => {
-  it("onAppLoad", () => {
+  it("loadApp", () => {
     const payload: AppState = {
       ...appInitialState,
       version: "123"
     };
     const expectedAction = {
       payload,
-      type: getType(onAppLoad)
+      type: getType(loadApp)
     };
-    expect(onAppLoad(payload)).toEqual(expectedAction);
+    expect(loadApp(payload)).toEqual(expectedAction);
   });
-  it("onAppStatusChange", () => {
+  it("changeAppStatus", () => {
     const payload = "background";
     const expectedAction = {
       payload,
-      type: getType(onAppStatusChange)
+      type: getType(changeAppStatus)
     };
-    expect(onAppStatusChange(payload)).toEqual(expectedAction);
+    expect(changeAppStatus(payload)).toEqual(expectedAction);
   });
-  it("onKeyboardChange", () => {
+  it("changeKeyboardStatus", () => {
     const payload = true;
     const expectedAction = {
       payload,
-      type: getType(onKeyboardChange)
+      type: getType(changeKeyboardStatus)
     };
-    expect(onKeyboardChange(payload)).toEqual(expectedAction);
+    expect(changeKeyboardStatus(payload)).toEqual(expectedAction);
   });
 });
 
 describe("reducer", () => {
-  it("onAppLoad", () => {
+  it("loadApp", () => {
     const status: AppStateStatus = "active";
     const payload = {
       appVersion: "12",
@@ -65,19 +65,19 @@ describe("reducer", () => {
     };
     const action = {
       payload,
-      type: getType(onAppLoad)
+      type: getType(loadApp)
     };
     expect(appReducer(appInitialState, action)).toEqual(payload);
   });
-  it("onKeyboardChange", () => {
+  it("changeKeyboardStatus", () => {
     expect(
       appReducer(appInitialState, {
         payload: true,
-        type: getType(onKeyboardChange)
+        type: getType(changeKeyboardStatus)
       })
     ).toEqual({ ...appInitialState, keyboardVisible: true });
   });
-  it("onAppLoad", () => {
+  it("loadApp", () => {
     const status: AppStateStatus = "active";
     const action = {
       payload: {
@@ -91,7 +91,7 @@ describe("reducer", () => {
         status,
         version: "string"
       },
-      type: getType(onAppLoad)
+      type: getType(loadApp)
     };
     expect(appReducer(appInitialState, action)).toEqual({
       ...appInitialState,

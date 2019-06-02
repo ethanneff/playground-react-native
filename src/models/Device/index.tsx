@@ -51,31 +51,31 @@ export interface DeviceState {
   screenDimensions: ScaledSize;
 }
 export type DeviceActions = ActionType<
-  | typeof onBatteryChange
-  | typeof onFingerprintChange
-  | typeof onDeviceLoad
-  | typeof onNetworkChange
-  | typeof onDimensionChange
+  | typeof updateBattery
+  | typeof updateFingerprint
+  | typeof loadDevice
+  | typeof updateNetwork
+  | typeof updateDimensions
 >;
 
 // actions
-export const onBatteryChange = createStandardAction("DEVICE/UPDATE_BATTERY")<
+export const updateBattery = createStandardAction("device/UPDATE_BATTERY")<
   number
 >();
 
-export const onFingerprintChange = createStandardAction(
-  "DEVICE/UPDATE_FINGERPRINT"
+export const updateFingerprint = createStandardAction(
+  "device/UPDATE_FINGERPRINT"
 )<boolean>();
 
-export const onDeviceLoad = createStandardAction("DEVICE/LOAD")<DeviceState>();
+export const loadDevice = createStandardAction("device/LOAD")<DeviceState>();
 
-export const onNetworkChange = createStandardAction("DEVICE/UPDATE_NETWORK")<
+export const updateNetwork = createStandardAction("device/UPDATE_NETWORK")<
   ConnectionInfo
 >();
 
-export const onDimensionChange = createStandardAction(
-  "DEVICE/UPDATE_DIMENSION"
-)<DimensionsProps>();
+export const updateDimensions = createStandardAction("device/UPDATE_DIMENSION")<
+  DimensionsProps
+>();
 
 // selectors
 export const getLandscapeOrientation = (state: RootState): boolean =>
@@ -111,29 +111,29 @@ export const deviceReducer = (
   action: RootAction
 ): DeviceState => {
   switch (action.type) {
-    case getType(onBatteryChange):
+    case getType(updateBattery):
       return {
         ...state,
         batteryLevel: action.payload
       };
-    case getType(onFingerprintChange):
+    case getType(updateFingerprint):
       return {
         ...state,
         isPinOrFingerprintSet: action.payload
       };
-    case getType(onNetworkChange):
+    case getType(updateNetwork):
       return {
         ...state,
         networkEffectiveType: action.payload.effectiveType,
         networkType: action.payload.type
       };
-    case getType(onDimensionChange):
+    case getType(updateDimensions):
       return {
         ...state,
         screenDimensions: action.payload.screen,
         windowDimensions: action.payload.window
       };
-    case getType(onDeviceLoad):
+    case getType(loadDevice):
       return {
         ...state,
         ...action.payload

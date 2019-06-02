@@ -13,11 +13,11 @@ import {
   getLargestDimension,
   getSmallestDimension,
   getWidth,
-  onBatteryChange,
-  onDeviceLoad,
-  onDimensionChange,
-  onFingerprintChange,
-  onNetworkChange
+  updateBattery,
+  loadDevice,
+  updateDimensions,
+  updateFingerprint,
+  updateNetwork
 } from "..";
 import { store } from "../../../models";
 
@@ -37,7 +37,7 @@ describe("selectors", () => {
         width: 123
       }
     };
-    store.dispatch(onDimensionChange(dimensionChange));
+    store.dispatch(updateDimensions(dimensionChange));
   });
 
   it("getLandscapeOrientation", () => {
@@ -80,19 +80,19 @@ describe("actions", () => {
     const payload = true;
     const expectedAction = {
       payload,
-      type: getType(onFingerprintChange)
+      type: getType(updateFingerprint)
     };
-    expect(onFingerprintChange(payload)).toEqual(expectedAction);
+    expect(updateFingerprint(payload)).toEqual(expectedAction);
   });
   it("onDeviceUpdateBattery", () => {
     const payload = 2;
     const expectedAction = {
       payload,
-      type: getType(onBatteryChange)
+      type: getType(updateBattery)
     };
-    expect(onBatteryChange(payload)).toEqual(expectedAction);
+    expect(updateBattery(payload)).toEqual(expectedAction);
   });
-  it("onDeviceLoad", () => {
+  it("loadDevice", () => {
     const size = {
       fontScale: 1,
       height: 1,
@@ -106,11 +106,11 @@ describe("actions", () => {
     };
     const expectedAction = {
       payload,
-      type: getType(onDeviceLoad)
+      type: getType(loadDevice)
     };
-    expect(onDeviceLoad(payload)).toEqual(expectedAction);
+    expect(loadDevice(payload)).toEqual(expectedAction);
   });
-  it("onNetworkChange", () => {
+  it("updateNetwork", () => {
     const type: ConnectionType = "wifi";
     const effectiveType: EffectiveConnectionType = "2g";
     const payload = {
@@ -119,11 +119,11 @@ describe("actions", () => {
     };
     const expectedAction = {
       payload,
-      type: getType(onNetworkChange)
+      type: getType(updateNetwork)
     };
-    expect(onNetworkChange(payload)).toEqual(expectedAction);
+    expect(updateNetwork(payload)).toEqual(expectedAction);
   });
-  it("onDimensionChange", () => {
+  it("updateDimensions", () => {
     const size = {
       fontScale: 1,
       height: 1,
@@ -133,32 +133,32 @@ describe("actions", () => {
     const payload = { window: size, screen: size };
     const expectedAction = {
       payload,
-      type: getType(onDimensionChange)
+      type: getType(updateDimensions)
     };
-    expect(onDimensionChange(payload)).toEqual(expectedAction);
+    expect(updateDimensions(payload)).toEqual(expectedAction);
   });
 });
 
 describe("reducer", () => {
-  it("onBatteryChange", () => {
+  it("updateBattery", () => {
     const value = 22;
     expect(
       deviceReducer(deviceInitialState, {
         payload: value,
-        type: getType(onBatteryChange)
+        type: getType(updateBattery)
       })
     ).toMatchObject({ batteryLevel: 22 });
   });
-  it("onFingerprintChange", () => {
+  it("updateFingerprint", () => {
     const value = true;
     expect(
       deviceReducer(deviceInitialState, {
         payload: value,
-        type: getType(onFingerprintChange)
+        type: getType(updateFingerprint)
       })
     ).toMatchObject({ isPinOrFingerprintSet: value });
   });
-  it("onDeviceLoad", () => {
+  it("loadDevice", () => {
     const size = {
       fontScale: 1,
       height: 1,
@@ -192,11 +192,11 @@ describe("reducer", () => {
     expect(
       deviceReducer(deviceInitialState, {
         payload: data,
-        type: getType(onDeviceLoad)
+        type: getType(loadDevice)
       })
     ).toEqual(data);
   });
-  it("onNetworkChange", () => {
+  it("updateNetwork", () => {
     const value: ConnectionInfo = {
       effectiveType: "2g",
       type: "wifi"
@@ -204,7 +204,7 @@ describe("reducer", () => {
     expect(
       deviceReducer(deviceInitialState, {
         payload: value,
-        type: getType(onNetworkChange)
+        type: getType(updateNetwork)
       })
     ).toMatchObject({ networkEffectiveType: "2g", networkType: "wifi" });
   });
@@ -222,7 +222,7 @@ describe("reducer", () => {
     expect(
       deviceReducer(deviceInitialState, {
         payload: data,
-        type: getType(onDimensionChange)
+        type: getType(updateDimensions)
       })
     ).toMatchObject({ windowDimensions: size, screenDimensions: size });
   });

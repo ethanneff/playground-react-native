@@ -1,5 +1,4 @@
 import { AppStateStatus } from "react-native";
-import { createSelector } from "reselect";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../models";
 // import { logout } from "../Auth";
@@ -17,16 +16,16 @@ export interface AppState {
   keyboardVisible: boolean;
 }
 export type AppActions = ActionType<
-  typeof onAppLoad | typeof onAppStatusChange | typeof onKeyboardChange
+  typeof loadApp | typeof changeAppStatus | typeof changeKeyboardStatus
 >;
 
 // actions
-export const onAppLoad = createStandardAction("APP/LOAD")<AppState>();
-export const onAppStatusChange = createStandardAction("APP/UPDATE_STATUS")<
+export const loadApp = createStandardAction("app/LOAD")<AppState>();
+export const changeAppStatus = createStandardAction("app/UPDATE_STATUS")<
   AppStateStatus
 >();
-export const onKeyboardChange = createStandardAction(
-  "APP/UPDATE_KEYBOARD_VISIBILITY"
+export const changeKeyboardStatus = createStandardAction(
+  "app/UPDATE_KEYBOARD_VISIBILITY"
 )<boolean>();
 
 // selectors
@@ -34,10 +33,6 @@ export const getAppStatus = (state: RootState): AppStateStatus =>
   state.app.status;
 export const getKeyboardVisible = (state: RootState): boolean =>
   state.app.keyboardVisible;
-export const getAppStatusForeground = createSelector(
-  getAppStatus,
-  (status: AppStateStatus): boolean => status === "active"
-);
 
 // reducers
 export const appInitialState: AppState = {
@@ -49,22 +44,22 @@ export function appReducer(
   action: RootAction
 ): AppState {
   switch (action.type) {
-    case getType(onAppLoad):
+    case getType(loadApp):
       return {
         ...state,
         ...action.payload
       };
-    case getType(onAppStatusChange):
+    case getType(changeAppStatus):
       return {
         ...state,
         status: action.payload
       };
-    case getType(onKeyboardChange):
+    case getType(changeKeyboardStatus):
       return {
         ...state,
         keyboardVisible: action.payload
       };
-    // case getType(logout):
+    // case getType(logout): // TODO:
     //   return appInitialState;
     default:
       return state;
