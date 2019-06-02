@@ -1,4 +1,3 @@
-export * from "./App";
 export * from "./Debug";
 export * from "./Landing";
 export * from "./Login";
