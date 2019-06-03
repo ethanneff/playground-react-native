@@ -11742,10 +11742,10 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-native-device-info@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-2.0.3.tgz#599502a7da165185bd853396df00e488ef8d7c83"
-  integrity sha512-Vb/IDhSz+BfjSM769s/YdA3JOuMg/a5u6hhkmf7VDHYIoCCFRJWAR0U8ud+nrkvl+4So26jt/krtcFoS1RAjcg==
+react-native-device-info@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-2.0.4.tgz#9f18a5704208f913b65768b1ba32bd3bd29f8dad"
+  integrity sha512-+gnzg6NFZ9yjguqPjGdaksmBBKZMewwKGUPS8AW2Soqnf8H3jwsjFBhz9qiWEMJIznzEM5j11dw0cnYBmybRHw==
 
 react-native-firebase@5.4.2:
   version "5.4.2"
