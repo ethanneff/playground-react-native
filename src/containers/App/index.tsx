@@ -108,6 +108,7 @@ class Component extends React.PureComponent<Props> {
       userAgent: DeviceInfo.getUserAgent(),
       windowDimensions: Dimensions.get("window")
     });
+    if (DeviceInfo.isEmulator()) return;
     DeviceInfo.isPinOrFingerprintSet((isPinOrFingerprintSet: boolean) =>
       this.props.updateFingerprint(isPinOrFingerprintSet)
     );
