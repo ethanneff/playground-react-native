@@ -1,12 +1,11 @@
 import moment from "moment";
-import React from "react";
+import * as React from "react";
 import { FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import { Button, Text } from "../../../../../../components";
 import { Theme } from "../../../../../../utils";
 
 class Component extends React.PureComponent {
-
   public render() {
     return (
       <FlatList
