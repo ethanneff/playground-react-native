@@ -1,7 +1,6 @@
 import * as React from "react";
-import { create } from "react-test-renderer";
 import { App } from "..";
-import { MockProviderAndRouter } from "../../../utils";
+import { mockRenderer } from "../../../utils/Mock";
 
 jest.mock("react-native-device-info", () => ({
   getAPILevel: jest.fn(),
@@ -42,6 +41,6 @@ jest.mock("react-native-device-info", () => ({
 }));
 
 it("renders correctly", () => {
-  const dom = create(<MockProviderAndRouter Component={App} />).toJSON();
+  const dom = mockRenderer(<App />).toJSON();
   expect(dom).toMatchSnapshot();
 });

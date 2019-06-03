@@ -1,9 +1,8 @@
 import * as React from "react";
-import { create } from "react-test-renderer";
 import { Cards } from "..";
-import { MockProviderAndRouter } from "../../../../../utils";
+import { mockRenderer } from "../../../../../utils/Mock";
 
 it("renders correctly", () => {
-  const dom = create(<MockProviderAndRouter Component={Cards} />).toJSON();
+  const dom = mockRenderer(<Cards />).toJSON();
   expect(dom).toMatchSnapshot();
 });

@@ -1,9 +1,8 @@
 import * as React from "react";
-import { create } from "react-test-renderer";
 import { Stopwatch } from "..";
-import { MockProviderAndRouter } from "../../../../../utils";
+import { mockRenderer } from "../../../../../utils/Mock";
 
 it("renders correctly", () => {
-  const dom = create(<MockProviderAndRouter Component={Stopwatch} />).toJSON();
+  const dom = mockRenderer(<Stopwatch />).toJSON();
   expect(dom).toMatchSnapshot();
 });
