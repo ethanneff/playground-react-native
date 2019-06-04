@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.4](https://github.com/ethanneff/example/compare/v1.19.3...v1.19.4) (2019-05-31)
+
+
+### Bug Fixes
+
+* update deps ([1c0ebcb](https://github.com/ethanneff/example/commit/1c0ebcb))
+
 ## [1.19.3](https://github.com/ethanneff/example/compare/v1.19.2...v1.19.3) (2019-05-29)
 
 
