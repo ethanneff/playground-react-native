@@ -10,6 +10,8 @@
 
 #### v0 merge all code bases
 
+- [ ] remove all commented code
+- [ ] fix checklists
 - [x] attempt icons again
 - [ ] mock date, fix tests, fix releases
 - [ ] chat app
@@ -126,6 +128,12 @@
 
 ## Done
 
+- [x] clean up navigation layer
+- [x] fix checklists and canthurtme
+- [x] push v2 fix
+- [x] move all code to /app
+- [x] move modals to /screen
+- [x] remove modal1 and modal2
 - [x] get ci working again
 - [x] create a root initial state for redux tests
 - [x] figure out auto import relative pathing
