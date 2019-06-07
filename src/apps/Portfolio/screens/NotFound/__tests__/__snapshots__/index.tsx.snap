@@ -102,11 +102,13 @@ exports[`renders correctly 1`] = `
         style={
           Array [
             Object {
-              "fontSize": 14,
-              "fontWeight": "300",
-              "letterSpacing": 0.25,
+              "fontSize": 48,
+              "fontWeight": "100",
+              "letterSpacing": -1.5,
             },
-            undefined,
+            Object {
+              "textAlign": "center",
+            },
             undefined,
             undefined,
           ]
@@ -125,40 +127,49 @@ exports[`renders correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "borderColor": "transparent",
+            "borderRadius": 4,
+            "borderWidth": 1,
+            "color": "hsl(211, 100%, 50%)",
+            "flexDirection": "row",
+            "height": 36,
+            "justifyContent": "center",
             "opacity": 1,
+            "paddingHorizontal": 16,
           }
         }
       >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={null}
-        >
-          <Text
-            style={
+        <Text
+          style={
+            Array [
+              Object {
+                "fontSize": 14,
+                "fontWeight": "600",
+                "letterSpacing": 0.75,
+              },
+              Object {
+                "textAlign": "center",
+              },
+              undefined,
               Array [
                 Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
+                  "backgroundColor": "transparent",
+                  "color": "hsl(211, 100%, 50%)",
                 },
                 undefined,
-                null,
-              ]
-            }
-          >
-            GO TO APP
-          </Text>
-        </View>
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+              ],
+            ]
+          }
+        >
+          GO HOME
+        </Text>
       </View>
     </View>
   </RCTScrollView>

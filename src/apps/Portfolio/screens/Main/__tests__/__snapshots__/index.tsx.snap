@@ -102,11 +102,13 @@ exports[`renders correctly 1`] = `
         style={
           Array [
             Object {
-              "fontSize": 14,
-              "fontWeight": "300",
-              "letterSpacing": 0.25,
+              "fontSize": 48,
+              "fontWeight": "100",
+              "letterSpacing": -1.5,
             },
-            undefined,
+            Object {
+              "textAlign": "center",
+            },
             undefined,
             undefined,
           ]

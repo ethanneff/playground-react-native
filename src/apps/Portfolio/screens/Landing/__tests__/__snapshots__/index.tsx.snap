@@ -98,23 +98,46 @@ exports[`renders correctly 1`] = `
     viewIsInsideTabBar={false}
   >
     <View>
+      <Text
+        style={
+          Array [
+            Object {
+              "fontSize": 48,
+              "fontWeight": "100",
+              "letterSpacing": -1.5,
+            },
+            Object {
+              "textAlign": "center",
+            },
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        Landing
+      </Text>
       <RCTScrollView
         data={
           Array [
             Object {
-              "color": "white",
+              "color": "lightgrey",
               "key": 1,
               "text": "hello",
             },
             Object {
-              "color": "pink",
+              "color": "lightblue",
               "key": 2,
               "text": "bob",
             },
             Object {
-              "color": "green",
+              "color": "lightgreen",
               "key": 3,
               "text": "steve",
+            },
+            Object {
+              "color": "lightpink",
+              "key": 4,
+              "text": "jill",
             },
           ]
         }
@@ -157,7 +180,7 @@ exports[`renders correctly 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "white",
+                  "backgroundColor": "lightgrey",
                   "justifyContent": "center",
                   "width": 750,
                 }
@@ -197,7 +220,7 @@ exports[`renders correctly 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "pink",
+                  "backgroundColor": "lightblue",
                   "justifyContent": "center",
                   "width": 750,
                 }
@@ -237,7 +260,7 @@ exports[`renders correctly 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "green",
+                  "backgroundColor": "lightgreen",
                   "justifyContent": "center",
                   "width": 750,
                 }
@@ -263,14 +286,52 @@ exports[`renders correctly 1`] = `
               </Text>
             </View>
           </View>
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "lightpink",
+                  "justifyContent": "center",
+                  "width": 750,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 0.25,
+                    },
+                    Object {
+                      "textAlign": "center",
+                    },
+                    undefined,
+                    undefined,
+                  ]
+                }
+              >
+                jill
+              </Text>
+            </View>
+          </View>
         </View>
       </RCTScrollView>
       <View
         style={
           Object {
-            "alignItems": "center",
             "flexDirection": "row",
-            "height": 48,
             "justifyContent": "space-around",
           }
         }
@@ -327,7 +388,7 @@ exports[`renders correctly 1`] = `
               ]
             }
           >
-            SIGN UP
+            LOGIN
           </Text>
         </View>
         <View
@@ -382,7 +443,7 @@ exports[`renders correctly 1`] = `
               ]
             }
           >
-            LOG IN
+            MAIN
           </Text>
         </View>
         <View
@@ -438,6 +499,125 @@ exports[`renders correctly 1`] = `
             }
           >
             DEBUG
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-around",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "color": "hsl(211, 100%, 50%)",
+              "flexDirection": "row",
+              "height": 36,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+                undefined,
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "hsl(211, 100%, 50%)",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
+              ]
+            }
+          >
+            CHECKLIST
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "color": "hsl(211, 100%, 50%)",
+              "flexDirection": "row",
+              "height": 36,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+                undefined,
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "hsl(211, 100%, 50%)",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
+              ]
+            }
+          >
+            CANTHURTME
           </Text>
         </View>
       </View>
