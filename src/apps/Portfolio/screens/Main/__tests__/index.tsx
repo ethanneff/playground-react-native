@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Main } from "../../Main";
 import { mockRenderer } from "../../../../../utils/Mock";
+import { Main } from "../../Main";
 
 it("renders correctly", () => {
   const dom = mockRenderer(<Main />).toJSON();

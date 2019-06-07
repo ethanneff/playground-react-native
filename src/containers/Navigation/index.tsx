@@ -1,29 +1,28 @@
 import * as React from "react";
-import { View, StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
-import {
-  getScreen,
-  navigate,
-  getModal,
-  NavigationScreen,
-  NavigationModal
-} from "../../models";
 import { RootState } from "..";
 import {
-  Login as PortfolioLogin,
-  NotFound as PortfolioNotFound,
-  Main as PortfolioMain,
-  Landing as PortfolioLanding,
-  ForgotPassword as PortfolioForgotPassword
-} from "../../apps/Portfolio/screens";
+  Home as CantHurtMeHome,
+  Profile as CantHurtMeProfile,
+  Settings as CantHurtMeSettings
+} from "../../apps/CantHurtMe/screens";
 import {
-  Home as DebugHome,
+  ItemCreate as ChecklistsItemCreate,
+  ItemUpdate as ChecklistsItemUpdate,
+  List as ChecklistsList,
+  ListCreate as ChecklistsListCreate,
+  Lists as ChecklistsLists,
+  ListUpdate as ChecklistsListUpdate
+} from "../../apps/Checklists/screens";
+import {
   Ball as DebugBall,
   Buttons as DebugButtons,
   Cards as DebugCards,
   Chat as DebugChat,
   Drag as DebugDrag,
   Fonts as DebugFonts,
+  Home as DebugHome,
   ImageCollection as DebugImageCollection,
   Input as DebugInput,
   OKRs as DebugOKRs,
@@ -33,18 +32,19 @@ import {
   Stopwatch as DebugStopwatch
 } from "../../apps/Debug/screens";
 import {
-  Home as CantHurtMeHome,
-  Settings as CantHurtMeSettings,
-  Profile as CantHurtMeProfile
-} from "../../apps/CantHurtMe/screens";
+  ForgotPassword as PortfolioForgotPassword,
+  Landing as PortfolioLanding,
+  Login as PortfolioLogin,
+  Main as PortfolioMain,
+  NotFound as PortfolioNotFound
+} from "../../apps/Portfolio/screens";
 import {
-  List as ChecklistsList,
-  Lists as ChecklistsLists,
-  ListCreate as ChecklistsListCreate,
-  ListUpdate as ChecklistsListUpdate,
-  ItemCreate as ChecklistsItemCreate,
-  ItemUpdate as ChecklistsItemUpdate
-} from "../../apps/Checklists/screens";
+  getModal,
+  getScreen,
+  navigate,
+  NavigationModal,
+  NavigationScreen
+} from "../../models";
 
 interface StateProps {
   screen: NavigationScreen;
@@ -58,10 +58,10 @@ interface DispatchProps {
 type Props = StateProps & DispatchProps;
 
 class Container extends React.PureComponent<Props> {
-  readonly styles = StyleSheet.create({
+  public readonly styles = StyleSheet.create({
     container: { flex: 1 }
   });
-  readonly screens: { [key in NavigationScreen]: any } = {
+  public readonly screens: { [key in NavigationScreen]: any } = {
     [NavigationScreen.PortfolioNotFound]: <PortfolioNotFound />,
     [NavigationScreen.PortfolioMain]: <PortfolioMain />,
     [NavigationScreen.PortfolioLanding]: <PortfolioLanding />,
@@ -89,13 +89,13 @@ class Container extends React.PureComponent<Props> {
     [NavigationScreen.ChecklistsItemCreate]: <ChecklistsItemCreate />,
     [NavigationScreen.ChecklistsItemUpdate]: <ChecklistsItemUpdate />
   };
-  readonly modals: { [key in NavigationModal]: any } = {
+  public readonly modals: { [key in NavigationModal]: any } = {
     [NavigationModal.CantHurtMeSettings]: <CantHurtMeSettings />,
     [NavigationModal.CantHurtMeProfile]: <CantHurtMeProfile />,
     [NavigationModal.None]: <></>
   };
 
-  render() {
+  public render() {
     return (
       <View style={this.styles.container}>
         {this.screens[this.props.screen]}
@@ -106,8 +106,8 @@ class Container extends React.PureComponent<Props> {
 }
 
 const mapStateToProps = (state: RootState): StateProps => ({
-  screen: getScreen(state),
-  modal: getModal(state)
+  modal: getModal(state),
+  screen: getScreen(state)
 });
 
 const mapDispatchToProps: DispatchProps = {

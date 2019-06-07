@@ -9,8 +9,8 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 import {
-  DimensionsProps,
   changeAppStatus,
+  DimensionsProps,
   updateDimensions,
   updateNetwork
 } from "../../models";

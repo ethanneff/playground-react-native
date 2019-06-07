@@ -5,9 +5,9 @@ import {
   TouchableOpacity,
   ViewStyle
 } from "react-native";
+import { Theme } from "../../utils";
 import { Icon } from "../Icon";
 import { Text } from "../Text";
-import { Theme } from "../../utils";
 
 // styling: https://material.io/design/components/buttons.html#usage
 interface Props {

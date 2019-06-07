@@ -5,11 +5,11 @@ import {
   TouchableWithoutFeedback,
   View
 } from "react-native";
-import { Text } from "../Text";
-import { Button } from "../Button";
-import { colorWithOpacity, Theme } from "../../utils";
 import { connect } from "react-redux";
 import { hideModal } from "../../models";
+import { colorWithOpacity, Theme } from "../../utils";
+import { Button } from "../Button";
+import { Text } from "../Text";
 
 interface OwnProps {
   testID?: string;

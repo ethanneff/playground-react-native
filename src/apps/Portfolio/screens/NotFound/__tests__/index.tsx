@@ -1,6 +1,6 @@
 import * as React from "react";
-import { NotFound } from "../../NotFound";
 import { mockRenderer } from "../../../../../utils/Mock";
+import { NotFound } from "../../NotFound";
 
 it("renders correctly", () => {
   const dom = mockRenderer(<NotFound />).toJSON();

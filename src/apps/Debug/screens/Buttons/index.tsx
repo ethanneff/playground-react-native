@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ScrollView } from "react-native";
-import { Button, Screen } from "../../../../components";
 import { connect } from "react-redux";
+import { Button, Screen } from "../../../../components";
 import { navigate, NavigationScreen } from "../../../../models";
 
 interface DispatchProps {
@@ -11,7 +11,6 @@ interface DispatchProps {
 type Props = DispatchProps;
 
 class Container extends React.PureComponent<Props> {
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     return (
       <Screen onLeftPress={this.nav(NavigationScreen.Debug)}>
@@ -134,6 +133,7 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 const mapDispatchToProps: DispatchProps = { navigate };

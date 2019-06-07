@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
-import { Icon } from "../Icon";
 import { Theme } from "../../utils";
+import { Icon } from "../Icon";
 
 const styles = StyleSheet.create({
   button: {

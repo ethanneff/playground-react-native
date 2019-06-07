@@ -8,13 +8,13 @@ import {
 import { connect } from "react-redux";
 import { Screen, Text } from "../../../../components";
 import { RootState } from "../../../../containers";
-import { GestureHandler } from "./logic";
 import {
-  NavigationScreen,
-  navigate,
   getHeight,
-  getWidth
+  getWidth,
+  navigate,
+  NavigationScreen
 } from "../../../../models";
+import { GestureHandler } from "./logic";
 
 const styles = StyleSheet.create({
   container: {
@@ -63,7 +63,6 @@ class Container extends React.PureComponent<Props> {
       }
     });
   }
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 
   public render() {
     const { spreadCount, pinchCount } = this.state;
@@ -79,6 +78,7 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 const mapStateToProps = (state: RootState) => ({

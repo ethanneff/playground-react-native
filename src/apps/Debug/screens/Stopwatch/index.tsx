@@ -9,9 +9,9 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
+import { connect } from "react-redux";
 import { Screen } from "../../../../components";
 import { navigate, NavigationScreen } from "../../../../models";
-import { connect } from "react-redux";
 
 const styles = StyleSheet.create({
   button: {
@@ -260,8 +260,6 @@ class Container extends React.PureComponent<Props> {
     this.run();
   };
 
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
-
   public render() {
     const { now, start, laps } = this.state;
     const timer = now - start;
@@ -327,6 +325,8 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
+
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 const mapDispatchToProps: DispatchProps = { navigate };

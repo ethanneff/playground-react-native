@@ -1,9 +1,9 @@
 import * as React from "react";
-import { View, StyleSheet } from "react-native";
-import { Button, Screen, Text } from "../../../../components";
-import { Walkthrough } from "./Walkthrough";
+import { StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
-import { showModal, navigate, NavigationScreen } from "../../../../models";
+import { Button, Screen, Text } from "../../../../components";
+import { navigate, NavigationScreen, showModal } from "../../../../models";
+import { Walkthrough } from "./Walkthrough";
 
 interface DispatchProps {
   navigate: typeof navigate;
@@ -16,8 +16,6 @@ class Container extends React.PureComponent<Props> {
   private styles = StyleSheet.create({
     row: { flexDirection: "row", justifyContent: "space-around" }
   });
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     return (
       <Screen>
@@ -47,6 +45,8 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
+
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 const mapDispatchToProps: DispatchProps = { navigate, showModal };

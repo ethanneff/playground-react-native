@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Screen, Text, Button } from "../../../../components";
 import { connect } from "react-redux";
+import { Button, Screen, Text } from "../../../../components";
 import { navigate, NavigationScreen } from "../../../../models";
 
 interface DispatchProps {

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Animated, Dimensions, StyleSheet, View } from "react-native";
-import { Screen } from "../../../../components";
 import { connect } from "react-redux";
+import { Screen } from "../../../../components";
 import { navigate, NavigationScreen } from "../../../../models";
 
 interface DispatchProps {
@@ -11,6 +11,10 @@ interface DispatchProps {
 type Props = DispatchProps;
 
 class Container extends React.PureComponent<Props> {
+
+  public state = {
+    y: new Animated.Value(0)
+  };
   private readonly cardHeight = 250;
   private readonly cardTitle = 45;
   private readonly cardPadding = 10;
@@ -68,12 +72,6 @@ class Container extends React.PureComponent<Props> {
       price: "47 CHF"
     }
   ];
-
-  public state = {
-    y: new Animated.Value(0)
-  };
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     const { y } = this.state;
 
@@ -124,6 +122,8 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
+
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 const mapDispatchToProps: DispatchProps = { navigate };

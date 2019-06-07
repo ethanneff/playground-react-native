@@ -3,19 +3,19 @@ import { FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import { Button, Screen, Text } from "../../../../components";
 import { RootState } from "../../../../containers";
+import {
+  getHeight,
+  getLandscapeOrientation,
+  getWidth,
+  navigate,
+  NavigationModal,
+  NavigationScreen,
+  showModal
+} from "../../../../models";
 import { Theme } from "../../../../utils";
 import { DailyProgress, Header, ProfileLevel } from "../../components";
 import { Card } from "../../components/Card";
 import { app } from "../../data";
-import {
-  navigate,
-  NavigationScreen,
-  getHeight,
-  getLandscapeOrientation,
-  getWidth,
-  showModal,
-  NavigationModal
-} from "../../../../models";
 
 interface StateProps {
   landscape: boolean;
@@ -47,9 +47,6 @@ class Component extends React.PureComponent<Props> {
       </Card>
     );
   };
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
-  private modal = (to: NavigationModal) => () => this.props.showModal(to);
 
   public render() {
     const column = this.getColumns();
@@ -92,6 +89,9 @@ class Component extends React.PureComponent<Props> {
       </Screen>
     );
   }
+
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
+  private modal = (to: NavigationModal) => () => this.props.showModal(to);
 
   private getColumns = () => (this.props.landscape ? 4 : 2);
 

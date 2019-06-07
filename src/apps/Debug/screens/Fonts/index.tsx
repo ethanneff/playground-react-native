@@ -1,8 +1,8 @@
 import * as React from "react";
 import { ScrollView } from "react-native";
-import { Screen, Text } from "../../../../components";
-import { NavigationScreen, navigate } from "../../../../models";
 import { connect } from "react-redux";
+import { Screen, Text } from "../../../../components";
+import { navigate, NavigationScreen } from "../../../../models";
 
 interface DispatchProps {
   navigate: typeof navigate;
@@ -11,7 +11,6 @@ interface DispatchProps {
 type Props = DispatchProps;
 
 class Container extends React.PureComponent<Props> {
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     return (
       <Screen onLeftPress={this.nav(NavigationScreen.Debug)}>
@@ -55,6 +54,7 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 const mapDispatchToProps: DispatchProps = { navigate };

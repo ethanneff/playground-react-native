@@ -1,7 +1,7 @@
 import * as React from "react";
+import { connect } from "react-redux";
 import { Button, Screen, Text } from "../../../../components";
 import { navigate, NavigationScreen } from "../../../../models";
-import { connect } from "react-redux";
 
 interface DispatchProps {
   navigate: typeof navigate;
@@ -10,7 +10,6 @@ interface DispatchProps {
 type Props = DispatchProps;
 
 class Component extends React.PureComponent<Props> {
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     return (
       <Screen>
@@ -22,6 +21,7 @@ class Component extends React.PureComponent<Props> {
       </Screen>
     );
   }
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 const mapDispatchToProps: DispatchProps = { navigate };

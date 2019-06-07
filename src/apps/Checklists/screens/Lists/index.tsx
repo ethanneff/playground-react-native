@@ -25,7 +25,6 @@ class Component extends React.PureComponent<Props> {
       title: "jill"
     }
   ];
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     return (
       <Screen onLeftPress={this.nav(NavigationScreen.PortfolioLanding)}>
@@ -53,6 +52,7 @@ class Component extends React.PureComponent<Props> {
       </Screen>
     );
   }
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 export const Lists = connect(

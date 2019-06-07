@@ -2,8 +2,8 @@ import * as React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import { Text } from "../../../../components";
-import { getWidth } from "../../../../models";
 import { RootState } from "../../../../containers";
+import { getWidth } from "../../../../models";
 
 interface StateProps {
   width: number;
@@ -12,14 +12,6 @@ interface StateProps {
 type Props = StateProps;
 
 class Component extends React.PureComponent<Props> {
-  private styles = (width?: number, color?: string) =>
-    StyleSheet.create({
-      item: {
-        backgroundColor: color,
-        justifyContent: "center",
-        width
-      }
-    });
 
   public data = [
     { key: 1, text: "hello", color: "lightgrey" },
@@ -43,6 +35,14 @@ class Component extends React.PureComponent<Props> {
       />
     );
   }
+  private styles = (width?: number, color?: string) =>
+    StyleSheet.create({
+      item: {
+        backgroundColor: color,
+        justifyContent: "center",
+        width
+      }
+    });
 }
 const mapStateToProps = (state: RootState) => ({
   width: getWidth(state)

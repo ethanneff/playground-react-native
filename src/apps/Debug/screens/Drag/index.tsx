@@ -9,10 +9,10 @@ import { connect } from "react-redux";
 import { Screen, Text } from "../../../../components";
 import { RootState } from "../../../../containers";
 import {
-  NavigationScreen,
-  navigate,
   getHeight,
-  getWidth
+  getWidth,
+  navigate,
+  NavigationScreen
 } from "../../../../models";
 
 interface StateProps {
@@ -54,8 +54,6 @@ class Container extends React.PureComponent<Props> {
       }
     });
   }
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     return (
       <Screen disableScroll onLeftPress={this.nav(NavigationScreen.Debug)}>
@@ -67,6 +65,8 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
+
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 const mapStateToProps = (state: RootState) => ({

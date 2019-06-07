@@ -1,11 +1,11 @@
 import moment from "moment";
 import * as React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
+import { connect } from "react-redux";
 import uuid from "uuid";
 import { Button, Screen, TextInput } from "../../../../components";
-import { Item } from "./Item";
 import { navigate, NavigationScreen } from "../../../../models";
-import { connect } from "react-redux";
+import { Item } from "./Item";
 
 export interface Message {
   id: string;
@@ -128,7 +128,6 @@ class Container extends React.PureComponent<Props, State> {
   });
   private readonly user = "User bob";
   private readonly sendIcon = "send";
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     const { message, messages } = this.state;
 
@@ -147,6 +146,7 @@ class Container extends React.PureComponent<Props, State> {
       </Screen>
     );
   }
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 
   private renderItem = ({ item }: { item: Message }) => (
     <Item item={item} onDelete={this.onDelete} />

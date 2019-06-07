@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Dimensions, FlatList, View } from "react-native";
+import { connect } from "react-redux";
 import { Button, Screen, Text } from "../../../../components";
 import { navigate, NavigationScreen } from "../../../../models";
-import { connect } from "react-redux";
 
 interface DispatchProps {
   navigate: typeof navigate;
@@ -75,7 +75,6 @@ class Container extends React.PureComponent<Props> {
 
     // this.onProgress();
   };
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 
   public onFinish = () => undefined;
 
@@ -137,6 +136,7 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 const mapDispatchToProps: DispatchProps = { navigate };

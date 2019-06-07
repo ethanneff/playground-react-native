@@ -8,10 +8,10 @@ import {
   StyleSheet,
   View
 } from "react-native";
-import { Icon, Screen, Text, TextInput } from "../../../../components";
-import { colorWithOpacity, Config, Theme } from "../../../../utils";
-import { navigate, NavigationScreen } from "../../../../models";
 import { connect } from "react-redux";
+import { Icon, Screen, Text, TextInput } from "../../../../components";
+import { navigate, NavigationScreen } from "../../../../models";
+import { colorWithOpacity, Config, Theme } from "../../../../utils";
 
 const styles = StyleSheet.create({
   container: {
@@ -132,8 +132,6 @@ class Container extends React.PureComponent<Props, State> {
     this.keyboardWillHideListener.remove();
     clearTimeout(this.iconChangeTimeout);
   }
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     const { iconName, input } = this.state;
     return (
@@ -167,6 +165,8 @@ class Container extends React.PureComponent<Props, State> {
       </Screen>
     );
   }
+
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 
   private onSearchBarFocus() {
     this.animate(1);

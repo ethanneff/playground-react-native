@@ -1,14 +1,14 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
+import { connect } from "react-redux";
 import {
   Button,
   KeyboardType,
   Screen,
   TextInput
 } from "../../../../components";
+import { navigate, NavigationScreen } from "../../../../models";
 import { Theme } from "../../../../utils";
-import { NavigationScreen, navigate } from "../../../../models";
-import { connect } from "react-redux";
 
 interface DispatchProps {
   navigate: typeof navigate;
@@ -31,8 +31,6 @@ class Container extends React.PureComponent<Props> {
       padding: Theme.padding.p04
     }
   });
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     const { email, password, name, error } = this.state;
     return (
@@ -70,6 +68,8 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
+
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 
   private updateState = (key: string) => (val: string) =>
     this.setState({ [key]: val });

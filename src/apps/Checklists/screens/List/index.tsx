@@ -3,6 +3,7 @@ import { FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import { Button, Screen } from "../../../../components";
 import { RootState } from "../../../../containers";
+import { navigate, NavigationScreen } from "../../../../models";
 import { Theme } from "../../../../utils";
 import {
   getItemsByCreatedAt,
@@ -11,7 +12,6 @@ import {
   toggleActiveItem,
   updateItem
 } from "../../models";
-import { navigate, NavigationScreen } from "../../../../models";
 
 interface StateProps {
   items: ItemsArray;
@@ -19,15 +19,14 @@ interface StateProps {
 
 interface DispatchProps {
   updateItem: typeof updateItem;
+  navigate: typeof navigate;
   removeItem: typeof removeItem;
   toggleActiveItem: typeof toggleActiveItem;
-  navigate: typeof navigate;
 }
 
 type Props = DispatchProps & StateProps & DispatchProps;
 
 class Component extends React.PureComponent<Props> {
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     const { items, removeItem: remove, toggleActiveItem: toggle } = this.props;
     return (
@@ -77,6 +76,7 @@ class Component extends React.PureComponent<Props> {
       </Screen>
     );
   }
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 const mapStateToProps = (state: RootState): StateProps => ({
@@ -84,10 +84,10 @@ const mapStateToProps = (state: RootState): StateProps => ({
 });
 
 const mapDispatchToProps: DispatchProps = {
+  navigate,
   removeItem,
   toggleActiveItem,
-  updateItem,
-  navigate
+  updateItem
 };
 
 export const List = connect(

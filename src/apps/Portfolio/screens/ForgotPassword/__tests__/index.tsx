@@ -1,6 +1,6 @@
 import * as React from "react";
-import { ForgotPassword } from "../../ForgotPassword";
 import { mockRenderer } from "../../../../../utils/Mock";
+import { ForgotPassword } from "../../ForgotPassword";
 
 it("renders correctly", () => {
   const dom = mockRenderer(<ForgotPassword />).toJSON();

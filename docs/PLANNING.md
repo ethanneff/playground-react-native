@@ -12,6 +12,7 @@
 
 - [ ] remove all commented code
 - [ ] fix checklists
+- [ ] make navigation items an object and import them
 - [x] attempt icons again
 - [ ] mock date, fix tests, fix releases
 - [ ] chat app

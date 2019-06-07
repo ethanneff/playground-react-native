@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { navigate, NavigationScreen } from "../../../../models";
 import { Button, Screen } from "../../../../components";
+import { navigate, NavigationScreen } from "../../../../models";
 
 interface DispatchProps {
   navigate: typeof navigate;
@@ -25,8 +25,6 @@ class Container extends React.PureComponent<Props> {
     NavigationScreen.DebugSearchBar,
     NavigationScreen.DebugStopwatch
   ];
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     return (
       <Screen onLeftPress={this.nav(NavigationScreen.PortfolioLanding)}>
@@ -36,6 +34,8 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
+
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 const mapDispatchToProps: DispatchProps = { navigate };

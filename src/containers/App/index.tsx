@@ -12,15 +12,15 @@ import DeviceInfo from "react-native-device-info";
 import VersionNumber from "react-native-version-number";
 import { connect } from "react-redux";
 import {
-  updateDimensions,
-  updateNetwork,
-  updateFingerprint,
-  updateBattery,
-  loadDevice,
+  changeAppStatus,
+  changeKeyboardStatus,
   DimensionsProps,
   loadApp,
-  changeAppStatus,
-  changeKeyboardStatus
+  loadDevice,
+  updateBattery,
+  updateDimensions,
+  updateFingerprint,
+  updateNetwork
 } from "../../models";
 import { Navigation } from "../Navigation";
 
@@ -97,7 +97,9 @@ class Component extends React.PureComponent<Props> {
       userAgent: DeviceInfo.getUserAgent(),
       windowDimensions: Dimensions.get("window")
     });
-    if (DeviceInfo.isEmulator()) return;
+    if (DeviceInfo.isEmulator()) {
+      return;
+    }
     DeviceInfo.isPinOrFingerprintSet((isPinOrFingerprintSet: boolean) =>
       this.props.updateFingerprint(isPinOrFingerprintSet)
     );
@@ -149,13 +151,13 @@ class Component extends React.PureComponent<Props> {
 export const App = connect(
   null,
   {
-    loadApp,
     changeAppStatus,
-    updateBattery,
+    changeKeyboardStatus,
+    loadApp,
     loadDevice,
+    updateBattery,
     updateDimensions,
     updateFingerprint,
-    changeKeyboardStatus,
     updateNetwork
   }
 )(Component);

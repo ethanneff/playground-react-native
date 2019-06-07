@@ -6,8 +6,8 @@ import {
   View,
   ViewStyle
 } from "react-native";
-import { Button } from "../Button";
 import { Theme } from "../../utils";
+import { Button } from "../Button";
 
 interface Props {
   autoCorrect?: boolean;

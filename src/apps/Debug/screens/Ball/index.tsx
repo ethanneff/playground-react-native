@@ -4,10 +4,10 @@ import { connect } from "react-redux";
 import { Button, Screen } from "../../../../components";
 import { RootState } from "../../../../containers";
 import {
-  NavigationScreen,
-  navigate,
   getHeight,
-  getWidth
+  getWidth,
+  navigate,
+  NavigationScreen
 } from "../../../../models";
 
 const styles = StyleSheet.create({
@@ -46,8 +46,6 @@ class Container extends React.PureComponent<Props> {
     const { width, height } = this.props;
     this.ballPosition = new Animated.ValueXY({ x: width / 2, y: height / 2 });
   }
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     return (
       <Screen onLeftPress={this.nav(NavigationScreen.Debug)}>
@@ -62,6 +60,8 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
+
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 
   private animate(dx: number, dy: number) {
     const { width, height } = this.props;

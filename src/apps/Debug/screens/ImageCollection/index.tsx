@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Dimensions, FlatList } from "react-native";
-import { Screen } from "../../../../components";
-import { AsyncImage } from "./AsyncImage";
-import { NavigationScreen, navigate } from "../../../../models";
 import { connect } from "react-redux";
+import { Screen } from "../../../../components";
+import { navigate, NavigationScreen } from "../../../../models";
+import { AsyncImage } from "./AsyncImage";
 
 interface DispatchProps {
   navigate: typeof navigate;
@@ -28,8 +28,6 @@ class Container extends React.PureComponent<Props> {
   private imageUrl = `http://lorempixel.com/${this.columnWidth}/${
     this.columnWidth
   }`;
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     return (
       <Screen onLeftPress={this.nav(NavigationScreen.Debug)}>
@@ -44,6 +42,8 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
+
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 
   private fetchMore = () => {
     this.data.push(Math.random());

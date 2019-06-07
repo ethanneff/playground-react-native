@@ -10,27 +10,27 @@ import {
 import thunk, { ThunkAction } from "redux-thunk";
 import { DeepReadonly } from "utility-types";
 import {
-  AppState,
-  AuthState,
+  ItemActions,
+  itemReducer,
+  Items,
+  ListActions,
+  listReducer,
+  Lists
+} from "../../apps/Checklists/models";
+import {
   AppActions,
   appReducer,
+  AppState,
   AuthActions,
   authReducer,
+  AuthState,
   DeviceActions,
   deviceReducer,
-  navigationReducer,
-  NavigationState,
+  DeviceState,
   NavigationActions,
-  DeviceState
+  navigationReducer,
+  NavigationState
 } from "../../models";
-import {
-  Items,
-  Lists,
-  itemReducer,
-  ListActions,
-  ItemActions,
-  listReducer
-} from "../../apps/Checklists/models";
 
 // interfaces
 export type RootState = DeepReadonly<{

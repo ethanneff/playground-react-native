@@ -13,8 +13,8 @@ import {
   getLargestDimension,
   getSmallestDimension,
   getWidth,
-  updateBattery,
   loadDevice,
+  updateBattery,
   updateDimensions,
   updateFingerprint,
   updateNetwork

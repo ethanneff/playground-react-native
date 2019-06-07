@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Button, Screen, Text, TextInput } from "../../../../components";
+import { StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
+import { Button, Screen, Text, TextInput } from "../../../../components";
 import { navigate, NavigationScreen } from "../../../../models";
-import { View, StyleSheet } from "react-native";
 
 interface State {
   email: string;
@@ -16,15 +16,13 @@ interface DispatchProps {
 type Props = DispatchProps;
 
 class Container extends React.PureComponent<Props, State> {
-  private styles = StyleSheet.create({
-    row: { flexDirection: "row", justifyContent: "space-around" }
-  });
   public state = {
     email: "",
     password: ""
   };
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
+  private styles = StyleSheet.create({
+    row: { flexDirection: "row", justifyContent: "space-around" }
+  });
 
   public render() {
     return (
@@ -55,6 +53,8 @@ class Container extends React.PureComponent<Props, State> {
       </Screen>
     );
   }
+
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 const mapDispatchToProps: DispatchProps = { navigate };

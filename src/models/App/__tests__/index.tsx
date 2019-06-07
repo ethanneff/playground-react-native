@@ -4,11 +4,11 @@ import {
   appInitialState,
   appReducer,
   AppState,
+  changeAppStatus,
+  changeKeyboardStatus,
   getAppStatus,
   getKeyboardVisible,
-  loadApp,
-  changeAppStatus,
-  changeKeyboardStatus
+  loadApp
 } from "..";
 import { store } from "../../../containers";
 

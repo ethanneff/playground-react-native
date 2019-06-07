@@ -2,8 +2,8 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { Button, Screen, TextInput } from "../../../../components";
 import { RootState } from "../../../../containers";
+import { navigate, NavigationScreen } from "../../../../models";
 import { createItem } from "../../models/Item";
-import { NavigationScreen, navigate } from "../../../../models";
 
 interface DispatchProps {
   createItem: typeof createItem;
@@ -21,7 +21,6 @@ class Component extends React.PureComponent<Props, State> {
     description: "",
     name: ""
   };
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   public render() {
     const { name, description } = this.state;
     return (
@@ -36,6 +35,7 @@ class Component extends React.PureComponent<Props, State> {
       </Screen>
     );
   }
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
   private setName = (name: string) => {
     this.setState({ name });
   };

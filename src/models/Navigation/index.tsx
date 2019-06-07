@@ -38,9 +38,10 @@ export enum NavigationModal {
 }
 
 export interface NavigationState {
-  screen: NavigationScreen;
   modal: NavigationModal;
+  screen: NavigationScreen;
 }
+
 export type NavigationActions = ActionType<
   typeof navigate | typeof showModal | typeof hideModal
 >;
@@ -62,8 +63,8 @@ export const getModal = (state: RootState): NavigationModal =>
 
 // reducers
 export const navigationInitialState: NavigationState = {
-  screen: NavigationScreen.PortfolioLanding,
-  modal: NavigationModal.None
+  modal: NavigationModal.None,
+  screen: NavigationScreen.PortfolioLanding
 };
 export function navigationReducer(
   state: NavigationState = navigationInitialState,
