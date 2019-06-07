@@ -8,14 +8,13 @@ import {
   NetInfo
 } from "react-native";
 import { connect } from "react-redux";
-import { Route, Router, Switch } from "../../components";
 import {
   DimensionsProps,
   changeAppStatus,
   updateDimensions,
   updateNetwork
 } from "../../models";
-import { Debug, Landing, Login, Main, NotFound } from "../../screens";
+import { Navigation } from "../Navigation";
 
 interface DispatchProps {
   changeAppStatus: typeof changeAppStatus;
@@ -36,17 +35,7 @@ class Component extends React.PureComponent<Props> {
   }
 
   public render() {
-    return (
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route path="/login" component={Login} />
-          <Route path="/debug" component={Debug} />
-          <Route auth path="/app" component={Main} />
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
-    );
+    return <Navigation />;
   }
 
   private enableListeners() {

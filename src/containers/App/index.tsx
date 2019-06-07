@@ -11,19 +11,18 @@ import {
 import DeviceInfo from "react-native-device-info";
 import VersionNumber from "react-native-version-number";
 import { connect } from "react-redux";
-import { Route, Router, Switch } from "../../components";
 import {
+  updateDimensions,
+  updateNetwork,
+  updateFingerprint,
+  updateBattery,
+  loadDevice,
   DimensionsProps,
   loadApp,
   changeAppStatus,
-  updateBattery,
-  loadDevice,
-  updateDimensions,
-  updateFingerprint,
-  changeKeyboardStatus,
-  updateNetwork
+  changeKeyboardStatus
 } from "../../models";
-import { Debug, Landing, Login, Main, NotFound } from "../../screens";
+import { Navigation } from "../Navigation";
 
 interface DispatchProps {
   loadApp: typeof loadApp;
@@ -50,17 +49,7 @@ class Component extends React.PureComponent<Props> {
   }
 
   public render() {
-    return (
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route path="/login" component={Login} />
-          <Route path="/debug" component={Debug} />
-          <Route auth path="/app" component={Main} />
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
-    );
+    return <Navigation />;
   }
 
   private setProperties() {
