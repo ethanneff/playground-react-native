@@ -22,9 +22,6 @@
 | uuid                                      | v4 unique ids for all             | state management       |
 | reselect                                  | memoization reads                 | state management       |
 | @redux-offline/redux-offline              | offline state                     | state management       |
-| react-router                              | navigation                        | navigation             |
-| react-router-dom                          | web                               | navigation             |
-| react-router-native                       | ios and android                   | navigation             |
 | @commitlint/cli                           | strict commit messages            | continuous integration |
 | @commitlint/config-conventional           | strict commit messages angular    | continuous integration |
 | @semantic-release/commit-analyzer         |                                   | continuous integration |
@@ -43,9 +40,6 @@
 | @types/react-native-vector-icons          |                                   | type definition        |
 | @types/react-native-version-number        |                                   | type definition        |
 | @types/react-redux                        |                                   | type definition        |
-| @types/react-router                       |                                   | type definition        |
-| @types/react-router-dom                   |                                   | type definition        |
-| @types/react-router-native                |                                   | type definition        |
 | @types/react-test-renderer                |                                   | type definition        |
 | @types/uuid                               |                                   | type definition        |
 | codecov                                   | code coverage                     | code quality           |
