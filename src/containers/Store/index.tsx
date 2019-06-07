@@ -30,7 +30,7 @@ import {
   ListActions,
   ItemActions,
   listReducer
-} from "../../screens/Debug/screens/Checklists/models";
+} from "../../apps/Checklists/models";
 
 // interfaces
 export type RootState = DeepReadonly<{

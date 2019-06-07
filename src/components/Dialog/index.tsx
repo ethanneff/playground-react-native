@@ -9,7 +9,7 @@ import { Text } from "../Text";
 import { Button } from "../Button";
 import { colorWithOpacity, Theme } from "../../utils";
 import { connect } from "react-redux";
-import { hideModal } from "../../models/Navigation";
+import { hideModal } from "../../models";
 
 interface OwnProps {
   testID?: string;

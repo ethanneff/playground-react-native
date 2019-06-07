@@ -1,0 +1,58 @@
+import * as React from "react";
+import { connect } from "react-redux";
+import { Button, Screen, TextInput } from "../../../../components";
+import { RootState } from "../../../../containers";
+import { createItem } from "../../models/Item";
+import { NavigationScreen, navigate } from "../../../../models";
+
+interface DispatchProps {
+  createItem: typeof createItem;
+  navigate: typeof navigate;
+}
+
+type Props = DispatchProps & DispatchProps;
+interface State {
+  name: string;
+  description: string;
+}
+
+class Component extends React.PureComponent<Props, State> {
+  public state = {
+    description: "",
+    name: ""
+  };
+  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
+  public render() {
+    const { name, description } = this.state;
+    return (
+      <Screen onLeftPress={this.nav(NavigationScreen.ChecklistsList)}>
+        <TextInput title="name" value={name} onChangeText={this.setName} />
+        <TextInput
+          title="description"
+          value={description}
+          onChangeText={this.setDescription}
+        />
+        <Button title="create" onPress={this.createItem} />
+      </Screen>
+    );
+  }
+  private setName = (name: string) => {
+    this.setState({ name });
+  };
+  private setDescription = (description: string) => {
+    this.setState({ description });
+  };
+  private createItem = () => {
+    const { createItem: create } = this.props;
+    const { name, description } = this.state;
+    create({ name, description });
+    this.nav(NavigationScreen.ChecklistsList);
+  };
+}
+
+export const ItemCreate = connect(
+  (state: RootState) => ({
+    state
+  }),
+  { createItem, navigate }
+)(Component);
