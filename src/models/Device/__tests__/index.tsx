@@ -21,6 +21,10 @@ import {
 } from "..";
 import { store } from "../../../containers";
 
+jest.mock("react-native-device-info", () => ({
+  getModel: jest.fn()
+}));
+
 describe("selectors", () => {
   beforeEach(() => {
     const dimensionChange = {
