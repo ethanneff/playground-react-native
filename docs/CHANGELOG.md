@@ -1,5 +1,42 @@
 # Changelog
 
+# [2.0.0](https://github.com/ethanneff/example/compare/v1.19.4...v2.0.0) (2019-06-07)
+
+
+### Bug Fixes
+
+* convert timer to any because node typings don't expect it a number ([a74dcf0](https://github.com/ethanneff/example/commit/a74dcf0))
+* correct linting ([50a8038](https://github.com/ethanneff/example/commit/50a8038))
+* export dialog component ([22f3f2a](https://github.com/ethanneff/example/commit/22f3f2a))
+* move app to containers ([f465847](https://github.com/ethanneff/example/commit/f465847))
+* prevent battery warning on simulators ([c7a84cd](https://github.com/ethanneff/example/commit/c7a84cd))
+* relocate app to container ([c347ee4](https://github.com/ethanneff/example/commit/c347ee4))
+* relocate app to containers ([90a928b](https://github.com/ethanneff/example/commit/90a928b))
+* relocate store to containers to prevent circular imports ([b1c6680](https://github.com/ethanneff/example/commit/b1c6680))
+* remove circular dependencies within components ([841c689](https://github.com/ethanneff/example/commit/841c689))
+* remove react-router component wrappers ([8c0916b](https://github.com/ethanneff/example/commit/8c0916b))
+* remove react-router dependencies ([45eb19b](https://github.com/ethanneff/example/commit/45eb19b))
+* rename actions to better names ([d25c5d1](https://github.com/ethanneff/example/commit/d25c5d1))
+* update dependencies ([bad7008](https://github.com/ethanneff/example/commit/bad7008))
+* update dependencies ([954edb6](https://github.com/ethanneff/example/commit/954edb6))
+* update tests ([356d3d0](https://github.com/ethanneff/example/commit/356d3d0))
+* update tests ([9fa27bd](https://github.com/ethanneff/example/commit/9fa27bd))
+
+
+### Features
+
+* add forgot password ([473a83e](https://github.com/ethanneff/example/commit/473a83e))
+* create mockRenderer to prevent circular references ([1b2c5b4](https://github.com/ethanneff/example/commit/1b2c5b4))
+* move navigation to redux ([ed092ff](https://github.com/ethanneff/example/commit/ed092ff))
+* relocate screens to apps ([185e806](https://github.com/ethanneff/example/commit/185e806))
+
+
+### BREAKING CHANGES
+
+* repo is now organized by apps instead of grouped screens
+* navigation will now be handled by redux
+* removes react-router for custom redux navigation
+
 ## [1.19.4](https://github.com/ethanneff/example/compare/v1.19.3...v1.19.4) (2019-05-31)
 
 
