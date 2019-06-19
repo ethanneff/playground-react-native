@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.4](https://github.com/ethanneff/example/compare/v2.0.3...v2.0.4) (2019-06-19)
+
+
+### Bug Fixes
+
+* update cocoapods ([b257dc1](https://github.com/ethanneff/example/commit/b257dc1))
+
 ## [2.0.3](https://github.com/ethanneff/example/compare/v2.0.2...v2.0.3) (2019-06-19)
 
 
