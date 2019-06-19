@@ -11920,18 +11920,18 @@ react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-native-device-info@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-2.1.1.tgz#c6ddc022033756a5e4c5899eb83e390b5a18cc17"
-  integrity sha512-H0qq9UdP3zGESYH4HMPuv2A/FwOMszVbktj0JWuT/eVhW97PyRkYcobhFd1ggW0U+ksVSewSyX+JenQejGp7+w==
+react-native-device-info@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-2.1.2.tgz#5c553498e8930410aa65796b83f8f8c8fb9893b4"
+  integrity sha512-q14hVR0eLRXnKeRyKX4naydXstCWetCIL+K+vUqREGkVj6qKoBouKd2yd8AxBfyomQN4uP3XRT6hTCwErIj9Ew==
 
-react-native-firebase@5.4.3:
-  version "5.4.3"
-  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-5.4.3.tgz#3c14c0f72b5593bb3aa4f91e417cbf459b60f15c"
-  integrity sha512-JnE4IK/NuST+QfgzlCKtHtjpjPcLYB2/us2YnK2jGGNeCRwARWbNUPgATLkkPAJYqRIfjxXBadqBabrVsXGCVw==
+react-native-firebase@5.5.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-5.5.0.tgz#c3ee33e1e025c07d1822675e3ce4b66a56714e17"
+  integrity sha512-oF+kvWJvks5I+9ihty/u4sFNloBriXXEI1G+/w1jhTzWjyTjKQBufzbMtKHZ+y4uPjNRB4uNGfKLMXXGtIZ9Qg==
   dependencies:
     opencollective-postinstall "^2.0.0"
-    prop-types "^15.6.2"
+    prop-types "^15.7.2"
 
 react-native-iphone-x-helper@^1.0.3:
   version "1.2.0"
