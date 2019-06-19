@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.3](https://github.com/ethanneff/example/compare/v2.0.2...v2.0.3) (2019-06-19)
+
+
+### Bug Fixes
+
+* update dependencies ([e5059d2](https://github.com/ethanneff/example/commit/e5059d2))
+* update dependencies ([068722f](https://github.com/ethanneff/example/commit/068722f))
+
 ## [2.0.2](https://github.com/ethanneff/example/compare/v2.0.1...v2.0.2) (2019-06-14)
 
 
