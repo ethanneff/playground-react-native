@@ -44,7 +44,7 @@
     "redux": "4.0.1",
     "redux-thunk": "2.3.0",
     "reselect": "4.0.0",
-    "typesafe-actions": "4.4.1",
+    "typesafe-actions": "4.4.2",
     "utility-types": "3.7.0",
     "uuid": "3.3.2"
   },
