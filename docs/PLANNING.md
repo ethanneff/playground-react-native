@@ -8,13 +8,15 @@
 
 ## Rest
 
-#### v0 merge all code bases
+#### week 1: fix navigation
 
 - [ ] remove all commented code
 - [ ] fix checklists
 - [ ] make navigation items an object and import them
+
+#### week 2: merge all code bases
+
 - [x] attempt icons again
-- [ ] mock date, fix tests, fix releases
 - [ ] chat app
 - [ ] slack markdown
 - [ ] main landing page
@@ -22,15 +24,13 @@
 - [ ] main navigation
 - [ ] main counter
 - [ ] main app statusbar
-- [x] stopwatch
-
-#### v1 redux async
-
-- [x] finish redux for user (async typeactions)
+- [ ] fix stopwatch
 - [ ] logout clear everything
-- [ ] hook up auth to sign in flow
-- [ ] add tests to auth
-- [ ] test out redux offline
+
+#### week 3: fix tests
+
+- [ ] mock date, fix tests, fix releases
+- [ ] test redux offline
 
 #### v2 core app
 
@@ -129,6 +129,9 @@
 
 ## Done
 
+- [x] finish redux for user (async typeactions)
+- [x] hook up auth to sign in flow
+- [x]] add tests to auth
 - [x] clean up navigation layer
 - [x] fix checklists and canthurtme
 - [x] push v2 fix
