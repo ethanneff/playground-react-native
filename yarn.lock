@@ -1421,16 +1421,16 @@
   resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.2.0.tgz#ee9d5a09c9969eade1ec864776aeda5c5cddbbf0"
   integrity sha512-9Tj/qn+y2j+sjCI3Jd+qseGtHjOAeg7dU2/lVcqIQ9TV3QDaDXDYXcoOHU+7o2Hwh8L8ymL4gfuO7KxDs3q2zg==
 
-"@semantic-release/git@7.0.12":
-  version "7.0.12"
-  resolved "https://registry.yarnpkg.com/@semantic-release/git/-/git-7.0.12.tgz#53700bdf23f014cf755173650f27b55ad31ebda4"
-  integrity sha512-LG+sTU0dxwf5TCRtbDB4seXtdTU8OOmVhvHtambgTp2Xu6zaVMmZcVMbRIhuZd/u+LIYHsNI23v6W+xS4BgtNQ==
+"@semantic-release/git@7.0.13":
+  version "7.0.13"
+  resolved "https://registry.yarnpkg.com/@semantic-release/git/-/git-7.0.13.tgz#4099237d355a9411cb08d8264e5c4cef99f84dd9"
+  integrity sha512-BlmQ87TGx0GsE/RC4R3RQH4fvZY5ch0f7E41z510e6zOGNn5sn7e1r+pWcZYOiNjlmb+7M3yXg8cZHz5kGFZVw==
   dependencies:
     "@semantic-release/error" "^2.1.0"
     aggregate-error "^3.0.0"
     debug "^4.0.0"
     dir-glob "^2.0.0"
-    execa "^1.0.0"
+    execa "^2.0.0"
     fs-extra "^8.0.0"
     globby "^9.0.0"
     lodash "^4.17.4"
@@ -1787,10 +1787,10 @@
     "@types/prop-types" "*"
     "@types/react" "*"
 
-"@types/react-native@0.57.63":
-  version "0.57.63"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.63.tgz#56cc7e6426ffe8e3d149c86d3396496370a75396"
-  integrity sha512-viAtvjgb/6cn4gu7eEUhTxhlYZ8oOG+1OdHznWac1BgbiPEGcDmamnW/+KZR9gRjsXY9qZY+nfyzVjcwhYmlkw==
+"@types/react-native@0.57.64":
+  version "0.57.64"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.64.tgz#bb26d57f8b0975f0562efbd41722048fb275eb47"
+  integrity sha512-g8iKvLkEPB+49EKauH7rVrX0y9Gb59+kyFjBFAMOAtwMjfFqiRBK6argXowDq0L6zE8kBoAmJN7v8WGlxOKBeg==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -2297,24 +2297,24 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-appcenter-analytics@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/appcenter-analytics/-/appcenter-analytics-2.0.0.tgz#77be7c08aae2102ceb45087b38e872b44f5af223"
-  integrity sha512-KC5DMBIug8HxA9IQYqNYGMVbGqZzTXI4vNfPhECr1AWahNG+BHRKbwGgmcYDeNUpAvk641o4VdGDLYZEBn4CkA==
+appcenter-analytics@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/appcenter-analytics/-/appcenter-analytics-2.1.0.tgz#67b66e01245d472be8fecc0b28f591b7d64dc8b9"
+  integrity sha512-4gMvlTSSlyc+Lp0jW3mLvlMJavXJsOVQX30upKaYnRgKH+YCjix9a/Iy99CaH40MZoEVFSQiZdj3KfDnTjAKvQ==
   dependencies:
-    appcenter "2.0.0"
+    appcenter "2.1.0"
 
-appcenter-crashes@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/appcenter-crashes/-/appcenter-crashes-2.0.0.tgz#fed86774e90c5a0d6ac93c3d3130009e1d81f2d2"
-  integrity sha512-D9H05u/BUtJvu98j75L0Oj0vDmc/TPkipz8ZIqUkaq7ZLJfDTJVYl2M4ObCTGOVG6QxcNnNNZK4ZLnHBMMUu2g==
+appcenter-crashes@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/appcenter-crashes/-/appcenter-crashes-2.1.0.tgz#cd88344acab16fe699df02b90c804bce77e92b80"
+  integrity sha512-TP3yfALyoTVdsi/p9TBkBZAtf8XwoxdK+6Gz7h1ByGQ0qcF7INxFrrKePj5qYXCJznkxPL0WvkV2ArqI+xFkrw==
   dependencies:
-    appcenter "2.0.0"
+    appcenter "2.1.0"
 
-appcenter-link-scripts@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/appcenter-link-scripts/-/appcenter-link-scripts-2.0.0.tgz#7fcdf59359655a0950bba1281a9ad804745999df"
-  integrity sha512-c2ozK6aPn3mZa/sNBAW9Ha1+uj1FQTGZCq4SGCRulX+VPXBXhV/DmRXAzC9047h7qFPCRgjuKlTVBnaYOqyQQg==
+appcenter-link-scripts@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/appcenter-link-scripts/-/appcenter-link-scripts-2.1.0.tgz#a15b1efe59327851c605e93dc1eb8af576fbf0cf"
+  integrity sha512-oCEUUi1hlEIu7xzeM6Hly3TROfqBUoUe7b6yqttJzZnu9xy7oAK6W1L/cH3gh15I8g2melDQd+0E2dbAfSY2yg==
   dependencies:
     debug "^2.2.0"
     glob "^5.0.15"
@@ -2323,12 +2323,12 @@ appcenter-link-scripts@2.0.0:
     which "^1.2.11"
     xcode "^2.0.0"
 
-appcenter@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-2.0.0.tgz#df24d914b05b3e0f41e5662f18d3740af032cd4d"
-  integrity sha512-nytXWAP+rpd2tbvSndlYkHvH3shL7BxSJs70gs0ZzTJ52Zqge+8xtS7BNEMvfea5YDRwV5H6YjqjTu/EPiaFZg==
+appcenter@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-2.1.0.tgz#e378c6270030edf0a57b96010371d3b6ba8e9ff4"
+  integrity sha512-6cmdAOCFTPeV1rPMT8+I8izk2Ug79xfOSNuj4mKkOnT0NEM6tPe5gj+QkhTXWy17Y77n40giYSqdFXs12sty/g==
   dependencies:
-    appcenter-link-scripts "2.0.0"
+    appcenter-link-scripts "2.1.0"
 
 append-transform@^1.0.0:
   version "1.0.0"
@@ -4072,6 +4072,16 @@ cosmiconfig@^5.0.0, cosmiconfig@^5.0.1, cosmiconfig@^5.0.5, cosmiconfig@^5.0.7, 
     js-yaml "^3.13.0"
     parse-json "^4.0.0"
 
+cosmiconfig@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-5.2.1.tgz#040f726809c591e77a17c0a3626ca45b4f168b1a"
+  integrity sha512-H65gsXo1SKjf8zmrJ67eJk8aIRKV5ff2D4uKZIBZShbhGSpEmsQOPW/SKMKYhSTrqR7ufy6RP69rPogdaPh/kA==
+  dependencies:
+    import-fresh "^2.0.0"
+    is-directory "^0.3.1"
+    js-yaml "^3.13.1"
+    parse-json "^4.0.0"
+
 create-ecdh@^4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/create-ecdh/-/create-ecdh-4.0.3.tgz#c9111b6f33045c4697f144787f9254cdc77c45ff"
@@ -5354,6 +5364,20 @@ execa@^1.0.0:
     p-finally "^1.0.0"
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
+
+execa@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-2.0.0.tgz#5524c9739710e603e97c6dfc3f6ff6bff2819885"
+  integrity sha512-+ym7S09yUVPHEhYBsdLm53ZjCmCSeAQVtM/iN9dDj9tbvcBnCeBXTXHPWR9HXzht+vslGROteM8bSUdr4YszUg==
+  dependencies:
+    cross-spawn "^6.0.5"
+    get-stream "^5.0.0"
+    is-stream "^2.0.0"
+    merge-stream "^2.0.0"
+    npm-run-path "^3.0.0"
+    p-finally "^2.0.0"
+    signal-exit "^3.0.2"
+    strip-final-newline "^2.0.0"
 
 exit@^0.1.2:
   version "0.1.2"
@@ -6668,17 +6692,16 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-husky@2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-2.4.1.tgz#dd00f9646f8693b93f7b3a12ba4be00be0eff7ab"
-  integrity sha512-ZRwMWHr7QruR22dQ5l3rEGXQ7rAQYsJYqaeCd+NyOsIFczAtqaApZQP3P4HwLZjCtFbm3SUNYoKuoBXX3AYYfw==
+husky@2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-2.5.0.tgz#fe9839e118e5d88e3f1d7121d52564745615815e"
+  integrity sha512-/aQIBaVMuzGi5X5BPliDPbHE+G+HDpWV7Zu28DiiXFMvHQcOeTsEnODWIGKyGBp7GM7rOgkxQdF+6AEo6xNtkw==
   dependencies:
-    cosmiconfig "^5.2.0"
+    cosmiconfig "^5.2.1"
     execa "^1.0.0"
-    find-up "^3.0.0"
     get-stdin "^7.0.0"
     is-ci "^2.0.0"
-    pkg-dir "^4.1.0"
+    pkg-dir "^4.2.0"
     please-upgrade-node "^3.1.1"
     read-pkg "^5.1.1"
     run-node "^1.0.0"
@@ -7340,6 +7363,11 @@ is-stream@^1.0.0, is-stream@^1.0.1, is-stream@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
   integrity sha1-EtSj3U5o4Lec6428hBc66A2RykQ=
+
+is-stream@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-2.0.0.tgz#bde9c32680d6fae04129d6ac9d921ce7815f78e3"
+  integrity sha512-XCoy+WlUr7d1+Z8GgSuXmpuUFC9fOhRXglJMx+dwLKTkL44Cjd4W1Z5P+BQZpr+cR93aGP4S/s7Ftw6Nd/kiEw==
 
 is-subset@^0.1.1:
   version "0.1.1"
@@ -8966,6 +8994,11 @@ merge-stream@^1.0.1:
   dependencies:
     readable-stream "^2.0.1"
 
+merge-stream@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
+  integrity sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==
+
 merge2@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.2.3.tgz#7ee99dbd69bb6481689253f018488a1b902b0ed5"
@@ -9956,6 +9989,13 @@ npm-run-path@^2.0.0:
   dependencies:
     path-key "^2.0.0"
 
+npm-run-path@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-3.1.0.tgz#7f91be317f6a466efed3c9f2980ad8a4ee8b0fa5"
+  integrity sha512-Dbl4A/VfiVGLgQv29URL9xshU8XDY1GeLy+fsaZ1AA8JDSfjvr5P5+pzRbWqRSBxk6/DW7MIh8lTM/PaGnP2kg==
+  dependencies:
+    path-key "^3.0.0"
+
 npm-user-validate@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/npm-user-validate/-/npm-user-validate-1.0.0.tgz#8ceca0f5cea04d4e93519ef72d0557a75122e951"
@@ -10412,6 +10452,11 @@ p-finally@^1.0.0:
   resolved "https://registry.yarnpkg.com/p-finally/-/p-finally-1.0.0.tgz#3fbcfb15b899a44123b34b6dcc18b724336a2cae"
   integrity sha1-P7z7FbiZpEEjs0ttzBi3JDNqLK4=
 
+p-finally@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/p-finally/-/p-finally-2.0.1.tgz#bd6fcaa9c559a096b680806f4d657b3f0f240561"
+  integrity sha512-vpm09aKwq6H9phqRQzecoDpD8TmVyGw70qmWlyq5onxY7tqyTTFVvxMykxQSQKILBSFlbXpypIw2T1Ml7+DDtw==
+
 p-is-promise@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/p-is-promise/-/p-is-promise-2.0.0.tgz#7554e3d572109a87e1f3f53f6a7d85d1b194f4c5"
@@ -10670,6 +10715,11 @@ path-key@^2.0.0, path-key@^2.0.1:
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
+path-key@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/path-key/-/path-key-3.1.0.tgz#99a10d870a803bdd5ee6f0470e58dfcd2f9a54d3"
+  integrity sha512-8cChqz0RP6SHJkMt48FW0A7+qUOn+OsnOsVtzI59tZ8m+5bCSk7hzwET0pulwOM2YMn9J1efb07KB9l9f30SGg==
+
 path-parse@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
@@ -10778,12 +10828,12 @@ pkg-dir@^3.0.0:
   dependencies:
     find-up "^3.0.0"
 
-pkg-dir@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-4.1.0.tgz#aaeb91c0d3b9c4f74a44ad849f4de34781ae01de"
-  integrity sha512-55k9QN4saZ8q518lE6EFgYiu95u3BWkSajCifhdQjvLvmr8IpnRbhI+UGpWJQfa0KzDguHeeWT1ccO1PmkOi3A==
+pkg-dir@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-4.2.0.tgz#f099133df7ede422e81d1d8448270eeb3e4261f3"
+  integrity sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
   dependencies:
-    find-up "^3.0.0"
+    find-up "^4.0.0"
 
 pkg-up@2.0.0:
   version "2.0.0"
@@ -12849,10 +12899,10 @@ selfsigned@^1.9.1:
   dependencies:
     node-forge "0.7.5"
 
-semantic-release@15.13.16:
-  version "15.13.16"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.13.16.tgz#568b388790e5670acebcc6866113c37fbd968458"
-  integrity sha512-N/KsJyoABnq17h4WhfJW2lJRuDChulD5zMm8qxRx6mN9oQ49DfvzGKmQlTFj2VF6qwG1TEe723SxIYaGD7IDzA==
+semantic-release@15.13.17:
+  version "15.13.17"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.13.17.tgz#5a6ff4fbe5f2d4a7deb40c533af7d2642eb50690"
+  integrity sha512-FkbqF/B4QRzTMCrWJyxGGZwgH+D9P6Zr0lXP/TcGBU+vB6ShTXxg8mJwgkRJqytZU6s6gV5eWliYAwDKZhewHA==
   dependencies:
     "@semantic-release/commit-analyzer" "^6.1.0"
     "@semantic-release/error" "^2.2.0"
@@ -12863,7 +12913,7 @@ semantic-release@15.13.16:
     cosmiconfig "^5.0.1"
     debug "^4.0.0"
     env-ci "^4.0.0"
-    execa "^1.0.0"
+    execa "^2.0.0"
     figures "^3.0.0"
     find-versions "^3.0.0"
     get-stream "^5.0.0"
@@ -13631,6 +13681,11 @@ strip-eof@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
   integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
+
+strip-final-newline@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/strip-final-newline/-/strip-final-newline-2.0.0.tgz#89b852fb2fcbe936f6f4b3187afb0a12c1ab58ad"
+  integrity sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==
 
 strip-indent@^2.0.0:
   version "2.0.0"
