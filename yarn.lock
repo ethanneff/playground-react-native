@@ -2297,12 +2297,12 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-appcenter-analytics@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/appcenter-analytics/-/appcenter-analytics-2.0.0.tgz#77be7c08aae2102ceb45087b38e872b44f5af223"
-  integrity sha512-KC5DMBIug8HxA9IQYqNYGMVbGqZzTXI4vNfPhECr1AWahNG+BHRKbwGgmcYDeNUpAvk641o4VdGDLYZEBn4CkA==
+appcenter-analytics@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/appcenter-analytics/-/appcenter-analytics-2.1.0.tgz#67b66e01245d472be8fecc0b28f591b7d64dc8b9"
+  integrity sha512-4gMvlTSSlyc+Lp0jW3mLvlMJavXJsOVQX30upKaYnRgKH+YCjix9a/Iy99CaH40MZoEVFSQiZdj3KfDnTjAKvQ==
   dependencies:
-    appcenter "2.0.0"
+    appcenter "2.1.0"
 
 appcenter-crashes@2.0.0:
   version "2.0.0"
@@ -2323,12 +2323,31 @@ appcenter-link-scripts@2.0.0:
     which "^1.2.11"
     xcode "^2.0.0"
 
+appcenter-link-scripts@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/appcenter-link-scripts/-/appcenter-link-scripts-2.1.0.tgz#a15b1efe59327851c605e93dc1eb8af576fbf0cf"
+  integrity sha512-oCEUUi1hlEIu7xzeM6Hly3TROfqBUoUe7b6yqttJzZnu9xy7oAK6W1L/cH3gh15I8g2melDQd+0E2dbAfSY2yg==
+  dependencies:
+    debug "^2.2.0"
+    glob "^5.0.15"
+    mkdirp "^0.5.1"
+    plist "^3.0.1"
+    which "^1.2.11"
+    xcode "^2.0.0"
+
 appcenter@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-2.0.0.tgz#df24d914b05b3e0f41e5662f18d3740af032cd4d"
   integrity sha512-nytXWAP+rpd2tbvSndlYkHvH3shL7BxSJs70gs0ZzTJ52Zqge+8xtS7BNEMvfea5YDRwV5H6YjqjTu/EPiaFZg==
   dependencies:
     appcenter-link-scripts "2.0.0"
+
+appcenter@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-2.1.0.tgz#e378c6270030edf0a57b96010371d3b6ba8e9ff4"
+  integrity sha512-6cmdAOCFTPeV1rPMT8+I8izk2Ug79xfOSNuj4mKkOnT0NEM6tPe5gj+QkhTXWy17Y77n40giYSqdFXs12sty/g==
+  dependencies:
+    appcenter-link-scripts "2.1.0"
 
 append-transform@^1.0.0:
   version "1.0.0"
