@@ -6,14 +6,15 @@
 | react-dom                                 | react-native-web                  | core                   |
 | react-native                              | ios and android                   | core                   |
 | react-native-web                          | desktop                           | core                   |
-| react-native-firebase                     | database                          | react native           |
-| react-native-keyboard-aware-scroll-view   | input scrolling on ios            | react native           |
-| react-native-vector-icons                 | icons                             | react native           |
-| react-native-device-info                  | device stats                      | react native           |
-| react-native-version-number               | app stats                         | react native           |
-| appcenter                                 | deploy cycle                      | react native           |
-| appcenter-analytics                       |                                   | react native           |
-| appcenter-crashes                         |                                   | react native           |
+| react-native-keyboard-aware-scroll-view   | input scrolling on ios            | feature                |
+| react-native-vector-icons                 | icons                             | feature                |
+| react-native-device-info                  | device stats                      | feature                |
+| react-native-version-number               | app stats                         | feature                |
+| react-native-firebase                     | database                          | backend                |
+| appcenter                                 | deploy cycle                      | backend                |
+| appcenter-analytics                       |                                   | analytics              |
+| appcenter-crashes                         |                                   | crashes                |
+| appcenter-push                            |                                   | push notifications     |
 | redux                                     | state                             | state management       |
 | react-redux                               | connector                         | state management       |
 | redux-thunk                               | async state                       | state management       |
@@ -54,3 +55,4 @@
 | react-art                                 | react-native-web (remove?)        | other                  |
 | moment                                    | time                              | other                  |
 | axios                                     | async networking                  | networking             |
+| react-native-reanimated                   | no js thread clock                | animations             |
