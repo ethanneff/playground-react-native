@@ -9,6 +9,8 @@ import com.microsoft.appcenter.reactnative.analytics.AppCenterReactNativeAnalyti
 import com.microsoft.appcenter.reactnative.appcenter.AppCenterReactNativePackage;
 import com.facebook.react.modules.storage.ReactDatabaseSupplier;
 import com.facebook.react.ReactApplication;
+import com.microsoft.appcenter.reactnative.push.AppCenterReactNativePushPackage;
+import com.swmansion.reanimated.ReanimatedPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.apsl.versionnumber.RNVersionNumberPackage;
 import com.facebook.react.ReactNativeHost;
@@ -30,6 +32,8 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(new MainReactPackage(),
+            new AppCenterReactNativePushPackage(MainApplication.this),
+            new ReanimatedPackage(),
             new RNDeviceInfo(),
             new RNVersionNumberPackage(), new VectorIconsPackage(), new RNFirebasePackage(),
           new AppCenterReactNativeCrashesPackage(MainApplication.this,

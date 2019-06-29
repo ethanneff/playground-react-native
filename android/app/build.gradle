@@ -139,6 +139,8 @@ android {
 }
 
 dependencies {
+    implementation project(':appcenter-push')
+    implementation project(':react-native-reanimated')
     implementation project(':react-native-device-info')
     implementation project(':react-native-version-number')
     implementation project(':react-native-vector-icons')
