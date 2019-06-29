@@ -27,6 +27,7 @@
     "appcenter": "2.1.0",
     "appcenter-analytics": "2.1.0",
     "appcenter-crashes": "2.1.0",
+    "appcenter-push": "^2.1.0",
     "axios": "0.19.0",
     "moment": "2.24.0",
     "npm-check-updates": "^3.1.12",
