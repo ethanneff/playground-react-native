@@ -29,7 +29,8 @@ import {
   PinchSpread as DebugPinchSpread,
   Questionnaire as DebugQuestionnaire,
   SearchBar as DebugSearchBar,
-  Stopwatch as DebugStopwatch
+  Stopwatch as DebugStopwatch,
+  SwipeCell as DebugSwipeCell
 } from "../../apps/Debug/screens";
 import {
   ForgotPassword as PortfolioForgotPassword,
@@ -81,6 +82,7 @@ class Container extends React.PureComponent<Props> {
     [NavigationScreen.DebugQuestionnaire]: <DebugQuestionnaire />,
     [NavigationScreen.DebugSearchBar]: <DebugSearchBar />,
     [NavigationScreen.DebugStopwatch]: <DebugStopwatch />,
+    [NavigationScreen.DebugSwipeCell]: <DebugSwipeCell />,
     [NavigationScreen.CantHurtMeHome]: <CantHurtMeHome />,
     [NavigationScreen.ChecklistsList]: <ChecklistsList />,
     [NavigationScreen.ChecklistsListCreate]: <ChecklistsListCreate />,
