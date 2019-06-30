@@ -5,6 +5,7 @@ import {
   EffectiveConnectionType,
   ScaledSize
 } from "react-native";
+import DeviceInfo from "react-native-device-info";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";
 import { logout } from "../Auth";
@@ -15,38 +16,38 @@ export interface DimensionsProps {
   screen: ScaledSize;
 }
 export interface DeviceState {
-  uniqueId?: string;
-  manufacturer?: string;
-  brand?: string;
-  model?: string;
-  deviceId?: string;
-  systemName?: string;
-  systemVersion?: string;
-  deviceName?: string;
-  userAgent?: string;
-  deviceLocale?: string;
-  deviceCountry?: string;
-  timezone?: string;
-  instanceId?: string;
-  installReferrer?: string;
-  isEmulator?: boolean;
-  isTablet?: boolean;
-  fontScale?: number;
-  is24Hour?: boolean;
-  isPinOrFingerprintSet?: boolean;
-  firstInstallTime?: number;
-  lastUpdateTime?: number;
-  serialNumber?: string;
-  phoneNumber?: string;
-  apiLevel?: number;
-  carrier?: string;
-  totalMemory?: number;
-  maxMemory?: number;
-  totalDiskCapacity?: number;
-  freeDiskStorage?: number;
-  batteryLevel?: number;
-  networkType?: ConnectionType;
-  networkEffectiveType?: EffectiveConnectionType;
+  uniqueId: string;
+  manufacturer: string;
+  brand: string;
+  model: string;
+  deviceId: string;
+  systemName: string;
+  systemVersion: string;
+  deviceName: string;
+  userAgent: string;
+  deviceLocale: string;
+  deviceCountry: string;
+  timezone: string;
+  instanceId: string;
+  installReferrer: string;
+  isEmulator: boolean;
+  isTablet: boolean;
+  fontScale: number;
+  is24Hour: boolean;
+  isPinOrFingerprintSet: boolean;
+  firstInstallTime: number;
+  lastUpdateTime: number;
+  serialNumber: string;
+  phoneNumber: string;
+  apiLevel: number;
+  carrier: string;
+  totalMemory: number;
+  maxMemory: number;
+  totalDiskCapacity: number;
+  freeDiskStorage: number;
+  batteryLevel: number;
+  networkType: ConnectionType;
+  networkEffectiveType: EffectiveConnectionType;
   windowDimensions: ScaledSize;
   screenDimensions: ScaledSize;
 }
@@ -77,6 +78,44 @@ export const updateDimensions = createStandardAction("device/UPDATE_DIMENSION")<
   DimensionsProps
 >();
 
+/* HELPERS */
+export const generateDeviceInitialState = (): DeviceState => ({
+  apiLevel: DeviceInfo.getAPILevel(),
+  batteryLevel: 0,
+  brand: DeviceInfo.getBrand(),
+  carrier: DeviceInfo.getCarrier(),
+  deviceCountry: DeviceInfo.getDeviceCountry(),
+  deviceId: DeviceInfo.getDeviceId(),
+  deviceLocale: DeviceInfo.getDeviceLocale(),
+  deviceName: DeviceInfo.getDeviceName(),
+  firstInstallTime: DeviceInfo.getFirstInstallTime(),
+  fontScale: DeviceInfo.getFontScale(),
+  freeDiskStorage: DeviceInfo.getFreeDiskStorage(),
+  installReferrer: DeviceInfo.getInstallReferrer(),
+  instanceId: DeviceInfo.getInstanceID(),
+  is24Hour: DeviceInfo.is24Hour(),
+  isEmulator: DeviceInfo.isEmulator(),
+  isPinOrFingerprintSet: false,
+  isTablet: DeviceInfo.isTablet(),
+  lastUpdateTime: DeviceInfo.getLastUpdateTime(),
+  manufacturer: DeviceInfo.getManufacturer(),
+  maxMemory: DeviceInfo.getMaxMemory(),
+  model: DeviceInfo.getModel(),
+  networkEffectiveType: "unknown",
+  networkType: "none",
+  phoneNumber: DeviceInfo.getPhoneNumber(),
+  screenDimensions: Dimensions.get("screen"),
+  serialNumber: DeviceInfo.getSerialNumber(),
+  systemName: DeviceInfo.getSystemName(),
+  systemVersion: DeviceInfo.getSystemVersion(),
+  timezone: DeviceInfo.getTimezone(),
+  totalDiskCapacity: DeviceInfo.getTotalDiskCapacity(),
+  totalMemory: DeviceInfo.getTotalMemory(),
+  uniqueId: DeviceInfo.getUniqueID(),
+  userAgent: DeviceInfo.getUserAgent(),
+  windowDimensions: Dimensions.get("window")
+});
+
 /* SELECTORS */
 export const getLandscapeOrientation = (state: RootState): boolean =>
   state.device.windowDimensions.height < state.device.windowDimensions.width;
@@ -98,13 +137,7 @@ export const getHeight = (state: RootState): number =>
   state.device.windowDimensions.height;
 
 /* REDUCERS */
-const windowDimensions = Dimensions.get("window");
-const screenDimensions = Dimensions.get("screen");
-
-export const deviceInitialState: DeviceState = {
-  screenDimensions,
-  windowDimensions
-};
+export const deviceInitialState: DeviceState = generateDeviceInitialState();
 
 export const deviceReducer = (
   state: DeviceState = deviceInitialState,

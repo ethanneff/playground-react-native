@@ -30,14 +30,8 @@ export const changeKeyboardStatus = createStandardAction(
   "app/UPDATE_KEYBOARD_VISIBILITY"
 )<boolean>();
 
-/* SELECTORS */
-export const getAppStatus = (state: RootState): AppStateStatus =>
-  state.app.status;
-export const getKeyboardVisible = (state: RootState): boolean =>
-  state.app.keyboardVisible;
-
-/* REDUCERS */
-export const appInitialState: AppState = {
+/* HELPERS */
+export const generateAppInitialState = (): AppState => ({
   appVersion: VersionNumber.appVersion,
   applicationName: DeviceInfo.getApplicationName(),
   buildNumber: DeviceInfo.getBuildNumber(),
@@ -47,7 +41,16 @@ export const appInitialState: AppState = {
   readableVersion: DeviceInfo.getReadableVersion(),
   status: AppActiveState.currentState,
   version: DeviceInfo.getVersion()
-};
+});
+
+/* SELECTORS */
+export const getAppStatus = (state: RootState): AppStateStatus =>
+  state.app.status;
+export const getKeyboardVisible = (state: RootState): boolean =>
+  state.app.keyboardVisible;
+
+/* REDUCERS */
+export const appInitialState: AppState = generateAppInitialState();
 
 export function appReducer(
   state: AppState = appInitialState,

@@ -100,6 +100,7 @@ describe("actions", () => {
       width: 1
     };
     const payload = {
+      ...deviceInitialState,
       manufacturer: "apple",
       screenDimensions: size,
       windowDimensions: size
@@ -166,6 +167,7 @@ describe("reducer", () => {
       width: 1
     };
     const data = {
+      ...deviceInitialState,
       brand: "string",
       deviceCountry: "string",
       deviceId: "string",

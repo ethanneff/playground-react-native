@@ -9,12 +9,13 @@ import {
   NetInfo
 } from "react-native";
 import DeviceInfo from "react-native-device-info";
-import VersionNumber from "react-native-version-number";
 import { connect } from "react-redux";
 import {
   changeAppStatus,
   changeKeyboardStatus,
   DimensionsProps,
+  generateAppInitialState,
+  generateDeviceInitialState,
   loadApp,
   loadDevice,
   updateBattery,
@@ -53,50 +54,8 @@ class Component extends React.PureComponent<Props> {
   }
 
   private setProperties() {
-    this.props.loadApp({
-      appVersion: VersionNumber.appVersion,
-      applicationName: DeviceInfo.getApplicationName(),
-      buildNumber: DeviceInfo.getBuildNumber(),
-      buildVersion: VersionNumber.buildVersion,
-      bundleIdentifier:
-        DeviceInfo.getBundleId() || VersionNumber.bundleIdentifier,
-      keyboardVisible: false,
-      readableVersion: DeviceInfo.getReadableVersion(),
-      status: AppState.currentState,
-      version: DeviceInfo.getVersion()
-    });
-    this.props.loadDevice({
-      apiLevel: DeviceInfo.getAPILevel(),
-      brand: DeviceInfo.getBrand(),
-      carrier: DeviceInfo.getCarrier(),
-      deviceCountry: DeviceInfo.getDeviceCountry(),
-      deviceId: DeviceInfo.getDeviceId(),
-      deviceLocale: DeviceInfo.getDeviceLocale(),
-      deviceName: DeviceInfo.getDeviceName(),
-      firstInstallTime: DeviceInfo.getFirstInstallTime(),
-      fontScale: DeviceInfo.getFontScale(),
-      freeDiskStorage: DeviceInfo.getFreeDiskStorage(),
-      installReferrer: DeviceInfo.getInstallReferrer(),
-      instanceId: DeviceInfo.getInstanceID(),
-      is24Hour: DeviceInfo.is24Hour(),
-      isEmulator: DeviceInfo.isEmulator(),
-      isTablet: DeviceInfo.isTablet(),
-      lastUpdateTime: DeviceInfo.getLastUpdateTime(),
-      manufacturer: DeviceInfo.getManufacturer(),
-      maxMemory: DeviceInfo.getMaxMemory(),
-      model: DeviceInfo.getModel(),
-      phoneNumber: DeviceInfo.getPhoneNumber(),
-      screenDimensions: Dimensions.get("screen"),
-      serialNumber: DeviceInfo.getSerialNumber(),
-      systemName: DeviceInfo.getSystemName(),
-      systemVersion: DeviceInfo.getSystemVersion(),
-      timezone: DeviceInfo.getTimezone(),
-      totalDiskCapacity: DeviceInfo.getTotalDiskCapacity(),
-      totalMemory: DeviceInfo.getTotalMemory(),
-      uniqueId: DeviceInfo.getUniqueID(),
-      userAgent: DeviceInfo.getUserAgent(),
-      windowDimensions: Dimensions.get("window")
-    });
+    this.props.loadApp(generateAppInitialState());
+    this.props.loadDevice(generateDeviceInitialState());
     if (DeviceInfo.isEmulator()) {
       return;
     }
