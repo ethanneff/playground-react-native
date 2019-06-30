@@ -12,10 +12,6 @@ import {
 } from "..";
 import { store } from "../../../containers";
 
-jest.mock("react-native-device-info", () => ({
-  getModel: jest.fn()
-}));
-
 describe("selectors", () => {
   it("getAppStatus", () => {
     const value = "background";
@@ -63,6 +59,7 @@ describe("reducer", () => {
   it("loadApp", () => {
     const status: AppStateStatus = "active";
     const payload = {
+      ...appInitialState,
       appVersion: "12",
       keyboardVisible: false,
       status

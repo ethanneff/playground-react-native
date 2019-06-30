@@ -130,6 +130,9 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFiles": [
+      "<rootDir>/src/utils/TestMocks/index.ts"
+    ],
     "transform": {
       "^.+\\.jsx?$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
       "^.+\\.tsx?$": "ts-jest"
