@@ -32,7 +32,7 @@ import {
   NavigationState
 } from "../../models";
 
-// interfaces
+/* INTERFACES */
 export type RootState = DeepReadonly<{
   app: AppState;
   auth: AuthState;
@@ -42,7 +42,7 @@ export type RootState = DeepReadonly<{
   navigation: NavigationState;
 }>;
 
-// reducers
+/* REDUCERS */
 const reducers = combineReducers<RootState>({
   app: appReducer,
   auth: authReducer,
@@ -52,7 +52,7 @@ const reducers = combineReducers<RootState>({
   navigation: navigationReducer
 });
 
-// actions
+/* ACTIONS */
 export type RootAction =
   | AppActions
   | DeviceActions
@@ -62,7 +62,7 @@ export type RootAction =
   | NavigationActions;
 export type RootThunkAction<R> = ThunkAction<R, RootState, {}, RootAction>;
 
-// constants
+/* CONSTANTS */
 const middlewares: Middleware[] = [thunk];
 const composers =
   (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -71,5 +71,5 @@ const enhancers = composers(
   offline(offlineConfig)
 );
 
-// store
+/* STORE */
 export const store = createStore(reducers, enhancers);

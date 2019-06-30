@@ -4,7 +4,7 @@ import { DeepReadonly } from "utility-types";
 import uuid from "uuid";
 import { RootAction, RootState } from "../../../../containers";
 
-// interfaces
+/* INTERFACES */
 export type Item = DeepReadonly<{
   id: string;
   name: string;
@@ -31,7 +31,7 @@ interface CreateItem {
 }
 type UpdateItem = CreateItem & { id: string };
 
-// actions
+/* ACTIONS */
 export const createItem = createStandardAction("ITEM/CREATE")<CreateItem>();
 export const updateItem = createStandardAction("ITEM/UPDATE")<UpdateItem>();
 export const removeItem = createStandardAction("ITEM/REMOVE")<string>();
@@ -39,7 +39,7 @@ export const toggleActiveItem = createStandardAction("ITEM/TOGGLE_ACTIVE")<
   string
 >();
 
-// indexes
+/* INDEXES */
 export const indexItemsByCreatedAt = (rows: Items): Items =>
   Object.values(rows).reduce(
     (index: any, row) => ((index[row.createdAt] = row.id), index),
@@ -56,7 +56,7 @@ export const indexItemsByUserId = (rows: Items): Items =>
     {}
   );
 
-// selectors
+/* SELECTORS */
 export const getItems = (state: RootState): Items => state.items;
 export const getItemsFilterByActive = createSelector(
   [getItems],
@@ -67,7 +67,7 @@ export const getItemsByCreatedAt = createSelector(
   items => Object.values(items).sort((a, b) => a.createdAt - b.createdAt)
 );
 
-// reducer
+/* REDUCER */
 const initialState = {};
 export const itemReducer = (
   state: Items = initialState,

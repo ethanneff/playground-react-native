@@ -7,9 +7,9 @@ import {
 } from "react-native";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";
-// import { logout } from "../Auth";
+import { logout } from "../Auth";
 
-// interfaces
+/* INTERFACES */
 export interface DimensionsProps {
   window: ScaledSize;
   screen: ScaledSize;
@@ -58,7 +58,7 @@ export type DeviceActions = ActionType<
   | typeof updateDimensions
 >;
 
-// actions
+/* ACTIONS */
 export const updateBattery = createStandardAction("device/UPDATE_BATTERY")<
   number
 >();
@@ -77,7 +77,7 @@ export const updateDimensions = createStandardAction("device/UPDATE_DIMENSION")<
   DimensionsProps
 >();
 
-// selectors
+/* SELECTORS */
 export const getLandscapeOrientation = (state: RootState): boolean =>
   state.device.windowDimensions.height < state.device.windowDimensions.width;
 
@@ -97,7 +97,7 @@ export const getWidth = (state: RootState): number =>
 export const getHeight = (state: RootState): number =>
   state.device.windowDimensions.height;
 
-// reducers
+/* REDUCERS */
 const windowDimensions = Dimensions.get("window");
 const screenDimensions = Dimensions.get("screen");
 
@@ -138,9 +138,8 @@ export const deviceReducer = (
         ...state,
         ...action.payload
       };
-    // TODO: add back logout
-    // case getType(logout):
-    // return deviceInitialState;
+    case getType(logout):
+      return deviceInitialState;
     default:
       return state;
   }

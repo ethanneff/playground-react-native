@@ -6,8 +6,8 @@ interface Source {
 
 interface Reminder {
   id: string;
-  day: string; // ?
-  time: string; // ?
+  day: string;
+  time: string;
 }
 
 interface Tag {

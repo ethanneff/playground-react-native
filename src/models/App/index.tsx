@@ -18,7 +18,7 @@ export type AppActions = ActionType<
   typeof loadApp | typeof changeAppStatus | typeof changeKeyboardStatus
 >;
 
-// actions
+/* ACTIONS */
 export const loadApp = createStandardAction("app/LOAD")<AppState>();
 export const changeAppStatus = createStandardAction("app/UPDATE_STATUS")<
   AppStateStatus
@@ -27,7 +27,7 @@ export const changeKeyboardStatus = createStandardAction(
   "app/UPDATE_KEYBOARD_VISIBILITY"
 )<boolean>();
 
-// selectors
+/* SELECTORS */
 export const getAppStatus = (state: RootState): AppStateStatus =>
   state.app.status;
 export const getKeyboardVisible = (state: RootState): boolean =>

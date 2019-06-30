@@ -44,7 +44,7 @@ const fontWeight: { [key: string]: FontWeight } = {
   regular: "300"
 };
 
-// sizing: https://material.io/design/typography/the-type-system.html#applying-the-type-scale
+/* SIZING https://material.io/design/typography/the-type-system.html#applying-the-type-scale */
 const fontSize = {
   body1: {
     fontSize: 16,

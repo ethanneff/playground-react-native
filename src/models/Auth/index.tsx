@@ -3,7 +3,7 @@ import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState, RootThunkAction } from "../../containers";
 import { Config } from "../../utils";
 
-// interfaces
+/* INTERFACES */
 export interface AuthState {
   token?: string;
   loading: boolean;
@@ -19,7 +19,7 @@ export type AuthActions = ActionType<
   | typeof logout
 >;
 
-// actions
+/* ACTIONS */
 export const loginRequest = createStandardAction("AUTH/LOGIN_REQUEST")();
 export const loginSuccess = createStandardAction("AUTH/REGISTER_SUCCESS")<
   string
@@ -36,7 +36,7 @@ export const registerFailure = createStandardAction("AUTH/REGISTER_FAILURE")<
 >();
 export const logout = createStandardAction("Auth/LOGOUT")();
 
-// action creators
+/* ACTION CREATORS */
 export const onLogin = (): RootThunkAction<void> => async dispatch => {
   dispatch(loginRequest());
   try {
@@ -87,12 +87,12 @@ export const onLogout = (): RootThunkAction<void> => async (
   });
 };
 
-// selectors
+/* SELECTORS */
 export const getAuthToken = (state: RootState): string | undefined =>
   state.auth.token;
 export const getAuthLoading = (state: RootState): boolean => state.auth.loading;
 
-// reducers
+/* REDUCERS */
 export const authInitialState: AuthState = {
   loading: false
 };

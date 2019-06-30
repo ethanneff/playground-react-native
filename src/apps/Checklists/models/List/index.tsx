@@ -3,7 +3,7 @@ import { ActionType, createStandardAction } from "typesafe-actions";
 import { DeepReadonly } from "utility-types";
 import { RootAction, RootState } from "../../../../containers";
 
-// Interfaces
+/* INTERFACES */
 export type List = DeepReadonly<{
   id: string;
   name: string;
@@ -35,7 +35,7 @@ interface CreateList {
 }
 type UpdateList = CreateList & { id: string };
 
-// Actions
+/* ACTIONS */
 export const createList = createStandardAction("LIST/CREATE")<CreateList>();
 export const updateList = createStandardAction("LIST/UPDATE")<UpdateList>();
 export const removeList = createStandardAction("LIST/REMOVE")<string>();
@@ -43,7 +43,7 @@ export const toggleActiveList = createStandardAction("LIST/TOGGLE_ACTIVE")<
   string
 >();
 
-// Indexes
+/* INDEXES */
 export const indexListsByCreatedAt = (rows: Lists) =>
   Object.values(rows).reduce(
     (index: any, row) => ((index[row.createdAt] = row.id), index),
@@ -60,7 +60,7 @@ export const indexListsByUserId = (rows: Lists) =>
     {}
   );
 
-// Selectors
+/* SELECTORS */
 export const selectLists = (state: RootState): Lists => state.lists;
 export const selectListsFilterByActive = createSelector(
   [selectLists],
@@ -71,7 +71,7 @@ export const selectListsByCreatedAt = createSelector(
   items => Object.values(items).sort((a, b) => a.createdAt - b.createdAt)
 );
 
-// Reducer
+/* REDUCER */
 export const listReducer = (state: Lists = {}, action: RootAction): Lists => {
   switch (action.type) {
     default:

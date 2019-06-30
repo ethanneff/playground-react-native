@@ -1,7 +1,8 @@
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";
+import { logout } from "../Auth";
 
-// interfaces
+/* INTERFACES */
 export enum NavigationScreen {
   PortfolioNotFound = "PortfolioNotFound",
   PortfolioMain = "PortfolioMain",
@@ -47,7 +48,7 @@ export type NavigationActions = ActionType<
   typeof navigate | typeof showModal | typeof hideModal
 >;
 
-// actions
+/* ACTIONS */
 export const navigate = createStandardAction("navigation/CHANGE_NAVIGATION")<
   NavigationScreen
 >();
@@ -56,13 +57,13 @@ export const showModal = createStandardAction("navigation/SHOW_MODAL")<
 >();
 export const hideModal = createStandardAction("navigation/HIDE_MODAL")();
 
-// selectors
+/* SELECTORS */
 export const getScreen = (state: RootState): NavigationScreen =>
   state.navigation.screen;
 export const getModal = (state: RootState): NavigationModal =>
   state.navigation.modal;
 
-// reducers
+/* REDUCERS */
 export const navigationInitialState: NavigationState = {
   modal: NavigationModal.None,
   screen: NavigationScreen.PortfolioLanding
