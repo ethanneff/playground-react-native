@@ -55,4 +55,10 @@
 | react-art                                 | react-native-web (remove?)        | other                  |
 | moment                                    | time                              | other                  |
 | axios                                     | async networking                  | networking             |
-| react-native-reanimated                   | no js thread clock                | animations             |
+
+# Not Installed Dependencies
+
+| dependencies                 | purpose                  | reason         |
+| :--------------------------- | :----------------------- | :------------- |
+| react-native-reanimated      | no js thread animations  | no web support |
+| react-native-gesture-handler | no js thread transitions | no web support |
