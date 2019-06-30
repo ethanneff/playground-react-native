@@ -88,8 +88,8 @@ export function navigationReducer(
         ...state,
         modal: NavigationModal.None
       };
-    // case getType(logout): // TODO:
-    //   return navigationInitialState;
+    case getType(logout):
+      return navigationInitialState;
     default:
       return state;
   }

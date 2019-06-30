@@ -1,6 +1,7 @@
 import { AppStateStatus } from "react-native";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";
+import { logout } from "../Auth";
 
 // interfaces
 export interface AppState {
@@ -58,8 +59,8 @@ export function appReducer(
         ...state,
         keyboardVisible: action.payload
       };
-    // case getType(logout): // TODO:
-    //   return appInitialState;
+    case getType(logout):
+      return appInitialState;
     default:
       return state;
   }
