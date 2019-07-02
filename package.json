@@ -71,7 +71,7 @@
     "codecov": "3.5.0",
     "husky": "2.7.0",
     "jest": "24.7.1",
-    "lint-staged": "8.2.1",
+    "lint-staged": "9.0.1",
     "prettier": "1.18.2",
     "react-test-renderer": "16.8.6",
     "semantic-release": "15.13.18",
