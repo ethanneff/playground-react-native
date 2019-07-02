@@ -9780,10 +9780,10 @@ npm-cache-filename@~1.0.2:
   resolved "https://registry.yarnpkg.com/npm-cache-filename/-/npm-cache-filename-1.0.2.tgz#ded306c5b0bfc870a9e9faf823bc5f283e05ae11"
   integrity sha1-3tMGxbC/yHCp6fr4I7xfKD4FrhE=
 
-npm-check-updates@^3.1.12:
-  version "3.1.12"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-3.1.12.tgz#da12d9d3dd8d388f8f01b2ea0ab9ec869062dd40"
-  integrity sha512-kf8pS7BDBh1yf+ZHxuGBC3bSuHd5okSBBZfNHKkAfV1Pd2DUWcNSILNZhIU54wlZ7au3w4BP9pHJ6Qll/DhI8A==
+npm-check-updates@^3.1.13:
+  version "3.1.13"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-3.1.13.tgz#6eee6574536de332515f72fb4775e11c34fd00fd"
+  integrity sha512-bRFFgs0IUJvBLLUpmbFLMHPflDQoInS9Lh7yGhbevjt64KuA9jd+bbE7vTdE/j1foZRbuf8S5vmHshjEib4d0w==
   dependencies:
     bluebird "^3.5.5"
     chalk "^2.4.2"
@@ -9794,6 +9794,7 @@ npm-check-updates@^3.1.12:
     find-up "4.0.0"
     get-stdin "^7.0.0"
     json-parse-helpfulerror "^1.0.3"
+    libnpmconfig "^1.2.1"
     lodash "^4.17.11"
     node-alias "^1.0.4"
     pacote "^9.5.1"
