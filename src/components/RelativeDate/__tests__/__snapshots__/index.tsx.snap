@@ -30,7 +30,7 @@ exports[`RelativeDate component renders correctly 1`] = `
       ]
     }
   >
-    49 years ago
+    50 years ago
   </Text>
 </View>
 `;
