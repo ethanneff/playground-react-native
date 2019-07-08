@@ -48,6 +48,7 @@
 | tslint                                    | type checking lint                | code quality           |
 | tslint-config-prettier                    | type with prettier format         | code quality           |
 | typescript                                | interface types                   | code quality           |
+| npm-check-updates                         | dependency checker                | code quality           |
 | jest                                      | react testing framework           | testing                |
 | react-test-renderer                       | test components                   | testing                |
 | babel-jest                                | prevents errors with jest         | testing                |
