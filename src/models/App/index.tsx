@@ -1,8 +1,8 @@
 import { AppState as AppActiveState, AppStateStatus } from "react-native";
 import DeviceInfo from "react-native-device-info";
-import VersionNumber from "react-native-version-number";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";
+import { VersionNumber } from "../../utils";
 import { logout } from "../Auth";
 
 /* INTERFACES */
