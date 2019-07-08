@@ -1,5 +1,29 @@
 # Changelog
 
+# [2.1.0](https://github.com/ethanneff/example/compare/v2.0.5...v2.1.0) (2019-07-08)
+
+
+### Bug Fixes
+
+* add global test mock for device info ([f8915f5](https://github.com/ethanneff/example/commit/f8915f5))
+* add missing appcenter secret for ios ([e16ef7c](https://github.com/ethanneff/example/commit/e16ef7c))
+* make version number work for web ([962bc6a](https://github.com/ethanneff/example/commit/962bc6a))
+* no optional states for device or app ([103c9c5](https://github.com/ethanneff/example/commit/103c9c5))
+* no undefineds for app store ([86f300a](https://github.com/ethanneff/example/commit/86f300a))
+* remove pods in reset becuase it won't update otherwise ([5a739f7](https://github.com/ethanneff/example/commit/5a739f7))
+* reset stores on logout ([9386ffd](https://github.com/ethanneff/example/commit/9386ffd))
+* revert native animations and gestures because not supported by web ([1964b0a](https://github.com/ethanneff/example/commit/1964b0a))
+* update firebase native dependencies ([261f586](https://github.com/ethanneff/example/commit/261f586))
+* update fonts ([ba7279b](https://github.com/ethanneff/example/commit/ba7279b))
+
+
+### Features
+
+* add appcenter push notifications ([2c34322](https://github.com/ethanneff/example/commit/2c34322))
+* add more native dependencies ([f7a2ac6](https://github.com/ethanneff/example/commit/f7a2ac6))
+* add reanimated for more performant animation clocks ([b0af674](https://github.com/ethanneff/example/commit/b0af674))
+* being to add swipe cell ([8a464ea](https://github.com/ethanneff/example/commit/8a464ea))
+
 ## [2.0.5](https://github.com/ethanneff/example/compare/v2.0.4...v2.0.5) (2019-06-21)
 
 
