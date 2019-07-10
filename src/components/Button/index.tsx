@@ -31,6 +31,7 @@ interface Props {
   fab?: boolean;
   toggle?: boolean;
   label?: boolean;
+  dropShadow?: boolean;
   // color
   neutral?: boolean;
   secondary?: boolean;
@@ -59,7 +60,8 @@ export class Button extends React.PureComponent<Props> {
     },
     container: {
       alignItems: "center",
-      borderColor: "transparent", // TODO: add border to be same size as outlined
+      borderColor: "transparent",
+      // TODO: add border to be same size as outlined
       borderRadius: Theme.padding.p01,
       borderWidth: 1,
       flexDirection: "row",
@@ -74,6 +76,19 @@ export class Button extends React.PureComponent<Props> {
     },
     disableText: {
       color: Theme.color.secondary
+    },
+    dropShadow: {
+      elevation: 1,
+      margin: Theme.padding.p02,
+      padding: Theme.padding.p04,
+      shadowColor: Theme.color.dark,
+      shadowOffset: {
+        height: Theme.padding.p01,
+        width: 0
+      },
+      shadowOpacity: 0.5,
+      shadowRadius: 2,
+      zIndex: 1
     },
     fab: {
       alignSelf: "flex-start",
@@ -142,7 +157,8 @@ export class Button extends React.PureComponent<Props> {
       secondary,
       textStyle,
       title,
-      wrap
+      wrap,
+      dropShadow
     } = this.props;
     const buttonStyleGroup = [
       this.styles.container,
@@ -155,6 +171,7 @@ export class Button extends React.PureComponent<Props> {
       center && this.styles.center,
       right && this.styles.right,
       label && this.styles.label,
+      dropShadow && this.styles.dropShadow,
       buttonStyle
     ];
     const textStyleGroup = [
