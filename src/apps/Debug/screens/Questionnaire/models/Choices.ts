@@ -1,180 +1,28 @@
-enum QuestionType {
-  Input = "Input",
-  Checkbox = "Checkbox",
-  Slider = "Slider",
-  Button = "Button"
-}
+import { ActionType, createStandardAction } from "typesafe-actions";
+import { RootAction } from "../../../../../containers";
 
-type Id = string;
-type AnswerId = Id;
-
-interface Question {
-  id: Id;
-  title: string;
-  type: QuestionType;
-  description?: string;
-  answers: Id[];
-}
-
-interface Answer {
-  id: Id;
+/* INTERFACES */
+interface Choice {
+  id: string;
   display: string;
   value?: number;
 }
 
-interface Questions {
-  [id: string]: Question;
+export interface Choices {
+  [id: string]: Choice;
 }
 
-interface Answers {
-  [id: string]: Answer;
-}
+export type ChoicesActions = ActionType<
+  typeof createChoice | typeof updateChoice | typeof removeChoice
+>;
 
-interface Responses {
-  [questionId: string]: AnswerId[];
-}
+/* ACTIONS */
+export const createChoice = createStandardAction("choices/CREATE")<Choice>();
+export const updateChoice = createStandardAction("choices/UPDATE")<Choice>();
+export const removeChoice = createStandardAction("choices/REMOVE")<string>();
 
-interface Questionnaires {
-  [id: string]: Questionnaire;
-}
-
-interface Questionnaire {
-  id: Id;
-  title: string;
-  questions: Id[];
-  responses: Responses;
-  acronym?: string;
-  formula?: string;
-}
-
-export const questions: Questions = {
-  "1": {
-    answers: ["4", "5", "6"],
-    id: "1",
-    title: "what type of counseling are you looking for?",
-    type: QuestionType.Checkbox
-  },
-  "10": {
-    answers: ["241", "242", "238", "243", "244"],
-    id: "10",
-    title:
-      "I think that I would need the support of a technical person to be able to use this system.",
-    type: QuestionType.Button
-  },
-  "2": {
-    answers: ["1", "2", "3"],
-    id: "2",
-    title: "what is your gender?",
-    type: QuestionType.Button
-  },
-  "3": {
-    answers: ["32", "33", "34"],
-    id: "3",
-    title: "how old are you?",
-    type: QuestionType.Slider
-  },
-  "4": {
-    answers: ["10", "11", "12"],
-    id: "4",
-    title: "where do you live?",
-    type: QuestionType.Button
-  },
-  "5": {
-    answers: ["234"],
-    id: "5",
-    title: "How's life",
-    type: QuestionType.Input
-  },
-  "6": {
-    answers: ["236", "237", "238", "239", "240"],
-    id: "5",
-    title: "How satisfied are you with our service?",
-    type: QuestionType.Button
-  },
-  "7": {
-    answers: ["241", "242", "238", "243", "244"],
-    id: "7",
-    title: "I think that I would like to use this system frequently.",
-    type: QuestionType.Button
-  },
-  "8": {
-    answers: ["241", "242", "238", "243", "244"],
-    id: "8",
-    title: "I found the system unnecessarily complex.",
-    type: QuestionType.Button
-  },
-  "9": {
-    answers: ["241", "242", "238", "243", "244"],
-    id: "9",
-    title: "I thought the system was easy to use.",
-    type: QuestionType.Button
-  },
-
-  "11": {
-    answers: ["241", "242", "238", "243", "244"],
-    id: "11",
-    title: "I found the various functions in this system were well integrated.",
-    type: QuestionType.Button
-  },
-  "12": {
-    answers: ["241", "242", "238", "243", "244"],
-    id: "12",
-    title: "I thought there was too much inconsistency in this system.",
-    type: QuestionType.Button
-  },
-  "13": {
-    answers: ["241", "242", "238", "243", "244"],
-    id: "13",
-    title:
-      "I would imagine that most people would learn to use this system very quickly.",
-    type: QuestionType.Button
-  },
-  "14": {
-    answers: ["241", "242", "238", "243", "244"],
-    id: "14",
-    title: "I found the system very cumbersome to use.",
-    type: QuestionType.Button
-  },
-  "15": {
-    answers: ["241", "242", "238", "243", "244"],
-    id: "15",
-    title: "I felt very confident using the system.",
-    type: QuestionType.Button
-  },
-  "16": {
-    answers: ["241", "242", "238", "243", "244"],
-    id: "16",
-    title:
-      "I needed to learn a lot of things before I could get going with this system.",
-    type: QuestionType.Button
-  },
-  "17": {
-    answers: [
-      "235",
-      "032",
-      "033",
-      "034",
-      "035",
-      "036",
-      "037",
-      "038",
-      "039",
-      "040",
-      "041"
-    ],
-    id: "17",
-    title: "How likely are you to recommend us to a friend or colleague?",
-    type: QuestionType.Button
-  },
-  "18": {
-    answers: [],
-    id: "18",
-    title: "What is the primary reason fro your score?",
-    type: QuestionType.Input
-  }
-};
-
-export const answers: Answers = {
+/* REDUCERS */
+export const choicesInitialState: Choices = {
   "001": {
     display: "Male",
     id: "001"
@@ -1365,38 +1213,12 @@ export const answers: Answers = {
   }
 };
 
-export const questionnaires: Questionnaires = {
-  "1": {
-    id: "1",
-    questions: ["1", "2", "3", "4", "5"],
-    responses: {},
-    title: "example"
-  },
-  "2": {
-    acronym: "CSAT",
-    formula:
-      "(Number of satisfied and very satisfied customers) / (Number of respondents) x 100",
-    id: "2",
-    questions: ["6"],
-    responses: {},
-    title: "Customer Satisfaction"
-  },
-  "3": {
-    acronym: "NPS",
-    formula:
-      "(Number of promoters (9-10) – number of detractors(0-6)) ÷ (number of respondents) x 100",
-    id: "3",
-    questions: ["17", "18"],
-    responses: {},
-    title: "Net Promoter Score (NPS)"
-  },
-  "4": {
-    acronym: "SUS",
-    formula:
-      "For odd items: subtract one from the user response. For even-numbered items: subtract the user responses from 5 This scales all values from 0 to 4 (with four being the most positive response). Add up the converted responses for each user and multiply that total by 2.5. This converts the range of possible values from 0 to 100 instead of from 0 to 40. Good is above 68.",
-    id: "4",
-    questions: ["7", "8", "9", "10", "11", "12", "13", "14", "15", "16"],
-    responses: {},
-    title: "System Usability Scale"
+export const choicesReducer = (
+  state: Choices = choicesInitialState,
+  action: RootAction
+): Choices => {
+  switch (action.type) {
+    default:
+      return state;
   }
 };
