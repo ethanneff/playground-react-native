@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.2.0](https://github.com/ethanneff/example/compare/v2.1.0...v2.2.0) (2019-07-08)
+
+
+### Features
+
+* add nps, csta, and sus questionnaires ([25662ad](https://github.com/ethanneff/example/commit/25662ad))
+
 # [2.1.0](https://github.com/ethanneff/example/compare/v2.0.5...v2.1.0) (2019-07-08)
 
 
