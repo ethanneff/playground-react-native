@@ -18,6 +18,20 @@ import {
   Lists
 } from "../../apps/Checklists/models";
 import {
+  Choices,
+  ChoicesActions,
+  choicesReducer,
+  Questionnaires,
+  QuestionnairesActions,
+  questionnairesReducer,
+  Questions,
+  QuestionsActions,
+  questionsReducer,
+  Responses,
+  ResponsesActions,
+  responsesReducer
+} from "../../apps/Debug/screens/Questionnaire/models";
+import {
   AppActions,
   appReducer,
   AppState,
@@ -27,9 +41,9 @@ import {
   DeviceActions,
   deviceReducer,
   DeviceState,
+  Navigation,
   NavigationActions,
-  navigationReducer,
-  NavigationState
+  navigationReducer
 } from "../../models";
 
 /* INTERFACES */
@@ -39,17 +53,25 @@ export type RootState = DeepReadonly<{
   device: DeviceState;
   items: Items;
   lists: Lists;
-  navigation: NavigationState;
+  navigation: Navigation;
+  questions: Questions;
+  choices: Choices;
+  responses: Responses;
+  questionnaires: Questionnaires;
 }>;
 
 /* REDUCERS */
 const reducers = combineReducers<RootState>({
   app: appReducer,
   auth: authReducer,
+  choices: choicesReducer,
   device: deviceReducer,
   items: itemReducer,
   lists: listReducer,
-  navigation: navigationReducer
+  navigation: navigationReducer,
+  questionnaires: questionnairesReducer,
+  questions: questionsReducer,
+  responses: responsesReducer
 });
 
 /* ACTIONS */
@@ -59,7 +81,11 @@ export type RootAction =
   | AuthActions
   | ListActions
   | ItemActions
-  | NavigationActions;
+  | NavigationActions
+  | QuestionnairesActions
+  | QuestionsActions
+  | ChoicesActions
+  | ResponsesActions;
 export type RootThunkAction<R> = ThunkAction<R, RootState, {}, RootAction>;
 
 /* CONSTANTS */
