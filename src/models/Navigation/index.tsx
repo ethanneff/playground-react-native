@@ -39,7 +39,7 @@ export enum NavigationModal {
   CantHurtMeSettings = "CantHurtMeSettings"
 }
 
-export interface NavigationState {
+export interface Navigation {
   modal: NavigationModal;
   screen: NavigationScreen;
 }
@@ -64,14 +64,14 @@ export const getModal = (state: RootState): NavigationModal =>
   state.navigation.modal;
 
 /* REDUCERS */
-export const navigationInitialState: NavigationState = {
+export const navigationInitialState: Navigation = {
   modal: NavigationModal.None,
   screen: NavigationScreen.PortfolioLanding
 };
 export function navigationReducer(
-  state: NavigationState = navigationInitialState,
+  state: Navigation = navigationInitialState,
   action: RootAction
-): NavigationState {
+): Navigation {
   switch (action.type) {
     case getType(navigate):
       return {
