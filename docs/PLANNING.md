@@ -8,6 +8,13 @@
 
 ## Rest
 
+#### week 0: questionniares
+
+- [ ] useRootSelector
+- [ ] useRootDispatch
+- [ ] navigation
+- [ ] save responses
+
 #### week 1: fix navigation
 
 - [ ] remove all commented code
