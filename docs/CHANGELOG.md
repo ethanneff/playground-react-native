@@ -1,5 +1,20 @@
 # Changelog
 
+# [2.3.0](https://github.com/ethanneff/example/compare/v2.2.0...v2.3.0) (2019-07-10)
+
+
+### Bug Fixes
+
+* connect questionniares to redux ([0a0bfc0](https://github.com/ethanneff/example/commit/0a0bfc0))
+* update depenedencies ([e7754f3](https://github.com/ethanneff/example/commit/e7754f3))
+
+
+### Features
+
+* add dropshadow to buttons ([5fbbc8b](https://github.com/ethanneff/example/commit/5fbbc8b))
+* add longpress and selected to card ([0f0b334](https://github.com/ethanneff/example/commit/0f0b334))
+* relocate questinnaires to redux ([881a006](https://github.com/ethanneff/example/commit/881a006))
+
 # [2.2.0](https://github.com/ethanneff/example/compare/v2.1.0...v2.2.0) (2019-07-08)
 
 
