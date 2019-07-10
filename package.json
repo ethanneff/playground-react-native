@@ -34,7 +34,7 @@
     "react": "16.8.6",
     "react-art": "16.8.6",
     "react-dom": "16.8.6",
-    "react-native": "0.59.9",
+    "react-native": "0.60.0",
     "react-native-device-info": "2.2.2",
     "react-native-firebase": "5.5.5",
     "react-native-keyboard-aware-scroll-view": "0.8.0",
