@@ -5,7 +5,8 @@ import {
   combineReducers,
   compose,
   createStore,
-  Middleware
+  Middleware,
+  Dispatch
 } from "redux";
 import thunk, { ThunkAction } from "redux-thunk";
 import { DeepReadonly } from "utility-types";
@@ -43,7 +44,10 @@ import {
   DeviceState,
   Navigation,
   NavigationActions,
-  navigationReducer
+  navigationReducer,
+  Theme,
+  ThemeActions,
+  themeReducer
 } from "../../models";
 
 /* INTERFACES */
@@ -58,6 +62,7 @@ export type RootState = DeepReadonly<{
   choices: Choices;
   responses: Responses;
   questionnaires: Questionnaires;
+  theme: Theme;
 }>;
 
 /* REDUCERS */
@@ -71,7 +76,8 @@ const reducers = combineReducers<RootState>({
   navigation: navigationReducer,
   questionnaires: questionnairesReducer,
   questions: questionsReducer,
-  responses: responsesReducer
+  responses: responsesReducer,
+  theme: themeReducer
 });
 
 /* ACTIONS */
@@ -85,7 +91,8 @@ export type RootAction =
   | QuestionnairesActions
   | QuestionsActions
   | ChoicesActions
-  | ResponsesActions;
+  | ResponsesActions
+  | ThemeActions;
 export type RootThunkAction<R> = ThunkAction<R, RootState, {}, RootAction>;
 
 /* CONSTANTS */
