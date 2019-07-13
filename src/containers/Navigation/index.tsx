@@ -37,7 +37,8 @@ import {
   Landing as PortfolioLanding,
   Login as PortfolioLogin,
   Main as PortfolioMain,
-  NotFound as PortfolioNotFound
+  NotFound as PortfolioNotFound,
+  Settings as PortfolioSettings
 } from "../../apps/Portfolio/screens";
 import {
   getModal,
@@ -68,6 +69,7 @@ class Container extends React.PureComponent<Props> {
     [NavigationScreen.PortfolioLanding]: <PortfolioLanding />,
     [NavigationScreen.PortfolioLogin]: <PortfolioLogin />,
     [NavigationScreen.PortfolioForgotPassword]: <PortfolioForgotPassword />,
+    [NavigationScreen.PortfolioSettings]: <PortfolioSettings />,
     [NavigationScreen.Debug]: <DebugHome />,
     [NavigationScreen.DebugBall]: <DebugBall />,
     [NavigationScreen.DebugButtons]: <DebugButtons />,

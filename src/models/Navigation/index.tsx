@@ -9,6 +9,7 @@ export enum NavigationScreen {
   PortfolioLanding = "PortfolioLanding",
   PortfolioLogin = "PortfolioLogin",
   PortfolioForgotPassword = "PortfolioForgotPassword",
+  PortfolioSettings = "PortfolioSettings",
   Debug = "Debug",
   DebugBall = "DebugBall",
   DebugButtons = "DebugButtons",
