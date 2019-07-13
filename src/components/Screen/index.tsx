@@ -1,8 +1,9 @@
 import * as React from "react";
-import { SafeAreaView, StyleSheet, ViewStyle } from "react-native";
-import { Theme } from "../../utils";
+import { SafeAreaView, StyleSheet, ViewStyle, StatusBar } from "react-native";
 import { KeyboardAvoid } from "./KeyboardAvoid";
 import { NavBar } from "./NavBar";
+import { useRootSelector } from "../../containers";
+import { getCurrentColor } from "../../models";
 
 interface OwnProps {
   style?: ViewStyle;
@@ -16,41 +17,41 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-export class Screen extends React.PureComponent<Props> {
-  private readonly styles = StyleSheet.create({
+export const Screen: React.FC<Props> = props => {
+  const {
+    title,
+    style,
+    onLeftPress,
+    onRightPress,
+    children,
+    disableScroll,
+    leftIcon,
+    rightIcon
+  } = props;
+  const colors = useRootSelector(state => getCurrentColor(state));
+  const styles = StyleSheet.create({
     container: {
-      backgroundColor: Theme.color.background,
+      backgroundColor: colors.background,
       flex: 1
     }
   });
 
-  public render() {
-    const {
-      title,
-      style,
-      onLeftPress,
-      onRightPress,
-      children,
-      disableScroll,
-      leftIcon,
-      rightIcon
-    } = this.props;
-    return (
-      <SafeAreaView style={[this.styles.container, style]}>
-        <NavBar
-          title={title}
-          leftIcon={leftIcon}
-          rightIcon={rightIcon}
-          onLeftPress={onLeftPress}
-          onRightPress={onRightPress}
-        />
-        <KeyboardAvoid
-          scrollEnabled={!disableScroll}
-          style={[this.styles.container, style]}
-        >
-          {children}
-        </KeyboardAvoid>
-      </SafeAreaView>
-    );
-  }
-}
+  return (
+    <SafeAreaView style={[styles.container, style]}>
+      <StatusBar barStyle={colors.statusBar} />
+      <NavBar
+        title={title}
+        leftIcon={leftIcon}
+        rightIcon={rightIcon}
+        onLeftPress={onLeftPress}
+        onRightPress={onRightPress}
+      />
+      <KeyboardAvoid
+        scrollEnabled={!disableScroll}
+        style={[styles.container, style]}
+      >
+        {children}
+      </KeyboardAvoid>
+    </SafeAreaView>
+  );
+};
