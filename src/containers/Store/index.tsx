@@ -107,4 +107,3 @@ const enhancers = composers(
 
 /* STORE */
 export const store = createStore(reducers, enhancers);
-export const useRootSelector: TypedUseSelectorHook<RootState> = useSelector;
