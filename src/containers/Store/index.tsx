@@ -1,4 +1,5 @@
 import { offline } from "@redux-offline/redux-offline";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import offlineConfig from "@redux-offline/redux-offline/lib/defaults";
 import {
   applyMiddleware,
@@ -106,3 +107,4 @@ const enhancers = composers(
 
 /* STORE */
 export const store = createStore(reducers, enhancers);
+export const useRootSelector: TypedUseSelectorHook<RootState> = useSelector;
