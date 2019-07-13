@@ -18,7 +18,6 @@ export const Settings = () => {
   const navBack = () => dispatch(navigate(NavigationScreen.PortfolioLanding));
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
 
-  console.log("render");
   return (
     <Screen onLeftPress={navBack}>
       <Text h1 center title="Settings" />
