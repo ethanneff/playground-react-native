@@ -2,8 +2,8 @@ import * as React from "react";
 import { SafeAreaView, StyleSheet, ViewStyle, StatusBar } from "react-native";
 import { KeyboardAvoid } from "./KeyboardAvoid";
 import { NavBar } from "./NavBar";
-import { useRootSelector } from "../../containers";
 import { getCurrentColor } from "../../models";
+import { useRootSelector } from "../../utils";
 
 interface OwnProps {
   style?: ViewStyle;

@@ -1,8 +1,8 @@
 import * as React from "react";
 import { StyleSheet, Text as Original, ViewStyle } from "react-native";
 import { Theme } from "../../utils";
-import { useRootSelector } from "../../containers";
 import { getCurrentColor } from "../../models";
+import { useRootSelector } from "../../utils";
 
 interface Props {
   title?: string;
