@@ -1,15 +1,8 @@
 import * as React from "react";
 import { StyleSheet, Text as Original, ViewStyle } from "react-native";
 import { Theme } from "../../utils";
-
-const styles = StyleSheet.create({
-  bold: {
-    fontWeight: Theme.fontWeight.medium
-  },
-  center: {
-    textAlign: "center"
-  }
-});
+import { useRootSelector } from "../../containers";
+import { getCurrentColor } from "../../models";
 
 interface Props {
   title?: string;
@@ -34,23 +27,41 @@ interface Props {
   overline?: boolean;
 }
 
-export class Text extends React.PureComponent<Props> {
-  public getFont() {
-    const {
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      subtitle1,
-      subtitle2,
-      body1,
-      body2,
-      button,
-      caption,
-      overline
-    } = this.props;
+export const Text = (props: Props) => {
+  const colors = useRootSelector(state => getCurrentColor(state));
+  const styles = StyleSheet.create({
+    bold: {
+      fontWeight: Theme.fontWeight.medium
+    },
+    center: {
+      textAlign: "center"
+    },
+    text: {
+      color: colors.text
+    }
+  });
+
+  const {
+    style,
+    title,
+    center,
+    bold,
+    hidden,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    subtitle1,
+    subtitle2,
+    body1,
+    body2,
+    button,
+    caption,
+    overline
+  } = props;
+  const getFont = () => {
     return h1
       ? Theme.fontSize.h1
       : h2
@@ -78,19 +89,17 @@ export class Text extends React.PureComponent<Props> {
       : overline
       ? Theme.fontSize.overline
       : Theme.fontSize.body2;
-  }
+  };
 
-  public render() {
-    const { title, style, button, bold, overline, center, hidden } = this.props;
-    const text = button || overline ? (title || "").toUpperCase() : title;
-    const textStyle = [
-      this.getFont(),
-      center && styles.center,
-      bold && styles.bold,
-      style
-    ];
-    return title === undefined || hidden ? null : (
-      <Original style={textStyle}>{text}</Original>
-    );
-  }
-}
+  const text = button || overline ? (title || "").toUpperCase() : title;
+  const textStyle = [
+    styles.text,
+    getFont(),
+    center && styles.center,
+    bold && styles.bold,
+    style
+  ];
+  return title === undefined || hidden ? null : (
+    <Original style={textStyle}>{text}</Original>
+  );
+};
