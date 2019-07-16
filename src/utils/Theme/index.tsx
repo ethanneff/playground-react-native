@@ -114,7 +114,7 @@ const fontSize = {
 };
 
 const sizing = {
-  borderRadius: padding.p04
+  borderRadius: padding.p02
 };
 
 export const Theme = {
