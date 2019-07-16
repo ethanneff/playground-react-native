@@ -37,12 +37,12 @@ export const Text = (props: Props) => {
     center: {
       textAlign: "center"
     },
-    text: {
-      color: colors.text
-    },
     centerVertically: {
       flex: 1,
       textAlignVertical: "center"
+    },
+    text: {
+      color: colors.text
     }
   });
 
