@@ -14,7 +14,6 @@ enum StatusBarStyle {
 
 interface Color {
   background: string;
-  surface: string;
   brand: string;
   danger: string;
   dark: string;
@@ -22,10 +21,11 @@ interface Color {
   light: string;
   primary: string;
   secondary: string;
+  statusBar: StatusBarStyle;
   success: string;
+  surface: string;
   text: string;
   warning: string;
-  statusBar: StatusBarStyle;
 }
 
 export enum ColorTheme {
@@ -62,11 +62,11 @@ export const themeInitialState: Theme = {
       light: "hsl(210, 17%, 98%)",
       primary: "hsl(263, 84%, 75%)",
       secondary: "hsl(171, 59%, 61%)",
+      statusBar: StatusBarStyle.Light,
       success: "hsl(134, 61%, 41%)",
       surface: "hsl(0, 0%, 12%)",
       text: "hsl(0, 0%, 100%)",
-      warning: "hsl(45, 100%, 51%)",
-      statusBar: StatusBarStyle.Light
+      warning: "hsl(45, 100%, 51%)"
     },
     [ColorTheme.Light]: {
       background: "hsl(0, 0%, 100%)",
@@ -77,11 +77,11 @@ export const themeInitialState: Theme = {
       light: "hsl(210, 17%, 98%)",
       primary: "hsl(211, 100%, 50%)",
       secondary: "hsl(208, 7%, 46%)",
+      statusBar: StatusBarStyle.Default,
       success: "hsl(134, 61%, 41%)",
       surface: "hsl(0, 0%, 98%)",
       text: "hsl(0, 0%, 0%)",
-      warning: "hsl(45, 100%, 51%)",
-      statusBar: StatusBarStyle.Default
+      warning: "hsl(45, 100%, 51%)"
     }
   },
   currentColor: ColorTheme.Light
