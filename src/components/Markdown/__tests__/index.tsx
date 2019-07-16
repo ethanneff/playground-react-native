@@ -1,8 +1,8 @@
 import * as React from "react";
-import { create } from "react-test-renderer";
 import { Markdown } from "..";
+import { mockRenderer } from "../../../utils/Mock";
 
 it("renders correctly", () => {
-  const dom = create(<Markdown title="hello *world*" />).toJSON();
+  const dom = mockRenderer(<Markdown title="hello *world*" />).toJSON();
   expect(dom).toMatchSnapshot();
 });

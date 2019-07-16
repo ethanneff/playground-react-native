@@ -12,7 +12,7 @@
 
 - [x] useRootSelector
 - [x] darkmode
-- [ ] test because of hooks
+- [x] fix test because of hooks
 - [ ] useRootDispatch
 - [ ] navigation
 - [ ] save responses

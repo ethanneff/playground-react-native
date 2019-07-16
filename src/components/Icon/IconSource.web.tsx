@@ -6,6 +6,7 @@ interface Props {
   name: string;
   size: number;
   color: string;
+  invisible?: boolean;
 }
 
 export class IconSource extends React.PureComponent<Props> {

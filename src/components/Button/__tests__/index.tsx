@@ -1,51 +1,51 @@
 import * as React from "react";
-import { create } from "react-test-renderer";
 import { Button } from "..";
+import { mockRenderer } from "../../../utils/Mock";
 
 it("renders correctly", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Button title="hello" onPress={() => undefined} />
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it("renders correctly", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Button title="hello" onPress={() => undefined} />
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it("renders contained", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Button contained title="hello" onPress={() => undefined} />
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it("renders contained disable", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Button contained disable title="hello" onPress={() => undefined} />
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it("renders outlined", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Button outlined title="hello" onPress={() => undefined} />
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it("renders fab ", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Button fab title="hello" onPress={() => undefined} />
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it("renders text", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Button text title="hello" onPress={() => undefined} />
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it("renders sizing", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Button
       center
       half
@@ -59,13 +59,13 @@ it("renders sizing", () => {
   expect(dom).toMatchSnapshot();
 });
 it("renders icon", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Button icon="check" onPress={() => undefined} />
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it("renders icon title", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Button title="hello" icon="check" onPress={() => undefined} />
   ).toJSON();
   expect(dom).toMatchSnapshot();

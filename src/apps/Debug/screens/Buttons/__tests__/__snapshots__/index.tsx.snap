@@ -55,11 +55,10 @@ exports[`renders correctly 1`] = `
                 "color": "hsl(210, 10%, 23%)",
                 "fontSize": 24,
               },
-              Object {
-                "invisible": Object {
-                  "opacity": 0,
-                },
-              },
+              Array [
+                undefined,
+                undefined,
+              ],
               Object {
                 "fontFamily": "Material Design Icons",
                 "fontStyle": "normal",
@@ -175,6 +174,7 @@ exports[`renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -232,6 +232,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -295,6 +296,7 @@ exports[`renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -350,6 +352,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -408,6 +411,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -472,6 +476,7 @@ exports[`renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -530,6 +535,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -594,6 +600,7 @@ exports[`renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -650,6 +657,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -709,6 +717,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -773,6 +782,7 @@ exports[`renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -831,6 +841,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -895,6 +906,7 @@ exports[`renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -951,6 +963,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -1010,6 +1023,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -1075,6 +1089,7 @@ exports[`renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -1134,6 +1149,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -1199,6 +1215,7 @@ exports[`renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -1256,6 +1273,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -1316,6 +1334,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -1380,6 +1399,7 @@ exports[`renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -1438,6 +1458,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -1502,6 +1523,7 @@ exports[`renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -1558,6 +1580,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -1617,6 +1640,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -1679,6 +1703,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -1743,6 +1768,7 @@ exports[`renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -1805,6 +1831,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -1868,6 +1895,7 @@ exports[`renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -1927,6 +1955,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -2009,11 +2038,26 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        Object {
+                          "paddingRight": 2,
+                        },
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2040,6 +2084,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -2120,11 +2165,28 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        Object {
+                          "paddingRight": 2,
+                        },
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          Object {
+                            "color": "hsl(0, 0%, 0%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2151,6 +2213,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -2231,11 +2294,26 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        Object {
+                          "paddingRight": 2,
+                        },
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2262,6 +2340,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -2338,11 +2417,26 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        Object {
+                          "paddingRight": 2,
+                        },
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2369,6 +2463,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -2448,11 +2543,28 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        Object {
+                          "paddingRight": 2,
+                        },
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          Object {
+                            "color": "hsl(0, 100%, 100%)",
+                          },
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2479,6 +2591,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -2557,11 +2670,24 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        undefined,
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2633,11 +2759,26 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        undefined,
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          Object {
+                            "color": "hsl(0, 0%, 0%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2707,11 +2848,24 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        undefined,
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2779,11 +2933,24 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        undefined,
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2854,11 +3021,26 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        undefined,
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          Object {
+                            "color": "hsl(0, 100%, 100%)",
+                          },
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2926,11 +3108,24 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        undefined,
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2987,11 +3182,13 @@ exports[`renders correctly 1`] = `
                       "color": "red",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        undefined,
+                        false,
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -3061,11 +3258,26 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        undefined,
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          Object {
+                            "color": "hsl(0, 0%, 0%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -3133,11 +3345,24 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        undefined,
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -3205,11 +3430,24 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        undefined,
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -3280,11 +3518,26 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Object {
-                      "invisible": Object {
-                        "opacity": 0,
-                      },
-                    },
+                    Array [
+                      undefined,
+                      Array [
+                        undefined,
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "hsl(211, 100%, 50%)",
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          Object {
+                            "color": "hsl(0, 100%, 100%)",
+                          },
+                          undefined,
+                          undefined,
+                        ],
+                      ],
+                    ],
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",

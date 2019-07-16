@@ -55,11 +55,10 @@ exports[`renders correctly 1`] = `
                 "color": "hsl(210, 10%, 23%)",
                 "fontSize": 24,
               },
-              Object {
-                "invisible": Object {
-                  "opacity": 0,
-                },
-              },
+              Array [
+                undefined,
+                undefined,
+              ],
               Object {
                 "fontFamily": "Material Design Icons",
                 "fontStyle": "normal",
@@ -149,6 +148,7 @@ exports[`renders correctly 1`] = `
                 undefined,
                 undefined,
                 undefined,
+                undefined,
               ]
             }
           >
@@ -165,6 +165,7 @@ exports[`renders correctly 1`] = `
                   "fontWeight": "100",
                   "letterSpacing": -0.5,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -189,6 +190,7 @@ exports[`renders correctly 1`] = `
                 undefined,
                 undefined,
                 undefined,
+                undefined,
               ]
             }
           >
@@ -205,6 +207,7 @@ exports[`renders correctly 1`] = `
                   "fontWeight": "300",
                   "letterSpacing": 0.25,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -229,6 +232,7 @@ exports[`renders correctly 1`] = `
                 undefined,
                 undefined,
                 undefined,
+                undefined,
               ]
             }
           >
@@ -245,6 +249,7 @@ exports[`renders correctly 1`] = `
                   "fontWeight": "600",
                   "letterSpacing": 0.15,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -269,6 +274,7 @@ exports[`renders correctly 1`] = `
                 undefined,
                 undefined,
                 undefined,
+                undefined,
               ]
             }
           >
@@ -285,6 +291,7 @@ exports[`renders correctly 1`] = `
                   "fontWeight": "600",
                   "letterSpacing": 0.1,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -309,6 +316,7 @@ exports[`renders correctly 1`] = `
                 undefined,
                 undefined,
                 undefined,
+                undefined,
               ]
             }
           >
@@ -325,6 +333,7 @@ exports[`renders correctly 1`] = `
                   "fontWeight": "300",
                   "letterSpacing": 0.25,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -349,6 +358,7 @@ exports[`renders correctly 1`] = `
                 undefined,
                 undefined,
                 undefined,
+                undefined,
               ]
             }
           >
@@ -365,6 +375,7 @@ exports[`renders correctly 1`] = `
                   "fontWeight": "300",
                   "letterSpacing": 0.4,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -389,6 +400,7 @@ exports[`renders correctly 1`] = `
                 undefined,
                 undefined,
                 undefined,
+                undefined,
               ]
             }
           >
@@ -405,6 +417,7 @@ exports[`renders correctly 1`] = `
                   "fontWeight": "300",
                   "letterSpacing": 0.25,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,

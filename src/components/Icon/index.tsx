@@ -43,7 +43,12 @@ export const Icon: React.FC<Props> = props => {
   }
   return (
     <View style={containerStyles}>
-      <IconSource name={name} size={size} color={colored} style={styles} />
+      <IconSource
+        name={name}
+        size={size}
+        color={colored}
+        style={containerStyles}
+      />
       <Badge badge={badge} />
     </View>
   );

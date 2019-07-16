@@ -69,6 +69,7 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
             undefined,
             undefined,
             undefined,
+            undefined,
             Object {
               "paddingBottom": 12,
             },
@@ -160,6 +161,7 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
               "fontWeight": "300",
               "letterSpacing": 0,
             },
+            undefined,
             undefined,
             undefined,
             undefined,
@@ -257,6 +259,7 @@ exports[`Dialog component renders correctly with props 1`] = `
             undefined,
             undefined,
             undefined,
+            undefined,
             Object {
               "paddingBottom": 12,
             },
@@ -276,6 +279,7 @@ exports[`Dialog component renders correctly with props 1`] = `
               "fontWeight": "300",
               "letterSpacing": 0.25,
             },
+            undefined,
             undefined,
             undefined,
             undefined,
@@ -342,6 +346,7 @@ exports[`Dialog component renders correctly with props 1`] = `
                 },
                 undefined,
                 undefined,
+                undefined,
                 Array [
                   Object {
                     "backgroundColor": "transparent",
@@ -401,6 +406,7 @@ exports[`Dialog component renders correctly with props 1`] = `
                 Object {
                   "textAlign": "center",
                 },
+                undefined,
                 undefined,
                 undefined,
                 Array [

@@ -1,10 +1,10 @@
 import * as React from "react";
 import { View } from "react-native";
-import { create } from "react-test-renderer";
 import { Screen } from "..";
+import { mockRenderer } from "../../../utils/Mock";
 
 it("renders correctly", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Screen>
       <View />
     </Screen>
@@ -13,7 +13,7 @@ it("renders correctly", () => {
 });
 
 it("renders correctly with header", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Screen
       title="hello"
       onLeftPress={() => undefined}
@@ -26,7 +26,7 @@ it("renders correctly with header", () => {
 });
 
 it("renders correctly with icons", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Screen
       title="hello"
       leftIcon="check"

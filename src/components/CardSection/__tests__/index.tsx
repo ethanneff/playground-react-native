@@ -1,9 +1,9 @@
 import * as React from "react";
-import { create } from "react-test-renderer";
 import { Card, CardSection } from "../..";
+import { mockRenderer } from "../../../utils/Mock";
 
 it("renders correctly", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <Card>
       <CardSection>
         <></>

@@ -12,6 +12,7 @@ interface Props {
   centerVertically?: boolean;
   bold?: boolean;
   hidden?: boolean;
+  invisible?: boolean;
 
   h1?: boolean;
   h2?: boolean;
@@ -41,6 +42,9 @@ export const Text = (props: Props) => {
       flex: 1,
       textAlignVertical: "center"
     },
+    invisible: {
+      opacity: 0
+    },
     text: {
       color: colors.text
     }
@@ -65,6 +69,7 @@ export const Text = (props: Props) => {
     button,
     caption,
     centerVertically,
+    invisible,
     overline
   } = props;
   const getFont = () => {
@@ -104,6 +109,7 @@ export const Text = (props: Props) => {
     center && styles.center,
     centerVertically && styles.centerVertically,
     bold && styles.bold,
+    invisible && styles.invisible,
     style
   ];
   return title === undefined || hidden ? null : (

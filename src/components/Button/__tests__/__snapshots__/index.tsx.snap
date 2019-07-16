@@ -29,6 +29,9 @@ exports[`renders contained 1`] = `
     style={
       Array [
         Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
           "fontSize": 14,
           "fontWeight": "600",
           "letterSpacing": 0.75,
@@ -36,6 +39,8 @@ exports[`renders contained 1`] = `
         Object {
           "textAlign": "center",
         },
+        undefined,
+        undefined,
         undefined,
         Array [
           Object {
@@ -88,6 +93,9 @@ exports[`renders contained disable 1`] = `
     style={
       Array [
         Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
           "fontSize": 14,
           "fontWeight": "600",
           "letterSpacing": 0.75,
@@ -95,6 +103,8 @@ exports[`renders contained disable 1`] = `
         Object {
           "textAlign": "center",
         },
+        undefined,
+        undefined,
         undefined,
         Array [
           Object {
@@ -150,6 +160,9 @@ exports[`renders correctly 1`] = `
     style={
       Array [
         Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
           "fontSize": 14,
           "fontWeight": "600",
           "letterSpacing": 0.75,
@@ -157,6 +170,8 @@ exports[`renders correctly 1`] = `
         Object {
           "textAlign": "center",
         },
+        undefined,
+        undefined,
         undefined,
         Array [
           Object {
@@ -208,6 +223,9 @@ exports[`renders correctly 2`] = `
     style={
       Array [
         Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
           "fontSize": 14,
           "fontWeight": "600",
           "letterSpacing": 0.75,
@@ -215,6 +233,8 @@ exports[`renders correctly 2`] = `
         Object {
           "textAlign": "center",
         },
+        undefined,
+        undefined,
         undefined,
         Array [
           Object {
@@ -265,6 +285,9 @@ exports[`renders fab  1`] = `
     style={
       Array [
         Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
           "fontSize": 14,
           "fontWeight": "600",
           "letterSpacing": 0.75,
@@ -272,6 +295,8 @@ exports[`renders fab  1`] = `
         Object {
           "textAlign": "center",
         },
+        undefined,
+        undefined,
         undefined,
         Array [
           Object {
@@ -476,6 +501,9 @@ exports[`renders icon title 1`] = `
     style={
       Array [
         Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
           "fontSize": 14,
           "fontWeight": "600",
           "letterSpacing": 0.75,
@@ -483,6 +511,8 @@ exports[`renders icon title 1`] = `
         Object {
           "textAlign": "center",
         },
+        undefined,
+        undefined,
         undefined,
         Array [
           Object {
@@ -532,6 +562,9 @@ exports[`renders outlined 1`] = `
     style={
       Array [
         Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
           "fontSize": 14,
           "fontWeight": "600",
           "letterSpacing": 0.75,
@@ -539,6 +572,8 @@ exports[`renders outlined 1`] = `
         Object {
           "textAlign": "center",
         },
+        undefined,
+        undefined,
         undefined,
         Array [
           Object {
@@ -592,6 +627,9 @@ exports[`renders sizing 1`] = `
     style={
       Array [
         Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
           "fontSize": 14,
           "fontWeight": "600",
           "letterSpacing": 0.75,
@@ -599,6 +637,8 @@ exports[`renders sizing 1`] = `
         Object {
           "textAlign": "center",
         },
+        undefined,
+        undefined,
         undefined,
         Array [
           Object {
@@ -654,6 +694,9 @@ exports[`renders text 1`] = `
     style={
       Array [
         Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
           "fontSize": 14,
           "fontWeight": "600",
           "letterSpacing": 0.75,
@@ -661,6 +704,8 @@ exports[`renders text 1`] = `
         Object {
           "textAlign": "center",
         },
+        undefined,
+        undefined,
         undefined,
         Array [
           Object {

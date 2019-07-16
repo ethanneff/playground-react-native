@@ -122,6 +122,7 @@ exports[`Launcher Container renders correctly 1`] = `
               undefined,
               undefined,
               undefined,
+              undefined,
             ]
           }
         >
@@ -214,6 +215,7 @@ exports[`Launcher Container renders correctly 1`] = `
                       undefined,
                       undefined,
                       undefined,
+                      undefined,
                     ]
                   }
                 >
@@ -255,6 +257,7 @@ exports[`Launcher Container renders correctly 1`] = `
                       Object {
                         "textAlign": "center",
                       },
+                      undefined,
                       undefined,
                       undefined,
                       undefined,
@@ -302,6 +305,7 @@ exports[`Launcher Container renders correctly 1`] = `
                       undefined,
                       undefined,
                       undefined,
+                      undefined,
                     ]
                   }
                 >
@@ -343,6 +347,7 @@ exports[`Launcher Container renders correctly 1`] = `
                       Object {
                         "textAlign": "center",
                       },
+                      undefined,
                       undefined,
                       undefined,
                       undefined,
@@ -404,6 +409,7 @@ exports[`Launcher Container renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -461,6 +467,7 @@ exports[`Launcher Container renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -522,6 +529,7 @@ exports[`Launcher Container renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -579,6 +587,7 @@ exports[`Launcher Container renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [
@@ -649,6 +658,7 @@ exports[`Launcher Container renders correctly 1`] = `
                   },
                   undefined,
                   undefined,
+                  undefined,
                   Array [
                     Object {
                       "backgroundColor": "transparent",
@@ -706,6 +716,7 @@ exports[`Launcher Container renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   undefined,
                   Array [

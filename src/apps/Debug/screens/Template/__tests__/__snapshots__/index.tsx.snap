@@ -55,11 +55,10 @@ exports[`renders correctly 1`] = `
                 "color": "hsl(210, 10%, 23%)",
                 "fontSize": 24,
               },
-              Object {
-                "invisible": Object {
-                  "opacity": 0,
-                },
-              },
+              Array [
+                undefined,
+                undefined,
+              ],
               Object {
                 "fontFamily": "Material Design Icons",
                 "fontStyle": "normal",

@@ -1,35 +1,29 @@
 import * as React from "react";
-import { create, ReactTestRenderer } from "react-test-renderer";
 import { RelativeDate } from "..";
+import { mockRenderer } from "../../../utils/Mock";
 
 jest.useFakeTimers();
 describe("RelativeDate component", () => {
   const date = 1;
-  let dom: ReactTestRenderer;
-
-  beforeEach(() => {
-    dom = create(<RelativeDate date={date} />);
-  });
-
-  afterEach(() => {
-    dom.unmount();
-  });
-
   it("renders correctly", () => {
+    const dom = mockRenderer(<RelativeDate date={date} />).toJSON();
     expect(dom).toMatchSnapshot();
   });
 
   it("renders correctly on touch", () => {
-    const staticDom = create(<RelativeDate date={date} />);
-    staticDom.root.instance.toggleRelativeDate();
-    expect(staticDom).toMatchSnapshot();
+    const dom = mockRenderer(<RelativeDate date={date} />);
+    const component = dom.root.findByType(RelativeDate).instance;
+    component.toggleRelativeDate();
+    expect(dom).toMatchSnapshot();
   });
 
   it("updates state touch", () => {
-    expect(dom.root.instance.state.showRelativeDate).toBe(true);
-    dom.root.instance.toggleRelativeDate();
-    expect(dom.root.instance.state.showRelativeDate).toBe(false);
-    dom.root.instance.toggleRelativeDate();
-    expect(dom.root.instance.state.showRelativeDate).toBe(true);
+    const dom = mockRenderer(<RelativeDate date={date} />);
+    const component = dom.root.findByType(RelativeDate).instance;
+    expect(component.state.showRelativeDate).toBe(true);
+    component.toggleRelativeDate();
+    expect(component.state.showRelativeDate).toBe(false);
+    component.toggleRelativeDate();
+    expect(component.state.showRelativeDate).toBe(true);
   });
 });

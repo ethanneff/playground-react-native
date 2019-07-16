@@ -86,6 +86,9 @@ exports[`renders correctly with clear and max badge 1`] = `
       style={
         Array [
           Object {
+            "color": "hsl(0, 0%, 0%)",
+          },
+          Object {
             "fontSize": 14,
             "fontWeight": "300",
             "letterSpacing": 0.25,
@@ -93,6 +96,8 @@ exports[`renders correctly with clear and max badge 1`] = `
           Object {
             "textAlign": "center",
           },
+          undefined,
+          undefined,
           undefined,
           Object {
             "color": "hsl(0, 100%, 100%)",
@@ -158,6 +163,9 @@ exports[`renders correctly without defaults 1`] = `
       style={
         Array [
           Object {
+            "color": "hsl(0, 0%, 0%)",
+          },
+          Object {
             "fontSize": 14,
             "fontWeight": "300",
             "letterSpacing": 0.25,
@@ -165,6 +173,8 @@ exports[`renders correctly without defaults 1`] = `
           Object {
             "textAlign": "center",
           },
+          undefined,
+          undefined,
           undefined,
           Object {
             "color": "hsl(0, 100%, 100%)",

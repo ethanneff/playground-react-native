@@ -251,6 +251,9 @@ exports[`renders correctly 1`] = `
       style={
         Array [
           Object {
+            "color": "hsl(0, 0%, 0%)",
+          },
+          Object {
             "fontSize": 14,
             "fontWeight": "300",
             "letterSpacing": 0.25,
@@ -258,6 +261,8 @@ exports[`renders correctly 1`] = `
           Object {
             "textAlign": "center",
           },
+          undefined,
+          undefined,
           undefined,
           Array [
             Object {

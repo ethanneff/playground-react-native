@@ -12,24 +12,37 @@ exports[`renders correctly 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "hsl(0, 100%, 100%)",
+      "backgroundColor": "hsl(0, 0%, 100%)",
+      "borderColor": "hsl(0, 0%, 98%)",
+      "borderRadius": 8,
+      "borderWidth": 1,
       "elevation": 1,
-      "marginHorizontal": 16,
+      "flex": 1,
+      "marginHorizontal": 8,
       "marginVertical": 8,
       "opacity": 1,
-      "padding": 16,
-      "position": "relative",
       "shadowColor": "hsl(210, 10%, 23%)",
       "shadowOffset": Object {
-        "height": 4,
+        "height": 2,
         "width": 0,
       },
-      "shadowOpacity": 0.6,
-      "shadowRadius": 6,
+      "shadowOpacity": 0.156,
+      "shadowRadius": 1.56,
       "zIndex": 1,
     }
   }
-/>
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "hsla(0,0%,100%,0.05)",
+        "borderRadius": 8,
+        "flex": 1,
+        "padding": 16,
+      }
+    }
+  />
+</View>
 `;
 
 exports[`renders correctly with onPress 1`] = `
@@ -44,22 +57,35 @@ exports[`renders correctly with onPress 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "hsl(0, 100%, 100%)",
+      "backgroundColor": "hsl(0, 0%, 100%)",
+      "borderColor": "hsl(0, 0%, 98%)",
+      "borderRadius": 8,
+      "borderWidth": 1,
       "elevation": 1,
-      "marginHorizontal": 16,
+      "flex": 1,
+      "marginHorizontal": 8,
       "marginVertical": 8,
       "opacity": 1,
-      "padding": 16,
-      "position": "relative",
       "shadowColor": "hsl(210, 10%, 23%)",
       "shadowOffset": Object {
-        "height": 4,
+        "height": 2,
         "width": 0,
       },
-      "shadowOpacity": 0.6,
-      "shadowRadius": 6,
+      "shadowOpacity": 0.156,
+      "shadowRadius": 1.56,
       "zIndex": 1,
     }
   }
-/>
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "hsla(0,0%,100%,0.05)",
+        "borderRadius": 8,
+        "flex": 1,
+        "padding": 16,
+      }
+    }
+  />
+</View>
 `;

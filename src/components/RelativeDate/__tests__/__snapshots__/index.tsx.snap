@@ -1,6 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RelativeDate component renders correctly 1`] = `undefined`;
+exports[`RelativeDate component renders correctly 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
+          "fontSize": 14,
+          "fontWeight": "300",
+          "letterSpacing": 0.25,
+        },
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    50 years ago
+  </Text>
+</View>
+`;
 
 exports[`RelativeDate component renders correctly on touch 1`] = `
 <View
@@ -22,10 +60,15 @@ exports[`RelativeDate component renders correctly on touch 1`] = `
     style={
       Array [
         Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
           "fontSize": 14,
           "fontWeight": "300",
           "letterSpacing": 0.25,
         },
+        undefined,
+        undefined,
         undefined,
         undefined,
         undefined,

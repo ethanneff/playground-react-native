@@ -1,9 +1,9 @@
 import * as React from "react";
-import { create } from "react-test-renderer";
 import { TextInput } from "..";
+import { mockRenderer } from "../../../utils/Mock";
 
 it("renders correctly", () => {
-  const dom = create(
+  const dom = mockRenderer(
     <TextInput value="hello" onChangeText={() => undefined} />
   ).toJSON();
   expect(dom).toMatchSnapshot();
