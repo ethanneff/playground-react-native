@@ -13,3 +13,4 @@ export * from "./ImageCollection";
 export * from "./Stopwatch";
 export * from "./Chat";
 export * from "./SwipeCell";
+export * from "./DarkMode";

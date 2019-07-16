@@ -25,6 +25,7 @@ export enum NavigationScreen {
   DebugSearchBar = "DebugSearchBar",
   DebugStopwatch = "DebugStopwatch",
   DebugSwipeCell = "DebugSwipeCell",
+  DebugDarkMode = "DebugDarkMode",
   CantHurtMeHome = "CantHurtMeHome",
   ChecklistsList = "ChecklistsList",
   ChecklistsListCreate = "ChecklistsListCreate",

@@ -24,7 +24,8 @@ class Container extends React.PureComponent<Props> {
     NavigationScreen.DebugQuestionnaire,
     NavigationScreen.DebugSearchBar,
     NavigationScreen.DebugStopwatch,
-    NavigationScreen.DebugSwipeCell
+    NavigationScreen.DebugSwipeCell,
+    NavigationScreen.DebugDarkMode
   ];
   public render() {
     return (
