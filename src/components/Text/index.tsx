@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, Text as Original, ViewStyle } from "react-native";
-import { Theme } from "../../utils";
 import { getCurrentColor } from "../../models";
+import { Theme } from "../../utils";
 import { useRootSelector } from "../../utils";
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
   style?: ViewStyle | {};
 
   center?: boolean;
+  centerVertically?: boolean;
   bold?: boolean;
   hidden?: boolean;
 
@@ -38,6 +39,10 @@ export const Text = (props: Props) => {
     },
     text: {
       color: colors.text
+    },
+    centerVertically: {
+      flex: 1,
+      textAlignVertical: "center"
     }
   });
 
@@ -59,6 +64,7 @@ export const Text = (props: Props) => {
     body2,
     button,
     caption,
+    centerVertically,
     overline
   } = props;
   const getFont = () => {
@@ -96,6 +102,7 @@ export const Text = (props: Props) => {
     styles.text,
     getFont(),
     center && styles.center,
+    centerVertically && styles.centerVertically,
     bold && styles.bold,
     style
   ];
