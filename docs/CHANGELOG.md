@@ -1,5 +1,30 @@
 # Changelog
 
+# [2.4.0](https://github.com/ethanneff/example/compare/v2.3.0...v2.4.0) (2019-07-16)
+
+
+### Bug Fixes
+
+* add settings to web ([e15b370](https://github.com/ethanneff/example/commit/e15b370))
+* clean up settings ([0fe5a14](https://github.com/ethanneff/example/commit/0fe5a14))
+* make icon work with color themes ([fd8636c](https://github.com/ethanneff/example/commit/fd8636c))
+* relocate userootselecfor ([65ca722](https://github.com/ethanneff/example/commit/65ca722))
+* remove circular references with redux hooks ([23199be](https://github.com/ethanneff/example/commit/23199be))
+* remove console log ([6a3dc5b](https://github.com/ethanneff/example/commit/6a3dc5b))
+* udpate tests to use hooks ([68b11e4](https://github.com/ethanneff/example/commit/68b11e4))
+
+
+### Features
+
+* add center vertically to text ([a96178d](https://github.com/ethanneff/example/commit/a96178d))
+* add darkmode debug screen ([559a00d](https://github.com/ethanneff/example/commit/559a00d))
+* add root selector hook ([6b35ae1](https://github.com/ethanneff/example/commit/6b35ae1))
+* add screen and status bar dark mode ([7300c81](https://github.com/ethanneff/example/commit/7300c81))
+* add setting screen ([4c6e8d6](https://github.com/ethanneff/example/commit/4c6e8d6))
+* add text dark mode ([a6f0907](https://github.com/ethanneff/example/commit/a6f0907))
+* add theming for dark mode ([c331dc5](https://github.com/ethanneff/example/commit/c331dc5))
+* make card work with dark mode ([230effe](https://github.com/ethanneff/example/commit/230effe))
+
 # [2.3.0](https://github.com/ethanneff/example/compare/v2.2.0...v2.3.0) (2019-07-10)
 
 
