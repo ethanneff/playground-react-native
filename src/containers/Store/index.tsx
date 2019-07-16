@@ -1,13 +1,11 @@
 import { offline } from "@redux-offline/redux-offline";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import offlineConfig from "@redux-offline/redux-offline/lib/defaults";
 import {
   applyMiddleware,
   combineReducers,
   compose,
   createStore,
-  Middleware,
-  Dispatch
+  Middleware
 } from "redux";
 import thunk, { ThunkAction } from "redux-thunk";
 import { DeepReadonly } from "utility-types";
