@@ -46,6 +46,10 @@ class Container extends React.PureComponent<Props> {
             onPress={this.nav(NavigationScreen.PortfolioMain)}
           />
           <Button title="Debug" onPress={this.nav(NavigationScreen.Debug)} />
+          <Button
+            title="Settings"
+            onPress={this.nav(NavigationScreen.PortfolioSettings)}
+          />
         </View>
       </View>
     );
