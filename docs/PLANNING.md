@@ -10,7 +10,9 @@
 
 #### week 0: questionniares
 
-- [ ] useRootSelector
+- [x] useRootSelector
+- [x] darkmode
+- [ ] test because of hooks
 - [ ] useRootDispatch
 - [ ] navigation
 - [ ] save responses
