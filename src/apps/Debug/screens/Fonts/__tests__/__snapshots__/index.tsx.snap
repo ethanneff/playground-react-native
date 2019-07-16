@@ -6,7 +6,7 @@ exports[`renders correctly 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "hsl(0, 100%, 100%)",
+        "backgroundColor": "hsl(0, 0%, 100%)",
         "flex": 1,
       },
       undefined,
@@ -55,10 +55,11 @@ exports[`renders correctly 1`] = `
                 "color": "hsl(210, 10%, 23%)",
                 "fontSize": 24,
               },
-              Array [
-                undefined,
-                undefined,
-              ],
+              Object {
+                "invisible": Object {
+                  "opacity": 0,
+                },
+              },
               Object {
                 "fontFamily": "Material Design Icons",
                 "fontStyle": "normal",
@@ -95,7 +96,7 @@ exports[`renders correctly 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "hsl(0, 100%, 100%)",
+          "backgroundColor": "hsl(0, 0%, 100%)",
           "flex": 1,
         },
         undefined,
@@ -137,10 +138,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 48,
                   "fontWeight": "100",
                   "letterSpacing": -1.5,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -153,10 +158,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 30,
                   "fontWeight": "100",
                   "letterSpacing": -0.5,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -169,10 +178,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 24,
                   "fontWeight": "300",
                   "letterSpacing": 0,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -185,10 +198,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 17,
                   "fontWeight": "300",
                   "letterSpacing": 0.25,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -201,10 +218,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 12,
                   "fontWeight": "300",
                   "letterSpacing": 0,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -217,10 +238,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 10,
                   "fontWeight": "600",
                   "letterSpacing": 0.15,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -233,10 +258,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 16,
                   "fontWeight": "300",
                   "letterSpacing": 0.15,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -249,10 +278,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.1,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -265,10 +298,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 16,
                   "fontWeight": "300",
                   "letterSpacing": 0.5,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -281,10 +318,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 14,
                   "fontWeight": "300",
                   "letterSpacing": 0.25,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -297,10 +338,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 10,
                   "fontWeight": "300",
                   "letterSpacing": 1.5,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -313,10 +358,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 12,
                   "fontWeight": "300",
                   "letterSpacing": 0.4,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -329,10 +378,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -345,10 +398,14 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 14,
                   "fontWeight": "300",
                   "letterSpacing": 0.25,
                 },
+                undefined,
                 undefined,
                 undefined,
                 undefined,

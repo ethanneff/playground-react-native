@@ -6,7 +6,7 @@ exports[`renders correctly 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "hsl(0, 100%, 100%)",
+        "backgroundColor": "hsl(0, 0%, 100%)",
         "flex": 1,
       },
       undefined,
@@ -62,7 +62,7 @@ exports[`renders correctly 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "hsl(0, 100%, 100%)",
+          "backgroundColor": "hsl(0, 0%, 100%)",
           "flex": 1,
         },
         undefined,
@@ -102,6 +102,9 @@ exports[`renders correctly 1`] = `
         style={
           Array [
             Object {
+              "color": "hsl(0, 0%, 0%)",
+            },
+            Object {
               "fontSize": 48,
               "fontWeight": "100",
               "letterSpacing": -1.5,
@@ -109,6 +112,7 @@ exports[`renders correctly 1`] = `
             Object {
               "textAlign": "center",
             },
+            undefined,
             undefined,
             undefined,
           ]
@@ -190,6 +194,9 @@ exports[`renders correctly 1`] = `
                 style={
                   Array [
                     Object {
+                      "color": "hsl(0, 0%, 0%)",
+                    },
+                    Object {
                       "fontSize": 14,
                       "fontWeight": "300",
                       "letterSpacing": 0.25,
@@ -197,6 +204,7 @@ exports[`renders correctly 1`] = `
                     Object {
                       "textAlign": "center",
                     },
+                    undefined,
                     undefined,
                     undefined,
                   ]
@@ -230,6 +238,9 @@ exports[`renders correctly 1`] = `
                 style={
                   Array [
                     Object {
+                      "color": "hsl(0, 0%, 0%)",
+                    },
+                    Object {
                       "fontSize": 14,
                       "fontWeight": "300",
                       "letterSpacing": 0.25,
@@ -237,6 +248,7 @@ exports[`renders correctly 1`] = `
                     Object {
                       "textAlign": "center",
                     },
+                    undefined,
                     undefined,
                     undefined,
                   ]
@@ -270,6 +282,9 @@ exports[`renders correctly 1`] = `
                 style={
                   Array [
                     Object {
+                      "color": "hsl(0, 0%, 0%)",
+                    },
+                    Object {
                       "fontSize": 14,
                       "fontWeight": "300",
                       "letterSpacing": 0.25,
@@ -277,6 +292,7 @@ exports[`renders correctly 1`] = `
                     Object {
                       "textAlign": "center",
                     },
+                    undefined,
                     undefined,
                     undefined,
                   ]
@@ -310,6 +326,9 @@ exports[`renders correctly 1`] = `
                 style={
                   Array [
                     Object {
+                      "color": "hsl(0, 0%, 0%)",
+                    },
+                    Object {
                       "fontSize": 14,
                       "fontWeight": "300",
                       "letterSpacing": 0.25,
@@ -317,6 +336,7 @@ exports[`renders correctly 1`] = `
                     Object {
                       "textAlign": "center",
                     },
+                    undefined,
                     undefined,
                     undefined,
                   ]
@@ -365,6 +385,9 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -372,6 +395,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "textAlign": "center",
                 },
+                undefined,
                 undefined,
                 Array [
                   Object {
@@ -420,6 +444,9 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -427,6 +454,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "textAlign": "center",
                 },
+                undefined,
                 undefined,
                 Array [
                   Object {
@@ -475,6 +503,9 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -482,6 +513,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "textAlign": "center",
                 },
+                undefined,
                 undefined,
                 Array [
                   Object {
@@ -499,6 +531,65 @@ exports[`renders correctly 1`] = `
             }
           >
             DEBUG
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "color": "hsl(211, 100%, 50%)",
+              "flexDirection": "row",
+              "height": 36,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+                undefined,
+                undefined,
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "hsl(211, 100%, 50%)",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
+              ]
+            }
+          >
+            SETTINGS
           </Text>
         </View>
       </View>
@@ -539,6 +630,9 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -546,6 +640,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "textAlign": "center",
                 },
+                undefined,
                 undefined,
                 Array [
                   Object {
@@ -594,6 +689,9 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -601,6 +699,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "textAlign": "center",
                 },
+                undefined,
                 undefined,
                 Array [
                   Object {

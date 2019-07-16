@@ -45,7 +45,7 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
       style={
         Object {
           "backgroundColor": "hsl(0, 100%, 100%)",
-          "borderRadius": 16,
+          "borderRadius": 8,
           "marginHorizontal": 60,
           "maxWidth": 500,
           "paddingBottom": 36,
@@ -59,10 +59,14 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
         style={
           Array [
             Object {
+              "color": "hsl(0, 0%, 0%)",
+            },
+            Object {
               "fontSize": 24,
               "fontWeight": "300",
               "letterSpacing": 0,
             },
+            undefined,
             undefined,
             undefined,
             Object {
@@ -135,7 +139,7 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
       style={
         Object {
           "backgroundColor": "hsl(0, 100%, 100%)",
-          "borderRadius": 16,
+          "borderRadius": 8,
           "marginHorizontal": 60,
           "maxWidth": 500,
           "paddingBottom": 36,
@@ -149,10 +153,14 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
         style={
           Array [
             Object {
+              "color": "hsl(0, 0%, 0%)",
+            },
+            Object {
               "fontSize": 24,
               "fontWeight": "300",
               "letterSpacing": 0,
             },
+            undefined,
             undefined,
             undefined,
             Object {
@@ -225,7 +233,7 @@ exports[`Dialog component renders correctly with props 1`] = `
       style={
         Object {
           "backgroundColor": "hsl(0, 100%, 100%)",
-          "borderRadius": 16,
+          "borderRadius": 8,
           "marginHorizontal": 60,
           "maxWidth": 500,
           "paddingBottom": 36,
@@ -239,10 +247,14 @@ exports[`Dialog component renders correctly with props 1`] = `
         style={
           Array [
             Object {
+              "color": "hsl(0, 0%, 0%)",
+            },
+            Object {
               "fontSize": 24,
               "fontWeight": "300",
               "letterSpacing": 0,
             },
+            undefined,
             undefined,
             undefined,
             Object {
@@ -257,10 +269,14 @@ exports[`Dialog component renders correctly with props 1`] = `
         style={
           Array [
             Object {
+              "color": "hsl(0, 0%, 0%)",
+            },
+            Object {
               "fontSize": 14,
               "fontWeight": "300",
               "letterSpacing": 0.25,
             },
+            undefined,
             undefined,
             undefined,
             undefined,
@@ -314,6 +330,9 @@ exports[`Dialog component renders correctly with props 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -321,6 +340,7 @@ exports[`Dialog component renders correctly with props 1`] = `
                 Object {
                   "textAlign": "center",
                 },
+                undefined,
                 undefined,
                 Array [
                   Object {
@@ -371,6 +391,9 @@ exports[`Dialog component renders correctly with props 1`] = `
             style={
               Array [
                 Object {
+                  "color": "hsl(0, 0%, 0%)",
+                },
+                Object {
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -378,6 +401,7 @@ exports[`Dialog component renders correctly with props 1`] = `
                 Object {
                   "textAlign": "center",
                 },
+                undefined,
                 undefined,
                 Array [
                   Object {

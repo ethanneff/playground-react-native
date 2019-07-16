@@ -6,7 +6,7 @@ exports[`renders correctly 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "hsl(0, 100%, 100%)",
+        "backgroundColor": "hsl(0, 0%, 100%)",
         "flex": 1,
       },
       Object {
@@ -61,10 +61,11 @@ exports[`renders correctly 1`] = `
                 "color": "hsl(210, 10%, 23%)",
                 "fontSize": 24,
               },
-              Array [
-                undefined,
-                undefined,
-              ],
+              Object {
+                "invisible": Object {
+                  "opacity": 0,
+                },
+              },
               Object {
                 "fontFamily": "Material Design Icons",
                 "fontStyle": "normal",
@@ -101,7 +102,7 @@ exports[`renders correctly 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "hsl(0, 100%, 100%)",
+          "backgroundColor": "hsl(0, 0%, 100%)",
           "flex": 1,
         },
         Object {

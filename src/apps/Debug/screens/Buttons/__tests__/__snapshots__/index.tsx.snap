@@ -6,7 +6,7 @@ exports[`renders correctly 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "hsl(0, 100%, 100%)",
+        "backgroundColor": "hsl(0, 0%, 100%)",
         "flex": 1,
       },
       undefined,
@@ -55,10 +55,11 @@ exports[`renders correctly 1`] = `
                 "color": "hsl(210, 10%, 23%)",
                 "fontSize": 24,
               },
-              Array [
-                undefined,
-                undefined,
-              ],
+              Object {
+                "invisible": Object {
+                  "opacity": 0,
+                },
+              },
               Object {
                 "fontFamily": "Material Design Icons",
                 "fontStyle": "normal",
@@ -95,7 +96,7 @@ exports[`renders correctly 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "hsl(0, 100%, 100%)",
+          "backgroundColor": "hsl(0, 0%, 100%)",
           "flex": 1,
         },
         undefined,
@@ -162,6 +163,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -169,6 +173,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -217,6 +222,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -224,6 +232,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -274,6 +283,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -281,6 +293,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -327,6 +340,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -334,6 +350,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -381,6 +398,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -388,6 +408,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -439,6 +460,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -446,6 +470,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -495,6 +520,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -502,6 +530,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -553,6 +582,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -560,6 +592,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -607,6 +640,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -614,6 +650,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -662,6 +699,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -669,6 +709,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -720,6 +761,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -727,6 +771,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -776,6 +821,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -783,6 +831,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -834,6 +883,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -841,6 +893,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -888,6 +941,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -895,6 +951,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -943,6 +1000,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -950,6 +1010,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1002,6 +1063,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1009,6 +1073,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1059,6 +1124,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1066,6 +1134,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1118,6 +1187,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1125,6 +1197,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1173,6 +1246,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1180,6 +1256,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1229,6 +1306,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1236,6 +1316,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1287,6 +1368,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1294,6 +1378,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1343,6 +1428,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1350,6 +1438,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1401,6 +1490,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1408,6 +1500,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1455,6 +1548,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1462,6 +1558,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1510,6 +1607,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1517,6 +1617,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1568,6 +1669,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1575,6 +1679,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1626,6 +1731,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1633,6 +1741,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1686,6 +1795,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1693,6 +1805,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1743,6 +1856,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1750,6 +1866,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1800,6 +1917,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1807,6 +1927,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -1888,26 +2009,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        Object {
-                          "paddingRight": 2,
-                        },
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -1924,6 +2030,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -1931,6 +2040,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -2010,28 +2120,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        Object {
-                          "paddingRight": 2,
-                        },
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          Object {
-                            "color": "hsl(0, 0%, 0%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2048,6 +2141,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -2055,6 +2151,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -2134,26 +2231,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        Object {
-                          "paddingRight": 2,
-                        },
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2170,6 +2252,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -2177,6 +2262,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -2252,26 +2338,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        Object {
-                          "paddingRight": 2,
-                        },
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2288,6 +2359,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -2295,6 +2369,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -2373,28 +2448,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        Object {
-                          "paddingRight": 2,
-                        },
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          Object {
-                            "color": "hsl(0, 100%, 100%)",
-                          },
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2411,6 +2469,9 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "color": "hsl(0, 0%, 0%)",
+                  },
+                  Object {
                     "fontSize": 14,
                     "fontWeight": "600",
                     "letterSpacing": 0.75,
@@ -2418,6 +2479,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "textAlign": "center",
                   },
+                  undefined,
                   undefined,
                   Array [
                     Object {
@@ -2495,24 +2557,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        undefined,
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2584,26 +2633,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        undefined,
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          Object {
-                            "color": "hsl(0, 0%, 0%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2673,24 +2707,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        undefined,
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2758,24 +2779,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        undefined,
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2846,26 +2854,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        undefined,
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          Object {
-                            "color": "hsl(0, 100%, 100%)",
-                          },
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -2933,24 +2926,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        undefined,
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -3007,13 +2987,11 @@ exports[`renders correctly 1`] = `
                       "color": "red",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        undefined,
-                        false,
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -3083,26 +3061,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        undefined,
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          Object {
-                            "color": "hsl(0, 0%, 0%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -3170,24 +3133,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        undefined,
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -3255,24 +3205,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        undefined,
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
@@ -3343,26 +3280,11 @@ exports[`renders correctly 1`] = `
                       "color": "hsl(210, 10%, 23%)",
                       "fontSize": 16,
                     },
-                    Array [
-                      undefined,
-                      Array [
-                        undefined,
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "color": "hsl(211, 100%, 50%)",
-                          },
-                          undefined,
-                          undefined,
-                          undefined,
-                          Object {
-                            "color": "hsl(0, 100%, 100%)",
-                          },
-                          undefined,
-                          undefined,
-                        ],
-                      ],
-                    ],
+                    Object {
+                      "invisible": Object {
+                        "opacity": 0,
+                      },
+                    },
                     Object {
                       "fontFamily": "Material Design Icons",
                       "fontStyle": "normal",
