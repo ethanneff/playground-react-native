@@ -3,7 +3,8 @@
 
 import * as React from "react";
 import { StyleSheet, View, ViewStyle } from "react-native";
-import { Theme } from "../../utils";
+import { getCurrentColor } from "../../models";
+import { Theme, useRootSelector } from "../../utils";
 import { Badge } from "./Badge";
 import { IconSource } from "./IconSource";
 
@@ -18,34 +19,32 @@ interface Props {
   name?: string;
 }
 
-export class Icon extends React.PureComponent<Props> {
-  private styles = StyleSheet.create({
+export const Icon: React.FC<Props> = props => {
+  const colors = useRootSelector(state => getCurrentColor(state));
+  const {
+    name,
+    style,
+    badge = 0,
+    clear,
+    size = Theme.padding.p06,
+    color = colors.dark,
+    hidden,
+    invisible
+  } = props;
+  const styles = StyleSheet.create({
     invisible: {
       opacity: 0
     }
   });
-
-  public render() {
-    const {
-      name,
-      style,
-      badge = 0,
-      clear,
-      size = Theme.padding.p06,
-      color = Theme.color.dark,
-      hidden,
-      invisible
-    } = this.props;
-    const colored = clear ? Theme.color.background : color;
-    const styles = [invisible && this.styles.invisible, style];
-    if (name === undefined || name.length === 0 || hidden) {
-      return null;
-    }
-    return (
-      <View style={styles}>
-        <IconSource name={name} size={size} color={colored} style={styles} />
-        <Badge badge={badge} />
-      </View>
-    );
+  const colored = clear ? Theme.color.background : color;
+  const containerStyles = [invisible && styles.invisible, style];
+  if (name === undefined || name.length === 0 || hidden) {
+    return null;
   }
-}
+  return (
+    <View style={containerStyles}>
+      <IconSource name={name} size={size} color={colored} style={styles} />
+      <Badge badge={badge} />
+    </View>
+  );
+};
