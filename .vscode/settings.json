@@ -1,3 +1,6 @@
 {
-    "editor.gotoLocation.multiple": "goto"
+  "editor.formatOnSave": true,
+  "editor.gotoLocation.multiple": "goto",
+  "workbench.editor.labelFormat": "short",
+  "typescript.preferences.importModuleSpecifier": "relative"
 }
