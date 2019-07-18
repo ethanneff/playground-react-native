@@ -34,7 +34,7 @@
 - [x] useRootSelector
 - [x] darkmode
 - [x] fix test because of hooks
-- [ ] useRootDispatch
+- [x] useRootDispatch
 - [ ] navigation
 - [ ] save responses
 
@@ -54,8 +54,8 @@
 - [ ] main navigation
 - [ ] main counter
 - [ ] main app statusbar
-- [ ] fix stopwatch
-- [ ] logout clear everything
+- [x] fix stopwatch
+- [x] logout clear everything
 
 #### week 3: fix tests
 
