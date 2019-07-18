@@ -1,0 +1,293 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
+          "fontSize": 24,
+          "fontWeight": "300",
+          "letterSpacing": 0,
+        },
+        Object {
+          "textAlign": "center",
+        },
+        undefined,
+        Object {
+          "fontWeight": "600",
+        },
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    bob
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
+          "fontSize": 24,
+          "fontWeight": "300",
+          "letterSpacing": 0,
+        },
+        Object {
+          "textAlign": "center",
+        },
+        undefined,
+        Object {
+          "fontWeight": "600",
+        },
+        false,
+        undefined,
+      ]
+    }
+  >
+    
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
+          "fontSize": 24,
+          "fontWeight": "300",
+          "letterSpacing": 0,
+        },
+        Object {
+          "textAlign": "center",
+        },
+        undefined,
+        Object {
+          "fontWeight": "600",
+        },
+        false,
+        undefined,
+      ]
+    }
+  >
+    .
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
+          "fontSize": 24,
+          "fontWeight": "300",
+          "letterSpacing": 0,
+        },
+        Object {
+          "textAlign": "center",
+        },
+        undefined,
+        Object {
+          "fontWeight": "600",
+        },
+        Object {
+          "opacity": 0,
+        },
+        undefined,
+      ]
+    }
+  >
+    .
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
+          "fontSize": 24,
+          "fontWeight": "300",
+          "letterSpacing": 0,
+        },
+        Object {
+          "textAlign": "center",
+        },
+        undefined,
+        Object {
+          "fontWeight": "600",
+        },
+        Object {
+          "opacity": 0,
+        },
+        undefined,
+      ]
+    }
+  >
+    .
+  </Text>
+</View>
+`;
+
+exports[`renders correctly with optional props 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+      Object {
+        "justifyContent": "center",
+      },
+      Object {
+        "flex": 1,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
+          "fontSize": 24,
+          "fontWeight": "300",
+          "letterSpacing": 0,
+        },
+        Object {
+          "textAlign": "center",
+        },
+        undefined,
+        Object {
+          "fontWeight": "600",
+        },
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    bob
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
+          "fontSize": 24,
+          "fontWeight": "300",
+          "letterSpacing": 0,
+        },
+        Object {
+          "textAlign": "center",
+        },
+        undefined,
+        Object {
+          "fontWeight": "600",
+        },
+        false,
+        undefined,
+      ]
+    }
+  >
+    
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
+          "fontSize": 24,
+          "fontWeight": "300",
+          "letterSpacing": 0,
+        },
+        Object {
+          "textAlign": "center",
+        },
+        undefined,
+        Object {
+          "fontWeight": "600",
+        },
+        false,
+        undefined,
+      ]
+    }
+  >
+    .
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
+          "fontSize": 24,
+          "fontWeight": "300",
+          "letterSpacing": 0,
+        },
+        Object {
+          "textAlign": "center",
+        },
+        undefined,
+        Object {
+          "fontWeight": "600",
+        },
+        Object {
+          "opacity": 0,
+        },
+        undefined,
+      ]
+    }
+  >
+    .
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "hsl(0, 0%, 0%)",
+        },
+        Object {
+          "fontSize": 24,
+          "fontWeight": "300",
+          "letterSpacing": 0,
+        },
+        Object {
+          "textAlign": "center",
+        },
+        undefined,
+        Object {
+          "fontWeight": "600",
+        },
+        Object {
+          "opacity": 0,
+        },
+        undefined,
+      ]
+    }
+  >
+    .
+  </Text>
+</View>
+`;

@@ -9,3 +9,4 @@ export * from "./Icon";
 export * from "./TextInput";
 export * from "./RelativeDate";
 export * from "./Dialog";
+export * from "./Loader";
