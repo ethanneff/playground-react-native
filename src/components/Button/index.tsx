@@ -128,8 +128,10 @@ export class Button extends React.PureComponent<Props> {
     secondary: {
       color: Theme.color.secondary
     },
+    textBody: {
+      backgroundColor: "transparent"
+    },
     text: {
-      backgroundColor: "transparent",
       color: Theme.color.primary
     }
   });
@@ -163,7 +165,7 @@ export class Button extends React.PureComponent<Props> {
     const buttonStyleGroup = [
       this.styles.container,
       !fab && this.styles.height,
-      this.getShape(),
+      this.getBody(),
       disable && (contained || outlined) && this.styles.disableBody,
       fab && this.styles.fab,
       wrap && this.styles.nonFlex,
@@ -209,7 +211,7 @@ export class Button extends React.PureComponent<Props> {
     );
   }
 
-  private getShape() {
+  private getBody() {
     const { contained, outlined, fab, text } = this.props;
     if (contained) {
       return this.styles.containedBody;
@@ -221,8 +223,8 @@ export class Button extends React.PureComponent<Props> {
       return this.styles.fab;
     }
     if (text) {
-      return this.styles.text;
+      return this.styles.textBody;
     }
-    return this.styles.text;
+    return this.styles.textBody;
   }
 }
