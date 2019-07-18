@@ -1,5 +1,26 @@
 # Planning
 
+- apps
+  - checklist
+  - hourly update
+  - todo
+  - cant hurt me
+  - portfolio
+- features
+  - debug menu
+  - questionnaires
+  - dark mode
+  - chat
+  - markdown
+- architecture
+  - navigation
+  - firebase
+  - commented code
+  - tests
+- integration
+  - ios deploy
+  - android deploy
+
 ## Top 1
 
 ## Top 3
