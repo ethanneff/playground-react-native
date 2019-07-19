@@ -18,21 +18,13 @@ exports[`RelativeDate component renders correctly 1`] = `
 >
   <Text
     style={
-      Array [
-        Object {
-          "color": "hsl(0, 0%, 0%)",
-        },
-        Object {
-          "fontSize": 14,
-          "fontWeight": "300",
-          "letterSpacing": 0.25,
-        },
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-      ]
+      Object {
+        "color": "hsl(0, 0%, 0%)",
+        "fontSize": 14,
+        "fontWeight": "300",
+        "letterSpacing": 0.25,
+        "opacity": 1,
+      }
     }
   >
     50 years ago
@@ -58,21 +50,13 @@ exports[`RelativeDate component renders correctly on touch 1`] = `
 >
   <Text
     style={
-      Array [
-        Object {
-          "color": "hsl(0, 0%, 0%)",
-        },
-        Object {
-          "fontSize": 14,
-          "fontWeight": "300",
-          "letterSpacing": 0.25,
-        },
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-      ]
+      Object {
+        "color": "hsl(0, 0%, 0%)",
+        "fontSize": 14,
+        "fontWeight": "300",
+        "letterSpacing": 0.25,
+        "opacity": 1,
+      }
     }
   >
     Dec 31 1969, 4:00 pm

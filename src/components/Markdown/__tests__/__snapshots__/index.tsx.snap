@@ -10,44 +10,26 @@ exports[`renders correctly 1`] = `
 >
   <Text
     style={
-      Array [
-        Object {
-          "color": "hsl(0, 0%, 0%)",
-        },
-        Object {
-          "fontSize": 14,
-          "fontWeight": "300",
-          "letterSpacing": 0.25,
-        },
-        undefined,
-        undefined,
-        false,
-        undefined,
-        undefined,
-      ]
+      Object {
+        "color": "hsl(0, 0%, 0%)",
+        "fontSize": 14,
+        "fontWeight": "300",
+        "letterSpacing": 0.25,
+        "opacity": 1,
+      }
     }
   >
     hello 
   </Text>
   <Text
     style={
-      Array [
-        Object {
-          "color": "hsl(0, 0%, 0%)",
-        },
-        Object {
-          "fontSize": 14,
-          "fontWeight": "300",
-          "letterSpacing": 0.25,
-        },
-        undefined,
-        undefined,
-        Object {
-          "fontWeight": "600",
-        },
-        undefined,
-        undefined,
-      ]
+      Object {
+        "color": "hsl(0, 0%, 0%)",
+        "fontSize": 14,
+        "fontWeight": "600",
+        "letterSpacing": 0.25,
+        "opacity": 1,
+      }
     }
   >
     world

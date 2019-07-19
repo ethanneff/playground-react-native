@@ -3,21 +3,13 @@
 exports[`renders body1 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 16,
-        "fontWeight": "300",
-        "letterSpacing": 0.5,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 16,
+      "fontWeight": "300",
+      "letterSpacing": 0.5,
+      "opacity": 1,
+    }
   }
 >
   hello
@@ -27,21 +19,13 @@ exports[`renders body1 1`] = `
 exports[`renders body2 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 14,
-        "fontWeight": "300",
-        "letterSpacing": 0.25,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 14,
+      "fontWeight": "300",
+      "letterSpacing": 0.25,
+      "opacity": 1,
+    }
   }
 >
   hello
@@ -51,21 +35,13 @@ exports[`renders body2 1`] = `
 exports[`renders button 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 14,
-        "fontWeight": "600",
-        "letterSpacing": 0.75,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 14,
+      "fontWeight": "600",
+      "letterSpacing": 0.75,
+      "opacity": 1,
+    }
   }
 >
   HELLO
@@ -75,21 +51,13 @@ exports[`renders button 1`] = `
 exports[`renders button empty 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 14,
-        "fontWeight": "600",
-        "letterSpacing": 0.75,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 14,
+      "fontWeight": "600",
+      "letterSpacing": 0.75,
+      "opacity": 1,
+    }
   }
 >
   
@@ -99,21 +67,13 @@ exports[`renders button empty 1`] = `
 exports[`renders caption 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 12,
-        "fontWeight": "300",
-        "letterSpacing": 0.4,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 12,
+      "fontWeight": "300",
+      "letterSpacing": 0.4,
+      "opacity": 1,
+    }
   }
 >
   hello
@@ -123,21 +83,13 @@ exports[`renders caption 1`] = `
 exports[`renders correctly 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 14,
-        "fontWeight": "300",
-        "letterSpacing": 0.25,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 14,
+      "fontWeight": "300",
+      "letterSpacing": 0.25,
+      "opacity": 1,
+    }
   }
 >
   hello
@@ -147,21 +99,13 @@ exports[`renders correctly 1`] = `
 exports[`renders empty 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 14,
-        "fontWeight": "300",
-        "letterSpacing": 0.25,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 14,
+      "fontWeight": "300",
+      "letterSpacing": 0.25,
+      "opacity": 1,
+    }
   }
 >
   
@@ -171,21 +115,13 @@ exports[`renders empty 1`] = `
 exports[`renders h1 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 48,
-        "fontWeight": "100",
-        "letterSpacing": -1.5,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 48,
+      "fontWeight": "100",
+      "letterSpacing": -1.5,
+      "opacity": 1,
+    }
   }
 >
   hello
@@ -195,21 +131,13 @@ exports[`renders h1 1`] = `
 exports[`renders h2 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 30,
-        "fontWeight": "100",
-        "letterSpacing": -0.5,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 30,
+      "fontWeight": "100",
+      "letterSpacing": -0.5,
+      "opacity": 1,
+    }
   }
 >
   hello
@@ -219,21 +147,13 @@ exports[`renders h2 1`] = `
 exports[`renders h3 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 24,
-        "fontWeight": "300",
-        "letterSpacing": 0,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 24,
+      "fontWeight": "300",
+      "letterSpacing": 0,
+      "opacity": 1,
+    }
   }
 >
   hello
@@ -243,21 +163,13 @@ exports[`renders h3 1`] = `
 exports[`renders h4 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 17,
-        "fontWeight": "300",
-        "letterSpacing": 0.25,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 17,
+      "fontWeight": "300",
+      "letterSpacing": 0.25,
+      "opacity": 1,
+    }
   }
 >
   hello
@@ -267,21 +179,13 @@ exports[`renders h4 1`] = `
 exports[`renders h5 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 12,
-        "fontWeight": "300",
-        "letterSpacing": 0,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 12,
+      "fontWeight": "300",
+      "letterSpacing": 0,
+      "opacity": 1,
+    }
   }
 >
   hello
@@ -291,21 +195,13 @@ exports[`renders h5 1`] = `
 exports[`renders h6 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 10,
-        "fontWeight": "600",
-        "letterSpacing": 0.15,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 10,
+      "fontWeight": "600",
+      "letterSpacing": 0.15,
+      "opacity": 1,
+    }
   }
 >
   hello
@@ -315,21 +211,13 @@ exports[`renders h6 1`] = `
 exports[`renders overline 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 10,
-        "fontWeight": "300",
-        "letterSpacing": 1.5,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 10,
+      "fontWeight": "300",
+      "letterSpacing": 1.5,
+      "opacity": 1,
+    }
   }
 >
   HELLO
@@ -339,21 +227,13 @@ exports[`renders overline 1`] = `
 exports[`renders subtitle1 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 16,
-        "fontWeight": "300",
-        "letterSpacing": 0.15,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 16,
+      "fontWeight": "300",
+      "letterSpacing": 0.15,
+      "opacity": 1,
+    }
   }
 >
   hello
@@ -363,21 +243,13 @@ exports[`renders subtitle1 1`] = `
 exports[`renders subtitle2 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-      },
-      Object {
-        "fontSize": 14,
-        "fontWeight": "600",
-        "letterSpacing": 0.1,
-      },
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ]
+    Object {
+      "color": "hsl(0, 0%, 0%)",
+      "fontSize": 14,
+      "fontWeight": "600",
+      "letterSpacing": 0.1,
+      "opacity": 1,
+    }
   }
 >
   hello

@@ -100,23 +100,14 @@ exports[`renders correctly 1`] = `
     <View>
       <Text
         style={
-          Array [
-            Object {
-              "color": "hsl(0, 0%, 0%)",
-            },
-            Object {
-              "fontSize": 48,
-              "fontWeight": "100",
-              "letterSpacing": -1.5,
-            },
-            Object {
-              "textAlign": "center",
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-          ]
+          Object {
+            "color": "hsl(0, 0%, 0%)",
+            "fontSize": 48,
+            "fontWeight": "100",
+            "letterSpacing": -1.5,
+            "opacity": 1,
+            "textAlign": "center",
+          }
         }
       >
         Landing
@@ -193,23 +184,14 @@ exports[`renders correctly 1`] = `
             >
               <Text
                 style={
-                  Array [
-                    Object {
-                      "color": "hsl(0, 0%, 0%)",
-                    },
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
-                    },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
-                  ]
+                  Object {
+                    "color": "hsl(0, 0%, 0%)",
+                    "fontSize": 14,
+                    "fontWeight": "300",
+                    "letterSpacing": 0.25,
+                    "opacity": 1,
+                    "textAlign": "center",
+                  }
                 }
               >
                 hello
@@ -238,23 +220,14 @@ exports[`renders correctly 1`] = `
             >
               <Text
                 style={
-                  Array [
-                    Object {
-                      "color": "hsl(0, 0%, 0%)",
-                    },
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
-                    },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
-                  ]
+                  Object {
+                    "color": "hsl(0, 0%, 0%)",
+                    "fontSize": 14,
+                    "fontWeight": "300",
+                    "letterSpacing": 0.25,
+                    "opacity": 1,
+                    "textAlign": "center",
+                  }
                 }
               >
                 bob
@@ -283,23 +256,14 @@ exports[`renders correctly 1`] = `
             >
               <Text
                 style={
-                  Array [
-                    Object {
-                      "color": "hsl(0, 0%, 0%)",
-                    },
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
-                    },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
-                  ]
+                  Object {
+                    "color": "hsl(0, 0%, 0%)",
+                    "fontSize": 14,
+                    "fontWeight": "300",
+                    "letterSpacing": 0.25,
+                    "opacity": 1,
+                    "textAlign": "center",
+                  }
                 }
               >
                 steve
@@ -328,23 +292,14 @@ exports[`renders correctly 1`] = `
             >
               <Text
                 style={
-                  Array [
-                    Object {
-                      "color": "hsl(0, 0%, 0%)",
-                    },
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
-                    },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
-                  ]
+                  Object {
+                    "color": "hsl(0, 0%, 0%)",
+                    "fontSize": 14,
+                    "fontWeight": "300",
+                    "letterSpacing": 0.25,
+                    "opacity": 1,
+                    "textAlign": "center",
+                  }
                 }
               >
                 jill
@@ -377,7 +332,6 @@ exports[`renders correctly 1`] = `
               "borderColor": "transparent",
               "borderRadius": 4,
               "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
               "flexDirection": "row",
               "height": 36,
               "justifyContent": "center",
@@ -388,34 +342,14 @@ exports[`renders correctly 1`] = `
         >
           <Text
             style={
-              Array [
-                Object {
-                  "color": "hsl(0, 0%, 0%)",
-                },
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
+              Object {
+                "color": "hsl(211, 100%, 50%)",
+                "fontSize": 14,
+                "fontWeight": "600",
+                "letterSpacing": 0.75,
+                "opacity": 1,
+                "textAlign": "center",
+              }
             }
           >
             LOGIN
@@ -437,7 +371,6 @@ exports[`renders correctly 1`] = `
               "borderColor": "transparent",
               "borderRadius": 4,
               "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
               "flexDirection": "row",
               "height": 36,
               "justifyContent": "center",
@@ -448,34 +381,14 @@ exports[`renders correctly 1`] = `
         >
           <Text
             style={
-              Array [
-                Object {
-                  "color": "hsl(0, 0%, 0%)",
-                },
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
+              Object {
+                "color": "hsl(211, 100%, 50%)",
+                "fontSize": 14,
+                "fontWeight": "600",
+                "letterSpacing": 0.75,
+                "opacity": 1,
+                "textAlign": "center",
+              }
             }
           >
             MAIN
@@ -497,7 +410,6 @@ exports[`renders correctly 1`] = `
               "borderColor": "transparent",
               "borderRadius": 4,
               "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
               "flexDirection": "row",
               "height": 36,
               "justifyContent": "center",
@@ -508,34 +420,14 @@ exports[`renders correctly 1`] = `
         >
           <Text
             style={
-              Array [
-                Object {
-                  "color": "hsl(0, 0%, 0%)",
-                },
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
+              Object {
+                "color": "hsl(211, 100%, 50%)",
+                "fontSize": 14,
+                "fontWeight": "600",
+                "letterSpacing": 0.75,
+                "opacity": 1,
+                "textAlign": "center",
+              }
             }
           >
             DEBUG
@@ -557,7 +449,6 @@ exports[`renders correctly 1`] = `
               "borderColor": "transparent",
               "borderRadius": 4,
               "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
               "flexDirection": "row",
               "height": 36,
               "justifyContent": "center",
@@ -568,34 +459,14 @@ exports[`renders correctly 1`] = `
         >
           <Text
             style={
-              Array [
-                Object {
-                  "color": "hsl(0, 0%, 0%)",
-                },
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
+              Object {
+                "color": "hsl(211, 100%, 50%)",
+                "fontSize": 14,
+                "fontWeight": "600",
+                "letterSpacing": 0.75,
+                "opacity": 1,
+                "textAlign": "center",
+              }
             }
           >
             SETTINGS
@@ -626,7 +497,6 @@ exports[`renders correctly 1`] = `
               "borderColor": "transparent",
               "borderRadius": 4,
               "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
               "flexDirection": "row",
               "height": 36,
               "justifyContent": "center",
@@ -637,34 +507,14 @@ exports[`renders correctly 1`] = `
         >
           <Text
             style={
-              Array [
-                Object {
-                  "color": "hsl(0, 0%, 0%)",
-                },
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
+              Object {
+                "color": "hsl(211, 100%, 50%)",
+                "fontSize": 14,
+                "fontWeight": "600",
+                "letterSpacing": 0.75,
+                "opacity": 1,
+                "textAlign": "center",
+              }
             }
           >
             CHECKLIST
@@ -686,7 +536,6 @@ exports[`renders correctly 1`] = `
               "borderColor": "transparent",
               "borderRadius": 4,
               "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
               "flexDirection": "row",
               "height": 36,
               "justifyContent": "center",
@@ -697,34 +546,14 @@ exports[`renders correctly 1`] = `
         >
           <Text
             style={
-              Array [
-                Object {
-                  "color": "hsl(0, 0%, 0%)",
-                },
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
+              Object {
+                "color": "hsl(211, 100%, 50%)",
+                "fontSize": 14,
+                "fontWeight": "600",
+                "letterSpacing": 0.75,
+                "opacity": 1,
+                "textAlign": "center",
+              }
             }
           >
             CANTHURTME

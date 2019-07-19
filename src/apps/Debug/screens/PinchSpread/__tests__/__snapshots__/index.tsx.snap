@@ -133,69 +133,42 @@ exports[`renders correctly 1`] = `
     <View>
       <Text
         style={
-          Array [
-            Object {
-              "color": "hsl(0, 0%, 0%)",
-            },
-            Object {
-              "fontSize": 14,
-              "fontWeight": "300",
-              "letterSpacing": 0.25,
-            },
-            Object {
-              "textAlign": "center",
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-          ]
+          Object {
+            "color": "hsl(0, 0%, 0%)",
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+            "opacity": 1,
+            "textAlign": "center",
+          }
         }
       >
         pinch or spread the screen with 3 fingers minimum
       </Text>
       <Text
         style={
-          Array [
-            Object {
-              "color": "hsl(0, 0%, 0%)",
-            },
-            Object {
-              "fontSize": 14,
-              "fontWeight": "300",
-              "letterSpacing": 0.25,
-            },
-            Object {
-              "textAlign": "center",
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-          ]
+          Object {
+            "color": "hsl(0, 0%, 0%)",
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+            "opacity": 1,
+            "textAlign": "center",
+          }
         }
       >
         spread: 0
       </Text>
       <Text
         style={
-          Array [
-            Object {
-              "color": "hsl(0, 0%, 0%)",
-            },
-            Object {
-              "fontSize": 14,
-              "fontWeight": "300",
-              "letterSpacing": 0.25,
-            },
-            Object {
-              "textAlign": "center",
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-          ]
+          Object {
+            "color": "hsl(0, 0%, 0%)",
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+            "opacity": 1,
+            "textAlign": "center",
+          }
         }
       >
         pinch: 0

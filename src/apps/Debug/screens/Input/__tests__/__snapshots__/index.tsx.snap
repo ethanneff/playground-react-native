@@ -172,7 +172,6 @@ exports[`renders correctly 1`] = `
                   "borderColor": "transparent",
                   "borderRadius": 4,
                   "borderWidth": 1,
-                  "color": "hsl(211, 100%, 50%)",
                   "flexDirection": "row",
                   "height": 20,
                   "justifyContent": "flex-start",
@@ -184,36 +183,14 @@ exports[`renders correctly 1`] = `
             >
               <Text
                 style={
-                  Array [
-                    Object {
-                      "color": "hsl(0, 0%, 0%)",
-                    },
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
-                    },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "color": "hsl(211, 100%, 50%)",
-                      },
-                      Object {
-                        "color": "hsl(0, 0%, 0%)",
-                      },
-                      undefined,
-                      undefined,
-                      undefined,
-                      undefined,
-                      undefined,
-                    ],
-                  ]
+                  Object {
+                    "color": "hsl(0, 0%, 0%)",
+                    "fontSize": 14,
+                    "fontWeight": "300",
+                    "letterSpacing": 0.25,
+                    "opacity": 1,
+                    "textAlign": "center",
+                  }
                 }
               >
                 Name
@@ -236,7 +213,6 @@ exports[`renders correctly 1`] = `
                   "borderColor": "transparent",
                   "borderRadius": 4,
                   "borderWidth": 1,
-                  "color": "hsl(211, 100%, 50%)",
                   "flexDirection": "row",
                   "height": 20,
                   "justifyContent": "flex-start",
@@ -248,36 +224,14 @@ exports[`renders correctly 1`] = `
             >
               <Text
                 style={
-                  Array [
-                    Object {
-                      "color": "hsl(0, 0%, 0%)",
-                    },
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
-                    },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "color": "hsl(211, 100%, 50%)",
-                      },
-                      undefined,
-                      Object {
-                        "color": "hsl(208, 7%, 46%)",
-                      },
-                      undefined,
-                      undefined,
-                      undefined,
-                      undefined,
-                    ],
-                  ]
+                  Object {
+                    "color": "hsl(208, 7%, 46%)",
+                    "fontSize": 14,
+                    "fontWeight": "300",
+                    "letterSpacing": 0.25,
+                    "opacity": 1,
+                    "textAlign": "center",
+                  }
                 }
               >
                  - optional
@@ -345,7 +299,6 @@ exports[`renders correctly 1`] = `
                 "borderColor": "transparent",
                 "borderRadius": 4,
                 "borderWidth": 1,
-                "color": "hsl(211, 100%, 50%)",
                 "flexDirection": "row",
                 "height": 20,
                 "justifyContent": "flex-start",
@@ -365,7 +318,6 @@ exports[`renders correctly 1`] = `
                     "",
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
                         "color": "hsl(211, 100%, 50%)",
                       },
                       undefined,
@@ -397,7 +349,6 @@ exports[`renders correctly 1`] = `
                         "",
                         Array [
                           Object {
-                            "backgroundColor": "transparent",
                             "color": "hsl(211, 100%, 50%)",
                           },
                           undefined,
@@ -425,36 +376,14 @@ exports[`renders correctly 1`] = `
             </View>
             <Text
               style={
-                Array [
-                  Object {
-                    "color": "hsl(0, 0%, 0%)",
-                  },
-                  Object {
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                  },
-                  Object {
-                    "textAlign": "center",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "hsl(211, 100%, 50%)",
-                    },
-                    undefined,
-                    undefined,
-                    Object {
-                      "color": "hsl(354, 70%, 54%)",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                  ],
-                ]
+                Object {
+                  "color": "hsl(354, 70%, 54%)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
               }
             >
               
@@ -493,7 +422,6 @@ exports[`renders correctly 1`] = `
                   "borderColor": "transparent",
                   "borderRadius": 4,
                   "borderWidth": 1,
-                  "color": "hsl(211, 100%, 50%)",
                   "flexDirection": "row",
                   "height": 20,
                   "justifyContent": "flex-start",
@@ -505,36 +433,14 @@ exports[`renders correctly 1`] = `
             >
               <Text
                 style={
-                  Array [
-                    Object {
-                      "color": "hsl(0, 0%, 0%)",
-                    },
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
-                    },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "color": "hsl(211, 100%, 50%)",
-                      },
-                      Object {
-                        "color": "hsl(0, 0%, 0%)",
-                      },
-                      undefined,
-                      undefined,
-                      undefined,
-                      undefined,
-                      undefined,
-                    ],
-                  ]
+                  Object {
+                    "color": "hsl(0, 0%, 0%)",
+                    "fontSize": 14,
+                    "fontWeight": "300",
+                    "letterSpacing": 0.25,
+                    "opacity": 1,
+                    "textAlign": "center",
+                  }
                 }
               >
                 Email
@@ -603,7 +509,6 @@ exports[`renders correctly 1`] = `
                 "borderColor": "transparent",
                 "borderRadius": 4,
                 "borderWidth": 1,
-                "color": "hsl(211, 100%, 50%)",
                 "flexDirection": "row",
                 "height": 20,
                 "justifyContent": "flex-start",
@@ -623,7 +528,6 @@ exports[`renders correctly 1`] = `
                     "",
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
                         "color": "hsl(211, 100%, 50%)",
                       },
                       undefined,
@@ -655,7 +559,6 @@ exports[`renders correctly 1`] = `
                         "",
                         Array [
                           Object {
-                            "backgroundColor": "transparent",
                             "color": "hsl(211, 100%, 50%)",
                           },
                           undefined,
@@ -683,36 +586,14 @@ exports[`renders correctly 1`] = `
             </View>
             <Text
               style={
-                Array [
-                  Object {
-                    "color": "hsl(0, 0%, 0%)",
-                  },
-                  Object {
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                  },
-                  Object {
-                    "textAlign": "center",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "hsl(211, 100%, 50%)",
-                    },
-                    undefined,
-                    undefined,
-                    Object {
-                      "color": "hsl(354, 70%, 54%)",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                  ],
-                ]
+                Object {
+                  "color": "hsl(354, 70%, 54%)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
               }
             >
               
@@ -751,7 +632,6 @@ exports[`renders correctly 1`] = `
                   "borderColor": "transparent",
                   "borderRadius": 4,
                   "borderWidth": 1,
-                  "color": "hsl(211, 100%, 50%)",
                   "flexDirection": "row",
                   "height": 20,
                   "justifyContent": "flex-start",
@@ -763,36 +643,14 @@ exports[`renders correctly 1`] = `
             >
               <Text
                 style={
-                  Array [
-                    Object {
-                      "color": "hsl(0, 0%, 0%)",
-                    },
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": "300",
-                      "letterSpacing": 0.25,
-                    },
-                    Object {
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "color": "hsl(211, 100%, 50%)",
-                      },
-                      Object {
-                        "color": "hsl(0, 0%, 0%)",
-                      },
-                      undefined,
-                      undefined,
-                      undefined,
-                      undefined,
-                      undefined,
-                    ],
-                  ]
+                  Object {
+                    "color": "hsl(0, 0%, 0%)",
+                    "fontSize": 14,
+                    "fontWeight": "300",
+                    "letterSpacing": 0.25,
+                    "opacity": 1,
+                    "textAlign": "center",
+                  }
                 }
               >
                 Password
@@ -861,7 +719,6 @@ exports[`renders correctly 1`] = `
                 "borderColor": "transparent",
                 "borderRadius": 4,
                 "borderWidth": 1,
-                "color": "hsl(211, 100%, 50%)",
                 "flexDirection": "row",
                 "height": 20,
                 "justifyContent": "flex-start",
@@ -881,7 +738,6 @@ exports[`renders correctly 1`] = `
                     "",
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
                         "color": "hsl(211, 100%, 50%)",
                       },
                       undefined,
@@ -913,7 +769,6 @@ exports[`renders correctly 1`] = `
                         "",
                         Array [
                           Object {
-                            "backgroundColor": "transparent",
                             "color": "hsl(211, 100%, 50%)",
                           },
                           undefined,
@@ -941,36 +796,14 @@ exports[`renders correctly 1`] = `
             </View>
             <Text
               style={
-                Array [
-                  Object {
-                    "color": "hsl(0, 0%, 0%)",
-                  },
-                  Object {
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                  },
-                  Object {
-                    "textAlign": "center",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "hsl(211, 100%, 50%)",
-                    },
-                    undefined,
-                    undefined,
-                    Object {
-                      "color": "hsl(354, 70%, 54%)",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                  ],
-                ]
+                Object {
+                  "color": "hsl(354, 70%, 54%)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
               }
             >
               
@@ -1003,36 +836,14 @@ exports[`renders correctly 1`] = `
         >
           <Text
             style={
-              Array [
-                Object {
-                  "color": "hsl(0, 0%, 0%)",
-                },
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "hsl(0, 100%, 100%)",
-                  },
-                  undefined,
-                  undefined,
-                ],
-              ]
+              Object {
+                "color": "hsl(0, 0%, 100%)",
+                "fontSize": 14,
+                "fontWeight": "600",
+                "letterSpacing": 0.75,
+                "opacity": 1,
+                "textAlign": "center",
+              }
             }
           >
             COMPLETE FORM

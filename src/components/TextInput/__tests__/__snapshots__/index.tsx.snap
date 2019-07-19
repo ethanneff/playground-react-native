@@ -74,7 +74,6 @@ exports[`renders correctly 1`] = `
           "borderColor": "transparent",
           "borderRadius": 4,
           "borderWidth": 1,
-          "color": "hsl(211, 100%, 50%)",
           "flexDirection": "row",
           "height": 36,
           "justifyContent": "center",
@@ -94,7 +93,6 @@ exports[`renders correctly 1`] = `
               undefined,
               Array [
                 Object {
-                  "backgroundColor": "transparent",
                   "color": "hsl(211, 100%, 50%)",
                 },
                 undefined,
@@ -124,7 +122,6 @@ exports[`renders correctly 1`] = `
                   undefined,
                   Array [
                     Object {
-                      "backgroundColor": "transparent",
                       "color": "hsl(211, 100%, 50%)",
                     },
                     undefined,
@@ -169,7 +166,6 @@ exports[`renders correctly 1`] = `
         "borderColor": "transparent",
         "borderRadius": 4,
         "borderWidth": 1,
-        "color": "hsl(211, 100%, 50%)",
         "flexDirection": "row",
         "height": 20,
         "justifyContent": "flex-start",
@@ -189,7 +185,6 @@ exports[`renders correctly 1`] = `
             "",
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "hsl(211, 100%, 50%)",
               },
               undefined,
@@ -221,7 +216,6 @@ exports[`renders correctly 1`] = `
                 "",
                 Array [
                   Object {
-                    "backgroundColor": "transparent",
                     "color": "hsl(211, 100%, 50%)",
                   },
                   undefined,
@@ -249,36 +243,14 @@ exports[`renders correctly 1`] = `
     </View>
     <Text
       style={
-        Array [
-          Object {
-            "color": "hsl(0, 0%, 0%)",
-          },
-          Object {
-            "fontSize": 14,
-            "fontWeight": "300",
-            "letterSpacing": 0.25,
-          },
-          Object {
-            "textAlign": "center",
-          },
-          undefined,
-          undefined,
-          undefined,
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "color": "hsl(211, 100%, 50%)",
-            },
-            undefined,
-            undefined,
-            Object {
-              "color": "hsl(354, 70%, 54%)",
-            },
-            undefined,
-            undefined,
-            undefined,
-          ],
-        ]
+        Object {
+          "color": "hsl(354, 70%, 54%)",
+          "fontSize": 14,
+          "fontWeight": "300",
+          "letterSpacing": 0.25,
+          "opacity": 1,
+          "textAlign": "center",
+        }
       }
     >
       

@@ -134,7 +134,8 @@ exports[`renders correctly 1`] = `
       <View
         style={
           Object {
-            "flex": 1,
+            "backgroundColor": "hsl(0, 0%, 100%)",
+            "width": "100%",
           }
         }
       />

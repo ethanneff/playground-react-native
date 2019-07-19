@@ -57,23 +57,14 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
     >
       <Text
         style={
-          Array [
-            Object {
-              "color": "hsl(0, 0%, 0%)",
-            },
-            Object {
-              "fontSize": 24,
-              "fontWeight": "300",
-              "letterSpacing": 0,
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            Object {
-              "paddingBottom": 12,
-            },
-          ]
+          Object {
+            "color": "hsl(0, 0%, 0%)",
+            "fontSize": 24,
+            "fontWeight": "300",
+            "letterSpacing": 0,
+            "opacity": 1,
+            "paddingBottom": 12,
+          }
         }
       >
         bob
@@ -152,23 +143,14 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
     >
       <Text
         style={
-          Array [
-            Object {
-              "color": "hsl(0, 0%, 0%)",
-            },
-            Object {
-              "fontSize": 24,
-              "fontWeight": "300",
-              "letterSpacing": 0,
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            Object {
-              "paddingBottom": 12,
-            },
-          ]
+          Object {
+            "color": "hsl(0, 0%, 0%)",
+            "fontSize": 24,
+            "fontWeight": "300",
+            "letterSpacing": 0,
+            "opacity": 1,
+            "paddingBottom": 12,
+          }
         }
       >
         bob
@@ -247,44 +229,27 @@ exports[`Dialog component renders correctly with props 1`] = `
     >
       <Text
         style={
-          Array [
-            Object {
-              "color": "hsl(0, 0%, 0%)",
-            },
-            Object {
-              "fontSize": 24,
-              "fontWeight": "300",
-              "letterSpacing": 0,
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            Object {
-              "paddingBottom": 12,
-            },
-          ]
+          Object {
+            "color": "hsl(0, 0%, 0%)",
+            "fontSize": 24,
+            "fontWeight": "300",
+            "letterSpacing": 0,
+            "opacity": 1,
+            "paddingBottom": 12,
+          }
         }
       >
         nope
       </Text>
       <Text
         style={
-          Array [
-            Object {
-              "color": "hsl(0, 0%, 0%)",
-            },
-            Object {
-              "fontSize": 14,
-              "fontWeight": "300",
-              "letterSpacing": 0.25,
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-          ]
+          Object {
+            "color": "hsl(0, 0%, 0%)",
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+            "opacity": 1,
+          }
         }
       >
         yep
@@ -319,7 +284,6 @@ exports[`Dialog component renders correctly with props 1`] = `
               "borderColor": "transparent",
               "borderRadius": 4,
               "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
               "flex": 1,
               "flexDirection": "row",
               "height": 36,
@@ -332,34 +296,14 @@ exports[`Dialog component renders correctly with props 1`] = `
         >
           <Text
             style={
-              Array [
-                Object {
-                  "color": "hsl(0, 0%, 0%)",
-                },
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
+              Object {
+                "color": "hsl(211, 100%, 50%)",
+                "fontSize": 14,
+                "fontWeight": "600",
+                "letterSpacing": 0.75,
+                "opacity": 1,
+                "textAlign": "center",
+              }
             }
           >
             BIRD
@@ -381,7 +325,6 @@ exports[`Dialog component renders correctly with props 1`] = `
               "borderColor": "transparent",
               "borderRadius": 4,
               "borderWidth": 1,
-              "color": "hsl(211, 100%, 50%)",
               "flex": 1,
               "flexDirection": "row",
               "height": 36,
@@ -394,36 +337,14 @@ exports[`Dialog component renders correctly with props 1`] = `
         >
           <Text
             style={
-              Array [
-                Object {
-                  "color": "hsl(0, 0%, 0%)",
-                },
-                Object {
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                },
-                Object {
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  Object {
-                    "color": "hsl(208, 7%, 46%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
+              Object {
+                "color": "hsl(208, 7%, 46%)",
+                "fontSize": 14,
+                "fontWeight": "600",
+                "letterSpacing": 0.75,
+                "opacity": 1,
+                "textAlign": "center",
+              }
             }
           >
             DOG
