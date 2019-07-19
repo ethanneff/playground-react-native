@@ -7,15 +7,11 @@ import { Config } from "./utils";
 // TODO: remove
 YellowBox.ignoreWarnings(["NetInfo", "Async Storage", "Battery state"]);
 
-export class Launcher extends React.PureComponent {
-  public render() {
-    return (
-      <Provider store={store}>
-        <App />
-      </Provider>
-    );
-  }
-}
+export const Launcher = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
 
 AppRegistry.registerComponent(Config.app.name, () => Launcher);
 if (Platform.OS === Config.os.web) {
