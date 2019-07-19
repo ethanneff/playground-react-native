@@ -11,15 +11,15 @@ interface Props {
 const ellipsis = ["", ".", ".", "."];
 const ellipsisDuration = 400;
 const styles = StyleSheet.create({
-  row: {
-    flexDirection: "row"
-  },
   center: {
     justifyContent: "center"
+  },
+  row: {
+    flexDirection: "row"
   }
 });
 
-export const Loader: React.FC<Props> = props => {
+export const Loading: React.FC<Props> = props => {
   const { title, center, style } = props;
   let ellipsisCountdown: any = 0;
   const containerStyles = [
