@@ -50,10 +50,10 @@
 - [ ] chat app
 - [ ] slack markdown
 - [ ] main landing page
-- [ ] main tableview
-- [ ] main navigation
-- [ ] main counter
-- [ ] main app statusbar
+- [x] main tableview
+- [x] main navigation
+- [x] main counter
+- [x] main app statusbar
 - [x] fix stopwatch
 - [x] logout clear everything
 
