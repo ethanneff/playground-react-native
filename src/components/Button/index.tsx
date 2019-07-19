@@ -5,7 +5,8 @@ import {
   TouchableOpacity,
   ViewStyle
 } from "react-native";
-import { Theme } from "../../utils";
+import { getCurrentColor } from "../../models";
+import { Theme, useRootSelector } from "../../utils";
 import { Icon } from "../Icon";
 import { Text } from "../Text";
 
@@ -47,16 +48,44 @@ interface Props {
   onPress?(): void;
 }
 
-export class Button extends React.PureComponent<Props> {
-  public styles = StyleSheet.create({
+export const Button: React.FC<Props> = props => {
+  const {
+    activeOpacity,
+    buttonStyle,
+    center,
+    contained,
+    danger,
+    disable,
+    dropShadow,
+    fab,
+    half,
+    hidden,
+    icon,
+    iconColor,
+    invisible,
+    label,
+    lowercase,
+    neutral,
+    onPress,
+    outlined,
+    right,
+    secondary,
+    text,
+    textStyle,
+    title,
+    wrap
+  } = props;
+
+  const color = useRootSelector(state => getCurrentColor(state));
+  const styles = StyleSheet.create({
     center: {
       alignSelf: "center"
     },
     containedBody: {
-      backgroundColor: Theme.color.primary
+      backgroundColor: color.primary
     },
     containedText: {
-      color: Theme.color.background
+      color: color.background
     },
     container: {
       alignItems: "center",
@@ -69,19 +98,19 @@ export class Button extends React.PureComponent<Props> {
       paddingHorizontal: Theme.padding.p04
     },
     danger: {
-      color: Theme.color.danger
+      color: color.danger
     },
     disableBody: {
-      backgroundColor: Theme.color.light
+      backgroundColor: color.light
     },
     disableText: {
-      color: Theme.color.secondary
+      color: color.secondary
     },
     dropShadow: {
       elevation: 1,
       margin: Theme.padding.p02,
       padding: Theme.padding.p04,
-      shadowColor: Theme.color.dark,
+      shadowColor: color.dark,
       shadowOffset: {
         height: Theme.padding.p01,
         width: 0
@@ -114,117 +143,84 @@ export class Button extends React.PureComponent<Props> {
       paddingHorizontal: 0
     },
     neutral: {
-      color: Theme.color.text
+      color: color.text
     },
     nonFlex: {
       alignSelf: "flex-start"
     },
     outlined: {
-      borderColor: Theme.color.secondary
+      borderColor: color.secondary
     },
     right: {
       alignSelf: "flex-end"
     },
     secondary: {
-      color: Theme.color.secondary
+      color: color.secondary
+    },
+    text: {
+      color: color.primary
     },
     textBody: {
       backgroundColor: "transparent"
-    },
-    text: {
-      color: Theme.color.primary
     }
   });
 
-  public render() {
-    const {
-      activeOpacity,
-      buttonStyle,
-      center,
-      contained,
-      danger,
-      disable,
-      fab,
-      half,
-      hidden,
-      icon,
-      iconColor,
-      invisible,
-      label,
-      lowercase,
-      neutral,
-      onPress,
-      outlined,
-      right,
-      secondary,
-      textStyle,
-      title,
-      wrap,
-      dropShadow
-    } = this.props;
-    const buttonStyleGroup = [
-      this.styles.container,
-      !fab && this.styles.height,
-      this.getBody(),
-      disable && (contained || outlined) && this.styles.disableBody,
-      fab && this.styles.fab,
-      wrap && this.styles.nonFlex,
-      half && this.styles.half,
-      center && this.styles.center,
-      right && this.styles.right,
-      label && this.styles.label,
-      dropShadow && this.styles.dropShadow,
-      buttonStyle
-    ];
-    const textStyleGroup = [
-      this.styles.text,
-      neutral && this.styles.neutral,
-      secondary && this.styles.secondary,
-      danger && this.styles.danger,
-      contained && this.styles.containedText,
-      disable && this.styles.disableText,
-      textStyle
-    ];
-    const iconStyleGroup = [
-      title && this.styles.icon,
-      !iconColor && textStyleGroup
-    ];
-    if (hidden) {
-      return null;
-    }
-    return (
-      <TouchableOpacity
-        activeOpacity={activeOpacity}
-        disabled={disable}
-        onPress={onPress}
-        style={buttonStyleGroup}
-      >
-        <Icon
-          color={iconColor}
-          invisible={invisible}
-          name={icon}
-          size={Theme.padding.p04}
-          style={iconStyleGroup}
-        />
-        <Text center button={!lowercase} title={title} style={textStyleGroup} />
-      </TouchableOpacity>
-    );
-  }
-
-  private getBody() {
-    const { contained, outlined, fab, text } = this.props;
+  const getBody = () => {
     if (contained) {
-      return this.styles.containedBody;
+      return styles.containedBody;
     }
     if (outlined) {
-      return this.styles.outlined;
+      return styles.outlined;
     }
     if (fab) {
-      return this.styles.fab;
+      return styles.fab;
     }
     if (text) {
-      return this.styles.textBody;
+      return styles.textBody;
     }
-    return this.styles.textBody;
-  }
-}
+    return styles.textBody;
+  };
+
+  const buttonStyleGroup = [
+    styles.container,
+    !fab && styles.height,
+    getBody(),
+    disable && (contained || outlined) && styles.disableBody,
+    fab && styles.fab,
+    wrap && styles.nonFlex,
+    half && styles.half,
+    center && styles.center,
+    right && styles.right,
+    label && styles.label,
+    dropShadow && styles.dropShadow,
+    buttonStyle
+  ];
+  const textStyleGroup = [
+    styles.text,
+    neutral && styles.neutral,
+    secondary && styles.secondary,
+    danger && styles.danger,
+    contained && styles.containedText,
+    disable && styles.disableText,
+    textStyle
+  ];
+  const iconStyleGroup = [title && styles.icon, !iconColor && textStyleGroup];
+
+  return hidden ? null : (
+    <TouchableOpacity
+      activeOpacity={activeOpacity}
+      disabled={disable}
+      onPress={onPress}
+      style={buttonStyleGroup}
+    >
+      <Icon
+        color={iconColor}
+        invisible={invisible}
+        name={icon}
+        size={Theme.padding.p04}
+        style={iconStyleGroup}
+      />
+      <Text center button={!lowercase} title={title} style={textStyleGroup} />
+    </TouchableOpacity>
+  );
+};
