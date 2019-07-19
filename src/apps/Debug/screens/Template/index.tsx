@@ -1,35 +1,33 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
-import { connect } from "react-redux";
 import { Screen } from "../../../../components";
-import { navigate, NavigationScreen } from "../../../../models";
+import {
+  getCurrentColor,
+  navigate,
+  NavigationScreen
+} from "../../../../models";
+import { useRootDispatch, useRootSelector } from "../../../../utils";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
-
-interface DispatchProps {
-  navigate: typeof navigate;
+interface Props {
+  width?: string;
 }
 
-type Props = DispatchProps;
-
-class Container extends React.PureComponent<Props> {
-  public render() {
-    return (
-      <Screen onLeftPress={this.nav(NavigationScreen.Debug)}>
-        <View style={styles.container} />
-      </Screen>
-    );
-  }
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
-}
-
-const mapDispatchToProps: DispatchProps = { navigate };
-
-export const Template = connect(
-  null,
-  mapDispatchToProps
-)(Container);
+export const Template: React.FC<Props> = props => {
+  const dispatch = useRootDispatch();
+  const color = useRootSelector(state => getCurrentColor(state));
+  const { width = "100%" } = props;
+  const styles = StyleSheet.create({
+    container: {
+      backgroundColor: color.background,
+      width
+    }
+  });
+  const nav = (to: NavigationScreen) => () => dispatch(navigate(to));
+  return (
+    <Screen onLeftPress={nav(NavigationScreen.Debug)}>
+      <View style={styles.container}>
+        <></>
+      </View>
+    </Screen>
+  );
+};
