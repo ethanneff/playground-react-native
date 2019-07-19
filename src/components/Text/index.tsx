@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, Text as Original, ViewStyle } from "react-native";
+import { Animated, StyleSheet, ViewStyle } from "react-native";
 import { getCurrentColor } from "../../models";
 import { Theme } from "../../utils";
 import { useRootSelector } from "../../utils";
@@ -27,9 +27,34 @@ interface Props {
   button?: boolean;
   caption?: boolean;
   overline?: boolean;
+  onPress?(): void;
 }
 
 export const Text = (props: Props) => {
+  const {
+    style,
+    title,
+    center,
+    bold,
+    hidden,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    subtitle1,
+    subtitle2,
+    body1,
+    body2,
+    button,
+    caption,
+    onPress,
+    centerVertically,
+    invisible,
+    overline
+  } = props;
+  const opacity = new Animated.Value(1);
   const colors = useRootSelector(state => getCurrentColor(state));
   const styles = StyleSheet.create({
     bold: {
@@ -49,29 +74,7 @@ export const Text = (props: Props) => {
       color: colors.text
     }
   });
-
-  const {
-    style,
-    title,
-    center,
-    bold,
-    hidden,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    subtitle1,
-    subtitle2,
-    body1,
-    body2,
-    button,
-    caption,
-    centerVertically,
-    invisible,
-    overline
-  } = props;
+  const text = button || overline ? (title || "").toUpperCase() : title;
   const getFont = () => {
     return h1
       ? Theme.fontSize.h1
@@ -102,7 +105,24 @@ export const Text = (props: Props) => {
       : Theme.fontSize.body2;
   };
 
-  const text = button || overline ? (title || "").toUpperCase() : title;
+  const handlePress = () => {
+    if (onPress) {
+      onPress();
+    }
+    Animated.sequence([
+      Animated.timing(opacity, {
+        duration: 50,
+        toValue: 0.2,
+        useNativeDriver: true
+      }),
+      Animated.timing(opacity, {
+        duration: 350,
+        toValue: 1,
+        useNativeDriver: true
+      })
+    ]).start();
+  };
+
   const textStyle = [
     styles.text,
     getFont(),
@@ -110,9 +130,16 @@ export const Text = (props: Props) => {
     centerVertically && styles.centerVertically,
     bold && styles.bold,
     invisible && styles.invisible,
+    { opacity },
     style
   ];
+
   return title === undefined || hidden ? null : (
-    <Original style={textStyle}>{text}</Original>
+    <Animated.Text
+      style={textStyle}
+      onPress={onPress ? handlePress : undefined}
+    >
+      {text}
+    </Animated.Text>
   );
 };
