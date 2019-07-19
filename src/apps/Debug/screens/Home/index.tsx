@@ -11,6 +11,7 @@ type Props = DispatchProps;
 
 class Container extends React.PureComponent<Props> {
   private screens = [
+    NavigationScreen.DebugArticle,
     NavigationScreen.DebugBall,
     NavigationScreen.DebugButtons,
     NavigationScreen.DebugCards,

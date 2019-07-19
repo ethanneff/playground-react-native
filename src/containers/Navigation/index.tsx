@@ -16,6 +16,7 @@ import {
   ListUpdate as ChecklistsListUpdate
 } from "../../apps/Checklists/screens";
 import {
+  Article as DebugArticle,
   Ball as DebugBall,
   Buttons as DebugButtons,
   Cards as DebugCards,
@@ -72,6 +73,7 @@ class Container extends React.PureComponent<Props> {
     [NavigationScreen.PortfolioForgotPassword]: <PortfolioForgotPassword />,
     [NavigationScreen.PortfolioSettings]: <PortfolioSettings />,
     [NavigationScreen.Debug]: <DebugHome />,
+    [NavigationScreen.DebugArticle]: <DebugArticle />,
     [NavigationScreen.DebugBall]: <DebugBall />,
     [NavigationScreen.DebugButtons]: <DebugButtons />,
     [NavigationScreen.DebugCards]: <DebugCards />,
