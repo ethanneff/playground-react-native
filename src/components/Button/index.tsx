@@ -10,41 +10,43 @@ import { Theme, useRootSelector } from "../../utils";
 import { Icon } from "../Icon";
 import { Text } from "../Text";
 
-// styling: https://material.io/design/components/buttons.html#usage
+/*
+styling: https://material.io/design/components/buttons.html#usage
+  */
 interface Props {
-  // content
+  /* content */
   title?: string;
   icon?: string;
-  // styling
+  /* styling */
   buttonStyle?: ViewStyle | {};
   textStyle?: TextStyle | {};
   iconColor?: string;
-  // state
+  /* state */
   active?: boolean;
   hidden?: boolean;
   disable?: boolean;
   activeOpacity?: number;
   invisible?: boolean;
-  // shape
-  text?: boolean; // low emphasis
-  outlined?: boolean; // mid emphasis
-  contained?: boolean; // high emphasis
+  /* shape */
+  text?: boolean /* low emphasis */;
+  outlined?: boolean /* mid emphasis */;
+  contained?: boolean /* high emphasis */;
   fab?: boolean;
   toggle?: boolean;
   label?: boolean;
   dropShadow?: boolean;
-  // color
+  /* color */
   neutral?: boolean;
   secondary?: boolean;
   danger?: boolean;
-  // size
+  /* size */
   wrap?: boolean;
   half?: boolean;
   full?: boolean;
   center?: boolean;
   right?: boolean;
   lowercase?: boolean;
-  // event
+  /* event */
   onPress?(): void;
 }
 

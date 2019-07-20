@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-ignore yarn lint ignore because web enforces --isolatedModules
 
 jest.mock("react-native-device-info", () => ({
   getAPILevel: jest.fn(),

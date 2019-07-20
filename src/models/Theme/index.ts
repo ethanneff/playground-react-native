@@ -1,5 +1,7 @@
-// https://material.io/design/color/dark-theme.html#ui-application
-// https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+/*
+https://material.io/design/color/dark-theme.html#ui-application
+https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+*/
 
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";

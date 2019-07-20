@@ -1,5 +1,7 @@
-// usage: <Icon name='check' />
-// source: https://materialdesignicons.com/
+/*
+usage: <Icon name='check' />
+source: https://materialdesignicons.com/
+*/
 
 import * as React from "react";
 import { StyleSheet, View, ViewStyle } from "react-native";

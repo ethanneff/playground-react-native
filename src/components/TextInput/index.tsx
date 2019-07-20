@@ -1,3 +1,7 @@
+/* 
+styling https://uxdesign.cc/design-better-forms-96fadca0f49c
+*/
+
 import * as React from "react";
 import {
   StyleSheet,
@@ -57,7 +61,7 @@ export class TextInput extends React.PureComponent<Props, State> {
     focus: false
   };
   private focusColor = Theme.color.primary;
-  // styling https://uxdesign.cc/design-better-forms-96fadca0f49c
+
   private styles = StyleSheet.create({
     borderError: {
       borderColor: Theme.color.danger

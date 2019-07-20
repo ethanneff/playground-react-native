@@ -1,8 +1,6 @@
 /* tslint:disable */
 // @ts-ignore
 
-// TODO: https://telegram.com, https://anydo.com, https://lyft.com, http://www.shegy.nazwa.pl/materialupmarket/mdlp/index_light.html
-
 import * as React from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 import { Text, Button } from "../../../../components";
