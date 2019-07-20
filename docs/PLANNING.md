@@ -1,8 +1,8 @@
 # Planning
 
 - apps
-  - checklist
   - hourly update
+  - checklist
   - todo
   - cant hurt me
   - portfolio
@@ -23,57 +23,61 @@
 
 ## Top 1
 
+#### working android app
+
+- [ ] firebase
+- [ ] hourly update
+- [ ] app center deploy
+- [ ] logins/signups
+
 ## Top 3
 
-## Top 5
-
-## Rest
-
-#### week 0: questionniares
-
-- [x] useRootSelector
-- [x] darkmode
-- [x] fix test because of hooks
-- [x] useRootDispatch
-- [ ] navigation
-- [ ] save responses
-
-#### week 1: fix navigation
+#### code cleanup
 
 - [ ] remove all commented code
-- [ ] fix checklists
-- [ ] make navigation items an object and import them
 
-#### week 2: merge all code bases
+  - [ ] swipe
+  - [ ] slack
+  - [ ] yellowbox warnings
+  - [ ] dialog tests
 
-- [x] attempt icons again
-- [ ] chat app
-- [ ] slack markdown
-- [ ] main landing page
-- [x] main tableview
-- [x] main navigation
-- [x] main counter
-- [x] main app statusbar
-- [x] fix stopwatch
-- [x] logout clear everything
+- [ ] dark mode
 
-#### week 3: fix tests
+#### best practices and scalability
 
+- [ ] nested navigation
+- [ ] test hooks
 - [ ] mock date, fix tests, fix releases
 - [ ] test redux offline
 
-#### v2 core app
+#### landing page
+
+- [ ] main landing page https://www.lemonade.com/ https://www.any.do/ https://i.imgur.com/e4svRwy.png https://evernote.com/ https://telegram.org/ https://lyft.com http://www.shegy.nazwa.pl/materialupmarket/mdlp/index_light.html https://ifttt.com/
+- [ ] icons for web
+- [ ] each app landing page
+
+## Top 5
+
+##### payment feature
+
+- [ ] payment dialog
+- [ ] google admob
+- [ ] facebook ads
+
+##### questionnaire feature
+
+- [ ] nps
+- [ ] feedback
+
+##### checklists
 
 - [ ] checklist mvp with navigation
 - [ ] use evernote to make example data structure of checklist and actionables
 - [ ] checklist async tests
 
-#### v3 cross platform
+##### chat
 
-- [ ] landing page https://www.lemonade.com/ https://www.any.do/ https://i.imgur.com/e4svRwy.png https://evernote.com/ https://telegram.org/
-- [ ] welcome screen
-- [ ] logins/signups
-- [ ] fix icons on mobile
+## Rest
 
 #### v4 proof of concept
 
@@ -93,13 +97,9 @@
 
 #### v5 revenue
 
-- [ ] payment
-- [ ] google admob
-- [ ] facebook ads
-
 #### v6 dx
 
-- [x] airbnb lint
+- [x] ~~airbnb lint~~
 - [x] prettier lint
 - [x] github ci
 - [x] deploy ci
@@ -143,25 +143,37 @@
 
 #### v9 best practices
 
+- [ ] memo and usecallback everything
 - [ ] react-native-responsive
 - [x] ~~relay~~
-- [ ] [styled components](https://github.com/styled-components/styled-components)
+- [x] ~~[styled components](https://github.com/styled-components/styled-components)~~
 - [x] vscode (editor)
 - [x] remote-redux-devtools
 - [x] [typescript](https://medium.com/@rintoj/react-native-with-typescript-40355a90a5d7) (type checking)
 - [ ] [sentry](https://github.com/getsentry/react-native-sentry) (stack traces)
 - [ ] [onesignal](https://github.com/geektimecoil/react-native-onesignal) (notifications)
 - [ ] [snoopy](https://github.com/jondot/rn-snoopy) (profiling)
-- [ ] [storybook](https://github.com/storybooks/storybook/tree/master/app/react-native) (component builder)
+- [x] ~~[storybook](https://github.com/storybooks/storybook/tree/master/app/react-native) (component builder)~~
 - [x] [duck or duck++](https://github.com/erikras/ducks-modular-redux) (redux management)
 - [x] ~~[react-native-interactable](https://github.com/wix/react-native-interactable) (native animations)~~
 - [x] ~~[redux injectors](http://nicolasgallagher.com/redux-modules-and-code-splitting/)~~
 
 ## Done
 
+- [x] main tableview
+- [x] main navigation
+- [x] main counter
+- [x] main app statusbar
+- [x] fix stopwatch
+- [x] logout clear everything
+- [x] attempt icons again
+- [x] useRootSelector
+- [x] darkmode
+- [x] fix test because of hooks
+- [x] useRootDispatch
 - [x] finish redux for user (async typeactions)
 - [x] hook up auth to sign in flow
-- [x]] add tests to auth
+- [x] add tests to auth
 - [x] clean up navigation layer
 - [x] fix checklists and canthurtme
 - [x] push v2 fix
