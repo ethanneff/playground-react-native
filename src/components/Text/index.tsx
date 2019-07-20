@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Animated, StyleSheet, ViewStyle } from "react-native";
 import { getCurrentColor } from "../../models";
-import { Theme } from "../../utils";
+import { Theme, useNativeDriver } from "../../utils";
 import { useRootSelector } from "../../utils";
 
 interface Props {
@@ -54,6 +54,7 @@ export const Text = (props: Props) => {
     invisible,
     overline
   } = props;
+
   const opacity = new Animated.Value(1);
   const colors = useRootSelector(state => getCurrentColor(state));
   const styles = StyleSheet.create({
@@ -113,12 +114,12 @@ export const Text = (props: Props) => {
       Animated.timing(opacity, {
         duration: 50,
         toValue: 0.2,
-        useNativeDriver: true
+        useNativeDriver
       }),
       Animated.timing(opacity, {
         duration: 350,
         toValue: 1,
-        useNativeDriver: true
+        useNativeDriver
       })
     ]).start();
   };
