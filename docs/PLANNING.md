@@ -29,6 +29,7 @@
 - [ ] hourly update
 - [ ] app center deploy
 - [ ] logins/signups
+- [ ] [design chat datamodels](https://www.youtube.com/watch?v=m_u6P5k0vP0&feature=share)
 
 ## Top 3
 
@@ -76,6 +77,13 @@
 - [ ] checklist async tests
 
 ##### chat
+
+##### gamification
+
+- [ ] [badges](https://www.youtube.com/watch?v=4-s1qoADXok)
+- [ ] [points](https://www.youtube.com/watch?v=i-08jn0VP-A) (total points like teamtreehouse without levels) (khanacadamey, codeacadamey)
+- [ ] leader boards
+- [ ] spend points (gifts, subscription)
 
 ## Rest
 
