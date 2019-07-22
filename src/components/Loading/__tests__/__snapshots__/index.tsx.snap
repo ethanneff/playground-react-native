@@ -61,7 +61,7 @@ exports[`renders correctly 1`] = `
         "fontSize": 24,
         "fontWeight": "600",
         "letterSpacing": 0,
-        "opacity": 1,
+        "opacity": 0,
         "textAlign": "center",
       }
     }
@@ -75,7 +75,7 @@ exports[`renders correctly 1`] = `
         "fontSize": 24,
         "fontWeight": "600",
         "letterSpacing": 0,
-        "opacity": 1,
+        "opacity": 0,
         "textAlign": "center",
       }
     }
@@ -150,7 +150,7 @@ exports[`renders correctly with optional props 1`] = `
         "fontSize": 24,
         "fontWeight": "600",
         "letterSpacing": 0,
-        "opacity": 1,
+        "opacity": 0,
         "textAlign": "center",
       }
     }
@@ -164,7 +164,7 @@ exports[`renders correctly with optional props 1`] = `
         "fontSize": 24,
         "fontWeight": "600",
         "letterSpacing": 0,
-        "opacity": 1,
+        "opacity": 0,
         "textAlign": "center",
       }
     }

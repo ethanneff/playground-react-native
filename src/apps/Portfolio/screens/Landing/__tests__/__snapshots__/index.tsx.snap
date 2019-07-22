@@ -559,6 +559,45 @@ exports[`renders correctly 1`] = `
             CANTHURTME
           </Text>
         </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "flexDirection": "row",
+              "height": 36,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "hsl(211, 100%, 50%)",
+                "fontSize": 14,
+                "fontWeight": "600",
+                "letterSpacing": 0.75,
+                "opacity": 1,
+                "textAlign": "center",
+              }
+            }
+          >
+            FOCUS
+          </Text>
+        </View>
       </View>
     </View>
   </RCTScrollView>
