@@ -61,7 +61,7 @@ export const themeInitialState: Theme = {
       danger: "hsl(354, 70%, 54%)",
       dark: "hsl(210, 10%, 23%)",
       info: "hsl(188, 78%, 41%)",
-      light: "hsl(210, 17%, 98%)",
+      light: "hsl(240°, 14%, 97%)",
       primary: "hsl(263, 84%, 75%)",
       secondary: "hsl(171, 59%, 61%)",
       statusBar: StatusBarStyle.Light,
