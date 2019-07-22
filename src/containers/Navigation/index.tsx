@@ -34,6 +34,7 @@ import {
   Stopwatch as DebugStopwatch,
   SwipeCell as DebugSwipeCell
 } from "../../apps/Debug/screens";
+import { Focus } from "../../apps/Focus";
 import {
   ForgotPassword as PortfolioForgotPassword,
   Landing as PortfolioLanding,
@@ -66,6 +67,7 @@ class Container extends React.PureComponent<Props> {
     container: { flex: 1 }
   });
   public readonly screens: { [key in NavigationScreen]: any } = {
+    [NavigationScreen.Focus]: <Focus />,
     [NavigationScreen.PortfolioNotFound]: <PortfolioNotFound />,
     [NavigationScreen.PortfolioMain]: <PortfolioMain />,
     [NavigationScreen.PortfolioLanding]: <PortfolioLanding />,

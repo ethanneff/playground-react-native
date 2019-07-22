@@ -4,6 +4,7 @@ import { logout } from "../Auth";
 
 /* INTERFACES */
 export enum NavigationScreen {
+  Focus = "Focus",
   PortfolioNotFound = "PortfolioNotFound",
   PortfolioMain = "PortfolioMain",
   PortfolioLanding = "PortfolioLanding",

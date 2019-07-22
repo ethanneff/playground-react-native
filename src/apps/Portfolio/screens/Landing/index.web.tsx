@@ -48,6 +48,7 @@ class Container extends React.PureComponent<Props> {
             title="Settings"
             onPress={this.nav(NavigationScreen.PortfolioSettings)}
           />
+          <Button title="Focus" onPress={this.nav(NavigationScreen.Focus)} />
         </View>
       </View>
     );

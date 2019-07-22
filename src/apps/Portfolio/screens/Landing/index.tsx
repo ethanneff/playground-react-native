@@ -35,6 +35,7 @@ export const Landing = () => {
           title="CantHurtMe"
           onPress={nav(NavigationScreen.CantHurtMeHome)}
         />
+        <Button title="Focus" onPress={nav(NavigationScreen.Focus)} />
       </View>
     </Screen>
   );
