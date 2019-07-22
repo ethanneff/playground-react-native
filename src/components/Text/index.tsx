@@ -4,6 +4,13 @@ import { getCurrentColor } from "../../models";
 import { Theme, useNativeDriver } from "../../utils";
 import { useRootSelector } from "../../utils";
 
+export enum EllipsizeMode {
+  Head = "head",
+  Middle = "middle",
+  Tail = "tail",
+  Clip = "clip"
+}
+
 interface Props {
   title?: string;
   style?: ViewStyle | {};
@@ -13,6 +20,9 @@ interface Props {
   bold?: boolean;
   hidden?: boolean;
   invisible?: boolean;
+
+  numberOfLines?: number;
+  ellipsizeMode?: EllipsizeMode;
 
   h1?: boolean;
   h2?: boolean;
@@ -48,6 +58,8 @@ export const Text = (props: Props) => {
     body1,
     body2,
     button,
+    ellipsizeMode,
+    numberOfLines,
     caption,
     onPress,
     centerVertically,
@@ -130,13 +142,15 @@ export const Text = (props: Props) => {
     center && styles.center,
     centerVertically && styles.centerVertically,
     bold && styles.bold,
-    invisible && styles.invisible,
     { opacity },
+    invisible && styles.invisible,
     style
   ];
 
   return title === undefined || hidden ? null : (
     <Animated.Text
+      ellipsizeMode={ellipsizeMode}
+      numberOfLines={numberOfLines}
       style={textStyle}
       onPress={onPress ? handlePress : undefined}
     >
