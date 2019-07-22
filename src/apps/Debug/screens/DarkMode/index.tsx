@@ -1,3 +1,4 @@
+// TODO: slider on web
 import React, { useState } from "react";
 import {
   FlatList,
