@@ -78,7 +78,6 @@ export const DarkMode = () => {
 
   return (
     <Screen onLeftPress={navBack}>
-      <Text h1 center title="Settings" />
       <View
         style={{
           backgroundColor: color.surface,
