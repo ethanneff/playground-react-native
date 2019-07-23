@@ -11,12 +11,12 @@ interface Props {
 export const ListSection = memo(({ item }: Props) => (
   <View
     style={{
-      marginTop: Theme.padding.p02,
+      alignItems: "center",
       borderTopColor: "grey",
       borderTopWidth: 1,
       flexDirection: "row",
       justifyContent: "center",
-      alignItems: "center",
+      marginTop: Theme.padding.p02,
       padding: Theme.padding.p02
     }}
   >

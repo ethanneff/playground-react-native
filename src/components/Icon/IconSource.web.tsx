@@ -1,5 +1,5 @@
 // TODO: icons for web
-import * as React from "react";
+import React from "react";
 import { Text } from "../Text";
 
 interface Props {

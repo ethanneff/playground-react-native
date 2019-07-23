@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   StyleSheet,
   TextStyle,
@@ -12,7 +12,7 @@ import { Text } from "../Text";
 
 /*
 styling: https://material.io/design/components/buttons.html#usage
-  */
+*/
 interface Props {
   /* content */
   title?: string;

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ScrollView } from "react-native";
 import { connect } from "react-redux";
 import { Screen, Text } from "../../../../components";

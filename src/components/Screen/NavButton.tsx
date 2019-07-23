@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { Theme } from "../../utils";
 import { Icon } from "../Icon";

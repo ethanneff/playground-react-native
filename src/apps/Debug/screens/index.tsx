@@ -1,4 +1,4 @@
-export * from "./Home";
+export * from "./Debug";
 export * from "./Ball";
 export * from "./Cards";
 export * from "./Fonts";

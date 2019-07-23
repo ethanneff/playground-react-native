@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Animated, Dimensions, StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import { Screen } from "../../../../components";

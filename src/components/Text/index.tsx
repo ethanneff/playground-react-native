@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Animated, StyleSheet, ViewStyle } from "react-native";
 import { getCurrentColor } from "../../models";
 import { Theme, useNativeDriver } from "../../utils";

@@ -1,4 +1,4 @@
-// import * as React from "react";
+// import React from "react";
 // import {
 //   View,
 //   Animated,
@@ -150,7 +150,7 @@
 
 // export default Swipe;
 
-import * as React from "react";
+import React from "react";
 import { View } from "react-native";
 
 export class Swipe extends React.PureComponent {

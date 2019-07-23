@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { memo } from "react";
 import { StyleSheet } from "react-native";
 import { Text } from "../../../../components";
 import { Theme } from "../../../../utils";

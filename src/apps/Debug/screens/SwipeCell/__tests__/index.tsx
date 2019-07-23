@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { SwipeCell } from "..";
 import { mockRenderer } from "../../../../../utils/Mock";
 

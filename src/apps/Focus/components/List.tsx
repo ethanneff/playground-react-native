@@ -4,13 +4,13 @@ import { FlatList } from "react-native";
 import { ListItem } from "./ListItem";
 
 export interface Item {
-  id: number;
+  action: string;
   dayOfMonth: string;
-  month: string;
   dayOfWeek: string;
   hour: string;
+  id: number;
+  month: string;
   zone: string;
-  action: string;
 }
 
 interface Props {
@@ -29,7 +29,9 @@ export const List = memo(({ onItemPress }: Props) => {
   }, []);
 
   useEffect(() => {
-    if (items.length === 0 || listRef === null) { return; }
+    if (items.length === 0 || listRef === null) {
+      return;
+    }
     // listRef.current.scrollToIndex(2);
   }, [items, listRef]);
 
@@ -46,13 +48,13 @@ export const List = memo(({ onItemPress }: Props) => {
       const next = moment(lastItem).subtract(1, "hour");
       const id = next.valueOf();
       items.push({
-        id,
+        action: String(Math.random()) + String(Math.random()),
         dayOfMonth: next.format("D"),
-        month: next.format("MMM"),
         dayOfWeek: next.format("ddd"),
         hour: next.format("h"),
-        zone: next.format("a"),
-        action: String(Math.random()) + String(Math.random())
+        id,
+        month: next.format("MMM"),
+        zone: next.format("a")
       });
     }
   };
@@ -71,7 +73,6 @@ export const List = memo(({ onItemPress }: Props) => {
 
   const keyExtractor = (item: Item) => String(item.id);
 
-  console.log("list render");
   return items.length < 0 ? null : (
     <FlatList
       inverted

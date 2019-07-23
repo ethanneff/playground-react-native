@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ScrollView, Text as Original } from "react-native";
 import { StyleSheet, View } from "react-native";
 import { getCurrentColor } from "../../models";

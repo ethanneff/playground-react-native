@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Dimensions, FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import { Button, Screen, Text } from "../../../../components";

@@ -14,7 +14,6 @@ interface Props {
 
 export const ListItem = memo(({ showSection, item, onItemPress }: Props) => {
   const color = useRootSelector(state => getCurrentColor(state));
-  console.log("item render");
   return (
     <View
       style={{
@@ -24,10 +23,10 @@ export const ListItem = memo(({ showSection, item, onItemPress }: Props) => {
       <TouchableOpacity
         style={{
           flex: 1,
-          height: Theme.padding.p10,
           flexDirection: "row",
-          paddingVertical: Theme.padding.p02,
-          paddingHorizontal: Theme.padding.p04
+          height: Theme.padding.p10,
+          paddingHorizontal: Theme.padding.p04,
+          paddingVertical: Theme.padding.p02
         }}
         onPress={() => onItemPress(item)}
       >
@@ -46,7 +45,10 @@ export const ListItem = memo(({ showSection, item, onItemPress }: Props) => {
           <Text title={`${item.hour} ${item.zone}`} />
         </View>
         <Text
-          style={{ flex: 1, color: color.secondary }}
+          style={{
+            color: color.secondary,
+            flex: 1
+          }}
           title={item.action}
           body1
           numberOfLines={1}

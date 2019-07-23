@@ -2,7 +2,7 @@
 styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 */
 
-import * as React from "react";
+import React from "react";
 import {
   StyleSheet,
   TextInput as Original,

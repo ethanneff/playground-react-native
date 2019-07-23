@@ -1,5 +1,5 @@
 import moment from "moment";
-import * as React from "react";
+import React from "react";
 import { Image, View } from "react-native";
 import { Message } from ".";
 import { Text } from "../../../../components";

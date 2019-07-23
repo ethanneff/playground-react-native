@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { FlatList, View } from "react-native";
 import { Button, Screen, Text } from "../../../../components";
 import {

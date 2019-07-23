@@ -1,7 +1,7 @@
 /* tslint:disable */
 // @ts-ignore
 
-import * as React from "react";
+import React from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 import { Text, Button } from "../../../../components";
 import { NavigationScreen, navigate } from "../../../../models";

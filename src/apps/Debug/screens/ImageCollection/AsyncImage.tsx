@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ActivityIndicator, Animated, StyleSheet, View } from "react-native";
 
 interface Props {

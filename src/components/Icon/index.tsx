@@ -3,7 +3,7 @@ usage: <Icon name='check' />
 source: https://materialdesignicons.com/
 */
 
-import * as React from "react";
+import React from "react";
 import { StyleSheet, View, ViewStyle } from "react-native";
 import { getCurrentColor } from "../../models";
 import { Theme, useRootSelector } from "../../utils";

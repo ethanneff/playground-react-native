@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Button, Screen, TextInput } from "../../../../components";
 import { RootState } from "../../../../containers";
