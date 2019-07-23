@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
 export const Loading: React.FC<Props> = props => {
   const { title, center, style } = props;
-  let ellipsisCountdown: any = 0;
+  let ellipsisCountdown: NodeJS.Timer;
   const containerStyles = [
     styles.row,
     center ? styles.center : undefined,

@@ -36,6 +36,7 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
   >
     <View
       accessible={true}
+      isTVSelectable={true}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -44,43 +45,60 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "backgroundColor": "hsl(0, 100%, 100%)",
+          "backgroundColor": "hsl(0, 0%, 100%)",
+          "borderColor": "hsl(0, 0%, 98%)",
           "borderRadius": 8,
-          "marginHorizontal": 60,
+          "borderWidth": 1,
+          "elevation": 1,
+          "marginHorizontal": 8,
+          "marginVertical": 8,
           "maxWidth": 500,
-          "paddingBottom": 36,
-          "paddingHorizontal": 36,
-          "paddingTop": 52,
+          "opacity": 1,
+          "shadowColor": "hsl(210, 10%, 23%)",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.156,
+          "shadowRadius": 1.56,
           "width": "100%",
+          "zIndex": 1,
         }
       }
     >
-      <Text
+      <View
         style={
           Object {
-            "color": "hsl(0, 0%, 0%)",
-            "fontSize": 24,
-            "fontWeight": "300",
-            "letterSpacing": 0,
-            "opacity": 1,
-            "paddingBottom": 12,
+            "backgroundColor": "hsla(0,0%,100%,0.05)",
+            "borderRadius": 8,
+            "padding": 16,
           }
         }
       >
-        bob
-      </Text>
-      <View
-        style={
-          Array [
+        <Text
+          style={
+            Object {
+              "color": "hsl(0, 0%, 0%)",
+              "fontSize": 24,
+              "fontWeight": "300",
+              "letterSpacing": 0,
+              "opacity": 1,
+              "paddingBottom": 12,
+            }
+          }
+        >
+          bob
+        </Text>
+        <View
+          style={
             Object {
               "flexDirection": "row",
               "justifyContent": "center",
               "paddingTop": 52,
-            },
-            undefined,
-          ]
-        }
-      />
+            }
+          }
+        />
+      </View>
     </View>
   </View>
 </View>
@@ -122,6 +140,7 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
   >
     <View
       accessible={true}
+      isTVSelectable={true}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -130,43 +149,60 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "backgroundColor": "hsl(0, 100%, 100%)",
+          "backgroundColor": "hsl(0, 0%, 100%)",
+          "borderColor": "hsl(0, 0%, 98%)",
           "borderRadius": 8,
-          "marginHorizontal": 60,
+          "borderWidth": 1,
+          "elevation": 1,
+          "marginHorizontal": 8,
+          "marginVertical": 8,
           "maxWidth": 500,
-          "paddingBottom": 36,
-          "paddingHorizontal": 36,
-          "paddingTop": 52,
+          "opacity": 1,
+          "shadowColor": "hsl(210, 10%, 23%)",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.156,
+          "shadowRadius": 1.56,
           "width": "100%",
+          "zIndex": 1,
         }
       }
     >
-      <Text
+      <View
         style={
           Object {
-            "color": "hsl(0, 0%, 0%)",
-            "fontSize": 24,
-            "fontWeight": "300",
-            "letterSpacing": 0,
-            "opacity": 1,
-            "paddingBottom": 12,
+            "backgroundColor": "hsla(0,0%,100%,0.05)",
+            "borderRadius": 8,
+            "padding": 16,
           }
         }
       >
-        bob
-      </Text>
-      <View
-        style={
-          Array [
+        <Text
+          style={
+            Object {
+              "color": "hsl(0, 0%, 0%)",
+              "fontSize": 24,
+              "fontWeight": "300",
+              "letterSpacing": 0,
+              "opacity": 1,
+              "paddingBottom": 12,
+            }
+          }
+        >
+          bob
+        </Text>
+        <View
+          style={
             Object {
               "flexDirection": "row",
               "justifyContent": "center",
               "paddingTop": 52,
-            },
-            undefined,
-          ]
-        }
-      />
+            }
+          }
+        />
+      </View>
     </View>
   </View>
 </View>
@@ -208,6 +244,7 @@ exports[`Dialog component renders correctly with props 1`] = `
   >
     <View
       accessible={true}
+      isTVSelectable={true}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -216,139 +253,154 @@ exports[`Dialog component renders correctly with props 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "backgroundColor": "hsl(0, 100%, 100%)",
+          "backgroundColor": "hsl(0, 0%, 100%)",
+          "borderColor": "hsl(0, 0%, 98%)",
           "borderRadius": 8,
-          "marginHorizontal": 60,
+          "borderWidth": 1,
+          "elevation": 1,
+          "marginHorizontal": 8,
+          "marginVertical": 8,
           "maxWidth": 500,
-          "paddingBottom": 36,
-          "paddingHorizontal": 36,
-          "paddingTop": 52,
+          "opacity": 1,
+          "shadowColor": "hsl(210, 10%, 23%)",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.156,
+          "shadowRadius": 1.56,
           "width": "100%",
+          "zIndex": 1,
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "hsl(0, 0%, 0%)",
-            "fontSize": 24,
-            "fontWeight": "300",
-            "letterSpacing": 0,
-            "opacity": 1,
-            "paddingBottom": 12,
-          }
-        }
-      >
-        nope
-      </Text>
-      <Text
-        style={
-          Object {
-            "color": "hsl(0, 0%, 0%)",
-            "fontSize": 14,
-            "fontWeight": "300",
-            "letterSpacing": 0.25,
-            "opacity": 1,
-          }
-        }
-      >
-        yep
-      </Text>
       <View
         style={
-          Array [
+          Object {
+            "backgroundColor": "hsla(0,0%,100%,0.05)",
+            "borderRadius": 8,
+            "padding": 16,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "hsl(0, 0%, 0%)",
+              "fontSize": 24,
+              "fontWeight": "300",
+              "letterSpacing": 0,
+              "opacity": 1,
+              "paddingBottom": 12,
+            }
+          }
+        >
+          nope
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "hsl(0, 0%, 0%)",
+              "fontSize": 14,
+              "fontWeight": "300",
+              "letterSpacing": 0.25,
+              "opacity": 1,
+            }
+          }
+        >
+          yep
+        </Text>
+        <View
+          style={
             Object {
               "flexDirection": "row",
               "justifyContent": "center",
               "paddingTop": 52,
-            },
-            Object {
-              "display": "none",
-            },
-          ]
-        }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "borderColor": "transparent",
-              "borderRadius": 4,
-              "borderWidth": 1,
-              "flex": 1,
-              "flexDirection": "row",
-              "height": 36,
-              "justifyContent": "center",
-              "marginRight": 8,
-              "opacity": 1,
-              "paddingHorizontal": 16,
             }
           }
         >
-          <Text
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "hsl(211, 100%, 50%)",
-                "fontSize": 14,
-                "fontWeight": "600",
-                "letterSpacing": 0.75,
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flex": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "marginRight": 8,
                 "opacity": 1,
-                "textAlign": "center",
+                "paddingHorizontal": 16,
               }
             }
           >
-            BIRD
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "borderColor": "transparent",
-              "borderRadius": 4,
-              "borderWidth": 1,
-              "flex": 1,
-              "flexDirection": "row",
-              "height": 36,
-              "justifyContent": "center",
-              "marginLeft": 8,
-              "opacity": 1,
-              "paddingHorizontal": 16,
-            }
-          }
-        >
-          <Text
+            <Text
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
+              }
+            >
+              BIRD
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "hsl(208, 7%, 46%)",
-                "fontSize": 14,
-                "fontWeight": "600",
-                "letterSpacing": 0.75,
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flex": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "marginLeft": 8,
                 "opacity": 1,
-                "textAlign": "center",
+                "paddingHorizontal": 16,
               }
             }
           >
-            DOG
-          </Text>
+            <Text
+              style={
+                Object {
+                  "color": "hsl(208, 7%, 46%)",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
+              }
+            >
+              DOG
+            </Text>
+          </View>
         </View>
       </View>
     </View>

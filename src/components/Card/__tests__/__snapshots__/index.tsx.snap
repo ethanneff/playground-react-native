@@ -17,7 +17,6 @@ exports[`renders correctly 1`] = `
       "borderRadius": 8,
       "borderWidth": 1,
       "elevation": 1,
-      "flex": 1,
       "marginHorizontal": 8,
       "marginVertical": 8,
       "opacity": 1,
@@ -37,7 +36,6 @@ exports[`renders correctly 1`] = `
       Object {
         "backgroundColor": "hsla(0,0%,100%,0.05)",
         "borderRadius": 8,
-        "flex": 1,
         "padding": 16,
       }
     }
@@ -62,7 +60,6 @@ exports[`renders correctly with onPress 1`] = `
       "borderRadius": 8,
       "borderWidth": 1,
       "elevation": 1,
-      "flex": 1,
       "marginHorizontal": 8,
       "marginVertical": 8,
       "opacity": 1,
@@ -82,7 +79,6 @@ exports[`renders correctly with onPress 1`] = `
       Object {
         "backgroundColor": "hsla(0,0%,100%,0.05)",
         "borderRadius": 8,
-        "flex": 1,
         "padding": 16,
       }
     }

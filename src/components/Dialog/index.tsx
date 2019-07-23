@@ -45,7 +45,6 @@ export const Dialog: React.FC<Props> = memo(
     testID
   }) => {
     const color = useRootSelector(state => getCurrentColor(state));
-    console.log(color);
     const styles = StyleSheet.create({
       buttonContainer: {
         flexDirection: "row",
@@ -85,7 +84,7 @@ export const Dialog: React.FC<Props> = memo(
         paddingBottom: Theme.padding.p03
       }
     });
-    let alertTimeout: any = 0;
+    let alertTimeout: NodeJS.Timer;
     const fade = new Animated.Value(0);
     const opacity = fade;
     const twoButtons = !!onConfirmButtonPress && !!onCancelButtonPress;
