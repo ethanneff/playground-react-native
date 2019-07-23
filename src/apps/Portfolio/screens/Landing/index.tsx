@@ -19,7 +19,7 @@ export const Landing = () => {
       <Walkthrough />
       <View style={styles.row}>
         <Button title="Login" onPress={nav(NavigationScreen.PortfolioLogin)} />
-        <Button title="Main" onPress={nav(NavigationScreen.PortfolioMain)} />
+        <Button title="Main" onPress={nav(NavigationScreen.Portfolio)} />
         <Button title="Debug" onPress={nav(NavigationScreen.Debug)} />
         <Button
           title="Settings"
@@ -27,14 +27,8 @@ export const Landing = () => {
         />
       </View>
       <View style={styles.row}>
-        <Button
-          title="Checklist"
-          onPress={nav(NavigationScreen.ChecklistsLists)}
-        />
-        <Button
-          title="CantHurtMe"
-          onPress={nav(NavigationScreen.CantHurtMeHome)}
-        />
+        <Button title="Checklist" onPress={nav(NavigationScreen.Checklists)} />
+        <Button title="CantHurtMe" onPress={nav(NavigationScreen.CantHurtMe)} />
         <Button title="Focus" onPress={nav(NavigationScreen.Focus)} />
       </View>
     </Screen>

@@ -1,130 +1,104 @@
-import * as React from "react";
+import React, { memo } from "react";
 import { StyleSheet, View } from "react-native";
-import { connect } from "react-redux";
-import { RootState } from "..";
+import { CantHurtMe, Configs, Profile } from "../../apps/CantHurtMe/screens";
 import {
-  Home as CantHurtMeHome,
-  Profile as CantHurtMeProfile,
-  Settings as CantHurtMeSettings
-} from "../../apps/CantHurtMe/screens";
-import {
-  ItemCreate as ChecklistsItemCreate,
-  ItemUpdate as ChecklistsItemUpdate,
-  List as ChecklistsList,
-  ListCreate as ChecklistsListCreate,
-  Lists as ChecklistsLists,
-  ListUpdate as ChecklistsListUpdate
+  Checklist,
+  ChecklistCreate,
+  Checklists,
+  ChecklistUpdate,
+  ItemCreate,
+  ItemUpdate
 } from "../../apps/Checklists/screens";
 import {
-  Article as DebugArticle,
-  Ball as DebugBall,
-  Buttons as DebugButtons,
-  Cards as DebugCards,
-  Chat as DebugChat,
-  DarkMode as DebugDarkMode,
-  Drag as DebugDrag,
-  Fonts as DebugFonts,
-  Home as DebugHome,
-  ImageCollection as DebugImageCollection,
-  Input as DebugInput,
-  OKRs as DebugOKRs,
-  PinchSpread as DebugPinchSpread,
-  Questionnaire as DebugQuestionnaire,
-  SearchBar as DebugSearchBar,
-  Stopwatch as DebugStopwatch,
-  SwipeCell as DebugSwipeCell
+  Article,
+  Ball,
+  Buttons,
+  Cards,
+  Chat,
+  DarkMode,
+  Debug,
+  Drag,
+  Fonts,
+  ImageCollection,
+  Input,
+  OKRs,
+  PinchSpread,
+  Questionnaire,
+  SearchBar,
+  Stopwatch,
+  SwipeCell
 } from "../../apps/Debug/screens";
 import { Focus } from "../../apps/Focus";
 import {
-  ForgotPassword as PortfolioForgotPassword,
-  Landing as PortfolioLanding,
-  Login as PortfolioLogin,
-  Main as PortfolioMain,
-  NotFound as PortfolioNotFound,
-  Settings as PortfolioSettings
+  ForgotPassword,
+  Landing,
+  Login,
+  NotFound,
+  Portfolio,
+  Settings
 } from "../../apps/Portfolio/screens";
 import {
   getModal,
   getScreen,
-  navigate,
-  NavigationModal,
-  NavigationScreen
+  NavigationModal as M,
+  NavigationScreen as S
 } from "../../models";
+import { useRootSelector } from "../../utils";
 
-interface StateProps {
-  screen: NavigationScreen;
-  modal: NavigationModal;
-}
+type Screens = { [key in S]: any };
+type Modals = { [key in M]: any };
 
-interface DispatchProps {
-  navigate: typeof navigate;
-}
-
-type Props = StateProps & DispatchProps;
-
-class Container extends React.PureComponent<Props> {
-  public readonly styles = StyleSheet.create({
-    container: { flex: 1 }
-  });
-  public readonly screens: { [key in NavigationScreen]: any } = {
-    [NavigationScreen.Focus]: <Focus />,
-    [NavigationScreen.PortfolioNotFound]: <PortfolioNotFound />,
-    [NavigationScreen.PortfolioMain]: <PortfolioMain />,
-    [NavigationScreen.PortfolioLanding]: <PortfolioLanding />,
-    [NavigationScreen.PortfolioLogin]: <PortfolioLogin />,
-    [NavigationScreen.PortfolioForgotPassword]: <PortfolioForgotPassword />,
-    [NavigationScreen.PortfolioSettings]: <PortfolioSettings />,
-    [NavigationScreen.Debug]: <DebugHome />,
-    [NavigationScreen.DebugArticle]: <DebugArticle />,
-    [NavigationScreen.DebugBall]: <DebugBall />,
-    [NavigationScreen.DebugButtons]: <DebugButtons />,
-    [NavigationScreen.DebugCards]: <DebugCards />,
-    [NavigationScreen.DebugChat]: <DebugChat />,
-    [NavigationScreen.DebugDrag]: <DebugDrag />,
-    [NavigationScreen.DebugFonts]: <DebugFonts />,
-    [NavigationScreen.DebugImageCollection]: <DebugImageCollection />,
-    [NavigationScreen.DebugInput]: <DebugInput />,
-    [NavigationScreen.DebugOKRs]: <DebugOKRs />,
-    [NavigationScreen.DebugPinchSpread]: <DebugPinchSpread />,
-    [NavigationScreen.DebugQuestionnaire]: <DebugQuestionnaire />,
-    [NavigationScreen.DebugSearchBar]: <DebugSearchBar />,
-    [NavigationScreen.DebugStopwatch]: <DebugStopwatch />,
-    [NavigationScreen.DebugSwipeCell]: <DebugSwipeCell />,
-    [NavigationScreen.DebugDarkMode]: <DebugDarkMode />,
-    [NavigationScreen.CantHurtMeHome]: <CantHurtMeHome />,
-    [NavigationScreen.ChecklistsList]: <ChecklistsList />,
-    [NavigationScreen.ChecklistsListCreate]: <ChecklistsListCreate />,
-    [NavigationScreen.ChecklistsListUpdate]: <ChecklistsListUpdate />,
-    [NavigationScreen.ChecklistsLists]: <ChecklistsLists />,
-    [NavigationScreen.ChecklistsItemCreate]: <ChecklistsItemCreate />,
-    [NavigationScreen.ChecklistsItemUpdate]: <ChecklistsItemUpdate />
-  };
-  public readonly modals: { [key in NavigationModal]: any } = {
-    [NavigationModal.CantHurtMeSettings]: <CantHurtMeSettings />,
-    [NavigationModal.CantHurtMeProfile]: <CantHurtMeProfile />,
-    [NavigationModal.None]: <></>
-  };
-
-  public render() {
-    return (
-      <View style={this.styles.container}>
-        {this.screens[this.props.screen]}
-        {this.modals[this.props.modal]}
-      </View>
-    );
-  }
-}
-
-const mapStateToProps = (state: RootState): StateProps => ({
-  modal: getModal(state),
-  screen: getScreen(state)
-});
-
-const mapDispatchToProps: DispatchProps = {
-  navigate
+const screens: Screens = {
+  [S.CantHurtMe]: <CantHurtMe />,
+  [S.Checklists]: <Checklists />,
+  [S.ChecklistsCreate]: <ChecklistCreate />,
+  [S.ChecklistsItemCreate]: <ItemCreate />,
+  [S.ChecklistsItemUpdate]: <ItemUpdate />,
+  [S.ChecklistsList]: <Checklist />,
+  [S.ChecklistsUpdate]: <ChecklistUpdate />,
+  [S.Debug]: <Debug />,
+  [S.DebugArticle]: <Article />,
+  [S.DebugBall]: <Ball />,
+  [S.DebugButtons]: <Buttons />,
+  [S.DebugCards]: <Cards />,
+  [S.DebugChat]: <Chat />,
+  [S.DebugDarkMode]: <DarkMode />,
+  [S.DebugDrag]: <Drag />,
+  [S.DebugFonts]: <Fonts />,
+  [S.DebugImageCollection]: <ImageCollection />,
+  [S.DebugInput]: <Input />,
+  [S.DebugOKRs]: <OKRs />,
+  [S.DebugPinchSpread]: <PinchSpread />,
+  [S.DebugQuestionnaire]: <Questionnaire />,
+  [S.DebugSearchBar]: <SearchBar />,
+  [S.DebugStopwatch]: <Stopwatch />,
+  [S.DebugSwipeCell]: <SwipeCell />,
+  [S.Focus]: <Focus />,
+  [S.Portfolio]: <Portfolio />,
+  [S.PortfolioForgotPassword]: <ForgotPassword />,
+  [S.PortfolioLanding]: <Landing />,
+  [S.PortfolioLogin]: <Login />,
+  [S.PortfolioNotFound]: <NotFound />,
+  [S.PortfolioSettings]: <Settings />
 };
 
-export const Navigation = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Container);
+const modals: Modals = {
+  [M.CantHurtMeConfigs]: <Configs />,
+  [M.CantHurtMeProfile]: <Profile />,
+  [M.None]: <></>
+};
+
+const styles = StyleSheet.create({
+  container: { flex: 1 }
+});
+
+export const Navigation = memo(() => {
+  const screen = useRootSelector(state => getScreen(state));
+  const modal = useRootSelector(state => getModal(state));
+  return (
+    <View style={styles.container}>
+      {screens[screen]}
+      {modals[modal]}
+    </View>
+  );
+});

@@ -43,7 +43,7 @@ class Container extends React.PureComponent<Props, State> {
         <View style={this.styles.row}>
           <Button
             title="Login"
-            onPress={this.nav(NavigationScreen.PortfolioMain)}
+            onPress={this.nav(NavigationScreen.Portfolio)}
           />
           <Button
             title="Forgot"
