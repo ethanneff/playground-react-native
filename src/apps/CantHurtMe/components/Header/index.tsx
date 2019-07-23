@@ -7,15 +7,12 @@ interface Props {
   title: string;
 }
 
-export class Header extends React.PureComponent<Props> {
-  private readonly styles = StyleSheet.create({
+export const Header: React.FC<Props> = memo(({ title }) => {
+  const styles = StyleSheet.create({
     header: {
       padding: Theme.padding.p04
     }
   });
 
-  public render() {
-    const { title } = this.props;
-    return <Text title={title} h3 style={this.styles.header} center />;
-  }
-}
+  return <Text title={title} h3 style={styles.header} center />;
+});

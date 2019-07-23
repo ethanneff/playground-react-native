@@ -1,34 +1,24 @@
-import * as React from "react";
-import {
-  Image,
-  ImageSourcePropType,
-  StyleSheet,
-  TouchableOpacity,
-  View
-} from "react-native";
-import { connect } from "react-redux";
+import React, { memo } from "react";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { Text } from "../../../../components";
-import { RootState } from "../../../../containers";
-import { Theme } from "../../../../utils";
-
-interface StateProps {
-  image: ImageSourcePropType;
-  width: number;
-  level: number;
-  state: RootState;
-}
+import { getCurrentColor } from "../../../../models";
+import { Theme, useRootSelector } from "../../../../utils";
 
 interface OwnProps {
   onPress?(): void;
 }
 
-type Props = OwnProps & StateProps;
+type Props = OwnProps;
 
-class Component extends React.PureComponent<Props> {
-  private readonly styles = StyleSheet.create({
+export const ProfileLevel: React.FC<Props> = memo(({ onPress }) => {
+  const color = useRootSelector(state => getCurrentColor(state));
+  const image = require("../../../../assets/placeholder.png");
+  const width = 0.2;
+  const level = 22;
+  const styles = StyleSheet.create({
     imageContainer: {
       alignSelf: "center",
-      borderColor: Theme.color.secondary,
+      borderColor: color.secondary,
       borderRadius: Theme.padding.p02,
       borderWidth: 1,
       height: Theme.padding.p18,
@@ -37,8 +27,8 @@ class Component extends React.PureComponent<Props> {
       width: Theme.padding.p18
     },
     levelContainer: {
-      backgroundColor: Theme.color.background,
-      borderColor: Theme.color.secondary,
+      backgroundColor: color.background,
+      borderColor: color.secondary,
       borderRadius: Theme.padding.p20,
       borderWidth: 1,
       bottom: -Theme.padding.p02,
@@ -50,16 +40,16 @@ class Component extends React.PureComponent<Props> {
       zIndex: 2
     },
     progressBar: {
-      backgroundColor: Theme.color.success,
+      backgroundColor: color.success,
       borderBottomLeftRadius: 0,
       borderRadius: Theme.padding.p20,
       borderTopLeftRadius: 0,
       height: "100%"
     },
     progressContainer: {
-      backgroundColor: Theme.color.background,
+      backgroundColor: color.background,
       borderBottomLeftRadius: 0,
-      borderColor: Theme.color.secondary,
+      borderColor: color.secondary,
       borderRadius: Theme.padding.p20,
       borderTopLeftRadius: 0,
       borderWidth: 1,
@@ -70,35 +60,17 @@ class Component extends React.PureComponent<Props> {
     }
   });
 
-  public render() {
-    const { image, width, level, onPress } = this.props;
-    const {
-      imageContainer,
-      progressContainer,
-      progressBar,
-      levelContainer
-    } = this.styles;
-    return (
-      <TouchableOpacity onPress={onPress} disabled={!onPress}>
-        <Image source={image} style={imageContainer} />
-        <View>
-          <View style={progressContainer}>
-            <View style={[progressBar, { width }]} />
-          </View>
-          <View style={levelContainer}>
-            <Text title={String(level)} subtitle2 center />
-          </View>
+  return (
+    <TouchableOpacity onPress={onPress} disabled={!onPress}>
+      <Image source={image} style={styles.imageContainer} />
+      <View>
+        <View style={styles.progressContainer}>
+          <View style={[styles.progressBar, { width }]} />
         </View>
-      </TouchableOpacity>
-    );
-  }
-}
-
-const mapStateToProps = (state: RootState): StateProps => ({
-  image: require("../../../../assets/placeholder.png"),
-  level: 22,
-  state,
-  width: 0.2
+        <View style={styles.levelContainer}>
+          <Text title={String(level)} subtitle2 center />
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
 });
-
-export const ProfileLevel = connect(mapStateToProps)(Component);
