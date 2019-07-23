@@ -20,6 +20,7 @@ import {
   updateNetwork
 } from "..";
 import { store } from "../../../containers";
+import { logout } from "../../Auth";
 
 describe("selectors", () => {
   beforeEach(() => {
@@ -210,7 +211,7 @@ describe("reducer", () => {
       })
     ).toMatchObject({ networkEffectiveType: "2g", networkType: "wifi" });
   });
-  it("DEVICE_UPDATE_DIMENSION", () => {
+  it("updateDimensions", () => {
     const size = {
       fontScale: 123,
       height: 123,
@@ -227,5 +228,12 @@ describe("reducer", () => {
         type: getType(updateDimensions)
       })
     ).toMatchObject({ windowDimensions: size, screenDimensions: size });
+  });
+  it("logout", () => {
+    expect(
+      deviceReducer(deviceInitialState, {
+        type: getType(logout)
+      })
+    ).toMatchObject(deviceInitialState);
   });
 });

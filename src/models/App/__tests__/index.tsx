@@ -11,6 +11,7 @@ import {
   loadApp
 } from "..";
 import { store } from "../../../containers";
+import { logout } from "../../Auth";
 
 describe("selectors", () => {
   it("getAppStatus", () => {
@@ -98,5 +99,12 @@ describe("reducer", () => {
       ...appInitialState,
       ...action.payload
     });
+  });
+  it("logout", () => {
+    expect(
+      appReducer(appInitialState, {
+        type: getType(logout)
+      })
+    ).toMatchObject(appInitialState);
   });
 });
