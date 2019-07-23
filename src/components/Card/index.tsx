@@ -1,9 +1,10 @@
-import * as React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity, View, ViewStyle } from "react-native";
 import { getCurrentColor } from "../../models";
 import { Theme, useRootSelector } from "../../utils";
 
 interface Props {
+  flex?: boolean;
   style?: ViewStyle;
   selected?: boolean;
   elevation?: number;
@@ -13,70 +14,74 @@ interface Props {
   onLongPress?(): void;
 }
 
-export const Card: React.FC<Props> = props => {
-  const {
+const touchOpacity = 0.3;
+export const Card: React.FC<Props> = memo(
+  ({
     borderRadius = Theme.sizing.borderRadius,
     borderWidth = 1,
     children,
     elevation = 1,
     onLongPress,
     onPress,
+    flex,
     selected,
     style
-  } = props;
-  const color = useRootSelector(state => getCurrentColor(state));
-  const shadowOpacity = elevation * 0.036 + 0.12;
-  const shadowRadius = elevation * 0.36 + 1.2;
-  const opacity =
-    elevation === 0
-      ? 0
-      : elevation === 1
-      ? 0.05
-      : ((elevation - 2) * 0.01 + 0.07).toFixed(2);
-  const styles = StyleSheet.create({
-    containerStyle: {
-      backgroundColor: color.background,
-      borderColor: color.surface,
-      borderRadius,
-      borderWidth,
-      elevation,
-      flex: 1,
-      marginHorizontal: Theme.padding.p02,
-      marginVertical: Theme.padding.p02,
-      shadowColor: color.dark,
-      shadowOffset: {
-        height: 2,
-        width: 0
+  }) => {
+    const color = useRootSelector(state => getCurrentColor(state));
+    const shadowOpacity = elevation * 0.036 + 0.12;
+    const shadowRadius = elevation * 0.36 + 1.2;
+    const opacity =
+      elevation === 0
+        ? 0
+        : elevation === 1
+        ? 0.05
+        : ((elevation - 2) * 0.01 + 0.07).toFixed(2);
+    const styles = StyleSheet.create({
+      containerStyle: {
+        backgroundColor: color.background,
+        borderColor: color.surface,
+        borderRadius,
+        borderWidth,
+        elevation,
+        marginHorizontal: Theme.padding.p02,
+        marginVertical: Theme.padding.p02,
+        shadowColor: color.dark,
+        shadowOffset: {
+          height: 2,
+          width: 0
+        },
+        shadowOpacity,
+        shadowRadius,
+        zIndex: elevation
       },
-      shadowOpacity,
-      shadowRadius,
-      zIndex: elevation
-    },
-    contents: {
-      backgroundColor: `hsla(0,0%,100%,${opacity})`,
-      borderRadius,
-      flex: 1,
-      padding: Theme.padding.p04
-    },
-    selected: {
-      backgroundColor: Theme.color.primary
-    }
-  });
-  const touchOpacity = 0.3;
+      contents: {
+        backgroundColor: `hsla(0,0%,100%,${opacity})`,
+        borderRadius,
+        padding: Theme.padding.p04
+      },
+      flex: {
+        flex: 1
+      },
+      selected: {
+        backgroundColor: Theme.color.primary
+      }
+    });
 
-  const containerStyles = [
-    styles.containerStyle,
-    selected ? styles.selected : undefined,
-    style
-  ];
-  return (
-    <TouchableOpacity
-      style={containerStyles}
-      onPress={onPress && onPress}
-      onLongPress={onLongPress && onLongPress}
-      activeOpacity={onPress ? touchOpacity : 1}
-    >
-      <View style={styles.contents}>{children}</View>
-    </TouchableOpacity>
-  );
-};
+    const containerStyles = [
+      styles.containerStyle,
+      selected ? styles.selected : undefined,
+      flex ? styles.flex : undefined,
+      style
+    ];
+    return (
+      <TouchableOpacity
+        style={containerStyles}
+        onPress={onPress && onPress}
+        onLongPress={onLongPress && onLongPress}
+        activeOpacity={onPress ? touchOpacity : 1}
+      >
+        <View style={styles.contents}>{children}</View>
+      </TouchableOpacity>
+    );
+  }
+);
