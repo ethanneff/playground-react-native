@@ -10,4 +10,3 @@ export * from "./TextInput";
 export * from "./RelativeDate";
 export * from "./Dialog";
 export * from "./Loading";
-export * from "./Alert";

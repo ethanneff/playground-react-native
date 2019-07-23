@@ -19,7 +19,7 @@ describe("Dialog component", () => {
       <Dialog
         title="nope"
         message="yep"
-        alert
+        duration={3000}
         confirmButtonText="dog"
         cancelButtonText="bird"
         onBackgroundPress={jest.fn()}
