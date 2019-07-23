@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import { Button, Screen } from "../../../../components";
@@ -30,10 +30,7 @@ class Component extends React.PureComponent<Props> {
   public render() {
     const { items, removeItem: remove, toggleActiveItem: toggle } = this.props;
     return (
-      <Screen
-        disableScroll
-        onLeftPress={this.nav(NavigationScreen.ChecklistsLists)}
-      >
+      <Screen disableScroll onLeftPress={this.nav(NavigationScreen.Checklists)}>
         <FlatList
           keyExtractor={item => item.id}
           data={items}
@@ -90,7 +87,7 @@ const mapDispatchToProps: DispatchProps = {
   updateItem
 };
 
-export const List = connect(
+export const Checklist = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component);

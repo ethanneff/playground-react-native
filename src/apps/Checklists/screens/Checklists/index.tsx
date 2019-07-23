@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import { Button, Screen, Text } from "../../../../components";
@@ -47,7 +47,7 @@ class Component extends React.PureComponent<Props> {
           contained
           fab
           icon="plus"
-          onPress={this.nav(NavigationScreen.ChecklistsListCreate)}
+          onPress={this.nav(NavigationScreen.ChecklistsCreate)}
         />
       </Screen>
     );
@@ -55,7 +55,7 @@ class Component extends React.PureComponent<Props> {
   private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
-export const Lists = connect(
+export const Checklists = connect(
   (state: RootState) => ({
     state
   }),

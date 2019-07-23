@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Dialog } from "../../../../components";
 
@@ -7,6 +7,7 @@ class Component extends React.PureComponent {
     return (
       <Dialog
         title="Settings"
+        onBackgroundPress={() => undefined}
         onCancelButtonPress={() => undefined}
         onConfirmButtonPress={() => undefined}
       />
@@ -14,4 +15,4 @@ class Component extends React.PureComponent {
   }
 }
 
-export const Settings = connect()(Component);
+export const Configs = connect()(Component);

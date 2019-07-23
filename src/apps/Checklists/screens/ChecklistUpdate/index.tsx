@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Button, Screen, TextInput } from "../../../../components";
 import { RootState } from "../../../../containers";
@@ -50,7 +50,7 @@ class Component extends React.PureComponent<Props, State> {
   };
 }
 
-export const ListUpdate = connect(
+export const ChecklistUpdate = connect(
   (state: RootState) => ({
     state
   }),

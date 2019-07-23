@@ -1,8 +1,8 @@
-import * as React from "react";
+import React from "react";
+import { Portfolio } from "../..";
 import { mockRenderer } from "../../../../../utils/Mock";
-import { Main } from "../../Main";
 
 it("renders correctly", () => {
-  const dom = mockRenderer(<Main />).toJSON();
+  const dom = mockRenderer(<Portfolio />).toJSON();
   expect(dom).toMatchSnapshot();
 });

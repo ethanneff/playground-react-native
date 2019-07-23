@@ -4,7 +4,7 @@ import { Dialog } from "../../../../components";
 
 class Component extends React.PureComponent {
   public render() {
-    return <Dialog title="Profile" />;
+    return <Dialog title="Profile" onBackgroundPress={() => undefined} />;
   }
 }
 

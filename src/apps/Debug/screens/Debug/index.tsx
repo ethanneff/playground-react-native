@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Button, Screen } from "../../../../components";
 import { navigate, NavigationScreen } from "../../../../models";
@@ -43,7 +43,7 @@ class Container extends React.PureComponent<Props> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const Home = connect(
+export const Debug = connect(
   null,
   mapDispatchToProps
 )(Container);

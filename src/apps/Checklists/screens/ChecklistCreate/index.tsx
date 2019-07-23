@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Button, Screen, TextInput } from "../../../../components";
 import { RootState } from "../../../../containers";
@@ -24,7 +24,7 @@ class Component extends React.PureComponent<Props, State> {
     const { name, description } = this.state;
 
     return (
-      <Screen onLeftPress={this.nav(NavigationScreen.ChecklistsLists)}>
+      <Screen onLeftPress={this.nav(NavigationScreen.Checklists)}>
         <TextInput title="name" value={name} onChangeText={this.setName} />
         <TextInput
           title="description"
@@ -47,11 +47,11 @@ class Component extends React.PureComponent<Props, State> {
     const { createItem: create } = this.props;
     const { name, description } = this.state;
     create({ name, description });
-    this.nav(NavigationScreen.ChecklistsLists);
+    this.nav(NavigationScreen.Checklists);
   };
 }
 
-export const ListCreate = connect(
+export const ChecklistCreate = connect(
   (state: RootState) => ({
     state
   }),

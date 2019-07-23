@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Button, Screen, Text } from "../../../../components";
 import { navigate, NavigationScreen } from "../../../../models";
@@ -26,7 +26,7 @@ class Component extends React.PureComponent<Props> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const Main = connect(
+export const Portfolio = connect(
   null,
   mapDispatchToProps
 )(Component);
