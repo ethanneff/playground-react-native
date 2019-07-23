@@ -1,12 +1,12 @@
 import React, { memo, useCallback, useState } from "react";
-import { Alert, Screen, Text } from "../../components";
+import { Dialog, Screen, Text } from "../../components";
 import { navigate, NavigationScreen } from "../../models";
 import { useRootDispatch } from "../../utils";
 import { List } from "./components/List";
 
 // TODO: highlight current index
 // TODO: scroll to current index
-// TODO: migrate all dialogs to alerts (remove modals from navigation layer)
+// TODO: migrate all dialogs to Dialogs (remove modals from navigation layer)
 // TODO: batch item list
 // TODO: handle modals
 // TODO: flatlist on web
@@ -35,7 +35,7 @@ export const Focus = memo(() => {
         <List onItemPress={handleItemPress} />
       </Screen>
       {modalItemEdit && (
-        <Alert
+        <Dialog
           duration={2000}
           testID="editItem"
           title="hello"
@@ -43,14 +43,14 @@ export const Focus = memo(() => {
         />
       )}
       {modalProfile && (
-        <Alert
+        <Dialog
           testID="editItem"
           title="hello"
           onBackgroundPress={handleModalEditBackgroundPress}
         />
       )}
       {modalLogin && (
-        <Alert
+        <Dialog
           testID="editItem"
           title="hello"
           onBackgroundPress={handleModalEditBackgroundPress}
