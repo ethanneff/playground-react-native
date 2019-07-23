@@ -1869,10 +1869,10 @@
     "@types/prop-types" "*"
     "@types/react" "*"
 
-"@types/react-native@0.60.1":
-  version "0.60.1"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.60.1.tgz#b512fe7156df18ddb3860b4551cfa5de667e68b5"
-  integrity sha512-COOHdIDGEjpqacOm4bJmq4kmchPU6WiP0JeTzuESvqu4CzfeyMZ96eG+WYO8n3ebQjpN38Hqw+VwMPxe/BrhKg==
+"@types/react-native@0.60.2":
+  version "0.60.2"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.60.2.tgz#2dca78481a904419c2a5907288dd97d1090c6e3c"
+  integrity sha512-K4+/etirpv52xu24xAc++OdhbD0VQEt0Kq0h6dZrLU82OlA+I7BhpKF3JBvx9tbmrFaZDxhHp8N4TEvRYS4fdQ==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -9931,7 +9931,7 @@ npm-cache-filename@~1.0.2:
   resolved "https://registry.yarnpkg.com/npm-cache-filename/-/npm-cache-filename-1.0.2.tgz#ded306c5b0bfc870a9e9faf823bc5f283e05ae11"
   integrity sha1-3tMGxbC/yHCp6fr4I7xfKD4FrhE=
 
-npm-check-updates@^3.1.20:
+npm-check-updates@3.1.20:
   version "3.1.20"
   resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-3.1.20.tgz#9dd719bc04af9c273b33b44a7d5368d5e85ae9c2"
   integrity sha512-mc9BAoOYSTwP/IvoA+ofdkWSipwRvhgC0qop1PvlMZojgzi7N/dykdxOIWrw0OlZPnEKvXkKFEuPk97LrvXE1A==
