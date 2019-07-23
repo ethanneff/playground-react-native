@@ -46,7 +46,7 @@
 
 #### best practices and scalability
 
-- [ ] nested navigation
+- [x] nested navigation
 - [ ] test hooks
 - [ ] mock date, fix tests, fix releases
 - [ ] test redux offline
