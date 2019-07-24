@@ -2,7 +2,7 @@
 styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 */
 
-import React from "react";
+import React, { memo, useRef, useState } from "react";
 import {
   StyleSheet,
   TextInput as Original,
@@ -10,7 +10,8 @@ import {
   View,
   ViewStyle
 } from "react-native";
-import { Theme } from "../../utils";
+import { getCurrentColor } from "../../models";
+import { Theme, useRootSelector } from "../../utils";
 import { Button } from "../Button";
 
 interface Props {
@@ -35,10 +36,6 @@ interface Props {
   onChangeText(text: string): void;
 }
 
-interface State {
-  focus: boolean;
-}
-
 export enum KeyboardType {
   Decimal = "decimal-pad",
   Default = "default",
@@ -56,86 +53,89 @@ export enum ReturnKeyType {
   Send = "send"
 }
 
-export class TextInput extends React.PureComponent<Props, State> {
-  public state = {
-    focus: false
-  };
-  private focusColor = Theme.color.primary;
-
-  private styles = StyleSheet.create({
-    borderError: {
-      borderColor: Theme.color.danger
-    },
-    borderFocus: {
-      borderColor: this.focusColor
-    },
-    clear: {
-      position: "absolute",
-      right: -2,
-      top: 2
-    },
-    flex: {
-      flex: 1
-    },
-    row: {
-      flexDirection: "row"
-    },
-    textInput: {
-      backgroundColor: Theme.color.background,
-      borderColor: Theme.color.secondary,
-      borderRadius: Theme.padding.p01,
-      borderWidth: 2,
-      padding: Theme.padding.p02,
-      paddingRight: Theme.padding.p08,
-      width: "100%"
-    }
-  });
-  private textInput?: Original;
-  private optionalText = " - optional";
-
-  public render() {
-    const {
-      autoCorrect,
-      blurOnSubmit = true,
-      clearIcon = "close-circle",
-      containerStyle,
-      disableFullscreenUI = true,
-      editable = true,
-      error = "",
-      errorIcon = "alert-circle",
-      flex,
-      keyboardType,
-      onChangeText,
-      optional,
-      placeholder,
-      returnKeyType,
-      secureTextEntry,
-      textStyle,
-      title = "",
-      value
-    } = this.props;
-    const { focus } = this.state;
+export const TextInput: React.FC<Props> = memo(
+  ({
+    autoCorrect,
+    blurOnSubmit = true,
+    clearIcon = "close-circle",
+    containerStyle,
+    disableFullscreenUI = true,
+    editable = true,
+    error = "",
+    errorIcon = "alert-circle",
+    flex,
+    keyboardType,
+    onChangeText,
+    optional,
+    placeholder,
+    returnKeyType,
+    secureTextEntry,
+    textStyle,
+    title = "",
+    value
+  }) => {
+    const [focus, setFocus] = useState(false);
+    const color = useRootSelector(state => getCurrentColor(state));
+    const focusColor = color.primary;
+    const styles = StyleSheet.create({
+      borderError: {
+        borderColor: color.danger
+      },
+      borderFocus: {
+        borderColor: focusColor
+      },
+      clear: {
+        position: "absolute",
+        right: -2,
+        top: 2
+      },
+      flex: {
+        flex: 1
+      },
+      row: {
+        flexDirection: "row"
+      },
+      textInput: {
+        backgroundColor: color.background,
+        borderColor: color.secondary,
+        borderRadius: Theme.padding.p01,
+        borderWidth: 2,
+        color: color.text,
+        padding: Theme.padding.p02,
+        paddingRight: Theme.padding.p08,
+        width: "100%"
+      }
+    });
+    const textInput = useRef<Original>(null);
+    const optionalText = " - optional";
     const textInputStyles = [
-      this.styles.textInput,
-      error && this.styles.borderError,
-      focus && this.styles.borderFocus,
+      styles.textInput,
+      error && styles.borderError,
+      focus && styles.borderFocus,
       Theme.fontSize.body2,
       textStyle
     ];
     const noValue = value.length === 0;
     const noError = error.length === 0;
     const noTitle = title.length === 0;
-    const containerStyles = [flex && this.styles.flex, containerStyle];
+    const containerStyles = [flex && styles.flex, containerStyle];
+
+    const onFocus = () => setFocus(true);
+    const onBlur = () => setFocus(false);
+    const focusOnInput = () => textInput.current && textInput.current.focus();
+    const textClear = () =>
+      textInput.current && textInput.current.clear() && onChangeText("");
+
     return (
       <View style={containerStyles}>
-        <View style={this.styles.row}>
+        <View style={styles.row}>
           <Button
             activeOpacity={1}
             hidden={noTitle}
             label
             lowercase
             neutral
-            onPress={this.focusOnInput}
+            onPress={focusOnInput}
             title={title}
             wrap
           />
@@ -144,37 +144,37 @@ export class TextInput extends React.PureComponent<Props, State> {
             hidden={!optional}
             label
             lowercase
-            onPress={this.focusOnInput}
+            onPress={focusOnInput}
             secondary
-            title={this.optionalText}
+            title={optionalText}
             wrap
           />
         </View>
-        <View style={this.styles.row}>
+        <View style={styles.row}>
           <Original
             autoCorrect={autoCorrect}
             blurOnSubmit={blurOnSubmit}
             disableFullscreenUI={disableFullscreenUI}
             editable={editable}
             keyboardType={keyboardType}
-            onBlur={this.onBlur}
+            onBlur={onBlur}
             onChangeText={onChangeText}
-            onFocus={this.onFocus}
+            onFocus={onFocus}
             placeholder={placeholder}
-            placeholderTextColor={Theme.color.secondary}
-            ref={input => (this.textInput = input ? input : undefined)}
+            placeholderTextColor={color.secondary}
+            ref={textInput}
             returnKeyType={returnKeyType}
             secureTextEntry={secureTextEntry}
-            selectionColor={this.focusColor}
+            selectionColor={focusColor}
             style={textInputStyles}
             underlineColorAndroid="transparent"
             value={value}
           />
           <Button
-            buttonStyle={this.styles.clear}
+            buttonStyle={styles.clear}
             hidden={noValue}
             icon={clearIcon}
-            onPress={this.textClear}
+            onPress={textClear}
             secondary
           />
         </View>
@@ -185,31 +185,11 @@ export class TextInput extends React.PureComponent<Props, State> {
           invisible={noError}
           label
           lowercase
-          onPress={this.focusOnInput}
+          onPress={focusOnInput}
           title={error}
           wrap
         />
       </View>
     );
   }
-
-  private onFocus = () => this.setState({ focus: true });
-
-  private onBlur = () => this.setState({ focus: false });
-
-  private focusOnInput = () => {
-    if (!this.textInput) {
-      return;
-    }
-    this.textInput.focus();
-  };
-
-  private textClear = () => {
-    const { onChangeText } = this.props;
-    if (!this.textInput) {
-      return;
-    }
-    this.textInput.clear();
-    onChangeText("");
-  };
-}
+);

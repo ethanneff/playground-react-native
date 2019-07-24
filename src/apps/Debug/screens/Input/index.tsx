@@ -26,7 +26,6 @@ class Container extends React.PureComponent<Props> {
 
   private styles = StyleSheet.create({
     container: {
-      backgroundColor: Theme.color.light,
       flex: 1,
       padding: Theme.padding.p04
     }

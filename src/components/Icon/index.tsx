@@ -3,7 +3,7 @@ usage: <Icon name='check' />
 source: https://materialdesignicons.com/
 */
 
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, View, ViewStyle } from "react-native";
 import { getCurrentColor } from "../../models";
 import { Theme, useRootSelector } from "../../utils";
@@ -21,37 +21,35 @@ interface Props {
   name?: string;
 }
 
-export const Icon: React.FC<Props> = props => {
-  const colors = useRootSelector(state => getCurrentColor(state));
-  const {
+export const Icon: React.FC<Props> = memo(
+  ({
     name,
     style,
     badge = 0,
     clear,
     size = Theme.padding.p06,
-    color = colors.dark,
+    color,
     hidden,
     invisible
-  } = props;
-  const styles = StyleSheet.create({
-    invisible: {
-      opacity: 0
-    }
-  });
-  const colored = clear ? Theme.color.background : color;
-  const containerStyles = [invisible && styles.invisible, style];
-  if (name === undefined || name.length === 0 || hidden) {
-    return null;
+  }) => {
+    const colors = useRootSelector(state => getCurrentColor(state));
+    const styles = StyleSheet.create({
+      invisible: {
+        opacity: 0
+      }
+    });
+    const colored = clear ? colors.background : color ? color : colors.dark;
+    const containerStyles = [invisible && styles.invisible, style];
+    return name === undefined || name.length === 0 || hidden ? null : (
+      <View style={containerStyles}>
+        <IconSource
+          name={name}
+          size={size}
+          color={colored}
+          style={containerStyles}
+        />
+        <Badge badge={badge} />
+      </View>
+    );
   }
-  return (
-    <View style={containerStyles}>
-      <IconSource
-        name={name}
-        size={size}
-        color={colored}
-        style={containerStyles}
-      />
-      <Badge badge={badge} />
-    </View>
-  );
-};
+);

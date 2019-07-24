@@ -224,10 +224,11 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "backgroundColor": "hsl(0, 100%, 100%)",
+                  "backgroundColor": "hsl(0, 0%, 100%)",
                   "borderColor": "hsl(208, 7%, 46%)",
                   "borderRadius": 4,
                   "borderWidth": 2,
+                  "color": "hsl(0, 0%, 0%)",
                   "padding": 8,
                   "paddingRight": 32,
                   "width": "100%",

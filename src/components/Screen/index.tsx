@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { SafeAreaView, StatusBar, StyleSheet, ViewStyle } from "react-native";
 import { getCurrentColor } from "../../models";
 import { useRootSelector } from "../../utils";
@@ -17,8 +17,8 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-export const Screen: React.FC<Props> = props => {
-  const {
+export const Screen: React.FC<Props> = memo(
+  ({
     title,
     style,
     onLeftPress,
@@ -27,31 +27,32 @@ export const Screen: React.FC<Props> = props => {
     disableScroll,
     leftIcon,
     rightIcon
-  } = props;
-  const colors = useRootSelector(state => getCurrentColor(state));
-  const styles = StyleSheet.create({
-    container: {
-      backgroundColor: colors.background,
-      flex: 1
-    }
-  });
+  }) => {
+    const colors = useRootSelector(state => getCurrentColor(state));
+    const styles = StyleSheet.create({
+      container: {
+        backgroundColor: colors.background,
+        flex: 1
+      }
+    });
 
-  return (
-    <SafeAreaView style={[styles.container, style]}>
-      <StatusBar barStyle={colors.statusBar} />
-      <NavBar
-        title={title}
-        leftIcon={leftIcon}
-        rightIcon={rightIcon}
-        onLeftPress={onLeftPress}
-        onRightPress={onRightPress}
-      />
-      <KeyboardAvoid
-        scrollEnabled={!disableScroll}
-        style={[styles.container, style]}
-      >
-        {children}
-      </KeyboardAvoid>
-    </SafeAreaView>
-  );
-};
+    return (
+      <SafeAreaView style={[styles.container, style]}>
+        <StatusBar barStyle={colors.statusBar} />
+        <NavBar
+          title={title}
+          leftIcon={leftIcon}
+          rightIcon={rightIcon}
+          onLeftPress={onLeftPress}
+          onRightPress={onRightPress}
+        />
+        <KeyboardAvoid
+          scrollEnabled={!disableScroll}
+          style={[styles.container, style]}
+        >
+          {children}
+        </KeyboardAvoid>
+      </SafeAreaView>
+    );
+  }
+);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { ScrollView, Text as Original } from "react-native";
 import { StyleSheet, View } from "react-native";
 import { getCurrentColor } from "../../models";
@@ -45,9 +45,7 @@ interface Props {
   body: ContentBody;
 }
 
-export const Content: React.FC<Props> = props => {
-  const { body } = props;
-
+export const Content: React.FC<Props> = memo(({ body }) => {
   const color = useRootSelector(state => getCurrentColor(state));
   const styles = StyleSheet.create({
     content: {
@@ -106,4 +104,4 @@ export const Content: React.FC<Props> = props => {
       {body.sections.map(renderSection)}
     </ScrollView>
   );
-};
+});

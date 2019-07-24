@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { ViewStyle } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -9,9 +9,8 @@ interface Props {
   style?: ViewStyle | {};
 }
 
-export class IconSource extends React.PureComponent<Props> {
-  public render() {
-    const { name, size, color, style } = this.props;
-    return <Icon name={name} size={size} color={color} style={style} />;
-  }
-}
+export const IconSource: React.FC<Props> = memo(
+  ({ name, size, color, style }) => (
+    <Icon name={name} size={size} color={color} style={style} />
+  )
+);

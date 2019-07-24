@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { ViewStyle } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
@@ -7,9 +7,8 @@ interface Props {
   scrollEnabled: boolean;
 }
 
-export const KeyboardAvoid: React.FC<Props> = props => {
-  const { style, children, scrollEnabled } = props;
-  return (
+export const KeyboardAvoid: React.FC<Props> = memo(
+  ({ style, children, scrollEnabled }) => (
     <KeyboardAwareScrollView
       keyboardShouldPersistTaps="handled"
       contentContainerStyle={style}
@@ -17,5 +16,5 @@ export const KeyboardAvoid: React.FC<Props> = props => {
     >
       {children}
     </KeyboardAwareScrollView>
-  );
-};
+  )
+);

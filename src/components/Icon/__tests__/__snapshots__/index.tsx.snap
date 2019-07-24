@@ -49,7 +49,7 @@ exports[`renders correctly with clear and max badge 1`] = `
     style={
       Array [
         Object {
-          "color": "hsl(0, 100%, 100%)",
+          "color": "hsl(0, 0%, 100%)",
           "fontSize": 1,
         },
         Array [
@@ -76,8 +76,8 @@ exports[`renders correctly with clear and max badge 1`] = `
         "height": 20,
         "justifyContent": "center",
         "position": "absolute",
-        "right": -10,
-        "top": -10,
+        "right": -8,
+        "top": -8,
         "width": 20,
       }
     }
@@ -141,8 +141,8 @@ exports[`renders correctly without defaults 1`] = `
         "height": 20,
         "justifyContent": "center",
         "position": "absolute",
-        "right": -10,
-        "top": -10,
+        "right": -8,
+        "top": -8,
         "width": 20,
       }
     }

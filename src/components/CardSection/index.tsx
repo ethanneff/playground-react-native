@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TextStyle, View } from "react-native";
 import { Theme } from "../../utils";
 
@@ -17,9 +17,6 @@ interface Props {
   style?: TextStyle;
 }
 
-export class CardSection extends React.PureComponent<Props> {
-  public render() {
-    const { style, children } = this.props;
-    return <View style={[styles.containerStyle, style]}>{children}</View>;
-  }
-}
+export const CardSection: React.FC<Props> = memo(({ style, children }) => (
+  <View style={[styles.containerStyle, style]}>{children}</View>
+));

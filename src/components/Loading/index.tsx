@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { StyleSheet, View, ViewStyle } from "react-native";
 import { Text } from "../Text";
 
@@ -19,8 +19,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export const Loading: React.FC<Props> = props => {
-  const { title, center, style } = props;
+export const Loading: React.FC<Props> = memo(({ title, center, style }) => {
   let ellipsisCountdown: NodeJS.Timer;
   const containerStyles = [
     styles.row,
@@ -57,4 +56,4 @@ export const Loading: React.FC<Props> = props => {
       ))}
     </View>
   );
-};
+});

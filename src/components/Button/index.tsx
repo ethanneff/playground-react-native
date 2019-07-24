@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import {
   StyleSheet,
   TextStyle,
@@ -50,7 +50,7 @@ interface Props {
   onPress?(): void;
 }
 
-export const Button: React.FC<Props> = props => {
+export const Button: React.FC<Props> = memo(props => {
   const {
     activeOpacity,
     buttonStyle,
@@ -225,4 +225,4 @@ export const Button: React.FC<Props> = props => {
       <Text center button={!lowercase} title={title} style={textStyleGroup} />
     </TouchableOpacity>
   );
-};
+});
