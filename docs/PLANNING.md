@@ -43,6 +43,7 @@
   - [ ] slack
   - [ ] yellowbox warnings
   - [ ] dialog tests
+  - [ ] test warnings
 - [ ] dark mode
 
 #### best practices and scalability
