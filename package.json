@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@redux-offline/redux-offline": "2.5.2",
-    "appcenter": "2.1.0",
+    "appcenter": "2.2.0",
     "appcenter-analytics": "2.1.0",
     "appcenter-crashes": "2.1.0",
     "appcenter-push": "2.1.0",
