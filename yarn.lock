@@ -2394,17 +2394,29 @@ appcenter-analytics@2.1.0:
   dependencies:
     appcenter "2.1.0"
 
-appcenter-crashes@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/appcenter-crashes/-/appcenter-crashes-2.1.0.tgz#cd88344acab16fe699df02b90c804bce77e92b80"
-  integrity sha512-TP3yfALyoTVdsi/p9TBkBZAtf8XwoxdK+6Gz7h1ByGQ0qcF7INxFrrKePj5qYXCJznkxPL0WvkV2ArqI+xFkrw==
+appcenter-crashes@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/appcenter-crashes/-/appcenter-crashes-2.2.0.tgz#dddd2e510192ecb6b38ae4d2a633521de33fafda"
+  integrity sha512-pGszIV1634AtzaRmi0W/Db3Tc/hmouvJmcmmGl2buKF6HEks2fW4wiil1IwAILq+cgoCbqsHODCcCebUhvifDQ==
   dependencies:
-    appcenter "2.1.0"
+    appcenter "2.2.0"
 
 appcenter-link-scripts@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/appcenter-link-scripts/-/appcenter-link-scripts-2.1.0.tgz#a15b1efe59327851c605e93dc1eb8af576fbf0cf"
   integrity sha512-oCEUUi1hlEIu7xzeM6Hly3TROfqBUoUe7b6yqttJzZnu9xy7oAK6W1L/cH3gh15I8g2melDQd+0E2dbAfSY2yg==
+  dependencies:
+    debug "^2.2.0"
+    glob "^5.0.15"
+    mkdirp "^0.5.1"
+    plist "^3.0.1"
+    which "^1.2.11"
+    xcode "^2.0.0"
+
+appcenter-link-scripts@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/appcenter-link-scripts/-/appcenter-link-scripts-2.2.0.tgz#1f348bfcd0e92b5d04268d0cac23c0018428afc1"
+  integrity sha512-CB3GUXLqdnUF37qzm/6P/CY1Tg7sJ3a253rdTnLlnIwJCKWmV2+Hyl4xQw5yPVTzpvee2gc+ZAMsRKzL2ajK0w==
   dependencies:
     debug "^2.2.0"
     glob "^5.0.15"
@@ -2426,6 +2438,13 @@ appcenter@2.1.0:
   integrity sha512-6cmdAOCFTPeV1rPMT8+I8izk2Ug79xfOSNuj4mKkOnT0NEM6tPe5gj+QkhTXWy17Y77n40giYSqdFXs12sty/g==
   dependencies:
     appcenter-link-scripts "2.1.0"
+
+appcenter@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-2.2.0.tgz#77d2c8d486bda52d1ee43156607437981aba2105"
+  integrity sha512-X8M4ITBh6U79mg+EHlqcjtv1ZojUbpxo9xO+uYCvsy/GO6Oq639mzkJKsRn7O8KrZk/CUmG96H+eY860/Ll+yQ==
+  dependencies:
+    appcenter-link-scripts "2.2.0"
 
 aproba@^1.0.3, aproba@^1.1.1, aproba@^1.1.2:
   version "1.2.0"
