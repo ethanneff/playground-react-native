@@ -25,8 +25,11 @@
 
 #### working android app
 
-- [ ] firebase
 - [ ] hourly update
+  - [ ] remove momemnt
+  - [ ] focus day
+  - [ ] scroll to day
+- [ ] firebase
 - [ ] app center deploy
 - [ ] logins/signups
 - [ ] [design chat datamodels](https://www.youtube.com/watch?v=m_u6P5k0vP0&feature=share)
@@ -36,16 +39,15 @@
 #### code cleanup
 
 - [ ] remove all commented code
-
   - [ ] swipe
   - [ ] slack
   - [ ] yellowbox warnings
   - [ ] dialog tests
-
 - [ ] dark mode
 
 #### best practices and scalability
 
+- [ ] offline reset (error boundary)
 - [x] nested navigation
 - [ ] test hooks
 - [ ] mock date, fix tests, fix releases
