@@ -1,6 +1,17 @@
 import { ActionType, createStandardAction } from "typesafe-actions";
 import { RootAction } from "../../../../../containers";
 
+/* ACTIONS */
+export const createQuestion = createStandardAction("questions/CREATE")<
+  Question
+>();
+export const updateQuestion = createStandardAction("questions/UPDATE")<
+  Question
+>();
+export const removeQuestion = createStandardAction("questions/REMOVE")<
+  string
+>();
+
 /* INTERFACES */
 enum QuestionType {
   Input = "Input",
@@ -24,17 +35,6 @@ export interface Questions {
 export type QuestionsActions = ActionType<
   typeof createQuestion | typeof updateQuestion | typeof removeQuestion
 >;
-
-/* ACTIONS */
-export const createQuestion = createStandardAction("questions/CREATE")<
-  Question
->();
-export const updateQuestion = createStandardAction("questions/UPDATE")<
-  Question
->();
-export const removeQuestion = createStandardAction("questions/REMOVE")<
-  string
->();
 
 /* REDUCERS */
 export const questionsInitialState: Questions = {

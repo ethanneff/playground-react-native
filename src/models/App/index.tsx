@@ -5,22 +5,6 @@ import { RootAction, RootState } from "../../containers";
 import { VersionNumber } from "../../utils";
 import { logout } from "../Auth";
 
-/* INTERFACES */
-export interface AppState {
-  appVersion: string;
-  buildVersion: string;
-  bundleIdentifier: string;
-  applicationName: string;
-  buildNumber: string;
-  version: string;
-  readableVersion: string;
-  status: AppStateStatus;
-  keyboardVisible: boolean;
-}
-export type AppActions = ActionType<
-  typeof loadApp | typeof changeAppStatus | typeof changeKeyboardStatus
->;
-
 /* ACTIONS */
 export const loadApp = createStandardAction("app/LOAD")<AppState>();
 export const changeAppStatus = createStandardAction("app/UPDATE_STATUS")<
@@ -48,6 +32,22 @@ export const getAppStatus = (state: RootState): AppStateStatus =>
   state.app.status;
 export const getKeyboardVisible = (state: RootState): boolean =>
   state.app.keyboardVisible;
+
+/* INTERFACES */
+export interface AppState {
+  appVersion: string;
+  buildVersion: string;
+  bundleIdentifier: string;
+  applicationName: string;
+  buildNumber: string;
+  version: string;
+  readableVersion: string;
+  status: AppStateStatus;
+  keyboardVisible: boolean;
+}
+export type AppActions = ActionType<
+  typeof loadApp | typeof changeAppStatus | typeof changeKeyboardStatus
+>;
 
 /* REDUCERS */
 export const appInitialState: AppState = generateAppInitialState();

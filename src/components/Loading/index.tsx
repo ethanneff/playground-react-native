@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, useCallback, useEffect, useState } from "react";
 import { StyleSheet, View, ViewStyle } from "react-native";
 import { Text } from "../Text";
 
@@ -20,26 +20,26 @@ const styles = StyleSheet.create({
 });
 
 export const Loading: React.FC<Props> = memo(({ title, center, style }) => {
-  let ellipsisCountdown: NodeJS.Timer;
   const containerStyles = [
     styles.row,
     center ? styles.center : undefined,
     style
   ];
+  let ellipsisCountdown: NodeJS.Timer;
   const [ellipsisIndex, setEllipsisIndex] = useState(1);
   const animateTextNextIndex = (index: number) =>
     index >= ellipsis.length - 1 ? 0 : index + 1;
-  const animateText = () => {
+  const animateText = useCallback(() => {
     ellipsisCountdown = setTimeout(() => {
       setEllipsisIndex(index => animateTextNextIndex(index));
       animateText();
     }, ellipsisDuration);
-  };
+  }, []);
 
   useEffect(() => {
     animateText();
     return () => clearTimeout(ellipsisCountdown);
-  }, []);
+  }, [animateText]);
 
   return (
     <View style={containerStyles}>

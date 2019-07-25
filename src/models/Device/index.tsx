@@ -10,55 +10,6 @@ import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";
 import { logout } from "../Auth";
 
-/* INTERFACES */
-export interface DimensionsProps {
-  window: ScaledSize;
-  screen: ScaledSize;
-}
-export interface DeviceState {
-  uniqueId: string;
-  manufacturer: string;
-  brand: string;
-  model: string;
-  deviceId: string;
-  systemName: string;
-  systemVersion: string;
-  deviceName: string;
-  userAgent: string;
-  deviceLocale: string;
-  deviceCountry: string;
-  timezone: string;
-  instanceId: string;
-  installReferrer: string;
-  isEmulator: boolean;
-  isTablet: boolean;
-  fontScale: number;
-  is24Hour: boolean;
-  isPinOrFingerprintSet: boolean;
-  firstInstallTime: number;
-  lastUpdateTime: number;
-  serialNumber: string;
-  phoneNumber: string;
-  apiLevel: number;
-  carrier: string;
-  totalMemory: number;
-  maxMemory: number;
-  totalDiskCapacity: number;
-  freeDiskStorage: number;
-  batteryLevel: number;
-  networkType: ConnectionType;
-  networkEffectiveType: EffectiveConnectionType;
-  windowDimensions: ScaledSize;
-  screenDimensions: ScaledSize;
-}
-export type DeviceActions = ActionType<
-  | typeof updateBattery
-  | typeof updateFingerprint
-  | typeof loadDevice
-  | typeof updateNetwork
-  | typeof updateDimensions
->;
-
 /* ACTIONS */
 export const updateBattery = createStandardAction("device/UPDATE_BATTERY")<
   number
@@ -135,6 +86,55 @@ export const getWidth = (state: RootState): number =>
 
 export const getHeight = (state: RootState): number =>
   state.device.windowDimensions.height;
+
+/* INTERFACES */
+export interface DimensionsProps {
+  window: ScaledSize;
+  screen: ScaledSize;
+}
+export interface DeviceState {
+  uniqueId: string;
+  manufacturer: string;
+  brand: string;
+  model: string;
+  deviceId: string;
+  systemName: string;
+  systemVersion: string;
+  deviceName: string;
+  userAgent: string;
+  deviceLocale: string;
+  deviceCountry: string;
+  timezone: string;
+  instanceId: string;
+  installReferrer: string;
+  isEmulator: boolean;
+  isTablet: boolean;
+  fontScale: number;
+  is24Hour: boolean;
+  isPinOrFingerprintSet: boolean;
+  firstInstallTime: number;
+  lastUpdateTime: number;
+  serialNumber: string;
+  phoneNumber: string;
+  apiLevel: number;
+  carrier: string;
+  totalMemory: number;
+  maxMemory: number;
+  totalDiskCapacity: number;
+  freeDiskStorage: number;
+  batteryLevel: number;
+  networkType: ConnectionType;
+  networkEffectiveType: EffectiveConnectionType;
+  windowDimensions: ScaledSize;
+  screenDimensions: ScaledSize;
+}
+export type DeviceActions = ActionType<
+  | typeof updateBattery
+  | typeof updateFingerprint
+  | typeof loadDevice
+  | typeof updateNetwork
+  | typeof updateDimensions
+>;
 
 /* REDUCERS */
 export const deviceInitialState: DeviceState = generateDeviceInitialState();

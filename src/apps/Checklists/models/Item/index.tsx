@@ -4,33 +4,6 @@ import { DeepReadonly } from "utility-types";
 import uuid from "uuid";
 import { RootAction, RootState } from "../../../../containers";
 
-/* INTERFACES */
-export type Item = DeepReadonly<{
-  id: string;
-  name: string;
-  description?: string;
-  active: boolean;
-  userId: string;
-  sources?: string[];
-  order?: number;
-  createdAt: number;
-  updatedAt: number;
-}>;
-export type Items = DeepReadonly<{ [key: string]: Item }>;
-export type ItemsArray = DeepReadonly<Item[]>;
-export type ItemActions = ActionType<
-  | typeof createItem
-  | typeof removeItem
-  | typeof updateItem
-  | typeof toggleActiveItem
->;
-interface CreateItem {
-  name: string;
-  description?: string;
-  active?: boolean;
-}
-type UpdateItem = CreateItem & { id: string };
-
 /* ACTIONS */
 export const createItem = createStandardAction("ITEM/CREATE")<CreateItem>();
 export const updateItem = createStandardAction("ITEM/UPDATE")<UpdateItem>();
@@ -66,6 +39,33 @@ export const getItemsByCreatedAt = createSelector(
   [getItems],
   items => Object.values(items).sort((a, b) => a.createdAt - b.createdAt)
 );
+
+/* INTERFACES */
+export type Item = DeepReadonly<{
+  id: string;
+  name: string;
+  description?: string;
+  active: boolean;
+  userId: string;
+  sources?: string[];
+  order?: number;
+  createdAt: number;
+  updatedAt: number;
+}>;
+export type Items = DeepReadonly<{ [key: string]: Item }>;
+export type ItemsArray = DeepReadonly<Item[]>;
+export type ItemActions = ActionType<
+  | typeof createItem
+  | typeof removeItem
+  | typeof updateItem
+  | typeof toggleActiveItem
+>;
+interface CreateItem {
+  name: string;
+  description?: string;
+  active?: boolean;
+}
+type UpdateItem = CreateItem & { id: string };
 
 /* REDUCER */
 const initialState = {};

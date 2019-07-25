@@ -7,6 +7,13 @@ import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";
 import { logout } from "../Auth";
 
+/* ACTIONS */
+export const changeTheme = createStandardAction("theme/CHANGE")<ColorTheme>();
+
+/* SELECTORS */
+export const getCurrentColor = (state: RootState): Color =>
+  state.theme.colors[state.theme.currentColor];
+
 /* INTERFACES */
 enum StatusBarStyle {
   Default = "default",
@@ -46,13 +53,6 @@ export interface Theme {
   currentColor: ColorTheme;
 }
 export type ThemeActions = ActionType<typeof changeTheme>;
-
-/* ACTIONS */
-export const changeTheme = createStandardAction("theme/CHANGE")<ColorTheme>();
-
-/* SELECTORS */
-export const getCurrentColor = (state: RootState): Color =>
-  state.theme.colors[state.theme.currentColor];
 
 /* REDUCERS */
 export const themeInitialState: Theme = {

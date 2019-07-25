@@ -2,6 +2,21 @@ import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";
 import { logout } from "../Auth";
 
+/* ACTIONS */
+export const navigate = createStandardAction("navigation/CHANGE_NAVIGATION")<
+  NavigationScreen
+>();
+export const showModal = createStandardAction("navigation/SHOW_MODAL")<
+  NavigationModal
+>();
+export const hideModal = createStandardAction("navigation/HIDE_MODAL")();
+
+/* SELECTORS */
+export const getScreen = (state: RootState): NavigationScreen =>
+  state.navigation.screen;
+export const getModal = (state: RootState): NavigationModal =>
+  state.navigation.modal;
+
 /* INTERFACES */
 export enum NavigationScreen {
   CantHurtMe,
@@ -51,21 +66,6 @@ export interface Navigation {
 export type NavigationActions = ActionType<
   typeof navigate | typeof showModal | typeof hideModal
 >;
-
-/* ACTIONS */
-export const navigate = createStandardAction("navigation/CHANGE_NAVIGATION")<
-  NavigationScreen
->();
-export const showModal = createStandardAction("navigation/SHOW_MODAL")<
-  NavigationModal
->();
-export const hideModal = createStandardAction("navigation/HIDE_MODAL")();
-
-/* SELECTORS */
-export const getScreen = (state: RootState): NavigationScreen =>
-  state.navigation.screen;
-export const getModal = (state: RootState): NavigationModal =>
-  state.navigation.modal;
 
 /* REDUCERS */
 export const navigationInitialState: Navigation = {

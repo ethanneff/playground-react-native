@@ -1,6 +1,11 @@
 import { ActionType, createStandardAction } from "typesafe-actions";
 import { RootAction } from "../../../../../containers";
 
+/* ACTIONS */
+export const createChoice = createStandardAction("choices/CREATE")<Choice>();
+export const updateChoice = createStandardAction("choices/UPDATE")<Choice>();
+export const removeChoice = createStandardAction("choices/REMOVE")<string>();
+
 /* INTERFACES */
 interface Choice {
   id: string;
@@ -15,11 +20,6 @@ export interface Choices {
 export type ChoicesActions = ActionType<
   typeof createChoice | typeof updateChoice | typeof removeChoice
 >;
-
-/* ACTIONS */
-export const createChoice = createStandardAction("choices/CREATE")<Choice>();
-export const updateChoice = createStandardAction("choices/UPDATE")<Choice>();
-export const removeChoice = createStandardAction("choices/REMOVE")<string>();
 
 /* REDUCERS */
 export const choicesInitialState: Choices = {

@@ -20,7 +20,7 @@ export class GestureHandler {
 
   public onPanResponderMove(event: any) {
     const touches: NativeTouchEvent[] = event.nativeEvent.touches;
-    touches.map((touch: NativeTouchEvent) => {
+    touches.forEach((touch: NativeTouchEvent) => {
       this.recordFinish(touch);
       this.recordStart(touch);
     });

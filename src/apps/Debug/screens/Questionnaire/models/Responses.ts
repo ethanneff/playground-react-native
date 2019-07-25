@@ -1,6 +1,17 @@
 import { ActionType, createStandardAction } from "typesafe-actions";
 import { RootAction } from "../../../../../containers";
 
+/* ACTIONS */
+export const createResponse = createStandardAction("responses/CREATE")<
+  Response
+>();
+export const updateResponse = createStandardAction("responses/UPDATE")<
+  Response
+>();
+export const removeResponse = createStandardAction("responses/REMOVE")<
+  string
+>();
+
 /* INTERFACES */
 interface Response {
   id: string;
@@ -16,17 +27,6 @@ export interface Responses {
 export type ResponsesActions = ActionType<
   typeof createResponse | typeof updateResponse | typeof removeResponse
 >;
-
-/* ACTIONS */
-export const createResponse = createStandardAction("responses/CREATE")<
-  Response
->();
-export const updateResponse = createStandardAction("responses/UPDATE")<
-  Response
->();
-export const removeResponse = createStandardAction("responses/REMOVE")<
-  string
->();
 
 /* REDUCERS */
 const responsesInitialState = {};

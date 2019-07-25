@@ -23,7 +23,7 @@ export const Focus = memo(() => {
   }, []);
   const handleModalEditBackgroundPress = useCallback(() => {
     setModalItemEdit(false);
-  }, [modalItemEdit]);
+  }, []);
 
   return (
     <>

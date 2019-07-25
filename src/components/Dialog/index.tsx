@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from "react";
+import React, { memo, useCallback, useEffect } from "react";
 import {
   Animated,
   StyleSheet,
@@ -84,7 +84,6 @@ export const Dialog: React.FC<Props> = memo(
         paddingBottom: Theme.padding.p03
       }
     });
-    let alertTimeout: NodeJS.Timer;
     const fade = new Animated.Value(0);
     const opacity = fade;
     const twoButtons = !!onConfirmButtonPress && !!onCancelButtonPress;
@@ -93,35 +92,41 @@ export const Dialog: React.FC<Props> = memo(
     const confirmButtonStyle = [twoButtons ? styles.confirm : undefined];
     const dispatch = useRootDispatch();
 
+    const animate = useCallback(
+      (toValue: number) => {
+        return new Promise(resolve => {
+          Animated.timing(fade, {
+            duration: fadeDuration,
+            toValue,
+            useNativeDriver
+          }).start(resolve);
+        });
+      },
+      [fade]
+    );
+
+    const dismiss = useCallback(
+      (callback?: () => void) => async () => {
+        if (!callback) {
+          return;
+        }
+        await animate(0);
+        dispatch(hideModal());
+        callback();
+      },
+      [animate, dispatch]
+    );
+
     useEffect(() => {
       animate(1);
       if (!duration) {
         return;
       }
-      alertTimeout = setTimeout(dismiss(onBackgroundPress), duration);
-
+      const alertTimeout = setTimeout(dismiss(onBackgroundPress), duration);
       return () => {
         clearTimeout(alertTimeout);
       };
-    }, []);
-
-    const animate = (toValue: number) =>
-      new Promise(resolve => {
-        Animated.timing(fade, {
-          duration: fadeDuration,
-          toValue,
-          useNativeDriver
-        }).start(resolve);
-      });
-
-    const dismiss = (callback?: () => void) => async () => {
-      if (!callback) {
-        return;
-      }
-      await animate(0);
-      dispatch(hideModal());
-      callback();
-    };
+    }, [animate, duration, dismiss, onBackgroundPress]);
 
     return (
       <Animated.View style={containerStyle}>

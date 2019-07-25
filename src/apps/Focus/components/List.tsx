@@ -33,7 +33,7 @@ export const List = memo(({ onItemPress }: Props) => {
       return;
     }
     // listRef.current.scrollToIndex(2);
-  }, [items, listRef]);
+  }, [listRef]);
 
   const generateMoreItems = () => {
     // TODO: batch

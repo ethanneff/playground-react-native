@@ -3,22 +3,6 @@ import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState, RootThunkAction } from "../../containers";
 import { Config } from "../../utils";
 
-/* INTERFACES */
-export interface AuthState {
-  token?: string;
-  loading: boolean;
-  error?: string;
-}
-export type AuthActions = ActionType<
-  | typeof loginRequest
-  | typeof loginSuccess
-  | typeof loginFailure
-  | typeof registerRequest
-  | typeof registerSuccess
-  | typeof registerFailure
-  | typeof logout
->;
-
 /* ACTIONS */
 export const loginRequest = createStandardAction("AUTH/LOGIN_REQUEST")();
 export const loginSuccess = createStandardAction("AUTH/REGISTER_SUCCESS")<
@@ -91,6 +75,22 @@ export const onLogout = (): RootThunkAction<void> => async (
 export const getAuthToken = (state: RootState): string | undefined =>
   state.auth.token;
 export const getAuthLoading = (state: RootState): boolean => state.auth.loading;
+
+/* INTERFACES */
+export interface AuthState {
+  token?: string;
+  loading: boolean;
+  error?: string;
+}
+export type AuthActions = ActionType<
+  | typeof loginRequest
+  | typeof loginSuccess
+  | typeof loginFailure
+  | typeof registerRequest
+  | typeof registerSuccess
+  | typeof registerFailure
+  | typeof logout
+>;
 
 /* REDUCERS */
 export const authInitialState: AuthState = {

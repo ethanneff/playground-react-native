@@ -4,28 +4,6 @@ import uuid from "uuid";
 import { RootAction, RootState } from "../../../../../containers";
 import { logout } from "../../../../../models/Auth/index";
 
-/* INTERFACES */
-export interface Questionnaire {
-  acronym?: string;
-  formula?: string;
-  id: string;
-  questions: ReadonlyArray<string>;
-  title: string;
-}
-interface QuestionnairesObject {
-  [id: string]: Questionnaire;
-}
-export interface Questionnaires {
-  items: QuestionnairesObject;
-  selected: string | undefined;
-}
-export type QuestionnairesActions = ActionType<
-  | typeof createQuestionnaire
-  | typeof updateQuestionnaire
-  | typeof removeQuestionnaire
-  | typeof selectQuestionnaire
->;
-
 /* ACTIONS */
 export const createQuestionnaire = createStandardAction(
   "questionnaires/CREATE"
@@ -53,6 +31,28 @@ export const getQuestionnaireArray = createSelector(
   [getQuestionnaires],
   questionnaires => Object.values(questionnaires).filter(item => item)
 );
+
+/* INTERFACES */
+export interface Questionnaire {
+  acronym?: string;
+  formula?: string;
+  id: string;
+  questions: ReadonlyArray<string>;
+  title: string;
+}
+interface QuestionnairesObject {
+  [id: string]: Questionnaire;
+}
+export interface Questionnaires {
+  items: QuestionnairesObject;
+  selected: string | undefined;
+}
+export type QuestionnairesActions = ActionType<
+  | typeof createQuestionnaire
+  | typeof updateQuestionnaire
+  | typeof removeQuestionnaire
+  | typeof selectQuestionnaire
+>;
 
 /* REDUCERS */
 export const questionnairesInitialState: Questionnaires = {
