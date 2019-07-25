@@ -1887,10 +1887,10 @@
     hoist-non-react-statics "^3.3.0"
     redux "^4.0.0"
 
-"@types/react-test-renderer@16.8.2":
-  version "16.8.2"
-  resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-16.8.2.tgz#ad544b5571ebfc5f182c320376f1431a2b725c5e"
-  integrity sha512-cm42QR9S9V3aOxLh7Fh7PUqQ8oSfSdnSni30T7TiTmlKvE6aUlo+LhQAzjnZBPriD9vYmgG8MXI8UDK4Nfb7gg==
+"@types/react-test-renderer@16.8.3":
+  version "16.8.3"
+  resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-16.8.3.tgz#b6ca14d5fe4c742fd6d68ef42d45e3b5c6dd470a"
+  integrity sha512-vEEYh6gFk3jkPHqRe7N5CxWA+yb92hCZxNyhq/1Wj3mClqVWLJYakJDMp3iFmntCgEq96m68N9Oad3wOHm+pdQ==
   dependencies:
     "@types/react" "*"
 
@@ -2387,24 +2387,24 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-appcenter-analytics@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/appcenter-analytics/-/appcenter-analytics-2.1.0.tgz#67b66e01245d472be8fecc0b28f591b7d64dc8b9"
-  integrity sha512-4gMvlTSSlyc+Lp0jW3mLvlMJavXJsOVQX30upKaYnRgKH+YCjix9a/Iy99CaH40MZoEVFSQiZdj3KfDnTjAKvQ==
+appcenter-analytics@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/appcenter-analytics/-/appcenter-analytics-2.2.0.tgz#54f1d1c0488e0ab62744c48877b0e7227f0c7e0e"
+  integrity sha512-hrFLlNtvhb3c/LXI0AOJR62cr41lsKbNzgESjHU48eU500H79+qKq3CJhCR4TMBdmM/gh+882jTn+4yu5B24LQ==
   dependencies:
-    appcenter "2.1.0"
+    appcenter "2.2.0"
 
-appcenter-crashes@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/appcenter-crashes/-/appcenter-crashes-2.1.0.tgz#cd88344acab16fe699df02b90c804bce77e92b80"
-  integrity sha512-TP3yfALyoTVdsi/p9TBkBZAtf8XwoxdK+6Gz7h1ByGQ0qcF7INxFrrKePj5qYXCJznkxPL0WvkV2ArqI+xFkrw==
+appcenter-crashes@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/appcenter-crashes/-/appcenter-crashes-2.2.0.tgz#dddd2e510192ecb6b38ae4d2a633521de33fafda"
+  integrity sha512-pGszIV1634AtzaRmi0W/Db3Tc/hmouvJmcmmGl2buKF6HEks2fW4wiil1IwAILq+cgoCbqsHODCcCebUhvifDQ==
   dependencies:
-    appcenter "2.1.0"
+    appcenter "2.2.0"
 
-appcenter-link-scripts@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/appcenter-link-scripts/-/appcenter-link-scripts-2.1.0.tgz#a15b1efe59327851c605e93dc1eb8af576fbf0cf"
-  integrity sha512-oCEUUi1hlEIu7xzeM6Hly3TROfqBUoUe7b6yqttJzZnu9xy7oAK6W1L/cH3gh15I8g2melDQd+0E2dbAfSY2yg==
+appcenter-link-scripts@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/appcenter-link-scripts/-/appcenter-link-scripts-2.2.0.tgz#1f348bfcd0e92b5d04268d0cac23c0018428afc1"
+  integrity sha512-CB3GUXLqdnUF37qzm/6P/CY1Tg7sJ3a253rdTnLlnIwJCKWmV2+Hyl4xQw5yPVTzpvee2gc+ZAMsRKzL2ajK0w==
   dependencies:
     debug "^2.2.0"
     glob "^5.0.15"
@@ -2413,19 +2413,19 @@ appcenter-link-scripts@2.1.0:
     which "^1.2.11"
     xcode "^2.0.0"
 
-appcenter-push@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/appcenter-push/-/appcenter-push-2.1.0.tgz#115c97a1f89e34d50bc94b4ad2ec9bf53b40e136"
-  integrity sha512-XhVbvWr8MNXI/l/yvEnQgm6NaWow81VTQa3DNRdBVl3LRPVYn8UV4ZyyXDK4jmf7qrah5jpLCwrwxdHCjYC1OA==
+appcenter-push@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/appcenter-push/-/appcenter-push-2.2.0.tgz#6bd13fd040cd45e912a941a651b0d28381b67477"
+  integrity sha512-p4gQiCn1eJygoH76chakn0lA+9VCMey4/p1QemGU4o+LxoM9bM/HKCGllA7M/RaSXkVMa5/s3Hrfw48ahTygPA==
   dependencies:
-    appcenter "2.1.0"
+    appcenter "2.2.0"
 
-appcenter@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-2.1.0.tgz#e378c6270030edf0a57b96010371d3b6ba8e9ff4"
-  integrity sha512-6cmdAOCFTPeV1rPMT8+I8izk2Ug79xfOSNuj4mKkOnT0NEM6tPe5gj+QkhTXWy17Y77n40giYSqdFXs12sty/g==
+appcenter@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-2.2.0.tgz#77d2c8d486bda52d1ee43156607437981aba2105"
+  integrity sha512-X8M4ITBh6U79mg+EHlqcjtv1ZojUbpxo9xO+uYCvsy/GO6Oq639mzkJKsRn7O8KrZk/CUmG96H+eY860/Ll+yQ==
   dependencies:
-    appcenter-link-scripts "2.1.0"
+    appcenter-link-scripts "2.2.0"
 
 aproba@^1.0.3, aproba@^1.1.1, aproba@^1.1.2:
   version "1.2.0"
@@ -4678,17 +4678,15 @@ del@^3.0.0:
     pify "^3.0.0"
     rimraf "^2.2.8"
 
-del@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/del/-/del-4.1.1.tgz#9e8f117222ea44a31ff3a156c049b99052a9f0b4"
-  integrity sha512-QwGuEUouP2kVwQenAsOof5Fv8K9t3D8Ca8NxcXKrIpEHjTXK5J2nXLdP+ALI1cgv8wj7KuwBhTwBkOZSJKM5XQ==
+del@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/del/-/del-5.0.0.tgz#4fa698b7a1ffb4e2ab3e8929ed699799654d6720"
+  integrity sha512-TfU3nUY0WDIhN18eq+pgpbLY9AfL5RfiE9czKaTSolc6aK7qASXfDErvYgjV1UqCR4sNXDoxO0/idPmhDUt2Sg==
   dependencies:
-    "@types/glob" "^7.1.1"
-    globby "^6.1.0"
+    globby "^10.0.0"
     is-path-cwd "^2.0.0"
     is-path-in-cwd "^2.0.0"
     p-map "^2.0.0"
-    pify "^4.0.1"
     rimraf "^2.6.3"
 
 delayed-stream@~1.0.0:
@@ -5416,10 +5414,10 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^2.0.1:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-2.0.2.tgz#3af2650be2b719549dc011a53118ecff5e28d0a2"
-  integrity sha512-CkFnhVuWj5stQUvRSeI+zAw0ME+Iprkew4HKSc491vOXLM+hKrDVn+QQoL2CIYy0CpvT0mY+MXlzPreNbuj/8A==
+execa@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-2.0.3.tgz#4b84301b33042cfb622771e886ed0b10e5634642"
+  integrity sha512-iM124nlyGSrXmuyZF1EMe83ESY2chIYVyDRZKgmcDynid2Q2v/+GuE7gNMl6Sy9Niwf4MC0DDxagOxeMPjuLsw==
   dependencies:
     cross-spawn "^6.0.5"
     get-stream "^5.0.0"
@@ -8494,18 +8492,18 @@ libnpx@^10.2.0:
     y18n "^4.0.0"
     yargs "^11.0.0"
 
-lint-staged@9.2.0:
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-9.2.0.tgz#155e5723dffdaa55d252c47bab05a2962c1e9781"
-  integrity sha512-K/CQWcxYunc8lGMNTFvtI4+ybJcHW3K4Ghudz2OrJhIWdW/i1WWu9rGiVj4yJ0+D/xh8a08kp5slt89VZC9Eqg==
+lint-staged@9.2.1:
+  version "9.2.1"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-9.2.1.tgz#57fc5947611604d5a32e478734a13f3e4687f646"
+  integrity sha512-3lGgJfBddCy/WndKdNko+uJbwyYjBD1k+V+SA+phBYWzH265S95KQya/Wln/UL+hOjc7NcjtFYVCUWuAcqYHhg==
   dependencies:
     chalk "^2.4.2"
     commander "^2.20.0"
     cosmiconfig "^5.2.1"
     debug "^4.1.1"
     dedent "^0.7.0"
-    del "^4.1.1"
-    execa "^2.0.1"
+    del "^5.0.0"
+    execa "^2.0.3"
     listr "^0.14.3"
     log-symbols "^3.0.0"
     micromatch "^4.0.2"
@@ -12039,10 +12037,10 @@ react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-native-device-info@2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-2.2.2.tgz#777388b8cff4594c8db2ea3a53f2f1f9e2c611a1"
-  integrity sha512-2b0TycUJbW/9T7L070L6q4+ce8guD4c0c8mWWjiVNuvCrZVf7VNomvNk1BqIVXcnYbZO43V0SVN6z1fvp2HTyg==
+react-native-device-info@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-2.3.0.tgz#7b2a8baf8453324bd8d120ce46e5e2bb0181ccd4"
+  integrity sha512-ISEChH2zg4bRX8PL1cYoNWffJ7wmgYosKyJbkWyTxs8g+rpeGkmMf9Wo4COriAt1AJ2jC78IGhJYFzbIc+Przw==
 
 react-native-firebase@5.5.5:
   version "5.5.5"
