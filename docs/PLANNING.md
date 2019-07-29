@@ -44,6 +44,7 @@
   - [ ] yellowbox warnings
   - [ ] dialog tests
   - [ ] test warnings
+  - [ ] web warnings
 - [ ] dark mode
 
 #### best practices and scalability
