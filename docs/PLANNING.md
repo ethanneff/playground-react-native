@@ -26,9 +26,8 @@
 #### working android app
 
 - [ ] hourly update
-  - [ ] remove momemnt
-  - [ ] focus day
   - [ ] scroll to day
+  - [ ] focus day
 - [ ] firebase
 - [ ] app center deploy
 - [ ] logins/signups
@@ -45,6 +44,7 @@
   - [ ] dialog tests
   - [ ] test warnings
   - [ ] web warnings
+  - [ ] remove momentjs
 - [ ] dark mode
 
 #### best practices and scalability
