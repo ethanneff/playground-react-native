@@ -12042,10 +12042,10 @@ react-native-device-info@2.3.1:
   resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-2.3.1.tgz#363267c4574dbd779290cdc06bb423f9c16d68d8"
   integrity sha512-4kIBeBdYB/IwNjbSTEvfnWgFB4cXL0drvdXKfcAgfI5vxmsLElR5HI6t9fqVkPyMCiRtI7mvS6PbG2kjGdbQMw==
 
-react-native-firebase@5.5.5:
-  version "5.5.5"
-  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-5.5.5.tgz#d5c7e02eb6ea5650f9ebbb23c2cd796f83e7ca45"
-  integrity sha512-i3MBEQ2xPsEFLLp4NjK5PC4tGA4RgUdULxiTHvmi9qCM2FlVV0YhyFoO+dQIFfW2V9AzSE0v38EPCuhZDp3RdQ==
+react-native-firebase@5.5.6:
+  version "5.5.6"
+  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-5.5.6.tgz#17b34ec0d5dc39afaaf0e159fd160f6339e0f707"
+  integrity sha512-AdbpGwKEEiMFgaRar9WOPc8Li4sfxR//WOyNQzxYsQ1fpARC908j7feqy2gu73SLqk4wzIrnlfJWakOe0/Bclg==
   dependencies:
     opencollective-postinstall "^2.0.0"
     prop-types "^15.7.2"
