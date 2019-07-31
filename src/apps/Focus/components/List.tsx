@@ -59,11 +59,20 @@ export const List = memo(({ onItemPress }: Props) => {
     }
   };
 
+  const getCurrentItem = (item: Item): boolean => {
+    const currentTime = new Date();
+    const before = currentTime.valueOf();
+    const after = currentTime.setHours(currentTime.getHours() + 1);
+    if (item.id > before && item.id < after) { return true; }
+    return false;
+  };
+
   const renderItem = ({ item, index }: { item: Item; index: number }) => {
     const firstItemOfDay =
       index < 1 ? false : item.dayOfMonth !== items[index - 1].dayOfMonth;
     return (
       <ListItem
+        currentItem={getCurrentItem(item)}
         item={item}
         showSection={firstItemOfDay}
         onItemPress={onItemPress}

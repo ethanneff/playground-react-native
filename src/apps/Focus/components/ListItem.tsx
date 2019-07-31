@@ -49,7 +49,6 @@ export const ListItem = memo(({ showSection, item, onItemPress }: Props) => {
             color: color.secondary,
             flex: 1
           }}
-          title={item.action}
           body1
           numberOfLines={1}
           ellipsizeMode={EllipsizeMode.Tail}

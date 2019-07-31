@@ -4,12 +4,13 @@ import { navigate, NavigationScreen } from "../../models";
 import { useRootDispatch } from "../../utils";
 import { List } from "./components/List";
 
-// TODO: highlight current index
 // TODO: scroll to current index
 // TODO: migrate all dialogs to Dialogs (remove modals from navigation layer)
 // TODO: batch item list
 // TODO: handle modals
 // TODO: flatlist on web
+// TODO: refresh every hour
+// TODO: convert hours to minutes to config 15, 30, 60, 120
 
 export const Focus = memo(() => {
   const dispatch = useRootDispatch();
