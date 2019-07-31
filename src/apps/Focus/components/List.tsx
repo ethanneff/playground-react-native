@@ -42,7 +42,7 @@ export const List = memo(({ onItemPress }: Props) => {
         items.length === 0
           ? moment()
               .startOf("day")
-              .add(3, "day")
+              .add(2, "day")
               .valueOf()
           : items[items.length - 1].id;
       const next = moment(lastItem).subtract(1, "hour");
