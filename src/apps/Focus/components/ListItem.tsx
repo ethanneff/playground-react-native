@@ -9,52 +9,62 @@ import { ListSection } from "./ListSection";
 interface Props {
   showSection: boolean;
   item: Item;
+  currentItem: boolean;
   onItemPress(item: Item): void;
 }
 
-export const ListItem = memo(({ showSection, item, onItemPress }: Props) => {
-  const color = useRootSelector(state => getCurrentColor(state));
-  return (
-    <View
-      style={{
-        flex: 1
-      }}
-    >
-      <TouchableOpacity
+export const ListItem = memo(
+  ({ showSection, item, onItemPress, currentItem }: Props) => {
+    const color = useRootSelector(state => getCurrentColor(state));
+    const future = item.id > Date.now();
+    const iconColor = future ? color.secondary : color.success;
+    const title = currentItem ? "current" : future ? "future" : item.action;
+    return (
+      <View
         style={{
-          flex: 1,
-          flexDirection: "row",
-          height: Theme.padding.p10,
-          paddingHorizontal: Theme.padding.p04,
-          paddingVertical: Theme.padding.p02
+          borderColor: currentItem ? color.primary : color.background,
+          borderLeftWidth: Theme.padding.p01,
+          flex: 1
         }}
-        onPress={() => onItemPress(item)}
       >
-        <View
+        <TouchableOpacity
           style={{
+            flex: 1,
             flexDirection: "row",
-            width: Theme.padding.p20
+            height: Theme.padding.p10,
+            paddingHorizontal: Theme.padding.p04,
+            paddingVertical: Theme.padding.p02
           }}
+          onPress={() => onItemPress(item)} // TODO: usecallback
+          disabled={future}
         >
-          <Icon
-            name="checkbox-blank-circle"
-            size={14}
-            color={color.success}
-            style={{ paddingRight: Theme.padding.p01 }}
+          <View
+            style={{
+              flexDirection: "row",
+              width: Theme.padding.p20
+            }}
+          >
+            <Icon
+              name={future ? "cancel" : "checkbox-blank-circle"}
+              size={14}
+              color={iconColor}
+              style={{ paddingRight: Theme.padding.p01 }}
+            />
+            <Text title={`${item.hour} ${item.zone}`} />
+          </View>
+          <Text
+            style={{
+              color: color.secondary,
+              flex: 1
+            }}
+            title={title}
+            body1
+            numberOfLines={1}
+            ellipsizeMode={EllipsizeMode.Tail}
           />
-          <Text title={`${item.hour} ${item.zone}`} />
-        </View>
-        <Text
-          style={{
-            color: color.secondary,
-            flex: 1
-          }}
-          body1
-          numberOfLines={1}
-          ellipsizeMode={EllipsizeMode.Tail}
-        />
-      </TouchableOpacity>
-      {showSection && <ListSection item={item} />}
-    </View>
-  );
-});
+        </TouchableOpacity>
+        {showSection && <ListSection item={item} />}
+      </View>
+    );
+  }
+);
