@@ -33,7 +33,7 @@
     "npm-check-updates": "3.1.20",
     "react": "16.8.6",
     "react-art": "16.8.6",
-    "react-dom": "16.8.6",
+    "react-dom": "16.9.0",
     "react-native": "0.59.9",
     "react-native-device-info": "2.3.2",
     "react-native-firebase": "5.5.6",
