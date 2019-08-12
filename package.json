@@ -11,6 +11,7 @@
     "ios": "                echo 'develop on ios';                react-native run-ios --simulator \"iPhone X\"",
     "android": "            echo 'develop on android';            react-native run-android",
     "web": "                echo 'develop on web';                react-scripts start",
+    "shake": "              echo 'shake android device';          adb shell input keyevent 82",
     "build": "              echo 'build production web';          react-scripts build",
     "start": "              echo 'run code watcher';              react-native start --reset-cache",
     "debug": "              echo 'run redux debugger';            open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
