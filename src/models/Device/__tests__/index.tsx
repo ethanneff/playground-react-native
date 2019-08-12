@@ -1,8 +1,7 @@
 import {
-  ConnectionInfo,
-  ConnectionType,
-  EffectiveConnectionType
-} from "react-native";
+  NetInfoState,
+  NetInfoStateType
+} from "@react-native-community/netinfo";
 import { getType } from "typesafe-actions";
 import {
   deviceInitialState,
@@ -113,11 +112,12 @@ describe("actions", () => {
     expect(loadDevice(payload)).toEqual(expectedAction);
   });
   it("updateNetwork", () => {
-    const type: ConnectionType = "wifi";
-    const effectiveType: EffectiveConnectionType = "2g";
-    const payload = {
-      effectiveType,
-      type
+    const payload: NetInfoState = {
+      details: {
+        isConnectionExpensive: true
+      },
+      isConnected: true,
+      type: NetInfoStateType.other
     };
     const expectedAction = {
       payload,
@@ -200,16 +200,19 @@ describe("reducer", () => {
     ).toEqual(data);
   });
   it("updateNetwork", () => {
-    const value: ConnectionInfo = {
-      effectiveType: "2g",
-      type: "wifi"
+    const payload: NetInfoState = {
+      details: {
+        isConnectionExpensive: true
+      },
+      isConnected: true,
+      type: NetInfoStateType.other
     };
     expect(
       deviceReducer(deviceInitialState, {
-        payload: value,
+        payload,
         type: getType(updateNetwork)
       })
-    ).toMatchObject({ networkEffectiveType: "2g", networkType: "wifi" });
+    ).toMatchObject({ networkType: "other" });
   });
   it("updateDimensions", () => {
     const size = {

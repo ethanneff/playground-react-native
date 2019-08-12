@@ -1,4 +1,5 @@
 // @ts-ignore yarn lint ignore because web enforces --isolatedModules
+import { NativeModules } from "react-native";
 
 jest.mock("react-native-device-info", () => ({
   getAPILevel: jest.fn(),
@@ -37,3 +38,9 @@ jest.mock("react-native-device-info", () => ({
   isPinOrFingerprintSet: jest.fn(),
   isTablet: jest.fn(() => false)
 }));
+
+NativeModules.RNCNetInfo = {
+  addListener: jest.fn(),
+  getCurrentState: jest.fn(() => Promise.resolve()),
+  removeListeners: jest.fn()
+};

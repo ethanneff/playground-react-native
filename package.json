@@ -23,6 +23,7 @@
     "travis-deploy-once": " echo 'prevent multiple deploys';      travis-deploy-once"
   },
   "dependencies": {
+    "@react-native-community/netinfo": "3.2.1",
     "@redux-offline/redux-offline": "2.5.2",
     "appcenter": "2.2.0",
     "appcenter-analytics": "2.2.0",

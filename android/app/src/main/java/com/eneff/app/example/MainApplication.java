@@ -10,6 +10,7 @@ import com.microsoft.appcenter.reactnative.appcenter.AppCenterReactNativePackage
 import com.microsoft.appcenter.reactnative.push.AppCenterReactNativePushPackage;
 import com.facebook.react.modules.storage.ReactDatabaseSupplier;
 import com.facebook.react.ReactApplication;
+import com.reactnativecommunity.netinfo.NetInfoPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.apsl.versionnumber.RNVersionNumberPackage;
 import com.facebook.react.ReactNativeHost;
@@ -30,7 +31,8 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(new MainReactPackage(), new RNDeviceInfo(), new RNVersionNumberPackage(),
+      return Arrays.<ReactPackage>asList(new MainReactPackage(),
+            new NetInfoPackage(), new RNDeviceInfo(), new RNVersionNumberPackage(),
           new VectorIconsPackage(), new RNFirebasePackage(),
           new AppCenterReactNativeCrashesPackage(MainApplication.this,
               getResources().getString(R.string.appCenterCrashes_whenToSendCrashes)),

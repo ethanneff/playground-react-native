@@ -1,10 +1,9 @@
 import {
-  ConnectionInfo,
-  ConnectionType,
-  Dimensions,
-  EffectiveConnectionType,
-  ScaledSize
-} from "react-native";
+  NetInfoCellularGeneration,
+  NetInfoState,
+  NetInfoStateType
+} from "@react-native-community/netinfo";
+import { Dimensions, ScaledSize } from "react-native";
 import DeviceInfo from "react-native-device-info";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";
@@ -22,7 +21,7 @@ export const updateFingerprint = createStandardAction(
 export const loadDevice = createStandardAction("device/LOAD")<DeviceState>();
 
 export const updateNetwork = createStandardAction("device/UPDATE_NETWORK")<
-  ConnectionInfo
+  NetInfoState
 >();
 
 export const updateDimensions = createStandardAction("device/UPDATE_DIMENSION")<
@@ -52,8 +51,11 @@ export const generateDeviceInitialState = (): DeviceState => ({
   manufacturer: DeviceInfo.getManufacturer(),
   maxMemory: DeviceInfo.getMaxMemory(),
   model: DeviceInfo.getModel(),
-  networkEffectiveType: "unknown",
-  networkType: "none",
+  networkCellularGeneration: undefined,
+  networkConnected: false,
+  networkExpensiveConnection: undefined,
+  networkReachable: false,
+  networkType: undefined,
   phoneNumber: DeviceInfo.getPhoneNumber(),
   screenDimensions: Dimensions.get("screen"),
   serialNumber: DeviceInfo.getSerialNumber(),
@@ -93,41 +95,45 @@ export interface DimensionsProps {
   screen: ScaledSize;
 }
 export interface DeviceState {
-  uniqueId: string;
-  manufacturer: string;
+  apiLevel: number;
+  batteryLevel: number;
   brand: string;
-  model: string;
+  carrier: string;
+  deviceCountry: string;
   deviceId: string;
+  deviceLocale: string;
+  deviceName: string;
+  firstInstallTime: number;
+  fontScale: number;
+  freeDiskStorage: number;
+  installReferrer: string;
+  instanceId: string;
+  is24Hour: boolean;
+  isEmulator: boolean;
+  isPinOrFingerprintSet: boolean;
+  isTablet: boolean;
+  lastUpdateTime: number;
+  manufacturer: string;
+  maxMemory: number;
+  model: string;
+  networkCellularGeneration: NetInfoCellularGeneration | undefined;
+  networkConnected: boolean;
+  networkExpensiveConnection: boolean | undefined;
+  networkReachable: boolean;
+  networkType: NetInfoStateType | undefined;
+  phoneNumber: string;
+  screenDimensions: ScaledSize;
+  serialNumber: string;
   systemName: string;
   systemVersion: string;
-  deviceName: string;
-  userAgent: string;
-  deviceLocale: string;
-  deviceCountry: string;
   timezone: string;
-  instanceId: string;
-  installReferrer: string;
-  isEmulator: boolean;
-  isTablet: boolean;
-  fontScale: number;
-  is24Hour: boolean;
-  isPinOrFingerprintSet: boolean;
-  firstInstallTime: number;
-  lastUpdateTime: number;
-  serialNumber: string;
-  phoneNumber: string;
-  apiLevel: number;
-  carrier: string;
-  totalMemory: number;
-  maxMemory: number;
   totalDiskCapacity: number;
-  freeDiskStorage: number;
-  batteryLevel: number;
-  networkType: ConnectionType;
-  networkEffectiveType: EffectiveConnectionType;
+  totalMemory: number;
+  uniqueId: string;
+  userAgent: string;
   windowDimensions: ScaledSize;
-  screenDimensions: ScaledSize;
 }
+
 export type DeviceActions = ActionType<
   | typeof updateBattery
   | typeof updateFingerprint
@@ -155,9 +161,16 @@ export const deviceReducer = (
         isPinOrFingerprintSet: action.payload
       };
     case getType(updateNetwork):
+      const details = action.payload.details;
+      // TODO: update netinfo to 4+
+      // networkReachable: action.payload.isInternetReachable,
+      // networkCellularGeneration: details ? details.cellularGeneration,
       return {
         ...state,
-        networkEffectiveType: action.payload.effectiveType,
+        networkConnected: action.payload.isConnected,
+        networkExpensiveConnection: details
+          ? details.isConnectionExpensive
+          : undefined,
         networkType: action.payload.type
       };
     case getType(updateDimensions):
