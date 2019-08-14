@@ -37,6 +37,7 @@
 
 #### code cleanup
 
+- [ ] fix broken ci
 - [ ] remove all commented code
   - [ ] swipe
   - [ ] slack
@@ -152,6 +153,7 @@
 - [ ] re-enable prepush?
 - [ ] get a working deploy to android/ios
 - [ ] set metro.config to `true` without crashing because of `react-native-vector-icons`w
+- [ ] deploy rollback https://eng.uber.com/ubereats-react-native/
 
 #### v9 best practices
 
