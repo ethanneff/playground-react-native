@@ -1,5 +1,50 @@
 # Changelog
 
+# [2.5.0](https://github.com/ethanneff/example/compare/v2.4.0...v2.5.0) (2019-08-26)
+
+
+### Bug Fixes
+
+* add alert import ([8086e39](https://github.com/ethanneff/example/commit/8086e39))
+* add black and white colors for overlay ([3953339](https://github.com/ethanneff/example/commit/3953339))
+* add current item logic and highlight ([f90b34d](https://github.com/ethanneff/example/commit/f90b34d))
+* add flex prop to card ([6a38bcd](https://github.com/ethanneff/example/commit/6a38bcd))
+* add memo to launcher ([7593432](https://github.com/ethanneff/example/commit/7593432))
+* add more padding sizes ([567f9f0](https://github.com/ethanneff/example/commit/567f9f0))
+* add more vscode defaults ([77fae35](https://github.com/ethanneff/example/commit/77fae35))
+* add shake script ([7aad6aa](https://github.com/ethanneff/example/commit/7aad6aa))
+* add tests for model logout ([881ae68](https://github.com/ethanneff/example/commit/881ae68))
+* correct typings for useRootDispatch ([3d5f169](https://github.com/ethanneff/example/commit/3d5f169))
+* correct web linting warnings ([598521d](https://github.com/ethanneff/example/commit/598521d))
+* make light more visible ([afe968c](https://github.com/ethanneff/example/commit/afe968c))
+* make navigation cleaner ([f526400](https://github.com/ethanneff/example/commit/f526400))
+* prevent console log require import ([ec747db](https://github.com/ethanneff/example/commit/ec747db))
+* remove alert and update dialog to hook ([96df21e](https://github.com/ethanneff/example/commit/96df21e))
+* remove app card for global card ([530f522](https://github.com/ethanneff/example/commit/530f522))
+* remove settings from darkmode ([f106302](https://github.com/ethanneff/example/commit/f106302))
+* remove yellowbox ([5c7a47c](https://github.com/ethanneff/example/commit/5c7a47c))
+* too many days in the future ([0e01519](https://github.com/ethanneff/example/commit/0e01519))
+* typings for timers ([1eca013](https://github.com/ethanneff/example/commit/1eca013))
+* update dependencies ([12200ea](https://github.com/ethanneff/example/commit/12200ea))
+* update test script ([6fe5576](https://github.com/ethanneff/example/commit/6fe5576))
+* update text onpress animations on simulator and web ([7c96fc9](https://github.com/ethanneff/example/commit/7c96fc9))
+* use dialog instead of alert ([4f5d22f](https://github.com/ethanneff/example/commit/4f5d22f))
+* useDispatch must happen within a component ([d4b5445](https://github.com/ethanneff/example/commit/d4b5445))
+* web error when passing color to view ([9cae05c](https://github.com/ethanneff/example/commit/9cae05c))
+
+
+### Features
+
+* add alert component that is not dependent on navigation ([8680acb](https://github.com/ethanneff/example/commit/8680acb))
+* add article screen ([c38e9cd](https://github.com/ethanneff/example/commit/c38e9cd))
+* add content component ([8ac9b0c](https://github.com/ethanneff/example/commit/8ac9b0c))
+* add ellipsize props to text ([0cf5351](https://github.com/ethanneff/example/commit/0cf5351))
+* add focus app ([cc357cb](https://github.com/ethanneff/example/commit/cc357cb))
+* add loader component ([579b5b1](https://github.com/ethanneff/example/commit/579b5b1))
+* add netinfo ([0c4ca4d](https://github.com/ethanneff/example/commit/0c4ca4d))
+* add onpress animation to text ([a1aa107](https://github.com/ethanneff/example/commit/a1aa107))
+* highlight current item ([7834587](https://github.com/ethanneff/example/commit/7834587))
+
 # [2.4.0](https://github.com/ethanneff/example/compare/v2.3.0...v2.4.0) (2019-07-16)
 
 
