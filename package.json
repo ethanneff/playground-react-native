@@ -15,7 +15,7 @@
     "build": "              echo 'build production web';          react-scripts build",
     "start": "              echo 'run code watcher';              react-native start --reset-cache",
     "debug": "              echo 'run redux debugger';            open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
-    "test": "               echo 'run unit tests';                jest --coverage -u",
+    "test": "               echo 'run unit tests';                jest -u --forceExit --coverage --verbose",
     "watch": "              echo 'run unit tests reloader';       jest --watch",
     "lint": "               echo 'run code linter';               tsc && tslint --fix -p tsconfig.json -c tslint.json",
     "upgrade": "            echo 'run react native upgrade'       yarn global add react-native-git-upgrade; react-native-git-upgrade; rm -f .babelrc; rm -f ./.buckconfig; rm -f ./.flowconfig; rm -f ./.watchmanconfig; rm -f ./.gitattributes;",
