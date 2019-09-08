@@ -1,5 +1,17 @@
 # Changelog
 
+# [2.6.0](https://github.com/ethanneff/example/compare/v2.5.0...v2.6.0) (2019-09-08)
+
+
+### Bug Fixes
+
+* update dependency ([96f43ed](https://github.com/ethanneff/example/commit/96f43ed))
+
+
+### Features
+
+* update to react native 0.60.5 ([70f7c87](https://github.com/ethanneff/example/commit/70f7c87))
+
 # [2.5.0](https://github.com/ethanneff/example/compare/v2.4.0...v2.5.0) (2019-08-26)
 
 
