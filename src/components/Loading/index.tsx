@@ -25,12 +25,12 @@ export const Loading: React.FC<Props> = memo(({ title, center, style }) => {
     center ? styles.center : undefined,
     style
   ];
-  let ellipsisCountdown: NodeJS.Timer;
+  // let ellipsisCountdown: NodeJS.Timer;
   const [ellipsisIndex, setEllipsisIndex] = useState(1);
   const animateTextNextIndex = (index: number) =>
     index >= ellipsis.length - 1 ? 0 : index + 1;
   const animateText = useCallback(() => {
-    ellipsisCountdown = setTimeout(() => {
+    setTimeout(() => {
       setEllipsisIndex(index => animateTextNextIndex(index));
       animateText();
     }, ellipsisDuration);
@@ -38,7 +38,7 @@ export const Loading: React.FC<Props> = memo(({ title, center, style }) => {
 
   useEffect(() => {
     animateText();
-    return () => clearTimeout(ellipsisCountdown);
+    // return () => clearTimeout(ellipsisCountdown);
   }, [animateText]);
 
   return (

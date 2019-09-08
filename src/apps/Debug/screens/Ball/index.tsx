@@ -41,14 +41,14 @@ type Props = StateProps & DispatchProps;
 class Container extends React.PureComponent<Props> {
   private ballPosition: Animated.ValueXY;
 
-  constructor(props: Props) {
+  public constructor(props: Props) {
     super(props);
     const { width, height } = this.props;
     this.ballPosition = new Animated.ValueXY({ x: width / 2, y: height / 2 });
   }
   public render() {
     return (
-      <Screen onLeftPress={this.nav(NavigationScreen.Debug)}>
+      <Screen onLeftPress={this.nav("debug")}>
         <Animated.View style={[this.ballPosition.getLayout(), styles.ball]} />
         <View style={styles.button}>
           <Button title="initial" onPress={() => this.animate(0.5, 0.5)} />
@@ -78,7 +78,7 @@ const mapStateToProps = (state: RootState) => ({
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const Ball = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Container);

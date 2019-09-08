@@ -1,23 +1,18 @@
-import React from "react";
+import React, { memo } from "react";
 import { FlatList, View } from "react-native";
 import { Button, Screen, Text } from "../../../../components";
-import {
-  changeTheme,
-  ColorTheme,
-  navigate,
-  NavigationScreen
-} from "../../../../models";
+import { changeTheme, ColorTheme } from "../../../../models";
 import { useRootDispatch, useRootSelector } from "../../../../utils";
+import { useNav } from "../../../../behaviors";
 
-export const Settings = () => {
+export default memo(function PortfolioSettings() {
   const dispatch = useRootDispatch();
   const themes = Object.values(ColorTheme);
   const currentTheme = useRootSelector(state => state.theme.currentColor);
-  const navBack = () => dispatch(navigate(NavigationScreen.PortfolioLanding));
+  const nav = useNav();
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
-
   return (
-    <Screen onLeftPress={navBack}>
+    <Screen onLeftPress={nav.to("portfolioLanding")}>
       <Text h1 center title="Settings" />
       <FlatList
         ListHeaderComponent={() => <Button disable title="Theme" />}
@@ -39,4 +34,4 @@ export const Settings = () => {
       </View>
     </Screen>
   );
-};
+});

@@ -25,7 +25,7 @@ interface Question {
   title: string;
   type: QuestionType;
   description?: string;
-  choices: ReadonlyArray<string>;
+  choices: readonly string[];
 }
 
 export interface Questions {

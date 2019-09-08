@@ -5,17 +5,17 @@ import {
   TouchableWithoutFeedback,
   View
 } from "react-native";
-import { getCurrentColor, hideModal } from "../../models";
+import { hideModal } from "../../models";
 import {
   colorWithOpacity,
   Theme,
   useNativeDriver,
-  useRootDispatch,
-  useRootSelector
+  useRootDispatch
 } from "../../utils";
 import { Button } from "../Button";
 import { Card } from "../Card";
 import { Text } from "../Text";
+import { useColor } from "../../behaviors";
 
 interface OwnProps {
   testID?: string;
@@ -44,7 +44,7 @@ export const Dialog: React.FC<Props> = memo(
     duration,
     testID
   }) => {
-    const color = useRootSelector(state => getCurrentColor(state));
+    const color = useColor();
     const styles = StyleSheet.create({
       buttonContainer: {
         flexDirection: "row",

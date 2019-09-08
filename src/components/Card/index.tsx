@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity, View, ViewStyle } from "react-native";
-import { getCurrentColor } from "../../models";
-import { Theme, useRootSelector } from "../../utils";
+import { Theme } from "../../utils";
+import { useColor } from "../../behaviors";
 
 interface Props {
   flex?: boolean;
@@ -27,7 +27,7 @@ export const Card: React.FC<Props> = memo(
     selected,
     style
   }) => {
-    const color = useRootSelector(state => getCurrentColor(state));
+    const color = useColor();
     const shadowOpacity = elevation * 0.036 + 0.12;
     const shadowRadius = elevation * 0.36 + 1.2;
     const opacity =

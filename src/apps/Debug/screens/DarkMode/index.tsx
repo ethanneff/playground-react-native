@@ -1,5 +1,5 @@
 // TODO: slider on web
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import {
   FlatList,
   Image,
@@ -8,14 +8,9 @@ import {
   View
 } from "react-native";
 import { Button, Card, Screen, Text } from "../../../../components";
-import {
-  changeTheme,
-  ColorTheme,
-  getCurrentColor,
-  navigate,
-  NavigationScreen
-} from "../../../../models";
+import { changeTheme, ColorTheme } from "../../../../models";
 import { Theme, useRootDispatch, useRootSelector } from "../../../../utils";
+import { useColor, useNav } from "../../../../behaviors";
 
 interface Card {
   title: string;
@@ -25,12 +20,12 @@ interface Card {
   button?: string;
 }
 
-export const DarkMode = () => {
+export default memo(function DarkMode() {
   const dispatch = useRootDispatch();
   const themes = Object.values(ColorTheme);
-  const color = useRootSelector(state => getCurrentColor(state));
+  const color = useColor();
+  const nav = useNav();
   const currentTheme = useRootSelector(state => state.theme.currentColor);
-  const navBack = () => dispatch(navigate(NavigationScreen.PortfolioLanding));
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   const [elevation, setElevation] = useState(0);
   const handleSlider = (value: number) => setElevation(value);
@@ -77,7 +72,7 @@ export const DarkMode = () => {
   ];
 
   return (
-    <Screen onLeftPress={navBack}>
+    <Screen onLeftPress={nav.to("portfolioLanding")}>
       <View
         style={{
           backgroundColor: color.surface,
@@ -116,7 +111,7 @@ export const DarkMode = () => {
         keyExtractor={item => item.title}
         data={cards}
         renderItem={({ item }) => (
-          <Card elevation={elevation} onPress={() => undefined}>
+          <Card elevation={elevation} onPress={() => undefined} flex>
             <Text title={item.title} overline />
             <Text
               title={item.value}
@@ -140,4 +135,4 @@ export const DarkMode = () => {
       />
     </Screen>
   );
-};
+});

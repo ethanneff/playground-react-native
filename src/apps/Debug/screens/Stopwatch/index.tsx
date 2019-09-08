@@ -264,10 +264,7 @@ class Container extends React.PureComponent<Props> {
     const { now, start, laps } = this.state;
     const timer = now - start;
     return (
-      <Screen
-        onLeftPress={this.nav(NavigationScreen.Debug)}
-        style={styles.container}
-      >
+      <Screen onLeftPress={this.nav("debug")} style={styles.container}>
         <Timer
           interval={laps.reduce((total, curr) => total + curr, 0) + timer}
           style={styles.timer}
@@ -331,7 +328,7 @@ class Container extends React.PureComponent<Props> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const Stopwatch = connect(
+export default connect(
   null,
   mapDispatchToProps
 )(Container);

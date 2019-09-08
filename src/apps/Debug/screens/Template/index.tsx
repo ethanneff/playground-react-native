@@ -1,33 +1,21 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, View } from "react-native";
 import { Screen } from "../../../../components";
-import {
-  getCurrentColor,
-  navigate,
-  NavigationScreen
-} from "../../../../models";
-import { useRootDispatch, useRootSelector } from "../../../../utils";
+import { useColor, useNav } from "../../../../behaviors";
 
-interface Props {
-  width?: string;
-}
-
-export const Template: React.FC<Props> = props => {
-  const dispatch = useRootDispatch();
-  const color = useRootSelector(state => getCurrentColor(state));
-  const { width = "100%" } = props;
+export default memo(function DebugTemplate() {
+  const color = useColor();
+  const nav = useNav();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background,
-      width
+      backgroundColor: color.background
     }
   });
-  const nav = (to: NavigationScreen) => () => dispatch(navigate(to));
   return (
-    <Screen onLeftPress={nav(NavigationScreen.Debug)}>
+    <Screen onLeftPress={nav.to("debug")}>
       <View style={styles.container}>
         <></>
       </View>
     </Screen>
   );
-};
+});

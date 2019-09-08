@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FlatList, View } from "react-native";
 import { Button, Card, Dialog, Text } from "../../../../../components";
-
 import { questionnairesInitialState } from "../models";
 
 export const Questionnaire = () => {

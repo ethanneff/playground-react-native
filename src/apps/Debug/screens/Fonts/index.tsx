@@ -13,7 +13,7 @@ type Props = DispatchProps;
 class Container extends React.PureComponent<Props> {
   public render() {
     return (
-      <Screen onLeftPress={this.nav(NavigationScreen.Debug)}>
+      <Screen onLeftPress={this.nav("debug")}>
         <ScrollView>
           <Text h1 title="H1: The quick brown fox jumps over the lazy dog." />
           <Text h2 title="H2: The quick brown fox jumps over the lazy dog." />
@@ -59,7 +59,7 @@ class Container extends React.PureComponent<Props> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const Fonts = connect(
+export default connect(
   null,
   mapDispatchToProps
 )(Container);

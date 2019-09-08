@@ -1,14 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<View
-  style={
-    Array [
-      undefined,
-      undefined,
-    ]
-  }
->
+<View>
   <Text
     allowFontScaling={false}
     style={
@@ -36,14 +29,7 @@ exports[`renders correctly 1`] = `
 `;
 
 exports[`renders correctly with clear and max badge 1`] = `
-<View
-  style={
-    Array [
-      undefined,
-      undefined,
-    ]
-  }
->
+<View>
   <Text
     allowFontScaling={false}
     style={
@@ -101,14 +87,7 @@ exports[`renders correctly with clear and max badge 1`] = `
 `;
 
 exports[`renders correctly without defaults 1`] = `
-<View
-  style={
-    Array [
-      undefined,
-      undefined,
-    ]
-  }
->
+<View>
   <Text
     allowFontScaling={false}
     style={

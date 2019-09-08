@@ -40,10 +40,10 @@ class Container extends React.PureComponent<Props> {
   };
   private panGesture: PanResponderInstance;
   private gestureHandler: GestureHandler;
-  private minTouches = 3;
+  private minTouches = 2;
   private title = `pinch or spread the screen with ${this.minTouches} fingers minimum`;
 
-  constructor(props: Props) {
+  public constructor(props: Props) {
     super(props);
     this.gestureHandler = new GestureHandler({ minTouches: this.minTouches });
     this.panGesture = PanResponder.create({
@@ -67,7 +67,7 @@ class Container extends React.PureComponent<Props> {
   public render() {
     const { spreadCount, pinchCount } = this.state;
     return (
-      <Screen disableScroll onLeftPress={this.nav(NavigationScreen.Debug)}>
+      <Screen disableScroll onLeftPress={this.nav("debug")}>
         <Text center title={this.title} />
         <Text center title={`spread: ${spreadCount}`} />
         <Text center title={`pinch: ${pinchCount}`} />
@@ -88,7 +88,7 @@ const mapStateToProps = (state: RootState) => ({
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const PinchSpread = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Container);

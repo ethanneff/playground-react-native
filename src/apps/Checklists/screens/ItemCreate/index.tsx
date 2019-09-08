@@ -24,7 +24,7 @@ class Component extends React.PureComponent<Props, State> {
   public render() {
     const { name, description } = this.state;
     return (
-      <Screen onLeftPress={this.nav(NavigationScreen.ChecklistsList)}>
+      <Screen onLeftPress={this.nav("checklistsList")}>
         <TextInput title="name" value={name} onChangeText={this.setName} />
         <TextInput
           title="description"
@@ -46,11 +46,11 @@ class Component extends React.PureComponent<Props, State> {
     const { createItem: create } = this.props;
     const { name, description } = this.state;
     create({ name, description });
-    this.nav(NavigationScreen.ChecklistsList);
+    this.nav("checklistsList");
   };
 }
 
-export const ItemCreate = connect(
+export default connect(
   (state: RootState) => ({
     state
   }),

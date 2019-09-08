@@ -33,7 +33,7 @@ class Container extends React.PureComponent<Props> {
   public render() {
     const { email, password, name, error } = this.state;
     return (
-      <Screen onLeftPress={this.nav(NavigationScreen.Debug)}>
+      <Screen onLeftPress={this.nav("debug")}>
         <View style={this.styles.container}>
           <TextInput
             title="Name"
@@ -76,7 +76,7 @@ class Container extends React.PureComponent<Props> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const Input = connect(
+export default connect(
   null,
   mapDispatchToProps
 )(Container);

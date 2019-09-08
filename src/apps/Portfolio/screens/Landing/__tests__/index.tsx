@@ -1,8 +1,8 @@
 import React from "react";
 import { mockRenderer } from "../../../../../utils/Mock";
-import { Landing } from "../../Landing";
+import Screen from "..";
 
 it("renders correctly", () => {
-  const dom = mockRenderer(<Landing />).toJSON();
+  const dom = mockRenderer(<Screen />).toJSON();
   expect(dom).toMatchSnapshot();
 });

@@ -16,7 +16,7 @@ export const removeResponse = createStandardAction("responses/REMOVE")<
 interface Response {
   id: string;
   userId: string;
-  responses: { [questionId: string]: ReadonlyArray<string> };
+  responses: { [questionId: string]: readonly string[] };
   createdAt: string;
 }
 

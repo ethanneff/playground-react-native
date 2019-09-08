@@ -147,7 +147,7 @@ export const data: ContentBody = {
             },
             {
               content: "nav herhere",
-              onPress: () => alert("here"),
+              onPress: () => undefined,
               type: ParagraphType.Link
             },
             {

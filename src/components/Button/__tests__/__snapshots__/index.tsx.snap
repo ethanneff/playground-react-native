@@ -3,7 +3,9 @@
 exports[`renders contained 1`] = `
 <View
   accessible={true}
+  clickable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -45,7 +47,9 @@ exports[`renders contained 1`] = `
 exports[`renders contained disable 1`] = `
 <View
   accessible={true}
+  clickable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -87,7 +91,9 @@ exports[`renders contained disable 1`] = `
 exports[`renders correctly 1`] = `
 <View
   accessible={true}
+  clickable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -129,7 +135,9 @@ exports[`renders correctly 1`] = `
 exports[`renders correctly 2`] = `
 <View
   accessible={true}
+  clickable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -171,7 +179,9 @@ exports[`renders correctly 2`] = `
 exports[`renders fab  1`] = `
 <View
   accessible={true}
+  clickable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -213,7 +223,9 @@ exports[`renders fab  1`] = `
 exports[`renders icon 1`] = `
 <View
   accessible={true}
+  clickable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -240,18 +252,15 @@ exports[`renders icon 1`] = `
       Array [
         undefined,
         Array [
+          Object {
+            "color": "hsl(211, 100%, 50%)",
+          },
           undefined,
-          Array [
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-          ],
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
         ],
       ]
     }
@@ -266,20 +275,7 @@ exports[`renders icon 1`] = `
           },
           Array [
             undefined,
-            Array [
-              undefined,
-              Array [
-                Object {
-                  "color": "hsl(211, 100%, 50%)",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
-            ],
+            undefined,
           ],
           Object {
             "fontFamily": "Material Design Icons",
@@ -299,7 +295,9 @@ exports[`renders icon 1`] = `
 exports[`renders icon title 1`] = `
 <View
   accessible={true}
+  clickable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -324,22 +322,19 @@ exports[`renders icon title 1`] = `
   <View
     style={
       Array [
-        undefined,
+        Object {
+          "paddingRight": 2,
+        },
         Array [
           Object {
-            "paddingRight": 2,
+            "color": "hsl(211, 100%, 50%)",
           },
-          Array [
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-          ],
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
         ],
       ]
     }
@@ -354,22 +349,7 @@ exports[`renders icon title 1`] = `
           },
           Array [
             undefined,
-            Array [
-              Object {
-                "paddingRight": 2,
-              },
-              Array [
-                Object {
-                  "color": "hsl(211, 100%, 50%)",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
-            ],
+            undefined,
           ],
           Object {
             "fontFamily": "Material Design Icons",
@@ -403,7 +383,9 @@ exports[`renders icon title 1`] = `
 exports[`renders outlined 1`] = `
 <View
   accessible={true}
+  clickable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -444,7 +426,9 @@ exports[`renders outlined 1`] = `
 exports[`renders sizing 1`] = `
 <View
   accessible={true}
+  clickable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -488,7 +472,9 @@ exports[`renders sizing 1`] = `
 exports[`renders text 1`] = `
 <View
   accessible={true}
+  clickable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}

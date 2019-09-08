@@ -24,7 +24,9 @@ exports[`renders correctly 1`] = `
   >
     <View
       accessible={true}
+      clickable={false}
       isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -41,7 +43,9 @@ exports[`renders correctly 1`] = `
     />
     <View
       accessible={true}
+      clickable={false}
       isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -116,22 +120,22 @@ exports[`renders correctly 1`] = `
         data={
           Array [
             Object {
-              "color": "lightgrey",
+              "color": "hsl(211, 100%, 50%)",
               "key": 1,
               "text": "hello",
             },
             Object {
-              "color": "lightblue",
+              "color": "hsl(208, 7%, 46%)",
               "key": 2,
               "text": "bob",
             },
             Object {
-              "color": "lightgreen",
+              "color": "hsl(134, 61%, 41%)",
               "key": 3,
               "text": "steve",
             },
             Object {
-              "color": "lightpink",
+              "color": "hsl(264, 34%, 36%)",
               "key": 4,
               "text": "jill",
             },
@@ -176,7 +180,7 @@ exports[`renders correctly 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "lightgrey",
+                  "backgroundColor": "hsl(211, 100%, 50%)",
                   "justifyContent": "center",
                   "width": 750,
                 }
@@ -212,7 +216,7 @@ exports[`renders correctly 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "lightblue",
+                  "backgroundColor": "hsl(208, 7%, 46%)",
                   "justifyContent": "center",
                   "width": 750,
                 }
@@ -248,7 +252,7 @@ exports[`renders correctly 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "lightgreen",
+                  "backgroundColor": "hsl(134, 61%, 41%)",
                   "justifyContent": "center",
                   "width": 750,
                 }
@@ -284,7 +288,7 @@ exports[`renders correctly 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "lightpink",
+                  "backgroundColor": "hsl(264, 34%, 36%)",
                   "justifyContent": "center",
                   "width": 750,
                 }
@@ -318,7 +322,9 @@ exports[`renders correctly 1`] = `
       >
         <View
           accessible={true}
+          clickable={true}
           isTVSelectable={true}
+          onClick={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -357,7 +363,9 @@ exports[`renders correctly 1`] = `
         </View>
         <View
           accessible={true}
+          clickable={true}
           isTVSelectable={true}
+          onClick={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -396,46 +404,9 @@ exports[`renders correctly 1`] = `
         </View>
         <View
           accessible={true}
+          clickable={true}
           isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "borderColor": "transparent",
-              "borderRadius": 4,
-              "borderWidth": 1,
-              "flexDirection": "row",
-              "height": 36,
-              "justifyContent": "center",
-              "opacity": 1,
-              "paddingHorizontal": 16,
-            }
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "hsl(211, 100%, 50%)",
-                "fontSize": 14,
-                "fontWeight": "600",
-                "letterSpacing": 0.75,
-                "opacity": 1,
-                "textAlign": "center",
-              }
-            }
-          >
-            DEBUG
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          isTVSelectable={true}
+          onClick={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -483,7 +454,50 @@ exports[`renders correctly 1`] = `
       >
         <View
           accessible={true}
+          clickable={true}
           isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderColor": "transparent",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "flexDirection": "row",
+              "height": 36,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "hsl(211, 100%, 50%)",
+                "fontSize": 14,
+                "fontWeight": "600",
+                "letterSpacing": 0.75,
+                "opacity": 1,
+                "textAlign": "center",
+              }
+            }
+          >
+            DEBUG
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          clickable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -522,7 +536,9 @@ exports[`renders correctly 1`] = `
         </View>
         <View
           accessible={true}
+          clickable={true}
           isTVSelectable={true}
+          onClick={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -561,7 +577,9 @@ exports[`renders correctly 1`] = `
         </View>
         <View
           accessible={true}
+          clickable={true}
           isTVSelectable={true}
+          onClick={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}

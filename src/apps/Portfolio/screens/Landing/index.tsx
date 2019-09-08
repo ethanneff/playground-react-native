@@ -1,36 +1,30 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, View } from "react-native";
 import { Button, Screen, Text } from "../../../../components";
-import { navigate, NavigationScreen } from "../../../../models";
-import { useRootDispatch } from "../../../../utils";
-import { Walkthrough } from "./Walkthrough";
+import Walkthrough from "./Walkthrough";
+import { useNav } from "../../../../behaviors";
 
-export const Landing = () => {
-  const dispatch = useRootDispatch();
-  const styles = StyleSheet.create({
-    row: { flexDirection: "row", justifyContent: "space-around" }
-  });
+const styles = StyleSheet.create({
+  row: { flexDirection: "row", justifyContent: "space-around" }
+});
 
-  const nav = (to: NavigationScreen) => () => dispatch(navigate(to));
-
+export default memo(function PortfolioLanding() {
+  const nav = useNav();
   return (
     <Screen>
       <Text h1 title="Landing" center />
       <Walkthrough />
       <View style={styles.row}>
-        <Button title="Login" onPress={nav(NavigationScreen.PortfolioLogin)} />
-        <Button title="Main" onPress={nav(NavigationScreen.Portfolio)} />
-        <Button title="Debug" onPress={nav(NavigationScreen.Debug)} />
-        <Button
-          title="Settings"
-          onPress={nav(NavigationScreen.PortfolioSettings)}
-        />
+        <Button title="Login" onPress={nav.to("portfolioLogin")} />
+        <Button title="Main" onPress={nav.to("portfolio")} />
+        <Button title="Settings" onPress={nav.to("portfolioSettings")} />
       </View>
       <View style={styles.row}>
-        <Button title="Checklist" onPress={nav(NavigationScreen.Checklists)} />
-        <Button title="CantHurtMe" onPress={nav(NavigationScreen.CantHurtMe)} />
-        <Button title="Focus" onPress={nav(NavigationScreen.Focus)} />
+        <Button title="Debug" onPress={nav.to("debug")} />
+        <Button title="Checklist" onPress={nav.to("checklists")} />
+        <Button title="CantHurtMe" onPress={nav.to("cantHurtMe")} />
+        <Button title="Focus" onPress={nav.to("focus")} />
       </View>
     </Screen>
   );
-};
+});

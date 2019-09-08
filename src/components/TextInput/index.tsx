@@ -1,7 +1,3 @@
-/* 
-styling https://uxdesign.cc/design-better-forms-96fadca0f49c
-*/
-
 import React, { memo, useRef, useState } from "react";
 import {
   StyleSheet,
@@ -10,9 +6,13 @@ import {
   View,
   ViewStyle
 } from "react-native";
-import { getCurrentColor } from "../../models";
-import { Theme, useRootSelector } from "../../utils";
+import { Theme } from "../../utils";
 import { Button } from "../Button";
+import { useColor } from "../../behaviors";
+
+/* 
+styling https://uxdesign.cc/design-better-forms-96fadca0f49c
+*/
 
 interface Props {
   autoCorrect?: boolean;
@@ -75,7 +75,7 @@ export const TextInput: React.FC<Props> = memo(
     value
   }) => {
     const [focus, setFocus] = useState(false);
-    const color = useRootSelector(state => getCurrentColor(state));
+    const color = useColor();
     const focusColor = color.primary;
     const styles = StyleSheet.create({
       borderError: {

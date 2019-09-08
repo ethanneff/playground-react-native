@@ -1,5 +1,5 @@
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
-import { RootAction, RootState } from "../../containers";
+import { RootAction, RootState, screens } from "../../containers";
 import { logout } from "../Auth";
 
 /* ACTIONS */
@@ -18,39 +18,7 @@ export const getModal = (state: RootState): NavigationModal =>
   state.navigation.modal;
 
 /* INTERFACES */
-export enum NavigationScreen {
-  CantHurtMe,
-  Checklists,
-  ChecklistsCreate,
-  ChecklistsItemCreate,
-  ChecklistsItemUpdate,
-  ChecklistsList,
-  ChecklistsUpdate,
-  Debug,
-  DebugArticle,
-  DebugBall,
-  DebugButtons,
-  DebugCards,
-  DebugChat,
-  DebugDarkMode,
-  DebugDrag,
-  DebugFonts,
-  DebugImageCollection,
-  DebugInput,
-  DebugOKRs,
-  DebugPinchSpread,
-  DebugQuestionnaire,
-  DebugSearchBar,
-  DebugStopwatch,
-  DebugSwipeCell,
-  Focus,
-  Portfolio,
-  PortfolioForgotPassword,
-  PortfolioLanding,
-  PortfolioLogin,
-  PortfolioNotFound,
-  PortfolioSettings
-}
+export type NavigationScreen = keyof typeof screens;
 
 export enum NavigationModal {
   None,
@@ -70,7 +38,7 @@ export type NavigationActions = ActionType<
 /* REDUCERS */
 export const navigationInitialState: Navigation = {
   modal: NavigationModal.None,
-  screen: NavigationScreen.PortfolioLanding
+  screen: "portfolioLanding"
 };
 export function navigationReducer(
   state: Navigation = navigationInitialState,

@@ -61,7 +61,9 @@ exports[`renders correctly 1`] = `
     />
     <View
       accessible={true}
+      clickable={true}
       isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -91,20 +93,17 @@ exports[`renders correctly 1`] = `
           Array [
             undefined,
             Array [
+              Object {
+                "color": "hsl(211, 100%, 50%)",
+              },
               undefined,
-              Array [
-                Object {
-                  "color": "hsl(211, 100%, 50%)",
-                },
-                undefined,
-                Object {
-                  "color": "hsl(208, 7%, 46%)",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "hsl(208, 7%, 46%)",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ],
           ]
         }
@@ -119,22 +118,7 @@ exports[`renders correctly 1`] = `
               },
               Array [
                 undefined,
-                Array [
-                  undefined,
-                  Array [
-                    Object {
-                      "color": "hsl(211, 100%, 50%)",
-                    },
-                    undefined,
-                    Object {
-                      "color": "hsl(208, 7%, 46%)",
-                    },
-                    undefined,
-                    undefined,
-                    undefined,
-                    undefined,
-                  ],
-                ],
+                undefined,
               ],
               Object {
                 "fontFamily": "Material Design Icons",
@@ -152,7 +136,9 @@ exports[`renders correctly 1`] = `
   </View>
   <View
     accessible={true}
+    clickable={true}
     isTVSelectable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -179,24 +165,19 @@ exports[`renders correctly 1`] = `
     <View
       style={
         Array [
-          Object {
-            "opacity": 0,
-          },
+          "",
           Array [
-            "",
-            Array [
-              Object {
-                "color": "hsl(211, 100%, 50%)",
-              },
-              undefined,
-              undefined,
-              Object {
-                "color": "hsl(354, 70%, 54%)",
-              },
-              undefined,
-              undefined,
-              undefined,
-            ],
+            Object {
+              "color": "hsl(211, 100%, 50%)",
+            },
+            undefined,
+            undefined,
+            Object {
+              "color": "hsl(354, 70%, 54%)",
+            },
+            undefined,
+            undefined,
+            undefined,
           ],
         ]
       }
@@ -213,22 +194,7 @@ exports[`renders correctly 1`] = `
               Object {
                 "opacity": 0,
               },
-              Array [
-                "",
-                Array [
-                  Object {
-                    "color": "hsl(211, 100%, 50%)",
-                  },
-                  undefined,
-                  undefined,
-                  Object {
-                    "color": "hsl(354, 70%, 54%)",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ],
+              undefined,
             ],
             Object {
               "fontFamily": "Material Design Icons",

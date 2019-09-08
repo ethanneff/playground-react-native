@@ -81,7 +81,7 @@ class Container extends React.PureComponent<Props> {
 
   public render() {
     return (
-      <Screen disableScroll onLeftPress={this.nav(NavigationScreen.Debug)}>
+      <Screen disableScroll onLeftPress={this.nav("debug")}>
         <FlatList
           scrollEnabled={false}
           ref={(ref: any) => (this.tableView = ref)}
@@ -143,7 +143,7 @@ class Container extends React.PureComponent<Props> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const Questionnaire = connect(
+export default connect(
   null,
   mapDispatchToProps
 )(Container);

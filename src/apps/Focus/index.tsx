@@ -12,7 +12,7 @@ import { List } from "./components/List";
 // TODO: refresh every hour
 // TODO: convert hours to minutes to config 15, 30, 60, 120
 
-export const Focus = memo(() => {
+export default memo(function Focus() {
   const dispatch = useRootDispatch();
   const [modalItemEdit, setModalItemEdit] = useState(false);
   const [modalProfile] = useState(false);
@@ -28,10 +28,7 @@ export const Focus = memo(() => {
 
   return (
     <>
-      <Screen
-        onLeftPress={nav(NavigationScreen.PortfolioLanding)}
-        disableScroll
-      >
+      <Screen onLeftPress={nav("portfolioLanding")} disableScroll>
         <Text h1 title="fc" center />
         <List onItemPress={handleItemPress} />
       </Screen>

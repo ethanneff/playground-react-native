@@ -1,8 +1,8 @@
 import React from "react";
-import { Drag } from "..";
+import Screen from "..";
 import { mockRenderer } from "../../../../../utils/Mock";
 
 it("renders correctly", () => {
-  const dom = mockRenderer(<Drag />).toJSON();
+  const dom = mockRenderer(<Screen />).toJSON();
   expect(dom).toMatchSnapshot();
 });

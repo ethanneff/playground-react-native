@@ -14,7 +14,7 @@ export class GestureHandler {
   private finish: Touches = {};
   private start: Touches = {};
 
-  constructor({ minTouches = 4 } = {}) {
+  public constructor({ minTouches = 2 } = {}) {
     this.minTouches = minTouches;
   }
 

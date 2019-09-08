@@ -116,6 +116,7 @@ describe("actions", () => {
       details: {
         isConnectionExpensive: true
       },
+      isInternetReachable: true,
       isConnected: true,
       type: NetInfoStateType.other
     };
@@ -204,6 +205,7 @@ describe("reducer", () => {
       details: {
         isConnectionExpensive: true
       },
+      isInternetReachable: false,
       isConnected: true,
       type: NetInfoStateType.other
     };

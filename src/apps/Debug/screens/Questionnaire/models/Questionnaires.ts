@@ -37,7 +37,7 @@ export interface Questionnaire {
   acronym?: string;
   formula?: string;
   id: string;
-  questions: ReadonlyArray<string>;
+  questions: readonly string[];
   title: string;
 }
 interface QuestionnairesObject {

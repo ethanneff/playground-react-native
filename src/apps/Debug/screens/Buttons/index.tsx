@@ -13,7 +13,7 @@ type Props = DispatchProps;
 class Container extends React.PureComponent<Props> {
   public render() {
     return (
-      <Screen onLeftPress={this.nav(NavigationScreen.Debug)}>
+      <Screen onLeftPress={this.nav("debug")}>
         <ScrollView>
           <Button title="nothing" onPress={() => undefined} />
           <Button neutral title="neutral" onPress={() => undefined} />
@@ -138,7 +138,7 @@ class Container extends React.PureComponent<Props> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const Buttons = connect(
+export default connect(
   null,
   mapDispatchToProps
 )(Container);

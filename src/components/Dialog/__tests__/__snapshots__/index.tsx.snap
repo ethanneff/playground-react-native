@@ -17,6 +17,8 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
 >
   <View
     accessible={true}
+    clickable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -36,7 +38,9 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
   >
     <View
       accessible={true}
+      clickable={false}
       isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -121,6 +125,8 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
 >
   <View
     accessible={true}
+    clickable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -140,7 +146,9 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
   >
     <View
       accessible={true}
+      clickable={false}
       isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -225,6 +233,8 @@ exports[`Dialog component renders correctly with props 1`] = `
 >
   <View
     accessible={true}
+    clickable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -244,7 +254,9 @@ exports[`Dialog component renders correctly with props 1`] = `
   >
     <View
       accessible={true}
+      clickable={false}
       isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -321,7 +333,9 @@ exports[`Dialog component renders correctly with props 1`] = `
         >
           <View
             accessible={true}
+            clickable={true}
             isTVSelectable={true}
+            onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -362,7 +376,9 @@ exports[`Dialog component renders correctly with props 1`] = `
           </View>
           <View
             accessible={true}
+            clickable={true}
             isTVSelectable={true}
+            onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}

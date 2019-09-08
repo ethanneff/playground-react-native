@@ -1,18 +1,21 @@
 import React, { memo } from "react";
 import { AppRegistry, Platform } from "react-native";
-import { Provider } from "react-redux";
-import { App, store } from "./containers";
+import { App, Redux, Navigation } from "./containers";
 import { Config } from "./utils";
 
-export const Launcher = memo(() => (
-  <Provider store={store}>
-    <App />
-  </Provider>
-));
+export const Main = memo(function Main() {
+  return (
+    <Redux>
+      <App>
+        <Navigation />
+      </App>
+    </Redux>
+  );
+});
 
-AppRegistry.registerComponent(Config.app.name, () => Launcher);
+AppRegistry.registerComponent(Config.app.name, () => Main);
 if (Platform.OS === Config.os.web) {
   AppRegistry.runApplication(Config.app.name, {
-    rootTag: document.getElementById(Config.web.root)
+    rootTag: document.getElementById("root")
   });
 }

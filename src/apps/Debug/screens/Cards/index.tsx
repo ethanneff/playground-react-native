@@ -11,7 +11,6 @@ interface DispatchProps {
 type Props = DispatchProps;
 
 class Container extends React.PureComponent<Props> {
-
   public state = {
     y: new Animated.Value(0)
   };
@@ -76,7 +75,7 @@ class Container extends React.PureComponent<Props> {
     const { y } = this.state;
 
     return (
-      <Screen disableScroll onLeftPress={this.nav(NavigationScreen.Debug)}>
+      <Screen disableScroll onLeftPress={this.nav("debug")}>
         <View style={this.styles.container}>
           <View style={StyleSheet.absoluteFill}>
             {this.cards.map((card, i) => {
@@ -128,7 +127,7 @@ class Container extends React.PureComponent<Props> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const Cards = connect(
+export default connect(
   null,
   mapDispatchToProps
 )(Container);

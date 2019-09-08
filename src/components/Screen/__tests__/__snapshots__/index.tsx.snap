@@ -24,7 +24,9 @@ exports[`renders correctly 1`] = `
   >
     <View
       accessible={true}
+      clickable={false}
       isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -41,7 +43,9 @@ exports[`renders correctly 1`] = `
     />
     <View
       accessible={true}
+      clickable={false}
       isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -128,7 +132,9 @@ exports[`renders correctly with header 1`] = `
   >
     <View
       accessible={true}
+      clickable={true}
       isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -143,14 +149,7 @@ exports[`renders correctly with header 1`] = `
         }
       }
     >
-      <View
-        style={
-          Array [
-            undefined,
-            undefined,
-          ]
-        }
-      >
+      <View>
         <Text
           allowFontScaling={false}
           style={
@@ -193,7 +192,9 @@ exports[`renders correctly with header 1`] = `
     </Text>
     <View
       accessible={true}
+      clickable={true}
       isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -210,12 +211,9 @@ exports[`renders correctly with header 1`] = `
     >
       <View
         style={
-          Array [
-            undefined,
-            Object {
-              "alignSelf": "flex-end",
-            },
-          ]
+          Object {
+            "alignSelf": "flex-end",
+          }
         }
       >
         <Text
@@ -228,9 +226,7 @@ exports[`renders correctly with header 1`] = `
               },
               Array [
                 undefined,
-                Object {
-                  "alignSelf": "flex-end",
-                },
+                undefined,
               ],
               Object {
                 "fontFamily": "Material Design Icons",
@@ -317,7 +313,9 @@ exports[`renders correctly with icons 1`] = `
   >
     <View
       accessible={true}
+      clickable={true}
       isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -332,14 +330,7 @@ exports[`renders correctly with icons 1`] = `
         }
       }
     >
-      <View
-        style={
-          Array [
-            undefined,
-            undefined,
-          ]
-        }
-      >
+      <View>
         <Text
           allowFontScaling={false}
           style={
@@ -382,7 +373,9 @@ exports[`renders correctly with icons 1`] = `
     </Text>
     <View
       accessible={true}
+      clickable={true}
       isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -399,12 +392,9 @@ exports[`renders correctly with icons 1`] = `
     >
       <View
         style={
-          Array [
-            undefined,
-            Object {
-              "alignSelf": "flex-end",
-            },
-          ]
+          Object {
+            "alignSelf": "flex-end",
+          }
         }
       >
         <Text
@@ -417,9 +407,7 @@ exports[`renders correctly with icons 1`] = `
               },
               Array [
                 undefined,
-                Object {
-                  "alignSelf": "flex-end",
-                },
+                undefined,
               ],
               Object {
                 "fontFamily": "Material Design Icons",

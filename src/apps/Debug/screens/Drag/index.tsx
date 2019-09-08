@@ -41,7 +41,7 @@ class Container extends React.PureComponent<Props> {
   private ballPosition: Animated.ValueXY;
   private panGesture: PanResponderInstance;
 
-  constructor(props: Props) {
+  public constructor(props: Props) {
     super(props);
     const { width, height } = this.props;
     this.ballPosition = new Animated.ValueXY({ x: width / 2, y: height / 2 });
@@ -56,7 +56,7 @@ class Container extends React.PureComponent<Props> {
   }
   public render() {
     return (
-      <Screen disableScroll onLeftPress={this.nav(NavigationScreen.Debug)}>
+      <Screen disableScroll onLeftPress={this.nav("debug")}>
         <Text center title="drag the circle" />
         <Animated.View
           style={[this.ballPosition.getLayout(), this.styles.ball]}
@@ -76,7 +76,7 @@ const mapStateToProps = (state: RootState) => ({
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const Drag = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Container);

@@ -1,33 +1,13 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { memo } from "react";
 import { Button, Screen, Text } from "../../../../components";
-import { navigate, NavigationScreen } from "../../../../models";
+import { useNav } from "../../../../behaviors";
 
-interface DispatchProps {
-  navigate: typeof navigate;
-}
-
-type Props = DispatchProps;
-
-class Container extends React.PureComponent<Props> {
-  public render() {
-    return (
-      <Screen>
-        <Text h1 center title="404 :(" />
-        <Button
-          title="go home"
-          onPress={() => this.props.navigate(NavigationScreen.PortfolioLanding)}
-        />
-      </Screen>
-    );
-  }
-}
-
-const mapDispatchToProps: DispatchProps = {
-  navigate
-};
-
-export const NotFound = connect(
-  null,
-  mapDispatchToProps
-)(Container);
+export default memo(function PortfolioNotFound() {
+  const nav = useNav();
+  return (
+    <Screen>
+      <Text h1 center title="404 :(" />
+      <Button title="go home" onPress={nav.to("portfolioLanding")} />
+    </Screen>
+  );
+});

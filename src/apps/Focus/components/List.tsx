@@ -24,17 +24,6 @@ const items: Item[] = [];
 export const List = memo(({ onItemPress }: Props) => {
   const listRef = useRef(null);
 
-  useEffect(() => {
-    generateMoreItems();
-  }, []);
-
-  useEffect(() => {
-    if (items.length === 0 || listRef === null) {
-      return;
-    }
-    // listRef.current.scrollToIndex(2);
-  }, [listRef]);
-
   const generateMoreItems = () => {
     // TODO: batch
     for (let i = 0; i < infiniteScrollRegeneration; i++) {
@@ -63,7 +52,9 @@ export const List = memo(({ onItemPress }: Props) => {
     const currentTime = new Date();
     const before = currentTime.valueOf();
     const after = currentTime.setHours(currentTime.getHours() + 1);
-    if (item.id > before && item.id < after) { return true; }
+    if (item.id > before && item.id < after) {
+      return true;
+    }
     return false;
   };
 
@@ -81,6 +72,17 @@ export const List = memo(({ onItemPress }: Props) => {
   };
 
   const keyExtractor = (item: Item) => String(item.id);
+
+  useEffect(() => {
+    generateMoreItems();
+  }, []);
+
+  useEffect(() => {
+    if (items.length === 0 || listRef === null) {
+      return;
+    }
+    // listRef.current.scrollToIndex(2);
+  }, [listRef]);
 
   return items.length < 0 ? null : (
     <FlatList

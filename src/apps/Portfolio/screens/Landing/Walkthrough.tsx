@@ -1,50 +1,40 @@
-import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
-import { connect } from "react-redux";
+import React, { memo } from "react";
+import { StyleSheet, FlatList, View } from "react-native";
 import { Text } from "../../../../components";
-import { RootState } from "../../../../containers";
+import { useColor } from "../../../../behaviors";
+import { useRootSelector } from "../../../../utils";
 import { getWidth } from "../../../../models";
 
-interface StateProps {
-  width: number;
-}
+const styles = (width: number, color: string) =>
+  StyleSheet.create({
+    item: {
+      backgroundColor: color,
+      justifyContent: "center",
+      width
+    }
+  });
 
-type Props = StateProps;
-
-class Component extends React.PureComponent<Props> {
-
-  public data = [
-    { key: 1, text: "hello", color: "lightgrey" },
-    { key: 2, text: "bob", color: "lightblue" },
-    { key: 3, text: "steve", color: "lightgreen" },
-    { key: 4, text: "jill", color: "lightpink" }
+export default memo(function Walkthrough() {
+  const width = useRootSelector(getWidth);
+  const color = useColor();
+  const data = [
+    { key: 1, text: "hello", color: color.primary },
+    { key: 2, text: "bob", color: color.secondary },
+    { key: 3, text: "steve", color: color.success },
+    { key: 4, text: "jill", color: color.brand }
   ];
-  public render() {
-    const { width } = this.props;
-    return (
-      <FlatList
-        pagingEnabled
-        horizontal
-        keyExtractor={item => String(item.key)}
-        data={this.data}
-        renderItem={({ item }) => (
-          <View style={this.styles(width, item.color).item}>
-            <Text title={item.text} center />
-          </View>
-        )}
-      />
-    );
-  }
-  private styles = (width?: number, color?: string) =>
-    StyleSheet.create({
-      item: {
-        backgroundColor: color,
-        justifyContent: "center",
-        width
-      }
-    });
-}
-const mapStateToProps = (state: RootState) => ({
-  width: getWidth(state)
+
+  return (
+    <FlatList
+      pagingEnabled
+      horizontal
+      keyExtractor={item => String(item.key)}
+      data={data}
+      renderItem={({ item }) => (
+        <View style={styles(width, item.color).item}>
+          <Text title={item.text} center />
+        </View>
+      )}
+    />
+  );
 });
-export const Walkthrough = connect(mapStateToProps)(Component);

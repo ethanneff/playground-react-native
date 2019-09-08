@@ -132,7 +132,7 @@ class Container extends React.PureComponent<Props, State> {
     const { message, messages } = this.state;
 
     return (
-      <Screen onLeftPress={this.nav(NavigationScreen.Debug)}>
+      <Screen onLeftPress={this.nav("debug")}>
         <FlatList
           inverted
           data={messages}
@@ -184,7 +184,7 @@ class Container extends React.PureComponent<Props, State> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const Chat = connect(
+export default connect(
   null,
   mapDispatchToProps
 )(Container);

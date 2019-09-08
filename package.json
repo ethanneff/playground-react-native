@@ -3,96 +3,90 @@
   "version": "0.0.0",
   "private": true,
   "homepage": "http://ethanneff.github.io/example",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ethanneff/example.git"
-  },
   "scripts": {
-    "ios": "                echo 'develop on ios';                react-native run-ios --simulator \"iPhone X\"",
+    "ios": "                echo 'develop on ios';                react-native run-ios",
     "android": "            echo 'develop on android';            react-native run-android",
     "web": "                echo 'develop on web';                react-scripts start",
     "shake": "              echo 'shake android device';          adb shell input keyevent 82",
+    "reload": "             echo 'reload android device';         adb shell input text 'RR'",
     "build": "              echo 'build production web';          react-scripts build",
     "start": "              echo 'run code watcher';              react-native start --reset-cache",
     "debug": "              echo 'run redux debugger';            open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
-    "test": "               echo 'run unit tests';                jest -u --forceExit --coverage --verbose",
-    "watch": "              echo 'run unit tests reloader';       jest --watch",
-    "lint": "               echo 'run code linter';               tsc && tslint --fix -p tsconfig.json -c tslint.json",
-    "upgrade": "            echo 'run react native upgrade'       yarn global add react-native-git-upgrade; react-native-git-upgrade; rm -f .babelrc; rm -f ./.buckconfig; rm -f ./.flowconfig; rm -f ./.watchmanconfig; rm -f ./.gitattributes;",
-    "reset": "              echo 'clear react native cache';      watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; rm -rf ./ios/Pods; yarn install; gem install cocoapods; pod install --project-directory=ios; react-native start --reset-cache",
+    "lint": "               echo 'run code linter';               eslint 'src/**/*.[jt]s?(x)' --fix && tsc",
+    "test": "               echo 'run unit tests';                jest -u --forceExit --coverage --detectOpenHandles",
+    "watch": "              echo 'run unit tests reloader';       npm run test -- --watchAll",
+    "reset": "              echo 'clear react native cache';      watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; react-native start --reset-cache",
     "semantic-release": "   echo 'run continuous integration';    semantic-release",
     "travis-deploy-once": " echo 'prevent multiple deploys';      travis-deploy-once"
   },
   "dependencies": {
-    "@react-native-community/netinfo": "3.2.1",
-    "@redux-offline/redux-offline": "2.5.2",
-    "appcenter": "2.2.0",
-    "appcenter-analytics": "2.2.0",
-    "appcenter-crashes": "2.2.0",
-    "appcenter-push": "2.2.0",
+    "@mdi/js": "4.3.95",
+    "@mdi/react": "1.2.1",
+    "@react-native-community/async-storage": "1.6.1",
+    "@react-native-community/netinfo": "4.2.0",
+    "appcenter": "2.3.0",
+    "appcenter-analytics": "2.3.0",
+    "appcenter-crashes": "2.3.0",
     "axios": "0.19.0",
     "moment": "2.24.0",
     "npm-check-updates": "3.1.21",
     "react": "16.9.0",
-    "react-art": "16.9.0",
     "react-dom": "16.9.0",
-    "react-native": "0.59.9",
+    "react-native": "0.60.5",
     "react-native-device-info": "2.3.2",
     "react-native-firebase": "5.5.6",
     "react-native-keyboard-aware-scroll-view": "0.9.1",
     "react-native-vector-icons": "6.6.0",
     "react-native-version-number": "0.3.6",
-    "react-native-web": "0.11.6",
-    "react-redux": "7.1.0",
+    "react-native-web": "0.11.7",
+    "react-redux": "7.1.1",
     "react-scripts": "3.1.1",
     "redux": "4.0.4",
+    "redux-persist": "6.0.0",
     "redux-thunk": "2.3.0",
     "reselect": "4.0.0",
     "typesafe-actions": "4.4.2",
     "utility-types": "3.7.0",
-    "uuid": "3.3.2"
+    "uuid": "3.3.3"
   },
   "devDependencies": {
-    "@babel/plugin-transform-object-assign": "7.2.0",
+    "@babel/core": "7.6.0",
+    "@babel/runtime": "7.6.0",
     "@commitlint/cli": "8.1.0",
     "@commitlint/config-conventional": "8.1.0",
+    "@react-native-community/eslint-config": "0.0.5",
     "@semantic-release/changelog": "3.0.4",
     "@semantic-release/commit-analyzer": "6.3.0",
     "@semantic-release/git": "7.0.16",
-    "@semantic-release/github": "5.4.2",
+    "@semantic-release/github": "5.4.3",
     "@semantic-release/release-notes-generator": "7.3.0",
     "@types/axios": "0.14.0",
-    "@types/jest": "24.0.17",
-    "@types/react": "16.9.1",
-    "@types/react-native": "0.60.5",
+    "@types/jest": "24.0.18",
+    "@types/react": "16.9.2",
+    "@types/react-native": "0.60.12",
     "@types/react-native-vector-icons": "6.4.1",
-    "@types/react-redux": "7.1.1",
+    "@types/react-redux": "7.1.2",
     "@types/react-test-renderer": "16.9.0",
     "@types/uuid": "3.4.5",
-    "babel-jest": "24.8.0",
+    "@typescript-eslint/parser": "2.1.0",
+    "babel-jest": "24.9.0",
     "codecov": "3.5.0",
-    "husky": "3.0.3",
-    "lint-staged": "9.2.1",
-    "prettier": "1.18.2",
+    "eslint": "6.3.0",
+    "eslint-config-prettier": "6.2.0",
+    "eslint-plugin-prettier": "3.1.0",
+    "eslint-plugin-react-hooks": "2.0.1",
+    "husky": "3.0.5",
+    "metro-react-native-babel-preset": "0.56.0",
     "react-test-renderer": "16.9.0",
-    "semantic-release": "15.13.21",
+    "semantic-release": "15.13.24",
     "travis-deploy-once": "5.0.11",
-    "ts-jest": "24.0.2",
-    "tslint": "5.18.0",
-    "tslint-config-prettier": "1.18.0",
-    "typescript": "3.5.3"
+    "typescript": "3.6.2"
   },
   "husky": {
     "hooks": {
-      "pre-push": "lint-staged && echo 'yarn lint && yarn test'",
+      "pre-push": "yarn lint && yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
   },
   "release": {
     "plugins": [
@@ -121,28 +115,10 @@
       "@commitlint/config-conventional"
     ]
   },
-  "babel": {
-    "presets": [
-      "module:metro-react-native-babel-preset"
-    ],
-    "plugins": [
-      "@babel/plugin-transform-object-assign"
-    ]
-  },
   "jest": {
     "preset": "react-native",
     "setupFiles": [
       "<rootDir>/src/utils/TestMocks/index.ts"
-    ],
-    "transform": {
-      "^.+\\.jsx?$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "transformIgnorePatterns": [
-      "node_modules/(?!react-native)/"
-    ],
-    "testMatch": [
-      "**/__tests__/**/*.[jt]s?(x)"
     ],
     "moduleFileExtensions": [
       "ts",
@@ -153,16 +129,19 @@
       "node"
     ],
     "globals": {
-      "window": {},
-      "ts-jest": {
-        "tsConfig": "./tsconfig.jest.json"
-      }
+      "window": {}
     }
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

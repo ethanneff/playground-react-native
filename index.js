@@ -1,2 +1,2 @@
-import { Launcher } from "./src";
-export default Launcher;
+import { Main } from './src';
+export default Main;

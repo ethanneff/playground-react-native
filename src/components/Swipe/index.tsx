@@ -1,3 +1,11 @@
+import React from "react";
+import { View } from "react-native";
+
+export class Swipe extends React.PureComponent {
+  public render() {
+    return <View />;
+  }
+}
 // import React from "react";
 // import {
 //   View,
@@ -149,12 +157,3 @@
 // };
 
 // export default Swipe;
-
-import React from "react";
-import { View } from "react-native";
-
-export class Swipe extends React.PureComponent {
-  public render() {
-    return <View />;
-  }
-}

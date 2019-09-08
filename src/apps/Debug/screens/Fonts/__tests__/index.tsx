@@ -1,8 +1,8 @@
 import React from "react";
-import { Fonts } from "..";
+import Screen from "..";
 import { mockRenderer } from "../../../../../utils/Mock";
 
 it("renders correctly", () => {
-  const dom = mockRenderer(<Fonts />).toJSON();
+  const dom = mockRenderer(<Screen />).toJSON();
   expect(dom).toMatchSnapshot();
 });

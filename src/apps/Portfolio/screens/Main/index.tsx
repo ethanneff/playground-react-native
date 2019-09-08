@@ -1,0 +1,13 @@
+import React, { memo } from "react";
+import { Button, Screen, Text } from "../../../../components";
+import { useNav } from "../../../../behaviors";
+
+export default memo(function PortfolioMain() {
+  const nav = useNav();
+  return (
+    <Screen>
+      <Text h1 center title="Main" />
+      <Button title="logout" onPress={nav.to("portfolioLanding")} />
+    </Screen>
+  );
+});

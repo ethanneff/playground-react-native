@@ -1,9 +1,9 @@
 import React, { memo } from "react";
 import { ScrollView, Text as Original } from "react-native";
 import { StyleSheet, View } from "react-native";
-import { getCurrentColor } from "../../models";
-import { Theme, useRootSelector } from "../../utils";
+import { Theme } from "../../utils";
 import { Text } from "../Text";
+import { useColor } from "../../behaviors";
 
 export interface ContentBody {
   sections: Sections;
@@ -46,7 +46,7 @@ interface Props {
 }
 
 export const Content: React.FC<Props> = memo(({ body }) => {
-  const color = useRootSelector(state => getCurrentColor(state));
+  const color = useColor();
   const styles = StyleSheet.create({
     content: {
       paddingHorizontal: Theme.padding.p04

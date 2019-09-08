@@ -1,7 +1,6 @@
 # OSX
 #
 .DS_Store
-ios/Pods
 
 # Xcode
 #
@@ -26,7 +25,6 @@ project.xcworkspace
 # Android/IntelliJ
 #
 build/
-bin/
 .idea
 .gradle
 local.properties
@@ -42,7 +40,6 @@ yarn-error.log
 #
 buck-out/
 \.buckd/
-*.keystore
 
 # Fastlane
 #
@@ -54,8 +51,12 @@ buck-out/
 #
 *.jsbundle
 
-# Custom
+# CocoaPods
 #
+/ios/Pods/
+
+
+# Custom
+# 
 coverage/
 build/
-creds/

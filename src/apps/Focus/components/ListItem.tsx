@@ -1,10 +1,10 @@
 import React, { memo } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { EllipsizeMode, Icon, Text } from "../../../components";
-import { getCurrentColor } from "../../../models";
-import { Theme, useRootSelector } from "../../../utils";
+import { Theme } from "../../../utils";
 import { Item } from "./List";
 import { ListSection } from "./ListSection";
+import { useColor } from "../../../behaviors";
 
 interface Props {
   showSection: boolean;
@@ -15,7 +15,7 @@ interface Props {
 
 export const ListItem = memo(
   ({ showSection, item, onItemPress, currentItem }: Props) => {
-    const color = useRootSelector(state => getCurrentColor(state));
+    const color = useColor();
     const future = item.id > Date.now();
     const iconColor = future ? color.secondary : color.success;
     const title = currentItem ? "current" : future ? "future" : item.action;

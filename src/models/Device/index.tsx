@@ -162,12 +162,13 @@ export const deviceReducer = (
       };
     case getType(updateNetwork):
       const details = action.payload.details;
-      // TODO: update netinfo to 4+
-      // networkReachable: action.payload.isInternetReachable,
-      // networkCellularGeneration: details ? details.cellularGeneration,
       return {
         ...state,
+        networkReachable: action.payload.isInternetReachable || false,
         networkConnected: action.payload.isConnected,
+        // networkCellularGeneration: details
+        //   ? details.cellularGeneration
+        //   : undefined, // TODO: fix typings
         networkExpensiveConnection: details
           ? details.isConnectionExpensive
           : undefined,

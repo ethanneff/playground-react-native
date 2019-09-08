@@ -105,7 +105,7 @@ class Container extends React.PureComponent<Props, State> {
   private keyboardWillShowListener: EmitterSubscription;
   private keyboardWillHideListener: EmitterSubscription;
 
-  constructor(props: Props) {
+  public constructor(props: Props) {
     super(props);
     this.keyboardDidShowListener = Keyboard.addListener(
       "keyboardDidShow",
@@ -135,7 +135,7 @@ class Container extends React.PureComponent<Props, State> {
   public render() {
     const { iconName, input } = this.state;
     return (
-      <Screen onLeftPress={this.nav(NavigationScreen.Debug)}>
+      <Screen onLeftPress={this.nav("debug")}>
         <View style={styles.header}>
           <View style={styles.textContainer}>
             <Animated.View
@@ -223,7 +223,7 @@ class Container extends React.PureComponent<Props, State> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const SearchBar = connect(
+export default connect(
   null,
   mapDispatchToProps
 )(Container);

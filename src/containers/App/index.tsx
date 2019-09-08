@@ -1,5 +1,4 @@
 import React, { memo } from "react";
-import { Navigation } from "../Navigation";
 import {
   useAppLoad,
   useAppState,
@@ -9,7 +8,7 @@ import {
   useNetInfo
 } from "./hooks";
 
-export const App = memo(() => {
+export const App = memo(function App({ children }) {
   useAppLoad();
   useNetInfo();
   useDeviceInfo();
@@ -17,5 +16,5 @@ export const App = memo(() => {
   useAppState();
   useKeyboard();
 
-  return <Navigation />;
+  return <>{children}</>;
 });

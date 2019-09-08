@@ -1,24 +1,20 @@
 package com.eneff.app.example;
 
 import android.app.Application;
-
-import io.invertase.firebase.RNFirebasePackage;
-import com.oblador.vectoricons.VectorIconsPackage;
-import com.microsoft.appcenter.reactnative.crashes.AppCenterReactNativeCrashesPackage;
-import com.microsoft.appcenter.reactnative.analytics.AppCenterReactNativeAnalyticsPackage;
-import com.microsoft.appcenter.reactnative.appcenter.AppCenterReactNativePackage;
-import com.microsoft.appcenter.reactnative.push.AppCenterReactNativePushPackage;
-import com.facebook.react.modules.storage.ReactDatabaseSupplier;
+import android.util.Log;
+import com.facebook.react.PackageList;
+import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
+import com.facebook.react.bridge.JavaScriptExecutorFactory;
 import com.facebook.react.ReactApplication;
-import com.reactnativecommunity.netinfo.NetInfoPackage;
-import com.learnium.RNDeviceInfo.RNDeviceInfo;
-import com.apsl.versionnumber.RNVersionNumberPackage;
+import io.invertase.firebase.RNFirebasePackage;
+import io.invertase.firebase.auth.RNFirebaseAuthPackage;
+import io.invertase.firebase.firestore.RNFirebaseFirestorePackage;
+import io.invertase.firebase.config.RNFirebaseRemoteConfigPackage;
+import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
-import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-
-import java.util.Arrays;
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -31,15 +27,13 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(new MainReactPackage(),
-            new NetInfoPackage(), new RNDeviceInfo(), new RNVersionNumberPackage(),
-          new VectorIconsPackage(), new RNFirebasePackage(),
-          new AppCenterReactNativeCrashesPackage(MainApplication.this,
-              getResources().getString(R.string.appCenterCrashes_whenToSendCrashes)),
-          new AppCenterReactNativeAnalyticsPackage(MainApplication.this,
-              getResources().getString(R.string.appCenterAnalytics_whenToEnableAnalytics)),
-          new AppCenterReactNativePushPackage(MainApplication.this),
-          new AppCenterReactNativePackage(MainApplication.this));
+      @SuppressWarnings("UnnecessaryLocalVariable")
+      List<ReactPackage> packages = new PackageList(this).getPackages();
+      packages.add(new RNFirebaseAuthPackage());
+      packages.add(new RNFirebaseFirestorePackage());
+      packages.add(new RNFirebaseRemoteConfigPackage());
+      packages.add(new RNFirebaseAnalyticsPackage());
+      return packages;
     }
 
     @Override
@@ -57,7 +51,5 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
-    long size = 50L * 1024L * 1024L; // 50 MB
-    com.facebook.react.modules.storage.ReactDatabaseSupplier.getInstance(getApplicationContext()).setMaximumSize(size);
   }
 }

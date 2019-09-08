@@ -5,10 +5,10 @@ import {
   TouchableOpacity,
   ViewStyle
 } from "react-native";
-import { getCurrentColor } from "../../models";
-import { Theme, useRootSelector } from "../../utils";
+import { Theme } from "../../utils";
 import { Icon } from "../Icon";
 import { Text } from "../Text";
+import { useColor } from "../../behaviors";
 
 /*
 styling: https://material.io/design/components/buttons.html#usage
@@ -78,7 +78,7 @@ export const Button: React.FC<Props> = memo(props => {
     wrap
   } = props;
 
-  const color = useRootSelector(state => getCurrentColor(state));
+  const color = useColor();
   const styles = StyleSheet.create({
     center: {
       alignSelf: "center"

@@ -25,12 +25,10 @@ class Container extends React.PureComponent<Props> {
   private numColumns = 3;
   private infiniteScrollThreshold = 0.3;
   private columnWidth = Dimensions.get("window").width / this.numColumns;
-  private imageUrl = `http://lorempixel.com/${this.columnWidth}/${
-    this.columnWidth
-  }`;
+  private imageUrl = `http://lorempixel.com/${this.columnWidth}/${this.columnWidth}`;
   public render() {
     return (
-      <Screen onLeftPress={this.nav(NavigationScreen.Debug)}>
+      <Screen onLeftPress={this.nav("debug")}>
         <FlatList
           keyExtractor={data => data.toString()}
           data={this.data}
@@ -64,7 +62,7 @@ class Container extends React.PureComponent<Props> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export const ImageCollection = connect(
+export default connect(
   null,
   mapDispatchToProps
 )(Container);

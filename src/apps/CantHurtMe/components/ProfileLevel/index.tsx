@@ -1,8 +1,8 @@
 import React, { memo } from "react";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { Text } from "../../../../components";
-import { getCurrentColor } from "../../../../models";
-import { Theme, useRootSelector } from "../../../../utils";
+import { Theme } from "../../../../utils";
+import { useColor } from "../../../../behaviors";
 
 interface OwnProps {
   onPress?(): void;
@@ -11,7 +11,7 @@ interface OwnProps {
 type Props = OwnProps;
 
 export const ProfileLevel: React.FC<Props> = memo(({ onPress }) => {
-  const color = useRootSelector(state => getCurrentColor(state));
+  const color = useColor();
   const image = require("../../../../assets/placeholder.png");
   const width = 0.2;
   const level = 22;

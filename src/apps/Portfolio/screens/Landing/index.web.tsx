@@ -1,58 +1,30 @@
-/* tslint:disable */
-// @ts-ignore
+import React, { memo } from "react";
+import { StyleSheet, View } from "react-native";
+import { Button, Screen, Text } from "../../../../components";
+import Walkthrough from "./Walkthrough";
+import { useNav } from "../../../../behaviors";
 
-import React from "react";
-import { Dimensions, StyleSheet, View } from "react-native";
-import { Text, Button } from "../../../../components";
-import { NavigationScreen, navigate } from "../../../../models";
-import { connect } from "react-redux";
+const styles = StyleSheet.create({
+  row: { flexDirection: "row", justifyContent: "space-around" }
+});
 
-interface DispatchProps {
-  navigate: typeof navigate;
-}
-
-type Props = DispatchProps;
-
-class Container extends React.PureComponent<Props> {
-  private readonly window = Dimensions.get("window");
-
-  private readonly styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      height: this.window.height,
-      alignItems: "center"
-    },
-    footer: {
-      alignItems: "flex-end",
-      flex: 1,
-      flexDirection: "row",
-      justifyContent: "center"
-    }
-  });
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
-  public render() {
-    return (
-      <View style={this.styles.container}>
-        <Text title={String(this.window.height)} />
-        <View style={this.styles.footer}>
-          <Button
-            title="Login"
-            onPress={this.nav(NavigationScreen.PortfolioLogin)}
-          />
-          <Button title="Main" onPress={this.nav(NavigationScreen.Portfolio)} />
-          <Button title="Debug" onPress={this.nav(NavigationScreen.Debug)} />
-          <Button
-            title="Settings"
-            onPress={this.nav(NavigationScreen.PortfolioSettings)}
-          />
-          <Button title="Focus" onPress={this.nav(NavigationScreen.Focus)} />
-        </View>
+export default memo(function PortfolioLanding() {
+  const nav = useNav();
+  return (
+    <Screen>
+      <Text h1 title="Landing" center />
+      <Walkthrough />
+      <View style={styles.row}>
+        <Button title="Login" onPress={nav.to("portfolioLogin")} />
+        <Button title="Main" onPress={nav.to("portfolio")} />
+        <Button title="Settings" onPress={nav.to("portfolioSettings")} />
       </View>
-    );
-  }
-}
-
-export const Landing = connect(
-  null,
-  { navigate }
-)(Container);
+      <View style={styles.row}>
+        <Button title="Debug" onPress={nav.to("debug")} />
+        <Button title="Checklist" onPress={nav.to("checklists")} />
+        <Button title="CantHurtMe" onPress={nav.to("cantHurtMe")} />
+        <Button title="Focus" onPress={nav.to("focus")} />
+      </View>
+    </Screen>
+  );
+});
