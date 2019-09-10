@@ -33,9 +33,10 @@
   </a>
 </div>
 
+- [ ] deploy ios
 - [ ] update docs dependences
-- [ ] run on andriod
-- [ ] push code
+- [x] run on andriod
+- [x] push code
 - [ ] delete old repos
 - [x] code splitting by screen
 - [x] error boundary
