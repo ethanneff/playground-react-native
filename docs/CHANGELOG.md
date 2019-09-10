@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.1](https://github.com/ethanneff/example/compare/v2.6.0...v2.6.1) (2019-09-10)
+
+
+### Bug Fixes
+
+* update deps ([44b0c92](https://github.com/ethanneff/example/commit/44b0c92))
+
 # [2.6.0](https://github.com/ethanneff/example/compare/v2.5.0...v2.6.0) (2019-09-08)
 
 
