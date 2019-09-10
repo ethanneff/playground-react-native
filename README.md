@@ -33,17 +33,17 @@
   </a>
 </div>
 
-- [ ] deploy ios
-- [ ] update docs dependences
-- [x] run on andriod
+- [x] deploy ios
+- [x] update docs dependencies
+- [x] run on android
 - [x] push code
-- [ ] delete old repos
+- [ ] delete old repositories
 - [x] code splitting by screen
 - [x] error boundary
 - [x] redux offline
 - [x] dynamic import screens
 - [ ] fix prod android
-- [ ] remove momentjs
+- [ ] remove moment.js
 - [ ] cant hurt me modals like focus
 - [ ] move over to example
 - [ ] get a release on ios

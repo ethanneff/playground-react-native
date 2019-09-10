@@ -1,65 +1,65 @@
 # Dependencies
 
-| dependencies                              | reason                            | purpose                |
-| :---------------------------------------- | :-------------------------------- | :--------------------- |
-| react                                     | everything                        | core                   |
-| react-dom                                 | react-native-web                  | core                   |
-| react-native                              | ios and android                   | core                   |
-| react-native-web                          | desktop                           | core                   |
-| react-native-keyboard-aware-scroll-view   | input scrolling on ios            | feature                |
-| react-native-vector-icons                 | icons                             | feature                |
-| react-native-device-info                  | device stats                      | feature                |
-| react-native-version-number               | app stats                         | feature                |
-| react-native-firebase                     | database                          | backend                |
-| appcenter                                 | deploy cycle                      | backend                |
-| appcenter-analytics                       |                                   | analytics              |
-| appcenter-crashes                         |                                   | crashes                |
-| appcenter-push                            |                                   | push notifications     |
-| redux                                     | state                             | state management       |
-| react-redux                               | connector                         | state management       |
-| redux-thunk                               | async state                       | state management       |
-| typesafe-actions                          | reduce action boilerplate         | state management       |
-| utility-types                             | nested read only immutability     | state management       |
-| uuid                                      | v4 unique ids for all             | state management       |
-| reselect                                  | memoization reads                 | state management       |
-| @redux-offline/redux-offline              | offline state                     | state management       |
-| @commitlint/cli                           | strict commit messages            | continuous integration |
-| @commitlint/config-conventional           | strict commit messages angular    | continuous integration |
-| @semantic-release/commit-analyzer         |                                   | continuous integration |
-| @semantic-release/release-notes-generator |                                   | continuous integration |
-| @semantic-release/changelog               | ci auto generate changelog        | continuous integration |
-| @semantic-release/git                     | ci commit messages for changelog  | continuous integration |
-| @semantic-release/github                  | ci push release to github         | continuous integration |
-| semantic-release                          | ci builder                        | continuous integration |
-| travis-deploy-once                        | runs ci only once per environment | continuous integration |
-| husky                                     | git hooks                         | continuous integration |
-| lint-staged                               | git hook for prettier             | continuous integration |
-| @types/axios                              |                                   | type definition        |
-| @types/jest                               |                                   | type definition        |
-| @types/react                              |                                   | type definition        |
-| @types/react-native                       |                                   | type definition        |
-| @types/react-native-vector-icons          |                                   | type definition        |
-| @types/react-native-version-number        |                                   | type definition        |
-| @types/react-redux                        |                                   | type definition        |
-| @types/react-test-renderer                |                                   | type definition        |
-| @types/uuid                               |                                   | type definition        |
-| codecov                                   | code coverage                     | code quality           |
-| prettier                                  | opinionated code format           | code quality           |
-| tslint                                    | type checking lint                | code quality           |
-| tslint-config-prettier                    | type with prettier format         | code quality           |
-| typescript                                | interface types                   | code quality           |
-| npm-check-updates                         | dependency checker                | code quality           |
-| jest                                      | react testing framework           | testing                |
-| react-test-renderer                       | test components                   | testing                |
-| babel-jest                                | prevents errors with jest         | testing                |
-| ts-jest                                   | typescript tests                  | testing                |
-| react-art                                 | react-native-web (remove?)        | other                  |
-| moment                                    | time                              | other                  |
-| axios                                     | async networking                  | networking             |
-
-# Not Installed Dependencies
-
-| dependencies                 | purpose                  | reason         |
-| :--------------------------- | :----------------------- | :------------- |
-| react-native-reanimated      | no js thread animations  | no web support |
-| react-native-gesture-handler | no js thread transitions | no web support |
+| dependency                                | env  | category       | reason                      |
+| :---------------------------------------- | :--- | :------------- | :-------------------------- |
+| @mdi/js                                   | prod |                | web icons                   |
+| @mdi/react                                | prod |                | web icons                   |
+| @react-native-community/async-storage     | prod |                | native storage              |
+| @react-native-community/netinfo           | prod |                | native network              |
+| appcenter                                 | prod |                | deployment                  |
+| appcenter-analytics                       | prod |                | analytics                   |
+| appcenter-crashes                         | prod |                | analytics                   |
+| axios                                     | prod |                | ajax                        |
+| moment                                    | prod |                | time                        |
+| npm-check-updates                         | prod |                | dependency upgrade          |
+| react                                     | prod |                | ui language                 |
+| react-dom                                 | prod |                | react-native-web dependency |
+| react-native                              | prod |                | ui to native bridge         |
+| react-native-device-info                  | prod |                | native device info          |
+| react-native-firebase                     | prod |                | backend                     |
+| react-native-keyboard-aware-scroll-view   | prod |                | scroll aware                |
+| react-native-vector-icons                 | prod |                | native icons                |
+| react-native-version-number               | prod |                | native version info         |
+| react-native-web                          | prod |                | web                         |
+| react-redux                               | prod |                | data middleware             |
+| react-scripts                             | prod |                | web deployment              |
+| redux                                     | prod |                | data interface              |
+| redux-persist                             | prod |                | storage                     |
+| redux-thunk                               | prod |                | async actions               |
+| reselect                                  | prod |                | memo selectors              |
+| typesafe-actions                          | prod |                | type redux actions          |
+| utility-types                             | prod |                | deep readonly types         |
+| uuid                                      | prod |                | unique ids                  |
+| @babel/core                               | dev  |                | react-native-dep            |
+| @babel/runtime                            | dev  |                | react-native dep            |
+| @commitlint/cli                           | dev  |                | commit linter               |
+| @commitlint/config-conventional           | dev  |                | commit linter style         |
+| @react-native-community/eslint-config     | dev  |                | linter                      |
+| @semantic-release/changelog               | dev  |                | ci changelog                |
+| @semantic-release/commit-analyzer         | dev  |                | ci commit messages          |
+| @semantic-release/git                     | dev  |                | ci commit to changelog      |
+| @semantic-release/github                  | dev  |                | ci push to github           |
+| @semantic-release/release-notes-generator | dev  |                | ci release                  |
+| @types/axios                              | dev  |                | types                       |
+| @types/jest                               | dev  |                | types                       |
+| @types/react                              | dev  |                | types                       |
+| @types/react-native                       | dev  |                | types                       |
+| @types/react-native-vector-icons          | dev  |                | types                       |
+| @types/react-redux                        | dev  |                | types                       |
+| @types/react-test-renderer                | dev  |                | types                       |
+| @types/uuid                               | dev  |                | types                       |
+| @typescript-eslint/parser                 | dev  |                | linter                      |
+| babel-jest                                | dev  |                | react-native dependency     |
+| codecov                                   | dev  |                | test coverage               |
+| eslint                                    | dev  |                | linter                      |
+| eslint-config-prettier                    | dev  |                | linter                      |
+| eslint-plugin-prettier                    | dev  |                | linter                      |
+| eslint-plugin-react-hooks                 | dev  |                | linter                      |
+| husky                                     | dev  |                | git hooks                   |
+| metro-react-native-babel-preset           | dev  |                | react-native dep            |
+| react-test-renderer                       | dev  |                | testing framework           |
+| semantic-release                          | dev  |                | ci builder                  |
+| travis-deploy-once                        | dev  |                | ci builder run once         |
+| typescript                                | dev  |                | type safe code              |
+| react-native-reanimated                   | not  | no web support | no js thread animations     |
+| react-native-gesture-handler              | not  | no web support | no js thread transitions    |
