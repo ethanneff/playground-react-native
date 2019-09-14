@@ -22,15 +22,28 @@
         <img src="https://build.appcenter.ms/v0.1/apps/df89c6b2-fd8d-496d-9f1b-8c48bf668013/branches/master/badge" alt="Android Status" />
     </a>
   </div>
-  <a href="https://codecov.io/gh/ethanneff/example">
-    <img src="https://codecov.io/gh/ethanneff/example/branch/master/graph/badge.svg" alt="Test Coverage" />
+  <div>
+    <a href="https://codebeat.co/projects/github-com-ethanneff-example-master">
+      <img alt="codebeat badge" src="https://codebeat.co/badges/db921277-9f48-42e6-929f-8c56ae62d585" />
+    </a>
+  </div>
+  <a href="https://deepscan.io/dashboard#view=project&tid=5433&pid=7223&bid=69097">
+    <img src="https://deepscan.io/api/teams/5433/projects/7223/branches/69097/badge/grade.svg" alt="DeepScan grade">
   </a>
-  <a href="https://github.com/ethanneff/example">
-    <img src="https://img.shields.io/github/release/ethanneff/example.svg" alt="Github Release" />
-  </a>
-  <a href="https://github.com/ethanneff/example/blob/master/docs/LICENSE.md">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Github License" />
-  </a>
+  <a href="https://www.codacy.com/manual/ethanneff/example">
+    <img src="https://api.codacy.com/project/badge/Grade/dca655d1a64a40d7bd3e77ec4cd39061" alt="Codacy">
+  </a>  
+  <div>
+    <a href="https://codecov.io/gh/ethanneff/example">
+      <img src="https://codecov.io/gh/ethanneff/example/branch/master/graph/badge.svg" alt="Test Coverage" />
+    </a>
+    <a href="https://github.com/ethanneff/example">
+      <img src="https://img.shields.io/github/release/ethanneff/example.svg" alt="Github Release" />
+    </a>
+    <a href="https://github.com/ethanneff/example/blob/master/docs/LICENSE.md">
+      <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Github License" />
+    </a>
+  </div>
 </div>
 
 - [x] deploy ios
