@@ -51,6 +51,7 @@
 - [x] run on android
 - [x] push code
 - [ ] delete old repositories
+- [ ] remove react-native-version-number for updated react-native-device-info
 - [x] code splitting by screen
 - [x] error boundary
 - [x] redux offline
