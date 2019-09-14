@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.6.3](https://github.com/ethanneff/example/compare/v2.6.2...v2.6.3) (2019-09-14)
+
+
+### Bug Fixes
+
+* add jetify reset to yarn reset ([dd57145](https://github.com/ethanneff/example/commit/dd57145))
+* remove unused release directory ([9e7a911](https://github.com/ethanneff/example/commit/9e7a911))
+* separate builds for apk instead of aab ([61c2657](https://github.com/ethanneff/example/commit/61c2657))
+* update deps ([3151902](https://github.com/ethanneff/example/commit/3151902))
+
 ## [2.6.2](https://github.com/ethanneff/example/compare/v2.6.1...v2.6.2) (2019-09-11)
 
 
