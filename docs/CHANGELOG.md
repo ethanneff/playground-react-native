@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.6.2](https://github.com/ethanneff/example/compare/v2.6.1...v2.6.2) (2019-09-11)
+
+
+### Bug Fixes
+
+* attempt to make android work on production ([974c66a](https://github.com/ethanneff/example/commit/974c66a))
+* remove unused stores ([8de37f7](https://github.com/ethanneff/example/commit/8de37f7))
+* update dependencies ([8e932b0](https://github.com/ethanneff/example/commit/8e932b0))
+
 ## [2.6.1](https://github.com/ethanneff/example/compare/v2.6.0...v2.6.1) (2019-09-10)
 
 
