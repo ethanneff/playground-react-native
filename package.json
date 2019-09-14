@@ -15,7 +15,7 @@
     "lint": "               echo 'run code linter';               eslint 'src/**/*.[jt]s?(x)' --fix && tsc",
     "test": "               echo 'run unit tests';                jest -u --forceExit --coverage --detectOpenHandles",
     "watch": "              echo 'run unit tests reloader';       npm run test -- --watchAll",
-    "reset": "              echo 'clear react native cache';      watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; react-native start --reset-cache",
+    "reset": "              echo 'clear react native cache';      watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; npx jetify; react-native start --reset-cache",
     "semantic-release": "   echo 'run continuous integration';    semantic-release",
     "travis-deploy-once": " echo 'prevent multiple deploys';      travis-deploy-once"
   },
