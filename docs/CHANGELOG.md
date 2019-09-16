@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.4](https://github.com/ethanneff/example/compare/v2.6.3...v2.6.4) (2019-09-16)
+
+
+### Bug Fixes
+
+* remove unused imports ([0713895](https://github.com/ethanneff/example/commit/0713895))
+
 ## [2.6.3](https://github.com/ethanneff/example/compare/v2.6.2...v2.6.3) (2019-09-14)
 
 
