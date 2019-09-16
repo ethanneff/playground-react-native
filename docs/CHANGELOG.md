@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.5](https://github.com/ethanneff/example/compare/v2.6.4...v2.6.5) (2019-09-16)
+
+
+### Bug Fixes
+
+* update release version to allow android to be published ([2df3f7d](https://github.com/ethanneff/example/commit/2df3f7d))
+
 ## [2.6.4](https://github.com/ethanneff/example/compare/v2.6.3...v2.6.4) (2019-09-16)
 
 
