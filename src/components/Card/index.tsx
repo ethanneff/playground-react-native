@@ -55,6 +55,7 @@ export const Card: React.FC<Props> = memo(
         zIndex: elevation
       },
       contents: {
+        flex: 1,
         backgroundColor: `hsla(0,0%,100%,${opacity})`,
         borderRadius,
         padding: Theme.padding.p04
