@@ -75,6 +75,7 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
           Object {
             "backgroundColor": "hsla(0,0%,100%,0.05)",
             "borderRadius": 8,
+            "flex": 1,
             "padding": 16,
           }
         }
@@ -183,6 +184,7 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
           Object {
             "backgroundColor": "hsla(0,0%,100%,0.05)",
             "borderRadius": 8,
+            "flex": 1,
             "padding": 16,
           }
         }
@@ -291,6 +293,7 @@ exports[`Dialog component renders correctly with props 1`] = `
           Object {
             "backgroundColor": "hsla(0,0%,100%,0.05)",
             "borderRadius": 8,
+            "flex": 1,
             "padding": 16,
           }
         }

@@ -173,6 +173,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "backgroundColor": "hsla(0,0%,100%,0.05)",
                   "borderRadius": 8,
+                  "flex": 1,
                   "padding": 16,
                 }
               }
@@ -227,6 +228,7 @@ exports[`renders correctly 1`] = `
                     Object {
                       "backgroundColor": "hsla(0,0%,100%,0.05)",
                       "borderRadius": 8,
+                      "flex": 1,
                       "padding": 16,
                     }
                   }
@@ -296,6 +298,7 @@ exports[`renders correctly 1`] = `
                     Object {
                       "backgroundColor": "hsla(0,0%,100%,0.05)",
                       "borderRadius": 8,
+                      "flex": 1,
                       "padding": 16,
                     }
                   }
@@ -365,6 +368,7 @@ exports[`renders correctly 1`] = `
                     Object {
                       "backgroundColor": "hsla(0,0%,100%,0.05)",
                       "borderRadius": 8,
+                      "flex": 1,
                       "padding": 16,
                     }
                   }
@@ -605,6 +609,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "backgroundColor": "hsla(0,0%,100%,0.05)",
                   "borderRadius": 8,
+                  "flex": 1,
                   "padding": 16,
                 }
               }
@@ -659,6 +664,7 @@ exports[`renders correctly 1`] = `
                     Object {
                       "backgroundColor": "hsla(0,0%,100%,0.05)",
                       "borderRadius": 8,
+                      "flex": 1,
                       "padding": 16,
                     }
                   }
@@ -728,6 +734,7 @@ exports[`renders correctly 1`] = `
                     Object {
                       "backgroundColor": "hsla(0,0%,100%,0.05)",
                       "borderRadius": 8,
+                      "flex": 1,
                       "padding": 16,
                     }
                   }
@@ -875,6 +882,7 @@ exports[`renders correctly 1`] = `
                     Object {
                       "backgroundColor": "hsla(0,0%,100%,0.05)",
                       "borderRadius": 8,
+                      "flex": 1,
                       "padding": 16,
                     }
                   }
@@ -983,6 +991,7 @@ exports[`renders correctly 1`] = `
                     Object {
                       "backgroundColor": "hsla(0,0%,100%,0.05)",
                       "borderRadius": 8,
+                      "flex": 1,
                       "padding": 16,
                     }
                   }
@@ -1050,6 +1059,7 @@ exports[`renders correctly 1`] = `
                         Object {
                           "backgroundColor": "hsla(0,0%,100%,0.05)",
                           "borderRadius": 8,
+                          "flex": 1,
                           "padding": 16,
                         }
                       }
@@ -1119,6 +1129,7 @@ exports[`renders correctly 1`] = `
                         Object {
                           "backgroundColor": "hsla(0,0%,100%,0.05)",
                           "borderRadius": 8,
+                          "flex": 1,
                           "padding": 16,
                         }
                       }
@@ -1188,6 +1199,7 @@ exports[`renders correctly 1`] = `
                         Object {
                           "backgroundColor": "hsla(0,0%,100%,0.05)",
                           "borderRadius": 8,
+                          "flex": 1,
                           "padding": 16,
                         }
                       }
@@ -1259,6 +1271,7 @@ exports[`renders correctly 1`] = `
                     Object {
                       "backgroundColor": "hsla(0,0%,100%,0.05)",
                       "borderRadius": 8,
+                      "flex": 1,
                       "padding": 16,
                     }
                   }
