@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.6.6](https://github.com/ethanneff/example/compare/v2.6.5...v2.6.6) (2019-09-17)
+
+
+### Bug Fixes
+
+* correct darkmode shading ([37c3a30](https://github.com/ethanneff/example/commit/37c3a30))
+* revert android version  change ([1b1cff6](https://github.com/ethanneff/example/commit/1b1cff6))
+* update card snaps ([5107b3c](https://github.com/ethanneff/example/commit/5107b3c))
+* update deps ([f7a938e](https://github.com/ethanneff/example/commit/f7a938e))
+
 ## [2.6.5](https://github.com/ethanneff/example/compare/v2.6.4...v2.6.5) (2019-09-16)
 
 
