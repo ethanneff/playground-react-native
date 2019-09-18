@@ -55,7 +55,6 @@ export const Card: React.FC<Props> = memo(
         zIndex: elevation
       },
       contents: {
-        flex: 1,
         backgroundColor: `hsla(0,0%,100%,${opacity})`,
         borderRadius,
         padding: Theme.padding.p04
@@ -74,6 +73,7 @@ export const Card: React.FC<Props> = memo(
       flex ? styles.flex : undefined,
       style
     ];
+    const contentStyles = [styles.contents, flex ? styles.flex : undefined];
     return (
       <TouchableOpacity
         style={containerStyles}
@@ -81,7 +81,7 @@ export const Card: React.FC<Props> = memo(
         onLongPress={onLongPress && onLongPress}
         activeOpacity={onPress ? touchOpacity : 1}
       >
-        <View style={styles.contents}>{children}</View>
+        <View style={contentStyles}>{children}</View>
       </TouchableOpacity>
     );
   }

@@ -20,6 +20,48 @@ interface Card {
   button?: string;
 }
 
+const image = require("../../../../assets/placeholder.png");
+const cards: Card[] = [
+  {
+    title: "Marketing",
+    value: "123.4 M"
+  },
+  {
+    target: "+22% of target",
+    title: "Conversion",
+    value: "537"
+  },
+  {
+    chart: image,
+    target: "+12.3 of target",
+    title: "Conversion",
+    value: "432.1 M"
+  },
+  {
+    target: "11% of target",
+    title: "Sales",
+    value: "345.8 M"
+  },
+  {
+    button: "save",
+    title: "Users",
+    value: "45.5 M"
+  },
+  {
+    target: "+56.6% of target",
+    title: "Avg session",
+    value: "4:53 H"
+  },
+  {
+    title: "Sessions",
+    value: "23.242"
+  },
+  {
+    title: "Bounce rate",
+    value: "13%"
+  }
+];
+
 export default memo(function DarkMode() {
   const dispatch = useRootDispatch();
   const themes = Object.values(ColorTheme);
@@ -29,58 +71,17 @@ export default memo(function DarkMode() {
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   const [elevation, setElevation] = useState(0);
   const handleSlider = (value: number) => setElevation(value);
-  const image = require("../../../../assets/placeholder.png");
-  const cards: Card[] = [
-    {
-      title: "Marketing",
-      value: "123.4 M"
-    },
-    {
-      target: "+22% of target",
-      title: "Conversion",
-      value: "537"
-    },
-    {
-      chart: image,
-      target: "+12.3 of target",
-      title: "Conversion",
-      value: "432.1 M"
-    },
-    {
-      target: "11% of target",
-      title: "Sales",
-      value: "345.8 M"
-    },
-    {
-      button: "save",
-      title: "Users",
-      value: "45.5 M"
-    },
-    {
-      target: "+56.6% of target",
-      title: "Avg session",
-      value: "4:53 H"
-    },
-    {
-      title: "Sessions",
-      value: "23.242"
-    },
-    {
-      title: "Bounce rate",
-      value: "13%"
-    }
-  ];
 
   return (
     <Screen onLeftPress={nav.to("portfolioLanding")}>
       <View
         style={{
-          backgroundColor: color.surface,
           flexDirection: "row",
+          alignItems: "center",
           justifyContent: "space-between"
         }}
       >
-        <Text title="Theme" />
+        <Text title="theme: " />
         <FlatList
           horizontal
           keyExtractor={item => item}
@@ -96,15 +97,16 @@ export default memo(function DarkMode() {
           )}
         />
       </View>
-      <Text title={`${elevation}`} />
+      <Text title={`elevation: ${elevation}`} />
       <Slider
+        minimumTrackTintColor={color.primary}
         value={elevation}
         onValueChange={handleSlider}
         step={1}
         maximumValue={10}
         minimumValue={0}
       />
-      <Text title="weekly stats" h2 center />
+      <Text title="Weekly Stats" h2 center />
       <FlatList
         numColumns={2}
         extraData={elevation}

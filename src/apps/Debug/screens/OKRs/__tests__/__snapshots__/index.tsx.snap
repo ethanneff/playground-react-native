@@ -170,12 +170,14 @@ exports[`renders correctly 1`] = `
           >
             <View
               style={
-                Object {
-                  "backgroundColor": "hsla(0,0%,100%,0.05)",
-                  "borderRadius": 8,
-                  "flex": 1,
-                  "padding": 16,
-                }
+                Array [
+                  Object {
+                    "backgroundColor": "hsla(0,0%,100%,0.05)",
+                    "borderRadius": 8,
+                    "padding": 16,
+                  },
+                  undefined,
+                ]
               }
             >
               <Text
@@ -225,12 +227,14 @@ exports[`renders correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "backgroundColor": "hsla(0,0%,100%,0.05)",
-                      "borderRadius": 8,
-                      "flex": 1,
-                      "padding": 16,
-                    }
+                    Array [
+                      Object {
+                        "backgroundColor": "hsla(0,0%,100%,0.05)",
+                        "borderRadius": 8,
+                        "padding": 16,
+                      },
+                      undefined,
+                    ]
                   }
                 >
                   <Text
@@ -295,12 +299,14 @@ exports[`renders correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "backgroundColor": "hsla(0,0%,100%,0.05)",
-                      "borderRadius": 8,
-                      "flex": 1,
-                      "padding": 16,
-                    }
+                    Array [
+                      Object {
+                        "backgroundColor": "hsla(0,0%,100%,0.05)",
+                        "borderRadius": 8,
+                        "padding": 16,
+                      },
+                      undefined,
+                    ]
                   }
                 >
                   <Text
@@ -365,12 +371,14 @@ exports[`renders correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "backgroundColor": "hsla(0,0%,100%,0.05)",
-                      "borderRadius": 8,
-                      "flex": 1,
-                      "padding": 16,
-                    }
+                    Array [
+                      Object {
+                        "backgroundColor": "hsla(0,0%,100%,0.05)",
+                        "borderRadius": 8,
+                        "padding": 16,
+                      },
+                      undefined,
+                    ]
                   }
                 >
                   <Text
@@ -606,12 +614,14 @@ exports[`renders correctly 1`] = `
           >
             <View
               style={
-                Object {
-                  "backgroundColor": "hsla(0,0%,100%,0.05)",
-                  "borderRadius": 8,
-                  "flex": 1,
-                  "padding": 16,
-                }
+                Array [
+                  Object {
+                    "backgroundColor": "hsla(0,0%,100%,0.05)",
+                    "borderRadius": 8,
+                    "padding": 16,
+                  },
+                  undefined,
+                ]
               }
             >
               <Text
@@ -661,12 +671,14 @@ exports[`renders correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "backgroundColor": "hsla(0,0%,100%,0.05)",
-                      "borderRadius": 8,
-                      "flex": 1,
-                      "padding": 16,
-                    }
+                    Array [
+                      Object {
+                        "backgroundColor": "hsla(0,0%,100%,0.05)",
+                        "borderRadius": 8,
+                        "padding": 16,
+                      },
+                      undefined,
+                    ]
                   }
                 >
                   <Text
@@ -731,12 +743,14 @@ exports[`renders correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "backgroundColor": "hsla(0,0%,100%,0.05)",
-                      "borderRadius": 8,
-                      "flex": 1,
-                      "padding": 16,
-                    }
+                    Array [
+                      Object {
+                        "backgroundColor": "hsla(0,0%,100%,0.05)",
+                        "borderRadius": 8,
+                        "padding": 16,
+                      },
+                      undefined,
+                    ]
                   }
                 >
                   <Text
@@ -879,12 +893,14 @@ exports[`renders correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "backgroundColor": "hsla(0,0%,100%,0.05)",
-                      "borderRadius": 8,
-                      "flex": 1,
-                      "padding": 16,
-                    }
+                    Array [
+                      Object {
+                        "backgroundColor": "hsla(0,0%,100%,0.05)",
+                        "borderRadius": 8,
+                        "padding": 16,
+                      },
+                      undefined,
+                    ]
                   }
                 >
                   <Text
@@ -988,12 +1004,14 @@ exports[`renders correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "backgroundColor": "hsla(0,0%,100%,0.05)",
-                      "borderRadius": 8,
-                      "flex": 1,
-                      "padding": 16,
-                    }
+                    Array [
+                      Object {
+                        "backgroundColor": "hsla(0,0%,100%,0.05)",
+                        "borderRadius": 8,
+                        "padding": 16,
+                      },
+                      undefined,
+                    ]
                   }
                 >
                   <Text
@@ -1056,12 +1074,14 @@ exports[`renders correctly 1`] = `
                   >
                     <View
                       style={
-                        Object {
-                          "backgroundColor": "hsla(0,0%,100%,0.05)",
-                          "borderRadius": 8,
-                          "flex": 1,
-                          "padding": 16,
-                        }
+                        Array [
+                          Object {
+                            "backgroundColor": "hsla(0,0%,100%,0.05)",
+                            "borderRadius": 8,
+                            "padding": 16,
+                          },
+                          undefined,
+                        ]
                       }
                     >
                       <Text
@@ -1126,12 +1146,14 @@ exports[`renders correctly 1`] = `
                   >
                     <View
                       style={
-                        Object {
-                          "backgroundColor": "hsla(0,0%,100%,0.05)",
-                          "borderRadius": 8,
-                          "flex": 1,
-                          "padding": 16,
-                        }
+                        Array [
+                          Object {
+                            "backgroundColor": "hsla(0,0%,100%,0.05)",
+                            "borderRadius": 8,
+                            "padding": 16,
+                          },
+                          undefined,
+                        ]
                       }
                     >
                       <Text
@@ -1196,12 +1218,14 @@ exports[`renders correctly 1`] = `
                   >
                     <View
                       style={
-                        Object {
-                          "backgroundColor": "hsla(0,0%,100%,0.05)",
-                          "borderRadius": 8,
-                          "flex": 1,
-                          "padding": 16,
-                        }
+                        Array [
+                          Object {
+                            "backgroundColor": "hsla(0,0%,100%,0.05)",
+                            "borderRadius": 8,
+                            "padding": 16,
+                          },
+                          undefined,
+                        ]
                       }
                     >
                       <Text
@@ -1268,12 +1292,14 @@ exports[`renders correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "backgroundColor": "hsla(0,0%,100%,0.05)",
-                      "borderRadius": 8,
-                      "flex": 1,
-                      "padding": 16,
-                    }
+                    Array [
+                      Object {
+                        "backgroundColor": "hsla(0,0%,100%,0.05)",
+                        "borderRadius": 8,
+                        "padding": 16,
+                      },
+                      undefined,
+                    ]
                   }
                 >
                   <Text
