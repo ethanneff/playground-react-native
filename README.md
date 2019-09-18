@@ -63,3 +63,5 @@
 - [ ] get a release on ios
 - [ ] fix pinch spread
 - [ ] fix dark mode card size
+- [ ] basketball https://github.com/FaridSafi/react-native-basketball/
+- [ ] flappybird https://github.com/GeekyAnts/FlappyBird-ReactNative
