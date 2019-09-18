@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.6.7](https://github.com/ethanneff/example/compare/v2.6.6...v2.6.7) (2019-09-18)
+
+
+### Bug Fixes
+
+* dialog flex ([3892477](https://github.com/ethanneff/example/commit/3892477))
+* update deps ([004ea6d](https://github.com/ethanneff/example/commit/004ea6d))
+
 ## [2.6.6](https://github.com/ethanneff/example/compare/v2.6.5...v2.6.6) (2019-09-17)
 
 
