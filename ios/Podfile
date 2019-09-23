@@ -32,8 +32,6 @@ target 'example' do
   pod 'Firebase/Firestore', '~> 6.3.0'
   pod 'Firebase/RemoteConfig', '~> 6.3.0'
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
-
   target 'exampleTests' do
     inherit! :search_paths
     # Pods for testing
