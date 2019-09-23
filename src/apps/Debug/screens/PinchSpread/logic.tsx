@@ -1,4 +1,8 @@
-import { NativeTouchEvent, PointPropType } from "react-native";
+import {
+  NativeTouchEvent,
+  PointPropType,
+  GestureResponderEvent
+} from "react-native";
 
 interface Touches {
   [key: string]: PointPropType;
@@ -18,7 +22,7 @@ export class GestureHandler {
     this.minTouches = minTouches;
   }
 
-  public onPanResponderMove(event: any) {
+  public onPanResponderMove(event: GestureResponderEvent) {
     const touches: NativeTouchEvent[] = event.nativeEvent.touches;
     touches.forEach((touch: NativeTouchEvent) => {
       this.recordFinish(touch);
