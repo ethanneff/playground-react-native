@@ -13,10 +13,10 @@ import {
   getSmallestDimension,
   getWidth,
   loadDevice,
-  updateBattery,
   updateDimensions,
-  updateFingerprint,
-  updateNetwork
+  updateNetwork,
+  changeAppStatus,
+  changeKeyboardStatus
 } from "..";
 import { store } from "../../../containers";
 import { logout } from "../../Auth";
@@ -76,22 +76,6 @@ describe("selectors with no initial state", () => {
 });
 
 describe("actions", () => {
-  it("onDeviceUpdateFingerprint", () => {
-    const payload = true;
-    const expectedAction = {
-      payload,
-      type: getType(updateFingerprint)
-    };
-    expect(updateFingerprint(payload)).toEqual(expectedAction);
-  });
-  it("onDeviceUpdateBattery", () => {
-    const payload = 2;
-    const expectedAction = {
-      payload,
-      type: getType(updateBattery)
-    };
-    expect(updateBattery(payload)).toEqual(expectedAction);
-  });
   it("loadDevice", () => {
     const size = {
       fontScale: 1,
@@ -111,6 +95,25 @@ describe("actions", () => {
     };
     expect(loadDevice(payload)).toEqual(expectedAction);
   });
+
+  it("changeAppStatus", () => {
+    const payload = "background";
+    const expectedAction = {
+      payload,
+      type: getType(changeAppStatus)
+    };
+    expect(changeAppStatus(payload)).toEqual(expectedAction);
+  });
+
+  it("changeKeyboardStatus", () => {
+    const payload = true;
+    const expectedAction = {
+      payload,
+      type: getType(changeKeyboardStatus)
+    };
+    expect(changeKeyboardStatus(payload)).toEqual(expectedAction);
+  });
+
   it("updateNetwork", () => {
     const payload: NetInfoState = {
       details: {
@@ -126,6 +129,7 @@ describe("actions", () => {
     };
     expect(updateNetwork(payload)).toEqual(expectedAction);
   });
+
   it("updateDimensions", () => {
     const size = {
       fontScale: 1,
@@ -143,24 +147,6 @@ describe("actions", () => {
 });
 
 describe("reducer", () => {
-  it("updateBattery", () => {
-    const value = 22;
-    expect(
-      deviceReducer(deviceInitialState, {
-        payload: value,
-        type: getType(updateBattery)
-      })
-    ).toMatchObject({ batteryLevel: 22 });
-  });
-  it("updateFingerprint", () => {
-    const value = true;
-    expect(
-      deviceReducer(deviceInitialState, {
-        payload: value,
-        type: getType(updateFingerprint)
-      })
-    ).toMatchObject({ isPinOrFingerprintSet: value });
-  });
   it("loadDevice", () => {
     const size = {
       fontScale: 1,
@@ -216,6 +202,25 @@ describe("reducer", () => {
       })
     ).toMatchObject({ networkType: "other" });
   });
+
+  it("changeKeyboardStatus", () => {
+    expect(
+      deviceReducer(deviceInitialState, {
+        payload: true,
+        type: getType(changeKeyboardStatus)
+      })
+    ).toEqual({ ...deviceInitialState, keyboardVisible: true });
+  });
+
+  it("changeAppStatus", () => {
+    expect(
+      deviceReducer(deviceInitialState, {
+        payload: "background",
+        type: getType(changeAppStatus)
+      })
+    ).toEqual({ ...deviceInitialState, appStatus: "background" });
+  });
+
   it("updateDimensions", () => {
     const size = {
       fontScale: 123,
@@ -232,8 +237,13 @@ describe("reducer", () => {
         payload: data,
         type: getType(updateDimensions)
       })
-    ).toMatchObject({ windowDimensions: size, screenDimensions: size });
+    ).toMatchObject({
+      ...deviceInitialState,
+      dimensionScreen: size,
+      dimensionWindow: size
+    });
   });
+
   it("logout", () => {
     expect(
       deviceReducer(deviceInitialState, {

@@ -62,6 +62,7 @@ const DebugSwipeCell = lazy(() => import(`../../apps/Debug/screens/SwipeCell`));
 
 type Modals = { [key in M]: ReactElement };
 
+// TODO: missing type
 export const screens = {
   focus: <Focus />,
   portfolio: <Portfolio />,

@@ -32,9 +32,6 @@ import {
   responsesReducer
 } from "../../apps/Debug/screens/Questionnaire/models";
 import {
-  AppActions,
-  appReducer,
-  AppState,
   AuthActions,
   authReducer,
   AuthState,
@@ -55,7 +52,6 @@ import { memo } from "react";
 
 /* INTERFACES */
 export type RootState = DeepReadonly<{
-  app: AppState;
   auth: AuthState;
   device: DeviceState;
   items: Items;
@@ -70,7 +66,6 @@ export type RootState = DeepReadonly<{
 
 /* REDUCERS */
 const reducers = combineReducers<RootState>({
-  app: appReducer,
   auth: authReducer,
   choices: choicesReducer,
   device: deviceReducer,
@@ -85,7 +80,6 @@ const reducers = combineReducers<RootState>({
 
 /* ACTIONS */
 export type RootAction =
-  | AppActions
   | DeviceActions
   | AuthActions
   | ListActions

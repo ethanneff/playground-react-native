@@ -1,184 +1,241 @@
 import {
-  NetInfoCellularGeneration,
   NetInfoState,
-  NetInfoStateType
+  NetInfoStateType,
+  NetInfoConnectedDetails
 } from "@react-native-community/netinfo";
-import { Dimensions, ScaledSize } from "react-native";
-import DeviceInfo from "react-native-device-info";
+import { Dimensions, ScaledSize, AppStateStatus, AppState } from "react-native";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";
 import { logout } from "../Auth";
 
 /* ACTIONS */
-export const updateBattery = createStandardAction("device/UPDATE_BATTERY")<
-  number
->();
-
-export const updateFingerprint = createStandardAction(
-  "device/UPDATE_FINGERPRINT"
-)<boolean>();
-
-export const loadDevice = createStandardAction("device/LOAD")<DeviceState>();
-
+export const loadDevice = createStandardAction("device/LOAD")<DeviceInfo>();
 export const updateNetwork = createStandardAction("device/UPDATE_NETWORK")<
   NetInfoState
 >();
-
 export const updateDimensions = createStandardAction("device/UPDATE_DIMENSION")<
   DimensionsProps
 >();
-
-/* HELPERS */
-export const generateDeviceInitialState = (): DeviceState => ({
-  apiLevel: DeviceInfo.getAPILevel(),
-  batteryLevel: 0,
-  brand: DeviceInfo.getBrand(),
-  carrier: DeviceInfo.getCarrier(),
-  deviceCountry: DeviceInfo.getDeviceCountry(),
-  deviceId: DeviceInfo.getDeviceId(),
-  deviceLocale: DeviceInfo.getDeviceLocale(),
-  deviceName: DeviceInfo.getDeviceName(),
-  firstInstallTime: DeviceInfo.getFirstInstallTime(),
-  fontScale: DeviceInfo.getFontScale(),
-  freeDiskStorage: DeviceInfo.getFreeDiskStorage(),
-  installReferrer: DeviceInfo.getInstallReferrer(),
-  instanceId: DeviceInfo.getInstanceID(),
-  is24Hour: DeviceInfo.is24Hour(),
-  isEmulator: DeviceInfo.isEmulator(),
-  isPinOrFingerprintSet: false,
-  isTablet: DeviceInfo.isTablet(),
-  lastUpdateTime: DeviceInfo.getLastUpdateTime(),
-  manufacturer: DeviceInfo.getManufacturer(),
-  maxMemory: DeviceInfo.getMaxMemory(),
-  model: DeviceInfo.getModel(),
-  networkCellularGeneration: undefined,
-  networkConnected: false,
-  networkExpensiveConnection: undefined,
-  networkReachable: false,
-  networkType: undefined,
-  phoneNumber: DeviceInfo.getPhoneNumber(),
-  screenDimensions: Dimensions.get("screen"),
-  serialNumber: DeviceInfo.getSerialNumber(),
-  systemName: DeviceInfo.getSystemName(),
-  systemVersion: DeviceInfo.getSystemVersion(),
-  timezone: DeviceInfo.getTimezone(),
-  totalDiskCapacity: DeviceInfo.getTotalDiskCapacity(),
-  totalMemory: DeviceInfo.getTotalMemory(),
-  uniqueId: DeviceInfo.getUniqueID(),
-  userAgent: DeviceInfo.getUserAgent(),
-  windowDimensions: Dimensions.get("window")
-});
+export const changeAppStatus = createStandardAction("device/UPDATE_STATUS")<
+  AppStateStatus
+>();
+export const changeKeyboardStatus = createStandardAction(
+  "device/UPDATE_KEYBOARD_VISIBILITY"
+)<boolean>();
 
 /* SELECTORS */
 export const getLandscapeOrientation = (state: RootState): boolean =>
-  state.device.windowDimensions.height < state.device.windowDimensions.width;
-
+  state.device.dimensionWindow.height < state.device.dimensionWindow.width;
 export const getSmallestDimension = (state: RootState): number =>
-  state.device.windowDimensions.height > state.device.windowDimensions.width
-    ? state.device.windowDimensions.width
-    : state.device.windowDimensions.height;
-
+  state.device.dimensionWindow.height > state.device.dimensionWindow.width
+    ? state.device.dimensionWindow.width
+    : state.device.dimensionWindow.height;
 export const getLargestDimension = (state: RootState): number =>
-  state.device.windowDimensions.height > state.device.windowDimensions.width
-    ? state.device.windowDimensions.height
-    : state.device.windowDimensions.width;
-
+  state.device.dimensionWindow.height > state.device.dimensionWindow.width
+    ? state.device.dimensionWindow.height
+    : state.device.dimensionWindow.width;
 export const getWidth = (state: RootState): number =>
-  state.device.windowDimensions.width;
-
+  state.device.dimensionWindow.width;
 export const getHeight = (state: RootState): number =>
-  state.device.windowDimensions.height;
+  state.device.dimensionWindow.height;
 
 /* INTERFACES */
 export interface DimensionsProps {
   window: ScaledSize;
   screen: ScaledSize;
 }
-export interface DeviceState {
+export interface DeviceInfo {
+  androidId: string;
   apiLevel: number;
+  applicationName: string;
+  availableLocationProviders: object;
+  baseOs: string;
+  buildId: string;
   batteryLevel: number;
+  bootloader: string;
   brand: string;
+  buildNumber: string;
+  bundleId: string;
+  cameraPresence: boolean;
   carrier: string;
-  deviceCountry: string;
+  codename: string;
+  device: string;
   deviceId: string;
-  deviceLocale: string;
+  deviceType: string;
+  display: string;
   deviceName: string;
   firstInstallTime: number;
+  fingerprint: string;
   fontScale: number;
   freeDiskStorage: number;
+  hardware: string;
+  host: string;
+  ipAddress: string;
+  incremental: string;
   installReferrer: string;
   instanceId: string;
-  is24Hour: boolean;
-  isEmulator: boolean;
-  isPinOrFingerprintSet: boolean;
-  isTablet: boolean;
   lastUpdateTime: number;
+  macAddress: string;
   manufacturer: string;
-  maxMemory: number;
+  maxMemory: string;
   model: string;
-  networkCellularGeneration: NetInfoCellularGeneration | undefined;
-  networkConnected: boolean;
-  networkExpensiveConnection: boolean | undefined;
-  networkReachable: boolean;
-  networkType: NetInfoStateType | undefined;
   phoneNumber: string;
-  screenDimensions: ScaledSize;
+  powerState: object;
+  product: string;
+  previewSdkInt: number;
+  readableVersion: string;
   serialNumber: string;
+  securityPatch: string;
+  systemAvailableFeatures: ReadonlyArray<string>;
   systemName: string;
   systemVersion: string;
-  timezone: string;
+  tags: string;
+  type: string;
   totalDiskCapacity: number;
-  totalMemory: number;
+  totalMemory: string;
   uniqueId: string;
+  usedMemory: number;
   userAgent: string;
-  windowDimensions: ScaledSize;
+  version: string;
+  hasNotch: boolean;
+  hasSystemFeature: boolean;
+  isAirplaneMode: boolean;
+  isBatteryCharging: boolean;
+  isEmulator: boolean;
+  isLandscape: boolean;
+  isLocationEnabled: boolean;
+  isPinOrFingerprintSet: boolean;
+  isTablet: boolean;
+  supported32BitAbis: ReadonlyArray<string>;
+  supported64BitAbis: ReadonlyArray<string>;
+  supportedAbis: ReadonlyArray<string>;
 }
 
+export type DeviceState = {
+  keyboardVisible: boolean;
+  appStatus: AppStateStatus;
+  networkConnected: boolean;
+  networkDetails: NetInfoConnectedDetails | null;
+  networkReachable: boolean;
+  networkType: NetInfoStateType;
+  dimensionScreen: ScaledSize;
+  dimensionWindow: ScaledSize;
+} & DeviceInfo;
 export type DeviceActions = ActionType<
-  | typeof updateBattery
-  | typeof updateFingerprint
   | typeof loadDevice
   | typeof updateNetwork
   | typeof updateDimensions
+  | typeof changeAppStatus
+  | typeof changeKeyboardStatus
 >;
 
 /* REDUCERS */
-export const deviceInitialState: DeviceState = generateDeviceInitialState();
+export const deviceInfoInitialState: DeviceInfo = {
+  androidId: "",
+  apiLevel: 0,
+  applicationName: "",
+  availableLocationProviders: {},
+  baseOs: "",
+  buildId: "",
+  batteryLevel: 0,
+  bootloader: "",
+  brand: "",
+  buildNumber: "",
+  bundleId: "",
+  cameraPresence: false,
+  carrier: "",
+  codename: "",
+  device: "",
+  deviceId: "",
+  deviceType: "",
+  display: "",
+  deviceName: "",
+  firstInstallTime: 0,
+  fingerprint: "",
+  fontScale: 0,
+  freeDiskStorage: 0,
+  hardware: "",
+  host: "",
+  ipAddress: "",
+  incremental: "",
+  installReferrer: "",
+  instanceId: "",
+  lastUpdateTime: 0,
+  macAddress: "",
+  manufacturer: "",
+  maxMemory: "",
+  model: "",
+  phoneNumber: "",
+  powerState: {},
+  product: "",
+  previewSdkInt: 0,
+  readableVersion: "",
+  serialNumber: "",
+  securityPatch: "",
+  systemAvailableFeatures: [],
+  systemName: "",
+  systemVersion: "",
+  tags: "",
+  type: "",
+  totalDiskCapacity: 0,
+  totalMemory: "",
+  uniqueId: "",
+  usedMemory: 0,
+  userAgent: "",
+  version: "",
+  hasNotch: false,
+  hasSystemFeature: false,
+  isAirplaneMode: false,
+  isBatteryCharging: false,
+  isEmulator: false,
+  isLandscape: false,
+  isLocationEnabled: false,
+  isPinOrFingerprintSet: false,
+  isTablet: false,
+  supported32BitAbis: [],
+  supported64BitAbis: [],
+  supportedAbis: []
+};
+export const deviceInitialState: DeviceState = {
+  ...deviceInfoInitialState,
+  keyboardVisible: false,
+  appStatus: AppState.currentState,
+  networkConnected: false,
+  networkDetails: null,
+  networkReachable: false,
+  networkType: NetInfoStateType.unknown,
+  dimensionScreen: Dimensions.get("screen"),
+  dimensionWindow: Dimensions.get("window")
+};
 
 export const deviceReducer = (
   state: DeviceState = deviceInitialState,
   action: RootAction
 ): DeviceState => {
   switch (action.type) {
-    case getType(updateBattery):
+    case getType(changeAppStatus):
       return {
         ...state,
-        batteryLevel: action.payload
+        appStatus: action.payload
       };
-    case getType(updateFingerprint):
+    case getType(changeKeyboardStatus):
       return {
         ...state,
-        isPinOrFingerprintSet: action.payload
+        keyboardVisible: action.payload
       };
     case getType(updateNetwork):
-      const details = action.payload.details;
       return {
         ...state,
         networkReachable: action.payload.isInternetReachable || false,
         networkConnected: action.payload.isConnected,
-        // networkCellularGeneration: details
-        //   ? details.cellularGeneration
-        //   : undefined, // TODO: fix typings
-        networkExpensiveConnection: details
-          ? details.isConnectionExpensive
-          : undefined,
+        networkDetails: action.payload.details,
         networkType: action.payload.type
       };
     case getType(updateDimensions):
       return {
         ...state,
-        screenDimensions: action.payload.screen,
-        windowDimensions: action.payload.window
+        dimensionScreen: action.payload.screen,
+        dimensionWindow: action.payload.window
       };
     case getType(loadDevice):
       return {

@@ -1,6 +1,5 @@
 import React, { memo } from "react";
 import {
-  useAppLoad,
   useAppState,
   useDeviceInfo,
   useDimensions,
@@ -9,7 +8,6 @@ import {
 } from "./hooks";
 
 export const App = memo(function App({ children }) {
-  useAppLoad();
   useNetInfo();
   useDeviceInfo();
   useDimensions();
