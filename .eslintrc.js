@@ -13,19 +13,21 @@ module.exports = {
     "prettier/@typescript-eslint", // prettier
     "plugin:react/recommended" // react
   ],
-  plugins: ["react-hooks"],
+  plugins: ["react-hooks", "import"],
   settings: {
     react: {
       version: "detect"
     }
   },
   rules: {
+    "no-console": "error",
+    "no-alert": "error",
+    "import/no-cycle": "error",
     "react/display-name": 0,
     "react/prop-types": 0, // typescript instead
     "@typescript-eslint/no-var-requires": 0, // images
     "@typescript-eslint/explicit-function-return-type": 0,
-    "react-hooks/rules-of-hooks": 1, // hooks
-    "react-hooks/exhaustive-deps": 1 // hooks
+    "react-hooks/rules-of-hooks": "error", // hooks
+    "react-hooks/exhaustive-deps": "error" // hooks
   }
 };
-// TODO: no circular imports, no alert, no console
