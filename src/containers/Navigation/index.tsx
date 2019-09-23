@@ -1,4 +1,4 @@
-import React, { memo, lazy, Suspense } from "react";
+import React, { memo, lazy, Suspense, ReactElement } from "react";
 import { ActivityIndicator } from "react-native";
 import { Configs, Profile } from "../../apps/CantHurtMe/screens";
 import { NavigationModal as M } from "../../models";
@@ -60,7 +60,7 @@ const DebugSearchBar = lazy(() => import(`../../apps/Debug/screens/SearchBar`));
 const DebugStopwatch = lazy(() => import(`../../apps/Debug/screens/Stopwatch`));
 const DebugSwipeCell = lazy(() => import(`../../apps/Debug/screens/SwipeCell`));
 
-type Modals = { [key in M]: any };
+type Modals = { [key in M]: ReactElement };
 
 export const screens = {
   focus: <Focus />,
