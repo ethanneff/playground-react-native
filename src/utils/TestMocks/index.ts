@@ -1,4 +1,3 @@
-// @ts-ignore yarn lint ignore because web enforces --isolatedModules
 import { NativeModules } from "react-native";
 
 jest.mock("react-native-device-info", () => ({
