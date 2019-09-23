@@ -1,5 +1,24 @@
 # Changelog
 
+# [2.7.0](https://github.com/ethanneff/example/compare/v2.6.7...v2.7.0) (2019-09-23)
+
+
+### Bug Fixes
+
+* attempt to fix ci ([56f3cf5](https://github.com/ethanneff/example/commit/56f3cf5))
+* correct any ([813a4fc](https://github.com/ethanneff/example/commit/813a4fc))
+* lint error on console and alerts ([835e9a9](https://github.com/ethanneff/example/commit/835e9a9))
+* make ci great again ([00a308c](https://github.com/ethanneff/example/commit/00a308c))
+* remove any ([3d477c4](https://github.com/ethanneff/example/commit/3d477c4))
+* remove version number for device info ([b68cbda](https://github.com/ethanneff/example/commit/b68cbda))
+* update deps ([4c9c15c](https://github.com/ethanneff/example/commit/4c9c15c))
+* update ios to lastest xcode version ([1e90de4](https://github.com/ethanneff/example/commit/1e90de4))
+
+
+### Features
+
+* update device-info to remove UIWebView ([7a0cb9f](https://github.com/ethanneff/example/commit/7a0cb9f))
+
 ## [2.6.7](https://github.com/ethanneff/example/compare/v2.6.6...v2.6.7) (2019-09-18)
 
 
