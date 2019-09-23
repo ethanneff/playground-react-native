@@ -46,6 +46,7 @@
   </div>
 </div>
 
+- [x] fix tests
 - [x] deploy ios
 - [x] update docs dependencies
 - [x] run on android
