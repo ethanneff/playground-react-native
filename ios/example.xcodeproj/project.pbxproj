@@ -19,7 +19,6 @@
 		32F71462273C33B0B42373AD /* libPods-exampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C49E157100B94AAC1369257 /* libPods-exampleTests.a */; };
 		343142E3CA28A949B12E7E06 /* libPods-example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD2C99E90473163142696CE /* libPods-example.a */; };
 		46AC6986387CC12D69AC7389 /* libPods-example-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB20ED9D22DF3C50A34C24C /* libPods-example-tvOS.a */; };
-		4CCC70A3EAE44082BCDCC195 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 075870E0A64C43C4B72E111C /* MaterialCommunityIcons.ttf */; };
 		9C5D98DF23138A4400D74FE2 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C5D98DE23138A4400D74FE2 /* AppCenter-Config.plist */; };
 		9C757D1F2317793F006BCD69 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C757D1E2317793E006BCD69 /* GoogleService-Info.plist */; };
 		D0D2800F8F11531EB78DDF79 /* libPods-example-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CD0DDE752DB940C93EC95A /* libPods-example-tvOSTests.a */; };
@@ -47,7 +46,6 @@
 		00E356EE1AD99517003FC87E /* exampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = exampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* exampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = exampleTests.m; sourceTree = "<group>"; };
-		075870E0A64C43C4B72E111C /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = example/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = example/AppDelegate.m; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 		5793EB63F1F048CD90BDE827 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				075870E0A64C43C4B72E111C /* MaterialCommunityIcons.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -361,7 +358,6 @@
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				9C757D1F2317793F006BCD69 /* GoogleService-Info.plist in Resources */,
 				9C5D98DF23138A4400D74FE2 /* AppCenter-Config.plist in Resources */,
-				4CCC70A3EAE44082BCDCC195 /* MaterialCommunityIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,7 +702,7 @@
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = PW4Q8885U7;
 				INFOPLIST_FILE = example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -731,7 +727,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PW4Q8885U7;
 				INFOPLIST_FILE = example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",

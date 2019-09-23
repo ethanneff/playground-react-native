@@ -19,7 +19,6 @@
 | react-native-firebase                     | prod |                | backend                     |
 | react-native-keyboard-aware-scroll-view   | prod |                | scroll aware                |
 | react-native-vector-icons                 | prod |                | native icons                |
-| react-native-version-number               | prod |                | native version info         |
 | react-native-web                          | prod |                | web                         |
 | react-redux                               | prod |                | data middleware             |
 | react-scripts                             | prod |                | web deployment              |
