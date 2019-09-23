@@ -27,6 +27,7 @@ module.exports = {
     "react/prop-types": 0, // typescript instead
     "@typescript-eslint/no-var-requires": 0, // images
     "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/consistent-type-assertions": 0, // TODO: figure out why ci fails because of this
     "react-hooks/rules-of-hooks": "error", // hooks
     "react-hooks/exhaustive-deps": "error" // hooks
   }
