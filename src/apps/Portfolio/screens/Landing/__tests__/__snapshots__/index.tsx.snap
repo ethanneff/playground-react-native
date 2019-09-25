@@ -24,7 +24,7 @@ exports[`renders correctly 1`] = `
   >
     <View
       accessible={true}
-      clickable={false}
+      focusable={false}
       isTVSelectable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
@@ -43,7 +43,7 @@ exports[`renders correctly 1`] = `
     />
     <View
       accessible={true}
-      clickable={false}
+      focusable={false}
       isTVSelectable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
@@ -322,7 +322,7 @@ exports[`renders correctly 1`] = `
       >
         <View
           accessible={true}
-          clickable={true}
+          focusable={true}
           isTVSelectable={true}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -363,7 +363,7 @@ exports[`renders correctly 1`] = `
         </View>
         <View
           accessible={true}
-          clickable={true}
+          focusable={true}
           isTVSelectable={true}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -404,7 +404,7 @@ exports[`renders correctly 1`] = `
         </View>
         <View
           accessible={true}
-          clickable={true}
+          focusable={true}
           isTVSelectable={true}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -454,7 +454,7 @@ exports[`renders correctly 1`] = `
       >
         <View
           accessible={true}
-          clickable={true}
+          focusable={true}
           isTVSelectable={true}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -495,7 +495,7 @@ exports[`renders correctly 1`] = `
         </View>
         <View
           accessible={true}
-          clickable={true}
+          focusable={true}
           isTVSelectable={true}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -536,7 +536,7 @@ exports[`renders correctly 1`] = `
         </View>
         <View
           accessible={true}
-          clickable={true}
+          focusable={true}
           isTVSelectable={true}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -577,7 +577,7 @@ exports[`renders correctly 1`] = `
         </View>
         <View
           accessible={true}
-          clickable={true}
+          focusable={true}
           isTVSelectable={true}
           onClick={[Function]}
           onResponderGrant={[Function]}

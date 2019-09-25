@@ -3,7 +3,7 @@
 exports[`RelativeDate component renders correctly 1`] = `
 <View
   accessible={true}
-  clickable={true}
+  focusable={true}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -37,7 +37,7 @@ exports[`RelativeDate component renders correctly 1`] = `
 exports[`RelativeDate component renders correctly on touch 1`] = `
 <View
   accessible={true}
-  clickable={true}
+  focusable={true}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}

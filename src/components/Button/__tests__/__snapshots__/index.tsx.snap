@@ -3,7 +3,7 @@
 exports[`renders contained 1`] = `
 <View
   accessible={true}
-  clickable={true}
+  focusable={true}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -47,7 +47,7 @@ exports[`renders contained 1`] = `
 exports[`renders contained disable 1`] = `
 <View
   accessible={true}
-  clickable={true}
+  focusable={true}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -91,7 +91,7 @@ exports[`renders contained disable 1`] = `
 exports[`renders correctly 1`] = `
 <View
   accessible={true}
-  clickable={true}
+  focusable={true}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -135,7 +135,7 @@ exports[`renders correctly 1`] = `
 exports[`renders correctly 2`] = `
 <View
   accessible={true}
-  clickable={true}
+  focusable={true}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -179,7 +179,7 @@ exports[`renders correctly 2`] = `
 exports[`renders fab  1`] = `
 <View
   accessible={true}
-  clickable={true}
+  focusable={true}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -223,7 +223,7 @@ exports[`renders fab  1`] = `
 exports[`renders icon 1`] = `
 <View
   accessible={true}
-  clickable={true}
+  focusable={true}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -295,7 +295,7 @@ exports[`renders icon 1`] = `
 exports[`renders icon title 1`] = `
 <View
   accessible={true}
-  clickable={true}
+  focusable={true}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -383,7 +383,7 @@ exports[`renders icon title 1`] = `
 exports[`renders outlined 1`] = `
 <View
   accessible={true}
-  clickable={true}
+  focusable={true}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -426,7 +426,7 @@ exports[`renders outlined 1`] = `
 exports[`renders sizing 1`] = `
 <View
   accessible={true}
-  clickable={true}
+  focusable={true}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -472,7 +472,7 @@ exports[`renders sizing 1`] = `
 exports[`renders text 1`] = `
 <View
   accessible={true}
-  clickable={true}
+  focusable={true}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}

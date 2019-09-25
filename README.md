@@ -46,6 +46,7 @@
   </div>
 </div>
 
+- [ ] make ios work
 - [x] fix tests
 - [x] deploy ios
 - [x] update docs dependencies
