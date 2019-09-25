@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.7.1](https://github.com/ethanneff/example/compare/v2.7.0...v2.7.1) (2019-09-25)
+
+
+### Bug Fixes
+
+* remove uiwebview from firebase ([becb857](https://github.com/ethanneff/example/commit/becb857))
+* update deps ([6780640](https://github.com/ethanneff/example/commit/6780640))
+* update to react native 0.61.1 ([d39b264](https://github.com/ethanneff/example/commit/d39b264))
+
 # [2.7.0](https://github.com/ethanneff/example/compare/v2.6.7...v2.7.0) (2019-09-23)
 
 
