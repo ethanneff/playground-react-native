@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.2](https://github.com/ethanneff/example/compare/v2.7.1...v2.7.2) (2019-09-26)
+
+
+### Bug Fixes
+
+* update deps ([1e5e25f](https://github.com/ethanneff/example/commit/1e5e25f))
+
 ## [2.7.1](https://github.com/ethanneff/example/compare/v2.7.0...v2.7.1) (2019-09-25)
 
 
