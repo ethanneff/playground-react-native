@@ -3,7 +3,7 @@ import { ScrollView, Text as Original } from "react-native";
 import { StyleSheet, View } from "react-native";
 import { Theme } from "../../utils";
 import { Text } from "../Text";
-import { useColor } from "../../behaviors";
+import { useColor } from "../../hooks";
 
 export interface ContentBody {
   sections: Sections;

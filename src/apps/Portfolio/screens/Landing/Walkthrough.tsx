@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { StyleSheet, FlatList, View } from "react-native";
 import { Text } from "../../../../components";
-import { useColor } from "../../../../behaviors";
+import { useColor } from "../../../../hooks";
 import { useRootSelector } from "../../../../utils";
 import { getWidth } from "../../../../models";
 

@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { Button, Screen } from "../../../../components";
 import { NavigationScreen } from "../../../../models";
-import { useNav } from "../../../../behaviors";
+import { useNav } from "../../../../hooks";
 
 const debugScreens: NavigationScreen[] = [
   "debugArticle",

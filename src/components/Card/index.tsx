@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity, View, ViewStyle } from "react-native";
 import { Theme } from "../../utils";
-import { useColor } from "../../behaviors";
+import { useColor } from "../../hooks";
 
 interface Props {
   flex?: boolean;

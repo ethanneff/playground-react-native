@@ -8,7 +8,7 @@ import {
 import { Theme } from "../../utils";
 import { Icon } from "../Icon";
 import { Text } from "../Text";
-import { useColor } from "../../behaviors";
+import { useColor } from "../../hooks";
 
 /*
 styling: https://material.io/design/components/buttons.html#usage

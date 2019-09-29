@@ -9,7 +9,7 @@ import {
 import { Theme, useRootDispatch, useRootSelector } from "../../../../utils";
 import { DailyProgress, Header, ProfileLevel } from "../../components";
 import { app } from "../../data";
-import { useColor, useNav } from "../../../../behaviors";
+import { useColor, useNav } from "../../../../hooks";
 import { Item } from "./Item";
 
 export default memo(function CantHurtMeMain() {

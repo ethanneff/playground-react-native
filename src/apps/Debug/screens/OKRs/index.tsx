@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { ScrollView } from "react-native";
 import { Screen, Card, Text } from "../../../../components";
-import { useNav } from "../../../../behaviors";
+import { useNav } from "../../../../hooks";
 import { Theme } from "../../../../utils";
 
 export default memo(function DebugOKRs() {

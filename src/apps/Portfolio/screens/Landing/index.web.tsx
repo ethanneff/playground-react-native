@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { StyleSheet, View } from "react-native";
 import { Button, Screen, Text } from "../../../../components";
 import Walkthrough from "./Walkthrough";
-import { useNav } from "../../../../behaviors";
+import { useNav } from "../../../../hooks";
 
 const styles = StyleSheet.create({
   row: { flexDirection: "row", justifyContent: "space-around" }

@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { Theme } from "../../utils";
 import { Button } from "../Button";
-import { useColor } from "../../behaviors";
+import { useColor } from "../../hooks";
 
 /* 
 styling https://uxdesign.cc/design-better-forms-96fadca0f49c

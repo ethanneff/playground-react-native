@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { Text } from "../../../../components";
 import { Theme } from "../../../../utils";
-import { useColor } from "../../../../behaviors";
+import { useColor } from "../../../../hooks";
 
 interface OwnProps {
   onPress?(): void;

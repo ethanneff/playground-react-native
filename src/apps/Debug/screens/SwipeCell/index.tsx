@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { Screen, Text } from "../../../../components";
-import { useNav } from "../../../../behaviors";
+import { useNav } from "../../../../hooks";
 
 export default memo(function SwipeCell() {
   const nav = useNav();

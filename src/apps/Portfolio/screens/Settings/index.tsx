@@ -3,7 +3,7 @@ import { FlatList, View } from "react-native";
 import { Button, Screen, Text } from "../../../../components";
 import { changeTheme, ColorTheme } from "../../../../models";
 import { useRootDispatch, useRootSelector } from "../../../../utils";
-import { useNav } from "../../../../behaviors";
+import { useNav } from "../../../../hooks";
 
 export default memo(function PortfolioSettings() {
   const dispatch = useRootDispatch();

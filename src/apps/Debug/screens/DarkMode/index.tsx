@@ -10,7 +10,7 @@ import {
 import { Button, Card, Screen, Text } from "../../../../components";
 import { changeTheme, ColorTheme } from "../../../../models";
 import { Theme, useRootDispatch, useRootSelector } from "../../../../utils";
-import { useColor, useNav } from "../../../../behaviors";
+import { useColor, useNav } from "../../../../hooks";
 
 interface Card {
   title: string;

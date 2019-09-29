@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import { Screen } from "../../../../components";
 import { Content } from "../../../../components/Content";
 import { data } from "./data";
-import { useColor, useNav } from "../../../../behaviors";
+import { useColor, useNav } from "../../../../hooks";
 
 export default memo(function DebugArticle() {
   const nav = useNav();

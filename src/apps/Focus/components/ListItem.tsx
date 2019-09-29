@@ -4,7 +4,7 @@ import { EllipsizeMode, Icon, Text } from "../../../components";
 import { Theme } from "../../../utils";
 import { Item } from "./List";
 import { ListSection } from "./ListSection";
-import { useColor } from "../../../behaviors";
+import { useColor } from "../../../hooks";
 
 interface Props {
   showSection: boolean;
