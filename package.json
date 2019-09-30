@@ -23,7 +23,7 @@
     "@mdi/js": "4.4.95",
     "@mdi/react": "1.2.1",
     "@react-native-community/async-storage": "1.6.2",
-    "@react-native-community/netinfo": "4.2.2",
+    "@react-native-community/netinfo": "4.3.0",
     "appcenter": "2.4.0",
     "appcenter-analytics": "2.4.0",
     "appcenter-crashes": "2.4.0",
