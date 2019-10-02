@@ -1,94 +1,54 @@
-import React from "react";
-import {
-  Animated,
-  PanResponder,
-  PanResponderInstance,
-  StyleSheet
-} from "react-native";
-import { connect } from "react-redux";
+import React, { useState } from "react";
+import { Animated, StyleSheet } from "react-native";
 import { Screen, Text } from "../../../../components";
-import { RootState } from "../../../../containers";
-import {
-  getHeight,
-  getWidth,
-  navigate,
-  NavigationScreen
-} from "../../../../models";
+import { useNav, useColor } from "../../../../hooks";
+import { usePanGesture } from "./usePanGesture";
 import { GestureHandler } from "./logic";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
+const minTouches = 2;
+const title = `pinch or spread the screen with ${minTouches} fingers minimum`;
 
-interface DispatchProps {
-  navigate: typeof navigate;
-}
-
-interface StateProps {
-  height: number;
-  width: number;
-}
-
-type Props = StateProps & DispatchProps;
-
-class Container extends React.PureComponent<Props> {
-  public state = {
+export default function PinchSpread() {
+  const [state, setState] = useState({
     pinchCount: 0,
     spreadCount: 0
-  };
-  private panGesture: PanResponderInstance;
-  private gestureHandler: GestureHandler;
-  private minTouches = 2;
-  private title = `pinch or spread the screen with ${this.minTouches} fingers minimum`;
-
-  public constructor(props: Props) {
-    super(props);
-    this.gestureHandler = new GestureHandler({ minTouches: this.minTouches });
-    this.panGesture = PanResponder.create({
-      onMoveShouldSetPanResponderCapture: () => true,
-      onPanResponderMove: event => {
-        this.gestureHandler.onPanResponderMove(event);
-      },
-      onPanResponderRelease: () => {
-        const { spreadCount, pinchCount } = this.state;
-        const outcome = this.gestureHandler.onPanResponderRelease();
-        if (outcome.spread) {
-          this.setState({ spreadCount: spreadCount + 1 });
-        }
-        if (outcome.pinch) {
-          this.setState({ pinchCount: pinchCount + 1 });
-        }
+  });
+  const color = useColor();
+  const nav = useNav();
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: color.surface
+    }
+  });
+  const gestureHandler = new GestureHandler({ minTouches });
+  const panGesture = usePanGesture({
+    onMoveShouldSetPanResponderCapture: () => true,
+    onPanResponderMove: event => {
+      gestureHandler.onPanResponderMove(event);
+    },
+    onPanResponderRelease: () => {
+      const { spreadCount, pinchCount } = state;
+      // TODO: fix cannot read property of undefined when 2+ touches
+      const outcome = gestureHandler.onPanResponderRelease();
+      if (outcome.spread) {
+        setState({ ...state, spreadCount: spreadCount + 1 });
       }
-    });
-  }
+      if (outcome.pinch) {
+        setState({ ...state, pinchCount: pinchCount + 1 });
+      }
+    }
+  });
 
-  public render() {
-    const { spreadCount, pinchCount } = this.state;
-    return (
-      <Screen disableScroll onLeftPress={this.nav("debug")}>
-        <Text center title={this.title} />
-        <Text center title={`spread: ${spreadCount}`} />
-        <Text center title={`pinch: ${pinchCount}`} />
-        <Animated.View
-          style={styles.container}
-          {...this.panGesture.panHandlers}
-        />
-      </Screen>
-    );
+  if (!panGesture) {
+    return <></>;
   }
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
+  return (
+    <Screen disableScroll onLeftPress={nav.to("debug")}>
+      <Text center title={title} />
+      <Text center title={`spread: ${state.spreadCount}`} />
+      <Text center title={`pinch: ${state.pinchCount}`} />
+      <Animated.View style={styles.container} {...panGesture.panHandlers} />
+    </Screen>
+  );
 }
-
-const mapStateToProps = (state: RootState) => ({
-  height: getHeight(state),
-  width: getWidth(state)
-});
-
-const mapDispatchToProps: DispatchProps = { navigate };
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Container);
