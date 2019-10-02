@@ -4,12 +4,12 @@ import { AppState, AppStateStatus, Dimensions, Keyboard } from "react-native";
 import DeviceInfo from "react-native-device-info";
 import {
   DimensionsProps,
-  updateDimensions,
-  updateNetwork,
-  changeKeyboardStatus,
   changeAppStatus,
+  changeKeyboardStatus,
   deviceInfoInitialState,
-  loadDevice
+  loadDevice,
+  updateDimensions,
+  updateNetwork
 } from "../../models";
 import { useRootDispatch } from "../../utils";
 
@@ -81,6 +81,7 @@ export const useDeviceInfo = () => {
   const dispatch = useRootDispatch();
   const result = deviceInfoInitialState;
   useEffect(() => {
+    /* eslint-disable */
     Promise.all([
       DeviceInfo.getAndroidId().then(
         (value: string) => (result.androidId = value)
@@ -248,4 +249,5 @@ export const useDeviceInfo = () => {
       )
     ]).then(() => dispatch(loadDevice(result)));
   }, [dispatch, result]);
+  /* eslint-enable */
 };

@@ -1,7 +1,8 @@
+/* eslint-disable */
 import {
+  GestureResponderEvent,
   NativeTouchEvent,
-  PointPropType,
-  GestureResponderEvent
+  PointPropType
 } from "react-native";
 
 interface Touches {
