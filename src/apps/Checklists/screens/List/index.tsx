@@ -6,8 +6,8 @@ import { RootState } from "../../../../containers";
 import { NavigationScreen, navigate } from "../../../../models";
 import { Theme } from "../../../../utils";
 import {
-  getItemsByCreatedAt,
   ItemsArray,
+  getItemsByCreatedAt,
   removeItem,
   toggleActiveItem,
   updateItem
@@ -34,7 +34,7 @@ class Component extends React.PureComponent<Props> {
         <FlatList
           keyExtractor={item => item.id}
           data={items}
-          renderItem={({ item }) => (
+          renderItem={({ item }) => 
             <View style={{ flexDirection: "row" }}>
               <Button
                 label
@@ -62,7 +62,7 @@ class Component extends React.PureComponent<Props> {
                 onPress={() => undefined}
               />
             </View>
-          )}
+          }
         />
         <Button
           fab

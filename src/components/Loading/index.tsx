@@ -44,7 +44,7 @@ export const Loading: React.FC<Props> = memo(({ title, center, style }) => {
   return (
     <View style={containerStyles}>
       <Text title={title} h3 bold center />
-      {ellipsis.map((dot, index) => (
+      {ellipsis.map((dot, index) => 
         <Text
           key={index}
           title={dot}
@@ -53,7 +53,7 @@ export const Loading: React.FC<Props> = memo(({ title, center, style }) => {
           bold
           center
         />
-      ))}
+      )}
     </View>
   );
 });

@@ -1,10 +1,8 @@
 import React from "react";
 import { View } from "react-native";
 
-export class Slack extends React.PureComponent {
-  public render() {
-    return <View />;
-  }
+export function Slack() {
+  return <View />;
 }
 
 // // todo

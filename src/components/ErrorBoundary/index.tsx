@@ -6,19 +6,22 @@ interface State {
 }
 
 export class ErrorBoundary extends React.PureComponent {
-  public state: State = { hasError: false };
+  state: State = { hasError: false };
 
-  public static getDerivedStateFromError() {
+  static getDerivedStateFromError() {
     return { hasError: true };
   }
 
-  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  // eslint-disable-next-line class-methods-use-this
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     // eslint-disable-next-line no-console
     console.log(error, errorInfo);
   }
 
-  public render() {
-    if (!this.state.hasError) return this.props.children;
+  render() {
+    if (!this.state.hasError) {
+      return this.props.children;
+    }
     return <Text title="something went wrong" />;
   }
 }

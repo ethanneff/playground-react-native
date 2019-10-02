@@ -47,9 +47,9 @@ export const Questionnaire = () => {
           );
         }}
       />
-      {actionSheet && (
+      {actionSheet && 
         <Dialog title="hello" onBackgroundPress={handleActionSheetClose} />
-      )}
+      }
     </>
   );
 };

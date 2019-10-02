@@ -22,14 +22,14 @@ export class Markdown extends React.PureComponent<Props> {
     const words = title.split(" ");
     return (
       <View style={styles.container}>
-        {words.map((word: string, index: number) => (
+        {words.map((word: string, index: number) => 
           <Text
             style={style}
             key={index}
             bold={this.isWordBold(word)}
             title={this.formattedWord(words, word, index)}
           />
-        ))}
+        )}
       </View>
     );
   }

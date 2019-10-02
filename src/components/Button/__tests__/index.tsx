@@ -8,12 +8,6 @@ it("renders correctly", () => {
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });
-it("renders correctly", () => {
-  const dom = mockRenderer(
-    <Button title="hello" onPress={() => undefined} />
-  ).toJSON();
-  expect(dom).toMatchSnapshot();
-});
 it("renders contained", () => {
   const dom = mockRenderer(
     <Button contained title="hello" onPress={() => undefined} />
@@ -32,7 +26,7 @@ it("renders outlined", () => {
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });
-it("renders fab ", () => {
+it("renders fab", () => {
   const dom = mockRenderer(
     <Button fab title="hello" onPress={() => undefined} />
   ).toJSON();

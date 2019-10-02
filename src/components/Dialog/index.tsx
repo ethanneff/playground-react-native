@@ -5,17 +5,11 @@ import {
   TouchableWithoutFeedback,
   View
 } from "react-native";
-import { hideModal } from "../../models";
-import {
-  colorWithOpacity,
-  Theme,
-  useNativeDriver,
-  useRootDispatch
-} from "../../utils";
+import { Theme, colorWithOpacity } from "../../utils";
 import { Button } from "../Button";
 import { Card } from "../Card";
 import { Text } from "../Text";
-import { useColor } from "../../behaviors";
+import { useColor, useNativeDriver } from "../../hooks";
 
 interface OwnProps {
   testID?: string;
@@ -44,6 +38,7 @@ export const Dialog: React.FC<Props> = memo(
     duration,
     testID
   }) => {
+    const nativeDriver = useNativeDriver();
     const color = useColor();
     const styles = StyleSheet.create({
       buttonContainer: {
@@ -86,23 +81,24 @@ export const Dialog: React.FC<Props> = memo(
     });
     const fade = new Animated.Value(0);
     const opacity = fade;
-    const twoButtons = !!onConfirmButtonPress && !!onCancelButtonPress;
+    const twoButtons =
+      Boolean(onConfirmButtonPress) && Boolean(onCancelButtonPress);
     const containerStyle = [styles.container, { opacity }];
     const cancelButtonStyle = [twoButtons ? styles.cancel : undefined];
     const confirmButtonStyle = [twoButtons ? styles.confirm : undefined];
-    const dispatch = useRootDispatch();
 
+    // TODO: animation is not clean on devices
     const animate = useCallback(
       (toValue: number) => {
         return new Promise(resolve => {
           Animated.timing(fade, {
             duration: fadeDuration,
             toValue,
-            useNativeDriver
+            useNativeDriver: nativeDriver
           }).start(resolve);
         });
       },
-      [fade]
+      [fade, nativeDriver]
     );
 
     const dismiss = useCallback(
@@ -111,16 +107,15 @@ export const Dialog: React.FC<Props> = memo(
           return;
         }
         await animate(0);
-        dispatch(hideModal());
         callback();
       },
-      [animate, dispatch]
+      [animate]
     );
 
     useEffect(() => {
       animate(1);
       if (!duration) {
-        return;
+        return () => undefined;
       }
       const alertTimeout = setTimeout(dismiss(onBackgroundPress), duration);
       return () => {
@@ -141,14 +136,14 @@ export const Dialog: React.FC<Props> = memo(
                 <Text title={message} />
                 <View style={styles.buttonContainer}>
                   <Button
-                    hidden={!!!onCancelButtonPress}
+                    hidden={!onCancelButtonPress}
                     title={cancelButtonText}
                     onPress={dismiss(onCancelButtonPress)}
                     buttonStyle={cancelButtonStyle}
                     half={!twoButtons}
                   />
                   <Button
-                    hidden={!!!onConfirmButtonPress}
+                    hidden={!onConfirmButtonPress}
                     title={confirmButtonText}
                     onPress={dismiss(onConfirmButtonPress)}
                     buttonStyle={confirmButtonStyle}

@@ -1,8 +1,9 @@
 import React, { memo } from "react";
 import { Animated, StyleSheet, ViewStyle } from "react-native";
 import { getCurrentColor } from "../../models";
-import { Theme, useNativeDriver } from "../../utils";
+import { Theme } from "../../utils";
 import { useRootSelector } from "../../utils";
+import { useNativeDriver } from "../../hooks";
 
 export enum EllipsizeMode {
   Head = "head",
@@ -40,121 +41,121 @@ interface Props {
   onPress?(): void;
 }
 
-export const Text: React.FC<Props> = memo(
-  ({
-    style,
-    title,
-    center,
-    bold,
-    hidden,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    subtitle1,
-    subtitle2,
-    body1,
-    body2,
-    button,
-    ellipsizeMode,
-    numberOfLines,
-    caption,
-    onPress,
-    centerVertically,
-    invisible,
-    overline
-  }) => {
-    const opacity = new Animated.Value(1);
-    const colors = useRootSelector(state => getCurrentColor(state));
-    const styles = StyleSheet.create({
-      bold: {
-        fontWeight: Theme.fontWeight.medium
-      },
-      center: {
-        textAlign: "center"
-      },
-      centerVertically: {
-        flex: 1,
-        textAlignVertical: "center"
-      },
-      invisible: {
-        opacity: 0
-      },
-      text: {
-        color: colors.text
-      }
-    });
-    const text = button || overline ? (title || "").toUpperCase() : title;
-    const getFont = () => {
-      return h1
-        ? Theme.fontSize.h1
-        : h2
-        ? Theme.fontSize.h2
-        : h3
-        ? Theme.fontSize.h3
-        : h4
-        ? Theme.fontSize.h4
-        : h5
-        ? Theme.fontSize.h5
-        : h6
-        ? Theme.fontSize.h6
-        : subtitle1
-        ? Theme.fontSize.subtitle1
-        : subtitle2
-        ? Theme.fontSize.subtitle2
-        : body1
-        ? Theme.fontSize.body1
-        : body2
-        ? Theme.fontSize.body2
-        : button
-        ? Theme.fontSize.button
-        : caption
-        ? Theme.fontSize.caption
-        : overline
-        ? Theme.fontSize.overline
-        : Theme.fontSize.body2;
-    };
+export const Text: React.FC<Props> = memo(function Text({
+  style,
+  title,
+  center,
+  bold,
+  hidden,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  subtitle1,
+  subtitle2,
+  body1,
+  body2,
+  button,
+  ellipsizeMode,
+  numberOfLines,
+  caption,
+  onPress,
+  centerVertically,
+  invisible,
+  overline
+}) {
+  const opacity = new Animated.Value(1);
+  const colors = useRootSelector(state => getCurrentColor(state));
+  const nativeDriver = useNativeDriver();
+  const styles = StyleSheet.create({
+    bold: {
+      fontWeight: Theme.fontWeight.medium
+    },
+    center: {
+      textAlign: "center"
+    },
+    centerVertically: {
+      flex: 1,
+      textAlignVertical: "center"
+    },
+    invisible: {
+      opacity: 0
+    },
+    text: {
+      color: colors.text
+    }
+  });
+  const text = button || overline ? (title || "").toUpperCase() : title;
+  const getFont = () => {
+    return h1
+      ? Theme.fontSize.h1
+      : h2
+      ? Theme.fontSize.h2
+      : h3
+      ? Theme.fontSize.h3
+      : h4
+      ? Theme.fontSize.h4
+      : h5
+      ? Theme.fontSize.h5
+      : h6
+      ? Theme.fontSize.h6
+      : subtitle1
+      ? Theme.fontSize.subtitle1
+      : subtitle2
+      ? Theme.fontSize.subtitle2
+      : body1
+      ? Theme.fontSize.body1
+      : body2
+      ? Theme.fontSize.body2
+      : button
+      ? Theme.fontSize.button
+      : caption
+      ? Theme.fontSize.caption
+      : overline
+      ? Theme.fontSize.overline
+      : Theme.fontSize.body2;
+  };
 
-    const handlePress = () => {
-      if (onPress) {
-        onPress();
-      }
-      Animated.sequence([
-        Animated.timing(opacity, {
-          duration: 50,
-          toValue: 0.2,
-          useNativeDriver
-        }),
-        Animated.timing(opacity, {
-          duration: 350,
-          toValue: 1,
-          useNativeDriver
-        })
-      ]).start();
-    };
+  const handlePress = () => {
+    if (onPress) {
+      onPress();
+    }
+    // TODO: does not work on real devices
+    Animated.sequence([
+      Animated.timing(opacity, {
+        duration: 50,
+        toValue: 0.2,
+        useNativeDriver: nativeDriver
+      }),
+      Animated.timing(opacity, {
+        duration: 350,
+        toValue: 1,
+        useNativeDriver: nativeDriver
+      })
+    ]).start();
+  };
 
-    const textStyle = [
-      styles.text,
-      getFont(),
-      center && styles.center,
-      centerVertically && styles.centerVertically,
-      bold && styles.bold,
-      { opacity },
-      invisible && styles.invisible,
-      style
-    ];
+  const textStyle = [
+    styles.text,
+    getFont(),
+    center && styles.center,
+    centerVertically && styles.centerVertically,
+    bold && styles.bold,
+    { opacity },
+    invisible && styles.invisible,
+    style
+  ];
 
-    return title === undefined || hidden ? null : (
-      <Animated.Text
-        ellipsizeMode={ellipsizeMode}
-        numberOfLines={numberOfLines}
-        style={textStyle}
-        onPress={onPress ? handlePress : undefined}
-      >
-        {text}
-      </Animated.Text>
-    );
-  }
-);
+  return title === undefined || hidden ? null : 
+    <Animated.Text
+      ellipsizeMode={ellipsizeMode}
+      numberOfLines={numberOfLines}
+      style={textStyle}
+      onPress={onPress ? handlePress : undefined}
+    >
+      {text}
+    </Animated.Text>
+  ;
+});

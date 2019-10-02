@@ -25,10 +25,10 @@ const debugScreens: NavigationScreen[] = [
 export default memo(function Debug() {
   const nav = useNav();
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")}>
-      {debugScreens.map(screen => (
+    <Screen onLeftPress={nav.to("portfolioLanding")} title="Debug">
+      {debugScreens.map(screen => 
         <Button title={screen} key={screen} onPress={nav.to(screen)} />
-      ))}
+      )}
     </Screen>
   );
 });

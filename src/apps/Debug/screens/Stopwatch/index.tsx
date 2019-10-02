@@ -84,7 +84,7 @@ interface TimerProps {
 }
 
 function Timer({ interval, style }: TimerProps) {
-  const pad = (n: number) => (n < 10 ? "0" + n : n);
+  const pad = (n: number) => n < 10 ? "0" + n : n;
   const duration = moment.duration(interval);
   const centiseconds = Math.floor(duration.milliseconds() / 10);
   return (
@@ -166,7 +166,7 @@ function LapsTable({ laps, timer }: LapTableProps) {
   }
   return (
     <ScrollView style={styles.scrollView}>
-      {laps.map((lap, index) => (
+      {laps.map((lap, index) => 
         <Lap
           num={laps.length - index}
           key={laps.length - index}
@@ -174,7 +174,7 @@ function LapsTable({ laps, timer }: LapTableProps) {
           fastest={lap === min}
           slowest={lap === max}
         />
-      ))}
+      )}
     </ScrollView>
   );
 }
@@ -269,7 +269,7 @@ class Container extends React.PureComponent<Props> {
           interval={laps.reduce((total, curr) => total + curr, 0) + timer}
           style={styles.timer}
         />
-        {laps.length === 0 && (
+        {laps.length === 0 && 
           <ButtonsRow>
             <RoundButton
               title="Lap"
@@ -285,8 +285,8 @@ class Container extends React.PureComponent<Props> {
               onPress={this.start}
             />
           </ButtonsRow>
-        )}
-        {start > 0 && (
+        }
+        {start > 0 && 
           <ButtonsRow>
             <RoundButton
               title="Lap"
@@ -301,8 +301,8 @@ class Container extends React.PureComponent<Props> {
               onPress={this.stop}
             />
           </ButtonsRow>
-        )}
-        {laps.length > 0 && start === 0 && (
+        }
+        {laps.length > 0 && start === 0 && 
           <ButtonsRow>
             <RoundButton
               title="Reset"
@@ -317,7 +317,7 @@ class Container extends React.PureComponent<Props> {
               onPress={this.resume}
             />
           </ButtonsRow>
-        )}
+        }
         <LapsTable laps={laps} timer={timer} />
       </Screen>
     );

@@ -51,13 +51,13 @@ class Container extends React.PureComponent<Props> {
     this.data.push(Math.random());
   };
 
-  private renderImage = () => (
+  private renderImage = () => 
     <AsyncImage
       uri={this.imageUrl}
       width={this.columnWidth}
       height={this.columnWidth}
     />
-  );
+  ;
 }
 
 const mapDispatchToProps: DispatchProps = { navigate };

@@ -79,12 +79,16 @@ class Container extends React.PureComponent<Props> {
 
   public onFinish = () => undefined;
 
+  setRef = (ref: any) => {
+    this.tableView = ref;
+  };
+
   public render() {
     return (
       <Screen disableScroll onLeftPress={this.nav("debug")}>
         <FlatList
           scrollEnabled={false}
-          ref={(ref: any) => (this.tableView = ref)}
+          ref={this.setRef}
           removeClippedSubviews
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
@@ -99,7 +103,7 @@ class Container extends React.PureComponent<Props> {
             let items: any = <View style={{ flex: 1 }} />;
 
             if (item.choices) {
-              items = (
+              items = 
                 <View style={{ flex: 1 }}>
                   {item.choices.map(choice => {
                     return (
@@ -113,7 +117,7 @@ class Container extends React.PureComponent<Props> {
                     );
                   })}
                 </View>
-              );
+              ;
             }
 
             return (

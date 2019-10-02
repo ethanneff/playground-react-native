@@ -208,7 +208,7 @@ export const Button: React.FC<Props> = memo(props => {
   ];
   const iconStyleGroup = [title && styles.icon, !iconColor && textStyleGroup];
 
-  return hidden ? null : (
+  return hidden ? null : 
     <TouchableOpacity
       activeOpacity={activeOpacity}
       disabled={disable}
@@ -224,5 +224,5 @@ export const Button: React.FC<Props> = memo(props => {
       />
       <Text center button={!lowercase} title={title} style={textStyleGroup} />
     </TouchableOpacity>
-  );
+  ;
 });

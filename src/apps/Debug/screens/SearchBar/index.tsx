@@ -157,9 +157,9 @@ class Container extends React.PureComponent<Props, State> {
           <FlatList
             keyExtractor={item => item.id.toString()}
             data={DATA}
-            renderItem={({ item }) => (
+            renderItem={({ item }) => 
               <Text subtitle2 style={styles.item} title={item.name} />
-            )}
+            }
           />
         </Animated.View>
       </Screen>

@@ -4,26 +4,20 @@ exports[`renders correctly 1`] = `
 <RCTSafeAreaView
   emulateUnlessSupported={true}
   style={
-    Array [
-      Object {
-        "backgroundColor": "hsl(0, 0%, 100%)",
-        "flex": 1,
-      },
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#0D0D0D",
-        "flex": 1,
-        "paddingHorizontal": 20,
-        "paddingTop": 130,
-      },
-    ]
+    Object {
+      "backgroundColor": "hsl(0, 0%, 100%)",
+      "flex": 1,
+    }
   }
 >
   <View
     style={
       Object {
         "alignItems": "center",
+        "borderBottomColor": "hsl(210, 10%, 23%)",
+        "borderBottomWidth": 0,
         "flexDirection": "row",
+        "height": 72,
         "justifyContent": "space-between",
       }
     }
@@ -41,7 +35,7 @@ exports[`renders correctly 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "flex": 1,
+          "flex": 0.2,
           "opacity": 1,
           "padding": 12,
         }
@@ -86,7 +80,7 @@ exports[`renders correctly 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "flex": 1,
+          "flex": 0.2,
           "opacity": 1,
           "padding": 12,
         }
@@ -98,8 +92,8 @@ exports[`renders correctly 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "hsl(0, 0%, 100%)",
           "flex": 1,
+          "padding": 0,
         },
         Object {
           "alignItems": "center",

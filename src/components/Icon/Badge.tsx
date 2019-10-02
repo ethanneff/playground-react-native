@@ -30,9 +30,9 @@ const maxBadgeNumber = 99;
 
 export const Badge: React.FC<Props> = memo(({ badge }) => {
   const num = badge > maxBadgeNumber ? badgeLimit : String(badge);
-  return badge <= 0 ? null : (
+  return badge <= 0 ? null : 
     <View style={styles.badgeContainer}>
       <Text center style={styles.badgeText} title={num} />
     </View>
-  );
+  ;
 });

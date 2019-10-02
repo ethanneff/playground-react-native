@@ -13,20 +13,15 @@ export const toggleActiveList = createStandardAction("LIST/TOGGLE_ACTIVE")<
 
 /* INDEXES */
 export const indexListsByCreatedAt = (rows: Lists) =>
-  Object.values(rows).reduce(
-    (index: any, row) => ((index[row.createdAt] = row.id), index),
-    {}
-  );
+  Object.values(rows).reduce((index: any, row) => {
+    index[row.createdAt] = row.id;
+    return index;
+  }, {});
 export const indexListsByUserId = (rows: Lists) =>
-  Object.values(rows).reduce(
-    (index: any, row) => (
-      (index[row.userId] = row.hasOwnProperty("userId")
-        ? [...index[row.userId], row.id]
-        : [row.id]),
-      index
-    ),
-    {}
-  );
+  Object.values(rows).reduce((index: any, row) => {
+    index[row.userId] = row.userId ? [...index[row.userId], row.id] : [row.id];
+    return index;
+  }, {});
 
 /* SELECTORS */
 export const selectLists = (state: RootState): Lists => state.lists;

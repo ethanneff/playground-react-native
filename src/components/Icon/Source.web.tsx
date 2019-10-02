@@ -16,7 +16,7 @@ export const Source: React.FC<Props> = memo(function IconSource({
   style
 }) {
   const path = Icons[name];
-  return !path ? null : (
+  return !path ? null : 
     <Original path={Icons[name]} size={size} color={color} style={style} />
-  );
+  ;
 });

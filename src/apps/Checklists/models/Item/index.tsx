@@ -14,20 +14,15 @@ export const toggleActiveItem = createStandardAction("ITEM/TOGGLE_ACTIVE")<
 
 /* INDEXES */
 export const indexItemsByCreatedAt = (rows: Items): Items =>
-  Object.values(rows).reduce(
-    (index: any, row) => ((index[row.createdAt] = row.id), index),
-    {}
-  );
+  Object.values(rows).reduce((index: any, row) => {
+    index[row.createdAt] = row.id;
+    return index;
+  }, {});
 export const indexItemsByUserId = (rows: Items): Items =>
-  Object.values(rows).reduce(
-    (index: any, row) => (
-      (index[row.userId] = row.hasOwnProperty("userId")
-        ? [...index[row.userId], row.id]
-        : [row.id]),
-      index
-    ),
-    {}
-  );
+  Object.values(rows).reduce((index: any, row) => {
+    index[row.userId] = row.userId ? [...index[row.userId], row.id] : [row.id];
+    return index;
+  }, {});
 
 /* SELECTORS */
 export const getItems = (state: RootState): Items => state.items;
@@ -73,10 +68,10 @@ export const itemReducer = (
   state: Items = initialState,
   action: RootAction
 ): Items => {
+  const id = uuid.v4();
+  const timestamp = Date.now();
   switch (action.type) {
     case getType(createItem):
-      const id = uuid.v4();
-      const timestamp = Date.now();
       return {
         ...state,
         [id]: {

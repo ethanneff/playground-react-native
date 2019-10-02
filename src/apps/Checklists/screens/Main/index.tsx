@@ -32,7 +32,7 @@ class Component extends React.PureComponent<Props> {
         <FlatList
           keyExtractor={item => item.id}
           data={this.items}
-          renderItem={({ item }) => (
+          renderItem={({ item }) => 
             <View style={{ flexDirection: "row" }}>
               <Button
                 contained
@@ -40,7 +40,7 @@ class Component extends React.PureComponent<Props> {
                 onPress={this.nav("checklistsList")}
               />
             </View>
-          )}
+          }
         />
         <Button
           right

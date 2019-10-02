@@ -1,35 +1,21 @@
 import React from "react";
 import {
   Animated,
+  Dimensions,
   PanResponder,
   PanResponderInstance,
   StyleSheet
 } from "react-native";
-import { connect } from "react-redux";
 import { Screen, Text } from "../../../../components";
-import { RootState } from "../../../../containers";
-import {
-  getHeight,
-  getWidth,
-  navigate,
-  NavigationScreen
-} from "../../../../models";
+import { useColor, useNav } from "../../../../hooks";
 
-interface StateProps {
-  height: number;
-  width: number;
-}
-
-interface DispatchProps {
-  navigate: typeof navigate;
-}
-
-type Props = StateProps & DispatchProps;
-
-class Container extends React.PureComponent<Props> {
-  private readonly styles = StyleSheet.create({
+export default function DebugDrag() {
+  const nav = useNav();
+  const color = useColor();
+  const { width, height } = Dimensions.get("window");
+  const styles = StyleSheet.create({
     ball: {
-      borderColor: "black",
+      borderColor: color.text,
       borderRadius: 30,
       borderWidth: 30,
       height: 60,
@@ -38,45 +24,26 @@ class Container extends React.PureComponent<Props> {
       width: 60
     }
   });
-  private ballPosition: Animated.ValueXY;
-  private panGesture: PanResponderInstance;
+  const ballPosition: Animated.ValueXY = new Animated.ValueXY({
+    x: width / 2,
+    y: height / 2
+  });
+  const panGesture: PanResponderInstance = PanResponder.create({
+    onMoveShouldSetPanResponderCapture: () => true,
+    onPanResponderMove: (_, gestureState) => {
+      Animated.spring(ballPosition, {
+        toValue: { x: gestureState.moveX, y: gestureState.moveY }
+      }).start();
+    }
+  });
 
-  public constructor(props: Props) {
-    super(props);
-    const { width, height } = this.props;
-    this.ballPosition = new Animated.ValueXY({ x: width / 2, y: height / 2 });
-    this.panGesture = PanResponder.create({
-      onMoveShouldSetPanResponderCapture: () => true,
-      onPanResponderMove: (_, gestureState) => {
-        Animated.spring(this.ballPosition, {
-          toValue: { x: gestureState.moveX, y: gestureState.moveY }
-        }).start();
-      }
-    });
-  }
-  public render() {
-    return (
-      <Screen disableScroll onLeftPress={this.nav("debug")}>
-        <Text center title="drag the circle" />
-        <Animated.View
-          style={[this.ballPosition.getLayout(), this.styles.ball]}
-          {...this.panGesture.panHandlers}
-        />
-      </Screen>
-    );
-  }
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
+  return (
+    <Screen disableScroll onLeftPress={nav.to("debug")}>
+      <Text center title="drag the circle" />
+      <Animated.View
+        style={[ballPosition.getLayout(), styles.ball]}
+        {...panGesture.panHandlers}
+      />
+    </Screen>
+  );
 }
-
-const mapStateToProps = (state: RootState) => ({
-  height: getHeight(state),
-  width: getWidth(state)
-});
-
-const mapDispatchToProps: DispatchProps = { navigate };
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Container);

@@ -17,6 +17,6 @@ interface Props {
   style?: TextStyle;
 }
 
-export const CardSection: React.FC<Props> = memo(({ style, children }) => (
+export const CardSection: React.FC<Props> = memo(({ style, children }) => 
   <View style={[styles.containerStyle, style]}>{children}</View>
-));
+);

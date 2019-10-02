@@ -1,10 +1,8 @@
 import React from "react";
 import { View } from "react-native";
 
-export class Swipe extends React.PureComponent {
-  public render() {
-    return <View />;
-  }
+export function Swipe() {
+  return <View />;
 }
 // import React from "react";
 // import {

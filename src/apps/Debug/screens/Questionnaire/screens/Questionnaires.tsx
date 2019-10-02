@@ -76,9 +76,9 @@ const Container = (props: Props) => {
         dropShadow
         onPress={handleCreate}
       />
-      {actionSheet && (
+      {actionSheet && 
         <Dialog title="hello" onBackgroundPress={handleActionSheetClose} />
-      )}
+      }
     </>
   );
 };
