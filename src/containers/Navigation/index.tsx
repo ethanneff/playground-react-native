@@ -1,9 +1,8 @@
-import React, { memo, lazy, Suspense, ReactElement } from "react";
-import { ActivityIndicator } from "react-native";
-import { Configs, Profile } from "../../apps/CantHurtMe/screens";
-import { NavigationModal as M } from "../../models";
+import React, { Suspense, lazy, memo } from "react";
 import { useRootSelector } from "../../utils";
 import { ErrorBoundary } from "../../components/ErrorBoundary";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
+import { useColor } from "../../hooks";
 
 // screens
 const Portfolio = lazy(() => import(`../../apps/Portfolio/screens/Main`));
@@ -60,9 +59,6 @@ const DebugSearchBar = lazy(() => import(`../../apps/Debug/screens/SearchBar`));
 const DebugStopwatch = lazy(() => import(`../../apps/Debug/screens/Stopwatch`));
 const DebugSwipeCell = lazy(() => import(`../../apps/Debug/screens/SwipeCell`));
 
-type Modals = { [key in M]: ReactElement };
-
-// TODO: missing type
 export const screens = {
   focus: <Focus />,
   portfolio: <Portfolio />,
@@ -97,20 +93,28 @@ export const screens = {
   checklistsItemUpdate: <ChecklistsItemUpdate />
 };
 
-// TODO: remove for similar to focus
-const modals: Modals = {
-  [M.CantHurtMeConfigs]: <Configs />,
-  [M.CantHurtMeProfile]: <Profile />,
-  [M.None]: <></>
-};
+const Loading = memo(function NavigationLoading() {
+  const color = useColor();
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: color.background,
+      justifyContent: "center"
+    }
+  });
 
-export const Navigation = memo(() => {
+  return (
+    <View style={styles.container}>
+      <ActivityIndicator size="large" color={color.dark} />
+    </View>
+  );
+});
+
+export const Navigation = memo(function Navigation() {
   const screen = useRootSelector(state => state.navigation.screen);
-  const modal = useRootSelector(state => state.navigation.modal);
   return (
     <ErrorBoundary>
-      <Suspense fallback={<ActivityIndicator />}>{screens[screen]}</Suspense>
-      {modals[modal]}
+      <Suspense fallback={<Loading />}>{screens[screen]}</Suspense>
     </ErrorBoundary>
   );
 });
