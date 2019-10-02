@@ -132,7 +132,7 @@ exports[`renders correctly 1`] = `
 </View>
 `;
 
-exports[`renders fab  1`] = `
+exports[`renders fab 1`] = `
 <View
   accessible={true}
   focusable={true}
