@@ -55,10 +55,7 @@ export const onRegister = (): RootThunkAction<void> => async dispatch => {
     dispatch(loginFailure(error));
   }
 };
-export const onLogout = (): RootThunkAction<void> => async (
-  dispatch,
-  getState
-) => {
+export const onLogout = (): RootThunkAction<void> => (dispatch, getState) => {
   const token = getState().auth.token;
   dispatch(logout());
   axios({
