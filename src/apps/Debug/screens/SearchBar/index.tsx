@@ -10,8 +10,8 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 import { Icon, Screen, Text, TextInput } from "../../../../components";
-import { navigate, NavigationScreen } from "../../../../models";
-import { colorWithOpacity, Config, Theme } from "../../../../utils";
+import { NavigationScreen, navigate } from "../../../../models";
+import { Config, Theme, colorWithOpacity } from "../../../../utils";
 
 const styles = StyleSheet.create({
   container: {

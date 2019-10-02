@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { StyleSheet, View } from "react-native";
-import { Button, Screen, Text } from "../../../../components";
+import { Button, Screen } from "../../../../components";
 import Walkthrough from "./Walkthrough";
 import { useNav } from "../../../../hooks";
 

@@ -4,10 +4,10 @@ import { connect } from "react-redux";
 import { Button, Screen } from "../../../../components";
 import { RootState } from "../../../../containers";
 import {
+  NavigationScreen,
   getHeight,
   getWidth,
-  navigate,
-  NavigationScreen
+  navigate
 } from "../../../../models";
 
 const styles = StyleSheet.create({

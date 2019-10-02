@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { StyleSheet, FlatList, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import { Text } from "../../../../components";
 import { useColor } from "../../../../hooks";
 import { useRootSelector } from "../../../../utils";

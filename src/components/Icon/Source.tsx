@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { ViewStyle, StyleSheet } from "react-native";
+import { StyleSheet, ViewStyle } from "react-native";
 import Original from "react-native-vector-icons/MaterialCommunityIcons";
 
 interface Props {

@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import { Button, Card, Dialog, Text } from "../../../../../components";
 import { RootState } from "../../../../../containers";
 import {
+  Questionnaire,
   createQuestionnaire,
   getQuestionnaireArray,
-  Questionnaire,
   removeQuestionnaire,
   selectQuestionnaire,
   updateQuestionnaire

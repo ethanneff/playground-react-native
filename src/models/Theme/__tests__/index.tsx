@@ -1,5 +1,5 @@
 import { getType } from "typesafe-actions";
-import { changeTheme, ColorTheme, themeInitialState, themeReducer } from "..";
+import { ColorTheme, changeTheme, themeInitialState, themeReducer } from "..";
 import { logout } from "../../Auth";
 
 describe("reducer", () => {

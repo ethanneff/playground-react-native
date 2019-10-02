@@ -7,7 +7,7 @@ import {
   Screen,
   TextInput
 } from "../../../../components";
-import { navigate, NavigationScreen } from "../../../../models";
+import { NavigationScreen, navigate } from "../../../../models";
 import { Theme } from "../../../../utils";
 
 interface DispatchProps {

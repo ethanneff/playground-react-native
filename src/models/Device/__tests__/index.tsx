@@ -4,9 +4,11 @@ import {
 } from "@react-native-community/netinfo";
 import { getType } from "typesafe-actions";
 import {
+  DimensionsProps,
+  changeAppStatus,
+  changeKeyboardStatus,
   deviceInitialState,
   deviceReducer,
-  DimensionsProps,
   getHeight,
   getLandscapeOrientation,
   getLargestDimension,
@@ -14,9 +16,7 @@ import {
   getWidth,
   loadDevice,
   updateDimensions,
-  updateNetwork,
-  changeAppStatus,
-  changeKeyboardStatus
+  updateNetwork
 } from "..";
 import { store } from "../../../containers";
 import { logout } from "../../Auth";

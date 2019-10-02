@@ -1,7 +1,7 @@
 import React, { memo } from "react";
-import { View, ViewStyle, Platform } from "react-native";
+import { Platform, View, ViewStyle } from "react-native";
 import { getCurrentColor } from "../../models";
-import { Theme, useRootSelector, Config } from "../../utils";
+import { Config, Theme, useRootSelector } from "../../utils";
 import { Badge } from "./Badge";
 import { Source } from "./Source";
 

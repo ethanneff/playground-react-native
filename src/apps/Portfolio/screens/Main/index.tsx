@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { Button, Screen, Text } from "../../../../components";
+import { Button, Screen } from "../../../../components";
 import { useNav } from "../../../../hooks";
 
 export default memo(function PortfolioMain() {

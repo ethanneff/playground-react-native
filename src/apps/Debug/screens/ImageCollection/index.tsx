@@ -2,7 +2,7 @@ import React from "react";
 import { Dimensions, FlatList } from "react-native";
 import { connect } from "react-redux";
 import { Screen } from "../../../../components";
-import { navigate, NavigationScreen } from "../../../../models";
+import { NavigationScreen, navigate } from "../../../../models";
 import { AsyncImage } from "./AsyncImage";
 
 interface DispatchProps {

@@ -1,7 +1,7 @@
 import React, { memo, useRef, useState } from "react";
 import {
-  StyleSheet,
   TextInput as Original,
+  StyleSheet,
   TextStyle,
   View,
   ViewStyle

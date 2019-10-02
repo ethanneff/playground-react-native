@@ -4,7 +4,7 @@ import { FlatList, StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import uuid from "uuid";
 import { Button, Screen, TextInput } from "../../../../components";
-import { navigate, NavigationScreen } from "../../../../models";
+import { NavigationScreen, navigate } from "../../../../models";
 import { Item } from "./Item";
 
 export interface Message {

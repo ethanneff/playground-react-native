@@ -1,6 +1,6 @@
 import React, { memo, useState } from "react";
-import { Button, Screen, Text, TextInput } from "../../../../components";
-import { View, StyleSheet } from "react-native";
+import { Button, Screen, TextInput } from "../../../../components";
+import { StyleSheet, View } from "react-native";
 import { useNav } from "../../../../hooks";
 
 const styles = StyleSheet.create({

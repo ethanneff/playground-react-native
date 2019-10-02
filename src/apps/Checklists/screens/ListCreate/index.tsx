@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Button, Screen, TextInput } from "../../../../components";
 import { RootState } from "../../../../containers";
-import { navigate, NavigationScreen } from "../../../../models";
+import { NavigationScreen, navigate } from "../../../../models";
 import { createItem } from "../../models/Item";
 
 interface DispatchProps {

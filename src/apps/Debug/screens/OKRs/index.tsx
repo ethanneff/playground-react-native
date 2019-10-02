@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { ScrollView } from "react-native";
-import { Screen, Card, Text } from "../../../../components";
+import { Card, Screen, Text } from "../../../../components";
 import { useNav } from "../../../../hooks";
 import { Theme } from "../../../../utils";
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Dimensions, FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import { Button, Screen, Text } from "../../../../components";
-import { navigate, NavigationScreen } from "../../../../models";
+import { NavigationScreen, navigate } from "../../../../models";
 import { Questionnaires } from "./screens/Questionnaires";
 
 interface DispatchProps {

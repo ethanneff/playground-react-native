@@ -2,7 +2,7 @@ import React from "react";
 import { ScrollView } from "react-native";
 import { connect } from "react-redux";
 import { Button, Screen } from "../../../../components";
-import { navigate, NavigationScreen } from "../../../../models";
+import { NavigationScreen, navigate } from "../../../../models";
 
 interface DispatchProps {
   navigate: typeof navigate;

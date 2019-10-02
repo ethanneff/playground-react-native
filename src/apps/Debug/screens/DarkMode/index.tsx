@@ -1,5 +1,5 @@
 // TODO: slider on web
-import React, { useState, memo } from "react";
+import React, { memo, useState } from "react";
 import {
   FlatList,
   Image,
@@ -8,7 +8,7 @@ import {
   View
 } from "react-native";
 import { Button, Card, Screen, Text } from "../../../../components";
-import { changeTheme, ColorTheme } from "../../../../models";
+import { ColorTheme, changeTheme } from "../../../../models";
 import { Theme, useRootDispatch, useRootSelector } from "../../../../utils";
 import { useColor, useNav } from "../../../../hooks";
 

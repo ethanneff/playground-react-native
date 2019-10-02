@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { FlatList, View } from "react-native";
 import { Button, Screen, Text } from "../../../../components";
-import { changeTheme, ColorTheme } from "../../../../models";
+import { ColorTheme, changeTheme } from "../../../../models";
 import { useRootDispatch, useRootSelector } from "../../../../utils";
 import { useNav } from "../../../../hooks";
 

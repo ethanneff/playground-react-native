@@ -1,9 +1,9 @@
 import {
+  NetInfoConnectedDetails,
   NetInfoState,
-  NetInfoStateType,
-  NetInfoConnectedDetails
+  NetInfoStateType
 } from "@react-native-community/netinfo";
-import { Dimensions, ScaledSize, AppStateStatus, AppState } from "react-native";
+import { AppState, AppStateStatus, Dimensions, ScaledSize } from "react-native";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";
 import { logout } from "../Auth";

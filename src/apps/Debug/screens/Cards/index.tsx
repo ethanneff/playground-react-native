@@ -2,7 +2,7 @@ import React from "react";
 import { Animated, Dimensions, StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import { Screen } from "../../../../components";
-import { navigate, NavigationScreen } from "../../../../models";
+import { NavigationScreen, navigate } from "../../../../models";
 
 interface DispatchProps {
   navigate: typeof navigate;

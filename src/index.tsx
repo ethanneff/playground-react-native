@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { AppRegistry, Platform, YellowBox } from "react-native";
-import { App, Redux, Navigation } from "./containers";
+import { App, Navigation, Redux } from "./containers";
 import { Config } from "./utils";
 
 YellowBox.ignoreWarnings(["Battery state"]); // https://github.com/react-native-community/react-native-device-info/issues/808
