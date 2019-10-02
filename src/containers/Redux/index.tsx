@@ -1,48 +1,48 @@
 import React from "react";
-import { persistStore, persistReducer } from "redux-persist";
+import { persistReducer, persistStore } from "redux-persist";
 import {
+  Middleware,
   applyMiddleware,
   combineReducers,
   compose,
-  createStore,
-  Middleware
+  createStore
 } from "redux";
 import thunk, { ThunkAction } from "redux-thunk";
 import { DeepReadonly } from "utility-types";
 import {
   ItemActions,
-  itemReducer,
   Items,
   ListActions,
-  listReducer,
-  Lists
+  Lists,
+  itemReducer,
+  listReducer
 } from "../../apps/Checklists/models";
 import {
   Choices,
   ChoicesActions,
-  choicesReducer,
   Questionnaires,
   QuestionnairesActions,
-  questionnairesReducer,
   Questions,
   QuestionsActions,
-  questionsReducer,
   Responses,
   ResponsesActions,
+  choicesReducer,
+  questionnairesReducer,
+  questionsReducer,
   responsesReducer
 } from "../../apps/Debug/screens/Questionnaire/models";
 import {
   AuthActions,
-  authReducer,
   AuthState,
   DeviceActions,
-  deviceReducer,
   DeviceState,
   Navigation,
   NavigationActions,
-  navigationReducer,
   Theme,
   ThemeActions,
+  authReducer,
+  deviceReducer,
+  navigationReducer,
   themeReducer
 } from "../../models";
 import { Storage } from "../../conversions";
@@ -98,8 +98,8 @@ const persistConfig = {
   storage: Storage
 };
 const middlewares: Middleware[] = [thunk];
-const composers =
-  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// @ts-ignore: custom __REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+const composers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancers = composers(applyMiddleware(...middlewares));
 
 /* STORE */
