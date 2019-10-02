@@ -6,10 +6,6 @@ import { logout } from "../Auth";
 export const navigate = createStandardAction("navigation/CHANGE_NAVIGATION")<
   NavigationScreen
 >();
-export const showModal = createStandardAction("navigation/SHOW_MODAL")<
-  NavigationModal
->();
-export const hideModal = createStandardAction("navigation/HIDE_MODAL")();
 
 /* SELECTORS */
 export const getScreen = (state: RootState): NavigationScreen =>
@@ -31,9 +27,7 @@ export interface Navigation {
   screen: NavigationScreen;
 }
 
-export type NavigationActions = ActionType<
-  typeof navigate | typeof showModal | typeof hideModal
->;
+export type NavigationActions = ActionType<typeof navigate>;
 
 /* REDUCERS */
 export const navigationInitialState: Navigation = {
@@ -49,16 +43,6 @@ export function navigationReducer(
       return {
         ...state,
         screen: action.payload
-      };
-    case getType(showModal):
-      return {
-        ...state,
-        modal: action.payload
-      };
-    case getType(hideModal):
-      return {
-        ...state,
-        modal: NavigationModal.None
       };
     case getType(logout):
       return navigationInitialState;
