@@ -46,7 +46,10 @@
   </div>
 </div>
 
-- [ ] make ios work
+- [ ] revive focus
+- [x] cant hurt me dialog
+- [x] use net info
+- [x] make ios work
 - [x] fix tests
 - [x] deploy ios
 - [x] update docs dependencies
