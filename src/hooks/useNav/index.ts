@@ -4,6 +4,6 @@ import { NavigationScreen } from "../../models";
 
 export const useNav = () => {
   const dispatch = useRootDispatch();
-  const to = (to: NavigationScreen) => () => dispatch(navigate(to));
+  const to = (screen: NavigationScreen) => () => dispatch(navigate(screen));
   return { to };
 };
