@@ -11,8 +11,7 @@ const styles = StyleSheet.create({
 export default memo(function PortfolioLanding() {
   const nav = useNav();
   return (
-    <Screen>
-      <Text h1 title="Landing" center />
+    <Screen title="Landing">
       <Walkthrough />
       <View style={styles.row}>
         <Button title="Login" onPress={nav.to("portfolioLogin")} />

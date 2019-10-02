@@ -4,20 +4,20 @@ exports[`renders correctly 1`] = `
 <RCTSafeAreaView
   emulateUnlessSupported={true}
   style={
-    Array [
-      Object {
-        "backgroundColor": "hsl(0, 0%, 100%)",
-        "flex": 1,
-      },
-      undefined,
-    ]
+    Object {
+      "backgroundColor": "hsl(0, 0%, 100%)",
+      "flex": 1,
+    }
   }
 >
   <View
     style={
       Object {
         "alignItems": "center",
+        "borderBottomColor": "hsl(210, 10%, 23%)",
+        "borderBottomWidth": 0,
         "flexDirection": "row",
+        "height": 72,
         "justifyContent": "space-between",
       }
     }
@@ -35,12 +35,25 @@ exports[`renders correctly 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "flex": 1,
+          "flex": 0.2,
           "opacity": 1,
           "padding": 12,
         }
       }
     />
+    <Text
+      style={
+        Object {
+          "color": "hsl(0, 0%, 0%)",
+          "fontSize": 30,
+          "fontWeight": "100",
+          "letterSpacing": -0.5,
+          "opacity": 1,
+        }
+      }
+    >
+      Main
+    </Text>
     <View
       accessible={true}
       focusable={false}
@@ -54,7 +67,7 @@ exports[`renders correctly 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "flex": 1,
+          "flex": 0.2,
           "opacity": 1,
           "padding": 12,
         }
@@ -66,8 +79,8 @@ exports[`renders correctly 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "hsl(0, 0%, 100%)",
           "flex": 1,
+          "padding": 16,
         },
         undefined,
       ]
@@ -102,20 +115,6 @@ exports[`renders correctly 1`] = `
     viewIsInsideTabBar={false}
   >
     <View>
-      <Text
-        style={
-          Object {
-            "color": "hsl(0, 0%, 0%)",
-            "fontSize": 48,
-            "fontWeight": "100",
-            "letterSpacing": -1.5,
-            "opacity": 1,
-            "textAlign": "center",
-          }
-        }
-      >
-        Main
-      </Text>
       <View
         accessible={true}
         focusable={true}

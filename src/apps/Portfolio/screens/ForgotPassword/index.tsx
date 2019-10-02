@@ -12,8 +12,11 @@ export default memo(function PortfolioForgotPassword() {
   const nav = useNav();
   const handleEmail = (val: string) => setEmail(val);
   return (
-    <Screen onLeftPress={nav.to("portfolioLogin")}>
-      <Text h1 title="Forgot Password" center />
+    <Screen
+      onLeftPress={nav.to("portfolioLogin")}
+      title="Forgot Password"
+      gutter
+    >
       <TextInput
         title="email"
         placeholder="example@gmail.com"

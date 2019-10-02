@@ -2,39 +2,43 @@ import React, { memo } from "react";
 import { StyleSheet, View } from "react-native";
 import { Text } from "../Text";
 import { NavButton } from "./NavButton";
+import { Theme } from "../../utils";
+import { useColor } from "../../hooks";
 
 interface Props {
   title?: string;
+  border?: boolean;
   leftIcon?: string;
   rightIcon?: string;
   onLeftPress?(): void;
   onRightPress?(): void;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "space-between"
-  },
-  title: {
-    flex: 2,
-    textAlign: "center"
-  }
-});
+export const NavBar: React.FC<Props> = memo(function NavBar({
+  title,
+  onLeftPress,
+  onRightPress,
+  border,
+  leftIcon = "arrow-left",
+  rightIcon = "close"
+}) {
+  const color = useColor();
+  const styles = StyleSheet.create({
+    container: {
+      alignItems: "center",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      borderBottomColor: color.dark,
+      borderBottomWidth: border ? 1 : 0,
+      height: Theme.padding.p18
+    }
+  });
 
-export const NavBar: React.FC<Props> = memo(
-  ({
-    title,
-    onLeftPress,
-    onRightPress,
-    leftIcon = "arrow-left",
-    rightIcon = "close"
-  }) => (
+  return (
     <View style={styles.container}>
       <NavButton icon={leftIcon} onPress={onLeftPress} />
-      <Text style={styles.title} title={title} h2 />
+      <Text title={title} h2 />
       <NavButton icon={rightIcon} isRight onPress={onRightPress} />
     </View>
-  )
-);
+  );
+});

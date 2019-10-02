@@ -12,14 +12,13 @@ export default memo(function PortfolioSettings() {
   const nav = useNav();
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")}>
-      <Text h1 center title="Settings" />
+    <Screen onLeftPress={nav.to("portfolioLanding")} title="Settings">
       <FlatList
         ListHeaderComponent={() => <Button disable title="Theme" />}
         horizontal
         keyExtractor={item => item}
         data={themes}
-        renderItem={({ item }) => (
+        renderItem={({ item }) => 
           <Button
             key={item}
             title={item}
@@ -27,7 +26,7 @@ export default memo(function PortfolioSettings() {
             contained={currentTheme === item}
             secondary={currentTheme !== item}
           />
-        )}
+        }
       />
       <View style={{ flex: 1 }}>
         <Text title="hello" centerVertically center />

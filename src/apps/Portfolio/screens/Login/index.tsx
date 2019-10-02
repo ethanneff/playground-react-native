@@ -15,8 +15,7 @@ export default memo(function PortfolioLogin() {
   const handleEmail = (val: string) => setEmail(val);
 
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")}>
-      <Text title="Login" h1 center />
+    <Screen onLeftPress={nav.to("portfolioLanding")} title="Login" gutter>
       <TextInput
         title="email"
         placeholder="example@gmail.com"

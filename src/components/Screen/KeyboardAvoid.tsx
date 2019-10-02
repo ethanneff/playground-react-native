@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const KeyboardAvoid: React.FC<Props> = memo(
-  ({ style, children, scrollEnabled }) => (
+  ({ style, children, scrollEnabled }) => 
     <KeyboardAwareScrollView
       keyboardShouldPersistTaps="handled"
       contentContainerStyle={style}
@@ -16,5 +16,5 @@ export const KeyboardAvoid: React.FC<Props> = memo(
     >
       {children}
     </KeyboardAwareScrollView>
-  )
+  
 );

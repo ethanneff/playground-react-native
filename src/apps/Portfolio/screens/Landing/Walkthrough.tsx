@@ -30,11 +30,11 @@ export default memo(function Walkthrough() {
       horizontal
       keyExtractor={item => String(item.key)}
       data={data}
-      renderItem={({ item }) => (
+      renderItem={({ item }) => 
         <View style={styles(width, item.color).item}>
           <Text title={item.text} center />
         </View>
-      )}
+      }
     />
   );
 });

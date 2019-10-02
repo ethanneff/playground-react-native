@@ -2,6 +2,7 @@ import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { Theme } from "../../utils";
 import { Icon } from "../Icon";
+import { useColor } from "../../hooks";
 
 interface Props {
   icon: string;
@@ -9,23 +10,29 @@ interface Props {
   onPress?(): void;
 }
 
-const styles = StyleSheet.create({
-  button: {
-    flex: 1,
-    padding: Theme.padding.p03
-  },
-  buttonRight: {
-    alignSelf: "flex-end"
-  }
+export const NavButton: React.FC<Props> = memo(function NavButton({
+  onPress,
+  icon,
+  isRight
+}) {
+  const color = useColor();
+  const styles = StyleSheet.create({
+    button: {
+      flex: 0.2,
+      padding: Theme.padding.p03
+    },
+    buttonRight: {
+      alignSelf: "flex-end"
+    }
+  });
+  return (
+    <TouchableOpacity style={styles.button} onPress={onPress}>
+      <Icon
+        hidden={!onPress}
+        color={color.dark}
+        style={isRight && styles.buttonRight}
+        name={icon}
+      />
+    </TouchableOpacity>
+  );
 });
-
-export const NavButton: React.FC<Props> = memo(({ onPress, icon, isRight }) => (
-  <TouchableOpacity style={styles.button} onPress={onPress}>
-    <Icon
-      hidden={!onPress}
-      color={Theme.color.dark}
-      style={isRight && styles.buttonRight}
-      name={icon}
-    />
-  </TouchableOpacity>
-));
