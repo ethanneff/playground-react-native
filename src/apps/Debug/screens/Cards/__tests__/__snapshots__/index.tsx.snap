@@ -87,255 +87,212 @@ exports[`renders correctly 1`] = `
       }
     />
   </View>
-  <RCTScrollView
-    automaticallyAdjustContentInsets={false}
-    contentContainerStyle={
-      Array [
-        Object {
-          "flex": 1,
-          "padding": 0,
-        },
-        undefined,
-      ]
-    }
-    contentInset={
+  <View
+    style={
       Object {
-        "bottom": 0,
+        "flex": 1,
       }
     }
-    enableAutomaticScroll={true}
-    enableOnAndroid={false}
-    enableResetScrollToCoords={true}
-    extraHeight={75}
-    extraScrollHeight={0}
-    getScrollResponder={[Function]}
-    handleOnScroll={[Function]}
-    keyboardDismissMode="interactive"
-    keyboardOpeningTime={250}
-    keyboardShouldPersistTaps="handled"
-    keyboardSpace={0}
-    onScroll={[Function]}
-    resetKeyboardSpace={[Function]}
-    scrollEnabled={false}
-    scrollEventThrottle={1}
-    scrollForExtraHeightOnAndroid={[Function]}
-    scrollIntoView={[Function]}
-    scrollToEnd={[Function]}
-    scrollToFocusedInput={[Function]}
-    scrollToPosition={[Function]}
-    showsVerticalScrollIndicator={true}
-    update={[Function]}
-    viewIsInsideTabBar={false}
   >
-    <View>
+    <View
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
       <View
         style={
           Object {
-            "flex": 1,
+            "transform": Array [
+              Object {
+                "translateY": 0,
+              },
+            ],
           }
         }
       >
         <View
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "borderRadius": 10,
+                "height": 250,
+              },
+              Object {
+                "backgroundColor": "#a9d0b6",
+              },
+            ]
           }
-        >
-          <View
-            style={
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "transform": Array [
               Object {
-                "transform": Array [
-                  Object {
-                    "translateY": 0,
-                  },
-                ],
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "borderRadius": 10,
-                    "height": 250,
-                  },
-                  Object {
-                    "backgroundColor": "#a9d0b6",
-                  },
-                ]
-              }
-            />
-          </View>
-          <View
-            style={
-              Object {
-                "transform": Array [
-                  Object {
-                    "translateY": -205,
-                  },
-                ],
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "borderRadius": 10,
-                    "height": 250,
-                  },
-                  Object {
-                    "backgroundColor": "#e9bbd1",
-                  },
-                ]
-              }
-            />
-          </View>
-          <View
-            style={
-              Object {
-                "transform": Array [
-                  Object {
-                    "translateY": -410,
-                  },
-                ],
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "borderRadius": 10,
-                    "height": 250,
-                  },
-                  Object {
-                    "backgroundColor": "#eba65c",
-                  },
-                ]
-              }
-            />
-          </View>
-          <View
-            style={
-              Object {
-                "transform": Array [
-                  Object {
-                    "translateY": -615,
-                  },
-                ],
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "borderRadius": 10,
-                    "height": 250,
-                  },
-                  Object {
-                    "backgroundColor": "#95c3e4",
-                  },
-                ]
-              }
-            />
-          </View>
-          <View
-            style={
-              Object {
-                "transform": Array [
-                  Object {
-                    "translateY": -820,
-                  },
-                ],
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "borderRadius": 10,
-                    "height": 250,
-                  },
-                  Object {
-                    "backgroundColor": "#1c1c1c",
-                  },
-                ]
-              }
-            />
-          </View>
-          <View
-            style={
-              Object {
-                "transform": Array [
-                  Object {
-                    "translateY": -1025,
-                  },
-                ],
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "borderRadius": 10,
-                    "height": 250,
-                  },
-                  Object {
-                    "backgroundColor": "#a390bc",
-                  },
-                ]
-              }
-            />
-          </View>
-          <View
-            style={
-              Object {
-                "transform": Array [
-                  Object {
-                    "translateY": -1230,
-                  },
-                ],
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "borderRadius": 10,
-                    "height": 250,
-                  },
-                  Object {
-                    "backgroundColor": "#fef2a0",
-                  },
-                ]
-              }
-            />
-          </View>
-        </View>
-        <RCTScrollView
-          contentContainerStyle={
-            Object {
-              "height": 2668,
-            }
+                "translateY": -205,
+              },
+            ],
           }
-          onScroll={[Function]}
-          scrollEventThrottle={16}
-          showsVerticalScrollIndicator={false}
-        >
-          <View />
-        </RCTScrollView>
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "borderRadius": 10,
+                "height": 250,
+              },
+              Object {
+                "backgroundColor": "#e9bbd1",
+              },
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "transform": Array [
+              Object {
+                "translateY": -410,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "borderRadius": 10,
+                "height": 250,
+              },
+              Object {
+                "backgroundColor": "#eba65c",
+              },
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "transform": Array [
+              Object {
+                "translateY": -615,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "borderRadius": 10,
+                "height": 250,
+              },
+              Object {
+                "backgroundColor": "#95c3e4",
+              },
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "transform": Array [
+              Object {
+                "translateY": -820,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "borderRadius": 10,
+                "height": 250,
+              },
+              Object {
+                "backgroundColor": "#1c1c1c",
+              },
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "transform": Array [
+              Object {
+                "translateY": -1025,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "borderRadius": 10,
+                "height": 250,
+              },
+              Object {
+                "backgroundColor": "#a390bc",
+              },
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "transform": Array [
+              Object {
+                "translateY": -1230,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "borderRadius": 10,
+                "height": 250,
+              },
+              Object {
+                "backgroundColor": "#fef2a0",
+              },
+            ]
+          }
+        />
       </View>
     </View>
-  </RCTScrollView>
+    <RCTScrollView
+      contentContainerStyle={
+        Object {
+          "height": 2668,
+        }
+      }
+      onScroll={[Function]}
+      scrollEventThrottle={16}
+      showsVerticalScrollIndicator={false}
+    >
+      <View />
+    </RCTScrollView>
+  </View>
 </RCTSafeAreaView>
 `;

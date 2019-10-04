@@ -66,8 +66,8 @@ exports[`renders correctly 1`] = `
     contentContainerStyle={
       Array [
         Object {
+          "backgroundColor": "hsl(0, 0%, 100%)",
           "flex": 1,
-          "padding": 0,
         },
         undefined,
       ]
@@ -90,7 +90,6 @@ exports[`renders correctly 1`] = `
     keyboardSpace={0}
     onScroll={[Function]}
     resetKeyboardSpace={[Function]}
-    scrollEnabled={true}
     scrollEventThrottle={1}
     scrollForExtraHeightOnAndroid={[Function]}
     scrollIntoView={[Function]}

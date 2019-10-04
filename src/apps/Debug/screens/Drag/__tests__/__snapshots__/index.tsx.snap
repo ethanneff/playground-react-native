@@ -87,89 +87,46 @@ exports[`renders correctly 1`] = `
       }
     />
   </View>
-  <RCTScrollView
-    automaticallyAdjustContentInsets={false}
-    contentContainerStyle={
-      Array [
-        Object {
-          "flex": 1,
-          "padding": 0,
-        },
-        undefined,
-      ]
-    }
-    contentInset={
+  <Text
+    style={
       Object {
-        "bottom": 0,
+        "color": "hsl(0, 0%, 0%)",
+        "fontSize": 14,
+        "fontWeight": "300",
+        "letterSpacing": 0.25,
+        "opacity": 1,
+        "textAlign": "center",
       }
     }
-    enableAutomaticScroll={true}
-    enableOnAndroid={false}
-    enableResetScrollToCoords={true}
-    extraHeight={75}
-    extraScrollHeight={0}
-    getScrollResponder={[Function]}
-    handleOnScroll={[Function]}
-    keyboardDismissMode="interactive"
-    keyboardOpeningTime={250}
-    keyboardShouldPersistTaps="handled"
-    keyboardSpace={0}
-    onScroll={[Function]}
-    resetKeyboardSpace={[Function]}
-    scrollEnabled={false}
-    scrollEventThrottle={1}
-    scrollForExtraHeightOnAndroid={[Function]}
-    scrollIntoView={[Function]}
-    scrollToEnd={[Function]}
-    scrollToFocusedInput={[Function]}
-    scrollToPosition={[Function]}
-    showsVerticalScrollIndicator={true}
-    update={[Function]}
-    viewIsInsideTabBar={false}
   >
-    <View>
-      <Text
-        style={
-          Object {
-            "color": "hsl(0, 0%, 0%)",
-            "fontSize": 14,
-            "fontWeight": "300",
-            "letterSpacing": 0.25,
-            "opacity": 1,
-            "textAlign": "center",
-          }
-        }
-      >
-        drag the circle
-      </Text>
-      <View
-        onMoveShouldSetResponder={[Function]}
-        onMoveShouldSetResponderCapture={[Function]}
-        onResponderEnd={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderReject={[Function]}
-        onResponderRelease={[Function]}
-        onResponderStart={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        onStartShouldSetResponderCapture={[Function]}
-        style={
-          Object {
-            "borderColor": "hsl(0, 0%, 0%)",
-            "borderRadius": 30,
-            "borderWidth": 30,
-            "height": 60,
-            "left": 375,
-            "marginLeft": -30,
-            "marginTop": -30,
-            "top": 667,
-            "width": 60,
-          }
-        }
-      />
-    </View>
-  </RCTScrollView>
+    drag the circle
+  </Text>
+  <View
+    onMoveShouldSetResponder={[Function]}
+    onMoveShouldSetResponderCapture={[Function]}
+    onResponderEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderStart={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    style={
+      Object {
+        "borderColor": "hsl(0, 0%, 0%)",
+        "borderRadius": 30,
+        "borderWidth": 30,
+        "height": 60,
+        "left": 375,
+        "marginLeft": -30,
+        "marginTop": -30,
+        "top": 667,
+        "width": 60,
+      }
+    }
+  />
 </RCTSafeAreaView>
 `;
