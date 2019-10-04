@@ -1,42 +1,82 @@
-import React, { memo, useCallback, useState } from "react";
-import { Dialog, Screen, Text } from "../../components";
-import { navigate, NavigationScreen } from "../../models";
-import { useRootDispatch } from "../../utils";
-import { List } from "./components/List";
+import React, { useState, useEffect, useCallback } from "react";
+import { Screen, Dialog } from "../../components";
+import { useNav } from "../../hooks";
+import { List, Item } from "./components/List";
+import moment from "moment";
 
-// TODO: scroll to current index
-// TODO: migrate all dialogs to Dialogs (remove modals from navigation layer)
-// TODO: batch item list
-// TODO: handle modals
 // TODO: flatlist on web
 // TODO: refresh every hour
 // TODO: convert hours to minutes to config 15, 30, 60, 120
+// TODO: rename item.action to item.title
 
-export default memo(function Focus() {
-  const dispatch = useRootDispatch();
-  const [modalItemEdit, setModalItemEdit] = useState(false);
+const infiniteScrollRegeneration = 50;
+const editItem: { visible: boolean; item: Item | null } = {
+  visible: false,
+  item: null
+};
+export default function Focus() {
+  const [modalItemEdit, setModalItemEdit] = useState(editItem);
   const [modalProfile] = useState(false);
   const [modalLogin] = useState(false);
-  const nav = (to: NavigationScreen) => () => dispatch(navigate(to));
-  const handleItemPress = useCallback(() => {
-    // flatList.scrollToIndex(20);
-    setModalItemEdit(edit => !edit);
-  }, []);
+  const [items, setItems] = useState<Item[]>([]);
+  const nav = useNav();
+
+  const generateMoreItems = () => {
+    const group = items;
+    for (let i = 0; i < infiniteScrollRegeneration; i++) {
+      const lastItem =
+        group.length === 0
+          ? moment()
+              .startOf("day")
+              .add(2, "day")
+              .valueOf()
+          : group[group.length - 1].id;
+      const next = moment(lastItem).subtract(1, "hour");
+      const id = next.valueOf();
+      group.push({
+        action: String(Math.random()) + String(Math.random()),
+        dayOfMonth: next.format("D"),
+        dayOfWeek: next.format("ddd"),
+        hour: next.format("h"),
+        id,
+        month: next.format("MMM"),
+        zone: next.format("a")
+      });
+    }
+    setItems(group);
+  };
+
+  const handleItemPress = (item: Item) => {
+    setModalItemEdit({ visible: true, item });
+  };
+  const handleLoad = () => {
+    generateMoreItems();
+  };
   const handleModalEditBackgroundPress = useCallback(() => {
-    setModalItemEdit(false);
+    setModalItemEdit(state => ({ ...state, visible: false }));
   }, []);
+
+  useEffect(handleLoad, []);
 
   return (
     <>
-      <Screen onLeftPress={nav("portfolioLanding")} disableScroll>
-        <Text h1 title="fc" center />
-        <List onItemPress={handleItemPress} />
+      <Screen
+        disableScroll
+        onLeftPress={nav.to("portfolioLanding")}
+        title="Focus"
+      >
+        <List
+          items={items}
+          onItemPress={handleItemPress}
+          onEndReached={generateMoreItems}
+          onEndReachedThreshold={0.5}
+        />
       </Screen>
-      {modalItemEdit && (
+      {modalItemEdit.visible && (
         <Dialog
           duration={2000}
           testID="editItem"
-          title="hello"
+          title={modalItemEdit.item ? modalItemEdit.item.action : "empty"}
           onBackgroundPress={handleModalEditBackgroundPress}
         />
       )}
@@ -56,4 +96,4 @@ export default memo(function Focus() {
       )}
     </>
   );
-});
+}

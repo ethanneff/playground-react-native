@@ -1,7 +1,7 @@
-import moment from "moment";
-import React, { memo, useEffect, useRef } from "react";
+import React, { memo, useRef } from "react";
 import { FlatList } from "react-native";
 import { ListItem } from "./ListItem";
+import { Theme } from "../../../utils";
 
 export interface Item {
   action: string;
@@ -14,86 +14,68 @@ export interface Item {
 }
 
 interface Props {
+  items: Item[];
+  onEndReached(): void;
+  onEndReachedThreshold: number;
   onItemPress(item: Item): void;
 }
 
-const infiniteScrollThreshold = 0.3;
-const infiniteScrollRegeneration = 50;
-const items: Item[] = [];
+const itemHeight = Theme.padding.p10;
+export const List = memo(
+  ({ items, onItemPress, onEndReached, onEndReachedThreshold }: Props) => {
+    const listRef = useRef<FlatList<Item> | null>(null);
 
-export const List = memo(({ onItemPress }: Props) => {
-  const listRef = useRef(null);
+    const getCurrentItem = (item: Item): boolean => {
+      const currentTime = new Date();
+      const before = currentTime.setHours(currentTime.getHours() - 1);
+      const after = currentTime.setHours(currentTime.getHours() + 1);
+      if (item.id > before && item.id < after) {
+        return true;
+      }
+      return false;
+    };
 
-  const generateMoreItems = () => {
-    // TODO: batch
-    for (let i = 0; i < infiniteScrollRegeneration; i++) {
-      const lastItem =
-        items.length === 0
-          ? moment()
-              .startOf("day")
-              .add(2, "day")
-              .valueOf()
-          : items[items.length - 1].id;
-      const next = moment(lastItem).subtract(1, "hour");
-      const id = next.valueOf();
-      items.push({
-        action: String(Math.random()) + String(Math.random()),
-        dayOfMonth: next.format("D"),
-        dayOfWeek: next.format("ddd"),
-        hour: next.format("h"),
-        id,
-        month: next.format("MMM"),
-        zone: next.format("a")
-      });
-    }
-  };
+    // TODO:  move to list item
+    const renderItem = ({ item, index }: { item: Item; index: number }) => {
+      const firstItemOfDay =
+        index < 1 ? false : item.dayOfMonth !== items[index - 1].dayOfMonth;
+      return (
+        <ListItem
+          currentItem={getCurrentItem(item)}
+          item={item}
+          showSection={firstItemOfDay}
+          onItemPress={onItemPress}
+        />
+      );
+    };
 
-  const getCurrentItem = (item: Item): boolean => {
-    const currentTime = new Date();
-    const before = currentTime.valueOf();
-    const after = currentTime.setHours(currentTime.getHours() + 1);
-    if (item.id > before && item.id < after) {
-      return true;
-    }
-    return false;
-  };
+    const onLayout = () => {
+      if (!listRef || !listRef.current || items.length < 50) {
+        return;
+      }
+      listRef.current.scrollToIndex({ index: 20, animated: false });
+    };
 
-  const renderItem = ({ item, index }: { item: Item; index: number }) => {
-    const firstItemOfDay =
-      index < 1 ? false : item.dayOfMonth !== items[index - 1].dayOfMonth;
+    const keyExtractor = (item: Item) => String(item.id);
+
+    const getItemLayout = (_: any, index: number) => ({
+      length: itemHeight,
+      offset: itemHeight * index,
+      index
+    });
+
     return (
-      <ListItem
-        currentItem={getCurrentItem(item)}
-        item={item}
-        showSection={firstItemOfDay}
-        onItemPress={onItemPress}
+      <FlatList
+        onLayout={onLayout}
+        inverted
+        ref={listRef}
+        getItemLayout={getItemLayout}
+        keyExtractor={keyExtractor}
+        data={items}
+        onEndReached={onEndReached}
+        onEndReachedThreshold={onEndReachedThreshold}
+        renderItem={renderItem}
       />
     );
-  };
-
-  const keyExtractor = (item: Item) => String(item.id);
-
-  useEffect(() => {
-    generateMoreItems();
-  }, []);
-
-  useEffect(() => {
-    if (items.length === 0 || listRef === null) {
-      return;
-    }
-    // listRef.current.scrollToIndex(2);
-  }, [listRef]);
-
-  return items.length < 0 ? null : (
-    <FlatList
-      inverted
-      //   initialScrollIndex={20} // TODO:
-      ref={listRef}
-      keyExtractor={keyExtractor}
-      data={items}
-      onEndReached={generateMoreItems}
-      onEndReachedThreshold={infiniteScrollThreshold}
-      renderItem={renderItem}
-    />
-  );
-});
+  }
+);

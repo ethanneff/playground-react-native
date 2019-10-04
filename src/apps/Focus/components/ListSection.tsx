@@ -8,7 +8,7 @@ interface Props {
   item: Item;
 }
 
-export const ListSection = memo(({ item }: Props) => (
+export const ListSection = memo(({ item }: Props) => 
   <View
     style={{
       alignItems: "center",
@@ -23,4 +23,4 @@ export const ListSection = memo(({ item }: Props) => (
     <Text h3 title={item.dayOfMonth} />
     <Text overline title={` ${item.month}, ${item.dayOfWeek}`} />
   </View>
-));
+);
