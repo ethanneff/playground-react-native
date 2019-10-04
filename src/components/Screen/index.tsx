@@ -2,8 +2,8 @@ import React, { memo } from "react";
 import { SafeAreaView, StatusBar, StyleSheet, ViewStyle } from "react-native";
 import { getCurrentColor } from "../../models";
 import { Theme, useRootSelector } from "../../utils";
-import { KeyboardAvoid } from "./KeyboardAvoid";
 import { NavBar } from "./NavBar";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 interface OwnProps {
   style?: ViewStyle;
@@ -54,12 +54,16 @@ export const Screen: React.FC<Props> = memo(function Screen({
         onLeftPress={onLeftPress}
         onRightPress={onRightPress}
       />
-      <KeyboardAvoid
-        scrollEnabled={!disableScroll}
-        style={[styles.children, style]}
-      >
-        {children}
-      </KeyboardAvoid>
+      {disableScroll ? 
+        children
+       : 
+        <KeyboardAwareScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={[styles.container, style]}
+        >
+          {children}
+        </KeyboardAwareScrollView>
+      }
     </SafeAreaView>
   );
 });
