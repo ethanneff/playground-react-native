@@ -46,7 +46,9 @@
   </div>
 </div>
 
-- [ ] revive focus
+- [ ] fix build (web)
+- [ ] fix ios ##[error]{"code":"two_factor_authentication_error","message":"Error: Failed to publish to store. apple connection is not valid for \*\*\*: ethan.neff@eneff.com"}
+- [x] revive focus
 - [x] cant hurt me dialog
 - [x] use net info
 - [x] make ios work
