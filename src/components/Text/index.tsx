@@ -1,9 +1,7 @@
 import React, { memo } from "react";
 import { Animated, StyleSheet, ViewStyle } from "react-native";
-import { getCurrentColor } from "../../models";
 import { Theme } from "../../utils";
-import { useRootSelector } from "../../utils";
-import { useNativeDriver } from "../../hooks";
+import { useNativeDriver, useColor } from "../../hooks";
 
 export enum EllipsizeMode {
   Head = "head",
@@ -67,7 +65,7 @@ export const Text: React.FC<Props> = memo(function Text({
   overline
 }) {
   const opacity = new Animated.Value(1);
-  const colors = useRootSelector(state => getCurrentColor(state));
+  const colors = useColor();
   const nativeDriver = useNativeDriver();
   const styles = StyleSheet.create({
     bold: {
