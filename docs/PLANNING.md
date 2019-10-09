@@ -26,7 +26,7 @@
 #### working android app
 
 - [ ] hourly update
-  - [ ] scroll to day
+  - [x] scroll to day
   - [ ] focus day
 - [ ] firebase
 - [ ] app center deploy
