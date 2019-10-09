@@ -95,6 +95,7 @@ exports[`renders correctly 1`] = `
           "backgroundColor": "hsl(0, 0%, 100%)",
           "flex": 1,
         },
+        undefined,
         Object {
           "alignItems": "center",
           "backgroundColor": "#0D0D0D",

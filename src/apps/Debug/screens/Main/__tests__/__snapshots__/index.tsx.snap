@@ -109,6 +109,7 @@ exports[`renders correctly 1`] = `
           "flex": 1,
         },
         undefined,
+        undefined,
       ]
     }
     contentInset={

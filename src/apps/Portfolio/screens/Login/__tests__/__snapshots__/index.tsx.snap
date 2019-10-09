@@ -108,6 +108,10 @@ exports[`renders correctly 1`] = `
           "backgroundColor": "hsl(0, 0%, 100%)",
           "flex": 1,
         },
+        Object {
+          "flex": 1,
+          "padding": 16,
+        },
         undefined,
       ]
     }

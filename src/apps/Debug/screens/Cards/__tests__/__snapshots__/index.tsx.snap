@@ -89,210 +89,223 @@ exports[`renders correctly 1`] = `
   </View>
   <View
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "backgroundColor": "hsl(0, 0%, 100%)",
+          "flex": 1,
+        },
+        undefined,
+        undefined,
+      ]
     }
   >
     <View
       style={
         Object {
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
+          "flex": 1,
         }
       }
     >
       <View
         style={
           Object {
-            "transform": Array [
-              Object {
-                "translateY": 0,
-              },
-            ],
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
           }
         }
       >
         <View
           style={
-            Array [
-              Object {
-                "borderRadius": 10,
-                "height": 250,
-              },
-              Object {
-                "backgroundColor": "#a9d0b6",
-              },
-            ]
+            Object {
+              "transform": Array [
+                Object {
+                  "translateY": 0,
+                },
+              ],
+            }
           }
-        />
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 250,
+                },
+                Object {
+                  "backgroundColor": "#a9d0b6",
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "transform": Array [
+                Object {
+                  "translateY": -205,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 250,
+                },
+                Object {
+                  "backgroundColor": "#e9bbd1",
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "transform": Array [
+                Object {
+                  "translateY": -410,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 250,
+                },
+                Object {
+                  "backgroundColor": "#eba65c",
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "transform": Array [
+                Object {
+                  "translateY": -615,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 250,
+                },
+                Object {
+                  "backgroundColor": "#95c3e4",
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "transform": Array [
+                Object {
+                  "translateY": -820,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 250,
+                },
+                Object {
+                  "backgroundColor": "#1c1c1c",
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "transform": Array [
+                Object {
+                  "translateY": -1025,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 250,
+                },
+                Object {
+                  "backgroundColor": "#a390bc",
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "transform": Array [
+                Object {
+                  "translateY": -1230,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 250,
+                },
+                Object {
+                  "backgroundColor": "#fef2a0",
+                },
+              ]
+            }
+          />
+        </View>
       </View>
-      <View
-        style={
+      <RCTScrollView
+        contentContainerStyle={
           Object {
-            "transform": Array [
-              Object {
-                "translateY": -205,
-              },
-            ],
+            "height": 2668,
           }
         }
+        onScroll={[Function]}
+        scrollEventThrottle={16}
+        showsVerticalScrollIndicator={false}
       >
-        <View
-          style={
-            Array [
-              Object {
-                "borderRadius": 10,
-                "height": 250,
-              },
-              Object {
-                "backgroundColor": "#e9bbd1",
-              },
-            ]
-          }
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "transform": Array [
-              Object {
-                "translateY": -410,
-              },
-            ],
-          }
-        }
-      >
-        <View
-          style={
-            Array [
-              Object {
-                "borderRadius": 10,
-                "height": 250,
-              },
-              Object {
-                "backgroundColor": "#eba65c",
-              },
-            ]
-          }
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "transform": Array [
-              Object {
-                "translateY": -615,
-              },
-            ],
-          }
-        }
-      >
-        <View
-          style={
-            Array [
-              Object {
-                "borderRadius": 10,
-                "height": 250,
-              },
-              Object {
-                "backgroundColor": "#95c3e4",
-              },
-            ]
-          }
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "transform": Array [
-              Object {
-                "translateY": -820,
-              },
-            ],
-          }
-        }
-      >
-        <View
-          style={
-            Array [
-              Object {
-                "borderRadius": 10,
-                "height": 250,
-              },
-              Object {
-                "backgroundColor": "#1c1c1c",
-              },
-            ]
-          }
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "transform": Array [
-              Object {
-                "translateY": -1025,
-              },
-            ],
-          }
-        }
-      >
-        <View
-          style={
-            Array [
-              Object {
-                "borderRadius": 10,
-                "height": 250,
-              },
-              Object {
-                "backgroundColor": "#a390bc",
-              },
-            ]
-          }
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "transform": Array [
-              Object {
-                "translateY": -1230,
-              },
-            ],
-          }
-        }
-      >
-        <View
-          style={
-            Array [
-              Object {
-                "borderRadius": 10,
-                "height": 250,
-              },
-              Object {
-                "backgroundColor": "#fef2a0",
-              },
-            ]
-          }
-        />
-      </View>
+        <View />
+      </RCTScrollView>
     </View>
-    <RCTScrollView
-      contentContainerStyle={
-        Object {
-          "height": 2668,
-        }
-      }
-      onScroll={[Function]}
-      scrollEventThrottle={16}
-      showsVerticalScrollIndicator={false}
-    >
-      <View />
-    </RCTScrollView>
   </View>
 </RCTSafeAreaView>
 `;
