@@ -10,20 +10,11 @@ export const navigate = createStandardAction("navigation/CHANGE_NAVIGATION")<
 /* SELECTORS */
 export const getScreen = (state: RootState): NavigationScreen =>
   state.navigation.screen;
-export const getModal = (state: RootState): NavigationModal =>
-  state.navigation.modal;
 
 /* INTERFACES */
 export type NavigationScreen = keyof typeof screens;
 
-export enum NavigationModal {
-  None,
-  CantHurtMeProfile,
-  CantHurtMeConfigs
-}
-
 export interface Navigation {
-  modal: NavigationModal;
   screen: NavigationScreen;
 }
 
@@ -31,7 +22,6 @@ export type NavigationActions = ActionType<typeof navigate>;
 
 /* REDUCERS */
 export const navigationInitialState: Navigation = {
-  modal: NavigationModal.None,
   screen: "portfolioLanding"
 };
 export function navigationReducer(
