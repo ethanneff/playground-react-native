@@ -30,13 +30,13 @@ interface State {
 const fakeData: Message[] = [
   {
     archive: false,
-    createdAt: moment().
-      subtract({
+    createdAt: moment()
+      .subtract({
         days: 0,
         hours: 4,
         minutes: 4
-      }).
-      valueOf(),
+      })
+      .valueOf(),
     createdBy: "User steve",
     id: "6",
     message: "again",
@@ -44,13 +44,13 @@ const fakeData: Message[] = [
   },
   {
     archive: false,
-    createdAt: moment().
-      subtract({
+    createdAt: moment()
+      .subtract({
         days: 1,
         hours: 1,
         minutes: 0
-      }).
-      valueOf(),
+      })
+      .valueOf(),
     createdBy: "User bob",
     id: "5",
     message: "another message",
@@ -58,13 +58,13 @@ const fakeData: Message[] = [
   },
   {
     archive: false,
-    createdAt: moment().
-      subtract({
+    createdAt: moment()
+      .subtract({
         days: 2,
         hours: 8,
         minutes: 0
-      }).
-      valueOf(),
+      })
+      .valueOf(),
     createdBy: "User steve",
     id: "4",
     message: "first message",
@@ -72,13 +72,13 @@ const fakeData: Message[] = [
   },
   {
     archive: false,
-    createdAt: moment().
-      subtract({
+    createdAt: moment()
+      .subtract({
         days: 2,
         hours: 6,
         minutes: 0
-      }).
-      valueOf(),
+      })
+      .valueOf(),
     createdBy: "User bob",
     id: "3",
     message: "third message",
@@ -86,13 +86,13 @@ const fakeData: Message[] = [
   },
   {
     archive: false,
-    createdAt: moment().
-      subtract({
+    createdAt: moment()
+      .subtract({
         days: 3,
         hours: 2,
         minutes: 0
-      }).
-      valueOf(),
+      })
+      .valueOf(),
     createdBy: "User bob",
     id: "2",
     message: "second message",
@@ -100,13 +100,13 @@ const fakeData: Message[] = [
   },
   {
     archive: false,
-    createdAt: moment().
-      subtract({
+    createdAt: moment()
+      .subtract({
         days: 3,
         hours: 1,
         minutes: 0
-      }).
-      valueOf(),
+      })
+      .valueOf(),
     createdBy: "User bob",
     id: "1",
     message:
