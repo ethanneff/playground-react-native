@@ -1,2 +1,0 @@
-(window.webpackJsonpexample=window.webpackJsonpexample||[]).push([[27],{229:function(e,t,n){"use strict";n.r(t);var a=n(1),c=n.n(a),o=n(67),r=n(42);t.default=Object(a.memo)(function(){var e=Object(r.b)();return c.a.createElement(o.g,{onLeftPress:e.to("debug")},c.a.createElement(o.h,{title:"swipecell"}))})}}]);
-//# sourceMappingURL=27.7c24cd98.chunk.js.map
