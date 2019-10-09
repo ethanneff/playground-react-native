@@ -22,7 +22,7 @@ export default function Focus() {
   const nav = useNav();
 
   const generateMoreItems = () => {
-    const group = items;
+    const group = [...items];
     for (let i = 0; i < infiniteScrollRegeneration; i++) {
       const lastItem =
         group.length === 0
@@ -50,6 +50,7 @@ export default function Focus() {
     setModalItemEdit({ visible: true, item });
   };
   const handleLoad = () => {
+    if (items.length > 0) {return;}
     generateMoreItems();
   };
   const handleModalEditBackgroundPress = useCallback(() => {
@@ -65,12 +66,14 @@ export default function Focus() {
         onLeftPress={nav.to("portfolioLanding")}
         title="Focus"
       >
-        <List
-          items={items}
-          onItemPress={handleItemPress}
-          onEndReached={generateMoreItems}
-          onEndReachedThreshold={0.5}
-        />
+        {items.length > 0 && 
+          <List
+            items={items}
+            onItemPress={handleItemPress}
+            onEndReached={generateMoreItems}
+            onEndReachedThreshold={0.5}
+          />
+        }
       </Screen>
       {modalItemEdit.visible && (
         <Dialog
