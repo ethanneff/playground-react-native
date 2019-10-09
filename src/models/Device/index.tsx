@@ -1,43 +1,16 @@
-import {
-  NetInfoConnectedDetails,
-  NetInfoState,
-  NetInfoStateType
-} from "@react-native-community/netinfo";
-import { AppState, AppStateStatus, Dimensions, ScaledSize } from "react-native";
+import { AppState, AppStateStatus, ScaledSize } from "react-native";
 import { ActionType, createStandardAction, getType } from "typesafe-actions";
-import { RootAction, RootState } from "../../containers";
+import { RootAction } from "../../containers";
 import { logout } from "../Auth";
 
 /* ACTIONS */
 export const loadDevice = createStandardAction("device/LOAD")<DeviceInfo>();
-export const updateNetwork = createStandardAction("device/UPDATE_NETWORK")<
-  NetInfoState
->();
-export const updateDimensions = createStandardAction("device/UPDATE_DIMENSION")<
-  DimensionsProps
->();
 export const changeAppStatus = createStandardAction("device/UPDATE_STATUS")<
   AppStateStatus
 >();
 export const changeKeyboardStatus = createStandardAction(
   "device/UPDATE_KEYBOARD_VISIBILITY"
 )<boolean>();
-
-/* SELECTORS */
-export const getLandscapeOrientation = (state: RootState): boolean =>
-  state.device.dimensionWindow.height < state.device.dimensionWindow.width;
-export const getSmallestDimension = (state: RootState): number =>
-  state.device.dimensionWindow.height > state.device.dimensionWindow.width
-    ? state.device.dimensionWindow.width
-    : state.device.dimensionWindow.height;
-export const getLargestDimension = (state: RootState): number =>
-  state.device.dimensionWindow.height > state.device.dimensionWindow.width
-    ? state.device.dimensionWindow.height
-    : state.device.dimensionWindow.width;
-export const getWidth = (state: RootState): number =>
-  state.device.dimensionWindow.width;
-export const getHeight = (state: RootState): number =>
-  state.device.dimensionWindow.height;
 
 /* INTERFACES */
 export interface DimensionsProps {
@@ -114,19 +87,9 @@ export interface DeviceInfo {
 export type DeviceState = {
   keyboardVisible: boolean;
   appStatus: AppStateStatus;
-  networkConnected: boolean;
-  networkDetails: NetInfoConnectedDetails | null;
-  networkReachable: boolean;
-  networkType: NetInfoStateType;
-  dimensionScreen: ScaledSize;
-  dimensionWindow: ScaledSize;
 } & DeviceInfo;
 export type DeviceActions = ActionType<
-  | typeof loadDevice
-  | typeof updateNetwork
-  | typeof updateDimensions
-  | typeof changeAppStatus
-  | typeof changeKeyboardStatus
+  typeof loadDevice | typeof changeAppStatus | typeof changeKeyboardStatus
 >;
 
 /* REDUCERS */
@@ -199,13 +162,7 @@ export const deviceInfoInitialState: DeviceInfo = {
 export const deviceInitialState: DeviceState = {
   ...deviceInfoInitialState,
   keyboardVisible: false,
-  appStatus: AppState.currentState,
-  networkConnected: false,
-  networkDetails: null,
-  networkReachable: false,
-  networkType: NetInfoStateType.unknown,
-  dimensionScreen: Dimensions.get("screen"),
-  dimensionWindow: Dimensions.get("window")
+  appStatus: AppState.currentState
 };
 
 export const deviceReducer = (
@@ -222,20 +179,6 @@ export const deviceReducer = (
       return {
         ...state,
         keyboardVisible: action.payload
-      };
-    case getType(updateNetwork):
-      return {
-        ...state,
-        networkReachable: action.payload.isInternetReachable || false,
-        networkConnected: action.payload.isConnected,
-        networkDetails: action.payload.details,
-        networkType: action.payload.type
-      };
-    case getType(updateDimensions):
-      return {
-        ...state,
-        dimensionScreen: action.payload.screen,
-        dimensionWindow: action.payload.window
       };
     case getType(loadDevice):
       return {

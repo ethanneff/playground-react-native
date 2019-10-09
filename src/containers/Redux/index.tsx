@@ -43,7 +43,13 @@ import {
   authReducer,
   deviceReducer,
   navigationReducer,
-  themeReducer
+  themeReducer,
+  NetworkActions,
+  NetworkState,
+  networkReducer,
+  dimensionReducer,
+  DimensionState,
+  DimensionActions
 } from "../../models";
 import { Storage } from "../../conversions";
 import { Provider } from "react-redux";
@@ -53,10 +59,12 @@ import { memo } from "react";
 /* INTERFACES */
 export type RootState = DeepReadonly<{
   auth: AuthState;
+  dimension: DimensionState;
   device: DeviceState;
   items: Items;
   lists: Lists;
   navigation: Navigation;
+  network: NetworkState;
   questions: Questions;
   choices: Choices;
   responses: Responses;
@@ -68,10 +76,12 @@ export type RootState = DeepReadonly<{
 const reducers = combineReducers<RootState>({
   auth: authReducer,
   choices: choicesReducer,
+  dimension: dimensionReducer,
   device: deviceReducer,
   items: itemReducer,
   lists: listReducer,
   navigation: navigationReducer,
+  network: networkReducer,
   questionnaires: questionnairesReducer,
   questions: questionsReducer,
   responses: responsesReducer,
@@ -80,11 +90,13 @@ const reducers = combineReducers<RootState>({
 
 /* ACTIONS */
 export type RootAction =
+  | DimensionActions
   | DeviceActions
   | AuthActions
   | ListActions
   | ItemActions
   | NavigationActions
+  | NetworkActions
   | QuestionnairesActions
   | QuestionsActions
   | ChoicesActions
