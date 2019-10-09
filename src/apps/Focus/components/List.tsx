@@ -1,7 +1,9 @@
-import React, { memo, useRef } from "react";
-import { FlatList } from "react-native";
+import React, { memo, useState, useEffect } from "react";
+import { StyleSheet } from "react-native";
+import { FlatList, ActivityIndicator } from "react-native";
 import { ListItem } from "./ListItem";
 import { Theme } from "../../../utils";
+import moment from "moment";
 
 export interface Item {
   action: string;
@@ -21,19 +23,43 @@ interface Props {
 }
 
 const itemHeight = Theme.padding.p10;
+const initialIndex =
+  moment()
+    .startOf("day")
+    .add(2, "day")
+    .diff(moment(), "hour") - 4;
+
+const getItemLayout = (_: any, index: number) => ({
+  length: itemHeight,
+  offset: itemHeight * index,
+  index
+});
+
+const getCurrentItem = (item: Item): boolean => {
+  const currentTime = new Date();
+  const before = currentTime.setHours(currentTime.getHours() - 1);
+  const after = currentTime.setHours(currentTime.getHours() + 1);
+  if (item.id > before && item.id < after) {
+    return true;
+  }
+  return false;
+};
+
+const keyExtractor = (item: Item) => String(item.id);
+
 export const List = memo(
   ({ items, onItemPress, onEndReached, onEndReachedThreshold }: Props) => {
-    const listRef = useRef<FlatList<Item> | null>(null);
-
-    const getCurrentItem = (item: Item): boolean => {
-      const currentTime = new Date();
-      const before = currentTime.setHours(currentTime.getHours() - 1);
-      const after = currentTime.setHours(currentTime.getHours() + 1);
-      if (item.id > before && item.id < after) {
-        return true;
+    const [loading, setLoading] = useState(true);
+    const styles = StyleSheet.create({
+      list: {
+        opacity: loading ? 0 : 1
+      },
+      loading: {
+        position: "absolute",
+        height: "100%",
+        width: "100%"
       }
-      return false;
-    };
+    });
 
     // TODO:  move to list item
     const renderItem = ({ item, index }: { item: Item; index: number }) => {
@@ -49,33 +75,29 @@ export const List = memo(
       );
     };
 
-    const onLayout = () => {
-      if (!listRef || !listRef.current || items.length < 50) {
-        return;
-      }
-      listRef.current.scrollToIndex({ index: 20, animated: false });
+    const onLoad = () => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 200);
     };
 
-    const keyExtractor = (item: Item) => String(item.id);
-
-    const getItemLayout = (_: any, index: number) => ({
-      length: itemHeight,
-      offset: itemHeight * index,
-      index
-    });
+    useEffect(onLoad, []);
 
     return (
-      <FlatList
-        onLayout={onLayout}
-        inverted
-        ref={listRef}
-        getItemLayout={getItemLayout}
-        keyExtractor={keyExtractor}
-        data={items}
-        onEndReached={onEndReached}
-        onEndReachedThreshold={onEndReachedThreshold}
-        renderItem={renderItem}
-      />
+      <>
+        <FlatList
+          style={styles.list}
+          inverted
+          initialScrollIndex={initialIndex}
+          getItemLayout={getItemLayout}
+          keyExtractor={keyExtractor}
+          data={items}
+          onEndReached={onEndReached}
+          onEndReachedThreshold={onEndReachedThreshold}
+          renderItem={renderItem}
+        />
+        {loading && <ActivityIndicator size="large" style={styles.loading} />}
+      </>
     );
   }
 );
