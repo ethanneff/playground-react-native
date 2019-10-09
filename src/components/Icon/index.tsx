@@ -1,9 +1,9 @@
 import React, { memo } from "react";
 import { Platform, View, ViewStyle } from "react-native";
-import { getCurrentColor } from "../../models";
-import { Config, Theme, useRootSelector } from "../../utils";
+import { Config, Theme } from "../../utils";
 import { Badge } from "./Badge";
 import { Source } from "./Source";
+import { useColor } from "../../hooks";
 
 /*
 usage: <Icon name='check' />
@@ -31,7 +31,7 @@ export const Icon: React.FC<Props> = memo(function Icon({
   hidden,
   invisible
 }) {
-  const colors = useRootSelector(state => getCurrentColor(state));
+  const colors = useColor();
   const colored = clear ? colors.background : color ? color : colors.dark;
   const containerStyles =
     Platform.OS === Config.os.web ? { width: 20, height: 20 } : style;
