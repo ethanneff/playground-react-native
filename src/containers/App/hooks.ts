@@ -8,7 +8,7 @@ import {
   changeKeyboardStatus,
   deviceInfoInitialState,
   loadDevice,
-  updateDimensions,
+  updateDimension,
   updateNetwork
 } from "../../models";
 import { useRootDispatch } from "../../utils";
@@ -36,7 +36,7 @@ export const useDimensions = () => {
   const dispatch = useRootDispatch();
 
   const handleChange = useCallback(
-    (change: DimensionsProps) => dispatch(updateDimensions(change)),
+    (change: DimensionsProps) => dispatch(updateDimension(change)),
     [dispatch]
   );
 
