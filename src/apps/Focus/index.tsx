@@ -9,7 +9,7 @@ import moment from "moment";
 // TODO: convert hours to minutes to config 15, 30, 60, 120
 // TODO: rename item.action to item.title
 
-const infiniteScrollRegeneration = 50;
+const infiniteScrollRegeneration = 100;
 const editItem: { visible: boolean; item: Item | null } = {
   visible: false,
   item: null
