@@ -75,28 +75,28 @@ export default function Focus() {
           />
         }
       </Screen>
-      {modalItemEdit.visible && (
+      {modalItemEdit.visible && 
         <Dialog
           duration={2000}
           testID="editItem"
           title={modalItemEdit.item ? modalItemEdit.item.action : "empty"}
           onBackgroundPress={handleModalEditBackgroundPress}
         />
-      )}
-      {modalProfile && (
+      }
+      {modalProfile && 
         <Dialog
           testID="editItem"
           title="hello"
           onBackgroundPress={handleModalEditBackgroundPress}
         />
-      )}
-      {modalLogin && (
+      }
+      {modalLogin && 
         <Dialog
           testID="editItem"
           title="hello"
           onBackgroundPress={handleModalEditBackgroundPress}
         />
-      )}
+      }
     </>
   );
 }
