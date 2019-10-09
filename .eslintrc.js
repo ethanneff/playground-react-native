@@ -170,6 +170,7 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": "off", // good, but too many warnings
     "@typescript-eslint/ban-ts-ignore": "warn", // allow some overrides
     "react-hooks/rules-of-hooks": "error", // hooks
-    "react-hooks/exhaustive-deps": "error" // hooks
+    "react-hooks/exhaustive-deps": "error", // hooks
+    "dot-location": ["error", "property"] // web
   }
 };
