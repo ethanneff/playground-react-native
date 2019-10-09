@@ -1,9 +1,9 @@
 import React, { memo } from "react";
 import { SafeAreaView, StatusBar, StyleSheet, ViewStyle } from "react-native";
-import { getCurrentColor } from "../../models";
-import { Theme, useRootSelector } from "../../utils";
+import { Theme } from "../../utils";
 import { NavBar } from "./NavBar";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { KeyboardAware } from "./KeyboardAware";
+import { useColor } from "../../hooks";
 
 interface OwnProps {
   style?: ViewStyle;
@@ -31,21 +31,26 @@ export const Screen: React.FC<Props> = memo(function Screen({
   leftIcon,
   rightIcon
 }) {
-  const colors = useRootSelector(state => getCurrentColor(state));
+  const color = useColor();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: colors.background,
+      backgroundColor: color.background,
       flex: 1
     },
-    children: {
+    gutter: {
       flex: 1,
       padding: gutter ? Theme.padding.p04 : Theme.padding.p00
     }
   });
+  const childrenStyles = [
+    styles.container,
+    gutter ? styles.gutter : undefined,
+    style
+  ];
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle={colors.statusBar} />
+      <StatusBar barStyle={color.statusBar} />
       <NavBar
         border={border}
         title={title}
@@ -54,16 +59,9 @@ export const Screen: React.FC<Props> = memo(function Screen({
         onLeftPress={onLeftPress}
         onRightPress={onRightPress}
       />
-      {disableScroll ? 
-        children
-       : 
-        <KeyboardAwareScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={[styles.container, style]}
-        >
-          {children}
-        </KeyboardAwareScrollView>
-      }
+      <KeyboardAware disableScroll={disableScroll} style={childrenStyles}>
+        {children}
+      </KeyboardAware>
     </SafeAreaView>
   );
 });
