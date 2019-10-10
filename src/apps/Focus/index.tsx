@@ -67,37 +67,37 @@ export default function Focus() {
         onLeftPress={nav.to("portfolioLanding")}
         title="Focus"
       >
-        {items.length > 0 && (
+        {items.length > 0 && 
           <List
             items={items}
             onItemPress={handleItemPress}
             onEndReached={generateMoreItems}
             onEndReachedThreshold={0.5}
           />
-        )}
+        }
       </Screen>
-      {modalItemEdit.visible && (
+      {modalItemEdit.visible && 
         <Dialog
           duration={2000}
           testID="editItem"
           title={modalItemEdit.item ? modalItemEdit.item.action : "empty"}
           onBackgroundPress={handleModalEditBackgroundPress}
         />
-      )}
-      {modalProfile && (
+      }
+      {modalProfile && 
         <Dialog
           testID="editItem"
           title="hello"
           onBackgroundPress={handleModalEditBackgroundPress}
         />
-      )}
-      {modalLogin && (
+      }
+      {modalLogin && 
         <Dialog
           testID="editItem"
           title="hello"
           onBackgroundPress={handleModalEditBackgroundPress}
         />
-      )}
+      }
     </>
   );
 }
