@@ -9,11 +9,11 @@ module.exports = {
     }
   },
   extends: [
-    "eslint:recommended",
-    "plugin:jest/recommended",
+    "eslint:recommended", // eslint
+    "plugin:react/recommended", // react
+    "plugin:jest/recommended", // jest
     "plugin:@typescript-eslint/recommended", // typescript
-    "prettier/@typescript-eslint", // prettier
-    "plugin:react/recommended" // react
+    "prettier/@typescript-eslint" // prettier
   ],
   env: {
     browser: true, // window, setTimeout
