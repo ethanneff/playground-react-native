@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.8.1](https://github.com/ethanneff/example/compare/v2.8.0...v2.8.1) (2019-10-10)
+
+
+### Bug Fixes
+
+* cleanup focus item render ([f157ef7](https://github.com/ethanneff/example/commit/f157ef7))
+* revert linting ([c46ebee](https://github.com/ethanneff/example/commit/c46ebee))
+* update deps ([0f4cbfb](https://github.com/ethanneff/example/commit/0f4cbfb))
+* update lint order ([3431c89](https://github.com/ethanneff/example/commit/3431c89))
+
 # [2.8.0](https://github.com/ethanneff/example/compare/v2.7.2...v2.8.0) (2019-10-09)
 
 
