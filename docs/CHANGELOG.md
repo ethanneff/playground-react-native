@@ -1,5 +1,44 @@
 # Changelog
 
+# [2.8.0](https://github.com/ethanneff/example/compare/v2.7.2...v2.8.0) (2019-10-09)
+
+
+### Bug Fixes
+
+* add access to dimension redux on web ([e104659](https://github.com/ethanneff/example/commit/e104659))
+* add all recommend eslints ([720ab85](https://github.com/ethanneff/example/commit/720ab85))
+* add dot location to remove web warnings ([9965203](https://github.com/ethanneff/example/commit/9965203))
+* add netinfo conversion for web ([acc85e7](https://github.com/ethanneff/example/commit/acc85e7))
+* convert screens to navigation title ([f7491b7](https://github.com/ethanneff/example/commit/f7491b7))
+* correct broken type ([1dbae25](https://github.com/ethanneff/example/commit/1dbae25))
+* correct eslint errors ([e0c788b](https://github.com/ethanneff/example/commit/e0c788b))
+* correct prop to const same name ([21bf267](https://github.com/ethanneff/example/commit/21bf267))
+* correct virtualized list error by isolating keyboard avoid ([5b57cd3](https://github.com/ethanneff/example/commit/5b57cd3))
+* ignore linting rules ([52e78b5](https://github.com/ethanneff/example/commit/52e78b5))
+* make initial list 100 to allow for 4 days ([31bdff6](https://github.com/ethanneff/example/commit/31bdff6))
+* make web version of keyboard aware to remove error ([ae1a18a](https://github.com/ethanneff/example/commit/ae1a18a))
+* only render list if items are generate ([02cacde](https://github.com/ethanneff/example/commit/02cacde))
+* order imports ([23f71dd](https://github.com/ethanneff/example/commit/23f71dd))
+* order imports and type window ([1a63ec8](https://github.com/ethanneff/example/commit/1a63ec8))
+* remove broken test ([b37690a](https://github.com/ethanneff/example/commit/b37690a))
+* remove redux modals ([4f70292](https://github.com/ethanneff/example/commit/4f70292))
+* remove redux modals ([bb17056](https://github.com/ethanneff/example/commit/bb17056))
+* remove redux modals for dialogs ([8198ca2](https://github.com/ethanneff/example/commit/8198ca2))
+* remove unused async ([c128f24](https://github.com/ethanneff/example/commit/c128f24))
+* scroll to item and load until render ([b29a076](https://github.com/ethanneff/example/commit/b29a076))
+* update dependencies ([bb722b3](https://github.com/ethanneff/example/commit/bb722b3))
+* update deps ([7b85244](https://github.com/ethanneff/example/commit/7b85244))
+* update deps ([e505fc0](https://github.com/ethanneff/example/commit/e505fc0))
+* update deps ([62d2d93](https://github.com/ethanneff/example/commit/62d2d93))
+* update deps ([391e163](https://github.com/ethanneff/example/commit/391e163))
+
+
+### Features
+
+* create useNativeDriver hook ([856822f](https://github.com/ethanneff/example/commit/856822f))
+* create usePanGuesture hook ([b02e3f0](https://github.com/ethanneff/example/commit/b02e3f0))
+* make focus work again ([e3c7d7c](https://github.com/ethanneff/example/commit/e3c7d7c))
+
 ## [2.7.2](https://github.com/ethanneff/example/compare/v2.7.1...v2.7.2) (2019-09-26)
 
 
