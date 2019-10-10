@@ -23,6 +23,7 @@ interface Props {
 }
 
 const itemHeight = Theme.padding.p10;
+
 const initialIndex =
   moment()
     .startOf("day")
@@ -45,6 +46,9 @@ const getCurrentItem = (item: Item): boolean => {
   return false;
 };
 
+const getFirstItemOfDay = (index: number, item: Item, items: Item[]) =>
+  index < 1 ? false : item.dayOfMonth !== items[index - 1].dayOfMonth;
+
 const keyExtractor = (item: Item) => String(item.id);
 
 export const List = memo(
@@ -61,24 +65,10 @@ export const List = memo(
       }
     });
 
-    // TODO:  move to list item
-    const renderItem = ({ item, index }: { item: Item; index: number }) => {
-      const firstItemOfDay =
-        index < 1 ? false : item.dayOfMonth !== items[index - 1].dayOfMonth;
-      return (
-        <ListItem
-          currentItem={getCurrentItem(item)}
-          item={item}
-          showSection={firstItemOfDay}
-          onItemPress={onItemPress}
-        />
-      );
-    };
-
     const onLoad = () => {
       setTimeout(() => {
         setLoading(false);
-      }, 200);
+      }, 300);
     };
 
     useEffect(onLoad, []);
@@ -94,7 +84,14 @@ export const List = memo(
           data={items}
           onEndReached={onEndReached}
           onEndReachedThreshold={onEndReachedThreshold}
-          renderItem={renderItem}
+          renderItem={({ item, index }) => 
+            <ListItem
+              currentItem={getCurrentItem(item)}
+              item={item}
+              showSection={getFirstItemOfDay(index, item, items)}
+              onItemPress={onItemPress}
+            />
+          }
         />
         {loading && <ActivityIndicator size="large" style={styles.loading} />}
       </>

@@ -5,9 +5,8 @@ import { List, Item } from "./components/List";
 import moment from "moment";
 
 // TODO: flatlist on web
-// TODO: refresh every hour
-// TODO: convert hours to minutes to config 15, 30, 60, 120
 // TODO: rename item.action to item.title
+// TODO: fix refresh scroll jitter
 
 const infiniteScrollRegeneration = 100;
 const editItem: { visible: boolean; item: Item | null } = {
@@ -50,7 +49,9 @@ export default function Focus() {
     setModalItemEdit({ visible: true, item });
   };
   const handleLoad = () => {
-    if (items.length > 0) {return;}
+    if (items.length > 0) {
+      return;
+    }
     generateMoreItems();
   };
   const handleModalEditBackgroundPress = useCallback(() => {
@@ -66,37 +67,37 @@ export default function Focus() {
         onLeftPress={nav.to("portfolioLanding")}
         title="Focus"
       >
-        {items.length > 0 && 
+        {items.length > 0 && (
           <List
             items={items}
             onItemPress={handleItemPress}
             onEndReached={generateMoreItems}
             onEndReachedThreshold={0.5}
           />
-        }
+        )}
       </Screen>
-      {modalItemEdit.visible && 
+      {modalItemEdit.visible && (
         <Dialog
           duration={2000}
           testID="editItem"
           title={modalItemEdit.item ? modalItemEdit.item.action : "empty"}
           onBackgroundPress={handleModalEditBackgroundPress}
         />
-      }
-      {modalProfile && 
+      )}
+      {modalProfile && (
         <Dialog
           testID="editItem"
           title="hello"
           onBackgroundPress={handleModalEditBackgroundPress}
         />
-      }
-      {modalLogin && 
+      )}
+      {modalLogin && (
         <Dialog
           testID="editItem"
           title="hello"
           onBackgroundPress={handleModalEditBackgroundPress}
         />
-      }
+      )}
     </>
   );
 }
