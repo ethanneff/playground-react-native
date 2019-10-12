@@ -1,4 +1,4 @@
-import moment from "moment";
+import dayjs from "dayjs";
 import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
@@ -30,12 +30,10 @@ interface State {
 const fakeData: Message[] = [
   {
     archive: false,
-    createdAt: moment()
-      .subtract({
-        days: 0,
-        hours: 4,
-        minutes: 4
-      })
+    createdAt: dayjs()
+      .subtract(0, "day")
+      .subtract(4, "hour")
+      .subtract(4, "minute")
       .valueOf(),
     createdBy: "User steve",
     id: "6",
@@ -44,12 +42,9 @@ const fakeData: Message[] = [
   },
   {
     archive: false,
-    createdAt: moment()
-      .subtract({
-        days: 1,
-        hours: 1,
-        minutes: 0
-      })
+    createdAt: dayjs()
+      .subtract(1, "day")
+      .subtract(1, "hour")
       .valueOf(),
     createdBy: "User bob",
     id: "5",
@@ -58,12 +53,9 @@ const fakeData: Message[] = [
   },
   {
     archive: false,
-    createdAt: moment()
-      .subtract({
-        days: 2,
-        hours: 8,
-        minutes: 0
-      })
+    createdAt: dayjs()
+      .subtract(2, "day")
+      .subtract(8, "hour")
       .valueOf(),
     createdBy: "User steve",
     id: "4",
@@ -72,12 +64,9 @@ const fakeData: Message[] = [
   },
   {
     archive: false,
-    createdAt: moment()
-      .subtract({
-        days: 2,
-        hours: 6,
-        minutes: 0
-      })
+    createdAt: dayjs()
+      .subtract(2, "day")
+      .subtract(6, "hour")
       .valueOf(),
     createdBy: "User bob",
     id: "3",
@@ -86,12 +75,9 @@ const fakeData: Message[] = [
   },
   {
     archive: false,
-    createdAt: moment()
-      .subtract({
-        days: 3,
-        hours: 2,
-        minutes: 0
-      })
+    createdAt: dayjs()
+      .subtract(3, "day")
+      .subtract(2, "hour")
       .valueOf(),
     createdBy: "User bob",
     id: "2",
@@ -100,12 +86,9 @@ const fakeData: Message[] = [
   },
   {
     archive: false,
-    createdAt: moment()
-      .subtract({
-        days: 3,
-        hours: 1,
-        minutes: 0
-      })
+    createdAt: dayjs()
+      .subtract(3, "day")
+      .subtract(1, "hour")
       .valueOf(),
     createdBy: "User bob",
     id: "1",
@@ -132,7 +115,7 @@ class Container extends React.PureComponent<Props, State> {
     const { message, messages } = this.state;
 
     return (
-      <Screen onLeftPress={this.nav("debug")}>
+      <Screen onLeftPress={this.nav("debug")} disableScroll>
         <FlatList
           inverted
           data={messages}

@@ -37,7 +37,7 @@
 
 #### code cleanup
 
-- [ ] fix broken ci
+- [x] fix broken ci
 - [ ] remove all commented code
   - [ ] swipe
   - [ ] slack
@@ -45,8 +45,8 @@
   - [ ] dialog tests
   - [ ] test warnings
   - [ ] web warnings
-  - [ ] remove momentjs
-- [ ] dark mode
+  - [x] remove momentjs
+- [x] dark mode
 
 #### best practices and scalability
 

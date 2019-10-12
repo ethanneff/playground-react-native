@@ -1,4 +1,4 @@
-import moment from "moment";
+import dayjs from "dayjs";
 import React from "react";
 import { FlatList, View } from "react-native";
 import { connect } from "react-redux";
@@ -18,16 +18,16 @@ class Component extends React.PureComponent {
             <View>
               <Button
                 icon={
-                  item.date.isSame(moment(), "day")
+                  item.date.isSame(dayjs(), "day")
                     ? "check"
-                    : item.date > moment()
+                    : item.date > dayjs()
                     ? "cancel"
                     : "close"
                 }
                 iconColor={
-                  item.date.isSame(moment(), "day")
+                  item.date.isSame(dayjs(), "day")
                     ? Theme.color.success
-                    : item.date > moment()
+                    : item.date > dayjs()
                     ? Theme.color.secondary
                     : Theme.color.danger
                 }
@@ -54,7 +54,7 @@ class Component extends React.PureComponent {
     const data = [];
     for (let i = 2; i >= -20; i--) {
       data.push({
-        date: moment().add(i, "day")
+        date: dayjs().add(i, "day")
       });
     }
     return data;

@@ -1,4 +1,3 @@
-import moment from "moment";
 import React from "react";
 import {
   ScrollView,
@@ -84,14 +83,16 @@ interface TimerProps {
 }
 
 function Timer({ interval, style }: TimerProps) {
-  const pad = (n: number) => n < 10 ? "0" + n : n;
-  const duration = moment.duration(interval);
-  const centiseconds = Math.floor(duration.milliseconds() / 10);
+  const pad = (n: number): string =>
+    (n < 10 ? "0" + n.toString() : n).toString();
+  const minutes = Math.floor(interval / 60000);
+  const seconds = Math.floor(interval % 60000 / 1000);
+  const milliseconds = Math.floor(interval % 60000 % 1000);
   return (
     <View style={styles.timerContainer}>
-      <Text style={style}>{pad(duration.minutes())}:</Text>
-      <Text style={style}>{pad(duration.seconds())}.</Text>
-      <Text style={style}>{pad(centiseconds)}</Text>
+      <Text style={style}>{pad(minutes)}:</Text>
+      <Text style={style}>{pad(seconds)}.</Text>
+      <Text style={style}>{pad(milliseconds).substr(0, 2)}</Text>
     </View>
   );
 }

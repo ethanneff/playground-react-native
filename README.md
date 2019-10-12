@@ -64,8 +64,8 @@
 - [x] redux offline
 - [x] dynamic import screens
 - [ ] fix prod android
-- [ ] remove moment.js
-- [ ] cant hurt me modals like focus
+- [x] remove moment.js
+- [x] cant hurt me modals like focus
 - [ ] move over to example
 - [ ] get a release on ios
 - [ ] fix pinch spread

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Screen, Dialog } from "../../components";
 import { useNav } from "../../hooks";
 import { List, Item } from "./components/List";
-import moment from "moment";
+import dayjs from "dayjs";
 
 // TODO: flatlist on web
 // TODO: rename item.action to item.title
@@ -25,12 +25,12 @@ export default function Focus() {
     for (let i = 0; i < infiniteScrollRegeneration; i++) {
       const lastItem =
         group.length === 0
-          ? moment()
+          ? dayjs()
               .startOf("day")
               .add(2, "day")
               .valueOf()
           : group[group.length - 1].id;
-      const next = moment(lastItem).subtract(1, "hour");
+      const next = dayjs(lastItem).subtract(1, "hour");
       const id = next.valueOf();
       group.push({
         action: String(Math.random()) + String(Math.random()),

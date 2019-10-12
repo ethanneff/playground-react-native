@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import { FlatList, ActivityIndicator } from "react-native";
 import { ListItem } from "./ListItem";
 import { Theme } from "../../../utils";
-import moment from "moment";
+import dayjs from "dayjs";
 
 export interface Item {
   action: string;
@@ -25,10 +25,10 @@ interface Props {
 const itemHeight = Theme.padding.p10;
 
 const initialIndex =
-  moment()
+  dayjs()
     .startOf("day")
     .add(2, "day")
-    .diff(moment(), "hour") - 4;
+    .diff(dayjs(), "hour") - 4;
 
 const getItemLayout = (_: any, index: number) => ({
   length: itemHeight,
@@ -68,7 +68,7 @@ export const List = memo(
     const onLoad = () => {
       setTimeout(() => {
         setLoading(false);
-      }, 300);
+      }, 1000);
     };
 
     useEffect(onLoad, []);

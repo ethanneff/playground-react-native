@@ -1,8 +1,7 @@
-import moment from "moment";
 import React from "react";
 import { Image, View } from "react-native";
 import { Message } from ".";
-import { Text } from "../../../../components";
+import { Text, RelativeDate } from "../../../../components";
 import { Theme } from "../../../../utils";
 
 interface Props {
@@ -37,8 +36,8 @@ export class Item extends React.PureComponent<Props> {
               bold
               style={{ paddingRight: Theme.padding.p02 }}
             />
-            <Text title={moment(item.createdAt).format("LT")} subtitle1 />
-            {/* <RelativeDate date={item.createdAt} /> */}
+
+            <RelativeDate date={item.createdAt} />
           </View>
           <Text title={item.message} body1 style={{ paddingTop: 5 }} />
         </View>
