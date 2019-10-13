@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.3](https://github.com/ethanneff/example/compare/v2.8.2...v2.8.3) (2019-10-12)
+
+
+### Bug Fixes
+
+* remove momentjs for dayjs ([9d0d600](https://github.com/ethanneff/example/commit/9d0d600))
+
 ## [2.8.2](https://github.com/ethanneff/example/compare/v2.8.1...v2.8.2) (2019-10-12)
 
 
