@@ -46,8 +46,13 @@
   </div>
 </div>
 
+- [ ] delete old repositories
+- [ ] backup google drive offline
+- [ ] rename app to playground
+- [ ] fix [ios deploy](##[error]{"code":"two_factor_authentication_error","message":"Error: Failed to publish to store. apple connection is not valid for \*\*\*: ethan.neff@eneff.com"})
+- [ ] fix android deploy
+- [ ] get a release on ios
 - [x] fix build (web) (@react-native-community/netinfo)
-- [ ] fix ios ##[error]{"code":"two_factor_authentication_error","message":"Error: Failed to publish to store. apple connection is not valid for \*\*\*: ethan.neff@eneff.com"}
 - [x] revive focus
 - [x] cant hurt me dialog
 - [x] use net info
@@ -57,18 +62,14 @@
 - [x] update docs dependencies
 - [x] run on android
 - [x] push code
-- [ ] delete old repositories
 - [x] remove react-native-version-number for updated react-native-device-info
 - [x] code splitting by screen
 - [x] error boundary
 - [x] redux offline
 - [x] dynamic import screens
-- [ ] fix prod android
 - [x] remove moment.js
 - [x] cant hurt me modals like focus
-- [ ] move over to example
-- [ ] get a release on ios
 - [ ] fix pinch spread
-- [ ] fix dark mode card size
+- [x] fix dark mode card size
 - [ ] basketball https://github.com/FaridSafi/react-native-basketball/
 - [ ] flappybird https://github.com/GeekyAnts/FlappyBird-ReactNative
