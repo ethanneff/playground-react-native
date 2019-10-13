@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.4](https://github.com/ethanneff/example/compare/v2.8.3...v2.8.4) (2019-10-13)
+
+
+### Bug Fixes
+
+* update device-info to 4.0.1 and clean up deviceLoad ([a37c147](https://github.com/ethanneff/example/commit/a37c147))
+
 ## [2.8.3](https://github.com/ethanneff/example/compare/v2.8.2...v2.8.3) (2019-10-12)
 
 
