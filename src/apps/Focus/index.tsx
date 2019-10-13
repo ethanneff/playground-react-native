@@ -7,6 +7,7 @@ import dayjs from "dayjs";
 // TODO: flatlist on web
 // TODO: rename item.action to item.title
 // TODO: fix refresh scroll jitter
+// TODO: re-rendering everything because dialog is same level as list
 
 const infiniteScrollRegeneration = 100;
 const editItem: { visible: boolean; item: Item | null } = {
