@@ -29,7 +29,6 @@ export interface DeviceInfo {
   brand: string;
   buildNumber: string;
   bundleId: string;
-  cameraPresence: boolean;
   carrier: string;
   codename: string;
   device: string;
@@ -74,6 +73,7 @@ export interface DeviceInfo {
   hasSystemFeature: boolean;
   isAirplaneMode: boolean;
   isBatteryCharging: boolean;
+  isCameraPresence: false;
   isEmulator: boolean;
   isLandscape: boolean;
   isLocationEnabled: boolean;
@@ -105,7 +105,6 @@ export const deviceInfoInitialState: DeviceInfo = {
   brand: "",
   buildNumber: "",
   bundleId: "",
-  cameraPresence: false,
   carrier: "",
   codename: "",
   device: "",
@@ -150,6 +149,7 @@ export const deviceInfoInitialState: DeviceInfo = {
   hasSystemFeature: false,
   isAirplaneMode: false,
   isBatteryCharging: false,
+  isCameraPresence: false,
   isEmulator: false,
   isLandscape: false,
   isLocationEnabled: false,

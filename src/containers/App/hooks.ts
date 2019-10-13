@@ -6,7 +6,6 @@ import {
   DimensionsProps,
   changeAppStatus,
   changeKeyboardStatus,
-  deviceInfoInitialState,
   loadDevice,
   updateDimension,
   updateNetwork
@@ -77,177 +76,74 @@ export const useNetInfo = () => {
   }, [handleChange]);
 };
 
-export const useDeviceInfo = () => {
+export const useDeviceInfo = async () => {
   const dispatch = useRootDispatch();
-  const result = deviceInfoInitialState;
-  useEffect(() => {
-    /* eslint-disable */
-    Promise.all([
-      DeviceInfo.getAndroidId().then(
-        (value: string) => (result.androidId = value)
-      ),
-      DeviceInfo.getApiLevel().then(
-        (value: number) => (result.apiLevel = value)
-      ),
-      DeviceInfo.getApplicationName().then(
-        (value: string) => (result.applicationName = value)
-      ),
-      DeviceInfo.getAvailableLocationProviders().then(
-        (value: string[]) => (result.availableLocationProviders = value)
-      ),
-      DeviceInfo.getBaseOs().then((value: string) => (result.baseOs = value)),
-      DeviceInfo.getBuildId().then((value: string) => (result.buildId = value)),
-      DeviceInfo.getBatteryLevel().then(
-        (value: number) => (result.batteryLevel = value)
-      ),
-      DeviceInfo.getBootloader().then(
-        (value: string) => (result.bootloader = value)
-      ),
-      DeviceInfo.getBrand().then((value: string) => (result.brand = value)),
-      DeviceInfo.getBuildNumber().then(
-        (value: string) => (result.buildNumber = value)
-      ),
-      DeviceInfo.getBundleId().then(
-        (value: string) => (result.bundleId = value)
-      ),
-      DeviceInfo.getCameraPresence().then(
-        (value: boolean) => (result.cameraPresence = value)
-      ),
-      DeviceInfo.getCarrier().then((value: string) => (result.carrier = value)),
-      DeviceInfo.getCodename().then(
-        (value: string) => (result.codename = value)
-      ),
-      DeviceInfo.getDevice().then((value: string) => (result.device = value)),
-      DeviceInfo.getDeviceId().then(
-        (value: string) => (result.deviceId = value)
-      ),
-      DeviceInfo.getDeviceType().then(
-        (value: string) => (result.deviceType = value)
-      ),
-      DeviceInfo.getDisplay().then((value: string) => (result.display = value)),
-      DeviceInfo.getDeviceName().then(
-        (value: string) => (result.deviceName = value)
-      ),
-      DeviceInfo.getFirstInstallTime().then(
-        (value: number) => (result.firstInstallTime = value)
-      ),
-      DeviceInfo.getFingerprint().then(
-        (value: string) => (result.fingerprint = value)
-      ),
-      DeviceInfo.getFontScale().then(
-        (value: number) => (result.fontScale = value)
-      ),
-      DeviceInfo.getFreeDiskStorage().then(
-        (value: number) => (result.freeDiskStorage = value)
-      ),
-      DeviceInfo.getHardware().then(
-        (value: string) => (result.hardware = value)
-      ),
-      DeviceInfo.getHost().then((value: string) => (result.host = value)),
-      DeviceInfo.getIpAddress().then(
-        (value: string) => (result.ipAddress = value)
-      ),
-      DeviceInfo.getIncremental().then(
-        (value: string) => (result.incremental = value)
-      ),
-      DeviceInfo.getInstallReferrer().then(
-        (value: string) => (result.installReferrer = value)
-      ),
-      DeviceInfo.getInstanceId().then(
-        (value: string) => (result.instanceId = value)
-      ),
-      DeviceInfo.getLastUpdateTime().then(
-        (value: number) => (result.lastUpdateTime = value)
-      ),
-      DeviceInfo.getMacAddress().then(
-        (value: string) => (result.macAddress = value)
-      ),
-      DeviceInfo.getManufacturer().then(
-        (value: string) => (result.manufacturer = value)
-      ),
-      DeviceInfo.getMaxMemory().then(
-        (value: string) => (result.maxMemory = value)
-      ),
-      DeviceInfo.getModel().then((value: string) => (result.model = value)),
-      DeviceInfo.getPhoneNumber().then(
-        (value: string) => (result.phoneNumber = value)
-      ),
-      DeviceInfo.getPowerState().then(
-        (value: object) => (result.powerState = value)
-      ),
-      DeviceInfo.getProduct().then((value: string) => (result.product = value)),
-      DeviceInfo.getPreviewSdkInt().then(
-        (value: number) => (result.previewSdkInt = value)
-      ),
-      DeviceInfo.getReadableVersion().then(
-        (value: string) => (result.readableVersion = value)
-      ),
-      DeviceInfo.getSerialNumber().then(
-        (value: string) => (result.serialNumber = value)
-      ),
-      DeviceInfo.getSecurityPatch().then(
-        (value: string) => (result.securityPatch = value)
-      ),
-      DeviceInfo.getSystemAvailableFeatures().then(
-        (value: string[]) => (result.systemAvailableFeatures = value)
-      ),
-      DeviceInfo.getSystemName().then(
-        (value: string) => (result.systemName = value)
-      ),
-      DeviceInfo.getSystemVersion().then(
-        (value: string) => (result.systemVersion = value)
-      ),
-      DeviceInfo.getTags().then((value: string) => (result.tags = value)),
-      DeviceInfo.getType().then((value: string) => (result.type = value)),
-      DeviceInfo.getTotalDiskCapacity().then(
-        (value: number) => (result.totalDiskCapacity = value)
-      ),
-      DeviceInfo.getTotalMemory().then(
-        (value: string) => (result.totalMemory = value)
-      ),
-      DeviceInfo.getUniqueId().then(
-        (value: string) => (result.uniqueId = value)
-      ),
-      DeviceInfo.getUsedMemory().then(
-        (value: number) => (result.usedMemory = value)
-      ),
-      DeviceInfo.getUserAgent().then(
-        (value: string) => (result.userAgent = value)
-      ),
-      DeviceInfo.getVersion().then((value: string) => (result.version = value)),
-      DeviceInfo.hasNotch().then((value: boolean) => (result.hasNotch = value)),
-      DeviceInfo.hasSystemFeature().then(
-        (value: boolean) => (result.hasSystemFeature = value)
-      ),
-      DeviceInfo.isAirplaneMode().then(
-        (value: boolean) => (result.isAirplaneMode = value)
-      ),
-      DeviceInfo.isBatteryCharging().then(
-        (value: boolean) => (result.isBatteryCharging = value)
-      ),
-      DeviceInfo.isEmulator().then(
-        (value: boolean) => (result.isEmulator = value)
-      ),
-      DeviceInfo.isLandscape().then(
-        (value: boolean) => (result.isLandscape = value)
-      ),
-      DeviceInfo.isLocationEnabled().then(
-        (value: boolean) => (result.isLocationEnabled = value)
-      ),
-      DeviceInfo.isPinOrFingerprintSet().then(
-        (value: boolean) => (result.isPinOrFingerprintSet = value)
-      ),
-      DeviceInfo.isTablet().then((value: boolean) => (result.isTablet = value)),
-      DeviceInfo.supported32BitAbis().then(
-        (value: string[]) => (result.supported32BitAbis = value)
-      ),
-      DeviceInfo.supported64BitAbis().then(
-        (value: string[]) => (result.supported64BitAbis = value)
-      ),
-      DeviceInfo.supportedAbis().then(
-        (value: string[]) => (result.supportedAbis = value)
-      )
-    ]).then(() => dispatch(loadDevice(result)));
-  }, [dispatch, result]);
-  /* eslint-enable */
+  dispatch(
+    loadDevice({
+      androidId: await DeviceInfo.getAndroidId(),
+      apiLevel: await DeviceInfo.getApiLevel(),
+      applicationName: await DeviceInfo.getApplicationName(),
+      availableLocationProviders: await DeviceInfo.getAvailableLocationProviders(),
+      baseOs: await DeviceInfo.getBaseOs(),
+      buildId: await DeviceInfo.getBuildId(),
+      batteryLevel: await DeviceInfo.getBatteryLevel(),
+      bootloader: await DeviceInfo.getBootloader(),
+      brand: await DeviceInfo.getBrand(),
+      buildNumber: await DeviceInfo.getBuildNumber(),
+      bundleId: await DeviceInfo.getBundleId(),
+      carrier: await DeviceInfo.isCameraPresent(),
+      codename: await DeviceInfo.getCarrier(),
+      device: await DeviceInfo.getCodename(),
+      deviceId: await DeviceInfo.getDevice(),
+      deviceType: await DeviceInfo.getDeviceId(),
+      display: await DeviceInfo.getDeviceType(),
+      deviceName: await DeviceInfo.getDisplay(),
+      firstInstallTime: await DeviceInfo.getDeviceName(),
+      fingerprint: await DeviceInfo.getFirstInstallTime(),
+      fontScale: await DeviceInfo.getFingerprint(),
+      freeDiskStorage: await DeviceInfo.getFontScale(),
+      hardware: await DeviceInfo.getFreeDiskStorage(),
+      host: await DeviceInfo.getHardware(),
+      ipAddress: await DeviceInfo.getHost(),
+      incremental: await DeviceInfo.getIpAddress(),
+      installReferrer: await DeviceInfo.getIncremental(),
+      instanceId: await DeviceInfo.getInstallReferrer(),
+      lastUpdateTime: await DeviceInfo.getInstanceId(),
+      macAddress: await DeviceInfo.getLastUpdateTime(),
+      manufacturer: await DeviceInfo.getMacAddress(),
+      maxMemory: await DeviceInfo.getManufacturer(),
+      model: await DeviceInfo.getMaxMemory(),
+      phoneNumber: await DeviceInfo.getModel(),
+      powerState: await DeviceInfo.getPhoneNumber(),
+      product: await DeviceInfo.getPowerState(),
+      previewSdkInt: await DeviceInfo.getProduct(),
+      readableVersion: await DeviceInfo.getPreviewSdkInt(),
+      serialNumber: await DeviceInfo.getReadableVersion(),
+      securityPatch: await DeviceInfo.getSerialNumber(),
+      systemAvailableFeatures: await DeviceInfo.getSecurityPatch(),
+      systemName: await DeviceInfo.getSystemAvailableFeatures(),
+      systemVersion: await DeviceInfo.getSystemName(),
+      tags: await DeviceInfo.getSystemVersion(),
+      type: await DeviceInfo.getTags(),
+      totalDiskCapacity: await DeviceInfo.getType(),
+      totalMemory: await DeviceInfo.getTotalDiskCapacity(),
+      uniqueId: await DeviceInfo.getTotalMemory(),
+      usedMemory: await DeviceInfo.getUniqueId(),
+      userAgent: await DeviceInfo.getUsedMemory(),
+      version: await DeviceInfo.getUserAgent(),
+      hasNotch: await DeviceInfo.getVersion(),
+      hasSystemFeature: await DeviceInfo.hasNotch(),
+      isAirplaneMode: await DeviceInfo.hasSystemFeature(),
+      isBatteryCharging: await DeviceInfo.isAirplaneMode(),
+      isCameraPresence: await DeviceInfo.isBatteryCharging(),
+      isEmulator: await DeviceInfo.isEmulator(),
+      isLandscape: await DeviceInfo.isLandscape(),
+      isLocationEnabled: await DeviceInfo.isLocationEnabled(),
+      isPinOrFingerprintSet: await DeviceInfo.isPinOrFingerprintSet(),
+      isTablet: await DeviceInfo.isTablet(),
+      supported32BitAbis: await DeviceInfo.supported32BitAbis(),
+      supported64BitAbis: await DeviceInfo.supported64BitAbis(),
+      supportedAbis: await DeviceInfo.supportedAbis()
+    })
+  );
 };
