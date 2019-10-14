@@ -21,7 +21,7 @@ export default function Focus() {
   const [items, setItems] = useState<Item[]>([]);
   const nav = useNav();
 
-  const generateMoreItems = () => {
+  const generateMoreItems = useCallback(() => {
     const group = [...items];
     for (let i = 0; i < infiniteScrollRegeneration; i++) {
       const lastItem =
@@ -44,17 +44,19 @@ export default function Focus() {
       });
     }
     setItems(group);
-  };
+  }, [items]);
 
-  const handleItemPress = (item: Item) => {
+  const handleItemPress = useCallback((item: Item) => {
     setModalItemEdit({ visible: true, item });
-  };
-  const handleLoad = () => {
+  }, []);
+
+  const handleLoad = useCallback(() => {
     if (items.length > 0) {
       return;
     }
     generateMoreItems();
-  };
+  }, [generateMoreItems, items.length]);
+
   const handleModalEditBackgroundPress = useCallback(() => {
     setModalItemEdit(state => ({ ...state, visible: false }));
   }, []);
