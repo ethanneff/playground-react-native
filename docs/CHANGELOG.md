@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.5](https://github.com/ethanneff/example/compare/v2.8.4...v2.8.5) (2019-10-14)
+
+
+### Bug Fixes
+
+* callback everything ([d2b13ec](https://github.com/ethanneff/example/commit/d2b13ec))
+
 ## [2.8.4](https://github.com/ethanneff/example/compare/v2.8.3...v2.8.4) (2019-10-13)
 
 
