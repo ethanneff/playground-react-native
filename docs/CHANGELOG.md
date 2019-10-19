@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.8](https://github.com/ethanneff/example/compare/v2.8.7...v2.8.8) (2019-10-17)
+
+
+### Bug Fixes
+
+* update deps ([617ebd7](https://github.com/ethanneff/example/commit/617ebd7))
+
 ## [2.8.7](https://github.com/ethanneff/example/compare/v2.8.6...v2.8.7) (2019-10-16)
 
 
