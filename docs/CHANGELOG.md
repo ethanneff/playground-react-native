@@ -1,5 +1,18 @@
 # Changelog
 
+# [2.9.0](https://github.com/ethanneff/example/compare/v2.8.9...v2.9.0) (2019-10-20)
+
+
+### Bug Fixes
+
+* update podlock ([1e4fdc0](https://github.com/ethanneff/example/commit/1e4fdc0))
+* update snaps ([8f0bdc8](https://github.com/ethanneff/example/commit/8f0bdc8))
+
+
+### Features
+
+* add debug startup ([fccd101](https://github.com/ethanneff/example/commit/fccd101))
+
 ## [2.8.9](https://github.com/ethanneff/example/compare/v2.8.8...v2.8.9) (2019-10-19)
 
 
