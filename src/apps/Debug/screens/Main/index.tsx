@@ -17,6 +17,7 @@ const debugScreens: NavigationScreen[] = [
   "debugPinchSpread",
   "debugQuestionnaire",
   "debugSearchBar",
+  "debugStartup",
   "debugStopwatch",
   "debugSwipeCell",
   "debugDarkMode"
