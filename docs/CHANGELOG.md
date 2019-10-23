@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.1](https://github.com/ethanneff/example/compare/v2.9.0...v2.9.1) (2019-10-23)
+
+
+### Bug Fixes
+
+* update deps ([1a2c68a](https://github.com/ethanneff/example/commit/1a2c68a))
+
 # [2.9.0](https://github.com/ethanneff/example/compare/v2.8.9...v2.9.0) (2019-10-20)
 
 
