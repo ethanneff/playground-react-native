@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.9.2](https://github.com/ethanneff/example/compare/v2.9.1...v2.9.2) (2019-10-28)
+
+
+### Bug Fixes
+
+* correct duplicated linting rules ([f2de0bf](https://github.com/ethanneff/example/commit/f2de0bf))
+* update deps ([c37c7df](https://github.com/ethanneff/example/commit/c37c7df))
+
 ## [2.9.1](https://github.com/ethanneff/example/compare/v2.9.0...v2.9.1) (2019-10-23)
 
 
