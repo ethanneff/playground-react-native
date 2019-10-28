@@ -32,7 +32,7 @@ module.exports = {
     "no-await-in-loop": "error",
     "no-compare-neg-zero": "error",
     "no-cond-assign": "error",
-    "no-console": "error",
+    "no-console": "error", // no console
     "no-constant-condition": "error",
     "no-control-regex": "error",
     "no-debugger": "error",
@@ -92,7 +92,7 @@ module.exports = {
     "dot-notation": "error",
     "guard-for-in": "error",
     "max-classes-per-file": "error",
-    "no-alert": "error",
+    "no-alert": "error", // no alerts
     "no-caller": "error",
     "no-case-declarations": "error",
     "no-div-regex": "error",
@@ -159,9 +159,6 @@ module.exports = {
     curly: "error",
     complexity: "error",
     strict: "error",
-
-    "no-console": "error",
-    "no-alert": "error",
 
     "import/no-cycle": "error", // no circular dependencies
     "react/display-name": "off", // breaks with react.memo
