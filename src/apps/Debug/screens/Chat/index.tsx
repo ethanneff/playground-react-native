@@ -115,7 +115,7 @@ class Container extends React.PureComponent<Props, State> {
     const { message, messages } = this.state;
 
     return (
-      <Screen onLeftPress={this.nav("debug")} disableScroll title="Chat">
+      <Screen onLeftPress={this.nav("debug")} title="Chat">
         <FlatList
           inverted
           data={messages}

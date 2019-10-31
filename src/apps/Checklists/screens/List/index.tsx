@@ -30,7 +30,7 @@ class Component extends React.PureComponent<Props> {
   public render() {
     const { items, removeItem: remove, toggleActiveItem: toggle } = this.props;
     return (
-      <Screen disableScroll onLeftPress={this.nav("checklists")}>
+      <Screen onLeftPress={this.nav("checklists")}>
         <FlatList
           keyExtractor={item => item.id}
           data={items}

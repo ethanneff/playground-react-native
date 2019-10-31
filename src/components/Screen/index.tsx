@@ -59,7 +59,7 @@ export const Screen: React.FC<Props> = memo(function Screen({
         onLeftPress={onLeftPress}
         onRightPress={onRightPress}
       />
-      <KeyboardAware disableScroll={scroll} style={childrenStyles}>
+      <KeyboardAware scroll={scroll} style={childrenStyles}>
         {children}
       </KeyboardAware>
     </SafeAreaView>

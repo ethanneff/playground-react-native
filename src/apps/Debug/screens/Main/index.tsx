@@ -27,11 +27,7 @@ const debugScreens: NavigationScreen[] = [
 export default memo(function Debug() {
   const nav = useNav();
   return (
-    <Screen
-      onLeftPress={nav.to("portfolioLanding")}
-      title="Debug"
-      disableScroll
-    >
+    <Screen onLeftPress={nav.to("portfolioLanding")} title="Debug">
       <FlatList
         keyExtractor={item => item}
         data={debugScreens}

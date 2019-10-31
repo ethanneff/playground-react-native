@@ -86,7 +86,7 @@ export default memo(function DebugStartup() {
   const handleSubmit = useCallback(() => undefined, []);
 
   return (
-    <Screen onLeftPress={nav.to("debug")} title="Weekly Update" disableScroll>
+    <Screen onLeftPress={nav.to("debug")} title="Weekly Update">
       <View
         style={{
           paddingBottom: Theme.padding.p04,

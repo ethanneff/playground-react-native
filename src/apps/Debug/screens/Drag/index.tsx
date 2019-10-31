@@ -38,7 +38,7 @@ export default function DebugDrag() {
   });
 
   return (
-    <Screen disableScroll onLeftPress={nav.to("debug")}>
+    <Screen onLeftPress={nav.to("debug")}>
       <Text center title="drag the circle" />
       <Animated.View
         style={[ballPosition.getLayout(), styles.ball]}

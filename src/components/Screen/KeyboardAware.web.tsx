@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { ViewStyle, View } from "react-native";
 
 interface Props {
-  disableScroll?: boolean;
+  scroll?: boolean;
   style?: ViewStyle | {};
 }
 

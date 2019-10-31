@@ -75,7 +75,7 @@ class Container extends React.PureComponent<Props> {
     const { y } = this.state;
 
     return (
-      <Screen disableScroll onLeftPress={this.nav("debug")}>
+      <Screen onLeftPress={this.nav("debug")}>
         <View style={this.styles.container}>
           <View style={StyleSheet.absoluteFill}>
             {this.cards.map((card, i) => {

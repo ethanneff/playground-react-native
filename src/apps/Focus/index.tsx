@@ -65,11 +65,7 @@ export default function Focus() {
 
   return (
     <>
-      <Screen
-        disableScroll
-        onLeftPress={nav.to("portfolioLanding")}
-        title="Focus"
-      >
+      <Screen onLeftPress={nav.to("portfolioLanding")} title="Focus">
         {items.length > 0 && 
           <List
             items={items}
