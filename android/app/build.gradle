@@ -192,12 +192,6 @@ android {
 }
 
 dependencies {
-    implementation project(':react-native-firebase')
-    implementation "com.google.android.gms:play-services-base:16.1.0"
-    implementation "com.google.firebase:firebase-core:16.0.9"
-    implementation "com.google.firebase:firebase-auth:17.0.0"
-    implementation "com.google.firebase:firebase-firestore:19.0.0"
-    implementation "com.google.firebase:firebase-config:17.0.0"
     implementation project(':react-native-vector-icons')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
