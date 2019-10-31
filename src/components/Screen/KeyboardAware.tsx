@@ -3,16 +3,16 @@ import { ViewStyle, View } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 interface Props {
-  disableScroll?: boolean;
+  scroll?: boolean;
   style?: ViewStyle | {};
 }
 
 export const KeyboardAware: React.FC<Props> = memo(function KeyboardAware({
-  disableScroll,
+  scroll,
   children,
   style
 }) {
-  return disableScroll ? 
+  return !scroll ? 
     <View style={style}>{children}</View>
    : 
     <KeyboardAwareScrollView

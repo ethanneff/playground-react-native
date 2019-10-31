@@ -12,7 +12,7 @@ interface OwnProps {
   gutter?: boolean;
   leftIcon?: string;
   rightIcon?: string;
-  disableScroll?: boolean;
+  scroll?: boolean;
   onLeftPress?(): void;
   onRightPress?(): void;
 }
@@ -27,7 +27,7 @@ export const Screen: React.FC<Props> = memo(function Screen({
   onLeftPress,
   onRightPress,
   children,
-  disableScroll,
+  scroll,
   leftIcon,
   rightIcon
 }) {
@@ -59,7 +59,7 @@ export const Screen: React.FC<Props> = memo(function Screen({
         onLeftPress={onLeftPress}
         onRightPress={onRightPress}
       />
-      <KeyboardAware disableScroll={disableScroll} style={childrenStyles}>
+      <KeyboardAware disableScroll={scroll} style={childrenStyles}>
         {children}
       </KeyboardAware>
     </SafeAreaView>

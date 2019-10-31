@@ -100,9 +100,8 @@ exports[`renders correctly 1`] = `
       }
     />
   </View>
-  <RCTScrollView
-    automaticallyAdjustContentInsets={false}
-    contentContainerStyle={
+  <View
+    style={
       Array [
         Object {
           "backgroundColor": "hsl(0, 0%, 100%)",
@@ -112,733 +111,522 @@ exports[`renders correctly 1`] = `
         undefined,
       ]
     }
-    contentInset={
-      Object {
-        "bottom": 0,
-      }
-    }
-    enableAutomaticScroll={true}
-    enableOnAndroid={false}
-    enableResetScrollToCoords={true}
-    extraHeight={75}
-    extraScrollHeight={0}
-    getScrollResponder={[Function]}
-    handleOnScroll={[Function]}
-    keyboardDismissMode="interactive"
-    keyboardOpeningTime={250}
-    keyboardShouldPersistTaps="handled"
-    keyboardSpace={0}
-    onScroll={[Function]}
-    resetKeyboardSpace={[Function]}
-    scrollEventThrottle={1}
-    scrollForExtraHeightOnAndroid={[Function]}
-    scrollIntoView={[Function]}
-    scrollToEnd={[Function]}
-    scrollToFocusedInput={[Function]}
-    scrollToPosition={[Function]}
-    showsVerticalScrollIndicator={true}
-    update={[Function]}
-    viewIsInsideTabBar={false}
   >
-    <View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
+    <RCTScrollView
+      data={
+        Array [
+          "debugArticle",
+          "debugBall",
+          "debugButtons",
+          "debugCards",
+          "debugChat",
+          "debugDrag",
+          "debugFonts",
+          "debugImageCollection",
+          "debugInput",
+          "debugOKRs",
+          "debugPinchSpread",
+          "debugQuestionnaire",
+          "debugSearchBar",
+          "debugStartup",
+          "debugStopwatch",
+          "debugSwipeCell",
+          "debugDarkMode",
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
+              }
+            >
+              DEBUGARTICLE
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
+              }
+            >
+              DEBUGBALL
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
+              }
+            >
+              DEBUGBUTTONS
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
+              }
+            >
+              DEBUGCARDS
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
+              }
+            >
+              DEBUGCHAT
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
+              }
+            >
+              DEBUGDRAG
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
+              }
+            >
+              DEBUGFONTS
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
+              }
+            >
+              DEBUGIMAGECOLLECTION
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
+              }
+            >
+              DEBUGINPUT
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 36,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
+              }
+            >
+              DEBUGOKRS
+            </Text>
+          </View>
+        </View>
+        <View
           style={
             Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
+              "height": 0,
             }
           }
-        >
-          DEBUGARTICLE
-        </Text>
+        />
       </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGBALL
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGBUTTONS
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGCARDS
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGCHAT
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGDRAG
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGFONTS
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGIMAGECOLLECTION
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGINPUT
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGOKRS
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGPINCHSPREAD
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGQUESTIONNAIRE
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGSEARCHBAR
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGSTARTUP
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGSTOPWATCH
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGSWIPECELL
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
-            "opacity": 1,
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          DEBUGDARKMODE
-        </Text>
-      </View>
-    </View>
-  </RCTScrollView>
+    </RCTScrollView>
+  </View>
 </RCTSafeAreaView>
 `;

@@ -61,9 +61,8 @@ exports[`renders correctly 1`] = `
       }
     />
   </View>
-  <RCTScrollView
-    automaticallyAdjustContentInsets={false}
-    contentContainerStyle={
+  <View
+    style={
       Array [
         Object {
           "backgroundColor": "hsl(0, 0%, 100%)",
@@ -73,38 +72,9 @@ exports[`renders correctly 1`] = `
         undefined,
       ]
     }
-    contentInset={
-      Object {
-        "bottom": 0,
-      }
-    }
-    enableAutomaticScroll={true}
-    enableOnAndroid={false}
-    enableResetScrollToCoords={true}
-    extraHeight={75}
-    extraScrollHeight={0}
-    getScrollResponder={[Function]}
-    handleOnScroll={[Function]}
-    keyboardDismissMode="interactive"
-    keyboardOpeningTime={250}
-    keyboardShouldPersistTaps="handled"
-    keyboardSpace={0}
-    onScroll={[Function]}
-    resetKeyboardSpace={[Function]}
-    scrollEventThrottle={1}
-    scrollForExtraHeightOnAndroid={[Function]}
-    scrollIntoView={[Function]}
-    scrollToEnd={[Function]}
-    scrollToFocusedInput={[Function]}
-    scrollToPosition={[Function]}
-    showsVerticalScrollIndicator={true}
-    update={[Function]}
-    viewIsInsideTabBar={false}
   >
-    <View>
-      <View />
-    </View>
-  </RCTScrollView>
+    <View />
+  </View>
 </RCTSafeAreaView>
 `;
 
@@ -240,9 +210,8 @@ exports[`renders correctly with header 1`] = `
       </View>
     </View>
   </View>
-  <RCTScrollView
-    automaticallyAdjustContentInsets={false}
-    contentContainerStyle={
+  <View
+    style={
       Array [
         Object {
           "backgroundColor": "hsl(0, 0%, 100%)",
@@ -252,38 +221,9 @@ exports[`renders correctly with header 1`] = `
         undefined,
       ]
     }
-    contentInset={
-      Object {
-        "bottom": 0,
-      }
-    }
-    enableAutomaticScroll={true}
-    enableOnAndroid={false}
-    enableResetScrollToCoords={true}
-    extraHeight={75}
-    extraScrollHeight={0}
-    getScrollResponder={[Function]}
-    handleOnScroll={[Function]}
-    keyboardDismissMode="interactive"
-    keyboardOpeningTime={250}
-    keyboardShouldPersistTaps="handled"
-    keyboardSpace={0}
-    onScroll={[Function]}
-    resetKeyboardSpace={[Function]}
-    scrollEventThrottle={1}
-    scrollForExtraHeightOnAndroid={[Function]}
-    scrollIntoView={[Function]}
-    scrollToEnd={[Function]}
-    scrollToFocusedInput={[Function]}
-    scrollToPosition={[Function]}
-    showsVerticalScrollIndicator={true}
-    update={[Function]}
-    viewIsInsideTabBar={false}
   >
-    <View>
-      <View />
-    </View>
-  </RCTScrollView>
+    <View />
+  </View>
 </RCTSafeAreaView>
 `;
 
@@ -419,9 +359,8 @@ exports[`renders correctly with icons 1`] = `
       </View>
     </View>
   </View>
-  <RCTScrollView
-    automaticallyAdjustContentInsets={false}
-    contentContainerStyle={
+  <View
+    style={
       Array [
         Object {
           "backgroundColor": "hsl(0, 0%, 100%)",
@@ -431,37 +370,8 @@ exports[`renders correctly with icons 1`] = `
         undefined,
       ]
     }
-    contentInset={
-      Object {
-        "bottom": 0,
-      }
-    }
-    enableAutomaticScroll={true}
-    enableOnAndroid={false}
-    enableResetScrollToCoords={true}
-    extraHeight={75}
-    extraScrollHeight={0}
-    getScrollResponder={[Function]}
-    handleOnScroll={[Function]}
-    keyboardDismissMode="interactive"
-    keyboardOpeningTime={250}
-    keyboardShouldPersistTaps="handled"
-    keyboardSpace={0}
-    onScroll={[Function]}
-    resetKeyboardSpace={[Function]}
-    scrollEventThrottle={1}
-    scrollForExtraHeightOnAndroid={[Function]}
-    scrollIntoView={[Function]}
-    scrollToEnd={[Function]}
-    scrollToFocusedInput={[Function]}
-    scrollToPosition={[Function]}
-    showsVerticalScrollIndicator={true}
-    update={[Function]}
-    viewIsInsideTabBar={false}
   >
-    <View>
-      <View />
-    </View>
-  </RCTScrollView>
+    <View />
+  </View>
 </RCTSafeAreaView>
 `;

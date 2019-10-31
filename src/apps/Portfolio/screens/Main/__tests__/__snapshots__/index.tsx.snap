@@ -74,9 +74,8 @@ exports[`renders correctly 1`] = `
       }
     />
   </View>
-  <RCTScrollView
-    automaticallyAdjustContentInsets={false}
-    contentContainerStyle={
+  <View
+    style={
       Array [
         Object {
           "backgroundColor": "hsl(0, 0%, 100%)",
@@ -89,77 +88,48 @@ exports[`renders correctly 1`] = `
         undefined,
       ]
     }
-    contentInset={
-      Object {
-        "bottom": 0,
-      }
-    }
-    enableAutomaticScroll={true}
-    enableOnAndroid={false}
-    enableResetScrollToCoords={true}
-    extraHeight={75}
-    extraScrollHeight={0}
-    getScrollResponder={[Function]}
-    handleOnScroll={[Function]}
-    keyboardDismissMode="interactive"
-    keyboardOpeningTime={250}
-    keyboardShouldPersistTaps="handled"
-    keyboardSpace={0}
-    onScroll={[Function]}
-    resetKeyboardSpace={[Function]}
-    scrollEventThrottle={1}
-    scrollForExtraHeightOnAndroid={[Function]}
-    scrollIntoView={[Function]}
-    scrollToEnd={[Function]}
-    scrollToFocusedInput={[Function]}
-    scrollToPosition={[Function]}
-    showsVerticalScrollIndicator={true}
-    update={[Function]}
-    viewIsInsideTabBar={false}
   >
-    <View>
-      <View
-        accessible={true}
-        focusable={true}
-        isTVSelectable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+    <View
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "borderColor": "transparent",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "height": 36,
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingHorizontal": 16,
+        }
+      }
+    >
+      <Text
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "borderColor": "transparent",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 36,
-            "justifyContent": "center",
+            "color": "hsl(211, 100%, 50%)",
+            "fontSize": 14,
+            "fontWeight": "600",
+            "letterSpacing": 0.75,
             "opacity": 1,
-            "paddingHorizontal": 16,
+            "textAlign": "center",
           }
         }
       >
-        <Text
-          style={
-            Object {
-              "color": "hsl(211, 100%, 50%)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-              "textAlign": "center",
-            }
-          }
-        >
-          LOGOUT
-        </Text>
-      </View>
+        LOGOUT
+      </Text>
     </View>
-  </RCTScrollView>
+  </View>
 </RCTSafeAreaView>
 `;
