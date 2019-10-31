@@ -2,6 +2,7 @@ import React, { memo } from "react";
 import { Button, Screen } from "../../../../components";
 import { NavigationScreen } from "../../../../models";
 import { useNav } from "../../../../hooks";
+import { FlatList } from "react-native";
 
 const debugScreens: NavigationScreen[] = [
   "debugArticle",
@@ -26,10 +27,18 @@ const debugScreens: NavigationScreen[] = [
 export default memo(function Debug() {
   const nav = useNav();
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")} title="Debug">
-      {debugScreens.map(screen => 
-        <Button title={screen} key={screen} onPress={nav.to(screen)} />
-      )}
+    <Screen
+      onLeftPress={nav.to("portfolioLanding")}
+      title="Debug"
+      disableScroll
+    >
+      <FlatList
+        keyExtractor={item => item}
+        data={debugScreens}
+        renderItem={({ item }) => 
+          <Button title={item} key={item} onPress={nav.to(item)} />
+        }
+      />
     </Screen>
   );
 });
