@@ -47,7 +47,7 @@
 </div>
 
 - [ ] delete old repositories
-- [ ] backup google drive offline
+- [x] backup google drive offline
 - [ ] rename app to playground
 - [ ] fix [ios deploy](##[error]{"code":"two_factor_authentication_error","message":"Error: Failed to publish to store. apple connection is not valid for \*\*\*: ethan.neff@eneff.com"})
 - [ ] fix android deploy
