@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View, Keyboard } from "react-native";
 import { connect } from "react-redux";
 import uuid from "uuid";
 import { Button, Screen, TextInput } from "../../../../components";
@@ -115,7 +115,7 @@ class Container extends React.PureComponent<Props, State> {
     const { message, messages } = this.state;
 
     return (
-      <Screen onLeftPress={this.nav("debug")} disableScroll>
+      <Screen onLeftPress={this.nav("debug")} disableScroll title="Chat">
         <FlatList
           inverted
           data={messages}
@@ -153,6 +153,7 @@ class Container extends React.PureComponent<Props, State> {
       message,
       updatedAt: date
     };
+    Keyboard.dismiss();
     this.setState({ message: "", messages: [newMessage, ...messages] });
   };
 
