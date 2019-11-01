@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.9.4](https://github.com/ethanneff/example/compare/v2.9.3...v2.9.4) (2019-10-31)
+
+
+### Bug Fixes
+
+* correct changed props on Screen component ([4af23f7](https://github.com/ethanneff/example/commit/4af23f7))
+* dismiss keyboard on chat ([c2b335b](https://github.com/ethanneff/example/commit/c2b335b))
+* gradle clean to reset ([18683ed](https://github.com/ethanneff/example/commit/18683ed))
+* make debug menu scroll ([ffff06d](https://github.com/ethanneff/example/commit/ffff06d))
+* update deps ([d300194](https://github.com/ethanneff/example/commit/d300194))
+* update firebase ([a9e8c0e](https://github.com/ethanneff/example/commit/a9e8c0e))
+
 ## [2.9.3](https://github.com/ethanneff/example/compare/v2.9.2...v2.9.3) (2019-10-30)
 
 
