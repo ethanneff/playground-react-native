@@ -1,16 +1,14 @@
 import { createSelector } from "reselect";
-import { ActionType, createStandardAction, getType } from "typesafe-actions";
+import { ActionType, createAction, getType } from "typesafe-actions";
 import { DeepReadonly } from "utility-types";
 import uuid from "uuid";
 import { RootAction, RootState } from "../../../../containers";
 
 /* ACTIONS */
-export const createItem = createStandardAction("ITEM/CREATE")<CreateItem>();
-export const updateItem = createStandardAction("ITEM/UPDATE")<UpdateItem>();
-export const removeItem = createStandardAction("ITEM/REMOVE")<string>();
-export const toggleActiveItem = createStandardAction("ITEM/TOGGLE_ACTIVE")<
-  string
->();
+export const createItem = createAction("ITEM/CREATE")<CreateItem>();
+export const updateItem = createAction("ITEM/UPDATE")<UpdateItem>();
+export const removeItem = createAction("ITEM/REMOVE")<string>();
+export const toggleActiveItem = createAction("ITEM/TOGGLE_ACTIVE")<string>();
 
 /* INDEXES */
 export const indexItemsByCreatedAt = (rows: Items): Items =>

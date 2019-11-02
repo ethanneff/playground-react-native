@@ -3,12 +3,12 @@ import {
   NetInfoState,
   NetInfoStateType
 } from "../../conversions";
-import { ActionType, createStandardAction, getType } from "typesafe-actions";
+import { ActionType, createAction, getType } from "typesafe-actions";
 import { RootAction } from "../../containers";
 import { logout } from "../Auth";
 
 /* ACTIONS */
-export const updateNetwork = createStandardAction("network/UPDATE_NETWORK")<
+export const updateNetwork = createAction("network/UPDATE_NETWORK")<
   NetInfoState
 >();
 

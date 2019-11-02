@@ -1,24 +1,16 @@
 import axios from "axios";
-import { ActionType, createStandardAction, getType } from "typesafe-actions";
+import { ActionType, createAction, getType } from "typesafe-actions";
 import { RootAction, RootState, RootThunkAction } from "../../containers";
 import { Config } from "../../utils";
 
 /* ACTIONS */
-export const loginRequest = createStandardAction("AUTH/LOGIN_REQUEST")();
-export const loginSuccess = createStandardAction("AUTH/REGISTER_SUCCESS")<
-  string
->();
-export const loginFailure = createStandardAction("AUTH/REGISTER_FAILURE")<
-  Error
->();
-export const registerRequest = createStandardAction("AUTH/REGISTER_REQUEST")();
-export const registerSuccess = createStandardAction("AUTH/REGISTER_SUCCESS")<
-  string
->();
-export const registerFailure = createStandardAction("AUTH/REGISTER_FAILURE")<
-  Error
->();
-export const logout = createStandardAction("Auth/LOGOUT")();
+export const loginRequest = createAction("AUTH/LOGIN_REQUEST")();
+export const loginSuccess = createAction("AUTH/REGISTER_SUCCESS")<string>();
+export const loginFailure = createAction("AUTH/REGISTER_FAILURE")<Error>();
+export const registerRequest = createAction("AUTH/REGISTER_REQUEST")();
+export const registerSuccess = createAction("AUTH/REGISTER_SUCCESS")<string>();
+export const registerFailure = createAction("AUTH/REGISTER_FAILURE")<Error>();
+export const logout = createAction("Auth/LOGOUT")();
 
 /* ACTION CREATORS */
 export const onLogin = (): RootThunkAction<void> => async dispatch => {

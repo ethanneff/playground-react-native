@@ -1,16 +1,10 @@
-import { ActionType, createStandardAction } from "typesafe-actions";
+import { ActionType, createAction } from "typesafe-actions";
 import { RootAction } from "../../../../../containers";
 
 /* ACTIONS */
-export const createResponse = createStandardAction("responses/CREATE")<
-  Response
->();
-export const updateResponse = createStandardAction("responses/UPDATE")<
-  Response
->();
-export const removeResponse = createStandardAction("responses/REMOVE")<
-  string
->();
+export const createResponse = createAction("responses/CREATE")<Response>();
+export const updateResponse = createAction("responses/UPDATE")<Response>();
+export const removeResponse = createAction("responses/REMOVE")<string>();
 
 /* INTERFACES */
 interface Response {

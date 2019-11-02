@@ -1,28 +1,34 @@
 import { createSelector } from "reselect";
-import { ActionType, createStandardAction, getType } from "typesafe-actions";
+import {
+  ActionType,
+  createAction,
+  createCustomAction,
+  getType
+} from "typesafe-actions";
 import uuid from "uuid";
 import { RootAction, RootState } from "../../../../../containers";
 import { logout } from "../../../../../models/Auth/index";
 
 /* ACTIONS */
-export const createQuestionnaire = createStandardAction(
-  "questionnaires/CREATE"
-).map((payload: string) => ({
-  payload: {
-    id: uuid.v4(),
-    questions: [],
-    title: payload
-  }
-}));
-export const updateQuestionnaire = createStandardAction(
-  "questionnaires/UPDATE"
-)<Questionnaire>();
-export const removeQuestionnaire = createStandardAction(
-  "questionnaires/REMOVE"
-)<string>();
-export const selectQuestionnaire = createStandardAction(
-  "questionnaires/SELECT"
-)<string>();
+export const createQuestionnaire = createCustomAction(
+  "questionnaires/CREATE",
+  (payload: string) => ({
+    payload: {
+      id: uuid.v4(),
+      questions: [],
+      title: payload
+    }
+  })
+);
+export const updateQuestionnaire = createAction("questionnaires/UPDATE")<
+  Questionnaire
+>();
+export const removeQuestionnaire = createAction("questionnaires/REMOVE")<
+  string
+>();
+export const selectQuestionnaire = createAction("questionnaires/SELECT")<
+  string
+>();
 
 /* SELECTORS */
 export const getQuestionnaires = (state: RootState): QuestionnairesObject =>

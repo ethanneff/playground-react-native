@@ -1,4 +1,4 @@
-import { ActionType, createStandardAction, getType } from "typesafe-actions";
+import { ActionType, createAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";
 import { logout } from "../Auth";
 
@@ -8,7 +8,7 @@ https://material.io/design/color/the-color-system.html#tools-for-picking-colors
 */
 
 /* ACTIONS */
-export const changeTheme = createStandardAction("theme/CHANGE")<ColorTheme>();
+export const changeTheme = createAction("theme/CHANGE")<ColorTheme>();
 
 /* SELECTORS */
 export const getCurrentColor = (state: RootState): Color =>

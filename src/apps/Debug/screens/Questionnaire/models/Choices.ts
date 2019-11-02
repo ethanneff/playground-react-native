@@ -1,10 +1,10 @@
-import { ActionType, createStandardAction } from "typesafe-actions";
+import { ActionType, createAction } from "typesafe-actions";
 import { RootAction } from "../../../../../containers";
 
 /* ACTIONS */
-export const createChoice = createStandardAction("choices/CREATE")<Choice>();
-export const updateChoice = createStandardAction("choices/UPDATE")<Choice>();
-export const removeChoice = createStandardAction("choices/REMOVE")<string>();
+export const createChoice = createAction("choices/CREATE")<Choice>();
+export const updateChoice = createAction("choices/UPDATE")<Choice>();
+export const removeChoice = createAction("choices/REMOVE")<string>();
 
 /* INTERFACES */
 interface Choice {

@@ -1,14 +1,14 @@
 import { AppState, AppStateStatus, ScaledSize } from "react-native";
-import { ActionType, createStandardAction, getType } from "typesafe-actions";
+import { ActionType, createAction, getType } from "typesafe-actions";
 import { RootAction } from "../../containers";
 import { logout } from "../Auth";
 
 /* ACTIONS */
-export const loadDevice = createStandardAction("device/LOAD")<DeviceInfo>();
-export const changeAppStatus = createStandardAction("device/UPDATE_STATUS")<
+export const loadDevice = createAction("device/LOAD")<DeviceInfo>();
+export const changeAppStatus = createAction("device/UPDATE_STATUS")<
   AppStateStatus
 >();
-export const changeKeyboardStatus = createStandardAction(
+export const changeKeyboardStatus = createAction(
   "device/UPDATE_KEYBOARD_VISIBILITY"
 )<boolean>();
 

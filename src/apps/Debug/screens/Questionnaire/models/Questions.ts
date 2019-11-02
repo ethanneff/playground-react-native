@@ -1,16 +1,10 @@
-import { ActionType, createStandardAction } from "typesafe-actions";
+import { ActionType, createAction } from "typesafe-actions";
 import { RootAction } from "../../../../../containers";
 
 /* ACTIONS */
-export const createQuestion = createStandardAction("questions/CREATE")<
-  Question
->();
-export const updateQuestion = createStandardAction("questions/UPDATE")<
-  Question
->();
-export const removeQuestion = createStandardAction("questions/REMOVE")<
-  string
->();
+export const createQuestion = createAction("questions/CREATE")<Question>();
+export const updateQuestion = createAction("questions/UPDATE")<Question>();
+export const removeQuestion = createAction("questions/REMOVE")<string>();
 
 /* INTERFACES */
 enum QuestionType {

@@ -1,12 +1,12 @@
 import { Dimensions, ScaledSize } from "react-native";
-import { ActionType, createStandardAction, getType } from "typesafe-actions";
+import { ActionType, createAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../containers";
 import { logout } from "../Auth";
 
 /* ACTIONS */
-export const updateDimension = createStandardAction(
-  "dimension/UPDATE_DIMENSION"
-)<DimensionState>();
+export const updateDimension = createAction("dimension/UPDATE_DIMENSION")<
+  DimensionState
+>();
 
 /* SELECTORS */
 export const getLandscapeOrientation = (state: RootState): boolean =>

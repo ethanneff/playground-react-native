@@ -1,9 +1,9 @@
-import { ActionType, createStandardAction, getType } from "typesafe-actions";
+import { ActionType, createAction, getType } from "typesafe-actions";
 import { RootAction, RootState, screens } from "../../containers";
 import { logout } from "../Auth";
 
 /* ACTIONS */
-export const navigate = createStandardAction("navigation/CHANGE_NAVIGATION")<
+export const navigate = createAction("navigation/CHANGE_NAVIGATION")<
   NavigationScreen
 >();
 
