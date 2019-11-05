@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.5](https://github.com/ethanneff/example/compare/v2.9.4...v2.9.5) (2019-11-01)
+
+
+### Bug Fixes
+
+* update deps ([e7b499c](https://github.com/ethanneff/example/commit/e7b499c))
+
 ## [2.9.4](https://github.com/ethanneff/example/compare/v2.9.3...v2.9.4) (2019-10-31)
 
 
