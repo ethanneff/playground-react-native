@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.9.6](https://github.com/ethanneff/example/compare/v2.9.5...v2.9.6) (2019-11-05)
+
+
+### Bug Fixes
+
+* update api for createAction ([8297552](https://github.com/ethanneff/example/commit/8297552))
+* update deps ([da73763](https://github.com/ethanneff/example/commit/da73763))
+* update deps ([0bdc7e7](https://github.com/ethanneff/example/commit/0bdc7e7))
+
 ## [2.9.5](https://github.com/ethanneff/example/compare/v2.9.4...v2.9.5) (2019-11-01)
 
 
