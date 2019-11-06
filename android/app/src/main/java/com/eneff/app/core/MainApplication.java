@@ -1,4 +1,4 @@
-package com.eneff.app.example;
+package com.eneff.app.core;
 
 import android.app.Application;
 import android.content.Context;

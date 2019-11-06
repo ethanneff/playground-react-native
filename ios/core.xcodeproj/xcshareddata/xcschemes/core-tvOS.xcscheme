@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "example-tvOS.app"
-               BlueprintName = "example-tvOS"
-               ReferencedContainer = "container:example.xcodeproj">
+               BuildableName = "core-tvOS.app"
+               BlueprintName = "core-tvOS"
+               ReferencedContainer = "container:core.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "example-tvOSTests.xctest"
-               BlueprintName = "example-tvOSTests"
-               ReferencedContainer = "container:example.xcodeproj">
+               BuildableName = "core-tvOSTests.xctest"
+               BlueprintName = "core-tvOSTests"
+               ReferencedContainer = "container:core.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -59,9 +59,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "example-tvOS.app"
-            BlueprintName = "example-tvOS"
-            ReferencedContainer = "container:example.xcodeproj">
+            BuildableName = "core-tvOS.app"
+            BlueprintName = "core-tvOS"
+            ReferencedContainer = "container:core.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -70,9 +70,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "example-tvOSTests.xctest"
-               BlueprintName = "example-tvOSTests"
-               ReferencedContainer = "container:example.xcodeproj">
+               BuildableName = "core-tvOSTests.xctest"
+               BlueprintName = "core-tvOSTests"
+               ReferencedContainer = "container:core.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -92,9 +92,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "example-tvOS.app"
-            BlueprintName = "example-tvOS"
-            ReferencedContainer = "container:example.xcodeproj">
+            BuildableName = "core-tvOS.app"
+            BlueprintName = "core-tvOS"
+            ReferencedContainer = "container:core.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -109,9 +109,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "example-tvOS.app"
-            BlueprintName = "example-tvOS"
-            ReferencedContainer = "container:example.xcodeproj">
+            BuildableName = "core-tvOS.app"
+            BlueprintName = "core-tvOS"
+            ReferencedContainer = "container:core.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

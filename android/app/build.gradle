@@ -133,7 +133,7 @@ android {
 
     defaultConfig {
         multiDexEnabled true
-        applicationId "com.eneff.app.example"
+        applicationId "com.eneff.app.core"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

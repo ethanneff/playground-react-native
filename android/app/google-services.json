@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:391302179681:android:d3009b00b0ca2ce6",
         "android_client_info": {
-          "package_name": "com.eneff.app.example"
+          "package_name": "com.eneff.app.core"
         }
       },
       "oauth_client": [
@@ -35,7 +35,7 @@
               "client_id": "391302179681-b7tasmpo6u40vsoa4vmorgrp0nqoi68f.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.eneff.app.example"
+                "bundle_id": "com.eneff.app.core"
               }
             }
           ]

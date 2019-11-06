@@ -1,6 +1,6 @@
 export const Config = {
   app: {
-    name: "example",
+    name: "core",
     timeout: 5000
   },
   os: {
