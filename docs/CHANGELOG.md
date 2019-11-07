@@ -1,5 +1,17 @@
 # Changelog
 
+# [2.10.0](https://github.com/ethanneff/example/compare/v2.9.6...v2.10.0) (2019-11-06)
+
+
+### Bug Fixes
+
+* update deps ([a5d2163](https://github.com/ethanneff/example/commit/a5d2163))
+
+
+### Features
+
+* rename app ([17323a9](https://github.com/ethanneff/example/commit/17323a9))
+
 ## [2.9.6](https://github.com/ethanneff/example/compare/v2.9.5...v2.9.6) (2019-11-05)
 
 
