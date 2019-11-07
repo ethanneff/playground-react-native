@@ -34,7 +34,7 @@
     "appcenter-analytics": "2.5.0",
     "appcenter-crashes": "2.5.0",
     "axios": "0.19.0",
-    "dayjs": "1.8.16",
+    "dayjs": "1.8.17",
     "npm-check-updates": "3.2.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
@@ -54,8 +54,8 @@
     "uuid": "3.3.3"
   },
   "devDependencies": {
-    "@babel/core": "7.7.0",
-    "@babel/runtime": "7.7.1",
+    "@babel/core": "7.7.2",
+    "@babel/runtime": "7.7.2",
     "@commitlint/cli": "8.2.0",
     "@commitlint/config-conventional": "8.2.0",
     "@react-native-community/eslint-config": "0.0.5",
