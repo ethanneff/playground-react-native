@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.1](https://github.com/ethanneff/example/compare/v2.10.0...v2.10.1) (2019-11-07)
+
+
+### Bug Fixes
+
+* update deps ([bf5a3a1](https://github.com/ethanneff/example/commit/bf5a3a1))
+
 # [2.10.0](https://github.com/ethanneff/example/compare/v2.9.6...v2.10.0) (2019-11-06)
 
 
