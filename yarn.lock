@@ -1670,10 +1670,10 @@
     universal-user-agent "^3.0.0"
     url-template "^2.0.8"
 
-"@react-native-community/async-storage@1.6.2":
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/@react-native-community/async-storage/-/async-storage-1.6.2.tgz#a19ca7149c4dfe8216f2330e6b1ebfe2d075ef92"
-  integrity sha512-EJGsbrHubK1mGxPjWB74AaHAd5m9I+Gg2RRPZzMK6org7QOU9WOBnIMFqoeVto3hKOaEPlk8NV74H6G34/2pZQ==
+"@react-native-community/async-storage@1.6.3":
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/@react-native-community/async-storage/-/async-storage-1.6.3.tgz#1a713e8c5cacd543ab8539080a5ce57ad917da88"
+  integrity sha512-67K2akX90uc252zKMYJt1wISvaEH6ARtdTI9bUkwmOFXVPyVk1DfPnaRmyUzcVdeCBOO1n0xv9YO2GSppIormQ==
 
 "@react-native-community/cli-platform-android@^3.0.0-alpha.1", "@react-native-community/cli-platform-android@^3.0.0-alpha.2":
   version "3.0.0-alpha.2"
@@ -2852,24 +2852,24 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-appcenter-analytics@2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/appcenter-analytics/-/appcenter-analytics-2.5.0.tgz#4d6ffe53ec6c933db014f35141248fb231c3d12c"
-  integrity sha512-KK8px+QjYsHM/bQvsbl4dLNQtkIaToI3Lezwzq0kPVs8kJfywZrE7ZxCVHF3Diqs2EUybqUNj0TDOTo3h8kw+w==
+appcenter-analytics@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/appcenter-analytics/-/appcenter-analytics-2.6.0.tgz#3e497cfcd92efec9afed66560dc447014e556ac9"
+  integrity sha512-OxFFO1DFiFs5Ds1BJAVs8MjaP4t+U232VWoSxh3osLkdi02us9F80kdvBoFTW1Z78HbMtNxlof+bWUcpDksR5A==
   dependencies:
-    appcenter "2.5.0"
+    appcenter "2.6.0"
 
-appcenter-crashes@2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/appcenter-crashes/-/appcenter-crashes-2.5.0.tgz#2627c738c9cdbbce54c0db2bf10a0508eff66759"
-  integrity sha512-VrlRtawpb44utMQnnxLMWihNVer7i17f5CCtDEiyHktYSXoP8vEl3tWqAUOQLpVGD93cSDNQGJDtnKcu9PRE5A==
+appcenter-crashes@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/appcenter-crashes/-/appcenter-crashes-2.6.0.tgz#a129067572e05ac044ea990573b13017345320fa"
+  integrity sha512-tPgCpaMMQr6HQQGUqgWksHGKbzKRgWEhUkm6gjdLbdsP6sW7rPfRaVHQMlmUY63JRElsl6o3+VBt22du1U1XdQ==
   dependencies:
-    appcenter "2.5.0"
+    appcenter "2.6.0"
 
-appcenter-link-scripts@2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/appcenter-link-scripts/-/appcenter-link-scripts-2.5.0.tgz#b1d53c56c7ba5d0c6fccdca35c4f5e603400d237"
-  integrity sha512-LJZVPKKFNLf7R8Sr8wXkMJp/oIImbnwULkWggAGg2/1bZ96LItDvkl6MjNjlctM+3kqel21Yw3SfU2oEOvvm+w==
+appcenter-link-scripts@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/appcenter-link-scripts/-/appcenter-link-scripts-2.6.0.tgz#becf08ac55b69b4d09f134e6b2d85b95100cabc2"
+  integrity sha512-lmlvy/prJWlzGSnrzuZTXI398El4+nx+SSLXjpGYhPkJv9aFbs+1nF0WP5qqcJeBkdc8XJIWhicWvNy5lkU1LQ==
   dependencies:
     debug "4.1.1"
     glob "5.0.15"
@@ -2878,12 +2878,12 @@ appcenter-link-scripts@2.5.0:
     which "1.2.11"
     xcode "2.0.0"
 
-appcenter@2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-2.5.0.tgz#b0cb424eee698324d159b62d468172163d026cb9"
-  integrity sha512-d79MJPUGM0to4fFCowBYCXAA5ayRGMvyACJikzeZfAsmI+Fkd17EyiD7hCP+sFwyWfy+/W9mwlngLiwPYzD+Ww==
+appcenter@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-2.6.0.tgz#999137c85d84f9584f2fe2660ca57b52541f1dc0"
+  integrity sha512-Ud4lGIOKxgmACNJLE6Koie2Gl1BksgY/ZwxlaN/WEgpnOoDTGFORSt1yNcX79SCuPcZ9g2JE2djeeXBKMSh+5A==
   dependencies:
-    appcenter-link-scripts "2.5.0"
+    appcenter-link-scripts "2.6.0"
 
 aproba@^1.0.3, aproba@^1.1.1, aproba@^1.1.2:
   version "1.2.0"
