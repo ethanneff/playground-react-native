@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.5](https://github.com/ethanneff/example/compare/v2.10.4...v2.10.5) (2019-11-17)
+
+
+### Bug Fixes
+
+* update deps ([dd9250f](https://github.com/ethanneff/example/commit/dd9250f))
+
 ## [2.10.4](https://github.com/ethanneff/example/compare/v2.10.3...v2.10.4) (2019-11-14)
 
 
