@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.10.6](https://github.com/ethanneff/example/compare/v2.10.5...v2.10.6) (2019-11-19)
+
+
+### Bug Fixes
+
+* correct background color for darkmode ([3afc091](https://github.com/ethanneff/example/commit/3afc091))
+* remove swipe cell ([74001f0](https://github.com/ethanneff/example/commit/74001f0))
+* uniform color hook ([ac6a172](https://github.com/ethanneff/example/commit/ac6a172))
+
 ## [2.10.5](https://github.com/ethanneff/example/compare/v2.10.4...v2.10.5) (2019-11-17)
 
 
