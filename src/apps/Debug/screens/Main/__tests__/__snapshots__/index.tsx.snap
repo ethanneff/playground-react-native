@@ -130,7 +130,6 @@ exports[`renders correctly 1`] = `
           "debugSearchBar",
           "debugStartup",
           "debugStopwatch",
-          "debugSwipeCell",
           "debugDarkMode",
         ]
       }

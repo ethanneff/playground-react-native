@@ -71,7 +71,7 @@ exports[`renders correctly with clear and max badge 1`] = `
     <Text
       style={
         Object {
-          "color": "hsl(0, 100%, 100%)",
+          "color": "hsl(0, 0%, 100%)",
           "fontSize": 8,
           "fontWeight": "300",
           "letterSpacing": 0.25,
@@ -93,7 +93,7 @@ exports[`renders correctly without defaults 1`] = `
     style={
       Array [
         Object {
-          "color": "hsl(0, 100%, 100%)",
+          "color": "blue",
           "fontSize": 1,
         },
         Array [
@@ -129,7 +129,7 @@ exports[`renders correctly without defaults 1`] = `
     <Text
       style={
         Object {
-          "color": "hsl(0, 100%, 100%)",
+          "color": "hsl(0, 0%, 100%)",
           "fontSize": 8,
           "fontWeight": "300",
           "letterSpacing": 0.25,
