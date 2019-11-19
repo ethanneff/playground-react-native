@@ -63,7 +63,7 @@ export const Card: React.FC<Props> = memo(
         flex: 1
       },
       selected: {
-        backgroundColor: Theme.color.primary
+        backgroundColor: color.primary
       }
     });
 

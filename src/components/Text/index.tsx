@@ -19,6 +19,7 @@ interface Props {
   bold?: boolean;
   hidden?: boolean;
   invisible?: boolean;
+  inverse?: boolean;
 
   numberOfLines?: number;
   ellipsizeMode?: EllipsizeMode;
@@ -62,6 +63,7 @@ export const Text: React.FC<Props> = memo(function Text({
   onPress,
   centerVertically,
   invisible,
+  inverse,
   overline
 }) {
   const opacity = new Animated.Value(1);
@@ -82,7 +84,7 @@ export const Text: React.FC<Props> = memo(function Text({
       opacity: 0
     },
     text: {
-      color: colors.text
+      color: inverse ? colors.background : colors.text
     }
   });
   const text = button || overline ? (title || "").toUpperCase() : title;
