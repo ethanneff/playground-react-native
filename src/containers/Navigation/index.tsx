@@ -58,7 +58,6 @@ const DebugQuestionnaire = lazy(() =>
 const DebugSearchBar = lazy(() => import(`../../apps/Debug/screens/SearchBar`));
 const DebugStartup = lazy(() => import(`../../apps/Debug/screens/Startup`));
 const DebugStopwatch = lazy(() => import(`../../apps/Debug/screens/Stopwatch`));
-const DebugSwipeCell = lazy(() => import(`../../apps/Debug/screens/SwipeCell`));
 
 export const screens = {
   focus: <Focus />,
@@ -86,7 +85,6 @@ export const screens = {
   debugSearchBar: <DebugSearchBar />,
   debugStartup: <DebugStartup />,
   debugStopwatch: <DebugStopwatch />,
-  debugSwipeCell: <DebugSwipeCell />,
   checklists: <Checklists />,
   checklistsList: <ChecklistsList />,
   checklistsListCreate: <ChecklistsListCreate />,

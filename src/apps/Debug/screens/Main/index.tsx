@@ -20,7 +20,6 @@ const debugScreens: NavigationScreen[] = [
   "debugSearchBar",
   "debugStartup",
   "debugStopwatch",
-  "debugSwipeCell",
   "debugDarkMode"
 ];
 
