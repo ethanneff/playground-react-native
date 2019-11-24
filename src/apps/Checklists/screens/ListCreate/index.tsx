@@ -24,7 +24,7 @@ class Component extends React.PureComponent<Props, State> {
     const { name, description } = this.state;
 
     return (
-      <Screen onLeftPress={this.nav("checklists")}>
+      <Screen onLeftPress={this.nav("checklists")} title="Create Checklist">
         <TextInput title="name" value={name} onChangeText={this.setName} />
         <TextInput
           title="description"
