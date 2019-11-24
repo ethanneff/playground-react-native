@@ -1,93 +1,71 @@
-import React from "react";
+import React, { memo } from "react";
 import { FlatList, View } from "react-native";
-import { connect } from "react-redux";
 import { Button, Screen } from "../../../../components";
-import { RootState } from "../../../../containers";
-import { NavigationScreen, navigate } from "../../../../models";
-import { Theme } from "../../../../utils";
+import { Theme, useRootDispatch, useRootSelector } from "../../../../utils";
 import {
-  ItemsArray,
   getItemsByCreatedAt,
   removeItem,
   toggleActiveItem,
-  updateItem
+  getActiveItemsByCreatedAt,
+  toggleCompleteItem
 } from "../../models";
+import { useNav, useColor } from "../../../../hooks";
 
-interface StateProps {
-  items: ItemsArray;
-}
+export default memo(function Checklist() {
+  const nav = useNav();
+  const color = useColor();
+  const dispatch = useRootDispatch();
+  const items = useRootSelector(getActiveItemsByCreatedAt);
 
-interface DispatchProps {
-  updateItem: typeof updateItem;
-  navigate: typeof navigate;
-  removeItem: typeof removeItem;
-  toggleActiveItem: typeof toggleActiveItem;
-}
+  const handleRemove = (id: string) => () => dispatch(removeItem(id));
+  const handleActive = (id: string) => () => undefined;
+  const handleToggle = (id: string) => () => dispatch(toggleCompleteItem(id));
 
-type Props = DispatchProps & StateProps & DispatchProps;
-
-class Component extends React.PureComponent<Props> {
-  public render() {
-    const { items, removeItem: remove, toggleActiveItem: toggle } = this.props;
-    return (
-      <Screen onLeftPress={this.nav("checklists")}>
-        <FlatList
-          keyExtractor={item => item.id}
-          data={items}
-          renderItem={({ item }) => 
-            <View style={{ flexDirection: "row" }}>
-              <Button
-                label
-                icon="checkbox-marked-circle"
-                iconColor={Theme.color.success}
-                onPress={() => undefined}
-              />
-              <Button
-                label
-                icon="close-circle"
-                iconColor={Theme.color.danger}
-                onPress={() => remove(item.id)}
-              />
-              <Button
-                label
-                iconColor={Theme.color.warning}
-                icon="clock"
-                onPress={() => toggle(item.id)}
-              />
-              <Button
-                label
-                neutral={item.active}
-                lowercase
-                title={item.name}
-                onPress={() => undefined}
-              />
-            </View>
-          }
-        />
-        <Button
-          fab
-          contained
-          icon="plus"
-          onPress={this.nav("checklistsItemCreate")}
-        />
-      </Screen>
-    );
-  }
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
-}
-
-const mapStateToProps = (state: RootState): StateProps => ({
-  items: getItemsByCreatedAt(state)
+  return (
+    <Screen onLeftPress={nav.to("checklists")} title="Checklist" gutter>
+      <FlatList
+        keyExtractor={item => item.id}
+        data={items}
+        renderItem={({ item }) => (
+          <View style={{ flexDirection: "row" }}>
+            <Button
+              label
+              icon="checkbox-marked-circle"
+              iconColor={Theme.color.success}
+              onPress={handleActive(item.id)}
+            />
+            <Button
+              label
+              icon="close-circle"
+              iconColor={Theme.color.danger}
+              onPress={handleRemove(item.id)}
+            />
+            <Button
+              label
+              iconColor={Theme.color.warning}
+              icon="clock"
+              onPress={handleToggle(item.id)}
+            />
+            <Button
+              label
+              neutral={item.active}
+              lowercase
+              title={item.name}
+              textStyle={{
+                color: item.completed ? color.danger : color.black
+              }}
+              onPress={handleActive(item.id)}
+            />
+          </View>
+        )}
+      />
+      <Button
+        fab
+        right
+        contained
+        icon="plus"
+        onPress={nav.to("checklistsItemCreate")}
+      />
+    </Screen>
+  );
 });
-
-const mapDispatchToProps: DispatchProps = {
-  navigate,
-  removeItem,
-  toggleActiveItem,
-  updateItem
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Component);
