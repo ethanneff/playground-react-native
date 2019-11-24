@@ -22,14 +22,12 @@ export const indexListsByUserId = (rows: Lists) =>
   }, {});
 
 /* SELECTORS */
-export const selectLists = (state: RootState): Lists => state.lists;
-export const selectListsFilterByActive = createSelector(
-  [selectLists],
-  items => Object.values(items).filter(item => item.active)
+export const getLists = (state: RootState): Lists => state.lists;
+export const getListsFilterByActive = createSelector([getLists], items =>
+  Object.values(items).filter(item => item.active)
 );
-export const selectListsByCreatedAt = createSelector(
-  [selectLists],
-  items => Object.values(items).sort((a, b) => a.createdAt - b.createdAt)
+export const getListsByCreatedAt = createSelector([getLists], items =>
+  Object.values(items).sort((a, b) => a.createdAt - b.createdAt)
 );
 
 /* INTERFACES */
