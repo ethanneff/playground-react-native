@@ -8,7 +8,9 @@ import { RootAction, RootState } from "../../../../containers";
 export const createItem = createAction("ITEM/CREATE")<CreateItem>();
 export const updateItem = createAction("ITEM/UPDATE")<UpdateItem>();
 export const removeItem = createAction("ITEM/REMOVE")<string>();
-export const toggleActiveItem = createAction("ITEM/TOGGLE_ACTIVE")<string>();
+export const toggleCompleteItem = createAction("ITEM/TOGGLE_COMPLETE")<
+  string
+>();
 
 /* INDEXES */
 export const indexItemsByCreatedAt = (rows: Items): Items =>
@@ -24,13 +26,16 @@ export const indexItemsByUserId = (rows: Items): Items =>
 
 /* SELECTORS */
 export const getItems = (state: RootState): Items => state.items;
-export const getItemsFilterByActive = createSelector(
-  [getItems],
-  items => Object.values(items).filter(item => item.active)
+export const getItemsFilterByActive = createSelector([getItems], items =>
+  Object.values(items).filter(item => item.active)
 );
-export const getItemsByCreatedAt = createSelector(
-  [getItems],
-  items => Object.values(items).sort((a, b) => a.createdAt - b.createdAt)
+export const getItemsByCreatedAt = createSelector([getItems], items =>
+  Object.values(items).sort((a, b) => a.createdAt - b.createdAt)
+);
+export const getActiveItemsByCreatedAt = createSelector([getItems], items =>
+  Object.values(items)
+    .filter(item => item.active)
+    .sort((a, b) => a.createdAt - b.createdAt)
 );
 
 /* INTERFACES */
@@ -38,6 +43,7 @@ export type Item = DeepReadonly<{
   id: string;
   name: string;
   description?: string;
+  completed: boolean;
   active: boolean;
   userId: string;
   sources?: string[];
@@ -51,7 +57,7 @@ export type ItemActions = ActionType<
   | typeof createItem
   | typeof removeItem
   | typeof updateItem
-  | typeof toggleActiveItem
+  | typeof toggleCompleteItem
 >;
 interface CreateItem {
   name: string;
@@ -75,6 +81,7 @@ export const itemReducer = (
         [id]: {
           ...action.payload,
           active: true,
+          completed: false,
           createdAt: timestamp,
           id,
           order: timestamp,
@@ -100,12 +107,12 @@ export const itemReducer = (
           updatedAt: Date.now()
         }
       };
-    case getType(toggleActiveItem):
+    case getType(toggleCompleteItem):
       return {
         ...state,
         [action.payload]: {
           ...state[action.payload],
-          active: !state[action.payload].active,
+          completed: !state[action.payload].completed,
           updatedAt: Date.now()
         }
       };
