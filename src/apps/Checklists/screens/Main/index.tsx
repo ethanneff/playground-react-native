@@ -25,7 +25,7 @@ const items: Items = [
 export default memo(function Checklists() {
   const nav = useNav();
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")} title="checklists">
+    <Screen onLeftPress={nav.to("portfolioLanding")} title="Checklists">
       <FlatList
         keyExtractor={item => item.id}
         data={items}
