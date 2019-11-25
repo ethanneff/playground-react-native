@@ -3,7 +3,7 @@ import { RootAction, RootState, screens } from "../../containers";
 import { logout } from "../Auth";
 
 /* ACTIONS */
-export const navigate = createAction("navigation/CHANGE_NAVIGATION")<
+export const navigate = createAction("navigation/changeNavigation")<
   NavigationScreen
 >();
 
