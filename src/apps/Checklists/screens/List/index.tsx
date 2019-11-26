@@ -3,11 +3,9 @@ import { FlatList, View } from "react-native";
 import { Button, Screen } from "../../../../components";
 import { Theme, useRootDispatch, useRootSelector } from "../../../../utils";
 import {
-  getItemsByCreatedAt,
   removeItem,
-  toggleActiveItem,
-  getActiveItemsByCreatedAt,
-  toggleCompleteItem
+  toggleCompleteItem,
+  getCurrentActiveChecklistItemsOrderByCreatedAt
 } from "../../models";
 import { useNav, useColor } from "../../../../hooks";
 
@@ -15,10 +13,10 @@ export default memo(function Checklist() {
   const nav = useNav();
   const color = useColor();
   const dispatch = useRootDispatch();
-  const items = useRootSelector(getActiveItemsByCreatedAt);
+  const items = useRootSelector(getCurrentActiveChecklistItemsOrderByCreatedAt);
 
   const handleRemove = (id: string) => () => dispatch(removeItem(id));
-  const handleActive = (id: string) => () => undefined;
+  const handleActive = (id: string) => () => id; // TODO:
   const handleToggle = (id: string) => () => dispatch(toggleCompleteItem(id));
 
   return (
@@ -26,7 +24,7 @@ export default memo(function Checklist() {
       <FlatList
         keyExtractor={item => item.id}
         data={items}
-        renderItem={({ item }) => (
+        renderItem={({ item }) => 
           <View style={{ flexDirection: "row" }}>
             <Button
               label
@@ -57,13 +55,14 @@ export default memo(function Checklist() {
               onPress={handleActive(item.id)}
             />
           </View>
-        )}
+        }
       />
       <Button
         fab
         right
         contained
         icon="plus"
+        iconColor={color.background}
         onPress={nav.to("checklistsItemCreate")}
       />
     </Screen>
