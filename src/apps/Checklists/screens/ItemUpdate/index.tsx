@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Button, Screen, TextInput } from "../../../../components";
 import { RootState } from "../../../../containers";
 import { NavigationScreen, navigate } from "../../../../models";
-import { createItem } from "../../models/Item";
+import { createItem } from "../../models";
 
 interface DispatchProps {
   createItem: typeof createItem;
