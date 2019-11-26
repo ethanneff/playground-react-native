@@ -11,11 +11,11 @@ import thunk, { ThunkAction } from "redux-thunk";
 import { DeepReadonly } from "utility-types";
 import {
   ItemActions,
-  Items,
   ListActions,
-  Lists,
-  itemReducer,
-  listReducer
+  ChecklistReducer,
+  checklistItemReducer,
+  checklistReducer,
+  ChecklistItemReducer
 } from "../../apps/Checklists/models";
 import {
   Choices,
@@ -61,8 +61,8 @@ export type RootState = DeepReadonly<{
   auth: AuthState;
   dimension: DimensionState;
   device: DeviceState;
-  items: Items;
-  lists: Lists;
+  checklistItems: ChecklistItemReducer;
+  checklists: ChecklistReducer;
   navigation: Navigation;
   network: NetworkState;
   questions: Questions;
@@ -78,8 +78,8 @@ const reducers = combineReducers<RootState>({
   choices: choicesReducer,
   dimension: dimensionReducer,
   device: deviceReducer,
-  items: itemReducer,
-  lists: listReducer,
+  checklistItems: checklistItemReducer,
+  checklists: checklistReducer,
   navigation: navigationReducer,
   network: networkReducer,
   questionnaires: questionnairesReducer,
