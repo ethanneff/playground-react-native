@@ -43,13 +43,8 @@ export default memo(function ChecklistUpdate() {
     dispatch(navigate("checklists"));
   };
 
-  const handleDeletePress = () => {
-    setShowDeleteDialog(true);
-  };
-
-  const handleDeleteCancel = () => {
-    setShowDeleteDialog(false);
-  };
+  const handleDeletePress = () => setShowDeleteDialog(true);
+  const handleDeleteCancel = () => setShowDeleteDialog(false);
 
   return (
     <>
@@ -71,14 +66,14 @@ export default memo(function ChecklistUpdate() {
         <Button title="update" onPress={handleSubmit} />
         <Button title="delete" onPress={handleDeletePress} danger />
       </Screen>
-      {showDeleteDialog && 
+      {showDeleteDialog && (
         <Dialog
           title="are you sure?"
           onConfirmButtonPress={handleDelete}
           onBackgroundPress={handleDeleteCancel}
           onCancelButtonPress={handleDeleteCancel}
         />
-      }
+      )}
     </>
   );
 });
