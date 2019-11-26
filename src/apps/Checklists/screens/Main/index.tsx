@@ -20,13 +20,22 @@ export default memo(function Checklists() {
     dispatch(navigate("checklistsList"));
   };
 
+  const handleItemLongPress = (id: string) => () => {
+    dispatch(setActiveList(id));
+    dispatch(navigate("checklistsListUpdate"));
+  };
+
   return (
     <Screen onLeftPress={nav.to("portfolioLanding")} title="Checklists" gutter>
       <FlatList
         keyExtractor={item => item.id}
         data={items}
         renderItem={({ item }) => 
-          <Button title={item.name} onPress={handleItemPress(item.id)} />
+          <Button
+            title={item.name}
+            onPress={handleItemPress(item.id)}
+            onLongPress={handleItemLongPress(item.id)}
+          />
         }
       />
       <Button

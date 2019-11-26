@@ -5,7 +5,7 @@ import { Errors } from "../../../../utils";
 
 /* ACTIONS */
 export const createList = createAction("checklist/create")<Checklist>();
-export const updateList = createAction("checklist/update")<UpdateList>();
+export const updateList = createAction("checklist/update")<Checklist>();
 export const removeList = createAction("checklist/remove")<string>();
 export const setActiveList = createAction("checklist/setActive")<string>();
 
@@ -56,12 +56,6 @@ export type ListActions = ActionType<
   | typeof updateList
   | typeof setActiveList
 >;
-interface CreateList {
-  name: string;
-  description?: string;
-  active?: boolean;
-}
-type UpdateList = CreateList & { id: string };
 
 /* REDUCER */
 const initialState: ChecklistReducer = {

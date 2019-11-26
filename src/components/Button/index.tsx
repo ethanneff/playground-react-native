@@ -48,6 +48,7 @@ interface Props {
   lowercase?: boolean;
   /* event */
   onPress?(): void;
+  onLongPress?(): void;
 }
 
 export const Button: React.FC<Props> = memo(props => {
@@ -69,6 +70,7 @@ export const Button: React.FC<Props> = memo(props => {
     lowercase,
     neutral,
     onPress,
+    onLongPress,
     outlined,
     right,
     secondary,
@@ -214,6 +216,7 @@ export const Button: React.FC<Props> = memo(props => {
       disabled={disable}
       onPress={onPress}
       style={buttonStyleGroup}
+      onLongPress={onLongPress}
     >
       <Icon
         color={iconColor}
