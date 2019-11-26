@@ -5,26 +5,34 @@ import { getCurrentChecklist } from "../Checklist";
 import { Errors } from "../../../../utils";
 
 /* ACTIONS */
-export const createItem = createAction("checklistItem/create")<ChecklistItem>();
-export const updateItem = createAction("checklistItem/update")<ChecklistItem>();
-export const removeItem = createAction("checklistItem/remove")<string>();
-export const toggleCompleteItem = createAction("checklistItem/toggleComplete")<
+export const createChecklistItem = createAction("checklistItem/create")<
+  ChecklistItem
+>();
+export const updateChecklistItem = createAction("checklistItem/update")<
+  ChecklistItem
+>();
+export const removeChecklistItem = createAction("checklistItem/remove")<
   string
 >();
-export const setActiveListItem = createAction("checklistItem/setActive")<
+export const toggleChecklistItemComplete = createAction(
+  "checklistItem/toggleComplete"
+)<string>();
+export const setActiveChecklistItem = createAction("checklistItem/setActive")<
   string
 >();
 
 /* SELECTORS */
-export const getItems = (state: RootState): ChecklistItems =>
+export const getChecklistItems = (state: RootState): ChecklistItems =>
   state.checklistItems.items;
 export const getCurrentChecklistItem = (state: RootState): ChecklistItem => {
   const active = state.checklistItems.active;
-  if (!active) {throw new Error(Errors.MissingCurrentChecklistItem);}
+  if (!active) {
+    throw new Error(Errors.MissingCurrentChecklistItem);
+  }
   return state.checklistItems.items[active];
 };
 export const getCurrentActiveChecklistItemsOrderByCreatedAt = createSelector(
-  [getCurrentChecklist, getItems],
+  [getCurrentChecklist, getChecklistItems],
   (checklist, items) =>
     Object.values(items)
       .filter(item => item.checklistId === checklist.id && item.active)
@@ -51,11 +59,11 @@ export type ChecklistItem = {
 };
 export type ChecklistItems = { [key: string]: ChecklistItem };
 export type ItemActions = ActionType<
-  | typeof createItem
-  | typeof removeItem
-  | typeof updateItem
-  | typeof setActiveListItem
-  | typeof toggleCompleteItem
+  | typeof createChecklistItem
+  | typeof removeChecklistItem
+  | typeof updateChecklistItem
+  | typeof setActiveChecklistItem
+  | typeof toggleChecklistItemComplete
 >;
 
 /* REDUCER */
@@ -68,9 +76,9 @@ export const checklistItemReducer = (
   action: RootAction
 ): ChecklistItemReducer => {
   switch (action.type) {
-    case getType(setActiveListItem):
+    case getType(setActiveChecklistItem):
       return { ...state, active: action.payload };
-    case getType(createItem):
+    case getType(createChecklistItem):
       return {
         ...state,
         items: {
@@ -78,7 +86,7 @@ export const checklistItemReducer = (
           [action.payload.id]: action.payload
         }
       };
-    case getType(updateItem):
+    case getType(updateChecklistItem):
       return {
         ...state,
         items: {
@@ -90,7 +98,7 @@ export const checklistItemReducer = (
           }
         }
       };
-    case getType(removeItem):
+    case getType(removeChecklistItem):
       return {
         ...state,
         items: {
@@ -102,7 +110,7 @@ export const checklistItemReducer = (
           }
         }
       };
-    case getType(toggleCompleteItem):
+    case getType(toggleChecklistItemComplete):
       return {
         ...state,
         items: {

@@ -1,7 +1,7 @@
 import React, { memo, useState } from "react";
 import { Button, Screen, TextInput } from "../../../../components";
 import { navigate } from "../../../../models";
-import { createItem } from "../../models";
+import { createChecklistItem } from "../../models";
 import { useRootDispatch, useRootSelector, Errors } from "../../../../utils";
 import { useNav } from "../../../../hooks";
 import uuid from "uuid";
@@ -25,7 +25,7 @@ export default memo(function ChecklistItemCreate() {
       throw new Error(Errors.MissingCurrentChecklistCreatingItem);
     }
     dispatch(
-      createItem({
+      createChecklistItem({
         name,
         description,
         completed: false,

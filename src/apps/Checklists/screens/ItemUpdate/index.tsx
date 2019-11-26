@@ -1,6 +1,10 @@
 import React, { memo, useState } from "react";
 import { Button, Screen, TextInput } from "../../../../components";
-import { updateItem, removeItem, getCurrentChecklistItem } from "../../models";
+import {
+  updateChecklistItem,
+  removeChecklistItem,
+  getCurrentChecklistItem
+} from "../../models";
 import { useNav } from "../../../../hooks";
 import { useRootSelector, useRootDispatch } from "../../../../utils";
 import { navigate } from "../../../../models";
@@ -22,9 +26,11 @@ export default memo(function ChecklistUpdate() {
   const handleSubmit = () => {
     const { name, description } = form;
     const now = Date.now();
-    if (isInvalidForm) {return;}
+    if (isInvalidForm) {
+      return;
+    }
     dispatch(
-      updateItem({
+      updateChecklistItem({
         ...item,
         name,
         description,
@@ -34,7 +40,7 @@ export default memo(function ChecklistUpdate() {
     dispatch(navigate("checklistsList"));
   };
   const handleDelete = () => {
-    dispatch(removeItem(item.id));
+    dispatch(removeChecklistItem(item.id));
     dispatch(navigate("checklistsList"));
   };
 

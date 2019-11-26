@@ -47,7 +47,7 @@ NativeModules.RNCNetInfo = {
 NativeModules.RNCAsyncStorage = {
   getItem: jest.fn(),
   setItem: jest.fn(),
-  removeItem: jest.fn(),
+  removeChecklistItem: jest.fn(),
   mergeItem: jest.fn(),
   clear: jest.fn(),
   getAllKeys: jest.fn(),

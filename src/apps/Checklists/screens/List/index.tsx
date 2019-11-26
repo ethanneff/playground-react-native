@@ -3,10 +3,10 @@ import { FlatList, View } from "react-native";
 import { Button, Screen } from "../../../../components";
 import { Theme, useRootDispatch, useRootSelector } from "../../../../utils";
 import {
-  removeItem,
-  toggleCompleteItem,
+  removeChecklistItem,
+  toggleChecklistItemComplete,
   getCurrentActiveChecklistItemsOrderByCreatedAt,
-  setActiveListItem
+  setActiveChecklistItem
 } from "../../models";
 import { useNav, useColor } from "../../../../hooks";
 import { navigate } from "../../../../models";
@@ -17,10 +17,11 @@ export default memo(function Checklist() {
   const dispatch = useRootDispatch();
   const items = useRootSelector(getCurrentActiveChecklistItemsOrderByCreatedAt);
 
-  const handleRemove = (id: string) => () => dispatch(removeItem(id));
-  const handleToggle = (id: string) => () => dispatch(toggleCompleteItem(id));
+  const handleRemove = (id: string) => () => dispatch(removeChecklistItem(id));
+  const handleToggle = (id: string) => () =>
+    dispatch(toggleChecklistItemComplete(id));
   const handleEdit = (id: string) => () => {
-    dispatch(setActiveListItem(id));
+    dispatch(setActiveChecklistItem(id));
     dispatch(navigate("checklistsItemUpdate"));
   };
 
