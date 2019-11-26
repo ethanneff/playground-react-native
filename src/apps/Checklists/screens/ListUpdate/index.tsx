@@ -1,5 +1,5 @@
 import React, { memo, useState } from "react";
-import { Button, Screen, TextInput } from "../../../../components";
+import { Button, Screen, TextInput, Dialog } from "../../../../components";
 import { getCurrentChecklist, removeList, updateList } from "../../models";
 import { useNav } from "../../../../hooks";
 import { useRootSelector, useRootDispatch } from "../../../../utils";
@@ -9,6 +9,7 @@ export default memo(function ChecklistUpdate() {
   const nav = useNav();
   const dispatch = useRootDispatch();
   const checklist = useRootSelector(getCurrentChecklist);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [form, setForm] = useState({
     name: checklist.name,
     description: checklist.description || ""
@@ -22,7 +23,9 @@ export default memo(function ChecklistUpdate() {
   const handleSubmit = () => {
     const { name, description } = form;
     const now = Date.now();
-    if (isInvalidForm) {return;}
+    if (isInvalidForm) {
+      return;
+    }
     dispatch(
       updateList({
         ...checklist,
@@ -33,29 +36,49 @@ export default memo(function ChecklistUpdate() {
     );
     dispatch(navigate("checklists"));
   };
+
   const handleDelete = () => {
+    setShowDeleteDialog(false);
     dispatch(removeList(checklist.id));
     dispatch(navigate("checklists"));
   };
 
+  const handleDeletePress = () => {
+    setShowDeleteDialog(true);
+  };
+
+  const handleDeleteCancel = () => {
+    setShowDeleteDialog(false);
+  };
+
   return (
-    <Screen
-      onLeftPress={nav.to("checklists")}
-      title={"Update Checklist"}
-      gutter
-    >
-      <TextInput
-        title="name"
-        value={form.name}
-        onChangeText={handleNameChange}
-      />
-      <TextInput
-        title="description"
-        value={form.description}
-        onChangeText={handleDescriptionChange}
-      />
-      <Button title="update" onPress={handleSubmit} />
-      <Button title="delete" onPress={handleDelete} danger />
-    </Screen>
+    <>
+      <Screen
+        onLeftPress={nav.to("checklists")}
+        title={"Update Checklist"}
+        gutter
+      >
+        <TextInput
+          title="name"
+          value={form.name}
+          onChangeText={handleNameChange}
+        />
+        <TextInput
+          title="description"
+          value={form.description}
+          onChangeText={handleDescriptionChange}
+        />
+        <Button title="update" onPress={handleSubmit} />
+        <Button title="delete" onPress={handleDeletePress} danger />
+      </Screen>
+      {showDeleteDialog && 
+        <Dialog
+          title="are you sure?"
+          onConfirmButtonPress={handleDelete}
+          onBackgroundPress={handleDeleteCancel}
+          onCancelButtonPress={handleDeleteCancel}
+        />
+      }
+    </>
   );
 });
