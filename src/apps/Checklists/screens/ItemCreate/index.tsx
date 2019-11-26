@@ -1,24 +1,44 @@
 import React, { memo, useState } from "react";
 import { Button, Screen, TextInput } from "../../../../components";
 import { navigate } from "../../../../models";
-import { createItem } from "../../models/Item";
-import { useRootDispatch } from "../../../../utils";
+import { createItem } from "../../models";
+import { useRootDispatch, useRootSelector, Errors } from "../../../../utils";
 import { useNav } from "../../../../hooks";
+import uuid from "uuid";
 
 const initialState = { name: "", description: "" };
 
-export default memo(function CreateItem() {
+export default memo(function ChecklistItemCreate() {
   const nav = useNav();
   const dispatch = useRootDispatch();
   const [form, setForm] = useState(initialState);
-  const isInvalidForm =
-    form.name.trim().length === 0 || form.description.trim().length === 0;
+  const currentChecklist = useRootSelector(state => state.checklists.active);
+  const isInvalidForm = form.name.trim().length === 0;
 
   const handleSubmit = () => {
+    if (isInvalidForm) {
+      return;
+    }
     const { name, description } = form;
-    if (isInvalidForm) return;
-    dispatch(createItem({ name, description }));
-    dispatch(navigate("checklistsList"));
+    const now = Date.now();
+    if (!currentChecklist) {
+      throw new Error(Errors.MissingCurrentChecklistCreatingItem);
+    }
+    dispatch(
+      createItem({
+        name,
+        description,
+        completed: false,
+        active: true,
+        createdAt: now,
+        id: uuid.v4(),
+        checklistId: currentChecklist,
+        order: now,
+        updatedAt: now,
+        userId: "1"
+      })
+    );
+    dispatch(navigate("checklistsList")); // TODO: batch
   };
   const handleNameChange = (name: string) =>
     setForm(state => ({ ...state, name }));
@@ -31,6 +51,7 @@ export default memo(function CreateItem() {
         title="name"
         value={form.name}
         onChangeText={handleNameChange}
+        blurOnSubmit
       />
       <TextInput
         title="description"
