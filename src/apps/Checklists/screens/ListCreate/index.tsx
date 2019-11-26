@@ -1,59 +1,56 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { memo, useState } from "react";
 import { Button, Screen, TextInput } from "../../../../components";
-import { RootState } from "../../../../containers";
-import { NavigationScreen, navigate } from "../../../../models";
-import { createItem } from "../../models/Item";
+import { navigate } from "../../../../models";
+import { useRootDispatch } from "../../../../utils";
+import { useNav } from "../../../../hooks";
+import { createList } from "../../models";
+import uuid from "uuid";
 
-interface DispatchProps {
-  createItem: typeof createItem;
-  navigate: typeof navigate;
-}
-type Props = DispatchProps & DispatchProps;
-interface State {
-  name: string;
-  description: string;
-}
+const initialState = { name: "", description: "" };
 
-class Component extends React.PureComponent<Props, State> {
-  public state = {
-    description: "",
-    name: ""
-  };
-  public render() {
-    const { name, description } = this.state;
+export default memo(function ChecklistCreate() {
+  const nav = useNav();
+  const dispatch = useRootDispatch();
+  const [form, setForm] = useState(initialState);
+  const isInvalidForm = form.name.trim().length === 0;
 
-    return (
-      <Screen onLeftPress={this.nav("checklists")} title="Create Checklist">
-        <TextInput title="name" value={name} onChangeText={this.setName} />
-        <TextInput
-          title="description"
-          value={description}
-          onChangeText={this.setDescription}
-        />
-        <Button title="create" onPress={this.createList} />
-      </Screen>
+  const handleSubmit = () => {
+    const { name, description } = form;
+    if (isInvalidForm) {
+      return;
+    }
+    const now = Date.now();
+    dispatch(
+      createList({
+        id: uuid.v4(),
+        name,
+        active: true,
+        userId: "1",
+        description,
+        createdAt: now,
+        updatedAt: now
+      })
     );
-  }
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
+    dispatch(navigate("checklists"));
+  };
+  const handleNameChange = (name: string) =>
+    setForm(state => ({ ...state, name }));
+  const handleDescriptionChange = (description: string) =>
+    setForm(state => ({ ...state, description }));
 
-  private setName = (name: string) => {
-    this.setState({ name });
-  };
-  private setDescription = (description: string) => {
-    this.setState({ description });
-  };
-  private createList = () => {
-    const { createItem: create } = this.props;
-    const { name, description } = this.state;
-    create({ name, description });
-    this.nav("checklists");
-  };
-}
-
-export default connect(
-  (state: RootState) => ({
-    state
-  }),
-  { createItem, navigate }
-)(Component);
+  return (
+    <Screen onLeftPress={nav.to("checklists")} title="Create Checklist" gutter>
+      <TextInput
+        title="name"
+        value={form.name}
+        onChangeText={handleNameChange}
+      />
+      <TextInput
+        title="description"
+        value={form.description}
+        onChangeText={handleDescriptionChange}
+      />
+      <Button title="create" onPress={handleSubmit} />
+    </Screen>
+  );
+});
