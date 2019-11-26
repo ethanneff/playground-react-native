@@ -5,9 +5,11 @@ import { Theme, useRootDispatch, useRootSelector } from "../../../../utils";
 import {
   removeItem,
   toggleCompleteItem,
-  getCurrentActiveChecklistItemsOrderByCreatedAt
+  getCurrentActiveChecklistItemsOrderByCreatedAt,
+  setActiveListItem
 } from "../../models";
 import { useNav, useColor } from "../../../../hooks";
+import { navigate } from "../../../../models";
 
 export default memo(function Checklist() {
   const nav = useNav();
@@ -16,8 +18,11 @@ export default memo(function Checklist() {
   const items = useRootSelector(getCurrentActiveChecklistItemsOrderByCreatedAt);
 
   const handleRemove = (id: string) => () => dispatch(removeItem(id));
-  const handleActive = (id: string) => () => id; // TODO:
   const handleToggle = (id: string) => () => dispatch(toggleCompleteItem(id));
+  const handleEdit = (id: string) => () => {
+    dispatch(setActiveListItem(id));
+    dispatch(navigate("checklistsItemUpdate"));
+  };
 
   return (
     <Screen onLeftPress={nav.to("checklists")} title="Checklist" gutter>
@@ -30,7 +35,6 @@ export default memo(function Checklist() {
               label
               icon="checkbox-marked-circle"
               iconColor={Theme.color.success}
-              onPress={handleActive(item.id)}
             />
             <Button
               label
@@ -52,7 +56,7 @@ export default memo(function Checklist() {
               textStyle={{
                 color: item.completed ? color.danger : color.black
               }}
-              onPress={handleActive(item.id)}
+              onPress={handleEdit(item.id)}
             />
           </View>
         }

@@ -2,18 +2,27 @@ import { createSelector } from "reselect";
 import { ActionType, createAction, getType } from "typesafe-actions";
 import { RootAction, RootState } from "../../../../containers";
 import { getCurrentChecklist } from "../Checklist";
+import { Errors } from "../../../../utils";
 
 /* ACTIONS */
 export const createItem = createAction("checklistItem/create")<ChecklistItem>();
-export const updateItem = createAction("checklistItem/update")<UpdateItem>();
+export const updateItem = createAction("checklistItem/update")<ChecklistItem>();
 export const removeItem = createAction("checklistItem/remove")<string>();
 export const toggleCompleteItem = createAction("checklistItem/toggleComplete")<
+  string
+>();
+export const setActiveListItem = createAction("checklistItem/setActive")<
   string
 >();
 
 /* SELECTORS */
 export const getItems = (state: RootState): ChecklistItems =>
   state.checklistItems.items;
+export const getCurrentChecklistItem = (state: RootState): ChecklistItem => {
+  const active = state.checklistItems.active;
+  if (!active) {throw new Error(Errors.MissingCurrentChecklistItem);}
+  return state.checklistItems.items[active];
+};
 export const getCurrentActiveChecklistItemsOrderByCreatedAt = createSelector(
   [getCurrentChecklist, getItems],
   (checklist, items) =>
@@ -45,14 +54,9 @@ export type ItemActions = ActionType<
   | typeof createItem
   | typeof removeItem
   | typeof updateItem
+  | typeof setActiveListItem
   | typeof toggleCompleteItem
 >;
-interface CreateItem {
-  name: string;
-  description?: string;
-  active?: boolean;
-}
-type UpdateItem = CreateItem & { id: string };
 
 /* REDUCER */
 const initialState: ChecklistItemReducer = {
@@ -64,6 +68,8 @@ export const checklistItemReducer = (
   action: RootAction
 ): ChecklistItemReducer => {
   switch (action.type) {
+    case getType(setActiveListItem):
+      return { ...state, active: action.payload };
     case getType(createItem):
       return {
         ...state,
