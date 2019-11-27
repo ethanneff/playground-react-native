@@ -66,14 +66,14 @@ export default memo(function ChecklistUpdate() {
         <Button title="update" onPress={handleSubmit} />
         <Button title="delete" onPress={handleDeletePress} danger />
       </Screen>
-      {showDeleteDialog && (
+      {showDeleteDialog && 
         <Dialog
           title="are you sure?"
           onConfirmButtonPress={handleDelete}
           onBackgroundPress={handleDeleteCancel}
           onCancelButtonPress={handleDeleteCancel}
         />
-      )}
+      }
     </>
   );
 });
