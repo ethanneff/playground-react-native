@@ -27,7 +27,7 @@ export const Section: React.FC<SectionProps> = memo(function Section({
         title={title}
         style={{
           color: color.background, // TODO: add prop to text for inverse
-          backgroundColor: color.primary,
+          backgroundColor: color.secondary,
           padding: Theme.padding.p02,
           borderColor: color.secondary,
           borderWidth: 2
