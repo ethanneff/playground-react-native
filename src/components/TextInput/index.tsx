@@ -34,6 +34,7 @@ interface Props {
   title?: string;
   value: string;
   onChangeText(text: string): void;
+  onSubmitEditing?(): void;
 }
 
 export enum KeyboardType {
@@ -66,6 +67,7 @@ export const TextInput: React.FC<Props> = memo(
     flex,
     keyboardType,
     onChangeText,
+    onSubmitEditing,
     optional,
     placeholder,
     returnKeyType,
@@ -156,6 +158,7 @@ export const TextInput: React.FC<Props> = memo(
             blurOnSubmit={blurOnSubmit}
             disableFullscreenUI={disableFullscreenUI}
             editable={editable}
+            onSubmitEditing={onSubmitEditing}
             keyboardType={keyboardType}
             onBlur={onBlur}
             onChangeText={onChangeText}
