@@ -8,7 +8,7 @@ export default memo(function DebugChat() {
   const nav = useNav();
 
   return (
-    <Screen onLeftPress={nav.to("debug")} title="Chat">
+    <Screen onLeftPress={nav.to("debug")} title="Chat" gutter>
       <Items />
       <TextField />
     </Screen>
