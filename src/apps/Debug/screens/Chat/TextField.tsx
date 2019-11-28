@@ -33,7 +33,12 @@ export const TextField = memo(function ChatTextField() {
 
   return (
     <View style={{ flexDirection: "row" }}>
-      <TextInput value={textField} onChangeText={onMessageChange} flex />
+      <TextInput
+        value={textField}
+        onChangeText={onMessageChange}
+        onSubmitEditing={onSubmit}
+        flex
+      />
       <Button icon={"send"} onPress={onSubmit} />
     </View>
   );
