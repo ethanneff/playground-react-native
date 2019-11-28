@@ -3,15 +3,26 @@ import { Image, View } from "react-native";
 import { Text, RelativeDate } from "../../../../components";
 import { Theme } from "../../../../utils";
 import { Message } from "./Messages";
+import { useColor } from "../../../../hooks";
 
 interface Props {
   item: Message;
 }
 
-const image = require("../../../../assets/line-chart.png");
 export const Item = memo(function ChatMessage({ item }: Props) {
+  const color = useColor();
+  const image = require("../../../../assets/line-chart.png");
   return (
-    <View key={item.id} style={{ flexDirection: "row" }}>
+    <View
+      key={item.id}
+      style={{
+        padding: Theme.padding.p01,
+        borderRadius: Theme.padding.p04,
+        flexDirection: "row",
+        marginBottom: Theme.padding.p06,
+        backgroundColor: color.surface
+      }}
+    >
       <View style={{ width: 40 }}>
         <Image
           source={image}
@@ -24,11 +35,10 @@ export const Item = memo(function ChatMessage({ item }: Props) {
           }}
         />
       </View>
-      <View style={{ flexShrink: 1 }}>
+      <View style={{ flex: 1 }}>
         <View style={{ flexDirection: "row" }}>
           <Text
             title={item.userId}
-            h6
             bold
             style={{ paddingRight: Theme.padding.p02 }}
           />
