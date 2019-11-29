@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.11.1](https://github.com/ethanneff/example/compare/v2.11.0...v2.11.1) (2019-11-29)
+
+
+### Bug Fixes
+
+* add gutter ([06e5296](https://github.com/ethanneff/example/commit/06e5296))
+* add gutter and correct back nav ([099c79e](https://github.com/ethanneff/example/commit/099c79e))
+* add onSubmit api ([122a564](https://github.com/ethanneff/example/commit/122a564))
+* add onSubmit enter ([9f7113a](https://github.com/ethanneff/example/commit/9f7113a))
+* updating styling ([4f54d54](https://github.com/ethanneff/example/commit/4f54d54))
+
 # [2.11.0](https://github.com/ethanneff/example/compare/v2.10.8...v2.11.0) (2019-11-28)
 
 
