@@ -1,5 +1,33 @@
 # Changelog
 
+# [2.11.0](https://github.com/ethanneff/example/compare/v2.10.8...v2.11.0) (2019-11-28)
+
+
+### Bug Fixes
+
+* able to complete items ([449bf07](https://github.com/ethanneff/example/commit/449bf07))
+* add import to errors ([8c3d63d](https://github.com/ethanneff/example/commit/8c3d63d))
+* add title to checklist create ([baff347](https://github.com/ethanneff/example/commit/baff347))
+* checklists now points to redux and sets active on nav ([6ff19a8](https://github.com/ethanneff/example/commit/6ff19a8))
+* convert checklists to functional ([b883a03](https://github.com/ethanneff/example/commit/b883a03))
+* convert list into funcational component ([3b9a1c5](https://github.com/ethanneff/example/commit/3b9a1c5))
+* covert item create into functional ([f034fd8](https://github.com/ethanneff/example/commit/f034fd8))
+* pull active and in order checklist items ([91917d9](https://github.com/ethanneff/example/commit/91917d9))
+* refactor checklist redux to remove junk ([54253aa](https://github.com/ethanneff/example/commit/54253aa))
+* update linting ([4d98a93](https://github.com/ethanneff/example/commit/4d98a93))
+* usecallback for navigation ([b4da844](https://github.com/ethanneff/example/commit/b4da844))
+
+
+### Features
+
+* able to create checklists ([ab5d9d0](https://github.com/ethanneff/example/commit/ab5d9d0))
+* add confirmation dialog on list delete ([7036948](https://github.com/ethanneff/example/commit/7036948))
+* add errors ([341a0b0](https://github.com/ethanneff/example/commit/341a0b0))
+* add modal component ([44ba3a3](https://github.com/ethanneff/example/commit/44ba3a3))
+* refactor chat to redux for persistance ([53440d3](https://github.com/ethanneff/example/commit/53440d3))
+* update checklist ([874077a](https://github.com/ethanneff/example/commit/874077a))
+* update checklist item ([c08a26e](https://github.com/ethanneff/example/commit/c08a26e))
+
 ## [2.10.8](https://github.com/ethanneff/example/compare/v2.10.7...v2.10.8) (2019-11-23)
 
 
