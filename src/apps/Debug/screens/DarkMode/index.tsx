@@ -86,7 +86,7 @@ export default memo(function DarkMode() {
           horizontal
           keyExtractor={item => item}
           data={themes}
-          renderItem={({ item }) => (
+          renderItem={({ item }) => 
             <Button
               key={item}
               title={item}
@@ -94,7 +94,7 @@ export default memo(function DarkMode() {
               contained={currentTheme === item}
               secondary={currentTheme !== item}
             />
-          )}
+          }
         />
       </View>
       <Text title={`elevation: ${elevation}`} />
@@ -112,7 +112,7 @@ export default memo(function DarkMode() {
         extraData={elevation}
         keyExtractor={item => item.title}
         data={cards}
-        renderItem={({ item }) => (
+        renderItem={({ item }) => 
           <Card elevation={elevation} onPress={() => undefined} flex>
             <Text title={item.title} overline />
             <Text
@@ -121,7 +121,7 @@ export default memo(function DarkMode() {
               style={{ paddingVertical: Theme.padding.p02 }}
             />
             <Text title={item.target} body2 />
-            {item.chart && (
+            {item.chart && 
               <Image
                 source={item.chart}
                 style={{
@@ -131,9 +131,9 @@ export default memo(function DarkMode() {
                   width: "100%"
                 }}
               />
-            )}
+            }
           </Card>
-        )}
+        }
       />
     </Screen>
   );
