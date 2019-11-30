@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.2](https://github.com/ethanneff/example/compare/v2.11.1...v2.11.2) (2019-11-29)
+
+
+### Bug Fixes
+
+* update deps to not use carrots ([3848b6f](https://github.com/ethanneff/example/commit/3848b6f))
+
 ## [2.11.1](https://github.com/ethanneff/example/compare/v2.11.0...v2.11.1) (2019-11-29)
 
 
