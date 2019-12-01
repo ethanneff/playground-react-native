@@ -46,6 +46,8 @@
   </div>
 </div>
 
+- [ ] fix ios build (pods)
+- [ ] build off android device (access)
 - [ ] delete old repositories
 - [x] backup google drive offline
 - [ ] rename app to playground
