@@ -58,6 +58,9 @@ const DebugQuestionnaire = lazy(() =>
 const DebugSearchBar = lazy(() => import(`../../apps/Debug/screens/SearchBar`));
 const DebugStartup = lazy(() => import(`../../apps/Debug/screens/Startup`));
 const DebugStopwatch = lazy(() => import(`../../apps/Debug/screens/Stopwatch`));
+const GamesFlappyBird = lazy(() => import(`../../apps/Gamaes/FlappyBird`));
+const GamesSnake = lazy(() => import(`../../apps/Games/Snake`));
+const GamesPapiJump = lazy(() => import(`../../apps/Games/PapiJump`));
 
 export const screens = {
   focus: <Focus />,
@@ -90,7 +93,10 @@ export const screens = {
   checklistsListCreate: <ChecklistsListCreate />,
   checklistsListUpdate: <ChecklistsListUpdate />,
   checklistsItemCreate: <ChecklistsItemCreate />,
-  checklistsItemUpdate: <ChecklistsItemUpdate />
+  checklistsItemUpdate: <ChecklistsItemUpdate />,
+  gamesFlappyBird: <GamesFlappyBird />,
+  gamesSnake: <GamesSnake />,
+  gamesPapiJump: <GamesPapiJump />
 };
 
 const Loading = memo(function NavigationLoading() {

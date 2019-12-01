@@ -24,6 +24,11 @@ export default memo(function PortfolioLanding() {
         <Button title="CantHurtMe" onPress={nav.to("cantHurtMe")} />
         <Button title="Focus" onPress={nav.to("focus")} />
       </View>
+      <View style={styles.row}>
+        <Button title="FlappyBird" onPress={nav.to("gamesFlappyBird")} />
+        <Button title="Snake" onPress={nav.to("gamesSnake")} />
+        <Button title="PapiJump" onPress={nav.to("gamesPapiJump")} />
+      </View>
     </Screen>
   );
 });
