@@ -48,9 +48,12 @@
 
 - [ ] fix ios build (pods)
 - [ ] build off android device (access)
+- [ ] make snake
+- [ ] make flappy
+- [ ] install accelerator
 - [ ] delete old repositories
 - [x] backup google drive offline
-- [ ] rename app to playground
+- [x] rename app to playground
 - [ ] fix [ios deploy](##[error]{"code":"two_factor_authentication_error","message":"Error: Failed to publish to store. apple connection is not valid for \*\*\*: ethan.neff@eneff.com"})
 - [ ] fix android deploy
 - [ ] get a release on ios
