@@ -1,5 +1,18 @@
 # Changelog
 
+# [2.12.0](https://github.com/ethanneff/example/compare/v2.11.3...v2.12.0) (2019-12-02)
+
+
+### Bug Fixes
+
+* correct navigation import ([5e508a1](https://github.com/ethanneff/example/commit/5e508a1))
+* update deps ([99e7a93](https://github.com/ethanneff/example/commit/99e7a93))
+
+
+### Features
+
+* build architecture for games ([91435cd](https://github.com/ethanneff/example/commit/91435cd))
+
 ## [2.11.3](https://github.com/ethanneff/example/compare/v2.11.2...v2.11.3) (2019-11-30)
 
 
