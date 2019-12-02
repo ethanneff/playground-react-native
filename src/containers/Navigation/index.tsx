@@ -58,7 +58,7 @@ const DebugQuestionnaire = lazy(() =>
 const DebugSearchBar = lazy(() => import(`../../apps/Debug/screens/SearchBar`));
 const DebugStartup = lazy(() => import(`../../apps/Debug/screens/Startup`));
 const DebugStopwatch = lazy(() => import(`../../apps/Debug/screens/Stopwatch`));
-const GamesFlappyBird = lazy(() => import(`../../apps/Gamaes/FlappyBird`));
+const GamesFlappyBird = lazy(() => import(`../../apps/Games/FlappyBird`));
 const GamesSnake = lazy(() => import(`../../apps/Games/Snake`));
 const GamesPapiJump = lazy(() => import(`../../apps/Games/PapiJump`));
 
