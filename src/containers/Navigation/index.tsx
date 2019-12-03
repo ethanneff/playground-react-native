@@ -61,6 +61,7 @@ const DebugStopwatch = lazy(() => import(`../../apps/Debug/screens/Stopwatch`));
 const GamesFlappyBird = lazy(() => import(`../../apps/Games/FlappyBird`));
 const GamesSnake = lazy(() => import(`../../apps/Games/Snake`));
 const GamesPapiJump = lazy(() => import(`../../apps/Games/PapiJump`));
+const GamesArchero = lazy(() => import(`../../apps/Games/Archero`));
 
 export const screens = {
   focus: <Focus />,
@@ -96,7 +97,8 @@ export const screens = {
   checklistsItemUpdate: <ChecklistsItemUpdate />,
   gamesFlappyBird: <GamesFlappyBird />,
   gamesSnake: <GamesSnake />,
-  gamesPapiJump: <GamesPapiJump />
+  gamesPapiJump: <GamesPapiJump />,
+  gamesArchero: <GamesArchero />
 };
 
 const Loading = memo(function NavigationLoading() {

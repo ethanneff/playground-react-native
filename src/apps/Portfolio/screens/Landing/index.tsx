@@ -28,6 +28,7 @@ export default memo(function PortfolioLanding() {
         <Button title="FlappyBird" onPress={nav.to("gamesFlappyBird")} />
         <Button title="Snake" onPress={nav.to("gamesSnake")} />
         <Button title="PapiJump" onPress={nav.to("gamesPapiJump")} />
+        <Button title="Archero" onPress={nav.to("gamesArchero")} />
       </View>
     </Screen>
   );
