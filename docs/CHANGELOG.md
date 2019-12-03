@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.12.2](https://github.com/ethanneff/example/compare/v2.12.1...v2.12.2) (2019-12-03)
+
+
+### Bug Fixes
+
+* update deps ([dbfbed7](https://github.com/ethanneff/example/commit/dbfbed7))
+
 ## [2.12.1](https://github.com/ethanneff/example/compare/v2.12.0...v2.12.1) (2019-12-02)
 
 
