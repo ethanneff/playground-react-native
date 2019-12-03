@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.12.1](https://github.com/ethanneff/example/compare/v2.12.0...v2.12.1) (2019-12-02)
+
+
+### Bug Fixes
+
+* correct ios podfile ([0de8098](https://github.com/ethanneff/example/commit/0de8098))
+
 # [2.12.0](https://github.com/ethanneff/example/compare/v2.11.3...v2.12.0) (2019-12-02)
 
 
