@@ -5,20 +5,21 @@ import {
   PanResponderInstance,
   View
 } from "react-native";
-import { useColor } from "../../../hooks";
+import { useColor, useNativeDriver } from "../../../hooks";
 import { useRootSelector, colorWithOpacity } from "../../../utils";
 import { getSmallestDimension } from "../../../models";
 
 const charSize = 50;
 const charSpeed = 40;
 
-const getVelocity = (value: number, limit: number) =>
+const getLimit = (value: number, limit: number) =>
   value > limit ? limit : value < -limit ? -limit : value;
 const getBounds = (value: number, limit: number, size: number) =>
   value > limit - size ? limit - size : value < 0 ? 0 : value;
 
 export default memo(function Archero() {
   const color = useColor();
+  const useDriver = useNativeDriver();
   const { width, height } = useRootSelector(state => state.dimension.window);
   const smallest = useRootSelector(getSmallestDimension);
 
@@ -34,33 +35,51 @@ export default memo(function Archero() {
     y: height / 2 - charSize / 2
   };
   const initialThumbLoc = { x: 0, y: 0 };
-
+  let characterValueXY = initialCharLoc;
   const joystick: Animated.ValueXY = new Animated.ValueXY(initialJoystickLoc);
   const thumb: Animated.ValueXY = new Animated.ValueXY(initialThumbLoc);
   const character: Animated.ValueXY = new Animated.ValueXY(initialCharLoc);
+  character.addListener(({ x, y }) => (characterValueXY = { x, y }));
 
   const moveCharacter = (dx: number, dy: number) => {
-    const vx = getVelocity(dx, charSpeed);
-    const vy = getVelocity(dy, charSpeed);
-    const x = getBounds(character.x._value + vx, width, charSize);
-    const y = getBounds(character.y._value + vy, height, charSize);
-    Animated.spring(character, { toValue: { x, y } }).start();
+    const vx = getLimit(dx, charSpeed);
+    const vy = getLimit(dy, charSpeed);
+    const x = getBounds(characterValueXY.x + vx, width, charSize);
+    const y = getBounds(characterValueXY.y + vy, height, charSize);
+    Animated.spring(character, {
+      toValue: { x, y },
+      useNativeDriver: useDriver
+    }).start();
   };
 
   const moveThumb = (dx: number, dy: number) => {
-    const vx = getVelocity(dx, thumbSize);
-    const vy = getVelocity(dy, thumbSize);
-    Animated.spring(thumb, { toValue: { x: vx, y: vy } }).start();
+    const vx = getLimit(dx, thumbSize);
+    const vy = getLimit(dy, thumbSize);
+    const zy = Math.sqrt(Math.pow(vx, 2) + Math.pow(vy, 2));
+    console.log(vx, vy, thumbSize, zy);
+
+    // Math.pow(thumbSize, 2) = Math.pow(vx, 2) + Math.pow(y, 2)
+
+    Animated.spring(thumb, {
+      toValue: { x: vx, y: vy },
+      useNativeDriver: useDriver
+    }).start();
   };
 
   const moveJoystick = (x0: number, y0: number) => {
     const toValue = { x: x0 - joystickCenter, y: y0 - joystickCenter };
-    Animated.spring(joystick, { toValue }).start();
+    Animated.spring(joystick, { toValue, useNativeDriver: useDriver }).start();
   };
 
   const resetJoystick = () => {
-    Animated.spring(joystick, { toValue: initialJoystickLoc }).start();
-    Animated.spring(thumb, { toValue: initialThumbLoc }).start();
+    Animated.spring(joystick, {
+      toValue: initialJoystickLoc,
+      useNativeDriver: useDriver
+    }).start();
+    Animated.spring(thumb, {
+      toValue: initialThumbLoc,
+      useNativeDriver: useDriver
+    }).start();
   };
 
   const panGesture: PanResponderInstance = PanResponder.create({
