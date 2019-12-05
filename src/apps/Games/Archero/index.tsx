@@ -39,7 +39,9 @@ export default memo(function Archero() {
   const joystick: Animated.ValueXY = new Animated.ValueXY(initialJoystickLoc);
   const thumb: Animated.ValueXY = new Animated.ValueXY(initialThumbLoc);
   const character: Animated.ValueXY = new Animated.ValueXY(initialCharLoc);
-  character.addListener(({ x, y }) => (characterValueXY = { x, y }));
+  character.addListener(({ x, y }) => {
+    characterValueXY = { x, y };
+  });
 
   const moveCharacter = (dx: number, dy: number) => {
     const vx = getLimit(dx, charSpeed);
