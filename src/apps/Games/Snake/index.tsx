@@ -73,12 +73,7 @@ export default memo(function Snake() {
           <Board board={board} />
         </View>
       </Screen>
-      {endGame && (
-        <Modal>
-          <Text title="good try" />
-          <Button title="again" onPress={startGame} />
-        </Modal>
-      )}
+      {game.state === "off" && <EndGame onPress={startGame} />}
     </>
   );
 });
