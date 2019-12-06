@@ -11,10 +11,10 @@ export const Board = memo(function Board({ board }: BoardProps) {
   console.log("board");
   return (
     <View style={{ flex: 1, justifyContent: "center" }}>
-      {board.map(x => (
+      {board.map((x, i) => (
         <View style={{ flexDirection: "row" }}>
-          {x.map(y => (
-            <Cell value={y} length={board.length} />
+          {x.map((y, j) => (
+            <Cell value={y} key={`${i}${j}`} length={board.length} />
           ))}
         </View>
       ))}
