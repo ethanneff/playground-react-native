@@ -73,6 +73,7 @@ export const screens = {
   portfolioForgotPassword: <PortfolioForgot />,
   portfolioLogin: <PortfolioLogin />,
   cantHurtMe: <CantHurtMe />,
+  journal: <Journal />,
   debug: <Debug />,
   debugArticle: <DebugArticle />,
   debugBall: <DebugBall />,
