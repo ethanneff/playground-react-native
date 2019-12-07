@@ -5,63 +5,64 @@ import { ActivityIndicator, StyleSheet, View } from "react-native";
 import { useColor } from "../../hooks";
 
 // screens
-const Portfolio = lazy(() => import(`../../apps/Portfolio/screens/Main`));
+const Portfolio = lazy(() => import("../../apps/Portfolio/screens/Main"));
 const PortfolioSettings = lazy(() =>
-  import(`../../apps/Portfolio/screens/Settings`)
+  import("../../apps/Portfolio/screens/Settings")
 );
 const PortfolioLanding = lazy(() =>
-  import(`../../apps/Portfolio/screens/Landing`)
+  import("../../apps/Portfolio/screens/Landing")
 );
 const PortfolioNotFound = lazy(() =>
-  import(`../../apps/Portfolio/screens/NotFound`)
+  import("../../apps/Portfolio/screens/NotFound")
 );
 const PortfolioForgot = lazy(() =>
-  import(`../../apps/Portfolio/screens/ForgotPassword`)
+  import("../../apps/Portfolio/screens/ForgotPassword")
 );
-const PortfolioLogin = lazy(() => import(`../../apps/Portfolio/screens/Login`));
-const Checklists = lazy(() => import(`../../apps/Checklists/screens/Main`));
-const ChecklistsList = lazy(() => import(`../../apps/Checklists/screens/List`));
+const PortfolioLogin = lazy(() => import("../../apps/Portfolio/screens/Login"));
+const Checklists = lazy(() => import("../../apps/Checklists/screens/Main"));
+const ChecklistsList = lazy(() => import("../../apps/Checklists/screens/List"));
 const ChecklistsListCreate = lazy(() =>
-  import(`../../apps/Checklists/screens/ListCreate`)
+  import("../../apps/Checklists/screens/ListCreate")
 );
 const ChecklistsListUpdate = lazy(() =>
-  import(`../../apps/Checklists/screens/ListUpdate`)
+  import("../../apps/Checklists/screens/ListUpdate")
 );
 const ChecklistsItemCreate = lazy(() =>
-  import(`../../apps/Checklists/screens/ItemCreate`)
+  import("../../apps/Checklists/screens/ItemCreate")
 );
 const ChecklistsItemUpdate = lazy(() =>
-  import(`../../apps/Checklists/screens/ItemUpdate`)
+  import("../../apps/Checklists/screens/ItemUpdate")
 );
-const Focus = lazy(() => import(`../../apps/Focus`));
-const CantHurtMe = lazy(() => import(`../../apps/CantHurtMe/screens/Main`));
-const Debug = lazy(() => import(`../../apps/Debug/screens/Main`));
-const DebugArticle = lazy(() => import(`../../apps/Debug/screens/Article`));
-const DebugBall = lazy(() => import(`../../apps/Debug/screens/Ball`));
-const DebugButtons = lazy(() => import(`../../apps/Debug/screens/Buttons`));
-const DebugCards = lazy(() => import(`../../apps/Debug/screens/Cards`));
-const DebugChat = lazy(() => import(`../../apps/Debug/screens/Chat`));
-const DebugDarkMode = lazy(() => import(`../../apps/Debug/screens/DarkMode`));
-const DebugDrag = lazy(() => import(`../../apps/Debug/screens/Drag`));
-const DebugFonts = lazy(() => import(`../../apps/Debug/screens/Fonts`));
+const Focus = lazy(() => import("../../apps/Focus"));
+const CantHurtMe = lazy(() => import("../../apps/CantHurtMe/screens/Main"));
+const Journal = lazy(() => import("../../apps/Journal"));
+const Debug = lazy(() => import("../../apps/Debug/screens/Main"));
+const DebugArticle = lazy(() => import("../../apps/Debug/screens/Article"));
+const DebugBall = lazy(() => import("../../apps/Debug/screens/Ball"));
+const DebugButtons = lazy(() => import("../../apps/Debug/screens/Buttons"));
+const DebugCards = lazy(() => import("../../apps/Debug/screens/Cards"));
+const DebugChat = lazy(() => import("../../apps/Debug/screens/Chat"));
+const DebugDarkMode = lazy(() => import("../../apps/Debug/screens/DarkMode"));
+const DebugDrag = lazy(() => import("../../apps/Debug/screens/Drag"));
+const DebugFonts = lazy(() => import("../../apps/Debug/screens/Fonts"));
 const DebugImage = lazy(() =>
-  import(`../../apps/Debug/screens/ImageCollection`)
+  import("../../apps/Debug/screens/ImageCollection")
 );
-const DebugInput = lazy(() => import(`../../apps/Debug/screens/Input`));
-const DebugOKRs = lazy(() => import(`../../apps/Debug/screens/OKRs`));
+const DebugInput = lazy(() => import("../../apps/Debug/screens/Input"));
+const DebugOKRs = lazy(() => import("../../apps/Debug/screens/OKRs"));
 const DebugPinchSpread = lazy(() =>
-  import(`../../apps/Debug/screens/PinchSpread`)
+  import("../../apps/Debug/screens/PinchSpread")
 );
 const DebugQuestionnaire = lazy(() =>
-  import(`../../apps/Debug/screens/Questionnaire`)
+  import("../../apps/Debug/screens/Questionnaire")
 );
-const DebugSearchBar = lazy(() => import(`../../apps/Debug/screens/SearchBar`));
-const DebugStartup = lazy(() => import(`../../apps/Debug/screens/Startup`));
-const DebugStopwatch = lazy(() => import(`../../apps/Debug/screens/Stopwatch`));
-const GamesFlappyBird = lazy(() => import(`../../apps/Games/FlappyBird`));
-const GamesSnake = lazy(() => import(`../../apps/Games/Snake`));
-const GamesPapiJump = lazy(() => import(`../../apps/Games/PapiJump`));
-const GamesArchero = lazy(() => import(`../../apps/Games/Archero`));
+const DebugSearchBar = lazy(() => import("../../apps/Debug/screens/SearchBar"));
+const DebugStartup = lazy(() => import("../../apps/Debug/screens/Startup"));
+const DebugStopwatch = lazy(() => import("../../apps/Debug/screens/Stopwatch"));
+const GamesFlappyBird = lazy(() => import("../../apps/Games/FlappyBird"));
+const GamesSnake = lazy(() => import("../../apps/Games/Snake"));
+const GamesPapiJump = lazy(() => import("../../apps/Games/PapiJump"));
+const GamesArchero = lazy(() => import("../../apps/Games/Archero"));
 
 export const screens = {
   focus: <Focus />,
