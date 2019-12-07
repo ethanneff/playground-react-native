@@ -43,7 +43,7 @@ export const Card: React.FC<Props> = memo(
         borderRadius,
         borderWidth,
         elevation,
-        marginHorizontal: Theme.padding.p02,
+        marginHorizontal: Theme.padding.p04,
         marginVertical: Theme.padding.p02,
         shadowColor: color.dark,
         shadowOffset: {
