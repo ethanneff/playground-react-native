@@ -42,7 +42,7 @@ export default memo(function Snake() {
   });
 
   const updateGame = (frame: Frame) => {
-    if (game.state === "off") return;
+    if (game.state === "off") {return;}
     console.log(frame, direction);
     const next = nextSnakePosition(direction, game.board);
     if (collision(next) || frame.count >= 100) {
@@ -54,25 +54,25 @@ export default memo(function Snake() {
     }
   };
 
-  const startGame = () => {
+  const startGame = useCallback(() => {
     const board = generateBoard(size);
     addStarting(board);
     addFood(board);
     setGame({ board, state: "on" });
     gameLoop.start();
-  };
+  });
 
-  const finishGame = () => {
+  const finishGame = useCallback(() => {
     setGame(game => ({ ...game, state: "off" }));
     gameLoop.stop();
-  };
+  });
 
   useEffect(() => {
     startGame();
     return () => finishGame();
-  }, []);
+  }, [finishGame, startGame]);
 
-  if (game.state === "init") return;
+  if (game.state === "init") {return;}
   console.log("snake");
   return (
     <>

@@ -29,7 +29,7 @@ export const addStarting = (board: BoardObject) => {
 };
 
 export const generateBoard = (size: number) => {
-  let board: BoardObject = [];
+  const board: BoardObject = [];
   for (let i = 0; i < size; i++) {
     board[i] = [];
     for (let j = 0; j < size; j++) {

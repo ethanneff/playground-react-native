@@ -14,10 +14,10 @@ export const useGameLoop = (next: (frame: Frame) => void) => {
   let timer: any;
 
   const loop = useCallback(() => {
-    if (off) return;
+    if (off) {return;}
     timer = setTimeout(() => {
       clearTimeout(timer);
-      if (off) return;
+      if (off) {return;}
       frame = { ...frame, current: Date.now(), count: frame.count + 1 };
       next(frame);
       loop();

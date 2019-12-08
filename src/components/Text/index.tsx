@@ -154,7 +154,7 @@ export const Text: React.FC<Props> = memo(function Text({
     style
   ];
 
-  return title === undefined || hidden ? null : (
+  return title === undefined || hidden ? null : 
     <Animated.Text
       ellipsizeMode={ellipsizeMode}
       numberOfLines={numberOfLines}
@@ -163,5 +163,5 @@ export const Text: React.FC<Props> = memo(function Text({
     >
       {text}
     </Animated.Text>
-  );
+  ;
 });
