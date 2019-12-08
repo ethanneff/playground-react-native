@@ -20,6 +20,7 @@ interface Props {
   hidden?: boolean;
   invisible?: boolean;
   inverse?: boolean;
+  secondary?: boolean;
 
   numberOfLines?: number;
   ellipsizeMode?: EllipsizeMode;
@@ -57,6 +58,7 @@ export const Text: React.FC<Props> = memo(function Text({
   body1,
   body2,
   button,
+  secondary,
   ellipsizeMode,
   numberOfLines,
   caption,
@@ -85,6 +87,9 @@ export const Text: React.FC<Props> = memo(function Text({
     },
     text: {
       color: inverse ? colors.background : colors.text
+    },
+    secondary: {
+      color: colors.secondary
     }
   });
   const text = button || overline ? (title || "").toUpperCase() : title;
@@ -143,12 +148,13 @@ export const Text: React.FC<Props> = memo(function Text({
     center && styles.center,
     centerVertically && styles.centerVertically,
     bold && styles.bold,
+    secondary && styles.secondary,
     { opacity },
     invisible && styles.invisible,
     style
   ];
 
-  return title === undefined || hidden ? null : 
+  return title === undefined || hidden ? null : (
     <Animated.Text
       ellipsizeMode={ellipsizeMode}
       numberOfLines={numberOfLines}
@@ -157,5 +163,5 @@ export const Text: React.FC<Props> = memo(function Text({
     >
       {text}
     </Animated.Text>
-  ;
+  );
 });
