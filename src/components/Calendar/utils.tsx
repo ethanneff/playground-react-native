@@ -1,0 +1,58 @@
+import { Dayjs } from "dayjs";
+
+export type Day = {
+  id: string;
+  display: string;
+  current: boolean;
+  header: boolean;
+};
+
+export type CalendarMatrix = Day[][];
+
+const getDay = (
+  id: string,
+  display: number | string,
+  current = false,
+
+  header = false
+): Day => ({ id, display: String(display), current, header });
+
+const getEpoch = (today: Dayjs, month: number, day: number) =>
+  String(
+    today
+      .add(month, "month")
+      .date(day)
+      .format("MM DD YYYY")
+      .valueOf()
+  );
+
+export const getMonth = (date: Dayjs) => date.format("MMMM YYYY");
+
+export const getCalendarMatrix = (date: Dayjs): CalendarMatrix => {
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const firstDay = Number(date.startOf("month").format("d"));
+  const maxDays = Number(date.endOf("month").format("D"));
+  const prevMaxDays = Number(
+    date
+      .subtract(1, "month")
+      .endOf("month")
+      .format("D")
+  );
+  let dayCounter = 1;
+  let prevDayCounter = prevMaxDays - firstDay + 1;
+  let nextDayCounter = 1;
+  const calendarMatrix: CalendarMatrix = [];
+  calendarMatrix.push(days.map(day => getDay(day, day, false, false)));
+  for (let row = 1; row < 7; row++) {
+    calendarMatrix[row] = [];
+    for (let col = 0; col < 7; col++) {
+      calendarMatrix[row][col] =
+        row === 1 && col < firstDay
+          ? getDay(getEpoch(date, -1, prevDayCounter), prevDayCounter++)
+          : row > 1 && dayCounter > maxDays
+          ? getDay(getEpoch(date, 1, nextDayCounter), nextDayCounter++)
+          : getDay(getEpoch(date, 0, dayCounter), dayCounter++, true);
+    }
+  }
+  return calendarMatrix;
+};
