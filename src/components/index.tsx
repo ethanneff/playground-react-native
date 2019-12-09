@@ -11,3 +11,4 @@ export * from "./RelativeDate";
 export * from "./Dialog";
 export * from "./Loading";
 export * from "./Modal";
+export * from "./Calendar";
