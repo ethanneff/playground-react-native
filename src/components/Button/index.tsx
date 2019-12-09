@@ -21,6 +21,7 @@ interface Props {
   buttonStyle?: ViewStyle | {};
   textStyle?: TextStyle | {};
   iconColor?: string;
+  iconSize?: number;
   /* state */
   active?: boolean;
   hidden?: boolean;
@@ -70,6 +71,7 @@ export const Button: React.FC<Props> = memo(props => {
     lowercase,
     neutral,
     onPress,
+    iconSize = Theme.padding.p04,
     onLongPress,
     outlined,
     right,
@@ -210,7 +212,7 @@ export const Button: React.FC<Props> = memo(props => {
   ];
   const iconStyleGroup = [title && styles.icon, !iconColor && textStyleGroup];
 
-  return hidden ? null : 
+  return hidden ? null : (
     <TouchableOpacity
       activeOpacity={activeOpacity}
       disabled={disable}
@@ -222,10 +224,10 @@ export const Button: React.FC<Props> = memo(props => {
         color={iconColor}
         invisible={invisible}
         name={icon}
-        size={Theme.padding.p04}
+        size={iconSize}
         style={iconStyleGroup}
       />
       <Text center button={!lowercase} title={title} style={textStyleGroup} />
     </TouchableOpacity>
-  ;
+  );
 });
