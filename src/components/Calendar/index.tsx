@@ -1,24 +1,25 @@
 import React, { memo, useState } from "react";
 import { View } from "react-native";
 import dayjs, { Dayjs } from "dayjs";
-import { CalendarMatrix, getCalendarMatrix, getMonth } from "./utils";
+import { CalendarMatrix, getCalendarMatrix } from "./utils";
 import { CalendarHeader } from "./Header";
 import { CalendarDay } from "./Day";
 
 type State = {
-  month: string;
+  date: number;
   matrix: CalendarMatrix;
   selected: string | undefined;
 };
 
 const today = dayjs();
 const setState = (date: Dayjs) => ({
-  month: getMonth(date),
+  date: date.valueOf(),
   matrix: getCalendarMatrix(date),
   selected: undefined
 });
 
 export const Calendar = memo(function Calendar() {
+  // TODO: slow js
   const [calendar, setCalendar] = useState<State>(setState(today));
 
   const onSelected = (id: string) => () =>
@@ -28,12 +29,12 @@ export const Calendar = memo(function Calendar() {
     }));
 
   const onMonthIncrease = () => {
-    const date = dayjs(calendar.month).add(1, "month");
+    const date = dayjs(calendar.date).add(1, "month");
     setCalendar(setState(date));
   };
 
   const onMonthDecrease = () => {
-    const date = dayjs(calendar.month).subtract(1, "month");
+    const date = dayjs(calendar.date).subtract(1, "month");
     setCalendar(setState(date));
   };
 
@@ -42,12 +43,13 @@ export const Calendar = memo(function Calendar() {
       <CalendarHeader
         onMonthIncrease={onMonthIncrease}
         onMonthDecrease={onMonthDecrease}
-        month={calendar.month}
+        date={calendar.date}
       />
       {calendar.matrix.map((row, i) => (
-        <View key={`${calendar.month}${i}`} style={{ flexDirection: "row" }}>
+        <View key={i} style={{ flexDirection: "row" }}>
           {row.map(col => (
             <CalendarDay
+              key={col.id}
               onSelected={onSelected}
               day={col}
               selectedDay={calendar.selected}

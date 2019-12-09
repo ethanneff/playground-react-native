@@ -13,7 +13,6 @@ const getDay = (
   id: string,
   display: number | string,
   current = false,
-
   header = false
 ): Day => ({ id, display: String(display), current, header });
 
@@ -25,8 +24,6 @@ const getEpoch = (today: Dayjs, month: number, day: number) =>
       .format("MM DD YYYY")
       .valueOf()
   );
-
-export const getMonth = (date: Dayjs) => date.format("MMMM YYYY");
 
 export const getCalendarMatrix = (date: Dayjs): CalendarMatrix => {
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];

@@ -3,14 +3,15 @@ import { View } from "react-native";
 import { Text } from "../Text";
 import { Button } from "../Button";
 import { Theme } from "../../utils";
+import dayjs from "dayjs";
 
 interface Props {
-  month: string;
+  date: number;
   onMonthIncrease(): void;
   onMonthDecrease(): void;
 }
 export const CalendarHeader = memo(function CalendarHeader({
-  month,
+  date,
   onMonthIncrease,
   onMonthDecrease
 }: Props) {
@@ -23,7 +24,7 @@ export const CalendarHeader = memo(function CalendarHeader({
       />
       <Text
         h3
-        title={month}
+        title={dayjs(date).format("MMMM YYYY")}
         center
         style={{ paddingBottom: Theme.padding.p04 }}
       />
