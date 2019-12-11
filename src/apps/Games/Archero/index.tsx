@@ -5,9 +5,10 @@ import {
   PanResponderInstance,
   View
 } from "react-native";
-import { useColor, useNativeDriver } from "../../../hooks";
+import { useColor, useNativeDriver, useNav } from "../../../hooks";
 import { useRootSelector, colorWithOpacity } from "../../../utils";
 import { getSmallestDimension } from "../../../models";
+import { Screen } from "../../../components";
 
 const charSize = 50;
 const charSpeed = 40;
@@ -19,6 +20,7 @@ const getBounds = (value: number, limit: number, size: number) =>
 
 export default memo(function Archero() {
   const color = useColor();
+  const nav = useNav();
   const useDriver = useNativeDriver();
   const { width, height } = useRootSelector(state => state.dimension.window);
   const smallest = useRootSelector(getSmallestDimension);
@@ -100,60 +102,60 @@ export default memo(function Archero() {
   });
 
   return (
-    // <Screen onLeftPress={nav.to("portfolioLanding")} title="archero">
-    <View
-      style={[{ flex: 1, backgroundColor: color.success }]}
-      {...panGesture.panHandlers}
-    >
-      <Animated.View
-        style={[
-          character.getLayout(),
-          {
-            position: "absolute",
-            width: charSize,
-            height: charSize,
-            backgroundColor: color.brand
-          }
-        ]}
-      />
-      <Animated.View
-        style={[
-          joystick.getLayout(),
-          {
-            position: "absolute",
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 500,
-            width: joystickSize,
-            height: joystickSize,
-            backgroundColor: colorWithOpacity(color.black, 0.2)
-          }
-        ]}
+    <Screen onLeftPress={nav.to("portfolioLanding")} title="archero">
+      <View
+        style={[{ flex: 1, backgroundColor: color.success }]}
+        {...panGesture.panHandlers}
       >
-        <View
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 500,
-            width: thumbSize,
-            height: thumbSize,
-            backgroundColor: colorWithOpacity(color.black, 0.2)
-          }}
+        <Animated.View
+          style={[
+            character.getLayout(),
+            {
+              position: "absolute",
+              width: charSize,
+              height: charSize,
+              backgroundColor: color.brand
+            }
+          ]}
+        />
+        <Animated.View
+          style={[
+            joystick.getLayout(),
+            {
+              position: "absolute",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: 500,
+              width: joystickSize,
+              height: joystickSize,
+              backgroundColor: colorWithOpacity(color.black, 0.2)
+            }
+          ]}
         >
-          <Animated.View
-            style={[
-              thumb.getLayout(),
-              {
-                borderRadius: 500,
-                width: thumbSize,
-                height: thumbSize,
-                backgroundColor: colorWithOpacity(color.brand, 0.8)
-              }
-            ]}
-          ></Animated.View>
-        </View>
-      </Animated.View>
-    </View>
-    // </Screen>
+          <View
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: 500,
+              width: thumbSize,
+              height: thumbSize,
+              backgroundColor: colorWithOpacity(color.black, 0.2)
+            }}
+          >
+            <Animated.View
+              style={[
+                thumb.getLayout(),
+                {
+                  borderRadius: 500,
+                  width: thumbSize,
+                  height: thumbSize,
+                  backgroundColor: colorWithOpacity(color.brand, 0.8)
+                }
+              ]}
+            ></Animated.View>
+          </View>
+        </Animated.View>
+      </View>
+    </Screen>
   );
 });

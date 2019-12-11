@@ -492,7 +492,7 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
   - React-jsinspector (0.61.5)
-  - react-native-netinfo (4.6.1):
+  - react-native-netinfo (5.0.0):
     - React
   - React-RCTActionSheet (0.61.5):
     - React-Core/RCTActionSheetHeaders (= 0.61.5)
@@ -529,34 +529,34 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
     - ReactCommon/jscallinvoker (= 0.61.5)
-  - RNCAsyncStorage (1.6.3):
+  - RNCAsyncStorage (1.7.0):
     - React
   - RNDeviceInfo (5.3.1):
     - React
-  - RNFBAnalytics (6.1.0):
+  - RNFBAnalytics (6.2.0):
     - Firebase/Core (~> 6.13.0)
     - React
     - RNFBApp
-  - RNFBApp (6.1.0):
+  - RNFBApp (6.2.0):
     - Firebase/Core (~> 6.13.0)
     - React
-  - RNFBAuth (6.1.0):
+  - RNFBAuth (6.2.0):
     - Firebase/Auth (~> 6.13.0)
     - Firebase/Core (~> 6.13.0)
     - React
     - RNFBApp
-  - RNFBCrashlytics (6.1.0):
+  - RNFBCrashlytics (6.2.0):
     - Crashlytics (~> 3.12.0)
     - Fabric (~> 1.9.0)
     - Firebase/Core (~> 6.13.0)
     - React
     - RNFBApp
-  - RNFBFirestore (6.1.0):
+  - RNFBFirestore (6.2.0):
     - Firebase/Core (~> 6.13.0)
     - Firebase/Firestore (~> 6.13.0)
     - React
     - RNFBApp
-  - RNFBRemoteConfig (6.1.0):
+  - RNFBRemoteConfig (6.2.0):
     - Firebase/Core (~> 6.13.0)
     - Firebase/RemoteConfig (~> 6.13.0)
     - React
@@ -765,7 +765,7 @@ SPEC CHECKSUMS:
   React-jsi: cb2cd74d7ccf4cffb071a46833613edc79cdf8f7
   React-jsiexecutor: d5525f9ed5f782fdbacb64b9b01a43a9323d2386
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
-  react-native-netinfo: a59d8426a8484f739fe3a95dd6ad5af1435db05f
+  react-native-netinfo: 841c2a83fe7df998fed56fd48b73229f17a5aa5b
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
   React-RCTBlob: d89293cc0236d9cb0933d85e430b0bbe81ad1d72
@@ -776,14 +776,14 @@ SPEC CHECKSUMS:
   React-RCTText: 9ccc88273e9a3aacff5094d2175a605efa854dbe
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
-  RNCAsyncStorage: 3c304d1adfaea02ec732ac218801cb13897aa8c0
+  RNCAsyncStorage: 8a2fadab0c6cc58d6a0629e24f978cc2ff3151fc
   RNDeviceInfo: 6f20764111df002b4484f90cbe0a861be29bcc6c
-  RNFBAnalytics: 525439ff61630432b5c62f0b3534bd4ccd662355
-  RNFBApp: edeadb99669dd39f9d7f8f7f68d420fda4d8b7d8
-  RNFBAuth: ed3f9103bada30d38bf7e3a7e1431e69eca0e314
-  RNFBCrashlytics: ba2007fd3e5c526ea3687d1035b17a06b290b7ce
-  RNFBFirestore: bd3644bd512cc6f78e13d34ea13e7e642ac3c1b2
-  RNFBRemoteConfig: 0390026a43f17c30c948c5ece4badc5e7a95b938
+  RNFBAnalytics: 57dc0bfad4e40f68779757653676699072651218
+  RNFBApp: 5b215aacc09105a1761de31b9a0eb2abcce06253
+  RNFBAuth: 61673c0d38ce225c315e7be13a1b494904baedd2
+  RNFBCrashlytics: 0469cb96b00904e0c9604b9636d8eeab31115b08
+  RNFBFirestore: 5de4ae898df51a3ecc16a45db15019836c5cec87
+  RNFBRemoteConfig: 05d416f414ca721b5ea215eeea8bb47360b4ab00
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 

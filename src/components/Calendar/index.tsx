@@ -45,18 +45,18 @@ export const Calendar = memo(function Calendar() {
         onMonthDecrease={onMonthDecrease}
         date={calendar.date}
       />
-      {calendar.matrix.map((row, i) => (
+      {calendar.matrix.map((row, i) => 
         <View key={i} style={{ flexDirection: "row" }}>
-          {row.map(col => (
+          {row.map(col => 
             <CalendarDay
               key={col.id}
               onSelected={onSelected}
               day={col}
               selectedDay={calendar.selected}
             />
-          ))}
+          )}
         </View>
-      ))}
+      )}
     </View>
   );
 });
