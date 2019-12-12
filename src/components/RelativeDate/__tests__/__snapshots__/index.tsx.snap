@@ -63,7 +63,7 @@ exports[`RelativeDate component renders correctly on touch 1`] = `
       }
     }
   >
-    Jan 1 1970, 7:00 am
+    Dec 31 1969, 4:00 pm
   </Text>
 </View>
 `;
