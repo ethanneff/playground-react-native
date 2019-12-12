@@ -1,13 +1,13 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import {
   Animated,
   PanResponder,
   PanResponderInstance,
-  View
+  View,
+  LayoutChangeEvent
 } from "react-native";
 import { useColor, useNativeDriver, useNav } from "../../../hooks";
-import { useRootSelector, colorWithOpacity } from "../../../utils";
-import { getSmallestDimension } from "../../../models";
+import { colorWithOpacity, useRootSelector } from "../../../utils";
 import { Screen } from "../../../components";
 
 const charSize = 50;
@@ -22,15 +22,16 @@ export default memo(function Archero() {
   const color = useColor();
   const nav = useNav();
   const useDriver = useNativeDriver();
-  const { width, height } = useRootSelector(state => state.dimension.window);
-  const smallest = useRootSelector(getSmallestDimension);
-
+  const window = useRootSelector(state => state.dimension.window);
+  const [dimensions, setDimensions] = useState({ width: 1000, height: 1000 });
+  const { width, height } = dimensions;
+  const smallest = width > height ? height : width;
   const joystickSize = smallest / 3;
   const joystickCenter = joystickSize / 2;
   const thumbSize = joystickSize / 3;
   const initialJoystickLoc = {
     x: width / 2 - joystickCenter,
-    y: height - joystickSize - 50
+    y: height - joystickSize - 75
   };
   const initialCharLoc = {
     x: width / 2 - charSize / 2,
@@ -59,11 +60,9 @@ export default memo(function Archero() {
   const moveThumb = (dx: number, dy: number) => {
     const vx = getLimit(dx, thumbSize);
     const vy = getLimit(dy, thumbSize);
-    const zy = Math.sqrt(Math.pow(vx, 2) + Math.pow(vy, 2));
-    console.log(vx, vy, thumbSize, zy);
 
+    // const zy = Math.sqrt(Math.pow(vx, 2) + Math.pow(vy, 2));
     // Math.pow(thumbSize, 2) = Math.pow(vx, 2) + Math.pow(y, 2)
-
     Animated.spring(thumb, {
       toValue: { x: vx, y: vy },
       useNativeDriver: useDriver
@@ -71,7 +70,13 @@ export default memo(function Archero() {
   };
 
   const moveJoystick = (x0: number, y0: number) => {
-    const toValue = { x: x0 - joystickCenter, y: y0 - joystickCenter };
+    const offset = window.height - dimensions.height;
+    const offset2 = window.width - dimensions.width;
+    // TODO: handle joystick location better
+    const toValue = {
+      x: x0 - joystickCenter - offset2 / 2,
+      y: y0 - joystickCenter - offset / 2 - joystickSize / 1.5
+    };
     Animated.spring(joystick, { toValue, useNativeDriver: useDriver }).start();
   };
 
@@ -93,7 +98,9 @@ export default memo(function Archero() {
       moveJoystick(gestureState.x0, gestureState.y0);
     },
     onPanResponderMove: (_, gestureState) => {
+      // TODO: continue moving even if mouse is not moving
       moveCharacter(gestureState.dx, gestureState.dy);
+      // TODO: figure out bounds for controller
       moveThumb(gestureState.dx, gestureState.dy);
     },
     onPanResponderRelease: () => {
@@ -101,9 +108,15 @@ export default memo(function Archero() {
     }
   });
 
+  const onLayout = (event: LayoutChangeEvent) => {
+    const layout = event.nativeEvent.layout;
+    setDimensions({ width: layout.width, height: layout.height });
+  };
+
   return (
     <Screen onLeftPress={nav.to("portfolioLanding")} title="archero">
       <View
+        onLayout={onLayout}
         style={[{ flex: 1, backgroundColor: color.success }]}
         {...panGesture.panHandlers}
       >
@@ -111,7 +124,6 @@ export default memo(function Archero() {
           style={[
             character.getLayout(),
             {
-              position: "absolute",
               width: charSize,
               height: charSize,
               backgroundColor: color.brand
@@ -122,7 +134,6 @@ export default memo(function Archero() {
           style={[
             joystick.getLayout(),
             {
-              position: "absolute",
               justifyContent: "center",
               alignItems: "center",
               borderRadius: 500,
