@@ -1,10 +1,10 @@
-import React, { memo, useState } from "react";
-import { StyleSheet, View, ScrollView, TouchableOpacity } from "react-native";
+import React, { memo } from "react";
+import { StyleSheet, ScrollView } from "react-native";
 import { Screen, Text, TextInput, Card, Calendar } from "../../components";
 import { useColor, useNav } from "../../hooks";
 import { Theme } from "../../utils";
 
-export default memo(function DebugTemplate() {
+export default memo(function Journal() {
   const color = useColor();
   const nav = useNav();
   const styles = StyleSheet.create({
@@ -12,7 +12,12 @@ export default memo(function DebugTemplate() {
       paddingBottom: Theme.padding.p04
     }
   });
+  const form = {};
 
+  // TODO: form
+  // TODO: graph over time
+
+  console.log("journal");
   return (
     <Screen
       onLeftPress={nav.to("portfolioLanding")}
@@ -38,11 +43,7 @@ export default memo(function DebugTemplate() {
             onChangeText={() => undefined}
           />
 
-          <Text
-            overline
-            title="Additional objectives"
-            style={styles.overline}
-          />
+          <Text overline title="Additional objectives" style={styles.bottom} />
 
           <TextInput
             title="Secondary goal"
