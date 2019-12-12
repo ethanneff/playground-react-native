@@ -1,17 +1,19 @@
 import React, { memo } from "react";
-import { View } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import { Text } from "../Text";
 import { Button } from "../Button";
 import { Theme } from "../../utils";
 import dayjs from "dayjs";
 
 interface Props {
-  date: number;
+  unix: number;
   onMonthIncrease(): void;
   onMonthDecrease(): void;
+  onTitlePress(): void;
 }
 export const CalendarHeader = memo(function CalendarHeader({
-  date,
+  unix,
+  onTitlePress,
   onMonthIncrease,
   onMonthDecrease
 }: Props) {
@@ -22,12 +24,14 @@ export const CalendarHeader = memo(function CalendarHeader({
         iconSize={Theme.padding.p06}
         onPress={onMonthDecrease}
       />
-      <Text
-        h3
-        title={dayjs(date).format("MMMM YYYY")}
-        center
-        style={{ paddingBottom: Theme.padding.p04 }}
-      />
+      <TouchableOpacity onPress={onTitlePress}>
+        <Text
+          h3
+          title={dayjs(unix).format("MMMM YYYY")}
+          center
+          style={{ paddingBottom: Theme.padding.p04 }}
+        />
+      </TouchableOpacity>
       <Button
         icon={"chevron-right"}
         iconSize={Theme.padding.p06}
