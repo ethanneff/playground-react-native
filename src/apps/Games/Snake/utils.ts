@@ -14,7 +14,7 @@ export const addFood = (
   if (Object.keys(used).length === board.length) {
     return false;
   }
-  if (used.hasOwnProperty(combo) || board[x][y] !== 0) {
+  if (combo in used || board[x][y] !== 0) {
     used[combo] = true;
     addFood(board, used);
     return false;
@@ -40,6 +40,6 @@ export const generateBoard = (size: number) => {
 };
 
 export const nextSnakePosition = () => undefined;
-export const collision = () => undefined;
+export const collision = (next: any) => next && false;
 export const endGame = () => undefined;
 export const eat = () => undefined;
