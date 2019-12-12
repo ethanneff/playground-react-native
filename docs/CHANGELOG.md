@@ -1,5 +1,61 @@
 # Changelog
 
+# [2.13.0](https://github.com/ethanneff/example/compare/v2.12.2...v2.13.0) (2019-12-12)
+
+
+### Bug Fixes
+
+* add icon size to button ([f68c242](https://github.com/ethanneff/example/commit/f68c242))
+* add screen component for nav and resize container ([00d0f99](https://github.com/ethanneff/example/commit/00d0f99))
+* add secondary to text ([8efcb7d](https://github.com/ethanneff/example/commit/8efcb7d))
+* add state to prevent initial blank render ([ace8622](https://github.com/ethanneff/example/commit/ace8622))
+* add today highlight ([81e70ae](https://github.com/ethanneff/example/commit/81e70ae))
+* add touchable header to current date ([759838f](https://github.com/ethanneff/example/commit/759838f))
+* allow endgame ([0fe96e1](https://github.com/ethanneff/example/commit/0fe96e1))
+* change quotes ([981c0ca](https://github.com/ethanneff/example/commit/981c0ca))
+* clean up index into isolated files ([7faf515](https://github.com/ethanneff/example/commit/7faf515))
+* console log warnings ([a504840](https://github.com/ethanneff/example/commit/a504840))
+* correct card spacing horizontally ([934eb9b](https://github.com/ethanneff/example/commit/934eb9b))
+* correct linting ([b75cb5a](https://github.com/ethanneff/example/commit/b75cb5a))
+* correct undefined date crash ([c4dc45d](https://github.com/ethanneff/example/commit/c4dc45d))
+* lint ([a85383a](https://github.com/ethanneff/example/commit/a85383a))
+* linter hates hasOwnProperty ([41f23eb](https://github.com/ethanneff/example/commit/41f23eb))
+* memo calendar day for faster queries ([1f24301](https://github.com/ethanneff/example/commit/1f24301))
+* misc cleanup ([6c37b8d](https://github.com/ethanneff/example/commit/6c37b8d))
+* move tick to a hook to prevent memory leak ([6f870a8](https://github.com/ethanneff/example/commit/6f870a8))
+* pass down key to cell ([2baafca](https://github.com/ethanneff/example/commit/2baafca))
+* pass key to cell ([ae6b987](https://github.com/ethanneff/example/commit/ae6b987))
+* refactor snake to use hooks without errors ([5d96107](https://github.com/ethanneff/example/commit/5d96107))
+* relocate calendar to reusable component ([4f2e7db](https://github.com/ethanneff/example/commit/4f2e7db))
+* relocate modal to component ([17bff80](https://github.com/ethanneff/example/commit/17bff80))
+* relocated calendar helper methods ([b0b06a3](https://github.com/ethanneff/example/commit/b0b06a3))
+* relocated logic to isolated file ([59aba59](https://github.com/ethanneff/example/commit/59aba59))
+* remove props for key ([511658f](https://github.com/ethanneff/example/commit/511658f))
+* remove unused import ([af17090](https://github.com/ethanneff/example/commit/af17090))
+* rename to gameloop and add start and stop ([8606e4a](https://github.com/ethanneff/example/commit/8606e4a))
+* update deps ([5f95737](https://github.com/ethanneff/example/commit/5f95737))
+* update deps ([0a8cdc8](https://github.com/ethanneff/example/commit/0a8cdc8))
+* update deps ([379d31e](https://github.com/ethanneff/example/commit/379d31e))
+* update linting for calendar ([511ee95](https://github.com/ethanneff/example/commit/511ee95))
+* update snaps ([22577e7](https://github.com/ethanneff/example/commit/22577e7))
+* update snaps ([f0339f4](https://github.com/ethanneff/example/commit/f0339f4))
+* why is geometry so hard ([33fa590](https://github.com/ethanneff/example/commit/33fa590))
+
+
+### Features
+
+* add boilerplate journal screen ([5920e3b](https://github.com/ethanneff/example/commit/5920e3b))
+* add calendar component ([e99e1a8](https://github.com/ethanneff/example/commit/e99e1a8))
+* add calendar header for nav back and forth ([57713e4](https://github.com/ethanneff/example/commit/57713e4))
+* add snake board ([330410a](https://github.com/ethanneff/example/commit/330410a))
+* add snake cell ([41d124b](https://github.com/ethanneff/example/commit/41d124b))
+* add snake controls ([0a0739b](https://github.com/ethanneff/example/commit/0a0739b))
+* create archero joystick ([2435ae6](https://github.com/ethanneff/example/commit/2435ae6))
+* create archero screen ([00267de](https://github.com/ethanneff/example/commit/00267de))
+* create calendar ([8655f11](https://github.com/ethanneff/example/commit/8655f11))
+* move gesture to hook ([7cd7ce9](https://github.com/ethanneff/example/commit/7cd7ce9))
+* render snake ([1bb22e9](https://github.com/ethanneff/example/commit/1bb22e9))
+
 ## [2.12.2](https://github.com/ethanneff/example/compare/v2.12.1...v2.12.2) (2019-12-03)
 
 
