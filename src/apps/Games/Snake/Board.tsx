@@ -8,13 +8,12 @@ interface BoardProps {
 }
 
 export const Board = memo(function Board({ board }: BoardProps) {
-  console.log("board");
   return (
     <View style={{ flex: 1, justifyContent: "center" }}>
       {board.map((x, i) => 
-        <View style={{ flexDirection: "row" }} key={`row-${i}`}>
+        <View key={i} style={{ flexDirection: "row" }}>
           {x.map((y, j) => 
-            <Cell x={i} y={j} value={y} length={board.length} />
+            <Cell key={`cell-${i}${j}`} value={y} length={board.length} />
           )}
         </View>
       )}
