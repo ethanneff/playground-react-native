@@ -4,6 +4,7 @@ import { View, TouchableOpacity } from "react-native";
 import { Theme } from "../../utils";
 import { Day } from "./utils";
 import { Text } from "../Text";
+import dayjs from "dayjs";
 
 interface Props {
   day: Day;
@@ -18,7 +19,7 @@ export const CalendarDay = memo(function CalendarDay({
 }: Props) {
   const color = useColor();
   const selected = day.id === selectedDay;
-  const today = false; // TODO:
+  const today = dayjs(day.id).isSame(dayjs(), "day");
   const backgroundColor = day.header
     ? color.background
     : selected
