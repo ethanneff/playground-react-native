@@ -16,7 +16,7 @@ const getDay = (
   header = false
 ): Day => ({ id, display: String(display), current, header });
 
-const getEpoch = (today: Dayjs, month: number, day: number) =>
+const getUnix = (today: Dayjs, month: number, day: number) =>
   String(
     today
       .add(month, "month")
@@ -45,10 +45,10 @@ export const getCalendarMatrix = (date: Dayjs): CalendarMatrix => {
     for (let col = 0; col < 7; col++) {
       calendarMatrix[row][col] =
         row === 1 && col < firstDay
-          ? getDay(getEpoch(date, -1, prevDayCounter), prevDayCounter++)
+          ? getDay(getUnix(date, -1, prevDayCounter), prevDayCounter++)
           : row > 1 && dayCounter > maxDays
-          ? getDay(getEpoch(date, 1, nextDayCounter), nextDayCounter++)
-          : getDay(getEpoch(date, 0, dayCounter), dayCounter++, true);
+          ? getDay(getUnix(date, 1, nextDayCounter), nextDayCounter++)
+          : getDay(getUnix(date, 0, dayCounter), dayCounter++, true);
     }
   }
   return calendarMatrix;
