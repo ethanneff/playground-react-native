@@ -41,7 +41,7 @@ export const Calendar = memo(function Calendar() {
 
   const onTitlePress = useCallback(() => {
     setCalendar(setState(today));
-  }, [calendar.unix]);
+  }, []);
 
   return (
     <View>
@@ -51,18 +51,18 @@ export const Calendar = memo(function Calendar() {
         onMonthDecrease={onMonthDecrease}
         unix={calendar.unix}
       />
-      {calendar.matrix.map((row, i) => (
+      {calendar.matrix.map((row, i) => 
         <View key={i} style={{ flexDirection: "row" }}>
-          {row.map(col => (
+          {row.map(col => 
             <CalendarDay
               key={col.id}
               onSelected={onSelected}
               day={col}
               selectedDay={calendar.selected}
             />
-          ))}
+          )}
         </View>
-      ))}
+      )}
     </View>
   );
 });
