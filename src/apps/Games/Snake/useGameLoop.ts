@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useState, useRef } from "react";
 
 export type Frame = {
   start: number;
@@ -6,37 +6,46 @@ export type Frame = {
   count: number;
 };
 
-export const useGameLoop = (next: (frame: Frame) => void) => {
-  const fps = 16;
+const initialFrame = () => {
   const now = Date.now();
-  let off = false;
-  let frame: Frame = { start: now, current: now, count: 0 };
-  let timer: any;
+  return { start: now, current: now, count: 0 };
+};
+
+export const useGameLoop = () => {
+  const fps = 16;
+  const off = useRef(false);
+  const [frame, setFrame] = useState<Frame>(initialFrame());
 
   const loop = useCallback(() => {
-    if (off) {return;}
-    timer = setTimeout(() => {
+    if (off.current) {
+      return;
+    }
+    const timer = setTimeout(() => {
       clearTimeout(timer);
-      if (off) {return;}
-      frame = { ...frame, current: Date.now(), count: frame.count + 1 };
-      next(frame);
+      if (off.current) {
+        return;
+      }
+      setFrame(prev => ({
+        ...prev,
+        current: Date.now(),
+        count: prev.count + 1
+      }));
       loop();
     }, fps);
-  }, [fps, frame]);
+  }, [off]);
 
   const start = useCallback(() => {
-    off = false;
+    off.current = false;
     loop();
-  }, [timer]);
+  }, [loop]);
 
   const stop = useCallback(() => {
-    off = true;
-    const now = Date.now();
-    frame = { start: now, current: now, count: 0 };
-    clearTimeout(timer);
-  }, [frame, timer]);
+    off.current = true;
+    setFrame(initialFrame());
+  }, []);
 
   return {
+    frame,
     start,
     stop
   };
