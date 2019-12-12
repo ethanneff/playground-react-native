@@ -12,12 +12,10 @@ export default memo(function Journal() {
       paddingBottom: Theme.padding.p04
     }
   });
-  const form = {};
 
   // TODO: form
   // TODO: graph over time
 
-  console.log("journal");
   return (
     <Screen
       onLeftPress={nav.to("portfolioLanding")}
