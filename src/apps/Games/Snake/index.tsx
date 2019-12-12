@@ -12,8 +12,8 @@ import {
   eat
 } from "./utils";
 import { Board } from "./Board";
-import { Frame, useGameLoop } from "./useGameLoop";
-import { useGesture, Direction } from "./useGesture";
+import { useGameLoop } from "./useGameLoop";
+import { useGesture } from "./useGesture";
 import { EndGame } from "./EndGame";
 
 type State = "init" | "on" | "off";
@@ -27,24 +27,31 @@ export default memo(function Snake() {
   const color = useColor();
   const nav = useNav();
   const size = 20;
-  let direction: Direction = "up";
   const [game, setGame] = useState<Game>({
     board: generateBoard(size),
     state: "init"
   });
+  const gesture = useGesture();
+  const { start, stop, frame } = useGameLoop();
 
-  const gesture = useGesture(value => {
-    direction = value;
-  });
+  const startGame = useCallback(() => {
+    const board = generateBoard(size);
+    addStarting(board);
+    addFood(board);
+    setGame({ board, state: "on" });
+    start();
+  }, [start]);
 
-  const gameLoop = useGameLoop(frame => {
-    updateGame(frame);
-  });
+  const finishGame = useCallback(() => {
+    setGame(prev => ({ ...prev, state: "off" }));
+    stop();
+  }, [stop]);
 
-  const updateGame = (frame: Frame) => {
-    if (game.state === "off") {return;}
-    console.log(frame, direction);
-    const next = nextSnakePosition(direction, game.board);
+  useEffect(() => {
+    if (game.state === "off") {
+      return;
+    }
+    const next = nextSnakePosition();
     if (collision(next) || frame.count >= 100) {
       finishGame();
       return;
@@ -52,28 +59,17 @@ export default memo(function Snake() {
     if (eat()) {
       addFood(game.board);
     }
-  };
-
-  const startGame = useCallback(() => {
-    const board = generateBoard(size);
-    addStarting(board);
-    addFood(board);
-    setGame({ board, state: "on" });
-    gameLoop.start();
-  });
-
-  const finishGame = useCallback(() => {
-    setGame(game => ({ ...game, state: "off" }));
-    gameLoop.stop();
-  });
+  }, [frame, game.state, game.board, finishGame]);
 
   useEffect(() => {
     startGame();
     return () => finishGame();
   }, [finishGame, startGame]);
 
-  if (game.state === "init") {return;}
-  console.log("snake");
+  if (game.state === "init") {
+    return null;
+  }
+
   return (
     <>
       <Screen onLeftPress={nav.to("portfolioLanding")} title="snake">
