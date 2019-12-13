@@ -11153,7 +11153,7 @@ npm-cache-filename@~1.0.2:
   resolved "https://registry.yarnpkg.com/npm-cache-filename/-/npm-cache-filename-1.0.2.tgz#ded306c5b0bfc870a9e9faf823bc5f283e05ae11"
   integrity sha1-3tMGxbC/yHCp6fr4I7xfKD4FrhE=
 
-npm-check-updates@4.0.1:
+npm-check-updates@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-4.0.1.tgz#9a4cb95bba95b59380a0175c1f4713dad6e439ab"
   integrity sha512-rDrKAqhQuTYq2EkndroPMZGA9N6tpTotOVOIJoxRa3ZKnb/mOcq2TZv4A4LLSM8+9kZlP+sBwE+XAGh8wWZw/w==
@@ -13389,10 +13389,10 @@ react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.10.1.tgz#0612786bf19df406502d935494f0450b40b8294f"
   integrity sha512-BXUMf9sIOPXXZWqr7+c5SeOKJykyVr2u0UDzEf4LNGc6taGkQe1A9DFD07umCIXz45RLr9oAAwZbAJ0Pkknfaw==
 
-react-native-device-info@5.3.1:
-  version "5.3.1"
-  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-5.3.1.tgz#d764732c4841b6b6c2f42516e8840075717ea88a"
-  integrity sha512-e/fRDoah+HxItscOJTGJY8zyVKmBUdf53VWIDGLGV4VVZ0mfzIQ2uo0ULGri0vjGUYqgyqgnW3jybPSznMxKcA==
+react-native-device-info@5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-5.4.0.tgz#c837afdfc7947eef0a09c1bf2f3beb127d31458b"
+  integrity sha512-57IZQ7IavRlNZvI1cKypMkjRPa7nmLK6jYVSrvPMYX2VrCszmgJKlP90cZZaX0FObtNt1yYuKAOkBqyjkNrTIA==
 
 react-native-iphone-x-helper@^1.0.3:
   version "1.2.1"
