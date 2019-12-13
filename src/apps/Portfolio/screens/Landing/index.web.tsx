@@ -20,10 +20,19 @@ export default memo(function PortfolioLanding() {
         <Button title="Settings" onPress={nav.to("portfolioSettings")} />
       </View>
       <View style={styles.row}>
-        <Button title="Debug" onPress={nav.to("debug")} />
         <Button title="Checklist" onPress={nav.to("checklists")} />
         <Button title="CantHurtMe" onPress={nav.to("cantHurtMe")} />
         <Button title="Focus" onPress={nav.to("focus")} />
+        <Button title="Journal" onPress={nav.to("journal")} />
+      </View>
+      <View style={styles.row}>
+        <Button title="FlappyBird" onPress={nav.to("gamesFlappyBird")} />
+        <Button title="Snake" onPress={nav.to("gamesSnake")} />
+        <Button title="PapiJump" onPress={nav.to("gamesPapiJump")} />
+        <Button title="Archero" onPress={nav.to("gamesArchero")} />
+      </View>
+      <View style={styles.row}>
+        <Button title="Debug" onPress={nav.to("debug")} />
       </View>
     </Screen>
   );
