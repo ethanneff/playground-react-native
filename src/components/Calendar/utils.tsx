@@ -39,7 +39,7 @@ export const getCalendarMatrix = (date: Dayjs): CalendarMatrix => {
   let prevDayCounter = prevMaxDays - firstDay + 1;
   let nextDayCounter = 1;
   const calendarMatrix: CalendarMatrix = [];
-  calendarMatrix.push(days.map(day => getDay(day, day, false, false)));
+  calendarMatrix.push(days.map(day => getDay(day, day, false, true)));
   for (let row = 1; row < 7; row++) {
     calendarMatrix[row] = [];
     for (let col = 0; col < 7; col++) {
