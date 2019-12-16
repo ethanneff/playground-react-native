@@ -80,6 +80,7 @@ export const Card: React.FC<Props> = memo(
         onPress={onPress && onPress}
         onLongPress={onLongPress && onLongPress}
         activeOpacity={onPress ? touchOpacity : 1}
+        disabled={!onPress || !onLongPress}
       >
         <View style={contentStyles}>{children}</View>
       </TouchableOpacity>
