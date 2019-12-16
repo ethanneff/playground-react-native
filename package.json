@@ -24,6 +24,7 @@
     "@mdi/react": "1.2.1",
     "@react-native-community/async-storage": "1.7.1",
     "@react-native-community/netinfo": "5.0.0",
+    "@react-native-community/slider": "^2.0.8",
     "@react-native-firebase/analytics": "6.2.0",
     "@react-native-firebase/app": "6.2.0",
     "@react-native-firebase/auth": "6.2.0",
