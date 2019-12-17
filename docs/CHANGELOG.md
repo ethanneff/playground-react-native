@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.13.1](https://github.com/ethanneff/example/compare/v2.13.0...v2.13.1) (2019-12-13)
+
+
+### Bug Fixes
+
+* add navigation to web ([7601770](https://github.com/ethanneff/example/commit/7601770))
+* update deps ([20ea766](https://github.com/ethanneff/example/commit/20ea766))
+
 # [2.13.0](https://github.com/ethanneff/example/compare/v2.12.2...v2.13.0) (2019-12-12)
 
 
