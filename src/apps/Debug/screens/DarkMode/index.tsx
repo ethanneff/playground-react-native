@@ -1,8 +1,12 @@
 // TODO: slider on web
 import React, { memo, useState } from "react";
 import { FlatList, Image, ImageSourcePropType, View } from "react-native";
-import { Button, Card, Screen, Text } from "../../../../components";
-import { ColorTheme, changeTheme } from "../../../../models";
+import { Button, Card, Screen, Text, Masonry } from "../../../../components";
+import {
+  ColorTheme,
+  changeTheme,
+  getLandscapeOrientation
+} from "../../../../models";
 import { Theme, useRootDispatch, useRootSelector } from "../../../../utils";
 import { useColor, useNav } from "../../../../hooks";
 import Slider from "@react-native-community/slider";
@@ -19,7 +23,7 @@ const image = require("../../../../assets/placeholder.png");
 const cards: Card[] = [
   {
     title: "Marketing",
-    value: "123.4 M"
+    value: "12.4 M"
   },
   {
     target: "+22% of target",
@@ -30,12 +34,13 @@ const cards: Card[] = [
     chart: image,
     target: "+12.3 of target",
     title: "Conversion",
-    value: "432.1 M"
+    value: "42.1 M"
   },
   {
     target: "11% of target",
     title: "Sales",
-    value: "345.8 M"
+    value: "35.8 M",
+    chart: image
   },
   {
     button: "save",
@@ -53,7 +58,7 @@ const cards: Card[] = [
   },
   {
     title: "Bounce rate",
-    value: "13%"
+    value: "12%"
   }
 ];
 
@@ -64,59 +69,71 @@ export default memo(function DarkMode() {
   const nav = useNav();
   const currentTheme = useRootSelector(state => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
-  const [elevation, setElevation] = useState(0);
+  const [elevation, setElevation] = useState(2);
   const handleSlider = (value: number) => setElevation(value);
+  const landscape = useRootSelector(getLandscapeOrientation);
+  const columns = landscape ? 5 : 3;
 
   return (
-    <Screen onLeftPress={nav.to("debug")} title="Dark mode" gutter>
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between"
-        }}
-      >
-        <Text title="theme: " />
-        <FlatList
-          horizontal
-          keyExtractor={item => item}
-          data={themes}
-          renderItem={({ item }) => (
-            <Button
-              key={item}
-              title={item}
-              onPress={themePress(item)}
-              contained={currentTheme === item}
-              secondary={currentTheme !== item}
-            />
-          )}
+    <Screen onLeftPress={nav.to("debug")} title="Dark mode">
+      <View style={{ padding: Theme.padding.p04 }}>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center"
+          }}
+        >
+          <Text title="theme: " />
+          <FlatList
+            horizontal
+            keyExtractor={item => item}
+            data={themes}
+            renderItem={({ item }) => 
+              <Button
+                key={item}
+                title={item}
+                onPress={themePress(item)}
+                contained={currentTheme === item}
+                secondary={currentTheme !== item}
+              />
+            }
+          />
+        </View>
+        <Text title={`elevation: ${elevation}`} />
+        <Slider
+          minimumTrackTintColor={color.primary}
+          value={elevation}
+          onValueChange={handleSlider}
+          step={1}
+          maximumValue={10}
+          minimumValue={0}
         />
       </View>
-      <Text title={`elevation: ${elevation}`} />
-      <Slider
-        minimumTrackTintColor={color.primary}
-        value={elevation}
-        onValueChange={handleSlider}
-        step={1}
-        maximumValue={10}
-        minimumValue={0}
-      />
       <Text title="Weekly Stats" h2 center />
-      <FlatList
-        numColumns={2}
-        extraData={elevation}
-        keyExtractor={item => item.title}
+      <Masonry
         data={cards}
-        renderItem={({ item }) => (
-          <Card elevation={elevation} onPress={() => undefined} touchable flex>
+        numColumns={columns}
+        renderItem={({ item, index }: { item: Card; index: number }) => 
+          <Card
+            elevation={elevation}
+            onPress={() => undefined}
+            touchable
+            key={index}
+          >
             <Text title={item.title} overline />
             <Text
               title={item.value}
               h3
-              style={{ paddingVertical: Theme.padding.p02 }}
+              style={{ marginTop: Theme.padding.p02 }}
             />
-            <Text title={item.target} body2 />
-            {item.chart && (
+            {item.target && 
+              <Text
+                title={item.target}
+                body2
+                style={{ marginTop: Theme.padding.p02 }}
+              />
+            }
+            {item.chart && 
               <Image
                 source={item.chart}
                 style={{
@@ -126,9 +143,16 @@ export default memo(function DarkMode() {
                   width: "100%"
                 }}
               />
-            )}
+            }
+            {item.button && 
+              <Button
+                contained
+                title={item.button}
+                buttonStyle={{ marginTop: Theme.padding.p02 }}
+              />
+            }
           </Card>
-        )}
+        }
       />
     </Screen>
   );
