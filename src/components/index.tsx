@@ -12,3 +12,5 @@ export * from "./Dialog";
 export * from "./Loading";
 export * from "./Modal";
 export * from "./Calendar";
+export * from "./Activity";
+export * from "./Masonry";
