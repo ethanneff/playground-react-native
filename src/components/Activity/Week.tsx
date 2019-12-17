@@ -4,10 +4,11 @@ import { useColor } from "../../hooks";
 import { ActivityDayInWeek, ActivityDay } from "./utils";
 import { Text } from "../Text";
 import dayjs from "dayjs";
-import { Theme } from "../../utils";
+import { Theme, colorWithOpacity } from "../../utils";
 
 interface Props {
   item: ActivityDayInWeek;
+  max: number;
   index: number;
   size: number;
   margin: number;
@@ -16,6 +17,7 @@ interface Props {
 
 export const ActivityWeek = memo(function ActivityWeek({
   item,
+  max,
   index,
   size,
   margin,
@@ -35,7 +37,10 @@ export const ActivityWeek = memo(function ActivityWeek({
         style={{ paddingBottom: Theme.padding.p03 }}
       />
       {item.map(day => {
-        const backgroundColor = day.count > 0 ? color.light : color.success; // TODO: test colors because light is too light
+        const backgroundColor =
+          day.count === 0
+            ? color.light
+            : colorWithOpacity(color.success, day.count / max); // TODO: test colors because light is too light
         const borderColor = day.date.isSame(dayjs(), "day")
           ? color.danger
           : color.background;

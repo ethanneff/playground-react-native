@@ -33,12 +33,13 @@ export const Activity = memo(function Activity({
     <>
       <FlatList
         showsHorizontalScrollIndicator={false}
-        data={activity}
+        data={activity.matrix}
         inverted
         horizontal
         keyExtractor={item => item[0].date.format("MM-DD")}
         renderItem={({ item, index }) => 
           <ActivityWeek
+            max={activity.max}
             item={item}
             index={index}
             size={size}
