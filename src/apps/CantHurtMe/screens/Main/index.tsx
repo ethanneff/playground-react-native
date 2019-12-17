@@ -27,44 +27,45 @@ export default memo(function CantHurtMeMain() {
     <>
       <Screen
         border
-        gutter
         onLeftPress={nav.to("portfolioLanding")}
         title="Can't Hurt Me"
       >
-        <FlatList
-          keyExtractor={keyExtractor}
-          key={columns}
-          data={app.goals.orderById}
-          renderItem={Item}
-          numColumns={columns}
-          ListHeaderComponent={
-            <>
-              <Header title="Progress" />
-              <Card>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between"
-                  }}
-                >
-                  <ProfileLevel onPress={handleProfilePress} />
-                  <Button
-                    icon="settings"
-                    onPress={handleSettingsPress}
-                    neutral
-                    fab
-                    center
-                  />
-                </View>
-                <DailyProgress />
-              </Card>
-              <Header title="Challenges" />
-            </>
-          }
-          ListFooterComponent={
-            <View style={{ paddingBottom: Theme.padding.p04 }} />
-          }
-        />
+        <View style={{ marginHorizontal: Theme.padding.p04 }}>
+          <FlatList
+            keyExtractor={keyExtractor}
+            key={columns}
+            data={app.goals.orderById}
+            renderItem={Item}
+            numColumns={columns}
+            ListHeaderComponent={
+              <View>
+                <Header title="Progress" />
+                <Card>
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      justifyContent: "space-between"
+                    }}
+                  >
+                    <ProfileLevel onPress={handleProfilePress} />
+                    <Button
+                      icon="settings"
+                      onPress={handleSettingsPress}
+                      neutral
+                      fab
+                      center
+                    />
+                  </View>
+                  <DailyProgress />
+                </Card>
+                <Header title="Challenges" />
+              </View>
+            }
+            ListFooterComponent={
+              <View style={{ paddingBottom: Theme.padding.p04 }} />
+            }
+          />
+        </View>
       </Screen>
       {showModal.profile && 
         <Dialog

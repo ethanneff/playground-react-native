@@ -7,7 +7,12 @@ export const Item = (props: { item: string; index: number }) => {
   const { item, index } = props;
   const data = app.goals.byId[item];
   return (
-    <Card key={data.id} flex onPress={() => undefined}>
+    <Card
+      key={data.id}
+      flex
+      onPress={() => undefined}
+      style={{ marginHorizontal: Theme.padding.p02 }}
+    >
       <Text
         title={`Challenge #${index + 1}`}
         center
