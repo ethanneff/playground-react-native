@@ -1,6 +1,13 @@
 import React, { memo } from "react";
 import { StyleSheet, ScrollView } from "react-native";
-import { Screen, Text, TextInput, Card, Calendar } from "../../components";
+import {
+  Screen,
+  Text,
+  TextInput,
+  Card,
+  Calendar,
+  Activity
+} from "../../components";
 import { useColor, useNav } from "../../hooks";
 import { Theme } from "../../utils";
 
@@ -13,15 +20,16 @@ export default memo(function Journal() {
     }
   });
 
-  // TODO: form
-  // TODO: graph over time
-
   return (
     <Screen
       onLeftPress={nav.to("portfolioLanding")}
       title="nope"
       style={{ backgroundColor: color.surface }}
     >
+      <Card>
+        <Text h2 title="Activity" style={styles.bottom} />
+        <Activity />
+      </Card>
       <Card>
         <Text h2 title="Calendar" style={styles.bottom} />
         <Calendar />
