@@ -48,9 +48,7 @@ export default memo(function Journal() {
             value={""}
             onChangeText={() => undefined}
           />
-
           <Text overline title="Additional objectives" style={styles.bottom} />
-
           <TextInput
             title="Secondary goal"
             placeholder="fill me"
