@@ -160,7 +160,7 @@ module.exports = {
     complexity: "error",
     strict: "error",
 
-    "import/no-cycle": "error", // no circular dependencies
+    // "import/no-cycle": "error", // no circular dependencies // TODO: re-enable but prevent `parseForESLint` from `yarn lint`
     "react/display-name": "off", // breaks with react.memo
     "react/prop-types": "off", // typescript instead
     "@typescript-eslint/no-var-requires": "off", // react-native images
