@@ -45,6 +45,7 @@ const fontWeight: { [key: string]: FontWeight } = {
 };
 
 /* SIZING https://material.io/design/typography/the-type-system.html#applying-the-type-scale */
+const scaling = 1.5;
 const fontSize = {
   body1: {
     fontSize: 16,
@@ -67,32 +68,32 @@ const fontSize = {
     letterSpacing: 0.4
   },
   h1: {
-    fontSize: 96 / 2,
+    fontSize: 96 / scaling,
     fontWeight: fontWeight.light,
     letterSpacing: -1.5
   },
   h2: {
-    fontSize: 60 / 2,
+    fontSize: 60 / scaling,
     fontWeight: fontWeight.light,
     letterSpacing: -0.5
   },
   h3: {
-    fontSize: 48 / 2,
+    fontSize: 48 / scaling,
     fontWeight: fontWeight.regular,
     letterSpacing: 0
   },
   h4: {
-    fontSize: 34 / 2,
+    fontSize: 34 / scaling,
     fontWeight: fontWeight.regular,
     letterSpacing: 0.25
   },
   h5: {
-    fontSize: 24 / 2,
+    fontSize: 24 / scaling,
     fontWeight: fontWeight.regular,
     letterSpacing: 0
   },
   h6: {
-    fontSize: 20 / 2,
+    fontSize: 20 / scaling,
     fontWeight: fontWeight.medium,
     letterSpacing: 0.15
   },
