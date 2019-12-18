@@ -1,15 +1,5 @@
 const color = {
-  background: "hsl(0, 100%, 100%)",
-  brand: "hsl(264, 34%, 36%)",
-  danger: "hsl(354, 70%, 54%)",
-  dark: "hsl(210, 10%, 23%)",
-  info: "hsl(188, 78%, 41%)",
-  light: "hsl(210, 17%, 98%)",
-  primary: "hsl(211, 100%, 50%)",
-  secondary: "hsl(208, 7%, 46%)",
-  success: "hsl(134, 61%, 41%)",
-  text: "hsl(0, 0%, 0%)",
-  warning: "hsl(45, 100%, 51%)"
+  overlay: "hsla(0,0%,0%, 0.38)"
 };
 
 const padding = {
