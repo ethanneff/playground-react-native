@@ -37,7 +37,7 @@ export const getStyles = (
     },
     container: {
       alignItems: "center",
-      backgroundColor: color.background,
+      backgroundColor: outlined ? color.background : "transparent",
       borderColor: outlined ? color.dark : "transparent",
       borderRadius: Theme.padding.p01,
       borderWidth: 1,
