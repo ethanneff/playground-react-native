@@ -1,5 +1,53 @@
 # Changelog
 
+# [2.14.0](https://github.com/ethanneff/example/compare/v2.13.1...v2.14.0) (2019-12-19)
+
+
+### Bug Fixes
+
+* add background to outline button ([6f01781](https://github.com/ethanneff/example/commit/6f01781))
+* add dropshadow hook ([0dff7e1](https://github.com/ethanneff/example/commit/0dff7e1))
+* add dropshadow to modal and dialog ([36de9be](https://github.com/ethanneff/example/commit/36de9be))
+* add process for jest tests ([3cce3e0](https://github.com/ethanneff/example/commit/3cce3e0))
+* add props to activity ([96f49c5](https://github.com/ethanneff/example/commit/96f49c5))
+* add purge comment ([df1ef90](https://github.com/ethanneff/example/commit/df1ef90))
+* add slider native component ([27f047a](https://github.com/ethanneff/example/commit/27f047a))
+* add touchable prop for card disable ([3ce5ec6](https://github.com/ethanneff/example/commit/3ce5ec6))
+* allow scrollviews within cards ([5991df0](https://github.com/ethanneff/example/commit/5991df0))
+* change nav colors to be better in dark mode ([039e098](https://github.com/ethanneff/example/commit/039e098))
+* correct linting for activity ([74565a3](https://github.com/ethanneff/example/commit/74565a3))
+* make calendar headers not clickable ([6804ffd](https://github.com/ethanneff/example/commit/6804ffd))
+* make journal use activity component ([89c6058](https://github.com/ethanneff/example/commit/89c6058))
+* make slider work for web ([c380454](https://github.com/ethanneff/example/commit/c380454))
+* pass max count for opacity colors ([e589502](https://github.com/ethanneff/example/commit/e589502))
+* prevent parseForESLint from lint ([5cee597](https://github.com/ethanneff/example/commit/5cee597))
+* prevent peek in vscode ([29a8a8a](https://github.com/ethanneff/example/commit/29a8a8a))
+* refactor debug search to functional ([d11d5dc](https://github.com/ethanneff/example/commit/d11d5dc))
+* remove flatlist for array ([c347a27](https://github.com/ethanneff/example/commit/c347a27))
+* remove horizontal margin on card ([d9bd1b8](https://github.com/ethanneff/example/commit/d9bd1b8))
+* remove referenced to theme.color ([184fc8c](https://github.com/ethanneff/example/commit/184fc8c))
+* remove references of theme.color ([51f1639](https://github.com/ethanneff/example/commit/51f1639))
+* remove unused colors ([08f73bc](https://github.com/ethanneff/example/commit/08f73bc))
+* resize font so h6 is not so small ([705b0b6](https://github.com/ethanneff/example/commit/705b0b6))
+* share dropshadow with card and button ([80b30d2](https://github.com/ethanneff/example/commit/80b30d2))
+* simplify colors ([ce0279d](https://github.com/ethanneff/example/commit/ce0279d))
+* simplify colors ([4b707c7](https://github.com/ethanneff/example/commit/4b707c7))
+* simplify colors ([c9fc638](https://github.com/ethanneff/example/commit/c9fc638))
+* update deps ([6a4780e](https://github.com/ethanneff/example/commit/6a4780e))
+* update deps ([2500baa](https://github.com/ethanneff/example/commit/2500baa))
+* update deps ([af9c0ed](https://github.com/ethanneff/example/commit/af9c0ed))
+* update snaps ([76ea725](https://github.com/ethanneff/example/commit/76ea725))
+
+
+### Features
+
+* add debug color ([a03cd69](https://github.com/ethanneff/example/commit/a03cd69))
+* add high medium low text colors ([ae8d7b9](https://github.com/ethanneff/example/commit/ae8d7b9))
+* create activity component ([d240441](https://github.com/ethanneff/example/commit/d240441))
+* create masonry component ([df906b4](https://github.com/ethanneff/example/commit/df906b4))
+* make darkmode use masonry ([ecfa530](https://github.com/ethanneff/example/commit/ecfa530))
+* update button component with colors ([f63fe69](https://github.com/ethanneff/example/commit/f63fe69))
+
 ## [2.13.1](https://github.com/ethanneff/example/compare/v2.13.0...v2.13.1) (2019-12-13)
 
 
