@@ -5,11 +5,11 @@ import {
   TouchableWithoutFeedback,
   View
 } from "react-native";
-import { Theme, colorWithOpacity } from "../../utils";
+import { Theme } from "../../utils";
 import { Button } from "../Button";
 import { Card } from "../Card";
 import { Text } from "../Text";
-import { useColor, useNativeDriver } from "../../hooks";
+import { useNativeDriver } from "../../hooks";
 
 interface OwnProps {
   testID?: string;
@@ -38,7 +38,6 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
   testID
 }) {
   const nativeDriver = useNativeDriver();
-  const color = useColor();
   const styles = StyleSheet.create({
     buttonContainer: {
       flexDirection: "row",
@@ -68,7 +67,7 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
     },
     overlay: {
       alignItems: "center",
-      backgroundColor: colorWithOpacity(color.black),
+      backgroundColor: Theme.color.overlay,
       flex: 1,
       flexDirection: "column",
       justifyContent: "center",
