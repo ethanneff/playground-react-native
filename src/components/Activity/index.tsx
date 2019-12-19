@@ -1,10 +1,9 @@
-import { FlatList, View } from "react-native";
-import React, { memo, useCallback, useState } from "react";
+import { FlatList } from "react-native";
+import React, { memo } from "react";
 import { Theme } from "../../utils";
-import { getActivitySquares } from "./utils";
+import { getActivitySquares, ActivityDay } from "./utils";
 import { ActivityWeek } from "./Week";
 import { Text } from "../Text";
-import { useColor } from "../../hooks";
 
 type Site = "github" | "leetcode" | "hackerrank";
 
@@ -16,19 +15,14 @@ interface Props {
 }
 
 export const Activity = memo(function Activity({
-  username,
-  site,
   size = Theme.padding.p06,
   margin = 1
 }: Props) {
   // TODO: handle username
   // TODO: handle site
-  const color = useColor();
+
   const activity = getActivitySquares();
-  const [selected, setSelected] = useState();
-  const onPress = item => () => {
-    // setSelected(item);
-  };
+  const onPress = (item: ActivityDay) => () => item;
   return (
     <>
       <FlatList

@@ -2,6 +2,9 @@ import dayjs, { Dayjs } from "dayjs";
 
 const getApiCount = (unix: number) => {
   // look at {date: count}
+  if (!unix) {
+    return 0;
+  }
   return Math.floor(Math.random() * 10);
 };
 
