@@ -1,50 +1,17 @@
-import React from "react";
+import React, { useState, memo, useEffect, useCallback } from "react";
 import {
   Animated,
-  EmitterSubscription,
   FlatList,
   Keyboard,
   Platform,
   StyleSheet,
   View
 } from "react-native";
-import { connect } from "react-redux";
 import { Icon, Screen, Text, TextInput } from "../../../../components";
-import { NavigationScreen, navigate } from "../../../../models";
 import { Config, Theme, colorWithOpacity } from "../../../../utils";
+import { useNav, useColor } from "../../../../hooks";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  header: {
-    backgroundColor: Theme.color.light,
-    height: Theme.padding.p20,
-    justifyContent: "center",
-    padding: Theme.padding.p02
-  },
-  item: {
-    borderBottomColor: Theme.color.light,
-    borderWidth: 0.2,
-    padding: Theme.padding.p06
-  },
-  text: {
-    fontSize: Theme.padding.p06
-  },
-  textContainer: {
-    alignItems: "center",
-    backgroundColor: Theme.color.background,
-    flexDirection: "row",
-    height: "100%",
-    padding: Theme.padding.p02
-  },
-  textInput: {
-    flex: 1,
-    marginLeft: Theme.padding.p02
-  }
-});
-
-const DATA = [
+const data = [
   { id: 1, name: "1" },
   { id: 2, name: "2" },
   { id: 3, name: "3" },
@@ -72,158 +39,168 @@ interface State {
   animation: Animated.Value;
 }
 
-interface DispatchProps {
-  navigate: typeof navigate;
-}
+const iconSearch = "magnify";
+const iconBack = "arrow-left";
+const textInputPlaceHolder = "Search";
+const animationDuration = 400;
 
-type Props = DispatchProps;
-
-class Container extends React.PureComponent<Props, State> {
-  public iconSearch = "magnify";
-  public state: State = {
+export default memo(function DebugSearchbar() {
+  const nav = useNav();
+  const color = useColor();
+  const [state, setState] = useState<State>({
     animation: new Animated.Value(0),
-    iconName: this.iconSearch,
+    iconName: iconSearch,
     input: ""
-  };
-  private iconBack = "arrow-left";
-  private textInputPlaceHolder = "Search";
-  private animationDuration = 400;
-  private translateIcon = this.state.animation.interpolate({
+  });
+  const translateIcon = state.animation.interpolate({
     inputRange: [0, 0.5, 1],
     outputRange: [1, -60, 1]
   });
-  private fadeContainer = this.state.animation.interpolate({
+  const fadeContainer = state.animation.interpolate({
     inputRange: [0, 1],
-    outputRange: [
-      Theme.color.background,
-      colorWithOpacity(Theme.color.secondary)
-    ]
+    outputRange: [color.background, colorWithOpacity(color.secondary)]
   });
-  private iconChangeTimeout?: any;
-  private keyboardDidShowListener: EmitterSubscription;
-  private keyboardDidHideListener: EmitterSubscription;
-  private keyboardWillShowListener: EmitterSubscription;
-  private keyboardWillHideListener: EmitterSubscription;
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1
+    },
+    header: {
+      backgroundColor: color.light,
+      height: Theme.padding.p20,
+      justifyContent: "center",
+      padding: Theme.padding.p02
+    },
+    item: {
+      borderBottomColor: color.light,
+      borderWidth: 0.2,
+      padding: Theme.padding.p06
+    },
+    text: {
+      fontSize: Theme.padding.p06
+    },
+    textContainer: {
+      alignItems: "center",
+      backgroundColor: color.background,
+      flexDirection: "row",
+      height: "100%",
+      padding: Theme.padding.p02
+    },
+    textInput: {
+      flex: 1,
+      marginLeft: Theme.padding.p02
+    }
+  });
 
-  public constructor(props: Props) {
-    super(props);
-    this.keyboardDidShowListener = Keyboard.addListener(
+  const animate = useCallback(
+    (value: number) => {
+      Animated.timing(state.animation, {
+        duration: animationDuration,
+        toValue: value
+      }).start();
+    },
+    [state.animation]
+  );
+
+  const changeIcon = useCallback((iconName: string) => {
+    const iconChangeTimeout = setTimeout(() => {
+      clearTimeout(iconChangeTimeout);
+      setState({ ...state, iconName });
+    }, animationDuration / 2);
+  }, [state]);
+
+  const onSearchBarFocus = useCallback(() => {
+    animate(1);
+    changeIcon(iconBack);
+  }, [animate, changeIcon]);
+
+  const onSearchBarUnFocus = useCallback(() => {
+    animate(0);
+    changeIcon(iconSearch);
+  }, [animate, changeIcon]);
+
+  const keyboardWillShow = useCallback(() => {
+    if (Platform.OS !== Config.os.ios) {
+      return;
+    }
+    onSearchBarFocus();
+  }, [onSearchBarFocus]);
+
+  const keyboardWillHide = useCallback(() => {
+    if (Platform.OS !== Config.os.ios) {
+      return;
+    }
+    onSearchBarUnFocus();
+  }, [onSearchBarUnFocus]);
+
+  const keyboardDidShow = useCallback(() => {
+    if (Platform.OS !== Config.os.android) {
+      return;
+    }
+    onSearchBarFocus();
+  }, [onSearchBarFocus]);
+
+  const keyboardDidHide = useCallback(() => {
+    if (Platform.OS !== Config.os.android) {
+      return;
+    }
+    onSearchBarUnFocus();
+  }, [onSearchBarUnFocus]);
+
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener(
       "keyboardDidShow",
-      this.keyboardDidShow
+      keyboardDidShow
     );
-    this.keyboardDidHideListener = Keyboard.addListener(
+    const keyboardDidHideListener = Keyboard.addListener(
       "keyboardDidHide",
-      this.keyboardDidHide
+      keyboardDidHide
     );
-    this.keyboardWillShowListener = Keyboard.addListener(
+    const keyboardWillShowListener = Keyboard.addListener(
       "keyboardWillShow",
-      this.keyboardWillShow
+      keyboardWillShow
     );
-    this.keyboardWillHideListener = Keyboard.addListener(
+    const keyboardWillHideListener = Keyboard.addListener(
       "keyboardWillHide",
-      this.keyboardWillHide
+      keyboardWillHide
     );
-  }
+    return () => {
+      keyboardDidShowListener.remove();
+      keyboardDidHideListener.remove();
+      keyboardWillShowListener.remove();
+      keyboardWillHideListener.remove();
+    };
+  }, [keyboardDidHide, keyboardDidShow, keyboardWillHide, keyboardWillShow]);
 
-  public componentWillUnmount() {
-    this.keyboardDidShowListener.remove();
-    this.keyboardDidHideListener.remove();
-    this.keyboardWillShowListener.remove();
-    this.keyboardWillHideListener.remove();
-    clearTimeout(this.iconChangeTimeout);
-  }
-  public render() {
-    const { iconName, input } = this.state;
-    return (
-      <Screen onLeftPress={this.nav("debug")}>
-        <View style={styles.header}>
-          <View style={styles.textContainer}>
-            <Animated.View
-              style={{
-                transform: [{ translateX: this.translateIcon }]
-              }}
-            >
-              <Icon name={iconName} style={styles.text} />
-            </Animated.View>
-            <TextInput
-              value={input}
-              onChangeText={(value: string) => this.setState({ input: value })}
-              placeholder={this.textInputPlaceHolder}
-              containerStyle={[styles.textInput, styles.text]}
-            />
-          </View>
-        </View>
-        <Animated.View style={{ flex: 1, backgroundColor: this.fadeContainer }}>
-          <FlatList
-            keyExtractor={item => item.id.toString()}
-            data={DATA}
-            renderItem={({ item }) => 
-              <Text subtitle2 style={styles.item} title={item.name} />
+  return (
+    <Screen onLeftPress={nav.to("debug")}>
+      <View style={styles.header}>
+        <View style={styles.textContainer}>
+          <Animated.View
+            style={{
+              transform: [{ translateX: translateIcon }]
+            }}
+          >
+            <Icon name={state.iconName} style={styles.text} />
+          </Animated.View>
+          <TextInput
+            value={state.input}
+            onChangeText={(value: string) =>
+              setState({ ...state, input: value })
             }
+            placeholder={textInputPlaceHolder}
+            containerStyle={[styles.textInput, styles.text]}
           />
-        </Animated.View>
-      </Screen>
-    );
-  }
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
-
-  private onSearchBarFocus() {
-    this.animate(1);
-    this.changeIcon(this.iconBack);
-  }
-
-  private animate(value: number) {
-    Animated.timing(this.state.animation, {
-      duration: this.animationDuration,
-      toValue: value
-    }).start();
-  }
-
-  private changeIcon(iconName: string) {
-    this.iconChangeTimeout = setTimeout(() => {
-      clearTimeout(this.iconChangeTimeout);
-      this.setState({ iconName });
-    }, this.animationDuration / 2);
-  }
-
-  private onSearchBarUnFocus() {
-    this.animate(0);
-    this.changeIcon(this.iconSearch);
-  }
-
-  private keyboardWillShow = () => {
-    if (Platform.OS !== Config.os.ios) {
-      return;
-    }
-    this.onSearchBarFocus();
-  };
-
-  private keyboardWillHide = () => {
-    if (Platform.OS !== Config.os.ios) {
-      return;
-    }
-    this.onSearchBarUnFocus();
-  };
-
-  private keyboardDidShow = () => {
-    if (Platform.OS !== Config.os.android) {
-      return;
-    }
-    this.onSearchBarFocus();
-  };
-
-  private keyboardDidHide = () => {
-    if (Platform.OS !== Config.os.android) {
-      return;
-    }
-    this.onSearchBarUnFocus();
-  };
-}
-
-const mapDispatchToProps: DispatchProps = { navigate };
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(Container);
+        </View>
+      </View>
+      <Animated.View style={{ flex: 1, backgroundColor: fadeContainer }}>
+        <FlatList
+          keyExtractor={item => item.id.toString()}
+          data={data}
+          renderItem={({ item }) => 
+            <Text subtitle2 style={styles.item} title={item.name} />
+          }
+        />
+      </Animated.View>
+    </Screen>
+  );
+});
