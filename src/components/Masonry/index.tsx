@@ -19,17 +19,15 @@ export const Masonry = memo(function Masonry<T>({
   renderItem
 }: Props<T>) {
   const columns: ReadonlyArray<any> = [...Array(numColumns)].map(() => []);
-  data.forEach((item: T, index: number) =>
-    columns[index % numColumns].push(item)
-  );
+  data.forEach((item: T, i: number) => columns[i % numColumns].push(item));
 
   return (
     <ScrollView>
       <View style={{ flexDirection: "row", padding: Theme.padding.p02 }}>
-        {columns.map((column, index) => 
+        {columns.map((column, j) => 
           <View
             style={{ flex: 1, padding: Theme.padding.p02 }}
-            key={`column-${index}`}
+            key={`column-${j}`}
           >
             {column.map((item: T, index: number) =>
               renderItem({ item, index })
