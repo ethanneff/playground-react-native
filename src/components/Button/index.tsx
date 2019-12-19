@@ -1,19 +1,15 @@
 import React, { memo } from "react";
-import {
-  StyleSheet,
-  TextStyle,
-  TouchableOpacity,
-  ViewStyle
-} from "react-native";
-import { Theme } from "../../utils";
+import { TextStyle, TouchableOpacity, ViewStyle } from "react-native";
+import { Theme, colorWithOpacity } from "../../utils";
 import { Icon } from "../Icon";
 import { Text } from "../Text";
-import { useColor } from "../../hooks";
+import { useColor, useDropShadow } from "../../hooks";
+import { getButtonColor, getStyles } from "./utils";
 
 /*
 styling: https://material.io/design/components/buttons.html#usage
 */
-interface Props {
+export interface ButtonProps {
   /* content */
   title?: string;
   icon?: string;
@@ -28,6 +24,7 @@ interface Props {
   disable?: boolean;
   activeOpacity?: number;
   invisible?: boolean;
+  elevation?: number;
   /* shape */
   text?: boolean /* low emphasis */;
   outlined?: boolean /* mid emphasis */;
@@ -37,9 +34,14 @@ interface Props {
   label?: boolean;
   dropShadow?: boolean;
   /* color */
-  neutral?: boolean;
+  primary?: boolean;
   secondary?: boolean;
+  success?: boolean;
   danger?: boolean;
+  warning?: boolean;
+  info?: boolean;
+  light?: boolean;
+  dark?: boolean;
   /* size */
   wrap?: boolean;
   half?: boolean;
@@ -52,15 +54,15 @@ interface Props {
   onLongPress?(): void;
 }
 
-export const Button: React.FC<Props> = memo(props => {
+export const Button: React.FC<ButtonProps> = memo(props => {
   const {
     activeOpacity,
     buttonStyle,
     center,
     contained,
-    danger,
     disable,
     dropShadow,
+    elevation = 2,
     fab,
     half,
     hidden,
@@ -69,147 +71,47 @@ export const Button: React.FC<Props> = memo(props => {
     invisible,
     label,
     lowercase,
-    neutral,
+    light,
     onPress,
     iconSize = Theme.padding.p04,
     onLongPress,
-    outlined,
     right,
-    secondary,
-    text,
     textStyle,
     title,
-    wrap
+    outlined,
+    text
   } = props;
-
   const color = useColor();
-  const styles = StyleSheet.create({
-    center: {
-      alignSelf: "center"
-    },
-    containedBody: {
-      backgroundColor: color.primary
-    },
-    containedText: {
-      color: color.background
-    },
-    container: {
-      alignItems: "center",
-      borderColor: "transparent",
-      // TODO: add border to be same size as outlined
-      borderRadius: Theme.padding.p01,
-      borderWidth: 1,
-      flexDirection: "row",
-      justifyContent: "center",
-      paddingHorizontal: Theme.padding.p04
-    },
-    danger: {
-      color: color.danger
-    },
-    disableBody: {
-      backgroundColor: color.light
-    },
-    disableText: {
-      color: color.secondary
-    },
-    dropShadow: {
-      elevation: 1,
-      margin: Theme.padding.p02,
-      padding: Theme.padding.p04,
-      shadowColor: color.dark,
-      shadowOffset: {
-        height: Theme.padding.p01,
-        width: 0
-      },
-      shadowOpacity: 0.5,
-      shadowRadius: 2,
-      zIndex: 1
-    },
-    fab: {
-      alignSelf: "flex-start",
-      borderRadius: Theme.padding.p08,
-      padding: Theme.padding.p04
-    },
-    half: {
-      width: "50%"
-    },
-    height: {
-      height: Theme.padding.p09
-    },
-    icon: {
-      paddingRight: 2
-    },
-    invisible: {
-      opacity: 0
-    },
-    label: {
-      height: Theme.padding.p05,
-      justifyContent: "flex-start",
-      marginVertical: Theme.padding.p01,
-      paddingHorizontal: 0
-    },
-    neutral: {
-      color: color.text
-    },
-    nonFlex: {
-      alignSelf: "flex-start"
-    },
-    outlined: {
-      borderColor: color.secondary
-    },
-    right: {
-      alignSelf: "flex-end"
-    },
-    secondary: {
-      color: color.secondary
-    },
-    text: {
-      color: color.primary
-    },
-    textBody: {
-      backgroundColor: "transparent"
-    }
-  });
-
-  const getBody = () => {
-    if (contained) {
-      return styles.containedBody;
-    }
-    if (outlined) {
-      return styles.outlined;
-    }
-    if (fab) {
-      return styles.fab;
-    }
-    if (text) {
-      return styles.textBody;
-    }
-    return styles.textBody;
-  };
-
+  const dropShadowStyling = useDropShadow(elevation);
+  const buttonColor = getButtonColor(color, props);
+  const buttonColorWithOpacity = disable
+    ? colorWithOpacity(buttonColor, 0.38)
+    : buttonColor;
+  const textColor =
+    contained && !light ? color.background : light ? color.text : buttonColor;
+  const textColorWithOpacity = disable
+    ? colorWithOpacity(textColor, 0.38)
+    : textColor;
+  const styles = getStyles(
+    color,
+    buttonColorWithOpacity,
+    textColorWithOpacity,
+    outlined
+  );
+  const body = contained ? styles.containedBody : fab ? styles.fab : text;
   const buttonStyleGroup = [
     styles.container,
+    body,
     !fab && styles.height,
-    getBody(),
-    disable && (contained || outlined) && styles.disableBody,
     fab && styles.fab,
-    wrap && styles.nonFlex,
     half && styles.half,
     center && styles.center,
     right && styles.right,
     label && styles.label,
-    dropShadow && styles.dropShadow,
+    dropShadow && dropShadowStyling,
     buttonStyle
   ];
-  const textStyleGroup = [
-    styles.text,
-    neutral && styles.neutral,
-    secondary && styles.secondary,
-    danger && styles.danger,
-    contained && styles.containedText,
-    disable && styles.disableText,
-    textStyle
-  ];
+  const textStyleGroup = [styles.text, textStyle];
   const iconStyleGroup = [title && styles.icon, !iconColor && textStyleGroup];
 
   return hidden ? null : 

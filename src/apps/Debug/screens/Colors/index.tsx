@@ -44,7 +44,6 @@ export default memo(function DebugColors() {
           center
           style={{ padding: Theme.padding.p08 }}
         />
-
         <View style={{ flexDirection: "row" }}>
           <View style={{ flex: 1 }}>
             <Button primary title="primary" contained />
@@ -55,7 +54,7 @@ export default memo(function DebugColors() {
             <Button info title="info" contained />
             <Button light title="light" contained />
             <Button dark title="dark" contained />
-            <Button title="default" contained />
+            <Button title="default" contained disable />
           </View>
           <View style={{ flex: 1 }}>
             <Button primary title="primary" />
@@ -77,7 +76,7 @@ export default memo(function DebugColors() {
             <Button outlined info title="info" />
             <Button outlined light title="light" />
             <Button outlined dark title="dark" />
-            <Button outlined title="default" />
+            <Button outlined title="default" dropShadow elevation={10} />
           </View>
         </View>
 
