@@ -14,3 +14,4 @@ export * from "./Modal";
 export * from "./Calendar";
 export * from "./Activity";
 export * from "./Masonry";
+export * from "./Slider";
