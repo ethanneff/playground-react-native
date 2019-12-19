@@ -15,6 +15,9 @@ module.exports = {
     "plugin:@typescript-eslint/recommended", // typescript
     "prettier/@typescript-eslint" // prettier
   ],
+  globals: {
+    process: true // process.env.JEST_WORKER_ID
+  },
   env: {
     browser: true, // window, setTimeout
     es6: true // Promise

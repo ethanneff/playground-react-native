@@ -14,7 +14,7 @@ exports[`renders correctly 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "borderBottomColor": "hsl(210, 10%, 23%)",
+        "borderBottomColor": "hsl(208, 7%, 46%)",
         "borderBottomWidth": 0,
         "flexDirection": "row",
         "height": 72,
@@ -47,7 +47,7 @@ exports[`renders correctly 1`] = `
           style={
             Array [
               Object {
-                "color": "hsl(210, 10%, 23%)",
+                "color": "hsl(208, 7%, 46%)",
                 "fontSize": 24,
               },
               Array [

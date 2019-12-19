@@ -101,12 +101,15 @@ export default memo(function DebugSearchbar() {
     [state.animation]
   );
 
-  const changeIcon = useCallback((iconName: string) => {
-    const iconChangeTimeout = setTimeout(() => {
-      clearTimeout(iconChangeTimeout);
-      setState({ ...state, iconName });
-    }, animationDuration / 2);
-  }, [state]);
+  const changeIcon = useCallback(
+    (iconName: string) => {
+      const iconChangeTimeout = setTimeout(() => {
+        clearTimeout(iconChangeTimeout);
+        setState({ ...state, iconName });
+      }, animationDuration / 2);
+    },
+    [state]
+  );
 
   const onSearchBarFocus = useCallback(() => {
     animate(1);
@@ -147,6 +150,9 @@ export default memo(function DebugSearchbar() {
   }, [onSearchBarUnFocus]);
 
   useEffect(() => {
+    if (process.env.JEST_WORKER_ID) {
+      return undefined;
+    }
     const keyboardDidShowListener = Keyboard.addListener(
       "keyboardDidShow",
       keyboardDidShow
