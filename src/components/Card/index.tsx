@@ -22,7 +22,7 @@ export const Card: React.FC<Props> = memo(
     borderWidth = 1,
     children,
     touchable,
-    elevation = 1,
+    elevation = 2,
     onLongPress,
     onPress,
     flex,
@@ -41,7 +41,7 @@ export const Card: React.FC<Props> = memo(
     const styles = StyleSheet.create({
       containerStyle: {
         backgroundColor: color.background,
-        borderColor: color.surface,
+        borderColor: color.background,
         borderRadius,
         borderWidth,
         elevation,
