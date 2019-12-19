@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
-import { useColor } from "../../hooks";
+import { useColor, useDropShadow } from "../../hooks";
 import { Theme, useRootSelector } from "../../utils";
 
 interface Props {
@@ -19,6 +19,7 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
   const height = useRootSelector(state => state.dimension.window.height);
   const maximumHeight = maxHeight ? maxHeight : height * 0.6;
   const color = useColor();
+  const dropShadow = useDropShadow(10);
   const styles = StyleSheet.create({
     container: {
       position: "absolute",
@@ -41,15 +42,7 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
       maxWidth,
       maxHeight: maximumHeight,
       overflow: "hidden",
-      elevation: 3,
-      shadowColor: Theme.color.overlay,
-      shadowOffset: {
-        height: 2,
-        width: 0
-      },
-      shadowOpacity: 0.2,
-      shadowRadius: 1,
-      zIndex: 3
+      ...dropShadow
     }
   });
 

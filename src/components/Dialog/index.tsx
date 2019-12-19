@@ -9,7 +9,7 @@ import { Theme } from "../../utils";
 import { Button } from "../Button";
 import { Card } from "../Card";
 import { Text } from "../Text";
-import { useNativeDriver } from "../../hooks";
+import { useNativeDriver, useDropShadow } from "../../hooks";
 
 interface OwnProps {
   testID?: string;
@@ -38,6 +38,7 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
   testID
 }) {
   const nativeDriver = useNativeDriver();
+  const dropShadow = useDropShadow(10);
   const styles = StyleSheet.create({
     buttonContainer: {
       flexDirection: "row",
@@ -63,7 +64,8 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
     },
     modal: {
       maxWidth: 500,
-      width: "100%"
+      width: "100%",
+      ...dropShadow
     },
     overlay: {
       alignItems: "center",
