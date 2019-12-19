@@ -1,7 +1,8 @@
 import React, { memo } from "react";
 import { Animated, StyleSheet, ViewStyle } from "react-native";
-import { Theme } from "../../utils";
+import { Theme, colorWithOpacity } from "../../utils";
 import { useNativeDriver, useColor } from "../../hooks";
+import { getTextColorPercent, getFontSize } from "./utils";
 
 export enum EllipsizeMode {
   Head = "head",
@@ -10,7 +11,7 @@ export enum EllipsizeMode {
   Clip = "clip"
 }
 
-interface Props {
+export interface TextProps {
   title?: string;
   style?: ViewStyle | {};
 
@@ -38,39 +39,37 @@ interface Props {
   button?: boolean;
   caption?: boolean;
   overline?: boolean;
+
+  high?: boolean;
+  medium?: boolean;
+  low?: boolean;
+
   onPress?(): void;
 }
 
-export const Text: React.FC<Props> = memo(function Text({
-  style,
-  title,
-  center,
-  bold,
-  hidden,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  subtitle1,
-  subtitle2,
-  body1,
-  body2,
-  button,
-  secondary,
-  ellipsizeMode,
-  numberOfLines,
-  caption,
-  onPress,
-  centerVertically,
-  invisible,
-  inverse,
-  overline
-}) {
+export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
+  const {
+    button,
+    overline,
+    title,
+    onPress,
+    hidden,
+    center,
+    bold,
+    ellipsizeMode,
+    centerVertically,
+    invisible,
+    style,
+    numberOfLines
+  } = props;
   const opacity = new Animated.Value(1);
-  const colors = useColor();
+  const color = useColor();
   const nativeDriver = useNativeDriver();
+  const textColorPercent = getTextColorPercent(props);
+  const fontSize = getFontSize(props);
+  const textColor = props.inverse ? color.background : color.text;
+  const textColorWithOpacity = colorWithOpacity(textColor, textColorPercent);
+  const text = button || overline ? (title || "").toUpperCase() : title;
   const styles = StyleSheet.create({
     bold: {
       fontWeight: Theme.fontWeight.medium
@@ -85,43 +84,10 @@ export const Text: React.FC<Props> = memo(function Text({
     invisible: {
       opacity: 0
     },
-    text: {
-      color: inverse ? colors.background : colors.text
-    },
-    secondary: {
-      color: colors.secondary
+    color: {
+      color: textColorWithOpacity
     }
   });
-  const text = button || overline ? (title || "").toUpperCase() : title;
-  const getFont = () => {
-    return h1
-      ? Theme.fontSize.h1
-      : h2
-      ? Theme.fontSize.h2
-      : h3
-      ? Theme.fontSize.h3
-      : h4
-      ? Theme.fontSize.h4
-      : h5
-      ? Theme.fontSize.h5
-      : h6
-      ? Theme.fontSize.h6
-      : subtitle1
-      ? Theme.fontSize.subtitle1
-      : subtitle2
-      ? Theme.fontSize.subtitle2
-      : body1
-      ? Theme.fontSize.body1
-      : body2
-      ? Theme.fontSize.body2
-      : button
-      ? Theme.fontSize.button
-      : caption
-      ? Theme.fontSize.caption
-      : overline
-      ? Theme.fontSize.overline
-      : Theme.fontSize.body2;
-  };
 
   const handlePress = () => {
     if (onPress) {
@@ -143,12 +109,11 @@ export const Text: React.FC<Props> = memo(function Text({
   };
 
   const textStyle = [
-    styles.text,
-    getFont(),
+    styles.color,
+    fontSize,
     center && styles.center,
     centerVertically && styles.centerVertically,
     bold && styles.bold,
-    secondary && styles.secondary,
     { opacity },
     invisible && styles.invisible,
     style
