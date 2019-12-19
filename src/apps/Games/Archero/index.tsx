@@ -7,7 +7,7 @@ import {
   LayoutChangeEvent
 } from "react-native";
 import { useColor, useNativeDriver, useNav } from "../../../hooks";
-import { colorWithOpacity, useRootSelector } from "../../../utils";
+import { colorWithOpacity, useRootSelector, Theme } from "../../../utils";
 import { Screen } from "../../../components";
 
 const charSize = 50;
@@ -139,7 +139,7 @@ export default memo(function Archero() {
               borderRadius: 500,
               width: joystickSize,
               height: joystickSize,
-              backgroundColor: colorWithOpacity(color.black, 0.2)
+              backgroundColor: Theme.color.overlay
             }
           ]}
         >
@@ -150,7 +150,7 @@ export default memo(function Archero() {
               borderRadius: 500,
               width: thumbSize,
               height: thumbSize,
-              backgroundColor: colorWithOpacity(color.black, 0.2)
+              backgroundColor: Theme.color.overlay
             }}
           >
             <Animated.View

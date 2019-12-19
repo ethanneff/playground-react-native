@@ -20,7 +20,7 @@ export const Item = memo(function ChatMessage({ item }: Props) {
         borderRadius: Theme.padding.p04,
         flexDirection: "row",
         marginBottom: Theme.padding.p06,
-        backgroundColor: color.surface
+        backgroundColor: color.light
       }}
     >
       <View style={{ width: 40 }}>

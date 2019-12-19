@@ -136,7 +136,6 @@ export const TextInput: React.FC<Props> = memo(
             hidden={noTitle}
             label
             lowercase
-            neutral
             onPress={focusOnInput}
             title={title}
             wrap

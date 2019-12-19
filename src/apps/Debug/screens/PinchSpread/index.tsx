@@ -18,7 +18,7 @@ export default function PinchSpread() {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: color.surface
+      backgroundColor: color.light
     }
   });
   const gestureHandler = new GestureHandler({ minTouches });

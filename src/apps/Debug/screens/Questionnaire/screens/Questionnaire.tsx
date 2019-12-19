@@ -39,7 +39,6 @@ export const Questionnaire = () => {
                 </View>
                 <Button
                   icon="dots-horizontal"
-                  neutral
                   onPress={handleLongPress(item.id)}
                 />
               </View>

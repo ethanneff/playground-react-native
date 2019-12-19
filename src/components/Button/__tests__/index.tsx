@@ -40,15 +40,7 @@ it("renders text", () => {
 });
 it("renders sizing", () => {
   const dom = mockRenderer(
-    <Button
-      center
-      half
-      neutral
-      wrap
-      disable
-      title="hello"
-      onPress={() => undefined}
-    />
+    <Button center half wrap disable title="hello" onPress={() => undefined} />
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });

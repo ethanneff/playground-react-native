@@ -51,7 +51,6 @@ export default memo(function CantHurtMeMain() {
                     <Button
                       icon="settings"
                       onPress={handleSettingsPress}
-                      neutral
                       fab
                       center
                     />

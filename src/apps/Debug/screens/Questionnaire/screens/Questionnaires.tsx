@@ -58,11 +58,7 @@ const Container = (props: Props) => {
                   <Text h3 title={item.title} />
                   <Text caption title={subtitle} />
                 </View>
-                <Button
-                  icon="dots-horizontal"
-                  neutral
-                  onPress={handleItemMenu}
-                />
+                <Button icon="dots-horizontal" onPress={handleItemMenu} />
               </View>
             </Card>
           );

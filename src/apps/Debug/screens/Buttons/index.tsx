@@ -16,31 +16,21 @@ class Container extends React.PureComponent<Props> {
       <Screen onLeftPress={this.nav("debug")}>
         <ScrollView>
           <Button title="nothing" onPress={() => undefined} />
-          <Button neutral title="neutral" onPress={() => undefined} />
           <Button text title="text" onPress={() => undefined} />
           <Button outlined title="outlined" onPress={() => undefined} />
           <Button contained title="contained" onPress={() => undefined} />
 
           <Button wrap title="nothing" onPress={() => undefined} />
-          <Button wrap neutral title="neutral" onPress={() => undefined} />
           <Button wrap text title="text" onPress={() => undefined} />
           <Button wrap outlined title="outlined" onPress={() => undefined} />
           <Button wrap contained title="contained" onPress={() => undefined} />
 
           <Button half title="nothing" onPress={() => undefined} />
-          <Button half neutral title="neutral" onPress={() => undefined} />
           <Button half text title="text" onPress={() => undefined} />
           <Button half outlined title="outlined" onPress={() => undefined} />
           <Button half contained title="contained" onPress={() => undefined} />
 
           <Button half center title="nothing" onPress={() => undefined} />
-          <Button
-            half
-            center
-            neutral
-            title="neutral"
-            onPress={() => undefined}
-          />
           <Button half center text title="text" onPress={() => undefined} />
           <Button
             half
@@ -58,19 +48,12 @@ class Container extends React.PureComponent<Props> {
           />
 
           <Button right title="nothing" onPress={() => undefined} />
-          <Button right neutral title="neutral" onPress={() => undefined} />
           <Button right text title="text" onPress={() => undefined} />
           <Button right outlined title="outlined" onPress={() => undefined} />
           <Button right contained title="contained" onPress={() => undefined} />
 
           <Button disable wrap title="nothing" onPress={() => undefined} />
-          <Button
-            disable
-            wrap
-            neutral
-            title="neutral"
-            onPress={() => undefined}
-          />
+
           <Button disable wrap text title="text" onPress={() => undefined} />
           <Button
             disable
@@ -88,13 +71,6 @@ class Container extends React.PureComponent<Props> {
           />
 
           <Button half icon="check" title="nothing" onPress={() => undefined} />
-          <Button
-            half
-            icon="check"
-            neutral
-            title="neutral"
-            onPress={() => undefined}
-          />
           <Button
             half
             icon="check"
@@ -118,14 +94,12 @@ class Container extends React.PureComponent<Props> {
           />
 
           <Button wrap icon="check" onPress={() => undefined} />
-          <Button wrap icon="check" neutral onPress={() => undefined} />
           <Button wrap icon="check" text onPress={() => undefined} />
           <Button wrap icon="check" outlined onPress={() => undefined} />
           <Button wrap icon="check" contained onPress={() => undefined} />
 
           <Button fab icon="check" onPress={() => undefined} />
           <Button fab icon="check" iconColor="red" onPress={() => undefined} />
-          <Button fab icon="check" neutral onPress={() => undefined} />
           <Button fab icon="check" text onPress={() => undefined} />
           <Button fab icon="check" outlined onPress={() => undefined} />
           <Button fab icon="check" contained onPress={() => undefined} />
@@ -138,7 +112,4 @@ class Container extends React.PureComponent<Props> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Container);
+export default connect(null, mapDispatchToProps)(Container);

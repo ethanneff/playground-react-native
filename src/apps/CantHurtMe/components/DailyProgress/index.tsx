@@ -41,7 +41,6 @@ export const DailyProgress = memo(function DailyProgress() {
                   : color.danger
               }
               onPress={() => undefined}
-              neutral
             />
             <View
               style={{

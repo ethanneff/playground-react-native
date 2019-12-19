@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { FlatList, View } from "react-native";
 import { Button, Screen } from "../../../../components";
-import { Theme, useRootDispatch, useRootSelector } from "../../../../utils";
+import { useRootDispatch, useRootSelector } from "../../../../utils";
 import {
   removeChecklistItem,
   toggleChecklistItemComplete,
@@ -35,27 +35,27 @@ export default memo(function Checklist() {
             <Button
               label
               icon="checkbox-marked-circle"
-              iconColor={Theme.color.success}
+              iconColor={color.success}
             />
             <Button
               label
               icon="close-circle"
-              iconColor={Theme.color.danger}
+              iconColor={color.danger}
               onPress={handleRemove(item.id)}
             />
             <Button
               label
-              iconColor={Theme.color.warning}
+              iconColor={color.warning}
               icon="clock"
               onPress={handleToggle(item.id)}
             />
             <Button
               label
-              neutral={item.active}
+              primary={item.active}
               lowercase
               title={item.name}
               textStyle={{
-                color: item.completed ? color.danger : color.black
+                color: item.completed ? color.danger : color.text
               }}
               onPress={handleEdit(item.id)}
             />

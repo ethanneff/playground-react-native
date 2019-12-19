@@ -98,7 +98,7 @@ export default memo(function DebugStartup() {
       </View>
       <ScrollView
         contentContainerStyle={{
-          backgroundColor: color.surface,
+          backgroundColor: color.light,
           padding: Theme.padding.p04
         }}
       >
