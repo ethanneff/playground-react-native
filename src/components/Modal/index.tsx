@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
 import { useColor } from "../../hooks";
-import { Theme, colorWithOpacity, useRootSelector } from "../../utils";
+import { Theme, useRootSelector } from "../../utils";
 
 interface Props {
   testID?: string;
@@ -30,7 +30,7 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
     overlay: {
       flex: 1,
       width: "100%",
-      backgroundColor: colorWithOpacity(color.black, 0.4)
+      backgroundColor: Theme.color.overlay
     },
     modal: {
       position: "absolute",
@@ -42,7 +42,7 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
       maxHeight: maximumHeight,
       overflow: "hidden",
       elevation: 3,
-      shadowColor: color.black,
+      shadowColor: Theme.color.overlay,
       shadowOffset: {
         height: 2,
         width: 0
