@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity, View, ViewStyle } from "react-native";
 import { Theme } from "../../utils";
-import { useColor } from "../../hooks";
+import { useColor, useDropShadow } from "../../hooks";
 
 interface Props {
   flex?: boolean;
@@ -30,8 +30,7 @@ export const Card: React.FC<Props> = memo(
     style
   }) => {
     const color = useColor();
-    const shadowOpacity = elevation * 0.036 + 0.12;
-    const shadowRadius = elevation * 0.36 + 1.2;
+    const dropShadow = useDropShadow(elevation);
     const opacity =
       elevation === 0
         ? 0
@@ -44,16 +43,8 @@ export const Card: React.FC<Props> = memo(
         borderColor: color.background,
         borderRadius,
         borderWidth,
-        elevation,
         marginVertical: Theme.padding.p02,
-        shadowColor: color.dark,
-        shadowOffset: {
-          height: 2,
-          width: 0
-        },
-        shadowOpacity,
-        shadowRadius,
-        zIndex: elevation
+        ...dropShadow
       },
       contents: {
         backgroundColor: `hsla(0,0%,100%,${opacity})`,
