@@ -24,11 +24,11 @@ export default memo(function Journal() {
     <Screen
       onLeftPress={nav.to("portfolioLanding")}
       title="nope"
-      style={{ backgroundColor: color.surface }}
+      style={{ backgroundColor: color.light }}
     >
       <Card>
         <Text h2 title="Activity" style={styles.bottom} />
-        <Activity />
+        <Activity username="ethanneff" site="github" />
       </Card>
       <Card>
         <Text h2 title="Calendar" style={styles.bottom} />
