@@ -42,11 +42,7 @@ export const Screen: React.FC<Props> = memo(function Screen({
       padding: gutter ? Theme.padding.p04 : Theme.padding.p00
     }
   });
-  const childrenStyles = [
-    styles.container,
-    gutter ? styles.gutter : undefined,
-    style
-  ];
+  const childrenStyles = [styles.container, gutter && styles.gutter, style];
 
   return (
     <SafeAreaView style={styles.container}>
