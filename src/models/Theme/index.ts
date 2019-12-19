@@ -21,9 +21,9 @@ enum StatusBarStyle {
   Dark = "dark-content"
 }
 
-interface Color {
+export interface Color {
   background: string;
-  black: string;
+  text: string;
   brand: string;
   danger: string;
   dark: string;
@@ -33,10 +33,7 @@ interface Color {
   secondary: string;
   statusBar: StatusBarStyle;
   success: string;
-  surface: string;
-  text: string;
   warning: string;
-  white: string;
 }
 
 export enum ColorTheme {
@@ -58,8 +55,8 @@ export type ThemeActions = ActionType<typeof changeTheme>;
 export const themeInitialState: Theme = {
   colors: {
     [ColorTheme.Dark]: {
-      background: "hsl(0, 0%, 7%)",
-      black: "hsl(0, 0%, 0%)",
+      background: "hsl(0, 0%, 7%)", // #121212
+      text: "hsl(0, 0%, 100%)", // #ffffff
       brand: "hsl(264, 34%, 36%)",
       danger: "hsl(354, 70%, 54%)",
       dark: "hsl(210, 10%, 23%)",
@@ -69,27 +66,21 @@ export const themeInitialState: Theme = {
       secondary: "hsl(171, 59%, 61%)",
       statusBar: StatusBarStyle.Light,
       success: "hsl(134, 61%, 41%)",
-      surface: "hsl(0, 0%, 12%)",
-      text: "hsl(0, 0%, 100%)",
-      warning: "hsl(45, 100%, 51%)",
-      white: "hsl(0, 0%, 100%)"
+      warning: "hsl(45, 100%, 51%)"
     },
     [ColorTheme.Light]: {
-      background: "hsl(0, 0%, 100%)",
-      black: "hsl(0, 0%, 0%)",
-      brand: "hsl(264, 34%, 36%)",
-      danger: "hsl(354, 70%, 54%)",
-      dark: "hsl(210, 10%, 23%)",
-      info: "hsl(188, 78%, 41%)",
-      light: "hsl(210, 17%, 98%)",
-      primary: "hsl(211, 100%, 50%)",
-      secondary: "hsl(208, 7%, 46%)",
+      background: "hsl(0, 0%, 100%)", // #ffffff
+      text: "hsl(0, 0%, 0%)", // #000000
+      brand: "hsl(264, 34%, 36%)", // #563d7c
+      danger: "hsl(354, 70%, 54%)", // #dc3545
+      dark: "hsl(210, 10%, 23%)", // #343a40
+      info: "hsl(188, 78%, 41%)", // #17a2b8
+      light: "hsl(210, 17%, 98%)", // #f8f9fa
+      primary: "hsl(211, 100%, 50%)", // #007bff
+      secondary: "hsl(208, 7%, 46%)", // #6c757d
       statusBar: StatusBarStyle.Default,
-      success: "hsl(134, 61%, 41%)",
-      surface: "hsl(0, 0%, 98%)",
-      text: "hsl(0, 0%, 0%)",
-      warning: "hsl(45, 100%, 51%)",
-      white: "hsl(0, 0%, 100%)"
+      success: "hsl(134, 61%, 41%)", // #28a745
+      warning: "hsl(45, 100%, 51%)" // #ffc107
     }
   },
   currentColor: ColorTheme.Light
