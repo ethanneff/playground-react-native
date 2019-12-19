@@ -29,7 +29,7 @@ export const NavButton: React.FC<Props> = memo(function NavButton({
     <TouchableOpacity style={styles.button} onPress={onPress}>
       <Icon
         hidden={!onPress}
-        color={color.dark}
+        color={color.secondary}
         style={isRight && styles.buttonRight}
         name={icon}
       />

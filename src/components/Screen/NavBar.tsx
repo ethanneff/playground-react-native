@@ -28,7 +28,7 @@ export const NavBar: React.FC<Props> = memo(function NavBar({
       alignItems: "center",
       flexDirection: "row",
       justifyContent: "space-between",
-      borderBottomColor: color.dark,
+      borderBottomColor: color.secondary,
       borderBottomWidth: border ? 1 : 0,
       height: Theme.padding.p18
     }
