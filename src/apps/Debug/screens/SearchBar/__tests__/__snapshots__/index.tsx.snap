@@ -14,7 +14,7 @@ exports[`renders correctly 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "borderBottomColor": "hsl(210, 10%, 23%)",
+        "borderBottomColor": "hsl(208, 7%, 46%)",
         "borderBottomWidth": 0,
         "flexDirection": "row",
         "height": 72,
@@ -47,7 +47,7 @@ exports[`renders correctly 1`] = `
           style={
             Array [
               Object {
-                "color": "hsl(210, 10%, 23%)",
+                "color": "hsl(208, 7%, 46%)",
                 "fontSize": 24,
               },
               Array [
@@ -113,7 +113,7 @@ exports[`renders correctly 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "hsl(0, 100%, 100%)",
+            "backgroundColor": "hsl(0, 0%, 100%)",
             "flexDirection": "row",
             "height": "100%",
             "padding": 8,
@@ -245,7 +245,6 @@ exports[`renders correctly 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "alignSelf": "flex-start",
                 "backgroundColor": "transparent",
                 "borderColor": "transparent",
                 "borderRadius": 4,
@@ -265,15 +264,8 @@ exports[`renders correctly 1`] = `
                   "",
                   Array [
                     Object {
-                      "color": "hsl(211, 100%, 50%)",
-                    },
-                    undefined,
-                    undefined,
-                    Object {
                       "color": "hsl(354, 70%, 54%)",
                     },
-                    undefined,
-                    undefined,
                     undefined,
                   ],
                 ]
@@ -445,7 +437,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "borderBottomColor": "hsl(210, 17%, 98%)",
                   "borderWidth": 0.2,
-                  "color": "hsl(0, 0%, 0%)",
+                  "color": "hsla(0, 0%, 0%, 1)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.1,
@@ -466,7 +458,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "borderBottomColor": "hsl(210, 17%, 98%)",
                   "borderWidth": 0.2,
-                  "color": "hsl(0, 0%, 0%)",
+                  "color": "hsla(0, 0%, 0%, 1)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.1,
@@ -487,7 +479,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "borderBottomColor": "hsl(210, 17%, 98%)",
                   "borderWidth": 0.2,
-                  "color": "hsl(0, 0%, 0%)",
+                  "color": "hsla(0, 0%, 0%, 1)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.1,
@@ -508,7 +500,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "borderBottomColor": "hsl(210, 17%, 98%)",
                   "borderWidth": 0.2,
-                  "color": "hsl(0, 0%, 0%)",
+                  "color": "hsla(0, 0%, 0%, 1)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.1,
@@ -529,7 +521,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "borderBottomColor": "hsl(210, 17%, 98%)",
                   "borderWidth": 0.2,
-                  "color": "hsl(0, 0%, 0%)",
+                  "color": "hsla(0, 0%, 0%, 1)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.1,
@@ -550,7 +542,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "borderBottomColor": "hsl(210, 17%, 98%)",
                   "borderWidth": 0.2,
-                  "color": "hsl(0, 0%, 0%)",
+                  "color": "hsla(0, 0%, 0%, 1)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.1,
@@ -571,7 +563,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "borderBottomColor": "hsl(210, 17%, 98%)",
                   "borderWidth": 0.2,
-                  "color": "hsl(0, 0%, 0%)",
+                  "color": "hsla(0, 0%, 0%, 1)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.1,
@@ -592,7 +584,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "borderBottomColor": "hsl(210, 17%, 98%)",
                   "borderWidth": 0.2,
-                  "color": "hsl(0, 0%, 0%)",
+                  "color": "hsla(0, 0%, 0%, 1)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.1,
@@ -613,7 +605,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "borderBottomColor": "hsl(210, 17%, 98%)",
                   "borderWidth": 0.2,
-                  "color": "hsl(0, 0%, 0%)",
+                  "color": "hsla(0, 0%, 0%, 1)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.1,
@@ -634,7 +626,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "borderBottomColor": "hsl(210, 17%, 98%)",
                   "borderWidth": 0.2,
-                  "color": "hsl(0, 0%, 0%)",
+                  "color": "hsla(0, 0%, 0%, 1)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.1,

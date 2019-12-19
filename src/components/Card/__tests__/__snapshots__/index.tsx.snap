@@ -15,11 +15,10 @@ exports[`renders correctly 1`] = `
   style={
     Object {
       "backgroundColor": "hsl(0, 0%, 100%)",
-      "borderColor": "hsl(0, 0%, 98%)",
+      "borderColor": "hsl(0, 0%, 100%)",
       "borderRadius": 8,
       "borderWidth": 1,
-      "elevation": 1,
-      "marginHorizontal": 16,
+      "elevation": 2,
       "marginVertical": 8,
       "opacity": 1,
       "shadowColor": "hsl(210, 10%, 23%)",
@@ -27,9 +26,9 @@ exports[`renders correctly 1`] = `
         "height": 2,
         "width": 0,
       },
-      "shadowOpacity": 0.156,
-      "shadowRadius": 1.56,
-      "zIndex": 1,
+      "shadowOpacity": 0.192,
+      "shadowRadius": 1.92,
+      "zIndex": 2,
     }
   }
 >
@@ -37,7 +36,7 @@ exports[`renders correctly 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "hsla(0,0%,100%,0.05)",
+          "backgroundColor": "hsla(0,0%,100%,0.07)",
           "borderRadius": 8,
           "padding": 16,
         },
@@ -63,11 +62,10 @@ exports[`renders correctly with onPress 1`] = `
   style={
     Object {
       "backgroundColor": "hsl(0, 0%, 100%)",
-      "borderColor": "hsl(0, 0%, 98%)",
+      "borderColor": "hsl(0, 0%, 100%)",
       "borderRadius": 8,
       "borderWidth": 1,
-      "elevation": 1,
-      "marginHorizontal": 16,
+      "elevation": 2,
       "marginVertical": 8,
       "opacity": 1,
       "shadowColor": "hsl(210, 10%, 23%)",
@@ -75,9 +73,9 @@ exports[`renders correctly with onPress 1`] = `
         "height": 2,
         "width": 0,
       },
-      "shadowOpacity": 0.156,
-      "shadowRadius": 1.56,
-      "zIndex": 1,
+      "shadowOpacity": 0.192,
+      "shadowRadius": 1.92,
+      "zIndex": 2,
     }
   }
 >
@@ -85,7 +83,7 @@ exports[`renders correctly with onPress 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "hsla(0,0%,100%,0.05)",
+          "backgroundColor": "hsla(0,0%,100%,0.07)",
           "borderRadius": 8,
           "padding": 16,
         },

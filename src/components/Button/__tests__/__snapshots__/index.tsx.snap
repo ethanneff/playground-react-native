@@ -15,7 +15,7 @@ exports[`renders contained 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "hsl(211, 100%, 50%)",
+      "backgroundColor": "hsl(0, 0%, 0%)",
       "borderColor": "transparent",
       "borderRadius": 4,
       "borderWidth": 1,
@@ -59,7 +59,7 @@ exports[`renders contained disable 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "hsl(210, 17%, 98%)",
+      "backgroundColor": "hsla(0, 0%, 0%, 0.38)",
       "borderColor": "transparent",
       "borderRadius": 4,
       "borderWidth": 1,
@@ -74,7 +74,7 @@ exports[`renders contained disable 1`] = `
   <Text
     style={
       Object {
-        "color": "hsl(208, 7%, 46%)",
+        "color": "hsla(0, 0%, 100%, 0.38)",
         "fontSize": 14,
         "fontWeight": "600",
         "letterSpacing": 0.75,
@@ -118,7 +118,7 @@ exports[`renders correctly 1`] = `
   <Text
     style={
       Object {
-        "color": "hsl(211, 100%, 50%)",
+        "color": "hsl(0, 0%, 0%)",
         "fontSize": 14,
         "fontWeight": "600",
         "letterSpacing": 0.75,
@@ -148,6 +148,7 @@ exports[`renders fab 1`] = `
     Object {
       "alignItems": "center",
       "alignSelf": "flex-start",
+      "backgroundColor": "transparent",
       "borderColor": "transparent",
       "borderRadius": 32,
       "borderWidth": 1,
@@ -162,7 +163,7 @@ exports[`renders fab 1`] = `
   <Text
     style={
       Object {
-        "color": "hsl(211, 100%, 50%)",
+        "color": "hsl(0, 0%, 0%)",
         "fontSize": 14,
         "fontWeight": "600",
         "letterSpacing": 0.75,
@@ -209,13 +210,8 @@ exports[`renders icon 1`] = `
         undefined,
         Array [
           Object {
-            "color": "hsl(211, 100%, 50%)",
+            "color": "hsl(0, 0%, 0%)",
           },
-          undefined,
-          undefined,
-          undefined,
-          undefined,
-          undefined,
           undefined,
         ],
       ]
@@ -283,13 +279,8 @@ exports[`renders icon title 1`] = `
         },
         Array [
           Object {
-            "color": "hsl(211, 100%, 50%)",
+            "color": "hsl(0, 0%, 0%)",
           },
-          undefined,
-          undefined,
-          undefined,
-          undefined,
-          undefined,
           undefined,
         ],
       ]
@@ -322,7 +313,7 @@ exports[`renders icon title 1`] = `
   <Text
     style={
       Object {
-        "color": "hsl(211, 100%, 50%)",
+        "color": "hsl(0, 0%, 0%)",
         "fontSize": 14,
         "fontWeight": "600",
         "letterSpacing": 0.75,
@@ -351,7 +342,8 @@ exports[`renders outlined 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "borderColor": "hsl(208, 7%, 46%)",
+      "backgroundColor": "hsl(0, 0%, 100%)",
+      "borderColor": "hsl(210, 10%, 23%)",
       "borderRadius": 4,
       "borderWidth": 1,
       "flexDirection": "row",
@@ -365,7 +357,7 @@ exports[`renders outlined 1`] = `
   <Text
     style={
       Object {
-        "color": "hsl(211, 100%, 50%)",
+        "color": "hsl(0, 0%, 0%)",
         "fontSize": 14,
         "fontWeight": "600",
         "letterSpacing": 0.75,
@@ -411,7 +403,7 @@ exports[`renders sizing 1`] = `
   <Text
     style={
       Object {
-        "color": "hsl(208, 7%, 46%)",
+        "color": "hsla(0, 0%, 0%, 0.38)",
         "fontSize": 14,
         "fontWeight": "600",
         "letterSpacing": 0.75,
@@ -455,7 +447,7 @@ exports[`renders text 1`] = `
   <Text
     style={
       Object {
-        "color": "hsl(211, 100%, 50%)",
+        "color": "hsl(0, 0%, 0%)",
         "fontSize": 14,
         "fontWeight": "600",
         "letterSpacing": 0.75,

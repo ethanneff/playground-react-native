@@ -94,15 +94,8 @@ exports[`renders correctly 1`] = `
             undefined,
             Array [
               Object {
-                "color": "hsl(211, 100%, 50%)",
-              },
-              undefined,
-              Object {
                 "color": "hsl(208, 7%, 46%)",
               },
-              undefined,
-              undefined,
-              undefined,
               undefined,
             ],
           ]
@@ -148,7 +141,6 @@ exports[`renders correctly 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "alignSelf": "flex-start",
         "backgroundColor": "transparent",
         "borderColor": "transparent",
         "borderRadius": 4,
@@ -168,15 +160,8 @@ exports[`renders correctly 1`] = `
           "",
           Array [
             Object {
-              "color": "hsl(211, 100%, 50%)",
-            },
-            undefined,
-            undefined,
-            Object {
               "color": "hsl(354, 70%, 54%)",
             },
-            undefined,
-            undefined,
             undefined,
           ],
         ]

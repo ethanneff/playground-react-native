@@ -14,7 +14,7 @@ exports[`renders correctly 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "borderBottomColor": "hsl(210, 10%, 23%)",
+        "borderBottomColor": "hsl(208, 7%, 46%)",
         "borderBottomWidth": 0,
         "flexDirection": "row",
         "height": 72,
@@ -47,7 +47,7 @@ exports[`renders correctly 1`] = `
           style={
             Array [
               Object {
-                "color": "hsl(210, 10%, 23%)",
+                "color": "hsl(208, 7%, 46%)",
                 "fontSize": 24,
               },
               Array [
@@ -70,8 +70,8 @@ exports[`renders correctly 1`] = `
     <Text
       style={
         Object {
-          "color": "hsl(0, 0%, 0%)",
-          "fontSize": 30,
+          "color": "hsla(0, 0%, 0%, 1)",
+          "fontSize": 40,
           "fontWeight": "100",
           "letterSpacing": -0.5,
           "opacity": 1,
@@ -131,6 +131,7 @@ exports[`renders correctly 1`] = `
           "debugStartup",
           "debugStopwatch",
           "debugDarkMode",
+          "debugColors",
         ]
       }
       disableVirtualization={false}
@@ -190,7 +191,7 @@ exports[`renders correctly 1`] = `
             <Text
               style={
                 Object {
-                  "color": "hsl(211, 100%, 50%)",
+                  "color": "hsl(0, 0%, 0%)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -236,7 +237,7 @@ exports[`renders correctly 1`] = `
             <Text
               style={
                 Object {
-                  "color": "hsl(211, 100%, 50%)",
+                  "color": "hsl(0, 0%, 0%)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -282,7 +283,7 @@ exports[`renders correctly 1`] = `
             <Text
               style={
                 Object {
-                  "color": "hsl(211, 100%, 50%)",
+                  "color": "hsl(0, 0%, 0%)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -328,7 +329,7 @@ exports[`renders correctly 1`] = `
             <Text
               style={
                 Object {
-                  "color": "hsl(211, 100%, 50%)",
+                  "color": "hsl(0, 0%, 0%)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -374,7 +375,7 @@ exports[`renders correctly 1`] = `
             <Text
               style={
                 Object {
-                  "color": "hsl(211, 100%, 50%)",
+                  "color": "hsl(0, 0%, 0%)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -420,7 +421,7 @@ exports[`renders correctly 1`] = `
             <Text
               style={
                 Object {
-                  "color": "hsl(211, 100%, 50%)",
+                  "color": "hsl(0, 0%, 0%)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -466,7 +467,7 @@ exports[`renders correctly 1`] = `
             <Text
               style={
                 Object {
-                  "color": "hsl(211, 100%, 50%)",
+                  "color": "hsl(0, 0%, 0%)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -512,7 +513,7 @@ exports[`renders correctly 1`] = `
             <Text
               style={
                 Object {
-                  "color": "hsl(211, 100%, 50%)",
+                  "color": "hsl(0, 0%, 0%)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -558,7 +559,7 @@ exports[`renders correctly 1`] = `
             <Text
               style={
                 Object {
-                  "color": "hsl(211, 100%, 50%)",
+                  "color": "hsl(0, 0%, 0%)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,
@@ -604,7 +605,7 @@ exports[`renders correctly 1`] = `
             <Text
               style={
                 Object {
-                  "color": "hsl(211, 100%, 50%)",
+                  "color": "hsl(0, 0%, 0%)",
                   "fontSize": 14,
                   "fontWeight": "600",
                   "letterSpacing": 0.75,

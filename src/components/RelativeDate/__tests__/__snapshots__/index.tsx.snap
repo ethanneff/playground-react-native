@@ -21,7 +21,7 @@ exports[`RelativeDate component renders correctly 1`] = `
   <Text
     style={
       Object {
-        "color": "hsl(0, 0%, 0%)",
+        "color": "hsla(0, 0%, 0%, 1)",
         "fontSize": 14,
         "fontWeight": "300",
         "letterSpacing": 0.25,
@@ -55,7 +55,7 @@ exports[`RelativeDate component renders correctly on touch 1`] = `
   <Text
     style={
       Object {
-        "color": "hsl(0, 0%, 0%)",
+        "color": "hsla(0, 0%, 0%, 1)",
         "fontSize": 14,
         "fontWeight": "300",
         "letterSpacing": 0.25,
