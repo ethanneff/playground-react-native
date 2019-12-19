@@ -1,6 +1,6 @@
 // TODO: slider on web
 import React, { memo, useState } from "react";
-import { FlatList, Image, ImageSourcePropType, View } from "react-native";
+import { Image, ImageSourcePropType, View } from "react-native";
 import { Button, Card, Screen, Text, Masonry } from "../../../../components";
 import {
   ColorTheme,
@@ -84,20 +84,15 @@ export default memo(function DarkMode() {
           }}
         >
           <Text title="theme: " />
-          <FlatList
-            horizontal
-            keyExtractor={item => item}
-            data={themes}
-            renderItem={({ item }) => 
-              <Button
-                key={item}
-                title={item}
-                onPress={themePress(item)}
-                contained={currentTheme === item}
-                secondary={currentTheme !== item}
-              />
-            }
-          />
+          {themes.map(item => 
+            <Button
+              key={item}
+              title={item}
+              onPress={themePress(item)}
+              primary
+              contained={currentTheme === item}
+            />
+          )}
         </View>
         <Text title={`elevation: ${elevation}`} />
         <Slider
