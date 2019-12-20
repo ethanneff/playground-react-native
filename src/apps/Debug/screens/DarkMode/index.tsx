@@ -90,7 +90,7 @@ export default memo(function DarkMode() {
           }}
         >
           <Text title="theme: " />
-          {themes.map(item => (
+          {themes.map(item => 
             <Button
               key={item}
               title={item}
@@ -98,7 +98,7 @@ export default memo(function DarkMode() {
               primary
               contained={currentTheme === item}
             />
-          ))}
+          )}
         </View>
         <Text title={`elevation: ${elevation}`} />
         <Slider
@@ -114,7 +114,7 @@ export default memo(function DarkMode() {
       <Masonry
         data={cards}
         numColumns={columns}
-        renderItem={({ item, index }: { item: Card; index: number }) => (
+        renderItem={({ item, index }: { item: Card; index: number }) => 
           <Card
             elevation={elevation}
             onPress={() => undefined}
@@ -127,14 +127,14 @@ export default memo(function DarkMode() {
               h3
               style={{ marginTop: Theme.padding.p02 }}
             />
-            {item.target && (
+            {item.target && 
               <Text
                 title={item.target}
                 body2
                 style={{ marginTop: Theme.padding.p02 }}
               />
-            )}
-            {item.chart && (
+            }
+            {item.chart && 
               <Image
                 source={item.chart}
                 style={{
@@ -144,16 +144,16 @@ export default memo(function DarkMode() {
                   width: "100%"
                 }}
               />
-            )}
-            {item.button && (
+            }
+            {item.button && 
               <Button
                 contained
                 title={item.button}
                 buttonStyle={{ marginTop: Theme.padding.p02 }}
               />
-            )}
+            }
           </Card>
-        )}
+        }
       />
     </Screen>
   );
