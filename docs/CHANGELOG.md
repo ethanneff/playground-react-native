@@ -1,5 +1,21 @@
 # Changelog
 
+# [2.15.0](https://github.com/ethanneff/example/compare/v2.14.0...v2.15.0) (2019-12-22)
+
+
+### Bug Fixes
+
+* add more activity and scrollview ([c922c67](https://github.com/ethanneff/example/commit/c922c67))
+* relocate day to memo ([22bf89e](https://github.com/ethanneff/example/commit/22bf89e))
+* remove flex from screen gutter ([4a1b61f](https://github.com/ethanneff/example/commit/4a1b61f))
+* update deps ([b55fa9f](https://github.com/ethanneff/example/commit/b55fa9f))
+* update imports ([26b82d7](https://github.com/ethanneff/example/commit/26b82d7))
+
+
+### Features
+
+* add hidden days in calendar ([b92129a](https://github.com/ethanneff/example/commit/b92129a))
+
 # [2.14.0](https://github.com/ethanneff/example/compare/v2.13.1...v2.14.0) (2019-12-19)
 
 
