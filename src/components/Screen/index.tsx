@@ -38,7 +38,6 @@ export const Screen: React.FC<Props> = memo(function Screen({
       flex: 1
     },
     gutter: {
-      flex: 1,
       padding: gutter ? Theme.padding.p04 : Theme.padding.p00
     }
   });
