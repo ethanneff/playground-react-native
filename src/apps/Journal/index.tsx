@@ -21,20 +21,21 @@ export default memo(function Journal() {
   });
 
   return (
-    <Screen
-      onLeftPress={nav.to("portfolioLanding")}
-      title="nope"
-      style={{ backgroundColor: color.light }}
-    >
-      <Card>
-        <Text h2 title="Activity" style={styles.bottom} />
-        <Activity username="ethanneff" site="github" />
-      </Card>
-      <Card>
-        <Text h2 title="Calendar" style={styles.bottom} />
-        <Calendar />
-      </Card>
+    <Screen onLeftPress={nav.to("portfolioLanding")} title="nope" gutter>
       <ScrollView>
+        <Card>
+          <Text h2 title="Activity" style={styles.bottom} />
+          <Text style={styles.bottom} overline title="Hackerrank" />
+          <Activity username="ethanneff" site="github" />
+          <Text style={styles.bottom} overline title="Hackerrank" />
+          <Activity username="ethanneff" site="leetcode" />
+          <Text style={styles.bottom} overline title="Hackerrank" />
+          <Activity username="ethanneff" site="hackerrank" />
+        </Card>
+        <Card>
+          <Text h2 title="Calendar" style={styles.bottom} />
+          <Calendar hiddenDays />
+        </Card>
         <Card>
           <Text h2 title="Record" style={styles.bottom} />
           <Text
