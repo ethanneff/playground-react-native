@@ -1,17 +1,13 @@
 import React, { memo } from "react";
-import { StyleSheet, ScrollView } from "react-native";
-import {
-  Screen,
-  Text,
-  TextInput,
-  Card,
-  Calendar,
-  Activity
-} from "../../components";
-import { useNav } from "../../hooks";
-import { Theme } from "../../utils";
+import { StyleSheet, ScrollView, View } from "react-native";
+import { Screen, Text, TextInput, Card, Calendar } from "../../components";
+import { useNav, useColor } from "../../hooks";
+import { Theme, colorWithOpacity, useRootSelector } from "../../utils";
+import { getLightMode } from "../../models";
 
 export default memo(function Journal() {
+  const color = useColor();
+  const lightMode = useRootSelector(getLightMode);
   const nav = useNav();
   const styles = StyleSheet.create({
     bottom: {
@@ -20,26 +16,26 @@ export default memo(function Journal() {
   });
 
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")} title="nope" gutter>
-      <ScrollView>
+    <Screen onLeftPress={nav.to("portfolioLanding")} title="Activity">
+      <ScrollView
+        style={{
+          backgroundColor: lightMode
+            ? colorWithOpacity(color.text, 0.05)
+            : "transparent", // TODO: make color
+          paddingHorizontal: Theme.padding.p04,
+          paddingVertical: Theme.padding.p02
+        }}
+      >
         <Card>
-          <Text h2 title="Activity" style={styles.bottom} />
-          <Text style={styles.bottom} overline title="Hackerrank" />
-          <Activity username="ethanneff" site="github" />
-          <Text style={styles.bottom} overline title="Hackerrank" />
-          <Activity username="ethanneff" site="leetcode" />
-          <Text style={styles.bottom} overline title="Hackerrank" />
-          <Activity username="ethanneff" site="hackerrank" />
-        </Card>
-        <Card>
-          <Text h2 title="Calendar" style={styles.bottom} />
+          <Text h3 title="Calendar" style={styles.bottom} />
           <Calendar hiddenDays />
         </Card>
         <Card>
-          <Text h2 title="Record" style={styles.bottom} />
+          <Text h3 title="Record" style={styles.bottom} />
           <Text
-            overline
-            title="one objective that will make everything easier"
+            h5
+            medium
+            title="One objective that will make everything easier"
             style={styles.bottom}
           />
           <TextInput
@@ -48,7 +44,7 @@ export default memo(function Journal() {
             value={""}
             onChangeText={() => undefined}
           />
-          <Text overline title="Additional objectives" style={styles.bottom} />
+          <Text h5 medium title="Additional objectives" style={styles.bottom} />
           <TextInput
             title="Secondary goal"
             placeholder="fill me"
@@ -67,7 +63,7 @@ export default memo(function Journal() {
             value={""}
             onChangeText={() => undefined}
           />
-          <Text overline title="Bonus objectives" style={styles.bottom} />
+          <Text h5 medium title="Bonus objectives" style={styles.bottom} />
           <TextInput
             title="tertiary goal"
             placeholder="fill me"
@@ -100,7 +96,7 @@ export default memo(function Journal() {
           />
         </Card>
         <Card>
-          <Text h2 title="Review" style={styles.bottom} />
+          <Text h3 title="Review" style={styles.bottom} />
           <TextInput
             title="How likely are you to recommend this day?"
             placeholder="fill me"
@@ -115,7 +111,7 @@ export default memo(function Journal() {
           />
         </Card>
         <Card>
-          <Text h2 title="Retro" style={styles.bottom} />
+          <Text h3 title="Retro" style={styles.bottom} />
           <TextInput
             title="What went well?"
             placeholder="fill me"
@@ -135,6 +131,7 @@ export default memo(function Journal() {
             onChangeText={() => undefined}
           />
         </Card>
+        <View style={{ height: Theme.padding.p04 }} />
       </ScrollView>
     </Screen>
   );
