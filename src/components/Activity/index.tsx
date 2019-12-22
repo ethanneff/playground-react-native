@@ -2,7 +2,7 @@ import { FlatList } from "react-native";
 import React, { memo } from "react";
 import { Theme } from "../../utils";
 import { getActivitySquares, ActivityDay } from "./utils";
-import { ActivityWeek } from "./Week";
+import { ActivityWeekRow } from "./Week";
 import { Text } from "../Text";
 
 type Site = "github" | "leetcode" | "hackerrank";
@@ -31,8 +31,8 @@ export const Activity = memo(function Activity({
         inverted
         horizontal
         keyExtractor={item => item[0].date.format("MM-DD")}
-        renderItem={({ item, index }) => 
-          <ActivityWeek
+        renderItem={({ item, index }) => (
+          <ActivityWeekRow
             max={activity.max}
             item={item}
             index={index}
@@ -40,7 +40,7 @@ export const Activity = memo(function Activity({
             margin={margin}
             onPress={onPress}
           />
-        }
+        )}
       />
       <Text
         overline

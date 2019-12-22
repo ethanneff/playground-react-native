@@ -1,10 +1,9 @@
 import React, { memo } from "react";
-import { View, TouchableOpacity } from "react-native";
-import { useColor } from "../../hooks";
+import { View } from "react-native";
 import { ActivityDayInWeek, ActivityDay } from "./utils";
 import { Text } from "../Text";
-import dayjs from "dayjs";
-import { Theme, colorWithOpacity } from "../../utils";
+import { Theme } from "../../utils";
+import { ActivityDayCell } from "./Day";
 
 interface Props {
   item: ActivityDayInWeek;
@@ -15,7 +14,7 @@ interface Props {
   onPress: (item: ActivityDay) => () => void;
 }
 
-export const ActivityWeek = memo(function ActivityWeek({
+export const ActivityWeekRow = memo(function ActivityWeekRow({
   item,
   max,
   index,
@@ -23,7 +22,6 @@ export const ActivityWeek = memo(function ActivityWeek({
   margin,
   onPress
 }: Props) {
-  const color = useColor();
   const first = item[0].date;
   const showHeader = Number(first.format("DD")) <= 7;
   const header = showHeader ? first.format("MMM") : " ";
@@ -31,34 +29,20 @@ export const ActivityWeek = memo(function ActivityWeek({
     <View key={index}>
       <Text
         center
-        secondary
+        medium
         title={header}
         overline
         style={{ paddingBottom: Theme.padding.p03 }}
       />
-      {item.map(day => {
-        const backgroundColor =
-          day.count === 0
-            ? color.light
-            : colorWithOpacity(color.success, day.count / max); // TODO: test colors because light is too light
-        const borderColor = day.date.isSame(dayjs(), "day")
-          ? color.danger
-          : color.background;
-        return (
-          <TouchableOpacity
-            onPress={onPress(day)}
-            key={day.date.format("YYYY-MM-DD")}
-            style={{
-              width: size,
-              height: size,
-              margin,
-              backgroundColor,
-              borderColor,
-              borderWidth: 1
-            }}
-          />
-        );
-      })}
+      {item.map(day => (
+        <ActivityDayCell
+          day={day}
+          max={max}
+          size={size}
+          margin={margin}
+          onPress={onPress}
+        />
+      ))}
     </View>
   );
 });
