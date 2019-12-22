@@ -21,10 +21,15 @@ const setState = (date: Dayjs) => ({
 const getMonth = (unix: number, increment: number) =>
   dayjs(unix).add(increment, "month");
 
-export const Calendar = memo(function Calendar() {
+interface Props {
+  hiddenDays?: boolean;
+}
+
+export const Calendar = memo(function Calendar({ hiddenDays }: Props) {
   const [calendar, setCalendar] = useState<State>(setState(today));
 
   const onSelected = (id: string) => () => {
+    // TODO: navigate to month if pressing previous or next month
     setCalendar(state => ({
       ...state,
       selected: id === calendar.selected ? undefined : id
@@ -55,6 +60,7 @@ export const Calendar = memo(function Calendar() {
         <View key={i} style={{ flexDirection: "row" }}>
           {row.map(col => 
             <CalendarDay
+              hiddenDays={hiddenDays}
               key={col.id}
               onSelected={onSelected}
               day={col}

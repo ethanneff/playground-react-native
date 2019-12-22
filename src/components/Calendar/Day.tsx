@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { useColor } from "../../hooks";
 import { View, TouchableOpacity } from "react-native";
-import { Theme } from "../../utils";
+import { Theme, colorWithOpacity } from "../../utils";
 import { Day } from "./utils";
 import { Text } from "../Text";
 import dayjs from "dayjs";
@@ -10,33 +10,37 @@ interface Props {
   day: Day;
   onSelected(id: string): () => void;
   selectedDay: string | undefined;
+  hiddenDays?: boolean;
 }
 
 export const CalendarDay = memo(function CalendarDay({
   day,
   onSelected,
-  selectedDay
+  selectedDay,
+  hiddenDays
 }: Props) {
   const color = useColor();
   const selected = day.id === selectedDay;
   const today = dayjs(day.id).isSame(dayjs(), "day");
-  const backgroundColor = day.header
-    ? color.background
-    : selected
-    ? color.primary
-    : color.background;
-  const textColor = selected
-    ? color.background
-    : today
-    ? color.success
-    : day.current
-    ? color.text
-    : color.secondary;
+  const backgroundColor = selected ? color.primary : "transparent";
+  const nonMonthDay = hiddenDays && !day.current;
+  const textColor =
+    nonMonthDay && !day.header
+      ? "transparent"
+      : selected
+      ? color.background
+      : today
+      ? color.success
+      : day.current
+      ? color.text
+      : colorWithOpacity(color.secondary, 0.6);
+  const disabled = day.header || nonMonthDay;
+
   return (
     <TouchableOpacity
       key={day.id}
       onPress={onSelected(day.id)}
-      disabled={day.header}
+      disabled={disabled}
       style={{
         flex: 1,
         alignItems: "center"
