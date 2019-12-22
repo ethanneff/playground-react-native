@@ -22,7 +22,10 @@ export default memo(function PortfolioLanding() {
         <Button title="Checklist" onPress={nav.to("checklists")} />
         <Button title="CantHurtMe" onPress={nav.to("cantHurtMe")} />
         <Button title="Focus" onPress={nav.to("focus")} />
+      </View>
+      <View style={styles.row}>
         <Button title="Journal" onPress={nav.to("journal")} />
+        <Button title="Activity" onPress={nav.to("activity")} />
       </View>
       <View style={styles.row}>
         <Button title="FlappyBird" onPress={nav.to("gamesFlappyBird")} />

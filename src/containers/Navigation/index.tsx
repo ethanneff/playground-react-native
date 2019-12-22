@@ -36,6 +36,7 @@ const ChecklistsItemUpdate = lazy(() =>
 const Focus = lazy(() => import("../../apps/Focus"));
 const CantHurtMe = lazy(() => import("../../apps/CantHurtMe/screens/Main"));
 const Journal = lazy(() => import("../../apps/Journal"));
+const Activity = lazy(() => import("../../apps/Activity"));
 const Debug = lazy(() => import("../../apps/Debug/screens/Main"));
 const DebugArticle = lazy(() => import("../../apps/Debug/screens/Article"));
 const DebugBall = lazy(() => import("../../apps/Debug/screens/Ball"));
@@ -75,6 +76,7 @@ export const screens = {
   portfolioLogin: <PortfolioLogin />,
   cantHurtMe: <CantHurtMe />,
   journal: <Journal />,
+  activity: <Activity />,
   debug: <Debug />,
   debugArticle: <DebugArticle />,
   debugBall: <DebugBall />,
