@@ -7,12 +7,19 @@ https://material.io/design/color/dark-theme.html#ui-application
 https://material.io/design/color/the-color-system.html#tools-for-picking-colors
 */
 
+export enum ColorTheme {
+  Light = "light",
+  Dark = "dark"
+}
+
 /* ACTIONS */
 export const changeTheme = createAction("theme/CHANGE")<ColorTheme>();
 
 /* SELECTORS */
 export const getCurrentColor = (state: RootState): Color =>
   state.theme.colors[state.theme.currentColor];
+export const getLightMode = (state: RootState): boolean =>
+  state.theme.currentColor === ColorTheme.Light;
 
 /* INTERFACES */
 enum StatusBarStyle {
@@ -34,11 +41,6 @@ export interface Color {
   statusBar: StatusBarStyle;
   success: string;
   warning: string;
-}
-
-export enum ColorTheme {
-  Light = "light",
-  Dark = "dark"
 }
 
 type Colors = {
