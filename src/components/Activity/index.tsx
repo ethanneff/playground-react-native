@@ -31,7 +31,7 @@ export const Activity = memo(function Activity({
         inverted
         horizontal
         keyExtractor={item => item[0].date.format("MM-DD")}
-        renderItem={({ item, index }) => (
+        renderItem={({ item, index }) => 
           <ActivityWeekRow
             max={activity.max}
             item={item}
@@ -40,7 +40,7 @@ export const Activity = memo(function Activity({
             margin={margin}
             onPress={onPress}
           />
-        )}
+        }
       />
       <Text
         overline

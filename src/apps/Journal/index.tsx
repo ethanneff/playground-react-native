@@ -8,11 +8,10 @@ import {
   Calendar,
   Activity
 } from "../../components";
-import { useColor, useNav } from "../../hooks";
+import { useNav } from "../../hooks";
 import { Theme } from "../../utils";
 
 export default memo(function Journal() {
-  const color = useColor();
   const nav = useNav();
   const styles = StyleSheet.create({
     bottom: {

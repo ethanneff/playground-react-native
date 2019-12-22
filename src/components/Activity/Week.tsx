@@ -34,15 +34,16 @@ export const ActivityWeekRow = memo(function ActivityWeekRow({
         overline
         style={{ paddingBottom: Theme.padding.p03 }}
       />
-      {item.map(day => (
+      {item.map(day => 
         <ActivityDayCell
+          key={day.date.format("YYYY-MM-DD")}
           day={day}
           max={max}
           size={size}
           margin={margin}
           onPress={onPress}
         />
-      ))}
+      )}
     </View>
   );
 });
