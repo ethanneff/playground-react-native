@@ -26,7 +26,7 @@ export const CalendarHeader = memo(function CalendarHeader({
       />
       <TouchableOpacity onPress={onTitlePress}>
         <Text
-          h3
+          h4
           title={dayjs(unix).format("MMMM YYYY")}
           center
           style={{ paddingBottom: Theme.padding.p04 }}
