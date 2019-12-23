@@ -43,8 +43,37 @@ export const getActivitySquares = (): ActivityMatrix => {
     startUnix = start.valueOf();
   }
 
-  return {
-    max,
-    matrix: activity.reverse()
-  };
+  return { matrix: activity.reverse(), max };
+};
+
+const getGithubActivity = async (username: string): ApiPromise => {
+  const url = `https://github-contributions-json-api.now.sh/api?username=${username}`;
+  const res = await axios.get(url);
+  return res.data;
+};
+
+const getLeetCodeActivity = async (username: string): ApiPromise => {
+  const url = `https://leetcode.com/api/user_submission_calendar/${username}`;
+  const res = await axios.get(url);
+  const data = JSON.parse(res.data);
+  return Object.keys(data).reduce((total: ApiResponse, item) => {
+    const day = dayjs(Number(item) * 1000).format("YYYY-MM-DD");
+    if (day in total) {
+      total[day] += data[item];
+    } else {
+      total[day] = data[item];
+    }
+    return total;
+  }, {});
+};
+
+const getHackerRankActivity = async (username: string): ApiPromise => {
+  const url = `https://www.hackerrank.com/rest/hackers/${username}/submission_histories`;
+  const res = await axios.get(url);
+  return Object.keys(res.data).reduce((total: ApiResponse, item) => {
+    total[item] = Number(res.data[item]);
+    return total;
+  }, {});
+};
+
 };
