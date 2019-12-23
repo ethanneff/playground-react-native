@@ -1,54 +1,77 @@
-import React, { memo, useState, useCallback } from "react";
+import React, { memo, useState, useCallback, useEffect } from "react";
 import { View } from "react-native";
 import dayjs, { Dayjs } from "dayjs";
 import { CalendarMatrix, getCalendarMatrix } from "./utils";
 import { CalendarHeader } from "./Header";
 import { CalendarDay } from "./Day";
+import { Text } from "../Text";
 
 type State = {
   unix: number;
   matrix: CalendarMatrix;
   selected: string | undefined;
+  loading: boolean;
 };
-
-const today = dayjs();
-const setState = (date: Dayjs) => ({
-  unix: date.valueOf(),
-  matrix: getCalendarMatrix(date),
-  selected: undefined
-});
-
-const getMonth = (unix: number, increment: number) =>
-  dayjs(unix).add(increment, "month");
 
 interface Props {
   hiddenDays?: boolean;
 }
 
-export const Calendar = memo(function Calendar({ hiddenDays }: Props) {
-  const [calendar, setCalendar] = useState<State>(setState(today));
+const initialState = {
+  unix: dayjs().valueOf(),
+  matrix: [],
+  selected: undefined,
+  loading: true
+};
 
-  const onSelected = (id: string) => () => {
-    // TODO: navigate to month if pressing previous or next month
-    setCalendar(state => ({
-      ...state,
-      selected: id === calendar.selected ? undefined : id
-    }));
-  };
+export const Calendar = memo(function Calendar({ hiddenDays }: Props) {
+  const [calendar, setCalendar] = useState<State>(initialState);
+
+  const onSelected = useCallback(
+    (id: string) => () => {
+      // TODO: navigate to month if pressing previous or next month
+      setCalendar(state => ({
+        ...state,
+        selected: id === calendar.selected ? undefined : id
+      }));
+    },
+    [calendar.selected]
+  );
+
+  const getMonth = useCallback(
+    (unix: number, increment: number) => dayjs(unix).add(increment, "month"),
+    []
+  );
+
+  const getState = useCallback(
+    (date: Dayjs) => ({
+      unix: date.valueOf(),
+      matrix: getCalendarMatrix(date),
+      selected: undefined,
+      loading: false
+    }),
+    []
+  );
 
   const onMonthIncrease = useCallback(() => {
-    setCalendar(setState(getMonth(calendar.unix, 1)));
-  }, [calendar.unix]);
+    setCalendar(getState(getMonth(calendar.unix, 1)));
+  }, [calendar.unix, getMonth, getState]);
 
   const onMonthDecrease = useCallback(() => {
-    setCalendar(setState(getMonth(calendar.unix, -1)));
-  }, [calendar.unix]);
+    setCalendar(getState(getMonth(calendar.unix, -1)));
+  }, [calendar.unix, getMonth, getState]);
 
   const onTitlePress = useCallback(() => {
-    setCalendar(setState(today));
-  }, []);
+    setCalendar(getState(dayjs()));
+  }, [getState]);
 
-  return (
+  useEffect(() => {
+    setCalendar(getState(dayjs()));
+  }, [getState]);
+
+  return calendar.loading ? 
+    <Text h5 medium title="loading..." /> // TODO: update loading component to this (also components/Activity)
+   : 
     <View>
       <CalendarHeader
         onTitlePress={onTitlePress}
@@ -70,5 +93,5 @@ export const Calendar = memo(function Calendar({ hiddenDays }: Props) {
         </View>
       )}
     </View>
-  );
+  ;
 });
