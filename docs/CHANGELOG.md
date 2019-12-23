@@ -1,5 +1,25 @@
 # Changelog
 
+# [2.16.0](https://github.com/ethanneff/example/compare/v2.15.0...v2.16.0) (2019-12-23)
+
+
+### Bug Fixes
+
+* activity pulls real data ([81be686](https://github.com/ethanneff/example/commit/81be686))
+* add selector for if light theme ([33ed57c](https://github.com/ethanneff/example/commit/33ed57c))
+* make journal not have activity ([a3a5a9c](https://github.com/ethanneff/example/commit/a3a5a9c))
+* move activity to new app ([0a86cca](https://github.com/ethanneff/example/commit/0a86cca))
+* no abstract functions for renderItem ([387c790](https://github.com/ethanneff/example/commit/387c790))
+* relocate scrapers ([aa15137](https://github.com/ethanneff/example/commit/aa15137))
+* remove cheerio since it needs node ([6139bb2](https://github.com/ethanneff/example/commit/6139bb2))
+* update netinfo ios dep ([981ad51](https://github.com/ethanneff/example/commit/981ad51))
+* usecallback all the things ([301e1eb](https://github.com/ethanneff/example/commit/301e1eb))
+
+
+### Features
+
+* add scrapers for coding activity ([925755d](https://github.com/ethanneff/example/commit/925755d))
+
 # [2.15.0](https://github.com/ethanneff/example/compare/v2.14.0...v2.15.0) (2019-12-22)
 
 
