@@ -17,13 +17,21 @@ export default memo(function Checklist() {
   const dispatch = useRootDispatch();
   const items = useRootSelector(getCurrentActiveChecklistItemsOrderByCreatedAt);
 
-  const handleRemove = (id: string) => () => dispatch(removeChecklistItem(id));
-  const handleToggle = (id: string) => () =>
-    dispatch(toggleChecklistItemComplete(id));
-  const handleEdit = (id: string) => () => {
-    dispatch(setActiveChecklistItem(id));
-    dispatch(navigate("checklistsItemUpdate"));
-  };
+  const handleRemove = useCallback(
+    (id: string) => () => dispatch(removeChecklistItem(id)),
+    [dispatch]
+  );
+  const handleToggle = useCallback(
+    (id: string) => () => dispatch(toggleChecklistItemComplete(id)),
+    [dispatch]
+  );
+  const handleEdit = useCallback(
+    (id: string) => () => {
+      dispatch(setActiveChecklistItem(id));
+      dispatch(navigate("checklistsItemUpdate"));
+    },
+    [dispatch]
+  );
 
   const renderItem = useCallback(
     ({ item }) => 
@@ -53,7 +61,15 @@ export default memo(function Checklist() {
         />
       </View>
     ,
-    [color.danger, color.success, color.text, color.warning, handleEdit, handleRemove, handleToggle]
+    [
+      color.danger,
+      color.success,
+      color.text,
+      color.warning,
+      handleEdit,
+      handleRemove,
+      handleToggle
+    ]
   );
   const keyExtractor = useCallback(item => item.id, []);
 

@@ -15,15 +15,21 @@ export default memo(function Checklists() {
   const dispatch = useRootDispatch();
   const items = useRootSelector(getActiveChecklistOrderByCreatedAt);
 
-  const handleItemPress = (id: string) => () => {
-    dispatch(setActiveList(id));
-    dispatch(navigate("checklistsList"));
-  };
+  const handleItemPress = useCallback(
+    (id: string) => () => {
+      dispatch(setActiveList(id));
+      dispatch(navigate("checklistsList"));
+    },
+    [dispatch]
+  );
 
-  const handleItemLongPress = (id: string) => () => {
-    dispatch(setActiveList(id));
-    dispatch(navigate("checklistsListUpdate"));
-  };
+  const handleItemLongPress = useCallback(
+    (id: string) => () => {
+      dispatch(setActiveList(id));
+      dispatch(navigate("checklistsListUpdate"));
+    },
+    [dispatch]
+  );
 
   const renderItem = useCallback(
     ({ item }) => 
