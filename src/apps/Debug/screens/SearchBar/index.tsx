@@ -177,6 +177,13 @@ export default memo(function DebugSearchbar() {
     };
   }, [keyboardDidHide, keyboardDidShow, keyboardWillHide, keyboardWillShow]);
 
+  const renderItem = useCallback(
+    ({ item }) => <Text subtitle2 style={styles.item} title={item.name} />,
+    [styles.item]
+  );
+
+  const keyExtractor = useCallback(item => item.id.toString(), []);
+
   return (
     <Screen onLeftPress={nav.to("debug")}>
       <View style={styles.header}>
@@ -200,11 +207,9 @@ export default memo(function DebugSearchbar() {
       </View>
       <Animated.View style={{ flex: 1, backgroundColor: fadeContainer }}>
         <FlatList
-          keyExtractor={item => item.id.toString()}
+          keyExtractor={keyExtractor}
           data={data}
-          renderItem={({ item }) => 
-            <Text subtitle2 style={styles.item} title={item.name} />
-          }
+          renderItem={renderItem}
         />
       </Animated.View>
     </Screen>

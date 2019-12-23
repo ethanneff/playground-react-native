@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useCallback } from "react";
 import { FlatList } from "react-native";
 import { Button, Screen } from "../../../../components";
 import { useNav, useColor } from "../../../../hooks";
@@ -25,18 +25,25 @@ export default memo(function Checklists() {
     dispatch(navigate("checklistsListUpdate"));
   };
 
+  const renderItem = useCallback(
+    ({ item }) => 
+      <Button
+        title={item.name}
+        onPress={handleItemPress(item.id)}
+        onLongPress={handleItemLongPress(item.id)}
+      />
+    ,
+    [handleItemLongPress, handleItemPress]
+  );
+
+  const keyExtractor = useCallback(item => item.id, []);
+
   return (
     <Screen onLeftPress={nav.to("portfolioLanding")} title="Checklists" gutter>
       <FlatList
-        keyExtractor={item => item.id}
+        keyExtractor={keyExtractor}
         data={items}
-        renderItem={({ item }) => 
-          <Button
-            title={item.name}
-            onPress={handleItemPress(item.id)}
-            onLongPress={handleItemLongPress(item.id)}
-          />
-        }
+        renderItem={renderItem}
       />
       <Button
         right

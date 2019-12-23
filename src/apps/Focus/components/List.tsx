@@ -1,4 +1,4 @@
-import React, { memo, useState, useEffect } from "react";
+import React, { memo, useState, useEffect, useCallback } from "react";
 import { StyleSheet } from "react-native";
 import { FlatList, ActivityIndicator } from "react-native";
 import { ListItem } from "./ListItem";
@@ -65,13 +65,25 @@ export const List = memo(
       }
     });
 
-    const onLoad = () => {
+    const onLoad = useCallback(() => {
       setTimeout(() => {
         setLoading(false);
       }, 1000);
-    };
+    }, []);
 
     useEffect(onLoad, []);
+
+    const renderItem = useCallback(
+      ({ item, index }) => 
+        <ListItem
+          currentItem={getCurrentItem(item)}
+          item={item}
+          showSection={getFirstItemOfDay(index, item, items)}
+          onItemPress={onItemPress}
+        />
+      ,
+      [items, onItemPress]
+    );
 
     return (
       <>
@@ -84,14 +96,7 @@ export const List = memo(
           data={items}
           onEndReached={onEndReached}
           onEndReachedThreshold={onEndReachedThreshold}
-          renderItem={({ item, index }) => 
-            <ListItem
-              currentItem={getCurrentItem(item)}
-              item={item}
-              showSection={getFirstItemOfDay(index, item, items)}
-              onItemPress={onItemPress}
-            />
-          }
+          renderItem={renderItem}
         />
         {loading && <ActivityIndicator size="large" style={styles.loading} />}
       </>

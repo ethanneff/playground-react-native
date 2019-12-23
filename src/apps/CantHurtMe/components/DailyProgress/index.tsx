@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import React, { memo } from "react";
+import React, { memo, useCallback } from "react";
 import { FlatList, View } from "react-native";
 import { Button, Text } from "../../../../components";
 import { Theme } from "../../../../utils";
@@ -16,45 +16,51 @@ const generateHistory = () => {
 export const DailyProgress = memo(function DailyProgress() {
   const data = generateHistory();
   const color = useColor();
+
+  const renderItem = useCallback(
+    ({ item }) => 
+      <View>
+        <Button
+          icon={
+            item.date.isSame(dayjs(), "day")
+              ? "check"
+              : item.date > dayjs()
+              ? "cancel"
+              : "close"
+          }
+          iconColor={
+            item.date.isSame(dayjs(), "day")
+              ? color.success
+              : item.date > dayjs()
+              ? color.secondary
+              : color.danger
+          }
+          onPress={() => undefined}
+        />
+        <View
+          style={{
+            borderTopColor: color.text,
+            borderTopWidth: 2,
+            margin: Theme.padding.p01,
+            width: Theme.padding.p15
+          }}
+        >
+          <Text title={item.date.format("MMM DD")} center />
+        </View>
+      </View>
+    ,
+    [color.danger, color.secondary, color.success, color.text]
+  );
+
+  const keyExtractor = useCallback(item => String(item.date), []);
+
   return (
     <FlatList
       horizontal
-      keyExtractor={item => String(item.date)}
+      keyExtractor={keyExtractor}
       inverted
       data={data}
-      renderItem={({ item }) => {
-        return (
-          <View>
-            <Button
-              icon={
-                item.date.isSame(dayjs(), "day")
-                  ? "check"
-                  : item.date > dayjs()
-                  ? "cancel"
-                  : "close"
-              }
-              iconColor={
-                item.date.isSame(dayjs(), "day")
-                  ? color.success
-                  : item.date > dayjs()
-                  ? color.secondary
-                  : color.danger
-              }
-              onPress={() => undefined}
-            />
-            <View
-              style={{
-                borderTopColor: color.text,
-                borderTopWidth: 2,
-                margin: Theme.padding.p01,
-                width: Theme.padding.p15
-              }}
-            >
-              <Text title={item.date.format("MMM DD")} center />
-            </View>
-          </View>
-        );
-      }}
+      renderItem={renderItem}
     />
   );
 });

@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useCallback } from "react";
 import { FlatList, View } from "react-native";
 import { Button, Screen } from "../../../../components";
 import { useRootDispatch, useRootSelector } from "../../../../utils";
@@ -25,42 +25,44 @@ export default memo(function Checklist() {
     dispatch(navigate("checklistsItemUpdate"));
   };
 
+  const renderItem = useCallback(
+    ({ item }) => 
+      <View style={{ flexDirection: "row" }}>
+        <Button label icon="checkbox-marked-circle" iconColor={color.success} />
+        <Button
+          label
+          icon="close-circle"
+          iconColor={color.danger}
+          onPress={handleRemove(item.id)}
+        />
+        <Button
+          label
+          iconColor={color.warning}
+          icon="clock"
+          onPress={handleToggle(item.id)}
+        />
+        <Button
+          label
+          primary={item.active}
+          lowercase
+          title={item.name}
+          textStyle={{
+            color: item.completed ? color.danger : color.text
+          }}
+          onPress={handleEdit(item.id)}
+        />
+      </View>
+    ,
+    [color.danger, color.success, color.text, color.warning, handleEdit, handleRemove, handleToggle]
+  );
+  const keyExtractor = useCallback(item => item.id, []);
+
   return (
     <Screen onLeftPress={nav.to("checklists")} title="Checklist" gutter>
       <FlatList
-        keyExtractor={item => item.id}
+        keyExtractor={keyExtractor}
         data={items}
-        renderItem={({ item }) => 
-          <View style={{ flexDirection: "row" }}>
-            <Button
-              label
-              icon="checkbox-marked-circle"
-              iconColor={color.success}
-            />
-            <Button
-              label
-              icon="close-circle"
-              iconColor={color.danger}
-              onPress={handleRemove(item.id)}
-            />
-            <Button
-              label
-              iconColor={color.warning}
-              icon="clock"
-              onPress={handleToggle(item.id)}
-            />
-            <Button
-              label
-              primary={item.active}
-              lowercase
-              title={item.name}
-              textStyle={{
-                color: item.completed ? color.danger : color.text
-              }}
-              onPress={handleEdit(item.id)}
-            />
-          </View>
-        }
+        renderItem={renderItem}
       />
       <Button
         fab
