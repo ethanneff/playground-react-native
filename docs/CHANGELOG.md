@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.16.1](https://github.com/ethanneff/example/compare/v2.16.0...v2.16.1) (2019-12-23)
+
+
+### Bug Fixes
+
+* add surface color ([d20846e](https://github.com/ethanneff/example/commit/d20846e))
+* make calendar load faster ([980cb3d](https://github.com/ethanneff/example/commit/980cb3d))
+* remove hello from settings ([aa61d05](https://github.com/ethanneff/example/commit/aa61d05))
+* update deps ([6a9158a](https://github.com/ethanneff/example/commit/6a9158a))
+
 # [2.16.0](https://github.com/ethanneff/example/compare/v2.15.0...v2.16.0) (2019-12-23)
 
 
