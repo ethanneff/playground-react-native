@@ -33,11 +33,11 @@ export default memo(function ActivityTracker() {
         </Card>
         <Card>
           <Text style={styles.bottom} h4 medium title="LeetCode" />
-          <Activity username="ethanneff" site="leetcode" />
+          <Activity username="ethanneff" site="leetCode" />
         </Card>
         <Card>
           <Text style={styles.bottom} h4 medium title="HackerRank" />
-          <Activity username="ethanneff" site="hackerrank" />
+          <Activity username="ethanneff" site="hackerRank" />
         </Card>
         <View style={{ height: Theme.padding.p04 }} />
       </ScrollView>

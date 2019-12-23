@@ -1,11 +1,15 @@
 import { FlatList } from "react-native";
-import React, { memo } from "react";
+import React, { memo, useEffect, useState, useCallback } from "react";
 import { Theme } from "../../utils";
-import { getActivitySquares, ActivityDay } from "./utils";
+import { getActivitySquares, getApiActivity } from "./utils";
 import { ActivityWeekRow } from "./Week";
 import { Text } from "../Text";
-
-type Site = "github" | "leetcode" | "hackerrank";
+import {
+  ActivityModel,
+  Site,
+  ActivityDay,
+  ActivityDayInWeek
+} from "./interfaces";
 
 interface Props {
   username: string;
@@ -14,33 +18,61 @@ interface Props {
   margin?: number;
 }
 
+const initialActivity: ActivityModel = {
+  matrix: [],
+  max: 0,
+  loading: true
+};
+
 export const Activity = memo(function Activity({
   size = Theme.padding.p06,
-  margin = 1
+  margin = 1,
+  username,
+  site
 }: Props) {
-  // TODO: handle username
-  // TODO: handle site
+  const [activity, setActivity] = useState<ActivityModel>(initialActivity);
 
-  const activity = getActivitySquares();
-  const onPress = (item: ActivityDay) => () => item;
-  return (
+  // TODO: need to persist
+  // TODO: need
+  const updateActivity = useCallback(async () => {
+    const active = await getApiActivity({ username, site });
+    const { matrix, max } = getActivitySquares(active);
+    setActivity({ matrix, max, loading: false });
+  }, [site, username]);
+
+  useEffect(() => {
+    updateActivity();
+  }, [updateActivity]);
+
+  const onPress = useCallback((item: ActivityDay) => () => item, []);
+
+  const renderItem = useCallback(
+    ({ item, index }: { item: ActivityDayInWeek; index: number }) => 
+      <ActivityWeekRow
+        max={activity.max}
+        item={item}
+        index={index}
+        size={size}
+        margin={margin}
+        onPress={onPress}
+      />
+    ,
+    [activity.max, margin, onPress, size]
+  );
+
+  const keyExtractor = useCallback(item => item[0].date.format("MM-DD"), []);
+
+  return activity.loading ? 
+    <Text h5 medium title="loading.." />
+   : 
     <>
       <FlatList
         showsHorizontalScrollIndicator={false}
         data={activity.matrix}
         inverted
         horizontal
-        keyExtractor={item => item[0].date.format("MM-DD")}
-        renderItem={({ item, index }) => 
-          <ActivityWeekRow
-            max={activity.max}
-            item={item}
-            index={index}
-            size={size}
-            margin={margin}
-            onPress={onPress}
-          />
-        }
+        keyExtractor={keyExtractor}
+        renderItem={renderItem}
       />
       <Text
         overline
@@ -50,5 +82,5 @@ export const Activity = memo(function Activity({
         style={{ paddingTop: Theme.padding.p03 }}
       />
     </>
-  );
+  ;
 });

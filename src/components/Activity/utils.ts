@@ -1,23 +1,23 @@
-import dayjs, { Dayjs } from "dayjs";
+import dayjs from "dayjs";
+import { ActivityMatrix, Site } from "./interfaces";
+import axios from "axios";
 
-const getApiCount = (unix: number) => {
-  // look at {date: count}
-  if (!unix) {
-    return 0;
-  }
-  return Math.floor(Math.random() * 10);
+type ApiResponse = { [unix: string]: number };
+
+type ApiPromise = Promise<ApiResponse>;
+
+type ApiInput = {
+  username: string;
+  site: Site;
 };
 
-export interface ActivityDay {
-  date: Dayjs;
-  count: number;
-}
+type ActivitySquares = {
+  matrix: ActivityMatrix;
+  max: number;
+};
 
-export type ActivityDayInWeek = Array<ActivityDay>;
-
-export type ActivityMatrix = { max: number; matrix: Array<ActivityDayInWeek> };
-
-export const getActivitySquares = (): ActivityMatrix => {
+export const getActivitySquares = (active: ApiResponse): ActivitySquares => {
+  let max = 0;
   let start = dayjs()
     .startOf("week")
     .subtract(1, "year")
@@ -27,12 +27,10 @@ export const getActivitySquares = (): ActivityMatrix => {
     .add(1, "day")
     .endOf("week")
     .valueOf();
-
   const activity = [];
   let week = [];
-  let max = 0;
   while (startUnix < endUnix) {
-    const count = getApiCount(startUnix);
+    const count = active[start.format("YYYY-MM-DD")] || 0;
     max = count > max ? count : max;
     week.push({ date: start, count });
     if (start.isSame(start.endOf("week"), "day")) {
@@ -76,4 +74,15 @@ const getHackerRankActivity = async (username: string): ApiPromise => {
   }, {});
 };
 
+export const getApiActivity = ({ username, site }: ApiInput): ApiPromise => {
+  switch (site) {
+    case "github":
+      return getGithubActivity(username);
+    case "leetCode":
+      return getLeetCodeActivity(username);
+    case "hackerRank":
+      return getHackerRankActivity(username);
+    default:
+      return Promise.resolve({});
+  }
 };
