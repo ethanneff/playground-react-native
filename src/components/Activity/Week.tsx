@@ -1,9 +1,9 @@
 import React, { memo } from "react";
 import { View } from "react-native";
-import { ActivityDayInWeek, ActivityDay } from "./utils";
 import { Text } from "../Text";
 import { Theme } from "../../utils";
 import { ActivityDayCell } from "./Day";
+import { ActivityDayInWeek, ActivityDay } from "./interfaces";
 
 interface Props {
   item: ActivityDayInWeek;

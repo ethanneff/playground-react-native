@@ -1,9 +1,9 @@
 import React, { memo } from "react";
 import { TouchableOpacity } from "react-native";
-import { ActivityDay } from "./utils";
 import { useColor } from "../../hooks";
 import { colorWithOpacity } from "../../utils";
 import dayjs from "dayjs";
+import { ActivityDay } from "./interfaces";
 
 interface Props {
   day: ActivityDay;
