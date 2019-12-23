@@ -1,6 +1,6 @@
 import React, { memo } from "react";
-import { FlatList, View } from "react-native";
-import { Button, Screen, Text } from "../../../../components";
+import { FlatList } from "react-native";
+import { Button, Screen } from "../../../../components";
 import { ColorTheme, changeTheme } from "../../../../models";
 import { useRootDispatch, useRootSelector } from "../../../../utils";
 import { useNav } from "../../../../hooks";
@@ -28,9 +28,6 @@ export default memo(function PortfolioSettings() {
           />
         }
       />
-      <View style={{ flex: 1 }}>
-        <Text title="hello" centerVertically center />
-      </View>
     </Screen>
   );
 });
