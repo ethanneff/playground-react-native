@@ -68,7 +68,7 @@
     "@types/axios": "0.14.0",
     "@types/jest": "24.0.24",
     "@types/react": "16.9.17",
-    "@types/react-native": "0.60.25",
+    "@types/react-native": "0.60.26",
     "@types/react-native-vector-icons": "6.4.5",
     "@types/react-redux": "7.1.5",
     "@types/react-test-renderer": "16.9.1",
@@ -85,7 +85,7 @@
     "husky": "3.1.0",
     "metro-react-native-babel-preset": "0.57.0",
     "react-test-renderer": "16.12.0",
-    "semantic-release": "15.13.31",
+    "semantic-release": "15.14.0",
     "travis-deploy-once": "5.0.11",
     "typescript": "3.7.4"
   },
