@@ -63,7 +63,7 @@ export const Activity = memo(function Activity({
   const keyExtractor = useCallback(item => item[0].date.format("MM-DD"), []);
 
   return activity.loading ? 
-    <Text h5 medium title="loading.." />
+    <Text h5 medium title="loading..." />
    : 
     <>
       <FlatList
