@@ -2,13 +2,10 @@ import React, { memo } from "react";
 import { StyleSheet, ScrollView, View } from "react-native";
 import { Screen, Text, Card, Activity } from "../../components";
 import { useNav, useColor } from "../../hooks";
-import { Theme, colorWithOpacity, useRootSelector } from "../../utils";
-import { getLightMode } from "../../models";
+import { Theme } from "../../utils";
 
 export default memo(function ActivityTracker() {
   const color = useColor();
-  const lightMode = useRootSelector(getLightMode);
-
   const nav = useNav();
   const styles = StyleSheet.create({
     bottom: {
@@ -20,9 +17,7 @@ export default memo(function ActivityTracker() {
     <Screen onLeftPress={nav.to("portfolioLanding")} title="Activity">
       <ScrollView
         style={{
-          backgroundColor: lightMode
-            ? colorWithOpacity(color.text, 0.05)
-            : "transparent", // TODO: make color
+          backgroundColor: color.surface,
           paddingHorizontal: Theme.padding.p04,
           paddingVertical: Theme.padding.p02
         }}

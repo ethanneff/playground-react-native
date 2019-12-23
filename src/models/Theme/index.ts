@@ -30,6 +30,7 @@ enum StatusBarStyle {
 
 export interface Color {
   background: string;
+  surface: string;
   text: string;
   brand: string;
   danger: string;
@@ -58,6 +59,7 @@ export const themeInitialState: Theme = {
   colors: {
     [ColorTheme.Dark]: {
       background: "hsl(0, 0%, 7%)", // #121212
+      surface: "hsl(0, 0%, 7%)",
       text: "hsl(0, 0%, 100%)", // #ffffff
       brand: "hsl(264, 34%, 36%)",
       danger: "hsl(354, 70%, 54%)",
@@ -72,6 +74,7 @@ export const themeInitialState: Theme = {
     },
     [ColorTheme.Light]: {
       background: "hsl(0, 0%, 100%)", // #ffffff
+      surface: "hsl(0, 0%, 96%)",
       text: "hsl(0, 0%, 0%)", // #000000
       brand: "hsl(264, 34%, 36%)", // #563d7c
       danger: "hsl(354, 70%, 54%)", // #dc3545

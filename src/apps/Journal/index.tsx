@@ -2,12 +2,10 @@ import React, { memo } from "react";
 import { StyleSheet, ScrollView, View } from "react-native";
 import { Screen, Text, TextInput, Card, Calendar } from "../../components";
 import { useNav, useColor } from "../../hooks";
-import { Theme, colorWithOpacity, useRootSelector } from "../../utils";
-import { getLightMode } from "../../models";
+import { Theme } from "../../utils";
 
 export default memo(function Journal() {
   const color = useColor();
-  const lightMode = useRootSelector(getLightMode);
   const nav = useNav();
   const styles = StyleSheet.create({
     bottom: {
@@ -16,12 +14,10 @@ export default memo(function Journal() {
   });
 
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")} title="Activity">
+    <Screen onLeftPress={nav.to("portfolioLanding")} title="Journal">
       <ScrollView
         style={{
-          backgroundColor: lightMode
-            ? colorWithOpacity(color.text, 0.05)
-            : "transparent", // TODO: make color
+          backgroundColor: color.surface,
           paddingHorizontal: Theme.padding.p04,
           paddingVertical: Theme.padding.p02
         }}
