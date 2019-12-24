@@ -13,6 +13,7 @@ export type ActivityModel = {
   matrix: ActivityMatrix;
   max: number;
   loading: boolean;
+  current: string;
 };
 
 export type Site = "github" | "leetCode" | "hackerRank";

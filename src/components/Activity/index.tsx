@@ -1,7 +1,12 @@
 import { FlatList } from "react-native";
 import React, { memo, useEffect, useState, useCallback } from "react";
 import { Theme } from "../../utils";
-import { getActivitySquares, getApiActivity } from "./utils";
+import {
+  getActivitySquares,
+  getApiActivity,
+  getCurrentFormat,
+  getDateFormat
+} from "./utils";
 import { ActivityWeekRow } from "./Week";
 import { Text } from "../Text";
 import {
@@ -10,6 +15,7 @@ import {
   ActivityDay,
   ActivityDayInWeek
 } from "./interfaces";
+import dayjs from "dayjs";
 
 interface Props {
   username: string;
@@ -21,7 +27,8 @@ interface Props {
 const initialActivity: ActivityModel = {
   matrix: [],
   max: 0,
-  loading: true
+  loading: true,
+  current: ""
 };
 
 export const Activity = memo(function Activity({
@@ -31,15 +38,19 @@ export const Activity = memo(function Activity({
   site
 }: Props) {
   const [activity, setActivity] = useState<ActivityModel>(initialActivity);
-  const [current, setCurrent] = useState(" ");
 
   // TODO: need to persist
   // TODO: need selection color
-  // TODO: need to default select today
   const updateActivity = useCallback(async () => {
     const active = await getApiActivity({ username, site });
     const { matrix, max } = getActivitySquares(active);
-    setActivity({ matrix, max, loading: false });
+    const activeToday = active[getDateFormat(dayjs())] || 0;
+    setActivity({
+      matrix,
+      max,
+      loading: false,
+      current: getCurrentFormat(activeToday, dayjs())
+    });
   }, [site, username]);
 
   useEffect(() => {
@@ -48,15 +59,16 @@ export const Activity = memo(function Activity({
 
   const onPress = useCallback(
     (item: ActivityDay) => () => {
-      const sub = item.count === 1 ? "submission" : "submissions";
-      const date = item.date.format("MMM DD, YYYY");
-      setCurrent(`${item.count} ${sub} on ${date}`);
+      setActivity(state => ({
+        ...state,
+        current: getCurrentFormat(item.count, item.date)
+      }));
     },
     []
   );
 
   const renderItem = useCallback(
-    ({ item, index }: { item: ActivityDayInWeek; index: number }) => (
+    ({ item, index }: { item: ActivityDayInWeek; index: number }) => 
       <ActivityWeekRow
         max={activity.max}
         item={item}
@@ -65,15 +77,15 @@ export const Activity = memo(function Activity({
         margin={margin}
         onPress={onPress}
       />
-    ),
+    ,
     [activity.max, margin, onPress, size]
   );
 
-  const keyExtractor = useCallback(item => item[0].date.format("MM-DD"), []);
+  const keyExtractor = useCallback(item => getDateFormat(item[0].date), []);
 
-  return activity.loading ? (
+  return activity.loading ? 
     <Text h5 medium title="loading..." />
-  ) : (
+   : 
     <>
       <FlatList
         showsHorizontalScrollIndicator={false}
@@ -87,10 +99,10 @@ export const Activity = memo(function Activity({
         overline
         medium
         secondary
-        title={current}
+        title={activity.current}
         center
         style={{ paddingTop: Theme.padding.p03 }}
       />
     </>
-  );
+  ;
 });
