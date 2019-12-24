@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.16.2](https://github.com/ethanneff/example/compare/v2.16.1...v2.16.2) (2019-12-24)
+
+
+### Bug Fixes
+
+* default showing submissions today ([9d6f10a](https://github.com/ethanneff/example/commit/9d6f10a))
+* make color less faded and transparent border ([bb8a04c](https://github.com/ethanneff/example/commit/bb8a04c))
+* show contributions on selected day ([76eb1c0](https://github.com/ethanneff/example/commit/76eb1c0))
+* update deps ([7e82d3d](https://github.com/ethanneff/example/commit/7e82d3d))
+
 ## [2.16.1](https://github.com/ethanneff/example/compare/v2.16.0...v2.16.1) (2019-12-23)
 
 
