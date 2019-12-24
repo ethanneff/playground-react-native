@@ -23,11 +23,11 @@ export const ActivityDayCell = memo(function ActivityDayCell({
   const color = useColor();
   const backgroundColor =
     day.count === 0
-      ? "transparent"
-      : colorWithOpacity(color.success, day.count / max); // TODO: test colors because light is too light
+      ? color.surface
+      : colorWithOpacity(color.success, (day.count / max) * 3 + 0.25);
   const borderColor = day.date.isSame(dayjs(), "day")
     ? color.danger
-    : color.background;
+    : "transparent";
   return (
     <TouchableOpacity
       onPress={onPress(day)}
@@ -38,7 +38,7 @@ export const ActivityDayCell = memo(function ActivityDayCell({
         margin,
         backgroundColor,
         borderColor,
-        borderWidth: 1
+        borderWidth: 2
       }}
     />
   );
