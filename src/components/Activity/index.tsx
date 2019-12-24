@@ -26,14 +26,16 @@ const initialActivity: ActivityModel = {
 
 export const Activity = memo(function Activity({
   size = Theme.padding.p06,
-  margin = 1,
+  margin = 2,
   username,
   site
 }: Props) {
   const [activity, setActivity] = useState<ActivityModel>(initialActivity);
+  const [current, setCurrent] = useState(" ");
 
   // TODO: need to persist
-  // TODO: need
+  // TODO: need selection color
+  // TODO: need to default select today
   const updateActivity = useCallback(async () => {
     const active = await getApiActivity({ username, site });
     const { matrix, max } = getActivitySquares(active);
@@ -44,10 +46,17 @@ export const Activity = memo(function Activity({
     updateActivity();
   }, [updateActivity]);
 
-  const onPress = useCallback((item: ActivityDay) => () => item, []);
+  const onPress = useCallback(
+    (item: ActivityDay) => () => {
+      const sub = item.count === 1 ? "submission" : "submissions";
+      const date = item.date.format("MMM DD, YYYY");
+      setCurrent(`${item.count} ${sub} on ${date}`);
+    },
+    []
+  );
 
   const renderItem = useCallback(
-    ({ item, index }: { item: ActivityDayInWeek; index: number }) => 
+    ({ item, index }: { item: ActivityDayInWeek; index: number }) => (
       <ActivityWeekRow
         max={activity.max}
         item={item}
@@ -56,15 +65,15 @@ export const Activity = memo(function Activity({
         margin={margin}
         onPress={onPress}
       />
-    ,
+    ),
     [activity.max, margin, onPress, size]
   );
 
   const keyExtractor = useCallback(item => item[0].date.format("MM-DD"), []);
 
-  return activity.loading ? 
+  return activity.loading ? (
     <Text h5 medium title="loading..." />
-   : 
+  ) : (
     <>
       <FlatList
         showsHorizontalScrollIndicator={false}
@@ -76,11 +85,12 @@ export const Activity = memo(function Activity({
       />
       <Text
         overline
+        medium
         secondary
-        title={"hello"}
+        title={current}
         center
         style={{ paddingTop: Theme.padding.p03 }}
       />
     </>
-  ;
+  );
 });
