@@ -78,10 +78,10 @@ export const Activity = memo(function Activity({
     []
   );
 
-  const onRetryPress = useCallback(() => getActivity(), []);
+  const onRetryPress = useCallback(() => getActivity(), [getActivity]);
 
   const renderItem = useCallback(
-    ({ item, index }: { item: ActivityDayInWeek; index: number }) => (
+    ({ item, index }: { item: ActivityDayInWeek; index: number }) => 
       <ActivityWeekRow
         max={activity.max}
         item={item}
@@ -90,20 +90,20 @@ export const Activity = memo(function Activity({
         margin={margin}
         onPress={onItemPress}
       />
-    ),
+    ,
     [activity.max, margin, onItemPress, size]
   );
 
   const keyExtractor = useCallback(item => getDateFormat(item[0].date), []);
 
-  return activity.loading ? (
+  return activity.loading ? 
     <Text h5 medium title="loading..." />
-  ) : activity.error ? (
+   : activity.error ? 
     <View>
       <Text title={activity.error} />
       <Button title="Retry" wrap contained danger half onPress={onRetryPress} />
     </View>
-  ) : (
+   : 
     <>
       <FlatList
         initialNumToRender={60}
@@ -123,5 +123,5 @@ export const Activity = memo(function Activity({
         style={{ paddingTop: Theme.padding.p03 }}
       />
     </>
-  );
+  ;
 });
