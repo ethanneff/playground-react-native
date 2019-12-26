@@ -1,4 +1,4 @@
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 import React, { memo, useEffect, useState, useCallback } from "react";
 import { Theme } from "../../utils";
 import {
@@ -16,6 +16,7 @@ import {
   ActivityDayInWeek
 } from "./interfaces";
 import dayjs from "dayjs";
+import { Button } from "../Button";
 
 interface Props {
   username: string;
@@ -28,7 +29,8 @@ const initialActivity: ActivityModel = {
   matrix: [],
   max: 0,
   loading: true,
-  current: ""
+  error: undefined,
+  current: undefined
 };
 
 export const Activity = memo(function Activity({
@@ -41,23 +43,32 @@ export const Activity = memo(function Activity({
 
   // TODO: need to persist
   // TODO: need selection color
-  const updateActivity = useCallback(async () => {
-    const active = await getApiActivity({ username, site });
-    const { matrix, max } = getActivitySquares(active);
-    const activeToday = active[getDateFormat(dayjs())] || 0;
-    setActivity({
-      matrix,
-      max,
-      loading: false,
-      current: getCurrentFormat(activeToday, dayjs())
-    });
+  const getActivity = useCallback(async () => {
+    try {
+      const active = await getApiActivity({ username, site });
+      const { matrix, max } = getActivitySquares(active);
+      const activeToday = active[getDateFormat(dayjs())] || 0;
+      setActivity({
+        matrix,
+        max,
+        loading: false,
+        error: undefined,
+        current: getCurrentFormat(activeToday, dayjs())
+      });
+    } catch (error) {
+      setActivity({
+        ...initialActivity,
+        loading: false,
+        error: error.message
+      });
+    }
   }, [site, username]);
 
   useEffect(() => {
-    updateActivity();
-  }, [updateActivity]);
+    getActivity();
+  }, [getActivity]);
 
-  const onPress = useCallback(
+  const onItemPress = useCallback(
     (item: ActivityDay) => () => {
       setActivity(state => ({
         ...state,
@@ -67,27 +78,35 @@ export const Activity = memo(function Activity({
     []
   );
 
+  const onRetryPress = useCallback(() => getActivity(), []);
+
   const renderItem = useCallback(
-    ({ item, index }: { item: ActivityDayInWeek; index: number }) => 
+    ({ item, index }: { item: ActivityDayInWeek; index: number }) => (
       <ActivityWeekRow
         max={activity.max}
         item={item}
         index={index}
         size={size}
         margin={margin}
-        onPress={onPress}
+        onPress={onItemPress}
       />
-    ,
-    [activity.max, margin, onPress, size]
+    ),
+    [activity.max, margin, onItemPress, size]
   );
 
   const keyExtractor = useCallback(item => getDateFormat(item[0].date), []);
 
-  return activity.loading ? 
+  return activity.loading ? (
     <Text h5 medium title="loading..." />
-   : 
+  ) : activity.error ? (
+    <View>
+      <Text title={activity.error} />
+      <Button title="Retry" wrap contained danger half onPress={onRetryPress} />
+    </View>
+  ) : (
     <>
       <FlatList
+        initialNumToRender={60}
         showsHorizontalScrollIndicator={false}
         data={activity.matrix}
         inverted
@@ -104,5 +123,5 @@ export const Activity = memo(function Activity({
         style={{ paddingTop: Theme.padding.p03 }}
       />
     </>
-  ;
+  );
 });
