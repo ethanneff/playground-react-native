@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.16.3](https://github.com/ethanneff/example/compare/v2.16.2...v2.16.3) (2019-12-26)
+
+
+### Bug Fixes
+
+* bird title ([e771ee6](https://github.com/ethanneff/example/commit/e771ee6))
+* correct order ([b69bba7](https://github.com/ethanneff/example/commit/b69bba7))
+* show error on activity if no connection ([98f5f76](https://github.com/ethanneff/example/commit/98f5f76))
+* update deps ([26397c2](https://github.com/ethanneff/example/commit/26397c2))
+
 ## [2.16.2](https://github.com/ethanneff/example/compare/v2.16.1...v2.16.2) (2019-12-24)
 
 
