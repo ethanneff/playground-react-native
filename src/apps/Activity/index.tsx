@@ -4,6 +4,13 @@ import { Screen, Text, Card, Activity } from "../../components";
 import { useNav, useColor } from "../../hooks";
 import { Theme } from "../../utils";
 
+// TODO: gitlab
+// TODO: selected
+// TODO: add
+// TODO: delete
+// TODO: save
+// TODO: new
+
 export default memo(function ActivityTracker() {
   const color = useColor();
   const nav = useNav();
