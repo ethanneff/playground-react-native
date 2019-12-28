@@ -25,7 +25,8 @@ export const ActivityDayCell = memo(function ActivityDayCell({
     day.count === 0
       ? color.surface
       : colorWithOpacity(color.success, day.count / max * 3 + 0.25);
-  const borderColor = day.date.isSame(dayjs(), "day")
+  const today = dayjs();
+  const borderColor = day.date.isSame(today, "day")
     ? color.danger
     : "transparent";
   return (
