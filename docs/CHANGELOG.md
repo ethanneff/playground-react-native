@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.16.5](https://github.com/ethanneff/example/compare/v2.16.4...v2.16.5) (2019-12-29)
+
+
+### Bug Fixes
+
+* add device token ([72210a3](https://github.com/ethanneff/example/commit/72210a3))
+
 ## [2.16.4](https://github.com/ethanneff/example/compare/v2.16.3...v2.16.4) (2019-12-27)
 
 
