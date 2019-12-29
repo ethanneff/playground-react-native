@@ -96,6 +96,7 @@ export const useDeviceInfo = async () => {
       device: await DeviceInfo.getDevice(),
       deviceId: await DeviceInfo.getDeviceId(),
       deviceType: await DeviceInfo.getDeviceType(),
+      deviceToken: await DeviceInfo.getDeviceToken(),
       display: await DeviceInfo.getDisplay(),
       deviceName: await DeviceInfo.getDeviceName(),
       firstInstallTime: await DeviceInfo.getFirstInstallTime(),

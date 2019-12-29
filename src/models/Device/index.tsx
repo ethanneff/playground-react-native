@@ -34,6 +34,7 @@ export interface DeviceInfo {
   device: string;
   deviceId: string;
   deviceType: string;
+  deviceToken: string;
   display: string;
   deviceName: string;
   firstInstallTime: number;
@@ -110,6 +111,7 @@ export const deviceInfoInitialState: DeviceInfo = {
   device: "",
   deviceId: "",
   deviceType: "",
+  deviceToken: "",
   display: "",
   deviceName: "",
   firstInstallTime: 0,
