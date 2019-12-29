@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.16.4](https://github.com/ethanneff/example/compare/v2.16.3...v2.16.4) (2019-12-27)
+
+
+### Bug Fixes
+
+* update deps ([d1714fd](https://github.com/ethanneff/example/commit/d1714fd))
+
 ## [2.16.3](https://github.com/ethanneff/example/compare/v2.16.2...v2.16.3) (2019-12-26)
 
 
