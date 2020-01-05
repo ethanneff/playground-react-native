@@ -123,7 +123,7 @@ export const Button: React.FC<ButtonProps> = memo(props => {
       onLongPress={onLongPress}
     >
       <Icon
-        color={iconColor}
+        color={iconColor || textColor}
         invisible={invisible}
         name={icon}
         size={iconSize}
