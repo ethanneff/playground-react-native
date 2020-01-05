@@ -33,6 +33,8 @@ const initialActivity: ActivityModel = {
   current: undefined
 };
 
+// TODO: simplify the problem... have 2 cells.. try to render only 1 even both cells reference the same board
+
 export const Activity = memo(function Activity({
   size = Theme.padding.p06,
   margin = 2,

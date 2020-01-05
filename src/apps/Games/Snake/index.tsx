@@ -23,6 +23,8 @@ type Game = {
   state: State;
 };
 
+// TODO: need to save the entire board to redux to load on app open
+
 export default memo(function Snake() {
   const color = useColor();
   const nav = useNav();
