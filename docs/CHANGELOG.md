@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.16.7](https://github.com/ethanneff/example/compare/v2.16.6...v2.16.7) (2020-01-05)
+
+
+### Bug Fixes
+
+* update deps ([d06be00](https://github.com/ethanneff/example/commit/d06be00))
+
 ## [2.16.6](https://github.com/ethanneff/example/compare/v2.16.5...v2.16.6) (2020-01-03)
 
 
