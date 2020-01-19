@@ -20,10 +20,10 @@
     "travis-deploy-once": " echo 'prevent multiple deploys';      travis-deploy-once"
   },
   "dependencies": {
-    "@mdi/js": "4.7.95",
+    "@mdi/js": "4.8.95",
     "@mdi/react": "1.2.1",
     "@react-native-community/async-storage": "1.7.1",
-    "@react-native-community/netinfo": "5.3.2",
+    "@react-native-community/netinfo": "5.3.3",
     "@react-native-community/slider": "2.0.8",
     "@react-native-firebase/analytics": "6.2.0",
     "@react-native-firebase/app": "6.2.0",
@@ -52,12 +52,12 @@
     "reselect": "4.0.0",
     "typesafe-actions": "5.1.0",
     "utility-types": "3.10.0",
-    "uuid": "3.3.3"
+    "uuid": "3.4.0"
   },
   "devDependencies": {
     "@babel/core": "7.8.3",
     "@babel/runtime": "7.8.3",
-    "@commitlint/cli": "8.3.4",
+    "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@react-native-community/eslint-config": "0.0.6",
     "@semantic-release/changelog": "3.0.6",
@@ -66,11 +66,11 @@
     "@semantic-release/github": "6.0.1",
     "@semantic-release/release-notes-generator": "7.3.5",
     "@types/axios": "0.14.0",
-    "@types/jest": "24.0.25",
+    "@types/jest": "24.9.0",
     "@types/react": "16.9.17",
-    "@types/react-native": "0.60.30",
+    "@types/react-native": "0.61.0",
     "@types/react-native-vector-icons": "6.4.5",
-    "@types/react-redux": "7.1.5",
+    "@types/react-redux": "7.1.6",
     "@types/react-test-renderer": "16.9.1",
     "@types/uuid": "3.4.6",
     "@typescript-eslint/parser": "2.16.0",
@@ -82,12 +82,12 @@
     "eslint-plugin-jest": "23.6.0",
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react-hooks": "2.3.0",
-    "husky": "4.0.7",
+    "husky": "4.0.10",
     "metro-react-native-babel-preset": "0.57.0",
     "react-test-renderer": "16.12.0",
-    "semantic-release": "16.0.1",
+    "semantic-release": "16.0.2",
     "travis-deploy-once": "5.0.11",
-    "typescript": "3.7.4"
+    "typescript": "3.7.5"
   },
   "husky": {
     "hooks": {
