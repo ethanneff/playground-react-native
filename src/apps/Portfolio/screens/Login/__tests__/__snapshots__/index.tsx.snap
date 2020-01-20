@@ -108,7 +108,6 @@ exports[`renders correctly 1`] = `
           "flex": 1,
         },
         Object {
-          "flex": 1,
           "padding": 16,
         },
         undefined,
@@ -263,7 +262,7 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "color": "hsl(210, 10%, 23%)",
+                  "color": "hsl(354, 70%, 54%)",
                   "fontSize": 16,
                 },
                 Array [
@@ -448,7 +447,7 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "color": "hsl(210, 10%, 23%)",
+                  "color": "hsl(354, 70%, 54%)",
                   "fontSize": 16,
                 },
                 Array [

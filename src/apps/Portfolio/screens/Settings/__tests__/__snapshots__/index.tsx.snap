@@ -297,30 +297,6 @@ exports[`renders correctly 1`] = `
         </View>
       </View>
     </RCTScrollView>
-    <View
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "color": "hsla(0, 0%, 0%, 1)",
-            "flex": 1,
-            "fontSize": 14,
-            "fontWeight": "300",
-            "letterSpacing": 0.25,
-            "opacity": 1,
-            "textAlign": "center",
-            "textAlignVertical": "center",
-          }
-        }
-      >
-        hello
-      </Text>
-    </View>
   </View>
 </RCTSafeAreaView>
 `;

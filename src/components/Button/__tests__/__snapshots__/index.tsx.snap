@@ -222,7 +222,7 @@ exports[`renders icon 1`] = `
       style={
         Array [
           Object {
-            "color": "hsl(210, 10%, 23%)",
+            "color": "hsl(0, 0%, 0%)",
             "fontSize": 16,
           },
           Array [
@@ -291,7 +291,7 @@ exports[`renders icon title 1`] = `
       style={
         Array [
           Object {
-            "color": "hsl(210, 10%, 23%)",
+            "color": "hsl(0, 0%, 0%)",
             "fontSize": 16,
           },
           Array [
