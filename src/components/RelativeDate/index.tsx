@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
 import React from "react";
+import relativeTime from "dayjs/plugin/relativeTime";
 import { TouchableOpacity } from "react-native";
 import { Text } from "../Text";
 dayjs.extend(relativeTime);
@@ -32,7 +32,7 @@ export class RelativeDate extends React.PureComponent<Props, State> {
     return (
       <TouchableOpacity onPress={this.toggleRelativeDate}>
         {showRelativeDate ? 
-          <Text title={dayjs(date).from(dayjs())} />
+          <Text title={dayjs(date).fromNow()} />
          : 
           <Text title={dayjs(date).format("MMM D YYYY, h:mm a")} />
         }
