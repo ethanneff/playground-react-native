@@ -4,6 +4,9 @@ import { Text, RelativeDate } from "../../../../components";
 import { Theme } from "../../../../utils";
 import { Message } from "./Messages";
 import { useColor } from "../../../../hooks";
+import relativeTime from "dayjs/plugin/relativeTime";
+import dayjs from "dayjs";
+dayjs.extend(relativeTime);
 
 interface Props {
   item: Message;
@@ -12,6 +15,7 @@ interface Props {
 export const Item = memo(function ChatMessage({ item }: Props) {
   const color = useColor();
   const image = require("../../../../assets/line-chart.png");
+
   return (
     <View
       key={item.id}
@@ -42,7 +46,6 @@ export const Item = memo(function ChatMessage({ item }: Props) {
             bold
             style={{ paddingRight: Theme.padding.p02 }}
           />
-
           <RelativeDate date={item.createdAt} />
         </View>
         <Text title={item.message} body1 style={{ paddingTop: 5 }} />
