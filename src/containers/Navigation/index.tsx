@@ -47,6 +47,7 @@ const DebugColors = lazy(() => import("../../apps/Debug/screens/Colors"));
 const DebugDarkMode = lazy(() => import("../../apps/Debug/screens/DarkMode"));
 const DebugDrag = lazy(() => import("../../apps/Debug/screens/Drag"));
 const DebugFonts = lazy(() => import("../../apps/Debug/screens/Fonts"));
+const DebugSwipeFeed = lazy(() => import("../../apps/Debug/screens/SwipeFeed"));
 const DebugImage = lazy(() =>
   import("../../apps/Debug/screens/ImageCollection")
 );
@@ -95,6 +96,7 @@ export const screens = {
   debugStartup: <DebugStartup />,
   debugStopwatch: <DebugStopwatch />,
   debugColors: <DebugColors />,
+  debugSwipeFeed: <DebugSwipeFeed />,
   checklists: <Checklists />,
   checklistsList: <ChecklistsList />,
   checklistsListCreate: <ChecklistsListCreate />,

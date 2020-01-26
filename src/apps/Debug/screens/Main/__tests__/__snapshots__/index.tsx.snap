@@ -132,6 +132,7 @@ exports[`renders correctly 1`] = `
           "debugStopwatch",
           "debugDarkMode",
           "debugColors",
+          "debugSwipeFeed",
         ]
       }
       disableVirtualization={false}
