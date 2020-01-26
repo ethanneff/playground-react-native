@@ -86,7 +86,9 @@ export const useDeviceInfo = async () => {
       availableLocationProviders: await DeviceInfo.getAvailableLocationProviders(),
       baseOs: await DeviceInfo.getBaseOs(),
       buildId: await DeviceInfo.getBuildId(),
-      batteryLevel: await DeviceInfo.getBatteryLevel(),
+      batteryLevel: __DEV__
+        ? Promise.resolve(0)
+        : await DeviceInfo.getBatteryLevel(),
       bootloader: await DeviceInfo.getBootloader(),
       brand: await DeviceInfo.getBrand(),
       buildNumber: await DeviceInfo.getBuildNumber(),
@@ -96,7 +98,9 @@ export const useDeviceInfo = async () => {
       device: await DeviceInfo.getDevice(),
       deviceId: await DeviceInfo.getDeviceId(),
       deviceType: await DeviceInfo.getDeviceType(),
-      deviceToken: await DeviceInfo.getDeviceToken(),
+      deviceToken: __DEV__
+        ? Promise.resolve("")
+        : await DeviceInfo.getDeviceToken(),
       display: await DeviceInfo.getDisplay(),
       deviceName: await DeviceInfo.getDeviceName(),
       firstInstallTime: await DeviceInfo.getFirstInstallTime(),
@@ -115,7 +119,9 @@ export const useDeviceInfo = async () => {
       maxMemory: await DeviceInfo.getMaxMemory(),
       model: await DeviceInfo.getModel(),
       phoneNumber: await DeviceInfo.getPhoneNumber(),
-      powerState: await DeviceInfo.getPowerState(),
+      powerState: __DEV__
+        ? Promise.resolve("")
+        : await DeviceInfo.getPowerState(),
       product: await DeviceInfo.getProduct(),
       previewSdkInt: await DeviceInfo.getPreviewSdkInt(),
       readableVersion: await DeviceInfo.getReadableVersion(),
@@ -135,7 +141,9 @@ export const useDeviceInfo = async () => {
       hasNotch: await DeviceInfo.hasNotch(),
       hasSystemFeature: await DeviceInfo.hasSystemFeature(),
       isAirplaneMode: await DeviceInfo.isAirplaneMode(),
-      isBatteryCharging: await DeviceInfo.isBatteryCharging(),
+      isBatteryCharging: __DEV__
+        ? Promise.resolve(true)
+        : await DeviceInfo.isBatteryCharging(),
       isCameraPresence: await DeviceInfo.isCameraPresent(),
       isEmulator: await DeviceInfo.isEmulator(),
       isLandscape: await DeviceInfo.isLandscape(),

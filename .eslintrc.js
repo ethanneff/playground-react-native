@@ -16,7 +16,8 @@ module.exports = {
     "prettier/@typescript-eslint" // prettier
   ],
   globals: {
-    process: true // process.env.JEST_WORKER_ID
+    process: true, // process.env.JEST_WORKER_ID
+    __DEV__: true
   },
   env: {
     browser: true, // window, setTimeout
