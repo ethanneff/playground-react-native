@@ -1,6 +1,6 @@
 import React, { memo, useState, useEffect, useCallback } from "react";
-import { StyleSheet } from "react-native";
-import { FlatList, ActivityIndicator } from "react-native";
+import { StyleSheet , FlatList, ActivityIndicator } from "react-native";
+
 import { ListItem } from "./ListItem";
 import { Theme } from "../../../utils";
 import dayjs from "dayjs";

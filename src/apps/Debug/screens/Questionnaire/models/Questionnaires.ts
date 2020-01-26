@@ -7,7 +7,7 @@ import {
 } from "typesafe-actions";
 import uuid from "uuid";
 import { RootAction, RootState } from "../../../../../containers";
-import { logout } from "../../../../../models/Auth/index";
+import { logout } from "../../../../../models/Auth";
 
 /* ACTIONS */
 export const createQuestionnaire = createCustomAction(

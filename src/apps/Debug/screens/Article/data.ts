@@ -2,7 +2,7 @@ import {
   ContentBody,
   ParagraphType,
   TitleType
-} from "../../../../components/Content/index";
+} from "../../../../components/Content";
 
 export const data: ContentBody = {
   sections: [

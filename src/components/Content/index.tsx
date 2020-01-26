@@ -1,6 +1,6 @@
 import React, { memo } from "react";
-import { Text as Original, ScrollView } from "react-native";
-import { StyleSheet, View } from "react-native";
+import { Text as Original, ScrollView , StyleSheet, View } from "react-native";
+
 import { Theme } from "../../utils";
 import { Text } from "../Text";
 import { useColor } from "../../hooks";

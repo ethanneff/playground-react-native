@@ -1,5 +1,5 @@
 import { Dimensions } from "react-native";
-import { DimensionsProps } from "./../../models/Device/index";
+import { DimensionsProps } from "./../../models/Device";
 import { useRootDispatch } from "../../utils";
 import { useCallback, useEffect } from "react";
 import { updateDimension } from "../../models";

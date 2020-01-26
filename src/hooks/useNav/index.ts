@@ -1,4 +1,4 @@
-import { navigate } from "./../../models/Navigation/index";
+import { navigate } from "./../../models/Navigation";
 import { useRootDispatch } from "../../utils";
 import { NavigationScreen } from "../../models";
 import { useCallback } from "react";

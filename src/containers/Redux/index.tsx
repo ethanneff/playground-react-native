@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { persistReducer, persistStore } from "redux-persist";
 import {
   Middleware,
@@ -54,7 +54,7 @@ import {
 import { Storage } from "../../conversions";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import { memo } from "react";
+
 import {
   ChatMessageReducer,
   chatMessageReducer,

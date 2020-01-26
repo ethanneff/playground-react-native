@@ -1,4 +1,4 @@
-import { Color } from "./../../models/Theme/index";
+import { Color } from "./../../models/Theme";
 import { StyleSheet } from "react-native";
 import { Theme } from "./../../utils";
 import { ButtonProps } from ".";
