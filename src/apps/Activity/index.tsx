@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { StyleSheet, ScrollView, View } from "react-native";
-import { Screen, Text, Card, Activity } from "../../components";
+import { Screen, Text, Card, Activity, Button } from "../../components";
 import { useNav, useColor } from "../../hooks";
 import { Theme } from "../../utils";
 
@@ -10,6 +10,7 @@ import { Theme } from "../../utils";
 // TODO: delete
 // TODO: save
 // TODO: new
+// TODO: unable to navigate back when loading
 
 export default memo(function ActivityTracker() {
   const color = useColor();
@@ -43,6 +44,20 @@ export default memo(function ActivityTracker() {
         </Card>
         <View style={{ height: Theme.padding.p04 }} />
       </ScrollView>
+      <Button
+        icon="plus"
+        fab
+        contained
+        primary
+        dropShadow
+        elevation={8}
+        buttonStyle={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          margin: Theme.padding.p04
+        }}
+      />
     </Screen>
   );
 });
