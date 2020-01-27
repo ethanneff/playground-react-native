@@ -8,6 +8,7 @@ interface Props {
   style?: ViewStyle;
   selected?: boolean;
   touchable?: boolean;
+  noPadding?: boolean;
   elevation?: number;
   borderWidth?: number;
   borderRadius?: number;
@@ -25,6 +26,7 @@ export const Card: React.FC<Props> = memo(
     elevation = 2,
     onLongPress,
     onPress,
+    noPadding,
     flex,
     selected,
     style
@@ -49,7 +51,7 @@ export const Card: React.FC<Props> = memo(
       contents: {
         backgroundColor: `hsla(0,0%,100%,${opacity})`,
         borderRadius,
-        padding: Theme.padding.p04
+        padding: noPadding ? 0 : Theme.padding.p04
       },
       flex: {
         flex: 1
