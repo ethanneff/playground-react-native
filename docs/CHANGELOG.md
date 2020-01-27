@@ -1,5 +1,36 @@
 # Changelog
 
+# [2.17.0](https://github.com/ethanneff/example/compare/v2.16.7...v2.17.0) (2020-01-27)
+
+
+### Bug Fixes
+
+* add button to activity to add ([15b8557](https://github.com/ethanneff/example/commit/15b8557867ae669fb46a5ee4b86d9a70166c596e))
+* add relative date import for chat ([c46dbcc](https://github.com/ethanneff/example/commit/c46dbccb2bc6e4c6db546a16c189a88711a7075c))
+* add swipe proof of concept ([f718cae](https://github.com/ethanneff/example/commit/f718cae7d4acdca832475b30ca3662adb5c34cbc))
+* change api for relative date ([21d752c](https://github.com/ethanneff/example/commit/21d752c19cca9f84d58ca22435595d6e98a5b172))
+* correct imports ([76b3f9d](https://github.com/ethanneff/example/commit/76b3f9dcaf95db9687d8b28e864243d8be6691ae))
+* make icon color pull from text color by default ([ec96732](https://github.com/ethanneff/example/commit/ec967328655aaa20c7b17bb290db88a7ff57a99d))
+* remove icons ([763caa4](https://github.com/ethanneff/example/commit/763caa4aab067d50d4e0e08455c37106ab47d3a0))
+* remove yellowbox warnings ([f95c3f1](https://github.com/ethanneff/example/commit/f95c3f12c0467027236733653973551a82ac386b))
+* update deps ([29a6c5f](https://github.com/ethanneff/example/commit/29a6c5ffb62dede7e9f35d61889013fb9e879021))
+* update deps ([10c9c9d](https://github.com/ethanneff/example/commit/10c9c9dbaabf3af1ee090d020181fab8e80df555))
+* update deps ([80df774](https://github.com/ethanneff/example/commit/80df7743d8fc616e69967fadbce4c58a042fa1ee))
+* update deps ([5f47cd7](https://github.com/ethanneff/example/commit/5f47cd7393a3f8a111c89b8fcc3e7ccc989a855d))
+* update deps ([02c40dd](https://github.com/ethanneff/example/commit/02c40dda1ce4c84eb3f91340b6e004a2f67a3ced))
+* update deps ([f03d6dc](https://github.com/ethanneff/example/commit/f03d6dc6b7ac3f4c2848d2af9a5b7d58dde61584))
+* update deps ([f42bc1d](https://github.com/ethanneff/example/commit/f42bc1d0b483e55f21514c12206a1eac37301648))
+* update deps ([6fff641](https://github.com/ethanneff/example/commit/6fff64194f137b63fb40a5a53618b78318c5e898))
+* update deps ([e8a67f8](https://github.com/ethanneff/example/commit/e8a67f8b331acf6ae4b91854a0e944489989725c))
+* update imports ([49538df](https://github.com/ethanneff/example/commit/49538dff2e339266653582c6e3dd80fd9afa78c2))
+* update slider default for web ([810fceb](https://github.com/ethanneff/example/commit/810fceb83359c8cf0d78fc6e3463669e1f92813f))
+* update watch to not show coverage ([b1ccbe3](https://github.com/ethanneff/example/commit/b1ccbe3c3504d6cd8705c0f678a4cd834a5a27cf))
+
+
+### Features
+
+* add swipe feed debug menu ([a5f0e81](https://github.com/ethanneff/example/commit/a5f0e8106b9fada9cfff1b637e14bb752b29426e))
+
 ## [2.16.7](https://github.com/ethanneff/example/compare/v2.16.6...v2.16.7) (2020-01-05)
 
 
