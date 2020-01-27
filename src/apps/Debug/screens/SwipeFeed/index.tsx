@@ -69,24 +69,22 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
   const position = new Animated.ValueXY();
   const panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
-    onMoveShouldSetPanResponder: (_, gesture) => {
-      const swipe =
-        Math.abs(gesture.dx) > touchThreshold ||
-        Math.abs(gesture.dy) > touchThreshold;
-      return swipe;
-    },
+    onMoveShouldSetPanResponder: (_, gesture) =>
+      Math.abs(gesture.dx) > touchThreshold ||
+      Math.abs(gesture.dy) > touchThreshold,
     onPanResponderMove: (_, gesture) => {
       position.setValue({ x: gesture.dx, y: gesture.dy });
     },
     onPanResponderRelease: (_, gesture) => {
-      if (gesture.dx > swipeThreshold) {
-        // position.setValue({ x: width, y: 0 });
-      } else if (gesture.dx < -swipeThreshold) {
-        // position.setValue({ x: -width, y: 0 });
-      } else {
-        // position.setValue({ x: 0, y: 0 });
-      }
-      position.setValue({ x: 0, y: 0 });
+      const x =
+        gesture.dx > swipeThreshold
+          ? width
+          : gesture.dx < -swipeThreshold
+          ? -width
+          : 0;
+      Animated.spring(position, {
+        toValue: { x, y: 0 }
+      }).start();
     }
   });
 
@@ -96,6 +94,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
       style={{
         position: "absolute",
         width: "100%",
+
         left: position.x,
         zIndex: props.index,
         height: props.height,
@@ -107,7 +106,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
     >
       <TouchableOpacity style={{ flex: 1 }} onPress={props.onSwipeComplete}>
         <View style={{ flex: 1, flexDirection: "row" }}>
-          {props.image && 
+          {props.image && (
             <Image
               source={props.image}
               style={{
@@ -116,7 +115,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
                 alignSelf: "center"
               }}
             />
-          }
+          )}
           <View style={{ flex: 1, padding: Theme.padding.p02 }}>
             <View
               style={{
@@ -162,6 +161,16 @@ interface SwipeItem {
 }
 
 const initialItems: SwipeItem[] = [
+  {
+    id: uuid.v4(),
+    image: undefined,
+    title: "Price Movement",
+    icon: "arrow-bottom-right",
+    date: dayjs().subtract(5, "minute"),
+    body: "BABA is down 4.41% to $204.433.",
+    button: "View BABA",
+    onPress: () => undefined
+  },
   {
     id: uuid.v4(),
     image: undefined,
@@ -240,9 +249,9 @@ const SwipeCardList = memo(function SwipeCardList({
     }));
   };
 
-  return !feed.items.length ? null : 
+  return !feed.items.length ? null : (
     <View style={{ height }}>
-      {feed.items.map((item, index) => 
+      {feed.items.map((item, index) => (
         <SwipeCard
           {...item}
           height={height}
@@ -250,18 +259,18 @@ const SwipeCardList = memo(function SwipeCardList({
           index={index}
           onSwipeComplete={onSwipeComplete}
         />
-      )}
+      ))}
       <Badge count={feed.items.length} />
     </View>
-  ;
+  );
 });
 
 const ImagePlaceholder = memo(() => {
   return (
-    <Card>
+    <Card noPadding>
       <Image
         source={require("./placeholder.png")}
-        style={{ width: "100%", height: 50 }}
+        style={{ width: "100%", height: 100, borderRadius: 4 }}
       />
     </Card>
   );
@@ -271,7 +280,7 @@ export default memo(function SwipeFeed() {
   const nav = useNav();
   return (
     <Screen onLeftPress={nav.to("debug")}>
-      <ScrollView style={{ padding: Theme.padding.p04 }}>
+      <View style={{ padding: Theme.padding.p04 }}>
         <ImagePlaceholder />
         <ImagePlaceholder />
         <SwipeCardList />
@@ -281,7 +290,7 @@ export default memo(function SwipeFeed() {
         <ImagePlaceholder />
         <ImagePlaceholder />
         <ImagePlaceholder />
-      </ScrollView>
+      </View>
     </Screen>
   );
 });
