@@ -8,11 +8,11 @@ describe("formatRelativeDate", () => {
   });
   it("a minute ago", () => {
     const date = dayjs().add(1, "m");
-    expect(formatRelativeDate(date)).toBe("");
+    expect(formatRelativeDate(date)).toBe("1m");
   });
   it("20 minutes ago", () => {
     const date = dayjs().add(20, "m");
-    expect(formatRelativeDate(date)).toBe("");
+    expect(formatRelativeDate(date)).toBe("20m");
   });
   it("an hour ago", () => {
     const date = dayjs().add(1, "hour");
@@ -32,11 +32,11 @@ describe("formatRelativeDate", () => {
   });
   it("a month ago", () => {
     const date = dayjs().add(1, "month");
-    expect(formatRelativeDate(date)).toBe("1m");
+    expect(formatRelativeDate(date)).toBe("4w");
   });
   it("3 months ago", () => {
     const date = dayjs().add(3, "month");
-    expect(formatRelativeDate(date)).toBe("3m");
+    expect(formatRelativeDate(date)).toBe("12w");
   });
   it("a year ago", () => {
     const date = dayjs().add(1, "year");
