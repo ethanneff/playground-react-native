@@ -3,8 +3,11 @@ import {
   View,
   Image,
   ImageSourcePropType,
-  TouchableOpacity,
-  ScrollView
+  // TouchableOpacity,
+  ScrollView,
+  PanResponder,
+  Animated,
+  TouchableOpacity
 } from "react-native";
 import {
   Screen,
@@ -14,10 +17,11 @@ import {
   EllipsizeMode
 } from "../../../../components";
 import { useColor, useNav, useDropShadow } from "../../../../hooks";
-import { Theme } from "../../../../utils";
+import { Theme, useRootSelector } from "../../../../utils";
 import dayjs, { Dayjs } from "dayjs";
 import uuid from "uuid";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { getWidth } from "../../../../models";
 dayjs.extend(relativeTime);
 
 interface SwipeCard extends SwipeItem {
@@ -57,13 +61,42 @@ export const formatRelativeDate = (date: Dayjs) => {
 
 const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
   const color = useColor();
+  const width = useRootSelector(getWidth);
   const dropShadow = useDropShadow(4);
   const imageHeight = props.height / 1.5;
+  const swipeThreshold = width / 3;
+  const touchThreshold = 50;
+  const position = new Animated.ValueXY();
+  const panResponder = PanResponder.create({
+    onStartShouldSetPanResponder: () => true,
+    onMoveShouldSetPanResponder: (_, gesture) => {
+      const swipe =
+        Math.abs(gesture.dx) > touchThreshold ||
+        Math.abs(gesture.dy) > touchThreshold;
+      return swipe;
+    },
+    onPanResponderMove: (_, gesture) => {
+      position.setValue({ x: gesture.dx, y: gesture.dy });
+    },
+    onPanResponderRelease: (_, gesture) => {
+      if (gesture.dx > swipeThreshold) {
+        // position.setValue({ x: width, y: 0 });
+      } else if (gesture.dx < -swipeThreshold) {
+        // position.setValue({ x: -width, y: 0 });
+      } else {
+        // position.setValue({ x: 0, y: 0 });
+      }
+      position.setValue({ x: 0, y: 0 });
+    }
+  });
+
   return (
-    <TouchableOpacity
+    <Animated.View
+      {...panResponder.panHandlers}
       style={{
         position: "absolute",
         width: "100%",
+        left: position.x,
         zIndex: props.index,
         height: props.height,
         backgroundColor: color.background,
@@ -71,43 +104,49 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
         borderRadius: Theme.padding.p01,
         borderColor: color.brand
       }}
-      onPress={props.onSwipeComplete}
     >
-      <View style={{ flex: 1, flexDirection: "row" }}>
-        {props.image && 
-          <Image
-            source={props.image}
-            style={{
-              height: imageHeight,
-              width: imageHeight,
-              alignSelf: "center"
-            }}
-          />
-        }
-        <View style={{ flex: 1, padding: Theme.padding.p02 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center"
-            }}
-          >
-            <Icon name={props.icon} size={15} />
-            <Text title={props.title} overline bold />
-            <Text title={formatRelativeDate(props.date)} />
+      <TouchableOpacity style={{ flex: 1 }} onPress={props.onSwipeComplete}>
+        <View style={{ flex: 1, flexDirection: "row" }}>
+          {props.image && 
+            <Image
+              source={props.image}
+              style={{
+                height: imageHeight,
+                width: imageHeight,
+                alignSelf: "center"
+              }}
+            />
+          }
+          <View style={{ flex: 1, padding: Theme.padding.p02 }}>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center"
+              }}
+            >
+              <Icon name={props.icon} size={15} />
+              <Text
+                title={props.title}
+                overline
+                bold
+                style={{ paddingHorizontal: Theme.padding.p01 }}
+              />
+              <Text title={formatRelativeDate(props.date)} />
+            </View>
+            <Text
+              style={{ flex: 1, paddingTop: Theme.padding.p02 }}
+              title={props.body}
+              numberOfLines={2}
+              ellipsizeMode={EllipsizeMode.Tail}
+            />
+            <Text
+              title={props.button.toUpperCase()}
+              style={{ color: color.primary }}
+            />
           </View>
-          <Text
-            style={{ flex: 1, paddingTop: Theme.padding.p02 }}
-            title={props.body}
-            numberOfLines={2}
-            ellipsizeMode={EllipsizeMode.Tail}
-          />
-          <Text
-            title={props.button.toUpperCase()}
-            style={{ color: color.primary }}
-          />
         </View>
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </Animated.View>
   );
 });
 
@@ -194,11 +233,12 @@ const SwipeCardList = memo(function SwipeCardList({
     items: initialItems
   });
 
-  const onSwipeComplete = () =>
+  const onSwipeComplete = () => {
     setFeed(state => ({
       ...state,
       items: state.items.filter((_, i) => i !== state.items.length - 1)
     }));
+  };
 
   return !feed.items.length ? null : 
     <View style={{ height }}>
