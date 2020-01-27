@@ -20,9 +20,7 @@ import { useColor, useNav, useDropShadow } from "../../../../hooks";
 import { Theme, useRootSelector } from "../../../../utils";
 import dayjs, { Dayjs } from "dayjs";
 import uuid from "uuid";
-import relativeTime from "dayjs/plugin/relativeTime";
 import { getWidth } from "../../../../models";
-dayjs.extend(relativeTime);
 
 interface SwipeCard extends SwipeItem {
   index: number;
@@ -31,32 +29,23 @@ interface SwipeCard extends SwipeItem {
 }
 
 export const formatRelativeDate = (date: Dayjs) => {
-  const relative = date.fromNow(true);
-  let formatted = "";
-  let spaceCount = 0;
-  for (let i = 0; i < relative.length; i++) {
-    const ch = relative[i];
-    if (ch === "n") {
-      continue;
-    } else if (ch === "a") {
-      formatted += "1";
-    } else if (spaceCount === 0 && ch !== " ") {
-      formatted += ch;
-    } else if (ch === " ") {
-      spaceCount++;
-    } else if (ch === "f") {
-      return "";
-    } else if (ch !== " ") {
-      formatted += ch;
-      if (ch === "m" && relative[i + 1] === "i") {
-        return "";
-      }
-      if (spaceCount > 0) {
-        break;
-      }
-    }
-  }
-  return formatted;
+  const now = dayjs();
+  const years = now.diff(date, "year");
+  const weeks = now.diff(date, "week");
+  const days = now.diff(date, "day");
+  const hours = now.diff(date, "hour");
+  const minutes = now.diff(date, "minute");
+  return years
+    ? `${years}y`
+    : weeks
+    ? `${weeks}w`
+    : days
+    ? `${days}d`
+    : hours
+    ? `${hours}h`
+    : minutes
+    ? `${minutes}m`
+    : "";
 };
 
 const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
