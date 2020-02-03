@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.17.1](https://github.com/ethanneff/example/compare/v2.17.0...v2.17.1) (2020-02-03)
+
+
+### Bug Fixes
+
+* add no padding prop ([8234998](https://github.com/ethanneff/example/commit/8234998c1abf9fb2fd1f4e01e9257922b641aa4b))
+* add swipe animation ([b11135d](https://github.com/ethanneff/example/commit/b11135df4ec11858921488cb8d51d984961e218f))
+* pass percent to make badge resize ([d0b1c0f](https://github.com/ethanneff/example/commit/d0b1c0f39e98f0cad1c970ca1c7be7e97f5a2062))
+* update date calc to handle minutes ([7a53b62](https://github.com/ethanneff/example/commit/7a53b62500c4cc00a7a70714ab8a2cbd7a0f30b8))
+* update deps ([05f60c7](https://github.com/ethanneff/example/commit/05f60c7fadd1754f4b620318ab851ebb18a798f3))
+* update deps ([a6158e0](https://github.com/ethanneff/example/commit/a6158e095e21df4ab8524aa428095d68e51351cf))
+* update deps ([c7fab26](https://github.com/ethanneff/example/commit/c7fab2698165e5205d815e47c9a288496f7b14b3))
+* update linting ([b461a02](https://github.com/ethanneff/example/commit/b461a02ec47c6b30fb973069bce10823544f72a8))
+* update test requirements ([3e267d5](https://github.com/ethanneff/example/commit/3e267d5b41b72d2948049d442359aa0b6e3f78ec))
+
 # [2.17.0](https://github.com/ethanneff/example/compare/v2.16.7...v2.17.0) (2020-01-27)
 
 
