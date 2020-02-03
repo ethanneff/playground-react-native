@@ -22,6 +22,7 @@ export interface TextProps {
   invisible?: boolean;
   inverse?: boolean;
   secondary?: boolean;
+  adjustsFontSizeToFit?: boolean;
 
   numberOfLines?: number;
   ellipsizeMode?: EllipsizeMode;
@@ -60,6 +61,7 @@ export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
     centerVertically,
     invisible,
     style,
+    adjustsFontSizeToFit,
     numberOfLines
   } = props;
   const opacity = new Animated.Value(1);
@@ -121,6 +123,7 @@ export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
 
   return title === undefined || hidden ? null : 
     <Animated.Text
+      adjustsFontSizeToFit={adjustsFontSizeToFit}
       ellipsizeMode={ellipsizeMode}
       numberOfLines={numberOfLines}
       style={textStyle}

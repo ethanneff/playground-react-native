@@ -1,10 +1,8 @@
-import React, { memo, useState } from "react";
+import React, { memo, useState, useCallback, useRef } from "react";
 import {
   View,
   Image,
   ImageSourcePropType,
-  // TouchableOpacity,
-  ScrollView,
   PanResponder,
   Animated,
   TouchableOpacity
@@ -26,6 +24,7 @@ interface SwipeCard extends SwipeItem {
   index: number;
   height: number;
   onSwipeComplete(): void;
+  onSwipePercentChange(percent: number): void;
 }
 
 export const formatRelativeDate = (date: Dayjs) => {
@@ -49,6 +48,7 @@ export const formatRelativeDate = (date: Dayjs) => {
 };
 
 const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
+  const cardWidth = useRef(0);
   const color = useColor();
   const width = useRootSelector(getWidth);
   const dropShadow = useDropShadow(4);
@@ -56,12 +56,28 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
   const swipeThreshold = width / 3;
   const touchThreshold = 50;
   const position = new Animated.ValueXY();
+
+  const onLayout = useCallback(
+    event => {
+      cardWidth.current = event.nativeEvent.layout.width;
+    },
+    [cardWidth]
+  );
+
+  const setCardWidth = useCallback(
+    (dx: number) => {
+      props.onSwipePercentChange(1 - dx / cardWidth.current);
+    },
+    [cardWidth, props]
+  );
+
   const panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
     onMoveShouldSetPanResponder: (_, gesture) =>
       Math.abs(gesture.dx) > touchThreshold ||
       Math.abs(gesture.dy) > touchThreshold,
     onPanResponderMove: (_, gesture) => {
+      setCardWidth(gesture.dx);
       position.setValue({ x: gesture.dx, y: gesture.dy });
     },
     onPanResponderRelease: (_, gesture) => {
@@ -79,11 +95,11 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
 
   return (
     <Animated.View
+      onLayout={onLayout}
       {...panResponder.panHandlers}
       style={{
         position: "absolute",
         width: "100%",
-
         left: position.x,
         zIndex: props.index,
         height: props.height,
@@ -140,7 +156,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
 
 interface SwipeItem {
   id: string;
-  image?: ImageSourcePropType;
+  image: ImageSourcePropType | null;
   title: string;
   icon: string;
   date: Dayjs;
@@ -152,7 +168,7 @@ interface SwipeItem {
 const initialItems: SwipeItem[] = [
   {
     id: uuid.v4(),
-    image: undefined,
+    image: null,
     title: "Price Movement",
     icon: "arrow-bottom-right",
     date: dayjs().subtract(5, "minute"),
@@ -162,7 +178,7 @@ const initialItems: SwipeItem[] = [
   },
   {
     id: uuid.v4(),
-    image: undefined,
+    image: null,
     title: "Marketwatch",
     icon: "file-document-box-outline",
     date: dayjs().subtract(11, "hour"),
@@ -173,7 +189,7 @@ const initialItems: SwipeItem[] = [
   },
   {
     id: uuid.v4(),
-    image: undefined,
+    image: null,
     title: "Reuters",
     icon: "book",
     date: dayjs().subtract(1, "day"),
@@ -191,6 +207,28 @@ const initialItems: SwipeItem[] = [
     body: "You're invited! Start trading Bitcoin & Ethereum",
     button: "Get Started",
     onPress: () => undefined
+  },
+  {
+    id: uuid.v4(),
+    image: require("./placeholder.png"),
+    title: "Enjoying robinhood?",
+    icon: "star-outline",
+    date: dayjs(),
+    body:
+      "Invite your friends! When they sign up, you'll both get a free stock",
+    button: "Invite friends",
+    onPress: () => undefined
+  },
+  {
+    id: uuid.v4(),
+    image: null,
+    title: "Introducing cards",
+    icon: "lightbulb-outline",
+    date: dayjs(),
+    body:
+      "Swipe through cards to see your personalized notifications and news stories.",
+    button: "Swipe to dismiss",
+    onPress: () => undefined // complete
   }
 ];
 
@@ -200,26 +238,42 @@ interface SwipeCardListProps {
 
 interface BadgeProps {
   count: number;
+  percent: number;
 }
+
 const Badge = memo((props: BadgeProps) => {
   const size = Theme.padding.p06;
+  const badgeSize = size * props.percent;
   const color = useColor();
   return (
     <View
       style={{
         position: "absolute",
         right: 0,
-        margin: Theme.padding.p01,
-        zIndex: 100,
         width: size,
         height: size,
-        borderRadius: size,
-        backgroundColor: color.danger,
+        margin: Theme.padding.p01,
+        zIndex: props.count * 10,
         alignItems: "center",
         justifyContent: "center"
       }}
     >
-      <Text title={`${props.count}`} style={{ color: color.background }} />
+      <View
+        style={{
+          width: badgeSize,
+          height: badgeSize,
+          borderRadius: size,
+          backgroundColor: color.danger,
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+      >
+        <Text
+          title={`${props.count}`}
+          style={{ color: color.background }}
+          adjustsFontSizeToFit
+        />
+      </View>
     </View>
   );
 });
@@ -228,15 +282,24 @@ const SwipeCardList = memo(function SwipeCardList({
   height = 100
 }: SwipeCardListProps) {
   const [feed, setFeed] = useState({
-    items: initialItems
+    items: initialItems,
+    percent: 1
   });
 
-  const onSwipeComplete = () => {
+  const onSwipeComplete = useCallback(() => {
     setFeed(state => ({
       ...state,
+      percent: 1,
       items: state.items.filter((_, i) => i !== state.items.length - 1)
     }));
-  };
+  }, []);
+
+  const onSwipePercentChange = useCallback((percent: number) => {
+    setFeed(state => ({
+      ...state,
+      percent
+    }));
+  }, []);
 
   return !feed.items.length ? null : (
     <View style={{ height }}>
@@ -247,9 +310,10 @@ const SwipeCardList = memo(function SwipeCardList({
           key={item.id}
           index={index}
           onSwipeComplete={onSwipeComplete}
+          onSwipePercentChange={onSwipePercentChange}
         />
       ))}
-      <Badge count={feed.items.length} />
+      <Badge count={feed.items.length} percent={feed.percent} />
     </View>
   );
 });
