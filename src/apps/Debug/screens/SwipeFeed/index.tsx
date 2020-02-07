@@ -232,10 +232,6 @@ const initialItems: SwipeItem[] = [
   }
 ];
 
-interface SwipeCardListProps {
-  height?: number;
-}
-
 interface BadgeProps {
   count: number;
   percent: number;
@@ -278,11 +274,17 @@ const Badge = memo((props: BadgeProps) => {
   );
 });
 
-const SwipeCardList = memo(function SwipeCardList({
-  height = 100
-}: SwipeCardListProps) {
+interface SwipeCardsProps {
+  height?: number;
+  items: SwipeItem[];
+}
+
+const SwipeCards = memo(function SwipeCardList({
+  height = 100,
+  items
+}: SwipeCardsProps) {
   const [feed, setFeed] = useState({
-    items: initialItems,
+    items,
     percent: 1
   });
 
@@ -318,7 +320,7 @@ const SwipeCardList = memo(function SwipeCardList({
   ;
 });
 
-const ImagePlaceholder = memo(() => {
+const ImagePlaceholder = memo(function ImagePlaceholder() {
   return (
     <Card noPadding>
       <Image
@@ -336,7 +338,7 @@ export default memo(function SwipeFeed() {
       <View style={{ padding: Theme.padding.p04 }}>
         <ImagePlaceholder />
         <ImagePlaceholder />
-        <SwipeCardList />
+        <SwipeCards items={initialItems} />
         <ImagePlaceholder />
         <ImagePlaceholder />
         <ImagePlaceholder />
