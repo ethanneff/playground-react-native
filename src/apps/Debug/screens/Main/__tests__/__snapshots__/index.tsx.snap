@@ -133,6 +133,7 @@ exports[`renders correctly 1`] = `
           "debugDarkMode",
           "debugColors",
           "debugSwipeFeed",
+          "debugGameOfLife",
         ]
       }
       disableVirtualization={false}
