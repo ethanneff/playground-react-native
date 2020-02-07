@@ -1,5 +1,19 @@
 # Changelog
 
+# [2.18.0](https://github.com/ethanneff/example/compare/v2.17.2...v2.18.0) (2020-02-07)
+
+
+### Bug Fixes
+
+* update deps ([1a87980](https://github.com/ethanneff/example/commit/1a87980c9af1f548c2fbe04d0d722ffdbb629614))
+* update deps ([b4155c6](https://github.com/ethanneff/example/commit/b4155c666cf0ca7f1216935bbfb4cedb334dce54))
+* update snap ([86953d5](https://github.com/ethanneff/example/commit/86953d542e05a211990d5d8add747cce7479b41b))
+
+
+### Features
+
+* add game of life ([c84057d](https://github.com/ethanneff/example/commit/c84057dc84fd0b7bc02573caacd9a105a8395367))
+
 ## [2.17.2](https://github.com/ethanneff/example/compare/v2.17.1...v2.17.2) (2020-02-03)
 
 
