@@ -1841,10 +1841,10 @@
     micromatch "^4.0.0"
     p-reduce "^2.0.0"
 
-"@semantic-release/github@7.0.2":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-7.0.2.tgz#5f036bc66bf27019b03ee1f04722c3dbfa4155da"
-  integrity sha512-WD9cIsBxKV8U/zisBxp/YZRYmU9TBs/GNlnE1/3Levs5Kyeb5/IwOKw96LP4HY92xudsKPhBCkpmnGwn6sELGg==
+"@semantic-release/github@7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-7.0.3.tgz#53d5ad985d7ebfaa533f64784d1ac00ff22a2231"
+  integrity sha512-4Y2nqruKHsdoayq/H/lMWudONXHLbYtSBDZPktoTrvdJZNQkLhjnxCwDUTKo8G29aI81RuoYKUHv6GSgyJDtGQ==
   dependencies:
     "@octokit/rest" "^16.43.0"
     "@semantic-release/error" "^2.2.0"
@@ -1855,7 +1855,7 @@
     fs-extra "^8.0.0"
     globby "^11.0.0"
     http-proxy-agent "^4.0.0"
-    https-proxy-agent "^4.0.0"
+    https-proxy-agent "^5.0.0"
     issue-parser "^6.0.0"
     lodash "^4.17.4"
     mime "^2.4.3"
@@ -2185,10 +2185,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-native@0.61.11":
-  version "0.61.11"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.61.11.tgz#e302477478d40d7559f8dae610e100c0e1c67cc9"
-  integrity sha512-ZGSh+x7CtPIkvRkAFcQ4tl0c+sz4x9QnXXsc7jsjtOAQoKFP29YN/2J2K84vn5F9xWLNoc2dWLXkSmcm2EVL6g==
+"@types/react-native@0.61.12":
+  version "0.61.12"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.61.12.tgz#058c80f5aadb99b6cac1cf648e996b7795ca0fab"
+  integrity sha512-9Do0pTN9H3hnon0LUCTqIC5fCmFpKU5V8rJEH2iAAsCRm8+2Q7zPUMKuCaSRbO5zhXMW5oC8IE0nCfg1kqyXvw==
   dependencies:
     "@types/react" "*"
 
@@ -5782,13 +5782,12 @@ eslint-plugin-jest@22.4.1:
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.4.1.tgz#a5fd6f7a2a41388d16f527073b778013c5189a9c"
   integrity sha512-gcLfn6P2PrFAVx3AobaOzlIEevpAEf9chTpFZz7bYfc7pz8XRv7vuKTIE4hxPKZSha6XWKKplDQ0x9Pq8xX2mg==
 
-eslint-plugin-jest@23.6.0:
-  version "23.6.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.6.0.tgz#508b32f80d44058c8c01257c0ee718cfbd521e9d"
-  integrity sha512-GH8AhcFXspOLqak7fqnddLXEJsrFyvgO8Bm60SexvKSn1+3rWYESnCiWUOCUcBTprNSDSE4CtAZdM4EyV6gPPw==
+eslint-plugin-jest@23.7.0:
+  version "23.7.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.7.0.tgz#84d5603b6e745b59898cb6750df6a44782a39b04"
+  integrity sha512-zkiyGlvJeHNjAEz8FaIxTXNblJJ/zj3waNbYbgflK7K6uy0cpE5zJBt/JpJtOBGM/UGkC6BqsQ4n0y7kQ2HA8w==
   dependencies:
     "@typescript-eslint/experimental-utils" "^2.5.0"
-    micromatch "^4.0.2"
 
 eslint-plugin-jsx-a11y@6.2.3:
   version "6.2.3"
@@ -7360,6 +7359,14 @@ https-proxy-agent@^4.0.0:
   integrity sha512-zoDhWrkR3of1l9QAL8/scJZyLu8j/gBkcwcaQOZh7Gyh/+uJQzGVETdgT30akuwkpL8HTRfssqI3BZuV18teDg==
   dependencies:
     agent-base "5"
+    debug "4"
+
+https-proxy-agent@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-5.0.0.tgz#e2a90542abb68a762e0a0850f6c9edadfd8506b2"
+  integrity sha512-EkYm5BcKUGiduxzSt3Eppko+PiNWNEpa4ySk9vTC6wDsQJW9rHSa+UhGNJoRYp7bz6Ht1eaRIa6QaJqO5rCFbA==
+  dependencies:
+    agent-base "6"
     debug "4"
 
 human-signals@^1.1.1:
