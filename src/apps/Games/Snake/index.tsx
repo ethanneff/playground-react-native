@@ -1,16 +1,8 @@
-import React, { memo, useState, useEffect, useCallback } from "react";
+import React, { memo, useState, useCallback } from "react";
 import { View } from "react-native";
-import { Screen } from "../../../components";
+import { Screen, Button } from "../../../components";
 import { useColor, useNav } from "../../../hooks";
-import {
-  BoardObject,
-  addStarting,
-  generateBoard,
-  addFood,
-  collision,
-  nextSnakePosition,
-  eat
-} from "./utils";
+import { BoardObject, generateBoard } from "./utils";
 import { Board } from "./Board";
 import { useGameLoop } from "./useGameLoop";
 import { useGesture } from "./useGesture";
@@ -34,43 +26,18 @@ export default memo(function Snake() {
     state: "off"
   });
   const gesture = useGesture();
-  const { start, stop, frame } = useGameLoop();
 
-  const startGame = useCallback(() => {
-    const board = generateBoard(size);
-    addStarting(board);
-    addFood(board);
-    setGame({ board, state: "on" });
+  const { start, stop } = useGameLoop(frame => {
+    if (frame.count >= 200) {
+      setGame(prev => ({ ...prev, state: "off" }));
+      stop();
+    }
+  });
+
+  const reset = useCallback(() => {
+    setGame({ board: generateBoard(size), state: "on" });
     start();
   }, [start]);
-
-  const finishGame = useCallback(() => {
-    setGame(prev => ({ ...prev, state: "off" }));
-    stop();
-  }, [stop]);
-
-  useEffect(() => {
-    if (game.state === "off") {
-      return;
-    }
-    const next = nextSnakePosition();
-    if (collision(next) || frame.count >= 100) {
-      finishGame();
-      return;
-    }
-    if (eat()) {
-      addFood(game.board);
-    }
-  }, [frame, game.state, game.board, finishGame]);
-
-  useEffect(() => {
-    startGame();
-    return () => finishGame();
-  }, [finishGame, startGame]);
-
-  if (game.state === "init") {
-    return null;
-  }
 
   return (
     <>
@@ -86,7 +53,7 @@ export default memo(function Snake() {
           <Board board={game.board} />
         </View>
       </Screen>
-      {game.state === "off" && <EndGame onPress={startGame} />}
+      {game.state === "off" && <EndGame onPress={reset} />}
     </>
   );
 });
