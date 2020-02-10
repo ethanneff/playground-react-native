@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.18.3](https://github.com/ethanneff/example/compare/v2.18.2...v2.18.3) (2020-02-10)
+
+
+### Bug Fixes
+
+* add buttons instead of starting immediately ([f8f2a94](https://github.com/ethanneff/example/commit/f8f2a94caed7d6f0c60312a6e89da76b29fd0990))
+* add food and starting to board creation to prevent double rerender ([bb49e66](https://github.com/ethanneff/example/commit/bb49e66c072781edde7bf263fae5a1f5dd4f6281))
+* clean up logic to make code more performant ([3897d22](https://github.com/ethanneff/example/commit/3897d223c0219eb13ca3c1315563b550d5ab1d9a))
+* make frame a callback to prevent double re-render of tick state ([dde70da](https://github.com/ethanneff/example/commit/dde70da36f17021f9a9125f2ccdeacd31e03047c))
+* simplify states ([ef9c7ce](https://github.com/ethanneff/example/commit/ef9c7ce2e47d05002f6b51433efc9c97cf786997))
+
 ## [2.18.2](https://github.com/ethanneff/example/compare/v2.18.1...v2.18.2) (2020-02-10)
 
 
