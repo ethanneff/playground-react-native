@@ -16,7 +16,7 @@ import { useGameLoop } from "./useGameLoop";
 import { useGesture } from "./useGesture";
 import { EndGame } from "./EndGame";
 
-type State = "init" | "on" | "off";
+type State = "on" | "off";
 
 type Game = {
   board: BoardObject;
@@ -31,7 +31,7 @@ export default memo(function Snake() {
   const size = 20;
   const [game, setGame] = useState<Game>({
     board: generateBoard(size),
-    state: "init"
+    state: "off"
   });
   const gesture = useGesture();
   const { start, stop, frame } = useGameLoop();
