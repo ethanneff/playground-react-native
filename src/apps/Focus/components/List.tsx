@@ -1,5 +1,5 @@
 import React, { memo, useState, useEffect, useCallback } from "react";
-import { StyleSheet , FlatList, ActivityIndicator } from "react-native";
+import { StyleSheet, FlatList, ActivityIndicator } from "react-native";
 
 import { ListItem } from "./ListItem";
 import { Theme } from "../../../utils";
@@ -30,7 +30,7 @@ const initialIndex =
     .add(2, "day")
     .diff(dayjs(), "hour") - 4;
 
-const getItemLayout = (_: any, index: number) => ({
+const getItemLayout = (_: Item[] | null | undefined, index: number) => ({
   length: itemHeight,
   offset: itemHeight * index,
   index
