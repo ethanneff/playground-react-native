@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { Animated, StyleSheet, ViewStyle } from "react-native";
+import { Animated, StyleSheet, TextStyle, StyleProp } from "react-native";
 import { Theme, colorWithOpacity } from "../../utils";
 import { useNativeDriver, useColor } from "../../hooks";
 import { getTextColorPercent, getFontSize } from "./utils";
@@ -13,7 +13,7 @@ export enum EllipsizeMode {
 
 export interface TextProps {
   title?: string;
-  style?: ViewStyle | {};
+  style?: StyleProp<TextStyle>;
 
   center?: boolean;
   centerVertically?: boolean;
