@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.18.2](https://github.com/ethanneff/example/compare/v2.18.1...v2.18.2) (2020-02-10)
+
+
+### Bug Fixes
+
+* clear timer on unmount ([b921f25](https://github.com/ethanneff/example/commit/b921f25d4fe04a4cc0d843a9e0d125a4874e90d2))
+* correct any ([8fcd350](https://github.com/ethanneff/example/commit/8fcd350e1d3d69373549e376a8bb2c89bf7e5caa))
+* correct any ([cdbb0df](https://github.com/ethanneff/example/commit/cdbb0df8009756e329a447aeb43d67cdd3f89a74))
+* correct timeout unmount ([8f66ee4](https://github.com/ethanneff/example/commit/8f66ee45622bf2c099f58db9a480c156a52646b1))
+* correct typing for styling ([e8d8bf3](https://github.com/ethanneff/example/commit/e8d8bf37f02594d07ae41cf1c6d7f42ca57a394c))
+* refactor stopwatch to functional ([47ee467](https://github.com/ethanneff/example/commit/47ee46762e74444f98e093f6043f317f2e9b2a86))
+
 ## [2.18.1](https://github.com/ethanneff/example/compare/v2.18.0...v2.18.1) (2020-02-09)
 
 
