@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, memo } from "react";
+import React, { useState, useRef, useCallback, memo, useEffect } from "react";
 import { StyleSheet, View } from "react-native";
 import { Screen, Button, Slider, Text } from "../../../../components";
 import { useColor, useNav } from "../../../../hooks";
@@ -15,8 +15,9 @@ export default memo(function DebugGameOfLife() {
     count: 20
   });
   const [board, setBoard] = useState(generateBoard(form.count, 0.5));
-  const run = useRef(form.run);
-  const delay = useRef(form.delay);
+  const runRef = useRef(form.run);
+  const delayRef = useRef(form.delay);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const smallest = useRootSelector(getSmallestDimension);
   const size = smallest / form.count;
   const nav = useNav();
@@ -46,7 +47,7 @@ export default memo(function DebugGameOfLife() {
   ]);
 
   const loop = useCallback(() => {
-    if (!run.current) {
+    if (!runRef.current) {
       return;
     }
 
@@ -56,12 +57,12 @@ export default memo(function DebugGameOfLife() {
       )
     );
 
-    setTimeout(loop, delay.current);
+    timeoutRef.current = setTimeout(loop, delayRef.current);
   }, []);
 
   const onStart = useCallback(() => {
     setForm(state => ({ ...state, run: !state.run }));
-    run.current = !run.current;
+    runRef.current = !runRef.current;
     loop();
   }, [loop]);
 
@@ -72,8 +73,14 @@ export default memo(function DebugGameOfLife() {
 
   const onDelaySlide = useCallback((value: number) => {
     setForm(state => ({ ...state, delay: value }));
-    delay.current = value;
+    delayRef.current = value;
   }, []);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [timeoutRef.current]);
 
   return (
     <Screen onLeftPress={nav.to("debug")} title="Game of life">
@@ -114,12 +121,12 @@ export default memo(function DebugGameOfLife() {
           <Button title="clear" onPress={onClear} />
         </View>
         <View>
-          {board.map((rows, x) => 
+          {board.map((rows, x) => (
             <View
               key={`${x}`}
               style={{ flexDirection: "row", justifyContent: "center" }}
             >
-              {rows.map((row, y) => 
+              {rows.map((row, y) => (
                 <Cell
                   key={`${x}-${y}`}
                   row={row}
@@ -128,9 +135,9 @@ export default memo(function DebugGameOfLife() {
                   size={size}
                   onItemPress={onItemPress}
                 />
-              )}
+              ))}
             </View>
-          )}
+          ))}
         </View>
       </View>
     </Screen>
