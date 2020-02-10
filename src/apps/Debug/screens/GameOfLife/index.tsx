@@ -78,9 +78,11 @@ export default memo(function DebugGameOfLife() {
 
   useEffect(() => {
     return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
-  }, [timeoutRef.current]);
+  }, [timeoutRef]);
 
   return (
     <Screen onLeftPress={nav.to("debug")} title="Game of life">
@@ -121,12 +123,12 @@ export default memo(function DebugGameOfLife() {
           <Button title="clear" onPress={onClear} />
         </View>
         <View>
-          {board.map((rows, x) => (
+          {board.map((rows, x) => 
             <View
               key={`${x}`}
               style={{ flexDirection: "row", justifyContent: "center" }}
             >
-              {rows.map((row, y) => (
+              {rows.map((row, y) => 
                 <Cell
                   key={`${x}-${y}`}
                   row={row}
@@ -135,9 +137,9 @@ export default memo(function DebugGameOfLife() {
                   size={size}
                   onItemPress={onItemPress}
                 />
-              ))}
+              )}
             </View>
-          ))}
+          )}
         </View>
       </View>
     </Screen>
