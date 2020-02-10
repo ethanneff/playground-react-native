@@ -36,6 +36,9 @@ export const generateBoard = (size: number) => {
       board[i][j] = 0;
     }
   }
+
+  addStarting(board);
+  addFood(board);
   return board;
 };
 
