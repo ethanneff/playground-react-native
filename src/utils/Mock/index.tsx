@@ -3,5 +3,5 @@ import { Provider } from "react-redux";
 import { ReactTestRenderer, create } from "react-test-renderer";
 import { store } from "../../containers/Redux";
 
-export const mockRenderer = (component: any): ReactTestRenderer =>
+export const mockRenderer = (component: JSX.Element): ReactTestRenderer =>
   create(<Provider store={store}>{component}</Provider>);
