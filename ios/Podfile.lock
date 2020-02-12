@@ -183,10 +183,10 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.3):
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
-  - Crashlytics (3.12.0):
-    - Fabric (~> 1.9.0)
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
   - DoubleConversion (1.1.6)
-  - Fabric (1.9.0)
+  - Fabric (1.10.2)
   - FBLazyVector (0.61.5)
   - FBReactNativeSpec (0.61.5):
     - Folly (= 2018.10.22.00)
@@ -535,30 +535,30 @@ PODS:
     - React
   - RNDeviceInfo (5.5.1):
     - React
-  - RNFBAnalytics (6.2.0):
+  - RNFBAnalytics (6.3.1):
     - Firebase/Core (~> 6.13.0)
     - React
     - RNFBApp
-  - RNFBApp (6.2.0):
+  - RNFBApp (6.3.1):
     - Firebase/Core (~> 6.13.0)
     - React
-  - RNFBAuth (6.2.0):
+  - RNFBAuth (6.3.1):
     - Firebase/Auth (~> 6.13.0)
     - Firebase/Core (~> 6.13.0)
     - React
     - RNFBApp
-  - RNFBCrashlytics (6.2.0):
-    - Crashlytics (~> 3.12.0)
-    - Fabric (~> 1.9.0)
+  - RNFBCrashlytics (6.3.1):
+    - Crashlytics (~> 3.14.0)
+    - Fabric (~> 1.10.2)
     - Firebase/Core (~> 6.13.0)
     - React
     - RNFBApp
-  - RNFBFirestore (6.2.0):
+  - RNFBFirestore (6.3.1):
     - Firebase/Core (~> 6.13.0)
     - Firebase/Firestore (~> 6.13.0)
     - React
     - RNFBApp
-  - RNFBRemoteConfig (6.2.0):
+  - RNFBRemoteConfig (6.3.1):
     - Firebase/Core (~> 6.13.0)
     - Firebase/RemoteConfig (~> 6.13.0)
     - React
@@ -732,9 +732,9 @@ SPEC CHECKSUMS:
   AppCenterReactNativeShared: d5e360f8a4cb5126d29e31ab98051d2f070ba631
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
-  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
-  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   FBLazyVector: aaeaf388755e4f29cd74acbc9e3b8da6d807c37f
   FBReactNativeSpec: 118d0d177724c2d67f08a59136eb29ef5943ec75
   Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
@@ -784,12 +784,12 @@ SPEC CHECKSUMS:
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
   RNCAsyncStorage: 44395cb9c7c1523104c2b499eb426ef7aff82bca
   RNDeviceInfo: 017aa2fd29a437fba26807cbe2fa51a149da70cd
-  RNFBAnalytics: 57dc0bfad4e40f68779757653676699072651218
-  RNFBApp: 5b215aacc09105a1761de31b9a0eb2abcce06253
-  RNFBAuth: 61673c0d38ce225c315e7be13a1b494904baedd2
-  RNFBCrashlytics: 0469cb96b00904e0c9604b9636d8eeab31115b08
-  RNFBFirestore: 5de4ae898df51a3ecc16a45db15019836c5cec87
-  RNFBRemoteConfig: 05d416f414ca721b5ea215eeea8bb47360b4ab00
+  RNFBAnalytics: 48a97c6e4bd8a9ad173990e95ef1311c486630d8
+  RNFBApp: 279ec5c4bb43b8fc7b8031eed90ad7d2bea7a048
+  RNFBAuth: b631f0e98cebd098ddf8f6b7facda2a5ba1a6bef
+  RNFBCrashlytics: 90f2954f19196d8f45baa924adb49235d4ebc9db
+  RNFBFirestore: 1b5be285c76247a8c78aa85b53202647db7541fa
+  RNFBRemoteConfig: 230882f1c4c384d2b3ebe16597feb22bfcbfd81d
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
