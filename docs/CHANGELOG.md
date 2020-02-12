@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.18.5](https://github.com/ethanneff/example/compare/v2.18.4...v2.18.5) (2020-02-12)
+
+
+### Bug Fixes
+
+* faster navigation with loading component ([274bac1](https://github.com/ethanneff/example/commit/274bac11b305d59fbf6c48dfa9a796c54f8afc5f))
+
 ## [2.18.4](https://github.com/ethanneff/example/compare/v2.18.3...v2.18.4) (2020-02-12)
 
 
