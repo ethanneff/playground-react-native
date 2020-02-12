@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.18.4](https://github.com/ethanneff/example/compare/v2.18.3...v2.18.4) (2020-02-12)
+
+
+### Bug Fixes
+
+* update deps ([c98ce6c](https://github.com/ethanneff/example/commit/c98ce6c268f3b037de7ee831d377c04fd61b6d2d))
+* update renderItem performance ([0b4edf1](https://github.com/ethanneff/example/commit/0b4edf1ded591c70018d9e427e303482611c47b4))
+
 ## [2.18.3](https://github.com/ethanneff/example/compare/v2.18.2...v2.18.3) (2020-02-10)
 
 
