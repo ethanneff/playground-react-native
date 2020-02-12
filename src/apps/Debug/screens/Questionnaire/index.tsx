@@ -83,6 +83,45 @@ class Container extends React.PureComponent<Props> {
     this.tableView = ref;
   };
 
+  renderItem = ({ item }: { item: any }) => {
+    let items: any = <View style={{ flex: 1 }} />;
+
+    if (item.choices) {
+      items = 
+        <View style={{ flex: 1 }}>
+          {item.choices.map((choice: any) => {
+            return (
+              <Button
+                key={choice.title}
+                title={choice.title}
+                onPress={() => {
+                  this.onSelection(item, choice);
+                }}
+              />
+            );
+          })}
+        </View>
+      ;
+    }
+
+    return (
+      <View style={{ width: this.width }}>
+        <Text title={item.title} />
+        {items}
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-around"
+          }}
+        >
+          <Button title="prev" onPress={() => this.onProgress(-1)} />
+          <Button title="next" onPress={() => this.onProgress(1)} />
+          <Button title="next2" onPress={() => this.onProgress(2)} />
+        </View>
+      </View>
+    );
+  };
+
   public render() {
     return (
       <Screen onLeftPress={this.nav("debug")}>
@@ -99,44 +138,7 @@ class Container extends React.PureComponent<Props> {
           horizontal
           pagingEnabled
           data={this.data}
-          renderItem={({ item }) => {
-            let items: any = <View style={{ flex: 1 }} />;
-
-            if (item.choices) {
-              items = 
-                <View style={{ flex: 1 }}>
-                  {item.choices.map(choice => {
-                    return (
-                      <Button
-                        key={choice.title}
-                        title={choice.title}
-                        onPress={() => {
-                          this.onSelection(item, choice);
-                        }}
-                      />
-                    );
-                  })}
-                </View>
-              ;
-            }
-
-            return (
-              <View style={{ width: this.width }}>
-                <Text title={item.title} />
-                {items}
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-around"
-                  }}
-                >
-                  <Button title="prev" onPress={() => this.onProgress(-1)} />
-                  <Button title="next" onPress={() => this.onProgress(1)} />
-                  <Button title="next2" onPress={() => this.onProgress(2)} />
-                </View>
-              </View>
-            );
-          }}
+          renderItem={this.renderItem}
         />
         <Questionnaires />
       </Screen>
@@ -147,7 +149,4 @@ class Container extends React.PureComponent<Props> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Container);
+export default connect(null, mapDispatchToProps)(Container);

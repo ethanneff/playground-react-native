@@ -1,5 +1,5 @@
 // TODO: slider on web
-import React, { memo, useState } from "react";
+import React, { memo, useState, useCallback } from "react";
 import { Image, ImageSourcePropType, View } from "react-native";
 import {
   Button,
@@ -79,6 +79,42 @@ export default memo(function DarkMode() {
   const handleSlider = (value: number) => setElevation(value);
   const landscape = useRootSelector(getLandscapeOrientation);
   const columns = landscape ? 5 : 3;
+  const onPress = useCallback(() => undefined, []);
+
+  const renderItem = useCallback(
+    ({ item, index }) => 
+      <Card elevation={elevation} onPress={onPress} touchable key={index}>
+        <Text title={item.title} overline />
+        <Text title={item.value} h3 style={{ marginTop: Theme.padding.p02 }} />
+        {item.target && 
+          <Text
+            title={item.target}
+            body2
+            style={{ marginTop: Theme.padding.p02 }}
+          />
+        }
+        {item.chart && 
+          <Image
+            source={item.chart}
+            style={{
+              height: 80,
+              marginTop: Theme.padding.p02,
+              resizeMode: "cover",
+              width: "100%"
+            }}
+          />
+        }
+        {item.button && 
+          <Button
+            contained
+            title={item.button}
+            buttonStyle={{ marginTop: Theme.padding.p02 }}
+          />
+        }
+      </Card>
+    ,
+    [elevation, onPress]
+  );
 
   return (
     <Screen onLeftPress={nav.to("debug")} title="Dark mode">
@@ -111,50 +147,7 @@ export default memo(function DarkMode() {
         />
       </View>
       <Text title="Weekly Stats" h2 center />
-      <Masonry
-        data={cards}
-        numColumns={columns}
-        renderItem={({ item, index }: { item: Card; index: number }) => 
-          <Card
-            elevation={elevation}
-            onPress={() => undefined}
-            touchable
-            key={index}
-          >
-            <Text title={item.title} overline />
-            <Text
-              title={item.value}
-              h3
-              style={{ marginTop: Theme.padding.p02 }}
-            />
-            {item.target && 
-              <Text
-                title={item.target}
-                body2
-                style={{ marginTop: Theme.padding.p02 }}
-              />
-            }
-            {item.chart && 
-              <Image
-                source={item.chart}
-                style={{
-                  height: 80,
-                  marginTop: Theme.padding.p02,
-                  resizeMode: "cover",
-                  width: "100%"
-                }}
-              />
-            }
-            {item.button && 
-              <Button
-                contained
-                title={item.button}
-                buttonStyle={{ marginTop: Theme.padding.p02 }}
-              />
-            }
-          </Card>
-        }
-      />
+      <Masonry data={cards} numColumns={columns} renderItem={renderItem} />
     </Screen>
   );
 });
