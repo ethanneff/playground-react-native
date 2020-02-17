@@ -48,8 +48,6 @@
 
 - [ ] fix ios build (pods)
 - [ ] build off android device (access)
-- [ ] make snake
-- [ ] make flappy
 - [ ] install accelerator
 - [ ] delete old repositories
 - [x] backup google drive offline
