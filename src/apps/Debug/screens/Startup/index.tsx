@@ -23,6 +23,7 @@ type Form = {
   primaryMetric: string;
   biggestObstacle: string;
   morale: string;
+  targetCustomer: string;
 };
 
 const initialState: Form = {
@@ -33,7 +34,8 @@ const initialState: Form = {
   topGoals: "",
   primaryMetric: "",
   biggestObstacle: "",
-  morale: ""
+  morale: "",
+  targetCustomer: ""
 };
 
 export default memo(function DebugStartup() {
@@ -83,6 +85,11 @@ export default memo(function DebugStartup() {
     (value: string) => updateForm("launchWeeks", value),
     [updateForm]
   );
+  const handleTargetCustomer = useCallback(
+    (value: string) => updateForm("targetCustomer", value),
+    [updateForm]
+  );
+
   const handleSubmit = useCallback(() => undefined, []);
 
   return (
@@ -151,7 +158,14 @@ export default memo(function DebugStartup() {
             title="On a scale of 1-10, what is your morale?"
             keyboardType={KeyboardType.Number}
             onChangeText={handleMoraleChange}
-            value={form.morale}
+            value={form.morale} // 1 (we are totally burned out) to  10 (we couldn't be more excited and optimistic!)
+          />
+        </Section>
+        <Section title="Experimental Question">
+          <TextInput
+            title="Which best describes your target customer?"
+            onChangeText={handleTargetCustomer}
+            value={form.morale} // governments, large businesses. startups small companies or individual professional, customers, something else  else
           />
         </Section>
         <Button title="submit" onPress={handleSubmit} contained />
