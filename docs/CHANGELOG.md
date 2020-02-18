@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.18.6](https://github.com/ethanneff/example/compare/v2.18.5...v2.18.6) (2020-02-18)
+
+
+### Bug Fixes
+
+* add additional startup question ([f88269d](https://github.com/ethanneff/example/commit/f88269d49ac4834f9aaad371dc73799817164eec))
+* update deps ([9c6e1a5](https://github.com/ethanneff/example/commit/9c6e1a500e65be4939e4cf2434af2f0566443d93))
+
 ## [2.18.5](https://github.com/ethanneff/example/compare/v2.18.4...v2.18.5) (2020-02-12)
 
 
