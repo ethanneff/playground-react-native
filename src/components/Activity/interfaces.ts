@@ -10,11 +10,15 @@ export type ActivityDayInWeek = Array<ActivityDay>;
 export type ActivityMatrix = Array<ActivityDayInWeek>;
 
 export type ActivityModel = {
-  matrix: ActivityMatrix;
-  max: number;
-  loading: boolean;
-  current: string | undefined;
-  error: string | undefined;
+  activity: {
+    matrix: ActivityMatrix;
+    max: number;
+  };
+  request: "loading" | "failure" | "success";
+  selected: {
+    submissions: string | undefined;
+    day: string | undefined;
+  };
 };
 
-export type Site = "github" | "leetCode" | "hackerRank";
+export type Site = "github" | "leetCode" | "hackerRank" | "gitlab" | "random";

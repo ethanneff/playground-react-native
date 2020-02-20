@@ -18,7 +18,7 @@ type ActivitySquares = {
 
 export const getDateFormat = (date: Dayjs) => date.format("YYYY-MM-DD");
 
-export const getCurrentFormat = (count: number, date: Dayjs): string => {
+export const getSubmissionFormat = (count: number, date: Dayjs): string => {
   const submissions = count === 1 ? "submission" : "submissions";
   const today = date.isSame(dayjs(), "day");
   const day = today ? "today" : `on ${date.format("MMM DD, YYYY")}`;

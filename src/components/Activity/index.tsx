@@ -1,10 +1,10 @@
-import { FlatList, View } from "react-native";
+import { FlatList, View, ActivityIndicator } from "react-native";
 import React, { memo, useEffect, useState, useCallback } from "react";
 import { Theme } from "../../utils";
 import {
   getActivitySquares,
   getApiActivity,
-  getCurrentFormat,
+  getSubmissionFormat,
   getDateFormat
 } from "./utils";
 import { ActivityWeekRow } from "./Week";
@@ -26,11 +26,15 @@ interface Props {
 }
 
 const initialActivity: ActivityModel = {
-  matrix: [],
-  max: 0,
-  loading: true,
-  error: undefined,
-  current: undefined
+  activity: {
+    matrix: [],
+    max: 0
+  },
+  request: "loading",
+  selected: {
+    submissions: undefined,
+    day: undefined
+  }
 };
 
 // TODO: simplify the problem... have 2 cells.. try to render only 1 even both cells reference the same board
@@ -41,7 +45,7 @@ export const Activity = memo(function Activity({
   username,
   site
 }: Props) {
-  const [activity, setActivity] = useState<ActivityModel>(initialActivity);
+  const [state, setState] = useState<ActivityModel>(initialActivity);
 
   // TODO: need to persist
   // TODO: need selection color
@@ -49,19 +53,24 @@ export const Activity = memo(function Activity({
     try {
       const active = await getApiActivity({ username, site });
       const { matrix, max } = getActivitySquares(active);
-      const activeToday = active[getDateFormat(dayjs())] || 0;
-      setActivity({
-        matrix,
-        max,
-        loading: false,
-        error: undefined,
-        current: getCurrentFormat(activeToday, dayjs())
+      const today = dayjs();
+      const todayFormat = getDateFormat(dayjs());
+      const count = active[todayFormat] || 0;
+      setState({
+        activity: {
+          matrix,
+          max
+        },
+        request: "success",
+        selected: {
+          submissions: getSubmissionFormat(count, today),
+          day: todayFormat
+        }
       });
     } catch (error) {
-      setActivity({
+      setState({
         ...initialActivity,
-        loading: false,
-        error: error.message
+        request: "failure"
       });
     }
   }, [site, username]);
@@ -72,9 +81,12 @@ export const Activity = memo(function Activity({
 
   const onItemPress = useCallback(
     (item: ActivityDay) => () => {
-      setActivity(state => ({
-        ...state,
-        current: getCurrentFormat(item.count, item.date)
+      setState(data => ({
+        ...data,
+        selected: {
+          submissions: getSubmissionFormat(item.count, item.date),
+          day: getDateFormat(item.date)
+        }
       }));
     },
     []
@@ -85,7 +97,7 @@ export const Activity = memo(function Activity({
   const renderItem = useCallback(
     ({ item, index }: { item: ActivityDayInWeek; index: number }) => 
       <ActivityWeekRow
-        max={activity.max}
+        max={state.activity.max}
         item={item}
         index={index}
         size={size}
@@ -93,16 +105,16 @@ export const Activity = memo(function Activity({
         onPress={onItemPress}
       />
     ,
-    [activity.max, margin, onItemPress, size]
+    [state.activity.max, margin, onItemPress, size]
   );
 
   const keyExtractor = useCallback(item => getDateFormat(item[0].date), []);
 
-  return activity.loading ? 
-    <Text h5 medium title="loading..." />
-   : activity.error ? 
+  return state.request === "loading" ? 
+    <ActivityIndicator />
+   : state.request === "failure" ? 
     <View>
-      <Text title={activity.error} />
+      <Text title="Missing network connection" />
       <Button title="Retry" wrap contained danger half onPress={onRetryPress} />
     </View>
    : 
@@ -110,7 +122,7 @@ export const Activity = memo(function Activity({
       <FlatList
         initialNumToRender={60}
         showsHorizontalScrollIndicator={false}
-        data={activity.matrix}
+        data={state.activity.matrix}
         inverted
         horizontal
         keyExtractor={keyExtractor}
@@ -120,7 +132,7 @@ export const Activity = memo(function Activity({
         overline
         medium
         secondary
-        title={activity.current}
+        title={state.selected.submissions}
         center
         style={{ paddingTop: Theme.padding.p03 }}
       />
