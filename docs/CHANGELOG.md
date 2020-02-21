@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.18.8](https://github.com/ethanneff/example/compare/v2.18.7...v2.18.8) (2020-02-21)
+
+
+### Bug Fixes
+
+* update typescript ([895ca2a](https://github.com/ethanneff/example/commit/895ca2aa98387ac4bedeb6a7e97bc02aa5a70cd4))
+
 ## [2.18.7](https://github.com/ethanneff/example/compare/v2.18.6...v2.18.7) (2020-02-20)
 
 
