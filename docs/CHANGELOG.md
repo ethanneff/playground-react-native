@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.18.10](https://github.com/ethanneff/example/compare/v2.18.9...v2.18.10) (2020-02-23)
+
+
+### Bug Fixes
+
+* update deps ([a2188ef](https://github.com/ethanneff/example/commit/a2188efc86bbe176933088cf8ff997a52b41030c))
+
 ## [2.18.9](https://github.com/ethanneff/example/compare/v2.18.8...v2.18.9) (2020-02-23)
 
 
