@@ -2226,10 +2226,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@16.9.21":
-  version "16.9.21"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.21.tgz#99e274e2ecfab6bb93920e918341daa3198b348d"
-  integrity sha512-xpmenCMeBwJRct8vmIfczlgdOXWIWASoOM857kxKfHlVQvDltRh7IFRVfGws79iO2jkNPXOeWREyKoClzhBaQA==
+"@types/react@16.9.22":
+  version "16.9.22"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.22.tgz#f0288c92d94e93c4b43e3f5633edf788b2c040ae"
+  integrity sha512-7OSt4EGiLvy0h5R7X+r0c7S739TCU/LvWbkNOrm10lUwNHe7XPz5OLhLOSZeCkqO9JSCly1NkYJ7ODTUqVnHJQ==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -2833,24 +2833,24 @@ anymatch@~3.1.1:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-appcenter-analytics@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/appcenter-analytics/-/appcenter-analytics-2.6.1.tgz#5b38caf8ece6f4356988154eeb03a90d81eece24"
-  integrity sha512-+b1FJ3wxkixiERAwbplY5cswn2IFToJovesfv17Rt8rj5PO3K16XqXfSu3nkBFo7exxmMCU1e+OdL9+iYQWc4g==
+appcenter-analytics@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/appcenter-analytics/-/appcenter-analytics-3.0.0.tgz#ae4e223adf384a1dbb9cb6f61837390652198e34"
+  integrity sha512-hpbdxqz2D5m5x3ykyXGex8cRISaOC74uUbOJhcZkGEkObps70Fh8SYakKBXUlexOCLzhkvn2Wq4Y5Gp9Fg/jog==
   dependencies:
-    appcenter "2.6.1"
+    appcenter "3.0.0"
 
-appcenter-crashes@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/appcenter-crashes/-/appcenter-crashes-2.6.1.tgz#b73a5491c9af4ea817a4f9d810a4131ce1232d41"
-  integrity sha512-iPce1e/lAWGUDv/2hMbGBxUC40wIcTLBO4KcIBIHNd62JfLKsQ3SSnqXF3YDGzjgBLc0jWFmqasTgZJMr4PPaA==
+appcenter-crashes@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/appcenter-crashes/-/appcenter-crashes-3.0.0.tgz#14c6de7f2037cdcb942649c77c45c914e6eb3f4c"
+  integrity sha512-8bAI4ic2nGICHWiX5rdsGATcg+kkP0bQKOdGrqztMeb2we0BvirxwLMF88ndP0HgPYBpOy0MU9L8FkevFz8oog==
   dependencies:
-    appcenter "2.6.1"
+    appcenter "3.0.0"
 
-appcenter-link-scripts@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/appcenter-link-scripts/-/appcenter-link-scripts-2.6.1.tgz#0b7b2db6f946e22baaaf48c61ac317f4cec80522"
-  integrity sha512-k+ToY1YxPEblQxA2iZU/8RRfKitdVwCU234TV+Pwi5uzoWo3uyy/tAEXXaHIoir+EHAhtrmcHosA+QM0lL/O/g==
+appcenter-link-scripts@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/appcenter-link-scripts/-/appcenter-link-scripts-3.0.0.tgz#f358768ccb28857f2d8b284cbe8a494d93c4ebf3"
+  integrity sha512-4rKD9k4cNJctndw6TdQUUBJ5fy0/Gc+rw2HZ2vLMT3r6v0fa42ZhN0ZkDOZzWeYL44ctCZt7nCKI6DpXqSDKVA==
   dependencies:
     debug "4.1.1"
     glob "5.0.15"
@@ -2859,12 +2859,12 @@ appcenter-link-scripts@2.6.1:
     which "1.2.11"
     xcode "2.0.0"
 
-appcenter@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-2.6.1.tgz#1d96e603ecfc5f0e7e34d580a19dd784f085802f"
-  integrity sha512-2o6wZCk1v80Tq4AaXM7i4i9SibFFGesezRtb8fTqQjqSYqrP+umxoLxvu37UwGD7njRc599CALmNvEgbmAwi0g==
+appcenter@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/appcenter/-/appcenter-3.0.0.tgz#9b6a451426f9c8fa2c1c02c6ebeeb1a2fda598a2"
+  integrity sha512-6kUbIM0z92uyOUlWqU0EnntdP7d2OhSWpg/Ajx2JGbOZ6R9Qet50ez4FnT4j0+lJH9nLh37P9tQvcOoHTJColw==
   dependencies:
-    appcenter-link-scripts "2.6.1"
+    appcenter-link-scripts "3.0.0"
 
 aproba@^1.0.3, aproba@^1.1.1, aproba@^1.1.2:
   version "1.2.0"
@@ -5799,10 +5799,10 @@ eslint-plugin-jest@22.4.1:
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.4.1.tgz#a5fd6f7a2a41388d16f527073b778013c5189a9c"
   integrity sha512-gcLfn6P2PrFAVx3AobaOzlIEevpAEf9chTpFZz7bYfc7pz8XRv7vuKTIE4hxPKZSha6XWKKplDQ0x9Pq8xX2mg==
 
-eslint-plugin-jest@23.7.0:
-  version "23.7.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.7.0.tgz#84d5603b6e745b59898cb6750df6a44782a39b04"
-  integrity sha512-zkiyGlvJeHNjAEz8FaIxTXNblJJ/zj3waNbYbgflK7K6uy0cpE5zJBt/JpJtOBGM/UGkC6BqsQ4n0y7kQ2HA8w==
+eslint-plugin-jest@23.8.0:
+  version "23.8.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.8.0.tgz#c978f959fa8395801742d13c5a3125a986d2661e"
+  integrity sha512-DKXmLxguZ1Lru4u5YM12ko3WLq6gqo7dhV2b63K731+/PNyZ/Ff6NGONQsGUtPLG9zU3kdz/N+2LTbweNZifeg==
   dependencies:
     "@typescript-eslint/experimental-utils" "^2.5.0"
 
