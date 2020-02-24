@@ -5,7 +5,7 @@ import {
   createCustomAction,
   getType
 } from "typesafe-actions";
-import uuid from "uuid";
+import { v4 } from "uuid";
 import { RootAction, RootState } from "../../../../../containers";
 import { logout } from "../../../../../models/Auth";
 
@@ -14,7 +14,7 @@ export const createQuestionnaire = createCustomAction(
   "questionnaires/CREATE",
   (payload: string) => ({
     payload: {
-      id: uuid.v4(),
+      id: v4(),
       questions: [],
       title: payload
     }

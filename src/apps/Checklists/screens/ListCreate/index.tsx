@@ -4,7 +4,7 @@ import { navigate } from "../../../../models";
 import { useRootDispatch } from "../../../../utils";
 import { useNav } from "../../../../hooks";
 import { createList } from "../../models";
-import uuid from "uuid";
+import { v4 } from "uuid";
 
 const initialState = { name: "", description: "" };
 
@@ -22,7 +22,7 @@ export default memo(function ChecklistCreate() {
     const now = Date.now();
     dispatch(
       createList({
-        id: uuid.v4(),
+        id: v4(),
         name,
         active: true,
         userId: "1",

@@ -4,7 +4,7 @@ import { navigate } from "../../../../models";
 import { createChecklistItem } from "../../models";
 import { useRootDispatch, useRootSelector, Errors } from "../../../../utils";
 import { useNav } from "../../../../hooks";
-import uuid from "uuid";
+import { v4 } from "uuid";
 
 const initialState = { name: "", description: "" };
 
@@ -31,7 +31,7 @@ export default memo(function ChecklistItemCreate() {
         completed: false,
         active: true,
         createdAt: now,
-        id: uuid.v4(),
+        id: v4(),
         checklistId: currentChecklist,
         order: now,
         updatedAt: now,

@@ -2,7 +2,7 @@ import React, { memo, useCallback } from "react";
 import { View, Keyboard } from "react-native";
 import { Button, TextInput } from "../../../../components";
 import { useRootDispatch, useRootSelector } from "../../../../utils";
-import uuid from "uuid";
+import { v4 } from "uuid";
 import { Message, typeChatMessage, createChatMessage } from "./Messages";
 
 export const TextField = memo(function ChatTextField() {
@@ -22,7 +22,7 @@ export const TextField = memo(function ChatTextField() {
       active: true,
       createdAt: date,
       userId: "User bob",
-      id: uuid.v4(),
+      id: v4(),
       message: textField,
       updatedAt: date,
       conversationId: "1"

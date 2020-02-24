@@ -17,7 +17,7 @@ import {
 import { useColor, useNav, useDropShadow } from "../../../../hooks";
 import { Theme, useRootSelector } from "../../../../utils";
 import dayjs, { Dayjs } from "dayjs";
-import uuid from "uuid";
+import { v4 } from "uuid";
 import { getWidth } from "../../../../models";
 
 interface SwipeCard extends SwipeItem {
@@ -167,7 +167,7 @@ interface SwipeItem {
 
 const initialItems: SwipeItem[] = [
   {
-    id: uuid.v4(),
+    id: v4(),
     image: null,
     title: "Price Movement",
     icon: "arrow-bottom-right",
@@ -177,7 +177,7 @@ const initialItems: SwipeItem[] = [
     onPress: () => undefined
   },
   {
-    id: uuid.v4(),
+    id: v4(),
     image: null,
     title: "Marketwatch",
     icon: "file-document-box-outline",
@@ -188,7 +188,7 @@ const initialItems: SwipeItem[] = [
     onPress: () => undefined
   },
   {
-    id: uuid.v4(),
+    id: v4(),
     image: null,
     title: "Reuters",
     icon: "book",
@@ -199,7 +199,7 @@ const initialItems: SwipeItem[] = [
     onPress: () => undefined
   },
   {
-    id: uuid.v4(),
+    id: v4(),
     image: require("./placeholder.png"),
     title: "Congratulations",
     icon: "star-outline",
@@ -209,7 +209,7 @@ const initialItems: SwipeItem[] = [
     onPress: () => undefined
   },
   {
-    id: uuid.v4(),
+    id: v4(),
     image: require("./placeholder.png"),
     title: "Enjoying robinhood?",
     icon: "star-outline",
@@ -220,7 +220,7 @@ const initialItems: SwipeItem[] = [
     onPress: () => undefined
   },
   {
-    id: uuid.v4(),
+    id: v4(),
     image: null,
     title: "Introducing cards",
     icon: "lightbulb-outline",
