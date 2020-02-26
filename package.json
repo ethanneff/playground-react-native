@@ -17,7 +17,8 @@
     "watch": "              echo 'run unit tests reloader';       jest -u --forceExit --detectOpenHandles --watchAll",
     "reset": "              echo 'clear react native cache';      watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; npx jetify; cd android; ./gradlew clean; cd ..; react-native start --reset-cache",
     "semantic-release": "   echo 'run continuous integration';    semantic-release",
-    "travis-deploy-once": " echo 'prevent multiple deploys';      travis-deploy-once"
+    "travis-deploy-once": " echo 'prevent multiple deploys';      travis-deploy-once",
+    "ncu": "                echo 'update deps';                   ncu -u && yarn && yarn lint"
   },
   "dependencies": {
     "@mdi/js": "4.9.95",
