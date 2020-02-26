@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.18.12](https://github.com/ethanneff/example/compare/v2.18.11...v2.18.12) (2020-02-26)
+
+
+### Bug Fixes
+
+* add dep update to scripts ([bcf8862](https://github.com/ethanneff/example/commit/bcf886270eef72d915f39c723a56de18fb59d4eb))
+* update deps ([9f45a0f](https://github.com/ethanneff/example/commit/9f45a0f1adede33987a3ecc3c2ed22d5074ad0a4))
+
 ## [2.18.11](https://github.com/ethanneff/example/compare/v2.18.10...v2.18.11) (2020-02-24)
 
 
