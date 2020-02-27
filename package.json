@@ -38,8 +38,8 @@
     "axios": "0.19.2",
     "dayjs": "1.8.21",
     "npm-check-updates": "4.0.2",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
     "react-native": "0.61.5",
     "react-native-device-info": "5.5.3",
     "react-native-keyboard-aware-scroll-view": "0.9.1",
@@ -56,7 +56,7 @@
     "uuid": "7.0.1"
   },
   "devDependencies": {
-    "@babel/core": "7.8.4",
+    "@babel/core": "7.8.6",
     "@babel/runtime": "7.8.4",
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
@@ -80,10 +80,10 @@
     "eslint-plugin-import": "2.20.1",
     "eslint-plugin-jest": "23.8.0",
     "eslint-plugin-prettier": "3.1.2",
-    "eslint-plugin-react-hooks": "2.4.0",
+    "eslint-plugin-react-hooks": "2.5.0",
     "husky": "4.2.3",
     "metro-react-native-babel-preset": "0.58.0",
-    "react-test-renderer": "16.12.0",
+    "react-test-renderer": "16.13.0",
     "semantic-release": "17.0.4",
     "travis-deploy-once": "5.0.11",
     "typescript": "3.8.2"
