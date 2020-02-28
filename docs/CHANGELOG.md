@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.18.13](https://github.com/ethanneff/example/compare/v2.18.12...v2.18.13) (2020-02-28)
+
+
+### Bug Fixes
+
+* begin work on reminders page ([f094430](https://github.com/ethanneff/example/commit/f094430774205fcbd1bc548e7a2ec930ba5c4dec))
+* update deps ([37fd430](https://github.com/ethanneff/example/commit/37fd43045eec2dcdae4a084723ad8a067b7f813b))
+* update ios deps ([82663e3](https://github.com/ethanneff/example/commit/82663e3e36e658409d4463a8fbbcb62eb13aef96))
+* update snaps ([7b0fbce](https://github.com/ethanneff/example/commit/7b0fbceb3c6ea59a9bb76ec22be93b08bc248444))
+
 ## [2.18.12](https://github.com/ethanneff/example/compare/v2.18.11...v2.18.12) (2020-02-26)
 
 
