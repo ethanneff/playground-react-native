@@ -23,7 +23,8 @@ const debugScreens: NavigationScreen[] = [
   "debugDarkMode",
   "debugColors",
   "debugSwipeFeed",
-  "debugGameOfLife"
+  "debugGameOfLife",
+  "debugReminder"
 ];
 
 export default memo(function Debug() {
