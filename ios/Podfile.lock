@@ -158,24 +158,24 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - appcenter (2.6.1):
-    - AppCenterReactNativeShared
-    - React
-  - appcenter-analytics (2.6.1):
+  - appcenter-analytics (3.0.0):
     - AppCenter/Analytics
     - AppCenterReactNativeShared
     - React
-  - appcenter-crashes (2.6.1):
+  - appcenter-core (3.0.0):
+    - AppCenterReactNativeShared
+    - React
+  - appcenter-crashes (3.0.0):
     - AppCenter/Crashes
     - AppCenterReactNativeShared
     - React
-  - AppCenter/Analytics (2.5.1):
+  - AppCenter/Analytics (3.0.0):
     - AppCenter/Core
-  - AppCenter/Core (2.5.1)
-  - AppCenter/Crashes (2.5.1):
+  - AppCenter/Core (3.0.0)
+  - AppCenter/Crashes (3.0.0):
     - AppCenter/Core
-  - AppCenterReactNativeShared (2.6.0):
-    - AppCenter/Core (= 2.5.1)
+  - AppCenterReactNativeShared (3.0.0):
+    - AppCenter/Core (= 3.0.0)
   - boost-for-react-native (1.63.0)
   - BoringSSL-GRPC (0.0.3):
     - BoringSSL-GRPC/Implementation (= 0.0.3)
@@ -492,7 +492,7 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
   - React-jsinspector (0.61.5)
-  - react-native-netinfo (5.5.0):
+  - react-native-netinfo (5.5.1):
     - React
   - react-native-slider (2.0.8):
     - React
@@ -568,8 +568,8 @@ PODS:
   - Yoga (1.14.0)
 
 DEPENDENCIES:
-  - appcenter (from `../node_modules/appcenter/ios`)
   - appcenter-analytics (from `../node_modules/appcenter-analytics/ios`)
+  - appcenter-core (from `../node_modules/appcenter/ios`)
   - appcenter-crashes (from `../node_modules/appcenter-crashes/ios`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
@@ -644,10 +644,10 @@ SPEC REPOS:
     - Protobuf
 
 EXTERNAL SOURCES:
-  appcenter:
-    :path: "../node_modules/appcenter/ios"
   appcenter-analytics:
     :path: "../node_modules/appcenter-analytics/ios"
+  appcenter-core:
+    :path: "../node_modules/appcenter/ios"
   appcenter-crashes:
     :path: "../node_modules/appcenter-crashes/ios"
   DoubleConversion:
@@ -725,11 +725,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
-  AppCenter: fddcbac6e4baae3d93a196ceb0bfe0e4ce407dec
-  appcenter: f2e241f931e0865a74b3af3928066a1190814be0
-  appcenter-analytics: 42e368870a904af67fd93f043f3efa75ffa772a2
-  appcenter-crashes: bfc5c03a6ddcfa158fcf4217d1724fd52f45d12c
-  AppCenterReactNativeShared: d5e360f8a4cb5126d29e31ab98051d2f070ba631
+  AppCenter: 7a0bbe928d07467ac8b2d7f6f2a675872a6471d8
+  appcenter-analytics: 2eba9da53aa3efbfa625fc1ab9dd9ccebba18b24
+  appcenter-core: 98c617ae028c90020e404f020c37d7cb189adf4c
+  appcenter-crashes: add23a3c3cf0403e1f54c39d85e9b3c5db7279e7
+  AppCenterReactNativeShared: 48a905fe90071696748e3def60199546167cdb86
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
@@ -770,7 +770,7 @@ SPEC CHECKSUMS:
   React-jsi: cb2cd74d7ccf4cffb071a46833613edc79cdf8f7
   React-jsiexecutor: d5525f9ed5f782fdbacb64b9b01a43a9323d2386
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
-  react-native-netinfo: b84ff0cae1147315b5dc1daf0f65c0cc6ee71fb3
+  react-native-netinfo: 3bf235d94cc291cf0673ad9fd9eaae82f84ed8a9
   react-native-slider: 3a1cfd00c9c31068251b536822f7192e8d1d6b6f
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
@@ -795,4 +795,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: ce53452024427d4682516e2c7ad259a48102a42f
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.0
