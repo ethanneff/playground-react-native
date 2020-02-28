@@ -134,6 +134,7 @@ exports[`renders correctly 1`] = `
           "debugColors",
           "debugSwipeFeed",
           "debugGameOfLife",
+          "debugReminder",
         ]
       }
       disableVirtualization={false}
