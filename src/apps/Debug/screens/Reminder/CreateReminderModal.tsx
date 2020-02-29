@@ -10,7 +10,7 @@ const reminderTypes: ReminderType[] = ["one time", "repeat", "location"];
 
 interface Props {
   onBackgroundPress: () => void;
-  onOneTimePress: (date: Dayjs) => () => void;
+  onOneTimePress: (date: Dayjs) => () => void; // TODO: handle models better so don't have to pass up to parent
 }
 
 export default memo(function CreateReminderModal(props: Props) {
