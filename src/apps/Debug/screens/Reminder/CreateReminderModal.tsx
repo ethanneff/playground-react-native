@@ -1,9 +1,10 @@
 import React, { memo, useState, useCallback } from "react";
-import { View } from "react-native";
-import { Text, Button, Modal } from "../../../../components";
+import { Text, Modal } from "../../../../components";
 import OneTime from "./OneTime";
 import Radio from "./Radio";
 import { Dayjs } from "dayjs";
+import Location from "./Location";
+import Repeat from "./Repeat";
 
 type ReminderType = "one time" | "repeat" | "location";
 const reminderTypes: ReminderType[] = ["one time", "repeat", "location"];
@@ -27,22 +28,15 @@ export default memo(function CreateReminderModal(props: Props) {
         value={state}
         onChange={handleReminderTypePress}
       />
-      {state === "one time" ? 
+      {state === "one time" ? (
         <OneTime onPress={props.onOneTimePress} />
-       : state === "repeat" ? 
-        <View>
-          <View>
-            <Button title="daily" />
-            <Button title="weekly" />
-            <Button title="monthly" />
-            <Button title="yearly" />
-          </View>
-        </View>
-       : state === "location" ? 
-        <View></View>
-       : 
+      ) : state === "repeat" ? (
+        <Repeat />
+      ) : state === "location" ? (
+        <Location />
+      ) : (
         <Text title="invalid form type" />
-      }
+      )}
     </Modal>
   );
 });
