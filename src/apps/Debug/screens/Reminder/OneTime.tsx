@@ -78,7 +78,7 @@ export default memo(function OneTime({ onPress }: Props) {
   const buttons = generateButtons();
   return (
     <View>
-      {buttons.map(button => (
+      {buttons.map(button => 
         <TouchableOpacity
           key={button.title}
           style={{
@@ -95,7 +95,7 @@ export default memo(function OneTime({ onPress }: Props) {
           />
           <Text title={button.description} />
         </TouchableOpacity>
-      ))}
+      )}
     </View>
   );
 });

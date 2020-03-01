@@ -34,7 +34,7 @@ export default memo(function Location({ onLocationPress }: Props) {
 
   return (
     <ScrollView>
-      {locations.map((location, index) => (
+      {locations.map((location, index) => 
         <TouchableOpacity
           key={location.title}
           style={{
@@ -47,7 +47,7 @@ export default memo(function Location({ onLocationPress }: Props) {
           }}
           onPress={handlePress}
         >
-          {!location.subtitle ? (
+          {!location.subtitle ? 
             <View
               style={{
                 flex: 1,
@@ -57,7 +57,7 @@ export default memo(function Location({ onLocationPress }: Props) {
             >
               <Text h4 title={location.title} />
             </View>
-          ) : (
+           : 
             <View
               style={{
                 flex: 1,
@@ -68,9 +68,9 @@ export default memo(function Location({ onLocationPress }: Props) {
               <Text h4 title={location.title} />
               <Text title={location.subtitle} />
             </View>
-          )}
+          }
         </TouchableOpacity>
-      ))}
+      )}
     </ScrollView>
   );
 });

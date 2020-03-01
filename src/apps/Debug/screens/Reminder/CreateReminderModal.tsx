@@ -28,15 +28,15 @@ export default memo(function CreateReminderModal(props: Props) {
         value={state}
         onChange={handleReminderTypePress}
       />
-      {state === "one time" ? (
+      {state === "one time" ? 
         <OneTime onPress={props.onOneTimePress} />
-      ) : state === "repeat" ? (
+       : state === "repeat" ? 
         <Repeat />
-      ) : state === "location" ? (
+       : state === "location" ? 
         <Location />
-      ) : (
+       : 
         <Text title="invalid form type" />
-      )}
+      }
     </Modal>
   );
 });
