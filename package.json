@@ -37,7 +37,7 @@
     "appcenter-crashes": "3.0.0",
     "axios": "0.19.2",
     "dayjs": "1.8.21",
-    "npm-check-updates": "4.0.2",
+    "npm-check-updates": "4.0.3",
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-native": "0.61.5",
