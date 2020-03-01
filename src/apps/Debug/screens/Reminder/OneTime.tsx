@@ -5,76 +5,80 @@ import { Icon, Text } from "../../../../components";
 import { Theme } from "../../../../utils";
 
 const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const generateButtons = () => {
+  const laterToday = dayjs()
+    .add(3, "hour")
+    .add(30, "minute")
+    .set("minute", 0);
 
-const laterToday = dayjs()
-  .add(3, "hour")
-  .add(30, "minute")
-  .set("minute", 0);
+  const evening = dayjs()
+    .set("hour", 18)
+    .set("minute", 0);
 
-const evening = dayjs()
-  .set("hour", 18)
-  .set("minute", 0);
+  const tomorrow = dayjs()
+    .add(1, "day")
+    .set("hour", 6)
+    .set("minute", 0);
 
-const tomorrow = dayjs()
-  .add(1, "day")
-  .set("hour", 6)
-  .set("minute", 0);
+  const nextWeek = dayjs()
+    .add(1, "week")
+    .set("hour", 6)
+    .set("minute", 0)
+    .set("day", 0);
 
-const nextWeek = dayjs()
-  .add(1, "week")
-  .set("hour", 6)
-  .set("minute", 0)
-  .set("day", 0);
+  const nextMonth = dayjs()
+    .startOf("month")
+    .add(2, "month")
+    .set("hour", 6)
+    .set("minute", 0);
 
-const nextMonth = dayjs()
-  .startOf("month")
-  .add(2, "month")
-  .set("hour", 6)
-  .set("minute", 0);
+  const yesterday = dayjs().subtract(1, "day");
 
-const yesterday = dayjs().subtract(1, "day");
-
-const buttons = [
-  {
-    title: "Later today",
-    description: laterToday.format("hh:mm A"),
-    value: laterToday
-  },
-  {
-    title: "This Evening",
-    description: evening.format("hh:mm A"),
-    value: evening
-  },
-  {
-    title: "Tomorrow",
-    description: `${daysOfWeek[tomorrow.day()]} ${tomorrow.format("hh:mm A")}`,
-    value: tomorrow
-  },
-  {
-    title: "Next Week",
-    description: `${nextWeek.format("MMM DD, hh:mm A")}`,
-    value: nextWeek
-  },
-  {
-    title: "Someday",
-    description: ``,
-    value: nextMonth
-  },
-  {
-    title: "Custom",
-    description: ``,
-    value: yesterday
-  }
-];
+  return [
+    {
+      title: "Later today",
+      description: laterToday.format("hh:mm A"),
+      value: laterToday
+    },
+    {
+      title: "This Evening",
+      description: evening.format("hh:mm A"),
+      value: evening
+    },
+    {
+      title: "Tomorrow",
+      description: `${daysOfWeek[tomorrow.day()]} ${tomorrow.format(
+        "hh:mm A"
+      )}`,
+      value: tomorrow
+    },
+    {
+      title: "Next Week",
+      description: `${nextWeek.format("MMM DD, hh:mm A")}`,
+      value: nextWeek
+    },
+    {
+      title: "Someday",
+      description: ``,
+      value: nextMonth
+    },
+    {
+      title: "Custom",
+      description: ``,
+      value: yesterday
+    }
+  ];
+};
 
 interface Props {
   onPress: (value: Dayjs) => () => void;
 }
 
 export default memo(function OneTime({ onPress }: Props) {
+  const buttons = generateButtons();
   return (
     <View>
-      {buttons.map(button => 
+      {buttons.map(button => (
         <TouchableOpacity
           key={button.title}
           style={{
@@ -91,7 +95,7 @@ export default memo(function OneTime({ onPress }: Props) {
           />
           <Text title={button.description} />
         </TouchableOpacity>
-      )}
+      ))}
     </View>
   );
 });
