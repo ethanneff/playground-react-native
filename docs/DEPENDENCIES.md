@@ -28,6 +28,7 @@
 | reselect                                  | prod |                | memo selectors              |
 | typesafe-actions                          | prod |                | type redux actions          |
 | utility-types                             | prod |                | deep readonly types         |
+| react-native-get-random-values            | prod |                | unique ids                  |
 | uuid                                      | prod |                | unique ids                  |
 | @babel/core                               | dev  |                | react-native-dep            |
 | @babel/runtime                            | dev  |                | react-native dep            |

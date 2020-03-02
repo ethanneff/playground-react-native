@@ -4,6 +4,8 @@ import { useNav } from "../../../../hooks";
 import dayjs, { Dayjs } from "dayjs";
 import Reminders from "./Reminders";
 import CreateReminderModal from "./CreateReminderModal";
+import "react-native-get-random-values";
+import { v4 } from "uuid";
 
 type ReminderType = "one time" | "repeat" | "location";
 export type Reminder = {
@@ -49,7 +51,7 @@ export default memo(function DebugReminder() {
         reminders: [
           ...prev.reminders,
           {
-            id: String(Date.now()),
+            id: v4(),
             date: date.valueOf(),
             format: date.format("MMM DD, YYYY hh:mm A")
           }

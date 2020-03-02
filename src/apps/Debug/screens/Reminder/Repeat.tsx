@@ -1,8 +1,6 @@
-import dayjs, { Dayjs } from "dayjs";
 import React, { memo } from "react";
-import { View, TouchableOpacity } from "react-native";
-import { Icon, Text, Button } from "../../../../components";
-import { Theme } from "../../../../utils";
+import { View } from "react-native";
+import { Button } from "../../../../components";
 
 interface Props {
   onPress: () => void;

@@ -1,7 +1,6 @@
-import { Dayjs } from "dayjs";
 import React, { memo, useState } from "react";
 import { View, TouchableOpacity, ScrollView } from "react-native";
-import { Icon, Text } from "../../../../components";
+import { Text } from "../../../../components";
 import { Theme } from "../../../../utils";
 import { useColor } from "../../../../hooks";
 

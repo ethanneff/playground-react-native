@@ -4,6 +4,7 @@ import { navigate } from "../../../../models";
 import { createChecklistItem } from "../../models";
 import { useRootDispatch, useRootSelector, Errors } from "../../../../utils";
 import { useNav } from "../../../../hooks";
+import "react-native-get-random-values";
 import { v4 } from "uuid";
 
 const initialState = { name: "", description: "" };

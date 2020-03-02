@@ -2,6 +2,7 @@ import React, { memo, useCallback } from "react";
 import { View, Keyboard } from "react-native";
 import { Button, TextInput } from "../../../../components";
 import { useRootDispatch, useRootSelector } from "../../../../utils";
+import "react-native-get-random-values";
 import { v4 } from "uuid";
 import { Message, typeChatMessage, createChatMessage } from "./Messages";
 

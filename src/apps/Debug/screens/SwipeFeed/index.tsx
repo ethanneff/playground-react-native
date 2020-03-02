@@ -17,6 +17,7 @@ import {
 import { useColor, useNav, useDropShadow } from "../../../../hooks";
 import { Theme, useRootSelector } from "../../../../utils";
 import dayjs, { Dayjs } from "dayjs";
+import "react-native-get-random-values";
 import { v4 } from "uuid";
 import { getWidth } from "../../../../models";
 
