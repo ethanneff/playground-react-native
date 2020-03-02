@@ -19,6 +19,10 @@ type State = {
   modals: {
     customDate: boolean;
     createReminder: boolean;
+    location: boolean;
+  };
+  selected: {
+    location: string | undefined;
   };
 };
 
@@ -29,7 +33,11 @@ export default memo(function DebugReminder() {
     reminders: [],
     modals: {
       customDate: false,
-      createReminder: false
+      createReminder: false,
+      location: false
+    },
+    selected: {
+      location: undefined
     }
   });
 
@@ -38,7 +46,7 @@ export default memo(function DebugReminder() {
       if (date.isBefore(dayjs())) {
         setForm(prev => ({
           ...prev,
-          modals: { ...prev.modals, createReminder: false, customDate: true }
+          modals: { ...prev.modals, customDate: true }
         }));
         return;
       }
@@ -82,6 +90,24 @@ export default memo(function DebugReminder() {
     }));
   }, []);
 
+  const handleLocation = useCallback(
+    (id: string) => () => {
+      setForm(prev => ({
+        ...prev,
+        modals: { ...prev.modals, location: true },
+        selected: { location: id }
+      }));
+    },
+    []
+  );
+
+  const handleLocationClose = useCallback(() => {
+    setForm(prev => ({
+      ...prev,
+      modals: { ...prev.modals, location: false }
+    }));
+  }, []);
+
   return (
     <>
       <Screen onLeftPress={nav.to("debug")} title="Reminder">
@@ -89,16 +115,22 @@ export default memo(function DebugReminder() {
         <Text h2 title="Reminders" center />
         <Reminders reminders={form.reminders} />
       </Screen>
+      {form.modals.createReminder && 
+        <CreateReminderModal
+          onBackgroundPress={handleCreateReminderClose}
+          onOneTimePress={handleOneTimeReminder}
+          onLocationPress={handleLocation}
+        />
+      }
       {form.modals.customDate && 
         <Modal onBackgroundPress={handleCustomDateClose}>
           <Text title="hello" />
         </Modal>
       }
-      {form.modals.createReminder && 
-        <CreateReminderModal
-          onBackgroundPress={handleCreateReminderClose}
-          onOneTimePress={handleOneTimeReminder}
-        />
+      {form.modals.location && 
+        <Modal onBackgroundPress={handleLocationClose}>
+          <Text title="location" />
+        </Modal>
       }
     </>
   );

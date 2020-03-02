@@ -5,6 +5,7 @@ import Radio from "./Radio";
 import { Dayjs } from "dayjs";
 import Location from "./Location";
 import Repeat from "./Repeat";
+import { View } from "react-native";
 
 type ReminderType = "one time" | "repeat" | "location";
 const reminderTypes: ReminderType[] = ["one time", "repeat", "location"];
@@ -12,6 +13,7 @@ const reminderTypes: ReminderType[] = ["one time", "repeat", "location"];
 interface Props {
   onBackgroundPress: () => void;
   onOneTimePress: (date: Dayjs) => () => void; // TODO: handle models better so don't have to pass up to parent
+  onLocationPress: (id: string) => () => void;
 }
 
 export default memo(function CreateReminderModal(props: Props) {
@@ -20,23 +22,25 @@ export default memo(function CreateReminderModal(props: Props) {
   const handleReminderTypePress = useCallback(type => () => setState(type), []);
 
   return (
-    <Modal onBackgroundPress={props.onBackgroundPress}>
-      <Text h2 title="Create Reminder" center />
-      <Radio
-        buttons={reminderTypes}
-        horizontal
-        value={state}
-        onChange={handleReminderTypePress}
-      />
-      {state === "one time" ? 
-        <OneTime onPress={props.onOneTimePress} />
-       : state === "repeat" ? 
-        <Repeat />
-       : state === "location" ? 
-        <Location />
-       : 
-        <Text title="invalid form type" />
-      }
+    <Modal onBackgroundPress={props.onBackgroundPress} noScroll>
+      <View style={{ height: 250 }}>
+        <Text h2 title="Create Reminder" center />
+        <Radio
+          buttons={reminderTypes}
+          horizontal
+          value={state}
+          onChange={handleReminderTypePress}
+        />
+        {state === "one time" ? 
+          <OneTime onPress={props.onOneTimePress} />
+         : state === "repeat" ? 
+          <Repeat />
+         : state === "location" ? 
+          <Location onLocationPress={props.onLocationPress} />
+         : 
+          <Text title="invalid form type" />
+        }
+      </View>
     </Modal>
   );
 });

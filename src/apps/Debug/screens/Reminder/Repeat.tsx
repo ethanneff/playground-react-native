@@ -2,17 +2,14 @@ import React, { memo } from "react";
 import { View } from "react-native";
 import { Button } from "../../../../components";
 
-interface Props {
-  onPress: () => void;
-}
-
-export default memo(function OneTime(props: Props) {
+export default memo(function Repeat() {
+  const onPress = () => undefined;
   return (
     <View>
-      <Button title="daily" onPress={props.onPress} />
-      <Button title="weekly" onPress={props.onPress} />
-      <Button title="monthly" onPress={props.onPress} />
-      <Button title="yearly" onPress={props.onPress} />
+      <Button title="daily" onPress={onPress} />
+      <Button title="weekly" onPress={onPress} />
+      <Button title="monthly" onPress={onPress} />
+      <Button title="yearly" onPress={onPress} />
     </View>
   );
 });

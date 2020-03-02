@@ -1,41 +1,53 @@
-import React, { memo, useState } from "react";
-import { View, TouchableOpacity, ScrollView } from "react-native";
+import React, { memo, useCallback } from "react";
+import { View, TouchableOpacity, FlatList } from "react-native";
 import { Text } from "../../../../components";
 import { Theme } from "../../../../utils";
 import { useColor } from "../../../../hooks";
+import "react-native-get-random-values";
+import { v4 } from "uuid";
 
-const initialState = [
-  {
-    title: "Home",
-    subtitle: "Tap to add"
-  },
-  {
-    title: "Work",
-    subtitle: "Tap to add"
-  },
-  {
-    title: "Add a new location",
-    subtitle: null
-  }
-];
+interface Location {
+  id: string;
+  title: string;
+  subtitle?: string;
+}
 
 interface Props {
-  onLocationPress: () => void;
+  onLocationPress: (id: string) => () => void;
 }
 
 export default memo(function Location({ onLocationPress }: Props) {
-  const [locations, setLocations] = useState(initialState);
+  const locations: Location[] = [
+    {
+      id: v4(),
+      title: "Home",
+      subtitle: "Tap to add"
+    },
+    {
+      id: v4(),
+      title: "Work",
+      subtitle: "Tap to add"
+    },
+    {
+      id: v4(),
+      title: "Gym",
+      subtitle: "Tap to add"
+    },
+    {
+      id: v4(),
+      title: "Add a new location"
+    }
+  ];
+
   const color = useColor();
 
-  const handlePress = () => {
-    console.log("here");
-  };
+  const keyExtractor = (item: Location) => item.id;
 
-  return (
-    <ScrollView>
-      {locations.map((location, index) => 
+  const renderItem = useCallback(
+    ({ item, index }) => {
+      return (
         <TouchableOpacity
-          key={location.title}
+          key={item.title}
           style={{
             flexDirection: "row",
             height: Theme.padding.p15,
@@ -44,9 +56,9 @@ export default memo(function Location({ onLocationPress }: Props) {
             borderWidth: 1,
             marginBottom: index !== locations.length - 1 ? Theme.padding.p02 : 0
           }}
-          onPress={handlePress}
+          onPress={onLocationPress(item.id)}
         >
-          {!location.subtitle ? 
+          {!item.subtitle ? 
             <View
               style={{
                 flex: 1,
@@ -54,7 +66,7 @@ export default memo(function Location({ onLocationPress }: Props) {
                 paddingHorizontal: Theme.padding.p02
               }}
             >
-              <Text h4 title={location.title} />
+              <Text h4 title={item.title} />
             </View>
            : 
             <View
@@ -64,12 +76,22 @@ export default memo(function Location({ onLocationPress }: Props) {
                 paddingHorizontal: Theme.padding.p02
               }}
             >
-              <Text h4 title={location.title} />
-              <Text title={location.subtitle} />
+              <Text h4 title={item.title} />
+              <Text title={item.subtitle} />
             </View>
           }
         </TouchableOpacity>
-      )}
-    </ScrollView>
+      );
+    },
+    [color.secondary, locations.length, onLocationPress]
+  );
+
+  return (
+    <FlatList
+      bounces
+      data={locations}
+      keyExtractor={keyExtractor}
+      renderItem={renderItem}
+    />
   );
 });
