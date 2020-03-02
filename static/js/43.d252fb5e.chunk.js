@@ -1,2 +1,0 @@
-(this.webpackJsonpexample=this.webpackJsonpexample||[]).push([[43],{185:function(e,t,n){"use strict";n.r(t);var a=n(0),o=n.n(a),r=n(168),i=n(39);t.default=Object(a.memo)((function(){var e=Object(i.d)();return o.a.createElement(r.l,{title:"Main",gutter:!0},o.a.createElement(r.b,{title:"logout",onPress:e.to("portfolioLanding")}))}))}}]);
-//# sourceMappingURL=43.d252fb5e.chunk.js.map
