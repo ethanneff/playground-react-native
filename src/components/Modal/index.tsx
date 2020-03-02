@@ -7,17 +7,19 @@ interface Props {
   testID?: string;
   maxHeight?: number;
   maxWidth?: number;
+  noScroll?: boolean;
   onBackgroundPress?(): void;
 }
 export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
   testID,
   onBackgroundPress,
   children,
+  noScroll,
   maxWidth = 500,
   maxHeight
 }) {
-  const height = useRootSelector(state => state.dimension.window.height);
-  const maximumHeight = maxHeight ? maxHeight : height * 0.6;
+  const appHeight = useRootSelector(state => state.dimension.window.height);
+  const maximumHeight = maxHeight ? maxHeight : appHeight * 0.6;
   const color = useColor();
   const dropShadow = useDropShadow(10);
   const styles = StyleSheet.create({
@@ -55,7 +57,11 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
         style={styles.overlay}
       />
       <View style={styles.modal} testID="modal">
-        <ScrollView>{children}</ScrollView>
+        {noScroll ? (
+          <View>{children}</View>
+        ) : (
+          <ScrollView>{children}</ScrollView>
+        )}
       </View>
     </View>
   );
