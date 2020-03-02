@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.18.14](https://github.com/ethanneff/example/compare/v2.18.13...v2.18.14) (2020-03-02)
+
+
+### Bug Fixes
+
+* add location ([91c7f2e](https://github.com/ethanneff/example/commit/91c7f2e6d1a2b75a6e08a25a5b97daf1eae9c169))
+* add no scroll to modal ([a78d932](https://github.com/ethanneff/example/commit/a78d93242d959b062bd02ec25825cca19068562d))
+* add reminder ([ae14ec9](https://github.com/ethanneff/example/commit/ae14ec99d1428e3e62460096e50439c6da6f6479))
+* add sub children ([1a09952](https://github.com/ethanneff/example/commit/1a0995231230f4d1717da90de55e13180f64cb91))
+* correct linting ([743af03](https://github.com/ethanneff/example/commit/743af03fc27d672097b61843a996cb17d1149894))
+* correct linting on reminders ([cdb6ab0](https://github.com/ethanneff/example/commit/cdb6ab0f5693d4318296c65692367d95ef2ce1fc))
+* make uuid work again ([2e850f8](https://github.com/ethanneff/example/commit/2e850f830a9471cdd0baefcaa8b6d77d5a293bca))
+* remove carrot from dependencies ([e16d395](https://github.com/ethanneff/example/commit/e16d3956a6077934759880d9bcd5986d4716be1f))
+* update dates on container load ([5816c01](https://github.com/ethanneff/example/commit/5816c017d0fb0206ff8aac20874c08fd0842751f))
+* update deps ([3dc6356](https://github.com/ethanneff/example/commit/3dc6356fe97da15bfb8bd04e60c173dd751671d5))
+* update deps ([62def5d](https://github.com/ethanneff/example/commit/62def5d96d02ad7b6986c503866681b471c52ba2))
+* update ios ([8c89f17](https://github.com/ethanneff/example/commit/8c89f17a76f8e32fcb21260cccb387e91a33707b))
+
 ## [2.18.13](https://github.com/ethanneff/example/compare/v2.18.12...v2.18.13) (2020-02-28)
 
 
