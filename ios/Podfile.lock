@@ -565,6 +565,8 @@ PODS:
     - Firebase/RemoteConfig (~> 6.13.0)
     - React
     - RNFBApp
+  - RNRate (1.1.10):
+    - React
   - RNVectorIcons (6.6.0):
     - React
   - Yoga (1.14.0)
@@ -611,6 +613,7 @@ DEPENDENCIES:
   - "RNFBCrashlytics (from `../node_modules/@react-native-firebase/crashlytics`)"
   - "RNFBFirestore (from `../node_modules/@react-native-firebase/firestore`)"
   - "RNFBRemoteConfig (from `../node_modules/@react-native-firebase/remote-config`)"
+  - RNRate (from `../node_modules/react-native-rate`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -723,6 +726,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/firestore"
   RNFBRemoteConfig:
     :path: "../node_modules/@react-native-firebase/remote-config"
+  RNRate:
+    :path: "../node_modules/react-native-rate"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   Yoga:
@@ -796,9 +801,10 @@ SPEC CHECKSUMS:
   RNFBCrashlytics: 93e1cc09a93aa4bb1e9b5a07af0efb2702db5a39
   RNFBFirestore: 04c1eb90463c208ee072988d463c74bec09d08c1
   RNFBRemoteConfig: acfef78587e8d544b53338c07ecbc172fae1b781
+  RNRate: 832f7e4da1b043bda1a138e20afdb75c42a530e9
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: ce53452024427d4682516e2c7ad259a48102a42f
+PODFILE CHECKSUM: 20790fae93be6f204fab52b0435da7e98fa33f0c
 
 COCOAPODS: 1.9.0

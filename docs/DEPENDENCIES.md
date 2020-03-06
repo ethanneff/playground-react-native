@@ -16,6 +16,8 @@
 | react-dom                                 | prod |                | react-native-web dependency |
 | react-native                              | prod |                | ui to native bridge         |
 | react-native-device-info                  | prod |                | native device info          |
+| react-native-rate                         | prod |                | feature                     |
+| react-native-star-rating                  | prod |                | feature                     |
 | react-native-firebase                     | prod |                | backend                     |
 | react-native-keyboard-aware-scroll-view   | prod |                | scroll aware                |
 | react-native-vector-icons                 | prod |                | native icons                |

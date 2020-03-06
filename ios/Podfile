@@ -32,6 +32,8 @@ target 'core' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  pod 'RNRate', :path => '../node_modules/react-native-rate'
+
   target 'coreTests' do
     inherit! :search_paths
     # Pods for testing
