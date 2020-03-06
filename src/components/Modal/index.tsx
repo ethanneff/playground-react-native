@@ -60,7 +60,9 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
         {noScroll ? (
           <View>{children}</View>
         ) : (
-          <ScrollView>{children}</ScrollView>
+          <ScrollView keyboardShouldPersistTaps="handled">
+            {children}
+          </ScrollView>
         )}
       </View>
     </View>
