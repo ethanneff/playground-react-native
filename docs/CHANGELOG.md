@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.19.1](https://github.com/ethanneff/example/compare/v2.19.0...v2.19.1) (2020-03-07)
+
+
+### Bug Fixes
+
+* make card noMargin prop ([b363408](https://github.com/ethanneff/example/commit/b3634080268d6f580f9d4792703febe99ea87f9a))
+* make custom star rating to make web work ([628d4af](https://github.com/ethanneff/example/commit/628d4af43a42a8ef00a0446054ef372e8afa81a2))
+* make modal use card for elevation in dark mode ([5fba0b7](https://github.com/ethanneff/example/commit/5fba0b7bb5db577076394079b7378b1aa869eff8))
+* remove padding from modal ([bc6174e](https://github.com/ethanneff/example/commit/bc6174e893d55b4265e734e330e40f8a295f0653))
+
 # [2.19.0](https://github.com/ethanneff/example/compare/v2.18.14...v2.19.0) (2020-03-07)
 
 
