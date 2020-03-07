@@ -1,5 +1,19 @@
 # Changelog
 
+# [2.19.0](https://github.com/ethanneff/example/compare/v2.18.14...v2.19.0) (2020-03-07)
+
+
+### Bug Fixes
+
+* allow taps when keyboard is up in scrollview ([20e7495](https://github.com/ethanneff/example/commit/20e7495f5e97b0400f2afb40337e71a7256d67b5))
+* correct linting ([9b46a4f](https://github.com/ethanneff/example/commit/9b46a4f1c03e859104c94375f88d8b6dcb4e473b))
+* update deps ([9a0133d](https://github.com/ethanneff/example/commit/9a0133dfea6a161c2987ff3b1eb00b9eb39b7e4e))
+
+
+### Features
+
+* add rate app feature ([e4c6fb1](https://github.com/ethanneff/example/commit/e4c6fb1c98037370504c62220eb13c4837466240))
+
 ## [2.18.14](https://github.com/ethanneff/example/compare/v2.18.13...v2.18.14) (2020-03-02)
 
 
