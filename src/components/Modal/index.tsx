@@ -2,9 +2,11 @@ import React, { memo } from "react";
 import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
 import { useColor, useDropShadow } from "../../hooks";
 import { Theme, useRootSelector } from "../../utils";
+import { Card } from "../Card";
 
 interface Props {
   testID?: string;
+  elevation?: number;
   maxHeight?: number;
   maxWidth?: number;
   noScroll?: boolean;
@@ -14,6 +16,7 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
   testID,
   onBackgroundPress,
   children,
+  elevation = 4,
   noScroll,
   maxWidth = 500,
   maxHeight
@@ -39,12 +42,14 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
       position: "absolute",
       backgroundColor: color.background,
       borderRadius: Theme.sizing.borderRadius,
-      padding: Theme.padding.p04,
       width: "80%",
       maxWidth,
       maxHeight: maximumHeight,
       overflow: "hidden",
       ...dropShadow
+    },
+    modalContent: {
+      padding: Theme.padding.p08
     }
   });
 
@@ -56,15 +61,24 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
         onPress={onBackgroundPress}
         style={styles.overlay}
       />
-      <View style={styles.modal} testID="modal">
+      <Card
+        style={styles.modal}
+        noMargin
+        noPadding
+        elevation={elevation}
+        testID="modal"
+      >
         {noScroll ? 
-          <View>{children}</View>
+          <View style={styles.modalContent}>{children}</View>
          : 
-          <ScrollView keyboardShouldPersistTaps="handled">
+          <ScrollView
+            style={styles.modalContent}
+            keyboardShouldPersistTaps="handled"
+          >
             {children}
           </ScrollView>
         }
-      </View>
+      </Card>
     </View>
   );
 });
