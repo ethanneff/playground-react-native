@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.19.2](https://github.com/ethanneff/example/compare/v2.19.1...v2.19.2) (2020-03-07)
+
+
+### Bug Fixes
+
+* update deps ([d39da2c](https://github.com/ethanneff/example/commit/d39da2c417827c8a0e677755ad44cc76007538d1))
+
 ## [2.19.1](https://github.com/ethanneff/example/compare/v2.19.0...v2.19.1) (2020-03-07)
 
 
