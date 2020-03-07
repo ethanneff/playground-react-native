@@ -1,10 +1,9 @@
 import React, { memo, useCallback, useRef, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 import Rate, { AndroidMarket } from "react-native-rate";
-import StarRating from "react-native-star-rating";
 import { Modal, Text, Button, TextInput } from "../../components";
 import { Theme } from "../../utils";
-import { useColor } from "../../hooks";
+import { Rating } from "./Rating";
 
 type ModalState = "default" | "thank you" | "review" | "feedback";
 type State = {
@@ -40,7 +39,6 @@ interface Props {
 }
 
 export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
-  const color = useColor();
   const ratingRef = useRef(0);
   const navigatedToAppStore = useRef(false);
   const [form, setForm] = useState<State>(initialState);
@@ -88,70 +86,63 @@ export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
 
   return (
     <Modal onBackgroundPress={handleComplete}>
-      <View style={styles.modal}>
-        {form.modal === "review" ? 
-          <>
-            <Text
-              h4
-              title="Thank you for your feedback!"
-              center
-              style={styles.title}
-            />
-            <Text
-              title="Do you mind reviewing us on the app store?"
-              center
-              style={styles.title}
-            />
-            <Button title="Okay" onPress={handleReviewApp} contained />
-          </>
-         : form.modal === "feedback" ? 
-          <>
-            <Text h4 title="Thank you" center style={styles.title} />
-            <Text
-              title="Can you provide us with some feedback to help us improve?"
-              center
-              style={styles.title}
-            />
-            <TextInput
-              onSubmitEditing={handleFeedbackSubmit}
-              value={form.feedback}
-              onChangeText={handleTextChange}
-              placeholder="How can we improve?"
-            />
-            <Button title="Submit" onPress={handleFeedbackSubmit} contained />
-          </>
-         : form.modal === "thank you" ? 
-          <>
-            <Text h4 title="Thank you" center style={styles.title} />
-            <Text
-              title="We have sent your feedback to our team"
-              style={styles.title}
-              center
-            />
-            <Button title="Close" onPress={handleComplete} contained />
-          </>
-         : 
-          <>
-            <Text
-              h4
-              title="How are you enjoying the app so far?"
-              center
-              style={styles.title}
-            />
-            <StarRating
-              disabled={false}
-              maxStars={5}
-              starSize={Theme.padding.p10}
-              rating={form.rating}
-              fullStarColor={color.primary}
-              selectedStar={handleRating}
-              fullStar={"star"}
-              emptyStar={"star-outline"}
-              iconSet={"MaterialCommunityIcons"}
-            />
-          </>
-        }
-      </View>
+      {form.modal === "review" ? 
+        <>
+          <Text
+            h4
+            title="Thank you for your feedback!"
+            center
+            style={styles.title}
+          />
+          <Text
+            title="Do you mind reviewing us on the app store?"
+            center
+            style={styles.title}
+          />
+          <Button title="Okay" onPress={handleReviewApp} contained />
+        </>
+       : form.modal === "feedback" ? 
+        <>
+          <Text h4 title="Thank you" center style={styles.title} />
+          <Text
+            title="Can you provide us with some feedback to help us improve?"
+            center
+            style={styles.title}
+          />
+          <TextInput
+            onSubmitEditing={handleFeedbackSubmit}
+            value={form.feedback}
+            onChangeText={handleTextChange}
+            placeholder="How can we improve?"
+          />
+          <Button title="Submit" onPress={handleFeedbackSubmit} contained />
+        </>
+       : form.modal === "thank you" ? 
+        <>
+          <Text h4 title="Thank you" center style={styles.title} />
+          <Text
+            title="We have sent your feedback to our team"
+            style={styles.title}
+            center
+          />
+          <Button title="Close" onPress={handleComplete} contained />
+        </>
+       : 
+        <>
+          <Text
+            h4
+            title="How are you enjoying the app so far?"
+            center
+            style={styles.title}
+          />
+          <Rating
+            count={5}
+            size={Theme.padding.p08}
+            rating={form.rating}
+            onPress={handleRating}
+          />
+        </>
+      }
     </Modal>
   );
 });
