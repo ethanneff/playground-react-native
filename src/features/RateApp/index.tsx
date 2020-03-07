@@ -39,7 +39,7 @@ interface Props {
   onComplete: (completeState: CompleteState) => void;
 }
 
-export const RateApp = memo(function RateAppMemo(props: Props) {
+export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
   const color = useColor();
   const ratingRef = useRef(0);
   const navigatedToAppStore = useRef(false);
@@ -54,28 +54,25 @@ export const RateApp = memo(function RateAppMemo(props: Props) {
     navigatedToAppStore: navigatedToAppStore.current
   };
 
-  const handleReviewApp = useCallback(() => {
-    handleReset();
-    props.onComplete({ ...completeState, navigatedToAppStore: true });
-    Rate.rate(ratingOptions, () => undefined);
-  }, [props.onComplete]);
-
-  const handleRating = useCallback(
-    (rating: number) => {
-      ratingRef.current = rating;
-      setForm(prev => ({ ...prev, rating }));
-      setTimeout(() => {
-        const success = ratingRef.current >= ratingMin;
-        setForm(prev => ({ ...prev, modal: success ? "review" : "feedback" }));
-      }, 300);
-    },
-    [ratingRef.current]
-  );
-
   const handleReset = useCallback(() => {
     ratingRef.current = 0;
     setForm(initialState);
-  }, [ratingRef.current]);
+  }, []);
+
+  const handleReviewApp = useCallback(() => {
+    handleReset();
+    onComplete({ ...completeState, navigatedToAppStore: true });
+    Rate.rate(ratingOptions, () => undefined);
+  }, [completeState, onComplete, handleReset]);
+
+  const handleRating = useCallback((rating: number) => {
+    ratingRef.current = rating;
+    setForm(prev => ({ ...prev, rating }));
+    setTimeout(() => {
+      const success = ratingRef.current >= ratingMin;
+      setForm(prev => ({ ...prev, modal: success ? "review" : "feedback" }));
+    }, 300);
+  }, []);
 
   const handleTextChange = useCallback((feedback: string) => {
     setForm(prev => ({ ...prev, feedback }));
@@ -86,13 +83,13 @@ export const RateApp = memo(function RateAppMemo(props: Props) {
   }, []);
 
   const handleComplete = useCallback(() => {
-    props.onComplete(completeState);
-  }, [completeState, props.onComplete]);
+    onComplete(completeState);
+  }, [completeState, onComplete]);
 
   return (
     <Modal onBackgroundPress={handleComplete}>
       <View style={styles.modal}>
-        {form.modal === "review" ? (
+        {form.modal === "review" ? 
           <>
             <Text
               h4
@@ -107,7 +104,7 @@ export const RateApp = memo(function RateAppMemo(props: Props) {
             />
             <Button title="Okay" onPress={handleReviewApp} contained />
           </>
-        ) : form.modal === "feedback" ? (
+         : form.modal === "feedback" ? 
           <>
             <Text h4 title="Thank you" center style={styles.title} />
             <Text
@@ -123,7 +120,7 @@ export const RateApp = memo(function RateAppMemo(props: Props) {
             />
             <Button title="Submit" onPress={handleFeedbackSubmit} contained />
           </>
-        ) : form.modal === "thank you" ? (
+         : form.modal === "thank you" ? 
           <>
             <Text h4 title="Thank you" center style={styles.title} />
             <Text
@@ -133,7 +130,7 @@ export const RateApp = memo(function RateAppMemo(props: Props) {
             />
             <Button title="Close" onPress={handleComplete} contained />
           </>
-        ) : (
+         : 
           <>
             <Text
               h4
@@ -153,7 +150,7 @@ export const RateApp = memo(function RateAppMemo(props: Props) {
               iconSet={"MaterialCommunityIcons"}
             />
           </>
-        )}
+        }
       </View>
     </Modal>
   );

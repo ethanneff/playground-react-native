@@ -57,13 +57,13 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
         style={styles.overlay}
       />
       <View style={styles.modal} testID="modal">
-        {noScroll ? (
+        {noScroll ? 
           <View>{children}</View>
-        ) : (
+         : 
           <ScrollView keyboardShouldPersistTaps="handled">
             {children}
           </ScrollView>
-        )}
+        }
       </View>
     </View>
   );
