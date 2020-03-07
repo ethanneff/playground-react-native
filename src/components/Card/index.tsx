@@ -4,11 +4,13 @@ import { Theme } from "../../utils";
 import { useColor, useDropShadow } from "../../hooks";
 
 interface Props {
+  testID?: string;
   flex?: boolean;
   style?: ViewStyle;
   selected?: boolean;
   touchable?: boolean;
   noPadding?: boolean;
+  noMargin?: boolean;
   elevation?: number;
   borderWidth?: number;
   borderRadius?: number;
@@ -26,9 +28,11 @@ export const Card: React.FC<Props> = memo(
     elevation = 2,
     onLongPress,
     onPress,
+    noMargin,
     noPadding,
     flex,
     selected,
+    testID,
     style
   }) => {
     const color = useColor();
@@ -45,7 +49,7 @@ export const Card: React.FC<Props> = memo(
         borderColor: color.background,
         borderRadius,
         borderWidth,
-        marginVertical: Theme.padding.p02,
+        marginVertical: noMargin ? 0 : Theme.padding.p02,
         ...dropShadow
       },
       contents: {
@@ -70,6 +74,7 @@ export const Card: React.FC<Props> = memo(
     const contentStyles = [styles.contents, flex ? styles.flex : undefined];
     return (
       <TouchableOpacity
+        testID={testID}
         style={containerStyles}
         onPress={onPress && onPress}
         onLongPress={onLongPress && onLongPress}
