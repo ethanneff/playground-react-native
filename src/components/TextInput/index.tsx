@@ -4,7 +4,8 @@ import {
   StyleSheet,
   TextStyle,
   View,
-  ViewStyle
+  ViewStyle,
+  StyleProp
 } from "react-native";
 import { Theme } from "../../utils";
 import { Button } from "../Button";
@@ -29,8 +30,8 @@ interface Props {
   placeholder?: string;
   returnKeyType?: ReturnKeyType;
   secureTextEntry?: boolean;
-  textStyle?: TextStyle | {};
-  containerStyle?: ViewStyle | {};
+  textStyle?: StyleProp<TextStyle>;
+  containerStyle?: StyleProp<ViewStyle>;
   title?: string;
   value: string;
   onChangeText(text: string): void;
