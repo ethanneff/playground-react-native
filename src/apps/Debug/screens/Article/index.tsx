@@ -7,12 +7,7 @@ import { useNav } from "../../../../hooks";
 
 export default memo(function DebugArticle() {
   const nav = useNav();
-  const color = useColor();
-  const styles = StyleSheet.create({
-    container: {
-      backgroundColor: color.background
-    }
-  });
+
   return (
     <Screen onLeftPress={nav.to("debug")} title="Article">
       <View>
