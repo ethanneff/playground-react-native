@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Theme } from "../../utils";
 import { Icon } from "../Icon";
 import { useColor } from "../../hooks";
@@ -26,13 +26,15 @@ export const NavButton: React.FC<Props> = memo(function NavButton({
     }
   });
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <View style={styles.button}>
       <Icon
+        size={Theme.padding.p09}
         hidden={!onPress}
         color={color.secondary}
         style={isRight && styles.buttonRight}
         name={icon}
+        onPress={onPress}
       />
-    </TouchableOpacity>
+    </View>
   );
 });
