@@ -75,7 +75,7 @@ class Container extends React.PureComponent<Props> {
     const { y } = this.state;
 
     return (
-      <Screen onLeftPress={this.nav("debug")}>
+      <Screen onLeftPress={this.nav("debug")} title="Cards">
         <View style={this.styles.container}>
           <View style={StyleSheet.absoluteFill}>
             {this.cards.map((card, i) => {
@@ -127,7 +127,4 @@ class Container extends React.PureComponent<Props> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Container);
+export default connect(null, mapDispatchToProps)(Container);
