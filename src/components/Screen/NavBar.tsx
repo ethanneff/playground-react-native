@@ -19,7 +19,7 @@ export const NavBar: React.FC<Props> = memo(function NavBar({
   onLeftPress,
   onRightPress,
   border,
-  leftIcon = "arrow-left",
+  leftIcon = "chevron-left",
   rightIcon = "close"
 }) {
   const color = useColor();
