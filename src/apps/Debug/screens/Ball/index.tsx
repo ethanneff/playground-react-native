@@ -48,7 +48,7 @@ class Container extends React.PureComponent<Props> {
   }
   public render() {
     return (
-      <Screen onLeftPress={this.nav("debug")}>
+      <Screen onLeftPress={this.nav("debug")} title="Ball">
         <Animated.View style={[this.ballPosition.getLayout(), styles.ball]} />
         <View style={styles.button}>
           <Button title="initial" onPress={() => this.animate(0.5, 0.5)} />
@@ -78,7 +78,4 @@ const mapStateToProps = (state: RootState) => ({
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Container);
+export default connect(mapStateToProps, mapDispatchToProps)(Container);
