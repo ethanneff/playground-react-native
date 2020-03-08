@@ -1,9 +1,9 @@
 import React, { memo } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { Screen } from "../../../../components";
 import { Content } from "../../../../components/Content";
 import { data } from "./data";
-import { useColor, useNav } from "../../../../hooks";
+import { useNav } from "../../../../hooks";
 
 export default memo(function DebugArticle() {
   const nav = useNav();
@@ -14,8 +14,8 @@ export default memo(function DebugArticle() {
     }
   });
   return (
-    <Screen onLeftPress={nav.to("debug")}>
-      <View style={styles.container}>
+    <Screen onLeftPress={nav.to("debug")} title="Article">
+      <View>
         <Content body={data} />
       </View>
     </Screen>
