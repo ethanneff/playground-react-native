@@ -33,7 +33,7 @@ export const Item = memo(function ChatMessage({ item }: Props) {
           style={{
             alignSelf: "center",
             height: 20,
-            paddingTop: 30,
+            paddingTop: Theme.padding.p04,
             resizeMode: "contain",
             width: 20
           }}
