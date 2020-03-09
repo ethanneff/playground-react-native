@@ -114,7 +114,7 @@ export default memo(function Archero() {
   };
 
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")} title="archero">
+    <Screen onLeftPress={nav.to("portfolioLanding")} title="Archero">
       <View
         onLayout={onLayout}
         style={[{ flex: 1, backgroundColor: color.success }]}

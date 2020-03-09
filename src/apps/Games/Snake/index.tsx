@@ -41,7 +41,7 @@ export default memo(function Snake() {
 
   return (
     <>
-      <Screen onLeftPress={nav.to("portfolioLanding")} title="snake">
+      <Screen onLeftPress={nav.to("portfolioLanding")} title="Snake">
         <View style={{ flexDirection: "row", justifyContent: "center" }}>
           <Button title="start" onPress={start} />
           <Button title="stop" onPress={stop} />

@@ -12,7 +12,7 @@ export default memo(function FlappyBird() {
     }
   });
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")} title="bird">
+    <Screen onLeftPress={nav.to("portfolioLanding")} title="Flappy Bird">
       <View style={styles.container}>
         <></>
       </View>

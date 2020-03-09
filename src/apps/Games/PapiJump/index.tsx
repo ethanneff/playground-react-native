@@ -12,7 +12,7 @@ export default memo(function PapiJump() {
     }
   });
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")}>
+    <Screen onLeftPress={nav.to("portfolioLanding")} title="Papi Jump">
       <View style={styles.container}>
         <></>
       </View>
