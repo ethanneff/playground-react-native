@@ -14,7 +14,12 @@ import {
   Card,
   EllipsizeMode
 } from "../../../../components";
-import { useColor, useNav, useDropShadow } from "../../../../hooks";
+import {
+  useColor,
+  useNav,
+  useDropShadow,
+  useNativeDriver
+} from "../../../../hooks";
 import { Theme, useRootSelector } from "../../../../utils";
 import dayjs, { Dayjs } from "dayjs";
 import "react-native-get-random-values";
@@ -51,6 +56,7 @@ export const formatRelativeDate = (date: Dayjs) => {
 const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
   const cardWidth = useRef(0);
   const color = useColor();
+  const useDriver = useNativeDriver();
   const width = useRootSelector(getWidth);
   const dropShadow = useDropShadow(4);
   const imageHeight = props.height / 1.5;
@@ -89,7 +95,8 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
           ? -width
           : 0;
       Animated.spring(position, {
-        toValue: { x, y: 0 }
+        toValue: { x, y: 0 },
+        useNativeDriver: useDriver
       }).start();
     }
   });
@@ -112,7 +119,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
     >
       <TouchableOpacity style={{ flex: 1 }} onPress={props.onSwipeComplete}>
         <View style={{ flex: 1, flexDirection: "row" }}>
-          {props.image && 
+          {props.image && (
             <Image
               source={props.image}
               style={{
@@ -121,7 +128,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
                 alignSelf: "center"
               }}
             />
-          }
+          )}
           <View style={{ flex: 1, padding: Theme.padding.p02 }}>
             <View
               style={{
@@ -304,9 +311,9 @@ const SwipeCards = memo(function SwipeCardList({
     }));
   }, []);
 
-  return !feed.items.length ? null : 
+  return !feed.items.length ? null : (
     <View style={{ height }}>
-      {feed.items.map((item, index) => 
+      {feed.items.map((item, index) => (
         <SwipeCard
           {...item}
           height={height}
@@ -315,10 +322,10 @@ const SwipeCards = memo(function SwipeCardList({
           onSwipeComplete={onSwipeComplete}
           onSwipePercentChange={onSwipePercentChange}
         />
-      )}
+      ))}
       <Badge count={feed.items.length} percent={feed.percent} />
     </View>
-  ;
+  );
 });
 
 const ImagePlaceholder = memo(function ImagePlaceholder() {

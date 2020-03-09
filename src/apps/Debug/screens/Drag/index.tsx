@@ -39,6 +39,7 @@ export default function DebugDrag() {
   const nav = useNav();
   const color = useColor();
   const dropShadow = useDropShadow(10);
+  const useDriver = useNativeDriver();
   const [canvas, setCanvas] = useState({ x: 0, y: 0, height: 0, width: 0 });
   const initialPosition = { x: canvas.width / 2, y: canvas.height / 2 };
   const size = 30;
@@ -63,10 +64,16 @@ export default function DebugDrag() {
     onMoveShouldSetPanResponderCapture: () => true,
     onPanResponderMove: (_, gestureState) => {
       const toValue = getPosition(gestureState, initialPosition, size);
-      Animated.spring(ballPosition, { toValue }).start();
+      Animated.spring(ballPosition, {
+        toValue,
+        useNativeDriver: useDriver
+      }).start();
     },
     onPanResponderEnd: () => {
-      Animated.spring(ballPosition, { toValue: initialPosition }).start();
+      Animated.spring(ballPosition, {
+        toValue: initialPosition,
+        useNativeDriver: useDriver
+      }).start();
     }
   });
 

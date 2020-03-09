@@ -1,14 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import { Animated, StyleSheet, View } from "react-native";
-import { connect } from "react-redux";
 import { Button, Screen } from "../../../../components";
-import { RootState } from "../../../../containers";
-import {
-  NavigationScreen,
-  getHeight,
-  getWidth,
-  navigate
-} from "../../../../models";
+import { getHeight, getWidth } from "../../../../models";
+import { useNativeDriver, useNav } from "../../../../hooks";
+import { useRootSelector } from "../../../../utils";
 
 const styles = StyleSheet.create({
   ball: {
@@ -27,55 +22,27 @@ const styles = StyleSheet.create({
   }
 });
 
-interface StateProps {
-  height: number;
-  width: number;
-}
-
-interface DispatchProps {
-  navigate: typeof navigate;
-}
-
-type Props = StateProps & DispatchProps;
-
-class Container extends React.PureComponent<Props> {
-  private ballPosition: Animated.ValueXY;
-
-  public constructor(props: Props) {
-    super(props);
-    const { width, height } = this.props;
-    this.ballPosition = new Animated.ValueXY({ x: width / 2, y: height / 2 });
-  }
-  public render() {
-    return (
-      <Screen onLeftPress={this.nav("debug")} title="Ball">
-        <Animated.View style={[this.ballPosition.getLayout(), styles.ball]} />
-        <View style={styles.button}>
-          <Button title="initial" onPress={() => this.animate(0.5, 0.5)} />
-          <Button
-            title="random"
-            onPress={() => this.animate(Math.random(), Math.random())}
-          />
-        </View>
-      </Screen>
-    );
-  }
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
-
-  private animate(dx: number, dy: number) {
-    const { width, height } = this.props;
-    Animated.spring(this.ballPosition, {
-      toValue: { x: width * dx, y: height * dy }
+export default memo(function DebugBall() {
+  const height = useRootSelector(getHeight);
+  const width = useRootSelector(getWidth);
+  const nav = useNav();
+  const ballPosition = new Animated.ValueXY({ x: width / 2, y: height / 2 });
+  const useDriver = useNativeDriver();
+  const animate = (dx: number, dy: number) => {
+    Animated.spring(ballPosition, {
+      toValue: { x: width * dx, y: height * dy },
+      useNativeDriver: useDriver
     }).start();
-  }
-}
-
-const mapStateToProps = (state: RootState) => ({
-  height: getHeight(state),
-  width: getWidth(state)
+  };
+  const onInitialPress = () => animate(0.5, 0.5);
+  const onRandomPress = () => animate(Math.random(), Math.random());
+  return (
+    <Screen onLeftPress={nav.to("debug")} title="Ball">
+      <Animated.View style={[ballPosition.getLayout(), styles.ball]} />
+      <View style={styles.button}>
+        <Button title="initial" onPress={onInitialPress} />
+        <Button title="random" onPress={onRandomPress} />
+      </View>
+    </Screen>
+  );
 });
-
-const mapDispatchToProps: DispatchProps = { navigate };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Container);
