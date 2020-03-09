@@ -12,14 +12,14 @@ export const KeyboardAware: React.FC<Props> = memo(function KeyboardAware({
   children,
   style
 }) {
-  return !scroll ? (
+  return !scroll ? 
     <View style={style}>{children}</View>
-  ) : (
+   : 
     <KeyboardAwareScrollView
       keyboardShouldPersistTaps="handled"
       contentContainerStyle={style}
     >
       {children}
     </KeyboardAwareScrollView>
-  );
+  ;
 });

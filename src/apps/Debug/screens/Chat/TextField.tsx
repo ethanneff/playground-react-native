@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from "react";
 import { View, Keyboard } from "react-native";
-import { Button, TextInput, Icon } from "../../../../components";
+import { TextInput, Icon } from "../../../../components";
 import { useRootDispatch, useRootSelector, Theme } from "../../../../utils";
 import "react-native-get-random-values";
 import { v4 } from "uuid";

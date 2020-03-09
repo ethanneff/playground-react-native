@@ -9,7 +9,12 @@ import {
   PanResponderGestureState
 } from "react-native";
 import { Screen, Text } from "../../../../components";
-import { useColor, useNav, useDropShadow } from "../../../../hooks";
+import {
+  useColor,
+  useNav,
+  useDropShadow,
+  useNativeDriver
+} from "../../../../hooks";
 
 const getPosition = (
   gestureState: PanResponderGestureState,

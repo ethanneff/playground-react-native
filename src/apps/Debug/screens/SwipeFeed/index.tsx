@@ -119,7 +119,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
     >
       <TouchableOpacity style={{ flex: 1 }} onPress={props.onSwipeComplete}>
         <View style={{ flex: 1, flexDirection: "row" }}>
-          {props.image && (
+          {props.image && 
             <Image
               source={props.image}
               style={{
@@ -128,7 +128,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
                 alignSelf: "center"
               }}
             />
-          )}
+          }
           <View style={{ flex: 1, padding: Theme.padding.p02 }}>
             <View
               style={{
@@ -311,9 +311,9 @@ const SwipeCards = memo(function SwipeCardList({
     }));
   }, []);
 
-  return !feed.items.length ? null : (
+  return !feed.items.length ? null : 
     <View style={{ height }}>
-      {feed.items.map((item, index) => (
+      {feed.items.map((item, index) => 
         <SwipeCard
           {...item}
           height={height}
@@ -322,10 +322,10 @@ const SwipeCards = memo(function SwipeCardList({
           onSwipeComplete={onSwipeComplete}
           onSwipePercentChange={onSwipePercentChange}
         />
-      ))}
+      )}
       <Badge count={feed.items.length} percent={feed.percent} />
     </View>
-  );
+  ;
 });
 
 const ImagePlaceholder = memo(function ImagePlaceholder() {

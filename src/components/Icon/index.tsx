@@ -37,7 +37,7 @@ export const Icon: React.FC<Props> = memo(function Icon({
   const colored = clear ? colors.background : color ? color : colors.dark;
   const containerStyles =
     Platform.OS === Config.os.web ? { width: 20, height: 20 } : style;
-  return name === undefined || name.length === 0 || hidden ? null : (
+  return name === undefined || name.length === 0 || hidden ? null : 
     <TouchableOpacity
       style={containerStyles}
       disabled={!onPress}
@@ -46,5 +46,5 @@ export const Icon: React.FC<Props> = memo(function Icon({
       <Source name={name} size={size} color={colored} invisible={invisible} />
       <Badge badge={badge} />
     </TouchableOpacity>
-  );
+  ;
 });
