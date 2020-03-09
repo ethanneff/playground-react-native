@@ -85,10 +85,6 @@ export default memo(function DebugStartup() {
     (value: string) => updateForm("launchWeeks", value),
     [updateForm]
   );
-  const handleTargetCustomer = useCallback(
-    (value: string) => updateForm("targetCustomer", value),
-    [updateForm]
-  );
 
   const handleSubmit = useCallback(() => undefined, []);
 
@@ -161,14 +157,7 @@ export default memo(function DebugStartup() {
             value={form.morale} // 1 (we are totally burned out) to  10 (we couldn't be more excited and optimistic!)
           />
         </Section>
-        <Section title="Experimental Question">
-          <TextInput
-            title="Which best describes your target customer?"
-            onChangeText={handleTargetCustomer}
-            value={form.morale} // governments, large businesses. startups small companies or individual professional, customers, something else  else
-          />
-        </Section>
-        <Button title="submit" onPress={handleSubmit} contained />
+        <Button title="submit" onPress={handleSubmit} color="primary" />
       </ScrollView>
     </Screen>
   );
