@@ -21,7 +21,7 @@
     "ncu": "                echo 'update deps';                   ncu -u && yarn && yarn lint"
   },
   "dependencies": {
-    "@mdi/js": "4.9.95",
+    "@mdi/js": "5.0.45",
     "@mdi/react": "1.3.0",
     "@react-native-community/async-storage": "1.8.1",
     "@react-native-community/netinfo": "5.5.1",
