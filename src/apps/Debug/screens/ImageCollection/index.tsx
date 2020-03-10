@@ -28,7 +28,7 @@ class Container extends React.PureComponent<Props> {
   private imageUrl = `http://lorempixel.com/${this.columnWidth}/${this.columnWidth}`;
   public render() {
     return (
-      <Screen onLeftPress={this.nav("debug")}>
+      <Screen onLeftPress={this.nav("debug")} title="Image Collection">
         <FlatList
           keyExtractor={data => data.toString()}
           data={this.data}

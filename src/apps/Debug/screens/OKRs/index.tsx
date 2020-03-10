@@ -7,7 +7,7 @@ import { Theme } from "../../../../utils";
 export default memo(function DebugOKRs() {
   const nav = useNav();
   return (
-    <Screen onLeftPress={nav.to("debug")}>
+    <Screen onLeftPress={nav.to("debug")} title="OKRs">
       <ScrollView
         contentContainerStyle={{ paddingHorizontal: Theme.padding.p05 }}
       >

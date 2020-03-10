@@ -30,7 +30,7 @@ export default function PinchSpread() {
   });
 
   return (
-    <Screen onLeftPress={nav.to("debug")}>
+    <Screen onLeftPress={nav.to("debug")} title="Pinch Spread">
       <Text center title={title} />
       <Text center title={`spread: ${state.spreadCount}`} />
       <Text center title={`pinch: ${state.pinchCount}`} />

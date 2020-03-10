@@ -12,7 +12,7 @@ export default memo(function DebugTemplate() {
     }
   });
   return (
-    <Screen onLeftPress={nav.to("debug")}>
+    <Screen onLeftPress={nav.to("debug")} title="Template">
       <View style={styles.container}>
         <></>
       </View>

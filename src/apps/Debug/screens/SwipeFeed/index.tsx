@@ -342,7 +342,7 @@ const ImagePlaceholder = memo(function ImagePlaceholder() {
 export default memo(function SwipeFeed() {
   const nav = useNav();
   return (
-    <Screen onLeftPress={nav.to("debug")}>
+    <Screen onLeftPress={nav.to("debug")} title="Swipe Feed">
       <View style={{ padding: Theme.padding.p04 }}>
         <ImagePlaceholder />
         <ImagePlaceholder />
