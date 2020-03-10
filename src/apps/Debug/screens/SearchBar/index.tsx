@@ -75,9 +75,6 @@ export default memo(function DebugSearchbar() {
       borderWidth: 0.2,
       padding: Theme.padding.p06
     },
-    text: {
-      fontSize: Theme.padding.p06
-    },
     textContainer: {
       alignItems: "center",
       backgroundColor: color.background,
@@ -193,7 +190,7 @@ export default memo(function DebugSearchbar() {
               transform: [{ translateX: translateIcon }]
             }}
           >
-            <Icon name={state.iconName} style={styles.text} />
+            <Icon name={state.iconName} />
           </Animated.View>
           <TextInput
             value={state.input}
@@ -201,7 +198,7 @@ export default memo(function DebugSearchbar() {
               setState({ ...state, input: value })
             }
             placeholder={textInputPlaceHolder}
-            containerStyle={[styles.textInput, styles.text]}
+            containerStyle={styles.textInput}
           />
         </View>
       </View>
