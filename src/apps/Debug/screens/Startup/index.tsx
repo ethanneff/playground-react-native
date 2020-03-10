@@ -1,12 +1,6 @@
 import React, { memo, useState, useCallback } from "react";
 import { View, Switch, ScrollView } from "react-native";
-import {
-  Screen,
-  Text,
-  TextInput,
-  KeyboardType,
-  Button
-} from "../../../../components";
+import { Screen, Text, TextInput, Button } from "../../../../components";
 import { useColor, useNav } from "../../../../hooks";
 import { Theme } from "../../../../utils";
 import dayjs from "dayjs";
@@ -113,7 +107,7 @@ export default memo(function DebugStartup() {
           <View>
             <TextInput
               title="Weeks to launch?"
-              keyboardType={KeyboardType.Number}
+              keyboardType="numeric"
               onChangeText={handleWeeksToLaunchChange}
               value={form.launchWeeks}
             />
@@ -152,7 +146,7 @@ export default memo(function DebugStartup() {
         <Section title="Morale">
           <TextInput
             title="On a scale of 1-10, what is your morale?"
-            keyboardType={KeyboardType.Number}
+            keyboardType="numeric"
             onChangeText={handleMoraleChange}
             value={form.morale} // 1 (we are totally burned out) to  10 (we couldn't be more excited and optimistic!)
           />
