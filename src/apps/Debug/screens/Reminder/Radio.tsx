@@ -5,7 +5,7 @@ import { Button } from "../../../../components";
 interface Props {
   buttons: string[];
   horizontal?: boolean;
-  value?: string;
+  value: string;
   onChange: (id: string) => () => void;
 }
 
@@ -17,14 +17,15 @@ export default memo(function Radio(props: Props) {
         flexDirection: props.horizontal ? "row" : "column"
       }}
     >
-      {props.buttons.map(button => 
+      {props.buttons.map(button => (
         <Button
-          key={button}
+          emphasis="high"
+          color={props.value === button ? "primary" : "secondary"}
           title={button}
-          primary={button === props.value}
+          key={button}
           onPress={props.onChange(button)}
         />
-      )}
+      ))}
     </View>
   );
 });
