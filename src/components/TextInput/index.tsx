@@ -5,15 +5,20 @@ import {
   TextStyle,
   View,
   ViewStyle,
-  StyleProp
+  StyleProp,
+  KeyboardTypeOptions,
+  ReturnKeyTypeOptions
 } from "react-native";
 import { Theme } from "../../utils";
 import { Button } from "../Button";
 import { useColor } from "../../hooks";
+import { Icon } from "../Icon";
 
 /* 
 styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 */
+
+type TextContentType = "username" | "password" | "none";
 
 interface Props {
   autoCorrect?: boolean;
@@ -25,10 +30,11 @@ interface Props {
   errorIcon?: string;
   flex?: boolean;
   hasError?: boolean;
-  keyboardType?: KeyboardType;
+  keyboardType?: KeyboardTypeOptions;
   optional?: boolean;
   placeholder?: string;
-  returnKeyType?: ReturnKeyType;
+  returnKeyType?: ReturnKeyTypeOptions;
+  textContentType?: TextContentType;
   secureTextEntry?: boolean;
   textStyle?: StyleProp<TextStyle>;
   containerStyle?: StyleProp<ViewStyle>;
@@ -36,23 +42,6 @@ interface Props {
   value: string;
   onChangeText(text: string): void;
   onSubmitEditing?(): void;
-}
-
-export enum KeyboardType {
-  Decimal = "decimal-pad",
-  Default = "default",
-  Email = "email-address",
-  Number = "number-pad",
-  Numeric = "numeric",
-  Phone = "phone-pad"
-}
-
-export enum ReturnKeyType {
-  Done = "done",
-  Go = "go",
-  Next = "next",
-  Search = "search",
-  Send = "send"
 }
 
 export const TextInput: React.FC<Props> = memo(
@@ -73,6 +62,7 @@ export const TextInput: React.FC<Props> = memo(
     placeholder,
     returnKeyType,
     secureTextEntry,
+    textContentType = "none",
     textStyle,
     title = "",
     value
@@ -88,9 +78,10 @@ export const TextInput: React.FC<Props> = memo(
         borderColor: focusColor
       },
       clear: {
+        width: 30,
         position: "absolute",
-        right: -2,
-        top: 2
+        right: 0,
+        top: 6
       },
       flex: {
         flex: 1
@@ -113,8 +104,8 @@ export const TextInput: React.FC<Props> = memo(
     const optionalText = " - optional";
     const textInputStyles = [
       styles.textInput,
-      error && styles.borderError,
-      focus && styles.borderFocus,
+      error ? styles.borderError : undefined,
+      focus ? styles.borderFocus : undefined,
       Theme.fontSize.body2,
       textStyle
     ];
@@ -126,8 +117,10 @@ export const TextInput: React.FC<Props> = memo(
     const onFocus = () => setFocus(true);
     const onBlur = () => setFocus(false);
     const focusOnInput = () => textInput.current && textInput.current.focus();
-    const textClear = () =>
-      textInput.current && textInput.current.clear() && onChangeText("");
+    const textClear = () => {
+      if (textInput.current) {textInput.current.clear();}
+      onChangeText("");
+    };
 
     return (
       <View style={containerStyles}>
@@ -135,25 +128,24 @@ export const TextInput: React.FC<Props> = memo(
           <Button
             activeOpacity={1}
             hidden={noTitle}
-            label
             lowercase
             onPress={focusOnInput}
             title={title}
-            wrap
+            noPadding
           />
           <Button
             activeOpacity={1}
             hidden={!optional}
-            label
             lowercase
             onPress={focusOnInput}
-            secondary
+            color="secondary"
             title={optionalText}
-            wrap
+            noPadding
           />
         </View>
         <View style={styles.row}>
           <Original
+            textContentType={textContentType}
             autoCorrect={autoCorrect}
             blurOnSubmit={blurOnSubmit}
             disableFullscreenUI={disableFullscreenUI}
@@ -173,25 +165,32 @@ export const TextInput: React.FC<Props> = memo(
             underlineColorAndroid="transparent"
             value={value}
           />
-          <Button
-            buttonStyle={styles.clear}
+          <Icon
+            style={styles.clear}
             hidden={noValue}
-            icon={clearIcon}
+            name={clearIcon}
             onPress={textClear}
-            secondary
+            color={color.secondary}
           />
         </View>
-        <Button
-          activeOpacity={1}
-          danger
-          icon={errorIcon}
-          invisible={noError}
-          label
-          lowercase
-          onPress={focusOnInput}
-          title={error}
-          wrap
-        />
+        <View style={{ flexDirection: "row" }}>
+          <Icon
+            activeOpacity={1}
+            invisible={noError}
+            name={errorIcon}
+            onPress={focusOnInput}
+            color={color.danger}
+          />
+          <Button
+            activeOpacity={1}
+            color="danger"
+            invisible={noError}
+            lowercase
+            noPadding
+            onPress={focusOnInput}
+            title={error}
+          />
+        </View>
       </View>
     );
   }
