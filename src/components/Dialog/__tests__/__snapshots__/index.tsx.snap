@@ -357,10 +357,10 @@ exports[`Dialog component renders correctly with props 1`] = `
                 "borderWidth": 1,
                 "flex": 1,
                 "flexDirection": "row",
-                "height": 36,
                 "justifyContent": "center",
                 "marginRight": 8,
                 "opacity": 1,
+                "padding": 8,
                 "paddingHorizontal": 16,
               }
             }
@@ -400,10 +400,10 @@ exports[`Dialog component renders correctly with props 1`] = `
                 "borderWidth": 1,
                 "flex": 1,
                 "flexDirection": "row",
-                "height": 36,
                 "justifyContent": "center",
                 "marginLeft": 8,
                 "opacity": 1,
+                "padding": 8,
                 "paddingHorizontal": 16,
               }
             }

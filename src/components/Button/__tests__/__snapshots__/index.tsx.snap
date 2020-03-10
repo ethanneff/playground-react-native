@@ -1,93 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders contained 1`] = `
-<View
-  accessible={true}
-  focusable={true}
-  isTVSelectable={true}
-  onClick={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "hsl(0, 0%, 0%)",
-      "borderColor": "transparent",
-      "borderRadius": 4,
-      "borderWidth": 1,
-      "flexDirection": "row",
-      "height": 36,
-      "justifyContent": "center",
-      "opacity": 1,
-      "paddingHorizontal": 16,
-    }
-  }
->
-  <Text
-    style={
-      Object {
-        "color": "hsl(0, 0%, 100%)",
-        "fontSize": 14,
-        "fontWeight": "600",
-        "letterSpacing": 0.75,
-        "opacity": 1,
-        "textAlign": "center",
-      }
-    }
-  >
-    HELLO
-  </Text>
-</View>
-`;
-
-exports[`renders contained disable 1`] = `
-<View
-  accessible={true}
-  focusable={true}
-  isTVSelectable={true}
-  onClick={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "hsla(0, 0%, 0%, 0.38)",
-      "borderColor": "transparent",
-      "borderRadius": 4,
-      "borderWidth": 1,
-      "flexDirection": "row",
-      "height": 36,
-      "justifyContent": "center",
-      "opacity": 1,
-      "paddingHorizontal": 16,
-    }
-  }
->
-  <Text
-    style={
-      Object {
-        "color": "hsla(0, 0%, 100%, 0.38)",
-        "fontSize": 14,
-        "fontWeight": "600",
-        "letterSpacing": 0.75,
-        "opacity": 1,
-        "textAlign": "center",
-      }
-    }
-  >
-    HELLO
-  </Text>
-</View>
-`;
-
 exports[`renders correctly 1`] = `
 <View
   accessible={true}
@@ -108,9 +20,9 @@ exports[`renders correctly 1`] = `
       "borderRadius": 4,
       "borderWidth": 1,
       "flexDirection": "row",
-      "height": 36,
       "justifyContent": "center",
       "opacity": 1,
+      "padding": 8,
       "paddingHorizontal": 16,
     }
   }
@@ -119,6 +31,51 @@ exports[`renders correctly 1`] = `
     style={
       Object {
         "color": "hsl(0, 0%, 0%)",
+        "fontSize": 14,
+        "fontWeight": "600",
+        "letterSpacing": 0.75,
+        "opacity": 1,
+        "textAlign": "center",
+      }
+    }
+  >
+    HELLO
+  </Text>
+</View>
+`;
+
+exports[`renders disable 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  isTVSelectable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderRadius": 4,
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "opacity": 1,
+      "padding": 8,
+      "paddingHorizontal": 16,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "hsla(0, 0%, 0%, 0.38)",
         "fontSize": 14,
         "fontWeight": "600",
         "letterSpacing": 0.75,
@@ -156,290 +113,6 @@ exports[`renders fab 1`] = `
       "justifyContent": "center",
       "opacity": 1,
       "padding": 16,
-      "paddingHorizontal": 16,
-    }
-  }
->
-  <Text
-    style={
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-        "fontSize": 14,
-        "fontWeight": "600",
-        "letterSpacing": 0.75,
-        "opacity": 1,
-        "textAlign": "center",
-      }
-    }
-  >
-    HELLO
-  </Text>
-</View>
-`;
-
-exports[`renders icon 1`] = `
-<View
-  accessible={true}
-  focusable={true}
-  isTVSelectable={true}
-  onClick={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "transparent",
-      "borderColor": "transparent",
-      "borderRadius": 4,
-      "borderWidth": 1,
-      "flexDirection": "row",
-      "height": 36,
-      "justifyContent": "center",
-      "opacity": 1,
-      "paddingHorizontal": 16,
-    }
-  }
->
-  <View
-    style={
-      Array [
-        undefined,
-        Array [
-          Object {
-            "color": "hsl(0, 0%, 0%)",
-          },
-          undefined,
-        ],
-      ]
-    }
-  >
-    <Text
-      allowFontScaling={false}
-      style={
-        Array [
-          Object {
-            "color": "hsl(0, 0%, 0%)",
-            "fontSize": 16,
-          },
-          Array [
-            undefined,
-            undefined,
-          ],
-          Object {
-            "fontFamily": "Material Design Icons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-          Object {},
-        ]
-      }
-    >
-      
-    </Text>
-  </View>
-</View>
-`;
-
-exports[`renders icon title 1`] = `
-<View
-  accessible={true}
-  focusable={true}
-  isTVSelectable={true}
-  onClick={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "transparent",
-      "borderColor": "transparent",
-      "borderRadius": 4,
-      "borderWidth": 1,
-      "flexDirection": "row",
-      "height": 36,
-      "justifyContent": "center",
-      "opacity": 1,
-      "paddingHorizontal": 16,
-    }
-  }
->
-  <View
-    style={
-      Array [
-        Object {
-          "paddingRight": 2,
-        },
-        Array [
-          Object {
-            "color": "hsl(0, 0%, 0%)",
-          },
-          undefined,
-        ],
-      ]
-    }
-  >
-    <Text
-      allowFontScaling={false}
-      style={
-        Array [
-          Object {
-            "color": "hsl(0, 0%, 0%)",
-            "fontSize": 16,
-          },
-          Array [
-            undefined,
-            undefined,
-          ],
-          Object {
-            "fontFamily": "Material Design Icons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-          Object {},
-        ]
-      }
-    >
-      
-    </Text>
-  </View>
-  <Text
-    style={
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-        "fontSize": 14,
-        "fontWeight": "600",
-        "letterSpacing": 0.75,
-        "opacity": 1,
-        "textAlign": "center",
-      }
-    }
-  >
-    HELLO
-  </Text>
-</View>
-`;
-
-exports[`renders outlined 1`] = `
-<View
-  accessible={true}
-  focusable={true}
-  isTVSelectable={true}
-  onClick={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "hsl(0, 0%, 100%)",
-      "borderColor": "hsl(210, 10%, 23%)",
-      "borderRadius": 4,
-      "borderWidth": 1,
-      "flexDirection": "row",
-      "height": 36,
-      "justifyContent": "center",
-      "opacity": 1,
-      "paddingHorizontal": 16,
-    }
-  }
->
-  <Text
-    style={
-      Object {
-        "color": "hsl(0, 0%, 0%)",
-        "fontSize": 14,
-        "fontWeight": "600",
-        "letterSpacing": 0.75,
-        "opacity": 1,
-        "textAlign": "center",
-      }
-    }
-  >
-    HELLO
-  </Text>
-</View>
-`;
-
-exports[`renders sizing 1`] = `
-<View
-  accessible={true}
-  focusable={true}
-  isTVSelectable={true}
-  onClick={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "alignSelf": "center",
-      "backgroundColor": "transparent",
-      "borderColor": "transparent",
-      "borderRadius": 4,
-      "borderWidth": 1,
-      "flexDirection": "row",
-      "height": 36,
-      "justifyContent": "center",
-      "opacity": 1,
-      "paddingHorizontal": 16,
-      "width": "50%",
-    }
-  }
->
-  <Text
-    style={
-      Object {
-        "color": "hsla(0, 0%, 0%, 0.38)",
-        "fontSize": 14,
-        "fontWeight": "600",
-        "letterSpacing": 0.75,
-        "opacity": 1,
-        "textAlign": "center",
-      }
-    }
-  >
-    HELLO
-  </Text>
-</View>
-`;
-
-exports[`renders text 1`] = `
-<View
-  accessible={true}
-  focusable={true}
-  isTVSelectable={true}
-  onClick={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "transparent",
-      "borderColor": "transparent",
-      "borderRadius": 4,
-      "borderWidth": 1,
-      "flexDirection": "row",
-      "height": 36,
-      "justifyContent": "center",
-      "opacity": 1,
       "paddingHorizontal": 16,
     }
   }

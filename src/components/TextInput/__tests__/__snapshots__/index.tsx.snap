@@ -46,8 +46,8 @@ exports[`renders correctly 1`] = `
             "paddingRight": 32,
             "width": "100%",
           },
-          "",
-          false,
+          undefined,
+          undefined,
           Object {
             "fontSize": 14,
             "fontWeight": "300",
@@ -56,6 +56,7 @@ exports[`renders correctly 1`] = `
           undefined,
         ]
       }
+      textContentType="none"
       underlineColorAndroid="transparent"
       value="hello"
     />
@@ -72,99 +73,61 @@ exports[`renders correctly 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "transparent",
-          "borderColor": "transparent",
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "flexDirection": "row",
-          "height": 36,
-          "justifyContent": "center",
           "opacity": 1,
-          "paddingHorizontal": 16,
           "position": "absolute",
-          "right": -2,
-          "top": 2,
+          "right": 0,
+          "top": 6,
+          "width": 30,
         }
       }
     >
-      <View
+      <Text
+        allowFontScaling={false}
         style={
           Array [
-            undefined,
+            Object {
+              "color": "hsl(208, 7%, 46%)",
+              "fontSize": 24,
+            },
             Array [
-              Object {
-                "color": "hsl(208, 7%, 46%)",
-              },
+              undefined,
               undefined,
             ],
+            Object {
+              "fontFamily": "Material Design Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
           ]
         }
       >
-        <Text
-          allowFontScaling={false}
-          style={
-            Array [
-              Object {
-                "color": "hsl(208, 7%, 46%)",
-                "fontSize": 16,
-              },
-              Array [
-                undefined,
-                undefined,
-              ],
-              Object {
-                "fontFamily": "Material Design Icons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+        
+      </Text>
     </View>
   </View>
   <View
-    accessible={true}
-    focusable={true}
-    isTVSelectable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "alignItems": "center",
-        "backgroundColor": "transparent",
-        "borderColor": "transparent",
-        "borderRadius": 4,
-        "borderWidth": 1,
         "flexDirection": "row",
-        "height": 20,
-        "justifyContent": "flex-start",
-        "marginVertical": 4,
-        "opacity": 1,
-        "paddingHorizontal": 0,
       }
     }
   >
     <View
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          "",
-          Array [
-            Object {
-              "color": "hsl(354, 70%, 54%)",
-            },
-            undefined,
-          ],
-        ]
+        Object {
+          "opacity": 1,
+        }
       }
     >
       <Text
@@ -173,7 +136,7 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "color": "hsl(354, 70%, 54%)",
-              "fontSize": 16,
+              "fontSize": 24,
             },
             Array [
               Object {
@@ -193,20 +156,47 @@ exports[`renders correctly 1`] = `
         
       </Text>
     </View>
-    <Text
+    <View
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "color": "hsl(354, 70%, 54%)",
-          "fontSize": 14,
-          "fontWeight": "300",
-          "letterSpacing": 0.25,
-          "opacity": 1,
-          "textAlign": "center",
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "borderColor": "transparent",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 0,
+          "padding": 0,
+          "paddingHorizontal": 0,
         }
       }
     >
-      
-    </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsl(354, 70%, 54%)",
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+            "opacity": 1,
+            "textAlign": "center",
+          }
+        }
+      >
+        
+      </Text>
+    </View>
   </View>
 </View>
 `;

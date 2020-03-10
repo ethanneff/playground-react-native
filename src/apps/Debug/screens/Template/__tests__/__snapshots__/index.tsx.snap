@@ -23,32 +23,37 @@ exports[`renders correctly 1`] = `
     }
   >
     <View
-      accessible={true}
-      focusable={true}
-      isTVSelectable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
           "flex": 0.2,
-          "opacity": 1,
           "padding": 12,
         }
       }
     >
-      <View>
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
         <Text
           allowFontScaling={false}
           style={
             Array [
               Object {
                 "color": "hsl(208, 7%, 46%)",
-                "fontSize": 24,
+                "fontSize": 36,
               },
               Array [
                 undefined,
@@ -63,25 +68,27 @@ exports[`renders correctly 1`] = `
             ]
           }
         >
-          
+          
         </Text>
       </View>
     </View>
+    <Text
+      style={
+        Object {
+          "color": "hsla(0, 0%, 0%, 1)",
+          "fontSize": 40,
+          "fontWeight": "100",
+          "letterSpacing": -0.5,
+          "opacity": 1,
+        }
+      }
+    >
+      Template
+    </Text>
     <View
-      accessible={true}
-      focusable={false}
-      isTVSelectable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
           "flex": 0.2,
-          "opacity": 1,
           "padding": 12,
         }
       }

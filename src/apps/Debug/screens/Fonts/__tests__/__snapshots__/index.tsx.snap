@@ -23,32 +23,37 @@ exports[`renders correctly 1`] = `
     }
   >
     <View
-      accessible={true}
-      focusable={true}
-      isTVSelectable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
           "flex": 0.2,
-          "opacity": 1,
           "padding": 12,
         }
       }
     >
-      <View>
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
         <Text
           allowFontScaling={false}
           style={
             Array [
               Object {
                 "color": "hsl(208, 7%, 46%)",
-                "fontSize": 24,
+                "fontSize": 36,
               },
               Array [
                 undefined,
@@ -63,32 +68,35 @@ exports[`renders correctly 1`] = `
             ]
           }
         >
-          
+          
         </Text>
       </View>
     </View>
+    <Text
+      style={
+        Object {
+          "color": "hsla(0, 0%, 0%, 1)",
+          "fontSize": 40,
+          "fontWeight": "100",
+          "letterSpacing": -0.5,
+          "opacity": 1,
+        }
+      }
+    >
+      Fonts
+    </Text>
     <View
-      accessible={true}
-      focusable={false}
-      isTVSelectable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
           "flex": 0.2,
-          "opacity": 1,
           "padding": 12,
         }
       }
     />
   </View>
-  <View
-    style={
+  <RCTScrollView
+    automaticallyAdjustContentInsets={false}
+    contentContainerStyle={
       Array [
         Object {
           "backgroundColor": "hsl(0, 0%, 100%)",
@@ -98,193 +106,218 @@ exports[`renders correctly 1`] = `
         undefined,
       ]
     }
+    contentInset={
+      Object {
+        "bottom": 0,
+      }
+    }
+    enableAutomaticScroll={true}
+    enableOnAndroid={false}
+    enableResetScrollToCoords={true}
+    extraHeight={75}
+    extraScrollHeight={0}
+    getScrollResponder={[Function]}
+    handleOnScroll={[Function]}
+    keyboardDismissMode="interactive"
+    keyboardOpeningTime={250}
+    keyboardShouldPersistTaps="handled"
+    keyboardSpace={0}
+    onScroll={[Function]}
+    resetKeyboardSpace={[Function]}
+    scrollEventThrottle={1}
+    scrollForExtraHeightOnAndroid={[Function]}
+    scrollIntoView={[Function]}
+    scrollToEnd={[Function]}
+    scrollToFocusedInput={[Function]}
+    scrollToPosition={[Function]}
+    showsVerticalScrollIndicator={true}
+    update={[Function]}
+    viewIsInsideTabBar={false}
   >
-    <RCTScrollView>
-      <View>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 64,
-              "fontWeight": "100",
-              "letterSpacing": -1.5,
-              "opacity": 1,
-            }
+    <View>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 64,
+            "fontWeight": "100",
+            "letterSpacing": -1.5,
+            "opacity": 1,
           }
-        >
-          H1: The quick brown fox jumps over the lazy dog.
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 40,
-              "fontWeight": "100",
-              "letterSpacing": -0.5,
-              "opacity": 1,
-            }
+        }
+      >
+        H1: The quick brown fox jumps over the lazy dog.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 40,
+            "fontWeight": "100",
+            "letterSpacing": -0.5,
+            "opacity": 1,
           }
-        >
-          H2: The quick brown fox jumps over the lazy dog.
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 32,
-              "fontWeight": "300",
-              "letterSpacing": 0,
-              "opacity": 1,
-            }
+        }
+      >
+        H2: The quick brown fox jumps over the lazy dog.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 32,
+            "fontWeight": "300",
+            "letterSpacing": 0,
+            "opacity": 1,
           }
-        >
-          H3: The quick brown fox jumps over the lazy dog.
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 22.666666666666668,
-              "fontWeight": "300",
-              "letterSpacing": 0.25,
-              "opacity": 1,
-            }
+        }
+      >
+        H3: The quick brown fox jumps over the lazy dog.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 22.666666666666668,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+            "opacity": 1,
           }
-        >
-          H4: The quick brown fox jumps over the lazy dog.
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 16,
-              "fontWeight": "300",
-              "letterSpacing": 0,
-              "opacity": 1,
-            }
+        }
+      >
+        H4: The quick brown fox jumps over the lazy dog.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 16,
+            "fontWeight": "300",
+            "letterSpacing": 0,
+            "opacity": 1,
           }
-        >
-          H5: The quick brown fox jumps over the lazy dog.
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 13.333333333333334,
-              "fontWeight": "600",
-              "letterSpacing": 0.15,
-              "opacity": 1,
-            }
+        }
+      >
+        H5: The quick brown fox jumps over the lazy dog.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 13.333333333333334,
+            "fontWeight": "600",
+            "letterSpacing": 0.15,
+            "opacity": 1,
           }
-        >
-          H6: The quick brown fox jumps over the lazy dog.
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 16,
-              "fontWeight": "300",
-              "letterSpacing": 0.15,
-              "opacity": 1,
-            }
+        }
+      >
+        H6: The quick brown fox jumps over the lazy dog.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 16,
+            "fontWeight": "300",
+            "letterSpacing": 0.15,
+            "opacity": 1,
           }
-        >
-          SUBTITLE1: The quick brown fox jumps over the lazy dog.
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.1,
-              "opacity": 1,
-            }
+        }
+      >
+        SUBTITLE1: The quick brown fox jumps over the lazy dog.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 14,
+            "fontWeight": "600",
+            "letterSpacing": 0.1,
+            "opacity": 1,
           }
-        >
-          SUBTITLE2: The quick brown fox jumps over the lazy dog.
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 16,
-              "fontWeight": "300",
-              "letterSpacing": 0.5,
-              "opacity": 1,
-            }
+        }
+      >
+        SUBTITLE2: The quick brown fox jumps over the lazy dog.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 16,
+            "fontWeight": "300",
+            "letterSpacing": 0.5,
+            "opacity": 1,
           }
-        >
-          BODY1: The quick brown fox jumps over the lazy dog.
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 14,
-              "fontWeight": "300",
-              "letterSpacing": 0.25,
-              "opacity": 1,
-            }
+        }
+      >
+        BODY1: The quick brown fox jumps over the lazy dog.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+            "opacity": 1,
           }
-        >
-          BODY2: The quick brown fox jumps over the lazy dog.
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 10,
-              "fontWeight": "300",
-              "letterSpacing": 1.5,
-              "opacity": 1,
-            }
+        }
+      >
+        BODY2: The quick brown fox jumps over the lazy dog.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 10,
+            "fontWeight": "300",
+            "letterSpacing": 1.5,
+            "opacity": 1,
           }
-        >
-          OVERLINE: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 12,
-              "fontWeight": "300",
-              "letterSpacing": 0.4,
-              "opacity": 1,
-            }
+        }
+      >
+        OVERLINE: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 12,
+            "fontWeight": "300",
+            "letterSpacing": 0.4,
+            "opacity": 1,
           }
-        >
-          CAPTION: The quick brown fox jumps over the lazy dog.
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 14,
-              "fontWeight": "600",
-              "letterSpacing": 0.75,
-              "opacity": 1,
-            }
+        }
+      >
+        CAPTION: The quick brown fox jumps over the lazy dog.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 14,
+            "fontWeight": "600",
+            "letterSpacing": 0.75,
+            "opacity": 1,
           }
-        >
-          BUTTON: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "hsla(0, 0%, 0%, 1)",
-              "fontSize": 14,
-              "fontWeight": "300",
-              "letterSpacing": 0.25,
-              "opacity": 1,
-            }
+        }
+      >
+        BUTTON: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+            "opacity": 1,
           }
-        >
-          NOTHING: The quick brown fox jumps over the lazy dog.
-        </Text>
-      </View>
-    </RCTScrollView>
-  </View>
+        }
+      >
+        NOTHING: The quick brown fox jumps over the lazy dog.
+      </Text>
+    </View>
+  </RCTScrollView>
 </RCTSafeAreaView>
 `;

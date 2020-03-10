@@ -23,20 +23,9 @@ exports[`renders correctly 1`] = `
     }
   >
     <View
-      accessible={true}
-      focusable={false}
-      isTVSelectable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
           "flex": 0.2,
-          "opacity": 1,
           "padding": 12,
         }
       }
@@ -55,20 +44,9 @@ exports[`renders correctly 1`] = `
       Landing
     </Text>
     <View
-      accessible={true}
-      focusable={false}
-      isTVSelectable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
           "flex": 0.2,
-          "opacity": 1,
           "padding": 12,
         }
       }
@@ -309,9 +287,9 @@ exports[`renders correctly 1`] = `
             "borderRadius": 4,
             "borderWidth": 1,
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 8,
             "paddingHorizontal": 16,
           }
         }
@@ -350,9 +328,9 @@ exports[`renders correctly 1`] = `
             "borderRadius": 4,
             "borderWidth": 1,
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 8,
             "paddingHorizontal": 16,
           }
         }
@@ -391,9 +369,9 @@ exports[`renders correctly 1`] = `
             "borderRadius": 4,
             "borderWidth": 1,
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 8,
             "paddingHorizontal": 16,
           }
         }
@@ -441,9 +419,9 @@ exports[`renders correctly 1`] = `
             "borderRadius": 4,
             "borderWidth": 1,
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 8,
             "paddingHorizontal": 16,
           }
         }
@@ -482,9 +460,9 @@ exports[`renders correctly 1`] = `
             "borderRadius": 4,
             "borderWidth": 1,
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 8,
             "paddingHorizontal": 16,
           }
         }
@@ -523,9 +501,9 @@ exports[`renders correctly 1`] = `
             "borderRadius": 4,
             "borderWidth": 1,
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 8,
             "paddingHorizontal": 16,
           }
         }
@@ -573,9 +551,9 @@ exports[`renders correctly 1`] = `
             "borderRadius": 4,
             "borderWidth": 1,
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 8,
             "paddingHorizontal": 16,
           }
         }
@@ -614,9 +592,9 @@ exports[`renders correctly 1`] = `
             "borderRadius": 4,
             "borderWidth": 1,
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 8,
             "paddingHorizontal": 16,
           }
         }
@@ -664,9 +642,9 @@ exports[`renders correctly 1`] = `
             "borderRadius": 4,
             "borderWidth": 1,
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 8,
             "paddingHorizontal": 16,
           }
         }
@@ -705,9 +683,9 @@ exports[`renders correctly 1`] = `
             "borderRadius": 4,
             "borderWidth": 1,
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 8,
             "paddingHorizontal": 16,
           }
         }
@@ -746,9 +724,9 @@ exports[`renders correctly 1`] = `
             "borderRadius": 4,
             "borderWidth": 1,
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 8,
             "paddingHorizontal": 16,
           }
         }
@@ -787,9 +765,9 @@ exports[`renders correctly 1`] = `
             "borderRadius": 4,
             "borderWidth": 1,
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 8,
             "paddingHorizontal": 16,
           }
         }
@@ -837,9 +815,9 @@ exports[`renders correctly 1`] = `
             "borderRadius": 4,
             "borderWidth": 1,
             "flexDirection": "row",
-            "height": 36,
             "justifyContent": "center",
             "opacity": 1,
+            "padding": 8,
             "paddingHorizontal": 16,
           }
         }

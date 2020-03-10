@@ -23,32 +23,37 @@ exports[`renders correctly 1`] = `
     }
   >
     <View
-      accessible={true}
-      focusable={true}
-      isTVSelectable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
           "flex": 0.2,
-          "opacity": 1,
           "padding": 12,
         }
       }
     >
-      <View>
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
         <Text
           allowFontScaling={false}
           style={
             Array [
               Object {
                 "color": "hsl(208, 7%, 46%)",
-                "fontSize": 24,
+                "fontSize": 36,
               },
               Array [
                 undefined,
@@ -63,7 +68,7 @@ exports[`renders correctly 1`] = `
             ]
           }
         >
-          
+          
         </Text>
       </View>
     </View>
@@ -81,20 +86,9 @@ exports[`renders correctly 1`] = `
       Settings
     </Text>
     <View
-      accessible={true}
-      focusable={false}
-      isTVSelectable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
           "flex": 0.2,
-          "opacity": 1,
           "padding": 12,
         }
       }
@@ -166,9 +160,9 @@ exports[`renders correctly 1`] = `
                 "borderRadius": 4,
                 "borderWidth": 1,
                 "flexDirection": "row",
-                "height": 36,
                 "justifyContent": "center",
                 "opacity": 1,
+                "padding": 8,
                 "paddingHorizontal": 16,
               }
             }
@@ -200,46 +194,48 @@ exports[`renders correctly 1`] = `
             ]
           }
         >
-          <View
-            accessible={true}
-            focusable={true}
-            isTVSelectable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "hsl(0, 0%, 0%)",
-                "borderColor": "transparent",
-                "borderRadius": 4,
-                "borderWidth": 1,
-                "flexDirection": "row",
-                "height": 36,
-                "justifyContent": "center",
-                "opacity": 1,
-                "paddingHorizontal": 16,
-              }
-            }
-          >
-            <Text
+          <View>
+            <View
+              accessible={true}
+              focusable={true}
+              isTVSelectable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "color": "hsl(0, 0%, 100%)",
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "borderColor": "transparent",
+                  "borderRadius": 4,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
                   "opacity": 1,
-                  "textAlign": "center",
+                  "padding": 8,
+                  "paddingHorizontal": 16,
                 }
               }
             >
-              LIGHT
-            </Text>
+              <Text
+                style={
+                  Object {
+                    "color": "hsl(211, 100%, 50%)",
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "letterSpacing": 0.75,
+                    "opacity": 1,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                LIGHT
+              </Text>
+            </View>
           </View>
         </View>
         <View
@@ -253,46 +249,48 @@ exports[`renders correctly 1`] = `
             ]
           }
         >
-          <View
-            accessible={true}
-            focusable={true}
-            isTVSelectable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "borderColor": "transparent",
-                "borderRadius": 4,
-                "borderWidth": 1,
-                "flexDirection": "row",
-                "height": 36,
-                "justifyContent": "center",
-                "opacity": 1,
-                "paddingHorizontal": 16,
-              }
-            }
-          >
-            <Text
+          <View>
+            <View
+              accessible={true}
+              focusable={true}
+              isTVSelectable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "color": "hsl(208, 7%, 46%)",
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "borderColor": "transparent",
+                  "borderRadius": 4,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
                   "opacity": 1,
-                  "textAlign": "center",
+                  "padding": 8,
+                  "paddingHorizontal": 16,
                 }
               }
             >
-              DARK
-            </Text>
+              <Text
+                style={
+                  Object {
+                    "color": "hsl(0, 0%, 0%)",
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "letterSpacing": 0.75,
+                    "opacity": 1,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                DARK
+              </Text>
+            </View>
           </View>
         </View>
       </View>
