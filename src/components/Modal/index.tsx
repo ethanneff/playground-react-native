@@ -68,16 +68,16 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
         elevation={elevation}
         testID="modal"
       >
-        {noScroll ? (
+        {noScroll ? 
           <View style={styles.modalContent}>{children}</View>
-        ) : (
+         : 
           <ScrollView
             style={styles.modalContent}
             keyboardShouldPersistTaps="handled"
           >
             {children}
           </ScrollView>
-        )}
+        }
       </Card>
     </View>
   );

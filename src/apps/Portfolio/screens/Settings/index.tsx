@@ -15,7 +15,7 @@ export default memo(function PortfolioSettings() {
     [dispatch]
   );
   const renderItem = useCallback(
-    ({ item }) => (
+    ({ item }) => 
       <View>
         <Button
           key={item}
@@ -24,7 +24,7 @@ export default memo(function PortfolioSettings() {
           color={currentTheme === item ? "primary" : "text"}
         />
       </View>
-    ),
+    ,
     [currentTheme, themePress]
   );
 

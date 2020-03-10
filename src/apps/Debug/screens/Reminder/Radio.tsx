@@ -17,7 +17,7 @@ export default memo(function Radio(props: Props) {
         flexDirection: props.horizontal ? "row" : "column"
       }}
     >
-      {props.buttons.map(button => (
+      {props.buttons.map(button => 
         <Button
           emphasis="high"
           color={props.value === button ? "primary" : "secondary"}
@@ -25,7 +25,7 @@ export default memo(function Radio(props: Props) {
           key={button}
           onPress={props.onChange(button)}
         />
-      ))}
+      )}
     </View>
   );
 });
