@@ -47,14 +47,6 @@ export const getStyles = ({
       justifyContent: "center",
       paddingHorizontal: noPadding ? Theme.padding.p00 : Theme.padding.p04
     },
-    fab: {
-      alignSelf: "flex-start",
-      borderRadius: Theme.padding.p08,
-      padding: Theme.padding.p04
-    },
-    half: {
-      width: "50%"
-    },
     invisible: {
       opacity: 0
     },

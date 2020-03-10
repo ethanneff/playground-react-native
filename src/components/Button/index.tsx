@@ -34,7 +34,6 @@ export interface ButtonProps {
   color?: keyof Color;
   /* size */
   noPadding?: boolean;
-  fab?: boolean;
   center?: boolean;
   right?: boolean;
   lowercase?: boolean;
@@ -52,7 +51,6 @@ export const Button: React.FC<ButtonProps> = memo(props => {
     noPadding,
     dropShadow,
     elevation = 2,
-    fab,
     hidden,
     invisible,
     emphasis = "low",
@@ -76,7 +74,6 @@ export const Button: React.FC<ButtonProps> = memo(props => {
   });
   const buttonStyleGroup = [
     styles.container,
-    fab && styles.fab,
     center && styles.center,
     right && styles.right,
     dropShadow && dropShadowStyling,
@@ -85,7 +82,7 @@ export const Button: React.FC<ButtonProps> = memo(props => {
   ];
   const textStyleGroup = [styles.text, textStyle];
 
-  return hidden ? null : 
+  return hidden ? null : (
     <TouchableOpacity
       activeOpacity={activeOpacity}
       disabled={disable || invisible}
@@ -95,5 +92,5 @@ export const Button: React.FC<ButtonProps> = memo(props => {
     >
       <Text center button={!lowercase} title={title} style={textStyleGroup} />
     </TouchableOpacity>
-  ;
+  );
 });
