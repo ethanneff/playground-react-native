@@ -38,12 +38,14 @@ const generateButtons = () => {
     {
       title: "Later today",
       description: laterToday.format("hh:mm A"),
-      value: laterToday
+      value: laterToday,
+      visible: dayjs().set("hour", 18)
     },
     {
       title: "This Evening",
       description: evening.format("hh:mm A"),
-      value: evening
+      value: evening,
+      visible: dayjs().set("hour", 18)
     },
     {
       title: "Tomorrow",
@@ -78,24 +80,29 @@ export default memo(function OneTime({ onPress }: Props) {
   const buttons = generateButtons();
   return (
     <View>
-      {buttons.map(button => 
-        <TouchableOpacity
-          key={button.title}
-          style={{
-            alignSelf: "center",
-            flexDirection: "row",
-            justifyContent: "space-between"
-          }}
-          onPress={onPress(button.value)}
-        >
-          <Icon name="alarm" size={Theme.padding.p04} />
-          <Text
-            title={button.title}
-            style={{ paddingLeft: Theme.padding.p02, flex: 1 }}
-          />
-          <Text title={button.description} />
-        </TouchableOpacity>
-      )}
+      {buttons.map(button => {
+        return button.visible &&
+          dayjs().valueOf() > button.visible.valueOf() ? 
+          <View key={button.title}></View>
+         : 
+          <TouchableOpacity
+            key={button.title}
+            style={{
+              alignSelf: "center",
+              flexDirection: "row",
+              justifyContent: "space-between"
+            }}
+            onPress={onPress(button.value)}
+          >
+            <Icon name="alarm" size={Theme.padding.p04} />
+            <Text
+              title={button.title}
+              style={{ paddingLeft: Theme.padding.p02, flex: 1 }}
+            />
+            <Text title={button.description} />
+          </TouchableOpacity>
+        ;
+      })}
     </View>
   );
 });
