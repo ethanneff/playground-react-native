@@ -32,8 +32,7 @@ export default memo(function DebugColors() {
             key={item}
             title={item}
             onPress={themePress(item)}
-            primary
-            contained={currentTheme === item}
+            color={currentTheme === item ? "success" : "text"}
           />
         )}
       </View>
@@ -46,37 +45,61 @@ export default memo(function DebugColors() {
         />
         <View style={{ flexDirection: "row" }}>
           <View style={{ flex: 1 }}>
-            <Button primary title="primary" contained />
-            <Button secondary title="secondary" contained />
-            <Button success title="success" contained />
-            <Button danger title="danger" contained />
-            <Button warning title="warning" contained />
-            <Button info title="info" contained />
-            <Button light title="light" contained />
-            <Button dark title="dark" contained />
-            <Button title="default" contained disable />
+            <Button emphasis="high" color="primary" title="primary" />
+            <Button emphasis="high" color="secondary" title="secondary" />
+            <Button emphasis="high" color="success" title="success" />
+            <Button emphasis="high" color="danger" title="danger" />
+            <Button emphasis="high" color="warning" title="warning" />
+            <Button emphasis="high" color="info" title="info" />
+            <Button emphasis="high" color="light" title="light" />
+            <Button emphasis="high" color="dark" title="dark" />
+            <Button emphasis="high" color="text" title="text" />
+            <Button emphasis="high" title="default" />
+            <Button emphasis="high" title="disable" disable />
+            <Button
+              emphasis="high"
+              title="drop shadow"
+              dropShadow
+              elevation={10}
+            />
           </View>
           <View style={{ flex: 1 }}>
-            <Button primary title="primary" />
-            <Button secondary title="secondary" />
-            <Button success title="success" />
-            <Button danger title="danger" />
-            <Button warning title="warning" />
-            <Button info title="info" />
-            <Button light title="light" />
-            <Button dark title="dark" />
-            <Button title="default" />
+            <Button color="primary" emphasis="medium" title="primary" />
+            <Button color="secondary" emphasis="medium" title="secondary" />
+            <Button color="success" emphasis="medium" title="success" />
+            <Button color="danger" emphasis="medium" title="danger" />
+            <Button color="warning" emphasis="medium" title="warning" />
+            <Button color="info" emphasis="medium" title="info" />
+            <Button color="light" emphasis="medium" title="light" />
+            <Button color="dark" emphasis="medium" title="dark" />
+            <Button color="text" emphasis="medium" title="text" />
+            <Button emphasis="medium" title="default" />
+            <Button emphasis="medium" title="disable" disable />
+            <Button
+              emphasis="medium"
+              title="drop shadow"
+              dropShadow
+              elevation={10}
+            />
           </View>
           <View style={{ flex: 1 }}>
-            <Button outlined primary title="primary" />
-            <Button outlined secondary title="secondary" />
-            <Button outlined success title="success" />
-            <Button outlined danger title="danger" />
-            <Button outlined warning title="warning" />
-            <Button outlined info title="info" />
-            <Button outlined light title="light" />
-            <Button outlined dark title="dark" />
-            <Button outlined title="default" dropShadow elevation={10} />
+            <Button color="primary" emphasis="low" title="primary" />
+            <Button color="secondary" emphasis="low" title="secondary" />
+            <Button color="success" emphasis="low" title="success" />
+            <Button color="danger" emphasis="low" title="danger" />
+            <Button color="warning" emphasis="low" title="warning" />
+            <Button color="info" emphasis="low" title="info" />
+            <Button color="light" emphasis="low" title="light" />
+            <Button color="dark" emphasis="low" title="dark" />
+            <Button color="text" emphasis="low" title="text" />
+            <Button emphasis="low" title="default" />
+            <Button emphasis="low" title="disable" disable />
+            <Button
+              emphasis="low"
+              title="drop shadow"
+              dropShadow
+              elevation={10}
+            />
           </View>
         </View>
 

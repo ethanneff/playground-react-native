@@ -140,15 +140,13 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
                   title={cancelButtonText}
                   onPress={dismiss(onCancelButtonPress)}
                   buttonStyle={cancelButtonStyle}
-                  half={!twoButtons}
                 />
                 <Button
                   hidden={!onConfirmButtonPress}
                   title={confirmButtonText}
                   onPress={dismiss(onConfirmButtonPress)}
                   buttonStyle={confirmButtonStyle}
-                  secondary
-                  half={!twoButtons}
+                  color="secondary"
                 />
               </View>
             </Card>

@@ -61,7 +61,7 @@ export default memo(function ChecklistUpdate() {
         onChangeText={handleDescriptionChange}
       />
       <Button title="update" onPress={handleSubmit} />
-      <Button title="delete" onPress={handleDelete} danger />
+      <Button title="delete" onPress={handleDelete} color="danger" />
     </Screen>
   );
 });

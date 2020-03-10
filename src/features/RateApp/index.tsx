@@ -99,7 +99,7 @@ export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
             center
             style={styles.title}
           />
-          <Button title="Okay" onPress={handleReviewApp} contained />
+          <Button title="Okay" onPress={handleReviewApp} />
         </>
        : form.modal === "feedback" ? 
         <>
@@ -115,7 +115,7 @@ export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
             onChangeText={handleTextChange}
             placeholder="How can we improve?"
           />
-          <Button title="Submit" onPress={handleFeedbackSubmit} contained />
+          <Button title="Submit" onPress={handleFeedbackSubmit} />
         </>
        : form.modal === "thank you" ? 
         <>
@@ -125,7 +125,7 @@ export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
             style={styles.title}
             center
           />
-          <Button title="Close" onPress={handleComplete} contained />
+          <Button title="Close" onPress={handleComplete} />
         </>
        : 
         <>

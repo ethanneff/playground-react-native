@@ -1,6 +1,5 @@
 import React, { memo } from "react";
-import { Text as Original, ScrollView , StyleSheet, View } from "react-native";
-
+import { Text as Original, ScrollView, StyleSheet, View } from "react-native";
 import { Theme } from "../../utils";
 import { Text } from "../Text";
 import { useColor } from "../../hooks";
@@ -66,26 +65,26 @@ export const Content: React.FC<Props> = memo(({ body }) => {
   });
 
   const renderSentence = (sentence: Sentence) =>
-    sentence.type === ParagraphType.Link ? 
+    sentence.type === ParagraphType.Link ? (
       <Text
         key={sentence.content}
         title={`${sentence.content} `}
         onPress={sentence.onPress}
         style={styles.link}
       />
-     : 
+    ) : (
       <Text key={sentence.content} title={`${sentence.content} `} />
-    ;
+    );
 
-  const renderParagraph = (paragraph: Paragraph) => 
+  const renderParagraph = (paragraph: Paragraph) => (
     <Original style={styles.paragraph} key={Math.random()}>
       {paragraph.sentences.map(renderSentence)}
     </Original>
-  ;
+  );
 
-  const renderSection = (section: Section) => 
+  const renderSection = (section: Section) => (
     <View style={styles.section} key={Math.random()}>
-      {section.title && 
+      {section.title && (
         <Text
           key={section.title}
           title={section.title}
@@ -94,10 +93,10 @@ export const Content: React.FC<Props> = memo(({ body }) => {
           h2={section.titleType === TitleType.H2}
           h3={section.titleType === TitleType.H3}
         />
-      }
+      )}
       {section.paragraphs.map(renderParagraph)}
     </View>
-  ;
+  );
 
   return (
     <ScrollView style={styles.content}>

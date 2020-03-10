@@ -115,7 +115,7 @@ export const Activity = memo(function Activity({
    : state.request === "failure" ? 
     <View>
       <Text title="Missing network connection" />
-      <Button title="Retry" wrap contained danger half onPress={onRetryPress} />
+      <Button title="Retry" color="danger" onPress={onRetryPress} />
     </View>
    : 
     <>

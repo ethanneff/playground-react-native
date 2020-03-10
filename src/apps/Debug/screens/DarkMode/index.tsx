@@ -83,7 +83,7 @@ export default memo(function DarkMode() {
 
   const renderItem = useCallback(
     ({ item, index }) => 
-      <Card elevation={elevation} onPress={onPress} touchable key={index}>
+      <Card elevation={elevation} onPress={onPress} key={index}>
         <Text title={item.title} overline />
         <Text title={item.value} h3 style={{ marginTop: Theme.padding.p02 }} />
         {item.target && 
@@ -106,7 +106,8 @@ export default memo(function DarkMode() {
         }
         {item.button && 
           <Button
-            contained
+            color="primary"
+            emphasis="high"
             title={item.button}
             buttonStyle={{ marginTop: Theme.padding.p02 }}
           />
@@ -131,8 +132,8 @@ export default memo(function DarkMode() {
               key={item}
               title={item}
               onPress={themePress(item)}
-              primary
-              contained={currentTheme === item}
+              emphasis="high"
+              color={currentTheme === item ? "primary" : "text"}
             />
           )}
         </View>

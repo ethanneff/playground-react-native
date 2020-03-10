@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 import { Button, Screen } from "../../../../components";
 import { ColorTheme, changeTheme } from "../../../../models";
 import { useRootDispatch, useRootSelector } from "../../../../utils";
@@ -15,15 +15,16 @@ export default memo(function PortfolioSettings() {
     [dispatch]
   );
   const renderItem = useCallback(
-    ({ item }) => 
-      <Button
-        key={item}
-        title={item}
-        onPress={themePress(item)}
-        contained={currentTheme === item}
-        secondary={currentTheme !== item}
-      />
-    ,
+    ({ item }) => (
+      <View>
+        <Button
+          key={item}
+          title={item}
+          onPress={themePress(item)}
+          color={currentTheme === item ? "primary" : "text"}
+        />
+      </View>
+    ),
     [currentTheme, themePress]
   );
 
