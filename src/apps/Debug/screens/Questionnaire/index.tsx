@@ -124,7 +124,7 @@ class Container extends React.PureComponent<Props> {
 
   public render() {
     return (
-      <Screen onLeftPress={this.nav("debug")}>
+      <Screen onLeftPress={this.nav("debug")} title="Questionnaire">
         <FlatList
           scrollEnabled={false}
           ref={this.setRef}
