@@ -23,24 +23,23 @@ export default memo(function CreateReminderModal(props: Props) {
 
   return (
     <Modal onBackgroundPress={props.onBackgroundPress} noScroll>
-      <View style={{ height: 250 }}>
-        <Text h2 title="Create Reminder" center />
-        <Radio
-          buttons={reminderTypes}
-          horizontal
-          value={state}
-          onChange={handleReminderTypePress}
-        />
-        {state === "one time" ? 
-          <OneTime onPress={props.onOneTimePress} />
-         : state === "repeat" ? 
-          <Repeat />
-         : state === "location" ? 
-          <Location onLocationPress={props.onLocationPress} />
-         : 
-          <Text title="invalid form type" />
-        }
-      </View>
+      <Text h2 title="Create Reminder" />
+      <Text overline title="Reminder type" />
+      <Radio
+        horizontal
+        buttons={reminderTypes}
+        value={state}
+        onChange={handleReminderTypePress}
+      />
+      {state === "one time" ? (
+        <OneTime onPress={props.onOneTimePress} />
+      ) : state === "repeat" ? (
+        <Repeat />
+      ) : state === "location" ? (
+        <Location onLocationPress={props.onLocationPress} />
+      ) : (
+        <Text title="invalid form type" />
+      )}
     </Modal>
   );
 });
