@@ -8,7 +8,6 @@ interface Props {
   flex?: boolean;
   style?: ViewStyle;
   selected?: boolean;
-  touchable?: boolean;
   noPadding?: boolean;
   noMargin?: boolean;
   elevation?: number;
@@ -24,7 +23,6 @@ export const Card: React.FC<Props> = memo(
     borderRadius = Theme.sizing.borderRadius,
     borderWidth = 1,
     children,
-    touchable,
     elevation = 2,
     onLongPress,
     onPress,
@@ -79,7 +77,7 @@ export const Card: React.FC<Props> = memo(
         onPress={onPress && onPress}
         onLongPress={onLongPress && onLongPress}
         activeOpacity={onPress ? touchOpacity : 1}
-        disabled={!touchable}
+        disabled={!onPress}
       >
         <View style={contentStyles}>{children}</View>
       </TouchableOpacity>
