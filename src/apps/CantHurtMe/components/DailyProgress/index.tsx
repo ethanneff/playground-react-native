@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import React, { memo, useCallback } from "react";
 import { FlatList, View } from "react-native";
-import { Button, Text } from "../../../../components";
+import { Text, Icon } from "../../../../components";
 import { Theme } from "../../../../utils";
 import { useColor } from "../../../../hooks";
 
@@ -20,15 +20,16 @@ export const DailyProgress = memo(function DailyProgress() {
   const renderItem = useCallback(
     ({ item }) => 
       <View>
-        <Button
-          icon={
+        <Icon
+          style={{ alignSelf: "center" }}
+          name={
             item.date.isSame(dayjs(), "day")
               ? "check"
               : item.date > dayjs()
               ? "cancel"
               : "close"
           }
-          iconColor={
+          color={
             item.date.isSame(dayjs(), "day")
               ? color.success
               : item.date > dayjs()

@@ -1,6 +1,6 @@
 import React, { memo, useState } from "react";
 import { FlatList, View } from "react-native";
-import { Button, Card, Dialog, Screen } from "../../../../components";
+import { Card, Dialog, Screen, Icon } from "../../../../components";
 import { getLandscapeOrientation } from "../../../../models";
 import { Theme, useRootSelector } from "../../../../utils";
 import { DailyProgress, Header, ProfileLevel } from "../../components";
@@ -48,12 +48,7 @@ export default memo(function CantHurtMeMain() {
                     }}
                   >
                     <ProfileLevel onPress={handleProfilePress} />
-                    <Button
-                      icon="settings"
-                      onPress={handleSettingsPress}
-                      fab
-                      center
-                    />
+                    <Icon name="settings" onPress={handleSettingsPress} />
                   </View>
                   <DailyProgress />
                 </Card>

@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { StyleSheet, ScrollView, View } from "react-native";
-import { Screen, Text, Card, Activity, Button } from "../../components";
+import { Screen, Text, Card, Activity, Icon } from "../../components";
 import { useNav, useColor } from "../../hooks";
 import { Theme } from "../../utils";
 
@@ -44,14 +44,12 @@ export default memo(function ActivityTracker() {
         </Card>
         <View style={{ height: Theme.padding.p04 }} />
       </ScrollView>
-      <Button
-        icon="plus"
+      <Icon
+        name="plus"
         fab
-        contained
-        primary
-        dropShadow
-        elevation={8}
-        buttonStyle={{
+        onPress={() => undefined}
+        color={color.background}
+        style={{
           position: "absolute",
           bottom: 0,
           right: 0,

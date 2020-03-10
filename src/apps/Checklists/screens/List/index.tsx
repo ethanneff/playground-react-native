@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from "react";
 import { FlatList, View } from "react-native";
-import { Button, Screen } from "../../../../components";
+import { Button, Screen, Icon } from "../../../../components";
 import { useRootDispatch, useRootSelector } from "../../../../utils";
 import {
   removeChecklistItem,
@@ -35,28 +35,22 @@ export default memo(function Checklist() {
 
   const renderItem = useCallback(
     ({ item }) => 
-      <View style={{ flexDirection: "row" }}>
-        <Button label icon="checkbox-marked-circle" iconColor={color.success} />
-        <Button
-          label
-          icon="close-circle"
-          iconColor={color.danger}
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <Icon name="checkbox-marked-circle" color={color.success} />
+        <Icon
+          name="close-circle"
+          color={color.danger}
           onPress={handleRemove(item.id)}
         />
-        <Button
-          label
-          iconColor={color.warning}
-          icon="clock"
+        <Icon
+          color={color.warning}
+          name="clock"
           onPress={handleToggle(item.id)}
         />
         <Button
-          label
-          primary={item.active}
+          color={item.completed ? "primary" : "text"}
           lowercase
           title={item.name}
-          textStyle={{
-            color: item.completed ? color.danger : color.text
-          }}
           onPress={handleEdit(item.id)}
         />
       </View>
@@ -64,7 +58,6 @@ export default memo(function Checklist() {
     [
       color.danger,
       color.success,
-      color.text,
       color.warning,
       handleEdit,
       handleRemove,
@@ -80,12 +73,11 @@ export default memo(function Checklist() {
         data={items}
         renderItem={renderItem}
       />
-      <Button
+      <Icon
         fab
         right
-        contained
-        icon="plus"
-        iconColor={color.background}
+        name="plus"
+        color={color.background}
         onPress={nav.to("checklistsItemCreate")}
       />
     </Screen>

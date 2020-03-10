@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { FlatList, View } from "react-native";
 import { connect } from "react-redux";
-import { Button, Card, Dialog, Text } from "../../../../../components";
+import { Card, Dialog, Text, Icon } from "../../../../../components";
 import { RootState } from "../../../../../containers";
 import {
   Questionnaire,
@@ -11,6 +11,7 @@ import {
   selectQuestionnaire,
   updateQuestionnaire
 } from "../models";
+import { useColor } from "../../../../../hooks";
 
 interface StateProps {
   questionnaires: Questionnaire[];
@@ -26,6 +27,7 @@ type Props = StateProps & DispatchProps;
 
 const Container = (props: Props) => {
   const [actionSheet, setActionSheet] = useState(false);
+  const color = useColor();
   const handleLongPress = useCallback(
     (id: string) => () => props.removeQuestionnaire(id),
     [props]
@@ -62,7 +64,7 @@ const Container = (props: Props) => {
               <Text h3 title={item.title} />
               <Text caption title={subtitle} />
             </View>
-            <Button icon="dots-horizontal" onPress={handleItemMenu} />
+            <Icon name="dots-horizontal" onPress={handleItemMenu} />
           </View>
         </Card>
       );
@@ -78,13 +80,17 @@ const Container = (props: Props) => {
         extraData={props.selected}
         renderItem={renderItem}
       />
-      <Button
-        icon="plus"
-        fab
-        contained
-        right
-        dropShadow
+      <Icon
+        name="plus"
+        color={color.background}
         onPress={handleCreate}
+        style={{
+          margin: 10,
+          position: "absolute",
+          bottom: 0,
+          right: 0
+        }}
+        fab
       />
       {actionSheet && 
         <Dialog title="hello" onBackgroundPress={handleActionSheetClose} />

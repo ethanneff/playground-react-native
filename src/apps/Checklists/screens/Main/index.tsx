@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from "react";
 import { FlatList } from "react-native";
-import { Button, Screen } from "../../../../components";
+import { Button, Screen, Icon } from "../../../../components";
 import { useNav, useColor } from "../../../../hooks";
 import { useRootSelector, useRootDispatch } from "../../../../utils";
 import {
@@ -51,13 +51,12 @@ export default memo(function Checklists() {
         data={items}
         renderItem={renderItem}
       />
-      <Button
-        right
-        contained
+      <Icon
         fab
-        icon="plus"
-        iconColor={color.background}
+        right
+        name="plus"
         onPress={nav.to("checklistsListCreate")}
+        color={color.background}
       />
     </Screen>
   );
