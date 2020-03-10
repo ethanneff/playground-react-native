@@ -1,82 +1,53 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
-import { connect } from "react-redux";
-import {
-  Button,
-  KeyboardType,
-  Screen,
-  TextInput
-} from "../../../../components";
-import { NavigationScreen, navigate } from "../../../../models";
-import { Theme } from "../../../../utils";
+import React, { memo, useState } from "react";
+import { Screen, TextInput, Button } from "../../../../components";
+import { useNav } from "../../../../hooks";
 
-interface DispatchProps {
-  navigate: typeof navigate;
-}
+export default memo(function DebugInput() {
+  const nav = useNav();
 
-type Props = DispatchProps;
-
-class Container extends React.PureComponent<Props> {
-  public state = {
+  const [form, setForm] = useState({
     email: "",
     error: "",
     name: "",
     password: ""
+  });
+
+  const handleChange = (key: string) => (val: string) => {
+    setForm(prev => ({ ...prev, [key]: val }));
   };
 
-  private styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      padding: Theme.padding.p04
-    }
-  });
-  public render() {
-    const { email, password, name, error } = this.state;
-    return (
-      <Screen onLeftPress={this.nav("debug")}>
-        <View style={this.styles.container}>
-          <TextInput
-            title="Name"
-            placeholder="jane doe"
-            optional
-            value={name}
-            onChangeText={this.updateState("name")}
-            error={error}
-          />
-          <TextInput
-            title="Email"
-            value={email}
-            onChangeText={this.updateState("email")}
-            keyboardType={KeyboardType.Email}
-            placeholder="example@gmail.com"
-            error={error}
-          />
-          <TextInput
-            value={password}
-            onChangeText={this.updateState("password")}
-            title="Password"
-            placeholder="•••••••"
-            secureTextEntry
-          />
-          <Button
-            contained
-            title="complete form"
-            onPress={() => this.setState({ error: "Invalid Email" })}
-          />
-        </View>
-      </Screen>
-    );
-  }
+  const handleSubmit = () => {
+    setForm(prev => ({ ...prev, error: "Invalid Email" }));
+  };
 
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
-
-  private updateState = (key: string) => (val: string) =>
-    this.setState({ [key]: val });
-}
-
-const mapDispatchToProps: DispatchProps = { navigate };
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(Container);
+  return (
+    <Screen onLeftPress={nav.to("debug")} title="Template" gutter>
+      <TextInput
+        title="Name"
+        placeholder="jane doe"
+        optional
+        value={form.name}
+        onChangeText={handleChange("name")}
+        error={form.error}
+      />
+      <TextInput
+        title="Email"
+        value={form.email}
+        onChangeText={handleChange("email")}
+        keyboardType="email-address"
+        textContentType="username"
+        placeholder="example@gmail.com"
+        error={form.error}
+      />
+      <TextInput
+        textContentType="password"
+        value={form.password}
+        onChangeText={handleChange("password")}
+        title="Password"
+        placeholder="•••••••"
+        secureTextEntry
+      />
+      <Button title="complete form" onPress={handleSubmit} />
+    </Screen>
+  );
+});
