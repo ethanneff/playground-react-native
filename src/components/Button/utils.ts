@@ -1,49 +1,51 @@
+import { ButtonEmphasis } from "./index";
+import { colorWithOpacity } from "../../utils";
 import { Color } from "./../../models/Theme";
 import { StyleSheet } from "react-native";
 import { Theme } from "./../../utils";
-import { ButtonProps } from ".";
 
-export const getButtonColor = (color: Color, props: ButtonProps) =>
-  props.primary
-    ? color.primary
-    : props.secondary
-    ? color.secondary
-    : props.success
-    ? color.success
-    : props.danger
-    ? color.danger
-    : props.warning
-    ? color.warning
-    : props.info
-    ? color.info
-    : props.light
-    ? color.light
-    : props.dark
-    ? color.dark
-    : color.text;
+export const getButtonColor = (colorScheme: Color, color: keyof Color) =>
+  colorScheme[color];
 
-export const getStyles = (
-  color: Color,
-  buttonColor: string,
-  textColor: string,
-  outlined?: boolean
-) =>
+interface StyleInterface {
+  colorScheme: Color;
+  color: string;
+  emphasis: ButtonEmphasis;
+  noPadding?: boolean;
+  disable?: boolean;
+}
+
+export const getStyles = ({
+  colorScheme,
+  color,
+  emphasis,
+  noPadding,
+  disable
+}: StyleInterface) =>
   StyleSheet.create({
     center: {
       alignSelf: "center"
     },
-    containedBody: {
-      backgroundColor: buttonColor
-    },
     container: {
       alignItems: "center",
-      backgroundColor: outlined ? color.background : "transparent",
-      borderColor: outlined ? color.dark : "transparent",
+      backgroundColor:
+        disable && emphasis === "high"
+          ? colorWithOpacity(color, 0.38)
+          : emphasis === "high"
+          ? color
+          : "transparent",
+      borderColor:
+        disable && emphasis === "medium"
+          ? colorWithOpacity(color, 0.38)
+          : emphasis === "medium"
+          ? colorScheme.dark
+          : "transparent",
       borderRadius: Theme.padding.p01,
       borderWidth: 1,
+      padding: noPadding ? Theme.padding.p00 : Theme.padding.p02,
       flexDirection: "row",
       justifyContent: "center",
-      paddingHorizontal: Theme.padding.p04
+      paddingHorizontal: noPadding ? Theme.padding.p00 : Theme.padding.p04
     },
     fab: {
       alignSelf: "flex-start",
@@ -52,12 +54,6 @@ export const getStyles = (
     },
     half: {
       width: "50%"
-    },
-    height: {
-      height: Theme.padding.p09
-    },
-    icon: {
-      paddingRight: 2
     },
     invisible: {
       opacity: 0
@@ -72,6 +68,10 @@ export const getStyles = (
       alignSelf: "flex-end"
     },
     text: {
-      color: textColor
+      color: disable
+        ? colorWithOpacity(color, 0.38)
+        : emphasis === "high"
+        ? colorScheme.background
+        : color
     }
   });

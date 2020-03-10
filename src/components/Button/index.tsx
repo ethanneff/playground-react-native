@@ -1,51 +1,40 @@
 import React, { memo } from "react";
-import { TextStyle, TouchableOpacity, ViewStyle } from "react-native";
-import { Theme, colorWithOpacity } from "../../utils";
-import { Icon } from "../Icon";
+import {
+  TextStyle,
+  TouchableOpacity,
+  ViewStyle,
+  StyleProp
+} from "react-native";
 import { Text } from "../Text";
 import { useColor, useDropShadow } from "../../hooks";
-import { getButtonColor, getStyles } from "./utils";
+import { getStyles } from "./utils";
+import { Color } from "../../models";
 
 /*
 styling: https://material.io/design/components/buttons.html#usage
 */
+
+export type ButtonEmphasis = "low" | "medium" | "high";
+
 export interface ButtonProps {
   /* content */
-  title?: string;
-  icon?: string;
+  title: string;
   /* styling */
-  buttonStyle?: ViewStyle | {};
-  textStyle?: TextStyle | {};
-  iconColor?: string;
-  iconSize?: number;
+  buttonStyle?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
+  dropShadow?: boolean;
+  elevation?: number;
+  activeOpacity?: number;
   /* state */
-  active?: boolean;
   hidden?: boolean;
   disable?: boolean;
-  activeOpacity?: number;
   invisible?: boolean;
-  elevation?: number;
-  /* shape */
-  text?: boolean /* low emphasis */;
-  outlined?: boolean /* mid emphasis */;
-  contained?: boolean /* high emphasis */;
-  fab?: boolean;
-  toggle?: boolean;
-  label?: boolean;
-  dropShadow?: boolean;
   /* color */
-  primary?: boolean;
-  secondary?: boolean;
-  success?: boolean;
-  danger?: boolean;
-  warning?: boolean;
-  info?: boolean;
-  light?: boolean;
-  dark?: boolean;
+  emphasis?: ButtonEmphasis;
+  color?: keyof Color;
   /* size */
-  wrap?: boolean;
-  half?: boolean;
-  full?: boolean;
+  noPadding?: boolean;
+  fab?: boolean;
   center?: boolean;
   right?: boolean;
   lowercase?: boolean;
@@ -59,76 +48,51 @@ export const Button: React.FC<ButtonProps> = memo(props => {
     activeOpacity,
     buttonStyle,
     center,
-    contained,
     disable,
+    noPadding,
     dropShadow,
     elevation = 2,
     fab,
-    half,
     hidden,
-    icon,
-    iconColor,
     invisible,
-    label,
+    emphasis = "low",
     lowercase,
-    light,
     onPress,
-    iconSize = Theme.padding.p04,
+    color = "text",
     onLongPress,
     right,
     textStyle,
-    title,
-    outlined,
-    text
+    title
   } = props;
-  const color = useColor();
+  const colorScheme = useColor();
   const dropShadowStyling = useDropShadow(elevation);
-  const buttonColor = getButtonColor(color, props);
-  const buttonColorWithOpacity = disable
-    ? colorWithOpacity(buttonColor, 0.38)
-    : buttonColor;
-  const textColor =
-    contained && !light ? color.background : light ? color.text : buttonColor;
-  const textColorWithOpacity = disable
-    ? colorWithOpacity(textColor, 0.38)
-    : textColor;
-  const styles = getStyles(
-    color,
-    buttonColorWithOpacity,
-    textColorWithOpacity,
-    outlined
-  );
-  const body = contained ? styles.containedBody : fab ? styles.fab : text;
+  const buttonColor = colorScheme[color || "text"];
+  const styles = getStyles({
+    colorScheme,
+    color: buttonColor,
+    emphasis,
+    disable,
+    noPadding
+  });
   const buttonStyleGroup = [
     styles.container,
-    body,
-    !fab && styles.height,
     fab && styles.fab,
-    half && styles.half,
     center && styles.center,
     right && styles.right,
-    label && styles.label,
     dropShadow && dropShadowStyling,
+    invisible && styles.invisible,
     buttonStyle
   ];
   const textStyleGroup = [styles.text, textStyle];
-  const iconStyleGroup = [title && styles.icon, !iconColor && textStyleGroup];
 
   return hidden ? null : 
     <TouchableOpacity
       activeOpacity={activeOpacity}
-      disabled={disable}
+      disabled={disable || invisible}
       onPress={onPress}
       style={buttonStyleGroup}
       onLongPress={onLongPress}
     >
-      <Icon
-        color={iconColor || textColor}
-        invisible={invisible}
-        name={icon}
-        size={iconSize}
-        style={iconStyleGroup}
-      />
       <Text center button={!lowercase} title={title} style={textStyleGroup} />
     </TouchableOpacity>
   ;
