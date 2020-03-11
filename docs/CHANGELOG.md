@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.21.0](https://github.com/ethanneff/example/compare/v2.20.0...v2.21.0) (2020-03-11)
+
+
+### Features
+
+* added context to prevent re-rendering of tracks ([12f33e0](https://github.com/ethanneff/example/commit/12f33e0cb904e050a7df8e6ad26d93fada5e2d04))
+
 # [2.20.0](https://github.com/ethanneff/example/compare/v2.19.2...v2.20.0) (2020-03-11)
 
 
