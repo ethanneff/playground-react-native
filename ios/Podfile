@@ -33,6 +33,7 @@ target 'core' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   pod 'RNRate', :path => '../node_modules/react-native-rate'
+  pod 'RNSensors', :path => '../node_modules/react-native-sensors'
 
   target 'coreTests' do
     inherit! :search_paths
