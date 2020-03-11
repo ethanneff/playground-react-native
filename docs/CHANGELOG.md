@@ -1,5 +1,55 @@
 # Changelog
 
+# [2.20.0](https://github.com/ethanneff/example/compare/v2.19.2...v2.20.0) (2020-03-11)
+
+
+### Bug Fixes
+
+* add border and titles to screens ([90ddda9](https://github.com/ethanneff/example/commit/90ddda9d2e84c6514435e0c11f9ca54bc59c49d9))
+* add rate me button ([5a4fdbf](https://github.com/ethanneff/example/commit/5a4fdbf0de8cc459961e7c60226a8fafd74de9ad))
+* add title ([1e231a7](https://github.com/ethanneff/example/commit/1e231a71d0a574da78e580eecc52ed062f053b13))
+* add title to card ([2080f42](https://github.com/ethanneff/example/commit/2080f426b2944588bd93da8c1433b4ca075be2bd))
+* add title to debug article ([166a774](https://github.com/ethanneff/example/commit/166a774ac2e6a1b642a5fe5ccfd4cbb57aa6b61f))
+* add title to debug ball ([3b83e93](https://github.com/ethanneff/example/commit/3b83e9327366ed1aea756391754edff03ad92ae1))
+* add titles to screens ([98efa87](https://github.com/ethanneff/example/commit/98efa872ef563f51eb0e10a21fa148f2715bdf7c))
+* change nav back arrow to chevron ([e03ab59](https://github.com/ethanneff/example/commit/e03ab59b752ec9d903ed3eaf7115103fc733dd49))
+* convert buttons to icons ([9cf59c7](https://github.com/ethanneff/example/commit/9cf59c79e0ad2592766cc2ea54faae0c46bcf712))
+* correct linting ([75a771c](https://github.com/ethanneff/example/commit/75a771c9cb95bd11bba839a09a300d641da3e6cf))
+* correct styleprop typings ([199f442](https://github.com/ethanneff/example/commit/199f442233d146ae952e7d6a8382b9c405771b19))
+* linting update ([3d3632e](https://github.com/ethanneff/example/commit/3d3632e5b687b15736281eea69aa5d7bb152fca9))
+* make icon have touchable event ([a6e8e57](https://github.com/ethanneff/example/commit/a6e8e57079b38bd90d6b2f432aa69d6d52ce2553))
+* overhaul debug drag to correct movement and boundaries ([c28f7db](https://github.com/ethanneff/example/commit/c28f7dbd347639b8a370ccb0eba813706f82bd27))
+* re-center chat avatar ([0b11fb6](https://github.com/ethanneff/example/commit/0b11fb60a77933641e58bd8c89c70058624f993b))
+* refactor button to have less props ([8f358af](https://github.com/ethanneff/example/commit/8f358af579df717f67e4f3ef9d54b8645d997bad))
+* refactor icon to have touchable fab ([1b8b625](https://github.com/ethanneff/example/commit/1b8b62539170f77861fb61bb9287f1499bb11fb4))
+* refactor textinput to not use buttons ([4bb6ff2](https://github.com/ethanneff/example/commit/4bb6ff29f1507655a5158d3592bb6c6488a3fae4))
+* remove broken experimental question ([fe1a8dc](https://github.com/ethanneff/example/commit/fe1a8dc0d0ff03bf426d22507f4ec956c0094249))
+* remove debug buttons ([519ab62](https://github.com/ethanneff/example/commit/519ab629c51a1b7c08c45a1ed91ff468ff01ba50))
+* remove fab test ([25b7b95](https://github.com/ethanneff/example/commit/25b7b958f95e2c9514eac0f1010c722c9dd6c8ae))
+* remove touchable prop ([e003db5](https://github.com/ethanneff/example/commit/e003db5cf7bcd338035b1ad2243d25ff3fd4c692))
+* remove unused color from article ([07d7682](https://github.com/ethanneff/example/commit/07d76822ea9a5a6f5a37c10c056f685f72540348))
+* remove unused view ([bd5429d](https://github.com/ethanneff/example/commit/bd5429d8c5a13a61583931db4099feae99cebc34))
+* removed unused styles on searchbar ([978b5f4](https://github.com/ethanneff/example/commit/978b5f4801d50a12d36753b642054b181f67f348))
+* trim text in chat ([7426392](https://github.com/ethanneff/example/commit/7426392d9a719a7a6f7b8c493f835489fc688064))
+* update debug fonts to functional ([b8d05d6](https://github.com/ethanneff/example/commit/b8d05d6aa5baa539227edf66b59d2782fa741d4e))
+* update deps ([1e4ba57](https://github.com/ethanneff/example/commit/1e4ba570fbe20c1642ed1bcc676c7bce2286c802))
+* update deps ([a1e08f3](https://github.com/ethanneff/example/commit/a1e08f3df8da400b1af25518a1d4bb27eb5e51db))
+* update icon config for web ([f837dc3](https://github.com/ethanneff/example/commit/f837dc3885b352cb1e715f6597d09fce6f42e74f))
+* update input debug to functional ([1f62198](https://github.com/ethanneff/example/commit/1f621982cc96c9be1571abdf036ef02adcef5637))
+* update linting ([18bcc91](https://github.com/ethanneff/example/commit/18bcc914f20d6842eaf3f4dc9a99ac8ea961358f))
+* update reminders ([79eb43c](https://github.com/ethanneff/example/commit/79eb43c6c9774a2fc6d363a42962388404891b8e))
+* update screens to new button api ([f36f23e](https://github.com/ethanneff/example/commit/f36f23e830d6c5569006439a8e3b67fd0e6248c0))
+* update snaps ([683e7c4](https://github.com/ethanneff/example/commit/683e7c4ab5dab7a4d12b5c4f59da598322a1435a))
+* use native drivers ([6935806](https://github.com/ethanneff/example/commit/6935806af11a29a51ee5f838db87e72a495f1765))
+* use union instead of enum for textinput props ([7cc5703](https://github.com/ethanneff/example/commit/7cc5703d867b709862ca866874687e8e9eabad74))
+
+
+### Features
+
+* add drifting accelerator ([f35b7ae](https://github.com/ethanneff/example/commit/f35b7aee3d8eb50daa17ffb8bf0df8d7915e66d4))
+* add tinder ([91b0f5d](https://github.com/ethanneff/example/commit/91b0f5dc837dfdba40c9d8d540b9963d6112c6f9))
+* limit one time reminders based on current time ([c3ff4ed](https://github.com/ethanneff/example/commit/c3ff4ed0dc8006e9c318d34fa3d77dfad606fbee))
+
 ## [2.19.2](https://github.com/ethanneff/example/compare/v2.19.1...v2.19.2) (2020-03-07)
 
 
