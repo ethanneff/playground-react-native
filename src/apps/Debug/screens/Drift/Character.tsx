@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef, useCallback } from "react";
+import React, { memo, useEffect, useRef, useCallback, useContext } from "react";
 import { Animated } from "react-native";
 import {
   accelerometer,
@@ -6,21 +6,17 @@ import {
   SensorTypes
 } from "react-native-sensors";
 import { getPosition } from "./utils";
-import { CanvasDimensions } from ".";
+import { DriftContext } from "./Context";
+import { CanvasDimensions } from "./Game";
 
-type TrackPosition = { x: number; y: number; size: number };
 type CharacterProps = {
   canvas: CanvasDimensions;
-  onTrack: (position: TrackPosition) => void;
 };
 
-export const Character = memo(function Character({
-  canvas,
-  onTrack
-}: CharacterProps) {
+export const Character = memo(function Character({ canvas }: CharacterProps) {
   const elevation = 5;
   const size = 30;
-  const speed = 5;
+  const speed = 6;
   const rate = 16;
   const shadowOpacity = elevation * 0.036 + 0.12;
   const shadowRadius = elevation * 0.36 + 1.2;
@@ -29,6 +25,7 @@ export const Character = memo(function Character({
     y: canvas.height / 2 - size
   });
   const position = new Animated.ValueXY(initialPositionRef.current);
+  const { dispatch } = useContext(DriftContext);
 
   const animate = useCallback(
     (dx: number, dy: number) => {
@@ -39,10 +36,10 @@ export const Character = memo(function Character({
         size
       });
       initialPositionRef.current = toValue;
-      onTrack({ ...toValue, size });
+      dispatch({ type: "addTrack", payload: { ...toValue, size } });
       Animated.spring(position, { toValue }).start();
     },
-    [onTrack, initialPositionRef, canvas, size, position]
+    [initialPositionRef, canvas, size, position, dispatch]
   );
 
   useEffect(() => {

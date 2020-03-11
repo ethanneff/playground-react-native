@@ -1,6 +1,7 @@
-import React, { memo, useCallback } from "react";
+import React, { memo, useCallback, useContext } from "react";
 import { View, TouchableOpacity } from "react-native";
 import { useDropShadow } from "../../../../hooks";
+import { DriftContext } from "./Context";
 
 export type ColorChoice =
   | "slateblue"
@@ -9,21 +10,19 @@ export type ColorChoice =
   | "violet"
   | "lightgrey";
 
-type DpadProps = {
-  onColor: (color: ColorChoice) => void;
-};
-
-export const Dpad = memo(function Dpad({ onColor }: DpadProps) {
+export const Dpad = memo(function Dpad() {
   const useShadow = useDropShadow(10);
+  const { dispatch } = useContext(DriftContext);
   const size = 50;
   const box = {
     width: size,
     height: size
   };
 
-  const onPress = useCallback((color: ColorChoice) => () => onColor(color), [
-    onColor
-  ]);
+  const onPress = useCallback(
+    (payload: ColorChoice) => () => dispatch({ type: "addColor", payload }),
+    [dispatch]
+  );
 
   return (
     <View

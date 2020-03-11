@@ -1,13 +1,11 @@
-import React, { memo } from "react";
+import React, { memo, useContext } from "react";
 import { View, StyleSheet } from "react-native";
 import { ColorChoice } from "./Dpad";
+import { DriftContext } from "./Context";
 
 export type TrackPosition = { x: number; y: number; size: number };
 export type TrackPositionWithColor = TrackPosition & { color: ColorChoice };
 
-interface TracksProps {
-  tracks: TrackPositionWithColor[];
-}
 interface TrackProps {
   track: TrackPositionWithColor;
 }
@@ -44,10 +42,11 @@ const Track = memo(function TrackMemo({ track }: TrackProps) {
   );
 });
 
-export const Tracks = memo(function TracksMemo({ tracks }: TracksProps) {
+export const Tracks = memo(function TracksMemo() {
+  const { state } = useContext(DriftContext);
   return (
     <View>
-      {tracks.map((track, index) => 
+      {state.tracks.map((track: TrackPositionWithColor, index: number) => 
         <Track key={`${track.x}${track.y}${index}`} track={track} />
       )}
     </View>
