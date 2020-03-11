@@ -5,7 +5,6 @@ import Radio from "./Radio";
 import { Dayjs } from "dayjs";
 import Location from "./Location";
 import Repeat from "./Repeat";
-import { View } from "react-native";
 
 type ReminderType = "one time" | "repeat" | "location";
 const reminderTypes: ReminderType[] = ["one time", "repeat", "location"];
