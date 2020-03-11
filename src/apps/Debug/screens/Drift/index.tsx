@@ -14,11 +14,11 @@ export default memo(function DebugDrift() {
   return (
     <Screen border title="Drift" onLeftPress={nav.to("debug")}>
       <DriftContext.Provider value={{ state, dispatch }}>
-        {isEmulator ? (
+        {isEmulator ? 
           <Text title="simulators not supported" center />
-        ) : (
+         : 
           <Game />
-        )}
+        }
       </DriftContext.Provider>
     </Screen>
   );
