@@ -9,13 +9,6 @@ it("renders correctly", () => {
   expect(dom).toMatchSnapshot();
 });
 
-it("renders fab", () => {
-  const dom = mockRenderer(
-    <Button fab title="hello" onPress={() => undefined} />
-  ).toJSON();
-  expect(dom).toMatchSnapshot();
-});
-
 it("renders disable", () => {
   const dom = mockRenderer(
     <Button center disable title="hello" onPress={() => undefined} />
