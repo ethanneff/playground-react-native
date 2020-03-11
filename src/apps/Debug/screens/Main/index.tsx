@@ -24,6 +24,7 @@ const debugScreens: NavigationScreen[] = [
   "debugSwipeFeed",
   "debugGameOfLife",
   "debugReminder",
+  "debugTinder",
   "debugDrift"
 ];
 

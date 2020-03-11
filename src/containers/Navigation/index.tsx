@@ -49,6 +49,7 @@ const DebugDrift = lazy(() => import("../../apps/Debug/screens/Drift"));
 const DebugFonts = lazy(() => import("../../apps/Debug/screens/Fonts"));
 const DebugSwipeFeed = lazy(() => import("../../apps/Debug/screens/SwipeFeed"));
 const DebugReminder = lazy(() => import("../../apps/Debug/screens/Reminder"));
+const DebugTinder = lazy(() => import("../../apps/Debug/screens/Tinder"));
 const DebugGameOfLife = lazy(() =>
   import("../../apps/Debug/screens/GameOfLife")
 );
@@ -102,6 +103,7 @@ export const screens = {
   debugSwipeFeed: <DebugSwipeFeed />,
   debugGameOfLife: <DebugGameOfLife />,
   debugReminder: <DebugReminder />,
+  debugTinder: <DebugTinder />,
   debugDrift: <DebugDrift />,
   checklists: <Checklists />,
   checklistsList: <ChecklistsList />,
