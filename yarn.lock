@@ -1857,10 +1857,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-plugin/-/eslint-plugin-1.0.0.tgz#ae9a430f2c5795debca491f15a989fce86ea75a0"
   integrity sha512-GLhSN8dRt4lpixPQh+8prSCy6PYk/MT/mvji/ojAd5yshowDo6HFsimCSTD/uWAdjpUq91XK9tVdTNWfGRlKQA==
 
-"@react-native-community/netinfo@5.6.1":
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-5.6.1.tgz#3f7affd395996eb98a155134f15cc117ffab8112"
-  integrity sha512-TzMwZVSDDH6iuAhYgNOlQKXCauqVoC0jviCxVuIKtNXUQ8ReDxa5e/9yrLf+FVgOVlFv7DC+7+dQPlSnKDDAzQ==
+"@react-native-community/netinfo@5.6.2":
+  version "5.6.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-5.6.2.tgz#a054db83a1787711f9f69029e2c9b80735ac3f75"
+  integrity sha512-IkzS78nOiPNM/MboBqqbk2eMBrflp8VML/p33pd50KZq+PvBq8Oywt1JKOgdaMxUIbGjP73zVz+f6r2f80u2Eg==
 
 "@react-native-community/slider@2.0.8":
   version "2.0.8"
@@ -12951,10 +12951,10 @@ react-native-rate@1.1.10:
   resolved "https://registry.yarnpkg.com/react-native-rate/-/react-native-rate-1.1.10.tgz#278098fad536fba71fdedb6aab71278aa0946ced"
   integrity sha512-07L5923RpL+AdnsZCQSkiMbRi/7N/OJtZ6AWAl5bZyhncDD7L1ap94H3jtV7uFW5WGBNxMnGiC4fPLzn426mMw==
 
-react-native-sensors@5.4.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/react-native-sensors/-/react-native-sensors-5.4.0.tgz#dada6d656bad5f8dd5a611691f0cbbd6d808311c"
-  integrity sha512-nzszjgWOD+UMKE3aH5DBsOuEMm8HAV/VdAD1ABYDFfnGm/FbohvSTda5v1AQND09SiV5zsv3w0FtJ/iIUiSdRQ==
+react-native-sensors@5.4.1:
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-sensors/-/react-native-sensors-5.4.1.tgz#79e7ee6a30cdafcfe91b962dea2dcc9f8ca66297"
+  integrity sha512-2TG8nvRamYr+5IY7JDcaL2UNoKCjcZ8riGUl+n8trTBb7ZkYagnvqPEVYNgR1o/S15JXCjMRiOSedinxVYI9cw==
   dependencies:
     rxjs ">= 6"
 
