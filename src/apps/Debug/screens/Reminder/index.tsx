@@ -6,6 +6,7 @@ import Reminders from "./Reminders";
 import CreateReminderModal from "./CreateReminderModal";
 import "react-native-get-random-values";
 import { v4 } from "uuid";
+import { RateApp } from "../../../../features";
 
 type ReminderType = "one time" | "repeat" | "location";
 export type Reminder = {
@@ -108,13 +109,17 @@ export default memo(function DebugReminder() {
     }));
   }, []);
 
+  const [showRate, setShowRate] = useState(false);
+
   return (
     <>
       <Screen onLeftPress={nav.to("debug")} title="Reminder">
         <Button title="create reminder" onPress={handleCreateReminder} />
-        <Text h2 title="Reminders" center />
+        <Text h2 title="reminders" center />
         <Reminders reminders={form.reminders} />
+        <Button title="press me" onPress={() => setShowRate(true)} />
       </Screen>
+      {showRate && <RateApp onComplete={() => setShowRate(false)} />}
       {form.modals.createReminder && 
         <CreateReminderModal
           onBackgroundPress={handleCreateReminderClose}
