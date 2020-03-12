@@ -22,10 +22,10 @@ export default memo(function ActivityTracker() {
   });
 
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")} title="Activity">
+    <Screen onLeftPress={nav.to("portfolioLanding")} title="Activity" border>
       <ScrollView
-        style={{
-          backgroundColor: color.surface,
+        style={{ backgroundColor: color.surface }}
+        contentContainerStyle={{
           paddingHorizontal: Theme.padding.p04,
           paddingVertical: Theme.padding.p02
         }}

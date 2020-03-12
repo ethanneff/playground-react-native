@@ -99,7 +99,7 @@ export const Content: React.FC<Props> = memo(({ body }) => {
   ;
 
   return (
-    <ScrollView style={styles.content}>
+    <ScrollView contentContainerStyle={styles.content}>
       {body.sections.map(renderSection)}
     </ScrollView>
   );

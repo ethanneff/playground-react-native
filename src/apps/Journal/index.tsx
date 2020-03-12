@@ -16,8 +16,8 @@ export default memo(function Journal() {
   return (
     <Screen onLeftPress={nav.to("portfolioLanding")} title="Journal">
       <ScrollView
-        style={{
-          backgroundColor: color.surface,
+        style={{ backgroundColor: color.surface }}
+        contentContainerStyle={{
           paddingHorizontal: Theme.padding.p04,
           paddingVertical: Theme.padding.p02
         }}

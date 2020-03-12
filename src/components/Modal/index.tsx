@@ -72,7 +72,7 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
           <View style={styles.modalContent}>{children}</View>
          : 
           <ScrollView
-            style={styles.modalContent}
+            contentContainerStyle={styles.modalContent}
             keyboardShouldPersistTaps="handled"
           >
             {children}
