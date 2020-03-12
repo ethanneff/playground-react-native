@@ -28,8 +28,8 @@ export const NavBar: React.FC<Props> = memo(function NavBar({
       alignItems: "center",
       flexDirection: "row",
       justifyContent: "space-between",
-      borderBottomColor: color.secondary,
-      borderBottomWidth: border ? 1 : 0,
+      borderBottomColor: border ? color.secondary : color.background,
+      borderBottomWidth: 1,
       height: Theme.padding.p18
     }
   });
