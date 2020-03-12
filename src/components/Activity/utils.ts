@@ -28,9 +28,8 @@ export const getSubmissionFormat = (count: number, date: Dayjs): string => {
 export const getActivitySquares = (active: ApiResponse): ActivitySquares => {
   let max = 0;
   let start = dayjs()
-    .startOf("week")
     .subtract(1, "year")
-    .add(1, "day");
+    .startOf("week");
   let startUnix = start.valueOf();
   const endUnix = dayjs()
     .add(1, "day")
