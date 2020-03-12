@@ -1,8 +1,7 @@
 import dayjs, { Dayjs } from "dayjs";
 import React, { memo } from "react";
-import { View, TouchableOpacity } from "react-native";
-import { Icon, Text } from "../../../../components";
-import { Theme } from "../../../../utils";
+import { View } from "react-native";
+import { Item } from "./Item";
 
 const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const generateButtons = () => {
@@ -24,10 +23,9 @@ const generateButtons = () => {
     .add(1, "week")
     .set("hour", 6)
     .set("minute", 0)
-    .set("day", 0);
+    .set("day", 1);
 
   const nextMonth = dayjs()
-    .startOf("month")
     .add(2, "month")
     .set("hour", 6)
     .set("minute", 0);
@@ -80,28 +78,20 @@ export default memo(function OneTime({ onPress }: Props) {
   const buttons = generateButtons();
   return (
     <View>
-      {buttons.map(button => {
-        return button.visible &&
-          dayjs().valueOf() > button.visible.valueOf() ? 
-          <View key={button.title}></View>
-         : 
-          <TouchableOpacity
+      {buttons.map((button, index) => {
+        const hidden =
+          button.visible && dayjs().valueOf() > button.visible.valueOf();
+        return (
+          <Item
+            icon="alarm"
+            hidden={hidden}
+            marginBottom={index !== buttons.length - 1}
             key={button.title}
-            style={{
-              alignSelf: "center",
-              flexDirection: "row",
-              justifyContent: "space-between"
-            }}
+            title={button.title}
+            description={button.description}
             onPress={onPress(button.value)}
-          >
-            <Icon name="alarm" size={Theme.padding.p04} />
-            <Text
-              title={button.title}
-              style={{ paddingLeft: Theme.padding.p02, flex: 1 }}
-            />
-            <Text title={button.description} />
-          </TouchableOpacity>
-        ;
+          />
+        );
       })}
     </View>
   );
