@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.21.2](https://github.com/ethanneff/example/compare/v2.21.1...v2.21.2) (2020-03-14)
+
+
+### Bug Fixes
+
+* keep 1 border but change the color for the navbar ([a5e55a0](https://github.com/ethanneff/example/commit/a5e55a0daf0cb2e77e581eae6ba41697b2252002))
+* refactor reminders to use common button ([be1cb86](https://github.com/ethanneff/example/commit/be1cb8683ac316465461575fc461a8ccc6b3cfb4))
+* remove the hanging date at the beginning of activity ([a8d3e36](https://github.com/ethanneff/example/commit/a8d3e368369cfcccef15cffec7ef723b5dd5ec7c))
+* update deps ([fd6b56a](https://github.com/ethanneff/example/commit/fd6b56ae7a23d248925bc8f83ea7364122ccab74))
+* update deps ([cde30cb](https://github.com/ethanneff/example/commit/cde30cb56a9b585f81032c7cb044ca7d6d6a14db))
+* use scrollview content styles for padding ([9657561](https://github.com/ethanneff/example/commit/9657561a165d1a7335b2fe86232b33ea8c47d35c))
+
 ## [2.21.1](https://github.com/ethanneff/example/compare/v2.21.0...v2.21.1) (2020-03-11)
 
 
