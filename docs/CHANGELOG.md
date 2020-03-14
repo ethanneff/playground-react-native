@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.21.3](https://github.com/ethanneff/example/compare/v2.21.2...v2.21.3) (2020-03-14)
+
+
+### Bug Fixes
+
+* update snaps ([b72cd54](https://github.com/ethanneff/example/commit/b72cd54ab32fec005c43c7eb0cd732ec2c495bc6))
+
 ## [2.21.2](https://github.com/ethanneff/example/compare/v2.21.1...v2.21.2) (2020-03-14)
 
 
