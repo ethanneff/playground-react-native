@@ -14,8 +14,8 @@ exports[`renders correctly 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "borderBottomColor": "hsl(208, 7%, 46%)",
-        "borderBottomWidth": 0,
+        "borderBottomColor": "hsl(0, 0%, 100%)",
+        "borderBottomWidth": 1,
         "flexDirection": "row",
         "height": 72,
         "justifyContent": "space-between",
