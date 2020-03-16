@@ -1,5 +1,3 @@
-import { Dayjs } from "dayjs";
-
 export type Day = {
   id: string;
   display: string;
@@ -9,47 +7,78 @@ export type Day = {
 
 export type CalendarMatrix = Day[][];
 
-const getDay = (
-  id: string,
-  display: number | string,
+export const addMonths = (date: Date, months: number) => {
+  const result = new Date(date);
+  const dayOfMonth = date.getDate();
+  result.setMonth(result.getMonth() + months);
+  if (result.getDate() !== dayOfMonth) {
+    result.setDate(0);
+  }
+  return result;
+};
+
+export function addDays(date: Date, days: number) {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
+
+const firstDayOfMonth = (date: Date) => {
+  return new Date(date.getFullYear(), date.getMonth(), 1);
+};
+
+const lastDayOfMonth = (date: Date) => {
+  return new Date(date.getFullYear(), date.getMonth() + 1, 0);
+};
+
+const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const createDayObj = (
+  id: string | number,
+  display: string | number,
   current = false,
   header = false
-): Day => ({ id, display: String(display), current, header });
+): Day => ({ id: String(id), display: String(display), current, header });
 
-const getUnix = (today: Dayjs, month: number, day: number) =>
-  String(
-    today
-      .add(month, "month")
-      .date(day)
-      .format("MM DD YYYY")
-      .valueOf()
-  );
-
-export const getCalendarMatrix = (date: Dayjs): CalendarMatrix => {
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const firstDay = Number(date.startOf("month").format("d"));
-  const maxDays = Number(date.endOf("month").format("D"));
-  const prevMaxDays = Number(
-    date
-      .subtract(1, "month")
-      .endOf("month")
-      .format("D")
-  );
+const generateCalendarMatrix = (date: Date) => {
+  const firstDay = firstDayOfMonth(date).getDay();
+  const maxDays = lastDayOfMonth(date).getDate();
+  const prevMaxDays = lastDayOfMonth(addMonths(date, -1)).getDate();
   let dayCounter = 1;
   let prevDayCounter = prevMaxDays - firstDay + 1;
   let nextDayCounter = 1;
   const calendarMatrix: CalendarMatrix = [];
-  calendarMatrix.push(days.map(day => getDay(day, day, false, true)));
+  calendarMatrix.push(days.map(day => createDayObj(day, day, false, true)));
   for (let row = 1; row < 7; row++) {
     calendarMatrix[row] = [];
     for (let col = 0; col < 7; col++) {
       calendarMatrix[row][col] =
         row === 1 && col < firstDay
-          ? getDay(getUnix(date, -1, prevDayCounter), prevDayCounter++)
+          ? createDayObj(
+              addDays(addMonths(date, -1), prevDayCounter).valueOf(),
+              prevDayCounter++
+            )
           : row > 1 && dayCounter > maxDays
-          ? getDay(getUnix(date, 1, nextDayCounter), nextDayCounter++)
-          : getDay(getUnix(date, 0, dayCounter), dayCounter++, true);
+          ? createDayObj(
+              addDays(addMonths(date, 1), nextDayCounter).valueOf(),
+              nextDayCounter++
+            )
+          : createDayObj(
+              addDays(addMonths(date, 0), dayCounter).valueOf(),
+              dayCounter++,
+              true
+            );
     }
   }
   return calendarMatrix;
+};
+
+const calendarMatrixMemo: { [key in string]: CalendarMatrix } = {};
+export const getCalendarMatrix = (date: Date): CalendarMatrix => {
+  const memo = calendarMatrixMemo[date.valueOf()];
+  if (memo) {
+    return memo;
+  }
+  const matrix = generateCalendarMatrix(date);
+  calendarMatrixMemo[date.valueOf()] = matrix;
+  return matrix;
 };

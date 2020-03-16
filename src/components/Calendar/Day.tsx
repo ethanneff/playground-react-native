@@ -8,7 +8,7 @@ import dayjs from "dayjs";
 
 interface Props {
   day: Day;
-  onSelected(id: string): () => void;
+  onSelected: () => void;
   selectedDay: string | undefined;
   hiddenDays?: boolean;
 }
@@ -39,7 +39,7 @@ export const CalendarDay = memo(function CalendarDay({
   return (
     <TouchableOpacity
       key={day.id}
-      onPress={onSelected(day.id)}
+      onPress={onSelected}
       disabled={disabled}
       style={{
         flex: 1,
