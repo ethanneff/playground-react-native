@@ -1,22 +1,19 @@
 import { FlatList, View, ActivityIndicator } from "react-native";
 import React, { memo, useEffect, useState, useCallback } from "react";
-import { Theme } from "../../utils";
+import { Theme, colorWithOpacity } from "../../utils";
 import {
   getActivitySquares,
+  updateActivitySquares,
   getApiActivity,
   getSubmissionFormat,
   getDateFormat
 } from "./utils";
-import { ActivityWeekRow } from "./Week";
+import { Week, ActivityWeek } from "./Week";
 import { Text } from "../Text";
-import {
-  ActivityModel,
-  Site,
-  ActivityDay,
-  ActivityDayInWeek
-} from "./interfaces";
-import dayjs from "dayjs";
+
 import { Button } from "../Button";
+import { ActivityDay } from "./Day";
+import { useColor } from "../../hooks";
 
 interface Props {
   username: string;
@@ -25,19 +22,30 @@ interface Props {
   margin?: number;
 }
 
-const initialActivity: ActivityModel = {
+export type Site = "github" | "leetCode" | "hackerRank" | "gitlab" | "random";
+
+export type ActivityMatrix = Array<ActivityWeek>;
+
+type ActivityModel = {
   activity: {
-    matrix: [],
-    max: 0
-  },
-  request: "loading",
+    matrix: ActivityMatrix;
+    max: number;
+  };
+  request: "loading" | "failure" | "success";
   selected: {
-    submissions: undefined,
-    day: undefined
-  }
+    submissions: string;
+    day: number;
+  };
 };
 
-// TODO: simplify the problem... have 2 cells.. try to render only 1 even both cells reference the same board
+const initialActivity: ActivityModel = {
+  activity: getActivitySquares(),
+  request: "loading",
+  selected: {
+    submissions: " ",
+    day: 0
+  }
+};
 
 export const Activity = memo(function Activity({
   size = Theme.padding.p06,
@@ -45,28 +53,24 @@ export const Activity = memo(function Activity({
   username,
   site
 }: Props) {
+  const color = useColor();
   const [state, setState] = useState<ActivityModel>(initialActivity);
 
-  // TODO: need to persist
-  // TODO: need selection color
   const getActivity = useCallback(async () => {
     try {
-      const active = await getApiActivity({ username, site });
-      const { matrix, max } = getActivitySquares(active);
-      const today = dayjs();
-      const todayFormat = getDateFormat(dayjs());
-      const count = active[todayFormat] || 0;
-      setState({
-        activity: {
-          matrix,
-          max
-        },
+      const today = Date.now();
+      const api = await getApiActivity({ username, site });
+      const todayFormat = getDateFormat(today);
+      const count = api[todayFormat] || 0;
+      setState(prev => ({
+        ...prev,
+        activity: updateActivitySquares(prev.activity, api),
         request: "success",
         selected: {
           submissions: getSubmissionFormat(count, today),
-          day: todayFormat
+          day: 0
         }
-      });
+      }));
     } catch (error) {
       setState({
         ...initialActivity,
@@ -85,7 +89,7 @@ export const Activity = memo(function Activity({
         ...data,
         selected: {
           submissions: getSubmissionFormat(item.count, item.date),
-          day: getDateFormat(item.date)
+          day: item.date
         }
       }));
     },
@@ -95,8 +99,8 @@ export const Activity = memo(function Activity({
   const onRetryPress = useCallback(() => getActivity(), [getActivity]);
 
   const renderItem = useCallback(
-    ({ item, index }: { item: ActivityDayInWeek; index: number }) => 
-      <ActivityWeekRow
+    ({ item, index }: { item: ActivityWeek; index: number }) => 
+      <Week
         max={state.activity.max}
         item={item}
         index={index}
@@ -108,19 +112,29 @@ export const Activity = memo(function Activity({
     [state.activity.max, margin, onItemPress, size]
   );
 
-  const keyExtractor = useCallback(item => getDateFormat(item[0].date), []);
+  const keyExtractor = useCallback(item => String(item[0].date), []);
 
-  return state.request === "loading" ? 
-    <ActivityIndicator />
-   : state.request === "failure" ? 
+  return state.request === "failure" ? 
     <View>
       <Text title="Missing network connection" />
       <Button title="Retry" color="danger" onPress={onRetryPress} />
     </View>
    : 
-    <>
+    <View>
+      {state.request === "loading" && 
+        <ActivityIndicator
+          size="large"
+          style={{
+            backgroundColor: colorWithOpacity(color.background, 0.2),
+            position: "absolute",
+            height: "100%",
+            width: "100%",
+            zIndex: 1
+          }}
+        />
+      }
       <FlatList
-        initialNumToRender={60}
+        initialNumToRender={0}
         showsHorizontalScrollIndicator={false}
         data={state.activity.matrix}
         inverted
@@ -136,6 +150,6 @@ export const Activity = memo(function Activity({
         center
         style={{ paddingTop: Theme.padding.p03 }}
       />
-    </>
+    </View>
   ;
 });
