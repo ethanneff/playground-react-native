@@ -50,6 +50,19 @@ export const getActivitySquares = (active: ApiResponse): ActivitySquares => {
   }
 
   return { matrix: activity.reverse(), max };
+export const updateActivitySquares = (
+  squares: ActivitySquares,
+  active: ApiResponse
+): ActivitySquares => {
+  let max = 0;
+  const matrix = squares.matrix.map(week =>
+    week.map(day => {
+      const count = active[getDateFormat(day.date)] || 0;
+      max = Math.max(count, max);
+      return { ...day, count };
+    })
+  );
+  return { matrix, max };
 };
 
 const getGithubActivity = async (username: string): ApiPromise => {
