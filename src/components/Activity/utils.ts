@@ -1,6 +1,11 @@
-import dayjs, { Dayjs } from "dayjs";
-import { ActivityMatrix, Site } from "./interfaces";
+import { ActivityMatrix, Site } from "./index";
 import axios from "axios";
+import format from "date-fns/format";
+import isToday from "date-fns/isToday";
+import endOfWeek from "date-fns/endOfWeek";
+import startOfWeek from "date-fns/startOfWeek";
+import sub from "date-fns/sub";
+import { colorWithOpacity } from "../../utils";
 
 type ApiResponse = { [unix: string]: number };
 
@@ -16,12 +21,11 @@ type ActivitySquares = {
   max: number;
 };
 
-export const getDateFormat = (date: Dayjs) => date.format("YYYY-MM-DD");
+export const getDateFormat = (date: number) => format(date, "yyyy-MM-dd");
 
-export const getSubmissionFormat = (count: number, date: Dayjs): string => {
+export const getSubmissionFormat = (count: number, date: number): string => {
   const submissions = count === 1 ? "submission" : "submissions";
-  const today = date.isSame(dayjs(), "day");
-  const day = today ? "today" : `on ${date.format("MMM DD, YYYY")}`;
+  const day = isToday(date) ? "today" : `on ${format(date, "MMM dd, yyyy")}`;
   return `${count} ${submissions} ${day}`;
 };
 
@@ -75,7 +79,7 @@ const getLeetCodeActivity = async (username: string): ApiPromise => {
   const res = await axios.get(url);
   const data = JSON.parse(res.data);
   return Object.keys(data).reduce((total: ApiResponse, item) => {
-    const day = getDateFormat(dayjs(Number(item) * 1000));
+    const day = getDateFormat(Number(item) * 1000);
     if (day in total) {
       total[day] += data[item];
     } else {
