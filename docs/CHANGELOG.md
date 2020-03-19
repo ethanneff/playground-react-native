@@ -1,5 +1,24 @@
 # Changelog
 
+# [2.22.0](https://github.com/ethanneff/example/compare/v2.21.3...v2.22.0) (2020-03-19)
+
+
+### Bug Fixes
+
+* move interface to index ([7230d45](https://github.com/ethanneff/example/commit/7230d458b1450549a4958e270d2e00696a58db06))
+* remove dayjs for date fn ([dfad1ee](https://github.com/ethanneff/example/commit/dfad1eefc75d2539640f95402458da5da895d186))
+* remove import ([329ffb1](https://github.com/ethanneff/example/commit/329ffb159c5e3610557c83b382c9aa8525d6438e))
+* rename week and day ([0f66a50](https://github.com/ethanneff/example/commit/0f66a503fbe7baa4c4c1792c67c958022578c784))
+* speed up board generation with math instead of date ([ab0023c](https://github.com/ethanneff/example/commit/ab0023c044bcf9f1e0d4a6c9f59431a2efaba33b))
+* speed up TTFB by loading board first then api ([49326e0](https://github.com/ethanneff/example/commit/49326e0c7336e11e5f5dedfeaf20c10e08a922c2))
+* update api colors after board has been generated ([82ea4e4](https://github.com/ethanneff/example/commit/82ea4e44e8159150dd0739b2a2ae1a507c1c459e))
+* update deps ([6facade](https://github.com/ethanneff/example/commit/6facade0e1797501e8ab559259f4c4617d0052d0))
+
+
+### Features
+
+* speed up calendar by removing dayjs ([f60d70f](https://github.com/ethanneff/example/commit/f60d70fdec8ee266e242e70ab4e5c339ca65e229))
+
 ## [2.21.3](https://github.com/ethanneff/example/compare/v2.21.2...v2.21.3) (2020-03-14)
 
 
