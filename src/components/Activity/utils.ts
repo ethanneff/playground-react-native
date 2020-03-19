@@ -25,31 +25,30 @@ export const getSubmissionFormat = (count: number, date: Dayjs): string => {
   return `${count} ${submissions} ${day}`;
 };
 
-export const getActivitySquares = (active: ApiResponse): ActivitySquares => {
-  let max = 0;
-  let start = dayjs()
-    .subtract(1, "year")
-    .startOf("week");
-  let startUnix = start.valueOf();
-  const endUnix = dayjs()
-    .add(1, "day")
-    .endOf("week")
-    .valueOf();
-  const activity = [];
+export const getActivitySquares = (): ActivitySquares => {
+  const today = Date.now();
+  const matrix = [];
+  const oneDay = 60 * 60 * 24 * 1000;
+  const begin = startOfWeek(sub(today, { years: 1 })).valueOf();
+  let end = endOfWeek(today).valueOf();
+  let day = 0;
+  const max = 0;
   let week = [];
-  while (startUnix < endUnix) {
-    const count = active[getDateFormat(start)] || 0;
-    max = count > max ? count : max;
-    week.push({ date: start, count });
-    if (start.isSame(start.endOf("week"), "day")) {
-      activity.push(week);
+  while (end >= begin) {
+    week.unshift({ date: end, count: 0 });
+    if (day > 5) {
+      matrix.push(week);
       week = [];
+      day = 0;
+    } else {
+      day++;
     }
-    start = start.add(1, "day");
-    startUnix = start.valueOf();
+    end -= oneDay;
   }
 
-  return { matrix: activity.reverse(), max };
+  return { matrix, max };
+};
+
 export const updateActivitySquares = (
   squares: ActivitySquares,
   active: ApiResponse
