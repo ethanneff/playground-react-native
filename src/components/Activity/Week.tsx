@@ -2,11 +2,13 @@ import React, { memo } from "react";
 import { View } from "react-native";
 import { Text } from "../Text";
 import { Theme } from "../../utils";
-import { ActivityDayCell } from "./Day";
-import { ActivityDayInWeek, ActivityDay } from "./interfaces";
+import { Day, ActivityDay } from "./Day";
+import format from "date-fns/format";
+
+export type ActivityWeek = Array<ActivityDay>;
 
 interface Props {
-  item: ActivityDayInWeek;
+  item: ActivityWeek;
   max: number;
   index: number;
   size: number;
@@ -14,7 +16,7 @@ interface Props {
   onPress: (item: ActivityDay) => () => void;
 }
 
-export const ActivityWeekRow = memo(function ActivityWeekRow({
+export const Week = memo(function Week({
   item,
   max,
   index,
@@ -23,8 +25,9 @@ export const ActivityWeekRow = memo(function ActivityWeekRow({
   onPress
 }: Props) {
   const first = item[0].date;
-  const showHeader = Number(first.format("DD")) <= 7;
-  const header = showHeader ? first.format("MMM") : " ";
+  const showHeader = Number(format(first, "dd")) <= 7;
+  const header = showHeader ? format(first, "MMM") : " ";
+
   return (
     <View key={index}>
       <Text
@@ -35,8 +38,8 @@ export const ActivityWeekRow = memo(function ActivityWeekRow({
         style={{ paddingBottom: Theme.padding.p03 }}
       />
       {item.map(day => 
-        <ActivityDayCell
-          key={day.date.format("YYYY-MM-DD")}
+        <Day
+          key={String(day.date)}
           day={day}
           max={max}
           size={size}
