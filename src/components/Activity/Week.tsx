@@ -1,9 +1,9 @@
-import React, { memo } from "react";
-import { View } from "react-native";
-import { Text } from "../Text";
-import { Theme } from "../../utils";
-import { Day, ActivityDay } from "./Day";
-import format from "date-fns/format";
+import React, { memo } from 'react';
+import { View } from 'react-native';
+import { Text } from '../Text';
+import { Theme } from '../../utils';
+import { Day, ActivityDay } from './Day';
+import format from 'date-fns/format';
 
 export type ActivityWeek = Array<ActivityDay>;
 
@@ -22,11 +22,11 @@ export const Week = memo(function Week({
   index,
   size,
   margin,
-  onPress
+  onPress,
 }: Props) {
   const first = item[0].date;
-  const showHeader = Number(format(first, "dd")) <= 7;
-  const header = showHeader ? format(first, "MMM") : " ";
+  const showHeader = Number(format(first, 'dd')) <= 7;
+  const header = showHeader ? format(first, 'MMM') : ' ';
 
   return (
     <View key={index}>
@@ -37,7 +37,7 @@ export const Week = memo(function Week({
         overline
         style={{ paddingBottom: Theme.padding.p03 }}
       />
-      {item.map(day => 
+      {item.map((day) => (
         <Day
           key={String(day.date)}
           day={day}
@@ -46,7 +46,7 @@ export const Week = memo(function Week({
           margin={margin}
           onPress={onPress}
         />
-      )}
+      ))}
     </View>
   );
 });

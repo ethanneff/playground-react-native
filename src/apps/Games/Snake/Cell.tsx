@@ -1,8 +1,8 @@
-import React, { memo } from "react";
-import { useColor } from "../../../hooks";
-import { useRootSelector } from "../../../utils";
-import { View } from "react-native";
-import { getSmallestDimension } from "../../../models";
+import React, { memo } from 'react';
+import { useColor } from '../../../hooks';
+import { useRootSelector } from '../../../utils';
+import { View } from 'react-native';
+import { getSmallestDimension } from '../../../models';
 
 interface CellProps {
   value: number;
@@ -20,7 +20,7 @@ export const Cell = memo(function Cell({ value, length }: CellProps) {
         flex: 1,
         width,
         height: width,
-        backgroundColor
+        backgroundColor,
       }}
     />
   );

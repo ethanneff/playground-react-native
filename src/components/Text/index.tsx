@@ -1,14 +1,14 @@
-import React, { memo } from "react";
-import { Animated, StyleSheet, TextStyle, StyleProp } from "react-native";
-import { Theme, colorWithOpacity } from "../../utils";
-import { useNativeDriver, useColor } from "../../hooks";
-import { getTextColorPercent, getFontSize } from "./utils";
+import React, { memo } from 'react';
+import { Animated, StyleSheet, TextStyle, StyleProp } from 'react-native';
+import { Theme, colorWithOpacity } from '../../utils';
+import { useNativeDriver, useColor } from '../../hooks';
+import { getTextColorPercent, getFontSize } from './utils';
 
 export enum EllipsizeMode {
-  Head = "head",
-  Middle = "middle",
-  Tail = "tail",
-  Clip = "clip"
+  Head = 'head',
+  Middle = 'middle',
+  Tail = 'tail',
+  Clip = 'clip',
 }
 
 export interface TextProps {
@@ -62,7 +62,7 @@ export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
     invisible,
     style,
     adjustsFontSizeToFit,
-    numberOfLines
+    numberOfLines,
   } = props;
   const opacity = new Animated.Value(1);
   const color = useColor();
@@ -71,24 +71,24 @@ export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
   const fontSize = getFontSize(props);
   const textColor = props.inverse ? color.background : color.text;
   const textColorWithOpacity = colorWithOpacity(textColor, textColorPercent);
-  const text = button || overline ? (title || "").toUpperCase() : title;
+  const text = button || overline ? (title || '').toUpperCase() : title;
   const styles = StyleSheet.create({
     bold: {
-      fontWeight: Theme.fontWeight.medium
+      fontWeight: Theme.fontWeight.medium,
     },
     center: {
-      textAlign: "center"
+      textAlign: 'center',
     },
     centerVertically: {
       flex: 1,
-      textAlignVertical: "center"
+      textAlignVertical: 'center',
     },
     invisible: {
-      opacity: 0
+      opacity: 0,
     },
     color: {
-      color: textColorWithOpacity
-    }
+      color: textColorWithOpacity,
+    },
   });
 
   const handlePress = () => {
@@ -100,13 +100,13 @@ export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
       Animated.timing(opacity, {
         duration: 50,
         toValue: 0.2,
-        useNativeDriver: nativeDriver
+        useNativeDriver: nativeDriver,
       }),
       Animated.timing(opacity, {
         duration: 350,
         toValue: 1,
-        useNativeDriver: nativeDriver
-      })
+        useNativeDriver: nativeDriver,
+      }),
     ]).start();
   };
 
@@ -118,10 +118,10 @@ export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
     bold && styles.bold,
     { opacity },
     invisible && styles.invisible,
-    style
+    style,
   ];
 
-  return title === undefined || hidden ? null : 
+  return title === undefined || hidden ? null : (
     <Animated.Text
       adjustsFontSizeToFit={adjustsFontSizeToFit}
       ellipsizeMode={ellipsizeMode}
@@ -131,5 +131,5 @@ export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
     >
       {text}
     </Animated.Text>
-  ;
+  );
 });

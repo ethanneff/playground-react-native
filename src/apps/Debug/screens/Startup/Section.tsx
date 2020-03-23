@@ -1,8 +1,8 @@
-import React, { memo } from "react";
-import { View } from "react-native";
-import { useColor } from "../../../../hooks";
-import { Text } from "../../../../components";
-import { Theme } from "../../../../utils";
+import React, { memo } from 'react';
+import { View } from 'react-native';
+import { useColor } from '../../../../hooks';
+import { Text } from '../../../../components';
+import { Theme } from '../../../../utils';
 
 type SectionProps = {
   row?: boolean;
@@ -12,14 +12,14 @@ type SectionProps = {
 export const Section: React.FC<SectionProps> = memo(function Section({
   title,
   row,
-  children
+  children,
 }) {
   const color = useColor();
   return (
     <View
       style={{
-        flexDirection: row ? "row" : "column",
-        marginBottom: Theme.padding.p04
+        flexDirection: row ? 'row' : 'column',
+        marginBottom: Theme.padding.p04,
       }}
     >
       <Text
@@ -30,7 +30,7 @@ export const Section: React.FC<SectionProps> = memo(function Section({
           backgroundColor: color.secondary,
           padding: Theme.padding.p02,
           borderColor: color.secondary,
-          borderWidth: 2
+          borderWidth: 2,
         }}
       />
       <View
@@ -39,7 +39,7 @@ export const Section: React.FC<SectionProps> = memo(function Section({
           padding: Theme.padding.p03,
           borderColor: color.secondary,
           borderWidth: 2,
-          borderTopWidth: 0
+          borderTopWidth: 0,
         }}
       >
         {children}

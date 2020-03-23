@@ -1,18 +1,18 @@
-import React, { memo, useState } from "react";
-import { FlatList, View } from "react-native";
-import { Card, Dialog, Screen, Icon } from "../../../../components";
-import { getLandscapeOrientation } from "../../../../models";
-import { Theme, useRootSelector } from "../../../../utils";
-import { DailyProgress, Header, ProfileLevel } from "../../components";
-import { app } from "../../data";
-import { useNav } from "../../../../hooks";
-import { Item } from "./Item";
+import React, { memo, useState } from 'react';
+import { FlatList, View } from 'react-native';
+import { Card, Dialog, Screen, Icon } from '../../../../components';
+import { getLandscapeOrientation } from '../../../../models';
+import { Theme, useRootSelector } from '../../../../utils';
+import { DailyProgress, Header, ProfileLevel } from '../../components';
+import { app } from '../../data';
+import { useNav } from '../../../../hooks';
+import { Item } from './Item';
 
 const initialState = { settings: false, profile: false };
 
 export default memo(function CantHurtMeMain() {
   const [showModal, setShowModal] = useState(initialState);
-  const landscape = useRootSelector(state => getLandscapeOrientation(state));
+  const landscape = useRootSelector((state) => getLandscapeOrientation(state));
   const columns = landscape ? 4 : 2;
   const nav = useNav();
   const keyExtractor = (id: string) => app.goals.byId[id].id;
@@ -27,7 +27,7 @@ export default memo(function CantHurtMeMain() {
     <>
       <Screen
         border
-        onLeftPress={nav.to("portfolioLanding")}
+        onLeftPress={nav.to('portfolioLanding')}
         title="Can't Hurt Me"
       >
         <View style={{ marginHorizontal: Theme.padding.p04 }}>
@@ -43,8 +43,8 @@ export default memo(function CantHurtMeMain() {
                 <Card>
                   <View
                     style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between"
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
                     }}
                   >
                     <ProfileLevel onPress={handleProfilePress} />
@@ -61,19 +61,19 @@ export default memo(function CantHurtMeMain() {
           />
         </View>
       </Screen>
-      {showModal.profile && 
+      {showModal.profile && (
         <Dialog
           duration={2000}
           title="profile"
           onBackgroundPress={handleModalBackgroundPress}
         />
-      }
-      {showModal.settings && 
+      )}
+      {showModal.settings && (
         <Dialog
           title="settings"
           onBackgroundPress={handleModalBackgroundPress}
         />
-      }
+      )}
     </>
   );
 });

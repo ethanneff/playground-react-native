@@ -1,6 +1,6 @@
-import React, { memo } from "react";
-import { useColor } from "../../../../hooks";
-import { TouchableOpacity } from "react-native";
+import React, { memo } from 'react';
+import { useColor } from '../../../../hooks';
+import { TouchableOpacity } from 'react-native';
 
 interface CellProps {
   x: number;
@@ -21,7 +21,7 @@ export const Cell = memo(function Cell(props: CellProps) {
         width: props.size,
         backgroundColor: props.row ? color.primary : color.surface,
         borderWidth: 1,
-        borderColor: color.light
+        borderColor: color.light,
       }}
     />
   );

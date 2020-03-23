@@ -1,6 +1,6 @@
-import { NativeModules } from "react-native";
+import { NativeModules } from 'react-native';
 
-jest.mock("react-native-device-info", () => ({
+jest.mock('react-native-device-info', () => ({
   getAPILevel: jest.fn(),
   getApplicationName: jest.fn(),
   getBatteryLevel: jest.fn(() => Promise.resolve(1)),
@@ -26,7 +26,7 @@ jest.mock("react-native-device-info", () => ({
   getSerialNumber: jest.fn(),
   getSystemName: jest.fn(),
   getSystemVersion: jest.fn(),
-  getTimezone: jest.fn(() => "America/Los_Angeles"),
+  getTimezone: jest.fn(() => 'America/Los_Angeles'),
   getTotalDiskCapacity: jest.fn(),
   getTotalMemory: jest.fn(),
   getUniqueID: jest.fn(),
@@ -35,13 +35,13 @@ jest.mock("react-native-device-info", () => ({
   is24Hour: jest.fn(),
   isEmulator: jest.fn(),
   isPinOrFingerprintSet: jest.fn(),
-  isTablet: jest.fn(() => false)
+  isTablet: jest.fn(() => false),
 }));
 
 NativeModules.RNCNetInfo = {
   addListener: jest.fn(),
   getCurrentState: jest.fn(() => Promise.resolve()),
-  removeListeners: jest.fn()
+  removeListeners: jest.fn(),
 };
 
 NativeModules.RNCAsyncStorage = {
@@ -55,5 +55,5 @@ NativeModules.RNCAsyncStorage = {
   multiGet: jest.fn(),
   multiSet: jest.fn(),
   multiRemove: jest.fn(),
-  multiMerge: jest.fn()
+  multiMerge: jest.fn(),
 };

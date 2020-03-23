@@ -1,10 +1,10 @@
-import { Dimensions, ScaledSize } from "react-native";
-import { ActionType, createAction, getType } from "typesafe-actions";
-import { RootAction, RootState } from "../../containers";
-import { logout } from "../Auth";
+import { Dimensions, ScaledSize } from 'react-native';
+import { ActionType, createAction, getType } from 'typesafe-actions';
+import { RootAction, RootState } from '../../containers';
+import { logout } from '../Auth';
 
 /* ACTIONS */
-export const updateDimension = createAction("dimension/UPDATE_DIMENSION")<
+export const updateDimension = createAction('dimension/UPDATE_DIMENSION')<
   DimensionState
 >();
 
@@ -33,8 +33,8 @@ export type DimensionActions = ActionType<typeof updateDimension>;
 
 /* REDUCERS */
 export const dimensionInitialState: DimensionState = {
-  screen: Dimensions.get("screen"),
-  window: Dimensions.get("window")
+  screen: Dimensions.get('screen'),
+  window: Dimensions.get('window'),
 };
 
 export const dimensionReducer = (
@@ -46,7 +46,7 @@ export const dimensionReducer = (
       return {
         ...state,
         screen: action.payload.screen,
-        window: action.payload.window
+        window: action.payload.window,
       };
     case getType(logout):
       return dimensionInitialState;

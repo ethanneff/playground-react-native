@@ -1,4 +1,4 @@
-import { getType } from "typesafe-actions";
+import { getType } from 'typesafe-actions';
 import {
   dimensionReducer,
   updateDimension,
@@ -7,76 +7,76 @@ import {
   getSmallestDimension,
   getLargestDimension,
   getLandscapeOrientation,
-  dimensionInitialState
-} from "..";
-import { logout, loginRequest } from "../../Auth";
-import { store } from "../../../containers";
+  dimensionInitialState,
+} from '..';
+import { logout, loginRequest } from '../../Auth';
+import { store } from '../../../containers';
 
-describe("selectors", () => {
+describe('selectors', () => {
   beforeEach(() => {
     const dimensionChange = {
       screen: {
         fontScale: 0,
         height: 0,
         scale: 0,
-        width: 0
+        width: 0,
       },
       window: {
         fontScale: 123,
         height: 456,
         scale: 123,
-        width: 123
-      }
+        width: 123,
+      },
     };
     store.dispatch(updateDimension(dimensionChange));
   });
 
-  it("getLandscapeOrientation", () => {
+  it('getLandscapeOrientation', () => {
     expect(getLandscapeOrientation(store.getState())).toBe(false);
   });
-  it("getLargestDimension", () => {
+  it('getLargestDimension', () => {
     expect(getLargestDimension(store.getState())).toBe(456);
   });
-  it("getSmallestDimension", () => {
+  it('getSmallestDimension', () => {
     expect(getSmallestDimension(store.getState())).toBe(123);
   });
-  it("getHeight", () => {
+  it('getHeight', () => {
     expect(getHeight(store.getState())).toBe(456);
   });
-  it("getWidth", () => {
+  it('getWidth', () => {
     expect(getWidth(store.getState())).toBe(123);
   });
 });
 
-describe("selectors with no initial state", () => {
-  it("getLandscapeOrientation null", () => {
+describe('selectors with no initial state', () => {
+  it('getLandscapeOrientation null', () => {
     expect(getLandscapeOrientation(store.getState())).toBe(false);
   });
-  it("getSmallestDimension null", () => {
+  it('getSmallestDimension null', () => {
     expect(getSmallestDimension(store.getState())).toBe(123);
   });
-  it("getLargestDimension null", () => {
+  it('getLargestDimension null', () => {
     expect(getLargestDimension(store.getState())).toBe(456);
   });
-  it("getHeight null", () => {
+  it('getHeight null', () => {
     expect(getHeight(store.getState())).toBe(456);
   });
-  it("getWidth null", () => {
+  it('getWidth null', () => {
     expect(getWidth(store.getState())).toBe(123);
   });
 });
 
-it("updateDimension action", () => {
+it('updateDimension action', () => {
   const size = {
     fontScale: 1,
     height: 1,
     scale: 1,
-    width: 1
+    width: 1,
   };
   const payload = { window: size, screen: size };
   const expectedAction = {
     payload,
-    type: getType(updateDimension)
+    type: getType(updateDimension),
   };
   expect(updateDimension(payload)).toEqual(expectedAction);
 });
@@ -86,28 +86,28 @@ it(getType(updateDimension), () => {
     fontScale: 123,
     height: 123,
     scale: 123,
-    width: 123
+    width: 123,
   };
   const data = {
     screen: size,
-    window: size
+    window: size,
   };
   expect(
     dimensionReducer(dimensionInitialState, {
       payload: data,
-      type: getType(updateDimension)
+      type: getType(updateDimension),
     })
   ).toMatchObject({
     ...dimensionInitialState,
     screen: size,
-    window: size
+    window: size,
   });
 });
 
 it(getType(logout), () => {
   expect(
     dimensionReducer(dimensionInitialState, {
-      type: getType(logout)
+      type: getType(logout),
     })
   ).toMatchObject(dimensionInitialState);
 });
@@ -115,7 +115,7 @@ it(getType(logout), () => {
 it(getType(loginRequest), () => {
   expect(
     dimensionReducer(undefined, {
-      type: getType(loginRequest)
+      type: getType(loginRequest),
     })
   ).toMatchObject(dimensionInitialState);
 });

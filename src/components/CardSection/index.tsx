@@ -1,6 +1,6 @@
-import React, { memo } from "react";
-import { StyleSheet, TextStyle, View } from "react-native";
-import { useColor } from "../../hooks";
+import React, { memo } from 'react';
+import { StyleSheet, TextStyle, View } from 'react-native';
+import { useColor } from '../../hooks';
 
 interface Props {
   style?: TextStyle;
@@ -13,10 +13,10 @@ export const CardSection: React.FC<Props> = memo(({ style, children }) => {
       backgroundColor: color.background,
       borderBottomWidth: 0.5,
       borderColor: color.dark,
-      flexDirection: "row",
+      flexDirection: 'row',
       paddingHorizontal: 20,
-      paddingVertical: 10
-    }
+      paddingVertical: 10,
+    },
   });
   return <View style={[styles.containerStyle, style]}>{children}</View>;
 });

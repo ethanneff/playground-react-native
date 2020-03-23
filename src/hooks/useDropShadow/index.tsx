@@ -1,4 +1,4 @@
-import { useColor } from "../useColor";
+import { useColor } from '../useColor';
 
 export const useDropShadow = (elevation: number) => {
   const color = useColor();
@@ -9,10 +9,10 @@ export const useDropShadow = (elevation: number) => {
     shadowColor: color.dark,
     shadowOffset: {
       height: 2,
-      width: 0
+      width: 0,
     },
     shadowOpacity,
     shadowRadius,
-    zIndex: elevation
+    zIndex: elevation,
   };
 };

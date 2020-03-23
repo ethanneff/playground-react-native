@@ -1,13 +1,13 @@
-import React, { memo, useState } from "react";
-import { Button, Screen, TextInput } from "../../../../components";
-import { navigate } from "../../../../models";
-import { useRootDispatch } from "../../../../utils";
-import { useNav } from "../../../../hooks";
-import { createList } from "../../models";
-import "react-native-get-random-values";
-import { v4 } from "uuid";
+import React, { memo, useState } from 'react';
+import { Button, Screen, TextInput } from '../../../../components';
+import { navigate } from '../../../../models';
+import { useRootDispatch } from '../../../../utils';
+import { useNav } from '../../../../hooks';
+import { createList } from '../../models';
+import 'react-native-get-random-values';
+import { v4 } from 'uuid';
 
-const initialState = { name: "", description: "" };
+const initialState = { name: '', description: '' };
 
 export default memo(function ChecklistCreate() {
   const nav = useNav();
@@ -26,21 +26,21 @@ export default memo(function ChecklistCreate() {
         id: v4(),
         name,
         active: true,
-        userId: "1",
+        userId: '1',
         description,
         createdAt: now,
-        updatedAt: now
+        updatedAt: now,
       })
     );
-    dispatch(navigate("checklists"));
+    dispatch(navigate('checklists'));
   };
   const handleNameChange = (name: string) =>
-    setForm(state => ({ ...state, name }));
+    setForm((state) => ({ ...state, name }));
   const handleDescriptionChange = (description: string) =>
-    setForm(state => ({ ...state, description }));
+    setForm((state) => ({ ...state, description }));
 
   return (
-    <Screen onLeftPress={nav.to("checklists")} title="Create Checklist" gutter>
+    <Screen onLeftPress={nav.to('checklists')} title="Create Checklist" gutter>
       <TextInput
         title="name"
         value={form.name}

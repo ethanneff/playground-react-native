@@ -1,9 +1,9 @@
-import DeviceInfo from "react-native-device-info";
-import React, { memo, useReducer } from "react";
-import { Screen, Text } from "../../../../components";
-import { useNav } from "../../../../hooks";
-import { Game } from "./Game";
-import { DriftContext, driftReducer, driftInitialState } from "./Context";
+import DeviceInfo from 'react-native-device-info';
+import React, { memo, useReducer } from 'react';
+import { Screen, Text } from '../../../../components';
+import { useNav } from '../../../../hooks';
+import { Game } from './Game';
+import { DriftContext, driftReducer, driftInitialState } from './Context';
 
 export default memo(function DebugDrift() {
   const nav = useNav();
@@ -12,13 +12,13 @@ export default memo(function DebugDrift() {
 
   // TODO: figure out why Screen re-renders
   return (
-    <Screen border title="Drift" onLeftPress={nav.to("debug")}>
+    <Screen border title="Drift" onLeftPress={nav.to('debug')}>
       <DriftContext.Provider value={{ state, dispatch }}>
-        {isEmulator ? 
+        {isEmulator ? (
           <Text title="simulators not supported" center />
-         : 
+        ) : (
           <Game />
-        }
+        )}
       </DriftContext.Provider>
     </Screen>
   );

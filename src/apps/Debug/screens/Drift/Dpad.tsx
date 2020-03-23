@@ -1,14 +1,14 @@
-import React, { memo, useCallback, useContext } from "react";
-import { View, TouchableOpacity } from "react-native";
-import { useDropShadow } from "../../../../hooks";
-import { DriftContext } from "./Context";
+import React, { memo, useCallback, useContext } from 'react';
+import { View, TouchableOpacity } from 'react-native';
+import { useDropShadow } from '../../../../hooks';
+import { DriftContext } from './Context';
 
 export type ColorChoice =
-  | "slateblue"
-  | "orange"
-  | "mediumseagreen"
-  | "violet"
-  | "lightgrey";
+  | 'slateblue'
+  | 'orange'
+  | 'mediumseagreen'
+  | 'violet'
+  | 'lightgrey';
 
 export const Dpad = memo(function Dpad() {
   const useShadow = useDropShadow(10);
@@ -16,60 +16,60 @@ export const Dpad = memo(function Dpad() {
   const size = 50;
   const box = {
     width: size,
-    height: size
+    height: size,
   };
 
   const onPress = useCallback(
-    (payload: ColorChoice) => () => dispatch({ type: "addColor", payload }),
+    (payload: ColorChoice) => () => dispatch({ type: 'addColor', payload }),
     [dispatch]
   );
 
   return (
     <View
       style={{
-        position: "absolute",
+        position: 'absolute',
         bottom: size,
         right: size,
-        transform: [{ rotate: "45deg" }]
+        transform: [{ rotate: '45deg' }],
       }}
     >
-      <View style={{ flexDirection: "row" }}>
+      <View style={{ flexDirection: 'row' }}>
         <TouchableOpacity
-          onPress={onPress("violet")}
+          onPress={onPress('violet')}
           style={{
             ...box,
-            backgroundColor: "violet",
+            backgroundColor: 'violet',
             borderTopLeftRadius: size,
-            ...useShadow
+            ...useShadow,
           }}
         />
         <TouchableOpacity
-          onPress={onPress("mediumseagreen")}
+          onPress={onPress('mediumseagreen')}
           style={{
             ...box,
-            backgroundColor: "mediumseagreen",
+            backgroundColor: 'mediumseagreen',
             borderTopRightRadius: size,
-            ...useShadow
+            ...useShadow,
           }}
         />
       </View>
-      <View style={{ flexDirection: "row" }}>
+      <View style={{ flexDirection: 'row' }}>
         <TouchableOpacity
-          onPress={onPress("slateblue")}
+          onPress={onPress('slateblue')}
           style={{
             ...box,
-            backgroundColor: "slateblue",
+            backgroundColor: 'slateblue',
             borderBottomLeftRadius: size,
-            ...useShadow
+            ...useShadow,
           }}
         />
         <TouchableOpacity
-          onPress={onPress("orange")}
+          onPress={onPress('orange')}
           style={{
             ...box,
-            backgroundColor: "orange",
+            backgroundColor: 'orange',
             borderBottomRightRadius: size,
-            ...useShadow
+            ...useShadow,
           }}
         />
       </View>

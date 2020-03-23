@@ -1,15 +1,15 @@
-import React, { memo } from "react";
+import React, { memo } from 'react';
 import {
   Platform,
   ViewStyle,
   TouchableOpacity,
   StyleProp,
-  StyleSheet
-} from "react-native";
-import { Config, Theme } from "../../utils";
-import { Badge } from "./Badge";
-import { Source } from "./Source";
-import { useColor, useDropShadow } from "../../hooks";
+  StyleSheet,
+} from 'react-native';
+import { Config, Theme } from '../../utils';
+import { Badge } from './Badge';
+import { Source } from './Source';
+import { useColor, useDropShadow } from '../../hooks';
 
 /*
 usage: <Icon name='check' />
@@ -45,7 +45,7 @@ export const Icon: React.FC<Props> = memo(function Icon({
   hidden,
   right,
   invisible,
-  onPress
+  onPress,
 }) {
   const colors = useColor();
   const dropShadow = useDropShadow(elevation);
@@ -54,27 +54,27 @@ export const Icon: React.FC<Props> = memo(function Icon({
       width: Theme.padding.p15,
       height: Theme.padding.p15,
       borderRadius: Theme.padding.p15,
-      justifyContent: "center",
-      alignItems: "center",
+      justifyContent: 'center',
+      alignItems: 'center',
       backgroundColor: colors.primary,
-      ...dropShadow
+      ...dropShadow,
     },
     web: {
       width: Theme.padding.p06,
-      height: Theme.padding.p06
+      height: Theme.padding.p06,
     },
     right: {
-      alignSelf: "flex-end"
-    }
+      alignSelf: 'flex-end',
+    },
   });
   const colored = clear ? colors.background : color ? color : colors.dark;
   const containerStyles = [
     Platform.OS === Config.os.web ? styles.web : undefined,
     fab ? styles.fab : undefined,
     right ? styles.right : undefined,
-    style
+    style,
   ];
-  return name === undefined || name.length === 0 || hidden ? null : 
+  return name === undefined || name.length === 0 || hidden ? null : (
     <TouchableOpacity
       activeOpacity={activeOpacity}
       style={containerStyles}
@@ -84,5 +84,5 @@ export const Icon: React.FC<Props> = memo(function Icon({
       <Source name={name} size={size} color={colored} invisible={invisible} />
       <Badge badge={badge} />
     </TouchableOpacity>
-  ;
+  );
 });

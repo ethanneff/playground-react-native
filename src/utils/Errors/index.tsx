@@ -1,8 +1,8 @@
 export const Errors = {
-  MissingCurrentChecklist: "Missing current checklist",
+  MissingCurrentChecklist: 'Missing current checklist',
   MissingCurrentChecklistCreatingItem:
-    "Missing current checklist when creating checklist item",
-  MissingCurrentChecklistItem: "Missing current checklist item",
+    'Missing current checklist when creating checklist item',
+  MissingCurrentChecklistItem: 'Missing current checklist item',
   MissingCurrentChecklistUpdatingChecklist:
-    "Missing current checklist when updating the checklist"
+    'Missing current checklist when updating the checklist',
 };

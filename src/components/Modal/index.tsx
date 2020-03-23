@@ -1,8 +1,8 @@
-import React, { memo } from "react";
-import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
-import { useColor, useDropShadow } from "../../hooks";
-import { Theme, useRootSelector } from "../../utils";
-import { Card } from "../Card";
+import React, { memo } from 'react';
+import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { useColor, useDropShadow } from '../../hooks';
+import { Theme, useRootSelector } from '../../utils';
+import { Card } from '../Card';
 
 interface Props {
   testID?: string;
@@ -19,38 +19,38 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
   elevation = 4,
   noScroll,
   maxWidth = 500,
-  maxHeight
+  maxHeight,
 }) {
-  const appHeight = useRootSelector(state => state.dimension.window.height);
+  const appHeight = useRootSelector((state) => state.dimension.window.height);
   const maximumHeight = maxHeight ? maxHeight : appHeight * 0.6;
   const color = useColor();
   const dropShadow = useDropShadow(10);
   const styles = StyleSheet.create({
     container: {
-      position: "absolute",
-      width: "100%",
-      height: "100%",
-      alignItems: "center",
-      justifyContent: "center"
+      position: 'absolute',
+      width: '100%',
+      height: '100%',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     overlay: {
       flex: 1,
-      width: "100%",
-      backgroundColor: Theme.color.overlay
+      width: '100%',
+      backgroundColor: Theme.color.overlay,
     },
     modal: {
-      position: "absolute",
+      position: 'absolute',
       backgroundColor: color.background,
       borderRadius: Theme.sizing.borderRadius,
-      width: "80%",
+      width: '80%',
       maxWidth,
       maxHeight: maximumHeight,
-      overflow: "hidden",
-      ...dropShadow
+      overflow: 'hidden',
+      ...dropShadow,
     },
     modalContent: {
-      padding: Theme.padding.p08
-    }
+      padding: Theme.padding.p08,
+    },
   });
 
   return (
@@ -68,16 +68,16 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
         elevation={elevation}
         testID="modal"
       >
-        {noScroll ? 
+        {noScroll ? (
           <View style={styles.modalContent}>{children}</View>
-         : 
+        ) : (
           <ScrollView
             contentContainerStyle={styles.modalContent}
             keyboardShouldPersistTaps="handled"
           >
             {children}
           </ScrollView>
-        }
+        )}
       </Card>
     </View>
   );

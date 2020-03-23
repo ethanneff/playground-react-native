@@ -1,13 +1,13 @@
-import React, { memo, useCallback } from "react";
-import { FlatList } from "react-native";
-import { Button, Screen, Icon } from "../../../../components";
-import { useNav, useColor } from "../../../../hooks";
-import { useRootSelector, useRootDispatch } from "../../../../utils";
+import React, { memo, useCallback } from 'react';
+import { FlatList } from 'react-native';
+import { Button, Screen, Icon } from '../../../../components';
+import { useNav, useColor } from '../../../../hooks';
+import { useRootSelector, useRootDispatch } from '../../../../utils';
 import {
   setActiveList,
-  getActiveChecklistOrderByCreatedAt
-} from "../../models";
-import { navigate } from "../../../../models";
+  getActiveChecklistOrderByCreatedAt,
+} from '../../models';
+import { navigate } from '../../../../models';
 
 export default memo(function Checklists() {
   const nav = useNav();
@@ -18,7 +18,7 @@ export default memo(function Checklists() {
   const handleItemPress = useCallback(
     (id: string) => () => {
       dispatch(setActiveList(id));
-      dispatch(navigate("checklistsList"));
+      dispatch(navigate('checklistsList'));
     },
     [dispatch]
   );
@@ -26,26 +26,26 @@ export default memo(function Checklists() {
   const handleItemLongPress = useCallback(
     (id: string) => () => {
       dispatch(setActiveList(id));
-      dispatch(navigate("checklistsListUpdate"));
+      dispatch(navigate('checklistsListUpdate'));
     },
     [dispatch]
   );
 
   const renderItem = useCallback(
-    ({ item }) => 
+    ({ item }) => (
       <Button
         title={item.name}
         onPress={handleItemPress(item.id)}
         onLongPress={handleItemLongPress(item.id)}
       />
-    ,
+    ),
     [handleItemLongPress, handleItemPress]
   );
 
-  const keyExtractor = useCallback(item => item.id, []);
+  const keyExtractor = useCallback((item) => item.id, []);
 
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")} title="Checklists" gutter>
+    <Screen onLeftPress={nav.to('portfolioLanding')} title="Checklists" gutter>
       <FlatList
         keyExtractor={keyExtractor}
         data={items}
@@ -55,7 +55,7 @@ export default memo(function Checklists() {
         fab
         right
         name="plus"
-        onPress={nav.to("checklistsListCreate")}
+        onPress={nav.to('checklistsListCreate')}
         color={color.background}
       />
     </Screen>

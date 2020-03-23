@@ -1,1 +1,1 @@
-declare module "react-native-device-info";
+declare module 'react-native-device-info';

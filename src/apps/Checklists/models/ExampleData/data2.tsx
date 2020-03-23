@@ -68,19 +68,19 @@ type SourceId = string;
 type ActionId = string;
 
 enum ListVisibility {
-  Private = "Private",
-  Public = "Public"
+  Private = 'Private',
+  Public = 'Public',
 }
 
 export enum ListAccess {
-  Read = "Read",
-  Write = "Write",
-  Comment = "Comment"
+  Read = 'Read',
+  Write = 'Write',
+  Comment = 'Comment',
 }
 
 export enum ListFrequency {
-  Single = "Single",
-  Multiple = "Multiple"
+  Single = 'Single',
+  Multiple = 'Multiple',
 }
 
 export interface User {
@@ -135,90 +135,90 @@ export interface Source {
 }
 
 export const a = {
-  email: "bob@gmail.com",
+  email: 'bob@gmail.com',
   lists: [
     {
       frequency: ListFrequency.Multiple,
       history: [],
       items: [
-        "Make bold deadlines and commitments",
-        "Get out of comfort zone",
-        "Split tasks to emergent vs planned work",
-        "Do fear setting by Tim ferris",
-        "Block out calendar for emails",
-        "Make biweekly meeting to clean self"
+        'Make bold deadlines and commitments',
+        'Get out of comfort zone',
+        'Split tasks to emergent vs planned work',
+        'Do fear setting by Tim ferris',
+        'Block out calendar for emails',
+        'Make biweekly meeting to clean self',
       ],
-      trigger: "accomplish things"
+      trigger: 'accomplish things',
     },
     {
       frequency: ListFrequency.Multiple,
       items: [
-        "Make your bed",
-        "Take a cold shower",
-        "Journal on paper and make checklists",
-        "Medication",
-        "Practice gratitude"
+        'Make your bed',
+        'Take a cold shower',
+        'Journal on paper and make checklists',
+        'Medication',
+        'Practice gratitude',
       ],
-      trigger: "wake up"
+      trigger: 'wake up',
     },
     {
       frequency: ListFrequency.Multiple,
       items: [
-        "make overnight oats",
-        "floss",
-        "brush teeth",
-        "rogaine",
-        "plan tomorrow"
+        'make overnight oats',
+        'floss',
+        'brush teeth',
+        'rogaine',
+        'plan tomorrow',
       ],
-      trigger: "go to sleep"
+      trigger: 'go to sleep',
     },
     {
       frequency: ListFrequency.Multiple,
       items: [
         // https://www.youtube.com/watch?v=sWctLEdIgi4
-        "develop a fascination",
-        "seek daily improvements (beat yourself)",
-        "understand the greater purpose",
-        "develop a growth mindset"
+        'develop a fascination',
+        'seek daily improvements (beat yourself)',
+        'understand the greater purpose',
+        'develop a growth mindset',
       ],
-      trigger: "begin a task"
+      trigger: 'begin a task',
     },
     {
       frequency: ListFrequency.Single,
       // done = complete forever
       items: [
-        "find clothing",
-        "buy superglue",
-        "buy boba ingredients",
-        "shop at uniqlo"
+        'find clothing',
+        'buy superglue',
+        'buy boba ingredients',
+        'shop at uniqlo',
       ],
-      trigger: "running errands"
+      trigger: 'running errands',
     },
     {
       frequency: ListFrequency.Single,
       // done = complete forever
       items: [
-        "whiten teeth",
-        "Fix jackets",
-        "demotologist",
-        "dear up tasks",
-        "calendar on phone",
-        "find spit",
-        "share photos will mom",
-        "phillipean flights",
-        "migrate off notion.so",
-        "make boba",
-        "shop at uniqlo",
-        "respond to john",
-        "resume out for 175",
-        "upload Images to shutterstock",
-        "look up tradeshows",
-        "learn fortnite dances",
-        "expense wireframing app",
-        "expense amazon kindle unlimited"
+        'whiten teeth',
+        'Fix jackets',
+        'demotologist',
+        'dear up tasks',
+        'calendar on phone',
+        'find spit',
+        'share photos will mom',
+        'phillipean flights',
+        'migrate off notion.so',
+        'make boba',
+        'shop at uniqlo',
+        'respond to john',
+        'resume out for 175',
+        'upload Images to shutterstock',
+        'look up tradeshows',
+        'learn fortnite dances',
+        'expense wireframing app',
+        'expense amazon kindle unlimited',
       ],
-      trigger: "find downtime (backlog)"
-    }
+      trigger: 'find downtime (backlog)',
+    },
   ],
-  user: "bob"
+  user: 'bob',
 };

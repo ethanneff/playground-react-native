@@ -1,6 +1,6 @@
-import React, { memo, useCallback, useEffect, useState } from "react";
-import { StyleSheet, View, ViewStyle } from "react-native";
-import { Text } from "../Text";
+import React, { memo, useCallback, useEffect, useState } from 'react';
+import { StyleSheet, View, ViewStyle } from 'react-native';
+import { Text } from '../Text';
 
 interface Props {
   title: string;
@@ -8,22 +8,22 @@ interface Props {
   style?: ViewStyle;
 }
 
-const ellipsis = ["", ".", ".", "."];
+const ellipsis = ['', '.', '.', '.'];
 const ellipsisDuration = 400;
 const styles = StyleSheet.create({
   center: {
-    justifyContent: "center"
+    justifyContent: 'center',
   },
   row: {
-    flexDirection: "row"
-  }
+    flexDirection: 'row',
+  },
 });
 
 export const Loading: React.FC<Props> = memo(({ title, center, style }) => {
   const containerStyles = [
     styles.row,
     center ? styles.center : undefined,
-    style
+    style,
   ];
   // let ellipsisCountdown: NodeJS.Timer;
   const [ellipsisIndex, setEllipsisIndex] = useState(1);
@@ -31,7 +31,7 @@ export const Loading: React.FC<Props> = memo(({ title, center, style }) => {
     index >= ellipsis.length - 1 ? 0 : index + 1;
   const animateText = useCallback(() => {
     setTimeout(() => {
-      setEllipsisIndex(index => animateTextNextIndex(index));
+      setEllipsisIndex((index) => animateTextNextIndex(index));
       animateText();
     }, ellipsisDuration);
   }, []);
@@ -44,7 +44,7 @@ export const Loading: React.FC<Props> = memo(({ title, center, style }) => {
   return (
     <View style={containerStyles}>
       <Text title={title} h3 bold center />
-      {ellipsis.map((dot, index) => 
+      {ellipsis.map((dot, index) => (
         <Text
           key={index}
           title={dot}
@@ -53,7 +53,7 @@ export const Loading: React.FC<Props> = memo(({ title, center, style }) => {
           bold
           center
         />
-      )}
+      ))}
     </View>
   );
 });

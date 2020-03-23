@@ -1,9 +1,9 @@
-import React, { memo } from "react";
-import { SafeAreaView, StatusBar, StyleSheet, ViewStyle } from "react-native";
-import { Theme } from "../../utils";
-import { NavBar } from "./NavBar";
-import { KeyboardAware } from "./KeyboardAware";
-import { useColor } from "../../hooks";
+import React, { memo } from 'react';
+import { SafeAreaView, StatusBar, StyleSheet, ViewStyle } from 'react-native';
+import { Theme } from '../../utils';
+import { NavBar } from './NavBar';
+import { KeyboardAware } from './KeyboardAware';
+import { useColor } from '../../hooks';
 
 interface OwnProps {
   style?: ViewStyle;
@@ -29,17 +29,17 @@ export const Screen: React.FC<Props> = memo(function Screen({
   children,
   scroll,
   leftIcon,
-  rightIcon
+  rightIcon,
 }) {
   const color = useColor();
   const styles = StyleSheet.create({
     container: {
       backgroundColor: color.background,
-      flex: 1
+      flex: 1,
     },
     gutter: {
-      padding: gutter ? Theme.padding.p04 : Theme.padding.p00
-    }
+      padding: gutter ? Theme.padding.p04 : Theme.padding.p00,
+    },
   });
   const childrenStyles = [styles.container, gutter && styles.gutter, style];
 

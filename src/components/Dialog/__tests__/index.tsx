@@ -1,20 +1,20 @@
-import React from "react";
-import { Dialog } from "..";
-import { mockRenderer } from "../../../utils/Mock";
+import React from 'react';
+import { Dialog } from '..';
+import { mockRenderer } from '../../../utils/Mock';
 
 jest.useFakeTimers();
-describe("Dialog component", () => {
-  it("renders correctly with defaults and hidden", () => {
+describe('Dialog component', () => {
+  it('renders correctly with defaults and hidden', () => {
     const dom = mockRenderer(<Dialog title="bob" />);
     expect(dom.toJSON()).toMatchSnapshot();
   });
 
-  it("renders correctly with defaults and ", () => {
+  it('renders correctly with defaults and ', () => {
     const dom = mockRenderer(<Dialog title="bob" />);
     expect(dom.toJSON()).toMatchSnapshot();
   });
 
-  it("renders correctly with props", () => {
+  it('renders correctly with props', () => {
     const dom = mockRenderer(
       <Dialog
         title="nope"

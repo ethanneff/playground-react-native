@@ -1,10 +1,10 @@
-import React, { memo } from "react";
-import { TouchableOpacity, View } from "react-native";
-import { EllipsizeMode, Icon, Text } from "../../../components";
-import { Theme } from "../../../utils";
-import { Item } from "./List";
-import { ListSection } from "./ListSection";
-import { useColor } from "../../../hooks";
+import React, { memo } from 'react';
+import { TouchableOpacity, View } from 'react-native';
+import { EllipsizeMode, Icon, Text } from '../../../components';
+import { Theme } from '../../../utils';
+import { Item } from './List';
+import { ListSection } from './ListSection';
+import { useColor } from '../../../hooks';
 
 interface Props {
   showSection: boolean;
@@ -18,34 +18,34 @@ export const ListItem = memo(
     const color = useColor();
     const future = item.id > Date.now();
     const iconColor = future ? color.secondary : color.success;
-    const title = currentItem ? "current" : future ? "future" : item.action;
+    const title = currentItem ? 'current' : future ? 'future' : item.action;
     return (
       <View
         style={{
           borderColor: currentItem ? color.primary : color.background,
           borderLeftWidth: Theme.padding.p01,
-          flex: 1
+          flex: 1,
         }}
       >
         <TouchableOpacity
           style={{
             flex: 1,
-            flexDirection: "row",
+            flexDirection: 'row',
             height: Theme.padding.p10,
             paddingHorizontal: Theme.padding.p04,
-            paddingVertical: Theme.padding.p02
+            paddingVertical: Theme.padding.p02,
           }}
           onPress={() => onItemPress(item)} // TODO: usecallback
           disabled={future}
         >
           <View
             style={{
-              flexDirection: "row",
-              width: Theme.padding.p20
+              flexDirection: 'row',
+              width: Theme.padding.p20,
             }}
           >
             <Icon
-              name={future ? "cancel" : "checkbox-blank-circle"}
+              name={future ? 'cancel' : 'checkbox-blank-circle'}
               size={14}
               color={iconColor}
               style={{ paddingRight: Theme.padding.p01 }}
@@ -55,7 +55,7 @@ export const ListItem = memo(
           <Text
             style={{
               color: color.secondary,
-              flex: 1
+              flex: 1,
             }}
             title={title}
             body1

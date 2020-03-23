@@ -1,9 +1,9 @@
-import React from "react";
-import { Dimensions, FlatList, View } from "react-native";
-import { connect } from "react-redux";
-import { Button, Screen, Text } from "../../../../components";
-import { NavigationScreen, navigate } from "../../../../models";
-import { Questionnaires } from "./screens/Questionnaires";
+import React from 'react';
+import { Dimensions, FlatList, View } from 'react-native';
+import { connect } from 'react-redux';
+import { Button, Screen, Text } from '../../../../components';
+import { NavigationScreen, navigate } from '../../../../models';
+import { Questionnaires } from './screens/Questionnaires';
 
 interface DispatchProps {
   navigate: typeof navigate;
@@ -16,33 +16,33 @@ class Container extends React.PureComponent<Props> {
     {
       choices: [
         {
-          key: "1",
+          key: '1',
           selected: false,
-          title: "individual"
+          title: 'individual',
         },
         {
-          key: "2",
+          key: '2',
           selected: false,
-          title: "couple"
+          title: 'couple',
         },
         {
-          key: "3",
+          key: '3',
           selected: false,
-          title: "teen"
-        }
+          title: 'teen',
+        },
       ],
-      key: "1",
-      next: "2",
-      title: "What type of counseling are you looking for",
-      type: "radio"
+      key: '1',
+      next: '2',
+      title: 'What type of counseling are you looking for',
+      type: 'radio',
     },
-    { key: "2", title: "2" },
-    { key: "3", title: "3" },
-    { key: "4", title: "4" },
-    { key: "5", title: "5" }
+    { key: '2', title: '2' },
+    { key: '3', title: '3' },
+    { key: '4', title: '4' },
+    { key: '5', title: '5' },
   ];
   private output: any = {};
-  private readonly width = Dimensions.get("window").width;
+  private readonly width = Dimensions.get('window').width;
   private tableView: any;
   private currentIndex = 0;
 
@@ -61,7 +61,7 @@ class Container extends React.PureComponent<Props> {
     }
     this.tableView.scrollToIndex({
       animated: true,
-      index
+      index,
     });
   };
 
@@ -70,8 +70,8 @@ class Container extends React.PureComponent<Props> {
       ...this.output,
       [item.key]: {
         ...this.output[item.key],
-        [choice.key]: true
-      }
+        [choice.key]: true,
+      },
     };
 
     // this.onProgress();
@@ -87,7 +87,7 @@ class Container extends React.PureComponent<Props> {
     let items: any = <View style={{ flex: 1 }} />;
 
     if (item.choices) {
-      items = 
+      items = (
         <View style={{ flex: 1 }}>
           {item.choices.map((choice: any) => {
             return (
@@ -101,7 +101,7 @@ class Container extends React.PureComponent<Props> {
             );
           })}
         </View>
-      ;
+      );
     }
 
     return (
@@ -110,8 +110,8 @@ class Container extends React.PureComponent<Props> {
         {items}
         <View
           style={{
-            flexDirection: "row",
-            justifyContent: "space-around"
+            flexDirection: 'row',
+            justifyContent: 'space-around',
           }}
         >
           <Button title="prev" onPress={() => this.onProgress(-1)} />
@@ -124,7 +124,7 @@ class Container extends React.PureComponent<Props> {
 
   public render() {
     return (
-      <Screen onLeftPress={this.nav("debug")} title="Questionnaire">
+      <Screen onLeftPress={this.nav('debug')} title="Questionnaire">
         <FlatList
           scrollEnabled={false}
           ref={this.setRef}
@@ -133,7 +133,7 @@ class Container extends React.PureComponent<Props> {
           showsVerticalScrollIndicator={false}
           onViewableItemsChanged={this.onViewableItemsChanged}
           viewabilityConfig={{
-            itemVisiblePercentThreshold: 50
+            itemVisiblePercentThreshold: 50,
           }}
           horizontal
           pagingEnabled

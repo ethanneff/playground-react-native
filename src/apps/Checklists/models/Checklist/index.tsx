@@ -1,13 +1,13 @@
-import { createSelector } from "reselect";
-import { ActionType, createAction, getType } from "typesafe-actions";
-import { RootAction, RootState } from "../../../../containers";
-import { Errors } from "../../../../utils";
+import { createSelector } from 'reselect';
+import { ActionType, createAction, getType } from 'typesafe-actions';
+import { RootAction, RootState } from '../../../../containers';
+import { Errors } from '../../../../utils';
 
 /* ACTIONS */
-export const createList = createAction("checklist/create")<Checklist>();
-export const updateList = createAction("checklist/update")<Checklist>();
-export const removeList = createAction("checklist/remove")<string>();
-export const setActiveList = createAction("checklist/setActive")<string>();
+export const createList = createAction('checklist/create')<Checklist>();
+export const updateList = createAction('checklist/update')<Checklist>();
+export const removeList = createAction('checklist/remove')<string>();
+export const setActiveList = createAction('checklist/setActive')<string>();
 
 /* SELECTORS */
 export const getChecklists = (state: RootState): Checklists =>
@@ -21,9 +21,9 @@ export const getCurrentChecklist = (state: RootState): Checklist => {
 };
 export const getActiveChecklistOrderByCreatedAt = createSelector(
   [getChecklists],
-  checklists =>
+  (checklists) =>
     Object.values(checklists)
-      .filter(item => item.active)
+      .filter((item) => item.active)
       .sort((a, b) => a.createdAt - b.createdAt)
 );
 
@@ -60,7 +60,7 @@ export type ListActions = ActionType<
 /* REDUCER */
 const initialState: ChecklistReducer = {
   active: undefined,
-  items: {}
+  items: {},
 };
 export const checklistReducer = (
   state: ChecklistReducer = initialState,
@@ -74,8 +74,8 @@ export const checklistReducer = (
         ...state,
         items: {
           ...state.items,
-          [action.payload.id]: action.payload
-        }
+          [action.payload.id]: action.payload,
+        },
       };
     case getType(updateList):
       return {
@@ -85,9 +85,9 @@ export const checklistReducer = (
           [action.payload.id]: {
             ...state.items[action.payload.id],
             ...action.payload,
-            updatedAt: Date.now()
-          }
-        }
+            updatedAt: Date.now(),
+          },
+        },
       };
     case getType(removeList):
       return {
@@ -97,9 +97,9 @@ export const checklistReducer = (
           [action.payload]: {
             ...state.items[action.payload],
             active: false,
-            updatedAt: Date.now()
-          }
-        }
+            updatedAt: Date.now(),
+          },
+        },
       };
     default:
       return state;

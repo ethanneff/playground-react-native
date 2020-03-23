@@ -6,7 +6,7 @@ const operations = [
   [1, 1],
   [-1, -1],
   [1, 0],
-  [-1, 0]
+  [-1, 0],
 ];
 
 type BoardItem = 0 | 1;
@@ -50,5 +50,5 @@ export const swapBoardItem = (
   i: number,
   j: number
 ) => {
-  return i === x && y === j ? item ? 0 : 1 : item;
+  return i === x && y === j ? (item ? 0 : 1) : item;
 };

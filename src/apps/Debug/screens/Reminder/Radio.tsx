@@ -1,6 +1,6 @@
-import React, { memo } from "react";
-import { View } from "react-native";
-import { Item } from "./Item";
+import React, { memo } from 'react';
+import { View } from 'react-native';
+import { Item } from './Item';
 
 interface Props {
   buttons: string[];
@@ -13,16 +13,16 @@ export default memo(function Radio({
   buttons,
   value,
   onChange,
-  horizontal
+  horizontal,
 }: Props) {
   return (
     <View
       style={{
-        justifyContent: "center",
-        flexDirection: horizontal ? "row" : "column"
+        justifyContent: 'center',
+        flexDirection: horizontal ? 'row' : 'column',
       }}
     >
-      {buttons.map((button, index) => 
+      {buttons.map((button, index) => (
         <Item
           title={button}
           key={button}
@@ -30,7 +30,7 @@ export default memo(function Radio({
           marginBottom={index !== buttons.length - 1}
           active={button === value}
         />
-      )}
+      ))}
     </View>
   );
 });

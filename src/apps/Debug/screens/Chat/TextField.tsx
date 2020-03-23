@@ -1,14 +1,14 @@
-import React, { memo, useCallback } from "react";
-import { View, Keyboard } from "react-native";
-import { TextInput, Icon } from "../../../../components";
-import { useRootDispatch, useRootSelector, Theme } from "../../../../utils";
-import "react-native-get-random-values";
-import { v4 } from "uuid";
-import { Message, typeChatMessage, createChatMessage } from "./Messages";
+import React, { memo, useCallback } from 'react';
+import { View, Keyboard } from 'react-native';
+import { TextInput, Icon } from '../../../../components';
+import { useRootDispatch, useRootSelector, Theme } from '../../../../utils';
+import 'react-native-get-random-values';
+import { v4 } from 'uuid';
+import { Message, typeChatMessage, createChatMessage } from './Messages';
 
 export const TextField = memo(function ChatTextField() {
   const dispatch = useRootDispatch();
-  const textField = useRootSelector(state => state.chatMessage.textField);
+  const textField = useRootSelector((state) => state.chatMessage.textField);
   const onMessageChange = useCallback(
     (message: string) => dispatch(typeChatMessage(message)),
     [dispatch]
@@ -22,11 +22,11 @@ export const TextField = memo(function ChatTextField() {
     const message: Message = {
       active: true,
       createdAt: date,
-      userId: "User bob",
+      userId: 'User bob',
       id: v4(),
       message: textField.trim(),
       updatedAt: date,
-      conversationId: "1"
+      conversationId: '1',
     };
     Keyboard.dismiss();
     dispatch(createChatMessage(message));
@@ -35,8 +35,8 @@ export const TextField = memo(function ChatTextField() {
   return (
     <View
       style={{
-        flexDirection: "row",
-        alignItems: "center"
+        flexDirection: 'row',
+        alignItems: 'center',
       }}
     >
       <TextInput

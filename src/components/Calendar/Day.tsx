@@ -1,10 +1,10 @@
-import React, { memo } from "react";
-import { useColor } from "../../hooks";
-import { View, TouchableOpacity } from "react-native";
-import { Theme, colorWithOpacity } from "../../utils";
-import { Day } from "./utils";
-import { Text } from "../Text";
-import dayjs from "dayjs";
+import React, { memo } from 'react';
+import { useColor } from '../../hooks';
+import { View, TouchableOpacity } from 'react-native';
+import { Theme, colorWithOpacity } from '../../utils';
+import { Day } from './utils';
+import { Text } from '../Text';
+import dayjs from 'dayjs';
 
 interface Props {
   day: Day;
@@ -17,16 +17,16 @@ export const CalendarDay = memo(function CalendarDay({
   day,
   onSelected,
   selectedDay,
-  hiddenDays
+  hiddenDays,
 }: Props) {
   const color = useColor();
   const selected = day.id === selectedDay;
-  const today = dayjs(day.id).isSame(dayjs(), "day");
-  const backgroundColor = selected ? color.primary : "transparent";
+  const today = dayjs(day.id).isSame(dayjs(), 'day');
+  const backgroundColor = selected ? color.primary : 'transparent';
   const nonMonthDay = hiddenDays && !day.current;
   const textColor =
     nonMonthDay && !day.header
-      ? "transparent"
+      ? 'transparent'
       : selected
       ? color.background
       : today
@@ -43,7 +43,7 @@ export const CalendarDay = memo(function CalendarDay({
       disabled={disabled}
       style={{
         flex: 1,
-        alignItems: "center"
+        alignItems: 'center',
       }}
     >
       <View
@@ -51,8 +51,8 @@ export const CalendarDay = memo(function CalendarDay({
           height: Theme.padding.p08,
           width: Theme.padding.p08,
           borderRadius: Theme.padding.p20,
-          justifyContent: "center",
-          backgroundColor
+          justifyContent: 'center',
+          backgroundColor,
         }}
       >
         <Text
@@ -60,7 +60,7 @@ export const CalendarDay = memo(function CalendarDay({
           center
           bold={today}
           style={{
-            color: textColor
+            color: textColor,
           }}
         />
       </View>

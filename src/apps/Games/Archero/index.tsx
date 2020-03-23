@@ -1,14 +1,14 @@
-import React, { memo, useState } from "react";
+import React, { memo, useState } from 'react';
 import {
   Animated,
   PanResponder,
   PanResponderInstance,
   View,
-  LayoutChangeEvent
-} from "react-native";
-import { useColor, useNativeDriver, useNav } from "../../../hooks";
-import { colorWithOpacity, useRootSelector, Theme } from "../../../utils";
-import { Screen } from "../../../components";
+  LayoutChangeEvent,
+} from 'react-native';
+import { useColor, useNativeDriver, useNav } from '../../../hooks';
+import { colorWithOpacity, useRootSelector, Theme } from '../../../utils';
+import { Screen } from '../../../components';
 
 const charSize = 50;
 const charSpeed = 40;
@@ -22,7 +22,7 @@ export default memo(function Archero() {
   const color = useColor();
   const nav = useNav();
   const useDriver = useNativeDriver();
-  const window = useRootSelector(state => state.dimension.window);
+  const window = useRootSelector((state) => state.dimension.window);
   const [dimensions, setDimensions] = useState({ width: 1000, height: 1000 });
   const { width, height } = dimensions;
   const smallest = width > height ? height : width;
@@ -31,11 +31,11 @@ export default memo(function Archero() {
   const thumbSize = joystickSize / 3;
   const initialJoystickLoc = {
     x: width / 2 - joystickCenter,
-    y: height - joystickSize - 75
+    y: height - joystickSize - 75,
   };
   const initialCharLoc = {
     x: width / 2 - charSize / 2,
-    y: height / 2 - charSize / 2
+    y: height / 2 - charSize / 2,
   };
   const initialThumbLoc = { x: 0, y: 0 };
   let characterValueXY = initialCharLoc;
@@ -53,7 +53,7 @@ export default memo(function Archero() {
     const y = getBounds(characterValueXY.y + vy, height, charSize);
     Animated.spring(character, {
       toValue: { x, y },
-      useNativeDriver: useDriver
+      useNativeDriver: useDriver,
     }).start();
   };
 
@@ -65,7 +65,7 @@ export default memo(function Archero() {
     // Math.pow(thumbSize, 2) = Math.pow(vx, 2) + Math.pow(y, 2)
     Animated.spring(thumb, {
       toValue: { x: vx, y: vy },
-      useNativeDriver: useDriver
+      useNativeDriver: useDriver,
     }).start();
   };
 
@@ -75,7 +75,7 @@ export default memo(function Archero() {
     // TODO: handle joystick location better
     const toValue = {
       x: x0 - joystickCenter - offset2 / 2,
-      y: y0 - joystickCenter - offset / 2 - joystickSize / 1.5
+      y: y0 - joystickCenter - offset / 2 - joystickSize / 1.5,
     };
     Animated.spring(joystick, { toValue, useNativeDriver: useDriver }).start();
   };
@@ -83,11 +83,11 @@ export default memo(function Archero() {
   const resetJoystick = () => {
     Animated.spring(joystick, {
       toValue: initialJoystickLoc,
-      useNativeDriver: useDriver
+      useNativeDriver: useDriver,
     }).start();
     Animated.spring(thumb, {
       toValue: initialThumbLoc,
-      useNativeDriver: useDriver
+      useNativeDriver: useDriver,
     }).start();
   };
 
@@ -105,7 +105,7 @@ export default memo(function Archero() {
     },
     onPanResponderRelease: () => {
       resetJoystick();
-    }
+    },
   });
 
   const onLayout = (event: LayoutChangeEvent) => {
@@ -114,7 +114,7 @@ export default memo(function Archero() {
   };
 
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")} title="Archero">
+    <Screen onLeftPress={nav.to('portfolioLanding')} title="Archero">
       <View
         onLayout={onLayout}
         style={[{ flex: 1, backgroundColor: color.success }]}
@@ -126,31 +126,31 @@ export default memo(function Archero() {
             {
               width: charSize,
               height: charSize,
-              backgroundColor: color.brand
-            }
+              backgroundColor: color.brand,
+            },
           ]}
         />
         <Animated.View
           style={[
             joystick.getLayout(),
             {
-              justifyContent: "center",
-              alignItems: "center",
+              justifyContent: 'center',
+              alignItems: 'center',
               borderRadius: 500,
               width: joystickSize,
               height: joystickSize,
-              backgroundColor: Theme.color.overlay
-            }
+              backgroundColor: Theme.color.overlay,
+            },
           ]}
         >
           <View
             style={{
-              justifyContent: "center",
-              alignItems: "center",
+              justifyContent: 'center',
+              alignItems: 'center',
               borderRadius: 500,
               width: thumbSize,
               height: thumbSize,
-              backgroundColor: Theme.color.overlay
+              backgroundColor: Theme.color.overlay,
             }}
           >
             <Animated.View
@@ -160,8 +160,8 @@ export default memo(function Archero() {
                   borderRadius: 500,
                   width: thumbSize,
                   height: thumbSize,
-                  backgroundColor: colorWithOpacity(color.brand, 0.8)
-                }
+                  backgroundColor: colorWithOpacity(color.brand, 0.8),
+                },
               ]}
             ></Animated.View>
           </View>

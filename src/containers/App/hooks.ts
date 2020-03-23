@@ -1,32 +1,32 @@
-import NetInfo, { NetInfoState } from "@react-native-community/netinfo";
-import { useCallback, useEffect } from "react";
-import { AppState, AppStateStatus, Dimensions, Keyboard } from "react-native";
-import DeviceInfo from "react-native-device-info";
+import NetInfo, { NetInfoState } from '@react-native-community/netinfo';
+import { useCallback, useEffect } from 'react';
+import { AppState, AppStateStatus, Dimensions, Keyboard } from 'react-native';
+import DeviceInfo from 'react-native-device-info';
 import {
   DimensionsProps,
   changeAppStatus,
   changeKeyboardStatus,
   loadDevice,
   updateDimension,
-  updateNetwork
-} from "../../models";
-import { useRootDispatch } from "../../utils";
+  updateNetwork,
+} from '../../models';
+import { useRootDispatch } from '../../utils';
 
 export const useKeyboard = () => {
   const dispatch = useRootDispatch();
   const onShow = useCallback(() => dispatch(changeKeyboardStatus(true)), [
-    dispatch
+    dispatch,
   ]);
   const onHide = useCallback(() => dispatch(changeKeyboardStatus(false)), [
-    dispatch
+    dispatch,
   ]);
 
   useEffect(() => {
-    Keyboard.addListener("keyboardDidShow", onShow);
-    Keyboard.addListener("keyboardDidHide", onHide);
+    Keyboard.addListener('keyboardDidShow', onShow);
+    Keyboard.addListener('keyboardDidHide', onHide);
     return () => {
-      Keyboard.removeListener("keyboardDidShow", onShow);
-      Keyboard.removeListener("keyboardDidHide", onHide);
+      Keyboard.removeListener('keyboardDidShow', onShow);
+      Keyboard.removeListener('keyboardDidHide', onHide);
     };
   }, [onShow, onHide]);
 };
@@ -40,9 +40,9 @@ export const useDimensions = () => {
   );
 
   useEffect(() => {
-    Dimensions.addEventListener("change", handleChange);
+    Dimensions.addEventListener('change', handleChange);
     return () => {
-      Dimensions.removeEventListener("change", handleChange);
+      Dimensions.removeEventListener('change', handleChange);
     };
   }, [handleChange, dispatch]);
 };
@@ -56,9 +56,9 @@ export const useAppState = () => {
   );
 
   useEffect(() => {
-    AppState.addEventListener("change", handleChange);
+    AppState.addEventListener('change', handleChange);
     return () => {
-      AppState.removeEventListener("change", handleChange);
+      AppState.removeEventListener('change', handleChange);
     };
   }, [handleChange]);
 };
@@ -99,7 +99,7 @@ export const useDeviceInfo = async () => {
       deviceId: await DeviceInfo.getDeviceId(),
       deviceType: await DeviceInfo.getDeviceType(),
       deviceToken: __DEV__
-        ? Promise.resolve("")
+        ? Promise.resolve('')
         : await DeviceInfo.getDeviceToken(),
       display: await DeviceInfo.getDisplay(),
       deviceName: await DeviceInfo.getDeviceName(),
@@ -120,7 +120,7 @@ export const useDeviceInfo = async () => {
       model: await DeviceInfo.getModel(),
       phoneNumber: await DeviceInfo.getPhoneNumber(),
       powerState: __DEV__
-        ? Promise.resolve("")
+        ? Promise.resolve('')
         : await DeviceInfo.getPowerState(),
       product: await DeviceInfo.getProduct(),
       previewSdkInt: await DeviceInfo.getPreviewSdkInt(),
@@ -152,7 +152,7 @@ export const useDeviceInfo = async () => {
       isTablet: await DeviceInfo.isTablet(),
       supported32BitAbis: await DeviceInfo.supported32BitAbis(),
       supported64BitAbis: await DeviceInfo.supported64BitAbis(),
-      supportedAbis: await DeviceInfo.supportedAbis()
+      supportedAbis: await DeviceInfo.supportedAbis(),
     })
   );
 };

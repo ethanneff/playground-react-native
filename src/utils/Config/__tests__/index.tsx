@@ -1,18 +1,18 @@
-import { Config } from "..";
+import { Config } from '..';
 
-it("contains config", () => {
+it('contains config', () => {
   expect(Config).toEqual({
     app: {
-      name: "core",
-      timeout: 5000
+      name: 'core',
+      timeout: 5000,
     },
     os: {
-      android: "android",
-      ios: "ios",
-      web: "web"
+      android: 'android',
+      ios: 'ios',
+      web: 'web',
     },
     web: {
-      root: "root"
-    }
+      root: 'root',
+    },
   });
 });

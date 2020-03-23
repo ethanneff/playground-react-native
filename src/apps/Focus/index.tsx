@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { Screen, Dialog } from "../../components";
-import { useNav } from "../../hooks";
-import { List, Item } from "./components/List";
-import dayjs from "dayjs";
+import React, { useState, useEffect, useCallback } from 'react';
+import { Screen, Dialog } from '../../components';
+import { useNav } from '../../hooks';
+import { List, Item } from './components/List';
+import dayjs from 'dayjs';
 
 // TODO: flatlist on web
 // TODO: rename item.action to item.title
@@ -12,7 +12,7 @@ import dayjs from "dayjs";
 const infiniteScrollRegeneration = 100;
 const editItem: { visible: boolean; item: Item | null } = {
   visible: false,
-  item: null
+  item: null,
 };
 export default function Focus() {
   const [modalItemEdit, setModalItemEdit] = useState(editItem);
@@ -26,21 +26,18 @@ export default function Focus() {
     for (let i = 0; i < infiniteScrollRegeneration; i++) {
       const lastItem =
         group.length === 0
-          ? dayjs()
-              .startOf("day")
-              .add(2, "day")
-              .valueOf()
+          ? dayjs().startOf('day').add(2, 'day').valueOf()
           : group[group.length - 1].id;
-      const next = dayjs(lastItem).subtract(1, "hour");
+      const next = dayjs(lastItem).subtract(1, 'hour');
       const id = next.valueOf();
       group.push({
         action: String(Math.random()) + String(Math.random()),
-        dayOfMonth: next.format("D"),
-        dayOfWeek: next.format("ddd"),
-        hour: next.format("h"),
+        dayOfMonth: next.format('D'),
+        dayOfWeek: next.format('ddd'),
+        hour: next.format('h'),
         id,
-        month: next.format("MMM"),
-        zone: next.format("a")
+        month: next.format('MMM'),
+        zone: next.format('a'),
       });
     }
     setItems(group);
@@ -58,45 +55,45 @@ export default function Focus() {
   }, [generateMoreItems, items.length]);
 
   const handleModalEditBackgroundPress = useCallback(() => {
-    setModalItemEdit(state => ({ ...state, visible: false }));
+    setModalItemEdit((state) => ({ ...state, visible: false }));
   }, []);
 
   useEffect(handleLoad, []);
 
   return (
     <>
-      <Screen border onLeftPress={nav.to("portfolioLanding")} title="Focus">
-        {items.length > 0 && 
+      <Screen border onLeftPress={nav.to('portfolioLanding')} title="Focus">
+        {items.length > 0 && (
           <List
             items={items}
             onItemPress={handleItemPress}
             onEndReached={generateMoreItems}
             onEndReachedThreshold={0.5}
           />
-        }
+        )}
       </Screen>
-      {modalItemEdit.visible && 
+      {modalItemEdit.visible && (
         <Dialog
           duration={2000}
           testID="editItem"
-          title={modalItemEdit.item ? modalItemEdit.item.action : "empty"}
+          title={modalItemEdit.item ? modalItemEdit.item.action : 'empty'}
           onBackgroundPress={handleModalEditBackgroundPress}
         />
-      }
-      {modalProfile && 
+      )}
+      {modalProfile && (
         <Dialog
           testID="editItem"
           title="hello"
           onBackgroundPress={handleModalEditBackgroundPress}
         />
-      }
-      {modalLogin && 
+      )}
+      {modalLogin && (
         <Dialog
           testID="editItem"
           title="hello"
           onBackgroundPress={handleModalEditBackgroundPress}
         />
-      }
+      )}
     </>
   );
 }

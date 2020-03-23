@@ -1,20 +1,20 @@
-import React, { memo } from "react";
+import React, { memo } from 'react';
 import {
   TextStyle,
   TouchableOpacity,
   ViewStyle,
-  StyleProp
-} from "react-native";
-import { Text } from "../Text";
-import { useColor, useDropShadow } from "../../hooks";
-import { getStyles } from "./utils";
-import { Color } from "../../models";
+  StyleProp,
+} from 'react-native';
+import { Text } from '../Text';
+import { useColor, useDropShadow } from '../../hooks';
+import { getStyles } from './utils';
+import { Color } from '../../models';
 
 /*
 styling: https://material.io/design/components/buttons.html#usage
 */
 
-export type ButtonEmphasis = "low" | "medium" | "high";
+export type ButtonEmphasis = 'low' | 'medium' | 'high';
 
 export interface ButtonProps {
   /* content */
@@ -42,7 +42,7 @@ export interface ButtonProps {
   onLongPress?(): void;
 }
 
-export const Button: React.FC<ButtonProps> = memo(props => {
+export const Button: React.FC<ButtonProps> = memo((props) => {
   const {
     activeOpacity,
     buttonStyle,
@@ -53,24 +53,24 @@ export const Button: React.FC<ButtonProps> = memo(props => {
     elevation = 2,
     hidden,
     invisible,
-    emphasis = "low",
+    emphasis = 'low',
     lowercase,
     onPress,
-    color = "text",
+    color = 'text',
     onLongPress,
     right,
     textStyle,
-    title
+    title,
   } = props;
   const colorScheme = useColor();
   const dropShadowStyling = useDropShadow(elevation);
-  const buttonColor = colorScheme[color || "text"];
+  const buttonColor = colorScheme[color || 'text'];
   const styles = getStyles({
     colorScheme,
     color: buttonColor,
     emphasis,
     disable,
-    noPadding
+    noPadding,
   });
   const buttonStyleGroup = [
     styles.container,
@@ -78,11 +78,11 @@ export const Button: React.FC<ButtonProps> = memo(props => {
     right && styles.right,
     dropShadow && dropShadowStyling,
     invisible && styles.invisible,
-    buttonStyle
+    buttonStyle,
   ];
   const textStyleGroup = [styles.text, textStyle];
 
-  return hidden ? null : 
+  return hidden ? null : (
     <TouchableOpacity
       activeOpacity={activeOpacity}
       disabled={disable || invisible}
@@ -92,5 +92,5 @@ export const Button: React.FC<ButtonProps> = memo(props => {
     >
       <Text center button={!lowercase} title={title} style={textStyleGroup} />
     </TouchableOpacity>
-  ;
+  );
 });

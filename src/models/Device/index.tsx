@@ -1,15 +1,15 @@
-import { AppState, AppStateStatus, ScaledSize } from "react-native";
-import { ActionType, createAction, getType } from "typesafe-actions";
-import { RootAction } from "../../containers";
-import { logout } from "../Auth";
+import { AppState, AppStateStatus, ScaledSize } from 'react-native';
+import { ActionType, createAction, getType } from 'typesafe-actions';
+import { RootAction } from '../../containers';
+import { logout } from '../Auth';
 
 /* ACTIONS */
-export const loadDevice = createAction("device/LOAD")<DeviceInfo>();
-export const changeAppStatus = createAction("device/UPDATE_STATUS")<
+export const loadDevice = createAction('device/LOAD')<DeviceInfo>();
+export const changeAppStatus = createAction('device/UPDATE_STATUS')<
   AppStateStatus
 >();
 export const changeKeyboardStatus = createAction(
-  "device/UPDATE_KEYBOARD_VISIBILITY"
+  'device/UPDATE_KEYBOARD_VISIBILITY'
 )<boolean>();
 
 /* INTERFACES */
@@ -95,58 +95,58 @@ export type DeviceActions = ActionType<
 
 /* REDUCERS */
 export const deviceInfoInitialState: DeviceInfo = {
-  androidId: "",
+  androidId: '',
   apiLevel: 0,
-  applicationName: "",
+  applicationName: '',
   availableLocationProviders: {},
-  baseOs: "",
-  buildId: "",
+  baseOs: '',
+  buildId: '',
   batteryLevel: 0,
-  bootloader: "",
-  brand: "",
-  buildNumber: "",
-  bundleId: "",
-  carrier: "",
-  codename: "",
-  device: "",
-  deviceId: "",
-  deviceType: "",
-  deviceToken: "",
-  display: "",
-  deviceName: "",
+  bootloader: '',
+  brand: '',
+  buildNumber: '',
+  bundleId: '',
+  carrier: '',
+  codename: '',
+  device: '',
+  deviceId: '',
+  deviceType: '',
+  deviceToken: '',
+  display: '',
+  deviceName: '',
   firstInstallTime: 0,
-  fingerprint: "",
+  fingerprint: '',
   fontScale: 0,
   freeDiskStorage: 0,
-  hardware: "",
-  host: "",
-  ipAddress: "",
-  incremental: "",
-  installReferrer: "",
-  instanceId: "",
+  hardware: '',
+  host: '',
+  ipAddress: '',
+  incremental: '',
+  installReferrer: '',
+  instanceId: '',
   lastUpdateTime: 0,
-  macAddress: "",
-  manufacturer: "",
-  maxMemory: "",
-  model: "",
-  phoneNumber: "",
+  macAddress: '',
+  manufacturer: '',
+  maxMemory: '',
+  model: '',
+  phoneNumber: '',
   powerState: {},
-  product: "",
+  product: '',
   previewSdkInt: 0,
-  readableVersion: "",
-  serialNumber: "",
-  securityPatch: "",
+  readableVersion: '',
+  serialNumber: '',
+  securityPatch: '',
   systemAvailableFeatures: [],
-  systemName: "",
-  systemVersion: "",
-  tags: "",
-  type: "",
+  systemName: '',
+  systemVersion: '',
+  tags: '',
+  type: '',
   totalDiskCapacity: 0,
-  totalMemory: "",
-  uniqueId: "",
+  totalMemory: '',
+  uniqueId: '',
   usedMemory: 0,
-  userAgent: "",
-  version: "",
+  userAgent: '',
+  version: '',
   hasNotch: false,
   hasSystemFeature: false,
   isAirplaneMode: false,
@@ -159,12 +159,12 @@ export const deviceInfoInitialState: DeviceInfo = {
   isTablet: false,
   supported32BitAbis: [],
   supported64BitAbis: [],
-  supportedAbis: []
+  supportedAbis: [],
 };
 export const deviceInitialState: DeviceState = {
   ...deviceInfoInitialState,
   keyboardVisible: false,
-  appStatus: AppState.currentState
+  appStatus: AppState.currentState,
 };
 
 export const deviceReducer = (
@@ -175,17 +175,17 @@ export const deviceReducer = (
     case getType(changeAppStatus):
       return {
         ...state,
-        appStatus: action.payload
+        appStatus: action.payload,
       };
     case getType(changeKeyboardStatus):
       return {
         ...state,
-        keyboardVisible: action.payload
+        keyboardVisible: action.payload,
       };
     case getType(loadDevice):
       return {
         ...state,
-        ...action.payload
+        ...action.payload,
       };
     case getType(logout):
       return deviceInitialState;

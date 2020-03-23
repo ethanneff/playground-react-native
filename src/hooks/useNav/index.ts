@@ -1,7 +1,7 @@
-import { navigate } from "./../../models/Navigation";
-import { useRootDispatch } from "../../utils";
-import { NavigationScreen } from "../../models";
-import { useCallback } from "react";
+import { navigate } from './../../models/Navigation';
+import { useRootDispatch } from '../../utils';
+import { NavigationScreen } from '../../models';
+import { useCallback } from 'react';
 
 export const useNav = () => {
   const dispatch = useRootDispatch();

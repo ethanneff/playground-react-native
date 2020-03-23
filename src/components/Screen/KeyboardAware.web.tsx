@@ -1,5 +1,5 @@
-import React, { memo } from "react";
-import { ViewStyle, View, StyleProp } from "react-native";
+import React, { memo } from 'react';
+import { ViewStyle, View, StyleProp } from 'react-native';
 
 interface Props {
   scroll?: boolean;
@@ -8,7 +8,7 @@ interface Props {
 
 export const KeyboardAware: React.FC<Props> = memo(function KeyboardAware({
   children,
-  style
+  style,
 }) {
   return <View style={style}>{children}</View>;
 });

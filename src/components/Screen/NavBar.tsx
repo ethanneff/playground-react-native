@@ -1,9 +1,9 @@
-import React, { memo } from "react";
-import { StyleSheet, View } from "react-native";
-import { Text } from "../Text";
-import { NavButton } from "./NavButton";
-import { Theme } from "../../utils";
-import { useColor } from "../../hooks";
+import React, { memo } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Text } from '../Text';
+import { NavButton } from './NavButton';
+import { Theme } from '../../utils';
+import { useColor } from '../../hooks';
 
 interface Props {
   title?: string;
@@ -19,19 +19,19 @@ export const NavBar: React.FC<Props> = memo(function NavBar({
   onLeftPress,
   onRightPress,
   border,
-  leftIcon = "chevron-left",
-  rightIcon = "close"
+  leftIcon = 'chevron-left',
+  rightIcon = 'close',
 }) {
   const color = useColor();
   const styles = StyleSheet.create({
     container: {
-      alignItems: "center",
-      flexDirection: "row",
-      justifyContent: "space-between",
+      alignItems: 'center',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
       borderBottomColor: border ? color.secondary : color.background,
       borderBottomWidth: 1,
-      height: Theme.padding.p18
-    }
+      height: Theme.padding.p18,
+    },
   });
 
   return (

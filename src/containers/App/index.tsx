@@ -1,11 +1,11 @@
-import React, { memo } from "react";
+import React, { memo } from 'react';
 import {
   useAppState,
   useDeviceInfo,
   useDimensions,
   useKeyboard,
-  useNetInfo
-} from "./hooks";
+  useNetInfo,
+} from './hooks';
 
 export const App = memo(function App({ children }) {
   useNetInfo();

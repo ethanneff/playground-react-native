@@ -16,9 +16,9 @@ interface Tag {
 }
 
 export enum ChecklistAccess {
-  Read = "Read",
-  Write = "Write",
-  Comment = "Comment"
+  Read = 'Read',
+  Write = 'Write',
+  Comment = 'Comment',
 }
 
 interface ChecklistItem {
@@ -33,10 +33,10 @@ interface ChecklistItem {
 }
 
 enum ChecklistItemStatus {
-  Todo = "Todo",
-  InProgress = "InProgress",
-  Reminded = "Reminded",
-  Done = "Done"
+  Todo = 'Todo',
+  InProgress = 'InProgress',
+  Reminded = 'Reminded',
+  Done = 'Done',
 }
 
 interface ChecklistItemHistory {
@@ -93,49 +93,49 @@ export interface Tags {
 export const User: User | any = {};
 
 export const Data = {
-  "3": {
+  '3': {
     items: {
-      "1": {
+      '1': {
         sources: {},
-        title: "read"
+        title: 'read',
       },
-      "2": {
-        title: "remove teeth"
-      }
+      '2': {
+        title: 'remove teeth',
+      },
     },
     reminders: {},
-    trigger: "enter train"
+    trigger: 'enter train',
   },
-  "4": {
+  '4': {
     items: {
-      "1": {
-        title: "find car outlet"
+      '1': {
+        title: 'find car outlet',
       },
-      "2": {
-        title: "find and charge battery pack"
-      }
+      '2': {
+        title: 'find and charge battery pack',
+      },
     },
-    trigger: "backlog"
+    trigger: 'backlog',
   },
-  "5": {
+  '5': {
     items: {
-      "1": {
-        id: "1",
-        title: "clean emails"
+      '1': {
+        id: '1',
+        title: 'clean emails',
       },
-      "2": {
-        id: "2",
-        title: "clean slack"
+      '2': {
+        id: '2',
+        title: 'clean slack',
       },
-      "3": {
-        id: "3",
-        title: "look at sentry"
+      '3': {
+        id: '3',
+        title: 'look at sentry',
       },
-      "4": {
-        id: "4",
-        title: "respond to pull requests"
-      }
+      '4': {
+        id: '4',
+        title: 'respond to pull requests',
+      },
     },
-    trigger: "arrive at work"
-  }
+    trigger: 'arrive at work',
+  },
 };

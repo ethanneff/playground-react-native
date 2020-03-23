@@ -1,30 +1,30 @@
-import React, { memo, useState, useCallback, useRef } from "react";
+import React, { memo, useState, useCallback, useRef } from 'react';
 import {
   View,
   Image,
   ImageSourcePropType,
   PanResponder,
   Animated,
-  TouchableOpacity
-} from "react-native";
+  TouchableOpacity,
+} from 'react-native';
 import {
   Screen,
   Text,
   Icon,
   Card,
-  EllipsizeMode
-} from "../../../../components";
+  EllipsizeMode,
+} from '../../../../components';
 import {
   useColor,
   useNav,
   useDropShadow,
-  useNativeDriver
-} from "../../../../hooks";
-import { Theme, useRootSelector } from "../../../../utils";
-import dayjs, { Dayjs } from "dayjs";
-import "react-native-get-random-values";
-import { v4 } from "uuid";
-import { getWidth } from "../../../../models";
+  useNativeDriver,
+} from '../../../../hooks';
+import { Theme, useRootSelector } from '../../../../utils';
+import dayjs, { Dayjs } from 'dayjs';
+import 'react-native-get-random-values';
+import { v4 } from 'uuid';
+import { getWidth } from '../../../../models';
 
 interface SwipeCard extends SwipeItem {
   index: number;
@@ -35,11 +35,11 @@ interface SwipeCard extends SwipeItem {
 
 export const formatRelativeDate = (date: Dayjs) => {
   const now = dayjs();
-  const years = now.diff(date, "year");
-  const weeks = now.diff(date, "week");
-  const days = now.diff(date, "day");
-  const hours = now.diff(date, "hour");
-  const minutes = now.diff(date, "minute");
+  const years = now.diff(date, 'year');
+  const weeks = now.diff(date, 'week');
+  const days = now.diff(date, 'day');
+  const hours = now.diff(date, 'hour');
+  const minutes = now.diff(date, 'minute');
   return years
     ? `${years}y`
     : weeks
@@ -50,7 +50,7 @@ export const formatRelativeDate = (date: Dayjs) => {
     ? `${hours}h`
     : minutes
     ? `${minutes}m`
-    : "";
+    : '';
 };
 
 const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
@@ -65,7 +65,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
   const position = new Animated.ValueXY();
 
   const onLayout = useCallback(
-    event => {
+    (event) => {
       cardWidth.current = event.nativeEvent.layout.width;
     },
     [cardWidth]
@@ -96,9 +96,9 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
           : 0;
       Animated.spring(position, {
         toValue: { x, y: 0 },
-        useNativeDriver: useDriver
+        useNativeDriver: useDriver,
       }).start();
-    }
+    },
   });
 
   return (
@@ -106,34 +106,34 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
       onLayout={onLayout}
       {...panResponder.panHandlers}
       style={{
-        position: "absolute",
-        width: "100%",
+        position: 'absolute',
+        width: '100%',
         left: position.x,
         zIndex: props.index,
         height: props.height,
         backgroundColor: color.background,
         ...dropShadow,
         borderRadius: Theme.padding.p01,
-        borderColor: color.brand
+        borderColor: color.brand,
       }}
     >
       <TouchableOpacity style={{ flex: 1 }} onPress={props.onSwipeComplete}>
-        <View style={{ flex: 1, flexDirection: "row" }}>
-          {props.image && 
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          {props.image && (
             <Image
               source={props.image}
               style={{
                 height: imageHeight,
                 width: imageHeight,
-                alignSelf: "center"
+                alignSelf: 'center',
               }}
             />
-          }
+          )}
           <View style={{ flex: 1, padding: Theme.padding.p02 }}>
             <View
               style={{
-                flexDirection: "row",
-                alignItems: "center"
+                flexDirection: 'row',
+                alignItems: 'center',
               }}
             >
               <Icon name={props.icon} size={15} />
@@ -177,67 +177,67 @@ const initialItems: SwipeItem[] = [
   {
     id: v4(),
     image: null,
-    title: "Price Movement",
-    icon: "arrow-bottom-right",
-    date: dayjs().subtract(5, "minute"),
-    body: "BABA is down 4.41% to $204.433.",
-    button: "View BABA",
-    onPress: () => undefined
+    title: 'Price Movement',
+    icon: 'arrow-bottom-right',
+    date: dayjs().subtract(5, 'minute'),
+    body: 'BABA is down 4.41% to $204.433.',
+    button: 'View BABA',
+    onPress: () => undefined,
   },
   {
     id: v4(),
     image: null,
-    title: "Marketwatch",
-    icon: "file-document-box-outline",
-    date: dayjs().subtract(11, "hour"),
+    title: 'Marketwatch',
+    icon: 'file-document-box-outline',
+    date: dayjs().subtract(11, 'hour'),
     body:
-      "Disney heiress Abigail Disney and other superrich American demand the 1% pay higher taxes than other Americans.",
-    button: "View Article",
-    onPress: () => undefined
+      'Disney heiress Abigail Disney and other superrich American demand the 1% pay higher taxes than other Americans.',
+    button: 'View Article',
+    onPress: () => undefined,
   },
   {
     id: v4(),
     image: null,
-    title: "Reuters",
-    icon: "book",
-    date: dayjs().subtract(1, "day"),
+    title: 'Reuters',
+    icon: 'book',
+    date: dayjs().subtract(1, 'day'),
     body:
       "Amazon files motion to halt Microsoft's work on Pentagon's JEDI contract",
-    button: "View Article",
-    onPress: () => undefined
+    button: 'View Article',
+    onPress: () => undefined,
   },
   {
     id: v4(),
-    image: require("./placeholder.png"),
-    title: "Congratulations",
-    icon: "star-outline",
+    image: require('./placeholder.png'),
+    title: 'Congratulations',
+    icon: 'star-outline',
     date: dayjs(),
     body: "You're invited! Start trading Bitcoin & Ethereum",
-    button: "Get Started",
-    onPress: () => undefined
+    button: 'Get Started',
+    onPress: () => undefined,
   },
   {
     id: v4(),
-    image: require("./placeholder.png"),
-    title: "Enjoying robinhood?",
-    icon: "star-outline",
+    image: require('./placeholder.png'),
+    title: 'Enjoying robinhood?',
+    icon: 'star-outline',
     date: dayjs(),
     body:
       "Invite your friends! When they sign up, you'll both get a free stock",
-    button: "Invite friends",
-    onPress: () => undefined
+    button: 'Invite friends',
+    onPress: () => undefined,
   },
   {
     id: v4(),
     image: null,
-    title: "Introducing cards",
-    icon: "lightbulb-outline",
+    title: 'Introducing cards',
+    icon: 'lightbulb-outline',
     date: dayjs(),
     body:
-      "Swipe through cards to see your personalized notifications and news stories.",
-    button: "Swipe to dismiss",
-    onPress: () => undefined // complete
-  }
+      'Swipe through cards to see your personalized notifications and news stories.',
+    button: 'Swipe to dismiss',
+    onPress: () => undefined, // complete
+  },
 ];
 
 interface BadgeProps {
@@ -252,14 +252,14 @@ const Badge = memo((props: BadgeProps) => {
   return (
     <View
       style={{
-        position: "absolute",
+        position: 'absolute',
         right: 0,
         width: size,
         height: size,
         margin: Theme.padding.p01,
         zIndex: props.count * 10,
-        alignItems: "center",
-        justifyContent: "center"
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
       <View
@@ -268,8 +268,8 @@ const Badge = memo((props: BadgeProps) => {
           height: badgeSize,
           borderRadius: size,
           backgroundColor: color.danger,
-          alignItems: "center",
-          justifyContent: "center"
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         <Text
@@ -289,31 +289,31 @@ interface SwipeCardsProps {
 
 const SwipeCards = memo(function SwipeCardList({
   height = 100,
-  items
+  items,
 }: SwipeCardsProps) {
   const [feed, setFeed] = useState({
     items,
-    percent: 1
+    percent: 1,
   });
 
   const onSwipeComplete = useCallback(() => {
-    setFeed(state => ({
+    setFeed((state) => ({
       ...state,
       percent: 1,
-      items: state.items.filter((_, i) => i !== state.items.length - 1)
+      items: state.items.filter((_, i) => i !== state.items.length - 1),
     }));
   }, []);
 
   const onSwipePercentChange = useCallback((percent: number) => {
-    setFeed(state => ({
+    setFeed((state) => ({
       ...state,
-      percent
+      percent,
     }));
   }, []);
 
-  return !feed.items.length ? null : 
+  return !feed.items.length ? null : (
     <View style={{ height }}>
-      {feed.items.map((item, index) => 
+      {feed.items.map((item, index) => (
         <SwipeCard
           {...item}
           height={height}
@@ -322,18 +322,18 @@ const SwipeCards = memo(function SwipeCardList({
           onSwipeComplete={onSwipeComplete}
           onSwipePercentChange={onSwipePercentChange}
         />
-      )}
+      ))}
       <Badge count={feed.items.length} percent={feed.percent} />
     </View>
-  ;
+  );
 });
 
 const ImagePlaceholder = memo(function ImagePlaceholder() {
   return (
     <Card noPadding>
       <Image
-        source={require("./placeholder.png")}
-        style={{ width: "100%", height: 100, borderRadius: 4 }}
+        source={require('./placeholder.png')}
+        style={{ width: '100%', height: 100, borderRadius: 4 }}
       />
     </Card>
   );
@@ -342,7 +342,7 @@ const ImagePlaceholder = memo(function ImagePlaceholder() {
 export default memo(function SwipeFeed() {
   const nav = useNav();
   return (
-    <Screen onLeftPress={nav.to("debug")} title="Swipe Feed">
+    <Screen onLeftPress={nav.to('debug')} title="Swipe Feed">
       <View style={{ padding: Theme.padding.p04 }}>
         <ImagePlaceholder />
         <ImagePlaceholder />

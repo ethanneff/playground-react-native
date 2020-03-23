@@ -1,23 +1,23 @@
-import { getType } from "typesafe-actions";
+import { getType } from 'typesafe-actions';
 import {
   getScreen,
   navigate,
   navigationReducer,
-  navigationInitialState
-} from "..";
-import { logout, loginRequest } from "../../Auth";
-import { store } from "../../../containers";
+  navigationInitialState,
+} from '..';
+import { logout, loginRequest } from '../../Auth';
+import { store } from '../../../containers';
 
-it("getScreen selector", () => {
-  expect(getScreen(store.getState())).toEqual("portfolioLanding");
+it('getScreen selector', () => {
+  expect(getScreen(store.getState())).toEqual('portfolioLanding');
 });
 
 it(getType(navigate), () => {
-  const payload = "focus";
+  const payload = 'focus';
   expect(
     navigationReducer(navigationInitialState, {
       payload,
-      type: getType(navigate)
+      type: getType(navigate),
     })
   ).toMatchObject({ screen: payload });
 });
@@ -25,7 +25,7 @@ it(getType(navigate), () => {
 it(getType(logout), () => {
   expect(
     navigationReducer(navigationInitialState, {
-      type: getType(logout)
+      type: getType(logout),
     })
   ).toMatchObject(navigationInitialState);
 });
@@ -33,7 +33,7 @@ it(getType(logout), () => {
 it(getType(loginRequest), () => {
   expect(
     navigationReducer(undefined, {
-      type: getType(loginRequest)
+      type: getType(loginRequest),
     })
   ).toMatchObject(navigationInitialState);
 });

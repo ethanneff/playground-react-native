@@ -2,26 +2,26 @@ import {
   networkInitialState,
   networkReducer,
   NetworkState,
-  updateNetwork
-} from "./..";
-import { NetInfoState } from "@react-native-community/netinfo";
-import { NetInfoStateType } from "./../../../conversions/NetInfo/index.web";
+  updateNetwork,
+} from './..';
+import { NetInfoState } from '@react-native-community/netinfo';
+import { NetInfoStateType } from './../../../conversions/NetInfo/index.web';
 
-import { getType } from "typesafe-actions";
-import { logout, loginRequest } from "../../Auth";
+import { getType } from 'typesafe-actions';
+import { logout, loginRequest } from '../../Auth';
 
-it("updateNetwork action", () => {
+it('updateNetwork action', () => {
   const payload: NetInfoState = {
     details: {
-      isConnectionExpensive: true
+      isConnectionExpensive: true,
     },
     isInternetReachable: true,
     isConnected: true,
-    type: NetInfoStateType.other
+    type: NetInfoStateType.other,
   };
   const expectedAction = {
     payload,
-    type: getType(updateNetwork)
+    type: getType(updateNetwork),
   };
   expect(updateNetwork(payload)).toEqual(expectedAction);
 });
@@ -29,35 +29,35 @@ it("updateNetwork action", () => {
 it(getType(updateNetwork), () => {
   const payload: NetInfoState = {
     details: {
-      isConnectionExpensive: true
+      isConnectionExpensive: true,
     },
     isInternetReachable: false,
     isConnected: true,
-    type: NetInfoStateType.other
+    type: NetInfoStateType.other,
   };
   expect(
     networkReducer(networkInitialState, {
       payload,
-      type: getType(updateNetwork)
+      type: getType(updateNetwork),
     })
   ).toEqual({
     connected: true,
     reachable: false,
-    type: "other",
+    type: 'other',
     details: {
-      isConnectionExpensive: true
-    }
+      isConnectionExpensive: true,
+    },
   });
 });
 
 it(getType(logout), () => {
   const customState: NetworkState = {
     ...networkInitialState,
-    reachable: true
+    reachable: true,
   };
   expect(
     networkReducer(customState, {
-      type: getType(logout)
+      type: getType(logout),
     })
   ).toEqual(networkInitialState);
 });
@@ -65,7 +65,7 @@ it(getType(logout), () => {
 it(getType(loginRequest), () => {
   expect(
     networkReducer(undefined, {
-      type: getType(loginRequest)
+      type: getType(loginRequest),
     })
   ).toEqual(networkInitialState);
 });

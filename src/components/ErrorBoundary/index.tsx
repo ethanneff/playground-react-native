@@ -1,5 +1,5 @@
-import React, { ErrorInfo } from "react";
-import { Text } from "../Text";
+import React, { ErrorInfo } from 'react';
+import { Text } from '../Text';
 
 interface State {
   hasError: boolean;

@@ -1,6 +1,6 @@
-import React, { memo } from "react";
-import { ScrollView, StyleSheet } from "react-native";
-import Lap from "./Lap";
+import React, { memo } from 'react';
+import { ScrollView, StyleSheet } from 'react-native';
+import Lap from './Lap';
 
 interface LapTableProps {
   laps: number[];
@@ -12,7 +12,7 @@ export default memo(function LapsTable({ laps, timer }: LapTableProps) {
   let min = Number.MAX_SAFE_INTEGER;
   let max = Number.MIN_SAFE_INTEGER;
   if (finishedLaps.length >= 2) {
-    finishedLaps.forEach(lap => {
+    finishedLaps.forEach((lap) => {
       if (lap < min) {
         min = lap;
       }
@@ -23,12 +23,12 @@ export default memo(function LapsTable({ laps, timer }: LapTableProps) {
   }
   const styles = StyleSheet.create({
     scrollView: {
-      alignSelf: "stretch"
-    }
+      alignSelf: 'stretch',
+    },
   });
   return (
     <ScrollView style={styles.scrollView}>
-      {laps.map((lap, index) => 
+      {laps.map((lap, index) => (
         <Lap
           num={laps.length - index}
           key={laps.length - index}
@@ -36,7 +36,7 @@ export default memo(function LapsTable({ laps, timer }: LapTableProps) {
           fastest={lap === min}
           slowest={lap === max}
         />
-      )}
+      ))}
     </ScrollView>
   );
 });

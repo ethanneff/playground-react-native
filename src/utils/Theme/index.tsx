@@ -1,5 +1,5 @@
 const color = {
-  overlay: "hsla(0,0%,0%, 0.38)"
+  overlay: 'hsla(0,0%,0%, 0.38)',
 };
 
 const padding = {
@@ -33,15 +33,15 @@ const padding = {
   p27: 108,
   p28: 112,
   p29: 116,
-  p30: 120
+  p30: 120,
 };
 
-type FontWeight = "100" | "300" | "600";
+type FontWeight = '100' | '300' | '600';
 
 const fontWeight: { [key: string]: FontWeight } = {
-  light: "100",
-  medium: "600",
-  regular: "300"
+  light: '100',
+  medium: '600',
+  regular: '300',
 };
 
 /* SIZING https://material.io/design/typography/the-type-system.html#applying-the-type-scale */
@@ -50,72 +50,72 @@ const fontSize = {
   body1: {
     fontSize: 16,
     fontWeight: fontWeight.regular,
-    letterSpacing: 0.5
+    letterSpacing: 0.5,
   },
   body2: {
     fontSize: 14,
     fontWeight: fontWeight.regular,
-    letterSpacing: 0.25
+    letterSpacing: 0.25,
   },
   button: {
     fontSize: 14,
     fontWeight: fontWeight.medium,
-    letterSpacing: 0.75
+    letterSpacing: 0.75,
   },
   caption: {
     fontSize: 12,
     fontWeight: fontWeight.regular,
-    letterSpacing: 0.4
+    letterSpacing: 0.4,
   },
   h1: {
     fontSize: 96 / scaling,
     fontWeight: fontWeight.light,
-    letterSpacing: -1.5
+    letterSpacing: -1.5,
   },
   h2: {
     fontSize: 60 / scaling,
     fontWeight: fontWeight.light,
-    letterSpacing: -0.5
+    letterSpacing: -0.5,
   },
   h3: {
     fontSize: 48 / scaling,
     fontWeight: fontWeight.regular,
-    letterSpacing: 0
+    letterSpacing: 0,
   },
   h4: {
     fontSize: 34 / scaling,
     fontWeight: fontWeight.regular,
-    letterSpacing: 0.25
+    letterSpacing: 0.25,
   },
   h5: {
     fontSize: 24 / scaling,
     fontWeight: fontWeight.regular,
-    letterSpacing: 0
+    letterSpacing: 0,
   },
   h6: {
     fontSize: 20 / scaling,
     fontWeight: fontWeight.medium,
-    letterSpacing: 0.15
+    letterSpacing: 0.15,
   },
   overline: {
     fontSize: 10,
     fontWeight: fontWeight.regular,
-    letterSpacing: 1.5
+    letterSpacing: 1.5,
   },
   subtitle1: {
     fontSize: 16,
     fontWeight: fontWeight.regular,
-    letterSpacing: 0.15
+    letterSpacing: 0.15,
   },
   subtitle2: {
     fontSize: 14,
     fontWeight: fontWeight.medium,
-    letterSpacing: 0.1
-  }
+    letterSpacing: 0.1,
+  },
 };
 
 const sizing = {
-  borderRadius: padding.p02
+  borderRadius: padding.p02,
 };
 
 export const Theme = {
@@ -123,13 +123,13 @@ export const Theme = {
   fontSize,
   fontWeight,
   padding,
-  sizing
+  sizing,
 };
 
 export const colorWithOpacity = (colorCode: string, opacity = 0.5) => {
   const boundedOpacity = opacity < 0 ? 0 : opacity > 1 ? 1 : opacity;
   const leading = 4;
-  if (!colorCode.startsWith("hsl")) {
+  if (!colorCode.startsWith('hsl')) {
     return colorCode;
   }
   const substr = colorCode.substring(leading, colorCode.length - 1);

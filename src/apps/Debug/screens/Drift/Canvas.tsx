@@ -1,6 +1,6 @@
-import React, { memo } from "react";
-import { View, LayoutChangeEvent } from "react-native";
-import { useColor } from "../../../../hooks";
+import React, { memo } from 'react';
+import { View, LayoutChangeEvent } from 'react-native';
+import { useColor } from '../../../../hooks';
 
 interface CanvasProps {
   onLayout: (event: LayoutChangeEvent) => void;
@@ -8,7 +8,7 @@ interface CanvasProps {
 
 export const Canvas: React.FC<CanvasProps> = memo(function Canvas({
   children,
-  onLayout
+  onLayout,
 }) {
   const color = useColor();
   return (

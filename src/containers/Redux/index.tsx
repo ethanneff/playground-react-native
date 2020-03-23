@@ -1,22 +1,22 @@
-import React, { memo } from "react";
-import { persistReducer, persistStore } from "redux-persist";
+import React, { memo } from 'react';
+import { persistReducer, persistStore } from 'redux-persist';
 import {
   Middleware,
   applyMiddleware,
   combineReducers,
   compose,
-  createStore
-} from "redux";
-import thunk, { ThunkAction } from "redux-thunk";
-import { DeepReadonly } from "utility-types";
+  createStore,
+} from 'redux';
+import thunk, { ThunkAction } from 'redux-thunk';
+import { DeepReadonly } from 'utility-types';
 import {
   ItemActions,
   ListActions,
   ChecklistReducer,
   checklistItemReducer,
   checklistReducer,
-  ChecklistItemReducer
-} from "../../apps/Checklists/models";
+  ChecklistItemReducer,
+} from '../../apps/Checklists/models';
 import {
   Choices,
   ChoicesActions,
@@ -29,8 +29,8 @@ import {
   choicesReducer,
   questionnairesReducer,
   questionsReducer,
-  responsesReducer
-} from "../../apps/Debug/screens/Questionnaire/models";
+  responsesReducer,
+} from '../../apps/Debug/screens/Questionnaire/models';
 import {
   AuthActions,
   AuthState,
@@ -49,17 +49,17 @@ import {
   networkReducer,
   dimensionReducer,
   DimensionState,
-  DimensionActions
-} from "../../models";
-import { Storage } from "../../conversions";
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
+  DimensionActions,
+} from '../../models';
+import { Storage } from '../../conversions';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 import {
   ChatMessageReducer,
   chatMessageReducer,
-  ChatMessageActions
-} from "../../apps/Debug/screens/Chat/Messages";
+  ChatMessageActions,
+} from '../../apps/Debug/screens/Chat/Messages';
 
 /* INTERFACES */
 export type RootState = DeepReadonly<{
@@ -92,7 +92,7 @@ const reducers = combineReducers<RootState>({
   questionnaires: questionnairesReducer,
   questions: questionsReducer,
   responses: responsesReducer,
-  theme: themeReducer
+  theme: themeReducer,
 });
 
 /* ACTIONS */
@@ -114,8 +114,8 @@ export type RootThunkAction<R> = ThunkAction<R, RootState, {}, RootAction>;
 
 /* CONSTANTS */
 const persistConfig = {
-  key: "root",
-  storage: Storage
+  key: 'root',
+  storage: Storage,
 };
 const middlewares: Middleware[] = [thunk];
 // @ts-ignore: custom __REDUX_DEVTOOLS_EXTENSION_COMPOSE__

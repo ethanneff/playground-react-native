@@ -1,6 +1,6 @@
-import { ScrollView, View } from "react-native";
-import React, { memo } from "react";
-import { Theme } from "../../utils";
+import { ScrollView, View } from 'react-native';
+import React, { memo } from 'react';
+import { Theme } from '../../utils';
 
 interface Item<T> {
   item: T;
@@ -16,15 +16,15 @@ interface Props<T> {
 export const Masonry = memo(function Masonry<T>({
   data,
   numColumns,
-  renderItem
+  renderItem,
 }: Props<T>) {
   const columns: ReadonlyArray<any> = [...Array(numColumns)].map(() => []);
   data.forEach((item: T, i: number) => columns[i % numColumns].push(item));
 
   return (
     <ScrollView>
-      <View style={{ flexDirection: "row", padding: Theme.padding.p02 }}>
-        {columns.map((column, j) => 
+      <View style={{ flexDirection: 'row', padding: Theme.padding.p02 }}>
+        {columns.map((column, j) => (
           <View
             style={{ flex: 1, padding: Theme.padding.p02 }}
             key={`column-${j}`}
@@ -33,7 +33,7 @@ export const Masonry = memo(function Masonry<T>({
               renderItem({ item, index })
             )}
           </View>
-        )}
+        ))}
       </View>
     </ScrollView>
   );

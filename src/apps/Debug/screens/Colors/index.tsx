@@ -1,20 +1,20 @@
-import React, { memo } from "react";
-import { View, ScrollView } from "react-native";
-import { Screen, Text, Button } from "../../../../components";
-import { useNav } from "../../../../hooks";
-import { ColorTheme, changeTheme } from "../../../../models";
-import { useRootSelector, useRootDispatch, Theme } from "../../../../utils";
+import React, { memo } from 'react';
+import { View, ScrollView } from 'react-native';
+import { Screen, Text, Button } from '../../../../components';
+import { useNav } from '../../../../hooks';
+import { ColorTheme, changeTheme } from '../../../../models';
+import { useRootSelector, useRootDispatch, Theme } from '../../../../utils';
 
 export default memo(function DebugColors() {
   const nav = useNav();
   const dispatch = useRootDispatch();
   const themes = Object.values(ColorTheme);
-  const currentTheme = useRootSelector(state => state.theme.currentColor);
+  const currentTheme = useRootSelector((state) => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   // text: high 87% medium 60% disabled 38%
   // icon: active 100% inactive 60% disabled 38%
   return (
-    <Screen onLeftPress={nav.to("debug")} title="Colors" gutter>
+    <Screen onLeftPress={nav.to('debug')} title="Colors" gutter>
       <Text
         h4
         title="Theme"
@@ -23,18 +23,18 @@ export default memo(function DebugColors() {
       />
       <View
         style={{
-          justifyContent: "center",
-          flexDirection: "row"
+          justifyContent: 'center',
+          flexDirection: 'row',
         }}
       >
-        {themes.map(item => 
+        {themes.map((item) => (
           <Button
             key={item}
             title={item}
             onPress={themePress(item)}
-            color={currentTheme === item ? "success" : "text"}
+            color={currentTheme === item ? 'success' : 'text'}
           />
-        )}
+        ))}
       </View>
       <ScrollView>
         <Text
@@ -43,7 +43,7 @@ export default memo(function DebugColors() {
           center
           style={{ padding: Theme.padding.p08 }}
         />
-        <View style={{ flexDirection: "row" }}>
+        <View style={{ flexDirection: 'row' }}>
           <View style={{ flex: 1 }}>
             <Button emphasis="high" color="primary" title="primary" />
             <Button emphasis="high" color="secondary" title="secondary" />
@@ -105,7 +105,7 @@ export default memo(function DebugColors() {
 
         <Text h4 title="Fonts" center style={{ padding: Theme.padding.p08 }} />
 
-        <View style={{ flexDirection: "row" }}>
+        <View style={{ flexDirection: 'row' }}>
           <View style={{ flex: 1 }}>
             <Text title="normal" center />
             <Text h1 title="h1" />

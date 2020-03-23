@@ -1,8 +1,8 @@
-import React, { memo } from "react";
-import { StyleSheet, ScrollView, View } from "react-native";
-import { Screen, Text, Card, Activity, Icon } from "../../components";
-import { useNav, useColor } from "../../hooks";
-import { Theme } from "../../utils";
+import React, { memo } from 'react';
+import { StyleSheet, ScrollView, View } from 'react-native';
+import { Screen, Text, Card, Activity, Icon } from '../../components';
+import { useNav, useColor } from '../../hooks';
+import { Theme } from '../../utils';
 
 // TODO: gitlab
 // TODO: selected
@@ -17,17 +17,17 @@ export default memo(function ActivityTracker() {
   const nav = useNav();
   const styles = StyleSheet.create({
     bottom: {
-      paddingBottom: Theme.padding.p04
-    }
+      paddingBottom: Theme.padding.p04,
+    },
   });
 
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")} title="Activity" border>
+    <Screen onLeftPress={nav.to('portfolioLanding')} title="Activity" border>
       <ScrollView
         style={{ backgroundColor: color.surface }}
         contentContainerStyle={{
           paddingHorizontal: Theme.padding.p04,
-          paddingVertical: Theme.padding.p02
+          paddingVertical: Theme.padding.p02,
         }}
       >
         <Card>
@@ -50,10 +50,10 @@ export default memo(function ActivityTracker() {
         onPress={() => undefined}
         color={color.background}
         style={{
-          position: "absolute",
+          position: 'absolute',
           bottom: 0,
           right: 0,
-          margin: Theme.padding.p04
+          margin: Theme.padding.p04,
         }}
       />
     </Screen>

@@ -1,46 +1,46 @@
-import axios from "axios";
-import { ActionType, createAction, getType } from "typesafe-actions";
-import { RootAction, RootState, RootThunkAction } from "../../containers";
-import { Config } from "../../utils";
+import axios from 'axios';
+import { ActionType, createAction, getType } from 'typesafe-actions';
+import { RootAction, RootState, RootThunkAction } from '../../containers';
+import { Config } from '../../utils';
 
 /* ACTIONS */
-export const loginRequest = createAction("AUTH/LOGIN_REQUEST")();
-export const loginSuccess = createAction("AUTH/REGISTER_SUCCESS")<string>();
-export const loginFailure = createAction("AUTH/REGISTER_FAILURE")<Error>();
-export const registerRequest = createAction("AUTH/REGISTER_REQUEST")();
-export const registerSuccess = createAction("AUTH/REGISTER_SUCCESS")<string>();
-export const registerFailure = createAction("AUTH/REGISTER_FAILURE")<Error>();
-export const logout = createAction("Auth/LOGOUT")();
+export const loginRequest = createAction('AUTH/LOGIN_REQUEST')();
+export const loginSuccess = createAction('AUTH/REGISTER_SUCCESS')<string>();
+export const loginFailure = createAction('AUTH/REGISTER_FAILURE')<Error>();
+export const registerRequest = createAction('AUTH/REGISTER_REQUEST')();
+export const registerSuccess = createAction('AUTH/REGISTER_SUCCESS')<string>();
+export const registerFailure = createAction('AUTH/REGISTER_FAILURE')<Error>();
+export const logout = createAction('Auth/LOGOUT')();
 
 /* ACTION CREATORS */
-export const onLogin = (): RootThunkAction<void> => async dispatch => {
+export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
   dispatch(loginRequest());
   try {
     const res = await axios({
       data: {
-        email: "sydney@fife",
-        password: "pistol"
+        email: 'sydney@fife',
+        password: 'pistol',
       },
-      method: "post",
+      method: 'post',
       timeout: Config.app.timeout,
-      url: "https://reqres.in/api/login"
+      url: 'https://reqres.in/api/login',
     });
     dispatch(loginSuccess(res.data.token));
   } catch (error) {
     dispatch(loginFailure(error));
   }
 };
-export const onRegister = (): RootThunkAction<void> => async dispatch => {
+export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
   dispatch(loginRequest());
   try {
     const res = await axios({
       data: {
-        email: "sydney@fife",
-        password: "pistol"
+        email: 'sydney@fife',
+        password: 'pistol',
       },
-      method: "post",
+      method: 'post',
       timeout: Config.app.timeout,
-      url: "https://reqres.in/api/register"
+      url: 'https://reqres.in/api/register',
     });
     dispatch(loginSuccess(res.data.token));
   } catch (error) {
@@ -52,11 +52,11 @@ export const onLogout = (): RootThunkAction<void> => (dispatch, getState) => {
   dispatch(logout());
   axios({
     data: {
-      token
+      token,
     },
-    method: "post",
+    method: 'post',
     timeout: Config.app.timeout,
-    url: "https://reqres.in/api/logout"
+    url: 'https://reqres.in/api/logout',
   });
 };
 
@@ -83,7 +83,7 @@ export type AuthActions = ActionType<
 
 /* REDUCERS */
 export const authInitialState: AuthState = {
-  loading: false
+  loading: false,
 };
 export function authReducer(
   state: AuthState = authInitialState,
@@ -94,21 +94,21 @@ export function authReducer(
     case getType(registerRequest):
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case getType(loginFailure):
     case getType(registerFailure):
       return {
         ...state,
         error: action.payload.message,
-        loading: false
+        loading: false,
       };
     case getType(loginSuccess):
     case getType(registerSuccess):
       return {
         ...state,
         loading: false,
-        token: action.payload
+        token: action.payload,
       };
     case getType(logout):
       return authInitialState;

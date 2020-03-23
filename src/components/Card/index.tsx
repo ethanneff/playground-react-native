@@ -1,7 +1,7 @@
-import React, { memo } from "react";
-import { StyleSheet, TouchableOpacity, View, ViewStyle } from "react-native";
-import { Theme } from "../../utils";
-import { useColor, useDropShadow } from "../../hooks";
+import React, { memo } from 'react';
+import { StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { Theme } from '../../utils';
+import { useColor, useDropShadow } from '../../hooks';
 
 interface Props {
   testID?: string;
@@ -31,7 +31,7 @@ export const Card: React.FC<Props> = memo(
     flex,
     selected,
     testID,
-    style
+    style,
   }) => {
     const color = useColor();
     const dropShadow = useDropShadow(elevation);
@@ -48,26 +48,26 @@ export const Card: React.FC<Props> = memo(
         borderRadius,
         borderWidth,
         marginVertical: noMargin ? 0 : Theme.padding.p02,
-        ...dropShadow
+        ...dropShadow,
       },
       contents: {
         backgroundColor: `hsla(0,0%,100%,${opacity})`,
         borderRadius,
-        padding: noPadding ? 0 : Theme.padding.p04
+        padding: noPadding ? 0 : Theme.padding.p04,
       },
       flex: {
-        flex: 1
+        flex: 1,
       },
       selected: {
-        backgroundColor: color.primary
-      }
+        backgroundColor: color.primary,
+      },
     });
 
     const containerStyles = [
       styles.containerStyle,
       selected ? styles.selected : undefined,
       flex ? styles.flex : undefined,
-      style
+      style,
     ];
     const contentStyles = [styles.contents, flex ? styles.flex : undefined];
     return (

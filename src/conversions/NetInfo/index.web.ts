@@ -7,20 +7,20 @@
  * @format
  */
 export enum NetInfoStateType {
-  unknown = "unknown",
-  none = "none",
-  cellular = "cellular",
-  wifi = "wifi",
-  bluetooth = "bluetooth",
-  ethernet = "ethernet",
-  wimax = "wimax",
-  vpn = "vpn",
-  other = "other"
+  unknown = 'unknown',
+  none = 'none',
+  cellular = 'cellular',
+  wifi = 'wifi',
+  bluetooth = 'bluetooth',
+  ethernet = 'ethernet',
+  wimax = 'wimax',
+  vpn = 'vpn',
+  other = 'other',
 }
 export enum NetInfoCellularGeneration {
-  "2g" = "2g",
-  "3g" = "3g",
-  "4g" = "4g"
+  '2g' = '2g',
+  '3g' = '3g',
+  '4g' = '4g',
 }
 export interface NetInfoConnectedDetails {
   isConnectionExpensive: boolean;

@@ -1,2 +1,2 @@
-export * from "./Storage";
-export * from "./NetInfo";
+export * from './Storage';
+export * from './NetInfo';

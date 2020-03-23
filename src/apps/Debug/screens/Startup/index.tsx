@@ -1,10 +1,10 @@
-import React, { memo, useState, useCallback } from "react";
-import { View, Switch, ScrollView } from "react-native";
-import { Screen, Text, TextInput, Button } from "../../../../components";
-import { useColor, useNav } from "../../../../hooks";
-import { Theme } from "../../../../utils";
-import dayjs from "dayjs";
-import { Section } from "./Section";
+import React, { memo, useState, useCallback } from 'react';
+import { View, Switch, ScrollView } from 'react-native';
+import { Screen, Text, TextInput, Button } from '../../../../components';
+import { useColor, useNav } from '../../../../hooks';
+import { Theme } from '../../../../utils';
+import dayjs from 'dayjs';
+import { Section } from './Section';
 
 // https://www.startupschool.org/updates/250717/edit
 
@@ -22,14 +22,14 @@ type Form = {
 
 const initialState: Form = {
   launched: false,
-  launchWeeks: "",
-  usersTalkedTo: "",
-  usersLearnedFrom: "",
-  topGoals: "",
-  primaryMetric: "",
-  biggestObstacle: "",
-  morale: "",
-  targetCustomer: ""
+  launchWeeks: '',
+  usersTalkedTo: '',
+  usersLearnedFrom: '',
+  topGoals: '',
+  primaryMetric: '',
+  biggestObstacle: '',
+  morale: '',
+  targetCustomer: '',
 };
 
 export default memo(function DebugStartup() {
@@ -40,63 +40,63 @@ export default memo(function DebugStartup() {
   const launchSubText =
     launchWeeks >= 5
       ? "That's a long way out! Think hard: is there an MVP you could launch earlier?"
-      : "Almost there, looking forward to your launch!";
+      : 'Almost there, looking forward to your launch!';
 
   const updateForm = useCallback(
     (key: keyof Form, value: string | boolean) =>
-      setForm(state => ({ ...state, [key]: value })),
+      setForm((state) => ({ ...state, [key]: value })),
     []
   );
   const handleLaunchChange = useCallback(
-    (value: boolean) => updateForm("launched", value),
+    (value: boolean) => updateForm('launched', value),
     [updateForm]
   );
   const handleUserChange = useCallback(
-    (value: string) => updateForm("usersTalkedTo", value),
+    (value: string) => updateForm('usersTalkedTo', value),
     [updateForm]
   );
   const handleMoraleChange = useCallback(
-    (value: string) => updateForm("morale", value),
+    (value: string) => updateForm('morale', value),
     [updateForm]
   );
   const handleObstacleChange = useCallback(
-    (value: string) => updateForm("biggestObstacle", value),
+    (value: string) => updateForm('biggestObstacle', value),
     [updateForm]
   );
   const handleLearnChange = useCallback(
-    (value: string) => updateForm("usersLearnedFrom", value),
+    (value: string) => updateForm('usersLearnedFrom', value),
     [updateForm]
   );
   const handleMetricChange = useCallback(
-    (value: string) => updateForm("primaryMetric", value),
+    (value: string) => updateForm('primaryMetric', value),
     [updateForm]
   );
   const handleGoalChange = useCallback(
-    (value: string) => updateForm("topGoals", value),
+    (value: string) => updateForm('topGoals', value),
     [updateForm]
   );
   const handleWeeksToLaunchChange = useCallback(
-    (value: string) => updateForm("launchWeeks", value),
+    (value: string) => updateForm('launchWeeks', value),
     [updateForm]
   );
 
   const handleSubmit = useCallback(() => undefined, []);
 
   return (
-    <Screen onLeftPress={nav.to("debug")} title="Weekly Update">
+    <Screen onLeftPress={nav.to('debug')} title="Weekly Update">
       <View
         style={{
           paddingBottom: Theme.padding.p04,
           borderBottomColor: color.secondary,
-          borderBottomWidth: 2
+          borderBottomWidth: 2,
         }}
       >
-        <Text h4 center title={dayjs().format("MMM DD, YYYY")} />
+        <Text h4 center title={dayjs().format('MMM DD, YYYY')} />
       </View>
       <ScrollView
         contentContainerStyle={{
           backgroundColor: color.light,
-          padding: Theme.padding.p04
+          padding: Theme.padding.p04,
         }}
       >
         <Section title="Launch">

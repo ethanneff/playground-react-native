@@ -1,25 +1,25 @@
-import { getType } from "typesafe-actions";
+import { getType } from 'typesafe-actions';
 import {
   ColorTheme,
   changeTheme,
   themeInitialState,
   themeReducer,
-  getCurrentColor
-} from "..";
-import { logout, loginRequest } from "../../Auth";
-import { store } from "../../../containers";
+  getCurrentColor,
+} from '..';
+import { logout, loginRequest } from '../../Auth';
+import { store } from '../../../containers';
 
-it("getCurrentColor dark", () => {
+it('getCurrentColor dark', () => {
   store.dispatch(changeTheme(ColorTheme.Dark));
   expect(getCurrentColor(store.getState())).toMatchObject({
-    primary: "hsl(263, 84%, 75%)"
+    primary: 'hsl(263, 84%, 75%)',
   });
 });
 
-it("getCurrentColor light", () => {
+it('getCurrentColor light', () => {
   store.dispatch(changeTheme(ColorTheme.Light));
   expect(getCurrentColor(store.getState())).toMatchObject({
-    primary: "hsl(211, 100%, 50%)"
+    primary: 'hsl(211, 100%, 50%)',
   });
 });
 
@@ -28,7 +28,7 @@ it(getType(changeTheme), () => {
   expect(
     themeReducer(themeInitialState, {
       payload,
-      type: getType(changeTheme)
+      type: getType(changeTheme),
     })
   ).toMatchObject({ currentColor: payload });
 });
@@ -36,7 +36,7 @@ it(getType(changeTheme), () => {
 it(getType(logout), () => {
   expect(
     themeReducer(themeInitialState, {
-      type: getType(logout)
+      type: getType(logout),
     })
   ).toMatchObject(themeInitialState);
 });
@@ -44,7 +44,7 @@ it(getType(logout), () => {
 it(getType(loginRequest), () => {
   expect(
     themeReducer(undefined, {
-      type: getType(loginRequest)
+      type: getType(loginRequest),
     })
   ).toMatchObject(themeInitialState);
 });

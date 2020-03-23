@@ -1,6 +1,6 @@
-import React, { memo } from "react";
-import { StyleSheet, ViewStyle, StyleProp } from "react-native";
-import Original from "react-native-vector-icons/MaterialCommunityIcons";
+import React, { memo } from 'react';
+import { StyleSheet, ViewStyle, StyleProp } from 'react-native';
+import Original from 'react-native-vector-icons/MaterialCommunityIcons';
 
 interface Props {
   name: string;
@@ -12,8 +12,8 @@ interface Props {
 
 const styles = StyleSheet.create({
   invisible: {
-    opacity: 0
-  }
+    opacity: 0,
+  },
 });
 
 export const Source: React.FC<Props> = memo(function IconSource({
@@ -21,7 +21,7 @@ export const Source: React.FC<Props> = memo(function IconSource({
   size,
   color,
   style,
-  invisible
+  invisible,
 }) {
   const containerStyle = [invisible ? styles.invisible : undefined, style];
   return (

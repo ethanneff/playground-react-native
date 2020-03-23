@@ -1,19 +1,19 @@
-import React, { memo, useState } from "react";
-import { Button, Screen, TextInput } from "../../../../components";
-import { navigate } from "../../../../models";
-import { createChecklistItem } from "../../models";
-import { useRootDispatch, useRootSelector, Errors } from "../../../../utils";
-import { useNav } from "../../../../hooks";
-import "react-native-get-random-values";
-import { v4 } from "uuid";
+import React, { memo, useState } from 'react';
+import { Button, Screen, TextInput } from '../../../../components';
+import { navigate } from '../../../../models';
+import { createChecklistItem } from '../../models';
+import { useRootDispatch, useRootSelector, Errors } from '../../../../utils';
+import { useNav } from '../../../../hooks';
+import 'react-native-get-random-values';
+import { v4 } from 'uuid';
 
-const initialState = { name: "", description: "" };
+const initialState = { name: '', description: '' };
 
 export default memo(function ChecklistItemCreate() {
   const nav = useNav();
   const dispatch = useRootDispatch();
   const [form, setForm] = useState(initialState);
-  const currentChecklist = useRootSelector(state => state.checklists.active);
+  const currentChecklist = useRootSelector((state) => state.checklists.active);
   const isInvalidForm = form.name.trim().length === 0;
 
   const handleSubmit = () => {
@@ -36,18 +36,18 @@ export default memo(function ChecklistItemCreate() {
         checklistId: currentChecklist,
         order: now,
         updatedAt: now,
-        userId: "1"
+        userId: '1',
       })
     );
-    dispatch(navigate("checklistsList")); // TODO: batch
+    dispatch(navigate('checklistsList')); // TODO: batch
   };
   const handleNameChange = (name: string) =>
-    setForm(state => ({ ...state, name }));
+    setForm((state) => ({ ...state, name }));
   const handleDescriptionChange = (description: string) =>
-    setForm(state => ({ ...state, description }));
+    setForm((state) => ({ ...state, description }));
 
   return (
-    <Screen onLeftPress={nav.to("checklistsList")} title="Create Item" gutter>
+    <Screen onLeftPress={nav.to('checklistsList')} title="Create Item" gutter>
       <TextInput
         title="name"
         value={form.name}

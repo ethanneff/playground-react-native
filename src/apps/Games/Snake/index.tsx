@@ -1,14 +1,14 @@
-import React, { memo, useState, useCallback } from "react";
-import { View } from "react-native";
-import { Screen, Button } from "../../../components";
-import { useColor, useNav } from "../../../hooks";
-import { BoardObject, generateBoard } from "./utils";
-import { Board } from "./Board";
-import { useGameLoop } from "./useGameLoop";
-import { useGesture } from "./useGesture";
-import { EndGame } from "./EndGame";
+import React, { memo, useState, useCallback } from 'react';
+import { View } from 'react-native';
+import { Screen, Button } from '../../../components';
+import { useColor, useNav } from '../../../hooks';
+import { BoardObject, generateBoard } from './utils';
+import { Board } from './Board';
+import { useGameLoop } from './useGameLoop';
+import { useGesture } from './useGesture';
+import { EndGame } from './EndGame';
 
-type State = "on" | "off";
+type State = 'on' | 'off';
 
 type Game = {
   board: BoardObject;
@@ -23,26 +23,26 @@ export default memo(function Snake() {
   const size = 20;
   const [game, setGame] = useState<Game>({
     board: generateBoard(size),
-    state: "off"
+    state: 'off',
   });
   const gesture = useGesture();
 
-  const { start, stop } = useGameLoop(frame => {
+  const { start, stop } = useGameLoop((frame) => {
     if (frame.count >= 200) {
-      setGame(prev => ({ ...prev, state: "off" }));
+      setGame((prev) => ({ ...prev, state: 'off' }));
       stop();
     }
   });
 
   const reset = useCallback(() => {
-    setGame({ board: generateBoard(size), state: "on" });
+    setGame({ board: generateBoard(size), state: 'on' });
     start();
   }, [start]);
 
   return (
     <>
-      <Screen onLeftPress={nav.to("portfolioLanding")} title="Snake">
-        <View style={{ flexDirection: "row", justifyContent: "center" }}>
+      <Screen onLeftPress={nav.to('portfolioLanding')} title="Snake">
+        <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
           <Button title="start" onPress={start} />
           <Button title="stop" onPress={stop} />
         </View>
@@ -53,7 +53,7 @@ export default memo(function Snake() {
           <Board board={game.board} />
         </View>
       </Screen>
-      {game.state === "off" && <EndGame onPress={reset} />}
+      {game.state === 'off' && <EndGame onPress={reset} />}
     </>
   );
 });

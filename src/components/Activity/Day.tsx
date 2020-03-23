@@ -1,8 +1,8 @@
-import React, { memo } from "react";
-import { TouchableOpacity } from "react-native";
-import { useColor } from "../../hooks";
-import { colorWithOpacity } from "../../utils";
-import isToday from "date-fns/isToday";
+import React, { memo } from 'react';
+import { TouchableOpacity } from 'react-native';
+import { useColor } from '../../hooks';
+import { colorWithOpacity } from '../../utils';
+import isToday from 'date-fns/isToday';
 
 export interface ActivityDay {
   date: number;
@@ -22,14 +22,14 @@ export const Day = memo(function Day({
   max,
   size,
   margin,
-  onPress
+  onPress,
 }: Props) {
   const color = useColor();
   const backgroundColor =
     day.count === 0
       ? color.surface
-      : colorWithOpacity(color.success, day.count / max * 3 + 0.25);
-  const borderColor = isToday(day.date) ? color.danger : "transparent";
+      : colorWithOpacity(color.success, (day.count / max) * 3 + 0.25);
+  const borderColor = isToday(day.date) ? color.danger : 'transparent';
   return (
     <TouchableOpacity
       onPress={onPress(day)}
@@ -40,7 +40,7 @@ export const Day = memo(function Day({
         margin,
         backgroundColor,
         borderColor,
-        borderWidth: 2
+        borderWidth: 2,
       }}
     />
   );

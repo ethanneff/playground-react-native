@@ -1,5 +1,5 @@
-import React, { memo } from "react";
-import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
+import React, { memo } from 'react';
+import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
 
 interface RoundButtonProps {
   title: string;
@@ -14,27 +14,27 @@ export default memo(function ButtonRound({
   color,
   background,
   onPress,
-  disabled = false
+  disabled = false,
 }: RoundButtonProps) {
   const styles = StyleSheet.create({
     button: {
-      alignItems: "center",
+      alignItems: 'center',
       borderRadius: 40,
       height: 80,
-      justifyContent: "center",
-      width: 80
+      justifyContent: 'center',
+      width: 80,
     },
     buttonBorder: {
-      alignItems: "center",
+      alignItems: 'center',
       borderRadius: 38,
       borderWidth: 1,
       height: 76,
-      justifyContent: "center",
-      width: 76
+      justifyContent: 'center',
+      width: 76,
     },
     buttonTitle: {
-      fontSize: 18
-    }
+      fontSize: 18,
+    },
   });
 
   return (

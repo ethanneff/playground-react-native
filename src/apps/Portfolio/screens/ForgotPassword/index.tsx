@@ -1,19 +1,19 @@
-import React, { memo, useState } from "react";
-import { Button, Screen, TextInput } from "../../../../components";
-import { StyleSheet, View } from "react-native";
-import { useNav } from "../../../../hooks";
+import React, { memo, useState } from 'react';
+import { Button, Screen, TextInput } from '../../../../components';
+import { StyleSheet, View } from 'react-native';
+import { useNav } from '../../../../hooks';
 
 const styles = StyleSheet.create({
-  row: { flexDirection: "row", justifyContent: "space-around" }
+  row: { flexDirection: 'row', justifyContent: 'space-around' },
 });
 
 export default memo(function PortfolioForgotPassword() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const nav = useNav();
   const handleEmail = (val: string) => setEmail(val);
   return (
     <Screen
-      onLeftPress={nav.to("portfolioLogin")}
+      onLeftPress={nav.to('portfolioLogin')}
       title="Forgot Password"
       gutter
     >
@@ -24,7 +24,7 @@ export default memo(function PortfolioForgotPassword() {
         value={email}
       />
       <View style={styles.row}>
-        <Button title="Send email" onPress={nav.to("portfolioLogin")} />
+        <Button title="Send email" onPress={nav.to('portfolioLogin')} />
       </View>
     </Screen>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback } from 'react';
 import {
   Animated,
   PanResponder,
@@ -6,15 +6,15 @@ import {
   StyleSheet,
   View,
   LayoutChangeEvent,
-  PanResponderGestureState
-} from "react-native";
-import { Screen, Text } from "../../../../components";
+  PanResponderGestureState,
+} from 'react-native';
+import { Screen, Text } from '../../../../components';
 import {
   useColor,
   useNav,
   useDropShadow,
-  useNativeDriver
-} from "../../../../hooks";
+  useNativeDriver,
+} from '../../../../hooks';
 
 const getPosition = (
   gestureState: PanResponderGestureState,
@@ -57,12 +57,12 @@ export default function DebugDrag() {
       marginLeft: -size,
       marginTop: -size,
       width: size,
-      ...dropShadow
+      ...dropShadow,
     },
     canvas: {
       flex: 1,
-      backgroundColor: color.surface
-    }
+      backgroundColor: color.surface,
+    },
   });
   const ballPosition: Animated.ValueXY = new Animated.ValueXY(initialPosition);
   const panGesture: PanResponderInstance = PanResponder.create({
@@ -71,15 +71,15 @@ export default function DebugDrag() {
       const toValue = getPosition(gestureState, initialPosition, size);
       Animated.spring(ballPosition, {
         toValue,
-        useNativeDriver: useDriver
+        useNativeDriver: useDriver,
       }).start();
     },
     onPanResponderEnd: () => {
       Animated.spring(ballPosition, {
         toValue: initialPosition,
-        useNativeDriver: useDriver
+        useNativeDriver: useDriver,
       }).start();
-    }
+    },
   });
 
   const handleCanvas = useCallback((event: LayoutChangeEvent) => {
@@ -88,7 +88,7 @@ export default function DebugDrag() {
   }, []);
 
   return (
-    <Screen onLeftPress={nav.to("debug")} title="Drag">
+    <Screen onLeftPress={nav.to('debug')} title="Drag">
       <Text overline center title="drag the circle" />
       <View style={styles.canvas} onLayout={handleCanvas}>
         <Animated.View

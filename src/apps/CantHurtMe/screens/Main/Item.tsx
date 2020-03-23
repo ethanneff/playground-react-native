@@ -1,7 +1,7 @@
-import React from "react";
-import { Card, Text } from "../../../../components";
-import { Theme } from "../../../../utils";
-import { app } from "../../data";
+import React from 'react';
+import { Card, Text } from '../../../../components';
+import { Theme } from '../../../../utils';
+import { app } from '../../data';
 
 export const Item = (props: { item: string; index: number }) => {
   const { item, index } = props;

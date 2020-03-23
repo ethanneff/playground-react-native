@@ -1,72 +1,61 @@
-import dayjs, { Dayjs } from "dayjs";
-import React, { memo } from "react";
-import { View } from "react-native";
-import { Item } from "./Item";
+import dayjs, { Dayjs } from 'dayjs';
+import React, { memo } from 'react';
+import { View } from 'react-native';
+import { Item } from './Item';
 
-const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const generateButtons = () => {
-  const laterToday = dayjs()
-    .add(3, "hour")
-    .add(30, "minute")
-    .set("minute", 0);
+  const laterToday = dayjs().add(3, 'hour').add(30, 'minute').set('minute', 0);
 
-  const evening = dayjs()
-    .set("hour", 18)
-    .set("minute", 0);
+  const evening = dayjs().set('hour', 18).set('minute', 0);
 
-  const tomorrow = dayjs()
-    .add(1, "day")
-    .set("hour", 6)
-    .set("minute", 0);
+  const tomorrow = dayjs().add(1, 'day').set('hour', 6).set('minute', 0);
 
   const nextWeek = dayjs()
-    .add(1, "week")
-    .set("hour", 6)
-    .set("minute", 0)
-    .set("day", 1);
+    .add(1, 'week')
+    .set('hour', 6)
+    .set('minute', 0)
+    .set('day', 1);
 
-  const nextMonth = dayjs()
-    .add(2, "month")
-    .set("hour", 6)
-    .set("minute", 0);
+  const nextMonth = dayjs().add(2, 'month').set('hour', 6).set('minute', 0);
 
-  const yesterday = dayjs().subtract(1, "day");
+  const yesterday = dayjs().subtract(1, 'day');
 
   return [
     {
-      title: "Later today",
-      description: laterToday.format("hh:mm A"),
+      title: 'Later today',
+      description: laterToday.format('hh:mm A'),
       value: laterToday,
-      visible: dayjs().set("hour", 18)
+      visible: dayjs().set('hour', 18),
     },
     {
-      title: "This Evening",
-      description: evening.format("hh:mm A"),
+      title: 'This Evening',
+      description: evening.format('hh:mm A'),
       value: evening,
-      visible: dayjs().set("hour", 18)
+      visible: dayjs().set('hour', 18),
     },
     {
-      title: "Tomorrow",
+      title: 'Tomorrow',
       description: `${daysOfWeek[tomorrow.day()]} ${tomorrow.format(
-        "hh:mm A"
+        'hh:mm A'
       )}`,
-      value: tomorrow
+      value: tomorrow,
     },
     {
-      title: "Next Week",
-      description: `${nextWeek.format("MMM DD, hh:mm A")}`,
-      value: nextWeek
+      title: 'Next Week',
+      description: `${nextWeek.format('MMM DD, hh:mm A')}`,
+      value: nextWeek,
     },
     {
-      title: "Someday",
+      title: 'Someday',
       description: ``,
-      value: nextMonth
+      value: nextMonth,
     },
     {
-      title: "Custom",
+      title: 'Custom',
       description: ``,
-      value: yesterday
-    }
+      value: yesterday,
+    },
   ];
 };
 

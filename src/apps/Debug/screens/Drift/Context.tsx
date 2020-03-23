@@ -1,6 +1,6 @@
-import { TrackPositionWithColor, TrackPosition } from "./Tracks";
-import { ColorChoice } from "./Dpad";
-import { createContext } from "react";
+import { TrackPositionWithColor, TrackPosition } from './Tracks';
+import { ColorChoice } from './Dpad';
+import { createContext } from 'react';
 
 export type DriftState = {
   tracks: TrackPositionWithColor[];
@@ -9,25 +9,25 @@ export type DriftState = {
 
 export const driftInitialState: DriftState = {
   tracks: [],
-  color: "lightgrey"
+  color: 'lightgrey',
 };
 
 type Action =
-  | { type: "addColor"; payload: ColorChoice }
-  | { type: "addTrack"; payload: TrackPosition };
+  | { type: 'addColor'; payload: ColorChoice }
+  | { type: 'addTrack'; payload: TrackPosition };
 
 export const driftReducer = (state: DriftState, action: Action) => {
   switch (action.type) {
-    case "addColor":
+    case 'addColor':
       return { ...state, color: action.payload };
-    case "addTrack": {
+    case 'addTrack': {
       const tracks = [...state.tracks];
       while (tracks.length > 10) {
         tracks.pop();
       }
       return {
         ...state,
-        tracks: [{ ...action.payload, color: state.color }, ...tracks]
+        tracks: [{ ...action.payload, color: state.color }, ...tracks],
       };
     }
     default:
@@ -42,5 +42,5 @@ type Context = {
 
 export const DriftContext = createContext<Context>({
   state: driftInitialState,
-  dispatch: () => undefined
+  dispatch: () => undefined,
 });

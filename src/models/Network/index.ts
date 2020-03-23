@@ -1,14 +1,14 @@
 import {
   NetInfoConnectedDetails,
   NetInfoState,
-  NetInfoStateType
-} from "../../conversions";
-import { ActionType, createAction, getType } from "typesafe-actions";
-import { RootAction } from "../../containers";
-import { logout } from "../Auth";
+  NetInfoStateType,
+} from '../../conversions';
+import { ActionType, createAction, getType } from 'typesafe-actions';
+import { RootAction } from '../../containers';
+import { logout } from '../Auth';
 
 /* ACTIONS */
-export const updateNetwork = createAction("network/UPDATE_NETWORK")<
+export const updateNetwork = createAction('network/UPDATE_NETWORK')<
   NetInfoState
 >();
 
@@ -26,7 +26,7 @@ export const networkInitialState: NetworkState = {
   connected: false,
   details: null,
   reachable: false,
-  type: NetInfoStateType.unknown
+  type: NetInfoStateType.unknown,
 };
 
 export const networkReducer = (
@@ -40,7 +40,7 @@ export const networkReducer = (
         reachable: action.payload.isInternetReachable || false,
         connected: action.payload.isConnected,
         details: action.payload.details,
-        type: action.payload.type
+        type: action.payload.type,
       };
     case getType(logout):
       return networkInitialState;

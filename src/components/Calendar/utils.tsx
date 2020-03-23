@@ -31,7 +31,7 @@ const lastDayOfMonth = (date: Date) => {
   return new Date(date.getFullYear(), date.getMonth() + 1, 0);
 };
 
-const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const createDayObj = (
   id: string | number,
   display: string | number,
@@ -47,7 +47,7 @@ const generateCalendarMatrix = (date: Date) => {
   let prevDayCounter = prevMaxDays - firstDay + 1;
   let nextDayCounter = 1;
   const calendarMatrix: CalendarMatrix = [];
-  calendarMatrix.push(days.map(day => createDayObj(day, day, false, true)));
+  calendarMatrix.push(days.map((day) => createDayObj(day, day, false, true)));
   for (let row = 1; row < 7; row++) {
     calendarMatrix[row] = [];
     for (let col = 0; col < 7; col++) {

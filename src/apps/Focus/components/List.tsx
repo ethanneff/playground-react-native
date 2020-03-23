@@ -1,9 +1,9 @@
-import React, { memo, useState, useEffect, useCallback } from "react";
-import { StyleSheet, FlatList, ActivityIndicator } from "react-native";
+import React, { memo, useState, useEffect, useCallback } from 'react';
+import { StyleSheet, FlatList, ActivityIndicator } from 'react-native';
 
-import { ListItem } from "./ListItem";
-import { Theme } from "../../../utils";
-import dayjs from "dayjs";
+import { ListItem } from './ListItem';
+import { Theme } from '../../../utils';
+import dayjs from 'dayjs';
 
 export interface Item {
   action: string;
@@ -25,15 +25,12 @@ interface Props {
 const itemHeight = Theme.padding.p10;
 
 const initialIndex =
-  dayjs()
-    .startOf("day")
-    .add(2, "day")
-    .diff(dayjs(), "hour") - 4;
+  dayjs().startOf('day').add(2, 'day').diff(dayjs(), 'hour') - 4;
 
 const getItemLayout = (_: Item[] | null | undefined, index: number) => ({
   length: itemHeight,
   offset: itemHeight * index,
-  index
+  index,
 });
 
 const getCurrentItem = (item: Item): boolean => {
@@ -56,13 +53,13 @@ export const List = memo(
     const [loading, setLoading] = useState(true);
     const styles = StyleSheet.create({
       list: {
-        opacity: loading ? 0 : 1
+        opacity: loading ? 0 : 1,
       },
       loading: {
-        position: "absolute",
-        height: "100%",
-        width: "100%"
-      }
+        position: 'absolute',
+        height: '100%',
+        width: '100%',
+      },
     });
 
     const onLoad = useCallback(() => {
@@ -74,14 +71,14 @@ export const List = memo(
     useEffect(onLoad, []);
 
     const renderItem = useCallback(
-      ({ item, index }) => 
+      ({ item, index }) => (
         <ListItem
           currentItem={getCurrentItem(item)}
           item={item}
           showSection={getFirstItemOfDay(index, item, items)}
           onItemPress={onItemPress}
         />
-      ,
+      ),
       [items, onItemPress]
     );
 

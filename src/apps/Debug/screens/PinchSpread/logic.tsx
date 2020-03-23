@@ -2,8 +2,8 @@
 import {
   GestureResponderEvent,
   NativeTouchEvent,
-  PointPropType
-} from "react-native";
+  PointPropType,
+} from 'react-native';
 
 interface Touches {
   [key: string]: PointPropType;
@@ -44,7 +44,7 @@ export class GestureHandler {
     }
     this.start[String(touch.identifier)] = {
       x: touch.locationX,
-      y: touch.locationY
+      y: touch.locationY,
     };
   }
 
@@ -55,7 +55,7 @@ export class GestureHandler {
   private recordFinish(touch: NativeTouchEvent) {
     this.finish[String(touch.identifier)] = {
       x: touch.locationX,
-      y: touch.locationY
+      y: touch.locationY,
     };
   }
 
@@ -89,7 +89,7 @@ export class GestureHandler {
     const numRecordedTouched = Object.keys(this.start).length;
     const outcome = {
       pinch: false,
-      spread: false
+      spread: false,
     };
     if (numRecordedTouched < this.minTouches) {
       return outcome;

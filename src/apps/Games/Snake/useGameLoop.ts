@@ -1,4 +1,4 @@
-import { useCallback, useRef, useEffect } from "react";
+import { useCallback, useRef, useEffect } from 'react';
 
 export type Frame = {
   start: number;
@@ -9,7 +9,7 @@ export type Frame = {
 const initialFrame = {
   start: Date.now(),
   current: Date.now(),
-  count: 0
+  count: 0,
 };
 
 export const useGameLoop = (callback: (frame: Frame) => void) => {
@@ -25,7 +25,7 @@ export const useGameLoop = (callback: (frame: Frame) => void) => {
       frame.current = {
         ...frame.current,
         current: Date.now(),
-        count: frame.current.count + 1
+        count: frame.current.count + 1,
       };
       callback(frame.current);
       loop();
@@ -51,6 +51,6 @@ export const useGameLoop = (callback: (frame: Frame) => void) => {
   return {
     frame,
     start,
-    stop
+    stop,
   };
 };

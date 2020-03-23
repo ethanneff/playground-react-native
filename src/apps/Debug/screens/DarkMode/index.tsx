@@ -1,21 +1,21 @@
 // TODO: slider on web
-import React, { memo, useState, useCallback } from "react";
-import { Image, ImageSourcePropType, View } from "react-native";
+import React, { memo, useState, useCallback } from 'react';
+import { Image, ImageSourcePropType, View } from 'react-native';
 import {
   Button,
   Card,
   Screen,
   Text,
   Masonry,
-  Slider
-} from "../../../../components";
+  Slider,
+} from '../../../../components';
 import {
   ColorTheme,
   changeTheme,
-  getLandscapeOrientation
-} from "../../../../models";
-import { Theme, useRootDispatch, useRootSelector } from "../../../../utils";
-import { useColor, useNav } from "../../../../hooks";
+  getLandscapeOrientation,
+} from '../../../../models';
+import { Theme, useRootDispatch, useRootSelector } from '../../../../utils';
+import { useColor, useNav } from '../../../../hooks';
 
 interface Card {
   title: string;
@@ -25,47 +25,47 @@ interface Card {
   button?: string;
 }
 
-const image = require("../../../../assets/placeholder.png");
+const image = require('../../../../assets/placeholder.png');
 const cards: Card[] = [
   {
-    title: "Marketing",
-    value: "12.4 M"
+    title: 'Marketing',
+    value: '12.4 M',
   },
   {
-    target: "+22% of target",
-    title: "Conversion",
-    value: "537"
+    target: '+22% of target',
+    title: 'Conversion',
+    value: '537',
   },
   {
     chart: image,
-    target: "+12.3 of target",
-    title: "Conversion",
-    value: "42.1 M"
+    target: '+12.3 of target',
+    title: 'Conversion',
+    value: '42.1 M',
   },
   {
-    target: "11% of target",
-    title: "Sales",
-    value: "35.8 M",
-    chart: image
+    target: '11% of target',
+    title: 'Sales',
+    value: '35.8 M',
+    chart: image,
   },
   {
-    button: "save",
-    title: "Users",
-    value: "45.5 M"
+    button: 'save',
+    title: 'Users',
+    value: '45.5 M',
   },
   {
-    target: "+56.6% of target",
-    title: "Avg session",
-    value: "4:53 H"
+    target: '+56.6% of target',
+    title: 'Avg session',
+    value: '4:53 H',
   },
   {
-    title: "Sessions",
-    value: "23.242"
+    title: 'Sessions',
+    value: '23.242',
   },
   {
-    title: "Bounce rate",
-    value: "12%"
-  }
+    title: 'Bounce rate',
+    value: '12%',
+  },
 ];
 
 export default memo(function DarkMode() {
@@ -73,7 +73,7 @@ export default memo(function DarkMode() {
   const themes = Object.values(ColorTheme);
   const color = useColor();
   const nav = useNav();
-  const currentTheme = useRootSelector(state => state.theme.currentColor);
+  const currentTheme = useRootSelector((state) => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   const [elevation, setElevation] = useState(2);
   const handleSlider = (value: number) => setElevation(value);
@@ -82,60 +82,60 @@ export default memo(function DarkMode() {
   const onPress = useCallback(() => undefined, []);
 
   const renderItem = useCallback(
-    ({ item, index }) => 
+    ({ item, index }) => (
       <Card elevation={elevation} onPress={onPress} key={index}>
         <Text title={item.title} overline />
         <Text title={item.value} h3 style={{ marginTop: Theme.padding.p02 }} />
-        {item.target && 
+        {item.target && (
           <Text
             title={item.target}
             body2
             style={{ marginTop: Theme.padding.p02 }}
           />
-        }
-        {item.chart && 
+        )}
+        {item.chart && (
           <Image
             source={item.chart}
             style={{
               height: 80,
               marginTop: Theme.padding.p02,
-              resizeMode: "cover",
-              width: "100%"
+              resizeMode: 'cover',
+              width: '100%',
             }}
           />
-        }
-        {item.button && 
+        )}
+        {item.button && (
           <Button
             color="primary"
             emphasis="high"
             title={item.button}
             buttonStyle={{ marginTop: Theme.padding.p02 }}
           />
-        }
+        )}
       </Card>
-    ,
+    ),
     [elevation, onPress]
   );
 
   return (
-    <Screen onLeftPress={nav.to("debug")} title="Dark mode">
+    <Screen onLeftPress={nav.to('debug')} title="Dark mode">
       <View style={{ padding: Theme.padding.p04 }}>
         <View
           style={{
-            flexDirection: "row",
-            alignItems: "center"
+            flexDirection: 'row',
+            alignItems: 'center',
           }}
         >
           <Text title="theme: " />
-          {themes.map(item => 
+          {themes.map((item) => (
             <Button
               key={item}
               title={item}
               onPress={themePress(item)}
               emphasis="high"
-              color={currentTheme === item ? "primary" : "text"}
+              color={currentTheme === item ? 'primary' : 'text'}
             />
-          )}
+          ))}
         </View>
         <Text title={`elevation: ${elevation}`} />
         <Slider

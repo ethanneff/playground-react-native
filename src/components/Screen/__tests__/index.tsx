@@ -1,9 +1,9 @@
-import React from "react";
-import { View } from "react-native";
-import { Screen } from "..";
-import { mockRenderer } from "../../../utils/Mock";
+import React from 'react';
+import { View } from 'react-native';
+import { Screen } from '..';
+import { mockRenderer } from '../../../utils/Mock';
 
-it("renders correctly", () => {
+it('renders correctly', () => {
   const dom = mockRenderer(
     <Screen>
       <View />
@@ -12,7 +12,7 @@ it("renders correctly", () => {
   expect(dom).toMatchSnapshot();
 });
 
-it("renders correctly with header", () => {
+it('renders correctly with header', () => {
   const dom = mockRenderer(
     <Screen
       title="hello"
@@ -25,7 +25,7 @@ it("renders correctly with header", () => {
   expect(dom).toMatchSnapshot();
 });
 
-it("renders correctly with icons", () => {
+it('renders correctly with icons', () => {
   const dom = mockRenderer(
     <Screen
       title="hello"

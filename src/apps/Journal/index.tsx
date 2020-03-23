@@ -1,25 +1,25 @@
-import React, { memo } from "react";
-import { StyleSheet, ScrollView, View } from "react-native";
-import { Screen, Text, TextInput, Card, Calendar } from "../../components";
-import { useNav, useColor } from "../../hooks";
-import { Theme } from "../../utils";
+import React, { memo } from 'react';
+import { StyleSheet, ScrollView, View } from 'react-native';
+import { Screen, Text, TextInput, Card, Calendar } from '../../components';
+import { useNav, useColor } from '../../hooks';
+import { Theme } from '../../utils';
 
 export default memo(function Journal() {
   const color = useColor();
   const nav = useNav();
   const styles = StyleSheet.create({
     bottom: {
-      paddingBottom: Theme.padding.p04
-    }
+      paddingBottom: Theme.padding.p04,
+    },
   });
 
   return (
-    <Screen onLeftPress={nav.to("portfolioLanding")} title="Journal">
+    <Screen onLeftPress={nav.to('portfolioLanding')} title="Journal">
       <ScrollView
         style={{ backgroundColor: color.surface }}
         contentContainerStyle={{
           paddingHorizontal: Theme.padding.p04,
-          paddingVertical: Theme.padding.p02
+          paddingVertical: Theme.padding.p02,
         }}
       >
         <Card>
@@ -37,57 +37,57 @@ export default memo(function Journal() {
           <TextInput
             title="Primary goal"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
           <Text h5 medium title="Additional objectives" style={styles.bottom} />
           <TextInput
             title="Secondary goal"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
           <TextInput
             title="Secondary goal"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
           <TextInput
             title="Secondary goal"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
           <Text h5 medium title="Bonus objectives" style={styles.bottom} />
           <TextInput
             title="tertiary goal"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
           <TextInput
             title="tertiary goal"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
           <TextInput
             title="tertiary goal"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
           <TextInput
             title="tertiary goal"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
           <TextInput
             title="tertiary goal"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
         </Card>
@@ -96,13 +96,13 @@ export default memo(function Journal() {
           <TextInput
             title="How likely are you to recommend this day?"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
           <TextInput
             title="Why did you give this score?"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
         </Card>
@@ -111,19 +111,19 @@ export default memo(function Journal() {
           <TextInput
             title="What went well?"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
           <TextInput
             title="What could be improved?"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
           <TextInput
             title="What will you commit to tomorrow?"
             placeholder="fill me"
-            value={""}
+            value={''}
             onChangeText={() => undefined}
           />
         </Card>

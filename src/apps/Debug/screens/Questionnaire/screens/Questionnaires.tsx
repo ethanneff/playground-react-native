@@ -1,17 +1,17 @@
-import React, { useState, useCallback } from "react";
-import { FlatList, View } from "react-native";
-import { connect } from "react-redux";
-import { Card, Dialog, Text, Icon } from "../../../../../components";
-import { RootState } from "../../../../../containers";
+import React, { useState, useCallback } from 'react';
+import { FlatList, View } from 'react-native';
+import { connect } from 'react-redux';
+import { Card, Dialog, Text, Icon } from '../../../../../components';
+import { RootState } from '../../../../../containers';
 import {
   Questionnaire,
   createQuestionnaire,
   getQuestionnaireArray,
   removeQuestionnaire,
   selectQuestionnaire,
-  updateQuestionnaire
-} from "../models";
-import { useColor } from "../../../../../hooks";
+  updateQuestionnaire,
+} from '../models';
+import { useColor } from '../../../../../hooks';
 
 interface StateProps {
   questionnaires: Questionnaire[];
@@ -42,12 +42,12 @@ const Container = (props: Props) => {
     [props]
   );
   const handleItemMenu = useCallback(() => {
-    setActionSheet(state => !state);
+    setActionSheet((state) => !state);
   }, []);
   const renderItem = useCallback(
     ({ item }) => {
       const length = item.questions.length;
-      const subtitle = `${length} question${length === 1 ? "" : "s"}`;
+      const subtitle = `${length} question${length === 1 ? '' : 's'}`;
       return (
         <Card
           onPress={handleItemPress(item.id)}
@@ -56,8 +56,8 @@ const Container = (props: Props) => {
         >
           <View
             style={{
-              flexDirection: "row",
-              justifyContent: "space-between"
+              flexDirection: 'row',
+              justifyContent: 'space-between',
             }}
           >
             <View style={{ flex: 0.9 }}>
@@ -75,7 +75,7 @@ const Container = (props: Props) => {
   return (
     <>
       <FlatList
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
         data={props.questionnaires}
         extraData={props.selected}
         renderItem={renderItem}
@@ -86,29 +86,29 @@ const Container = (props: Props) => {
         onPress={handleCreate}
         style={{
           margin: 10,
-          position: "absolute",
+          position: 'absolute',
           bottom: 0,
-          right: 0
+          right: 0,
         }}
         fab
       />
-      {actionSheet && 
+      {actionSheet && (
         <Dialog title="hello" onBackgroundPress={handleActionSheetClose} />
-      }
+      )}
     </>
   );
 };
 
 const mapStateToProps = (state: RootState): StateProps => ({
   questionnaires: getQuestionnaireArray(state),
-  selected: state.questionnaires.selected
+  selected: state.questionnaires.selected,
 });
 
 const mapDispatchToProps: DispatchProps = {
   createQuestionnaire,
   removeQuestionnaire,
   selectQuestionnaire,
-  updateQuestionnaire
+  updateQuestionnaire,
 };
 
 export const Questionnaires = connect(

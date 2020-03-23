@@ -1,23 +1,23 @@
-import { createSelector } from "reselect";
-import { ActionType, createAction, getType } from "typesafe-actions";
-import { RootAction, RootState } from "../../../../containers";
-import { getCurrentChecklist } from "../Checklist";
-import { Errors } from "../../../../utils";
+import { createSelector } from 'reselect';
+import { ActionType, createAction, getType } from 'typesafe-actions';
+import { RootAction, RootState } from '../../../../containers';
+import { getCurrentChecklist } from '../Checklist';
+import { Errors } from '../../../../utils';
 
 /* ACTIONS */
-export const createChecklistItem = createAction("checklistItem/create")<
+export const createChecklistItem = createAction('checklistItem/create')<
   ChecklistItem
 >();
-export const updateChecklistItem = createAction("checklistItem/update")<
+export const updateChecklistItem = createAction('checklistItem/update')<
   ChecklistItem
 >();
-export const removeChecklistItem = createAction("checklistItem/remove")<
+export const removeChecklistItem = createAction('checklistItem/remove')<
   string
 >();
 export const toggleChecklistItemComplete = createAction(
-  "checklistItem/toggleComplete"
+  'checklistItem/toggleComplete'
 )<string>();
-export const setActiveChecklistItem = createAction("checklistItem/setActive")<
+export const setActiveChecklistItem = createAction('checklistItem/setActive')<
   string
 >();
 
@@ -35,7 +35,7 @@ export const getCurrentActiveChecklistItemsOrderByCreatedAt = createSelector(
   [getCurrentChecklist, getChecklistItems],
   (checklist, items) =>
     Object.values(items)
-      .filter(item => item.checklistId === checklist.id && item.active)
+      .filter((item) => item.checklistId === checklist.id && item.active)
       .sort((a, b) => a.createdAt - b.createdAt)
 );
 
@@ -69,7 +69,7 @@ export type ItemActions = ActionType<
 /* REDUCER */
 const initialState: ChecklistItemReducer = {
   active: undefined,
-  items: {}
+  items: {},
 };
 export const checklistItemReducer = (
   state: ChecklistItemReducer = initialState,
@@ -83,8 +83,8 @@ export const checklistItemReducer = (
         ...state,
         items: {
           ...state.items,
-          [action.payload.id]: action.payload
-        }
+          [action.payload.id]: action.payload,
+        },
       };
     case getType(updateChecklistItem):
       return {
@@ -94,9 +94,9 @@ export const checklistItemReducer = (
           [action.payload.id]: {
             ...state.items[action.payload.id],
             ...action.payload,
-            updatedAt: Date.now()
-          }
-        }
+            updatedAt: Date.now(),
+          },
+        },
       };
     case getType(removeChecklistItem):
       return {
@@ -106,9 +106,9 @@ export const checklistItemReducer = (
           [action.payload]: {
             ...state.items[action.payload],
             active: false,
-            updatedAt: Date.now()
-          }
-        }
+            updatedAt: Date.now(),
+          },
+        },
       };
     case getType(toggleChecklistItemComplete):
       return {
@@ -118,9 +118,9 @@ export const checklistItemReducer = (
           [action.payload]: {
             ...state.items[action.payload],
             completed: !state.items[action.payload].completed,
-            updatedAt: Date.now()
-          }
-        }
+            updatedAt: Date.now(),
+          },
+        },
       };
     default:
       return state;

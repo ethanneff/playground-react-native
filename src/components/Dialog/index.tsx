@@ -1,15 +1,15 @@
-import React, { memo, useCallback, useEffect } from "react";
+import React, { memo, useCallback, useEffect } from 'react';
 import {
   Animated,
   StyleSheet,
   TouchableWithoutFeedback,
-  View
-} from "react-native";
-import { Theme } from "../../utils";
-import { Button } from "../Button";
-import { Card } from "../Card";
-import { Text } from "../Text";
-import { useNativeDriver, useDropShadow } from "../../hooks";
+  View,
+} from 'react-native';
+import { Theme } from '../../utils';
+import { Button } from '../Button';
+import { Card } from '../Card';
+import { Text } from '../Text';
+import { useNativeDriver, useDropShadow } from '../../hooks';
 
 interface OwnProps {
   testID?: string;
@@ -30,54 +30,54 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
   onCancelButtonPress,
   onConfirmButtonPress,
   onBackgroundPress,
-  confirmButtonText = "confirm",
-  cancelButtonText = "cancel",
+  confirmButtonText = 'confirm',
+  cancelButtonText = 'cancel',
   message,
   title,
   duration,
-  testID
+  testID,
 }) {
   const nativeDriver = useNativeDriver();
   const dropShadow = useDropShadow(10);
   const styles = StyleSheet.create({
     buttonContainer: {
-      flexDirection: "row",
-      justifyContent: "center",
-      paddingTop: Theme.padding.p13
+      flexDirection: 'row',
+      justifyContent: 'center',
+      paddingTop: Theme.padding.p13,
     },
     cancel: {
       flex: 1,
-      marginRight: Theme.padding.p02
+      marginRight: Theme.padding.p02,
     },
     confirm: {
       flex: 1,
-      marginLeft: Theme.padding.p02
+      marginLeft: Theme.padding.p02,
     },
     container: {
       bottom: 0,
       elevation: 100,
       left: 0,
-      position: "absolute",
+      position: 'absolute',
       right: 0,
       top: 0,
-      zIndex: 100
+      zIndex: 100,
     },
     modal: {
       maxWidth: 500,
-      width: "100%",
-      ...dropShadow
+      width: '100%',
+      ...dropShadow,
     },
     overlay: {
-      alignItems: "center",
+      alignItems: 'center',
       backgroundColor: Theme.color.overlay,
       flex: 1,
-      flexDirection: "column",
-      justifyContent: "center",
-      padding: Theme.padding.p08
+      flexDirection: 'column',
+      justifyContent: 'center',
+      padding: Theme.padding.p08,
     },
     title: {
-      paddingBottom: Theme.padding.p03
-    }
+      paddingBottom: Theme.padding.p03,
+    },
   });
   const fade = new Animated.Value(0);
   const opacity = fade;
@@ -90,11 +90,11 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
   // TODO: animation is not clean on devices
   const animate = useCallback(
     (toValue: number) => {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         Animated.timing(fade, {
           duration: fadeDuration,
           toValue,
-          useNativeDriver: nativeDriver
+          useNativeDriver: nativeDriver,
         }).start(resolve);
       });
     },

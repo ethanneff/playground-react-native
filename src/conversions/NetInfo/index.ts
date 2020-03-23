@@ -1,1 +1,1 @@
-export * from "@react-native-community/netinfo";
+export * from '@react-native-community/netinfo';

@@ -1,4 +1,4 @@
-import React, { memo, useRef, useState } from "react";
+import React, { memo, useRef, useState } from 'react';
 import {
   TextInput as Original,
   StyleSheet,
@@ -7,18 +7,18 @@ import {
   ViewStyle,
   StyleProp,
   KeyboardTypeOptions,
-  ReturnKeyTypeOptions
-} from "react-native";
-import { Theme } from "../../utils";
-import { Button } from "../Button";
-import { useColor } from "../../hooks";
-import { Icon } from "../Icon";
+  ReturnKeyTypeOptions,
+} from 'react-native';
+import { Theme } from '../../utils';
+import { Button } from '../Button';
+import { useColor } from '../../hooks';
+import { Icon } from '../Icon';
 
 /* 
 styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 */
 
-type TextContentType = "username" | "password" | "none";
+type TextContentType = 'username' | 'password' | 'none';
 
 interface Props {
   autoCorrect?: boolean;
@@ -48,12 +48,12 @@ export const TextInput: React.FC<Props> = memo(
   ({
     autoCorrect,
     blurOnSubmit = true,
-    clearIcon = "close-circle",
+    clearIcon = 'close-circle',
     containerStyle,
     disableFullscreenUI = true,
     editable = true,
-    error = "",
-    errorIcon = "alert-circle",
+    error = '',
+    errorIcon = 'alert-circle',
     flex,
     keyboardType,
     onChangeText,
@@ -62,32 +62,32 @@ export const TextInput: React.FC<Props> = memo(
     placeholder,
     returnKeyType,
     secureTextEntry,
-    textContentType = "none",
+    textContentType = 'none',
     textStyle,
-    title = "",
-    value
+    title = '',
+    value,
   }) => {
     const [focus, setFocus] = useState(false);
     const color = useColor();
     const focusColor = color.primary;
     const styles = StyleSheet.create({
       borderError: {
-        borderColor: color.danger
+        borderColor: color.danger,
       },
       borderFocus: {
-        borderColor: focusColor
+        borderColor: focusColor,
       },
       clear: {
         width: 30,
-        position: "absolute",
+        position: 'absolute',
         right: 0,
-        top: 6
+        top: 6,
       },
       flex: {
-        flex: 1
+        flex: 1,
       },
       row: {
-        flexDirection: "row"
+        flexDirection: 'row',
       },
       textInput: {
         backgroundColor: color.background,
@@ -97,17 +97,17 @@ export const TextInput: React.FC<Props> = memo(
         color: color.text,
         padding: Theme.padding.p02,
         paddingRight: Theme.padding.p08,
-        width: "100%"
-      }
+        width: '100%',
+      },
     });
     const textInput = useRef<Original>(null);
-    const optionalText = " - optional";
+    const optionalText = ' - optional';
     const textInputStyles = [
       styles.textInput,
       error ? styles.borderError : undefined,
       focus ? styles.borderFocus : undefined,
       Theme.fontSize.body2,
-      textStyle
+      textStyle,
     ];
     const noValue = value.length === 0;
     const noError = error.length === 0;
@@ -118,8 +118,10 @@ export const TextInput: React.FC<Props> = memo(
     const onBlur = () => setFocus(false);
     const focusOnInput = () => textInput.current && textInput.current.focus();
     const textClear = () => {
-      if (textInput.current) {textInput.current.clear();}
-      onChangeText("");
+      if (textInput.current) {
+        textInput.current.clear();
+      }
+      onChangeText('');
     };
 
     return (
@@ -173,7 +175,7 @@ export const TextInput: React.FC<Props> = memo(
             color={color.secondary}
           />
         </View>
-        <View style={{ flexDirection: "row" }}>
+        <View style={{ flexDirection: 'row' }}>
           <Icon
             activeOpacity={1}
             invisible={noError}

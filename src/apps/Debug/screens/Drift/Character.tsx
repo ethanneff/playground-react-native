@@ -1,13 +1,13 @@
-import React, { memo, useEffect, useRef, useCallback, useContext } from "react";
-import { Animated } from "react-native";
+import React, { memo, useEffect, useRef, useCallback, useContext } from 'react';
+import { Animated } from 'react-native';
 import {
   accelerometer,
   setUpdateIntervalForType,
-  SensorTypes
-} from "react-native-sensors";
-import { getPosition } from "./utils";
-import { DriftContext } from "./Context";
-import { CanvasDimensions } from "./Game";
+  SensorTypes,
+} from 'react-native-sensors';
+import { getPosition } from './utils';
+import { DriftContext } from './Context';
+import { CanvasDimensions } from './Game';
 
 type CharacterProps = {
   canvas: CanvasDimensions;
@@ -22,7 +22,7 @@ export const Character = memo(function Character({ canvas }: CharacterProps) {
   const shadowRadius = elevation * 0.36 + 1.2;
   const initialPositionRef = useRef({
     x: canvas.width / 2 - size,
-    y: canvas.height / 2 - size
+    y: canvas.height / 2 - size,
   });
   const position = new Animated.ValueXY(initialPositionRef.current);
   const { dispatch } = useContext(DriftContext);
@@ -33,10 +33,10 @@ export const Character = memo(function Character({ canvas }: CharacterProps) {
         canvas,
         change: { dx: dx * speed, dy: dy * speed },
         current: initialPositionRef.current,
-        size
+        size,
       });
       initialPositionRef.current = toValue;
-      dispatch({ type: "addTrack", payload: { ...toValue, size } });
+      dispatch({ type: 'addTrack', payload: { ...toValue, size } });
       Animated.spring(position, { toValue }).start();
     },
     [initialPositionRef, canvas, size, position, dispatch]
@@ -59,16 +59,16 @@ export const Character = memo(function Character({ canvas }: CharacterProps) {
           height: size,
           borderRadius: size,
           elevation,
-          shadowColor: "black",
+          shadowColor: 'black',
           shadowOffset: {
             height: 2,
-            width: 0
+            width: 0,
           },
           shadowOpacity,
           shadowRadius,
           zIndex: elevation,
-          backgroundColor: "coral"
-        }
+          backgroundColor: 'coral',
+        },
       ]}
     />
   );

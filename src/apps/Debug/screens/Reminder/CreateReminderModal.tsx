@@ -1,15 +1,15 @@
-import React, { memo, useState, useCallback } from "react";
-import { Text, Modal, Button } from "../../../../components";
-import OneTime from "./OneTime";
-import Radio from "./Radio";
-import { Dayjs } from "dayjs";
-import Location from "./Location";
-import Repeat from "./Repeat";
-import { Theme } from "../../../../utils";
-import { StyleSheet } from "react-native";
+import React, { memo, useState, useCallback } from 'react';
+import { Text, Modal, Button } from '../../../../components';
+import OneTime from './OneTime';
+import Radio from './Radio';
+import { Dayjs } from 'dayjs';
+import Location from './Location';
+import Repeat from './Repeat';
+import { Theme } from '../../../../utils';
+import { StyleSheet } from 'react-native';
 
-type ReminderType = "One time" | "Repeat" | "Location";
-const reminderTypes: ReminderType[] = ["One time", "Repeat", "Location"];
+type ReminderType = 'One time' | 'Repeat' | 'Location';
+const reminderTypes: ReminderType[] = ['One time', 'Repeat', 'Location'];
 
 interface Props {
   onBackgroundPress: () => void;
@@ -18,18 +18,21 @@ interface Props {
 }
 
 export default memo(function CreateReminderModal(props: Props) {
-  const [state, setState] = useState<ReminderType>("One time");
+  const [state, setState] = useState<ReminderType>('One time');
   const styles = StyleSheet.create({
     section: {
       paddingTop: Theme.padding.p06,
-      paddingBottom: Theme.padding.p02
+      paddingBottom: Theme.padding.p02,
     },
     submit: {
-      marginTop: Theme.padding.p06
-    }
+      marginTop: Theme.padding.p06,
+    },
   });
 
-  const handleReminderTypePress = useCallback(type => () => setState(type), []);
+  const handleReminderTypePress = useCallback(
+    (type) => () => setState(type),
+    []
+  );
 
   return (
     <Modal onBackgroundPress={props.onBackgroundPress}>
@@ -41,15 +44,15 @@ export default memo(function CreateReminderModal(props: Props) {
         onChange={handleReminderTypePress}
       />
       <Text caption title="Reminder time" style={styles.section} />
-      {state === "One time" ? 
+      {state === 'One time' ? (
         <OneTime onPress={props.onOneTimePress} />
-       : state === "Repeat" ? 
+      ) : state === 'Repeat' ? (
         <Repeat />
-       : state === "Location" ? 
+      ) : state === 'Location' ? (
         <Location />
-       : 
+      ) : (
         <Text title="invalid form type" />
-      }
+      )}
       <Button
         disable
         title="submit"

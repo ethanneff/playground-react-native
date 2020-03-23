@@ -1,2 +1,2 @@
-import NativeStorage from "@react-native-community/async-storage";
+import NativeStorage from '@react-native-community/async-storage';
 export const Storage = NativeStorage;

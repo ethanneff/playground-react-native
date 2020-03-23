@@ -1,9 +1,9 @@
-import React, { memo, useState, useCallback } from "react";
-import { View, LayoutChangeEvent } from "react-native";
-import { Canvas } from "./Canvas";
-import { Dpad } from "./Dpad";
-import { Character } from "./Character";
-import { Tracks } from "./Tracks";
+import React, { memo, useState, useCallback } from 'react';
+import { View, LayoutChangeEvent } from 'react-native';
+import { Canvas } from './Canvas';
+import { Dpad } from './Dpad';
+import { Character } from './Character';
+import { Tracks } from './Tracks';
 
 export type CanvasDimensions = {
   x: number;
@@ -23,12 +23,12 @@ export const Game = memo(function Game() {
   return (
     <View style={{ flex: 1 }}>
       <Canvas onLayout={onCanvasLayout}>
-        {canvas && 
+        {canvas && (
           <View>
             <Character canvas={canvas} />
             <Tracks />
           </View>
-        }
+        )}
       </Canvas>
       <Dpad />
     </View>

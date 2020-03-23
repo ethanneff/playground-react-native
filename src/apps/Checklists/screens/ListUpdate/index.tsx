@@ -1,9 +1,9 @@
-import React, { memo, useState } from "react";
-import { Button, Screen, TextInput, Dialog } from "../../../../components";
-import { getCurrentChecklist, removeList, updateList } from "../../models";
-import { useNav } from "../../../../hooks";
-import { useRootSelector, useRootDispatch } from "../../../../utils";
-import { navigate } from "../../../../models";
+import React, { memo, useState } from 'react';
+import { Button, Screen, TextInput, Dialog } from '../../../../components';
+import { getCurrentChecklist, removeList, updateList } from '../../models';
+import { useNav } from '../../../../hooks';
+import { useRootSelector, useRootDispatch } from '../../../../utils';
+import { navigate } from '../../../../models';
 
 export default memo(function ChecklistUpdate() {
   const nav = useNav();
@@ -12,14 +12,14 @@ export default memo(function ChecklistUpdate() {
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [form, setForm] = useState({
     name: checklist.name,
-    description: checklist.description || ""
+    description: checklist.description || '',
   });
   const isInvalidForm = form.name.trim().length === 0;
 
   const handleNameChange = (name: string) =>
-    setForm(state => ({ ...state, name }));
+    setForm((state) => ({ ...state, name }));
   const handleDescriptionChange = (description: string) =>
-    setForm(state => ({ ...state, description }));
+    setForm((state) => ({ ...state, description }));
   const handleSubmit = () => {
     const { name, description } = form;
     const now = Date.now();
@@ -31,16 +31,16 @@ export default memo(function ChecklistUpdate() {
         ...checklist,
         name,
         description,
-        updatedAt: now
+        updatedAt: now,
       })
     );
-    dispatch(navigate("checklists"));
+    dispatch(navigate('checklists'));
   };
 
   const handleDelete = () => {
     setShowDeleteDialog(false);
     dispatch(removeList(checklist.id));
-    dispatch(navigate("checklists"));
+    dispatch(navigate('checklists'));
   };
 
   const handleDeletePress = () => setShowDeleteDialog(true);
@@ -49,8 +49,8 @@ export default memo(function ChecklistUpdate() {
   return (
     <>
       <Screen
-        onLeftPress={nav.to("checklists")}
-        title={"Update Checklist"}
+        onLeftPress={nav.to('checklists')}
+        title={'Update Checklist'}
         gutter
       >
         <TextInput
@@ -66,14 +66,14 @@ export default memo(function ChecklistUpdate() {
         <Button title="update" onPress={handleSubmit} />
         <Button title="delete" onPress={handleDeletePress} color="danger" />
       </Screen>
-      {showDeleteDialog && 
+      {showDeleteDialog && (
         <Dialog
           title="are you sure?"
           onConfirmButtonPress={handleDelete}
           onBackgroundPress={handleDeleteCancel}
           onCancelButtonPress={handleDeleteCancel}
         />
-      }
+      )}
     </>
   );
 });

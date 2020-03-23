@@ -1,21 +1,21 @@
-import { createSelector } from "reselect";
-import { ActionType, createAction, getType } from "typesafe-actions";
-import { RootAction, RootState } from "../../../../containers";
+import { createSelector } from 'reselect';
+import { ActionType, createAction, getType } from 'typesafe-actions';
+import { RootAction, RootState } from '../../../../containers';
 
 /* ACTIONS */
-export const createChatMessage = createAction("chat/create")<Message>();
-export const updateChatMessage = createAction("chat/update")<Message>();
-export const deleteChatMessage = createAction("chat/delete")<string>();
-export const typeChatMessage = createAction("chat/type")<string>();
+export const createChatMessage = createAction('chat/create')<Message>();
+export const updateChatMessage = createAction('chat/update')<Message>();
+export const deleteChatMessage = createAction('chat/delete')<string>();
+export const typeChatMessage = createAction('chat/type')<string>();
 
 /* SELECTORS */
 export const getChatMessages = (state: RootState): Messages =>
   state.chatMessage.items;
 export const getActiveChatMessagesOrderByCreatedAt = createSelector(
   [getChatMessages],
-  messages =>
+  (messages) =>
     Object.values(messages)
-      .filter(item => item.active)
+      .filter((item) => item.active)
       .sort((a, b) => b.createdAt - a.createdAt)
 );
 
@@ -45,8 +45,8 @@ export type ChatMessageActions = ActionType<
 
 /* REDUCER */
 const initialState: ChatMessageReducer = {
-  textField: "",
-  items: {}
+  textField: '',
+  items: {},
 };
 export const chatMessageReducer = (
   state: ChatMessageReducer = initialState,
@@ -58,11 +58,11 @@ export const chatMessageReducer = (
     case getType(createChatMessage):
       return {
         ...state,
-        textField: "",
+        textField: '',
         items: {
           ...state.items,
-          [action.payload.id]: action.payload
-        }
+          [action.payload.id]: action.payload,
+        },
       };
     case getType(updateChatMessage):
       return {
@@ -72,9 +72,9 @@ export const chatMessageReducer = (
           [action.payload.id]: {
             ...state.items[action.payload.id],
             ...action.payload,
-            updatedAt: Date.now()
-          }
-        }
+            updatedAt: Date.now(),
+          },
+        },
       };
     case getType(deleteChatMessage):
       return {
@@ -84,9 +84,9 @@ export const chatMessageReducer = (
           [action.payload]: {
             ...state.items[action.payload],
             active: false,
-            updatedAt: Date.now()
-          }
-        }
+            updatedAt: Date.now(),
+          },
+        },
       };
     default:
       return state;
