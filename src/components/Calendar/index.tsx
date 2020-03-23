@@ -32,7 +32,7 @@ export const Calendar = memo(function Calendar({ hiddenDays }: Props) {
   const onSelected = useCallback(
     (id: string) => {
       // TODO: navigate to month if pressing previous or next month
-      setCalendar((state) => ({
+      setCalendar(state => ({
         ...state,
         selected: id === calendar.selected ? undefined : id,
       }));

@@ -12,7 +12,7 @@ export default memo(function LapsTable({ laps, timer }: LapTableProps) {
   let min = Number.MAX_SAFE_INTEGER;
   let max = Number.MIN_SAFE_INTEGER;
   if (finishedLaps.length >= 2) {
-    finishedLaps.forEach((lap) => {
+    finishedLaps.forEach(lap => {
       if (lap < min) {
         min = lap;
       }

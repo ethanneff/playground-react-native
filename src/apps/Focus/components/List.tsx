@@ -25,7 +25,10 @@ interface Props {
 const itemHeight = Theme.padding.p10;
 
 const initialIndex =
-  dayjs().startOf('day').add(2, 'day').diff(dayjs(), 'hour') - 4;
+  dayjs()
+    .startOf('day')
+    .add(2, 'day')
+    .diff(dayjs(), 'hour') - 4;
 
 const getItemLayout = (_: Item[] | null | undefined, index: number) => ({
   length: itemHeight,

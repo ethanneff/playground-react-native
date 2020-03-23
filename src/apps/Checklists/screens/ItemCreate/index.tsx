@@ -13,7 +13,7 @@ export default memo(function ChecklistItemCreate() {
   const nav = useNav();
   const dispatch = useRootDispatch();
   const [form, setForm] = useState(initialState);
-  const currentChecklist = useRootSelector((state) => state.checklists.active);
+  const currentChecklist = useRootSelector(state => state.checklists.active);
   const isInvalidForm = form.name.trim().length === 0;
 
   const handleSubmit = () => {
@@ -42,9 +42,9 @@ export default memo(function ChecklistItemCreate() {
     dispatch(navigate('checklistsList')); // TODO: batch
   };
   const handleNameChange = (name: string) =>
-    setForm((state) => ({ ...state, name }));
+    setForm(state => ({ ...state, name }));
   const handleDescriptionChange = (description: string) =>
-    setForm((state) => ({ ...state, description }));
+    setForm(state => ({ ...state, description }));
 
   return (
     <Screen onLeftPress={nav.to('checklistsList')} title="Create Item" gutter>

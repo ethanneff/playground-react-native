@@ -62,7 +62,7 @@ export const Activity = memo(function Activity({
       const api = await getApiActivity({ username, site });
       const todayFormat = getDateFormat(today);
       const count = api[todayFormat] || 0;
-      setState((prev) => ({
+      setState(prev => ({
         ...prev,
         activity: updateActivitySquares(prev.activity, api),
         request: 'success',
@@ -85,7 +85,7 @@ export const Activity = memo(function Activity({
 
   const onItemPress = useCallback(
     (item: ActivityDay) => () => {
-      setState((data) => ({
+      setState(data => ({
         ...data,
         selected: {
           submissions: getSubmissionFormat(item.count, item.date),
@@ -112,7 +112,7 @@ export const Activity = memo(function Activity({
     [state.activity.max, margin, onItemPress, size]
   );
 
-  const keyExtractor = useCallback((item) => String(item[0].date), []);
+  const keyExtractor = useCallback(item => String(item[0].date), []);
 
   return state.request === 'failure' ? (
     <View>

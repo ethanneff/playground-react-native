@@ -9,7 +9,7 @@ export default memo(function DebugColors() {
   const nav = useNav();
   const dispatch = useRootDispatch();
   const themes = Object.values(ColorTheme);
-  const currentTheme = useRootSelector((state) => state.theme.currentColor);
+  const currentTheme = useRootSelector(state => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   // text: high 87% medium 60% disabled 38%
   // icon: active 100% inactive 60% disabled 38%
@@ -27,7 +27,7 @@ export default memo(function DebugColors() {
           flexDirection: 'row',
         }}
       >
-        {themes.map((item) => (
+        {themes.map(item => (
           <Button
             key={item}
             title={item}

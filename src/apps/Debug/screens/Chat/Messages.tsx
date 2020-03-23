@@ -13,9 +13,9 @@ export const getChatMessages = (state: RootState): Messages =>
   state.chatMessage.items;
 export const getActiveChatMessagesOrderByCreatedAt = createSelector(
   [getChatMessages],
-  (messages) =>
+  messages =>
     Object.values(messages)
-      .filter((item) => item.active)
+      .filter(item => item.active)
       .sort((a, b) => b.createdAt - a.createdAt)
 );
 

@@ -135,7 +135,7 @@ const Loading = memo(function NavigationLoading() {
 });
 
 export const Navigation = memo(function Navigation() {
-  const screen = useRootSelector((state) => state.navigation.screen);
+  const screen = useRootSelector(state => state.navigation.screen);
   return (
     <ErrorBoundary>
       <Suspense fallback={<Loading />}>{screens[screen]}</Suspense>

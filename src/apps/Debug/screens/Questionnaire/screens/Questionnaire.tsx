@@ -8,7 +8,7 @@ export const Questionnaire = () => {
   const [activeItem, setActiveItem] = useState('');
 
   const handleLongPress = (id: string) => () => {
-    setActionSheet((state) => !state);
+    setActionSheet(state => !state);
     setActiveItem(id);
   };
   const handleItemPress = (id: string) => () => setActiveItem(id);
@@ -44,7 +44,7 @@ export const Questionnaire = () => {
   return (
     <>
       <FlatList
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
         data={Object.values(questionnairesInitialState)}
         renderItem={renderItem}
       />

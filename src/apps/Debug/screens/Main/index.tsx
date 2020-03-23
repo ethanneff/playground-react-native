@@ -34,7 +34,7 @@ export default memo(function Debug() {
     ({ item }) => <Button title={item} key={item} onPress={nav.to(item)} />,
     [nav]
   );
-  const keyExtractor = useCallback((item) => item, []);
+  const keyExtractor = useCallback(item => item, []);
   return (
     <Screen onLeftPress={nav.to('portfolioLanding')} title="Debug">
       <FlatList

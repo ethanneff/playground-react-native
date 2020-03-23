@@ -8,7 +8,7 @@ import { Message, typeChatMessage, createChatMessage } from './Messages';
 
 export const TextField = memo(function ChatTextField() {
   const dispatch = useRootDispatch();
-  const textField = useRootSelector((state) => state.chatMessage.textField);
+  const textField = useRootSelector(state => state.chatMessage.textField);
   const onMessageChange = useCallback(
     (message: string) => dispatch(typeChatMessage(message)),
     [dispatch]

@@ -12,7 +12,7 @@ const initialState = { settings: false, profile: false };
 
 export default memo(function CantHurtMeMain() {
   const [showModal, setShowModal] = useState(initialState);
-  const landscape = useRootSelector((state) => getLandscapeOrientation(state));
+  const landscape = useRootSelector(state => getLandscapeOrientation(state));
   const columns = landscape ? 4 : 2;
   const nav = useNav();
   const keyExtractor = (id: string) => app.goals.byId[id].id;

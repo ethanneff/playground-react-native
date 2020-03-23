@@ -12,7 +12,7 @@
     "build": "              echo 'build production web';          react-scripts build",
     "start": "              echo 'run code watcher';              react-native start --reset-cache",
     "debug": "              echo 'run redux debugger';            open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
-    "lint": "               echo 'run code linter';               eslint . --fix && tsc",
+    "lint": "               echo 'run code linter';               eslint '**/*.[jt]s?(x)' && tsc",
     "test": "               echo 'run unit tests';                jest -u --forceExit --coverage --detectOpenHandles",
     "watch": "              echo 'run unit tests reloader';       jest -u --forceExit --detectOpenHandles --watchAll",
     "reset": "              echo 'clear react native cache';      watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; npx jetify; cd android; ./gradlew clean; cd ..; react-native start --reset-cache",
@@ -83,6 +83,7 @@
     "eslint-plugin-prettier": "3.1.2",
     "husky": "4.2.3",
     "metro-react-native-babel-preset": "0.59.0",
+    "pretty-quick": "2.0.1",
     "react-test-renderer": "16.13.1",
     "semantic-release": "17.0.4",
     "travis-deploy-once": "5.0.11",
@@ -90,6 +91,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "pretty-quick --staged",
       "pre-push": "yarn lint && yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }

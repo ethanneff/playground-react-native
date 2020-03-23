@@ -42,7 +42,7 @@ const Container = (props: Props) => {
     [props]
   );
   const handleItemMenu = useCallback(() => {
-    setActionSheet((state) => !state);
+    setActionSheet(state => !state);
   }, []);
   const renderItem = useCallback(
     ({ item }) => {
@@ -75,7 +75,7 @@ const Container = (props: Props) => {
   return (
     <>
       <FlatList
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
         data={props.questionnaires}
         extraData={props.selected}
         renderItem={renderItem}

@@ -21,7 +21,7 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
   maxWidth = 500,
   maxHeight,
 }) {
-  const appHeight = useRootSelector((state) => state.dimension.window.height);
+  const appHeight = useRootSelector(state => state.dimension.window.height);
   const maximumHeight = maxHeight ? maxHeight : appHeight * 0.6;
   const color = useColor();
   const dropShadow = useDropShadow(10);

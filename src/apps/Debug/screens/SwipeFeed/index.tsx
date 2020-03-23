@@ -65,7 +65,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
   const position = new Animated.ValueXY();
 
   const onLayout = useCallback(
-    (event) => {
+    event => {
       cardWidth.current = event.nativeEvent.layout.width;
     },
     [cardWidth]
@@ -297,7 +297,7 @@ const SwipeCards = memo(function SwipeCardList({
   });
 
   const onSwipeComplete = useCallback(() => {
-    setFeed((state) => ({
+    setFeed(state => ({
       ...state,
       percent: 1,
       items: state.items.filter((_, i) => i !== state.items.length - 1),
@@ -305,7 +305,7 @@ const SwipeCards = memo(function SwipeCardList({
   }, []);
 
   const onSwipePercentChange = useCallback((percent: number) => {
-    setFeed((state) => ({
+    setFeed(state => ({
       ...state,
       percent,
     }));

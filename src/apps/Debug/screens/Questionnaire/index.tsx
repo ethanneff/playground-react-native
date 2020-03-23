@@ -149,4 +149,7 @@ class Container extends React.PureComponent<Props> {
 
 const mapDispatchToProps: DispatchProps = { navigate };
 
-export default connect(null, mapDispatchToProps)(Container);
+export default connect(
+  null,
+  mapDispatchToProps
+)(Container);

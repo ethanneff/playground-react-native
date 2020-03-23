@@ -44,7 +44,7 @@ export default memo(function DebugStartup() {
 
   const updateForm = useCallback(
     (key: keyof Form, value: string | boolean) =>
-      setForm((state) => ({ ...state, [key]: value })),
+      setForm(state => ({ ...state, [key]: value })),
     []
   );
   const handleLaunchChange = useCallback(

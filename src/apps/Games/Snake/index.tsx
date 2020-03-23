@@ -27,9 +27,9 @@ export default memo(function Snake() {
   });
   const gesture = useGesture();
 
-  const { start, stop } = useGameLoop((frame) => {
+  const { start, stop } = useGameLoop(frame => {
     if (frame.count >= 200) {
-      setGame((prev) => ({ ...prev, state: 'off' }));
+      setGame(prev => ({ ...prev, state: 'off' }));
       stop();
     }
   });

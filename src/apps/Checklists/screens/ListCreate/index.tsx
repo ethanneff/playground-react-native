@@ -35,9 +35,9 @@ export default memo(function ChecklistCreate() {
     dispatch(navigate('checklists'));
   };
   const handleNameChange = (name: string) =>
-    setForm((state) => ({ ...state, name }));
+    setForm(state => ({ ...state, name }));
   const handleDescriptionChange = (description: string) =>
-    setForm((state) => ({ ...state, description }));
+    setForm(state => ({ ...state, description }));
 
   return (
     <Screen onLeftPress={nav.to('checklists')} title="Create Checklist" gutter>

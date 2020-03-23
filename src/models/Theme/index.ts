@@ -44,9 +44,7 @@ export interface Color {
   warning: string;
 }
 
-type Colors = {
-  [key in ColorTheme]: Color;
-};
+type Colors = { [key in ColorTheme]: Color };
 
 export interface Theme {
   colors: Colors;

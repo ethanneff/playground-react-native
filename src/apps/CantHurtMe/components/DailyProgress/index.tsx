@@ -53,7 +53,7 @@ export const DailyProgress = memo(function DailyProgress() {
     [color.danger, color.secondary, color.success, color.text]
   );
 
-  const keyExtractor = useCallback((item) => String(item.date), []);
+  const keyExtractor = useCallback(item => String(item.date), []);
 
   return (
     <FlatList

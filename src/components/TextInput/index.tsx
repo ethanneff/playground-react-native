@@ -14,7 +14,7 @@ import { Button } from '../Button';
 import { useColor } from '../../hooks';
 import { Icon } from '../Icon';
 
-/* 
+/*
 styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 */
 

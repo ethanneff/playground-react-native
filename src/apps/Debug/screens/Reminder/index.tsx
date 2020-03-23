@@ -45,13 +45,13 @@ export default memo(function DebugReminder() {
   const handleOneTimeReminder = useCallback(
     (date: Dayjs) => () => {
       if (date.isBefore(dayjs())) {
-        setForm((prev) => ({
+        setForm(prev => ({
           ...prev,
           modals: { ...prev.modals, customDate: true },
         }));
         return;
       }
-      setForm((prev) => ({
+      setForm(prev => ({
         ...prev,
         modals: {
           ...prev.modals,
@@ -71,21 +71,21 @@ export default memo(function DebugReminder() {
   );
 
   const handleCustomDateClose = useCallback(() => {
-    setForm((prev) => ({
+    setForm(prev => ({
       ...prev,
       modals: { ...prev.modals, customDate: false },
     }));
   }, []);
 
   const handleCreateReminder = useCallback(() => {
-    setForm((prev) => ({
+    setForm(prev => ({
       ...prev,
       modals: { ...prev.modals, createReminder: true },
     }));
   }, []);
 
   const handleCreateReminderClose = useCallback(() => {
-    setForm((prev) => ({
+    setForm(prev => ({
       ...prev,
       modals: { ...prev.modals, createReminder: false },
     }));
@@ -93,7 +93,7 @@ export default memo(function DebugReminder() {
 
   const handleLocation = useCallback(
     (id: string) => () => {
-      setForm((prev) => ({
+      setForm(prev => ({
         ...prev,
         modals: { ...prev.modals, location: true },
         selected: { location: id },
@@ -103,7 +103,7 @@ export default memo(function DebugReminder() {
   );
 
   const handleLocationClose = useCallback(() => {
-    setForm((prev) => ({
+    setForm(prev => ({
       ...prev,
       modals: { ...prev.modals, location: false },
     }));

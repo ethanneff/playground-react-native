@@ -65,19 +65,19 @@ export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
 
   const handleRating = useCallback((rating: number) => {
     ratingRef.current = rating;
-    setForm((prev) => ({ ...prev, rating }));
+    setForm(prev => ({ ...prev, rating }));
     setTimeout(() => {
       const success = ratingRef.current >= ratingMin;
-      setForm((prev) => ({ ...prev, modal: success ? 'review' : 'feedback' }));
+      setForm(prev => ({ ...prev, modal: success ? 'review' : 'feedback' }));
     }, 300);
   }, []);
 
   const handleTextChange = useCallback((feedback: string) => {
-    setForm((prev) => ({ ...prev, feedback }));
+    setForm(prev => ({ ...prev, feedback }));
   }, []);
 
   const handleFeedbackSubmit = useCallback(() => {
-    setForm((prev) => ({ ...prev, modal: 'thank you' }));
+    setForm(prev => ({ ...prev, modal: 'thank you' }));
   }, []);
 
   const handleComplete = useCallback(() => {

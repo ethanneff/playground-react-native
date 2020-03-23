@@ -64,7 +64,7 @@ export default memo(function Checklist() {
       handleToggle,
     ]
   );
-  const keyExtractor = useCallback((item) => item.id, []);
+  const keyExtractor = useCallback(item => item.id, []);
 
   return (
     <Screen onLeftPress={nav.to('checklists')} title="Checklist" gutter>

@@ -13,7 +13,7 @@ export const registerFailure = createAction('AUTH/REGISTER_FAILURE')<Error>();
 export const logout = createAction('Auth/LOGOUT')();
 
 /* ACTION CREATORS */
-export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
+export const onLogin = (): RootThunkAction<void> => async dispatch => {
   dispatch(loginRequest());
   try {
     const res = await axios({
@@ -30,7 +30,7 @@ export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
     dispatch(loginFailure(error));
   }
 };
-export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
+export const onRegister = (): RootThunkAction<void> => async dispatch => {
   dispatch(loginRequest());
   try {
     const res = await axios({

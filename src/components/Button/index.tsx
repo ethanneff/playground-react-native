@@ -42,7 +42,7 @@ export interface ButtonProps {
   onLongPress?(): void;
 }
 
-export const Button: React.FC<ButtonProps> = memo((props) => {
+export const Button: React.FC<ButtonProps> = memo(props => {
   const {
     activeOpacity,
     buttonStyle,
