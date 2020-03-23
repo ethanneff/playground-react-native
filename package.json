@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
-    "@babel/runtime": "7.9.0",
+    "@babel/runtime": "7.9.2",
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@react-native-community/eslint-config": "0.0.7",
@@ -80,8 +80,11 @@
     "@types/uuid": "7.0.2",
     "codecov": "3.6.5",
     "eslint": "6.8.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "husky": "4.2.3",
     "metro-react-native-babel-preset": "0.59.0",
+    "prettier": "2.0.1",
+    "pretty-quick": "2.0.1",
     "react-test-renderer": "16.13.1",
     "semantic-release": "17.0.4",
     "travis-deploy-once": "5.0.11",
@@ -89,6 +92,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "pretty-quick --staged && yarn lint",
       "pre-push": "yarn lint && yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }

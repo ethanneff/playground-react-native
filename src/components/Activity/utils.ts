@@ -1,10 +1,10 @@
-import { ActivityMatrix, Site } from "./index";
-import axios from "axios";
-import format from "date-fns/format";
-import isToday from "date-fns/isToday";
-import endOfWeek from "date-fns/endOfWeek";
-import startOfWeek from "date-fns/startOfWeek";
-import sub from "date-fns/sub";
+import { ActivityMatrix, Site } from './index';
+import axios from 'axios';
+import format from 'date-fns/format';
+import isToday from 'date-fns/isToday';
+import endOfWeek from 'date-fns/endOfWeek';
+import startOfWeek from 'date-fns/startOfWeek';
+import sub from 'date-fns/sub';
 
 type ApiResponse = { [unix: string]: number };
 
@@ -20,11 +20,11 @@ type ActivitySquares = {
   max: number;
 };
 
-export const getDateFormat = (date: number) => format(date, "yyyy-MM-dd");
+export const getDateFormat = (date: number) => format(date, 'yyyy-MM-dd');
 
 export const getSubmissionFormat = (count: number, date: number): string => {
-  const submissions = count === 1 ? "submission" : "submissions";
-  const day = isToday(date) ? "today" : `on ${format(date, "MMM dd, yyyy")}`;
+  const submissions = count === 1 ? 'submission' : 'submissions';
+  const day = isToday(date) ? 'today' : `on ${format(date, 'MMM dd, yyyy')}`;
   return `${count} ${submissions} ${day}`;
 };
 
@@ -57,8 +57,8 @@ export const updateActivitySquares = (
   active: ApiResponse
 ): ActivitySquares => {
   let max = 0;
-  const matrix = squares.matrix.map(week =>
-    week.map(day => {
+  const matrix = squares.matrix.map((week) =>
+    week.map((day) => {
       const count = active[getDateFormat(day.date)] || 0;
       max = Math.max(count, max);
       return { ...day, count };
@@ -67,13 +67,13 @@ export const updateActivitySquares = (
   return { matrix, max };
 };
 
-const getGithubActivity = async (username: string): ApiPromise => {
+const getGithubActivity = async (username: string): Promise<ApiResponse> => {
   const url = `https://github-contributions-json-api.now.sh/api?username=${username}`;
   const res = await axios.get(url);
   return res.data;
 };
 
-const getLeetCodeActivity = async (username: string): ApiPromise => {
+const getLeetCodeActivity = async (username: string) => {
   const url = `https://leetcode.com/api/user_submission_calendar/${username}`;
   const res = await axios.get(url);
   const data = JSON.parse(res.data);
@@ -88,7 +88,7 @@ const getLeetCodeActivity = async (username: string): ApiPromise => {
   }, {});
 };
 
-const getHackerRankActivity = async (username: string): ApiPromise => {
+const getHackerRankActivity = async (username: string) => {
   const url = `https://www.hackerrank.com/rest/hackers/${username}/submission_histories`;
   const res = await axios.get(url);
   return Object.keys(res.data).reduce((total: ApiResponse, item) => {
@@ -99,11 +99,11 @@ const getHackerRankActivity = async (username: string): ApiPromise => {
 
 export const getApiActivity = ({ username, site }: ApiInput): ApiPromise => {
   switch (site) {
-    case "github":
+    case 'github':
       return getGithubActivity(username);
-    case "leetCode":
+    case 'leetCode':
       return getLeetCodeActivity(username);
-    case "hackerRank":
+    case 'hackerRank':
       return getHackerRankActivity(username);
     default:
       return Promise.resolve({});
