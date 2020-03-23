@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.22.2](https://github.com/ethanneff/example/compare/v2.22.1...v2.22.2) (2020-03-23)
+
+
+### Bug Fixes
+
+* add pre commit hook for prettier ([75639b9](https://github.com/ethanneff/example/commit/75639b9c50dbbe61cb629957063960ab6126d952))
+* prettier everything ([ca95eb2](https://github.com/ethanneff/example/commit/ca95eb2f5350dbdf132d96055d4bb8936a982165))
+* remove horrible eslint config ([fb86474](https://github.com/ethanneff/example/commit/fb8647401cc763c58e0f23ebcce154bdba28c708))
+
 ## [2.22.1](https://github.com/ethanneff/example/compare/v2.22.0...v2.22.1) (2020-03-21)
 
 
