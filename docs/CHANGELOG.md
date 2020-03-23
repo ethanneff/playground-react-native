@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.22.3](https://github.com/ethanneff/example/compare/v2.22.2...v2.22.3) (2020-03-23)
+
+
+### Bug Fixes
+
+* prettier everything ([227f1f0](https://github.com/ethanneff/example/commit/227f1f0f124787cc75736d42319f0167f81f206b))
+
 ## [2.22.2](https://github.com/ethanneff/example/compare/v2.22.1...v2.22.2) (2020-03-23)
 
 
