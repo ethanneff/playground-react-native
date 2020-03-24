@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.22.4](https://github.com/ethanneff/example/compare/v2.22.3...v2.22.4) (2020-03-24)
+
+
+### Bug Fixes
+
+* add strict tslint ([77303ba](https://github.com/ethanneff/example/commit/77303bae1a45b656894baa060b5ec6e41739fd78))
+* add typescript estlint parser to remove typescript warning ([e86b888](https://github.com/ethanneff/example/commit/e86b88857effcca2e5c0f95519c43595398d535f))
+* ignore lint cache in git ([3bfe6cd](https://github.com/ethanneff/example/commit/3bfe6cdc0e878e5d7f4ac4180c5e006bab8300ac))
+* lint ts files ([becc7df](https://github.com/ethanneff/example/commit/becc7dfa0738432ff09697bb9c517e396b4ca1a5))
+* remove fix from linting to speed it up ([eb71b96](https://github.com/ethanneff/example/commit/eb71b96a9eae70eec8448be3a020a1947d9df13d))
+* remove pretty quick on commit ([51f6cd6](https://github.com/ethanneff/example/commit/51f6cd61f8135d5b4a6fb151c18a591fb867805d))
+* update deps ([21fb025](https://github.com/ethanneff/example/commit/21fb025e3d712f139ed83ebef141f89bfca2340d))
+* update deps ([33fa5c0](https://github.com/ethanneff/example/commit/33fa5c080321b5f6fb73d60b4d8e8814c0d20d6b))
+* update to prettier 2.0 ([7164ac8](https://github.com/ethanneff/example/commit/7164ac817eaeda6dce869c1bf802d2f4847b10a1))
+
 ## [2.22.3](https://github.com/ethanneff/example/compare/v2.22.2...v2.22.3) (2020-03-23)
 
 
