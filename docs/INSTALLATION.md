@@ -4,8 +4,8 @@
 
 ```sh
 npm i -g yarn
-git clone git@github.com:ethanneff/react-native-web-typescript.git
-cd react-native-typescript
+git clone git@github.com:ethanneff/example.git
+cd example
 yarn install
 ```
 
