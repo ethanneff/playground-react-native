@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.22.5](https://github.com/ethanneff/example/compare/v2.22.4...v2.22.5) (2020-03-24)
+
+
+### Bug Fixes
+
+* only go back 1 year ([5cfcac7](https://github.com/ethanneff/example/commit/5cfcac7460e3e7124dcebc35c568211a1b571f5b))
+* remove global jest from eslint ([0b82570](https://github.com/ethanneff/example/commit/0b825701360e4093fe7c77846899a52c3d97e96a))
+
 ## [2.22.4](https://github.com/ethanneff/example/compare/v2.22.3...v2.22.4) (2020-03-24)
 
 
