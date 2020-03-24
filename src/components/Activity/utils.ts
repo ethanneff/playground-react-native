@@ -32,7 +32,7 @@ export const getActivitySquares = (): ActivitySquares => {
   const today = Date.now();
   const matrix = [];
   const oneDay = 60 * 60 * 24 * 1000;
-  const begin = startOfWeek(sub(today, { years: 1 })).valueOf();
+  const begin = sub(startOfWeek(today), { years: 1 }).valueOf();
   let end = endOfWeek(today).valueOf();
   let day = 0;
   const max = 0;
