@@ -1,117 +1,115 @@
 # Planning
 
-- apps
-  - hourly update
-  - checklist
-  - todo
-  - cant hurt me
-  - portfolio
-- features
-  - debug menu
-  - questionnaires
-  - dark mode
-  - chat
-  - markdown
-- architecture
-  - navigation
-  - firebase
-  - commented code
-  - tests
-- integration
-  - ios deploy
-  - android deploy
+## Top goals
 
-## Top 1
+- [ ] Deploy Android app
+- [ ] Deploy iOS app
+- [ ] Publish landing Page
+- [ ] Obtain 10 users
+- [ ] Question users
 
-#### working android app
+## Actionables
 
-- [ ] hourly update
-  - [x] scroll to day
-  - [ ] focus day
-- [ ] firebase
-- [ ] app center deploy
-- [ ] logins/signups
-- [ ] [design chat datamodels](https://www.youtube.com/watch?v=m_u6P5k0vP0&feature=share)
+| action                                                                                            | type         | impact | complexity |
+| ------------------------------------------------------------------------------------------------- | ------------ | :----: | :--------: |
+| hourly update                                                                                     | core         |   5    |     5      |
+| login                                                                                             | core         |   5    |     1      |
+| signup                                                                                            | core         |   5    |     1      |
+| codepush                                                                                          |              |   1    |     5      |
+| app center deploy                                                                                 |              |   1    |     5      |
+| firebase backend                                                                                  | core         |   5    |     5      |
+| landing page                                                                                      | core         |   2    |     3      |
+| automatic deploys                                                                                 |              |        |            |
+| swipe                                                                                             | fun          |        |            |
+| slack                                                                                             | fun          |        |            |
+| remove dayjs                                                                                      | debt         |        |            |
+| stripe                                                                                            | money        |        |            |
+| google abmob                                                                                      | money        |        |            |
+| facebook ads                                                                                      | money        |        |            |
+| nps                                                                                               | feedback     |        |            |
+| review app                                                                                        | feedback     |        |            |
+| email landing                                                                                     | feedback     |        |            |
+| deeplink                                                                                          | reach        |        |            |
+| push notifications                                                                                | reach        |        |            |
+| local notifications                                                                               | reach        |        |            |
+| text me the app                                                                                   | reach        |        |            |
+| referrals                                                                                         | reach        |        |            |
+| error boundary                                                                                    | core         |   5    |     1      |
+| storybook                                                                                         |              |        |            |
+| auto update dependency                                                                            |              |        |            |
+| splitwise                                                                                         |              |        |            |
+| [snoopy profiling](https://github.com/jondot/rn-snoopy)                                           |              |        |            |
+| [deploy rollback](https://eng.uber.com/ubereats-react-native/)                                    |              |        |            |
+| [chat datamodels](https://www.youtube.com/watch?v=m_u6P5k0vP0&feature=share)                      |              |        |            |
+| each app landing page                                                                             |              |        |            |
+| [badges](https://www.youtube.com/watch?v=4-s1qoADXok)                                             | gamification |        |            |
+| [points](https://www.youtube.com/watch?v=i-08jn0VP-A) (teamtreehouse, khanacadamey, codeacadamey) | gamification |        |            |
+| leader boards                                                                                     | gamification |        |            |
+| spend points (gifts, subscription)                                                                | gamification |        |            |
+| daily rewards                                                                                     | gamification |        |            |
+| [basketball](https://github.com/FaridSafi/react-native-basketball)                                | game         |        |            |
+| [flappybird](https://github.com/GeekyAnts/FlappyBird-ReactNative)                                 | game         |        |            |
+| snake                                                                                             | game         |        |            |
+| papi jump                                                                                         | game         |        |            |
+| drift get bigger and faster                                                                       | game         |        |            |
+| hourly update                                                                                     | app          |        |            |
+| checklist                                                                                         | app          |        |            |
+| todo                                                                                              | app          |        |            |
+| cant hurt me                                                                                      | app          |        |            |
+| portfolio                                                                                         | app          |        |            |
+| journal                                                                                           | app          |        |            |
+| one page notes                                                                                    | app          |        |            |
+| questionnaires                                                                                    | feature      |        |            |
+| chat                                                                                              | feature      |        |            |
+| markdown                                                                                          | feature      |        |            |
 
-## Top 3
-
-#### code cleanup
-
-- [x] fix broken ci
-- [ ] remove all commented code
-  - [ ] swipe
-  - [ ] slack
-  - [ ] yellowbox warnings
-  - [ ] dialog tests
-  - [ ] test warnings
-  - [ ] web warnings
-  - [x] remove momentjs
-- [x] dark mode
-
-#### best practices and scalability
-
-- [ ] offline reset (error boundary)
-- [x] nested navigation
-- [ ] test hooks
-- [ ] mock date, fix tests, fix releases
-- [ ] test redux offline
-
-#### landing page
+## Resources
 
 - [ ] main landing page https://www.lemonade.com/ https://www.any.do/ https://i.imgur.com/e4svRwy.png https://evernote.com/ https://telegram.org/ https://lyft.com http://www.shegy.nazwa.pl/materialupmarket/mdlp/index_light.html https://ifttt.com/
-- [ ] icons for web
-- [ ] each app landing page
 
-## Top 5
+## Done
 
-##### payment feature
-
-- [ ] payment dialog
-- [ ] google admob
-- [ ] facebook ads
-
-##### questionnaire feature
-
-- [ ] nps
-- [ ] feedback
-
-##### checklists
-
-- [ ] checklist mvp with navigation
-- [ ] use evernote to make example data structure of checklist and actionables
-- [ ] checklist async tests
-
-##### chat
-
-##### gamification
-
-- [ ] [badges](https://www.youtube.com/watch?v=4-s1qoADXok)
-- [ ] [points](https://www.youtube.com/watch?v=i-08jn0VP-A) (total points like teamtreehouse without levels) (khanacadamey, codeacadamey)
-- [ ] leader boards
-- [ ] spend points (gifts, subscription)
-
-## Rest
-
-#### v4 proof of concept
-
-- [ ] firebase
-  - [ ] firebase native
-  - [ ] firebase [todo](https://blog.invertase.io/getting-started-with-cloud-firestore-on-react-native-b338fb6525b9)
-  - [ ] firebase android
-  - [ ] firebase login
-  - [ ] firebase search
-  - [ ] firebase comments
-  - [ ] firebase web
-  - [ ] firebase pass tests
-  - [ ] firebase-todo branch
-- [ ] codepush
-- [ ] app center
-- [ ] release
-
-#### v5 revenue
-
-#### v6 dx
-
+- [x] `{showReview && <Review onComplete />`
+- [x] install accelerator
+- [x] fix ios build (pods)
+- [x] backup google drive offline
+- [x] rename app to playground
+- [x] debug menu
+- [x] dark mode
+- [x] fix build (web) (@react-native-community/netinfo)
+- [x] revive focus
+- [x] cant hurt me dialog
+- [x] use net info
+- [x] make ios work
+- [x] fix tests
+- [x] deploy ios
+- [x] update docs dependencies
+- [x] run on android
+- [x] push code
+- [x] remove react-native-version-number for updated react-native-device-info
+- [x] code splitting by screen
+- [x] error boundary
+- [x] redux offline
+- [x] dynamic import screens
+- [x] remove moment.js
+- [x] cant hurt me modals like focus
+- [x] fix pinch spread
+- [x] fix dark mode card size
+- [x] icons for web
+- [x] set metro.config to `true` without crashing because of `react-native-vector-icons`
+- [x] ~~relay~~
+- [x] ~~[styled components](https://github.com/styled-components/styled-components)~~
+- [x] vscode (editor)
+- [x] remote-redux-devtools
+- [x] [typescript](https://medium.com/@rintoj/
+- [x] ~~[storybook](https://github.com/storybooks/storybook/tree/master/app/react-native) (component builder)~~
+- [x] [duck or duck++](https://github.com/erikras/ducks-modular-redux) (redux management)
+- [x] ~~[react-native-interactable](https://github.com/wix/react-native-interactable) (native animations)~~
+- [x] ~~[redux injectors](http://nicolasgallagher.com/redux-modules-and-code-splitting/)~~
+- [x] add error boundary in app and show error alert
+- [x] remove `@babel/plugin-transform-object-assign` dependency when updating `react` `react-dom` or `react-test-renderer`
+- [x] remove `YellowBox` warning after upgrading react native to 0.59.5+
+- [x] prevent `Trace: The node type SpreadProperty has been renamed to SpreadElement` in app center build
 - [x] ~~airbnb lint~~
 - [x] prettier lint
 - [x] github ci
@@ -121,59 +119,6 @@
 - [x] dependency check
 - [x] change log
 - [x] commit restriction
-- [ ] dependency auto update
-
-#### v7 apps
-
-- [ ] splitwise
-- [ ] timer
-- [ ] weekly games
-
-#### v8 components
-
-- [x] textinput
-- [ ] radio
-- [ ] selection
-- [ ] swipe
-
-#### v9 cleanup
-
-- [ ] add error boundary in app and show error alert
-- [ ] remove `@babel/plugin-transform-object-assign` dependency when updating `react` `react-dom` or `react-test-renderer`
-- [ ] remove `YellowBox` warning after upgrading react native to 0.59.5+
-- [ ] prevent `Trace: The node type SpreadProperty has been renamed to SpreadElement` in app center build
-
-#### v10 other
-
-- [ ] webpack DLL plugin
-- [ ] checklist tests
-- [ ] push notifications to firebase and app center
-- [ ] add transitions react-router-native-stack
-- [ ] add locales
-- [ ] re-enable prepush?
-- [ ] get a working deploy to android/ios
-- [ ] set metro.config to `true` without crashing because of `react-native-vector-icons`w
-- [ ] deploy rollback https://eng.uber.com/ubereats-react-native/
-
-#### v9 best practices
-
-- [ ] memo and usecallback everything
-- [ ] react-native-responsive
-- [x] ~~relay~~
-- [x] ~~[styled components](https://github.com/styled-components/styled-components)~~
-- [x] vscode (editor)
-- [x] remote-redux-devtools
-- [x] [typescript](https://medium.com/@rintoj/react-native-with-typescript-40355a90a5d7) (type checking)
-- [ ] [sentry](https://github.com/getsentry/react-native-sentry) (stack traces)
-- [ ] [onesignal](https://github.com/geektimecoil/react-native-onesignal) (notifications)
-- [ ] [snoopy](https://github.com/jondot/rn-snoopy) (profiling)
-- [x] ~~[storybook](https://github.com/storybooks/storybook/tree/master/app/react-native) (component builder)~~
-- [x] [duck or duck++](https://github.com/erikras/ducks-modular-redux) (redux management)
-- [x] ~~[react-native-interactable](https://github.com/wix/react-native-interactable) (native animations)~~
-- [x] ~~[redux injectors](http://nicolasgallagher.com/redux-modules-and-code-splitting/)~~
-
-## Done
-
 - [x] main tableview
 - [x] main navigation
 - [x] main counter
