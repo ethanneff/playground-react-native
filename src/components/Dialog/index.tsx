@@ -90,7 +90,7 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
   // TODO: animation is not clean on devices
   const animate = useCallback(
     (toValue: number) => {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         Animated.timing(fade, {
           duration: fadeDuration,
           toValue,

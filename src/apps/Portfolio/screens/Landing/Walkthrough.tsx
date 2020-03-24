@@ -39,7 +39,7 @@ export default memo(function Walkthrough() {
     <FlatList
       pagingEnabled
       horizontal
-      keyExtractor={item => String(item.key)}
+      keyExtractor={(item) => String(item.key)}
       data={data}
       renderItem={renderItem}
     />

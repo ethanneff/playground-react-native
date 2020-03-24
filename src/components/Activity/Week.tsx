@@ -37,7 +37,7 @@ export const Week = memo(function Week({
         overline
         style={{ paddingBottom: Theme.padding.p03 }}
       />
-      {item.map(day => (
+      {item.map((day) => (
         <Day
           key={String(day.date)}
           day={day}

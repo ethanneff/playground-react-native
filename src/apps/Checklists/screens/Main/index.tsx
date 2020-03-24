@@ -42,7 +42,7 @@ export default memo(function Checklists() {
     [handleItemLongPress, handleItemPress]
   );
 
-  const keyExtractor = useCallback(item => item.id, []);
+  const keyExtractor = useCallback((item) => item.id, []);
 
   return (
     <Screen onLeftPress={nav.to('portfolioLanding')} title="Checklists" gutter>

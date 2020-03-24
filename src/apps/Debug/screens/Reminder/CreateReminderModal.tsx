@@ -29,7 +29,10 @@ export default memo(function CreateReminderModal(props: Props) {
     },
   });
 
-  const handleReminderTypePress = useCallback(type => () => setState(type), []);
+  const handleReminderTypePress = useCallback(
+    (type) => () => setState(type),
+    []
+  );
 
   return (
     <Modal onBackgroundPress={props.onBackgroundPress}>

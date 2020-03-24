@@ -75,7 +75,7 @@ export default memo(function DebugStopWatch() {
 
   const run = () => {
     timer.current = setInterval(() => {
-      setState(prev => ({ ...prev, now: new Date().getTime() }));
+      setState((prev) => ({ ...prev, now: new Date().getTime() }));
     }, 100);
   };
 
@@ -87,7 +87,7 @@ export default memo(function DebugStopWatch() {
 
   const resume = () => {
     const now = new Date().getTime();
-    setState(prev => ({
+    setState((prev) => ({
       ...prev,
       now,
       start: now,

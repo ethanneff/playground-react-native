@@ -8,7 +8,7 @@ import { useNav } from '../../../../hooks';
 export default memo(function PortfolioSettings() {
   const dispatch = useRootDispatch();
   const themes = Object.values(ColorTheme);
-  const currentTheme = useRootSelector(state => state.theme.currentColor);
+  const currentTheme = useRootSelector((state) => state.theme.currentColor);
   const nav = useNav();
   const themePress = useCallback(
     (theme: ColorTheme) => () => dispatch(changeTheme(theme)),
@@ -34,7 +34,7 @@ export default memo(function PortfolioSettings() {
       <FlatList
         ListHeaderComponent={renderHeader}
         horizontal
-        keyExtractor={item => item}
+        keyExtractor={(item) => item}
         data={themes}
         renderItem={renderItem}
       />

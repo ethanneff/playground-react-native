@@ -13,11 +13,11 @@ export default memo(function DebugInput() {
   });
 
   const handleChange = (key: string) => (val: string) => {
-    setForm(prev => ({ ...prev, [key]: val }));
+    setForm((prev) => ({ ...prev, [key]: val }));
   };
 
   const handleSubmit = () => {
-    setForm(prev => ({ ...prev, error: 'Invalid Email' }));
+    setForm((prev) => ({ ...prev, error: 'Invalid Email' }));
   };
 
   return (

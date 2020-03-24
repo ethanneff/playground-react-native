@@ -21,9 +21,9 @@ export const getCurrentChecklist = (state: RootState): Checklist => {
 };
 export const getActiveChecklistOrderByCreatedAt = createSelector(
   [getChecklists],
-  checklists =>
+  (checklists) =>
     Object.values(checklists)
-      .filter(item => item.active)
+      .filter((item) => item.active)
       .sort((a, b) => a.createdAt - b.createdAt)
 );
 

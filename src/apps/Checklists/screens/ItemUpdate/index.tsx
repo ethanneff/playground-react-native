@@ -20,9 +20,9 @@ export default memo(function ChecklistUpdate() {
   const isInvalidForm = form.name.trim().length === 0;
 
   const handleNameChange = (name: string) =>
-    setForm(state => ({ ...state, name }));
+    setForm((state) => ({ ...state, name }));
   const handleDescriptionChange = (description: string) =>
-    setForm(state => ({ ...state, description }));
+    setForm((state) => ({ ...state, description }));
   const handleSubmit = () => {
     const { name, description } = form;
     const now = Date.now();

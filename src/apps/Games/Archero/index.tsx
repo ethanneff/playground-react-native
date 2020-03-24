@@ -22,7 +22,7 @@ export default memo(function Archero() {
   const color = useColor();
   const nav = useNav();
   const useDriver = useNativeDriver();
-  const window = useRootSelector(state => state.dimension.window);
+  const window = useRootSelector((state) => state.dimension.window);
   const [dimensions, setDimensions] = useState({ width: 1000, height: 1000 });
   const { width, height } = dimensions;
   const smallest = width > height ? height : width;

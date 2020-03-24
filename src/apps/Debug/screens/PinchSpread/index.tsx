@@ -17,14 +17,14 @@ export default function PinchSpread() {
   const gestureHandler = new GestureHandler({ minTouches });
   const panGesture = PanResponder.create({
     onMoveShouldSetPanResponderCapture: () => true,
-    onPanResponderMove: event => gestureHandler.onPanResponderMove(event),
+    onPanResponderMove: (event) => gestureHandler.onPanResponderMove(event),
     onPanResponderRelease: () => {
       const outcome = gestureHandler.onPanResponderRelease();
       if (outcome.spread) {
-        setState(prev => ({ ...prev, spreadCount: prev.spreadCount++ }));
+        setState((prev) => ({ ...prev, spreadCount: prev.spreadCount++ }));
       }
       if (outcome.pinch) {
-        setState(prev => ({ ...prev, pinchCount: prev.pinchCount++ }));
+        setState((prev) => ({ ...prev, pinchCount: prev.pinchCount++ }));
       }
     },
   });

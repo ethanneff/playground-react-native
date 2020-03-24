@@ -26,10 +26,7 @@ export default function Focus() {
     for (let i = 0; i < infiniteScrollRegeneration; i++) {
       const lastItem =
         group.length === 0
-          ? dayjs()
-              .startOf('day')
-              .add(2, 'day')
-              .valueOf()
+          ? dayjs().startOf('day').add(2, 'day').valueOf()
           : group[group.length - 1].id;
       const next = dayjs(lastItem).subtract(1, 'hour');
       const id = next.valueOf();
@@ -58,7 +55,7 @@ export default function Focus() {
   }, [generateMoreItems, items.length]);
 
   const handleModalEditBackgroundPress = useCallback(() => {
-    setModalItemEdit(state => ({ ...state, visible: false }));
+    setModalItemEdit((state) => ({ ...state, visible: false }));
   }, []);
 
   useEffect(handleLoad, []);

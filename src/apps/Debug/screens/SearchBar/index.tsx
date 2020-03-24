@@ -179,7 +179,7 @@ export default memo(function DebugSearchbar() {
     [styles.item]
   );
 
-  const keyExtractor = useCallback(item => item.id.toString(), []);
+  const keyExtractor = useCallback((item) => item.id.toString(), []);
 
   return (
     <Screen onLeftPress={nav.to('debug')}>

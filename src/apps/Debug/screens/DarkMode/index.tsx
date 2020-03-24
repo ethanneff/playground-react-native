@@ -73,7 +73,7 @@ export default memo(function DarkMode() {
   const themes = Object.values(ColorTheme);
   const color = useColor();
   const nav = useNav();
-  const currentTheme = useRootSelector(state => state.theme.currentColor);
+  const currentTheme = useRootSelector((state) => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   const [elevation, setElevation] = useState(2);
   const handleSlider = (value: number) => setElevation(value);
@@ -127,7 +127,7 @@ export default memo(function DarkMode() {
           }}
         >
           <Text title="theme: " />
-          {themes.map(item => (
+          {themes.map((item) => (
             <Button
               key={item}
               title={item}

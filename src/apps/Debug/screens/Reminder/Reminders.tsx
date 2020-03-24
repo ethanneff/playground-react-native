@@ -18,7 +18,7 @@ export default memo(function Reminders(props: Props) {
   return (
     <FlatList
       inverted
-      keyExtractor={item => item.id}
+      keyExtractor={(item) => item.id}
       style={{ flex: 1 }}
       data={props.reminders}
       renderItem={renderItem}
