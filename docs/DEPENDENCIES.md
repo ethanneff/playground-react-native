@@ -53,9 +53,6 @@
 | babel-jest                                | dev  |                | react-native dependency     |
 | codecov                                   | dev  |                | test coverage               |
 | eslint                                    | dev  |                | linter                      |
-| eslint-config-prettier                    | dev  |                | linter                      |
-| eslint-plugin-prettier                    | dev  |                | linter                      |
-| eslint-plugin-react-hooks                 | dev  |                | linter                      |
 | husky                                     | dev  |                | git hooks                   |
 | metro-react-native-babel-preset           | dev  |                | react-native dep            |
 | react-test-renderer                       | dev  |                | testing framework           |
