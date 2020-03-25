@@ -158,14 +158,14 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - appcenter-analytics (3.0.0):
+  - appcenter-analytics (3.0.1):
     - AppCenter/Analytics
     - AppCenterReactNativeShared
     - React
-  - appcenter-core (3.0.0):
+  - appcenter-core (3.0.1):
     - AppCenterReactNativeShared
     - React
-  - appcenter-crashes (3.0.0):
+  - appcenter-crashes (3.0.1):
     - AppCenter/Crashes
     - AppCenterReactNativeShared
     - React
@@ -492,11 +492,11 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
   - React-jsinspector (0.61.5)
-  - react-native-get-random-values (1.3.0):
+  - react-native-get-random-values (1.3.1):
     - React
-  - react-native-netinfo (5.6.1):
+  - react-native-netinfo (5.6.2):
     - React
-  - react-native-slider (2.0.8):
+  - react-native-slider (2.0.9):
     - React
   - React-RCTActionSheet (0.61.5):
     - React-Core/RCTActionSheetHeaders (= 0.61.5)
@@ -567,7 +567,7 @@ PODS:
     - RNFBApp
   - RNRate (1.1.10):
     - React
-  - RNSensors (5.4.0):
+  - RNSensors (5.4.1):
     - React
   - RNVectorIcons (6.6.0):
     - React
@@ -741,9 +741,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
   AppCenter: 7a0bbe928d07467ac8b2d7f6f2a675872a6471d8
-  appcenter-analytics: 2eba9da53aa3efbfa625fc1ab9dd9ccebba18b24
-  appcenter-core: 98c617ae028c90020e404f020c37d7cb189adf4c
-  appcenter-crashes: add23a3c3cf0403e1f54c39d85e9b3c5db7279e7
+  appcenter-analytics: 46b4bb2832834a198ba6c4058b4eb335386c1063
+  appcenter-core: 765878f5c300907bb70dbb8e956c5a74df7ca23d
+  appcenter-crashes: 66b533f4e2a2278ddbd9369614fe18f0d7f58e47
   AppCenterReactNativeShared: 48a905fe90071696748e3def60199546167cdb86
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -764,8 +764,8 @@ SPEC CHECKSUMS:
   FirebaseFirestore: 2e92e977280d63ecbf3fd58bdbfaf9145abb880f
   FirebaseInstanceID: ebd2ea79ee38db0cb5f5167b17a0d387e1cc7b6e
   FirebaseRemoteConfig: 6ad68503c04701b8d9d709240711bc0bf6edaf94
-  Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
-  glog: 1f3da668190260b06b429bb211bfbee5cd790c28
+  Folly: 183c8dae43723c50ebd669140abc6258bbb6e95a
+  glog: 0af464288b7fbaf913986b419dc492c787bfdffe
   GoogleAppMeasurement: dfe55efa543e899d906309eaaac6ca26d249862f
   GoogleDataTransport: 8e9b210c97d55fbff306cc5468ff91b9cb32dcf5
   GoogleDataTransportCCTSupport: ef79a4728b864946a8aafdbab770d5294faf3b5f
@@ -785,9 +785,9 @@ SPEC CHECKSUMS:
   React-jsi: cb2cd74d7ccf4cffb071a46833613edc79cdf8f7
   React-jsiexecutor: d5525f9ed5f782fdbacb64b9b01a43a9323d2386
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
-  react-native-get-random-values: 6f638190cfaa202576b43ea9534d5cf88181f139
-  react-native-netinfo: fa42683301345997e876760ba2be86f06148baa5
-  react-native-slider: 3a1cfd00c9c31068251b536822f7192e8d1d6b6f
+  react-native-get-random-values: 148a42f97f2ce180a52d219144e83c278d4fe24b
+  react-native-netinfo: 73303369946c2487c600418961bfdc87748b832f
+  react-native-slider: e51492f1264d882a8815b71c5870f8978e52887d
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
   React-RCTBlob: d89293cc0236d9cb0933d85e430b0bbe81ad1d72
@@ -807,7 +807,7 @@ SPEC CHECKSUMS:
   RNFBFirestore: 04c1eb90463c208ee072988d463c74bec09d08c1
   RNFBRemoteConfig: acfef78587e8d544b53338c07ecbc172fae1b781
   RNRate: 832f7e4da1b043bda1a138e20afdb75c42a530e9
-  RNSensors: 32727cd9bec07c7b3f8bd3e9201d096a9a8aa050
+  RNSensors: 0c25e336a6302bc70870b15f190c6fdb014bf24c
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
