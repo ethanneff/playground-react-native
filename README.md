@@ -31,7 +31,10 @@
     </a>
     <a href="https://www.codacy.com/manual/ethanneff/example">
       <img src="https://api.codacy.com/project/badge/Grade/dca655d1a64a40d7bd3e77ec4cd39061" alt="Codacy">
-    </a>  
+    </a>
+    <a href="https://www.codefactor.io/repository/github/ethanneff/example">
+      <img src="https://www.codefactor.io/repository/github/ethanneff/example/badge" alt="CodeFactor" />
+    </a>
   </div>
   <div>
     <a href="https://codecov.io/gh/ethanneff/example">
