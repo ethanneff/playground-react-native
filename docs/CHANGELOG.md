@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.22.8](https://github.com/ethanneff/example/compare/v2.22.7...v2.22.8) (2020-03-27)
+
+
+### Bug Fixes
+
+* clear jest cache ([0ddf1f1](https://github.com/ethanneff/example/commit/0ddf1f19dbcda24ce37a61939df639f9c409976a))
+
 ## [2.22.7](https://github.com/ethanneff/example/compare/v2.22.6...v2.22.7) (2020-03-26)
 
 
