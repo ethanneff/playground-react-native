@@ -89,7 +89,6 @@ exports[`renders correctly with header 1`] = `
       <View
         accessible={true}
         focusable={true}
-        isTVSelectable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
@@ -152,7 +151,6 @@ exports[`renders correctly with header 1`] = `
       <View
         accessible={true}
         focusable={true}
-        isTVSelectable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
@@ -243,7 +241,6 @@ exports[`renders correctly with icons 1`] = `
       <View
         accessible={true}
         focusable={true}
-        isTVSelectable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
@@ -306,7 +303,6 @@ exports[`renders correctly with icons 1`] = `
       <View
         accessible={true}
         focusable={true}
-        isTVSelectable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
