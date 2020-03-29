@@ -1,6 +1,6 @@
-import { FlatList, View, ActivityIndicator } from 'react-native';
-import React, { memo, useEffect, useState, useCallback } from 'react';
-import { Theme, colorWithOpacity } from '../../utils';
+import {FlatList, View, ActivityIndicator} from 'react-native';
+import React, {memo, useEffect, useState, useCallback} from 'react';
+import {Theme, colorWithOpacity} from '../../utils';
 import {
   getActivitySquares,
   updateActivitySquares,
@@ -8,12 +8,12 @@ import {
   getSubmissionFormat,
   getDateFormat,
 } from './utils';
-import { Week, ActivityWeek } from './Week';
-import { Text } from '../Text';
+import {Week, ActivityWeek} from './Week';
+import {Text} from '../Text';
 
-import { Button } from '../Button';
-import { ActivityDay } from './Day';
-import { useColor } from '../../hooks';
+import {Button} from '../Button';
+import {ActivityDay} from './Day';
+import {useColor} from '../../hooks';
 
 interface Props {
   username: string;
@@ -59,7 +59,7 @@ export const Activity = memo(function Activity({
   const getActivity = useCallback(async () => {
     try {
       const today = Date.now();
-      const api = await getApiActivity({ username, site });
+      const api = await getApiActivity({username, site});
       const todayFormat = getDateFormat(today);
       const count = api[todayFormat] || 0;
       setState((prev) => ({
@@ -93,13 +93,13 @@ export const Activity = memo(function Activity({
         },
       }));
     },
-    []
+    [],
   );
 
   const onRetryPress = useCallback(() => getActivity(), [getActivity]);
 
   const renderItem = useCallback(
-    ({ item, index }: { item: ActivityWeek; index: number }) => (
+    ({item, index}: {item: ActivityWeek; index: number}) => (
       <Week
         max={state.activity.max}
         item={item}
@@ -109,7 +109,7 @@ export const Activity = memo(function Activity({
         onPress={onItemPress}
       />
     ),
-    [state.activity.max, margin, onItemPress, size]
+    [state.activity.max, margin, onItemPress, size],
   );
 
   const keyExtractor = useCallback((item) => String(item[0].date), []);
@@ -148,7 +148,7 @@ export const Activity = memo(function Activity({
         secondary
         title={state.selected.submissions}
         center
-        style={{ paddingTop: Theme.padding.p03 }}
+        style={{paddingTop: Theme.padding.p03}}
       />
     </View>
   );

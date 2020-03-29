@@ -1,5 +1,5 @@
 import React from 'react';
-import { mockRenderer } from '../../../../../utils/Mock';
+import {mockRenderer} from '../../../../../utils/Mock';
 import Screen from '..';
 
 it('renders correctly', () => {

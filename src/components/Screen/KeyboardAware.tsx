@@ -1,6 +1,6 @@
-import React, { memo } from 'react';
-import { ViewStyle, View, StyleProp } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import React, {memo} from 'react';
+import {ViewStyle, View, StyleProp} from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 interface Props {
   scroll?: boolean;
@@ -17,8 +17,7 @@ export const KeyboardAware: React.FC<Props> = memo(function KeyboardAware({
   ) : (
     <KeyboardAwareScrollView
       keyboardShouldPersistTaps="handled"
-      contentContainerStyle={style}
-    >
+      contentContainerStyle={style}>
       {children}
     </KeyboardAwareScrollView>
   );

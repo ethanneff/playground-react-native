@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { ActionType, createAction, getType } from 'typesafe-actions';
-import { RootAction, RootState, RootThunkAction } from '../../containers';
-import { Config } from '../../utils';
+import {ActionType, createAction, getType} from 'typesafe-actions';
+import {RootAction, RootState, RootThunkAction} from '../../containers';
+import {Config} from '../../utils';
 
 /* ACTIONS */
 export const loginRequest = createAction('AUTH/LOGIN_REQUEST')();
@@ -87,7 +87,7 @@ export const authInitialState: AuthState = {
 };
 export function authReducer(
   state: AuthState = authInitialState,
-  action: RootAction
+  action: RootAction,
 ): AuthState {
   switch (action.type) {
     case getType(loginRequest):

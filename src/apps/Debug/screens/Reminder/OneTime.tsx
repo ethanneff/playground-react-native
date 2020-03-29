@@ -1,7 +1,7 @@
-import dayjs, { Dayjs } from 'dayjs';
-import React, { memo } from 'react';
-import { View } from 'react-native';
-import { Item } from './Item';
+import dayjs, {Dayjs} from 'dayjs';
+import React, {memo} from 'react';
+import {View} from 'react-native';
+import {Item} from './Item';
 
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const generateButtons = () => {
@@ -37,7 +37,7 @@ const generateButtons = () => {
     {
       title: 'Tomorrow',
       description: `${daysOfWeek[tomorrow.day()]} ${tomorrow.format(
-        'hh:mm A'
+        'hh:mm A',
       )}`,
       value: tomorrow,
     },
@@ -63,7 +63,7 @@ interface Props {
   onPress: (value: Dayjs) => () => void;
 }
 
-export default memo(function OneTime({ onPress }: Props) {
+export default memo(function OneTime({onPress}: Props) {
   const buttons = generateButtons();
   return (
     <View>

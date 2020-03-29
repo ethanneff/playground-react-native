@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text } from '..';
-import { mockRenderer } from '../../../utils/Mock';
+import {Text} from '..';
+import {mockRenderer} from '../../../utils/Mock';
 
 it('renders correctly', () => {
   const dom = mockRenderer(<Text title="hello" />).toJSON();

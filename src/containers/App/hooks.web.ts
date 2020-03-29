@@ -1,8 +1,8 @@
-import { Dimensions } from 'react-native';
-import { DimensionsProps } from './../../models/Device';
-import { useRootDispatch } from '../../utils';
-import { useCallback, useEffect } from 'react';
-import { updateDimension } from '../../models';
+import {Dimensions} from 'react-native';
+import {DimensionsProps} from './../../models/Device';
+import {useRootDispatch} from '../../utils';
+import {useCallback, useEffect} from 'react';
+import {updateDimension} from '../../models';
 
 export const useAppLoad = () => undefined;
 export const useNetInfo = () => undefined;
@@ -12,7 +12,7 @@ export const useDimensions = () => {
 
   const handleChange = useCallback(
     (change: DimensionsProps) => dispatch(updateDimension(change)),
-    [dispatch]
+    [dispatch],
   );
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Dialog } from '..';
-import { mockRenderer } from '../../../utils/Mock';
+import {Dialog} from '..';
+import {mockRenderer} from '../../../utils/Mock';
 
 jest.useFakeTimers();
 describe('Dialog component', () => {
@@ -25,7 +25,7 @@ describe('Dialog component', () => {
         onBackgroundPress={jest.fn()}
         onConfirmButtonPress={jest.fn()}
         onCancelButtonPress={jest.fn()}
-      />
+      />,
     );
     expect(dom.toJSON()).toMatchSnapshot();
   });

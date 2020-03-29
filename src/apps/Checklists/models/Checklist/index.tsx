@@ -1,7 +1,7 @@
-import { createSelector } from 'reselect';
-import { ActionType, createAction, getType } from 'typesafe-actions';
-import { RootAction, RootState } from '../../../../containers';
-import { Errors } from '../../../../utils';
+import {createSelector} from 'reselect';
+import {ActionType, createAction, getType} from 'typesafe-actions';
+import {RootAction, RootState} from '../../../../containers';
+import {Errors} from '../../../../utils';
 
 /* ACTIONS */
 export const createList = createAction('checklist/create')<Checklist>();
@@ -24,7 +24,7 @@ export const getActiveChecklistOrderByCreatedAt = createSelector(
   (checklists) =>
     Object.values(checklists)
       .filter((item) => item.active)
-      .sort((a, b) => a.createdAt - b.createdAt)
+      .sort((a, b) => a.createdAt - b.createdAt),
 );
 
 /* INTERFACES */
@@ -49,7 +49,7 @@ export type Checklist = {
   // copied: UserId[];
   // modified: string[];
 };
-export type Checklists = { [key: string]: Checklist };
+export type Checklists = {[key: string]: Checklist};
 export type ListActions = ActionType<
   | typeof createList
   | typeof removeList
@@ -64,11 +64,11 @@ const initialState: ChecklistReducer = {
 };
 export const checklistReducer = (
   state: ChecklistReducer = initialState,
-  action: RootAction
+  action: RootAction,
 ): ChecklistReducer => {
   switch (action.type) {
     case getType(setActiveList):
-      return { ...state, active: action.payload };
+      return {...state, active: action.payload};
     case getType(createList):
       return {
         ...state,

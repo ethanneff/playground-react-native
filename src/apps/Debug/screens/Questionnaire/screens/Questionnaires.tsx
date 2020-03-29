@@ -1,8 +1,8 @@
-import React, { useState, useCallback } from 'react';
-import { FlatList, View } from 'react-native';
-import { connect } from 'react-redux';
-import { Card, Dialog, Text, Icon } from '../../../../../components';
-import { RootState } from '../../../../../containers';
+import React, {useState, useCallback} from 'react';
+import {FlatList, View} from 'react-native';
+import {connect} from 'react-redux';
+import {Card, Dialog, Text, Icon} from '../../../../../components';
+import {RootState} from '../../../../../containers';
 import {
   Questionnaire,
   createQuestionnaire,
@@ -11,7 +11,7 @@ import {
   selectQuestionnaire,
   updateQuestionnaire,
 } from '../models';
-import { useColor } from '../../../../../hooks';
+import {useColor} from '../../../../../hooks';
 
 interface StateProps {
   questionnaires: Questionnaire[];
@@ -30,37 +30,35 @@ const Container = (props: Props) => {
   const color = useColor();
   const handleLongPress = useCallback(
     (id: string) => () => props.removeQuestionnaire(id),
-    [props]
+    [props],
   );
   const handleItemPress = useCallback(
     (id: string) => () => props.selectQuestionnaire(id),
-    [props]
+    [props],
   );
   const handleActionSheetClose = useCallback(() => setActionSheet(false), []);
   const handleCreate = useCallback(
     () => props.createQuestionnaire(String(Date.now())),
-    [props]
+    [props],
   );
   const handleItemMenu = useCallback(() => {
     setActionSheet((state) => !state);
   }, []);
   const renderItem = useCallback(
-    ({ item }) => {
+    ({item}) => {
       const length = item.questions.length;
       const subtitle = `${length} question${length === 1 ? '' : 's'}`;
       return (
         <Card
           onPress={handleItemPress(item.id)}
           onLongPress={handleLongPress(item.id)}
-          selected={props.selected === item.id}
-        >
+          selected={props.selected === item.id}>
           <View
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-            }}
-          >
-            <View style={{ flex: 0.9 }}>
+            }}>
+            <View style={{flex: 0.9}}>
               <Text h3 title={item.title} />
               <Text caption title={subtitle} />
             </View>
@@ -69,7 +67,7 @@ const Container = (props: Props) => {
         </Card>
       );
     },
-    [handleItemMenu, handleItemPress, handleLongPress, props.selected]
+    [handleItemMenu, handleItemPress, handleLongPress, props.selected],
   );
 
   return (
@@ -113,5 +111,5 @@ const mapDispatchToProps: DispatchProps = {
 
 export const Questionnaires = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Container);

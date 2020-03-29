@@ -1,5 +1,5 @@
-import React, { memo } from 'react';
-import { ViewStyle, View, StyleProp } from 'react-native';
+import React, {memo} from 'react';
+import {ViewStyle, View, StyleProp} from 'react-native';
 
 interface Props {
   scroll?: boolean;

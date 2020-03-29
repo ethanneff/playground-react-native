@@ -1,4 +1,4 @@
-import { ActivityMatrix, Site } from './index';
+import {ActivityMatrix, Site} from './index';
 import axios from 'axios';
 import format from 'date-fns/format';
 import isToday from 'date-fns/isToday';
@@ -6,7 +6,7 @@ import endOfWeek from 'date-fns/endOfWeek';
 import startOfWeek from 'date-fns/startOfWeek';
 import sub from 'date-fns/sub';
 
-type ApiResponse = { [unix: string]: number };
+type ApiResponse = {[unix: string]: number};
 
 type ApiPromise = Promise<ApiResponse>;
 
@@ -32,13 +32,13 @@ export const getActivitySquares = (): ActivitySquares => {
   const today = Date.now();
   const matrix = [];
   const oneDay = 60 * 60 * 24 * 1000;
-  const begin = sub(startOfWeek(today), { years: 1 }).valueOf();
+  const begin = sub(startOfWeek(today), {years: 1}).valueOf();
   let end = endOfWeek(today).valueOf();
   let day = 0;
   const max = 0;
   let week = [];
   while (end >= begin) {
-    week.unshift({ date: end, count: 0 });
+    week.unshift({date: end, count: 0});
     if (day > 5) {
       matrix.push(week);
       week = [];
@@ -49,22 +49,22 @@ export const getActivitySquares = (): ActivitySquares => {
     end -= oneDay;
   }
 
-  return { matrix, max };
+  return {matrix, max};
 };
 
 export const updateActivitySquares = (
   squares: ActivitySquares,
-  active: ApiResponse
+  active: ApiResponse,
 ): ActivitySquares => {
   let max = 0;
   const matrix = squares.matrix.map((week) =>
     week.map((day) => {
       const count = active[getDateFormat(day.date)] || 0;
       max = Math.max(count, max);
-      return { ...day, count };
-    })
+      return {...day, count};
+    }),
   );
-  return { matrix, max };
+  return {matrix, max};
 };
 
 const getGithubActivity = async (username: string): Promise<ApiResponse> => {
@@ -97,7 +97,7 @@ const getHackerRankActivity = async (username: string) => {
   }, {});
 };
 
-export const getApiActivity = ({ username, site }: ApiInput): ApiPromise => {
+export const getApiActivity = ({username, site}: ApiInput): ApiPromise => {
   switch (site) {
     case 'github':
       return getGithubActivity(username);

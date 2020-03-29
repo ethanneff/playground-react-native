@@ -1,9 +1,9 @@
-import React, { memo, useCallback } from 'react';
-import { FlatList, View } from 'react-native';
-import { Button, Screen } from '../../../../components';
-import { ColorTheme, changeTheme } from '../../../../models';
-import { useRootDispatch, useRootSelector } from '../../../../utils';
-import { useNav } from '../../../../hooks';
+import React, {memo, useCallback} from 'react';
+import {FlatList, View} from 'react-native';
+import {Button, Screen} from '../../../../components';
+import {ColorTheme, changeTheme} from '../../../../models';
+import {useRootDispatch, useRootSelector} from '../../../../utils';
+import {useNav} from '../../../../hooks';
 
 export default memo(function PortfolioSettings() {
   const dispatch = useRootDispatch();
@@ -12,10 +12,10 @@ export default memo(function PortfolioSettings() {
   const nav = useNav();
   const themePress = useCallback(
     (theme: ColorTheme) => () => dispatch(changeTheme(theme)),
-    [dispatch]
+    [dispatch],
   );
   const renderItem = useCallback(
-    ({ item }) => (
+    ({item}) => (
       <View>
         <Button
           key={item}
@@ -25,7 +25,7 @@ export default memo(function PortfolioSettings() {
         />
       </View>
     ),
-    [currentTheme, themePress]
+    [currentTheme, themePress],
   );
 
   const renderHeader = useCallback(() => <Button disable title="Theme" />, []);

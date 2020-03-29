@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, {memo} from 'react';
 import {
   Platform,
   ViewStyle,
@@ -6,10 +6,10 @@ import {
   StyleProp,
   StyleSheet,
 } from 'react-native';
-import { Config, Theme } from '../../utils';
-import { Badge } from './Badge';
-import { Source } from './Source';
-import { useColor, useDropShadow } from '../../hooks';
+import {Config, Theme} from '../../utils';
+import {Badge} from './Badge';
+import {Source} from './Source';
+import {useColor, useDropShadow} from '../../hooks';
 
 /*
 usage: <Icon name='check' />
@@ -79,8 +79,7 @@ export const Icon: React.FC<Props> = memo(function Icon({
       activeOpacity={activeOpacity}
       style={containerStyles}
       disabled={!onPress}
-      onPress={onPress}
-    >
+      onPress={onPress}>
       <Source name={name} size={size} color={colored} invisible={invisible} />
       <Badge badge={badge} />
     </TouchableOpacity>

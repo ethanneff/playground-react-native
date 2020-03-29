@@ -1,9 +1,9 @@
 import React from 'react';
-import { Dimensions, FlatList, View } from 'react-native';
-import { connect } from 'react-redux';
-import { Button, Screen, Text } from '../../../../components';
-import { NavigationScreen, navigate } from '../../../../models';
-import { Questionnaires } from './screens/Questionnaires';
+import {Dimensions, FlatList, View} from 'react-native';
+import {connect} from 'react-redux';
+import {Button, Screen, Text} from '../../../../components';
+import {NavigationScreen, navigate} from '../../../../models';
+import {Questionnaires} from './screens/Questionnaires';
 
 interface DispatchProps {
   navigate: typeof navigate;
@@ -36,17 +36,17 @@ class Container extends React.PureComponent<Props> {
       title: 'What type of counseling are you looking for',
       type: 'radio',
     },
-    { key: '2', title: '2' },
-    { key: '3', title: '3' },
-    { key: '4', title: '4' },
-    { key: '5', title: '5' },
+    {key: '2', title: '2'},
+    {key: '3', title: '3'},
+    {key: '4', title: '4'},
+    {key: '5', title: '5'},
   ];
   private output: any = {};
   private readonly width = Dimensions.get('window').width;
   private tableView: any;
   private currentIndex = 0;
 
-  public onViewableItemsChanged = ({ viewableItems }: any) => {
+  public onViewableItemsChanged = ({viewableItems}: any) => {
     this.currentIndex = viewableItems[0].index || 0;
   };
 
@@ -83,12 +83,12 @@ class Container extends React.PureComponent<Props> {
     this.tableView = ref;
   };
 
-  renderItem = ({ item }: { item: any }) => {
-    let items: any = <View style={{ flex: 1 }} />;
+  renderItem = ({item}: {item: any}) => {
+    let items: any = <View style={{flex: 1}} />;
 
     if (item.choices) {
       items = (
-        <View style={{ flex: 1 }}>
+        <View style={{flex: 1}}>
           {item.choices.map((choice: any) => {
             return (
               <Button
@@ -105,15 +105,14 @@ class Container extends React.PureComponent<Props> {
     }
 
     return (
-      <View style={{ width: this.width }}>
+      <View style={{width: this.width}}>
         <Text title={item.title} />
         {items}
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-around',
-          }}
-        >
+          }}>
           <Button title="prev" onPress={() => this.onProgress(-1)} />
           <Button title="next" onPress={() => this.onProgress(1)} />
           <Button title="next2" onPress={() => this.onProgress(2)} />
@@ -147,6 +146,6 @@ class Container extends React.PureComponent<Props> {
   private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
-const mapDispatchToProps: DispatchProps = { navigate };
+const mapDispatchToProps: DispatchProps = {navigate};
 
 export default connect(null, mapDispatchToProps)(Container);

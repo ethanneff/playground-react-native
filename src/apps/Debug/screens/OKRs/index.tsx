@@ -1,16 +1,15 @@
-import React, { memo } from 'react';
-import { ScrollView } from 'react-native';
-import { Card, Screen, Text } from '../../../../components';
-import { useNav } from '../../../../hooks';
-import { Theme } from '../../../../utils';
+import React, {memo} from 'react';
+import {ScrollView} from 'react-native';
+import {Card, Screen, Text} from '../../../../components';
+import {useNav} from '../../../../hooks';
+import {Theme} from '../../../../utils';
 
 export default memo(function DebugOKRs() {
   const nav = useNav();
   return (
     <Screen onLeftPress={nav.to('debug')} title="OKRs">
       <ScrollView
-        contentContainerStyle={{ paddingHorizontal: Theme.padding.p05 }}
-      >
+        contentContainerStyle={{paddingHorizontal: Theme.padding.p05}}>
         <Card>
           <Text h6 title="Company" />
           <Card onPress={() => undefined}>

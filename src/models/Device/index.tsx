@@ -1,7 +1,7 @@
-import { AppState, AppStateStatus, ScaledSize } from 'react-native';
-import { ActionType, createAction, getType } from 'typesafe-actions';
-import { RootAction } from '../../containers';
-import { logout } from '../Auth';
+import {AppState, AppStateStatus, ScaledSize} from 'react-native';
+import {ActionType, createAction, getType} from 'typesafe-actions';
+import {RootAction} from '../../containers';
+import {logout} from '../Auth';
 
 /* ACTIONS */
 export const loadDevice = createAction('device/LOAD')<DeviceInfo>();
@@ -9,7 +9,7 @@ export const changeAppStatus = createAction('device/UPDATE_STATUS')<
   AppStateStatus
 >();
 export const changeKeyboardStatus = createAction(
-  'device/UPDATE_KEYBOARD_VISIBILITY'
+  'device/UPDATE_KEYBOARD_VISIBILITY',
 )<boolean>();
 
 /* INTERFACES */
@@ -169,7 +169,7 @@ export const deviceInitialState: DeviceState = {
 
 export const deviceReducer = (
   state: DeviceState = deviceInitialState,
-  action: RootAction
+  action: RootAction,
 ): DeviceState => {
   switch (action.type) {
     case getType(changeAppStatus):

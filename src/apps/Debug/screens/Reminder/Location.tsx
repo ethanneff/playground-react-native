@@ -1,7 +1,7 @@
-import React, { memo } from 'react';
+import React, {memo} from 'react';
 import 'react-native-get-random-values';
-import { v4 } from 'uuid';
-import { Item } from './Item';
+import {v4} from 'uuid';
+import {Item} from './Item';
 
 interface Location {
   id: string;

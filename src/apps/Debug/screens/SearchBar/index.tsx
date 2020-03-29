@@ -1,4 +1,4 @@
-import React, { useState, memo, useEffect, useCallback } from 'react';
+import React, {useState, memo, useEffect, useCallback} from 'react';
 import {
   Animated,
   FlatList,
@@ -7,30 +7,30 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import { Icon, Screen, Text, TextInput } from '../../../../components';
-import { Config, Theme, colorWithOpacity } from '../../../../utils';
-import { useNav, useColor } from '../../../../hooks';
+import {Icon, Screen, Text, TextInput} from '../../../../components';
+import {Config, Theme, colorWithOpacity} from '../../../../utils';
+import {useNav, useColor, useNativeDriver} from '../../../../hooks';
 
 const data = [
-  { id: 1, name: '1' },
-  { id: 2, name: '2' },
-  { id: 3, name: '3' },
-  { id: 4, name: '4' },
-  { id: 5, name: '5' },
-  { id: 6, name: '6' },
-  { id: 7, name: '7' },
-  { id: 8, name: '8' },
-  { id: 9, name: '9' },
-  { id: 10, name: '10' },
-  { id: 11, name: '11' },
-  { id: 12, name: '12' },
-  { id: 13, name: '13' },
-  { id: 14, name: '14' },
-  { id: 15, name: '15' },
-  { id: 16, name: '16' },
-  { id: 17, name: '17' },
-  { id: 18, name: '18' },
-  { id: 19, name: '19' },
+  {id: 1, name: '1'},
+  {id: 2, name: '2'},
+  {id: 3, name: '3'},
+  {id: 4, name: '4'},
+  {id: 5, name: '5'},
+  {id: 6, name: '6'},
+  {id: 7, name: '7'},
+  {id: 8, name: '8'},
+  {id: 9, name: '9'},
+  {id: 10, name: '10'},
+  {id: 11, name: '11'},
+  {id: 12, name: '12'},
+  {id: 13, name: '13'},
+  {id: 14, name: '14'},
+  {id: 15, name: '15'},
+  {id: 16, name: '16'},
+  {id: 17, name: '17'},
+  {id: 18, name: '18'},
+  {id: 19, name: '19'},
 ];
 
 interface State {
@@ -52,6 +52,7 @@ export default memo(function DebugSearchbar() {
     iconName: iconSearch,
     input: '',
   });
+  const useDriver = useNativeDriver();
   const translateIcon = state.animation.interpolate({
     inputRange: [0, 0.5, 1],
     outputRange: [1, -60, 1],
@@ -93,19 +94,20 @@ export default memo(function DebugSearchbar() {
       Animated.timing(state.animation, {
         duration: animationDuration,
         toValue: value,
+        useNativeDriver: useDriver,
       }).start();
     },
-    [state.animation]
+    [state.animation, useDriver],
   );
 
   const changeIcon = useCallback(
     (iconName: string) => {
       const iconChangeTimeout = setTimeout(() => {
         clearTimeout(iconChangeTimeout);
-        setState({ ...state, iconName });
+        setState({...state, iconName});
       }, animationDuration / 2);
     },
-    [state]
+    [state],
   );
 
   const onSearchBarFocus = useCallback(() => {
@@ -152,19 +154,19 @@ export default memo(function DebugSearchbar() {
     }
     const keyboardDidShowListener = Keyboard.addListener(
       'keyboardDidShow',
-      keyboardDidShow
+      keyboardDidShow,
     );
     const keyboardDidHideListener = Keyboard.addListener(
       'keyboardDidHide',
-      keyboardDidHide
+      keyboardDidHide,
     );
     const keyboardWillShowListener = Keyboard.addListener(
       'keyboardWillShow',
-      keyboardWillShow
+      keyboardWillShow,
     );
     const keyboardWillHideListener = Keyboard.addListener(
       'keyboardWillHide',
-      keyboardWillHide
+      keyboardWillHide,
     );
     return () => {
       keyboardDidShowListener.remove();
@@ -175,8 +177,8 @@ export default memo(function DebugSearchbar() {
   }, [keyboardDidHide, keyboardDidShow, keyboardWillHide, keyboardWillShow]);
 
   const renderItem = useCallback(
-    ({ item }) => <Text subtitle2 style={styles.item} title={item.name} />,
-    [styles.item]
+    ({item}) => <Text subtitle2 style={styles.item} title={item.name} />,
+    [styles.item],
   );
 
   const keyExtractor = useCallback((item) => item.id.toString(), []);
@@ -187,22 +189,19 @@ export default memo(function DebugSearchbar() {
         <View style={styles.textContainer}>
           <Animated.View
             style={{
-              transform: [{ translateX: translateIcon }],
-            }}
-          >
+              transform: [{translateX: translateIcon}],
+            }}>
             <Icon name={state.iconName} />
           </Animated.View>
           <TextInput
             value={state.input}
-            onChangeText={(value: string) =>
-              setState({ ...state, input: value })
-            }
+            onChangeText={(value: string) => setState({...state, input: value})}
             placeholder={textInputPlaceHolder}
             containerStyle={styles.textInput}
           />
         </View>
       </View>
-      <Animated.View style={{ flex: 1, backgroundColor: fadeContainer }}>
+      <Animated.View style={{flex: 1, backgroundColor: fadeContainer}}>
         <FlatList
           keyExtractor={keyExtractor}
           data={data}

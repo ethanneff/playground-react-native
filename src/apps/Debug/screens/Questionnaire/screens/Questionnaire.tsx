@@ -1,7 +1,7 @@
-import React, { useState, useCallback } from 'react';
-import { FlatList, View } from 'react-native';
-import { Card, Dialog, Text, Icon } from '../../../../../components';
-import { questionnairesInitialState } from '../models';
+import React, {useState, useCallback} from 'react';
+import {FlatList, View} from 'react-native';
+import {Card, Dialog, Text, Icon} from '../../../../../components';
+import {questionnairesInitialState} from '../models';
 
 export const Questionnaire = () => {
   const [actionSheet, setActionSheet] = useState(false);
@@ -15,21 +15,19 @@ export const Questionnaire = () => {
   const handleActionSheetClose = () => setActionSheet(false);
 
   const renderItem = useCallback(
-    ({ item }) => {
+    ({item}) => {
       const length = item.questions.length;
       const subtitle = `${length} question${length === 1 ? '' : 's'}`;
       return (
         <Card
           onPress={handleItemPress(item.id)}
-          selected={activeItem === item.id}
-        >
+          selected={activeItem === item.id}>
           <View
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-            }}
-          >
-            <View style={{ flex: 0.9 }}>
+            }}>
+            <View style={{flex: 0.9}}>
               <Text h3 title={item.title} />
               <Text caption title={subtitle} />
             </View>
@@ -38,7 +36,7 @@ export const Questionnaire = () => {
         </Card>
       );
     },
-    [activeItem]
+    [activeItem],
   );
 
   return (

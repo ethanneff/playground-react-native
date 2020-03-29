@@ -1,5 +1,5 @@
-import { ActionType, createAction } from 'typesafe-actions';
-import { RootAction } from '../../../../../containers';
+import {ActionType, createAction} from 'typesafe-actions';
+import {RootAction} from '../../../../../containers';
 
 /* ACTIONS */
 export const createResponse = createAction('responses/CREATE')<Response>();
@@ -10,7 +10,7 @@ export const removeResponse = createAction('responses/REMOVE')<string>();
 interface Response {
   id: string;
   userId: string;
-  responses: { [questionId: string]: readonly string[] };
+  responses: {[questionId: string]: readonly string[]};
   createdAt: string;
 }
 
@@ -27,7 +27,7 @@ const responsesInitialState = {};
 
 export const responsesReducer = (
   state: Responses = responsesInitialState,
-  action: RootAction
+  action: RootAction,
 ): Responses => {
   switch (action.type) {
     default:

@@ -38,7 +38,7 @@ const padding = {
 
 type FontWeight = '100' | '300' | '600';
 
-const fontWeight: { [key: string]: FontWeight } = {
+const fontWeight: {[key: string]: FontWeight} = {
   light: '100',
   medium: '600',
   regular: '300',

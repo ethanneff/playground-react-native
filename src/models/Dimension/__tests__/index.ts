@@ -1,4 +1,4 @@
-import { getType } from 'typesafe-actions';
+import {getType} from 'typesafe-actions';
 import {
   dimensionReducer,
   updateDimension,
@@ -9,8 +9,8 @@ import {
   getLandscapeOrientation,
   dimensionInitialState,
 } from '..';
-import { logout, loginRequest } from '../../Auth';
-import { store } from '../../../containers';
+import {logout, loginRequest} from '../../Auth';
+import {store} from '../../../containers';
 
 describe('selectors', () => {
   beforeEach(() => {
@@ -73,7 +73,7 @@ it('updateDimension action', () => {
     scale: 1,
     width: 1,
   };
-  const payload = { window: size, screen: size };
+  const payload = {window: size, screen: size};
   const expectedAction = {
     payload,
     type: getType(updateDimension),
@@ -96,7 +96,7 @@ it(getType(updateDimension), () => {
     dimensionReducer(dimensionInitialState, {
       payload: data,
       type: getType(updateDimension),
-    })
+    }),
   ).toMatchObject({
     ...dimensionInitialState,
     screen: size,
@@ -108,7 +108,7 @@ it(getType(logout), () => {
   expect(
     dimensionReducer(dimensionInitialState, {
       type: getType(logout),
-    })
+    }),
   ).toMatchObject(dimensionInitialState);
 });
 
@@ -116,6 +116,6 @@ it(getType(loginRequest), () => {
   expect(
     dimensionReducer(undefined, {
       type: getType(loginRequest),
-    })
+    }),
   ).toMatchObject(dimensionInitialState);
 });

@@ -1,4 +1,4 @@
-import React, { memo, useRef, useState } from 'react';
+import React, {memo, useRef, useState} from 'react';
 import {
   TextInput as Original,
   StyleSheet,
@@ -9,10 +9,10 @@ import {
   KeyboardTypeOptions,
   ReturnKeyTypeOptions,
 } from 'react-native';
-import { Theme } from '../../utils';
-import { Button } from '../Button';
-import { useColor } from '../../hooks';
-import { Icon } from '../Icon';
+import {Theme} from '../../utils';
+import {Button} from '../Button';
+import {useColor} from '../../hooks';
+import {Icon} from '../Icon';
 
 /*
 styling https://uxdesign.cc/design-better-forms-96fadca0f49c
@@ -175,7 +175,7 @@ export const TextInput: React.FC<Props> = memo(
             color={color.secondary}
           />
         </View>
-        <View style={{ flexDirection: 'row' }}>
+        <View style={{flexDirection: 'row'}}>
           <Icon
             activeOpacity={1}
             invisible={noError}
@@ -195,5 +195,5 @@ export const TextInput: React.FC<Props> = memo(
         </View>
       </View>
     );
-  }
+  },
 );

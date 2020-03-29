@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
-import { StyleSheet, ScrollView, View } from 'react-native';
-import { Screen, Text, TextInput, Card, Calendar } from '../../components';
-import { useNav, useColor } from '../../hooks';
-import { Theme } from '../../utils';
+import React, {memo} from 'react';
+import {StyleSheet, ScrollView, View} from 'react-native';
+import {Screen, Text, TextInput, Card, Calendar} from '../../components';
+import {useNav, useColor} from '../../hooks';
+import {Theme} from '../../utils';
 
 export default memo(function Journal() {
   const color = useColor();
@@ -16,12 +16,11 @@ export default memo(function Journal() {
   return (
     <Screen onLeftPress={nav.to('portfolioLanding')} title="Journal">
       <ScrollView
-        style={{ backgroundColor: color.surface }}
+        style={{backgroundColor: color.surface}}
         contentContainerStyle={{
           paddingHorizontal: Theme.padding.p04,
           paddingVertical: Theme.padding.p02,
-        }}
-      >
+        }}>
         <Card>
           <Text h3 title="Calendar" style={styles.bottom} />
           <Calendar hiddenDays />
@@ -127,7 +126,7 @@ export default memo(function Journal() {
             onChangeText={() => undefined}
           />
         </Card>
-        <View style={{ height: Theme.padding.p04 }} />
+        <View style={{height: Theme.padding.p04}} />
       </ScrollView>
     </Screen>
   );

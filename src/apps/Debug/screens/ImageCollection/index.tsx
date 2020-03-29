@@ -1,9 +1,9 @@
 import React from 'react';
-import { Dimensions, FlatList } from 'react-native';
-import { connect } from 'react-redux';
-import { Screen } from '../../../../components';
-import { NavigationScreen, navigate } from '../../../../models';
-import { AsyncImage } from './AsyncImage';
+import {Dimensions, FlatList} from 'react-native';
+import {connect} from 'react-redux';
+import {Screen} from '../../../../components';
+import {NavigationScreen, navigate} from '../../../../models';
+import {AsyncImage} from './AsyncImage';
 
 interface DispatchProps {
   navigate: typeof navigate;
@@ -60,6 +60,6 @@ class Container extends React.PureComponent<Props> {
   );
 }
 
-const mapDispatchToProps: DispatchProps = { navigate };
+const mapDispatchToProps: DispatchProps = {navigate};
 
 export default connect(null, mapDispatchToProps)(Container);

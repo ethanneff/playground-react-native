@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
-import { Animated, StyleSheet, View } from 'react-native';
-import { Button, Screen } from '../../../../components';
-import { getHeight, getWidth } from '../../../../models';
-import { useNativeDriver, useNav } from '../../../../hooks';
-import { useRootSelector } from '../../../../utils';
+import React, {memo} from 'react';
+import {Animated, StyleSheet, View} from 'react-native';
+import {Button, Screen} from '../../../../components';
+import {getHeight, getWidth} from '../../../../models';
+import {useNativeDriver, useNav} from '../../../../hooks';
+import {useRootSelector} from '../../../../utils';
 
 const styles = StyleSheet.create({
   ball: {
@@ -26,11 +26,11 @@ export default memo(function DebugBall() {
   const height = useRootSelector(getHeight);
   const width = useRootSelector(getWidth);
   const nav = useNav();
-  const ballPosition = new Animated.ValueXY({ x: width / 2, y: height / 2 });
+  const ballPosition = new Animated.ValueXY({x: width / 2, y: height / 2});
   const useDriver = useNativeDriver();
   const animate = (dx: number, dy: number) => {
     Animated.spring(ballPosition, {
-      toValue: { x: width * dx, y: height * dy },
+      toValue: {x: width * dx, y: height * dy},
       useNativeDriver: useDriver,
     }).start();
   };

@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
-import { Image, View } from 'react-native';
-import { Text, RelativeDate } from '../../../../components';
-import { Theme } from '../../../../utils';
-import { Message } from './Messages';
-import { useColor } from '../../../../hooks';
+import React, {memo} from 'react';
+import {Image, View} from 'react-native';
+import {Text, RelativeDate} from '../../../../components';
+import {Theme} from '../../../../utils';
+import {Message} from './Messages';
+import {useColor} from '../../../../hooks';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import dayjs from 'dayjs';
 dayjs.extend(relativeTime);
@@ -12,7 +12,7 @@ interface Props {
   item: Message;
 }
 
-export const Item = memo(function ChatMessage({ item }: Props) {
+export const Item = memo(function ChatMessage({item}: Props) {
   const color = useColor();
   const image = require('../../../../assets/line-chart.png');
 
@@ -25,9 +25,8 @@ export const Item = memo(function ChatMessage({ item }: Props) {
         flexDirection: 'row',
         marginBottom: Theme.padding.p06,
         backgroundColor: color.light,
-      }}
-    >
-      <View style={{ width: 40 }}>
+      }}>
+      <View style={{width: 40}}>
         <Image
           source={image}
           style={{
@@ -39,16 +38,16 @@ export const Item = memo(function ChatMessage({ item }: Props) {
           }}
         />
       </View>
-      <View style={{ flex: 1 }}>
-        <View style={{ flexDirection: 'row' }}>
+      <View style={{flex: 1}}>
+        <View style={{flexDirection: 'row'}}>
           <Text
             title={item.userId}
             bold
-            style={{ paddingRight: Theme.padding.p02 }}
+            style={{paddingRight: Theme.padding.p02}}
           />
           <RelativeDate date={item.createdAt} />
         </View>
-        <Text title={item.message} body1 style={{ paddingTop: 5 }} />
+        <Text title={item.message} body1 style={{paddingTop: 5}} />
       </View>
     </View>
   );

@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
-import { StyleSheet, ScrollView, View } from 'react-native';
-import { Screen, Text, Card, Activity, Icon } from '../../components';
-import { useNav, useColor } from '../../hooks';
-import { Theme } from '../../utils';
+import React, {memo} from 'react';
+import {StyleSheet, ScrollView, View} from 'react-native';
+import {Screen, Text, Card, Activity, Icon} from '../../components';
+import {useNav, useColor} from '../../hooks';
+import {Theme} from '../../utils';
 
 // TODO: gitlab
 // TODO: selected
@@ -24,12 +24,11 @@ export default memo(function ActivityTracker() {
   return (
     <Screen onLeftPress={nav.to('portfolioLanding')} title="Activity" border>
       <ScrollView
-        style={{ backgroundColor: color.surface }}
+        style={{backgroundColor: color.surface}}
         contentContainerStyle={{
           paddingHorizontal: Theme.padding.p04,
           paddingVertical: Theme.padding.p02,
-        }}
-      >
+        }}>
         <Card>
           <Text style={styles.bottom} h4 medium title="Github" />
           <Activity username="ethanneff" site="github" />
@@ -42,7 +41,7 @@ export default memo(function ActivityTracker() {
           <Text style={styles.bottom} h4 medium title="HackerRank" />
           <Activity username="ethanneff" site="hackerRank" />
         </Card>
-        <View style={{ height: Theme.padding.p04 }} />
+        <View style={{height: Theme.padding.p04}} />
       </ScrollView>
       <Icon
         name="plus"

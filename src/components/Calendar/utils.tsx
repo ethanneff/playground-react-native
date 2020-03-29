@@ -36,8 +36,8 @@ const createDayObj = (
   id: string | number,
   display: string | number,
   current = false,
-  header = false
-): Day => ({ id: String(id), display: String(display), current, header });
+  header = false,
+): Day => ({id: String(id), display: String(display), current, header});
 
 const generateCalendarMatrix = (date: Date) => {
   const firstDay = firstDayOfMonth(date).getDay();
@@ -55,24 +55,24 @@ const generateCalendarMatrix = (date: Date) => {
         row === 1 && col < firstDay
           ? createDayObj(
               addDays(addMonths(date, -1), prevDayCounter).valueOf(),
-              prevDayCounter++
+              prevDayCounter++,
             )
           : row > 1 && dayCounter > maxDays
           ? createDayObj(
               addDays(addMonths(date, 1), nextDayCounter).valueOf(),
-              nextDayCounter++
+              nextDayCounter++,
             )
           : createDayObj(
               addDays(addMonths(date, 0), dayCounter).valueOf(),
               dayCounter++,
-              true
+              true,
             );
     }
   }
   return calendarMatrix;
 };
 
-const calendarMatrixMemo: { [key in string]: CalendarMatrix } = {};
+const calendarMatrixMemo: {[key in string]: CalendarMatrix} = {};
 export const getCalendarMatrix = (date: Date): CalendarMatrix => {
   const memo = calendarMatrixMemo[date.valueOf()];
   if (memo) {

@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
-import { View } from 'react-native';
-import { Text } from '../Text';
-import { Theme } from '../../utils';
-import { Day, ActivityDay } from './Day';
+import React, {memo} from 'react';
+import {View} from 'react-native';
+import {Text} from '../Text';
+import {Theme} from '../../utils';
+import {Day, ActivityDay} from './Day';
 import format from 'date-fns/format';
 
 export type ActivityWeek = Array<ActivityDay>;
@@ -35,7 +35,7 @@ export const Week = memo(function Week({
         medium
         title={header}
         overline
-        style={{ paddingBottom: Theme.padding.p03 }}
+        style={{paddingBottom: Theme.padding.p03}}
       />
       {item.map((day) => (
         <Day

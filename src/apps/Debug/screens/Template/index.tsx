@@ -1,7 +1,7 @@
-import React, { memo } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Screen } from '../../../../components';
-import { useColor, useNav } from '../../../../hooks';
+import React, {memo} from 'react';
+import {StyleSheet, View} from 'react-native';
+import {Screen} from '../../../../components';
+import {useColor, useNav} from '../../../../hooks';
 
 export default memo(function DebugTemplate() {
   const color = useColor();

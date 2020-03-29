@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
-import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { Text } from '../../../../components';
-import { Theme } from '../../../../utils';
-import { useColor } from '../../../../hooks';
+import React, {memo} from 'react';
+import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {Text} from '../../../../components';
+import {Theme} from '../../../../utils';
+import {useColor} from '../../../../hooks';
 
 interface OwnProps {
   onPress?(): void;
@@ -10,7 +10,7 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-export const ProfileLevel: React.FC<Props> = memo(({ onPress }) => {
+export const ProfileLevel: React.FC<Props> = memo(({onPress}) => {
   const color = useColor();
   const image = require('../../../../assets/placeholder.png');
   const width = 0.2;
@@ -65,7 +65,7 @@ export const ProfileLevel: React.FC<Props> = memo(({ onPress }) => {
       <Image source={image} style={styles.imageContainer} />
       <View>
         <View style={styles.progressContainer}>
-          <View style={[styles.progressBar, { width }]} />
+          <View style={[styles.progressBar, {width}]} />
         </View>
         <View style={styles.levelContainer}>
           <Text title={String(level)} subtitle2 center />

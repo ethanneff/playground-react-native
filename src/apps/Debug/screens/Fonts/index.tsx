@@ -1,6 +1,6 @@
-import React, { memo } from 'react';
-import { Screen, Text } from '../../../../components';
-import { useNav } from '../../../../hooks';
+import React, {memo} from 'react';
+import {Screen, Text} from '../../../../components';
+import {useNav} from '../../../../hooks';
 
 export default memo(function DebugFonts() {
   const nav = useNav();

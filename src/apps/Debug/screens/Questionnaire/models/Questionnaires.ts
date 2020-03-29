@@ -1,4 +1,4 @@
-import { createSelector } from 'reselect';
+import {createSelector} from 'reselect';
 import {
   ActionType,
   createAction,
@@ -6,9 +6,9 @@ import {
   getType,
 } from 'typesafe-actions';
 import 'react-native-get-random-values';
-import { v4 } from 'uuid';
-import { RootAction, RootState } from '../../../../../containers';
-import { logout } from '../../../../../models/Auth';
+import {v4} from 'uuid';
+import {RootAction, RootState} from '../../../../../containers';
+import {logout} from '../../../../../models/Auth';
 
 /* ACTIONS */
 export const createQuestionnaire = createCustomAction(
@@ -19,7 +19,7 @@ export const createQuestionnaire = createCustomAction(
       questions: [],
       title: payload,
     },
-  })
+  }),
 );
 export const updateQuestionnaire = createAction('questionnaires/UPDATE')<
   Questionnaire
@@ -36,7 +36,7 @@ export const getQuestionnaires = (state: RootState): QuestionnairesObject =>
   state.questionnaires.items;
 export const getQuestionnaireArray = createSelector(
   [getQuestionnaires],
-  (questionnaires) => Object.values(questionnaires).filter((item) => item)
+  (questionnaires) => Object.values(questionnaires).filter((item) => item),
 );
 
 /* INTERFACES */
@@ -99,7 +99,7 @@ export const questionnairesInitialState: Questionnaires = {
 
 export const questionnairesReducer = (
   state: Questionnaires = questionnairesInitialState,
-  action: RootAction
+  action: RootAction,
 ): Questionnaires => {
   switch (action.type) {
     case getType(createQuestionnaire):
@@ -123,8 +123,8 @@ export const questionnairesReducer = (
         ...state,
         items: Object.keys(state.items).reduce(
           (acc, key) =>
-            key !== action.payload ? { ...acc, [key]: state.items[key] } : acc,
-          {}
+            key !== action.payload ? {...acc, [key]: state.items[key]} : acc,
+          {},
         ),
         selected:
           state.selected !== action.payload ? state.selected : undefined,

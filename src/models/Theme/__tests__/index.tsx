@@ -1,4 +1,4 @@
-import { getType } from 'typesafe-actions';
+import {getType} from 'typesafe-actions';
 import {
   ColorTheme,
   changeTheme,
@@ -6,8 +6,8 @@ import {
   themeReducer,
   getCurrentColor,
 } from '..';
-import { logout, loginRequest } from '../../Auth';
-import { store } from '../../../containers';
+import {logout, loginRequest} from '../../Auth';
+import {store} from '../../../containers';
 
 it('getCurrentColor dark', () => {
   store.dispatch(changeTheme(ColorTheme.Dark));
@@ -29,15 +29,15 @@ it(getType(changeTheme), () => {
     themeReducer(themeInitialState, {
       payload,
       type: getType(changeTheme),
-    })
-  ).toMatchObject({ currentColor: payload });
+    }),
+  ).toMatchObject({currentColor: payload});
 });
 
 it(getType(logout), () => {
   expect(
     themeReducer(themeInitialState, {
       type: getType(logout),
-    })
+    }),
   ).toMatchObject(themeInitialState);
 });
 
@@ -45,6 +45,6 @@ it(getType(loginRequest), () => {
   expect(
     themeReducer(undefined, {
       type: getType(loginRequest),
-    })
+    }),
   ).toMatchObject(themeInitialState);
 });

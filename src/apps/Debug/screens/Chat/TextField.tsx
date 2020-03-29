@@ -1,17 +1,17 @@
-import React, { memo, useCallback } from 'react';
-import { View, Keyboard } from 'react-native';
-import { TextInput, Icon } from '../../../../components';
-import { useRootDispatch, useRootSelector, Theme } from '../../../../utils';
+import React, {memo, useCallback} from 'react';
+import {View, Keyboard} from 'react-native';
+import {TextInput, Icon} from '../../../../components';
+import {useRootDispatch, useRootSelector, Theme} from '../../../../utils';
 import 'react-native-get-random-values';
-import { v4 } from 'uuid';
-import { Message, typeChatMessage, createChatMessage } from './Messages';
+import {v4} from 'uuid';
+import {Message, typeChatMessage, createChatMessage} from './Messages';
 
 export const TextField = memo(function ChatTextField() {
   const dispatch = useRootDispatch();
   const textField = useRootSelector((state) => state.chatMessage.textField);
   const onMessageChange = useCallback(
     (message: string) => dispatch(typeChatMessage(message)),
-    [dispatch]
+    [dispatch],
   );
 
   const onSubmit = useCallback(() => {
@@ -37,8 +37,7 @@ export const TextField = memo(function ChatTextField() {
       style={{
         flexDirection: 'row',
         alignItems: 'center',
-      }}
-    >
+      }}>
       <TextInput
         value={textField}
         onChangeText={onMessageChange}
@@ -48,7 +47,7 @@ export const TextField = memo(function ChatTextField() {
       <Icon
         name="send"
         onPress={onSubmit}
-        style={{ paddingLeft: Theme.padding.p02 }}
+        style={{paddingLeft: Theme.padding.p02}}
       />
     </View>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, {useState, useCallback} from 'react';
 import {
   Animated,
   PanResponder,
@@ -8,7 +8,7 @@ import {
   LayoutChangeEvent,
   PanResponderGestureState,
 } from 'react-native';
-import { Screen, Text } from '../../../../components';
+import {Screen, Text} from '../../../../components';
 import {
   useColor,
   useNav,
@@ -18,8 +18,8 @@ import {
 
 const getPosition = (
   gestureState: PanResponderGestureState,
-  initialPosition: { x: number; y: number },
-  size: number
+  initialPosition: {x: number; y: number},
+  size: number,
 ) => {
   const maxY = gestureState.dy - initialPosition.y + size;
   const minY = gestureState.dy + initialPosition.y - size;
@@ -37,7 +37,7 @@ const getPosition = (
       : maxX >= 0
       ? initialPosition.x * 2 - size
       : initialPosition.x + gestureState.dx;
-  return { x, y };
+  return {x, y};
 };
 
 export default function DebugDrag() {
@@ -45,8 +45,8 @@ export default function DebugDrag() {
   const color = useColor();
   const dropShadow = useDropShadow(10);
   const useDriver = useNativeDriver();
-  const [canvas, setCanvas] = useState({ x: 0, y: 0, height: 0, width: 0 });
-  const initialPosition = { x: canvas.width / 2, y: canvas.height / 2 };
+  const [canvas, setCanvas] = useState({x: 0, y: 0, height: 0, width: 0});
+  const initialPosition = {x: canvas.width / 2, y: canvas.height / 2};
   const size = 30;
   const styles = StyleSheet.create({
     ball: {
@@ -83,8 +83,8 @@ export default function DebugDrag() {
   });
 
   const handleCanvas = useCallback((event: LayoutChangeEvent) => {
-    const { x, y, height, width } = event.nativeEvent.layout;
-    setCanvas({ x, y, height, width });
+    const {x, y, height, width} = event.nativeEvent.layout;
+    setCanvas({x, y, height, width});
   }, []);
 
   return (

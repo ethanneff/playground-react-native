@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
-import { View, ScrollView } from 'react-native';
-import { Screen, Text, Button } from '../../../../components';
-import { useNav } from '../../../../hooks';
-import { ColorTheme, changeTheme } from '../../../../models';
-import { useRootSelector, useRootDispatch, Theme } from '../../../../utils';
+import React, {memo} from 'react';
+import {View, ScrollView} from 'react-native';
+import {Screen, Text, Button} from '../../../../components';
+import {useNav} from '../../../../hooks';
+import {ColorTheme, changeTheme} from '../../../../models';
+import {useRootSelector, useRootDispatch, Theme} from '../../../../utils';
 
 export default memo(function DebugColors() {
   const nav = useNav();
@@ -19,14 +19,13 @@ export default memo(function DebugColors() {
         h4
         title="Theme"
         center
-        style={{ paddingBottom: Theme.padding.p08 }}
+        style={{paddingBottom: Theme.padding.p08}}
       />
       <View
         style={{
           justifyContent: 'center',
           flexDirection: 'row',
-        }}
-      >
+        }}>
         {themes.map((item) => (
           <Button
             key={item}
@@ -37,14 +36,9 @@ export default memo(function DebugColors() {
         ))}
       </View>
       <ScrollView>
-        <Text
-          h4
-          title="Buttons"
-          center
-          style={{ padding: Theme.padding.p08 }}
-        />
-        <View style={{ flexDirection: 'row' }}>
-          <View style={{ flex: 1 }}>
+        <Text h4 title="Buttons" center style={{padding: Theme.padding.p08}} />
+        <View style={{flexDirection: 'row'}}>
+          <View style={{flex: 1}}>
             <Button emphasis="high" color="primary" title="primary" />
             <Button emphasis="high" color="secondary" title="secondary" />
             <Button emphasis="high" color="success" title="success" />
@@ -63,7 +57,7 @@ export default memo(function DebugColors() {
               elevation={10}
             />
           </View>
-          <View style={{ flex: 1 }}>
+          <View style={{flex: 1}}>
             <Button color="primary" emphasis="medium" title="primary" />
             <Button color="secondary" emphasis="medium" title="secondary" />
             <Button color="success" emphasis="medium" title="success" />
@@ -82,7 +76,7 @@ export default memo(function DebugColors() {
               elevation={10}
             />
           </View>
-          <View style={{ flex: 1 }}>
+          <View style={{flex: 1}}>
             <Button color="primary" emphasis="low" title="primary" />
             <Button color="secondary" emphasis="low" title="secondary" />
             <Button color="success" emphasis="low" title="success" />
@@ -103,10 +97,10 @@ export default memo(function DebugColors() {
           </View>
         </View>
 
-        <Text h4 title="Fonts" center style={{ padding: Theme.padding.p08 }} />
+        <Text h4 title="Fonts" center style={{padding: Theme.padding.p08}} />
 
-        <View style={{ flexDirection: 'row' }}>
-          <View style={{ flex: 1 }}>
+        <View style={{flexDirection: 'row'}}>
+          <View style={{flex: 1}}>
             <Text title="normal" center />
             <Text h1 title="h1" />
             <Text h2 title="h2" />
@@ -123,7 +117,7 @@ export default memo(function DebugColors() {
             <Text button title="button" />
             <Text title="default" />
           </View>
-          <View style={{ flex: 1 }}>
+          <View style={{flex: 1}}>
             <Text title="high" center />
             <Text high h1 title="h1" />
             <Text high h2 title="h2" />
@@ -140,7 +134,7 @@ export default memo(function DebugColors() {
             <Text high button title="button" />
             <Text high title="default" />
           </View>
-          <View style={{ flex: 1 }}>
+          <View style={{flex: 1}}>
             <Text title="medium" center />
             <Text medium h1 title="h1" />
             <Text medium h2 title="h2" />
@@ -157,7 +151,7 @@ export default memo(function DebugColors() {
             <Text medium button title="button" />
             <Text medium title="default" />
           </View>
-          <View style={{ flex: 1 }}>
+          <View style={{flex: 1}}>
             <Text title="low" center />
             <Text low h1 title="h1" />
             <Text low h2 title="h2" />

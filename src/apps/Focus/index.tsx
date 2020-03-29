@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Screen, Dialog } from '../../components';
-import { useNav } from '../../hooks';
-import { List, Item } from './components/List';
+import React, {useState, useEffect, useCallback} from 'react';
+import {Screen, Dialog} from '../../components';
+import {useNav} from '../../hooks';
+import {List, Item} from './components/List';
 import dayjs from 'dayjs';
 
 // TODO: flatlist on web
@@ -10,7 +10,7 @@ import dayjs from 'dayjs';
 // TODO: re-rendering everything because dialog is same level as list
 
 const infiniteScrollRegeneration = 100;
-const editItem: { visible: boolean; item: Item | null } = {
+const editItem: {visible: boolean; item: Item | null} = {
   visible: false,
   item: null,
 };
@@ -44,7 +44,7 @@ export default function Focus() {
   }, [items]);
 
   const handleItemPress = useCallback((item: Item) => {
-    setModalItemEdit({ visible: true, item });
+    setModalItemEdit({visible: true, item});
   }, []);
 
   const handleLoad = useCallback(() => {
@@ -55,7 +55,7 @@ export default function Focus() {
   }, [generateMoreItems, items.length]);
 
   const handleModalEditBackgroundPress = useCallback(() => {
-    setModalItemEdit((state) => ({ ...state, visible: false }));
+    setModalItemEdit((state) => ({...state, visible: false}));
   }, []);
 
   useEffect(handleLoad, []);

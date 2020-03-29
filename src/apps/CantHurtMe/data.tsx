@@ -4,12 +4,12 @@ interface App {
 }
 
 interface Goals {
-  byId: { [id: string]: Goal };
+  byId: {[id: string]: Goal};
   orderById: string[];
 }
 
 interface Users {
-  byId: { [id: string]: User };
+  byId: {[id: string]: User};
 }
 
 interface User {

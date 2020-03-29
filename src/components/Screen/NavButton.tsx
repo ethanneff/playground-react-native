@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Theme } from '../../utils';
-import { Icon } from '../Icon';
-import { useColor } from '../../hooks';
+import React, {memo} from 'react';
+import {StyleSheet, View} from 'react-native';
+import {Theme} from '../../utils';
+import {Icon} from '../Icon';
+import {useColor} from '../../hooks';
 
 interface Props {
   icon: string;

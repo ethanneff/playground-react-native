@@ -48,7 +48,7 @@ export const swapBoardItem = (
   x: number,
   y: number,
   i: number,
-  j: number
+  j: number,
 ) => {
   return i === x && y === j ? (item ? 0 : 1) : item;
 };

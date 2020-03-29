@@ -1,6 +1,6 @@
-import React, { memo, useCallback, useEffect, useState } from 'react';
-import { StyleSheet, View, ViewStyle } from 'react-native';
-import { Text } from '../Text';
+import React, {memo, useCallback, useEffect, useState} from 'react';
+import {StyleSheet, View, ViewStyle} from 'react-native';
+import {Text} from '../Text';
 
 interface Props {
   title: string;
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const Loading: React.FC<Props> = memo(({ title, center, style }) => {
+export const Loading: React.FC<Props> = memo(({title, center, style}) => {
   const containerStyles = [
     styles.row,
     center ? styles.center : undefined,

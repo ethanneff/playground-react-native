@@ -1,6 +1,6 @@
 import React from 'react';
-import { RelativeDate } from '..';
-import { mockRenderer } from '../../../utils/Mock';
+import {RelativeDate} from '..';
+import {mockRenderer} from '../../../utils/Mock';
 
 jest.useFakeTimers();
 describe('RelativeDate component', () => {

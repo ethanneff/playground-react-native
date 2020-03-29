@@ -1,6 +1,6 @@
-import React, { memo } from 'react';
+import React, {memo} from 'react';
 import Original from '@mdi/react';
-import { Icons } from './config';
+import {Icons} from './config';
 
 interface Props {
   name: keyof typeof Icons;

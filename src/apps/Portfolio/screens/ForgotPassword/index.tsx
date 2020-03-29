@@ -1,10 +1,10 @@
-import React, { memo, useState } from 'react';
-import { Button, Screen, TextInput } from '../../../../components';
-import { StyleSheet, View } from 'react-native';
-import { useNav } from '../../../../hooks';
+import React, {memo, useState} from 'react';
+import {Button, Screen, TextInput} from '../../../../components';
+import {StyleSheet, View} from 'react-native';
+import {useNav} from '../../../../hooks';
 
 const styles = StyleSheet.create({
-  row: { flexDirection: 'row', justifyContent: 'space-around' },
+  row: {flexDirection: 'row', justifyContent: 'space-around'},
 });
 
 export default memo(function PortfolioForgotPassword() {
@@ -15,8 +15,7 @@ export default memo(function PortfolioForgotPassword() {
     <Screen
       onLeftPress={nav.to('portfolioLogin')}
       title="Forgot Password"
-      gutter
-    >
+      gutter>
       <TextInput
         title="email"
         placeholder="example@gmail.com"

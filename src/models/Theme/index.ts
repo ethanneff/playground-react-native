@@ -1,6 +1,6 @@
-import { ActionType, createAction, getType } from 'typesafe-actions';
-import { RootAction, RootState } from '../../containers';
-import { logout } from '../Auth';
+import {ActionType, createAction, getType} from 'typesafe-actions';
+import {RootAction, RootState} from '../../containers';
+import {logout} from '../Auth';
 
 /*
 https://material.io/design/color/dark-theme.html#ui-application
@@ -44,7 +44,7 @@ export interface Color {
   warning: string;
 }
 
-type Colors = { [key in ColorTheme]: Color };
+type Colors = {[key in ColorTheme]: Color};
 
 export interface Theme {
   colors: Colors;
@@ -91,7 +91,7 @@ export const themeInitialState: Theme = {
 
 export function themeReducer(
   state: Theme = themeInitialState,
-  action: RootAction
+  action: RootAction,
 ): Theme {
   switch (action.type) {
     case getType(changeTheme):

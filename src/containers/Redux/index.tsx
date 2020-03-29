@@ -1,5 +1,5 @@
-import React, { memo } from 'react';
-import { persistReducer, persistStore } from 'redux-persist';
+import React, {memo} from 'react';
+import {persistReducer, persistStore} from 'redux-persist';
 import {
   Middleware,
   applyMiddleware,
@@ -7,8 +7,8 @@ import {
   compose,
   createStore,
 } from 'redux';
-import thunk, { ThunkAction } from 'redux-thunk';
-import { DeepReadonly } from 'utility-types';
+import thunk, {ThunkAction} from 'redux-thunk';
+import {DeepReadonly} from 'utility-types';
 import {
   ItemActions,
   ListActions,
@@ -51,9 +51,9 @@ import {
   DimensionState,
   DimensionActions,
 } from '../../models';
-import { Storage } from '../../conversions';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
+import {Storage} from '../../conversions';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
 
 import {
   ChatMessageReducer,
@@ -129,7 +129,7 @@ const persistor = persistStore(store);
 // persistor.purge();
 
 /* CONTAINER */
-export const Redux = memo(function Redux({ children }) {
+export const Redux = memo(function Redux({children}) {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

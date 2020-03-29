@@ -1,5 +1,5 @@
-import React, { memo } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import React, {memo} from 'react';
+import {View, StyleSheet, Text} from 'react-native';
 import Timer from './Timer';
 
 interface LapProps {
@@ -9,12 +9,7 @@ interface LapProps {
   slowest: boolean;
 }
 
-export default memo(function Lap({
-  num,
-  interval,
-  fastest,
-  slowest,
-}: LapProps) {
+export default memo(function Lap({num, interval, fastest, slowest}: LapProps) {
   const styles = StyleSheet.create({
     fastest: {
       color: '#4BC05F',

@@ -1,4 +1,4 @@
-import { useColor } from '../useColor';
+import {useColor} from '../useColor';
 
 export const useDropShadow = (elevation: number) => {
   const color = useColor();

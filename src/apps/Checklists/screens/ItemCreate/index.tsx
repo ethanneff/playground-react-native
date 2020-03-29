@@ -1,13 +1,13 @@
-import React, { memo, useState } from 'react';
-import { Button, Screen, TextInput } from '../../../../components';
-import { navigate } from '../../../../models';
-import { createChecklistItem } from '../../models';
-import { useRootDispatch, useRootSelector, Errors } from '../../../../utils';
-import { useNav } from '../../../../hooks';
+import React, {memo, useState} from 'react';
+import {Button, Screen, TextInput} from '../../../../components';
+import {navigate} from '../../../../models';
+import {createChecklistItem} from '../../models';
+import {useRootDispatch, useRootSelector, Errors} from '../../../../utils';
+import {useNav} from '../../../../hooks';
 import 'react-native-get-random-values';
-import { v4 } from 'uuid';
+import {v4} from 'uuid';
 
-const initialState = { name: '', description: '' };
+const initialState = {name: '', description: ''};
 
 export default memo(function ChecklistItemCreate() {
   const nav = useNav();
@@ -20,7 +20,7 @@ export default memo(function ChecklistItemCreate() {
     if (isInvalidForm) {
       return;
     }
-    const { name, description } = form;
+    const {name, description} = form;
     const now = Date.now();
     if (!currentChecklist) {
       throw new Error(Errors.MissingCurrentChecklistCreatingItem);
@@ -37,14 +37,14 @@ export default memo(function ChecklistItemCreate() {
         order: now,
         updatedAt: now,
         userId: '1',
-      })
+      }),
     );
     dispatch(navigate('checklistsList')); // TODO: batch
   };
   const handleNameChange = (name: string) =>
-    setForm((state) => ({ ...state, name }));
+    setForm((state) => ({...state, name}));
   const handleDescriptionChange = (description: string) =>
-    setForm((state) => ({ ...state, description }));
+    setForm((state) => ({...state, description}));
 
   return (
     <Screen onLeftPress={nav.to('checklistsList')} title="Create Item" gutter>

@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
-import { SafeAreaView, StatusBar, StyleSheet, ViewStyle } from 'react-native';
-import { Theme } from '../../utils';
-import { NavBar } from './NavBar';
-import { KeyboardAware } from './KeyboardAware';
-import { useColor } from '../../hooks';
+import React, {memo} from 'react';
+import {SafeAreaView, StatusBar, StyleSheet, ViewStyle} from 'react-native';
+import {Theme} from '../../utils';
+import {NavBar} from './NavBar';
+import {KeyboardAware} from './KeyboardAware';
+import {useColor} from '../../hooks';
 
 interface OwnProps {
   style?: ViewStyle;

@@ -1,15 +1,15 @@
-import React, { memo, useCallback, useEffect } from 'react';
+import React, {memo, useCallback, useEffect} from 'react';
 import {
   Animated,
   StyleSheet,
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import { Theme } from '../../utils';
-import { Button } from '../Button';
-import { Card } from '../Card';
-import { Text } from '../Text';
-import { useNativeDriver, useDropShadow } from '../../hooks';
+import {Theme} from '../../utils';
+import {Button} from '../Button';
+import {Card} from '../Card';
+import {Text} from '../Text';
+import {useNativeDriver, useDropShadow} from '../../hooks';
 
 interface OwnProps {
   testID?: string;
@@ -83,7 +83,7 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
   const opacity = fade;
   const twoButtons =
     Boolean(onConfirmButtonPress) && Boolean(onCancelButtonPress);
-  const containerStyle = [styles.container, { opacity }];
+  const containerStyle = [styles.container, {opacity}];
   const cancelButtonStyle = [twoButtons ? styles.cancel : undefined];
   const confirmButtonStyle = [twoButtons ? styles.confirm : undefined];
 
@@ -98,7 +98,7 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
         }).start(resolve);
       });
     },
-    [fade, nativeDriver]
+    [fade, nativeDriver],
   );
 
   const dismiss = useCallback(
@@ -109,7 +109,7 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
       await animate(0);
       callback();
     },
-    [animate]
+    [animate],
   );
 
   useEffect(() => {
@@ -127,8 +127,7 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
     <Animated.View style={containerStyle}>
       <TouchableWithoutFeedback
         testID={testID}
-        onPress={dismiss(onBackgroundPress)}
-      >
+        onPress={dismiss(onBackgroundPress)}>
         <View style={styles.overlay}>
           <TouchableWithoutFeedback onPress={undefined}>
             <Card style={styles.modal}>

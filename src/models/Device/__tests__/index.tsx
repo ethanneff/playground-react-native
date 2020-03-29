@@ -1,4 +1,4 @@
-import { getType } from 'typesafe-actions';
+import {getType} from 'typesafe-actions';
 import {
   changeAppStatus,
   changeKeyboardStatus,
@@ -6,7 +6,7 @@ import {
   deviceReducer,
   loadDevice,
 } from '..';
-import { logout } from '../../Auth';
+import {logout} from '../../Auth';
 
 describe('actions', () => {
   it('loadDevice', () => {
@@ -85,7 +85,7 @@ describe('reducer', () => {
       deviceReducer(deviceInitialState, {
         payload: data,
         type: getType(loadDevice),
-      })
+      }),
     ).toEqual(data);
   });
 
@@ -94,8 +94,8 @@ describe('reducer', () => {
       deviceReducer(deviceInitialState, {
         payload: true,
         type: getType(changeKeyboardStatus),
-      })
-    ).toEqual({ ...deviceInitialState, keyboardVisible: true });
+      }),
+    ).toEqual({...deviceInitialState, keyboardVisible: true});
   });
 
   it('changeAppStatus', () => {
@@ -103,15 +103,15 @@ describe('reducer', () => {
       deviceReducer(deviceInitialState, {
         payload: 'background',
         type: getType(changeAppStatus),
-      })
-    ).toEqual({ ...deviceInitialState, appStatus: 'background' });
+      }),
+    ).toEqual({...deviceInitialState, appStatus: 'background'});
   });
 
   it('logout', () => {
     expect(
       deviceReducer(deviceInitialState, {
         type: getType(logout),
-      })
+      }),
     ).toMatchObject(deviceInitialState);
   });
 });

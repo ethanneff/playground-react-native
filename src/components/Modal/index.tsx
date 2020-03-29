@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
-import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { useColor, useDropShadow } from '../../hooks';
-import { Theme, useRootSelector } from '../../utils';
-import { Card } from '../Card';
+import React, {memo} from 'react';
+import {ScrollView, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {useColor, useDropShadow} from '../../hooks';
+import {Theme, useRootSelector} from '../../utils';
+import {Card} from '../Card';
 
 interface Props {
   testID?: string;
@@ -66,15 +66,13 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
         noMargin
         noPadding
         elevation={elevation}
-        testID="modal"
-      >
+        testID="modal">
         {noScroll ? (
           <View style={styles.modalContent}>{children}</View>
         ) : (
           <ScrollView
             contentContainerStyle={styles.modalContent}
-            keyboardShouldPersistTaps="handled"
-          >
+            keyboardShouldPersistTaps="handled">
             {children}
           </ScrollView>
         )}

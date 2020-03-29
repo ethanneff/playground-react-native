@@ -1,8 +1,8 @@
-import { ButtonEmphasis } from './index';
-import { colorWithOpacity } from '../../utils';
-import { Color } from './../../models/Theme';
-import { StyleSheet } from 'react-native';
-import { Theme } from './../../utils';
+import {ButtonEmphasis} from './index';
+import {colorWithOpacity} from '../../utils';
+import {Color} from './../../models/Theme';
+import {StyleSheet} from 'react-native';
+import {Theme} from './../../utils';
 
 export const getButtonColor = (colorScheme: Color, color: keyof Color) =>
   colorScheme[color];

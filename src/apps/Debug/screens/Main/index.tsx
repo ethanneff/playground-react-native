@@ -1,8 +1,8 @@
-import React, { memo, useCallback } from 'react';
-import { Button, Screen } from '../../../../components';
-import { NavigationScreen } from '../../../../models';
-import { useNav } from '../../../../hooks';
-import { FlatList } from 'react-native';
+import React, {memo, useCallback} from 'react';
+import {Button, Screen} from '../../../../components';
+import {NavigationScreen} from '../../../../models';
+import {useNav} from '../../../../hooks';
+import {FlatList} from 'react-native';
 
 const debugScreens: NavigationScreen[] = [
   'debugArticle',
@@ -31,8 +31,8 @@ const debugScreens: NavigationScreen[] = [
 export default memo(function Debug() {
   const nav = useNav();
   const renderItem = useCallback(
-    ({ item }) => <Button title={item} key={item} onPress={nav.to(item)} />,
-    [nav]
+    ({item}) => <Button title={item} key={item} onPress={nav.to(item)} />,
+    [nav],
   );
   const keyExtractor = useCallback((item) => item, []);
   return (

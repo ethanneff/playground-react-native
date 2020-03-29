@@ -1,13 +1,10 @@
-import React, { memo, useCallback } from 'react';
-import { FlatList } from 'react-native';
-import { Button, Screen, Icon } from '../../../../components';
-import { useNav, useColor } from '../../../../hooks';
-import { useRootSelector, useRootDispatch } from '../../../../utils';
-import {
-  setActiveList,
-  getActiveChecklistOrderByCreatedAt,
-} from '../../models';
-import { navigate } from '../../../../models';
+import React, {memo, useCallback} from 'react';
+import {FlatList} from 'react-native';
+import {Button, Screen, Icon} from '../../../../components';
+import {useNav, useColor} from '../../../../hooks';
+import {useRootSelector, useRootDispatch} from '../../../../utils';
+import {setActiveList, getActiveChecklistOrderByCreatedAt} from '../../models';
+import {navigate} from '../../../../models';
 
 export default memo(function Checklists() {
   const nav = useNav();
@@ -20,7 +17,7 @@ export default memo(function Checklists() {
       dispatch(setActiveList(id));
       dispatch(navigate('checklistsList'));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const handleItemLongPress = useCallback(
@@ -28,18 +25,18 @@ export default memo(function Checklists() {
       dispatch(setActiveList(id));
       dispatch(navigate('checklistsListUpdate'));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const renderItem = useCallback(
-    ({ item }) => (
+    ({item}) => (
       <Button
         title={item.name}
         onPress={handleItemPress(item.id)}
         onLongPress={handleItemLongPress(item.id)}
       />
     ),
-    [handleItemLongPress, handleItemPress]
+    [handleItemLongPress, handleItemPress],
   );
 
   const keyExtractor = useCallback((item) => item.id, []);

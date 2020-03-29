@@ -10,7 +10,7 @@ const camelCaseToDash = (str: string) =>
     .replace(/-+/gu, '-')
     .toLowerCase();
 
-[].reduce((total: { [key in string]: string }, item) => {
+[].reduce((total: {[key in string]: string}, item) => {
   const dash = camelCaseToDash(item);
   total[dash] = 'I.mdi' + item;
   return total;

@@ -1,6 +1,6 @@
-import { createSelector } from 'reselect';
-import { ActionType, createAction, getType } from 'typesafe-actions';
-import { RootAction, RootState } from '../../../../containers';
+import {createSelector} from 'reselect';
+import {ActionType, createAction, getType} from 'typesafe-actions';
+import {RootAction, RootState} from '../../../../containers';
 
 /* ACTIONS */
 export const createChatMessage = createAction('chat/create')<Message>();
@@ -16,7 +16,7 @@ export const getActiveChatMessagesOrderByCreatedAt = createSelector(
   (messages) =>
     Object.values(messages)
       .filter((item) => item.active)
-      .sort((a, b) => b.createdAt - a.createdAt)
+      .sort((a, b) => b.createdAt - a.createdAt),
 );
 
 /* INTERFACES */
@@ -35,7 +35,7 @@ export type Message = {
   updatedAt: number;
   userId: string; // need name and id
 };
-type Messages = { [key: string]: Message };
+type Messages = {[key: string]: Message};
 export type ChatMessageActions = ActionType<
   | typeof createChatMessage
   | typeof updateChatMessage
@@ -50,11 +50,11 @@ const initialState: ChatMessageReducer = {
 };
 export const chatMessageReducer = (
   state: ChatMessageReducer = initialState,
-  action: RootAction
+  action: RootAction,
 ): ChatMessageReducer => {
   switch (action.type) {
     case getType(typeChatMessage):
-      return { ...state, textField: action.payload };
+      return {...state, textField: action.payload};
     case getType(createChatMessage):
       return {
         ...state,

@@ -1,15 +1,15 @@
-import React, { memo, useCallback } from 'react';
-import { FlatList, View } from 'react-native';
-import { Button, Screen, Icon } from '../../../../components';
-import { useRootDispatch, useRootSelector } from '../../../../utils';
+import React, {memo, useCallback} from 'react';
+import {FlatList, View} from 'react-native';
+import {Button, Screen, Icon} from '../../../../components';
+import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {
   removeChecklistItem,
   toggleChecklistItemComplete,
   getCurrentActiveChecklistItemsOrderByCreatedAt,
   setActiveChecklistItem,
 } from '../../models';
-import { useNav, useColor } from '../../../../hooks';
-import { navigate } from '../../../../models';
+import {useNav, useColor} from '../../../../hooks';
+import {navigate} from '../../../../models';
 
 export default memo(function Checklist() {
   const nav = useNav();
@@ -19,23 +19,23 @@ export default memo(function Checklist() {
 
   const handleRemove = useCallback(
     (id: string) => () => dispatch(removeChecklistItem(id)),
-    [dispatch]
+    [dispatch],
   );
   const handleToggle = useCallback(
     (id: string) => () => dispatch(toggleChecklistItemComplete(id)),
-    [dispatch]
+    [dispatch],
   );
   const handleEdit = useCallback(
     (id: string) => () => {
       dispatch(setActiveChecklistItem(id));
       dispatch(navigate('checklistsItemUpdate'));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const renderItem = useCallback(
-    ({ item }) => (
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+    ({item}) => (
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Icon name="checkbox-marked-circle" color={color.success} />
         <Icon
           name="close-circle"
@@ -62,7 +62,7 @@ export default memo(function Checklist() {
       handleEdit,
       handleRemove,
       handleToggle,
-    ]
+    ],
   );
   const keyExtractor = useCallback((item) => item.id, []);
 

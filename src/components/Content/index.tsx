@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
-import { Text as Original, ScrollView, StyleSheet, View } from 'react-native';
-import { Theme } from '../../utils';
-import { Text } from '../Text';
-import { useColor } from '../../hooks';
+import React, {memo} from 'react';
+import {Text as Original, ScrollView, StyleSheet, View} from 'react-native';
+import {Theme} from '../../utils';
+import {Text} from '../Text';
+import {useColor} from '../../hooks';
 
 export interface ContentBody {
   sections: Sections;
@@ -44,7 +44,7 @@ interface Props {
   body: ContentBody;
 }
 
-export const Content: React.FC<Props> = memo(({ body }) => {
+export const Content: React.FC<Props> = memo(({body}) => {
   const color = useColor();
   const styles = StyleSheet.create({
     content: {

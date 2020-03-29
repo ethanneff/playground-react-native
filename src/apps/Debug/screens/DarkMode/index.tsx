@@ -1,6 +1,6 @@
 // TODO: slider on web
-import React, { memo, useState, useCallback } from 'react';
-import { Image, ImageSourcePropType, View } from 'react-native';
+import React, {memo, useState, useCallback} from 'react';
+import {Image, ImageSourcePropType, View} from 'react-native';
 import {
   Button,
   Card,
@@ -14,8 +14,8 @@ import {
   changeTheme,
   getLandscapeOrientation,
 } from '../../../../models';
-import { Theme, useRootDispatch, useRootSelector } from '../../../../utils';
-import { useColor, useNav } from '../../../../hooks';
+import {Theme, useRootDispatch, useRootSelector} from '../../../../utils';
+import {useColor, useNav} from '../../../../hooks';
 
 interface Card {
   title: string;
@@ -82,15 +82,15 @@ export default memo(function DarkMode() {
   const onPress = useCallback(() => undefined, []);
 
   const renderItem = useCallback(
-    ({ item, index }) => (
+    ({item, index}) => (
       <Card elevation={elevation} onPress={onPress} key={index}>
         <Text title={item.title} overline />
-        <Text title={item.value} h3 style={{ marginTop: Theme.padding.p02 }} />
+        <Text title={item.value} h3 style={{marginTop: Theme.padding.p02}} />
         {item.target && (
           <Text
             title={item.target}
             body2
-            style={{ marginTop: Theme.padding.p02 }}
+            style={{marginTop: Theme.padding.p02}}
           />
         )}
         {item.chart && (
@@ -109,23 +109,22 @@ export default memo(function DarkMode() {
             color="primary"
             emphasis="high"
             title={item.button}
-            buttonStyle={{ marginTop: Theme.padding.p02 }}
+            buttonStyle={{marginTop: Theme.padding.p02}}
           />
         )}
       </Card>
     ),
-    [elevation, onPress]
+    [elevation, onPress],
   );
 
   return (
     <Screen onLeftPress={nav.to('debug')} title="Dark mode">
-      <View style={{ padding: Theme.padding.p04 }}>
+      <View style={{padding: Theme.padding.p04}}>
         <View
           style={{
             flexDirection: 'row',
             alignItems: 'center',
-          }}
-        >
+          }}>
           <Text title="theme: " />
           {themes.map((item) => (
             <Button

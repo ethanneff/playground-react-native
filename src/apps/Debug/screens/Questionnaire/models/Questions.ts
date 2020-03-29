@@ -1,5 +1,5 @@
-import { ActionType, createAction } from 'typesafe-actions';
-import { RootAction } from '../../../../../containers';
+import {ActionType, createAction} from 'typesafe-actions';
+import {RootAction} from '../../../../../containers';
 
 /* ACTIONS */
 export const createQuestion = createAction('questions/CREATE')<Question>();
@@ -160,7 +160,7 @@ export const questionsInitialState: Questions = {
 
 export function questionsReducer(
   state: Questions = questionsInitialState,
-  action: RootAction
+  action: RootAction,
 ): Questions {
   switch (action.type) {
     default:

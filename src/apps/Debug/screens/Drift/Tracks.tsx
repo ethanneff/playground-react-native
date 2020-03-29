@@ -1,16 +1,16 @@
-import React, { memo, useContext } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { ColorChoice } from './Dpad';
-import { DriftContext } from './Context';
+import React, {memo, useContext} from 'react';
+import {View, StyleSheet} from 'react-native';
+import {ColorChoice} from './Dpad';
+import {DriftContext} from './Context';
 
-export type TrackPosition = { x: number; y: number; size: number };
-export type TrackPositionWithColor = TrackPosition & { color: ColorChoice };
+export type TrackPosition = {x: number; y: number; size: number};
+export type TrackPositionWithColor = TrackPosition & {color: ColorChoice};
 
 interface TrackProps {
   track: TrackPositionWithColor;
 }
 
-const Track = memo(function TrackMemo({ track }: TrackProps) {
+const Track = memo(function TrackMemo({track}: TrackProps) {
   const size = track.size / 4;
   const styles = StyleSheet.create({
     tracks: {
@@ -43,7 +43,7 @@ const Track = memo(function TrackMemo({ track }: TrackProps) {
 });
 
 export const Tracks = memo(function TracksMemo() {
-  const { state } = useContext(DriftContext);
+  const {state} = useContext(DriftContext);
   return (
     <View>
       {state.tracks.map((track: TrackPositionWithColor, index: number) => (

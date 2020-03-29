@@ -1,14 +1,9 @@
-import React, { memo } from 'react';
-import {
-  TextStyle,
-  TouchableOpacity,
-  ViewStyle,
-  StyleProp,
-} from 'react-native';
-import { Text } from '../Text';
-import { useColor, useDropShadow } from '../../hooks';
-import { getStyles } from './utils';
-import { Color } from '../../models';
+import React, {memo} from 'react';
+import {TextStyle, TouchableOpacity, ViewStyle, StyleProp} from 'react-native';
+import {Text} from '../Text';
+import {useColor, useDropShadow} from '../../hooks';
+import {getStyles} from './utils';
+import {Color} from '../../models';
 
 /*
 styling: https://material.io/design/components/buttons.html#usage
@@ -88,8 +83,7 @@ export const Button: React.FC<ButtonProps> = memo((props) => {
       disabled={disable || invisible}
       onPress={onPress}
       style={buttonStyleGroup}
-      onLongPress={onLongPress}
-    >
+      onLongPress={onLongPress}>
       <Text center button={!lowercase} title={title} style={textStyleGroup} />
     </TouchableOpacity>
   );

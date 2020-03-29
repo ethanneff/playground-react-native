@@ -1,7 +1,7 @@
 type Position = {
-  change: { dx: number; dy: number };
-  canvas: { x: number; y: number; width: number; height: number };
-  current: { x: number; y: number };
+  change: {dx: number; dy: number};
+  canvas: {x: number; y: number; width: number; height: number};
+  current: {x: number; y: number};
   size: number;
 };
 
@@ -20,5 +20,5 @@ export const getPosition = (position: Position) => {
       : dx + position.size > position.canvas.width
       ? position.canvas.width - position.size
       : dx;
-  return { x, y };
+  return {x, y};
 };

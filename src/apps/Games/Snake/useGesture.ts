@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import {
   PanResponder,
   PanResponderInstance,
@@ -23,5 +23,5 @@ export const useGesture = (): {
     },
   });
 
-  return { direction, panHandlers: panResponder.panHandlers };
+  return {direction, panHandlers: panResponder.panHandlers};
 };

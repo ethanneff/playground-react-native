@@ -5,7 +5,7 @@ export const generateRandom = (size: number) =>
 
 export const addFood = (
   board: BoardObject,
-  used: { [key: string]: boolean } = {}
+  used: {[key: string]: boolean} = {},
 ): boolean => {
   const x = generateRandom(board.length);
   const y = generateRandom(board.length);

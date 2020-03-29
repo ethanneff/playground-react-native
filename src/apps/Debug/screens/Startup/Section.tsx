@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
-import { View } from 'react-native';
-import { useColor } from '../../../../hooks';
-import { Text } from '../../../../components';
-import { Theme } from '../../../../utils';
+import React, {memo} from 'react';
+import {View} from 'react-native';
+import {useColor} from '../../../../hooks';
+import {Text} from '../../../../components';
+import {Theme} from '../../../../utils';
 
 type SectionProps = {
   row?: boolean;
@@ -20,8 +20,7 @@ export const Section: React.FC<SectionProps> = memo(function Section({
       style={{
         flexDirection: row ? 'row' : 'column',
         marginBottom: Theme.padding.p04,
-      }}
-    >
+      }}>
       <Text
         h3
         title={title}
@@ -40,8 +39,7 @@ export const Section: React.FC<SectionProps> = memo(function Section({
           borderColor: color.secondary,
           borderWidth: 2,
           borderTopWidth: 0,
-        }}
-      >
+        }}>
         {children}
       </View>
     </View>

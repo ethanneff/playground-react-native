@@ -1,8 +1,8 @@
-import React, { memo, useState, useEffect, useCallback } from 'react';
-import { StyleSheet, FlatList, ActivityIndicator } from 'react-native';
+import React, {memo, useState, useEffect, useCallback} from 'react';
+import {StyleSheet, FlatList, ActivityIndicator} from 'react-native';
 
-import { ListItem } from './ListItem';
-import { Theme } from '../../../utils';
+import {ListItem} from './ListItem';
+import {Theme} from '../../../utils';
 import dayjs from 'dayjs';
 
 export interface Item {
@@ -49,7 +49,7 @@ const getFirstItemOfDay = (index: number, item: Item, items: Item[]) =>
 const keyExtractor = (item: Item) => String(item.id);
 
 export const List = memo(
-  ({ items, onItemPress, onEndReached, onEndReachedThreshold }: Props) => {
+  ({items, onItemPress, onEndReached, onEndReachedThreshold}: Props) => {
     const [loading, setLoading] = useState(true);
     const styles = StyleSheet.create({
       list: {
@@ -71,7 +71,7 @@ export const List = memo(
     useEffect(onLoad, []);
 
     const renderItem = useCallback(
-      ({ item, index }) => (
+      ({item, index}) => (
         <ListItem
           currentItem={getCurrentItem(item)}
           item={item}
@@ -79,7 +79,7 @@ export const List = memo(
           onItemPress={onItemPress}
         />
       ),
-      [items, onItemPress]
+      [items, onItemPress],
     );
 
     return (
@@ -98,5 +98,5 @@ export const List = memo(
         {loading && <ActivityIndicator size="large" style={styles.loading} />}
       </>
     );
-  }
+  },
 );

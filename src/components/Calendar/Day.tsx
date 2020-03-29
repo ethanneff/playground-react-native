@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
-import { useColor } from '../../hooks';
-import { View, TouchableOpacity } from 'react-native';
-import { Theme, colorWithOpacity } from '../../utils';
-import { Day } from './utils';
-import { Text } from '../Text';
+import React, {memo} from 'react';
+import {useColor} from '../../hooks';
+import {View, TouchableOpacity} from 'react-native';
+import {Theme, colorWithOpacity} from '../../utils';
+import {Day} from './utils';
+import {Text} from '../Text';
 import dayjs from 'dayjs';
 
 interface Props {
@@ -44,8 +44,7 @@ export const CalendarDay = memo(function CalendarDay({
       style={{
         flex: 1,
         alignItems: 'center',
-      }}
-    >
+      }}>
       <View
         style={{
           height: Theme.padding.p08,
@@ -53,8 +52,7 @@ export const CalendarDay = memo(function CalendarDay({
           borderRadius: Theme.padding.p20,
           justifyContent: 'center',
           backgroundColor,
-        }}
-      >
+        }}>
         <Text
           title={day.display}
           center

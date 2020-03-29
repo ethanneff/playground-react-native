@@ -4,11 +4,11 @@ import {
   NetworkState,
   updateNetwork,
 } from './..';
-import { NetInfoState } from '@react-native-community/netinfo';
-import { NetInfoStateType } from './../../../conversions/NetInfo/index.web';
+import {NetInfoState} from '@react-native-community/netinfo';
+import {NetInfoStateType} from './../../../conversions/NetInfo/index.web';
 
-import { getType } from 'typesafe-actions';
-import { logout, loginRequest } from '../../Auth';
+import {getType} from 'typesafe-actions';
+import {logout, loginRequest} from '../../Auth';
 
 it('updateNetwork action', () => {
   const payload: NetInfoState = {
@@ -39,7 +39,7 @@ it(getType(updateNetwork), () => {
     networkReducer(networkInitialState, {
       payload,
       type: getType(updateNetwork),
-    })
+    }),
   ).toEqual({
     connected: true,
     reachable: false,
@@ -58,7 +58,7 @@ it(getType(logout), () => {
   expect(
     networkReducer(customState, {
       type: getType(logout),
-    })
+    }),
   ).toEqual(networkInitialState);
 });
 
@@ -66,6 +66,6 @@ it(getType(loginRequest), () => {
   expect(
     networkReducer(undefined, {
       type: getType(loginRequest),
-    })
+    }),
   ).toEqual(networkInitialState);
 });

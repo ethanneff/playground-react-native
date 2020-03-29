@@ -1,13 +1,13 @@
 import React from 'react';
-import { View } from 'react-native';
-import { Screen } from '..';
-import { mockRenderer } from '../../../utils/Mock';
+import {View} from 'react-native';
+import {Screen} from '..';
+import {mockRenderer} from '../../../utils/Mock';
 
 it('renders correctly', () => {
   const dom = mockRenderer(
     <Screen>
       <View />
-    </Screen>
+    </Screen>,
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });
@@ -17,10 +17,9 @@ it('renders correctly with header', () => {
     <Screen
       title="hello"
       onLeftPress={() => undefined}
-      onRightPress={() => undefined}
-    >
+      onRightPress={() => undefined}>
       <View />
-    </Screen>
+    </Screen>,
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });
@@ -32,10 +31,9 @@ it('renders correctly with icons', () => {
       leftIcon="check"
       rightIcon="check"
       onLeftPress={() => undefined}
-      onRightPress={() => undefined}
-    >
+      onRightPress={() => undefined}>
       <View />
-    </Screen>
+    </Screen>,
   ).toJSON();
   expect(dom).toMatchSnapshot();
 });

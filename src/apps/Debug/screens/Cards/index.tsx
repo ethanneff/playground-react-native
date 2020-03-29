@@ -1,8 +1,8 @@
 import React from 'react';
-import { Animated, Dimensions, StyleSheet, View } from 'react-native';
-import { connect } from 'react-redux';
-import { Screen } from '../../../../components';
-import { NavigationScreen, navigate } from '../../../../models';
+import {Animated, Dimensions, StyleSheet, View} from 'react-native';
+import {connect} from 'react-redux';
+import {Screen} from '../../../../components';
+import {NavigationScreen, navigate} from '../../../../models';
 
 interface DispatchProps {
   navigate: typeof navigate;
@@ -72,7 +72,7 @@ class Container extends React.PureComponent<Props> {
     },
   ];
   public render() {
-    const { y } = this.state;
+    const {y} = this.state;
 
     return (
       <Screen onLeftPress={this.nav('debug')} title="Cards">
@@ -96,10 +96,9 @@ class Container extends React.PureComponent<Props> {
               return (
                 <Animated.View
                   key={card.name}
-                  style={{ transform: [{ translateY }] }}
-                >
+                  style={{transform: [{translateY}]}}>
                   <View
-                    style={[this.styles.card, { backgroundColor: card.color }]}
+                    style={[this.styles.card, {backgroundColor: card.color}]}
                   />
                 </Animated.View>
               );
@@ -112,7 +111,7 @@ class Container extends React.PureComponent<Props> {
             onScroll={Animated.event([
               {
                 nativeEvent: {
-                  contentOffset: { y },
+                  contentOffset: {y},
                 },
               },
             ])}
@@ -125,6 +124,6 @@ class Container extends React.PureComponent<Props> {
   private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
-const mapDispatchToProps: DispatchProps = { navigate };
+const mapDispatchToProps: DispatchProps = {navigate};
 
 export default connect(null, mapDispatchToProps)(Container);

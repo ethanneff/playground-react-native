@@ -1,10 +1,10 @@
-import React, { memo, useState, useCallback } from 'react';
-import { View, Switch, ScrollView } from 'react-native';
-import { Screen, Text, TextInput, Button } from '../../../../components';
-import { useColor, useNav } from '../../../../hooks';
-import { Theme } from '../../../../utils';
+import React, {memo, useState, useCallback} from 'react';
+import {View, Switch, ScrollView} from 'react-native';
+import {Screen, Text, TextInput, Button} from '../../../../components';
+import {useColor, useNav} from '../../../../hooks';
+import {Theme} from '../../../../utils';
 import dayjs from 'dayjs';
-import { Section } from './Section';
+import {Section} from './Section';
 
 // https://www.startupschool.org/updates/250717/edit
 
@@ -44,40 +44,40 @@ export default memo(function DebugStartup() {
 
   const updateForm = useCallback(
     (key: keyof Form, value: string | boolean) =>
-      setForm((state) => ({ ...state, [key]: value })),
-    []
+      setForm((state) => ({...state, [key]: value})),
+    [],
   );
   const handleLaunchChange = useCallback(
     (value: boolean) => updateForm('launched', value),
-    [updateForm]
+    [updateForm],
   );
   const handleUserChange = useCallback(
     (value: string) => updateForm('usersTalkedTo', value),
-    [updateForm]
+    [updateForm],
   );
   const handleMoraleChange = useCallback(
     (value: string) => updateForm('morale', value),
-    [updateForm]
+    [updateForm],
   );
   const handleObstacleChange = useCallback(
     (value: string) => updateForm('biggestObstacle', value),
-    [updateForm]
+    [updateForm],
   );
   const handleLearnChange = useCallback(
     (value: string) => updateForm('usersLearnedFrom', value),
-    [updateForm]
+    [updateForm],
   );
   const handleMetricChange = useCallback(
     (value: string) => updateForm('primaryMetric', value),
-    [updateForm]
+    [updateForm],
   );
   const handleGoalChange = useCallback(
     (value: string) => updateForm('topGoals', value),
-    [updateForm]
+    [updateForm],
   );
   const handleWeeksToLaunchChange = useCallback(
     (value: string) => updateForm('launchWeeks', value),
-    [updateForm]
+    [updateForm],
   );
 
   const handleSubmit = useCallback(() => undefined, []);
@@ -89,16 +89,14 @@ export default memo(function DebugStartup() {
           paddingBottom: Theme.padding.p04,
           borderBottomColor: color.secondary,
           borderBottomWidth: 2,
-        }}
-      >
+        }}>
         <Text h4 center title={dayjs().format('MMM DD, YYYY')} />
       </View>
       <ScrollView
         contentContainerStyle={{
           backgroundColor: color.light,
           padding: Theme.padding.p04,
-        }}
-      >
+        }}>
         <Section title="Launch">
           <View>
             <Text title="Are you launched?" />

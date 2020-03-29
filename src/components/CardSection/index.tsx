@@ -1,12 +1,12 @@
-import React, { memo } from 'react';
-import { StyleSheet, TextStyle, View } from 'react-native';
-import { useColor } from '../../hooks';
+import React, {memo} from 'react';
+import {StyleSheet, TextStyle, View} from 'react-native';
+import {useColor} from '../../hooks';
 
 interface Props {
   style?: TextStyle;
 }
 
-export const CardSection: React.FC<Props> = memo(({ style, children }) => {
+export const CardSection: React.FC<Props> = memo(({style, children}) => {
   const color = useColor();
   const styles = StyleSheet.create({
     containerStyle: {

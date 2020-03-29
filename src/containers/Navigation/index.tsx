@@ -1,37 +1,37 @@
-import React, { Suspense, lazy, memo } from 'react';
-import { useRootSelector } from '../../utils';
-import { ErrorBoundary } from '../../components/ErrorBoundary';
-import { ActivityIndicator, StyleSheet, View } from 'react-native';
-import { useColor } from '../../hooks';
+import React, {Suspense, lazy, memo} from 'react';
+import {useRootSelector} from '../../utils';
+import {ErrorBoundary} from '../../components/ErrorBoundary';
+import {ActivityIndicator, StyleSheet, View} from 'react-native';
+import {useColor} from '../../hooks';
 
 // screens
 const Portfolio = lazy(() => import('../../apps/Portfolio/screens/Main'));
 const PortfolioSettings = lazy(() =>
-  import('../../apps/Portfolio/screens/Settings')
+  import('../../apps/Portfolio/screens/Settings'),
 );
 const PortfolioLanding = lazy(() =>
-  import('../../apps/Portfolio/screens/Landing')
+  import('../../apps/Portfolio/screens/Landing'),
 );
 const PortfolioNotFound = lazy(() =>
-  import('../../apps/Portfolio/screens/NotFound')
+  import('../../apps/Portfolio/screens/NotFound'),
 );
 const PortfolioForgot = lazy(() =>
-  import('../../apps/Portfolio/screens/ForgotPassword')
+  import('../../apps/Portfolio/screens/ForgotPassword'),
 );
 const PortfolioLogin = lazy(() => import('../../apps/Portfolio/screens/Login'));
 const Checklists = lazy(() => import('../../apps/Checklists/screens/Main'));
 const ChecklistsList = lazy(() => import('../../apps/Checklists/screens/List'));
 const ChecklistsListCreate = lazy(() =>
-  import('../../apps/Checklists/screens/ListCreate')
+  import('../../apps/Checklists/screens/ListCreate'),
 );
 const ChecklistsListUpdate = lazy(() =>
-  import('../../apps/Checklists/screens/ListUpdate')
+  import('../../apps/Checklists/screens/ListUpdate'),
 );
 const ChecklistsItemCreate = lazy(() =>
-  import('../../apps/Checklists/screens/ItemCreate')
+  import('../../apps/Checklists/screens/ItemCreate'),
 );
 const ChecklistsItemUpdate = lazy(() =>
-  import('../../apps/Checklists/screens/ItemUpdate')
+  import('../../apps/Checklists/screens/ItemUpdate'),
 );
 const Focus = lazy(() => import('../../apps/Focus'));
 const CantHurtMe = lazy(() => import('../../apps/CantHurtMe/screens/Main'));
@@ -51,18 +51,18 @@ const DebugSwipeFeed = lazy(() => import('../../apps/Debug/screens/SwipeFeed'));
 const DebugReminder = lazy(() => import('../../apps/Debug/screens/Reminder'));
 const DebugTinder = lazy(() => import('../../apps/Debug/screens/Tinder'));
 const DebugGameOfLife = lazy(() =>
-  import('../../apps/Debug/screens/GameOfLife')
+  import('../../apps/Debug/screens/GameOfLife'),
 );
 const DebugImage = lazy(() =>
-  import('../../apps/Debug/screens/ImageCollection')
+  import('../../apps/Debug/screens/ImageCollection'),
 );
 const DebugInput = lazy(() => import('../../apps/Debug/screens/Input'));
 const DebugOKRs = lazy(() => import('../../apps/Debug/screens/OKRs'));
 const DebugPinchSpread = lazy(() =>
-  import('../../apps/Debug/screens/PinchSpread')
+  import('../../apps/Debug/screens/PinchSpread'),
 );
 const DebugQuestionnaire = lazy(() =>
-  import('../../apps/Debug/screens/Questionnaire')
+  import('../../apps/Debug/screens/Questionnaire'),
 );
 const DebugSearchBar = lazy(() => import('../../apps/Debug/screens/SearchBar'));
 const DebugStartup = lazy(() => import('../../apps/Debug/screens/Startup'));

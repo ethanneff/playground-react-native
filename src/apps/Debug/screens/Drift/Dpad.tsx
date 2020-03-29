@@ -1,7 +1,7 @@
-import React, { memo, useCallback, useContext } from 'react';
-import { View, TouchableOpacity } from 'react-native';
-import { useDropShadow } from '../../../../hooks';
-import { DriftContext } from './Context';
+import React, {memo, useCallback, useContext} from 'react';
+import {View, TouchableOpacity} from 'react-native';
+import {useDropShadow} from '../../../../hooks';
+import {DriftContext} from './Context';
 
 export type ColorChoice =
   | 'slateblue'
@@ -12,7 +12,7 @@ export type ColorChoice =
 
 export const Dpad = memo(function Dpad() {
   const useShadow = useDropShadow(10);
-  const { dispatch } = useContext(DriftContext);
+  const {dispatch} = useContext(DriftContext);
   const size = 50;
   const box = {
     width: size,
@@ -20,8 +20,8 @@ export const Dpad = memo(function Dpad() {
   };
 
   const onPress = useCallback(
-    (payload: ColorChoice) => () => dispatch({ type: 'addColor', payload }),
-    [dispatch]
+    (payload: ColorChoice) => () => dispatch({type: 'addColor', payload}),
+    [dispatch],
   );
 
   return (
@@ -30,10 +30,9 @@ export const Dpad = memo(function Dpad() {
         position: 'absolute',
         bottom: size,
         right: size,
-        transform: [{ rotate: '45deg' }],
-      }}
-    >
-      <View style={{ flexDirection: 'row' }}>
+        transform: [{rotate: '45deg'}],
+      }}>
+      <View style={{flexDirection: 'row'}}>
         <TouchableOpacity
           onPress={onPress('violet')}
           style={{
@@ -53,7 +52,7 @@ export const Dpad = memo(function Dpad() {
           }}
         />
       </View>
-      <View style={{ flexDirection: 'row' }}>
+      <View style={{flexDirection: 'row'}}>
         <TouchableOpacity
           onPress={onPress('slateblue')}
           style={{

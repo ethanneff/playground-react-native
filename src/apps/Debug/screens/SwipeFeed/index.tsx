@@ -1,4 +1,4 @@
-import React, { memo, useState, useCallback, useRef } from 'react';
+import React, {memo, useState, useCallback, useRef} from 'react';
 import {
   View,
   Image,
@@ -7,24 +7,18 @@ import {
   Animated,
   TouchableOpacity,
 } from 'react-native';
-import {
-  Screen,
-  Text,
-  Icon,
-  Card,
-  EllipsizeMode,
-} from '../../../../components';
+import {Screen, Text, Icon, Card, EllipsizeMode} from '../../../../components';
 import {
   useColor,
   useNav,
   useDropShadow,
   useNativeDriver,
 } from '../../../../hooks';
-import { Theme, useRootSelector } from '../../../../utils';
-import dayjs, { Dayjs } from 'dayjs';
+import {Theme, useRootSelector} from '../../../../utils';
+import dayjs, {Dayjs} from 'dayjs';
 import 'react-native-get-random-values';
-import { v4 } from 'uuid';
-import { getWidth } from '../../../../models';
+import {v4} from 'uuid';
+import {getWidth} from '../../../../models';
 
 interface SwipeCard extends SwipeItem {
   index: number;
@@ -68,14 +62,14 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
     (event) => {
       cardWidth.current = event.nativeEvent.layout.width;
     },
-    [cardWidth]
+    [cardWidth],
   );
 
   const setCardWidth = useCallback(
     (dx: number) => {
       props.onSwipePercentChange(1 - dx / cardWidth.current);
     },
-    [cardWidth, props]
+    [cardWidth, props],
   );
 
   const panResponder = PanResponder.create({
@@ -85,7 +79,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
       Math.abs(gesture.dy) > touchThreshold,
     onPanResponderMove: (_, gesture) => {
       setCardWidth(gesture.dx);
-      position.setValue({ x: gesture.dx, y: gesture.dy });
+      position.setValue({x: gesture.dx, y: gesture.dy});
     },
     onPanResponderRelease: (_, gesture) => {
       const x =
@@ -95,7 +89,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
           ? -width
           : 0;
       Animated.spring(position, {
-        toValue: { x, y: 0 },
+        toValue: {x, y: 0},
         useNativeDriver: useDriver,
       }).start();
     },
@@ -115,10 +109,9 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
         ...dropShadow,
         borderRadius: Theme.padding.p01,
         borderColor: color.brand,
-      }}
-    >
-      <TouchableOpacity style={{ flex: 1 }} onPress={props.onSwipeComplete}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
+      }}>
+      <TouchableOpacity style={{flex: 1}} onPress={props.onSwipeComplete}>
+        <View style={{flex: 1, flexDirection: 'row'}}>
           {props.image && (
             <Image
               source={props.image}
@@ -129,31 +122,30 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
               }}
             />
           )}
-          <View style={{ flex: 1, padding: Theme.padding.p02 }}>
+          <View style={{flex: 1, padding: Theme.padding.p02}}>
             <View
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
-              }}
-            >
+              }}>
               <Icon name={props.icon} size={15} />
               <Text
                 title={props.title}
                 overline
                 bold
-                style={{ paddingHorizontal: Theme.padding.p01 }}
+                style={{paddingHorizontal: Theme.padding.p01}}
               />
               <Text title={formatRelativeDate(props.date)} />
             </View>
             <Text
-              style={{ flex: 1, paddingTop: Theme.padding.p02 }}
+              style={{flex: 1, paddingTop: Theme.padding.p02}}
               title={props.body}
               numberOfLines={2}
               ellipsizeMode={EllipsizeMode.Tail}
             />
             <Text
               title={props.button.toUpperCase()}
-              style={{ color: color.primary }}
+              style={{color: color.primary}}
             />
           </View>
         </View>
@@ -260,8 +252,7 @@ const Badge = memo((props: BadgeProps) => {
         zIndex: props.count * 10,
         alignItems: 'center',
         justifyContent: 'center',
-      }}
-    >
+      }}>
       <View
         style={{
           width: badgeSize,
@@ -270,11 +261,10 @@ const Badge = memo((props: BadgeProps) => {
           backgroundColor: color.danger,
           alignItems: 'center',
           justifyContent: 'center',
-        }}
-      >
+        }}>
         <Text
           title={`${props.count}`}
-          style={{ color: color.background }}
+          style={{color: color.background}}
           adjustsFontSizeToFit
         />
       </View>
@@ -312,7 +302,7 @@ const SwipeCards = memo(function SwipeCardList({
   }, []);
 
   return !feed.items.length ? null : (
-    <View style={{ height }}>
+    <View style={{height}}>
       {feed.items.map((item, index) => (
         <SwipeCard
           {...item}
@@ -333,7 +323,7 @@ const ImagePlaceholder = memo(function ImagePlaceholder() {
     <Card noPadding>
       <Image
         source={require('./placeholder.png')}
-        style={{ width: '100%', height: 100, borderRadius: 4 }}
+        style={{width: '100%', height: 100, borderRadius: 4}}
       />
     </Card>
   );
@@ -343,7 +333,7 @@ export default memo(function SwipeFeed() {
   const nav = useNav();
   return (
     <Screen onLeftPress={nav.to('debug')} title="Swipe Feed">
-      <View style={{ padding: Theme.padding.p04 }}>
+      <View style={{padding: Theme.padding.p04}}>
         <ImagePlaceholder />
         <ImagePlaceholder />
         <SwipeCards items={initialItems} />

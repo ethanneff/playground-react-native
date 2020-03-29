@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
-import { TouchableOpacity, View } from 'react-native';
-import { EllipsizeMode, Icon, Text } from '../../../components';
-import { Theme } from '../../../utils';
-import { Item } from './List';
-import { ListSection } from './ListSection';
-import { useColor } from '../../../hooks';
+import React, {memo} from 'react';
+import {TouchableOpacity, View} from 'react-native';
+import {EllipsizeMode, Icon, Text} from '../../../components';
+import {Theme} from '../../../utils';
+import {Item} from './List';
+import {ListSection} from './ListSection';
+import {useColor} from '../../../hooks';
 
 interface Props {
   showSection: boolean;
@@ -14,7 +14,7 @@ interface Props {
 }
 
 export const ListItem = memo(
-  ({ showSection, item, onItemPress, currentItem }: Props) => {
+  ({showSection, item, onItemPress, currentItem}: Props) => {
     const color = useColor();
     const future = item.id > Date.now();
     const iconColor = future ? color.secondary : color.success;
@@ -25,8 +25,7 @@ export const ListItem = memo(
           borderColor: currentItem ? color.primary : color.background,
           borderLeftWidth: Theme.padding.p01,
           flex: 1,
-        }}
-      >
+        }}>
         <TouchableOpacity
           style={{
             flex: 1,
@@ -36,19 +35,17 @@ export const ListItem = memo(
             paddingVertical: Theme.padding.p02,
           }}
           onPress={() => onItemPress(item)} // TODO: usecallback
-          disabled={future}
-        >
+          disabled={future}>
           <View
             style={{
               flexDirection: 'row',
               width: Theme.padding.p20,
-            }}
-          >
+            }}>
             <Icon
               name={future ? 'cancel' : 'checkbox-blank-circle'}
               size={14}
               color={iconColor}
-              style={{ paddingRight: Theme.padding.p01 }}
+              style={{paddingRight: Theme.padding.p01}}
             />
             <Text title={`${item.hour} ${item.zone}`} />
           </View>
@@ -66,5 +63,5 @@ export const ListItem = memo(
         {showSection && <ListSection item={item} />}
       </View>
     );
-  }
+  },
 );

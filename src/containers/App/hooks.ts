@@ -1,6 +1,6 @@
-import NetInfo, { NetInfoState } from '@react-native-community/netinfo';
-import { useCallback, useEffect } from 'react';
-import { AppState, AppStateStatus, Dimensions, Keyboard } from 'react-native';
+import NetInfo, {NetInfoState} from '@react-native-community/netinfo';
+import {useCallback, useEffect} from 'react';
+import {AppState, AppStateStatus, Dimensions, Keyboard} from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import {
   DimensionsProps,
@@ -10,7 +10,7 @@ import {
   updateDimension,
   updateNetwork,
 } from '../../models';
-import { useRootDispatch } from '../../utils';
+import {useRootDispatch} from '../../utils';
 
 export const useKeyboard = () => {
   const dispatch = useRootDispatch();
@@ -36,7 +36,7 @@ export const useDimensions = () => {
 
   const handleChange = useCallback(
     (change: DimensionsProps) => dispatch(updateDimension(change)),
-    [dispatch]
+    [dispatch],
   );
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export const useAppState = () => {
 
   const handleChange = useCallback(
     (change: AppStateStatus) => dispatch(changeAppStatus(change)),
-    [dispatch]
+    [dispatch],
   );
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export const useNetInfo = () => {
 
   const handleChange = useCallback(
     (change: NetInfoState) => dispatch(updateNetwork(change)),
-    [dispatch]
+    [dispatch],
   );
 
   useEffect(() => {
@@ -153,6 +153,6 @@ export const useDeviceInfo = async () => {
       supported32BitAbis: await DeviceInfo.supported32BitAbis(),
       supported64BitAbis: await DeviceInfo.supported64BitAbis(),
       supportedAbis: await DeviceInfo.supportedAbis(),
-    })
+    }),
   );
 };

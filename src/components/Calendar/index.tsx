@@ -1,7 +1,7 @@
-import React, { memo, useState, useCallback } from 'react';
-import { CalendarMatrix, getCalendarMatrix, addMonths } from './utils';
-import { CalendarHeader } from './Header';
-import { CalendarMonth } from './Month';
+import React, {memo, useState, useCallback} from 'react';
+import {CalendarMatrix, getCalendarMatrix, addMonths} from './utils';
+import {CalendarHeader} from './Header';
+import {CalendarMonth} from './Month';
 
 type State = {
   today: Date;
@@ -26,7 +26,7 @@ const getState = (date: Date) => ({
   selected: undefined,
 });
 
-export const Calendar = memo(function Calendar({ hiddenDays }: Props) {
+export const Calendar = memo(function Calendar({hiddenDays}: Props) {
   const [calendar, setCalendar] = useState<State>(initialState);
 
   const onSelected = useCallback(
@@ -37,7 +37,7 @@ export const Calendar = memo(function Calendar({ hiddenDays }: Props) {
         selected: id === calendar.selected ? undefined : id,
       }));
     },
-    [calendar.selected]
+    [calendar.selected],
   );
 
   const onMonthIncrease = useCallback(() => {

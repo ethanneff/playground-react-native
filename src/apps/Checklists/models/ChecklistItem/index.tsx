@@ -1,8 +1,8 @@
-import { createSelector } from 'reselect';
-import { ActionType, createAction, getType } from 'typesafe-actions';
-import { RootAction, RootState } from '../../../../containers';
-import { getCurrentChecklist } from '../Checklist';
-import { Errors } from '../../../../utils';
+import {createSelector} from 'reselect';
+import {ActionType, createAction, getType} from 'typesafe-actions';
+import {RootAction, RootState} from '../../../../containers';
+import {getCurrentChecklist} from '../Checklist';
+import {Errors} from '../../../../utils';
 
 /* ACTIONS */
 export const createChecklistItem = createAction('checklistItem/create')<
@@ -15,7 +15,7 @@ export const removeChecklistItem = createAction('checklistItem/remove')<
   string
 >();
 export const toggleChecklistItemComplete = createAction(
-  'checklistItem/toggleComplete'
+  'checklistItem/toggleComplete',
 )<string>();
 export const setActiveChecklistItem = createAction('checklistItem/setActive')<
   string
@@ -36,7 +36,7 @@ export const getCurrentActiveChecklistItemsOrderByCreatedAt = createSelector(
   (checklist, items) =>
     Object.values(items)
       .filter((item) => item.checklistId === checklist.id && item.active)
-      .sort((a, b) => a.createdAt - b.createdAt)
+      .sort((a, b) => a.createdAt - b.createdAt),
 );
 
 /* INTERFACES */
@@ -57,7 +57,7 @@ export type ChecklistItem = {
   createdAt: number;
   updatedAt: number;
 };
-export type ChecklistItems = { [key: string]: ChecklistItem };
+export type ChecklistItems = {[key: string]: ChecklistItem};
 export type ItemActions = ActionType<
   | typeof createChecklistItem
   | typeof removeChecklistItem
@@ -73,11 +73,11 @@ const initialState: ChecklistItemReducer = {
 };
 export const checklistItemReducer = (
   state: ChecklistItemReducer = initialState,
-  action: RootAction
+  action: RootAction,
 ): ChecklistItemReducer => {
   switch (action.type) {
     case getType(setActiveChecklistItem):
-      return { ...state, active: action.payload };
+      return {...state, active: action.payload};
     case getType(createChecklistItem):
       return {
         ...state,

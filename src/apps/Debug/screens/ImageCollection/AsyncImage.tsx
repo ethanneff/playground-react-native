@@ -1,6 +1,6 @@
 import React from 'react';
-import { ActivityIndicator, Animated, StyleSheet, View } from 'react-native';
-import { useNativeDriver } from '../../../../hooks';
+import {ActivityIndicator, Animated, StyleSheet, View} from 'react-native';
+import {useNativeDriver} from '../../../../hooks';
 interface Props {
   uri: string;
   height: number;
@@ -14,7 +14,7 @@ export function AsyncImage(props: Props) {
   const imageAnimated = new Animated.Value(0);
   const indicatorAnimated = new Animated.Value(1);
   const styles = StyleSheet.create({
-    indicatorOverlay: { justifyContent: 'center', position: 'absolute' },
+    indicatorOverlay: {justifyContent: 'center', position: 'absolute'},
   });
   const onImageLoad = () => {
     Animated.parallel([
@@ -28,21 +28,17 @@ export function AsyncImage(props: Props) {
       }),
     ]).start();
   };
-  const { uri, height, width, color = 'black', size = 'small' } = props;
-  const containerStyle = { width, height };
-  const imageStyle = [containerStyle, { opacity: imageAnimated }];
+  const {uri, height, width, color = 'black', size = 'small'} = props;
+  const containerStyle = {width, height};
+  const imageStyle = [containerStyle, {opacity: imageAnimated}];
   const indicatorStyle = [
     containerStyle,
-    { opacity: indicatorAnimated },
+    {opacity: indicatorAnimated},
     styles.indicatorOverlay,
   ];
   return (
     <View style={containerStyle}>
-      <Animated.Image
-        source={{ uri }}
-        style={imageStyle}
-        onLoad={onImageLoad}
-      />
+      <Animated.Image source={{uri}} style={imageStyle} onLoad={onImageLoad} />
       <Animated.View style={indicatorStyle}>
         <ActivityIndicator size={size} color={color} />
       </Animated.View>

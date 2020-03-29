@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, TextStyle, View } from 'react-native';
-import { Text } from '../Text';
+import {StyleSheet, TextStyle, View} from 'react-native';
+import {Text} from '../Text';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,7 +18,7 @@ export class Markdown extends React.PureComponent<Props> {
   private withoutSyntaxIndex = 2;
 
   public render() {
-    const { title, style } = this.props;
+    const {title, style} = this.props;
     const words = title.split(' ');
     return (
       <View style={styles.container}>

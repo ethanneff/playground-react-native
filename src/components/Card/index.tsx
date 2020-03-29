@@ -1,7 +1,7 @@
-import React, { memo } from 'react';
-import { StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
-import { Theme } from '../../utils';
-import { useColor, useDropShadow } from '../../hooks';
+import React, {memo} from 'react';
+import {StyleSheet, TouchableOpacity, View, ViewStyle} from 'react-native';
+import {Theme} from '../../utils';
+import {useColor, useDropShadow} from '../../hooks';
 
 interface Props {
   testID?: string;
@@ -77,10 +77,9 @@ export const Card: React.FC<Props> = memo(
         onPress={onPress && onPress}
         onLongPress={onLongPress && onLongPress}
         activeOpacity={onPress ? touchOpacity : 1}
-        disabled={!onPress}
-      >
+        disabled={!onPress}>
         <View style={contentStyles}>{children}</View>
       </TouchableOpacity>
     );
-  }
+  },
 );

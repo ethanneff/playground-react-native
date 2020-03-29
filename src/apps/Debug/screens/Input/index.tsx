@@ -1,6 +1,6 @@
-import React, { memo, useState } from 'react';
-import { Screen, TextInput, Button } from '../../../../components';
-import { useNav } from '../../../../hooks';
+import React, {memo, useState} from 'react';
+import {Screen, TextInput, Button} from '../../../../components';
+import {useNav} from '../../../../hooks';
 
 export default memo(function DebugInput() {
   const nav = useNav();
@@ -13,11 +13,11 @@ export default memo(function DebugInput() {
   });
 
   const handleChange = (key: string) => (val: string) => {
-    setForm((prev) => ({ ...prev, [key]: val }));
+    setForm((prev) => ({...prev, [key]: val}));
   };
 
   const handleSubmit = () => {
-    setForm((prev) => ({ ...prev, error: 'Invalid Email' }));
+    setForm((prev) => ({...prev, error: 'Invalid Email'}));
   };
 
   return (

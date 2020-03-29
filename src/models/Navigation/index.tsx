@@ -1,6 +1,6 @@
-import { ActionType, createAction, getType } from 'typesafe-actions';
-import { RootAction, RootState, screens } from '../../containers';
-import { logout } from '../Auth';
+import {ActionType, createAction, getType} from 'typesafe-actions';
+import {RootAction, RootState, screens} from '../../containers';
+import {logout} from '../Auth';
 
 /* ACTIONS */
 export const navigate = createAction('navigation/changeNavigation')<
@@ -26,7 +26,7 @@ export const navigationInitialState: Navigation = {
 };
 export function navigationReducer(
   state: Navigation = navigationInitialState,
-  action: RootAction
+  action: RootAction,
 ): Navigation {
   switch (action.type) {
     case getType(navigate):

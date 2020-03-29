@@ -1,5 +1,5 @@
-import { TextProps } from '.';
-import { Theme } from '../../utils';
+import {TextProps} from '.';
+import {Theme} from '../../utils';
 
 export const getFontSize = (props: TextProps) =>
   props.h1

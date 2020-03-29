@@ -1,9 +1,9 @@
-import React, { memo, useState } from 'react';
-import { Button, Screen, TextInput, Dialog } from '../../../../components';
-import { getCurrentChecklist, removeList, updateList } from '../../models';
-import { useNav } from '../../../../hooks';
-import { useRootSelector, useRootDispatch } from '../../../../utils';
-import { navigate } from '../../../../models';
+import React, {memo, useState} from 'react';
+import {Button, Screen, TextInput, Dialog} from '../../../../components';
+import {getCurrentChecklist, removeList, updateList} from '../../models';
+import {useNav} from '../../../../hooks';
+import {useRootSelector, useRootDispatch} from '../../../../utils';
+import {navigate} from '../../../../models';
 
 export default memo(function ChecklistUpdate() {
   const nav = useNav();
@@ -17,11 +17,11 @@ export default memo(function ChecklistUpdate() {
   const isInvalidForm = form.name.trim().length === 0;
 
   const handleNameChange = (name: string) =>
-    setForm((state) => ({ ...state, name }));
+    setForm((state) => ({...state, name}));
   const handleDescriptionChange = (description: string) =>
-    setForm((state) => ({ ...state, description }));
+    setForm((state) => ({...state, description}));
   const handleSubmit = () => {
-    const { name, description } = form;
+    const {name, description} = form;
     const now = Date.now();
     if (isInvalidForm) {
       return;
@@ -32,7 +32,7 @@ export default memo(function ChecklistUpdate() {
         name,
         description,
         updatedAt: now,
-      })
+      }),
     );
     dispatch(navigate('checklists'));
   };
@@ -51,8 +51,7 @@ export default memo(function ChecklistUpdate() {
       <Screen
         onLeftPress={nav.to('checklists')}
         title={'Update Checklist'}
-        gutter
-      >
+        gutter>
         <TextInput
           title="name"
           value={form.name}

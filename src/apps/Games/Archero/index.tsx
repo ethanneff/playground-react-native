@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, {memo, useState} from 'react';
 import {
   Animated,
   PanResponder,
@@ -6,9 +6,9 @@ import {
   View,
   LayoutChangeEvent,
 } from 'react-native';
-import { useColor, useNativeDriver, useNav } from '../../../hooks';
-import { colorWithOpacity, useRootSelector, Theme } from '../../../utils';
-import { Screen } from '../../../components';
+import {useColor, useNativeDriver, useNav} from '../../../hooks';
+import {colorWithOpacity, useRootSelector, Theme} from '../../../utils';
+import {Screen} from '../../../components';
 
 const charSize = 50;
 const charSpeed = 40;
@@ -23,8 +23,8 @@ export default memo(function Archero() {
   const nav = useNav();
   const useDriver = useNativeDriver();
   const window = useRootSelector((state) => state.dimension.window);
-  const [dimensions, setDimensions] = useState({ width: 1000, height: 1000 });
-  const { width, height } = dimensions;
+  const [dimensions, setDimensions] = useState({width: 1000, height: 1000});
+  const {width, height} = dimensions;
   const smallest = width > height ? height : width;
   const joystickSize = smallest / 3;
   const joystickCenter = joystickSize / 2;
@@ -37,13 +37,13 @@ export default memo(function Archero() {
     x: width / 2 - charSize / 2,
     y: height / 2 - charSize / 2,
   };
-  const initialThumbLoc = { x: 0, y: 0 };
+  const initialThumbLoc = {x: 0, y: 0};
   let characterValueXY = initialCharLoc;
   const joystick: Animated.ValueXY = new Animated.ValueXY(initialJoystickLoc);
   const thumb: Animated.ValueXY = new Animated.ValueXY(initialThumbLoc);
   const character: Animated.ValueXY = new Animated.ValueXY(initialCharLoc);
-  character.addListener(({ x, y }) => {
-    characterValueXY = { x, y };
+  character.addListener(({x, y}) => {
+    characterValueXY = {x, y};
   });
 
   const moveCharacter = (dx: number, dy: number) => {
@@ -52,7 +52,7 @@ export default memo(function Archero() {
     const x = getBounds(characterValueXY.x + vx, width, charSize);
     const y = getBounds(characterValueXY.y + vy, height, charSize);
     Animated.spring(character, {
-      toValue: { x, y },
+      toValue: {x, y},
       useNativeDriver: useDriver,
     }).start();
   };
@@ -64,7 +64,7 @@ export default memo(function Archero() {
     // const zy = Math.sqrt(Math.pow(vx, 2) + Math.pow(vy, 2));
     // Math.pow(thumbSize, 2) = Math.pow(vx, 2) + Math.pow(y, 2)
     Animated.spring(thumb, {
-      toValue: { x: vx, y: vy },
+      toValue: {x: vx, y: vy},
       useNativeDriver: useDriver,
     }).start();
   };
@@ -77,7 +77,7 @@ export default memo(function Archero() {
       x: x0 - joystickCenter - offset2 / 2,
       y: y0 - joystickCenter - offset / 2 - joystickSize / 1.5,
     };
-    Animated.spring(joystick, { toValue, useNativeDriver: useDriver }).start();
+    Animated.spring(joystick, {toValue, useNativeDriver: useDriver}).start();
   };
 
   const resetJoystick = () => {
@@ -110,16 +110,15 @@ export default memo(function Archero() {
 
   const onLayout = (event: LayoutChangeEvent) => {
     const layout = event.nativeEvent.layout;
-    setDimensions({ width: layout.width, height: layout.height });
+    setDimensions({width: layout.width, height: layout.height});
   };
 
   return (
     <Screen onLeftPress={nav.to('portfolioLanding')} title="Archero">
       <View
         onLayout={onLayout}
-        style={[{ flex: 1, backgroundColor: color.success }]}
-        {...panGesture.panHandlers}
-      >
+        style={[{flex: 1, backgroundColor: color.success}]}
+        {...panGesture.panHandlers}>
         <Animated.View
           style={[
             character.getLayout(),
@@ -141,8 +140,7 @@ export default memo(function Archero() {
               height: joystickSize,
               backgroundColor: Theme.color.overlay,
             },
-          ]}
-        >
+          ]}>
           <View
             style={{
               justifyContent: 'center',
@@ -151,8 +149,7 @@ export default memo(function Archero() {
               width: thumbSize,
               height: thumbSize,
               backgroundColor: Theme.color.overlay,
-            }}
-          >
+            }}>
             <Animated.View
               style={[
                 thumb.getLayout(),

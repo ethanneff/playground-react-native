@@ -1,12 +1,12 @@
-import React, { memo, useState, useCallback } from 'react';
-import { Screen, Text, Button, Modal } from '../../../../components';
-import { useNav } from '../../../../hooks';
-import dayjs, { Dayjs } from 'dayjs';
+import React, {memo, useState, useCallback} from 'react';
+import {Screen, Text, Button, Modal} from '../../../../components';
+import {useNav} from '../../../../hooks';
+import dayjs, {Dayjs} from 'dayjs';
 import Reminders from './Reminders';
 import CreateReminderModal from './CreateReminderModal';
 import 'react-native-get-random-values';
-import { v4 } from 'uuid';
-import { RateApp } from '../../../../features';
+import {v4} from 'uuid';
+import {RateApp} from '../../../../features';
 
 type ReminderType = 'one time' | 'repeat' | 'location';
 export type Reminder = {
@@ -47,7 +47,7 @@ export default memo(function DebugReminder() {
       if (date.isBefore(dayjs())) {
         setForm((prev) => ({
           ...prev,
-          modals: { ...prev.modals, customDate: true },
+          modals: {...prev.modals, customDate: true},
         }));
         return;
       }
@@ -67,27 +67,27 @@ export default memo(function DebugReminder() {
         ],
       }));
     },
-    []
+    [],
   );
 
   const handleCustomDateClose = useCallback(() => {
     setForm((prev) => ({
       ...prev,
-      modals: { ...prev.modals, customDate: false },
+      modals: {...prev.modals, customDate: false},
     }));
   }, []);
 
   const handleCreateReminder = useCallback(() => {
     setForm((prev) => ({
       ...prev,
-      modals: { ...prev.modals, createReminder: true },
+      modals: {...prev.modals, createReminder: true},
     }));
   }, []);
 
   const handleCreateReminderClose = useCallback(() => {
     setForm((prev) => ({
       ...prev,
-      modals: { ...prev.modals, createReminder: false },
+      modals: {...prev.modals, createReminder: false},
     }));
   }, []);
 
@@ -95,17 +95,17 @@ export default memo(function DebugReminder() {
     (id: string) => () => {
       setForm((prev) => ({
         ...prev,
-        modals: { ...prev.modals, location: true },
-        selected: { location: id },
+        modals: {...prev.modals, location: true},
+        selected: {location: id},
       }));
     },
-    []
+    [],
   );
 
   const handleLocationClose = useCallback(() => {
     setForm((prev) => ({
       ...prev,
-      modals: { ...prev.modals, location: false },
+      modals: {...prev.modals, location: false},
     }));
   }, []);
 

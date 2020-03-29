@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
-import { Animated, StyleSheet, TextStyle, StyleProp } from 'react-native';
-import { Theme, colorWithOpacity } from '../../utils';
-import { useNativeDriver, useColor } from '../../hooks';
-import { getTextColorPercent, getFontSize } from './utils';
+import React, {memo} from 'react';
+import {Animated, StyleSheet, TextStyle, StyleProp} from 'react-native';
+import {Theme, colorWithOpacity} from '../../utils';
+import {useNativeDriver, useColor} from '../../hooks';
+import {getTextColorPercent, getFontSize} from './utils';
 
 export enum EllipsizeMode {
   Head = 'head',
@@ -116,7 +116,7 @@ export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
     center && styles.center,
     centerVertically && styles.centerVertically,
     bold && styles.bold,
-    { opacity },
+    {opacity},
     invisible && styles.invisible,
     style,
   ];
@@ -127,8 +127,7 @@ export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
       ellipsizeMode={ellipsizeMode}
       numberOfLines={numberOfLines}
       style={textStyle}
-      onPress={onPress ? handlePress : undefined}
-    >
+      onPress={onPress ? handlePress : undefined}>
       {text}
     </Animated.Text>
   );

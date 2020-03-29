@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, {memo} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -6,9 +6,9 @@ import {
   StyleProp,
   ViewStyle,
 } from 'react-native';
-import { Text, Icon } from '../../../../components';
-import { Theme } from '../../../../utils';
-import { useColor } from '../../../../hooks';
+import {Text, Icon} from '../../../../components';
+import {Theme} from '../../../../utils';
+import {useColor} from '../../../../hooks';
 
 interface Props {
   title: string;
@@ -67,8 +67,7 @@ export const Item = memo(function ReminderItem({
     <TouchableOpacity
       key={title}
       style={[styles.button, style]}
-      onPress={onPress}
-    >
+      onPress={onPress}>
       <View style={styles.container}>
         <View style={styles.textContainer}>
           <Text body1 title={title} style={styles.title} />

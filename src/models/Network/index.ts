@@ -3,9 +3,9 @@ import {
   NetInfoState,
   NetInfoStateType,
 } from '../../conversions';
-import { ActionType, createAction, getType } from 'typesafe-actions';
-import { RootAction } from '../../containers';
-import { logout } from '../Auth';
+import {ActionType, createAction, getType} from 'typesafe-actions';
+import {RootAction} from '../../containers';
+import {logout} from '../Auth';
 
 /* ACTIONS */
 export const updateNetwork = createAction('network/UPDATE_NETWORK')<
@@ -31,7 +31,7 @@ export const networkInitialState: NetworkState = {
 
 export const networkReducer = (
   state: NetworkState = networkInitialState,
-  action: RootAction
+  action: RootAction,
 ): NetworkState => {
   switch (action.type) {
     case getType(updateNetwork):

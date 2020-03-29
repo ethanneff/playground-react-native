@@ -1,7 +1,7 @@
-import React, { memo, useCallback } from 'react';
-import { View, TouchableOpacity } from 'react-native';
-import { Icon } from '../../components';
-import { useColor } from '../../hooks';
+import React, {memo, useCallback} from 'react';
+import {View, TouchableOpacity} from 'react-native';
+import {Icon} from '../../components';
+import {useColor} from '../../hooks';
 
 interface Props {
   size: number;
@@ -30,10 +30,10 @@ export const Rating = memo(function RatingMemo(props: Props) {
     (index: number) => () => {
       onPress(index);
     },
-    [onPress]
+    [onPress],
   );
   return (
-    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
       {Array(count)
         .fill(0)
         .map((_, index) => (

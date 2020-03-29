@@ -1,7 +1,7 @@
-import { Dimensions, ScaledSize } from 'react-native';
-import { ActionType, createAction, getType } from 'typesafe-actions';
-import { RootAction, RootState } from '../../containers';
-import { logout } from '../Auth';
+import {Dimensions, ScaledSize} from 'react-native';
+import {ActionType, createAction, getType} from 'typesafe-actions';
+import {RootAction, RootState} from '../../containers';
+import {logout} from '../Auth';
 
 /* ACTIONS */
 export const updateDimension = createAction('dimension/UPDATE_DIMENSION')<
@@ -39,7 +39,7 @@ export const dimensionInitialState: DimensionState = {
 
 export const dimensionReducer = (
   state: DimensionState = dimensionInitialState,
-  action: RootAction
+  action: RootAction,
 ): DimensionState => {
   switch (action.type) {
     case getType(updateDimension):
