@@ -40,7 +40,6 @@ const Activity = lazy(() => import('../../apps/Activity'));
 const Debug = lazy(() => import('../../apps/Debug/screens/Main'));
 const DebugArticle = lazy(() => import('../../apps/Debug/screens/Article'));
 const DebugBall = lazy(() => import('../../apps/Debug/screens/Ball'));
-const DebugCards = lazy(() => import('../../apps/Debug/screens/Cards'));
 const DebugChat = lazy(() => import('../../apps/Debug/screens/Chat'));
 const DebugColors = lazy(() => import('../../apps/Debug/screens/Colors'));
 const DebugDarkMode = lazy(() => import('../../apps/Debug/screens/DarkMode'));
@@ -86,7 +85,6 @@ export const screens = {
   debug: <Debug />,
   debugArticle: <DebugArticle />,
   debugBall: <DebugBall />,
-  debugCards: <DebugCards />,
   debugChat: <DebugChat />,
   debugDarkMode: <DebugDarkMode />,
   debugDrag: <DebugDrag />,

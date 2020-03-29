@@ -6,7 +6,6 @@ import {
 } from './..';
 import {NetInfoState} from '@react-native-community/netinfo';
 import {NetInfoStateType} from './../../../conversions/NetInfo/index.web';
-
 import {getType} from 'typesafe-actions';
 import {logout, loginRequest} from '../../Auth';
 
