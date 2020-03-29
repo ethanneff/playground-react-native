@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.22.9](https://github.com/ethanneff/example/compare/v2.22.8...v2.22.9) (2020-03-29)
+
+
+### Bug Fixes
+
+* update snaps ([b843265](https://github.com/ethanneff/example/commit/b843265fb1a144898b4a4c068d14315a86d4abf4))
+* update to react native default prettier ([d5bd85d](https://github.com/ethanneff/example/commit/d5bd85dcf704d226a4b16bc6b33935b6521a5fd3))
+* update to RN 62 ([822b5a4](https://github.com/ethanneff/example/commit/822b5a4226d11f14cc268e82cbc9432e8e39793e))
+
 ## [2.22.8](https://github.com/ethanneff/example/compare/v2.22.7...v2.22.8) (2020-03-27)
 
 
