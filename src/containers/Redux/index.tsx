@@ -54,7 +54,6 @@ import {
 import {Storage} from '../../conversions';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
-
 import {
   ChatMessageReducer,
   chatMessageReducer,

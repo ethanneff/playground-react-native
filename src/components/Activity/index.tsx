@@ -10,7 +10,6 @@ import {
 } from './utils';
 import {Week, ActivityWeek} from './Week';
 import {Text} from '../Text';
-
 import {Button} from '../Button';
 import {ActivityDay} from './Day';
 import {useColor} from '../../hooks';
