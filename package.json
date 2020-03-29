@@ -128,6 +128,9 @@
   },
   "jest": {
     "preset": "react-native",
+    "moduleNameMapper": {
+      "\\.(pdf|mp3)$": "<rootDir>/src/utils/TestFiles/index.ts"
+    },
     "setupFiles": [
       "<rootDir>/src/utils/TestMocks/index.ts"
     ],

@@ -1,4 +1,15 @@
-import { NativeModules } from 'react-native';
+import {NativeModules} from 'react-native';
+
+jest.mock('react-native-sound', () => {
+  return class Mock {
+    constructor() {}
+    setVolume = jest.fn();
+    setNumberOfLoops = jest.fn();
+    play = jest.fn();
+    stop = jest.fn();
+    static setCategory = jest.fn();
+  };
+});
 
 jest.mock('react-native-device-info', () => ({
   getAPILevel: jest.fn(),
