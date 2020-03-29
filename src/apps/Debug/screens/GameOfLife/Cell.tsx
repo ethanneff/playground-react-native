@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {useColor} from '../../../../hooks';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity} from '../../../../components';
 
 interface CellProps {
   x: number;

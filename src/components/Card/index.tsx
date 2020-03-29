@@ -1,7 +1,8 @@
 import React, {memo} from 'react';
-import {StyleSheet, TouchableOpacity, View, ViewStyle} from 'react-native';
+import {StyleSheet, View, ViewStyle} from 'react-native';
 import {Theme} from '../../utils';
 import {useColor, useDropShadow} from '../../hooks';
+import {TouchableOpacity} from '../TouchableOpacity';
 
 interface Props {
   testID?: string;

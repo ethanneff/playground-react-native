@@ -1,8 +1,8 @@
 import React, {memo} from 'react';
-import {TouchableOpacity} from 'react-native';
 import {useColor} from '../../hooks';
 import {colorWithOpacity} from '../../utils';
 import isToday from 'date-fns/isToday';
+import {TouchableOpacity} from '../TouchableOpacity';
 
 export interface ActivityDay {
   date: number;

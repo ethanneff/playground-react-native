@@ -1,6 +1,7 @@
 import React, {memo} from 'react';
-import {TextStyle, TouchableOpacity, ViewStyle, StyleProp} from 'react-native';
+import {TextStyle, ViewStyle, StyleProp} from 'react-native';
 import {Text} from '../Text';
+import {TouchableOpacity} from '../TouchableOpacity';
 import {useColor, useDropShadow} from '../../hooks';
 import {getStyles} from './utils';
 import {Color} from '../../models';
@@ -11,7 +12,7 @@ styling: https://material.io/design/components/buttons.html#usage
 
 export type ButtonEmphasis = 'low' | 'medium' | 'high';
 
-export interface ButtonProps {
+interface Props {
   /* content */
   title: string;
   /* styling */
@@ -37,8 +38,8 @@ export interface ButtonProps {
   onLongPress?(): void;
 }
 
-export const Button: React.FC<ButtonProps> = memo((props) => {
-  const {
+export const Button = memo(
+  ({
     activeOpacity,
     buttonStyle,
     center,
@@ -56,35 +57,36 @@ export const Button: React.FC<ButtonProps> = memo((props) => {
     right,
     textStyle,
     title,
-  } = props;
-  const colorScheme = useColor();
-  const dropShadowStyling = useDropShadow(elevation);
-  const buttonColor = colorScheme[color || 'text'];
-  const styles = getStyles({
-    colorScheme,
-    color: buttonColor,
-    emphasis,
-    disable,
-    noPadding,
-  });
-  const buttonStyleGroup = [
-    styles.container,
-    center && styles.center,
-    right && styles.right,
-    dropShadow && dropShadowStyling,
-    invisible && styles.invisible,
-    buttonStyle,
-  ];
-  const textStyleGroup = [styles.text, textStyle];
+  }: Props) => {
+    const colorScheme = useColor();
+    const dropShadowStyling = useDropShadow(elevation);
+    const buttonColor = colorScheme[color || 'text'];
+    const styles = getStyles({
+      colorScheme,
+      color: buttonColor,
+      emphasis,
+      disable,
+      noPadding,
+    });
+    const buttonStyleGroup = [
+      styles.container,
+      center && styles.center,
+      right && styles.right,
+      dropShadow && dropShadowStyling,
+      invisible && styles.invisible,
+      buttonStyle,
+    ];
+    const textStyleGroup = [styles.text, textStyle];
 
-  return hidden ? null : (
-    <TouchableOpacity
-      activeOpacity={activeOpacity}
-      disabled={disable || invisible}
-      onPress={onPress}
-      style={buttonStyleGroup}
-      onLongPress={onLongPress}>
-      <Text center button={!lowercase} title={title} style={textStyleGroup} />
-    </TouchableOpacity>
-  );
-});
+    return hidden ? null : (
+      <TouchableOpacity
+        activeOpacity={activeOpacity}
+        disabled={disable || invisible}
+        onPress={onPress}
+        style={buttonStyleGroup}
+        onLongPress={onLongPress}>
+        <Text center button={!lowercase} title={title} style={textStyleGroup} />
+      </TouchableOpacity>
+    );
+  },
+);

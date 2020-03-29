@@ -1,12 +1,6 @@
 import React, {memo} from 'react';
-import {
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  StyleProp,
-  ViewStyle,
-} from 'react-native';
-import {Text, Icon} from '../../../../components';
+import {View, StyleSheet, StyleProp, ViewStyle} from 'react-native';
+import {Text, Icon, TouchableOpacity} from '../../../../components';
 import {Theme} from '../../../../utils';
 import {useColor} from '../../../../hooks';
 

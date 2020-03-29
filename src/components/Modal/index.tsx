@@ -1,8 +1,9 @@
 import React, {memo} from 'react';
-import {ScrollView, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {useColor, useDropShadow} from '../../hooks';
 import {Theme, useRootSelector} from '../../utils';
 import {Card} from '../Card';
+import {TouchableOpacity} from '../TouchableOpacity';
+import {View, ScrollView, StyleSheet} from 'react-native';
 
 interface Props {
   testID?: string;

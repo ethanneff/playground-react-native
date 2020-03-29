@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
 import React from 'react';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import {TouchableOpacity} from 'react-native';
 import {Text} from '../Text';
+import {TouchableOpacity} from '../TouchableOpacity';
 dayjs.extend(relativeTime);
 
 interface Props {

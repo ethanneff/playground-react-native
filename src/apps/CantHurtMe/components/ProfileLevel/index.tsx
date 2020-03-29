@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
-import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
-import {Text} from '../../../../components';
+import {Image, StyleSheet, View} from 'react-native';
+import {Text, TouchableOpacity} from '../../../../components';
 import {Theme} from '../../../../utils';
 import {useColor} from '../../../../hooks';
 

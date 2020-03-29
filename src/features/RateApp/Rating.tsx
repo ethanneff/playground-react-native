@@ -1,6 +1,6 @@
 import React, {memo, useCallback} from 'react';
-import {View, TouchableOpacity} from 'react-native';
-import {Icon} from '../../components';
+import {View} from 'react-native';
+import {Icon, TouchableOpacity} from '../../components';
 import {useColor} from '../../hooks';
 
 interface Props {

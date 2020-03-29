@@ -1,9 +1,10 @@
 import React, {memo} from 'react';
-import {View, TouchableOpacity} from 'react-native';
+import {View} from 'react-native';
 import {Text} from '../Text';
 import {Theme} from '../../utils';
 import dayjs from 'dayjs';
 import {Icon} from '../Icon';
+import {TouchableOpacity} from '../TouchableOpacity';
 
 interface Props {
   unix: number;

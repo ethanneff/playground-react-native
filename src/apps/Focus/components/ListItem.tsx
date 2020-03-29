@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
-import {TouchableOpacity, View} from 'react-native';
-import {EllipsizeMode, Icon, Text} from '../../../components';
+import {View} from 'react-native';
+import {EllipsizeMode, Icon, Text, TouchableOpacity} from '../../../components';
 import {Theme} from '../../../utils';
 import {Item} from './List';
 import {ListSection} from './ListSection';

@@ -5,9 +5,15 @@ import {
   ImageSourcePropType,
   PanResponder,
   Animated,
-  TouchableOpacity,
 } from 'react-native';
-import {Screen, Text, Icon, Card, EllipsizeMode} from '../../../../components';
+import {
+  Screen,
+  Text,
+  Icon,
+  Card,
+  EllipsizeMode,
+  TouchableOpacity,
+} from '../../../../components';
 import {
   useColor,
   useNav,
