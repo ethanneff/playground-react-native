@@ -1,5 +1,22 @@
 # Changelog
 
+# [2.23.0](https://github.com/ethanneff/example/compare/v2.22.9...v2.23.0) (2020-03-29)
+
+
+### Bug Fixes
+
+* add default to navigation ([8a59719](https://github.com/ethanneff/example/commit/8a59719cbf4a69b5e56f097ee8ae9bba494fc0fd))
+* correct double return imports ([d64d26e](https://github.com/ethanneff/example/commit/d64d26e538b0cf3aca1e9f711685967371cae3c5))
+* correct tests for sound ([f47b9c1](https://github.com/ethanneff/example/commit/f47b9c19948ba25ba1a5ded87a23f4cad3917342))
+* remove debug cards ([6c5457e](https://github.com/ethanneff/example/commit/6c5457e4a0a39ee0a37d9cf2946c3596f0944b72))
+* update snaps ([b2475d3](https://github.com/ethanneff/example/commit/b2475d3f8e19447cd08f8c4ae42901dc00ca6a25))
+
+
+### Features
+
+* add sound for mobile and web ([ab8cd48](https://github.com/ethanneff/example/commit/ab8cd480ddf4181be6acfa366769e059fb561810))
+* make all buttons play sound ([671d652](https://github.com/ethanneff/example/commit/671d65208c627149f41f02de3d1bc483e01a8db1))
+
 ## [2.22.9](https://github.com/ethanneff/example/compare/v2.22.8...v2.22.9) (2020-03-29)
 
 
