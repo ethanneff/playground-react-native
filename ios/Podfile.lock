@@ -644,6 +644,11 @@ PODS:
     - React
   - RNSensors (5.4.1):
     - React
+  - RNSound (0.11.0):
+    - React
+    - RNSound/Core (= 0.11.0)
+  - RNSound/Core (0.11.0):
+    - React
   - RNVectorIcons (6.6.0):
     - React
   - Yoga (1.14.0)
@@ -699,6 +704,7 @@ DEPENDENCIES:
   - "RNFBRemoteConfig (from `../node_modules/@react-native-firebase/remote-config`)"
   - RNRate (from `../node_modules/react-native-rate`)
   - RNSensors (from `../node_modules/react-native-sensors`)
+  - RNSound (from `../node_modules/react-native-sound`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -826,6 +832,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-rate"
   RNSensors:
     :path: "../node_modules/react-native-sensors"
+  RNSound:
+    :path: "../node_modules/react-native-sound"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   Yoga:
@@ -911,10 +919,11 @@ SPEC CHECKSUMS:
   RNFBRemoteConfig: acfef78587e8d544b53338c07ecbc172fae1b781
   RNRate: 832f7e4da1b043bda1a138e20afdb75c42a530e9
   RNSensors: 0c25e336a6302bc70870b15f190c6fdb014bf24c
+  RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: 9db9ff2025ad21d1ac0a8b3c85d5ac4e7c29d525
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 17f0169addf53728a760a708f5ead3f86cbac70b
+PODFILE CHECKSUM: 3ebb6e2595cbba2d6f38cb9ad647b03daccb8a8c
 
 COCOAPODS: 1.9.1

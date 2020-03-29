@@ -57,6 +57,8 @@ target 'core' do
   pod 'RNRate', :path => '../node_modules/react-native-rate'
   pod 'RNSensors', :path => '../node_modules/react-native-sensors'
 
+  pod 'RNSound', :path => '../node_modules/react-native-sound'
+
   target 'coreTests' do
     inherit! :complete
     # Pods for testing

@@ -10,6 +10,7 @@
 | appcenter-analytics                       | prod |                | analytics                   |
 | appcenter-crashes                         | prod |                | analytics                   |
 | axios                                     | prod |                | ajax                        |
+| howler                                    | prod |                | web sound                   |
 | moment                                    | prod |                | time                        |
 | npm-check-updates                         | prod |                | dependency upgrade          |
 | react                                     | prod |                | ui language                 |
@@ -17,6 +18,7 @@
 | react-native                              | prod |                | ui to native bridge         |
 | react-native-device-info                  | prod |                | native device info          |
 | react-native-rate                         | prod |                | feature                     |
+| react-native-sound                        | prod |                | sound                       |
 | react-native-firebase                     | prod |                | backend                     |
 | react-native-keyboard-aware-scroll-view   | prod |                | scroll aware                |
 | react-native-vector-icons                 | prod |                | native icons                |
