@@ -3,7 +3,7 @@
 exports[`renders correctly 1`] = `
 <View
   accessible={true}
-  focusable={false}
+  focusable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -46,7 +46,7 @@ exports[`renders correctly 1`] = `
 exports[`renders correctly with clear and max badge 1`] = `
 <View
   accessible={true}
-  focusable={false}
+  focusable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -119,7 +119,7 @@ exports[`renders correctly with clear and max badge 1`] = `
 exports[`renders correctly without defaults 1`] = `
 <View
   accessible={true}
-  focusable={false}
+  focusable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}

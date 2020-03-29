@@ -38,7 +38,7 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
   >
     <View
       accessible={true}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -147,7 +147,7 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
   >
     <View
       accessible={true}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -256,7 +256,7 @@ exports[`Dialog component renders correctly with props 1`] = `
   >
     <View
       accessible={true}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}

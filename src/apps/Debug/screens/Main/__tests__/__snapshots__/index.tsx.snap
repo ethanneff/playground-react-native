@@ -110,7 +110,6 @@ exports[`renders correctly 1`] = `
         Array [
           "debugArticle",
           "debugBall",
-          "debugCards",
           "debugChat",
           "debugDrag",
           "debugFonts",
@@ -241,51 +240,6 @@ exports[`renders correctly 1`] = `
               }
             >
               DEBUGBALL
-            </Text>
-          </View>
-        </View>
-        <View
-          onLayout={[Function]}
-          style={null}
-        >
-          <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "borderColor": "transparent",
-                "borderRadius": 4,
-                "borderWidth": 1,
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "opacity": 1,
-                "padding": 8,
-                "paddingHorizontal": 16,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "hsl(0, 0%, 0%)",
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "letterSpacing": 0.75,
-                  "opacity": 1,
-                  "textAlign": "center",
-                }
-              }
-            >
-              DEBUGCARDS
             </Text>
           </View>
         </View>
@@ -601,6 +555,51 @@ exports[`renders correctly 1`] = `
               }
             >
               DEBUGPINCHSPREAD
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+                "padding": 8,
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsl(0, 0%, 0%)",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 0.75,
+                  "opacity": 1,
+                  "textAlign": "center",
+                }
+              }
+            >
+              DEBUGQUESTIONNAIRE
             </Text>
           </View>
         </View>

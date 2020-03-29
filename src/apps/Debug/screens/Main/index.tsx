@@ -7,7 +7,6 @@ import {FlatList} from 'react-native';
 const debugScreens: NavigationScreen[] = [
   'debugArticle',
   'debugBall',
-  'debugCards',
   'debugChat',
   'debugDrag',
   'debugFonts',
