@@ -138,7 +138,9 @@ export const Navigation = memo(function Navigation() {
   const screen = useRootSelector((state) => state.navigation.screen);
   return (
     <ErrorBoundary>
-      <Suspense fallback={<Loading />}>{screens[screen]}</Suspense>
+      <Suspense fallback={<Loading />}>
+        {screens[screen] || screens.portfolioLanding}
+      </Suspense>
     </ErrorBoundary>
   );
 });
