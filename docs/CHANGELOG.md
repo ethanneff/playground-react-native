@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.23.1](https://github.com/ethanneff/example/compare/v2.23.0...v2.23.1) (2020-03-30)
+
+
+### Bug Fixes
+
+* add full height to web ([7d3b46e](https://github.com/ethanneff/example/commit/7d3b46eb47404baa74dfa7eade7b21d2f47807df))
+* remove space ([9608314](https://github.com/ethanneff/example/commit/9608314385a35f2a5874408b59fae638d6471867))
+* update deps ([77ef0cf](https://github.com/ethanneff/example/commit/77ef0cf3a1bc896c9b3a5f5bff32aa9cc8b3db41))
+
 # [2.23.0](https://github.com/ethanneff/example/compare/v2.22.9...v2.23.0) (2020-03-29)
 
 
