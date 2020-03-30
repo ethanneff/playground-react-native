@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 export default memo(function PortfolioLanding() {
   const nav = useNav();
   return (
-    <Screen>
+    <Screen style={{height: '100vh'}}>
       <Text h1 title="Landing" center />
       <Walkthrough />
       <View style={styles.row}>
