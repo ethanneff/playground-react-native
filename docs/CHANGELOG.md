@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.23.2](https://github.com/ethanneff/example/compare/v2.23.1...v2.23.2) (2020-03-31)
+
+
+### Bug Fixes
+
+* begin web landing page ([6415553](https://github.com/ethanneff/example/commit/641555364098a559754ada66eddfbcdb02e73139))
+* update deps ([83bba7e](https://github.com/ethanneff/example/commit/83bba7e5082475181980ee3c3f1a9bae4ff4fbbc))
+
 ## [2.23.1](https://github.com/ethanneff/example/compare/v2.23.0...v2.23.1) (2020-03-30)
 
 
