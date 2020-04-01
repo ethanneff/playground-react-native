@@ -4,6 +4,7 @@ import {Text, TouchableOpacity, Icon} from '../../../../components';
 import {View, Image} from 'react-native';
 import {useColor} from '../../../../hooks';
 import {Theme} from '../../../../utils';
+import {FontType} from '../../../../components/Text/utils';
 
 interface SignInButtonProps {
   onPress: () => void;
@@ -64,18 +65,20 @@ const NavButton = memo(function NavButton({
 type Word = {
   title: string;
   bold?: boolean;
-  type?: 'link' | 'text';
+  type?: FontType;
+  functionality?: 'link' | 'text';
   onPress?: () => void;
 };
 interface SentenceProps {
-  sentence: Word[];
+  words: Word[];
   style: StyleProp<ViewStyle>;
 }
-const Sentence = memo(function Sentence({sentence, style}: SentenceProps) {
+const Sentence = memo(function Sentence({words, style}: SentenceProps) {
   return (
     <OriginalText style={style}>
-      {sentence.map((word) => (
+      {words.map((word) => (
         <Text
+          type={word.type}
           key={word.title}
           title={word.title}
           bold={word.bold}
@@ -89,18 +92,22 @@ const Sentence = memo(function Sentence({sentence, style}: SentenceProps) {
 const image = require('../../../../assets/line-chart.png');
 export default memo(function PortfolioLanding() {
   const color = useColor();
+  const titleSentence: Word[] = [
+    {title: 'Get started with ', type: 'h2'},
+    {title: 'Core', bold: true, type: 'h2'},
+  ];
   const passwordSentence: Word[] = [
     {title: 'Or use your password to '},
     {
       title: 'sign up ',
-      type: 'link',
+      functionality: 'link',
       bold: true,
       onPress: () => undefined,
     },
     {title: 'or '},
     {
       title: 'sign in ',
-      type: 'link',
+      functionality: 'link',
       bold: true,
       onPress: () => undefined,
     },
@@ -133,13 +140,11 @@ export default memo(function PortfolioLanding() {
         </View>
       </View>
       <View style={{flex: 1}}>
-        <Text
-          title="Get started with Core"
-          type="h2"
-          center
-          bold
-          style={{paddingVertical: Theme.padding.p08}}
+        <Sentence
+          style={{paddingVertical: Theme.padding.p08, alignSelf: 'center'}}
+          words={titleSentence}
         />
+
         <View style={{width: '400px', alignSelf: 'center'}}>
           <SignInButton
             icon="google"
@@ -156,11 +161,10 @@ export default memo(function PortfolioLanding() {
               alignSelf: 'center',
               paddingVertical: Theme.padding.p04,
             }}
-            sentence={passwordSentence}
+            words={passwordSentence}
           />
         </View>
         <View style={{flex: 1}} />
-
         <View
           style={{
             flexDirection: 'row',
