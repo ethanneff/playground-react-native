@@ -22,7 +22,7 @@ export const Section: React.FC<SectionProps> = memo(function Section({
         marginBottom: Theme.padding.p04,
       }}>
       <Text
-        h3
+        type="h3"
         title={title}
         style={{
           color: color.background, // TODO: add prop to text for inverse

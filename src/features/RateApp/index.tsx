@@ -89,7 +89,7 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
       {form.modal === 'review' ? (
         <>
           <Text
-            h4
+            type="h4"
             title="Thank you for your feedback!"
             center
             style={styles.title}
@@ -103,7 +103,7 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
         </>
       ) : form.modal === 'feedback' ? (
         <>
-          <Text h4 title="Thank you" center style={styles.title} />
+          <Text type="h4" title="Thank you" center style={styles.title} />
           <Text
             title="Can you provide us with some feedback to help us improve?"
             center
@@ -119,7 +119,7 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
         </>
       ) : form.modal === 'thank you' ? (
         <>
-          <Text h4 title="Thank you" center style={styles.title} />
+          <Text type="h4" title="Thank you" center style={styles.title} />
           <Text
             title="We have sent your feedback to our team"
             style={styles.title}
@@ -130,7 +130,7 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
       ) : (
         <>
           <Text
-            h4
+            type="h4"
             title="How are you enjoying the app so far?"
             center
             style={styles.title}

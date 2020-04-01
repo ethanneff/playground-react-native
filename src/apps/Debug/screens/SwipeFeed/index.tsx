@@ -11,7 +11,6 @@ import {
   Text,
   Icon,
   Card,
-  EllipsizeMode,
   TouchableOpacity,
 } from '../../../../components';
 import {
@@ -137,7 +136,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
               <Icon name={props.icon} size={15} />
               <Text
                 title={props.title}
-                overline
+                type="overline"
                 bold
                 style={{paddingHorizontal: Theme.padding.p01}}
               />
@@ -147,7 +146,7 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
               style={{flex: 1, paddingTop: Theme.padding.p02}}
               title={props.body}
               numberOfLines={2}
-              ellipsizeMode={EllipsizeMode.Tail}
+              ellipsizeMode="tail"
             />
             <Text
               title={props.button.toUpperCase()}

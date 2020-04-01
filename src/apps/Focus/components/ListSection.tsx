@@ -19,7 +19,7 @@ export const ListSection = memo(({item}: Props) => (
       marginTop: Theme.padding.p02,
       padding: Theme.padding.p02,
     }}>
-    <Text h3 title={item.dayOfMonth} />
-    <Text overline title={` ${item.month}, ${item.dayOfWeek}`} />
+    <Text type="h3" title={item.dayOfMonth} />
+    <Text type="overline" title={` ${item.month}, ${item.dayOfWeek}`} />
   </View>
 ));

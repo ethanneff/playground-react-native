@@ -28,8 +28,8 @@ export const Questionnaire = () => {
               justifyContent: 'space-between',
             }}>
             <View style={{flex: 0.9}}>
-              <Text h3 title={item.title} />
-              <Text caption title={subtitle} />
+              <Text type="h3" title={item.title} />
+              <Text type="caption" title={subtitle} />
             </View>
             <Icon name="dots-horizontal" onPress={handleLongPress(item.id)} />
           </View>

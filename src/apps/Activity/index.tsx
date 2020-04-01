@@ -30,15 +30,30 @@ export default memo(function ActivityTracker() {
           paddingVertical: Theme.padding.p02,
         }}>
         <Card>
-          <Text style={styles.bottom} h4 medium title="Github" />
+          <Text
+            style={styles.bottom}
+            type="h4"
+            emphasis="medium"
+            title="Github"
+          />
           <Activity username="ethanneff" site="github" />
         </Card>
         <Card>
-          <Text style={styles.bottom} h4 medium title="LeetCode" />
+          <Text
+            style={styles.bottom}
+            type="h4"
+            emphasis="medium"
+            title="LeetCode"
+          />
           <Activity username="ethanneff" site="leetCode" />
         </Card>
         <Card>
-          <Text style={styles.bottom} h4 medium title="HackerRank" />
+          <Text
+            style={styles.bottom}
+            type="h4"
+            emphasis="medium"
+            title="HackerRank"
+          />
           <Activity username="ethanneff" site="hackerRank" />
         </Card>
         <View style={{height: Theme.padding.p04}} />

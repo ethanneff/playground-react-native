@@ -115,7 +115,7 @@ export default memo(function DebugReminder() {
     <>
       <Screen onLeftPress={nav.to('debug')} title="Reminder">
         <Button title="create reminder" onPress={handleCreateReminder} />
-        <Text h2 title="reminders" center />
+        <Text type="h2" title="reminders" center />
         <Reminders reminders={form.reminders} />
         <Button title="press me" onPress={() => setShowRate(true)} />
       </Screen>

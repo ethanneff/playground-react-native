@@ -90,7 +90,7 @@ export default memo(function DebugStartup() {
           borderBottomColor: color.secondary,
           borderBottomWidth: 2,
         }}>
-        <Text h4 center title={dayjs().format('MMM DD, YYYY')} />
+        <Text type="h4" center title={dayjs().format('MMM DD, YYYY')} />
       </View>
       <ScrollView
         contentContainerStyle={{

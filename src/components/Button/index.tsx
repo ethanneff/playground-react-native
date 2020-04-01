@@ -85,7 +85,12 @@ export const Button = memo(
         onPress={onPress}
         style={buttonStyleGroup}
         onLongPress={onLongPress}>
-        <Text center button={!lowercase} title={title} style={textStyleGroup} />
+        <Text
+          center
+          type={!lowercase ? 'button' : undefined}
+          title={title}
+          style={textStyleGroup}
+        />
       </TouchableOpacity>
     );
   },

@@ -1,8 +1,4 @@
-import {
-  ContentBody,
-  ParagraphType,
-  TitleType,
-} from '../../../../components/Content';
+import {ContentBody, ParagraphType} from '../../../../components/Content';
 
 export const data: ContentBody = {
   sections: [
@@ -18,7 +14,7 @@ export const data: ContentBody = {
         },
       ],
       title: 'Do This',
-      titleType: TitleType.H1,
+      titleType: 'h1',
     },
     {
       paragraphs: [
@@ -58,8 +54,8 @@ export const data: ContentBody = {
           ],
         },
       ],
-      title: 'H2 title',
-      titleType: TitleType.H3,
+      title: 'type="type="h2"  " title',
+      titleType: 'h3',
     },
     {
       paragraphs: [
@@ -117,8 +113,8 @@ export const data: ContentBody = {
           ],
         },
       ],
-      title: 'H3 content ',
-      titleType: TitleType.H3,
+      title: 'type="h3" content ',
+      titleType: 'h3',
     },
     {
       paragraphs: [
@@ -176,8 +172,8 @@ export const data: ContentBody = {
           ],
         },
       ],
-      title: 'H3 content ',
-      titleType: TitleType.H3,
+      title: 'type="h3" content ',
+      titleType: 'h3',
     },
   ],
 };

@@ -37,7 +37,7 @@ export const NavBar: React.FC<Props> = memo(function NavBar({
   return (
     <View style={styles.container}>
       <NavButton icon={leftIcon} onPress={onLeftPress} />
-      <Text title={title} h2 />
+      <Text title={title} type="h2" />
       <NavButton icon={rightIcon} isRight onPress={onRightPress} />
     </View>
   );

@@ -22,14 +22,14 @@ export default memo(function Journal() {
           paddingVertical: Theme.padding.p02,
         }}>
         <Card>
-          <Text h3 title="Calendar" style={styles.bottom} />
+          <Text type="h3" title="Calendar" style={styles.bottom} />
           <Calendar hiddenDays />
         </Card>
         <Card>
-          <Text h3 title="Record" style={styles.bottom} />
+          <Text type="h3" title="Record" style={styles.bottom} />
           <Text
-            h5
-            medium
+            type="h5"
+            emphasis="medium"
             title="One objective that will make everything easier"
             style={styles.bottom}
           />
@@ -39,12 +39,11 @@ export default memo(function Journal() {
             value={''}
             onChangeText={() => undefined}
           />
-          <Text h5 medium title="Additional objectives" style={styles.bottom} />
-          <TextInput
-            title="Secondary goal"
-            placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+          <Text
+            type="h5"
+            emphasis="medium"
+            title="Additional objectives"
+            style={styles.bottom}
           />
           <TextInput
             title="Secondary goal"
@@ -58,7 +57,18 @@ export default memo(function Journal() {
             value={''}
             onChangeText={() => undefined}
           />
-          <Text h5 medium title="Bonus objectives" style={styles.bottom} />
+          <TextInput
+            title="Secondary goal"
+            placeholder="fill me"
+            value={''}
+            onChangeText={() => undefined}
+          />
+          <Text
+            type="h5"
+            emphasis="medium"
+            title="Bonus objectives"
+            style={styles.bottom}
+          />
           <TextInput
             title="tertiary goal"
             placeholder="fill me"
@@ -91,7 +101,7 @@ export default memo(function Journal() {
           />
         </Card>
         <Card>
-          <Text h3 title="Review" style={styles.bottom} />
+          <Text type="h3" title="Review" style={styles.bottom} />
           <TextInput
             title="How likely are you to recommend this day?"
             placeholder="fill me"
@@ -106,7 +116,7 @@ export default memo(function Journal() {
           />
         </Card>
         <Card>
-          <Text h3 title="Retro" style={styles.bottom} />
+          <Text type="h3" title="Retro" style={styles.bottom} />
           <TextInput
             title="What went well?"
             placeholder="fill me"

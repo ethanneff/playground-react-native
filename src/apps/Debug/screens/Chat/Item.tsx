@@ -47,7 +47,7 @@ export const Item = memo(function ChatMessage({item}: Props) {
           />
           <RelativeDate date={item.createdAt} />
         </View>
-        <Text title={item.message} body1 style={{paddingTop: 5}} />
+        <Text title={item.message} type="body1" style={{paddingTop: 5}} />
       </View>
     </View>
   );

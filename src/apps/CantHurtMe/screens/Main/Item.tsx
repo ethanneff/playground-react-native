@@ -15,7 +15,7 @@ export const Item = (props: {item: string; index: number}) => {
       <Text
         title={`Challenge #${index + 1}`}
         center
-        h4
+        type="h4"
         bold
         style={{paddingBottom: Theme.padding.p04}}
       />

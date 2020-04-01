@@ -177,7 +177,7 @@ export default memo(function DebugSearchbar() {
   }, [keyboardDidHide, keyboardDidShow, keyboardWillHide, keyboardWillShow]);
 
   const renderItem = useCallback(
-    ({item}) => <Text subtitle2 style={styles.item} title={item.name} />,
+    ({item}) => <Text type="subtitle2" style={styles.item} title={item.name} />,
     [styles.item],
   );
 

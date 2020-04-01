@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import {EllipsizeMode, Icon, Text, TouchableOpacity} from '../../../components';
+import {Icon, Text, TouchableOpacity} from '../../../components';
 import {Theme} from '../../../utils';
 import {Item} from './List';
 import {ListSection} from './ListSection';
@@ -55,9 +55,9 @@ export const ListItem = memo(
               flex: 1,
             }}
             title={title}
-            body1
+            type="body1"
             numberOfLines={1}
-            ellipsizeMode={EllipsizeMode.Tail}
+            ellipsizeMode={'tail'}
           />
         </TouchableOpacity>
         {showSection && <ListSection item={item} />}

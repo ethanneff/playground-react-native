@@ -32,9 +32,9 @@ export const Week = memo(function Week({
     <View key={index}>
       <Text
         center
-        medium
+        emphasis="medium"
         title={header}
-        overline
+        type="overline"
         style={{paddingBottom: Theme.padding.p03}}
       />
       {item.map((day) => (

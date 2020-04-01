@@ -131,7 +131,7 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
         <View style={styles.overlay}>
           <TouchableWithoutFeedback onPress={undefined}>
             <Card style={styles.modal}>
-              <Text title={title} h3 style={styles.title} />
+              <Text title={title} type="h3" style={styles.title} />
               <Text title={message} />
               <View style={styles.buttonContainer}>
                 <Button

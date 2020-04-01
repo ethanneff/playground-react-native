@@ -3,6 +3,7 @@ import {Text as Original, ScrollView, StyleSheet, View} from 'react-native';
 import {Theme} from '../../utils';
 import {Text} from '../Text';
 import {useColor} from '../../hooks';
+import {FontType} from '../Text/utils';
 
 export interface ContentBody {
   sections: Sections;
@@ -10,7 +11,7 @@ export interface ContentBody {
 type Sections = Section[];
 interface Section {
   title: string;
-  titleType: TitleType;
+  titleType: FontType;
   paragraphs: Paragraphs;
 }
 type Paragraphs = Paragraph[];
@@ -32,12 +33,6 @@ interface Link {
 export enum ParagraphType {
   Phrase,
   Link,
-}
-
-export enum TitleType {
-  H1,
-  H2,
-  H3,
 }
 
 interface Props {
@@ -73,9 +68,7 @@ export const Content: React.FC<Props> = memo(({body}) => {
               key={section.title}
               title={section.title}
               style={styles.title}
-              h1={section.titleType === TitleType.H1}
-              h2={section.titleType === TitleType.H2}
-              h3={section.titleType === TitleType.H3}
+              type={section.titleType}
             />
           )}
           {section.paragraphs.map((paragraph, paragraphIndex) => (

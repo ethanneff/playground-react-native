@@ -30,7 +30,7 @@ const SignInButton = memo(function SignInButton({
       }}
       onPress={onPress}>
       <Icon name={icon} style={{width: '30px', height: '30px'}} />
-      <Text title={title} style={{paddingLeft: Theme.padding.p02}} h4 />
+      <Text title={title} style={{paddingLeft: Theme.padding.p02}} type="h4" />
     </TouchableOpacity>
   );
 });
@@ -56,7 +56,7 @@ const NavButton = memo(function NavButton({
         backgroundColor: inverted ? color.text : color.background,
       }}
       onPress={onPress}>
-      <Text title={title} h5 bold inverse={inverted} />
+      <Text title={title} type="h5" bold inverse={inverted} />
     </TouchableOpacity>
   );
 });
@@ -120,7 +120,7 @@ export default memo(function PortfolioLanding() {
           <Image source={image} style={{width: '30px', height: '30px'}} />
           <Text
             title="Core"
-            h3
+            type="h3"
             bold
             style={{paddingHorizontal: Theme.padding.p04}}
           />
@@ -135,7 +135,7 @@ export default memo(function PortfolioLanding() {
       <View style={{flex: 1}}>
         <Text
           title="Get started with Core"
-          h2
+          type="h2"
           center
           bold
           style={{paddingVertical: Theme.padding.p08}}
@@ -159,7 +159,7 @@ export default memo(function PortfolioLanding() {
             sentence={passwordSentence}
           />
         </View>
-        <View style={{flex: 1}}></View>
+        <View style={{flex: 1}} />
 
         <View
           style={{

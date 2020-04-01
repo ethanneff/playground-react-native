@@ -10,7 +10,10 @@ interface Props {
 export default memo(function Reminders(props: Props) {
   const renderItem = useCallback(
     ({item, index}) => (
-      <Text title={item.format} button={index === props.reminders.length - 1} />
+      <Text
+        title={item.format}
+        type={index === props.reminders.length - 1 ? 'button' : undefined}
+      />
     ),
     [props],
   );

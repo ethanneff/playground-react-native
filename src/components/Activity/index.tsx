@@ -142,8 +142,8 @@ export const Activity = memo(function Activity({
         renderItem={renderItem}
       />
       <Text
-        overline
-        medium
+        type="overline"
+        emphasis="medium"
         secondary
         title={state.selected.submissions}
         center

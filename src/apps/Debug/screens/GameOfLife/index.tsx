@@ -89,13 +89,13 @@ export default memo(function DebugGameOfLife() {
   return (
     <Screen onLeftPress={nav.to('debug')} title="Game of life">
       {loading ? (
-        <Text h5 medium title="loading..." />
+        <Text type="h5" emphasis="medium" title="loading..." />
       ) : (
         <>
           <View style={{flexDirection: 'row'}}>
             <Text
               title={`count: ${form.count}`}
-              h4
+              type="h4"
               style={{alignSelf: 'center'}}
             />
             <Slider
@@ -110,7 +110,7 @@ export default memo(function DebugGameOfLife() {
           <View style={{flexDirection: 'row'}}>
             <Text
               title={`delay: ${Math.floor(form.delay)}`}
-              h4
+              type="h4"
               style={{alignSelf: 'center'}}
             />
             <Slider

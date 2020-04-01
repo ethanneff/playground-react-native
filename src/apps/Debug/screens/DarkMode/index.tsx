@@ -84,12 +84,16 @@ export default memo(function DarkMode() {
   const renderItem = useCallback(
     ({item, index}) => (
       <Card elevation={elevation} onPress={onPress} key={index}>
-        <Text title={item.title} overline />
-        <Text title={item.value} h3 style={{marginTop: Theme.padding.p02}} />
+        <Text title={item.title} type="overline" />
+        <Text
+          title={item.value}
+          type="h3"
+          style={{marginTop: Theme.padding.p02}}
+        />
         {item.target && (
           <Text
             title={item.target}
-            body2
+            type="body2"
             style={{marginTop: Theme.padding.p02}}
           />
         )}
@@ -146,7 +150,7 @@ export default memo(function DarkMode() {
           minimumValue={0}
         />
       </View>
-      <Text title="Weekly Stats" h2 center />
+      <Text title="Weekly Stats" type="h2" center />
       <Masonry data={cards} numColumns={columns} renderItem={renderItem} />
     </Screen>
   );

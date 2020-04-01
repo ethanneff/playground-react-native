@@ -64,9 +64,9 @@ export const Item = memo(function ReminderItem({
       onPress={onPress}>
       <View style={styles.container}>
         <View style={styles.textContainer}>
-          <Text body1 title={title} style={styles.title} />
+          <Text type="body1" title={title} style={styles.title} />
           {description.length > 0 && (
-            <Text caption title={description} style={styles.subtitle} />
+            <Text type="caption" title={description} style={styles.subtitle} />
           )}
         </View>
         {icon && (

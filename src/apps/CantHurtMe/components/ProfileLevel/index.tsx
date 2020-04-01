@@ -68,7 +68,7 @@ export const ProfileLevel: React.FC<Props> = memo(({onPress}) => {
           <View style={[styles.progressBar, {width}]} />
         </View>
         <View style={styles.levelContainer}>
-          <Text title={String(level)} subtitle2 center />
+          <Text title={String(level)} type="subtitle2" center />
         </View>
       </View>
     </TouchableOpacity>

@@ -16,7 +16,7 @@ export default memo(function DebugColors() {
   return (
     <Screen onLeftPress={nav.to('debug')} title="Colors" gutter>
       <Text
-        h4
+        type="h4"
         title="Theme"
         center
         style={{paddingBottom: Theme.padding.p08}}
@@ -36,7 +36,12 @@ export default memo(function DebugColors() {
         ))}
       </View>
       <ScrollView>
-        <Text h4 title="Buttons" center style={{padding: Theme.padding.p08}} />
+        <Text
+          type="h4"
+          title="Buttons"
+          center
+          style={{padding: Theme.padding.p08}}
+        />
         <View style={{flexDirection: 'row'}}>
           <View style={{flex: 1}}>
             <Button emphasis="high" color="primary" title="primary" />
@@ -97,76 +102,81 @@ export default memo(function DebugColors() {
           </View>
         </View>
 
-        <Text h4 title="Fonts" center style={{padding: Theme.padding.p08}} />
+        <Text
+          type="h4"
+          title="Fonts"
+          center
+          style={{padding: Theme.padding.p08}}
+        />
 
         <View style={{flexDirection: 'row'}}>
           <View style={{flex: 1}}>
             <Text title="normal" center />
-            <Text h1 title="h1" />
-            <Text h2 title="h2" />
-            <Text h3 title="h3" />
-            <Text h4 title="h4" />
-            <Text h5 title="h5" />
-            <Text h6 title="h6" />
-            <Text subtitle1 title="subtitle1" />
-            <Text subtitle2 title="subtitle2" />
-            <Text body1 title="body1" />
-            <Text body2 title="body2" />
-            <Text overline title="overline" />
-            <Text caption title="caption" />
-            <Text button title="button" />
+            <Text type="h1" title="h1" />
+            <Text type="h2" title="h2" />
+            <Text type="h3" title="h3" />
+            <Text type="h4" title="type='h4'" />
+            <Text type="h5" title="h5" />
+            <Text type="h6" title="h6" />
+            <Text type="subtitle1" title="subtitle1" />
+            <Text type="subtitle2" title="subtitle2" />
+            <Text type="body1" title="body1" />
+            <Text type="body2" title="body2" />
+            <Text type="overline" title="overline" />
+            <Text type="caption" title="caption" />
+            <Text type="button" title="button" />
             <Text title="default" />
           </View>
           <View style={{flex: 1}}>
             <Text title="high" center />
-            <Text high h1 title="h1" />
-            <Text high h2 title="h2" />
-            <Text high h3 title="h3" />
-            <Text high h4 title="h4" />
-            <Text high h5 title="h5" />
-            <Text high h6 title="h6" />
-            <Text high subtitle1 title="subtitle1" />
-            <Text high subtitle2 title="subtitle2" />
-            <Text high body1 title="body1" />
-            <Text high body2 title="body2" />
-            <Text high overline title="overline" />
-            <Text high caption title="caption" />
-            <Text high button title="button" />
-            <Text high title="default" />
+            <Text emphasis="high" type="h1" title="h1" />
+            <Text emphasis="high" type="h2" title="h2" />
+            <Text emphasis="high" type="h3" title="h3" />
+            <Text emphasis="high" type="h4" title="type='h4'" />
+            <Text emphasis="high" type="h5" title="h5" />
+            <Text emphasis="high" type="h6" title="h6" />
+            <Text emphasis="high" type="subtitle1" title="subtitle1" />
+            <Text emphasis="high" type="subtitle2" title="subtitle2" />
+            <Text emphasis="high" type="body1" title="body1" />
+            <Text emphasis="high" type="body2" title="body2" />
+            <Text emphasis="high" type="overline" title="overline" />
+            <Text emphasis="high" type="caption" title="caption" />
+            <Text emphasis="high" type="button" title="button" />
+            <Text emphasis="high" title="default" />
           </View>
           <View style={{flex: 1}}>
             <Text title="medium" center />
-            <Text medium h1 title="h1" />
-            <Text medium h2 title="h2" />
-            <Text medium h3 title="h3" />
-            <Text medium h4 title="h4" />
-            <Text medium h5 title="h5" />
-            <Text medium h6 title="h6" />
-            <Text medium subtitle1 title="subtitle1" />
-            <Text medium subtitle2 title="subtitle2" />
-            <Text medium body1 title="body1" />
-            <Text medium body2 title="body2" />
-            <Text medium overline title="overline" />
-            <Text medium caption title="caption" />
-            <Text medium button title="button" />
-            <Text medium title="default" />
+            <Text emphasis="medium" type="h1" title="h1" />
+            <Text emphasis="medium" type="h2" title="h2" />
+            <Text emphasis="medium" type="h3" title="h3" />
+            <Text emphasis="medium" type="h4" title="type='h4'" />
+            <Text emphasis="medium" type="h5" title="h5" />
+            <Text emphasis="medium" type="h6" title="h6" />
+            <Text emphasis="medium" type="subtitle1" title="subtitle1" />
+            <Text emphasis="medium" type="subtitle2" title="subtitle2" />
+            <Text emphasis="medium" type="body1" title="body1" />
+            <Text emphasis="medium" type="body2" title="body2" />
+            <Text emphasis="medium" type="overline" title="overline" />
+            <Text emphasis="medium" type="caption" title="caption" />
+            <Text emphasis="medium" type="button" title="button" />
+            <Text emphasis="medium" title="default" />
           </View>
           <View style={{flex: 1}}>
             <Text title="low" center />
-            <Text low h1 title="h1" />
-            <Text low h2 title="h2" />
-            <Text low h3 title="h3" />
-            <Text low h4 title="h4" />
-            <Text low h5 title="h5" />
-            <Text low h6 title="h6" />
-            <Text low subtitle1 title="subtitle1" />
-            <Text low subtitle2 title="subtitle2" />
-            <Text low body1 title="body1" />
-            <Text low body2 title="body2" />
-            <Text low overline title="overline" />
-            <Text low caption title="caption" />
-            <Text low button title="button" />
-            <Text low title="default" />
+            <Text emphasis="low" type="h1" title="h1" />
+            <Text emphasis="low" type="h2" title="h2" />
+            <Text emphasis="low" type="h3" title="h3" />
+            <Text emphasis="low" type="h4" title="type='h4'" />
+            <Text emphasis="low" type="h5" title="h5" />
+            <Text emphasis="low" type="h6" title="h6" />
+            <Text emphasis="low" type="subtitle1" title="subtitle1" />
+            <Text emphasis="low" type="subtitle2" title="subtitle2" />
+            <Text emphasis="low" type="body1" title="body1" />
+            <Text emphasis="low" type="body2" title="body2" />
+            <Text emphasis="low" type="overline" title="overline" />
+            <Text emphasis="low" type="caption" title="caption" />
+            <Text emphasis="low" type="button" title="button" />
+            <Text emphasis="low" title="default" />
           </View>
         </View>
       </ScrollView>

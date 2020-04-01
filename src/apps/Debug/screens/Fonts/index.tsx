@@ -7,32 +7,53 @@ export default memo(function DebugFonts() {
 
   return (
     <Screen onLeftPress={nav.to('debug')} title="Fonts" scroll>
-      <Text h1 title="H1: The quick brown fox jumps over the lazy dog." />
-      <Text h2 title="H2: The quick brown fox jumps over the lazy dog." />
-      <Text h3 title="H3: The quick brown fox jumps over the lazy dog." />
-      <Text h4 title="H4: The quick brown fox jumps over the lazy dog." />
-      <Text h5 title="H5: The quick brown fox jumps over the lazy dog." />
-      <Text h6 title="H6: The quick brown fox jumps over the lazy dog." />
       <Text
-        subtitle1
+        type="h1"
+        title="H1: The quick brown fox jumps over the lazy dog."
+      />
+      <Text type="h2" title="h2 The quick brown fox jumps over the lazy dog." />
+      <Text
+        type="h3"
+        title="H3: The quick brown fox jumps over the lazy dog."
+      />
+      <Text
+        type="h4"
+        title="H4: The quick brown fox jumps over the lazy dog."
+      />
+      <Text
+        type="h5"
+        title="H5: The quick brown fox jumps over the lazy dog."
+      />
+      <Text
+        type="h6"
+        title="H6: The quick brown fox jumps over the lazy dog."
+      />
+      <Text
+        type="subtitle1"
         title="SUBTITLE1: The quick brown fox jumps over the lazy dog."
       />
       <Text
-        subtitle2
+        type="subtitle2"
         title="SUBTITLE2: The quick brown fox jumps over the lazy dog."
       />
-      <Text body1 title="BODY1: The quick brown fox jumps over the lazy dog." />
-      <Text body2 title="BODY2: The quick brown fox jumps over the lazy dog." />
       <Text
-        overline
+        type="body1"
+        title="BODY1: The quick brown fox jumps over the lazy dog."
+      />
+      <Text
+        type="body2"
+        title="BODY2: The quick brown fox jumps over the lazy dog."
+      />
+      <Text
+        type="overline"
         title="OVERLINE: The quick brown fox jumps over the lazy dog."
       />
       <Text
-        caption
+        type="caption"
         title="CAPTION: The quick brown fox jumps over the lazy dog."
       />
       <Text
-        button
+        type="button"
         title="BUTTON: The quick brown fox jumps over the lazy dog."
       />
       <Text title="NOTHING: The quick brown fox jumps over the lazy dog." />

@@ -89,7 +89,7 @@ export default function DebugDrag() {
 
   return (
     <Screen onLeftPress={nav.to('debug')} title="Drag">
-      <Text overline center title="drag the circle" />
+      <Text type="overline" center title="drag the circle" />
       <View style={styles.canvas} onLayout={handleCanvas}>
         <Animated.View
           style={[ballPosition.getLayout(), styles.ball]}

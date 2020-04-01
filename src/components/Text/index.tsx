@@ -2,14 +2,9 @@ import React, {memo} from 'react';
 import {Animated, StyleSheet, TextStyle, StyleProp} from 'react-native';
 import {Theme, colorWithOpacity} from '../../utils';
 import {useNativeDriver, useColor} from '../../hooks';
-import {getTextColorPercent, getFontSize} from './utils';
+import {getTextEmphasis, getFontType, FontType, FontEmphasis} from './utils';
 
-export enum EllipsizeMode {
-  Head = 'head',
-  Middle = 'middle',
-  Tail = 'tail',
-  Clip = 'clip',
-}
+type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
 
 export interface TextProps {
   title?: string;
@@ -27,31 +22,16 @@ export interface TextProps {
   numberOfLines?: number;
   ellipsizeMode?: EllipsizeMode;
 
-  h1?: boolean;
-  h2?: boolean;
-  h3?: boolean;
-  h4?: boolean;
-  h5?: boolean;
-  h6?: boolean;
-  subtitle1?: boolean;
-  subtitle2?: boolean;
-  body1?: boolean;
-  body2?: boolean;
-  button?: boolean;
-  caption?: boolean;
-  overline?: boolean;
-
-  high?: boolean;
-  medium?: boolean;
-  low?: boolean;
+  type?: FontType;
+  emphasis?: FontEmphasis;
 
   onPress?(): void;
 }
 
 export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
   const {
-    button,
-    overline,
+    type,
+    emphasis,
     title,
     onPress,
     hidden,
@@ -67,11 +47,14 @@ export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
   const opacity = new Animated.Value(1);
   const color = useColor();
   const nativeDriver = useNativeDriver();
-  const textColorPercent = getTextColorPercent(props);
-  const fontSize = getFontSize(props);
+  const textColorPercent = getTextEmphasis(emphasis);
+  const fontSize = getFontType(type);
   const textColor = props.inverse ? color.background : color.text;
   const textColorWithOpacity = colorWithOpacity(textColor, textColorPercent);
-  const text = button || overline ? (title || '').toUpperCase() : title;
+  const text =
+    type === 'button' || type === 'overline'
+      ? (title || '').toUpperCase()
+      : title;
   const styles = StyleSheet.create({
     bold: {
       fontWeight: Theme.fontWeight.medium,

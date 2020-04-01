@@ -36,14 +36,14 @@ export default memo(function CreateReminderModal(props: Props) {
 
   return (
     <Modal onBackgroundPress={props.onBackgroundPress}>
-      <Text h2 title="Create Reminder" />
-      <Text caption title="Reminder type" style={styles.section} />
+      <Text type="h2" title="Create Reminder" />
+      <Text type="caption" title="Reminder type" style={styles.section} />
       <Radio
         buttons={reminderTypes}
         value={state}
         onChange={handleReminderTypePress}
       />
-      <Text caption title="Reminder time" style={styles.section} />
+      <Text type="caption" title="Reminder time" style={styles.section} />
       {state === 'One time' ? (
         <OneTime onPress={props.onOneTimePress} />
       ) : state === 'Repeat' ? (

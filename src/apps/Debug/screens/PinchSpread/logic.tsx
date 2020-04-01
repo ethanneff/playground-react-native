@@ -1,4 +1,3 @@
-/* eslint-disable */
 import {
   GestureResponderEvent,
   NativeTouchEvent,
@@ -15,15 +14,15 @@ interface Outcome {
 }
 
 export class GestureHandler {
-  private minTouches: number;
-  private finish: Touches = {};
-  private start: Touches = {};
+  minTouches: number;
+  finish: Touches = {};
+  start: Touches = {};
 
-  public constructor({ minTouches = 2 } = {}) {
+  constructor({minTouches = 2} = {}) {
     this.minTouches = minTouches;
   }
 
-  public onPanResponderMove(event: GestureResponderEvent) {
+  onPanResponderMove(event: GestureResponderEvent) {
     const touches: NativeTouchEvent[] = event.nativeEvent.touches;
     touches.forEach((touch: NativeTouchEvent) => {
       this.recordFinish(touch);
@@ -31,14 +30,14 @@ export class GestureHandler {
     });
   }
 
-  public onPanResponderRelease(): Outcome {
+  onPanResponderRelease(): Outcome {
     const outcome = this.determineOutcome();
     this.start = {};
     this.finish = {};
     return outcome;
   }
 
-  private recordStart(touch: NativeTouchEvent) {
+  recordStart(touch: NativeTouchEvent) {
     if (this.isStartAlreadyRecorded(touch)) {
       return;
     }
@@ -48,22 +47,18 @@ export class GestureHandler {
     };
   }
 
-  private isStartAlreadyRecorded(touch: NativeTouchEvent) {
+  isStartAlreadyRecorded(touch: NativeTouchEvent) {
     return this.start[String(touch.identifier)];
   }
 
-  private recordFinish(touch: NativeTouchEvent) {
+  recordFinish(touch: NativeTouchEvent) {
     this.finish[String(touch.identifier)] = {
       x: touch.locationX,
       y: touch.locationY,
     };
   }
 
-  private isSpread(
-    start: PointPropType,
-    finish: PointPropType,
-    center: PointPropType
-  ) {
+  isSpread(start: PointPropType, finish: PointPropType, center: PointPropType) {
     const startXDistance = Math.abs(start.x - center.x);
     const startYDistance = Math.abs(start.y - center.y);
     const finishXDistance = Math.abs(finish.x - center.x);
@@ -73,7 +68,7 @@ export class GestureHandler {
     );
   }
 
-  private determineCenter(points: Touches) {
+  determineCenter(points: Touches) {
     const numRecordedTouched = Object.keys(points).length;
     let x = 0;
     let y = 0;
@@ -82,10 +77,10 @@ export class GestureHandler {
       x += point.x;
       y += point.x;
     }
-    return { x: x / numRecordedTouched, y: y / numRecordedTouched };
+    return {x: x / numRecordedTouched, y: y / numRecordedTouched};
   }
 
-  private determineOutcome(): Outcome {
+  determineOutcome(): Outcome {
     const numRecordedTouched = Object.keys(this.start).length;
     const outcome = {
       pinch: false,
@@ -117,6 +112,6 @@ export class GestureHandler {
       pinch = isPinch;
       spread = isSpread;
     }
-    return { spread, pinch };
+    return {spread, pinch};
   }
 }

@@ -14,5 +14,5 @@ export const Header: React.FC<Props> = memo(({title}) => {
     },
   });
 
-  return <Text title={title} h3 style={styles.header} center />;
+  return <Text title={title} type="h3" style={styles.header} center />;
 });

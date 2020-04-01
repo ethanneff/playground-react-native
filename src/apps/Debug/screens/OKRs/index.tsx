@@ -11,20 +11,20 @@ export default memo(function DebugOKRs() {
       <ScrollView
         contentContainerStyle={{paddingHorizontal: Theme.padding.p05}}>
         <Card>
-          <Text h6 title="Company" />
+          <Text type="h6" title="Company" />
           <Card onPress={() => undefined}>
-            <Text h6 title="Mission" />
+            <Text type="h6" title="Mission" />
             <Text
               title="We strive to offer our customers the lowest possible prices
         the best available selection and the utmost convenience."
             />
           </Card>
           <Card onPress={() => undefined}>
-            <Text h6 title="Vision" />
+            <Text type="h6" title="Vision" />
             <Text title="To be Earth’s most customer-centric company where customers can find and discover anything they might want to buy online." />
           </Card>
           <Card onPress={() => undefined}>
-            <Text h6 title="Values" />
+            <Text type="h6" title="Values" />
             <Text title="Customer Obsession" />
             <Text title="Ownership" />
             <Text title="Invent and Simplify" />
@@ -42,14 +42,14 @@ export default memo(function DebugOKRs() {
           </Card>
         </Card>
         <Card>
-          <Text h6 title="Product" />
+          <Text type="h6" title="Product" />
           <Card onPress={() => undefined}>
-            <Text h6 title="Vision" />
+            <Text type="h6" title="Vision" />
             <Text title="Jim, owner" />
           </Card>
 
           <Card onPress={() => undefined}>
-            <Text h6 title="KPIs" />
+            <Text type="h6" title="KPIs" />
             <Text title="Customer Lifetime Value" />
             <Text title="Average Revenue Per user" />
             <Text title="Customer Aquisition Cost" />
@@ -59,7 +59,7 @@ export default memo(function DebugOKRs() {
             <Text title="Contributing Margins" />
           </Card>
           <Card onPress={() => undefined}>
-            <Text h6 title="Team" />
+            <Text type="h6" title="Team" />
             <Text title="Jim, owner" />
             <Text title="Bob, designer" />
             <Text title="Steve, engineer" />
@@ -67,23 +67,23 @@ export default memo(function DebugOKRs() {
           </Card>
 
           <Card onPress={() => undefined}>
-            <Text h6 title="Objective" />
+            <Text type="h6" title="Objective" />
             <Text title="Jim, owner" />
             <Card onPress={() => undefined}>
-              <Text h6 title="KeyResult" />
+              <Text type="h6" title="KeyResult" />
               <Text title="Jim, owner" />
             </Card>
             <Card onPress={() => undefined}>
-              <Text h6 title="KeyResult" />
+              <Text type="h6" title="KeyResult" />
               <Text title="Jim, owner" />
             </Card>
             <Card onPress={() => undefined}>
-              <Text h6 title="KeyResult" />
+              <Text type="h6" title="KeyResult" />
               <Text title="Jim, owner" />
             </Card>
           </Card>
           <Card onPress={() => undefined}>
-            <Text h6 title="Objective" />
+            <Text type="h6" title="Objective" />
             <Text title="Jim, owner" />
           </Card>
         </Card>
