@@ -9,4 +9,7 @@ module.exports = {
     'ios/',
     'src/utils/TestMocks/',
   ],
+  rules: {
+    'react-native/no-inline-styles': 0, // TODO: remove
+  },
 };
