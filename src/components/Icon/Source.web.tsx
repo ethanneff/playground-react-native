@@ -11,12 +11,12 @@ interface Props {
 
 export const Source: React.FC<Props> = memo(function IconSource({
   name,
-  size = 1,
   color,
+
   style,
 }) {
   const path = Icons[name];
   return !path ? null : (
-    <Original path={Icons[name]} size={size} color={color} style={style} />
+    <Original path={Icons[name]} color={color} style={style} />
   );
 });
