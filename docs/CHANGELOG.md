@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.23.3](https://github.com/ethanneff/example/compare/v2.23.2...v2.23.3) (2020-04-01)
+
+
+### Bug Fixes
+
+* add more styling for web landing page ([ea159d2](https://github.com/ethanneff/example/commit/ea159d25357056c67ea9391c6230c8b4b74de94e))
+* pass font through sentence on web landing ([01aafe3](https://github.com/ethanneff/example/commit/01aafe330f1e5e1907b4ff452102ee197494157f))
+* pass text type as a union string instead of props ([0ee5711](https://github.com/ethanneff/example/commit/0ee571181b7997ea22ab649827a723b5e8de898e))
+* remove render methods for content ([cc3a31b](https://github.com/ethanneff/example/commit/cc3a31b7dfcb729b0a5d761a62058d28aaee2ad5))
+* remove size for web icons ([21e0b32](https://github.com/ethanneff/example/commit/21e0b3202ff0a208c1c285dcb3ee929a4c74f90e))
+* remove warnings for inline styles ([8646240](https://github.com/ethanneff/example/commit/8646240749536192f870f0bdedee9a8c2f41eb1b))
+* update deps ([812e164](https://github.com/ethanneff/example/commit/812e164762085712d2a731ee70149ffb80b54bb9))
+
 ## [2.23.2](https://github.com/ethanneff/example/compare/v2.23.1...v2.23.2) (2020-03-31)
 
 
