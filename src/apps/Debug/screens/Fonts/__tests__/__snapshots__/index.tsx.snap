@@ -158,7 +158,7 @@ exports[`renders correctly 1`] = `
           }
         }
       >
-        H2: The quick brown fox jumps over the lazy dog.
+        h2 The quick brown fox jumps over the lazy dog.
       </Text>
       <Text
         style={

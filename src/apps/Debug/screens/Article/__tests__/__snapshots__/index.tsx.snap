@@ -176,7 +176,7 @@ exports[`renders correctly 1`] = `
                 }
               }
             >
-              H2 title
+              type="type="h2"  " title
             </Text>
             <Text
               style={
@@ -294,7 +294,7 @@ exports[`renders correctly 1`] = `
                 }
               }
             >
-              H3 content 
+              type="h3" content 
             </Text>
             <Text
               style={
@@ -460,7 +460,7 @@ exports[`renders correctly 1`] = `
                 }
               }
             >
-              H3 content 
+              type="h3" content 
             </Text>
             <Text
               style={
