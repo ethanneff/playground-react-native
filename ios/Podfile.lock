@@ -545,7 +545,7 @@ PODS:
   - React-jsinspector (0.62.0)
   - react-native-get-random-values (1.3.1):
     - React
-  - react-native-netinfo (5.6.2):
+  - react-native-netinfo (5.7.0):
     - React
   - react-native-slider (2.0.9):
     - React
@@ -608,9 +608,9 @@ PODS:
     - React-cxxreact (= 0.62.0)
     - React-jsi (= 0.62.0)
     - ReactCommon/callinvoker (= 0.62.0)
-  - RNCAsyncStorage (1.8.1):
+  - RNCAsyncStorage (1.9.0):
     - React
-  - RNDeviceInfo (5.5.3):
+  - RNDeviceInfo (5.5.4):
     - React
   - RNFBAnalytics (6.3.4):
     - Firebase/Core (~> 6.13.0)
@@ -640,7 +640,7 @@ PODS:
     - Firebase/RemoteConfig (~> 6.13.0)
     - React
     - RNFBApp
-  - RNRate (1.1.10):
+  - RNRate (1.2.1):
     - React
   - RNSensors (5.4.1):
     - React
@@ -897,7 +897,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 8bf0b2707f05865113415088c398a7f98c0cf546
   React-jsinspector: 8e5913c4c6c54f0d3f9c9fc630c465a89cded65d
   react-native-get-random-values: 148a42f97f2ce180a52d219144e83c278d4fe24b
-  react-native-netinfo: 73303369946c2487c600418961bfdc87748b832f
+  react-native-netinfo: becc6dd2bb2335aa85a8adbaefc8e206125e6177
   react-native-slider: e51492f1264d882a8815b71c5870f8978e52887d
   React-RCTActionSheet: 674afbc8b9c76e0a83520e0a51da29a70802c03f
   React-RCTAnimation: f5f24330d09ee677fb49e0782f8321868f4df431
@@ -909,15 +909,15 @@ SPEC CHECKSUMS:
   React-RCTText: 91a0d0ae5434aa28fe0c89c03eb9d660ff53bd9b
   React-RCTVibration: 0630aeb11e22f87c180ca9c0c3a0a0aba780cc62
   ReactCommon: d22162ab8f1358c53dfcd0f9c4d82d38facdbc48
-  RNCAsyncStorage: e0dd7c8a36543b4ef84969acd9f8aceba3a92dc2
-  RNDeviceInfo: 310c1f43d418d950a193c7650de2f9559c906048
+  RNCAsyncStorage: 453cd7c335ec9ba3b877e27d02238956b76f3268
+  RNDeviceInfo: 6a3d16fce033f6979c4a6a41e62244d183e8c765
   RNFBAnalytics: b8bad44e6653af73219b1a7af24bf3452cb02c1b
   RNFBApp: 7d4006751de8bb5cafa2e8d2e7d94ee250df81db
   RNFBAuth: ed8b865db45f7ded9dbf535e390cba2ba672aede
   RNFBCrashlytics: 93e1cc09a93aa4bb1e9b5a07af0efb2702db5a39
   RNFBFirestore: 04c1eb90463c208ee072988d463c74bec09d08c1
   RNFBRemoteConfig: acfef78587e8d544b53338c07ecbc172fae1b781
-  RNRate: 832f7e4da1b043bda1a138e20afdb75c42a530e9
+  RNRate: a39ac26dc9daf3f9b639ce274b7f80672ae36db1
   RNSensors: 0c25e336a6302bc70870b15f190c6fdb014bf24c
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
