@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.23.5](https://github.com/ethanneff/example/compare/v2.23.4...v2.23.5) (2020-04-06)
+
+
+### Bug Fixes
+
+* update deps ([7866343](https://github.com/ethanneff/example/commit/7866343a3fd64066300b3075a220af2485b5aeaa))
+
 ## [2.23.4](https://github.com/ethanneff/example/compare/v2.23.3...v2.23.4) (2020-04-03)
 
 
