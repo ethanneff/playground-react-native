@@ -5,6 +5,14 @@
 
 ### Bug Fixes
 
+* update deps ([e4f822a](https://github.com/ethanneff/example/commit/e4f822aae97b4b2a4203d2554541f59ac7342486))
+* update deps ([5ffb081](https://github.com/ethanneff/example/commit/5ffb08118c48bb89cd0a1676293cc76aeaec7090))
+
+## [2.23.7](https://github.com/ethanneff/example/compare/v2.23.6...v2.23.7) (2020-04-13)
+
+
+### Bug Fixes
+
 * update deps ([5ffb081](https://github.com/ethanneff/example/commit/5ffb08118c48bb89cd0a1676293cc76aeaec7090))
 
 ## [2.23.6](https://github.com/ethanneff/example/compare/v2.23.5...v2.23.6) (2020-04-06)
