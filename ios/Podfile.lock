@@ -158,14 +158,14 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - appcenter-analytics (3.0.1):
+  - appcenter-analytics (3.0.2):
     - AppCenter/Analytics
     - AppCenterReactNativeShared
     - React
-  - appcenter-core (3.0.1):
+  - appcenter-core (3.0.2):
     - AppCenterReactNativeShared
     - React
-  - appcenter-crashes (3.0.1):
+  - appcenter-crashes (3.0.2):
     - AppCenter/Crashes
     - AppCenterReactNativeShared
     - React
@@ -845,9 +845,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
   AppCenter: a1c30c47b7882a04a615ffa5ab26c007326436d8
-  appcenter-analytics: 46b4bb2832834a198ba6c4058b4eb335386c1063
-  appcenter-core: 765878f5c300907bb70dbb8e956c5a74df7ca23d
-  appcenter-crashes: 66b533f4e2a2278ddbd9369614fe18f0d7f58e47
+  appcenter-analytics: f819aa9bd41c43b8b9ae53aa5dfd862b48a65f50
+  appcenter-core: 74a3db7d48a720fc3a70e0cf5cbda720decac008
+  appcenter-crashes: 0aea510872e4f9186553941b75ba0e9e6c7d9e07
   AppCenterReactNativeShared: a18a3da01dd569fbfbdd264c8c43491af6efa88d
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
