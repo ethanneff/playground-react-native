@@ -4,7 +4,7 @@
 
 - [ ] Deploy Android app
 - [ ] Deploy iOS app
-- [ ] Publish landing Page
+- [ ] Publish landing page
 - [ ] Obtain 10 users
 - [ ] Question users
 
