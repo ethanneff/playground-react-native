@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.23.7](https://github.com/ethanneff/example/compare/v2.23.6...v2.23.7) (2020-04-24)
+
+
+### Bug Fixes
+
+* update deps ([d8bdeae](https://github.com/ethanneff/example/commit/d8bdeae04a67b547851850cebdeb95bd8afa0a52))
+* update deps ([704f84c](https://github.com/ethanneff/example/commit/704f84c0acded20f05acb2dd87a4cf4afcc7a5bf))
+* update deps ([f2f566d](https://github.com/ethanneff/example/commit/f2f566da4c0219fc914562f8c8fd6470f3d07e89))
+* update deps ([da7329e](https://github.com/ethanneff/example/commit/da7329ee3125aa6e726ff81a4d023a04bc38491b))
+* update deps ([37e0226](https://github.com/ethanneff/example/commit/37e022619dd4f9bbf75aa4c6fc40d24b2a6e5ac9))
+* update deps ([e4f822a](https://github.com/ethanneff/example/commit/e4f822aae97b4b2a4203d2554541f59ac7342486))
+* update deps ([5ffb081](https://github.com/ethanneff/example/commit/5ffb08118c48bb89cd0a1676293cc76aeaec7090))
+* update icons for lint ([26a5b64](https://github.com/ethanneff/example/commit/26a5b64d340fd9fd6972dc72757809c173e1989e))
+* update ios deps ([4752f81](https://github.com/ethanneff/example/commit/4752f81a98b21cc7135a661f28d9ec7c41e67b18))
+* update podlock deps ([eeb6218](https://github.com/ethanneff/example/commit/eeb6218ff92103080d7b7619da4e1de759855441))
+
 ## [2.23.7](https://github.com/ethanneff/example/compare/v2.23.6...v2.23.7) (2020-04-20)
 
 
