@@ -89,9 +89,106 @@ const Sentence = memo(function Sentence({words, style}: SentenceProps) {
   );
 });
 
+interface HeaderProps {
+  height: number;
+}
+
+export const Header = memo(function Header({height}: HeaderProps) {
+  const color = useColor();
+  return (
+    <View
+      style={{
+        backgroundColor: color.background,
+        position: 'absolute',
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        borderColor: color.secondary,
+        padding: Theme.padding.p04,
+        borderBottomWidth: 1,
+        zIndex: 2,
+        height,
+      }}>
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <Image source={image} style={{width: '30px', height: '30px'}} />
+        <Text
+          title="Core"
+          type="h3"
+          bold
+          style={{paddingHorizontal: Theme.padding.p04}}
+        />
+        <NavButton title="Features" onPress={() => undefined} />
+        <NavButton title="Premium" onPress={() => undefined} />
+      </View>
+      <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
+        <NavButton title="Sign In" onPress={() => undefined} />
+        <NavButton inverted title="Sign Up" onPress={() => undefined} />
+      </View>
+    </View>
+  );
+});
+
+interface AppIconProps {
+  onPress: () => void;
+  type: 'google-play' | 'apple';
+}
+
+const AppIcon = memo(function AppIcon({onPress, type}: AppIconProps) {
+  const color = useColor();
+  const iconSize = '48px';
+  const text = type === 'apple' ? 'Download on the' : 'GET IT ON';
+  const store = type === 'apple' ? 'App Store' : 'Google Play';
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      style={{
+        width: '248px',
+        justifyContent: 'center',
+        borderRadius: Theme.padding.p02,
+        flexDirection: 'row',
+        backgroundColor: color.text,
+        paddingVertical: Theme.padding.p02,
+        paddingHorizontal: Theme.padding.p04,
+      }}>
+      <Icon
+        name={type}
+        color={color.background}
+        style={{width: iconSize, height: iconSize, alignSelf: 'center'}}
+      />
+      <View style={{paddingLeft: Theme.padding.p02}}>
+        <Text type="h5" title={text} inverse />
+        <Text type="h3" title={store} inverse />
+      </View>
+    </TouchableOpacity>
+  );
+});
+
+interface SectionProps {
+  children: any;
+  paddingTop?: number;
+  backgroundColor: string;
+}
+
+const Section = memo(function Section({
+  paddingTop,
+  children,
+  backgroundColor,
+}: SectionProps) {
+  return (
+    <View
+      style={{
+        paddingTop: paddingTop,
+        height: '100vh',
+        backgroundColor: backgroundColor,
+      }}>
+      {children}
+    </View>
+  );
+});
+
 const image = require('../../../../assets/line-chart.png');
 export default memo(function PortfolioLanding() {
-  const color = useColor();
+  const height = Theme.padding.p18;
   const titleSentence: Word[] = [
     {title: 'Get started with ', type: 'h2'},
     {title: 'Core', bold: true, type: 'h2'},
@@ -112,40 +209,22 @@ export default memo(function PortfolioLanding() {
       onPress: () => undefined,
     },
   ];
+  const color = useColor();
 
   return (
-    <View style={{height: '100vh'}}>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          borderColor: color.secondary,
-          padding: Theme.padding.p04,
-          borderBottomWidth: 1,
-        }}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <Image source={image} style={{width: '30px', height: '30px'}} />
-          <Text
-            title="Core"
-            type="h3"
-            bold
-            style={{paddingHorizontal: Theme.padding.p04}}
-          />
-          <NavButton title="Features" onPress={() => undefined} />
-          <NavButton title="Premium" onPress={() => undefined} />
-        </View>
-        <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
-          <NavButton title="Sign In" onPress={() => undefined} />
-          <NavButton inverted title="Sign Up" onPress={() => undefined} />
-        </View>
-      </View>
-      <View style={{flex: 1}}>
+    <View>
+      <Header height={height} />
+      <Section paddingTop={height} backgroundColor={color.light}>
         <Sentence
           style={{paddingVertical: Theme.padding.p08, alignSelf: 'center'}}
           words={titleSentence}
         />
-
         <View style={{width: '400px', alignSelf: 'center'}}>
+          <SignInButton
+            icon="apple"
+            title="Continue with Apple"
+            onPress={() => undefined}
+          />
           <SignInButton
             icon="google"
             title="Continue with Google"
@@ -164,6 +243,13 @@ export default memo(function PortfolioLanding() {
             words={passwordSentence}
           />
         </View>
+        <View style={{flex: 1}} />
+        <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+          <AppIcon onPress={() => undefined} type="apple" />
+          <AppIcon onPress={() => undefined} type="google-play" />
+        </View>
+      </Section>
+      <Section backgroundColor={color.background}>
         <View style={{flex: 1}} />
         <View
           style={{
@@ -184,7 +270,7 @@ export default memo(function PortfolioLanding() {
           <NavButton title="Terms of Service" onPress={() => undefined} />
           <NavButton title="Privacy Policy" onPress={() => undefined} />
         </View>
-      </View>
+      </Section>
     </View>
   );
 });
