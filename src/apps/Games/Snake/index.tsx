@@ -1,4 +1,4 @@
-import React, {memo, useState, useCallback} from 'react';
+import React, {memo, useState, useCallback, useEffect} from 'react';
 import {View} from 'react-native';
 import {Screen, Button} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
@@ -8,7 +8,7 @@ import {useGesture} from './useGesture';
 import {EndGame} from './EndGame';
 import {useClock} from './useClock';
 
-type State = 'on' | 'off';
+type State = 'on' | 'off' | 'error' | 'win';
 
 type Game = {
   board: BoardContext;
@@ -17,7 +17,6 @@ type Game = {
 };
 
 // TODO: need to save the entire board to redux to load on app open
-// TODO: figure out why board is updating, but not rendering
 
 export default memo(function Snake() {
   const color = useColor();
@@ -28,26 +27,40 @@ export default memo(function Snake() {
     points: 0,
     state: 'off',
   });
-
   const {direction, panHandlers} = useGesture();
+
+  const update = useCallback(() => {
+    const board = updateBoard(game.board, direction.current);
+
+    if (board.state !== 'ok') {
+      setGame((prev) => ({...prev, board, state: 'error'}));
+    } else {
+      setGame((prev) => ({...prev, board}));
+    }
+  }, [direction, game.board]);
+
   const {start, stop} = useClock({
-    frequency: 400,
-    onUpdate: useCallback(() => {
-      const board = updateBoard(game.board, direction.current);
-      setGame((state) => ({...state, board}));
-    }, [game.board, direction]),
+    frequency: 100,
+    onUpdate: update,
   });
 
   const onStart = useCallback(() => {
     const board = getBoard(size);
-    setGame((state) => ({...state, board, state: 'on'}));
-    start();
-  }, [start]);
+    setGame((prev) => ({...prev, board, state: 'on'}));
+  }, []);
 
   const onStop = useCallback(() => {
-    setGame((state) => ({...state, state: 'off'}));
-    stop();
-  }, [stop]);
+    setGame((prev) => ({...prev, state: 'off'}));
+  }, []);
+
+  useEffect(() => {
+    if (game.state === 'on') {
+      start();
+    } else {
+      direction.current = 'up';
+      stop();
+    }
+  }, [game.state, start, stop, direction]);
 
   return (
     <>
@@ -62,7 +75,7 @@ export default memo(function Snake() {
           <Board matrix={game.board.matrix} />
         </View>
       </Screen>
-      {game.state === 'off' && <EndGame onPress={onStart} />}
+      {game.state === 'error' && <EndGame onPress={onStart} />}
     </>
   );
 });

@@ -53,9 +53,59 @@ export const getBoard = (size: number): BoardContext => {
   return {matrix, head, tail, food, state: 'ok'};
 };
 
+const getNext = (
+  direction: Direction,
+  head: Cell,
+  matrix: Matrix,
+): Cell | null => {
+  let x;
+  let y;
+  switch (direction) {
+    case 'up':
+      x = head[0] - 1;
+      y = head[1];
+      if (x < 0) {
+        return null;
+      }
+      return [x, y];
+    case 'down':
+      x = head[0] + 1;
+      y = head[1];
+      if (x >= matrix.length) {
+        return null;
+      }
+      return [x, y];
+    case 'left':
+      x = head[0];
+      y = head[1] - 1;
+      if (y < 0) {
+        return null;
+      }
+      return [x, y];
+    case 'right':
+      x = head[0];
+      y = head[1] + 1;
+      if (y >= matrix[0].length) {
+        return null;
+      }
+      return [x, y];
+    default:
+      return null;
+  }
+};
+
 export const updateBoard = (
   board: BoardContext,
   direction: Direction,
 ): BoardContext => {
+  const next = getNext(direction, board.head, board.matrix);
+  // if next is inside self, keep going forward
+  if (!next) {
+    board.state = 'hit wall';
+    return board;
+  }
+  board.matrix[next[0]][next[1]] = 1;
+  board.head = next;
+
   return board;
 };

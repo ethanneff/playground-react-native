@@ -1,22 +1,23 @@
 import {View} from 'react-native';
 import {Matrix} from './utils';
-import React, {memo} from 'react';
+import React from 'react';
 import {Cell} from './Cell';
 
 interface BoardProps {
   matrix: Matrix;
 }
 
-export const Board = memo(function Board({matrix}: BoardProps) {
+// TODO: figure out why board is updating with memo
+export const Board = ({matrix}: BoardProps) => {
   return (
     <View style={{flex: 1, justifyContent: 'center'}}>
-      {matrix.map((row, i) => (
+      {matrix.map((x, i) => (
         <View key={i} style={{flexDirection: 'row'}}>
-          {row.map((col, j) => (
-            <Cell key={`cell-${i}${j}`} value={col} length={matrix.length} />
+          {x.map((y, j) => (
+            <Cell key={`cell-${i}${j}`} value={y} length={matrix.length} />
           ))}
         </View>
       ))}
     </View>
   );
-});
+};
