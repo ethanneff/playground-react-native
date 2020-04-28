@@ -1,19 +1,19 @@
 import {View} from 'react-native';
-import {BoardObject} from './utils';
+import {Matrix} from './utils';
 import React, {memo} from 'react';
 import {Cell} from './Cell';
 
 interface BoardProps {
-  board: BoardObject;
+  matrix: Matrix;
 }
 
-export const Board = memo(function Board({board}: BoardProps) {
+export const Board = memo(function Board({matrix}: BoardProps) {
   return (
     <View style={{flex: 1, justifyContent: 'center'}}>
-      {board.map((x, i) => (
+      {matrix.map((row, i) => (
         <View key={i} style={{flexDirection: 'row'}}>
-          {x.map((y, j) => (
-            <Cell key={`cell-${i}${j}`} value={y} length={board.length} />
+          {row.map((col, j) => (
+            <Cell key={`cell-${i}${j}`} value={col} length={matrix.length} />
           ))}
         </View>
       ))}

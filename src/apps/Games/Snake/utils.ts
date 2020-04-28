@@ -1,48 +1,61 @@
-export type BoardObject = Array<Array<0 | 1 | 2>>;
+import {Direction} from './useGesture';
 
-export const generateRandom = (size: number) =>
-  Math.floor(Math.random() * size);
+export type Matrix = Array<Array<0 | 1 | 2>>;
+type Cell = [number, number];
+type BoardState = 'ok' | 'hit wall' | 'hit snake' | 'ate food' | 'won';
 
-export const addFood = (
-  board: BoardObject,
-  used: {[key: string]: boolean} = {},
-): boolean => {
-  const x = generateRandom(board.length);
-  const y = generateRandom(board.length);
-
-  const combo = `${x}${y}`;
-  if (Object.keys(used).length === board.length) {
-    return false;
-  }
-  if (combo in used || board[x][y] !== 0) {
-    used[combo] = true;
-    addFood(board, used);
-    return false;
-  }
-  board[y][x] = 2;
-  return true;
+export type BoardContext = {
+  matrix: Matrix;
+  head: Cell;
+  tail: Cell;
+  food: Cell;
+  state: BoardState;
 };
 
-export const addStarting = (board: BoardObject) => {
-  const center = Math.floor(board.length / 2);
-  board[center][center] = 1;
-};
-
-export const generateBoard = (size: number) => {
-  const board: BoardObject = [];
+const getBlankMatrix = (size: number) => {
+  const matrix: Matrix = [];
   for (let i = 0; i < size; i++) {
-    board[i] = [];
+    matrix[i] = [];
     for (let j = 0; j < size; j++) {
-      board[i][j] = 0;
+      matrix[i][j] = 0;
     }
   }
-
-  addStarting(board);
-  addFood(board);
-  return board;
+  return matrix;
 };
 
-export const nextSnakePosition = () => undefined;
-export const collision = (next: any) => next && false;
-export const endGame = () => undefined;
-export const eat = () => undefined;
+const getAvailable = (matrix: Matrix): Cell[] => {
+  const available: Cell[] = [];
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === 0) {
+        available.push([i, j]);
+      }
+    }
+  }
+  return available;
+};
+
+const getRandomFood = (available: Cell[]) => {
+  return Math.floor(Math.random() * available.length);
+};
+
+export const getBoard = (size: number): BoardContext => {
+  const center = Math.floor(size / 2);
+  const matrix = getBlankMatrix(size);
+  const available = getAvailable(matrix);
+  const random = getRandomFood(available);
+  const food: Cell = available[random];
+  const head: Cell = [center, center];
+  const tail: Cell = [center, center];
+  matrix[center][center] = 1;
+  matrix[food[0]][food[1]] = 2;
+
+  return {matrix, head, tail, food, state: 'ok'};
+};
+
+export const updateBoard = (
+  board: BoardContext,
+  direction: Direction,
+): BoardContext => {
+  return board;
+};
