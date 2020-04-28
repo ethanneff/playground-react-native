@@ -20,6 +20,8 @@ export const Cell = memo(function Cell({value, length}: CellProps) {
         flex: 1,
         width,
         height: width,
+        borderWidth: 1,
+        borderColor: color.surface,
         backgroundColor,
       }}
     />
