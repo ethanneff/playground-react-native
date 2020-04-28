@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useRef, MutableRefObject} from 'react';
 import {
   PanResponder,
   PanResponderInstance,
@@ -9,16 +9,16 @@ export type Direction = 'left' | 'right' | 'up' | 'down';
 
 export const useGesture = (): {
   panHandlers: GestureResponderHandlers;
-  direction: Direction;
+  direction: MutableRefObject<Direction>;
 } => {
-  const [direction, setDirection] = useState<Direction>('up');
+  const direction = useRef<Direction>('up');
   const panResponder: PanResponderInstance = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
     onPanResponderRelease: (_, g) => {
       if (Math.abs(g.dx) >= Math.abs(g.dy)) {
-        setDirection(g.dx >= 0 ? 'right' : 'left');
+        direction.current = g.dx >= 0 ? 'right' : 'left';
       } else {
-        setDirection(g.dy >= 0 ? 'down' : 'up');
+        direction.current = g.dy >= 0 ? 'down' : 'up';
       }
     },
   });
