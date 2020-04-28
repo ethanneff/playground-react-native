@@ -1,4 +1,4 @@
-import React, {memo, useState, useCallback, useRef, useEffect} from 'react';
+import React, {memo, useState, useCallback} from 'react';
 import {View} from 'react-native';
 import {Screen, Button} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
