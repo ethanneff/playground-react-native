@@ -36,10 +36,8 @@ const getCurrentItem = (item: Item): boolean => {
   const currentTime = new Date();
   const before = currentTime.setHours(currentTime.getHours() - 1);
   const after = currentTime.setHours(currentTime.getHours() + 1);
-  if (item.id > before && item.id < after) {
-    return true;
-  }
-  return false;
+  const between = item.id > before && item.id < after;
+  return between;
 };
 
 const getFirstItemOfDay = (index: number, item: Item, items: Item[]) =>
@@ -86,6 +84,7 @@ export const List = memo(
         <FlatList
           style={styles.list}
           inverted
+          initialNumToRender={0}
           initialScrollIndex={initialIndex}
           getItemLayout={getItemLayout}
           keyExtractor={keyExtractor}
