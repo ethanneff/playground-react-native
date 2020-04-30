@@ -3,6 +3,9 @@
 ## Top goals
 
 - [ ] Deploy Android app
+  - [ ] login flow
+  - [ ] activity
+  - [ ] deploy android
 - [ ] Deploy iOS app
 - [ ] Publish landing page
 - [ ] Obtain 10 users
