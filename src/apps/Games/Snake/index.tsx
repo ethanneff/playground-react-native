@@ -1,6 +1,6 @@
 import React, {memo, useState, useCallback, useEffect} from 'react';
 import {View} from 'react-native';
-import {Screen, Button} from '../../../components';
+import {Screen, Button, Text} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
 import {BoardContext, getBoard, updateBoard} from './utils';
 import {Board} from './Board';
@@ -22,6 +22,7 @@ export default memo(function Snake() {
   const color = useColor();
   const nav = useNav();
   const size = 20;
+  const frequency = 200;
   const [game, setGame] = useState<Game>({
     board: getBoard(size),
     points: 0,
@@ -31,22 +32,23 @@ export default memo(function Snake() {
 
   const update = useCallback(() => {
     const board = updateBoard(game.board, direction.current);
-
-    if (board.state !== 'ok') {
-      setGame((prev) => ({...prev, board, state: 'error'}));
-    } else {
+    if (board.state === 'ate food') {
+      setGame((prev) => ({...prev, board, points: prev.points + 1}));
+    } else if (board.state === 'ok') {
       setGame((prev) => ({...prev, board}));
+    } else {
+      setGame((prev) => ({...prev, board, state: 'error'}));
     }
   }, [direction, game.board]);
 
   const {start, stop} = useClock({
-    frequency: 100,
+    frequency,
     onUpdate: update,
   });
 
   const onStart = useCallback(() => {
     const board = getBoard(size);
-    setGame((prev) => ({...prev, board, state: 'on'}));
+    setGame((prev) => ({...prev, board, points: 0, state: 'on'}));
   }, []);
 
   const onStop = useCallback(() => {
@@ -68,6 +70,7 @@ export default memo(function Snake() {
         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
           <Button title="start" onPress={onStart} />
           <Button title="stop" onPress={onStop} />
+          <Text title={`points: ${game.points}`} />
         </View>
         <View
           style={{flex: 1, backgroundColor: color.success}}

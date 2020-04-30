@@ -42,9 +42,7 @@ const getRandomFood = (available: Cell[]) => {
 export const getBoard = (size: number): BoardContext => {
   const center = Math.floor(size / 2);
   const matrix = getBlankMatrix(size);
-  const available = getAvailable(matrix);
-  const random = getRandomFood(available);
-  const food: Cell = available[random];
+  const food = getFood(matrix);
   const head: Cell = [center, center];
   const tail: Cell = [center, center];
   matrix[center][center] = 1;
@@ -94,15 +92,31 @@ const getNext = (
   }
 };
 
+const getFood = (matrix: Matrix): Cell => {
+  const available = getAvailable(matrix);
+  const random = getRandomFood(available);
+  const food: Cell = available[random];
+  return food;
+};
+
 export const updateBoard = (
   board: BoardContext,
   direction: Direction,
 ): BoardContext => {
   const next = getNext(direction, board.head, board.matrix);
-  // if next is inside self, keep going forward
   if (!next) {
     board.state = 'hit wall';
     return board;
+  }
+  const nextValue = board.matrix[next[0]][next[1]];
+  if (nextValue === 1) {
+    board.state = 'hit snake';
+  } else if (nextValue === 2) {
+    const food = getFood(board.matrix);
+    board.matrix[food[0]][food[1]] = 2;
+    board.state = 'ate food';
+  } else {
+    board.state = 'ok';
   }
   board.matrix[next[0]][next[1]] = 1;
   board.head = next;
