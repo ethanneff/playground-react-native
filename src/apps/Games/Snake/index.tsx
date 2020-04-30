@@ -27,7 +27,7 @@ export default memo(function Snake() {
     points: 0,
     state: 'off',
   });
-  const {direction, panHandlers} = useGesture();
+  const {direction, panHandlers} = useGesture({noReverse: true});
 
   const update = useCallback(() => {
     const board = updateBoard(game.board, direction.current);

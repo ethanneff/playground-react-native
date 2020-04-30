@@ -7,7 +7,20 @@ import {
 
 export type Direction = 'left' | 'right' | 'up' | 'down';
 
-export const useGesture = (): {
+type Props = {
+  noReverse?: boolean;
+};
+
+const inverse: {[key in Direction]: Direction} = {
+  left: 'right',
+  right: 'left',
+  up: 'down',
+  down: 'up',
+};
+
+export const useGesture = ({
+  noReverse,
+}: Props): {
   panHandlers: GestureResponderHandlers;
   direction: MutableRefObject<Direction>;
 } => {
@@ -15,11 +28,14 @@ export const useGesture = (): {
   const panResponder: PanResponderInstance = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
     onPanResponderRelease: (_, g) => {
+      let direct: Direction;
       if (Math.abs(g.dx) >= Math.abs(g.dy)) {
-        direction.current = g.dx >= 0 ? 'right' : 'left';
+        direct = g.dx >= 0 ? 'right' : 'left';
       } else {
-        direction.current = g.dy >= 0 ? 'down' : 'up';
+        direct = g.dy >= 0 ? 'down' : 'up';
       }
+      const reverse = noReverse && inverse[direct] === direction.current;
+      direction.current = reverse ? direction.current : direct;
     },
   });
 
