@@ -4,6 +4,7 @@ export type Matrix = Array<Array<0 | 1 | 2>>;
 type Cell = [number, number];
 type BoardState = 'ok' | 'hit wall' | 'hit snake' | 'ate food' | 'won';
 
+// TODO: need to store the snake instead of tail to know the next tail
 export type BoardContext = {
   matrix: Matrix;
   head: Cell;

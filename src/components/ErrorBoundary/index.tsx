@@ -1,5 +1,6 @@
 import React, {ErrorInfo} from 'react';
 import {Text} from '../Text';
+import {View} from 'react-native';
 
 interface State {
   hasError: boolean;
@@ -20,6 +21,10 @@ export class ErrorBoundary extends React.PureComponent {
     if (!this.state.hasError) {
       return this.props.children;
     }
-    return <Text title="something went wrong" />;
+    return (
+      <View>
+        <Text center title="something went wrong" />
+      </View>
+    );
   }
 }
