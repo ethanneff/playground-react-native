@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
-import {StyleSheet, ScrollView, View} from 'react-native';
-import {Screen, Text, Card, Activity, Icon} from '../../components';
+import {StyleSheet, ScrollView} from 'react-native';
+import {Screen, Activity, Icon} from '../../components';
 import {useNav, useColor} from '../../hooks';
 import {Theme} from '../../utils';
 
@@ -16,47 +16,23 @@ export default memo(function ActivityTracker() {
   const color = useColor();
   const nav = useNav();
   const styles = StyleSheet.create({
-    bottom: {
-      paddingBottom: Theme.padding.p04,
+    background: {
+      backgroundColor: color.surface,
+    },
+    container: {
+      paddingHorizontal: Theme.padding.p04,
+      paddingVertical: Theme.padding.p02,
     },
   });
 
   return (
-    <Screen onLeftPress={nav.to('portfolioLanding')} title="Activity" border>
+    <Screen onLeftPress={nav.to('portfolioLanding')} title="Activity">
       <ScrollView
-        style={{backgroundColor: color.surface}}
-        contentContainerStyle={{
-          paddingHorizontal: Theme.padding.p04,
-          paddingVertical: Theme.padding.p02,
-        }}>
-        <Card>
-          <Text
-            style={styles.bottom}
-            type="h4"
-            emphasis="medium"
-            title="Github"
-          />
-          <Activity username="ethanneff" site="github" />
-        </Card>
-        <Card>
-          <Text
-            style={styles.bottom}
-            type="h4"
-            emphasis="medium"
-            title="LeetCode"
-          />
-          <Activity username="ethanneff" site="leetCode" />
-        </Card>
-        <Card>
-          <Text
-            style={styles.bottom}
-            type="h4"
-            emphasis="medium"
-            title="HackerRank"
-          />
-          <Activity username="ethanneff" site="hackerRank" />
-        </Card>
-        <View style={{height: Theme.padding.p04}} />
+        style={styles.background}
+        contentContainerStyle={styles.container}>
+        <Activity username="ethanneff" site="github" title="Github" />
+        <Activity username="ethanneff" site="leetCode" title="LeetCode" />
+        <Activity username="ethanneff" site="hackerRank" title="HackerRank" />
       </ScrollView>
       <Icon
         name="plus"
