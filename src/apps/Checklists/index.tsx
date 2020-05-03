@@ -28,6 +28,9 @@ export default memo(function Checklists() {
             emphasis="medium"
             title="Weekly Goals"
           />
+          <Text type="caption" title="1. complete learn plan profit" />
+          <Text type="caption" title="2. ship checklist" />
+          <Text type="caption" title="3. complete 30 leetcode" />
         </Card>
         <Card>
           <Text
@@ -36,6 +39,10 @@ export default memo(function Checklists() {
             emphasis="medium"
             title="Daily Habits and Routines"
           />
+          <Text type="caption" title="After I wake up" />
+          <Text type="caption" title="After I shower" />
+          <Text type="caption" title="Before I one on one" />
+          <Text type="caption" title="Before I get on the train" />
         </Card>
       </ScrollView>
       <Icon
