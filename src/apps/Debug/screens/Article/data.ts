@@ -54,8 +54,8 @@ export const data: ContentBody = {
           ],
         },
       ],
-      title: 'type="type="h2"  " title',
-      titleType: 'h3',
+      title: 'h2 title',
+      titleType: 'h2',
     },
     {
       paragraphs: [
@@ -113,7 +113,7 @@ export const data: ContentBody = {
           ],
         },
       ],
-      title: 'type="h3" content ',
+      title: 'h3 content',
       titleType: 'h3',
     },
     {
@@ -172,8 +172,8 @@ export const data: ContentBody = {
           ],
         },
       ],
-      title: 'type="h3" content ',
-      titleType: 'h3',
+      title: 'h4 content',
+      titleType: 'h4',
     },
   ],
 };
