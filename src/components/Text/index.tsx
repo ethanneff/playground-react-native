@@ -3,6 +3,7 @@ import {Animated, StyleSheet, TextStyle, StyleProp} from 'react-native';
 import {Theme, colorWithOpacity} from '../../utils';
 import {useNativeDriver, useColor} from '../../hooks';
 import {getTextEmphasis, getFontType, FontType, FontEmphasis} from './utils';
+import {Sound} from '../../conversions';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
 
@@ -28,6 +29,7 @@ export interface TextProps {
   onPress?(): void;
 }
 
+const sound = new Sound(require('./../TouchableOpacity/tap.mp3'));
 export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
   const {
     type,
@@ -75,9 +77,10 @@ export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
   });
 
   const handlePress = () => {
-    if (onPress) {
-      onPress();
+    if (!onPress) {
+      return;
     }
+    sound.stop(() => sound.play());
     // TODO: does not work on real devices
     Animated.sequence([
       Animated.timing(opacity, {
@@ -91,6 +94,7 @@ export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
         useNativeDriver: nativeDriver,
       }),
     ]).start();
+    onPress();
   };
 
   const textStyle = [
