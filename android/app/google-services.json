@@ -1,38 +1,38 @@
 {
   "project_info": {
-    "project_number": "391302179681",
-    "firebase_url": "https://example-d79fd.firebaseio.com",
-    "project_id": "example-d79fd",
-    "storage_bucket": "example-d79fd.appspot.com"
+    "project_number": "99811324798",
+    "firebase_url": "https://core-b7a57.firebaseio.com",
+    "project_id": "core-b7a57",
+    "storage_bucket": "core-b7a57.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:391302179681:android:d3009b00b0ca2ce6",
+        "mobilesdk_app_id": "1:99811324798:android:bc32837fd1c770c6a9392f",
         "android_client_info": {
           "package_name": "com.eneff.app.core"
         }
       },
       "oauth_client": [
         {
-          "client_id": "391302179681-pfvp84i5b9krsb9i6b521kn366i4n7kn.apps.googleusercontent.com",
+          "client_id": "99811324798-qm3lpd28b24ubo94r38sttcceeksa9vv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCfZTZOCe0RCjNe7wPQDWTwjKST1i-jDh8"
+          "current_key": "AIzaSyB8lQJAAXczLA-WFWZVRulf4PcltOzeydc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "391302179681-pfvp84i5b9krsb9i6b521kn366i4n7kn.apps.googleusercontent.com",
+              "client_id": "99811324798-qm3lpd28b24ubo94r38sttcceeksa9vv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "391302179681-b7tasmpo6u40vsoa4vmorgrp0nqoi68f.apps.googleusercontent.com",
+              "client_id": "99811324798-tfc5kb1a2u0rrp230fav2snvskqoe15q.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.eneff.app.core"
