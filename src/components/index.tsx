@@ -16,3 +16,4 @@ export * from './Activity';
 export * from './Masonry';
 export * from './Slider';
 export * from './TouchableOpacity';
+export * from './Sentence';

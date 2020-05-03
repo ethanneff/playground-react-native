@@ -1,10 +1,14 @@
 import React, {memo} from 'react';
-import {Text as OriginalText, ViewStyle, StyleProp} from 'react-native';
-import {Text, TouchableOpacity, Icon} from '../../../../components';
+import {
+  Text,
+  TouchableOpacity,
+  Icon,
+  Word,
+  Sentence,
+} from '../../../../components';
 import {View, Image} from 'react-native';
 import {useColor} from '../../../../hooks';
 import {Theme} from '../../../../utils';
-import {FontType} from '../../../../components/Text/utils';
 
 interface SignInButtonProps {
   onPress: () => void;
@@ -59,33 +63,6 @@ const NavButton = memo(function NavButton({
       onPress={onPress}>
       <Text title={title} type="h5" bold inverse={inverted} />
     </TouchableOpacity>
-  );
-});
-
-type Word = {
-  title: string;
-  bold?: boolean;
-  type?: FontType;
-  functionality?: 'link' | 'text';
-  onPress?: () => void;
-};
-interface SentenceProps {
-  words: Word[];
-  style: StyleProp<ViewStyle>;
-}
-const Sentence = memo(function Sentence({words, style}: SentenceProps) {
-  return (
-    <OriginalText style={style}>
-      {words.map((word) => (
-        <Text
-          type={word.type}
-          key={word.title}
-          title={word.title}
-          bold={word.bold}
-          onPress={word.onPress}
-        />
-      ))}
-    </OriginalText>
   );
 });
 
@@ -197,14 +174,12 @@ export default memo(function PortfolioLanding() {
     {title: 'Or use your password to '},
     {
       title: 'sign up ',
-      functionality: 'link',
       bold: true,
       onPress: () => undefined,
     },
     {title: 'or '},
     {
       title: 'sign in ',
-      functionality: 'link',
       bold: true,
       onPress: () => undefined,
     },
