@@ -37,7 +37,7 @@
     "appcenter-crashes": "3.0.2",
     "axios": "0.19.2",
     "date-fns": "2.12.0",
-    "dayjs": "1.8.25",
+    "dayjs": "1.8.26",
     "howler": "2.1.3",
     "npm-check-updates": "4.1.2",
     "react": "16.13.1",
@@ -59,11 +59,11 @@
     "reselect": "4.0.0",
     "typesafe-actions": "5.1.0",
     "utility-types": "3.10.0",
-    "uuid": "7.0.3"
+    "uuid": "8.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.9.0",
-    "@babel/runtime": "7.9.2",
+    "@babel/core": "7.9.6",
+    "@babel/runtime": "7.9.6",
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@react-native-community/eslint-config": "1.1.0",
@@ -76,7 +76,7 @@
     "@types/howler": "2.1.2",
     "@types/jest": "25.2.1",
     "@types/react": "16.9.34",
-    "@types/react-native": "0.62.4",
+    "@types/react-native": "0.62.5",
     "@types/react-native-vector-icons": "6.4.5",
     "@types/react-redux": "7.1.7",
     "@types/react-test-renderer": "16.9.2",
