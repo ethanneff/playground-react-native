@@ -18,6 +18,7 @@ type ApiInput = {
 type ActivitySquares = {
   matrix: ActivityMatrix;
   max: number;
+  total: number;
 };
 
 export const getDateFormat = (date: number) => format(date, 'yyyy-MM-dd');
@@ -35,7 +36,6 @@ export const getActivitySquares = (): ActivitySquares => {
   const begin = sub(startOfWeek(today), {years: 1}).valueOf();
   let end = endOfWeek(today).valueOf();
   let day = 0;
-  const max = 0;
   let week = [];
   while (end >= begin) {
     week.unshift({date: end, count: 0});
@@ -49,7 +49,7 @@ export const getActivitySquares = (): ActivitySquares => {
     end -= oneDay;
   }
 
-  return {matrix, max};
+  return {matrix, max: 0, total: 0};
 };
 
 export const updateActivitySquares = (
@@ -57,14 +57,16 @@ export const updateActivitySquares = (
   active: ApiResponse,
 ): ActivitySquares => {
   let max = 0;
+  let total = 0;
   const matrix = squares.matrix.map((week) =>
     week.map((day) => {
       const count = active[getDateFormat(day.date)] || 0;
       max = Math.max(count, max);
+      total += count;
       return {...day, count};
     }),
   );
-  return {matrix, max};
+  return {matrix, max, total};
 };
 
 const getGithubActivity = async (username: string): Promise<ApiResponse> => {

@@ -1,6 +1,6 @@
 import {FlatList, View, ActivityIndicator} from 'react-native';
 import React, {memo, useEffect, useState, useCallback} from 'react';
-import {Theme, colorWithOpacity} from '../../utils';
+import {Theme} from '../../utils';
 import {
   getActivitySquares,
   updateActivitySquares,
@@ -12,13 +12,15 @@ import {Week, ActivityWeek} from './Week';
 import {Text} from '../Text';
 import {Button} from '../Button';
 import {ActivityDay} from './Day';
-import {useColor} from '../../hooks';
+import {Card} from '../Card';
+import {TouchableOpacity} from '../TouchableOpacity';
 
 interface Props {
   username: string;
   site: Site;
   size?: number;
   margin?: number;
+  title: string;
 }
 
 export type Site = 'github' | 'leetCode' | 'hackerRank' | 'gitlab' | 'random';
@@ -29,6 +31,7 @@ type ActivityModel = {
   activity: {
     matrix: ActivityMatrix;
     max: number;
+    total: number;
   };
   request: 'loading' | 'failure' | 'success';
   selected: {
@@ -51,9 +54,10 @@ export const Activity = memo(function Activity({
   margin = 2,
   username,
   site,
+  title,
 }: Props) {
-  const color = useColor();
   const [state, setState] = useState<ActivityModel>(initialActivity);
+  const keyExtractor = useCallback((item) => String(item[0].date), []);
 
   const getActivity = useCallback(async () => {
     try {
@@ -78,6 +82,11 @@ export const Activity = memo(function Activity({
     }
   }, [site, username]);
 
+  const refresh = useCallback(() => {
+    setState(initialActivity);
+    getActivity();
+  }, [getActivity]);
+
   useEffect(() => {
     getActivity();
   }, [getActivity]);
@@ -95,8 +104,6 @@ export const Activity = memo(function Activity({
     [],
   );
 
-  const onRetryPress = useCallback(() => getActivity(), [getActivity]);
-
   const renderItem = useCallback(
     ({item, index}: {item: ActivityWeek; index: number}) => (
       <Week
@@ -111,44 +118,55 @@ export const Activity = memo(function Activity({
     [state.activity.max, margin, onItemPress, size],
   );
 
-  const keyExtractor = useCallback((item) => String(item[0].date), []);
-
-  return state.request === 'failure' ? (
-    <View>
-      <Text title="Missing network connection" />
-      <Button title="Retry" color="danger" onPress={onRetryPress} />
-    </View>
-  ) : (
-    <View>
-      {state.request === 'loading' && (
-        <ActivityIndicator
-          size="large"
-          style={{
-            backgroundColor: colorWithOpacity(color.background, 0.2),
-            position: 'absolute',
-            height: '100%',
-            width: '100%',
-            zIndex: 1,
-          }}
-        />
+  return (
+    <Card>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          paddingBottom: Theme.padding.p04,
+          alignContent: 'center',
+          alignItems: 'center',
+        }}>
+        <TouchableOpacity onPress={refresh}>
+          <Text type="h4" emphasis="medium" title={title} />
+        </TouchableOpacity>
+        {!state.activity.total ? null : (
+          <Text
+            type="overline"
+            emphasis="medium"
+            title={`${state.activity.total} submissions`}
+          />
+        )}
+      </View>
+      {state.request === 'loading' ? (
+        <ActivityIndicator size="large" />
+      ) : state.request === 'failure' ? (
+        <View>
+          <Text title="Missing network connection" />
+          <Button title="Retry" color="danger" onPress={refresh} />
+        </View>
+      ) : (
+        <View>
+          <FlatList
+            initialNumToRender={0}
+            showsHorizontalScrollIndicator={false}
+            data={state.activity.matrix}
+            inverted
+            horizontal
+            keyExtractor={keyExtractor}
+            renderItem={renderItem}
+          />
+          <Text
+            type="overline"
+            emphasis="medium"
+            secondary
+            title={state.selected.submissions}
+            center
+            style={{paddingTop: Theme.padding.p03}}
+          />
+        </View>
       )}
-      <FlatList
-        initialNumToRender={0}
-        showsHorizontalScrollIndicator={false}
-        data={state.activity.matrix}
-        inverted
-        horizontal
-        keyExtractor={keyExtractor}
-        renderItem={renderItem}
-      />
-      <Text
-        type="overline"
-        emphasis="medium"
-        secondary
-        title={state.selected.submissions}
-        center
-        style={{paddingTop: Theme.padding.p03}}
-      />
-    </View>
+    </Card>
   );
 });
