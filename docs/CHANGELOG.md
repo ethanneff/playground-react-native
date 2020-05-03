@@ -1,5 +1,35 @@
 # Changelog
 
+# [2.24.0](https://github.com/ethanneff/example/compare/v2.23.6...v2.24.0) (2020-04-30)
+
+
+### Bug Fixes
+
+* add food and collision ([596ed5e](https://github.com/ethanneff/example/commit/596ed5e02ac0e6bc5e8bfe3631e16c70cc36929b))
+* add more stuff to the landing page ([68255b1](https://github.com/ethanneff/example/commit/68255b11f13d3d4cba5f7da8d677d8901440385b))
+* clean up snake business logic ([69db14e](https://github.com/ethanneff/example/commit/69db14ead93431eb11433d1685eb23b74cdeba3e))
+* no reverse direction ([415b825](https://github.com/ethanneff/example/commit/415b82599a6dbc446f3a15b760550c62dbc0c7a0))
+* prevent render on swipe direction ([4cb3da9](https://github.com/ethanneff/example/commit/4cb3da9424e95f1a03f9c1a188e37c66d7e087b7))
+* update deps ([183148c](https://github.com/ethanneff/example/commit/183148c10290a71f512d43f13e3e628bd76a0ef0))
+* update deps ([e4f822a](https://github.com/ethanneff/example/commit/e4f822aae97b4b2a4203d2554541f59ac7342486))
+* update deps ([d8bdeae](https://github.com/ethanneff/example/commit/d8bdeae04a67b547851850cebdeb95bd8afa0a52))
+* update deps ([5ffb081](https://github.com/ethanneff/example/commit/5ffb08118c48bb89cd0a1676293cc76aeaec7090))
+* update deps ([37e0226](https://github.com/ethanneff/example/commit/37e022619dd4f9bbf75aa4c6fc40d24b2a6e5ac9))
+* update deps ([f2f566d](https://github.com/ethanneff/example/commit/f2f566da4c0219fc914562f8c8fd6470f3d07e89))
+* update deps ([da7329e](https://github.com/ethanneff/example/commit/da7329ee3125aa6e726ff81a4d023a04bc38491b))
+* update deps ([704f84c](https://github.com/ethanneff/example/commit/704f84c0acded20f05acb2dd87a4cf4afcc7a5bf))
+* update icons for lint ([26a5b64](https://github.com/ethanneff/example/commit/26a5b64d340fd9fd6972dc72757809c173e1989e))
+* update ios deps ([4752f81](https://github.com/ethanneff/example/commit/4752f81a98b21cc7135a661f28d9ec7c41e67b18))
+* update linting ([f9c43e5](https://github.com/ethanneff/example/commit/f9c43e5c0e169fa9cf38132697ee4b6d29c3ba2b))
+* update podlock deps ([eeb6218](https://github.com/ethanneff/example/commit/eeb6218ff92103080d7b7619da4e1de759855441))
+
+
+### Features
+
+* add clock hook for snack ([304240d](https://github.com/ethanneff/example/commit/304240d764da954a6ed5600bbc06841728a8a7a3))
+* add moving snake ([05de01c](https://github.com/ethanneff/example/commit/05de01c6fb32aae4051a2a92ac7b6dc56b615641))
+* use clock instead of game loop for precision renders ([6c5dd0d](https://github.com/ethanneff/example/commit/6c5dd0de2cd23509bfb3b06f99db0752bd9d116c))
+
 ## [2.23.7](https://github.com/ethanneff/example/compare/v2.23.6...v2.23.7) (2020-04-26)
 
 
