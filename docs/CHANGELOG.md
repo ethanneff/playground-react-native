@@ -1,5 +1,33 @@
 # Changelog
 
+# [2.25.0](https://github.com/ethanneff/example/compare/v2.24.0...v2.25.0) (2020-05-05)
+
+
+### Bug Fixes
+
+* add converation auth for web and mobile ([4c92a8f](https://github.com/ethanneff/example/commit/4c92a8f5e310d71951b9724f1e69b1f22adad423))
+* add examples to checklists ([fc25992](https://github.com/ethanneff/example/commit/fc259928839d3a385fa828d1f7f96a8ad06acc65))
+* add firebase dependencies for auth ([0211edd](https://github.com/ethanneff/example/commit/0211edd034ae6dae6d5425f23f9aee103822f692))
+* add login to checklist ([0f4de2e](https://github.com/ethanneff/example/commit/0f4de2e019dadf4000e7c9bf5a6eb409977cc036))
+* correct title for article debug ([400772e](https://github.com/ethanneff/example/commit/400772ef6bdd26e5895e915bae780efe917a2a55))
+* make load less harsh ([36ae724](https://github.com/ethanneff/example/commit/36ae724d014e48e03bcf39d90237cbdf8fd47931))
+* play sounds on text tap ([fa34b0b](https://github.com/ethanneff/example/commit/fa34b0be94d0fc0db64073cdc82dad20b5139895))
+* pull out sentence from web landing page ([d43825c](https://github.com/ethanneff/example/commit/d43825c346a27efae2d242d34e44f3025816c96c))
+* refactor activity to pass card to child ([b6e5222](https://github.com/ethanneff/example/commit/b6e5222d8a79a51b26c47f97dbb6875bf991d716))
+* removed unused view ([cb86f8d](https://github.com/ethanneff/example/commit/cb86f8d9736633ff830a8a891c618424197ec180))
+* show activity total ([33f7c32](https://github.com/ethanneff/example/commit/33f7c32078d0c91addb261ba76b09d08dc516a4d))
+* start new checklist ([491aef9](https://github.com/ethanneff/example/commit/491aef9eb20357df243bb4181a1d2b2dc21c9606))
+* stuff ([738db0d](https://github.com/ethanneff/example/commit/738db0d16bf56ccea5f4b6c7b5d2a0221e2796af))
+* update deps ([2a28281](https://github.com/ethanneff/example/commit/2a28281b9fc0120d977437d6f691cf0e7b44d945))
+* update deps ([b576c99](https://github.com/ethanneff/example/commit/b576c9930312768dcbe8429132099538022914c0))
+* update tests because of feb ([6ca2021](https://github.com/ethanneff/example/commit/6ca20217961fdcc4ab09f76dcd6b1cf9ec5c464a))
+
+
+### Features
+
+* add login feature ([01da9d0](https://github.com/ethanneff/example/commit/01da9d0e47a118edbfba123409d17cc9078a204b))
+* add papi character ([1b5e9d9](https://github.com/ethanneff/example/commit/1b5e9d9459b35e49f733bcea795678f7d79c36d5))
+
 # [2.24.0](https://github.com/ethanneff/example/compare/v2.23.6...v2.24.0) (2020-04-30)
 
 
