@@ -40,7 +40,7 @@ describe('formatRelativeDate', () => {
   });
   it('3 months ago', () => {
     const date = dayjs().subtract(3, 'month');
-    expect(formatRelativeDate(date)).toBe('13w');
+    expect(formatRelativeDate(date)).toBe('12w');
   });
   it('a year ago', () => {
     const date = dayjs().subtract(1, 'year');
