@@ -105,19 +105,39 @@ exports[`renders correctly 1`] = `
       ]
     }
   >
-    <View>
-      <RCTScrollView
-        contentContainerStyle={
-          Object {
-            "paddingHorizontal": 16,
-          }
+    <RCTScrollView
+      contentContainerStyle={
+        Object {
+          "paddingHorizontal": 16,
         }
-      >
-        <View>
-          <View
+      }
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "paddingBottom": 16,
+            }
+          }
+        >
+          <Text
             style={
               Object {
-                "paddingBottom": 16,
+                "color": "hsla(0, 0%, 0%, 1)",
+                "fontSize": 64,
+                "fontWeight": "100",
+                "letterSpacing": -1.5,
+                "opacity": 1,
+                "paddingBottom": 8,
+              }
+            }
+          >
+            Do This
+          </Text>
+          <Text
+            style={
+              Object {
+                "paddingBottom": 8,
               }
             }
           >
@@ -125,491 +145,469 @@ exports[`renders correctly 1`] = `
               style={
                 Object {
                   "color": "hsla(0, 0%, 0%, 1)",
-                  "fontSize": 64,
-                  "fontWeight": "100",
-                  "letterSpacing": -1.5,
-                  "opacity": 1,
-                  "paddingBottom": 8,
-                }
-              }
-            >
-              Do This
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingBottom": 8,
-                }
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                best way to get your life together 
-              </Text>
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "paddingBottom": 16,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "hsla(0, 0%, 0%, 1)",
-                  "fontSize": 32,
+                  "fontSize": 14,
                   "fontWeight": "300",
-                  "letterSpacing": 0,
+                  "letterSpacing": 0.25,
                   "opacity": 1,
-                  "paddingBottom": 8,
                 }
               }
             >
-              type="type="h2"  " title
+              best way to get your life together 
             </Text>
-            <Text
-              style={
-                Object {
-                  "paddingBottom": 8,
-                }
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                first paragraph 
-              </Text>
-              <Text
-                onPress={[Function]}
-                style={
-                  Object {
-                    "color": "hsl(211, 100%, 50%)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                nav here 
-              </Text>
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                blah bldah blah. blah blah blah 
-              </Text>
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingBottom": 8,
-                }
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                second paragraph 
-              </Text>
-              <Text
-                onPress={[Function]}
-                style={
-                  Object {
-                    "color": "hsl(211, 100%, 50%)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                nav here 
-              </Text>
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah 
-              </Text>
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "paddingBottom": 16,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "hsla(0, 0%, 0%, 1)",
-                  "fontSize": 32,
-                  "fontWeight": "300",
-                  "letterSpacing": 0,
-                  "opacity": 1,
-                  "paddingBottom": 8,
-                }
-              }
-            >
-              type="h3" content 
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingBottom": 8,
-                }
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                first paragraph 
-              </Text>
-              <Text
-                onPress={[Function]}
-                style={
-                  Object {
-                    "color": "hsl(211, 100%, 50%)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                nav here 
-              </Text>
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                blah bldah blah. blah blah blah 
-              </Text>
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingBottom": 8,
-                }
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                second paragraph 
-              </Text>
-              <Text
-                onPress={[Function]}
-                style={
-                  Object {
-                    "color": "hsl(211, 100%, 50%)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                nav here 
-              </Text>
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah 
-              </Text>
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingBottom": 8,
-                }
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                third paragraph 
-              </Text>
-              <Text
-                onPress={[Function]}
-                style={
-                  Object {
-                    "color": "hsl(211, 100%, 50%)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                nav here 
-              </Text>
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah 
-              </Text>
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "paddingBottom": 16,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "hsla(0, 0%, 0%, 1)",
-                  "fontSize": 32,
-                  "fontWeight": "300",
-                  "letterSpacing": 0,
-                  "opacity": 1,
-                  "paddingBottom": 8,
-                }
-              }
-            >
-              type="h3" content 
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingBottom": 8,
-                }
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                first paragraph 
-              </Text>
-              <Text
-                onPress={[Function]}
-                style={
-                  Object {
-                    "color": "hsl(211, 100%, 50%)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                nav here 
-              </Text>
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                blah bldah blah. blah blah blah 
-              </Text>
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingBottom": 8,
-                }
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                second paragraph 
-              </Text>
-              <Text
-                onPress={[Function]}
-                style={
-                  Object {
-                    "color": "hsl(211, 100%, 50%)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                nav herhere 
-              </Text>
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah 
-              </Text>
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingBottom": 8,
-                }
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                third paragraph 
-              </Text>
-              <Text
-                onPress={[Function]}
-                style={
-                  Object {
-                    "color": "hsl(211, 100%, 50%)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                nav here 
-              </Text>
-              <Text
-                style={
-                  Object {
-                    "color": "hsla(0, 0%, 0%, 1)",
-                    "fontSize": 14,
-                    "fontWeight": "300",
-                    "letterSpacing": 0.25,
-                    "opacity": 1,
-                  }
-                }
-              >
-                blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah 
-              </Text>
-            </Text>
-          </View>
+          </Text>
         </View>
-      </RCTScrollView>
-    </View>
+        <View
+          style={
+            Object {
+              "paddingBottom": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "hsla(0, 0%, 0%, 1)",
+                "fontSize": 40,
+                "fontWeight": "100",
+                "letterSpacing": -0.5,
+                "opacity": 1,
+                "paddingBottom": 8,
+              }
+            }
+          >
+            h2 title
+          </Text>
+          <Text
+            style={
+              Object {
+                "paddingBottom": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              first paragraph 
+            </Text>
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              nav here 
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              blah bldah blah. blah blah blah 
+            </Text>
+          </Text>
+          <Text
+            style={
+              Object {
+                "paddingBottom": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              second paragraph 
+            </Text>
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              nav here 
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah 
+            </Text>
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "paddingBottom": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "hsla(0, 0%, 0%, 1)",
+                "fontSize": 32,
+                "fontWeight": "300",
+                "letterSpacing": 0,
+                "opacity": 1,
+                "paddingBottom": 8,
+              }
+            }
+          >
+            h3 content
+          </Text>
+          <Text
+            style={
+              Object {
+                "paddingBottom": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              first paragraph 
+            </Text>
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              nav here 
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              blah bldah blah. blah blah blah 
+            </Text>
+          </Text>
+          <Text
+            style={
+              Object {
+                "paddingBottom": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              second paragraph 
+            </Text>
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              nav here 
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah 
+            </Text>
+          </Text>
+          <Text
+            style={
+              Object {
+                "paddingBottom": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              third paragraph 
+            </Text>
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              nav here 
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah 
+            </Text>
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "paddingBottom": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "hsla(0, 0%, 0%, 1)",
+                "fontSize": 22.666666666666668,
+                "fontWeight": "300",
+                "letterSpacing": 0.25,
+                "opacity": 1,
+                "paddingBottom": 8,
+              }
+            }
+          >
+            h4 content
+          </Text>
+          <Text
+            style={
+              Object {
+                "paddingBottom": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              first paragraph 
+            </Text>
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              nav here 
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              blah bldah blah. blah blah blah 
+            </Text>
+          </Text>
+          <Text
+            style={
+              Object {
+                "paddingBottom": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              second paragraph 
+            </Text>
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              nav herhere 
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah 
+            </Text>
+          </Text>
+          <Text
+            style={
+              Object {
+                "paddingBottom": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              third paragraph 
+            </Text>
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "hsl(211, 100%, 50%)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              nav here 
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "hsla(0, 0%, 0%, 1)",
+                  "fontSize": 14,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
+              }
+            >
+              blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah 
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
   </View>
 </RCTSafeAreaView>
 `;
