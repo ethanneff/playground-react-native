@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.25.1](https://github.com/ethanneff/example/compare/v2.25.0...v2.25.1) (2020-05-05)
+
+
+### Bug Fixes
+
+* update deps ([0a7bbcc](https://github.com/ethanneff/example/commit/0a7bbccc400b3934c603292d6e6e81b27eb73871))
+
 # [2.25.0](https://github.com/ethanneff/example/compare/v2.24.0...v2.25.0) (2020-05-05)
 
 
