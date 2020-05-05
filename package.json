@@ -26,7 +26,7 @@
     "@react-native-community/async-storage": "1.10.0",
     "@react-native-community/netinfo": "5.8.0",
     "@react-native-community/slider": "2.0.9",
-    "@react-native-firebase/analytics": "6.7.1",
+    "@react-native-firebase/analytics": "6.7.2",
     "@react-native-firebase/app": "6.7.1",
     "@react-native-firebase/auth": "6.7.1",
     "@react-native-firebase/crashlytics": "6.7.1",
