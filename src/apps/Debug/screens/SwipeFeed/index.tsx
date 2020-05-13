@@ -108,12 +108,11 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
         position: 'absolute',
         width: '100%',
         left: position.x,
-        zIndex: props.index,
         height: props.height,
         backgroundColor: color.background,
-        ...dropShadow,
         borderRadius: Theme.padding.p01,
         borderColor: color.brand,
+        ...dropShadow,
       }}>
       <TouchableOpacity style={{flex: 1}} onPress={props.onSwipeComplete}>
         <View style={{flex: 1, flexDirection: 'row'}}>

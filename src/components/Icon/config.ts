@@ -4523,7 +4523,6 @@ export const Icons = {
   'syllabary-hangul': I.mdiSyllabaryHangul,
   'syllabary-hiragana': I.mdiSyllabaryHiragana,
   'syllabary-katakana': I.mdiSyllabaryKatakana,
-  'syllabary-katakana-half-width': I.mdiSyllabaryKatakanaHalfWidth,
   symfony: I.mdiSymfony,
   sync: I.mdiSync,
   'sync-alert': I.mdiSyncAlert,
