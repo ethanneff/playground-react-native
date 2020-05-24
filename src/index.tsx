@@ -3,6 +3,15 @@ import {AppRegistry, Platform} from 'react-native';
 import {App, Navigation, Redux} from './containers';
 import {Config} from './utils';
 
+if (__DEV__) {
+  const whyDidYouRender = require('@welldone-software/why-did-you-render');
+  const ReactRedux = require('react-redux');
+  whyDidYouRender(React, {
+    trackAllPureComponents: true,
+    trackExtraHooks: [[ReactRedux, 'useSelector']],
+  });
+}
+
 export const Main = memo(function Main() {
   return (
     <Redux>
