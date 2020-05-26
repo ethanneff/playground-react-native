@@ -3,7 +3,7 @@ import {AppRegistry, Platform} from 'react-native';
 import {App, Navigation, Redux} from './containers';
 import {Config} from './utils';
 
-if (__DEV__) {
+if (Platform.OS !== Config.os.web && __DEV__) {
   const whyDidYouRender = require('@welldone-software/why-did-you-render');
   const ReactRedux = require('react-redux');
   whyDidYouRender(React, {
