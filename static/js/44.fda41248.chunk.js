@@ -1,0 +1,2 @@
+(this.webpackJsonpexample=this.webpackJsonpexample||[]).push([[44],{206:function(e,t,n){"use strict";n.r(t);var a=n(0),o=n.n(a),r=n(173),i=n(44);t.default=Object(a.memo)((function(){var e=Object(i.d)();return(o.a.createElement(r.j,{title:"Main",gutter:!0},o.a.createElement(r.b,{title:"logout",onPress:e.to("portfolioLanding")})))}))}}]);
+//# sourceMappingURL=44.fda41248.chunk.js.map
