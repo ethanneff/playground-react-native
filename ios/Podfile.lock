@@ -212,14 +212,14 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - appcenter-analytics (3.0.2):
+  - appcenter-analytics (3.0.3):
     - AppCenter/Analytics
     - AppCenterReactNativeShared
     - React
-  - appcenter-core (3.0.2):
+  - appcenter-core (3.0.3):
     - AppCenterReactNativeShared
     - React
-  - appcenter-crashes (3.0.2):
+  - appcenter-crashes (3.0.3):
     - AppCenter/Crashes
     - AppCenterReactNativeShared
     - React
@@ -612,9 +612,9 @@ PODS:
   - React-jsinspector (0.62.2)
   - react-native-get-random-values (1.4.0):
     - React
-  - react-native-netinfo (5.9.1):
+  - react-native-netinfo (5.9.2):
     - React
-  - react-native-slider (2.0.9):
+  - react-native-slider (3.0.0):
     - React
   - React-RCTActionSheet (0.62.2):
     - React-Core/RCTActionSheetHeaders (= 0.62.2)
@@ -677,29 +677,29 @@ PODS:
     - ReactCommon/callinvoker (= 0.62.2)
   - RNCAsyncStorage (1.11.0):
     - React
-  - RNDeviceInfo (5.6.0):
+  - RNDeviceInfo (5.6.1):
     - React
-  - RNFBAnalytics (7.1.0):
+  - RNFBAnalytics (7.1.2):
     - Firebase/Analytics (~> 6.25.0)
     - React
     - RNFBApp
-  - RNFBApp (7.1.0):
+  - RNFBApp (7.1.4):
     - Firebase/CoreOnly (~> 6.25.0)
     - React
-  - RNFBAuth (7.1.0):
+  - RNFBAuth (8.0.2):
     - Firebase/Auth (~> 6.25.0)
     - React
     - RNFBApp
-  - RNFBCrashlytics (7.1.0):
+  - RNFBCrashlytics (7.1.3):
     - Crashlytics (~> 3.14.0)
     - Fabric (~> 1.10.2)
     - React
     - RNFBApp
-  - RNFBFirestore (7.1.0):
+  - RNFBFirestore (7.1.2):
     - Firebase/Firestore (~> 6.25.0)
     - React
     - RNFBApp
-  - RNFBRemoteConfig (7.1.0):
+  - RNFBRemoteConfig (7.1.2):
     - Firebase/Analytics (~> 6.25.0)
     - Firebase/RemoteConfig (~> 6.25.0)
     - React
@@ -907,9 +907,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   AppCenter: 513d32888854d67d8cfbd3a8db16aeb5fb2e2a75
-  appcenter-analytics: f819aa9bd41c43b8b9ae53aa5dfd862b48a65f50
-  appcenter-core: 74a3db7d48a720fc3a70e0cf5cbda720decac008
-  appcenter-crashes: 0aea510872e4f9186553941b75ba0e9e6c7d9e07
+  appcenter-analytics: 4fdc885acb8a3bfac835515a8b9610d054ba8b9f
+  appcenter-core: 84a1c69361d10272bf08b2ff906c37f4e422b940
+  appcenter-crashes: e9008710be7612c585c39f3dc2cf3894172dc6e2
   AppCenterReactNativeShared: c4eb2ad593c32fbc2fc5f2ea9f5cf1faae61c182
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
@@ -963,8 +963,8 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 1540d1c01bb493ae3124ed83351b1b6a155db7da
   React-jsinspector: 512e560d0e985d0e8c479a54a4e5c147a9c83493
   react-native-get-random-values: 2b7500cdb68066aba87cdccd97067c29e16ffe95
-  react-native-netinfo: 4284e9f4ade9fc498f313b2e9e3f7fd4fa6e3082
-  react-native-slider: e51492f1264d882a8815b71c5870f8978e52887d
+  react-native-netinfo: cb74e17062b2af5a16a4b137f32495f241df1a8e
+  react-native-slider: 12bd76d3d568c9c5500825db54123d44b48e4ad4
   React-RCTActionSheet: f41ea8a811aac770e0cc6e0ad6b270c644ea8b7c
   React-RCTAnimation: 49ab98b1c1ff4445148b72a3d61554138565bad0
   React-RCTBlob: a332773f0ebc413a0ce85942a55b064471587a71
@@ -976,13 +976,13 @@ SPEC CHECKSUMS:
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
   RNCAsyncStorage: d059c3ee71738c39834a627476322a5a8cd5bf36
-  RNDeviceInfo: f7e473fc3cc0a7648d5c57c5413c7e875718a740
-  RNFBAnalytics: faa7f3d312854c5e4e952a9a4b4cecf3fdb69885
-  RNFBApp: 25a6476dfd7aac2bcbe984f569875bcea122895b
-  RNFBAuth: 52e7af4244e6adf39237ab8e94d6d51f2c1bf450
-  RNFBCrashlytics: e5c49721cac180f72c89ea67cc13a614b9fcecc4
-  RNFBFirestore: 2bfe418a0084956c90a26f65642808a00c869d88
-  RNFBRemoteConfig: 9234496d1061da59098ed3022343a46cd7bd82e7
+  RNDeviceInfo: b6e650fbd234732c759544218657d549b4339038
+  RNFBAnalytics: 96d8b063ff972a45c05a456b1caa0f4618900086
+  RNFBApp: fa6c2bf4e67ca1db74d04eec5909189b5500c9b8
+  RNFBAuth: 61b666e4a0c25750d9cc48d2c1a5320d4fa83f7b
+  RNFBCrashlytics: 5674792fd43032b4d2da2843a6f1967dd0b8c9bd
+  RNFBFirestore: b124404c4c3e2895652dc0aa911ed213cce3f12e
+  RNFBRemoteConfig: ce4e9563dbda5462cb4835cb94bf563ed1d22f29
   RNRate: a39ac26dc9daf3f9b639ce274b7f80672ae36db1
   RNSensors: 042ff055ce1debb3aede772c6671d4b9f5575c1b
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
