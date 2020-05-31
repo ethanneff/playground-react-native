@@ -1,5 +1,27 @@
 # Changelog
 
+# [2.26.0](https://github.com/ethanneff/example/compare/v2.25.1...v2.26.0) (2020-05-29)
+
+
+### Bug Fixes
+
+* make why did you render work only on mobile ([bf8954d](https://github.com/ethanneff/example/commit/bf8954dd0b6fd21bf3c1d30998300e8d3cf5cb98))
+* update deps ([d921dcb](https://github.com/ethanneff/example/commit/d921dcb82d2044e45ac0b7dd2e5b452ca7848ed1))
+* update deps ([5d37f3d](https://github.com/ethanneff/example/commit/5d37f3da1cb7f87976970e7301aa55e0c395924a))
+* update deps ([58a0013](https://github.com/ethanneff/example/commit/58a00133cd68c58fd0958acaa5b6bc89f97f9daf))
+* update deps ([c3b6cf7](https://github.com/ethanneff/example/commit/c3b6cf7c53a63d320b390410f66cb7227c0cd735))
+* update deps ([53e6c2d](https://github.com/ethanneff/example/commit/53e6c2de88b33f9d593a629a509115d1de5ea386))
+* update deps ([8e05bb8](https://github.com/ethanneff/example/commit/8e05bb8b4e4c91e231d84bde62ba39212496efbc))
+* update deps ([b0e6c78](https://github.com/ethanneff/example/commit/b0e6c7861d2f2933c9e4df5f13cf09b4e695a101))
+* update deps ([fe6d382](https://github.com/ethanneff/example/commit/fe6d38235d13dc940ed022deb4a9fdafa07abb83))
+* update deps ([8adc50c](https://github.com/ethanneff/example/commit/8adc50caeabb3b53c5dc5c2daa81e939f95823a9))
+* update pod ([26d5faf](https://github.com/ethanneff/example/commit/26d5faf08a04666d81afa15de556234042cd1e97))
+
+
+### Features
+
+* why did you render ([1ccfa2b](https://github.com/ethanneff/example/commit/1ccfa2b1b33be24acce1d5b1496863803ea46b21))
+
 ## [2.25.1](https://github.com/ethanneff/example/compare/v2.25.0...v2.25.1) (2020-05-05)
 
 
