@@ -30,28 +30,28 @@ export interface TextProps {
 }
 
 const sound = new Sound(require('./../TouchableOpacity/tap.mp3'));
-export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
-  const {
-    type,
-    emphasis,
-    title,
-    onPress,
-    hidden,
-    center,
-    bold,
-    ellipsizeMode,
-    centerVertically,
-    invisible,
-    style,
-    adjustsFontSizeToFit,
-    numberOfLines,
-  } = props;
+export const Text: React.FC<TextProps> = ({
+  type,
+  emphasis,
+  title,
+  onPress,
+  hidden,
+  center,
+  bold,
+  inverse,
+  ellipsizeMode,
+  centerVertically,
+  invisible,
+  style,
+  adjustsFontSizeToFit,
+  numberOfLines,
+}: TextProps) => {
   const opacity = new Animated.Value(1);
   const color = useColor();
   const nativeDriver = useNativeDriver();
   const textColorPercent = getTextEmphasis(emphasis);
   const fontSize = getFontType(type);
-  const textColor = props.inverse ? color.background : color.text;
+  const textColor = inverse ? color.background : color.text;
   const textColorWithOpacity = colorWithOpacity(textColor, textColorPercent);
   const text =
     type === 'button' || type === 'overline'
@@ -118,4 +118,4 @@ export const Text: React.FC<TextProps> = memo(function Text(props: TextProps) {
       {text}
     </Animated.Text>
   );
-});
+};

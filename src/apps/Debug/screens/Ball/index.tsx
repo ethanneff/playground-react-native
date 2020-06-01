@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
     width: 60,
   },
   button: {
-    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
   },

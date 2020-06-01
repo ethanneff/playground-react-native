@@ -38,60 +38,58 @@ interface Props {
   onLongPress?(): void;
 }
 
-export const Button = memo(
-  ({
-    activeOpacity,
-    buttonStyle,
-    center,
+export const Button = ({
+  activeOpacity,
+  buttonStyle,
+  center,
+  disable,
+  noPadding,
+  dropShadow,
+  elevation = 2,
+  hidden,
+  invisible,
+  emphasis = 'low',
+  lowercase,
+  onPress,
+  color = 'text',
+  onLongPress,
+  right,
+  textStyle,
+  title,
+}: Props) => {
+  const colorScheme = useColor();
+  const dropShadowStyling = useDropShadow(elevation);
+  const buttonColor = colorScheme[color || 'text'];
+  const styles = getStyles({
+    colorScheme,
+    color: buttonColor,
+    emphasis,
     disable,
     noPadding,
-    dropShadow,
-    elevation = 2,
-    hidden,
-    invisible,
-    emphasis = 'low',
-    lowercase,
-    onPress,
-    color = 'text',
-    onLongPress,
-    right,
-    textStyle,
-    title,
-  }: Props) => {
-    const colorScheme = useColor();
-    const dropShadowStyling = useDropShadow(elevation);
-    const buttonColor = colorScheme[color || 'text'];
-    const styles = getStyles({
-      colorScheme,
-      color: buttonColor,
-      emphasis,
-      disable,
-      noPadding,
-    });
-    const buttonStyleGroup = [
-      styles.container,
-      center && styles.center,
-      right && styles.right,
-      dropShadow && dropShadowStyling,
-      invisible && styles.invisible,
-      buttonStyle,
-    ];
-    const textStyleGroup = [styles.text, textStyle];
+  });
+  const buttonStyleGroup = [
+    styles.container,
+    center && styles.center,
+    right && styles.right,
+    dropShadow && dropShadowStyling,
+    invisible && styles.invisible,
+    buttonStyle,
+  ];
+  const textStyleGroup = [styles.text, textStyle];
 
-    return hidden ? null : (
-      <TouchableOpacity
-        activeOpacity={activeOpacity}
-        disabled={disable || invisible}
-        onPress={onPress}
-        style={buttonStyleGroup}
-        onLongPress={onLongPress}>
-        <Text
-          center
-          type={!lowercase ? 'button' : undefined}
-          title={title}
-          style={textStyleGroup}
-        />
-      </TouchableOpacity>
-    );
-  },
-);
+  return hidden ? null : (
+    <TouchableOpacity
+      activeOpacity={activeOpacity}
+      disabled={disable || invisible}
+      onPress={onPress}
+      style={buttonStyleGroup}
+      onLongPress={onLongPress}>
+      <Text
+        center
+        type={!lowercase ? 'button' : undefined}
+        title={title}
+        style={textStyleGroup}
+      />
+    </TouchableOpacity>
+  );
+};
