@@ -1,8 +1,8 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import {Text, TouchableOpacity} from '../../../../components';
-import {Theme} from '../../../../utils';
-import {useColor} from '../../../../hooks';
+import {Theme} from '../../utils';
+import {useColor} from '../../hooks';
+import {Text, TouchableOpacity} from '../../components';
 
 interface OwnProps {
   onPress?(): void;
@@ -10,9 +10,9 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-export const ProfileLevel: React.FC<Props> = memo(({onPress}) => {
+export const ProfileLevel: React.FC<Props> = ({onPress}) => {
   const color = useColor();
-  const image = require('../../../../assets/placeholder.png');
+  const image = require('../../assets/placeholder.png');
   const width = 0.2;
   const level = 22;
   const styles = StyleSheet.create({
@@ -73,4 +73,4 @@ export const ProfileLevel: React.FC<Props> = memo(({onPress}) => {
       </View>
     </TouchableOpacity>
   );
-});
+};

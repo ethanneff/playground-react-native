@@ -13,16 +13,16 @@ interface Users {
 }
 
 interface User {
-  readonly id: string;
-  readonly email: string;
-  readonly createdAt: number;
+  id: string;
+  email: string;
+  createdAt: number;
 }
 
 interface Goal {
-  readonly id: string;
-  readonly challenge: string;
-  readonly task: string;
-  readonly mission: string;
+  id: string;
+  challenge: string;
+  task: string;
+  mission: string;
 }
 
 export const app: App = {

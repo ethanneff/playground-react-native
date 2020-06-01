@@ -1,9 +1,9 @@
 import dayjs from 'dayjs';
 import React, {memo, useCallback} from 'react';
 import {FlatList, View} from 'react-native';
-import {Text, Icon} from '../../../../components';
-import {Theme} from '../../../../utils';
-import {useColor} from '../../../../hooks';
+import {Icon, Text} from '../../components';
+import {Theme} from '../../utils';
+import {useColor} from '../../hooks';
 
 const generateHistory = () => {
   const data = [];
