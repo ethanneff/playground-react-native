@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
+import {View} from 'react-native';
 import {useColor} from '../../../hooks';
 import {useRootSelector} from '../../../utils';
-import {View} from 'react-native';
 import {getSmallestDimension} from '../../../models';
 
 interface CellProps {

@@ -5,10 +5,10 @@ import {
   accelerometer,
   setUpdateIntervalForType,
 } from 'react-native-sensors';
+import {useNativeDriver} from '../../../../hooks';
 import {getPosition} from './utils';
 import {DriftContext} from './Context';
 import {CanvasDimensions} from './Game';
-import {useNativeDriver} from '../../../../hooks';
 
 type CharacterProps = {
   canvas: CanvasDimensions;

@@ -1,6 +1,6 @@
 import {View} from 'react-native';
-import {Matrix} from './utils';
 import React from 'react';
+import {Matrix} from './utils';
 import {Cell} from './Cell';
 
 interface BoardProps {

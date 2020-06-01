@@ -1,9 +1,9 @@
 import React from 'react';
 import {SafeAreaView, StatusBar, StyleSheet, ViewStyle} from 'react-native';
 import {Theme} from '../../utils';
+import {useColor} from '../../hooks';
 import {NavBar} from './NavBar';
 import {KeyboardAware} from './KeyboardAware';
-import {useColor} from '../../hooks';
 
 interface OwnProps {
   style?: ViewStyle;

@@ -1,8 +1,8 @@
 import React, {memo, useCallback} from 'react';
+import {FlatList} from 'react-native';
 import {Button, Screen} from '../../../../components';
 import {NavigationScreen} from '../../../../models';
 import {useNav} from '../../../../hooks';
-import {FlatList} from 'react-native';
 
 const debugScreens: NavigationScreen[] = [
   'debugArticle',

@@ -1,11 +1,11 @@
 import React from 'react';
-import {useColor} from '../../hooks';
 import {View} from 'react-native';
-import {Theme, colorWithOpacity} from '../../utils';
-import {Day} from './utils';
-import {Text} from '../Text';
 import dayjs from 'dayjs';
+import {useColor} from '../../hooks';
+import {Theme, colorWithOpacity} from '../../utils';
+import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
+import {Day} from './utils';
 
 interface Props {
   day: Day;

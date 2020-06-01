@@ -1,4 +1,5 @@
 import React, {memo, useCallback, useEffect, useState} from 'react';
+import {ActivityIndicator, Platform, View} from 'react-native';
 import {
   Button,
   Icon,
@@ -10,7 +11,6 @@ import {
 import {useColor} from '../../hooks';
 import {Config, Theme} from '../../utils';
 import {FirebaseAuthTypes, auth} from '../../conversions/Firebase';
-import {ActivityIndicator, Platform, View} from 'react-native';
 
 interface Props {
   onBackgroundPress: () => void;

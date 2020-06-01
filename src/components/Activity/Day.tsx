@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
+import isToday from 'date-fns/isToday';
 import {useColor} from '../../hooks';
 import {colorWithOpacity} from '../../utils';
-import isToday from 'date-fns/isToday';
 import {TouchableOpacity} from '../TouchableOpacity';
 
 export interface ActivityDay {

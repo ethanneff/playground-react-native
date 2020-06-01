@@ -1,8 +1,8 @@
 import React, {memo, useCallback, useContext} from 'react';
 import {View} from 'react-native';
 import {useDropShadow} from '../../../../hooks';
-import {DriftContext} from './Context';
 import {TouchableOpacity} from '../../../../components';
+import {DriftContext} from './Context';
 
 export type ColorChoice =
   | 'slateblue'

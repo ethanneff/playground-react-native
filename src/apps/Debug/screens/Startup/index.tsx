@@ -1,9 +1,9 @@
 import React, {memo, useCallback, useState} from 'react';
 import {ScrollView, Switch, View} from 'react-native';
+import dayjs from 'dayjs';
 import {Button, Screen, Text, TextInput} from '../../../../components';
 import {useColor, useNav} from '../../../../hooks';
 import {Theme} from '../../../../utils';
-import dayjs from 'dayjs';
 import {Section} from './Section';
 
 // https://www.startupschool.org/updates/250717/edit

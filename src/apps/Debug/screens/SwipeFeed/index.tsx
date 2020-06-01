@@ -6,6 +6,8 @@ import {
   PanResponder,
   View,
 } from 'react-native';
+import dayjs, {Dayjs} from 'dayjs';
+import {v4} from 'uuid';
 import {
   Card,
   Icon,
@@ -19,11 +21,9 @@ import {
   useNativeDriver,
   useNav,
 } from '../../../../hooks';
-import {Theme, useRootSelector} from '../../../../utils';
-import dayjs, {Dayjs} from 'dayjs';
-import 'react-native-get-random-values';
-import {v4} from 'uuid';
 import {getWidth} from '../../../../models';
+import {Theme, useRootSelector} from '../../../../utils';
+import 'react-native-get-random-values';
 
 interface SwipeCard extends SwipeItem {
   index: number;

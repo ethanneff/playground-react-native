@@ -1,8 +1,8 @@
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {ActivityIndicator, FlatList, StyleSheet} from 'react-native';
-import {ListItem} from './ListItem';
-import {Theme} from '../../../utils';
 import dayjs from 'dayjs';
+import {Theme} from '../../../utils';
+import {ListItem} from './ListItem';
 
 export interface Item {
   action: string;

@@ -1,7 +1,7 @@
 import React, {Suspense, lazy, memo} from 'react';
+import {ActivityIndicator, StyleSheet, View} from 'react-native';
 import {useRootSelector} from '../../utils';
 import {ErrorBoundary} from '../../components/ErrorBoundary';
-import {ActivityIndicator, StyleSheet, View} from 'react-native';
 import {useColor} from '../../hooks';
 
 // screens

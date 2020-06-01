@@ -1,6 +1,12 @@
 import {ActivityIndicator, FlatList, View} from 'react-native';
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {Theme} from '../../utils';
+import {Text} from '../Text';
+import {Button} from '../Button';
+import {Card} from '../Card';
+import {TouchableOpacity} from '../TouchableOpacity';
+import {ActivityDay} from './Day';
+import {ActivityWeek, Week} from './Week';
 import {
   getActivitySquares,
   getApiActivity,
@@ -8,12 +14,6 @@ import {
   getSubmissionFormat,
   updateActivitySquares,
 } from './utils';
-import {ActivityWeek, Week} from './Week';
-import {Text} from '../Text';
-import {Button} from '../Button';
-import {ActivityDay} from './Day';
-import {Card} from '../Card';
-import {TouchableOpacity} from '../TouchableOpacity';
 
 interface Props {
   username: string;

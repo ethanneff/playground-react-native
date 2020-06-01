@@ -9,6 +9,8 @@ import {
 } from 'redux';
 import thunk, {ThunkAction} from 'redux-thunk';
 import {DeepReadonly} from 'utility-types';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
 import {
   ChecklistItemReducer,
   ChecklistReducer,
@@ -52,8 +54,6 @@ import {
   themeReducer,
 } from '../../models';
 import {Storage} from '../../conversions';
-import {Provider} from 'react-redux';
-import {PersistGate} from 'redux-persist/integration/react';
 import {
   ChatMessageActions,
   ChatMessageReducer,

@@ -3,8 +3,8 @@ import {StyleProp, TextStyle, ViewStyle} from 'react-native';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {useColor, useDropShadow} from '../../hooks';
-import {getStyles} from './utils';
 import {Color} from '../../models';
+import {getStyles} from './utils';
 
 /*
 styling: https://material.io/design/components/buttons.html#usage

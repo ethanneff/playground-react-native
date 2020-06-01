@@ -1,8 +1,8 @@
 import {Dimensions} from 'react-native';
-import {DimensionsProps} from './../../models/Device';
-import {useRootDispatch} from '../../utils';
 import {useCallback, useEffect} from 'react';
+import {useRootDispatch} from '../../utils';
 import {updateDimension} from '../../models';
+import {DimensionsProps} from './../../models/Device';
 
 export const useAppLoad = () => undefined;
 export const useNetInfo = () => undefined;

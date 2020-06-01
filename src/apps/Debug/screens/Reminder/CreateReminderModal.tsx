@@ -1,12 +1,12 @@
 import React, {memo, useCallback, useState} from 'react';
+import {Dayjs} from 'dayjs';
+import {StyleSheet} from 'react-native';
 import {Button, Modal, Text} from '../../../../components';
+import {Theme} from '../../../../utils';
 import OneTime from './OneTime';
 import Radio from './Radio';
-import {Dayjs} from 'dayjs';
 import Location from './Location';
 import Repeat from './Repeat';
-import {Theme} from '../../../../utils';
-import {StyleSheet} from 'react-native';
 
 type ReminderType = 'One time' | 'Repeat' | 'Location';
 const reminderTypes: ReminderType[] = ['One time', 'Repeat', 'Location'];

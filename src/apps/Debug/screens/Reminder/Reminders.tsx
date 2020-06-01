@@ -1,6 +1,6 @@
 import {FlatList} from 'react-native';
-import {Text} from '../../../../components';
 import React, {memo, useCallback} from 'react';
+import {Text} from '../../../../components';
 import {Reminder} from '.';
 
 interface Props {

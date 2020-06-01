@@ -1,6 +1,6 @@
 import React, {ErrorInfo} from 'react';
-import {Text} from '../Text';
 import {View} from 'react-native';
+import {Text} from '../Text';
 
 interface State {
   hasError: boolean;

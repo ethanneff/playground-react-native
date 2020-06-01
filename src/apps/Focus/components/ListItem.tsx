@@ -2,9 +2,9 @@ import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../../components';
 import {Theme} from '../../../utils';
+import {useColor} from '../../../hooks';
 import {Item} from './List';
 import {ListSection} from './ListSection';
-import {useColor} from '../../../hooks';
 
 interface Props {
   showSection: boolean;

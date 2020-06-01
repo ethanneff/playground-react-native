@@ -2,10 +2,10 @@ import React, {useCallback} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import {memo} from 'react';
 import {useColor} from '../../hooks';
-import {app} from './data';
 import {Theme, useRootSelector} from '../../utils';
 import {getLandscapeOrientation} from '../../models';
 import {Card, Icon, Text} from '../../components';
+import {app} from './data';
 import {DailyProgress} from './DailyProgress';
 import {ProfileLevel} from './ProfileLevel';
 

@@ -1,7 +1,7 @@
 import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
-import {Item} from './Item';
 import {useRootSelector} from '../../../../utils';
+import {Item} from './Item';
 import {Message, getActiveChatMessagesOrderByCreatedAt} from './Messages';
 
 export const Items = memo(function ChatMessageItems() {

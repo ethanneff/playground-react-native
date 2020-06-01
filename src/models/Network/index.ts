@@ -1,9 +1,9 @@
+import {ActionType, createAction, getType} from 'typesafe-actions';
 import {
   NetInfoConnectedDetails,
   NetInfoState,
   NetInfoStateType,
 } from '../../conversions';
-import {ActionType, createAction, getType} from 'typesafe-actions';
 import {RootAction} from '../../containers';
 import {logout} from '../Auth';
 

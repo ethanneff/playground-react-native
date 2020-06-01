@@ -1,13 +1,13 @@
+import {NetInfoState} from '@react-native-community/netinfo';
+import {getType} from 'typesafe-actions';
+import {loginRequest, logout} from '../../Auth';
+import {NetInfoStateType} from './../../../conversions/NetInfo/index.web';
 import {
   NetworkState,
   networkInitialState,
   networkReducer,
   updateNetwork,
 } from './..';
-import {NetInfoState} from '@react-native-community/netinfo';
-import {NetInfoStateType} from './../../../conversions/NetInfo/index.web';
-import {getType} from 'typesafe-actions';
-import {loginRequest, logout} from '../../Auth';
 
 it('updateNetwork action', () => {
   const payload: NetInfoState = {

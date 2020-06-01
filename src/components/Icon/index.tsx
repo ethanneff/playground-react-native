@@ -1,10 +1,10 @@
 import React from 'react';
 import {Platform, StyleProp, StyleSheet, ViewStyle} from 'react-native';
 import {Config, Theme} from '../../utils';
-import {Badge} from './Badge';
-import {Source} from './Source';
 import {useColor, useDropShadow} from '../../hooks';
 import {TouchableOpacity} from '../TouchableOpacity';
+import {Badge} from './Badge';
+import {Source} from './Source';
 
 /*
 usage: <Icon name='check' />

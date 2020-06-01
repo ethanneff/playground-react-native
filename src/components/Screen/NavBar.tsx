@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Text} from '../Text';
-import {NavButton} from './NavButton';
 import {Theme} from '../../utils';
 import {useColor} from '../../hooks';
+import {NavButton} from './NavButton';
 
 interface Props {
   title?: string;

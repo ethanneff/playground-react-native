@@ -1,8 +1,8 @@
 import React, {memo} from 'react';
 import {Screen} from '../../../../components';
 import {Content} from '../../../../components/Content';
-import {data} from './data';
 import {useNav} from '../../../../hooks';
+import {data} from './data';
 
 export default memo(function DebugArticle() {
   const nav = useNav();

@@ -2,8 +2,8 @@ import React from 'react';
 import {Animated, StyleProp, StyleSheet, TextStyle} from 'react-native';
 import {Theme, colorWithOpacity} from '../../utils';
 import {useColor, useNativeDriver} from '../../hooks';
-import {FontEmphasis, FontType, getFontType, getTextEmphasis} from './utils';
 import {Sound} from '../../conversions';
+import {FontEmphasis, FontType, getFontType, getTextEmphasis} from './utils';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
 

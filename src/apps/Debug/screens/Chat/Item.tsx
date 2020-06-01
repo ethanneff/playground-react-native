@@ -1,11 +1,11 @@
 import React, {memo} from 'react';
 import {Image, View} from 'react-native';
-import {RelativeDate, Text} from '../../../../components';
-import {Theme} from '../../../../utils';
-import {Message} from './Messages';
-import {useColor} from '../../../../hooks';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import dayjs from 'dayjs';
+import {RelativeDate, Text} from '../../../../components';
+import {Theme} from '../../../../utils';
+import {useColor} from '../../../../hooks';
+import {Message} from './Messages';
 dayjs.extend(relativeTime);
 
 interface Props {

@@ -1,12 +1,12 @@
 import React, {memo, useCallback, useState} from 'react';
+import dayjs, {Dayjs} from 'dayjs';
+import {v4} from 'uuid';
+import {RateApp} from '../../../../features';
 import {Button, Modal, Screen, Text} from '../../../../components';
 import {useNav} from '../../../../hooks';
-import dayjs, {Dayjs} from 'dayjs';
 import Reminders from './Reminders';
 import CreateReminderModal from './CreateReminderModal';
 import 'react-native-get-random-values';
-import {v4} from 'uuid';
-import {RateApp} from '../../../../features';
 
 type ReminderType = 'one time' | 'repeat' | 'location';
 export type Reminder = {

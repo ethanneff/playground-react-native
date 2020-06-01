@@ -1,8 +1,8 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Screen} from '../../../../components';
-import Walkthrough from './Walkthrough';
 import {useNav} from '../../../../hooks';
+import Walkthrough from './Walkthrough';
 
 const styles = StyleSheet.create({
   row: {flexDirection: 'row', justifyContent: 'space-around'},
