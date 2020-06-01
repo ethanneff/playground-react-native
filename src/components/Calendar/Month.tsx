@@ -23,10 +23,10 @@ export const CalendarMonth = memo(function Month({
     <>
       {matrix.map((row, i) => (
         <View key={i} style={{flexDirection: 'row'}}>
-          {row.map((col) => (
+          {row.map((col, j) => (
             <CalendarDay
               hiddenDays={hiddenDays}
-              key={col.id}
+              key={`${i}+${j}`}
               onSelected={handleSelected(col.id)}
               day={col}
               selectedDay={selected}

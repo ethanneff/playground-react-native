@@ -14,12 +14,12 @@ interface Props {
   hiddenDays?: boolean;
 }
 
-export const CalendarDay = memo(function CalendarDay({
+export const CalendarDay = ({
   day,
   onSelected,
   selectedDay,
   hiddenDays,
-}: Props) {
+}: Props) => {
   const color = useColor();
   const selected = day.id === selectedDay;
   const today = dayjs(day.id).isSame(dayjs(), 'day');
@@ -65,4 +65,4 @@ export const CalendarDay = memo(function CalendarDay({
       </View>
     </TouchableOpacity>
   );
-});
+};

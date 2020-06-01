@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {Platform, ViewStyle, StyleProp, StyleSheet} from 'react-native';
 import {Config, Theme} from '../../utils';
 import {Badge} from './Badge';
@@ -27,7 +27,7 @@ interface Props {
   onPress?: () => void;
 }
 
-export const Icon: React.FC<Props> = memo(function Icon({
+export const Icon: React.FC<Props> = ({
   name,
   style,
   activeOpacity,
@@ -41,7 +41,7 @@ export const Icon: React.FC<Props> = memo(function Icon({
   right,
   invisible,
   onPress,
-}) {
+}) => {
   const colors = useColor();
   const dropShadow = useDropShadow(elevation);
   const styles = StyleSheet.create({
@@ -79,4 +79,4 @@ export const Icon: React.FC<Props> = memo(function Icon({
       <Badge badge={badge} />
     </TouchableOpacity>
   );
-});
+};
