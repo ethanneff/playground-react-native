@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Text} from '../Text';
 import {NavButton} from './NavButton';
@@ -14,14 +14,14 @@ interface Props {
   onRightPress?(): void;
 }
 
-export const NavBar: React.FC<Props> = memo(function NavBar({
+export const NavBar: React.FC<Props> = ({
   title,
   onLeftPress,
   onRightPress,
   border,
   leftIcon = 'chevron-left',
   rightIcon = 'close',
-}) {
+}) => {
   const color = useColor();
   const styles = StyleSheet.create({
     container: {
@@ -41,4 +41,4 @@ export const NavBar: React.FC<Props> = memo(function NavBar({
       <NavButton icon={rightIcon} isRight onPress={onRightPress} />
     </View>
   );
-});
+};

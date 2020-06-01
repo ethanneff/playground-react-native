@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Theme} from '../../utils';
 import {Icon} from '../Icon';
@@ -10,11 +10,7 @@ interface Props {
   onPress?(): void;
 }
 
-export const NavButton: React.FC<Props> = memo(function NavButton({
-  onPress,
-  icon,
-  isRight,
-}) {
+export const NavButton: React.FC<Props> = ({onPress, icon, isRight}) => {
   const color = useColor();
   const styles = StyleSheet.create({
     button: {
@@ -37,4 +33,4 @@ export const NavButton: React.FC<Props> = memo(function NavButton({
       />
     </View>
   );
-});
+};

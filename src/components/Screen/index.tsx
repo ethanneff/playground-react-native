@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {SafeAreaView, StatusBar, StyleSheet, ViewStyle} from 'react-native';
 import {Theme} from '../../utils';
 import {NavBar} from './NavBar';
@@ -19,7 +19,7 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-export const Screen: React.FC<Props> = memo(function Screen({
+export const Screen: React.FC<Props> = ({
   title,
   style,
   gutter,
@@ -30,7 +30,7 @@ export const Screen: React.FC<Props> = memo(function Screen({
   scroll,
   leftIcon,
   rightIcon,
-}) {
+}) => {
   const color = useColor();
   const styles = StyleSheet.create({
     container: {
@@ -59,4 +59,4 @@ export const Screen: React.FC<Props> = memo(function Screen({
       </KeyboardAware>
     </SafeAreaView>
   );
-});
+};
