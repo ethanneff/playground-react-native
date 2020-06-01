@@ -1,16 +1,16 @@
-import React, {memo, useCallback, useState, useEffect} from 'react';
+import React, {memo, useCallback, useEffect, useState} from 'react';
 import {
+  Button,
+  Icon,
   Modal,
   Text,
-  TouchableOpacity,
-  Icon,
   TextInput,
-  Button,
+  TouchableOpacity,
 } from '../../components';
 import {useColor} from '../../hooks';
-import {Theme, Config} from '../../utils';
-import {auth, FirebaseAuthTypes} from '../../conversions/Firebase';
-import {ActivityIndicator, View, Platform} from 'react-native';
+import {Config, Theme} from '../../utils';
+import {FirebaseAuthTypes, auth} from '../../conversions/Firebase';
+import {ActivityIndicator, Platform, View} from 'react-native';
 
 interface Props {
   onBackgroundPress: () => void;

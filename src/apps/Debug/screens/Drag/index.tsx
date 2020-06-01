@@ -1,19 +1,19 @@
-import React, {useState, useCallback} from 'react';
+import React, {useCallback, useState} from 'react';
 import {
   Animated,
+  LayoutChangeEvent,
   PanResponder,
+  PanResponderGestureState,
   PanResponderInstance,
   StyleSheet,
   View,
-  LayoutChangeEvent,
-  PanResponderGestureState,
 } from 'react-native';
 import {Screen, Text} from '../../../../components';
 import {
   useColor,
-  useNav,
   useDropShadow,
   useNativeDriver,
+  useNav,
 } from '../../../../hooks';
 
 const getPosition = (

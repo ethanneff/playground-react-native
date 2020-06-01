@@ -2,11 +2,11 @@ import {getType} from 'typesafe-actions';
 import {
   ColorTheme,
   changeTheme,
+  getCurrentColor,
   themeInitialState,
   themeReducer,
-  getCurrentColor,
 } from '..';
-import {logout, loginRequest} from '../../Auth';
+import {loginRequest, logout} from '../../Auth';
 import {store} from '../../../containers';
 
 it('getCurrentColor dark', () => {

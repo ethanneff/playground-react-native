@@ -29,12 +29,13 @@ export default memo(function PortfolioSettings() {
   );
 
   const renderHeader = useCallback(() => <Button disable title="Theme" />, []);
+  const keyExtractor = useCallback((item) => item, []);
   return (
     <Screen onLeftPress={nav.to('portfolioLanding')} title="Settings">
       <FlatList
         ListHeaderComponent={renderHeader}
         horizontal
-        keyExtractor={(item) => item}
+        keyExtractor={keyExtractor}
         data={themes}
         renderItem={renderItem}
       />

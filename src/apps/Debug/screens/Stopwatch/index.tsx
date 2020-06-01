@@ -1,4 +1,4 @@
-import React, {memo, useState, useRef, useEffect} from 'react';
+import React, {memo, useEffect, useRef, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {Screen} from '../../../../components';
 import {useNav} from '../../../../hooks';

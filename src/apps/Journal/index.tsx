@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
-import {StyleSheet, ScrollView, View} from 'react-native';
-import {Screen, Text, TextInput, Card, Calendar} from '../../components';
-import {useNav, useColor} from '../../hooks';
+import {ScrollView, StyleSheet, View} from 'react-native';
+import {Calendar, Card, Screen, Text, TextInput} from '../../components';
+import {useColor, useNav} from '../../hooks';
 import {Theme} from '../../utils';
 
 export default memo(function Journal() {

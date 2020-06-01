@@ -11,5 +11,6 @@ module.exports = {
   ],
   rules: {
     'react-native/no-inline-styles': 0, // TODO: remove
+    'sort-imports': ['error', {ignoreDeclarationSort: true}],
   },
 };

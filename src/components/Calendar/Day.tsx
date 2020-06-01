@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {useColor} from '../../hooks';
 import {View} from 'react-native';
 import {Theme, colorWithOpacity} from '../../utils';

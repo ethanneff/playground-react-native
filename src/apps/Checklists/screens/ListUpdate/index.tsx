@@ -1,8 +1,8 @@
 import React, {memo, useState} from 'react';
-import {Button, Screen, TextInput, Dialog} from '../../../../components';
+import {Button, Dialog, Screen, TextInput} from '../../../../components';
 import {getCurrentChecklist, removeList, updateList} from '../../models';
 import {useNav} from '../../../../hooks';
-import {useRootSelector, useRootDispatch} from '../../../../utils';
+import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {navigate} from '../../../../models';
 
 export default memo(function ChecklistUpdate() {

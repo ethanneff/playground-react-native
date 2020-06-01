@@ -1,7 +1,7 @@
-import React, {useState, useEffect, useCallback} from 'react';
-import {Screen, Dialog} from '../../components';
+import React, {useCallback, useEffect, useState} from 'react';
+import {Dialog, Screen} from '../../components';
 import {useNav} from '../../hooks';
-import {List, Item} from './components/List';
+import {Item, List} from './components/List';
 import dayjs from 'dayjs';
 
 // TODO: flatlist on web

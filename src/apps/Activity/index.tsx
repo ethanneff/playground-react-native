@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
-import {StyleSheet, ScrollView} from 'react-native';
-import {Screen, Activity, Icon} from '../../components';
-import {useNav, useColor} from '../../hooks';
+import {ScrollView, StyleSheet} from 'react-native';
+import {Activity, Icon, Screen} from '../../components';
+import {useColor, useNav} from '../../hooks';
 import {Theme} from '../../utils';
 
 // TODO: gitlab

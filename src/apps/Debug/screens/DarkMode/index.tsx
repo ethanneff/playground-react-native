@@ -1,13 +1,13 @@
 // TODO: slider on web
-import React, {memo, useState, useCallback} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {Image, ImageSourcePropType, View} from 'react-native';
 import {
   Button,
   Card,
-  Screen,
-  Text,
   Masonry,
+  Screen,
   Slider,
+  Text,
 } from '../../../../components';
 import {
   ColorTheme,

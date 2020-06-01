@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {Image, View} from 'react-native';
-import {Text, RelativeDate} from '../../../../components';
+import {RelativeDate, Text} from '../../../../components';
 import {Theme} from '../../../../utils';
 import {Message} from './Messages';
 import {useColor} from '../../../../hooks';

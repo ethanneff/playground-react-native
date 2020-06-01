@@ -1,14 +1,14 @@
-import {FlatList, View, ActivityIndicator} from 'react-native';
-import React, {memo, useEffect, useState, useCallback} from 'react';
+import {ActivityIndicator, FlatList, View} from 'react-native';
+import React, {memo, useCallback, useEffect, useState} from 'react';
 import {Theme} from '../../utils';
 import {
   getActivitySquares,
-  updateActivitySquares,
   getApiActivity,
-  getSubmissionFormat,
   getDateFormat,
+  getSubmissionFormat,
+  updateActivitySquares,
 } from './utils';
-import {Week, ActivityWeek} from './Week';
+import {ActivityWeek, Week} from './Week';
 import {Text} from '../Text';
 import {Button} from '../Button';
 import {ActivityDay} from './Day';

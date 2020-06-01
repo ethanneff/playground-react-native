@@ -2,10 +2,10 @@ import {getType} from 'typesafe-actions';
 import {
   getScreen,
   navigate,
-  navigationReducer,
   navigationInitialState,
+  navigationReducer,
 } from '..';
-import {logout, loginRequest} from '../../Auth';
+import {loginRequest, logout} from '../../Auth';
 import {store} from '../../../containers';
 
 it('getScreen selector', () => {

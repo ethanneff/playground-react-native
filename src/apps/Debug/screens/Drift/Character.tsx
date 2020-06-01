@@ -1,9 +1,9 @@
-import React, {memo, useEffect, useRef, useCallback, useContext} from 'react';
+import React, {memo, useCallback, useContext, useEffect, useRef} from 'react';
 import {Animated} from 'react-native';
 import {
+  SensorTypes,
   accelerometer,
   setUpdateIntervalForType,
-  SensorTypes,
 } from 'react-native-sensors';
 import {getPosition} from './utils';
 import {DriftContext} from './Context';

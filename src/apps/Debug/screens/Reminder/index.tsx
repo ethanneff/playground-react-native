@@ -1,5 +1,5 @@
-import React, {memo, useState, useCallback} from 'react';
-import {Screen, Text, Button, Modal} from '../../../../components';
+import React, {memo, useCallback, useState} from 'react';
+import {Button, Modal, Screen, Text} from '../../../../components';
 import {useNav} from '../../../../hooks';
 import dayjs, {Dayjs} from 'dayjs';
 import Reminders from './Reminders';

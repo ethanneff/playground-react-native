@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useRef, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import Rate, {AndroidMarket} from 'react-native-rate';
-import {Modal, Text, Button, TextInput} from '../../components';
+import {Button, Modal, Text, TextInput} from '../../components';
 import {Theme} from '../../utils';
 import {Rating} from './Rating';
 

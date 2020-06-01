@@ -1,5 +1,5 @@
-import React, {memo, useState} from 'react';
-import {Screen, TextInput, Button} from '../../../../components';
+import React, {memo, useCallback, useState} from 'react';
+import {Button, Screen, TextInput} from '../../../../components';
 import {useNav} from '../../../../hooks';
 
 export default memo(function DebugInput() {
@@ -12,13 +12,16 @@ export default memo(function DebugInput() {
     password: '',
   });
 
-  const handleChange = (key: string) => (val: string) => {
-    setForm((prev) => ({...prev, [key]: val}));
-  };
+  const handleChange = useCallback(
+    (key: string) => (val: string) => {
+      setForm((prev) => ({...prev, [key]: val}));
+    },
+    [],
+  );
 
-  const handleSubmit = () => {
+  const handleSubmit = useCallback(() => {
     setForm((prev) => ({...prev, error: 'Invalid Email'}));
-  };
+  }, []);
 
   return (
     <Screen onLeftPress={nav.to('debug')} title="Template" gutter>

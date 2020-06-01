@@ -1,4 +1,4 @@
-import React, {useState, memo, useEffect, useCallback} from 'react';
+import React, {memo, useCallback, useEffect, useState} from 'react';
 import {
   Animated,
   FlatList,
@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {Icon, Screen, Text, TextInput} from '../../../../components';
 import {Config, Theme, colorWithOpacity} from '../../../../utils';
-import {useNav, useColor, useNativeDriver} from '../../../../hooks';
+import {useColor, useNativeDriver, useNav} from '../../../../hooks';
 
 const data = [
   {id: 1, name: '1'},

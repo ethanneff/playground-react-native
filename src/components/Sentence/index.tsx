@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import {StyleProp, Text as OriginalText, TextStyle} from 'react-native';
+import {Text as OriginalText, StyleProp, TextStyle} from 'react-native';
 import {FontType} from '../Text/utils';
 import {Text} from '../Text';
 

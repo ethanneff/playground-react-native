@@ -1,12 +1,12 @@
 import React, {memo} from 'react';
 import {
+  Icon,
+  Sentence,
   Text,
   TouchableOpacity,
-  Icon,
   Word,
-  Sentence,
 } from '../../../../components';
-import {View, Image} from 'react-native';
+import {Image, View} from 'react-native';
 import {useColor} from '../../../../hooks';
 import {Theme} from '../../../../utils';
 

@@ -3,7 +3,7 @@ import React, {memo, useReducer} from 'react';
 import {Screen, Text} from '../../../../components';
 import {useNav} from '../../../../hooks';
 import {Game} from './Game';
-import {DriftContext, driftReducer, driftInitialState} from './Context';
+import {DriftContext, driftInitialState, driftReducer} from './Context';
 
 export default memo(function DebugDrift() {
   const nav = useNav();

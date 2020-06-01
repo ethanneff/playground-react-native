@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import {View, StyleSheet, Text, TextStyle, StyleProp} from 'react-native';
+import {StyleProp, StyleSheet, Text, TextStyle, View} from 'react-native';
 
 interface TimerProps {
   interval: number;

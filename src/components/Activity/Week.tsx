@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Text} from '../Text';
 import {Theme} from '../../utils';
-import {Day, ActivityDay} from './Day';
+import {ActivityDay, Day} from './Day';
 import format from 'date-fns/format';
 
 export type ActivityWeek = Array<ActivityDay>;

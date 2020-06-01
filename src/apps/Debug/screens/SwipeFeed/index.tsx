@@ -1,23 +1,23 @@
-import React, {memo, useState, useCallback, useRef} from 'react';
+import React, {memo, useCallback, useRef, useState} from 'react';
 import {
-  View,
+  Animated,
   Image,
   ImageSourcePropType,
   PanResponder,
-  Animated,
+  View,
 } from 'react-native';
 import {
+  Card,
+  Icon,
   Screen,
   Text,
-  Icon,
-  Card,
   TouchableOpacity,
 } from '../../../../components';
 import {
   useColor,
-  useNav,
   useDropShadow,
   useNativeDriver,
+  useNav,
 } from '../../../../hooks';
 import {Theme, useRootSelector} from '../../../../utils';
 import dayjs, {Dayjs} from 'dayjs';

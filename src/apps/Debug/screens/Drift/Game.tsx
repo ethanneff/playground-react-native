@@ -1,5 +1,5 @@
-import React, {memo, useState, useCallback} from 'react';
-import {View, LayoutChangeEvent} from 'react-native';
+import React, {memo, useCallback, useState} from 'react';
+import {LayoutChangeEvent, View} from 'react-native';
 import {Canvas} from './Canvas';
 import {Dpad} from './Dpad';
 import {Character} from './Character';

@@ -1,10 +1,10 @@
 import React, {memo, useCallback} from 'react';
-import {View, Keyboard} from 'react-native';
-import {TextInput, Icon} from '../../../../components';
-import {useRootDispatch, useRootSelector, Theme} from '../../../../utils';
+import {Keyboard, View} from 'react-native';
+import {Icon, TextInput} from '../../../../components';
+import {Theme, useRootDispatch, useRootSelector} from '../../../../utils';
 import 'react-native-get-random-values';
 import {v4} from 'uuid';
-import {Message, typeChatMessage, createChatMessage} from './Messages';
+import {Message, createChatMessage, typeChatMessage} from './Messages';
 
 export const TextField = memo(function ChatTextField() {
   const dispatch = useRootDispatch();

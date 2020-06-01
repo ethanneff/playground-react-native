@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {TouchableOpacity} from '../../../../components';
 
 interface RoundButtonProps {

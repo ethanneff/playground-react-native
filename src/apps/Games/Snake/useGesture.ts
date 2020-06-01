@@ -1,8 +1,8 @@
-import {useRef, MutableRefObject} from 'react';
+import {MutableRefObject, useRef} from 'react';
 import {
+  GestureResponderHandlers,
   PanResponder,
   PanResponderInstance,
-  GestureResponderHandlers,
 } from 'react-native';
 
 export type Direction = 'left' | 'right' | 'up' | 'down';

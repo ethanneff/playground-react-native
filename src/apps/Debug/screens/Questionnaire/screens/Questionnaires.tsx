@@ -1,7 +1,7 @@
-import React, {useState, useCallback} from 'react';
+import React, {useCallback, useState} from 'react';
 import {FlatList, View} from 'react-native';
 import {connect} from 'react-redux';
-import {Card, Dialog, Text, Icon} from '../../../../../components';
+import {Card, Dialog, Icon, Text} from '../../../../../components';
 import {RootState} from '../../../../../containers';
 import {
   Questionnaire,

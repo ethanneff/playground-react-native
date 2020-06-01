@@ -9,7 +9,7 @@ import {Theme} from '../../utils';
 import {Button} from '../Button';
 import {Card} from '../Card';
 import {Text} from '../Text';
-import {useNativeDriver, useDropShadow} from '../../hooks';
+import {useDropShadow, useNativeDriver} from '../../hooks';
 
 interface OwnProps {
   testID?: string;

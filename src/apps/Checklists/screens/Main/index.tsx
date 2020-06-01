@@ -1,9 +1,9 @@
 import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
-import {Button, Screen, Icon} from '../../../../components';
-import {useNav, useColor} from '../../../../hooks';
-import {useRootSelector, useRootDispatch} from '../../../../utils';
-import {setActiveList, getActiveChecklistOrderByCreatedAt} from '../../models';
+import {Button, Icon, Screen} from '../../../../components';
+import {useColor, useNav} from '../../../../hooks';
+import {useRootDispatch, useRootSelector} from '../../../../utils';
+import {getActiveChecklistOrderByCreatedAt, setActiveList} from '../../models';
 import {navigate} from '../../../../models';
 
 export default memo(function Checklists() {

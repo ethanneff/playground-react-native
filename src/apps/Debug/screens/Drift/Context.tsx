@@ -1,4 +1,4 @@
-import {TrackPositionWithColor, TrackPosition} from './Tracks';
+import {TrackPosition, TrackPositionWithColor} from './Tracks';
 import {ColorChoice} from './Dpad';
 import {createContext} from 'react';
 

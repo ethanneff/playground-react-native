@@ -1,5 +1,5 @@
-import React, {memo} from 'react';
-import {TextStyle, ViewStyle, StyleProp} from 'react-native';
+import React from 'react';
+import {StyleProp, TextStyle, ViewStyle} from 'react-native';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {useColor, useDropShadow} from '../../hooks';

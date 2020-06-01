@@ -1,7 +1,7 @@
 import React, {memo, useState} from 'react';
-import {StyleSheet, ScrollView} from 'react-native';
-import {Screen, Text, Card, Icon, Button} from '../../components';
-import {useNav, useColor} from '../../hooks';
+import {ScrollView, StyleSheet} from 'react-native';
+import {Button, Card, Icon, Screen, Text} from '../../components';
+import {useColor, useNav} from '../../hooks';
 import {Theme} from '../../utils';
 import {Login} from '../../features/Login';
 

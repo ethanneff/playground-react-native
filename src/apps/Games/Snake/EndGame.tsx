@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import {Modal, Text, Button} from '../../../components';
+import {Button, Modal, Text} from '../../../components';
 
 interface Props {
   onPress(): void;

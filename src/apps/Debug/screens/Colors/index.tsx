@@ -1,9 +1,9 @@
 import React, {memo} from 'react';
-import {View, ScrollView} from 'react-native';
-import {Screen, Text, Button} from '../../../../components';
+import {ScrollView, View} from 'react-native';
+import {Button, Screen, Text} from '../../../../components';
 import {useNav} from '../../../../hooks';
 import {ColorTheme, changeTheme} from '../../../../models';
-import {useRootSelector, useRootDispatch, Theme} from '../../../../utils';
+import {Theme, useRootDispatch, useRootSelector} from '../../../../utils';
 
 export default memo(function DebugColors() {
   const nav = useNav();

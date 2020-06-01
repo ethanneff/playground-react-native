@@ -1,15 +1,15 @@
 import {getType} from 'typesafe-actions';
 import {
-  dimensionReducer,
-  updateDimension,
-  getWidth,
-  getHeight,
-  getSmallestDimension,
-  getLargestDimension,
-  getLandscapeOrientation,
   dimensionInitialState,
+  dimensionReducer,
+  getHeight,
+  getLandscapeOrientation,
+  getLargestDimension,
+  getSmallestDimension,
+  getWidth,
+  updateDimension,
 } from '..';
-import {logout, loginRequest} from '../../Auth';
+import {loginRequest, logout} from '../../Auth';
 import {store} from '../../../containers';
 
 describe('selectors', () => {

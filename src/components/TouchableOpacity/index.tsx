@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {TouchableOpacity as Original, ViewStyle, StyleProp} from 'react-native';
+import {TouchableOpacity as Original, StyleProp, ViewStyle} from 'react-native';
 import {Sound} from '../../conversions';
 
 interface Props {

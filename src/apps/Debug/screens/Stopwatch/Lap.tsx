@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import Timer from './Timer';
 
 interface LapProps {

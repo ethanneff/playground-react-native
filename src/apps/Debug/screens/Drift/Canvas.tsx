@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import {View, LayoutChangeEvent} from 'react-native';
+import {LayoutChangeEvent, View} from 'react-native';
 import {useColor} from '../../../../hooks';
 
 interface CanvasProps {

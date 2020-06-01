@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {Animated, StyleSheet, PanResponder} from 'react-native';
+import {Animated, PanResponder, StyleSheet} from 'react-native';
 import {Screen, Text} from '../../../../components';
-import {useNav, useColor} from '../../../../hooks';
+import {useColor, useNav} from '../../../../hooks';
 import {GestureHandler} from './logic';
 
 const minTouches = 2;

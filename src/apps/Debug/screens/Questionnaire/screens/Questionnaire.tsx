@@ -1,6 +1,6 @@
-import React, {useState, useCallback} from 'react';
+import React, {useCallback, useState} from 'react';
 import {FlatList, View} from 'react-native';
-import {Card, Dialog, Text, Icon} from '../../../../../components';
+import {Card, Dialog, Icon, Text} from '../../../../../components';
 import {questionnairesInitialState} from '../models';
 
 export const Questionnaire = () => {

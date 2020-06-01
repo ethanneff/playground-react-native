@@ -1,13 +1,13 @@
 import React, {memo, useState} from 'react';
 import {
   Animated,
+  LayoutChangeEvent,
   PanResponder,
   PanResponderInstance,
   View,
-  LayoutChangeEvent,
 } from 'react-native';
 import {useColor, useNativeDriver, useNav} from '../../../hooks';
-import {colorWithOpacity, useRootSelector, Theme} from '../../../utils';
+import {Theme, colorWithOpacity, useRootSelector} from '../../../utils';
 import {Screen} from '../../../components';
 
 const charSize = 50;

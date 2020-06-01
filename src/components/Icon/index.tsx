@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform, ViewStyle, StyleProp, StyleSheet} from 'react-native';
+import {Platform, StyleProp, StyleSheet, ViewStyle} from 'react-native';
 import {Config, Theme} from '../../utils';
 import {Badge} from './Badge';
 import {Source} from './Source';

@@ -1,8 +1,8 @@
-import React, {memo} from 'react';
-import {Animated, StyleSheet, TextStyle, StyleProp} from 'react-native';
+import React from 'react';
+import {Animated, StyleProp, StyleSheet, TextStyle} from 'react-native';
 import {Theme, colorWithOpacity} from '../../utils';
-import {useNativeDriver, useColor} from '../../hooks';
-import {getTextEmphasis, getFontType, FontType, FontEmphasis} from './utils';
+import {useColor, useNativeDriver} from '../../hooks';
+import {FontEmphasis, FontType, getFontType, getTextEmphasis} from './utils';
 import {Sound} from '../../conversions';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';

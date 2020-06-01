@@ -3,7 +3,7 @@ import {useColor, useDropShadow} from '../../hooks';
 import {Theme, useRootSelector} from '../../utils';
 import {Card} from '../Card';
 import {TouchableOpacity} from '../TouchableOpacity';
-import {View, ScrollView, StyleSheet} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 
 interface Props {
   testID?: string;

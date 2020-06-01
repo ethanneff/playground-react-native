@@ -10,12 +10,12 @@ import {
 import thunk, {ThunkAction} from 'redux-thunk';
 import {DeepReadonly} from 'utility-types';
 import {
+  ChecklistItemReducer,
+  ChecklistReducer,
   ItemActions,
   ListActions,
-  ChecklistReducer,
   checklistItemReducer,
   checklistReducer,
-  ChecklistItemReducer,
 } from '../../apps/Checklists/models';
 import {
   Choices,
@@ -36,28 +36,28 @@ import {
   AuthState,
   DeviceActions,
   DeviceState,
+  DimensionActions,
+  DimensionState,
   Navigation,
   NavigationActions,
+  NetworkActions,
+  NetworkState,
   Theme,
   ThemeActions,
   authReducer,
   deviceReducer,
-  navigationReducer,
-  themeReducer,
-  NetworkActions,
-  NetworkState,
-  networkReducer,
   dimensionReducer,
-  DimensionState,
-  DimensionActions,
+  navigationReducer,
+  networkReducer,
+  themeReducer,
 } from '../../models';
 import {Storage} from '../../conversions';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {
+  ChatMessageActions,
   ChatMessageReducer,
   chatMessageReducer,
-  ChatMessageActions,
 } from '../../apps/Debug/screens/Chat/Messages';
 
 /* INTERFACES */

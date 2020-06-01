@@ -1,6 +1,6 @@
-import React, {memo, useState, useCallback} from 'react';
-import {View, Switch, ScrollView} from 'react-native';
-import {Screen, Text, TextInput, Button} from '../../../../components';
+import React, {memo, useCallback, useState} from 'react';
+import {ScrollView, Switch, View} from 'react-native';
+import {Button, Screen, Text, TextInput} from '../../../../components';
 import {useColor, useNav} from '../../../../hooks';
 import {Theme} from '../../../../utils';
 import dayjs from 'dayjs';

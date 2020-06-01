@@ -1,7 +1,7 @@
 import React, {memo, useEffect} from 'react';
-import {StyleSheet, View, Animated, Easing} from 'react-native';
+import {Animated, Easing, StyleSheet, View} from 'react-native';
 import {Screen} from '../../../components';
-import {useColor, useNav, useDropShadow, useNativeDriver} from '../../../hooks';
+import {useColor, useDropShadow, useNativeDriver, useNav} from '../../../hooks';
 
 type PapiProps = {size: number; color: string};
 

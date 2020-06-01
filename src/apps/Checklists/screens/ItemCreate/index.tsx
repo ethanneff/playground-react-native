@@ -2,7 +2,7 @@ import React, {memo, useState} from 'react';
 import {Button, Screen, TextInput} from '../../../../components';
 import {navigate} from '../../../../models';
 import {createChecklistItem} from '../../models';
-import {useRootDispatch, useRootSelector, Errors} from '../../../../utils';
+import {Errors, useRootDispatch, useRootSelector} from '../../../../utils';
 import {useNav} from '../../../../hooks';
 import 'react-native-get-random-values';
 import {v4} from 'uuid';

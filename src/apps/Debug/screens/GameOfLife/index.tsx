@@ -1,10 +1,10 @@
-import React, {useState, useRef, useCallback, memo, useEffect} from 'react';
+import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Screen, Button, Slider, Text} from '../../../../components';
+import {Button, Screen, Slider, Text} from '../../../../components';
 import {useColor, useNav} from '../../../../hooks';
 import {useRootSelector} from '../../../../utils';
 import {getSmallestDimension} from '../../../../models';
-import {generateBoard, swapBoardItem, determineBoardItem} from './utils';
+import {determineBoardItem, generateBoard, swapBoardItem} from './utils';
 import {Cell} from './Cell';
 
 export default memo(function DebugGameOfLife() {

@@ -1,6 +1,6 @@
-import React, {memo, useState, useCallback, useEffect} from 'react';
+import React, {memo, useCallback, useEffect, useState} from 'react';
 import {View} from 'react-native';
-import {Screen, Button, Text} from '../../../components';
+import {Button, Screen, Text} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
 import {BoardContext, getBoard, updateBoard} from './utils';
 import {Board} from './Board';

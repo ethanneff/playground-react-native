@@ -19,7 +19,7 @@ const PortfolioForgot = lazy(() =>
   import('../../apps/Portfolio/screens/ForgotPassword'),
 );
 const PortfolioLogin = lazy(() => import('../../apps/Portfolio/screens/Login'));
-const Checklists = lazy(() => import('../../apps/Checklists/screens/Main'));
+const Checklists = lazy(() => import('../../apps/Checklists'));
 const ChecklistsList = lazy(() => import('../../apps/Checklists/screens/List'));
 const ChecklistsListCreate = lazy(() =>
   import('../../apps/Checklists/screens/ListCreate'),
@@ -34,7 +34,7 @@ const ChecklistsItemUpdate = lazy(() =>
   import('../../apps/Checklists/screens/ItemUpdate'),
 );
 const Focus = lazy(() => import('../../apps/Focus'));
-const CantHurtMe = lazy(() => import('../../apps/CantHurtMe/screens/Main'));
+const CantHurtMe = lazy(() => import('../../apps/CantHurtMe'));
 const Journal = lazy(() => import('../../apps/Journal'));
 const Activity = lazy(() => import('../../apps/Activity'));
 const Debug = lazy(() => import('../../apps/Debug/screens/Main'));
