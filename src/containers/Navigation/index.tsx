@@ -37,35 +37,59 @@ const Focus = lazy(() => import('../../apps/Focus'));
 const CantHurtMe = lazy(() => import('../../apps/CantHurtMe'));
 const Journal = lazy(() => import('../../apps/Journal'));
 const Activity = lazy(() => import('../../apps/Activity'));
-const Debug = lazy(() => import('../../apps/Debug/screens/Main'));
-const DebugArticle = lazy(() => import('../../apps/Debug/screens/Article'));
-const DebugBall = lazy(() => import('../../apps/Debug/screens/Ball'));
-const DebugChat = lazy(() => import('../../apps/Debug/screens/Chat'));
-const DebugColors = lazy(() => import('../../apps/Debug/screens/Colors'));
-const DebugDarkMode = lazy(() => import('../../apps/Debug/screens/DarkMode'));
-const DebugDrag = lazy(() => import('../../apps/Debug/screens/Drag'));
-const DebugDrift = lazy(() => import('../../apps/Debug/screens/Drift'));
-const DebugFonts = lazy(() => import('../../apps/Debug/screens/Fonts'));
-const DebugSwipeFeed = lazy(() => import('../../apps/Debug/screens/SwipeFeed'));
-const DebugReminder = lazy(() => import('../../apps/Debug/screens/Reminder'));
-const DebugTinder = lazy(() => import('../../apps/Debug/screens/Tinder'));
-const DebugGameOfLife = lazy(() =>
-  import('../../apps/Debug/screens/GameOfLife'),
+const Playground = lazy(() => import('../../apps/Playground/screens/Main'));
+const PlaygroundArticle = lazy(() =>
+  import('../../apps/Playground/screens/Article'),
 );
-const DebugImage = lazy(() =>
-  import('../../apps/Debug/screens/ImageCollection'),
+const PlaygroundBall = lazy(() => import('../../apps/Playground/screens/Ball'));
+const PlaygroundChat = lazy(() => import('../../apps/Playground/screens/Chat'));
+const PlaygroundColors = lazy(() =>
+  import('../../apps/Playground/screens/Colors'),
 );
-const DebugInput = lazy(() => import('../../apps/Debug/screens/Input'));
-const DebugOKRs = lazy(() => import('../../apps/Debug/screens/OKRs'));
-const DebugPinchSpread = lazy(() =>
-  import('../../apps/Debug/screens/PinchSpread'),
+const PlaygroundDarkMode = lazy(() =>
+  import('../../apps/Playground/screens/DarkMode'),
 );
-const DebugQuestionnaire = lazy(() =>
-  import('../../apps/Debug/screens/Questionnaire'),
+const PlaygroundDrag = lazy(() => import('../../apps/Playground/screens/Drag'));
+const PlaygroundDrift = lazy(() =>
+  import('../../apps/Playground/screens/Drift'),
 );
-const DebugSearchBar = lazy(() => import('../../apps/Debug/screens/SearchBar'));
-const DebugStartup = lazy(() => import('../../apps/Debug/screens/Startup'));
-const DebugStopwatch = lazy(() => import('../../apps/Debug/screens/Stopwatch'));
+const PlaygroundFonts = lazy(() =>
+  import('../../apps/Playground/screens/Fonts'),
+);
+const PlaygroundSwipeFeed = lazy(() =>
+  import('../../apps/Playground/screens/SwipeFeed'),
+);
+const PlaygroundReminder = lazy(() =>
+  import('../../apps/Playground/screens/Reminder'),
+);
+const PlaygroundTinder = lazy(() =>
+  import('../../apps/Playground/screens/Tinder'),
+);
+const PlaygroundGameOfLife = lazy(() =>
+  import('../../apps/Playground/screens/GameOfLife'),
+);
+const PlaygroundImage = lazy(() =>
+  import('../../apps/Playground/screens/ImageCollection'),
+);
+const PlaygroundInput = lazy(() =>
+  import('../../apps/Playground/screens/Input'),
+);
+const PlaygroundOKRs = lazy(() => import('../../apps/Playground/screens/OKRs'));
+const PlaygroundPinchSpread = lazy(() =>
+  import('../../apps/Playground/screens/PinchSpread'),
+);
+const PlaygroundQuestionnaire = lazy(() =>
+  import('../../apps/Playground/screens/Questionnaire'),
+);
+const PlaygroundSearchBar = lazy(() =>
+  import('../../apps/Playground/screens/SearchBar'),
+);
+const PlaygroundStartup = lazy(() =>
+  import('../../apps/Playground/screens/Startup'),
+);
+const PlaygroundStopwatch = lazy(() =>
+  import('../../apps/Playground/screens/Stopwatch'),
+);
 const GamesFlappyBird = lazy(() => import('../../apps/Games/FlappyBird'));
 const GamesSnake = lazy(() => import('../../apps/Games/Snake'));
 const GamesPapiJump = lazy(() => import('../../apps/Games/PapiJump'));
@@ -82,27 +106,27 @@ export const screens = {
   cantHurtMe: <CantHurtMe />,
   journal: <Journal />,
   activity: <Activity />,
-  debug: <Debug />,
-  debugArticle: <DebugArticle />,
-  debugBall: <DebugBall />,
-  debugChat: <DebugChat />,
-  debugDarkMode: <DebugDarkMode />,
-  debugDrag: <DebugDrag />,
-  debugFonts: <DebugFonts />,
-  debugImageCollection: <DebugImage />,
-  debugInput: <DebugInput />,
-  debugOKRs: <DebugOKRs />,
-  debugPinchSpread: <DebugPinchSpread />,
-  debugQuestionnaire: <DebugQuestionnaire />,
-  debugSearchBar: <DebugSearchBar />,
-  debugStartup: <DebugStartup />,
-  debugStopwatch: <DebugStopwatch />,
-  debugColors: <DebugColors />,
-  debugSwipeFeed: <DebugSwipeFeed />,
-  debugGameOfLife: <DebugGameOfLife />,
-  debugReminder: <DebugReminder />,
-  debugTinder: <DebugTinder />,
-  debugDrift: <DebugDrift />,
+  playground: <Playground />,
+  playgroundArticle: <PlaygroundArticle />,
+  playgroundBall: <PlaygroundBall />,
+  playgroundChat: <PlaygroundChat />,
+  playgroundDarkMode: <PlaygroundDarkMode />,
+  playgroundDrag: <PlaygroundDrag />,
+  playgroundFonts: <PlaygroundFonts />,
+  playgroundImageCollection: <PlaygroundImage />,
+  playgroundInput: <PlaygroundInput />,
+  playgroundOKRs: <PlaygroundOKRs />,
+  playgroundPinchSpread: <PlaygroundPinchSpread />,
+  playgroundQuestionnaire: <PlaygroundQuestionnaire />,
+  playgroundSearchBar: <PlaygroundSearchBar />,
+  playgroundStartup: <PlaygroundStartup />,
+  playgroundStopwatch: <PlaygroundStopwatch />,
+  playgroundColors: <PlaygroundColors />,
+  playgroundSwipeFeed: <PlaygroundSwipeFeed />,
+  playgroundGameOfLife: <PlaygroundGameOfLife />,
+  playgroundReminder: <PlaygroundReminder />,
+  playgroundTinder: <PlaygroundTinder />,
+  playgroundDrift: <PlaygroundDrift />,
   checklists: <Checklists />,
   checklistsList: <ChecklistsList />,
   checklistsListCreate: <ChecklistsListCreate />,

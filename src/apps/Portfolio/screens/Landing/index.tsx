@@ -34,7 +34,7 @@ export default memo(function PortfolioLanding() {
         <Button title="Archero" onPress={nav.to('gamesArchero')} />
       </View>
       <View style={styles.row}>
-        <Button title="Debug" onPress={nav.to('debug')} />
+        <Button title="Playground" onPress={nav.to('playground')} />
       </View>
     </Screen>
   );

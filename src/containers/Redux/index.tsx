@@ -32,7 +32,7 @@ import {
   questionnairesReducer,
   questionsReducer,
   responsesReducer,
-} from '../../apps/Debug/screens/Questionnaire/models';
+} from '../../apps/Playground/screens/Questionnaire/models';
 import {
   AuthActions,
   AuthState,
@@ -58,7 +58,7 @@ import {
   ChatMessageActions,
   ChatMessageReducer,
   chatMessageReducer,
-} from '../../apps/Debug/screens/Chat/Messages';
+} from '../../apps/Playground/screens/Chat/Messages';
 
 /* INTERFACES */
 export type RootState = DeepReadonly<{

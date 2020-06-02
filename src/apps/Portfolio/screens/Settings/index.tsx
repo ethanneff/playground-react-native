@@ -5,9 +5,9 @@ import {ColorTheme, changeTheme} from '../../../../models';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {useNav} from '../../../../hooks';
 
+const themes = Object.values(ColorTheme);
 export default memo(function PortfolioSettings() {
   const dispatch = useRootDispatch();
-  const themes = Object.values(ColorTheme);
   const currentTheme = useRootSelector((state) => state.theme.currentColor);
   const nav = useNav();
   const themePress = useCallback(
