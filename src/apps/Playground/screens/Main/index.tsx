@@ -1,4 +1,4 @@
-import React, {memo, useCallback} from 'react';
+import React, {memo} from 'react';
 import {FlatList} from 'react-native';
 import {Button, Screen} from '../../../../components';
 import {NavigationScreen} from '../../../../models';
@@ -25,19 +25,17 @@ const playgroundScreens: NavigationScreen[] = [
   'playgroundReminder',
   'playgroundTinder',
   'playgroundDrift',
+  'playgroundAppleMask',
 ];
 
 const formatTitle = (str: string) => str.replace('playground', '');
 
 export default memo(function Playground() {
   const nav = useNav();
-  const renderItem = useCallback(
-    ({item}) => (
-      <Button title={formatTitle(item)} key={item} onPress={nav.to(item)} />
-    ),
-    [nav],
+  const renderItem = ({item}: {item: NavigationScreen}) => (
+    <Button title={formatTitle(item)} key={item} onPress={nav.to(item)} />
   );
-  const keyExtractor = useCallback((item) => item, []);
+  const keyExtractor = (item: NavigationScreen) => item;
   return (
     <Screen onLeftPress={nav.to('portfolioLanding')} title="Playground">
       <FlatList

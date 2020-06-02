@@ -90,6 +90,9 @@ const PlaygroundStartup = lazy(() =>
 const PlaygroundStopwatch = lazy(() =>
   import('../../apps/Playground/screens/Stopwatch'),
 );
+const PlaygroundAppleMask = lazy(() =>
+  import('../../apps/Playground/screens/AppleMask'),
+);
 const GamesFlappyBird = lazy(() => import('../../apps/Games/FlappyBird'));
 const GamesSnake = lazy(() => import('../../apps/Games/Snake'));
 const GamesPapiJump = lazy(() => import('../../apps/Games/PapiJump'));
@@ -127,6 +130,7 @@ export const screens = {
   playgroundReminder: <PlaygroundReminder />,
   playgroundTinder: <PlaygroundTinder />,
   playgroundDrift: <PlaygroundDrift />,
+  playgroundAppleMask: <PlaygroundAppleMask />,
   checklists: <Checklists />,
   checklistsList: <ChecklistsList />,
   checklistsListCreate: <ChecklistsListCreate />,
