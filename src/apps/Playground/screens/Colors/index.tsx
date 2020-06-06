@@ -14,7 +14,7 @@ export default memo(function DebugColors() {
   // text: high 87% medium 60% disabled 38%
   // icon: active 100% inactive 60% disabled 38%
   return (
-    <Screen onLeftPress={nav.to('debug')} title="Colors" gutter>
+    <Screen onLeftPress={nav.to('playground')} title="Colors" gutter>
       <Text
         type="h4"
         title="Theme"
