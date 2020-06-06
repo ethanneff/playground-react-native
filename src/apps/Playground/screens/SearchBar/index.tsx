@@ -194,6 +194,7 @@ export default memo(function PlaygroundSearchbar() {
             <Icon name={state.iconName} />
           </Animated.View>
           <TextInput
+            removeError
             value={state.input}
             onChangeText={(value: string) => setState({...state, input: value})}
             placeholder={textInputPlaceHolder}

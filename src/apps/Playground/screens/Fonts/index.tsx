@@ -6,7 +6,7 @@ export default memo(function PlaygroundFonts() {
   const nav = useNav();
 
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Fonts" scroll>
+    <Screen onLeftPress={nav.to('playground')} title="Fonts">
       <Text
         type="h1"
         title="H1: The quick brown fox jumps over the lazy dog."
