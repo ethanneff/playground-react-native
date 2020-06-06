@@ -29,7 +29,7 @@ interface Props {
   error?: string;
   errorIcon?: string;
   flex?: boolean;
-  hasError?: boolean;
+  removeError?: boolean;
   keyboardType?: KeyboardTypeOptions;
   optional?: boolean;
   placeholder?: string;
@@ -63,6 +63,7 @@ export const TextInput: React.FC<Props> = ({
   secureTextEntry,
   textContentType = 'none',
   textStyle,
+  removeError,
   title = '',
   value,
 }) => {
@@ -174,24 +175,26 @@ export const TextInput: React.FC<Props> = ({
           color={color.secondary}
         />
       </View>
-      <View style={{flexDirection: 'row'}}>
-        <Icon
-          activeOpacity={1}
-          invisible={noError}
-          name={errorIcon}
-          onPress={focusOnInput}
-          color={color.danger}
-        />
-        <Button
-          activeOpacity={1}
-          color="danger"
-          invisible={noError}
-          lowercase
-          noPadding
-          onPress={focusOnInput}
-          title={error}
-        />
-      </View>
+      {!removeError && (
+        <View style={{flexDirection: 'row'}}>
+          <Icon
+            activeOpacity={1}
+            invisible={noError}
+            name={errorIcon}
+            onPress={focusOnInput}
+            color={color.danger}
+          />
+          <Button
+            activeOpacity={1}
+            color="danger"
+            invisible={noError}
+            lowercase
+            noPadding
+            onPress={focusOnInput}
+            title={error}
+          />
+        </View>
+      )}
     </View>
   );
 };
