@@ -4,6 +4,7 @@ import {App, Navigation, Redux} from './containers';
 import {Config} from './utils';
 
 if (Platform.OS !== Config.os.web && __DEV__) {
+  require('react-native-highlight-updates');
   const whyDidYouRender = require('@welldone-software/why-did-you-render');
   const ReactRedux = require('react-redux');
   whyDidYouRender(React, {
