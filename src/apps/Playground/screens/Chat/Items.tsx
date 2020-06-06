@@ -1,4 +1,4 @@
-import React, {memo, useCallback, useRef, useEffect} from 'react';
+import React, {memo, useCallback, useEffect, useRef} from 'react';
 import {FlatList} from 'react-native';
 import {useRootSelector} from '../../../../utils';
 import {Item} from './Item';

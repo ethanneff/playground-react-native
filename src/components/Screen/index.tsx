@@ -3,13 +3,13 @@ import {
   SafeAreaView,
   StatusBar,
   StyleSheet,
-  ViewStyle,
   View,
+  ViewStyle,
 } from 'react-native';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 import {Theme} from '../../utils';
 import {useColor} from '../../hooks';
 import {NavBar} from './NavBar';
-import KeyboardSpacer from 'react-native-keyboard-spacer';
 
 interface OwnProps {
   style?: ViewStyle;

@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import {View, ImageSourcePropType, Image, ScrollView} from 'react-native';
+import {Image, ImageSourcePropType, ScrollView, View} from 'react-native';
 import {Screen, Text} from '../../../../components';
 import {useColor, useNav} from '../../../../hooks';
 import {Theme, useRootSelector} from '../../../../utils';
