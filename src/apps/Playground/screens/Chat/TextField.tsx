@@ -6,7 +6,7 @@ import {Theme, useRootDispatch, useRootSelector} from '../../../../utils';
 import {Message, createChatMessage, typeChatMessage} from './Messages';
 import 'react-native-get-random-values';
 
-export const TextField = memo(function ChatTextField() {
+export const TextField = memo(function TextField() {
   const dispatch = useRootDispatch();
   const textField = useRootSelector((state) => state.chatMessage.textField);
   const onMessageChange = useCallback(
@@ -36,10 +36,11 @@ export const TextField = memo(function ChatTextField() {
     <View
       style={{
         flexDirection: 'row',
-        alignItems: 'center',
+        justifyContent: 'center',
       }}>
       <TextInput
         value={textField}
+        removeError
         onChangeText={onMessageChange}
         onSubmitEditing={onSubmit}
         flex
@@ -47,7 +48,11 @@ export const TextField = memo(function ChatTextField() {
       <Icon
         name="send"
         onPress={onSubmit}
-        style={{paddingLeft: Theme.padding.p02}}
+        size={20}
+        style={{
+          paddingLeft: Theme.padding.p02,
+          justifyContent: 'center',
+        }}
       />
     </View>
   );
