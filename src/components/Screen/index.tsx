@@ -1,9 +1,15 @@
 import React from 'react';
-import {SafeAreaView, StatusBar, StyleSheet, ViewStyle} from 'react-native';
+import {
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  ViewStyle,
+  View,
+} from 'react-native';
 import {Theme} from '../../utils';
 import {useColor} from '../../hooks';
 import {NavBar} from './NavBar';
-import {KeyboardAware} from './KeyboardAware';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 
 interface OwnProps {
   style?: ViewStyle;
@@ -12,7 +18,6 @@ interface OwnProps {
   gutter?: boolean;
   leftIcon?: string;
   rightIcon?: string;
-  scroll?: boolean;
   onLeftPress?(): void;
   onRightPress?(): void;
 }
@@ -27,7 +32,6 @@ export const Screen: React.FC<Props> = ({
   onLeftPress,
   onRightPress,
   children,
-  scroll,
   leftIcon,
   rightIcon,
 }) => {
@@ -37,6 +41,9 @@ export const Screen: React.FC<Props> = ({
       backgroundColor: color.background,
       flex: 1,
     },
+    flex: {
+      flex: 1,
+    },
     gutter: {
       padding: gutter ? Theme.padding.p04 : Theme.padding.p00,
     },
@@ -44,19 +51,20 @@ export const Screen: React.FC<Props> = ({
   const childrenStyles = [styles.container, gutter && styles.gutter, style];
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle={color.statusBar} />
-      <NavBar
-        border={border}
-        title={title}
-        leftIcon={leftIcon}
-        rightIcon={rightIcon}
-        onLeftPress={onLeftPress}
-        onRightPress={onRightPress}
-      />
-      <KeyboardAware scroll={scroll} style={childrenStyles}>
-        {children}
-      </KeyboardAware>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <SafeAreaView style={styles.flex}>
+        <StatusBar barStyle={color.statusBar} />
+        <NavBar
+          border={border}
+          title={title}
+          leftIcon={leftIcon}
+          rightIcon={rightIcon}
+          onLeftPress={onLeftPress}
+          onRightPress={onRightPress}
+        />
+        <View style={childrenStyles}>{children}</View>
+      </SafeAreaView>
+      <KeyboardSpacer />
+    </View>
   );
 };
