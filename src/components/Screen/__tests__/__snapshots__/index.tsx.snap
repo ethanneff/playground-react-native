@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<RCTSafeAreaView
-  emulateUnlessSupported={true}
+<View
   style={
     Object {
       "backgroundColor": "hsl(0, 0%, 100%)",
@@ -10,55 +9,78 @@ exports[`renders correctly 1`] = `
     }
   }
 >
-  <View
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
     style={
       Object {
-        "alignItems": "center",
-        "borderBottomColor": "hsl(0, 0%, 100%)",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "height": 72,
-        "justifyContent": "space-between",
+        "flex": 1,
       }
     }
   >
     <View
       style={
         Object {
-          "flex": 0.2,
-          "padding": 12,
+          "alignItems": "center",
+          "borderBottomColor": "hsl(0, 0%, 100%)",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "height": 72,
+          "justifyContent": "space-between",
         }
       }
-    />
+    >
+      <View
+        style={
+          Object {
+            "flex": 0.2,
+            "padding": 12,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "flex": 0.2,
+            "padding": 12,
+          }
+        }
+      />
+    </View>
     <View
       style={
-        Object {
-          "flex": 0.2,
-          "padding": 12,
-        }
+        Array [
+          Object {
+            "backgroundColor": "hsl(0, 0%, 100%)",
+            "flex": 1,
+          },
+          undefined,
+          undefined,
+        ]
       }
-    />
-  </View>
+    >
+      <View />
+    </View>
+  </RCTSafeAreaView>
   <View
     style={
       Array [
         Object {
-          "backgroundColor": "hsl(0, 0%, 100%)",
-          "flex": 1,
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
         },
-        undefined,
+        Object {
+          "height": 0,
+        },
         undefined,
       ]
     }
-  >
-    <View />
-  </View>
-</RCTSafeAreaView>
+  />
+</View>
 `;
 
 exports[`renders correctly with header 1`] = `
-<RCTSafeAreaView
-  emulateUnlessSupported={true}
+<View
   style={
     Object {
       "backgroundColor": "hsl(0, 0%, 100%)",
@@ -66,151 +88,174 @@ exports[`renders correctly with header 1`] = `
     }
   }
 >
-  <View
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
     style={
       Object {
-        "alignItems": "center",
-        "borderBottomColor": "hsl(0, 0%, 100%)",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "height": 72,
-        "justifyContent": "space-between",
+        "flex": 1,
       }
     }
   >
     <View
       style={
         Object {
-          "flex": 0.2,
-          "padding": 12,
+          "alignItems": "center",
+          "borderBottomColor": "hsl(0, 0%, 100%)",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "height": 72,
+          "justifyContent": "space-between",
         }
       }
     >
       <View
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 0.2,
+            "padding": 12,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "hsl(208, 7%, 46%)",
+                  "fontSize": 36,
+                },
+                Array [
+                  undefined,
+                  undefined,
+                ],
+                Object {
+                  "fontFamily": "Material Design Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 40,
+            "fontWeight": "100",
+            "letterSpacing": -0.5,
             "opacity": 1,
           }
         }
       >
-        <Text
-          allowFontScaling={false}
+        hello
+      </Text>
+      <View
+        style={
+          Object {
+            "flex": 0.2,
+            "padding": 12,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "color": "hsl(208, 7%, 46%)",
-                "fontSize": 36,
-              },
-              Array [
-                undefined,
-                undefined,
-              ],
-              Object {
-                "fontFamily": "Material Design Icons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
-            ]
+            Object {
+              "alignSelf": "flex-end",
+              "opacity": 1,
+            }
           }
         >
-          
-        </Text>
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "hsl(208, 7%, 46%)",
+                  "fontSize": 36,
+                },
+                Array [
+                  undefined,
+                  undefined,
+                ],
+                Object {
+                  "fontFamily": "Material Design Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
     </View>
-    <Text
-      style={
-        Object {
-          "color": "hsla(0, 0%, 0%, 1)",
-          "fontSize": 40,
-          "fontWeight": "100",
-          "letterSpacing": -0.5,
-          "opacity": 1,
-        }
-      }
-    >
-      hello
-    </Text>
     <View
       style={
-        Object {
-          "flex": 0.2,
-          "padding": 12,
-        }
+        Array [
+          Object {
+            "backgroundColor": "hsl(0, 0%, 100%)",
+            "flex": 1,
+          },
+          undefined,
+          undefined,
+        ]
       }
     >
-      <View
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignSelf": "flex-end",
-            "opacity": 1,
-          }
-        }
-      >
-        <Text
-          allowFontScaling={false}
-          style={
-            Array [
-              Object {
-                "color": "hsl(208, 7%, 46%)",
-                "fontSize": 36,
-              },
-              Array [
-                undefined,
-                undefined,
-              ],
-              Object {
-                "fontFamily": "Material Design Icons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+      <View />
     </View>
-  </View>
+  </RCTSafeAreaView>
   <View
     style={
       Array [
         Object {
-          "backgroundColor": "hsl(0, 0%, 100%)",
-          "flex": 1,
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
         },
-        undefined,
+        Object {
+          "height": 0,
+        },
         undefined,
       ]
     }
-  >
-    <View />
-  </View>
-</RCTSafeAreaView>
+  />
+</View>
 `;
 
 exports[`renders correctly with icons 1`] = `
-<RCTSafeAreaView
-  emulateUnlessSupported={true}
+<View
   style={
     Object {
       "backgroundColor": "hsl(0, 0%, 100%)",
@@ -218,144 +263,168 @@ exports[`renders correctly with icons 1`] = `
     }
   }
 >
-  <View
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
     style={
       Object {
-        "alignItems": "center",
-        "borderBottomColor": "hsl(0, 0%, 100%)",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "height": 72,
-        "justifyContent": "space-between",
+        "flex": 1,
       }
     }
   >
     <View
       style={
         Object {
-          "flex": 0.2,
-          "padding": 12,
+          "alignItems": "center",
+          "borderBottomColor": "hsl(0, 0%, 100%)",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "height": 72,
+          "justifyContent": "space-between",
         }
       }
     >
       <View
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "flex": 0.2,
+            "padding": 12,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "hsl(208, 7%, 46%)",
+                  "fontSize": 36,
+                },
+                Array [
+                  undefined,
+                  undefined,
+                ],
+                Object {
+                  "fontFamily": "Material Design Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 40,
+            "fontWeight": "100",
+            "letterSpacing": -0.5,
             "opacity": 1,
           }
         }
       >
-        <Text
-          allowFontScaling={false}
+        hello
+      </Text>
+      <View
+        style={
+          Object {
+            "flex": 0.2,
+            "padding": 12,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "color": "hsl(208, 7%, 46%)",
-                "fontSize": 36,
-              },
-              Array [
-                undefined,
-                undefined,
-              ],
-              Object {
-                "fontFamily": "Material Design Icons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
-            ]
+            Object {
+              "alignSelf": "flex-end",
+              "opacity": 1,
+            }
           }
         >
-          
-        </Text>
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "hsl(208, 7%, 46%)",
+                  "fontSize": 36,
+                },
+                Array [
+                  undefined,
+                  undefined,
+                ],
+                Object {
+                  "fontFamily": "Material Design Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
     </View>
-    <Text
-      style={
-        Object {
-          "color": "hsla(0, 0%, 0%, 1)",
-          "fontSize": 40,
-          "fontWeight": "100",
-          "letterSpacing": -0.5,
-          "opacity": 1,
-        }
-      }
-    >
-      hello
-    </Text>
     <View
       style={
-        Object {
-          "flex": 0.2,
-          "padding": 12,
-        }
+        Array [
+          Object {
+            "backgroundColor": "hsl(0, 0%, 100%)",
+            "flex": 1,
+          },
+          undefined,
+          undefined,
+        ]
       }
     >
-      <View
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignSelf": "flex-end",
-            "opacity": 1,
-          }
-        }
-      >
-        <Text
-          allowFontScaling={false}
-          style={
-            Array [
-              Object {
-                "color": "hsl(208, 7%, 46%)",
-                "fontSize": 36,
-              },
-              Array [
-                undefined,
-                undefined,
-              ],
-              Object {
-                "fontFamily": "Material Design Icons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+      <View />
     </View>
-  </View>
+  </RCTSafeAreaView>
   <View
     style={
       Array [
         Object {
-          "backgroundColor": "hsl(0, 0%, 100%)",
-          "flex": 1,
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
         },
-        undefined,
+        Object {
+          "height": 0,
+        },
         undefined,
       ]
     }
-  >
-    <View />
-  </View>
-</RCTSafeAreaView>
+  />
+</View>
 `;
