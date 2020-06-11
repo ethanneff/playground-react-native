@@ -1,5 +1,40 @@
 # Changelog
 
+# [2.27.0](https://github.com/ethanneff/example/compare/v2.26.0...v2.27.0) (2020-06-11)
+
+
+### Bug Fixes
+
+* add remove error to text input ([17f5948](https://github.com/ethanneff/example/commit/17f5948d791aa32250cb76edd987f09903a49b63))
+* begin apple mask playground ([06be190](https://github.com/ethanneff/example/commit/06be190e5dba9039a985c090e7181f6e90dba3a0))
+* center submit button ([2f57dcc](https://github.com/ethanneff/example/commit/2f57dccad780972f22c07cb91578cb3c93e6de8d))
+* correct extra re-renders ([35b6edc](https://github.com/ethanneff/example/commit/35b6edc72901702fed42b167a37d1acd3177627d))
+* correct navigation to playground ([e96eb58](https://github.com/ethanneff/example/commit/e96eb58f0b96641f88066f8f20e9fce233faef25))
+* correct re renders in components ([95c786f](https://github.com/ethanneff/example/commit/95c786f6afd4648a3ce4f6f10e3a66d1a58d0fd1))
+* make web work by relocating react native libaries ([3f68e24](https://github.com/ethanneff/example/commit/3f68e249a5f976c3a60fac23780d6991e384d07d))
+* prevent re renders in cant hurt me ([5056601](https://github.com/ethanneff/example/commit/5056601874e842251c3fa05701d0ca29febc84df))
+* prevent re renders in screen component ([df12f03](https://github.com/ethanneff/example/commit/df12f038d9a9384acfb0caf24fc210c5b534fa2c))
+* remove conosle log ([b18cc42](https://github.com/ethanneff/example/commit/b18cc4254a20efcf22fc59f5675e30e77fa1562e))
+* remove icons for web ([b9e9261](https://github.com/ethanneff/example/commit/b9e9261a8e27c6ac6bbacca96b396d806d129df9))
+* remove re-renders from calendar ([de7e2fa](https://github.com/ethanneff/example/commit/de7e2fad519854cb422ae4f913809b538bc947b5))
+* scroll to new item on submit ([a239641](https://github.com/ethanneff/example/commit/a2396410201d4059e33b393ef10c7f1ac8632fd3))
+* sort imports ([67c0f1b](https://github.com/ethanneff/example/commit/67c0f1bd4651cd47a46e5d882bc0217789151126))
+* sort imports ([3e3da50](https://github.com/ethanneff/example/commit/3e3da500d3a3a5c35de5b78fe1c21be26e656f43))
+* speed up linter ([71085be](https://github.com/ethanneff/example/commit/71085beb4ac5cfec80d7e3dc7ed905adbd96b32f))
+* udpate deps ([578d861](https://github.com/ethanneff/example/commit/578d86119a360701353b0b8cb7c49b0f7d3a2447))
+* update deps ([2ca33bc](https://github.com/ethanneff/example/commit/2ca33bcce1901165f7f7c78510faa12ce4542fa6))
+* update deps ([b86283b](https://github.com/ethanneff/example/commit/b86283b0a9d3a4e0caf31c3c8c2344a60611e76d))
+* update deps ([74f7e53](https://github.com/ethanneff/example/commit/74f7e53e9ed53f199b0d4a3a30f06350319e7918))
+* update deps ([e838e0d](https://github.com/ethanneff/example/commit/e838e0d627e6bd8f320d5384e7203e23a5005398))
+* update deps ([f377279](https://github.com/ethanneff/example/commit/f377279096695863efd38d73990977668dadd548))
+* update deps ([779c62e](https://github.com/ethanneff/example/commit/779c62e97afa21b2210b5d0205f242b51c53a4fa))
+
+
+### Features
+
+* add highlight renders ([58c1dc2](https://github.com/ethanneff/example/commit/58c1dc29b5eda294c91b69dfd44fceb55f9ff18c))
+* use keyboard spacer instead of keyboard aware ([f95cedd](https://github.com/ethanneff/example/commit/f95cedd88547587c77aae03449fa77fd5a0f4126))
+
 # [2.26.0](https://github.com/ethanneff/example/compare/v2.25.1...v2.26.0) (2020-05-29)
 
 
