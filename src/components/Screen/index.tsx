@@ -6,8 +6,8 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import KeyboardSpacer from 'react-native-keyboard-spacer';
 import {Theme} from '../../utils';
+import {KeyboardSpacer} from '../../conversions';
 import {useColor} from '../../hooks';
 import {NavBar} from './NavBar';
 
