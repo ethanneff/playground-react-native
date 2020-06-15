@@ -78,22 +78,40 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
     state: 'loading',
   });
 
-  const onEmail = () =>
-    setForm((prev) => ({...prev, password: '', state: 'email'}));
-  const onForgotPassword = () =>
-    setForm((prev) => ({...prev, state: 'forgot password'}));
-  const onLanding = () =>
-    setForm((prev) => ({...prev, email: '', password: '', state: 'landing'}));
-  const onPhone = () => setForm((prev) => ({...prev, state: 'phone'}));
+  const onEmail = useCallback(
+    () => setForm((prev) => ({...prev, password: '', state: 'email'})),
+    [],
+  );
+  const onForgotPassword = useCallback(
+    () => setForm((prev) => ({...prev, state: 'forgot password'})),
+    [],
+  );
+  const onLanding = useCallback(
+    () =>
+      setForm((prev) => ({...prev, email: '', password: '', state: 'landing'})),
+    [],
+  );
+  const onPhone = useCallback(
+    () => setForm((prev) => ({...prev, state: 'phone'})),
+    [],
+  );
 
-  const onEmailChange = (email: string) =>
-    setForm((prev) => ({...prev, email}));
-  const onPhoneChange = (phone: string) =>
-    setForm((prev) => ({...prev, phone}));
-  const onPhoneCodeChange = (phoneCode: string) =>
-    setForm((prev) => ({...prev, phoneCode}));
-  const onPasswordChange = (password: string) =>
-    setForm((prev) => ({...prev, password}));
+  const onEmailChange = useCallback(
+    (email: string) => setForm((prev) => ({...prev, email})),
+    [],
+  );
+  const onPhoneChange = useCallback(
+    (phone: string) => setForm((prev) => ({...prev, phone})),
+    [],
+  );
+  const onPhoneCodeChange = useCallback(
+    (phoneCode: string) => setForm((prev) => ({...prev, phoneCode})),
+    [],
+  );
+  const onPasswordChange = useCallback(
+    (password: string) => setForm((prev) => ({...prev, password})),
+    [],
+  );
 
   const onPhoneSubmit = useCallback(async () => {
     const phoneConfirmation = await auth().signInWithPhoneNumber(form.phone);
