@@ -1,14 +1,6 @@
 <div align="center">
   <h1>example</h1>
   <div>
-    <a href="https://david-dm.org/ethanneff/example">
-        <img src="https://david-dm.org/ethanneff/example.svg" alt="Dependency Status" />
-    </a>
-    <a href="https://david-dm.org/ethanneff/example#info=devDependencies">
-        <img src="https://david-dm.org/ethanneff/example/dev-status.svg" alt="DevDependency Status" />
-    </a>
-  </div>
-  <div>
     <a href="https://travis-ci.org/ethanneff/example">
         <img src="https://travis-ci.org/ethanneff/example.svg" alt="Build Status" />
     </a>
@@ -37,6 +29,9 @@
     </a>
   </div>
   <div>
+    <a href="https://depfu.com/github/ethanneff/example?project_id=13687">
+      <img src="https://badges.depfu.com/badges/5db9285618b61ad8cb04aca559d53839/overview.svg" alt="Dependencies" />
+    </a>
     <a href="https://codecov.io/gh/ethanneff/example">
       <img src="https://codecov.io/gh/ethanneff/example/branch/master/graph/badge.svg" alt="Test Coverage" />
     </a>
