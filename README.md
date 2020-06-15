@@ -15,11 +15,11 @@
     </a>
   </div>
   <div>
-    <a href="https://codebeat.co/projects/github-com-ethanneff-example-master">
-      <img alt="codebeat badge" src="https://codebeat.co/badges/db921277-9f48-42e6-929f-8c56ae62d585" />
-    </a>
     <a href="https://deepscan.io/dashboard#view=project&tid=5433&pid=7223&bid=69097">
       <img src="https://deepscan.io/api/teams/5433/projects/7223/branches/69097/badge/grade.svg" alt="DeepScan grade">
+    </a>
+    <a href="https://codebeat.co/projects/github-com-ethanneff-example-master">
+      <img src="https://codebeat.co/badges/db921277-9f48-42e6-929f-8c56ae62d585" alt="codebeat badge" />
     </a>
     <a href="https://www.codacy.com/manual/ethanneff/example">
       <img src="https://api.codacy.com/project/badge/Grade/dca655d1a64a40d7bd3e77ec4cd39061" alt="Codacy">
