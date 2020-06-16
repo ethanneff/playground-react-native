@@ -25,7 +25,7 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-export const Screen = ({
+export var Screen = ({
   title,
   style,
   gutter,

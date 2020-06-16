@@ -8,7 +8,7 @@ interface BoardProps {
 }
 
 // TODO: figure out why board is updating with memo
-export const Board = ({matrix}: BoardProps) => {
+export var Board = ({matrix}: BoardProps) => {
   return (
     <View style={{flex: 1, justifyContent: 'center'}}>
       {matrix.map((x, i) => (

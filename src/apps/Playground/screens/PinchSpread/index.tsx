@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {memo, useState} from 'react';
 import {Animated, PanResponder, StyleSheet} from 'react-native';
 import {Screen, Text} from '../../../../components';
 import {useColor, useNav} from '../../../../hooks';
@@ -7,7 +7,7 @@ import {GestureHandler} from './logic';
 const minTouches = 2;
 const title = `pinch or spread the screen with ${minTouches} fingers minimum`;
 
-export default function PinchSpread() {
+export default memo(function PinchSpread() {
   const [state, setState] = useState({pinchCount: 0, spreadCount: 0});
   const color = useColor();
   const nav = useNav();
@@ -37,4 +37,4 @@ export default function PinchSpread() {
       <Animated.View style={styles.container} {...panGesture.panHandlers} />
     </Screen>
   );
-}
+});

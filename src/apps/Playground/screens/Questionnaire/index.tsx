@@ -12,7 +12,7 @@ interface DispatchProps {
 type Props = DispatchProps;
 
 class Container extends React.PureComponent<Props> {
-  private readonly data = [
+  readonly data = [
     {
       choices: [
         {
@@ -41,16 +41,16 @@ class Container extends React.PureComponent<Props> {
     {key: '4', title: '4'},
     {key: '5', title: '5'},
   ];
-  private output: any = {};
-  private readonly width = Dimensions.get('window').width;
-  private tableView: any;
-  private currentIndex = 0;
+  output: any = {};
+  readonly width = Dimensions.get('window').width;
+  tableView: any;
+  currentIndex = 0;
 
-  public handleViewableItemsChanged = ({viewableItems}: any) => {
+  handleViewableItemsChanged = ({viewableItems}: any) => {
     this.currentIndex = viewableItems[0].index || 0;
   };
 
-  public onProgress = (direction = 1) => {
+  onProgress = (direction = 1) => {
     const index = this.currentIndex + direction;
     if (index < 0) {
       return;
@@ -65,7 +65,7 @@ class Container extends React.PureComponent<Props> {
     });
   };
 
-  public onSelection = (item: any, choice: any) => {
+  onSelection = (item: any, choice: any) => {
     this.output = {
       ...this.output,
       [item.key]: {
@@ -77,7 +77,7 @@ class Container extends React.PureComponent<Props> {
     // this.onProgress();
   };
 
-  public onFinish = () => undefined;
+  onFinish = () => undefined;
 
   setRef = (ref: any) => {
     this.tableView = ref;
@@ -124,7 +124,12 @@ class Container extends React.PureComponent<Props> {
     );
   };
 
-  public render() {
+  nav = (to: NavigationScreen) => () => {
+    const {navigate: nav} = this.props;
+    nav(to);
+  };
+
+  render() {
     return (
       <Screen onLeftPress={this.nav('playground')} title="Questionnaire">
         <FlatList
@@ -146,7 +151,6 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 }
 
 const mapDispatchToProps: DispatchProps = {navigate};

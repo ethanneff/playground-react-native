@@ -1,9 +1,9 @@
 import React from 'react';
 import {View} from 'react-native';
 
-export function Slack() {
+export var Slack = () => {
   return <View />;
-}
+};
 
 // // todo
 // // make sure tests pass

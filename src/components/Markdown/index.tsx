@@ -14,10 +14,26 @@ interface Props {
 }
 
 export class Markdown extends React.PureComponent<Props> {
-  private boldSyntax = '*';
-  private withoutSyntaxIndex = 2;
+  boldSyntax = '*';
+  withoutSyntaxIndex = 2;
 
-  public render() {
+  isWordBold(word: string) {
+    return (
+      word.length > this.withoutSyntaxIndex &&
+      word[0] === this.boldSyntax &&
+      word[word.length - 1] === this.boldSyntax
+    );
+  }
+
+  formattedWord(words: string[], word: string, index: number) {
+    const space = words.length - 1 === index ? '' : ' ';
+    const trimmed = this.isWordBold(word)
+      ? word.substring(1, word.length - 1)
+      : word;
+    return trimmed + space;
+  }
+
+  render() {
     const {title, style} = this.props;
     const words = title.split(' ');
     return (
@@ -32,21 +48,5 @@ export class Markdown extends React.PureComponent<Props> {
         ))}
       </View>
     );
-  }
-
-  private isWordBold(word: string) {
-    return (
-      word.length > this.withoutSyntaxIndex &&
-      word[0] === this.boldSyntax &&
-      word[word.length - 1] === this.boldSyntax
-    );
-  }
-
-  private formattedWord(words: string[], word: string, index: number) {
-    const space = words.length - 1 === index ? '' : ' ';
-    const trimmed = this.isWordBold(word)
-      ? word.substring(1, word.length - 1)
-      : word;
-    return trimmed + space;
   }
 }

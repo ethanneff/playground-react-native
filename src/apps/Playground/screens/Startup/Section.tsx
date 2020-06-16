@@ -10,7 +10,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const Section = ({title, row, children}: Props) => {
+export var Section = ({title, row, children}: Props) => {
   const color = useColor();
   return (
     <View

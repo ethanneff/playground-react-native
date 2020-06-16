@@ -38,7 +38,7 @@ interface Props {
   onLongPress?(): void;
 }
 
-export const Button = ({
+export var Button = ({
   activeOpacity,
   buttonStyle,
   center,

@@ -4,13 +4,15 @@ import {App, Navigation, Redux} from './containers';
 import {Config, debugDev} from './utils';
 
 debugDev();
-export const Main = () => (
-  <Redux>
-    <App>
-      <Navigation />
-    </App>
-  </Redux>
-);
+export var Main = () => {
+  return (
+    <Redux>
+      <App>
+        <Navigation />
+      </App>
+    </Redux>
+  );
+};
 
 AppRegistry.registerComponent(Config.app.name, () => Main);
 if (Platform.OS === Config.os.web) {

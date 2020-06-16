@@ -10,7 +10,7 @@ interface Props {
   onPress?(): void;
 }
 
-export const NavButton = ({onPress, icon, isRight}: Props) => {
+export var NavButton = ({onPress, icon, isRight}: Props) => {
   const color = useColor();
   const styles = StyleSheet.create({
     button: {

@@ -14,7 +14,7 @@ interface Props {
   onRightPress?(): void;
 }
 
-export const NavBar = ({
+export var NavBar = ({
   title,
   onLeftPress,
   onRightPress,

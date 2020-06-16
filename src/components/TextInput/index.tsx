@@ -44,7 +44,7 @@ interface Props {
   onSubmitEditing?(): void;
 }
 
-export const TextInput = ({
+export var TextInput = ({
   autoCorrect,
   blurOnSubmit = true,
   clearIcon = 'close-circle',

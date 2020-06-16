@@ -1,9 +1,9 @@
 import React from 'react';
 import {View} from 'react-native';
 
-export function Swipe() {
+export var Swipe = () => {
   return <View />;
-}
+};
 // import React from "react";
 // import {
 //   View,

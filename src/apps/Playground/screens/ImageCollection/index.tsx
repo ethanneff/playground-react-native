@@ -12,7 +12,7 @@ interface DispatchProps {
 type Props = DispatchProps;
 
 class Container extends React.PureComponent<Props> {
-  private data: number[] = [
+  data: number[] = [
     Math.random(),
     Math.random(),
     Math.random(),
@@ -22,12 +22,35 @@ class Container extends React.PureComponent<Props> {
     Math.random(),
     Math.random(),
   ];
-  private numColumns = 3;
-  private handleInfiniteScrollThreshold = 0.3;
-  private columnWidth = Dimensions.get('window').width / this.numColumns;
-  private imageUrl = `http://lorempixel.com/${this.columnWidth}/${this.columnWidth}`;
-  private keyExtractor = (data: number) => data.toString();
-  public render() {
+  numColumns = 3;
+  handleInfiniteScrollThreshold = 0.3;
+  columnWidth = Dimensions.get('window').width / this.numColumns;
+  imageUrl = `http://lorempixel.com/${this.columnWidth}/${this.columnWidth}`;
+
+  keyExtractor = (data: number) => data.toString();
+
+  nav = (to: NavigationScreen) => () => {
+    const {navigate: nav} = this.props;
+    nav(to);
+  };
+
+  handleFetchMore = () => {
+    this.data.push(Math.random());
+    this.data.push(Math.random());
+    this.data.push(Math.random());
+    this.data.push(Math.random());
+    this.data.push(Math.random());
+  };
+
+  renderImage = () => (
+    <AsyncImage
+      height={this.columnWidth}
+      uri={this.imageUrl}
+      width={this.columnWidth}
+    />
+  );
+
+  render() {
     return (
       <Screen onLeftPress={this.nav('playground')} title="Image Collection">
         <FlatList
@@ -41,24 +64,6 @@ class Container extends React.PureComponent<Props> {
       </Screen>
     );
   }
-
-  private nav = (to: NavigationScreen) => () => this.props.navigate(to);
-
-  private handleFetchMore = () => {
-    this.data.push(Math.random());
-    this.data.push(Math.random());
-    this.data.push(Math.random());
-    this.data.push(Math.random());
-    this.data.push(Math.random());
-  };
-
-  private renderImage = () => (
-    <AsyncImage
-      height={this.columnWidth}
-      uri={this.imageUrl}
-      width={this.columnWidth}
-    />
-  );
 }
 
 const mapDispatchToProps: DispatchProps = {navigate};

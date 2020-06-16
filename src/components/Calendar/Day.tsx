@@ -14,7 +14,7 @@ interface Props {
   hiddenDays?: boolean;
 }
 
-export const CalendarDay = ({
+export var CalendarDay = ({
   day,
   onSelected,
   selectedDay,

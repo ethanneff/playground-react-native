@@ -52,7 +52,7 @@ export const getBoard = (size: number): BoardContext => {
   return {matrix, head, tail, food, state: 'ok'};
 };
 
-const getNext = (
+var getNext = (
   direction: Direction,
   head: Cell,
   matrix: Matrix,

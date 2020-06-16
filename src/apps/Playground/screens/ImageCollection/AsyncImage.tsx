@@ -9,13 +9,13 @@ interface Props {
   size?: number | 'small' | 'large';
 }
 
-export function AsyncImage({
+export var AsyncImage = ({
   uri,
   height,
   width,
   color = 'black',
   size = 'small',
-}: Props) {
+}: Props) => {
   const nativeDriver = useNativeDriver();
   const imageAnimated = new Animated.Value(0);
   const indicatorAnimated = new Animated.Value(1);
@@ -50,4 +50,4 @@ export function AsyncImage({
       </Animated.View>
     </View>
   );
-}
+};

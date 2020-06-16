@@ -3,7 +3,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     '@react-native-community',
-    'plugin:react/recommended',
+    'plugin:react/all',
     'plugin:react-native/all',
   ],
   plugins: ['import'],
@@ -18,6 +18,10 @@ module.exports = {
     // add
     'sort-imports': ['error', {ignoreDeclarationSort: true}],
     'import/order': 'error',
+    'react/function-component-definition': [
+      'error',
+      {namedComponents: 'arrow-function', unnamedComponents: 'arrow-function'},
+    ],
     // ignore
     'react/jsx-indent': 'off',
     'react/jsx-indent-props': 'off',
@@ -30,5 +34,8 @@ module.exports = {
     'react-native/no-inline-styles': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-max-depth': 'off',
+    'react/forbid-component-props': 'off',
+    'react/no-multi-comp': 'off',
+    'react/no-array-index-key': 'off',
   },
 };

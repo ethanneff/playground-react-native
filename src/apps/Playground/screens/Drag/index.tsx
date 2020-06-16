@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {
   Animated,
   LayoutChangeEvent,
@@ -40,7 +40,7 @@ const getPosition = (
   return {x, y};
 };
 
-export default function PlaygroundDrag() {
+export default memo(function PlaygroundDrag() {
   const nav = useNav();
   const color = useColor();
   const dropShadow = useDropShadow(10);
@@ -98,4 +98,4 @@ export default function PlaygroundDrag() {
       </View>
     </Screen>
   );
-}
+});

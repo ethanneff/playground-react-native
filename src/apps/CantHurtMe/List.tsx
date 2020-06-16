@@ -39,8 +39,8 @@ export const List = memo(function List({
     return (
       <Card
         flex
-        onPress={onPress}
         key={data.id}
+        onPress={onPress}
         style={{marginHorizontal: Theme.padding.p02}}>
         <Text
           bold

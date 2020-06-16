@@ -30,7 +30,7 @@ export interface TextProps {
 }
 
 const sound = new Sound(require('./../TouchableOpacity/tap.mp3'));
-export const Text = ({
+export var Text = ({
   type,
   emphasis,
   title,

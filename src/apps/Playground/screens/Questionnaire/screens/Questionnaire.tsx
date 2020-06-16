@@ -3,7 +3,7 @@ import {FlatList, View} from 'react-native';
 import {Card, Dialog, Icon, Text} from '../../../../../components';
 import {questionnairesInitialState} from '../models';
 
-export const Questionnaire = () => {
+export var Questionnaire = () => {
   const [actionSheet, setActionSheet] = useState(false);
   const [activeItem, setActiveItem] = useState('');
 

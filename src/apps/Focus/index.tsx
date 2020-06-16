@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {memo, useCallback, useEffect, useState} from 'react';
 import dayjs from 'dayjs';
 import {Dialog, Screen} from '../../components';
 import {useNav} from '../../hooks';
@@ -14,7 +14,8 @@ const editItem: {visible: boolean; item: Item | null} = {
   visible: false,
   item: null,
 };
-export default function Focus() {
+
+export default memo(function Focus() {
   const [modalItemEdit, setModalItemEdit] = useState(editItem);
   const [modalProfile] = useState(false);
   const [modalLogin] = useState(false);
@@ -96,4 +97,4 @@ export default function Focus() {
       )}
     </>
   );
-}
+});
