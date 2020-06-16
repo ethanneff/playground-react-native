@@ -46,7 +46,7 @@ class Container extends React.PureComponent<Props> {
   private tableView: any;
   private currentIndex = 0;
 
-  public onViewableItemsChanged = ({viewableItems}: any) => {
+  public handleViewableItemsChanged = ({viewableItems}: any) => {
     this.currentIndex = viewableItems[0].index || 0;
   };
 
@@ -83,6 +83,11 @@ class Container extends React.PureComponent<Props> {
     this.tableView = ref;
   };
 
+  updateSelection = (item: any, choice: any) => () =>
+    this.onSelection(item, choice);
+
+  updateProgress = (value: number) => () => this.onProgress(value);
+
   renderItem = ({item}: {item: any}) => {
     let items: any = <View style={{flex: 1}} />;
 
@@ -93,10 +98,8 @@ class Container extends React.PureComponent<Props> {
             return (
               <Button
                 key={choice.title}
+                onPress={this.updateSelection(item, choice)}
                 title={choice.title}
-                onPress={() => {
-                  this.onSelection(item, choice);
-                }}
               />
             );
           })}
@@ -113,9 +116,9 @@ class Container extends React.PureComponent<Props> {
             flexDirection: 'row',
             justifyContent: 'space-around',
           }}>
-          <Button title="prev" onPress={() => this.onProgress(-1)} />
-          <Button title="next" onPress={() => this.onProgress(1)} />
-          <Button title="next2" onPress={() => this.onProgress(2)} />
+          <Button onPress={this.updateProgress(-1)} title="prev" />
+          <Button onPress={this.updateProgress(1)} title="next" />
+          <Button onPress={this.updateProgress(2)} title="next2" />
         </View>
       </View>
     );
@@ -125,19 +128,19 @@ class Container extends React.PureComponent<Props> {
     return (
       <Screen onLeftPress={this.nav('playground')} title="Questionnaire">
         <FlatList
-          scrollEnabled={false}
+          data={this.data}
+          horizontal
+          onViewableItemsChanged={this.handleViewableItemsChanged}
+          pagingEnabled
           ref={this.setRef}
           removeClippedSubviews
+          renderItem={this.renderItem}
+          scrollEnabled={false}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
-          onViewableItemsChanged={this.onViewableItemsChanged}
           viewabilityConfig={{
             itemVisiblePercentThreshold: 50,
           }}
-          horizontal
-          pagingEnabled
-          data={this.data}
-          renderItem={this.renderItem}
         />
         <Questionnaires />
       </Screen>

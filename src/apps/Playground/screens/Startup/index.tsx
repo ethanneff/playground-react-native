@@ -90,7 +90,7 @@ export default memo(function PlaygroundStartup() {
           borderBottomColor: color.secondary,
           borderBottomWidth: 2,
         }}>
-        <Text type="h4" center title={dayjs().format('MMM DD, YYYY')} />
+        <Text center title={dayjs().format('MMM DD, YYYY')} type="h4" />
       </View>
       <ScrollView
         contentContainerStyle={{
@@ -98,58 +98,54 @@ export default memo(function PlaygroundStartup() {
           padding: Theme.padding.p04,
         }}>
         <Section title="Launch">
-          <View>
-            <Text title="Are you launched?" />
-            <Switch value={form.launched} onValueChange={handleLaunchChange} />
-          </View>
-          <View>
-            <TextInput
-              title="Weeks to launch?"
-              keyboardType="numeric"
-              onChangeText={handleWeeksToLaunchChange}
-              value={form.launchWeeks}
-            />
-            <Text title={launchSubText} hidden={launchSubText.length === 0} />
-          </View>
+          <Text title="Are you launched?" />
+          <Switch onValueChange={handleLaunchChange} value={form.launched} />
+          <TextInput
+            keyboardType="numeric"
+            onChangeText={handleWeeksToLaunchChange}
+            title="Weeks to launch?"
+            value={form.launchWeeks}
+          />
+          <Text hidden={launchSubText.length === 0} title={launchSubText} />
         </Section>
         <Section title="Users">
           <TextInput
-            title="Users/prospective users talked to this week?"
             onChangeText={handleUserChange}
+            title="Users/prospective users talked to this week?"
             value={form.usersTalkedTo}
           />
           <TextInput
-            title="What have you learned from them?"
             onChangeText={handleLearnChange}
+            title="What have you learned from them?"
             value={form.usersLearnedFrom}
           />
         </Section>
         <Section title="Goals">
           <TextInput
-            title="What are your top 1-3 goals for the next week?"
             onChangeText={handleGoalChange}
+            title="What are your top 1-3 goals for the next week?"
             value={form.topGoals}
           />
           <TextInput
-            title="What most improved your primary metric?"
             onChangeText={handleMetricChange}
+            title="What most improved your primary metric?"
             value={form.primaryMetric}
           />
           <TextInput
-            title="Biggest obstacle?"
             onChangeText={handleObstacleChange}
+            title="Biggest obstacle?"
             value={form.biggestObstacle}
           />
         </Section>
         <Section title="Morale">
           <TextInput
-            title="On a scale of 1-10, what is your morale?"
             keyboardType="numeric"
             onChangeText={handleMoraleChange}
+            title="On a scale of 1-10, what is your morale?"
             value={form.morale} // 1 (we are totally burned out) to  10 (we couldn't be more excited and optimistic!)
           />
         </Section>
-        <Button title="submit" onPress={handleSubmit} color="primary" />
+        <Button color="primary" onPress={handleSubmit} title="submit" />
       </ScrollView>
     </Screen>
   );

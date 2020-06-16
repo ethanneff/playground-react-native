@@ -12,10 +12,10 @@ export default memo(function PlaygroundDrift() {
 
   // TODO: figure out why Screen re-renders
   return (
-    <Screen border title="Drift" onLeftPress={nav.to('playground')}>
+    <Screen border onLeftPress={nav.to('playground')} title="Drift">
       <DriftContext.Provider value={{state, dispatch}}>
         {isEmulator ? (
-          <Text title="simulators not supported" center />
+          <Text center title="simulators not supported" />
         ) : (
           <Game />
         )}

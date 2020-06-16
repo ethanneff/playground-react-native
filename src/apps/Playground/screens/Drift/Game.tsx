@@ -24,10 +24,10 @@ export const Game = memo(function Game() {
     <View style={{flex: 1}}>
       <Canvas onLayout={onCanvasLayout}>
         {canvas && (
-          <View>
+          <>
             <Character canvas={canvas} />
             <Tracks />
-          </View>
+          </>
         )}
       </Canvas>
       <Dpad />

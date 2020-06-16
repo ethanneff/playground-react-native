@@ -1,5 +1,6 @@
 import React, {memo} from 'react';
-import {StyleProp, StyleSheet, Text, TextStyle, View} from 'react-native';
+import {StyleProp, StyleSheet, TextStyle, View} from 'react-native';
+import {Text} from '../../../../components';
 
 interface TimerProps {
   interval: number;
@@ -19,9 +20,9 @@ export default memo(function Timer({interval, style}: TimerProps) {
   });
   return (
     <View style={styles.timerContainer}>
-      <Text style={style}>{pad(minutes)}:</Text>
-      <Text style={style}>{pad(seconds)}.</Text>
-      <Text style={style}>{pad(milliseconds).substr(0, 2)}</Text>
+      <Text style={style} title={`${pad(minutes)}:`} />
+      <Text style={style} title={`${pad(seconds)}.`} />
+      <Text style={style} title={pad(milliseconds).substr(0, 2)} />
     </View>
   );
 });

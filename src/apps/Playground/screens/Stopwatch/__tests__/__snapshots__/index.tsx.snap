@@ -119,11 +119,12 @@ exports[`renders correctly 1`] = `
               "fontFamily": "Courier",
               "fontSize": 54,
               "fontWeight": "200",
+              "letterSpacing": 0.25,
+              "opacity": 1,
             }
           }
         >
-          00
-          :
+          00:
         </Text>
         <Text
           style={
@@ -132,11 +133,12 @@ exports[`renders correctly 1`] = `
               "fontFamily": "Courier",
               "fontSize": 54,
               "fontWeight": "200",
+              "letterSpacing": 0.25,
+              "opacity": 1,
             }
           }
         >
-          00
-          .
+          00.
         </Text>
         <Text
           style={
@@ -145,6 +147,8 @@ exports[`renders correctly 1`] = `
               "fontFamily": "Courier",
               "fontSize": 54,
               "fontWeight": "200",
+              "letterSpacing": 0.25,
+              "opacity": 1,
             }
           }
         >

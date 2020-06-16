@@ -28,8 +28,8 @@ export const Questionnaire = () => {
               justifyContent: 'space-between',
             }}>
             <View style={{flex: 0.9}}>
-              <Text type="h3" title={item.title} />
-              <Text type="caption" title={subtitle} />
+              <Text title={item.title} type="h3" />
+              <Text title={subtitle} type="caption" />
             </View>
             <Icon name="dots-horizontal" onPress={handleLongPress(item.id)} />
           </View>
@@ -39,15 +39,17 @@ export const Questionnaire = () => {
     [activeItem],
   );
 
+  const keyExtractor = useCallback((item: any) => item.id, []);
+
   return (
     <>
       <FlatList
-        keyExtractor={(item) => item.id}
         data={Object.values(questionnairesInitialState)}
+        keyExtractor={keyExtractor}
         renderItem={renderItem}
       />
       {actionSheet && (
-        <Dialog title="hello" onBackgroundPress={handleActionSheetClose} />
+        <Dialog onBackgroundPress={handleActionSheetClose} title="hello" />
       )}
     </>
   );

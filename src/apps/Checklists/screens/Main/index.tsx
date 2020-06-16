@@ -31,9 +31,9 @@ export default memo(function Checklists() {
   const renderItem = useCallback(
     ({item}) => (
       <Button
-        title={item.name}
-        onPress={handleItemPress(item.id)}
         onLongPress={handleItemLongPress(item.id)}
+        onPress={handleItemPress(item.id)}
+        title={item.name}
       />
     ),
     [handleItemLongPress, handleItemPress],
@@ -42,18 +42,18 @@ export default memo(function Checklists() {
   const keyExtractor = useCallback((item) => item.id, []);
 
   return (
-    <Screen onLeftPress={nav.to('portfolioLanding')} title="Checklists" gutter>
+    <Screen gutter onLeftPress={nav.to('portfolioLanding')} title="Checklists">
       <FlatList
-        keyExtractor={keyExtractor}
         data={items}
+        keyExtractor={keyExtractor}
         renderItem={renderItem}
       />
       <Icon
+        color={color.background}
         fab
-        right
         name="plus"
         onPress={nav.to('checklistsListCreate')}
-        color={color.background}
+        right
       />
     </Screen>
   );

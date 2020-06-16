@@ -60,13 +60,13 @@ export const Item = memo(function ReminderItem({
   return hidden ? null : (
     <TouchableOpacity
       key={title}
-      style={[styles.button, style]}
-      onPress={onPress}>
+      onPress={onPress}
+      style={[styles.button, style]}>
       <View style={styles.container}>
         <View style={styles.textContainer}>
-          <Text type="body1" title={title} style={styles.title} />
+          <Text style={styles.title} title={title} type="body1" />
           {description.length > 0 && (
-            <Text type="caption" title={description} style={styles.subtitle} />
+            <Text style={styles.subtitle} title={description} type="caption" />
           )}
         </View>
         {icon && (

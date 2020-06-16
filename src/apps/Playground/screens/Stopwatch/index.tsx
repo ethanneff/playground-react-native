@@ -102,49 +102,49 @@ export default memo(function PlaygroundStopWatch() {
       {state.laps.length === 0 && (
         <ButtonsRow>
           <RoundButton
-            title="Lap"
-            color="#8B8B90"
             background="#151515"
-            onPress={lap}
+            color="#8B8B90"
             disabled
+            onPress={lap}
+            title="Lap"
           />
           <RoundButton
-            title="Start"
-            color="#50D167"
             background="#1B361F"
+            color="#50D167"
             onPress={start}
+            title="Start"
           />
         </ButtonsRow>
       )}
       {state.start > 0 && (
         <ButtonsRow>
           <RoundButton
-            title="Lap"
-            color="#FFFFFF"
             background="#3D3D3D"
+            color="#FFFFFF"
             onPress={lap}
+            title="Lap"
           />
           <RoundButton
-            title="Stop"
-            color="#E33935"
             background="#3C1715"
+            color="#E33935"
             onPress={stop}
+            title="Stop"
           />
         </ButtonsRow>
       )}
       {state.laps.length > 0 && state.start === 0 && (
         <ButtonsRow>
           <RoundButton
-            title="Reset"
-            color="#FFFFFF"
             background="#3D3D3D"
+            color="#FFFFFF"
             onPress={reset}
+            title="Reset"
           />
           <RoundButton
-            title="Start"
-            color="#50D167"
             background="#1B361F"
+            color="#50D167"
             onPress={resume}
+            title="Start"
           />
         </ButtonsRow>
       )}

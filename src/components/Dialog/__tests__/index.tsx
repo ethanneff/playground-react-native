@@ -17,14 +17,14 @@ describe('Dialog component', () => {
   it('renders correctly with props', () => {
     const dom = mockRenderer(
       <Dialog
-        title="nope"
-        message="yep"
-        duration={3000}
-        confirmButtonText="dog"
         cancelButtonText="bird"
+        confirmButtonText="dog"
+        duration={3000}
+        message="yep"
         onBackgroundPress={jest.fn()}
-        onConfirmButtonPress={jest.fn()}
         onCancelButtonPress={jest.fn()}
+        onConfirmButtonPress={jest.fn()}
+        title="nope"
       />,
     );
     expect(dom.toJSON()).toMatchSnapshot();

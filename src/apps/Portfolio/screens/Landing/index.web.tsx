@@ -10,6 +10,8 @@ import {
 import {useColor} from '../../../../hooks';
 import {Theme} from '../../../../utils';
 
+const missingCallback = () => undefined;
+
 interface SignInButtonProps {
   onPress: () => void;
   icon: string;
@@ -23,6 +25,7 @@ const SignInButton = memo(function SignInButton({
   const color = useColor();
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={{
         alignItems: 'center',
         justifyContent: 'center',
@@ -32,10 +35,9 @@ const SignInButton = memo(function SignInButton({
         padding: Theme.padding.p02,
         marginBottom: Theme.padding.p02,
         borderRadius: Theme.padding.p10,
-      }}
-      onPress={onPress}>
+      }}>
       <Icon name={icon} style={{width: '30px', height: '30px'}} />
-      <Text title={title} style={{paddingLeft: Theme.padding.p02}} type="h4" />
+      <Text style={{paddingLeft: Theme.padding.p02}} title={title} type="h4" />
     </TouchableOpacity>
   );
 });
@@ -53,15 +55,15 @@ const NavButton = memo(function NavButton({
   const color = useColor();
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={{
         justifyContent: 'center',
         borderRadius: Theme.padding.p10,
         paddingVertical: Theme.padding.p02,
         paddingHorizontal: Theme.padding.p02,
         backgroundColor: inverted ? color.text : color.background,
-      }}
-      onPress={onPress}>
-      <Text title={title} type="h5" bold inverse={inverted} />
+      }}>
+      <Text bold inverse={inverted} title={title} type="h5" />
     </TouchableOpacity>
   );
 });
@@ -89,17 +91,17 @@ export const Header = memo(function Header({height}: HeaderProps) {
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Image source={image} style={{width: '30px', height: '30px'}} />
         <Text
-          title="Core"
-          type="h3"
           bold
           style={{paddingHorizontal: Theme.padding.p04}}
+          title="Core"
+          type="h3"
         />
-        <NavButton title="Features" onPress={() => undefined} />
-        <NavButton title="Premium" onPress={() => undefined} />
+        <NavButton onPress={missingCallback} title="Features" />
+        <NavButton onPress={missingCallback} title="Premium" />
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
-        <NavButton title="Sign In" onPress={() => undefined} />
-        <NavButton inverted title="Sign Up" onPress={() => undefined} />
+        <NavButton onPress={missingCallback} title="Sign In" />
+        <NavButton inverted onPress={missingCallback} title="Sign Up" />
       </View>
     </View>
   );
@@ -128,13 +130,13 @@ const AppIcon = memo(function AppIcon({onPress, type}: AppIconProps) {
         paddingHorizontal: Theme.padding.p04,
       }}>
       <Icon
-        name={type}
         color={color.background}
+        name={type}
         style={{width: iconSize, height: iconSize, alignSelf: 'center'}}
       />
       <View style={{paddingLeft: Theme.padding.p02}}>
-        <Text type="h5" title={text} inverse />
-        <Text type="h3" title={store} inverse />
+        <Text inverse title={text} type="h5" />
+        <Text inverse title={store} type="h3" />
       </View>
     </TouchableOpacity>
   );
@@ -186,10 +188,12 @@ export default memo(function PortfolioLanding() {
   ];
   const color = useColor();
 
+  const onNavLinkPress = (url: string) => () => window.open(url, '_blank');
+
   return (
-    <View>
+    <>
       <Header height={height} />
-      <Section paddingTop={height} backgroundColor={color.light}>
+      <Section backgroundColor={color.light} paddingTop={height}>
         <Sentence
           style={{paddingVertical: Theme.padding.p08, alignSelf: 'center'}}
           words={titleSentence}
@@ -197,18 +201,18 @@ export default memo(function PortfolioLanding() {
         <View style={{width: '400px', alignSelf: 'center'}}>
           <SignInButton
             icon="apple"
+            onPress={missingCallback}
             title="Continue with Apple"
-            onPress={() => undefined}
           />
           <SignInButton
             icon="google"
+            onPress={missingCallback}
             title="Continue with Google"
-            onPress={() => undefined}
           />
           <SignInButton
             icon="facebook"
+            onPress={missingCallback}
             title="Continue with Facebook"
-            onPress={() => undefined}
           />
           <Sentence
             style={{
@@ -220,8 +224,8 @@ export default memo(function PortfolioLanding() {
         </View>
         <View style={{flex: 1}} />
         <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-          <AppIcon onPress={() => undefined} type="apple" />
-          <AppIcon onPress={() => undefined} type="google-play" />
+          <AppIcon onPress={missingCallback} type="apple" />
+          <AppIcon onPress={missingCallback} type="google-play" />
         </View>
       </Section>
       <Section backgroundColor={color.background}>
@@ -233,19 +237,17 @@ export default memo(function PortfolioLanding() {
             marginBottom: Theme.padding.p04,
           }}>
           <NavButton
+            onPress={onNavLinkPress('https://www.linkedin.com/in/ethanneff')}
             title="About us"
-            onPress={() =>
-              window.open('https://www.linkedin.com/in/ethanneff', '_blank')
-            }
           />
           <NavButton
+            onPress={onNavLinkPress('mailto:ethan.neff@eneff.com')}
             title="Contact us"
-            onPress={() => window.open('mailto:ethan.neff@eneff.com', '_blank')}
           />
-          <NavButton title="Terms of Service" onPress={() => undefined} />
-          <NavButton title="Privacy Policy" onPress={() => undefined} />
+          <NavButton onPress={missingCallback} title="Terms of Service" />
+          <NavButton onPress={missingCallback} title="Privacy Policy" />
         </View>
       </Section>
-    </View>
+    </>
   );
 });

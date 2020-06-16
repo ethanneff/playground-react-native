@@ -37,14 +37,14 @@ export default memo(function CantHurtMeMain() {
       {showModal.profile && (
         <Dialog
           duration={2000}
-          title="profile"
           onBackgroundPress={handleModalBackgroundPress}
+          title="profile"
         />
       )}
       {showModal.settings && (
         <Dialog
-          title="settings"
           onBackgroundPress={handleModalBackgroundPress}
+          title="settings"
         />
       )}
     </>

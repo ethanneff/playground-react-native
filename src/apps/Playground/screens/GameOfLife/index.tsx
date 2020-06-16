@@ -89,44 +89,44 @@ export default memo(function PlaygroundGameOfLife() {
   return (
     <Screen onLeftPress={nav.to('playground')} title="Game of life">
       {loading ? (
-        <Text type="h5" emphasis="medium" title="loading..." />
+        <Text emphasis="medium" title="loading..." type="h5" />
       ) : (
         <>
           <View style={{flexDirection: 'row'}}>
             <Text
+              style={{alignSelf: 'center'}}
               title={`count: ${form.count}`}
               type="h4"
-              style={{alignSelf: 'center'}}
             />
             <Slider
-              style={{flex: 1}}
-              value={10}
               maximumValue={100}
               minimumValue={1}
-              step={1}
               onSlidingComplete={onCountSlide}
+              step={1}
+              style={{flex: 1}}
+              value={10}
             />
           </View>
           <View style={{flexDirection: 'row'}}>
             <Text
+              style={{alignSelf: 'center'}}
               title={`delay: ${Math.floor(form.delay)}`}
               type="h4"
-              style={{alignSelf: 'center'}}
             />
             <Slider
-              style={{flex: 1}}
-              value={10}
               maximumValue={100}
               minimumValue={1}
-              step={1}
               onSlidingComplete={onDelaySlide}
+              step={1}
+              style={{flex: 1}}
+              value={10}
             />
           </View>
           <View style={styles.container}>
             <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-              <Button title={form.run ? 'stop' : 'start'} onPress={onStart} />
-              <Button title="random" onPress={onRandom} />
-              <Button title="clear" onPress={onClear} />
+              <Button onPress={onStart} title={form.run ? 'stop' : 'start'} />
+              <Button onPress={onRandom} title="random" />
+              <Button onPress={onClear} title="clear" />
             </View>
             {board.map((rows, x) => (
               <View
@@ -135,11 +135,11 @@ export default memo(function PlaygroundGameOfLife() {
                 {rows.map((row, y) => (
                   <Cell
                     key={`${x}-${y}`}
+                    onItemPress={onItemPress}
                     row={row}
+                    size={size}
                     x={x}
                     y={y}
-                    size={size}
-                    onItemPress={onItemPress}
                   />
                 ))}
               </View>

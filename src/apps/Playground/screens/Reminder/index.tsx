@@ -111,20 +111,22 @@ export default memo(function PlaygroundReminder() {
 
   const [showRate, setShowRate] = useState(false);
 
+  const handleRate = (value: boolean) => () => setShowRate(value);
+
   return (
     <>
       <Screen onLeftPress={nav.to('playground')} title="Reminder">
-        <Button title="create reminder" onPress={handleCreateReminder} />
-        <Text type="h2" title="reminders" center />
+        <Button onPress={handleCreateReminder} title="create reminder" />
+        <Text center title="reminders" type="h2" />
         <Reminders reminders={form.reminders} />
-        <Button title="press me" onPress={() => setShowRate(true)} />
+        <Button onPress={handleRate(true)} title="press me" />
       </Screen>
-      {showRate && <RateApp onComplete={() => setShowRate(false)} />}
+      {showRate && <RateApp onComplete={handleRate(false)} />}
       {form.modals.createReminder && (
         <CreateReminderModal
           onBackgroundPress={handleCreateReminderClose}
-          onOneTimePress={handleOneTimeReminder}
           onLocationPress={handleLocation}
+          onOneTimePress={handleOneTimeReminder}
         />
       )}
       {form.modals.customDate && (

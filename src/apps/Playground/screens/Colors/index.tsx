@@ -14,12 +14,12 @@ export default memo(function DebugColors() {
   // text: high 87% medium 60% disabled 38%
   // icon: active 100% inactive 60% disabled 38%
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Colors" gutter>
+    <Screen gutter onLeftPress={nav.to('playground')} title="Colors">
       <Text
-        type="h4"
-        title="Theme"
         center
         style={{paddingBottom: Theme.padding.p08}}
+        title="Theme"
+        type="h4"
       />
       <View
         style={{
@@ -28,38 +28,38 @@ export default memo(function DebugColors() {
         }}>
         {themes.map((item) => (
           <Button
-            key={item}
-            title={item}
-            onPress={themePress(item)}
             color={currentTheme === item ? 'success' : 'text'}
+            key={item}
+            onPress={themePress(item)}
+            title={item}
           />
         ))}
       </View>
       <ScrollView>
         <Text
-          type="h4"
-          title="Buttons"
           center
           style={{padding: Theme.padding.p08}}
+          title="Buttons"
+          type="h4"
         />
         <View style={{flexDirection: 'row'}}>
           <View style={{flex: 1}}>
-            <Button emphasis="high" color="primary" title="primary" />
-            <Button emphasis="high" color="secondary" title="secondary" />
-            <Button emphasis="high" color="success" title="success" />
-            <Button emphasis="high" color="danger" title="danger" />
-            <Button emphasis="high" color="warning" title="warning" />
-            <Button emphasis="high" color="info" title="info" />
-            <Button emphasis="high" color="light" title="light" />
-            <Button emphasis="high" color="dark" title="dark" />
-            <Button emphasis="high" color="text" title="text" />
+            <Button color="primary" emphasis="high" title="primary" />
+            <Button color="secondary" emphasis="high" title="secondary" />
+            <Button color="success" emphasis="high" title="success" />
+            <Button color="danger" emphasis="high" title="danger" />
+            <Button color="warning" emphasis="high" title="warning" />
+            <Button color="info" emphasis="high" title="info" />
+            <Button color="light" emphasis="high" title="light" />
+            <Button color="dark" emphasis="high" title="dark" />
+            <Button color="text" emphasis="high" title="text" />
             <Button emphasis="high" title="default" />
-            <Button emphasis="high" title="disable" disable />
+            <Button disable emphasis="high" title="disable" />
             <Button
-              emphasis="high"
-              title="drop shadow"
               dropShadow
               elevation={10}
+              emphasis="high"
+              title="drop shadow"
             />
           </View>
           <View style={{flex: 1}}>
@@ -73,12 +73,12 @@ export default memo(function DebugColors() {
             <Button color="dark" emphasis="medium" title="dark" />
             <Button color="text" emphasis="medium" title="text" />
             <Button emphasis="medium" title="default" />
-            <Button emphasis="medium" title="disable" disable />
+            <Button disable emphasis="medium" title="disable" />
             <Button
-              emphasis="medium"
-              title="drop shadow"
               dropShadow
               elevation={10}
+              emphasis="medium"
+              title="drop shadow"
             />
           </View>
           <View style={{flex: 1}}>
@@ -92,90 +92,90 @@ export default memo(function DebugColors() {
             <Button color="dark" emphasis="low" title="dark" />
             <Button color="text" emphasis="low" title="text" />
             <Button emphasis="low" title="default" />
-            <Button emphasis="low" title="disable" disable />
+            <Button disable emphasis="low" title="disable" />
             <Button
-              emphasis="low"
-              title="drop shadow"
               dropShadow
               elevation={10}
+              emphasis="low"
+              title="drop shadow"
             />
           </View>
         </View>
 
         <Text
-          type="h4"
-          title="Fonts"
           center
           style={{padding: Theme.padding.p08}}
+          title="Fonts"
+          type="h4"
         />
 
         <View style={{flexDirection: 'row'}}>
           <View style={{flex: 1}}>
-            <Text title="normal" center />
-            <Text type="h1" title="h1" />
-            <Text type="h2" title="h2" />
-            <Text type="h3" title="h3" />
-            <Text type="h4" title="type='h4'" />
-            <Text type="h5" title="h5" />
-            <Text type="h6" title="h6" />
-            <Text type="subtitle1" title="subtitle1" />
-            <Text type="subtitle2" title="subtitle2" />
-            <Text type="body1" title="body1" />
-            <Text type="body2" title="body2" />
-            <Text type="overline" title="overline" />
-            <Text type="caption" title="caption" />
-            <Text type="button" title="button" />
+            <Text center title="normal" />
+            <Text title="h1" type="h1" />
+            <Text title="h2" type="h2" />
+            <Text title="h3" type="h3" />
+            <Text title="type='h4'" type="h4" />
+            <Text title="h5" type="h5" />
+            <Text title="h6" type="h6" />
+            <Text title="subtitle1" type="subtitle1" />
+            <Text title="subtitle2" type="subtitle2" />
+            <Text title="body1" type="body1" />
+            <Text title="body2" type="body2" />
+            <Text title="overline" type="overline" />
+            <Text title="caption" type="caption" />
+            <Text title="button" type="button" />
             <Text title="default" />
           </View>
           <View style={{flex: 1}}>
-            <Text title="high" center />
-            <Text emphasis="high" type="h1" title="h1" />
-            <Text emphasis="high" type="h2" title="h2" />
-            <Text emphasis="high" type="h3" title="h3" />
-            <Text emphasis="high" type="h4" title="type='h4'" />
-            <Text emphasis="high" type="h5" title="h5" />
-            <Text emphasis="high" type="h6" title="h6" />
-            <Text emphasis="high" type="subtitle1" title="subtitle1" />
-            <Text emphasis="high" type="subtitle2" title="subtitle2" />
-            <Text emphasis="high" type="body1" title="body1" />
-            <Text emphasis="high" type="body2" title="body2" />
-            <Text emphasis="high" type="overline" title="overline" />
-            <Text emphasis="high" type="caption" title="caption" />
-            <Text emphasis="high" type="button" title="button" />
+            <Text center title="high" />
+            <Text emphasis="high" title="h1" type="h1" />
+            <Text emphasis="high" title="h2" type="h2" />
+            <Text emphasis="high" title="h3" type="h3" />
+            <Text emphasis="high" title="type='h4'" type="h4" />
+            <Text emphasis="high" title="h5" type="h5" />
+            <Text emphasis="high" title="h6" type="h6" />
+            <Text emphasis="high" title="subtitle1" type="subtitle1" />
+            <Text emphasis="high" title="subtitle2" type="subtitle2" />
+            <Text emphasis="high" title="body1" type="body1" />
+            <Text emphasis="high" title="body2" type="body2" />
+            <Text emphasis="high" title="overline" type="overline" />
+            <Text emphasis="high" title="caption" type="caption" />
+            <Text emphasis="high" title="button" type="button" />
             <Text emphasis="high" title="default" />
           </View>
           <View style={{flex: 1}}>
-            <Text title="medium" center />
-            <Text emphasis="medium" type="h1" title="h1" />
-            <Text emphasis="medium" type="h2" title="h2" />
-            <Text emphasis="medium" type="h3" title="h3" />
-            <Text emphasis="medium" type="h4" title="type='h4'" />
-            <Text emphasis="medium" type="h5" title="h5" />
-            <Text emphasis="medium" type="h6" title="h6" />
-            <Text emphasis="medium" type="subtitle1" title="subtitle1" />
-            <Text emphasis="medium" type="subtitle2" title="subtitle2" />
-            <Text emphasis="medium" type="body1" title="body1" />
-            <Text emphasis="medium" type="body2" title="body2" />
-            <Text emphasis="medium" type="overline" title="overline" />
-            <Text emphasis="medium" type="caption" title="caption" />
-            <Text emphasis="medium" type="button" title="button" />
+            <Text center title="medium" />
+            <Text emphasis="medium" title="h1" type="h1" />
+            <Text emphasis="medium" title="h2" type="h2" />
+            <Text emphasis="medium" title="h3" type="h3" />
+            <Text emphasis="medium" title="type='h4'" type="h4" />
+            <Text emphasis="medium" title="h5" type="h5" />
+            <Text emphasis="medium" title="h6" type="h6" />
+            <Text emphasis="medium" title="subtitle1" type="subtitle1" />
+            <Text emphasis="medium" title="subtitle2" type="subtitle2" />
+            <Text emphasis="medium" title="body1" type="body1" />
+            <Text emphasis="medium" title="body2" type="body2" />
+            <Text emphasis="medium" title="overline" type="overline" />
+            <Text emphasis="medium" title="caption" type="caption" />
+            <Text emphasis="medium" title="button" type="button" />
             <Text emphasis="medium" title="default" />
           </View>
           <View style={{flex: 1}}>
-            <Text title="low" center />
-            <Text emphasis="low" type="h1" title="h1" />
-            <Text emphasis="low" type="h2" title="h2" />
-            <Text emphasis="low" type="h3" title="h3" />
-            <Text emphasis="low" type="h4" title="type='h4'" />
-            <Text emphasis="low" type="h5" title="h5" />
-            <Text emphasis="low" type="h6" title="h6" />
-            <Text emphasis="low" type="subtitle1" title="subtitle1" />
-            <Text emphasis="low" type="subtitle2" title="subtitle2" />
-            <Text emphasis="low" type="body1" title="body1" />
-            <Text emphasis="low" type="body2" title="body2" />
-            <Text emphasis="low" type="overline" title="overline" />
-            <Text emphasis="low" type="caption" title="caption" />
-            <Text emphasis="low" type="button" title="button" />
+            <Text center title="low" />
+            <Text emphasis="low" title="h1" type="h1" />
+            <Text emphasis="low" title="h2" type="h2" />
+            <Text emphasis="low" title="h3" type="h3" />
+            <Text emphasis="low" title="type='h4'" type="h4" />
+            <Text emphasis="low" title="h5" type="h5" />
+            <Text emphasis="low" title="h6" type="h6" />
+            <Text emphasis="low" title="subtitle1" type="subtitle1" />
+            <Text emphasis="low" title="subtitle2" type="subtitle2" />
+            <Text emphasis="low" title="body1" type="body1" />
+            <Text emphasis="low" title="body2" type="body2" />
+            <Text emphasis="low" title="overline" type="overline" />
+            <Text emphasis="low" title="caption" type="caption" />
+            <Text emphasis="low" title="button" type="button" />
             <Text emphasis="low" title="default" />
           </View>
         </View>

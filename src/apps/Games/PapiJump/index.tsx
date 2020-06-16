@@ -50,7 +50,7 @@ export default memo(function PapiJump() {
   return (
     <Screen onLeftPress={nav.to('portfolioLanding')} title="Papi Jump">
       <View style={styles.container}>
-        <Papi size={50} color={color.primary} />
+        <Papi color={color.primary} size={50} />
       </View>
     </Screen>
   );

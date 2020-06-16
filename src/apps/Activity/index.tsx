@@ -28,17 +28,16 @@ export default memo(function ActivityTracker() {
   return (
     <Screen onLeftPress={nav.to('portfolioLanding')} title="Activity">
       <ScrollView
-        style={styles.background}
-        contentContainerStyle={styles.container}>
-        <Activity username="ethanneff" site="github" title="Github" />
-        <Activity username="ethanneff" site="leetCode" title="LeetCode" />
-        <Activity username="ethanneff" site="hackerRank" title="HackerRank" />
+        contentContainerStyle={styles.container}
+        style={styles.background}>
+        <Activity site="github" title="Github" username="ethanneff" />
+        <Activity site="leetCode" title="LeetCode" username="ethanneff" />
+        <Activity site="hackerRank" title="HackerRank" username="ethanneff" />
       </ScrollView>
       <Icon
-        name="plus"
-        fab
-        onPress={() => undefined}
         color={color.background}
+        fab
+        name="plus"
         style={{
           position: 'absolute',
           bottom: 0,

@@ -18,10 +18,10 @@ export default memo(function PortfolioSettings() {
     ({item}) => (
       <View>
         <Button
-          key={item}
-          title={item}
-          onPress={themePress(item)}
           color={currentTheme === item ? 'primary' : 'text'}
+          key={item}
+          onPress={themePress(item)}
+          title={item}
         />
       </View>
     ),
@@ -33,10 +33,10 @@ export default memo(function PortfolioSettings() {
   return (
     <Screen onLeftPress={nav.to('portfolioLanding')} title="Settings">
       <FlatList
-        ListHeaderComponent={renderHeader}
+        data={themes}
         horizontal
         keyExtractor={keyExtractor}
-        data={themes}
+        ListHeaderComponent={renderHeader}
         renderItem={renderItem}
       />
     </Screen>

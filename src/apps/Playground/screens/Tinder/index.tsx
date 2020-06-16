@@ -13,9 +13,7 @@ export default memo(function PlaygroundTinder() {
   });
   return (
     <Screen onLeftPress={nav.to('playground')} title="Tinder">
-      <View style={styles.container}>
-        <></>
-      </View>
+      <View style={styles.container} />
     </Screen>
   );
 });

@@ -19,13 +19,13 @@ interface Props {
 export const Sentence = memo(function Sentence({words, style}: Props) {
   return (
     <OriginalText style={style}>
-      {words.map((word) => (
+      {words.map(({bold, title, onPress, type}) => (
         <Text
-          type={word.type}
-          key={word.title}
-          title={word.title}
-          bold={word.bold}
-          onPress={word.onPress}
+          bold={bold}
+          key={title}
+          onPress={onPress}
+          title={title}
+          type={type}
         />
       ))}
     </OriginalText>

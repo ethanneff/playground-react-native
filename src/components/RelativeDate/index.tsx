@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import React from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
@@ -9,38 +9,26 @@ interface Props {
   date: number;
 }
 
-interface State {
-  showRelativeDate: boolean;
-}
+const minute = 60 * 1000;
+export const RelativeDate = memo(function RelativeDate({date}: Props) {
+  const [showRelativeDate, setShowRelativeDate] = useState(true);
+  const [update, setUpdate] = useState(1);
 
-export class RelativeDate extends React.PureComponent<Props, State> {
-  public state = {showRelativeDate: true};
-  private minute = 60 * 1000;
-  private timer?: any;
-
-  public componentDidMount() {
-    this.timer = setInterval(() => this.forceUpdate(), this.minute);
-  }
-
-  public componentWillUnmount() {
-    clearInterval(this.timer);
-  }
-
-  public render() {
-    const {date} = this.props;
-    const {showRelativeDate} = this.state;
-    return (
-      <TouchableOpacity onPress={this.toggleRelativeDate}>
-        {showRelativeDate ? (
-          <Text title={dayjs(date).fromNow()} />
-        ) : (
-          <Text title={dayjs(date).format('MMM D YYYY, h:mm a')} />
-        )}
-      </TouchableOpacity>
-    );
-  }
-
-  private toggleRelativeDate = () => {
-    this.setState({showRelativeDate: !this.state.showRelativeDate});
+  const toggleRelativeDate = () => {
+    setShowRelativeDate((prev) => !prev);
   };
-}
+
+  useEffect(() => {
+    setInterval(() => setUpdate((prev) => prev + 1), minute);
+  }, []);
+
+  return (
+    <TouchableOpacity onPress={toggleRelativeDate}>
+      {showRelativeDate && update ? (
+        <Text title={dayjs(date).fromNow()} />
+      ) : (
+        <Text title={dayjs(date).format('MMM D YYYY, h:mm a')} />
+      )}
+    </TouchableOpacity>
+  );
+});

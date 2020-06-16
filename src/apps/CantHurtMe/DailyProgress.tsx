@@ -21,14 +21,6 @@ export const DailyProgress = memo(function DailyProgress() {
     ({item}) => (
       <View>
         <Icon
-          style={{alignSelf: 'center'}}
-          name={
-            item.date.isSame(dayjs(), 'day')
-              ? 'check'
-              : item.date > dayjs()
-              ? 'cancel'
-              : 'close'
-          }
           color={
             item.date.isSame(dayjs(), 'day')
               ? color.success
@@ -36,7 +28,14 @@ export const DailyProgress = memo(function DailyProgress() {
               ? color.secondary
               : color.danger
           }
-          onPress={() => undefined}
+          name={
+            item.date.isSame(dayjs(), 'day')
+              ? 'check'
+              : item.date > dayjs()
+              ? 'cancel'
+              : 'close'
+          }
+          style={{alignSelf: 'center'}}
         />
         <View
           style={{
@@ -45,7 +44,7 @@ export const DailyProgress = memo(function DailyProgress() {
             margin: Theme.padding.p01,
             width: Theme.padding.p15,
           }}>
-          <Text title={item.date.format('MMM DD')} center />
+          <Text center title={item.date.format('MMM DD')} />
         </View>
       </View>
     ),
@@ -56,10 +55,10 @@ export const DailyProgress = memo(function DailyProgress() {
 
   return (
     <FlatList
-      horizontal
-      keyExtractor={keyExtractor}
-      inverted
       data={data}
+      horizontal
+      inverted
+      keyExtractor={keyExtractor}
       renderItem={renderItem}
     />
   );

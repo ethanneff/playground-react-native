@@ -66,32 +66,32 @@ export default function Focus() {
         {items.length > 0 && (
           <List
             items={items}
-            onItemPress={handleItemPress}
             onEndReached={generateMoreItems}
             onEndReachedThreshold={0.5}
+            onItemPress={handleItemPress}
           />
         )}
       </Screen>
       {modalItemEdit.visible && (
         <Dialog
           duration={2000}
+          onBackgroundPress={handleModalEditBackgroundPress}
           testID="editItem"
           title={modalItemEdit.item ? modalItemEdit.item.action : 'empty'}
-          onBackgroundPress={handleModalEditBackgroundPress}
         />
       )}
       {modalProfile && (
         <Dialog
+          onBackgroundPress={handleModalEditBackgroundPress}
           testID="editItem"
           title="hello"
-          onBackgroundPress={handleModalEditBackgroundPress}
         />
       )}
       {modalLogin && (
         <Dialog
+          onBackgroundPress={handleModalEditBackgroundPress}
           testID="editItem"
           title="hello"
-          onBackgroundPress={handleModalEditBackgroundPress}
         />
       )}
     </>

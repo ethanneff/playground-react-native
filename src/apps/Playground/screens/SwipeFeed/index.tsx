@@ -124,7 +124,7 @@ const SwipeCard = memo(function SwipeCard({
         borderColor: color.brand,
         ...dropShadow,
       }}>
-      <TouchableOpacity style={{flex: 1}} onPress={onSwipeComplete}>
+      <TouchableOpacity onPress={onSwipeComplete} style={{flex: 1}}>
         <View style={{flex: 1, flexDirection: 'row'}}>
           {image && (
             <Image
@@ -144,20 +144,20 @@ const SwipeCard = memo(function SwipeCard({
               }}>
               <Icon name={icon} size={15} />
               <Text
-                title={title}
-                type="overline"
                 bold
                 style={{paddingHorizontal: Theme.padding.p01}}
+                title={title}
+                type="overline"
               />
               <Text title={formatRelativeDate(date)} />
             </View>
             <Text
+              ellipsizeMode="tail"
+              numberOfLines={2}
               style={{flex: 1, paddingTop: Theme.padding.p02}}
               title={body}
-              numberOfLines={2}
-              ellipsizeMode="tail"
             />
-            <Text title={button.toUpperCase()} style={{color: color.primary}} />
+            <Text style={{color: color.primary}} title={button.toUpperCase()} />
           </View>
         </View>
       </TouchableOpacity>
@@ -274,9 +274,9 @@ const Badge = memo(function Badge({count, percent}: BadgeProps) {
           justifyContent: 'center',
         }}>
         <Text
-          title={`${count}`}
-          style={{color: color.background}}
           adjustsFontSizeToFit
+          style={{color: color.background}}
+          title={`${count}`}
         />
       </View>
     </View>
@@ -318,8 +318,8 @@ const SwipeCards = memo(function SwipeCardList({
         <SwipeCard
           {...item}
           height={height}
-          key={item.id}
           index={index}
+          key={item.id}
           onSwipeComplete={onSwipeComplete}
           onSwipePercentChange={onSwipePercentChange}
         />

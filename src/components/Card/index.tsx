@@ -73,12 +73,12 @@ export const Card = ({
   const contentStyles = [styles.contents, flex ? styles.flex : undefined];
   return (
     <TouchableOpacity
-      testID={testID}
-      style={containerStyles}
-      onPress={onPress && onPress}
-      onLongPress={onLongPress && onLongPress}
       activeOpacity={onPress ? touchOpacity : 1}
-      disabled={!onPress}>
+      disabled={!onPress}
+      onLongPress={onLongPress && onLongPress}
+      onPress={onPress && onPress}
+      style={containerStyles}
+      testID={testID}>
       <View style={contentStyles}>{children}</View>
     </TouchableOpacity>
   );

@@ -11,20 +11,20 @@ export default memo(function PlaygroundOKRs() {
       <ScrollView
         contentContainerStyle={{paddingHorizontal: Theme.padding.p05}}>
         <Card>
-          <Text type="h6" title="Company" />
-          <Card onPress={() => undefined}>
-            <Text type="h6" title="Mission" />
+          <Text title="Company" type="h6" />
+          <Card>
+            <Text title="Mission" type="h6" />
             <Text
               title="We strive to offer our customers the lowest possible prices
         the best available selection and the utmost convenience."
             />
           </Card>
-          <Card onPress={() => undefined}>
-            <Text type="h6" title="Vision" />
+          <Card>
+            <Text title="Vision" type="h6" />
             <Text title="To be Earth’s most customer-centric company where customers can find and discover anything they might want to buy online." />
           </Card>
-          <Card onPress={() => undefined}>
-            <Text type="h6" title="Values" />
+          <Card>
+            <Text title="Values" type="h6" />
             <Text title="Customer Obsession" />
             <Text title="Ownership" />
             <Text title="Invent and Simplify" />
@@ -42,14 +42,14 @@ export default memo(function PlaygroundOKRs() {
           </Card>
         </Card>
         <Card>
-          <Text type="h6" title="Product" />
-          <Card onPress={() => undefined}>
-            <Text type="h6" title="Vision" />
+          <Text title="Product" type="h6" />
+          <Card>
+            <Text title="Vision" type="h6" />
             <Text title="Jim, owner" />
           </Card>
 
-          <Card onPress={() => undefined}>
-            <Text type="h6" title="KPIs" />
+          <Card>
+            <Text title="KPIs" type="h6" />
             <Text title="Customer Lifetime Value" />
             <Text title="Average Revenue Per user" />
             <Text title="Customer Aquisition Cost" />
@@ -58,32 +58,32 @@ export default memo(function PlaygroundOKRs() {
             <Text title="Cost of Sales" />
             <Text title="Contributing Margins" />
           </Card>
-          <Card onPress={() => undefined}>
-            <Text type="h6" title="Team" />
+          <Card>
+            <Text title="Team" type="h6" />
             <Text title="Jim, owner" />
             <Text title="Bob, designer" />
             <Text title="Steve, engineer" />
             <Text title="Greg, engineer" />
           </Card>
 
-          <Card onPress={() => undefined}>
-            <Text type="h6" title="Objective" />
+          <Card>
+            <Text title="Objective" type="h6" />
             <Text title="Jim, owner" />
-            <Card onPress={() => undefined}>
-              <Text type="h6" title="KeyResult" />
+            <Card>
+              <Text title="KeyResult" type="h6" />
               <Text title="Jim, owner" />
             </Card>
-            <Card onPress={() => undefined}>
-              <Text type="h6" title="KeyResult" />
+            <Card>
+              <Text title="KeyResult" type="h6" />
               <Text title="Jim, owner" />
             </Card>
-            <Card onPress={() => undefined}>
-              <Text type="h6" title="KeyResult" />
+            <Card>
+              <Text title="KeyResult" type="h6" />
               <Text title="Jim, owner" />
             </Card>
           </Card>
-          <Card onPress={() => undefined}>
-            <Text type="h6" title="Objective" />
+          <Card>
+            <Text title="Objective" type="h6" />
             <Text title="Jim, owner" />
           </Card>
         </Card>

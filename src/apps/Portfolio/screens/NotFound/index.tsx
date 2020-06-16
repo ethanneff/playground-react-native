@@ -6,8 +6,8 @@ export default memo(function PortfolioNotFound() {
   const nav = useNav();
   return (
     <Screen>
-      <Text type="h1" center title="404 :(" />
-      <Button title="go home" onPress={nav.to('portfolioLanding')} />
+      <Text center title="404 :(" type="h1" />
+      <Button onPress={nav.to('portfolioLanding')} title="go home" />
     </Screen>
   );
 });

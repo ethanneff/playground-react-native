@@ -1,6 +1,6 @@
-import React, {memo} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {TouchableOpacity} from '../../../../components';
+import React, {memo, useCallback} from 'react';
+import {StyleSheet, View} from 'react-native';
+import {Text, TouchableOpacity} from '../../../../components';
 
 interface RoundButtonProps {
   title: string;
@@ -38,13 +38,18 @@ export default memo(function ButtonRound({
     },
   });
 
+  const handlePress = useCallback(() => !disabled && onPress(), [
+    onPress,
+    disabled,
+  ]);
+
   return (
     <TouchableOpacity
-      onPress={() => !disabled && onPress()}
-      style={[styles.button, {backgroundColor: background}]}
-      activeOpacity={disabled ? 1.0 : 0.7}>
+      activeOpacity={disabled ? 1.0 : 0.7}
+      onPress={handlePress}
+      style={[styles.button, {backgroundColor: background}]}>
       <View style={styles.buttonBorder}>
-        <Text style={[styles.buttonTitle, {color}]}>{title}</Text>
+        <Text style={[styles.buttonTitle, {color}]} title={title} />
       </View>
     </TouchableOpacity>
   );

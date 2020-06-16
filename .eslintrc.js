@@ -15,8 +15,20 @@ module.exports = {
     'src/utils/TestMocks/',
   ],
   rules: {
-    'react-native/no-inline-styles': 0, // TODO: from react-native/all, need to remove
+    // add
     'sort-imports': ['error', {ignoreDeclarationSort: true}],
     'import/order': 'error',
+    // ignore
+    'react/jsx-indent': 'off',
+    'react/jsx-indent-props': 'off',
+    'react/jsx-closing-bracket-location': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/jsx-max-props-per-line': 'off',
+    'react/jsx-no-useless-fragment': 'off',
+    'react/jsx-one-expression-per-line': 'off',
+    // TODO: remove
+    'react-native/no-inline-styles': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-max-depth': 'off',
   },
 };

@@ -18,13 +18,15 @@ export default memo(function Reminders({reminders}: Props) {
     [reminders],
   );
 
+  const keyExtractor = useCallback((item: Reminder) => item.id, []);
+
   return (
     <FlatList
-      inverted
-      keyExtractor={(item) => item.id}
-      style={{flex: 1}}
       data={reminders}
+      inverted
+      keyExtractor={keyExtractor}
       renderItem={renderItem}
+      style={{flex: 1}}
     />
   );
 });

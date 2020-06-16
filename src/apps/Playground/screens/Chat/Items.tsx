@@ -19,10 +19,10 @@ export const Items = memo(function ChatMessageItems() {
 
   return (
     <FlatList
-      ref={itemsRef}
-      inverted
       data={messages}
+      inverted
       keyExtractor={keyExtractor}
+      ref={itemsRef}
       renderItem={renderItem}
     />
   );

@@ -68,8 +68,8 @@ export default memo(function Snake() {
     <>
       <Screen onLeftPress={nav.to('portfolioLanding')} title="Snake">
         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-          <Button title="start" onPress={onStart} />
-          <Button title="stop" onPress={onStop} />
+          <Button onPress={onStart} title="start" />
+          <Button onPress={onStop} title="stop" />
           <Text title={`points: ${game.points}`} />
         </View>
         <View

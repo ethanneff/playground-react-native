@@ -58,16 +58,16 @@ export const Modal = memo(function ModalWrapperMemo({
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        testID={testID}
         activeOpacity={1}
         onPress={onBackgroundPress}
         style={styles.overlay}
+        testID={testID}
       />
       <Card
-        style={styles.modal}
+        elevation={elevation}
         noMargin
         noPadding
-        elevation={elevation}
+        style={styles.modal}
         testID="modal">
         {noScroll ? (
           <View style={styles.modalContent}>{children}</View>

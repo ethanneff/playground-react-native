@@ -39,9 +39,9 @@ export const CalendarDay = ({
 
   return (
     <TouchableOpacity
+      disabled={disabled}
       key={day.id}
       onPress={onSelected}
-      disabled={disabled}
       style={{
         flex: 1,
         alignItems: 'center',
@@ -55,12 +55,12 @@ export const CalendarDay = ({
           backgroundColor,
         }}>
         <Text
-          title={day.display}
-          center
           bold={today}
+          center
           style={{
             color: textColor,
           }}
+          title={day.display}
         />
       </View>
     </TouchableOpacity>

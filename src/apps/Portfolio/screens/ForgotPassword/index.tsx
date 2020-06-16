@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Screen, TextInput} from '../../../../components';
 import {useNav} from '../../../../hooks';
@@ -10,20 +10,20 @@ const styles = StyleSheet.create({
 export default memo(function PortfolioForgotPassword() {
   const [email, setEmail] = useState('');
   const nav = useNav();
-  const handleEmail = (val: string) => setEmail(val);
+  const handleEmail = useCallback((val: string) => setEmail(val), []);
   return (
     <Screen
+      gutter
       onLeftPress={nav.to('portfolioLogin')}
-      title="Forgot Password"
-      gutter>
+      title="Forgot Password">
       <TextInput
-        title="email"
-        placeholder="example@gmail.com"
         onChangeText={handleEmail}
+        placeholder="example@gmail.com"
+        title="email"
         value={email}
       />
       <View style={styles.row}>
-        <Button title="Send email" onPress={nav.to('portfolioLogin')} />
+        <Button onPress={nav.to('portfolioLogin')} title="Send email" />
       </View>
     </Screen>
   );

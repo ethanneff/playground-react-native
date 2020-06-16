@@ -131,32 +131,31 @@ export const TextInput = ({
           activeOpacity={1}
           hidden={noTitle}
           lowercase
+          noPadding
           onPress={focusOnInput}
           title={title}
-          noPadding
         />
         <Button
           activeOpacity={1}
+          color="secondary"
           hidden={!optional}
           lowercase
-          onPress={focusOnInput}
-          color="secondary"
-          title={optionalText}
           noPadding
+          onPress={focusOnInput}
+          title={optionalText}
         />
       </View>
       <View style={styles.row}>
         <Original
-          textContentType={textContentType}
           autoCorrect={autoCorrect}
           blurOnSubmit={blurOnSubmit}
           disableFullscreenUI={disableFullscreenUI}
           editable={editable}
-          onSubmitEditing={onSubmitEditing}
           keyboardType={keyboardType}
           onBlur={onBlur}
           onChangeText={onChangeText}
           onFocus={onFocus}
+          onSubmitEditing={onSubmitEditing}
           placeholder={placeholder}
           placeholderTextColor={color.secondary}
           ref={textInput}
@@ -164,25 +163,26 @@ export const TextInput = ({
           secureTextEntry={secureTextEntry}
           selectionColor={focusColor}
           style={textInputStyles}
+          textContentType={textContentType}
           underlineColorAndroid="transparent"
           value={value}
         />
         <Icon
-          style={styles.clear}
+          color={color.secondary}
           hidden={noValue}
           name={clearIcon}
           onPress={textClear}
-          color={color.secondary}
+          style={styles.clear}
         />
       </View>
       {!removeError && (
         <View style={{flexDirection: 'row'}}>
           <Icon
             activeOpacity={1}
+            color={color.danger}
             invisible={noError}
             name={errorIcon}
             onPress={focusOnInput}
-            color={color.danger}
           />
           <Button
             activeOpacity={1}

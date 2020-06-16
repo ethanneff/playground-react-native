@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {Calendar, Card, Screen, Text, TextInput} from '../../components';
 import {useColor, useNav} from '../../hooks';
@@ -13,127 +13,129 @@ export default memo(function Journal() {
     },
   });
 
+  const handleChangeText = useCallback(() => undefined, []);
+
   return (
     <Screen onLeftPress={nav.to('portfolioLanding')} title="Journal">
       <ScrollView
-        style={{backgroundColor: color.surface}}
         contentContainerStyle={{
           paddingHorizontal: Theme.padding.p04,
           paddingVertical: Theme.padding.p02,
-        }}>
+        }}
+        style={{backgroundColor: color.surface}}>
         <Card>
-          <Text type="h3" title="Calendar" style={styles.bottom} />
+          <Text style={styles.bottom} title="Calendar" type="h3" />
           <Calendar hiddenDays />
         </Card>
         <Card>
-          <Text type="h3" title="Record" style={styles.bottom} />
+          <Text style={styles.bottom} title="Record" type="h3" />
           <Text
-            type="h5"
             emphasis="medium"
+            style={styles.bottom}
             title="One objective that will make everything easier"
-            style={styles.bottom}
+            type="h5"
           />
           <TextInput
+            onChangeText={handleChangeText}
+            placeholder="fill me"
             title="Primary goal"
-            placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            value=""
           />
           <Text
-            type="h5"
             emphasis="medium"
+            style={styles.bottom}
             title="Additional objectives"
-            style={styles.bottom}
+            type="h5"
           />
           <TextInput
-            title="Secondary goal"
+            onChangeText={handleChangeText}
             placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            title="Secondary goal"
+            value=""
           />
           <TextInput
-            title="Secondary goal"
+            onChangeText={handleChangeText}
             placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            title="Secondary goal"
+            value=""
           />
           <TextInput
-            title="Secondary goal"
+            onChangeText={handleChangeText}
             placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            title="Secondary goal"
+            value=""
           />
           <Text
-            type="h5"
             emphasis="medium"
-            title="Bonus objectives"
             style={styles.bottom}
+            title="Bonus objectives"
+            type="h5"
           />
           <TextInput
-            title="tertiary goal"
+            onChangeText={handleChangeText}
             placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            title="tertiary goal"
+            value=""
           />
           <TextInput
-            title="tertiary goal"
+            onChangeText={handleChangeText}
             placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            title="tertiary goal"
+            value=""
           />
           <TextInput
-            title="tertiary goal"
+            onChangeText={handleChangeText}
             placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            title="tertiary goal"
+            value=""
           />
           <TextInput
-            title="tertiary goal"
+            onChangeText={handleChangeText}
             placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            title="tertiary goal"
+            value=""
           />
           <TextInput
-            title="tertiary goal"
+            onChangeText={handleChangeText}
             placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            title="tertiary goal"
+            value=""
           />
         </Card>
         <Card>
-          <Text type="h3" title="Review" style={styles.bottom} />
+          <Text style={styles.bottom} title="Review" type="h3" />
           <TextInput
+            onChangeText={handleChangeText}
+            placeholder="fill me"
             title="How likely are you to recommend this day?"
-            placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            value=""
           />
           <TextInput
-            title="Why did you give this score?"
+            onChangeText={handleChangeText}
             placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            title="Why did you give this score?"
+            value=""
           />
         </Card>
         <Card>
-          <Text type="h3" title="Retro" style={styles.bottom} />
+          <Text style={styles.bottom} title="Retro" type="h3" />
           <TextInput
+            onChangeText={handleChangeText}
+            placeholder="fill me"
             title="What went well?"
-            placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            value=""
           />
           <TextInput
+            onChangeText={handleChangeText}
+            placeholder="fill me"
             title="What could be improved?"
-            placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            value=""
           />
           <TextInput
-            title="What will you commit to tomorrow?"
+            onChangeText={handleChangeText}
             placeholder="fill me"
-            value={''}
-            onChangeText={() => undefined}
+            title="What will you commit to tomorrow?"
+            value=""
           />
         </Card>
         <View style={{height: Theme.padding.p04}} />

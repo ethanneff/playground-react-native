@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import {Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
@@ -20,7 +20,7 @@ export default memo(function Walkthrough() {
     {key: 3, text: 'steve', color: color.success},
     {key: 4, text: 'jill', color: color.brand},
   ];
-
+  const keyExtractor = useCallback((item) => String(item.key), []);
   const renderItem = ({item}: {item: Data}) => {
     const styles = StyleSheet.create({
       item: {
@@ -32,17 +32,17 @@ export default memo(function Walkthrough() {
 
     return (
       <View style={styles.item}>
-        <Text title={item.text} center />
+        <Text center title={item.text} />
       </View>
     );
   };
 
   return (
     <FlatList
-      pagingEnabled
-      horizontal
-      keyExtractor={(item) => String(item.key)}
       data={data}
+      horizontal
+      keyExtractor={keyExtractor}
+      pagingEnabled
       renderItem={renderItem}
     />
   );

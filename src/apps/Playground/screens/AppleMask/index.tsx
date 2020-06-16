@@ -34,13 +34,13 @@ const Section = ({
       }}>
       <View style={{flexDirection: 'row'}}>
         <Text
-          type="h1"
-          title={String(index)}
           style={{width: leftWidth, color: color.primary}}
+          title={String(index)}
+          type="h1"
         />
         <View style={{flex: 1}}>
-          <Text type="h3" title={title} />
-          <Text type="subtitle1" title={description} />
+          <Text title={title} type="h3" />
+          <Text title={description} type="subtitle1" />
           {image && (
             <Image
               source={image}
@@ -94,21 +94,21 @@ export default memo(function AppleMask() {
   return (
     <Screen onLeftPress={nav.to('playground')}>
       <ScrollView contentContainerStyle={{paddingHorizontal}}>
-        <Text type="h2" title="Assemble and adjust your Face Shield" />
+        <Text title="Assemble and adjust your Face Shield" type="h2" />
         <Text
-          type="subtitle1"
-          title="To assemble your face shield, follow these steps."
           style={{paddingTop: Theme.padding.p04}}
+          title="To assemble your face shield, follow these steps."
+          type="subtitle1"
         />
         {sections.map(({title, description, image, imageRatio}, index) => (
           <Section
-            paddingHorizontal={paddingHorizontal}
-            key={title}
-            index={index + 1}
-            title={title}
             description={description}
             image={image}
             imageRatio={imageRatio}
+            index={index + 1}
+            key={title}
+            paddingHorizontal={paddingHorizontal}
+            title={title}
           />
         ))}
       </ScrollView>

@@ -23,7 +23,7 @@ const Track = memo(function TrackMemo({track}: TrackProps) {
     },
   });
   return (
-    <View>
+    <>
       <View
         style={{
           ...styles.tracks,
@@ -38,17 +38,17 @@ const Track = memo(function TrackMemo({track}: TrackProps) {
           left: track.x + track.size / 2 + track.size / 2 - size,
         }}
       />
-    </View>
+    </>
   );
 });
 
 export const Tracks = memo(function TracksMemo() {
   const {state} = useContext(DriftContext);
   return (
-    <View>
+    <>
       {state.tracks.map((track: TrackPositionWithColor, index: number) => (
         <Track key={`${track.x}${track.y}${index}`} track={track} />
       ))}
-    </View>
+    </>
   );
 });

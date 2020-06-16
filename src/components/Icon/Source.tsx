@@ -25,6 +25,6 @@ export const Source = memo(function IconSource({
 }: Props) {
   const containerStyle = [invisible ? styles.invisible : undefined, style];
   return (
-    <Original name={name} size={size} color={color} style={containerStyle} />
+    <Original color={color} name={name} size={size} style={containerStyle} />
   );
 });

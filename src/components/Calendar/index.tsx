@@ -55,16 +55,16 @@ export const Calendar = memo(function Calendar({hiddenDays}: Props) {
   return (
     <>
       <CalendarHeader
-        onTitlePress={onTitlePress}
-        onMonthIncrease={onMonthIncrease}
         onMonthDecrease={onMonthDecrease}
+        onMonthIncrease={onMonthIncrease}
+        onTitlePress={onTitlePress}
         unix={calendar.today.valueOf()}
       />
       <CalendarMonth
         hiddenDays={hiddenDays}
         matrix={calendar.matrix}
-        selected={calendar.selected}
         onSelected={onSelected}
+        selected={calendar.selected}
       />
     </>
   );

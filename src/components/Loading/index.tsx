@@ -43,15 +43,15 @@ export const Loading = memo(function Loading({title, center, style}: Props) {
 
   return (
     <View style={containerStyles}>
-      <Text title={title} type="h3" bold center />
+      <Text bold center title={title} type="h3" />
       {ellipsis.map((dot, index) => (
         <Text
-          key={index}
-          title={dot}
-          invisible={index > ellipsisIndex}
-          type="h3"
           bold
           center
+          invisible={index > ellipsisIndex}
+          key={index}
+          title={dot}
+          type="h3"
         />
       ))}
     </View>

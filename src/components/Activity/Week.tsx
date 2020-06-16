@@ -33,18 +33,18 @@ export const Week = memo(function Week({
       <Text
         center
         emphasis="medium"
+        style={{paddingBottom: Theme.padding.p03}}
         title={header}
         type="overline"
-        style={{paddingBottom: Theme.padding.p03}}
       />
       {item.map((day) => (
         <Day
-          key={String(day.date)}
           day={day}
-          max={max}
-          size={size}
+          key={String(day.date)}
           margin={margin}
+          max={max}
           onPress={onPress}
+          size={size}
         />
       ))}
     </View>

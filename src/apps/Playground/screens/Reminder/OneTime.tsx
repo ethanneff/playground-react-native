@@ -1,6 +1,5 @@
 import dayjs, {Dayjs} from 'dayjs';
 import React, {memo} from 'react';
-import {View} from 'react-native';
 import {Item} from './Item';
 
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -66,22 +65,22 @@ interface Props {
 export default memo(function OneTime({onPress}: Props) {
   const buttons = generateButtons();
   return (
-    <View>
+    <>
       {buttons.map((button, index) => {
         const hidden =
           button.visible && dayjs().valueOf() > button.visible.valueOf();
         return (
           <Item
-            icon="alarm"
-            hidden={hidden}
-            marginBottom={index !== buttons.length - 1}
-            key={button.title}
-            title={button.title}
             description={button.description}
+            hidden={hidden}
+            icon="alarm"
+            key={button.title}
+            marginBottom={index !== buttons.length - 1}
             onPress={onPress(button.value)}
+            title={button.title}
           />
         );
       })}
-    </View>
+    </>
   );
 });

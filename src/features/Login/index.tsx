@@ -1,5 +1,5 @@
 import React, {memo, useCallback, useEffect, useState} from 'react';
-import {ActivityIndicator, Platform, View} from 'react-native';
+import {ActivityIndicator, Platform} from 'react-native';
 import {
   Button,
   Icon,
@@ -30,6 +30,7 @@ const SignInButton = memo(function SignInButton({
   const color = useColor();
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={{
         alignItems: 'center',
         justifyContent: 'center',
@@ -39,12 +40,11 @@ const SignInButton = memo(function SignInButton({
         padding: Theme.padding.p02,
         marginBottom: Theme.padding.p02,
         borderRadius: Theme.padding.p10,
-      }}
-      onPress={onPress}>
+      }}>
       <Icon name={icon} />
       <Text
-        title={title}
         style={{paddingLeft: Theme.padding.p02}}
+        title={title}
         type="button"
       />
     </TouchableOpacity>
@@ -149,6 +149,8 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
       });
   };
 
+  const onMissingCallback = () => undefined;
+
   const onAnonymous = () => {
     auth()
       .signInAnonymously()
@@ -181,109 +183,109 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
       {form.state === 'loading' ? (
         <ActivityIndicator size="large" />
       ) : form.state === 'phone confirm' ? (
-        <View>
+        <>
           <TextInput
-            placeholder="phone confirmation code"
             keyboardType="number-pad"
-            value={form.phoneCode}
             onChangeText={onPhoneCodeChange}
+            placeholder="phone confirmation code"
+            value={form.phoneCode}
           />
           <Button
-            title="verify phone confirmation code"
             color="primary"
             emphasis="high"
             onPress={onPhoneConfirm}
+            title="verify phone confirmation code"
           />
-          <Button title="go back" onPress={onPhone} />
-        </View>
+          <Button onPress={onPhone} title="go back" />
+        </>
       ) : form.state === 'phone' ? (
-        <View>
+        <>
           <TextInput
-            placeholder="phone"
             keyboardType="number-pad"
-            value={form.phone}
             onChangeText={onPhoneChange}
+            placeholder="phone"
+            value={form.phone}
           />
           <Button
-            title="send confirmation code"
             color="primary"
             emphasis="high"
             onPress={onPhoneSubmit}
+            title="send confirmation code"
           />
-          <Button title="go back" onPress={onLanding} />
-        </View>
+          <Button onPress={onLanding} title="go back" />
+        </>
       ) : form.state === 'forgot password' ? (
-        <View>
+        <>
           <TextInput
+            keyboardType="email-address"
+            onChangeText={onEmailChange}
             placeholder="email"
             textContentType="username"
-            keyboardType="email-address"
             value={form.email}
-            onChangeText={onEmailChange}
           />
           <Button
-            title="send password reset"
             color="primary"
             emphasis="high"
             onPress={onEmailSubmit}
+            title="send password reset"
           />
-          <Button title="go back" onPress={onEmail} />
-        </View>
+          <Button onPress={onEmail} title="go back" />
+        </>
       ) : form.state === 'email' ? (
-        <View>
+        <>
           <TextInput
+            keyboardType="email-address"
+            onChangeText={onEmailChange}
             placeholder="email"
             textContentType="username"
-            keyboardType="email-address"
             value={form.email}
-            onChangeText={onEmailChange}
           />
           <TextInput
-            placeholder="password"
-            textContentType="password"
-            secureTextEntry
-            value={form.password}
             onChangeText={onPasswordChange}
+            placeholder="password"
+            secureTextEntry
+            textContentType="password"
+            value={form.password}
           />
-          <Button title="submit" color="primary" emphasis="high" />
-          <Button title="forgot password" onPress={onForgotPassword} />
-          <Button title="go back" onPress={onLanding} />
-        </View>
+          <Button color="primary" emphasis="high" title="submit" />
+          <Button onPress={onForgotPassword} title="forgot password" />
+          <Button onPress={onLanding} title="go back" />
+        </>
       ) : (
-        <View>
+        <>
           {Platform.OS === Config.os.ios && (
             <SignInButton
-              title="Continue with Apple"
               icon="apple"
-              onPress={() => undefined}
+              onPress={onMissingCallback}
+              title="Continue with Apple"
             />
           )}
           <SignInButton
-            title="Continue with Google"
             icon="google"
-            onPress={() => undefined}
+            onPress={onMissingCallback}
+            title="Continue with Google"
           />
           <SignInButton
-            title="Continue with Facebook"
             icon="facebook"
-            onPress={() => undefined}
+            onPress={onMissingCallback}
+            title="Continue with Facebook"
           />
           <SignInButton
-            title="Continue with Email"
             icon="email"
             onPress={onEmail}
+            title="Continue with Email"
           />
           <SignInButton
-            title="Continue with Phone"
             icon="phone"
             onPress={onPhone}
+            title="Continue with Phone"
           />
           <SignInButton
-            title="Continue trial"
             icon="close"
             onPress={onAnonymous}
+            title="Continue trial"
           />
-        </View>
+        </>
       )}
     </Modal>
   );

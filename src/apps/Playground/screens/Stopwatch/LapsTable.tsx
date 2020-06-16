@@ -30,10 +30,10 @@ export default memo(function LapsTable({laps, timer}: LapTableProps) {
     <ScrollView style={styles.scrollView}>
       {laps.map((lap, index) => (
         <Lap
-          num={laps.length - index}
-          key={laps.length - index}
-          interval={index === 0 ? timer + lap : lap}
           fastest={lap === min}
+          interval={index === 0 ? timer + lap : lap}
+          key={laps.length - index}
+          num={laps.length - index}
           slowest={lap === max}
         />
       ))}

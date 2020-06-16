@@ -24,9 +24,9 @@ export class Markdown extends React.PureComponent<Props> {
       <View style={styles.container}>
         {words.map((word: string, index: number) => (
           <Text
-            style={style}
-            key={index}
             bold={this.isWordBold(word)}
+            key={index}
+            style={style}
             title={this.formattedWord(words, word, index)}
           />
         ))}

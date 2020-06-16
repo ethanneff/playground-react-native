@@ -89,57 +89,57 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
       {form.modal === 'review' ? (
         <>
           <Text
-            type="h4"
-            title="Thank you for your feedback!"
             center
             style={styles.title}
+            title="Thank you for your feedback!"
+            type="h4"
           />
           <Text
-            title="Do you mind reviewing us on the app store?"
             center
             style={styles.title}
+            title="Do you mind reviewing us on the app store?"
           />
-          <Button title="Okay" onPress={handleReviewApp} />
+          <Button onPress={handleReviewApp} title="Okay" />
         </>
       ) : form.modal === 'feedback' ? (
         <>
-          <Text type="h4" title="Thank you" center style={styles.title} />
+          <Text center style={styles.title} title="Thank you" type="h4" />
           <Text
-            title="Can you provide us with some feedback to help us improve?"
             center
             style={styles.title}
+            title="Can you provide us with some feedback to help us improve?"
           />
           <TextInput
-            onSubmitEditing={handleFeedbackSubmit}
-            value={form.feedback}
             onChangeText={handleTextChange}
+            onSubmitEditing={handleFeedbackSubmit}
             placeholder="How can we improve?"
+            value={form.feedback}
           />
-          <Button title="Submit" onPress={handleFeedbackSubmit} />
+          <Button onPress={handleFeedbackSubmit} title="Submit" />
         </>
       ) : form.modal === 'thank you' ? (
         <>
-          <Text type="h4" title="Thank you" center style={styles.title} />
+          <Text center style={styles.title} title="Thank you" type="h4" />
           <Text
-            title="We have sent your feedback to our team"
-            style={styles.title}
             center
+            style={styles.title}
+            title="We have sent your feedback to our team"
           />
-          <Button title="Close" onPress={handleComplete} />
+          <Button onPress={handleComplete} title="Close" />
         </>
       ) : (
         <>
           <Text
-            type="h4"
-            title="How are you enjoying the app so far?"
             center
             style={styles.title}
+            title="How are you enjoying the app so far?"
+            type="h4"
           />
           <Rating
             count={5}
-            size={Theme.padding.p08}
-            rating={form.rating}
             onPress={handleRating}
+            rating={form.rating}
+            size={Theme.padding.p08}
           />
         </>
       )}

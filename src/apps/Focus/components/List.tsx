@@ -72,8 +72,8 @@ export const List = memo(
         <ListItem
           currentItem={getCurrentItem(item)}
           item={item}
-          showSection={getFirstItemOfDay(index, item, items)}
           onItemPress={onItemPress}
+          showSection={getFirstItemOfDay(index, item, items)}
         />
       ),
       [items, onItemPress],
@@ -82,16 +82,16 @@ export const List = memo(
     return (
       <>
         <FlatList
-          style={styles.list}
-          inverted
+          data={items}
+          getItemLayout={getItemLayout}
           initialNumToRender={0}
           initialScrollIndex={initialIndex}
-          getItemLayout={getItemLayout}
+          inverted
           keyExtractor={keyExtractor}
-          data={items}
           onEndReached={onEndReached}
           onEndReachedThreshold={onEndReachedThreshold}
           renderItem={renderItem}
+          style={styles.list}
         />
         {loading && <ActivityIndicator size="large" style={styles.loading} />}
       </>

@@ -39,14 +39,14 @@ export default memo(function CreateReminderModal({
 
   return (
     <Modal onBackgroundPress={onBackgroundPress}>
-      <Text type="h2" title="Create Reminder" />
-      <Text type="caption" title="Reminder type" style={styles.section} />
+      <Text title="Create Reminder" type="h2" />
+      <Text style={styles.section} title="Reminder type" type="caption" />
       <Radio
         buttons={reminderTypes}
-        value={state}
         onChange={handleReminderTypePress}
+        value={state}
       />
-      <Text type="caption" title="Reminder time" style={styles.section} />
+      <Text style={styles.section} title="Reminder time" type="caption" />
       {state === 'One time' ? (
         <OneTime onPress={onOneTimePress} />
       ) : state === 'Repeat' ? (
@@ -57,11 +57,11 @@ export default memo(function CreateReminderModal({
         <Text title="invalid form type" />
       )}
       <Button
-        disable
-        title="submit"
-        color="primary"
-        emphasis="high"
         buttonStyle={styles.submit}
+        color="primary"
+        disable
+        emphasis="high"
+        title="submit"
       />
     </Modal>
   );

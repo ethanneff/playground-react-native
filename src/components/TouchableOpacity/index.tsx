@@ -38,12 +38,12 @@ export const TouchableOpacity = ({
 
   return (
     <Original
-      testID={testID}
       activeOpacity={activeOpacity}
       disabled={disabled}
+      onLongPress={onLongPressHandler}
       onPress={onPressHandler}
       style={style}
-      onLongPress={onLongPressHandler}>
+      testID={testID}>
       {children}
     </Original>
   );

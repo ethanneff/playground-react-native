@@ -24,33 +24,33 @@ export default memo(function PlaygroundInput() {
   }, []);
 
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Template" gutter>
+    <Screen gutter onLeftPress={nav.to('playground')} title="Template">
       <TextInput
-        title="Name"
-        placeholder="jane doe"
-        optional
-        value={form.name}
-        onChangeText={handleChange('name')}
         error={form.error}
+        onChangeText={handleChange('name')}
+        optional
+        placeholder="jane doe"
+        title="Name"
+        value={form.name}
       />
       <TextInput
+        error={form.error}
+        keyboardType="email-address"
+        onChangeText={handleChange('email')}
+        placeholder="example@gmail.com"
+        textContentType="username"
         title="Email"
         value={form.email}
-        onChangeText={handleChange('email')}
-        keyboardType="email-address"
-        textContentType="username"
-        placeholder="example@gmail.com"
-        error={form.error}
       />
       <TextInput
-        textContentType="password"
-        value={form.password}
         onChangeText={handleChange('password')}
-        title="Password"
         placeholder="•••••••"
         secureTextEntry
+        textContentType="password"
+        title="Password"
+        value={form.password}
       />
-      <Button title="complete form" onPress={handleSubmit} />
+      <Button onPress={handleSubmit} title="complete form" />
     </Screen>
   );
 });

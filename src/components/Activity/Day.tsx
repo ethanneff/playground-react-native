@@ -26,8 +26,8 @@ export const Day = memo(function Day({day, max, size, margin, onPress}: Props) {
   const borderColor = isToday(day.date) ? color.danger : 'transparent';
   return (
     <TouchableOpacity
-      onPress={onPress(day)}
       key={String(day.date)}
+      onPress={onPress(day)}
       style={{
         width: size,
         height: size,

@@ -23,11 +23,11 @@ export default memo(function Radio({
       }}>
       {buttons.map((button, index) => (
         <Item
-          title={button}
-          key={button}
-          onPress={onChange(button)}
-          marginBottom={index !== buttons.length - 1}
           active={button === value}
+          key={button}
+          marginBottom={index !== buttons.length - 1}
+          onPress={onChange(button)}
+          title={button}
         />
       ))}
     </View>

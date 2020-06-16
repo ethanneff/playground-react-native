@@ -155,7 +155,7 @@ const Loading = memo(function NavigationLoading() {
 
   return (
     <View style={styles.container}>
-      <ActivityIndicator size="large" color={color.dark} />
+      <ActivityIndicator color={color.dark} size="large" />
     </View>
   );
 });

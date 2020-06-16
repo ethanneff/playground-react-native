@@ -126,26 +126,26 @@ export const Dialog = memo(function Dialog({
   return (
     <Animated.View style={containerStyle}>
       <TouchableWithoutFeedback
-        testID={testID}
-        onPress={dismiss(onBackgroundPress)}>
+        onPress={dismiss(onBackgroundPress)}
+        testID={testID}>
         <View style={styles.overlay}>
           <TouchableWithoutFeedback onPress={undefined}>
             <Card style={styles.modal}>
-              <Text title={title} type="h3" style={styles.title} />
+              <Text style={styles.title} title={title} type="h3" />
               <Text title={message} />
               <View style={styles.buttonContainer}>
                 <Button
-                  hidden={!onCancelButtonPress}
-                  title={cancelButtonText}
-                  onPress={dismiss(onCancelButtonPress)}
                   buttonStyle={cancelButtonStyle}
+                  hidden={!onCancelButtonPress}
+                  onPress={dismiss(onCancelButtonPress)}
+                  title={cancelButtonText}
                 />
                 <Button
-                  hidden={!onConfirmButtonPress}
-                  title={confirmButtonText}
-                  onPress={dismiss(onConfirmButtonPress)}
                   buttonStyle={confirmButtonStyle}
                   color="secondary"
+                  hidden={!onConfirmButtonPress}
+                  onPress={dismiss(onConfirmButtonPress)}
+                  title={confirmButtonText}
                 />
               </View>
             </Card>

@@ -32,22 +32,24 @@ export const List = memo(function List({
     },
   });
 
+  const onPress = () => undefined;
+
   const renderItem = useCallback(({item, index}) => {
     const data = app.goals.byId[item];
     return (
       <Card
-        key={data.id}
         flex
-        onPress={() => undefined}
+        onPress={onPress}
+        key={data.id}
         style={{marginHorizontal: Theme.padding.p02}}>
         <Text
-          title={`Challenge #${index + 1}`}
-          center
-          type="h4"
           bold
+          center
           style={{paddingBottom: Theme.padding.p04}}
+          title={`Challenge #${index + 1}`}
+          type="h4"
         />
-        <Text title={data.challenge} center />
+        <Text center title={data.challenge} />
       </Card>
     );
   }, []);
@@ -56,10 +58,10 @@ export const List = memo(function List({
     () => (
       <View>
         <Text
+          center
+          style={{padding: Theme.padding.p04}}
           title="Progress"
           type="h3"
-          style={{padding: Theme.padding.p04}}
-          center
         />
         <Card>
           <View
@@ -73,10 +75,10 @@ export const List = memo(function List({
           <DailyProgress />
         </Card>
         <Text
+          center
+          style={{padding: Theme.padding.p04}}
           title="Challenges"
           type="h3"
-          style={{padding: Theme.padding.p04}}
-          center
         />
       </View>
     ),
@@ -86,12 +88,12 @@ export const List = memo(function List({
   return (
     <FlatList
       contentContainerStyle={styles.list}
-      keyExtractor={keyExtractor}
-      key={columns}
       data={app.goals.orderById}
-      renderItem={renderItem}
-      numColumns={columns}
+      key={columns}
+      keyExtractor={keyExtractor}
       ListHeaderComponent={renderHeader}
+      numColumns={columns}
+      renderItem={renderItem}
     />
   );
 });

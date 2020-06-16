@@ -23,6 +23,7 @@ type Sentence = Phrase | Link;
 interface Phrase {
   content: string;
   type: ParagraphType.Phrase;
+  onPress?(): void;
 }
 interface Link {
   content: string;
@@ -63,27 +64,27 @@ export const Content = memo(({body}: Props) => {
   return (
     <ScrollView contentContainerStyle={styles.content}>
       {body.sections.map((section, sectionIndex) => (
-        <View style={styles.section} key={`s-${sectionIndex}`}>
+        <View key={`s-${sectionIndex}`} style={styles.section}>
           {section.title && (
             <Text
               key={section.title}
-              title={section.title}
               style={styles.title}
+              title={section.title}
               type={section.titleType}
             />
           )}
           {section.paragraphs.map((paragraph, paragraphIndex) => (
-            <Original style={styles.paragraph} key={`p-${paragraphIndex}`}>
-              {paragraph.sentences.map((sentence) =>
-                sentence.type === ParagraphType.Link ? (
+            <Original key={`p-${paragraphIndex}`} style={styles.paragraph}>
+              {paragraph.sentences.map(({onPress, content, type}) =>
+                type === ParagraphType.Link ? (
                   <Text
-                    key={sentence.content}
-                    title={`${sentence.content} `}
-                    onPress={sentence.onPress}
+                    key={content}
+                    onPress={onPress}
                     style={styles.link}
+                    title={`${content} `}
                   />
                 ) : (
-                  <Text key={sentence.content} title={`${sentence.content} `} />
+                  <Text key={content} title={`${content} `} />
                 ),
               )}
             </Original>

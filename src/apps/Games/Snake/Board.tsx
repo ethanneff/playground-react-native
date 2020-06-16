@@ -14,7 +14,7 @@ export const Board = ({matrix}: BoardProps) => {
       {matrix.map((x, i) => (
         <View key={i} style={{flexDirection: 'row'}}>
           {x.map((y, j) => (
-            <Cell key={`cell-${i}${j}`} value={y} length={matrix.length} />
+            <Cell key={`cell-${i}${j}`} length={matrix.length} value={y} />
           ))}
         </View>
       ))}

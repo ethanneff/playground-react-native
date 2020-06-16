@@ -89,8 +89,8 @@ export default function PlaygroundDrag() {
 
   return (
     <Screen onLeftPress={nav.to('playground')} title="Drag">
-      <Text type="overline" center title="drag the circle" />
-      <View style={styles.canvas} onLayout={handleCanvas}>
+      <Text center title="drag the circle" type="overline" />
+      <View onLayout={handleCanvas} style={styles.canvas}>
         <Animated.View
           style={[ballPosition.getLayout(), styles.ball]}
           {...panGesture.panHandlers}

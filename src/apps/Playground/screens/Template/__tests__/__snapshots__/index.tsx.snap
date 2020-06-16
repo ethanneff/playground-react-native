@@ -118,7 +118,9 @@ exports[`renders correctly 1`] = `
             "backgroundColor": "hsl(0, 0%, 100%)",
           }
         }
-      />
+      >
+        <View />
+      </View>
     </View>
   </RCTSafeAreaView>
   <View

@@ -36,10 +36,10 @@ export default memo(function Checklist() {
   const renderItem = useCallback(
     ({item}) => (
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <Icon name="checkbox-marked-circle" color={color.success} />
+        <Icon color={color.success} name="checkbox-marked-circle" />
         <Icon
-          name="close-circle"
           color={color.danger}
+          name="close-circle"
           onPress={handleRemove(item.id)}
         />
         <Icon
@@ -50,8 +50,8 @@ export default memo(function Checklist() {
         <Button
           color={item.completed ? 'primary' : 'text'}
           lowercase
-          title={item.name}
           onPress={handleEdit(item.id)}
+          title={item.name}
         />
       </View>
     ),
@@ -67,18 +67,18 @@ export default memo(function Checklist() {
   const keyExtractor = useCallback((item) => item.id, []);
 
   return (
-    <Screen onLeftPress={nav.to('checklists')} title="Checklist" gutter>
+    <Screen gutter onLeftPress={nav.to('checklists')} title="Checklist">
       <FlatList
-        keyExtractor={keyExtractor}
         data={items}
+        keyExtractor={keyExtractor}
         renderItem={renderItem}
       />
       <Icon
-        fab
-        right
-        name="plus"
         color={color.background}
+        fab
+        name="plus"
         onPress={nav.to('checklistsItemCreate')}
+        right
       />
     </Screen>
   );

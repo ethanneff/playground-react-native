@@ -107,12 +107,12 @@ export const Activity = memo(function Activity({
   const renderItem = useCallback(
     ({item, index}: {item: ActivityWeek; index: number}) => (
       <Week
-        max={state.activity.max}
-        item={item}
         index={index}
-        size={size}
+        item={item}
         margin={margin}
+        max={state.activity.max}
         onPress={onItemPress}
+        size={size}
       />
     ),
     [state.activity.max, margin, onItemPress, size],
@@ -129,43 +129,43 @@ export const Activity = memo(function Activity({
           alignItems: 'center',
         }}>
         <TouchableOpacity onPress={refresh}>
-          <Text type="h4" emphasis="medium" title={title} />
+          <Text emphasis="medium" title={title} type="h4" />
         </TouchableOpacity>
         {!state.activity.total ? null : (
           <Text
-            type="overline"
             emphasis="medium"
             title={`${state.activity.total} submissions`}
+            type="overline"
           />
         )}
       </View>
       {state.request === 'loading' ? (
         <ActivityIndicator size="large" />
       ) : state.request === 'failure' ? (
-        <View>
+        <>
           <Text title="Missing network connection" />
-          <Button title="Retry" color="danger" onPress={refresh} />
-        </View>
+          <Button color="danger" onPress={refresh} title="Retry" />
+        </>
       ) : (
-        <View>
+        <>
           <FlatList
-            initialNumToRender={0}
-            showsHorizontalScrollIndicator={false}
             data={state.activity.matrix}
-            inverted
             horizontal
+            initialNumToRender={0}
+            inverted
             keyExtractor={keyExtractor}
             renderItem={renderItem}
+            showsHorizontalScrollIndicator={false}
           />
           <Text
-            type="overline"
+            center
             emphasis="medium"
             secondary
-            title={state.selected.submissions}
-            center
             style={{paddingTop: Theme.padding.p03}}
+            title={state.selected.submissions}
+            type="overline"
           />
-        </View>
+        </>
       )}
     </Card>
   );

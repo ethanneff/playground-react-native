@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
 import {Button, Card, Icon, Screen, Text} from '../../components';
 import {useColor, useNav} from '../../hooks';
@@ -14,46 +14,45 @@ export default memo(function Checklists() {
     },
   });
   const [showLogin, setShowLogin] = useState(false);
-  const onToggleLogin = () => setShowLogin((prev) => !prev);
+  const onToggleLogin = useCallback(() => setShowLogin((prev) => !prev), []);
 
   return (
     <>
       <Screen onLeftPress={nav.to('portfolioLanding')} title="Checklists">
         <ScrollView
-          style={{backgroundColor: color.surface}}
           contentContainerStyle={{
             paddingHorizontal: Theme.padding.p04,
             paddingVertical: Theme.padding.p02,
-          }}>
+          }}
+          style={{backgroundColor: color.surface}}>
           <Card>
             <Text
-              style={styles.bottom}
-              type="h4"
               emphasis="medium"
+              style={styles.bottom}
               title="Weekly Goals"
+              type="h4"
             />
-            <Text type="caption" title="1. complete learn plan profit" />
-            <Text type="caption" title="2. ship checklist" />
-            <Text type="caption" title="3. complete 30 leetcode" />
+            <Text title="1. complete learn plan profit" type="caption" />
+            <Text title="2. ship checklist" type="caption" />
+            <Text title="3. complete 30 leetcode" type="caption" />
           </Card>
           <Card>
             <Text
-              style={styles.bottom}
-              type="h4"
               emphasis="medium"
+              style={styles.bottom}
               title="Daily Habits and Routines"
+              type="h4"
             />
-            <Text type="caption" title="After I wake up" />
-            <Text type="caption" title="After I shower" />
-            <Text type="caption" title="Before I one on one" />
-            <Text type="caption" title="Before I get on the train" />
+            <Text title="After I wake up" type="caption" />
+            <Text title="After I shower" type="caption" />
+            <Text title="Before I one on one" type="caption" />
+            <Text title="Before I get on the train" type="caption" />
           </Card>
         </ScrollView>
         <Icon
-          name="plus"
-          fab
-          onPress={() => undefined}
           color={color.background}
+          fab
+          name="plus"
           style={{
             position: 'absolute',
             bottom: 0,
@@ -61,7 +60,7 @@ export default memo(function Checklists() {
             margin: Theme.padding.p04,
           }}
         />
-        <Button title="showLogin" onPress={onToggleLogin} />
+        <Button onPress={onToggleLogin} title="showLogin" />
       </Screen>
       {showLogin && <Login onBackgroundPress={onToggleLogin} />}
     </>

@@ -20,8 +20,8 @@ export const Cell = memo(function Cell({
   const color = useColor();
   return (
     <TouchableOpacity
-      onPress={onItemPress(x, y)}
       key={`${x}-${y}`}
+      onPress={onItemPress(x, y)}
       style={{
         height: size,
         width: size,

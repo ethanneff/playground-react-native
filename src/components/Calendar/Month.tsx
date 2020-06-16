@@ -25,10 +25,10 @@ export const CalendarMonth = memo(function Month({
         <View key={i} style={{flexDirection: 'row'}}>
           {row.map((col, j) => (
             <CalendarDay
+              day={col}
               hiddenDays={hiddenDays}
               key={`${i}+${j}`}
               onSelected={handleSelected(col.id)}
-              day={col}
               selectedDay={selected}
             />
           ))}

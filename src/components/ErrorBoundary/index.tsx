@@ -1,5 +1,4 @@
 import React, {ErrorInfo, ReactNode} from 'react';
-import {View} from 'react-native';
 import {Text} from '../Text';
 
 type Props = {
@@ -25,10 +24,6 @@ export class ErrorBoundary extends React.PureComponent<Props, State> {
     if (!this.state.hasError) {
       return this.props.children;
     }
-    return (
-      <View>
-        <Text center title="something went wrong" />
-      </View>
-    );
+    return <Text center title="something went wrong" />;
   }
 }

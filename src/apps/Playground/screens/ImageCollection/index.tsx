@@ -23,18 +23,19 @@ class Container extends React.PureComponent<Props> {
     Math.random(),
   ];
   private numColumns = 3;
-  private infiniteScrollThreshold = 0.3;
+  private handleInfiniteScrollThreshold = 0.3;
   private columnWidth = Dimensions.get('window').width / this.numColumns;
   private imageUrl = `http://lorempixel.com/${this.columnWidth}/${this.columnWidth}`;
+  private keyExtractor = (data: number) => data.toString();
   public render() {
     return (
       <Screen onLeftPress={this.nav('playground')} title="Image Collection">
         <FlatList
-          keyExtractor={(data) => data.toString()}
           data={this.data}
-          onEndReached={this.fetchMore}
-          onEndReachedThreshold={this.infiniteScrollThreshold}
+          keyExtractor={this.keyExtractor}
           numColumns={this.numColumns}
+          onEndReached={this.handleFetchMore}
+          onEndReachedThreshold={this.handleInfiniteScrollThreshold}
           renderItem={this.renderImage}
         />
       </Screen>
@@ -43,7 +44,7 @@ class Container extends React.PureComponent<Props> {
 
   private nav = (to: NavigationScreen) => () => this.props.navigate(to);
 
-  private fetchMore = () => {
+  private handleFetchMore = () => {
     this.data.push(Math.random());
     this.data.push(Math.random());
     this.data.push(Math.random());
@@ -53,9 +54,9 @@ class Container extends React.PureComponent<Props> {
 
   private renderImage = () => (
     <AsyncImage
+      height={this.columnWidth}
       uri={this.imageUrl}
       width={this.columnWidth}
-      height={this.columnWidth}
     />
   );
 }

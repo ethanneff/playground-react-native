@@ -14,7 +14,7 @@ export default memo(function PlaygroundTemplate() {
   return (
     <Screen onLeftPress={nav.to('playground')} title="Template">
       <View style={styles.container}>
-        <></>
+        <View />
       </View>
     </Screen>
   );

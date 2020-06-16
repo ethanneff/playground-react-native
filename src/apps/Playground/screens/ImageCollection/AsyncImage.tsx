@@ -44,9 +44,9 @@ export function AsyncImage({
   ];
   return (
     <View style={containerStyle}>
-      <Animated.Image source={{uri}} style={imageStyle} onLoad={onImageLoad} />
+      <Animated.Image onLoad={onImageLoad} source={{uri}} style={imageStyle} />
       <Animated.View style={indicatorStyle}>
-        <ActivityIndicator size={size} color={color} />
+        <ActivityIndicator color={color} size={size} />
       </Animated.View>
     </View>
   );

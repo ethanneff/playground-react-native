@@ -21,22 +21,22 @@ export const CalendarHeader = memo(function CalendarHeader({
   return (
     <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
       <Icon
-        name={'chevron-left'}
-        size={Theme.padding.p06}
+        name="chevron-left"
         onPress={onMonthDecrease}
+        size={Theme.padding.p06}
       />
       <TouchableOpacity onPress={onTitlePress}>
         <Text
-          type="h4"
-          title={dayjs(unix).format('MMMM YYYY')}
           center
           style={{paddingBottom: Theme.padding.p04}}
+          title={dayjs(unix).format('MMMM YYYY')}
+          type="h4"
         />
       </TouchableOpacity>
       <Icon
-        name={'chevron-right'}
-        size={Theme.padding.p06}
+        name="chevron-right"
         onPress={onMonthIncrease}
+        size={Theme.padding.p06}
       />
     </View>
   );

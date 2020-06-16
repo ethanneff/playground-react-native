@@ -76,25 +76,25 @@ export default memo(function DarkMode() {
   const currentTheme = useRootSelector((state) => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   const [elevation, setElevation] = useState(2);
-  const handleSlider = (value: number) => setElevation(value);
+  const handleSlider = useCallback((value: number) => setElevation(value), []);
   const landscape = useRootSelector(getLandscapeOrientation);
   const columns = landscape ? 5 : 3;
   const onPress = useCallback(() => undefined, []);
 
   const renderItem = useCallback(
     ({item, index}) => (
-      <Card elevation={elevation} onPress={onPress} key={index}>
+      <Card elevation={elevation} key={index} onPress={onPress}>
         <Text title={item.title} type="overline" />
         <Text
+          style={{marginTop: Theme.padding.p02}}
           title={item.value}
           type="h3"
-          style={{marginTop: Theme.padding.p02}}
         />
         {item.target && (
           <Text
+            style={{marginTop: Theme.padding.p02}}
             title={item.target}
             type="body2"
-            style={{marginTop: Theme.padding.p02}}
           />
         )}
         {item.chart && (
@@ -110,10 +110,10 @@ export default memo(function DarkMode() {
         )}
         {item.button && (
           <Button
+            buttonStyle={{marginTop: Theme.padding.p02}}
             color="primary"
             emphasis="high"
             title={item.button}
-            buttonStyle={{marginTop: Theme.padding.p02}}
           />
         )}
       </Card>
@@ -132,25 +132,25 @@ export default memo(function DarkMode() {
           <Text title="theme: " />
           {themes.map((item) => (
             <Button
-              key={item}
-              title={item}
-              onPress={themePress(item)}
-              emphasis="high"
               color={currentTheme === item ? 'primary' : 'text'}
+              emphasis="high"
+              key={item}
+              onPress={themePress(item)}
+              title={item}
             />
           ))}
         </View>
         <Text title={`elevation: ${elevation}`} />
         <Slider
+          maximumValue={10}
           minimumTrackTintColor={color.primary}
-          value={elevation}
+          minimumValue={0}
           onValueChange={handleSlider}
           step={1}
-          maximumValue={10}
-          minimumValue={0}
+          value={elevation}
         />
       </View>
-      <Text title="Weekly Stats" type="h2" center />
+      <Text center title="Weekly Stats" type="h2" />
       <Masonry data={cards} numColumns={columns} renderItem={renderItem} />
     </Screen>
   );

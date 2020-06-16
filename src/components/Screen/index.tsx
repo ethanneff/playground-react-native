@@ -57,11 +57,11 @@ export const Screen = ({
         <StatusBar barStyle={color.statusBar} />
         <NavBar
           border={border}
-          title={title}
           leftIcon={leftIcon}
-          rightIcon={rightIcon}
           onLeftPress={onLeftPress}
           onRightPress={onRightPress}
+          rightIcon={rightIcon}
+          title={title}
         />
         <View style={childrenStyles}>{children}</View>
       </SafeAreaView>

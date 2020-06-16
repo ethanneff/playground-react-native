@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import 'react-native-get-random-values';
 import {v4} from 'uuid';
 import {Item} from './Item';
@@ -32,15 +32,17 @@ export default memo(function Location() {
     },
   ];
 
+  const onPress = useCallback(() => undefined, []);
+
   return (
     <>
       {locations.map((location, index) => (
         <Item
-          key={location.id}
-          onPress={() => undefined}
-          title={location.title}
           description={location.subtitle}
+          key={location.id}
           marginBottom={index !== locations.length - 1}
+          onPress={onPress}
+          title={location.title}
         />
       ))}
     </>

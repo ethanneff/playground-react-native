@@ -81,14 +81,14 @@ export const Button = ({
     <TouchableOpacity
       activeOpacity={activeOpacity}
       disabled={disable || invisible}
+      onLongPress={onLongPress}
       onPress={onPress}
-      style={buttonStyleGroup}
-      onLongPress={onLongPress}>
+      style={buttonStyleGroup}>
       <Text
         center
-        type={!lowercase ? 'button' : undefined}
-        title={title}
         style={textStyleGroup}
+        title={title}
+        type={!lowercase ? 'button' : undefined}
       />
     </TouchableOpacity>
   );

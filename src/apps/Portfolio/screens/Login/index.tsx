@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Screen, TextInput} from '../../../../components';
 import {useNav} from '../../../../hooks';
@@ -11,26 +11,26 @@ export default memo(function PortfolioLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const nav = useNav();
-  const handlePassword = (val: string) => setPassword(val);
-  const handleEmail = (val: string) => setEmail(val);
+  const handlePassword = useCallback((val: string) => setPassword(val), []);
+  const handleEmail = useCallback((val: string) => setEmail(val), []);
 
   return (
-    <Screen onLeftPress={nav.to('portfolioLanding')} title="Login" gutter>
+    <Screen gutter onLeftPress={nav.to('portfolioLanding')} title="Login">
       <TextInput
-        title="email"
-        placeholder="example@gmail.com"
         onChangeText={handleEmail}
+        placeholder="example@gmail.com"
+        title="email"
         value={email}
       />
       <TextInput
-        title="password"
-        placeholder="•••••••"
         onChangeText={handlePassword}
+        placeholder="•••••••"
+        title="password"
         value={password}
       />
       <View style={styles.row}>
-        <Button title="Login" onPress={nav.to('portfolio')} />
-        <Button title="Forgot" onPress={nav.to('portfolioForgotPassword')} />
+        <Button onPress={nav.to('portfolio')} title="Login" />
+        <Button onPress={nav.to('portfolioForgotPassword')} title="Forgot" />
       </View>
     </Screen>
   );

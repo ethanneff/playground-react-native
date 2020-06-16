@@ -46,21 +46,21 @@ export default memo(function ChecklistUpdate() {
 
   return (
     <Screen
+      gutter
       onLeftPress={nav.to('checklistsList')}
-      title={'Update Checklist Item'}
-      gutter>
+      title="Update Checklist Item">
       <TextInput
+        onChangeText={handleNameChange}
         title="name"
         value={form.name}
-        onChangeText={handleNameChange}
       />
       <TextInput
+        onChangeText={handleDescriptionChange}
         title="description"
         value={form.description}
-        onChangeText={handleDescriptionChange}
       />
-      <Button title="update" onPress={handleSubmit} />
-      <Button title="delete" onPress={handleDelete} color="danger" />
+      <Button onPress={handleSubmit} title="update" />
+      <Button color="danger" onPress={handleDelete} title="delete" />
     </Screen>
   );
 });

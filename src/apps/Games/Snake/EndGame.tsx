@@ -9,7 +9,7 @@ export const EndGame = memo(function EndGame({onPress}: Props) {
   return (
     <Modal>
       <Text title="good try" />
-      <Button title="again" onPress={onPress} />
+      <Button onPress={onPress} title="again" />
     </Modal>
   );
 });

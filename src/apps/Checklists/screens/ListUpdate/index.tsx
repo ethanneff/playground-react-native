@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {Button, Dialog, Screen, TextInput} from '../../../../components';
 import {getCurrentChecklist, removeList, updateList} from '../../models';
 import {useNav} from '../../../../hooks';
@@ -37,40 +37,40 @@ export default memo(function ChecklistUpdate() {
     dispatch(navigate('checklists'));
   };
 
-  const handleDelete = () => {
+  const handleDelete = useCallback(() => {
     setShowDeleteDialog(false);
     dispatch(removeList(checklist.id));
     dispatch(navigate('checklists'));
-  };
+  }, [dispatch, checklist.id]);
 
-  const handleDeletePress = () => setShowDeleteDialog(true);
-  const handleDeleteCancel = () => setShowDeleteDialog(false);
+  const handleDeletePress = useCallback(() => setShowDeleteDialog(true), []);
+  const handleDeleteCancel = useCallback(() => setShowDeleteDialog(false), []);
 
   return (
     <>
       <Screen
+        gutter
         onLeftPress={nav.to('checklists')}
-        title={'Update Checklist'}
-        gutter>
+        title="Update Checklist">
         <TextInput
+          onChangeText={handleNameChange}
           title="name"
           value={form.name}
-          onChangeText={handleNameChange}
         />
         <TextInput
+          onChangeText={handleDescriptionChange}
           title="description"
           value={form.description}
-          onChangeText={handleDescriptionChange}
         />
-        <Button title="update" onPress={handleSubmit} />
-        <Button title="delete" onPress={handleDeletePress} color="danger" />
+        <Button onPress={handleSubmit} title="update" />
+        <Button color="danger" onPress={handleDeletePress} title="delete" />
       </Screen>
       {showDeleteDialog && (
         <Dialog
-          title="are you sure?"
-          onConfirmButtonPress={handleDelete}
           onBackgroundPress={handleDeleteCancel}
           onCancelButtonPress={handleDeleteCancel}
+          onConfirmButtonPress={handleDelete}
+          title="are you sure?"
         />
       )}
     </>

@@ -113,8 +113,8 @@ export const Text = ({
       adjustsFontSizeToFit={adjustsFontSizeToFit}
       ellipsizeMode={ellipsizeMode}
       numberOfLines={numberOfLines}
-      style={textStyle}
-      onPress={onPress ? handlePress : undefined}>
+      onPress={onPress ? handlePress : undefined}
+      style={textStyle}>
       {text}
     </Animated.Text>
   );

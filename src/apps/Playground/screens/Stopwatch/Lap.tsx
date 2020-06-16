@@ -1,6 +1,7 @@
 import React, {memo} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {useColor} from '../../../../hooks';
+import {Text} from '../../../../components';
 import Timer from './Timer';
 
 interface LapProps {
@@ -24,7 +25,7 @@ export default memo(function Lap({num, interval, fastest, slowest}: LapProps) {
       paddingVertical: 10,
     },
     lapText: {
-      color: color.text,
+      color: color.background,
       fontFamily: 'Courier',
       fontSize: 18,
     },
@@ -34,14 +35,14 @@ export default memo(function Lap({num, interval, fastest, slowest}: LapProps) {
   });
   const lapStyle = [
     styles.lapText,
-    fastest && styles.fastest,
-    slowest && styles.slowest,
+    fastest ? styles.fastest : undefined,
+    slowest ? styles.slowest : undefined,
   ];
 
   return (
     <View style={styles.lap}>
-      <Text style={lapStyle}>Lap {num}</Text>
-      <Timer style={lapStyle} interval={interval} />
+      <Text style={lapStyle} title={`Lap ${num}`} />
+      <Timer interval={interval} style={lapStyle} />
     </View>
   );
 });

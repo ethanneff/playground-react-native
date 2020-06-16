@@ -72,10 +72,10 @@ export const Icon = ({
   return name === undefined || name.length === 0 || hidden ? null : (
     <TouchableOpacity
       activeOpacity={activeOpacity}
-      style={containerStyles}
       disabled={!onPress}
-      onPress={onPress}>
-      <Source name={name} size={size} color={colored} invisible={invisible} />
+      onPress={onPress}
+      style={containerStyles}>
+      <Source color={colored} invisible={invisible} name={name} size={size} />
       <Badge badge={badge} />
     </TouchableOpacity>
   );

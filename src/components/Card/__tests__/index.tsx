@@ -8,6 +8,7 @@ it('renders correctly', () => {
 });
 
 it('renders correctly with onPress', () => {
-  const dom = mockRenderer(<Card onPress={() => undefined} />).toJSON();
+  const callback = jest.fn();
+  const dom = mockRenderer(<Card onPress={callback} />).toJSON();
   expect(dom).toMatchSnapshot();
 });

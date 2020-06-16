@@ -177,11 +177,16 @@ export default memo(function PlaygroundSearchbar() {
   }, [keyboardDidHide, keyboardDidShow, keyboardWillHide, keyboardWillShow]);
 
   const renderItem = useCallback(
-    ({item}) => <Text type="subtitle2" style={styles.item} title={item.name} />,
+    ({item}) => <Text style={styles.item} title={item.name} type="subtitle2" />,
     [styles.item],
   );
 
   const keyExtractor = useCallback((item) => item.id.toString(), []);
+
+  const onChangeText = useCallback(
+    (value: string) => setState((prev) => ({...prev, input: value})),
+    [],
+  );
 
   return (
     <Screen onLeftPress={nav.to('playground')}>
@@ -194,18 +199,18 @@ export default memo(function PlaygroundSearchbar() {
             <Icon name={state.iconName} />
           </Animated.View>
           <TextInput
+            containerStyle={styles.textInput}
+            onChangeText={onChangeText}
+            placeholder={textInputPlaceHolder}
             removeError
             value={state.input}
-            onChangeText={(value: string) => setState({...state, input: value})}
-            placeholder={textInputPlaceHolder}
-            containerStyle={styles.textInput}
           />
         </View>
       </View>
       <Animated.View style={{flex: 1, backgroundColor: fadeContainer}}>
         <FlatList
-          keyExtractor={keyExtractor}
           data={data}
+          keyExtractor={keyExtractor}
           renderItem={renderItem}
         />
       </Animated.View>

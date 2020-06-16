@@ -24,12 +24,12 @@ export const NavButton = ({onPress, icon, isRight}: Props) => {
   return (
     <View style={styles.button}>
       <Icon
-        size={Theme.padding.p09}
-        hidden={!onPress}
         color={color.secondary}
-        style={isRight && styles.buttonRight}
+        hidden={!onPress}
         name={icon}
         onPress={onPress}
+        size={Theme.padding.p09}
+        style={isRight && styles.buttonRight}
       />
     </View>
   );

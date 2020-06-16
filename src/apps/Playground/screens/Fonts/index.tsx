@@ -8,53 +8,53 @@ export default memo(function PlaygroundFonts() {
   return (
     <Screen onLeftPress={nav.to('playground')} title="Fonts">
       <Text
-        type="h1"
         title="H1: The quick brown fox jumps over the lazy dog."
+        type="h1"
       />
-      <Text type="h2" title="h2 The quick brown fox jumps over the lazy dog." />
+      <Text title="h2 The quick brown fox jumps over the lazy dog." type="h2" />
       <Text
-        type="h3"
         title="H3: The quick brown fox jumps over the lazy dog."
+        type="h3"
       />
       <Text
-        type="h4"
         title="H4: The quick brown fox jumps over the lazy dog."
+        type="h4"
       />
       <Text
-        type="h5"
         title="H5: The quick brown fox jumps over the lazy dog."
+        type="h5"
       />
       <Text
-        type="h6"
         title="H6: The quick brown fox jumps over the lazy dog."
+        type="h6"
       />
       <Text
-        type="subtitle1"
         title="SUBTITLE1: The quick brown fox jumps over the lazy dog."
+        type="subtitle1"
       />
       <Text
-        type="subtitle2"
         title="SUBTITLE2: The quick brown fox jumps over the lazy dog."
+        type="subtitle2"
       />
       <Text
-        type="body1"
         title="BODY1: The quick brown fox jumps over the lazy dog."
+        type="body1"
       />
       <Text
-        type="body2"
         title="BODY2: The quick brown fox jumps over the lazy dog."
+        type="body2"
       />
       <Text
-        type="overline"
         title="OVERLINE: The quick brown fox jumps over the lazy dog."
+        type="overline"
       />
       <Text
-        type="caption"
         title="CAPTION: The quick brown fox jumps over the lazy dog."
+        type="caption"
       />
       <Text
-        type="button"
         title="BUTTON: The quick brown fox jumps over the lazy dog."
+        type="button"
       />
       <Text title="NOTHING: The quick brown fox jumps over the lazy dog." />
     </Screen>

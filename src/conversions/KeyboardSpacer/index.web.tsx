@@ -1,2 +1,3 @@
 import React from 'react';
-export const KeyboardSpacer = () => <></>;
+import {View} from 'react-native';
+export const KeyboardSpacer = () => <View />;

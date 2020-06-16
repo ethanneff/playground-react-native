@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {Animated, StyleSheet, View} from 'react-native';
 import {Button, Screen} from '../../../../components';
 import {getHeight, getWidth} from '../../../../models';
@@ -27,20 +27,26 @@ export default memo(function PlaygroundBall() {
       justifyContent: 'space-around',
     },
   });
-  const animate = (dx: number, dy: number) => {
-    Animated.spring(ballPosition, {
-      toValue: {x: width * dx, y: height * dy},
-      useNativeDriver: useDriver,
-    }).start();
-  };
-  const onInitialPress = () => animate(0.5, 0.5);
-  const onRandomPress = () => animate(Math.random(), Math.random());
+  const animate = useCallback(
+    (dx: number, dy: number) => {
+      Animated.spring(ballPosition, {
+        toValue: {x: width * dx, y: height * dy},
+        useNativeDriver: useDriver,
+      }).start();
+    },
+    [ballPosition, height, useDriver, width],
+  );
+  const onInitialPress = useCallback(() => animate(0.5, 0.5), [animate]);
+  const onRandomPress = useCallback(
+    () => animate(Math.random(), Math.random()),
+    [animate],
+  );
   return (
     <Screen onLeftPress={nav.to('playground')} title="Ball">
       <Animated.View style={[ballPosition.getLayout(), styles.ball]} />
       <View style={styles.button}>
-        <Button title="initial" onPress={onInitialPress} />
-        <Button title="random" onPress={onRandomPress} />
+        <Button onPress={onInitialPress} title="initial" />
+        <Button onPress={onRandomPress} title="random" />
       </View>
     </Screen>
   );

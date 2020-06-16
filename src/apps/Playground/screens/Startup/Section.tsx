@@ -19,8 +19,6 @@ export const Section = ({title, row, children}: Props) => {
         marginBottom: Theme.padding.p04,
       }}>
       <Text
-        type="h3"
-        title={title}
         style={{
           color: color.background, // TODO: add prop to text for inverse
           backgroundColor: color.secondary,
@@ -28,6 +26,8 @@ export const Section = ({title, row, children}: Props) => {
           borderColor: color.secondary,
           borderWidth: 2,
         }}
+        title={title}
+        type="h3"
       />
       <View
         style={{

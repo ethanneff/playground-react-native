@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {v4} from 'uuid';
 import {Button, Screen, TextInput} from '../../../../components';
 import {navigate} from '../../../../models';
@@ -34,24 +34,28 @@ export default memo(function ChecklistCreate() {
     );
     dispatch(navigate('checklists'));
   };
-  const handleNameChange = (name: string) =>
-    setForm((state) => ({...state, name}));
-  const handleDescriptionChange = (description: string) =>
-    setForm((state) => ({...state, description}));
+  const handleNameChange = useCallback(
+    (name: string) => setForm((state) => ({...state, name})),
+    [],
+  );
+  const handleDescriptionChange = useCallback(
+    (description: string) => setForm((state) => ({...state, description})),
+    [],
+  );
 
   return (
-    <Screen onLeftPress={nav.to('checklists')} title="Create Checklist" gutter>
+    <Screen gutter onLeftPress={nav.to('checklists')} title="Create Checklist">
       <TextInput
+        onChangeText={handleNameChange}
         title="name"
         value={form.name}
-        onChangeText={handleNameChange}
       />
       <TextInput
+        onChangeText={handleDescriptionChange}
         title="description"
         value={form.description}
-        onChangeText={handleDescriptionChange}
       />
-      <Button title="create" onPress={handleSubmit} />
+      <Button onPress={handleSubmit} title="create" />
     </Screen>
   );
 });

@@ -11,58 +11,58 @@ it('renders empty', () => {
   expect(dom).toMatchSnapshot();
 });
 it('renders h1', () => {
-  const dom = mockRenderer(<Text type="h1" title="hello" />).toJSON();
+  const dom = mockRenderer(<Text title="hello" type="h1" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it('renders type="h2"  ', () => {
-  const dom = mockRenderer(<Text type="h2" title="hello" />).toJSON();
+  const dom = mockRenderer(<Text title="hello" type="h2" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it('renders h3', () => {
-  const dom = mockRenderer(<Text type="h3" title="hello" />).toJSON();
+  const dom = mockRenderer(<Text title="hello" type="h3" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it('renders h4', () => {
-  const dom = mockRenderer(<Text type="h4" title="hello" />).toJSON();
+  const dom = mockRenderer(<Text title="hello" type="h4" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it('renders h5', () => {
-  const dom = mockRenderer(<Text type="h5" title="hello" />).toJSON();
+  const dom = mockRenderer(<Text title="hello" type="h5" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it('renders h6', () => {
-  const dom = mockRenderer(<Text type="h6" title="hello" />).toJSON();
+  const dom = mockRenderer(<Text title="hello" type="h6" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it('renders subtitle1', () => {
-  const dom = mockRenderer(<Text type="subtitle1" title="hello" />).toJSON();
+  const dom = mockRenderer(<Text title="hello" type="subtitle1" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it('renders subtitle2', () => {
-  const dom = mockRenderer(<Text type="subtitle2" title="hello" />).toJSON();
+  const dom = mockRenderer(<Text title="hello" type="subtitle2" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it('renders body1', () => {
-  const dom = mockRenderer(<Text type="body1" title="hello" />).toJSON();
+  const dom = mockRenderer(<Text title="hello" type="body1" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it('renders body2', () => {
-  const dom = mockRenderer(<Text type="body2" title="hello" />).toJSON();
+  const dom = mockRenderer(<Text title="hello" type="body2" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it('renders button', () => {
-  const dom = mockRenderer(<Text type="button" title="hello" />).toJSON();
+  const dom = mockRenderer(<Text title="hello" type="button" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it('renders button empty', () => {
-  const dom = mockRenderer(<Text type="button" title="" />).toJSON();
+  const dom = mockRenderer(<Text title="" type="button" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it('renders caption', () => {
-  const dom = mockRenderer(<Text type="caption" title="hello" />).toJSON();
+  const dom = mockRenderer(<Text title="hello" type="caption" />).toJSON();
   expect(dom).toMatchSnapshot();
 });
 it('renders overline', () => {
-  const dom = mockRenderer(<Text type="overline" title="hello" />).toJSON();
+  const dom = mockRenderer(<Text title="hello" type="overline" />).toJSON();
   expect(dom).toMatchSnapshot();
 });

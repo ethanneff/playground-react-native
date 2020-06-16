@@ -39,11 +39,11 @@ export const TextField = memo(function TextField() {
         justifyContent: 'center',
       }}>
       <TextInput
-        value={textField}
-        removeError
+        flex
         onChangeText={onMessageChange}
         onSubmitEditing={onSubmit}
-        flex
+        removeError
+        value={textField}
       />
       <Icon
         name="send"
