@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.27.5](https://github.com/ethanneff/example/compare/v2.27.4...v2.27.5) (2020-06-16)
+
+
+### Bug Fixes
+
+* enable all of react eslint rules ([7afb6d4](https://github.com/ethanneff/example/commit/7afb6d423e488be21b206333446081494e56f6b2))
+* remove snaps ([054e31c](https://github.com/ethanneff/example/commit/054e31c7b87ffeaea86c1d530d3d0c3ed9453f61))
+* update eslint for jsx rules ([0954f07](https://github.com/ethanneff/example/commit/0954f07db9b7df86c46acc41ef38bfb495a0d1d3))
+
 ## [2.27.4](https://github.com/ethanneff/example/compare/v2.27.3...v2.27.4) (2020-06-16)
 
 
