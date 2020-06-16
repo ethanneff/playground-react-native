@@ -202,14 +202,13 @@ exports[`renders correctly 1`] = `
           >
             <Text
               style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#8B8B90",
-                  },
-                ]
+                Object {
+                  "color": "#8B8B90",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
               }
             >
               Lap
@@ -252,14 +251,13 @@ exports[`renders correctly 1`] = `
           >
             <Text
               style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#50D167",
-                  },
-                ]
+                Object {
+                  "color": "#50D167",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "letterSpacing": 0.25,
+                  "opacity": 1,
+                }
               }
             >
               Start

@@ -71,6 +71,19 @@ exports[`renders correctly 1`] = `
         ]
       }
     >
+      <Text
+        style={
+          Object {
+            "color": "hsla(0, 0%, 0%, 1)",
+            "fontSize": 14,
+            "fontWeight": "300",
+            "letterSpacing": 0.25,
+            "opacity": 1,
+          }
+        }
+      >
+        ehllo
+      </Text>
       <RCTScrollView
         data={
           Array [
