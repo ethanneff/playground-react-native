@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.27.2](https://github.com/ethanneff/example/compare/v2.27.1...v2.27.2) (2020-06-15)
+
+
+### Bug Fixes
+
+* prevent ineffective prop use ([95cde78](https://github.com/ethanneff/example/commit/95cde781e99d65714800a22aca2c7445aab14092))
+* update dep label ([a1dc95a](https://github.com/ethanneff/example/commit/a1dc95a11009c7d030b74c9b93c087b72f262f00))
+
 ## [2.27.1](https://github.com/ethanneff/example/compare/v2.27.0...v2.27.1) (2020-06-15)
 
 
