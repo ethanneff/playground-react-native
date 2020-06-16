@@ -1,4 +1,4 @@
-import React, {memo, useEffect, useRef, useState} from 'react';
+import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {Screen} from '../../../../components';
 import {useColor, useNav} from '../../../../hooks';
@@ -61,32 +61,32 @@ export default memo(function PlaygroundStopWatch() {
     });
   };
 
-  const stop = () => {
+  const stop = useCallback(() => {
     if (timer.current) {
       clearInterval(timer.current);
     }
     const {laps, now, start} = state;
     const [firstLap, ...other] = laps;
     setState({laps: [firstLap + now - start, ...other], now: 0, start: 0});
-  };
+  }, [timer, state]);
 
-  const reset = () => {
+  const reset = useCallback(() => {
     setState({laps: [], now: 0, start: 0});
-  };
+  }, []);
 
-  const run = () => {
+  const run = useCallback(() => {
     timer.current = setInterval(() => {
       setState((prev) => ({...prev, now: new Date().getTime()}));
     }, 100);
-  };
+  }, []);
 
-  const start = () => {
+  const start = useCallback(() => {
     const now = new Date().getTime();
     setState({laps: [0], now, start: now});
     run();
-  };
+  }, [run]);
 
-  const resume = () => {
+  const resume = useCallback(() => {
     const now = new Date().getTime();
     setState((prev) => ({
       ...prev,
@@ -94,7 +94,7 @@ export default memo(function PlaygroundStopWatch() {
       start: now,
     }));
     run();
-  };
+  }, [run]);
 
   return (
     <Screen onLeftPress={nav.to('playground')} style={styles.container}>
