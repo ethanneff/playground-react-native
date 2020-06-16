@@ -19,7 +19,8 @@ export const RelativeDate = memo(function RelativeDate({date}: Props) {
   };
 
   useEffect(() => {
-    setInterval(() => setUpdate((prev) => prev + 1), minute);
+    const interval = setInterval(() => setUpdate((prev) => prev + 1), minute);
+    return () => clearInterval(interval);
   }, []);
 
   return (
