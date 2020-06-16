@@ -2,24 +2,8 @@ import React, {memo} from 'react';
 import {Animated, StyleSheet, View} from 'react-native';
 import {Button, Screen} from '../../../../components';
 import {getHeight, getWidth} from '../../../../models';
-import {useNativeDriver, useNav} from '../../../../hooks';
+import {useColor, useNativeDriver, useNav} from '../../../../hooks';
 import {useRootSelector} from '../../../../utils';
-
-const styles = StyleSheet.create({
-  ball: {
-    borderColor: 'black',
-    borderRadius: 30,
-    borderWidth: 30,
-    height: 60,
-    marginLeft: -30,
-    marginTop: -30,
-    width: 60,
-  },
-  button: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-});
 
 export default memo(function PlaygroundBall() {
   const height = useRootSelector(getHeight);
@@ -27,6 +11,22 @@ export default memo(function PlaygroundBall() {
   const nav = useNav();
   const ballPosition = new Animated.ValueXY({x: width / 2, y: height / 2});
   const useDriver = useNativeDriver();
+  const color = useColor();
+  const styles = StyleSheet.create({
+    ball: {
+      borderColor: color.text,
+      borderRadius: 30,
+      borderWidth: 30,
+      height: 60,
+      marginLeft: -30,
+      marginTop: -30,
+      width: 60,
+    },
+    button: {
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+    },
+  });
   const animate = (dx: number, dy: number) => {
     Animated.spring(ballPosition, {
       toValue: {x: width * dx, y: height * dy},

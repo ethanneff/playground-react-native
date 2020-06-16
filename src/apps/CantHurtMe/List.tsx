@@ -27,8 +27,8 @@ export const List = memo(function List({
   const styles = StyleSheet.create({
     list: {
       backgroundColor: color.surface,
-      paddingHorizontal: Theme.padding.p04,
       paddingBottom: Theme.padding.p04,
+      paddingHorizontal: Theme.padding.p04,
     },
   });
 

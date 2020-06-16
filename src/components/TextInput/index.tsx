@@ -44,7 +44,7 @@ interface Props {
   onSubmitEditing?(): void;
 }
 
-export const TextInput: React.FC<Props> = ({
+export const TextInput = ({
   autoCorrect,
   blurOnSubmit = true,
   clearIcon = 'close-circle',
@@ -66,7 +66,7 @@ export const TextInput: React.FC<Props> = ({
   removeError,
   title = '',
   value,
-}) => {
+}: Props) => {
   const [focus, setFocus] = useState(false);
   const color = useColor();
   const focusColor = color.primary;
@@ -78,10 +78,10 @@ export const TextInput: React.FC<Props> = ({
       borderColor: focusColor,
     },
     clear: {
-      width: 30,
       position: 'absolute',
       right: 0,
       top: 6,
+      width: 30,
     },
     flex: {
       flex: 1,

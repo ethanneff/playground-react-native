@@ -97,7 +97,7 @@ exports[`renders correctly 1`] = `
           undefined,
           Object {
             "alignItems": "center",
-            "backgroundColor": "#0D0D0D",
+            "backgroundColor": "hsl(0, 0%, 0%)",
             "flex": 1,
             "paddingHorizontal": 20,
             "paddingTop": 130,
@@ -115,7 +115,7 @@ exports[`renders correctly 1`] = `
         <Text
           style={
             Object {
-              "color": "#FFFFFF",
+              "color": "hsl(0, 0%, 100%)",
               "fontFamily": "Courier",
               "fontSize": 54,
               "fontWeight": "200",
@@ -128,7 +128,7 @@ exports[`renders correctly 1`] = `
         <Text
           style={
             Object {
-              "color": "#FFFFFF",
+              "color": "hsl(0, 0%, 100%)",
               "fontFamily": "Courier",
               "fontSize": 54,
               "fontWeight": "200",
@@ -141,7 +141,7 @@ exports[`renders correctly 1`] = `
         <Text
           style={
             Object {
-              "color": "#FFFFFF",
+              "color": "hsl(0, 0%, 100%)",
               "fontFamily": "Courier",
               "fontSize": 54,
               "fontWeight": "200",

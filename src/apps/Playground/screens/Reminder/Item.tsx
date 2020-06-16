@@ -26,34 +26,34 @@ export const Item = memo(function ReminderItem({
 }: Props) {
   const color = useColor();
   const styles = StyleSheet.create({
+    button: {
+      borderColor: color.secondary,
+      borderRadius: Theme.padding.p01,
+      borderWidth: 1,
+      flexDirection: 'row',
+      height: Theme.padding.p13,
+      justifyContent: 'space-between',
+      marginBottom: marginBottom ? Theme.padding.p02 : 0,
+    },
     container: {
       flex: 1,
       flexDirection: 'row',
 
       paddingHorizontal: Theme.padding.p02,
     },
-    button: {
-      borderRadius: Theme.padding.p01,
-      flexDirection: 'row',
-      height: Theme.padding.p13,
-      justifyContent: 'space-between',
-      borderColor: color.secondary,
-      borderWidth: 1,
-      marginBottom: marginBottom ? Theme.padding.p02 : 0,
-    },
-    title: {
-      color: active ? color.primary : color.text,
+    icon: {
+      justifyContent: 'center',
     },
     subtitle: {
-      paddingTop: Theme.padding.p01,
       paddingLeft: 1,
+      paddingTop: Theme.padding.p01,
     },
     textContainer: {
       flex: 1,
       justifyContent: 'center',
     },
-    icon: {
-      justifyContent: 'center',
+    title: {
+      color: active ? color.primary : color.text,
     },
   });
 

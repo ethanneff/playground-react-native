@@ -9,7 +9,13 @@ interface Props {
   size?: number | 'small' | 'large';
 }
 
-export function AsyncImage(props: Props) {
+export function AsyncImage({
+  uri,
+  height,
+  width,
+  color = 'black',
+  size = 'small',
+}: Props) {
   const nativeDriver = useNativeDriver();
   const imageAnimated = new Animated.Value(0);
   const indicatorAnimated = new Animated.Value(1);
@@ -28,7 +34,7 @@ export function AsyncImage(props: Props) {
       }),
     ]).start();
   };
-  const {uri, height, width, color = 'black', size = 'small'} = props;
+
   const containerStyle = {width, height};
   const imageStyle = [containerStyle, {opacity: imageAnimated}];
   const indicatorStyle = [

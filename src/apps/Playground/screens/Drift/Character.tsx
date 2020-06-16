@@ -5,7 +5,7 @@ import {
   accelerometer,
   setUpdateIntervalForType,
 } from 'react-native-sensors';
-import {useNativeDriver} from '../../../../hooks';
+import {useColor, useNativeDriver} from '../../../../hooks';
 import {getPosition} from './utils';
 import {DriftContext} from './Context';
 import {CanvasDimensions} from './Game';
@@ -28,6 +28,7 @@ export const Character = memo(function Character({canvas}: CharacterProps) {
   const position = new Animated.ValueXY(initialPositionRef.current);
   const useDriver = useNativeDriver();
   const {dispatch} = useContext(DriftContext);
+  const color = useColor();
 
   const animate = useCallback(
     (dx: number, dy: number) => {
@@ -64,7 +65,7 @@ export const Character = memo(function Character({canvas}: CharacterProps) {
           height: size,
           borderRadius: size,
           elevation,
-          shadowColor: 'black',
+          shadowColor: color.text,
           shadowOffset: {
             height: 2,
             width: 0,
@@ -72,7 +73,7 @@ export const Character = memo(function Character({canvas}: CharacterProps) {
           shadowOpacity,
           shadowRadius,
           zIndex: elevation,
-          backgroundColor: 'coral',
+          backgroundColor: color.primary,
         },
       ]}
     />

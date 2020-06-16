@@ -147,8 +147,8 @@ const Loading = memo(function NavigationLoading() {
   const color = useColor();
   const styles = StyleSheet.create({
     container: {
-      flex: 1,
       backgroundColor: color.background,
+      flex: 1,
       justifyContent: 'center',
     },
   });

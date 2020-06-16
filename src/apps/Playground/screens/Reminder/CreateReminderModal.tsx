@@ -17,12 +17,15 @@ interface Props {
   onLocationPress: (id: string) => () => void;
 }
 
-export default memo(function CreateReminderModal(props: Props) {
+export default memo(function CreateReminderModal({
+  onBackgroundPress,
+  onOneTimePress,
+}: Props) {
   const [state, setState] = useState<ReminderType>('One time');
   const styles = StyleSheet.create({
     section: {
-      paddingTop: Theme.padding.p06,
       paddingBottom: Theme.padding.p02,
+      paddingTop: Theme.padding.p06,
     },
     submit: {
       marginTop: Theme.padding.p06,
@@ -35,7 +38,7 @@ export default memo(function CreateReminderModal(props: Props) {
   );
 
   return (
-    <Modal onBackgroundPress={props.onBackgroundPress}>
+    <Modal onBackgroundPress={onBackgroundPress}>
       <Text type="h2" title="Create Reminder" />
       <Text type="caption" title="Reminder type" style={styles.section} />
       <Radio
@@ -45,7 +48,7 @@ export default memo(function CreateReminderModal(props: Props) {
       />
       <Text type="caption" title="Reminder time" style={styles.section} />
       {state === 'One time' ? (
-        <OneTime onPress={props.onOneTimePress} />
+        <OneTime onPress={onOneTimePress} />
       ) : state === 'Repeat' ? (
         <Repeat />
       ) : state === 'Location' ? (

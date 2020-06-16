@@ -1,5 +1,6 @@
 import React, {memo} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {useColor} from '../../../../hooks';
 import Timer from './Timer';
 
 interface LapProps {
@@ -10,24 +11,25 @@ interface LapProps {
 }
 
 export default memo(function Lap({num, interval, fastest, slowest}: LapProps) {
+  const color = useColor();
   const styles = StyleSheet.create({
     fastest: {
-      color: '#4BC05F',
+      color: color.success,
     },
     lap: {
-      borderColor: '#151515',
+      borderColor: color.secondary,
       borderTopWidth: 1,
       flexDirection: 'row',
       justifyContent: 'space-between',
       paddingVertical: 10,
     },
     lapText: {
-      color: '#FFFFFF',
+      color: color.text,
       fontFamily: 'Courier',
       fontSize: 18,
     },
     slowest: {
-      color: '#CC3531',
+      color: color.danger,
     },
   });
   const lapStyle = [

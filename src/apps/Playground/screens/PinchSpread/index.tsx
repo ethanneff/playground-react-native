@@ -12,7 +12,7 @@ export default function PinchSpread() {
   const color = useColor();
   const nav = useNav();
   const styles = StyleSheet.create({
-    container: {flex: 1, backgroundColor: color.light},
+    container: {backgroundColor: color.light, flex: 1},
   });
   const gestureHandler = new GestureHandler({minTouches});
   const panGesture = PanResponder.create({

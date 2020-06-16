@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {ReactNode, memo} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {useColor, useDropShadow} from '../../hooks';
 import {Theme, useRootSelector} from '../../utils';
@@ -12,8 +12,9 @@ interface Props {
   maxWidth?: number;
   noScroll?: boolean;
   onBackgroundPress?(): void;
+  children: ReactNode | ReactNode[];
 }
-export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
+export const Modal = memo(function ModalWrapperMemo({
   testID,
   onBackgroundPress,
   children,
@@ -21,36 +22,36 @@ export const Modal: React.FC<Props> = memo(function ModalWrapperMemo({
   noScroll,
   maxWidth = 500,
   maxHeight,
-}) {
+}: Props) {
   const appHeight = useRootSelector((state) => state.dimension.window.height);
   const maximumHeight = maxHeight ? maxHeight : appHeight * 0.6;
   const color = useColor();
   const dropShadow = useDropShadow(10);
   const styles = StyleSheet.create({
     container: {
+      alignItems: 'center',
+      height: '100%',
+      justifyContent: 'center',
       position: 'absolute',
       width: '100%',
-      height: '100%',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    overlay: {
-      flex: 1,
-      width: '100%',
-      backgroundColor: Theme.color.overlay,
     },
     modal: {
-      position: 'absolute',
       backgroundColor: color.background,
       borderRadius: Theme.sizing.borderRadius,
-      width: '80%',
-      maxWidth,
       maxHeight: maximumHeight,
+      maxWidth,
       overflow: 'hidden',
+      position: 'absolute',
+      width: '80%',
       ...dropShadow,
     },
     modalContent: {
       padding: Theme.padding.p08,
+    },
+    overlay: {
+      backgroundColor: Theme.color.overlay,
+      flex: 1,
+      width: '100%',
     },
   });
 

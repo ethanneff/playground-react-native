@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const Loading: React.FC<Props> = memo(({title, center, style}) => {
+export const Loading = memo(function Loading({title, center, style}: Props) {
   const containerStyles = [
     styles.row,
     center ? styles.center : undefined,

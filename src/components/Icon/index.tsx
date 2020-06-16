@@ -27,7 +27,7 @@ interface Props {
   onPress?: () => void;
 }
 
-export const Icon: React.FC<Props> = ({
+export const Icon = ({
   name,
   style,
   activeOpacity,
@@ -41,25 +41,25 @@ export const Icon: React.FC<Props> = ({
   right,
   invisible,
   onPress,
-}) => {
+}: Props) => {
   const colors = useColor();
   const dropShadow = useDropShadow(elevation);
   const styles = StyleSheet.create({
     fab: {
-      width: Theme.padding.p15,
-      height: Theme.padding.p15,
-      borderRadius: Theme.padding.p15,
-      justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: colors.primary,
+      borderRadius: Theme.padding.p15,
+      height: Theme.padding.p15,
+      justifyContent: 'center',
+      width: Theme.padding.p15,
       ...dropShadow,
-    },
-    web: {
-      width: Theme.padding.p06,
-      height: Theme.padding.p06,
     },
     right: {
       alignSelf: 'flex-end',
+    },
+    web: {
+      height: Theme.padding.p06,
+      width: Theme.padding.p06,
     },
   });
   const colored = clear ? colors.background : color ? color : colors.dark;

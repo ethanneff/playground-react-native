@@ -14,12 +14,12 @@ const Track = memo(function TrackMemo({track}: TrackProps) {
   const size = track.size / 4;
   const styles = StyleSheet.create({
     tracks: {
-      opacity: 0.4,
+      backgroundColor: track.color,
       borderRadius: track.size,
+      height: size,
+      opacity: 0.4,
       position: 'absolute',
       width: size,
-      height: size,
-      backgroundColor: track.color,
     },
   });
   return (

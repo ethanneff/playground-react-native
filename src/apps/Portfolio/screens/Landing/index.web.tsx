@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {ReactNode, memo} from 'react';
 import {Image, View} from 'react-native';
 import {
   Icon,
@@ -141,7 +141,7 @@ const AppIcon = memo(function AppIcon({onPress, type}: AppIconProps) {
 });
 
 interface SectionProps {
-  children: any;
+  children: ReactNode | ReactNode[];
   paddingTop?: number;
   backgroundColor: string;
 }

@@ -26,7 +26,7 @@ interface OwnProps {
 type Props = OwnProps;
 
 const fadeDuration = 200;
-export const Dialog: React.FC<Props> = memo(function Dialog({
+export const Dialog = memo(function Dialog({
   onCancelButtonPress,
   onConfirmButtonPress,
   onBackgroundPress,
@@ -36,7 +36,7 @@ export const Dialog: React.FC<Props> = memo(function Dialog({
   title,
   duration,
   testID,
-}) {
+}: Props) {
   const nativeDriver = useNativeDriver();
   const dropShadow = useDropShadow(10);
   const styles = StyleSheet.create({

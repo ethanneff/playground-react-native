@@ -1,8 +1,8 @@
-import React, {memo} from 'react';
+import React, {ReactNode, memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 interface ButtonRowProps {
-  children: React.ReactElement | React.ReactElement[];
+  children: ReactNode | ReactNode[];
 }
 
 export default memo(function ButtonsRow({children}: ButtonRowProps) {

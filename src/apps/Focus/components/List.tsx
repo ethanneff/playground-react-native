@@ -53,8 +53,8 @@ export const List = memo(
         opacity: loading ? 0 : 1,
       },
       loading: {
-        position: 'absolute',
         height: '100%',
+        position: 'absolute',
         width: '100%',
       },
     });

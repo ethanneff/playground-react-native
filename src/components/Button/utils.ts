@@ -23,6 +23,7 @@ export const getStyles = ({
   disable,
 }: StyleInterface) =>
   StyleSheet.create({
+    bob: {flex: 1},
     center: {
       alignSelf: 'center',
     },
@@ -42,9 +43,9 @@ export const getStyles = ({
           : 'transparent',
       borderRadius: Theme.padding.p01,
       borderWidth: 1,
-      padding: noPadding ? Theme.padding.p00 : Theme.padding.p02,
       flexDirection: 'row',
       justifyContent: 'center',
+      padding: noPadding ? Theme.padding.p00 : Theme.padding.p02,
       paddingHorizontal: noPadding ? Theme.padding.p00 : Theme.padding.p04,
     },
     invisible: {

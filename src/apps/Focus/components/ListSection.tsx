@@ -2,24 +2,28 @@ import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Text} from '../../../components';
 import {Theme} from '../../../utils';
+import {useColor} from '../../../hooks';
 import {Item} from './List';
 
 interface Props {
   item: Item;
 }
 
-export const ListSection = memo(({item}: Props) => (
-  <View
-    style={{
-      alignItems: 'center',
-      borderTopColor: 'grey',
-      borderTopWidth: 1,
-      flexDirection: 'row',
-      justifyContent: 'center',
-      marginTop: Theme.padding.p02,
-      padding: Theme.padding.p02,
-    }}>
-    <Text type="h3" title={item.dayOfMonth} />
-    <Text type="overline" title={` ${item.month}, ${item.dayOfWeek}`} />
-  </View>
-));
+export const ListSection = memo(function ListSection({item}: Props) {
+  const color = useColor();
+  return (
+    <View
+      style={{
+        alignItems: 'center',
+        borderTopColor: color.secondary,
+        borderTopWidth: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginTop: Theme.padding.p02,
+        padding: Theme.padding.p02,
+      }}>
+      <Text type="h3" title={item.dayOfMonth} />
+      <Text type="overline" title={` ${item.month}, ${item.dayOfWeek}`} />
+    </View>
+  );
+});

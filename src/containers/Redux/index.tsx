@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {ReactNode, memo} from 'react';
 import {persistReducer, persistStore} from 'redux-persist';
 import {
   Middleware,
@@ -127,8 +127,12 @@ export const store = createStore(persistedReducer, enhancers);
 const persistor = persistStore(store);
 // persistor.purge();
 
+type Props = {
+  children: ReactNode;
+};
+
 /* CONTAINER */
-export const Redux = memo(function Redux({children}) {
+export const Redux = memo(function Redux({children}: Props) {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

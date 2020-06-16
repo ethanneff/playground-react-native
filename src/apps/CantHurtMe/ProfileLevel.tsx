@@ -4,13 +4,11 @@ import {Theme} from '../../utils';
 import {useColor} from '../../hooks';
 import {Text, TouchableOpacity} from '../../components';
 
-interface OwnProps {
+interface Props {
   onPress?(): void;
 }
 
-type Props = OwnProps;
-
-export const ProfileLevel: React.FC<Props> = ({onPress}) => {
+export const ProfileLevel = ({onPress}: Props) => {
   const color = useColor();
   const image = require('../../assets/placeholder.png');
   const width = 0.2;

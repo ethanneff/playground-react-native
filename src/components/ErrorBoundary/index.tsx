@@ -1,12 +1,16 @@
-import React, {ErrorInfo} from 'react';
+import React, {ErrorInfo, ReactNode} from 'react';
 import {View} from 'react-native';
 import {Text} from '../Text';
 
-interface State {
-  hasError: boolean;
-}
+type Props = {
+  children: ReactNode;
+};
 
-export class ErrorBoundary extends React.PureComponent {
+type State = {
+  hasError: boolean;
+};
+
+export class ErrorBoundary extends React.PureComponent<Props, State> {
   state: State = {hasError: false};
 
   static getDerivedStateFromError() {

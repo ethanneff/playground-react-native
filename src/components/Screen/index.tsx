@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import {
   SafeAreaView,
   StatusBar,
@@ -20,11 +20,12 @@ interface OwnProps {
   rightIcon?: string;
   onLeftPress?(): void;
   onRightPress?(): void;
+  children: ReactNode;
 }
 
 type Props = OwnProps;
 
-export const Screen: React.FC<Props> = ({
+export const Screen = ({
   title,
   style,
   gutter,
@@ -34,7 +35,7 @@ export const Screen: React.FC<Props> = ({
   children,
   leftIcon,
   rightIcon,
-}) => {
+}: Props) => {
   const color = useColor();
   const styles = StyleSheet.create({
     container: {

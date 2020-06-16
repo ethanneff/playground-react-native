@@ -1,7 +1,7 @@
 import React, {memo, useEffect, useRef, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {Screen} from '../../../../components';
-import {useNav} from '../../../../hooks';
+import {useColor, useNav} from '../../../../hooks';
 import Timer from './Timer';
 import RoundButton from './ButtonRound';
 import LapsTable from './LapsTable';
@@ -24,17 +24,18 @@ export default memo(function PlaygroundStopWatch() {
   const elapsed = state.now - state.start;
   const interval =
     state.laps.reduce((total, curr) => total + curr, 0) + elapsed;
+  const color = useColor();
 
   const styles = StyleSheet.create({
     container: {
       alignItems: 'center',
-      backgroundColor: '#0D0D0D',
+      backgroundColor: color.text,
       flex: 1,
       paddingHorizontal: 20,
       paddingTop: 130,
     },
     timer: {
-      color: '#FFFFFF',
+      color: color.background,
       fontFamily: 'Courier',
       fontSize: 54,
       fontWeight: '200',

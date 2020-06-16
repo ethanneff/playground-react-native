@@ -40,7 +40,7 @@ interface Props {
 }
 
 // TODO: use Sentence component
-export const Content: React.FC<Props> = memo(({body}) => {
+export const Content = memo(({body}: Props) => {
   const color = useColor();
   const styles = StyleSheet.create({
     content: {

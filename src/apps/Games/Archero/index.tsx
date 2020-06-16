@@ -117,7 +117,7 @@ export default memo(function Archero() {
     <Screen onLeftPress={nav.to('portfolioLanding')} title="Archero">
       <View
         onLayout={onLayout}
-        style={[{flex: 1, backgroundColor: color.success}]}
+        style={{flex: 1, backgroundColor: color.success}}
         {...panGesture.panHandlers}>
         <Animated.View
           style={[

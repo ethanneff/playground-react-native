@@ -14,23 +14,23 @@ interface Props {
   onRightPress?(): void;
 }
 
-export const NavBar: React.FC<Props> = ({
+export const NavBar = ({
   title,
   onLeftPress,
   onRightPress,
   border,
   leftIcon = 'chevron-left',
   rightIcon = 'close',
-}) => {
+}: Props) => {
   const color = useColor();
   const styles = StyleSheet.create({
     container: {
       alignItems: 'center',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
       borderBottomColor: border ? color.secondary : color.background,
       borderBottomWidth: 1,
+      flexDirection: 'row',
       height: Theme.padding.p18,
+      justifyContent: 'space-between',
     },
   });
 

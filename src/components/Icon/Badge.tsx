@@ -11,7 +11,7 @@ interface Props {
 const badgeLimit = '!';
 const maxBadgeNumber = 99;
 
-export const Badge: React.FC<Props> = memo(({badge}) => {
+export const Badge = memo(({badge}: Props) => {
   const color = useColor();
   const styles = StyleSheet.create({
     badgeContainer: {

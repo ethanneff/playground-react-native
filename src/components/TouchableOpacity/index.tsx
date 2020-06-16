@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, {ReactNode, useCallback} from 'react';
 import {TouchableOpacity as Original, StyleProp, ViewStyle} from 'react-native';
 import {Sound} from '../../conversions';
 
@@ -9,10 +9,11 @@ interface Props {
   disabled?: boolean;
   onPress?(): void;
   onLongPress?(): void;
+  children?: ReactNode | ReactNode[];
 }
 
 const sound = new Sound(require('./tap.mp3'));
-export const TouchableOpacity: React.FC<Props> = ({
+export const TouchableOpacity = ({
   testID,
   onPress,
   onLongPress,
@@ -20,7 +21,7 @@ export const TouchableOpacity: React.FC<Props> = ({
   disabled,
   activeOpacity,
   style,
-}) => {
+}: Props) => {
   const onPressHandler = useCallback(() => {
     sound.stop(() => sound.play());
     if (onPress) {

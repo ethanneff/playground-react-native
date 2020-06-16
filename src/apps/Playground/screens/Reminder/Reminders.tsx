@@ -7,15 +7,15 @@ interface Props {
   reminders: Reminder[];
 }
 
-export default memo(function Reminders(props: Props) {
+export default memo(function Reminders({reminders}: Props) {
   const renderItem = useCallback(
     ({item, index}) => (
       <Text
         title={item.format}
-        type={index === props.reminders.length - 1 ? 'button' : undefined}
+        type={index === reminders.length - 1 ? 'button' : undefined}
       />
     ),
-    [props],
+    [reminders],
   );
 
   return (
@@ -23,7 +23,7 @@ export default memo(function Reminders(props: Props) {
       inverted
       keyExtractor={(item) => item.id}
       style={{flex: 1}}
-      data={props.reminders}
+      data={reminders}
       renderItem={renderItem}
     />
   );

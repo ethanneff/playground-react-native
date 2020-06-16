@@ -30,7 +30,7 @@ export interface TextProps {
 }
 
 const sound = new Sound(require('./../TouchableOpacity/tap.mp3'));
-export const Text: React.FC<TextProps> = ({
+export const Text = ({
   type,
   emphasis,
   title,
@@ -68,11 +68,11 @@ export const Text: React.FC<TextProps> = ({
       flex: 1,
       textAlignVertical: 'center',
     },
-    invisible: {
-      opacity: 0,
-    },
     color: {
       color: textColorWithOpacity,
+    },
+    invisible: {
+      opacity: 0,
     },
   });
 

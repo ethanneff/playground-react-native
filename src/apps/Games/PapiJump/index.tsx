@@ -43,8 +43,8 @@ export default memo(function PapiJump() {
   const nav = useNav();
   const styles = StyleSheet.create({
     container: {
-      flex: 1,
       backgroundColor: color.surface,
+      flex: 1,
     },
   });
   return (

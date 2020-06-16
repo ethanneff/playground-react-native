@@ -43,8 +43,8 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
   const navigatedToAppStore = useRef(false);
   const [form, setForm] = useState<State>(initialState);
   const styles = StyleSheet.create({
-    title: {paddingBottom: Theme.padding.p04},
     modal: {padding: Theme.padding.p06},
+    title: {paddingBottom: Theme.padding.p04},
   });
   const completeState = {
     rating: form.rating,

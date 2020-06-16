@@ -10,7 +10,7 @@ interface Props {
   onPress?(): void;
 }
 
-export const NavButton: React.FC<Props> = ({onPress, icon, isRight}) => {
+export const NavButton = ({onPress, icon, isRight}: Props) => {
   const color = useColor();
   const styles = StyleSheet.create({
     button: {

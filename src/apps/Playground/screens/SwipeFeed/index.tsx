@@ -52,13 +52,23 @@ export const formatRelativeDate = (date: Dayjs) => {
     : '';
 };
 
-const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
+const SwipeCard = memo(function SwipeCard({
+  image,
+  height,
+  icon,
+  title,
+  date,
+  body,
+  button,
+  onSwipeComplete,
+  onSwipePercentChange,
+}: SwipeCard) {
   const cardWidth = useRef(0);
   const color = useColor();
   const useDriver = useNativeDriver();
   const width = useRootSelector(getWidth);
   const dropShadow = useDropShadow(4);
-  const imageHeight = props.height / 1.5;
+  const imageHeight = height / 1.5;
   const swipeThreshold = width / 3;
   const touchThreshold = 50;
   const position = new Animated.ValueXY();
@@ -72,9 +82,9 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
 
   const setCardWidth = useCallback(
     (dx: number) => {
-      props.onSwipePercentChange(1 - dx / cardWidth.current);
+      onSwipePercentChange(1 - dx / cardWidth.current);
     },
-    [cardWidth, props],
+    [cardWidth, onSwipePercentChange],
   );
 
   const panResponder = PanResponder.create({
@@ -108,17 +118,17 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
         position: 'absolute',
         width: '100%',
         left: position.x,
-        height: props.height,
+        height: height,
         backgroundColor: color.background,
         borderRadius: Theme.padding.p01,
         borderColor: color.brand,
         ...dropShadow,
       }}>
-      <TouchableOpacity style={{flex: 1}} onPress={props.onSwipeComplete}>
+      <TouchableOpacity style={{flex: 1}} onPress={onSwipeComplete}>
         <View style={{flex: 1, flexDirection: 'row'}}>
-          {props.image && (
+          {image && (
             <Image
-              source={props.image}
+              source={image}
               style={{
                 height: imageHeight,
                 width: imageHeight,
@@ -132,25 +142,22 @@ const SwipeCard = memo(function SwipeCard(props: SwipeCard) {
                 flexDirection: 'row',
                 alignItems: 'center',
               }}>
-              <Icon name={props.icon} size={15} />
+              <Icon name={icon} size={15} />
               <Text
-                title={props.title}
+                title={title}
                 type="overline"
                 bold
                 style={{paddingHorizontal: Theme.padding.p01}}
               />
-              <Text title={formatRelativeDate(props.date)} />
+              <Text title={formatRelativeDate(date)} />
             </View>
             <Text
               style={{flex: 1, paddingTop: Theme.padding.p02}}
-              title={props.body}
+              title={body}
               numberOfLines={2}
               ellipsizeMode="tail"
             />
-            <Text
-              title={props.button.toUpperCase()}
-              style={{color: color.primary}}
-            />
+            <Text title={button.toUpperCase()} style={{color: color.primary}} />
           </View>
         </View>
       </TouchableOpacity>
@@ -241,9 +248,9 @@ interface BadgeProps {
   percent: number;
 }
 
-const Badge = memo((props: BadgeProps) => {
+const Badge = memo(function Badge({count, percent}: BadgeProps) {
   const size = Theme.padding.p06;
-  const badgeSize = size * props.percent;
+  const badgeSize = size * percent;
   const color = useColor();
   return (
     <View
@@ -253,7 +260,7 @@ const Badge = memo((props: BadgeProps) => {
         width: size,
         height: size,
         margin: Theme.padding.p01,
-        zIndex: props.count * 10,
+        zIndex: count * 10,
         alignItems: 'center',
         justifyContent: 'center',
       }}>
@@ -267,7 +274,7 @@ const Badge = memo((props: BadgeProps) => {
           justifyContent: 'center',
         }}>
         <Text
-          title={`${props.count}`}
+          title={`${count}`}
           style={{color: color.background}}
           adjustsFontSizeToFit
         />

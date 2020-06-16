@@ -115,7 +115,7 @@ exports[`renders correctly 1`] = `
       <View
         style={
           Object {
-            "borderColor": "black",
+            "borderColor": "hsl(0, 0%, 0%)",
             "borderRadius": 30,
             "borderWidth": 30,
             "height": 60,

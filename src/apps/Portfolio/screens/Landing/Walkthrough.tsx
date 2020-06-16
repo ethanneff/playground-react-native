@@ -11,15 +11,6 @@ interface Data {
   color: string;
 }
 
-const styles = (width: number, color: string) =>
-  StyleSheet.create({
-    item: {
-      backgroundColor: color,
-      justifyContent: 'center',
-      width,
-    },
-  });
-
 export default memo(function Walkthrough() {
   const width = useRootSelector(getWidth);
   const color = useColor();
@@ -30,11 +21,22 @@ export default memo(function Walkthrough() {
     {key: 4, text: 'jill', color: color.brand},
   ];
 
-  const renderItem = ({item}: {item: Data}) => (
-    <View style={styles(width, item.color).item}>
-      <Text title={item.text} center />
-    </View>
-  );
+  const renderItem = ({item}: {item: Data}) => {
+    const styles = StyleSheet.create({
+      item: {
+        backgroundColor: item.color,
+        justifyContent: 'center',
+        width,
+      },
+    });
+
+    return (
+      <View style={styles.item}>
+        <Text title={item.text} center />
+      </View>
+    );
+  };
+
   return (
     <FlatList
       pagingEnabled

@@ -1,15 +1,16 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import {View} from 'react-native';
 import {useColor} from '../../../../hooks';
 import {Text} from '../../../../components';
 import {Theme} from '../../../../utils';
 
-type SectionProps = {
+type Props = {
   row?: boolean;
   title: string;
+  children: ReactNode;
 };
 
-export const Section: React.FC<SectionProps> = ({title, row, children}) => {
+export const Section = ({title, row, children}: Props) => {
   const color = useColor();
   return (
     <View

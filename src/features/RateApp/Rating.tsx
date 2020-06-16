@@ -14,18 +14,20 @@ interface Props {
   iconUnfilled?: string;
 }
 
-export const Rating = memo(function RatingMemo(props: Props) {
+export const Rating = memo(function RatingMemo({
+  size,
+  count,
+  onPress,
+  rating,
+  colorFilled,
+  colorUnfilled,
+  iconFilled = 'star',
+  iconUnfilled = 'star-outline',
+}: Props) {
   const color = useColor();
-  const {
-    size,
-    count,
-    onPress,
-    rating,
-    colorFilled = color.text,
-    colorUnfilled = color.secondary,
-    iconFilled = 'star',
-    iconUnfilled = 'star-outline',
-  } = props;
+  const fill = colorFilled || color.text;
+  const unfilled = colorUnfilled || color.secondary;
+
   const handleOnPress = useCallback(
     (index: number) => () => {
       onPress(index);
@@ -41,7 +43,7 @@ export const Rating = memo(function RatingMemo(props: Props) {
             <Icon
               size={size}
               name={index > rating || !rating ? iconUnfilled : iconFilled}
-              color={index > rating || !rating ? colorUnfilled : colorFilled}
+              color={index > rating || !rating ? unfilled : fill}
             />
           </TouchableOpacity>
         ))}

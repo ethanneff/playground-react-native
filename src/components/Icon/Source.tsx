@@ -16,13 +16,13 @@ const styles = StyleSheet.create({
   },
 });
 
-export const Source: React.FC<Props> = memo(function IconSource({
+export const Source = memo(function IconSource({
   name,
   size,
   color,
   style,
   invisible,
-}) {
+}: Props) {
   const containerStyle = [invisible ? styles.invisible : undefined, style];
   return (
     <Original name={name} size={size} color={color} style={containerStyle} />

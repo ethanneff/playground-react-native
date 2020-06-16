@@ -1,45 +1,33 @@
 import React, {useCallback, useState} from 'react';
 import {FlatList, View} from 'react-native';
-import {connect} from 'react-redux';
 import {Card, Dialog, Icon, Text} from '../../../../../components';
-import {RootState} from '../../../../../containers';
 import {
-  Questionnaire,
   createQuestionnaire,
   getQuestionnaireArray,
   removeQuestionnaire,
   selectQuestionnaire,
-  updateQuestionnaire,
 } from '../models';
 import {useColor} from '../../../../../hooks';
+import {useRootDispatch, useRootSelector} from '../../../../../utils';
 
-interface StateProps {
-  questionnaires: Questionnaire[];
-  selected?: string;
-}
-interface DispatchProps {
-  removeQuestionnaire: typeof removeQuestionnaire;
-  selectQuestionnaire: typeof selectQuestionnaire;
-  updateQuestionnaire: typeof updateQuestionnaire;
-  createQuestionnaire: typeof createQuestionnaire;
-}
-type Props = StateProps & DispatchProps;
-
-const Container = (props: Props) => {
+export const Questionnaires = () => {
+  const questionnaires = useRootSelector(getQuestionnaireArray);
+  const selected = useRootSelector((state) => state.questionnaires.selected);
   const [actionSheet, setActionSheet] = useState(false);
+  const dispatch = useRootDispatch();
   const color = useColor();
   const handleLongPress = useCallback(
-    (id: string) => () => props.removeQuestionnaire(id),
-    [props],
+    (id: string) => () => dispatch(removeQuestionnaire(id)),
+    [dispatch],
   );
   const handleItemPress = useCallback(
-    (id: string) => () => props.selectQuestionnaire(id),
-    [props],
+    (id: string) => () => dispatch(selectQuestionnaire(id)),
+    [dispatch],
   );
   const handleActionSheetClose = useCallback(() => setActionSheet(false), []);
   const handleCreate = useCallback(
-    () => props.createQuestionnaire(String(Date.now())),
-    [props],
+    () => dispatch(createQuestionnaire(String(Date.now()))),
+    [dispatch],
   );
   const handleItemMenu = useCallback(() => {
     setActionSheet((state) => !state);
@@ -52,7 +40,7 @@ const Container = (props: Props) => {
         <Card
           onPress={handleItemPress(item.id)}
           onLongPress={handleLongPress(item.id)}
-          selected={props.selected === item.id}>
+          selected={selected === item.id}>
           <View
             style={{
               flexDirection: 'row',
@@ -67,15 +55,15 @@ const Container = (props: Props) => {
         </Card>
       );
     },
-    [handleItemMenu, handleItemPress, handleLongPress, props.selected],
+    [handleItemMenu, handleItemPress, handleLongPress, selected],
   );
 
   return (
     <>
       <FlatList
         keyExtractor={(item) => item.id}
-        data={props.questionnaires}
-        extraData={props.selected}
+        data={questionnaires}
+        extraData={selected}
         renderItem={renderItem}
       />
       <Icon
@@ -96,20 +84,3 @@ const Container = (props: Props) => {
     </>
   );
 };
-
-const mapStateToProps = (state: RootState): StateProps => ({
-  questionnaires: getQuestionnaireArray(state),
-  selected: state.questionnaires.selected,
-});
-
-const mapDispatchToProps: DispatchProps = {
-  createQuestionnaire,
-  removeQuestionnaire,
-  selectQuestionnaire,
-  updateQuestionnaire,
-};
-
-export const Questionnaires = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Container);

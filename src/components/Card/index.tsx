@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import {StyleSheet, View, ViewStyle} from 'react-native';
 import {Theme} from '../../utils';
 import {useColor, useDropShadow} from '../../hooks';
@@ -16,10 +16,11 @@ interface Props {
   borderRadius?: number;
   onPress?(): void;
   onLongPress?(): void;
+  children?: ReactNode | ReactNode[];
 }
 
 const touchOpacity = 0.3;
-export const Card: React.FC<Props> = ({
+export const Card = ({
   borderRadius = Theme.sizing.borderRadius,
   borderWidth = 1,
   children,
@@ -32,7 +33,7 @@ export const Card: React.FC<Props> = ({
   selected,
   testID,
   style,
-}) => {
+}: Props) => {
   const color = useColor();
   const dropShadow = useDropShadow(elevation);
   const opacity =

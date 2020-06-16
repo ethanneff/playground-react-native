@@ -60,8 +60,8 @@ export default function PlaygroundDrag() {
       ...dropShadow,
     },
     canvas: {
-      flex: 1,
       backgroundColor: color.surface,
+      flex: 1,
     },
   });
   const ballPosition: Animated.ValueXY = new Animated.ValueXY(initialPosition);

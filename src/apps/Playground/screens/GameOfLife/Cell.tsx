@@ -10,16 +10,22 @@ interface CellProps {
   onItemPress(x: number, y: number): () => void;
 }
 
-export const Cell = memo(function Cell(props: CellProps) {
+export const Cell = memo(function Cell({
+  x,
+  y,
+  row,
+  size,
+  onItemPress,
+}: CellProps) {
   const color = useColor();
   return (
     <TouchableOpacity
-      onPress={props.onItemPress(props.x, props.y)}
-      key={`${props.x}-${props.y}`}
+      onPress={onItemPress(x, y)}
+      key={`${x}-${y}`}
       style={{
-        height: props.size,
-        width: props.size,
-        backgroundColor: props.row ? color.primary : color.surface,
+        height: size,
+        width: size,
+        backgroundColor: row ? color.primary : color.surface,
         borderWidth: 1,
         borderColor: color.light,
       }}
