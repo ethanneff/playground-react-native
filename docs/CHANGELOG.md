@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.27.6](https://github.com/ethanneff/example/compare/v2.27.5...v2.27.6) (2020-06-16)
+
+
+### Bug Fixes
+
+* add callback on stopwatch ([40cb70d](https://github.com/ethanneff/example/commit/40cb70d500e2192d48bf8b48cb41e3ed46ea74fe))
+* clear interval ([356a0da](https://github.com/ethanneff/example/commit/356a0da9b20d33c97c1d424c27b96fabc0e9483c))
+
 ## [2.27.5](https://github.com/ethanneff/example/compare/v2.27.4...v2.27.5) (2020-06-16)
 
 
