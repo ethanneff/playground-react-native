@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.27.8](https://github.com/ethanneff/example/compare/v2.27.7...v2.27.8) (2020-06-17)
+
+
+### Bug Fixes
+
+* make android work again ([72ac49f](https://github.com/ethanneff/example/commit/72ac49f5cfae5a1ebb386ebf8189e1115da5beec))
+
 ## [2.27.7](https://github.com/ethanneff/example/compare/v2.27.6...v2.27.7) (2020-06-17)
 
 
