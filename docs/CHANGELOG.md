@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.27.7](https://github.com/ethanneff/example/compare/v2.27.6...v2.27.7) (2020-06-17)
+
+
+### Bug Fixes
+
+* correct ncu script ([4c1d004](https://github.com/ethanneff/example/commit/4c1d00431ce728eab028f71641f0eff2dc64baf4))
+
 ## [2.27.6](https://github.com/ethanneff/example/compare/v2.27.5...v2.27.6) (2020-06-16)
 
 
