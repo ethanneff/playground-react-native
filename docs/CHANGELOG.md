@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.27.9](https://github.com/ethanneff/example/compare/v2.27.8...v2.27.9) (2020-06-17)
+
+
+### Bug Fixes
+
+* update deps ([b668830](https://github.com/ethanneff/example/commit/b66883001ea2bfa6775af982e4ee5dbe82df64dd))
+
 ## [2.27.8](https://github.com/ethanneff/example/compare/v2.27.7...v2.27.8) (2020-06-17)
 
 
