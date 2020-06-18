@@ -686,7 +686,7 @@ PODS:
   - RNFBApp (7.2.1):
     - Firebase/CoreOnly (~> 6.25.0)
     - React
-  - RNFBAuth (8.0.5):
+  - RNFBAuth (8.0.6):
     - Firebase/Auth (~> 6.25.0)
     - React
     - RNFBApp
@@ -979,7 +979,7 @@ SPEC CHECKSUMS:
   RNDeviceInfo: b6e650fbd234732c759544218657d549b4339038
   RNFBAnalytics: d986cc14df3bf2942bd8f917578e5f2dc185a7dd
   RNFBApp: def13f6392e7c9839c938879f065ec0088c4496a
-  RNFBAuth: da10602d9f8644a1669d824c862e7321b1f0fc9e
+  RNFBAuth: 441be426b41e2df95fddb81859ef0d6a7a5541c3
   RNFBCrashlytics: ce4deb00692924b6c796e438a3c573baf07ed5c8
   RNFBFirestore: b6209c3c80f6dc934e72443c007299f594041904
   RNFBRemoteConfig: d583af1e99a17df985df644b868fe0635ded497c

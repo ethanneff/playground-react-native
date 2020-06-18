@@ -28,7 +28,7 @@
     "@react-native-community/slider": "3.0.0",
     "@react-native-firebase/analytics": "7.1.4",
     "@react-native-firebase/app": "7.2.1",
-    "@react-native-firebase/auth": "8.0.5",
+    "@react-native-firebase/auth": "8.0.6",
     "@react-native-firebase/crashlytics": "7.1.5",
     "@react-native-firebase/firestore": "7.1.7",
     "@react-native-firebase/remote-config": "7.1.4",
