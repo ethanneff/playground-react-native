@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useRef, useState} from 'react';
 import {
   Animated,
   LayoutChangeEvent,
@@ -12,6 +12,7 @@ import {Screen} from '../../../components';
 
 const charSize = 50;
 const charSpeed = 40;
+const fps = 1000 / 60;
 
 const getLimit = (value: number, limit: number) =>
   value > limit ? limit : value < -limit ? -limit : value;
@@ -22,6 +23,9 @@ export default memo(function Archero() {
   const color = useColor();
   const nav = useNav();
   const useDriver = useNativeDriver();
+  const timer = useRef(false);
+  const interval = useRef<any>(null);
+  const gesture = useRef({x0: 0, y0: 0, dx: 0, dy: 0});
   const window = useRootSelector((state) => state.dimension.window);
   const [dimensions, setDimensions] = useState({width: 1000, height: 1000});
   const {width, height} = dimensions;
@@ -46,9 +50,9 @@ export default memo(function Archero() {
     characterValueXY = {x, y};
   });
 
-  const moveCharacter = (dx: number, dy: number) => {
-    const vx = getLimit(dx, charSpeed);
-    const vy = getLimit(dy, charSpeed);
+  const moveCharacter = () => {
+    const vx = getLimit(gesture.current.dx, charSpeed);
+    const vy = getLimit(gesture.current.dy, charSpeed);
     const x = getBounds(characterValueXY.x + vx, width, charSize);
     const y = getBounds(characterValueXY.y + vy, height, charSize);
     Animated.spring(character, {
@@ -57,25 +61,22 @@ export default memo(function Archero() {
     }).start();
   };
 
-  const moveThumb = (dx: number, dy: number) => {
-    const vx = getLimit(dx, thumbSize);
-    const vy = getLimit(dy, thumbSize);
-
-    // const zy = Math.sqrt(Math.pow(vx, 2) + Math.pow(vy, 2));
-    // Math.pow(thumbSize, 2) = Math.pow(vx, 2) + Math.pow(y, 2)
+  const moveThumb = () => {
+    const vx = getLimit(gesture.current.dx, thumbSize);
+    const vy = getLimit(gesture.current.dy, thumbSize);
     Animated.spring(thumb, {
       toValue: {x: vx, y: vy},
       useNativeDriver: useDriver,
     }).start();
   };
 
-  const moveJoystick = (x0: number, y0: number) => {
+  const moveJoystick = () => {
     const offset = window.height - dimensions.height;
     const offset2 = window.width - dimensions.width;
     // TODO: handle joystick location better
     const toValue = {
-      x: x0 - joystickCenter - offset2 / 2,
-      y: y0 - joystickCenter - offset / 2 - joystickSize / 1.5,
+      x: gesture.current.x0 - joystickCenter - offset2 / 2,
+      y: gesture.current.y0 - joystickCenter - offset / 2 - joystickSize / 1.5,
     };
     Animated.spring(joystick, {toValue, useNativeDriver: useDriver}).start();
   };
@@ -94,19 +95,31 @@ export default memo(function Archero() {
   const panGesture: PanResponderInstance = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
     onMoveShouldSetPanResponderCapture: () => true,
-    onPanResponderStart: (_, gestureState) => {
-      moveJoystick(gestureState.x0, gestureState.y0);
+    onPanResponderStart: (_, g) => {
+      timer.current = true;
+      gesture.current = {x0: g.x0, y0: g.y0, dx: g.dx, dy: g.dy};
+      onUpdate();
     },
-    onPanResponderMove: (_, gestureState) => {
-      // TODO: continue moving even if mouse is not moving
-      moveCharacter(gestureState.dx, gestureState.dy);
-      // TODO: figure out bounds for controller
-      moveThumb(gestureState.dx, gestureState.dy);
+    onPanResponderMove: (_, g) => {
+      gesture.current = {x0: g.x0, y0: g.y0, dx: g.dx, dy: g.dy};
     },
     onPanResponderRelease: () => {
-      resetJoystick();
+      timer.current = false;
     },
   });
+
+  const onUpdate = () => {
+    interval.current = setInterval(() => {
+      if (!timer.current) {
+        clearInterval(interval.current);
+        resetJoystick();
+        return;
+      }
+      moveJoystick();
+      moveCharacter();
+      moveThumb();
+    }, fps);
+  };
 
   const onLayout = (event: LayoutChangeEvent) => {
     const layout = event.nativeEvent.layout;
