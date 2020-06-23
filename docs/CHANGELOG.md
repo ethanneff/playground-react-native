@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.27.10](https://github.com/ethanneff/example/compare/v2.27.9...v2.27.10) (2020-06-23)
+
+
+### Bug Fixes
+
+* relocate playground ([c712192](https://github.com/ethanneff/example/commit/c7121922a61139120f288073966038bcbfd8dbc0))
+* update deps ([2e8e656](https://github.com/ethanneff/example/commit/2e8e6562ba744e98251eba74db90e17f55362fb0))
+* update deps ([7e9d5f5](https://github.com/ethanneff/example/commit/7e9d5f5c7840995ec9311fae8d002c31e0940faa))
+* update deps ([9bd1a5c](https://github.com/ethanneff/example/commit/9bd1a5c3c663288f79f700254883898bd5328779))
+* update deps ([11ecff5](https://github.com/ethanneff/example/commit/11ecff5d67915f8d1b8c05192e7864015c661a5f))
+* update snaps ([f5c7ecd](https://github.com/ethanneff/example/commit/f5c7ecd95a3ffd6c1bceecb73933f5a6205a9d90))
+
 ## [2.27.9](https://github.com/ethanneff/example/compare/v2.27.8...v2.27.9) (2020-06-17)
 
 
