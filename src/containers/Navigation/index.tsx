@@ -37,61 +37,43 @@ const Focus = lazy(() => import('../../apps/Focus'));
 const CantHurtMe = lazy(() => import('../../apps/CantHurtMe'));
 const Journal = lazy(() => import('../../apps/Journal'));
 const Activity = lazy(() => import('../../apps/Activity'));
-const Playground = lazy(() => import('../../apps/Playground/screens/Main'));
-const PlaygroundArticle = lazy(() =>
-  import('../../apps/Playground/screens/Article'),
-);
-const PlaygroundBall = lazy(() => import('../../apps/Playground/screens/Ball'));
-const PlaygroundChat = lazy(() => import('../../apps/Playground/screens/Chat'));
-const PlaygroundColors = lazy(() =>
-  import('../../apps/Playground/screens/Colors'),
-);
-const PlaygroundDarkMode = lazy(() =>
-  import('../../apps/Playground/screens/DarkMode'),
-);
-const PlaygroundDrag = lazy(() => import('../../apps/Playground/screens/Drag'));
-const PlaygroundDrift = lazy(() =>
-  import('../../apps/Playground/screens/Drift'),
-);
-const PlaygroundFonts = lazy(() =>
-  import('../../apps/Playground/screens/Fonts'),
-);
+const Playground = lazy(() => import('../../apps/Playground/Main'));
+const PlaygroundArticle = lazy(() => import('../../apps/Playground/Article'));
+const PlaygroundBall = lazy(() => import('../../apps/Playground/Ball'));
+const PlaygroundChat = lazy(() => import('../../apps/Playground/Chat'));
+const PlaygroundColors = lazy(() => import('../../apps/Playground/Colors'));
+const PlaygroundDarkMode = lazy(() => import('../../apps/Playground/DarkMode'));
+const PlaygroundDrag = lazy(() => import('../../apps/Playground/Drag'));
+const PlaygroundDrift = lazy(() => import('../../apps/Playground/Drift'));
+const PlaygroundFonts = lazy(() => import('../../apps/Playground/Fonts'));
 const PlaygroundSwipeFeed = lazy(() =>
-  import('../../apps/Playground/screens/SwipeFeed'),
+  import('../../apps/Playground/SwipeFeed'),
 );
-const PlaygroundReminder = lazy(() =>
-  import('../../apps/Playground/screens/Reminder'),
-);
-const PlaygroundTinder = lazy(() =>
-  import('../../apps/Playground/screens/Tinder'),
-);
+const PlaygroundReminder = lazy(() => import('../../apps/Playground/Reminder'));
+const PlaygroundTinder = lazy(() => import('../../apps/Playground/Tinder'));
 const PlaygroundGameOfLife = lazy(() =>
-  import('../../apps/Playground/screens/GameOfLife'),
+  import('../../apps/Playground/GameOfLife'),
 );
 const PlaygroundImage = lazy(() =>
-  import('../../apps/Playground/screens/ImageCollection'),
+  import('../../apps/Playground/ImageCollection'),
 );
-const PlaygroundInput = lazy(() =>
-  import('../../apps/Playground/screens/Input'),
-);
-const PlaygroundOKRs = lazy(() => import('../../apps/Playground/screens/OKRs'));
+const PlaygroundInput = lazy(() => import('../../apps/Playground/Input'));
+const PlaygroundOKRs = lazy(() => import('../../apps/Playground/OKRs'));
 const PlaygroundPinchSpread = lazy(() =>
-  import('../../apps/Playground/screens/PinchSpread'),
+  import('../../apps/Playground/PinchSpread'),
 );
 const PlaygroundQuestionnaire = lazy(() =>
-  import('../../apps/Playground/screens/Questionnaire'),
+  import('../../apps/Playground/Questionnaire'),
 );
 const PlaygroundSearchBar = lazy(() =>
-  import('../../apps/Playground/screens/SearchBar'),
+  import('../../apps/Playground/SearchBar'),
 );
-const PlaygroundStartup = lazy(() =>
-  import('../../apps/Playground/screens/Startup'),
-);
+const PlaygroundStartup = lazy(() => import('../../apps/Playground/Startup'));
 const PlaygroundStopwatch = lazy(() =>
-  import('../../apps/Playground/screens/Stopwatch'),
+  import('../../apps/Playground/Stopwatch'),
 );
 const PlaygroundAppleMask = lazy(() =>
-  import('../../apps/Playground/screens/AppleMask'),
+  import('../../apps/Playground/AppleMask'),
 );
 const GamesFlappyBird = lazy(() => import('../../apps/Games/FlappyBird'));
 const GamesSnake = lazy(() => import('../../apps/Games/Snake'));
