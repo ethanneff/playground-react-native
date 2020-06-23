@@ -16,13 +16,13 @@ module.exports = {
   ],
   rules: {
     // add
-    'sort-imports': ['error', {ignoreDeclarationSort: true}],
-    'import/order': 'error',
+    'sort-imports': ['warn', {ignoreDeclarationSort: true}],
+    'import/order': 'warn',
     'react/function-component-definition': [
-      'error',
+      'warn',
       {namedComponents: 'arrow-function', unnamedComponents: 'arrow-function'},
     ],
-    // ignore
+    // ignore (outside prettier and typescript rules)
     'react/jsx-indent': 'off',
     'react/jsx-indent-props': 'off',
     'react/jsx-closing-bracket-location': 'off',
@@ -30,7 +30,7 @@ module.exports = {
     'react/jsx-max-props-per-line': 'off',
     'react/jsx-no-useless-fragment': 'off',
     'react/jsx-one-expression-per-line': 'off',
-    // TODO: remove
+    // TODO: remove (good rules with extra effort)
     'react-native/no-inline-styles': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-max-depth': 'off',
