@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.27.11](https://github.com/ethanneff/example/compare/v2.27.10...v2.27.11) (2020-06-23)
+
+
+### Bug Fixes
+
+* continue moving even if mouse is not moving ([392cde4](https://github.com/ethanneff/example/commit/392cde466a775108e26717b490f667093fdeb598))
+* update deps ([2449f8c](https://github.com/ethanneff/example/commit/2449f8c599598dccc9f33148d714d5a966f7bc88))
+* warn instead of error for custom rules ([99cda3d](https://github.com/ethanneff/example/commit/99cda3ddfd55f807b40141619e349772c8c79997))
+
 ## [2.27.10](https://github.com/ethanneff/example/compare/v2.27.9...v2.27.10) (2020-06-23)
 
 
