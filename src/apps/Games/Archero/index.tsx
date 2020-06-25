@@ -51,8 +51,9 @@ export default memo(function Archero() {
   });
 
   const moveCharacter = () => {
-    const vx = getLimit(gesture.current.dx, charSpeed);
-    const vy = getLimit(gesture.current.dy, charSpeed);
+    const {dx, dy} = gesture.current;
+    const vx = getLimit(dx, charSpeed);
+    const vy = getLimit(dy, charSpeed);
     const x = getBounds(characterValueXY.x + vx, width, charSize);
     const y = getBounds(characterValueXY.y + vy, height, charSize);
     Animated.spring(character, {
@@ -62,21 +63,26 @@ export default memo(function Archero() {
   };
 
   const moveThumb = () => {
-    const vx = getLimit(gesture.current.dx, thumbSize);
-    const vy = getLimit(gesture.current.dy, thumbSize);
+    const {dx, dy} = gesture.current;
+    const angle = Math.atan2(dx, dy);
+    const dz = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+    const z = getLimit(dz, thumbSize);
+    const x = z * Math.sin(angle);
+    const y = z * Math.cos(angle);
     Animated.spring(thumb, {
-      toValue: {x: vx, y: vy},
+      toValue: {x, y},
       useNativeDriver: useDriver,
     }).start();
   };
 
   const moveJoystick = () => {
+    const {x0, y0} = gesture.current;
     const offset = window.height - dimensions.height;
     const offset2 = window.width - dimensions.width;
     // TODO: handle joystick location better
     const toValue = {
-      x: gesture.current.x0 - joystickCenter - offset2 / 2,
-      y: gesture.current.y0 - joystickCenter - offset / 2 - joystickSize / 1.5,
+      x: x0 - joystickCenter - offset2 / 2,
+      y: y0 - joystickCenter - offset / 2 - joystickSize / 1.5,
     };
     Animated.spring(joystick, {toValue, useNativeDriver: useDriver}).start();
   };
