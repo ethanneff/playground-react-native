@@ -24,7 +24,7 @@
     "@mdi/js": "5.3.45",
     "@mdi/react": "1.4.0",
     "@react-native-community/async-storage": "1.11.0",
-    "@react-native-community/netinfo": "5.9.3",
+    "@react-native-community/netinfo": "5.9.4",
     "@react-native-community/slider": "3.0.0",
     "@react-native-firebase/analytics": "7.1.5",
     "@react-native-firebase/app": "7.3.0",
