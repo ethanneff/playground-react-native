@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.27.16](https://github.com/ethanneff/example/compare/v2.27.15...v2.27.16) (2020-06-25)
+
+
+### Bug Fixes
+
+* update deps ([72bd6b9](https://github.com/ethanneff/example/commit/72bd6b9c1dcf0603f17e58303a4614018be40f15))
+
 ## [2.27.15](https://github.com/ethanneff/example/compare/v2.27.14...v2.27.15) (2020-06-25)
 
 
