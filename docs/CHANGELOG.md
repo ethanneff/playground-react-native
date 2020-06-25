@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.27.14](https://github.com/ethanneff/example/compare/v2.27.13...v2.27.14) (2020-06-25)
+
+
+### Bug Fixes
+
+* correct archerio joystick layout ([644860e](https://github.com/ethanneff/example/commit/644860e552d00f6ffa2104f3f1a16bae48391755))
+
 ## [2.27.13](https://github.com/ethanneff/example/compare/v2.27.12...v2.27.13) (2020-06-25)
 
 
