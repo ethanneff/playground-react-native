@@ -239,10 +239,7 @@ PODS:
   - BoringSSL-GRPC/Interface (0.0.7)
   - CocoaAsyncSocket (7.6.4)
   - CocoaLibEvent (1.0.0)
-  - Crashlytics (3.14.0):
-    - Fabric (~> 1.10.2)
   - DoubleConversion (1.1.6)
-  - Fabric (1.10.2)
   - FBLazyVector (0.62.2)
   - FBReactNativeSpec (0.62.2):
     - Folly (= 2018.10.22.00)
@@ -261,6 +258,9 @@ PODS:
     - FirebaseAnalytics (= 6.5.1)
   - Firebase/CoreOnly (6.25.0):
     - FirebaseCore (= 6.7.1)
+  - Firebase/Crashlytics (6.25.0):
+    - Firebase/CoreOnly
+    - FirebaseCrashlytics (~> 4.1.0)
   - Firebase/Firestore (6.25.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 1.14.0)
@@ -300,6 +300,14 @@ PODS:
     - GoogleUtilities/Logger (~> 6.5)
     - nanopb (~> 1.30905.0)
   - FirebaseCoreDiagnosticsInterop (1.2.0)
+  - FirebaseCrashlytics (4.1.1):
+    - FirebaseAnalyticsInterop (~> 1.2)
+    - FirebaseCore (~> 6.6)
+    - FirebaseInstallations (~> 1.1)
+    - GoogleDataTransport (~> 6.1)
+    - GoogleDataTransportCCTSupport (~> 3.1)
+    - nanopb (~> 1.30905.0)
+    - PromisesObjC (~> 1.2)
   - FirebaseFirestore (1.14.0):
     - abseil/algorithm (= 0.20200225.0)
     - abseil/base (= 0.20200225.0)
@@ -679,27 +687,27 @@ PODS:
     - React
   - RNDeviceInfo (5.6.1):
     - React
-  - RNFBAnalytics (7.1.6):
+  - RNFBAnalytics (7.1.7):
     - Firebase/Analytics (~> 6.25.0)
     - React
     - RNFBApp
-  - RNFBApp (7.3.1):
+  - RNFBApp (8.0.0):
     - Firebase/CoreOnly (~> 6.25.0)
     - React
-  - RNFBAuth (8.0.8):
+  - RNFBAuth (8.0.9):
     - Firebase/Auth (~> 6.25.0)
     - React
     - RNFBApp
-  - RNFBCrashlytics (7.1.7):
-    - Crashlytics (~> 3.14.0)
-    - Fabric (~> 1.10.2)
+  - RNFBCrashlytics (8.0.1):
+    - Firebase/Core (~> 6.25.0)
+    - Firebase/Crashlytics (~> 6.25.0)
     - React
     - RNFBApp
-  - RNFBFirestore (7.2.2):
+  - RNFBFirestore (7.2.3):
     - Firebase/Firestore (~> 6.25.0)
     - React
     - RNFBApp
-  - RNFBRemoteConfig (7.1.6):
+  - RNFBRemoteConfig (7.1.7):
     - Firebase/Analytics (~> 6.25.0)
     - Firebase/RemoteConfig (~> 6.25.0)
     - React
@@ -781,8 +789,6 @@ SPEC REPOS:
     - BoringSSL-GRPC
     - CocoaAsyncSocket
     - CocoaLibEvent
-    - Crashlytics
-    - Fabric
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -792,6 +798,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCoreDiagnosticsInterop
+    - FirebaseCrashlytics
     - FirebaseFirestore
     - FirebaseInstallations
     - FirebaseRemoteConfig
@@ -915,9 +922,7 @@ SPEC CHECKSUMS:
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
-  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
-  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   FBLazyVector: 4aab18c93cd9546e4bfed752b4084585eca8b245
   FBReactNativeSpec: 5465d51ccfeecb7faa12f9ae0024f2044ce4044e
   Firebase: 5719b4f965f76643241a1bb8244483ff6117db39
@@ -929,6 +934,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 6023faeada5afa95a349fccafb40900e32e9ac42
   FirebaseCoreDiagnostics: 4a773a47bd83bbd5a9b1ccf1ce7caa8b2d535e67
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
+  FirebaseCrashlytics: a87cce5746d3335995bd18b1b60d073cd05a6920
   FirebaseFirestore: deb7242803734c97376278698de097499cf5194f
   FirebaseInstallations: 2119fb3e46b0a88bfdbf12562f855ee3252462fa
   FirebaseRemoteConfig: 3d189cf0c3c5abc0c924ef1cce60c4add8d3262c
@@ -977,12 +983,12 @@ SPEC CHECKSUMS:
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
   RNCAsyncStorage: d059c3ee71738c39834a627476322a5a8cd5bf36
   RNDeviceInfo: b6e650fbd234732c759544218657d549b4339038
-  RNFBAnalytics: faea2a18bb706d458fedec0da0cd6a93d6a6e429
-  RNFBApp: cd70a6c061bc485994e28c7d58ab760538850f0e
-  RNFBAuth: 972d2910719feee8e2a2eb3643ad03eea5b5b24d
-  RNFBCrashlytics: a4aceced113c1d81c6aed885774b7e648fa2f25b
-  RNFBFirestore: c8389ce1024954aa71d863e4c223f6fa21f7b10f
-  RNFBRemoteConfig: 32ec07e9fd9b001bc9732a8603289a1738b5cc4b
+  RNFBAnalytics: ef3a53bc92f1f4b9ff7d0a42f4774facf25b4d1e
+  RNFBApp: 7025b9e7ed4e305f8a4e5ee15c79238c03dfb756
+  RNFBAuth: e9ac57126a8eaeccf350ffa7a7b77dff768e2d9a
+  RNFBCrashlytics: f04bff485b473fbd434ec473573cae6def73305e
+  RNFBFirestore: 2bc12c2d202de8da298566ebb5cbd9659ebbbb5f
+  RNFBRemoteConfig: a3f2d2426a9517503b9c5abbf89f13e6699a7385
   RNRate: a39ac26dc9daf3f9b639ce274b7f80672ae36db1
   RNSensors: 042ff055ce1debb3aede772c6671d4b9f5575c1b
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
