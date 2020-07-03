@@ -37,7 +37,7 @@
     "appcenter-crashes": "3.0.3",
     "axios": "0.19.2",
     "date-fns": "2.14.0",
-    "dayjs": "1.8.28",
+    "dayjs": "1.8.29",
     "howler": "2.2.0",
     "npm-check-updates": "7.0.1",
     "react": "16.13.1",
