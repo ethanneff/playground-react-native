@@ -59,6 +59,8 @@ target 'core' do
 
   pod 'RNSound', :path => '../node_modules/react-native-sound'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'coreTests' do
     inherit! :complete
     # Pods for testing

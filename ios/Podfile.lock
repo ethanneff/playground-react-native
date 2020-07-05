@@ -703,7 +703,7 @@ PODS:
     - RNSound/Core (= 0.11.0)
   - RNSound/Core (0.11.0):
     - React
-  - RNVectorIcons (6.6.0):
+  - RNVectorIcons (7.0.0):
     - React
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -958,10 +958,10 @@ SPEC CHECKSUMS:
   RNRate: a39ac26dc9daf3f9b639ce274b7f80672ae36db1
   RNSensors: 042ff055ce1debb3aede772c6671d4b9f5575c1b
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
-  RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
+  RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 3ebb6e2595cbba2d6f38cb9ad647b03daccb8a8c
+PODFILE CHECKSUM: 34eb7fc27967aabe8831510bc4f307028d669c36
 
 COCOAPODS: 1.9.3
