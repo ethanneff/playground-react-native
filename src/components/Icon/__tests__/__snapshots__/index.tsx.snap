@@ -38,7 +38,7 @@ exports[`renders correctly 1`] = `
       ]
     }
   >
-    
+    󰄬
   </Text>
 </View>
 `;
@@ -81,7 +81,7 @@ exports[`renders correctly with clear and max badge 1`] = `
       ]
     }
   >
-    
+    󰄬
   </Text>
   <View
     style={
@@ -154,7 +154,7 @@ exports[`renders correctly without defaults 1`] = `
       ]
     }
   >
-    
+    󰄬
   </Text>
   <View
     style={
