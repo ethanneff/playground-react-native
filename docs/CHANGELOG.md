@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.27.21](https://github.com/ethanneff/example/compare/v2.27.20...v2.27.21) (2020-07-05)
+
+
+### Bug Fixes
+
+* update snaps ([af13f98](https://github.com/ethanneff/example/commit/af13f98259f5728e3bdfe2da7e2c4f184d1a245d))
+
 ## [2.27.20](https://github.com/ethanneff/example/compare/v2.27.19...v2.27.20) (2020-07-05)
 
 
