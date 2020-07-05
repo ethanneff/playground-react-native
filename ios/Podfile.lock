@@ -212,24 +212,6 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - appcenter-analytics (3.0.3):
-    - AppCenter/Analytics
-    - AppCenterReactNativeShared
-    - React
-  - appcenter-core (3.0.3):
-    - AppCenterReactNativeShared
-    - React
-  - appcenter-crashes (3.0.3):
-    - AppCenter/Crashes
-    - AppCenterReactNativeShared
-    - React
-  - AppCenter/Analytics (3.1.1):
-    - AppCenter/Core
-  - AppCenter/Core (3.1.1)
-  - AppCenter/Crashes (3.1.1):
-    - AppCenter/Core
-  - AppCenterReactNativeShared (3.0.2):
-    - AppCenter/Core (= 3.1.1)
   - boost-for-react-native (1.63.0)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
@@ -728,9 +710,6 @@ PODS:
     - Yoga (~> 1.14)
 
 DEPENDENCIES:
-  - appcenter-analytics (from `../node_modules/appcenter-analytics/ios`)
-  - appcenter-core (from `../node_modules/appcenter/ios`)
-  - appcenter-crashes (from `../node_modules/appcenter-crashes/ios`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/Libraries/FBReactNativeSpec`)
@@ -783,8 +762,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - abseil
-    - AppCenter
-    - AppCenterReactNativeShared
     - boost-for-react-native
     - BoringSSL-GRPC
     - CocoaAsyncSocket
@@ -824,12 +801,6 @@ SPEC REPOS:
     - YogaKit
 
 EXTERNAL SOURCES:
-  appcenter-analytics:
-    :path: "../node_modules/appcenter-analytics/ios"
-  appcenter-core:
-    :path: "../node_modules/appcenter/ios"
-  appcenter-crashes:
-    :path: "../node_modules/appcenter-crashes/ios"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   FBLazyVector:
@@ -913,11 +884,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
-  AppCenter: 513d32888854d67d8cfbd3a8db16aeb5fb2e2a75
-  appcenter-analytics: 4fdc885acb8a3bfac835515a8b9610d054ba8b9f
-  appcenter-core: 84a1c69361d10272bf08b2ff906c37f4e422b940
-  appcenter-crashes: e9008710be7612c585c39f3dc2cf3894172dc6e2
-  AppCenterReactNativeShared: c4eb2ad593c32fbc2fc5f2ea9f5cf1faae61c182
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
