@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.27.20](https://github.com/ethanneff/example/compare/v2.27.19...v2.27.20) (2020-07-05)
+
+
+### Bug Fixes
+
+* add crashalitics ([e02fb30](https://github.com/ethanneff/example/commit/e02fb303dff8752509ff80a9e41d9ac503faa1e6))
+* remove appcenter ([4bd5b31](https://github.com/ethanneff/example/commit/4bd5b3187802a77b50785a6fb956aee498347148))
+* remove unused icons ([7a5319e](https://github.com/ethanneff/example/commit/7a5319e18570f123463963712eab566143ff28a9))
+* update deps ([ed9b386](https://github.com/ethanneff/example/commit/ed9b386da9e6e89cf41e5cca805b39c702d1a527))
+* update vector icons ([3187802](https://github.com/ethanneff/example/commit/3187802cb90e5338337d749de554790ca61f380b))
+
 ## [2.27.19](https://github.com/ethanneff/example/compare/v2.27.18...v2.27.19) (2020-07-02)
 
 
