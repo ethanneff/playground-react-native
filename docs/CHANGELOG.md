@@ -1,5 +1,20 @@
 # Changelog
 
+# [2.28.0](https://github.com/ethanneff/example/compare/v2.27.21...v2.28.0) (2020-07-06)
+
+
+### Bug Fixes
+
+* add one thing nav ([62e607a](https://github.com/ethanneff/example/commit/62e607ae5d63cccdad531eff53168ca8373bd673))
+* add toggle on progess date ([852f244](https://github.com/ethanneff/example/commit/852f2440442b5b90e37ef3bd279994206aa256ce))
+* update icon ([19ccbf0](https://github.com/ethanneff/example/commit/19ccbf0e26ce088649ada287305c9c971518d3b2))
+* update snaps ([e2dc0b1](https://github.com/ethanneff/example/commit/e2dc0b165c83c0d1cea578b6321b1ab13773c4f5))
+
+
+### Features
+
+* add the one thing ([e2c1394](https://github.com/ethanneff/example/commit/e2c1394010b01c0081a6ac2e14d64e7bac315fa7))
+
 ## [2.27.21](https://github.com/ethanneff/example/compare/v2.27.20...v2.27.21) (2020-07-05)
 
 
