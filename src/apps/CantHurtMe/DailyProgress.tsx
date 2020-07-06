@@ -1,7 +1,7 @@
-import dayjs from 'dayjs';
-import React, {memo, useCallback} from 'react';
+import dayjs, {Dayjs} from 'dayjs';
+import React, {memo, useCallback, useState} from 'react';
 import {FlatList, View} from 'react-native';
-import {Icon, Text} from '../../components';
+import {Icon, Text, TouchableOpacity} from '../../components';
 import {Theme} from '../../utils';
 import {useColor} from '../../hooks';
 
@@ -13,45 +13,53 @@ const generateHistory = () => {
   return data;
 };
 
-export const DailyProgress = memo(function DailyProgress() {
-  const data = generateHistory();
+type Item = {
+  date: Dayjs;
+};
+
+type ProgressItemProps = {
+  item: Item;
+};
+
+const ProgressItem = ({item}: ProgressItemProps) => {
   const color = useColor();
+  const [dateFormat, setDateFormat] = useState('ddd');
+  const onPress = useCallback(() => {
+    setDateFormat((prev) => (prev === 'ddd' ? 'MMM DD' : 'ddd'));
+  }, []);
+  const iconColor = item.date.isSame(dayjs(), 'day')
+    ? color.success
+    : item.date > dayjs()
+    ? color.secondary
+    : color.danger;
+  const iconName = item.date.isSame(dayjs(), 'day')
+    ? 'check'
+    : item.date > dayjs()
+    ? 'cancel'
+    : 'close';
 
-  const renderItem = useCallback(
-    ({item}) => (
-      <View>
-        <Icon
-          color={
-            item.date.isSame(dayjs(), 'day')
-              ? color.success
-              : item.date > dayjs()
-              ? color.secondary
-              : color.danger
-          }
-          name={
-            item.date.isSame(dayjs(), 'day')
-              ? 'check'
-              : item.date > dayjs()
-              ? 'cancel'
-              : 'close'
-          }
-          style={{alignSelf: 'center'}}
-        />
-        <View
-          style={{
-            borderTopColor: color.text,
-            borderTopWidth: 2,
-            margin: Theme.padding.p01,
-            width: Theme.padding.p15,
-          }}>
-          <Text center title={item.date.format('MMM DD')} />
-        </View>
+  return (
+    <TouchableOpacity onPress={onPress}>
+      <Icon color={iconColor} name={iconName} style={{alignSelf: 'center'}} />
+      <View
+        style={{
+          borderTopColor: color.text,
+          borderTopWidth: 2,
+          margin: Theme.padding.p01,
+          width: Theme.padding.p12,
+        }}>
+        <Text center title={item.date.format(dateFormat)} />
       </View>
-    ),
-    [color.danger, color.secondary, color.success, color.text],
+    </TouchableOpacity>
   );
+};
 
-  const keyExtractor = useCallback((item) => String(item.date), []);
+export const DailyProgress = memo(function DailyProgress() {
+  const data: Item[] = generateHistory();
+
+  const renderItem = useCallback(({item}) => <ProgressItem item={item} />, []);
+
+  const keyExtractor = useCallback((item: Item) => String(item.date), []);
 
   return (
     <FlatList
