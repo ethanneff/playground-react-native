@@ -68,9 +68,10 @@ export const List = memo(function List({
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
+              paddingBottom: Theme.padding.p02,
             }}>
             <ProfileLevel onPress={onProfilePress} />
-            <Icon name="settings" onPress={onSettingsPress} />
+            <Icon name="cog" onPress={onSettingsPress} />
           </View>
           <DailyProgress />
         </Card>
