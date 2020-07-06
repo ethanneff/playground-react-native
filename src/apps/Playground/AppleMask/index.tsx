@@ -5,6 +5,8 @@ import {useColor, useNav} from '../../../hooks';
 import {Theme, useRootSelector} from '../../../utils';
 import {getWidth} from '../../../models';
 
+// https://support.apple.com/en-us/HT211028
+
 interface SectionProps {
   index: number;
   paddingHorizontal: number;
