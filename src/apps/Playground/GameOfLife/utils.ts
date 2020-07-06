@@ -24,6 +24,7 @@ export const generateBoard = (size: number, random = 0) => {
   return board;
 };
 
+// TODO: memoize
 export const determineBoardItem = (board: Board, i: number, j: number) => {
   let neighbors = 0;
   const item = board[i][j];
