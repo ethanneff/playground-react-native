@@ -480,7 +480,7 @@ exports[`renders correctly 1`] = `
               }
             }
           >
-            CANT HURT ME
+            CANT HURT
           </Text>
         </View>
         <View
@@ -520,7 +520,7 @@ exports[`renders correctly 1`] = `
               }
             }
           >
-            THE ONE THING 
+            ONE THING 
           </Text>
         </View>
       </View>
