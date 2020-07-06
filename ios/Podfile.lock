@@ -669,27 +669,27 @@ PODS:
     - React
   - RNDeviceInfo (5.6.1):
     - React
-  - RNFBAnalytics (7.1.7):
+  - RNFBAnalytics (7.1.8):
     - Firebase/Analytics (~> 6.25.0)
     - React
     - RNFBApp
-  - RNFBApp (8.0.0):
+  - RNFBApp (8.0.1):
     - Firebase/CoreOnly (~> 6.25.0)
     - React
-  - RNFBAuth (8.0.9):
+  - RNFBAuth (8.0.10):
     - Firebase/Auth (~> 6.25.0)
     - React
     - RNFBApp
-  - RNFBCrashlytics (8.0.1):
+  - RNFBCrashlytics (8.0.3):
     - Firebase/Core (~> 6.25.0)
     - Firebase/Crashlytics (~> 6.25.0)
     - React
     - RNFBApp
-  - RNFBFirestore (7.2.3):
+  - RNFBFirestore (7.2.4):
     - Firebase/Firestore (~> 6.25.0)
     - React
     - RNFBApp
-  - RNFBRemoteConfig (7.1.7):
+  - RNFBRemoteConfig (7.1.8):
     - Firebase/Analytics (~> 6.25.0)
     - Firebase/RemoteConfig (~> 6.25.0)
     - React
@@ -949,12 +949,12 @@ SPEC CHECKSUMS:
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
   RNCAsyncStorage: d059c3ee71738c39834a627476322a5a8cd5bf36
   RNDeviceInfo: b6e650fbd234732c759544218657d549b4339038
-  RNFBAnalytics: ef3a53bc92f1f4b9ff7d0a42f4774facf25b4d1e
-  RNFBApp: 7025b9e7ed4e305f8a4e5ee15c79238c03dfb756
-  RNFBAuth: e9ac57126a8eaeccf350ffa7a7b77dff768e2d9a
-  RNFBCrashlytics: f04bff485b473fbd434ec473573cae6def73305e
-  RNFBFirestore: 2bc12c2d202de8da298566ebb5cbd9659ebbbb5f
-  RNFBRemoteConfig: a3f2d2426a9517503b9c5abbf89f13e6699a7385
+  RNFBAnalytics: 1c62751e65829a88ad23c4e2740610970372ccde
+  RNFBApp: 49e1b8ce7e7d175b751c5b8568eafd51eac59b42
+  RNFBAuth: 6ba1d2b66df886075b8ecddcf7670a84365511b0
+  RNFBCrashlytics: 866c95ff878a19129358e345b6ab6ed3fd98a883
+  RNFBFirestore: ce322b6980c5926bd2b9970f92efd5ab5d870ddf
+  RNFBRemoteConfig: 828cf55ac0f30ae252b1e3cb7db6ac623e1e8f84
   RNRate: a39ac26dc9daf3f9b639ce274b7f80672ae36db1
   RNSensors: 042ff055ce1debb3aede772c6671d4b9f5575c1b
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
