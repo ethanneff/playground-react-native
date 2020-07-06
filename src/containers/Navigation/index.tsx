@@ -35,6 +35,7 @@ const ChecklistsItemUpdate = lazy(() =>
 );
 const Focus = lazy(() => import('../../apps/Focus'));
 const CantHurtMe = lazy(() => import('../../apps/CantHurtMe'));
+const TheOneThing = lazy(() => import('../../apps/TheOneThing'));
 const Journal = lazy(() => import('../../apps/Journal'));
 const Activity = lazy(() => import('../../apps/Activity'));
 const Playground = lazy(() => import('../../apps/Playground/Main'));
@@ -89,6 +90,7 @@ export const screens = {
   portfolioForgotPassword: <PortfolioForgot />,
   portfolioLogin: <PortfolioLogin />,
   cantHurtMe: <CantHurtMe />,
+  theOneThing: <TheOneThing />,
   journal: <Journal />,
   activity: <Activity />,
   playground: <Playground />,

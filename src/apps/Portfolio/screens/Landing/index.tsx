@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Button, Screen, Text} from '../../../../components';
+import {Button, Screen} from '../../../../components';
 import {useNav} from '../../../../hooks';
 import Walkthrough from './Walkthrough';
 
@@ -12,7 +12,6 @@ export default memo(function PortfolioLanding() {
   const nav = useNav();
   return (
     <Screen title="Landing">
-      <Text title="ehllo" />
       <Walkthrough />
       <View style={styles.row}>
         <Button onPress={nav.to('portfolioLogin')} title="Login" />
@@ -21,12 +20,13 @@ export default memo(function PortfolioLanding() {
       </View>
       <View style={styles.row}>
         <Button onPress={nav.to('checklists')} title="Checklist" />
-        <Button onPress={nav.to('cantHurtMe')} title="CantHurtMe" />
-        <Button onPress={nav.to('focus')} title="Focus" />
+        <Button onPress={nav.to('cantHurtMe')} title="Cant Hurt" />
+        <Button onPress={nav.to('theOneThing')} title="One Thing " />
       </View>
       <View style={styles.row}>
         <Button onPress={nav.to('journal')} title="Journal" />
         <Button onPress={nav.to('activity')} title="Activity" />
+        <Button onPress={nav.to('focus')} title="Focus" />
       </View>
       <View style={styles.row}>
         <Button onPress={nav.to('gamesFlappyBird')} title="FlappyBird" />
