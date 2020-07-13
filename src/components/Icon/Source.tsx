@@ -1,12 +1,12 @@
 import React, {memo} from 'react';
-import {StyleProp, StyleSheet, ViewStyle} from 'react-native';
+import {StyleSheet} from 'react-native';
 import Original from 'react-native-vector-icons/MaterialCommunityIcons';
 
 interface Props {
   name: string;
   size?: number;
   color?: string;
-  style?: StyleProp<ViewStyle>;
+  style?: object;
   invisible?: boolean;
 }
 
