@@ -1,5 +1,17 @@
 # Changelog
 
+# [2.30.0](https://github.com/ethanneff/example/compare/v2.29.1...v2.30.0) (2020-07-13)
+
+
+### Bug Fixes
+
+* correct litning ([adee308](https://github.com/ethanneff/example/commit/adee308e423f5428c3ae4451dd3e1a1ca0dd8881))
+
+
+### Features
+
+* update to react-native 0.63 ([53bbb9c](https://github.com/ethanneff/example/commit/53bbb9c6f9e8837b6dcdae02ccd5e31d881870e9))
+
 ## [2.29.1](https://github.com/ethanneff/example/compare/v2.29.0...v2.29.1) (2020-07-13)
 
 
