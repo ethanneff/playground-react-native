@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.29.1](https://github.com/ethanneff/example/compare/v2.29.0...v2.29.1) (2020-07-13)
+
+
+### Bug Fixes
+
+* update snaps ([98818cd](https://github.com/ethanneff/example/commit/98818cd9e2df564e9503908650ea1745018e9159))
+
 # [2.29.0](https://github.com/ethanneff/example/compare/v2.28.1...v2.29.0) (2020-07-13)
 
 
