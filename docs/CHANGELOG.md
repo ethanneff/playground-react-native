@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.30.1](https://github.com/ethanneff/example/compare/v2.30.0...v2.30.1) (2020-07-13)
+
+
+### Bug Fixes
+
+* correct typings ([527ebf0](https://github.com/ethanneff/example/commit/527ebf0845be1a89ff7f8abd1b519d34d9a44020))
+
 # [2.30.0](https://github.com/ethanneff/example/compare/v2.29.1...v2.30.0) (2020-07-13)
 
 
