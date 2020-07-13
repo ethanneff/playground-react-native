@@ -2,7 +2,7 @@ import React, {memo, useCallback, useEffect, useState} from 'react';
 import dayjs from 'dayjs';
 import {Dialog, Screen} from '../../components';
 import {useNav} from '../../hooks';
-import {Item, List} from './components/List';
+import {Item, List} from './List';
 
 // TODO: flatlist on web
 // TODO: rename item.action to item.title
