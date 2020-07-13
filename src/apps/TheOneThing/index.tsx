@@ -1,13 +1,6 @@
 import React, {memo, useState} from 'react';
 import {ScrollView, View} from 'react-native';
-import {
-  Button,
-  Card,
-  Icon,
-  Screen,
-  Text,
-  TouchableOpacity,
-} from '../../components';
+import {Card, Icon, Screen, Text, TouchableOpacity} from '../../components';
 import {useColor, useNav} from '../../hooks';
 import {Theme} from '../../utils';
 
@@ -146,7 +139,6 @@ export default memo(function TheOneThing() {
           ]}
           title="Weekly Reflection"
         />
-        <Button color="primary" title="submit" />
       </ScrollView>
     </Screen>
   );
