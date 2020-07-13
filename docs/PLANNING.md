@@ -2,6 +2,8 @@
 
 ## Top goals
 
+- [ ] complete bouncing loading screen
+- [ ] react navigation
 - [ ] Deploy Android app
   - [ ] login flow
   - [ ] activity
