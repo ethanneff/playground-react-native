@@ -15,6 +15,7 @@ type GetSpeedProps = {
 export const getSpeed = ({state, canvas, diameter, pulse}: GetSpeedProps) => {
   const dMax = state.diameter >= diameter * 1.1;
   const dMin = state.diameter <= diameter * 0.9;
+  // TODO: recenter so pulsing happens from middle
   const growing = dMax || dMin ? !state.growing : state.growing;
   const d = state.diameter + (!pulse ? 0 : growing ? 1 : -1);
   const xMin = canvas.x;
@@ -25,6 +26,7 @@ export const getSpeed = ({state, canvas, diameter, pulse}: GetSpeedProps) => {
   const xSmaller = state.x <= xMin;
   const yLarger = state.y + d >= yMax;
   const ySmaller = state.y <= yMin;
+  // TODO: add collision
   const xSpeed = xLarger || xSmaller ? -state.xSpeed : state.xSpeed;
   const ySpeed = yLarger || ySmaller ? -state.ySpeed : state.ySpeed;
   const x = xLarger ? xMax - d : xSmaller ? xMin : state.x + xSpeed;

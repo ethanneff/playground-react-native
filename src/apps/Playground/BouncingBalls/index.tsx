@@ -11,6 +11,7 @@ export default memo(function PlaygroundBouncingBalls() {
   const nav = useNav();
   const [canvas, setCanvas] = useState<CanvasDimensions | null>(null);
 
+  // TODO: make into hook
   const onLayout = useCallback((event: LayoutChangeEvent) => {
     const {x, y, height, width} = event.nativeEvent.layout;
     setCanvas({x, y, height, width});
@@ -23,6 +24,7 @@ export default memo(function PlaygroundBouncingBalls() {
           items.map((_, index) => (
             <TouchableOpacity key={index} style={{position: 'absolute'}}>
               <BouncingBall canvas={canvas} diameter={100} speed={3}>
+                {/* TODO: center */}
                 <Text center inverse title={String(index)} type="h1" />
               </BouncingBall>
             </TouchableOpacity>

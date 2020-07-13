@@ -14,6 +14,7 @@ export type State = {
   growing: boolean;
 };
 
+// TODO: add min and max speed, min and max size, explosion handler
 type Props = {
   speed?: number;
   canvas: CanvasDimensions;
