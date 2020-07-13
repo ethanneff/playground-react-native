@@ -136,6 +136,7 @@ exports[`renders correctly 1`] = `
             "playgroundTinder",
             "playgroundDrift",
             "playgroundAppleMask",
+            "playgroundBouncingBalls",
           ]
         }
         disableVirtualization={false}
