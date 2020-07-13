@@ -52,6 +52,9 @@ const PlaygroundSwipeFeed = lazy(() =>
 );
 const PlaygroundReminder = lazy(() => import('../../apps/Playground/Reminder'));
 const PlaygroundTinder = lazy(() => import('../../apps/Playground/Tinder'));
+const PlaygroundBouncingBalls = lazy(() =>
+  import('../../apps/Playground/BouncingBalls'),
+);
 const PlaygroundGameOfLife = lazy(() =>
   import('../../apps/Playground/GameOfLife'),
 );
@@ -115,6 +118,7 @@ export const screens = {
   playgroundTinder: <PlaygroundTinder />,
   playgroundDrift: <PlaygroundDrift />,
   playgroundAppleMask: <PlaygroundAppleMask />,
+  playgroundBouncingBalls: <PlaygroundBouncingBalls />,
   checklists: <Checklists />,
   checklistsList: <ChecklistsList />,
   checklistsListCreate: <ChecklistsListCreate />,
