@@ -1,5 +1,18 @@
 # Changelog
 
+# [2.29.0](https://github.com/ethanneff/example/compare/v2.28.1...v2.29.0) (2020-07-13)
+
+
+### Bug Fixes
+
+* add linting on save ([52f6f99](https://github.com/ethanneff/example/commit/52f6f9977a1b8606d70045777d57561530103dd3))
+* remove submit button ([499e9d2](https://github.com/ethanneff/example/commit/499e9d2df95a7153d9d144e57f284374da77adb9))
+
+
+### Features
+
+* add bouncing balls ([6ccaf96](https://github.com/ethanneff/example/commit/6ccaf968cc1797772ef58dc6b1a5b3d64978b65a))
+
 ## [2.28.1](https://github.com/ethanneff/example/compare/v2.28.0...v2.28.1) (2020-07-06)
 
 
