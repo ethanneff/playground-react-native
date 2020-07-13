@@ -10,7 +10,6 @@
 		00E356F31AD99517003FC87E /* coreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* coreTests.m */; };
 		0167363E776FE31AEEBB7508 /* libPods-core-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7E395E5E6C9902A5910E98 /* libPods-core-tvOSTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1461B6B673E8522D59BF3456 /* libPods-core-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE94FCC30A5EF9BF00CB6DE /* libPods-core-tvOS.a */; };
@@ -19,6 +18,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* coreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* coreTests.m */; };
 		301478CC87003628FF3D342B /* libPods-core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE89BDF9F7E6035EBEF7508 /* libPods-core.a */; };
+		5223BD5A24BCCC8E00E151ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5223BD5924BCCC8E00E151ED /* LaunchScreen.storyboard */; };
 		9C8B7ED2245F646A00792A27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8B7ED1245F646A00792A27 /* GoogleService-Info.plist */; };
 		D2FE073E58BBC08A94157A50 /* libPods-core-coreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A95E951B707BB74DE7E9EDB /* libPods-core-coreTests.a */; };
 /* End PBXBuildFile section */
@@ -49,12 +49,12 @@
 		13B07F961A680F5B00A75B9A /* core.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = core.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = core/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = core/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = core/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = core/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = core/main.m; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* core-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "core-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* core-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "core-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5223BD5924BCCC8E00E151ED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = core/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52A21D7B24B171C700414CA4 /* core.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = core.entitlements; path = core/core.entitlements; sourceTree = "<group>"; };
 		5A5B87C57623FFC232712B09 /* Pods-core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.release.xcconfig"; path = "Target Support Files/Pods-core/Pods-core.release.xcconfig"; sourceTree = "<group>"; };
 		62DA2D74A3449D8AD8BBA0E8 /* Pods-core-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-core-tvOS/Pods-core-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +128,7 @@
 		13B07FAE1A68108700A75B9A /* core */ = {
 			isa = PBXGroup;
 			children = (
+				5223BD5924BCCC8E00E151ED /* LaunchScreen.storyboard */,
 				52A21D7B24B171C700414CA4 /* core.entitlements */,
 				9C8B7ED1245F646A00792A27 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -135,7 +136,6 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = core;
@@ -348,8 +348,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				9C8B7ED2245F646A00792A27 /* GoogleService-Info.plist in Resources */,
+				5223BD5A24BCCC8E00E151ED /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,18 +696,6 @@
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13B07FB21A68108700A75B9A /* Base */,
-			);
-			name = LaunchScreen.xib;
-			path = core;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
