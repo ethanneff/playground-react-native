@@ -1,11 +1,11 @@
 import React, {memo, useCallback, useState} from 'react';
-import {LayoutChangeEvent} from 'react-native';
+import {LayoutChangeEvent, StyleSheet, View} from 'react-native';
 import {Screen, Text, TouchableOpacity} from '../../../components';
-import {useNav} from '../../../hooks';
+import {useColor, useNav} from '../../../hooks';
 import {Canvas, CanvasDimensions} from './Canvas';
 import {BouncingBall} from './BouncingBall';
 
-const items = Array(10).fill(0);
+const items = Array(30).fill(0);
 
 export default memo(function PlaygroundBouncingBalls() {
   const nav = useNav();
@@ -23,9 +23,15 @@ export default memo(function PlaygroundBouncingBalls() {
         {canvas &&
           items.map((_, index) => (
             <TouchableOpacity key={index} style={{position: 'absolute'}}>
-              <BouncingBall canvas={canvas} diameter={100} speed={3}>
-                {/* TODO: center */}
-                <Text center inverse title={String(index)} type="h1" />
+              <BouncingBall canvas={canvas} diameter={50} speed={3}>
+                <View
+                  style={{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}>
+                  <Text inverse title={String(index)} type="h3" />
+                </View>
               </BouncingBall>
             </TouchableOpacity>
           ))}
