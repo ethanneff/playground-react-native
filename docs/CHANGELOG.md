@@ -1,5 +1,20 @@
 # Changelog
 
+# [2.31.0](https://github.com/ethanneff/example/compare/v2.30.1...v2.31.0) (2020-07-15)
+
+
+### Bug Fixes
+
+* allow collision of multiple ball sizes ([4c23183](https://github.com/ethanneff/example/commit/4c23183f5bb4e8a0435176bacfd70228e8f6b7e8))
+* center text ([a842d87](https://github.com/ethanneff/example/commit/a842d872d8c28ff50a25be0a7f4b803f26f911fc))
+* update dep ([cdbc1c9](https://github.com/ethanneff/example/commit/cdbc1c9f98f905be6d7e25034de5c816a8095dd9))
+* update deps ([d748cc7](https://github.com/ethanneff/example/commit/d748cc78434d514b35d3d42d95b39f5bc867a861))
+
+
+### Features
+
+* add bouncing balls ([aaa3ab4](https://github.com/ethanneff/example/commit/aaa3ab4742b8e91447b40cc08c6d5b30dd90e5a0))
+
 ## [2.30.1](https://github.com/ethanneff/example/compare/v2.30.0...v2.30.1) (2020-07-13)
 
 
