@@ -1,63 +1,144 @@
 import {Animated} from 'react-native';
-import {State} from './BouncingBall';
-import {CanvasDimensions} from './Canvas';
+import {CanvasDimensions} from '../Drift/Game';
+import {Item} from './Balls';
 
-const getRandomNumber = (min: number, max: number): number =>
+function rotate(dx: number, dy: number, angle: number) {
+  const rotatedVelocities = {
+    x: dx * Math.cos(angle) - dy * Math.sin(angle),
+    y: dx * Math.sin(angle) + dy * Math.cos(angle),
+  };
+
+  return rotatedVelocities;
+}
+
+export function resolveItemCollision(particle: Item, otherParticle: Item) {
+  const xVelocityDiff = particle.dx - otherParticle.dx;
+  const yVelocityDiff = particle.dy - otherParticle.dy;
+
+  const xDist = otherParticle.x - particle.x;
+  const yDist = otherParticle.y - particle.y;
+
+  // Prevent accidental overlap of particles
+  if (xVelocityDiff * xDist + yVelocityDiff * yDist >= 0) {
+    // Grab angle between the two colliding particles
+    const angle = -Math.atan2(
+      otherParticle.y - particle.y,
+      otherParticle.x - particle.x,
+    );
+
+    // Store mass in var for better readability in collision equation
+    const m1 = particle.mass;
+    const m2 = otherParticle.mass;
+
+    // Velocity before equation
+    const u1 = rotate(particle.dx, particle.dy, angle);
+    const u2 = rotate(otherParticle.dx, otherParticle.dy, angle);
+
+    // Velocity after 1d collision equation
+    const v1 = {
+      dx: (u1.x * (m1 - m2)) / (m1 + m2) + (u2.x * 2 * m2) / (m1 + m2),
+      dy: u1.y,
+    };
+    const v2 = {
+      dx: (u2.x * (m1 - m2)) / (m1 + m2) + (u1.x * 2 * m1) / (m1 + m2),
+      dy: u2.y,
+    };
+
+    // Final velocity after rotating axis back to original location
+    const vFinal1 = rotate(v1.dx, v1.dy, -angle);
+    const vFinal2 = rotate(v2.dx, v2.dy, -angle);
+
+    // Swap particle velocities for realistic bounce effect
+    particle.dx = vFinal1.x;
+    particle.dy = vFinal1.y;
+
+    otherParticle.dx = vFinal2.x;
+    otherParticle.dy = vFinal2.y;
+  }
+}
+
+export const getDistance = (
+  x1: number,
+  y1: number,
+  x2: number,
+  y2: number,
+): number => {
+  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+};
+
+export const getRandomNumber = (min: number, max: number): number =>
   Math.random() * (max - min) + min;
 
-type GetSpeedProps = {
-  state: State;
+type GetItems = {
+  count: number;
   canvas: CanvasDimensions;
-  diameter: number;
-  pulse: boolean;
+  minSize: number;
+  maxSize: number;
+  minSpeed: number;
+  maxSpeed: number;
+  minMass: number;
+  maxMass: number;
 };
 
-export const getSpeed = ({state, canvas, diameter, pulse}: GetSpeedProps) => {
-  const dMax = state.diameter >= diameter * 1.1;
-  const dMin = state.diameter <= diameter * 0.9;
-  // TODO: recenter so pulsing happens from middle
-  const growing = dMax || dMin ? !state.growing : state.growing;
-  const d = state.diameter + (!pulse ? 0 : growing ? 1 : -1);
-  const xMin = canvas.x;
-  const xMax = canvas.x + canvas.width;
-  const yMin = canvas.y;
-  const yMax = canvas.y + canvas.height;
-  const xLarger = state.x + d >= xMax;
-  const xSmaller = state.x <= xMin;
-  const yLarger = state.y + d >= yMax;
-  const ySmaller = state.y <= yMin;
-  // TODO: add collision
-  const xSpeed = xLarger || xSmaller ? -state.xSpeed : state.xSpeed;
-  const ySpeed = yLarger || ySmaller ? -state.ySpeed : state.ySpeed;
-  const x = xLarger ? xMax - d : xSmaller ? xMin : state.x + xSpeed;
-  const y = yLarger ? yMax - d : ySmaller ? yMin : state.y + ySpeed;
-  const dx = x + xSpeed;
-  const dy = y + ySpeed;
-  return {xSpeed, ySpeed, x: dx, y: dy, d, growing};
-};
-
-type GetInitialStateProps = {
-  canvas: CanvasDimensions;
-  diameter: number;
-  speed: number;
-};
-
-export const getInitialState = ({
+export const getItems = ({
+  count,
   canvas,
-  diameter,
-  speed,
-}: GetInitialStateProps): State => {
-  const starting = {
-    x: getRandomNumber(canvas.x, canvas.x + canvas.width - diameter),
-    y: getRandomNumber(canvas.y, canvas.y + canvas.height - diameter),
-  };
-  const growing = !!Math.floor(Math.random());
-  return {
-    ...starting,
-    position: new Animated.ValueXY(starting),
-    xSpeed: getRandomNumber(-speed, speed),
-    ySpeed: getRandomNumber(-speed, speed),
-    diameter,
-    growing,
-  };
+  minSize,
+  maxSize,
+  minSpeed,
+  maxSpeed,
+  minMass,
+  maxMass,
+}: GetItems) => {
+  let initialItems: Item[] = [];
+
+  for (let i = 0; i < count; i++) {
+    const radius = getRandomNumber(minSize, maxSize);
+    const mass = getRandomNumber(minMass, maxMass);
+    const dx = getRandomNumber(-minSpeed, maxSpeed);
+    const dy = getRandomNumber(-minSpeed, maxSpeed);
+    let x = getRandomNumber(canvas.x, canvas.x + canvas.width - radius);
+    let y = getRandomNumber(canvas.x, canvas.x + canvas.width - radius);
+
+    if (i !== 0) {
+      for (let j = 0; j < initialItems.length; j++) {
+        let item = initialItems[j];
+        if (getDistance(x, y, item.x, item.y) - (radius + item.radius) < 0) {
+          x = getRandomNumber(canvas.x, canvas.x + canvas.width - radius);
+          y = getRandomNumber(canvas.x, canvas.x + canvas.width - radius);
+          //   j = -1;
+        }
+      }
+    }
+    initialItems.push({
+      index: i,
+      x,
+      y,
+      dx,
+      dy,
+      radius,
+      mass,
+      position: new Animated.ValueXY({x, y}),
+    });
+  }
+  return initialItems;
+};
+
+export const resolveBoundCollision = (item: Item, canvas: CanvasDimensions) => {
+  if (item.x <= canvas.x) {
+    item.dx = -item.dx;
+    item.x = canvas.x;
+  }
+  if (item.x + 2 * item.radius >= canvas.x + canvas.width) {
+    item.dx = -item.dx;
+    item.x = canvas.x + canvas.width - 2 * item.radius;
+  }
+  if (item.y <= canvas.y) {
+    item.dy = -item.dy;
+    item.y = canvas.y;
+  }
+  if (item.y + 2 * item.radius >= canvas.y + canvas.height) {
+    item.dy = -item.dy;
+    item.y = canvas.y + canvas.height - 2 * item.radius;
+  }
 };
