@@ -2,16 +2,20 @@ import {Animated} from 'react-native';
 import {CanvasDimensions} from '../Drift/Game';
 import {Item} from './Balls';
 
-function rotate(dx: number, dy: number, angle: number) {
+const rotate = (dx: number, dy: number, angle: number) => {
   const rotatedVelocities = {
     x: dx * Math.cos(angle) - dy * Math.sin(angle),
     y: dx * Math.sin(angle) + dy * Math.cos(angle),
   };
 
   return rotatedVelocities;
-}
+};
 
-export function resolveItemCollision(particle: Item, otherParticle: Item) {
+export const resolveItemCollision = (
+  particle: Item,
+  otherParticle: Item,
+  maxSpeed: number,
+) => {
   const xVelocityDiff = particle.dx - otherParticle.dx;
   const yVelocityDiff = particle.dy - otherParticle.dy;
 
@@ -49,21 +53,30 @@ export function resolveItemCollision(particle: Item, otherParticle: Item) {
     const vFinal2 = rotate(v2.dx, v2.dy, -angle);
 
     // Swap particle velocities for realistic bounce effect
-    particle.dx = vFinal1.x;
-    particle.dy = vFinal1.y;
+    particle.dx = Math.min(vFinal1.x, maxSpeed);
+    particle.dy = Math.min(vFinal1.y, maxSpeed);
 
-    otherParticle.dx = vFinal2.x;
-    otherParticle.dy = vFinal2.y;
+    otherParticle.dx = Math.min(vFinal2.x, maxSpeed);
+    otherParticle.dy = Math.min(vFinal2.y, maxSpeed);
   }
-}
+};
 
-export const getDistance = (
-  x1: number,
-  y1: number,
-  x2: number,
-  y2: number,
-): number => {
-  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+export const getOverlap = (
+  aX: number,
+  aY: number,
+  aRadius: number,
+  bX: number,
+  bY: number,
+  bRadius: number,
+  center: boolean,
+): boolean => {
+  const aCenter = {x: aX + aRadius, y: aY + aRadius};
+  const bCenter = {x: bX + bRadius, y: bY + bRadius};
+  const dx = center ? aCenter.x - bCenter.x : aX - bX;
+  const dy = center ? aCenter.y - bCenter.y : aY - bY;
+  const radius = aRadius + bRadius;
+  const distance = Math.sqrt(dx * dx + dy * dy);
+  return distance <= radius;
 };
 
 export const getRandomNumber = (min: number, max: number): number =>
@@ -98,15 +111,15 @@ export const getItems = ({
     const dx = getRandomNumber(-minSpeed, maxSpeed);
     const dy = getRandomNumber(-minSpeed, maxSpeed);
     let x = getRandomNumber(canvas.x, canvas.x + canvas.width - radius);
-    let y = getRandomNumber(canvas.x, canvas.x + canvas.width - radius);
+    let y = getRandomNumber(canvas.x, canvas.x + canvas.height - radius);
 
     if (i !== 0) {
       for (let j = 0; j < initialItems.length; j++) {
         let item = initialItems[j];
-        if (getDistance(x, y, item.x, item.y) - (radius + item.radius) < 0) {
+        if (getOverlap(x, y, radius, item.x, item.y, item.radius, false)) {
           x = getRandomNumber(canvas.x, canvas.x + canvas.width - radius);
-          y = getRandomNumber(canvas.x, canvas.x + canvas.width - radius);
-          //   j = -1;
+          y = getRandomNumber(canvas.x, canvas.x + canvas.height - radius);
+          j = -1;
         }
       }
     }
@@ -121,6 +134,7 @@ export const getItems = ({
       position: new Animated.ValueXY({x, y}),
     });
   }
+
   return initialItems;
 };
 

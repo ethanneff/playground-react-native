@@ -17,7 +17,14 @@ export default memo(function PlaygroundBouncingBalls() {
   return (
     <Screen onLeftPress={nav.to('playground')} title="BouncingBalls">
       <Canvas onLayout={onLayout}>
-        {canvas && <Balls canvas={canvas} count={10} />}
+        {canvas && (
+          <Balls
+            canvas={canvas}
+            count={1}
+            maxSize={canvas.width / 6}
+            minSize={canvas.width / 6}
+          />
+        )}
       </Canvas>
     </Screen>
   );
