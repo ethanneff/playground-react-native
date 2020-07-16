@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.32.2](https://github.com/ethanneff/example/compare/v2.32.1...v2.32.2) (2020-07-16)
+
+
+### Bug Fixes
+
+* delete codeql ([f1e9e6f](https://github.com/ethanneff/example/commit/f1e9e6f8eb808962a377c2357176cddc4790d55b))
+
 ## [2.32.1](https://github.com/ethanneff/example/compare/v2.32.0...v2.32.1) (2020-07-16)
 
 
