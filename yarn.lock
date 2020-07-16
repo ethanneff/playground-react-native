@@ -2366,10 +2366,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-plugin/-/eslint-plugin-1.1.0.tgz#e42b1bef12d2415411519fd528e64b593b1363dc"
   integrity sha512-W/J0fNYVO01tioHjvYWQ9m6RgndVtbElzYozBq1ZPrHO/iCzlqoySHl4gO/fpCl9QEFjvJfjPgtPMTMlsoq5DQ==
 
-"@react-native-community/netinfo@5.9.4":
-  version "5.9.4"
-  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-5.9.4.tgz#a05a9403f8ee09c7d7f7c2dda850b79cac376691"
-  integrity sha512-mb664NOqPvyUZ4TznzdYEfdS3OhSXWGbZprgsDZn4THw2X/4wcBFcBUeWuMzeQ56KhY0rm/YBBlZWHrSf3C/Aw==
+"@react-native-community/netinfo@5.9.5":
+  version "5.9.5"
+  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-5.9.5.tgz#3bad0d855d2e813be085ec305139d4175c512ccc"
+  integrity sha512-PbSsRmhRwYIMdeVJTf9gJtvW0TVq/hmgz1xyjsrTIsQ7QS7wbMEiv1Eb/M/y6AEEsdUped5Axm5xykq9TGISHg==
 
 "@react-native-community/slider@3.0.2":
   version "3.0.2"
@@ -11464,10 +11464,10 @@ npm-cache-filename@~1.0.2:
   resolved "https://registry.yarnpkg.com/npm-cache-filename/-/npm-cache-filename-1.0.2.tgz#ded306c5b0bfc870a9e9faf823bc5f283e05ae11"
   integrity sha1-3tMGxbC/yHCp6fr4I7xfKD4FrhE=
 
-npm-check-updates@7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-7.0.1.tgz#ba85756f4e8c34261d9a0a17b0a951c9c2279b50"
-  integrity sha512-z/i1nhxW1OJ2a8wZtm92PS+4vCZ5Y5d86pLDPJScWf8G3vTYJlxd11UqUymnaZWK2nYPMmgxnneAKnFGODDxjw==
+npm-check-updates@7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-7.0.2.tgz#b57a1662374dac55610c88677711bdb3ba9aef14"
+  integrity sha512-MyH17fUCFbYShuIyxZj6yqB6YZ47+AjPCgXQiH1oqNe3vElBoJ0toY7nwy88qJbfXnFqjTFigzs9lsoKSK0iUw==
   dependencies:
     chalk "^4.1.0"
     cint "^8.2.1"
@@ -11477,7 +11477,7 @@ npm-check-updates@7.0.1:
     get-stdin "^8.0.0"
     json-parse-helpfulerror "^1.0.3"
     libnpmconfig "^1.2.1"
-    lodash "^4.17.15"
+    lodash "^4.17.19"
     p-map "^4.0.0"
     pacote "^11.1.10"
     progress "^2.0.3"
