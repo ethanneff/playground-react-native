@@ -1,5 +1,17 @@
 # Changelog
 
+# [2.32.0](https://github.com/ethanneff/example/compare/v2.31.0...v2.32.0) (2020-07-16)
+
+
+### Bug Fixes
+
+* complete bouncing balls ([1d27561](https://github.com/ethanneff/example/commit/1d27561d275a0a6c02885d8dbc1703b39bcbb754))
+
+
+### Features
+
+* begin work on bejeweled ([55c1dab](https://github.com/ethanneff/example/commit/55c1dab6da89b15257758af1f87bd1cd3a68b6e1))
+
 # [2.31.0](https://github.com/ethanneff/example/compare/v2.30.1...v2.31.0) (2020-07-15)
 
 
