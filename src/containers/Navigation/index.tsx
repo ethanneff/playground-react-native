@@ -50,6 +50,9 @@ const PlaygroundFonts = lazy(() => import('../../apps/Playground/Fonts'));
 const PlaygroundBejeweled = lazy(() =>
   import('../../apps/Playground/Bejeweled'),
 );
+const PlaygroundSlotMachine = lazy(() =>
+  import('../../apps/Playground/SlotMachine'),
+);
 const PlaygroundSwipeFeed = lazy(() =>
   import('../../apps/Playground/SwipeFeed'),
 );
@@ -123,6 +126,7 @@ export const screens = {
   playgroundAppleMask: <PlaygroundAppleMask />,
   playgroundBouncingBalls: <PlaygroundBouncingBalls />,
   playgroundBejeweled: <PlaygroundBejeweled />,
+  playgroundSlotMachine: <PlaygroundSlotMachine />,
   checklists: <Checklists />,
   checklistsList: <ChecklistsList />,
   checklistsListCreate: <ChecklistsListCreate />,

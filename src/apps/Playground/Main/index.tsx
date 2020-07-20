@@ -28,6 +28,7 @@ const playgroundScreens: NavigationScreen[] = [
   'playgroundAppleMask',
   'playgroundBouncingBalls',
   'playgroundBejeweled',
+  'playgroundSlotMachine',
 ];
 
 const formatTitle = (str: string) => str.replace('playground', '');
