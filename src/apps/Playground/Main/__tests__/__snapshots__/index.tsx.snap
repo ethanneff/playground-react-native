@@ -137,6 +137,9 @@ exports[`renders correctly 1`] = `
             "playgroundDrift",
             "playgroundAppleMask",
             "playgroundBouncingBalls",
+            "playgroundBejeweled",
+            "playgroundSlotMachine",
+            "playgroundFortuneWheel",
           ]
         }
         disableVirtualization={false}
