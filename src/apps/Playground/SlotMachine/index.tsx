@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Screen, Text} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
@@ -13,11 +13,12 @@ const returnPercentage = (
 export default memo(function PlaygroundSlotMachine() {
   const color = useColor();
   const nav = useNav();
-  const [state, setState] = useState({
-    tokens: 14,
-    spinning: false,
-    reels: [[], [], []],
-  });
+
+  // const [state, setState] = useState({
+  //   tokens: 14,
+  //   spinning: false,
+  //   reels: [[], [], []],
+  // });
   const styles = StyleSheet.create({
     container: {
       backgroundColor: color.background,
@@ -29,6 +30,13 @@ export default memo(function PlaygroundSlotMachine() {
       <View style={styles.container}>
         <Text title={`win percentage: ${winPercentage}%`} />
         <Text title={`return percentage: ${returnPercentage}%`} />
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        />
       </View>
     </Screen>
   );

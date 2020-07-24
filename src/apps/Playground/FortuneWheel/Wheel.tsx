@@ -50,7 +50,7 @@ export const Wheel = memo(
     const yPosition = new Animated.Value(-1);
     const arcs = d3
       .pie()(segments.map(() => 1))
-      .map((arc, index) => {
+      .map((arc: any, index) => {
         const instance = d3
           .arc()
           .padAngle(0.01)
@@ -149,7 +149,7 @@ export const Wheel = memo(
                 {arcs.map((arc, i) => (
                   <G key={`arc-${i}`}>
                     <Path
-                      d={arc.path}
+                      d={String(arc.path)}
                       fill={arc.segment.color}
                       strokeWidth={2}
                     />
