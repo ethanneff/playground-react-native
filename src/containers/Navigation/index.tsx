@@ -47,6 +47,9 @@ const PlaygroundDarkMode = lazy(() => import('../../apps/Playground/DarkMode'));
 const PlaygroundDrag = lazy(() => import('../../apps/Playground/Drag'));
 const PlaygroundDrift = lazy(() => import('../../apps/Playground/Drift'));
 const PlaygroundFonts = lazy(() => import('../../apps/Playground/Fonts'));
+const PlaygroundFortuneWheel = lazy(() =>
+  import('../../apps/Playground/FortuneWheel'),
+);
 const PlaygroundBejeweled = lazy(() =>
   import('../../apps/Playground/Bejeweled'),
 );
@@ -127,6 +130,7 @@ export const screens = {
   playgroundBouncingBalls: <PlaygroundBouncingBalls />,
   playgroundBejeweled: <PlaygroundBejeweled />,
   playgroundSlotMachine: <PlaygroundSlotMachine />,
+  playgroundFortuneWheel: <PlaygroundFortuneWheel />,
   checklists: <Checklists />,
   checklistsList: <ChecklistsList />,
   checklistsListCreate: <ChecklistsListCreate />,
