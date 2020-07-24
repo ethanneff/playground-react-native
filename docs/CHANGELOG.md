@@ -1,5 +1,26 @@
 # Changelog
 
+# [2.33.0](https://github.com/ethanneff/example/compare/v2.32.2...v2.33.0) (2020-07-24)
+
+
+### Bug Fixes
+
+* add calc for bejeweled matches ([d1e8978](https://github.com/ethanneff/example/commit/d1e8978eaacd36e123d17014452ee1cc8bb69696))
+* correct linting ([996a63a](https://github.com/ethanneff/example/commit/996a63a57e70f9a42e3662ab1a2ec8a28cffd25a))
+* update deps ([d71cce7](https://github.com/ethanneff/example/commit/d71cce7ab6aec424db8ed180789bd1cce49fc63c))
+* update deps ([a854d14](https://github.com/ethanneff/example/commit/a854d14b3fadd006d13fe9eef7518ebd7a7630e4))
+* update deps ([685462d](https://github.com/ethanneff/example/commit/685462deb2c697999c3bee965df077e0bc8b64c4))
+* update deps ([8bee9bf](https://github.com/ethanneff/example/commit/8bee9bf95df919f1a42ee5b8a6745a8764efad87))
+* update deps ([36d598c](https://github.com/ethanneff/example/commit/36d598c493c79e214501b5a5df0053e33848c390))
+* update deps ([8ad175a](https://github.com/ethanneff/example/commit/8ad175aa375cee824dd8b88bbd52cbd7534d80ea))
+* update snaps ([924feee](https://github.com/ethanneff/example/commit/924feee56eb99b4d56091771db6537d94c9b3730))
+
+
+### Features
+
+* add slot machien computation ([58ae86e](https://github.com/ethanneff/example/commit/58ae86ecd570d3de472e98264938bcb8d40501f9))
+* add wheel of fortune ([8cba7b5](https://github.com/ethanneff/example/commit/8cba7b5f7f13a212802b18249b290def73377f71))
+
 ## [2.32.2](https://github.com/ethanneff/example/compare/v2.32.1...v2.32.2) (2020-07-16)
 
 
