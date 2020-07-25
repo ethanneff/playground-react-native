@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.33.2](https://github.com/ethanneff/example/compare/v2.33.1...v2.33.2) (2020-07-25)
+
+
+### Bug Fixes
+
+* add default colors and tested for dark mode ([29d2ca9](https://github.com/ethanneff/example/commit/29d2ca92eba6ec808d4c423f680d7009dd2b4e71))
+* allow multiple drop shadows per component ([8208d6f](https://github.com/ethanneff/example/commit/8208d6f90a5ca599b1aefd194823e098c56a66e0))
+* better spins ([2f1c729](https://github.com/ethanneff/example/commit/2f1c7290e11c78cb04281ed5826dc6842d796958))
+* correct re-render of screen navbar ([d82630a](https://github.com/ethanneff/example/commit/d82630a17d003a1d514c39f9e9cf568e9eacf66b))
+* reduce re-renders of nav ([8c08a49](https://github.com/ethanneff/example/commit/8c08a495d3bdcd81a086a2804726ee36011f85a7))
+
 ## [2.33.1](https://github.com/ethanneff/example/compare/v2.33.0...v2.33.1) (2020-07-25)
 
 
