@@ -1,2 +1,0 @@
-(this.webpackJsonpexample=this.webpackJsonpexample||[]).push([[29],{282:function(e,t,a){"use strict";a.r(t);var n=a(0),r=a.n(n),o=a(8),c=a(7),i=a(181),l=a(41);t.default=Object(n.memo)((function(){var e=Object(l.a)(),t=Object(l.d)(),a=o.a.create({container:{backgroundColor:e.background}});return r.a.createElement(i.j,{onLeftPress:t.to("portfolioLanding"),title:"Flappy Bird"},r.a.createElement(c.a,{style:a.container}))}))}}]);
-//# sourceMappingURL=29.e7b1eadb.chunk.js.map
