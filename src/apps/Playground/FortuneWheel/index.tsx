@@ -38,8 +38,6 @@ export default memo(function PlaygroundFortuneWheel() {
     setWinner(a.display);
   }, []);
 
-  // TODO: fix odd number return
-  // TODO: add knob
   // TODO: add animation decay
   return (
     <Screen onLeftPress={nav.to('playground')} title="FortuneWheel">
