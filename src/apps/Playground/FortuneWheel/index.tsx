@@ -38,6 +38,9 @@ export default memo(function PlaygroundFortuneWheel() {
 
   const navBack = useCallback(nav('playground'), [nav]);
 
+  // TODO: fix text on android
+  // TODO: increase duration based on spin
+
   return (
     <Screen onLeftPress={navBack} title="FortuneWheel">
       <Wheel onComplete={onComplete} segments={segments} />

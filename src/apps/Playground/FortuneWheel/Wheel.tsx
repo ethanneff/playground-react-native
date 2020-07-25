@@ -41,8 +41,8 @@ export const Wheel = memo(
     innerRadius = 60,
     spinSpeed = 1000,
     bounceSpeed = 5000,
-    minSpin = 1,
-    maxSpin = 3,
+    minSpin = 3,
+    maxSpin = 7,
     onComplete,
   }: Props) => {
     const color = useColor();
