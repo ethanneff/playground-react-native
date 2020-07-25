@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.33.1](https://github.com/ethanneff/example/compare/v2.33.0...v2.33.1) (2020-07-25)
+
+
+### Bug Fixes
+
+* add knob ([bbc0572](https://github.com/ethanneff/example/commit/bbc05726eb5c2084b4c2a8138312067266ef32bd))
+* add props ([57a2af5](https://github.com/ethanneff/example/commit/57a2af5c5739ffcc2d3201d5c9c2f4b25ac816aa))
+* correct winner on odd spins ([4f3c9cd](https://github.com/ethanneff/example/commit/4f3c9cde185d4d9d470e94da9c1ce196d3ce0bda))
+
 # [2.33.0](https://github.com/ethanneff/example/compare/v2.32.2...v2.33.0) (2020-07-24)
 
 
