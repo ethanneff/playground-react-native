@@ -65,9 +65,11 @@ export default memo(function Checklist() {
     ],
   );
   const keyExtractor = useCallback((item) => item.id, []);
+  const navBack = useCallback(nav('checklists'), [nav]);
+  const navCreate = useCallback(nav('checklistsItemCreate'), [nav]);
 
   return (
-    <Screen gutter onLeftPress={nav.to('checklists')} title="Checklist">
+    <Screen gutter onLeftPress={navBack} title="Checklist">
       <FlatList
         data={items}
         keyExtractor={keyExtractor}
@@ -77,7 +79,7 @@ export default memo(function Checklist() {
         color={color.background}
         fab
         name="plus"
-        onPress={nav.to('checklistsItemCreate')}
+        onPress={navCreate}
         right
       />
     </Screen>

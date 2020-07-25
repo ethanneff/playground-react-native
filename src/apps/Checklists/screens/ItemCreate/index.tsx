@@ -50,8 +50,10 @@ export default memo(function ChecklistItemCreate() {
     [],
   );
 
+  const navItem = useCallback(nav('checklistsList'), [nav]);
+
   return (
-    <Screen gutter onLeftPress={nav.to('checklistsList')} title="Create Item">
+    <Screen gutter onLeftPress={navItem} title="Create Item">
       <TextInput
         blurOnSubmit
         onChangeText={handleNameChange}

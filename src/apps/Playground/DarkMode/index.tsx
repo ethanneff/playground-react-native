@@ -114,8 +114,9 @@ export default memo(function DarkMode() {
     [elevation, onPress],
   );
 
+  const navBack = useCallback(nav('playground'), [nav]);
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Dark mode">
+    <Screen onLeftPress={navBack} title="Dark mode">
       <View style={{padding: Theme.padding.p04}}>
         <View
           style={{

@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {ScrollView, View} from 'react-native';
 import {Card, Icon, Screen, Text, TouchableOpacity} from '../../components';
 import {useColor, useNav} from '../../hooks';
@@ -63,9 +63,10 @@ const Section = ({title, description, items = []}: SectionProps) => {
 export default memo(function TheOneThing() {
   const color = useColor();
   const nav = useNav();
+  const navBack = useCallback(nav('portfolioLanding'), [nav]);
 
   return (
-    <Screen onLeftPress={nav.to('portfolioLanding')} title="The One Thing">
+    <Screen onLeftPress={navBack} title="The One Thing">
       <ScrollView
         contentContainerStyle={{
           backgroundColor: color.light,

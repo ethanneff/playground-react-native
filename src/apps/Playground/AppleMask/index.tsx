@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {Image, ImageSourcePropType, ScrollView, View} from 'react-native';
 import {Screen, Text} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
@@ -93,8 +93,9 @@ export default memo(function AppleMask() {
   ];
 
   const paddingHorizontal = Theme.padding.p04;
+  const navBack = useCallback(nav('playground'), [nav]);
   return (
-    <Screen onLeftPress={nav.to('playground')}>
+    <Screen onLeftPress={navBack}>
       <ScrollView contentContainerStyle={{paddingHorizontal}}>
         <Text title="Assemble and adjust your Face Shield" type="h2" />
         <Text

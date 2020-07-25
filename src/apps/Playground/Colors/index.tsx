@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {ScrollView, View} from 'react-native';
 import {Button, Screen, Text} from '../../../components';
 import {useNav} from '../../../hooks';
@@ -7,14 +7,16 @@ import {Theme, useRootDispatch, useRootSelector} from '../../../utils';
 
 export default memo(function DebugColors() {
   const nav = useNav();
+  const navBack = useCallback(nav('playground'), [nav]);
   const dispatch = useRootDispatch();
   const themes = Object.values(ColorTheme);
   const currentTheme = useRootSelector((state) => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   // text: high 87% medium 60% disabled 38%
   // icon: active 100% inactive 60% disabled 38%
+
   return (
-    <Screen gutter onLeftPress={nav.to('playground')} title="Colors">
+    <Screen gutter onLeftPress={navBack} title="Colors">
       <Text
         center
         style={{paddingBottom: Theme.padding.p08}}

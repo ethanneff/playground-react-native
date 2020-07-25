@@ -112,10 +112,11 @@ export default memo(function PlaygroundReminder() {
   const [showRate, setShowRate] = useState(false);
 
   const handleRate = (value: boolean) => () => setShowRate(value);
+  const navBack = useCallback(nav('playground'), [nav]);
 
   return (
     <>
-      <Screen onLeftPress={nav.to('playground')} title="Reminder">
+      <Screen onLeftPress={navBack} title="Reminder">
         <Button onPress={handleCreateReminder} title="create reminder" />
         <Text center title="reminders" type="h2" />
         <Reminders reminders={form.reminders} />

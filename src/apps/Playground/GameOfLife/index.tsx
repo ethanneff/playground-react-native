@@ -85,9 +85,10 @@ export default memo(function PlaygroundGameOfLife() {
       }
     };
   }, [timeoutRef]);
+  const navBack = useCallback(nav('playground'), [nav]);
 
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Game of life">
+    <Screen onLeftPress={navBack} title="Game of life">
       {loading ? (
         <Text emphasis="medium" title="loading..." type="h5" />
       ) : (

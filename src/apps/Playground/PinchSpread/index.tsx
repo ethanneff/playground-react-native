@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {Animated, PanResponder, StyleSheet} from 'react-native';
 import {Screen, Text} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
@@ -28,9 +28,10 @@ export default memo(function PinchSpread() {
       }
     },
   });
+  const navBack = useCallback(nav('playground'), [nav]);
 
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Pinch Spread">
+    <Screen onLeftPress={navBack} title="Pinch Spread">
       <Text center title={title} />
       <Text center title={`spread: ${state.spreadCount}`} />
       <Text center title={`pinch: ${state.pinchCount}`} />

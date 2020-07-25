@@ -40,9 +40,11 @@ export default memo(function Checklists() {
   );
 
   const keyExtractor = useCallback((item) => item.id, []);
+  const navBack = useCallback(nav('portfolioLanding'), [nav]);
+  const navCreate = useCallback(nav('playground'), [nav]);
 
   return (
-    <Screen gutter onLeftPress={nav.to('portfolioLanding')} title="Checklists">
+    <Screen gutter onLeftPress={navBack} title="Checklists">
       <FlatList
         data={items}
         keyExtractor={keyExtractor}
@@ -52,7 +54,7 @@ export default memo(function Checklists() {
         color={color.background}
         fab
         name="plus"
-        onPress={nav.to('checklistsListCreate')}
+        onPress={navCreate}
         right
       />
     </Screen>

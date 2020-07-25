@@ -14,9 +14,10 @@ export default memo(function Journal() {
   });
 
   const handleChangeText = useCallback(() => undefined, []);
+  const navBack = useCallback(nav('portfolioLanding'), [nav]);
 
   return (
-    <Screen onLeftPress={nav.to('portfolioLanding')} title="Journal">
+    <Screen onLeftPress={navBack} title="Journal">
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: Theme.padding.p04,

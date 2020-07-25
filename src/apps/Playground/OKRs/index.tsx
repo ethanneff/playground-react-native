@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {ScrollView} from 'react-native';
 import {Card, Screen, Text} from '../../../components';
 import {useNav} from '../../../hooks';
@@ -6,8 +6,9 @@ import {Theme} from '../../../utils';
 
 export default memo(function PlaygroundOKRs() {
   const nav = useNav();
+  const navBack = useCallback(nav('playground'), [nav]);
   return (
-    <Screen onLeftPress={nav.to('playground')} title="OKRs">
+    <Screen onLeftPress={navBack} title="OKRs">
       <ScrollView
         contentContainerStyle={{paddingHorizontal: Theme.padding.p05}}>
         <Card>

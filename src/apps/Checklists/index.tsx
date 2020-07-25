@@ -15,10 +15,11 @@ export default memo(function Checklists() {
   });
   const [showLogin, setShowLogin] = useState(false);
   const onToggleLogin = useCallback(() => setShowLogin((prev) => !prev), []);
+  const navBack = useCallback(nav('portfolioLanding'), [nav]);
 
   return (
     <>
-      <Screen onLeftPress={nav.to('portfolioLanding')} title="Checklists">
+      <Screen onLeftPress={navBack} title="Checklists">
         <ScrollView
           contentContainerStyle={{
             paddingHorizontal: Theme.padding.p04,

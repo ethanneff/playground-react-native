@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Screen, TouchableOpacity} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
@@ -98,9 +98,10 @@ export default memo(function PlaygroundBejeweled() {
       setSelected({x, y});
     }
   };
+  const navBack = useCallback(nav('playground'), [nav]);
 
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Bejeweled">
+    <Screen onLeftPress={navBack} title="Bejeweled">
       <View style={styles.container}>
         {board.map((col, x) => (
           <View key={`${x}${col[0].key}`} style={{flexDirection: 'row'}}>

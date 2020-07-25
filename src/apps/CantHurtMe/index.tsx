@@ -23,12 +23,11 @@ export default memo(function CantHurtMeMain() {
     [],
   );
 
+  const navBack = useCallback(nav('portfolioLanding'), [nav]);
+
   return (
     <>
-      <Screen
-        border
-        onLeftPress={nav.to('portfolioLanding')}
-        title="Can't Hurt Me">
+      <Screen border onLeftPress={navBack} title="Can't Hurt Me">
         <List
           onProfilePress={handleProfilePress}
           onSettingsPress={handleSettingsPress}

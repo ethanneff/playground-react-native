@@ -331,8 +331,9 @@ const ImagePlaceholder = memo(function ImagePlaceholder() {
 
 export default memo(function SwipeFeed() {
   const nav = useNav();
+  const navBack = useCallback(nav('playground'), [nav]);
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Swipe Feed">
+    <Screen onLeftPress={navBack} title="Swipe Feed">
       <View style={{padding: Theme.padding.p04}}>
         <ImagePlaceholder />
         <ImagePlaceholder />

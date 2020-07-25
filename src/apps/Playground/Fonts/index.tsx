@@ -1,12 +1,13 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {Screen, Text} from '../../../components';
 import {useNav} from '../../../hooks';
 
 export default memo(function PlaygroundFonts() {
   const nav = useNav();
+  const navBack = useCallback(nav('playground'), [nav]);
 
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Fonts">
+    <Screen onLeftPress={navBack} title="Fonts">
       <Text
         title="H1: The quick brown fox jumps over the lazy dog."
         type="h1"

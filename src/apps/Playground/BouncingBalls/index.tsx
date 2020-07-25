@@ -14,8 +14,9 @@ export default memo(function PlaygroundBouncingBalls() {
     setCanvas({x, y, height, width});
   }, []);
 
+  const navBack = useCallback(nav('playground'), [nav]);
   return (
-    <Screen onLeftPress={nav.to('playground')} title="BouncingBalls">
+    <Screen onLeftPress={navBack} title="BouncingBalls">
       <Canvas onLayout={onLayout}>
         {canvas && (
           <Balls

@@ -81,9 +81,10 @@ export default memo(function PlaygroundDrag() {
     const {x, y, height, width} = event.nativeEvent.layout;
     setCanvas({x, y, height, width});
   }, []);
+  const navBack = useCallback(nav('playground'), [nav]);
 
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Drag">
+    <Screen onLeftPress={navBack} title="Drag">
       <Text center title="drag the circle" type="overline" />
       <View onLayout={handleCanvas} style={styles.canvas}>
         <Animated.View

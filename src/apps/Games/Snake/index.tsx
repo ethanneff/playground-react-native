@@ -63,10 +63,11 @@ export default memo(function Snake() {
       stop();
     }
   }, [game.state, start, stop, direction]);
+  const navBack = useCallback(nav('portfolioLanding'), [nav]);
 
   return (
     <>
-      <Screen onLeftPress={nav.to('portfolioLanding')} title="Snake">
+      <Screen onLeftPress={navBack} title="Snake">
         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
           <Button onPress={onStart} title="start" />
           <Button onPress={onStop} title="stop" />

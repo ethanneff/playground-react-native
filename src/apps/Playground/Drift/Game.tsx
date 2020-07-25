@@ -1,7 +1,6 @@
 import React, {memo, useCallback, useState} from 'react';
-import {LayoutChangeEvent, View} from 'react-native';
+import {LayoutChangeEvent} from 'react-native';
 import {Canvas} from './Canvas';
-import {Dpad} from './Dpad';
 import {Character} from './Character';
 import {Tracks} from './Tracks';
 
@@ -21,16 +20,13 @@ export const Game = memo(function Game() {
   }, []);
 
   return (
-    <View style={{flex: 1}}>
-      <Canvas onLayout={onCanvasLayout}>
-        {canvas && (
-          <>
-            <Character canvas={canvas} />
-            <Tracks />
-          </>
-        )}
-      </Canvas>
-      <Dpad />
-    </View>
+    <Canvas onLayout={onCanvasLayout}>
+      {canvas && (
+        <>
+          <Character canvas={canvas} />
+          <Tracks />
+        </>
+      )}
+    </Canvas>
   );
 });

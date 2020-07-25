@@ -45,13 +45,11 @@ export default memo(function ChecklistUpdate() {
 
   const handleDeletePress = useCallback(() => setShowDeleteDialog(true), []);
   const handleDeleteCancel = useCallback(() => setShowDeleteDialog(false), []);
+  const navBack = useCallback(nav('checklists'), [nav]);
 
   return (
     <>
-      <Screen
-        gutter
-        onLeftPress={nav.to('checklists')}
-        title="Update Checklist">
+      <Screen gutter onLeftPress={navBack} title="Update Checklist">
         <TextInput
           onChangeText={handleNameChange}
           title="name"

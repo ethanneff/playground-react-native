@@ -1,4 +1,4 @@
-import React, {memo, useRef, useState} from 'react';
+import React, {memo, useCallback, useRef, useState} from 'react';
 import {
   Animated,
   LayoutChangeEvent,
@@ -132,8 +132,10 @@ export default memo(function Archero() {
     setDimensions({width: layout.width, height: layout.height});
   };
 
+  const navBack = useCallback(nav('portfolioLanding'), [nav]);
+
   return (
-    <Screen onLeftPress={nav.to('portfolioLanding')} title="Archero">
+    <Screen onLeftPress={navBack} title="Archero">
       <View
         onLayout={onLayout}
         style={{flex: 1, backgroundColor: color.success}}

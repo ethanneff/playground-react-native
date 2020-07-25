@@ -81,9 +81,10 @@ export default memo(function PlaygroundStartup() {
   );
 
   const handleSubmit = useCallback(() => undefined, []);
+  const navBack = useCallback(nav('playground'), [nav]);
 
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Weekly Update">
+    <Screen onLeftPress={navBack} title="Weekly Update">
       <View
         style={{
           paddingBottom: Theme.padding.p04,

@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Screen, Text} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
@@ -24,9 +24,10 @@ export default memo(function PlaygroundSlotMachine() {
       backgroundColor: color.background,
     },
   });
+  const navBack = useCallback(nav('playground'), [nav]);
 
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Slot Machine">
+    <Screen onLeftPress={navBack} title="Slot Machine">
       <View style={styles.container}>
         <Text title={`win percentage: ${winPercentage}%`} />
         <Text title={`return percentage: ${returnPercentage}%`} />

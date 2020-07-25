@@ -13,9 +13,12 @@ export default memo(function PortfolioLogin() {
   const nav = useNav();
   const handlePassword = useCallback((val: string) => setPassword(val), []);
   const handleEmail = useCallback((val: string) => setEmail(val), []);
+  const navBack = useCallback(nav('portfolioLanding'), [nav]);
+  const navPortfolio = useCallback(nav('portfolio'), [nav]);
+  const navPassword = useCallback(nav('portfolioForgotPassword'), [nav]);
 
   return (
-    <Screen gutter onLeftPress={nav.to('portfolioLanding')} title="Login">
+    <Screen gutter onLeftPress={navBack} title="Login">
       <TextInput
         onChangeText={handleEmail}
         placeholder="example@gmail.com"
@@ -29,8 +32,8 @@ export default memo(function PortfolioLogin() {
         value={password}
       />
       <View style={styles.row}>
-        <Button onPress={nav.to('portfolio')} title="Login" />
-        <Button onPress={nav.to('portfolioForgotPassword')} title="Forgot" />
+        <Button onPress={navPortfolio} title="Login" />
+        <Button onPress={navPassword} title="Forgot" />
       </View>
     </Screen>
   );

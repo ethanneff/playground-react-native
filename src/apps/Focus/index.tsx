@@ -61,9 +61,10 @@ export default memo(function Focus() {
 
   useEffect(handleLoad, []);
 
+  const navBack = useCallback(nav('portfolioLanding'), [nav]);
   return (
     <>
-      <Screen border onLeftPress={nav.to('portfolioLanding')} title="Focus">
+      <Screen border onLeftPress={navBack} title="Focus">
         {items.length > 0 && (
           <List
             items={items}

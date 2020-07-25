@@ -187,9 +187,10 @@ export default memo(function PlaygroundSearchbar() {
     (value: string) => setState((prev) => ({...prev, input: value})),
     [],
   );
+  const navBack = useCallback(nav('playground'), [nav]);
 
   return (
-    <Screen onLeftPress={nav.to('playground')}>
+    <Screen onLeftPress={navBack}>
       <View style={styles.header}>
         <View style={styles.textContainer}>
           <Animated.View

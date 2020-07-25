@@ -102,14 +102,11 @@ exports[`renders correctly 1`] = `
     </View>
     <View
       style={
-        Array [
-          Object {
-            "backgroundColor": "hsl(0, 0%, 100%)",
-            "flex": 1,
-          },
-          undefined,
-          undefined,
-        ]
+        Object {
+          "backgroundColor": "hsl(0, 0%, 100%)",
+          "flex": 1,
+          "padding": 0,
+        }
       }
     >
       <RCTScrollView
@@ -1293,21 +1290,21 @@ exports[`renders correctly 1`] = `
         </View>
       </RCTScrollView>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          },
+          Object {
+            "height": 0,
+          },
+          undefined,
+        ]
+      }
+    />
   </RCTSafeAreaView>
-  <View
-    style={
-      Array [
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
-        },
-        Object {
-          "height": 0,
-        },
-        undefined,
-      ]
-    }
-  />
 </View>
 `;

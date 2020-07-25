@@ -1,5 +1,5 @@
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {Screen} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
 import Timer from './Timer';
@@ -96,59 +96,62 @@ export default memo(function PlaygroundStopWatch() {
     run();
   }, [run]);
 
+  const navBack = useCallback(nav('playground'), [nav]);
   return (
-    <Screen onLeftPress={nav.to('playground')} style={styles.container}>
-      <Timer interval={interval} style={styles.timer} />
-      {state.laps.length === 0 && (
-        <ButtonsRow>
-          <RoundButton
-            background="#151515"
-            color="#8B8B90"
-            disabled
-            onPress={lap}
-            title="Lap"
-          />
-          <RoundButton
-            background="#1B361F"
-            color="#50D167"
-            onPress={start}
-            title="Start"
-          />
-        </ButtonsRow>
-      )}
-      {state.start > 0 && (
-        <ButtonsRow>
-          <RoundButton
-            background="#3D3D3D"
-            color="#FFFFFF"
-            onPress={lap}
-            title="Lap"
-          />
-          <RoundButton
-            background="#3C1715"
-            color="#E33935"
-            onPress={stop}
-            title="Stop"
-          />
-        </ButtonsRow>
-      )}
-      {state.laps.length > 0 && state.start === 0 && (
-        <ButtonsRow>
-          <RoundButton
-            background="#3D3D3D"
-            color="#FFFFFF"
-            onPress={reset}
-            title="Reset"
-          />
-          <RoundButton
-            background="#1B361F"
-            color="#50D167"
-            onPress={resume}
-            title="Start"
-          />
-        </ButtonsRow>
-      )}
-      <LapsTable laps={state.laps} timer={elapsed} />
+    <Screen onLeftPress={navBack}>
+      <View style={styles.container}>
+        <Timer interval={interval} style={styles.timer} />
+        {state.laps.length === 0 && (
+          <ButtonsRow>
+            <RoundButton
+              background="#151515"
+              color="#8B8B90"
+              disabled
+              onPress={lap}
+              title="Lap"
+            />
+            <RoundButton
+              background="#1B361F"
+              color="#50D167"
+              onPress={start}
+              title="Start"
+            />
+          </ButtonsRow>
+        )}
+        {state.start > 0 && (
+          <ButtonsRow>
+            <RoundButton
+              background="#3D3D3D"
+              color="#FFFFFF"
+              onPress={lap}
+              title="Lap"
+            />
+            <RoundButton
+              background="#3C1715"
+              color="#E33935"
+              onPress={stop}
+              title="Stop"
+            />
+          </ButtonsRow>
+        )}
+        {state.laps.length > 0 && state.start === 0 && (
+          <ButtonsRow>
+            <RoundButton
+              background="#3D3D3D"
+              color="#FFFFFF"
+              onPress={reset}
+              title="Reset"
+            />
+            <RoundButton
+              background="#1B361F"
+              color="#50D167"
+              onPress={resume}
+              title="Start"
+            />
+          </ButtonsRow>
+        )}
+        <LapsTable laps={state.laps} timer={elapsed} />
+      </View>
     </Screen>
   );
 });

@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Screen} from '../../../../components';
 import {useNav} from '../../../../hooks';
@@ -10,32 +10,47 @@ const styles = StyleSheet.create({
 
 export default memo(function PortfolioLanding() {
   const nav = useNav();
+  const navBack = useCallback(nav('playground'), [nav]);
+  const navPortfolioLogin = useCallback(nav('portfolioLogin'), [nav]);
+  const navPortfolio = useCallback(nav('portfolio'), [nav]);
+  const navPortfolioSettings = useCallback(nav('portfolioSettings'), [nav]);
+  const navChecklists = useCallback(nav('checklists'), [nav]);
+  const navCantHurtMe = useCallback(nav('cantHurtMe'), [nav]);
+  const navTheOneThing = useCallback(nav('theOneThing'), [nav]);
+  const navJournal = useCallback(nav('journal'), [nav]);
+  const navActivity = useCallback(nav('activity'), [nav]);
+  const navFocus = useCallback(nav('focus'), [nav]);
+  const navGamesFlappyBird = useCallback(nav('gamesFlappyBird'), [nav]);
+  const navGamesSnake = useCallback(nav('gamesSnake'), [nav]);
+  const navGamesPapiJump = useCallback(nav('gamesPapiJump'), [nav]);
+  const navGamesArchero = useCallback(nav('gamesArchero'), [nav]);
+
   return (
     <Screen title="Landing">
       <Walkthrough />
       <View style={styles.row}>
-        <Button onPress={nav.to('portfolioLogin')} title="Login" />
-        <Button onPress={nav.to('portfolio')} title="Main" />
-        <Button onPress={nav.to('portfolioSettings')} title="Settings" />
+        <Button onPress={navPortfolioLogin} title="Login" />
+        <Button onPress={navPortfolio} title="Main" />
+        <Button onPress={navPortfolioSettings} title="Settings" />
       </View>
       <View style={styles.row}>
-        <Button onPress={nav.to('checklists')} title="Checklist" />
-        <Button onPress={nav.to('cantHurtMe')} title="Cant Hurt" />
-        <Button onPress={nav.to('theOneThing')} title="One Thing " />
+        <Button onPress={navChecklists} title="Checklist" />
+        <Button onPress={navCantHurtMe} title="Cant Hurt" />
+        <Button onPress={navTheOneThing} title="One Thing " />
       </View>
       <View style={styles.row}>
-        <Button onPress={nav.to('journal')} title="Journal" />
-        <Button onPress={nav.to('activity')} title="Activity" />
-        <Button onPress={nav.to('focus')} title="Focus" />
+        <Button onPress={navJournal} title="Journal" />
+        <Button onPress={navActivity} title="Activity" />
+        <Button onPress={navFocus} title="Focus" />
       </View>
       <View style={styles.row}>
-        <Button onPress={nav.to('gamesFlappyBird')} title="FlappyBird" />
-        <Button onPress={nav.to('gamesSnake')} title="Snake" />
-        <Button onPress={nav.to('gamesPapiJump')} title="PapiJump" />
-        <Button onPress={nav.to('gamesArchero')} title="Archero" />
+        <Button onPress={navGamesFlappyBird} title="FlappyBird" />
+        <Button onPress={navGamesSnake} title="Snake" />
+        <Button onPress={navGamesPapiJump} title="PapiJump" />
+        <Button onPress={navGamesArchero} title="Archero" />
       </View>
       <View style={styles.row}>
-        <Button onPress={nav.to('playground')} title="Playground" />
+        <Button onPress={navBack} title="Playground" />
       </View>
     </Screen>
   );

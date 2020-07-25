@@ -11,11 +11,9 @@ export default memo(function PortfolioForgotPassword() {
   const [email, setEmail] = useState('');
   const nav = useNav();
   const handleEmail = useCallback((val: string) => setEmail(val), []);
+  const navLogin = useCallback(nav('portfolioLogin'), [nav]);
   return (
-    <Screen
-      gutter
-      onLeftPress={nav.to('portfolioLogin')}
-      title="Forgot Password">
+    <Screen gutter onLeftPress={navLogin} title="Forgot Password">
       <TextInput
         onChangeText={handleEmail}
         placeholder="example@gmail.com"
@@ -23,7 +21,7 @@ export default memo(function PortfolioForgotPassword() {
         value={email}
       />
       <View style={styles.row}>
-        <Button onPress={nav.to('portfolioLogin')} title="Send email" />
+        <Button onPress={navLogin} title="Send email" />
       </View>
     </Screen>
   );

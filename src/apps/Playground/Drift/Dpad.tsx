@@ -12,7 +12,7 @@ export type ColorChoice =
   | 'lightgrey';
 
 export const Dpad = memo(function Dpad() {
-  const useShadow = useDropShadow(10);
+  const useShadow = useDropShadow();
   const {dispatch} = useContext(DriftContext);
   const color = useColor();
   const size = 50;
@@ -41,7 +41,7 @@ export const Dpad = memo(function Dpad() {
             ...box,
             backgroundColor: color.info,
             borderTopLeftRadius: size,
-            ...useShadow,
+            ...useShadow(10),
           }}
         />
         <TouchableOpacity
@@ -50,7 +50,7 @@ export const Dpad = memo(function Dpad() {
             ...box,
             backgroundColor: color.success,
             borderTopRightRadius: size,
-            ...useShadow,
+            ...useShadow(10),
           }}
         />
       </View>
@@ -61,7 +61,7 @@ export const Dpad = memo(function Dpad() {
             ...box,
             backgroundColor: color.primary,
             borderBottomLeftRadius: size,
-            ...useShadow,
+            ...useShadow(10),
           }}
         />
         <TouchableOpacity
@@ -70,7 +70,7 @@ export const Dpad = memo(function Dpad() {
             ...box,
             backgroundColor: color.warning,
             borderBottomRightRadius: size,
-            ...useShadow,
+            ...useShadow(10),
           }}
         />
       </View>

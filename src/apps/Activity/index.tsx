@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
 import {Activity, Icon, Screen} from '../../components';
 import {useColor, useNav} from '../../hooks';
@@ -25,8 +25,10 @@ export default memo(function ActivityTracker() {
     },
   });
 
+  const navBack = useCallback(nav('portfolioLanding'), [nav]);
+
   return (
-    <Screen onLeftPress={nav.to('portfolioLanding')} title="Activity">
+    <Screen onLeftPress={navBack} title="Activity">
       <ScrollView
         contentContainerStyle={styles.container}
         style={styles.background}>

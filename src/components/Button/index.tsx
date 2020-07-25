@@ -58,7 +58,7 @@ export var Button = ({
   title,
 }: Props) => {
   const colorScheme = useColor();
-  const dropShadowStyling = useDropShadow(elevation);
+  const dropShadowStyling = useDropShadow();
   const buttonColor = colorScheme[color || 'text'];
   const styles = getStyles({
     colorScheme,
@@ -71,7 +71,7 @@ export var Button = ({
     styles.container,
     center && styles.center,
     right && styles.right,
-    dropShadow && dropShadowStyling,
+    dropShadow && dropShadowStyling(elevation),
     invisible && styles.invisible,
     buttonStyle,
   ];

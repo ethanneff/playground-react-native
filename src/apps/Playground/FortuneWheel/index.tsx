@@ -36,9 +36,10 @@ export default memo(function PlaygroundFortuneWheel() {
     setWinner(a.display);
   }, []);
 
-  // TODO: add animation decay
+  const navBack = useCallback(nav('playground'), [nav]);
+
   return (
-    <Screen onLeftPress={nav.to('playground')} title="FortuneWheel">
+    <Screen onLeftPress={navBack} title="FortuneWheel">
       <Wheel onComplete={onComplete} segments={segments} />
       <Text center title={String(winner)} />
     </Screen>

@@ -41,8 +41,9 @@ export default memo(function PlaygroundBall() {
     () => animate(Math.random(), Math.random()),
     [animate],
   );
+  const navBack = useCallback(nav('playground'), [nav]);
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Ball">
+    <Screen onLeftPress={navBack} title="Ball">
       <Animated.View style={[ballPosition.getLayout(), styles.ball]} />
       <View style={styles.button}>
         <Button onPress={onInitialPress} title="initial" />

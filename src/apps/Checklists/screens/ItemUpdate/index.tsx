@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {Button, Screen, TextInput} from '../../../../components';
 import {
   getCurrentChecklistItem,
@@ -44,11 +44,9 @@ export default memo(function ChecklistUpdate() {
     dispatch(navigate('checklistsList'));
   };
 
+  const navItem = useCallback(nav('checklistsList'), [nav]);
   return (
-    <Screen
-      gutter
-      onLeftPress={nav.to('checklistsList')}
-      title="Update Checklist Item">
+    <Screen gutter onLeftPress={navItem} title="Update Checklist Item">
       <TextInput
         onChangeText={handleNameChange}
         title="name"

@@ -1,6 +1,5 @@
 import React from 'react';
 import {Platform, StyleProp, StyleSheet, ViewStyle} from 'react-native';
-import {el} from 'date-fns/locale';
 import {Config, Theme} from '../../utils';
 import {useColor, useDropShadow} from '../../hooks';
 import {TouchableOpacity} from '../TouchableOpacity';

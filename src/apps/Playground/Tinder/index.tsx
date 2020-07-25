@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Screen} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
@@ -11,8 +11,9 @@ export default memo(function PlaygroundTinder() {
       backgroundColor: color.background,
     },
   });
+  const navBack = useCallback(nav('playground'), [nav]);
   return (
-    <Screen onLeftPress={nav.to('playground')} title="Tinder">
+    <Screen onLeftPress={navBack} title="Tinder">
       <View style={styles.container} />
     </Screen>
   );

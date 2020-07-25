@@ -22,9 +22,10 @@ export default memo(function PlaygroundInput() {
   const handleSubmit = useCallback(() => {
     setForm((prev) => ({...prev, error: 'Invalid Email'}));
   }, []);
+  const navBack = useCallback(nav('playground'), [nav]);
 
   return (
-    <Screen gutter onLeftPress={nav.to('playground')} title="Template">
+    <Screen gutter onLeftPress={navBack} title="Template">
       <TextInput
         error={form.error}
         onChangeText={handleChange('name')}

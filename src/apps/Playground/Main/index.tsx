@@ -38,13 +38,14 @@ export default memo(function Playground() {
   const nav = useNav();
   const renderItem = useCallback(
     ({item}: {item: NavigationScreen}) => (
-      <Button key={item} onPress={nav.to(item)} title={formatTitle(item)} />
+      <Button key={item} onPress={nav(item)} title={formatTitle(item)} />
     ),
     [nav],
   );
   const keyExtractor = useCallback((item: NavigationScreen) => item, []);
+  const navBack = useCallback(nav('portfolioLanding'), [nav]);
   return (
-    <Screen onLeftPress={nav.to('portfolioLanding')} title="Playground">
+    <Screen onLeftPress={navBack} title="Playground">
       <FlatList
         data={playgroundScreens}
         keyExtractor={keyExtractor}

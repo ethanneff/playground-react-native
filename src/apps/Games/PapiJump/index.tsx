@@ -1,4 +1,4 @@
-import React, {memo, useEffect} from 'react';
+import React, {memo, useCallback, useEffect} from 'react';
 import {Animated, Easing, StyleSheet, View} from 'react-native';
 import {Screen} from '../../../components';
 import {useColor, useDropShadow, useNativeDriver, useNav} from '../../../hooks';
@@ -47,8 +47,9 @@ export default memo(function PapiJump() {
       flex: 1,
     },
   });
+  const navBack = useCallback(nav('portfolioLanding'), [nav]);
   return (
-    <Screen onLeftPress={nav.to('portfolioLanding')} title="Papi Jump">
+    <Screen onLeftPress={navBack} title="Papi Jump">
       <View style={styles.container}>
         <Papi color={color.primary} size={50} />
       </View>

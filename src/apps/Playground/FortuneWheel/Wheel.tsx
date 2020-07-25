@@ -133,7 +133,7 @@ export const Wheel = memo(
               {
                 translateY: yPosition.interpolate({
                   inputRange: [-1, 0, 1],
-                  outputRange: ['-10', '0', '-10'],
+                  outputRange: [-10, 0, -10],
                 }),
               },
             ],
