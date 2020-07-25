@@ -38,7 +38,7 @@ export const Dialog = memo(function Dialog({
   testID,
 }: Props) {
   const nativeDriver = useNativeDriver();
-  const dropShadow = useDropShadow(10);
+  const dropShadow = useDropShadow();
   const styles = StyleSheet.create({
     buttonContainer: {
       flexDirection: 'row',
@@ -65,7 +65,7 @@ export const Dialog = memo(function Dialog({
     modal: {
       maxWidth: 500,
       width: '100%',
-      ...dropShadow,
+      ...dropShadow(10),
     },
     overlay: {
       alignItems: 'center',

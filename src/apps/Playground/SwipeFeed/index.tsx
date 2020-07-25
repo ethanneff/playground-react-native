@@ -56,7 +56,7 @@ const SwipeCard = memo(function SwipeCard({
   const color = useColor();
   const useDriver = useNativeDriver();
   const width = useRootSelector(getWidth);
-  const dropShadow = useDropShadow(4);
+  const dropShadow = useDropShadow();
   const imageHeight = height / 1.5;
   const swipeThreshold = width / 3;
   const touchThreshold = 50;
@@ -111,7 +111,7 @@ const SwipeCard = memo(function SwipeCard({
         backgroundColor: color.background,
         borderRadius: Theme.padding.p01,
         borderColor: color.brand,
-        ...dropShadow,
+        ...dropShadow(4),
       }}>
       <TouchableOpacity onPress={onSwipeComplete} style={{flex: 1}}>
         <View style={{flex: 1, flexDirection: 'row'}}>

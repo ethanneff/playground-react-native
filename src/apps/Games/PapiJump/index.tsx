@@ -6,7 +6,7 @@ import {useColor, useDropShadow, useNativeDriver, useNav} from '../../../hooks';
 type PapiProps = {size: number; color: string};
 
 const Papi = memo(({size, color}: PapiProps) => {
-  const dropShadow = useDropShadow(10);
+  const dropShadow = useDropShadow();
   const useDriver = useNativeDriver();
   const location = new Animated.ValueXY({x: 0, y: 0});
 
@@ -31,7 +31,7 @@ const Papi = memo(({size, color}: PapiProps) => {
           width: size,
           borderRadius: size,
           backgroundColor: color,
-          ...dropShadow,
+          ...dropShadow(10),
         },
       ]}
     />

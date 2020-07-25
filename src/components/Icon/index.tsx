@@ -1,5 +1,6 @@
 import React from 'react';
 import {Platform, StyleProp, StyleSheet, ViewStyle} from 'react-native';
+import {el} from 'date-fns/locale';
 import {Config, Theme} from '../../utils';
 import {useColor, useDropShadow} from '../../hooks';
 import {TouchableOpacity} from '../TouchableOpacity';
@@ -43,7 +44,7 @@ export var Icon = ({
   onPress,
 }: Props) => {
   const colors = useColor();
-  const dropShadow = useDropShadow(elevation);
+  const dropShadow = useDropShadow();
   const styles = StyleSheet.create({
     fab: {
       alignItems: 'center',
@@ -52,7 +53,7 @@ export var Icon = ({
       height: Theme.padding.p15,
       justifyContent: 'center',
       width: Theme.padding.p15,
-      ...dropShadow,
+      ...dropShadow(elevation),
     },
     right: {
       alignSelf: 'flex-end',

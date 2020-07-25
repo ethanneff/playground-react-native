@@ -35,7 +35,7 @@ export var Card = ({
   style,
 }: Props) => {
   const color = useColor();
-  const dropShadow = useDropShadow(elevation);
+  const dropShadow = useDropShadow();
   const opacity =
     elevation === 0
       ? 0
@@ -49,7 +49,7 @@ export var Card = ({
       borderRadius,
       borderWidth,
       marginVertical: noMargin ? 0 : Theme.padding.p02,
-      ...dropShadow,
+      ...dropShadow(elevation),
     },
     contents: {
       backgroundColor: `hsla(0,0%,100%,${opacity})`,

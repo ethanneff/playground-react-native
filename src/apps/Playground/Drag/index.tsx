@@ -38,7 +38,7 @@ const getPosition = (
 export default memo(function PlaygroundDrag() {
   const nav = useNav();
   const color = useColor();
-  const dropShadow = useDropShadow(10);
+  const dropShadow = useDropShadow();
   const useDriver = useNativeDriver();
   const [canvas, setCanvas] = useState({x: 0, y: 0, height: 0, width: 0});
   const initialPosition = {x: canvas.width / 2, y: canvas.height / 2};
@@ -52,7 +52,7 @@ export default memo(function PlaygroundDrag() {
       marginLeft: -size,
       marginTop: -size,
       width: size,
-      ...dropShadow,
+      ...dropShadow(10),
     },
     canvas: {
       backgroundColor: color.surface,

@@ -26,7 +26,7 @@ export const Modal = memo(function ModalWrapperMemo({
   const appHeight = useRootSelector((state) => state.dimension.window.height);
   const maximumHeight = maxHeight ? maxHeight : appHeight * 0.6;
   const color = useColor();
-  const dropShadow = useDropShadow(10);
+  const dropShadow = useDropShadow();
   const styles = StyleSheet.create({
     container: {
       alignItems: 'center',
@@ -43,7 +43,7 @@ export const Modal = memo(function ModalWrapperMemo({
       overflow: 'hidden',
       position: 'absolute',
       width: '80%',
-      ...dropShadow,
+      ...dropShadow(10),
     },
     modalContent: {
       padding: Theme.padding.p08,
