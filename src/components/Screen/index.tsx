@@ -1,18 +1,11 @@
 import React, {ReactNode} from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  View,
-  ViewStyle,
-} from 'react-native';
+import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
 import {Theme} from '../../utils';
 import {KeyboardSpacer} from '../../conversions';
 import {useColor} from '../../hooks';
 import {NavBar} from './NavBar';
 
 interface OwnProps {
-  style?: ViewStyle;
   title?: string;
   border?: boolean;
   gutter?: boolean;
@@ -27,7 +20,6 @@ type Props = OwnProps;
 
 export var Screen = ({
   title,
-  style,
   gutter,
   border,
   onLeftPress,
@@ -46,10 +38,11 @@ export var Screen = ({
       flex: 1,
     },
     gutter: {
+      backgroundColor: color.background,
+      flex: 1,
       padding: gutter ? Theme.padding.p04 : Theme.padding.p00,
     },
   });
-  const childrenStyles = [styles.container, gutter && styles.gutter, style];
 
   return (
     <View style={styles.container}>
@@ -63,9 +56,9 @@ export var Screen = ({
           rightIcon={rightIcon}
           title={title}
         />
-        <View style={childrenStyles}>{children}</View>
+        <View style={styles.gutter}>{children}</View>
+        <KeyboardSpacer />
       </SafeAreaView>
-      <KeyboardSpacer />
     </View>
   );
 };
