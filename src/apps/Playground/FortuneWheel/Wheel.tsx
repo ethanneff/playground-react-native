@@ -1,7 +1,8 @@
 import React, {memo, useCallback, useEffect, useRef} from 'react';
 import {Animated, Dimensions, Easing, TouchableOpacity} from 'react-native';
 import * as d3 from 'd3-shape';
-import Svg, {G, Path, Text} from 'react-native-svg';
+import Svg, {G, Path, Polygon, Text} from 'react-native-svg';
+import {useColor, useDropShadow} from '../../../hooks';
 import {getNewLocation, getWinnerIndex} from './utils';
 
 type Segment = {
@@ -12,6 +13,7 @@ type Segment = {
 
 type Props = {
   size?: number;
+  padAngle?: number;
   backgroundColor?: string;
   borderColor?: string;
   textColor?: string;
@@ -20,6 +22,7 @@ type Props = {
   innerRadius?: number;
   segments: Segment[];
   spinSpeed?: number;
+  noBounce?: boolean;
   bounceSpeed?: number;
   minSpin?: number;
   maxSpin?: number;
@@ -31,8 +34,10 @@ export const Wheel = memo(
     size = Dimensions.get('screen').width,
     backgroundColor = 'lightgrey',
     textColor = 'white',
-    fontSize = 20,
+    fontSize = 24,
     segments,
+    noBounce,
+    padAngle = 0.02,
     innerRadius = 60,
     spinSpeed = 1000,
     bounceSpeed = 5000,
@@ -40,11 +45,15 @@ export const Wheel = memo(
     maxSpin = 3,
     onComplete,
   }: Props) => {
+    const color = useColor();
+    const dropShadow = useDropShadow(5);
     const radius = size / 2;
+    const knobSize = size / 8;
+    const knobOffset = knobSize * 0.6;
     const numOfSegments = segments.length;
     const angleOfSegment = 360 / numOfSegments;
     const angleOffset = angleOfSegment / 2;
-    const active = useRef(false);
+    const spinning = useRef(false);
     const location = useRef(0);
     const angle = new Animated.Value(0);
     const yPosition = new Animated.Value(-1);
@@ -53,7 +62,7 @@ export const Wheel = memo(
       .map((arc: any, index) => {
         const instance = d3
           .arc()
-          .padAngle(0.01)
+          .padAngle(padAngle)
           .outerRadius(radius)
           .innerRadius(innerRadius);
         return {
@@ -64,7 +73,7 @@ export const Wheel = memo(
       });
 
     const onSpinComplete = useCallback(() => {
-      active.current = false;
+      spinning.current = false;
       const winnerIndex = getWinnerIndex({
         location: location.current,
         numOfSegments,
@@ -81,7 +90,7 @@ export const Wheel = memo(
         location: location.current,
       });
       location.current = newLocation;
-      active.current = true;
+      spinning.current = true;
       Animated.timing(angle, {
         toValue: newLocation,
         duration: spinSpeed,
@@ -91,7 +100,7 @@ export const Wheel = memo(
     }, [angle, maxSpin, minSpin, numOfSegments, onSpinComplete, spinSpeed]);
 
     const onPress = useCallback(() => {
-      if (active.current) {
+      if (spinning.current) {
         return;
       }
       spin();
@@ -108,8 +117,11 @@ export const Wheel = memo(
     );
 
     useEffect(() => {
+      if (noBounce) {
+        return;
+      }
       bounce(1);
-    }, [bounce]);
+    }, [bounce, noBounce]);
 
     return (
       <TouchableOpacity onPress={onPress}>
@@ -127,6 +139,9 @@ export const Wheel = memo(
             width: size,
             height: size,
             borderRadius: size,
+            alignItems: 'center',
+            marginTop: knobOffset,
+            ...dropShadow,
           }}>
           <Svg
             style={{
@@ -165,11 +180,7 @@ export const Wheel = memo(
               <G x={radius} y={radius}>
                 {arcs.map((arc, i) => (
                   <G key={`arc-${i}`}>
-                    <Path
-                      d={String(arc.path)}
-                      fill={arc.segment.color}
-                      strokeWidth={2}
-                    />
+                    <Path d={String(arc.path)} fill={arc.segment.color} />
                     <G
                       origin={`${arc.centroid}`}
                       rotation={(i * 360) / segments.length + angleOffset}>
@@ -178,7 +189,7 @@ export const Wheel = memo(
                         fontSize={fontSize}
                         textAnchor="middle"
                         x={arc.centroid[0]}
-                        y={arc.centroid[1] - 50}>
+                        y={arc.centroid[1] - knobOffset}>
                         {arc.segment.display}
                       </Text>
                     </G>
