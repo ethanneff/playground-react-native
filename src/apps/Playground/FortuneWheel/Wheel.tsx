@@ -32,8 +32,8 @@ type Props = {
 export const Wheel = memo(
   ({
     size = Dimensions.get('screen').width,
-    backgroundColor = 'lightgrey',
-    textColor = 'white',
+    backgroundColor,
+    textColor,
     fontSize = 24,
     segments,
     noBounce,
@@ -46,7 +46,9 @@ export const Wheel = memo(
     onComplete,
   }: Props) => {
     const color = useColor();
-    const dropShadow = useDropShadow(5);
+    const dropShadow = useDropShadow();
+    const background = backgroundColor || color.background;
+    const text = textColor || color.text;
     const radius = size / 2;
     const knobSize = size / 8;
     const knobOffset = knobSize * 0.6;
@@ -135,13 +137,13 @@ export const Wheel = memo(
                 }),
               },
             ],
-            backgroundColor,
+            backgroundColor: background,
             width: size,
             height: size,
             borderRadius: size,
             alignItems: 'center',
             marginTop: knobOffset,
-            ...dropShadow,
+            ...dropShadow(3),
           }}>
           <Svg
             style={{
@@ -149,15 +151,15 @@ export const Wheel = memo(
               position: 'absolute',
               width: knobSize,
               height: knobSize,
-              ...dropShadow,
+              ...dropShadow(6),
             }}>
             <Polygon
               fill={color.light}
               points={`${knobSize / 2},0 ${knobSize * 0.85},${knobSize / 3} ${
                 knobSize / 2
               },${knobSize} ${knobSize * 0.15},${knobSize / 3},`}
-              stroke={color.dark}
-              strokeWidth={1}
+              stroke={color.secondary}
+              strokeWidth={0.2}
             />
           </Svg>
           <Animated.View
@@ -185,11 +187,11 @@ export const Wheel = memo(
                       origin={`${arc.centroid}`}
                       rotation={(i * 360) / segments.length + angleOffset}>
                       <Text
-                        fill={textColor}
+                        fill={text}
                         fontSize={fontSize}
                         textAnchor="middle"
                         x={arc.centroid[0]}
-                        y={arc.centroid[1] - knobOffset}>
+                        y={arc.centroid[1] - knobOffset / 2}>
                         {arc.segment.display}
                       </Text>
                     </G>
