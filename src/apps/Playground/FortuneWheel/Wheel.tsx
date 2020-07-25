@@ -128,6 +128,23 @@ export const Wheel = memo(
             height: size,
             borderRadius: size,
           }}>
+          <Svg
+            style={{
+              marginTop: -knobOffset,
+              position: 'absolute',
+              width: knobSize,
+              height: knobSize,
+              ...dropShadow,
+            }}>
+            <Polygon
+              fill={color.light}
+              points={`${knobSize / 2},0 ${knobSize * 0.85},${knobSize / 3} ${
+                knobSize / 2
+              },${knobSize} ${knobSize * 0.15},${knobSize / 3},`}
+              stroke={color.dark}
+              strokeWidth={1}
+            />
+          </Svg>
           <Animated.View
             style={{
               width: size,
