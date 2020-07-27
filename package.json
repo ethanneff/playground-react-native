@@ -21,7 +21,7 @@
     "ncu": "ncu -u && yarn && cd ios && pod install"
   },
   "dependencies": {
-    "@mdi/js": "5.3.45",
+    "@mdi/js": "5.4.45",
     "@mdi/react": "1.4.0",
     "@react-native-community/async-storage": "1.11.0",
     "@react-native-community/masked-view": "0.1.10",
