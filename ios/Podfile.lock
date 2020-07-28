@@ -691,7 +691,7 @@ PODS:
     - RNFBApp
   - RNRate (1.2.1):
     - React
-  - RNSensors (6.0.2):
+  - RNSensors (6.1.0):
     - React
   - RNSound (0.11.0):
     - React
@@ -971,7 +971,7 @@ SPEC CHECKSUMS:
   RNFBFirestore: 4004d6576846262c5a04e274c37a865ad59e162a
   RNFBRemoteConfig: 0247d3532ce786ece85f912e79f6389b31ce6b1a
   RNRate: a39ac26dc9daf3f9b639ce274b7f80672ae36db1
-  RNSensors: 042ff055ce1debb3aede772c6671d4b9f5575c1b
+  RNSensors: 4ae6660861b426fd16f61ce2df0b750bda6ac32d
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
   RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
