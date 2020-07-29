@@ -14,7 +14,7 @@ interface Props {
   onRightPress?(): void;
 }
 
-export var NavBar = memo(
+export const NavBar = memo(
   ({
     title,
     onLeftPress,

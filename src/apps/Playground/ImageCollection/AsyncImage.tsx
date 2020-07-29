@@ -9,7 +9,7 @@ interface Props {
   size?: number | 'small' | 'large';
 }
 
-export var AsyncImage = ({
+export const AsyncImage = ({
   uri,
   height,
   width,

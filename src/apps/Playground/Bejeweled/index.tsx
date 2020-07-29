@@ -10,9 +10,9 @@ const getRandom = (max: number) => {
 };
 
 const getInitialState = (rows: number, cols: number, gems: Gem[]): Board => {
-  let col = [];
+  const col = [];
   for (let i = 0; i < cols; i++) {
-    let row = [];
+    const row = [];
     for (let j = 0; j < rows; j++) {
       row.push(gems[getRandom(gems.length)]);
     }
@@ -27,7 +27,7 @@ type Board = Gem[][];
 type Matches = {[key: string]: Vector};
 
 const getMatches = (board: Board): Matches => {
-  let matches: Matches = {};
+  const matches: Matches = {};
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board[i].length; j++) {
       const mid = board[i][j];

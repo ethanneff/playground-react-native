@@ -3,7 +3,7 @@ import {FlatList, View} from 'react-native';
 import {Card, Dialog, Icon, Text} from '../../../../components';
 import {questionnairesInitialState} from '../models';
 
-export var Questionnaire = () => {
+export const Questionnaire = () => {
   const [actionSheet, setActionSheet] = useState(false);
   const [activeItem, setActiveItem] = useState('');
 
@@ -39,7 +39,7 @@ export var Questionnaire = () => {
     [activeItem],
   );
 
-  const keyExtractor = useCallback((item: any) => item.id, []);
+  const keyExtractor = useCallback((item) => item.id, []);
 
   return (
     <>

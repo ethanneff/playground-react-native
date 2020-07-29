@@ -11,7 +11,7 @@ import {
 import {useColor} from '../../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 
-export var Questionnaires = () => {
+export const Questionnaires = () => {
   const questionnaires = useRootSelector(getQuestionnaireArray);
   const selected = useRootSelector((state) => state.questionnaires.selected);
   const [actionSheet, setActionSheet] = useState(false);

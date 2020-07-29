@@ -13,7 +13,7 @@ interface Props {
 }
 
 const sound = new Sound(require('./tap.mp3'));
-export var TouchableOpacity = ({
+export const TouchableOpacity = ({
   testID,
   onPress,
   onLongPress,

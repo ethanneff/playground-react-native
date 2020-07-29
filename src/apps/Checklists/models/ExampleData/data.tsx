@@ -90,9 +90,15 @@ export interface Tags {
   [id: string]: Tag;
 }
 
-export const User: User | any = {};
+export const user: User = {
+  id: '123',
+  firstName: 'bob',
+  lastName: 'smith',
+  email: 'bob.smith@email.com',
+  checklists: [],
+};
 
-export const Data = {
+export const data = {
   '3': {
     items: {
       '1': {

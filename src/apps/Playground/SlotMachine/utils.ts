@@ -9,11 +9,11 @@ const getWinsPerCombination = (
     let freq = 1;
     output[i] = [...combinations[i]];
     for (let j = 0; j < reels.length; j++) {
-      const symbol = output[i][j];
+      const element = output[i][j];
       const reel = reels[j];
       const sum = getSumOfReel(reel);
       freq *=
-        symbol !== 'any' && typeof symbol !== 'number' ? reel[symbol] : sum;
+        element !== 'any' && typeof element !== 'number' ? reel[element] : sum;
     }
     output[i][3] = freq;
   }

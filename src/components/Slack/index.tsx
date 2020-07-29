@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 
-export var Slack = () => {
+export const Slack = () => {
   return <View />;
 };
 

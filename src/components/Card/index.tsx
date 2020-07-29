@@ -20,7 +20,7 @@ interface Props {
 }
 
 const touchOpacity = 0.3;
-export var Card = ({
+export const Card = ({
   borderRadius = Theme.sizing.borderRadius,
   borderWidth = 1,
   children,

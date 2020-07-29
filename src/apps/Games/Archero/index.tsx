@@ -24,7 +24,7 @@ export default memo(function Archero() {
   const nav = useNav();
   const useDriver = useNativeDriver();
   const timer = useRef(false);
-  const interval = useRef<any>(null);
+  const interval = useRef<NodeJS.Timeout | null>(null);
   const gesture = useRef({x0: 0, y0: 0, dx: 0, dy: 0});
   const window = useRootSelector((state) => state.dimension.window);
   const [dimensions, setDimensions] = useState({width: 1000, height: 1000});
@@ -117,7 +117,9 @@ export default memo(function Archero() {
   const onUpdate = () => {
     interval.current = setInterval(() => {
       if (!timer.current) {
-        clearInterval(interval.current);
+        if (interval.current) {
+          clearInterval(interval.current);
+        }
         resetJoystick();
         return;
       }

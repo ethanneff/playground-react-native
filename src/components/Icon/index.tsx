@@ -27,7 +27,7 @@ interface Props {
   onPress?: () => void;
 }
 
-export var Icon = ({
+export const Icon = ({
   name,
   style,
   activeOpacity,

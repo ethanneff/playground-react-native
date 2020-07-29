@@ -7,7 +7,7 @@ export type Day = {
 
 export type CalendarMatrix = Day[][];
 
-export const addMonths = (date: Date, months: number) => {
+export const addMonths = (date: Date, months: number): Date => {
   const result = new Date(date);
   const dayOfMonth = date.getDate();
   result.setMonth(result.getMonth() + months);
@@ -17,7 +17,7 @@ export const addMonths = (date: Date, months: number) => {
   return result;
 };
 
-export function addDays(date: Date, days: number) {
+export function addDays(date: Date, days: number): Date {
   const result = new Date(date);
   result.setDate(result.getDate() + days);
   return result;

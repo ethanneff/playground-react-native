@@ -4,10 +4,10 @@ import {useRootDispatch} from '../../utils';
 import {updateDimension} from '../../models';
 import {DimensionsProps} from './../../models/Device';
 
-export const useAppLoad = () => undefined;
-export const useNetInfo = () => undefined;
-export const useDeviceInfo = () => undefined;
-export const useDimensions = () => {
+export const useAppLoad = (): void => undefined;
+export const useNetInfo = (): void => undefined;
+export const useDeviceInfo = (): void => undefined;
+export const useDimensions = (): void => {
   const dispatch = useRootDispatch();
 
   const handleChange = useCallback(
@@ -22,5 +22,5 @@ export const useDimensions = () => {
     };
   }, [handleChange, dispatch]);
 };
-export const useAppState = () => undefined;
-export const useKeyboard = () => undefined;
+export const useAppState = (): void => undefined;
+export const useKeyboard = (): void => undefined;

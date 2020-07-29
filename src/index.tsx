@@ -4,7 +4,7 @@ import {App, Navigation, Redux} from './containers';
 import {Config, debugDev} from './utils';
 
 debugDev();
-export var Main = () => {
+export const Main = () => {
   return (
     <Redux>
       <App>

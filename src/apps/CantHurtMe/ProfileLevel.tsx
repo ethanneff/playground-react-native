@@ -8,7 +8,7 @@ interface Props {
   onPress?(): void;
 }
 
-export var ProfileLevel = ({onPress}: Props) => {
+export const ProfileLevel = ({onPress}: Props) => {
   const color = useColor();
   const image = require('../../assets/placeholder.png');
   const width = 0.2;

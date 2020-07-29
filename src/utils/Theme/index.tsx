@@ -126,7 +126,7 @@ export const Theme = {
   sizing,
 };
 
-export const colorWithOpacity = (colorCode: string, opacity = 0.5) => {
+export const colorWithOpacity = (colorCode: string, opacity = 0.5): string => {
   const boundedOpacity = opacity < 0 ? 0 : opacity > 1 ? 1 : opacity;
   const leading = 4;
   if (!colorCode.startsWith('hsl')) {

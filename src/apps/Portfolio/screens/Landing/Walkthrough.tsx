@@ -21,7 +21,7 @@ export default memo(function Walkthrough() {
     {key: 4, text: 'jill', color: color.brand},
   ];
   const keyExtractor = useCallback((item) => String(item.key), []);
-  var renderItem = ({item}: {item: Data}) => {
+  const renderItem = ({item}: {item: Data}) => {
     const styles = StyleSheet.create({
       item: {
         backgroundColor: item.color,

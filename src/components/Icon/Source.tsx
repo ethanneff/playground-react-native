@@ -6,7 +6,7 @@ interface Props {
   name: string;
   size?: number;
   color?: string;
-  style?: object;
+  style?: any;
   invisible?: boolean;
 }
 

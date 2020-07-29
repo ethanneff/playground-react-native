@@ -12,7 +12,7 @@ import {
 } from '../../models';
 import {useRootDispatch} from '../../utils';
 
-export const useKeyboard = () => {
+export const useKeyboard = (): void => {
   const dispatch = useRootDispatch();
   const onShow = useCallback(() => dispatch(changeKeyboardStatus(true)), [
     dispatch,
@@ -31,7 +31,7 @@ export const useKeyboard = () => {
   }, [onShow, onHide]);
 };
 
-export const useDimensions = () => {
+export const useDimensions = (): void => {
   const dispatch = useRootDispatch();
 
   const handleChange = useCallback(
@@ -47,7 +47,7 @@ export const useDimensions = () => {
   }, [handleChange, dispatch]);
 };
 
-export const useAppState = () => {
+export const useAppState = (): void => {
   const dispatch = useRootDispatch();
 
   const handleChange = useCallback(
@@ -63,7 +63,7 @@ export const useAppState = () => {
   }, [handleChange]);
 };
 
-export const useNetInfo = () => {
+export const useNetInfo = (): void => {
   const dispatch = useRootDispatch();
 
   const handleChange = useCallback(
@@ -76,7 +76,7 @@ export const useNetInfo = () => {
   }, [handleChange]);
 };
 
-export const useDeviceInfo = async () => {
+export const useDeviceInfo = async (): Promise<void> => {
   const dispatch = useRootDispatch();
   dispatch(
     loadDevice({

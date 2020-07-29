@@ -10,7 +10,7 @@ interface Props {
   onPress?(): void;
 }
 
-export var NavButton = memo(({onPress, icon, isRight}: Props) => {
+export const NavButton = memo(({onPress, icon, isRight}: Props) => {
   const color = useColor();
   const styles = StyleSheet.create({
     button: {

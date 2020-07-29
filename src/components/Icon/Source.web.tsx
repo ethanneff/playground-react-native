@@ -5,7 +5,7 @@ import {Icons} from './config';
 interface Props {
   name: keyof typeof Icons;
   color?: string;
-  style?: object;
+  style?: any;
 }
 
 export const Source = memo(function IconSource({name, color, style}: Props) {

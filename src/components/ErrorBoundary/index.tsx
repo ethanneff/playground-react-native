@@ -26,9 +26,6 @@ export class ErrorBoundary extends React.PureComponent<Props, State> {
   render() {
     const {hasError} = this.state;
     const {children} = this.props;
-    if (!hasError) {
-      return children;
-    }
-    return <Text center title="something went wrong" />;
+    return hasError ? <Text center title="something went wrong" /> : children;
   }
 }

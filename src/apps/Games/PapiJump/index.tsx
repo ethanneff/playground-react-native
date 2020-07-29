@@ -20,8 +20,6 @@ const Papi = memo(({size, color}: PapiProps) => {
     }).start();
   }, [location, useDriver]);
 
-  useEffect(() => {}, [location]);
-
   return (
     <Animated.View
       style={[

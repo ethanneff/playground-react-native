@@ -27,7 +27,7 @@ export interface NetInfoConnectedDetails {
 }
 interface NetInfoConnectedState<
   T extends NetInfoStateType,
-  D extends object = {}
+  D extends any = any
 > {
   type: T;
   isConnected: true;

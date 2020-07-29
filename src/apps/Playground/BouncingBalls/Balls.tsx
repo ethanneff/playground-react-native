@@ -63,9 +63,9 @@ export const Balls = ({
   const draw = useCallback(() => {
     setItems((prev) => {
       for (let i = 0; i < prev.length; i++) {
-        let a = prev[i];
+        const a = prev[i];
         for (let j = i + 1; j < prev.length; j++) {
-          let b = prev[j];
+          const b = prev[j];
           if (getOverlap(a.x, a.y, a.radius, b.x, b.y, b.radius, true)) {
             resolveItemCollision(a, b, maxSpeed * 1.5);
           }
@@ -87,11 +87,11 @@ export const Balls = ({
   const onPress = useCallback(
     ({index}) => () => {
       setItems((prev) => {
-        let item = prev[index];
+        const item = prev[index];
         item.radius *= 1 - mitosis;
         item.dx *= 2 - mitosis;
         item.dy *= 2 - mitosis;
-        let copy = {...prev[index]};
+        const copy = {...prev[index]};
         copy.dx *= -1;
         copy.dy *= -1;
         return [...prev, copy];

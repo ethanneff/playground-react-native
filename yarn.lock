@@ -2942,6 +2942,18 @@
   dependencies:
     "@types/yargs-parser" "*"
 
+"@typescript-eslint/eslint-plugin@3.7.1":
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-3.7.1.tgz#d144c49a9a0ffe8dd704bb179c243df76c111bc9"
+  integrity sha512-3DB9JDYkMrc8Au00rGFiJLK2Ja9CoMP6Ut0sHsXp3ZtSugjNxvSSHTnKLfo4o+QmjYBJqEznDqsG1zj4F2xnsg==
+  dependencies:
+    "@typescript-eslint/experimental-utils" "3.7.1"
+    debug "^4.1.1"
+    functional-red-black-tree "^1.0.1"
+    regexpp "^3.0.0"
+    semver "^7.3.2"
+    tsutils "^3.17.1"
+
 "@typescript-eslint/eslint-plugin@^2.10.0":
   version "2.18.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-2.18.0.tgz#f8cf272dfb057ecf1ea000fea1e0b3f06a32f9cb"

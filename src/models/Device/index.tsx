@@ -21,7 +21,7 @@ export interface DeviceInfo {
   androidId: string;
   apiLevel: number;
   applicationName: string;
-  availableLocationProviders: object;
+  availableLocationProviders: any;
   baseOs: string;
   buildId: string;
   batteryLevel: number;
@@ -53,7 +53,7 @@ export interface DeviceInfo {
   maxMemory: string;
   model: string;
   phoneNumber: string;
-  powerState: object;
+  powerState: any;
   product: string;
   previewSdkInt: number;
   readableVersion: string;

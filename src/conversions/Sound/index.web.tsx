@@ -3,7 +3,9 @@ import {Howl} from 'howler';
 type Callback = (sound: Sound) => void;
 
 export class Sound {
-  static setCategory() {}
+  static setCategory() {
+    return;
+  }
   sound: Howl;
 
   constructor(asset: string, error: (soundId: number, error: Error) => void) {

@@ -1,4 +1,4 @@
-export type Symbol =
+export type Element =
   | '🍓'
   | '🍇'
   | '🍉'
@@ -8,7 +8,7 @@ export type Symbol =
   | '🍒'
   | '🍋'
   | 'any';
-type Combination = [Symbol, Symbol, Symbol, number];
+type Combination = [Element, Element, Element, number];
 export type Combinations = Combination[];
 
 export const combinations: Combinations = [
@@ -27,7 +27,7 @@ export const combinations: Combinations = [
   ['🍒', 'any', 'any', 2],
 ];
 
-export type Reel = {[key in Symbol]: number};
+export type Reel = {[key in Element]: number};
 export type Reels = [Reel, Reel, Reel];
 
 export const reels: Reels = [

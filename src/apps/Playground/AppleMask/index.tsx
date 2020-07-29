@@ -15,7 +15,7 @@ interface SectionProps {
   image?: ImageSourcePropType;
   imageRatio?: number;
 }
-var Section = ({
+const Section = ({
   index,
   title,
   description,

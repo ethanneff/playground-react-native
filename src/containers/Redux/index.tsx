@@ -109,7 +109,13 @@ export type RootAction =
   | ChoicesActions
   | ResponsesActions
   | ThemeActions;
-export type RootThunkAction<R> = ThunkAction<R, RootState, {}, RootAction>;
+export type RootThunkAction<R> = ThunkAction<R, RootState, any, RootAction>;
+
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
 
 /* CONSTANTS */
 const persistConfig = {
@@ -117,7 +123,6 @@ const persistConfig = {
   storage: Storage,
 };
 const middlewares: Middleware[] = [thunk];
-// @ts-ignore: custom __REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 const composers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancers = composers(applyMiddleware(...middlewares));
 

@@ -103,7 +103,7 @@ export const getItems = ({
   minMass,
   maxMass,
 }: GetItems) => {
-  let initialItems: Item[] = [];
+  const initialItems: Item[] = [];
 
   for (let i = 0; i < count; i++) {
     const radius = getRandomNumber(minSize, maxSize);
@@ -115,7 +115,7 @@ export const getItems = ({
 
     if (i !== 0) {
       for (let j = 0; j < initialItems.length; j++) {
-        let item = initialItems[j];
+        const item = initialItems[j];
         if (getOverlap(x, y, radius, item.x, item.y, item.radius, false)) {
           x = getRandomNumber(canvas.x, canvas.x + canvas.width - radius);
           y = getRandomNumber(canvas.x, canvas.x + canvas.height - radius);

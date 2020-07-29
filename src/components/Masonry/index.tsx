@@ -8,7 +8,7 @@ interface Item<T> {
 }
 
 interface Props<T> {
-  data: ReadonlyArray<T>;
+  data: T[];
   numColumns: number;
   renderItem({item, index}: Item<T>): void;
 }
@@ -18,7 +18,7 @@ export const Masonry = memo(function Masonry<T>({
   numColumns,
   renderItem,
 }: Props<T>) {
-  const columns: ReadonlyArray<any> = [...Array(numColumns)].map(() => []);
+  const columns: T[][] = [...Array(numColumns)].map(() => []);
   data.forEach((item: T, i: number) => columns[i % numColumns].push(item));
 
   return (

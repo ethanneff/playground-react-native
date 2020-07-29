@@ -14,7 +14,7 @@ export const useClock = ({precision = 16, frequency = 60, onUpdate}: Props) => {
   const timeout = useRef<NodeJS.Timeout | null>(null);
   const loop = useCallback(() => {
     timeout.current = setTimeout(() => {
-      let time = Date.now();
+      const time = Date.now();
       if (time - prev.current >= frequency) {
         prev.current = time;
         onUpdate(time);
@@ -33,7 +33,7 @@ export const useClock = ({precision = 16, frequency = 60, onUpdate}: Props) => {
   const start = useCallback(() => {
     stop();
     state.current = 'on';
-    let time = Date.now();
+    const time = Date.now();
     prev.current = time;
     onUpdate(time);
     loop();

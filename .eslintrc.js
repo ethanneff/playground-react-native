@@ -3,10 +3,11 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     '@react-native-community',
+    'plugin:@typescript-eslint/recommended',
     'plugin:react/all',
     'plugin:react-native/all',
   ],
-  plugins: ['import'],
+  plugins: ['import', '@typescript-eslint'],
   ignorePatterns: [
     'node_modules/',
     'coverage/',
@@ -23,6 +24,7 @@ module.exports = {
       {namedComponents: 'arrow-function', unnamedComponents: 'arrow-function'},
     ],
     // ignore (outside prettier and typescript rules)
+    '@typescript-eslint/no-var-requires': 'off',
     'react/jsx-indent': 'off',
     'react/jsx-indent-props': 'off',
     'react/jsx-closing-bracket-location': 'off',
@@ -31,6 +33,8 @@ module.exports = {
     'react/jsx-no-useless-fragment': 'off',
     'react/jsx-one-expression-per-line': 'off',
     // TODO: remove (good rules with extra effort)
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react-native/no-inline-styles': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-max-depth': 'off',

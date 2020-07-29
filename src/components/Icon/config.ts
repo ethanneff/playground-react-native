@@ -3284,7 +3284,6 @@ export const Icons = {
   mirror: I.mdiMirror,
   'mixed-martial-arts': I.mdiMixedMartialArts,
   'mixed-reality': I.mdiMixedReality,
-  mixer: I.mdiMixer,
   molecule: I.mdiMolecule,
   'molecule-co': I.mdiMoleculeCo,
   'molecule-co-2': I.mdiMoleculeCo2,
