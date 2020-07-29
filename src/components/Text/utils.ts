@@ -17,7 +17,7 @@ export type FontType =
 
 export type FontEmphasis = 'high' | 'medium' | 'low';
 
-export const getFontType = (type?: FontType) =>
+export const getFontType = (type?: FontType): any =>
   type === 'h1'
     ? Theme.fontSize.h1
     : type === 'h2'
@@ -46,7 +46,7 @@ export const getFontType = (type?: FontType) =>
     ? Theme.fontSize.overline
     : Theme.fontSize.body2;
 
-export const getTextEmphasis = (emphasis?: FontEmphasis) =>
+export const getTextEmphasis = (emphasis?: FontEmphasis): number =>
   emphasis === 'high'
     ? 0.87
     : emphasis === 'medium'

@@ -3,7 +3,7 @@ import {Howl} from 'howler';
 type Callback = (sound: Sound) => void;
 
 export class Sound {
-  static setCategory() {
+  static setCategory(): void {
     return;
   }
   sound: Howl;
@@ -15,7 +15,7 @@ export class Sound {
     });
   }
 
-  play = async (callback?: Callback) => {
+  play = async (callback?: Callback): Promise<void> => {
     if (this.sound.state() !== 'loaded') {
       return;
     }
@@ -25,7 +25,7 @@ export class Sound {
     }
   };
 
-  stop = async (callback?: Callback) => {
+  stop = async (callback?: Callback): Promise<void> => {
     await this.sound.stop();
     if (callback) {
       callback(this);

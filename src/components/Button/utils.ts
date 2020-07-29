@@ -4,8 +4,10 @@ import {Color} from './../../models/Theme';
 import {Theme} from './../../utils';
 import {ButtonEmphasis} from './index';
 
-export const getButtonColor = (colorScheme: Color, color: keyof Color) =>
-  colorScheme[color];
+export const getButtonColor = (
+  colorScheme: Color,
+  color: keyof Color,
+): string => colorScheme[color];
 
 interface StyleInterface {
   colorScheme: Color;
@@ -21,7 +23,7 @@ export const getStyles = ({
   emphasis,
   noPadding,
   disable,
-}: StyleInterface) =>
+}: StyleInterface): any =>
   StyleSheet.create({
     bob: {flex: 1},
     center: {

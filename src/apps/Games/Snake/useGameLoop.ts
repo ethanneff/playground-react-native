@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useRef} from 'react';
+import {MutableRefObject, useCallback, useEffect, useRef} from 'react';
 
 export type Frame = {
   start: number;
@@ -12,7 +12,13 @@ const initialFrame = {
   count: 0,
 };
 
-export const useGameLoop = (callback: (frame: Frame) => void) => {
+type UseGameLoop = {
+  frame: MutableRefObject<Frame>;
+  start: () => void;
+  stop: () => void;
+};
+
+export const useGameLoop = (callback: (frame: Frame) => void): UseGameLoop => {
   const fps = 16;
   const off = useRef(false);
   const frame = useRef(initialFrame);

@@ -1,6 +1,20 @@
 import {useColor} from '../useColor';
 
-export const useDropShadow = () => {
+type UseDropShadow = (
+  elevation: number,
+) => {
+  elevation: number;
+  shadowColor: string;
+  shadowOffset: {
+    height: 2;
+    width: 0;
+  };
+  shadowOpacity: number;
+  shadowRadius: number;
+  zIndex: number;
+};
+
+export const useDropShadow = (): UseDropShadow => {
   const color = useColor();
   return (elevation = 10) => {
     const shadowOpacity = elevation * 0.036 + 0.12;

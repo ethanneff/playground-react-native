@@ -66,7 +66,7 @@ export const TextInput = ({
   removeError,
   title = '',
   value,
-}: Props) => {
+}: Props): JSX.Element => {
   const [focus, setFocus] = useState(false);
   const color = useColor();
   const focusColor = color.primary;

@@ -15,7 +15,7 @@ export const resolveItemCollision = (
   particle: Item,
   otherParticle: Item,
   maxSpeed: number,
-) => {
+): void => {
   const xVelocityDiff = particle.dx - otherParticle.dx;
   const yVelocityDiff = particle.dy - otherParticle.dy;
 
@@ -102,7 +102,7 @@ export const getItems = ({
   maxSpeed,
   minMass,
   maxMass,
-}: GetItems) => {
+}: GetItems): Item[] => {
   const initialItems: Item[] = [];
 
   for (let i = 0; i < count; i++) {
@@ -138,7 +138,10 @@ export const getItems = ({
   return initialItems;
 };
 
-export const resolveBoundCollision = (item: Item, canvas: CanvasDimensions) => {
+export const resolveBoundCollision = (
+  item: Item,
+  canvas: CanvasDimensions,
+): void => {
   if (item.x <= canvas.x) {
     item.dx = -item.dx;
     item.x = canvas.x;

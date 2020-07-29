@@ -21,7 +21,7 @@ export const TouchableOpacity = ({
   disabled,
   activeOpacity,
   style,
-}: Props) => {
+}: Props): JSX.Element => {
   const onPressHandler = useCallback(() => {
     sound.stop(() => sound.play());
     if (onPress) {

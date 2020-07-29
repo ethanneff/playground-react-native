@@ -41,7 +41,7 @@ export const Icon = ({
   right,
   invisible,
   onPress,
-}: Props) => {
+}: Props): JSX.Element => {
   const colors = useColor();
   const dropShadow = useDropShadow();
   const styles = StyleSheet.create({
@@ -69,7 +69,9 @@ export const Icon = ({
     right ? styles.right : undefined,
     style,
   ];
-  return name === undefined || name.length === 0 || hidden ? null : (
+  return name === undefined || name.length === 0 || hidden ? (
+    <></>
+  ) : (
     <TouchableOpacity
       activeOpacity={activeOpacity}
       disabled={!onPress}

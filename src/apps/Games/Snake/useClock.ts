@@ -8,7 +8,13 @@ interface Props {
 
 type State = 'off' | 'on';
 
-export const useClock = ({precision = 16, frequency = 60, onUpdate}: Props) => {
+type UseClock = {start: () => void; stop: () => void};
+
+export const useClock = ({
+  precision = 16,
+  frequency = 60,
+  onUpdate,
+}: Props): UseClock => {
   const state = useRef<State>('off');
   const prev = useRef(0);
   const timeout = useRef<NodeJS.Timeout | null>(null);

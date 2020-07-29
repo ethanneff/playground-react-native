@@ -5,7 +5,12 @@ type Position = {
   size: number;
 };
 
-export const getPosition = (position: Position) => {
+type Vector = {
+  x: number;
+  y: number;
+};
+
+export const getPosition = (position: Position): Vector => {
   const dx = position.current.x - position.change.dx;
   const dy = position.current.y + position.change.dy;
   const y =

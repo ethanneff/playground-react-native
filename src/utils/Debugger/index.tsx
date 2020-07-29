@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const debugDev = () => {
+export const debugDev = (): void => {
   if (!__DEV__) {
     return;
   }

@@ -15,7 +15,7 @@ export const AsyncImage = ({
   width,
   color = 'black',
   size = 'small',
-}: Props) => {
+}: Props): JSX.Element => {
   const nativeDriver = useNativeDriver();
   const imageAnimated = new Animated.Value(0);
   const indicatorAnimated = new Animated.Value(1);

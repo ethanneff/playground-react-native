@@ -13,7 +13,7 @@ export const CircularProgress = ({
   theta,
   ring,
   radius,
-}: CircularProgressProps) => {
+}: CircularProgressProps): JSX.Element => {
   const PI = Math.PI;
   const rotate = Math.max(0, theta - PI * 2);
   const progress = new Animated.Value(theta);

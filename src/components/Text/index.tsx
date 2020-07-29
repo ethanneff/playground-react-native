@@ -45,7 +45,7 @@ export const Text = ({
   style,
   adjustsFontSizeToFit,
   numberOfLines,
-}: TextProps) => {
+}: TextProps): JSX.Element => {
   const opacity = new Animated.Value(1);
   const color = useColor();
   const nativeDriver = useNativeDriver();
@@ -108,7 +108,9 @@ export const Text = ({
     style,
   ];
 
-  return title === undefined || hidden ? null : (
+  return title === undefined || hidden ? (
+    <></>
+  ) : (
     <Animated.Text
       adjustsFontSizeToFit={adjustsFontSizeToFit}
       ellipsizeMode={ellipsizeMode}

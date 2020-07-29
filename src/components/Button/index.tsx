@@ -56,7 +56,7 @@ export const Button = ({
   right,
   textStyle,
   title,
-}: Props) => {
+}: Props): JSX.Element => {
   const colorScheme = useColor();
   const dropShadowStyling = useDropShadow();
   const buttonColor = colorScheme[color || 'text'];
@@ -77,7 +77,9 @@ export const Button = ({
   ];
   const textStyleGroup = [styles.text, textStyle];
 
-  return hidden ? null : (
+  return hidden ? (
+    <></>
+  ) : (
     <TouchableOpacity
       activeOpacity={activeOpacity}
       disabled={disable || invisible}

@@ -13,7 +13,7 @@ type BoardItem = 0 | 1;
 
 export type Board = Array<Array<BoardItem>>;
 
-export const generateBoard = (size: number, random = 0) => {
+export const generateBoard = (size: number, random = 0): Board => {
   const board: Board = [];
   for (let i = 0; i < size; i++) {
     board[i] = [];
@@ -25,7 +25,11 @@ export const generateBoard = (size: number, random = 0) => {
 };
 
 // TODO: memoize
-export const determineBoardItem = (board: Board, i: number, j: number) => {
+export const determineBoardItem = (
+  board: Board,
+  i: number,
+  j: number,
+): BoardItem => {
   let neighbors = 0;
   const item = board[i][j];
   const length = board.length;
@@ -50,6 +54,6 @@ export const swapBoardItem = (
   y: number,
   i: number,
   j: number,
-) => {
+): BoardItem => {
   return i === x && y === j ? (item ? 0 : 1) : item;
 };

@@ -11,7 +11,11 @@ interface RingProps {
   theta: number;
 }
 
-export const CircularRing = ({ring, theta, strokeWidth}: RingProps) => {
+export const CircularRing = ({
+  ring,
+  theta,
+  strokeWidth,
+}: RingProps): JSX.Element => {
   const radius = PixelRatio.roundToNearestPixel(ring.size / 2);
   const styles = StyleSheet.create({
     container: {transform: [{rotate: '-270deg'}]},

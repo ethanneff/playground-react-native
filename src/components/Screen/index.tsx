@@ -27,7 +27,7 @@ export const Screen = ({
   children,
   leftIcon,
   rightIcon,
-}: Props) => {
+}: Props): JSX.Element => {
   const color = useColor();
   const styles = StyleSheet.create({
     container: {

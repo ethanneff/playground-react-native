@@ -16,7 +16,7 @@ type Action =
   | {type: 'addColor'; payload: ColorChoice}
   | {type: 'addTrack'; payload: TrackPosition};
 
-export const driftReducer = (state: DriftState, action: Action) => {
+export const driftReducer = (state: DriftState, action: Action): DriftState => {
   switch (action.type) {
     case 'addColor':
       return {...state, color: action.payload};

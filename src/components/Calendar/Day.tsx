@@ -19,7 +19,7 @@ export const CalendarDay = ({
   onSelected,
   selectedDay,
   hiddenDays,
-}: Props) => {
+}: Props): JSX.Element => {
   const color = useColor();
   const selected = day.id === selectedDay;
   const today = dayjs(day.id).isSame(dayjs(), 'day');

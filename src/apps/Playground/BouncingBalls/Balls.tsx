@@ -44,7 +44,7 @@ export const Balls = ({
   minMass = 1,
   maxMass = 1,
   mitosis = 0.1,
-}: Props) => {
+}: Props): JSX.Element => {
   const color = useColor();
 
   const [items, setItems] = useState<Item[]>(() =>

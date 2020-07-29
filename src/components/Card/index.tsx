@@ -33,7 +33,7 @@ export const Card = ({
   selected,
   testID,
   style,
-}: Props) => {
+}: Props): JSX.Element => {
   const color = useColor();
   const dropShadow = useDropShadow();
   const opacity =

@@ -21,7 +21,8 @@ type ActivitySquares = {
   total: number;
 };
 
-export const getDateFormat = (date: number) => format(date, 'yyyy-MM-dd');
+export const getDateFormat = (date: number): string =>
+  format(date, 'yyyy-MM-dd');
 
 export const getSubmissionFormat = (count: number, date: number): string => {
   const submissions = count === 1 ? 'submission' : 'submissions';

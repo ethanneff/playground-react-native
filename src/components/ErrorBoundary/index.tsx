@@ -10,7 +10,7 @@ type State = {
 };
 
 export class ErrorBoundary extends React.PureComponent<Props, State> {
-  static getDerivedStateFromError() {
+  static getDerivedStateFromError(): State {
     return {hasError: true};
   }
 
@@ -19,13 +19,17 @@ export class ErrorBoundary extends React.PureComponent<Props, State> {
     this.state = {hasError: false};
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
     console.log(error, errorInfo);
   }
 
-  render() {
+  render(): JSX.Element {
     const {hasError} = this.state;
     const {children} = this.props;
-    return hasError ? <Text center title="something went wrong" /> : children;
+    return hasError ? (
+      <Text center title="something went wrong" />
+    ) : (
+      <>{children}</>
+    );
   }
 }

@@ -1,7 +1,7 @@
 import {Platform} from 'react-native';
 import {Config, useRootSelector} from '../../utils';
 
-export const useNativeDriver = () => {
+export const useNativeDriver = (): boolean => {
   const emulator = useRootSelector((state) => state.device.isEmulator);
 
   return !(

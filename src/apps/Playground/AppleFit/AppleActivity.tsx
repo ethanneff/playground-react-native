@@ -29,7 +29,7 @@ export const AppleActivity = ({
   size,
   animate,
   speed = 0.02,
-}: Props) => {
+}: Props): JSX.Element => {
   const styles = StyleSheet.create({
     container: {
       backgroundColor,

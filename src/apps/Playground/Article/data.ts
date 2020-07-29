@@ -26,7 +26,7 @@ export const data: ContentBody = {
             },
             {
               content: 'nav here',
-              onPress: () => undefined,
+              onPress: (): void => undefined,
               type: ParagraphType.Link,
             },
             {
@@ -43,7 +43,7 @@ export const data: ContentBody = {
             },
             {
               content: 'nav here',
-              onPress: () => undefined,
+              onPress: (): void => undefined,
               type: ParagraphType.Link,
             },
             {
@@ -67,7 +67,7 @@ export const data: ContentBody = {
             },
             {
               content: 'nav here',
-              onPress: () => undefined,
+              onPress: (): void => undefined,
               type: ParagraphType.Link,
             },
             {
@@ -84,7 +84,7 @@ export const data: ContentBody = {
             },
             {
               content: 'nav here',
-              onPress: () => undefined,
+              onPress: (): void => undefined,
               type: ParagraphType.Link,
             },
             {
@@ -102,7 +102,7 @@ export const data: ContentBody = {
             },
             {
               content: 'nav here',
-              onPress: () => undefined,
+              onPress: (): void => undefined,
               type: ParagraphType.Link,
             },
             {
@@ -126,7 +126,7 @@ export const data: ContentBody = {
             },
             {
               content: 'nav here',
-              onPress: () => undefined,
+              onPress: (): void => undefined,
               type: ParagraphType.Link,
             },
             {
@@ -143,7 +143,7 @@ export const data: ContentBody = {
             },
             {
               content: 'nav herhere',
-              onPress: () => undefined,
+              onPress: (): void => undefined,
               type: ParagraphType.Link,
             },
             {
@@ -161,7 +161,7 @@ export const data: ContentBody = {
             },
             {
               content: 'nav here',
-              onPress: () => undefined,
+              onPress: (): void => undefined,
               type: ParagraphType.Link,
             },
             {

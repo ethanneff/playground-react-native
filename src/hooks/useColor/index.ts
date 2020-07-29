@@ -1,5 +1,5 @@
 import {useRootSelector} from '../../utils';
-import {getCurrentColor} from './../../models/Theme';
+import {Color, getCurrentColor} from './../../models/Theme';
 
-export const useColor = () =>
+export const useColor = (): Color =>
   useRootSelector((state) => getCurrentColor(state));

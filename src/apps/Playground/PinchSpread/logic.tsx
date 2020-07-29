@@ -22,7 +22,7 @@ export class GestureHandler {
     this.minTouches = minTouches;
   }
 
-  onPanResponderMove(event: GestureResponderEvent) {
+  onPanResponderMove(event: GestureResponderEvent): void {
     const touches: NativeTouchEvent[] = event.nativeEvent.touches;
     touches.forEach((touch: NativeTouchEvent) => {
       this.recordFinish(touch);
@@ -37,7 +37,7 @@ export class GestureHandler {
     return outcome;
   }
 
-  recordStart(touch: NativeTouchEvent) {
+  recordStart(touch: NativeTouchEvent): void {
     if (this.isStartAlreadyRecorded(touch)) {
       return;
     }
@@ -47,18 +47,22 @@ export class GestureHandler {
     };
   }
 
-  isStartAlreadyRecorded(touch: NativeTouchEvent) {
+  isStartAlreadyRecorded(touch: NativeTouchEvent): PointPropType {
     return this.start[String(touch.identifier)];
   }
 
-  recordFinish(touch: NativeTouchEvent) {
+  recordFinish(touch: NativeTouchEvent): void {
     this.finish[String(touch.identifier)] = {
       x: touch.locationX,
       y: touch.locationY,
     };
   }
 
-  isSpread(start: PointPropType, finish: PointPropType, center: PointPropType) {
+  isSpread(
+    start: PointPropType,
+    finish: PointPropType,
+    center: PointPropType,
+  ): boolean {
     const startXDistance = Math.abs(start.x - center.x);
     const startYDistance = Math.abs(start.y - center.y);
     const finishXDistance = Math.abs(finish.x - center.x);
@@ -68,7 +72,7 @@ export class GestureHandler {
     );
   }
 
-  determineCenter(points: Touches) {
+  determineCenter(points: Touches): {x: number; y: number} {
     const numRecordedTouched = Object.keys(points).length;
     let x = 0;
     let y = 0;

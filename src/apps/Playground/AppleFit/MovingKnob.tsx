@@ -14,7 +14,7 @@ export const MovingKnob = ({
   radius,
   strokeWidth,
   theta,
-}: MovingKnobProps) => {
+}: MovingKnobProps): JSX.Element => {
   const half = strokeWidth / 2;
   const transform = [
     {translateX: radius - half},

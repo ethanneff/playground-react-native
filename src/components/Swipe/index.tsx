@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 
-export const Swipe = () => {
+export const Swipe = (): JSX.Element => {
   return <View />;
 };
 // import React from "react";

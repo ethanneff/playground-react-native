@@ -10,7 +10,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const Section = ({title, row, children}: Props) => {
+export const Section = ({title, row, children}: Props): JSX.Element => {
   const color = useColor();
   return (
     <View

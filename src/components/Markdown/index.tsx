@@ -17,7 +17,7 @@ export class Markdown extends React.PureComponent<Props> {
   boldSyntax = '*';
   withoutSyntaxIndex = 2;
 
-  isWordBold(word: string) {
+  isWordBold(word: string): boolean {
     return (
       word.length > this.withoutSyntaxIndex &&
       word[0] === this.boldSyntax &&
@@ -25,7 +25,7 @@ export class Markdown extends React.PureComponent<Props> {
     );
   }
 
-  formattedWord(words: string[], word: string, index: number) {
+  formattedWord(words: string[], word: string, index: number): string {
     const space = words.length - 1 === index ? '' : ' ';
     const trimmed = this.isWordBold(word)
       ? word.substring(1, word.length - 1)
@@ -33,7 +33,7 @@ export class Markdown extends React.PureComponent<Props> {
     return trimmed + space;
   }
 
-  render() {
+  render(): JSX.Element {
     const {title, style} = this.props;
     const words = title.split(' ');
     return (

@@ -21,7 +21,7 @@ interface SwipeCard extends SwipeItem {
   onSwipePercentChange(percent: number): void;
 }
 
-export const formatRelativeDate = (date: Dayjs) => {
+export const formatRelativeDate = (date: Dayjs): string => {
   const now = dayjs();
   const years = now.diff(date, 'year');
   const weeks = now.diff(date, 'week');
