@@ -1,4 +1,4 @@
-import {Combinations, Reel, Reels} from './config';
+import {Combinations, Element, Reel, Reels} from './config';
 
 const getWinsPerCombination = (
   combinations: Combinations,
@@ -68,4 +68,41 @@ export const getReturnPercentage = (
   );
   const sumOfReturns = getSumOfCombinations(returnsPerCombination);
   return sumOfReturns / sumOfReels;
+};
+
+export const getRandomReelArrays = (reels: Reels): Element[][] => {
+  const arrays: Element[][] = [];
+  for (let i = 0; i < reels.length; i++) {
+    const array: Element[] = [];
+    const reel = reels[i];
+    const keys = Object.keys(reel);
+    for (let j = 0; j < keys.length; j++) {
+      const key = keys[j] as Element;
+      const amount = reel[key];
+      for (let k = 0; k < amount; k++) {
+        array.push(key);
+      }
+    }
+    arrays.push(array);
+  }
+  for (let i = 0; i < arrays.length; i++) {
+    arrays[i] = shuffleArray(arrays[i]);
+  }
+
+  return arrays;
+};
+
+export const shuffleArray = <T>(array: T[]): T[] => {
+  const copy = [...array];
+  const swap = (a: T[], i: number, j: number) => {
+    const temp = a[i];
+    a[i] = a[j];
+    a[j] = temp;
+  };
+  const randomIndex = (a: T[]) => Math.floor(Math.random() * a.length);
+  for (let i = 0; i < copy.length; i++) {
+    const j = randomIndex(copy);
+    swap(copy, i, j);
+  }
+  return copy;
 };
