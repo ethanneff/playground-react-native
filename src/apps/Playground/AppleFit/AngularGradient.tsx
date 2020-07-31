@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import MaskedView from '@react-native-community/masked-view';
+import {MaskedView} from '../../../conversions';
 
 interface Props {
   size: number;
