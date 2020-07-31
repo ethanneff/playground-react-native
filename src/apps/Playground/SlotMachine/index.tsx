@@ -1,24 +1,32 @@
-import React, {memo, useCallback} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Screen, Text} from '../../../components';
+import {Button, Screen, Text} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
-import {getReturnPercentage, getWinPercentage} from './utils';
+import {
+  getRandomReelArrays,
+  getReturnPercentage,
+  getWinPercentage,
+} from './utils';
 import {combinations, reels} from './config';
+import {SlotMachine} from './SlotMachine';
 
 const winPercentage = (getWinPercentage(combinations, reels) * 100).toFixed(2);
 const returnPercentage = (
   getReturnPercentage(combinations, reels) * 100
 ).toFixed(2);
 
+const getInitialState = () => ({
+  tokens: 14,
+  spinning: false,
+  active: reels.map(() => 0),
+  reels: getRandomReelArrays(reels),
+});
+
 export default memo(function PlaygroundSlotMachine() {
   const color = useColor();
   const nav = useNav();
 
-  // const [state, setState] = useState({
-  //   tokens: 14,
-  //   spinning: false,
-  //   reels: [[], [], []],
-  // });
+  const [state, setState] = useState(() => getInitialState());
   const styles = StyleSheet.create({
     container: {
       backgroundColor: color.background,
@@ -26,17 +34,48 @@ export default memo(function PlaygroundSlotMachine() {
   });
   const navBack = useCallback(nav('playground'), [nav]);
 
+  const onSpin = useCallback(() => {
+    setState((p) => ({...p, spinning: true}));
+  }, []);
+
   return (
     <Screen onLeftPress={navBack} title="Slot Machine">
       <View style={styles.container}>
         <Text title={`win percentage: ${winPercentage}%`} />
         <Text title={`return percentage: ${returnPercentage}%`} />
+        <Text title={`${state}`} />
+
+        <Button onPress={onSpin} title="spin" />
         <View
           style={{
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
           }}
+        />
+        <SlotMachine
+          combinations={{
+            '🍓🍓🍓': 200,
+            '🍇🍇🍇': 100,
+            '🍉🍉🍉': 100,
+            '🍉🍉🍇': 100,
+            '🥭🥭🥭': 18,
+            '🥭🥭🍇': 18,
+            '🍏🍏🍏': 14,
+            '🍏🍏🍇': 14,
+            '🍊🍊🍊': 10,
+            '🍊🍊🍇': 10,
+            '🍒🍒🍒': 8,
+            '🍒🍒': 5,
+            '🍒': 2,
+          }}
+          credits={20}
+          randomize
+          reels={[
+            '🍓🍇🍉🍉🥭🥭🥭🥭🥭🍏🍏🍏🍏🍏🍊🍊🍊🍊🍊🍒🍒🍒🍒🍋🍋',
+            '🍓🍇🍇🍉🍉🥭🥭🥭🍏🍏🍏🍊🍊🍊🍊🍊🍒🍒🍒🍒🍒🍒🍒🍋🍋',
+            '🍓🍇🍉🍉🥭🥭🥭🥭🍏🍏🍊🍊🍊🍊🍊🍒🍒🍒🍒🍒🍋🍋🍋🍋🍋',
+          ]}
         />
       </View>
     </Screen>
