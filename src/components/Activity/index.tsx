@@ -160,7 +160,6 @@ export const Activity = memo(function Activity({
           <Text
             center
             emphasis="medium"
-            secondary
             style={{paddingTop: Theme.padding.p03}}
             title={state.selected.submissions}
             type="overline"

@@ -3,6 +3,7 @@ import {Animated, StyleProp, StyleSheet, TextStyle} from 'react-native';
 import {Theme, colorWithOpacity} from '../../utils';
 import {useColor, useNativeDriver} from '../../hooks';
 import {Sound} from '../../conversions';
+import {Color} from '../../models';
 import {FontEmphasis, FontType, getFontType, getTextEmphasis} from './utils';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
@@ -17,7 +18,7 @@ export interface TextProps {
   hidden?: boolean;
   invisible?: boolean;
   inverse?: boolean;
-  secondary?: boolean;
+  color?: keyof Color;
   adjustsFontSizeToFit?: boolean;
 
   numberOfLines?: number;
@@ -38,6 +39,7 @@ export const Text = ({
   hidden,
   center,
   bold,
+  color,
   inverse,
   ellipsizeMode,
   centerVertically,
@@ -47,11 +49,15 @@ export const Text = ({
   numberOfLines,
 }: TextProps): JSX.Element => {
   const opacity = new Animated.Value(1);
-  const color = useColor();
+  const colorScheme = useColor();
   const nativeDriver = useNativeDriver();
   const textColorPercent = getTextEmphasis(emphasis);
   const fontSize = getFontType(type);
-  const textColor = inverse ? color.background : color.text;
+  const textColor = inverse
+    ? colorScheme.background
+    : color
+    ? colorScheme[color]
+    : colorScheme.text;
   const textColorWithOpacity = colorWithOpacity(textColor, textColorPercent);
   const text =
     type === 'button' || type === 'overline'
