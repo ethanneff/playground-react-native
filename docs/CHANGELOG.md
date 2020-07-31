@@ -1,5 +1,26 @@
 # Changelog
 
+# [2.34.0](https://github.com/ethanneff/example/compare/v2.33.2...v2.34.0) (2020-07-31)
+
+
+### Bug Fixes
+
+* add return types to everything ([b81eccb](https://github.com/ethanneff/example/commit/b81eccb090df8cd03c0deb7b935c860dc9150e74))
+* add shuffle array ([a6b89a1](https://github.com/ethanneff/example/commit/a6b89a11b27525b5b0429493c05158b241b1f98b))
+* add tslint configs to eslint ([53a76f6](https://github.com/ethanneff/example/commit/53a76f650632188c745189e63d50da25a12edb1a))
+* make web work ([41fbf54](https://github.com/ethanneff/example/commit/41fbf54d9b366f353b7797a656b35d3fa062f60a))
+* remove format on save ([655dda2](https://github.com/ethanneff/example/commit/655dda24200037c8d7b2196562d1b813122cb4ab))
+* remove secondary and add color to text ([da290f1](https://github.com/ethanneff/example/commit/da290f150990be1473169c92fb9375646d0df2ef))
+* update deps ([79af30c](https://github.com/ethanneff/example/commit/79af30cfccef1ea0bbf450a7e86de7e68eda9034))
+* update deps ([b8b51ac](https://github.com/ethanneff/example/commit/b8b51acb35626620b9b62f2036139ea9cb397027))
+* update deps ([6461a9c](https://github.com/ethanneff/example/commit/6461a9cd1e454c334f0b71afa946a2fd1868083d))
+
+
+### Features
+
+* add apple fit ([7ab79a4](https://github.com/ethanneff/example/commit/7ab79a44810dcdbc516a5c70dbd9805bf0188522))
+* add slot machine api ([b446119](https://github.com/ethanneff/example/commit/b44611945ed6772f10c9aeccd2713e7d251d5b47))
+
 ## [2.33.2](https://github.com/ethanneff/example/compare/v2.33.1...v2.33.2) (2020-07-25)
 
 
