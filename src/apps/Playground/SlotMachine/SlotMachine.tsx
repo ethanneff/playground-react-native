@@ -54,6 +54,7 @@ const getWildCards = (
     if (unicodeCombination.length < reels.length) {
       wildCards.push({line: combination, amount: combinations[combination]});
     }
+    return combination;
   });
   return wildCards.sort((a, b) => b.amount - a.amount);
 };
@@ -90,6 +91,57 @@ const getWinningAmount = (
   return 0;
 };
 
+type ReelsProps = {
+  reelsArray: string[][];
+  lineIndexes: number[];
+};
+
+const Reels = memo(function Reels({reelsArray, lineIndexes}: ReelsProps) {
+  const color = useColor();
+  return (
+    <View style={{flexDirection: 'row'}}>
+      {reelsArray.map((reel, i) => (
+        <View key={`${i}`}>
+          {reel.map((item, j) => (
+            <Text
+              key={`${i}${j}${item}`}
+              style={{
+                borderWidth: 2,
+                borderColor:
+                  lineIndexes[i] === j ? color.primary : color.background,
+              }}
+              title={item}
+            />
+          ))}
+        </View>
+      ))}
+    </View>
+  );
+});
+
+type BetProps = {
+  disable: boolean;
+  multiplier: number;
+  onBet: () => void;
+};
+
+const Bet = memo(function Bet({onBet, disable, multiplier}: BetProps) {
+  const color = useColor();
+  return (
+    <TouchableOpacity
+      disabled={disable}
+      onPress={onBet}
+      style={{
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+      <Text bold emphasis="high" title={`BET X${multiplier}`} />
+      <Icon color={color.primary} name="lightning-bolt" />
+    </TouchableOpacity>
+  );
+});
+
 export const SlotMachine = memo(function SlotMachine({
   combinations,
   reels,
@@ -97,7 +149,6 @@ export const SlotMachine = memo(function SlotMachine({
   randomize,
   credits,
 }: Props) {
-  const color = useColor();
   const [state, setState] = useState<State>(() =>
     getInitialState({randomize, reels, credits}),
   );
@@ -154,36 +205,8 @@ export const SlotMachine = memo(function SlotMachine({
 
   return (
     <View>
-      <View style={{flexDirection: 'row'}}>
-        {state.reelsArray.map((reel, i) => (
-          <View key={`${i}`}>
-            {reel.map((item, j) => (
-              <Text
-                key={`${i}${j}${item}`}
-                style={{
-                  borderWidth: 2,
-                  borderColor:
-                    state.lineIndexes[i] === j
-                      ? color.primary
-                      : color.background,
-                }}
-                title={item}
-              />
-            ))}
-          </View>
-        ))}
-      </View>
-      <TouchableOpacity
-        disabled={disable}
-        onPress={onMultiplier}
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Text bold emphasis="high" title={`BET X${multiplier}`} />
-        <Icon color={color.primary} name="lightning-bolt" />
-      </TouchableOpacity>
+      <Reels lineIndexes={state.lineIndexes} reelsArray={state.reelsArray} />
+      <Bet disable={disable} multiplier={multiplier} onBet={onMultiplier} />
       <Text
         center
         emphasis="high"
