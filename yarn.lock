@@ -2397,46 +2397,40 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-3.0.3.tgz#830167fd757ba70ac638747ba3169b2dbae60330"
   integrity sha512-8IeHfDwJ9/CTUwFs6x90VlobV3BfuPgNLjTgC6dRZovfCWigaZwVNIFFJnHBakK3pW2xErAPwhdvNR4JeNoYbw==
 
-"@react-native-firebase/analytics@7.3.1":
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-7.3.1.tgz#f24509c1f996217e89829147d28d319ed5fbbd0b"
-  integrity sha512-8U70bVSnsH5xlbNDL+LkF0VjgZ3nejSCsrIrxI29aulMPAdAD6ZndH9gVegFK75vLILy3giWRlGR89o08fnpxA==
+"@react-native-firebase/analytics@7.4.1":
+  version "7.4.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-7.4.1.tgz#876781ad3f3e42dac6ca4c26a90efbb37e9a8135"
+  integrity sha512-A92S52oJPx7xVESfURUaPvO8xr2XVAMEm0qeWVlZOkvRXtvfjWfuwO1X6hXhQdmrwtovIxD3UlaHe5l+bQ7gdw==
 
-"@react-native-firebase/app-types@6.7.2":
-  version "6.7.2"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app-types/-/app-types-6.7.2.tgz#d2e1530af5702e00578914b41468898c10d3289c"
-  integrity sha512-pIwc6e0ZINw6PJqNVsAxzOVJUDg6au2TdulY+ZOYQ11SPDs5I2n9likoGrElPmJjajT4s9h87uz/6PWP2k9PxQ==
-
-"@react-native-firebase/app@8.2.0":
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-8.2.0.tgz#28db1958c8bd8028503b4d0a68a31a7c4caf61cc"
-  integrity sha512-V3s87BlDIyuhtK/1w+vwKdY5AlOCCBXovlorZU1wiyDH8Q942Cjxcx9tBc59+TLWqMYrYyFGAnAJxnIw3QzmmQ==
+"@react-native-firebase/app@8.3.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-8.3.0.tgz#06becb503d220a1429cd27ff70c65611e00008ca"
+  integrity sha512-ORalRJ97NXerKie5tTdcHXldq1Ri4DY4/dOW0WqluluZgTqifxkMzsxuM0gRZEe64khG9/5uC7DoCt0JyGjFjQ==
   dependencies:
-    "@react-native-firebase/app-types" "6.7.2"
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/auth@8.2.0":
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-8.2.0.tgz#dc64b2fb1138a713ea15ab1ed4cffd273f1f70ed"
-  integrity sha512-zsLL2hSrhsIhmtf3/VGxbHYPlBvfULd8mK1mObKuSIZlMW6gpokyIaAjfuQ0x6r7NWYjtcPP4QBX95kk3Ztutg==
+"@react-native-firebase/auth@8.3.1":
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-8.3.1.tgz#ff696a7a0f82894d57bff0d743c5d43e704f8f6c"
+  integrity sha512-TqPW49E52zmNSQb/Hp/izqYi9cyI5xO6CaSgqfCobUnzsldQ8Ge41tgbQRORG6XmB/BWIJeHl4PlR5NNHF/org==
 
-"@react-native-firebase/crashlytics@8.1.2":
-  version "8.1.2"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-8.1.2.tgz#2a9c0ec8809457ba1f48acffc8d86f043aac0ff6"
-  integrity sha512-xRGMeuNmJcaPmgr3PqIXS1r5Wx2x21S9ES007BTBpyCzd92vmlKVawpx5vYjFoVQeKRjEPT37MJ7QTU4x81JoA==
+"@react-native-firebase/crashlytics@8.3.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-8.3.0.tgz#9b6da23abe526b682a4ab9a219eabc0861bf8ee6"
+  integrity sha512-4G/TQmA/zJtgj/jia8kBXqX7scASct6/a1JbagE9ReqF7fMENVPl6gKQY/BZdC0+b1GmUV1gELOMvTMDy9Ti4g==
   dependencies:
     stacktrace-js "^2.0.0"
 
-"@react-native-firebase/firestore@7.4.3":
-  version "7.4.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-7.4.3.tgz#6962037bd2978a53227faf1477f51c265af91b30"
-  integrity sha512-aNo+DfZSJCPe/nClo/PofzVnclP50TMcw9u5UN7VaJCm1mAixhlqi97/kMarigxPIhoOQMGoF6MEQiyRd7q3eA==
+"@react-native-firebase/firestore@7.5.1":
+  version "7.5.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-7.5.1.tgz#a16c8d297202c75f14832035772efea5c88f66f7"
+  integrity sha512-pEq+p+m3qK6do9pWQiZs6QlJKTA1bKg+VqNaRihuhM6nRUCMDR/xw4O5OP6MMpNfH1ytUJR9DNkdpRKN/YFJNQ==
 
-"@react-native-firebase/remote-config@8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-8.0.0.tgz#2fc474de05907af535ea97e5807c336a58845f6b"
-  integrity sha512-Kc373ipRqzjdl92s+uVMGOePI2jtu4IKQfDgnj8DqBayojlgbT78DvJLN4/LzsaO64eHji4vjAfTK+OcAyHEeg==
+"@react-native-firebase/remote-config@8.1.1":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-8.1.1.tgz#12d738226883d4203dc9420f3e3e515bbd1b5575"
+  integrity sha512-cNV1K7qukNWC58oy0V4P5QqINAueuywF8L2fqWrBne3V20wvCU0XtsaI13fxj+ah+oKRRQc/seN2BcYhuqkG3g==
 
 "@semantic-release/changelog@5.0.1":
   version "5.0.1"
