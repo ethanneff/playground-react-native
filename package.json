@@ -38,7 +38,7 @@
     "date-fns": "2.15.0",
     "dayjs": "1.8.32",
     "howler": "2.2.0",
-    "npm-check-updates": "7.0.3",
+    "npm-check-updates": "7.0.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "0.63.2",
