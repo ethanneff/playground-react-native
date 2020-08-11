@@ -589,7 +589,7 @@ PODS:
   - React-jsinspector (0.63.2)
   - react-native-get-random-values (1.4.0):
     - React
-  - react-native-netinfo (5.9.5):
+  - react-native-netinfo (5.9.6):
     - React
   - react-native-slider (3.0.3):
     - React
@@ -684,7 +684,7 @@ PODS:
     - Firebase/RemoteConfig (~> 6.28.1)
     - React
     - RNFBApp
-  - RNRate (1.2.1):
+  - RNRate (1.2.4):
     - React
   - RNSensors (6.1.0):
     - React
@@ -940,7 +940,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 8ca588cc921e70590820ce72b8789b02c67cce38
   React-jsinspector: b14e62ebe7a66e9231e9581279909f2fc3db6606
   react-native-get-random-values: 2b7500cdb68066aba87cdccd97067c29e16ffe95
-  react-native-netinfo: a53b00d949b6456913aaf507d9dba90c4008c611
+  react-native-netinfo: 38a1e0b3e89b48e4b5833ed475d8df5f049f6f90
   react-native-slider: e99fc201cefe81270fc9d81714a7a0f5e566b168
   React-RCTActionSheet: 910163b6b09685a35c4ebbc52b66d1bfbbe39fc5
   React-RCTAnimation: 9a883bbe1e9d2e158d4fb53765ed64c8dc2200c6
@@ -961,7 +961,7 @@ SPEC CHECKSUMS:
   RNFBCrashlytics: cb41386ed09729fa68cb9cde9efd8737277a1423
   RNFBFirestore: 85df763f15f97c0cc8ec0a429aaa18dc8196e386
   RNFBRemoteConfig: 4a026bb116f329bd6d125804d85dfbefa5ac17f9
-  RNRate: a39ac26dc9daf3f9b639ce274b7f80672ae36db1
+  RNRate: 15b861025a7821730761fce7f44561ce7e0b2de0
   RNSensors: 4ae6660861b426fd16f61ce2df0b750bda6ac32d
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
