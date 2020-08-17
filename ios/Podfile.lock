@@ -657,36 +657,36 @@ PODS:
     - React
   - RNCMaskedView (0.1.10):
     - React
-  - RNDeviceInfo (5.6.3):
+  - RNDeviceInfo (5.6.5):
     - React
-  - RNFBAnalytics (7.4.1):
+  - RNFBAnalytics (7.4.2):
     - Firebase/Analytics (~> 6.28.1)
     - React
     - RNFBApp
-  - RNFBApp (8.3.0):
+  - RNFBApp (8.3.1):
     - Firebase/CoreOnly (~> 6.28.1)
     - React
-  - RNFBAuth (8.3.1):
+  - RNFBAuth (8.3.3):
     - Firebase/Auth (~> 6.28.1)
     - React
     - RNFBApp
-  - RNFBCrashlytics (8.3.0):
+  - RNFBCrashlytics (8.3.1):
     - Firebase/Core (~> 6.28.1)
     - Firebase/Crashlytics (~> 6.28.1)
     - React
     - RNFBApp
-  - RNFBFirestore (7.5.1):
+  - RNFBFirestore (7.5.3):
     - Firebase/Firestore (~> 6.28.1)
     - React
     - RNFBApp
-  - RNFBRemoteConfig (8.1.1):
+  - RNFBRemoteConfig (8.1.3):
     - Firebase/Analytics (~> 6.28.1)
     - Firebase/RemoteConfig (~> 6.28.1)
     - React
     - RNFBApp
   - RNRate (1.2.4):
     - React
-  - RNSensors (6.1.0):
+  - RNSensors (7.0.0):
     - React
   - RNSound (0.11.0):
     - React
@@ -954,15 +954,15 @@ SPEC CHECKSUMS:
   ReactCommon: a0a1edbebcac5e91338371b72ffc66aa822792ce
   RNCAsyncStorage: d059c3ee71738c39834a627476322a5a8cd5bf36
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
-  RNDeviceInfo: 5be12a5bfbb8da3528c43ee4373abd9c30d04616
-  RNFBAnalytics: 43b6cdfb3f3c8ddd4425260aa246a5f73d7f71c3
-  RNFBApp: d55b3a69d199cff25ecf4f3bf41a86c47aa37d57
-  RNFBAuth: 8cdec65b3c88e8f5b2aa0109d8cbfbaaa73fb379
-  RNFBCrashlytics: cb41386ed09729fa68cb9cde9efd8737277a1423
-  RNFBFirestore: 85df763f15f97c0cc8ec0a429aaa18dc8196e386
-  RNFBRemoteConfig: 4a026bb116f329bd6d125804d85dfbefa5ac17f9
+  RNDeviceInfo: c5f8f3a456adcbba405ace475254b08febc4c095
+  RNFBAnalytics: 715279002cf21b600aec33bc2e315c4cdf5d05e6
+  RNFBApp: abbab9c96e6d2f1cada6401c9138d3f8cb2ae930
+  RNFBAuth: 0cb359f04e97d76a6c3122adb519bb7c5c64f15c
+  RNFBCrashlytics: 2f8af8eb731d651b72358645679bef55fb723138
+  RNFBFirestore: e6de55217697a483c9dd54c2676fd82967b19349
+  RNFBRemoteConfig: 581877b9fb16f54296ada6f30624734eb2f9fc4d
   RNRate: 15b861025a7821730761fce7f44561ce7e0b2de0
-  RNSensors: 4ae6660861b426fd16f61ce2df0b750bda6ac32d
+  RNSensors: 2531ad11a2551c9fd2da581fd4ace28d2552e542
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
   RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
