@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.34.4](https://github.com/ethanneff/example/compare/v2.34.3...v2.34.4) (2020-08-18)
+
+
+### Bug Fixes
+
+* correct lint ([a3759ab](https://github.com/ethanneff/example/commit/a3759ab45b57817d56942e718d3a7b53c59b85d8))
+* update deps ([91e8ac0](https://github.com/ethanneff/example/commit/91e8ac07c3d6559f19ceb2ed300d5b85edae76f9))
+* update deps ([cdf22c5](https://github.com/ethanneff/example/commit/cdf22c5120331cbcb0056075b89a47475b85323c))
+* update deps ([b62f467](https://github.com/ethanneff/example/commit/b62f467e924e8d09f7265d5b90a493eee64184b6))
+* update deps ([bf30da8](https://github.com/ethanneff/example/commit/bf30da899e44b39e861b19a5eb38f5bb3456d977))
+
 ## [2.34.3](https://github.com/ethanneff/example/compare/v2.34.2...v2.34.3) (2020-08-08)
 
 
