@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.34.5](https://github.com/ethanneff/example/compare/v2.34.4...v2.34.5) (2020-08-24)
+
+
+### Bug Fixes
+
+* update deps ([80f4826](https://github.com/ethanneff/example/commit/80f482659495b0d5dc5cc12df12b27973aae93d5))
+
 ## [2.34.4](https://github.com/ethanneff/example/compare/v2.34.3...v2.34.4) (2020-08-18)
 
 
