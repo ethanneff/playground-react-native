@@ -42,7 +42,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "0.63.2",
-    "react-native-device-info": "6.0.0",
+    "react-native-device-info": "6.0.1",
     "react-native-get-random-values": "1.4.0",
     "react-native-rate": "1.2.4",
     "react-native-sensors": "7.0.0",
