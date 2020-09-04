@@ -34,13 +34,13 @@
     invariant "^2.2.4"
     semver "^5.5.0"
 
-"@babel/core@7.11.5":
-  version "7.11.5"
-  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.11.5.tgz#6ad96e2f71899ea3f9b651f0a911e85205d1ff6d"
-  integrity sha512-fsEANVOcZHzrsV6dMVWqpSeXClq3lNbYrfFGme6DE25FQWe7pyeYpXyx9guqUnpy466JLzZ8z4uwSr2iv60V5Q==
+"@babel/core@7.11.6":
+  version "7.11.6"
+  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.11.6.tgz#3a9455dc7387ff1bac45770650bc13ba04a15651"
+  integrity sha512-Wpcv03AGnmkgm6uS6k8iwhIwTrcP0m17TL1n1sy7qD0qelDu4XNeW0dN0mHfa+Gei211yDaLoEe/VlbXQzM4Bg==
   dependencies:
     "@babel/code-frame" "^7.10.4"
-    "@babel/generator" "^7.11.5"
+    "@babel/generator" "^7.11.6"
     "@babel/helper-module-transforms" "^7.11.0"
     "@babel/helpers" "^7.10.4"
     "@babel/parser" "^7.11.5"
@@ -54,7 +54,7 @@
     lodash "^4.17.19"
     resolve "^1.3.2"
     semver "^5.4.1"
-    source-map "^0.6.1"
+    source-map "^0.5.0"
 
 "@babel/core@7.9.0":
   version "7.9.0"
@@ -117,6 +117,15 @@
     "@babel/types" "^7.11.5"
     jsesc "^2.5.1"
     source-map "^0.6.1"
+
+"@babel/generator@^7.11.6":
+  version "7.11.6"
+  resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.11.6.tgz#b868900f81b163b4d464ea24545c61cbac4dc620"
+  integrity sha512-DWtQ1PV3r+cLbySoHrwn9RWEgKMBLLma4OBQloPRyDYvc5msJM9kvTLo1YnlJd1P/ZuKbdli3ijr5q3FvAF3uA==
+  dependencies:
+    "@babel/types" "^7.11.5"
+    jsesc "^2.5.1"
+    source-map "^0.5.0"
 
 "@babel/generator@^7.4.0", "@babel/generator@^7.8.3":
   version "7.8.3"
@@ -2426,10 +2435,10 @@
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/auth@9.1.2":
-  version "9.1.2"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-9.1.2.tgz#89da75378d34c1853851f1bd229d5f8bc5be9521"
-  integrity sha512-ph1MbYLSR9F0t9SmJdztcPGBhXyp5H0ttJVDLZmjws3r3L1+YFxm5dGOk0KSFdjcOUdX+GfPfR/dU6HgY5MMaQ==
+"@react-native-firebase/auth@9.2.0":
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-9.2.0.tgz#08d02c818e11c80433a2e3589c63d00049244562"
+  integrity sha512-kMA/PpUF4qvoIcpaa+TzcEn13Yosw7L5woVH1atB4vPH2LyjPencO7rT02A/TCjFG7R/hLS3iagCyy0rBRBoCg==
 
 "@react-native-firebase/crashlytics@8.4.2":
   version "8.4.2"
@@ -2443,10 +2452,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-7.7.0.tgz#7102901990c0da22131a522b4ffc565dbea14c3b"
   integrity sha512-H+Q+Z62u0R6ZztyLg2LuIbxU/YUL4W8fZsy3WsbaUegPUAsCZH+GCCucQ0OiaNwFiM6b/SiblQsBVPWOEIaVRA==
 
-"@react-native-firebase/remote-config@9.0.2":
-  version "9.0.2"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-9.0.2.tgz#7793315426da435ebc755429e3fe1b0c251b3f9b"
-  integrity sha512-7n7NUyFMxbKBMUhTziTJ5vJ5VtLQnaTL90LLVxuZefzO9NYiJjNAQrEyhOU5Y9Q3aY61rt4TDBfcGu9nOaMhiw==
+"@react-native-firebase/remote-config@9.0.3":
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-9.0.3.tgz#cea950663f9f6adf3f69219516fb58f35db4947d"
+  integrity sha512-/xbWhAHokZax/zYh8eFExSU8x28SQShzTckV44gJM0SADLsk49vn4iiOpw7MtclpzdjOlbx2r2LY/L7tAdRzXQ==
 
 "@semantic-release/changelog@5.0.1":
   version "5.0.1"
@@ -2814,10 +2823,10 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@26.0.10":
-  version "26.0.10"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.10.tgz#8faf7e9756c033c39014ae76a7329efea00ea607"
-  integrity sha512-i2m0oyh8w/Lum7wWK/YOZJakYF8Mx08UaKA1CtbmFeDquVhAEdA7znacsVSf2hJ1OQ/OfVMGN90pw/AtzF8s/Q==
+"@types/jest@26.0.13":
+  version "26.0.13"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.13.tgz#5a7b9d5312f5dd521a38329c38ee9d3802a0b85e"
+  integrity sha512-sCzjKow4z9LILc6DhBvn5AkIfmQzDZkgtVVKmGwVrs5tuid38ws281D4l+7x1kP487+FlKDh5kfMZ8WSPAdmdA==
   dependencies:
     jest-diff "^25.2.1"
     pretty-format "^25.2.1"
@@ -2890,10 +2899,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-native@0.63.12":
-  version "0.63.12"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.12.tgz#fa4aea76220cd11220c4a7c1b7e14e00886539a2"
-  integrity sha512-EPZ4C9OImXDg59entU0wcg/yCelj+XhgvUpPz85VSKia01DULoGwHOyCH3Y3ZdVcijebSR58ekqAz7zHT8o3Tg==
+"@types/react-native@0.63.14":
+  version "0.63.14"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.14.tgz#f15b5c686a2426d7f8189b5cc249c952b335c1eb"
+  integrity sha512-mor2U0GCRpnAU58UVsFbnags5OcVMRDRnPC+UC9FFy0nQ0Y23w7XTnPY+QBq2Y3ETnAv+V6wV0pXoPFnkgXFNw==
   dependencies:
     "@types/react" "*"
 
@@ -5879,10 +5888,10 @@ dateformat@^3.0.0:
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
   integrity sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==
 
-dayjs@1.8.34:
-  version "1.8.34"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.34.tgz#d3ad33cc43d6b0f24cb8686b90aad2c653708069"
-  integrity sha512-Olb+E6EoMvdPmAMq2QoucuyZycKHjTlBXmRx8Ada+wGtq4SIXuDCdtoaX4KkK0yjf1fJLnwXQURr8gQKWKaybw==
+dayjs@1.8.35:
+  version "1.8.35"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.35.tgz#67118378f15d31623f3ee2992f5244b887606888"
+  integrity sha512-isAbIEenO4ilm6f8cpqvgjZCsuerDAz2Kb7ri201AiNn58aqXuaLJEnCtfIMdCvERZHNGRY5lDMTr/jdAnKSWQ==
 
 dayjs@^1.8.15:
   version "1.8.19"
@@ -11693,10 +11702,10 @@ npm-cache-filename@~1.0.2:
   resolved "https://registry.yarnpkg.com/npm-cache-filename/-/npm-cache-filename-1.0.2.tgz#ded306c5b0bfc870a9e9faf823bc5f283e05ae11"
   integrity sha1-3tMGxbC/yHCp6fr4I7xfKD4FrhE=
 
-npm-check-updates@8.0.2:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-8.0.2.tgz#953e55387027861ec9c0602347131f11dc924046"
-  integrity sha512-YsJSmVPXWzBRSbzuVkMRV4M7tNtR3ptMQh0ZYzE3QXdZ8pxAYqrfvE8bJeZYcdsSBSRIJ6TZTmF6uS4rP/xaVQ==
+npm-check-updates@8.0.5:
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-8.0.5.tgz#091646ab63dd722055e7ae122f044d1c37d01350"
+  integrity sha512-EZ3DIFvKFNZzwV9OdEYITTAY6fmuD7evItEmf9XyntG4p29n8JpFaGrf9uCQIR0Hx3G5RFNsdCeURHzF6YXIAw==
   dependencies:
     chalk "^4.1.0"
     cint "^8.2.1"
@@ -13975,15 +13984,15 @@ react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-i
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
-react-native-device-info@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-6.0.0.tgz#c281749ea257c0cd87166ebec682b93d1f5e220a"
-  integrity sha512-aB0NFzct/bBsXH8/6Zzz659dmsnbLZHCtSnKKP9sw+3he9o4jWEjPhirtcZsVwPAYeIqGewauqRAYoTMmFXTtg==
+react-native-device-info@6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-6.0.2.tgz#03317893bd6336b9ed2fe7a78d424737a441553f"
+  integrity sha512-Kx6ozWKkiPPvRhZDIL5jQ8zEZLlRT8hTovTaV+NgDc0tM+slBEnuEIgn0FXArHudO0qq2r+VDs4pUwMf6csGPg==
 
-react-native-get-random-values@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/react-native-get-random-values/-/react-native-get-random-values-1.4.0.tgz#1234d4dde6b56b2fab0eaa7dc1719e2f8c32c336"
-  integrity sha512-NnmEZcC5zfz+QEytFPM/fw818Hodw/BNbv7jGxU4pla4K2K9DCzG83IReMJqQ2wo552AYKguqrBG2SSn/U6rbA==
+react-native-get-random-values@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/react-native-get-random-values/-/react-native-get-random-values-1.5.0.tgz#91cda18f0e66e3d9d7660ba80c61c914030c1e05"
+  integrity sha512-LK+Wb8dEimJkd/dub7qziDmr9Tw4chhpzVeQ6JDo4czgfG4VXbptRyOMdu8503RiMF6y9pTH6ZUTkrrpprqT7w==
   dependencies:
     fast-base64-decode "^1.0.0"
 
