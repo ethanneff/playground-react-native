@@ -29,7 +29,7 @@
     "@react-native-community/slider": "3.0.3",
     "@react-native-firebase/analytics": "7.6.1",
     "@react-native-firebase/app": "8.4.1",
-    "@react-native-firebase/auth": "9.2.0",
+    "@react-native-firebase/auth": "9.2.1",
     "@react-native-firebase/crashlytics": "8.4.2",
     "@react-native-firebase/firestore": "7.7.0",
     "@react-native-firebase/remote-config": "9.0.3",
