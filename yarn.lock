@@ -2435,10 +2435,10 @@
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/auth@9.2.0":
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-9.2.0.tgz#08d02c818e11c80433a2e3589c63d00049244562"
-  integrity sha512-kMA/PpUF4qvoIcpaa+TzcEn13Yosw7L5woVH1atB4vPH2LyjPencO7rT02A/TCjFG7R/hLS3iagCyy0rBRBoCg==
+"@react-native-firebase/auth@9.2.1":
+  version "9.2.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-9.2.1.tgz#73a5af40e8fb590482f01a27f7c5c141c7ddfb27"
+  integrity sha512-Nw4QaaaO8hYL/Rpc79vDdf+V/tt0q5CmnOU3+qZi2MDjPVkatX7Ehkoi4aEdQ3/YT4icfxV0CZf2zqY9yfW7cg==
 
 "@react-native-firebase/crashlytics@8.4.2":
   version "8.4.2"
@@ -2447,10 +2447,10 @@
   dependencies:
     stacktrace-js "^2.0.0"
 
-"@react-native-firebase/firestore@7.7.0":
-  version "7.7.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-7.7.0.tgz#7102901990c0da22131a522b4ffc565dbea14c3b"
-  integrity sha512-H+Q+Z62u0R6ZztyLg2LuIbxU/YUL4W8fZsy3WsbaUegPUAsCZH+GCCucQ0OiaNwFiM6b/SiblQsBVPWOEIaVRA==
+"@react-native-firebase/firestore@7.8.0":
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-7.8.0.tgz#c6bcc6e9b8c91a52f0c4f7e857780adb4f93da14"
+  integrity sha512-ElR3nQQaKYyIuBD+XhqDOlmJJRn0Ytu/dgYDRblJm5QqvhKgnw0hWCE02gU+85HDh8s9V3omH5QUVJMQdCM1fQ==
 
 "@react-native-firebase/remote-config@9.0.3":
   version "9.0.3"
@@ -2899,10 +2899,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-native@0.63.14":
-  version "0.63.14"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.14.tgz#f15b5c686a2426d7f8189b5cc249c952b335c1eb"
-  integrity sha512-mor2U0GCRpnAU58UVsFbnags5OcVMRDRnPC+UC9FFy0nQ0Y23w7XTnPY+QBq2Y3ETnAv+V6wV0pXoPFnkgXFNw==
+"@types/react-native@0.63.15":
+  version "0.63.15"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.15.tgz#f86ce87a0afc53bec7c6bc96282e698e0a03ce1b"
+  integrity sha512-ZFOHFn4NNKxvpHfri099KMVCeHU9Rvu7E3GC6ST1KGoktipyfWTW0HLePKAflbmARODAh84ci4HSzAXnW54FXw==
   dependencies:
     "@types/react" "*"
 
@@ -11702,10 +11702,10 @@ npm-cache-filename@~1.0.2:
   resolved "https://registry.yarnpkg.com/npm-cache-filename/-/npm-cache-filename-1.0.2.tgz#ded306c5b0bfc870a9e9faf823bc5f283e05ae11"
   integrity sha1-3tMGxbC/yHCp6fr4I7xfKD4FrhE=
 
-npm-check-updates@8.0.5:
-  version "8.0.5"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-8.0.5.tgz#091646ab63dd722055e7ae122f044d1c37d01350"
-  integrity sha512-EZ3DIFvKFNZzwV9OdEYITTAY6fmuD7evItEmf9XyntG4p29n8JpFaGrf9uCQIR0Hx3G5RFNsdCeURHzF6YXIAw==
+npm-check-updates@8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-8.1.0.tgz#76296f563d449b20776758c4629a06b1ce02e59c"
+  integrity sha512-cIB3oUkCEzz5kuOXgly8OygBLKacRBWwQJwt+fmSiSj7+jDHBVbdi1EH9O43tqP8XRUhrKIYt5dQroeSwJ/K8g==
   dependencies:
     chalk "^4.1.0"
     cint "^8.2.1"
