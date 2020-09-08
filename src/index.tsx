@@ -1,9 +1,9 @@
 import React from 'react';
 import {AppRegistry, Platform} from 'react-native';
 import {App, Navigation, Redux} from './containers';
-import {Config, debugDev} from './utils';
+import {Config} from './utils';
 
-debugDev();
+// debugDev();
 export const Main = (): JSX.Element => {
   return (
     <Redux>
