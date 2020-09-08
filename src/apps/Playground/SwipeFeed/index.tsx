@@ -14,7 +14,7 @@ import {getWidth} from '../../../models';
 import {Theme, useRootSelector} from '../../../utils';
 import 'react-native-get-random-values';
 
-interface SwipeCard extends SwipeItem {
+interface SwipeCardProps extends SwipeItem {
   index: number;
   height: number;
   onSwipeComplete(): void;
@@ -51,7 +51,7 @@ const SwipeCard = memo(function SwipeCard({
   button,
   onSwipeComplete,
   onSwipePercentChange,
-}: SwipeCard) {
+}: SwipeCardProps) {
   const cardWidth = useRef(0);
   const color = useColor();
   const useDriver = useNativeDriver();

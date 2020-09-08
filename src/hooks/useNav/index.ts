@@ -1,12 +1,9 @@
 import {useCallback} from 'react';
-import {useRootDispatch} from '../../utils';
-import {NavigationScreen} from '../../models';
-import {navigate} from './../../models/Navigation';
+import {useNavigation} from '@react-navigation/core';
 
-export const useNav = (): any => {
-  const dispatch = useRootDispatch();
-  return useCallback(
-    (screen: NavigationScreen) => () => dispatch(navigate(screen)),
-    [dispatch],
-  );
+export const useNav = () => {
+  const navigation = useNavigation();
+  return useCallback((screen: string) => () => navigation.navigate(screen), [
+    navigation,
+  ]);
 };

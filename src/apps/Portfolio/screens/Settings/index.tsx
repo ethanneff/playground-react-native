@@ -1,11 +1,10 @@
 import React, {memo, useCallback} from 'react';
 import {FlatList, View} from 'react-native';
 import {Button, Screen} from '../../../../components';
-import {ColorTheme, changeTheme} from '../../../../models';
+import {ColorTheme, changeTheme, colorThemes} from '../../../../models';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {useNav} from '../../../../hooks';
 
-const themes = Object.values(ColorTheme);
 export default memo(function PortfolioSettings() {
   const dispatch = useRootDispatch();
   const currentTheme = useRootSelector((state) => state.theme.currentColor);
@@ -35,7 +34,7 @@ export default memo(function PortfolioSettings() {
   return (
     <Screen onLeftPress={navBack} title="Settings">
       <FlatList
-        data={themes}
+        data={colorThemes}
         horizontal
         keyExtractor={keyExtractor}
         ListHeaderComponent={renderHeader}

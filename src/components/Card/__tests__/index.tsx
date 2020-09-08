@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card} from '..';
-import {mockRenderer} from '../../../utils/Mock';
+import {mockRenderer} from '../../../mocks/Renderer';
 
 it('renders correctly', () => {
   const dom = mockRenderer(<Card />).toJSON();

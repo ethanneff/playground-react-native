@@ -7,7 +7,6 @@ import {
 } from '../../models';
 import {useNav} from '../../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
-import {navigate} from '../../../../models';
 
 export default memo(function ChecklistUpdate() {
   const nav = useNav();
@@ -37,11 +36,11 @@ export default memo(function ChecklistUpdate() {
         updatedAt: now,
       }),
     );
-    dispatch(navigate('checklistsList'));
+    nav('checklistsList');
   };
   const handleDelete = () => {
     dispatch(removeChecklistItem(item.id));
-    dispatch(navigate('checklistsList'));
+    nav('checklistsList');
   };
 
   const navItem = useCallback(nav('checklistsList'), [nav]);

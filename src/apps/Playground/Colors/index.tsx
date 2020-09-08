@@ -2,14 +2,13 @@ import React, {memo, useCallback} from 'react';
 import {ScrollView, View} from 'react-native';
 import {Button, Screen, Text} from '../../../components';
 import {useNav} from '../../../hooks';
-import {ColorTheme, changeTheme} from '../../../models';
+import {ColorTheme, changeTheme, colorThemes} from '../../../models';
 import {Theme, useRootDispatch, useRootSelector} from '../../../utils';
 
 export default memo(function DebugColors() {
   const nav = useNav();
   const navBack = useCallback(nav('playground'), [nav]);
   const dispatch = useRootDispatch();
-  const themes = Object.values(ColorTheme);
   const currentTheme = useRootSelector((state) => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   // text: high 87% medium 60% disabled 38%
@@ -28,7 +27,7 @@ export default memo(function DebugColors() {
           justifyContent: 'center',
           flexDirection: 'row',
         }}>
-        {themes.map((item) => (
+        {colorThemes.map((item) => (
           <Button
             color={currentTheme === item ? 'success' : 'text'}
             key={item}

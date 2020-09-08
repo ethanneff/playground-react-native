@@ -7,7 +7,7 @@ import {
 } from 'typesafe-actions';
 import 'react-native-get-random-values';
 import {v4} from 'uuid';
-import {RootAction, RootState} from '../../../../containers';
+import {RootAction, RootState} from '../../../../providers';
 import {logout} from '../../../../models/Auth';
 
 /* ACTIONS */

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Dialog} from '..';
-import {mockRenderer} from '../../../utils/Mock';
+import {mockRenderer} from '../../../mocks/Renderer';
 
 jest.useFakeTimers();
 describe('Dialog component', () => {

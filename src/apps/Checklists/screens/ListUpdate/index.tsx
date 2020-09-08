@@ -3,7 +3,6 @@ import {Button, Dialog, Screen, TextInput} from '../../../../components';
 import {getCurrentChecklist, removeList, updateList} from '../../models';
 import {useNav} from '../../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
-import {navigate} from '../../../../models';
 
 export default memo(function ChecklistUpdate() {
   const nav = useNav();
@@ -34,14 +33,14 @@ export default memo(function ChecklistUpdate() {
         updatedAt: now,
       }),
     );
-    dispatch(navigate('checklists'));
+    nav('checklists');
   };
 
   const handleDelete = useCallback(() => {
     setShowDeleteDialog(false);
     dispatch(removeList(checklist.id));
-    dispatch(navigate('checklists'));
-  }, [dispatch, checklist.id]);
+    nav('checklists');
+  }, [dispatch, checklist.id, nav]);
 
   const handleDeletePress = useCallback(() => setShowDeleteDialog(true), []);
   const handleDeleteCancel = useCallback(() => setShowDeleteDialog(false), []);

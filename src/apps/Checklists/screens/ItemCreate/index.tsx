@@ -1,7 +1,6 @@
 import React, {memo, useCallback, useState} from 'react';
 import {v4} from 'uuid';
 import {Button, Screen, TextInput} from '../../../../components';
-import {navigate} from '../../../../models';
 import {createChecklistItem} from '../../models';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {useNav} from '../../../../hooks';
@@ -39,7 +38,7 @@ export default memo(function ChecklistItemCreate() {
         userId: '1',
       }),
     );
-    dispatch(navigate('checklistsList')); // TODO: batch
+    nav('checklistsList');
   };
   const handleNameChange = useCallback(
     (name: string) => setForm((state) => ({...state, name})),

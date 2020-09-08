@@ -22,18 +22,13 @@ type Sentences = Sentence[];
 type Sentence = Phrase | Link;
 interface Phrase {
   content: string;
-  type: ParagraphType.Phrase;
+  type: 'phrase';
   onPress?(): void;
 }
 interface Link {
   content: string;
-  type: ParagraphType.Link;
+  type: 'link';
   onPress(): void;
-}
-
-export enum ParagraphType {
-  Phrase,
-  Link,
 }
 
 interface Props {
@@ -76,7 +71,7 @@ export const Content = memo(({body}: Props) => {
           {section.paragraphs.map((paragraph, paragraphIndex) => (
             <Original key={`p-${paragraphIndex}`} style={styles.paragraph}>
               {paragraph.sentences.map(({onPress, content, type}) =>
-                type === ParagraphType.Link ? (
+                type === 'link' ? (
                   <Text
                     key={content}
                     onPress={onPress}

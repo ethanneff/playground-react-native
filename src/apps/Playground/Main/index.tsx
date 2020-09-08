@@ -1,10 +1,9 @@
 import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
 import {Button, Screen} from '../../../components';
-import {NavigationScreen} from '../../../models';
 import {useNav} from '../../../hooks';
 
-const playgroundScreens: NavigationScreen[] = [
+const playgroundScreens = [
   'playgroundArticle',
   'playgroundBall',
   'playgroundChat',
@@ -38,13 +37,13 @@ const formatTitle = (str: string) => str.replace('playground', '');
 export default memo(function Playground() {
   const nav = useNav();
   const renderItem = useCallback(
-    ({item}: {item: NavigationScreen}) => (
+    ({item}: {item: string}) => (
       <Button key={item} onPress={nav(item)} title={formatTitle(item)} />
     ),
     [nav],
   );
-  const keyExtractor = useCallback((item: NavigationScreen) => item, []);
-  const navBack = useCallback(nav('portfolioLanding'), [nav]);
+  const keyExtractor = useCallback((item: string) => item, []);
+  const navBack = useCallback(nav('portfolio'), [nav]);
   return (
     <Screen onLeftPress={navBack} title="Playground">
       <FlatList

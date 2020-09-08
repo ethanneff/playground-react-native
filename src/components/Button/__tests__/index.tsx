@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button} from '..';
-import {mockRenderer} from '../../../utils/Mock';
+import {mockRenderer} from '../../../mocks/Renderer';
 
 it('renders correctly', () => {
   const callback = jest.fn();

@@ -10,7 +10,7 @@ import {
   updateDimension,
 } from '..';
 import {loginRequest, logout} from '../../Auth';
-import {store} from '../../../containers';
+import {store} from '../../../providers';
 
 describe('selectors', () => {
   beforeEach(() => {

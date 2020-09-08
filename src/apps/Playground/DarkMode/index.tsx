@@ -5,6 +5,7 @@ import {Button, Card, Masonry, Screen, Slider, Text} from '../../../components';
 import {
   ColorTheme,
   changeTheme,
+  colorThemes,
   getLandscapeOrientation,
 } from '../../../models';
 import {Theme, useRootDispatch, useRootSelector} from '../../../utils';
@@ -63,7 +64,6 @@ const cards: Card[] = [
 
 export default memo(function DarkMode() {
   const dispatch = useRootDispatch();
-  const themes = Object.values(ColorTheme);
   const color = useColor();
   const nav = useNav();
   const currentTheme = useRootSelector((state) => state.theme.currentColor);
@@ -124,7 +124,7 @@ export default memo(function DarkMode() {
             alignItems: 'center',
           }}>
           <Text title="theme: " />
-          {themes.map((item) => (
+          {colorThemes.map((item) => (
             <Button
               color={currentTheme === item ? 'primary' : 'text'}
               emphasis="high"

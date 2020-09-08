@@ -3,14 +3,14 @@ import 'react-native-get-random-values';
 import {v4} from 'uuid';
 import {Item} from './Item';
 
-interface Location {
+interface LocationItem {
   id: string;
   title: string;
   subtitle?: string;
 }
 
 export default memo(function Location() {
-  const locations: Location[] = [
+  const locations: LocationItem[] = [
     {
       id: v4(),
       title: 'Home',

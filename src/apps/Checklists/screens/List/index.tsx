@@ -9,7 +9,6 @@ import {
   toggleChecklistItemComplete,
 } from '../../models';
 import {useColor, useNav} from '../../../../hooks';
-import {navigate} from '../../../../models';
 
 export default memo(function Checklist() {
   const nav = useNav();
@@ -28,9 +27,9 @@ export default memo(function Checklist() {
   const handleEdit = useCallback(
     (id: string) => () => {
       dispatch(setActiveChecklistItem(id));
-      dispatch(navigate('checklistsItemUpdate'));
+      nav('checklistsItemUpdate');
     },
-    [dispatch],
+    [dispatch, nav],
   );
 
   const renderItem = useCallback(

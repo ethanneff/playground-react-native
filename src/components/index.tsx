@@ -17,3 +17,5 @@ export * from './Masonry';
 export * from './Slider';
 export * from './TouchableOpacity';
 export * from './Sentence';
+export * from './Alert';
+export * from './Notification';

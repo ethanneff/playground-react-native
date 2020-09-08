@@ -1,4 +1,4 @@
-import {ContentBody, ParagraphType} from '../../../components/Content';
+import {ContentBody} from '../../../components/Content';
 
 export const data: ContentBody = {
   sections: [
@@ -8,7 +8,7 @@ export const data: ContentBody = {
           sentences: [
             {
               content: 'best way to get your life together',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
           ],
         },
@@ -22,16 +22,16 @@ export const data: ContentBody = {
           sentences: [
             {
               content: 'first paragraph',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
             {
               content: 'nav here',
               onPress: (): void => undefined,
-              type: ParagraphType.Link,
+              type: 'link',
             },
             {
               content: 'blah bldah blah. blah blah blah',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
           ],
         },
@@ -39,17 +39,17 @@ export const data: ContentBody = {
           sentences: [
             {
               content: 'second paragraph',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
             {
               content: 'nav here',
               onPress: (): void => undefined,
-              type: ParagraphType.Link,
+              type: 'link',
             },
             {
               content:
                 'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
           ],
         },
@@ -63,16 +63,16 @@ export const data: ContentBody = {
           sentences: [
             {
               content: 'first paragraph',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
             {
               content: 'nav here',
               onPress: (): void => undefined,
-              type: ParagraphType.Link,
+              type: 'link',
             },
             {
               content: 'blah bldah blah. blah blah blah',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
           ],
         },
@@ -80,17 +80,17 @@ export const data: ContentBody = {
           sentences: [
             {
               content: 'second paragraph',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
             {
               content: 'nav here',
               onPress: (): void => undefined,
-              type: ParagraphType.Link,
+              type: 'link',
             },
             {
               content:
                 'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
           ],
         },
@@ -98,17 +98,17 @@ export const data: ContentBody = {
           sentences: [
             {
               content: 'third paragraph',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
             {
               content: 'nav here',
               onPress: (): void => undefined,
-              type: ParagraphType.Link,
+              type: 'link',
             },
             {
               content:
                 'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
           ],
         },
@@ -122,16 +122,16 @@ export const data: ContentBody = {
           sentences: [
             {
               content: 'first paragraph',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
             {
               content: 'nav here',
               onPress: (): void => undefined,
-              type: ParagraphType.Link,
+              type: 'link',
             },
             {
               content: 'blah bldah blah. blah blah blah',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
           ],
         },
@@ -139,17 +139,17 @@ export const data: ContentBody = {
           sentences: [
             {
               content: 'second paragraph',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
             {
               content: 'nav herhere',
               onPress: (): void => undefined,
-              type: ParagraphType.Link,
+              type: 'link',
             },
             {
               content:
                 'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
           ],
         },
@@ -157,17 +157,17 @@ export const data: ContentBody = {
           sentences: [
             {
               content: 'third paragraph',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
             {
               content: 'nav here',
               onPress: (): void => undefined,
-              type: ParagraphType.Link,
+              type: 'link',
             },
             {
               content:
                 'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
-              type: ParagraphType.Phrase,
+              type: 'phrase',
             },
           ],
         },

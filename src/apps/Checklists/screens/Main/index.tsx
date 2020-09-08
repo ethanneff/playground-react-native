@@ -4,7 +4,6 @@ import {Button, Icon, Screen} from '../../../../components';
 import {useColor, useNav} from '../../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {getActiveChecklistOrderByCreatedAt, setActiveList} from '../../models';
-import {navigate} from '../../../../models';
 
 export default memo(function Checklists() {
   const nav = useNav();
@@ -15,17 +14,17 @@ export default memo(function Checklists() {
   const handleItemPress = useCallback(
     (id: string) => () => {
       dispatch(setActiveList(id));
-      dispatch(navigate('checklistsList'));
+      nav('checklistsList');
     },
-    [dispatch],
+    [dispatch, nav],
   );
 
   const handleItemLongPress = useCallback(
     (id: string) => () => {
       dispatch(setActiveList(id));
-      dispatch(navigate('checklistsListUpdate'));
+      nav('checklistsListUpdate');
     },
-    [dispatch],
+    [dispatch, nav],
   );
 
   const renderItem = useCallback(

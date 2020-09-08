@@ -4,7 +4,7 @@ import {
   NetInfoState,
   NetInfoStateType,
 } from '../../conversions';
-import {RootAction} from '../../containers';
+import {RootAction} from '../../providers';
 import {logout} from '../Auth';
 
 /* ACTIONS */
