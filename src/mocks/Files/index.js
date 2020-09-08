@@ -1,6 +1,6 @@
-import path from 'path';
+const path = require('path');
 
 module.exports = {
-  process: (_: string, filename: string) =>
+  process: (_, filename) =>
     `module.exports = '${JSON.stringify(path.basename(filename))}';`,
 };

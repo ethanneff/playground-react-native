@@ -13,7 +13,7 @@ module.exports = {
     'coverage/',
     'android/',
     'ios/',
-    'src/utils/TestMocks/',
+    'src/mocks/',
   ],
   rules: {
     // add
