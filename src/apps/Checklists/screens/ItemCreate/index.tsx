@@ -3,7 +3,7 @@ import {v4} from 'uuid';
 import {Button, Screen, TextInput} from '../../../../components';
 import {navigate} from '../../../../models';
 import {createChecklistItem} from '../../models';
-import {Errors, useRootDispatch, useRootSelector} from '../../../../utils';
+import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {useNav} from '../../../../hooks';
 import 'react-native-get-random-values';
 
@@ -23,7 +23,7 @@ export default memo(function ChecklistItemCreate() {
     const {name, description} = form;
     const now = Date.now();
     if (!currentChecklist) {
-      throw new Error(Errors.MissingCurrentChecklistCreatingItem);
+      throw new Error('missing current checklist item when creating');
     }
     dispatch(
       createChecklistItem({

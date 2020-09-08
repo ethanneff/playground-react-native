@@ -1,8 +1,7 @@
 import {createSelector} from 'reselect';
 import {ActionType, createAction, getType} from 'typesafe-actions';
-import {RootAction, RootState} from '../../../../containers';
+import {RootAction, RootState} from '../../../../providers';
 import {getCurrentChecklist} from '../Checklist';
-import {Errors} from '../../../../utils';
 
 /* ACTIONS */
 export const createChecklistItem = createAction('checklistItem/create')<
@@ -27,7 +26,7 @@ export const getChecklistItems = (state: RootState): ChecklistItems =>
 export const getCurrentChecklistItem = (state: RootState): ChecklistItem => {
   const active = state.checklistItems.active;
   if (!active) {
-    throw new Error(Errors.MissingCurrentChecklistItem);
+    throw new Error('missing current checklist item');
   }
   return state.checklistItems.items[active];
 };
