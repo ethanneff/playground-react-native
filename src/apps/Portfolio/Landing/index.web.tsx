@@ -6,9 +6,9 @@ import {
   Text,
   TouchableOpacity,
   Word,
-} from '../../../../components';
-import {useColor} from '../../../../hooks';
-import {Theme} from '../../../../utils';
+} from '../../../components';
+import {useColor} from '../../../hooks';
+import {Theme} from '../../../utils';
 
 const missingCallback = () => undefined;
 
@@ -165,8 +165,9 @@ const Section = memo(function Section({
   );
 });
 
-const image = require('../../../../assets/line-chart.png');
-export default memo(function PortfolioLanding() {
+const image = require('../../../assets/line-chart.png');
+
+export const Landing = memo(function PortfolioLanding() {
   const height = Theme.padding.p18;
   const titleSentence: Word[] = [
     {title: 'Get started with ', type: 'h2'},

@@ -7,7 +7,8 @@ import {Alert, Notification} from '../../components';
 import {usePersistedState} from './usePersistedState';
 import {rootMode, rootScreenOptions} from './configs';
 
-const Games = lazy(() => import('../../apps/Games'));
+const Games = lazy(() => import('../../apps/Arcade'));
+const Portfolio = lazy(() => import('../../apps/Portfolio'));
 
 const Loading = memo(function NavigationLoading() {
   const color = useColor();
@@ -42,6 +43,7 @@ const Home = () => {
       />
       <Button onPress={() => nav.navigate('alert')} title="alert" />
       <Button onPress={() => nav.navigate('games')} title="games" />
+      <Button onPress={() => nav.navigate('portfolio')} title="portfolio" />
     </View>
   );
 };
@@ -70,6 +72,7 @@ export const Navigation = memo(function Navigation() {
         <Stack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
           <Stack.Screen component={HomeStack} name="app" />
           <Stack.Screen component={Games} name="games" />
+          <Stack.Screen component={Portfolio} name="portfolio" />
           <Stack.Screen component={Notification} name="notification" />
           <Stack.Screen component={Alert} name="alert" />
         </Stack.Navigator>

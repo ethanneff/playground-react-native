@@ -1,14 +1,14 @@
 import React, {memo, useCallback} from 'react';
 import {FlatList, View} from 'react-native';
-import {Button, Screen} from '../../../../components';
-import {ColorTheme, changeTheme, colorThemes} from '../../../../models';
-import {useRootDispatch, useRootSelector} from '../../../../utils';
-import {useNav} from '../../../../hooks';
+import {useNavigation} from '@react-navigation/core';
+import {Button, Screen} from '../../../components';
+import {ColorTheme, changeTheme, colorThemes} from '../../../models';
+import {useRootDispatch, useRootSelector} from '../../../utils';
 
-export default memo(function PortfolioSettings() {
+export const Settings = memo(function PortfolioSettings() {
   const dispatch = useRootDispatch();
   const currentTheme = useRootSelector((state) => state.theme.currentColor);
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const themePress = useCallback(
     (theme: ColorTheme) => () => dispatch(changeTheme(theme)),
     [dispatch],
@@ -30,7 +30,7 @@ export default memo(function PortfolioSettings() {
   const renderHeader = useCallback(() => <Button disable title="Theme" />, []);
   const keyExtractor = useCallback((item) => item, []);
 
-  const navBack = useCallback(nav('portfolioLanding'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <Screen onLeftPress={navBack} title="Settings">
       <FlatList
