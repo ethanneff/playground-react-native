@@ -1,7 +1,8 @@
 import React, {memo, useCallback, useEffect} from 'react';
 import {Animated, Easing, StyleSheet, View} from 'react-native';
+import {useNavigation} from '@react-navigation/core';
 import {Screen} from '../../../components';
-import {useColor, useDropShadow, useNativeDriver, useNav} from '../../../hooks';
+import {useColor, useDropShadow, useNativeDriver} from '../../../hooks';
 
 type PapiProps = {size: number; color: string};
 
@@ -36,16 +37,16 @@ const Papi = memo(({size, color}: PapiProps) => {
   );
 });
 
-export default memo(function PapiJump() {
+export const PapiJump = memo(function PapiJump() {
   const color = useColor();
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const styles = StyleSheet.create({
     container: {
       backgroundColor: color.surface,
       flex: 1,
     },
   });
-  const navBack = useCallback(nav('portfolioLanding'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <Screen onLeftPress={navBack} title="Papi Jump">
       <View style={styles.container}>

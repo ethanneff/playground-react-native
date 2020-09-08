@@ -1,17 +1,18 @@
 import React, {memo, useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
+import {useNavigation} from '@react-navigation/core';
 import {Screen} from '../../../components';
-import {useColor, useNav} from '../../../hooks';
+import {useColor} from '../../../hooks';
 
-export default memo(function FlappyBird() {
+export const FlappyBird = memo(function FlappyBird() {
   const color = useColor();
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const styles = StyleSheet.create({
     container: {
       backgroundColor: color.background,
     },
   });
-  const navBack = useCallback(nav('portfolioLanding'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <Screen onLeftPress={navBack} title="Flappy Bird">
       <View style={styles.container} />

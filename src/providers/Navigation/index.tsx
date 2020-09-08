@@ -1,12 +1,13 @@
-import React, {Suspense, memo} from 'react';
-import {ActivityIndicator, StyleSheet, View} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
+import React, {Suspense, lazy, memo} from 'react';
+import {ActivityIndicator, Button, StyleSheet, Text, View} from 'react-native';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {useColor} from '../../hooks';
 import {Alert, Notification} from '../../components';
-import {AdminStack} from './screens';
 import {usePersistedState} from './usePersistedState';
 import {rootMode, rootScreenOptions} from './configs';
+
+const Games = lazy(() => import('../../apps/Games'));
 
 const Loading = memo(function NavigationLoading() {
   const color = useColor();
@@ -30,6 +31,29 @@ const linking = {
   prefixes: ['https://app.example.com', 'mychat://'],
 };
 
+const Home = () => {
+  const nav = useNavigation();
+  return (
+    <View>
+      <Text>hello</Text>
+      <Button
+        onPress={() => nav.navigate('notification')}
+        title="notification"
+      />
+      <Button onPress={() => nav.navigate('alert')} title="alert" />
+      <Button onPress={() => nav.navigate('games')} title="games" />
+    </View>
+  );
+};
+
+export const HomeStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen component={Home} name="home" />
+    </Stack.Navigator>
+  );
+};
+
 export const Navigation = memo(function Navigation() {
   const {initialState, isReady, onStateChange, onRef} = usePersistedState();
 
@@ -44,57 +68,11 @@ export const Navigation = memo(function Navigation() {
         onStateChange={onStateChange}
         ref={onRef}>
         <Stack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
-          <Stack.Screen component={AdminStack} name="App" />
-          <Stack.Screen component={Notification} name="Notification" />
-          <Stack.Screen component={Alert} name="Alert" />
+          <Stack.Screen component={HomeStack} name="app" />
+          <Stack.Screen component={Games} name="games" />
+          <Stack.Screen component={Notification} name="notification" />
+          <Stack.Screen component={Alert} name="alert" />
         </Stack.Navigator>
-
-        {/* <Stack.Navigator>
-          <Stack.Screen component={HomeScreen} name="Home" />
-          <Stack.Screen component={Focus} name="focus" />
-          <Stack.Screen component={Portfolio} name="portfolio" />
-          <Stack.Screen
-            component={PortfolioSettings}
-            name="portfolioSettings"
-          />
-          <Stack.Screen component={PortfolioLanding} name="portfolioLanding" />
-          <Stack.Screen
-            component={PortfolioNotFound}
-            name="portfolioNotFound"
-          />
-          <Stack.Screen
-            component={PortfolioForgot}
-            name="portfolioForgotPassword"
-          />
-          <Stack.Screen component={PortfolioLogin} name="portfolioLogin" />
-          <Stack.Screen component={CantHurtMe} name="cantHurtMe" />
-          <Stack.Screen component={TheOneThing} name="theOneThing" />
-          <Stack.Screen component={Journal} name="journal" />
-          <Stack.Screen component={Activity} name="activity" />
-
-          <Stack.Screen component={Checklists} name="checklists" />
-          <Stack.Screen component={ChecklistsList} name="checklistsList" />
-          <Stack.Screen
-            component={ChecklistsListCreate}
-            name="checklistsListCreate"
-          />
-          <Stack.Screen
-            component={ChecklistsListUpdate}
-            name="checklistsListUpdate"
-          />
-          <Stack.Screen
-            component={ChecklistsItemCreate}
-            name="checklistsItemCreate"
-          />
-          <Stack.Screen
-            component={ChecklistsItemUpdate}
-            name="checklistsItemUpdate"
-          />
-          <Stack.Screen component={GamesFlappyBird} name="gamesFlappyBird" />
-          <Stack.Screen component={GamesSnake} name="gamesSnake" />
-          <Stack.Screen component={GamesPapiJump} name="gamesPapiJump" />
-          <Stack.Screen component={GamesArchero} name="gamesArchero" />
-        </Stack.Navigator> */}
       </NavigationContainer>
     </Suspense>
   );

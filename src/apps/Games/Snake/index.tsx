@@ -1,7 +1,8 @@
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {View} from 'react-native';
+import {useNavigation} from '@react-navigation/core';
 import {Button, Screen, Text} from '../../../components';
-import {useColor, useNav} from '../../../hooks';
+import {useColor} from '../../../hooks';
 import {BoardContext, getBoard, updateBoard} from './utils';
 import {Board} from './Board';
 import {useGesture} from './useGesture';
@@ -18,9 +19,9 @@ type Game = {
 
 // TODO: need to save the entire board to redux to load on app open
 
-export default memo(function Snake() {
+export const Snake = memo(function Snake() {
   const color = useColor();
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const size = 20;
   const frequency = 200;
   const [game, setGame] = useState<Game>({
@@ -63,7 +64,7 @@ export default memo(function Snake() {
       stop();
     }
   }, [game.state, start, stop, direction]);
-  const navBack = useCallback(nav('portfolioLanding'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <>

@@ -6,7 +6,8 @@ import {
   PanResponderInstance,
   View,
 } from 'react-native';
-import {useColor, useNativeDriver, useNav} from '../../../hooks';
+import {useNavigation} from '@react-navigation/core';
+import {useColor, useNativeDriver} from '../../../hooks';
 import {Theme, colorWithOpacity, useRootSelector} from '../../../utils';
 import {Screen} from '../../../components';
 
@@ -19,9 +20,9 @@ const getLimit = (value: number, limit: number) =>
 const getBounds = (value: number, limit: number, size: number) =>
   value > limit - size ? limit - size : value < 0 ? 0 : value;
 
-export default memo(function Archero() {
+export const Archero = memo(function Archero() {
   const color = useColor();
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const useDriver = useNativeDriver();
   const timer = useRef(false);
   const interval = useRef<NodeJS.Timeout | null>(null);
@@ -134,7 +135,7 @@ export default memo(function Archero() {
     setDimensions({width: layout.width, height: layout.height});
   };
 
-  const navBack = useCallback(nav('portfolioLanding'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen onLeftPress={navBack} title="Archero">

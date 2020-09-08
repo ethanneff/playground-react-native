@@ -1,7 +1,10 @@
 import React from 'react';
 import {AppRegistry, Platform} from 'react-native';
-import {App, ErrorBoundary, Navigation, Redux} from './providers';
+import {App} from './providers/App';
+import {Redux} from './providers/Redux';
 import {Config} from './utils';
+import {ErrorBoundary} from './providers/ErrorBoundary';
+import {Navigation} from './providers';
 
 // debugDev();
 export const Main = (): JSX.Element => {
