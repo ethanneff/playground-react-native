@@ -40,8 +40,6 @@ import {
   DeviceState,
   DimensionActions,
   DimensionState,
-  Navigation,
-  NavigationActions,
   NetworkActions,
   NetworkState,
   Theme,
@@ -49,7 +47,6 @@ import {
   authReducer,
   deviceReducer,
   dimensionReducer,
-  navigationReducer,
   networkReducer,
   themeReducer,
 } from '../../models';
@@ -60,7 +57,6 @@ import {
   chatMessageReducer,
 } from '../../apps/Playground/Chat/Messages';
 
-/* INTERFACES */
 export type RootState = DeepReadonly<{
   auth: AuthState;
   dimension: DimensionState;
@@ -68,7 +64,6 @@ export type RootState = DeepReadonly<{
   checklistItems: ChecklistItemReducer; // TODO: figure out better naming without plural (e.g. checklists.items vs checklist.items)
   checklists: ChecklistReducer;
   chatMessage: ChatMessageReducer;
-  navigation: Navigation;
   network: NetworkState;
   questions: Questions;
   choices: Choices;
@@ -77,7 +72,6 @@ export type RootState = DeepReadonly<{
   theme: Theme;
 }>;
 
-/* REDUCERS */
 const reducers = combineReducers<RootState>({
   auth: authReducer,
   choices: choicesReducer,
@@ -86,7 +80,6 @@ const reducers = combineReducers<RootState>({
   checklistItems: checklistItemReducer,
   checklists: checklistReducer,
   chatMessage: chatMessageReducer,
-  navigation: navigationReducer,
   network: networkReducer,
   questionnaires: questionnairesReducer,
   questions: questionsReducer,
@@ -94,7 +87,6 @@ const reducers = combineReducers<RootState>({
   theme: themeReducer,
 });
 
-/* ACTIONS */
 export type RootAction =
   | DimensionActions
   | DeviceActions
@@ -102,7 +94,6 @@ export type RootAction =
   | ChatMessageActions
   | ListActions
   | ItemActions
-  | NavigationActions
   | NetworkActions
   | QuestionnairesActions
   | QuestionsActions
@@ -111,32 +102,18 @@ export type RootAction =
   | ThemeActions;
 export type RootThunkAction<R> = ThunkAction<R, RootState, any, RootAction>;
 
-declare global {
-  interface Window {
-    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
-  }
-}
-
-/* CONSTANTS */
-const persistConfig = {
-  key: 'root',
-  storage: Storage,
-};
+const persistConfig = {key: 'root', storage: Storage};
 const middlewares: Middleware[] = [thunk];
-const composers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composers =
+  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancers = composers(applyMiddleware(...middlewares));
 
-/* STORE */
 const persistedReducer = persistReducer(persistConfig, reducers);
 export const store = createStore(persistedReducer, enhancers);
 const persistor = persistStore(store);
 // persistor.purge();
 
-type Props = {
-  children: ReactNode;
-};
-
-/* CONTAINER */
+type Props = {children: ReactNode};
 export const Redux = memo(function Redux({children}: Props) {
   return (
     <Provider store={store}>

@@ -1,5 +1,5 @@
 import {ActionType, createAction, getType} from 'typesafe-actions';
-import {RootAction, RootState} from '../../containers';
+import {RootAction, RootState} from '../../providers';
 import {logout} from '../Auth';
 
 /*
@@ -7,10 +7,8 @@ https://material.io/design/color/dark-theme.html#ui-application
 https://material.io/design/color/the-color-system.html#tools-for-picking-colors
 */
 
-export enum ColorTheme {
-  Light = 'light',
-  Dark = 'dark',
-}
+export type ColorTheme = 'light' | 'dark';
+export const colorThemes: ColorTheme[] = ['light', 'dark'];
 
 /* ACTIONS */
 export const changeTheme = createAction('theme/CHANGE')<ColorTheme>();
@@ -19,14 +17,10 @@ export const changeTheme = createAction('theme/CHANGE')<ColorTheme>();
 export const getCurrentColor = (state: RootState): Color =>
   state.theme.colors[state.theme.currentColor];
 export const getLightMode = (state: RootState): boolean =>
-  state.theme.currentColor === ColorTheme.Light;
+  state.theme.currentColor === 'light';
 
 /* INTERFACES */
-enum StatusBarStyle {
-  Default = 'default',
-  Light = 'light-content',
-  Dark = 'dark-content',
-}
+type StatusBarStyle = 'default' | 'light-content' | 'dark-content';
 
 export interface Color {
   background: string;
@@ -55,7 +49,7 @@ export type ThemeActions = ActionType<typeof changeTheme>;
 /* REDUCERS */
 export const themeInitialState: Theme = {
   colors: {
-    [ColorTheme.Dark]: {
+    dark: {
       background: 'hsl(0, 0%, 7%)', // #121212
       surface: 'hsl(0, 0%, 7%)',
       text: 'hsl(0, 0%, 100%)', // #ffffff
@@ -66,11 +60,11 @@ export const themeInitialState: Theme = {
       light: 'hsl(240, 14%, 97%)',
       primary: 'hsl(263, 84%, 75%)',
       secondary: 'hsl(171, 59%, 61%)',
-      statusBar: StatusBarStyle.Light,
+      statusBar: 'light-content',
       success: 'hsl(134, 61%, 41%)',
       warning: 'hsl(45, 100%, 51%)',
     },
-    [ColorTheme.Light]: {
+    light: {
       background: 'hsl(0, 0%, 100%)', // #ffffff
       surface: 'hsl(0, 0%, 96%)',
       text: 'hsl(0, 0%, 0%)', // #000000
@@ -81,12 +75,12 @@ export const themeInitialState: Theme = {
       light: 'hsl(210, 17%, 98%)', // #f8f9fa
       primary: 'hsl(211, 100%, 50%)', // #007bff
       secondary: 'hsl(208, 7%, 46%)', // #6c757d
-      statusBar: StatusBarStyle.Default,
+      statusBar: 'default',
       success: 'hsl(134, 61%, 41%)', // #28a745
       warning: 'hsl(45, 100%, 51%)', // #ffc107
     },
   },
-  currentColor: ColorTheme.Light,
+  currentColor: 'light',
 };
 
 export function themeReducer(

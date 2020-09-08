@@ -1,30 +1,29 @@
 import {getType} from 'typesafe-actions';
 import {
-  ColorTheme,
   changeTheme,
   getCurrentColor,
   themeInitialState,
   themeReducer,
 } from '..';
 import {loginRequest, logout} from '../../Auth';
-import {store} from '../../../containers';
+import {store} from '../../../providers';
 
 it('getCurrentColor dark', () => {
-  store.dispatch(changeTheme(ColorTheme.Dark));
+  store.dispatch(changeTheme('dark'));
   expect(getCurrentColor(store.getState())).toMatchObject({
     primary: 'hsl(263, 84%, 75%)',
   });
 });
 
 it('getCurrentColor light', () => {
-  store.dispatch(changeTheme(ColorTheme.Light));
+  store.dispatch(changeTheme('light'));
   expect(getCurrentColor(store.getState())).toMatchObject({
     primary: 'hsl(211, 100%, 50%)',
   });
 });
 
 it(getType(changeTheme), () => {
-  const payload = ColorTheme.Dark;
+  const payload = 'dark';
   expect(
     themeReducer(themeInitialState, {
       payload,
