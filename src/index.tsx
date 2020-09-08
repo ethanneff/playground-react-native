@@ -1,16 +1,18 @@
 import React from 'react';
 import {AppRegistry, Platform} from 'react-native';
-import {App, Navigation, Redux} from './containers';
+import {App, ErrorBoundary, Navigation, Redux} from './providers';
 import {Config} from './utils';
 
 // debugDev();
 export const Main = (): JSX.Element => {
   return (
-    <Redux>
-      <App>
-        <Navigation />
-      </App>
-    </Redux>
+    <ErrorBoundary>
+      <Redux>
+        <App>
+          <Navigation />
+        </App>
+      </Redux>
+    </ErrorBoundary>
   );
 };
 
