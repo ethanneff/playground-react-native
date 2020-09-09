@@ -1,5 +1,5 @@
 import {useCallback} from 'react';
-import {useNavigation} from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/native';
 
 export const useNav = () => {
   const navigation = useNavigation();

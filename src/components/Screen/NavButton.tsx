@@ -8,9 +8,10 @@ interface Props {
   icon: string;
   isRight?: boolean;
   onPress?(): void;
+  testID: string;
 }
 
-export const NavButton = memo(({onPress, icon, isRight}: Props) => {
+export const NavButton = memo(({onPress, icon, isRight, testID}: Props) => {
   const color = useColor();
   const styles = StyleSheet.create({
     button: {
@@ -30,6 +31,7 @@ export const NavButton = memo(({onPress, icon, isRight}: Props) => {
         onPress={onPress}
         size={Theme.padding.p09}
         style={isRight && styles.buttonRight}
+        testID={testID}
       />
     </View>
   );

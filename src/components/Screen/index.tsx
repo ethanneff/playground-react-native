@@ -7,6 +7,7 @@ import {NavBar} from './NavBar';
 
 interface OwnProps {
   title?: string;
+  testID?: string;
   border?: boolean;
   gutter?: boolean;
   leftIcon?: string;
@@ -27,6 +28,7 @@ export const Screen = ({
   children,
   leftIcon,
   rightIcon,
+  testID,
 }: Props): JSX.Element => {
   const color = useColor();
   const styles = StyleSheet.create({
@@ -56,7 +58,9 @@ export const Screen = ({
           rightIcon={rightIcon}
           title={title}
         />
-        <View style={styles.gutter}>{children}</View>
+        <View style={styles.gutter} testID={testID}>
+          {children}
+        </View>
         <KeyboardSpacer />
       </SafeAreaView>
     </View>

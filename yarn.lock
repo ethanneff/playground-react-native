@@ -2425,10 +2425,17 @@
     "@types/react" "*"
     "@types/react-native" "*"
 
-"@types/react-native@*", "@types/react-native@0.63.15":
+"@types/react-native@*":
   version "0.63.15"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.15.tgz#f86ce87a0afc53bec7c6bc96282e698e0a03ce1b"
   integrity sha512-ZFOHFn4NNKxvpHfri099KMVCeHU9Rvu7E3GC6ST1KGoktipyfWTW0HLePKAflbmARODAh84ci4HSzAXnW54FXw==
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-native@0.63.16":
+  version "0.63.16"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.16.tgz#f66c282da9815080799326e43040d0233efd7827"
+  integrity sha512-TMX69hoEkn65LNjFmQhq6nL3TSADxfuwUaYcr3jxP+zq2Aq90H/m8xD5Nu9V6yon893f1GNcXh9YWF7hGY8EFA==
   dependencies:
     "@types/react" "*"
 
@@ -5367,11 +5374,6 @@ dayjs@1.8.35, dayjs@^1.8.15:
   version "1.8.35"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.35.tgz#67118378f15d31623f3ee2992f5244b887606888"
   integrity sha512-isAbIEenO4ilm6f8cpqvgjZCsuerDAz2Kb7ri201AiNn58aqXuaLJEnCtfIMdCvERZHNGRY5lDMTr/jdAnKSWQ==
-
-debounce@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.0.tgz#44a540abc0ea9943018dc0eaa95cce87f65cd131"
-  integrity sha512-mYtLl1xfZLi1m4RtQYlZgJUNQjl4ZxVnHzIR8nLLgi4q1YT8o/WM+MK/f8yfcc9s5Ir5zRaPZyZU6xs1Syoocg==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.9:
   version "2.6.9"
@@ -13339,10 +13341,10 @@ react-native-screens@^2.10.1:
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.10.1.tgz#06d22fae87ef0ce51c616c34a199726db1403b95"
   integrity sha512-Z2kKSk4AwWRQNCBmTjViuBQK0/Lx0jc25TZptn/2gKYUCOuVRvCekoA26u0Tsb3BIQ8tWDsZW14OwDlFUXW1aw==
 
-react-native-sensors@7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-sensors/-/react-native-sensors-7.0.0.tgz#c98a86b20bb28be23e027b135769d6a956845b0c"
-  integrity sha512-YWcJsjJP20iIJ+dJ8Mcwn+WW6UIKkH+JTr5UC0mU4x9kURAe5kreekuxUqSsBMhr2gkb2FN95rG3erEpESJJcw==
+react-native-sensors@7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-sensors/-/react-native-sensors-7.0.1.tgz#56992dc08eb83142086612819cdf7d2cdedc1876"
+  integrity sha512-bHghKIdTamYfzB+oCZx/AowvrNaoY95GalkR3G1RSJCGxeVB45hHq2RlOYwCea4zn68+DcYpqhicPjUypgy6Fg==
   dependencies:
     rxjs ">= 6"
 
@@ -13368,14 +13370,13 @@ react-native-vector-icons@7.0.0:
     prop-types "^15.7.2"
     yargs "^15.0.2"
 
-react-native-web@0.13.9:
-  version "0.13.9"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.13.9.tgz#2b410a358ce73def0303c7cfc14b81f736193666"
-  integrity sha512-CheeCh0CT2K9YSW/UFhU9w6s9fyI4wmMmJb/PvoXtIUGHMKUXPEDhL6RCsDElMvHYHjHpoP3ABNuRHj/XmdDXg==
+react-native-web@0.13.11:
+  version "0.13.11"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.13.11.tgz#74a1ea0a3ea2c4d758d8d43af68f56ea0ca44595"
+  integrity sha512-d7RKr7KsbDuHPcJTctsiiwPkc1CMUxJ2QMJmvv4i4Z0QTI7Xip1momKq7GF6ibxFJxaUoykX0ZbnvXMl81PD0g==
   dependencies:
     array-find-index "^1.0.2"
     create-react-class "^15.6.2"
-    debounce "^1.2.0"
     deep-assign "^3.0.0"
     fbjs "^1.0.0"
     hyphenate-style-name "^1.0.3"

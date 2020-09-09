@@ -1,5 +1,5 @@
 import React, {memo, useCallback} from 'react';
-import {useNavigation} from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/native';
 import {Button, Screen} from '../../../components';
 
 export const NotFound = memo(function PortfolioNotFound() {

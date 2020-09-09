@@ -1,11 +1,11 @@
-import React, {useCallback} from 'react';
+import React, {ReactNode, useCallback} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {StyleSheet, View} from 'react-native';
 import {Button, Text} from '../../components';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 
-export const Alert = () => {
+export const Alert = (): ReactNode => {
   const {goBack} = useNavigation();
   const color = useColor();
 

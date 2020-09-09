@@ -1,5 +1,5 @@
 import React, {memo, useCallback} from 'react';
-import {useNavigation} from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/native';
 import {Button, Screen} from '../../../components';
 import {Walkthrough} from './Walkthrough';
 

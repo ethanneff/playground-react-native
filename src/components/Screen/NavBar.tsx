@@ -37,9 +37,14 @@ export const NavBar = memo(
 
     return (
       <View style={styles.container}>
-        <NavButton icon={leftIcon} onPress={onLeftPress} />
+        <NavButton icon={leftIcon} onPress={onLeftPress} testID="leftNav" />
         <Text title={title} type="h2" />
-        <NavButton icon={rightIcon} isRight onPress={onRightPress} />
+        <NavButton
+          icon={rightIcon}
+          isRight
+          onPress={onRightPress}
+          testID="rightNav"
+        />
       </View>
     );
   },

@@ -1,6 +1,6 @@
 import React, {memo, useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {useNavigation} from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/native';
 import {Screen} from '../../../components';
 import {useColor} from '../../../hooks';
 

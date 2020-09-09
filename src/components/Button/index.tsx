@@ -15,6 +15,7 @@ export type ButtonEmphasis = 'low' | 'medium' | 'high';
 interface Props {
   /* content */
   title: string;
+  testID?: string;
   /* styling */
   buttonStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
@@ -48,6 +49,7 @@ export const Button = ({
   elevation = 2,
   hidden,
   invisible,
+  testID,
   emphasis = 'low',
   lowercase,
   onPress,
@@ -85,7 +87,8 @@ export const Button = ({
       disabled={disable || invisible}
       onLongPress={onLongPress}
       onPress={onPress}
-      style={buttonStyleGroup}>
+      style={buttonStyleGroup}
+      testID={testID}>
       <Text
         center
         style={textStyleGroup}

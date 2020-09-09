@@ -1,6 +1,5 @@
 import 'react-native-gesture-handler/jestSetup';
 import {NativeModules} from 'react-native';
-import {mockNavigation} from '../Navigation';
 
 jest.mock('react-native-sound', () => {
   return class Mock {
@@ -80,15 +79,3 @@ jest.mock('react-native-reanimated', () => {
 });
 
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
-
-jest.mock('@react-navigation/native', () => {
-  return {
-    useRoute: () => jest.fn(),
-    useNavigation: () => ({
-      goBack: mockNavigation.goBack,
-      navigate: mockNavigation.navigate,
-      push: mockNavigation.push,
-      popToTop: mockNavigation.popToTop,
-    }),
-  };
-});

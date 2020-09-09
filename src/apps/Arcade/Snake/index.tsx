@@ -1,6 +1,6 @@
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {View} from 'react-native';
-import {useNavigation} from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/native';
 import {Button, Screen, Text} from '../../../components';
 import {useColor} from '../../../hooks';
 import {BoardContext, getBoard, updateBoard} from './utils';

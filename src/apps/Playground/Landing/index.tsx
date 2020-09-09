@@ -1,6 +1,6 @@
 import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
-import {useNavigation} from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/native';
 import {Button, Screen} from '../../../components';
 import {stackParams} from '../navParams';
 

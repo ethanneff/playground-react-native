@@ -25,6 +25,7 @@ interface Props {
   color?: string;
   name?: string;
   onPress?: () => void;
+  testID?: string;
 }
 
 export const Icon = ({
@@ -41,6 +42,7 @@ export const Icon = ({
   right,
   invisible,
   onPress,
+  testID,
 }: Props): JSX.Element => {
   const colors = useColor();
   const dropShadow = useDropShadow();
@@ -76,7 +78,8 @@ export const Icon = ({
       activeOpacity={activeOpacity}
       disabled={!onPress}
       onPress={onPress}
-      style={containerStyles}>
+      style={containerStyles}
+      testID={testID}>
       <Source color={colored} invisible={invisible} name={name} size={size} />
       <Badge badge={badge} />
     </TouchableOpacity>

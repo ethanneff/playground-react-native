@@ -3,7 +3,7 @@ import {Animated, StyleSheet, View} from 'react-native';
 import {Button, Screen} from '../../../components';
 import {getHeight, getWidth} from '../../../models';
 import {useColor, useNativeDriver, useNav} from '../../../hooks';
-import {useRootSelector} from '../../../utils';
+import {Theme, useRootSelector} from '../../../utils';
 
 export const Ball = memo(function PlaygroundBall() {
   const height = useRootSelector(getHeight);
@@ -12,15 +12,16 @@ export const Ball = memo(function PlaygroundBall() {
   const ballPosition = new Animated.ValueXY({x: width / 2, y: height / 2});
   const useDriver = useNativeDriver();
   const color = useColor();
+  const size = Theme.padding.p08;
   const styles = StyleSheet.create({
     ball: {
       borderColor: color.text,
-      borderRadius: 30,
-      borderWidth: 30,
-      height: 60,
-      marginLeft: -30,
-      marginTop: -30,
-      width: 60,
+      borderRadius: size,
+      borderWidth: size,
+      height: size * 2,
+      marginLeft: -size,
+      marginTop: -size,
+      width: size * 2,
     },
     button: {
       flexDirection: 'row',
@@ -42,12 +43,20 @@ export const Ball = memo(function PlaygroundBall() {
     [animate],
   );
   const navBack = useCallback(nav('landing'), [nav]);
+
   return (
-    <Screen onLeftPress={navBack} title="Ball">
-      <Animated.View style={[ballPosition.getLayout(), styles.ball]} />
+    <Screen onLeftPress={navBack} testID="ballScreen" title="Ball">
+      <Animated.View
+        style={[ballPosition.getLayout(), styles.ball]}
+        testID="ball"
+      />
       <View style={styles.button}>
-        <Button onPress={onInitialPress} title="initial" />
-        <Button onPress={onRandomPress} title="random" />
+        <Button
+          onPress={onInitialPress}
+          testID="initialButton"
+          title="initial"
+        />
+        <Button onPress={onRandomPress} testID="randomButton" title="random" />
       </View>
     </Screen>
   );

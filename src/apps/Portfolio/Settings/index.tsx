@@ -1,6 +1,6 @@
 import React, {memo, useCallback} from 'react';
 import {FlatList, View} from 'react-native';
-import {useNavigation} from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/native';
 import {Button, Screen} from '../../../components';
 import {ColorTheme, changeTheme, colorThemes} from '../../../models';
 import {useRootDispatch, useRootSelector} from '../../../utils';

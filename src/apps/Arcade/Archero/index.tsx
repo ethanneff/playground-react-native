@@ -6,7 +6,7 @@ import {
   PanResponderInstance,
   View,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/native';
 import {useColor, useNativeDriver} from '../../../hooks';
 import {Theme, colorWithOpacity, useRootSelector} from '../../../utils';
 import {Screen} from '../../../components';
