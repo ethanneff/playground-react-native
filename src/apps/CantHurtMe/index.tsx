@@ -1,51 +1,14 @@
-import React, {memo, useCallback, useState} from 'react';
-import {Dialog, Screen} from '../../components';
-import {useNav} from '../../hooks';
-import {List} from './List';
+import React, {memo} from 'react';
+import {createStackNavigator} from '@react-navigation/stack';
+import {Home} from './Home';
 
-const initialState = {settings: false, profile: false};
+const noHeader = {headerShown: false};
+const Stack = createStackNavigator();
 
-export default memo(function CantHurtMeMain() {
-  const [showModal, setShowModal] = useState(initialState);
-  const nav = useNav();
-
-  const handleModalBackgroundPress = useCallback(
-    () => setShowModal(initialState),
-    [],
-  );
-  const handleProfilePress = useCallback(
-    () => setShowModal({...initialState, profile: true}),
-    [],
-  );
-
-  const handleSettingsPress = useCallback(
-    () => setShowModal({...initialState, settings: true}),
-    [],
-  );
-
-  const navBack = useCallback(nav('portfolioLanding'), [nav]);
-
+export default memo(function CantHurtMe() {
   return (
-    <>
-      <Screen border onLeftPress={navBack} title="Can't Hurt Me">
-        <List
-          onProfilePress={handleProfilePress}
-          onSettingsPress={handleSettingsPress}
-        />
-      </Screen>
-      {showModal.profile && (
-        <Dialog
-          duration={2000}
-          onBackgroundPress={handleModalBackgroundPress}
-          title="profile"
-        />
-      )}
-      {showModal.settings && (
-        <Dialog
-          onBackgroundPress={handleModalBackgroundPress}
-          title="settings"
-        />
-      )}
-    </>
+    <Stack.Navigator screenOptions={noHeader}>
+      <Stack.Screen component={Home} name="home" />
+    </Stack.Navigator>
   );
 });

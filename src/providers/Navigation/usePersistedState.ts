@@ -20,6 +20,7 @@ export const usePersistedState = () => {
 
     if (previousRouteName !== currentRouteName) {
       console.log(currentRouteName);
+      // TODO: send to mixpanel
     }
 
     routeNameRef.current = currentRouteName;

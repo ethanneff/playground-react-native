@@ -25,12 +25,10 @@ export const getStyles = ({
   disable,
 }: StyleInterface): any =>
   StyleSheet.create({
-    bob: {flex: 1},
     center: {
       alignSelf: 'center',
     },
     container: {
-      alignItems: 'center',
       backgroundColor:
         disable && emphasis === 'high'
           ? colorWithOpacity(color, 0.38)
@@ -46,7 +44,6 @@ export const getStyles = ({
       borderRadius: Theme.padding.p01,
       borderWidth: 1,
       flexDirection: 'row',
-      justifyContent: 'center',
       padding: noPadding ? Theme.padding.p00 : Theme.padding.p02,
       paddingHorizontal: noPadding ? Theme.padding.p00 : Theme.padding.p04,
     },

@@ -116,7 +116,7 @@ export const Colors = memo(function DebugColors() {
             <Text title="h1" type="h1" />
             <Text title="h2" type="h2" />
             <Text title="h3" type="h3" />
-            <Text title="type='h4'" type="h4" />
+            <Text title="h4" type="h4" />
             <Text title="h5" type="h5" />
             <Text title="h6" type="h6" />
             <Text title="subtitle1" type="subtitle1" />
@@ -133,7 +133,7 @@ export const Colors = memo(function DebugColors() {
             <Text emphasis="high" title="h1" type="h1" />
             <Text emphasis="high" title="h2" type="h2" />
             <Text emphasis="high" title="h3" type="h3" />
-            <Text emphasis="high" title="type='h4'" type="h4" />
+            <Text emphasis="high" title="h4" type="h4" />
             <Text emphasis="high" title="h5" type="h5" />
             <Text emphasis="high" title="h6" type="h6" />
             <Text emphasis="high" title="subtitle1" type="subtitle1" />
@@ -150,7 +150,7 @@ export const Colors = memo(function DebugColors() {
             <Text emphasis="medium" title="h1" type="h1" />
             <Text emphasis="medium" title="h2" type="h2" />
             <Text emphasis="medium" title="h3" type="h3" />
-            <Text emphasis="medium" title="type='h4'" type="h4" />
+            <Text emphasis="medium" title="h4" type="h4" />
             <Text emphasis="medium" title="h5" type="h5" />
             <Text emphasis="medium" title="h6" type="h6" />
             <Text emphasis="medium" title="subtitle1" type="subtitle1" />
@@ -167,7 +167,7 @@ export const Colors = memo(function DebugColors() {
             <Text emphasis="low" title="h1" type="h1" />
             <Text emphasis="low" title="h2" type="h2" />
             <Text emphasis="low" title="h3" type="h3" />
-            <Text emphasis="low" title="type='h4'" type="h4" />
+            <Text emphasis="low" title="h4" type="h4" />
             <Text emphasis="low" title="h5" type="h5" />
             <Text emphasis="low" title="h6" type="h6" />
             <Text emphasis="low" title="subtitle1" type="subtitle1" />
