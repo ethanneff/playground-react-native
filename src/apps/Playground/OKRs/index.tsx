@@ -4,9 +4,9 @@ import {Card, Screen, Text} from '../../../components';
 import {useNav} from '../../../hooks';
 import {Theme} from '../../../utils';
 
-export default memo(function PlaygroundOKRs() {
+export const OKRs = memo(function PlaygroundOKRs() {
   const nav = useNav();
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
   return (
     <Screen onLeftPress={navBack} title="OKRs">
       <ScrollView

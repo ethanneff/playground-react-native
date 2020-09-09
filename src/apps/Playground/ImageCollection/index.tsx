@@ -18,7 +18,7 @@ const data: number[] = [
   Math.random(),
   Math.random(),
 ];
-export default memo(function ImageCollection() {
+export const ImageCollection = memo(function ImageCollection() {
   const nav = useNav();
   const keyExtractor = (d: number) => d.toString();
   const handleFetchMore = () => {
@@ -36,7 +36,7 @@ export default memo(function ImageCollection() {
   );
 
   return (
-    <Screen onLeftPress={nav('playground')} title="Image Collection">
+    <Screen onLeftPress={nav('landing')} title="Image Collection">
       <FlatList
         data={data}
         keyExtractor={keyExtractor}

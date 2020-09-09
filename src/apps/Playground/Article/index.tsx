@@ -4,9 +4,9 @@ import {Content} from '../../../components/Content';
 import {useNav} from '../../../hooks';
 import {data} from './data';
 
-export default memo(function PlaygroundArticle() {
+export const Article = memo(function PlaygroundArticle() {
   const nav = useNav();
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
   return (
     <Screen onLeftPress={navBack} title="Article">
       <Content body={data} />

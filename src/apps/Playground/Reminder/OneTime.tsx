@@ -62,7 +62,7 @@ interface Props {
   onPress: (value: Dayjs) => () => void;
 }
 
-export default memo(function OneTime({onPress}: Props) {
+export const OneTime = memo(function OneTime({onPress}: Props) {
   const buttons = generateButtons();
   return (
     <>

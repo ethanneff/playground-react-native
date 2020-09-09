@@ -1,5 +1,5 @@
 import React, {memo, useCallback} from 'react';
-import 'react-native-get-random-values';
+
 import {v4} from 'uuid';
 import {Item} from './Item';
 
@@ -9,7 +9,7 @@ interface LocationItem {
   subtitle?: string;
 }
 
-export default memo(function Location() {
+export const Location = memo(function Location() {
   const locations: LocationItem[] = [
     {
       id: v4(),

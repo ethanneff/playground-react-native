@@ -4,9 +4,8 @@ import {v4} from 'uuid';
 import {RateApp} from '../../../features';
 import {Button, Modal, Screen, Text} from '../../../components';
 import {useNav} from '../../../hooks';
-import Reminders from './Reminders';
-import CreateReminderModal from './CreateReminderModal';
-import 'react-native-get-random-values';
+import {Reminders} from './Reminders';
+import {CreateReminderModal} from './CreateReminderModal';
 
 type ReminderType = 'one time' | 'repeat' | 'location';
 export type Reminder = {
@@ -27,7 +26,7 @@ type State = {
   };
 };
 
-export default memo(function PlaygroundReminder() {
+export const ReminderExample = memo(function PlaygroundReminder() {
   const nav = useNav();
   const [form, setForm] = useState<State>({
     type: 'one time',
@@ -112,7 +111,7 @@ export default memo(function PlaygroundReminder() {
   const [showRate, setShowRate] = useState(false);
 
   const handleRate = (value: boolean) => () => setShowRate(value);
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
 
   return (
     <>

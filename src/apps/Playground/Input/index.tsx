@@ -2,7 +2,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {Button, Screen, TextInput} from '../../../components';
 import {useNav} from '../../../hooks';
 
-export default memo(function PlaygroundInput() {
+export const Input = memo(function PlaygroundInput() {
   const nav = useNav();
 
   const [form, setForm] = useState({
@@ -22,7 +22,7 @@ export default memo(function PlaygroundInput() {
   const handleSubmit = useCallback(() => {
     setForm((prev) => ({...prev, error: 'Invalid Email'}));
   }, []);
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
 
   return (
     <Screen gutter onLeftPress={navBack} title="Template">

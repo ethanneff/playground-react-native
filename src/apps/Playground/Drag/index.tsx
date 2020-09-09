@@ -35,7 +35,7 @@ const getPosition = (
   return {x, y};
 };
 
-export default memo(function PlaygroundDrag() {
+export const Drag = memo(function PlaygroundDrag() {
   const nav = useNav();
   const color = useColor();
   const dropShadow = useDropShadow();
@@ -81,7 +81,7 @@ export default memo(function PlaygroundDrag() {
     const {x, y, height, width} = event.nativeEvent.layout;
     setCanvas({x, y, height, width});
   }, []);
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
 
   return (
     <Screen onLeftPress={navBack} title="Drag">

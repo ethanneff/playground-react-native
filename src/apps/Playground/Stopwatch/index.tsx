@@ -2,10 +2,10 @@ import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Screen} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
-import Timer from './Timer';
-import RoundButton from './ButtonRound';
-import LapsTable from './LapsTable';
-import ButtonsRow from './ButtonsRow';
+import {Timer} from './Timer';
+import {ButtonRound} from './ButtonRound';
+import {LapsTable} from './LapsTable';
+import {ButtonsRow} from './ButtonsRow';
 
 interface State {
   laps: number[];
@@ -13,7 +13,7 @@ interface State {
   start: number;
 }
 
-export default memo(function PlaygroundStopWatch() {
+export const StopWatch = memo(function PlaygroundStopWatch() {
   const nav = useNav();
   const [state, setState] = useState<State>({
     laps: [],
@@ -96,21 +96,21 @@ export default memo(function PlaygroundStopWatch() {
     run();
   }, [run]);
 
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
   return (
     <Screen onLeftPress={navBack}>
       <View style={styles.container}>
         <Timer interval={interval} style={styles.timer} />
         {state.laps.length === 0 && (
           <ButtonsRow>
-            <RoundButton
+            <ButtonRound
               background="#151515"
               color="#8B8B90"
               disabled
               onPress={lap}
               title="Lap"
             />
-            <RoundButton
+            <ButtonRound
               background="#1B361F"
               color="#50D167"
               onPress={start}
@@ -120,13 +120,13 @@ export default memo(function PlaygroundStopWatch() {
         )}
         {state.start > 0 && (
           <ButtonsRow>
-            <RoundButton
+            <ButtonRound
               background="#3D3D3D"
               color="#FFFFFF"
               onPress={lap}
               title="Lap"
             />
-            <RoundButton
+            <ButtonRound
               background="#3C1715"
               color="#E33935"
               onPress={stop}
@@ -136,13 +136,13 @@ export default memo(function PlaygroundStopWatch() {
         )}
         {state.laps.length > 0 && state.start === 0 && (
           <ButtonsRow>
-            <RoundButton
+            <ButtonRound
               background="#3D3D3D"
               color="#FFFFFF"
               onPress={reset}
               title="Reset"
             />
-            <RoundButton
+            <ButtonRound
               background="#1B361F"
               color="#50D167"
               onPress={resume}

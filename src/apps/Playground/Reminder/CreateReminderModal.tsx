@@ -3,10 +3,10 @@ import {Dayjs} from 'dayjs';
 import {StyleSheet} from 'react-native';
 import {Button, Modal, Text} from '../../../components';
 import {Theme} from '../../../utils';
-import OneTime from './OneTime';
-import Radio from './Radio';
-import Location from './Location';
-import Repeat from './Repeat';
+import {OneTime} from './OneTime';
+import {Radio} from './Radio';
+import {Location} from './Location';
+import {Repeat} from './Repeat';
 
 type ReminderType = 'One time' | 'Repeat' | 'Location';
 const reminderTypes: ReminderType[] = ['One time', 'Repeat', 'Location'];
@@ -17,7 +17,7 @@ interface Props {
   onLocationPress: (id: string) => () => void;
 }
 
-export default memo(function CreateReminderModal({
+export const CreateReminderModal = memo(function CreateReminderModal({
   onBackgroundPress,
   onOneTimePress,
 }: Props) {

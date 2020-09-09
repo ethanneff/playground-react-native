@@ -5,7 +5,7 @@ import {useNav} from '../../../hooks';
 import {Canvas, CanvasDimensions} from './Canvas';
 import {Balls} from './Balls';
 
-export default memo(function PlaygroundBouncingBalls() {
+export const BouncingBalls = memo(function PlaygroundBouncingBalls() {
   const nav = useNav();
   const [canvas, setCanvas] = useState<CanvasDimensions | null>(null);
 
@@ -14,7 +14,7 @@ export default memo(function PlaygroundBouncingBalls() {
     setCanvas({x, y, height, width});
   }, []);
 
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
   return (
     <Screen onLeftPress={navBack} title="BouncingBalls">
       <Canvas onLayout={onLayout}>

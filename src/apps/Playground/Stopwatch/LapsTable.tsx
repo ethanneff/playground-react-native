@@ -1,13 +1,13 @@
 import React, {memo} from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
-import Lap from './Lap';
+import {Lap} from './Lap';
 
 interface LapTableProps {
   laps: number[];
   timer: number;
 }
 
-export default memo(function LapsTable({laps, timer}: LapTableProps) {
+export const LapsTable = memo(function LapsTable({laps, timer}: LapTableProps) {
   const finishedLaps = laps.slice(1);
   let min = Number.MAX_SAFE_INTEGER;
   let max = Number.MIN_SAFE_INTEGER;

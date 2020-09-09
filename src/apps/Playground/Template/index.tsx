@@ -3,10 +3,10 @@ import {StyleSheet, View} from 'react-native';
 import {Screen} from '../../../components';
 import {useColor, useNav} from '../../../hooks';
 
-export default memo(function PlaygroundTemplate() {
+export const Template = memo(function PlaygroundTemplate() {
   const color = useColor();
   const nav = useNav();
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
   const styles = StyleSheet.create({
     container: {
       backgroundColor: color.background,

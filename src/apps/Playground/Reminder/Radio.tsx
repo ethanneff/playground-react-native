@@ -9,7 +9,7 @@ interface Props {
   onChange: (id: string) => () => void;
 }
 
-export default memo(function Radio({
+export const Radio = memo(function Radio({
   buttons,
   value,
   onChange,

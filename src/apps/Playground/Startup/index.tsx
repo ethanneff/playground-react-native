@@ -32,7 +32,7 @@ const initialState: Form = {
   targetCustomer: '',
 };
 
-export default memo(function PlaygroundStartup() {
+export const Startup = memo(function PlaygroundStartup() {
   const color = useColor();
   const nav = useNav();
   const [form, setForm] = useState<Form>(initialState);
@@ -81,7 +81,7 @@ export default memo(function PlaygroundStartup() {
   );
 
   const handleSubmit = useCallback(() => undefined, []);
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
 
   return (
     <Screen onLeftPress={navBack} title="Weekly Update">

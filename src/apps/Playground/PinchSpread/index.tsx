@@ -7,7 +7,7 @@ import {GestureHandler} from './logic';
 const minTouches = 2;
 const title = `pinch or spread the screen with ${minTouches} fingers minimum`;
 
-export default memo(function PinchSpread() {
+export const PinchSpread = memo(function PinchSpread() {
   const [state, setState] = useState({pinchCount: 0, spreadCount: 0});
   const color = useColor();
   const nav = useNav();
@@ -28,7 +28,7 @@ export default memo(function PinchSpread() {
       }
     },
   });
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
 
   return (
     <Screen onLeftPress={navBack} title="Pinch Spread">

@@ -44,7 +44,7 @@ const iconBack = 'arrow-left';
 const textInputPlaceHolder = 'Search';
 const animationDuration = 400;
 
-export default memo(function PlaygroundSearchbar() {
+export const SearchBar = memo(function PlaygroundSearchbar() {
   const nav = useNav();
   const color = useColor();
   const [state, setState] = useState<State>({
@@ -187,7 +187,7 @@ export default memo(function PlaygroundSearchbar() {
     (value: string) => setState((prev) => ({...prev, input: value})),
     [],
   );
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
 
   return (
     <Screen onLeftPress={navBack}>

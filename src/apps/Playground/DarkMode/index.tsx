@@ -62,7 +62,7 @@ const cards: Card[] = [
   },
 ];
 
-export default memo(function DarkMode() {
+export const DarkMode = memo(function DarkMode() {
   const dispatch = useRootDispatch();
   const color = useColor();
   const nav = useNav();
@@ -114,7 +114,7 @@ export default memo(function DarkMode() {
     [elevation, onPress],
   );
 
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
   return (
     <Screen onLeftPress={navBack} title="Dark mode">
       <View style={{padding: Theme.padding.p04}}>

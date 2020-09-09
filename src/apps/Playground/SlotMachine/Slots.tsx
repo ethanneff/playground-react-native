@@ -142,7 +142,7 @@ const Bet = memo(function Bet({onBet, disable, multiplier}: BetProps) {
   );
 });
 
-export const SlotMachine = memo(function SlotMachine({
+export const Slots = memo(function Slots({
   combinations,
   reels,
   multipliers = [1, 2, 3, 5, 10, 20],

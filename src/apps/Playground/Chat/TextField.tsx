@@ -4,7 +4,6 @@ import {v4} from 'uuid';
 import {Icon, TextInput} from '../../../components';
 import {Theme, useRootDispatch, useRootSelector} from '../../../utils';
 import {Message, createChatMessage, typeChatMessage} from './Messages';
-import 'react-native-get-random-values';
 
 export const TextField = memo(function TextField() {
   const dispatch = useRootDispatch();

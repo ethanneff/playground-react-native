@@ -34,10 +34,10 @@ const rings: Ring[] = [
   },
 ];
 
-export default memo(function PlaygroundAppleFit() {
+export const AppleFit = memo(function PlaygroundAppleFit() {
   const nav = useNav();
   const color = useColor();
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
 
   return (
     <Screen onLeftPress={navBack} title="Apple Fit">

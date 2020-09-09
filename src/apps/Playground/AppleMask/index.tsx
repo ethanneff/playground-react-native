@@ -59,7 +59,7 @@ const Section = ({
   );
 };
 
-export default memo(function AppleMask() {
+export const AppleMask = memo(function AppleMask() {
   const nav = useNav();
 
   const sections = [
@@ -93,7 +93,7 @@ export default memo(function AppleMask() {
   ];
 
   const paddingHorizontal = Theme.padding.p04;
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
   return (
     <Screen onLeftPress={navBack}>
       <ScrollView contentContainerStyle={{paddingHorizontal}}>

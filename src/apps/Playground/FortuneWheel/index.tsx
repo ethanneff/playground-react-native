@@ -27,7 +27,7 @@ const useSegments = () => {
   );
 };
 
-export default memo(function PlaygroundFortuneWheel() {
+export const FortuneWheel = memo(function PlaygroundFortuneWheel() {
   const segments = useSegments();
   const nav = useNav();
   const [winner, setWinner] = useState(null);
@@ -36,7 +36,7 @@ export default memo(function PlaygroundFortuneWheel() {
     setWinner(a.display);
   }, []);
 
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
 
   // TODO: fix text on android
   // TODO: increase duration based on spin

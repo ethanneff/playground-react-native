@@ -1,8 +1,8 @@
 import React from 'react';
-import Screen from '..';
+import {Template} from '..';
 import {mockRenderer} from '../../../../mocks/Renderer';
 
 it('renders correctly', () => {
-  const dom = mockRenderer(<Screen />).toJSON();
+  const dom = mockRenderer(<Template />).toJSON();
   expect(dom).toMatchSnapshot();
 });

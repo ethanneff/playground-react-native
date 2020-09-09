@@ -5,7 +5,7 @@ interface ButtonRowProps {
   children: ReactNode | ReactNode[];
 }
 
-export default memo(function ButtonsRow({children}: ButtonRowProps) {
+export const ButtonsRow = memo(function ButtonsRow({children}: ButtonRowProps) {
   const styles = StyleSheet.create({
     buttonsRow: {
       alignSelf: 'stretch',

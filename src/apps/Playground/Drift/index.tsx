@@ -7,11 +7,11 @@ import {Game} from './Game';
 import {DriftContext, driftInitialState, driftReducer} from './Context';
 import {Dpad} from './Dpad';
 
-export default memo(function PlaygroundDrift() {
+export const Drift = memo(function PlaygroundDrift() {
   const nav = useNav();
   const [state, dispatch] = useReducer(driftReducer, driftInitialState);
   const isEmulator = DeviceInfo.isEmulatorSync();
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
 
   // TODO: figure out why Screen re-renders (because of useReducer.state)
   return (

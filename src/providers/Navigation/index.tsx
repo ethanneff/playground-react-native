@@ -1,31 +1,20 @@
-import React, {Suspense, lazy, memo} from 'react';
-import {ActivityIndicator, Button, StyleSheet, Text, View} from 'react-native';
+import React, {Suspense, lazy, memo, useCallback} from 'react';
+import {View} from 'react-native';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {useColor} from '../../hooks';
-import {Alert, Notification} from '../../components';
+import {
+  ActivityIndicator,
+  Alert,
+  Button,
+  Notification,
+  Text,
+} from '../../components';
 import {usePersistedState} from './usePersistedState';
 import {rootMode, rootScreenOptions} from './configs';
 
 const Games = lazy(() => import('../../apps/Arcade'));
 const Portfolio = lazy(() => import('../../apps/Portfolio'));
-
-const Loading = memo(function NavigationLoading() {
-  const color = useColor();
-  const styles = StyleSheet.create({
-    container: {
-      backgroundColor: color.background,
-      flex: 1,
-      justifyContent: 'center',
-    },
-  });
-
-  return (
-    <View style={styles.container}>
-      <ActivityIndicator color={color.dark} size="large" />
-    </View>
-  );
-});
+const Playground = lazy(() => import('../../apps/Playground'));
 
 const Stack = createStackNavigator();
 const linking = {
@@ -33,17 +22,16 @@ const linking = {
 };
 
 const Home = () => {
-  const nav = useNavigation();
+  const {navigate} = useNavigation();
+  const onPress = useCallback((to: string) => () => navigate(to), [navigate]);
   return (
     <View>
-      <Text>hello</Text>
-      <Button
-        onPress={() => nav.navigate('notification')}
-        title="notification"
-      />
-      <Button onPress={() => nav.navigate('alert')} title="alert" />
-      <Button onPress={() => nav.navigate('games')} title="games" />
-      <Button onPress={() => nav.navigate('portfolio')} title="portfolio" />
+      <Text title="hello" />
+      <Button onPress={onPress('notification')} title="notification" />
+      <Button onPress={onPress('alert')} title="alert" />
+      <Button onPress={onPress('games')} title="games" />
+      <Button onPress={onPress('portfolio')} title="portfolio" />
+      <Button onPress={onPress('playground')} title="playground" />
     </View>
   );
 };
@@ -60,11 +48,11 @@ export const Navigation = memo(function Navigation() {
   const {initialState, isReady, onStateChange, onRef} = usePersistedState();
 
   return !isReady ? (
-    <Loading />
+    <ActivityIndicator />
   ) : (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<ActivityIndicator />}>
       <NavigationContainer
-        fallback={<Loading />}
+        fallback={<ActivityIndicator />}
         initialState={initialState}
         linking={linking}
         onStateChange={onStateChange}
@@ -73,6 +61,7 @@ export const Navigation = memo(function Navigation() {
           <Stack.Screen component={HomeStack} name="app" />
           <Stack.Screen component={Games} name="games" />
           <Stack.Screen component={Portfolio} name="portfolio" />
+          <Stack.Screen component={Playground} name="playground" />
           <Stack.Screen component={Notification} name="notification" />
           <Stack.Screen component={Alert} name="alert" />
         </Stack.Navigator>

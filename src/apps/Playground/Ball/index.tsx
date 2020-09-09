@@ -5,7 +5,7 @@ import {getHeight, getWidth} from '../../../models';
 import {useColor, useNativeDriver, useNav} from '../../../hooks';
 import {useRootSelector} from '../../../utils';
 
-export default memo(function PlaygroundBall() {
+export const Ball = memo(function PlaygroundBall() {
   const height = useRootSelector(getHeight);
   const width = useRootSelector(getWidth);
   const nav = useNav();
@@ -41,7 +41,7 @@ export default memo(function PlaygroundBall() {
     () => animate(Math.random(), Math.random()),
     [animate],
   );
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
   return (
     <Screen onLeftPress={navBack} title="Ball">
       <Animated.View style={[ballPosition.getLayout(), styles.ball]} />

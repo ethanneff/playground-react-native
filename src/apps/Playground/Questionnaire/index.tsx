@@ -36,7 +36,7 @@ const data = [
 const width = Dimensions.get('window').width;
 const viewabilityConfig = {itemVisiblePercentThreshold: 50};
 
-export default memo(function Questionnaire() {
+export const Questionnaire = memo(function Questionnaire() {
   let output: any = {};
   let currentIndex = 0;
   const nav = useNav();
@@ -115,7 +115,7 @@ export default memo(function Questionnaire() {
   };
 
   return (
-    <Screen onLeftPress={nav('playground')} title="Questionnaire">
+    <Screen onLeftPress={nav('landing')} title="Questionnaire">
       <FlatList
         data={data}
         horizontal

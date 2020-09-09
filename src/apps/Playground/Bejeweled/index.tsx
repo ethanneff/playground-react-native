@@ -55,7 +55,7 @@ const getMatches = (board: Board): Matches => {
 export type States = 'idle' | 'swap' | 'validate' | 'swap back' | 'fill gems';
 
 const initialSelected = {x: -10, y: -10};
-export default memo(function PlaygroundBejeweled() {
+export const Bejeweled = memo(function PlaygroundBejeweled() {
   const nav = useNav();
   const dimension = useRootSelector(getSmallestDimension);
 
@@ -98,7 +98,7 @@ export default memo(function PlaygroundBejeweled() {
       setSelected({x, y});
     }
   };
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
 
   return (
     <Screen onLeftPress={navBack} title="Bejeweled">

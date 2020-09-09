@@ -7,7 +7,7 @@ import {getSmallestDimension} from '../../../models';
 import {determineBoardItem, generateBoard, swapBoardItem} from './utils';
 import {Cell} from './Cell';
 
-export default memo(function PlaygroundGameOfLife() {
+export const GameOfLife = memo(function PlaygroundGameOfLife() {
   const color = useColor();
   const [form, setForm] = useState({
     run: false,
@@ -85,7 +85,7 @@ export default memo(function PlaygroundGameOfLife() {
       }
     };
   }, [timeoutRef]);
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
 
   return (
     <Screen onLeftPress={navBack} title="Game of life">

@@ -7,7 +7,7 @@ interface Props {
   reminders: Reminder[];
 }
 
-export default memo(function Reminders({reminders}: Props) {
+export const Reminders = memo(function Reminders({reminders}: Props) {
   const renderItem = useCallback(
     ({item, index}) => (
       <Text

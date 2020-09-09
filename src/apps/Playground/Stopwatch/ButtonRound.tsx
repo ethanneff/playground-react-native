@@ -10,7 +10,7 @@ interface RoundButtonProps {
   onPress(): void;
 }
 
-export default memo(function ButtonRound({
+export const ButtonRound = memo(function ButtonRound({
   title,
   color,
   background,

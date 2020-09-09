@@ -3,7 +3,7 @@ import {Item} from './Item';
 
 type RepeatType = 'Daily' | 'Weekly' | 'Monthly' | 'Yearly';
 
-export default memo(function Repeat() {
+export const Repeat = memo(function Repeat() {
   const [active, setActive] = useState<RepeatType>('Daily');
   const onPress = (type: RepeatType) => () => setActive(type);
 

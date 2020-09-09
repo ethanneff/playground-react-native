@@ -8,7 +8,7 @@ import {
   getWinPercentage,
 } from './utils';
 import {combinations, reels} from './config';
-import {SlotMachine} from './SlotMachine';
+import {Slots} from './Slots';
 
 const winPercentage = (getWinPercentage(combinations, reels) * 100).toFixed(2);
 const returnPercentage = (
@@ -22,7 +22,7 @@ const getInitialState = () => ({
   reels: getRandomReelArrays(reels),
 });
 
-export default memo(function PlaygroundSlotMachine() {
+export const SlotMachine = memo(function PlaygroundSlotMachine() {
   const color = useColor();
   const nav = useNav();
 
@@ -32,7 +32,7 @@ export default memo(function PlaygroundSlotMachine() {
       backgroundColor: color.background,
     },
   });
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
 
   const onSpin = useCallback(() => {
     setState((p) => ({...p, spinning: true}));
@@ -53,7 +53,7 @@ export default memo(function PlaygroundSlotMachine() {
             alignItems: 'center',
           }}
         />
-        <SlotMachine
+        <Slots
           combinations={{
             '🍓🍓🍓': 200,
             '🍇🍇🍇': 100,

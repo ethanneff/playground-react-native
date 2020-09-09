@@ -19,3 +19,4 @@ export * from './TouchableOpacity';
 export * from './Sentence';
 export * from './Alert';
 export * from './Notification';
+export * from './ActivityIndicator';

@@ -5,9 +5,9 @@ import {useNav} from '../../../hooks';
 import {ColorTheme, changeTheme, colorThemes} from '../../../models';
 import {Theme, useRootDispatch, useRootSelector} from '../../../utils';
 
-export default memo(function DebugColors() {
+export const Colors = memo(function DebugColors() {
   const nav = useNav();
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
   const dispatch = useRootDispatch();
   const currentTheme = useRootSelector((state) => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));

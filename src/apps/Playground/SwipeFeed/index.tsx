@@ -12,7 +12,6 @@ import {Card, Icon, Screen, Text, TouchableOpacity} from '../../../components';
 import {useColor, useDropShadow, useNativeDriver, useNav} from '../../../hooks';
 import {getWidth} from '../../../models';
 import {Theme, useRootSelector} from '../../../utils';
-import 'react-native-get-random-values';
 
 interface SwipeCardProps extends SwipeItem {
   index: number;
@@ -329,9 +328,9 @@ const ImagePlaceholder = memo(function ImagePlaceholder() {
   );
 });
 
-export default memo(function SwipeFeed() {
+export const SwipeFeed = memo(function SwipeFeed() {
   const nav = useNav();
-  const navBack = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(nav('landing'), [nav]);
   return (
     <Screen onLeftPress={navBack} title="Swipe Feed">
       <View style={{padding: Theme.padding.p04}}>
