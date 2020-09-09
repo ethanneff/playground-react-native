@@ -1,2 +1,0 @@
-(this.webpackJsonpexample=this.webpackJsonpexample||[]).push([[48],{276:function(e,t,a){"use strict";a.r(t);var n=a(0),c=a.n(n),r=a(8),o=a(7),l=a(181),s=a(41);t.default=Object(n.memo)((function(){var e=Object(s.a)(),t=Object(s.d)(),a=r.a.create({container:{backgroundColor:e.background}}),u=Object(n.useCallback)(t("playground"),[t]);return c.a.createElement(l.j,{onLeftPress:u,title:"Tinder"},c.a.createElement(o.a,{style:a.container}))}))}}]);
-//# sourceMappingURL=48.7227bc35.chunk.js.map
