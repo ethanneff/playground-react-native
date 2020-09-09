@@ -1,7 +1,8 @@
 import React, {memo, useCallback} from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {Activity, Icon, Screen} from '../../components';
-import {useColor, useNav} from '../../hooks';
+import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 
 // TODO: gitlab
@@ -14,7 +15,7 @@ import {Theme} from '../../utils';
 
 export const Home = memo(function ActivityTracker() {
   const color = useColor();
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const styles = StyleSheet.create({
     background: {
       backgroundColor: color.surface,
@@ -25,7 +26,7 @@ export const Home = memo(function ActivityTracker() {
     },
   });
 
-  const navBack = useCallback(nav('portfolioLanding'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen onLeftPress={navBack} title="Activity">
