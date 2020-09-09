@@ -1,5 +1,30 @@
 # Changelog
 
+# [2.35.0](https://github.com/ethanneff/example/compare/v2.34.6...v2.35.0) (2020-09-09)
+
+
+### Bug Fixes
+
+* add playground to main screen ([c9886b8](https://github.com/ethanneff/example/commit/c9886b86b9157fda8ef41923e91770c3b97b0619))
+* add portfolio to navigation stack ([23abc46](https://github.com/ethanneff/example/commit/23abc46976ed42c2c5c144656a1955b5b455b972))
+* convert to functional component ([bffd626](https://github.com/ethanneff/example/commit/bffd6263af2c3779904e71fd14a9c1339141a28a))
+* make error boundary the root ([0fcff76](https://github.com/ethanneff/example/commit/0fcff76b82c082dffa69716919f62084cec2626b))
+* make navigation for gameswork with web ([3dc1359](https://github.com/ethanneff/example/commit/3dc1359929c34979b0147d082cbeb4b86ae9eb2f))
+* mock navigation ([61f6df9](https://github.com/ethanneff/example/commit/61f6df91c364bbf70269bf439ec8f899886372cb))
+* relocate mocks ([2267493](https://github.com/ethanneff/example/commit/2267493d50d8d7446ac549104b7239d5fd09d393))
+* remove global errors ([f19ac24](https://github.com/ethanneff/example/commit/f19ac24ebc4b45936abd61d149a89e490ec1e14a))
+* remove navigation redux ([1228cac](https://github.com/ethanneff/example/commit/1228cac5ab4edeb228ab8da722233f5235cfe0bc))
+* rename containers to providers ([a3969af](https://github.com/ethanneff/example/commit/a3969af2a914f00783338c5d24c23418b859da0d))
+* temparory turn off debugdev ([60107a5](https://github.com/ethanneff/example/commit/60107a53a848677dd137839c755be357dc589baa))
+* update deps ([447bb60](https://github.com/ethanneff/example/commit/447bb60d947b51080751d558b24430479fe7d531))
+* update deps ([3e7eb96](https://github.com/ethanneff/example/commit/3e7eb962b90b62022ef3feafe0f5e5d90a81a3d0))
+* update snapshots ([12a9c87](https://github.com/ethanneff/example/commit/12a9c87eb82d5d0e99c7563d302998ab2b71afe4))
+
+
+### Features
+
+* add react navigation ([e4804de](https://github.com/ethanneff/example/commit/e4804de8cf22527282079e4e43c8a2acb68824dc))
+
 ## [2.34.6](https://github.com/ethanneff/example/compare/v2.34.5...v2.34.6) (2020-09-01)
 
 
