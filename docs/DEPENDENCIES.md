@@ -7,9 +7,6 @@
 | @react-native-community/async-storage     | prod |                | native storage              |
 | @react-native-community/netinfo           | prod |                | native network              |
 | @react-native-community/masked-view       | prod |                | apple fit                   |
-| appcenter                                 | prod |                | deployment                  |
-| appcenter-analytics                       | prod |                | analytics                   |
-| appcenter-crashes                         | prod |                | analytics                   |
 | axios                                     | prod |                | ajax                        |
 | howler                                    | prod |                | web sound                   |
 | moment                                    | prod |                | time                        |
