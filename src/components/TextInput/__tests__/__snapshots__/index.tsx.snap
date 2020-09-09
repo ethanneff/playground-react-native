@@ -446,13 +446,11 @@ exports[`renders correctly 1`] = `
                           onStartShouldSetResponder={[Function]}
                           style={
                             Object {
-                              "alignItems": "center",
                               "backgroundColor": "transparent",
                               "borderColor": "transparent",
                               "borderRadius": 4,
                               "borderWidth": 1,
                               "flexDirection": "row",
-                              "justifyContent": "center",
                               "opacity": 0,
                               "padding": 0,
                               "paddingHorizontal": 0,

@@ -293,13 +293,11 @@ exports[`renders correctly 1`] = `
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "alignItems": "center",
                           "backgroundColor": "transparent",
                           "borderColor": "transparent",
                           "borderRadius": 4,
                           "borderWidth": 1,
                           "flexDirection": "row",
-                          "justifyContent": "center",
                           "opacity": 1,
                           "padding": 8,
                           "paddingHorizontal": 16,
@@ -626,14 +624,12 @@ exports[`renders disable 1`] = `
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "alignItems": "center",
                           "alignSelf": "center",
                           "backgroundColor": "transparent",
                           "borderColor": "transparent",
                           "borderRadius": 4,
                           "borderWidth": 1,
                           "flexDirection": "row",
-                          "justifyContent": "center",
                           "opacity": 1,
                           "padding": 8,
                           "paddingHorizontal": 16,

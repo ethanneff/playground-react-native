@@ -1206,14 +1206,12 @@ exports[`Dialog component renders correctly with props 1`] = `
                                 onStartShouldSetResponder={[Function]}
                                 style={
                                   Object {
-                                    "alignItems": "center",
                                     "backgroundColor": "transparent",
                                     "borderColor": "transparent",
                                     "borderRadius": 4,
                                     "borderWidth": 1,
                                     "flex": 1,
                                     "flexDirection": "row",
-                                    "justifyContent": "center",
                                     "marginRight": 8,
                                     "opacity": 1,
                                     "padding": 8,
@@ -1248,14 +1246,12 @@ exports[`Dialog component renders correctly with props 1`] = `
                                 onStartShouldSetResponder={[Function]}
                                 style={
                                   Object {
-                                    "alignItems": "center",
                                     "backgroundColor": "transparent",
                                     "borderColor": "transparent",
                                     "borderRadius": 4,
                                     "borderWidth": 1,
                                     "flex": 1,
                                     "flexDirection": "row",
-                                    "justifyContent": "center",
                                     "marginLeft": 8,
                                     "opacity": 1,
                                     "padding": 8,
