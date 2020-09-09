@@ -4,10 +4,12 @@ import {Screen} from '..';
 import {mockRenderer} from '../../../mocks/Renderer';
 
 it('renders correctly', () => {
-  const dom = mockRenderer(
-    <Screen>
-      <View />
-    </Screen>,
-  ).toJSON();
-  expect(dom).toMatchSnapshot();
+  const {tree} = mockRenderer({
+    component: (
+      <Screen>
+        <View />
+      </Screen>
+    ),
+  });
+  expect(tree.toJSON()).toMatchSnapshot();
 });

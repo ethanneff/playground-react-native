@@ -3,6 +3,6 @@ import {Template} from '..';
 import {mockRenderer} from '../../../../mocks/Renderer';
 
 it('renders correctly', () => {
-  const dom = mockRenderer(<Template />).toJSON();
-  expect(dom).toMatchSnapshot();
+  const {tree} = mockRenderer({component: <Template />});
+  expect(tree.toJSON()).toMatchSnapshot();
 });

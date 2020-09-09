@@ -3,6 +3,6 @@ import {create} from 'react-test-renderer';
 import {Swipe} from '..';
 
 it('renders correctly', () => {
-  const dom = create(<Swipe />).toJSON();
-  expect(dom).toMatchSnapshot();
+  const tree = create(<Swipe />).toJSON();
+  expect(tree).toMatchSnapshot();
 });
