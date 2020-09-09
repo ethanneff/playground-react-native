@@ -1,6 +1,6 @@
 import React, {memo, useCallback} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {ScrollView} from 'react-native-gesture-handler';
+import {ScrollView} from 'react-native';
 import {Button, Screen, Text} from '../../components';
 
 export default memo(function Admin() {
