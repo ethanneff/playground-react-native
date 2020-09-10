@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.35.2](https://github.com/ethanneff/example/compare/v2.35.1...v2.35.2) (2020-09-10)
+
+
+### Bug Fixes
+
+* add activity ([2bf5413](https://github.com/ethanneff/example/commit/2bf5413f88d1766bf9a610b72eae476276114cc0))
+* make nav work with web ([9394323](https://github.com/ethanneff/example/commit/9394323e3fac5f0d668759e958885fe43204789d))
+
 ## [2.35.1](https://github.com/ethanneff/example/compare/v2.35.0...v2.35.1) (2020-09-09)
 
 
