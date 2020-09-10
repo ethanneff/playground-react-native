@@ -18,7 +18,8 @@
     "reset": "watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; jest --clearCache; cd ios; pod install --repo-update; cd ..; npx jetify; cd android; ./gradlew clean; cd ..; react-native start --reset-cache",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
-    "ncu": "ncu -u && yarn && cd ios && pod install"
+    "ncu": "ncu -u && yarn && cd ios && pod install",
+    "visualize-size": "react-native-bundle-visualizer"
   },
   "dependencies": {
     "@mdi/js": "5.5.55",
@@ -92,13 +93,14 @@
     "@typescript-eslint/eslint-plugin": "4.1.0",
     "@typescript-eslint/parser": "4.1.0",
     "@welldone-software/why-did-you-render": "4.3.1",
-    "babel-plugin-transform-remove-console": "^6.9.4",
+    "babel-plugin-transform-remove-console": "6.9.4",
     "codecov": "3.7.2",
     "eslint-plugin-import": "2.22.0",
     "eslint-plugin-prettier": "3.1.4",
     "husky": "4.3.0",
     "metro-react-native-babel-preset": "0.63.0",
     "prettier": "2.1.1",
+    "react-native-bundle-visualizer": "^2.2.1",
     "react-native-highlight-updates": "1.2.0",
     "react-native-keyboard-spacer": "0.4.1",
     "react-test-renderer": "16.13.1",
