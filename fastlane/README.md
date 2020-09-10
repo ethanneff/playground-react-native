@@ -15,17 +15,35 @@ Install _fastlane_ using
 or alternatively using `brew install fastlane`
 
 # Available Actions
+### codepush_ios
+```
+fastlane codepush_ios
+```
+
+### codepush_android
+```
+fastlane codepush_android
+```
+
+### codepush
+```
+fastlane codepush
+```
+
+
+----
+
 ## iOS
-### ios certificates
-```
-fastlane ios certificates
-```
-Fetch certificates and provisioning profiles
 ### ios beta
 ```
 fastlane ios beta
 ```
-Ship to Testflight.
+
+### ios release
+```
+fastlane ios release
+```
+
 
 ----
 
@@ -34,7 +52,12 @@ Ship to Testflight.
 ```
 fastlane android beta
 ```
-Ship to Playstore Beta.
+Android build and release to beta
+### android release
+```
+fastlane android release
+```
+
 
 ----
 
