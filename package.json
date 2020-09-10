@@ -19,7 +19,9 @@
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
     "ncu": "ncu -u && yarn && cd ios && pod install",
-    "visualize-size": "react-native-bundle-visualizer"
+    "visualize-size": "react-native-bundle-visualizer",
+    "deploy-ios-core": "fastlane ios beta",
+    "deploy-android-core": "fastlane android beta"
   },
   "dependencies": {
     "@mdi/js": "5.5.55",
