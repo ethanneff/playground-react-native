@@ -35,9 +35,8 @@ cd android
 xcodebuild -workspace core.xcworkspace -scheme core -sdk iphoneos -configuration AppStoreDistribution archive -archivePath $PWD/build/app.xcarchive
 ```
 
-### build .ipa
+### build .ipa (failing)
 
 ```sh
-xcodebuild -exportArchive -archivePath $PWD/build/core.xcarchive -exportOptionsPlist exportOptions.plist -exportPath $PWD/build
-
+xcodebuild -exportArchive -archivePath $PWD/build/core.xcarchive -exportOptionsPlist core/exportOptions.plist -exportPath $PWD/build
 ```
