@@ -755,6 +755,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = core/core.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				CUSTOM_BUNDLE_IDENTIFIER = com.eneff.app.core.dev;
+				CUSTOM_DISPLAY_NAME = dev;
 				DEVELOPMENT_TEAM = PW4Q8885U7;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -762,6 +764,7 @@
 					"FB_SONARKIT_ENABLED=1",
 				);
 				INFOPLIST_FILE = core/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -773,7 +776,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -786,8 +789,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = core/core.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				CUSTOM_BUNDLE_IDENTIFIER = com.eneff.app.core;
+				CUSTOM_DISPLAY_NAME = core;
 				DEVELOPMENT_TEAM = PW4Q8885U7;
 				INFOPLIST_FILE = core/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -798,7 +804,7 @@
 				PRODUCT_NAME = core;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
