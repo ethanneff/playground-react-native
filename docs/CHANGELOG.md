@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.35.1](https://github.com/ethanneff/example/compare/v2.35.0...v2.35.1) (2020-09-09)
+
+
+### Bug Fixes
+
+* add navigation to the rest of the app ([fd7bbfa](https://github.com/ethanneff/example/commit/fd7bbfa9bb34b1beff6d2f0b98736c6dba663884))
+* make work for web ([45e709b](https://github.com/ethanneff/example/commit/45e709bdccb8629593267e8379b68ccaadc726a6))
+* remove carrots from deps ([99f09c8](https://github.com/ethanneff/example/commit/99f09c83e3e134b56fbcf47821dcb7a81bd21fe8))
+* update snaps ([9f0d2d0](https://github.com/ethanneff/example/commit/9f0d2d09255a03d34356b58adb54cc6c73cb64b4))
+
 # [2.35.0](https://github.com/ethanneff/example/compare/v2.34.6...v2.35.0) (2020-09-09)
 
 
