@@ -19,13 +19,13 @@ import {SwipeFeed} from './SwipeFeed';
 import {GameOfLife} from './GameOfLife';
 import {ReminderExample} from './Reminder';
 import {Tinder} from './Tinder';
-// import {Drift} from './Drift'; // TODO: broken on web
+import {Drift} from './Drift';
 import {AppleMask} from './AppleMask';
 import {BouncingBalls} from './BouncingBalls';
 import {Bejeweled} from './Bejeweled';
-// import {SlotMachine} from './SlotMachine';
+import {SlotMachine} from './SlotMachine';
 import {FortuneWheel} from './FortuneWheel';
-// import {AppleFit} from './AppleFit';
+import {AppleFit} from './AppleFit';
 import {Landing} from './Landing';
 import {stackParams} from './navParams';
 
@@ -55,13 +55,13 @@ export default memo(function Games() {
       <Stack.Screen component={GameOfLife} name="gameOfLife" />
       <Stack.Screen component={ReminderExample} name="reminder" />
       <Stack.Screen component={Tinder} name="tinder" />
-      {/* <Stack.Screen component={Drift} name="drift" /> */}
+      <Stack.Screen component={Drift} name="drift" />
       <Stack.Screen component={AppleMask} name="appleMask" />
       <Stack.Screen component={BouncingBalls} name="bouncingBalls" />
       <Stack.Screen component={Bejeweled} name="bejeweled" />
-      {/* <Stack.Screen component={SlotMachine} name="slotMachine" /> */}
+      <Stack.Screen component={SlotMachine} name="slotMachine" />
       <Stack.Screen component={FortuneWheel} name="fortuneWheel" />
-      {/* <Stack.Screen component={AppleFit} name="appleFit" /> */}
+      <Stack.Screen component={AppleFit} name="appleFit" />
     </Stack.Navigator>
   );
 });

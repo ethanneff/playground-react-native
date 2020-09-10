@@ -80,7 +80,7 @@ export const Archero = memo(function Archero() {
     const {x0, y0} = gesture.current;
     const offset = window.height - dimensions.height;
     const offset2 = window.width - dimensions.width;
-    // TODO: handle joystick location better
+    // TODO: handle joystick location better in landscape
     const toValue = {
       x: x0 - joystickCenter - offset2 / 2,
       y: y0 - joystickCenter - offset / 2 - joystickSize / 1.5,

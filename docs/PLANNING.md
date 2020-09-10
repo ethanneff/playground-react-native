@@ -3,7 +3,8 @@
 ## Top goals
 
 - [x] complete bouncing loading screen
-- [ ] react navigation
+- [x] react navigation
+- [ ] fastlane build multiple apps
 - [ ] Deploy Android app
   - [ ] login flow
   - [ ] activity

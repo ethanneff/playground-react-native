@@ -14,7 +14,7 @@ interface OwnProps {
   rightIcon?: string;
   onLeftPress?(): void;
   onRightPress?(): void;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 type Props = OwnProps;

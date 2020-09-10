@@ -2,21 +2,21 @@ import React from 'react';
 import {AppRegistry, Platform} from 'react-native';
 import {App} from './providers/App';
 import {Redux} from './providers/Redux';
-import {Config} from './utils';
+import {Config, debugDev} from './utils';
 import {ErrorBoundary} from './providers/ErrorBoundary';
 import {Navigation} from './providers';
 import 'react-native-get-random-values';
 
-// debugDev();
+debugDev();
 export const Main = (): JSX.Element => {
   return (
-    <ErrorBoundary>
-      <Redux>
+    <Redux>
+      <ErrorBoundary>
         <App>
           <Navigation />
         </App>
-      </Redux>
-    </ErrorBoundary>
+      </ErrorBoundary>
+    </Redux>
   );
 };
 
