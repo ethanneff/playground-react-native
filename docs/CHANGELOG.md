@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.37.3](https://github.com/ethanneff/example/compare/v2.37.2...v2.37.3) (2020-09-11)
+
+
+### Bug Fixes
+
+* change key ([34a8446](https://github.com/ethanneff/example/commit/34a8446e74e6727ab34b52756716b10907275810))
+* clean fastfile ([8a17f6f](https://github.com/ethanneff/example/commit/8a17f6fab4ae7f9cb441071e3e96f7c227c5afd8))
+* correct spelling ([f356f52](https://github.com/ethanneff/example/commit/f356f52cfbe71b5c7ad2a5f6d2fd976cbff008b6))
+* relocate stuff ([4a8cdd3](https://github.com/ethanneff/example/commit/4a8cdd3c334b29266127bfc821ee30d8068b6ed9))
+
 ## [2.37.2](https://github.com/ethanneff/example/compare/v2.37.1...v2.37.2) (2020-09-11)
 
 
