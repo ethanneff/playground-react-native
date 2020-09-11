@@ -755,8 +755,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = core/core.entitlements;
 				CURRENT_PROJECT_VERSION = 6;
-				CUSTOM_BUNDLE_IDENTIFIER = com.eneff.app.core.dev;
-				CUSTOM_DISPLAY_NAME = dev;
 				DEVELOPMENT_TEAM = PW4Q8885U7;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -766,6 +764,7 @@
 				INFOPLIST_FILE = core/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -789,12 +788,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = core/core.entitlements;
 				CURRENT_PROJECT_VERSION = 6;
-				CUSTOM_BUNDLE_IDENTIFIER = com.eneff.app.core;
-				CUSTOM_DISPLAY_NAME = core;
 				DEVELOPMENT_TEAM = PW4Q8885U7;
 				INFOPLIST_FILE = core/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
