@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.37.0](https://github.com/ethanneff/example/compare/v2.36.0...v2.37.0) (2020-09-11)
+
+
+### Features
+
+* working fastlane android beta ([581530f](https://github.com/ethanneff/example/commit/581530fa2162291417237dcee46ec0dc6e94db79))
+
 # [2.36.0](https://github.com/ethanneff/example/compare/v2.35.2...v2.36.0) (2020-09-11)
 
 
