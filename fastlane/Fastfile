@@ -57,6 +57,7 @@ platform :android do
     if new_package_name != "com.eneff.app.core"
       sh("cp", "../android/app/google-services." + app_name + ".json", "../android/app/google-services.json")
       rename_android_package(path: "./android/", package_name: "com.eneff.app.core", new_package_name: new_package_name)
+      update_android_strings( block: lambda { |strings| strings['app_name'] = app_name } )
     end
 
     desc "build aab"
@@ -69,6 +70,7 @@ platform :android do
       sh("cp", "../android/app/google-services.core.json", "../android/app/google-services.json")
       sh("rm", "-rf", "../android/app/src/main/java/com/eneff/app/!(core)/*")
       rename_android_package(path: "./android/", package_name: new_package_name, new_package_name: "com.eneff.app.core")
+      update_android_strings( block: lambda { |strings| strings['app_name'] = 'Core' } )
     end
 
     desc "submit to google"
