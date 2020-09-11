@@ -1,12 +1,8 @@
 import {Platform} from 'react-native';
-import {Config, useRootSelector} from '../../utils';
+import {useRootSelector} from '../../utils';
 
 export const useNativeDriver = (): boolean => {
   const emulator = useRootSelector((state) => state.device.isEmulator);
 
-  return !(
-    process.env.JEST_WORKER_ID ||
-    emulator ||
-    Platform.OS === Config.os.web
-  );
+  return !(process.env.JEST_WORKER_ID || emulator || Platform.OS === 'web');
 };

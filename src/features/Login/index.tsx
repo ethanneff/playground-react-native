@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from '../../components';
 import {useColor} from '../../hooks';
-import {Config, Theme} from '../../utils';
+import {Theme} from '../../utils';
 import {FirebaseAuthTypes, auth} from '../../conversions/Firebase';
 
 interface Props {
@@ -253,7 +253,7 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
         </>
       ) : (
         <>
-          {Platform.OS === Config.os.ios && (
+          {Platform.OS === 'ios' && (
             <SignInButton
               icon="apple"
               onPress={onMissingCallback}

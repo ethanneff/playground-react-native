@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import {Icon, Screen, Text, TextInput} from '../../../components';
-import {Config, Theme, colorWithOpacity} from '../../../utils';
+import {Theme, colorWithOpacity} from '../../../utils';
 import {useColor, useNativeDriver, useNav} from '../../../hooks';
 
 const data = [
@@ -121,28 +121,28 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
   }, [animate, changeIcon]);
 
   const keyboardWillShow = useCallback(() => {
-    if (Platform.OS !== Config.os.ios) {
+    if (Platform.OS !== 'ios') {
       return;
     }
     onSearchBarFocus();
   }, [onSearchBarFocus]);
 
   const keyboardWillHide = useCallback(() => {
-    if (Platform.OS !== Config.os.ios) {
+    if (Platform.OS !== 'ios') {
       return;
     }
     onSearchBarUnFocus();
   }, [onSearchBarUnFocus]);
 
   const keyboardDidShow = useCallback(() => {
-    if (Platform.OS !== Config.os.android) {
+    if (Platform.OS !== 'android') {
       return;
     }
     onSearchBarFocus();
   }, [onSearchBarFocus]);
 
   const keyboardDidHide = useCallback(() => {
-    if (Platform.OS !== Config.os.android) {
+    if (Platform.OS !== 'android') {
       return;
     }
     onSearchBarUnFocus();

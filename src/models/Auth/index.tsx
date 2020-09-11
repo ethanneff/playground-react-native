@@ -1,7 +1,6 @@
 import axios from 'axios';
 import {ActionType, createAction, getType} from 'typesafe-actions';
 import {RootAction, RootState, RootThunkAction} from '../../providers';
-import {Config} from '../../utils';
 
 /* ACTIONS */
 export const loginRequest = createAction('AUTH/LOGIN_REQUEST')();
@@ -11,6 +10,8 @@ export const registerRequest = createAction('AUTH/REGISTER_REQUEST')();
 export const registerSuccess = createAction('AUTH/REGISTER_SUCCESS')<string>();
 export const registerFailure = createAction('AUTH/REGISTER_FAILURE')<Error>();
 export const logout = createAction('Auth/LOGOUT')();
+
+const timeout = 5000;
 
 /* ACTION CREATORS */
 export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
@@ -22,7 +23,7 @@ export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
         password: 'pistol',
       },
       method: 'post',
-      timeout: Config.app.timeout,
+      timeout,
       url: 'https://reqres.in/api/login',
     });
     dispatch(loginSuccess(res.data.token));
@@ -39,7 +40,7 @@ export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
         password: 'pistol',
       },
       method: 'post',
-      timeout: Config.app.timeout,
+      timeout,
       url: 'https://reqres.in/api/register',
     });
     dispatch(loginSuccess(res.data.token));
@@ -55,7 +56,7 @@ export const onLogout = (): RootThunkAction<void> => (dispatch, getState) => {
       token,
     },
     method: 'post',
-    timeout: Config.app.timeout,
+    timeout,
     url: 'https://reqres.in/api/logout',
   });
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Platform, StyleProp, StyleSheet, ViewStyle} from 'react-native';
-import {Config, Theme} from '../../utils';
+import {Theme} from '../../utils';
 import {useColor, useDropShadow} from '../../hooks';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {Badge} from './Badge';
@@ -66,7 +66,7 @@ export const Icon = ({
   });
   const colored = clear ? colors.background : color ? color : colors.dark;
   const containerStyles = [
-    Platform.OS === Config.os.web ? styles.web : undefined,
+    Platform.OS === 'web' ? styles.web : undefined,
     fab ? styles.fab : undefined,
     right ? styles.right : undefined,
     style,
