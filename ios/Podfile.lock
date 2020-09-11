@@ -661,26 +661,26 @@ PODS:
     - React
   - RNDeviceInfo (6.0.2):
     - React
-  - RNFBAnalytics (7.6.1):
+  - RNFBAnalytics (7.6.2):
     - Firebase/Analytics (~> 6.30.0)
     - React
     - RNFBApp
-  - RNFBApp (8.4.1):
+  - RNFBApp (8.4.2):
     - Firebase/CoreOnly (~> 6.30.0)
     - React
-  - RNFBAuth (9.2.1):
+  - RNFBAuth (9.2.2):
     - Firebase/Auth (~> 6.30.0)
     - React
     - RNFBApp
-  - RNFBCrashlytics (8.4.2):
+  - RNFBCrashlytics (8.4.4):
     - Firebase/Crashlytics (~> 6.30.0)
     - React
     - RNFBApp
-  - RNFBFirestore (7.8.0):
+  - RNFBFirestore (7.8.1):
     - Firebase/Firestore (~> 6.30.0)
     - React
     - RNFBApp
-  - RNFBRemoteConfig (9.0.3):
+  - RNFBRemoteConfig (9.0.5):
     - Firebase/RemoteConfig (~> 6.30.0)
     - React
     - RNFBApp
@@ -692,7 +692,7 @@ PODS:
     - React
   - RNScreens (2.10.1):
     - React
-  - RNSensors (7.0.0):
+  - RNSensors (7.0.1):
     - React
   - RNSound (0.11.0):
     - React
@@ -701,7 +701,7 @@ PODS:
     - React
   - RNSVG (12.1.0):
     - React
-  - RNVectorIcons (7.0.0):
+  - RNVectorIcons (7.1.0):
     - React
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -974,20 +974,20 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: 2a692bcb9b69b76a2f1a95f33db057129700af64
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNDeviceInfo: bdd61e8b070d13a1dd9d022091981075ed4cde16
-  RNFBAnalytics: ffd9149d1fe0ecee0f2571b234d53c25349b9899
-  RNFBApp: e4321cad5dd23b43b3b4f0ca060300b9f85cb7a4
-  RNFBAuth: 09c6ceda66777758b6ffebf464f3226399e5732a
-  RNFBCrashlytics: accacec7be2426085b715b93cdb7b0a1308eb8eb
-  RNFBFirestore: e19737a64f9c46b00b1179b45c5cb20cf0c7c3ee
-  RNFBRemoteConfig: bfdaba409f8c3ce14fe70f5a13bf2b252aac7124
+  RNFBAnalytics: 20564db4cfd317c304fe5a8e5d840f8c9d105aaa
+  RNFBApp: 373cce42559cc7a9a42afc876746e3946de3e32e
+  RNFBAuth: 701b29df3f364ef7b36992ad5e25628ce333ed89
+  RNFBCrashlytics: 834057016b34fa49e3eef028a13e35f48840c78c
+  RNFBFirestore: 75c8fb40f3414f7b8158a260eec47dc3bbc0cfd0
+  RNFBRemoteConfig: 044387dc66fcada0f32a0a1529dca57e62b3be9e
   RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
   RNRate: 15b861025a7821730761fce7f44561ce7e0b2de0
   RNReanimated: 89f5e0a04d1dd52fbf27e7e7030d8f80a646a3fc
   RNScreens: b748efec66e095134c7166ca333b628cd7e6f3e2
-  RNSensors: 2531ad11a2551c9fd2da581fd4ace28d2552e542
+  RNSensors: 07c37847fc643356e7f9829800932f7d7c33455a
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
-  RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
+  RNVectorIcons: bc69e6a278b14842063605de32bec61f0b251a59
   Yoga: 7740b94929bbacbddda59bf115b5317e9a161598
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
