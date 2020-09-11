@@ -1,5 +1,21 @@
 # Changelog
 
+# [2.36.0](https://github.com/ethanneff/example/compare/v2.35.2...v2.36.0) (2020-09-11)
+
+
+### Bug Fixes
+
+* add bundle visualizer ([38c2916](https://github.com/ethanneff/example/commit/38c2916f3573b3e7a2d8b34e848b51e6f9ff5ffe))
+* add custom bundle id ([eab5946](https://github.com/ethanneff/example/commit/eab594621ea034d30f5d9b3b6b3245676b0abc4e))
+* make android buildable ([55ca0e4](https://github.com/ethanneff/example/commit/55ca0e4f45a6fd17c8c83466609c167c0895a27e))
+* more fastlane stuff ([5d6c902](https://github.com/ethanneff/example/commit/5d6c902333aee365a083d531772dc5a53319686e))
+* target ipad as well ([a2f4f2e](https://github.com/ethanneff/example/commit/a2f4f2eae7f26d3bda838e2e5591b396ebafb593))
+
+
+### Features
+
+* add initial fastlane ([edd7ed8](https://github.com/ethanneff/example/commit/edd7ed8afaf5554c329ec9885476ffabd1b443aa))
+
 ## [2.35.2](https://github.com/ethanneff/example/compare/v2.35.1...v2.35.2) (2020-09-10)
 
 
