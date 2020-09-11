@@ -1,5 +1,26 @@
 # Changelog
 
+# [2.38.0](https://github.com/ethanneff/example/compare/v2.37.4...v2.38.0) (2020-09-11)
+
+
+### Bug Fixes
+
+* add google services for apps ([40c12e3](https://github.com/ethanneff/example/commit/40c12e3afb92203faea3d8e6c6576f18a22832b1))
+* add scripts to fastlane ([1215370](https://github.com/ethanneff/example/commit/12153705c2d6347f362b2b053a27d601afcfa7c2))
+* allow android app name change ([faecfd2](https://github.com/ethanneff/example/commit/faecfd217ce3ba256adc8785a753d06f708caf63))
+* bump ios version ([9e66b09](https://github.com/ethanneff/example/commit/9e66b09ca75e77fbd660e8c141652787cecc5b21))
+* change android app name ([9de3704](https://github.com/ethanneff/example/commit/9de370476d72614f3615f4ae6097fcfd066ad6f0))
+* increment plist variables ([3e12ff4](https://github.com/ethanneff/example/commit/3e12ff4066e787f56249b3e21d82f7d0334a4988))
+* remove custom bundle on ios ([4dcebd1](https://github.com/ethanneff/example/commit/4dcebd16689f4aae12adaa359d7132f0de95b8e2))
+* remove hardcord app identifier in fastlane ([6604162](https://github.com/ethanneff/example/commit/6604162473656dfc54c4abc8fc9ee353119d9368))
+* remove testflight screenshots ([bfe72c1](https://github.com/ethanneff/example/commit/bfe72c14836f8f93133f6eea183f5d1fe78bfc85))
+* update deps ([67d5ac2](https://github.com/ethanneff/example/commit/67d5ac22294883774299a05ef76032f966a56b45))
+
+
+### Features
+
+* add ios fastlane ([607a6c1](https://github.com/ethanneff/example/commit/607a6c12d3e53a899c3faad19e75fd9b4fa00b08))
+
 ## [2.37.4](https://github.com/ethanneff/example/compare/v2.37.3...v2.37.4) (2020-09-11)
 
 
