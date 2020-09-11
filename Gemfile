@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
 gem "fastlane"
-gem "dotenv"
+gem 'fastlane-plugin-versioning_android'

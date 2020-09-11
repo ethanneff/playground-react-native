@@ -52,7 +52,7 @@ fastlane ios release
 ```
 fastlane android beta
 ```
-Android build and release to beta
+
 ### android release
 ```
 fastlane android release

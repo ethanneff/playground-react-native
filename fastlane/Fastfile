@@ -1,70 +1,61 @@
 before_all do
     ensure_git_branch
-    ensure_git_status_clean
+    # ensure_git_status_clean
     git_pull
 end
 
+timestamp = (Time.now.to_f * 1000).to_i
+
 platform :ios do
-    private_lane :update_version do
-        app_store_version = get_app_store_version_number(bundle_id: 'core')
-        plist_version = get_version_number_from_plist(xcodeproj: './ios/core.xcodeproj')
-        if Gem::Version.new(plist_version.to_f) == Gem::Version.new(app_store_version.to_f)
-            UI.message "bumping minor"
-            increment_version_number_in_plist(xcodeproj: './ios/core.xcodeproj', bump_type: 'minor')
-        else
-            UI.message "bumping patch"
-            increment_version_number_in_plist(xcodeproj: './ios/core.xcodeproj', bump_type: 'patch')
-        end
-    end
-
-    private_lane :staging_build do
-        increment_build_number_in_plist(xcodeproj: './ios/core.xcodeproj', target: 'core')
-        gym(scheme: 'Debug', workspace: './ios/core.xcworkspace')
-    end
-
-    private_lane :release_build do
-        increment_build_number_in_plist(xcodeproj: './ios/core.xcodeproj', target: 'core')
-        gym(scheme: 'Release', workspace: './ios/core.xcworkspace')
-    end
-
-    # private_lane :screenshots do
-    #     Dir.chdir('..') do
-    #         # run in parent directory
-    #         sh('detox', 'build -c ios')
-    #         sh('detox', 'test -c ios')
-    #     end
-    # end
 
     lane :beta do
-        staging_build
-        upload_to_testflight(username: 'ethan.neff@eneff.com', app_identifier: 'core')
-        commit_version_bump(message: 'chore: bump build')
-        push_to_git_remote
+      increment_build_number(xcodeproj: './ios/core.xcodeproj')
+      commit_version_bump(message: 'chore: bump build')
+      add_git_tag
+      push_to_git_remote
+
+      sync_code_signing(type: "appstore")
+      build_app(scheme: "core")
+      changelog_from_git_commits
+
+      upload_to_testflight
     end
 
     lane :release do
-        release_build
-        screenshots
-        deliver
-        commit_version_bump(message: 'chore: bump build')
-        push_to_git_remote
+      increment_version_number(xcodeproj: './ios/core.xcodeproj', bump_type: 'patch')
+
+      increment_build_number(xcodeproj: './ios/core.xcodeproj')
+      commit_version_bump(message: 'chore: bump build')
+      add_git_tag
+      push_to_git_remote
+
+      get_push_certificate
+      capture_screenshot    
+
+      sync_code_signing(type: "appstore")
+      build_app(scheme: "core")
+      changelog_from_git_commits
+
+      upload_to_app_store
     end
 end
 
 platform :android do
-    desc "Android build and release to beta"
     lane :beta do
-        increment_version_code(app_project_dir: './android/app')
-        gradle(task: 'clean', project_dir: './android/')
-        gradle(task: 'bundle', build_type: 'Release', project_dir: './android')
-        supply(track: 'beta', aab: './android/app/build/outputs/bundle/release/app-release.aab')
+        android_set_version_name(version_name: timestamp.to_s, gradle_file: "android/app/build.gradle")
+        android_set_version_code(version_code: timestamp, gradle_file: "android/app/build.gradle")
+        git_commit(path: "*", message: 'chore: bump android version')
+        push_to_git_remote
+
+        changelog_from_git_commits
+        gradle(task: 'assemble', build_type: 'Release', project_dir: './android/')
+        upload_to_play_store(track: 'beta', skip_upload_apk: true, version_code: timestamp, version_name: timestamp.to_s)
     end 
+
     lane :release do
-        increment_version_code(app_project_dir: './android/app')
-        increment_version_name(app_project_dir: './android/app', bump_type: 'patch')
-        gradle(task: 'clean', project_dir: './android/')
-        gradle(task: 'bundle', build_type: 'Release', project_dir: './android')
-        supply(track: 'production', aab: './android/app/build/outputs/bundle/release/app-release.aab', release_status: 'draft')
+        changelog_from_git_commits
+        gradle(task: 'assemble', build_type: 'Release', project_dir: './android/')
+        upload_to_play_store(skip_upload_apk: true, version_code: timestamp, version_name: timestamp.to_s)
     end
 end
 
