@@ -74,7 +74,7 @@ platform :android do
     end
 
     desc "submit to google"
-    upload_to_play_store(track: 'beta', package_name: package_name)
+    upload_to_play_store(track: 'beta', package_name: new_package_name)
   end
 
   lane :core do
