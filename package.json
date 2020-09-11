@@ -20,10 +20,12 @@
     "travis-deploy-once": "travis-deploy-once",
     "ncu": "ncu -u && yarn && cd ios && pod install",
     "visualize-size": "react-native-bundle-visualizer",
-    "deploy-ios-core": "fastlane ios beta",
-    "deploy-core": "fastlane android core",
-    "deploy-activity": "fastlane android activity",
-    "deploy-journal": "fastlane android journal"
+    "deploy-ios-core": "fastlane ios core",
+    "deploy-ios-activity": "fastlane ios activity",
+    "deploy-ios-journal": "fastlane ios journal",
+    "deploy-android-core": "fastlane android core",
+    "deploy-android-activity": "fastlane android activity",
+    "deploy-android-journal": "fastlane android journal"
   },
   "dependencies": {
     "@mdi/js": "5.5.55",
