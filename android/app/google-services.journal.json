@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "913927714803",
+    "firebase_url": "https://journal-d3834.firebaseio.com",
+    "project_id": "journal-d3834",
+    "storage_bucket": "journal-d3834.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913927714803:android:4ffce08b1d890c0e8ec486",
+        "android_client_info": {
+          "package_name": "com.eneff.app.journal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913927714803-9lakev75j0lr7tgloftneseq81pne2de.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuWLhLF6bruwpMDfpE19doWDxJFBEeksQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913927714803-9lakev75j0lr7tgloftneseq81pne2de.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
