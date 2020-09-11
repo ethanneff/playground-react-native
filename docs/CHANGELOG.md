@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.37.4](https://github.com/ethanneff/example/compare/v2.37.3...v2.37.4) (2020-09-11)
+
+
+### Bug Fixes
+
+* correct android rename ([4382861](https://github.com/ethanneff/example/commit/43828615c5a4058d00d6777d05b99e39b5a948f4))
+* simplify google services temp ([97fc006](https://github.com/ethanneff/example/commit/97fc00687ed4cc65433326997f4c4d1bdc695979))
+
 ## [2.37.3](https://github.com/ethanneff/example/compare/v2.37.2...v2.37.3) (2020-09-11)
 
 
