@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.37.1](https://github.com/ethanneff/example/compare/v2.37.0...v2.37.1) (2020-09-11)
+
+
+### Bug Fixes
+
+* activity to core ([4f59414](https://github.com/ethanneff/example/commit/4f594148bbd7579159b68d23cb0b888bc4ccbf16))
+* add back core android files ([f638aa8](https://github.com/ethanneff/example/commit/f638aa8696237f8ed65e88d8ed6e5f0ce005c1e9))
+
 # [2.37.0](https://github.com/ethanneff/example/compare/v2.36.0...v2.37.0) (2020-09-11)
 
 
