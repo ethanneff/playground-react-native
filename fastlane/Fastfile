@@ -46,7 +46,7 @@ platform :android do
     android_set_version_name(version_name: timestamp.to_s, gradle_file: "android/app/build.gradle")
     android_set_version_code(version_code: timestamp, gradle_file: "android/app/build.gradle")
     git_commit(path: "./android/*", message: 'chore: bump android version to ' + timestamp.to_s, skip_git_hooks: true)
-    push_to_git_remote
+    push_to_git_remote(no_verify: true)
   end
 
   private_lane :build_aab do 
@@ -55,17 +55,51 @@ platform :android do
     gradle(task: 'bundle', build_type: 'Release', project_dir: './android/')
   end
 
-  lane :beta do
+  private_lane :clone_configs do |options|
+    # clone configs
+    sh("cp", "../android/app/google-services.json", "../android/app/google-services.default.json")
+    sh("cp", "../android/app/google-services." + options[:app] + ".json", "../android/app/google-services.json")
+    rename_android_package(path: "./android/app/build.gradle", package_name: "com.eneff.app.core", new_package_name: options[:package_name])
+
+    # build adb 
+
+    # clean configs
+    sh("cp", "../android/app/google-services.default.json", "../android/app/google-services.json")
+    sh("rm", "../android/app/google-services.default.json")
+    sh("rm", "-rf", "../android/app/src/main/java/com/eneff/app/!(core)/*")
+    rename_android_package(path: "./android/", package_name: options[:package_name], new_package_name: "com.eneff.app.core")
+  end
+
+  private_lane :clean_configs do |options|
+
+
+  end
+
+  lane :core do
+    package_name = "com.eneff.app.core"
     increment_version
     build_aab
-    upload_to_play_store(track: 'beta')
+    upload_to_play_store(track: 'beta', package_name: package_name)
   end 
 
-  lane :prod do
+  lane :activity do
+    package_name = "com.eneff.app.activity"
     increment_version
-    build_aab
-    upload_to_play_store
+    clone_configs(package_name: package_name, app: "journal")
+    # build_aab
+    clean_configs(package_name: package_name)
+    upload_to_play_store(track: 'beta', package_name: package_name)
   end
+
+  lane :journal do
+    package_name = "com.eneff.app.journal"
+    increment_version
+    clone_configs(package_name: package_name, app: "journal")
+    # build_aab
+    clean_configs(package_name: package_name)
+    upload_to_play_store(track: 'beta', package_name: package_name)
+  end
+
 
 end
 
