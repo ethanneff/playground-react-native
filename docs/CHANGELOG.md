@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.37.2](https://github.com/ethanneff/example/compare/v2.37.1...v2.37.2) (2020-09-11)
+
+
+### Bug Fixes
+
+* add activity and journal lanes to android ([0081698](https://github.com/ethanneff/example/commit/0081698e6fa94b343c9838ac94ca8f63a4d39928))
+* add google services for other apps ([26821d8](https://github.com/ethanneff/example/commit/26821d8123150d033734edddb16342e9d78f2f78))
+* core google services ([f540fc2](https://github.com/ethanneff/example/commit/f540fc26509261a311149e8407d1c79755f7cae7))
+* ignore fastlane generated files ([e1a4aea](https://github.com/ethanneff/example/commit/e1a4aea9ebd805dcb918376f106d3269f50ddf21))
+* remove package name ([533a716](https://github.com/ethanneff/example/commit/533a7167d0d1df8b24eb57fc592e94f0c08147c2))
+
 ## [2.37.1](https://github.com/ethanneff/example/compare/v2.37.0...v2.37.1) (2020-09-11)
 
 
