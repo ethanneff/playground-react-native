@@ -5,5 +5,4 @@ team_name "Ethan Neff"
 team_id "PW4Q8885U7"
 
 # android
-package_name "com.eneff.app.core"
 json_key_file "./fastlane/key.json"
