@@ -8,36 +8,47 @@ end
 
 platform :ios do
 
-  lane :beta do
-    increment_build_number(xcodeproj: './ios/core.xcodeproj')
-    commit_version_bump(message: 'chore: bump build')
-    add_git_tag
-    push_to_git_remote
+  private_lane :generate_ios do |options|
+    desc "parse arguments"
+    app_name = options[:app_name]
+    new_package_name = "com.eneff.app." + app_name.downcase
 
-    sync_code_signing(type: "appstore")
-    build_app(scheme: "core")
+    desc "increment version"
+    increment_build_number(xcodeproj: "./ios/core.xcodeproj", build_number: timestamp)
+    increment_version_number(xcodeproj: "./ios/core.xcodeproj", bump_type: "patch")
+    git_commit(path: "./ios/*", message: "chore: bump ios version", skip_git_hooks: true)
+    push_to_git_remote(no_verify: true)
+
+    desc "clone configs"
+    sh("cp", "../ios/core/GoogleService-Info." + app_name.downcase + ".plist", "../ios/core/GoogleService-Info.plist")
+    update_info_plist(xcodeproj: "./ios/core.xcodeproj", scheme: "core", display_name: app_name, app_identifier: new_package_name)
+
+    desc "build ipa"
+    get_push_certificate(app_identifier: new_package_name)
+    sync_code_signing(type: "appstore", git_url: "https://github.com/ethanneff/example-certificates", app_identifier: new_package_name)
+    build_app(scheme: "core", workspace:"./ios/core.xcworkspace")
+
+    desc "clean configs"
+    sh("cp", "../ios/core/GoogleService-Info.core.plist", "../ios/core/GoogleService-Info.plist")
+    update_info_plist(xcodeproj: "./ios/core.xcodeproj", scheme: "core", display_name: 'Core', app_identifier: "com.eneff.app.core")
+
+    desc "deploy"
     changelog_from_git_commits
-
-    upload_to_testflight
-  end
-
-  lane :release do
-    increment_version_number(xcodeproj: './ios/core.xcodeproj', bump_type: 'patch')
-
-    increment_build_number(xcodeproj: './ios/core.xcodeproj')
-    commit_version_bump(message: 'chore: bump build')
-    add_git_tag
-    push_to_git_remote
-
-    get_push_certificate
-    capture_screenshot    
-
-    sync_code_signing(type: "appstore")
-    build_app(scheme: "core")
-    changelog_from_git_commits
-
     upload_to_app_store
   end
+
+  lane :core do
+    generate_ios(app_name: "Core")
+  end 
+
+  lane :activity do
+    generate_ios(app_name: "Activity")
+  end 
+
+  lane :journal do
+    generate_ios(app_name: "Journal")
+  end 
+
 end
 
 platform :android do
