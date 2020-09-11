@@ -55,7 +55,6 @@ platform :android do
 
     desc "clone configs"
     if new_package_name != "com.eneff.app.core"
-      sh("cp", "../android/app/google-services.json", "../android/app/google-services.core.json")
       sh("cp", "../android/app/google-services." + app_name + ".json", "../android/app/google-services.json")
       rename_android_package(path: "./android/app/build.gradle", package_name: "com.eneff.app.core", new_package_name: new_package_name)
     end
@@ -68,7 +67,6 @@ platform :android do
     desc "clean configs"
     if new_package_name != "com.eneff.app.core"
       sh("cp", "../android/app/google-services.core.json", "../android/app/google-services.json")
-      sh("rm", "../android/app/google-services.core.json")
       sh("rm", "-rf", "../android/app/src/main/java/com/eneff/app/!(core)/*")
       rename_android_package(path: "./android/", package_name: new_package_name, new_package_name: "com.eneff.app.core")
     end
