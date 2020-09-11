@@ -1,25 +1,25 @@
-before_all do
-    ensure_git_branch
-    # ensure_git_status_clean
-    git_pull
-end
+timestamp = Time.now.to_i
 
-timestamp = (Time.now.to_f * 1000).to_i
+before_all do
+  ensure_git_branch
+  # ensure_git_status_clean
+  git_pull
+end
 
 platform :ios do
 
-    lane :beta do
-      increment_build_number(xcodeproj: './ios/core.xcodeproj')
-      commit_version_bump(message: 'chore: bump build')
-      add_git_tag
-      push_to_git_remote
+  lane :beta do
+    increment_build_number(xcodeproj: './ios/core.xcodeproj')
+    commit_version_bump(message: 'chore: bump build')
+    add_git_tag
+    push_to_git_remote
 
-      sync_code_signing(type: "appstore")
-      build_app(scheme: "core")
-      changelog_from_git_commits
+    sync_code_signing(type: "appstore")
+    build_app(scheme: "core")
+    changelog_from_git_commits
 
-      upload_to_testflight
-    end
+    upload_to_testflight
+  end
 
     lane :release do
       increment_version_number(xcodeproj: './ios/core.xcodeproj', bump_type: 'patch')
@@ -41,22 +41,32 @@ platform :ios do
 end
 
 platform :android do
-    lane :beta do
-        android_set_version_name(version_name: timestamp.to_s, gradle_file: "android/app/build.gradle")
-        android_set_version_code(version_code: timestamp, gradle_file: "android/app/build.gradle")
-        git_commit(path: "*", message: 'chore: bump android version')
-        push_to_git_remote
 
-        changelog_from_git_commits
-        gradle(task: 'assemble', build_type: 'Release', project_dir: './android/')
-        upload_to_play_store(track: 'beta', skip_upload_apk: true, version_code: timestamp, version_name: timestamp.to_s)
-    end 
+  private_lane :increment_version do
+    android_set_version_name(version_name: timestamp.to_s, gradle_file: "android/app/build.gradle")
+    android_set_version_code(version_code: timestamp, gradle_file: "android/app/build.gradle")
+    git_commit(path: "./android/*", message: 'chore: bump android version to ' + timestamp.to_s, skip_git_hooks: true)
+    push_to_git_remote
+  end
 
-    lane :release do
-        changelog_from_git_commits
-        gradle(task: 'assemble', build_type: 'Release', project_dir: './android/')
-        upload_to_play_store(skip_upload_apk: true, version_code: timestamp, version_name: timestamp.to_s)
-    end
+  private_lane :build_aab do 
+    changelog_from_git_commits
+    gradle(task: 'clean', project_dir: './android/')
+    gradle(task: 'bundle', build_type: 'Release', project_dir: './android/')
+  end
+
+  lane :beta do
+    increment_version
+    build_aab
+    upload_to_play_store(track: 'beta')
+  end 
+
+  lane :prod do
+    increment_version
+    build_aab
+    upload_to_play_store
+  end
+
 end
 
 lane :codepush_ios do |options|
@@ -67,24 +77,6 @@ end
 lane :codepush_android do |options|
     current_version = google_play_track_release_names
     codepush(current_version: current_version, manditory: options[:manditory])
-end
-
-private_lane :select_app_version do |options|
-    current_version = options[:current_version]
-    current_major = [current_version.split(".").first, 'x', 'x'].join('.')
-    current_minor = current_version.split('.').slice(0,2).push('x').join('.')
-    target_version_label = UI.select("What version do you want to target?", [
-        "All users",
-        "Most recent major (#{current_major})",
-        "Most recent minor (#{current_mior})",
-        "Current version (#{current_version})"
-    ])
-
-    next "\"*\"" if target_version_label.match(/All/)
-    next current_major if target_version_label.match(/major/)
-    next current_minor if target_version_label.match(/minor/)
-
-    current_version
 end
 
 lane :codepush do |options|
