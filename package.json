@@ -21,7 +21,9 @@
     "ncu": "ncu -u && yarn && cd ios && pod install",
     "visualize-size": "react-native-bundle-visualizer",
     "deploy-ios-core": "fastlane ios beta",
-    "deploy-android-core": "fastlane android beta"
+    "deploy-core": "fastlane android core",
+    "deploy-activity": "fastlane android activity",
+    "deploy-journal": "fastlane android journal"
   },
   "dependencies": {
     "@mdi/js": "5.5.55",
