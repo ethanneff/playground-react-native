@@ -45,7 +45,7 @@ platform :android do
   private_lane :generate_android do |options|
     desc "parse arguments"
     app_name = options[:app_name]
-    new_package_name = "com.eneff.app." + app_name
+    new_package_name = "com.eneff.app." + app_name.downcase
  
     desc "increment version"
     android_set_version_name(version_name: timestamp.to_s, gradle_file: "android/app/build.gradle")
@@ -55,7 +55,7 @@ platform :android do
 
     desc "clone configs"
     if new_package_name != "com.eneff.app.core"
-      sh("cp", "../android/app/google-services." + app_name + ".json", "../android/app/google-services.json")
+      sh("cp", "../android/app/google-services." + app_name.downcase + ".json", "../android/app/google-services.json")
       rename_android_package(path: "./android/", package_name: "com.eneff.app.core", new_package_name: new_package_name)
       update_android_strings( block: lambda { |strings| strings['app_name'] = app_name } )
     end
@@ -78,15 +78,15 @@ platform :android do
   end
 
   lane :core do
-    generate_android(app_name: "core")
+    generate_android(app_name: "Core")
   end 
 
   lane :activity do
-    generate_android(app_name: "activity")
+    generate_android(app_name: "Activity")
   end 
 
   lane :journal do
-    generate_android(app_name: "journal")
+    generate_android(app_name: "Journal")
   end 
 
 end
