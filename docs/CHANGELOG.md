@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.38.2](https://github.com/ethanneff/example/compare/v2.38.1...v2.38.2) (2020-09-12)
+
+
+### Bug Fixes
+
+* revert ios back to core ([1fb6d23](https://github.com/ethanneff/example/commit/1fb6d23cc046c9696acc378a9bcc1cc33adccda3))
+* update product version name ([43f29e9](https://github.com/ethanneff/example/commit/43f29e9fef29e20abf4518cc03115c12b4acbbf0))
+
 ## [2.38.1](https://github.com/ethanneff/example/compare/v2.38.0...v2.38.1) (2020-09-12)
 
 
