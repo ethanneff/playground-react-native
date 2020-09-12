@@ -65,3 +65,4 @@ certs/
 .eslintcache
 fastlane/README.md
 fastlane/report.xml
+core.app.dSYM.zip

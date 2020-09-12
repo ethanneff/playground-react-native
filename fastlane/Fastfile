@@ -2,7 +2,7 @@ timestamp = Time.now.to_i
 
 before_all do
   ensure_git_branch
-  # ensure_git_status_clean
+  ensure_git_status_clean
   git_pull
 end
 
@@ -16,8 +16,8 @@ platform :ios do
     desc "increment version"
     increment_build_number(xcodeproj: "./ios/core.xcodeproj", build_number: timestamp)
     increment_version_number(xcodeproj: "./ios/core.xcodeproj", bump_type: "patch")
-    # git_commit(path: "./ios/*", message: "chore: bump ios version", skip_git_hooks: true)
-    # push_to_git_remote(no_verify: true)
+    git_commit(path: "./ios/*", message: "chore: bump ios version", skip_git_hooks: true)
+    push_to_git_remote(no_verify: true)
 
     desc "clone configs"
     sh("cp", "../ios/core/GoogleService-Info." + app_name.downcase + ".plist", "../ios/core/GoogleService-Info.plist")
@@ -63,8 +63,8 @@ platform :android do
     desc "increment version"
     android_set_version_name(version_name: timestamp.to_s, gradle_file: "android/app/build.gradle")
     android_set_version_code(version_code: timestamp, gradle_file: "android/app/build.gradle")
-    # git_commit(path: "./android/*", message: "chore: bump android version to " + timestamp.to_s, skip_git_hooks: true)
-    # push_to_git_remote(no_verify: true)
+    git_commit(path: "./android/*", message: "chore: bump android version to " + timestamp.to_s, skip_git_hooks: true)
+    push_to_git_remote(no_verify: true)
 
     desc "clone configs"
     if new_package_name != "com.eneff.app.core"
@@ -102,32 +102,4 @@ platform :android do
     generate_android(app_name: "Journal")
   end 
 
-end
-
-lane :codepush_ios do |options|
-    current_version = get_version_number(xcodeproj: "./ios/core.xcodeproj", target: "core")
-    codepush(current_version: current_version, manditory: options[:manditory])
-end
-
-lane :codepush_android do |options|
-    current_version = google_play_track_release_names
-    codepush(current_version: current_version, manditory: options[:manditory])
-end
-
-lane :codepush do |options|
-    manditory = !!options[:manditory]
-    manditory_string = manditory ? " -m" : ""
-    version = select_app_version(current_version: options[:current_version])
-    if UI.confirm("Going to CodePush #{version} to production. Feeling lucky punk?")
-        Dir.chdir("..") do
-            sh "appcenter codepush release-react -a core -d Production -t #{version}#{maditory_string} --output-dir ./build" do |status, result, command|
-            unless status.success?
-                UI.error "Command #{command} failed with status #{status.exitstatus}"
-            end
-            UI.message "Finished! Check out the release on App center."
-        end
-        end
-    else
-        UI.error "Not going to push"
-    end
 end
