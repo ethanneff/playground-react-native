@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.38.1](https://github.com/ethanneff/example/compare/v2.38.0...v2.38.1) (2020-09-12)
+
+
+### Bug Fixes
+
+* force apple upload ([b74f1e9](https://github.com/ethanneff/example/commit/b74f1e90ce1a8f98adc7d51c2b4a004cfbaf0ddc))
+
 # [2.38.0](https://github.com/ethanneff/example/compare/v2.37.4...v2.38.0) (2020-09-11)
 
 
