@@ -22,6 +22,7 @@ platform :ios do
     desc "clone configs"
     sh("cp", "../ios/core/GoogleService-Info." + app_name.downcase + ".plist", "../ios/core/GoogleService-Info.plist")
     update_info_plist(xcodeproj: "./ios/core.xcodeproj", scheme: "core", display_name: app_name, app_identifier: new_package_name)
+    sh("sed -i '' 's/com.eneff.app.core/#{new_package_name}/g' ../ios/core.xcodeproj/project.pbxproj")
 
     desc "build ipa"
     get_push_certificate(app_identifier: new_package_name)
@@ -31,6 +32,7 @@ platform :ios do
     desc "clean configs"
     sh("cp", "../ios/core/GoogleService-Info.core.plist", "../ios/core/GoogleService-Info.plist")
     update_info_plist(xcodeproj: "./ios/core.xcodeproj", scheme: "core", display_name: 'Core', app_identifier: "com.eneff.app.core")
+    sh("sed -i '' 's/#{new_package_name}/com.eneff.app.core/g' ../ios/core.xcodeproj/project.pbxproj")
 
     desc "deploy"
     changelog_from_git_commits
