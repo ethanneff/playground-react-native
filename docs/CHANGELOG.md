@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.39.0](https://github.com/ethanneff/example/compare/v2.38.4...v2.39.0) (2020-09-12)
+
+
+### Features
+
+* working fastlane for all apps ([1483281](https://github.com/ethanneff/example/commit/148328161db8fd5c831f0afd1387c417e099542d))
+
 ## [2.38.4](https://github.com/ethanneff/example/compare/v2.38.3...v2.38.4) (2020-09-12)
 
 
