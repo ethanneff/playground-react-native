@@ -6,6 +6,7 @@
  *
  * @format
  */
+
 export enum NetInfoStateType {
   unknown = 'unknown',
   none = 'none',
@@ -17,6 +18,7 @@ export enum NetInfoStateType {
   vpn = 'vpn',
   other = 'other',
 }
+
 export enum NetInfoCellularGeneration {
   '2g' = '2g',
   '3g' = '3g',

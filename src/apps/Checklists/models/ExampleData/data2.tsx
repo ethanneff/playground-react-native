@@ -67,21 +67,11 @@ type ItemId = string;
 type SourceId = string;
 type ActionId = string;
 
-enum ListVisibility {
-  Private = 'Private',
-  Public = 'Public',
-}
+type ListVisibility = 'Private' | 'Public';
 
-export enum ListAccess {
-  Read = 'Read',
-  Write = 'Write',
-  Comment = 'Comment',
-}
+export type ListAccess = 'Read' | 'Write' | 'Comment';
 
-export enum ListFrequency {
-  Single = 'Single',
-  Multiple = 'Multiple',
-}
+export type ListFrequency = 'Single' | 'Multiple';
 
 export interface User {
   id: UserId;
@@ -138,7 +128,7 @@ export const a = {
   email: 'bob@gmail.com',
   lists: [
     {
-      frequency: ListFrequency.Multiple,
+      frequency: 'Multiple',
       history: [],
       items: [
         'Make bold deadlines and commitments',
@@ -151,7 +141,7 @@ export const a = {
       trigger: 'accomplish things',
     },
     {
-      frequency: ListFrequency.Multiple,
+      frequency: 'Multiple',
       items: [
         'Make your bed',
         'Take a cold shower',
@@ -162,7 +152,7 @@ export const a = {
       trigger: 'wake up',
     },
     {
-      frequency: ListFrequency.Multiple,
+      frequency: 'Multiple',
       items: [
         'make overnight oats',
         'floss',
@@ -173,7 +163,7 @@ export const a = {
       trigger: 'go to sleep',
     },
     {
-      frequency: ListFrequency.Multiple,
+      frequency: 'Multiple',
       items: [
         // https://www.youtube.com/watch?v=sWctLEdIgi4
         'develop a fascination',
@@ -184,7 +174,7 @@ export const a = {
       trigger: 'begin a task',
     },
     {
-      frequency: ListFrequency.Single,
+      frequency: 'Single',
       // done = complete forever
       items: [
         'find clothing',
@@ -195,7 +185,7 @@ export const a = {
       trigger: 'running errands',
     },
     {
-      frequency: ListFrequency.Single,
+      frequency: 'Single',
       // done = complete forever
       items: [
         'whiten teeth',

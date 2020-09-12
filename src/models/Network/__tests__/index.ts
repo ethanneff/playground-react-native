@@ -1,7 +1,6 @@
-import {NetInfoState} from '@react-native-community/netinfo';
+import {NetInfoState, NetInfoStateType} from '@react-native-community/netinfo';
 import {getType} from 'typesafe-actions';
 import {loginRequest, logout} from '../../Auth';
-import {NetInfoStateType} from './../../../conversions/NetInfo/index.web';
 import {
   NetworkState,
   networkInitialState,
@@ -42,7 +41,7 @@ it(getType(updateNetwork), () => {
   ).toEqual({
     connected: true,
     reachable: false,
-    type: 'other',
+    type: NetInfoStateType.other,
     details: {
       isConnectionExpensive: true,
     },

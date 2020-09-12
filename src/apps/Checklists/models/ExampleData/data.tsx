@@ -15,18 +15,8 @@ interface Tag {
   name: string;
 }
 
-enum ChecklistItemStatus {
-  Todo = 'Todo',
-  InProgress = 'InProgress',
-  Reminded = 'Reminded',
-  Done = 'Done',
-}
-
-export enum ChecklistAccess {
-  Read = 'Read',
-  Write = 'Write',
-  Comment = 'Comment',
-}
+type ChecklistItemStatus = 'Todo' | 'InProgress' | 'Reminded' | 'Done';
+export type ChecklistAccess = 'Read' | 'Write' | 'Comment';
 
 interface ChecklistItem {
   id: string;

@@ -14,6 +14,7 @@ module.exports = {
     'android/',
     'ios/',
     'src/mocks/',
+    'src/conversions/',
   ],
   rules: {
     // add

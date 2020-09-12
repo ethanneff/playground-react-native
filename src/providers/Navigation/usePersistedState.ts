@@ -1,6 +1,7 @@
 import {useCallback, useEffect, useRef, useState} from 'react';
 import {Linking, Platform} from 'react-native';
 import {
+  InitialState,
   NavigationContainerRef,
   NavigationState,
 } from '@react-navigation/native';
@@ -8,7 +9,15 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 const persistanceKey = 'navigation';
 
-export const usePersistedState = () => {
+type UsePersistedState = {
+  isReady: boolean;
+  initialState: InitialState | undefined;
+  onStateChange: (state: NavigationState | undefined) => void;
+  onReady: () => void;
+  onRef: (ref: NavigationContainerRef) => void;
+};
+
+export const usePersistedState = (): UsePersistedState => {
   const routeNameRef = useRef<string | null>(null);
   const navigationRef = useRef<NavigationContainerRef | null | any>(null);
   const [isReady, setIsReady] = useState(false);

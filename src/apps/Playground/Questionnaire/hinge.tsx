@@ -1,10 +1,4 @@
-export enum ExampleType {
-  Checkbox = 'Checkbox',
-  Input = 'Input',
-  Radio = 'Radio',
-  Select = 'Select',
-  Slider = 'Slider',
-}
+export type ExampleType = 'Checkbox' | 'Input' | 'Radio' | 'Select' | 'Slider';
 
 export const data = {
   choices: {

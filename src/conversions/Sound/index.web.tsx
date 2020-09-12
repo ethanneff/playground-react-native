@@ -8,7 +8,7 @@ export class Sound {
   }
   sound: Howl;
 
-  constructor(asset: string, error: (soundId: number, error: Error) => void) {
+  constructor(asset: string, error: (soundId: number, e: Error) => void) {
     this.sound = new Howl({
       src: [asset],
       onloaderror: error as any,
