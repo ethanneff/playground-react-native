@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>827793761902-19k1t6g2o6d60ak91ho96ptkchhmecqs.apps.googleusercontent.com</string>
+	<string>558295158304-cbtia5jbk62oviemhnb20hqubba396ac.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.827793761902-19k1t6g2o6d60ak91ho96ptkchhmecqs</string>
+	<string>com.googleusercontent.apps.558295158304-cbtia5jbk62oviemhnb20hqubba396ac</string>
 	<key>API_KEY</key>
-	<string>AIzaSyD0H0WrdOExcQTqS064KANlk5L0Q35SClQ</string>
+	<string>AIzaSyBhBF5uB8aH7T6tjv1cTpkDppMzjU1u2Pg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>827793761902</string>
+	<string>558295158304</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.eneff.app.activity</string>
+	<string>com.eneff.app.progress</string>
 	<key>PROJECT_ID</key>
-	<string>activity-8bd88</string>
+	<string>progress-46584</string>
 	<key>STORAGE_BUCKET</key>
-	<string>activity-8bd88.appspot.com</string>
+	<string>progress-46584.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:827793761902:ios:656a992db939250485e87f</string>
+	<string>1:558295158304:ios:3d00d2bbb85905156fb645</string>
 	<key>DATABASE_URL</key>
-	<string>https://activity-8bd88.firebaseio.com</string>
+	<string>https://progress-46584.firebaseio.com</string>
 </dict>
 </plist>

@@ -9,7 +9,7 @@ const Arcade = lazy(() => import('../../apps/Arcade'));
 const Portfolio = lazy(() => import('../../apps/Portfolio'));
 const Playground = lazy(() => import('../../apps/Playground'));
 const Admin = lazy(() => import('../../apps/Admin'));
-const Activity = lazy(() => import('../../apps/Activity'));
+const Progress = lazy(() => import('../../apps/Progress'));
 const CantHurtMe = lazy(() => import('../../apps/CantHurtMe'));
 const Checklists = lazy(() => import('../../apps/Checklists'));
 const Focus = lazy(() => import('../../apps/Focus'));
@@ -40,7 +40,7 @@ export const Navigation = memo(function Navigation() {
           <Stack.Screen component={Admin} name="admin" />
           <Stack.Screen component={Arcade} name="arcade" />
           <Stack.Screen component={Portfolio} name="portfolio" />
-          <Stack.Screen component={Activity} name="activity" />
+          <Stack.Screen component={Progress} name="progress" />
           <Stack.Screen component={Playground} name="playground" />
           <Stack.Screen component={CantHurtMe} name="cant-hurt-me" />
           <Stack.Screen component={Checklists} name="checklists" />

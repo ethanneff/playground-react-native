@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "558295158304",
+    "firebase_url": "https://progress-46584.firebaseio.com",
+    "project_id": "progress-46584",
+    "storage_bucket": "progress-46584.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558295158304:android:4be45c6556ad36196fb645",
+        "android_client_info": {
+          "package_name": "com.eneff.app.progress"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558295158304-hpm7nkd7nd3sagqc2mlugsniagod0ftc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnHoe5dDsMmenVKy5IOZw-52T7af3Ce8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558295158304-hpm7nkd7nd3sagqc2mlugsniagod0ftc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "558295158304-cbtia5jbk62oviemhnb20hqubba396ac.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.eneff.app.progress"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

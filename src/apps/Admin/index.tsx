@@ -17,7 +17,7 @@ export default memo(function Admin() {
         <Button onPress={onPress('checklists')} title="checklists" />
         <Button onPress={onPress('focus')} title="focus" />
         <Button onPress={onPress('journal')} title="journal" />
-        <Button onPress={onPress('activity')} title="activity" />
+        <Button onPress={onPress('progress')} title="progress" />
         <Button onPress={onPress('the-one-thing')} title="the one thing" />
 
         <Text emphasis="medium" title="Navigation" type="h3" />
