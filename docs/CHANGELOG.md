@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.38.3](https://github.com/ethanneff/example/compare/v2.38.2...v2.38.3) (2020-09-12)
+
+
+### Bug Fixes
+
+* remove all lint warnings ([dd70880](https://github.com/ethanneff/example/commit/dd708802c68f1eac60e5b07e50517928de0b081f))
+
 ## [2.38.2](https://github.com/ethanneff/example/compare/v2.38.1...v2.38.2) (2020-09-12)
 
 
