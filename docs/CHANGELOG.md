@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.38.4](https://github.com/ethanneff/example/compare/v2.38.3...v2.38.4) (2020-09-12)
+
+
+### Bug Fixes
+
+* rename activity to progress ([155543c](https://github.com/ethanneff/example/commit/155543cd712616a63ed3b1e0140a57e449944319))
+
 ## [2.38.3](https://github.com/ethanneff/example/compare/v2.38.2...v2.38.3) (2020-09-12)
 
 
