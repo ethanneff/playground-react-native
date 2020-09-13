@@ -4,11 +4,11 @@
 
 - [x] complete bouncing loading screen
 - [x] react navigation
-- [ ] fastlane build multiple apps
+- [x] fastlane build multiple apps
 - [ ] Deploy Android app
   - [ ] login flow
   - [ ] activity
-  - [ ] deploy android
+  - [x] deploy android
 - [ ] Deploy iOS app
 - [ ] Publish landing page
 - [ ] Obtain 10 users
