@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.39.1](https://github.com/ethanneff/example/compare/v2.39.0...v2.39.1) (2020-09-14)
+
+
+### Bug Fixes
+
+* update deps ([ef53006](https://github.com/ethanneff/example/commit/ef53006a5269d56c5a0641ba00196744e9925606))
+
 # [2.39.0](https://github.com/ethanneff/example/compare/v2.38.4...v2.39.0) (2020-09-12)
 
 
