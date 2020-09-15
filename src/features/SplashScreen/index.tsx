@@ -6,7 +6,6 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import {Text} from '../../components';
 import {MaskedView} from '../../conversions';
 import {useNativeDriver} from '../../hooks';
 import {getSmallestDimension} from '../../models';
