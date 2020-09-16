@@ -1,5 +1,18 @@
 # Changelog
 
+# [2.40.0](https://github.com/ethanneff/example/compare/v2.39.1...v2.40.0) (2020-09-15)
+
+
+### Bug Fixes
+
+* linting ([e9b4167](https://github.com/ethanneff/example/commit/e9b4167c04bc9541cc870feeaedd0be6130e434c))
+* update deps ([32807b2](https://github.com/ethanneff/example/commit/32807b2e0502058f7845152f4ff41f25ac70a069))
+
+
+### Features
+
+* add splashscreen ([6047ad4](https://github.com/ethanneff/example/commit/6047ad414d6efbf6af9cc4f517ff9fdca2a52f72))
+
 ## [2.39.1](https://github.com/ethanneff/example/compare/v2.39.0...v2.39.1) (2020-09-14)
 
 
