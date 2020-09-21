@@ -11,6 +11,8 @@ import {useNativeDriver} from '../../hooks';
 import {getSmallestDimension} from '../../models';
 import {useRootSelector} from '../../utils';
 
+// TODO: convert to svg, remove mask, fade in and out
+
 type Props = {
   backgroundColor: string;
   primaryColor: string;
