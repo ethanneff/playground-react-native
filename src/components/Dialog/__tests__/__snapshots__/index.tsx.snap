@@ -110,6 +110,7 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -509,6 +510,7 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -908,6 +910,7 @@ exports[`Dialog component renders correctly with props 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={

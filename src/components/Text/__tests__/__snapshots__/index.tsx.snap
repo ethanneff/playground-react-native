@@ -110,6 +110,7 @@ exports[`renders body1 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -416,6 +417,7 @@ exports[`renders body2 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -722,6 +724,7 @@ exports[`renders button 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -1028,6 +1031,7 @@ exports[`renders button empty 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -1334,6 +1338,7 @@ exports[`renders caption 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -1640,6 +1645,7 @@ exports[`renders correctly 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -1946,6 +1952,7 @@ exports[`renders empty 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -2252,6 +2259,7 @@ exports[`renders h1 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -2558,6 +2566,7 @@ exports[`renders h3 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -2864,6 +2873,7 @@ exports[`renders h4 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -3170,6 +3180,7 @@ exports[`renders h5 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -3476,6 +3487,7 @@ exports[`renders h6 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -3782,6 +3794,7 @@ exports[`renders overline 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -4088,6 +4101,7 @@ exports[`renders subtitle1 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -4394,6 +4408,7 @@ exports[`renders subtitle2 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -4700,6 +4715,7 @@ exports[`renders type="h2"   1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={

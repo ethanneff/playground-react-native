@@ -110,6 +110,7 @@ exports[`renders correctly 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -443,6 +444,7 @@ exports[`renders correctly with clear and max badge 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
@@ -806,6 +808,7 @@ exports[`renders correctly without defaults 1`] = `
             >
               <Text
                 accessibilityRole="header"
+                aria-level="1"
                 numberOfLines={1}
                 onLayout={[Function]}
                 style={
