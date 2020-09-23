@@ -20,3 +20,4 @@ export * from './Sentence';
 export * from './Alert';
 export * from './Notification';
 export * from './ActivityIndicator';
+export * from './SkeletonLoader';
