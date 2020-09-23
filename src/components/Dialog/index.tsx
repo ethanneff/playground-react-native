@@ -9,7 +9,7 @@ import {Theme} from '../../utils';
 import {Button} from '../Button';
 import {Card} from '../Card';
 import {Text} from '../Text';
-import {useDropShadow, useNativeDriver} from '../../hooks';
+import {useDriver, useDropShadow} from '../../hooks';
 
 interface OwnProps {
   testID?: string;
@@ -37,7 +37,7 @@ export const Dialog = memo(function Dialog({
   duration,
   testID,
 }: Props) {
-  const nativeDriver = useNativeDriver();
+  const useNativeDriver = useDriver();
   const dropShadow = useDropShadow();
   const styles = StyleSheet.create({
     buttonContainer: {
@@ -94,11 +94,11 @@ export const Dialog = memo(function Dialog({
         Animated.timing(fade, {
           duration: fadeDuration,
           toValue,
-          useNativeDriver: nativeDriver,
+          useNativeDriver,
         }).start(resolve);
       });
     },
-    [fade, nativeDriver],
+    [fade, useNativeDriver],
   );
 
   const dismiss = useCallback(

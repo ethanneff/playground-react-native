@@ -5,7 +5,7 @@ import {
   accelerometer,
   setUpdateIntervalForType,
 } from 'react-native-sensors';
-import {useColor, useNativeDriver} from '../../../hooks';
+import {useColor, useDriver} from '../../../hooks';
 import {getPosition} from './utils';
 import {DriftContext} from './Context';
 import {CanvasDimensions} from './Game';
@@ -26,7 +26,7 @@ export const Character = memo(function Character({canvas}: CharacterProps) {
     y: canvas.height / 2 - size,
   });
   const position = new Animated.ValueXY(initialPositionRef.current);
-  const useDriver = useNativeDriver();
+  const useNativeDriver = useDriver();
   const {dispatch} = useContext(DriftContext);
   const color = useColor();
 
@@ -42,10 +42,10 @@ export const Character = memo(function Character({canvas}: CharacterProps) {
       dispatch({type: 'addTrack', payload: {...toValue, size}});
       Animated.spring(position, {
         toValue,
-        useNativeDriver: useDriver,
+        useNativeDriver,
       }).start();
     },
-    [canvas, dispatch, position, useDriver],
+    [canvas, dispatch, position, useNativeDriver],
   );
 
   useEffect(() => {

@@ -9,7 +9,7 @@ import {
 import dayjs, {Dayjs} from 'dayjs';
 import {v4} from 'uuid';
 import {Card, Icon, Screen, Text, TouchableOpacity} from '../../../components';
-import {useColor, useDropShadow, useNativeDriver, useNav} from '../../../hooks';
+import {useColor, useDriver, useDropShadow, useNav} from '../../../hooks';
 import {getWidth} from '../../../models';
 import {Theme, useRootSelector} from '../../../utils';
 
@@ -53,7 +53,7 @@ const SwipeCard = memo(function SwipeCard({
 }: SwipeCardProps) {
   const cardWidth = useRef(0);
   const color = useColor();
-  const useDriver = useNativeDriver();
+  const useNativeDriver = useDriver();
   const width = useRootSelector(getWidth);
   const dropShadow = useDropShadow();
   const imageHeight = height / 1.5;
@@ -93,7 +93,7 @@ const SwipeCard = memo(function SwipeCard({
           : 0;
       Animated.spring(position, {
         toValue: {x, y: 0},
-        useNativeDriver: useDriver,
+        useNativeDriver,
       }).start();
     },
   });

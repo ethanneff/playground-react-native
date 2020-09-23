@@ -2,13 +2,13 @@ import React, {memo, useCallback, useEffect} from 'react';
 import {Animated, Easing, StyleSheet, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Screen} from '../../../components';
-import {useColor, useDropShadow, useNativeDriver} from '../../../hooks';
+import {useColor, useDriver, useDropShadow} from '../../../hooks';
 
 type PapiProps = {size: number; color: string};
 
 const Papi = memo(({size, color}: PapiProps) => {
   const dropShadow = useDropShadow();
-  const useDriver = useNativeDriver();
+  const useNativeDriver = useDriver();
   const location = new Animated.ValueXY({x: 0, y: 0});
 
   useEffect(() => {
@@ -17,9 +17,9 @@ const Papi = memo(({size, color}: PapiProps) => {
       toValue,
       duration: 3000,
       easing: Easing.bounce,
-      useNativeDriver: useDriver,
+      useNativeDriver,
     }).start();
-  }, [location, useDriver]);
+  }, [location, useNativeDriver]);
 
   return (
     <Animated.View

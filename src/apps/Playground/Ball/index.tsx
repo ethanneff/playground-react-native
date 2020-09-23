@@ -2,7 +2,7 @@ import React, {memo, useCallback} from 'react';
 import {Animated, StyleSheet, View} from 'react-native';
 import {Button, Screen} from '../../../components';
 import {getHeight, getWidth} from '../../../models';
-import {useColor, useNativeDriver, useNav} from '../../../hooks';
+import {useColor, useDriver, useNav} from '../../../hooks';
 import {Theme, useRootSelector} from '../../../utils';
 
 export const Ball = memo(function PlaygroundBall() {
@@ -10,7 +10,7 @@ export const Ball = memo(function PlaygroundBall() {
   const width = useRootSelector(getWidth);
   const nav = useNav();
   const ballPosition = new Animated.ValueXY({x: width / 2, y: height / 2});
-  const useDriver = useNativeDriver();
+  const useNativeDriver = useDriver();
   const color = useColor();
   const size = Theme.padding.p08;
   const styles = StyleSheet.create({
@@ -32,10 +32,10 @@ export const Ball = memo(function PlaygroundBall() {
     (dx: number, dy: number) => {
       Animated.spring(ballPosition, {
         toValue: {x: width * dx, y: height * dy},
-        useNativeDriver: useDriver,
+        useNativeDriver,
       }).start();
     },
-    [ballPosition, height, useDriver, width],
+    [ballPosition, height, useNativeDriver, width],
   );
   const onInitialPress = useCallback(() => animate(0.5, 0.5), [animate]);
   const onRandomPress = useCallback(

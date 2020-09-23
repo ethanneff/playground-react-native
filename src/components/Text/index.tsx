@@ -1,7 +1,7 @@
 import React from 'react';
 import {Animated, StyleProp, StyleSheet, TextStyle} from 'react-native';
 import {Theme, colorWithOpacity} from '../../utils';
-import {useColor, useNativeDriver} from '../../hooks';
+import {useColor, useDriver} from '../../hooks';
 import {Sound} from '../../conversions';
 import {Color} from '../../models';
 import {FontEmphasis, FontType, getFontType, getTextEmphasis} from './utils';
@@ -50,7 +50,7 @@ export const Text = ({
 }: TextProps): JSX.Element => {
   const opacity = new Animated.Value(1);
   const colorScheme = useColor();
-  const nativeDriver = useNativeDriver();
+  const useNativeDriver = useDriver();
   const textColorPercent = getTextEmphasis(emphasis);
   const fontSize = getFontType(type);
   const textColor = inverse
@@ -92,12 +92,12 @@ export const Text = ({
       Animated.timing(opacity, {
         duration: 50,
         toValue: 0.2,
-        useNativeDriver: nativeDriver,
+        useNativeDriver,
       }),
       Animated.timing(opacity, {
         duration: 350,
         toValue: 1,
-        useNativeDriver: nativeDriver,
+        useNativeDriver,
       }),
     ]).start();
     onPress();

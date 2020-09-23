@@ -2,7 +2,7 @@ import React, {memo, useCallback, useEffect, useRef} from 'react';
 import {Animated, Dimensions, Easing, TouchableOpacity} from 'react-native';
 import * as d3 from 'd3-shape';
 import Svg, {G, Path, Polygon, Text} from 'react-native-svg';
-import {useColor, useDropShadow} from '../../../hooks';
+import {useColor, useDriver, useDropShadow} from '../../../hooks';
 import {getNewLocation, getWinnerIndex} from './utils';
 
 type Segment = {
@@ -47,6 +47,7 @@ export const Wheel = memo(
   }: Props) => {
     const color = useColor();
     const dropShadow = useDropShadow();
+    const useNativeDriver = useDriver();
     const background = backgroundColor || color.background;
     const text = textColor || color.text;
     const radius = size / 2;
@@ -97,9 +98,17 @@ export const Wheel = memo(
         toValue: newLocation,
         duration: spinSpeed,
         easing: Easing.inOut(Easing.sin),
-        useNativeDriver: true,
+        useNativeDriver,
       }).start(onSpinComplete);
-    }, [angle, maxSpin, minSpin, numOfSegments, onSpinComplete, spinSpeed]);
+    }, [
+      angle,
+      maxSpin,
+      minSpin,
+      numOfSegments,
+      onSpinComplete,
+      spinSpeed,
+      useNativeDriver,
+    ]);
 
     const onPress = useCallback(() => {
       if (spinning.current) {
@@ -110,12 +119,12 @@ export const Wheel = memo(
 
     const bounce = useCallback(
       (toValue: number) => {
-        const config = {toValue, duration: bounceSpeed, useNativeDriver: true};
+        const config = {toValue, duration: bounceSpeed, useNativeDriver};
         Animated.timing(yPosition, config).start(() =>
           bounce(toValue === 1 ? -1 : 1),
         );
       },
-      [bounceSpeed, yPosition],
+      [bounceSpeed, useNativeDriver, yPosition],
     );
 
     useEffect(() => {

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {Animated, Easing, StyleSheet, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {MaskedView} from '../../conversions';
-import {useColor, useNativeDriver} from '../../hooks';
+import {useColor, useDriver} from '../../hooks';
 import {Theme} from '../../utils';
 
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
@@ -28,7 +28,7 @@ export const SkeletonLoader = ({
   const bgColor = backgroundColor || color.surface;
   const fgColor = foregroundColor || color.background;
   const value = new Animated.Value(0);
-  const useDriver = useNativeDriver();
+  const useNativeDriver = useDriver();
   const end = {x: 1, y: 0};
   const start = {x: 0, y: 0};
   const colors = [bgColor, fgColor, bgColor];
@@ -59,10 +59,10 @@ export const SkeletonLoader = ({
         toValue: 1,
         duration,
         easing: Easing.bezier(0.5, 0, 0.25, 1),
-        useNativeDriver: useDriver,
+        useNativeDriver,
       }),
     ).start();
-  }, [duration, useDriver, value]);
+  }, [duration, useNativeDriver, value]);
 
   return (
     <MaskedView

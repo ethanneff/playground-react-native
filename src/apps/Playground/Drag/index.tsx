@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 import {Screen, Text} from '../../../components';
-import {useColor, useDropShadow, useNativeDriver, useNav} from '../../../hooks';
+import {useColor, useDriver, useDropShadow, useNav} from '../../../hooks';
 
 const getPosition = (
   gestureState: PanResponderGestureState,
@@ -39,7 +39,7 @@ export const Drag = memo(function PlaygroundDrag() {
   const nav = useNav();
   const color = useColor();
   const dropShadow = useDropShadow();
-  const useDriver = useNativeDriver();
+  const useNativeDriver = useDriver();
   const [canvas, setCanvas] = useState({x: 0, y: 0, height: 0, width: 0});
   const initialPosition = {x: canvas.width / 2, y: canvas.height / 2};
   const size = 30;
@@ -66,13 +66,13 @@ export const Drag = memo(function PlaygroundDrag() {
       const toValue = getPosition(gestureState, initialPosition, size);
       Animated.spring(ballPosition, {
         toValue,
-        useNativeDriver: useDriver,
+        useNativeDriver,
       }).start();
     },
     onPanResponderEnd: () => {
       Animated.spring(ballPosition, {
         toValue: initialPosition,
-        useNativeDriver: useDriver,
+        useNativeDriver,
       }).start();
     },
   });

@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {useColor, useNativeDriver} from '../../../hooks';
+import {useColor, useDriver} from '../../../hooks';
 import {Theme, colorWithOpacity, useRootSelector} from '../../../utils';
 import {Screen} from '../../../components';
 
@@ -23,7 +23,7 @@ const getBounds = (value: number, limit: number, size: number) =>
 export const Archero = memo(function Archero() {
   const color = useColor();
   const {goBack} = useNavigation();
-  const useDriver = useNativeDriver();
+  const useNativeDriver = useDriver();
   const timer = useRef(false);
   const interval = useRef<NodeJS.Timeout | null>(null);
   const gesture = useRef({x0: 0, y0: 0, dx: 0, dy: 0});
@@ -59,7 +59,7 @@ export const Archero = memo(function Archero() {
     const y = getBounds(characterValueXY.y + vy, height, charSize);
     Animated.spring(character, {
       toValue: {x, y},
-      useNativeDriver: useDriver,
+      useNativeDriver,
     }).start();
   };
 
@@ -72,7 +72,7 @@ export const Archero = memo(function Archero() {
     const y = z * Math.cos(angle);
     Animated.spring(thumb, {
       toValue: {x, y},
-      useNativeDriver: useDriver,
+      useNativeDriver,
     }).start();
   };
 
@@ -85,17 +85,17 @@ export const Archero = memo(function Archero() {
       x: x0 - joystickCenter - offset2 / 2,
       y: y0 - joystickCenter - offset / 2 - joystickSize / 1.5,
     };
-    Animated.spring(joystick, {toValue, useNativeDriver: useDriver}).start();
+    Animated.spring(joystick, {toValue, useNativeDriver}).start();
   };
 
   const resetJoystick = () => {
     Animated.spring(joystick, {
       toValue: initialJoystickLoc,
-      useNativeDriver: useDriver,
+      useNativeDriver,
     }).start();
     Animated.spring(thumb, {
       toValue: initialThumbLoc,
-      useNativeDriver: useDriver,
+      useNativeDriver,
     }).start();
   };
 

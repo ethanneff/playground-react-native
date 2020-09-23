@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import {MaskedView} from '../../conversions';
-import {useNativeDriver} from '../../hooks';
+import {useDriver} from '../../hooks';
 import {getSmallestDimension} from '../../models';
 import {useRootSelector} from '../../utils';
 
@@ -59,7 +59,7 @@ export const SplashScreen = memo(
     children,
   }: Props) => {
     const smallest = useRootSelector(getSmallestDimension);
-    const useDriver = useNativeDriver();
+    const useNativeDriver = useDriver();
     const [state, setState] = useState({
       progress: new Animated.Value(0),
       complete: false,
@@ -88,11 +88,11 @@ export const SplashScreen = memo(
       Animated.timing(state.progress, {
         toValue: 100,
         duration,
-        useNativeDriver: useDriver,
+        useNativeDriver,
         delay,
         easing: Easing.in(Easing.cubic),
       }).start(() => setState((p) => ({...p, complete: true})));
-    }, [delay, duration, state.progress, useDriver]);
+    }, [delay, duration, state.progress, useNativeDriver]);
 
     return (
       <View style={styles.container}>

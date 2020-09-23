@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {Icon, Screen, Text, TextInput} from '../../../components';
 import {Theme, colorWithOpacity} from '../../../utils';
-import {useColor, useNativeDriver, useNav} from '../../../hooks';
+import {useColor, useDriver, useNav} from '../../../hooks';
 
 const data = [
   {id: 1, name: '1'},
@@ -52,7 +52,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     iconName: iconSearch,
     input: '',
   });
-  const useDriver = useNativeDriver();
+  const useNativeDriver = useDriver();
   const translateIcon = state.animation.interpolate({
     inputRange: [0, 0.5, 1],
     outputRange: [1, -60, 1],
@@ -94,10 +94,10 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
       Animated.timing(state.animation, {
         duration: animationDuration,
         toValue: value,
-        useNativeDriver: useDriver,
+        useNativeDriver,
       }).start();
     },
-    [state.animation, useDriver],
+    [state.animation, useNativeDriver],
   );
 
   const changeIcon = useCallback(

@@ -1,6 +1,6 @@
 import React from 'react';
 import {ActivityIndicator, Animated, StyleSheet, View} from 'react-native';
-import {useNativeDriver} from '../../../hooks';
+import {useDriver} from '../../../hooks';
 interface Props {
   uri: string;
   height: number;
@@ -16,7 +16,7 @@ export const AsyncImage = ({
   color = 'black',
   size = 'small',
 }: Props): JSX.Element => {
-  const nativeDriver = useNativeDriver();
+  const useNativeDriver = useDriver();
   const imageAnimated = new Animated.Value(0);
   const indicatorAnimated = new Animated.Value(1);
   const styles = StyleSheet.create({
@@ -26,11 +26,11 @@ export const AsyncImage = ({
     Animated.parallel([
       Animated.timing(indicatorAnimated, {
         toValue: 0,
-        useNativeDriver: nativeDriver,
+        useNativeDriver,
       }),
       Animated.timing(imageAnimated, {
         toValue: 1,
-        useNativeDriver: nativeDriver,
+        useNativeDriver,
       }),
     ]).start();
   };
