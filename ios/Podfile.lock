@@ -219,6 +219,8 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.7):
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Interface (0.0.7)
+  - BVLinearGradient (2.5.6):
+    - React
   - CocoaAsyncSocket (7.6.4)
   - CocoaLibEvent (1.0.0)
   - DoubleConversion (1.1.6)
@@ -589,8 +591,8 @@ PODS:
   - React-jsinspector (0.63.2)
   - react-native-get-random-values (1.5.0):
     - React
-  - react-native-netinfo (5.9.6):
-    - React
+  - react-native-netinfo (5.9.7):
+    - React-Core
   - react-native-safe-area-context (3.1.8):
     - React-Core
   - react-native-slider (3.0.3):
@@ -659,26 +661,26 @@ PODS:
     - React
   - RNCMaskedView (0.1.10):
     - React
-  - RNDeviceInfo (6.0.2):
-    - React
-  - RNFBAnalytics (7.6.2):
+  - RNDeviceInfo (6.0.4):
+    - React-Core
+  - RNFBAnalytics (7.6.4):
     - Firebase/Analytics (~> 6.30.0)
-    - React
+    - React-Core
     - RNFBApp
-  - RNFBApp (8.4.2):
+  - RNFBApp (8.4.3):
     - Firebase/CoreOnly (~> 6.30.0)
-    - React
-  - RNFBAuth (9.2.2):
+    - React-Core
+  - RNFBAuth (9.2.3):
     - Firebase/Auth (~> 6.30.0)
-    - React
+    - React-Core
     - RNFBApp
-  - RNFBCrashlytics (8.4.4):
+  - RNFBCrashlytics (8.4.5):
     - Firebase/Crashlytics (~> 6.30.0)
-    - React
+    - React-Core
     - RNFBApp
-  - RNFBFirestore (7.8.1):
+  - RNFBFirestore (7.8.2):
     - Firebase/Firestore (~> 6.30.0)
-    - React
+    - React-Core
     - RNFBApp
   - RNFBRemoteConfig (9.0.5):
     - Firebase/RemoteConfig (~> 6.30.0)
@@ -708,6 +710,7 @@ PODS:
     - Yoga (~> 1.14)
 
 DEPENDENCIES:
+  - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/Libraries/FBReactNativeSpec`)
@@ -814,6 +817,8 @@ SPEC REPOS:
     - YogaKit
 
 EXTERNAL SOURCES:
+  BVLinearGradient:
+    :path: "../node_modules/react-native-linear-gradient"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   FBLazyVector:
@@ -913,6 +918,7 @@ SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
+  BVLinearGradient: e3aad03778a456d77928f594a649e96995f1c872
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
   DoubleConversion: cde416483dac037923206447da6e1454df403714
@@ -958,7 +964,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 8ca588cc921e70590820ce72b8789b02c67cce38
   React-jsinspector: b14e62ebe7a66e9231e9581279909f2fc3db6606
   react-native-get-random-values: 1404bd5cc0ab0e287f75ee1c489555688fc65f89
-  react-native-netinfo: 38a1e0b3e89b48e4b5833ed475d8df5f049f6f90
+  react-native-netinfo: 250dc0ca126512f618a8a2ca6a936577e1f66586
   react-native-safe-area-context: 79fea126c6830c85f65947c223a5e3058a666937
   react-native-slider: e99fc201cefe81270fc9d81714a7a0f5e566b168
   React-RCTActionSheet: 910163b6b09685a35c4ebbc52b66d1bfbbe39fc5
@@ -973,12 +979,12 @@ SPEC CHECKSUMS:
   ReactCommon: a0a1edbebcac5e91338371b72ffc66aa822792ce
   RNCAsyncStorage: 2a692bcb9b69b76a2f1a95f33db057129700af64
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
-  RNDeviceInfo: bdd61e8b070d13a1dd9d022091981075ed4cde16
-  RNFBAnalytics: 20564db4cfd317c304fe5a8e5d840f8c9d105aaa
-  RNFBApp: 373cce42559cc7a9a42afc876746e3946de3e32e
-  RNFBAuth: 701b29df3f364ef7b36992ad5e25628ce333ed89
-  RNFBCrashlytics: 834057016b34fa49e3eef028a13e35f48840c78c
-  RNFBFirestore: 75c8fb40f3414f7b8158a260eec47dc3bbc0cfd0
+  RNDeviceInfo: 5eb11f4aef9395cca403c0c92dff458252fc0b2c
+  RNFBAnalytics: 66f1008f38c9ed5f3953a7224b82246ef2a88403
+  RNFBApp: a74d8259d827c8bf55100e759cffa2e50ba6fe30
+  RNFBAuth: ccae9605207f4a3bc6e03cd0adb5433872ef4418
+  RNFBCrashlytics: 4039c6b27a35dd6cbbb0c111d4f668ce513a2881
+  RNFBFirestore: f2d9ff58a4a2d91f9084c1ac0662054a10766a66
   RNFBRemoteConfig: 044387dc66fcada0f32a0a1529dca57e62b3be9e
   RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
   RNRate: 15b861025a7821730761fce7f44561ce7e0b2de0
