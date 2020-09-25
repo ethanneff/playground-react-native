@@ -690,7 +690,7 @@ PODS:
     - React
   - RNRate (1.2.4):
     - React
-  - RNReanimated (1.13.0):
+  - RNReanimated (1.13.1):
     - React
   - RNScreens (2.11.0):
     - React
@@ -988,7 +988,7 @@ SPEC CHECKSUMS:
   RNFBRemoteConfig: 044387dc66fcada0f32a0a1529dca57e62b3be9e
   RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
   RNRate: 15b861025a7821730761fce7f44561ce7e0b2de0
-  RNReanimated: 89f5e0a04d1dd52fbf27e7e7030d8f80a646a3fc
+  RNReanimated: dd8c286ab5dd4ba36d3a7fef8bff7e08711b5476
   RNScreens: 0e91da98ab26d5d04c7b59a9b6bd694124caf88c
   RNSensors: 07c37847fc643356e7f9829800932f7d7c33455a
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
