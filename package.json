@@ -91,7 +91,7 @@
     "@types/howler": "2.2.1",
     "@types/jest": "26.0.14",
     "@types/react": "16.9.49",
-    "@types/react-native": "0.63.21",
+    "@types/react-native": "0.63.22",
     "@types/react-native-keyboard-spacer": "0.4.1",
     "@types/react-native-vector-icons": "6.4.6",
     "@types/react-redux": "7.1.9",
