@@ -13,6 +13,7 @@
 - [ ] Publish landing page
 - [ ] Obtain 10 users
 - [ ] Question users
+- [ ] date-fns to dayjs
 
 ## Actionables
 
