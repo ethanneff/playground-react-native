@@ -38,7 +38,7 @@
     "@react-native-firebase/app": "8.4.3",
     "@react-native-firebase/auth": "9.2.3",
     "@react-native-firebase/crashlytics": "8.4.5",
-    "@react-native-firebase/firestore": "7.8.2",
+    "@react-native-firebase/firestore": "7.8.5",
     "@react-native-firebase/remote-config": "9.0.5",
     "@react-navigation/bottom-tabs": "5.9.1",
     "@react-navigation/native": "5.7.5",
