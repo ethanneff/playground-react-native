@@ -35,7 +35,7 @@
     "@react-native-community/netinfo": "5.9.7",
     "@react-native-community/slider": "3.0.3",
     "@react-native-firebase/analytics": "7.6.4",
-    "@react-native-firebase/app": "8.4.3",
+    "@react-native-firebase/app": "8.4.5",
     "@react-native-firebase/auth": "9.2.3",
     "@react-native-firebase/crashlytics": "8.4.5",
     "@react-native-firebase/firestore": "7.8.2",

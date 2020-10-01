@@ -2357,10 +2357,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-7.6.4.tgz#f119ff9532f71537d980df267b1431f179941c53"
   integrity sha512-Frwx/rgCeq3aHOUBA25chewcsaNPnA41YzhiuXIVwBFGOjBu3vA9nCnE0JagzYZoHauxMFfuEj8b7NzDxG1hkw==
 
-"@react-native-firebase/app@8.4.3":
-  version "8.4.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-8.4.3.tgz#7f5c0d16c8b56808a26625af34259c8c50e0307b"
-  integrity sha512-qkjY4gvX4B0x1PKwaZIxByxwtnSlpvRt6IAlygB4rkeUv9XTBvW2j2xCGprEbKYZswEgSeY4ZDWl5SXYe6FgCg==
+"@react-native-firebase/app@8.4.5":
+  version "8.4.5"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-8.4.5.tgz#a5194c34a1f75af8641153163700305ae578d31d"
+  integrity sha512-27qsFzX2Z1GPDyU8tUhYYCUkMlhYYCd/XJvteprTAjC8R6zPGdn/Y9Xxdrwkvhpj8Ply19lsxZ8UfvYIUbgOIQ==
   dependencies:
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
