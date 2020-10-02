@@ -661,30 +661,30 @@ PODS:
     - React
   - RNCMaskedView (0.1.10):
     - React
-  - RNDeviceInfo (6.0.4):
+  - RNDeviceInfo (6.1.0):
     - React-Core
-  - RNFBAnalytics (7.6.4):
+  - RNFBAnalytics (7.6.7):
     - Firebase/Analytics (~> 6.30.0)
     - React-Core
     - RNFBApp
-  - RNFBApp (8.4.3):
+  - RNFBApp (8.4.5):
     - Firebase/CoreOnly (~> 6.30.0)
     - React-Core
-  - RNFBAuth (9.2.3):
+  - RNFBAuth (9.2.7):
     - Firebase/Auth (~> 6.30.0)
     - React-Core
     - RNFBApp
-  - RNFBCrashlytics (8.4.5):
+  - RNFBCrashlytics (8.4.9):
     - Firebase/Crashlytics (~> 6.30.0)
     - React-Core
     - RNFBApp
-  - RNFBFirestore (7.8.2):
+  - RNFBFirestore (7.8.6):
     - Firebase/Firestore (~> 6.30.0)
     - React-Core
     - RNFBApp
-  - RNFBRemoteConfig (9.0.5):
+  - RNFBRemoteConfig (9.0.10):
     - Firebase/RemoteConfig (~> 6.30.0)
-    - React
+    - React-Core
     - RNFBApp
   - RNGestureHandler (1.8.0):
     - React
@@ -979,13 +979,13 @@ SPEC CHECKSUMS:
   ReactCommon: 4167844018c9ed375cc01a843e9ee564399e53c3
   RNCAsyncStorage: 2a692bcb9b69b76a2f1a95f33db057129700af64
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
-  RNDeviceInfo: 5eb11f4aef9395cca403c0c92dff458252fc0b2c
-  RNFBAnalytics: 66f1008f38c9ed5f3953a7224b82246ef2a88403
-  RNFBApp: a74d8259d827c8bf55100e759cffa2e50ba6fe30
-  RNFBAuth: ccae9605207f4a3bc6e03cd0adb5433872ef4418
-  RNFBCrashlytics: 4039c6b27a35dd6cbbb0c111d4f668ce513a2881
-  RNFBFirestore: f2d9ff58a4a2d91f9084c1ac0662054a10766a66
-  RNFBRemoteConfig: 044387dc66fcada0f32a0a1529dca57e62b3be9e
+  RNDeviceInfo: 296a25fbe00772eb658c8a4f27aab50c94fc8580
+  RNFBAnalytics: 6fe130045b06fb4173d6f44058894007bb30b9a2
+  RNFBApp: 570b136767f588b7eef0ab918284e9fe364d0c3e
+  RNFBAuth: 5d071451384af263ac5f3598452c304db314a6ef
+  RNFBCrashlytics: 7b60463c742f830255fa76f13a837f95c6581700
+  RNFBFirestore: af1be97b4fa9cede20b34f724c8e3260c6e2540d
+  RNFBRemoteConfig: a58c19343f9d8d348b43c4e195224e3ae8295273
   RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
   RNRate: 15b861025a7821730761fce7f44561ce7e0b2de0
   RNReanimated: dd8c286ab5dd4ba36d3a7fef8bff7e08711b5476
