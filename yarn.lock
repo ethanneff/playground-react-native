@@ -13944,10 +13944,10 @@ react-native-bundle-visualizer@^2.2.1:
     rimraf "^3.0.2"
     source-map-explorer "^2.4.2"
 
-react-native-device-info@6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-6.1.0.tgz#0d1858e584fdfdddb016d0d7bc762c0ac240792f"
-  integrity sha512-IYvHMTVjQi3O8IX8hSK2oAzD2OCF/s/iXg5c9Ur0bcvqeqlrw/+5ucCPZ2vD5st2E8GqyJpzCZhbtP+sVLYppQ==
+react-native-device-info@6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-6.2.0.tgz#6eda29dee048b73b29b57b7ec0c21545bd89dada"
+  integrity sha512-UtAk/ZAdCVCepEmRNM/3Kx7dWbLwmEPh527HTjoQUQy1utpoXm3y4sYtCrP2tjczSIyeMs5nLP4Wf3c8bc0fwQ==
 
 react-native-gesture-handler@1.8.0:
   version "1.8.0"
