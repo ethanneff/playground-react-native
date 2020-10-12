@@ -111,7 +111,7 @@
     "react-native-highlight-updates": "1.2.0",
     "react-native-keyboard-spacer": "0.4.1",
     "react-test-renderer": "16.13.1",
-    "semantic-release": "17.1.2",
+    "semantic-release": "17.2.0",
     "travis-deploy-once": "5.0.11",
     "typescript": "4.0.3"
   },
