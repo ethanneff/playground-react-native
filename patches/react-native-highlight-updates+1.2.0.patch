@@ -1,0 +1,19 @@
+diff --git a/node_modules/react-native-highlight-updates/.gitignore b/node_modules/react-native-highlight-updates/.gitignore
+new file mode 100644
+index 0000000..485dee6
+--- /dev/null
++++ b/node_modules/react-native-highlight-updates/.gitignore
+@@ -0,0 +1 @@
++.idea
+diff --git a/node_modules/react-native-highlight-updates/index.js b/node_modules/react-native-highlight-updates/index.js
+index 818b2e7..250adb5 100644
+--- a/node_modules/react-native-highlight-updates/index.js
++++ b/node_modules/react-native-highlight-updates/index.js
+@@ -8,6 +8,7 @@ const OriginalTouchableOpacity = ReactNative.TouchableOpacity;
+ function getMockContainer(OriginalComponent) {
+   return class extends React.Component {
+     static displayName = 'View';
++    setNativeProps() {}
+     render() {
+       return <OriginalComponent {...this.props}><HighlightComponent />{this.props.children}</OriginalComponent>;
+     }

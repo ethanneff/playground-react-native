@@ -5,8 +5,9 @@ import {Redux} from './providers/Redux';
 import {ErrorBoundary} from './providers/ErrorBoundary';
 import {Navigation} from './providers';
 import 'react-native-get-random-values';
+import {debugDev} from './utils';
 
-// debugDev();
+debugDev();
 export const Main = (): JSX.Element => {
   return (
     <Redux>
