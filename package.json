@@ -47,7 +47,7 @@
     "axios": "0.20.0",
     "d3-shape": "2.0.0",
     "date-fns": "2.16.1",
-    "dayjs": "1.9.1",
+    "dayjs": "1.9.3",
     "howler": "2.2.0",
     "npm-check-updates": "9.0.4",
     "patch-package": "6.2.2",
