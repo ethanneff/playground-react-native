@@ -111,6 +111,7 @@
     "metro-react-native-babel-preset": "0.63.0",
     "prettier": "2.1.2",
     "react-native-bundle-visualizer": "2.2.1",
+    "react-native-dev-menu": "4.0.2",
     "react-native-highlight-updates": "1.2.0",
     "react-native-keyboard-spacer": "0.4.1",
     "react-test-renderer": "16.13.1",
