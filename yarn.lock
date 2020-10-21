@@ -2508,10 +2508,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-9.3.1.tgz#269d4755cb398e049b5014bf35adcc631a87d6d6"
   integrity sha512-TtCEwyO5+ZRvmlKMLz54qFshIWaDT9U162CjQX0mzybmogYKRM9UoB+mFnZLh7rKZQQgvVzzMfF+h2DUgN+9xQ==
 
-"@react-native-firebase/crashlytics@8.4.10":
-  version "8.4.10"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-8.4.10.tgz#d2d6daf5f0cb6bc07d656cbf39335bde1f0f7f98"
-  integrity sha512-nrRHkMvaz/sgQL56hZLMoIY15L6HAjJmnCe134Vw3IPn95OKHTuF4iSa17uV/ezvOIJNSngHHZHFnySBRsu+Jg==
+"@react-native-firebase/crashlytics@8.4.11":
+  version "8.4.11"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-8.4.11.tgz#0534666b95550ac02f23d52189ff763072009c63"
+  integrity sha512-/qdO2bXj9DPjKBMpatDbZa4fvEBMCJtTMNjPqvrDdKZY8Yjh6dxrKVRCcIoy3Fwrs1NR7aYuAJlPAxyK0jcMrg==
   dependencies:
     stacktrace-js "^2.0.0"
 
@@ -14128,10 +14128,10 @@ react-native-dev-menu@4.0.2:
   resolved "https://registry.yarnpkg.com/react-native-dev-menu/-/react-native-dev-menu-4.0.2.tgz#1e569b1fbb2740d1eab8cb3d5adfa4bf9fd89d71"
   integrity sha512-tjWAULoJgOr/WjcfhFsCYaZGtQNmApm7gD5d7G/kSAWVBdEbFFuN2MIq+CxAxBsjHSwscysD1C55TCcmXP/82w==
 
-react-native-device-info@7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-7.0.1.tgz#c5cf7fe21162eb4f91cfa2d2d7319cd8dbcdc5c8"
-  integrity sha512-VECuimIFG4mkszwc8UMeGtvIR0c2/A0N8jJzGr0AGgVRro5RGTNQf9LXRg2GoZHoh4vudO2n11A2WR5yTZL55w==
+react-native-device-info@7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-7.0.2.tgz#dcfebd8e879e2a1973156597eba4d6777e67945f"
+  integrity sha512-3jzEzzX0Zo5rm+fClPFp3OGUnRPjK0w4X6RCNZtuaNbwMG+Vm3BLcU69dv+UfkYMrCo5JSKV6lA2fG25qq2tuA==
 
 react-native-gesture-handler@1.8.0:
   version "1.8.0"
