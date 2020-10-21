@@ -1,6 +1,9 @@
 {
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {"source.fixAll.eslint": true},
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "editor.gotoLocation.multipleImplementations": "goto",
