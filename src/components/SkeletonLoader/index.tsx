@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {Animated, Easing, StyleSheet, View} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-import {MaskedView} from '../../conversions';
+import {LinearGradient, MaskedView} from '../../conversions';
 import {useColor, useDriver} from '../../hooks';
 import {Theme} from '../../utils';
 

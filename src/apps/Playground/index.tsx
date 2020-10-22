@@ -1,33 +1,34 @@
-import React, {memo} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
+import React, {memo} from 'react';
+import {AppleFit} from './AppleFit';
+import {AppleMask} from './AppleMask';
 import {Article} from './Article';
 import {Ball} from './Ball';
+import {Bejeweled} from './Bejeweled';
+import {BouncingBalls} from './BouncingBalls';
 import {Chat} from './Chat';
+import {Colors} from './Colors';
+import {DarkMode} from './DarkMode';
 import {Drag} from './Drag';
+import {Drift} from './Drift';
 import {Fonts} from './Fonts';
+import {FortuneWheel} from './FortuneWheel';
+import {GameOfLife} from './GameOfLife';
 import {ImageCollection} from './ImageCollection';
 import {Input} from './Input';
+import {Landing} from './Landing';
+import {stackParams} from './navParams';
 import {OKRs} from './OKRs';
 import {PinchSpread} from './PinchSpread';
 import {Questionnaire} from './Questionnaire';
+import {ReminderExample} from './Reminder';
 import {SearchBar} from './SearchBar';
+import {SkeletonLoading} from './SkeletonLoading';
+import {SlotMachine} from './SlotMachine';
 import {Startup} from './Startup';
 import {StopWatch} from './Stopwatch';
-import {DarkMode} from './DarkMode';
-import {Colors} from './Colors';
 import {SwipeFeed} from './SwipeFeed';
-import {GameOfLife} from './GameOfLife';
-import {ReminderExample} from './Reminder';
 import {Tinder} from './Tinder';
-import {Drift} from './Drift';
-import {AppleMask} from './AppleMask';
-import {BouncingBalls} from './BouncingBalls';
-import {Bejeweled} from './Bejeweled';
-import {SlotMachine} from './SlotMachine';
-import {FortuneWheel} from './FortuneWheel';
-import {AppleFit} from './AppleFit';
-import {Landing} from './Landing';
-import {stackParams} from './navParams';
 
 const noHeader = {headerShown: false};
 const Stack = createStackNavigator<typeof stackParams>();
@@ -62,6 +63,7 @@ export default memo(function Games() {
       <Stack.Screen component={SlotMachine} name="slotMachine" />
       <Stack.Screen component={FortuneWheel} name="fortuneWheel" />
       <Stack.Screen component={AppleFit} name="appleFit" />
+      <Stack.Screen component={SkeletonLoading} name="skeletonLoading" />
     </Stack.Navigator>
   );
 });

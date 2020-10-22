@@ -26,4 +26,5 @@ export const stackParams = {
   slotMachine: undefined,
   fortuneWheel: undefined,
   appleFit: undefined,
+  skeletonLoading: undefined,
 };
