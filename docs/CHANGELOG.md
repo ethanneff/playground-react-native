@@ -1,5 +1,51 @@
 # Changelog
 
+# [2.41.0](https://github.com/ethanneff/example/compare/v2.40.3...v2.41.0) (2020-10-22)
+
+
+### Bug Fixes
+
+* add conversion for linear gradient ([1431409](https://github.com/ethanneff/example/commit/1431409093b695d7ba07ffe22a7ba80d1a379fc8))
+* add origanize imports in vscode settings ([56830b5](https://github.com/ethanneff/example/commit/56830b580149dcddd7530688fdbad69207313285))
+* attempt to make ci work ([f552e02](https://github.com/ethanneff/example/commit/f552e02b09e5ed0b9e436ea781c7a15bc913aa89))
+* change node to 12 stable ([b4c5a6a](https://github.com/ethanneff/example/commit/b4c5a6a3a8f7a6da3ab222c8e9ae2fda2b838ff2))
+* error on highlight updates with navigation ([43ee929](https://github.com/ethanneff/example/commit/43ee929d992f532a95f76eb362b33b8dce83bf52))
+* hide highlight renders behind a dev menu ([663c2e5](https://github.com/ethanneff/example/commit/663c2e5c8102d782f76322bde7113f93e8ae5cb7))
+* lock on lock ([6f95118](https://github.com/ethanneff/example/commit/6f95118e9c50e3e80d9e2e29725d96b49c716ba2))
+* make tests work ([1a46cac](https://github.com/ethanneff/example/commit/1a46cac24e6143da7958a91793a1ca84d13a05d4))
+* update deps ([d4968f8](https://github.com/ethanneff/example/commit/d4968f81a9e33158f5ad4a1572dc98c2a883aad3))
+* update deps ([62106d5](https://github.com/ethanneff/example/commit/62106d5c625874271e09c2acce157b4219761697))
+* update deps ([6ef73b7](https://github.com/ethanneff/example/commit/6ef73b7fad04790319cdc42eba69a9898d4565a1))
+* update deps ([ffc8aeb](https://github.com/ethanneff/example/commit/ffc8aeb38ff0a02477f2030ffc7c3272268fa711))
+* update deps ([88bc921](https://github.com/ethanneff/example/commit/88bc921b304d75adb5c52332772c338b0b1ac6a0))
+* update deps ([3af12c2](https://github.com/ethanneff/example/commit/3af12c275d500eeba8682c17ee82e3812caaf274))
+* update deps ([0f743a2](https://github.com/ethanneff/example/commit/0f743a22552e76ae7fb07da36df82bc90e2704e8))
+* update deps ([cf0d66d](https://github.com/ethanneff/example/commit/cf0d66d9024e31ade522e1206efd1bff0a9fa48f))
+* update deps ([c7c84aa](https://github.com/ethanneff/example/commit/c7c84aaa30835f40d225a7c5396743579aa7dcbe))
+* update deps ([528d9da](https://github.com/ethanneff/example/commit/528d9dac6b3e8012615a9498fc13c8ebf12097b9))
+* update deps ([4359560](https://github.com/ethanneff/example/commit/435956014a9d1911cb1d060728a169f6ccaddfbb))
+* update deps ([b95aa36](https://github.com/ethanneff/example/commit/b95aa36dd4a6af97cb299039c2684da3d1834e2f))
+* update deps ([f73654d](https://github.com/ethanneff/example/commit/f73654d5663148f1ade793b52ca52eb7fb8d0426))
+* update deps ([dddc0a2](https://github.com/ethanneff/example/commit/dddc0a27f1947d7d22be444e88f8fe4b5992d78f))
+* update deps ([c9ffb41](https://github.com/ethanneff/example/commit/c9ffb4138a963e371c247966af866b906a4e9d0e))
+* update deps ([fea4b60](https://github.com/ethanneff/example/commit/fea4b601816c20ed7d68e2aafb398b4f3cfd0b39))
+* update deps ([bde0cd6](https://github.com/ethanneff/example/commit/bde0cd6d696c5a6b9d69efbf7408953ec60f9814))
+* update deps ([26c0622](https://github.com/ethanneff/example/commit/26c0622d4efc95f064b73f11e9fb17c8b6c537d7))
+* update deps ([c93f9d8](https://github.com/ethanneff/example/commit/c93f9d80e4bc74a3076bbf0c9e77fa9e566ae60e))
+* update deps ([53fce03](https://github.com/ethanneff/example/commit/53fce03c6e91ed6b00a1d9e3c100738fe68f713a))
+* update deps ([62b53fd](https://github.com/ethanneff/example/commit/62b53fd0aa80716a175360c42cdff2565a214cab))
+* update deps ([1f36584](https://github.com/ethanneff/example/commit/1f365843c90cd8bd4f3cf5a0d9526cb3c8744d03))
+* update deps ([e2abe4c](https://github.com/ethanneff/example/commit/e2abe4cc2208856b6f6b0e969b54c3175071317b))
+* update deps ([0035109](https://github.com/ethanneff/example/commit/0035109663fdb0833118e21e5ff1e268e1ff8731))
+* update rn ([73d5212](https://github.com/ethanneff/example/commit/73d52121e811c7929881a264ac965f2508c3e95a))
+* update snaps ([25f4b98](https://github.com/ethanneff/example/commit/25f4b986d8d9a1c453d66a471b5d77977f391907))
+
+
+### Features
+
+* add debug screen for skeleton loading ([381227b](https://github.com/ethanneff/example/commit/381227b76c71332e3d760da8c3036837d0e5489a))
+* add skeleton loader ([ef5b0e9](https://github.com/ethanneff/example/commit/ef5b0e9da3e84617d56c2d877e2e9c48a635150c))
+
 ## [2.40.3](https://github.com/ethanneff/example/compare/v2.40.2...v2.40.3) (2020-09-22)
 
 
