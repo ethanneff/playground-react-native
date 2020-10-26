@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.41.2](https://github.com/ethanneff/example/compare/v2.41.1...v2.41.2) (2020-10-26)
+
+
+### Bug Fixes
+
+* update deps ([21a3677](https://github.com/ethanneff/example/commit/21a367734896dacf6bddfef47a30f323364c8132))
+* update public ([ae26855](https://github.com/ethanneff/example/commit/ae268555568e5aedfedc1449cb20d03ffe7a6d57))
+* update react-scripts to 4.0.0 ([ed1cfec](https://github.com/ethanneff/example/commit/ed1cfec87cf1b3a8c59822510b0c55c47c44f2d4))
+
 ## [2.41.1](https://github.com/ethanneff/example/compare/v2.41.0...v2.41.1) (2020-10-22)
 
 
