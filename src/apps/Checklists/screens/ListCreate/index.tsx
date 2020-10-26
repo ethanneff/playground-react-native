@@ -1,20 +1,20 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
+import 'react-native-get-random-values';
 import {v4} from 'uuid';
 import {Button, Screen, TextInput} from '../../../../components';
 import {useRootDispatch} from '../../../../utils';
-import {useNav} from '../../../../hooks';
 import {createList} from '../../models';
-import 'react-native-get-random-values';
 
 const initialState = {name: '', description: ''};
 
 export default memo(function ChecklistCreate() {
-  const nav = useNav();
+  const {navigate} = useNavigation();
   const dispatch = useRootDispatch();
   const [form, setForm] = useState(initialState);
   const isInvalidForm = form.name.trim().length === 0;
 
-  const handleSubmit = () => {
+  const handleSubmit = useCallback(() => {
     const {name, description} = form;
     if (isInvalidForm) {
       return;
@@ -31,8 +31,8 @@ export default memo(function ChecklistCreate() {
         updatedAt: now,
       }),
     );
-    nav('checklists');
-  };
+    navigate('checklists');
+  }, [dispatch, form, isInvalidForm, navigate]);
   const handleNameChange = useCallback(
     (name: string) => setForm((state) => ({...state, name})),
     [],
@@ -42,7 +42,7 @@ export default memo(function ChecklistCreate() {
     [],
   );
 
-  const navBack = useCallback(nav('checklists'), [nav]);
+  const navBack = useCallback(() => navigate('checklists'), [navigate]);
   return (
     <Screen gutter onLeftPress={navBack} title="Create Checklist">
       <TextInput

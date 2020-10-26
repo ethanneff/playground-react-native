@@ -1,12 +1,12 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent} from 'react-native';
 import {Screen} from '../../../components';
-import {useNav} from '../../../hooks';
-import {Canvas, CanvasDimensions} from './Canvas';
 import {Balls} from './Balls';
+import {Canvas, CanvasDimensions} from './Canvas';
 
 export const BouncingBalls = memo(function PlaygroundBouncingBalls() {
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const [canvas, setCanvas] = useState<CanvasDimensions | null>(null);
 
   const onLayout = useCallback((event: LayoutChangeEvent) => {
@@ -14,7 +14,7 @@ export const BouncingBalls = memo(function PlaygroundBouncingBalls() {
     setCanvas({x, y, height, width});
   }, []);
 
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <Screen onLeftPress={navBack} title="BouncingBalls">
       <Canvas onLayout={onLayout}>

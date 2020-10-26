@@ -1,7 +1,9 @@
 // TODO: slider on web
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {Image, ImageSourcePropType, View} from 'react-native';
 import {Button, Card, Masonry, Screen, Slider, Text} from '../../../components';
+import {useColor} from '../../../hooks';
 import {
   ColorTheme,
   changeTheme,
@@ -9,7 +11,6 @@ import {
   getLandscapeOrientation,
 } from '../../../models';
 import {Theme, useRootDispatch, useRootSelector} from '../../../utils';
-import {useColor, useNav} from '../../../hooks';
 
 interface Card {
   title: string;
@@ -65,7 +66,7 @@ const cards: Card[] = [
 export const DarkMode = memo(function DarkMode() {
   const dispatch = useRootDispatch();
   const color = useColor();
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const currentTheme = useRootSelector((state) => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   const [elevation, setElevation] = useState(2);
@@ -114,7 +115,7 @@ export const DarkMode = memo(function DarkMode() {
     [elevation, onPress],
   );
 
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <Screen onLeftPress={navBack} title="Dark mode">
       <View style={{padding: Theme.padding.p04}}>

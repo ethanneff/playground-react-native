@@ -1,12 +1,13 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
 import {Button, Icon, Screen} from '../../../../components';
-import {useColor, useNav} from '../../../../hooks';
+import {useColor} from '../../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {getActiveChecklistOrderByCreatedAt, setActiveList} from '../../models';
 
 export default memo(function Checklists() {
-  const nav = useNav();
+  const {navigate} = useNavigation();
   const color = useColor();
   const dispatch = useRootDispatch();
   const items = useRootSelector(getActiveChecklistOrderByCreatedAt);
@@ -14,17 +15,17 @@ export default memo(function Checklists() {
   const handleItemPress = useCallback(
     (id: string) => () => {
       dispatch(setActiveList(id));
-      nav('checklistsList');
+      navigate('checklistsList');
     },
-    [dispatch, nav],
+    [dispatch, navigate],
   );
 
   const handleItemLongPress = useCallback(
     (id: string) => () => {
       dispatch(setActiveList(id));
-      nav('checklistsListUpdate');
+      navigate('checklistsListUpdate');
     },
-    [dispatch, nav],
+    [dispatch, navigate],
   );
 
   const renderItem = useCallback(
@@ -39,8 +40,8 @@ export default memo(function Checklists() {
   );
 
   const keyExtractor = useCallback((item) => item.id, []);
-  const navBack = useCallback(nav('portfolioLanding'), [nav]);
-  const navCreate = useCallback(nav('playground'), [nav]);
+  const navBack = useCallback(() => navigate('portfolioLanding'), [navigate]);
+  const navCreate = useCallback(() => navigate('playground'), [navigate]);
 
   return (
     <Screen gutter onLeftPress={navBack} title="Checklists">

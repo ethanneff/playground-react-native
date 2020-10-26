@@ -1,12 +1,12 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {ScrollView} from 'react-native';
 import {Card, Screen, Text} from '../../../components';
-import {useNav} from '../../../hooks';
 import {Theme} from '../../../utils';
 
 export const OKRs = memo(function PlaygroundOKRs() {
-  const nav = useNav();
-  const navBack = useCallback(nav('landing'), [nav]);
+  const {goBack} = useNavigation();
+  const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <Screen onLeftPress={navBack} title="OKRs">
       <ScrollView

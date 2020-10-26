@@ -1,12 +1,11 @@
-import {ActivityIndicator, FlatList, View} from 'react-native';
 import React, {memo, useCallback, useEffect, useState} from 'react';
+import {ActivityIndicator, FlatList, View} from 'react-native';
 import {Theme} from '../../utils';
-import {Text} from '../Text';
 import {Button} from '../Button';
 import {Card} from '../Card';
+import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {ActivityDay} from './Day';
-import {ActivityWeek, Week} from './Week';
 import {
   getActivitySquares,
   getApiActivity,
@@ -14,6 +13,7 @@ import {
   getSubmissionFormat,
   updateActivitySquares,
 } from './utils';
+import {ActivityWeek, Week} from './Week';
 
 interface Props {
   username: string;
@@ -105,7 +105,7 @@ export const Activity = memo(function Activity({
   );
 
   const renderItem = useCallback(
-    ({item, index}: {item: ActivityWeek; index: number}) => (
+    ({item, index}) => (
       <Week
         index={index}
         item={item}

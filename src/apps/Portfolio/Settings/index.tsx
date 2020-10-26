@@ -34,10 +34,10 @@ export const Settings = memo(function PortfolioSettings() {
   return (
     <Screen onLeftPress={navBack} title="Settings">
       <FlatList
+        ListHeaderComponent={renderHeader}
         data={colorThemes}
         horizontal
         keyExtractor={keyExtractor}
-        ListHeaderComponent={renderHeader}
         renderItem={renderItem}
       />
     </Screen>

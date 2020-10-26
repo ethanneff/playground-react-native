@@ -1,8 +1,9 @@
+import {useNavigation} from '@react-navigation/native';
+import dayjs from 'dayjs';
 import React, {memo, useCallback, useState} from 'react';
 import {ScrollView, Switch, View} from 'react-native';
-import dayjs from 'dayjs';
 import {Button, Screen, Text, TextInput} from '../../../components';
-import {useColor, useNav} from '../../../hooks';
+import {useColor} from '../../../hooks';
 import {Theme} from '../../../utils';
 import {Section} from './Section';
 
@@ -34,7 +35,7 @@ const initialState: Form = {
 
 export const Startup = memo(function PlaygroundStartup() {
   const color = useColor();
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const [form, setForm] = useState<Form>(initialState);
   const launchWeeks = parseInt(form.launchWeeks, 10);
   const launchSubText =
@@ -81,7 +82,7 @@ export const Startup = memo(function PlaygroundStartup() {
   );
 
   const handleSubmit = useCallback(() => undefined, []);
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen onLeftPress={navBack} title="Weekly Update">

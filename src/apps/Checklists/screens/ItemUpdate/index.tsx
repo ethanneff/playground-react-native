@@ -1,15 +1,15 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {Button, Screen, TextInput} from '../../../../components';
+import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {
   getCurrentChecklistItem,
   removeChecklistItem,
   updateChecklistItem,
 } from '../../models';
-import {useNav} from '../../../../hooks';
-import {useRootDispatch, useRootSelector} from '../../../../utils';
 
 export default memo(function ChecklistUpdate() {
-  const nav = useNav();
+  const {navigate} = useNavigation();
   const dispatch = useRootDispatch();
   const item = useRootSelector(getCurrentChecklistItem);
   const [form, setForm] = useState({
@@ -18,11 +18,15 @@ export default memo(function ChecklistUpdate() {
   });
   const isInvalidForm = form.name.trim().length === 0;
 
-  const handleNameChange = (name: string) =>
-    setForm((state) => ({...state, name}));
-  const handleDescriptionChange = (description: string) =>
-    setForm((state) => ({...state, description}));
-  const handleSubmit = () => {
+  const handleNameChange = useCallback(
+    (name: string) => setForm((state) => ({...state, name})),
+    [],
+  );
+  const handleDescriptionChange = useCallback(
+    (description: string) => setForm((state) => ({...state, description})),
+    [],
+  );
+  const handleSubmit = useCallback(() => {
     const {name, description} = form;
     const now = Date.now();
     if (isInvalidForm) {
@@ -36,14 +40,14 @@ export default memo(function ChecklistUpdate() {
         updatedAt: now,
       }),
     );
-    nav('checklistsList');
-  };
-  const handleDelete = () => {
+    navigate('checklistsList');
+  }, [dispatch, form, isInvalidForm, item, navigate]);
+  const handleDelete = useCallback(() => {
     dispatch(removeChecklistItem(item.id));
-    nav('checklistsList');
-  };
+    navigate('checklistsList');
+  }, [dispatch, item.id, navigate]);
 
-  const navItem = useCallback(nav('checklistsList'), [nav]);
+  const navItem = useCallback(() => navigate('checklistsList'), [navigate]);
   return (
     <Screen gutter onLeftPress={navItem} title="Update Checklist Item">
       <TextInput

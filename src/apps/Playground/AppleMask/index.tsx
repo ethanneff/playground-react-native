@@ -1,9 +1,10 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {Image, ImageSourcePropType, ScrollView, View} from 'react-native';
 import {Screen, Text} from '../../../components';
-import {useColor, useNav} from '../../../hooks';
-import {Theme, useRootSelector} from '../../../utils';
+import {useColor} from '../../../hooks';
 import {getWidth} from '../../../models';
+import {Theme, useRootSelector} from '../../../utils';
 
 // https://support.apple.com/en-us/HT211028
 
@@ -60,7 +61,7 @@ const Section = ({
 };
 
 export const AppleMask = memo(function AppleMask() {
-  const nav = useNav();
+  const {goBack} = useNavigation();
 
   const sections = [
     {
@@ -93,7 +94,7 @@ export const AppleMask = memo(function AppleMask() {
   ];
 
   const paddingHorizontal = Theme.padding.p04;
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <Screen onLeftPress={navBack}>
       <ScrollView contentContainerStyle={{paddingHorizontal}}>

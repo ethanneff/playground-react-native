@@ -1,6 +1,6 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {ScrollView, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 import {Card, Icon, Screen, Text, TouchableOpacity} from '../../components';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
@@ -18,13 +18,13 @@ type ChecklistItemProps = {
 
 const ChecklistItem = ({item, index}: ChecklistItemProps) => {
   const [toggle, setToggle] = useState('checkbox-blank-outline');
-  const onPress = () => {
+  const onPress = useCallback(() => {
     setToggle((prev) =>
       prev === 'checkbox-marked-outline'
         ? 'checkbox-blank-outline'
         : 'checkbox-marked-outline',
     );
-  };
+  }, []);
   const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
   return (
     <TouchableOpacity onPress={onPress}>

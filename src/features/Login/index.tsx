@@ -8,9 +8,9 @@ import {
   TextInput,
   TouchableOpacity,
 } from '../../components';
+import {FirebaseAuthTypes, auth} from '../../conversions/Firebase';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
-import {FirebaseAuthTypes, auth} from '../../conversions/Firebase';
 
 interface Props {
   onBackgroundPress: () => void;
@@ -118,7 +118,7 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
     setForm((prev) => ({...prev, state: 'phone confirm', phoneConfirmation}));
   }, [setForm, form.phone]);
 
-  const onPhoneConfirm = async () => {
+  const onPhoneConfirm = useCallback(async () => {
     if (!form.phoneConfirmation) {
       console.log('missing confirmation');
       return;
@@ -129,9 +129,9 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
     } catch {
       console.log('invalid code');
     }
-  };
+  }, [form.phoneCode, form.phoneConfirmation]);
 
-  const onEmailSubmit = () => {
+  const onEmailSubmit = useCallback(() => {
     auth()
       .createUserWithEmailAndPassword(form.email, form.password)
       .then(() => {
@@ -147,11 +147,11 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
         }
         console.error(error);
       });
-  };
+  }, [form.email, form.password]);
 
-  const onMissingCallback = () => undefined;
+  const onMissingCallback = useCallback(() => undefined, []);
 
-  const onAnonymous = () => {
+  const onAnonymous = useCallback(() => {
     auth()
       .signInAnonymously()
       .then(() => {
@@ -164,7 +164,7 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
 
         console.error(error);
       });
-  };
+  }, []);
 
   const onLogout = useCallback(() => {
     auth()

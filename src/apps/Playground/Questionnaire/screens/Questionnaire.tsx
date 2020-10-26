@@ -11,8 +11,11 @@ export const Questionnaire = (): JSX.Element => {
     setActionSheet((state) => !state);
     setActiveItem(id);
   };
-  const handleItemPress = (id: string) => () => setActiveItem(id);
-  const handleActionSheetClose = () => setActionSheet(false);
+  const handleItemPress = useCallback(
+    (id: string) => () => setActiveItem(id),
+    [],
+  );
+  const handleActionSheetClose = useCallback(() => setActionSheet(false), []);
 
   const renderItem = useCallback(
     ({item}) => {
@@ -36,7 +39,7 @@ export const Questionnaire = (): JSX.Element => {
         </Card>
       );
     },
-    [activeItem],
+    [activeItem, handleItemPress],
   );
 
   const keyExtractor = useCallback((item) => item.id, []);

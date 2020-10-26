@@ -1,9 +1,10 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Screen, TouchableOpacity} from '../../../components';
-import {useColor, useNav} from '../../../hooks';
-import {useRootSelector} from '../../../utils';
+import {useColor} from '../../../hooks';
 import {getSmallestDimension} from '../../../models';
+import {useRootSelector} from '../../../utils';
 
 const getRandom = (max: number) => {
   return Math.floor(Math.random() * max);
@@ -56,7 +57,7 @@ export type States = 'idle' | 'swap' | 'validate' | 'swap back' | 'fill gems';
 
 const initialSelected = {x: -10, y: -10};
 export const Bejeweled = memo(function PlaygroundBejeweled() {
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const dimension = useRootSelector(getSmallestDimension);
 
   const color = useColor();
@@ -98,7 +99,7 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
       setSelected({x, y});
     }
   };
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen onLeftPress={navBack} title="Bejeweled">

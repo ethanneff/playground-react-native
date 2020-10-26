@@ -1,11 +1,12 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Screen} from '../../../components';
-import {useColor, useNav} from '../../../hooks';
-import {Timer} from './Timer';
+import {useColor} from '../../../hooks';
 import {ButtonRound} from './ButtonRound';
-import {LapsTable} from './LapsTable';
 import {ButtonsRow} from './ButtonsRow';
+import {LapsTable} from './LapsTable';
+import {Timer} from './Timer';
 
 interface State {
   laps: number[];
@@ -14,7 +15,7 @@ interface State {
 }
 
 export const StopWatch = memo(function PlaygroundStopWatch() {
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const [state, setState] = useState<State>({
     laps: [],
     now: 0,
@@ -50,7 +51,7 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
     };
   }, [timer]);
 
-  const lap = () => {
+  const lap = useCallback(() => {
     const timestamp = new Date().getTime();
     const {laps, now, start} = state;
     const [firstLap, ...other] = laps;
@@ -59,7 +60,7 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
       now: timestamp,
       start: timestamp,
     });
-  };
+  }, [state]);
 
   const stop = useCallback(() => {
     if (timer.current) {
@@ -96,7 +97,8 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
     run();
   }, [run]);
 
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
+
   return (
     <Screen onLeftPress={navBack}>
       <View style={styles.container}>

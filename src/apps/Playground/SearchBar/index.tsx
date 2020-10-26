@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {
   Animated,
@@ -8,8 +9,8 @@ import {
   View,
 } from 'react-native';
 import {Icon, Screen, Text, TextInput} from '../../../components';
+import {useColor, useDriver} from '../../../hooks';
 import {Theme, colorWithOpacity} from '../../../utils';
-import {useColor, useDriver, useNav} from '../../../hooks';
 
 const data = [
   {id: 1, name: '1'},
@@ -45,7 +46,7 @@ const textInputPlaceHolder = 'Search';
 const animationDuration = 400;
 
 export const SearchBar = memo(function PlaygroundSearchbar() {
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const color = useColor();
   const [state, setState] = useState<State>({
     animation: new Animated.Value(0),
@@ -187,7 +188,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     (value: string) => setState((prev) => ({...prev, input: value})),
     [],
   );
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen onLeftPress={navBack}>

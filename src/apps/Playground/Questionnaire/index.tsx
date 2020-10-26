@@ -1,7 +1,7 @@
-import React, {memo, useRef} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import React, {memo, useCallback, useRef, useState} from 'react';
 import {Dimensions, FlatList, View} from 'react-native';
 import {Button, Screen, Text} from '../../../components';
-import {useNav} from '../../../hooks';
 import {Questionnaires} from './screens/Questionnaires';
 
 const data = [
@@ -37,85 +37,101 @@ const width = Dimensions.get('window').width;
 const viewabilityConfig = {itemVisiblePercentThreshold: 50};
 
 export const Questionnaire = memo(function Questionnaire() {
-  let output: any = {};
-  let currentIndex = 0;
-  const nav = useNav();
+  const [output, setOutput] = useState<any>({});
+  const currentIndex = useRef(0);
+  const {goBack} = useNavigation();
   const tableViewRef = useRef<FlatList | null>(null);
-  const handleViewableItemsChanged = ({viewableItems}: any) => {
-    currentIndex = viewableItems[0].index || 0;
-  };
+  const handleViewableItemsChanged = useCallback(({viewableItems}: any) => {
+    currentIndex.current = viewableItems[0].index || 0;
+  }, []);
 
-  const onProgress = (direction = 1) => {
-    const index = currentIndex + direction;
-    if (index < 0 || !tableViewRef.current) {
-      return;
-    }
-    if (index >= data.length) {
-      onFinish();
-      return;
-    }
-    tableViewRef.current.scrollToIndex({
-      animated: true,
-      index,
-    });
-  };
+  const onProgress = useCallback(
+    (direction = 1) => {
+      const index = currentIndex + direction;
+      if (index < 0 || !tableViewRef.current) {
+        return;
+      }
+      if (index >= data.length) {
+        onFinish();
+        return;
+      }
+      tableViewRef.current.scrollToIndex({
+        animated: true,
+        index,
+      });
+    },
+    [currentIndex],
+  );
 
-  const onSelection = (item: any, choice: any) => {
-    output = {
-      ...output,
-      [item.key]: {
-        ...output[item.key],
-        [choice.key]: true,
-      },
-    };
-    onProgress();
-  };
+  const onSelection = useCallback(
+    (item: any, choice: any) => {
+      setOutput({
+        ...output,
+        [item.key]: {
+          ...output[item.key],
+          [choice.key]: true,
+        },
+      });
+      onProgress();
+    },
+    [onProgress, output],
+  );
 
   const onFinish = () => undefined;
 
-  const updateSelection = (item: any, choice: any) => () =>
-    onSelection(item, choice);
+  const updateSelection = useCallback(
+    (item: any, choice: any) => () => onSelection(item, choice),
+    [onSelection],
+  );
 
-  const updateProgress = (value: number) => () => onProgress(value);
+  const updateProgress = useCallback(
+    (value: number) => () => onProgress(value),
+    [onProgress],
+  );
 
-  const renderItem = ({item}: {item: any}) => {
-    let items: any = <View style={{flex: 1}} />;
+  const renderItem = useCallback(
+    ({item}) => {
+      let items: any = <View style={{flex: 1}} />;
 
-    if (item.choices) {
-      items = (
-        <View style={{flex: 1}}>
-          {item.choices.map((choice: any) => {
-            return (
-              <Button
-                key={choice.title}
-                onPress={updateSelection(item, choice)}
-                title={choice.title}
-              />
-            );
-          })}
+      if (item.choices) {
+        items = (
+          <View style={{flex: 1}}>
+            {item.choices.map((choice: any) => {
+              return (
+                <Button
+                  key={choice.title}
+                  onPress={updateSelection(item, choice)}
+                  title={choice.title}
+                />
+              );
+            })}
+          </View>
+        );
+      }
+
+      return (
+        <View style={{width: width}}>
+          <Text title={item.title} />
+          {items}
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+            }}>
+            <Button onPress={updateProgress(-1)} title="prev" />
+            <Button onPress={updateProgress(1)} title="next" />
+            <Button onPress={updateProgress(2)} title="next2" />
+          </View>
         </View>
       );
-    }
+    },
+    [updateProgress, updateSelection],
+  );
 
-    return (
-      <View style={{width: width}}>
-        <Text title={item.title} />
-        {items}
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-          }}>
-          <Button onPress={updateProgress(-1)} title="prev" />
-          <Button onPress={updateProgress(1)} title="next" />
-          <Button onPress={updateProgress(2)} title="next2" />
-        </View>
-      </View>
-    );
-  };
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={nav('landing')} title="Questionnaire">
+    <Screen onLeftPress={navBack} title="Questionnaire">
       <FlatList
         data={data}
         horizontal

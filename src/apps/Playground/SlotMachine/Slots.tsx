@@ -12,9 +12,7 @@ type Props = {
   combinations: Combinations;
   credits: number;
   multipliers?: number[];
-  startingPositions?: number[];
   randomize?: boolean;
-  debug?: boolean;
 };
 
 type State = {

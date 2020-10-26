@@ -1,9 +1,9 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {Button, Screen, TextInput} from '../../../components';
-import {useNav} from '../../../hooks';
 
 export const Input = memo(function PlaygroundInput() {
-  const nav = useNav();
+  const {goBack} = useNavigation();
 
   const [form, setForm] = useState({
     email: '',
@@ -22,7 +22,7 @@ export const Input = memo(function PlaygroundInput() {
   const handleSubmit = useCallback(() => {
     setForm((prev) => ({...prev, error: 'Invalid Email'}));
   }, []);
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen gutter onLeftPress={navBack} title="Template">

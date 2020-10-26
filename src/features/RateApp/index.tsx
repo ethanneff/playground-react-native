@@ -1,4 +1,4 @@
-import React, {memo, useCallback, useRef, useState} from 'react';
+import React, {memo, useCallback, useMemo, useRef, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import Rate, {AndroidMarket} from 'react-native-rate';
 import {Button, Modal, Text, TextInput} from '../../components';
@@ -46,11 +46,14 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
     modal: {padding: Theme.padding.p06},
     title: {paddingBottom: Theme.padding.p04},
   });
-  const completeState = {
-    rating: form.rating,
-    feedback: form.feedback,
-    navigatedToAppStore: navigatedToAppStore.current,
-  };
+  const completeState = useMemo(
+    () => ({
+      rating: form.rating,
+      feedback: form.feedback,
+      navigatedToAppStore: navigatedToAppStore.current,
+    }),
+    [form.feedback, form.rating],
+  );
 
   const handleReset = useCallback(() => {
     ratingRef.current = 0;

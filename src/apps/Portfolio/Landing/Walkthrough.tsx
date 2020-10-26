@@ -2,8 +2,8 @@ import React, {memo, useCallback, useRef, useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import {Text, TouchableOpacity} from '../../../components';
 import {useColor, useDropShadow} from '../../../hooks';
-import {Theme, colorWithOpacity, useRootSelector} from '../../../utils';
 import {getWidth} from '../../../models';
+import {Theme, colorWithOpacity, useRootSelector} from '../../../utils';
 
 interface Slide {
   id: string;
@@ -46,21 +46,24 @@ export const Walkthrough = memo(function Walkthrough({
     },
     [],
   );
-  const renderItem = ({item}: {item: Slide}) => {
-    const styles = StyleSheet.create({
-      item: {
-        backgroundColor: item.color,
-        justifyContent: 'center',
-        width,
-      },
-    });
+  const renderItem = useCallback(
+    ({item}) => {
+      const styles = StyleSheet.create({
+        item: {
+          backgroundColor: item.color,
+          justifyContent: 'center',
+          width,
+        },
+      });
 
-    return (
-      <View style={styles.item}>
-        <Text center title={item.text} />
-      </View>
-    );
-  };
+      return (
+        <View style={styles.item}>
+          <Text center title={item.text} />
+        </View>
+      );
+    },
+    [width],
+  );
 
   return (
     <View style={{flex: 1}}>

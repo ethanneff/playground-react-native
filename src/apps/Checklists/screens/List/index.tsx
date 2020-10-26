@@ -1,6 +1,8 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {FlatList, View} from 'react-native';
 import {Button, Icon, Screen} from '../../../../components';
+import {useColor} from '../../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {
   getCurrentActiveChecklistItemsOrderByCreatedAt,
@@ -8,10 +10,9 @@ import {
   setActiveChecklistItem,
   toggleChecklistItemComplete,
 } from '../../models';
-import {useColor, useNav} from '../../../../hooks';
 
 export default memo(function Checklist() {
-  const nav = useNav();
+  const {navigate} = useNavigation();
   const color = useColor();
   const dispatch = useRootDispatch();
   const items = useRootSelector(getCurrentActiveChecklistItemsOrderByCreatedAt);
@@ -27,9 +28,9 @@ export default memo(function Checklist() {
   const handleEdit = useCallback(
     (id: string) => () => {
       dispatch(setActiveChecklistItem(id));
-      nav('checklistsItemUpdate');
+      navigate('checklistsItemUpdate');
     },
-    [dispatch, nav],
+    [dispatch, navigate],
   );
 
   const renderItem = useCallback(
@@ -64,8 +65,10 @@ export default memo(function Checklist() {
     ],
   );
   const keyExtractor = useCallback((item) => item.id, []);
-  const navBack = useCallback(nav('checklists'), [nav]);
-  const navCreate = useCallback(nav('checklistsItemCreate'), [nav]);
+  const navBack = useCallback(() => navigate('checklists'), [navigate]);
+  const navCreate = useCallback(() => navigate('checklistsItemCreate'), [
+    navigate,
+  ]);
 
   return (
     <Screen gutter onLeftPress={navBack} title="Checklist">

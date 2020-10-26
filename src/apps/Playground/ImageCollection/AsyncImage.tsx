@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback, useRef} from 'react';
 import {ActivityIndicator, Animated, StyleSheet, View} from 'react-native';
 import {useDriver} from '../../../hooks';
 interface Props {
@@ -17,12 +17,12 @@ export const AsyncImage = ({
   size = 'small',
 }: Props): JSX.Element => {
   const useNativeDriver = useDriver();
-  const imageAnimated = new Animated.Value(0);
-  const indicatorAnimated = new Animated.Value(1);
+  const imageAnimated = useRef(new Animated.Value(0)).current;
+  const indicatorAnimated = useRef(new Animated.Value(1)).current;
   const styles = StyleSheet.create({
     indicatorOverlay: {justifyContent: 'center', position: 'absolute'},
   });
-  const onImageLoad = () => {
+  const onImageLoad = useCallback(() => {
     Animated.parallel([
       Animated.timing(indicatorAnimated, {
         toValue: 0,
@@ -33,7 +33,7 @@ export const AsyncImage = ({
         useNativeDriver,
       }),
     ]).start();
-  };
+  }, [imageAnimated, indicatorAnimated, useNativeDriver]);
 
   const containerStyle = {width, height};
   const imageStyle = [containerStyle, {opacity: imageAnimated}];

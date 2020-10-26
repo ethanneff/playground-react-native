@@ -1,15 +1,15 @@
-import React, {memo, useCallback, useEffect} from 'react';
+import React, {memo, useCallback, useEffect, useRef} from 'react';
 import {
   Animated,
   StyleSheet,
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
+import {useDriver, useDropShadow} from '../../hooks';
 import {Theme} from '../../utils';
 import {Button} from '../Button';
 import {Card} from '../Card';
 import {Text} from '../Text';
-import {useDriver, useDropShadow} from '../../hooks';
 
 interface OwnProps {
   testID?: string;
@@ -79,7 +79,7 @@ export const Dialog = memo(function Dialog({
       paddingBottom: Theme.padding.p03,
     },
   });
-  const fade = new Animated.Value(0);
+  const fade = useRef(new Animated.Value(0)).current;
   const opacity = fade;
   const twoButtons =
     Boolean(onConfirmButtonPress) && Boolean(onCancelButtonPress);

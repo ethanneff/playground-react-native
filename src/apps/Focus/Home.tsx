@@ -1,6 +1,6 @@
-import React, {memo, useCallback, useEffect, useState} from 'react';
-import dayjs from 'dayjs';
 import {useNavigation} from '@react-navigation/native';
+import dayjs from 'dayjs';
+import React, {memo, useCallback, useEffect, useState} from 'react';
 import {Dialog, Screen} from '../../components';
 import {Item, List} from './List';
 
@@ -59,7 +59,7 @@ export const Home = memo(function Home() {
     setModalItemEdit((state) => ({...state, visible: false}));
   }, []);
 
-  useEffect(handleLoad, []);
+  useEffect(() => handleLoad(), [handleLoad]);
 
   const navBack = useCallback(() => goBack(), [goBack]);
   return (

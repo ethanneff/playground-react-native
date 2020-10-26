@@ -1,6 +1,6 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 import {Button, Screen} from '../../../components';
 import {stackParams} from '../navParams';
 
@@ -12,9 +12,7 @@ export const Landing = memo(function Playground() {
     navigate,
   ]);
   const renderItem = useCallback(
-    ({item}: {item: string}) => (
-      <Button key={item} onPress={navToItem(item)} title={item} />
-    ),
+    ({item}) => <Button key={item} onPress={navToItem(item)} title={item} />,
     [navToItem],
   );
   const keyExtractor = useCallback((item: string) => item, []);

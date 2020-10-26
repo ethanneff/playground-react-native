@@ -22,12 +22,9 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
     <View
       pointerEvents="box-none"
       style={
-        Array [
-          Object {
-            "zIndex": 1,
-          },
-          false,
-        ]
+        Object {
+          "zIndex": 1,
+        }
       }
     >
       <View
@@ -205,6 +202,7 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
           }
         >
           <View
+            needsOffscreenAlphaCompositing={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -422,12 +420,9 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
     <View
       pointerEvents="box-none"
       style={
-        Array [
-          Object {
-            "zIndex": 1,
-          },
-          false,
-        ]
+        Object {
+          "zIndex": 1,
+        }
       }
     >
       <View
@@ -605,6 +600,7 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
           }
         >
           <View
+            needsOffscreenAlphaCompositing={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -822,12 +818,9 @@ exports[`Dialog component renders correctly with props 1`] = `
     <View
       pointerEvents="box-none"
       style={
-        Array [
-          Object {
-            "zIndex": 1,
-          },
-          false,
-        ]
+        Object {
+          "zIndex": 1,
+        }
       }
     >
       <View
@@ -1005,6 +998,7 @@ exports[`Dialog component renders correctly with props 1`] = `
           }
         >
           <View
+            needsOffscreenAlphaCompositing={false}
             pointerEvents="box-none"
             style={
               Object {

@@ -1,11 +1,11 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {Button, Dialog, Screen, TextInput} from '../../../../components';
-import {getCurrentChecklist, removeList, updateList} from '../../models';
-import {useNav} from '../../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
+import {getCurrentChecklist, removeList, updateList} from '../../models';
 
 export default memo(function ChecklistUpdate() {
-  const nav = useNav();
+  const {navigate} = useNavigation();
   const dispatch = useRootDispatch();
   const checklist = useRootSelector(getCurrentChecklist);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
@@ -15,11 +15,15 @@ export default memo(function ChecklistUpdate() {
   });
   const isInvalidForm = form.name.trim().length === 0;
 
-  const handleNameChange = (name: string) =>
-    setForm((state) => ({...state, name}));
-  const handleDescriptionChange = (description: string) =>
-    setForm((state) => ({...state, description}));
-  const handleSubmit = () => {
+  const handleNameChange = useCallback(
+    (name: string) => setForm((state) => ({...state, name})),
+    [],
+  );
+  const handleDescriptionChange = useCallback(
+    (description: string) => setForm((state) => ({...state, description})),
+    [],
+  );
+  const handleSubmit = useCallback(() => {
     const {name, description} = form;
     const now = Date.now();
     if (isInvalidForm) {
@@ -33,18 +37,18 @@ export default memo(function ChecklistUpdate() {
         updatedAt: now,
       }),
     );
-    nav('checklists');
-  };
+    navigate('checklists');
+  }, [checklist, dispatch, form, isInvalidForm, navigate]);
 
   const handleDelete = useCallback(() => {
     setShowDeleteDialog(false);
     dispatch(removeList(checklist.id));
-    nav('checklists');
-  }, [dispatch, checklist.id, nav]);
+    navigate('checklists');
+  }, [dispatch, checklist.id, navigate]);
 
   const handleDeletePress = useCallback(() => setShowDeleteDialog(true), []);
   const handleDeleteCancel = useCallback(() => setShowDeleteDialog(false), []);
-  const navBack = useCallback(nav('checklists'), [nav]);
+  const navBack = useCallback(() => navigate('checklists'), [navigate]);
 
   return (
     <>

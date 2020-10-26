@@ -1,15 +1,18 @@
-import React, {memo, useCallback} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import React, {memo, useCallback, useRef} from 'react';
 import {Animated, StyleSheet, View} from 'react-native';
 import {Button, Screen} from '../../../components';
+import {useColor, useDriver} from '../../../hooks';
 import {getHeight, getWidth} from '../../../models';
-import {useColor, useDriver, useNav} from '../../../hooks';
 import {Theme, useRootSelector} from '../../../utils';
 
 export const Ball = memo(function PlaygroundBall() {
   const height = useRootSelector(getHeight);
   const width = useRootSelector(getWidth);
-  const nav = useNav();
-  const ballPosition = new Animated.ValueXY({x: width / 2, y: height / 2});
+  const {goBack} = useNavigation();
+  const ballPosition = useRef(
+    new Animated.ValueXY({x: width / 2, y: height / 2}),
+  ).current;
   const useNativeDriver = useDriver();
   const color = useColor();
   const size = Theme.padding.p08;
@@ -42,7 +45,7 @@ export const Ball = memo(function PlaygroundBall() {
     () => animate(Math.random(), Math.random()),
     [animate],
   );
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen onLeftPress={navBack} testID="ballScreen" title="Ball">

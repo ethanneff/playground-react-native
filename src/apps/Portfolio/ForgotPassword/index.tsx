@@ -1,7 +1,7 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Screen, TextInput} from '../../../components';
-import {useNav} from '../../../hooks';
 
 const styles = StyleSheet.create({
   row: {flexDirection: 'row', justifyContent: 'space-around'},
@@ -9,9 +9,9 @@ const styles = StyleSheet.create({
 
 export const ForgotPassword = memo(function PortfolioForgotPassword() {
   const [email, setEmail] = useState('');
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const handleEmail = useCallback((val: string) => setEmail(val), []);
-  const navLogin = useCallback(nav('login'), [nav]);
+  const navLogin = useCallback(() => goBack(), [goBack]);
   return (
     <Screen gutter onLeftPress={navLogin} title="Forgot Password">
       <TextInput

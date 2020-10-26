@@ -1,11 +1,12 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Screen, Slider, Text} from '../../../components';
-import {useColor, useNav} from '../../../hooks';
-import {useRootSelector} from '../../../utils';
+import {useColor} from '../../../hooks';
 import {getSmallestDimension} from '../../../models';
-import {determineBoardItem, generateBoard, swapBoardItem} from './utils';
+import {useRootSelector} from '../../../utils';
 import {Cell} from './Cell';
+import {determineBoardItem, generateBoard, swapBoardItem} from './utils';
 
 export const GameOfLife = memo(function PlaygroundGameOfLife() {
   const color = useColor();
@@ -21,7 +22,7 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const smallest = useRootSelector(getSmallestDimension);
   const size = smallest / form.count;
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const styles = StyleSheet.create({
     container: {
       backgroundColor: color.background,
@@ -85,7 +86,7 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
       }
     };
   }, [timeoutRef]);
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen onLeftPress={navBack} title="Game of life">

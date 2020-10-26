@@ -1,10 +1,10 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {Screen} from '../../../components';
-import {useNav} from '../../../hooks';
 
 export const Drift = memo(function Drift() {
-  const nav = useNav();
-  const navBack = useCallback(nav('landing'), [nav]);
+  const {goBack} = useNavigation();
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return <Screen onLeftPress={navBack} title="Drift" />;
 });

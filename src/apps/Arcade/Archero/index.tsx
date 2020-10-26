@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useRef, useState} from 'react';
 import {
   Animated,
@@ -6,10 +7,9 @@ import {
   PanResponderInstance,
   View,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {Screen} from '../../../components';
 import {useColor, useDriver} from '../../../hooks';
 import {Theme, colorWithOpacity, useRootSelector} from '../../../utils';
-import {Screen} from '../../../components';
 
 const charSize = 50;
 const charSpeed = 40;
@@ -130,10 +130,10 @@ export const Archero = memo(function Archero() {
     }, fps);
   };
 
-  const onLayout = (event: LayoutChangeEvent) => {
+  const onLayout = useCallback((event: LayoutChangeEvent) => {
     const layout = event.nativeEvent.layout;
     setDimensions({width: layout.width, height: layout.height});
-  };
+  }, []);
 
   const navBack = useCallback(() => goBack(), [goBack]);
 

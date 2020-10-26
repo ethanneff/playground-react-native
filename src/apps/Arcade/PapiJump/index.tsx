@@ -1,15 +1,15 @@
-import React, {memo, useCallback, useEffect} from 'react';
-import {Animated, Easing, StyleSheet, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import React, {memo, useCallback, useEffect, useRef} from 'react';
+import {Animated, Easing, StyleSheet, View} from 'react-native';
 import {Screen} from '../../../components';
 import {useColor, useDriver, useDropShadow} from '../../../hooks';
 
 type PapiProps = {size: number; color: string};
 
-const Papi = memo(({size, color}: PapiProps) => {
+const Papi = memo(function PapiMemo({size, color}: PapiProps) {
   const dropShadow = useDropShadow();
   const useNativeDriver = useDriver();
-  const location = new Animated.ValueXY({x: 0, y: 0});
+  const location = useRef(new Animated.ValueXY({x: 0, y: 0})).current;
 
   useEffect(() => {
     const toValue = {x: 300, y: 600};

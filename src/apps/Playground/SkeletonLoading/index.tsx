@@ -1,7 +1,8 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {ScrollView, View} from 'react-native';
 import {Card, Screen, SkeletonLoader, Text} from '../../../components';
-import {useColor, useNav} from '../../../hooks';
+import {useColor} from '../../../hooks';
 import {Theme} from '../../../utils';
 
 const LoadingProfile = () => {
@@ -105,8 +106,8 @@ const LoadingSection = () => {
 };
 
 export const SkeletonLoading = memo(function PlaygroundTemplate() {
-  const nav = useNav();
-  const navBack = useCallback(nav('landing'), [nav]);
+  const {goBack} = useNavigation();
+  const navBack = useCallback(() => goBack(), [goBack]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

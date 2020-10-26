@@ -1,11 +1,11 @@
-import React, {memo, useCallback, useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
 import dayjs, {Dayjs} from 'dayjs';
+import React, {memo, useCallback, useState} from 'react';
 import {v4} from 'uuid';
-import {RateApp} from '../../../features';
 import {Button, Modal, Screen, Text} from '../../../components';
-import {useNav} from '../../../hooks';
-import {Reminders} from './Reminders';
+import {RateApp} from '../../../features';
 import {CreateReminderModal} from './CreateReminderModal';
+import {Reminders} from './Reminders';
 
 type ReminderType = 'one time' | 'repeat' | 'location';
 export type Reminder = {
@@ -27,7 +27,7 @@ type State = {
 };
 
 export const ReminderExample = memo(function PlaygroundReminder() {
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const [form, setForm] = useState<State>({
     type: 'one time',
     reminders: [],
@@ -111,7 +111,7 @@ export const ReminderExample = memo(function PlaygroundReminder() {
   const [showRate, setShowRate] = useState(false);
 
   const handleRate = (value: boolean) => () => setShowRate(value);
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <>

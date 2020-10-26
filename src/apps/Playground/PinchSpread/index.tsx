@@ -1,7 +1,8 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {Animated, PanResponder, StyleSheet} from 'react-native';
 import {Screen, Text} from '../../../components';
-import {useColor, useNav} from '../../../hooks';
+import {useColor} from '../../../hooks';
 import {GestureHandler} from './logic';
 
 const minTouches = 2;
@@ -10,7 +11,7 @@ const title = `pinch or spread the screen with ${minTouches} fingers minimum`;
 export const PinchSpread = memo(function PinchSpread() {
   const [state, setState] = useState({pinchCount: 0, spreadCount: 0});
   const color = useColor();
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const styles = StyleSheet.create({
     container: {backgroundColor: color.light, flex: 1},
   });
@@ -28,7 +29,7 @@ export const PinchSpread = memo(function PinchSpread() {
       }
     },
   });
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen onLeftPress={navBack} title="Pinch Spread">

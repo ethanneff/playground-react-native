@@ -1,7 +1,7 @@
 import React from 'react';
-import {ReactTestRenderer, act} from 'react-test-renderer';
-import {mockRenderer} from '../../../../mocks/Renderer';
+import {act, ReactTestRenderer} from 'react-test-renderer';
 import {Ball} from '..';
+import {mockRenderer} from '../../../../mocks/Renderer';
 
 const getBallLocation = (tree: ReactTestRenderer) => {
   const ball = tree.root.findByProps({testID: 'ball'});
@@ -22,7 +22,7 @@ describe('ball', () => {
     const leftNav = tree.root.findByProps({testID: 'leftNav'});
     act(() => leftNav.props.onPress());
 
-    expect(navigation.navigate).toBeCalledWith('landing');
+    expect(navigation.goBack).toBeCalled();
   });
 
   it('handles initial state', () => {

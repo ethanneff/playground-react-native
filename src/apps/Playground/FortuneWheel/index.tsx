@@ -1,6 +1,7 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useMemo, useState} from 'react';
 import {Screen, Text} from '../../../components';
-import {useColor, useNav} from '../../../hooks';
+import {useColor} from '../../../hooks';
 import {Wheel} from './Wheel';
 
 const useSegments = () => {
@@ -29,14 +30,14 @@ const useSegments = () => {
 
 export const FortuneWheel = memo(function PlaygroundFortuneWheel() {
   const segments = useSegments();
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const [winner, setWinner] = useState(null);
 
   const onComplete = useCallback((a) => {
     setWinner(a.display);
   }, []);
 
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   // TODO: fix text on android
   // TODO: increase duration based on spin

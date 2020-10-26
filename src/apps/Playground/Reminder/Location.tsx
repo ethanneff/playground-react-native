@@ -1,5 +1,4 @@
 import React, {memo, useCallback} from 'react';
-
 import {v4} from 'uuid';
 import {Item} from './Item';
 
@@ -9,7 +8,11 @@ interface LocationItem {
   subtitle?: string;
 }
 
-export const Location = memo(function Location() {
+interface Props {
+  onPress: (value: string) => () => void;
+}
+
+export const Location = memo(function Location({onPress}: Props) {
   const locations: LocationItem[] = [
     {
       id: v4(),
@@ -32,7 +35,7 @@ export const Location = memo(function Location() {
     },
   ];
 
-  const onPress = useCallback(() => undefined, []);
+  const onItemPress = useCallback((index: string) => onPress(index), [onPress]);
 
   return (
     <>
@@ -41,7 +44,7 @@ export const Location = memo(function Location() {
           description={location.subtitle}
           key={location.id}
           marginBottom={index !== locations.length - 1}
-          onPress={onPress}
+          onPress={onItemPress(location.id)}
           title={location.title}
         />
       ))}

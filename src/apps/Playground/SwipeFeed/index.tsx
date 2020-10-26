@@ -1,3 +1,5 @@
+import {useNavigation} from '@react-navigation/native';
+import dayjs, {Dayjs} from 'dayjs';
 import React, {memo, useCallback, useRef, useState} from 'react';
 import {
   Animated,
@@ -6,10 +8,9 @@ import {
   PanResponder,
   View,
 } from 'react-native';
-import dayjs, {Dayjs} from 'dayjs';
 import {v4} from 'uuid';
 import {Card, Icon, Screen, Text, TouchableOpacity} from '../../../components';
-import {useColor, useDriver, useDropShadow, useNav} from '../../../hooks';
+import {useColor, useDriver, useDropShadow} from '../../../hooks';
 import {getWidth} from '../../../models';
 import {Theme, useRootSelector} from '../../../utils';
 
@@ -329,8 +330,8 @@ const ImagePlaceholder = memo(function ImagePlaceholder() {
 });
 
 export const SwipeFeed = memo(function SwipeFeed() {
-  const nav = useNav();
-  const navBack = useCallback(nav('landing'), [nav]);
+  const {goBack} = useNavigation();
+  const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <Screen onLeftPress={navBack} title="Swipe Feed">
       <View style={{padding: Theme.padding.p04}}>

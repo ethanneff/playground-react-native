@@ -7,7 +7,7 @@ module.exports = {
     'plugin:react/all',
     'plugin:react-native/all',
   ],
-  plugins: ['import', '@typescript-eslint'],
+  plugins: ['@typescript-eslint'],
   ignorePatterns: [
     'node_modules/',
     'coverage/',
@@ -18,14 +18,13 @@ module.exports = {
   ],
   rules: {
     // add
-    'sort-imports': ['warn', {ignoreDeclarationSort: true}],
-    'import/order': 'warn',
     'react/function-component-definition': [
       'warn',
       {namedComponents: 'arrow-function', unnamedComponents: 'arrow-function'},
     ],
     // ignore (outside prettier and typescript rules)
     '@typescript-eslint/no-var-requires': 'off',
+    'react/require-default-props': 'off',
     'react/jsx-indent': 'off',
     'react/jsx-indent-props': 'off',
     'react/jsx-closing-bracket-location': 'off',

@@ -1,11 +1,11 @@
-import React, {memo, useCallback, useState} from 'react';
 import {Dayjs} from 'dayjs';
+import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {Button, Modal, Text} from '../../../components';
 import {Theme} from '../../../utils';
+import {Location} from './Location';
 import {OneTime} from './OneTime';
 import {Radio} from './Radio';
-import {Location} from './Location';
 import {Repeat} from './Repeat';
 
 type ReminderType = 'One time' | 'Repeat' | 'Location';
@@ -20,6 +20,7 @@ interface Props {
 export const CreateReminderModal = memo(function CreateReminderModal({
   onBackgroundPress,
   onOneTimePress,
+  onLocationPress,
 }: Props) {
   const [state, setState] = useState<ReminderType>('One time');
   const styles = StyleSheet.create({
@@ -52,7 +53,7 @@ export const CreateReminderModal = memo(function CreateReminderModal({
       ) : state === 'Repeat' ? (
         <Repeat />
       ) : state === 'Location' ? (
-        <Location />
+        <Location onPress={onLocationPress} />
       ) : (
         <Text title="invalid form type" />
       )}

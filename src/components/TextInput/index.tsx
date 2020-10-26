@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useCallback, useRef, useState} from 'react';
 import {
   KeyboardTypeOptions,
   TextInput as Original,
@@ -9,9 +9,9 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
+import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 import {Button} from '../Button';
-import {useColor} from '../../hooks';
 import {Icon} from '../Icon';
 
 /*
@@ -114,15 +114,18 @@ export const TextInput = ({
   const noTitle = title.length === 0;
   const containerStyles = [flex && styles.flex, containerStyle];
 
-  const onFocus = () => setFocus(true);
-  const onBlur = () => setFocus(false);
-  const focusOnInput = () => textInput.current && textInput.current.focus();
-  const textClear = () => {
+  const onFocus = useCallback(() => setFocus(true), []);
+  const onBlur = useCallback(() => setFocus(false), []);
+  const focusOnInput = useCallback(
+    () => textInput.current && textInput.current.focus(),
+    [],
+  );
+  const textClear = useCallback(() => {
     if (textInput.current) {
       textInput.current.clear();
     }
     onChangeText('');
-  };
+  }, [onChangeText]);
 
   return (
     <View style={containerStyles}>

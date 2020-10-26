@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {Animated, Easing, StyleSheet, View} from 'react-native';
 import {LinearGradient, MaskedView} from '../../conversions';
 import {useColor, useDriver} from '../../hooks';
@@ -26,7 +26,7 @@ export const SkeletonLoader = ({
   const color = useColor();
   const bgColor = backgroundColor || color.surface;
   const fgColor = foregroundColor || color.background;
-  const value = new Animated.Value(0);
+  const value = useRef(new Animated.Value(0)).current;
   const useNativeDriver = useDriver();
   const end = {x: 1, y: 0};
   const start = {x: 0, y: 0};

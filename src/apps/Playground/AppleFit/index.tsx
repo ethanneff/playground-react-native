@@ -1,7 +1,8 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Screen} from '../../../components';
-import {useColor, useNav} from '../../../hooks';
+import {useColor} from '../../../hooks';
 import {AppleActivity, Ring} from './AppleActivity';
 
 const TAU = 2 * Math.PI;
@@ -35,9 +36,9 @@ const rings: Ring[] = [
 ];
 
 export const AppleFit = memo(function PlaygroundAppleFit() {
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const color = useColor();
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen onLeftPress={navBack} title="Apple Fit">

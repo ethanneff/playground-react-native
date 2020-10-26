@@ -1,10 +1,10 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {Screen, Text} from '../../../components';
-import {useNav} from '../../../hooks';
 
 export const Fonts = memo(function PlaygroundFonts() {
-  const nav = useNav();
-  const navBack = useCallback(nav('landing'), [nav]);
+  const {goBack} = useNavigation();
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen onLeftPress={navBack} title="Fonts">

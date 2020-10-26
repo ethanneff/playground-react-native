@@ -1,14 +1,15 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Screen, Text} from '../../../components';
-import {useColor, useNav} from '../../../hooks';
+import {useColor} from '../../../hooks';
+import {combinations, reels} from './config';
+import {Slots} from './Slots';
 import {
   getRandomReelArrays,
   getReturnPercentage,
   getWinPercentage,
 } from './utils';
-import {combinations, reels} from './config';
-import {Slots} from './Slots';
 
 const winPercentage = (getWinPercentage(combinations, reels) * 100).toFixed(2);
 const returnPercentage = (
@@ -24,7 +25,7 @@ const getInitialState = () => ({
 
 export const SlotMachine = memo(function PlaygroundSlotMachine() {
   const color = useColor();
-  const nav = useNav();
+  const {goBack} = useNavigation();
 
   const [state, setState] = useState(() => getInitialState());
   const styles = StyleSheet.create({
@@ -32,7 +33,7 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
       backgroundColor: color.background,
     },
   });
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   const onSpin = useCallback(() => {
     setState((p) => ({...p, spinning: true}));

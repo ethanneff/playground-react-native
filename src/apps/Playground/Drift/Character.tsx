@@ -6,9 +6,9 @@ import {
   setUpdateIntervalForType,
 } from 'react-native-sensors';
 import {useColor, useDriver} from '../../../hooks';
-import {getPosition} from './utils';
 import {DriftContext} from './Context';
 import {CanvasDimensions} from './Game';
+import {getPosition} from './utils';
 
 type CharacterProps = {
   canvas: CanvasDimensions;
@@ -25,7 +25,8 @@ export const Character = memo(function Character({canvas}: CharacterProps) {
     x: canvas.width / 2 - size,
     y: canvas.height / 2 - size,
   });
-  const position = new Animated.ValueXY(initialPositionRef.current);
+  const position = useRef(new Animated.ValueXY(initialPositionRef.current))
+    .current;
   const useNativeDriver = useDriver();
   const {dispatch} = useContext(DriftContext);
   const color = useColor();

@@ -1,13 +1,13 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {ScrollView, View} from 'react-native';
 import {Button, Screen, Text} from '../../../components';
-import {useNav} from '../../../hooks';
 import {ColorTheme, changeTheme, colorThemes} from '../../../models';
 import {Theme, useRootDispatch, useRootSelector} from '../../../utils';
 
 export const Colors = memo(function DebugColors() {
-  const nav = useNav();
-  const navBack = useCallback(nav('landing'), [nav]);
+  const {goBack} = useNavigation();
+  const navBack = useCallback(() => goBack(), [goBack]);
   const dispatch = useRootDispatch();
   const currentTheme = useRootSelector((state) => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));

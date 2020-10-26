@@ -1,12 +1,12 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
-import {useNav} from '../../../hooks';
 import {Screen} from '../../../components';
 import {Items} from './Items';
 import {TextField} from './TextField';
 
 export const Chat = memo(function PlaygroundChat() {
-  const nav = useNav();
-  const navBack = useCallback(nav('landing'), [nav]);
+  const {goBack} = useNavigation();
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen gutter onLeftPress={navBack} title="Chat">

@@ -7,10 +7,7 @@ import {Message, getActiveChatMessagesOrderByCreatedAt} from './Messages';
 export const Items = memo(function ChatMessageItems() {
   const itemsRef = useRef<FlatList | null>(null);
   const messages = useRootSelector(getActiveChatMessagesOrderByCreatedAt);
-  const renderItem = useCallback(
-    ({item}: {item: Message}) => <Item item={item} />,
-    [],
-  );
+  const renderItem = useCallback(({item}) => <Item item={item} />, []);
   const keyExtractor = useCallback((item: Message) => item.id, []);
 
   useEffect(() => {

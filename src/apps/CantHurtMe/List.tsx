@@ -1,12 +1,11 @@
-import React, {useCallback} from 'react';
+import React, {memo, useCallback} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import {memo} from 'react';
-import {useColor} from '../../hooks';
-import {Theme, useRootSelector} from '../../utils';
-import {getLandscapeOrientation} from '../../models';
 import {Card, Icon, Text} from '../../components';
-import {app} from './data';
+import {useColor} from '../../hooks';
+import {getLandscapeOrientation} from '../../models';
+import {Theme, useRootSelector} from '../../utils';
 import {DailyProgress} from './DailyProgress';
+import {app} from './data';
 import {ProfileLevel} from './ProfileLevel';
 
 interface Props {
@@ -22,7 +21,7 @@ export const List = memo(function List({
   const landscape = useRootSelector(getLandscapeOrientation);
   const columns = landscape ? 4 : 2;
 
-  const keyExtractor = (id: string) => app.goals.byId[id].id;
+  const keyExtractor = useCallback((id: string) => app.goals.byId[id].id, []);
 
   const styles = StyleSheet.create({
     list: {
@@ -32,27 +31,30 @@ export const List = memo(function List({
     },
   });
 
-  const onPress = () => undefined;
+  const onPress = useCallback(() => undefined, []);
 
-  const renderItem = useCallback(({item, index}) => {
-    const data = app.goals.byId[item];
-    return (
-      <Card
-        flex
-        key={data.id}
-        onPress={onPress}
-        style={{marginHorizontal: Theme.padding.p02}}>
-        <Text
-          bold
-          center
-          style={{paddingBottom: Theme.padding.p04}}
-          title={`Challenge #${index + 1}`}
-          type="h4"
-        />
-        <Text center title={data.challenge} />
-      </Card>
-    );
-  }, []);
+  const renderItem = useCallback(
+    ({item, index}) => {
+      const data = app.goals.byId[item];
+      return (
+        <Card
+          flex
+          key={data.id}
+          onPress={onPress}
+          style={{marginHorizontal: Theme.padding.p02}}>
+          <Text
+            bold
+            center
+            style={{paddingBottom: Theme.padding.p04}}
+            title={`Challenge #${index + 1}`}
+            type="h4"
+          />
+          <Text center title={data.challenge} />
+        </Card>
+      );
+    },
+    [onPress],
+  );
 
   const renderHeader = useCallback(
     () => (
@@ -88,11 +90,11 @@ export const List = memo(function List({
 
   return (
     <FlatList
+      ListHeaderComponent={renderHeader}
       contentContainerStyle={styles.list}
       data={app.goals.orderById}
       key={columns}
       keyExtractor={keyExtractor}
-      ListHeaderComponent={renderHeader}
       numColumns={columns}
       renderItem={renderItem}
     />

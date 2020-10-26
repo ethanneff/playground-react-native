@@ -1,6 +1,6 @@
+import * as d3 from 'd3-shape';
 import React, {memo, useCallback, useEffect, useRef} from 'react';
 import {Animated, Dimensions, Easing, TouchableOpacity} from 'react-native';
-import * as d3 from 'd3-shape';
 import Svg, {G, Path, Polygon, Text} from 'react-native-svg';
 import {useColor, useDriver, useDropShadow} from '../../../hooks';
 import {getNewLocation, getWinnerIndex} from './utils';
@@ -15,9 +15,7 @@ type Props = {
   size?: number;
   padAngle?: number;
   backgroundColor?: string;
-  borderColor?: string;
   textColor?: string;
-  borderWidth?: number;
   fontSize?: number;
   innerRadius?: number;
   segments: Segment[];
@@ -58,8 +56,8 @@ export const Wheel = memo(
     const angleOffset = angleOfSegment / 2;
     const spinning = useRef(false);
     const location = useRef(0);
-    const angle = new Animated.Value(0);
-    const yPosition = new Animated.Value(-1);
+    const angle = useRef(new Animated.Value(0)).current;
+    const yPosition = useRef(new Animated.Value(-1)).current;
     const arcs = d3
       .pie()(segments.map(() => 1))
       .map((arc: any, index) => {

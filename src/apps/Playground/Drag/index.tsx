@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {
   Animated,
@@ -9,7 +10,7 @@ import {
   View,
 } from 'react-native';
 import {Screen, Text} from '../../../components';
-import {useColor, useDriver, useDropShadow, useNav} from '../../../hooks';
+import {useColor, useDriver, useDropShadow} from '../../../hooks';
 
 const getPosition = (
   gestureState: PanResponderGestureState,
@@ -36,7 +37,7 @@ const getPosition = (
 };
 
 export const Drag = memo(function PlaygroundDrag() {
-  const nav = useNav();
+  const {goBack} = useNavigation();
   const color = useColor();
   const dropShadow = useDropShadow();
   const useNativeDriver = useDriver();
@@ -81,7 +82,7 @@ export const Drag = memo(function PlaygroundDrag() {
     const {x, y, height, width} = event.nativeEvent.layout;
     setCanvas({x, y, height, width});
   }, []);
-  const navBack = useCallback(nav('landing'), [nav]);
+  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen onLeftPress={navBack} title="Drag">
