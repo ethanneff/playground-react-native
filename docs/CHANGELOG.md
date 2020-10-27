@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.41.3](https://github.com/ethanneff/example/compare/v2.41.2...v2.41.3) (2020-10-27)
+
+
+### Bug Fixes
+
+* update deps ([0a4cd53](https://github.com/ethanneff/example/commit/0a4cd534e1eeeb280cdf59c50613ffe32d20c2f4))
+
 ## [2.41.2](https://github.com/ethanneff/example/compare/v2.41.1...v2.41.2) (2020-10-26)
 
 
