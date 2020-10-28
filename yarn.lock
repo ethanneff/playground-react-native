@@ -15102,10 +15102,10 @@ react-native-web-linear-gradient@1.1.1:
   resolved "https://registry.yarnpkg.com/react-native-web-linear-gradient/-/react-native-web-linear-gradient-1.1.1.tgz#3c872f099695a31d90448fa5d137f04e81ad7a11"
   integrity sha512-tjah65P8tSwMi/bzi+/JEinpyhL4875npOyHvm51HfF3uq8XmD6GzlxU7LIIgpqXw7GeI/1UghBCKHAoGIAVeQ==
 
-react-native-web@0.14.4:
-  version "0.14.4"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.14.4.tgz#b26abe160dd77239907761da033424944aead9a9"
-  integrity sha512-xbsFK/BOR9VEwep/LeFi8V8BgbWvlJRrEIAnEgCxU95+sCR3Hty9dH/JSGeclMqlwBLW3WlEBRGtUAl6ybTcjA==
+react-native-web@0.14.5:
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.14.5.tgz#3a6a4e69ec9eee6db585e63fdefa3c6a253d2017"
+  integrity sha512-Pax8OsI+mBzN7ftuoqY5GJ5liIvrSNXiigqsDFa2/8Rh2InO9A3t25DOQEniQ+bTbxuBz+iSU8OCVfJU6Flemw==
   dependencies:
     array-find-index "^1.0.2"
     create-react-class "^15.6.2"
