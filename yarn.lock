@@ -3059,10 +3059,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-9.0.11.tgz#df40261fdd1e3be297ee2a1cd8222b7e9f9e714b"
   integrity sha512-2HMvEnO1YxIgQ+p9xgJzUkI805r7kkt70EyR2oVLeu/WGObmbS+1YCOeaeOuuqT8TZtynRPAeJB/QPk1Zchuog==
 
-"@react-navigation/bottom-tabs@5.10.1":
-  version "5.10.1"
-  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.10.1.tgz#12acaedd2696b6c9795e1f376d9f034a2cb061a4"
-  integrity sha512-A33hcWi1pn9sTVkALWth49jZAc/OMtjeiv3z7N0DqENEDnxoDaekLXRcCUIu97V6McALj/37JNoqken3uvHVWQ==
+"@react-navigation/bottom-tabs@5.10.2":
+  version "5.10.2"
+  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.10.2.tgz#f45bfe13d43153af804f80b087b3c7f5b4e7bb2d"
+  integrity sha512-Kys8YZ6hQtNqHXK0JyXSkDbRkUQKb07RaQ/EOGjLrCTUKWlBOrq8CdkEcBA/KkoBRYK4vG3qEKT3B915zlyWqQ==
   dependencies:
     color "^3.1.3"
     react-native-iphone-x-helper "^1.3.0"
