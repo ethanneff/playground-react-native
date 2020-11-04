@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.41.6](https://github.com/ethanneff/example/compare/v2.41.5...v2.41.6) (2020-11-04)
+
+
+### Bug Fixes
+
+* add exclude search ([d44ff80](https://github.com/ethanneff/example/commit/d44ff8040dc63b4fbf38053b4f054a8dcb611465))
+* update deps ([7f2f507](https://github.com/ethanneff/example/commit/7f2f507647c0ef1fe9e203d1de6989362770eaf3))
+* update deps ([1836c42](https://github.com/ethanneff/example/commit/1836c426fac4f16d32515216473c883eb2887c74))
+
 ## [2.41.5](https://github.com/ethanneff/example/compare/v2.41.4...v2.41.5) (2020-11-02)
 
 
