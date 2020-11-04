@@ -13,5 +13,12 @@
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "workbench.editor.showTabs": true,
   "workbench.editor.labelFormat": "short",
-  "typescript.preferences.importModuleSpecifier": "relative"
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "search.exclude": {
+    "**/node_modules/": true,
+    "**/coverage/": true,
+    "**/yarn.lock": true,
+    "**/Podfile.lock": true,
+    "**/__snapshots__/*": true
+  }
 }
