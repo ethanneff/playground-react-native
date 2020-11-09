@@ -1,5 +1,5 @@
-import React, {memo} from 'react';
 import Original from '@mdi/react';
+import React, {memo} from 'react';
 import {Icons} from './config';
 
 interface Props {
