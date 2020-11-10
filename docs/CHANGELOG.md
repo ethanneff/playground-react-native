@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.41.7](https://github.com/ethanneff/example/compare/v2.41.6...v2.41.7) (2020-11-10)
+
+
+### Bug Fixes
+
+* remove barrel file ([9368d29](https://github.com/ethanneff/example/commit/9368d29a591e616d96b18f891dc78ff872884bf2))
+* update deps ([211e292](https://github.com/ethanneff/example/commit/211e29253f2edec6eb4ea58c8e7896d9d9afeae7))
+
 ## [2.41.6](https://github.com/ethanneff/example/compare/v2.41.5...v2.41.6) (2020-11-04)
 
 
