@@ -166,13 +166,18 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -564,13 +569,18 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -962,13 +972,18 @@ exports[`Dialog component renders correctly with props 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {

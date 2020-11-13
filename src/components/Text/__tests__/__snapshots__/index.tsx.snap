@@ -166,13 +166,18 @@ exports[`renders body1 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -471,13 +476,18 @@ exports[`renders body2 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -776,13 +786,18 @@ exports[`renders button 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -1081,13 +1096,18 @@ exports[`renders button empty 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -1386,13 +1406,18 @@ exports[`renders caption 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -1691,13 +1716,18 @@ exports[`renders correctly 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -1996,13 +2026,18 @@ exports[`renders empty 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -2301,13 +2336,18 @@ exports[`renders h1 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -2606,13 +2646,18 @@ exports[`renders h3 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -2911,13 +2956,18 @@ exports[`renders h4 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -3216,13 +3266,18 @@ exports[`renders h5 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -3521,13 +3576,18 @@ exports[`renders h6 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -3826,13 +3886,18 @@ exports[`renders overline 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -4131,13 +4196,18 @@ exports[`renders subtitle1 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -4436,13 +4506,18 @@ exports[`renders subtitle2 1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
@@ -4741,13 +4816,18 @@ exports[`renders type="h2"   1`] = `
           onTransitionStart={[Function]}
           pointerEvents="box-none"
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "overflow": undefined,
+              },
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
           }
           transitionSpec={
             Object {
