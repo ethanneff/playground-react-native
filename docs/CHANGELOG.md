@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.41.9](https://github.com/ethanneff/example/compare/v2.41.8...v2.41.9) (2020-11-13)
+
+
+### Bug Fixes
+
+* update snaps ([04936e8](https://github.com/ethanneff/example/commit/04936e8c8fbbe0e2b54e752e0b18fb9d88543db4))
+
 ## [2.41.8](https://github.com/ethanneff/example/compare/v2.41.7...v2.41.8) (2020-11-13)
 
 
