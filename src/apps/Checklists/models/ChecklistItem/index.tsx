@@ -4,21 +4,21 @@ import {RootAction, RootState} from '../../../../providers';
 import {getCurrentChecklist} from '../Checklist';
 
 /* ACTIONS */
-export const createChecklistItem = createAction('checklistItem/create')<
-  ChecklistItem
->();
-export const updateChecklistItem = createAction('checklistItem/update')<
-  ChecklistItem
->();
-export const removeChecklistItem = createAction('checklistItem/remove')<
-  string
->();
+export const createChecklistItem = createAction(
+  'checklistItem/create',
+)<ChecklistItem>();
+export const updateChecklistItem = createAction(
+  'checklistItem/update',
+)<ChecklistItem>();
+export const removeChecklistItem = createAction(
+  'checklistItem/remove',
+)<string>();
 export const toggleChecklistItemComplete = createAction(
   'checklistItem/toggleComplete',
 )<string>();
-export const setActiveChecklistItem = createAction('checklistItem/setActive')<
-  string
->();
+export const setActiveChecklistItem = createAction(
+  'checklistItem/setActive',
+)<string>();
 
 /* SELECTORS */
 export const getChecklistItems = (state: RootState): ChecklistItems =>

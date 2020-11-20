@@ -1,5 +1,5 @@
-import React, {memo, useCallback} from 'react';
 import {useNavigation} from '@react-navigation/native';
+import React, {memo, useCallback} from 'react';
 import {ScrollView} from 'react-native';
 import {Button, Screen, Text} from '../../components';
 
@@ -18,6 +18,7 @@ export default memo(function Admin() {
         <Button onPress={onPress('focus')} title="focus" />
         <Button onPress={onPress('journal')} title="journal" />
         <Button onPress={onPress('progress')} title="progress" />
+        <Button onPress={onPress('comfort-zone')} title="comfort zone" />
         <Button onPress={onPress('the-one-thing')} title="the one thing" />
 
         <Text emphasis="medium" title="Navigation" type="h3" />

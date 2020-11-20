@@ -1,6 +1,6 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import React, {Suspense, lazy, memo} from 'react';
+import React, {lazy, memo, Suspense} from 'react';
 import {ActivityIndicator, Alert, Notification} from '../../components';
 import {rootMode, rootScreenOptions} from './configs';
 import {usePersistedState} from './usePersistedState';
@@ -14,6 +14,7 @@ const CantHurtMe = lazy(() => import('../../apps/CantHurtMe'));
 const Checklists = lazy(() => import('../../apps/Checklists'));
 const Focus = lazy(() => import('../../apps/Focus'));
 const Journal = lazy(() => import('../../apps/Journal'));
+const ComfortZone = lazy(() => import('../../apps/ComfortZone'));
 const TheOneThing = lazy(() => import('../../apps/TheOneThing'));
 
 const Stack = createStackNavigator();
@@ -51,6 +52,7 @@ export const Navigation = memo(function Navigation() {
           <Stack.Screen component={Checklists} name="checklists" />
           <Stack.Screen component={Focus} name="focus" />
           <Stack.Screen component={Journal} name="journal" />
+          <Stack.Screen component={ComfortZone} name="comfort-zone" />
           <Stack.Screen component={TheOneThing} name="the-one-thing" />
           <Stack.Screen component={Notification} name="notification" />
           <Stack.Screen component={Alert} name="alert" />

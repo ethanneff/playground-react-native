@@ -8,9 +8,9 @@ import {RootAction} from '../../providers';
 import {logout} from '../Auth';
 
 /* ACTIONS */
-export const updateNetwork = createAction('network/UPDATE_NETWORK')<
-  NetInfoState
->();
+export const updateNetwork = createAction(
+  'network/UPDATE_NETWORK',
+)<NetInfoState>();
 
 /* INTERFACES */
 export type NetworkState = {

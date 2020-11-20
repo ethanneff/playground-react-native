@@ -21,15 +21,15 @@ export const createQuestionnaire = createCustomAction(
     },
   }),
 );
-export const updateQuestionnaire = createAction('questionnaires/UPDATE')<
-  Questionnaire
->();
-export const removeQuestionnaire = createAction('questionnaires/REMOVE')<
-  string
->();
-export const selectQuestionnaire = createAction('questionnaires/SELECT')<
-  string
->();
+export const updateQuestionnaire = createAction(
+  'questionnaires/UPDATE',
+)<Questionnaire>();
+export const removeQuestionnaire = createAction(
+  'questionnaires/REMOVE',
+)<string>();
+export const selectQuestionnaire = createAction(
+  'questionnaires/SELECT',
+)<string>();
 
 /* SELECTORS */
 export const getQuestionnaires = (state: RootState): QuestionnairesObject =>

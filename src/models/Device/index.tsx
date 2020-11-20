@@ -5,9 +5,9 @@ import {logout} from '../Auth';
 
 /* ACTIONS */
 export const loadDevice = createAction('device/LOAD')<DeviceInfo>();
-export const changeAppStatus = createAction('device/UPDATE_STATUS')<
-  AppStateStatus
->();
+export const changeAppStatus = createAction(
+  'device/UPDATE_STATUS',
+)<AppStateStatus>();
 export const changeKeyboardStatus = createAction(
   'device/UPDATE_KEYBOARD_VISIBILITY',
 )<boolean>();

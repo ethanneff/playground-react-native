@@ -4,9 +4,9 @@ import {RootAction, RootState} from '../../providers';
 import {logout} from '../Auth';
 
 /* ACTIONS */
-export const updateDimension = createAction('dimension/UPDATE_DIMENSION')<
-  DimensionState
->();
+export const updateDimension = createAction(
+  'dimension/UPDATE_DIMENSION',
+)<DimensionState>();
 
 /* SELECTORS */
 export const getLandscapeOrientation = (state: RootState): boolean =>
