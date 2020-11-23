@@ -28,7 +28,7 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "jsx": "react-jsx"
+    "jsx": "react"
   },
   "include": [
     "src"

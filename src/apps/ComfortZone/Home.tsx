@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {View,ScrollView} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import {
   Button,
   Calendar,
