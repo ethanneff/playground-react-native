@@ -163,7 +163,7 @@ exports[`renders body1 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -473,7 +473,7 @@ exports[`renders body2 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -783,7 +783,7 @@ exports[`renders button 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -1093,7 +1093,7 @@ exports[`renders button empty 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -1403,7 +1403,7 @@ exports[`renders caption 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -1713,7 +1713,7 @@ exports[`renders correctly 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -2023,7 +2023,7 @@ exports[`renders empty 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -2333,7 +2333,7 @@ exports[`renders h1 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -2643,7 +2643,7 @@ exports[`renders h3 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -2953,7 +2953,7 @@ exports[`renders h4 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -3263,7 +3263,7 @@ exports[`renders h5 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -3573,7 +3573,7 @@ exports[`renders h6 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -3883,7 +3883,7 @@ exports[`renders overline 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -4193,7 +4193,7 @@ exports[`renders subtitle1 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -4503,7 +4503,7 @@ exports[`renders subtitle2 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -4813,7 +4813,7 @@ exports[`renders type="h2"   1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [

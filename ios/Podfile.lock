@@ -690,8 +690,8 @@ PODS:
     - Firebase/RemoteConfig (~> 7.1.0)
     - React-Core
     - RNFBApp
-  - RNGestureHandler (1.8.0):
-    - React
+  - RNGestureHandler (1.9.0):
+    - React-Core
   - RNRate (1.2.4):
     - React
   - RNReanimated (1.13.2):
@@ -994,7 +994,7 @@ SPEC CHECKSUMS:
   RNFBCrashlytics: 2ff8548152020b4eeba1963f60bb5e35c3dcfc44
   RNFBFirestore: ee3188e5434bb9dbc6ff99d22be72acf10f0c238
   RNFBRemoteConfig: 8699e82aa793d74e60c1e9e0a568e0fee4bddc3f
-  RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
+  RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
   RNRate: 15b861025a7821730761fce7f44561ce7e0b2de0
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
   RNScreens: 2ad555d4d9fa10b91bb765ca07fe9b29d59573f0

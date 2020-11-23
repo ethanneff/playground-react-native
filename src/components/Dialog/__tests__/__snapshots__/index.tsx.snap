@@ -163,7 +163,7 @@ exports[`Dialog component renders correctly with defaults and  1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -566,7 +566,7 @@ exports[`Dialog component renders correctly with defaults and hidden 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -969,7 +969,7 @@ exports[`Dialog component renders correctly with props 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [

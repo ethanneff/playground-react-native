@@ -163,7 +163,7 @@ exports[`renders correctly 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -500,7 +500,7 @@ exports[`renders correctly with clear and max badge 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
@@ -867,7 +867,7 @@ exports[`renders correctly without defaults 1`] = `
           onGestureCanceled={[Function]}
           onGestureEnd={[Function]}
           onOpen={[Function]}
-          onTransitionStart={[Function]}
+          onTransition={[Function]}
           pointerEvents="box-none"
           style={
             Array [
