@@ -1,5 +1,21 @@
 # Changelog
 
+# [2.42.0](https://github.com/ethanneff/example/compare/v2.41.9...v2.42.0) (2020-11-24)
+
+
+### Bug Fixes
+
+* make ci work again ([2124d39](https://github.com/ethanneff/example/commit/2124d39dbc8e779e32cfee3d36cb6c4eeb30cacf))
+* remove gesture handler import ([daab83b](https://github.com/ethanneff/example/commit/daab83b027708f2383b095bc42c846959eaf4213))
+* update deps ([989f92f](https://github.com/ethanneff/example/commit/989f92fee1d59dbc3045a0a6c90b796ca1c90dda))
+* update deps ([5f47383](https://github.com/ethanneff/example/commit/5f4738385e4202724f8065968af10589bc23070b))
+* update deps ([e0ac00c](https://github.com/ethanneff/example/commit/e0ac00cdca761bda81df813b8f526ba041e28d75))
+
+
+### Features
+
+* add comfort zone app ([6158c75](https://github.com/ethanneff/example/commit/6158c757e419ebf1daa3ca9989c2544a5ecf3c99))
+
 ## [2.41.9](https://github.com/ethanneff/example/compare/v2.41.8...v2.41.9) (2020-11-13)
 
 
