@@ -686,7 +686,7 @@ PODS:
     - Firebase/Firestore (~> 7.1.0)
     - React-Core
     - RNFBApp
-  - RNFBRemoteConfig (10.0.1):
+  - RNFBRemoteConfig (10.1.0):
     - Firebase/RemoteConfig (~> 7.1.0)
     - React-Core
     - RNFBApp
@@ -993,7 +993,7 @@ SPEC CHECKSUMS:
   RNFBAuth: 55efed3bceda1d53196bb1671a446ec4f0a7bfd7
   RNFBCrashlytics: 2ff8548152020b4eeba1963f60bb5e35c3dcfc44
   RNFBFirestore: ee3188e5434bb9dbc6ff99d22be72acf10f0c238
-  RNFBRemoteConfig: 8699e82aa793d74e60c1e9e0a568e0fee4bddc3f
+  RNFBRemoteConfig: 5d00d02901bbe4524485235826b0a9d46e028b23
   RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
   RNRate: 15b861025a7821730761fce7f44561ce7e0b2de0
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
