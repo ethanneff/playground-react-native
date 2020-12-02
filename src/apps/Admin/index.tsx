@@ -20,6 +20,7 @@ export default memo(function Admin() {
         <Button onPress={onPress('progress')} title="progress" />
         <Button onPress={onPress('comfort-zone')} title="comfort zone" />
         <Button onPress={onPress('the-one-thing')} title="the one thing" />
+        <Button onPress={onPress('complete')} title="complete" />
 
         <Text emphasis="medium" title="Navigation" type="h3" />
         <Button onPress={onPress('notification')} title="notification" />

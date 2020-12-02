@@ -16,6 +16,7 @@ const Focus = lazy(() => import('../../apps/Focus'));
 const Journal = lazy(() => import('../../apps/Journal'));
 const ComfortZone = lazy(() => import('../../apps/ComfortZone'));
 const TheOneThing = lazy(() => import('../../apps/TheOneThing'));
+const Complete = lazy(() => import('../../apps/Complete'));
 
 const Stack = createStackNavigator();
 const linking = {
@@ -51,6 +52,7 @@ export const Navigation = memo(function Navigation() {
           <Stack.Screen component={CantHurtMe} name="cant-hurt-me" />
           <Stack.Screen component={Checklists} name="checklists" />
           <Stack.Screen component={Focus} name="focus" />
+          <Stack.Screen component={Complete} name="complete" />
           <Stack.Screen component={Journal} name="journal" />
           <Stack.Screen component={ComfortZone} name="comfort-zone" />
           <Stack.Screen component={TheOneThing} name="the-one-thing" />
