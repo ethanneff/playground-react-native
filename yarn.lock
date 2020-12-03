@@ -2823,9 +2823,9 @@
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-3.0.3.tgz#830167fd757ba70ac638747ba3169b2dbae60330"
 
-"@react-native-firebase/analytics@10.1.0":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-10.1.0.tgz#8b503f08051ff3cf730ad83d418a307ffd32f11c"
+"@react-native-firebase/analytics@10.1.1":
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-10.1.1.tgz#1b66ec348e522c9919e516e2218206ff213d8b06"
 
 "@react-native-firebase/app@10.1.0":
   version "10.1.0"
@@ -2834,23 +2834,23 @@
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/auth@10.1.0":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-10.1.0.tgz#95584a428b52bef4850ff8ba47f8fb23e4e1e71d"
+"@react-native-firebase/auth@10.1.1":
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-10.1.1.tgz#484827b99f3b5b9e7c60400cd76f800e25c91d77"
 
-"@react-native-firebase/crashlytics@10.1.0":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-10.1.0.tgz#ea17e9c5459c7029d4bc238487ebc8773073b139"
+"@react-native-firebase/crashlytics@10.1.1":
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-10.1.1.tgz#059cf59bcef09807ef6f5c15d208fd21ca8ae986"
   dependencies:
     stacktrace-js "^2.0.0"
 
-"@react-native-firebase/firestore@10.1.0":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-10.1.0.tgz#ee18d1e8b1153490470255db50711a526cfb386c"
+"@react-native-firebase/firestore@10.1.1":
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-10.1.1.tgz#98e34e741463876d16dd543e23fe13354cb38a8d"
 
-"@react-native-firebase/remote-config@10.1.0":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-10.1.0.tgz#f99da58e7723956b54b5b0df5785adc3d3b55a09"
+"@react-native-firebase/remote-config@10.1.1":
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-10.1.1.tgz#aa4b28ee2994d004cbd54fe2fb63e79bc8002017"
 
 "@react-navigation/bottom-tabs@5.11.2":
   version "5.11.2"
