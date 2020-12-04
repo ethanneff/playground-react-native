@@ -14,6 +14,7 @@ import {Theme, useRootSelector} from '../../utils';
 // TODO: add list add text input
 // TODO: add card add text input
 // TODO: scroll down on card add
+// TODO: make color scheme similar to todoist
 
 type Column = {
   name: string;
