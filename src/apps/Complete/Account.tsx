@@ -4,6 +4,11 @@ import {Card, Screen, Text} from '../../components';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 
+// TODO: figure out a place for this
+// TODO: add reminders
+// TODO: add profile information
+// TODO: add payment
+
 export const Account = memo(function Account() {
   const color = useColor();
 

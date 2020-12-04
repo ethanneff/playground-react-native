@@ -1,21 +1,29 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {ScrollView} from 'react-native';
-import {Card, Screen, Text} from '../../components';
+import {Card, Screen, Text, TextInput} from '../../components';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
+
+// TODO: add inbox list
+// TODO: add add button
+// TODO: add organize button
 
 export const Capture = memo(function Capture() {
   const color = useColor();
   const {navigate} = useNavigation();
   const navBack = useCallback(() => navigate('admin'), [navigate]);
+  const [message, setMessage] = useState('');
+  const onChangeText = useCallback((value: string) => setMessage(value), []);
 
   return (
     <Screen onLeftPress={navBack} title="Capture">
       <ScrollView
-        contentContainerStyle={{
-          padding: Theme.padding.p04,
-        }}
+        contentContainerStyle={
+          {
+            // padding: Theme.padding.p04,
+          }
+        }
         style={{backgroundColor: color.surface, flex: 1}}>
         <Card>
           <Text
@@ -29,6 +37,11 @@ export const Capture = memo(function Capture() {
             emphasis="medium"
             title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
             type="h4"
+          />
+          <TextInput
+            onChangeText={onChangeText}
+            placeholder="hello"
+            value={message}
           />
         </Card>
       </ScrollView>

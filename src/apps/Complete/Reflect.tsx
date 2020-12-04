@@ -4,6 +4,11 @@ import {Card, Screen, Text} from '../../components';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 
+// TODO: add journal
+// TODO: add historical data
+// TODO: add purpose
+// TODO: add goals
+
 export const Reflect = memo(function Reflect() {
   const color = useColor();
 

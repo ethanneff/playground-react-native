@@ -3,6 +3,15 @@ import {ScrollView} from 'react-native';
 import {Card, Screen, Text} from '../../components';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
+// TODO: add landing page (actionables + record)
+// TODO: add navigation to columsn
+// TODO: rename items/cards columns/list
+// TODO: add list pagination lock
+// TODO: fix list height
+// TODO: add textInput for each item
+// TODO: add list add text input
+// TODO: add card add text input
+// TODO: scroll down on card add
 
 export const Focus = memo(function Focus() {
   const color = useColor();
