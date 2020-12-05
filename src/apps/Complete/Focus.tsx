@@ -32,7 +32,7 @@ export const Focus = memo(function Focus() {
   const listWidth = width * 0.6;
   const listSize = listWidth + Theme.padding.p04;
   const borderRadius = Theme.padding.p02;
-  const columnFlatList = useRef<FlatList | null>(null);
+  const listRef = useRef<FlatList | null>(null);
 
   const [lists, setLists] = useState<List[]>([
     {
@@ -175,8 +175,8 @@ export const Focus = memo(function Focus() {
   );
 
   const onListSizeChange = useCallback(() => {
-    columnFlatList.current?.scrollToIndex({index: lists.length - 1});
-  }, [columnFlatList, lists]);
+    listRef.current?.scrollToIndex({index: lists.length - 1});
+  }, [listRef, lists]);
 
   return (
     <Screen title="Focus">
@@ -189,7 +189,7 @@ export const Focus = memo(function Focus() {
         horizontal
         keyExtractor={getItemId}
         onContentSizeChange={onListSizeChange}
-        ref={columnFlatList}
+        ref={listRef}
         renderItem={renderList}
         showsHorizontalScrollIndicator={false}
         snapToAlignment="start"
