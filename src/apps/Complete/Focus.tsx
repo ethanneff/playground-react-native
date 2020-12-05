@@ -8,7 +8,6 @@ import {Theme, useRootSelector} from '../../utils';
 // TODO: add landing page (actionables + record)
 // TODO: add navigation to columns
 // TODO: rename items/cards lists/list
-// TODO: fix list height
 // TODO: add textInput for each item
 // TODO: add list add text input
 // TODO: add card add text input
@@ -123,6 +122,7 @@ export const Focus = memo(function Focus() {
             padding: Theme.padding.p02,
             marginRight: Theme.padding.p04,
           }}>
+        <View>
           <View
             style={{
               flexDirection: 'row',
