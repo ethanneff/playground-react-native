@@ -12,6 +12,9 @@ import {Theme, useRootSelector} from '../../utils';
 // TODO: add card add text input
 // TODO: make color scheme similar to todoist
 // TODO: figure out max height for list (not 500)
+// TODO: break up card and list into separate files
+// TODO: center each list on scroll
+// TODO: prevent scroll to end on load
 
 type List = {
   name: string;
