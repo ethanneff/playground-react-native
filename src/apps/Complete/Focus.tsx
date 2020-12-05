@@ -11,7 +11,6 @@ import {Theme, useRootSelector} from '../../utils';
 // TODO: add textInput for each item
 // TODO: add list add text input
 // TODO: add card add text input
-// TODO: scroll down on card add
 // TODO: make color scheme similar to todoist
 
 type List = {
@@ -32,6 +31,7 @@ export const Focus = memo(function Focus() {
   const listSize = listWidth + Theme.padding.p04;
   const borderRadius = Theme.padding.p02;
   const listRef = useRef<FlatList | null>(null);
+  const cardsRef = useRef<{[key in string]: FlatList | null}>({});
 
   const [lists, setLists] = useState<List[]>([
     {
@@ -110,45 +110,68 @@ export const Focus = memo(function Focus() {
     [borderRadius, color.surface],
   );
 
+  const onCardRef = useCallback(
+    (listId: string) => (ref: FlatList | null) => {
+      cardsRef.current[listId] = ref;
+    },
+    [],
+  );
+
+  const onCardSizeChange = (listId: string) => () => {
+    cardsRef.current[listId]?.scrollToEnd();
+  };
+
   const renderList = useCallback(
     ({item}) => {
       return (
-        <View
-          key={item.id}
-          style={{
-            borderRadius,
-            width: listWidth,
-            backgroundColor: color.background,
-            padding: Theme.padding.p02,
-            marginRight: Theme.padding.p04,
-          }}>
         <View>
           <View
+            key={item.id}
             style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              paddingBottom: Theme.padding.p04,
+              borderRadius,
+              width: listWidth,
+              backgroundColor: color.background,
+              padding: Theme.padding.p02,
+              marginRight: Theme.padding.p04,
             }}>
-            <Text emphasis="medium" title={item.name} type="h4" />
-            <Button title="edit" />
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                paddingBottom: Theme.padding.p04,
+              }}>
+              <Text emphasis="medium" title={item.name} type="h4" />
+              <Button title="edit" />
+            </View>
+            <FlatList
+              data={item.items}
+              keyExtractor={getItemId}
+              onContentSizeChange={onCardSizeChange(item.id)}
+              ref={onCardRef(item.id)}
+              renderItem={renderCard}
+              showsVerticalScrollIndicator={false}
+              style={{maxHeight: 500}}
+            />
+            <Button
+              center
+              color="primary"
+              onPress={addCard(item.id)}
+              title="add card"
+            />
           </View>
-          <FlatList
-            data={item.items}
-            keyExtractor={getItemId}
-            renderItem={renderCard}
-            showsVerticalScrollIndicator={false}
-          />
-          <Button
-            center
-            color="primary"
-            onPress={addCard(item.id)}
-            title="add card"
-          />
         </View>
       );
     },
-    [addCard, borderRadius, color.background, listWidth, getItemId, renderCard],
+    [
+      borderRadius,
+      listWidth,
+      color.background,
+      onCardRef,
+      getItemId,
+      renderCard,
+      addCard,
+    ],
   );
 
   const renderAddList = useCallback(() => {
