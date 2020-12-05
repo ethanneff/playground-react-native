@@ -1,4 +1,4 @@
-import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
+import React, {memo, useCallback, useRef, useState} from 'react';
 import {FlatList, View} from 'react-native';
 import {Button, Screen, Text, TouchableOpacity} from '../../components';
 import {useColor} from '../../hooks';
@@ -6,9 +6,8 @@ import {getSmallestDimension} from '../../models';
 import {Theme, useRootSelector} from '../../utils';
 
 // TODO: add landing page (actionables + record)
-// TODO: add navigation to columsn
-// TODO: rename items/cards columns/list
-// TODO: add list pagination lock
+// TODO: add navigation to columns
+// TODO: rename items/cards lists/list
 // TODO: fix list height
 // TODO: add textInput for each item
 // TODO: add list add text input
@@ -16,13 +15,13 @@ import {Theme, useRootSelector} from '../../utils';
 // TODO: scroll down on card add
 // TODO: make color scheme similar to todoist
 
-type Column = {
+type List = {
   name: string;
   id: string;
-  items: Item[];
+  items: Card[];
 };
 
-type Item = {
+type Card = {
   id: string;
   name: string;
 };
@@ -30,11 +29,12 @@ type Item = {
 export const Focus = memo(function Focus() {
   const color = useColor();
   const width = useRootSelector(getSmallestDimension);
-  const columnWidth = width * 0.66;
+  const listWidth = width * 0.6;
+  const listSize = listWidth + Theme.padding.p04;
   const borderRadius = Theme.padding.p02;
   const columnFlatList = useRef<FlatList | null>(null);
 
-  const [columns, setColumns] = useState<Column[]>([
+  const [lists, setLists] = useState<List[]>([
     {
       id: '1',
       name: 'Backlog',
@@ -69,27 +69,18 @@ export const Focus = memo(function Focus() {
       items: [],
     },
   ]);
-  const columnsLength = useRef(columns.length);
 
   const getItemId = useCallback((item) => item.id, []);
 
   const addColumn = useCallback(() => {
     const date = String(Date.now());
-    setColumns((p) => [...p, {id: date, name: date, items: []}]);
+    setLists((p) => [...p, {id: date, name: date, items: []}]);
   }, []);
 
-  useEffect(() => {
-    if (columns.length === columnsLength.current) {
-      return;
-    }
-    columnFlatList.current?.scrollToEnd();
-    columnsLength.current = columns.length;
-  }, [columns.length, columnsLength]);
-
-  const addItem = useCallback(
+  const addCard = useCallback(
     (columnIndex: string) => () => {
       const date = String(Date.now());
-      setColumns((p) =>
+      setLists((p) =>
         p.map((column) => {
           if (column.id !== columnIndex) {
             return column;
@@ -102,7 +93,7 @@ export const Focus = memo(function Focus() {
     [],
   );
 
-  const renderItem = useCallback(
+  const renderCard = useCallback(
     ({item}) => {
       return (
         <TouchableOpacity
@@ -120,14 +111,14 @@ export const Focus = memo(function Focus() {
     [borderRadius, color.surface],
   );
 
-  const renderColumn = useCallback(
+  const renderList = useCallback(
     ({item}) => {
       return (
         <View
           key={item.id}
           style={{
             borderRadius,
-            width: columnWidth,
+            width: listWidth,
             backgroundColor: color.background,
             padding: Theme.padding.p02,
             marginRight: Theme.padding.p04,
@@ -145,54 +136,64 @@ export const Focus = memo(function Focus() {
           <FlatList
             data={item.items}
             keyExtractor={getItemId}
-            renderItem={renderItem}
+            renderItem={renderCard}
             showsVerticalScrollIndicator={false}
           />
           <Button
             center
             color="primary"
-            onPress={addItem(item.id)}
+            onPress={addCard(item.id)}
             title="add card"
           />
         </View>
       );
     },
-    [
-      addItem,
-      borderRadius,
-      color.background,
-      columnWidth,
-      getItemId,
-      renderItem,
-    ],
+    [addCard, borderRadius, color.background, listWidth, getItemId, renderCard],
   );
 
-  const renderAddColumn = useCallback(() => {
+  const renderAddList = useCallback(() => {
     return (
       <View
         style={{
-          width: columnWidth,
+          width: listWidth,
           borderRadius,
           padding: Theme.padding.p02,
           backgroundColor: color.background,
         }}>
-        <Button center color="primary" onPress={addColumn} title="add column" />
+        <Button center color="primary" onPress={addColumn} title="add list" />
       </View>
     );
-  }, [addColumn, borderRadius, color.background, columnWidth]);
+  }, [addColumn, borderRadius, color.background, listWidth]);
+
+  const getItemLayout = useCallback(
+    (_, index) => ({
+      length: listSize,
+      offset: listSize * index,
+      index,
+    }),
+    [listSize],
+  );
+
+  const onListSizeChange = useCallback(() => {
+    columnFlatList.current?.scrollToIndex({index: lists.length - 1});
+  }, [columnFlatList, lists]);
 
   return (
     <Screen title="Focus">
       <FlatList
-        ListFooterComponent={renderAddColumn}
+        ListFooterComponent={renderAddList}
         contentContainerStyle={{padding: Theme.padding.p04}}
-        data={columns}
+        data={lists}
+        decelerationRate="fast"
+        getItemLayout={getItemLayout}
         horizontal
         keyExtractor={getItemId}
-        pagingEnabled
+        onContentSizeChange={onListSizeChange}
         ref={columnFlatList}
-        renderItem={renderColumn}
+        renderItem={renderList}
         showsHorizontalScrollIndicator={false}
+        snapToAlignment="start"
+        snapToInterval={listSize}
         style={{backgroundColor: color.surface}}
       />
     </Screen>
