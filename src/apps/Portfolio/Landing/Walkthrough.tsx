@@ -3,7 +3,7 @@ import {FlatList, StyleSheet, View} from 'react-native';
 import {Text, TouchableOpacity} from '../../../components';
 import {useColor, useDropShadow} from '../../../hooks';
 import {getWidth} from '../../../models';
-import {Theme, colorWithOpacity, useRootSelector} from '../../../utils';
+import {colorWithOpacity, Theme, useRootSelector} from '../../../utils';
 
 interface Slide {
   id: string;
@@ -29,6 +29,7 @@ export const Walkthrough = memo(function Walkthrough({
   const onViewableItemsChanged = useCallback(({viewableItems}) => {
     setActiveIndex(viewableItems[0].index || 0);
   }, []);
+
   const slides: Slide[] = [
     {id: '1', text: 'hello', color: color.info},
     {id: '2', text: 'bob', color: color.warning},
