@@ -7,11 +7,11 @@ import {Theme, useRootSelector} from '../../utils';
 
 // TODO: add landing page (actionables + record)
 // TODO: add navigation to columns
-// TODO: rename items/cards lists/list
 // TODO: add textInput for each item
 // TODO: add list add text input
 // TODO: add card add text input
 // TODO: make color scheme similar to todoist
+// TODO: figure out max height for list (not 500)
 
 type List = {
   name: string;
