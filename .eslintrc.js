@@ -22,6 +22,10 @@ module.exports = {
       'warn',
       {namedComponents: 'arrow-function', unnamedComponents: 'arrow-function'},
     ],
+    'react-hooks/exhaustive-deps': [
+      'error',
+      {enableDangerousAutofixThisMayCauseInfiniteLoops: true},
+    ],
     // ignore (outside prettier and typescript rules)
     '@typescript-eslint/no-var-requires': 'off',
     'react/require-default-props': 'off',
