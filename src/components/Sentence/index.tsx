@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
-import {Text as OriginalText, StyleProp, TextStyle} from 'react-native';
-import {FontType} from '../Text/utils';
+import {StyleProp, Text as OriginalText, TextStyle} from 'react-native';
+import {FontType} from '../../utils';
 import {Text} from '../Text';
 
 export type Word = {

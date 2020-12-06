@@ -1,9 +1,8 @@
 import React, {memo} from 'react';
-import {Text as Original, ScrollView, StyleSheet, View} from 'react-native';
-import {Theme} from '../../utils';
-import {Text} from '../Text';
+import {ScrollView, StyleSheet, Text as Original, View} from 'react-native';
 import {useColor} from '../../hooks';
-import {FontType} from '../Text/utils';
+import {FontType, Theme} from '../../utils';
+import {Text} from '../Text';
 
 export interface ContentBody {
   sections: Sections;
