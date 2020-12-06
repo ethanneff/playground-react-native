@@ -13,7 +13,6 @@ import {Theme, useRootSelector} from '../../utils';
 // TODO: make color scheme similar to todoist
 // TODO: figure out max height for list (not 500)
 // TODO: break up card and list into separate files
-// TODO: center each list on scroll
 // TODO: prevent scroll to end on load
 
 type List = {
@@ -218,7 +217,7 @@ export const Focus = memo(function Focus() {
         ref={listRef}
         renderItem={renderList}
         showsHorizontalScrollIndicator={false}
-        snapToAlignment="start"
+        snapToAlignment="center"
         snapToInterval={listSize}
         style={{backgroundColor: color.surface}}
       />
