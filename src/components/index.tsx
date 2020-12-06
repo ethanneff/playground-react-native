@@ -7,6 +7,7 @@ export * from './Card';
 export * from './CardSection';
 export * from './Dialog';
 export * from './Icon';
+export * from './Input';
 export * from './Loading';
 export * from './Markdown';
 export * from './Masonry';
