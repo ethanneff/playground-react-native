@@ -1,10 +1,9 @@
 import React from 'react';
 import {Animated, StyleProp, StyleSheet, TextStyle} from 'react-native';
-import {Theme, colorWithOpacity} from '../../utils';
-import {useColor, useDriver} from '../../hooks';
 import {Sound} from '../../conversions';
+import {useColor, useDriver} from '../../hooks';
 import {Color} from '../../models';
-import {FontEmphasis, FontType, getFontType, getTextEmphasis} from './utils';
+import {FontEmphasis, FontType, getFontStyles, Theme} from '../../utils';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
 
@@ -49,16 +48,15 @@ export const Text = ({
   numberOfLines,
 }: TextProps): JSX.Element => {
   const opacity = new Animated.Value(1);
-  const colorScheme = useColor();
   const useNativeDriver = useDriver();
-  const textColorPercent = getTextEmphasis(emphasis);
-  const fontSize = getFontType(type);
-  const textColor = inverse
-    ? colorScheme.background
-    : color
-    ? colorScheme[color]
-    : colorScheme.text;
-  const textColorWithOpacity = colorWithOpacity(textColor, textColorPercent);
+  const colorScheme = useColor();
+  const {fontSize, textColor} = getFontStyles({
+    emphasis,
+    type,
+    inverse,
+    color,
+    colorScheme,
+  });
   const text =
     type === 'button' || type === 'overline'
       ? (title || '').toUpperCase()
@@ -75,7 +73,7 @@ export const Text = ({
       textAlignVertical: 'center',
     },
     color: {
-      color: textColorWithOpacity,
+      color: textColor,
     },
     invisible: {
       opacity: 0,
