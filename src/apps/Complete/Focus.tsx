@@ -26,14 +26,6 @@ type Card = {
 };
 
 export const Focus = memo(function Focus() {
-  const color = useColor();
-  const width = useRootSelector(getSmallestDimension);
-  const listWidth = width * 0.6;
-  const listSize = listWidth + Theme.padding.p04;
-  const borderRadius = Theme.padding.p02;
-  const listRef = useRef<FlatList | null>(null);
-  const cardsRef = useRef<{[key in string]: FlatList | null}>({});
-
   const [lists, setLists] = useState<List[]>([
     {
       id: '1',
@@ -69,6 +61,14 @@ export const Focus = memo(function Focus() {
       items: [],
     },
   ]);
+  const color = useColor();
+  const width = useRootSelector(getSmallestDimension);
+  const listWidth = width * 0.6;
+  const padding = Theme.padding.p04;
+  const listSize = listWidth + padding;
+  const borderRadius = Theme.padding.p02;
+  const listsRef = useRef<FlatList | null>(null);
+  const cardsRef = useRef<{[key in string]: FlatList | null}>({});
   const listsCount = useRef(lists.length);
 
   const getItemId = useCallback((item) => item.id, []);
@@ -101,9 +101,9 @@ export const Focus = memo(function Focus() {
           key={item.id}
           style={{
             borderRadius,
-            padding: Theme.padding.p04,
+            padding: padding,
             backgroundColor: color.surface,
-            marginBottom: Theme.padding.p02,
+            marginBottom: padding / 2,
           }}>
           <Text title={item.name} />
         </TouchableOpacity>
@@ -136,15 +136,15 @@ export const Focus = memo(function Focus() {
               borderRadius,
               width: listWidth,
               backgroundColor: color.background,
-              padding: Theme.padding.p02,
-              marginRight: Theme.padding.p04,
+              padding: padding / 2,
+              marginRight: padding,
             }}>
             <View
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                paddingBottom: Theme.padding.p04,
+                paddingBottom: padding,
               }}>
               <Text emphasis="medium" title={item.name} type="h4" />
               <Button title="edit" />
@@ -185,7 +185,7 @@ export const Focus = memo(function Focus() {
         style={{
           width: listWidth,
           borderRadius,
-          padding: Theme.padding.p02,
+          padding: padding / 2,
           backgroundColor: color.background,
         }}>
         <Button center color="primary" onPress={addColumn} title="add list" />
@@ -213,7 +213,7 @@ export const Focus = memo(function Focus() {
     <Screen title="Focus">
       <FlatList
         ListFooterComponent={renderAddList}
-        contentContainerStyle={{padding: Theme.padding.p04}}
+        contentContainerStyle={{padding: padding}}
         data={lists}
         decelerationRate="fast"
         getItemLayout={getItemLayout}
