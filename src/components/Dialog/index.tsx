@@ -5,7 +5,7 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import {useDriver, useDropShadow} from '../../hooks';
+import {useColor, useDriver, useDropShadow} from '../../hooks';
 import {Theme} from '../../utils';
 import {Button} from '../Button';
 import {Card} from '../Card';
@@ -38,6 +38,7 @@ export const Dialog = memo(function Dialog({
   testID,
 }: Props) {
   const useNativeDriver = useDriver();
+  const color = useColor();
   const dropShadow = useDropShadow();
   const styles = StyleSheet.create({
     buttonContainer: {
@@ -69,7 +70,7 @@ export const Dialog = memo(function Dialog({
     },
     overlay: {
       alignItems: 'center',
-      backgroundColor: Theme.color.overlay,
+      backgroundColor: color.overlay,
       flex: 1,
       flexDirection: 'column',
       justifyContent: 'center',

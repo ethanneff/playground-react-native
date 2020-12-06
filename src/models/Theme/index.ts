@@ -36,6 +36,7 @@ export interface Color {
   statusBar: StatusBarStyle;
   success: string;
   warning: string;
+  overlay: string;
 }
 
 type Colors = {[key in ColorTheme]: Color};
@@ -63,6 +64,7 @@ export const themeInitialState: Theme = {
       statusBar: 'light-content',
       success: 'hsl(134, 61%, 41%)',
       warning: 'hsl(45, 100%, 51%)',
+      overlay: 'hsla(0,0%,0%, 0.38)',
     },
     light: {
       background: 'hsl(0, 0%, 100%)', // #ffffff
@@ -78,6 +80,7 @@ export const themeInitialState: Theme = {
       statusBar: 'default',
       success: 'hsl(134, 61%, 41%)', // #28a745
       warning: 'hsl(45, 100%, 51%)', // #ffc107
+      overlay: 'hsla(0,0%,0%, 0.38)',
     },
   },
   currentColor: 'light',

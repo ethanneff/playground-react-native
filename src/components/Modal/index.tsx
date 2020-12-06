@@ -1,4 +1,4 @@
-import React, {ReactNode, memo} from 'react';
+import React, {memo, ReactNode} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {useColor, useDropShadow} from '../../hooks';
 import {Theme, useRootSelector} from '../../utils';
@@ -49,7 +49,7 @@ export const Modal = memo(function ModalWrapperMemo({
       padding: Theme.padding.p08,
     },
     overlay: {
-      backgroundColor: Theme.color.overlay,
+      backgroundColor: color.overlay,
       flex: 1,
       width: '100%',
     },

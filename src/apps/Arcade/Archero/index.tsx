@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {Screen} from '../../../components';
 import {useColor, useDriver} from '../../../hooks';
-import {Theme, colorWithOpacity, useRootSelector} from '../../../utils';
+import {colorWithOpacity, useRootSelector} from '../../../utils';
 
 const charSize = 50;
 const charSpeed = 40;
@@ -162,7 +162,7 @@ export const Archero = memo(function Archero() {
               borderRadius: 500,
               width: joystickSize,
               height: joystickSize,
-              backgroundColor: Theme.color.overlay,
+              backgroundColor: color.overlay,
             },
           ]}>
           <View
@@ -172,7 +172,7 @@ export const Archero = memo(function Archero() {
               borderRadius: 500,
               width: thumbSize,
               height: thumbSize,
-              backgroundColor: Theme.color.overlay,
+              backgroundColor: color.overlay,
             }}>
             <Animated.View
               style={[

@@ -1,6 +1,8 @@
-const color = {
-  overlay: 'hsla(0,0%,0%, 0.38)',
-};
+import {Color} from '../../models'; // TODO: fix circular dependency?
+
+/*
+SIZING https://material.io/design/typography/the-type-system.html#applying-the-type-scale
+*/
 
 const padding = {
   p00: 0,
@@ -119,7 +121,6 @@ const sizing = {
 };
 
 export const Theme = {
-  color,
   fontSize,
   fontWeight,
   padding,
