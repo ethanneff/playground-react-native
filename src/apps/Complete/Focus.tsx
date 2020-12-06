@@ -13,7 +13,6 @@ import {Theme, useRootSelector} from '../../utils';
 // TODO: make color scheme similar to todoist
 // TODO: figure out max height for list (not 500)
 // TODO: break up card and list into separate files
-// TODO: prevent scroll to end on load
 
 type List = {
   name: string;
@@ -70,6 +69,7 @@ export const Focus = memo(function Focus() {
       items: [],
     },
   ]);
+  const listsCount = useRef(lists.length);
 
   const getItemId = useCallback((item) => item.id, []);
 
@@ -119,9 +119,12 @@ export const Focus = memo(function Focus() {
     [],
   );
 
-  const onCardSizeChange = (listId: string) => () => {
-    cardsRef.current[listId]?.scrollToEnd();
-  };
+  const onCardSizeChange = useCallback(
+    (listId: string) => () => {
+      cardsRef.current[listId]?.scrollToEnd();
+    },
+    [],
+  );
 
   const renderList = useCallback(
     ({item}) => {
@@ -200,8 +203,11 @@ export const Focus = memo(function Focus() {
   );
 
   const onListSizeChange = useCallback(() => {
-    listRef.current?.scrollToIndex({index: lists.length - 1});
-  }, [listRef, lists]);
+    if (lists.length !== listsCount.current) {
+      listsRef.current?.scrollToIndex({index: lists.length - 1});
+      listsCount.current = lists.length;
+    }
+  }, [listsRef, lists, listsCount]);
 
   return (
     <Screen title="Focus">
@@ -214,7 +220,7 @@ export const Focus = memo(function Focus() {
         horizontal
         keyExtractor={getItemId}
         onContentSizeChange={onListSizeChange}
-        ref={listRef}
+        ref={listsRef}
         renderItem={renderList}
         showsHorizontalScrollIndicator={false}
         snapToAlignment="center"
