@@ -1,8 +1,8 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {Button, Screen, TextInput} from '../../../components';
+import {Button, Input, Screen} from '../../../components';
 
-export const Input = memo(function PlaygroundInput() {
+export const Login = memo(function Login() {
   const {goBack} = useNavigation();
 
   const [form, setForm] = useState({
@@ -26,7 +26,7 @@ export const Input = memo(function PlaygroundInput() {
 
   return (
     <Screen gutter onLeftPress={navBack} title="Template">
-      <TextInput
+      <Input
         error={form.error}
         onChangeText={handleChange('name')}
         optional
@@ -34,7 +34,7 @@ export const Input = memo(function PlaygroundInput() {
         title="Name"
         value={form.name}
       />
-      <TextInput
+      <Input
         error={form.error}
         keyboardType="email-address"
         onChangeText={handleChange('email')}
@@ -43,7 +43,7 @@ export const Input = memo(function PlaygroundInput() {
         title="Email"
         value={form.email}
       />
-      <TextInput
+      <Input
         onChangeText={handleChange('password')}
         placeholder="•••••••"
         secureTextEntry

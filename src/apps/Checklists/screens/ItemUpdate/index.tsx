@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {Button, Screen, TextInput} from '../../../../components';
+import {Button, Input, Screen} from '../../../../components';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {
   getCurrentChecklistItem,
@@ -50,12 +50,8 @@ export default memo(function ChecklistUpdate() {
   const navItem = useCallback(() => navigate('checklistsList'), [navigate]);
   return (
     <Screen gutter onLeftPress={navItem} title="Update Checklist Item">
-      <TextInput
-        onChangeText={handleNameChange}
-        title="name"
-        value={form.name}
-      />
-      <TextInput
+      <Input onChangeText={handleNameChange} title="name" value={form.name} />
+      <Input
         onChangeText={handleDescriptionChange}
         title="description"
         value={form.description}

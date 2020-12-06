@@ -3,12 +3,12 @@ import {ActivityIndicator, Platform} from 'react-native';
 import {
   Button,
   Icon,
+  Input,
   Modal,
   Text,
-  TextInput,
   TouchableOpacity,
 } from '../../components';
-import {FirebaseAuthTypes, auth} from '../../conversions/Firebase';
+import {auth, FirebaseAuthTypes} from '../../conversions/Firebase';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 
@@ -184,7 +184,7 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
         <ActivityIndicator size="large" />
       ) : form.state === 'phone confirm' ? (
         <>
-          <TextInput
+          <Input
             keyboardType="number-pad"
             onChangeText={onPhoneCodeChange}
             placeholder="phone confirmation code"
@@ -200,7 +200,7 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
         </>
       ) : form.state === 'phone' ? (
         <>
-          <TextInput
+          <Input
             keyboardType="number-pad"
             onChangeText={onPhoneChange}
             placeholder="phone"
@@ -216,7 +216,7 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
         </>
       ) : form.state === 'forgot password' ? (
         <>
-          <TextInput
+          <Input
             keyboardType="email-address"
             onChangeText={onEmailChange}
             placeholder="email"
@@ -233,14 +233,14 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
         </>
       ) : form.state === 'email' ? (
         <>
-          <TextInput
+          <Input
             keyboardType="email-address"
             onChangeText={onEmailChange}
             placeholder="email"
             textContentType="username"
             value={form.email}
           />
-          <TextInput
+          <Input
             onChangeText={onPasswordChange}
             placeholder="password"
             secureTextEntry

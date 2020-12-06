@@ -6,7 +6,7 @@ export const stackParams = {
   drag: undefined,
   fonts: undefined,
   imageCollection: undefined,
-  input: undefined,
+  login: undefined,
   oKRs: undefined,
   pinchSpread: undefined,
   questionnaire: undefined,

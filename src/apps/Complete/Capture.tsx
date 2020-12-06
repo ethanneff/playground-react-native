@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {ScrollView} from 'react-native';
-import {Card, Screen, Text, TextInput} from '../../components';
+import {Card, Input, Screen, Text} from '../../components';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 
@@ -38,7 +38,7 @@ export const Capture = memo(function Capture() {
             title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
             type="h4"
           />
-          <TextInput
+          <Input
             onChangeText={onChangeText}
             placeholder="hello"
             value={message}

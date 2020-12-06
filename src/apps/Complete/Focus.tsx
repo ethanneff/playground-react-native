@@ -1,6 +1,13 @@
 import React, {memo, useCallback, useRef, useState} from 'react';
 import {FlatList, View} from 'react-native';
-import {Button, Icon, Screen, Text, TouchableOpacity} from '../../components';
+import {
+  Button,
+  Icon,
+  Screen,
+  Text,
+  TextInput,
+  TouchableOpacity,
+} from '../../components';
 import {useColor} from '../../hooks';
 import {getSmallestDimension} from '../../models';
 import {Theme, useRootSelector} from '../../utils';
@@ -49,6 +56,40 @@ const Card = memo(function Card({
       }}>
       <Text title={card.name} />
     </TouchableOpacity>
+  );
+});
+
+type ListHeaderProps = {
+  name: string;
+  padding: number;
+};
+
+const ListHeader = memo(function ListHeader({name, padding}: ListHeaderProps) {
+  const [input, setInput] = useState(name);
+
+  const onChangeText = useCallback((value: string) => {
+    setInput(value);
+  }, []);
+
+  return (
+    <View
+      style={{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingBottom: padding,
+      }}>
+      <TextInput
+        emphasis="medium"
+        onChangeText={onChangeText}
+        placeholder="list name..."
+        type="h4"
+        value={input}
+      />
+      <TouchableOpacity>
+        <Icon name="dots-vertical" />
+      </TouchableOpacity>
+    </View>
   );
 });
 
@@ -112,18 +153,7 @@ const List = memo(function List({
           padding: padding / 2,
           marginRight: padding,
         }}>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            paddingBottom: padding,
-          }}>
-          <Text emphasis="medium" title={list.name} type="h4" />
-          <TouchableOpacity>
-            <Icon name="dots-vertical" />
-          </TouchableOpacity>
-        </View>
+        <ListHeader name={list.name} padding={padding} />
         <FlatList
           data={cards}
           keyExtractor={onKeyExtractor}

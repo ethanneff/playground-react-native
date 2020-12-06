@@ -15,8 +15,8 @@ import {Fonts} from './Fonts';
 import {FortuneWheel} from './FortuneWheel';
 import {GameOfLife} from './GameOfLife';
 import {ImageCollection} from './ImageCollection';
-import {Input} from './Input';
 import {Landing} from './Landing';
+import {Login} from './Login';
 import {stackParams} from './navParams';
 import {OKRs} from './OKRs';
 import {PinchSpread} from './PinchSpread';
@@ -43,7 +43,7 @@ export default memo(function Games() {
       <Stack.Screen component={Drag} name="drag" />
       <Stack.Screen component={Fonts} name="fonts" />
       <Stack.Screen component={ImageCollection} name="imageCollection" />
-      <Stack.Screen component={Input} name="input" />
+      <Stack.Screen component={Login} name="login" />
       <Stack.Screen component={OKRs} name="oKRs" />
       <Stack.Screen component={PinchSpread} name="pinchSpread" />
       <Stack.Screen component={Questionnaire} name="questionnaire" />

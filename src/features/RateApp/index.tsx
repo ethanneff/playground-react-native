@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useMemo, useRef, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import Rate, {AndroidMarket} from 'react-native-rate';
-import {Button, Modal, Text, TextInput} from '../../components';
+import {Button, Input, Modal, Text} from '../../components';
 import {Theme} from '../../utils';
 import {Rating} from './Rating';
 
@@ -112,7 +112,7 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
             style={styles.title}
             title="Can you provide us with some feedback to help us improve?"
           />
-          <TextInput
+          <Input
             onChangeText={handleTextChange}
             onSubmitEditing={handleFeedbackSubmit}
             placeholder="How can we improve?"

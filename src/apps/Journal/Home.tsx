@@ -1,7 +1,7 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import {Calendar, Card, Screen, Text, TextInput} from '../../components';
+import {Calendar, Card, Input, Screen, Text} from '../../components';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 
@@ -37,7 +37,7 @@ export const Home = memo(function Home() {
             title="One objective that will make everything easier"
             type="h5"
           />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="Primary goal"
@@ -49,19 +49,19 @@ export const Home = memo(function Home() {
             title="Additional objectives"
             type="h5"
           />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="Secondary goal"
             value=""
           />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="Secondary goal"
             value=""
           />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="Secondary goal"
@@ -73,31 +73,31 @@ export const Home = memo(function Home() {
             title="Bonus objectives"
             type="h5"
           />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="tertiary goal"
             value=""
           />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="tertiary goal"
             value=""
           />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="tertiary goal"
             value=""
           />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="tertiary goal"
             value=""
           />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="tertiary goal"
@@ -106,13 +106,13 @@ export const Home = memo(function Home() {
         </Card>
         <Card>
           <Text style={styles.bottom} title="Review" type="h3" />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="How likely are you to recommend this day?"
             value=""
           />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="Why did you give this score?"
@@ -121,19 +121,19 @@ export const Home = memo(function Home() {
         </Card>
         <Card>
           <Text style={styles.bottom} title="Retro" type="h3" />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="What went well?"
             value=""
           />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="What could be improved?"
             value=""
           />
-          <TextInput
+          <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
             title="What will you commit to tomorrow?"

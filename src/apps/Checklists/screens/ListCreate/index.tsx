@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import 'react-native-get-random-values';
 import {v4} from 'uuid';
-import {Button, Screen, TextInput} from '../../../../components';
+import {Button, Input, Screen} from '../../../../components';
 import {useRootDispatch} from '../../../../utils';
 import {createList} from '../../models';
 
@@ -45,12 +45,8 @@ export default memo(function ChecklistCreate() {
   const navBack = useCallback(() => navigate('checklists'), [navigate]);
   return (
     <Screen gutter onLeftPress={navBack} title="Create Checklist">
-      <TextInput
-        onChangeText={handleNameChange}
-        title="name"
-        value={form.name}
-      />
-      <TextInput
+      <Input onChangeText={handleNameChange} title="name" value={form.name} />
+      <Input
         onChangeText={handleDescriptionChange}
         title="description"
         value={form.description}

@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import 'react-native-get-random-values';
 import {v4} from 'uuid';
-import {Button, Screen, TextInput} from '../../../../components';
+import {Button, Input, Screen} from '../../../../components';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {createChecklistItem} from '../../models';
 
@@ -54,13 +54,13 @@ export default memo(function ChecklistItemCreate() {
 
   return (
     <Screen gutter onLeftPress={navItem} title="Create Item">
-      <TextInput
+      <Input
         blurOnSubmit
         onChangeText={handleNameChange}
         title="name"
         value={form.name}
       />
-      <TextInput
+      <Input
         onChangeText={handleDescriptionChange}
         title="description"
         value={form.description}

@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {Button, Dialog, Screen, TextInput} from '../../../../components';
+import {Button, Dialog, Input, Screen} from '../../../../components';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {getCurrentChecklist, removeList, updateList} from '../../models';
 
@@ -53,12 +53,8 @@ export default memo(function ChecklistUpdate() {
   return (
     <>
       <Screen gutter onLeftPress={navBack} title="Update Checklist">
-        <TextInput
-          onChangeText={handleNameChange}
-          title="name"
-          value={form.name}
-        />
-        <TextInput
+        <Input onChangeText={handleNameChange} title="name" value={form.name} />
+        <Input
           onChangeText={handleDescriptionChange}
           title="description"
           value={form.description}

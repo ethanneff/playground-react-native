@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Button, Screen, TextInput} from '../../../components';
+import {Button, Input, Screen} from '../../../components';
 
 const styles = StyleSheet.create({
   row: {flexDirection: 'row', justifyContent: 'space-around'},
@@ -19,13 +19,13 @@ export const Login = memo(function PortfolioLogin() {
 
   return (
     <Screen gutter onLeftPress={navBack} title="Login">
-      <TextInput
+      <Input
         onChangeText={handleEmail}
         placeholder="example@gmail.com"
         title="email"
         value={email}
       />
-      <TextInput
+      <Input
         onChangeText={handlePassword}
         placeholder="•••••••"
         title="password"

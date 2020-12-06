@@ -8,9 +8,9 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import {Icon, Screen, Text, TextInput} from '../../../components';
+import {Icon, Input, Screen, Text} from '../../../components';
 import {useColor, useDriver} from '../../../hooks';
-import {Theme, colorWithOpacity} from '../../../utils';
+import {colorWithOpacity, Theme} from '../../../utils';
 
 const data = [
   {id: 1, name: '1'},
@@ -200,7 +200,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
             }}>
             <Icon name={state.iconName} />
           </Animated.View>
-          <TextInput
+          <Input
             containerStyle={styles.textInput}
             onChangeText={onChangeText}
             placeholder={textInputPlaceHolder}

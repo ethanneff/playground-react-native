@@ -1,9 +1,9 @@
 import React, {memo, useCallback} from 'react';
 import {Keyboard, View} from 'react-native';
 import {v4} from 'uuid';
-import {Icon, TextInput} from '../../../components';
+import {Icon, Input} from '../../../components';
 import {Theme, useRootDispatch, useRootSelector} from '../../../utils';
-import {Message, createChatMessage, typeChatMessage} from './Messages';
+import {createChatMessage, Message, typeChatMessage} from './Messages';
 
 export const TextField = memo(function TextField() {
   const dispatch = useRootDispatch();
@@ -37,7 +37,7 @@ export const TextField = memo(function TextField() {
         flexDirection: 'row',
         justifyContent: 'center',
       }}>
-      <TextInput
+      <Input
         flex
         onChangeText={onMessageChange}
         onSubmitEditing={onSubmit}

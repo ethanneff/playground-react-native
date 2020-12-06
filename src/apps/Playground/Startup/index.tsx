@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import dayjs from 'dayjs';
 import React, {memo, useCallback, useState} from 'react';
 import {ScrollView, Switch, View} from 'react-native';
-import {Button, Screen, Text, TextInput} from '../../../components';
+import {Button, Input, Screen, Text} from '../../../components';
 import {useColor} from '../../../hooks';
 import {Theme} from '../../../utils';
 import {Section} from './Section';
@@ -102,7 +102,7 @@ export const Startup = memo(function PlaygroundStartup() {
         <Section title="Launch">
           <Text title="Are you launched?" />
           <Switch onValueChange={handleLaunchChange} value={form.launched} />
-          <TextInput
+          <Input
             keyboardType="numeric"
             onChangeText={handleWeeksToLaunchChange}
             title="Weeks to launch?"
@@ -111,36 +111,36 @@ export const Startup = memo(function PlaygroundStartup() {
           <Text hidden={launchSubText.length === 0} title={launchSubText} />
         </Section>
         <Section title="Users">
-          <TextInput
+          <Input
             onChangeText={handleUserChange}
             title="Users/prospective users talked to this week?"
             value={form.usersTalkedTo}
           />
-          <TextInput
+          <Input
             onChangeText={handleLearnChange}
             title="What have you learned from them?"
             value={form.usersLearnedFrom}
           />
         </Section>
         <Section title="Goals">
-          <TextInput
+          <Input
             onChangeText={handleGoalChange}
             title="What are your top 1-3 goals for the next week?"
             value={form.topGoals}
           />
-          <TextInput
+          <Input
             onChangeText={handleMetricChange}
             title="What most improved your primary metric?"
             value={form.primaryMetric}
           />
-          <TextInput
+          <Input
             onChangeText={handleObstacleChange}
             title="Biggest obstacle?"
             value={form.biggestObstacle}
           />
         </Section>
         <Section title="Morale">
-          <TextInput
+          <Input
             keyboardType="numeric"
             onChangeText={handleMoraleChange}
             title="On a scale of 1-10, what is your morale?"

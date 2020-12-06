@@ -1,14 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {ScrollView, View} from 'react-native';
-import {
-  Button,
-  Calendar,
-  Card,
-  Screen,
-  Text,
-  TextInput,
-} from '../../components';
+import {Button, Calendar, Card, Input, Screen, Text} from '../../components';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 
@@ -218,7 +211,7 @@ export const Home = memo(function Home() {
           </View>
           {!showCustomInput ? null : (
             <View style={{justifyContent: 'center', alignItems: 'center'}}>
-              <TextInput
+              <Input
                 onChangeText={onCustomInputChange}
                 onSubmitEditing={onCustomInputSubmit}
                 placeholder="what is something that outside your comfort zone?"
