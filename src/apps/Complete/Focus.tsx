@@ -14,10 +14,12 @@ import {Theme, useRootSelector} from '../../utils';
 
 // TODO: add landing page (actionables + record)
 // TODO: add navigation to columns
-// TODO: add textInput for each item
+// TODO: move into separate files
+// TODO: create data layer
+
 // TODO: add list add text input
 // TODO: add card add text input
-// TODO: make color scheme similar to todoist
+
 // TODO: figure out max height for list (not 500)
 // TODO: figure out centering of list
 
@@ -80,7 +82,7 @@ const ListHeader = memo(function ListHeader({name, padding}: ListHeaderProps) {
         paddingBottom: padding,
       }}>
       <TextInput
-        emphasis="medium"
+        emphasis="high"
         onChangeText={onChangeText}
         placeholder="list name..."
         type="h4"
