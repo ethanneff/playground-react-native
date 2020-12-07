@@ -1,6 +1,6 @@
 import React, {memo, useCallback, useState} from 'react';
 import {View} from 'react-native';
-import {Icon, TextInput, TouchableOpacity} from '../../../../components';
+import {Icon, TextInput} from '../../../../components';
 
 type ListHeaderProps = {
   name: string;
@@ -26,15 +26,14 @@ export const ListHeader = memo(function ListHeader({
         paddingBottom: padding,
       }}>
       <TextInput
+        flex
         emphasis="high"
         onChangeText={onChangeText}
         placeholder="list name..."
         type="h4"
         value={input}
       />
-      <TouchableOpacity>
-        <Icon name="dots-vertical" />
-      </TouchableOpacity>
+      <Icon name="dots-vertical" padded />
     </View>
   );
 });
