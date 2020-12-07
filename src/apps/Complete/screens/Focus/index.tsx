@@ -4,7 +4,7 @@ import {Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {getSmallestDimension} from '../../../../models';
 import {Theme, useRootSelector} from '../../../../utils';
-import {AddList} from './AddList';
+import {AddItem} from './AddItem';
 import {List} from './List';
 import {ListObject} from './types';
 
@@ -13,7 +13,8 @@ import {ListObject} from './types';
 // TODO: move into separate files
 // TODO: create data layer
 
-// TODO: add card add text input
+// TODO: fix keyboard scrolling
+// TODO: fix keyboard white bar
 
 // TODO: figure out max height for list (not 500)
 // TODO: figure out centering of list
@@ -90,11 +91,14 @@ export const Focus = memo(function Focus() {
 
   const renderAddList = useCallback(() => {
     return (
-      <AddList
+      <AddItem
         backgroundColor={color.background}
         borderRadius={borderRadius}
-        listWidth={listWidth}
-        onAddList={addList}
+        buttonTitle="Add List"
+        inputPlaceholder="List title..."
+        inputType="h4"
+        itemWidth={listWidth}
+        onAdd={addList}
         padding={padding}
       />
     );

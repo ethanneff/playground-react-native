@@ -1,6 +1,6 @@
 import React, {memo, useCallback, useRef, useState} from 'react';
 import {FlatList, View} from 'react-native';
-import {Button} from '../../../../components';
+import {AddItem} from './AddItem';
 import {Card} from './Card';
 import {ListHeader} from './ListHeader';
 import {CardObject, ListObject} from './types';
@@ -37,9 +37,9 @@ export const List = memo(function List({
     }
   }, [cards.length]);
 
-  const addCard = useCallback(() => {
+  const onAddCard = useCallback((name: string) => {
     const date = String(Date.now());
-    setCards((p) => [...p, {id: date, name: date}]);
+    setCards((p) => [...p, {id: date, name}]);
   }, []);
 
   const onRenderItem = useCallback(
@@ -78,7 +78,15 @@ export const List = memo(function List({
           showsVerticalScrollIndicator={false}
           style={{maxHeight}}
         />
-        <Button center color="primary" onPress={addCard} title="add card" />
+        <AddItem
+          backgroundColor={listColor}
+          borderRadius={borderRadius}
+          buttonTitle="Add card"
+          inputPlaceholder="Card title..."
+          inputType="body2"
+          onAdd={onAddCard}
+          padding={padding}
+        />
       </View>
     </View>
   );
