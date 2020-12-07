@@ -13,7 +13,6 @@ import {ListObject} from './types';
 // TODO: move into separate files
 // TODO: create data layer
 
-// TODO: add list add text input
 // TODO: add card add text input
 
 // TODO: figure out max height for list (not 500)
