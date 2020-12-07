@@ -49,7 +49,7 @@
     "date-fns": "2.16.1",
     "dayjs": "1.9.7",
     "howler": "2.2.1",
-    "npm-check-updates": "10.2.2",
+    "npm-check-updates": "10.2.3",
     "patch-package": "6.2.2",
     "postinstall-postinstall": "2.1.0",
     "react": "16.14.0",
