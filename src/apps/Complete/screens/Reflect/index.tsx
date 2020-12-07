@@ -1,24 +1,25 @@
 import React, {memo} from 'react';
 import {ScrollView} from 'react-native';
-import {Card, Screen, Text} from '../../components';
-import {useColor} from '../../hooks';
-import {Theme} from '../../utils';
+import {Card, Screen, Text} from '../../../../components';
+import {useColor} from '../../../../hooks';
+import {Theme} from '../../../../utils';
 
-// TODO: figure out a place for this
-// TODO: add reminders
-// TODO: add profile information
-// TODO: add payment
+// TODO: add journal
+// TODO: add historical data
+// TODO: add purpose
+// TODO: add goals
 
-export const Account = memo(function Account() {
+export const Reflect = memo(function Reflect() {
   const color = useColor();
 
   return (
-    <Screen title="Account">
+    <Screen title="Reflect">
       <ScrollView
         contentContainerStyle={{
           padding: Theme.padding.p04,
           backgroundColor: color.surface,
-        }}>
+        }}
+        style={{backgroundColor: color.surface}}>
         <Card>
           <Text
             center

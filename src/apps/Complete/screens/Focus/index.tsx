@@ -1,16 +1,11 @@
 import React, {memo, useCallback, useRef, useState} from 'react';
 import {FlatList, View} from 'react-native';
-import {
-  Button,
-  Icon,
-  Screen,
-  Text,
-  TextInput,
-  TouchableOpacity,
-} from '../../components';
-import {useColor} from '../../hooks';
-import {getSmallestDimension} from '../../models';
-import {Theme, useRootSelector} from '../../utils';
+import {Button, Screen} from '../../../../components';
+import {useColor} from '../../../../hooks';
+import {getSmallestDimension} from '../../../../models';
+import {Theme, useRootSelector} from '../../../../utils';
+import {List} from './List';
+import {ListObject} from './types';
 
 // TODO: add landing page (actionables + record)
 // TODO: add navigation to columns
@@ -22,154 +17,6 @@ import {Theme, useRootSelector} from '../../utils';
 
 // TODO: figure out max height for list (not 500)
 // TODO: figure out centering of list
-
-type CardObject = {
-  id: string;
-  name: string;
-};
-
-type ListObject = {
-  name: string;
-  id: string;
-  items: CardObject[];
-};
-
-type CardProps = {
-  card: CardObject;
-  padding: number;
-  borderRadius: number;
-  backgroundColor: string;
-};
-
-const Card = memo(function Card({
-  card,
-  padding,
-  borderRadius,
-  backgroundColor,
-}: CardProps) {
-  return (
-    <TouchableOpacity
-      key={card.id}
-      style={{
-        borderRadius,
-        padding: padding,
-        backgroundColor,
-        marginBottom: padding / 2,
-      }}>
-      <Text title={card.name} />
-    </TouchableOpacity>
-  );
-});
-
-type ListHeaderProps = {
-  name: string;
-  padding: number;
-};
-
-const ListHeader = memo(function ListHeader({name, padding}: ListHeaderProps) {
-  const [input, setInput] = useState(name);
-
-  const onChangeText = useCallback((value: string) => {
-    setInput(value);
-  }, []);
-
-  return (
-    <View
-      style={{
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingBottom: padding,
-      }}>
-      <TextInput
-        emphasis="high"
-        onChangeText={onChangeText}
-        placeholder="list name..."
-        type="h4"
-        value={input}
-      />
-      <TouchableOpacity>
-        <Icon name="dots-vertical" />
-      </TouchableOpacity>
-    </View>
-  );
-});
-
-type ListProps = {
-  list: ListObject;
-  listColor: string;
-  cardColor: string;
-  borderRadius: number;
-  listWidth: number;
-  padding: number;
-  maxHeight: number;
-};
-
-const List = memo(function List({
-  list,
-  borderRadius,
-  listWidth,
-  listColor,
-  cardColor,
-  padding,
-  maxHeight,
-}: ListProps) {
-  const [cards, setCards] = useState<CardObject[]>(list.items);
-  const cardsRef = useRef<FlatList | null>(null);
-  const cardsLength = useRef(cards.length);
-
-  const onKeyExtractor = useCallback((item) => item.id, []);
-
-  const onCardSizeChange = useCallback(() => {
-    if (cards.length > cardsLength.current) {
-      cardsRef.current?.scrollToEnd();
-      cardsLength.current = cards.length;
-    }
-  }, [cards.length]);
-
-  const addCard = useCallback(() => {
-    const date = String(Date.now());
-    setCards((p) => [...p, {id: date, name: date}]);
-  }, []);
-
-  const onRenderItem = useCallback(
-    ({item}) => (
-      <Card
-        backgroundColor={cardColor}
-        borderRadius={borderRadius}
-        card={item}
-        key={item.id}
-        padding={padding}
-      />
-    ),
-    [borderRadius, cardColor, padding],
-  );
-
-  return (
-    <View>
-      <View
-        style={{
-          borderRadius,
-          width: listWidth,
-          backgroundColor: listColor,
-          padding: padding / 2,
-          marginRight: padding,
-        }}>
-        <ListHeader name={list.name} padding={padding} />
-        <FlatList
-          data={cards}
-          keyExtractor={onKeyExtractor}
-          onContentSizeChange={onCardSizeChange}
-          ref={cardsRef}
-          renderItem={onRenderItem}
-          showsVerticalScrollIndicator={false}
-          style={{maxHeight}}
-        />
-        <Button center color="primary" onPress={addCard} title="add card" />
-      </View>
-    </View>
-  );
-});
 
 export const Focus = memo(function Focus() {
   const [lists, setLists] = useState<ListObject[]>([

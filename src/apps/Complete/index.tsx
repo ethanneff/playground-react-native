@@ -3,9 +3,9 @@ import {Route} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {Icon} from '../../components';
 import {useColor} from '../../hooks';
-import {Capture} from './Capture';
-import {Focus} from './Focus';
-import {Reflect} from './Reflect';
+import {Capture} from './screens/Capture';
+import {Focus} from './screens/Focus';
+import {Reflect} from './screens/Reflect';
 
 const Tab = createBottomTabNavigator();
 

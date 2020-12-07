@@ -1,9 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {ScrollView} from 'react-native';
-import {Card, Input, Screen, Text} from '../../components';
-import {useColor} from '../../hooks';
-import {Theme} from '../../utils';
+import {Card, Input, Screen, Text} from '../../../../components';
+import {useColor} from '../../../../hooks';
+import {Theme} from '../../../../utils';
 
 // TODO: add inbox list
 // TODO: add add button
