@@ -77,6 +77,9 @@ export const TextInput = ({
     borderFocus: {
       borderColor: focusColor,
     },
+    flex: {
+      flex: 1,
+    },
     textInput: {
       backgroundColor: colorScheme.background,
       borderBottomWidth: 2,
@@ -84,9 +87,6 @@ export const TextInput = ({
       borderRadius: Theme.padding.p01,
       color: textColor,
       padding: Theme.padding.p02,
-    },
-    flex: {
-      flex: 1,
     },
   });
   const textInput = useRef<Original | null>(null);

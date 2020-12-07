@@ -26,8 +26,8 @@ export const ListHeader = memo(function ListHeader({
         paddingBottom: padding,
       }}>
       <TextInput
-        flex
         emphasis="high"
+        flex
         onChangeText={onChangeText}
         placeholder="list name..."
         type="h4"
