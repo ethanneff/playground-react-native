@@ -1,15 +1,15 @@
 import React, {useCallback, useState} from 'react';
 import {FlatList, View} from 'react-native';
 import {Card, Dialog, Icon, Text} from '../../../../components';
+import {useColor} from '../../../../hooks';
+import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {
-  Questionnaire,
   createQuestionnaire,
   getQuestionnaireArray,
+  Questionnaire,
   removeQuestionnaire,
   selectQuestionnaire,
 } from '../models';
-import {useColor} from '../../../../hooks';
-import {useRootDispatch, useRootSelector} from '../../../../utils';
 
 export const Questionnaires = (): JSX.Element => {
   const questionnaires = useRootSelector(getQuestionnaireArray);
@@ -67,6 +67,7 @@ export const Questionnaires = (): JSX.Element => {
         data={questionnaires}
         extraData={selected}
         keyExtractor={keyExtractor}
+        keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
       />
       <Icon

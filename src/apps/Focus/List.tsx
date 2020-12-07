@@ -88,6 +88,7 @@ export const List = memo(
           initialScrollIndex={initialIndex}
           inverted
           keyExtractor={keyExtractor}
+          keyboardShouldPersistTaps="handled"
           onEndReached={onEndReached}
           onEndReachedThreshold={onEndReachedThreshold}
           renderItem={renderItem}

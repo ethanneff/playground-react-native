@@ -1,8 +1,8 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {FlatList, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 import {Button, Screen} from '../../../components';
-import {ColorTheme, changeTheme, colorThemes} from '../../../models';
+import {changeTheme, ColorTheme, colorThemes} from '../../../models';
 import {useRootDispatch, useRootSelector} from '../../../utils';
 
 export const Settings = memo(function PortfolioSettings() {
@@ -38,6 +38,7 @@ export const Settings = memo(function PortfolioSettings() {
         data={colorThemes}
         horizontal
         keyExtractor={keyExtractor}
+        keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
       />
     </Screen>

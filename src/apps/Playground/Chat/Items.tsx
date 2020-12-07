@@ -2,7 +2,7 @@ import React, {memo, useCallback, useEffect, useRef} from 'react';
 import {FlatList} from 'react-native';
 import {useRootSelector} from '../../../utils';
 import {Item} from './Item';
-import {Message, getActiveChatMessagesOrderByCreatedAt} from './Messages';
+import {getActiveChatMessagesOrderByCreatedAt, Message} from './Messages';
 
 export const Items = memo(function ChatMessageItems() {
   const itemsRef = useRef<FlatList | null>(null);
@@ -19,6 +19,7 @@ export const Items = memo(function ChatMessageItems() {
       data={messages}
       inverted
       keyExtractor={keyExtractor}
+      keyboardShouldPersistTaps="handled"
       ref={itemsRef}
       renderItem={renderItem}
     />

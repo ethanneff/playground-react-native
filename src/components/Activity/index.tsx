@@ -154,6 +154,7 @@ export const Activity = memo(function Activity({
             initialNumToRender={0}
             inverted
             keyExtractor={keyExtractor}
+            keyboardShouldPersistTaps="handled"
             renderItem={renderItem}
             showsHorizontalScrollIndicator={false}
           />

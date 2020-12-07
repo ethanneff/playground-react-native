@@ -2,8 +2,8 @@ import dayjs, {Dayjs} from 'dayjs';
 import React, {memo, useCallback, useState} from 'react';
 import {FlatList, View} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../components';
-import {Theme} from '../../utils';
 import {useColor} from '../../hooks';
+import {Theme} from '../../utils';
 
 const generateHistory = () => {
   const data = [];
@@ -67,6 +67,7 @@ export const DailyProgress = memo(function DailyProgress() {
       horizontal
       inverted
       keyExtractor={keyExtractor}
+      keyboardShouldPersistTaps="handled"
       renderItem={renderItem}
     />
   );

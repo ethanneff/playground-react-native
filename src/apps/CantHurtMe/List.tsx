@@ -95,6 +95,7 @@ export const List = memo(function List({
       data={app.goals.orderById}
       key={columns}
       keyExtractor={keyExtractor}
+      keyboardShouldPersistTaps="handled"
       numColumns={columns}
       renderItem={renderItem}
     />

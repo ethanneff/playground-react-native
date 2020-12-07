@@ -135,6 +135,7 @@ export const Questionnaire = memo(function Questionnaire() {
       <FlatList
         data={data}
         horizontal
+        keyboardShouldPersistTaps="handled"
         onViewableItemsChanged={handleViewableItemsChanged}
         pagingEnabled
         ref={tableViewRef}

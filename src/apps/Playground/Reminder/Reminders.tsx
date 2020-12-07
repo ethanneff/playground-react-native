@@ -1,7 +1,7 @@
-import {FlatList} from 'react-native';
 import React, {memo, useCallback} from 'react';
-import {Text} from '../../../components';
+import {FlatList} from 'react-native';
 import {Reminder} from '.';
+import {Text} from '../../../components';
 
 interface Props {
   reminders: Reminder[];
@@ -25,6 +25,7 @@ export const Reminders = memo(function Reminders({reminders}: Props) {
       data={reminders}
       inverted
       keyExtractor={keyExtractor}
+      keyboardShouldPersistTaps="handled"
       renderItem={renderItem}
       style={{flex: 1}}
     />

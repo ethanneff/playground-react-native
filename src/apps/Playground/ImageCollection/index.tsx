@@ -42,6 +42,7 @@ export const ImageCollection = memo(function ImageCollection() {
       <FlatList
         data={data}
         keyExtractor={keyExtractor}
+        keyboardShouldPersistTaps="handled"
         numColumns={numColumns}
         onEndReached={handleFetchMore}
         onEndReachedThreshold={handleInfiniteScrollThreshold}

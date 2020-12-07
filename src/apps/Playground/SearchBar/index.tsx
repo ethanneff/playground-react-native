@@ -213,6 +213,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
         <FlatList
           data={data}
           keyExtractor={keyExtractor}
+          keyboardShouldPersistTaps="handled"
           renderItem={renderItem}
         />
       </Animated.View>

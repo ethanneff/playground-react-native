@@ -22,6 +22,7 @@ export const Landing = memo(function Playground() {
       <FlatList
         data={screens}
         keyExtractor={keyExtractor}
+        keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
       />
     </Screen>

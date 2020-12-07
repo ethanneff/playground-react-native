@@ -75,6 +75,7 @@ export default memo(function Checklist() {
       <FlatList
         data={items}
         keyExtractor={keyExtractor}
+        keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
       />
       <Icon
