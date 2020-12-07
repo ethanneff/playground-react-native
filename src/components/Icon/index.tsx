@@ -1,7 +1,7 @@
 import React from 'react';
 import {Platform, StyleProp, StyleSheet, ViewStyle} from 'react-native';
-import {Theme} from '../../utils';
 import {useColor, useDropShadow} from '../../hooks';
+import {Theme} from '../../utils';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {Badge} from './Badge';
 import {Source} from './Source';
@@ -21,6 +21,7 @@ interface Props {
   clear?: boolean;
   hidden?: boolean;
   invisible?: boolean;
+  padded?: boolean;
   size?: number;
   color?: string;
   name?: string;
@@ -41,6 +42,7 @@ export const Icon = ({
   hidden,
   right,
   invisible,
+  padded,
   onPress,
   testID,
 }: Props): JSX.Element => {
@@ -56,6 +58,9 @@ export const Icon = ({
       width: Theme.padding.p15,
       ...dropShadow(elevation),
     },
+    padded: {
+      padding: Theme.padding.p02,
+    },
     right: {
       alignSelf: 'flex-end',
     },
@@ -69,6 +74,7 @@ export const Icon = ({
     Platform.OS === 'web' ? styles.web : undefined,
     fab ? styles.fab : undefined,
     right ? styles.right : undefined,
+    padded ? styles.padded : undefined,
     style,
   ];
   return name === undefined || name.length === 0 || hidden ? (
