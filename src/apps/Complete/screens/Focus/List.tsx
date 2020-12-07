@@ -71,6 +71,7 @@ export const List = memo(function List({
         <FlatList
           data={cards}
           keyExtractor={onKeyExtractor}
+          keyboardShouldPersistTaps="handled"
           onContentSizeChange={onCardSizeChange}
           ref={cardsRef}
           renderItem={onRenderItem}
