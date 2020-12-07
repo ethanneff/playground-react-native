@@ -23,6 +23,7 @@ interface Props {
   emphasis?: FontEmphasis;
   autoCorrect?: boolean;
   blurOnSubmit?: boolean;
+  focusOnLoad?: boolean;
   disableFullscreenUI?: boolean;
   editable?: boolean;
   error?: string;
@@ -43,6 +44,7 @@ export const TextInput = ({
   autoCorrect,
   blurOnSubmit = true,
   disableFullscreenUI = true,
+  focusOnLoad,
   editable = true,
   error = '',
   keyboardType,
@@ -81,14 +83,13 @@ export const TextInput = ({
       borderColor: colorScheme.background,
       borderRadius: Theme.padding.p01,
       color: textColor,
-      flex: 1,
       padding: Theme.padding.p02,
-      paddingRight: Theme.padding.p08,
+    },
     flex: {
       flex: 1,
     },
   });
-  const textInput = useRef<Original>(null);
+  const textInput = useRef<Original | null>(null);
   const textInputStyles = [
     styles.textInput,
     fontSize,
@@ -100,6 +101,18 @@ export const TextInput = ({
 
   const onFocus = useCallback(() => setFocus(true), []);
   const onBlur = useCallback(() => setFocus(false), []);
+  const onInternalRef = useCallback(
+    (ref: Original | null) => {
+      if (!ref) {
+        return;
+      }
+      if (!textInput.current && focusOnLoad) {
+        ref.focus();
+      }
+      textInput.current = ref;
+    },
+    [focusOnLoad, textInput],
+  );
 
   return (
     <View style={containerStyles}>
