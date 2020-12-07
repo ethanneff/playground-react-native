@@ -5,6 +5,7 @@ import {
   StyleProp,
   StyleSheet,
   TextInput as Original,
+  View,
   ViewStyle,
 } from 'react-native';
 import {useColor} from '../../hooks';
@@ -33,6 +34,7 @@ interface Props {
   style?: StyleProp<ViewStyle>;
   color?: keyof Color;
   value: string;
+  flex?: boolean;
   onChangeText(text: string): void;
   onSubmitEditing?(): void;
 }
@@ -55,6 +57,7 @@ export const TextInput = ({
   color,
   emphasis,
   type,
+  flex,
 }: Props): JSX.Element => {
   const [focus, setFocus] = useState(false);
   const colorScheme = useColor();
@@ -81,6 +84,8 @@ export const TextInput = ({
       flex: 1,
       padding: Theme.padding.p02,
       paddingRight: Theme.padding.p08,
+    flex: {
+      flex: 1,
     },
   });
   const textInput = useRef<Original>(null);
@@ -91,31 +96,34 @@ export const TextInput = ({
     focus ? styles.borderFocus : undefined,
     style,
   ];
+  const containerStyles = [flex ? styles.flex : undefined];
 
   const onFocus = useCallback(() => setFocus(true), []);
   const onBlur = useCallback(() => setFocus(false), []);
 
   return (
-    <Original
-      autoCorrect={autoCorrect}
-      blurOnSubmit={blurOnSubmit}
-      disableFullscreenUI={disableFullscreenUI}
-      editable={editable}
-      keyboardType={keyboardType}
-      onBlur={onBlur}
-      onChangeText={onChangeText}
-      onFocus={onFocus}
-      onSubmitEditing={onSubmitEditing}
-      placeholder={placeholder}
-      placeholderTextColor={colorScheme.secondary}
-      ref={textInput}
-      returnKeyType={returnKeyType}
-      secureTextEntry={secureTextEntry}
-      selectionColor={focusColor}
-      style={textInputStyles}
-      textContentType={textContentType}
-      underlineColorAndroid="transparent"
-      value={value}
-    />
+    <View style={containerStyles}>
+      <Original
+        autoCorrect={autoCorrect}
+        blurOnSubmit={blurOnSubmit}
+        disableFullscreenUI={disableFullscreenUI}
+        editable={editable}
+        keyboardType={keyboardType}
+        onBlur={onBlur}
+        onChangeText={onChangeText}
+        onFocus={onFocus}
+        onSubmitEditing={onSubmitEditing}
+        placeholder={placeholder}
+        placeholderTextColor={colorScheme.secondary}
+        ref={onInternalRef}
+        returnKeyType={returnKeyType}
+        secureTextEntry={secureTextEntry}
+        selectionColor={focusColor}
+        style={textInputStyles}
+        textContentType={textContentType}
+        underlineColorAndroid="transparent"
+        value={value}
+      />
+    </View>
   );
 };
