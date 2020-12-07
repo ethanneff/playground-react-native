@@ -56,7 +56,7 @@ export const Focus = memo(function Focus() {
   ]);
   const color = useColor();
   const width = useRootSelector(getSmallestDimension);
-  const listWidth = width * 0.66;
+  const listWidth = width * 0.7;
   const padding = Theme.padding.p04;
   const listSize = listWidth + padding;
   const borderRadius = Theme.padding.p02;
