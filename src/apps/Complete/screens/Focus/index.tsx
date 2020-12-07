@@ -1,9 +1,10 @@
 import React, {memo, useCallback, useRef, useState} from 'react';
-import {FlatList, View} from 'react-native';
-import {Button, Screen} from '../../../../components';
+import {FlatList} from 'react-native';
+import {Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {getSmallestDimension} from '../../../../models';
 import {Theme, useRootSelector} from '../../../../utils';
+import {AddList} from './AddList';
 import {List} from './List';
 import {ListObject} from './types';
 
@@ -65,9 +66,9 @@ export const Focus = memo(function Focus() {
 
   const getItemId = useCallback((item) => item.id, []);
 
-  const addColumn = useCallback(() => {
+  const addList = useCallback((name: string) => {
     const date = String(Date.now());
-    setLists((p) => [...p, {id: date, name: date, items: []}]);
+    setLists((p) => [...p, {id: date, name, items: []}]);
   }, []);
 
   const renderList = useCallback(
@@ -90,17 +91,15 @@ export const Focus = memo(function Focus() {
 
   const renderAddList = useCallback(() => {
     return (
-      <View
-        style={{
-          width: listWidth,
-          borderRadius,
-          padding: padding / 2,
-          backgroundColor: color.background,
-        }}>
-        <Button center color="primary" onPress={addColumn} title="add list" />
-      </View>
+      <AddList
+        backgroundColor={color.background}
+        borderRadius={borderRadius}
+        listWidth={listWidth}
+        onAddList={addList}
+        padding={padding}
+      />
     );
-  }, [addColumn, borderRadius, color.background, listWidth, padding]);
+  }, [addList, borderRadius, color.background, listWidth, padding]);
 
   const getItemLayout = useCallback(
     (_, index) => ({
@@ -124,13 +123,14 @@ export const Focus = memo(function Focus() {
   return (
     <Screen title="Focus">
       <FlatList
-        ListFooterComponent={renderAddList}
+        ListFooterComponent={renderAddList} // TODO: make default FlatList with this setting
         contentContainerStyle={{padding}}
         data={lists}
         decelerationRate="fast"
         getItemLayout={getItemLayout}
         horizontal
         keyExtractor={getItemId}
+        keyboardShouldPersistTaps="handled"
         onContentSizeChange={onListSizeChange}
         ref={listsRef}
         renderItem={renderList}
