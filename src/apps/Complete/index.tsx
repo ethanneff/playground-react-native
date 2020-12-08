@@ -1,13 +1,23 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {
+  BottomTabBarOptions,
+  createBottomTabNavigator,
+} from '@react-navigation/bottom-tabs';
 import {Route} from '@react-navigation/native';
+import {
+  createStackNavigator,
+  StackNavigationOptions,
+} from '@react-navigation/stack';
 import React, {memo, useCallback} from 'react';
 import {Icon} from '../../components';
 import {useColor} from '../../hooks';
 import {Capture} from './screens/Capture';
-import {Focus} from './screens/Focus';
+import {Project} from './screens/Project';
+import {Projects} from './screens/Projects';
 import {Reflect} from './screens/Reflect';
 
+const noHeader: StackNavigationOptions = {headerShown: false};
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 type Tabs = 'Capture' | 'Focus' | 'Reflect' | 'Account';
 type TabIcons = {
@@ -33,9 +43,19 @@ type TabBarIconProps = {
   size: number;
 };
 
+function Focus() {
+  return (
+    <Stack.Navigator screenOptions={noHeader}>
+      <Stack.Screen name="Projects" component={Projects} />
+      <Stack.Screen name="Project" component={Project} />
+    </Stack.Navigator>
+  );
+}
+
 export default memo(function Complete() {
   const color = useColor();
-  const tabBarOptions = {
+  const tabBarOptions: BottomTabBarOptions = {
+    keyboardHidesTabBar: true,
     activeTintColor: color.primary,
     inactiveTintColor: color.text,
   };

@@ -1,6 +1,8 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useRef, useState} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, ScrollView} from 'react-native';
 import {Screen} from '../../../../components';
+import {KeyboardSpacer} from '../../../../conversions';
 import {useColor} from '../../../../hooks';
 import {getSmallestDimension} from '../../../../models';
 import {Theme, useRootSelector} from '../../../../utils';
@@ -9,17 +11,14 @@ import {List} from './List';
 import {ListObject} from './types';
 
 // TODO: add landing page (actionables + record)
-// TODO: add navigation to columns
-// TODO: move into separate files
 // TODO: create data layer
 
 // TODO: fix keyboard scrolling
-// TODO: fix keyboard white bar
 
 // TODO: figure out max height for list (not 500)
 // TODO: figure out centering of list
 
-export const Focus = memo(function Focus() {
+export const Project = memo(function Project() {
   const [lists, setLists] = useState<ListObject[]>([
     {
       id: '1',
@@ -55,6 +54,7 @@ export const Focus = memo(function Focus() {
       items: [],
     },
   ]);
+  const {goBack} = useNavigation();
   const color = useColor();
   const width = useRootSelector(getSmallestDimension);
   const listWidth = width * 0.7;
@@ -123,25 +123,34 @@ export const Focus = memo(function Focus() {
     }
   }, [listsRef, lists, listsCount]);
 
+  const navBack = useCallback(() => {
+    goBack();
+  }, []);
+
   return (
-    <Screen title="Focus">
-      <FlatList
-        ListFooterComponent={renderAddList} // TODO: make default FlatList with this setting
-        contentContainerStyle={{padding}}
-        data={lists}
-        decelerationRate="fast"
-        getItemLayout={getItemLayout}
-        horizontal
-        keyExtractor={getItemId}
+    <Screen title="Focus" onLeftPress={navBack}>
+      <ScrollView
         keyboardShouldPersistTaps="handled"
-        onContentSizeChange={onListSizeChange}
-        ref={listsRef}
-        renderItem={renderList}
-        showsHorizontalScrollIndicator={false}
-        snapToAlignment="center"
-        snapToInterval={listSize}
-        style={{backgroundColor: color.surface}}
-      />
+        style={{backgroundColor: color.surface}}>
+        <FlatList
+          ListFooterComponent={renderAddList} // TODO: make default FlatList with this setting
+          contentContainerStyle={{padding}}
+          data={lists}
+          decelerationRate="fast"
+          getItemLayout={getItemLayout}
+          horizontal
+          keyExtractor={getItemId}
+          keyboardShouldPersistTaps="handled"
+          onContentSizeChange={onListSizeChange}
+          ref={listsRef}
+          renderItem={renderList}
+          showsHorizontalScrollIndicator={false}
+          snapToAlignment="center"
+          snapToInterval={listSize}
+          style={{backgroundColor: color.surface}}
+        />
+        <KeyboardSpacer />
+      </ScrollView>
     </Screen>
   );
 });
