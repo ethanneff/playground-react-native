@@ -16,7 +16,7 @@ export const Projects = memo(function Projects() {
 
   const navNext = useCallback(() => {
     navigate('Project');
-  }, []);
+  }, [navigate]);
 
   return (
     <Screen title="Projects">

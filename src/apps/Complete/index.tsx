@@ -43,14 +43,14 @@ type TabBarIconProps = {
   size: number;
 };
 
-function Focus() {
+const Focus = () => {
   return (
     <Stack.Navigator screenOptions={noHeader}>
-      <Stack.Screen name="Projects" component={Projects} />
-      <Stack.Screen name="Project" component={Project} />
+      <Stack.Screen component={Projects} name="Projects" />
+      <Stack.Screen component={Project} name="Project" />
     </Stack.Navigator>
   );
-}
+};
 
 export default memo(function Complete() {
   const color = useColor();

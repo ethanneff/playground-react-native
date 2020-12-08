@@ -125,10 +125,10 @@ export const Project = memo(function Project() {
 
   const navBack = useCallback(() => {
     goBack();
-  }, []);
+  }, [goBack]);
 
   return (
-    <Screen title="Focus" onLeftPress={navBack}>
+    <Screen onLeftPress={navBack} title="Focus">
       <ScrollView
         keyboardShouldPersistTaps="handled"
         style={{backgroundColor: color.surface}}>
