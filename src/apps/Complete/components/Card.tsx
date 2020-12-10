@@ -1,7 +1,8 @@
 import React, {memo, ReactElement} from 'react';
-import {View} from 'react-native';
+import {LayoutChangeEvent, View} from 'react-native';
 
 type CardProps = {
+  onLayout?: (event: LayoutChangeEvent) => void;
   children: ReactElement;
   padding: number;
   borderRadius: number;
@@ -13,9 +14,11 @@ export const Card = memo(function Card({
   backgroundColor,
   padding,
   borderRadius,
+  onLayout,
 }: CardProps) {
   return (
     <View
+      onLayout={onLayout}
       style={{
         borderRadius,
         backgroundColor,
