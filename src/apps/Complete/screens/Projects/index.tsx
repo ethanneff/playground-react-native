@@ -3,9 +3,9 @@ import React, {memo, useCallback, useState} from 'react';
 import {FlatList, View} from 'react-native';
 import {Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {Theme} from '../../../../utils';
 import {AddItem} from '../../components/AddItem';
 import {List} from '../../components/List';
+import {config} from '../../configs';
 import {ListObject} from '../../types';
 
 // TODO: add journal
@@ -14,8 +14,6 @@ import {ListObject} from '../../types';
 // TODO: add goals
 
 export const Projects = memo(function Projects() {
-  const borderRadius = Theme.padding.p02;
-  const padding = Theme.padding.p04;
   const color = useColor();
   const {navigate} = useNavigation();
 
@@ -54,16 +52,16 @@ export const Projects = memo(function Projects() {
         <List
           addButtonPlaceholder="Project title..."
           addButtonTitle="Add project"
-          borderRadius={borderRadius}
+          borderRadius={config.borderRadius}
           cardColor={color.surface}
           key={item.id}
           list={item}
           listColor={color.background}
-          padding={padding}
+          padding={config.padding}
         />
       );
     },
-    [borderRadius, color.background, color.surface, padding],
+    [color.background, color.surface],
   );
 
   const onAddGroup = useCallback((name: string) => {
@@ -75,15 +73,15 @@ export const Projects = memo(function Projects() {
     return (
       <AddItem
         backgroundColor={color.background}
-        borderRadius={borderRadius}
+        borderRadius={config.borderRadius}
         buttonTitle="Add group"
         inputPlaceholder="Group title..."
         inputType="h4"
         onAdd={onAddGroup}
-        padding={padding}
+        padding={config.padding}
       />
     );
-  }, [borderRadius, color.background, onAddGroup, padding]);
+  }, [color.background, onAddGroup]);
 
   return (
     <Screen onRightPress={navNext} title="Projects">
@@ -94,7 +92,7 @@ export const Projects = memo(function Projects() {
         }}>
         <FlatList
           ListFooterComponent={renderFooter}
-          contentContainerStyle={{padding}}
+          contentContainerStyle={{padding: config.padding}}
           data={groups}
           keyboardShouldPersistTaps="handled"
           renderItem={renderGroup}
