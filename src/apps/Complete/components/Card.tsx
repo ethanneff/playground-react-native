@@ -16,15 +16,12 @@ export const Card = memo(function Card({
 }: CardProps) {
   return (
     <View
-      style={[
-        {
-          borderRadius,
-          backgroundColor,
-          padding,
-          marginBottom: padding,
-        },
-        style,
-      ]}>
+      style={{
+        borderRadius,
+        backgroundColor,
+        padding,
+        marginBottom: padding,
+      }}>
       {children}
     </View>
   );
