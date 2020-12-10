@@ -13,7 +13,6 @@ export const Card = memo(function Card({
   backgroundColor,
   padding,
   borderRadius,
-  style,
 }: CardProps) {
   return (
     <View

@@ -36,8 +36,7 @@ export const Capture = memo(function Capture() {
         <Card
           backgroundColor={color.background}
           borderRadius={config.borderRadius}
-          padding={config.padding}
-          style={{marginBottom: config.padding}}>
+          padding={config.padding}>
           <View>
             <Text
               center
