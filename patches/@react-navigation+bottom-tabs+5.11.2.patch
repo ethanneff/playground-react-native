@@ -1,0 +1,14 @@
+diff --git a/node_modules/@react-navigation/bottom-tabs/lib/module/views/ResourceSavingScene.js b/node_modules/@react-navigation/bottom-tabs/lib/module/views/ResourceSavingScene.js
+index d2f4c34..6a9d8fe 100644
+--- a/node_modules/@react-navigation/bottom-tabs/lib/module/views/ResourceSavingScene.js
++++ b/node_modules/@react-navigation/bottom-tabs/lib/module/views/ResourceSavingScene.js
+@@ -2,8 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
+ 
+ import * as React from 'react';
+ import { Platform, StyleSheet, View } from 'react-native';
+-import { Screen, screensEnabled // @ts-ignore
+-, shouldUseActivityState } from 'react-native-screens';
++import { Screen, screensEnabled } from 'react-native-screens';
+ const FAR_FAR_AWAY = 30000; // this should be big enough to move the whole view out of its container
+ 
+ export default class ResourceSavingScene extends React.Component {
