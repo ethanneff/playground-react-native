@@ -1,11 +1,11 @@
 import {
   BottomTabBarOptions,
-  createBottomTabNavigator
+  createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
 import {Route} from '@react-navigation/native';
 import {
   createStackNavigator,
-  StackNavigationOptions
+  StackNavigationOptions,
 } from '@react-navigation/stack';
 import React, {memo, useCallback} from 'react';
 import {Icon} from '../../components';
@@ -16,8 +16,8 @@ import {Projects} from './screens/Projects';
 import {Reflect} from './screens/Reflect';
 
 const noHeader: StackNavigationOptions = {headerShown: false};
-const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
+const RootTab = createBottomTabNavigator();
+const ProjectsStack = createStackNavigator();
 
 type Tabs = 'Capture' | 'Focus' | 'Reflect' | 'Account';
 type TabIcons = {
@@ -48,10 +48,10 @@ type TabBarIconProps = {
 
 const Focus = () => {
   return (
-    <Stack.Navigator screenOptions={noHeader}>
-      <Stack.Screen component={Projects} name="Projects" />
-      <Stack.Screen component={Project} name="Project" />
-    </Stack.Navigator>
+    <ProjectsStack.Navigator screenOptions={noHeader}>
+      <ProjectsStack.Screen component={Projects} name="Projects" />
+      <ProjectsStack.Screen component={Project} name="Project" />
+    </ProjectsStack.Navigator>
   );
 };
 
@@ -74,13 +74,14 @@ export default memo(function Complete() {
     }),
     [color],
   );
+
   return (
-    <Tab.Navigator
+    <RootTab.Navigator
       screenOptions={screenOptions as any}
       tabBarOptions={tabBarOptions}>
-      <Tab.Screen component={Capture} name="Capture" />
-      <Tab.Screen component={Focus} name="Focus" />
-      <Tab.Screen component={Reflect} name="Reflect" />
-    </Tab.Navigator>
+      <RootTab.Screen component={Capture} name="Capture" />
+      <RootTab.Screen component={Focus} name="Focus" />
+      <RootTab.Screen component={Reflect} name="Reflect" />
+    </RootTab.Navigator>
   );
 });
