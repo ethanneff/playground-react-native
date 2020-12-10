@@ -1,6 +1,6 @@
 import React, {memo, useCallback, useState} from 'react';
 import {View} from 'react-native';
-import {Icon, TextInput} from '../../../../components';
+import {Icon, TextInput} from '../../../components';
 
 type ListHeaderProps = {
   name: string;

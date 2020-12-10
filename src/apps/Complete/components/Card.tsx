@@ -1,9 +1,9 @@
 import React, {memo} from 'react';
-import {Text, TouchableOpacity} from '../../../../components';
-import {CardObject} from './types';
+import {Text, TouchableOpacity} from '../../../components';
+import {ItemObject} from '../types';
 
 type CardProps = {
-  card: CardObject;
+  card: ItemObject;
   padding: number;
   borderRadius: number;
   backgroundColor: string;

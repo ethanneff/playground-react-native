@@ -1,18 +1,21 @@
 import React, {memo, useCallback, useRef, useState} from 'react';
 import {FlatList, View} from 'react-native';
+import {ItemObject, ListObject} from '../types';
 import {AddItem} from './AddItem';
 import {Card} from './Card';
 import {ListHeader} from './ListHeader';
-import {CardObject, ListObject} from './types';
 
 type ListProps = {
   list: ListObject;
   listColor: string;
   cardColor: string;
   borderRadius: number;
-  listWidth: number;
+  listWidth?: number;
   padding: number;
-  maxHeight: number;
+  maxHeight?: number;
+  orientation?: 'vertical' | 'horizontal';
+  addButtonTitle: string;
+  addButtonPlaceholder: string;
 };
 
 export const List = memo(function List({
@@ -23,10 +26,14 @@ export const List = memo(function List({
   cardColor,
   padding,
   maxHeight,
+  orientation = 'vertical',
+  addButtonTitle,
+  addButtonPlaceholder,
 }: ListProps) {
-  const [cards, setCards] = useState<CardObject[]>(list.items);
+  const [cards, setCards] = useState<ItemObject[]>(list.items);
   const cardsRef = useRef<FlatList | null>(null);
   const cardsLength = useRef(cards.length);
+  const horizontal = orientation === 'horizontal';
 
   const onKeyExtractor = useCallback((item) => item.id, []);
 
@@ -65,7 +72,8 @@ export const List = memo(function List({
           width: listWidth,
           backgroundColor: listColor,
           padding: padding / 2,
-          marginRight: padding,
+          marginRight: horizontal ? padding : 0,
+          marginBottom: horizontal ? 0 : padding,
         }}>
         <ListHeader name={list.name} padding={padding} />
         <FlatList
@@ -81,8 +89,8 @@ export const List = memo(function List({
         <AddItem
           backgroundColor={listColor}
           borderRadius={borderRadius}
-          buttonTitle="Add card"
-          inputPlaceholder="Card title..."
+          buttonTitle={addButtonTitle}
+          inputPlaceholder={addButtonPlaceholder}
           inputType="body2"
           onAdd={onAddCard}
           padding={padding}

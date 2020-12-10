@@ -1,8 +1,8 @@
 import React, {memo, useCallback, useState} from 'react';
 import {View} from 'react-native';
-import {Button, Icon, TextInput} from '../../../../components';
-import {useColor} from '../../../../hooks';
-import {FontType} from '../../../../utils';
+import {Button, Icon, TextInput} from '../../../components';
+import {useColor} from '../../../hooks';
+import {FontType} from '../../../utils';
 
 type AddItemProps = {
   itemWidth?: number;
