@@ -1,11 +1,11 @@
 import {
   BottomTabBarOptions,
-  createBottomTabNavigator,
+  createBottomTabNavigator
 } from '@react-navigation/bottom-tabs';
 import {Route} from '@react-navigation/native';
 import {
   createStackNavigator,
-  StackNavigationOptions,
+  StackNavigationOptions
 } from '@react-navigation/stack';
 import React, {memo, useCallback} from 'react';
 import {Icon} from '../../components';
@@ -25,12 +25,15 @@ type TabIcons = {
 };
 
 const tabIcons: TabIcons = {
-  Capture: {focused: 'thought-bubble', unfocused: 'thought-bubble-outline'},
+  Capture: {
+    focused: 'pencil-plus-outline',
+    unfocused: 'pencil-plus-outline',
+  },
   Focus: {
-    focused: 'checkbox-multiple-marked',
+    focused: 'checkbox-multiple-marked-outline',
     unfocused: 'checkbox-multiple-marked-outline',
   },
-  Reflect: {focused: 'file-chart', unfocused: 'file-chart-outline'},
+  Reflect: {focused: 'finance', unfocused: 'finance'},
   Account: {focused: 'account', unfocused: 'account-outline'},
 };
 
@@ -58,6 +61,7 @@ export default memo(function Complete() {
     keyboardHidesTabBar: true,
     activeTintColor: color.primary,
     inactiveTintColor: color.text,
+    showLabel: false,
   };
   const screenOptions = useCallback(
     ({route}: ScreenOptionsProps) => ({
