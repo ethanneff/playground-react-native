@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {View} from 'react-native';
+import {LayoutChangeEvent, View} from 'react-native';
 import {Button, Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {Card} from '../../components/Card';
@@ -8,10 +8,22 @@ import {List} from '../../components/List';
 import {config} from '../../configs';
 import {ListObject} from '../../types';
 
+// TODO: update addItem to be used for organize button
+
 export const Capture = memo(function Capture() {
   const color = useColor();
   const {navigate} = useNavigation();
   const navBack = useCallback(() => navigate('admin'), [navigate]);
+  const [dimensions, setDimensions] = useState({
+    container: {width: 0, height: 0},
+    button: {width: 0, height: 0},
+    header: {width: 0, height: 0},
+  });
+  const listMaxHeight =
+    dimensions.container.height -
+    dimensions.button.height -
+    dimensions.header.height -
+    config.padding * 12;
 
   const [list] = useState<ListObject>({
     id: '1',
@@ -25,9 +37,18 @@ export const Capture = memo(function Capture() {
 
   const onOrganize = useCallback(() => undefined, []);
 
+  const onLayout = useCallback(
+    (key: string) => (event: LayoutChangeEvent) => {
+      const {width, height} = event.nativeEvent.layout;
+      setDimensions((p) => ({...p, [key]: {width, height}}));
+    },
+    [],
+  );
+
   return (
     <Screen onLeftPress={navBack} title="Capture">
       <View
+        onLayout={onLayout('container')}
         style={{
           backgroundColor: color.surface,
           flex: 1,
@@ -36,6 +57,7 @@ export const Capture = memo(function Capture() {
         <Card
           backgroundColor={color.background}
           borderRadius={config.borderRadius}
+          onLayout={onLayout('header')}
           padding={config.padding}>
           <View>
             <Text
@@ -52,29 +74,32 @@ export const Capture = memo(function Capture() {
             />
           </View>
         </Card>
-        <List
-          addButtonPlaceholder="Item title..."
-          addButtonTitle="Add item"
+        <View>
+          <List
+            addButtonPlaceholder="Item title..."
+            addButtonTitle="Add item"
+            borderRadius={config.borderRadius}
+            cardColor={color.surface}
+            key={list.id}
+            list={list}
+            listColor={color.background}
+            maxHeight={listMaxHeight}
+            padding={config.padding}
+          />
+        </View>
+        <Card
+          backgroundColor={color.background}
           borderRadius={config.borderRadius}
-          cardColor={color.surface}
-          key={list.id}
-          list={list}
-          listColor={color.background}
-          maxHeight={300}
-          padding={config.padding}
-        />
-        <View
-          style={{
-            padding: config.padding / 2,
-            backgroundColor: color.background,
-          }}>
+          onLayout={onLayout('button')}
+          padding={config.padding / 2}>
           <Button
             center
             color="primary"
+            disable={list.items.length === 0}
             onPress={onOrganize}
             title="Organize"
           />
-        </View>
+        </Card>
       </View>
     </Screen>
   );

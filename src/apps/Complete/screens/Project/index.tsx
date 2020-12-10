@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useRef, useState} from 'react';
-import {FlatList, ScrollView} from 'react-native';
+import {FlatList, LayoutChangeEvent, View} from 'react-native';
 import {Screen} from '../../../../components';
 import {KeyboardSpacer} from '../../../../conversions';
 import {useColor} from '../../../../hooks';
@@ -16,7 +16,6 @@ import {ListObject} from '../../types';
 
 // TODO: fix keyboard scrolling
 
-// TODO: figure out max height for list (not 500)
 // TODO: figure out centering of list
 
 export const Project = memo(function Project() {
@@ -57,17 +56,24 @@ export const Project = memo(function Project() {
   ]);
   const {goBack} = useNavigation();
   const color = useColor();
-  const width = useRootSelector(getSmallestDimension);
-  const listWidth = width * 0.7;
+  const screenWidth = useRootSelector(getSmallestDimension);
+  const listWidth = screenWidth * 0.7;
   const listSize = listWidth + config.padding; // TODO: deal with marginRight and FlatList padding
   const listsRef = useRef<FlatList | null>(null);
   const listsCount = useRef(lists.length);
+  const [dimensions, setDimensions] = useState({width: 0, height: 0});
+  const listMaxHeight = dimensions.height - config.padding * 10;
 
   const getItemId = useCallback((item) => item.id, []);
 
   const addList = useCallback((name: string) => {
     const date = String(Date.now());
     setLists((p) => [...p, {id: date, name, items: []}]);
+  }, []);
+
+  const onLayout = useCallback((event: LayoutChangeEvent) => {
+    const {width, height} = event.nativeEvent.layout;
+    setDimensions({width, height});
   }, []);
 
   const renderList = useCallback(
@@ -82,13 +88,13 @@ export const Project = memo(function Project() {
           list={item}
           listColor={color.background}
           listWidth={listWidth}
-          maxHeight={500}
+          maxHeight={listMaxHeight}
           orientation="horizontal"
           padding={config.padding}
         />
       );
     },
-    [color.surface, color.background, listWidth],
+    [color.surface, color.background, listWidth, listMaxHeight],
   );
 
   const renderAddList = useCallback(() => {
@@ -131,9 +137,9 @@ export const Project = memo(function Project() {
 
   return (
     <Screen onLeftPress={navBack} title="Focus">
-      <ScrollView
-        keyboardShouldPersistTaps="handled"
-        style={{backgroundColor: color.surface}}>
+      <View
+        onLayout={onLayout}
+        style={{flex: 1, backgroundColor: color.surface}}>
         <FlatList
           ListFooterComponent={renderAddList} // TODO: make default FlatList with this setting
           contentContainerStyle={{padding: config.padding}}
@@ -151,7 +157,7 @@ export const Project = memo(function Project() {
           snapToInterval={listSize}
         />
         <KeyboardSpacer />
-      </ScrollView>
+      </View>
     </Screen>
   );
 });
