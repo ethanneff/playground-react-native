@@ -86,6 +86,7 @@ export const TextInput = ({
       borderColor: colorScheme.background,
       borderRadius: Theme.padding.p01,
       color: textColor,
+      marginLeft: Theme.padding.p02,
       padding: Theme.padding.p02,
     },
   });
