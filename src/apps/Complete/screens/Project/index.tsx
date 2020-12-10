@@ -5,10 +5,11 @@ import {Screen} from '../../../../components';
 import {KeyboardSpacer} from '../../../../conversions';
 import {useColor} from '../../../../hooks';
 import {getSmallestDimension} from '../../../../models';
-import {Theme, useRootSelector} from '../../../../utils';
-import {AddItem} from './AddItem';
-import {List} from './List';
-import {ListObject} from './types';
+import {useRootSelector} from '../../../../utils';
+import {AddItem} from '../../components/AddItem';
+import {List} from '../../components/List';
+import {config} from '../../configs';
+import {ListObject} from '../../types';
 
 // TODO: add landing page (actionables + record)
 // TODO: create data layer
@@ -58,9 +59,7 @@ export const Project = memo(function Project() {
   const color = useColor();
   const width = useRootSelector(getSmallestDimension);
   const listWidth = width * 0.7;
-  const padding = Theme.padding.p04;
-  const listSize = listWidth + padding;
-  const borderRadius = Theme.padding.p02;
+  const listSize = listWidth + config.padding; // TODO: deal with marginRight and FlatList padding
   const listsRef = useRef<FlatList | null>(null);
   const listsCount = useRef(lists.length);
 
@@ -75,34 +74,37 @@ export const Project = memo(function Project() {
     ({item}) => {
       return (
         <List
-          borderRadius={borderRadius}
+          addButtonPlaceholder="Card title..."
+          addButtonTitle="Add card"
+          borderRadius={config.borderRadius}
           cardColor={color.surface}
           key={item.id}
           list={item}
           listColor={color.background}
           listWidth={listWidth}
           maxHeight={500}
-          padding={padding}
+          orientation="horizontal"
+          padding={config.padding}
         />
       );
     },
-    [borderRadius, color.surface, color.background, listWidth, padding],
+    [color.surface, color.background, listWidth],
   );
 
   const renderAddList = useCallback(() => {
     return (
       <AddItem
         backgroundColor={color.background}
-        borderRadius={borderRadius}
+        borderRadius={config.borderRadius}
         buttonTitle="Add List"
         inputPlaceholder="List title..."
         inputType="h4"
         itemWidth={listWidth}
         onAdd={addList}
-        padding={padding}
+        padding={config.padding}
       />
     );
-  }, [addList, borderRadius, color.background, listWidth, padding]);
+  }, [addList, color.background, listWidth]);
 
   const getItemLayout = useCallback(
     (_, index) => ({
@@ -121,7 +123,7 @@ export const Project = memo(function Project() {
       });
       listsCount.current = lists.length;
     }
-  }, [listsRef, lists, listsCount]);
+  }, [lists.length]);
 
   const navBack = useCallback(() => {
     goBack();
@@ -134,7 +136,7 @@ export const Project = memo(function Project() {
         style={{backgroundColor: color.surface}}>
         <FlatList
           ListFooterComponent={renderAddList} // TODO: make default FlatList with this setting
-          contentContainerStyle={{padding}}
+          contentContainerStyle={{padding: config.padding}}
           data={lists}
           decelerationRate="fast"
           getItemLayout={getItemLayout}
@@ -147,7 +149,6 @@ export const Project = memo(function Project() {
           showsHorizontalScrollIndicator={false}
           snapToAlignment="center"
           snapToInterval={listSize}
-          style={{backgroundColor: color.surface}}
         />
         <KeyboardSpacer />
       </ScrollView>
