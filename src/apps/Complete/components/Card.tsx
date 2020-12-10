@@ -1,30 +1,32 @@
-import React, {memo} from 'react';
-import {Text, TouchableOpacity} from '../../../components';
-import {ItemObject} from '../types';
+import React, {memo, ReactElement} from 'react';
+import {View} from 'react-native';
 
 type CardProps = {
-  card: ItemObject;
+  children: ReactElement;
   padding: number;
   borderRadius: number;
   backgroundColor: string;
 };
 
 export const Card = memo(function Card({
-  card,
+  children,
+  backgroundColor,
   padding,
   borderRadius,
-  backgroundColor,
+  style,
 }: CardProps) {
   return (
-    <TouchableOpacity
-      key={card.id}
-      style={{
-        borderRadius,
-        padding: padding,
-        backgroundColor,
-        marginBottom: padding / 2,
-      }}>
-      <Text title={card.name} />
-    </TouchableOpacity>
+    <View
+      style={[
+        {
+          borderRadius,
+          backgroundColor,
+          padding,
+          marginBottom: padding,
+        },
+        style,
+      ]}>
+      {children}
+    </View>
   );
 });
