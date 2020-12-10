@@ -1,4 +1,4 @@
-export type CardObject = {
+export type ItemObject = {
   id: string;
   name: string;
 };
@@ -6,5 +6,5 @@ export type CardObject = {
 export type ListObject = {
   name: string;
   id: string;
-  items: CardObject[];
+  items: ItemObject[];
 };
