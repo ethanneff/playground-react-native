@@ -2,7 +2,7 @@ import React, {memo, useCallback, useRef, useState} from 'react';
 import {FlatList, View} from 'react-native';
 import {ItemObject, ListObject} from '../types';
 import {AddItem} from './AddItem';
-import {Card} from './Card';
+import {Item} from './Item';
 import {ListHeader} from './ListHeader';
 
 type ListProps = {
@@ -52,10 +52,10 @@ export const List = memo(function List({
   const onRenderItem = useCallback(
     ({item}) => {
       return (
-        <Card
+        <Item
           backgroundColor={cardColor}
           borderRadius={borderRadius}
-          card={item}
+          item={item}
           key={item.id}
           padding={padding}
         />
