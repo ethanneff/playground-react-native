@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {View} from 'react-native';
 import {Button, Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {Theme} from '../../../../utils';
+import {Card} from '../../components/Card';
 import {List} from '../../components/List';
 import {config} from '../../configs';
 import {ListObject} from '../../types';
@@ -33,26 +33,26 @@ export const Capture = memo(function Capture() {
           flex: 1,
           padding: config.padding,
         }}>
-        <View
-          style={{
-            borderRadius: Theme.padding.p02,
-            padding: Theme.padding.p02,
-            backgroundColor: color.background,
-            marginBottom: config.padding,
-          }}>
-          <Text
-            center
-            emphasis="high"
-            style={{paddingBottom: config.padding}}
-            title="Record every thought"
-            type="h4"
-          />
-          <Text
-            center
-            emphasis="medium"
-            title="Clear your mind. Keep focus on the most important. Organize periodically."
-          />
-        </View>
+        <Card
+          backgroundColor={color.background}
+          borderRadius={config.borderRadius}
+          padding={config.padding}
+          style={{marginBottom: config.padding}}>
+          <View>
+            <Text
+              center
+              emphasis="high"
+              style={{paddingBottom: config.padding}}
+              title="Record every thought"
+              type="h4"
+            />
+            <Text
+              center
+              emphasis="medium"
+              title="Clear your mind. Keep focus on the most important. Organize periodically."
+            />
+          </View>
+        </Card>
         <List
           addButtonPlaceholder="Item title..."
           addButtonTitle="Add item"
