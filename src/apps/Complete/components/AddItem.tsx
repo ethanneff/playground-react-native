@@ -2,7 +2,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {View} from 'react-native';
 import {Button, Icon, TextInput} from '../../../components';
 import {useColor} from '../../../hooks';
-import {FontType} from '../../../utils';
+import {FontType, Theme} from '../../../utils';
 
 type AddItemProps = {
   itemWidth?: number;
@@ -46,9 +46,10 @@ export const AddItem = memo(function AddItem({
     <View
       style={{
         width: itemWidth,
+        height: Theme.padding.p14,
         borderRadius,
-        padding: padding / 2,
         backgroundColor,
+        justifyContent: 'center',
       }}>
       {showInput ? (
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
