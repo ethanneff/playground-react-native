@@ -1,50 +1,82 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {ScrollView} from 'react-native';
-import {Card, Input, Screen, Text} from '../../../../components';
+import {View} from 'react-native';
+import {Button, Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {Theme} from '../../../../utils';
-
-// TODO: add inbox list
-// TODO: add add button
-// TODO: add organize button
+import {List} from '../../components/List';
+import {config} from '../../configs';
+import {ListObject} from '../../types';
 
 export const Capture = memo(function Capture() {
   const color = useColor();
   const {navigate} = useNavigation();
   const navBack = useCallback(() => navigate('admin'), [navigate]);
-  const [message, setMessage] = useState('');
-  const onChangeText = useCallback((value: string) => setMessage(value), []);
+
+  const [list] = useState<ListObject>({
+    id: '1',
+    name: 'Inbox',
+    items: [
+      {id: '1', name: 'do dishes'},
+      {id: '2', name: 'walk dog'},
+      {id: '3', name: 'run 4 miles'},
+    ],
+  });
+
+  const onOrganize = useCallback(() => undefined, []);
 
   return (
     <Screen onLeftPress={navBack} title="Capture">
-      <ScrollView
-        contentContainerStyle={
-          {
-            // padding: Theme.padding.p04,
-          }
-        }
-        style={{backgroundColor: color.surface, flex: 1}}>
-        <Card>
+      <View
+        style={{
+          backgroundColor: color.surface,
+          flex: 1,
+          padding: config.padding,
+        }}>
+        <View
+          style={{
+            borderRadius: Theme.padding.p02,
+            padding: Theme.padding.p02,
+            backgroundColor: color.background,
+            marginBottom: config.padding,
+          }}>
           <Text
             center
-            style={{paddingBottom: Theme.padding.p04}}
-            title="Try something new every day"
-            type="h3"
+            emphasis="high"
+            style={{paddingBottom: config.padding}}
+            title="Record every thought"
+            type="h4"
           />
           <Text
             center
             emphasis="medium"
-            title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
-            type="h4"
+            title="Clear your mind. Keep focus on the most important. Organize periodically."
           />
-          <Input
-            onChangeText={onChangeText}
-            placeholder="hello"
-            value={message}
+        </View>
+        <List
+          addButtonPlaceholder="Item title..."
+          addButtonTitle="Add item"
+          borderRadius={config.borderRadius}
+          cardColor={color.surface}
+          key={list.id}
+          list={list}
+          listColor={color.background}
+          maxHeight={300}
+          padding={config.padding}
+        />
+        <View
+          style={{
+            padding: config.padding / 2,
+            backgroundColor: color.background,
+          }}>
+          <Button
+            center
+            color="primary"
+            onPress={onOrganize}
+            title="Organize"
           />
-        </Card>
-      </ScrollView>
+        </View>
+      </View>
     </Screen>
   );
 });
