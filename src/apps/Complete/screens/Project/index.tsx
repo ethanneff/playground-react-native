@@ -13,7 +13,7 @@ import {ListObject} from '../../types';
 // TODO: add landing page (actionables + record)
 // TODO: create data layer
 
-// TODO: fix keyboard scrolling
+// TODO: fix keyboard scrolling (keyboard aware + recycler view)
 
 // TODO: figure out centering of list
 
