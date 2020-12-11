@@ -29,7 +29,7 @@ export const useKeyboard = (): void => {
 
   useEffect(() => {
     const android = Platform.OS === 'android';
-    const show = android ? 'keyboardDidShow' : 'keyboardWillShow';
+    const show = android ? 'keyboardDidShow' : 'keyboardWillChangeFrame';
     const hide = android ? 'keyboardDidHide' : 'keyboardWillHide';
     Keyboard.addListener(show, onShow);
     Keyboard.addListener(hide, onHide);
