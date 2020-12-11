@@ -2,7 +2,6 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useRef, useState} from 'react';
 import {FlatList, LayoutChangeEvent, View} from 'react-native';
 import {Screen} from '../../../../components';
-import {KeyboardSpacer} from '../../../../conversions';
 import {useColor} from '../../../../hooks';
 import {getSmallestDimension} from '../../../../models';
 import {useRootSelector} from '../../../../utils';
@@ -156,7 +155,6 @@ export const Project = memo(function Project() {
           snapToAlignment="center"
           snapToInterval={listSize}
         />
-        <KeyboardSpacer />
       </View>
     </Screen>
   );
