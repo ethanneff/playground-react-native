@@ -61,8 +61,8 @@ export const Screen = ({
         <View style={styles.gutter} testID={testID}>
           {children}
         </View>
-        <KeyboardSpacer />
       </SafeAreaView>
+      <KeyboardSpacer />
     </View>
   );
 };
