@@ -1,11 +1,17 @@
 import NetInfo, {NetInfoState} from '@react-native-community/netinfo';
 import {useCallback, useEffect} from 'react';
-import {AppState, AppStateStatus, Dimensions, Keyboard} from 'react-native';
+import {
+  AppState,
+  AppStateStatus,
+  Dimensions,
+  Keyboard,
+  Platform,
+} from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import {
-  DimensionsProps,
   changeAppStatus,
   changeKeyboardStatus,
+  DimensionsProps,
   loadDevice,
   updateDimension,
   updateNetwork,
@@ -22,11 +28,14 @@ export const useKeyboard = (): void => {
   ]);
 
   useEffect(() => {
-    Keyboard.addListener('keyboardDidShow', onShow);
-    Keyboard.addListener('keyboardDidHide', onHide);
+    const android = Platform.OS === 'android';
+    const show = android ? 'keyboardDidShow' : 'keyboardWillShow';
+    const hide = android ? 'keyboardDidHide' : 'keyboardWillHide';
+    Keyboard.addListener(show, onShow);
+    Keyboard.addListener(hide, onHide);
     return () => {
-      Keyboard.removeListener('keyboardDidShow', onShow);
-      Keyboard.removeListener('keyboardDidHide', onHide);
+      Keyboard.removeListener(show, onShow);
+      Keyboard.removeListener(hide, onHide);
     };
   }, [onShow, onHide]);
 };
