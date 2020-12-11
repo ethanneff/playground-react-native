@@ -3,6 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, View} from 'react-native';
 import {Button, Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
+import {useRootSelector} from '../../../../utils';
 import {Card} from '../../components/Card';
 import {List} from '../../components/List';
 import {config} from '../../configs';
@@ -19,9 +20,13 @@ export const Capture = memo(function Capture() {
     button: {width: 0, height: 0},
     header: {width: 0, height: 0},
   });
+  const keyboardVisible = useRootSelector(
+    (state) => state.device.keyboardVisible,
+  );
+  const buttonHeight = keyboardVisible ? 0 : dimensions.button.height;
   const listMaxHeight =
     dimensions.container.height -
-    dimensions.button.height -
+    buttonHeight -
     dimensions.header.height -
     config.padding * 12;
 
@@ -87,19 +92,21 @@ export const Capture = memo(function Capture() {
             padding={config.padding}
           />
         </View>
-        <Card
-          backgroundColor={color.background}
-          borderRadius={config.borderRadius}
-          onLayout={onLayout('button')}
-          padding={config.padding / 2}>
-          <Button
-            center
-            color="primary"
-            disable={list.items.length === 0}
-            onPress={onOrganize}
-            title="Organize"
-          />
-        </Card>
+        {keyboardVisible ? null : (
+          <Card
+            backgroundColor={color.background}
+            borderRadius={config.borderRadius}
+            onLayout={onLayout('button')}
+            padding={config.padding / 2}>
+            <Button
+              center
+              color="primary"
+              disable={list.items.length === 0}
+              onPress={onOrganize}
+              title="Organize"
+            />
+          </Card>
+        )}
       </View>
     </Screen>
   );
