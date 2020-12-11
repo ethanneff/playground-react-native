@@ -1,16 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useEffect, useState} from 'react';
-import {
-  Animated,
-  FlatList,
-  Keyboard,
-  Platform,
-  StyleSheet,
-  View,
-} from 'react-native';
+import {Animated, FlatList, StyleSheet, View} from 'react-native';
 import {Icon, Input, Screen, Text} from '../../../components';
 import {useColor, useDriver} from '../../../hooks';
-import {colorWithOpacity, Theme} from '../../../utils';
+import {colorWithOpacity, Theme, useRootSelector} from '../../../utils';
 
 const data = [
   {id: 1, name: '1'},
@@ -53,6 +46,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     iconName: iconSearch,
     input: '',
   });
+  const keyboardVisible = useRootSelector((s) => s.device.keyboardVisible);
   const useNativeDriver = useDriver();
   const translateIcon = state.animation.interpolate({
     inputRange: [0, 0.5, 1],
@@ -121,61 +115,13 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     changeIcon(iconSearch);
   }, [animate, changeIcon]);
 
-  const keyboardWillShow = useCallback(() => {
-    if (Platform.OS !== 'ios') {
-      return;
-    }
-    onSearchBarFocus();
-  }, [onSearchBarFocus]);
-
-  const keyboardWillHide = useCallback(() => {
-    if (Platform.OS !== 'ios') {
-      return;
-    }
-    onSearchBarUnFocus();
-  }, [onSearchBarUnFocus]);
-
-  const keyboardDidShow = useCallback(() => {
-    if (Platform.OS !== 'android') {
-      return;
-    }
-    onSearchBarFocus();
-  }, [onSearchBarFocus]);
-
-  const keyboardDidHide = useCallback(() => {
-    if (Platform.OS !== 'android') {
-      return;
-    }
-    onSearchBarUnFocus();
-  }, [onSearchBarUnFocus]);
-
   useEffect(() => {
-    if (process.env.JEST_WORKER_ID) {
-      return undefined;
+    if (!keyboardVisible) {
+      onSearchBarUnFocus();
+    } else {
+      onSearchBarFocus();
     }
-    const keyboardDidShowListener = Keyboard.addListener(
-      'keyboardDidShow',
-      keyboardDidShow,
-    );
-    const keyboardDidHideListener = Keyboard.addListener(
-      'keyboardDidHide',
-      keyboardDidHide,
-    );
-    const keyboardWillShowListener = Keyboard.addListener(
-      'keyboardWillShow',
-      keyboardWillShow,
-    );
-    const keyboardWillHideListener = Keyboard.addListener(
-      'keyboardWillHide',
-      keyboardWillHide,
-    );
-    return () => {
-      keyboardDidShowListener.remove();
-      keyboardDidHideListener.remove();
-      keyboardWillShowListener.remove();
-      keyboardWillHideListener.remove();
-    };
-  }, [keyboardDidHide, keyboardDidShow, keyboardWillHide, keyboardWillShow]);
+  });
 
   const renderItem = useCallback(
     ({item}) => <Text style={styles.item} title={item.name} type="subtitle2" />,
