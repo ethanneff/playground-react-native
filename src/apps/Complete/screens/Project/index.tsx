@@ -106,7 +106,6 @@ export const Project = memo(function Project() {
         inputType="h4"
         itemWidth={listWidth}
         onAdd={addList}
-        padding={config.padding}
       />
     );
   }, [addList, color.background, listWidth]);

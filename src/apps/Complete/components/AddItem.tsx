@@ -7,7 +7,6 @@ import {FontType, Theme} from '../../../utils';
 type AddItemProps = {
   itemWidth?: number;
   borderRadius: number;
-  padding: number;
   backgroundColor: string;
   inputPlaceholder: string;
   inputType: FontType;
@@ -20,7 +19,6 @@ export const AddItem = memo(function AddItem({
   borderRadius,
   inputPlaceholder,
   buttonTitle,
-  padding,
   inputType,
   backgroundColor,
   onAdd,

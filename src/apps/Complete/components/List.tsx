@@ -93,7 +93,6 @@ export const List = memo(function List({
           inputPlaceholder={addButtonPlaceholder}
           inputType="body2"
           onAdd={onAddCard}
-          padding={padding}
         />
       </View>
     </View>

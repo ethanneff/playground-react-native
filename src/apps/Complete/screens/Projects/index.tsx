@@ -78,7 +78,6 @@ export const Projects = memo(function Projects() {
         inputPlaceholder="Group title..."
         inputType="h4"
         onAdd={onAddGroup}
-        padding={config.padding}
       />
     );
   }, [color.background, onAddGroup]);
