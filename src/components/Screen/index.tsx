@@ -1,6 +1,5 @@
 import React, {ReactNode} from 'react';
 import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
-import {KeyboardSpacer} from '../../conversions';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 import {NavBar} from './NavBar';
@@ -62,7 +61,6 @@ export const Screen = ({
           {children}
         </View>
       </SafeAreaView>
-      <KeyboardSpacer />
     </View>
   );
 };

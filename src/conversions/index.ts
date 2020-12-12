@@ -1,4 +1,3 @@
-export * from './KeyboardSpacer';
 export * from './LinearGradient';
 export * from './MaskedView';
 export * from './NetInfo';
