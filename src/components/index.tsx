@@ -22,3 +22,4 @@ export * from './Swipe';
 export * from './Text';
 export * from './TextInput';
 export * from './TouchableOpacity';
+export * from './RecyclerFlatList';
