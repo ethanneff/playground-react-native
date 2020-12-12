@@ -27,4 +27,5 @@ export const stackParams = {
   fortuneWheel: undefined,
   appleFit: undefined,
   skeletonLoading: undefined,
+  keyboardScroll: undefined,
 };

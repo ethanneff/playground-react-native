@@ -15,6 +15,7 @@ import {Fonts} from './Fonts';
 import {FortuneWheel} from './FortuneWheel';
 import {GameOfLife} from './GameOfLife';
 import {ImageCollection} from './ImageCollection';
+import {KeyboardScroll} from './KeyboardScroll';
 import {Landing} from './Landing';
 import {Login} from './Login';
 import {stackParams} from './navParams';
@@ -64,6 +65,7 @@ export default memo(function Games() {
       <Stack.Screen component={FortuneWheel} name="fortuneWheel" />
       <Stack.Screen component={AppleFit} name="appleFit" />
       <Stack.Screen component={SkeletonLoading} name="skeletonLoading" />
+      <Stack.Screen component={KeyboardScroll} name="keyboardScroll" />
     </Stack.Navigator>
   );
 });
