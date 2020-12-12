@@ -2847,9 +2847,10 @@
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-3.0.3.tgz#830167fd757ba70ac638747ba3169b2dbae60330"
 
-"@react-native-firebase/analytics@10.1.1":
-  version "10.1.1"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-10.1.1.tgz#1b66ec348e522c9919e516e2218206ff213d8b06"
+"@react-native-firebase/analytics@10.2.0":
+  version "10.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-10.2.0.tgz#472a0ab14bbedeab9cd6629c3bb199094435c4cf"
+  integrity sha512-75JeFK0mnXMjY6MMRCyDCMz269Tv2GYBGunAWy5KFeNMpftEP9SGhDV/0dEsaF+1OwLE7TLAg7y5Xvdve1ziZQ==
 
 "@react-native-firebase/app@10.1.0":
   version "10.1.0"
