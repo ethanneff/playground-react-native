@@ -13,30 +13,24 @@ export type RecyclerFlatListRef = RecyclerListView<
   RecyclerListViewState
 > | null;
 
-type ItemT = {id: string; [key: string]: any};
-type RowRender = {
-  item: ItemT;
-  type: string;
-  index: number;
-};
-
-type RecyclerFlatListProps = {
-  data: ItemT[];
+type RecyclerFlatListProps<T> = {
+  data: T[];
   onEndReached?: () => void;
   onRefetch?: () => void;
-  onRowRender: ({item, type, index}: RowRender) => ReactElement;
+  onRowRender: (item: T, index: number) => ReactElement;
   loading?: boolean;
   refreshing?: boolean;
   itemWidth: number;
   itemHeight: number;
   style?: ViewStyle;
+  horizontal?: boolean;
   scrollViewProps?: ScrollViewProps;
   onRef?: RefObject<
     RecyclerListView<RecyclerListViewProps, RecyclerListViewState> | null | any
   >;
 };
 
-export const RecyclerFlatList = ({
+export const RecyclerFlatList = <T extends unknown>({
   data,
   onEndReached,
   onRefetch,
@@ -47,13 +41,14 @@ export const RecyclerFlatList = ({
   itemHeight,
   style = {flex: 1},
   onRef,
+  horizontal,
   scrollViewProps = {
     showsVerticalScrollIndicator: false,
     refreshControl: (
       <RefreshControl onRefresh={onRefetch} refreshing={refreshing || false} />
     ),
   },
-}: RecyclerFlatListProps): ReactElement => {
+}: RecyclerFlatListProps<T>): ReactElement => {
   const [dataProvider, setDataProvider] = useState(
     new DataProvider((r1, r2) => r1.id !== r2.id),
   );
@@ -74,17 +69,19 @@ export const RecyclerFlatList = ({
   );
 
   const onRowRenderer = useCallback(
-    (type, item, index) => onRowRender({type, item, index}),
+    (_, item: T, index: number) => onRowRender(item, index),
     [onRowRender],
   );
 
-  useEffect(() => {
-    setDataProvider((prevState) => prevState.cloneWithRows(data));
-  }, [data]);
+  useEffect(
+    () => setDataProvider((prevState) => prevState.cloneWithRows(data)),
+    [data],
+  );
 
   return (
     <RecyclerListView
       dataProvider={dataProvider}
+      horizontal={horizontal}
       layoutProvider={layoutProvider}
       onEndReached={onEndReached}
       ref={onRef}

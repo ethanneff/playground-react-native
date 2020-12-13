@@ -60,7 +60,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
     return () => clearTimeout(timeout);
   }, []);
 
-  const onRowRender = useCallback(({item}) => {
+  const onRowRender = useCallback((item: Data) => {
     return (
       <View
         style={{
