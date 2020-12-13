@@ -25,6 +25,7 @@ interface Props {
   blurOnSubmit?: boolean;
   focusOnLoad?: boolean;
   disableFullscreenUI?: boolean;
+  backgroundColor?: string;
   editable?: boolean;
   error?: string;
   keyboardType?: KeyboardTypeOptions;
@@ -47,6 +48,7 @@ export const TextInput = ({
   focusOnLoad,
   editable = true,
   error = '',
+  backgroundColor,
   keyboardType,
   onChangeText,
   onSubmitEditing,
@@ -64,6 +66,7 @@ export const TextInput = ({
   const [focus, setFocus] = useState(false);
   const colorScheme = useColor();
   const focusColor = colorScheme.primary;
+  const backColor = backgroundColor || colorScheme.background;
   const {fontSize, textColor} = getFontStyles({
     emphasis,
     type,
@@ -81,9 +84,9 @@ export const TextInput = ({
       flex: 1,
     },
     textInput: {
-      backgroundColor: colorScheme.background,
+      backgroundColor: backColor,
       borderBottomWidth: 2,
-      borderColor: colorScheme.background,
+      borderColor: backColor,
       borderRadius: Theme.padding.p01,
       color: textColor,
       marginLeft: Theme.padding.p02,
