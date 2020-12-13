@@ -1,5 +1,6 @@
 import React, {memo, useCallback, useRef, useState} from 'react';
-import {FlatList, View} from 'react-native';
+import {ScrollViewProps, View} from 'react-native';
+import {RecyclerFlatList, RecyclerFlatListRef} from '../../../components';
 import {ItemObject, ListObject} from '../types';
 import {AddItem} from './AddItem';
 import {Item} from './Item';
@@ -10,9 +11,11 @@ type ListProps = {
   listColor: string;
   cardColor: string;
   borderRadius: number;
-  listWidth?: number;
+  listWidth: number;
   padding: number;
-  maxHeight?: number;
+  listHeight: number;
+  itemHeight: number;
+  itemWidth: number;
   orientation?: 'vertical' | 'horizontal';
   addButtonTitle: string;
   addButtonPlaceholder: string;
@@ -25,24 +28,27 @@ export const List = memo(function List({
   listColor,
   cardColor,
   padding,
-  maxHeight,
+  listHeight,
+  itemHeight,
+  itemWidth,
   orientation = 'vertical',
   addButtonTitle,
   addButtonPlaceholder,
 }: ListProps) {
   const [cards, setCards] = useState<ItemObject[]>(list.items);
-  const cardsRef = useRef<FlatList | null>(null);
+  const cardsRef = useRef<RecyclerFlatListRef>(null);
   const cardsLength = useRef(cards.length);
   const horizontal = orientation === 'horizontal';
-
-  const onKeyExtractor = useCallback((item) => item.id, []);
-
-  const onCardSizeChange = useCallback(() => {
-    if (cards.length > cardsLength.current) {
-      cardsRef.current?.scrollToEnd();
-      cardsLength.current = cards.length;
-    }
-  }, [cards.length]);
+  const scrollViewProps: ScrollViewProps = {
+    showsVerticalScrollIndicator: false,
+    showsHorizontalScrollIndicator: false,
+    onContentSizeChange: useCallback(() => {
+      if (cards.length > cardsLength.current) {
+        cardsRef.current?.scrollToEnd();
+        cardsLength.current = cards.length;
+      }
+    }, [cards.length]),
+  };
 
   const onAddCard = useCallback((name: string) => {
     const date = String(Date.now());
@@ -50,7 +56,7 @@ export const List = memo(function List({
   }, []);
 
   const onRenderItem = useCallback(
-    ({item}) => {
+    (item) => {
       return (
         <Item
           backgroundColor={cardColor}
@@ -65,36 +71,33 @@ export const List = memo(function List({
   );
 
   return (
-    <View>
-      <View
-        style={{
-          borderRadius,
-          width: listWidth,
-          backgroundColor: listColor,
-          padding: padding / 2,
-          marginRight: horizontal ? padding : 0,
-          marginBottom: horizontal ? 0 : padding,
-        }}>
-        <ListHeader name={list.name} padding={padding} />
-        <FlatList
-          data={cards}
-          keyExtractor={onKeyExtractor}
-          keyboardShouldPersistTaps="handled"
-          onContentSizeChange={onCardSizeChange}
-          ref={cardsRef}
-          renderItem={onRenderItem}
-          showsVerticalScrollIndicator={false}
-          style={{maxHeight}}
-        />
-        <AddItem
-          backgroundColor={listColor}
-          borderRadius={borderRadius}
-          buttonTitle={addButtonTitle}
-          inputPlaceholder={addButtonPlaceholder}
-          inputType="body2"
-          onAdd={onAddCard}
-        />
-      </View>
+    <View
+      style={{
+        borderRadius,
+        width: listWidth,
+        backgroundColor: listColor,
+        padding: padding / 2,
+        marginRight: horizontal ? padding : 0,
+        marginBottom: horizontal ? 0 : padding,
+      }}>
+      <ListHeader name={list.name} padding={padding} />
+      <RecyclerFlatList
+        data={cards}
+        itemHeight={itemHeight}
+        itemWidth={itemWidth}
+        onRef={cardsRef}
+        onRowRender={onRenderItem}
+        scrollViewProps={scrollViewProps}
+        style={{height: listHeight}}
+      />
+      <AddItem
+        backgroundColor={listColor}
+        borderRadius={borderRadius}
+        buttonTitle={addButtonTitle}
+        inputPlaceholder={addButtonPlaceholder}
+        inputType="body2"
+        onAdd={onAddCard}
+      />
     </View>
   );
 });
