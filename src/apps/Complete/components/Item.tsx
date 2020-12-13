@@ -1,5 +1,5 @@
-import React, {memo} from 'react';
-import {Text, TouchableOpacity} from '../../../components';
+import React, {memo, useCallback, useState} from 'react';
+import {TextInput, TouchableOpacity} from '../../../components';
 import {ItemObject} from '../types';
 
 type ItemProps = {
@@ -15,16 +15,26 @@ export const Item = memo(function Item({
   borderRadius,
   backgroundColor,
 }: ItemProps) {
+  const [title, setTitle] = useState(item.name);
+
+  const onTextChange = useCallback((value) => {
+    setTitle(value);
+  }, []);
+
   return (
     <TouchableOpacity
       key={item.id}
       style={{
         borderRadius,
-        padding: padding,
+        padding: padding / 2,
         backgroundColor,
-        marginBottom: padding / 2,
       }}>
-      <Text title={item.name} />
+      <TextInput
+        backgroundColor={backgroundColor}
+        onChangeText={onTextChange}
+        placeholder="Card name..."
+        value={title}
+      />
     </TouchableOpacity>
   );
 });
