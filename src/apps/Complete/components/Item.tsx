@@ -1,4 +1,5 @@
 import React, {memo, useCallback, useState} from 'react';
+import {View} from 'react-native';
 import {TextInput, TouchableOpacity} from '../../../components';
 import {ItemObject} from '../types';
 
@@ -6,6 +7,8 @@ type ItemProps = {
   item: ItemObject;
   padding: number;
   borderRadius: number;
+  itemWidth: number;
+  itemHeight: number;
   backgroundColor: string;
 };
 
@@ -13,6 +16,8 @@ export const Item = memo(function Item({
   item,
   padding,
   borderRadius,
+  itemWidth,
+  itemHeight,
   backgroundColor,
 }: ItemProps) {
   const [title, setTitle] = useState(item.name);
@@ -22,19 +27,29 @@ export const Item = memo(function Item({
   }, []);
 
   return (
-    <TouchableOpacity
-      key={item.id}
+    <View
       style={{
-        borderRadius,
-        padding: padding / 2,
-        backgroundColor,
+        width: itemWidth,
+        height: itemHeight,
       }}>
-      <TextInput
-        backgroundColor={backgroundColor}
-        onChangeText={onTextChange}
-        placeholder="Card name..."
-        value={title}
-      />
-    </TouchableOpacity>
+      <TouchableOpacity
+        key={item.id}
+        style={{
+          flex: 1,
+          borderRadius,
+          marginBottom: padding,
+          justifyContent: 'center',
+          alignContent: 'center',
+          paddingHorizontal: padding / 2,
+          backgroundColor,
+        }}>
+        <TextInput
+          backgroundColor={backgroundColor}
+          onChangeText={onTextChange}
+          placeholder="Card name..."
+          value={title}
+        />
+      </TouchableOpacity>
+    </View>
   );
 });

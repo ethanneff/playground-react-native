@@ -1,6 +1,11 @@
 import React, {memo, useCallback, useRef, useState} from 'react';
 import {ScrollViewProps, View} from 'react-native';
-import {RecyclerFlatList, RecyclerFlatListRef} from '../../../components';
+import {
+  RecyclerFlatList,
+  RecyclerFlatListRef,
+  TextInput,
+  TouchableOpacity,
+} from '../../../components';
 import {ItemObject, ListObject} from '../types';
 import {AddItem} from './AddItem';
 import {Item} from './Item';
@@ -9,13 +14,14 @@ import {ListHeader} from './ListHeader';
 type ListProps = {
   list: ListObject;
   listColor: string;
-  cardColor: string;
+  itemColor: string;
   borderRadius: number;
   listWidth: number;
   padding: number;
   listHeight: number;
   itemHeight: number;
   itemWidth: number;
+
   orientation?: 'vertical' | 'horizontal';
   addButtonTitle: string;
   addButtonPlaceholder: string;
@@ -26,7 +32,7 @@ export const List = memo(function List({
   borderRadius,
   listWidth,
   listColor,
-  cardColor,
+  itemColor,
   padding,
   listHeight,
   itemHeight,
@@ -59,15 +65,16 @@ export const List = memo(function List({
     (item) => {
       return (
         <Item
-          backgroundColor={cardColor}
+          backgroundColor={itemColor}
           borderRadius={borderRadius}
           item={item}
-          key={item.id}
+          itemHeight={itemHeight}
+          itemWidth={itemWidth}
           padding={padding}
         />
       );
     },
-    [borderRadius, cardColor, padding],
+    [borderRadius, itemColor, itemHeight, itemWidth, padding],
   );
 
   return (
@@ -76,11 +83,11 @@ export const List = memo(function List({
         borderRadius,
         width: listWidth,
         backgroundColor: listColor,
-        padding: padding / 2,
+        padding: padding,
         marginRight: horizontal ? padding : 0,
         marginBottom: horizontal ? 0 : padding,
       }}>
-      <ListHeader name={list.name} padding={padding} />
+      <ListHeader name={list.name} />
       <RecyclerFlatList
         data={cards}
         itemHeight={itemHeight}
@@ -88,7 +95,7 @@ export const List = memo(function List({
         onRef={cardsRef}
         onRowRender={onRenderItem}
         scrollViewProps={scrollViewProps}
-        style={{height: listHeight}}
+        style={{height: listHeight, paddingTop: padding / 2}}
       />
       <AddItem
         backgroundColor={listColor}
