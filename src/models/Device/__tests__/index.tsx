@@ -39,7 +39,7 @@ describe('actions', () => {
   });
 
   it('changeKeyboardStatus', () => {
-    const payload = true;
+    const payload = 43;
     const expectedAction = {
       payload,
       type: getType(changeKeyboardStatus),
@@ -92,10 +92,14 @@ describe('reducer', () => {
   it('changeKeyboardStatus', () => {
     expect(
       deviceReducer(deviceInitialState, {
-        payload: true,
+        payload: 12,
         type: getType(changeKeyboardStatus),
       }),
-    ).toEqual({...deviceInitialState, keyboardVisible: true});
+    ).toEqual({
+      ...deviceInitialState,
+      keyboardVisible: true,
+      keyboardHeight: 12,
+    });
   });
 
   it('changeAppStatus', () => {

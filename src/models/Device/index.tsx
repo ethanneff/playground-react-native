@@ -10,7 +10,7 @@ export const changeAppStatus = createAction(
 )<AppStateStatus>();
 export const changeKeyboardStatus = createAction(
   'device/UPDATE_KEYBOARD_VISIBILITY',
-)<boolean>();
+)<number>();
 
 /* INTERFACES */
 export interface DimensionsProps {
@@ -87,6 +87,7 @@ export interface DeviceInfo {
 
 export type DeviceState = {
   keyboardVisible: boolean;
+  keyboardHeight: number;
   appStatus: AppStateStatus;
 } & DeviceInfo;
 export type DeviceActions = ActionType<
@@ -164,6 +165,7 @@ export const deviceInfoInitialState: DeviceInfo = {
 export const deviceInitialState: DeviceState = {
   ...deviceInfoInitialState,
   keyboardVisible: false,
+  keyboardHeight: 0,
   appStatus: AppState.currentState,
 };
 
@@ -180,12 +182,14 @@ export const deviceReducer = (
     case getType(changeKeyboardStatus):
       return {
         ...state,
-        keyboardVisible: action.payload,
+        keyboardVisible: action.payload > 0,
+        keyboardHeight: action.payload,
       };
     case getType(loadDevice):
       return {
         ...state,
         ...action.payload,
+        keyboardHeight: 0,
       };
     case getType(logout):
       return deviceInitialState;
