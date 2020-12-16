@@ -1,44 +1,44 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {
-  Dimensions,
+  Keyboard,
   LayoutChangeEvent,
-  View,
+  Platform,
   TouchableWithoutFeedback,
+  View,
 } from 'react-native';
-import {Button, Screen, Text} from '../../../../components';
+import {Button, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {Theme} from '../../../../utils';
+import {useRootSelector} from '../../../../utils';
 import {Card} from '../../components/Card';
 import {List} from '../../components/List';
 import {config} from '../../configs';
 import {ListObject} from '../../types';
-import {useKeyboard} from './useKeyboard';
 
 // TODO: update addItem to be used for organize button
 
-const width = Dimensions.get('window').width - config.padding * 2;
 export const Capture = memo(function Capture() {
   const color = useColor();
   const {navigate} = useNavigation();
   const navBack = useCallback(() => navigate('admin'), [navigate]);
-  const {keyboardHeight, dismissKeyboard} = useKeyboard();
+  const keyboardHeight = useRootSelector(
+    (state) => state.device.keyboardHeight,
+  );
   const [dimensions, setDimensions] = useState({
     container: 0,
     button: 0,
     header: 0,
   });
+  const android = Platform.OS === 'android';
 
   const listHeight =
     keyboardHeight === 0
       ? dimensions.container -
         dimensions.button -
-        dimensions.header -
-        config.padding * 15
+        (android ? config.padding * 8 : config.padding * 14)
       : dimensions.container -
-        dimensions.header -
         keyboardHeight -
-        config.padding * 8;
+        (android ? config.padding * 3 : config.padding * 8);
 
   const [list] = useState<ListObject>({
     id: '1',
@@ -63,11 +63,13 @@ export const Capture = memo(function Capture() {
     [dimensions.container],
   );
 
+  const onDismissKeyboard = useCallback(() => Keyboard.dismiss(), []);
+
   return (
     <Screen onLeftPress={navBack} title="Capture">
       <TouchableWithoutFeedback
         onLayout={onLayout('container')}
-        onPress={dismissKeyboard}
+        onPress={onDismissKeyboard}
         style={{flex: 1}}>
         <View
           style={{
@@ -77,38 +79,15 @@ export const Capture = memo(function Capture() {
           }}>
           {!dimensions.container ? null : (
             <View>
-              <Card
-                backgroundColor={color.background}
-                borderRadius={config.borderRadius}
-                onLayout={onLayout('header')}
-                padding={config.padding}>
-                <View>
-                  <Text
-                    center
-                    emphasis="high"
-                    style={{paddingBottom: config.padding}}
-                    title="Record every thought"
-                    type="h4"
-                  />
-                  <Text
-                    center
-                    emphasis="medium"
-                    title="Clear your mind. Focus on the most important. Organize periodically."
-                  />
-                </View>
-              </Card>
               <List
                 addButtonPlaceholder="Item title..."
                 addButtonTitle="Add item"
                 borderRadius={config.borderRadius}
                 itemColor={color.surface}
-                itemHeight={Theme.padding.p18}
-                itemWidth={width - config.padding * 2}
                 key={list.id}
                 list={list}
                 listColor={color.background}
-                listHeight={listHeight}
-                listWidth={width}
+                maxHeight={listHeight}
                 padding={config.padding}
               />
               <Card
