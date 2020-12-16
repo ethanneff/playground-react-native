@@ -341,21 +341,6 @@ exports[`renders correctly 1`] = `
                         >
                           <View />
                         </View>
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "bottom": 0,
-                                "left": 0,
-                                "right": 0,
-                              },
-                              Object {
-                                "height": 0,
-                              },
-                              undefined,
-                            ]
-                          }
-                        />
                       </RCTSafeAreaView>
                     </View>
                   </View>
