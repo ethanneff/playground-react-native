@@ -39,6 +39,8 @@ interface Props {
   flex?: boolean;
   onChangeText(text: string): void;
   onSubmitEditing?(): void;
+  onFocus?(): void;
+  onBlur?(): void;
 }
 
 export const TextInput = ({
@@ -52,6 +54,8 @@ export const TextInput = ({
   keyboardType,
   onChangeText,
   onSubmitEditing,
+  onFocus,
+  onBlur,
   placeholder,
   returnKeyType,
   secureTextEntry,
@@ -92,7 +96,7 @@ export const TextInput = ({
       borderTopColor: backColor,
       borderWidth: 2,
       color: textColor,
-      padding: Theme.padding.p01,
+      padding: Theme.padding.p02,
     },
   });
   const textInput = useRef<Original | null>(null);
@@ -105,8 +109,18 @@ export const TextInput = ({
   ];
   const containerStyles = [flex ? styles.flex : undefined];
 
-  const onFocus = useCallback(() => setFocus(true), []);
-  const onBlur = useCallback(() => setFocus(false), []);
+  const didFocus = useCallback(() => {
+    setFocus(true);
+    if (onFocus) {
+      onFocus();
+    }
+  }, [onFocus]);
+  const didBlur = useCallback(() => {
+    setFocus(false);
+    if (onBlur) {
+      onBlur();
+    }
+  }, [onBlur]);
   const onInternalRef = useCallback(
     (ref: Original | null) => {
       if (!ref) {
@@ -128,9 +142,9 @@ export const TextInput = ({
         disableFullscreenUI={disableFullscreenUI}
         editable={editable}
         keyboardType={keyboardType}
-        onBlur={onBlur}
+        onBlur={didBlur}
         onChangeText={onChangeText}
-        onFocus={onFocus}
+        onFocus={didFocus}
         onSubmitEditing={onSubmitEditing}
         placeholder={placeholder}
         placeholderTextColor={colorScheme.secondary}
