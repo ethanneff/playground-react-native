@@ -4,9 +4,13 @@ import {Icon, TextInput} from '../../../components';
 
 type ListHeaderProps = {
   name: string;
+  padding: number;
 };
 
-export const ListHeader = memo(function ListHeader({name}: ListHeaderProps) {
+export const ListHeader = memo(function ListHeader({
+  name,
+  padding,
+}: ListHeaderProps) {
   const [input, setInput] = useState(name);
 
   const onChangeText = useCallback((value: string) => {
@@ -19,6 +23,7 @@ export const ListHeader = memo(function ListHeader({name}: ListHeaderProps) {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        paddingBottom: padding,
       }}>
       <TextInput
         emphasis="high"
