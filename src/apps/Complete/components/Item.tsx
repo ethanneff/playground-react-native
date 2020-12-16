@@ -1,14 +1,13 @@
 import React, {memo, useCallback, useState} from 'react';
 import {View} from 'react-native';
-import {TextInput, TouchableOpacity} from '../../../components';
+import {Icon, TextInput, TouchableOpacity} from '../../../components';
+import {useColor} from '../../../hooks';
 import {ItemObject} from '../types';
 
 type ItemProps = {
   item: ItemObject;
   padding: number;
   borderRadius: number;
-  itemWidth: number;
-  itemHeight: number;
   backgroundColor: string;
 };
 
@@ -16,40 +15,54 @@ export const Item = memo(function Item({
   item,
   padding,
   borderRadius,
-  itemWidth,
-  itemHeight,
   backgroundColor,
 }: ItemProps) {
+  const color = useColor();
   const [title, setTitle] = useState(item.name);
+  const [showControls, setShowControls] = useState(false);
 
   const onTextChange = useCallback((value) => {
     setTitle(value);
   }, []);
 
+  const onItemTitleClose = useCallback(() => undefined, []);
+  const onItemTitleSubmit = useCallback(() => undefined, []);
+
+  const onFocus = useCallback(() => setShowControls(true), []);
+  const onBlur = useCallback(() => setShowControls(false), []);
+
   return (
-    <View
+    <TouchableOpacity
+      key={item.id}
       style={{
-        width: itemWidth,
-        height: itemHeight,
+        flex: 1,
+        borderRadius,
+        marginBottom: padding,
+        backgroundColor: backgroundColor,
+        flexDirection: 'row',
       }}>
-      <TouchableOpacity
-        key={item.id}
-        style={{
-          flex: 1,
-          borderRadius,
-          marginBottom: padding,
-          justifyContent: 'center',
-          alignContent: 'center',
-          paddingHorizontal: padding / 2,
-          backgroundColor,
-        }}>
-        <TextInput
-          backgroundColor={backgroundColor}
-          onChangeText={onTextChange}
-          placeholder="Card name..."
-          value={title}
-        />
-      </TouchableOpacity>
-    </View>
+      <TextInput
+        backgroundColor={backgroundColor}
+        flex
+        onBlur={onBlur}
+        onChangeText={onTextChange}
+        onFocus={onFocus}
+        onSubmitEditing={onItemTitleSubmit}
+        placeholder="Item name..."
+        returnKeyType="done"
+        value={title}
+      />
+      {showControls ? (
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Icon name="close" onPress={onItemTitleClose} padded />
+          <Icon
+            color={color.primary}
+            name="send"
+            onPress={onItemTitleSubmit}
+            padded
+          />
+        </View>
+      ) : null}
+    </TouchableOpacity>
   );
 });
