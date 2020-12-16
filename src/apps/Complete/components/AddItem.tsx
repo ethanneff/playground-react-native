@@ -44,7 +44,7 @@ export const AddItem = memo(function AddItem({
     <View
       style={{
         width: itemWidth,
-        height: Theme.padding.p14,
+        height: Theme.padding.p12,
         borderRadius,
         backgroundColor,
         justifyContent: 'center',
