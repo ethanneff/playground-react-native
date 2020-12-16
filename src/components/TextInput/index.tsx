@@ -75,22 +75,24 @@ export const TextInput = ({
   });
   const styles = StyleSheet.create({
     borderError: {
-      borderColor: colorScheme.danger,
+      borderBottomColor: colorScheme.danger,
     },
     borderFocus: {
-      borderColor: focusColor,
+      borderBottomColor: focusColor,
     },
     flex: {
       flex: 1,
     },
     textInput: {
       backgroundColor: backColor,
-      borderBottomWidth: 2,
-      borderColor: backColor,
+      borderBottomColor: backColor,
+      borderLeftColor: backColor,
       borderRadius: Theme.padding.p01,
+      borderRightColor: backColor,
+      borderTopColor: backColor,
+      borderWidth: 2,
       color: textColor,
-      marginLeft: Theme.padding.p02,
-      padding: Theme.padding.p02,
+      padding: Theme.padding.p01,
     },
   });
   const textInput = useRef<Original | null>(null);
