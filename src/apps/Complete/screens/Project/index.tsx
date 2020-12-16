@@ -60,9 +60,14 @@ export const Project = memo(function Project() {
   const listSize = listWidth + config.padding; // TODO: deal with marginRight and FlatList padding
   const listsRef = useRef<FlatList | null>(null);
   const listsCount = useRef(lists.length);
-  const [dimensions, setDimensions] = useState({width: 0, height: 0});
-  const listMaxHeight = dimensions.height - config.padding * 10;
-
+  const keyboardHeight = useRootSelector(
+    (state) => state.device.keyboardHeight,
+  );
+  const [container, setContainer] = useState(0);
+  const keyboardPadding = keyboardHeight
+    ? config.padding * 8
+    : config.padding * 13;
+  const listMaxHeight = container - keyboardPadding - keyboardHeight;
   const getItemId = useCallback((item) => item.id, []);
 
   const addList = useCallback((name: string) => {
@@ -70,10 +75,16 @@ export const Project = memo(function Project() {
     setLists((p) => [...p, {id: date, name, items: []}]);
   }, []);
 
-  const onLayout = useCallback((event: LayoutChangeEvent) => {
-    const {width, height} = event.nativeEvent.layout;
-    setDimensions({width, height});
-  }, []);
+  const onLayout = useCallback(
+    (event: LayoutChangeEvent) => {
+      const {height} = event.nativeEvent.layout;
+      if (container > 0) {
+        return;
+      }
+      setContainer(height);
+    },
+    [container],
+  );
 
   const renderList = useCallback(
     ({item}) => {
@@ -82,7 +93,7 @@ export const Project = memo(function Project() {
           addButtonPlaceholder="Card title..."
           addButtonTitle="Add card"
           borderRadius={config.borderRadius}
-          cardColor={color.surface}
+          itemColor={color.surface}
           key={item.id}
           list={item}
           listColor={color.background}
@@ -138,22 +149,24 @@ export const Project = memo(function Project() {
       <View
         onLayout={onLayout}
         style={{flex: 1, backgroundColor: color.surface}}>
-        <FlatList
-          ListFooterComponent={renderAddList} // TODO: make default FlatList with this setting
-          contentContainerStyle={{padding: config.padding}}
-          data={lists}
-          decelerationRate="fast"
-          getItemLayout={getItemLayout}
-          horizontal
-          keyExtractor={getItemId}
-          keyboardShouldPersistTaps="handled"
-          onContentSizeChange={onListSizeChange}
-          ref={listsRef}
-          renderItem={renderList}
-          showsHorizontalScrollIndicator={false}
-          snapToAlignment="center"
-          snapToInterval={listSize}
-        />
+        {!container ? null : (
+          <FlatList
+            ListFooterComponent={renderAddList} // TODO: make default FlatList with this setting
+            contentContainerStyle={{padding: config.padding}}
+            data={lists}
+            decelerationRate="fast"
+            getItemLayout={getItemLayout}
+            horizontal
+            keyExtractor={getItemId}
+            keyboardShouldPersistTaps="handled"
+            onContentSizeChange={onListSizeChange}
+            ref={listsRef}
+            renderItem={renderList}
+            showsHorizontalScrollIndicator={false}
+            snapToAlignment="center"
+            snapToInterval={listSize}
+          />
+        )}
       </View>
     </Screen>
   );
