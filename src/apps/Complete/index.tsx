@@ -10,13 +10,11 @@ import {
 import React, {memo, useCallback} from 'react';
 import {Icon} from '../../components';
 import {useColor} from '../../hooks';
-import {Capture} from './screens/Capture';
-import {Project} from './screens/Project';
-import {Projects} from './screens/Projects';
-import {Reflect} from './screens/Reflect';
+import {Account, Capture, Project, Projects, Reflect} from './screens';
 
 const noHeader: StackNavigationOptions = {headerShown: false};
 const RootTab = createBottomTabNavigator();
+const RootStack = createStackNavigator();
 const ProjectsStack = createStackNavigator();
 
 type Tabs = 'Capture' | 'Focus' | 'Reflect' | 'Account';
@@ -55,7 +53,7 @@ const Focus = () => {
   );
 };
 
-export default memo(function Complete() {
+const Tabs = () => {
   const color = useColor();
   const tabBarOptions: BottomTabBarOptions = {
     keyboardHidesTabBar: true,
@@ -83,5 +81,14 @@ export default memo(function Complete() {
       <RootTab.Screen component={Focus} name="Focus" />
       <RootTab.Screen component={Reflect} name="Reflect" />
     </RootTab.Navigator>
+  );
+};
+
+export default memo(function Complete() {
+  return (
+    <RootStack.Navigator screenOptions={noHeader}>
+      <RootStack.Screen component={Tabs} name="main" />
+      <RootStack.Screen component={Account} name="account" />
+    </RootStack.Navigator>
   );
 });

@@ -65,8 +65,14 @@ export const Capture = memo(function Capture() {
 
   const onDismissKeyboard = useCallback(() => Keyboard.dismiss(), []);
 
+  const navToAccount = useCallback(() => navigate('account'), [navigate]);
+
   return (
-    <Screen onLeftPress={navBack} title="Capture">
+    <Screen
+      onLeftPress={navBack}
+      onRightPress={navToAccount}
+      rightIcon="account"
+      title="Capture">
       <TouchableWithoutFeedback
         onLayout={onLayout('container')}
         onPress={onDismissKeyboard}
