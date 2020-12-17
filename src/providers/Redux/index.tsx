@@ -29,6 +29,9 @@ import {
   CompleteListActions,
   CompleteListReducer,
   completeListReducer,
+  CompleteUserActions,
+  CompleteUserReducer,
+  completeUserReducer,
 } from '../../apps/Complete/models';
 import {
   ChatMessageActions,
@@ -83,6 +86,7 @@ export type RootState = DeepReadonly<{
   completeItem: CompleteItemReducer;
   completeList: CompleteListReducer;
   completeBoard: CompleteBoardReducer;
+  completeUser: CompleteUserReducer;
 }>;
 
 const reducers = combineReducers<RootState>({
@@ -101,6 +105,7 @@ const reducers = combineReducers<RootState>({
   completeItem: completeItemReducer,
   completeList: completeListReducer,
   completeBoard: completeBoardReducer,
+  completeUser: completeUserReducer,
 });
 
 export type RootAction =
@@ -119,7 +124,8 @@ export type RootAction =
   | ItemActions
   | CompleteItemActions
   | CompleteListActions
-  | CompleteBoardActions;
+  | CompleteBoardActions
+  | CompleteUserActions;
 export type RootThunkAction<R> = ThunkAction<R, RootState, any, RootAction>;
 
 const persistConfig = {key: 'root', storage: Storage};
