@@ -10,13 +10,13 @@ export const setActiveList = createAction('checklist/setActive')<string>();
 
 /* SELECTORS */
 export const getChecklists = (state: RootState): Checklists =>
-  state.checklists.items;
+  state.checklist.items;
 export const getCurrentChecklist = (state: RootState): Checklist => {
-  const active = state.checklists.active;
+  const active = state.checklist.active;
   if (!active) {
     throw new Error('missing current checklist');
   }
-  return state.checklists.items[active];
+  return state.checklist.items[active];
 };
 export const getActiveChecklistOrderByCreatedAt = createSelector(
   [getChecklists],

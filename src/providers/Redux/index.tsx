@@ -61,8 +61,8 @@ export type RootState = DeepReadonly<{
   auth: AuthState;
   dimension: DimensionState;
   device: DeviceState;
-  checklistItems: ChecklistItemReducer; // TODO: figure out better naming without plural (e.g. checklists.items vs checklist.items)
-  checklists: ChecklistReducer;
+  checklistItem: ChecklistItemReducer;
+  checklist: ChecklistReducer;
   chatMessage: ChatMessageReducer;
   network: NetworkState;
   questions: Questions;
