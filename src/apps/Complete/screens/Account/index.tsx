@@ -15,8 +15,8 @@ export const Account = memo(function Account() {
   const {goBack} = useNavigation();
   const navBack = useCallback(() => goBack(), [goBack]);
 
-  const onLogin = useCallback(() => {}, []);
-  const onLogout = useCallback(() => {}, []);
+  const onLogin = useCallback(() => undefined, []);
+  const onLogout = useCallback(() => undefined, []);
 
   return (
     <Screen onLeftPress={navBack} title="Account">

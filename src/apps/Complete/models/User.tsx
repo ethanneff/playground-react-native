@@ -5,7 +5,7 @@ import {RootAction, RootState} from '../../../providers';
 export const createUser = createAction('complete/user/create')<User>();
 export const updateUser = createAction('complete/user/update')<User>();
 export const removeUser = createAction('complete/user/remove')<string>();
-export const setActiveUser = createAction('complete/user/setActive')<string>();
+export const setActiveUser = createAction('complete/user/setActive')<boolean>();
 
 /* SELECTORS */
 export const getUser = (state: RootState): CompleteUserReducer =>
@@ -36,39 +36,20 @@ export const completeUserReducer = (
 ): CompleteUserReducer => {
   switch (action.type) {
     case getType(setActiveUser):
+      if (!state) {
+        throw new Error('cannot set active to no user');
+      }
       return {...state, active: action.payload};
     case getType(createUser):
-      return {
-        ...state,
-        items: {
-          ...state.items,
-          [action.payload.id]: action.payload,
-        },
-      };
+      return action.payload;
     case getType(updateUser):
       return {
         ...state,
-        items: {
-          ...state.items,
-          [action.payload.id]: {
-            ...state.items[action.payload.id],
-            ...action.payload,
-            updatedAt: Date.now(),
-          },
-        },
+        ...action.payload,
+        updatedAt: Date.now(),
       };
     case getType(removeUser):
-      return {
-        ...state,
-        items: {
-          ...state.items,
-          [action.payload]: {
-            ...state.items[action.payload],
-            active: false,
-            updatedAt: Date.now(),
-          },
-        },
-      };
+      return null;
     default:
       return state;
   }
