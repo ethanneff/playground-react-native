@@ -13,7 +13,7 @@ import {useRootSelector} from '../../../../utils';
 import {Card} from '../../components/Card';
 import {List} from '../../components/List';
 import {config} from '../../configs';
-import {ListObject} from '../../types';
+import {getInbox} from '../../models';
 
 // TODO: update addItem to be used for organize button
 
@@ -40,15 +40,7 @@ export const Capture = memo(function Capture() {
         keyboardHeight -
         (android ? config.padding * 3 : config.padding * 8);
 
-  const [list] = useState<ListObject>({
-    id: '1',
-    name: 'Inbox',
-    items: [
-      {id: '1', name: 'do dishes'},
-      {id: '2', name: 'walk dog'},
-      {id: '3', name: 'run 4 miles'},
-    ],
-  });
+  const [list] = useState(useRootSelector(getInbox));
 
   const onOrganize = useCallback(() => undefined, []);
 
