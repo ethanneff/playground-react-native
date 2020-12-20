@@ -23,6 +23,9 @@ import {
   CompleteBoardActions,
   CompleteBoardReducer,
   completeBoardReducer,
+  CompleteGroupActions,
+  completeGroupReducer,
+  CompleteGroupReducer,
   CompleteItemActions,
   CompleteItemReducer,
   completeItemReducer,
@@ -87,6 +90,7 @@ export type RootState = DeepReadonly<{
   completeList: CompleteListReducer;
   completeBoard: CompleteBoardReducer;
   completeUser: CompleteUserReducer;
+  completeGroup: CompleteGroupReducer;
 }>;
 
 const reducers = combineReducers<RootState>({
@@ -106,6 +110,7 @@ const reducers = combineReducers<RootState>({
   completeList: completeListReducer,
   completeBoard: completeBoardReducer,
   completeUser: completeUserReducer,
+  completeGroup: completeGroupReducer,
 });
 
 export type RootAction =
@@ -125,7 +130,8 @@ export type RootAction =
   | CompleteItemActions
   | CompleteListActions
   | CompleteBoardActions
-  | CompleteUserActions;
+  | CompleteUserActions
+  | CompleteGroupActions;
 export type RootThunkAction<R> = ThunkAction<R, RootState, any, RootAction>;
 
 const persistConfig = {key: 'root', storage: Storage};
