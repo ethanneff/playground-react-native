@@ -19,7 +19,7 @@ export type User = {
   active: boolean;
   createdAt: number;
   updatedAt: number;
-  boards: ReadonlyArray<string>;
+  groups: ReadonlyArray<string>;
 };
 export type CompleteUserActions = ActionType<
   | typeof createUser
@@ -37,7 +37,7 @@ export const completeUserReducer = (
   switch (action.type) {
     case getType(setActiveUser):
       if (!state) {
-        throw new Error('cannot set active to no user');
+        throw new Error('cannot set active to no user'); // TODO: error boundary redux? or just update state.error and capture at a root level?
       }
       return {...state, active: action.payload};
     case getType(createUser):
@@ -49,7 +49,7 @@ export const completeUserReducer = (
         updatedAt: Date.now(),
       };
     case getType(removeUser):
-      return null;
+      return initialState;
     default:
       return state;
   }

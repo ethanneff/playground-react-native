@@ -1,6 +1,7 @@
 import {createSelector} from 'reselect';
 import {ActionType, createAction, getType} from 'typesafe-actions';
 import {RootAction, RootState} from '../../../providers';
+import {removeUser} from './User';
 
 /* ACTIONS */
 export const createBoard = createAction('complete/board/create')<Board>();
@@ -93,6 +94,8 @@ export const completeBoardReducer = (
           },
         },
       };
+    case getType(removeUser):
+      return initialState;
     default:
       return state;
   }

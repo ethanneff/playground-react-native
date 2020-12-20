@@ -1,6 +1,7 @@
 import {createSelector} from 'reselect';
 import {ActionType, createAction, getType} from 'typesafe-actions';
 import {RootAction, RootState} from '../../../providers';
+import {removeUser} from './User';
 
 /* ACTIONS */
 export const createList = createAction('complete/list/create')<List>();
@@ -90,6 +91,8 @@ export const completeListReducer = (
           },
         },
       };
+    case getType(removeUser):
+      return initialState;
     default:
       return state;
   }
