@@ -3,7 +3,16 @@ import React, {memo, useCallback} from 'react';
 import {ScrollView} from 'react-native';
 import {Button, Card, Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {Theme} from '../../../../utils';
+import {Theme, useRootDispatch} from '../../../../utils';
+import {
+  createBoard,
+  createGroup,
+  createItem,
+  createList,
+  createUser,
+  setActiveUser,
+} from '../../models';
+import {getDefaultUserTemplate} from './factory';
 
 // TODO: figure out a place for this
 // TODO: add reminders
@@ -12,11 +21,23 @@ import {Theme} from '../../../../utils';
 
 export const Account = memo(function Account() {
   const color = useColor();
+  const dispatch = useRootDispatch();
+
   const {goBack} = useNavigation();
   const navBack = useCallback(() => goBack(), [goBack]);
 
-  const onLogin = useCallback(() => undefined, []);
+  const onLogin = useCallback(() => {
+    const {user, boards, lists, items, groups} = getDefaultUserTemplate();
+    items.map((item) => dispatch(createItem(item)));
+    lists.map((list) => dispatch(createList(list)));
+    boards.map((board) => dispatch(createBoard(board)));
+    groups.map((group) => dispatch(createGroup(group)));
+    dispatch(createUser(user));
+  }, [dispatch]);
   const onLogout = useCallback(() => undefined, []);
+  const onSetActive = useCallback(() => {
+    dispatch(setActiveUser(true));
+  }, [dispatch]);
 
   return (
     <Screen onLeftPress={navBack} title="Account">
@@ -66,6 +87,7 @@ export const Account = memo(function Account() {
         </Card>
         <Button onPress={onLogin} title="login" />
         <Button onPress={onLogout} title="logout" />
+        <Button onPress={onSetActive} title="set active" />
       </ScrollView>
     </Screen>
   );
