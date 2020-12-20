@@ -1,10 +1,63 @@
 import {v4} from 'uuid';
 import {Board, Group, Item, List, User} from '../../models';
 
-export const getDefaultUserTemplate = () => {
+type GetDefaultUserTemplate = {
+  user: User;
+  boards: Board[];
+  lists: List[];
+  items: Item[];
+  groups: Group[];
+};
+
+export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   const date = Date.now();
 
-  const items: Item[] = [
+  const inboxItems: Item[] = [
+    {
+      id: v4(),
+      name: 'do dishes',
+      createdAt: date,
+      updatedAt: date,
+      active: true,
+    },
+    {
+      id: v4(),
+      name: 'schedule meeting with Jim',
+      createdAt: date,
+      updatedAt: date,
+      active: true,
+    },
+    {
+      id: v4(),
+      name: 'run 4 miles',
+      createdAt: date,
+      updatedAt: date,
+      active: true,
+    },
+    {
+      id: v4(),
+      name: 'change oil',
+      createdAt: date,
+      updatedAt: date,
+      active: true,
+    },
+    {
+      id: v4(),
+      name: 'what is the best mediation',
+      createdAt: date,
+      updatedAt: date,
+      active: true,
+    },
+    {
+      id: v4(),
+      name: 'record Kelly birthday on Sep 22',
+      createdAt: date,
+      updatedAt: date,
+      active: true,
+    },
+  ];
+
+  const homeItems: Item[] = [
     {
       id: v4(),
       name: 'clean desk',
@@ -49,14 +102,25 @@ export const getDefaultUserTemplate = () => {
     },
   ];
 
-  const lists: List[] = [
+  const items: Item[] = [...homeItems, ...inboxItems];
+
+  const inboxList: List = {
+    id: v4(),
+    name: 'Inbox',
+    createdAt: date,
+    updatedAt: date,
+    active: true,
+    items: inboxItems.map((item) => item.id),
+  };
+
+  const homeLists: List[] = [
     {
       id: v4(),
       name: 'Backlog',
       createdAt: date,
       updatedAt: date,
       active: true,
-      items: items.map((item) => item.id),
+      items: homeItems.map((item) => item.id),
     },
     {
       id: v4(),
@@ -83,6 +147,8 @@ export const getDefaultUserTemplate = () => {
       items: [],
     },
   ];
+
+  const lists: List[] = [...homeLists, inboxList];
 
   const boards: Board[] = [
     {
@@ -184,6 +250,7 @@ export const getDefaultUserTemplate = () => {
     active: true,
     createdAt: date,
     updatedAt: date,
+    inbox: inboxList.id,
     groups: groups.map((group) => group.id),
   };
 

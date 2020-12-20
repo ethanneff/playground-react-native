@@ -19,6 +19,7 @@ export type User = {
   active: boolean;
   createdAt: number;
   updatedAt: number;
+  inbox: string;
   groups: ReadonlyArray<string>;
 };
 export type CompleteUserActions = ActionType<
