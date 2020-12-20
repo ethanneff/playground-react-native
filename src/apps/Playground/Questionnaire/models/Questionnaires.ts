@@ -5,10 +5,9 @@ import {
   createCustomAction,
   getType,
 } from 'typesafe-actions';
-
 import {v4} from 'uuid';
-import {RootAction, RootState} from '../../../../providers';
 import {logout} from '../../../../models/Auth';
+import {RootAction, RootState} from '../../../../providers';
 
 /* ACTIONS */
 export const createQuestionnaire = createCustomAction(
