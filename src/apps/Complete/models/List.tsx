@@ -1,7 +1,8 @@
 import {createSelector} from 'reselect';
 import {ActionType, createAction, getType} from 'typesafe-actions';
 import {RootAction, RootState} from '../../../providers';
-import {removeUser} from './User';
+import {getItems} from './Item';
+import {getUser, removeUser} from './User';
 
 /* ACTIONS */
 export const createList = createAction('complete/list/create')<List>();
@@ -24,6 +25,19 @@ export const getActiveListOrderByCreatedAt = createSelector(
     Object.values(items)
       .filter((item) => item.active)
       .sort((a, b) => a.createdAt - b.createdAt),
+);
+
+export const getInbox = createSelector(
+  [getLists, getUser, getItems],
+  (lists, user, items) => {
+    const inboxId = user?.inbox;
+    if (!inboxId) {
+      throw new Error('missing user inbox');
+    }
+    const inboxList = lists[inboxId];
+    const inboxItems = inboxList.items.map((item) => items[item]);
+    return {...inboxList, items: [...inboxItems]};
+  },
 );
 
 /* INTERFACES */
