@@ -62,7 +62,12 @@ export const Item = memo(function Item({
             padded
           />
         </View>
-      ) : null}
+      ) : (
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Icon name="dots-horizontal" onPress={onItemTitleClose} padded />
+          <Icon name="chevron-right" onPress={onItemTitleSubmit} padded />
+        </View>
+      )}
     </TouchableOpacity>
   );
 });
