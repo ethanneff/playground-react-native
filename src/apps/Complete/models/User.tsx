@@ -4,7 +4,7 @@ import {RootAction, RootState} from '../../../providers';
 /* ACTIONS */
 export const createUser = createAction('complete/user/create')<User>();
 export const updateUser = createAction('complete/user/update')<User>();
-export const removeUser = createAction('complete/user/remove')<string>();
+export const removeUser = createAction('complete/user/remove')();
 export const setActiveUser = createAction('complete/user/setActive')<boolean>();
 
 /* SELECTORS */
