@@ -7,8 +7,16 @@ import {getUser, removeUser} from './User';
 /* ACTIONS */
 export const createList = createAction('complete/list/create')<List>();
 export const updateList = createAction('complete/list/update')<List>();
+export const updateListTitle = createAction('complete/list/updateTitle')<{
+  listId: string;
+  title: string;
+}>();
 export const removeList = createAction('complete/list/remove')<string>();
 export const setActiveList = createAction('complete/list/setActive')<string>();
+export const updateListAddItem = createAction('complete/list/addItem')<{
+  listId: string;
+  itemId: string;
+}>();
 
 /* SELECTORS */
 export const getLists = (state: RootState): Lists => state.completeList.items;
@@ -32,6 +40,7 @@ export const getInbox = createSelector(
   (lists, user, items) => {
     const inboxId = user?.inbox;
     if (!inboxId) {
+      return;
       throw new Error('missing user inbox');
     }
     const inboxList = lists[inboxId];
@@ -59,6 +68,8 @@ export type CompleteListActions = ActionType<
   | typeof removeList
   | typeof updateList
   | typeof setActiveList
+  | typeof updateListTitle
+  | typeof updateListAddItem
 >;
 
 /* REDUCER */
@@ -79,6 +90,31 @@ export const completeListReducer = (
         items: {
           ...state.items,
           [action.payload.id]: action.payload,
+        },
+      };
+    case getType(updateListTitle):
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.listId]: {
+            ...state.items[action.payload.listId],
+            title: action.payload.title,
+            updatedAt: Date.now(),
+          },
+        },
+      };
+    case getType(updateListAddItem):
+      const item = state.items[action.payload.listId];
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.listId]: {
+            ...item,
+            items: [...item.items, action.payload.itemId],
+            updatedAt: Date.now(),
+          },
         },
       };
     case getType(updateList):
