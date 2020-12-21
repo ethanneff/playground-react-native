@@ -33,7 +33,8 @@ export type CompleteItemReducer = {
 };
 export type Item = {
   id: string;
-  name: string;
+  title: string;
+  description?: string;
   active: boolean;
   createdAt: number;
   updatedAt: number;

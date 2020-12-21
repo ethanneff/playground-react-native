@@ -36,7 +36,7 @@ export type CompleteGroupReducer = {
 };
 export type Group = {
   id: string;
-  name: string;
+  title: string;
   active: boolean;
   createdAt: number;
   updatedAt: number;

@@ -21,35 +21,35 @@ export const Project = memo(function Project() {
   const [lists, setLists] = useState<ListObject[]>([
     {
       id: '1',
-      name: 'Backlog',
+      title: 'Backlog',
       items: [
         {
           id: '11',
-          name: 'clean desk',
+          title: 'clean desk',
         },
         {
           id: '22',
-          name: 'clean room',
+          title: 'clean room',
         },
         {
           id: '33',
-          name: 'brush teeth',
+          title: 'brush teeth',
         },
       ],
     },
     {
       id: '2',
-      name: 'Todo',
+      title: 'Todo',
       items: [],
     },
     {
       id: '3',
-      name: 'In Progress',
+      title: 'In Progress',
       items: [],
     },
     {
       id: '4',
-      name: 'Done',
+      title: 'Done',
       items: [],
     },
   ]);
@@ -70,9 +70,9 @@ export const Project = memo(function Project() {
   const listMaxHeight = container - keyboardPadding - keyboardHeight;
   const getItemId = useCallback((item) => item.id, []);
 
-  const addList = useCallback((name: string) => {
+  const addList = useCallback((title: string) => {
     const date = String(Date.now());
-    setLists((p) => [...p, {id: date, name, items: []}]);
+    setLists((p) => [...p, {id: date, title, items: []}]);
   }, []);
 
   const onLayout = useCallback(

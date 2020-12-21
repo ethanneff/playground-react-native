@@ -44,9 +44,9 @@ export const List = memo(function List({
     }
   }, [cards.length]);
 
-  const onAddCard = useCallback((name: string) => {
+  const onAddCard = useCallback((title: string) => {
     const date = String(Date.now());
-    setCards((p) => [...p, {id: date, name}]);
+    setCards((p) => [...p, {id: date, title}]);
   }, []);
 
   const onRenderItem = useCallback(
@@ -75,7 +75,7 @@ export const List = memo(function List({
           marginRight: horizontal ? padding : 0,
           marginBottom: horizontal ? 0 : padding,
         }}>
-        <ListHeader name={list.name} padding={padding} />
+        <ListHeader name={list.title} padding={padding} />
         <FlatList
           data={cards}
           keyExtractor={onKeyExtractor}

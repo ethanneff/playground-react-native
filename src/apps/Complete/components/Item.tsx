@@ -18,7 +18,7 @@ export const Item = memo(function Item({
   backgroundColor,
 }: ItemProps) {
   const color = useColor();
-  const [title, setTitle] = useState(item.name);
+  const [title, setTitle] = useState(item.title);
   const [showControls, setShowControls] = useState(false);
 
   const onTextChange = useCallback((value) => {
@@ -26,9 +26,9 @@ export const Item = memo(function Item({
   }, []);
 
   const onItemTitleClose = useCallback(() => {
-    setTitle(item.name);
+    setTitle(item.title);
     Keyboard.dismiss();
-  }, [item.name]);
+  }, [item.title]);
   const onItemTitleSubmit = useCallback(() => {
     Keyboard.dismiss();
   }, []);

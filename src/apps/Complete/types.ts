@@ -1,10 +1,10 @@
 export type ItemObject = {
   id: string;
-  name: string;
+  title: string;
 };
 
 export type ListObject = {
-  name: string;
+  title: string;
   id: string;
   items: ItemObject[];
 };

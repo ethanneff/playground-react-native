@@ -47,7 +47,7 @@ export type CompleteListReducer = {
 };
 export type List = {
   id: string;
-  name: string;
+  title: string;
   active: boolean;
   createdAt: number;
   updatedAt: number;

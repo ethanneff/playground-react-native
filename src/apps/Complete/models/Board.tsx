@@ -36,7 +36,7 @@ export type CompleteBoardReducer = {
 };
 export type Board = {
   id: string;
-  name: string;
+  title: string;
   active: boolean;
   createdAt: number;
   updatedAt: number;

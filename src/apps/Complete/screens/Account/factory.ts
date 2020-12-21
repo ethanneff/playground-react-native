@@ -15,42 +15,42 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   const inboxItems: Item[] = [
     {
       id: v4(),
-      name: 'do dishes',
+      title: 'do dishes',
       createdAt: date,
       updatedAt: date,
       active: true,
     },
     {
       id: v4(),
-      name: 'schedule meeting with Jim',
+      title: 'schedule meeting with Jim',
       createdAt: date,
       updatedAt: date,
       active: true,
     },
     {
       id: v4(),
-      name: 'run 4 miles',
+      title: 'run 4 miles',
       createdAt: date,
       updatedAt: date,
       active: true,
     },
     {
       id: v4(),
-      name: 'change oil',
+      title: 'change oil',
       createdAt: date,
       updatedAt: date,
       active: true,
     },
     {
       id: v4(),
-      name: 'what is the best mediation',
+      title: 'what is the best mediation',
       createdAt: date,
       updatedAt: date,
       active: true,
     },
     {
       id: v4(),
-      name: 'record Kelly birthday on Sep 22',
+      title: 'record Kelly birthday on Sep 22',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -60,42 +60,42 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   const homeItems: Item[] = [
     {
       id: v4(),
-      name: 'clean desk',
+      title: 'clean desk',
       createdAt: date,
       updatedAt: date,
       active: true,
     },
     {
       id: v4(),
-      name: 'clean room',
+      title: 'clean room',
       createdAt: date,
       updatedAt: date,
       active: true,
     },
     {
       id: v4(),
-      name: 'walk dog',
+      title: 'walk dog',
       createdAt: date,
       updatedAt: date,
       active: true,
     },
     {
       id: v4(),
-      name: 'brush teeth',
+      title: 'brush teeth',
       createdAt: date,
       updatedAt: date,
       active: true,
     },
     {
       id: v4(),
-      name: 'do laundry',
+      title: 'do laundry',
       createdAt: date,
       updatedAt: date,
       active: true,
     },
     {
       id: v4(),
-      name: 'fix sink',
+      title: 'fix sink',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -106,7 +106,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
 
   const inboxList: List = {
     id: v4(),
-    name: 'Inbox',
+    title: 'Inbox',
     createdAt: date,
     updatedAt: date,
     active: true,
@@ -116,7 +116,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   const homeLists: List[] = [
     {
       id: v4(),
-      name: 'Backlog',
+      title: 'Backlog',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -124,7 +124,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      name: 'Todo',
+      title: 'Todo',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -132,7 +132,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      name: 'In Progress',
+      title: 'In Progress',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -140,7 +140,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      name: 'Done',
+      title: 'Done',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -153,7 +153,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   const boards: Board[] = [
     {
       id: v4(),
-      name: 'home',
+      title: 'home',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -161,7 +161,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      name: 'work',
+      title: 'work',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -169,7 +169,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      name: 'gym',
+      title: 'gym',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -177,7 +177,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      name: 'groceries',
+      title: 'groceries',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -185,7 +185,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      name: 'gift ideas',
+      title: 'gift ideas',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -193,7 +193,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      name: 'checklists',
+      title: 'checklists',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -201,7 +201,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      name: 'meeting notes',
+      title: 'meeting notes',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -209,7 +209,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      name: 'receipts',
+      title: 'receipts',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -217,7 +217,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      name: 'book summaries',
+      title: 'book summaries',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -228,7 +228,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   const groups: Group[] = [
     {
       id: v4(),
-      name: 'Actionable',
+      title: 'Actionable',
       active: true,
       createdAt: date,
       updatedAt: date,
@@ -236,7 +236,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      name: 'Storage',
+      title: 'Storage',
       active: true,
       createdAt: date,
       updatedAt: date,

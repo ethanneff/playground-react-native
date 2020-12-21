@@ -24,24 +24,24 @@ export const Projects = memo(function Projects() {
   const [groups, setGroups] = useState<ListObject[]>([
     {
       id: '1',
-      name: 'Actionables',
+      title: 'Actionables',
       items: [
-        {id: '1', name: 'home'},
-        {id: '2', name: 'work'},
-        {id: '3', name: 'gym'},
-        {id: '4', name: 'groceries'},
-        {id: '5', name: 'gifts'},
+        {id: '1', title: 'home'},
+        {id: '2', title: 'work'},
+        {id: '3', title: 'gym'},
+        {id: '4', title: 'groceries'},
+        {id: '5', title: 'gifts'},
       ],
     },
     {
       id: '2',
-      name: 'Storage',
+      title: 'Storage',
       items: [
-        {id: '1', name: 'gift ideas'},
-        {id: '2', name: 'checklists'},
-        {id: '3', name: 'book summaries'},
-        {id: '4', name: 'meeting notes'},
-        {id: '5', name: 'receipts'},
+        {id: '1', title: 'gift ideas'},
+        {id: '2', title: 'checklists'},
+        {id: '3', title: 'book summaries'},
+        {id: '4', title: 'meeting notes'},
+        {id: '5', title: 'receipts'},
       ],
     },
   ]);
@@ -64,9 +64,9 @@ export const Projects = memo(function Projects() {
     [color.background, color.surface],
   );
 
-  const onAddGroup = useCallback((name: string) => {
+  const onAddGroup = useCallback((title: string) => {
     const date = Date.now().toString();
-    setGroups((p) => [...p, {id: date, name, items: []}]);
+    setGroups((p) => [...p, {id: date, title, items: []}]);
   }, []);
 
   const renderFooter = useCallback(() => {
