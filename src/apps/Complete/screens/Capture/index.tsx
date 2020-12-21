@@ -1,21 +1,18 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {
-  Keyboard,
-  LayoutChangeEvent,
-  Platform,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
-import {Button, Screen} from '../../../../components';
+import {LayoutChangeEvent, Platform, View} from 'react-native';
+import {Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {useRootSelector} from '../../../../utils';
-import {Card} from '../../components/Card';
-import {List} from '../../components/List';
+import {
+  HandleKeyboard,
+  ListAdd,
+  ListContainer,
+  ListHeader2,
+  ListItems,
+  OrganizeButton,
+} from '../../components';
 import {config} from '../../configs';
-import {getInbox} from '../../models';
-
-// TODO: update addItem to be used for organize button
 
 export const Capture = memo(function Capture() {
   const color = useColor();
@@ -24,11 +21,7 @@ export const Capture = memo(function Capture() {
   const keyboardHeight = useRootSelector(
     (state) => state.device.keyboardHeight,
   );
-  const [dimensions, setDimensions] = useState({
-    container: 0,
-    button: 0,
-    header: 0,
-  });
+  const [dimensions, setDimensions] = useState({container: 0, button: 0});
   const android = Platform.OS === 'android';
 
   const listHeight =
@@ -40,22 +33,22 @@ export const Capture = memo(function Capture() {
         keyboardHeight -
         (android ? config.padding * 3 : config.padding * 8);
 
-  const [list] = useState(useRootSelector(getInbox));
+  const listId = useRootSelector((s) => s.completeUser?.inbox);
 
   const onOrganize = useCallback(() => undefined, []);
 
   const onLayout = useCallback(
     (key: string) => (event: LayoutChangeEvent) => {
       const {height} = event.nativeEvent.layout;
-      if (key === 'container' && dimensions.container > 0) {
+      const preventMultipleUpdates =
+        key === 'container' && dimensions.container > 0;
+      if (preventMultipleUpdates) {
         return;
       }
       setDimensions((p) => ({...p, [key]: height}));
     },
     [dimensions.container],
   );
-
-  const onDismissKeyboard = useCallback(() => Keyboard.dismiss(), []);
 
   const navToAccount = useCallback(() => navigate('account'), [navigate]);
 
@@ -65,46 +58,31 @@ export const Capture = memo(function Capture() {
       onRightPress={navToAccount}
       rightIcon="account"
       title="Capture">
-      <TouchableWithoutFeedback
+      <HandleKeyboard
+        backgroundColor={color.surface}
         onLayout={onLayout('container')}
-        onPress={onDismissKeyboard}
-        style={{flex: 1}}>
-        <View
-          style={{
-            flex: 1,
-            backgroundColor: color.surface,
-            padding: config.padding,
-          }}>
-          {!dimensions.container ? null : (
-            <View>
-              <List
-                addButtonPlaceholder="Item title..."
-                addButtonTitle="Add item"
-                borderRadius={config.borderRadius}
-                itemColor={color.surface}
-                key={list.id}
-                list={list}
-                listColor={color.background}
-                maxHeight={listHeight}
-                padding={config.padding}
+        render={dimensions.container > 0}>
+        {listId ? (
+          <View>
+            <ListContainer>
+              <ListHeader2 listId={listId} />
+              <ListItems listId={listId} maxHeight={listHeight} />
+              <ListAdd
+                buttonTitle="Add item"
+                inputPlaceholder="Item title..."
+                listId={listId}
               />
-              <Card
-                backgroundColor={color.background}
-                borderRadius={config.borderRadius}
-                onLayout={onLayout('button')}
-                padding={config.padding / 2}>
-                <Button
-                  center
-                  color="primary"
-                  disable={list.items.length === 0}
-                  onPress={onOrganize}
-                  title="Organize"
-                />
-              </Card>
-            </View>
-          )}
-        </View>
-      </TouchableWithoutFeedback>
+            </ListContainer>
+            <OrganizeButton
+              listId={listId}
+              onLayout={onLayout('button')}
+              onPress={onOrganize}
+            />
+          </View>
+        ) : (
+          <Text title="missing account" />
+        )}
+      </HandleKeyboard>
     </Screen>
   );
 });
