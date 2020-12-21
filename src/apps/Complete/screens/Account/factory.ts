@@ -153,7 +153,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   const boards: Board[] = [
     {
       id: v4(),
-      title: 'home',
+      title: 'At home',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -161,7 +161,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      title: 'work',
+      title: 'At work',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -169,7 +169,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      title: 'gym',
+      title: 'At gym',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -177,7 +177,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      title: 'groceries',
+      title: 'At town',
       createdAt: date,
       updatedAt: date,
       active: true,
@@ -228,7 +228,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   const groups: Group[] = [
     {
       id: v4(),
-      title: 'Actionable',
+      title: 'Boards',
       active: true,
       createdAt: date,
       updatedAt: date,
@@ -236,7 +236,15 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     },
     {
       id: v4(),
-      title: 'Storage',
+      title: 'Checklists',
+      active: true,
+      createdAt: date,
+      updatedAt: date,
+      boards: boards.filter((_, index) => index >= 4).map((board) => board.id),
+    },
+    {
+      id: v4(),
+      title: 'Notes',
       active: true,
       createdAt: date,
       updatedAt: date,
