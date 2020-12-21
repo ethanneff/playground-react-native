@@ -1,5 +1,5 @@
 import React, {memo, useCallback, useState} from 'react';
-import {View} from 'react-native';
+import {Keyboard, View} from 'react-native';
 import {Icon, TextInput, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
 import {ItemObject} from '../types';
@@ -25,8 +25,13 @@ export const Item = memo(function Item({
     setTitle(value);
   }, []);
 
-  const onItemTitleClose = useCallback(() => undefined, []);
-  const onItemTitleSubmit = useCallback(() => undefined, []);
+  const onItemTitleClose = useCallback(() => {
+    setTitle(item.name);
+    Keyboard.dismiss();
+  }, [item.name]);
+  const onItemTitleSubmit = useCallback(() => {
+    Keyboard.dismiss();
+  }, []);
 
   const onFocus = useCallback(() => setShowControls(true), []);
   const onBlur = useCallback(() => setShowControls(false), []);
