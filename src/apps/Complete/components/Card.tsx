@@ -1,29 +1,23 @@
 import React, {memo, ReactElement} from 'react';
 import {LayoutChangeEvent, View} from 'react-native';
+import {useColor} from '../../../hooks';
+import {config} from '../configs';
 
 type CardProps = {
   onLayout?: (event: LayoutChangeEvent) => void;
-  children: ReactElement;
-  padding: number;
-  borderRadius: number;
-  backgroundColor: string;
+  children: ReactElement | ReactElement[];
 };
 
-export const Card = memo(function Card({
-  children,
-  backgroundColor,
-  padding,
-  borderRadius,
-  onLayout,
-}: CardProps) {
+export const Card = memo(function Card({children, onLayout}: CardProps) {
+  const color = useColor();
   return (
     <View
       onLayout={onLayout}
       style={{
-        borderRadius,
-        backgroundColor,
-        padding,
-        marginBottom: padding,
+        borderRadius: config.borderRadius,
+        backgroundColor: color.background,
+        padding: config.padding / 2,
+        marginBottom: config.padding,
       }}>
       {children}
     </View>

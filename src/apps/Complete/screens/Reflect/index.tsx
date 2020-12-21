@@ -45,19 +45,13 @@ export const Reflect = memo(function Reflect() {
           backgroundColor: color.surface,
         }}
         style={{backgroundColor: color.surface}}>
-        <Card
-          backgroundColor={color.background}
-          borderRadius={config.borderRadius}
-          padding={config.padding}>
+        <Card>
           <View>
             <Title name="Purpose" />
             <Text title="Make a significant positive difference in global productivity" />
           </View>
         </Card>
-        <Card
-          backgroundColor={color.background}
-          borderRadius={config.borderRadius}
-          padding={config.padding}>
+        <Card>
           <View>
             <Title name="Goals" />
             <Text title="Top 3" />
@@ -66,10 +60,7 @@ export const Reflect = memo(function Reflect() {
             <Text title="1 More Rep" />
           </View>
         </Card>
-        <Card
-          backgroundColor={color.background}
-          borderRadius={config.borderRadius}
-          padding={config.padding}>
+        <Card>
           <View>
             <Title name="Review (Progress)" />
             <View
@@ -82,10 +73,7 @@ export const Reflect = memo(function Reflect() {
             </View>
           </View>
         </Card>
-        <Card
-          backgroundColor={color.background}
-          borderRadius={config.borderRadius}
-          padding={config.padding}>
+        <Card>
           <View>
             <Title name="Reflect (Journal)" />
             <Calendar />
