@@ -10,6 +10,7 @@ import {
   createItem,
   createList,
   createUser,
+  removeUser,
   setActiveUser,
 } from '../../models';
 import {getDefaultUserTemplate} from './factory';
@@ -34,7 +35,7 @@ export const Account = memo(function Account() {
     groups.map((group) => dispatch(createGroup(group)));
     dispatch(createUser(user));
   }, [dispatch]);
-  const onLogout = useCallback(() => undefined, []);
+  const onLogout = useCallback(() => dispatch(removeUser()), [dispatch]);
   const onSetActive = useCallback(() => {
     dispatch(setActiveUser(true));
   }, [dispatch]);
