@@ -33,7 +33,7 @@ export const ListHeader = memo(function ListHeader({
         type="h4"
         value={input}
       />
-      <Icon name="dots-vertical" padded />
+      <Icon name="dots-horizontal" padded />
     </View>
   );
 });
