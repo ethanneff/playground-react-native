@@ -17,6 +17,7 @@ const Journal = lazy(() => import('../../apps/Journal'));
 const ComfortZone = lazy(() => import('../../apps/ComfortZone'));
 const TheOneThing = lazy(() => import('../../apps/TheOneThing'));
 const Complete = lazy(() => import('../../apps/Complete'));
+const DeepWork = lazy(() => import('../../apps/DeepWork'));
 
 const Stack = createStackNavigator();
 const linking = {
@@ -56,6 +57,7 @@ export const Navigation = memo(function Navigation() {
           <Stack.Screen component={Journal} name="journal" />
           <Stack.Screen component={ComfortZone} name="comfort-zone" />
           <Stack.Screen component={TheOneThing} name="the-one-thing" />
+          <Stack.Screen component={DeepWork} name="deep-work" />
           <Stack.Screen component={Notification} name="notification" />
           <Stack.Screen component={Alert} name="alert" />
         </Stack.Navigator>
