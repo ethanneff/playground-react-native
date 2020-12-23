@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.44.1](https://github.com/ethanneff/example/compare/v2.44.0...v2.44.1) (2020-12-23)
+
+
+### Bug Fixes
+
+* update deps ([544818f](https://github.com/ethanneff/example/commit/544818f70fb19f6380972940b4a3b98dd5ec01d1))
+* update padding ([679b579](https://github.com/ethanneff/example/commit/679b579822d643863b4912470fd6902bd7721902))
+
 # [2.44.0](https://github.com/ethanneff/example/compare/v2.43.0...v2.44.0) (2020-12-22)
 
 
