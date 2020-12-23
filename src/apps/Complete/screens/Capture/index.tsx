@@ -28,7 +28,7 @@ export const Capture = memo(function Capture() {
     keyboardHeight === 0
       ? dimensions.container -
         dimensions.button -
-        (android ? config.padding * 8 : config.padding * 14)
+        (android ? config.padding * 8 : config.padding * 13)
       : dimensions.container -
         keyboardHeight -
         (android ? config.padding * 3 : config.padding * 8);

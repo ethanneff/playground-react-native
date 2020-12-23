@@ -36,7 +36,7 @@ export const ListItem = memo(function ListItem({itemId}: ListItemProps) {
       style={{
         flex: 1,
         borderRadius: config.borderRadius,
-        marginBottom: config.padding,
+        margin: config.padding / 2,
         backgroundColor: color.surface,
         flexDirection: 'row',
       }}>

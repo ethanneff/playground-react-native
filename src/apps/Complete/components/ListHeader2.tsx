@@ -1,7 +1,6 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Icon} from '../../../components';
-import {config} from '../configs';
 import {ListHeaderInput} from './ListHeaderInput';
 
 type ListHeaderProps = {
@@ -15,7 +14,6 @@ export const ListHeader2 = memo(function ListHeader({listId}: ListHeaderProps) {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingBottom: config.padding,
       }}>
       <ListHeaderInput listId={listId} />
       <Icon name="dots-horizontal" padded />
