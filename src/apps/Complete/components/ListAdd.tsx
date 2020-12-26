@@ -1,9 +1,9 @@
-import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
-import {Keyboard, TextInput as OriginalTextInput, View} from 'react-native';
+import React, {memo, useCallback, useRef, useState} from 'react';
+import {TextInput as OriginalTextInput, View} from 'react-native';
 import {v4} from 'uuid';
 import {Button, Icon, TextInput} from '../../../components';
 import {useColor} from '../../../hooks';
-import {Theme, useRootDispatch, useRootSelector} from '../../../utils';
+import {Theme, useRootDispatch} from '../../../utils';
 import {config} from '../configs';
 import {createItem, Item, updateListAddItem} from '../models';
 
@@ -27,16 +27,12 @@ export const ListAdd = memo(function ListAdd({
   const [itemTitle, setItemTitle] = useState('');
   const onItemTitleChange = useCallback((v: string) => setItemTitle(v), []);
   const onAddItemPress = useCallback(() => setShowInput((p) => !p), []);
-  const keyboardVisible = useRootSelector((s) => s.device.keyboardVisible);
 
   const onItemTitleClose = useCallback(() => {
-    Keyboard.dismiss();
-    const keyboardDelay = 50;
-    setTimeout(() => {
-      setShowInput(false);
-      setItemTitle('');
-    }, keyboardDelay);
+    setShowInput(false);
+    setItemTitle('');
   }, []);
+
   const onItemTitleSubmit = useCallback(() => {
     const formatted = itemTitle.trim();
     if (formatted.length === 0) {
@@ -57,11 +53,10 @@ export const ListAdd = memo(function ListAdd({
     textInputRef.current?.focus();
   }, [dispatch, itemTitle, listId]);
 
-  useEffect(() => {
-    if (!keyboardVisible) {
-      onItemTitleClose();
-    }
-  }, [keyboardVisible, onItemTitleClose]);
+  const onBlur = useCallback(() => {
+    setShowInput(false);
+    setItemTitle('');
+  }, []);
 
   return (
     <View
@@ -78,6 +73,7 @@ export const ListAdd = memo(function ListAdd({
             emphasis="high"
             flex
             focusOnLoad
+            onBlur={onBlur}
             onChangeText={onItemTitleChange}
             onRef={textInputRef}
             onSubmitEditing={onItemTitleSubmit}
