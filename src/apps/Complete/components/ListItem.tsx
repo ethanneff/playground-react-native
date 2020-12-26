@@ -42,10 +42,12 @@ export const ListItem = memo(function ListItem({
     dispatch(updateListRemoveItem({listId, itemId}));
   }, [dispatch, itemId, listId]);
   const onItemDetails = useCallback(() => undefined, []);
+  const onItemLongPress = useCallback(() => undefined, []);
 
   return (
     <TouchableOpacity
       key={item.id}
+      onLongPress={onItemLongPress}
       style={{
         flex: 1,
         borderRadius: config.borderRadius,
