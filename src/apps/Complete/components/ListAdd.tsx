@@ -1,5 +1,5 @@
-import React, {memo, useCallback, useState} from 'react';
-import {View} from 'react-native';
+import React, {memo, useCallback, useRef, useState} from 'react';
+import {Keyboard, TextInput as OriginalTextInput, View} from 'react-native';
 import {v4} from 'uuid';
 import {Button, Icon, TextInput} from '../../../components';
 import {useColor} from '../../../hooks';
@@ -11,7 +11,6 @@ type ListAddProps = {
   listId: string;
   itemWidth?: number;
   inputPlaceholder: string;
-
   buttonTitle: string;
 };
 
@@ -23,20 +22,25 @@ export const ListAdd = memo(function ListAdd({
 }: ListAddProps) {
   const color = useColor();
   const dispatch = useRootDispatch();
+  const textInputRef = useRef<OriginalTextInput | null>(null);
   const [showInput, setShowInput] = useState(false);
   const [itemTitle, setItemTitle] = useState('');
   const onItemTitleChange = useCallback((v: string) => setItemTitle(v), []);
   const onAddItemPress = useCallback(() => setShowInput((p) => !p), []);
   const onItemTitleClose = useCallback(() => {
-    setShowInput(false);
-    setItemTitle('');
+    Keyboard.dismiss();
+    const keyboardDelay = 50;
+    setTimeout(() => {
+      setShowInput(false);
+      setItemTitle('');
+    }, keyboardDelay);
   }, []);
   const onItemTitleSubmit = useCallback(() => {
     const formatted = itemTitle.trim();
     if (formatted.length === 0) {
       return;
     }
-    onItemTitleClose();
+    setItemTitle('');
     const itemId = v4();
     const date = Date.now();
     const item: Item = {
@@ -48,7 +52,8 @@ export const ListAdd = memo(function ListAdd({
     };
     dispatch(createItem(item));
     dispatch(updateListAddItem({listId, itemId}));
-  }, [dispatch, itemTitle, listId, onItemTitleClose]);
+    textInputRef.current?.focus();
+  }, [dispatch, itemTitle, listId]);
 
   return (
     <View
@@ -66,6 +71,7 @@ export const ListAdd = memo(function ListAdd({
             flex
             focusOnLoad
             onChangeText={onItemTitleChange}
+            onRef={textInputRef}
             onSubmitEditing={onItemTitleSubmit}
             placeholder={inputPlaceholder}
             returnKeyType="done"

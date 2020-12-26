@@ -1,4 +1,4 @@
-import React, {useCallback, useRef, useState} from 'react';
+import React, {MutableRefObject, useCallback, useRef, useState} from 'react';
 import {
   KeyboardTypeOptions,
   ReturnKeyTypeOptions,
@@ -41,6 +41,7 @@ interface Props {
   onSubmitEditing?(): void;
   onFocus?(): void;
   onBlur?(): void;
+  onRef?: MutableRefObject<Original | null>;
 }
 
 export const TextInput = ({
@@ -62,6 +63,7 @@ export const TextInput = ({
   textContentType = 'none',
   style,
   value,
+  onRef,
   color,
   emphasis,
   type,
@@ -130,8 +132,11 @@ export const TextInput = ({
         ref.focus();
       }
       textInput.current = ref;
+      if (onRef) {
+        onRef.current = ref;
+      }
     },
-    [focusOnLoad, textInput],
+    [focusOnLoad, onRef],
   );
 
   return (
