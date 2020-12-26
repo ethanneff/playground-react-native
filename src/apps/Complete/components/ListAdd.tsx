@@ -1,9 +1,9 @@
-import React, {memo, useCallback, useRef, useState} from 'react';
+import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {Keyboard, TextInput as OriginalTextInput, View} from 'react-native';
 import {v4} from 'uuid';
 import {Button, Icon, TextInput} from '../../../components';
 import {useColor} from '../../../hooks';
-import {Theme, useRootDispatch} from '../../../utils';
+import {Theme, useRootDispatch, useRootSelector} from '../../../utils';
 import {config} from '../configs';
 import {createItem, Item, updateListAddItem} from '../models';
 
@@ -27,6 +27,8 @@ export const ListAdd = memo(function ListAdd({
   const [itemTitle, setItemTitle] = useState('');
   const onItemTitleChange = useCallback((v: string) => setItemTitle(v), []);
   const onAddItemPress = useCallback(() => setShowInput((p) => !p), []);
+  const keyboardVisible = useRootSelector((s) => s.device.keyboardVisible);
+
   const onItemTitleClose = useCallback(() => {
     Keyboard.dismiss();
     const keyboardDelay = 50;
@@ -54,6 +56,12 @@ export const ListAdd = memo(function ListAdd({
     dispatch(updateListAddItem({listId, itemId}));
     textInputRef.current?.focus();
   }, [dispatch, itemTitle, listId]);
+
+  useEffect(() => {
+    if (!keyboardVisible) {
+      onItemTitleClose();
+    }
+  }, [keyboardVisible, onItemTitleClose]);
 
   return (
     <View
