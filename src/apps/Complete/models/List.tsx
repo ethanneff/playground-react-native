@@ -17,6 +17,10 @@ export const updateListAddItem = createAction('complete/list/addItem')<{
   listId: string;
   itemId: string;
 }>();
+export const updateListRemoveItem = createAction('complete/list/removeItem')<{
+  listId: string;
+  itemId: string;
+}>();
 
 /* SELECTORS */
 export const getLists = (state: RootState): Lists => state.completeList.items;
@@ -70,6 +74,7 @@ export type CompleteListActions = ActionType<
   | typeof setActiveList
   | typeof updateListTitle
   | typeof updateListAddItem
+  | typeof updateListRemoveItem
 >;
 
 /* REDUCER */
@@ -105,14 +110,29 @@ export const completeListReducer = (
         },
       };
     case getType(updateListAddItem):
-      const item = state.items[action.payload.listId];
+      const list = state.items[action.payload.listId];
       return {
         ...state,
         items: {
           ...state.items,
           [action.payload.listId]: {
-            ...item,
-            items: [...item.items, action.payload.itemId],
+            ...list,
+            items: [...list.items, action.payload.itemId],
+            updatedAt: Date.now(),
+          },
+        },
+      };
+    case getType(updateListRemoveItem):
+      const deleteList = state.items[action.payload.listId];
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.listId]: {
+            ...deleteList,
+            items: deleteList.items.filter(
+              (itemId) => itemId !== action.payload.itemId,
+            ),
             updatedAt: Date.now(),
           },
         },

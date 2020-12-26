@@ -2,15 +2,21 @@ import React, {memo, useCallback, useState} from 'react';
 import {Keyboard, View} from 'react-native';
 import {Icon, TextInput, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
-import {useRootSelector} from '../../../utils';
+import {useRootDispatch, useRootSelector} from '../../../utils';
 import {config} from '../configs';
+import {removeItem, updateListRemoveItem} from '../models';
 
 type ListItemProps = {
   itemId: string;
+  listId: string;
 };
 
-export const ListItem = memo(function ListItem({itemId}: ListItemProps) {
+export const ListItem = memo(function ListItem({
+  itemId,
+  listId,
+}: ListItemProps) {
   const item = useRootSelector((s) => s.completeItem.items[itemId]);
+  const dispatch = useRootDispatch();
   const color = useColor();
   const [title, setTitle] = useState(item.title);
   const [showControls, setShowControls] = useState(false);
@@ -29,6 +35,13 @@ export const ListItem = memo(function ListItem({itemId}: ListItemProps) {
 
   const onFocus = useCallback(() => setShowControls(true), []);
   const onBlur = useCallback(() => setShowControls(false), []);
+
+  const onItemNav = useCallback(() => undefined, []);
+  const onItemDelete = useCallback(() => {
+    dispatch(removeItem(itemId));
+    dispatch(updateListRemoveItem({listId, itemId}));
+  }, [dispatch, itemId, listId]);
+  const onItemDetails = useCallback(() => undefined, []);
 
   return (
     <TouchableOpacity
@@ -63,8 +76,9 @@ export const ListItem = memo(function ListItem({itemId}: ListItemProps) {
         </View>
       ) : (
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <Icon name="dots-horizontal" onPress={onItemTitleClose} padded />
-          <Icon name="chevron-right" onPress={onItemTitleSubmit} padded />
+          <Icon name="trash-can-outline" onPress={onItemDelete} padded />
+          <Icon name="dots-horizontal" onPress={onItemDetails} padded />
+          <Icon name="chevron-right" onPress={onItemNav} padded />
         </View>
       )}
     </TouchableOpacity>

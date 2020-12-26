@@ -25,9 +25,12 @@ export const ListItems = memo(function ListItems({
     }
   }, [listItems.length]);
 
-  const onRenderItem: ListRenderItem<string> = useCallback(({item}) => {
-    return <ListItem itemId={item} key={item} />;
-  }, []);
+  const onRenderItem: ListRenderItem<string> = useCallback(
+    ({item}) => {
+      return <ListItem itemId={item} key={item} listId={listId} />;
+    },
+    [listId],
+  );
 
   return (
     <FlatList
