@@ -1,5 +1,18 @@
 # Changelog
 
+# [2.45.0](https://github.com/ethanneff/example/compare/v2.44.1...v2.45.0) (2020-12-23)
+
+
+### Bug Fixes
+
+* add background color to icon ([78d9abc](https://github.com/ethanneff/example/commit/78d9abcdf4b4c674a90002a7f05f667743efe488))
+* update deps ([a5bc9e5](https://github.com/ethanneff/example/commit/a5bc9e5f1ac0f4d4b7d335e2cf46801e4aea3a90))
+
+
+### Features
+
+* add deep work app ([e4cd70b](https://github.com/ethanneff/example/commit/e4cd70b6e0a731d6a28393b8c2e45ad3cc6f2a15))
+
 ## [2.44.1](https://github.com/ethanneff/example/compare/v2.44.0...v2.44.1) (2020-12-23)
 
 
