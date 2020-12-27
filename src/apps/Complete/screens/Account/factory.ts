@@ -1,266 +1,109 @@
 import {v4} from 'uuid';
-import {Board, Group, Item, List, User} from '../../models';
+import {Board, Item, List, User} from '../../models';
 
 type GetDefaultUserTemplate = {
   user: User;
   boards: Board[];
   lists: List[];
   items: Item[];
-  groups: Group[];
 };
 
+const date = Date.now();
+const defaults = () => ({
+  id: v4(),
+  active: true,
+  createdAt: date,
+  updatedAt: date,
+});
+
 export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
-  const date = Date.now();
-
+  // inbox
   const inboxItems: Item[] = [
-    {
-      id: v4(),
-      title: 'do dishes',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-    },
-    {
-      id: v4(),
-      title: 'schedule meeting with Jim',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-    },
-    {
-      id: v4(),
-      title: 'run 4 miles',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-    },
-    {
-      id: v4(),
-      title: 'change oil',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-    },
-    {
-      id: v4(),
-      title: 'what is the best mediation',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-    },
-    {
-      id: v4(),
-      title: 'record Kelly birthday on Sep 22',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-    },
+    {...defaults(), title: 'do dishes'},
+    {...defaults(), title: 'schedule meeting with Jim'},
+    {...defaults(), title: 'run 4 miles'},
+    {...defaults(), title: 'change oil'},
+    {...defaults(), title: 'what is the best mediation'},
+    {...defaults(), title: 'record Kelly birthday on Sep 22'},
+    {...defaults(), title: 'drink water'},
+    {...defaults(), title: 'intensity + focus = deep work'},
+    {...defaults(), title: 'put $20 in phone'},
+    {...defaults(), title: 'clear emails'},
   ];
-
-  const homeItems: Item[] = [
-    {
-      id: v4(),
-      title: 'clean desk',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-    },
-    {
-      id: v4(),
-      title: 'clean room',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-    },
-    {
-      id: v4(),
-      title: 'walk dog',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-    },
-    {
-      id: v4(),
-      title: 'brush teeth',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-    },
-    {
-      id: v4(),
-      title: 'do laundry',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-    },
-    {
-      id: v4(),
-      title: 'fix sink',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-    },
-  ];
-
-  const items: Item[] = [...homeItems, ...inboxItems];
-
   const inboxList: List = {
-    id: v4(),
+    ...defaults(),
     title: 'Inbox',
-    createdAt: date,
-    updatedAt: date,
-    active: true,
     items: inboxItems.map((item) => item.id),
   };
-
-  const homeLists: List[] = [
-    {
-      id: v4(),
-      title: 'Backlog',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-      items: homeItems.map((item) => item.id),
-    },
-    {
-      id: v4(),
-      title: 'Todo',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-      items: [],
-    },
-    {
-      id: v4(),
-      title: 'In Progress',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-      items: [],
-    },
-    {
-      id: v4(),
-      title: 'Done',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-      items: [],
-    },
-  ];
-
-  const lists: List[] = [...homeLists, inboxList];
-
-  const boards: Board[] = [
-    {
-      id: v4(),
-      title: 'At home',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-      lists: lists.map((list) => list.id),
-    },
-    {
-      id: v4(),
-      title: 'At work',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-      lists: [],
-    },
-    {
-      id: v4(),
-      title: 'At gym',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-      lists: [],
-    },
-    {
-      id: v4(),
-      title: 'At town',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-      lists: [],
-    },
-    {
-      id: v4(),
-      title: 'gift ideas',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-      lists: [],
-    },
-    {
-      id: v4(),
-      title: 'checklists',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-      lists: [],
-    },
-    {
-      id: v4(),
-      title: 'meeting notes',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-      lists: [],
-    },
-    {
-      id: v4(),
-      title: 'receipts',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-      lists: [],
-    },
-    {
-      id: v4(),
-      title: 'book summaries',
-      createdAt: date,
-      updatedAt: date,
-      active: true,
-      lists: [],
-    },
-  ];
-
-  const groups: Group[] = [
-    {
-      id: v4(),
-      title: 'Boards',
-      active: true,
-      createdAt: date,
-      updatedAt: date,
-      boards: boards.filter((_, index) => index < 4).map((board) => board.id),
-    },
-    {
-      id: v4(),
-      title: 'Checklists',
-      active: true,
-      createdAt: date,
-      updatedAt: date,
-      boards: boards.filter((_, index) => index >= 4).map((board) => board.id),
-    },
-    {
-      id: v4(),
-      title: 'Notes',
-      active: true,
-      createdAt: date,
-      updatedAt: date,
-      boards: boards.filter((_, index) => index >= 4).map((board) => board.id),
-    },
-  ];
-
-  const user: User = {
-    id: v4(),
-    name: 'Bob Smith',
-    active: true,
-    createdAt: date,
-    updatedAt: date,
-    inbox: inboxList.id,
-    groups: groups.map((group) => group.id),
+  const inboxBoard: Board = {
+    ...defaults(),
+    title: 'Inbox',
+    lists: [inboxList.id],
   };
 
-  return {user, boards, lists, items, groups};
+  // sub category
+  const homeItems: Item[] = [
+    {...defaults(), title: 'clean desk'},
+    {...defaults(), title: 'clean room'},
+    {...defaults(), title: 'walk dog'},
+    {...defaults(), title: 'brush teeth'},
+    {...defaults(), title: 'do laundry'},
+    {...defaults(), title: 'fix sink'},
+  ];
+  const homeLists: List[] = [
+    {...defaults(), title: 'Backlog', items: homeItems.map((item) => item.id)},
+    {...defaults(), title: 'Todo', items: []},
+    {...defaults(), title: 'In Progress', items: []},
+    {...defaults(), title: 'Done', items: []},
+  ];
+  const homeBoard: Board = {
+    ...defaults(),
+    title: 'Home',
+    lists: homeLists.map((item) => item.id),
+  };
+
+  // category
+  const projectItems: Item[] = [
+    {...defaults(), title: 'at home', board: homeBoard.id},
+    {...defaults(), title: 'at town'},
+    {...defaults(), title: 'at work'},
+    {...defaults(), title: 'at gym'},
+    {...defaults(), title: 'app release'},
+  ];
+  const projectsList: List = {
+    ...defaults(),
+    title: 'Projects',
+    items: projectItems.map((item) => item.id),
+  };
+  const listsItems: Item[] = [
+    {...defaults(), title: 'meeting notes'},
+    {...defaults(), title: 'book summaries'},
+    {...defaults(), title: 'gift ideas'},
+    {...defaults(), title: 'checklists'},
+    {...defaults(), title: 'code languages'},
+  ];
+  const listsList: List = {
+    ...defaults(),
+    title: 'Lists',
+    items: listsItems.map((item) => item.id),
+  };
+  const categoryBoard: Board = {
+    ...defaults(),
+    title: 'Categories',
+    lists: [projectsList.id, listsList.id],
+  };
+
+  // user
+  const user: User = {
+    ...defaults(),
+    name: 'Bob Smith',
+    boards: [inboxBoard.id, categoryBoard.id],
+  };
+
+  return {
+    user,
+    boards: [homeBoard, inboxBoard, categoryBoard],
+    lists: [inboxList, ...homeLists, projectsList, listsList],
+    items: [...inboxItems, ...homeItems, ...projectItems, ...listsItems],
+  };
 };
