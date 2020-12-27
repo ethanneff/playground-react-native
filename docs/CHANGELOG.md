@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.45.3](https://github.com/ethanneff/example/compare/v2.45.2...v2.45.3) (2020-12-27)
+
+
+### Bug Fixes
+
+* add long press ([58ea8e7](https://github.com/ethanneff/example/commit/58ea8e7e01eb4ebc2c1b2085d9cfc5be17095974))
+* deselect text input on blur ([d0a06ee](https://github.com/ethanneff/example/commit/d0a06eee6a31abf7b883fa25544169c8046f0185))
+* items have board type to navigate to boards ([e28ad41](https://github.com/ethanneff/example/commit/e28ad41ef05c32810dc8ea192f363ce500716448))
+* make projects use redux ([0ecfb0d](https://github.com/ethanneff/example/commit/0ecfb0d1df30cc67e60d71473498f606ff5c1343))
+* query board and list ids from selectors ([bec35ec](https://github.com/ethanneff/example/commit/bec35ec99fec16953d6bd987be960439ab1e1954))
+* remove group store ([8378f55](https://github.com/ethanneff/example/commit/8378f55fc538c974d2646d2e99a9dee78c52a121))
+* remove group store ([3eb1495](https://github.com/ethanneff/example/commit/3eb1495da304bf8a7bade06c8a16d006a578a826))
+* remove hardcoded inbox on user ([b2e69bb](https://github.com/ethanneff/example/commit/b2e69bb60273326ea56332f20be9df8ec03a7641))
+* update default state to nest boards ([8268180](https://github.com/ethanneff/example/commit/82681803b7e99cea3d8572d25b53e5f5a46c94bf))
+
 ## [2.45.2](https://github.com/ethanneff/example/compare/v2.45.1...v2.45.2) (2020-12-26)
 
 
