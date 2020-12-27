@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.45.2](https://github.com/ethanneff/example/compare/v2.45.1...v2.45.2) (2020-12-26)
+
+
+### Bug Fixes
+
+* add mutliple items at once ([dc5c872](https://github.com/ethanneff/example/commit/dc5c872320163cd3e250a978bde3b2c1dfdf7e88))
+* hide input when no keyboard ([850c202](https://github.com/ethanneff/example/commit/850c202073d179e1243d148b4b81cfb4b71d2ec8))
+* remove item from list ([5e4caa7](https://github.com/ethanneff/example/commit/5e4caa789fc1d2ef08597de10453b3464ff3cfbd))
+
 ## [2.45.1](https://github.com/ethanneff/example/compare/v2.45.0...v2.45.1) (2020-12-26)
 
 
