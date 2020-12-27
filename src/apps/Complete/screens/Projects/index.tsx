@@ -1,12 +1,18 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {FlatList, View} from 'react-native';
+import {LayoutChangeEvent} from 'react-native';
 import {Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {AddItem} from '../../components/AddItem';
-import {List} from '../../components/List';
+import {useRootSelector} from '../../../../utils';
+import {
+  HandleKeyboard,
+  ListAdd,
+  ListContainer,
+  ListHeader2,
+  ListItems,
+} from '../../components';
 import {config} from '../../configs';
-import {ListObject} from '../../types';
+import {getCategoryListIds} from '../../models';
 
 // TODO: add journal
 // TODO: add historical data
@@ -17,86 +23,45 @@ export const Projects = memo(function Projects() {
   const color = useColor();
   const {navigate} = useNavigation();
 
+  const listIds = useRootSelector(getCategoryListIds);
+
   const navNext = useCallback(() => {
     navigate('Project');
   }, [navigate]);
 
-  const [groups, setGroups] = useState<ListObject[]>([
-    {
-      id: '1',
-      title: 'Actionables',
-      items: [
-        {id: '1', title: 'home'},
-        {id: '2', title: 'work'},
-        {id: '3', title: 'gym'},
-        {id: '4', title: 'groceries'},
-        {id: '5', title: 'gifts'},
-      ],
-    },
-    {
-      id: '2',
-      title: 'Storage',
-      items: [
-        {id: '1', title: 'gift ideas'},
-        {id: '2', title: 'checklists'},
-        {id: '3', title: 'book summaries'},
-        {id: '4', title: 'meeting notes'},
-        {id: '5', title: 'receipts'},
-      ],
-    },
-  ]);
+  const [dimensions, setDimensions] = useState(0);
 
-  const renderGroup = useCallback(
-    ({item}) => {
-      return (
-        <List
-          addButtonPlaceholder="Project title..."
-          addButtonTitle="Add project"
-          borderRadius={config.borderRadius}
-          itemColor={color.surface}
-          key={item.id}
-          list={item}
-          listColor={color.background}
-          padding={config.padding}
-        />
-      );
+  const onLayout = useCallback(
+    (event: LayoutChangeEvent) => {
+      const {height} = event.nativeEvent.layout;
+      if (dimensions > 0) {
+        return;
+      }
+      setDimensions(height);
     },
-    [color.background, color.surface],
+    [dimensions],
   );
 
-  const onAddGroup = useCallback((title: string) => {
-    const date = Date.now().toString();
-    setGroups((p) => [...p, {id: date, title, items: []}]);
-  }, []);
-
-  const renderFooter = useCallback(() => {
-    return (
-      <AddItem
-        backgroundColor={color.background}
-        borderRadius={config.borderRadius}
-        buttonTitle="Add group"
-        inputPlaceholder="Group title..."
-        inputType="h4"
-        onAdd={onAddGroup}
-      />
-    );
-  }, [color.background, onAddGroup]);
+  const maxHeight = dimensions / 2 - config.padding * 10;
 
   return (
     <Screen onRightPress={navNext} title="Projects">
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: color.surface,
-        }}>
-        <FlatList
-          ListFooterComponent={renderFooter}
-          contentContainerStyle={{padding: config.padding}}
-          data={groups}
-          keyboardShouldPersistTaps="handled"
-          renderItem={renderGroup}
-        />
-      </View>
+      <HandleKeyboard
+        backgroundColor={color.surface}
+        onLayout={onLayout}
+        render={dimensions > 0}>
+        {listIds.map((listId) => (
+          <ListContainer key={listId}>
+            <ListHeader2 listId={listId} />
+            <ListItems listId={listId} maxHeight={maxHeight} />
+            <ListAdd
+              buttonTitle="Add project"
+              inputPlaceholder="Project title..."
+              listId={listId}
+            />
+          </ListContainer>
+        ))}
+      </HandleKeyboard>
     </Screen>
   );
 });
