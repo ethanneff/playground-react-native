@@ -38,6 +38,8 @@ export type Item = {
   active: boolean;
   createdAt: number;
   updatedAt: number;
+  board?: string;
+  tags?: ReadonlyArray<string>;
 };
 export type Items = {[key: string]: Item};
 export type CompleteItemActions = ActionType<
