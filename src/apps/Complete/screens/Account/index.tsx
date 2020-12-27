@@ -6,7 +6,6 @@ import {useColor} from '../../../../hooks';
 import {Theme, useRootDispatch} from '../../../../utils';
 import {
   createBoard,
-  createGroup,
   createItem,
   createList,
   createUser,
@@ -28,11 +27,10 @@ export const Account = memo(function Account() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   const onLogin = useCallback(() => {
-    const {user, boards, lists, items, groups} = getDefaultUserTemplate();
+    const {user, boards, lists, items} = getDefaultUserTemplate();
     items.map((item) => dispatch(createItem(item)));
     lists.map((list) => dispatch(createList(list)));
     boards.map((board) => dispatch(createBoard(board)));
-    groups.map((group) => dispatch(createGroup(group)));
     dispatch(createUser(user));
   }, [dispatch]);
   const onLogout = useCallback(() => dispatch(removeUser()), [dispatch]);
