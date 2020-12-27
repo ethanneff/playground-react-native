@@ -13,6 +13,7 @@ import {
   OrganizeButton,
 } from '../../components';
 import {config} from '../../configs';
+import {getInboxListId} from '../../models';
 
 export const Capture = memo(function Capture() {
   const color = useColor();
@@ -33,7 +34,7 @@ export const Capture = memo(function Capture() {
         keyboardHeight -
         (android ? config.padding * 3 : config.padding * 8);
 
-  const listId = useRootSelector((s) => s.completeUser?.inbox);
+  const listId = useRootSelector(getInboxListId);
 
   const onOrganize = useCallback(() => undefined, []);
 
