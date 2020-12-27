@@ -1,8 +1,8 @@
 import {createSelector} from 'reselect';
 import {ActionType, createAction, getType} from 'typesafe-actions';
 import {RootAction, RootState} from '../../../providers';
-import {getItems} from './Item';
-import {getUser, removeUser} from './User';
+import {getBoards, getCategoryBoardId, getInboxBoardId} from './Board';
+import {removeUser} from './User';
 
 /* ACTIONS */
 export const createList = createAction('complete/list/create')<List>();
@@ -24,32 +24,25 @@ export const updateListRemoveItem = createAction('complete/list/removeItem')<{
 
 /* SELECTORS */
 export const getLists = (state: RootState): Lists => state.completeList.items;
-export const getCurrentList = (state: RootState): List => {
-  const active = state.completeList.active;
-  if (!active) {
-    throw new Error('missing current item');
-  }
-  return state.completeList.items[active];
-};
-export const getActiveListOrderByCreatedAt = createSelector(
-  [getLists],
-  (items) =>
-    Object.values(items)
-      .filter((item) => item.active)
-      .sort((a, b) => a.createdAt - b.createdAt),
+export const getInboxListId = createSelector(
+  [getInboxBoardId, getBoards],
+  (boardId, boards) => {
+    const listIds = boards[boardId].lists[0];
+    if (!listIds) {
+      throw new Error('missing inbox list');
+    }
+    return listIds;
+  },
 );
 
-export const getInbox = createSelector(
-  [getLists, getUser, getItems],
-  (lists, user, items) => {
-    const inboxId = user?.inbox;
-    if (!inboxId) {
-      return;
-      throw new Error('missing user inbox');
+export const getCategoryListIds = createSelector(
+  [getCategoryBoardId, getBoards],
+  (boardId, boards) => {
+    const listIds = boards[boardId].lists;
+    if (!listIds) {
+      throw new Error('missing category lists');
     }
-    const inboxList = lists[inboxId];
-    const inboxItems = inboxList.items.map((item) => items[item]);
-    return {...inboxList, items: [...inboxItems]};
+    return listIds;
   },
 );
 

@@ -1,7 +1,7 @@
 import {createSelector} from 'reselect';
 import {ActionType, createAction, getType} from 'typesafe-actions';
 import {RootAction, RootState} from '../../../providers';
-import {removeUser} from './User';
+import {getUser, removeUser} from './User';
 
 /* ACTIONS */
 export const createBoard = createAction('complete/board/create')<Board>();
@@ -14,19 +14,29 @@ export const setActiveBoard = createAction(
 /* SELECTORS */
 export const getBoards = (state: RootState): Boards =>
   state.completeBoard.items;
-export const getCurrentBoard = (state: RootState): Board => {
-  const active = state.completeBoard.active;
-  if (!active) {
-    throw new Error('missing current item');
-  }
-  return state.completeBoard.items[active];
-};
-export const getActiveBoardOrderByCreatedAt = createSelector(
-  [getBoards],
-  (items) =>
-    Object.values(items)
-      .filter((item) => item.active)
-      .sort((a, b) => a.createdAt - b.createdAt),
+export const getInboxBoardId = createSelector(
+  [getUser, getBoards],
+  (user, boards) => {
+    const inboxBoardId = user?.boards.filter(
+      (boardId) => boards[boardId].title === 'Inbox',
+    )[0];
+    if (!inboxBoardId) {
+      throw new Error('missing inbox board');
+    }
+    return inboxBoardId;
+  },
+);
+export const getCategoryBoardId = createSelector(
+  [getUser, getBoards],
+  (user, boards) => {
+    const categoryBoardId = user?.boards.filter(
+      (boardId) => boards[boardId].title !== 'Inbox',
+    )[0];
+    if (!categoryBoardId) {
+      throw new Error('missing category board');
+    }
+    return categoryBoardId;
+  },
 );
 
 /* INTERFACES */
