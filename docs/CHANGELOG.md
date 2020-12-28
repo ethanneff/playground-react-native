@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.45.4](https://github.com/ethanneff/example/compare/v2.45.3...v2.45.4) (2020-12-28)
+
+
+### Bug Fixes
+
+* update deps ([a8680d9](https://github.com/ethanneff/example/commit/a8680d9dcc3ea81fd3baf7eb11516e8c1cb38cfc))
+
 ## [2.45.3](https://github.com/ethanneff/example/compare/v2.45.2...v2.45.3) (2020-12-27)
 
 
