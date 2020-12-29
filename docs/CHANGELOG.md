@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.45.5](https://github.com/ethanneff/example/compare/v2.45.4...v2.45.5) (2020-12-29)
+
+
+### Bug Fixes
+
+* add board add component ([2c41db8](https://github.com/ethanneff/example/commit/2c41db88af8e48d26caa391a0acbe4d225d55b06))
+* add board component ([284660e](https://github.com/ethanneff/example/commit/284660ee510b2b60d7ffa9233d8c3da3e58974ad))
+* keep keyboard up on submit ([8c4d06c](https://github.com/ethanneff/example/commit/8c4d06ceb61e9886e880be97d6b6b2148a0eac92))
+* link project to redux ([4c3022d](https://github.com/ethanneff/example/commit/4c3022d00fec122e1297b47dce1593d16f0d49b2))
+* link to listheader ([11302c9](https://github.com/ethanneff/example/commit/11302c9dc74ab2366a47887c0bc3fd0da25026e4))
+* make list component ([847c94b](https://github.com/ethanneff/example/commit/847c94b0458c9a4f143cfcd3f49a9c87bb22e04e))
+* remove additem component ([e07ee31](https://github.com/ethanneff/example/commit/e07ee31c1cc026c4f9001eaf07a03fc7b270e9cf))
+* rename listheader2 to listheader ([8d0fff1](https://github.com/ethanneff/example/commit/8d0fff1d37b2d14ab337f5dae582d83dbc9c9dc2))
+* update deps ([5db08f8](https://github.com/ethanneff/example/commit/5db08f837a819d65995382eb5ae2d5043db1788c))
+
 ## [2.45.4](https://github.com/ethanneff/example/compare/v2.45.3...v2.45.4) (2020-12-28)
 
 
