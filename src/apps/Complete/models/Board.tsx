@@ -10,6 +10,14 @@ export const removeBoard = createAction('complete/board/remove')<string>();
 export const setActiveBoard = createAction(
   'complete/board/setActive',
 )<string>();
+export const updateBoardAddList = createAction('complete/board/addList')<{
+  listId: string;
+  boardId: string;
+}>();
+export const updateBoardRemoveList = createAction('complete/board/removeList')<{
+  listId: string;
+  boardId: string;
+}>();
 
 /* SELECTORS */
 export const getBoards = (state: RootState): Boards =>
@@ -58,6 +66,8 @@ export type CompleteBoardActions = ActionType<
   | typeof removeBoard
   | typeof updateBoard
   | typeof setActiveBoard
+  | typeof updateBoardAddList
+  | typeof updateBoardRemoveList
 >;
 
 /* REDUCER */
@@ -100,6 +110,34 @@ export const completeBoardReducer = (
           [action.payload]: {
             ...state.items[action.payload],
             active: false,
+            updatedAt: Date.now(),
+          },
+        },
+      };
+    case getType(updateBoardAddList):
+      const addBoard = state.items[action.payload.boardId];
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.boardId]: {
+            ...addBoard,
+            lists: [...addBoard.lists, action.payload.listId],
+            updatedAt: Date.now(),
+          },
+        },
+      };
+    case getType(updateBoardRemoveList):
+      const deleteBoard = state.items[action.payload.boardId];
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.boardId]: {
+            ...deleteBoard,
+            lists: deleteBoard.lists.filter(
+              (listId) => listId !== action.payload.listId,
+            ),
             updatedAt: Date.now(),
           },
         },
