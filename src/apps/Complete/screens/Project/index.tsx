@@ -8,7 +8,6 @@ import {useRootSelector} from '../../../../utils';
 import {Board, HandleKeyboard} from '../../components';
 import {config} from '../../configs';
 
-// TODO: add landing page (actionables + record)
 // TODO: figure out centering of list
 
 export const Project = memo(function Project() {
@@ -51,7 +50,7 @@ export const Project = memo(function Project() {
         onLayout={onLayout}
         render={container > 0}>
         <Board
-          boardId="4887e24c-9871-4deb-9eae-0e0bb4b9b860"
+          boardId="045555aa-e516-41f9-9a98-89c117f4ab41"
           listMaxHeight={listMaxHeight}
           listWidth={listWidth}
         />
