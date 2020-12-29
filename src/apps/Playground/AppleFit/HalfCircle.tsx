@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {AngularGradient} from './AngularGradient';
-import {Ring} from './AppleActivity';
+import {Ring} from './types';
 
 interface Props {
   radius: number;

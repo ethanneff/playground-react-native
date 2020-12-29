@@ -1,5 +1,5 @@
+import {RootAction} from 'root-types';
 import {ActionType, createAction} from 'typesafe-actions';
-import {RootAction} from '../../../../providers';
 
 /* ACTIONS */
 export const createChoice = createAction('choices/CREATE')<Choice>();

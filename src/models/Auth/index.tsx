@@ -1,6 +1,6 @@
 import axios from 'axios';
+import {RootAction, RootState, RootThunkAction} from 'root-types';
 import {ActionType, createAction, getType} from 'typesafe-actions';
-import {RootAction, RootState, RootThunkAction} from '../../providers';
 
 /* ACTIONS */
 export const loginRequest = createAction('AUTH/LOGIN_REQUEST')();

@@ -1,6 +1,6 @@
 import {AppState, AppStateStatus, ScaledSize} from 'react-native';
+import {RootAction} from 'root-types';
 import {ActionType, createAction, getType} from 'typesafe-actions';
-import {RootAction} from '../../providers';
 import {logout} from '../Auth';
 
 /* ACTIONS */

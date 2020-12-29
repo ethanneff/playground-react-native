@@ -1,15 +1,9 @@
 import React, {memo, useCallback, useContext} from 'react';
 import {View} from 'react-native';
-import {useColor, useDropShadow} from '../../../hooks';
 import {TouchableOpacity} from '../../../components';
+import {useColor, useDropShadow} from '../../../hooks';
 import {DriftContext} from './Context';
-
-export type ColorChoice =
-  | 'slateblue'
-  | 'orange'
-  | 'mediumseagreen'
-  | 'violet'
-  | 'lightgrey';
+import {ColorChoice} from './types';
 
 export const Dpad = memo(function Dpad() {
   const useShadow = useDropShadow();

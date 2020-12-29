@@ -1,13 +1,13 @@
-import React, {ReactNode} from 'react';
-import {Provider} from 'react-redux';
-import {ReactTestRenderer, create} from 'react-test-renderer';
-import {store} from '../../providers/Redux';
 import {
   BaseNavigationContainer,
   NavigationContext,
-  NavigationRouteContext,
+  NavigationRouteContext
 } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import React, {ReactNode} from 'react';
+import {Provider} from 'react-redux';
+import {create, ReactTestRenderer} from 'react-test-renderer';
+import {store} from '../../providers/Redux';
 
 type MockNavigation = any;
 type MockRenderer = {

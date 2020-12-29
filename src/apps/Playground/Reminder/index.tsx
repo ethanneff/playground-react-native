@@ -6,13 +6,8 @@ import {Button, Modal, Screen, Text} from '../../../components';
 import {RateApp} from '../../../features';
 import {CreateReminderModal} from './CreateReminderModal';
 import {Reminders} from './Reminders';
+import {Reminder, ReminderType} from './types';
 
-type ReminderType = 'one time' | 'repeat' | 'location';
-export type Reminder = {
-  id: string;
-  date: number;
-  format: string;
-};
 type State = {
   type: ReminderType;
   reminders: Reminder[];

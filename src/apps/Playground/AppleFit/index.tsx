@@ -3,7 +3,8 @@ import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Screen} from '../../../components';
 import {useColor} from '../../../hooks';
-import {AppleActivity, Ring} from './AppleActivity';
+import {AppleActivity} from './AppleActivity';
+import {Ring} from './types';
 
 const TAU = 2 * Math.PI;
 const size = 300;

@@ -1,10 +1,10 @@
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../components';
-import {Theme} from '../../utils';
 import {useColor} from '../../hooks';
-import {Item} from './List';
+import {Theme} from '../../utils';
 import {ListSection} from './ListSection';
+import {Item} from './types';
 
 interface Props {
   showSection: boolean;

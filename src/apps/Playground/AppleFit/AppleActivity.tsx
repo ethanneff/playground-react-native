@@ -1,17 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
+import {CenterCircle} from './CenterCircle';
 import {CircularRing} from './CircularRing';
 import {Stickers} from './Stickers';
-import {CenterCircle} from './CenterCircle';
-
-export interface Ring {
-  start: string;
-  end: string;
-  bg: string;
-  theta: number;
-  size: number;
-  icon: string;
-}
+import {Ring} from './types';
 
 type Props = {
   rings: Ring[];

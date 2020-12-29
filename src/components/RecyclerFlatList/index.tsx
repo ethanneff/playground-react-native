@@ -1,7 +1,12 @@
-import React, {RefObject, useCallback, useEffect, useState} from 'react';
-import {ReactElement} from 'react';
+import React, {
+  ReactElement,
+  RefObject,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import {RefreshControl, ScrollViewProps, ViewStyle} from 'react-native';
-import {RecyclerListView, DataProvider, LayoutProvider} from 'recyclerlistview';
+import {DataProvider, LayoutProvider, RecyclerListView} from 'recyclerlistview';
 import {
   RecyclerListViewProps,
   RecyclerListViewState,

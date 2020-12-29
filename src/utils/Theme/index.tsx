@@ -1,4 +1,4 @@
-import {Color} from '../../models'; // TODO: fix circular dependency?
+import {Color} from '../../models';
 
 /*
 SIZING https://material.io/design/typography/the-type-system.html#applying-the-type-scale

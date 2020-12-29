@@ -1,4 +1,5 @@
 import {createSelector} from 'reselect';
+import {RootAction, RootState} from 'root-types';
 import {
   ActionType,
   createAction,
@@ -7,7 +8,6 @@ import {
 } from 'typesafe-actions';
 import {v4} from 'uuid';
 import {logout} from '../../../../models/Auth';
-import {RootAction, RootState} from '../../../../providers';
 
 /* ACTIONS */
 export const createQuestionnaire = createCustomAction(

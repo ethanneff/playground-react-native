@@ -6,6 +6,9 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/all',
     'plugin:react-native/all',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
   ],
   plugins: ['@typescript-eslint'],
   ignorePatterns: [
@@ -17,7 +20,7 @@ module.exports = {
     'src/conversions/',
   ],
   rules: {
-    // add
+    // added
     'react/function-component-definition': [
       'warn',
       {namedComponents: 'arrow-function', unnamedComponents: 'arrow-function'},
@@ -26,7 +29,9 @@ module.exports = {
       'error',
       {enableDangerousAutofixThisMayCauseInfiniteLoops: true},
     ],
-    // ignore (outside prettier and typescript rules)
+    'import/no-cycle': 'error',
+    'import/no-unresolved': ['error', {ignore: ['root-types']}],
+    // ignored (outside prettier and typescript rules)
     '@typescript-eslint/no-var-requires': 'off',
     'react/require-default-props': 'off',
     'react/jsx-indent': 'off',
@@ -44,5 +49,8 @@ module.exports = {
     'react/forbid-component-props': 'off',
     'react/no-multi-comp': 'off',
     'react/no-array-index-key': 'off',
+  },
+  settings: {
+    'import/ignore': ['react-native'],
   },
 };

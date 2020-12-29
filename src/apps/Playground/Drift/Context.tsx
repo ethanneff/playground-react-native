@@ -1,6 +1,5 @@
 import {createContext} from 'react';
-import {TrackPosition, TrackPositionWithColor} from './Tracks';
-import {ColorChoice} from './Dpad';
+import {ColorChoice, TrackPosition, TrackPositionWithColor} from './types';
 
 export type DriftState = {
   tracks: TrackPositionWithColor[];

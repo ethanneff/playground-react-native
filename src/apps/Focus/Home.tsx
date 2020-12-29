@@ -2,7 +2,8 @@ import {useNavigation} from '@react-navigation/native';
 import dayjs from 'dayjs';
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {Dialog, Screen} from '../../components';
-import {Item, List} from './List';
+import {List} from './List';
+import {Item} from './types';
 
 // TODO: flatlist on web
 // TODO: rename item.action to item.title

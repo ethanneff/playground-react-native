@@ -1,10 +1,10 @@
+import {RootAction} from 'root-types';
 import {ActionType, createAction, getType} from 'typesafe-actions';
 import {
   NetInfoConnectedDetails,
   NetInfoState,
   NetInfoStateType,
 } from '../../conversions';
-import {RootAction} from '../../providers';
 import {logout} from '../Auth';
 
 /* ACTIONS */

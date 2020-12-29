@@ -1,6 +1,5 @@
 import {Animated} from 'react-native';
-import {CanvasDimensions} from '../Drift/Game';
-import {Item} from './Balls';
+import {CanvasDimensions, Item} from './types';
 
 const rotate = (dx: number, dy: number, angle: number) => {
   const rotatedVelocities = {

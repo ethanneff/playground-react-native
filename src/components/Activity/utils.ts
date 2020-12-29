@@ -1,10 +1,10 @@
 import axios from 'axios';
+import endOfWeek from 'date-fns/endOfWeek';
 import format from 'date-fns/format';
 import isToday from 'date-fns/isToday';
-import endOfWeek from 'date-fns/endOfWeek';
 import startOfWeek from 'date-fns/startOfWeek';
 import sub from 'date-fns/sub';
-import {ActivityMatrix, Site} from './index';
+import {ActivityMatrix, Site} from './types';
 
 type ApiResponse = {[unix: string]: number};
 

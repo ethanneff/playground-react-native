@@ -1,16 +1,15 @@
 import React from 'react';
 import {StyleProp, TextStyle, ViewStyle} from 'react-native';
-import {Text} from '../Text';
-import {TouchableOpacity} from '../TouchableOpacity';
 import {useColor, useDropShadow} from '../../hooks';
 import {Color} from '../../models';
+import {Text} from '../Text';
+import {TouchableOpacity} from '../TouchableOpacity';
+import {ButtonEmphasis} from './types';
 import {getStyles} from './utils';
 
 /*
 styling: https://material.io/design/components/buttons.html#usage
 */
-
-export type ButtonEmphasis = 'low' | 'medium' | 'high';
 
 interface Props {
   /* content */

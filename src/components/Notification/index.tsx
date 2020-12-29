@@ -1,10 +1,11 @@
-import React, {ReactElement, useCallback} from 'react';
 import {useNavigation} from '@react-navigation/native';
+import React, {ReactElement, useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {Button} from '../../components/Button';
+import {Text} from '../../components/Text';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
-import {Button, Text} from '../../components';
 
 const height = 100;
 

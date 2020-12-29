@@ -1,6 +1,6 @@
 import {createSelector} from 'reselect';
+import {RootAction, RootState} from 'root-types';
 import {ActionType, createAction, getType} from 'typesafe-actions';
-import {RootAction, RootState} from '../../../providers';
 
 /* ACTIONS */
 export const createChatMessage = createAction('chat/create')<Message>();

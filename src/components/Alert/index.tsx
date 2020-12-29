@@ -1,7 +1,8 @@
-import React, {useCallback} from 'react';
 import {useNavigation} from '@react-navigation/native';
+import React, {useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Button, Text} from '../../components';
+import {Button} from '../../components/Button';
+import {Text} from '../../components/Text';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 

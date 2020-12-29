@@ -4,23 +4,13 @@ import {Text, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
 import {Theme} from '../../../utils';
 import {CanvasDimensions} from './Canvas';
+import {Item} from './types';
 import {
   getItems,
   getOverlap,
   resolveBoundCollision,
   resolveItemCollision,
 } from './utils';
-
-export type Item = {
-  index: number;
-  position: Animated.ValueXY;
-  dx: number;
-  dy: number;
-  x: number;
-  y: number;
-  radius: number;
-  mass: number;
-};
 
 type Props = {
   count: number;

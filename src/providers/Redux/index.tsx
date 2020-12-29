@@ -10,84 +10,32 @@ import {
 import {persistReducer, persistStore} from 'redux-persist';
 import {PersistGate} from 'redux-persist/integration/react';
 import thunk, {ThunkAction} from 'redux-thunk';
-import {DeepReadonly} from 'utility-types';
+import {RootAction, RootState} from 'root-types';
 import {
-  ChecklistItemReducer,
   checklistItemReducer,
-  ChecklistReducer,
   checklistReducer,
-  ItemActions,
-  ListActions,
 } from '../../apps/Checklists/models';
 import {
-  CompleteBoardActions,
-  CompleteBoardReducer,
   completeBoardReducer,
-  CompleteItemActions,
-  CompleteItemReducer,
   completeItemReducer,
-  CompleteListActions,
-  CompleteListReducer,
   completeListReducer,
-  CompleteUserActions,
-  CompleteUserReducer,
   completeUserReducer,
 } from '../../apps/Complete/models';
+import {chatMessageReducer} from '../../apps/Playground/Chat/Messages';
 import {
-  ChatMessageActions,
-  ChatMessageReducer,
-  chatMessageReducer,
-} from '../../apps/Playground/Chat/Messages';
-import {
-  Choices,
-  ChoicesActions,
   choicesReducer,
-  Questionnaires,
-  QuestionnairesActions,
   questionnairesReducer,
-  Questions,
-  QuestionsActions,
   questionsReducer,
-  Responses,
-  ResponsesActions,
   responsesReducer,
 } from '../../apps/Playground/Questionnaire/models';
 import {Storage} from '../../conversions';
 import {
-  AuthActions,
   authReducer,
-  AuthState,
-  DeviceActions,
   deviceReducer,
-  DeviceState,
-  DimensionActions,
   dimensionReducer,
-  DimensionState,
-  NetworkActions,
   networkReducer,
-  NetworkState,
-  Theme,
-  ThemeActions,
   themeReducer,
 } from '../../models';
-export type RootState = DeepReadonly<{
-  auth: AuthState;
-  dimension: DimensionState;
-  device: DeviceState;
-  checklistItem: ChecklistItemReducer;
-  checklist: ChecklistReducer;
-  chatMessage: ChatMessageReducer;
-  network: NetworkState;
-  questions: Questions;
-  choices: Choices;
-  responses: Responses;
-  questionnaires: Questionnaires;
-  theme: Theme;
-  completeItem: CompleteItemReducer;
-  completeList: CompleteListReducer;
-  completeBoard: CompleteBoardReducer;
-  completeUser: CompleteUserReducer;
-}>;
 
 const reducers = combineReducers<RootState>({
   auth: authReducer,
@@ -107,25 +55,6 @@ const reducers = combineReducers<RootState>({
   completeBoard: completeBoardReducer,
   completeUser: completeUserReducer,
 });
-
-export type RootAction =
-  | DimensionActions
-  | DeviceActions
-  | AuthActions
-  | ChatMessageActions
-  | ListActions
-  | ItemActions
-  | NetworkActions
-  | QuestionnairesActions
-  | QuestionsActions
-  | ChoicesActions
-  | ResponsesActions
-  | ThemeActions
-  | ItemActions
-  | CompleteItemActions
-  | CompleteListActions
-  | CompleteBoardActions
-  | CompleteUserActions;
 
 export type RootThunkAction<R> = ThunkAction<R, RootState, any, RootAction>;
 

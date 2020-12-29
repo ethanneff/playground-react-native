@@ -1,5 +1,5 @@
+import {RootAction, RootState} from 'root-types';
 import {ActionType, createAction, getType} from 'typesafe-actions';
-import {RootAction, RootState} from '../../../providers';
 
 /* ACTIONS */
 export const createUser = createAction('complete/user/create')<User>();
