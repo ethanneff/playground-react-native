@@ -57,7 +57,7 @@ export const Capture = memo(function Capture() {
         onLayout={onLayout('container')}
         render={dimensions.container > 0}>
         {listId ? (
-          <View>
+          <View style={{padding: config.padding}}>
             <List
               buttonTitle="Add item"
               inputPlaceholder="Item title..."

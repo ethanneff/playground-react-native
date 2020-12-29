@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {LayoutChangeEvent} from 'react-native';
+import {LayoutChangeEvent, View} from 'react-native';
 import {Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {useRootSelector} from '../../../../utils';
@@ -50,17 +50,19 @@ export const Projects = memo(function Projects() {
         backgroundColor={color.surface}
         onLayout={onLayout}
         render={dimensions > 0}>
-        {listIds.map((listId) => (
-          <ListContainer key={listId}>
-            <ListHeader listId={listId} />
-            <ListItems listId={listId} maxHeight={maxHeight} />
-            <ListAdd
-              buttonTitle="Add project"
-              inputPlaceholder="Project title..."
-              listId={listId}
-            />
-          </ListContainer>
-        ))}
+        <View style={{padding: config.padding}}>
+          {listIds.map((listId) => (
+            <ListContainer key={listId}>
+              <ListHeader listId={listId} />
+              <ListItems listId={listId} maxHeight={maxHeight} />
+              <ListAdd
+                buttonTitle="Add project"
+                inputPlaceholder="Project title..."
+                listId={listId}
+              />
+            </ListContainer>
+          ))}
+        </View>
       </HandleKeyboard>
     </Screen>
   );

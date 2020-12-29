@@ -53,6 +53,7 @@ export const Board = memo(function Board({
   return (
     <FlatList
       ListFooterComponent={renderAddList}
+      contentContainerStyle={{padding: config.padding}}
       data={board.lists}
       decelerationRate="fast"
       getItemLayout={getItemLayout}

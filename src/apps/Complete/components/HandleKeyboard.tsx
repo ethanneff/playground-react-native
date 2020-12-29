@@ -5,7 +5,6 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import {config} from '../configs';
 
 type HandleKeyboardProps = {
   onLayout: (event: LayoutChangeEvent) => void;
@@ -26,14 +25,7 @@ export const HandleKeyboard = memo(function HandleKeyboard({
       onLayout={onLayout}
       onPress={onDismissKeyboard}
       style={{flex: 1}}>
-      <View
-        style={{
-          flex: 1,
-          backgroundColor,
-          padding: config.padding,
-        }}>
-        {render ? children : null}
-      </View>
+      <View style={{flex: 1, backgroundColor}}>{render ? children : null}</View>
     </TouchableWithoutFeedback>
   );
 });
