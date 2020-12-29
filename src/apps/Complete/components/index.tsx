@@ -1,4 +1,5 @@
-export * from './AddItem';
+export * from './Board';
+export * from './BoardAdd';
 export * from './Card';
 export * from './HandleKeyboard';
 export * from './Item';
@@ -6,7 +7,6 @@ export * from './List';
 export * from './ListAdd';
 export * from './ListContainer';
 export * from './ListHeader';
-export * from './ListHeader2';
 export * from './ListHeaderInput';
 export * from './ListItem';
 export * from './ListItems';

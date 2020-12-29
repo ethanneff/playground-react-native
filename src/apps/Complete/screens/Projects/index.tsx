@@ -8,7 +8,7 @@ import {
   HandleKeyboard,
   ListAdd,
   ListContainer,
-  ListHeader2,
+  ListHeader,
   ListItems,
 } from '../../components';
 import {config} from '../../configs';
@@ -52,7 +52,7 @@ export const Projects = memo(function Projects() {
         render={dimensions > 0}>
         {listIds.map((listId) => (
           <ListContainer key={listId}>
-            <ListHeader2 listId={listId} />
+            <ListHeader listId={listId} />
             <ListItems listId={listId} maxHeight={maxHeight} />
             <ListAdd
               buttonTitle="Add project"
