@@ -1,17 +1,18 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import {ListAdd} from './ListAdd';
-import {ListContainer} from './ListContainer';
+import {useColor} from '../../../hooks';
+import {config} from '../configs';
+import {AddItem} from './AddItem';
 import {ListHeader} from './ListHeader';
 import {ListItems} from './ListItems';
 
 type ListProps = {
   listWidth?: number;
   listId: string;
-  listMaxHeight?: number;
+  listMaxHeight: number;
   orientation?: 'vertical' | 'horizontal';
-  buttonTitle: string;
-  inputPlaceholder: string;
+  title: string;
+  placeholder: string;
 };
 
 export const List = memo(function List({
@@ -19,20 +20,28 @@ export const List = memo(function List({
   orientation,
   listWidth,
   listMaxHeight,
-  buttonTitle,
-  inputPlaceholder,
+  title,
+  placeholder,
 }: ListProps) {
+  const color = useColor();
+  const padding = config.padding;
+  const borderRadius = config.borderRadius;
+  const horizontal = orientation === 'horizontal';
   return (
-    <View key={listId}>
-      <ListContainer key={listId} orientation={orientation} width={listWidth}>
+    <View>
+      <View
+        style={{
+          borderRadius,
+          width: listWidth,
+          backgroundColor: color.background,
+          padding: padding / 2,
+          marginRight: horizontal ? padding : 0,
+          marginBottom: horizontal ? 0 : padding,
+        }}>
         <ListHeader listId={listId} />
         <ListItems listId={listId} maxHeight={listMaxHeight} />
-        <ListAdd
-          buttonTitle={buttonTitle}
-          inputPlaceholder={inputPlaceholder}
-          listId={listId}
-        />
-      </ListContainer>
+        <AddItem listId={listId} placeholder={placeholder} title={title} />
+      </View>
     </View>
   );
 });
