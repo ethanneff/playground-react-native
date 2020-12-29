@@ -1,8 +1,8 @@
 import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
-import {BoardAdd} from '.';
 import {useRootSelector} from '../../../utils';
 import {config} from '../configs';
+import {AddList} from './AddList';
 import {List} from './List';
 
 type BoardProps = {
@@ -30,8 +30,15 @@ export const Board = memo(function Board({
   );
 
   const renderAddList = useCallback(() => {
-    return <BoardAdd listWidth={listWidth} />;
-  }, [listWidth]);
+    return (
+      <AddList
+        boardId={boardId}
+        placeholder="List title..."
+        title="Add list"
+        width={listWidth}
+      />
+    );
+  }, [boardId, listWidth]);
 
   const renderList = useCallback(
     ({item}) => {
