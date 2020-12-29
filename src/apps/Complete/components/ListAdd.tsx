@@ -70,6 +70,7 @@ export const ListAdd = memo(function ListAdd({
       {showInput ? (
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <TextInput
+            blurOnSubmit={false}
             emphasis="high"
             flex
             focusOnLoad
