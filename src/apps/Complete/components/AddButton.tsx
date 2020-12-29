@@ -1,39 +1,54 @@
-import React, {memo, useCallback, useState} from 'react';
-import {View} from 'react-native';
+import React, {memo, useCallback, useRef, useState} from 'react';
+import {TextInput as OriginalTextInput, View} from 'react-native';
 import {Button, Icon, TextInput} from '../../../components';
 import {useColor} from '../../../hooks';
 import {Theme} from '../../../utils';
 import {config} from '../configs';
 
-type BoardAddProps = {
-  listWidth: number;
+type AddButtonProps = {
+  width?: number;
+  placeholder: string;
+  title: string;
+  onSubmit: (value: string) => void;
 };
 
-// TODO: make similar to ListAdd
-// TODO: save to redux
-
-export const BoardAdd = memo(function AddItem({listWidth}: BoardAddProps) {
+export const AddButton = memo(function AddButton({
+  width,
+  placeholder,
+  title,
+  onSubmit,
+}: AddButtonProps) {
   const color = useColor();
+  const textInputRef = useRef<OriginalTextInput | null>(null);
   const [showInput, setShowInput] = useState(false);
   const [itemTitle, setItemTitle] = useState('');
   const onItemTitleChange = useCallback((v: string) => setItemTitle(v), []);
   const onAddItemPress = useCallback(() => setShowInput((p) => !p), []);
+
   const onItemTitleClose = useCallback(() => {
     setShowInput(false);
     setItemTitle('');
   }, []);
+
   const onItemTitleSubmit = useCallback(() => {
     const formatted = itemTitle.trim();
     if (formatted.length === 0) {
       return;
     }
-    onItemTitleClose();
-    // onAdd(formatted);
-  }, [itemTitle, onItemTitleClose]);
+    setItemTitle('');
+    onSubmit(formatted);
+    textInputRef.current?.focus();
+  }, [itemTitle, onSubmit]);
+
+  const onBlur = useCallback(() => {
+    setShowInput(false);
+    setItemTitle('');
+  }, []);
+
   return (
     <View
       style={{
-        width: listWidth,
+        width,
         height: Theme.padding.p12,
         borderRadius: config.borderRadius,
         backgroundColor: color.background,
@@ -42,14 +57,16 @@ export const BoardAdd = memo(function AddItem({listWidth}: BoardAddProps) {
       {showInput ? (
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <TextInput
+            blurOnSubmit={false}
             emphasis="high"
             flex
             focusOnLoad
+            onBlur={onBlur}
             onChangeText={onItemTitleChange}
+            onRef={textInputRef}
             onSubmitEditing={onItemTitleSubmit}
-            placeholder="List title..."
+            placeholder={placeholder}
             returnKeyType="done"
-            type="h4"
             value={itemTitle}
           />
           <Icon name="close" onPress={onItemTitleClose} padded />
@@ -61,12 +78,7 @@ export const BoardAdd = memo(function AddItem({listWidth}: BoardAddProps) {
           />
         </View>
       ) : (
-        <Button
-          center
-          color="primary"
-          onPress={onAddItemPress}
-          title="Add list"
-        />
+        <Button center color="primary" onPress={onAddItemPress} title={title} />
       )}
     </View>
   );
