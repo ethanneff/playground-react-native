@@ -1,8 +1,9 @@
 import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
-import {BoardAdd, List} from '.';
+import {BoardAdd} from '.';
 import {useRootSelector} from '../../../utils';
 import {config} from '../configs';
+import {List} from './List';
 
 type BoardProps = {
   boardId: string;
@@ -17,7 +18,7 @@ export const Board = memo(function Board({
 }: BoardProps) {
   const listSize = listWidth + config.padding;
   const board = useRootSelector((s) => s.completeBoard.items[boardId]);
-  const getItemId = useCallback((item) => item.id, []);
+  const getItemId = useCallback((item) => item, []);
 
   const getItemLayout = useCallback(
     (_, index) => ({
