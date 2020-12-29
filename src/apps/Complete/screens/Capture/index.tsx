@@ -4,14 +4,7 @@ import {LayoutChangeEvent, Platform, View} from 'react-native';
 import {Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {useRootSelector} from '../../../../utils';
-import {
-  HandleKeyboard,
-  ListAdd,
-  ListContainer,
-  ListHeader2,
-  ListItems,
-  OrganizeButton,
-} from '../../components';
+import {HandleKeyboard, List, OrganizeButton} from '../../components';
 import {config} from '../../configs';
 import {getInboxListId} from '../../models';
 
@@ -32,7 +25,7 @@ export const Capture = memo(function Capture() {
         (android ? config.padding * 8 : config.padding * 13)
       : dimensions.container -
         keyboardHeight -
-        (android ? config.padding * 3 : config.padding * 8);
+        (android ? config.padding * 3 : config.padding * 7);
 
   const listId = useRootSelector(getInboxListId);
 
@@ -65,15 +58,12 @@ export const Capture = memo(function Capture() {
         render={dimensions.container > 0}>
         {listId ? (
           <View>
-            <ListContainer>
-              <ListHeader2 listId={listId} />
-              <ListItems listId={listId} maxHeight={listHeight} />
-              <ListAdd
-                buttonTitle="Add item"
-                inputPlaceholder="Item title..."
-                listId={listId}
-              />
-            </ListContainer>
+            <List
+              buttonTitle="Add item"
+              inputPlaceholder="Item title..."
+              listId={listId}
+              listMaxHeight={listHeight}
+            />
             <OrganizeButton
               listId={listId}
               onLayout={onLayout('button')}
