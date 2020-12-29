@@ -59,10 +59,10 @@ export const Capture = memo(function Capture() {
         {listId ? (
           <View style={{padding: config.padding}}>
             <List
-              buttonTitle="Add item"
-              inputPlaceholder="Item title..."
               listId={listId}
               listMaxHeight={listHeight}
+              placeholder="Item title..."
+              title="Add item"
             />
             <OrganizeButton
               listId={listId}

@@ -37,13 +37,13 @@ export const Board = memo(function Board({
     ({item}) => {
       return (
         <List
-          buttonTitle="Add list"
-          inputPlaceholder="List title..."
           key={item}
           listId={item}
           listMaxHeight={listMaxHeight}
           listWidth={listWidth}
           orientation="horizontal"
+          placeholder="List title..."
+          title="Add list"
         />
       );
     },
