@@ -28,7 +28,7 @@ const AlertExample = () => {
   const {goBack} = useNavigation();
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Alert>
+    <Alert onBackgroundPress={navBack}>
       <Text title="This is a alert!" type="h3" />
       <Button center onPress={navBack} title="Dismiss" />
     </Alert>
