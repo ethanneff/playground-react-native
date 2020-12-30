@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, Platform} from 'react-native';
-import {Screen} from '../../../../components';
+import {Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {getSmallestDimension} from '../../../../models';
 import {useRootSelector} from '../../../../utils';
@@ -14,6 +14,7 @@ export const Project = memo(function Project() {
   const {goBack} = useNavigation();
   const color = useColor();
   const screenWidth = useRootSelector(getSmallestDimension);
+  const boardId = useRootSelector((s) => s.completeBoard.active);
   const listWidth = screenWidth * 0.7;
   const [container, setContainer] = useState(0);
   const android = Platform.OS === 'android';
@@ -45,16 +46,20 @@ export const Project = memo(function Project() {
 
   return (
     <Screen onLeftPress={navBack} title="Focus">
-      <HandleKeyboard
-        backgroundColor={color.surface}
-        onLayout={onLayout}
-        render={container > 0}>
-        <Board
-          boardId="045555aa-e516-41f9-9a98-89c117f4ab41"
-          listMaxHeight={listMaxHeight}
-          listWidth={listWidth}
-        />
-      </HandleKeyboard>
+      {!boardId ? (
+        <Text title="missing board" />
+      ) : (
+        <HandleKeyboard
+          backgroundColor={color.surface}
+          onLayout={onLayout}
+          render={container > 0}>
+          <Board
+            boardId={boardId}
+            listMaxHeight={listMaxHeight}
+            listWidth={listWidth}
+          />
+        </HandleKeyboard>
+      )}
     </Screen>
   );
 });
