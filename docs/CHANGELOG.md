@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.45.6](https://github.com/ethanneff/example/compare/v2.45.5...v2.45.6) (2020-12-29)
+
+
+### Bug Fixes
+
+* add logic to add and remove lists from board ([f7d5304](https://github.com/ethanneff/example/commit/f7d530459ed572fe5963331021095407a8394085))
+* added addlist to board ([f3bb9de](https://github.com/ethanneff/example/commit/f3bb9de61061e5a57c7b15a8a36ce40e87118961))
+* combine add list and add item together ([c73de9d](https://github.com/ethanneff/example/commit/c73de9d6648842204b802438659fbf9146bcc2c2))
+* combine list and list container together ([82fa574](https://github.com/ethanneff/example/commit/82fa57414438b64b87ba8b9691edca8577eed4b9))
+* correct list padding ([98bd7eb](https://github.com/ethanneff/example/commit/98bd7ebcde60d87818a1fc85cb44b6d6a376914e))
+* correct missing key issue ([7ddaa27](https://github.com/ethanneff/example/commit/7ddaa276c682739ce94283d607178a8b8c96fb06))
+* make projects reference list ([5be5cac](https://github.com/ethanneff/example/commit/5be5cacfc1bfa2cb5f3a27824031b851436a1b7c))
+* remove cicular dependencies ([4748ee2](https://github.com/ethanneff/example/commit/4748ee2d9f8017275fb27c90bbbe3698376fc667))
+* rename props ([033b229](https://github.com/ethanneff/example/commit/033b2292400073f78965557ee588cb6b64e2ff54))
+* update board hardcode ([1e3cafa](https://github.com/ethanneff/example/commit/1e3cafafc7b9c04f96232a8a29e02f06bf3ac008))
+* update tests ([cac4451](https://github.com/ethanneff/example/commit/cac4451b46a45e7eaecd5993d82346836c71d09e))
+
 ## [2.45.5](https://github.com/ethanneff/example/compare/v2.45.4...v2.45.5) (2020-12-29)
 
 
