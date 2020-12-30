@@ -1,37 +1,32 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {useCallback} from 'react';
+import React, {memo, ReactElement} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Button} from '../../components/Button';
-import {Text} from '../../components/Text';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 
-export const Alert = (): JSX.Element => {
-  const {goBack} = useNavigation();
-  const color = useColor();
+type AlertProps = {children: ReactElement | ReactElement[]};
 
+export const Alert = memo(function Alert({children}: AlertProps): ReactElement {
+  const color = useColor();
   const styles = StyleSheet.create({
     modal: {
       backgroundColor: color.background,
-      borderRadius: Theme.padding.p05,
-      padding: Theme.padding.p05,
+      borderRadius: Theme.padding.p04,
+      padding: Theme.padding.p04,
     },
     overlay: {
       alignItems: 'center',
       flex: 1,
       justifyContent: 'center',
     },
-    title: {fontSize: 30},
   });
 
-  const navBack = useCallback(() => goBack(), [goBack]);
+  const onPress = () => {
+    console.log('here');
+  };
 
   return (
-    <View style={styles.overlay}>
-      <View style={styles.modal}>
-        <Text style={styles.title} title="This is a alert!" />
-        <Button onPress={navBack} title="Dismiss" />
-      </View>
+    <View style={{alignItems: 'center', flex: 1, justifyContent: 'center'}}>
+      <View style={styles.modal}>{children}</View>
     </View>
   );
-};
+});
