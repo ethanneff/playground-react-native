@@ -1,10 +1,11 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {Keyboard, View} from 'react-native';
 import {Icon, TextInput, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../utils';
 import {config} from '../configs';
-import {removeItem, updateListRemoveItem} from '../models';
+import {removeItem, setActiveBoard, updateListRemoveItem} from '../models';
 
 type ListItemProps = {
   itemId: string;
@@ -17,6 +18,7 @@ export const ListItem = memo(function ListItem({
 }: ListItemProps) {
   const item = useRootSelector((s) => s.completeItem.items[itemId]);
   const dispatch = useRootDispatch();
+  const {navigate} = useNavigation();
   const color = useColor();
   const [title, setTitle] = useState(item.title);
   const [showControls, setShowControls] = useState(false);
@@ -80,7 +82,9 @@ export const ListItem = memo(function ListItem({
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <Icon name="trash-can-outline" onPress={onItemDelete} padded />
           <Icon name="dots-horizontal" onPress={onItemDetails} padded />
-          <Icon name="chevron-right" onPress={onItemNav} padded />
+          {item.board && (
+            <Icon name="chevron-right" onPress={onItemNav} padded />
+          )}
         </View>
       )}
     </TouchableOpacity>
