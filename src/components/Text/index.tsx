@@ -1,9 +1,9 @@
 import React from 'react';
 import {Animated, StyleProp, StyleSheet, TextStyle} from 'react-native';
-import {Sound} from '../../conversions';
 import {useColor, useDriver} from '../../hooks';
 import {Color} from '../../models';
 import {FontEmphasis, FontType, getFontStyles, Theme} from '../../utils';
+import {SoundManager} from '../../utils/Sound';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
 
@@ -29,7 +29,6 @@ export interface TextProps {
   onPress?(): void;
 }
 
-const sound = new Sound(require('./../TouchableOpacity/tap.mp3'));
 export const Text = ({
   type,
   emphasis,
@@ -84,7 +83,7 @@ export const Text = ({
     if (!onPress) {
       return;
     }
-    sound.stop(() => sound.play());
+    SoundManager.play('tap');
     // TODO: does not work on real devices
     Animated.sequence([
       Animated.timing(opacity, {
