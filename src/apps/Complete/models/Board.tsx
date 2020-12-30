@@ -7,9 +7,9 @@ import {getUser, removeUser} from './User';
 export const createBoard = createAction('complete/board/create')<Board>();
 export const updateBoard = createAction('complete/board/update')<Board>();
 export const removeBoard = createAction('complete/board/remove')<string>();
-export const setActiveBoard = createAction(
-  'complete/board/setActive',
-)<string>();
+export const setActiveBoard = createAction('complete/board/setActive')<
+  string | null
+>();
 export const updateBoardAddList = createAction('complete/board/addList')<{
   listId: string;
   boardId: string;
@@ -49,7 +49,7 @@ export const getCategoryBoardId = createSelector(
 
 /* INTERFACES */
 export type CompleteBoardReducer = {
-  active: string | undefined;
+  active: string | null;
   items: Boards;
 };
 export type Board = {
@@ -72,7 +72,7 @@ export type CompleteBoardActions = ActionType<
 
 /* REDUCER */
 const initialState: CompleteBoardReducer = {
-  active: undefined,
+  active: null,
   items: {},
 };
 export const completeBoardReducer = (
