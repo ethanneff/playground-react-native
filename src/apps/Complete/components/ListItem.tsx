@@ -38,7 +38,11 @@ export const ListItem = memo(function ListItem({
   const onFocus = useCallback(() => setShowControls(true), []);
   const onBlur = useCallback(() => setShowControls(false), []);
 
-  const onItemNav = useCallback(() => undefined, []);
+  const onItemNav = useCallback(() => {
+    dispatch(setActiveBoard(item.board));
+    navigate('board');
+  }, [dispatch, item.board, navigate]);
+
   const onItemDelete = useCallback(() => {
     dispatch(removeItem(itemId));
     dispatch(updateListRemoveItem({listId, itemId}));
