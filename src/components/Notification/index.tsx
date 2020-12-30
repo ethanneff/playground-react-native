@@ -29,29 +29,27 @@ export const Notification = memo(function Notification({
 }: NotificationProps) {
   const color = useColor();
   const styles = StyleSheet.create({
+    flex: {flex: 1},
     modal: {
       alignItems: 'center',
       backgroundColor: color.background,
       flexDirection: 'row',
       height,
-      justifyContent: 'flex-end',
       padding: Theme.padding.p04,
       width: '100%',
     },
-    notification: {zIndex: 2},
+    notification: {elevation: 2, zIndex: 2},
     notificationSafeArea: {
       backgroundColor: color.background,
       height,
       position: 'absolute',
       width: '100%',
-      zIndex: 1,
     },
     overlay: {
       height: '100%',
       position: 'absolute',
       width: '100%',
     },
-    title: {flex: 1},
   });
 
   const pan = useRef(new Animated.ValueXY(initialPosition)).current;
@@ -69,15 +67,16 @@ export const Notification = memo(function Notification({
         toValue,
         useNativeDriver,
       }).start();
-      if (success) {
-        setTimeout(() => {
-          if (onBackgroundPress) {
-            onBackgroundPress();
-          } else if (onCancel) {
-            onCancel();
-          }
-        }, dismissDelay);
+      if (!success) {
+        return;
       }
+      setTimeout(() => {
+        if (onBackgroundPress) {
+          onBackgroundPress();
+        } else if (onCancel) {
+          onCancel();
+        }
+      }, dismissDelay);
     },
     [
       dismissDelay,
@@ -114,19 +113,19 @@ export const Notification = memo(function Notification({
   ).current;
 
   return (
-    <View style={{flex: 1}} {...panResponder.panHandlers}>
-      <Animated.View style={pan.getLayout()}>
+    <View style={styles.flex} {...panResponder.panHandlers}>
+      <Animated.View style={[pan.getLayout(), styles.notification]}>
         <View style={styles.notificationSafeArea} />
-        <SafeAreaView style={styles.notification}>
-          <Animated.View style={styles.modal}>
+        <SafeAreaView>
+          <View style={styles.modal}>
             <Icon
               color={color.background}
               name="close"
               size={Theme.padding.p08}
             />
-            <Text center style={styles.title} title={title} type="h3" />
+            <Text center style={styles.flex} title={title} type="h3" />
             <Icon name="close" onPress={onCancel} size={Theme.padding.p08} />
-          </Animated.View>
+          </View>
         </SafeAreaView>
       </Animated.View>
       <TouchableOpacity
