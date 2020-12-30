@@ -3,6 +3,7 @@ import {Animated, PanResponder, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useColor, useDriver} from '../../hooks';
 import {Theme} from '../../utils';
+import {SoundManager} from '../../utils/Sound';
 import {Icon} from '../Icon';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
@@ -71,6 +72,7 @@ export const Notification = memo(function Notification({
         return;
       }
       setTimeout(() => {
+        SoundManager.play('tap');
         if (onBackgroundPress) {
           onBackgroundPress();
         } else if (onCancel) {
