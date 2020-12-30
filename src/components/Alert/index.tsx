@@ -20,10 +20,6 @@ export const Alert = memo(function Alert({children}: AlertProps): ReactElement {
     },
   });
 
-  const onPress = () => {
-    console.log('here');
-  };
-
   return (
     <View style={{alignItems: 'center', flex: 1, justifyContent: 'center'}}>
       <View style={styles.modal}>{children}</View>
