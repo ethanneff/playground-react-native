@@ -8,8 +8,9 @@ import {
   StackNavigationOptions,
 } from '@react-navigation/stack';
 import React, {memo, useCallback} from 'react';
-import {Icon} from '../../components';
+import {Alert, Icon, Notification} from '../../components';
 import {useColor} from '../../hooks';
+import {rootMode, rootScreenOptions} from '../../providers/Navigation/configs';
 import {Account, Capture, Project, Projects, Reflect} from './screens';
 
 const noHeader: StackNavigationOptions = {headerShown: false};
@@ -17,22 +18,21 @@ const RootTab = createBottomTabNavigator();
 const RootStack = createStackNavigator();
 const ProjectsStack = createStackNavigator();
 
-type Tabs = 'Capture' | 'Focus' | 'Reflect' | 'Account';
+type Tabs = 'capture' | 'focus' | 'reflect';
 type TabIcons = {
   [key in Tabs]: {focused: string; unfocused: string};
 };
 
 const tabIcons: TabIcons = {
-  Capture: {
+  capture: {
     focused: 'pencil-plus-outline',
     unfocused: 'pencil-plus-outline',
   },
-  Focus: {
+  focus: {
     focused: 'checkbox-multiple-marked-outline',
     unfocused: 'checkbox-multiple-marked-outline',
   },
-  Reflect: {focused: 'finance', unfocused: 'finance'},
-  Account: {focused: 'account', unfocused: 'account-outline'},
+  reflect: {focused: 'finance', unfocused: 'finance'},
 };
 
 type ScreenOptionsProps = {
@@ -47,8 +47,8 @@ type TabBarIconProps = {
 const Focus = () => {
   return (
     <ProjectsStack.Navigator screenOptions={noHeader}>
-      <ProjectsStack.Screen component={Projects} name="Projects" />
-      <ProjectsStack.Screen component={Project} name="Project" />
+      <ProjectsStack.Screen component={Projects} name="boards" />
+      <ProjectsStack.Screen component={Project} name="board" />
     </ProjectsStack.Navigator>
   );
 };
@@ -77,18 +77,20 @@ const Tabs = () => {
     <RootTab.Navigator
       screenOptions={screenOptions as any}
       tabBarOptions={tabBarOptions}>
-      <RootTab.Screen component={Capture} name="Capture" />
-      <RootTab.Screen component={Focus} name="Focus" />
-      <RootTab.Screen component={Reflect} name="Reflect" />
+      <RootTab.Screen component={Capture} name="capture" />
+      <RootTab.Screen component={Focus} name="focus" />
+      <RootTab.Screen component={Reflect} name="reflect" />
     </RootTab.Navigator>
   );
 };
 
 export default memo(function Complete() {
   return (
-    <RootStack.Navigator screenOptions={noHeader}>
+    <RootStack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
       <RootStack.Screen component={Tabs} name="main" />
       <RootStack.Screen component={Account} name="account" />
+      <RootStack.Screen component={Notification} name="notification" />
+      <RootStack.Screen component={Alert} name="alert" />
     </RootStack.Navigator>
   );
 });
