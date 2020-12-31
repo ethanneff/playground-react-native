@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.45.7](https://github.com/ethanneff/example/compare/v2.45.6...v2.45.7) (2020-12-31)
+
+
+### Bug Fixes
+
+* add swipe and background press on notication ([ef0bd16](https://github.com/ethanneff/example/commit/ef0bd16ced3709ad7a18dbab4ac3bb0b75133924))
+* add tap on swipe up on notification ([b72dab3](https://github.com/ethanneff/example/commit/b72dab3ac5ca49b0cb126c73cfeeb7773fc90a6b))
+* clean up redundant styles ([3a8862c](https://github.com/ethanneff/example/commit/3a8862ce6cd61298912c3fd3cdabd670c119ee6f))
+* correct linting ([904736d](https://github.com/ethanneff/example/commit/904736d4e81547f820811077053f723d7011c18a))
+* create a reusable sound manager ([91da44b](https://github.com/ethanneff/example/commit/91da44b0b3e7ca8746be41493a79706f577b7e3b))
+* make active board nullable instead of undefined ([b8bfdd6](https://github.com/ethanneff/example/commit/b8bfdd687f1f57b5c45fc6955541bc1f02982ea1))
+* make alert accept children ([ab3dbfc](https://github.com/ethanneff/example/commit/ab3dbfc72be46daf1adf5194a8a65942ce980ec1))
+* make alert have an overlay press ([e07bd77](https://github.com/ethanneff/example/commit/e07bd7782d31dfa492181b627687581e39a380a6))
+* navigate to board on item ([b19ff91](https://github.com/ethanneff/example/commit/b19ff91f965039e111e2b3f97a8aab843c64e910))
+* only show item right icon if children ([1a851f5](https://github.com/ethanneff/example/commit/1a851f5d870b6e8afc4f157ea071609ac9eccfe8))
+* prevent any type on rootstate ([1d10d4f](https://github.com/ethanneff/example/commit/1d10d4f357fd2328340f11787565ca68ed838e75))
+* pull board from redux on project screen ([d148c60](https://github.com/ethanneff/example/commit/d148c60fd52f7d3e6d9aec14a13abb386d08d892))
+* refactor notification and alert root navigation stacks ([c9ef68d](https://github.com/ethanneff/example/commit/c9ef68dd170b9689f1fb93136293154198f82e0c))
+* remove debug navigation to project on projects ([c2f9a66](https://github.com/ethanneff/example/commit/c2f9a66c014f75130c5eb037494e349dbac7134f))
+* rename screens ([8b9d17d](https://github.com/ethanneff/example/commit/8b9d17d8c2df57243dbaf849aa8e786763635175))
+* update deps ([5d2a0b3](https://github.com/ethanneff/example/commit/5d2a0b3d61ed7a0658116947e60d435bfa3706d8))
+
 ## [2.45.6](https://github.com/ethanneff/example/compare/v2.45.5...v2.45.6) (2020-12-29)
 
 
