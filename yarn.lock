@@ -2860,10 +2860,10 @@
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/auth@10.3.1":
-  version "10.3.1"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-10.3.1.tgz#2e9119cb14617c55ee3604598e5fdeb1e4c594f5"
-  integrity sha512-JxBsFARyUtp6s37HLOelfaAfwgUMTQZ1xLSRdVFcaPk/Rn2zPTvGsG2frjs5kRAxg+X+4q0NZ0gmfbPDy5ffhg==
+"@react-native-firebase/auth@10.4.0":
+  version "10.4.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-10.4.0.tgz#de7d41936f09ec218f44c5bbcf10ce726b36aea9"
+  integrity sha512-/Cn6obmMz4kRMtaonUf6xiLA/Gd75f+fRxwALPdevJMJgisyyK4P2MiWlP3xKaMGQjy3eUp2xdeXQ6NHSkY3KA==
 
 "@react-native-firebase/crashlytics@10.3.1":
   version "10.3.1"
