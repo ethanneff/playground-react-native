@@ -17,9 +17,7 @@ export const generateBoard = (size: number, random = 0): Board => {
   const board: Board = [];
   for (let i = 0; i < size; i++) {
     board[i] = [];
-    for (let j = 0; j < size; j++) {
-      board[i][j] = Math.random() > random ? 0 : 1;
-    }
+    for (let j = 0; j < size; j++) board[i][j] = Math.random() > random ? 0 : 1;
   }
   return board;
 };
@@ -36,9 +34,8 @@ export const determineBoardItem = (
   operations.forEach(([x, y]) => {
     const newI = i + x;
     const newK = j + y;
-    if (newI >= 0 && newI < length && newK >= 0 && newK < length) {
+    if (newI >= 0 && newI < length && newK >= 0 && newK < length)
       neighbors += board[newI][newK];
-    }
   });
 
   return neighbors < 2 || neighbors > 3

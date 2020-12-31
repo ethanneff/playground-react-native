@@ -7,9 +7,8 @@ import {Theme} from '../../utils';
 
 const generateHistory = () => {
   const data = [];
-  for (let i = 2; i >= -20; i--) {
-    data.push({date: dayjs().add(i, 'day')});
-  }
+  for (let i = 2; i >= -20; i--) data.push({date: dayjs().add(i, 'day')});
+
   return data;
 };
 

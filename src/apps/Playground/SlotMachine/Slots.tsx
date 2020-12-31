@@ -49,9 +49,9 @@ const getWildCards = (
   const wildCards: WildCards = [];
   Object.keys(combinations).map((combination) => {
     const unicodeCombination = [...(combination as any)];
-    if (unicodeCombination.length < reels.length) {
+    if (unicodeCombination.length < reels.length)
       wildCards.push({line: combination, amount: combinations[combination]});
-    }
+
     return combination;
   });
   return wildCards.sort((a, b) => b.amount - a.amount);
@@ -77,14 +77,11 @@ const getWinningAmount = (
   wildCards: WildCards,
 ): number => {
   const combination = combinations[line];
-  if (combination) {
-    return combination;
-  }
+  if (combination) return combination;
+
   for (let i = 0; i < wildCards.length; i++) {
     const wildCard = wildCards[i];
-    if (line.includes(wildCard.line)) {
-      return wildCard.amount;
-    }
+    if (line.includes(wildCard.line)) return wildCard.amount;
   }
   return 0;
 };

@@ -49,9 +49,7 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
   ]);
 
   const loop = useCallback(() => {
-    if (!runRef.current) {
-      return;
-    }
+    if (!runRef.current) return;
 
     setBoard((state) =>
       state.map((rows, i) =>
@@ -81,9 +79,7 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
   useEffect(() => {
     setLoading(false);
     return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, [timeoutRef]);
   const navBack = useCallback(() => goBack(), [goBack]);

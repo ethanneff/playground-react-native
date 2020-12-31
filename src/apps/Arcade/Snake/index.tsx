@@ -33,13 +33,10 @@ export const Snake = memo(function Snake() {
 
   const update = useCallback(() => {
     const board = updateBoard(game.board, direction.current);
-    if (board.state === 'ate food') {
+    if (board.state === 'ate food')
       setGame((prev) => ({...prev, board, points: prev.points + 1}));
-    } else if (board.state === 'ok') {
-      setGame((prev) => ({...prev, board}));
-    } else {
-      setGame((prev) => ({...prev, board, state: 'error'}));
-    }
+    else if (board.state === 'ok') setGame((prev) => ({...prev, board}));
+    else setGame((prev) => ({...prev, board, state: 'error'}));
   }, [direction, game.board]);
 
   const {start, stop} = useClock({

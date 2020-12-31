@@ -16,9 +16,8 @@ export default memo(function ChecklistCreate() {
 
   const handleSubmit = useCallback(() => {
     const {name, description} = form;
-    if (isInvalidForm) {
-      return;
-    }
+    if (isInvalidForm) return;
+
     const now = Date.now();
     dispatch(
       createList({

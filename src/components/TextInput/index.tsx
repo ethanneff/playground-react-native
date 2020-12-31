@@ -113,28 +113,20 @@ export const TextInput = ({
 
   const didFocus = useCallback(() => {
     setFocus(true);
-    if (onFocus) {
-      onFocus();
-    }
+    if (onFocus) onFocus();
   }, [onFocus]);
   const didBlur = useCallback(() => {
     setFocus(false);
-    if (onBlur) {
-      onBlur();
-    }
+    if (onBlur) onBlur();
   }, [onBlur]);
   const onInternalRef = useCallback(
     (ref: Original | null) => {
-      if (!ref) {
-        return;
-      }
-      if (!textInput.current && focusOnLoad) {
-        ref.focus();
-      }
+      if (!ref) return;
+
+      if (!textInput.current && focusOnLoad) ref.focus();
+
       textInput.current = ref;
-      if (onRef) {
-        onRef.current = ref;
-      }
+      if (onRef) onRef.current = ref;
     },
     [focusOnLoad, onRef],
   );

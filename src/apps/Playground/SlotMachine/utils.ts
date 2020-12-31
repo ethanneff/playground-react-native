@@ -79,15 +79,11 @@ export const getRandomReelArrays = (reels: Reels): Element[][] => {
     for (let j = 0; j < keys.length; j++) {
       const key = keys[j] as Element;
       const amount = reel[key];
-      for (let k = 0; k < amount; k++) {
-        array.push(key);
-      }
+      for (let k = 0; k < amount; k++) array.push(key);
     }
     arrays.push(array);
   }
-  for (let i = 0; i < arrays.length; i++) {
-    arrays[i] = shuffleArray(arrays[i]);
-  }
+  for (let i = 0; i < arrays.length; i++) arrays[i] = shuffleArray(arrays[i]);
 
   return arrays;
 };

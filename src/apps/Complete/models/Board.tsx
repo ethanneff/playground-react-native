@@ -36,9 +36,8 @@ export const getInboxBoardId = createSelector(
     const inboxBoardId = user?.boards.filter(
       (boardId) => boards[boardId].title === 'Inbox',
     )[0];
-    if (!inboxBoardId) {
-      throw new Error('missing inbox board');
-    }
+    if (!inboxBoardId) throw new Error('missing inbox board');
+
     return inboxBoardId;
   },
 );
@@ -48,9 +47,8 @@ export const getCategoryBoardId = createSelector(
     const categoryBoardId = user?.boards.filter(
       (boardId) => boards[boardId].title !== 'Inbox',
     )[0];
-    if (!categoryBoardId) {
-      throw new Error('missing category board');
-    }
+    if (!categoryBoardId) throw new Error('missing category board');
+
     return categoryBoardId;
   },
 );

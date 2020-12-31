@@ -36,9 +36,7 @@ export const completeUserReducer = (
 ): CompleteUserReducer => {
   switch (action.type) {
     case getType(setActiveUser):
-      if (!state) {
-        throw new Error('cannot set active to no user'); // TODO: error boundary redux? or just update state.error and capture at a root level?
-      }
+      if (!state) throw new Error('cannot set active to no user'); // TODO: error boundary redux? or just update state.error and capture at a root level?
       return {...state, active: action.payload};
     case getType(createUser):
       return action.payload;

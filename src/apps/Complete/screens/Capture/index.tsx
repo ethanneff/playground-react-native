@@ -36,9 +36,8 @@ export const Capture = memo(function Capture() {
       const {height} = event.nativeEvent.layout;
       const preventMultipleUpdates =
         key === 'container' && dimensions.container > 0;
-      if (preventMultipleUpdates) {
-        return;
-      }
+      if (preventMultipleUpdates) return;
+
       setDimensions((p) => ({...p, [key]: height}));
     },
     [dimensions.container],

@@ -14,9 +14,8 @@ const getInitialState = (rows: number, cols: number, gems: Gem[]): Board => {
   const col = [];
   for (let i = 0; i < cols; i++) {
     const row = [];
-    for (let j = 0; j < rows; j++) {
-      row.push(gems[getRandom(gems.length)]);
-    }
+    for (let j = 0; j < rows; j++) row.push(gems[getRandom(gems.length)]);
+
     col.push(row);
   }
   return col;
@@ -29,7 +28,7 @@ type Matches = {[key: string]: Vector};
 
 const getMatches = (board: Board): Matches => {
   const matches: Matches = {};
-  for (let i = 0; i < board.length; i++) {
+  for (let i = 0; i < board.length; i++)
     for (let j = 0; j < board[i].length; j++) {
       const mid = board[i][j];
       const left = i - 1 < 0 ? undefined : board[i - 1][j];
@@ -49,7 +48,7 @@ const getMatches = (board: Board): Matches => {
         matches[`${i + 1}${j}`] = {x: i + 1, y: j};
       }
     }
-  }
+
   return matches;
 };
 

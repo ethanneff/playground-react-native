@@ -40,9 +40,8 @@ export const AppleActivity = ({
   const [progress, setProgress] = useState(animate ? 0 : 1);
 
   useEffect(() => {
-    if (!animate) {
-      return;
-    }
+    if (!animate) return;
+
     const interval = setInterval(() => {
       if (progress >= 1) {
         clearInterval(interval);

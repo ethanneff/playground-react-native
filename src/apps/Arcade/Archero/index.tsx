@@ -118,9 +118,8 @@ export const Archero = memo(function Archero() {
   const onUpdate = () => {
     interval.current = setInterval(() => {
       if (!timer.current) {
-        if (interval.current) {
-          clearInterval(interval.current);
-        }
+        if (interval.current) clearInterval(interval.current);
+
         resetJoystick();
         return;
       }

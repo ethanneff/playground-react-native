@@ -116,11 +116,8 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
   }, [animate, changeIcon]);
 
   useEffect(() => {
-    if (!keyboardVisible) {
-      onSearchBarUnFocus();
-    } else {
-      onSearchBarFocus();
-    }
+    if (!keyboardVisible) onSearchBarUnFocus();
+    else onSearchBarFocus();
   });
 
   const renderItem = useCallback(

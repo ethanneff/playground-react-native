@@ -31,6 +31,7 @@ module.exports = {
     ],
     'import/no-cycle': 'error',
     'import/no-unresolved': ['error', {ignore: ['root-types']}],
+    curly: ['error', 'multi', 'consistent'],
     // ignored (outside prettier and typescript rules)
     '@typescript-eslint/no-var-requires': 'off',
     'react/require-default-props': 'off',

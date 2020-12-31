@@ -55,9 +55,8 @@ export const Navigation = memo(function Navigation() {
   const {initialState, isReady, onStateChange, onRef} = usePersistedState();
   const fallback = <ActivityIndicator />;
 
-  if (!isReady) {
-    return fallback;
-  }
+  if (!isReady) return fallback;
+
   // TODO: fix splash screen
   return (
     <Suspense fallback={fallback}>

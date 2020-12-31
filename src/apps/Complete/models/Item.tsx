@@ -19,9 +19,8 @@ export const completeItemActions = {
 export const getItems = (state: RootState): Items => state.completeItem.items;
 export const getCurrentItem = (state: RootState): Item => {
   const active = state.completeItem.active;
-  if (!active) {
-    throw new Error('missing current item');
-  }
+  if (!active) throw new Error('missing current item');
+
   return state.completeItem.items[active];
 };
 export const getActiveItemOrderByCreatedAt = createSelector(

@@ -14,9 +14,8 @@ export const TextField = memo(function TextField() {
   );
 
   const onSubmit = useCallback(() => {
-    if (textField.trim().length === 0) {
-      return;
-    }
+    if (textField.trim().length === 0) return;
+
     const date = Date.now();
     const message: Message = {
       active: true,

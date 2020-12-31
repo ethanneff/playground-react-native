@@ -80,9 +80,8 @@ export const Text = ({
   });
 
   const handlePress = () => {
-    if (!onPress) {
-      return;
-    }
+    if (!onPress) return;
+
     SoundManager.play('tap');
     // TODO: does not work on real devices
     Animated.sequence([

@@ -58,9 +58,8 @@ export const Notification = memo(function Notification({
 
   const onPanResponderRelease = useCallback(
     (_, g) => {
-      if (noSwipe) {
-        return;
-      }
+      if (noSwipe) return;
+
       const min = thresholdPercent * height * -1;
       const success = g.dy < min;
       const toValue = success ? {x: 0, y: -height * 2} : initialPosition;
@@ -68,16 +67,12 @@ export const Notification = memo(function Notification({
         toValue,
         useNativeDriver,
       }).start();
-      if (!success) {
-        return;
-      }
+      if (!success) return;
+
       setTimeout(() => {
         SoundManager.play('tap');
-        if (onBackgroundPress) {
-          onBackgroundPress();
-        } else if (onCancel) {
-          onCancel();
-        }
+        if (onBackgroundPress) onBackgroundPress();
+        else if (onCancel) onCancel();
       }, dismissDelay);
     },
     [
@@ -94,9 +89,8 @@ export const Notification = memo(function Notification({
 
   const onPanResponderMove = useCallback(
     (_, g) => {
-      if (g.dy > 0 || noSwipe) {
-        return;
-      }
+      if (g.dy > 0 || noSwipe) return;
+
       const toValue = {x: 0, y: g.dy};
       Animated.spring(pan, {
         toValue,

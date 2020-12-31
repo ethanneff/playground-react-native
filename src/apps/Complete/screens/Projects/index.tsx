@@ -22,9 +22,8 @@ export const Projects = memo(function Projects() {
   const onLayout = useCallback(
     (event: LayoutChangeEvent) => {
       const {height} = event.nativeEvent.layout;
-      if (dimensions > 0) {
-        return;
-      }
+      if (dimensions > 0) return;
+
       setDimensions(height);
     },
     [dimensions],

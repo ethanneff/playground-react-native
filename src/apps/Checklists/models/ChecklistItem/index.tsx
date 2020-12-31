@@ -33,9 +33,8 @@ export const getChecklistItems = (state: RootState): ChecklistItems =>
   state.checklistItem.items;
 export const getCurrentChecklistItem = (state: RootState): ChecklistItem => {
   const active = state.checklistItem.active;
-  if (!active) {
-    throw new Error('missing current checklist item');
-  }
+  if (!active) throw new Error('missing current checklist item');
+
   return state.checklistItem.items[active];
 };
 export const getCurrentActiveChecklistItemsOrderByCreatedAt = createSelector(

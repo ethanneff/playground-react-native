@@ -23,16 +23,12 @@ export const TouchableOpacity = ({
 }: Props): JSX.Element => {
   const onPressHandler = useCallback(() => {
     SoundManager.play('tap');
-    if (onPress) {
-      onPress();
-    }
+    if (onPress) onPress();
   }, [onPress]);
 
   const onLongPressHandler = useCallback(() => {
     SoundManager.play('tap');
-    if (onLongPress) {
-      onLongPress();
-    }
+    if (onLongPress) onLongPress();
   }, [onLongPress]);
 
   return (

@@ -109,9 +109,8 @@ export const Wheel = memo(
     ]);
 
     const onPress = useCallback(() => {
-      if (spinning.current) {
-        return;
-      }
+      if (spinning.current) return;
+
       spin();
     }, [spin]);
 
@@ -126,9 +125,8 @@ export const Wheel = memo(
     );
 
     useEffect(() => {
-      if (noBounce) {
-        return;
-      }
+      if (noBounce) return;
+
       bounce(1);
     }, [bounce, noBounce]);
 

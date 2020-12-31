@@ -50,9 +50,8 @@ export const Home = memo(function Home() {
   }, []);
 
   const handleLoad = useCallback(() => {
-    if (items.length > 0) {
-      return;
-    }
+    if (items.length > 0) return;
+
     generateMoreItems();
   }, [generateMoreItems, items.length]);
 

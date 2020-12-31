@@ -82,11 +82,9 @@ const getLeetCodeActivity = async (username: string) => {
   const data = JSON.parse(res.data);
   return Object.keys(data).reduce((total: ApiResponse, item) => {
     const day = getDateFormat(Number(item) * 1000);
-    if (day in total) {
-      total[day] += data[item];
-    } else {
-      total[day] = data[item];
-    }
+    if (day in total) total[day] += data[item];
+    else total[day] = data[item];
+
     return total;
   }, {});
 };

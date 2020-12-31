@@ -17,22 +17,17 @@ const getBlankMatrix = (size: number) => {
   const matrix: Matrix = [];
   for (let i = 0; i < size; i++) {
     matrix[i] = [];
-    for (let j = 0; j < size; j++) {
-      matrix[i][j] = 0;
-    }
+    for (let j = 0; j < size; j++) matrix[i][j] = 0;
   }
   return matrix;
 };
 
 const getAvailable = (matrix: Matrix): Cell[] => {
   const available: Cell[] = [];
-  for (let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix[i].length; j++) {
-      if (matrix[i][j] === 0) {
-        available.push([i, j]);
-      }
-    }
-  }
+  for (let i = 0; i < matrix.length; i++)
+    for (let j = 0; j < matrix[i].length; j++)
+      if (matrix[i][j] === 0) available.push([i, j]);
+
   return available;
 };
 
@@ -63,30 +58,26 @@ const getNext = (
     case 'up':
       x = head[0] - 1;
       y = head[1];
-      if (x < 0) {
-        return null;
-      }
+      if (x < 0) return null;
+
       return [x, y];
     case 'down':
       x = head[0] + 1;
       y = head[1];
-      if (x >= matrix.length) {
-        return null;
-      }
+      if (x >= matrix.length) return null;
+
       return [x, y];
     case 'left':
       x = head[0];
       y = head[1] - 1;
-      if (y < 0) {
-        return null;
-      }
+      if (y < 0) return null;
+
       return [x, y];
     case 'right':
       x = head[0];
       y = head[1] + 1;
-      if (y >= matrix[0].length) {
-        return null;
-      }
+      if (y >= matrix[0].length) return null;
+
       return [x, y];
     default:
       return null;

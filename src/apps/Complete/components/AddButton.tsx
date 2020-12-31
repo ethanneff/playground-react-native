@@ -32,9 +32,8 @@ export const AddButton = memo(function AddButton({
 
   const onItemTitleSubmit = useCallback(() => {
     const formatted = itemTitle.trim();
-    if (formatted.length === 0) {
-      return;
-    }
+    if (formatted.length === 0) return;
+
     setItemTitle('');
     onSubmit(formatted);
     textInputRef.current?.focus();

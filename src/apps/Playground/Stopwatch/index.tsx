@@ -45,9 +45,7 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
 
   useEffect(() => {
     return () => {
-      if (timer.current) {
-        clearTimeout(timer.current);
-      }
+      if (timer.current) clearTimeout(timer.current);
     };
   }, [timer]);
 
@@ -63,9 +61,8 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
   }, [state]);
 
   const stop = useCallback(() => {
-    if (timer.current) {
-      clearInterval(timer.current);
-    }
+    if (timer.current) clearInterval(timer.current);
+
     const {laps, now, start} = state;
     const [firstLap, ...other] = laps;
     setState({laps: [firstLap + now - start, ...other], now: 0, start: 0});

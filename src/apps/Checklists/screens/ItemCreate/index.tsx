@@ -16,14 +16,13 @@ export default memo(function ChecklistItemCreate() {
   const isInvalidForm = form.name.trim().length === 0;
 
   const handleSubmit = useCallback(() => {
-    if (isInvalidForm) {
-      return;
-    }
+    if (isInvalidForm) return;
+
     const {name, description} = form;
     const now = Date.now();
-    if (!currentChecklist) {
+    if (!currentChecklist)
       throw new Error('missing current checklist item when creating');
-    }
+
     dispatch(
       createChecklistItem({
         name,

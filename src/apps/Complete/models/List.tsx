@@ -38,9 +38,8 @@ export const getInboxListId = createSelector(
   [getInboxBoardId, getBoards],
   (boardId, boards) => {
     const listIds = boards[boardId].lists[0];
-    if (!listIds) {
-      throw new Error('missing inbox list');
-    }
+    if (!listIds) throw new Error('missing inbox list');
+
     return listIds;
   },
 );
@@ -49,9 +48,8 @@ export const getCategoryListIds = createSelector(
   [getCategoryBoardId, getBoards],
   (boardId, boards) => {
     const listIds = boards[boardId].lists;
-    if (!listIds) {
-      throw new Error('missing category lists');
-    }
+    if (!listIds) throw new Error('missing category lists');
+
     return listIds;
   },
 );

@@ -21,14 +21,11 @@ const playSound = (soundName: Sound) => {
 };
 
 const stopSound = (callback?: () => void) => {
-  if (active == null) {
-    return;
-  }
+  if (active == null) return;
+
   soundBank[active].play(() => {
     active = null;
-    if (callback) {
-      callback();
-    }
+    if (callback) callback();
   });
 };
 
