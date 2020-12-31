@@ -5,6 +5,7 @@ export * from './Button';
 export * from './Calendar';
 export * from './Card';
 export * from './CardSection';
+export * from './Carousel';
 export * from './Dialog';
 export * from './Icon';
 export * from './Input';
