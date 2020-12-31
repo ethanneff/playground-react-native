@@ -11,7 +11,8 @@ import React, {memo, useCallback} from 'react';
 import {Alert, Icon, Notification} from '../../components';
 import {useColor} from '../../hooks';
 import {rootMode, rootScreenOptions} from '../../providers/Navigation/configs';
-import {Account, Capture, Project, Projects, Reflect} from './screens';
+import {useRootSelector} from '../../utils';
+import {Account, Capture, Landing, Project, Projects, Reflect} from './screens';
 
 const noHeader: StackNavigationOptions = {headerShown: false};
 const RootTab = createBottomTabNavigator();
@@ -85,9 +86,11 @@ const Tabs = () => {
 };
 
 export default memo(function Complete() {
+  const user = useRootSelector((s) => s.completeUser);
+  const Main = user ? Tabs : Landing;
   return (
     <RootStack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
-      <RootStack.Screen component={Tabs} name="main" />
+      <RootStack.Screen component={Main} name="main" />
       <RootStack.Screen component={Account} name="account" />
       <RootStack.Screen component={Notification} name="notification" />
       <RootStack.Screen component={Alert} name="alert" />
