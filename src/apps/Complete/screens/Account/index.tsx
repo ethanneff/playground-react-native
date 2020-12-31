@@ -22,8 +22,7 @@ import {getDefaultUserTemplate} from './factory';
 export const Account = memo(function Account() {
   const color = useColor();
   const dispatch = useRootDispatch();
-
-  const {goBack} = useNavigation();
+  const {goBack, navigate} = useNavigation();
   const navBack = useCallback(() => goBack(), [goBack]);
 
   const onLogin = useCallback(() => {
@@ -33,7 +32,10 @@ export const Account = memo(function Account() {
     boards.map((board) => dispatch(createBoard(board)));
     dispatch(createUser(user));
   }, [dispatch]);
-  const onLogout = useCallback(() => dispatch(removeUser()), [dispatch]);
+  const onLogout = useCallback(() => {
+    dispatch(removeUser());
+    navigate('main');
+  }, [dispatch, navigate]);
   const onSetActive = useCallback(() => {
     dispatch(setActiveUser(true));
   }, [dispatch]);
