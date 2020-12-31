@@ -1,17 +1,26 @@
-import React, {memo, useCallback} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {Button, Screen} from '../../../components';
-import {Walkthrough} from './Walkthrough';
+import React, {memo, useCallback} from 'react';
+import {Button, Carousel, Screen} from '../../../components';
+import {Slide} from '../../../components/Carousel/types';
+import {useColor} from '../../../hooks';
 
 export const Landing = memo(function PortfolioLanding() {
   const {navigate, goBack} = useNavigation();
+  const color = useColor();
   const navPortfolioLogin = useCallback(() => navigate('login'), [navigate]);
   const navBack = useCallback(() => goBack(), [goBack]);
 
+  const slides: Slide[] = [
+    {id: '1', text: 'hello', color: color.info},
+    {id: '2', text: 'bob', color: color.warning},
+    {id: '3', text: 'steve', color: color.success},
+    {id: '4', text: 'jill', color: color.brand},
+  ];
+
   return (
     <Screen onLeftPress={navBack} title="Landing">
-      <Walkthrough />
-      <Button onPress={navPortfolioLogin} title="Login" />
+      <Carousel slides={slides} />
+      <Button center onPress={navPortfolioLogin} title="Login" />
     </Screen>
   );
 });
