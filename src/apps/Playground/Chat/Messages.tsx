@@ -1,12 +1,18 @@
 import {createSelector} from 'reselect';
 import {RootAction, RootState} from 'root-types';
-import {ActionType, createAction, getType} from 'typesafe-actions';
+import {createAction, getType} from 'typesafe-actions';
 
 /* ACTIONS */
 export const createChatMessage = createAction('chat/create')<Message>();
 export const updateChatMessage = createAction('chat/update')<Message>();
 export const deleteChatMessage = createAction('chat/delete')<string>();
 export const typeChatMessage = createAction('chat/type')<string>();
+export const chatMessageActions = {
+  createChatMessage,
+  updateChatMessage,
+  deleteChatMessage,
+  typeChatMessage,
+};
 
 /* SELECTORS */
 export const getChatMessages = (state: RootState): Messages =>
@@ -36,12 +42,6 @@ export type Message = {
   userId: string; // need name and id
 };
 type Messages = {[key: string]: Message};
-export type ChatMessageActions = ActionType<
-  | typeof createChatMessage
-  | typeof updateChatMessage
-  | typeof deleteChatMessage
-  | typeof typeChatMessage
->;
 
 /* REDUCER */
 const initialState: ChatMessageReducer = {

@@ -1,6 +1,6 @@
 import {AppState, AppStateStatus, ScaledSize} from 'react-native';
 import {RootAction} from 'root-types';
-import {ActionType, createAction, getType} from 'typesafe-actions';
+import {createAction, getType} from 'typesafe-actions';
 import {logout} from '../Auth';
 
 /* ACTIONS */
@@ -11,6 +11,12 @@ export const changeAppStatus = createAction(
 export const changeKeyboardStatus = createAction(
   'device/UPDATE_KEYBOARD_VISIBILITY',
 )<number>();
+
+export const deviceActions = {
+  loadDevice,
+  changeAppStatus,
+  changeKeyboardStatus,
+};
 
 /* INTERFACES */
 export interface DimensionsProps {
@@ -90,9 +96,6 @@ export type DeviceState = {
   keyboardHeight: number;
   appStatus: AppStateStatus;
 } & DeviceInfo;
-export type DeviceActions = ActionType<
-  typeof loadDevice | typeof changeAppStatus | typeof changeKeyboardStatus
->;
 
 /* REDUCERS */
 export const deviceInfoInitialState: DeviceInfo = {

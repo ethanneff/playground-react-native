@@ -1,6 +1,6 @@
 import {createSelector} from 'reselect';
 import {RootAction, RootState} from 'root-types';
-import {ActionType, createAction, getType} from 'typesafe-actions';
+import {createAction, getType} from 'typesafe-actions';
 import {getCurrentChecklist} from '../Checklist';
 
 /* ACTIONS */
@@ -19,6 +19,14 @@ export const toggleChecklistItemComplete = createAction(
 export const setActiveChecklistItem = createAction(
   'checklistItem/setActive',
 )<string>();
+
+export const checklistItemActions = {
+  createChecklistItem,
+  removeChecklistItem,
+  updateChecklistItem,
+  setActiveChecklistItem,
+  toggleChecklistItemComplete,
+};
 
 /* SELECTORS */
 export const getChecklistItems = (state: RootState): ChecklistItems =>
@@ -57,13 +65,6 @@ export type ChecklistItem = {
   updatedAt: number;
 };
 export type ChecklistItems = {[key: string]: ChecklistItem};
-export type ItemActions = ActionType<
-  | typeof createChecklistItem
-  | typeof removeChecklistItem
-  | typeof updateChecklistItem
-  | typeof setActiveChecklistItem
-  | typeof toggleChecklistItemComplete
->;
 
 /* REDUCER */
 const initialState: ChecklistItemReducer = {

@@ -1,5 +1,5 @@
 import {RootAction, RootState} from 'root-types';
-import {ActionType, createAction, getType} from 'typesafe-actions';
+import {createAction, getType} from 'typesafe-actions';
 import {logout} from '../Auth';
 
 /*
@@ -12,6 +12,7 @@ export const colorThemes: ColorTheme[] = ['light', 'dark'];
 
 /* ACTIONS */
 export const changeTheme = createAction('theme/CHANGE')<ColorTheme>();
+export const themeActions = {changeTheme};
 
 /* SELECTORS */
 export const getCurrentColor = (state: RootState): Color =>
@@ -45,7 +46,6 @@ export interface Theme {
   colors: Colors;
   currentColor: ColorTheme;
 }
-export type ThemeActions = ActionType<typeof changeTheme>;
 
 /* REDUCERS */
 export const themeInitialState: Theme = {

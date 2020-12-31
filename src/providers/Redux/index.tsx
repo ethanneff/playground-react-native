@@ -9,35 +9,70 @@ import {
 } from 'redux';
 import {persistReducer, persistStore} from 'redux-persist';
 import {PersistGate} from 'redux-persist/integration/react';
-import thunk, {ThunkAction} from 'redux-thunk';
-import {RootAction, RootState} from 'root-types';
+import thunk from 'redux-thunk';
 import {
+  checklistActions,
+  checklistItemActions,
   checklistItemReducer,
   checklistReducer,
 } from '../../apps/Checklists/models';
 import {
+  completeBoardActions,
   completeBoardReducer,
+  completeItemActions,
   completeItemReducer,
+  completeListActions,
   completeListReducer,
+  completeUserActions,
   completeUserReducer,
 } from '../../apps/Complete/models';
-import {chatMessageReducer} from '../../apps/Playground/Chat/Messages';
 import {
+  chatMessageActions,
+  chatMessageReducer,
+} from '../../apps/Playground/Chat/Messages';
+import {
+  choicesActions,
   choicesReducer,
+  questionnairesActions,
   questionnairesReducer,
+  questionsActions,
   questionsReducer,
+  responsesActions,
   responsesReducer,
 } from '../../apps/Playground/Questionnaire/models';
 import {Storage} from '../../conversions';
 import {
+  authActions,
   authReducer,
+  deviceActions,
   deviceReducer,
+  dimensionActions,
   dimensionReducer,
+  networkActions,
   networkReducer,
+  themeActions,
   themeReducer,
 } from '../../models';
 
-const reducers = combineReducers<RootState>({
+export const actions = {
+  auth: authActions,
+  choices: choicesActions,
+  dimension: dimensionActions,
+  device: deviceActions,
+  checklistItem: checklistItemActions,
+  checklist: checklistActions,
+  chatMessage: chatMessageActions,
+  network: networkActions,
+  questionnaires: questionnairesActions,
+  questions: questionsActions,
+  responses: responsesActions,
+  theme: themeActions,
+  completeItem: completeItemActions,
+  completeList: completeListActions,
+  completeBoard: completeBoardActions,
+  completeUser: completeUserActions,
+};
+export const reducers = combineReducers({
   auth: authReducer,
   choices: choicesReducer,
   dimension: dimensionReducer,
@@ -55,8 +90,6 @@ const reducers = combineReducers<RootState>({
   completeBoard: completeBoardReducer,
   completeUser: completeUserReducer,
 });
-
-export type RootThunkAction<R> = ThunkAction<R, RootState, any, RootAction>;
 
 const persistConfig = {key: 'root', storage: Storage};
 const middlewares: Middleware[] = [thunk];

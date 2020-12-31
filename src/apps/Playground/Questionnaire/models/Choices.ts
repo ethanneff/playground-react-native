@@ -1,10 +1,12 @@
 import {RootAction} from 'root-types';
-import {ActionType, createAction} from 'typesafe-actions';
+import {createAction} from 'typesafe-actions';
 
 /* ACTIONS */
 export const createChoice = createAction('choices/CREATE')<Choice>();
 export const updateChoice = createAction('choices/UPDATE')<Choice>();
 export const removeChoice = createAction('choices/REMOVE')<string>();
+
+export const choicesActions = {createChoice, updateChoice, removeChoice};
 
 /* INTERFACES */
 interface Choice {
@@ -16,10 +18,6 @@ interface Choice {
 export interface Choices {
   [id: string]: Choice;
 }
-
-export type ChoicesActions = ActionType<
-  typeof createChoice | typeof updateChoice | typeof removeChoice
->;
 
 /* REDUCERS */
 export const choicesInitialState: Choices = {

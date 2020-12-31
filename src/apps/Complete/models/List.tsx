@@ -1,6 +1,6 @@
 import {createSelector} from 'reselect';
 import {RootAction, RootState} from 'root-types';
-import {ActionType, createAction, getType} from 'typesafe-actions';
+import {createAction, getType} from 'typesafe-actions';
 import {getBoards, getCategoryBoardId, getInboxBoardId} from './Board';
 import {removeUser} from './User';
 
@@ -21,6 +21,16 @@ export const updateListRemoveItem = createAction('complete/list/removeItem')<{
   listId: string;
   itemId: string;
 }>();
+
+export const completeListActions = {
+  createList,
+  removeList,
+  updateList,
+  setActiveList,
+  updateListTitle,
+  updateListAddItem,
+  updateListRemoveItem,
+};
 
 /* SELECTORS */
 export const getLists = (state: RootState): Lists => state.completeList.items;
@@ -60,15 +70,6 @@ export type List = {
   items: ReadonlyArray<string>;
 };
 export type Lists = {[key: string]: List};
-export type CompleteListActions = ActionType<
-  | typeof createList
-  | typeof removeList
-  | typeof updateList
-  | typeof setActiveList
-  | typeof updateListTitle
-  | typeof updateListAddItem
-  | typeof updateListRemoveItem
->;
 
 /* REDUCER */
 const initialState: CompleteListReducer = {

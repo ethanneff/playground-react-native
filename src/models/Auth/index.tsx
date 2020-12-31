@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {RootAction, RootState, RootThunkAction} from 'root-types';
-import {ActionType, createAction, getType} from 'typesafe-actions';
+import {createAction, getType} from 'typesafe-actions';
 
 /* ACTIONS */
 export const loginRequest = createAction('AUTH/LOGIN_REQUEST')();
@@ -61,6 +61,16 @@ export const onLogout = (): RootThunkAction<void> => (dispatch, getState) => {
   });
 };
 
+export const authActions = {
+  loginRequest,
+  loginSuccess,
+  loginFailure,
+  registerRequest,
+  registerSuccess,
+  registerFailure,
+  logout,
+};
+
 /* SELECTORS */
 export const getAuthToken = (state: RootState): string | undefined =>
   state.auth.token;
@@ -72,15 +82,6 @@ export interface AuthState {
   loading: boolean;
   error?: string;
 }
-export type AuthActions = ActionType<
-  | typeof loginRequest
-  | typeof loginSuccess
-  | typeof loginFailure
-  | typeof registerRequest
-  | typeof registerSuccess
-  | typeof registerFailure
-  | typeof logout
->;
 
 /* REDUCERS */
 export const authInitialState: AuthState = {

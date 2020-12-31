@@ -1,11 +1,6 @@
 import {createSelector} from 'reselect';
 import {RootAction, RootState} from 'root-types';
-import {
-  ActionType,
-  createAction,
-  createCustomAction,
-  getType,
-} from 'typesafe-actions';
+import {createAction, createCustomAction, getType} from 'typesafe-actions';
 import {v4} from 'uuid';
 import {logout} from '../../../../models/Auth';
 
@@ -30,6 +25,13 @@ export const selectQuestionnaire = createAction(
   'questionnaires/SELECT',
 )<string>();
 
+export const questionnairesActions = {
+  createQuestionnaire,
+  updateQuestionnaire,
+  removeQuestionnaire,
+  selectQuestionnaire,
+};
+
 /* SELECTORS */
 export const getQuestionnaires = (state: RootState): QuestionnairesObject =>
   state.questionnaires.items;
@@ -53,12 +55,6 @@ export interface Questionnaires {
   items: QuestionnairesObject;
   selected: string | undefined;
 }
-export type QuestionnairesActions = ActionType<
-  | typeof createQuestionnaire
-  | typeof updateQuestionnaire
-  | typeof removeQuestionnaire
-  | typeof selectQuestionnaire
->;
 
 /* REDUCERS */
 export const questionnairesInitialState: Questionnaires = {

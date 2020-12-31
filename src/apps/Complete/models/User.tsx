@@ -1,11 +1,17 @@
 import {RootAction, RootState} from 'root-types';
-import {ActionType, createAction, getType} from 'typesafe-actions';
+import {createAction, getType} from 'typesafe-actions';
 
 /* ACTIONS */
 export const createUser = createAction('complete/user/create')<User>();
 export const updateUser = createAction('complete/user/update')<User>();
 export const removeUser = createAction('complete/user/remove')();
 export const setActiveUser = createAction('complete/user/setActive')<boolean>();
+export const completeUserActions = {
+  createUser,
+  removeUser,
+  updateUser,
+  setActiveUser,
+};
 
 /* SELECTORS */
 export const getUser = (state: RootState): CompleteUserReducer =>
@@ -21,12 +27,6 @@ export type User = {
   updatedAt: number;
   boards: ReadonlyArray<string>;
 };
-export type CompleteUserActions = ActionType<
-  | typeof createUser
-  | typeof removeUser
-  | typeof updateUser
-  | typeof setActiveUser
->;
 
 /* REDUCER */
 const initialState: CompleteUserReducer = null;

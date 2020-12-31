@@ -1,6 +1,6 @@
 import {createSelector} from 'reselect';
 import {RootAction, RootState} from 'root-types';
-import {ActionType, createAction, getType} from 'typesafe-actions';
+import {createAction, getType} from 'typesafe-actions';
 import {removeUser} from './User';
 
 /* ACTIONS */
@@ -8,6 +8,12 @@ export const createItem = createAction('complete/item/create')<Item>();
 export const updateItem = createAction('complete/item/update')<Item>();
 export const removeItem = createAction('complete/item/remove')<string>();
 export const setActiveItem = createAction('complete/item/setActive')<string>();
+export const completeItemActions = {
+  createItem,
+  removeItem,
+  updateItem,
+  setActiveItem,
+};
 
 /* SELECTORS */
 export const getItems = (state: RootState): Items => state.completeItem.items;
@@ -42,12 +48,6 @@ export type Item = {
   tags?: ReadonlyArray<string>;
 };
 export type Items = {[key: string]: Item};
-export type CompleteItemActions = ActionType<
-  | typeof createItem
-  | typeof removeItem
-  | typeof updateItem
-  | typeof setActiveItem
->;
 
 /* REDUCER */
 const initialState: CompleteItemReducer = {

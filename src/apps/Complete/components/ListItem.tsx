@@ -39,6 +39,9 @@ export const ListItem = memo(function ListItem({
   const onBlur = useCallback(() => setShowControls(false), []);
 
   const onItemNav = useCallback(() => {
+    if (!item.board) {
+      throw new Error('item does not have a board to navigate to');
+    }
     dispatch(setActiveBoard(item.board));
     navigate('board');
   }, [dispatch, item.board, navigate]);

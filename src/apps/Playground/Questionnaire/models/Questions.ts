@@ -1,10 +1,15 @@
 import {RootAction} from 'root-types';
-import {ActionType, createAction} from 'typesafe-actions';
+import {createAction} from 'typesafe-actions';
 
 /* ACTIONS */
 export const createQuestion = createAction('questions/CREATE')<Question>();
 export const updateQuestion = createAction('questions/UPDATE')<Question>();
 export const removeQuestion = createAction('questions/REMOVE')<string>();
+export const questionsActions = {
+  createQuestion,
+  updateQuestion,
+  removeQuestion,
+};
 
 /* INTERFACES */
 type QuestionType = 'Input' | 'Checkbox' | 'Slider' | 'Button';
@@ -20,10 +25,6 @@ interface Question {
 export interface Questions {
   [id: string]: Question;
 }
-
-export type QuestionsActions = ActionType<
-  typeof createQuestion | typeof updateQuestion | typeof removeQuestion
->;
 
 /* REDUCERS */
 export const questionsInitialState: Questions = {
