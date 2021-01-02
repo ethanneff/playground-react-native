@@ -7,16 +7,18 @@ import {TouchableOpacity} from '../TouchableOpacity';
 type AlertProps = {
   children: ReactElement | ReactElement[];
   onBackgroundPress?: () => void;
+  backgroundColor?: string;
 };
 
 export const Alert = memo(function Alert({
   children,
   onBackgroundPress,
+  backgroundColor,
 }: AlertProps): ReactElement {
   const color = useColor();
   const styles = StyleSheet.create({
     modal: {
-      backgroundColor: color.background,
+      backgroundColor: backgroundColor || color.background,
       borderRadius: Theme.padding.p04,
       elevation: 2,
       padding: Theme.padding.p04,
