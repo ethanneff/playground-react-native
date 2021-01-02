@@ -1,10 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
-import {ScrollView, View} from 'react-native';
-import {Alert, Button, Text} from '../../../../components';
+import {Button, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {Theme, useRootDispatch} from '../../../../utils';
-import {Card} from '../../components';
+import {AlertWrapper, Card} from '../../components';
 import {
   createBoard,
   createItem,
@@ -13,7 +12,6 @@ import {
   removeUser,
   setActiveUser,
 } from '../../models';
-import {useAlertSize} from '../../utils';
 import {getDefaultUserTemplate} from './factory';
 
 // TODO: figure out a place for this
@@ -26,7 +24,6 @@ export const Account = memo(function Account() {
   const dispatch = useRootDispatch();
   const {goBack, navigate} = useNavigation();
   const navBack = useCallback(() => goBack(), [goBack]);
-  const alertSize = useAlertSize();
 
   const onLogin = useCallback(() => {
     const {user, boards, lists, items} = getDefaultUserTemplate();
@@ -47,47 +44,43 @@ export const Account = memo(function Account() {
   const onNavToAdmin = useCallback(() => navigate('admin'), [navigate]);
 
   return (
-    <Alert backgroundColor={color.surface} onBackgroundPress={navBack}>
-      <View style={{...alertSize}}>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <Card>
-            <Text
-              style={{paddingBottom: Theme.padding.p04}}
-              title="Profile"
-              type="h3"
-            />
-            <Text center emphasis="medium" title="..." type="h4" />
-          </Card>
-          <Card>
-            <Text
-              style={{paddingBottom: Theme.padding.p04}}
-              title="Reminders"
-              type="h3"
-            />
-            <Text center emphasis="medium" title="..." type="h4" />
-          </Card>
-          <Card>
-            <Text
-              style={{paddingBottom: Theme.padding.p04}}
-              title="Payment"
-              type="h3"
-            />
-            <Text center emphasis="medium" title="..." type="h4" />
-          </Card>
-          <Card>
-            <Text
-              style={{paddingBottom: Theme.padding.p04}}
-              title="Feedback"
-              type="h3"
-            />
-            <Text center emphasis="medium" title="..." type="h4" />
-          </Card>
-          <Button onPress={onLogin} title="login" />
-          <Button onPress={onLogout} title="logout" />
-          <Button onPress={onSetActive} title="set active" />
-          <Button onPress={onNavToAdmin} title="go to admin" />
-        </ScrollView>
-      </View>
-    </Alert>
+    <AlertWrapper backgroundColor={color.surface} onBackgroundPress={navBack}>
+      <Card>
+        <Text
+          style={{paddingBottom: Theme.padding.p04}}
+          title="Profile"
+          type="h3"
+        />
+        <Text center emphasis="medium" title="..." type="h4" />
+      </Card>
+      <Card>
+        <Text
+          style={{paddingBottom: Theme.padding.p04}}
+          title="Reminders"
+          type="h3"
+        />
+        <Text center emphasis="medium" title="..." type="h4" />
+      </Card>
+      <Card>
+        <Text
+          style={{paddingBottom: Theme.padding.p04}}
+          title="Payment"
+          type="h3"
+        />
+        <Text center emphasis="medium" title="..." type="h4" />
+      </Card>
+      <Card>
+        <Text
+          style={{paddingBottom: Theme.padding.p04}}
+          title="Feedback"
+          type="h3"
+        />
+        <Text center emphasis="medium" title="..." type="h4" />
+      </Card>
+      <Button onPress={onLogin} title="login" />
+      <Button onPress={onLogout} title="logout" />
+      <Button onPress={onSetActive} title="set active" />
+      <Button onPress={onNavToAdmin} title="go to admin" />
+    </AlertWrapper>
   );
 });
