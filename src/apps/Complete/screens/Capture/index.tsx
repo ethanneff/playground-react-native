@@ -11,7 +11,7 @@ import {getInboxListId} from '../../models';
 export const Capture = memo(function Capture() {
   const color = useColor();
   const {navigate} = useNavigation();
-  const navBack = useCallback(() => navigate('admin'), [navigate]);
+
   const keyboardHeight = useRootSelector(
     (state) => state.device.keyboardHeight,
   );
@@ -47,7 +47,6 @@ export const Capture = memo(function Capture() {
 
   return (
     <Screen
-      onLeftPress={navBack}
       onRightPress={navToAccount}
       rightIcon="account"
       title="Capture">

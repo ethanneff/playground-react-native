@@ -34,7 +34,8 @@ export const Account = memo(function Account() {
     lists.map((list) => dispatch(createList(list)));
     boards.map((board) => dispatch(createBoard(board)));
     dispatch(createUser(user));
-  }, [dispatch]);
+    goBack();
+  }, [dispatch, goBack]);
   const onLogout = useCallback(() => {
     dispatch(removeUser());
     navigate('main');
@@ -42,6 +43,8 @@ export const Account = memo(function Account() {
   const onSetActive = useCallback(() => {
     dispatch(setActiveUser(true));
   }, [dispatch]);
+
+  const onNavToAdmin = useCallback(() => navigate('admin'), [navigate]);
 
   return (
     <Alert backgroundColor={color.surface} onBackgroundPress={navBack}>
@@ -53,12 +56,7 @@ export const Account = memo(function Account() {
               title="Profile"
               type="h3"
             />
-            <Text
-              center
-              emphasis="medium"
-              title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
-              type="h4"
-            />
+            <Text center emphasis="medium" title="..." type="h4" />
           </Card>
           <Card>
             <Text
@@ -66,12 +64,7 @@ export const Account = memo(function Account() {
               title="Reminders"
               type="h3"
             />
-            <Text
-              center
-              emphasis="medium"
-              title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
-              type="h4"
-            />
+            <Text center emphasis="medium" title="..." type="h4" />
           </Card>
           <Card>
             <Text
@@ -79,16 +72,20 @@ export const Account = memo(function Account() {
               title="Payment"
               type="h3"
             />
+            <Text center emphasis="medium" title="..." type="h4" />
+          </Card>
+          <Card>
             <Text
-              center
-              emphasis="medium"
-              title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
-              type="h4"
+              style={{paddingBottom: Theme.padding.p04}}
+              title="Feedback"
+              type="h3"
             />
+            <Text center emphasis="medium" title="..." type="h4" />
           </Card>
           <Button onPress={onLogin} title="login" />
           <Button onPress={onLogout} title="logout" />
           <Button onPress={onSetActive} title="set active" />
+          <Button onPress={onNavToAdmin} title="go to admin" />
         </ScrollView>
       </View>
     </Alert>
