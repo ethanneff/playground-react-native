@@ -5,7 +5,14 @@ import {Icon, TextInput, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../utils';
 import {config} from '../configs';
-import {removeItem, setActiveBoard, updateListRemoveItem} from '../models';
+import {
+  removeItem,
+  setActiveBoard,
+  setActiveItem,
+  setActiveList,
+  updateItem,
+  updateListRemoveItem,
+} from '../models';
 
 type ListItemProps = {
   itemId: string;
@@ -31,9 +38,11 @@ export const ListItem = memo(function ListItem({
     setTitle(item.title);
     Keyboard.dismiss();
   }, [item.title]);
+
   const onItemTitleSubmit = useCallback(() => {
+    dispatch(updateItem({...item, title}));
     Keyboard.dismiss();
-  }, []);
+  }, [dispatch, item, title]);
 
   const onFocus = useCallback(() => setShowControls(true), []);
   const onBlur = useCallback(() => setShowControls(false), []);
@@ -41,7 +50,6 @@ export const ListItem = memo(function ListItem({
   const onItemNav = useCallback(() => {
     if (!item.board)
       throw new Error('item does not have a board to navigate to');
-
     dispatch(setActiveBoard(item.board));
     navigate('board');
   }, [dispatch, item.board, navigate]);
@@ -50,7 +58,13 @@ export const ListItem = memo(function ListItem({
     dispatch(removeItem(itemId));
     dispatch(updateListRemoveItem({listId, itemId}));
   }, [dispatch, itemId, listId]);
-  const onItemDetails = useCallback(() => undefined, []);
+
+  const onItemDetails = useCallback(() => {
+    dispatch(setActiveItem(itemId));
+    dispatch(setActiveList(listId));
+    navigate('item-detail');
+  }, [dispatch, itemId, listId, navigate]);
+
   const onItemLongPress = useCallback(() => undefined, []);
 
   return (
