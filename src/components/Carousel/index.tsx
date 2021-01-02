@@ -63,6 +63,7 @@ export const Carousel = memo(function Carousel({
         pagingEnabled
         ref={flatList}
         renderItem={renderItem}
+        showsHorizontalScrollIndicator={false}
         viewabilityConfig={viewabilityConfig}
       />
       <Dots
