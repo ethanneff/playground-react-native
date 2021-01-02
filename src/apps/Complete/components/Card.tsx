@@ -3,21 +3,32 @@ import {LayoutChangeEvent, View} from 'react-native';
 import {useColor} from '../../../hooks';
 import {config} from '../configs';
 
+// TODO: combine card components with global card
+
 type CardProps = {
   onLayout?: (event: LayoutChangeEvent) => void;
   children: ReactElement | ReactElement[];
+  margin?: 'bottom' | 'right';
+  width?: number;
 };
 
-export const Card = memo(function Card({children, onLayout}: CardProps) {
+export const Card = memo(function Card({
+  children,
+  onLayout,
+  margin = 'bottom',
+  width,
+}: CardProps) {
   const color = useColor();
   return (
     <View
       onLayout={onLayout}
       style={{
+        width,
         borderRadius: config.borderRadius,
         backgroundColor: color.background,
         padding: config.padding / 2,
-        marginBottom: config.padding,
+        marginRight: margin === 'right' ? config.padding : 0,
+        marginBottom: margin === 'bottom' ? config.padding : 0,
       }}>
       {children}
     </View>

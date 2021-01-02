@@ -1,8 +1,7 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import {useColor} from '../../../hooks';
-import {config} from '../configs';
 import {AddItem} from './AddItem';
+import {Card} from './Card';
 import {ListHeader} from './ListHeader';
 import {ListItems} from './ListItems';
 
@@ -23,25 +22,14 @@ export const List = memo(function List({
   title,
   placeholder,
 }: ListProps) {
-  const color = useColor();
-  const padding = config.padding;
-  const borderRadius = config.borderRadius;
-  const horizontal = orientation === 'horizontal';
+  const margin = orientation === 'horizontal' ? 'right' : 'bottom';
   return (
     <View>
-      <View
-        style={{
-          borderRadius,
-          width: listWidth,
-          backgroundColor: color.background,
-          padding: padding / 2,
-          marginRight: horizontal ? padding : 0,
-          marginBottom: horizontal ? 0 : padding,
-        }}>
+      <Card margin={margin} width={listWidth}>
         <ListHeader listId={listId} />
         <ListItems listId={listId} maxHeight={listMaxHeight} />
         <AddItem listId={listId} placeholder={placeholder} title={title} />
-      </View>
+      </Card>
     </View>
   );
 });
