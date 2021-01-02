@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.45.8](https://github.com/ethanneff/example/compare/v2.45.7...v2.45.8) (2020-12-31)
+
+
+### Bug Fixes
+
+* add carousel component ([1906a51](https://github.com/ethanneff/example/commit/1906a51391cdb0b910c1ad7e6a2e401156111d57))
+* add landing screen ([99c9771](https://github.com/ethanneff/example/commit/99c9771b648ccf53a1d4de7f774cea3027ec2f7a))
+* add single line brackets ([c1ad459](https://github.com/ethanneff/example/commit/c1ad459d4bf34097d47b3d0439cc7cd1ea619433))
+* leverage carousel component ([9c859db](https://github.com/ethanneff/example/commit/9c859dbf6109b1fcb7d9d3f35abe99378e31221e))
+* navigate to landing on logout ([406df1c](https://github.com/ethanneff/example/commit/406df1ccdaa5e7174d2f4dc4b6e1a19f5defa359))
+* prevent missing user error crash ([3f861e6](https://github.com/ethanneff/example/commit/3f861e6f35f679e660868b29535c584a3c7f4627))
+* remove unused components ([79fe216](https://github.com/ethanneff/example/commit/79fe2167b2024071d7cfd92b4eed4a2f71107902))
+
 ## [2.45.7](https://github.com/ethanneff/example/compare/v2.45.6...v2.45.7) (2020-12-31)
 
 
