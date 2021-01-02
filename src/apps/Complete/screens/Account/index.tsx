@@ -1,9 +1,10 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
-import {ScrollView} from 'react-native';
-import {Button, Card, Screen, Text} from '../../../../components';
+import {ScrollView, View} from 'react-native';
+import {Alert, Button, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {Theme, useRootDispatch} from '../../../../utils';
+import {Card} from '../../components';
 import {
   createBoard,
   createItem,
@@ -12,6 +13,7 @@ import {
   removeUser,
   setActiveUser,
 } from '../../models';
+import {useAlertSize} from '../../utils';
 import {getDefaultUserTemplate} from './factory';
 
 // TODO: figure out a place for this
@@ -24,6 +26,7 @@ export const Account = memo(function Account() {
   const dispatch = useRootDispatch();
   const {goBack, navigate} = useNavigation();
   const navBack = useCallback(() => goBack(), [goBack]);
+  const alertSize = useAlertSize();
 
   const onLogin = useCallback(() => {
     const {user, boards, lists, items} = getDefaultUserTemplate();
@@ -41,55 +44,53 @@ export const Account = memo(function Account() {
   }, [dispatch]);
 
   return (
-    <Screen onLeftPress={navBack} title="Account">
-      <ScrollView
-        contentContainerStyle={{
-          padding: Theme.padding.p04,
-        }}
-        style={{flex: 1, backgroundColor: color.surface}}>
-        <Card>
-          <Text
-            style={{paddingBottom: Theme.padding.p04}}
-            title="Profile"
-            type="h3"
-          />
-          <Text
-            center
-            emphasis="medium"
-            title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
-            type="h4"
-          />
-        </Card>
-        <Card>
-          <Text
-            style={{paddingBottom: Theme.padding.p04}}
-            title="Reminders"
-            type="h3"
-          />
-          <Text
-            center
-            emphasis="medium"
-            title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
-            type="h4"
-          />
-        </Card>
-        <Card>
-          <Text
-            style={{paddingBottom: Theme.padding.p04}}
-            title="Payment"
-            type="h3"
-          />
-          <Text
-            center
-            emphasis="medium"
-            title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
-            type="h4"
-          />
-        </Card>
-        <Button onPress={onLogin} title="login" />
-        <Button onPress={onLogout} title="logout" />
-        <Button onPress={onSetActive} title="set active" />
-      </ScrollView>
-    </Screen>
+    <Alert backgroundColor={color.surface} onBackgroundPress={navBack}>
+      <View style={{...alertSize}}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Card>
+            <Text
+              style={{paddingBottom: Theme.padding.p04}}
+              title="Profile"
+              type="h3"
+            />
+            <Text
+              center
+              emphasis="medium"
+              title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
+              type="h4"
+            />
+          </Card>
+          <Card>
+            <Text
+              style={{paddingBottom: Theme.padding.p04}}
+              title="Reminders"
+              type="h3"
+            />
+            <Text
+              center
+              emphasis="medium"
+              title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
+              type="h4"
+            />
+          </Card>
+          <Card>
+            <Text
+              style={{paddingBottom: Theme.padding.p04}}
+              title="Payment"
+              type="h3"
+            />
+            <Text
+              center
+              emphasis="medium"
+              title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
+              type="h4"
+            />
+          </Card>
+          <Button onPress={onLogin} title="login" />
+          <Button onPress={onLogout} title="logout" />
+          <Button onPress={onSetActive} title="set active" />
+        </ScrollView>
+      </View>
+    </Alert>
   );
 });
