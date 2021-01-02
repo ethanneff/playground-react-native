@@ -1,10 +1,10 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, Platform, View} from 'react-native';
-import {Screen, Text} from '../../../../components';
+import {HandleKeyboard, Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {useRootSelector} from '../../../../utils';
-import {HandleKeyboard, List, OrganizeButton} from '../../components';
+import {List, OrganizeButton} from '../../components';
 import {config} from '../../configs';
 import {getInboxListId} from '../../models';
 

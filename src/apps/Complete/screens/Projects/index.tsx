@@ -1,9 +1,9 @@
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, View} from 'react-native';
-import {Screen} from '../../../../components';
+import {HandleKeyboard, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {useRootSelector} from '../../../../utils';
-import {HandleKeyboard, List} from '../../components';
+import {List} from '../../components';
 import {config} from '../../configs';
 import {getCategoryListIds} from '../../models';
 

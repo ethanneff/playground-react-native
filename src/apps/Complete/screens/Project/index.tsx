@@ -1,11 +1,11 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, Platform} from 'react-native';
-import {Screen, Text} from '../../../../components';
+import {HandleKeyboard, Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {getSmallestDimension} from '../../../../models';
 import {useRootSelector} from '../../../../utils';
-import {Board, HandleKeyboard} from '../../components';
+import {Board} from '../../components';
 import {config} from '../../configs';
 
 // TODO: figure out centering of list
