@@ -12,7 +12,15 @@ import {Alert, Icon, Notification} from '../../components';
 import {useColor} from '../../hooks';
 import {rootMode, rootScreenOptions} from '../../providers/Navigation/configs';
 import {useRootSelector} from '../../utils';
-import {Account, Capture, Landing, Project, Projects, Reflect} from './screens';
+import {
+  Account,
+  Capture,
+  ItemDetail,
+  Landing,
+  Project,
+  Projects,
+  Reflect,
+} from './screens';
 
 const noHeader: StackNavigationOptions = {headerShown: false};
 const RootTab = createBottomTabNavigator();
@@ -94,6 +102,7 @@ export default memo(function Complete() {
       <RootStack.Screen component={Account} name="account" />
       <RootStack.Screen component={Notification} name="notification" />
       <RootStack.Screen component={Alert} name="alert" />
+      <RootStack.Screen component={ItemDetail} name="item-detail" />
     </RootStack.Navigator>
   );
 });
