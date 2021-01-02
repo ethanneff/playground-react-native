@@ -1,4 +1,4 @@
-import React, {useCallback, useRef, useState} from 'react';
+import React, {MutableRefObject, useCallback, useRef, useState} from 'react';
 import {
   KeyboardTypeOptions,
   ReturnKeyTypeOptions,
@@ -25,6 +25,7 @@ interface Props {
   blurOnSubmit?: boolean;
   focusOnLoad?: boolean;
   disableFullscreenUI?: boolean;
+  backgroundColor?: string;
   editable?: boolean;
   error?: string;
   keyboardType?: KeyboardTypeOptions;
@@ -38,6 +39,9 @@ interface Props {
   flex?: boolean;
   onChangeText(text: string): void;
   onSubmitEditing?(): void;
+  onFocus?(): void;
+  onBlur?(): void;
+  onRef?: MutableRefObject<Original | null>;
 }
 
 export const TextInput = ({
@@ -47,15 +51,19 @@ export const TextInput = ({
   focusOnLoad,
   editable = true,
   error = '',
+  backgroundColor,
   keyboardType,
   onChangeText,
   onSubmitEditing,
+  onFocus,
+  onBlur,
   placeholder,
   returnKeyType,
   secureTextEntry,
   textContentType = 'none',
   style,
   value,
+  onRef,
   color,
   emphasis,
   type,
@@ -64,6 +72,7 @@ export const TextInput = ({
   const [focus, setFocus] = useState(false);
   const colorScheme = useColor();
   const focusColor = colorScheme.primary;
+  const backColor = backgroundColor || colorScheme.background;
   const {fontSize, textColor} = getFontStyles({
     emphasis,
     type,
@@ -72,21 +81,23 @@ export const TextInput = ({
   });
   const styles = StyleSheet.create({
     borderError: {
-      borderColor: colorScheme.danger,
+      borderBottomColor: colorScheme.danger,
     },
     borderFocus: {
-      borderColor: focusColor,
+      borderBottomColor: focusColor,
     },
     flex: {
       flex: 1,
     },
     textInput: {
-      backgroundColor: colorScheme.background,
-      borderBottomWidth: 2,
-      borderColor: colorScheme.background,
+      backgroundColor: backColor,
+      borderBottomColor: backColor,
+      borderLeftColor: backColor,
       borderRadius: Theme.padding.p01,
+      borderRightColor: backColor,
+      borderTopColor: backColor,
+      borderWidth: 2,
       color: textColor,
-      marginLeft: Theme.padding.p02,
       padding: Theme.padding.p02,
     },
   });
@@ -100,19 +111,24 @@ export const TextInput = ({
   ];
   const containerStyles = [flex ? styles.flex : undefined];
 
-  const onFocus = useCallback(() => setFocus(true), []);
-  const onBlur = useCallback(() => setFocus(false), []);
+  const didFocus = useCallback(() => {
+    setFocus(true);
+    if (onFocus) onFocus();
+  }, [onFocus]);
+  const didBlur = useCallback(() => {
+    setFocus(false);
+    if (onBlur) onBlur();
+  }, [onBlur]);
   const onInternalRef = useCallback(
     (ref: Original | null) => {
-      if (!ref) {
-        return;
-      }
-      if (!textInput.current && focusOnLoad) {
-        ref.focus();
-      }
+      if (!ref) return;
+
+      if (!textInput.current && focusOnLoad) ref.focus();
+
       textInput.current = ref;
+      if (onRef) onRef.current = ref;
     },
-    [focusOnLoad, textInput],
+    [focusOnLoad, onRef],
   );
 
   return (
@@ -123,9 +139,9 @@ export const TextInput = ({
         disableFullscreenUI={disableFullscreenUI}
         editable={editable}
         keyboardType={keyboardType}
-        onBlur={onBlur}
+        onBlur={didBlur}
         onChangeText={onChangeText}
-        onFocus={onFocus}
+        onFocus={didFocus}
         onSubmitEditing={onSubmitEditing}
         placeholder={placeholder}
         placeholderTextColor={colorScheme.secondary}

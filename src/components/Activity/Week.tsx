@@ -1,11 +1,10 @@
+import format from 'date-fns/format';
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import format from 'date-fns/format';
-import {Text} from '../Text';
 import {Theme} from '../../utils';
-import {ActivityDay, Day} from './Day';
-
-export type ActivityWeek = Array<ActivityDay>;
+import {Text} from '../Text';
+import {Day} from './Day';
+import {ActivityDay, ActivityWeek} from './types';
 
 interface Props {
   item: ActivityWeek;

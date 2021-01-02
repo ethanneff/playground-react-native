@@ -3,16 +3,7 @@ import React, {memo, useCallback, useEffect, useState} from 'react';
 import {ActivityIndicator, FlatList, StyleSheet} from 'react-native';
 import {Theme} from '../../utils';
 import {ListItem} from './ListItem';
-
-export interface Item {
-  action: string;
-  dayOfMonth: string;
-  dayOfWeek: string;
-  hour: string;
-  id: number;
-  month: string;
-  zone: string;
-}
+import {Item} from './types';
 
 interface Props {
   items: Item[];

@@ -51,9 +51,7 @@ export const usePersistedState = (): UsePersistedState => {
           ? JSON.parse(savedStateString)
           : undefined;
 
-        if (state !== undefined) {
-          setInitialState(state);
-        }
+        if (state !== undefined) setInitialState(state);
       }
     } finally {
       setIsReady(true);
@@ -61,9 +59,8 @@ export const usePersistedState = (): UsePersistedState => {
   }, []);
 
   useEffect(() => {
-    if (isReady) {
-      return;
-    }
+    if (isReady) return;
+
     restoreState();
   }, [isReady, restoreState]);
 

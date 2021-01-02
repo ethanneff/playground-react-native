@@ -21,12 +21,11 @@ export const PinchSpread = memo(function PinchSpread() {
     onPanResponderMove: (event) => gestureHandler.onPanResponderMove(event),
     onPanResponderRelease: () => {
       const outcome = gestureHandler.onPanResponderRelease();
-      if (outcome.spread) {
+      if (outcome.spread)
         setState((prev) => ({...prev, spreadCount: prev.spreadCount++}));
-      }
-      if (outcome.pinch) {
+
+      if (outcome.pinch)
         setState((prev) => ({...prev, pinchCount: prev.pinchCount++}));
-      }
     },
   });
   const navBack = useCallback(() => goBack(), [goBack]);

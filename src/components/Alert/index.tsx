@@ -1,36 +1,52 @@
-import React, {useCallback} from 'react';
-import {useNavigation} from '@react-navigation/native';
+import React, {memo, ReactElement} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Button, Text} from '../../components';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
+import {TouchableOpacity} from '../TouchableOpacity';
 
-export const Alert = (): JSX.Element => {
-  const {goBack} = useNavigation();
+type AlertProps = {
+  children: ReactElement | ReactElement[];
+  onBackgroundPress?: () => void;
+  backgroundColor?: string;
+};
+
+export const Alert = memo(function Alert({
+  children,
+  onBackgroundPress,
+  backgroundColor,
+}: AlertProps): ReactElement {
   const color = useColor();
-
   const styles = StyleSheet.create({
     modal: {
-      backgroundColor: color.background,
-      borderRadius: Theme.padding.p05,
-      padding: Theme.padding.p05,
+      backgroundColor: backgroundColor || color.background,
+      borderRadius: Theme.padding.p04,
+      elevation: 2,
+      padding: Theme.padding.p04,
+      zIndex: 2,
     },
     overlay: {
-      alignItems: 'center',
-      flex: 1,
-      justifyContent: 'center',
+      elevation: 1,
+      height: '100%',
+      position: 'absolute',
+      width: '100%',
+      zIndex: 1,
     },
-    title: {fontSize: 30},
   });
 
-  const navBack = useCallback(() => goBack(), [goBack]);
-
   return (
-    <View style={styles.overlay}>
-      <View style={styles.modal}>
-        <Text style={styles.title} title="This is a alert!" />
-        <Button onPress={navBack} title="Dismiss" />
-      </View>
+    <View
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        alignSelf: 'center',
+        justifyContent: 'center',
+      }}>
+      <View style={styles.modal}>{children}</View>
+      <TouchableOpacity
+        disabled={!onBackgroundPress}
+        onPress={onBackgroundPress}
+        style={styles.overlay}
+      />
     </View>
   );
-};
+});

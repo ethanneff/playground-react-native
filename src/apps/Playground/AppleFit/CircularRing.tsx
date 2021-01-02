@@ -3,7 +3,7 @@ import {PixelRatio, StyleSheet, View} from 'react-native';
 import {CircularProgress} from './CircularProgress';
 import {InitialKnob} from './InitialKnob';
 import {MovingKnob} from './MovingKnob';
-import {Ring} from './AppleActivity';
+import {Ring} from './types';
 
 interface RingProps {
   ring: Ring;

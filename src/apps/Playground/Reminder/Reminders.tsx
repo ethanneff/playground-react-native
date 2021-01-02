@@ -1,7 +1,7 @@
 import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
-import {Reminder} from '.';
 import {Text} from '../../../components';
+import {Reminder} from './types';
 
 interface Props {
   reminders: Reminder[];

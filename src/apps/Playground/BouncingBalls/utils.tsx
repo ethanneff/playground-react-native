@@ -1,6 +1,5 @@
 import {Animated} from 'react-native';
-import {CanvasDimensions} from '../Drift/Game';
-import {Item} from './Balls';
+import {CanvasDimensions, Item} from './types';
 
 const rotate = (dx: number, dy: number, angle: number) => {
   const rotatedVelocities = {
@@ -113,7 +112,7 @@ export const getItems = ({
     let x = getRandomNumber(canvas.x, canvas.x + canvas.width - radius);
     let y = getRandomNumber(canvas.x, canvas.x + canvas.height - radius);
 
-    if (i !== 0) {
+    if (i !== 0)
       for (let j = 0; j < initialItems.length; j++) {
         const item = initialItems[j];
         if (getOverlap(x, y, radius, item.x, item.y, item.radius, false)) {
@@ -122,7 +121,7 @@ export const getItems = ({
           j = -1;
         }
       }
-    }
+
     initialItems.push({
       index: i,
       x,

@@ -149,7 +149,7 @@ const data = [
 export const Home = memo(function Home() {
   const {goBack} = useNavigation();
   const color = useColor();
-  const [challenge, setChallenge] = useState('');
+  const [challenge, setChallenge] = useState('...');
   const [customInput, setCustomInput] = useState('');
   const [showCustomInput, setShowCustomInput] = useState(false);
 
@@ -174,8 +174,8 @@ export const Home = memo(function Home() {
       <ScrollView
         contentContainerStyle={{
           padding: Theme.padding.p04,
-          backgroundColor: color.surface,
-        }}>
+        }}
+        style={{backgroundColor: color.surface}}>
         <Card>
           <Text
             center
@@ -186,7 +186,7 @@ export const Home = memo(function Home() {
           <Text
             center
             emphasis="medium"
-            title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
+            title="Break comfort barriers to be more creative, to be better at dealing with change, and to be better at improving your future"
             type="h4"
           />
         </Card>

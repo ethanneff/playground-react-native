@@ -38,9 +38,8 @@ export class GestureHandler {
   }
 
   recordStart(touch: NativeTouchEvent): void {
-    if (this.isStartAlreadyRecorded(touch)) {
-      return;
-    }
+    if (this.isStartAlreadyRecorded(touch)) return;
+
     this.start[String(touch.identifier)] = {
       x: touch.locationX,
       y: touch.locationY,
@@ -90,9 +89,8 @@ export class GestureHandler {
       pinch: false,
       spread: false,
     };
-    if (numRecordedTouched < this.minTouches) {
-      return outcome;
-    }
+    if (numRecordedTouched < this.minTouches) return outcome;
+
     let spread = false;
     let pinch = false;
     const center = this.determineCenter(this.start);
@@ -101,18 +99,14 @@ export class GestureHandler {
       const finish = this.finish[i];
       const isPinch = !this.isSpread(start, finish, center);
       const isSpread = this.isSpread(start, finish, center);
-      if (isPinch && isSpread) {
-        return outcome;
-      }
-      if (!isPinch && !isSpread) {
-        return outcome;
-      }
-      if (isPinch && spread) {
-        return outcome;
-      }
-      if (isSpread && pinch) {
-        return outcome;
-      }
+      if (isPinch && isSpread) return outcome;
+
+      if (!isPinch && !isSpread) return outcome;
+
+      if (isPinch && spread) return outcome;
+
+      if (isSpread && pinch) return outcome;
+
       pinch = isPinch;
       spread = isSpread;
     }

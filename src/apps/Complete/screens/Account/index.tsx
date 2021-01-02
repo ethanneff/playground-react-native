@@ -1,8 +1,18 @@
-import React, {memo} from 'react';
-import {ScrollView} from 'react-native';
-import {Card, Screen, Text} from '../../../../components';
+import {useNavigation} from '@react-navigation/native';
+import React, {memo, useCallback} from 'react';
+import {Button, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {Theme} from '../../../../utils';
+import {Theme, useRootDispatch} from '../../../../utils';
+import {AlertWrapper, Card} from '../../components';
+import {
+  createBoard,
+  createItem,
+  createList,
+  createUser,
+  removeUser,
+  setActiveUser,
+} from '../../models';
+import {getDefaultUserTemplate} from './factory';
 
 // TODO: figure out a place for this
 // TODO: add reminders
@@ -11,29 +21,66 @@ import {Theme} from '../../../../utils';
 
 export const Account = memo(function Account() {
   const color = useColor();
+  const dispatch = useRootDispatch();
+  const {goBack, navigate} = useNavigation();
+  const navBack = useCallback(() => goBack(), [goBack]);
+
+  const onLogin = useCallback(() => {
+    const {user, boards, lists, items} = getDefaultUserTemplate();
+    items.map((item) => dispatch(createItem(item)));
+    lists.map((list) => dispatch(createList(list)));
+    boards.map((board) => dispatch(createBoard(board)));
+    dispatch(createUser(user));
+    goBack();
+  }, [dispatch, goBack]);
+  const onLogout = useCallback(() => {
+    dispatch(removeUser());
+    navigate('main');
+  }, [dispatch, navigate]);
+  const onSetActive = useCallback(() => {
+    dispatch(setActiveUser(true));
+  }, [dispatch]);
+
+  const onNavToAdmin = useCallback(() => navigate('admin'), [navigate]);
 
   return (
-    <Screen title="Account">
-      <ScrollView
-        contentContainerStyle={{
-          padding: Theme.padding.p04,
-          backgroundColor: color.surface,
-        }}>
-        <Card>
-          <Text
-            center
-            style={{paddingBottom: Theme.padding.p04}}
-            title="Try something new every day"
-            type="h3"
-          />
-          <Text
-            center
-            emphasis="medium"
-            title="Break comfort barriers to be more creative, better at dealing with change, and better a improving the future"
-            type="h4"
-          />
-        </Card>
-      </ScrollView>
-    </Screen>
+    <AlertWrapper backgroundColor={color.surface} onBackgroundPress={navBack}>
+      <Card>
+        <Text
+          style={{paddingBottom: Theme.padding.p04}}
+          title="Profile"
+          type="h3"
+        />
+        <Text center emphasis="medium" title="..." type="h4" />
+      </Card>
+      <Card>
+        <Text
+          style={{paddingBottom: Theme.padding.p04}}
+          title="Reminders"
+          type="h3"
+        />
+        <Text center emphasis="medium" title="..." type="h4" />
+      </Card>
+      <Card>
+        <Text
+          style={{paddingBottom: Theme.padding.p04}}
+          title="Payment"
+          type="h3"
+        />
+        <Text center emphasis="medium" title="..." type="h4" />
+      </Card>
+      <Card>
+        <Text
+          style={{paddingBottom: Theme.padding.p04}}
+          title="Feedback"
+          type="h3"
+        />
+        <Text center emphasis="medium" title="..." type="h4" />
+      </Card>
+      <Button onPress={onLogin} title="login" />
+      <Button onPress={onLogout} title="logout" />
+      <Button onPress={onSetActive} title="set active" />
+      <Button onPress={onNavToAdmin} title="go to admin" />
+    </AlertWrapper>
   );
 });

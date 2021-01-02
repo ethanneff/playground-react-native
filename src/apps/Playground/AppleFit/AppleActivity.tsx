@@ -1,17 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
+import {CenterCircle} from './CenterCircle';
 import {CircularRing} from './CircularRing';
 import {Stickers} from './Stickers';
-import {CenterCircle} from './CenterCircle';
-
-export interface Ring {
-  start: string;
-  end: string;
-  bg: string;
-  theta: number;
-  size: number;
-  icon: string;
-}
+import {Ring} from './types';
 
 type Props = {
   rings: Ring[];
@@ -48,9 +40,8 @@ export const AppleActivity = ({
   const [progress, setProgress] = useState(animate ? 0 : 1);
 
   useEffect(() => {
-    if (!animate) {
-      return;
-    }
+    if (!animate) return;
+
     const interval = setInterval(() => {
       if (progress >= 1) {
         clearInterval(interval);

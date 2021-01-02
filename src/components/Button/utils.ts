@@ -1,8 +1,7 @@
 import {StyleSheet} from 'react-native';
-import {colorWithOpacity} from '../../utils';
+import {colorWithOpacity, Theme} from '../../utils';
 import {Color} from './../../models/Theme';
-import {Theme} from './../../utils';
-import {ButtonEmphasis} from './index';
+import {ButtonEmphasis} from './types';
 
 export const getButtonColor = (
   colorScheme: Color,

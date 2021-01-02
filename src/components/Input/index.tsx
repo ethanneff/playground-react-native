@@ -121,9 +121,8 @@ export const Input = ({
     [],
   );
   const textClear = useCallback(() => {
-    if (textInput.current) {
-      textInput.current.clear();
-    }
+    if (textInput.current) textInput.current.clear();
+
     onChangeText('');
   }, [onChangeText]);
 

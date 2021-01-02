@@ -8,33 +8,40 @@ import {
   StackNavigationOptions,
 } from '@react-navigation/stack';
 import React, {memo, useCallback} from 'react';
-import {Icon} from '../../components';
+import {Alert, Icon, Notification} from '../../components';
 import {useColor} from '../../hooks';
-import {Capture} from './screens/Capture';
-import {Project} from './screens/Project';
-import {Projects} from './screens/Projects';
-import {Reflect} from './screens/Reflect';
+import {rootMode, rootScreenOptions} from '../../providers/Navigation/configs';
+import {useRootSelector} from '../../utils';
+import {
+  Account,
+  Capture,
+  ItemDetail,
+  Landing,
+  Project,
+  Projects,
+  Reflect,
+} from './screens';
 
 const noHeader: StackNavigationOptions = {headerShown: false};
 const RootTab = createBottomTabNavigator();
+const RootStack = createStackNavigator();
 const ProjectsStack = createStackNavigator();
 
-type Tabs = 'Capture' | 'Focus' | 'Reflect' | 'Account';
+type Tabs = 'capture' | 'focus' | 'reflect';
 type TabIcons = {
   [key in Tabs]: {focused: string; unfocused: string};
 };
 
 const tabIcons: TabIcons = {
-  Capture: {
+  capture: {
     focused: 'pencil-plus-outline',
     unfocused: 'pencil-plus-outline',
   },
-  Focus: {
+  focus: {
     focused: 'checkbox-multiple-marked-outline',
     unfocused: 'checkbox-multiple-marked-outline',
   },
-  Reflect: {focused: 'finance', unfocused: 'finance'},
-  Account: {focused: 'account', unfocused: 'account-outline'},
+  reflect: {focused: 'finance', unfocused: 'finance'},
 };
 
 type ScreenOptionsProps = {
@@ -49,25 +56,25 @@ type TabBarIconProps = {
 const Focus = () => {
   return (
     <ProjectsStack.Navigator screenOptions={noHeader}>
-      <ProjectsStack.Screen component={Projects} name="Projects" />
-      <ProjectsStack.Screen component={Project} name="Project" />
+      <ProjectsStack.Screen component={Projects} name="boards" />
+      <ProjectsStack.Screen component={Project} name="board" />
     </ProjectsStack.Navigator>
   );
 };
 
-export default memo(function Complete() {
+const Tabs = () => {
   const color = useColor();
   const tabBarOptions: BottomTabBarOptions = {
     keyboardHidesTabBar: true,
-    activeTintColor: color.primary,
-    inactiveTintColor: color.text,
+    activeTintColor: color.text,
+    inactiveTintColor: color.secondary,
     showLabel: false,
   };
   const screenOptions = useCallback(
     ({route}: ScreenOptionsProps) => ({
       tabBarIcon: function tabBarIcon({focused, size}: TabBarIconProps) {
         const focus = focused ? 'focused' : 'unfocused';
-        const iconColor = focused ? color.primary : color.text;
+        const iconColor = focused ? color.text : color.secondary;
         const name = (tabIcons as any)[route.name][focus];
         return <Icon color={iconColor} name={name} size={size} />;
       },
@@ -79,9 +86,89 @@ export default memo(function Complete() {
     <RootTab.Navigator
       screenOptions={screenOptions as any}
       tabBarOptions={tabBarOptions}>
-      <RootTab.Screen component={Capture} name="Capture" />
-      <RootTab.Screen component={Focus} name="Focus" />
-      <RootTab.Screen component={Reflect} name="Reflect" />
+      <RootTab.Screen component={Capture} name="capture" />
+      <RootTab.Screen component={Focus} name="focus" />
+      <RootTab.Screen component={Reflect} name="reflect" />
     </RootTab.Navigator>
   );
+};
+
+export default memo(function Complete() {
+  const user = useRootSelector((s) => s.completeUser);
+  const Main = user ? Tabs : Landing;
+  return (
+    <RootStack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
+      <RootStack.Screen component={Main} name="main" />
+      <RootStack.Screen component={Account} name="account" />
+      <RootStack.Screen component={Notification} name="notification" />
+      <RootStack.Screen component={Alert} name="alert" />
+      <RootStack.Screen component={ItemDetail} name="item-detail" />
+    </RootStack.Navigator>
+  );
 });
+
+/*
+
+# Data
+
+- user
+-> collections [projects, lists]
+-> boards [home, work, town] | [meeting notes, book summaries, checklists]
+-> lists [backlog, todo, in progress, done] | [draft, final]
+-> item [find comb, clear emails, daily standup]
+
+# Screens
+
+## Capture
+
+### Inbox (list -> item -> details)
+- "add grey list" -> @app
+- "find comb" -> @home
+- "clear emails" -> @work
+- "put $20 in phone" -> @town
+- "drink water" -> @after-waking-up
+- "intensity + focus = deep work" -> book summaries
+
+## Organize
+
+### Projects (item -> lists -> item -> details )
+- @home -> (backlog, todo, in progress, done xx, done xx)
+- @town
+- @work
+- @gym
+- @app
+
+### Lists (item -> list -> item -> detail)
+- meeting notes
+ - one-on-one
+ - daily standup
+- book summaries
+ - the one thing
+ - getting things done
+ - eat that frog
+- gift ideas
+ - mom
+ - dad
+ - girlfriend
+- checklists
+ - after waking up
+ - after entering bathroom
+
+## Reflect
+
+### Purpose
+
+### Goals
+
+### Review (Progress)
+
+### Reflect (Journal)
+
+## Account
+
+### Profile
+
+### Notifications
+
+### Payment
+*/

@@ -4,23 +4,13 @@ import {Text, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
 import {Theme} from '../../../utils';
 import {CanvasDimensions} from './Canvas';
+import {Item} from './types';
 import {
   getItems,
   getOverlap,
   resolveBoundCollision,
   resolveItemCollision,
 } from './utils';
-
-export type Item = {
-  index: number;
-  position: Animated.ValueXY;
-  dx: number;
-  dy: number;
-  x: number;
-  y: number;
-  radius: number;
-  mass: number;
-};
 
 type Props = {
   count: number;
@@ -66,9 +56,8 @@ export const Balls = ({
         const a = prev[i];
         for (let j = i + 1; j < prev.length; j++) {
           const b = prev[j];
-          if (getOverlap(a.x, a.y, a.radius, b.x, b.y, b.radius, true)) {
+          if (getOverlap(a.x, a.y, a.radius, b.x, b.y, b.radius, true))
             resolveItemCollision(a, b, maxSpeed * 1.5);
-          }
         }
         resolveBoundCollision(a, canvas);
         a.x += a.dx;

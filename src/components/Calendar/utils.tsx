@@ -11,9 +11,8 @@ export const addMonths = (date: Date, months: number): Date => {
   const result = new Date(date);
   const dayOfMonth = date.getDate();
   result.setMonth(result.getMonth() + months);
-  if (result.getDate() !== dayOfMonth) {
-    result.setDate(0);
-  }
+  if (result.getDate() !== dayOfMonth) result.setDate(0);
+
   return result;
 };
 
@@ -50,7 +49,7 @@ const generateCalendarMatrix = (date: Date) => {
   calendarMatrix.push(days.map((day) => createDayObj(day, day, false, true)));
   for (let row = 1; row < 7; row++) {
     calendarMatrix[row] = [];
-    for (let col = 0; col < 7; col++) {
+    for (let col = 0; col < 7; col++)
       calendarMatrix[row][col] =
         row === 1 && col < firstDay
           ? createDayObj(
@@ -67,7 +66,6 @@ const generateCalendarMatrix = (date: Date) => {
               dayCounter++,
               true,
             );
-    }
   }
   return calendarMatrix;
 };
@@ -75,9 +73,8 @@ const generateCalendarMatrix = (date: Date) => {
 const calendarMatrixMemo: {[key in string]: CalendarMatrix} = {};
 export const getCalendarMatrix = (date: Date): CalendarMatrix => {
   const memo = calendarMatrixMemo[date.valueOf()];
-  if (memo) {
-    return memo;
-  }
+  if (memo) return memo;
+
   const matrix = generateCalendarMatrix(date);
   calendarMatrixMemo[date.valueOf()] = matrix;
   return matrix;

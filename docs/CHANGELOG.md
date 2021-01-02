@@ -1,5 +1,225 @@
 # Changelog
 
+## [2.45.10](https://github.com/ethanneff/example/compare/v2.45.9...v2.45.10) (2021-01-02)
+
+
+### Bug Fixes
+
+* update deps ([2180cb3](https://github.com/ethanneff/example/commit/2180cb32fa689fd24ac01adad54f0ddc16bc0235))
+
+## [2.45.9](https://github.com/ethanneff/example/compare/v2.45.8...v2.45.9) (2021-01-02)
+
+
+### Bug Fixes
+
+* update deps ([be84b31](https://github.com/ethanneff/example/commit/be84b31165f17ec5001dec7701ce9a40d2a3259c))
+
+## [2.45.8](https://github.com/ethanneff/example/compare/v2.45.7...v2.45.8) (2020-12-31)
+
+
+### Bug Fixes
+
+* add carousel component ([1906a51](https://github.com/ethanneff/example/commit/1906a51391cdb0b910c1ad7e6a2e401156111d57))
+* add landing screen ([99c9771](https://github.com/ethanneff/example/commit/99c9771b648ccf53a1d4de7f774cea3027ec2f7a))
+* add single line brackets ([c1ad459](https://github.com/ethanneff/example/commit/c1ad459d4bf34097d47b3d0439cc7cd1ea619433))
+* leverage carousel component ([9c859db](https://github.com/ethanneff/example/commit/9c859dbf6109b1fcb7d9d3f35abe99378e31221e))
+* navigate to landing on logout ([406df1c](https://github.com/ethanneff/example/commit/406df1ccdaa5e7174d2f4dc4b6e1a19f5defa359))
+* prevent missing user error crash ([3f861e6](https://github.com/ethanneff/example/commit/3f861e6f35f679e660868b29535c584a3c7f4627))
+* remove unused components ([79fe216](https://github.com/ethanneff/example/commit/79fe2167b2024071d7cfd92b4eed4a2f71107902))
+
+## [2.45.7](https://github.com/ethanneff/example/compare/v2.45.6...v2.45.7) (2020-12-31)
+
+
+### Bug Fixes
+
+* add swipe and background press on notication ([ef0bd16](https://github.com/ethanneff/example/commit/ef0bd16ced3709ad7a18dbab4ac3bb0b75133924))
+* add tap on swipe up on notification ([b72dab3](https://github.com/ethanneff/example/commit/b72dab3ac5ca49b0cb126c73cfeeb7773fc90a6b))
+* clean up redundant styles ([3a8862c](https://github.com/ethanneff/example/commit/3a8862ce6cd61298912c3fd3cdabd670c119ee6f))
+* correct linting ([904736d](https://github.com/ethanneff/example/commit/904736d4e81547f820811077053f723d7011c18a))
+* create a reusable sound manager ([91da44b](https://github.com/ethanneff/example/commit/91da44b0b3e7ca8746be41493a79706f577b7e3b))
+* make active board nullable instead of undefined ([b8bfdd6](https://github.com/ethanneff/example/commit/b8bfdd687f1f57b5c45fc6955541bc1f02982ea1))
+* make alert accept children ([ab3dbfc](https://github.com/ethanneff/example/commit/ab3dbfc72be46daf1adf5194a8a65942ce980ec1))
+* make alert have an overlay press ([e07bd77](https://github.com/ethanneff/example/commit/e07bd7782d31dfa492181b627687581e39a380a6))
+* navigate to board on item ([b19ff91](https://github.com/ethanneff/example/commit/b19ff91f965039e111e2b3f97a8aab843c64e910))
+* only show item right icon if children ([1a851f5](https://github.com/ethanneff/example/commit/1a851f5d870b6e8afc4f157ea071609ac9eccfe8))
+* prevent any type on rootstate ([1d10d4f](https://github.com/ethanneff/example/commit/1d10d4f357fd2328340f11787565ca68ed838e75))
+* pull board from redux on project screen ([d148c60](https://github.com/ethanneff/example/commit/d148c60fd52f7d3e6d9aec14a13abb386d08d892))
+* refactor notification and alert root navigation stacks ([c9ef68d](https://github.com/ethanneff/example/commit/c9ef68dd170b9689f1fb93136293154198f82e0c))
+* remove debug navigation to project on projects ([c2f9a66](https://github.com/ethanneff/example/commit/c2f9a66c014f75130c5eb037494e349dbac7134f))
+* rename screens ([8b9d17d](https://github.com/ethanneff/example/commit/8b9d17d8c2df57243dbaf849aa8e786763635175))
+* update deps ([5d2a0b3](https://github.com/ethanneff/example/commit/5d2a0b3d61ed7a0658116947e60d435bfa3706d8))
+
+## [2.45.6](https://github.com/ethanneff/example/compare/v2.45.5...v2.45.6) (2020-12-29)
+
+
+### Bug Fixes
+
+* add logic to add and remove lists from board ([f7d5304](https://github.com/ethanneff/example/commit/f7d530459ed572fe5963331021095407a8394085))
+* added addlist to board ([f3bb9de](https://github.com/ethanneff/example/commit/f3bb9de61061e5a57c7b15a8a36ce40e87118961))
+* combine add list and add item together ([c73de9d](https://github.com/ethanneff/example/commit/c73de9d6648842204b802438659fbf9146bcc2c2))
+* combine list and list container together ([82fa574](https://github.com/ethanneff/example/commit/82fa57414438b64b87ba8b9691edca8577eed4b9))
+* correct list padding ([98bd7eb](https://github.com/ethanneff/example/commit/98bd7ebcde60d87818a1fc85cb44b6d6a376914e))
+* correct missing key issue ([7ddaa27](https://github.com/ethanneff/example/commit/7ddaa276c682739ce94283d607178a8b8c96fb06))
+* make projects reference list ([5be5cac](https://github.com/ethanneff/example/commit/5be5cacfc1bfa2cb5f3a27824031b851436a1b7c))
+* remove cicular dependencies ([4748ee2](https://github.com/ethanneff/example/commit/4748ee2d9f8017275fb27c90bbbe3698376fc667))
+* rename props ([033b229](https://github.com/ethanneff/example/commit/033b2292400073f78965557ee588cb6b64e2ff54))
+* update board hardcode ([1e3cafa](https://github.com/ethanneff/example/commit/1e3cafafc7b9c04f96232a8a29e02f06bf3ac008))
+* update tests ([cac4451](https://github.com/ethanneff/example/commit/cac4451b46a45e7eaecd5993d82346836c71d09e))
+
+## [2.45.5](https://github.com/ethanneff/example/compare/v2.45.4...v2.45.5) (2020-12-29)
+
+
+### Bug Fixes
+
+* add board add component ([2c41db8](https://github.com/ethanneff/example/commit/2c41db88af8e48d26caa391a0acbe4d225d55b06))
+* add board component ([284660e](https://github.com/ethanneff/example/commit/284660ee510b2b60d7ffa9233d8c3da3e58974ad))
+* keep keyboard up on submit ([8c4d06c](https://github.com/ethanneff/example/commit/8c4d06ceb61e9886e880be97d6b6b2148a0eac92))
+* link project to redux ([4c3022d](https://github.com/ethanneff/example/commit/4c3022d00fec122e1297b47dce1593d16f0d49b2))
+* link to listheader ([11302c9](https://github.com/ethanneff/example/commit/11302c9dc74ab2366a47887c0bc3fd0da25026e4))
+* make list component ([847c94b](https://github.com/ethanneff/example/commit/847c94b0458c9a4f143cfcd3f49a9c87bb22e04e))
+* remove additem component ([e07ee31](https://github.com/ethanneff/example/commit/e07ee31c1cc026c4f9001eaf07a03fc7b270e9cf))
+* rename listheader2 to listheader ([8d0fff1](https://github.com/ethanneff/example/commit/8d0fff1d37b2d14ab337f5dae582d83dbc9c9dc2))
+* update deps ([5db08f8](https://github.com/ethanneff/example/commit/5db08f837a819d65995382eb5ae2d5043db1788c))
+
+## [2.45.4](https://github.com/ethanneff/example/compare/v2.45.3...v2.45.4) (2020-12-28)
+
+
+### Bug Fixes
+
+* update deps ([a8680d9](https://github.com/ethanneff/example/commit/a8680d9dcc3ea81fd3baf7eb11516e8c1cb38cfc))
+
+## [2.45.3](https://github.com/ethanneff/example/compare/v2.45.2...v2.45.3) (2020-12-27)
+
+
+### Bug Fixes
+
+* add long press ([58ea8e7](https://github.com/ethanneff/example/commit/58ea8e7e01eb4ebc2c1b2085d9cfc5be17095974))
+* deselect text input on blur ([d0a06ee](https://github.com/ethanneff/example/commit/d0a06eee6a31abf7b883fa25544169c8046f0185))
+* items have board type to navigate to boards ([e28ad41](https://github.com/ethanneff/example/commit/e28ad41ef05c32810dc8ea192f363ce500716448))
+* make projects use redux ([0ecfb0d](https://github.com/ethanneff/example/commit/0ecfb0d1df30cc67e60d71473498f606ff5c1343))
+* query board and list ids from selectors ([bec35ec](https://github.com/ethanneff/example/commit/bec35ec99fec16953d6bd987be960439ab1e1954))
+* remove group store ([8378f55](https://github.com/ethanneff/example/commit/8378f55fc538c974d2646d2e99a9dee78c52a121))
+* remove group store ([3eb1495](https://github.com/ethanneff/example/commit/3eb1495da304bf8a7bade06c8a16d006a578a826))
+* remove hardcoded inbox on user ([b2e69bb](https://github.com/ethanneff/example/commit/b2e69bb60273326ea56332f20be9df8ec03a7641))
+* update default state to nest boards ([8268180](https://github.com/ethanneff/example/commit/82681803b7e99cea3d8572d25b53e5f5a46c94bf))
+
+## [2.45.2](https://github.com/ethanneff/example/compare/v2.45.1...v2.45.2) (2020-12-26)
+
+
+### Bug Fixes
+
+* add mutliple items at once ([dc5c872](https://github.com/ethanneff/example/commit/dc5c872320163cd3e250a978bde3b2c1dfdf7e88))
+* hide input when no keyboard ([850c202](https://github.com/ethanneff/example/commit/850c202073d179e1243d148b4b81cfb4b71d2ec8))
+* remove item from list ([5e4caa7](https://github.com/ethanneff/example/commit/5e4caa789fc1d2ef08597de10453b3464ff3cfbd))
+
+## [2.45.1](https://github.com/ethanneff/example/compare/v2.45.0...v2.45.1) (2020-12-26)
+
+
+### Bug Fixes
+
+* update deps ([2a06082](https://github.com/ethanneff/example/commit/2a0608248d3046eb0b651b7d14ea19aa6bd1f361))
+
+# [2.45.0](https://github.com/ethanneff/example/compare/v2.44.1...v2.45.0) (2020-12-23)
+
+
+### Bug Fixes
+
+* add background color to icon ([78d9abc](https://github.com/ethanneff/example/commit/78d9abcdf4b4c674a90002a7f05f667743efe488))
+* update deps ([a5bc9e5](https://github.com/ethanneff/example/commit/a5bc9e5f1ac0f4d4b7d335e2cf46801e4aea3a90))
+
+
+### Features
+
+* add deep work app ([e4cd70b](https://github.com/ethanneff/example/commit/e4cd70b6e0a731d6a28393b8c2e45ad3cc6f2a15))
+
+## [2.44.1](https://github.com/ethanneff/example/compare/v2.44.0...v2.44.1) (2020-12-23)
+
+
+### Bug Fixes
+
+* update deps ([544818f](https://github.com/ethanneff/example/commit/544818f70fb19f6380972940b4a3b98dd5ec01d1))
+* update padding ([679b579](https://github.com/ethanneff/example/commit/679b579822d643863b4912470fd6902bd7721902))
+
+# [2.44.0](https://github.com/ethanneff/example/compare/v2.43.0...v2.44.0) (2020-12-22)
+
+
+### Bug Fixes
+
+* add account to nav ([67ddcf6](https://github.com/ethanneff/example/commit/67ddcf6f2d2f415dc4b4683b6c8e27e1706b3834))
+* add back padding to header ([4e56a85](https://github.com/ethanneff/example/commit/4e56a85a066f2e5d8d9185b50d7a1531da51fd87))
+* add barrel file for components ([53211f3](https://github.com/ethanneff/example/commit/53211f320504384d852bcf11716c679a95247e7e))
+* add buttons to items by default ([08f7e2d](https://github.com/ethanneff/example/commit/08f7e2dd5e7e2c62673542cba55f332b44e2da7b))
+* add complete group to redux ([afead2d](https://github.com/ethanneff/example/commit/afead2d79c54734c6897c37952911de391a02287))
+* add controls to item input ([9ab11a1](https://github.com/ethanneff/example/commit/9ab11a1453a3ba796f2658970b539393fedc5f39))
+* add default state for new users ([74ef8cd](https://github.com/ethanneff/example/commit/74ef8cd7a28745094aebf7f65480a30b0a78768b))
+* add defaults to card ([0ed9f1c](https://github.com/ethanneff/example/commit/0ed9f1cfd2a9139504ae4cf0043e12af4dcd725e))
+* add groups between user and board ([808e3c1](https://github.com/ethanneff/example/commit/808e3c1f7dd46ab595b78450bc4b732bdc3df181))
+* add item to list in redux ([00bfbde](https://github.com/ethanneff/example/commit/00bfbde350e13d771e65aab8f8bd56b4701456e8))
+* add keyboard height to redux ([c95ba80](https://github.com/ethanneff/example/commit/c95ba80e09e55030386736cfe7fa55522bbdeb4e))
+* add models to complete ([30f3a57](https://github.com/ethanneff/example/commit/30f3a575bd4a645a47d6bb6ef5359c5d84974afb))
+* add query to inbox ([8e61b09](https://github.com/ethanneff/example/commit/8e61b09f108238154583361889ece3726d26052d))
+* add remove user ([36247d0](https://github.com/ethanneff/example/commit/36247d02f3f88207ff3a7c8841c7a5e6a88216ec))
+* add textinput to item ([c0802ac](https://github.com/ethanneff/example/commit/c0802ac9550c686bd3f5ccc76222099faacc1fbd))
+* add user model ([bdae673](https://github.com/ethanneff/example/commit/bdae6736e3925fa53711dceb1b4c72189ae7b8cc))
+* allow background color to be changed on textinput ([372e753](https://github.com/ethanneff/example/commit/372e753aacd97c73c6be0b51ab6c316184d098b5))
+* barrel export ([f89eab4](https://github.com/ethanneff/example/commit/f89eab41fbc563dc0acb3a0f3d83d292fd455c7c))
+* bubble up onfocus and onblur from textinput ([c741349](https://github.com/ethanneff/example/commit/c741349d9a6a530bfed817be336890abcfcc0402))
+* change name to title ([5a8e1e0](https://github.com/ethanneff/example/commit/5a8e1e032312515c8c1ee51cee8a17592c346128))
+* change padding on components ([cca8d12](https://github.com/ethanneff/example/commit/cca8d12c376c1c8aeb026be91770c4dd3c1cae7f))
+* change settings icon to horizontal ([bbb5eb3](https://github.com/ethanneff/example/commit/bbb5eb3fbaca3ceb6642f45c3dd7a881a1c872af))
+* change textinput to full border ([44e0a5e](https://github.com/ethanneff/example/commit/44e0a5e678d49221657774a68e38330ebda0a9b4))
+* clear data on user remove ([ca30a30](https://github.com/ethanneff/example/commit/ca30a300ecdb4bb4395691617c59b80fbadb50d5))
+* correct border margin on left ([354925a](https://github.com/ethanneff/example/commit/354925ac38f8f94c41618ef03bc799b868258244))
+* correct imports ([807ea01](https://github.com/ethanneff/example/commit/807ea0159fec2336f52caf2f08ea3378d2b26315))
+* correct linting errors ([04aea51](https://github.com/ethanneff/example/commit/04aea510688cc939834e55846fb553a7f22c245c))
+* create default user on button press ([4d7974e](https://github.com/ethanneff/example/commit/4d7974e45d94ccb43ab6e53e1c38f8e30c8b7250))
+* dynamic max height for list ([8ef47db](https://github.com/ethanneff/example/commit/8ef47dbdb18bca261e096ec5177e3e6beabed7c3))
+* hide organize button on keyboard visible ([449640f](https://github.com/ethanneff/example/commit/449640fd06b2f7719c64dfed6aeca1eafa99782c))
+* hook up capture to redux ([8fc76ec](https://github.com/ethanneff/example/commit/8fc76ecebaa4cd4f5eacf162550b200184df015e))
+* listen to orientation change ([954fcde](https://github.com/ethanneff/example/commit/954fcde31ce023b99464737490988af6d43e63aa))
+* make a usekeyboard hook ([3307839](https://github.com/ethanneff/example/commit/3307839bfd61d060521f450b8dff864cfeddbb12))
+* make android keyboard scroll like ios ([1a5e940](https://github.com/ethanneff/example/commit/1a5e940b08da8838c15b986bc5b48ff0d8f10a08))
+* make capture work based on keyboard height ([7624964](https://github.com/ethanneff/example/commit/7624964673418e9539964411faf6c8541a8adc14))
+* make edit items button dismiss keyboard ([f22352e](https://github.com/ethanneff/example/commit/f22352e3db0b1c4fb9fe11b8143b5c62bc51e7e7))
+* make logout work ([08c9888](https://github.com/ethanneff/example/commit/08c9888035a92ebd74377a6a3e37e17859abab7d))
+* make lots of items ([0ba3e78](https://github.com/ethanneff/example/commit/0ba3e78df9dafdf1cba37228ca354d9e1f840238))
+* make models singular ([cf88b8e](https://github.com/ethanneff/example/commit/cf88b8e541804e6276017973b3357bb5d26ed6b4))
+* make user have an inbox ([7015dc1](https://github.com/ethanneff/example/commit/7015dc16de47aeb49ab46fa795bfeed93e39a6b5))
+* make web work with keyboard aware ([aca2212](https://github.com/ethanneff/example/commit/aca22126d903c973ce7478299b17cbd9e0051bce))
+* move keyboard spacer outside the safe area view ([38b1889](https://github.com/ethanneff/example/commit/38b18895a9be75c19719f8f06e68421fc289e4f8))
+* pass data generic ([7caf316](https://github.com/ethanneff/example/commit/7caf316274b51afa9d7272a997e02bfab810c823))
+* pass onLayout through card ([d67202f](https://github.com/ethanneff/example/commit/d67202f2c1bb9d81bfdd612b2d92b8b3c30f29a2))
+* prevent container onlayout from re-rendering ([567738a](https://github.com/ethanneff/example/commit/567738ae775569c5ee48e58b89a1b87c490624ff))
+* prevent up and down from button to input ([2bbb78b](https://github.com/ethanneff/example/commit/2bbb78be09e53dc0b04a1f84ce7d0203bc09da9c))
+* reduce padding on input ([16ab76b](https://github.com/ethanneff/example/commit/16ab76bb81772c19eb0ef118e52fd87dafadc547))
+* remove additional keyboard spacer ([2ffb749](https://github.com/ethanneff/example/commit/2ffb7496318163eef842762c0c5463fa60d7a864))
+* remove intro header on capture ([3d12f82](https://github.com/ethanneff/example/commit/3d12f82c83601f5902ed1862b0f09fe1e76490b0))
+* remove keyboardspacer ([617c17f](https://github.com/ethanneff/example/commit/617c17fef50cddf40500aed91410836b610e17e2))
+* remove unused padding ([af75081](https://github.com/ethanneff/example/commit/af750811e7f0577b600a87db46d4d65b2acc3241))
+* rename cardcolor to itemcolor ([d3fead0](https://github.com/ethanneff/example/commit/d3fead0d3278b8b3f134f5aa5c3920fc0d90cdc2))
+* revert recyclerflatlist for dynamic height ([0bfa4b5](https://github.com/ethanneff/example/commit/0bfa4b573f2a90ec6a4b0b8e4c3a3582f65d05ec))
+* separate files to reduce re-renders ([3568843](https://github.com/ethanneff/example/commit/356884300d5f45ef0b9111e6d22d0adc0a1c4195))
+* singular checklist model ([4e08040](https://github.com/ethanneff/example/commit/4e080407f2195960994bda75cda9173c87c71819))
+* upate list to user recycler ([dcd920d](https://github.com/ethanneff/example/commit/dcd920d4e37fef6f91746748279d89572523934f))
+* update account with login ([8bb60bd](https://github.com/ethanneff/example/commit/8bb60bdb1bb92691ffd3acadce520eeb4b75fe80))
+* update deps ([2542c7e](https://github.com/ethanneff/example/commit/2542c7ee4a70e7ce20fb9048a72960ee2a27feaa))
+* update deps ([20785ce](https://github.com/ethanneff/example/commit/20785ce5d06fa91f6983d73e34923b415422c252))
+* update deps ([994ec29](https://github.com/ethanneff/example/commit/994ec294a819f09237c95101026d22dfcb0b9aa9))
+* update example data with checklist ([fbbf129](https://github.com/ethanneff/example/commit/fbbf129e2177a3f689ca19522cc80601ca89ac7a))
+* update gradle versions ([8943f81](https://github.com/ethanneff/example/commit/8943f811c641f414dbdfce72b2123dfb6aa07796))
+* update keyboard listerner based on platform ([fd38a2d](https://github.com/ethanneff/example/commit/fd38a2d0078eb5c3aff14bcbdee9879482c68eac))
+* update keyboard spacer with hotfixes ([5a45bc7](https://github.com/ethanneff/example/commit/5a45bc7da5c04a0cbaca01467b41c9854e9c32cc))
+* update pod file ([7318bd7](https://github.com/ethanneff/example/commit/7318bd78146e98357b9824f3a0975d9aa229a51f))
+* update tests ([e9a975d](https://github.com/ethanneff/example/commit/e9a975da16f109457df1b06e7921a5923235b9f7))
+* use redux instead of custom listeners for search ([b15c472](https://github.com/ethanneff/example/commit/b15c472e8eb79be31b2d77e20183bf1369b61f26))
+
+
+### Features
+
+* add keyboard debugging screen ([1a3cba5](https://github.com/ethanneff/example/commit/1a3cba563b719b4a9e579256d0b0d36182c6cc2e))
+* add recyclerflatlist ([7116057](https://github.com/ethanneff/example/commit/711605700ac3566b748cbf1694fcd4c472ff14f8))
+* hook up capture to redux ([bab6091](https://github.com/ethanneff/example/commit/bab609171e049ebda770e7ebf74802e9d9f502ab))
+
 # [2.43.0](https://github.com/ethanneff/example/compare/v2.42.2...v2.43.0) (2020-12-10)
 
 

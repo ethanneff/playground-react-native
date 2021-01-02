@@ -1,16 +1,17 @@
-import {ActionType, createAction, getType} from 'typesafe-actions';
+import {RootAction} from 'root-types';
+import {createAction, getType} from 'typesafe-actions';
 import {
   NetInfoConnectedDetails,
   NetInfoState,
   NetInfoStateType,
 } from '../../conversions';
-import {RootAction} from '../../providers';
 import {logout} from '../Auth';
 
 /* ACTIONS */
 export const updateNetwork = createAction(
   'network/UPDATE_NETWORK',
 )<NetInfoState>();
+export const networkActions = {updateNetwork};
 
 /* INTERFACES */
 export type NetworkState = {
@@ -19,7 +20,6 @@ export type NetworkState = {
   reachable: boolean;
   type: NetInfoStateType;
 };
-export type NetworkActions = ActionType<typeof updateNetwork>;
 
 /* REDUCERS */
 export const networkInitialState: NetworkState = {

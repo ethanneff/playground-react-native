@@ -31,9 +31,7 @@ export const useClock = ({
 
   const stop = useCallback(() => {
     state.current = 'off';
-    if (timeout.current) {
-      clearTimeout(timeout.current);
-    }
+    if (timeout.current) clearTimeout(timeout.current);
   }, []);
 
   const start = useCallback(() => {

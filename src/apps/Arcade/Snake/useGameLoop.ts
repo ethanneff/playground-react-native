@@ -25,9 +25,8 @@ export const useGameLoop = (callback: (frame: Frame) => void): UseGameLoop => {
 
   const loop = useCallback(() => {
     setTimeout(() => {
-      if (off.current) {
-        return;
-      }
+      if (off.current) return;
+
       frame.current = {
         ...frame.current,
         current: Date.now(),

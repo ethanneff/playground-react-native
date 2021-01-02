@@ -1,22 +1,27 @@
 import {createSelector} from 'reselect';
-import {ActionType, createAction, getType} from 'typesafe-actions';
-import {RootAction, RootState} from '../../../../providers';
+import {RootAction, RootState} from 'root-types';
+import {createAction, getType} from 'typesafe-actions';
 
 /* ACTIONS */
 export const createList = createAction('checklist/create')<Checklist>();
 export const updateList = createAction('checklist/update')<Checklist>();
 export const removeList = createAction('checklist/remove')<string>();
 export const setActiveList = createAction('checklist/setActive')<string>();
+export const checklistActions = {
+  createList,
+  removeList,
+  updateList,
+  setActiveList,
+};
 
 /* SELECTORS */
 export const getChecklists = (state: RootState): Checklists =>
-  state.checklists.items;
+  state.checklist.items;
 export const getCurrentChecklist = (state: RootState): Checklist => {
-  const active = state.checklists.active;
-  if (!active) {
-    throw new Error('missing current checklist');
-  }
-  return state.checklists.items[active];
+  const active = state.checklist.active;
+  if (!active) throw new Error('missing current checklist');
+
+  return state.checklist.items[active];
 };
 export const getActiveChecklistOrderByCreatedAt = createSelector(
   [getChecklists],
@@ -49,12 +54,6 @@ export type Checklist = {
   // modified: string[];
 };
 export type Checklists = {[key: string]: Checklist};
-export type ListActions = ActionType<
-  | typeof createList
-  | typeof removeList
-  | typeof updateList
-  | typeof setActiveList
->;
 
 /* REDUCER */
 const initialState: ChecklistReducer = {

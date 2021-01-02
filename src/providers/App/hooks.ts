@@ -6,6 +6,7 @@ import {
   Dimensions,
   Keyboard,
   Platform,
+  KeyboardEvent,
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import {
@@ -20,16 +21,18 @@ import {useRootDispatch} from '../../utils';
 
 export const useKeyboard = (): void => {
   const dispatch = useRootDispatch();
-  const onShow = useCallback(() => dispatch(changeKeyboardStatus(true)), [
-    dispatch,
-  ]);
-  const onHide = useCallback(() => dispatch(changeKeyboardStatus(false)), [
+  const onShow = useCallback(
+    (event: KeyboardEvent) =>
+      dispatch(changeKeyboardStatus(event.endCoordinates.height)),
+    [dispatch],
+  );
+  const onHide = useCallback(() => dispatch(changeKeyboardStatus(0)), [
     dispatch,
   ]);
 
   useEffect(() => {
     const android = Platform.OS === 'android';
-    const show = android ? 'keyboardDidShow' : 'keyboardWillChangeFrame';
+    const show = android ? 'keyboardDidShow' : 'keyboardWillShow';
     const hide = android ? 'keyboardDidHide' : 'keyboardWillHide';
     Keyboard.addListener(show, onShow);
     Keyboard.addListener(hide, onHide);

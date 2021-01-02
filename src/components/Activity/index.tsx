@@ -5,7 +5,7 @@ import {Button} from '../Button';
 import {Card} from '../Card';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
-import {ActivityDay} from './Day';
+import {ActivityDay, ActivityModel, Site} from './types';
 import {
   getActivitySquares,
   getApiActivity,
@@ -13,7 +13,7 @@ import {
   getSubmissionFormat,
   updateActivitySquares,
 } from './utils';
-import {ActivityWeek, Week} from './Week';
+import {Week} from './Week';
 
 interface Props {
   username: string;
@@ -22,23 +22,6 @@ interface Props {
   margin?: number;
   title: string;
 }
-
-export type Site = 'github' | 'leetCode' | 'hackerRank' | 'gitlab' | 'random';
-
-export type ActivityMatrix = Array<ActivityWeek>;
-
-type ActivityModel = {
-  activity: {
-    matrix: ActivityMatrix;
-    max: number;
-    total: number;
-  };
-  request: 'loading' | 'failure' | 'success';
-  selected: {
-    submissions: string;
-    day: number;
-  };
-};
 
 const initialActivity: ActivityModel = {
   activity: getActivitySquares(),

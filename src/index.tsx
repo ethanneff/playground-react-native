@@ -1,10 +1,10 @@
 import React from 'react';
 import {AppRegistry, Platform} from 'react-native';
-import {App} from './providers/App';
-import {Redux} from './providers/Redux';
-import {ErrorBoundary} from './providers/ErrorBoundary';
-import {Navigation} from './providers';
 import 'react-native-get-random-values';
+import {Navigation} from './providers';
+import {App} from './providers/App';
+import {ErrorBoundary} from './providers/ErrorBoundary';
+import {Redux} from './providers/Redux';
 import {debugDev} from './utils';
 
 debugDev();

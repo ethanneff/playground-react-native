@@ -1,106 +1,95 @@
-import React, {ReactNode, memo} from 'react';
-import {persistReducer, persistStore} from 'redux-persist';
+import React, {memo, ReactNode} from 'react';
+import {Provider} from 'react-redux';
 import {
-  Middleware,
   applyMiddleware,
   combineReducers,
   compose,
   createStore,
+  Middleware,
 } from 'redux';
-import thunk, {ThunkAction} from 'redux-thunk';
-import {DeepReadonly} from 'utility-types';
-import {Provider} from 'react-redux';
+import {persistReducer, persistStore} from 'redux-persist';
 import {PersistGate} from 'redux-persist/integration/react';
+import thunk from 'redux-thunk';
 import {
-  ChecklistItemReducer,
-  ChecklistReducer,
-  ItemActions,
-  ListActions,
+  checklistActions,
+  checklistItemActions,
   checklistItemReducer,
   checklistReducer,
 } from '../../apps/Checklists/models';
 import {
-  Choices,
-  ChoicesActions,
-  Questionnaires,
-  QuestionnairesActions,
-  Questions,
-  QuestionsActions,
-  Responses,
-  ResponsesActions,
-  choicesReducer,
-  questionnairesReducer,
-  questionsReducer,
-  responsesReducer,
-} from '../../apps/Playground/Questionnaire/models';
+  completeBoardActions,
+  completeBoardReducer,
+  completeItemActions,
+  completeItemReducer,
+  completeListActions,
+  completeListReducer,
+  completeUserActions,
+  completeUserReducer,
+} from '../../apps/Complete/models';
 import {
-  AuthActions,
-  AuthState,
-  DeviceActions,
-  DeviceState,
-  DimensionActions,
-  DimensionState,
-  NetworkActions,
-  NetworkState,
-  Theme,
-  ThemeActions,
-  authReducer,
-  deviceReducer,
-  dimensionReducer,
-  networkReducer,
-  themeReducer,
-} from '../../models';
-import {Storage} from '../../conversions';
-import {
-  ChatMessageActions,
-  ChatMessageReducer,
+  chatMessageActions,
   chatMessageReducer,
 } from '../../apps/Playground/Chat/Messages';
+import {
+  choicesActions,
+  choicesReducer,
+  questionnairesActions,
+  questionnairesReducer,
+  questionsActions,
+  questionsReducer,
+  responsesActions,
+  responsesReducer,
+} from '../../apps/Playground/Questionnaire/models';
+import {Storage} from '../../conversions';
+import {
+  authActions,
+  authReducer,
+  deviceActions,
+  deviceReducer,
+  dimensionActions,
+  dimensionReducer,
+  networkActions,
+  networkReducer,
+  themeActions,
+  themeReducer,
+} from '../../models';
 
-export type RootState = DeepReadonly<{
-  auth: AuthState;
-  dimension: DimensionState;
-  device: DeviceState;
-  checklistItems: ChecklistItemReducer; // TODO: figure out better naming without plural (e.g. checklists.items vs checklist.items)
-  checklists: ChecklistReducer;
-  chatMessage: ChatMessageReducer;
-  network: NetworkState;
-  questions: Questions;
-  choices: Choices;
-  responses: Responses;
-  questionnaires: Questionnaires;
-  theme: Theme;
-}>;
-
-const reducers = combineReducers<RootState>({
+export const actions = {
+  auth: authActions,
+  choices: choicesActions,
+  dimension: dimensionActions,
+  device: deviceActions,
+  checklistItem: checklistItemActions,
+  checklist: checklistActions,
+  chatMessage: chatMessageActions,
+  network: networkActions,
+  questionnaires: questionnairesActions,
+  questions: questionsActions,
+  responses: responsesActions,
+  theme: themeActions,
+  completeItem: completeItemActions,
+  completeList: completeListActions,
+  completeBoard: completeBoardActions,
+  completeUser: completeUserActions,
+};
+export const reducers = combineReducers({
   auth: authReducer,
   choices: choicesReducer,
   dimension: dimensionReducer,
   device: deviceReducer,
-  checklistItems: checklistItemReducer,
-  checklists: checklistReducer,
+  checklistItem: checklistItemReducer,
+  checklist: checklistReducer,
   chatMessage: chatMessageReducer,
   network: networkReducer,
   questionnaires: questionnairesReducer,
   questions: questionsReducer,
   responses: responsesReducer,
   theme: themeReducer,
+  completeItem: completeItemReducer,
+  completeList: completeListReducer,
+  completeBoard: completeBoardReducer,
+  completeUser: completeUserReducer,
 });
-
-export type RootAction =
-  | DimensionActions
-  | DeviceActions
-  | AuthActions
-  | ChatMessageActions
-  | ListActions
-  | ItemActions
-  | NetworkActions
-  | QuestionnairesActions
-  | QuestionsActions
-  | ChoicesActions
-  | ResponsesActions
-  | ThemeActions;
-export type RootThunkAction<R> = ThunkAction<R, RootState, any, RootAction>;
 
 const persistConfig = {key: 'root', storage: Storage};
 const middlewares: Middleware[] = [thunk];

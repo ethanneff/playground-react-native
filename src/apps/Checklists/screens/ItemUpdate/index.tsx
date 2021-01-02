@@ -29,9 +29,8 @@ export default memo(function ChecklistUpdate() {
   const handleSubmit = useCallback(() => {
     const {name, description} = form;
     const now = Date.now();
-    if (isInvalidForm) {
-      return;
-    }
+    if (isInvalidForm) return;
+
     dispatch(
       updateChecklistItem({
         ...item,

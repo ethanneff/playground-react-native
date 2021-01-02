@@ -1,4 +1,5 @@
-import React, {memo} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import React, {memo, useCallback} from 'react';
 import {Dimensions, ScrollView, View} from 'react-native';
 import {Calendar, Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
@@ -36,28 +37,24 @@ const data = [
 
 export const Reflect = memo(function Reflect() {
   const color = useColor();
+  const {navigate} = useNavigation();
+  const navToAccount = useCallback(() => navigate('account'), [navigate]);
 
   return (
-    <Screen title="Reflect">
+    <Screen onRightPress={navToAccount} rightIcon="account" title="Reflect">
       <ScrollView
         contentContainerStyle={{
           padding: Theme.padding.p04,
           backgroundColor: color.surface,
         }}
         style={{backgroundColor: color.surface}}>
-        <Card
-          backgroundColor={color.background}
-          borderRadius={config.borderRadius}
-          padding={config.padding}>
+        <Card>
           <View>
             <Title name="Purpose" />
             <Text title="Make a significant positive difference in global productivity" />
           </View>
         </Card>
-        <Card
-          backgroundColor={color.background}
-          borderRadius={config.borderRadius}
-          padding={config.padding}>
+        <Card>
           <View>
             <Title name="Goals" />
             <Text title="Top 3" />
@@ -66,10 +63,7 @@ export const Reflect = memo(function Reflect() {
             <Text title="1 More Rep" />
           </View>
         </Card>
-        <Card
-          backgroundColor={color.background}
-          borderRadius={config.borderRadius}
-          padding={config.padding}>
+        <Card>
           <View>
             <Title name="Review (Progress)" />
             <View
@@ -82,10 +76,7 @@ export const Reflect = memo(function Reflect() {
             </View>
           </View>
         </Card>
-        <Card
-          backgroundColor={color.background}
-          borderRadius={config.borderRadius}
-          padding={config.padding}>
+        <Card>
           <View>
             <Title name="Reflect (Journal)" />
             <Calendar />

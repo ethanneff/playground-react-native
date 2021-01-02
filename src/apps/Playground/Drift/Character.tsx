@@ -1,13 +1,13 @@
 import React, {memo, useCallback, useContext, useEffect, useRef} from 'react';
 import {Animated} from 'react-native';
 import {
-  SensorTypes,
   accelerometer,
+  SensorTypes,
   setUpdateIntervalForType,
 } from 'react-native-sensors';
 import {useColor, useDriver} from '../../../hooks';
 import {DriftContext} from './Context';
-import {CanvasDimensions} from './Game';
+import {CanvasDimensions} from './types';
 import {getPosition} from './utils';
 
 type CharacterProps = {

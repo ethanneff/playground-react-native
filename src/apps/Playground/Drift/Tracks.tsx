@@ -1,10 +1,7 @@
 import React, {memo, useContext} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {ColorChoice} from './Dpad';
 import {DriftContext} from './Context';
-
-export type TrackPosition = {x: number; y: number; size: number};
-export type TrackPositionWithColor = TrackPosition & {color: ColorChoice};
+import {TrackPositionWithColor} from './types';
 
 interface TrackProps {
   track: TrackPositionWithColor;

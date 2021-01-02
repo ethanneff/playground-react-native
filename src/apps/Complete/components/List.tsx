@@ -1,100 +1,35 @@
-import React, {memo, useCallback, useRef, useState} from 'react';
-import {FlatList, View} from 'react-native';
-import {ItemObject, ListObject} from '../types';
+import React, {memo} from 'react';
+import {View} from 'react-native';
 import {AddItem} from './AddItem';
-import {Item} from './Item';
+import {Card} from './Card';
 import {ListHeader} from './ListHeader';
+import {ListItems} from './ListItems';
 
 type ListProps = {
-  list: ListObject;
-  listColor: string;
-  cardColor: string;
-  borderRadius: number;
   listWidth?: number;
-  padding: number;
-  maxHeight?: number;
+  listId: string;
+  listMaxHeight: number;
   orientation?: 'vertical' | 'horizontal';
-  addButtonTitle: string;
-  addButtonPlaceholder: string;
+  title: string;
+  placeholder: string;
 };
 
 export const List = memo(function List({
-  list,
-  borderRadius,
+  listId,
+  orientation,
   listWidth,
-  listColor,
-  cardColor,
-  padding,
-  maxHeight,
-  orientation = 'vertical',
-  addButtonTitle,
-  addButtonPlaceholder,
+  listMaxHeight,
+  title,
+  placeholder,
 }: ListProps) {
-  const [cards, setCards] = useState<ItemObject[]>(list.items);
-  const cardsRef = useRef<FlatList | null>(null);
-  const cardsLength = useRef(cards.length);
-  const horizontal = orientation === 'horizontal';
-
-  const onKeyExtractor = useCallback((item) => item.id, []);
-
-  const onCardSizeChange = useCallback(() => {
-    if (cards.length > cardsLength.current) {
-      cardsRef.current?.scrollToEnd();
-      cardsLength.current = cards.length;
-    }
-  }, [cards.length]);
-
-  const onAddCard = useCallback((name: string) => {
-    const date = String(Date.now());
-    setCards((p) => [...p, {id: date, name}]);
-  }, []);
-
-  const onRenderItem = useCallback(
-    ({item}) => {
-      return (
-        <Item
-          backgroundColor={cardColor}
-          borderRadius={borderRadius}
-          item={item}
-          key={item.id}
-          padding={padding}
-        />
-      );
-    },
-    [borderRadius, cardColor, padding],
-  );
-
+  const margin = orientation === 'horizontal' ? 'right' : 'bottom';
   return (
     <View>
-      <View
-        style={{
-          borderRadius,
-          width: listWidth,
-          backgroundColor: listColor,
-          padding: padding / 2,
-          marginRight: horizontal ? padding : 0,
-          marginBottom: horizontal ? 0 : padding,
-        }}>
-        <ListHeader name={list.name} padding={padding} />
-        <FlatList
-          data={cards}
-          keyExtractor={onKeyExtractor}
-          keyboardShouldPersistTaps="handled"
-          onContentSizeChange={onCardSizeChange}
-          ref={cardsRef}
-          renderItem={onRenderItem}
-          showsVerticalScrollIndicator={false}
-          style={{maxHeight}}
-        />
-        <AddItem
-          backgroundColor={listColor}
-          borderRadius={borderRadius}
-          buttonTitle={addButtonTitle}
-          inputPlaceholder={addButtonPlaceholder}
-          inputType="body2"
-          onAdd={onAddCard}
-        />
-      </View>
+      <Card margin={margin} width={listWidth}>
+        <ListHeader listId={listId} />
+        <ListItems listId={listId} maxHeight={listMaxHeight} />
+        <AddItem listId={listId} placeholder={placeholder} title={title} />
+      </Card>
     </View>
   );
 });

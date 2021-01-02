@@ -104,9 +104,8 @@ export const Dialog = memo(function Dialog({
 
   const dismiss = useCallback(
     (callback?: () => void) => async () => {
-      if (!callback) {
-        return;
-      }
+      if (!callback) return;
+
       await animate(0);
       callback();
     },
@@ -115,9 +114,8 @@ export const Dialog = memo(function Dialog({
 
   useEffect(() => {
     animate(1);
-    if (!duration) {
-      return () => undefined;
-    }
+    if (!duration) return () => undefined;
+
     const alertTimeout = setTimeout(dismiss(onBackgroundPress), duration);
     return () => {
       clearTimeout(alertTimeout);

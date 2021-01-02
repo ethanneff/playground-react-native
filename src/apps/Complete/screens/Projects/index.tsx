@@ -1,102 +1,58 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {FlatList, View} from 'react-native';
-import {Screen} from '../../../../components';
+import {LayoutChangeEvent, View} from 'react-native';
+import {HandleKeyboard, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {AddItem} from '../../components/AddItem';
-import {List} from '../../components/List';
+import {useRootSelector} from '../../../../utils';
+import {List} from '../../components';
 import {config} from '../../configs';
-import {ListObject} from '../../types';
+import {getCategoryListIds} from '../../models';
 
 // TODO: add journal
 // TODO: add historical data
 // TODO: add purpose
 // TODO: add goals
 
+// TODO: render as <Board />
+
 export const Projects = memo(function Projects() {
   const color = useColor();
   const {navigate} = useNavigation();
+  const listIds = useRootSelector(getCategoryListIds);
+  const [dimensions, setDimensions] = useState(0);
 
-  const navNext = useCallback(() => {
-    navigate('Project');
-  }, [navigate]);
+  const onLayout = useCallback(
+    (event: LayoutChangeEvent) => {
+      const {height} = event.nativeEvent.layout;
+      if (dimensions > 0) return;
 
-  const [groups, setGroups] = useState<ListObject[]>([
-    {
-      id: '1',
-      name: 'Actionables',
-      items: [
-        {id: '1', name: 'home'},
-        {id: '2', name: 'work'},
-        {id: '3', name: 'gym'},
-        {id: '4', name: 'groceries'},
-        {id: '5', name: 'gifts'},
-      ],
+      setDimensions(height);
     },
-    {
-      id: '2',
-      name: 'Storage',
-      items: [
-        {id: '1', name: 'gift ideas'},
-        {id: '2', name: 'checklists'},
-        {id: '3', name: 'book summaries'},
-        {id: '4', name: 'meeting notes'},
-        {id: '5', name: 'receipts'},
-      ],
-    },
-  ]);
-
-  const renderGroup = useCallback(
-    ({item}) => {
-      return (
-        <List
-          addButtonPlaceholder="Project title..."
-          addButtonTitle="Add project"
-          borderRadius={config.borderRadius}
-          cardColor={color.surface}
-          key={item.id}
-          list={item}
-          listColor={color.background}
-          padding={config.padding}
-        />
-      );
-    },
-    [color.background, color.surface],
+    [dimensions],
   );
 
-  const onAddGroup = useCallback((name: string) => {
-    const date = Date.now().toString();
-    setGroups((p) => [...p, {id: date, name, items: []}]);
-  }, []);
+  const maxHeight = dimensions / 2 - config.padding * 10;
 
-  const renderFooter = useCallback(() => {
-    return (
-      <AddItem
-        backgroundColor={color.background}
-        borderRadius={config.borderRadius}
-        buttonTitle="Add group"
-        inputPlaceholder="Group title..."
-        inputType="h4"
-        onAdd={onAddGroup}
-      />
-    );
-  }, [color.background, onAddGroup]);
+  const navToAccount = useCallback(() => navigate('account'), [navigate]);
 
   return (
-    <Screen onRightPress={navNext} title="Projects">
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: color.surface,
-        }}>
-        <FlatList
-          ListFooterComponent={renderFooter}
-          contentContainerStyle={{padding: config.padding}}
-          data={groups}
-          keyboardShouldPersistTaps="handled"
-          renderItem={renderGroup}
-        />
-      </View>
+    <Screen onRightPress={navToAccount} rightIcon="account" title="Projects">
+      <HandleKeyboard
+        backgroundColor={color.surface}
+        onLayout={onLayout}
+        render={dimensions > 0}>
+        <View style={{padding: config.padding}}>
+          {listIds.map((listId) => (
+            <List
+              key={listId}
+              listId={listId}
+              listMaxHeight={maxHeight}
+              placeholder="List title..."
+              title="Add list"
+            />
+          ))}
+        </View>
+      </HandleKeyboard>
     </Screen>
   );
 });

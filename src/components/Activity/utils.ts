@@ -1,10 +1,10 @@
 import axios from 'axios';
+import endOfWeek from 'date-fns/endOfWeek';
 import format from 'date-fns/format';
 import isToday from 'date-fns/isToday';
-import endOfWeek from 'date-fns/endOfWeek';
 import startOfWeek from 'date-fns/startOfWeek';
 import sub from 'date-fns/sub';
-import {ActivityMatrix, Site} from './index';
+import {ActivityMatrix, Site} from './types';
 
 type ApiResponse = {[unix: string]: number};
 
@@ -82,11 +82,9 @@ const getLeetCodeActivity = async (username: string) => {
   const data = JSON.parse(res.data);
   return Object.keys(data).reduce((total: ApiResponse, item) => {
     const day = getDateFormat(Number(item) * 1000);
-    if (day in total) {
-      total[day] += data[item];
-    } else {
-      total[day] = data[item];
-    }
+    if (day in total) total[day] += data[item];
+    else total[day] = data[item];
+
     return total;
   }, {});
 };

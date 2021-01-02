@@ -24,6 +24,7 @@ interface Props {
   padded?: boolean;
   size?: number;
   color?: string;
+  backgroundColor?: string;
   name?: string;
   onPress?: () => void;
   testID?: string;
@@ -38,6 +39,7 @@ export const Icon = ({
   elevation = 4,
   size = Theme.padding.p06,
   color,
+  backgroundColor,
   fab,
   hidden,
   right,
@@ -47,11 +49,12 @@ export const Icon = ({
   testID,
 }: Props): JSX.Element => {
   const colors = useColor();
+  const bgColor = backgroundColor ? backgroundColor : colors.primary;
   const dropShadow = useDropShadow();
   const styles = StyleSheet.create({
     fab: {
       alignItems: 'center',
-      backgroundColor: colors.primary,
+      backgroundColor: bgColor,
       borderRadius: Theme.padding.p15,
       height: Theme.padding.p15,
       justifyContent: 'center',

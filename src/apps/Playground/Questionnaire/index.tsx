@@ -48,9 +48,8 @@ export const Questionnaire = memo(function Questionnaire() {
   const onProgress = useCallback(
     (direction = 1) => {
       const index = currentIndex + direction;
-      if (index < 0 || !tableViewRef.current) {
-        return;
-      }
+      if (index < 0 || !tableViewRef.current) return;
+
       if (index >= data.length) {
         onFinish();
         return;
@@ -93,7 +92,7 @@ export const Questionnaire = memo(function Questionnaire() {
     ({item}) => {
       let items: any = <View style={{flex: 1}} />;
 
-      if (item.choices) {
+      if (item.choices)
         items = (
           <View style={{flex: 1}}>
             {item.choices.map((choice: any) => {
@@ -107,7 +106,6 @@ export const Questionnaire = memo(function Questionnaire() {
             })}
           </View>
         );
-      }
 
       return (
         <View style={{width: width}}>
