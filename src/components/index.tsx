@@ -7,6 +7,7 @@ export * from './Card';
 export * from './CardSection';
 export * from './Carousel';
 export * from './Dialog';
+export * from './HandleKeyboard';
 export * from './Icon';
 export * from './Input';
 export * from './Loading';
