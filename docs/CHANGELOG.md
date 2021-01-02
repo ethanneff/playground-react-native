@@ -1,5 +1,30 @@
 # Changelog
 
+# [2.46.0](https://github.com/ethanneff/example/compare/v2.45.10...v2.46.0) (2021-01-02)
+
+
+### Bug Fixes
+
+* change bottom icon colors to not show primary ([e4fdbd2](https://github.com/ethanneff/example/commit/e4fdbd26296c284a16f9c5066f36cc22149a8d8d))
+* make alert wrapper for complete app ([c74dff2](https://github.com/ethanneff/example/commit/c74dff2c8d9e91e609efe9bed7e178959d04290f))
+* make all screens have account ([a87a65c](https://github.com/ethanneff/example/commit/a87a65cb2e2d10c269add532ca88831e164970d9))
+* make handlekeyboard global ([adb15c3](https://github.com/ethanneff/example/commit/adb15c34a907db172666dcce968ecce31eaf34ab))
+* make hook for alert size ([222777d](https://github.com/ethanneff/example/commit/222777d24b4a4cd66fddbe44c77bca7f840b0fa5))
+* make list reference card component ([1af2eaf](https://github.com/ethanneff/example/commit/1af2eaf7c88149692668afc860bc17cef266022d))
+* make portfolio navigate to admin ([36a2fb8](https://github.com/ethanneff/example/commit/36a2fb8c94d521c4b27a9cdb8260aad96be7e9e2))
+* navigate to admin from account ([da4cf34](https://github.com/ethanneff/example/commit/da4cf34cb6d1b6a7ea2e630cbdb5866e51731ddf))
+* navigate to item details from item ([82a296f](https://github.com/ethanneff/example/commit/82a296f7648168151b6f902cc180f9935fe26712))
+* pass background color to alert ([bfb01b7](https://github.com/ethanneff/example/commit/bfb01b700f3881d7893a8554f77bb2f91e99e911))
+* relocate handle keyboard ([23ea408](https://github.com/ethanneff/example/commit/23ea40885266c0bb929f9b6c03887f55fe00e419))
+* remove indicators on carousel ([76c1c48](https://github.com/ethanneff/example/commit/76c1c48cfa5804e337fbf6aec8ff3650b540f093))
+* transform account to an alert ([6f2fcf4](https://github.com/ethanneff/example/commit/6f2fcf436bfcb1d504c403c957e7476ea079cf1f))
+* update background color on scrollview ([1daa069](https://github.com/ethanneff/example/commit/1daa069d947c4065b1d996c8654ed9e9091f5111))
+
+
+### Features
+
+* add item details screen ([6e55d0b](https://github.com/ethanneff/example/commit/6e55d0b7dc9f5792a0c8985dcfb3f31f8c840de5))
+
 ## [2.45.10](https://github.com/ethanneff/example/compare/v2.45.9...v2.45.10) (2021-01-02)
 
 
