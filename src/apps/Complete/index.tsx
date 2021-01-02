@@ -58,15 +58,15 @@ const Tabs = () => {
   const color = useColor();
   const tabBarOptions: BottomTabBarOptions = {
     keyboardHidesTabBar: true,
-    activeTintColor: color.primary,
-    inactiveTintColor: color.text,
+    activeTintColor: color.text,
+    inactiveTintColor: color.secondary,
     showLabel: false,
   };
   const screenOptions = useCallback(
     ({route}: ScreenOptionsProps) => ({
       tabBarIcon: function tabBarIcon({focused, size}: TabBarIconProps) {
         const focus = focused ? 'focused' : 'unfocused';
-        const iconColor = focused ? color.primary : color.text;
+        const iconColor = focused ? color.text : color.secondary;
         const name = (tabIcons as any)[route.name][focus];
         return <Icon color={iconColor} name={name} size={size} />;
       },
