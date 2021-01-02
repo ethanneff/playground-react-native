@@ -46,10 +46,7 @@ export const Capture = memo(function Capture() {
   const navToAccount = useCallback(() => navigate('account'), [navigate]);
 
   return (
-    <Screen
-      onRightPress={navToAccount}
-      rightIcon="account"
-      title="Capture">
+    <Screen onRightPress={navToAccount} rightIcon="account" title="Capture">
       <HandleKeyboard
         backgroundColor={color.surface}
         onLayout={onLayout('container')}

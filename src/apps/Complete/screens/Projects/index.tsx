@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, View} from 'react-native';
 import {HandleKeyboard, Screen} from '../../../../components';
@@ -16,6 +17,7 @@ import {getCategoryListIds} from '../../models';
 
 export const Projects = memo(function Projects() {
   const color = useColor();
+  const {navigate} = useNavigation();
   const listIds = useRootSelector(getCategoryListIds);
   const [dimensions, setDimensions] = useState(0);
 
@@ -31,8 +33,10 @@ export const Projects = memo(function Projects() {
 
   const maxHeight = dimensions / 2 - config.padding * 10;
 
+  const navToAccount = useCallback(() => navigate('account'), [navigate]);
+
   return (
-    <Screen title="Projects">
+    <Screen onRightPress={navToAccount} rightIcon="account" title="Projects">
       <HandleKeyboard
         backgroundColor={color.surface}
         onLayout={onLayout}

@@ -1,4 +1,5 @@
-import React, {memo} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import React, {memo, useCallback} from 'react';
 import {Dimensions, ScrollView, View} from 'react-native';
 import {Calendar, Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
@@ -36,9 +37,11 @@ const data = [
 
 export const Reflect = memo(function Reflect() {
   const color = useColor();
+  const {navigate} = useNavigation();
+  const navToAccount = useCallback(() => navigate('account'), [navigate]);
 
   return (
-    <Screen title="Reflect">
+    <Screen onRightPress={navToAccount} rightIcon="account" title="Reflect">
       <ScrollView
         contentContainerStyle={{
           padding: Theme.padding.p04,
