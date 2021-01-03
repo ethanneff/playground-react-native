@@ -35,6 +35,7 @@ interface Props {
   secureTextEntry?: boolean;
   style?: StyleProp<ViewStyle>;
   color?: keyof Color;
+  pointerEvents?: 'box-none' | 'none' | 'box-only' | 'auto';
   value: string;
   flex?: boolean;
   onChangeText(text: string): void;
@@ -46,6 +47,7 @@ interface Props {
 
 export const TextInput = ({
   autoCorrect,
+  pointerEvents,
   blurOnSubmit = true,
   disableFullscreenUI = true,
   focusOnLoad,
@@ -145,6 +147,7 @@ export const TextInput = ({
         onSubmitEditing={onSubmitEditing}
         placeholder={placeholder}
         placeholderTextColor={colorScheme.secondary}
+        pointerEvents={pointerEvents}
         ref={onInternalRef}
         returnKeyType={returnKeyType}
         secureTextEntry={secureTextEntry}
