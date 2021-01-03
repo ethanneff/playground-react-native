@@ -1,18 +1,20 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
-import {Keyboard, View} from 'react-native';
-import {Icon, TextInput, TouchableOpacity} from '../../../components';
+import React, {memo, useCallback, useRef} from 'react';
+import {
+  Keyboard,
+  TextInput as OriginalTextInput,
+  TouchableOpacity,
+} from 'react-native';
 import {useColor} from '../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../utils';
 import {config} from '../configs';
 import {
-  removeItem,
   setActiveBoard,
   setActiveItem,
   setActiveList,
   updateItem,
-  updateListRemoveItem,
 } from '../models';
+import {TextInputWithIcons} from './TextInputWithIcons';
 
 type ListItemProps = {
   itemId: string;
@@ -24,28 +26,22 @@ export const ListItem = memo(function ListItem({
   listId,
 }: ListItemProps) {
   const item = useRootSelector((s) => s.completeItem.items[itemId]);
+  const textInputRef = useRef<OriginalTextInput | null>(null);
   const dispatch = useRootDispatch();
   const {navigate} = useNavigation();
   const color = useColor();
-  const [title, setTitle] = useState(item.title);
-  const [showControls, setShowControls] = useState(false);
-
-  const onTextChange = useCallback((value) => {
-    setTitle(value);
-  }, []);
 
   const onItemTitleClose = useCallback(() => {
-    setTitle(item.title);
     Keyboard.dismiss();
-  }, [item.title]);
+  }, []);
 
-  const onItemTitleSubmit = useCallback(() => {
-    dispatch(updateItem({...item, title}));
-    Keyboard.dismiss();
-  }, [dispatch, item, title]);
-
-  const onFocus = useCallback(() => setShowControls(true), []);
-  const onBlur = useCallback(() => setShowControls(false), []);
+  const onItemTitleSubmit = useCallback(
+    (title: string) => {
+      dispatch(updateItem({...item, title}));
+      Keyboard.dismiss();
+    },
+    [dispatch, item],
+  );
 
   const onItemNav = useCallback(() => {
     if (!item.board)
@@ -65,12 +61,27 @@ export const ListItem = memo(function ListItem({
     navigate('item-detail');
   }, [dispatch, itemId, listId, navigate]);
 
-  const onItemLongPress = useCallback(() => undefined, []);
+  const onItemLongPress = useCallback(() => {
+    console.log('long press');
+  }, []);
+
+  const onItemPress = useCallback(() => {
+    textInputRef.current?.focus();
+  }, []);
+
+  const icons = {
+    focus: [{name: 'close', handlePress: onItemTitleClose}],
+    blur: [
+      {name: 'dots-horizontal', handlePress: onItemDetails},
+      {name: 'chevron-right', handlePress: onItemNav, hidden: !item.board},
+    ],
+  };
 
   return (
     <TouchableOpacity
       key={item.id}
       onLongPress={onItemLongPress}
+      onPress={onItemPress}
       style={{
         flex: 1,
         borderRadius: config.borderRadius,
@@ -78,36 +89,13 @@ export const ListItem = memo(function ListItem({
         backgroundColor: color.surface,
         flexDirection: 'row',
       }}>
-      <TextInput
-        backgroundColor={color.surface}
-        flex
-        onBlur={onBlur}
-        onChangeText={onTextChange}
-        onFocus={onFocus}
-        onSubmitEditing={onItemTitleSubmit}
+      <TextInputWithIcons
+        icons={icons}
+        onRef={textInputRef}
+        onSubmit={onItemTitleSubmit}
         placeholder="Item name..."
-        returnKeyType="done"
-        value={title}
+        value={item.title}
       />
-      {showControls ? (
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <Icon name="close" onPress={onItemTitleClose} padded />
-          <Icon
-            color={color.primary}
-            name="send"
-            onPress={onItemTitleSubmit}
-            padded
-          />
-        </View>
-      ) : (
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <Icon name="trash-can-outline" onPress={onItemDelete} padded />
-          <Icon name="dots-horizontal" onPress={onItemDetails} padded />
-          {item.board && (
-            <Icon name="chevron-right" onPress={onItemNav} padded />
-          )}
-        </View>
-      )}
     </TouchableOpacity>
   );
 });
