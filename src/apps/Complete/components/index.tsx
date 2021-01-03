@@ -10,3 +10,4 @@ export * from './ListHeaderInput';
 export * from './ListItem';
 export * from './ListItems';
 export * from './OrganizeButton';
+export * from './TextInputWithIcons';
