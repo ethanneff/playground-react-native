@@ -49,8 +49,8 @@ export const Board = memo(function Board({
           listMaxHeight={listMaxHeight}
           listWidth={listWidth}
           orientation="horizontal"
-          placeholder="List title..."
-          title="Add list"
+          placeholder="Item title..."
+          title="Add item"
         />
       );
     },
