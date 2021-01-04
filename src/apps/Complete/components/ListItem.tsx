@@ -94,6 +94,7 @@ export const ListItem = memo(function ListItem({
         onRef={textInputRef}
         onSubmit={onItemTitleSubmit}
         placeholder="Item name..."
+        pointerEvents="none"
         value={item.title}
       />
     </TouchableOpacity>

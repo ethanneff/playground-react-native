@@ -11,12 +11,11 @@ import {
 import {useColor} from '../../hooks';
 import {Color} from '../../models';
 import {FontEmphasis, FontType, getFontStyles, Theme} from '../../utils';
+import {PointerEvents, TextContentType} from './types';
 
 /*
 styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 */
-
-type TextContentType = 'username' | 'password' | 'none';
 
 interface Props {
   type?: FontType;
@@ -35,7 +34,7 @@ interface Props {
   secureTextEntry?: boolean;
   style?: StyleProp<ViewStyle>;
   color?: keyof Color;
-  pointerEvents?: 'box-none' | 'none' | 'box-only' | 'auto';
+  pointerEvents?: PointerEvents;
   value: string;
   flex?: boolean;
   onChangeText(text: string): void;
@@ -142,6 +141,7 @@ export const TextInput = ({
         editable={editable}
         keyboardType={keyboardType}
         onBlur={didBlur}
+        // multiline
         onChangeText={onChangeText}
         onFocus={didFocus}
         onSubmitEditing={onSubmitEditing}
