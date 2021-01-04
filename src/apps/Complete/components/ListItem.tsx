@@ -95,6 +95,7 @@ export const ListItem = memo(function ListItem({
         flexDirection: 'row',
       }}>
       <TextInputWithIcons
+        backgroundColor={color.surface}
         icons={icons}
         onRef={textInputRef}
         onSubmit={onItemTitleSubmit}
