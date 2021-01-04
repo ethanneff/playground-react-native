@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, View} from 'react-native';
-import {HandleKeyboard, Screen} from '../../../../components';
+import {KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {useRootSelector} from '../../../../utils';
 import {List} from '../../components';
@@ -37,7 +37,7 @@ export const Projects = memo(function Projects() {
 
   return (
     <Screen onRightPress={navToAccount} rightIcon="account" title="Projects">
-      <HandleKeyboard
+      <KeyboardHandler
         backgroundColor={color.surface}
         onLayout={onLayout}
         render={dimensions > 0}>
@@ -52,7 +52,7 @@ export const Projects = memo(function Projects() {
             />
           ))}
         </View>
-      </HandleKeyboard>
+      </KeyboardHandler>
     </Screen>
   );
 });

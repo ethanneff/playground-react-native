@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, Platform} from 'react-native';
-import {HandleKeyboard, Screen, Text} from '../../../../components';
+import {KeyboardHandler, Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {getSmallestDimension} from '../../../../models';
 import {useRootSelector} from '../../../../utils';
@@ -48,7 +48,7 @@ export const Project = memo(function Project() {
       {!boardId ? (
         <Text title="missing board" />
       ) : (
-        <HandleKeyboard
+        <KeyboardHandler
           backgroundColor={color.surface}
           onLayout={onLayout}
           render={container > 0}>
@@ -57,7 +57,7 @@ export const Project = memo(function Project() {
             listMaxHeight={listMaxHeight}
             listWidth={listWidth}
           />
-        </HandleKeyboard>
+        </KeyboardHandler>
       )}
     </Screen>
   );

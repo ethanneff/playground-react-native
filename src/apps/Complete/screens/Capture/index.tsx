@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, Platform, View} from 'react-native';
-import {HandleKeyboard, Screen, Text} from '../../../../components';
+import {KeyboardHandler, Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {useRootSelector} from '../../../../utils';
 import {List, OrganizeButton} from '../../components';
@@ -47,7 +47,7 @@ export const Capture = memo(function Capture() {
 
   return (
     <Screen onRightPress={navToAccount} rightIcon="account" title="Capture">
-      <HandleKeyboard
+      <KeyboardHandler
         backgroundColor={color.surface}
         onLayout={onLayout('container')}
         render={dimensions.container > 0}>
@@ -68,7 +68,7 @@ export const Capture = memo(function Capture() {
         ) : (
           <Text title="missing account" />
         )}
-      </HandleKeyboard>
+      </KeyboardHandler>
     </Screen>
   );
 });
