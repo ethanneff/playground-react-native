@@ -18,6 +18,8 @@ type ModalProps = {
   overlayColor?: boolean;
   children: ReactElement | ReactElement[];
   testID?: string;
+  widthPercent?: number;
+  heightPercent?: number;
 };
 
 const fadeDuration = 150;
@@ -28,13 +30,15 @@ export const Modal = memo(function Modal({
   duration,
   noScroll,
   overlayColor,
+  widthPercent = 0.8,
+  heightPercent = 0.6,
   elevation,
   testID,
 }: ModalProps) {
   const color = useColor();
   const useNativeDriver = useDriver();
   const dropShadow = useDropShadow();
-  const {width, height} = useRootSelector((s) => s.dimension.screen);
+  const screen = useRootSelector((s) => s.dimension.screen);
   const styles = StyleSheet.create({
     container: {
       bottom: 0,
@@ -47,8 +51,8 @@ export const Modal = memo(function Modal({
     },
     modal: {
       backgroundColor: backgroundColor || color.background,
-      maxHeight: height * 0.6,
-      width: width * 0.8,
+      maxHeight: screen.height * heightPercent,
+      width: screen.width * widthPercent,
       ...dropShadow(10),
     },
     overlay: {
