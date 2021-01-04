@@ -83,6 +83,7 @@ export const ListItem = memo(function ListItem({
 
   return (
     <TouchableOpacity
+      activeOpacity={1}
       key={item.id}
       onLongPress={onItemLongPress}
       onPress={onItemPress}
