@@ -1,9 +1,9 @@
 import React, {memo, MutableRefObject, useCallback, useState} from 'react';
-import {TextInput as Original, View} from 'react-native';
+import {LayoutChangeEvent, TextInput as Original, View} from 'react-native';
 import {Icon, TextInput} from '../../../components';
 import {PointerEvents} from '../../../components/TextInput/types';
 import {useColor} from '../../../hooks';
-import {FontType} from '../../../utils';
+import {FontType, Theme} from '../../../utils';
 
 type Icon = {
   name: string;
@@ -28,10 +28,13 @@ type TextInputWithIconsProps = {
   onFocus?: () => void;
   blurOnSubmit?: boolean;
   multiline?: boolean;
+  maxIconHeight?: number;
 };
 
 export const TextInputWithIcons = memo(function TextInputWithIcons({
   value,
+  multiline,
+  maxIconHeight = Theme.padding.p06,
   placeholder,
   backgroundColor,
   pointerEvents,
@@ -77,9 +80,21 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
     },
     [text, value],
   );
+  const [containerHeight, setContainerHeight] = useState(0);
+  const iconHeight = containerHeight - Theme.padding.p04;
+  const clampIconHeight =
+    iconHeight > maxIconHeight ? maxIconHeight : iconHeight;
+
+  const onLayout = useCallback(
+    (e: LayoutChangeEvent) => {
+      if (containerHeight) return;
+      setContainerHeight(e.nativeEvent.layout.height);
+    },
+    [containerHeight],
+  );
 
   return (
-    <View style={{flex: 1, flexDirection: 'row'}}>
+    <View onLayout={onLayout} style={{flex: 1, flexDirection: 'row'}}>
       <TextInput
         backgroundColor={bgColor}
         blurOnSubmit={blurOnSubmit}
@@ -109,6 +124,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
               name={icon.name}
               onPress={onIconPressInternal(icon.onPress)}
               padded
+              size={clampIconHeight}
             />
           ),
         )}
