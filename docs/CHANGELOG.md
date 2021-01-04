@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.46.2](https://github.com/ethanneff/example/compare/v2.46.1...v2.46.2) (2021-01-04)
+
+
+### Bug Fixes
+
+* add confirmation modal to delete item ([72b54c4](https://github.com/ethanneff/example/commit/72b54c44f4e6723ac9fc5d124bbf37817b598a98))
+* add multiline for description ([3ab2e6d](https://github.com/ethanneff/example/commit/3ab2e6d489e88b5880e79f5661a39d49d4b73367))
+* add overlay color for multi modals ([d4b7a0a](https://github.com/ethanneff/example/commit/d4b7a0a7716128b4b8a05c367ac620279ff6b057))
+* better keyboard handling for add item ([8b46429](https://github.com/ethanneff/example/commit/8b464292b628b95802df6025a09f516a3d7563b7))
+* change list item button copy ([5359121](https://github.com/ethanneff/example/commit/53591212492a2cf918149b7666dfb263251249c4))
+* configure width and height on modal ([4cf18ba](https://github.com/ethanneff/example/commit/4cf18ba0fa9e1f12d4545b8bc5651944645fcb7e))
+* default no margin on card ([2fe43d4](https://github.com/ethanneff/example/commit/2fe43d4628c7c0c0fd082b164490de54993f7400))
+* play sound on background modal tap ([d319706](https://github.com/ethanneff/example/commit/d319706391dd0346fef40e8af8424bebf3aaccf1))
+* prevent background clicks from registering on the modal ([8a1e0eb](https://github.com/ethanneff/example/commit/8a1e0eb2dc5fbdb179209175d3d373de0348b067))
+* prevent modal background spam click ([c015ae3](https://github.com/ethanneff/example/commit/c015ae320f7245110f8d6c26e98513856af529d2))
+* prevent resizing on text input focus ([4e5c884](https://github.com/ethanneff/example/commit/4e5c8843a668311981337471b837561963781385))
+* remove console logs ([1b866dc](https://github.com/ethanneff/example/commit/1b866dcc830236dba458c7e256931a3127ec4e4f))
+* update item detail info to redux ([7803006](https://github.com/ethanneff/example/commit/780300631fadec5a23f2ba82299426bd1771d2cc))
+* update snaps ([8b4a5b7](https://github.com/ethanneff/example/commit/8b4a5b72797f75249f340a505b37a861a241a124))
+* update text input with icon on detail screen ([900a460](https://github.com/ethanneff/example/commit/900a46091de0e09e244b43d7e0836dfd22e52e8b))
+
 ## [2.46.1](https://github.com/ethanneff/example/compare/v2.46.0...v2.46.1) (2021-01-04)
 
 
