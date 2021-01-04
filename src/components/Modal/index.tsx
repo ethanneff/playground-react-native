@@ -58,6 +58,7 @@ export const Modal = memo(function Modal({
   const fade = useRef(new Animated.Value(0)).current;
   const opacity = fade;
   const containerStyle = [styles.container, {opacity}];
+  const preventDismissSpam = useRef(false);
 
   // TODO: animation is not clean on devices
   const animate = useCallback(
@@ -75,7 +76,8 @@ export const Modal = memo(function Modal({
 
   const dismiss = useCallback(
     (callback?: () => void) => async () => {
-      if (!callback) return;
+      if (!callback || preventDismissSpam.current) return;
+      preventDismissSpam.current = true;
       SoundManager.play('tap');
       await animate(0);
       callback();
