@@ -1,5 +1,36 @@
 # Changelog
 
+## [2.46.1](https://github.com/ethanneff/example/compare/v2.46.0...v2.46.1) (2021-01-04)
+
+
+### Bug Fixes
+
+* add disable color to icon ([e64d90e](https://github.com/ethanneff/example/commit/e64d90e581b715f558b59f42420b8f2460900e43))
+* add keyboard avoidance to chat ([76b4c62](https://github.com/ethanneff/example/commit/76b4c6270ae7c17a10ce6e4231bec2c552fa6d2f))
+* add pointer events to text input to allow parent touches ([d82b3c5](https://github.com/ethanneff/example/commit/d82b3c569653b94739742ae964b69c6255b00b40))
+* add required icon prop to disable icon ([5cf72fa](https://github.com/ethanneff/example/commit/5cf72fa3836b3e8dd84ad65b26b414cc22ebb8f5))
+* add TextInputWithIcons to button ([a67b76d](https://github.com/ethanneff/example/commit/a67b76dfbbd96df973635d7c64191d5e855575f5))
+* add type for pointerEvents on text input ([b100ceb](https://github.com/ethanneff/example/commit/b100ceb2a21acd3162bfe869636ec6d121df8d3b))
+* center icon on chat ([ddfd041](https://github.com/ethanneff/example/commit/ddfd04170d39c5e810405781165a3a6956eaf608))
+* change alert height to dynamic maxheight ([ab2429f](https://github.com/ethanneff/example/commit/ab2429ff4920c46eddc66135059d3478951aba2b))
+* change background color ([932e90b](https://github.com/ethanneff/example/commit/932e90bd6be716bfcfc80e41f70b49b3c3a42bc1))
+* change keyboard height on ios ([ed890d6](https://github.com/ethanneff/example/commit/ed890d6f4edcc63884f8eb505f7511493fa61e66))
+* correct touch performance issues of touchablewithoutfeedback in parent of flatlist child ([7a7aa7e](https://github.com/ethanneff/example/commit/7a7aa7efbd1f4bf86a3390fdb97df09ff273489b))
+* create textinput with icons component ([714fcc2](https://github.com/ethanneff/example/commit/714fcc2d96156f42c7498f2dedafb439c0939bdc))
+* leverage text input with icons component ([ee318a0](https://github.com/ethanneff/example/commit/ee318a09ef5949d64eced5160bca6212865f83f5))
+* make header use textinputwithicons ([88e5b34](https://github.com/ethanneff/example/commit/88e5b341bf88ff52d6492f7785c4f17184f34189))
+* make horizontal board full width ([2876ba1](https://github.com/ethanneff/example/commit/2876ba1db13c0ce0a05c96d568a75e3e4b52da71))
+* make icons an array to reduce re-renders from object ([425d503](https://github.com/ethanneff/example/commit/425d503e56744037fa655bd05d1d99752f4aa5a2))
+* prevent re-render from organize button ([50e8e4e](https://github.com/ethanneff/example/commit/50e8e4edc0e306d52219fbeec2ba58ec0c6f7e8d))
+* prevent tap opacity on list item ([8500449](https://github.com/ethanneff/example/commit/8500449045dd3a5a6ca0835f0eff0a944933cc1d))
+* remove alert and dialog for modal ([386905e](https://github.com/ethanneff/example/commit/386905e1caf63618ef9e70a1d139e06b17bc49f2))
+* remove carrots ([f0c093f](https://github.com/ethanneff/example/commit/f0c093f9e9eb5b2046b912a8093be975ffab76a1))
+* remove child textinput so icon button can submit payload ([32d59b1](https://github.com/ethanneff/example/commit/32d59b1323ab14bd9e436ddf5011f295de183e65))
+* remove delete icon on item ([5bf2bff](https://github.com/ethanneff/example/commit/5bf2bff6c118d7eee9ef1e90df091ec3bd232176))
+* remove redundant touchable opacity on icon ([0320e45](https://github.com/ethanneff/example/commit/0320e45ffe41fb3fbb75aaedb91b2fbf327f9a61))
+* rename keyboardhandler ([0dd1eac](https://github.com/ethanneff/example/commit/0dd1eacac645644e688d7662aeae228c302e9c7d))
+* update deps ([f91cdf5](https://github.com/ethanneff/example/commit/f91cdf5349da8733e77b8ea0ee4dbf7167c1f03b))
+
 # [2.46.0](https://github.com/ethanneff/example/compare/v2.45.10...v2.46.0) (2021-01-02)
 
 
