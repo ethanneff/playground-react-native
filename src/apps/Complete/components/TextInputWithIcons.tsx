@@ -23,6 +23,9 @@ type TextInputWithIconsProps = {
   backgroundColor?: string;
   pointerEvents?: PointerEvents;
   type?: FontType;
+  focusOnLoad?: boolean;
+  onBlur?: () => void;
+  onFocus?: () => void;
 };
 
 export const TextInputWithIcons = memo(function TextInputWithIcons({
@@ -30,9 +33,12 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
   placeholder,
   backgroundColor,
   pointerEvents,
+  focusOnLoad,
   icons,
   type,
   onSubmit,
+  onFocus,
+  onBlur,
   onRef,
 }: TextInputWithIconsProps) {
   const color = useColor();
@@ -46,24 +52,35 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
 
   const onFocusInternal = useCallback(() => {
     setShowControls(true);
-  }, []);
+    if (onFocus) onFocus();
+  }, [onFocus]);
 
   const onSubmitInternal = useCallback(() => {
+    if (text.trim().length === 0) return;
     onSubmit(text);
+    setText('');
   }, [onSubmit, text]);
 
   const onBlurInternal = useCallback(() => {
     setText(value);
     setShowControls(false);
-  }, [value]);
+    if (onBlur) onBlur();
+  }, [onBlur, value]);
 
-  const onIconPressInternal = useCallback((c) => () => c(text), [text]);
+  const onIconPressInternal = useCallback(
+    (callback) => () => {
+      callback(text);
+      setText('');
+    },
+    [text],
+  );
 
   return (
     <View style={{flex: 1, flexDirection: 'row'}}>
       <TextInput
         backgroundColor={bgColor}
         flex
+        focusOnLoad={focusOnLoad}
         onBlur={onBlurInternal}
         onChangeText={onTextChange}
         onFocus={onFocusInternal}

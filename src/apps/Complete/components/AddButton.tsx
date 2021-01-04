@@ -1,9 +1,10 @@
 import React, {memo, useCallback, useRef, useState} from 'react';
 import {TextInput as OriginalTextInput, View} from 'react-native';
-import {Button, Icon, TextInput} from '../../../components';
+import {Button} from '../../../components';
 import {useColor} from '../../../hooks';
 import {Theme} from '../../../utils';
 import {config} from '../configs';
+import {TextInputWithIcons} from './TextInputWithIcons';
 
 type AddButtonProps = {
   width?: number;
@@ -21,28 +22,34 @@ export const AddButton = memo(function AddButton({
   const color = useColor();
   const textInputRef = useRef<OriginalTextInput | null>(null);
   const [showInput, setShowInput] = useState(false);
-  const [itemTitle, setItemTitle] = useState('');
-  const onItemTitleChange = useCallback((v: string) => setItemTitle(v), []);
   const onAddItemPress = useCallback(() => setShowInput((p) => !p), []);
 
   const onItemTitleClose = useCallback(() => {
     setShowInput(false);
-    setItemTitle('');
   }, []);
 
-  const onItemTitleSubmit = useCallback(() => {
-    const formatted = itemTitle.trim();
-    if (formatted.length === 0) return;
-
-    setItemTitle('');
-    onSubmit(formatted);
-    textInputRef.current?.focus();
-  }, [itemTitle, onSubmit]);
+  const onItemTitleSubmit = useCallback(
+    (text) => {
+      onSubmit(text);
+      textInputRef.current?.focus();
+    },
+    [onSubmit],
+  );
 
   const onBlur = useCallback(() => {
     setShowInput(false);
-    setItemTitle('');
   }, []);
+
+  const icons = [
+    {name: 'close', onPress: onItemTitleClose, focus: true},
+    {
+      name: 'send',
+      onPress: onItemTitleSubmit,
+      color: color.primary,
+      focus: true,
+      required: true,
+    },
+  ];
 
   return (
     <View
@@ -54,28 +61,14 @@ export const AddButton = memo(function AddButton({
         justifyContent: 'center',
       }}>
       {showInput ? (
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <TextInput
-            blurOnSubmit={false}
-            emphasis="high"
-            flex
-            focusOnLoad
-            onBlur={onBlur}
-            onChangeText={onItemTitleChange}
-            onRef={textInputRef}
-            onSubmitEditing={onItemTitleSubmit}
-            placeholder={placeholder}
-            returnKeyType="done"
-            value={itemTitle}
-          />
-          <Icon name="close" onPress={onItemTitleClose} padded />
-          <Icon
-            color={color.primary}
-            name="send"
-            onPress={onItemTitleSubmit}
-            padded
-          />
-        </View>
+        <TextInputWithIcons
+          focusOnLoad
+          icons={icons}
+          onBlur={onBlur}
+          onSubmit={onItemTitleSubmit}
+          placeholder={placeholder}
+          value=""
+        />
       ) : (
         <Button center color="primary" onPress={onAddItemPress} title={title} />
       )}
