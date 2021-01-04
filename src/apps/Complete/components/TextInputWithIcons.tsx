@@ -26,6 +26,7 @@ type TextInputWithIconsProps = {
   focusOnLoad?: boolean;
   onBlur?: () => void;
   onFocus?: () => void;
+  blurOnSubmit?: boolean;
 };
 
 export const TextInputWithIcons = memo(function TextInputWithIcons({
@@ -37,6 +38,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
   icons,
   type,
   onSubmit,
+  blurOnSubmit,
   onFocus,
   onBlur,
   onRef,
@@ -58,8 +60,8 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
   const onSubmitInternal = useCallback(() => {
     if (text.trim().length === 0) return;
     onSubmit(text);
-    setText('');
-  }, [onSubmit, text]);
+    if (value === '') setText('');
+  }, [onSubmit, text, value]);
 
   const onBlurInternal = useCallback(() => {
     setText(value);
@@ -70,15 +72,16 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
   const onIconPressInternal = useCallback(
     (callback) => () => {
       callback(text);
-      setText('');
+      if (value === '') setText('');
     },
-    [text],
+    [text, value],
   );
 
   return (
     <View style={{flex: 1, flexDirection: 'row'}}>
       <TextInput
         backgroundColor={bgColor}
+        blurOnSubmit={blurOnSubmit}
         flex
         focusOnLoad={focusOnLoad}
         onBlur={onBlurInternal}

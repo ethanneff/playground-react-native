@@ -62,6 +62,7 @@ export const AddButton = memo(function AddButton({
       }}>
       {showInput ? (
         <TextInputWithIcons
+          blurOnSubmit={false}
           focusOnLoad
           icons={icons}
           onBlur={onBlur}
