@@ -6,6 +6,7 @@ import {
 } from '../../conversions/GestureHandler';
 import {useColor, useDriver, useDropShadow} from '../../hooks';
 import {useRootSelector} from '../../utils';
+import {SoundManager} from '../../utils/Sound';
 import {Card} from '../Card';
 
 type ModalProps = {
@@ -75,7 +76,7 @@ export const Modal = memo(function Modal({
   const dismiss = useCallback(
     (callback?: () => void) => async () => {
       if (!callback) return;
-
+      SoundManager.play('tap');
       await animate(0);
       callback();
     },
