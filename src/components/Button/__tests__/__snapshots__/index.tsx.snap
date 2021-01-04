@@ -285,44 +285,45 @@ exports[`renders correctly 1`] = `
                       }
                     }
                   >
-                    <View
-                      accessible={true}
-                      focusable={true}
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
-                      style={
-                        Object {
-                          "backgroundColor": "transparent",
-                          "borderColor": "transparent",
-                          "borderRadius": 4,
-                          "borderWidth": 1,
-                          "flexDirection": "row",
-                          "opacity": 1,
-                          "padding": 8,
-                          "paddingHorizontal": 16,
-                        }
-                      }
+                    <RNGestureHandlerButton
+                      collapsable={false}
+                      onGestureEvent={[Function]}
+                      onGestureHandlerEvent={[Function]}
+                      onGestureHandlerStateChange={[Function]}
+                      onHandlerStateChange={[Function]}
+                      rippleColor={0}
                     >
-                      <Text
+                      <View
+                        accessible={true}
                         style={
                           Object {
-                            "color": "hsl(0, 0%, 0%)",
-                            "fontSize": 14,
-                            "fontWeight": "600",
-                            "letterSpacing": 0.75,
+                            "backgroundColor": "transparent",
+                            "borderColor": "transparent",
+                            "borderRadius": 4,
+                            "borderWidth": 1,
+                            "flexDirection": "row",
                             "opacity": 1,
-                            "textAlign": "center",
+                            "padding": 8,
+                            "paddingHorizontal": 16,
                           }
                         }
                       >
-                        HELLO
-                      </Text>
-                    </View>
+                        <Text
+                          style={
+                            Object {
+                              "color": "hsl(0, 0%, 0%)",
+                              "fontSize": 14,
+                              "fontWeight": "600",
+                              "letterSpacing": 0.75,
+                              "opacity": 1,
+                              "textAlign": "center",
+                            }
+                          }
+                        >
+                          HELLO
+                        </Text>
+                      </View>
+                    </RNGestureHandlerButton>
                   </View>
                 </View>
               </View>
@@ -620,45 +621,46 @@ exports[`renders disable 1`] = `
                       }
                     }
                   >
-                    <View
-                      accessible={true}
-                      focusable={true}
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
-                      style={
-                        Object {
-                          "alignSelf": "center",
-                          "backgroundColor": "transparent",
-                          "borderColor": "transparent",
-                          "borderRadius": 4,
-                          "borderWidth": 1,
-                          "flexDirection": "row",
-                          "opacity": 1,
-                          "padding": 8,
-                          "paddingHorizontal": 16,
-                        }
-                      }
+                    <RNGestureHandlerButton
+                      collapsable={false}
+                      onGestureEvent={[Function]}
+                      onGestureHandlerEvent={[Function]}
+                      onGestureHandlerStateChange={[Function]}
+                      onHandlerStateChange={[Function]}
+                      rippleColor={0}
                     >
-                      <Text
+                      <View
+                        accessible={true}
                         style={
                           Object {
-                            "color": "hsla(0, 0%, 0%, 0.38)",
-                            "fontSize": 14,
-                            "fontWeight": "600",
-                            "letterSpacing": 0.75,
+                            "alignSelf": "center",
+                            "backgroundColor": "transparent",
+                            "borderColor": "transparent",
+                            "borderRadius": 4,
+                            "borderWidth": 1,
+                            "flexDirection": "row",
                             "opacity": 1,
-                            "textAlign": "center",
+                            "padding": 8,
+                            "paddingHorizontal": 16,
                           }
                         }
                       >
-                        HELLO
-                      </Text>
-                    </View>
+                        <Text
+                          style={
+                            Object {
+                              "color": "hsla(0, 0%, 0%, 0.38)",
+                              "fontSize": 14,
+                              "fontWeight": "600",
+                              "letterSpacing": 0.75,
+                              "opacity": 1,
+                              "textAlign": "center",
+                            }
+                          }
+                        >
+                          HELLO
+                        </Text>
+                      </View>
+                    </RNGestureHandlerButton>
                   </View>
                 </View>
               </View>

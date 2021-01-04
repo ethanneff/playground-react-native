@@ -285,67 +285,68 @@ exports[`renders correctly 1`] = `
                       }
                     }
                   >
-                    <View
-                      accessible={true}
-                      focusable={true}
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
-                      style={
-                        Object {
-                          "backgroundColor": "hsl(0, 0%, 100%)",
-                          "borderColor": "hsl(0, 0%, 100%)",
-                          "borderRadius": 8,
-                          "borderWidth": 1,
-                          "elevation": 2,
-                          "marginVertical": 8,
-                          "opacity": 1,
-                          "shadowColor": "hsl(210, 10%, 23%)",
-                          "shadowOffset": Object {
-                            "height": 2,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.192,
-                          "shadowRadius": 1.92,
-                          "zIndex": 2,
-                        }
-                      }
+                    <RNGestureHandlerButton
+                      collapsable={false}
+                      onGestureEvent={[Function]}
+                      onGestureHandlerEvent={[Function]}
+                      onGestureHandlerStateChange={[Function]}
+                      onHandlerStateChange={[Function]}
+                      rippleColor={0}
                     >
                       <View
+                        accessible={true}
                         style={
-                          Array [
-                            Object {
-                              "backgroundColor": "hsla(0,0%,100%,0.07)",
-                              "borderRadius": 8,
-                              "padding": 16,
+                          Object {
+                            "backgroundColor": "hsl(0, 0%, 100%)",
+                            "borderColor": "hsl(0, 0%, 100%)",
+                            "borderRadius": 8,
+                            "borderWidth": 1,
+                            "elevation": 2,
+                            "marginVertical": 8,
+                            "opacity": 1,
+                            "shadowColor": "hsl(210, 10%, 23%)",
+                            "shadowOffset": Object {
+                              "height": 2,
+                              "width": 0,
                             },
-                            undefined,
-                          ]
+                            "shadowOpacity": 0.192,
+                            "shadowRadius": 1.92,
+                            "zIndex": 2,
+                          }
                         }
                       >
                         <View
                           style={
                             Array [
                               Object {
-                                "backgroundColor": "hsl(0, 0%, 100%)",
-                                "borderBottomWidth": 0.5,
-                                "borderColor": "hsl(210, 10%, 23%)",
-                                "flexDirection": "row",
-                                "paddingHorizontal": 20,
-                                "paddingVertical": 10,
+                                "backgroundColor": "hsla(0,0%,100%,0.07)",
+                                "borderRadius": 8,
+                                "padding": 16,
                               },
                               undefined,
                             ]
                           }
                         >
-                          <View />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "hsl(0, 0%, 100%)",
+                                  "borderBottomWidth": 0.5,
+                                  "borderColor": "hsl(210, 10%, 23%)",
+                                  "flexDirection": "row",
+                                  "paddingHorizontal": 20,
+                                  "paddingVertical": 10,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View />
+                          </View>
                         </View>
                       </View>
-                    </View>
+                    </RNGestureHandlerButton>
                   </View>
                 </View>
               </View>

@@ -285,46 +285,47 @@ exports[`renders correctly 1`] = `
                       }
                     }
                   >
-                    <View
-                      accessible={true}
-                      focusable={true}
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
-                      style={
-                        Object {
-                          "opacity": 1,
-                        }
-                      }
+                    <RNGestureHandlerButton
+                      collapsable={false}
+                      onGestureEvent={[Function]}
+                      onGestureHandlerEvent={[Function]}
+                      onGestureHandlerStateChange={[Function]}
+                      onHandlerStateChange={[Function]}
+                      rippleColor={0}
                     >
-                      <Text
-                        allowFontScaling={false}
+                      <View
+                        accessible={true}
                         style={
-                          Array [
-                            Object {
-                              "color": "hsl(210, 10%, 23%)",
-                              "fontSize": 24,
-                            },
-                            Array [
-                              undefined,
-                              undefined,
-                            ],
-                            Object {
-                              "fontFamily": "Material Design Icons",
-                              "fontStyle": "normal",
-                              "fontWeight": "normal",
-                            },
-                            Object {},
-                          ]
+                          Object {
+                            "opacity": 1,
+                          }
                         }
                       >
-                        󰄬
-                      </Text>
-                    </View>
+                        <Text
+                          allowFontScaling={false}
+                          style={
+                            Array [
+                              Object {
+                                "color": "hsl(210, 10%, 23%)",
+                                "fontSize": 24,
+                              },
+                              Array [
+                                undefined,
+                                undefined,
+                              ],
+                              Object {
+                                "fontFamily": "Material Design Icons",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              },
+                              Object {},
+                            ]
+                          }
+                        >
+                          󰄬
+                        </Text>
+                      </View>
+                    </RNGestureHandlerButton>
                   </View>
                 </View>
               </View>
@@ -622,76 +623,77 @@ exports[`renders correctly with clear and max badge 1`] = `
                       }
                     }
                   >
-                    <View
-                      accessible={true}
-                      focusable={true}
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
-                      style={
-                        Object {
-                          "opacity": 1,
-                        }
-                      }
+                    <RNGestureHandlerButton
+                      collapsable={false}
+                      onGestureEvent={[Function]}
+                      onGestureHandlerEvent={[Function]}
+                      onGestureHandlerStateChange={[Function]}
+                      onHandlerStateChange={[Function]}
+                      rippleColor={0}
                     >
-                      <Text
-                        allowFontScaling={false}
-                        style={
-                          Array [
-                            Object {
-                              "color": "hsl(0, 0%, 100%)",
-                              "fontSize": 1,
-                            },
-                            Array [
-                              undefined,
-                              undefined,
-                            ],
-                            Object {
-                              "fontFamily": "Material Design Icons",
-                              "fontStyle": "normal",
-                              "fontWeight": "normal",
-                            },
-                            Object {},
-                          ]
-                        }
-                      >
-                        󰄬
-                      </Text>
                       <View
+                        accessible={true}
                         style={
                           Object {
-                            "alignItems": "center",
-                            "backgroundColor": "hsl(211, 100%, 50%)",
-                            "borderRadius": 20,
-                            "height": 20,
-                            "justifyContent": "center",
-                            "position": "absolute",
-                            "right": -8,
-                            "top": -8,
-                            "width": 20,
+                            "opacity": 1,
                           }
                         }
                       >
                         <Text
+                          allowFontScaling={false}
+                          style={
+                            Array [
+                              Object {
+                                "color": "hsl(0, 0%, 100%)",
+                                "fontSize": 1,
+                              },
+                              Array [
+                                undefined,
+                                undefined,
+                              ],
+                              Object {
+                                "fontFamily": "Material Design Icons",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              },
+                              Object {},
+                            ]
+                          }
+                        >
+                          󰄬
+                        </Text>
+                        <View
                           style={
                             Object {
-                              "color": "hsl(0, 0%, 100%)",
-                              "fontSize": 8,
-                              "fontWeight": "300",
-                              "letterSpacing": 0.25,
-                              "opacity": 1,
-                              "textAlign": "center",
+                              "alignItems": "center",
+                              "backgroundColor": "hsl(211, 100%, 50%)",
+                              "borderRadius": 20,
+                              "height": 20,
+                              "justifyContent": "center",
+                              "position": "absolute",
+                              "right": -8,
+                              "top": -8,
+                              "width": 20,
                             }
                           }
                         >
-                          !
-                        </Text>
+                          <Text
+                            style={
+                              Object {
+                                "color": "hsl(0, 0%, 100%)",
+                                "fontSize": 8,
+                                "fontWeight": "300",
+                                "letterSpacing": 0.25,
+                                "opacity": 1,
+                                "textAlign": "center",
+                              }
+                            }
+                          >
+                            !
+                          </Text>
+                        </View>
                       </View>
-                    </View>
+                    </RNGestureHandlerButton>
                   </View>
                 </View>
               </View>
@@ -989,76 +991,77 @@ exports[`renders correctly without defaults 1`] = `
                       }
                     }
                   >
-                    <View
-                      accessible={true}
-                      focusable={true}
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
-                      style={
-                        Object {
-                          "opacity": 1,
-                        }
-                      }
+                    <RNGestureHandlerButton
+                      collapsable={false}
+                      onGestureEvent={[Function]}
+                      onGestureHandlerEvent={[Function]}
+                      onGestureHandlerStateChange={[Function]}
+                      onHandlerStateChange={[Function]}
+                      rippleColor={0}
                     >
-                      <Text
-                        allowFontScaling={false}
-                        style={
-                          Array [
-                            Object {
-                              "color": "blue",
-                              "fontSize": 1,
-                            },
-                            Array [
-                              undefined,
-                              undefined,
-                            ],
-                            Object {
-                              "fontFamily": "Material Design Icons",
-                              "fontStyle": "normal",
-                              "fontWeight": "normal",
-                            },
-                            Object {},
-                          ]
-                        }
-                      >
-                        󰄬
-                      </Text>
                       <View
+                        accessible={true}
                         style={
                           Object {
-                            "alignItems": "center",
-                            "backgroundColor": "hsl(211, 100%, 50%)",
-                            "borderRadius": 20,
-                            "height": 20,
-                            "justifyContent": "center",
-                            "position": "absolute",
-                            "right": -8,
-                            "top": -8,
-                            "width": 20,
+                            "opacity": 1,
                           }
                         }
                       >
                         <Text
+                          allowFontScaling={false}
+                          style={
+                            Array [
+                              Object {
+                                "color": "blue",
+                                "fontSize": 1,
+                              },
+                              Array [
+                                undefined,
+                                undefined,
+                              ],
+                              Object {
+                                "fontFamily": "Material Design Icons",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              },
+                              Object {},
+                            ]
+                          }
+                        >
+                          󰄬
+                        </Text>
+                        <View
                           style={
                             Object {
-                              "color": "hsl(0, 0%, 100%)",
-                              "fontSize": 8,
-                              "fontWeight": "300",
-                              "letterSpacing": 0.25,
-                              "opacity": 1,
-                              "textAlign": "center",
+                              "alignItems": "center",
+                              "backgroundColor": "hsl(211, 100%, 50%)",
+                              "borderRadius": 20,
+                              "height": 20,
+                              "justifyContent": "center",
+                              "position": "absolute",
+                              "right": -8,
+                              "top": -8,
+                              "width": 20,
                             }
                           }
                         >
-                          1
-                        </Text>
+                          <Text
+                            style={
+                              Object {
+                                "color": "hsl(0, 0%, 100%)",
+                                "fontSize": 8,
+                                "fontWeight": "300",
+                                "letterSpacing": 0.25,
+                                "opacity": 1,
+                                "textAlign": "center",
+                              }
+                            }
+                          >
+                            1
+                          </Text>
+                        </View>
                       </View>
-                    </View>
+                    </RNGestureHandlerButton>
                   </View>
                 </View>
               </View>

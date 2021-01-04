@@ -321,47 +321,48 @@ exports[`renders correctly 1`] = `
                               }
                             }
                           >
-                            <View
-                              accessible={true}
-                              focusable={true}
-                              onClick={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
-                              style={
-                                Object {
-                                  "opacity": 1,
-                                }
-                              }
+                            <RNGestureHandlerButton
+                              collapsable={false}
+                              onGestureEvent={[Function]}
+                              onGestureHandlerEvent={[Function]}
+                              onGestureHandlerStateChange={[Function]}
+                              onHandlerStateChange={[Function]}
+                              rippleColor={0}
                               testID="leftNav"
                             >
-                              <Text
-                                allowFontScaling={false}
+                              <View
+                                accessible={true}
                                 style={
-                                  Array [
-                                    Object {
-                                      "color": "hsl(208, 7%, 46%)",
-                                      "fontSize": 36,
-                                    },
-                                    Array [
-                                      undefined,
-                                      undefined,
-                                    ],
-                                    Object {
-                                      "fontFamily": "Material Design Icons",
-                                      "fontStyle": "normal",
-                                      "fontWeight": "normal",
-                                    },
-                                    Object {},
-                                  ]
+                                  Object {
+                                    "opacity": 1,
+                                  }
                                 }
                               >
-                                󰅁
-                              </Text>
-                            </View>
+                                <Text
+                                  allowFontScaling={false}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "hsl(208, 7%, 46%)",
+                                        "fontSize": 36,
+                                      },
+                                      Array [
+                                        undefined,
+                                        undefined,
+                                      ],
+                                      Object {
+                                        "fontFamily": "Material Design Icons",
+                                        "fontStyle": "normal",
+                                        "fontWeight": "normal",
+                                      },
+                                      Object {},
+                                    ]
+                                  }
+                                >
+                                  󰅁
+                                </Text>
+                              </View>
+                            </RNGestureHandlerButton>
                           </View>
                           <Text
                             style={
