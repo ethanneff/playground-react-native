@@ -27,6 +27,7 @@ type TextInputWithIconsProps = {
   onBlur?: () => void;
   onFocus?: () => void;
   blurOnSubmit?: boolean;
+  multiline?: boolean;
 };
 
 export const TextInputWithIcons = memo(function TextInputWithIcons({
@@ -84,6 +85,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
         blurOnSubmit={blurOnSubmit}
         flex
         focusOnLoad={focusOnLoad}
+        multiline={multiline}
         onBlur={onBlurInternal}
         onChangeText={onTextChange}
         onFocus={onFocusInternal}

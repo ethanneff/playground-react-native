@@ -42,6 +42,7 @@ interface Props {
   onFocus?(): void;
   onBlur?(): void;
   onRef?: MutableRefObject<Original | null>;
+  multiline?: boolean;
 }
 
 export const TextInput = ({
@@ -67,6 +68,7 @@ export const TextInput = ({
   onRef,
   color,
   emphasis,
+  multiline,
   type,
   flex,
 }: Props): JSX.Element => {
@@ -140,8 +142,8 @@ export const TextInput = ({
         disableFullscreenUI={disableFullscreenUI}
         editable={editable}
         keyboardType={keyboardType}
+        multiline={multiline}
         onBlur={didBlur}
-        // multiline
         onChangeText={onChangeText}
         onFocus={didFocus}
         onSubmitEditing={onSubmitEditing}
