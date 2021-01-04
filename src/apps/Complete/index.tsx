@@ -8,7 +8,7 @@ import {
   StackNavigationOptions,
 } from '@react-navigation/stack';
 import React, {memo, useCallback} from 'react';
-import {Alert, Icon, Notification} from '../../components';
+import {Icon, Modal, Notification} from '../../components';
 import {useColor} from '../../hooks';
 import {rootMode, rootScreenOptions} from '../../providers/Navigation/configs';
 import {useRootSelector} from '../../utils';
@@ -101,7 +101,7 @@ export default memo(function Complete() {
       <RootStack.Screen component={Main} name="main" />
       <RootStack.Screen component={Account} name="account" />
       <RootStack.Screen component={Notification} name="notification" />
-      <RootStack.Screen component={Alert} name="alert" />
+      <RootStack.Screen component={Modal} name="alert" />
       <RootStack.Screen component={ItemDetail} name="item-detail" />
     </RootStack.Navigator>
   );

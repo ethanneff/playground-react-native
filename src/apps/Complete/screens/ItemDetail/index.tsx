@@ -1,10 +1,10 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {Keyboard, View} from 'react-native';
-import {Button, Text, TextInput} from '../../../../components';
+import {Button, Modal, Text, TextInput} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {Theme, useRootDispatch, useRootSelector} from '../../../../utils';
-import {AlertWrapper, Card} from '../../components';
+import {Card} from '../../components';
 import {removeItem, updateItem, updateListRemoveItem} from '../../models';
 
 // TODO: update does not go to previous screen
@@ -12,9 +12,9 @@ import {removeItem, updateItem, updateListRemoveItem} from '../../models';
 // TODO: delete needs confirmation alert
 
 export const ItemDetail = memo(function ItemDetail() {
-  const color = useColor();
   const dispatch = useRootDispatch();
   const {goBack} = useNavigation();
+  const color = useColor();
   const navBack = useCallback(() => goBack(), [goBack]);
   const itemId = useRootSelector((s) => s.completeItem.active);
   const listId = useRootSelector((s) => s.completeList.active);
@@ -39,7 +39,7 @@ export const ItemDetail = memo(function ItemDetail() {
   }, [dispatch, itemId, listId]);
 
   return !item ? null : (
-    <AlertWrapper backgroundColor={color.surface} onBackgroundPress={navBack}>
+    <Modal backgroundColor={color.surface} onBackgroundPress={navBack}>
       {!item ? (
         <View>
           <Text title="missing item" />
@@ -92,6 +92,6 @@ export const ItemDetail = memo(function ItemDetail() {
           </Card>
         </View>
       )}
-    </AlertWrapper>
+    </Modal>
   );
 });

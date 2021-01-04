@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import {FlatList, View} from 'react-native';
-import {Card, Dialog, Icon, Text} from '../../../../components';
+import {Card, Icon, Modal, Text} from '../../../../components';
 import {questionnairesInitialState} from '../models';
 
 export const Questionnaire = (): JSX.Element => {
@@ -53,7 +53,9 @@ export const Questionnaire = (): JSX.Element => {
         renderItem={renderItem}
       />
       {actionSheet && (
-        <Dialog onBackgroundPress={handleActionSheetClose} title="hello" />
+        <Modal onBackgroundPress={handleActionSheetClose}>
+          <Text title="hello" />
+        </Modal>
       )}
     </>
   );

@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import dayjs from 'dayjs';
 import React, {memo, useCallback, useEffect, useState} from 'react';
-import {Dialog, Screen} from '../../components';
+import {Modal, Screen, Text} from '../../components';
 import {List} from './List';
 import {Item} from './types';
 
@@ -75,26 +75,26 @@ export const Home = memo(function Home() {
         )}
       </Screen>
       {modalItemEdit.visible && (
-        <Dialog
+        <Modal
           duration={2000}
           onBackgroundPress={handleModalEditBackgroundPress}
-          testID="editItem"
-          title={modalItemEdit.item ? modalItemEdit.item.action : 'empty'}
-        />
+          testID="editItem">
+          <Text title={modalItemEdit.item?.action || 'empty'} />
+        </Modal>
       )}
       {modalProfile && (
-        <Dialog
+        <Modal
           onBackgroundPress={handleModalEditBackgroundPress}
-          testID="editItem"
-          title="hello"
-        />
+          testID="editItem">
+          <Text title="hello" />
+        </Modal>
       )}
       {modalLogin && (
-        <Dialog
+        <Modal
           onBackgroundPress={handleModalEditBackgroundPress}
-          testID="editItem"
-          title="hello"
-        />
+          testID="login">
+          <Text title="hello" />
+        </Modal>
       )}
     </>
   );

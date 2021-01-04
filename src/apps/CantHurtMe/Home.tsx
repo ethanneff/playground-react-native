@@ -1,6 +1,6 @@
-import React, {memo, useCallback, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {Dialog, Screen} from '../../components';
+import React, {memo, useCallback, useState} from 'react';
+import {Modal, Screen, Text} from '../../components';
 import {List} from './List';
 
 const initialState = {settings: false, profile: false};
@@ -34,17 +34,14 @@ export const Home = memo(function CantHurtMeMain() {
         />
       </Screen>
       {showModal.profile && (
-        <Dialog
-          duration={2000}
-          onBackgroundPress={handleModalBackgroundPress}
-          title="profile"
-        />
+        <Modal duration={2000} onBackgroundPress={handleModalBackgroundPress}>
+          <Text title="profile" />
+        </Modal>
       )}
       {showModal.settings && (
-        <Dialog
-          onBackgroundPress={handleModalBackgroundPress}
-          title="settings"
-        />
+        <Modal duration={2000} onBackgroundPress={handleModalBackgroundPress}>
+          <Text title="settings" />
+        </Modal>
       )}
     </>
   );

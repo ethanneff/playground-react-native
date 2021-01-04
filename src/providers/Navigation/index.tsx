@@ -3,8 +3,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import React, {lazy, memo, Suspense, useCallback} from 'react';
 import {
   ActivityIndicator,
-  Alert,
   Button,
+  Modal,
   Notification,
   Text,
 } from '../../components';
@@ -28,10 +28,10 @@ const AlertExample = () => {
   const {goBack} = useNavigation();
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Alert onBackgroundPress={navBack}>
+    <Modal onBackgroundPress={navBack}>
       <Text title="This is a alert!" type="h3" />
       <Button center onPress={navBack} title="Dismiss" />
-    </Alert>
+    </Modal>
   );
 };
 const NotificationExample = () => {

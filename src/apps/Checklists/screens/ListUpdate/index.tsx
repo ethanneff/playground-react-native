@@ -1,6 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {Button, Dialog, Input, Screen} from '../../../../components';
+import {View} from 'react-native';
+import {Button, Input, Modal, Screen, Text} from '../../../../components';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {getCurrentChecklist, removeList, updateList} from '../../models';
 
@@ -8,7 +9,7 @@ export default memo(function ChecklistUpdate() {
   const {navigate} = useNavigation();
   const dispatch = useRootDispatch();
   const checklist = useRootSelector(getCurrentChecklist);
-  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [form, setForm] = useState({
     name: checklist.name,
     description: checklist.description || '',
@@ -40,13 +41,13 @@ export default memo(function ChecklistUpdate() {
   }, [checklist, dispatch, form, isInvalidForm, navigate]);
 
   const handleDelete = useCallback(() => {
-    setShowDeleteDialog(false);
+    setShowDeleteModal(false);
     dispatch(removeList(checklist.id));
     navigate('checklists');
   }, [dispatch, checklist.id, navigate]);
 
-  const handleDeletePress = useCallback(() => setShowDeleteDialog(true), []);
-  const handleDeleteCancel = useCallback(() => setShowDeleteDialog(false), []);
+  const handleDeletePress = useCallback(() => setShowDeleteModal(true), []);
+  const handleDeleteCancel = useCallback(() => setShowDeleteModal(false), []);
   const navBack = useCallback(() => navigate('checklists'), [navigate]);
 
   return (
@@ -61,13 +62,14 @@ export default memo(function ChecklistUpdate() {
         <Button onPress={handleSubmit} title="update" />
         <Button color="danger" onPress={handleDeletePress} title="delete" />
       </Screen>
-      {showDeleteDialog && (
-        <Dialog
-          onBackgroundPress={handleDeleteCancel}
-          onCancelButtonPress={handleDeleteCancel}
-          onConfirmButtonPress={handleDelete}
-          title="are you sure?"
-        />
+      {showDeleteModal && (
+        <Modal onBackgroundPress={handleDeleteCancel}>
+          <View>
+            <Text title="are you sure" />
+            <Button onPress={handleDeleteCancel} title="cancel" />
+            <Button onPress={handleDelete} title="confirm" />
+          </View>
+        </Modal>
       )}
     </>
   );

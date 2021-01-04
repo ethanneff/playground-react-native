@@ -1,84 +1,119 @@
-import React, {memo, ReactNode} from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
-import {useColor, useDropShadow} from '../../hooks';
-import {Theme, useRootSelector} from '../../utils';
+import React, {memo, ReactElement, useCallback, useEffect, useRef} from 'react';
+import {Animated, StyleSheet} from 'react-native';
+import {
+  ScrollView,
+  TouchableWithoutFeedback,
+} from '../../conversions/GestureHandler';
+import {useColor, useDriver, useDropShadow} from '../../hooks';
+import {useRootSelector} from '../../utils';
 import {Card} from '../Card';
-import {TouchableOpacity} from '../TouchableOpacity';
 
-interface Props {
+type ModalProps = {
   testID?: string;
+  duration?: number;
   elevation?: number;
-  maxHeight?: number;
-  maxWidth?: number;
   noScroll?: boolean;
   onBackgroundPress?(): void;
-  children: ReactNode | ReactNode[];
-}
-export const Modal = memo(function ModalWrapperMemo({
-  testID,
+  backgroundColor?: string;
+  children: ReactElement | ReactElement[];
+};
+
+const fadeDuration = 150;
+export const Modal = memo(function Modal({
   onBackgroundPress,
   children,
-  elevation = 4,
+  backgroundColor,
+  duration,
   noScroll,
-  maxWidth = 500,
-  maxHeight,
-}: Props) {
-  const appHeight = useRootSelector((state) => state.dimension.window.height);
-  const maximumHeight = maxHeight ? maxHeight : appHeight * 0.6;
+  elevation,
+  testID,
+}: ModalProps) {
   const color = useColor();
+  const useNativeDriver = useDriver();
   const dropShadow = useDropShadow();
+  const {width, height} = useRootSelector((s) => s.dimension.screen);
   const styles = StyleSheet.create({
     container: {
+      bottom: 0,
+      elevation: 1,
+      left: 0,
+      position: 'absolute',
+      right: 0,
+      top: 0,
+      zIndex: 1,
+    },
+    modal: {
+      backgroundColor: backgroundColor || color.background,
+      maxHeight: height * 0.6,
+      width: width * 0.8,
+      ...dropShadow(10),
+    },
+    overlay: {
       alignItems: 'center',
       height: '100%',
       justifyContent: 'center',
-      position: 'absolute',
-      width: '100%',
-    },
-    modal: {
-      backgroundColor: color.background,
-      borderRadius: Theme.sizing.borderRadius,
-      maxHeight: maximumHeight,
-      maxWidth,
-      overflow: 'hidden',
-      position: 'absolute',
-      width: '80%',
-      ...dropShadow(10),
-    },
-    modalContent: {
-      padding: Theme.padding.p08,
-    },
-    overlay: {
-      backgroundColor: color.overlay,
-      flex: 1,
-      width: '100%',
     },
   });
+  const fade = useRef(new Animated.Value(0)).current;
+  const opacity = fade;
+  const containerStyle = [styles.container, {opacity}];
+
+  // TODO: animation is not clean on devices
+  const animate = useCallback(
+    (toValue: number) => {
+      return new Promise((resolve) => {
+        Animated.timing(fade, {
+          duration: fadeDuration,
+          toValue,
+          useNativeDriver,
+        }).start(resolve);
+      });
+    },
+    [fade, useNativeDriver],
+  );
+
+  const dismiss = useCallback(
+    (callback?: () => void) => async () => {
+      if (!callback) return;
+
+      await animate(0);
+      callback();
+    },
+    [animate],
+  );
+
+  useEffect(() => {
+    animate(1);
+    if (!duration) return () => undefined;
+
+    const alertTimeout = setTimeout(dismiss(onBackgroundPress), duration);
+    return () => {
+      clearTimeout(alertTimeout);
+    };
+  }, [animate, duration, dismiss, onBackgroundPress]);
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        activeOpacity={1}
-        onPress={onBackgroundPress}
+    <Animated.View style={containerStyle}>
+      <TouchableWithoutFeedback
+        onPress={dismiss(onBackgroundPress)}
         style={styles.overlay}
-        testID={testID}
-      />
-      <Card
-        elevation={elevation}
-        noMargin
-        noPadding
-        style={styles.modal}
-        testID="modal">
-        {noScroll ? (
-          <View style={styles.modalContent}>{children}</View>
-        ) : (
-          <ScrollView
-            contentContainerStyle={styles.modalContent}
-            keyboardShouldPersistTaps="handled">
-            {children}
-          </ScrollView>
-        )}
-      </Card>
-    </View>
+        testID={testID}>
+        <TouchableWithoutFeedback onPress={undefined}>
+          <Card
+            elevation={elevation}
+            noMargin
+            style={styles.modal}
+            testID="modal">
+            {noScroll ? (
+              children
+            ) : (
+              <ScrollView showsVerticalScrollIndicator={false}>
+                {children}
+              </ScrollView>
+            )}
+          </Card>
+        </TouchableWithoutFeedback>
+      </TouchableWithoutFeedback>
+    </Animated.View>
   );
 });

@@ -1,9 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
-import {Button, Text} from '../../../../components';
+import {Button, Modal, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {Theme, useRootDispatch} from '../../../../utils';
-import {AlertWrapper, Card} from '../../components';
+import {Card} from '../../components';
 import {
   createBoard,
   createItem,
@@ -44,7 +44,7 @@ export const Account = memo(function Account() {
   const onNavToAdmin = useCallback(() => navigate('admin'), [navigate]);
 
   return (
-    <AlertWrapper backgroundColor={color.surface} onBackgroundPress={navBack}>
+    <Modal backgroundColor={color.surface} onBackgroundPress={navBack}>
       <Card>
         <Text
           style={{paddingBottom: Theme.padding.p04}}
@@ -81,6 +81,6 @@ export const Account = memo(function Account() {
       <Button onPress={onLogout} title="logout" />
       <Button onPress={onSetActive} title="set active" />
       <Button onPress={onNavToAdmin} title="go to admin" />
-    </AlertWrapper>
+    </Modal>
   );
 });

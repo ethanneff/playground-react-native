@@ -1,7 +1,6 @@
 export * from './AddButton';
 export * from './AddItem';
 export * from './AddList';
-export * from './AlertWrapper';
 export * from './Board';
 export * from './Card';
 export * from './List';
