@@ -35,6 +35,7 @@ export const TextField = memo(function TextField() {
       style={{
         flexDirection: 'row',
         justifyContent: 'center',
+        alignItems: 'center',
       }}>
       <Input
         flex
