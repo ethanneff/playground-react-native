@@ -3,38 +3,18 @@ import {TextInput as Original, View} from 'react-native';
 import {Icon, TextInput} from '../../../components';
 import {useColor} from '../../../hooks';
 
-type TextInputIconsProps = {
-  icons: Icon[];
-  type: 'focus' | 'blur';
+type Icon = {
+  name: string;
+  onPress: (text: string) => void;
+  hidden?: boolean;
+  color?: string;
+  focus?: boolean;
 };
 
-const TextInputIcons = memo(function TextInputIcons({
-  type,
-  icons,
-}: TextInputIconsProps) {
-  return (
-    <View style={{flexDirection: 'row', alignItems: 'center'}}>
-      {icons.map((icon) =>
-        icon.hidden ? null : (
-          <Icon
-            key={`${icon.name}-${type}`}
-            name={icon.name}
-            onPress={icon.handlePress}
-            padded
-          />
-        ),
-      )}
-    </View>
-  );
-});
-
-type TextInputIsolatedProps = {
-  onBlur: () => void;
-  onFocus: () => void;
-  onSubmit: (text: string) => void;
-  placeholder: string;
+type TextInputWithIconsProps = {
   value: string;
   onRef: MutableRefObject<Original | null>;
+  icons: Icon[];
 };
 
 const TextInputIsolated = memo(function TextInputIsolated({
@@ -112,6 +92,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
 
   const onFocus = useCallback(() => setShowControls(true), []);
   const onBlur = useCallback(() => setShowControls(false), []);
+  const onIconPressInternal = useCallback((c) => () => c(text), [text]);
 
   return (
     <View style={{flex: 1, flexDirection: 'row'}}>
@@ -123,11 +104,21 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
         placeholder={placeholder}
         value={value}
       />
-      {showControls ? (
-        <TextInputIcons icons={icons.focus} type="focus" />
-      ) : (
-        <TextInputIcons icons={icons.blur} type="blur" />
-      )}
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        {icons.map((icon) =>
+          icon.hidden ||
+          (showControls && !icon.focus) ||
+          (!showControls && icon.focus) ? null : (
+            <Icon
+              color={icon.color}
+              key={`${icon.name}-focus`}
+              name={icon.name}
+              onPress={onIconPressInternal(icon.onPress)}
+              padded
+            />
+          ),
+        )}
+      </View>
     </View>
   );
 });

@@ -69,13 +69,17 @@ export const ListItem = memo(function ListItem({
     textInputRef.current?.focus();
   }, []);
 
-  const icons = {
-    focus: [{name: 'close', handlePress: onItemTitleClose}],
-    blur: [
-      {name: 'dots-horizontal', handlePress: onItemDetails},
-      {name: 'chevron-right', handlePress: onItemNav, hidden: !item.board},
-    ],
-  };
+  const icons = [
+    {name: 'close', onPress: onItemTitleClose, focus: true},
+    {
+      name: 'send',
+      onPress: onItemTitleSubmit,
+      color: color.primary,
+      focus: true,
+    },
+    {name: 'dots-horizontal', onPress: onItemDetails},
+    {name: 'chevron-right', onPress: onItemNav, hidden: !item.board},
+  ];
 
   return (
     <TouchableOpacity
