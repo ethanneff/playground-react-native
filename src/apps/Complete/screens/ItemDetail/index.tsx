@@ -64,7 +64,7 @@ export const ItemDetail = memo(function ItemDetail() {
         <Text title="missing item" />
       ) : (
         <View>
-          <Card>
+          <Card margin="bottom">
             <TextInputWithIcons
               icons={icons('title')}
               onSubmit={onItemSubmit('title')}
@@ -73,7 +73,7 @@ export const ItemDetail = memo(function ItemDetail() {
               value={item.title}
             />
           </Card>
-          <Card>
+          <Card margin="bottom">
             <TextInputWithIcons
               icons={icons('description')}
               onSubmit={onItemSubmit('description')}
@@ -81,7 +81,7 @@ export const ItemDetail = memo(function ItemDetail() {
               value={item.description || ''}
             />
           </Card>
-          <Card>
+          <Card margin="bottom">
             <Text
               style={{paddingBottom: Theme.padding.p04}}
               title="Reminders"

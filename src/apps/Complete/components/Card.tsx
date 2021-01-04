@@ -8,14 +8,14 @@ import {config} from '../configs';
 type CardProps = {
   onLayout?: (event: LayoutChangeEvent) => void;
   children: ReactElement | ReactElement[];
-  margin?: 'bottom' | 'right';
+  margin?: 'bottom' | 'right' | 'none';
   width?: number;
 };
 
 export const Card = memo(function Card({
   children,
   onLayout,
-  margin = 'bottom',
+  margin = 'none',
   width,
 }: CardProps) {
   const color = useColor();
