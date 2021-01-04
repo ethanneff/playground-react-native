@@ -35,12 +35,12 @@ export const Capture = memo(function Capture() {
     (key: string) => (event: LayoutChangeEvent) => {
       const {height} = event.nativeEvent.layout;
       const preventMultipleUpdates =
-        key === 'container' && dimensions.container > 0;
+        dimensions.container > 0 && dimensions.button > 0;
       if (preventMultipleUpdates) return;
 
       setDimensions((p) => ({...p, [key]: height}));
     },
-    [dimensions.container],
+    [dimensions.button, dimensions.container],
   );
 
   const navToAccount = useCallback(() => navigate('account'), [navigate]);
