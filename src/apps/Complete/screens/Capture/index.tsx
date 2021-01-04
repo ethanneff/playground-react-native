@@ -34,13 +34,12 @@ export const Capture = memo(function Capture() {
   const onLayout = useCallback(
     (key: string) => (event: LayoutChangeEvent) => {
       const {height} = event.nativeEvent.layout;
-      const preventMultipleUpdates =
-        dimensions.container > 0 && dimensions.button > 0;
+      const {container, button} = dimensions;
+      const preventMultipleUpdates = container > 0 && button > 0;
       if (preventMultipleUpdates) return;
-
       setDimensions((p) => ({...p, [key]: height}));
     },
-    [dimensions.button, dimensions.container],
+    [dimensions],
   );
 
   const navToAccount = useCallback(() => navigate('account'), [navigate]);
