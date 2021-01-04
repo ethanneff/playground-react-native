@@ -14,10 +14,7 @@ export const ItemDetail = memo(function ItemDetail() {
   const dispatch = useRootDispatch();
   const {goBack} = useNavigation();
   const color = useColor();
-  const navBack = useCallback(() => {
-    console.log('black');
-    goBack();
-  }, [goBack]);
+  const navBack = useCallback(() => goBack(), [goBack]);
   const itemId = useRootSelector((s) => s.completeItem.active);
   const listId = useRootSelector((s) => s.completeList.active);
   const item = useRootSelector((s) => s.completeItem.items[itemId || '']);
@@ -33,7 +30,6 @@ export const ItemDetail = memo(function ItemDetail() {
   }, [dispatch, goBack, itemId, listId]);
 
   const onItemClose = useCallback(() => {
-    console.log('here');
     Keyboard.dismiss();
   }, []);
 
