@@ -1,6 +1,6 @@
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
-import {Icon, TouchableOpacity} from '../../components';
+import {Icon} from '../../components';
 import {useColor} from '../../hooks';
 
 interface Props {
@@ -39,13 +39,13 @@ export const Rating = memo(function RatingMemo({
       {Array(count)
         .fill(0)
         .map((_, index) => (
-          <TouchableOpacity key={index} onPress={handleOnPress(index)}>
-            <Icon
-              color={index > rating || !rating ? unfilled : fill}
-              name={index > rating || !rating ? iconUnfilled : iconFilled}
-              size={size}
-            />
-          </TouchableOpacity>
+          <Icon
+            color={index > rating || !rating ? unfilled : fill}
+            key={index}
+            name={index > rating || !rating ? iconUnfilled : iconFilled}
+            onPress={handleOnPress(index)}
+            size={size}
+          />
         ))}
     </View>
   );
