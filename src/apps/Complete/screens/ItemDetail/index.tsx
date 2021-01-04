@@ -65,29 +65,48 @@ export const ItemDetail = memo(function ItemDetail() {
   }, []);
 
   return !item ? null : (
-    <Modal backgroundColor={color.surface} onBackgroundPress={navBack}>
-      {!item ? (
-        <Text title="missing item" />
-      ) : (
-        <View>
-          <Card margin="bottom">
-            <TextInputWithIcons
-              icons={icons('title')}
-              onSubmit={onItemSubmit('title')}
-              placeholder="item title..."
-              type="h4"
-              value={item.title}
-            />
-          </Card>
-          <Card margin="bottom">
-            <TextInputWithIcons
-              icons={icons('description')}
-              onSubmit={onItemSubmit('description')}
-              placeholder="item details..."
-              value={item.description || ''}
-            />
-          </Card>
-          <Card margin="bottom">
+    <>
+      <Modal backgroundColor={color.surface} onBackgroundPress={navBack}>
+        {!item ? (
+          <Text title="missing item" />
+        ) : (
+          <View>
+            <Card margin="bottom">
+              <TextInputWithIcons
+                icons={icons('title')}
+                onSubmit={onItemSubmit('title')}
+                placeholder="item title..."
+                type="h4"
+                value={item.title}
+              />
+            </Card>
+            <Card margin="bottom">
+              <TextInputWithIcons
+                icons={icons('description')}
+                multiline
+                onSubmit={onItemSubmit('description')}
+                placeholder="item details..."
+                value={item.description || ''}
+              />
+            </Card>
+            <Card margin="bottom">
+              <Text
+                style={{paddingBottom: Theme.padding.p04}}
+                title="Reminders"
+                type="h3"
+              />
+            </Card>
+            <Card>
+              <Button
+                center
+                color="danger"
+                onPress={onDeletePress}
+                title="delete"
+              />
+            </Card>
+          </View>
+        )}
+      </Modal>
       {!deleteModal ? null : (
         <Modal
           onBackgroundPress={onDeleteClose}
@@ -95,9 +114,9 @@ export const ItemDetail = memo(function ItemDetail() {
           widthPercent={0.5}>
           <View style={{alignItems: 'center'}}>
             <Text
-              style={{paddingBottom: Theme.padding.p04}}
-              title="Reminders"
-              type="h3"
+              style={{paddingBottom: Theme.padding.p02}}
+              title="Are you sure?"
+              type="h4"
             />
             <View style={{flexDirection: 'row', justifyContent: 'center'}}>
               <Button
