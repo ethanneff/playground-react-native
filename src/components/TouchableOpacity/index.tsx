@@ -1,5 +1,6 @@
 import React, {ReactNode, useCallback} from 'react';
-import {StyleProp, TouchableOpacity as Original, ViewStyle} from 'react-native';
+import {StyleProp, ViewStyle} from 'react-native';
+import {TouchableOpacity as Original} from '../../conversions/GestureHandler';
 import {SoundManager} from '../../utils/Sound';
 
 interface Props {
