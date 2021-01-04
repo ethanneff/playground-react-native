@@ -1,5 +1,5 @@
 import React, {memo, ReactElement, useCallback, useEffect, useRef} from 'react';
-import {Animated, StyleSheet} from 'react-native';
+import {Animated, StyleSheet, View} from 'react-native';
 import {
   ScrollView,
   TouchableWithoutFeedback,
@@ -10,13 +10,13 @@ import {SoundManager} from '../../utils/Sound';
 import {Card} from '../Card';
 
 type ModalProps = {
-  testID?: string;
   duration?: number;
   elevation?: number;
   noScroll?: boolean;
   onBackgroundPress?(): void;
   backgroundColor?: string;
   children: ReactElement | ReactElement[];
+  testID?: string;
 };
 
 const fadeDuration = 150;
@@ -99,23 +99,24 @@ export const Modal = memo(function Modal({
     <Animated.View style={containerStyle}>
       <TouchableWithoutFeedback
         onPress={dismiss(onBackgroundPress)}
-        style={styles.overlay}
         testID={testID}>
-        <TouchableWithoutFeedback onPress={undefined}>
-          <Card
-            elevation={elevation}
-            noMargin
-            style={styles.modal}
-            testID="modal">
-            {noScroll ? (
-              children
-            ) : (
-              <ScrollView showsVerticalScrollIndicator={false}>
-                {children}
-              </ScrollView>
-            )}
-          </Card>
-        </TouchableWithoutFeedback>
+        <View style={styles.overlay}>
+          <TouchableWithoutFeedback>
+            <Card
+              elevation={elevation}
+              noMargin
+              style={styles.modal}
+              testID="modal">
+              {noScroll ? (
+                children
+              ) : (
+                <ScrollView showsVerticalScrollIndicator={false}>
+                  {children}
+                </ScrollView>
+              )}
+            </Card>
+          </TouchableWithoutFeedback>
+        </View>
       </TouchableWithoutFeedback>
     </Animated.View>
   );
