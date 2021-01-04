@@ -71,6 +71,7 @@ export const ListItem = memo(function ListItem({
       onPress: onItemTitleSubmit,
       color: color.primary,
       focus: true,
+      required: true,
     },
     {name: 'dots-horizontal', onPress: onItemDetails},
     {name: 'chevron-right', onPress: onItemNav, hidden: !item.board},

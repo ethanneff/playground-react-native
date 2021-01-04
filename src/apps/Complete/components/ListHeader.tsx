@@ -28,7 +28,13 @@ export const ListHeader = memo(function ListHeader({listId}: ListHeaderProps) {
 
   const icons = [
     {name: 'close', onPress: onClose, focus: true},
-    {name: 'send', onPress: onSave, color: color.primary, focus: true},
+    {
+      name: 'send',
+      onPress: onSave,
+      color: color.primary,
+      focus: true,
+      required: true,
+    },
     {name: 'dots-horizontal', onPress: onDetail},
   ];
 

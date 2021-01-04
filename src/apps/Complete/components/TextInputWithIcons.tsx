@@ -11,6 +11,7 @@ type Icon = {
   hidden?: boolean;
   color?: string;
   focus?: boolean;
+  required?: boolean;
 };
 
 type TextInputWithIconsProps = {
@@ -81,6 +82,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
           (!showControls && icon.focus) ? null : (
             <Icon
               color={icon.color}
+              disabled={icon.required && text.trim().length === 0}
               key={`${icon.name}-focus`}
               name={icon.name}
               onPress={onIconPressInternal(icon.onPress)}
