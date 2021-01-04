@@ -50,11 +50,6 @@ export const ListItem = memo(function ListItem({
     navigate('board');
   }, [dispatch, item.board, navigate]);
 
-  const onItemDelete = useCallback(() => {
-    dispatch(removeItem(itemId));
-    dispatch(updateListRemoveItem({listId, itemId}));
-  }, [dispatch, itemId, listId]);
-
   const onItemDetails = useCallback(() => {
     dispatch(setActiveItem(itemId));
     dispatch(setActiveList(listId));
