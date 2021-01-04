@@ -163,6 +163,9 @@ export const colorWithOpacity = (colorCode: string, opacity = 0.5): string => {
   return `hsla(${substr}, ${boundedOpacity})`;
 };
 
+export const getDisabledColor = (colorCode: string): string =>
+  colorWithOpacity(colorCode, 0.38);
+
 type GetFontStylesProps = {
   emphasis?: FontEmphasis;
   color?: keyof Color;

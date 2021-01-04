@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
-import {colorWithOpacity, Theme} from '../../utils';
+import {Theme} from '../../utils';
 import {Color} from './../../models/Theme';
+import {getDisabledColor} from './../../utils/Theme/index';
 import {ButtonEmphasis} from './types';
 
 export const getButtonColor = (
@@ -30,13 +31,13 @@ export const getStyles = ({
     container: {
       backgroundColor:
         disable && emphasis === 'high'
-          ? colorWithOpacity(color, 0.38)
+          ? getDisabledColor(color)
           : emphasis === 'high'
           ? color
           : 'transparent',
       borderColor:
         disable && emphasis === 'medium'
-          ? colorWithOpacity(color, 0.38)
+          ? getDisabledColor(color)
           : emphasis === 'medium'
           ? colorScheme.dark
           : 'transparent',
@@ -60,7 +61,7 @@ export const getStyles = ({
     },
     text: {
       color: disable
-        ? colorWithOpacity(color, 0.38)
+        ? getDisabledColor(color)
         : emphasis === 'high'
         ? colorScheme.background
         : color,
