@@ -30,6 +30,7 @@ export const completeBoardActions = {
 /* SELECTORS */
 export const getBoards = (state: RootState): Boards =>
   state.completeBoard.items;
+
 export const getInboxBoardId = createSelector(
   [getUser, getBoards],
   (user, boards) => {
@@ -37,10 +38,10 @@ export const getInboxBoardId = createSelector(
       (boardId) => boards[boardId].title === 'Inbox',
     )[0];
     if (!inboxBoardId) throw new Error('missing inbox board');
-
     return inboxBoardId;
   },
 );
+
 export const getCategoryBoardId = createSelector(
   [getUser, getBoards],
   (user, boards) => {
@@ -48,7 +49,6 @@ export const getCategoryBoardId = createSelector(
       (boardId) => boards[boardId].title !== 'Inbox',
     )[0];
     if (!categoryBoardId) throw new Error('missing category board');
-
     return categoryBoardId;
   },
 );
