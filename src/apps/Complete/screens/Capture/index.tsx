@@ -1,12 +1,12 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, Platform, View} from 'react-native';
-import {KeyboardHandler, Screen, Text} from '../../../../components';
+import {Button, KeyboardHandler, Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {useRootSelector} from '../../../../utils';
-import {List, OrganizeButton} from '../../components';
+import {Card, List} from '../../components';
 import {config} from '../../configs';
-import {getInboxListId} from '../../models';
+import {getInboxBoardId} from '../../models';
 
 export const Capture = memo(function Capture() {
   const color = useColor();
@@ -30,6 +30,9 @@ export const Capture = memo(function Capture() {
   const boardId = useRootSelector(getInboxBoardId);
   const listId = useRootSelector(
     (s) => s.completeBoard.items[boardId].lists[0],
+  );
+  const noListItems = useRootSelector(
+    (s) => s.completeList.items[listId].items.length === 0,
   );
 
   const onOrganize = useCallback(() => undefined, []);
@@ -62,11 +65,15 @@ export const Capture = memo(function Capture() {
               placeholder="Item title..."
               title="Add item"
             />
-            <OrganizeButton
-              listId={listId}
-              onLayout={onLayout('button')}
-              onPress={onOrganize}
-            />
+            <Card onLayout={onLayout('button')}>
+              <Button
+                center
+                color="primary"
+                disable={noListItems}
+                onPress={onOrganize}
+                title="Organize"
+              />
+            </Card>
           </View>
         ) : (
           <Text title="missing account" />
