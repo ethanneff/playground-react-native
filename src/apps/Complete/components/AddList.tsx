@@ -1,6 +1,6 @@
 import React, {memo, useCallback} from 'react';
 import {v4} from 'uuid';
-import {useRootDispatch} from '../../../utils';
+import {useRootDispatch, useRootSelector} from '../../../utils';
 import {createList, List, updateBoardAddList} from '../models';
 import {AddButton} from './AddButton';
 
@@ -18,12 +18,16 @@ export const AddList = memo(function AddList({
   width,
 }: AddListProps) {
   const dispatch = useRootDispatch();
+  const userId = useRootSelector((s) => s.completeUser?.id);
+  if (!userId) throw new Error('missing user id on add list');
   const onSubmit = useCallback(
     (value: string) => {
       const listId = v4();
       const date = Date.now();
       const list: List = {
         id: listId,
+        userId,
+        default: false,
         active: true,
         title: value,
         createdAt: date,
@@ -33,7 +37,7 @@ export const AddList = memo(function AddList({
       dispatch(createList(list));
       dispatch(updateBoardAddList({boardId, listId}));
     },
-    [boardId, dispatch],
+    [boardId, dispatch, userId],
   );
 
   return (
