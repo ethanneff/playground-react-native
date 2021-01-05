@@ -3,6 +3,7 @@ export * from './AddItem';
 export * from './AddList';
 export * from './Board';
 export * from './Card';
+export * from './DeleteModal';
 export * from './List';
 export * from './ListHeader';
 export * from './ListHeaderInput';

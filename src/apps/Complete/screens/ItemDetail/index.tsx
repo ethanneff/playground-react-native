@@ -108,26 +108,7 @@ export const ItemDetail = memo(function ItemDetail() {
         )}
       </Modal>
       {!deleteModal ? null : (
-        <Modal
-          onBackgroundPress={onDeleteClose}
-          overlayColor
-          widthPercent={0.5}>
-          <View style={{alignItems: 'center'}}>
-            <Text
-              style={{paddingBottom: Theme.padding.p02}}
-              title="Are you sure?"
-              type="h4"
-            />
-            <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-              <Button
-                color="secondary"
-                onPress={onDeleteClose}
-                title="cancel"
-              />
-              <Button onPress={onItemDelete} title="delete" />
-            </View>
-          </View>
-        </Modal>
+        <DeleteModal onCancel={onDeleteClose} onDelete={onItemDelete} />
       )}
     </>
   );
