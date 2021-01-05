@@ -41,6 +41,7 @@ export type CompleteListReducer = {
 export type List = {
   id: string;
   title: string;
+  description?: string;
   active: boolean;
   default: boolean;
   createdAt: number;
