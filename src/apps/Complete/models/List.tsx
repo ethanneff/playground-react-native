@@ -1,7 +1,5 @@
-import {createSelector} from 'reselect';
 import {RootAction, RootState} from 'root-types';
 import {createAction, getType} from 'typesafe-actions';
-import {getBoards, getCategoryBoardId, getInboxBoardId} from './Board';
 import {removeUser} from './User';
 
 /* ACTIONS */
@@ -34,25 +32,6 @@ export const completeListActions = {
 
 /* SELECTORS */
 export const getLists = (state: RootState): Lists => state.completeList.items;
-export const getInboxListId = createSelector(
-  [getInboxBoardId, getBoards],
-  (boardId, boards) => {
-    const listIds = boards[boardId].lists[0];
-    if (!listIds) throw new Error('missing inbox list');
-
-    return listIds;
-  },
-);
-
-export const getCategoryListIds = createSelector(
-  [getCategoryBoardId, getBoards],
-  (boardId, boards) => {
-    const listIds = boards[boardId].lists;
-    if (!listIds) throw new Error('missing category lists');
-
-    return listIds;
-  },
-);
 
 /* INTERFACES */
 export type CompleteListReducer = {

@@ -46,7 +46,7 @@ export const getCategoryBoardId = createSelector(
   [getUser, getBoards],
   (user, boards) => {
     const categoryBoardId = user?.boards.filter(
-      (boardId) => boards[boardId].title !== 'Inbox',
+      (boardId) => boards[boardId].title === 'Categories',
     )[0];
     if (!categoryBoardId) throw new Error('missing category board');
     return categoryBoardId;
