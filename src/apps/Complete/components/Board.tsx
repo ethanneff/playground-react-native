@@ -44,6 +44,7 @@ export const Board = memo(function Board({
     ({item}) => {
       return (
         <List
+          boardId={boardId}
           key={item}
           listId={item}
           listMaxHeight={listMaxHeight}
@@ -54,7 +55,7 @@ export const Board = memo(function Board({
         />
       );
     },
-    [listMaxHeight, listWidth],
+    [boardId, listMaxHeight, listWidth],
   );
 
   return (

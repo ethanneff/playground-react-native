@@ -27,7 +27,10 @@ export const Capture = memo(function Capture() {
         keyboardHeight -
         (android ? config.padding * 3 : config.padding * 4);
 
-  const listId = useRootSelector(getInboxListId);
+  const boardId = useRootSelector(getInboxBoardId);
+  const listId = useRootSelector(
+    (s) => s.completeBoard.items[boardId].lists[0],
+  );
 
   const onOrganize = useCallback(() => undefined, []);
 
@@ -53,6 +56,7 @@ export const Capture = memo(function Capture() {
         {listId ? (
           <View style={{height: '100%', padding: config.padding}}>
             <List
+              boardId={boardId}
               listId={listId}
               listMaxHeight={listHeight}
               placeholder="Item title..."

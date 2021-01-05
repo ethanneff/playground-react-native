@@ -1,16 +1,22 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {Keyboard, View} from 'react-native';
 import {useColor} from '../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../utils';
-import {updateListTitle} from '../models';
+import {setActiveBoard, setActiveList, updateListTitle} from '../models';
 import {TextInputWithIcons} from './TextInputWithIcons';
 
 type ListHeaderProps = {
   listId: string;
+  boardId: string;
 };
 
-export const ListHeader = memo(function ListHeader({listId}: ListHeaderProps) {
+export const ListHeader = memo(function ListHeader({
+  listId,
+  boardId,
+}: ListHeaderProps) {
   const dispatch = useRootDispatch();
+  const {navigate} = useNavigation();
   const color = useColor();
   const list = useRootSelector((s) => s.completeList.items[listId]);
 
@@ -22,7 +28,11 @@ export const ListHeader = memo(function ListHeader({listId}: ListHeaderProps) {
     [dispatch, listId],
   );
 
-  const onDetail = useCallback(() => undefined, []);
+  const onDetail = useCallback(() => {
+    dispatch(setActiveBoard(boardId));
+    dispatch(setActiveList(listId));
+    navigate('list-detail');
+  }, [boardId, dispatch, listId, navigate]);
 
   const onClose = useCallback(() => Keyboard.dismiss(), []);
 

@@ -8,6 +8,7 @@ import {ListItems} from './ListItems';
 type ListProps = {
   listWidth?: number;
   listId: string;
+  boardId: string;
   listMaxHeight: number;
   orientation?: 'vertical' | 'horizontal';
   title: string;
@@ -21,12 +22,13 @@ export const List = memo(function List({
   listMaxHeight,
   title,
   placeholder,
+  boardId,
 }: ListProps) {
   const margin = orientation === 'horizontal' ? 'right' : 'bottom';
   return (
     <View>
       <Card margin={margin} width={listWidth}>
-        <ListHeader listId={listId} />
+        <ListHeader boardId={boardId} listId={listId} />
         <ListItems listId={listId} maxHeight={listMaxHeight} />
         <AddItem listId={listId} placeholder={placeholder} title={title} />
       </Card>

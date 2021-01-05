@@ -6,7 +6,7 @@ import {useColor} from '../../../../hooks';
 import {useRootSelector} from '../../../../utils';
 import {List} from '../../components';
 import {config} from '../../configs';
-import {getCategoryListIds} from '../../models';
+import {getCategoryBoardId} from '../../models';
 
 // TODO: add journal
 // TODO: add historical data
@@ -18,7 +18,8 @@ import {getCategoryListIds} from '../../models';
 export const Projects = memo(function Projects() {
   const color = useColor();
   const {navigate} = useNavigation();
-  const listIds = useRootSelector(getCategoryListIds);
+  const boardId = useRootSelector(getCategoryBoardId);
+  const listIds = useRootSelector((s) => s.completeBoard.items[boardId].lists);
   const [dimensions, setDimensions] = useState(0);
 
   const onLayout = useCallback(
@@ -44,6 +45,7 @@ export const Projects = memo(function Projects() {
         <View style={{padding: config.padding}}>
           {listIds.map((listId) => (
             <List
+              boardId={boardId}
               key={listId}
               listId={listId}
               listMaxHeight={maxHeight}
