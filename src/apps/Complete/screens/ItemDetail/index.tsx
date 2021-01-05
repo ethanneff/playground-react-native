@@ -30,7 +30,6 @@ export const ItemDetail = memo(function ItemDetail() {
 
   const onItemSubmit = useCallback(
     (type: string) => (text: string) => {
-      console.log(type, text);
       dispatch(updateItem({...item, [type]: text}));
       Keyboard.dismiss();
     },
