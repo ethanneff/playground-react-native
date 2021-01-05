@@ -32,6 +32,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   ];
   const inboxList: List = {
     ...defaults(),
+    default: true,
     title: 'Inbox',
     items: inboxItems.map((item) => item.id),
   };
@@ -51,10 +52,15 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     {...defaults(), title: 'fix sink'},
   ];
   const homeLists: List[] = [
-    {...defaults(), title: 'Backlog', items: homeItems.map((item) => item.id)},
-    {...defaults(), title: 'Todo', items: []},
-    {...defaults(), title: 'In Progress', items: []},
-    {...defaults(), title: 'Done', items: []},
+    {
+      ...defaults(),
+      default: false,
+      title: 'Backlog',
+      items: homeItems.map((item) => item.id),
+    },
+    {...defaults(), default: false, title: 'Todo', items: []},
+    {...defaults(), default: false, title: 'In Progress', items: []},
+    {...defaults(), default: false, title: 'Done', items: []},
   ];
   const homeBoard: Board = {
     ...defaults(),
@@ -73,6 +79,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   const projectsList: List = {
     ...defaults(),
     title: 'Projects',
+    default: true,
     items: projectItems.map((item) => item.id),
   };
   const listsItems: Item[] = [
@@ -85,6 +92,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   const listsList: List = {
     ...defaults(),
     title: 'Lists',
+    default: true,
     items: listsItems.map((item) => item.id),
   };
   const categoryBoard: Board = {

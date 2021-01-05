@@ -63,6 +63,7 @@ export type List = {
   id: string;
   title: string;
   active: boolean;
+  default: boolean;
   createdAt: number;
   updatedAt: number;
   items: ReadonlyArray<string>;

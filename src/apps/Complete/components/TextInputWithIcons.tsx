@@ -29,6 +29,7 @@ type TextInputWithIconsProps = {
   blurOnSubmit?: boolean;
   multiline?: boolean;
   maxIconHeight?: number;
+  editable?: boolean;
 };
 
 export const TextInputWithIcons = memo(function TextInputWithIcons({
@@ -37,6 +38,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
   maxIconHeight = Theme.padding.p06,
   placeholder,
   backgroundColor,
+  editable,
   pointerEvents,
   focusOnLoad,
   icons,
@@ -98,6 +100,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
       <TextInput
         backgroundColor={bgColor}
         blurOnSubmit={blurOnSubmit}
+        editable={editable}
         flex
         focusOnLoad={focusOnLoad}
         multiline={multiline}

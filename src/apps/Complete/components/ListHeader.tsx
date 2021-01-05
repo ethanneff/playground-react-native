@@ -12,7 +12,7 @@ type ListHeaderProps = {
 export const ListHeader = memo(function ListHeader({listId}: ListHeaderProps) {
   const dispatch = useRootDispatch();
   const color = useColor();
-  const listTitle = useRootSelector((s) => s.completeList.items[listId].title);
+  const list = useRootSelector((s) => s.completeList.items[listId]);
 
   const onSave = useCallback(
     (title) => {
@@ -46,11 +46,12 @@ export const ListHeader = memo(function ListHeader({listId}: ListHeaderProps) {
         justifyContent: 'space-between',
       }}>
       <TextInputWithIcons
+        editable={!list.default}
         icons={icons}
         onSubmit={onSave}
         placeholder="List title..."
         type="h4"
-        value={listTitle}
+        value={list.title}
       />
     </View>
   );
