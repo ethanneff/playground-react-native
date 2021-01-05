@@ -44,6 +44,7 @@ export type Item = {
   active: boolean;
   createdAt: number;
   updatedAt: number;
+  childBoardId?: string;
   userId: string;
   tags?: ReadonlyArray<string>;
 };

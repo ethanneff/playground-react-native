@@ -44,11 +44,11 @@ export const ListItem = memo(function ListItem({
   );
 
   const onItemNav = useCallback(() => {
-    if (!item.board)
+    if (!item.childBoardId)
       throw new Error('item does not have a board to navigate to');
-    dispatch(setActiveBoard(item.board));
+    dispatch(setActiveBoard(item.childBoardId));
     navigate('board');
-  }, [dispatch, item.board, navigate]);
+  }, [dispatch, item.childBoardId, navigate]);
 
   const onItemDetails = useCallback(() => {
     dispatch(setActiveItem(itemId));
@@ -56,9 +56,7 @@ export const ListItem = memo(function ListItem({
     navigate('item-detail');
   }, [dispatch, itemId, listId, navigate]);
 
-  const onItemLongPress = useCallback(() => {
-    console.log('long press');
-  }, []);
+  const onItemLongPress = useCallback(() => undefined, []);
 
   const onItemPress = useCallback(() => {
     textInputRef.current?.focus();
@@ -74,7 +72,7 @@ export const ListItem = memo(function ListItem({
       required: true,
     },
     {name: 'dots-horizontal', onPress: onItemDetails},
-    {name: 'chevron-right', onPress: onItemNav, hidden: !item.board},
+    {name: 'chevron-right', onPress: onItemNav, hidden: !item.childBoardId},
   ];
 
   return (
