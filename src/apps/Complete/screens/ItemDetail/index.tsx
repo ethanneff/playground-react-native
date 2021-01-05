@@ -3,12 +3,11 @@ import React, {memo, useCallback, useState} from 'react';
 import {Keyboard, View} from 'react-native';
 import {Button, Modal, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {Theme, useRootDispatch, useRootSelector} from '../../../../utils';
-import {Card, TextInputWithIcons} from '../../components';
+import {useRootDispatch, useRootSelector} from '../../../../utils';
+import {Card, DeleteModal, ItemContext, ItemEdit} from '../../components';
 import {removeItem, updateItem, updateListRemoveItem} from '../../models';
 
 // TODO: update does not go to previous screen
-// TODO: delete does not go to previous screen
 
 export const ItemDetail = memo(function ItemDetail() {
   const dispatch = useRootDispatch();
@@ -29,10 +28,6 @@ export const ItemDetail = memo(function ItemDetail() {
     goBack();
   }, [dispatch, goBack, itemId, listId]);
 
-  const onItemClose = useCallback(() => {
-    Keyboard.dismiss();
-  }, []);
-
   const onItemSubmit = useCallback(
     (type: string) => (text: string) => {
       console.log(type, text);
@@ -42,27 +37,8 @@ export const ItemDetail = memo(function ItemDetail() {
     [dispatch, item],
   );
 
-  const icons = useCallback(
-    (type: string) => [
-      {name: 'close', onPress: onItemClose, focus: true},
-      {
-        name: 'send',
-        onPress: onItemSubmit(type),
-        color: color.primary,
-        focus: true,
-        required: true,
-      },
-    ],
-    [color.primary, onItemClose, onItemSubmit],
-  );
-
-  const onDeletePress = useCallback(() => {
-    setDeleteModal(true);
-  }, []);
-
-  const onDeleteClose = useCallback(() => {
-    setDeleteModal(false);
-  }, []);
+  const onDeletePress = useCallback(() => setDeleteModal(true), []);
+  const onDeleteClose = useCallback(() => setDeleteModal(false), []);
 
   return !item ? null : (
     <>
@@ -71,31 +47,26 @@ export const ItemDetail = memo(function ItemDetail() {
           <Text title="missing item" />
         ) : (
           <View>
+            <ItemEdit
+              description={item.description}
+              onSubmit={onItemSubmit}
+              placeholder="Item"
+              title={item.title}
+            />
             <Card margin="bottom">
-              <TextInputWithIcons
-                icons={icons('title')}
-                onSubmit={onItemSubmit('title')}
-                placeholder="item title..."
-                type="h4"
-                value={item.title}
-              />
+              <Text title="Reminders" />
             </Card>
             <Card margin="bottom">
-              <TextInputWithIcons
-                icons={icons('description')}
-                multiline
-                onSubmit={onItemSubmit('description')}
-                placeholder="item details..."
-                value={item.description || ''}
-              />
+              <Text title="Tags" />
             </Card>
             <Card margin="bottom">
-              <Text
-                style={{paddingBottom: Theme.padding.p04}}
-                title="Reminders"
-                type="h3"
-              />
+              <Text title="Comments" />
             </Card>
+            <ItemContext
+              createdAt={item.createdAt}
+              updatedAt={item.updatedAt}
+              userId={item.userId}
+            />
             <Card>
               <Button
                 center
