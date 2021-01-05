@@ -17,6 +17,7 @@ import {
   Capture,
   ItemDetail,
   Landing,
+  ListDetail,
   Project,
   Projects,
   Reflect,
@@ -103,6 +104,7 @@ export default memo(function Complete() {
       <RootStack.Screen component={Notification} name="notification" />
       <RootStack.Screen component={Modal} name="alert" />
       <RootStack.Screen component={ItemDetail} name="item-detail" />
+      <RootStack.Screen component={ListDetail} name="list-detail" />
     </RootStack.Navigator>
   );
 });
