@@ -8,6 +8,7 @@ import {Card, List} from '../../components';
 import {config} from '../../configs';
 import {getInboxBoardId} from '../../models';
 
+const initialState = {container: 0, button: 0};
 export const Capture = memo(function Capture() {
   const color = useColor();
   const {navigate} = useNavigation();
@@ -15,7 +16,7 @@ export const Capture = memo(function Capture() {
   const keyboardHeight = useRootSelector(
     (state) => state.device.keyboardHeight,
   );
-  const [dimensions, setDimensions] = useState({container: 0, button: 0});
+  const [dimensions, setDimensions] = useState(initialState);
   const android = Platform.OS === 'android';
 
   const listHeight =
@@ -38,7 +39,7 @@ export const Capture = memo(function Capture() {
   const onOrganize = useCallback(() => undefined, []);
 
   const onLayout = useCallback(
-    (key: string) => (event: LayoutChangeEvent) => {
+    (key: keyof typeof initialState) => (event: LayoutChangeEvent) => {
       const {height} = event.nativeEvent.layout;
       const {container, button} = dimensions;
       const preventMultipleUpdates = container > 0 && button > 0;
