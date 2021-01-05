@@ -66,6 +66,7 @@ export type List = {
   default: boolean;
   createdAt: number;
   updatedAt: number;
+  userId: string;
   items: ReadonlyArray<string>;
 };
 export type Lists = {[key: string]: List};

@@ -64,6 +64,7 @@ export type Board = {
   active: boolean;
   createdAt: number;
   updatedAt: number;
+  userId: string;
   lists: ReadonlyArray<string>;
 };
 export type Boards = {[key: string]: Board};

@@ -9,8 +9,10 @@ type GetDefaultUserTemplate = {
 };
 
 const date = Date.now();
+const userId = v4();
 const defaults = () => ({
   id: v4(),
+  userId,
   active: true,
   createdAt: date,
   updatedAt: date,
@@ -70,7 +72,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
 
   // category
   const projectItems: Item[] = [
-    {...defaults(), title: 'at home', board: homeBoard.id},
+    {...defaults(), title: 'at home', childBoardId: homeBoard.id},
     {...defaults(), title: 'at town'},
     {...defaults(), title: 'at work'},
     {...defaults(), title: 'at gym'},
@@ -104,6 +106,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   // user
   const user: User = {
     ...defaults(),
+    id: userId,
     name: 'Bob Smith',
     boards: [inboxBoard.id, categoryBoard.id],
   };

@@ -36,6 +36,7 @@ export type CompleteItemReducer = {
   active: string | undefined;
   items: Items;
 };
+
 export type Item = {
   id: string;
   title: string;
@@ -43,7 +44,7 @@ export type Item = {
   active: boolean;
   createdAt: number;
   updatedAt: number;
-  board?: string;
+  userId: string;
   tags?: ReadonlyArray<string>;
 };
 export type Items = {[key: string]: Item};
