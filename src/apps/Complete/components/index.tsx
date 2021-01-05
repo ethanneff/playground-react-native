@@ -6,7 +6,6 @@ export * from './Card';
 export * from './DeleteModal';
 export * from './List';
 export * from './ListHeader';
-export * from './ListHeaderInput';
 export * from './ListItem';
 export * from './ListItems';
 export * from './TextInputWithIcons';
