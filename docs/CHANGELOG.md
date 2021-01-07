@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.46.3](https://github.com/ethanneff/example/compare/v2.46.2...v2.46.3) (2021-01-07)
+
+
+### Bug Fixes
+
+* add description to lists ([6c794b6](https://github.com/ethanneff/example/commit/6c794b6f9d5175a96c331ee665b5e494b040450f))
+* add list details screen ([546b73f](https://github.com/ethanneff/example/commit/546b73f97a49c5135b6c628f3255bda732fbc348))
+* add userId to all models ([fbb725f](https://github.com/ethanneff/example/commit/fbb725fd22084005f1270c81d69a1a222046f2c7))
+* clean up selectors for selecting the category board ([211939a](https://github.com/ethanneff/example/commit/211939a61ef3df0038dea7b85f5fb2661862de80))
+* correct typings for onLayout ([231a882](https://github.com/ethanneff/example/commit/231a882fdb232d7f5ea5013ce2c3d1b6cc8d6451))
+* create delete modal for details screen ([94f5850](https://github.com/ethanneff/example/commit/94f58506e4b69e8964741750e9010f290dde748f))
+* create reusable itemcontext and itemedit components ([603efce](https://github.com/ethanneff/example/commit/603efce448aaea744a18c72502376687f71440e6))
+* make inbox list title not editable ([3d4a174](https://github.com/ethanneff/example/commit/3d4a1743ce2b266280d0418c2b7362838f0d0ea7))
+* pass boardId to list to nav to list-detail ([92da5bf](https://github.com/ethanneff/example/commit/92da5bf6b456b71633bd2a11ec8bbb4debc3e3bf))
+* pass userId on item and list creation ([7f6c986](https://github.com/ethanneff/example/commit/7f6c98644dd41e904e511b2ec116b149ab88fc70))
+* remove console log ([7fa24ef](https://github.com/ethanneff/example/commit/7fa24ef7779e415cd9f5d52a93e64dab082367b3))
+* remove organize button ([8894746](https://github.com/ethanneff/example/commit/889474666b1c850bc69eb2ad449cd17521399310))
+* remove unused listheaderinput component ([10d6d67](https://github.com/ethanneff/example/commit/10d6d67828084ae97f5844c2e80dc4460d85b25c))
+* rename board prop on redux item ([a292ea2](https://github.com/ethanneff/example/commit/a292ea2fc6ea403a9a8cbc858a9cc129d092b0e3))
+* update deps ([4940a81](https://github.com/ethanneff/example/commit/4940a819d62cd1c44b9700472e75001d8619dec5))
+* update deps ([68d2d54](https://github.com/ethanneff/example/commit/68d2d548f3c194147f0b2fc35f9ed8c8d2239f47))
+* update relative date to pass text props ([29bf2cb](https://github.com/ethanneff/example/commit/29bf2cb7ded7ba61fa0f54d2dc1596d07d919604))
+
 ## [2.46.2](https://github.com/ethanneff/example/compare/v2.46.1...v2.46.2) (2021-01-04)
 
 
