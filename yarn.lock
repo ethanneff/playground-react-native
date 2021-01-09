@@ -13412,9 +13412,10 @@ react-native-gesture-handler@1.9.0:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
-react-native-get-random-values@1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/react-native-get-random-values/-/react-native-get-random-values-1.5.0.tgz#91cda18f0e66e3d9d7660ba80c61c914030c1e05"
+react-native-get-random-values@1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/react-native-get-random-values/-/react-native-get-random-values-1.5.1.tgz#f335a37c09a4892deaf40187e73a888e14e82d60"
+  integrity sha512-L76sTcz3jdFmc7Gn41SHOxCioYY3m4rtuWEUI6X8IeWVmkflHXrSyAObOW4eNTM5qytH+45pgMCVKJzfB/Ik4A==
   dependencies:
     fast-base64-decode "^1.0.0"
 
