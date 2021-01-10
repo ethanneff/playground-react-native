@@ -43,6 +43,7 @@ interface Props {
   onBlur?(): void;
   onRef?: MutableRefObject<Original | null>;
   multiline?: boolean;
+  numberOfLines?: number;
 }
 
 export const TextInput = ({
@@ -55,6 +56,7 @@ export const TextInput = ({
   error = '',
   backgroundColor,
   keyboardType,
+  numberOfLines,
   onChangeText,
   onSubmitEditing,
   onFocus,
@@ -143,6 +145,7 @@ export const TextInput = ({
         editable={editable}
         keyboardType={keyboardType}
         multiline={multiline}
+        numberOfLines={numberOfLines}
         onBlur={didBlur}
         onChangeText={onChangeText}
         onFocus={didFocus}

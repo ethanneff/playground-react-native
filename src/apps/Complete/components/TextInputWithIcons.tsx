@@ -1,5 +1,6 @@
 import React, {memo, MutableRefObject, useCallback, useState} from 'react';
 import {LayoutChangeEvent, TextInput as Original, View} from 'react-native';
+import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import {Icon, TextInput} from '../../../components';
 import {PointerEvents} from '../../../components/TextInput/types';
 import {useColor} from '../../../hooks';
@@ -30,6 +31,7 @@ type TextInputWithIconsProps = {
   multiline?: boolean;
   maxIconHeight?: number;
   editable?: boolean;
+  numberOfLines?: number;
 };
 
 export const TextInputWithIcons = memo(function TextInputWithIcons({
@@ -46,6 +48,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
   onSubmit,
   blurOnSubmit,
   onFocus,
+  numberOfLines,
   onBlur,
   onRef,
 }: TextInputWithIconsProps) {
@@ -95,6 +98,8 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
     [containerHeight],
   );
 
+  const onIconParentPress = useCallback((e) => e.preventDefault(), []);
+
   return (
     <View onLayout={onLayout} style={{flex: 1, flexDirection: 'row'}}>
       <TextInput
@@ -104,6 +109,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
         flex
         focusOnLoad={focusOnLoad}
         multiline={multiline}
+        numberOfLines={numberOfLines}
         onBlur={onBlurInternal}
         onChangeText={onTextChange}
         onFocus={onFocusInternal}
