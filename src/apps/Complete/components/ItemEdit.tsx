@@ -1,7 +1,7 @@
 import React, {memo, useCallback} from 'react';
-import {Keyboard, View} from 'react-native';
+import {Keyboard} from 'react-native';
+import {Card} from '../../../components';
 import {useColor} from '../../../hooks';
-import {Card} from './Card';
 import {TextInputWithIcons} from './TextInputWithIcons';
 
 type ItemEditProps = {
@@ -35,25 +35,22 @@ export const ItemEdit = memo(function ItemEdit({
   );
 
   return (
-    <View>
-      <Card margin="bottom">
-        <TextInputWithIcons
-          icons={icons('title')}
-          onSubmit={onSubmit('title')}
-          placeholder={`${placeholder} title...`}
-          type="h4"
-          value={title}
-        />
-      </Card>
-      <Card margin="bottom">
-        <TextInputWithIcons
-          icons={icons('description')}
-          multiline
-          onSubmit={onSubmit('description')}
-          placeholder={`${placeholder} details...`}
-          value={description || ''}
-        />
-      </Card>
-    </View>
+    <Card>
+      <TextInputWithIcons
+        icons={icons('title')}
+        onSubmit={onSubmit('title')}
+        placeholder={`${placeholder} title...`}
+        type="h4"
+        value={title}
+      />
+      <TextInputWithIcons
+        icons={icons('description')}
+        multiline
+        notRequired
+        onSubmit={onSubmit('description')}
+        placeholder={`${placeholder} details...`}
+        value={description || ''}
+      />
+    </Card>
   );
 });
