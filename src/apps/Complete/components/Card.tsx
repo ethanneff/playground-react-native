@@ -10,6 +10,7 @@ type CardProps = {
   children: ReactElement | ReactElement[];
   margin?: 'bottom' | 'right' | 'none';
   width?: number;
+  flex?: boolean;
 };
 
 export const Card = memo(function Card({
@@ -17,12 +18,14 @@ export const Card = memo(function Card({
   onLayout,
   margin = 'none',
   width,
+  flex,
 }: CardProps) {
   const color = useColor();
   return (
     <View
       onLayout={onLayout}
       style={{
+        flex: flex ? 1 : 0,
         width,
         borderRadius: config.borderRadius,
         backgroundColor: color.background,
