@@ -124,7 +124,9 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
         type={type}
         value={text}
       />
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      <TouchableWithoutFeedback
+        onPress={onIconParentPress}
+        style={{flexDirection: 'row', alignItems: 'center'}}>
         {icons.map((icon) =>
           icon.hidden ||
           (showControls && !icon.focus) ||
@@ -140,7 +142,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
             />
           ),
         )}
-      </View>
+      </TouchableWithoutFeedback>
     </View>
   );
 });
