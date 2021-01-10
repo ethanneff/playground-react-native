@@ -1,6 +1,6 @@
 import React, {memo, ReactElement, useCallback} from 'react';
 import {Keyboard, LayoutChangeEvent, View} from 'react-native';
-import {TouchableWithoutFeedback} from '../../conversions/GestureHandler';
+import {TouchableWithoutFeedback} from '../../conversions';
 
 type HandleKeyboardProps = {
   onLayout: (event: LayoutChangeEvent) => void;

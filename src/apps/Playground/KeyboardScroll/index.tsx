@@ -9,7 +9,7 @@ import {
   Text,
   TextInput,
 } from '../../../components';
-import {KeyboardAwareScrollView} from '../../../conversions/KeyboardAwareScrollView';
+import {KeyboardAwareScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {Color} from '../../../models';
 import {colorWithOpacity, Theme} from '../../../utils';

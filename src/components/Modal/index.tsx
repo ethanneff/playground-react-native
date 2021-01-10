@@ -1,9 +1,6 @@
 import React, {memo, ReactElement, useCallback, useEffect, useRef} from 'react';
 import {Animated, StyleSheet, View} from 'react-native';
-import {
-  ScrollView,
-  TouchableWithoutFeedback,
-} from '../../conversions/GestureHandler';
+import {ScrollView, TouchableWithoutFeedback} from '../../conversions';
 import {useColor, useDriver, useDropShadow} from '../../hooks';
 import {useRootSelector} from '../../utils';
 import {SoundManager} from '../../utils/Sound';
