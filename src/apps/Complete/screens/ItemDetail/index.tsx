@@ -66,14 +66,24 @@ export const ItemDetail = memo(function ItemDetail() {
               updatedAt={item.updatedAt}
               userId={item.userId}
             />
-            <Card>
-              <Button
-                center
-                color="danger"
-                onPress={onDeletePress}
-                title="delete"
-              />
-            </Card>
+            <View
+              style={{
+                flexDirection: 'row',
+                flex: 1,
+                justifyContent: 'space-between',
+              }}>
+              <Card flex>
+                <Button center onPress={navBack} title="close" />
+              </Card>
+              <Card flex>
+                <Button
+                  center
+                  color="danger"
+                  onPress={onDeletePress}
+                  title="delete"
+                />
+              </Card>
+            </View>
           </View>
         )}
       </Modal>
