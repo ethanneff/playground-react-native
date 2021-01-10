@@ -1,10 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useRef} from 'react';
-import {
-  Keyboard,
-  TextInput as OriginalTextInput,
-  TouchableOpacity,
-} from 'react-native';
+import {Keyboard, TextInput as OriginalTextInput} from 'react-native';
+import {TouchableWithoutFeedback} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../utils';
 import {config} from '../configs';
@@ -76,8 +73,7 @@ export const ListItem = memo(function ListItem({
   ];
 
   return (
-    <TouchableOpacity
-      activeOpacity={1}
+    <TouchableWithoutFeedback
       key={item.id}
       onLongPress={onItemLongPress}
       onPress={onItemPress}
@@ -97,6 +93,6 @@ export const ListItem = memo(function ListItem({
         pointerEvents="none"
         value={item.title}
       />
-    </TouchableOpacity>
+    </TouchableWithoutFeedback>
   );
 });
