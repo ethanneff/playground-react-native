@@ -1,7 +1,8 @@
-import React, {memo, useCallback} from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import React, {memo, useCallback} from 'react';
+import {StyleSheet} from 'react-native';
 import {Activity, Icon, Screen} from '../../components';
+import {ScrollView} from '../../conversions';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 

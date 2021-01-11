@@ -1,8 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
-import {ScrollView, View} from 'react-native';
+import {View} from 'react-native';
 import {Button, Screen, Text} from '../../../components';
-import {ColorTheme, changeTheme, colorThemes} from '../../../models';
+import {ScrollView} from '../../../conversions';
+import {changeTheme, ColorTheme, colorThemes} from '../../../models';
 import {Theme, useRootDispatch, useRootSelector} from '../../../utils';
 
 export const Colors = memo(function DebugColors() {

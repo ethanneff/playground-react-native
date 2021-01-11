@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
-import {ScrollView} from 'react-native';
 import {Button, Screen, Text} from '../../components';
+import {ScrollView} from '../../conversions';
 
 export default memo(function Admin() {
   const {navigate} = useNavigation();

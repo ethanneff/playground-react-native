@@ -1,7 +1,8 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
-import {Image, ImageSourcePropType, ScrollView, View} from 'react-native';
+import {Image, ImageSourcePropType, View} from 'react-native';
 import {Screen, Text} from '../../../components';
+import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {getWidth} from '../../../models';
 import {Theme, useRootSelector} from '../../../utils';

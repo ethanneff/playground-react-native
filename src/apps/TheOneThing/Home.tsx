@@ -1,7 +1,8 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {ScrollView, View} from 'react-native';
+import {View} from 'react-native';
 import {Card, Icon, Screen, Text, TouchableOpacity} from '../../components';
+import {ScrollView} from '../../conversions';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 

@@ -1,8 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import dayjs from 'dayjs';
 import React, {memo, useCallback, useState} from 'react';
-import {ScrollView, Switch, View} from 'react-native';
+import {Switch, View} from 'react-native';
 import {Button, Input, Screen, Text} from '../../../components';
+import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {Theme} from '../../../utils';
 import {Section} from './Section';

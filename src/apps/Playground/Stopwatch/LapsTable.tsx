@@ -1,5 +1,6 @@
 import React, {memo} from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {ScrollView} from '../../../conversions';
 import {Lap} from './Lap';
 
 interface LapTableProps {

@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
-import {ScrollView} from 'react-native';
 import {Card, Screen, Text} from '../../../components';
+import {ScrollView} from '../../../conversions';
 import {Theme} from '../../../utils';
 
 export const OKRs = memo(function PlaygroundOKRs() {

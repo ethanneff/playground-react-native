@@ -1,5 +1,6 @@
 import React, {memo} from 'react';
-import {ScrollView, StyleSheet, Text as Original, View} from 'react-native';
+import {StyleSheet, Text as Original, View} from 'react-native';
+import {ScrollView} from '../../conversions';
 import {useColor} from '../../hooks';
 import {FontType, Theme} from '../../utils';
 import {Text} from '../Text';
