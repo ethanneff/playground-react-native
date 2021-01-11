@@ -21,8 +21,8 @@ export const DeleteModal = memo(function DeleteModal({
           type="h4"
         />
         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-          <Button color="secondary" onPress={onCancel} title="cancel" />
-          <Button onPress={onDelete} title="delete" />
+          <Button onPress={onCancel} title="close" />
+          <Button color="danger" onPress={onDelete} title="delete" />
         </View>
       </View>
     </Modal>
