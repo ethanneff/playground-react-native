@@ -114,7 +114,9 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
   }, [value]);
 
   return (
-    <View onLayout={onLayout} style={{flex: 1, flexDirection: 'row'}}>
+    <View
+      onLayout={onLayout}
+      style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
       <TextInput
         backgroundColor={bgColor}
         blurOnSubmit={blurOnSubmit}
@@ -136,7 +138,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
       />
       <TouchableWithoutFeedback
         onPress={onIconParentPress}
-        style={{flexDirection: 'row', alignItems: 'center'}}>
+        style={{flexDirection: 'row'}}>
         {icons.map((icon) =>
           icon.hidden ||
           (showControls && !icon.focus) ||
