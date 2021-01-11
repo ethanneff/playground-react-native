@@ -1,4 +1,4 @@
-import React, {useCallback, useRef, useState} from 'react';
+import React, {MutableRefObject, useCallback, useRef, useState} from 'react';
 import {
   KeyboardTypeOptions,
   ReturnKeyTypeOptions,
@@ -41,6 +41,7 @@ interface Props {
   title?: string;
   value: string;
   onChangeText(text: string): void;
+  onRef?: MutableRefObject<Original | null>;
   onSubmitEditing?(): void;
 }
 
@@ -64,6 +65,7 @@ export const Input = ({
   textContentType = 'none',
   textStyle,
   removeError,
+  onRef,
   title = '',
   value,
 }: Props): JSX.Element => {
@@ -100,7 +102,7 @@ export const Input = ({
       width: '100%',
     },
   });
-  const textInput = useRef<Original>(null);
+  const textInput = useRef<Original | null>(null);
   const optionalText = ' - optional';
   const textInputStyles = [
     styles.textInput,
@@ -122,9 +124,16 @@ export const Input = ({
   );
   const textClear = useCallback(() => {
     if (textInput.current) textInput.current.clear();
-
     onChangeText('');
   }, [onChangeText]);
+
+  const onRefInternal = useCallback(
+    (ref) => {
+      textInput.current = ref;
+      if (onRef) onRef.current = ref;
+    },
+    [onRef],
+  );
 
   return (
     <View style={containerStyles}>
@@ -160,7 +169,7 @@ export const Input = ({
           onSubmitEditing={onSubmitEditing}
           placeholder={placeholder}
           placeholderTextColor={color.secondary}
-          ref={textInput}
+          ref={onRefInternal}
           returnKeyType={returnKeyType}
           secureTextEntry={secureTextEntry}
           selectionColor={focusColor}

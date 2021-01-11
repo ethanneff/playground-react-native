@@ -150,6 +150,7 @@ const data = [
 export const Home = memo(function Home() {
   const {goBack} = useNavigation();
   const color = useColor();
+  const inputRef = useRef<TextInput | null>(null);
   const [challenge, setChallenge] = useState('...');
   const [customInput, setCustomInput] = useState('');
   const [showCustomInput, setShowCustomInput] = useState(false);
@@ -169,6 +170,10 @@ export const Home = memo(function Home() {
     setCustomInput('');
     setShowCustomInput(false);
   }, [challenge]);
+
+  useEffect(() => {
+    if (showCustomInput) inputRef.current?.focus();
+  }, [showCustomInput]);
 
   return (
     <Screen onLeftPress={navBack} title="Comfort Zone">
