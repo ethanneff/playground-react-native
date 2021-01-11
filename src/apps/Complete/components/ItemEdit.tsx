@@ -1,7 +1,8 @@
 import React, {memo, useCallback} from 'react';
-import {Keyboard} from 'react-native';
-import {Card} from '../../../components';
+import {Keyboard, View} from 'react-native';
 import {useColor} from '../../../hooks';
+import {Card} from './Card';
+import {ItemDetailHeader} from './ItemDetailHeader';
 import {TextInputWithIcons} from './TextInputWithIcons';
 
 type ItemEditProps = {
@@ -35,22 +36,26 @@ export const ItemEdit = memo(function ItemEdit({
   );
 
   return (
-    <Card>
-      <TextInputWithIcons
-        icons={icons('title')}
-        onSubmit={onSubmit('title')}
-        placeholder={`${placeholder} title...`}
-        type="h4"
-        value={title}
-      />
-      <TextInputWithIcons
-        icons={icons('description')}
-        multiline
-        notRequired
-        onSubmit={onSubmit('description')}
-        placeholder={`${placeholder} details...`}
-        value={description || ''}
-      />
-    </Card>
+    <View>
+      <Card margin="bottom">
+        <ItemDetailHeader title="Title" />
+        <TextInputWithIcons
+          icons={icons('title')}
+          onSubmit={onSubmit('title')}
+          placeholder={`${placeholder} title...`}
+          type="h4"
+          value={title}
+        />
+        <ItemDetailHeader title="Details" />
+        <TextInputWithIcons
+          icons={icons('description')}
+          multiline
+          notRequired
+          onSubmit={onSubmit('description')}
+          placeholder={`${placeholder} details...`}
+          value={description || ''}
+        />
+      </Card>
+    </View>
   );
 });

@@ -1,7 +1,9 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
 import {RelativeDate, Text} from '../../../components';
+import {Theme} from '../../../utils';
 import {Card} from './Card';
+import {ItemDetailHeader} from './ItemDetailHeader';
 
 type ItemContextProps = {
   userId: string;
@@ -17,18 +19,12 @@ export const ItemContext = memo(function ItemContext({
   return (
     <View>
       <Card margin="bottom">
-        <View style={{flex: 1, flexDirection: 'row'}}>
-          <Text emphasis="medium" title="Creator: " />
-          <Text title={userId} />
-        </View>
-        <View style={{flexDirection: 'row'}}>
-          <Text emphasis="medium" title="Created: " />
-          <RelativeDate date={createdAt} />
-        </View>
-        <View style={{flexDirection: 'row'}}>
-          <Text emphasis="medium" title="Updated: " />
-          <RelativeDate date={updatedAt} />
-        </View>
+        <ItemDetailHeader title="Creator" />
+        <Text style={{padding: Theme.padding.p02}} title={userId} />
+        <ItemDetailHeader title="Created" />
+        <RelativeDate date={createdAt} style={{padding: Theme.padding.p02}} />
+        <ItemDetailHeader title="Updated" />
+        <RelativeDate date={updatedAt} style={{padding: Theme.padding.p02}} />
       </Card>
     </View>
   );
