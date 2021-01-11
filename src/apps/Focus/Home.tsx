@@ -78,6 +78,7 @@ export const Home = memo(function Home() {
         <Modal
           duration={2000}
           onBackgroundPress={handleModalEditBackgroundPress}
+          showOverlay
           testID="editItem">
           <Text title={modalItemEdit.item?.action || 'empty'} />
         </Modal>
@@ -85,6 +86,7 @@ export const Home = memo(function Home() {
       {modalProfile && (
         <Modal
           onBackgroundPress={handleModalEditBackgroundPress}
+          showOverlay
           testID="editItem">
           <Text title="hello" />
         </Modal>
@@ -92,6 +94,7 @@ export const Home = memo(function Home() {
       {modalLogin && (
         <Modal
           onBackgroundPress={handleModalEditBackgroundPress}
+          showOverlay
           testID="login">
           <Text title="hello" />
         </Modal>

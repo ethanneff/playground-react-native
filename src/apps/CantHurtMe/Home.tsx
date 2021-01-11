@@ -34,12 +34,18 @@ export const Home = memo(function CantHurtMeMain() {
         />
       </Screen>
       {showModal.profile && (
-        <Modal duration={2000} onBackgroundPress={handleModalBackgroundPress}>
+        <Modal
+          duration={2000}
+          onBackgroundPress={handleModalBackgroundPress}
+          showOverlay>
           <Text title="profile" />
         </Modal>
       )}
       {showModal.settings && (
-        <Modal duration={2000} onBackgroundPress={handleModalBackgroundPress}>
+        <Modal
+          duration={2000}
+          onBackgroundPress={handleModalBackgroundPress}
+          showOverlay>
           <Text title="settings" />
         </Modal>
       )}

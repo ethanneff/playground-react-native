@@ -12,7 +12,7 @@ type ModalProps = {
   noScroll?: boolean;
   onBackgroundPress?(): void;
   backgroundColor?: string;
-  overlayColor?: boolean;
+  showOverlay?: boolean;
   children: ReactElement | ReactElement[];
   testID?: string;
   widthPercent?: number;
@@ -26,7 +26,7 @@ export const Modal = memo(function Modal({
   backgroundColor,
   duration,
   noScroll,
-  overlayColor,
+  showOverlay,
   widthPercent = 0.8,
   heightPercent = 0.6,
   elevation,
@@ -56,7 +56,7 @@ export const Modal = memo(function Modal({
     },
     overlay: {
       alignItems: 'center',
-      backgroundColor: overlayColor ? color.overlay : undefined,
+      backgroundColor: showOverlay ? color.overlay : undefined,
       height: '100%',
       justifyContent: 'center',
     },

@@ -13,7 +13,7 @@ export const DeleteModal = memo(function DeleteModal({
   onDelete,
 }: DeleteModalProps) {
   return (
-    <Modal onBackgroundPress={onCancel} overlayColor widthPercent={0.5}>
+    <Modal onBackgroundPress={onCancel} showOverlay widthPercent={0.5}>
       <View style={{alignItems: 'center'}}>
         <Text
           style={{paddingBottom: Theme.padding.p02}}
