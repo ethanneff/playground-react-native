@@ -67,7 +67,7 @@ const fontWeight: {[key: string]: FontWeight} = {
   medium: '600',
   regular: '300',
 };
-const scaling = 1.5;
+
 const fontEmphases: FontEmphases = {
   high: 0.87,
   medium: 0.6,
@@ -96,32 +96,32 @@ const fontSizes: FontSizes = {
     letterSpacing: 0.4,
   },
   h1: {
-    fontSize: 96 / scaling,
+    fontSize: 96,
     fontWeight: fontWeight.light,
     letterSpacing: -1.5,
   },
   h2: {
-    fontSize: 60 / scaling,
+    fontSize: 60,
     fontWeight: fontWeight.light,
     letterSpacing: -0.5,
   },
   h3: {
-    fontSize: 48 / scaling,
+    fontSize: 48,
     fontWeight: fontWeight.regular,
     letterSpacing: 0,
   },
   h4: {
-    fontSize: 34 / scaling,
+    fontSize: 34,
     fontWeight: fontWeight.regular,
     letterSpacing: 0.25,
   },
   h5: {
-    fontSize: 24 / scaling,
+    fontSize: 24,
     fontWeight: fontWeight.regular,
     letterSpacing: 0,
   },
   h6: {
-    fontSize: 20 / scaling,
+    fontSize: 20,
     fontWeight: fontWeight.medium,
     letterSpacing: 0.15,
   },
@@ -181,7 +181,7 @@ type GetFontStylesReturn = {
 
 export const getFontStyles = ({
   emphasis = 'none',
-  type = 'body2',
+  type = 'body1',
   inverse = false,
   color = 'text',
   colorScheme,
