@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
-import {View} from 'react-native';
+import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
+import {TextInput, View} from 'react-native';
 import {Button, Calendar, Card, Input, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useColor} from '../../hooks';
@@ -160,11 +160,13 @@ export const Home = memo(function Home() {
     () => setChallenge(data[Math.floor(Math.random() * data.length)]),
     [],
   );
-  const onCustom = useCallback(() => setShowCustomInput((v) => !v), []);
-  const onCustomInputChange = useCallback(
-    (value: string) => setCustomInput(value),
-    [],
-  );
+  const onCustom = useCallback(() => {
+    setShowCustomInput((v) => !v);
+  }, []);
+
+  const onCustomInputChange = useCallback((value: string) => {
+    setCustomInput(value);
+  }, []);
   const onCustomInputSubmit = useCallback(() => {
     data.push(challenge);
     setCustomInput('');
@@ -187,38 +189,50 @@ export const Home = memo(function Home() {
             center
             style={{paddingBottom: Theme.padding.p04}}
             title="Try something new every day"
-            type="h3"
+            type="h4"
           />
           <Text
             center
             emphasis="medium"
             title="Break comfort barriers to be more creative, to be better at dealing with change, and to be better at improving your future"
-            type="h4"
+            type="subtitle1"
           />
         </Card>
-
         <Card>
           <Text
             center
             style={{paddingBottom: Theme.padding.p04}}
             title="Today's Challenge"
-            type="h3"
+            type="h4"
           />
           <Text
             center
             emphasis="medium"
             style={{paddingBottom: Theme.padding.p04}}
             title={challenge}
-            type="h4"
+            type="subtitle1"
           />
-          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+        </Card>
+        <Card>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+            }}>
             <Button color="primary" onPress={onRandom} title="random" />
             <Button color="primary" onPress={onCustom} title="custom" />
           </View>
           {!showCustomInput ? null : (
-            <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <View
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                paddingTop: Theme.padding.p06,
+              }}>
               <Input
                 onChangeText={onCustomInputChange}
+                onRef={inputRef}
                 onSubmitEditing={onCustomInputSubmit}
                 placeholder="what is something that outside your comfort zone?"
                 value={customInput}
@@ -236,7 +250,7 @@ export const Home = memo(function Home() {
             center
             style={{paddingBottom: Theme.padding.p04}}
             title="Progress"
-            type="h3"
+            type="h4"
           />
           <Calendar />
         </Card>
