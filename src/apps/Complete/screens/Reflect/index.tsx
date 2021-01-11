@@ -1,7 +1,8 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
-import {Dimensions, ScrollView, View} from 'react-native';
+import {Dimensions, View} from 'react-native';
 import {Calendar, Screen, Text} from '../../../../components';
+import {ScrollView} from '../../../../conversions';
 import {useColor} from '../../../../hooks';
 import {Theme} from '../../../../utils';
 import {Card} from '../../components/Card';
@@ -48,13 +49,13 @@ export const Reflect = memo(function Reflect() {
           backgroundColor: color.surface,
         }}
         style={{backgroundColor: color.surface}}>
-        <Card>
+        <Card margin="bottom">
           <View>
             <Title name="Purpose" />
             <Text title="Make a significant positive difference in global productivity" />
           </View>
         </Card>
-        <Card>
+        <Card margin="bottom">
           <View>
             <Title name="Goals" />
             <Text title="Top 3" />
@@ -63,7 +64,7 @@ export const Reflect = memo(function Reflect() {
             <Text title="1 More Rep" />
           </View>
         </Card>
-        <Card>
+        <Card margin="bottom">
           <View>
             <Title name="Review (Progress)" />
             <View
