@@ -33,6 +33,7 @@ export const TextField = memo(function TextField() {
   return (
     <View
       style={{
+        padding: Theme.padding.p04,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -41,6 +42,7 @@ export const TextField = memo(function TextField() {
         flex
         onChangeText={onMessageChange}
         onSubmitEditing={onSubmit}
+        placeholder="Write something..."
         removeError
         value={textField}
       />

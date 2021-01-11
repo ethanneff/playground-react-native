@@ -1,18 +1,19 @@
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import React, {memo} from 'react';
 import {Image, View} from 'react-native';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import dayjs from 'dayjs';
 import {RelativeDate, Text} from '../../../components';
-import {Theme} from '../../../utils';
 import {useColor} from '../../../hooks';
+import {Theme} from '../../../utils';
 import {Message} from './Messages';
 dayjs.extend(relativeTime);
 
 interface Props {
   item: Message;
+  marginBottom: boolean;
 }
 
-export const Item = memo(function ChatMessage({item}: Props) {
+export const Item = memo(function ChatMessage({item, marginBottom}: Props) {
   const color = useColor();
   const image = require('../../../assets/line-chart.png');
 
@@ -20,11 +21,11 @@ export const Item = memo(function ChatMessage({item}: Props) {
     <View
       key={item.id}
       style={{
-        padding: Theme.padding.p01,
+        padding: Theme.padding.p02,
         borderRadius: Theme.padding.p04,
         flexDirection: 'row',
-        marginBottom: Theme.padding.p06,
-        backgroundColor: color.light,
+        marginBottom: marginBottom ? Theme.padding.p06 : 0,
+        backgroundColor: color.background,
       }}>
       <View style={{width: 40}}>
         <Image
@@ -47,7 +48,11 @@ export const Item = memo(function ChatMessage({item}: Props) {
           />
           <RelativeDate date={item.createdAt} />
         </View>
-        <Text style={{paddingTop: 5}} title={item.message} type="body1" />
+        <Text
+          style={{paddingTop: Theme.padding.p01}}
+          title={item.message}
+          type="body1"
+        />
       </View>
     </View>
   );
