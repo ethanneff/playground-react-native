@@ -12,7 +12,7 @@ export const ItemDetailHeader = memo(function ItemDetailHeader({
   return (
     <Text
       emphasis="medium"
-      style={{paddingLeft: Theme.padding.p02, paddingTop: Theme.padding.p02}}
+      style={{padding: Theme.padding.p02}}
       title={title}
       type="overline"
     />
