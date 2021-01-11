@@ -1,4 +1,10 @@
-import React, {memo, MutableRefObject, useCallback, useState} from 'react';
+import React, {
+  memo,
+  MutableRefObject,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import {LayoutChangeEvent, TextInput as Original, View} from 'react-native';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import {Icon, TextInput} from '../../../components';
@@ -102,6 +108,10 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
   );
 
   const onIconParentPress = useCallback((e) => e.preventDefault(), []);
+
+  useEffect(() => {
+    setText(value);
+  }, [value]);
 
   return (
     <View onLayout={onLayout} style={{flex: 1, flexDirection: 'row'}}>

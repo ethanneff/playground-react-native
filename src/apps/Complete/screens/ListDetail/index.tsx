@@ -8,8 +8,6 @@ import {Card, DeleteModal, ItemEdit} from '../../components';
 import {ItemContext} from '../../components/ItemContext';
 import {removeList, updateBoardRemoveList, updateList} from '../../models';
 
-// TODO: update does not go to previous screen
-
 export const ListDetail = memo(function ListDetail() {
   const dispatch = useRootDispatch();
   const {goBack} = useNavigation();

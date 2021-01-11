@@ -7,8 +7,6 @@ import {Theme, useRootDispatch, useRootSelector} from '../../../../utils';
 import {Card, DeleteModal, ItemContext, ItemEdit} from '../../components';
 import {removeItem, updateItem, updateListRemoveItem} from '../../models';
 
-// TODO: update does not go to previous screen
-
 export const ItemDetail = memo(function ItemDetail() {
   const dispatch = useRootDispatch();
   const {goBack} = useNavigation();
