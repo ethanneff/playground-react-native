@@ -43,7 +43,6 @@ export const ItemEdit = memo(function ItemEdit({
           icons={icons('title')}
           onSubmit={onSubmit('title')}
           placeholder={`${placeholder} title...`}
-          type="h4"
           value={title}
         />
         <ItemDetailHeader title="Details" />
