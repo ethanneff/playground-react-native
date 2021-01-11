@@ -26,7 +26,7 @@ export const getStyles = ({
 }: StyleInterface): any =>
   StyleSheet.create({
     center: {
-      alignSelf: 'center',
+      justifyContent: 'center',
     },
     container: {
       backgroundColor:
