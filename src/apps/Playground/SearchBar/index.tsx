@@ -134,7 +134,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack}>
+    <Screen onLeftPress={navBack} title="Search Bar">
       <View style={styles.header}>
         <View style={styles.textContainer}>
           <Animated.View
