@@ -17,27 +17,25 @@ export const Colors = memo(function DebugColors() {
 
   return (
     <Screen gutter onLeftPress={navBack} title="Colors">
-      <Text
-        center
-        style={{paddingBottom: Theme.padding.p08}}
-        title="Theme"
-        type="h4"
-      />
-      <View
-        style={{
-          justifyContent: 'center',
-          flexDirection: 'row',
-        }}>
-        {colorThemes.map((item) => (
-          <Button
-            color={currentTheme === item ? 'success' : 'text'}
-            key={item}
-            onPress={themePress(item)}
-            title={item}
-          />
-        ))}
-      </View>
       <ScrollView>
+        <Text
+          center
+          style={{paddingBottom: Theme.padding.p08}}
+          title="Theme"
+          type="h4"
+        />
+        <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+          {colorThemes.map((item) => (
+            <Button
+              center
+              color={currentTheme === item ? 'success' : 'text'}
+              emphasis="medium"
+              key={item}
+              onPress={themePress(item)}
+              title={item}
+            />
+          ))}
+        </View>
         <Text
           center
           style={{padding: Theme.padding.p08}}
@@ -46,18 +44,24 @@ export const Colors = memo(function DebugColors() {
         />
         <View style={{flexDirection: 'row'}}>
           <View style={{flex: 1}}>
-            <Button color="primary" emphasis="high" title="primary" />
-            <Button color="secondary" emphasis="high" title="secondary" />
-            <Button color="success" emphasis="high" title="success" />
-            <Button color="danger" emphasis="high" title="danger" />
-            <Button color="warning" emphasis="high" title="warning" />
-            <Button color="info" emphasis="high" title="info" />
-            <Button color="light" emphasis="high" title="light" />
-            <Button color="dark" emphasis="high" title="dark" />
-            <Button color="text" emphasis="high" title="text" />
-            <Button emphasis="high" title="default" />
-            <Button disable emphasis="high" title="disable" />
+            <Button center color="primary" emphasis="high" title="primary" />
             <Button
+              center
+              color="secondary"
+              emphasis="high"
+              title="secondary"
+            />
+            <Button center color="success" emphasis="high" title="success" />
+            <Button center color="danger" emphasis="high" title="danger" />
+            <Button center color="warning" emphasis="high" title="warning" />
+            <Button center color="info" emphasis="high" title="info" />
+            <Button center color="light" emphasis="high" title="light" />
+            <Button center color="dark" emphasis="high" title="dark" />
+            <Button center color="text" emphasis="high" title="text" />
+            <Button center emphasis="high" title="default" />
+            <Button center disable emphasis="high" title="disable" />
+            <Button
+              center
               dropShadow
               elevation={10}
               emphasis="high"
@@ -65,18 +69,24 @@ export const Colors = memo(function DebugColors() {
             />
           </View>
           <View style={{flex: 1}}>
-            <Button color="primary" emphasis="medium" title="primary" />
-            <Button color="secondary" emphasis="medium" title="secondary" />
-            <Button color="success" emphasis="medium" title="success" />
-            <Button color="danger" emphasis="medium" title="danger" />
-            <Button color="warning" emphasis="medium" title="warning" />
-            <Button color="info" emphasis="medium" title="info" />
-            <Button color="light" emphasis="medium" title="light" />
-            <Button color="dark" emphasis="medium" title="dark" />
-            <Button color="text" emphasis="medium" title="text" />
-            <Button emphasis="medium" title="default" />
-            <Button disable emphasis="medium" title="disable" />
+            <Button center color="primary" emphasis="medium" title="primary" />
             <Button
+              center
+              color="secondary"
+              emphasis="medium"
+              title="secondary"
+            />
+            <Button center color="success" emphasis="medium" title="success" />
+            <Button center color="danger" emphasis="medium" title="danger" />
+            <Button center color="warning" emphasis="medium" title="warning" />
+            <Button center color="info" emphasis="medium" title="info" />
+            <Button center color="light" emphasis="medium" title="light" />
+            <Button center color="dark" emphasis="medium" title="dark" />
+            <Button center color="text" emphasis="medium" title="text" />
+            <Button center emphasis="medium" title="default" />
+            <Button center disable emphasis="medium" title="disable" />
+            <Button
+              center
               dropShadow
               elevation={10}
               emphasis="medium"
@@ -84,18 +94,19 @@ export const Colors = memo(function DebugColors() {
             />
           </View>
           <View style={{flex: 1}}>
-            <Button color="primary" emphasis="low" title="primary" />
-            <Button color="secondary" emphasis="low" title="secondary" />
-            <Button color="success" emphasis="low" title="success" />
-            <Button color="danger" emphasis="low" title="danger" />
-            <Button color="warning" emphasis="low" title="warning" />
-            <Button color="info" emphasis="low" title="info" />
-            <Button color="light" emphasis="low" title="light" />
-            <Button color="dark" emphasis="low" title="dark" />
-            <Button color="text" emphasis="low" title="text" />
-            <Button emphasis="low" title="default" />
-            <Button disable emphasis="low" title="disable" />
+            <Button center color="primary" emphasis="low" title="primary" />
+            <Button center color="secondary" emphasis="low" title="secondary" />
+            <Button center color="success" emphasis="low" title="success" />
+            <Button center color="danger" emphasis="low" title="danger" />
+            <Button center color="warning" emphasis="low" title="warning" />
+            <Button center color="info" emphasis="low" title="info" />
+            <Button center color="light" emphasis="low" title="light" />
+            <Button center color="dark" emphasis="low" title="dark" />
+            <Button center color="text" emphasis="low" title="text" />
+            <Button center emphasis="low" title="default" />
+            <Button center disable emphasis="low" title="disable" />
             <Button
+              center
               dropShadow
               elevation={10}
               emphasis="low"
@@ -103,14 +114,12 @@ export const Colors = memo(function DebugColors() {
             />
           </View>
         </View>
-
         <Text
           center
           style={{padding: Theme.padding.p08}}
           title="Fonts"
           type="h4"
         />
-
         <View style={{flexDirection: 'row'}}>
           <View style={{flex: 1}}>
             <Text center title="normal" />
