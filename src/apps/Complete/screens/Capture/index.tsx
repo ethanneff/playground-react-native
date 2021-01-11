@@ -23,10 +23,10 @@ export const Capture = memo(function Capture() {
     keyboardHeight === 0
       ? dimensions.container -
         dimensions.button -
-        (android ? config.padding * 8 : config.padding * 10)
+        (android ? config.padding * 8 : config.padding * 11)
       : dimensions.container -
         keyboardHeight -
-        (android ? config.padding * 3 : config.padding * 4);
+        (android ? config.padding * 3 : config.padding * 5);
 
   const boardId = useRootSelector(getInboxBoardId);
   const listId = useRootSelector(
@@ -58,7 +58,7 @@ export const Capture = memo(function Capture() {
         onLayout={onLayout('container')}
         render={dimensions.container > 0}>
         {listId ? (
-          <View style={{height: '100%', padding: config.padding}}>
+          <View style={{padding: config.padding}}>
             <List
               boardId={boardId}
               listId={listId}

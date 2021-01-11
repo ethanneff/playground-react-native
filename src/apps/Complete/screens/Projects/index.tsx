@@ -32,7 +32,7 @@ export const Projects = memo(function Projects() {
     [dimensions],
   );
 
-  const maxHeight = dimensions / 2 - config.padding * 10;
+  const maxHeight = dimensions / 2 - config.padding * 11;
 
   const navToAccount = useCallback(() => navigate('account'), [navigate]);
 
