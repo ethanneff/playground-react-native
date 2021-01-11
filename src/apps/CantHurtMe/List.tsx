@@ -25,8 +25,7 @@ export const List = memo(function List({
 
   const styles = StyleSheet.create({
     list: {
-      backgroundColor: color.surface,
-      paddingBottom: Theme.padding.p04,
+      paddingBottom: Theme.padding.p02,
       paddingHorizontal: Theme.padding.p04,
     },
   });
@@ -37,20 +36,23 @@ export const List = memo(function List({
     ({item, index}) => {
       const data = app.goals.byId[item];
       return (
-        <Card
-          flex
-          key={data.id}
-          onPress={onPress}
-          style={{marginHorizontal: Theme.padding.p02}}>
-          <Text
-            bold
-            center
-            style={{paddingBottom: Theme.padding.p04}}
-            title={`Challenge #${index + 1}`}
-            type="h4"
-          />
-          <Text center title={data.challenge} />
-        </Card>
+        <View
+          style={{
+            flex: 1,
+            marginRight: index % 2 === 0 ? Theme.padding.p02 : 0,
+            marginLeft: index % 2 !== 0 ? Theme.padding.p02 : 0,
+          }}>
+          <Card key={data.id} onPress={onPress} style={{}}>
+            <Text
+              bold
+              center
+              style={{paddingBottom: Theme.padding.p04}}
+              title={`Challenge #${index + 1}`}
+              type="subtitle1"
+            />
+            <Text center title={data.challenge} />
+          </Card>
+        </View>
       );
     },
     [onPress],
@@ -63,7 +65,7 @@ export const List = memo(function List({
           center
           style={{padding: Theme.padding.p04}}
           title="Progress"
-          type="h3"
+          type="h4"
         />
         <Card>
           <View
@@ -81,7 +83,7 @@ export const List = memo(function List({
           center
           style={{padding: Theme.padding.p04}}
           title="Challenges"
-          type="h3"
+          type="h4"
         />
       </View>
     ),
@@ -98,6 +100,8 @@ export const List = memo(function List({
       keyboardShouldPersistTaps="handled"
       numColumns={columns}
       renderItem={renderItem}
+      showsVerticalScrollIndicator={false}
+      style={{backgroundColor: color.surface}}
     />
   );
 });
