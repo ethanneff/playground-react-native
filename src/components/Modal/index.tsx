@@ -34,11 +34,13 @@ export const Modal = memo(function Modal({
 }: ModalProps) {
   const color = useColor();
   const useNativeDriver = useDriver();
+  const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
   const dropShadow = useDropShadow();
   const screen = useRootSelector((s) => s.dimension.screen);
+  const maxHeight = (screen.height - keyboardHeight) * heightPercent;
   const styles = StyleSheet.create({
     container: {
-      bottom: 0,
+      bottom: keyboardHeight,
       elevation: 1,
       left: 0,
       position: 'absolute',
@@ -48,7 +50,7 @@ export const Modal = memo(function Modal({
     },
     modal: {
       backgroundColor: backgroundColor || color.background,
-      maxHeight: screen.height * heightPercent,
+      maxHeight,
       width: screen.width * widthPercent,
       ...dropShadow(10),
     },
