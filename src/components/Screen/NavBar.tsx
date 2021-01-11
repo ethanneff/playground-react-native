@@ -1,8 +1,8 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Text} from '../Text';
-import {Theme} from '../../utils';
 import {useColor} from '../../hooks';
+import {Theme} from '../../utils';
+import {Text} from '../Text';
 import {NavButton} from './NavButton';
 
 interface Props {
@@ -38,7 +38,7 @@ export const NavBar = memo(
     return (
       <View style={styles.container}>
         <NavButton icon={leftIcon} onPress={onLeftPress} testID="leftNav" />
-        <Text title={title} type="h2" />
+        <Text center emphasis="high" title={title} type="h3" />
         <NavButton
           icon={rightIcon}
           isRight

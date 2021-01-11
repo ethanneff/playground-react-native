@@ -16,7 +16,6 @@ export const NavButton = memo(
     const color = useColor();
     const styles = StyleSheet.create({
       button: {
-        flex: 0.2,
         padding: Theme.padding.p03,
       },
       buttonRight: {
