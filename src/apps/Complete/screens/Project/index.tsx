@@ -24,10 +24,10 @@ export const Project = memo(function Project() {
 
   const listMaxHeight =
     keyboardHeight === 0
-      ? container - (android ? config.padding * 8 : config.padding * 12)
+      ? container - (android ? config.padding * 8 : config.padding * 13)
       : container -
         keyboardHeight -
-        (android ? config.padding * 3 : config.padding * 7);
+        (android ? config.padding * 3 : config.padding * 8);
 
   const onLayout = useCallback(
     (event: LayoutChangeEvent) => {
