@@ -36,7 +36,6 @@ type TextInputWithIconsProps = {
   multiline?: boolean;
   maxIconHeight?: number;
   editable?: boolean;
-  notRequired?: boolean;
   numberOfLines?: number;
 };
 
@@ -53,7 +52,6 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
   onSubmit,
   blurOnSubmit,
   onFocus,
-  notRequired,
   numberOfLines,
   onBlur,
   onRef,
@@ -74,10 +72,9 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
 
   const onSubmitInternal = useCallback(() => {
     const result = text.trim();
-    if (!notRequired && result.length === 0) return;
     onSubmit(result);
     if (value === '') setText('');
-  }, [notRequired, onSubmit, text, value]);
+  }, [onSubmit, text, value]);
 
   const onBlurInternal = useCallback(() => {
     setText(value);

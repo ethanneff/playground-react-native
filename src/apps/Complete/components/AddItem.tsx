@@ -1,4 +1,5 @@
 import React, {memo, useCallback} from 'react';
+import {Keyboard} from 'react-native';
 import {v4} from 'uuid';
 import {useRootDispatch, useRootSelector} from '../../../utils';
 import {createItem, Item, updateListAddItem} from '../models';
@@ -20,6 +21,7 @@ export const AddItem = memo(function AddItem({
   if (!userId) throw new Error('missing user id on add item');
   const onSubmit = useCallback(
     (value: string) => {
+      if (!value) return Keyboard.dismiss();
       const itemId = v4();
       const date = Date.now();
       const item: Item = {
