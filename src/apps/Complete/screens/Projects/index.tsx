@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, View} from 'react-native';
 import {KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {useRootSelector} from '../../../../utils';
+import {Theme, useRootSelector} from '../../../../utils';
 import {List} from '../../components';
 import {config} from '../../configs';
 import {getCategoryBoardId} from '../../models';
@@ -32,7 +32,7 @@ export const Projects = memo(function Projects() {
     [dimensions],
   );
 
-  const maxHeight = dimensions / 2 - config.padding * 11;
+  const maxHeight = dimensions / 2 - Theme.padding.p43;
 
   const navToAccount = useCallback(() => navigate('account'), [navigate]);
 
