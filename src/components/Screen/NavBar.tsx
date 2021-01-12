@@ -1,7 +1,6 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {useColor} from '../../hooks';
-import {Theme} from '../../utils';
+import {useColor, useDropShadow} from '../../hooks';
 import {Text} from '../Text';
 import {NavButton} from './NavButton';
 
@@ -12,6 +11,8 @@ interface Props {
   rightIcon?: string;
   onLeftPress?(): void;
   onRightPress?(): void;
+  dropShadow?: boolean;
+  height: number;
 }
 
 export const NavBar = memo(
@@ -22,16 +23,22 @@ export const NavBar = memo(
     border,
     leftIcon = 'chevron-left',
     rightIcon = 'close',
+    height,
+    dropShadow,
   }: Props) => {
     const color = useColor();
+    const shadow = useDropShadow();
+    const showShadow = dropShadow ? shadow(2) : {};
     const styles = StyleSheet.create({
       container: {
         alignItems: 'center',
+        backgroundColor: color.background,
         borderBottomColor: border ? color.secondary : color.background,
         borderBottomWidth: 1,
         flexDirection: 'row',
-        height: Theme.padding.p18,
+        height,
         justifyContent: 'space-between',
+        ...showShadow,
       },
     });
 
