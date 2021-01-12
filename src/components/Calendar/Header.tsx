@@ -1,9 +1,9 @@
+import dayjs from 'dayjs';
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import dayjs from 'dayjs';
-import {Text} from '../Text';
 import {Theme} from '../../utils';
 import {Icon} from '../Icon';
+import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 
 interface Props {
@@ -19,23 +19,23 @@ export const CalendarHeader = memo(function CalendarHeader({
   onMonthDecrease,
 }: Props) {
   return (
-    <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+    <View style={{flexDirection: 'row'}}>
       <Icon
         name="chevron-left"
         onPress={onMonthDecrease}
+        padded
         size={Theme.padding.p06}
       />
-      <TouchableOpacity onPress={onTitlePress}>
-        <Text
-          center
-          style={{paddingBottom: Theme.padding.p04}}
-          title={dayjs(unix).format('MMMM YYYY')}
-          type="h4"
-        />
+      <TouchableOpacity
+        containerStyle={{justifyContent: 'center', alignItems: 'center'}}
+        flex
+        onPress={onTitlePress}>
+        <Text center title={dayjs(unix).format('MMMM YYYY')} type="h5" />
       </TouchableOpacity>
       <Icon
         name="chevron-right"
         onPress={onMonthIncrease}
+        padded
         size={Theme.padding.p06}
       />
     </View>
