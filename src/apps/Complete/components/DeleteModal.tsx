@@ -18,7 +18,7 @@ export const DeleteModal = memo(function DeleteModal({
         <Text
           style={{paddingBottom: Theme.padding.p02}}
           title="Are you sure?"
-          type="h4"
+          type="h5"
         />
         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
           <Button onPress={onCancel} title="close" />
