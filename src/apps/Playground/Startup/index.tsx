@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import dayjs from 'dayjs';
 import React, {memo, useCallback, useState} from 'react';
-import {Switch, View} from 'react-native';
+import {Switch} from 'react-native';
 import {Button, Input, Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
@@ -86,20 +86,13 @@ export const Startup = memo(function PlaygroundStartup() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-      <View
-        style={{
-          paddingBottom: Theme.padding.p04,
-          borderBottomColor: color.secondary,
-          borderBottomWidth: 2,
-        }}>
-        <Text center title={dayjs().format('MMM DD, YYYY')} type="h4" />
-      </View>
     <Screen dropShadow onLeftPress={navBack} title="Weekly Update">
       <ScrollView
         contentContainerStyle={{
-          backgroundColor: color.light,
           padding: Theme.padding.p04,
-        }}>
+        }}
+        style={{backgroundColor: color.surface}}>
+        <Text center title={dayjs().format('MMM DD, YYYY')} type="h4" />
         <Section title="Launch">
           <Text title="Are you launched?" />
           <Switch onValueChange={handleLaunchChange} value={form.launched} />
@@ -148,7 +141,13 @@ export const Startup = memo(function PlaygroundStartup() {
             value={form.morale} // 1 (we are totally burned out) to  10 (we couldn't be more excited and optimistic!)
           />
         </Section>
-        <Button color="primary" onPress={handleSubmit} title="submit" />
+        <Button
+          center
+          color="primary"
+          emphasis="high"
+          onPress={handleSubmit}
+          title="submit"
+        />
       </ScrollView>
     </Screen>
   );
