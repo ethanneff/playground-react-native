@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react';
+import React, {ReactElement, ReactNode} from 'react';
 import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
@@ -14,6 +14,8 @@ interface OwnProps {
   onLeftPress?(): void;
   onRightPress?(): void;
   children?: ReactNode;
+  dropShadow?: boolean;
+  height?: number;
 }
 
 type Props = OwnProps;
@@ -28,14 +30,13 @@ export const Screen = ({
   leftIcon,
   rightIcon,
   testID,
-}: Props): JSX.Element => {
+  height = Theme.padding.p18,
+  dropShadow,
+}: Props): ReactElement => {
   const color = useColor();
   const styles = StyleSheet.create({
     container: {
       backgroundColor: color.background,
-      flex: 1,
-    },
-    flex: {
       flex: 1,
     },
     gutter: {
@@ -47,10 +48,12 @@ export const Screen = ({
 
   return (
     <View style={styles.container}>
-      <SafeAreaView style={styles.flex}>
+      <SafeAreaView style={styles.container}>
         <StatusBar barStyle={color.statusBar} />
         <NavBar
           border={border}
+          dropShadow={dropShadow}
+          height={height}
           leftIcon={leftIcon}
           onLeftPress={onLeftPress}
           onRightPress={onRightPress}

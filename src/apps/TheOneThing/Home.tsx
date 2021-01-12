@@ -68,7 +68,7 @@ export const Home = memo(function Home() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} title="The One Thing">
+    <Screen dropShadow onLeftPress={navBack} title="The One Thing">
       <ScrollView
         contentContainerStyle={{
           backgroundColor: color.light,

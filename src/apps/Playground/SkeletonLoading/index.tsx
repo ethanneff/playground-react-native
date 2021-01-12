@@ -121,8 +121,8 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
   }, []);
 
   return (
-    <Screen onLeftPress={navBack} title="Skeleton Loading">
       <ScrollView contentContainerStyle={{padding: Theme.padding.p04}}>
+    <Screen dropShadow onLeftPress={navBack} title="Skeleton Loading">
         {loading ? (
           <View>
             <LoadingProfile />

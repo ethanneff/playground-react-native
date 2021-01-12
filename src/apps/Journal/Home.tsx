@@ -19,7 +19,7 @@ export const Home = memo(function Home() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} title="Journal">
+    <Screen dropShadow onLeftPress={navBack} title="Journal">
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: Theme.padding.p04,

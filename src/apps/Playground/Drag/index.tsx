@@ -85,8 +85,7 @@ export const Drag = memo(function PlaygroundDrag() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} title="Drag">
-      <Text center title="drag the circle" type="overline" />
+    <Screen dropShadow onLeftPress={navBack} title="Drag">
       <View onLayout={handleCanvas} style={styles.canvas}>
         <Animated.View
           style={[ballPosition.getLayout(), styles.ball]}

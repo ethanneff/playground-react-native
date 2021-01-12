@@ -41,6 +41,7 @@ export const Home = memo(function Home() {
 
   return (
     <Screen
+      dropShadow
       onLeftPress={navBack}
       onRightPress={navToAccount}
       rightIcon="account"

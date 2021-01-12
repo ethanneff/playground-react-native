@@ -110,11 +110,11 @@ export const ReminderExample = memo(function PlaygroundReminder() {
 
   return (
     <>
-      <Screen onLeftPress={navBack} title="Reminder">
         <Button onPress={handleCreateReminder} title="create reminder" />
         <Text center title="reminders" type="h2" />
         <Reminders reminders={form.reminders} />
         <Button onPress={handleRate(true)} title="press me" />
+      <Screen dropShadow onLeftPress={navBack} title="Reminder">
       </Screen>
       {showRate && <RateApp onComplete={handleRate(false)} />}
       {form.modals.createReminder && (

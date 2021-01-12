@@ -134,6 +134,7 @@ export const DarkMode = memo(function DarkMode() {
               title={item}
             />
           ))}
+    <Screen dropShadow onLeftPress={navBack} title="Dark mode">
         </View>
         <Text title={`elevation: ${elevation}`} />
         <Slider

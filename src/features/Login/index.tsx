@@ -177,7 +177,7 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
   }, [onLogout]);
 
   return (
-    <Modal onBackgroundPress={onBackgroundPress}>
+    <Modal onBackgroundPress={onBackgroundPress} showOverlay>
       {form.state === 'loading' ? (
         <ActivityIndicator size="large" />
       ) : form.state === 'phone confirm' ? (

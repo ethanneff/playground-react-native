@@ -30,7 +30,7 @@ export const Home = memo(function ActivityTracker() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} title="Progress">
+    <Screen dropShadow onLeftPress={navBack} title="Progress">
       <ScrollView
         contentContainerStyle={styles.container}
         style={styles.background}>

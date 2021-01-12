@@ -39,9 +39,9 @@ export const CreateReminderModal = memo(function CreateReminderModal({
   );
 
   return (
-    <Modal onBackgroundPress={onBackgroundPress}>
       <Text title="Create Reminder" type="h2" />
       <Text style={styles.section} title="Reminder type" type="caption" />
+    <Modal onBackgroundPress={onBackgroundPress} showOverlay>
       <Radio
         buttons={reminderTypes}
         onChange={handleReminderTypePress}

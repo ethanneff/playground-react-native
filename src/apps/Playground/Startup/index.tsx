@@ -86,7 +86,6 @@ export const Startup = memo(function PlaygroundStartup() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} title="Weekly Update">
       <View
         style={{
           paddingBottom: Theme.padding.p04,
@@ -95,6 +94,7 @@ export const Startup = memo(function PlaygroundStartup() {
         }}>
         <Text center title={dayjs().format('MMM DD, YYYY')} type="h4" />
       </View>
+    <Screen dropShadow onLeftPress={navBack} title="Weekly Update">
       <ScrollView
         contentContainerStyle={{
           backgroundColor: color.light,

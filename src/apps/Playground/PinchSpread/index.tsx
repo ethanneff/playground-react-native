@@ -35,6 +35,7 @@ export const PinchSpread = memo(function PinchSpread() {
       <Text center title={title} />
       <Text center title={`spread: ${state.spreadCount}`} />
       <Text center title={`pinch: ${state.pinchCount}`} />
+    <Screen dropShadow onLeftPress={navBack} title="Pinch Spread">
       <Animated.View style={styles.container} {...panGesture.panHandlers} />
     </Screen>
   );

@@ -10,7 +10,7 @@ export const OKRs = memo(function PlaygroundOKRs() {
   const color = useColor();
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen onLeftPress={navBack} title="OKRs">
+    <Screen dropShadow onLeftPress={navBack} title="OKRs">
       <ScrollView
         contentContainerStyle={{padding: Theme.padding.p04}}
         style={{backgroundColor: color.surface}}>

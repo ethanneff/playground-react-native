@@ -88,7 +88,7 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
   }, [completeState, onComplete]);
 
   return (
-    <Modal onBackgroundPress={handleComplete}>
+    <Modal onBackgroundPress={handleComplete} showOverlay>
       {form.modal === 'review' ? (
         <>
           <Text

@@ -10,7 +10,7 @@ export const Day = memo(function Day() {
   const color = useColor();
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen onLeftPress={navBack} title="Comfort Zone">
+    <Screen dropShadow onLeftPress={navBack} title="Comfort Zone">
       <ScrollView
         contentContainerStyle={{
           padding: Theme.padding.p04,
