@@ -156,14 +156,13 @@ export const Home = memo(function Home() {
   const [showCustomInput, setShowCustomInput] = useState(false);
 
   const navBack = useCallback(() => goBack(), [goBack]);
-  const onRandom = useCallback(
-    () => setChallenge(data[Math.floor(Math.random() * data.length)]),
-    [],
-  );
+  const onRandom = useCallback(() => {
+    setChallenge(data[Math.floor(Math.random() * data.length)]);
+    setShowCustomInput(false);
+  }, []);
   const onCustom = useCallback(() => {
     setShowCustomInput((v) => !v);
   }, []);
-
   const onCustomInputChange = useCallback((value: string) => {
     setCustomInput(value);
   }, []);
@@ -174,7 +173,8 @@ export const Home = memo(function Home() {
   }, [challenge]);
 
   useEffect(() => {
-    if (showCustomInput) inputRef.current?.focus();
+    if (!showCustomInput) return;
+    inputRef.current?.focus();
   }, [showCustomInput]);
 
   return (
