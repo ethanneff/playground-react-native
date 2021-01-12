@@ -2,6 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Screen, Text} from '../../../components';
+import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {combinations, reels} from './config';
 import {Slots} from './Slots';
@@ -41,7 +42,7 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
 
   return (
     <Screen onLeftPress={navBack} title="Slot Machine">
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Text title={`win percentage: ${winPercentage}%`} />
         <Text title={`return percentage: ${returnPercentage}%`} />
         <Text title={`${state}`} />
@@ -78,7 +79,7 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
             '🍓🍇🍉🍉🥭🥭🥭🥭🍏🍏🍊🍊🍊🍊🍊🍒🍒🍒🍒🍒🍋🍋🍋🍋🍋',
           ]}
         />
-      </View>
+      </ScrollView>
     </Screen>
   );
 });

@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import {v4} from 'uuid';
 import {Card, Icon, Screen, Text, TouchableOpacity} from '../../../components';
+import {ScrollView} from '../../../conversions';
 import {useColor, useDriver, useDropShadow} from '../../../hooks';
 import {getWidth} from '../../../models';
 import {Theme, useRootSelector} from '../../../utils';
@@ -315,7 +316,7 @@ export const SwipeFeed = memo(function SwipeFeed() {
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <Screen onLeftPress={navBack} title="Swipe Feed">
-      <View style={{padding: Theme.padding.p04}}>
+      <ScrollView style={{padding: Theme.padding.p04}}>
         <ImagePlaceholder />
         <ImagePlaceholder />
         <SwipeCards items={initialItems} />
@@ -325,7 +326,7 @@ export const SwipeFeed = memo(function SwipeFeed() {
         <ImagePlaceholder />
         <ImagePlaceholder />
         <ImagePlaceholder />
-      </View>
+      </ScrollView>
     </Screen>
   );
 });

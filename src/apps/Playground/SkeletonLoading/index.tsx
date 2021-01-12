@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {View} from 'react-native';
-import {Card, Screen, SkeletonLoader, Text} from '../../../components';
+import {Button, Card, Screen, SkeletonLoader, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {Theme} from '../../../utils';
@@ -108,10 +108,11 @@ const LoadingSection = () => {
 
 export const SkeletonLoading = memo(function PlaygroundTemplate() {
   const {goBack} = useNavigation();
+  const color = useColor();
   const navBack = useCallback(() => goBack(), [goBack]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const load = useCallback(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
     }, 5000);
@@ -120,9 +121,20 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
     };
   }, []);
 
+  const onRetry = useCallback(() => {
+    setLoading(true);
+    load();
+  }, [load]);
+
+  useEffect(() => {
+    load();
+  }, [load]);
+
   return (
-      <ScrollView contentContainerStyle={{padding: Theme.padding.p04}}>
     <Screen dropShadow onLeftPress={navBack} title="Skeleton Loading">
+      <ScrollView
+        contentContainerStyle={{padding: Theme.padding.p04}}
+        style={{backgroundColor: color.surface}}>
         {loading ? (
           <View>
             <LoadingProfile />
@@ -132,7 +144,10 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
             <LoadingSection />
           </View>
         ) : (
-          <Text title="loaded" />
+          <View>
+            <Text center title="loaded" />
+            <Button center onPress={onRetry} title="retry" />
+          </View>
         )}
       </ScrollView>
     </Screen>

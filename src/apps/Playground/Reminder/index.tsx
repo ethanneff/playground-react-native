@@ -3,9 +3,10 @@ import dayjs, {Dayjs} from 'dayjs';
 import React, {memo, useCallback, useState} from 'react';
 import {v4} from 'uuid';
 import {Button, Modal, Screen, Text} from '../../../components';
+import {ScrollView} from '../../../conversions';
 import {RateApp} from '../../../features';
+import {useColor} from '../../../hooks';
 import {CreateReminderModal} from './CreateReminderModal';
-import {Reminders} from './Reminders';
 import {Reminder, ReminderType} from './types';
 
 type State = {
@@ -107,14 +108,33 @@ export const ReminderExample = memo(function PlaygroundReminder() {
 
   const handleRate = (value: boolean) => () => setShowRate(value);
   const navBack = useCallback(() => goBack(), [goBack]);
-
+  const color = useColor();
   return (
     <>
-        <Button onPress={handleCreateReminder} title="create reminder" />
-        <Text center title="reminders" type="h2" />
-        <Reminders reminders={form.reminders} />
-        <Button onPress={handleRate(true)} title="press me" />
       <Screen dropShadow onLeftPress={navBack} title="Reminder">
+        <ScrollView style={{backgroundColor: color.surface}}>
+          <Text center emphasis="low" title="Modals" type="h4" />
+          <Button
+            center
+            color="primary"
+            onPress={handleCreateReminder}
+            title="create reminder"
+          />
+          <Button
+            center
+            color="primary"
+            onPress={handleRate(true)}
+            title="rate me"
+          />
+          <Text center emphasis="low" title="Reminders" type="h4" />
+          {form.reminders.map((reminder, index) => (
+            <Text
+              key={reminder.id}
+              title={reminder.format}
+              type={index === form.reminders.length - 1 ? 'button' : undefined}
+            />
+          ))}
+        </ScrollView>
       </Screen>
       {showRate && <RateApp onComplete={handleRate(false)} />}
       {form.modals.createReminder && (
@@ -125,12 +145,12 @@ export const ReminderExample = memo(function PlaygroundReminder() {
         />
       )}
       {form.modals.customDate && (
-        <Modal onBackgroundPress={handleCustomDateClose}>
+        <Modal onBackgroundPress={handleCustomDateClose} showOverlay>
           <Text title="hello" />
         </Modal>
       )}
       {form.modals.location && (
-        <Modal onBackgroundPress={handleLocationClose}>
+        <Modal onBackgroundPress={handleLocationClose} showOverlay>
           <Text title="location" />
         </Modal>
       )}
