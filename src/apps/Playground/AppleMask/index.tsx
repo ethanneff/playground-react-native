@@ -40,10 +40,10 @@ const Section = ({
         <Text
           style={{width: leftWidth, color: color.primary}}
           title={String(index)}
-          type="h1"
+          type="h2"
         />
         <View style={{flex: 1}}>
-          <Text title={title} type="h3" />
+          <Text title={title} type="h5" />
           <Text title={description} type="subtitle1" />
           {image && (
             <Image
@@ -97,7 +97,7 @@ export const AppleMask = memo(function AppleMask() {
   const paddingHorizontal = Theme.padding.p04;
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen onLeftPress={navBack}>
+    <Screen border onLeftPress={navBack} title="Apple Mask">
       <ScrollView contentContainerStyle={{paddingHorizontal}}>
         <Text title="Assemble and adjust your Face Shield" type="h2" />
         <Text

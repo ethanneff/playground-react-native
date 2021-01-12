@@ -97,7 +97,7 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack}>
+    <Screen onLeftPress={navBack} title="Stop Watch">
       <View style={styles.container}>
         <Timer interval={interval} style={styles.timer} />
         {state.laps.length === 0 && (
