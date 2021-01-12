@@ -18,6 +18,7 @@ export interface TextProps {
   invisible?: boolean;
   inverse?: boolean;
   color?: keyof Color;
+  flex?: boolean;
   adjustsFontSizeToFit?: boolean;
 
   numberOfLines?: number;
@@ -39,6 +40,7 @@ export const Text = ({
   bold,
   color,
   inverse,
+  flex,
   ellipsizeMode,
   centerVertically,
   invisible,
@@ -74,6 +76,9 @@ export const Text = ({
     color: {
       color: textColor,
     },
+    flex: {
+      flex: 1,
+    },
     invisible: {
       opacity: 0,
     },
@@ -107,6 +112,7 @@ export const Text = ({
     bold && styles.bold,
     {opacity},
     invisible && styles.invisible,
+    flex && styles.flex,
     style,
   ];
 

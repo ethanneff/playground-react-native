@@ -38,7 +38,14 @@ export const NavBar = memo(
     return (
       <View style={styles.container}>
         <NavButton icon={leftIcon} onPress={onLeftPress} testID="leftNav" />
-        <Text center emphasis="high" title={title} type="h3" />
+        <Text
+          center
+          emphasis="high"
+          flex
+          numberOfLines={1}
+          title={title}
+          type="h3"
+        />
         <NavButton
           icon={rightIcon}
           isRight
