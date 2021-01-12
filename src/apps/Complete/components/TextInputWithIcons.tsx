@@ -6,9 +6,9 @@ import React, {
   useState,
 } from 'react';
 import {LayoutChangeEvent, TextInput as Original, View} from 'react-native';
-import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import {Icon, TextInput} from '../../../components';
 import {PointerEvents} from '../../../components/TextInput/types';
+import {TouchableWithoutFeedback} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {FontType, Theme} from '../../../utils';
 
