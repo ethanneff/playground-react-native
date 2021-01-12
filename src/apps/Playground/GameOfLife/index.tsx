@@ -6,7 +6,7 @@ import {useColor} from '../../../hooks';
 import {getSmallestDimension} from '../../../models';
 import {useRootSelector} from '../../../utils';
 import {Cell} from './Cell';
-import {determineBoardItem, generateBoard, swapBoardItem} from './utils';
+import {Board, determineBoardItem, generateBoard, swapBoardItem} from './utils';
 
 export const GameOfLife = memo(function PlaygroundGameOfLife() {
   const color = useColor();
@@ -16,7 +16,7 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
     count: 20,
   });
   const [loading, setLoading] = useState(true);
-  const [board, setBoard] = useState(generateBoard(form.count, 0.5));
+  const [board, setBoard] = useState<Board>(generateBoard(form.count, 0.5));
   const runRef = useRef(form.run);
   const delayRef = useRef(form.delay);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
