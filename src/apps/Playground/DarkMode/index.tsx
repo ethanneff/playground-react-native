@@ -3,10 +3,11 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {Image, ImageSourcePropType, View} from 'react-native';
 import {Button, Card, Masonry, Screen, Slider, Text} from '../../../components';
+import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {
-  ColorTheme,
   changeTheme,
+  ColorTheme,
   colorThemes,
   getLandscapeOrientation,
 } from '../../../models';
@@ -44,7 +45,7 @@ const cards: Card[] = [
     chart: image,
   },
   {
-    button: 'save',
+    button: 'view',
     title: 'Users',
     value: '45.5 M',
   },
@@ -61,6 +62,16 @@ const cards: Card[] = [
     title: 'Bounce rate',
     value: '12%',
   },
+  {
+    title: 'Churn',
+    value: '8%',
+    target: '+45.1 of target',
+    button: 'view',
+  },
+  {
+    title: 'Spend',
+    value: '18.4 M',
+  },
 ];
 
 export const DarkMode = memo(function DarkMode() {
@@ -72,7 +83,7 @@ export const DarkMode = memo(function DarkMode() {
   const [elevation, setElevation] = useState(2);
   const handleSlider = useCallback((value: number) => setElevation(value), []);
   const landscape = useRootSelector(getLandscapeOrientation);
-  const columns = landscape ? 5 : 3;
+  const columns = landscape ? 5 : 2;
   const onPress = useCallback(() => undefined, []);
 
   const renderItem = useCallback(
@@ -82,7 +93,7 @@ export const DarkMode = memo(function DarkMode() {
         <Text
           style={{marginTop: Theme.padding.p02}}
           title={item.value}
-          type="h3"
+          type="h4"
         />
         {item.target && (
           <Text
@@ -95,7 +106,7 @@ export const DarkMode = memo(function DarkMode() {
           <Image
             source={item.chart}
             style={{
-              height: 80,
+              height: 100,
               marginTop: Theme.padding.p02,
               resizeMode: 'cover',
               width: '100%',
@@ -105,6 +116,7 @@ export const DarkMode = memo(function DarkMode() {
         {item.button && (
           <Button
             buttonStyle={{marginTop: Theme.padding.p02}}
+            center
             color="primary"
             emphasis="high"
             title={item.button}
@@ -117,37 +129,38 @@ export const DarkMode = memo(function DarkMode() {
 
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen onLeftPress={navBack} title="Dark mode">
-      <View style={{padding: Theme.padding.p04}}>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-          }}>
-          <Text title="theme: " />
-          {colorThemes.map((item) => (
-            <Button
-              color={currentTheme === item ? 'primary' : 'text'}
-              emphasis="high"
-              key={item}
-              onPress={themePress(item)}
-              title={item}
-            />
-          ))}
     <Screen dropShadow onLeftPress={navBack} title="Dark mode">
+      <ScrollView style={{backgroundColor: color.surface}}>
+        <View style={{padding: Theme.padding.p04}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}>
+            <Text title="theme: " />
+            {colorThemes.map((item) => (
+              <Button
+                color={currentTheme === item ? 'primary' : 'text'}
+                emphasis="high"
+                key={item}
+                onPress={themePress(item)}
+                title={item}
+              />
+            ))}
+          </View>
+          <Text title={`elevation: ${elevation}`} />
+          <Slider
+            maximumValue={10}
+            minimumTrackTintColor={color.primary}
+            minimumValue={0}
+            onValueChange={handleSlider}
+            step={1}
+            value={elevation}
+          />
         </View>
-        <Text title={`elevation: ${elevation}`} />
-        <Slider
-          maximumValue={10}
-          minimumTrackTintColor={color.primary}
-          minimumValue={0}
-          onValueChange={handleSlider}
-          step={1}
-          value={elevation}
-        />
-      </View>
-      <Text center title="Weekly Stats" type="h2" />
-      <Masonry data={cards} numColumns={columns} renderItem={renderItem} />
+        <Text center title="Weekly Stats" type="h2" />
+        <Masonry data={cards} numColumns={columns} renderItem={renderItem} />
+      </ScrollView>
     </Screen>
   );
 });
