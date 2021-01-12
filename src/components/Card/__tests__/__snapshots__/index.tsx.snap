@@ -292,6 +292,14 @@ exports[`renders correctly 1`] = `
                       onGestureHandlerStateChange={[Function]}
                       onHandlerStateChange={[Function]}
                       rippleColor={0}
+                      style={
+                        Array [
+                          Object {
+                            "flex": 0,
+                          },
+                          undefined,
+                        ]
+                      }
                     >
                       <View
                         accessible={true}
@@ -633,6 +641,14 @@ exports[`renders correctly with onPress 1`] = `
                       onGestureHandlerStateChange={[Function]}
                       onHandlerStateChange={[Function]}
                       rippleColor={0}
+                      style={
+                        Array [
+                          Object {
+                            "flex": 0,
+                          },
+                          undefined,
+                        ]
+                      }
                     >
                       <View
                         accessible={true}

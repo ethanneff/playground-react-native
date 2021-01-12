@@ -1839,9 +1839,9 @@ exports[`renders correctly 1`] = `
                       style={
                         Object {
                           "color": "hsla(0, 0%, 0%, 1)",
-                          "fontSize": 14,
+                          "fontSize": 16,
                           "fontWeight": "300",
-                          "letterSpacing": 0.25,
+                          "letterSpacing": 0.5,
                           "opacity": 1,
                         }
                       }
@@ -2149,9 +2149,9 @@ exports[`renders empty 1`] = `
                       style={
                         Object {
                           "color": "hsla(0, 0%, 0%, 1)",
-                          "fontSize": 14,
+                          "fontSize": 16,
                           "fontWeight": "300",
-                          "letterSpacing": 0.25,
+                          "letterSpacing": 0.5,
                           "opacity": 1,
                         }
                       }
@@ -2459,7 +2459,7 @@ exports[`renders h1 1`] = `
                       style={
                         Object {
                           "color": "hsla(0, 0%, 0%, 1)",
-                          "fontSize": 64,
+                          "fontSize": 96,
                           "fontWeight": "100",
                           "letterSpacing": -1.5,
                           "opacity": 1,
@@ -2769,7 +2769,7 @@ exports[`renders h3 1`] = `
                       style={
                         Object {
                           "color": "hsla(0, 0%, 0%, 1)",
-                          "fontSize": 32,
+                          "fontSize": 48,
                           "fontWeight": "300",
                           "letterSpacing": 0,
                           "opacity": 1,
@@ -3079,7 +3079,7 @@ exports[`renders h4 1`] = `
                       style={
                         Object {
                           "color": "hsla(0, 0%, 0%, 1)",
-                          "fontSize": 22.666666666666668,
+                          "fontSize": 34,
                           "fontWeight": "300",
                           "letterSpacing": 0.25,
                           "opacity": 1,
@@ -3389,7 +3389,7 @@ exports[`renders h5 1`] = `
                       style={
                         Object {
                           "color": "hsla(0, 0%, 0%, 1)",
-                          "fontSize": 16,
+                          "fontSize": 24,
                           "fontWeight": "300",
                           "letterSpacing": 0,
                           "opacity": 1,
@@ -3699,7 +3699,7 @@ exports[`renders h6 1`] = `
                       style={
                         Object {
                           "color": "hsla(0, 0%, 0%, 1)",
-                          "fontSize": 13.333333333333334,
+                          "fontSize": 20,
                           "fontWeight": "600",
                           "letterSpacing": 0.15,
                           "opacity": 1,
@@ -4939,7 +4939,7 @@ exports[`renders type="h2"   1`] = `
                       style={
                         Object {
                           "color": "hsla(0, 0%, 0%, 1)",
-                          "fontSize": 40,
+                          "fontSize": 60,
                           "fontWeight": "100",
                           "letterSpacing": -0.5,
                           "opacity": 1,

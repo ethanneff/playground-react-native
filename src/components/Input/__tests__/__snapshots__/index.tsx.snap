@@ -351,11 +351,20 @@ exports[`renders correctly 1`] = `
                           onGestureHandlerStateChange={[Function]}
                           onHandlerStateChange={[Function]}
                           rippleColor={0}
+                          style={
+                            Array [
+                              Object {
+                                "flex": 0,
+                              },
+                              undefined,
+                            ]
+                          }
                         >
                           <View
                             accessible={true}
                             style={
                               Object {
+                                "justifyContent": "center",
                                 "opacity": 1,
                                 "position": "absolute",
                                 "right": 0,
@@ -404,11 +413,20 @@ exports[`renders correctly 1`] = `
                           onGestureHandlerStateChange={[Function]}
                           onHandlerStateChange={[Function]}
                           rippleColor={0}
+                          style={
+                            Array [
+                              Object {
+                                "flex": 0,
+                              },
+                              undefined,
+                            ]
+                          }
                         >
                           <View
                             accessible={true}
                             style={
                               Object {
+                                "justifyContent": "center",
                                 "opacity": 1,
                               }
                             }
@@ -447,6 +465,14 @@ exports[`renders correctly 1`] = `
                           onGestureHandlerStateChange={[Function]}
                           onHandlerStateChange={[Function]}
                           rippleColor={0}
+                          style={
+                            Array [
+                              Object {
+                                "flex": 0,
+                              },
+                              undefined,
+                            ]
+                          }
                         >
                           <View
                             accessible={true}
@@ -467,9 +493,9 @@ exports[`renders correctly 1`] = `
                               style={
                                 Object {
                                   "color": "hsl(354, 70%, 54%)",
-                                  "fontSize": 14,
+                                  "fontSize": 16,
                                   "fontWeight": "300",
-                                  "letterSpacing": 0.25,
+                                  "letterSpacing": 0.5,
                                   "opacity": 1,
                                   "textAlign": "center",
                                 }

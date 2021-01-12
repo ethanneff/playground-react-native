@@ -8,7 +8,7 @@ import {
   Text,
   TouchableOpacity,
 } from '../../components';
-import {auth, FirebaseAuthTypes} from '../../conversions';
+import {auth, FirebaseAuthTypes} from '../../conversions/Firebase';
 import {useColor} from '../../hooks';
 import {Theme} from '../../utils';
 

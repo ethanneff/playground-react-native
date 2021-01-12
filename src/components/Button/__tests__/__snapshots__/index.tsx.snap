@@ -292,6 +292,14 @@ exports[`renders correctly 1`] = `
                       onGestureHandlerStateChange={[Function]}
                       onHandlerStateChange={[Function]}
                       rippleColor={0}
+                      style={
+                        Array [
+                          Object {
+                            "flex": 0,
+                          },
+                          undefined,
+                        ]
+                      }
                     >
                       <View
                         accessible={true}
@@ -628,17 +636,25 @@ exports[`renders disable 1`] = `
                       onGestureHandlerStateChange={[Function]}
                       onHandlerStateChange={[Function]}
                       rippleColor={0}
+                      style={
+                        Array [
+                          Object {
+                            "flex": 0,
+                          },
+                          undefined,
+                        ]
+                      }
                     >
                       <View
                         accessible={true}
                         style={
                           Object {
-                            "alignSelf": "center",
                             "backgroundColor": "transparent",
                             "borderColor": "transparent",
                             "borderRadius": 4,
                             "borderWidth": 1,
                             "flexDirection": "row",
+                            "justifyContent": "center",
                             "opacity": 1,
                             "padding": 8,
                             "paddingHorizontal": 16,

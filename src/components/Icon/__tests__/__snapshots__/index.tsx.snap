@@ -292,11 +292,20 @@ exports[`renders correctly 1`] = `
                       onGestureHandlerStateChange={[Function]}
                       onHandlerStateChange={[Function]}
                       rippleColor={0}
+                      style={
+                        Array [
+                          Object {
+                            "flex": 0,
+                          },
+                          undefined,
+                        ]
+                      }
                     >
                       <View
                         accessible={true}
                         style={
                           Object {
+                            "justifyContent": "center",
                             "opacity": 1,
                           }
                         }
@@ -630,11 +639,20 @@ exports[`renders correctly with clear and max badge 1`] = `
                       onGestureHandlerStateChange={[Function]}
                       onHandlerStateChange={[Function]}
                       rippleColor={0}
+                      style={
+                        Array [
+                          Object {
+                            "flex": 0,
+                          },
+                          undefined,
+                        ]
+                      }
                     >
                       <View
                         accessible={true}
                         style={
                           Object {
+                            "justifyContent": "center",
                             "opacity": 1,
                           }
                         }
@@ -683,7 +701,7 @@ exports[`renders correctly with clear and max badge 1`] = `
                                 "color": "hsl(0, 0%, 100%)",
                                 "fontSize": 8,
                                 "fontWeight": "300",
-                                "letterSpacing": 0.25,
+                                "letterSpacing": 0.5,
                                 "opacity": 1,
                                 "textAlign": "center",
                               }
@@ -998,11 +1016,20 @@ exports[`renders correctly without defaults 1`] = `
                       onGestureHandlerStateChange={[Function]}
                       onHandlerStateChange={[Function]}
                       rippleColor={0}
+                      style={
+                        Array [
+                          Object {
+                            "flex": 0,
+                          },
+                          undefined,
+                        ]
+                      }
                     >
                       <View
                         accessible={true}
                         style={
                           Object {
+                            "justifyContent": "center",
                             "opacity": 1,
                           }
                         }
@@ -1051,7 +1078,7 @@ exports[`renders correctly without defaults 1`] = `
                                 "color": "hsl(0, 0%, 100%)",
                                 "fontSize": 8,
                                 "fontWeight": "300",
-                                "letterSpacing": 0.25,
+                                "letterSpacing": 0.5,
                                 "opacity": 1,
                                 "textAlign": "center",
                               }

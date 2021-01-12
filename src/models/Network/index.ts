@@ -4,7 +4,7 @@ import {
   NetInfoConnectedDetails,
   NetInfoState,
   NetInfoStateType,
-} from '../../conversions';
+} from '../../conversions/NetInfo';
 import {logout} from '../Auth';
 
 /* ACTIONS */

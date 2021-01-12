@@ -297,6 +297,7 @@ exports[`renders correctly 1`] = `
                         emulateUnlessSupported={true}
                         style={
                           Object {
+                            "backgroundColor": "hsl(0, 0%, 100%)",
                             "flex": 1,
                           }
                         }
@@ -305,6 +306,7 @@ exports[`renders correctly 1`] = `
                           style={
                             Object {
                               "alignItems": "center",
+                              "backgroundColor": "hsl(0, 0%, 100%)",
                               "borderBottomColor": "hsl(0, 0%, 100%)",
                               "borderBottomWidth": 1,
                               "flexDirection": "row",
@@ -316,19 +318,122 @@ exports[`renders correctly 1`] = `
                           <View
                             style={
                               Object {
-                                "flex": 0.2,
                                 "padding": 12,
                               }
                             }
-                          />
+                          >
+                            <RNGestureHandlerButton
+                              collapsable={false}
+                              onGestureEvent={[Function]}
+                              onGestureHandlerEvent={[Function]}
+                              onGestureHandlerStateChange={[Function]}
+                              onHandlerStateChange={[Function]}
+                              rippleColor={0}
+                              style={
+                                Array [
+                                  Object {
+                                    "flex": 0,
+                                  },
+                                  undefined,
+                                ]
+                              }
+                              testID="leftNav"
+                            >
+                              <View
+                                accessible={true}
+                                style={
+                                  Object {
+                                    "justifyContent": "center",
+                                    "opacity": 1,
+                                  }
+                                }
+                              >
+                                <Text
+                                  allowFontScaling={false}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "transparent",
+                                        "fontSize": 36,
+                                      },
+                                      Array [
+                                        undefined,
+                                        undefined,
+                                      ],
+                                      Object {
+                                        "fontFamily": "Material Design Icons",
+                                        "fontStyle": "normal",
+                                        "fontWeight": "normal",
+                                      },
+                                      Object {},
+                                    ]
+                                  }
+                                >
+                                  󰅁
+                                </Text>
+                              </View>
+                            </RNGestureHandlerButton>
+                          </View>
                           <View
                             style={
                               Object {
-                                "flex": 0.2,
                                 "padding": 12,
                               }
                             }
-                          />
+                          >
+                            <RNGestureHandlerButton
+                              collapsable={false}
+                              onGestureEvent={[Function]}
+                              onGestureHandlerEvent={[Function]}
+                              onGestureHandlerStateChange={[Function]}
+                              onHandlerStateChange={[Function]}
+                              rippleColor={0}
+                              style={
+                                Array [
+                                  Object {
+                                    "flex": 0,
+                                  },
+                                  undefined,
+                                ]
+                              }
+                              testID="rightNav"
+                            >
+                              <View
+                                accessible={true}
+                                style={
+                                  Object {
+                                    "alignSelf": "flex-end",
+                                    "justifyContent": "center",
+                                    "opacity": 1,
+                                  }
+                                }
+                              >
+                                <Text
+                                  allowFontScaling={false}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "transparent",
+                                        "fontSize": 36,
+                                      },
+                                      Array [
+                                        undefined,
+                                        undefined,
+                                      ],
+                                      Object {
+                                        "fontFamily": "Material Design Icons",
+                                        "fontStyle": "normal",
+                                        "fontWeight": "normal",
+                                      },
+                                      Object {},
+                                    ]
+                                  }
+                                >
+                                  󰅖
+                                </Text>
+                              </View>
+                            </RNGestureHandlerButton>
+                          </View>
                         </View>
                         <View
                           style={
