@@ -22,7 +22,6 @@ interface Props {
   emphasis?: FontEmphasis;
   autoCorrect?: boolean;
   blurOnSubmit?: boolean;
-  focusOnLoad?: boolean;
   disableFullscreenUI?: boolean;
   backgroundColor?: string;
   editable?: boolean;
@@ -51,7 +50,7 @@ export const TextInput = ({
   pointerEvents,
   blurOnSubmit = true,
   disableFullscreenUI = true,
-  focusOnLoad,
+
   editable = true,
   error = '',
   backgroundColor,
@@ -127,13 +126,10 @@ export const TextInput = ({
   const onInternalRef = useCallback(
     (ref: Original | null) => {
       if (!ref) return;
-
-      if (!textInput.current && focusOnLoad) ref.focus();
-
       textInput.current = ref;
       if (onRef) onRef.current = ref;
     },
-    [focusOnLoad, onRef],
+    [onRef],
   );
 
   return (

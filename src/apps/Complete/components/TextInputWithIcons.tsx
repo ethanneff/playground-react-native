@@ -30,7 +30,6 @@ type TextInputWithIconsProps = {
   backgroundColor?: string;
   pointerEvents?: PointerEvents;
   type?: FontType;
-  focusOnLoad?: boolean;
   onBlur?: () => void;
   onFocus?: () => void;
   blurOnSubmit?: boolean;
@@ -49,7 +48,6 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
   backgroundColor,
   editable,
   pointerEvents,
-  focusOnLoad,
   icons,
   type,
   onSubmit,
@@ -122,7 +120,6 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
         blurOnSubmit={blurOnSubmit}
         editable={editable}
         flex
-        focusOnLoad={focusOnLoad}
         multiline={multiline}
         numberOfLines={numberOfLines}
         onBlur={onBlurInternal}

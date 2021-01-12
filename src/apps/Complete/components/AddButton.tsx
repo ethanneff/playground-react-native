@@ -1,4 +1,4 @@
-import React, {memo, useCallback, useRef, useState} from 'react';
+import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {TextInput as OriginalTextInput, View} from 'react-native';
 import {Button} from '../../../components';
 import {useColor} from '../../../hooks';
@@ -11,18 +11,22 @@ type AddButtonProps = {
   placeholder: string;
   title: string;
   onSubmit: (value: string) => void;
+  noSubmitFocus?: boolean;
 };
 
 export const AddButton = memo(function AddButton({
   width,
   placeholder,
   title,
+  noSubmitFocus,
   onSubmit,
 }: AddButtonProps) {
   const color = useColor();
   const textInputRef = useRef<OriginalTextInput | null>(null);
   const [showInput, setShowInput] = useState(false);
-  const onAddItemPress = useCallback(() => setShowInput((p) => !p), []);
+  const onAddItemPress = useCallback(() => {
+    setShowInput((p) => !p);
+  }, []);
 
   const onItemTitleClose = useCallback(() => {
     setShowInput(false);
@@ -31,9 +35,9 @@ export const AddButton = memo(function AddButton({
   const onItemTitleSubmit = useCallback(
     (text) => {
       onSubmit(text);
-      textInputRef.current?.focus();
+      if (noSubmitFocus) textInputRef.current?.blur();
     },
-    [onSubmit],
+    [noSubmitFocus, onSubmit],
   );
 
   const onBlur = useCallback(() => {
@@ -51,6 +55,10 @@ export const AddButton = memo(function AddButton({
     },
   ];
 
+  useEffect(() => {
+    if (showInput) textInputRef.current?.focus();
+  }, [showInput]);
+
   return (
     <View
       style={{
@@ -63,9 +71,9 @@ export const AddButton = memo(function AddButton({
       {showInput ? (
         <TextInputWithIcons
           blurOnSubmit={false}
-          focusOnLoad
           icons={icons}
           onBlur={onBlur}
+          onRef={textInputRef}
           onSubmit={onItemTitleSubmit}
           placeholder={placeholder}
           value=""
