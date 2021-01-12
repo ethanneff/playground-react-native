@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import {Screen, Text} from '../../../components';
 import {useColor, useDriver, useDropShadow} from '../../../hooks';
+import {Theme} from '../../../utils';
 
 const getPosition = (
   gestureState: PanResponderGestureState,
@@ -87,6 +88,18 @@ export const Drag = memo(function PlaygroundDrag() {
   return (
     <Screen dropShadow onLeftPress={navBack} title="Drag">
       <View onLayout={handleCanvas} style={styles.canvas}>
+        <Text
+          center
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            top: 0,
+            padding: Theme.padding.p02,
+          }}
+          title="drag the circle"
+          type="overline"
+        />
         <Animated.View
           style={[ballPosition.getLayout(), styles.ball]}
           {...panGesture.panHandlers}
