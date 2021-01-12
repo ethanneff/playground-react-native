@@ -1,11 +1,13 @@
-import React, {ReactNode, useCallback} from 'react';
+import React, {ReactElement, ReactNode, useCallback} from 'react';
 import {StyleProp, ViewStyle} from 'react-native';
 import {TouchableOpacity as Original} from '../../conversions';
 import {SoundManager} from '../../utils/Sound';
 
 interface Props {
   testID?: string;
+  containerStyle?: StyleProp<ViewStyle>;
   style?: StyleProp<ViewStyle>;
+  flex?: boolean;
   activeOpacity?: number;
   disabled?: boolean;
   onPress?(): void;
@@ -20,8 +22,10 @@ export const TouchableOpacity = ({
   children,
   disabled,
   activeOpacity,
+  containerStyle,
+  flex,
   style,
-}: Props): JSX.Element => {
+}: Props): ReactElement => {
   const onPressHandler = useCallback(() => {
     SoundManager.play('tap');
     if (onPress) onPress();
@@ -32,9 +36,11 @@ export const TouchableOpacity = ({
     if (onLongPress) onLongPress();
   }, [onLongPress]);
 
+  const containerStyles = [{flex: flex ? 1 : 0}, containerStyle];
   return (
     <Original
       activeOpacity={activeOpacity}
+      containerStyle={containerStyles}
       disabled={disabled}
       onLongPress={onLongPressHandler}
       onPress={onPressHandler}

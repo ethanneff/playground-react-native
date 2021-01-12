@@ -1,8 +1,8 @@
+import dayjs from 'dayjs';
 import React from 'react';
 import {View} from 'react-native';
-import dayjs from 'dayjs';
 import {useColor} from '../../hooks';
-import {Theme, colorWithOpacity} from '../../utils';
+import {colorWithOpacity, Theme} from '../../utils';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {Day} from './utils';
@@ -39,13 +39,11 @@ export const CalendarDay = ({
 
   return (
     <TouchableOpacity
+      containerStyle={{alignItems: 'center'}}
       disabled={disabled}
+      flex
       key={day.id}
-      onPress={onSelected}
-      style={{
-        flex: 1,
-        alignItems: 'center',
-      }}>
+      onPress={onSelected}>
       <View
         style={{
           height: Theme.padding.p08,
@@ -57,9 +55,7 @@ export const CalendarDay = ({
         <Text
           bold={today}
           center
-          style={{
-            color: textColor,
-          }}
+          style={{color: textColor}}
           title={day.display}
         />
       </View>
