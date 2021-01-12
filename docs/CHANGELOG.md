@@ -1,5 +1,71 @@
 # Changelog
 
+# [2.47.0](https://github.com/ethanneff/example/compare/v2.46.3...v2.47.0) (2021-01-12)
+
+
+### Bug Fixes
+
+* add background color to okrs ([f45f829](https://github.com/ethanneff/example/commit/f45f829ce5702da28a721b13df3224f6046bd4d5))
+* add better styling toitem details ([16dbac7](https://github.com/ethanneff/example/commit/16dbac7cc614df2286120b69dd15988d84804bf1))
+* add dropshadow to nav bar ([3ceced9](https://github.com/ethanneff/example/commit/3ceced9876216f8e1a87fb7f48cd0388aa59b6c3))
+* add dropShadow to screen ([0873ff2](https://github.com/ethanneff/example/commit/0873ff28feb0ad4473395e7d9406f0c6c440812e))
+* add flex on nav bar to prevent overlap ([4bbb129](https://github.com/ethanneff/example/commit/4bbb129d2506238d7b8e228403abda8536e62b25))
+* add flex to calendar header ([e0781b4](https://github.com/ethanneff/example/commit/e0781b43f4cd1fd55ba544581f4b3da8a25b3e3b))
+* add margin to reflect cards ([0865db0](https://github.com/ethanneff/example/commit/0865db0757ec48f0beef678428d474e389deca1b))
+* add missing scrollviews ([42ad031](https://github.com/ethanneff/example/commit/42ad03124ffc902932a836658e52ac00d1cffd91))
+* add missing titles ([0f75538](https://github.com/ethanneff/example/commit/0f755386e1dd4ea05ec3d129c49e281ac11fa6de))
+* add notRequired prop for item details ([60bb8fe](https://github.com/ethanneff/example/commit/60bb8feefda11ed1b2843ee4054a8b6add74142b))
+* add overlay to modals ([edd4217](https://github.com/ethanneff/example/commit/edd4217395da591a10419a9262e81c0893ececc3))
+* add scrollview to to fonts ([41d59ad](https://github.com/ethanneff/example/commit/41d59add31c37e46feb39ea6e49a5fa664ec8ae4))
+* add title to search bar ([b96fbeb](https://github.com/ethanneff/example/commit/b96fbeb4b09132756fbc3cd797d09f49ca118628))
+* adjust font for cant hurt me ([70a2a7b](https://github.com/ethanneff/example/commit/70a2a7ba956639cfd86cf7d8715709969782dbfa))
+* center button text correctly ([a8d6037](https://github.com/ethanneff/example/commit/a8d6037591517a831d23dd7cf28d094e0e2b4e87))
+* center button text for colors ([99a3354](https://github.com/ethanneff/example/commit/99a33549e02c88fa31870d0ed988577a9fd415ee))
+* center icons on list header ([604a7cf](https://github.com/ethanneff/example/commit/604a7cf83fd8378ebcd18471d3e6dfef5acf744a))
+* chagne the styling of one thing ([b5ea7df](https://github.com/ethanneff/example/commit/b5ea7dfc283f15abd6f793dab2466e486162d539))
+* change color of pinch spread ([85a42b6](https://github.com/ethanneff/example/commit/85a42b6879d38b91e7c5965678d63564541cd1d5))
+* change style of item detail ([a7ba7fe](https://github.com/ethanneff/example/commit/a7ba7fea64a88deb863acbb476e9640af1bb7f09))
+* change style of startup ([33de829](https://github.com/ethanneff/example/commit/33de829cdef9d1d50030a680559cae6a086d1d68))
+* clean up edit item styling ([6a4e35c](https://github.com/ethanneff/example/commit/6a4e35c3ae9ddd6435c3d4cddabed62720907f20))
+* correct conversion barrel import ([3367b59](https://github.com/ethanneff/example/commit/3367b59f8526b10d0693d91fa98c1ce6e07a2771))
+* correct flex for screen title ([64c0085](https://github.com/ethanneff/example/commit/64c00851f57dd99048600d8ee702685d7c9899da))
+* correct font sizing on screens ([dcd8697](https://github.com/ethanneff/example/commit/dcd86972344c99d727ef9b5c1a2f2c7c0698d39c))
+* correct icon centering ([509becb](https://github.com/ethanneff/example/commit/509becb110018765a4932e3c4012711c5522a468))
+* focus input on button press ([acc2870](https://github.com/ethanneff/example/commit/acc2870362fff999132d77c85f4c59252ac255c4))
+* import type on game of life ([5823130](https://github.com/ethanneff/example/commit/5823130e2e8edde48c09caae6e29d331dc2113a7))
+* make modal handle keyboard ([1cc07ff](https://github.com/ethanneff/example/commit/1cc07ff3d6f485bc9f55186992053676540917fc))
+* make style improvements to cant hurt me ([b13be2c](https://github.com/ethanneff/example/commit/b13be2c007864d5fd8d6f1fee43792379451bad0))
+* make style improvements to chat ([01d5d9c](https://github.com/ethanneff/example/commit/01d5d9cc47740c8f05ffbd5d6db7a41c6d6797bf))
+* make web work ([f542ce0](https://github.com/ethanneff/example/commit/f542ce0aaebdf1ee369c1132dce6d3f6005b0119))
+* pass container styles to button component ([a69d294](https://github.com/ethanneff/example/commit/a69d294b8dd2f0e39d3cc3cca996d34bce774b5c))
+* pass flex to card for buttons ([5337d90](https://github.com/ethanneff/example/commit/5337d907ab6567aad1ba48bdacee360fb3cc8568))
+* pass number of lines to text input ([437e7a9](https://github.com/ethanneff/example/commit/437e7a909b47b4f742700f1ee5bcefea1ff6dbd1))
+* pass up onref on input ([dbac58b](https://github.com/ethanneff/example/commit/dbac58b04e8e99db2161e7648bff38b7f4a36bb2))
+* prevent text input from being pressed on icon press ([0db78f6](https://github.com/ethanneff/example/commit/0db78f60fdf078923d6ab2a19b5efea5216898e1))
+* relcate instructions ([3b66ba4](https://github.com/ethanneff/example/commit/3b66ba445682f9739d110f7d1ebd1f04433b416b))
+* remove font scaling ([aece9ec](https://github.com/ethanneff/example/commit/aece9ece4ac35c69f0b55e84a59d24fa7e088f82))
+* remove scrollview from masonry ([e08cb4b](https://github.com/ethanneff/example/commit/e08cb4be951d6e7525ead4d1d832b47fc017f92c))
+* remove unused remainder componoent ([1af975b](https://github.com/ethanneff/example/commit/1af975b35adbb63afbc0ccb1f9c779e523c16092))
+* style improvements to comfort zone ([b618b4e](https://github.com/ethanneff/example/commit/b618b4ea5b1c77597fbc49e41f30df872712b192))
+* styling around delete buttons ([83915d0](https://github.com/ethanneff/example/commit/83915d0381dff28a2ebe3c73476f86640af0c112))
+* update deps ([5271ac8](https://github.com/ethanneff/example/commit/5271ac8f72d17583c6a28751ecf9393f258d3340))
+* update deps ([40d3e79](https://github.com/ethanneff/example/commit/40d3e7908e819044d0c03f9af67c53343cbf4e5e))
+* update deps ([e93d969](https://github.com/ethanneff/example/commit/e93d969d5e61d50a61feff0e946af373d40df4e8))
+* update item detail font size ([19f2650](https://github.com/ethanneff/example/commit/19f2650981101569e9acf652d0e57c3a9c4bf555))
+* update keyboard padding to new font sizing ([ea66df9](https://github.com/ethanneff/example/commit/ea66df940f26a0f8c86ad8920e388e74fb7f3d61))
+* update list item on modal redux change ([9a15bcc](https://github.com/ethanneff/example/commit/9a15bcc8872b1ddd4dbaa4fa15a1388a90f004f3))
+* update padding for keyboard ([a9dd66e](https://github.com/ethanneff/example/commit/a9dd66ee1c8d5ce7a9111511847ffe81c3f63b7b))
+* update padding to be uniform on item detail ([2d1a942](https://github.com/ethanneff/example/commit/2d1a942c072463b1371e835828eb6e2af49235b2))
+* update tests ([cafe090](https://github.com/ethanneff/example/commit/cafe090c18abe0c45e1e41995f960441a28fc16a))
+* update typings for arcade navigation ([0ea2c7e](https://github.com/ethanneff/example/commit/0ea2c7eb22ed4866951305885addfeea040e9b53))
+* use gesture handler scrollview ([bb20215](https://github.com/ethanneff/example/commit/bb20215919ef56d4fed9f39ce1bf9929c820b680))
+* use without freedback instead of opacity for items ([91ad03c](https://github.com/ethanneff/example/commit/91ad03cad89e452319306de04621774201c7a6cd))
+
+
+### Features
+
+* add tic tac toe game ([8136027](https://github.com/ethanneff/example/commit/813602756a104b7c05c42d19406a07c8231d6144))
+
 ## [2.46.3](https://github.com/ethanneff/example/compare/v2.46.2...v2.46.3) (2021-01-07)
 
 
