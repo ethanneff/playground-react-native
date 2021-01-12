@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {Platform, StyleProp, StyleSheet, ViewStyle} from 'react-native';
 import {useColor, useDropShadow} from '../../hooks';
 import {getDisabledColor, Theme} from '../../utils';
@@ -31,7 +31,7 @@ interface Props {
   disabled?: boolean;
 }
 
-export const Icon = ({
+export const Icon = memo(function Icon({
   name,
   style,
   activeOpacity,
@@ -49,7 +49,7 @@ export const Icon = ({
   padded,
   onPress,
   testID,
-}: Props): JSX.Element => {
+}: Props) {
   const colors = useColor();
   const bgColor = backgroundColor ? backgroundColor : colors.primary;
   const dropShadow = useDropShadow();
@@ -63,6 +63,9 @@ export const Icon = ({
       width: Theme.padding.p15,
       ...dropShadow(elevation),
     },
+    icon: {
+      justifyContent: 'center',
+    },
     padded: {
       padding: Theme.padding.p02,
     },
@@ -74,7 +77,9 @@ export const Icon = ({
       width: Theme.padding.p06,
     },
   });
-  const colored = disabled
+  const colored = hidden
+    ? 'transparent'
+    : disabled
     ? getDisabledColor(color || colors.text)
     : clear
     ? colors.background
@@ -86,14 +91,13 @@ export const Icon = ({
     fab ? styles.fab : undefined,
     right ? styles.right : undefined,
     padded ? styles.padded : undefined,
+    styles.icon,
     style,
   ];
-  return name === undefined || name.length === 0 || hidden ? (
-    <></>
-  ) : (
+  return !name ? null : (
     <TouchableOpacity
       activeOpacity={activeOpacity}
-      disabled={!onPress || disabled}
+      disabled={!onPress || disabled || hidden}
       onPress={onPress}
       style={containerStyles}
       testID={testID}>
@@ -101,4 +105,4 @@ export const Icon = ({
       <Badge badge={badge} />
     </TouchableOpacity>
   );
-};
+});
