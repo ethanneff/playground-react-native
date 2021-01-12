@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, Platform, View} from 'react-native';
 import {Button, KeyboardHandler, Screen, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {useRootSelector} from '../../../../utils';
+import {Theme, useRootSelector} from '../../../../utils';
 import {Card, List} from '../../components';
 import {config} from '../../configs';
 import {getInboxBoardId} from '../../models';
@@ -21,12 +21,10 @@ export const Capture = memo(function Capture() {
 
   const listHeight =
     keyboardHeight === 0
-      ? dimensions.container -
-        dimensions.button -
-        (android ? config.padding * 8 : config.padding * 11)
+      ? dimensions.container - dimensions.button - Theme.padding.p44
       : dimensions.container -
         keyboardHeight -
-        (android ? config.padding * 3 : config.padding * 5);
+        (android ? config.padding * 3 : Theme.padding.p19);
 
   const boardId = useRootSelector(getInboxBoardId);
   const listId = useRootSelector(
