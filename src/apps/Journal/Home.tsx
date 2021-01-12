@@ -27,16 +27,16 @@ export const Home = memo(function Home() {
         }}
         style={{backgroundColor: color.surface}}>
         <Card>
-          <Text style={styles.bottom} title="Calendar" type="h3" />
+          <Text style={styles.bottom} title="Calendar" type="h4" />
           <Calendar hiddenDays />
         </Card>
         <Card>
-          <Text style={styles.bottom} title="Record" type="h3" />
+          <Text style={styles.bottom} title="Record" type="h4" />
           <Text
             emphasis="medium"
             style={styles.bottom}
             title="One objective that will make everything easier"
-            type="h5"
+            type="subtitle1"
           />
           <Input
             onChangeText={handleChangeText}
@@ -48,7 +48,7 @@ export const Home = memo(function Home() {
             emphasis="medium"
             style={styles.bottom}
             title="Additional objectives"
-            type="h5"
+            type="subtitle1"
           />
           <Input
             onChangeText={handleChangeText}
@@ -72,41 +72,41 @@ export const Home = memo(function Home() {
             emphasis="medium"
             style={styles.bottom}
             title="Bonus objectives"
-            type="h5"
+            type="subtitle1"
           />
           <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
-            title="tertiary goal"
+            title="Tertiary goal"
             value=""
           />
           <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
-            title="tertiary goal"
+            title="Tertiary goal"
             value=""
           />
           <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
-            title="tertiary goal"
+            title="Tertiary goal"
             value=""
           />
           <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
-            title="tertiary goal"
+            title="Tertiary goal"
             value=""
           />
           <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
-            title="tertiary goal"
+            title="Tertiary goal"
             value=""
           />
         </Card>
         <Card>
-          <Text style={styles.bottom} title="Review" type="h3" />
+          <Text style={styles.bottom} title="Review" type="h4" />
           <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
@@ -121,7 +121,7 @@ export const Home = memo(function Home() {
           />
         </Card>
         <Card>
-          <Text style={styles.bottom} title="Retro" type="h3" />
+          <Text style={styles.bottom} title="Retro" type="h4" />
           <Input
             onChangeText={handleChangeText}
             placeholder="fill me"

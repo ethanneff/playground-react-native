@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useState} from 'react';
-import {CalendarMatrix, addMonths, getCalendarMatrix} from './utils';
 import {CalendarHeader} from './Header';
 import {CalendarMonth} from './Month';
+import {addMonths, CalendarMatrix, getCalendarMatrix} from './utils';
 
 type State = {
   today: Date;

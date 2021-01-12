@@ -1,8 +1,8 @@
 import React, {memo} from 'react';
 import {StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../../components';
-import {Theme} from '../../../utils';
 import {useColor} from '../../../hooks';
+import {Theme} from '../../../utils';
 
 interface Props {
   title: string;
@@ -38,7 +38,6 @@ export const Item = memo(function ReminderItem({
     container: {
       flex: 1,
       flexDirection: 'row',
-
       paddingHorizontal: Theme.padding.p02,
     },
     icon: {

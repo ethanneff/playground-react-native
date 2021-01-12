@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {Animated} from 'react-native';
-import {Text, TouchableOpacity} from '../../../components';
+import {Animated, TouchableOpacity} from 'react-native';
+import {Text} from '../../../components';
 import {useColor} from '../../../hooks';
 import {Theme} from '../../../utils';
 import {CanvasDimensions} from './Canvas';

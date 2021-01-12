@@ -119,7 +119,7 @@ export const Notification = memo(function Notification({
               name="close"
               size={Theme.padding.p08}
             />
-            <Text center style={styles.flex} title={title} type="h3" />
+            <Text center style={styles.flex} title={title} type="h4" />
             <Icon name="close" onPress={onCancel} size={Theme.padding.p08} />
           </View>
         </SafeAreaView>

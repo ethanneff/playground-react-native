@@ -10,18 +10,16 @@ export const Account = memo(function Account() {
   const color = useColor();
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen onLeftPress={navBack} title="Comfort Zone">
+    <Screen onLeftPress={navBack} title="Account">
       <ScrollView
-        contentContainerStyle={{
-          padding: Theme.padding.p04,
-          backgroundColor: color.surface,
-        }}>
+        contentContainerStyle={{padding: Theme.padding.p04}}
+        style={{backgroundColor: color.surface}}>
         <Card>
           <Text
             center
             style={{paddingBottom: Theme.padding.p04}}
             title="Progress"
-            type="h3"
+            type="h5"
           />
           <Calendar />
         </Card>

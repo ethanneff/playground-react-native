@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {ReactElement, useEffect, useRef} from 'react';
 import {Animated, Easing, StyleSheet, View} from 'react-native';
 import {LinearGradient, MaskedView} from '../../conversions';
 import {useColor, useDriver} from '../../hooks';
@@ -22,7 +22,7 @@ export const SkeletonLoader = ({
   backgroundColor,
   foregroundColor,
   duration = 1200,
-}: Props): JSX.Element => {
+}: Props): ReactElement => {
   const color = useColor();
   const bgColor = backgroundColor || color.surface;
   const fgColor = foregroundColor || color.background;

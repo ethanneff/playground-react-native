@@ -57,10 +57,9 @@ export const Home = memo(function Home() {
             center
             emphasis="medium"
             title="Deep Work = Focus + Intensity"
-            type="h4"
+            type="h5"
           />
         </Card>
-
         <Activity site="random" title="Be stronger" username="none" />
         <Activity site="random" title="Ship apps" username="none" />
         <Activity site="random" title="Master leetcode" username="none" />

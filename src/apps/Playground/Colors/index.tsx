@@ -122,7 +122,7 @@ export const Colors = memo(function DebugColors() {
         />
         <View style={{flexDirection: 'row'}}>
           <View style={{flex: 1}}>
-            <Text center title="normal" />
+            <Text center title="default" />
             <Text title="h1" type="h1" />
             <Text title="h2" type="h2" />
             <Text title="h3" type="h3" />

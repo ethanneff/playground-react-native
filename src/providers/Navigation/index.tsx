@@ -29,7 +29,7 @@ const AlertExample = () => {
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <Modal onBackgroundPress={navBack}>
-      <Text title="This is a alert!" type="h3" />
+      <Text center title="This is a alert!" type="h4" />
       <Button center onPress={navBack} title="Dismiss" />
     </Modal>
   );

@@ -22,7 +22,7 @@ export const ListSection = memo(function ListSection({item}: Props) {
         marginTop: Theme.padding.p02,
         padding: Theme.padding.p02,
       }}>
-      <Text title={item.dayOfMonth} type="h3" />
+      <Text title={item.dayOfMonth} type="h4" />
       <Text title={` ${item.month}, ${item.dayOfWeek}`} type="overline" />
     </View>
   );

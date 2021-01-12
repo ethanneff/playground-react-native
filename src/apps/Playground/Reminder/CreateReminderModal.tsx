@@ -39,15 +39,15 @@ export const CreateReminderModal = memo(function CreateReminderModal({
   );
 
   return (
-      <Text title="Create Reminder" type="h2" />
-      <Text style={styles.section} title="Reminder type" type="caption" />
     <Modal onBackgroundPress={onBackgroundPress} showOverlay>
+      <Text title="Create Reminder" type="h4" />
+      <Text style={styles.section} title="Reminder type" type="overline" />
       <Radio
         buttons={reminderTypes}
         onChange={handleReminderTypePress}
         value={state}
       />
-      <Text style={styles.section} title="Reminder time" type="caption" />
+      <Text style={styles.section} title="Reminder time" type="overline" />
       {state === 'One time' ? (
         <OneTime onPress={onOneTimePress} />
       ) : state === 'Repeat' ? (

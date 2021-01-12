@@ -1,7 +1,7 @@
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
-import {CalendarMatrix} from './utils';
 import {CalendarDay} from './Day';
+import {CalendarMatrix} from './utils';
 
 type Props = {
   selected: string | undefined;
@@ -20,7 +20,7 @@ export const CalendarMonth = memo(function Month({
     onSelected,
   ]);
   return (
-    <>
+    <View>
       {matrix.map((row, i) => (
         <View key={i} style={{flexDirection: 'row'}}>
           {row.map((col, j) => (
@@ -34,6 +34,6 @@ export const CalendarMonth = memo(function Month({
           ))}
         </View>
       ))}
-    </>
+    </View>
   );
 });
