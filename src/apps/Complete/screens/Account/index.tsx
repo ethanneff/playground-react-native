@@ -12,7 +12,7 @@ import {
   removeUser,
   setActiveUser,
 } from '../../models';
-import {getDefaultUserTemplate} from './factory';
+import {getDefaultUserTemplate} from '../../utils/';
 
 // TODO: figure out a place for this
 // TODO: add reminders
@@ -31,8 +31,8 @@ export const Account = memo(function Account() {
     lists.map((list) => dispatch(createList(list)));
     boards.map((board) => dispatch(createBoard(board)));
     dispatch(createUser(user));
-    goBack();
-  }, [dispatch, goBack]);
+    navigate('main');
+  }, [dispatch, navigate]);
   const onLogout = useCallback(() => {
     dispatch(removeUser());
     navigate('main');
@@ -45,35 +45,39 @@ export const Account = memo(function Account() {
 
   return (
     <Modal backgroundColor={color.surface} onBackgroundPress={navBack}>
-      <Card>
+      <Card margin="bottom">
         <Text
+          emphasis="low"
           style={{paddingBottom: Theme.padding.p04}}
           title="Profile"
-          type="h3"
+          type="h5"
         />
         <Text center emphasis="medium" title="..." type="h4" />
       </Card>
-      <Card>
+      <Card margin="bottom">
         <Text
+          emphasis="low"
           style={{paddingBottom: Theme.padding.p04}}
           title="Reminders"
-          type="h3"
+          type="h5"
         />
         <Text center emphasis="medium" title="..." type="h4" />
       </Card>
-      <Card>
+      <Card margin="bottom">
         <Text
+          emphasis="low"
           style={{paddingBottom: Theme.padding.p04}}
           title="Payment"
-          type="h3"
+          type="h5"
         />
         <Text center emphasis="medium" title="..." type="h4" />
       </Card>
-      <Card>
+      <Card margin="bottom">
         <Text
+          emphasis="low"
           style={{paddingBottom: Theme.padding.p04}}
           title="Feedback"
-          type="h3"
+          type="h5"
         />
         <Text center emphasis="medium" title="..." type="h4" />
       </Card>
