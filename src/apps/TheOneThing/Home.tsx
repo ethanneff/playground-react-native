@@ -8,6 +8,7 @@ import {Theme} from '../../utils';
 
 interface SectionProps {
   title: string;
+  subtitle?: string;
   description?: string;
   items?: string[];
 }
@@ -46,11 +47,18 @@ const ChecklistItem = ({item, index}: ChecklistItemProps) => {
   );
 };
 
-const Section = ({title, description, items = []}: SectionProps) => {
+const Section = ({title, subtitle, description, items = []}: SectionProps) => {
   return (
     <Card>
-      <Text emphasis="medium" title={title} type="caption" />
-
+      <Text title={title} type="h4" />
+      {subtitle && (
+        <Text
+          emphasis="medium"
+          style={{paddingVertical: Theme.padding.p01}}
+          title={subtitle}
+          type="subtitle1"
+        />
+      )}
       <View style={{paddingTop: Theme.padding.p02}}>
         {description && <Text title={description} />}
         {items &&
@@ -71,40 +79,24 @@ export const Home = memo(function Home() {
     <Screen dropShadow onLeftPress={navBack} title="The One Thing">
       <ScrollView
         contentContainerStyle={{
-          backgroundColor: color.light,
           paddingHorizontal: Theme.padding.p04,
           paddingVertical: Theme.padding.p02,
-        }}>
-        <Text
-          emphasis="medium"
-          style={{paddingHorizontal: Theme.padding.p04}}
-          title="Purpose"
-          type="h3"
-        />
+        }}
+        style={{backgroundColor: color.surface}}>
         <Section
           description="What’s the thing that gets you up in the morning and keeps you going when you’re tired and worn down - why you’re excited with your life?"
-          title="Your Purpose"
-        />
-        <Text
-          emphasis="medium"
-          style={{paddingHorizontal: Theme.padding.p04}}
-          title="Priority"
-          type="h3"
+          subtitle="Your Life Missioxn"
+          title="Purpose"
         />
         <Section
           description="Your most important priority is the ONE Thing you can do right now that will help you achieve what matters most to you - big and specific"
-          title="Your ONE Goal"
-        />
-
-        <Text
-          emphasis="medium"
-          style={{paddingHorizontal: Theme.padding.p04}}
-          title="Productivity"
-          type="h3"
+          subtitle="Your ONE Goal"
+          title="Priority"
         />
         <Section
           items={['purpose', 'goals', 'time block', 'share', 'notifications']}
-          title="Immediate Reflection"
+          subtitle="Immediate Reflection"
+          title="Productivity"
         />
         <Section
           items={[
