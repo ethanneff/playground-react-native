@@ -1,5 +1,39 @@
 # Changelog
 
+## [2.47.1](https://github.com/ethanneff/example/compare/v2.47.0...v2.47.1) (2021-01-13)
+
+
+### Bug Fixes
+
+* add more theme paddings ([8859379](https://github.com/ethanneff/example/commit/885937949614c3998ad8325e8bee3efd744bec87))
+* adjust padding on keyboard for projects ([093a4bc](https://github.com/ethanneff/example/commit/093a4bc2bdafbc2bac850861c2ae1afb04b3f87a))
+* clean up logic around focus on submit for text input ([0f737d7](https://github.com/ethanneff/example/commit/0f737d706e189f8ce133726b6e19b7457e0c5496))
+* correct icon focus ([0089550](https://github.com/ethanneff/example/commit/0089550a85a20b154b43f3fd64a74779a445ca27))
+* dimiss keyboard if no text input ([ed30f56](https://github.com/ethanneff/example/commit/ed30f569083efef649fd1bd3302864bc594f0a2c))
+* increase padding range ([0def113](https://github.com/ethanneff/example/commit/0def11384e9d3387d5ade257e0799a37eabce904))
+* make background color full length ([7ac4fb2](https://github.com/ethanneff/example/commit/7ac4fb21dae7843c2426ea1737fc0f6ac6d271f7))
+* make item generic to work for boards and lists ([c7c09df](https://github.com/ethanneff/example/commit/c7c09df7dd224a0260240e82b59cc99fc46ee345))
+* make user have items and not boards ([837601d](https://github.com/ethanneff/example/commit/837601d90657e6f4d5e04ce76ec4ffa715a286fc))
+* remove unused prop ([350d8b5](https://github.com/ethanneff/example/commit/350d8b553b64c52f45daaa7d4a4d8c6b951090d2))
+* remove unused prop ([9c9549e](https://github.com/ethanneff/example/commit/9c9549eccb23c8b381b88081ae3795b8a5cd3b48))
+* remove unused redux models ([647842a](https://github.com/ethanneff/example/commit/647842a12cc50be820dbd3d72e30eb5ec949d1a9))
+* remove unused screens ([78d1cbd](https://github.com/ethanneff/example/commit/78d1cbdf4ec347440179bdefa1ce23bdfe7a994d))
+* rename completeConfig ([2a7aa23](https://github.com/ethanneff/example/commit/2a7aa2315001168fa859f09bd63c747f40854b4e))
+* rename Config to config ([2c81df1](https://github.com/ethanneff/example/commit/2c81df167e18492d948d76436804c8466ae7f3b9))
+* rename screens ([e658b45](https://github.com/ethanneff/example/commit/e658b45a4facbde7fa75526c2bafeb86edbd00ef))
+* rename titles for each screen ([88e777a](https://github.com/ethanneff/example/commit/88e777a7c3eacd800a5c8a3b0bb4b5a361d65042))
+* rewrite projects to be a single list to work with keyboard ([5d8bea0](https://github.com/ethanneff/example/commit/5d8bea01b10495fd322803dafe29fb25c67439d1))
+* transform Theme.padding to Config.padding() ([428d200](https://github.com/ethanneff/example/commit/428d2006693b96af708c502bfa198325dc16f998))
+* update account screen font ([b566c4c](https://github.com/ethanneff/example/commit/b566c4c0e11bc924aa36865ca57d778790059ff3))
+* update components to use item model ([19452df](https://github.com/ethanneff/example/commit/19452dfecc0d69e152abc1b193228dc7812b95ba))
+* update data model to remove lists and boards ([1c62618](https://github.com/ethanneff/example/commit/1c6261867ce9b10c9cf01c62f1efa4406938fd54))
+* update deps ([fc36b13](https://github.com/ethanneff/example/commit/fc36b132c0e2ec06548c22b8aa63886f160a32a9))
+* update deps ([a219cc2](https://github.com/ethanneff/example/commit/a219cc2d25e8a555f99d7984038c5638332622bd))
+* update font ([e9aa186](https://github.com/ethanneff/example/commit/e9aa1863b40020de11ab4b2f8824cc009d1a80bb))
+* update padding to config ([fc3fcd9](https://github.com/ethanneff/example/commit/fc3fcd96e5f4edf7df9325f5af24ae654d6a2e3a))
+* update screens to use item model ([f5d4f94](https://github.com/ethanneff/example/commit/f5d4f94478507b0301f2af4f73ebf3d880358ea9))
+* update user factory to include child boards ([04dff68](https://github.com/ethanneff/example/commit/04dff68f377f83c40049025b092ce73c3f27a6d0))
+
 # [2.47.0](https://github.com/ethanneff/example/compare/v2.46.3...v2.47.0) (2021-01-12)
 
 
