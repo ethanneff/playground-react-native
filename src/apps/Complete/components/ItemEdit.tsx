@@ -49,7 +49,6 @@ export const ItemEdit = memo(function ItemEdit({
         <TextInputWithIcons
           icons={icons('description')}
           multiline
-          notRequired
           onSubmit={onSubmit('description')}
           placeholder={`${placeholder} details...`}
           value={description || ''}
