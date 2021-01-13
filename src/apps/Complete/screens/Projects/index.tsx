@@ -37,7 +37,7 @@ export const Projects = memo(function Projects() {
   const navToAccount = useCallback(() => navigate('account'), [navigate]);
 
   return (
-    <Screen onRightPress={navToAccount} rightIcon="account" title="Projects">
+    <Screen onRightPress={navToAccount} rightIcon="account" title="Implement">
       <KeyboardHandler
         backgroundColor={color.surface}
         onLayout={onLayout}
