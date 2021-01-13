@@ -4,14 +4,7 @@ import {Button, Modal, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {Theme, useRootDispatch} from '../../../../utils';
 import {Card} from '../../components';
-import {
-  createBoard,
-  createItem,
-  createList,
-  createUser,
-  removeUser,
-  setActiveUser,
-} from '../../models';
+import {createItem, createUser, removeUser, setActiveUser} from '../../models';
 import {getDefaultUserTemplate} from '../../utils/';
 
 // TODO: figure out a place for this
@@ -26,10 +19,8 @@ export const Account = memo(function Account() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   const onLogin = useCallback(() => {
-    const {user, boards, lists, items} = getDefaultUserTemplate();
+    const {user, items} = getDefaultUserTemplate();
     items.map((item) => dispatch(createItem(item)));
-    lists.map((list) => dispatch(createList(list)));
-    boards.map((board) => dispatch(createBoard(board)));
     dispatch(createUser(user));
     navigate('main');
   }, [dispatch, navigate]);

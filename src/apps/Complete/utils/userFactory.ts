@@ -1,173 +1,148 @@
 import {v4} from 'uuid';
-import {Board, Item, List, User} from '../models';
+import {Item, User} from '../models';
 
 type GetDefaultUserTemplate = {
   user: User;
-  boards: Board[];
-  lists: List[];
   items: Item[];
 };
 
-const date = Date.now();
-const userId = v4();
-const d = () => ({
-  id: v4(),
-  userId,
-  active: true,
-  createdAt: date,
-  updatedAt: date,
-});
-
-export const getDefaultBoard = (user: string): List[] => {
-  const getDefaults = () => ({
+const dItem = (u: string) => {
+  const date = Date.now();
+  return {
     id: v4(),
-    userId: user,
+    userId: u,
+    description: '',
     active: true,
     createdAt: date,
     updatedAt: date,
-    items: [],
-    default: false,
-  });
+    tags: [],
+    editable: true,
+    children: [],
+  };
+};
 
-  const board: List[] = [
-    {...getDefaults(), title: 'Backlog'},
-    {...getDefaults(), title: 'Todo'},
-    {...getDefaults(), title: 'In Progress'},
-    {...getDefaults(), title: 'Done'},
+const dKanban = (u: string): Item[] => {
+  const items: Item[] = [
+    {...dItem(u), title: 'Backlog'},
+    {...dItem(u), title: 'Todo'},
+    {...dItem(u), title: 'In Progress'},
+    {...dItem(u), title: 'Done'},
   ];
-  return board;
+  return items;
 };
 
 export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
+  // user
+  const date = Date.now();
+  const u = v4();
+
   // inbox
   const inboxItems: Item[] = [
-    {...d(), title: 'do dishes'},
-    {...d(), title: 'schedule meeting with Jim'},
-    {...d(), title: 'run 4 miles'},
-    {...d(), title: 'change oil'},
-    {...d(), title: 'what is the best mediation'},
-    {...d(), title: 'record Kelly birthday on Sep 22'},
-    {...d(), title: 'drink water'},
-    {...d(), title: 'intensity + focus = deep work'},
-    {...d(), title: 'put $20 in phone'},
-    {...d(), title: 'clear emails'},
+    {...dItem(u), title: 'do dishes'},
+    {...dItem(u), title: 'schedule meeting with Jim'},
+    {...dItem(u), title: 'run 4 miles'},
+    {...dItem(u), title: 'change oil'},
+    {...dItem(u), title: 'what is the best mediation'},
+    {...dItem(u), title: 'record Kelly birthday on Sep 22'},
+    {...dItem(u), title: 'drink water'},
+    {...dItem(u), title: 'intensity + focus = deep work'},
+    {...dItem(u), title: 'put $20 in phone'},
+    {...dItem(u), title: 'clear emails'},
   ];
-  const inboxList: List = {
-    ...d(),
-    default: true,
-    title: 'Inbox',
-    items: inboxItems.map((item) => item.id),
-  };
-  const inboxBoard: Board = {
-    ...d(),
-    title: 'Inbox',
-    lists: [inboxList.id],
-  };
 
-  // sub category
-  const homeItems: Item[] = [
-    {...d(), title: 'clean desk'},
-    {...d(), title: 'clean room'},
-    {...d(), title: 'walk dog'},
-    {...d(), title: 'brush teeth'},
-    {...d(), title: 'do laundry'},
-    {...d(), title: 'fix sink'},
+  // projects
+  const homeTodoItems: Item[] = [
+    {...dItem(u), title: 'clean desk'},
+    {...dItem(u), title: 'clean room'},
+    {...dItem(u), title: 'walk dog'},
+    {...dItem(u), title: 'brush teeth'},
+    {...dItem(u), title: 'do laundry'},
+    {...dItem(u), title: 'fix sink'},
   ];
-  const homeLists: List[] = getDefaultBoard(userId);
-  const townLists: List[] = getDefaultBoard(userId);
-  const workLists: List[] = getDefaultBoard(userId);
-  const gymLists: List[] = getDefaultBoard(userId);
-  const appLists: List[] = getDefaultBoard(userId);
-  homeLists[0].items = homeItems.map((item) => item.id);
-  const homeBoard: Board = {
-    ...d(),
-    title: 'Home',
-    lists: homeLists.map((i) => i.id),
-  };
-  const townBoard: Board = {
-    ...d(),
-    title: 'Town',
-    lists: townLists.map((i) => i.id),
-  };
-  const workBoard: Board = {
-    ...d(),
-    title: 'Work',
-    lists: workLists.map((i) => i.id),
-  };
-  const gymBoard: Board = {
-    ...d(),
-    title: 'Gym',
-    lists: gymLists.map((i) => i.id),
-  };
-  const appBoard: Board = {
-    ...d(),
-    title: 'App Release',
-    lists: appLists.map((i) => i.id),
-  };
-
-  // category
+  const homeItems: Item[] = dKanban(u);
+  homeItems[0].children = homeTodoItems.map((i) => i.id);
+  const townItems: Item[] = dKanban(u);
+  const workItems: Item[] = dKanban(u);
+  const gymItems: Item[] = dKanban(u);
+  const appItems: Item[] = dKanban(u);
+  const meetItems: Item[] = [
+    {...dItem(u), title: 'one one one'},
+    {...dItem(u), title: 'q1 planning'},
+  ];
+  const bookItems: Item[] = [
+    {...dItem(u), title: 'eat that frog'},
+    {...dItem(u), title: 'deep work'},
+    {...dItem(u), title: 'the one thing'},
+  ];
+  const giftItems: Item[] = [
+    {...dItem(u), title: 'girlfriend'},
+    {...dItem(u), title: 'sister'},
+    {...dItem(u), title: 'parents'},
+  ];
+  const checkItems: Item[] = [
+    {...dItem(u), title: 'after bathroom'},
+    {...dItem(u), title: 'before car'},
+    {...dItem(u), title: 'before sleep'},
+  ];
+  const codeItems: Item[] = [
+    {...dItem(u), title: 'php'},
+    {...dItem(u), title: 'javascript'},
+    {...dItem(u), title: 'swift'},
+  ];
   const projectItems: Item[] = [
-    {...d(), title: 'at home', childBoardId: homeBoard.id},
-    {...d(), title: 'at town', childBoardId: townBoard.id},
-    {...d(), title: 'at work', childBoardId: workBoard.id},
-    {...d(), title: 'at gym', childBoardId: gymBoard.id},
-    {...d(), title: 'app release', childBoardId: appBoard.id},
+    {...dItem(u), title: 'at home', children: homeItems.map((i) => i.id)},
+    {...dItem(u), title: 'at town', children: townItems.map((i) => i.id)},
+    {...dItem(u), title: 'at work', children: workItems.map((i) => i.id)},
+    {...dItem(u), title: 'at gym', children: gymItems.map((i) => i.id)},
+    {...dItem(u), title: 'app release', children: appItems.map((i) => i.id)},
+    {...dItem(u), title: 'meeting notes', children: meetItems.map((i) => i.id)},
+    {...dItem(u), title: 'book notes', children: bookItems.map((i) => i.id)},
+    {...dItem(u), title: 'gift ideas', children: giftItems.map((i) => i.id)},
+    {...dItem(u), title: 'checklists', children: checkItems.map((i) => i.id)},
+    {...dItem(u), title: 'coding', children: codeItems.map((i) => i.id)},
   ];
-
-  const projectsList: List = {
-    ...d(),
-    title: 'Projects',
-    default: true,
-    items: projectItems.map((item) => item.id),
-  };
-  const listsItems: Item[] = [
-    {...d(), title: 'meeting notes'},
-    {...d(), title: 'book summaries'},
-    {...d(), title: 'gift ideas'},
-    {...d(), title: 'checklists'},
-    {...d(), title: 'code languages'},
-  ];
-  const listsList: List = {
-    ...d(),
-    title: 'Lists',
-    default: true,
-    items: listsItems.map((item) => item.id),
-  };
-  const categoryBoard: Board = {
-    ...d(),
-    title: 'Categories',
-    lists: [projectsList.id, listsList.id],
-  };
 
   // user
+  const userItems: Item[] = [
+    {
+      ...dItem(u),
+      title: 'Inbox',
+      children: inboxItems.map((i) => i.id),
+      editable: false,
+    },
+    {
+      ...dItem(u),
+      title: 'Projects',
+      children: projectItems.map((i) => i.id),
+      editable: false,
+    },
+  ];
   const user: User = {
-    ...d(),
-    id: userId,
+    id: u,
+    active: true,
+    createdAt: date,
+    updatedAt: date,
     name: 'Bob Smith',
-    boards: [inboxBoard.id, categoryBoard.id],
+    items: userItems.map((i) => i.id),
   };
 
   return {
     user,
-    boards: [
-      homeBoard,
-      townBoard,
-      gymBoard,
-      workBoard,
-      appBoard,
-      inboxBoard,
-      categoryBoard,
+    items: [
+      ...inboxItems,
+      ...homeTodoItems,
+      ...homeItems,
+      ...townItems,
+      ...workItems,
+      ...gymItems,
+      ...appItems,
+      ...meetItems,
+      ...bookItems,
+      ...giftItems,
+      ...checkItems,
+      ...codeItems,
+      ...projectItems,
+      ...userItems,
     ],
-    lists: [
-      inboxList,
-      ...homeLists,
-      ...gymLists,
-      ...townLists,
-      ...workLists,
-      ...appLists,
-      projectsList,
-      listsList,
-    ],
-    items: [...inboxItems, ...homeItems, ...projectItems, ...listsItems],
   };
 };
