@@ -6,7 +6,7 @@ import {useColor} from '../../../../hooks';
 import {getSmallestDimension} from '../../../../models';
 import {useRootSelector} from '../../../../utils';
 import {Board} from '../../components';
-import {config} from '../../configs';
+import {completeConfig} from '../../utils';
 
 // TODO: figure out centering of list
 
@@ -25,10 +25,11 @@ export const Project = memo(function Project() {
 
   const listMaxHeight =
     keyboardHeight === 0
-      ? container - (android ? config.padding * 8 : config.padding * 13)
+      ? container -
+        (android ? completeConfig.padding * 8 : completeConfig.padding * 13)
       : container -
         keyboardHeight -
-        (android ? config.padding * 3 : config.padding * 8);
+        (android ? completeConfig.padding * 3 : completeConfig.padding * 8);
 
   const onLayout = useCallback(
     (event: LayoutChangeEvent) => {

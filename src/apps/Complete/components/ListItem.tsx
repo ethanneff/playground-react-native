@@ -4,8 +4,8 @@ import {Keyboard, TextInput as OriginalTextInput} from 'react-native';
 import {TouchableWithoutFeedback} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../utils';
-import {config} from '../configs';
 import {setNavItemDetail, setNavItemProject, updateItem} from '../models';
+import {completeConfig} from '../utils';
 import {TextInputWithIcons} from './TextInputWithIcons';
 
 type ListItemProps = {
@@ -75,8 +75,8 @@ export const ListItem = memo(function ListItem({
       onPress={onItemPress}
       style={{
         flex: 1,
-        borderRadius: config.borderRadius,
-        margin: config.padding / 2,
+        borderRadius: completeConfig.borderRadius,
+        margin: completeConfig.padding / 2,
         backgroundColor: color.surface,
         flexDirection: 'row',
       }}>

@@ -5,7 +5,7 @@ import {Button, KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {Config, useRootSelector} from '../../../../utils';
 import {Card, List} from '../../components';
-import {config} from '../../configs';
+import {completeConfig} from '../../utils';
 
 const initialState = {container: 0, button: 0};
 export const Capture = memo(function Capture() {
@@ -20,7 +20,7 @@ export const Capture = memo(function Capture() {
       ? dimensions.container - dimensions.button - Config.padding(44)
       : dimensions.container -
         keyboardHeight -
-        (android ? config.padding * 3 : Config.padding(19));
+        (android ? completeConfig.padding * 3 : Config.padding(19));
 
   const itemId = useRootSelector(
     (s) =>
@@ -54,7 +54,7 @@ export const Capture = memo(function Capture() {
         backgroundColor={color.surface}
         onLayout={onLayout('container')}
         render={dimensions.container > 0}>
-        <View style={{padding: config.padding}}>
+        <View style={{padding: completeConfig.padding}}>
           <List
             itemId={itemId}
             listMaxHeight={listHeight}

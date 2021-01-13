@@ -1,7 +1,7 @@
 import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
 import {useRootSelector} from '../../../utils';
-import {config} from '../configs';
+import {completeConfig} from '../utils';
 import {AddItem} from './AddItem';
 import {List} from './List';
 
@@ -16,7 +16,7 @@ export const Board = memo(function Board({
   listMaxHeight,
   listWidth,
 }: BoardProps) {
-  const listSize = listWidth + config.padding;
+  const listSize = listWidth + completeConfig.padding;
   const board = useRootSelector((s) => s.completeItem.items[projectItemId]);
   const getItemId = useCallback((item) => item, []);
   const getItemLayout = useCallback(
@@ -60,7 +60,7 @@ export const Board = memo(function Board({
   return (
     <FlatList
       ListFooterComponent={renderAddList}
-      contentContainerStyle={{padding: config.padding}}
+      contentContainerStyle={{padding: completeConfig.padding}}
       data={board.children}
       decelerationRate="fast"
       getItemLayout={getItemLayout}

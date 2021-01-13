@@ -3,7 +3,7 @@ import {TextInput as OriginalTextInput, View} from 'react-native';
 import {Button} from '../../../components';
 import {useColor} from '../../../hooks';
 import {Config} from '../../../utils';
-import {config} from '../configs';
+import {completeConfig} from '../utils';
 import {TextInputWithIcons} from './TextInputWithIcons';
 
 type AddButtonProps = {
@@ -64,7 +64,7 @@ export const AddButton = memo(function AddButton({
       style={{
         width,
         height: Config.padding(12),
-        borderRadius: config.borderRadius,
+        borderRadius: completeConfig.borderRadius,
         backgroundColor: color.background,
         justifyContent: 'center',
       }}>

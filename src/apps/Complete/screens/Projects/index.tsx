@@ -5,7 +5,7 @@ import {KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {Config, useRootSelector} from '../../../../utils';
 import {List} from '../../components';
-import {config} from '../../configs';
+import {completeConfig} from '../../utils';
 
 // TODO: add journal
 // TODO: add historical data
@@ -49,7 +49,7 @@ export const Projects = memo(function Projects() {
         backgroundColor={color.surface}
         onLayout={onLayout}
         render={dimensions > 0}>
-        <View style={{padding: config.padding}}>
+        <View style={{padding: completeConfig.padding}}>
           <List
             itemId={itemId}
             key={itemId}

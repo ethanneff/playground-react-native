@@ -1,6 +1,6 @@
-import {Config} from '../../utils';
+import {Config} from '../../../utils';
 
-export const config = {
+export const completeConfig = {
   borderRadius: Config.padding(2),
   padding: Config.padding(4),
   alert: {

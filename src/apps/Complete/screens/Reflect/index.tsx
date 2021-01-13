@@ -6,7 +6,7 @@ import {ScrollView} from '../../../../conversions';
 import {useColor} from '../../../../hooks';
 import {Config} from '../../../../utils';
 import {Card} from '../../components/Card';
-import {config} from '../../configs';
+import {completeConfig} from '../../utils';
 import {Graph} from './Graph';
 
 // TODO: add journal
@@ -20,7 +20,7 @@ const Title = ({name}: TitleProps) => {
   return (
     <Text
       emphasis="high"
-      style={{paddingBottom: config.padding}}
+      style={{paddingBottom: completeConfig.padding}}
       title={name}
       type="h4"
     />
@@ -72,7 +72,9 @@ export const Reflect = memo(function Reflect() {
               <Graph
                 data={data}
                 height={200}
-                width={Dimensions.get('window').width - config.padding * 4}
+                width={
+                  Dimensions.get('window').width - completeConfig.padding * 4
+                }
               />
             </View>
           </View>

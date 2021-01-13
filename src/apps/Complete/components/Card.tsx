@@ -1,7 +1,7 @@
 import React, {memo, ReactElement} from 'react';
 import {LayoutChangeEvent, View} from 'react-native';
 import {useColor} from '../../../hooks';
-import {config} from '../configs';
+import {completeConfig} from '../utils';
 
 // TODO: combine card components with global card
 
@@ -27,11 +27,11 @@ export const Card = memo(function Card({
       style={{
         flex: flex ? 1 : 0,
         width,
-        borderRadius: config.borderRadius,
+        borderRadius: completeConfig.borderRadius,
         backgroundColor: color.background,
-        padding: config.padding / 2,
-        marginRight: margin === 'right' ? config.padding : 0,
-        marginBottom: margin === 'bottom' ? config.padding : 0,
+        padding: completeConfig.padding / 2,
+        marginRight: margin === 'right' ? completeConfig.padding : 0,
+        marginBottom: margin === 'bottom' ? completeConfig.padding : 0,
       }}>
       {children}
     </View>
