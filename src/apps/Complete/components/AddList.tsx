@@ -42,7 +42,6 @@ export const AddList = memo(function AddList({
 
   return (
     <AddButton
-      noSubmitFocus
       onSubmit={onSubmit}
       placeholder={placeholder}
       title={title}
