@@ -2,7 +2,7 @@ import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../components';
 import {useColor} from '../../hooks';
-import {Config} from '../../utils';
+import {config} from '../../utils';
 import {ListSection} from './ListSection';
 import {Item} from './types';
 
@@ -30,7 +30,7 @@ export const ListItem = memo(function ListItem({
     <View
       style={{
         borderColor: currentItem ? color.primary : color.background,
-        borderLeftWidth: Config.padding(1),
+        borderLeftWidth: config.padding(1),
         flex: 1,
       }}>
       <TouchableOpacity
@@ -39,20 +39,20 @@ export const ListItem = memo(function ListItem({
         style={{
           flex: 1,
           flexDirection: 'row',
-          height: Config.padding(10),
-          paddingHorizontal: Config.padding(4),
-          paddingVertical: Config.padding(2),
+          height: config.padding(10),
+          paddingHorizontal: config.padding(4),
+          paddingVertical: config.padding(2),
         }}>
         <View
           style={{
             flexDirection: 'row',
-            width: Config.padding(20),
+            width: config.padding(20),
           }}>
           <Icon
             color={iconColor}
             name={future ? 'cancel' : 'checkbox-blank-circle'}
             size={14}
-            style={{paddingRight: Config.padding(1)}}
+            style={{paddingRight: config.padding(1)}}
           />
           <Text title={`${item.hour} ${item.zone}`} />
         </View>

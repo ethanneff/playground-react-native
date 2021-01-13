@@ -4,14 +4,14 @@ import {StyleSheet, View} from 'react-native';
 import {Calendar, Card, Input, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useColor} from '../../hooks';
-import {Config} from '../../utils';
+import {config} from '../../utils';
 
 export const Home = memo(function Home() {
   const color = useColor();
   const {goBack} = useNavigation();
   const styles = StyleSheet.create({
     bottom: {
-      paddingBottom: Config.padding(4),
+      paddingBottom: config.padding(4),
     },
   });
 
@@ -22,8 +22,8 @@ export const Home = memo(function Home() {
     <Screen dropShadow onLeftPress={navBack} title="Journal">
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: Config.padding(4),
-          paddingVertical: Config.padding(2),
+          paddingHorizontal: config.padding(4),
+          paddingVertical: config.padding(2),
         }}
         style={{backgroundColor: color.surface}}>
         <Card>
@@ -141,7 +141,7 @@ export const Home = memo(function Home() {
             value=""
           />
         </Card>
-        <View style={{height: Config.padding(4)}} />
+        <View style={{height: config.padding(4)}} />
       </ScrollView>
     </Screen>
   );

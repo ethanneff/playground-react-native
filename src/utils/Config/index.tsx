@@ -4,9 +4,6 @@ import {Color} from '../../models';
 SIZING https://material.io/design/typography/the-type-system.html#applying-the-type-scale
 */
 
-// TODO: rename to Config to differentiate from Redux Theme
-// TODO: make paddinga function
-
 const padding = (value: number): number => value * 4;
 
 export type FontType =
@@ -117,7 +114,7 @@ const sizing = {
   borderRadius: padding(2),
 };
 
-export const Config = {
+export const config = {
   fontSizes,
   fontEmphases,
   fontWeight,
@@ -157,8 +154,8 @@ export const getFontStyles = ({
   color = 'text',
   colorScheme,
 }: GetFontStylesProps): GetFontStylesReturn => {
-  const textColorPercent = Config.fontEmphases[emphasis];
-  const fontSize = Config.fontSizes[type];
+  const textColorPercent = config.fontEmphases[emphasis];
+  const fontSize = config.fontSizes[type];
   const textColor = inverse
     ? colorScheme.background
     : color

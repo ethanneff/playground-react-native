@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import {Config} from '../../utils';
+import {config} from '../../utils';
 import {Icon} from '../Icon';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
@@ -24,7 +24,7 @@ export const CalendarHeader = memo(function CalendarHeader({
         name="chevron-left"
         onPress={onMonthDecrease}
         padded
-        size={Config.padding(6)}
+        size={config.padding(6)}
       />
       <TouchableOpacity
         containerStyle={{justifyContent: 'center', alignItems: 'center'}}
@@ -36,7 +36,7 @@ export const CalendarHeader = memo(function CalendarHeader({
         name="chevron-right"
         onPress={onMonthIncrease}
         padded
-        size={Config.padding(6)}
+        size={config.padding(6)}
       />
     </View>
   );

@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {Button, Modal, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {Config, useRootDispatch} from '../../../../utils';
+import {config, useRootDispatch} from '../../../../utils';
 import {Card} from '../../components';
 import {createItem, createUser, removeUser, setActiveUser} from '../../models';
 import {getDefaultUserTemplate} from '../../utils/';
@@ -39,7 +39,7 @@ export const Account = memo(function Account() {
       <Card margin="bottom">
         <Text
           emphasis="low"
-          style={{paddingBottom: Config.padding(4)}}
+          style={{paddingBottom: config.padding(4)}}
           title="Profile"
           type="h5"
         />
@@ -48,7 +48,7 @@ export const Account = memo(function Account() {
       <Card margin="bottom">
         <Text
           emphasis="low"
-          style={{paddingBottom: Config.padding(4)}}
+          style={{paddingBottom: config.padding(4)}}
           title="Reminders"
           type="h5"
         />
@@ -57,7 +57,7 @@ export const Account = memo(function Account() {
       <Card margin="bottom">
         <Text
           emphasis="low"
-          style={{paddingBottom: Config.padding(4)}}
+          style={{paddingBottom: config.padding(4)}}
           title="Payment"
           type="h5"
         />
@@ -66,7 +66,7 @@ export const Account = memo(function Account() {
       <Card margin="bottom">
         <Text
           emphasis="low"
-          style={{paddingBottom: Config.padding(4)}}
+          style={{paddingBottom: config.padding(4)}}
           title="Feedback"
           type="h5"
         />

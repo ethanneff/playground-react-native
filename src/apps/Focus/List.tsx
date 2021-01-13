@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {ActivityIndicator, FlatList, StyleSheet} from 'react-native';
-import {Config} from '../../utils';
+import {config} from '../../utils';
 import {ListItem} from './ListItem';
 import {Item} from './types';
 
@@ -12,7 +12,7 @@ interface Props {
   onItemPress(item: Item): void;
 }
 
-const itemHeight = Config.padding(10);
+const itemHeight = config.padding(10);
 
 const initialIndex =
   dayjs().startOf('day').add(2, 'day').diff(dayjs(), 'hour') - 4;

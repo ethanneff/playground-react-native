@@ -1,6 +1,6 @@
 import React, {ReactNode} from 'react';
 import {Card, Text} from '../../../components';
-import {Config} from '../../../utils';
+import {config} from '../../../utils';
 
 type Props = {
   title: string;
@@ -12,7 +12,7 @@ export const Section = ({title, children}: Props): JSX.Element => {
     <Card>
       <Text
         emphasis="low"
-        style={{paddingBottom: Config.padding(2)}}
+        style={{paddingBottom: config.padding(2)}}
         title={title}
         type="h4"
       />

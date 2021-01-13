@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {Animated, TouchableOpacity} from 'react-native';
 import {Text} from '../../../components';
 import {useColor} from '../../../hooks';
-import {Config} from '../../../utils';
+import {config} from '../../../utils';
 import {CanvasDimensions} from './Canvas';
 import {Item} from './types';
 import {
@@ -101,7 +101,7 @@ export const Balls = ({
               borderWidth: 1,
               borderRadius: item.radius,
               flex: 1,
-              padding: Config.padding(1),
+              padding: config.padding(1),
               height: item.radius * 2,
               justifyContent: 'center',
               position: 'absolute',

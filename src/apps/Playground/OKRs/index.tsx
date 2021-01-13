@@ -3,7 +3,7 @@ import React, {memo, useCallback} from 'react';
 import {Card, Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
-import {Config} from '../../../utils';
+import {config} from '../../../utils';
 
 export const OKRs = memo(function PlaygroundOKRs() {
   const {goBack} = useNavigation();
@@ -12,7 +12,7 @@ export const OKRs = memo(function PlaygroundOKRs() {
   return (
     <Screen dropShadow onLeftPress={navBack} title="OKRs">
       <ScrollView
-        contentContainerStyle={{padding: Config.padding(4)}}
+        contentContainerStyle={{padding: config.padding(4)}}
         style={{backgroundColor: color.surface}}>
         <Card>
           <Text title="Company" type="h6" />

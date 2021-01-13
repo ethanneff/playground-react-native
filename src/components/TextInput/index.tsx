@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import {useColor} from '../../hooks';
 import {Color} from '../../models';
-import {Config, FontEmphasis, FontType, getFontStyles} from '../../utils';
+import {config, FontEmphasis, FontType, getFontStyles} from '../../utils';
 import {PointerEvents, TextContentType} from './types';
 
 /*
@@ -97,12 +97,12 @@ export const TextInput = ({
       backgroundColor: backColor,
       borderBottomColor: backColor,
       borderLeftColor: backColor,
-      borderRadius: Config.padding(1),
+      borderRadius: config.padding(1),
       borderRightColor: backColor,
       borderTopColor: backColor,
       borderWidth: 2,
       color: textColor,
-      padding: Config.padding(2),
+      padding: config.padding(2),
     },
   });
   const textInput = useRef<Original | null>(null);

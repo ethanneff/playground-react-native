@@ -3,7 +3,7 @@ import {FlatList, StyleSheet, View} from 'react-native';
 import {Card, Icon, Text} from '../../components';
 import {useColor} from '../../hooks';
 import {getLandscapeOrientation} from '../../models';
-import {Config, useRootSelector} from '../../utils';
+import {config, useRootSelector} from '../../utils';
 import {DailyProgress} from './DailyProgress';
 import {app} from './data';
 import {ProfileLevel} from './ProfileLevel';
@@ -25,8 +25,8 @@ export const List = memo(function List({
 
   const styles = StyleSheet.create({
     list: {
-      paddingBottom: Config.padding(2),
-      paddingHorizontal: Config.padding(4),
+      paddingBottom: config.padding(2),
+      paddingHorizontal: config.padding(4),
     },
   });
 
@@ -39,14 +39,14 @@ export const List = memo(function List({
         <View
           style={{
             flex: 1,
-            marginRight: index % 2 === 0 ? Config.padding(2) : 0,
-            marginLeft: index % 2 !== 0 ? Config.padding(2) : 0,
+            marginRight: index % 2 === 0 ? config.padding(2) : 0,
+            marginLeft: index % 2 !== 0 ? config.padding(2) : 0,
           }}>
           <Card key={data.id} onPress={onPress} style={{}}>
             <Text
               bold
               center
-              style={{paddingBottom: Config.padding(4)}}
+              style={{paddingBottom: config.padding(4)}}
               title={`Challenge #${index + 1}`}
               type="subtitle1"
             />
@@ -63,7 +63,7 @@ export const List = memo(function List({
       <View>
         <Text
           center
-          style={{padding: Config.padding(4)}}
+          style={{padding: config.padding(4)}}
           title="Progress"
           type="h4"
         />
@@ -72,7 +72,7 @@ export const List = memo(function List({
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-              paddingBottom: Config.padding(2),
+              paddingBottom: config.padding(2),
             }}>
             <ProfileLevel onPress={onProfilePress} />
             <Icon name="cog" onPress={onSettingsPress} />
@@ -81,7 +81,7 @@ export const List = memo(function List({
         </Card>
         <Text
           center
-          style={{padding: Config.padding(4)}}
+          style={{padding: config.padding(4)}}
           title="Challenges"
           type="h4"
         />

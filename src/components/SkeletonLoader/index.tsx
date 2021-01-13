@@ -2,7 +2,7 @@ import React, {ReactElement, useEffect, useRef} from 'react';
 import {Animated, Easing, StyleSheet, View} from 'react-native';
 import {LinearGradient, MaskedView} from '../../conversions';
 import {useColor, useDriver} from '../../hooks';
-import {Config} from '../../utils';
+import {config} from '../../utils';
 
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
 
@@ -16,9 +16,9 @@ type Props = {
 };
 
 export const SkeletonLoader = ({
-  height = Config.padding(10),
-  width = Config.padding(10),
-  borderRadius = Config.padding(5),
+  height = config.padding(10),
+  width = config.padding(10),
+  borderRadius = config.padding(5),
   backgroundColor,
   foregroundColor,
   duration = 1200,

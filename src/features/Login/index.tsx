@@ -10,7 +10,7 @@ import {
 } from '../../components';
 import {auth, FirebaseAuthTypes} from '../../conversions/Firebase';
 import {useColor} from '../../hooks';
-import {Config} from '../../utils';
+import {config} from '../../utils';
 
 interface Props {
   onBackgroundPress: () => void;
@@ -37,13 +37,13 @@ const SignInButton = memo(function SignInButton({
         flexDirection: 'row',
         borderColor: color.text,
         borderWidth: 2,
-        padding: Config.padding(2),
-        marginBottom: Config.padding(2),
-        borderRadius: Config.padding(10),
+        padding: config.padding(2),
+        marginBottom: config.padding(2),
+        borderRadius: config.padding(10),
       }}>
       <Icon name={icon} />
       <Text
-        style={{paddingLeft: Config.padding(2)}}
+        style={{paddingLeft: config.padding(2)}}
         title={title}
         type="button"
       />

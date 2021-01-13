@@ -2,7 +2,7 @@ import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {TextInput as OriginalTextInput, View} from 'react-native';
 import {Button} from '../../../components';
 import {useColor} from '../../../hooks';
-import {Config} from '../../../utils';
+import {config} from '../../../utils';
 import {completeConfig} from '../utils';
 import {TextInputWithIcons} from './TextInputWithIcons';
 
@@ -63,7 +63,7 @@ export const AddButton = memo(function AddButton({
     <View
       style={{
         width,
-        height: Config.padding(12),
+        height: config.padding(12),
         borderRadius: completeConfig.borderRadius,
         backgroundColor: color.background,
         justifyContent: 'center',

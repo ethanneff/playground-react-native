@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {StyleSheet, Text as Original, View} from 'react-native';
 import {ScrollView} from '../../conversions';
 import {useColor} from '../../hooks';
-import {Config, FontType} from '../../utils';
+import {config, FontType} from '../../utils';
 import {Text} from '../Text';
 
 export interface ContentBody {
@@ -40,19 +40,19 @@ export const Content = memo(({body}: Props) => {
   const color = useColor();
   const styles = StyleSheet.create({
     content: {
-      paddingHorizontal: Config.padding(4),
+      paddingHorizontal: config.padding(4),
     },
     link: {
       color: color.primary,
     },
     paragraph: {
-      paddingBottom: Config.padding(2),
+      paddingBottom: config.padding(2),
     },
     section: {
-      paddingBottom: Config.padding(4),
+      paddingBottom: config.padding(4),
     },
     title: {
-      paddingBottom: Config.padding(2),
+      paddingBottom: config.padding(2),
     },
   });
 

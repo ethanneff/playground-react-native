@@ -10,7 +10,7 @@ import {Icon, TextInput} from '../../../components';
 import {PointerEvents} from '../../../components/TextInput/types';
 import {TouchableWithoutFeedback} from '../../../conversions';
 import {useColor} from '../../../hooks';
-import {Config, FontType} from '../../../utils';
+import {config, FontType} from '../../../utils';
 
 type Icon = {
   name: string;
@@ -42,7 +42,7 @@ type TextInputWithIconsProps = {
 export const TextInputWithIcons = memo(function TextInputWithIcons({
   value,
   multiline,
-  maxIconHeight = Config.padding(6),
+  maxIconHeight = config.padding(6),
   placeholder,
   backgroundColor,
   editable,
@@ -90,7 +90,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
     [text, value],
   );
   const [containerHeight, setContainerHeight] = useState(0);
-  const iconHeight = containerHeight - Config.padding(4);
+  const iconHeight = containerHeight - config.padding(4);
   const clampIconHeight =
     iconHeight > maxIconHeight ? maxIconHeight : iconHeight;
 

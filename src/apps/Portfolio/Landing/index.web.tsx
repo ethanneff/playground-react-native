@@ -8,7 +8,7 @@ import {
   Word,
 } from '../../../components';
 import {useColor} from '../../../hooks';
-import {Config} from '../../../utils';
+import {config} from '../../../utils';
 
 const missingCallback = () => undefined;
 
@@ -32,12 +32,12 @@ const SignInButton = memo(function SignInButton({
         flexDirection: 'row',
         borderColor: color.text,
         borderWidth: 2,
-        padding: Config.padding(2),
-        marginBottom: Config.padding(2),
-        borderRadius: Config.padding(10),
+        padding: config.padding(2),
+        marginBottom: config.padding(2),
+        borderRadius: config.padding(10),
       }}>
       <Icon name={icon} style={{width: '30px', height: '30px'}} />
-      <Text style={{paddingLeft: Config.padding(2)}} title={title} type="h4" />
+      <Text style={{paddingLeft: config.padding(2)}} title={title} type="h4" />
     </TouchableOpacity>
   );
 });
@@ -58,9 +58,9 @@ const NavButton = memo(function NavButton({
       onPress={onPress}
       style={{
         justifyContent: 'center',
-        borderRadius: Config.padding(10),
-        paddingVertical: Config.padding(2),
-        paddingHorizontal: Config.padding(2),
+        borderRadius: config.padding(10),
+        paddingVertical: config.padding(2),
+        paddingHorizontal: config.padding(2),
         backgroundColor: inverted ? color.text : color.background,
       }}>
       <Text bold inverse={inverted} title={title} type="h5" />
@@ -83,7 +83,7 @@ export const Header = memo(function Header({height}: HeaderProps) {
         flexDirection: 'row',
         justifyContent: 'space-between',
         borderColor: color.secondary,
-        padding: Config.padding(4),
+        padding: config.padding(4),
         borderBottomWidth: 1,
         zIndex: 2,
         height,
@@ -92,7 +92,7 @@ export const Header = memo(function Header({height}: HeaderProps) {
         <Image source={image} style={{width: '30px', height: '30px'}} />
         <Text
           bold
-          style={{paddingHorizontal: Config.padding(4)}}
+          style={{paddingHorizontal: config.padding(4)}}
           title="Core"
           type="h3"
         />
@@ -123,18 +123,18 @@ const AppIcon = memo(function AppIcon({onPress, type}: AppIconProps) {
       style={{
         width: '248px',
         justifyContent: 'center',
-        borderRadius: Config.padding(2),
+        borderRadius: config.padding(2),
         flexDirection: 'row',
         backgroundColor: color.text,
-        paddingVertical: Config.padding(2),
-        paddingHorizontal: Config.padding(4),
+        paddingVertical: config.padding(2),
+        paddingHorizontal: config.padding(4),
       }}>
       <Icon
         color={color.background}
         name={type}
         style={{width: iconSize, height: iconSize, alignSelf: 'center'}}
       />
-      <View style={{paddingLeft: Config.padding(2)}}>
+      <View style={{paddingLeft: config.padding(2)}}>
         <Text inverse title={text} type="h5" />
         <Text inverse title={store} type="h3" />
       </View>
@@ -168,7 +168,7 @@ const Section = memo(function Section({
 const image = require('../../../assets/line-chart.png');
 
 export const Landing = memo(function PortfolioLanding() {
-  const height = Config.padding(18);
+  const height = config.padding(18);
   const titleSentence: Word[] = [
     {title: 'Get started with ', type: 'h2'},
     {title: 'Core', bold: true, type: 'h2'},
@@ -196,7 +196,7 @@ export const Landing = memo(function PortfolioLanding() {
       <Header height={height} />
       <Section backgroundColor={color.light} paddingTop={height}>
         <Sentence
-          style={{paddingVertical: Config.padding(8), alignSelf: 'center'}}
+          style={{paddingVertical: config.padding(8), alignSelf: 'center'}}
           words={titleSentence}
         />
         <View style={{width: '400px', alignSelf: 'center'}}>
@@ -218,7 +218,7 @@ export const Landing = memo(function PortfolioLanding() {
           <Sentence
             style={{
               alignSelf: 'center',
-              paddingVertical: Config.padding(4),
+              paddingVertical: config.padding(4),
             }}
             words={passwordSentence}
           />
@@ -235,7 +235,7 @@ export const Landing = memo(function PortfolioLanding() {
           style={{
             flexDirection: 'row',
             justifyContent: 'center',
-            marginBottom: Config.padding(4),
+            marginBottom: config.padding(4),
           }}>
           <NavButton
             onPress={onNavLinkPress('https://www.linkedin.com/in/ethanneff')}

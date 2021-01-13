@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {ReactElement} from 'react';
 import {Animated, StyleProp, StyleSheet, TextStyle} from 'react-native';
 import {useColor, useDriver} from '../../hooks';
 import {Color} from '../../models';
-import {Config, FontEmphasis, FontType, getFontStyles} from '../../utils';
+import {FontEmphasis, FontType, getFontStyles, config} from '../../utils';
 import {SoundManager} from '../../utils/Sound';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
@@ -47,7 +47,7 @@ export const Text = ({
   style,
   adjustsFontSizeToFit,
   numberOfLines,
-}: TextProps): JSX.Element => {
+}: TextProps): ReactElement => {
   const opacity = new Animated.Value(1);
   const useNativeDriver = useDriver();
   const colorScheme = useColor();
@@ -64,7 +64,7 @@ export const Text = ({
       : title;
   const styles = StyleSheet.create({
     bold: {
-      fontWeight: Config.fontWeight.medium,
+      fontWeight: config.fontWeight.medium,
     },
     center: {
       textAlign: 'center',

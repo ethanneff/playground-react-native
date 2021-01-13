@@ -2,7 +2,7 @@ import React, {memo, useCallback, useRef} from 'react';
 import {Animated, PanResponder, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useColor, useDriver} from '../../hooks';
-import {Config} from '../../utils';
+import {config} from '../../utils';
 import {SoundManager} from '../../utils/Sound';
 import {Icon} from '../Icon';
 import {Text} from '../Text';
@@ -21,7 +21,7 @@ type NotificationProps = {
 const initialPosition = {x: 0, y: 0};
 export const Notification = memo(function Notification({
   title,
-  height = Config.padding(18),
+  height = config.padding(18),
   thresholdPercent = 0.9,
   dismissDelay = 100,
   noSwipe,
@@ -36,7 +36,7 @@ export const Notification = memo(function Notification({
       backgroundColor: color.background,
       flexDirection: 'row',
       height,
-      padding: Config.padding(4),
+      padding: config.padding(4),
       width: '100%',
     },
     notification: {elevation: 2, zIndex: 2},
@@ -117,10 +117,10 @@ export const Notification = memo(function Notification({
             <Icon
               color={color.background}
               name="close"
-              size={Config.padding(8)}
+              size={config.padding(8)}
             />
             <Text center style={styles.flex} title={title} type="h4" />
-            <Icon name="close" onPress={onCancel} size={Config.padding(8)} />
+            <Icon name="close" onPress={onCancel} size={config.padding(8)} />
           </View>
         </SafeAreaView>
       </Animated.View>

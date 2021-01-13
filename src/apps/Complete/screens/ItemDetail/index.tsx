@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {Keyboard, View} from 'react-native';
 import {Button, Modal, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {Config, useRootDispatch, useRootSelector} from '../../../../utils';
+import {config, useRootDispatch, useRootSelector} from '../../../../utils';
 import {Card, DeleteModal, ItemContext, ItemEdit} from '../../components';
 import {removeItem, updateItem, updateItemRemoveItem} from '../../models';
 
@@ -77,7 +77,7 @@ export const ItemDetail = memo(function ItemDetail() {
                 <Card flex>
                   <Button center onPress={navBack} title="close" />
                 </Card>
-                <View style={{padding: Config.padding(2)}} />
+                <View style={{padding: config.padding(2)}} />
                 <Card flex>
                   <Button
                     center

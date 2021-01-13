@@ -3,7 +3,7 @@ import React, {memo, useCallback, useEffect, useState} from 'react';
 import {Animated, FlatList, StyleSheet, View} from 'react-native';
 import {Icon, Input, Screen, Text} from '../../../components';
 import {useColor, useDriver} from '../../../hooks';
-import {colorWithOpacity, Config, useRootSelector} from '../../../utils';
+import {colorWithOpacity, config, useRootSelector} from '../../../utils';
 
 const data = [
   {id: 1, name: '1'},
@@ -62,25 +62,25 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     },
     header: {
       backgroundColor: color.light,
-      height: Config.padding(20),
+      height: config.padding(20),
       justifyContent: 'center',
-      padding: Config.padding(2),
+      padding: config.padding(2),
     },
     item: {
       borderBottomColor: color.light,
       borderWidth: 0.2,
-      padding: Config.padding(6),
+      padding: config.padding(6),
     },
     textContainer: {
       alignItems: 'center',
       backgroundColor: color.background,
       flexDirection: 'row',
       height: '100%',
-      padding: Config.padding(2),
+      padding: config.padding(2),
     },
     textInput: {
       flex: 1,
-      marginLeft: Config.padding(2),
+      marginLeft: config.padding(2),
     },
   });
 

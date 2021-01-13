@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {FlatList, View} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../components';
 import {useColor} from '../../hooks';
-import {Config} from '../../utils';
+import {config} from '../../utils';
 
 const generateHistory = () => {
   const data = [];
@@ -44,8 +44,8 @@ const ProgressItem = ({item}: ProgressItemProps) => {
         style={{
           borderTopColor: color.text,
           borderTopWidth: 2,
-          margin: Config.padding(1),
-          width: Config.padding(12),
+          margin: config.padding(1),
+          width: config.padding(12),
         }}>
         <Text center title={item.date.format(dateFormat)} />
       </View>

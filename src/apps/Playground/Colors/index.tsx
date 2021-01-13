@@ -4,7 +4,7 @@ import {View} from 'react-native';
 import {Button, Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {changeTheme, ColorTheme, colorThemes} from '../../../models';
-import {Config, useRootDispatch, useRootSelector} from '../../../utils';
+import {config, useRootDispatch, useRootSelector} from '../../../utils';
 
 export const Colors = memo(function DebugColors() {
   const {goBack} = useNavigation();
@@ -20,7 +20,7 @@ export const Colors = memo(function DebugColors() {
       <ScrollView>
         <Text
           center
-          style={{paddingBottom: Config.padding(8)}}
+          style={{paddingBottom: config.padding(8)}}
           title="Theme"
           type="h4"
         />
@@ -38,7 +38,7 @@ export const Colors = memo(function DebugColors() {
         </View>
         <Text
           center
-          style={{padding: Config.padding(8)}}
+          style={{padding: config.padding(8)}}
           title="Buttons"
           type="h4"
         />
@@ -116,7 +116,7 @@ export const Colors = memo(function DebugColors() {
         </View>
         <Text
           center
-          style={{padding: Config.padding(8)}}
+          style={{padding: config.padding(8)}}
           title="Fonts"
           type="h4"
         />

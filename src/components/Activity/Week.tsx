@@ -1,7 +1,7 @@
 import format from 'date-fns/format';
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import {Config} from '../../utils';
+import {config} from '../../utils';
 import {Text} from '../Text';
 import {Day} from './Day';
 import {ActivityDay, ActivityWeek} from './types';
@@ -32,7 +32,7 @@ export const Week = memo(function Week({
       <Text
         center
         emphasis="medium"
-        style={{paddingBottom: Config.padding(3)}}
+        style={{paddingBottom: config.padding(3)}}
         title={header}
         type="overline"
       />

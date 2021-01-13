@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, Platform, View} from 'react-native';
 import {Button, KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {Config, useRootSelector} from '../../../../utils';
+import {config, useRootSelector} from '../../../../utils';
 import {Card, List} from '../../components';
 import {completeConfig} from '../../utils';
 
@@ -17,10 +17,10 @@ export const Capture = memo(function Capture() {
 
   const listHeight =
     keyboardHeight === 0
-      ? dimensions.container - dimensions.button - Config.padding(44)
+      ? dimensions.container - dimensions.button - config.padding(44)
       : dimensions.container -
         keyboardHeight -
-        (android ? completeConfig.padding * 3 : Config.padding(19));
+        (android ? completeConfig.padding * 3 : config.padding(19));
 
   const itemId = useRootSelector(
     (s) =>

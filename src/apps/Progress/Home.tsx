@@ -4,7 +4,7 @@ import {StyleSheet} from 'react-native';
 import {Activity, Icon, Screen} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useColor} from '../../hooks';
-import {Config} from '../../utils';
+import {config} from '../../utils';
 
 // TODO: gitlab
 // TODO: selected
@@ -22,8 +22,8 @@ export const Home = memo(function ActivityTracker() {
       backgroundColor: color.surface,
     },
     container: {
-      paddingHorizontal: Config.padding(4),
-      paddingVertical: Config.padding(2),
+      paddingHorizontal: config.padding(4),
+      paddingVertical: config.padding(2),
     },
   });
 
@@ -46,7 +46,7 @@ export const Home = memo(function ActivityTracker() {
           position: 'absolute',
           bottom: 0,
           right: 0,
-          margin: Config.padding(4),
+          margin: config.padding(4),
         }}
       />
     </Screen>

@@ -11,7 +11,7 @@ import {
   colorThemes,
   getLandscapeOrientation,
 } from '../../../models';
-import {Config, useRootDispatch, useRootSelector} from '../../../utils';
+import {config, useRootDispatch, useRootSelector} from '../../../utils';
 
 interface Card {
   title: string;
@@ -91,13 +91,13 @@ export const DarkMode = memo(function DarkMode() {
       <Card elevation={elevation} key={index} onPress={onPress}>
         <Text title={item.title} type="overline" />
         <Text
-          style={{marginTop: Config.padding(2)}}
+          style={{marginTop: config.padding(2)}}
           title={item.value}
           type="h4"
         />
         {item.target && (
           <Text
-            style={{marginTop: Config.padding(2)}}
+            style={{marginTop: config.padding(2)}}
             title={item.target}
             type="body2"
           />
@@ -107,7 +107,7 @@ export const DarkMode = memo(function DarkMode() {
             source={item.chart}
             style={{
               height: 100,
-              marginTop: Config.padding(2),
+              marginTop: config.padding(2),
               resizeMode: 'cover',
               width: '100%',
             }}
@@ -115,7 +115,7 @@ export const DarkMode = memo(function DarkMode() {
         )}
         {item.button && (
           <Button
-            buttonStyle={{marginTop: Config.padding(2)}}
+            buttonStyle={{marginTop: config.padding(2)}}
             center
             color="primary"
             emphasis="high"
@@ -131,7 +131,7 @@ export const DarkMode = memo(function DarkMode() {
   return (
     <Screen dropShadow onLeftPress={navBack} title="Dark mode">
       <ScrollView style={{backgroundColor: color.surface}}>
-        <View style={{padding: Config.padding(4)}}>
+        <View style={{padding: config.padding(4)}}>
           <View
             style={{
               flexDirection: 'row',

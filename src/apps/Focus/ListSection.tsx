@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Text} from '../../components';
 import {useColor} from '../../hooks';
-import {Config} from '../../utils';
+import {config} from '../../utils';
 import {Item} from './types';
 
 interface Props {
@@ -19,8 +19,8 @@ export const ListSection = memo(function ListSection({item}: Props) {
         borderTopWidth: 1,
         flexDirection: 'row',
         justifyContent: 'center',
-        marginTop: Config.padding(2),
-        padding: Config.padding(2),
+        marginTop: config.padding(2),
+        padding: config.padding(2),
       }}>
       <Text title={item.dayOfMonth} type="h4" />
       <Text title={` ${item.month}, ${item.dayOfWeek}`} type="overline" />
