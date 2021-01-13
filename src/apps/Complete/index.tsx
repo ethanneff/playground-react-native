@@ -29,19 +29,19 @@ const ProjectsStack = createStackNavigator();
 
 type Tabs = 'plan' | 'implement' | 'reflect';
 type TabIcons = {
-  [key in Tabs]: {implemented: string; unimplemented: string};
+  [key in Tabs]: {focused: string; unFocused: string};
 };
 
 const tabIcons: TabIcons = {
   plan: {
-    implemented: 'pencil-plus-outline',
-    unimplemented: 'pencil-plus-outline',
+    focused: 'pencil-plus-outline',
+    unFocused: 'pencil-plus-outline',
   },
   implement: {
-    implemented: 'checkbox-multiple-marked-outline',
-    unimplemented: 'checkbox-multiple-marked-outline',
+    focused: 'checkbox-multiple-marked-outline',
+    unFocused: 'checkbox-multiple-marked-outline',
   },
-  reflect: {implemented: 'finance', unimplemented: 'finance'},
+  reflect: {focused: 'finance', unFocused: 'finance'},
 };
 
 type ScreenOptionsProps = {
@@ -49,7 +49,7 @@ type ScreenOptionsProps = {
 };
 
 type TabBarIconProps = {
-  implemented: boolean;
+  focused: boolean;
   size: number;
 };
 
@@ -72,10 +72,10 @@ const Tabs = () => {
   };
   const screenOptions = useCallback(
     ({route}: ScreenOptionsProps) => ({
-      tabBarIcon: function tabBarIcon({implemented, size}: TabBarIconProps) {
-        const implement = implemented ? 'implemented' : 'unimplemented';
-        const iconColor = implemented ? color.text : color.secondary;
-        const name = (tabIcons as any)[route.name][implement];
+      tabBarIcon: function tabBarIcon({focused, size}: TabBarIconProps) {
+        const key = focused ? 'focused' : 'unFocused';
+        const iconColor = focused ? color.text : color.secondary;
+        const name = (tabIcons as any)[route.name][key];
         return <Icon color={iconColor} name={name} size={size} />;
       },
     }),
@@ -86,7 +86,7 @@ const Tabs = () => {
     <RootTab.Navigator
       screenOptions={screenOptions as any}
       tabBarOptions={tabBarOptions}>
-      <RootTab.Screen component={Plan} name="plan" />
+      <RootTab.Screen component={Capture} name="plan" />
       <RootTab.Screen component={Implement} name="implement" />
       <RootTab.Screen component={Reflect} name="reflect" />
     </RootTab.Navigator>
