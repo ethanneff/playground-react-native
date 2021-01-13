@@ -25,7 +25,7 @@ export type User = {
   active: boolean;
   createdAt: number;
   updatedAt: number;
-  boards: ReadonlyArray<string>;
+  items: ReadonlyArray<string>;
 };
 
 /* REDUCER */
