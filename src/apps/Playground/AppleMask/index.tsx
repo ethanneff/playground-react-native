@@ -5,7 +5,7 @@ import {Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {getWidth} from '../../../models';
-import {Theme, useRootSelector} from '../../../utils';
+import {Config, useRootSelector} from '../../../utils';
 
 // https://support.apple.com/en-us/HT211028
 
@@ -27,12 +27,12 @@ const Section = ({
 }: SectionProps) => {
   const color = useColor();
   const width = useRootSelector(getWidth);
-  const leftWidth = Theme.padding.p12;
+  const leftWidth = Config.padding(12);
   const imageWidth = width - leftWidth - 2 * paddingHorizontal;
   return (
     <View
       style={{
-        paddingVertical: Theme.padding.p08,
+        paddingVertical: Config.padding(8),
         borderBottomColor: color.surface,
         borderBottomWidth: 2,
       }}>
@@ -94,14 +94,14 @@ export const AppleMask = memo(function AppleMask() {
     },
   ];
 
-  const paddingHorizontal = Theme.padding.p04;
+  const paddingHorizontal = Config.padding(4);
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <Screen border onLeftPress={navBack} title="Apple Mask">
       <ScrollView contentContainerStyle={{paddingHorizontal}}>
         <Text title="Assemble and adjust your Face Shield" type="h2" />
         <Text
-          style={{paddingTop: Theme.padding.p04}}
+          style={{paddingTop: Config.padding(4)}}
           title="To assemble your face shield, follow these steps."
           type="subtitle1"
         />

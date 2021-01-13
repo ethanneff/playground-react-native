@@ -4,7 +4,7 @@ import {Dimensions, View} from 'react-native';
 import {Calendar, Screen, Text} from '../../../../components';
 import {ScrollView} from '../../../../conversions';
 import {useColor} from '../../../../hooks';
-import {Theme} from '../../../../utils';
+import {Config} from '../../../../utils';
 import {Card} from '../../components/Card';
 import {config} from '../../configs';
 import {Graph} from './Graph';
@@ -45,7 +45,7 @@ export const Reflect = memo(function Reflect() {
     <Screen onRightPress={navToAccount} rightIcon="account" title="Reflect">
       <ScrollView
         contentContainerStyle={{
-          padding: Theme.padding.p04,
+          padding: Config.padding(4),
           backgroundColor: color.surface,
         }}
         style={{backgroundColor: color.surface}}>

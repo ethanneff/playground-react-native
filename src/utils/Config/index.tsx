@@ -5,71 +5,9 @@ SIZING https://material.io/design/typography/the-type-system.html#applying-the-t
 */
 
 // TODO: rename to Config to differentiate from Redux Theme
-// TODO: make padding a function
+// TODO: make paddinga function
 
-const padding = {
-  p00: 0,
-  p01: 4,
-  p02: 8,
-  p03: 12,
-  p04: 16,
-  p05: 20,
-  p06: 24,
-  p07: 28,
-  p08: 32,
-  p09: 36,
-  p10: 40,
-  p11: 44,
-  p12: 48,
-  p13: 52,
-  p14: 56,
-  p15: 60,
-  p16: 64,
-  p17: 68,
-  p18: 72,
-  p19: 76,
-  p20: 80,
-  p21: 84,
-  p22: 88,
-  p23: 92,
-  p24: 96,
-  p25: 100,
-  p26: 104,
-  p27: 108,
-  p28: 112,
-  p29: 116,
-  p30: 120,
-  p31: 124,
-  p32: 128,
-  p33: 132,
-  p34: 136,
-  p35: 140,
-  p36: 144,
-  p37: 148,
-  p38: 152,
-  p39: 156,
-  p40: 160,
-  p41: 164,
-  p42: 168,
-  p43: 172,
-  p44: 176,
-  p45: 180,
-  p46: 184,
-  p47: 188,
-  p48: 192,
-  p49: 196,
-  p50: 200,
-  p51: 214,
-  p52: 218,
-  p53: 222,
-  p54: 226,
-  p55: 230,
-  p56: 234,
-  p57: 238,
-  p58: 242,
-  p59: 246,
-  p60: 250,
-};
+const padding = (value: number): number => value * 4;
 
 export type FontType =
   | 'h1'
@@ -176,10 +114,10 @@ const fontSizes: FontSizes = {
 };
 
 const sizing = {
-  borderRadius: padding.p02,
+  borderRadius: padding(2),
 };
 
-export const Theme = {
+export const Config = {
   fontSizes,
   fontEmphases,
   fontWeight,
@@ -219,8 +157,8 @@ export const getFontStyles = ({
   color = 'text',
   colorScheme,
 }: GetFontStylesProps): GetFontStylesReturn => {
-  const textColorPercent = Theme.fontEmphases[emphasis];
-  const fontSize = Theme.fontSizes[type];
+  const textColorPercent = Config.fontEmphases[emphasis];
+  const fontSize = Config.fontSizes[type];
   const textColor = inverse
     ? colorScheme.background
     : color

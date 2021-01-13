@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {useColor} from '../../hooks';
-import {Theme} from '../../utils';
+import {Config} from '../../utils';
 import {Icon} from '../Icon';
 
 interface Props {
@@ -16,7 +16,7 @@ export const NavButton = memo(
     const color = useColor();
     const styles = StyleSheet.create({
       button: {
-        padding: Theme.padding.p03,
+        padding: Config.padding(3),
       },
       buttonRight: {
         alignSelf: 'flex-end',
@@ -29,7 +29,7 @@ export const NavButton = memo(
           hidden={!onPress}
           name={icon}
           onPress={onPress}
-          size={Theme.padding.p09}
+          size={Config.padding(9)}
           style={isRight && styles.buttonRight}
           testID={testID}
         />

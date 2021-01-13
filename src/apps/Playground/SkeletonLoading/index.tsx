@@ -4,23 +4,23 @@ import {View} from 'react-native';
 import {Button, Card, Screen, SkeletonLoader, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
-import {Theme} from '../../../utils';
+import {Config} from '../../../utils';
 
 const LoadingProfile = () => {
   const color = useColor();
-  const banner = Theme.padding.p24;
+  const banner = Config.padding(24);
 
   return (
     <Card
       noPadding
       style={{
-        marginBottom: Theme.padding.p04,
-        paddingBottom: Theme.padding.p20,
+        marginBottom: Config.padding(4),
+        paddingBottom: Config.padding(20),
       }}>
       <View
         style={{
-          borderTopLeftRadius: Theme.sizing.borderRadius,
-          borderTopRightRadius: Theme.sizing.borderRadius,
+          borderTopLeftRadius: Config.sizing.borderRadius,
+          borderTopRightRadius: Config.sizing.borderRadius,
           backgroundColor: color.light,
           flex: 1,
           height: banner,
@@ -38,17 +38,17 @@ const LoadingProfile = () => {
         <SkeletonLoader borderRadius={banner} height={banner} width={banner} />
       </View>
       <View style={{marginTop: banner * 0.5, alignItems: 'center'}}>
-        <View style={{paddingVertical: Theme.padding.p04}}>
+        <View style={{paddingVertical: Config.padding(4)}}>
           <SkeletonLoader
             borderRadius={0}
-            height={Theme.padding.p06}
-            width={Theme.padding.p16 * 4}
+            height={Config.padding(6)}
+            width={Config.padding(16) * 4}
           />
         </View>
         <SkeletonLoader
           borderRadius={0}
-          height={Theme.padding.p06}
-          width={Theme.padding.p16 * 3}
+          height={Config.padding(6)}
+          width={Config.padding(16) * 3}
         />
       </View>
     </Card>
@@ -57,49 +57,49 @@ const LoadingProfile = () => {
 
 const LoadingSection = () => {
   return (
-    <Card style={{marginBottom: Theme.padding.p04}}>
+    <Card style={{marginBottom: Config.padding(4)}}>
       <View>
         <View style={{flexDirection: 'row'}}>
           <SkeletonLoader
-            borderRadius={Theme.padding.p24}
-            height={Theme.padding.p24}
-            width={Theme.padding.p24}
+            borderRadius={Config.padding(24)}
+            height={Config.padding(24)}
+            width={Config.padding(24)}
           />
           <View
             style={{
-              padding: Theme.padding.p04,
+              padding: Config.padding(4),
               justifyContent: 'space-between',
             }}>
             <SkeletonLoader
               borderRadius={0}
-              height={Theme.padding.p06}
-              width={Theme.padding.p20}
+              height={Config.padding(6)}
+              width={Config.padding(20)}
             />
             <SkeletonLoader
               borderRadius={0}
-              height={Theme.padding.p06}
-              width={Theme.padding.p20 * 2}
+              height={Config.padding(6)}
+              width={Config.padding(20) * 2}
             />
           </View>
         </View>
-        <View style={{paddingVertical: Theme.padding.p04}}>
+        <View style={{paddingVertical: Config.padding(4)}}>
           <SkeletonLoader
             borderRadius={0}
-            height={Theme.padding.p06}
-            width={Theme.padding.p19 * 4}
+            height={Config.padding(6)}
+            width={Config.padding(19) * 4}
           />
         </View>
-        <View style={{paddingBottom: Theme.padding.p04}}>
+        <View style={{paddingBottom: Config.padding(4)}}>
           <SkeletonLoader
             borderRadius={0}
-            height={Theme.padding.p06}
-            width={Theme.padding.p21 * 4}
+            height={Config.padding(6)}
+            width={Config.padding(21) * 4}
           />
         </View>
         <SkeletonLoader
           borderRadius={0}
-          height={Theme.padding.p06}
-          width={Theme.padding.p20 * 4}
+          height={Config.padding(6)}
+          width={Config.padding(20) * 4}
         />
       </View>
     </Card>
@@ -133,7 +133,7 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
   return (
     <Screen dropShadow onLeftPress={navBack} title="Skeleton Loading">
       <ScrollView
-        contentContainerStyle={{padding: Theme.padding.p04}}
+        contentContainerStyle={{padding: Config.padding(4)}}
         style={{backgroundColor: color.surface}}>
         {loading ? (
           <View>

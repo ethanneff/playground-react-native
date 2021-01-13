@@ -2,7 +2,7 @@ import React, {memo, useCallback, useMemo, useState} from 'react';
 import {View} from 'react-native';
 import {Button, Icon, Text, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
-import {Theme} from '../../../utils';
+import {Config} from '../../../utils';
 import {shuffleArray} from './utils';
 
 type Combinations = {[key: string]: number};
@@ -205,7 +205,7 @@ export const Slots = memo(function Slots({
       <Text
         center
         emphasis="high"
-        style={{padding: Theme.padding.p02}}
+        style={{padding: Config.padding(2)}}
         title={`${state.credits} credits`}
         type="h4"
       />
@@ -220,7 +220,7 @@ export const Slots = memo(function Slots({
         center
         color="danger"
         emphasis="high"
-        style={{padding: Theme.padding.p02}}
+        style={{padding: Config.padding(2)}}
         title={creditError}
       />
     </View>

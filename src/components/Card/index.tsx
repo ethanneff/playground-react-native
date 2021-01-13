@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react';
 import {StyleSheet, View, ViewStyle} from 'react-native';
-import {Theme} from '../../utils';
 import {useColor, useDropShadow} from '../../hooks';
+import {Config} from '../../utils';
 import {TouchableOpacity} from '../TouchableOpacity';
 
 interface Props {
@@ -21,7 +21,7 @@ interface Props {
 
 const touchOpacity = 0.3;
 export const Card = ({
-  borderRadius = Theme.sizing.borderRadius,
+  borderRadius = Config.sizing.borderRadius,
   borderWidth = 1,
   children,
   elevation = 2,
@@ -48,13 +48,13 @@ export const Card = ({
       borderColor: color.background,
       borderRadius,
       borderWidth,
-      marginVertical: noMargin ? 0 : Theme.padding.p02,
+      marginVertical: noMargin ? 0 : Config.padding(2),
       ...dropShadow(elevation),
     },
     contents: {
       backgroundColor: `hsla(0,0%,100%,${opacity})`,
       borderRadius,
-      padding: noPadding ? 0 : Theme.padding.p04,
+      padding: noPadding ? 0 : Config.padding(4),
     },
     flex: {
       flex: 1,

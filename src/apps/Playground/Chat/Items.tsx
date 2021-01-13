@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useEffect, useRef} from 'react';
 import {FlatList} from 'react-native';
 import {useColor} from '../../../hooks';
-import {Theme, useRootSelector} from '../../../utils';
+import {Config, useRootSelector} from '../../../utils';
 import {Item} from './Item';
 import {getActiveChatMessagesOrderByCreatedAt, Message} from './Messages';
 
@@ -21,7 +21,7 @@ export const Items = memo(function ChatMessageItems() {
 
   return (
     <FlatList
-      contentContainerStyle={{padding: Theme.padding.p04}}
+      contentContainerStyle={{padding: Config.padding(4)}}
       data={messages}
       inverted
       keyExtractor={keyExtractor}

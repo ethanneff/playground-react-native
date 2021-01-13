@@ -1,8 +1,8 @@
-import {Theme} from '../../utils';
+import {Config} from '../../utils';
 
 export const config = {
-  borderRadius: Theme.padding.p02,
-  padding: Theme.padding.p04,
+  borderRadius: Config.padding(2),
+  padding: Config.padding(4),
   alert: {
     width: 0.8,
     height: 0.6,

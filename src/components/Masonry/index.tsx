@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import {Theme} from '../../utils';
+import {Config} from '../../utils';
 
 interface Item<T> {
   item: T;
@@ -22,9 +22,9 @@ export const Masonry = memo(function Masonry<T>({
   data.forEach((item: T, i: number) => columns[i % numColumns].push(item));
 
   return (
-    <View style={{flexDirection: 'row', padding: Theme.padding.p02}}>
+    <View style={{flexDirection: 'row', padding: Config.padding(2)}}>
       {columns.map((column, j) => (
-        <View key={`column-${j}`} style={{flex: 1, padding: Theme.padding.p02}}>
+        <View key={`column-${j}`} style={{flex: 1, padding: Config.padding(2)}}>
           {column.map((item: T, index: number) => renderItem({item, index}))}
         </View>
       ))}

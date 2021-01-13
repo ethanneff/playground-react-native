@@ -13,7 +13,7 @@ import {Card, Icon, Screen, Text, TouchableOpacity} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {useColor, useDriver, useDropShadow} from '../../../hooks';
 import {getWidth} from '../../../models';
-import {Theme, useRootSelector} from '../../../utils';
+import {Config, useRootSelector} from '../../../utils';
 import {formatRelativeDate} from './utils';
 
 interface SwipeCardProps extends SwipeItem {
@@ -91,7 +91,7 @@ const SwipeCard = memo(function SwipeCard({
         left: position.x,
         height: height,
         backgroundColor: color.background,
-        borderRadius: Theme.padding.p01,
+        borderRadius: Config.padding(1),
         borderColor: color.brand,
         ...dropShadow(4),
       }}>
@@ -107,7 +107,7 @@ const SwipeCard = memo(function SwipeCard({
               }}
             />
           )}
-          <View style={{flex: 1, padding: Theme.padding.p02}}>
+          <View style={{flex: 1, padding: Config.padding(2)}}>
             <View
               style={{
                 flexDirection: 'row',
@@ -116,7 +116,7 @@ const SwipeCard = memo(function SwipeCard({
               <Icon name={icon} size={15} />
               <Text
                 bold
-                style={{paddingHorizontal: Theme.padding.p01}}
+                style={{paddingHorizontal: Config.padding(1)}}
                 title={title}
                 type="overline"
               />
@@ -125,7 +125,7 @@ const SwipeCard = memo(function SwipeCard({
             <Text
               ellipsizeMode="tail"
               numberOfLines={2}
-              style={{flex: 1, paddingTop: Theme.padding.p02}}
+              style={{flex: 1, paddingTop: Config.padding(2)}}
               title={body}
             />
             <Text style={{color: color.primary}} title={button.toUpperCase()} />
@@ -220,7 +220,7 @@ interface BadgeProps {
 }
 
 const Badge = memo(function Badge({count, percent}: BadgeProps) {
-  const size = Theme.padding.p06;
+  const size = Config.padding(6);
   const badgeSize = size * percent;
   const color = useColor();
   return (
@@ -230,7 +230,7 @@ const Badge = memo(function Badge({count, percent}: BadgeProps) {
         right: 0,
         width: size,
         height: size,
-        margin: Theme.padding.p01,
+        margin: Config.padding(1),
         zIndex: count * 10,
         alignItems: 'center',
         justifyContent: 'center',
@@ -316,7 +316,7 @@ export const SwipeFeed = memo(function SwipeFeed() {
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <Screen onLeftPress={navBack} title="Swipe Feed">
-      <ScrollView style={{padding: Theme.padding.p04}}>
+      <ScrollView style={{padding: Config.padding(4)}}>
         <ImagePlaceholder />
         <ImagePlaceholder />
         <SwipeCards items={initialItems} />

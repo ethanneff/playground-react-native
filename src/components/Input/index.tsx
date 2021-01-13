@@ -10,7 +10,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import {useColor} from '../../hooks';
-import {Theme} from '../../utils';
+import {Config} from '../../utils';
 import {Button} from '../Button';
 import {Icon} from '../Icon';
 
@@ -94,11 +94,11 @@ export const Input = ({
     textInput: {
       backgroundColor: color.background,
       borderColor: color.secondary,
-      borderRadius: Theme.padding.p01,
+      borderRadius: Config.padding(1),
       borderWidth: 2,
       color: color.text,
-      padding: Theme.padding.p02,
-      paddingRight: Theme.padding.p08,
+      padding: Config.padding(2),
+      paddingRight: Config.padding(8),
       width: '100%',
     },
   });
@@ -108,7 +108,7 @@ export const Input = ({
     styles.textInput,
     error ? styles.borderError : undefined,
     focus ? styles.borderFocus : undefined,
-    Theme.fontSizes.body2,
+    Config.fontSizes.body2,
     textStyle,
   ];
   const noValue = value.length === 0;

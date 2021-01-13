@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, View} from 'react-native';
 import {KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {Theme, useRootSelector} from '../../../../utils';
+import {Config, useRootSelector} from '../../../../utils';
 import {List} from '../../components';
 import {config} from '../../configs';
 
@@ -38,7 +38,7 @@ export const Projects = memo(function Projects() {
   );
 
   const keyboardPadding =
-    keyboardHeight > 0 ? Theme.padding.p32 : Theme.padding.p51;
+    keyboardHeight > 0 ? Config.padding(32) : Config.padding(51);
   const maxHeight = dimensions - keyboardHeight - keyboardPadding;
 
   const navToAccount = useCallback(() => navigate('account'), [navigate]);

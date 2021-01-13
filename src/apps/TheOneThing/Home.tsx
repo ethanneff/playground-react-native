@@ -4,7 +4,7 @@ import {View} from 'react-native';
 import {Card, Icon, Screen, Text, TouchableOpacity} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useColor} from '../../hooks';
-import {Theme} from '../../utils';
+import {Config} from '../../utils';
 
 interface SectionProps {
   title: string;
@@ -31,7 +31,7 @@ const ChecklistItem = ({item, index}: ChecklistItemProps) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
-        <Icon name={toggle} style={{paddingRight: Theme.padding.p02}} />
+        <Icon name={toggle} style={{paddingRight: Config.padding(2)}} />
         <View style={{flex: 1}}>
           <Text title={`${index + 1}. ${item}`} />
         </View>
@@ -54,12 +54,12 @@ const Section = ({title, subtitle, description, items = []}: SectionProps) => {
       {subtitle && (
         <Text
           emphasis="medium"
-          style={{paddingVertical: Theme.padding.p01}}
+          style={{paddingVertical: Config.padding(1)}}
           title={subtitle}
           type="subtitle1"
         />
       )}
-      <View style={{paddingTop: Theme.padding.p02}}>
+      <View style={{paddingTop: Config.padding(2)}}>
         {description && <Text title={description} />}
         {items &&
           items.map((item, index) => (
@@ -79,8 +79,8 @@ export const Home = memo(function Home() {
     <Screen dropShadow onLeftPress={navBack} title="The One Thing">
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: Theme.padding.p04,
-          paddingVertical: Theme.padding.p02,
+          paddingHorizontal: Config.padding(4),
+          paddingVertical: Config.padding(2),
         }}
         style={{backgroundColor: color.surface}}>
         <Section

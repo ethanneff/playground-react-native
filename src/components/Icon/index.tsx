@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {Platform, StyleProp, StyleSheet, ViewStyle} from 'react-native';
 import {useColor, useDropShadow} from '../../hooks';
-import {getDisabledColor, Theme} from '../../utils';
+import {Config, getDisabledColor} from '../../utils';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {Badge} from './Badge';
 import {Source} from './Source';
@@ -38,7 +38,7 @@ export const Icon = memo(function Icon({
   badge = 0,
   clear,
   elevation = 4,
-  size = Theme.padding.p06,
+  size = Config.padding(6),
   color,
   backgroundColor,
   fab,
@@ -57,24 +57,24 @@ export const Icon = memo(function Icon({
     fab: {
       alignItems: 'center',
       backgroundColor: bgColor,
-      borderRadius: Theme.padding.p15,
-      height: Theme.padding.p15,
+      borderRadius: Config.padding(15),
+      height: Config.padding(15),
       justifyContent: 'center',
-      width: Theme.padding.p15,
+      width: Config.padding(15),
       ...dropShadow(elevation),
     },
     icon: {
       justifyContent: 'center',
     },
     padded: {
-      padding: Theme.padding.p02,
+      padding: Config.padding(2),
     },
     right: {
       alignSelf: 'flex-end',
     },
     web: {
-      height: Theme.padding.p06,
-      width: Theme.padding.p06,
+      height: Config.padding(6),
+      width: Config.padding(6),
     },
   });
   const colored = hidden

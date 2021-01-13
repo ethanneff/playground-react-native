@@ -1,7 +1,6 @@
 import {StyleSheet} from 'react-native';
-import {Theme} from '../../utils';
 import {Color} from './../../models/Theme';
-import {getDisabledColor} from './../../utils/Theme/index';
+import {Config, getDisabledColor} from './../../utils/Config/index';
 import {ButtonEmphasis} from './types';
 
 export const getButtonColor = (
@@ -41,19 +40,19 @@ export const getStyles = ({
           : emphasis === 'medium'
           ? colorScheme.dark
           : 'transparent',
-      borderRadius: Theme.padding.p01,
+      borderRadius: Config.padding(1),
       borderWidth: 1,
       flexDirection: 'row',
-      padding: noPadding ? Theme.padding.p00 : Theme.padding.p02,
-      paddingHorizontal: noPadding ? Theme.padding.p00 : Theme.padding.p04,
+      padding: noPadding ? Config.padding(0) : Config.padding(2),
+      paddingHorizontal: noPadding ? Config.padding(0) : Config.padding(4),
     },
     invisible: {
       opacity: 0,
     },
     label: {
-      height: Theme.padding.p05,
+      height: Config.padding(5),
       justifyContent: 'flex-start',
-      marginVertical: Theme.padding.p01,
+      marginVertical: Config.padding(1),
       paddingHorizontal: 0,
     },
     right: {

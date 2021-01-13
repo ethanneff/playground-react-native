@@ -1,4 +1,4 @@
-import React, {ReactNode, memo} from 'react';
+import React, {memo, ReactNode} from 'react';
 import {StyleSheet, TextStyle, View} from 'react-native';
 import {useColor} from '../../hooks';
 

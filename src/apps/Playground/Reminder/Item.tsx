@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
-import {Theme} from '../../../utils';
+import {Config} from '../../../utils';
 
 interface Props {
   title: string;
@@ -28,24 +28,24 @@ export const Item = memo(function ReminderItem({
   const styles = StyleSheet.create({
     button: {
       borderColor: color.secondary,
-      borderRadius: Theme.padding.p01,
+      borderRadius: Config.padding(1),
       borderWidth: 1,
       flexDirection: 'row',
-      height: Theme.padding.p13,
+      height: Config.padding(13),
       justifyContent: 'space-between',
-      marginBottom: marginBottom ? Theme.padding.p02 : 0,
+      marginBottom: marginBottom ? Config.padding(2) : 0,
     },
     container: {
       flex: 1,
       flexDirection: 'row',
-      paddingHorizontal: Theme.padding.p02,
+      paddingHorizontal: Config.padding(2),
     },
     icon: {
       justifyContent: 'center',
     },
     subtitle: {
       paddingLeft: 1,
-      paddingTop: Theme.padding.p01,
+      paddingTop: Config.padding(1),
     },
     textContainer: {
       flex: 1,
@@ -69,7 +69,7 @@ export const Item = memo(function ReminderItem({
           )}
         </View>
         {icon && (
-          <Icon name={icon} size={Theme.padding.p05} style={styles.icon} />
+          <Icon name={icon} size={Config.padding(5)} style={styles.icon} />
         )}
       </View>
     </TouchableOpacity>

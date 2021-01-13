@@ -4,7 +4,7 @@ import {Animated, StyleSheet, View} from 'react-native';
 import {Button, Screen} from '../../../components';
 import {useColor, useDriver} from '../../../hooks';
 import {getHeight, getWidth} from '../../../models';
-import {Theme, useRootSelector} from '../../../utils';
+import {Config, useRootSelector} from '../../../utils';
 
 export const Ball = memo(function PlaygroundBall() {
   const height = useRootSelector(getHeight);
@@ -15,7 +15,7 @@ export const Ball = memo(function PlaygroundBall() {
   ).current;
   const useNativeDriver = useDriver();
   const color = useColor();
-  const size = Theme.padding.p08;
+  const size = Config.padding(8);
   const styles = StyleSheet.create({
     ball: {
       borderColor: color.text,

@@ -4,7 +4,7 @@ import React, {memo} from 'react';
 import {Image, View} from 'react-native';
 import {RelativeDate, Text} from '../../../components';
 import {useColor} from '../../../hooks';
-import {Theme} from '../../../utils';
+import {Config} from '../../../utils';
 import {Message} from './Messages';
 dayjs.extend(relativeTime);
 
@@ -21,10 +21,10 @@ export const Item = memo(function ChatMessage({item, marginBottom}: Props) {
     <View
       key={item.id}
       style={{
-        padding: Theme.padding.p02,
-        borderRadius: Theme.padding.p04,
+        padding: Config.padding(2),
+        borderRadius: Config.padding(4),
         flexDirection: 'row',
-        marginBottom: marginBottom ? Theme.padding.p06 : 0,
+        marginBottom: marginBottom ? Config.padding(6) : 0,
         backgroundColor: color.background,
       }}>
       <View style={{width: 40}}>
@@ -33,7 +33,7 @@ export const Item = memo(function ChatMessage({item, marginBottom}: Props) {
           style={{
             alignSelf: 'center',
             height: 20,
-            paddingTop: Theme.padding.p04,
+            paddingTop: Config.padding(4),
             resizeMode: 'contain',
             width: 20,
           }}
@@ -43,13 +43,13 @@ export const Item = memo(function ChatMessage({item, marginBottom}: Props) {
         <View style={{flexDirection: 'row'}}>
           <Text
             bold
-            style={{paddingRight: Theme.padding.p02}}
+            style={{paddingRight: Config.padding(2)}}
             title={item.userId}
           />
           <RelativeDate date={item.createdAt} />
         </View>
         <Text
-          style={{paddingTop: Theme.padding.p01}}
+          style={{paddingTop: Config.padding(1)}}
           title={item.message}
           type="body1"
         />

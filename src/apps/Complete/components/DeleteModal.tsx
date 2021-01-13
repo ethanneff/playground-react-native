@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Button, Modal, Text} from '../../../components';
-import {Theme} from '../../../utils';
+import {Config} from '../../../utils';
 
 type DeleteModalProps = {
   onDelete: () => void;
@@ -16,7 +16,7 @@ export const DeleteModal = memo(function DeleteModal({
     <Modal onBackgroundPress={onCancel} showOverlay widthPercent={0.5}>
       <View style={{alignItems: 'center'}}>
         <Text
-          style={{paddingBottom: Theme.padding.p02}}
+          style={{paddingBottom: Config.padding(2)}}
           title="Are you sure?"
           type="h5"
         />

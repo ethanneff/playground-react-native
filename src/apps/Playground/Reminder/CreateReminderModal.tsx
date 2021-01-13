@@ -2,7 +2,7 @@ import {Dayjs} from 'dayjs';
 import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {Button, Modal, Text} from '../../../components';
-import {Theme} from '../../../utils';
+import {Config} from '../../../utils';
 import {Location} from './Location';
 import {OneTime} from './OneTime';
 import {Radio} from './Radio';
@@ -25,11 +25,11 @@ export const CreateReminderModal = memo(function CreateReminderModal({
   const [state, setState] = useState<ReminderType>('One time');
   const styles = StyleSheet.create({
     section: {
-      paddingBottom: Theme.padding.p02,
-      paddingTop: Theme.padding.p06,
+      paddingBottom: Config.padding(2),
+      paddingTop: Config.padding(6),
     },
     submit: {
-      marginTop: Theme.padding.p06,
+      marginTop: Config.padding(6),
     },
   });
 

@@ -5,14 +5,14 @@ import {Button, Card, Icon, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
 import {Login} from '../../features/Login';
 import {useColor} from '../../hooks';
-import {Theme} from '../../utils';
+import {Config} from '../../utils';
 
 export const Home = memo(function Checklists() {
   const color = useColor();
   const {goBack} = useNavigation();
   const styles = StyleSheet.create({
     bottom: {
-      paddingBottom: Theme.padding.p04,
+      paddingBottom: Config.padding(4),
     },
   });
   const [showLogin, setShowLogin] = useState(false);
@@ -24,8 +24,8 @@ export const Home = memo(function Checklists() {
       <Screen onLeftPress={navBack} title="Checklists">
         <ScrollView
           contentContainerStyle={{
-            paddingHorizontal: Theme.padding.p04,
-            paddingVertical: Theme.padding.p02,
+            paddingHorizontal: Config.padding(4),
+            paddingVertical: Config.padding(2),
           }}
           style={{backgroundColor: color.surface}}>
           <Card>
@@ -60,7 +60,7 @@ export const Home = memo(function Checklists() {
             position: 'absolute',
             bottom: 0,
             right: 0,
-            margin: Theme.padding.p04,
+            margin: Config.padding(4),
           }}
         />
         <Button onPress={onToggleLogin} title="showLogin" />

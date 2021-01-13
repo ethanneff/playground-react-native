@@ -5,7 +5,7 @@ import {Switch} from 'react-native';
 import {Button, Input, Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
-import {Theme} from '../../../utils';
+import {Config} from '../../../utils';
 import {Section} from './Section';
 
 // https://www.startupschool.org/updates/250717/edit
@@ -89,7 +89,7 @@ export const Startup = memo(function PlaygroundStartup() {
     <Screen dropShadow onLeftPress={navBack} title="Weekly Update">
       <ScrollView
         contentContainerStyle={{
-          padding: Theme.padding.p04,
+          padding: Config.padding(4),
         }}
         style={{backgroundColor: color.surface}}>
         <Text center title={dayjs().format('MMM DD, YYYY')} type="h4" />

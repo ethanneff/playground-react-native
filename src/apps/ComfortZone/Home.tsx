@@ -4,7 +4,7 @@ import {TextInput, View} from 'react-native';
 import {Button, Calendar, Card, Input, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useColor} from '../../hooks';
-import {Theme} from '../../utils';
+import {Config} from '../../utils';
 
 const data = [
   'Set your alarm for 10 minutes earlier than usual',
@@ -181,13 +181,13 @@ export const Home = memo(function Home() {
     <Screen onLeftPress={navBack} title="Comfort Zone">
       <ScrollView
         contentContainerStyle={{
-          padding: Theme.padding.p04,
+          padding: Config.padding(4),
         }}
         style={{backgroundColor: color.surface}}>
         <Card>
           <Text
             center
-            style={{paddingBottom: Theme.padding.p04}}
+            style={{paddingBottom: Config.padding(4)}}
             title="Try something new every day"
             type="h4"
           />
@@ -201,14 +201,14 @@ export const Home = memo(function Home() {
         <Card>
           <Text
             center
-            style={{paddingBottom: Theme.padding.p04}}
+            style={{paddingBottom: Config.padding(4)}}
             title="Today's Challenge"
             type="h4"
           />
           <Text
             center
             emphasis="medium"
-            style={{paddingBottom: Theme.padding.p04}}
+            style={{paddingBottom: Config.padding(4)}}
             title={challenge}
             type="subtitle1"
           />
@@ -228,7 +228,7 @@ export const Home = memo(function Home() {
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingTop: Theme.padding.p06,
+                paddingTop: Config.padding(6),
               }}>
               <Input
                 onChangeText={onCustomInputChange}
@@ -248,7 +248,7 @@ export const Home = memo(function Home() {
         <Card>
           <Text
             center
-            style={{paddingBottom: Theme.padding.p04}}
+            style={{paddingBottom: Config.padding(4)}}
             title="Progress"
             type="h4"
           />

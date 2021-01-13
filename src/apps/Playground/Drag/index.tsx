@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import {Screen, Text} from '../../../components';
 import {useColor, useDriver, useDropShadow} from '../../../hooks';
-import {Theme} from '../../../utils';
+import {Config} from '../../../utils';
 
 const getPosition = (
   gestureState: PanResponderGestureState,
@@ -95,7 +95,7 @@ export const Drag = memo(function PlaygroundDrag() {
             left: 0,
             right: 0,
             top: 0,
-            padding: Theme.padding.p02,
+            padding: Config.padding(2),
           }}
           title="drag the circle"
           type="overline"

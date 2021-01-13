@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {useColor} from '../../../hooks';
 import {Text} from '../../../components';
+import {useColor} from '../../../hooks';
 import {Timer} from './Timer';
 
 interface LapProps {
