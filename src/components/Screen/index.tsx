@@ -1,7 +1,7 @@
 import React, {ReactElement, ReactNode} from 'react';
 import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
 import {useColor} from '../../hooks';
-import {Config} from '../../utils';
+import {config} from '../../utils';
 import {NavBar} from './NavBar';
 
 interface OwnProps {
@@ -30,7 +30,7 @@ export const Screen = ({
   leftIcon,
   rightIcon,
   testID,
-  height = Config.padding(18),
+  height = config.padding(18),
   dropShadow,
 }: Props): ReactElement => {
   const color = useColor();
@@ -42,7 +42,7 @@ export const Screen = ({
     gutter: {
       backgroundColor: color.background,
       flex: 1,
-      padding: gutter ? Config.padding(4) : Config.padding(0),
+      padding: gutter ? config.padding(4) : config.padding(0),
     },
   });
 
