@@ -6,7 +6,6 @@ import {useColor} from '../../../../hooks';
 import {Theme, useRootSelector} from '../../../../utils';
 import {List} from '../../components';
 import {config} from '../../configs';
-import {getCategoryBoardId} from '../../models';
 
 // TODO: add journal
 // TODO: add historical data
@@ -18,9 +17,15 @@ import {getCategoryBoardId} from '../../models';
 export const Projects = memo(function Projects() {
   const color = useColor();
   const {navigate} = useNavigation();
-  const boardId = useRootSelector(getCategoryBoardId);
-  const listIds = useRootSelector((s) => s.completeBoard.items[boardId].lists);
   const [dimensions, setDimensions] = useState(0);
+  const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
+  const itemId = useRootSelector(
+    (s) =>
+      s.completeUser?.items.filter(
+        (id) => s.completeItem.items[id].title === 'Projects',
+      )[0],
+  );
+  if (!itemId) throw new Error('missing item id');
 
   const onLayout = useCallback(
     (event: LayoutChangeEvent) => {
@@ -32,7 +37,9 @@ export const Projects = memo(function Projects() {
     [dimensions],
   );
 
-  const maxHeight = dimensions / 2 - Theme.padding.p43;
+  const keyboardPadding =
+    keyboardHeight > 0 ? Theme.padding.p32 : Theme.padding.p51;
+  const maxHeight = dimensions - keyboardHeight - keyboardPadding;
 
   const navToAccount = useCallback(() => navigate('account'), [navigate]);
 
@@ -43,16 +50,14 @@ export const Projects = memo(function Projects() {
         onLayout={onLayout}
         render={dimensions > 0}>
         <View style={{padding: config.padding}}>
-          {listIds.map((listId) => (
-            <List
-              boardId={boardId}
-              key={listId}
-              listId={listId}
-              listMaxHeight={maxHeight}
-              placeholder="List title..."
-              title="Add list"
-            />
-          ))}
+          <List
+            itemId={itemId}
+            key={itemId}
+            listMaxHeight={maxHeight}
+            parentItemId={null}
+            placeholder="Item title..."
+            title="Add item"
+          />
         </View>
       </KeyboardHandler>
     </Screen>
