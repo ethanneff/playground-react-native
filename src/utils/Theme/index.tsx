@@ -4,6 +4,9 @@ import {Color} from '../../models';
 SIZING https://material.io/design/typography/the-type-system.html#applying-the-type-scale
 */
 
+// TODO: rename to Config to differentiate from Redux Theme
+// TODO: make padding a function
+
 const padding = {
   p00: 0,
   p01: 4,
