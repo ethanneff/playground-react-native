@@ -4,37 +4,39 @@ import {useRootSelector} from '../../../utils';
 import {ListItem} from './ListItem';
 
 type ListItemsProps = {
-  listId: string;
+  parentItemId: string;
   maxHeight?: number;
 };
 
 export const ListItems = memo(function ListItems({
-  listId,
+  parentItemId,
   maxHeight,
 }: ListItemsProps) {
-  const listItems = useRootSelector((s) => s.completeList.items[listId].items);
+  const list = useRootSelector(
+    (s) => s.completeItem.items[parentItemId].children,
+  );
   const cardsRef = useRef<FlatList | null>(null);
-  const cardsLength = useRef(listItems.length);
+  const cardsLength = useRef(list.length);
 
   const onKeyExtractor = useCallback((item) => item, []);
 
   const onCardSizeChange = useCallback(() => {
-    if (listItems.length > cardsLength.current) {
+    if (list.length > cardsLength.current) {
       cardsRef.current?.scrollToEnd();
-      cardsLength.current = listItems.length;
+      cardsLength.current = list.length;
     }
-  }, [listItems.length]);
+  }, [list.length]);
 
   const onRenderItem: ListRenderItem<string> = useCallback(
     ({item}) => {
-      return <ListItem itemId={item} key={item} listId={listId} />;
+      return <ListItem itemId={item} key={item} parentItemId={parentItemId} />;
     },
-    [listId],
+    [parentItemId],
   );
 
   return (
     <FlatList
-      data={listItems}
+      data={list}
       keyExtractor={onKeyExtractor}
       keyboardShouldPersistTaps="handled"
       onContentSizeChange={onCardSizeChange}

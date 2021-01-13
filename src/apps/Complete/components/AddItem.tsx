@@ -2,23 +2,26 @@ import React, {memo, useCallback} from 'react';
 import {Keyboard} from 'react-native';
 import {v4} from 'uuid';
 import {useRootDispatch, useRootSelector} from '../../../utils';
-import {createItem, Item, updateListAddItem} from '../models';
+import {createItem, Item, updateItemAddItem} from '../models';
 import {AddButton} from './AddButton';
 
 type AddItemProps = {
-  listId: string;
+  parentItemId: string | null;
   placeholder: string;
   title: string;
+  width?: number;
 };
 
 export const AddItem = memo(function AddItem({
   placeholder,
   title,
-  listId,
+  parentItemId,
+  width,
 }: AddItemProps) {
   const dispatch = useRootDispatch();
   const userId = useRootSelector((s) => s.completeUser?.id);
-  if (!userId) throw new Error('missing user id on add item');
+  if (!userId) throw new Error('missing userId on add item');
+  if (!parentItemId) throw new Error('missing parentItemId on add item');
   const onSubmit = useCallback(
     (value: string) => {
       if (!value) return Keyboard.dismiss();
@@ -31,14 +34,23 @@ export const AddItem = memo(function AddItem({
         title: value,
         createdAt: date,
         updatedAt: date,
+        children: [],
+        tags: [],
+        description: '',
+        editable: true,
       };
       dispatch(createItem(item));
-      dispatch(updateListAddItem({listId, itemId}));
+      dispatch(updateItemAddItem({parentItemId, itemId}));
     },
-    [dispatch, listId, userId],
+    [dispatch, parentItemId, userId],
   );
 
   return (
-    <AddButton onSubmit={onSubmit} placeholder={placeholder} title={title} />
+    <AddButton
+      onSubmit={onSubmit}
+      placeholder={placeholder}
+      title={title}
+      width={width}
+    />
   );
 });

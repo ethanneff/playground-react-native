@@ -2,24 +2,23 @@ import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
 import {useRootSelector} from '../../../utils';
 import {config} from '../configs';
-import {AddList} from './AddList';
+import {AddItem} from './AddItem';
 import {List} from './List';
 
 type BoardProps = {
-  boardId: string;
+  projectItemId: string;
   listMaxHeight: number;
   listWidth: number;
 };
 
 export const Board = memo(function Board({
-  boardId,
+  projectItemId,
   listMaxHeight,
   listWidth,
 }: BoardProps) {
   const listSize = listWidth + config.padding;
-  const board = useRootSelector((s) => s.completeBoard.items[boardId]);
+  const board = useRootSelector((s) => s.completeItem.items[projectItemId]);
   const getItemId = useCallback((item) => item, []);
-
   const getItemLayout = useCallback(
     (_, index) => ({
       length: listSize,
@@ -31,38 +30,38 @@ export const Board = memo(function Board({
 
   const renderAddList = useCallback(() => {
     return (
-      <AddList
-        boardId={boardId}
+      <AddItem
+        parentItemId={board.id}
         placeholder="List title..."
         title="Add list"
         width={listWidth}
       />
     );
-  }, [boardId, listWidth]);
+  }, [board.id, listWidth]);
 
   const renderList = useCallback(
     ({item}) => {
       return (
         <List
-          boardId={boardId}
+          itemId={item}
           key={item}
-          listId={item}
           listMaxHeight={listMaxHeight}
           listWidth={listWidth}
           orientation="horizontal"
+          parentItemId={board.id}
           placeholder="Item title..."
           title="Add item"
         />
       );
     },
-    [boardId, listMaxHeight, listWidth],
+    [board.id, listMaxHeight, listWidth],
   );
 
   return (
     <FlatList
       ListFooterComponent={renderAddList}
       contentContainerStyle={{padding: config.padding}}
-      data={board.lists}
+      data={board.children}
       decelerationRate="fast"
       getItemLayout={getItemLayout}
       horizontal

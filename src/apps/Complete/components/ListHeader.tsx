@@ -3,36 +3,35 @@ import React, {memo, useCallback} from 'react';
 import {Keyboard, View} from 'react-native';
 import {useColor} from '../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../utils';
-import {setActiveBoard, setActiveList, updateListTitle} from '../models';
+import {setNavItemDetail, updateItem} from '../models';
 import {TextInputWithIcons} from './TextInputWithIcons';
 
 type ListHeaderProps = {
-  listId: string;
-  boardId: string;
+  itemId: string;
+  parentItemId: string | null;
 };
 
 export const ListHeader = memo(function ListHeader({
-  listId,
-  boardId,
+  itemId,
+  parentItemId,
 }: ListHeaderProps) {
   const dispatch = useRootDispatch();
   const {navigate} = useNavigation();
   const color = useColor();
-  const list = useRootSelector((s) => s.completeList.items[listId]);
+  const item = useRootSelector((s) => s.completeItem.items[itemId]);
 
   const onSave = useCallback(
     (title) => {
-      dispatch(updateListTitle({listId, title}));
+      dispatch(updateItem({...item, title}));
       Keyboard.dismiss();
     },
-    [dispatch, listId],
+    [dispatch, item],
   );
 
   const onDetail = useCallback(() => {
-    dispatch(setActiveBoard(boardId));
-    dispatch(setActiveList(listId));
-    navigate('list-detail');
-  }, [boardId, dispatch, listId, navigate]);
+    dispatch(setNavItemDetail({parentItemId, itemId}));
+    navigate('item-detail');
+  }, [dispatch, itemId, navigate, parentItemId]);
 
   const onClose = useCallback(() => Keyboard.dismiss(), []);
 
@@ -56,12 +55,12 @@ export const ListHeader = memo(function ListHeader({
         justifyContent: 'space-between',
       }}>
       <TextInputWithIcons
-        editable={!list.default}
+        editable={item.editable}
         icons={icons}
         onSubmit={onSave}
         placeholder="List title..."
         type="h4"
-        value={list.title}
+        value={item.title}
       />
     </View>
   );
