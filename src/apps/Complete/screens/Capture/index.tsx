@@ -1,21 +1,17 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, Platform, View} from 'react-native';
-import {Button, KeyboardHandler, Screen, Text} from '../../../../components';
+import {Button, KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {Theme, useRootSelector} from '../../../../utils';
 import {Card, List} from '../../components';
 import {config} from '../../configs';
-import {getInboxBoardId} from '../../models';
 
 const initialState = {container: 0, button: 0};
 export const Capture = memo(function Capture() {
   const color = useColor();
   const {navigate} = useNavigation();
-
-  const keyboardHeight = useRootSelector(
-    (state) => state.device.keyboardHeight,
-  );
+  const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
   const [dimensions, setDimensions] = useState(initialState);
   const android = Platform.OS === 'android';
 
@@ -26,12 +22,15 @@ export const Capture = memo(function Capture() {
         keyboardHeight -
         (android ? config.padding * 3 : Theme.padding.p19);
 
-  const boardId = useRootSelector(getInboxBoardId);
-  const listId = useRootSelector(
-    (s) => s.completeBoard.items[boardId].lists[0],
+  const itemId = useRootSelector(
+    (s) =>
+      s.completeUser?.items.filter(
+        (id) => s.completeItem.items[id].title === 'Inbox',
+      )[0],
   );
+  if (!itemId) throw new Error('missing item id');
   const noListItems = useRootSelector(
-    (s) => s.completeList.items[listId].items.length === 0,
+    (s) => s.completeItem.items[itemId].children.length === 0,
   );
 
   const onOrganize = useCallback(() => undefined, []);
@@ -55,28 +54,24 @@ export const Capture = memo(function Capture() {
         backgroundColor={color.surface}
         onLayout={onLayout('container')}
         render={dimensions.container > 0}>
-        {listId ? (
-          <View style={{padding: config.padding}}>
-            <List
-              boardId={boardId}
-              listId={listId}
-              listMaxHeight={listHeight}
-              placeholder="Item title..."
-              title="Add item"
+        <View style={{padding: config.padding}}>
+          <List
+            itemId={itemId}
+            listMaxHeight={listHeight}
+            parentItemId={null}
+            placeholder="Item title..."
+            title="Add item"
+          />
+          <Card onLayout={onLayout('button')}>
+            <Button
+              center
+              color="primary"
+              disable={noListItems}
+              onPress={onOrganize}
+              title="Organize"
             />
-            <Card onLayout={onLayout('button')}>
-              <Button
-                center
-                color="primary"
-                disable={noListItems}
-                onPress={onOrganize}
-                title="Organize"
-              />
-            </Card>
-          </View>
-        ) : (
-          <Text title="missing account" />
-        )}
+          </Card>
+        </View>
       </KeyboardHandler>
     </Screen>
   );

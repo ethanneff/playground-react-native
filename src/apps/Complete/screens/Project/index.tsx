@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, Platform} from 'react-native';
-import {KeyboardHandler, Screen, Text} from '../../../../components';
+import {KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {getSmallestDimension} from '../../../../models';
 import {useRootSelector} from '../../../../utils';
@@ -14,7 +14,8 @@ export const Project = memo(function Project() {
   const {goBack} = useNavigation();
   const color = useColor();
   const screenWidth = useRootSelector(getSmallestDimension);
-  const boardId = useRootSelector((s) => s.completeBoard.active);
+  const {projectItemId} = useRootSelector((s) => s.completeItem.nav);
+  if (!projectItemId) throw new Error('missing projectItemId on board screen');
   const listWidth = screenWidth * 0.7;
   const [container, setContainer] = useState(0);
   const android = Platform.OS === 'android';
@@ -33,7 +34,6 @@ export const Project = memo(function Project() {
     (event: LayoutChangeEvent) => {
       const {height} = event.nativeEvent.layout;
       if (container > 0) return;
-
       setContainer(height);
     },
     [container],
@@ -45,20 +45,16 @@ export const Project = memo(function Project() {
 
   return (
     <Screen onLeftPress={navBack} title="Focus">
-      {!boardId ? (
-        <Text title="missing board" />
-      ) : (
-        <KeyboardHandler
-          backgroundColor={color.surface}
-          onLayout={onLayout}
-          render={container > 0}>
-          <Board
-            boardId={boardId}
-            listMaxHeight={listMaxHeight}
-            listWidth={listWidth}
-          />
-        </KeyboardHandler>
-      )}
+      <KeyboardHandler
+        backgroundColor={color.surface}
+        onLayout={onLayout}
+        render={container > 0}>
+        <Board
+          listMaxHeight={listMaxHeight}
+          listWidth={listWidth}
+          projectItemId={projectItemId}
+        />
+      </KeyboardHandler>
     </Screen>
   );
 });
