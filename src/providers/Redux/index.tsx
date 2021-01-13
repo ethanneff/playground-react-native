@@ -17,12 +17,8 @@ import {
   checklistReducer,
 } from '../../apps/Checklists/models';
 import {
-  completeBoardActions,
-  completeBoardReducer,
   completeItemActions,
   completeItemReducer,
-  completeListActions,
-  completeListReducer,
   completeUserActions,
   completeUserReducer,
 } from '../../apps/Complete/models';
@@ -68,8 +64,6 @@ export const actions = {
   responses: responsesActions,
   theme: themeActions,
   completeItem: completeItemActions,
-  completeList: completeListActions,
-  completeBoard: completeBoardActions,
   completeUser: completeUserActions,
 };
 export const reducers = combineReducers({
@@ -86,8 +80,6 @@ export const reducers = combineReducers({
   responses: responsesReducer,
   theme: themeReducer,
   completeItem: completeItemReducer,
-  completeList: completeListReducer,
-  completeBoard: completeBoardReducer,
   completeUser: completeUserReducer,
 });
 
