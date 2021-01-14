@@ -5,7 +5,9 @@ import {KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {config, useRootSelector} from '../../../../utils';
 import {List} from '../../components';
+import {getProjects} from '../../models';
 import {completeConfig} from '../../utils';
+import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
 
 // TODO: add journal
 // TODO: add historical data
@@ -18,28 +20,19 @@ export const Projects = memo(function Projects() {
   const color = useColor();
   const {navigate} = useNavigation();
   const [dimensions, setDimensions] = useState(0);
-  const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
-  const itemId = useRootSelector(
-    (s) =>
-      s.completeUser?.items.filter(
-        (id) => s.completeItem.items[id].title === 'Projects',
-      )[0],
-  );
+  const keyboardHeight = useKeyboardHeight();
+  const itemId = useRootSelector(getProjects);
   if (!itemId) throw new Error('missing item id');
+  const keyboardPadding = config.padding(keyboardHeight ? 16 : 35);
+  const maxHeight = dimensions - keyboardHeight - keyboardPadding;
 
   const onLayout = useCallback(
     (event: LayoutChangeEvent) => {
-      const {height} = event.nativeEvent.layout;
       if (dimensions > 0) return;
-
-      setDimensions(height);
+      setDimensions(event.nativeEvent.layout.height);
     },
     [dimensions],
   );
-
-  const keyboardPadding =
-    keyboardHeight > 0 ? config.padding(32) : config.padding(51);
-  const maxHeight = dimensions - keyboardHeight - keyboardPadding;
 
   const navToAccount = useCallback(() => navigate('account'), [navigate]);
 

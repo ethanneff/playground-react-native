@@ -1,35 +1,27 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
-import {LayoutChangeEvent, Platform, View} from 'react-native';
+import React, {memo, useCallback, useRef, useState} from 'react';
+import {LayoutChangeEvent, View} from 'react-native';
 import {Button, KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {config, useRootSelector} from '../../../../utils';
 import {Card, List} from '../../components';
+import {getInbox} from '../../models';
 import {completeConfig} from '../../utils';
+import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
 
-const initialState = {container: 0, button: 0};
+const initialState = {container: 0, button: 0, size: 0};
 export const Capture = memo(function Capture() {
   const color = useColor();
   const {navigate} = useNavigation();
-  const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
-  const [dimensions, setDimensions] = useState(initialState);
-  const android = Platform.OS === 'android';
+  const containerRefs = useRef(initialState);
+  const keyboardHeight = useKeyboardHeight();
+  const [containerHeight, setContainerHeight] = useState(0);
+  const keyboardPadding = config.padding(keyboardHeight ? 11 : 48);
+  const listHeight = containerHeight - keyboardHeight - keyboardPadding;
 
-  const listHeight =
-    keyboardHeight === 0
-      ? dimensions.container - dimensions.button - config.padding(44)
-      : dimensions.container -
-        keyboardHeight -
-        (android ? completeConfig.padding * 3 : config.padding(19));
-
-  const itemId = useRootSelector(
-    (s) =>
-      s.completeUser?.items.filter(
-        (id) => s.completeItem.items[id].title === 'Inbox',
-      )[0],
-  );
+  const itemId = useRootSelector(getInbox);
   if (!itemId) throw new Error('missing item id');
-  const noListItems = useRootSelector(
+  const noItemChildren = useRootSelector(
     (s) => s.completeItem.items[itemId].children.length === 0,
   );
 
@@ -38,12 +30,15 @@ export const Capture = memo(function Capture() {
   const onLayout = useCallback(
     (key: keyof typeof initialState) => (event: LayoutChangeEvent) => {
       const {height} = event.nativeEvent.layout;
-      const {container, button} = dimensions;
-      const preventMultipleUpdates = container > 0 && button > 0;
-      if (preventMultipleUpdates) return;
-      setDimensions((p) => ({...p, [key]: height}));
+      if (!containerRefs.current[key]) containerRefs.current[key] = height;
+      const {container, button, size} = containerRefs.current;
+      if (container > 0 && button > 0 && !size) {
+        const dimensions = container - button;
+        setContainerHeight(dimensions);
+        containerRefs.current.size = dimensions;
+      }
     },
-    [dimensions],
+    [],
   );
 
   const navToAccount = useCallback(() => navigate('account'), [navigate]);
@@ -64,7 +59,7 @@ export const Capture = memo(function Capture() {
             <Button
               center
               color="primary"
-              disable={noListItems}
+              disable={noItemChildren}
               onPress={onOrganize}
               title="Organize"
             />

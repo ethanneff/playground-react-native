@@ -1,12 +1,12 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {LayoutChangeEvent, Platform} from 'react-native';
+import {LayoutChangeEvent} from 'react-native';
 import {KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {getSmallestDimension} from '../../../../models';
-import {useRootSelector} from '../../../../utils';
+import {config, useRootSelector} from '../../../../utils';
 import {Board} from '../../components';
-import {completeConfig} from '../../utils';
+import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
 
 // TODO: figure out centering of list
 
@@ -18,24 +18,14 @@ export const Project = memo(function Project() {
   if (!projectItemId) throw new Error('missing projectItemId on board screen');
   const listWidth = screenWidth * 0.7;
   const [container, setContainer] = useState(0);
-  const android = Platform.OS === 'android';
-  const keyboardHeight = useRootSelector(
-    (state) => state.device.keyboardHeight,
-  );
-
-  const listMaxHeight =
-    keyboardHeight === 0
-      ? container -
-        (android ? completeConfig.padding * 8 : completeConfig.padding * 13)
-      : container -
-        keyboardHeight -
-        (android ? completeConfig.padding * 3 : completeConfig.padding * 8);
+  const keyboardHeight = useKeyboardHeight();
+  const keyboardPadding = config.padding(keyboardHeight ? 28 : 48);
+  const listMaxHeight = container - keyboardHeight - keyboardPadding;
 
   const onLayout = useCallback(
     (event: LayoutChangeEvent) => {
-      const {height} = event.nativeEvent.layout;
       if (container > 0) return;
-      setContainer(height);
+      setContainer(event.nativeEvent.layout.height);
     },
     [container],
   );
