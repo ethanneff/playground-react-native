@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import {LayoutChangeEvent, TextInput as Original, View} from 'react-native';
+import {TextInput as Original, View} from 'react-native';
 import {Icon, TextInput} from '../../../components';
 import {PointerEvents} from '../../../components/TextInput/types';
 import {TouchableWithoutFeedback} from '../../../conversions';
@@ -34,7 +34,7 @@ type TextInputWithIconsProps = {
   onFocus?: () => void;
   blurOnSubmit?: boolean;
   multiline?: boolean;
-  maxIconHeight?: number;
+  iconHeight?: number;
   editable?: boolean;
   numberOfLines?: number;
 };
@@ -42,7 +42,7 @@ type TextInputWithIconsProps = {
 export const TextInputWithIcons = memo(function TextInputWithIcons({
   value,
   multiline,
-  maxIconHeight = config.padding(6),
+  iconHeight = config.padding(6),
   placeholder,
   backgroundColor,
   editable,
@@ -89,18 +89,6 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
     },
     [text, value],
   );
-  const [containerHeight, setContainerHeight] = useState(0);
-  const iconHeight = containerHeight - config.padding(4);
-  const clampIconHeight =
-    iconHeight > maxIconHeight ? maxIconHeight : iconHeight;
-
-  const onLayout = useCallback(
-    (e: LayoutChangeEvent) => {
-      if (containerHeight) return;
-      setContainerHeight(e.nativeEvent.layout.height);
-    },
-    [containerHeight],
-  );
 
   const onIconParentPress = useCallback((e) => e.preventDefault(), []);
 
@@ -109,9 +97,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
   }, [value]);
 
   return (
-    <View
-      onLayout={onLayout}
-      style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+    <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
       <TextInput
         backgroundColor={bgColor}
         blurOnSubmit={blurOnSubmit}
@@ -144,7 +130,7 @@ export const TextInputWithIcons = memo(function TextInputWithIcons({
               name={icon.name}
               onPress={onIconPressInternal(icon.onPress)}
               padded
-              size={clampIconHeight}
+              size={iconHeight}
             />
           ),
         )}
