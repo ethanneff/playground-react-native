@@ -4,14 +4,12 @@ import {TouchableWithoutFeedback} from '../../conversions';
 
 type HandleKeyboardProps = {
   onLayout: (event: LayoutChangeEvent) => void;
-  render: boolean;
   backgroundColor?: string;
   children: ReactElement | ReactElement[];
 };
 
 export const KeyboardHandler = memo(function KeyboardHandler({
   onLayout,
-  render,
   backgroundColor,
   children,
 }: HandleKeyboardProps) {
@@ -21,7 +19,7 @@ export const KeyboardHandler = memo(function KeyboardHandler({
       onLayout={onLayout}
       onPress={onDismissKeyboard}
       style={{height: '100%'}}>
-      <View style={{flex: 1, backgroundColor}}>{render ? children : null}</View>
+      <View style={{flex: 1, backgroundColor}}>{children}</View>
     </TouchableWithoutFeedback>
   );
 });

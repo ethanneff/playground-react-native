@@ -21,7 +21,7 @@ export const Chat = memo(function PlaygroundChat() {
 
   return (
     <Screen onLeftPress={navBack} title="Chat">
-      <KeyboardHandler onLayout={onLayout} render={container > 0}>
+      <KeyboardHandler onLayout={onLayout}>
         <View style={{height}}>
           <Items />
           <TextField />

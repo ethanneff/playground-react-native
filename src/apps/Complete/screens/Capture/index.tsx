@@ -52,9 +52,8 @@ export const Capture = memo(function Capture() {
     <Screen onRightPress={navToAccount} rightIcon="account" title="Plan">
       <KeyboardHandler
         backgroundColor={color.surface}
-        onLayout={onLayout('container')}
-        render={dimensions.container > 0}>
-        <View style={{padding: completeConfig.padding}}>
+        onLayout={onLayout('container')}>
+        <View style={{padding: completeConfig.padding, maxHeight: listHeight}}>
           <List
             itemId={itemId}
             parentItemId={null}

@@ -46,10 +46,7 @@ export const Project = memo(function Project() {
 
   return (
     <Screen onLeftPress={navBack} title="Focus">
-      <KeyboardHandler
-        backgroundColor={color.surface}
-        onLayout={onLayout}
-        render={container > 0}>
+      <KeyboardHandler backgroundColor={color.surface} onLayout={onLayout}>
         <Board
           listMaxHeight={listMaxHeight}
           listWidth={listWidth}

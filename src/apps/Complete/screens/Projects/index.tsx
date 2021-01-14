@@ -45,11 +45,8 @@ export const Projects = memo(function Projects() {
 
   return (
     <Screen onRightPress={navToAccount} rightIcon="account" title="Implement">
-      <KeyboardHandler
-        backgroundColor={color.surface}
-        onLayout={onLayout}
-        render={dimensions > 0}>
-        <View style={{padding: completeConfig.padding}}>
+      <KeyboardHandler backgroundColor={color.surface} onLayout={onLayout}>
+        <View style={{padding: completeConfig.padding, maxHeight}}>
           <List
             itemId={itemId}
             key={itemId}
