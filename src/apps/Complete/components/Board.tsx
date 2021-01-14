@@ -1,5 +1,6 @@
 import React, {memo, useCallback} from 'react';
-import {FlatList, View} from 'react-native';
+import {View} from 'react-native';
+import {FlatList} from '../../../conversions';
 import {useRootSelector} from '../../../utils';
 import {completeConfig} from '../utils';
 import {AddItem} from './AddItem';
@@ -38,37 +39,44 @@ export const Board = memo(function Board({
   const renderList = useCallback(
     ({item}) => {
       return (
-        <View style={{maxHeight: listMaxHeight}}>
-          <List
-            itemId={item}
-            key={item}
-            listWidth={listWidth}
-            orientation="horizontal"
-            parentItemId={board.id}
-            placeholder="Item title..."
-            title="Add item"
-          />
-        </View>
+        <List
+          itemId={item}
+          key={item}
+          listWidth={listWidth}
+          maxHeight={listMaxHeight}
+          orientation="horizontal"
+          parentItemId={board.id}
+        />
       );
     },
     [board.id, listMaxHeight, listWidth],
   );
 
   return (
-    <FlatList
-      ListFooterComponent={renderAddList}
-      contentContainerStyle={{padding: completeConfig.padding}}
-      data={board.children}
-      decelerationRate="fast"
-      getItemLayout={getItemLayout}
-      horizontal
-      keyExtractor={getItemId}
-      keyboardShouldPersistTaps="handled"
-      renderItem={renderList}
-      showsHorizontalScrollIndicator={false}
-      snapToAlignment="center"
-      snapToInterval={listSize}
-      style={{height: '100%'}}
-    />
+    <View>
+      {board.type === 'list' ? (
+        <List
+          itemId={board.id}
+          maxHeight={listMaxHeight}
+          parentItemId={board.id}
+        />
+      ) : (
+        <FlatList
+          ListFooterComponent={renderAddList}
+          contentContainerStyle={{padding: completeConfig.padding}}
+          data={board.children}
+          decelerationRate="fast"
+          getItemLayout={getItemLayout}
+          horizontal
+          keyExtractor={getItemId}
+          keyboardShouldPersistTaps="handled"
+          renderItem={renderList}
+          showsHorizontalScrollIndicator={false}
+          snapToAlignment="center"
+          snapToInterval={listSize}
+          style={{height: '100%'}}
+        />
+      )}
+    </View>
   );
 });
