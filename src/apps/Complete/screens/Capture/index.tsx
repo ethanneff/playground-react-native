@@ -57,7 +57,6 @@ export const Capture = memo(function Capture() {
         <View style={{padding: completeConfig.padding}}>
           <List
             itemId={itemId}
-            listMaxHeight={listHeight}
             parentItemId={null}
             placeholder="Item title..."
             title="Add item"

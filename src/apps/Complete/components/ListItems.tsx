@@ -5,12 +5,10 @@ import {ListItem} from './ListItem';
 
 type ListItemsProps = {
   parentItemId: string;
-  maxHeight?: number;
 };
 
 export const ListItems = memo(function ListItems({
   parentItemId,
-  maxHeight,
 }: ListItemsProps) {
   const list = useRootSelector(
     (s) => s.completeItem.items[parentItemId].children,
@@ -43,7 +41,6 @@ export const ListItems = memo(function ListItems({
       ref={cardsRef}
       renderItem={onRenderItem}
       showsVerticalScrollIndicator={false}
-      style={{maxHeight}}
     />
   );
 });

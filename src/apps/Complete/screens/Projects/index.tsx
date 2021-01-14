@@ -53,7 +53,6 @@ export const Projects = memo(function Projects() {
           <List
             itemId={itemId}
             key={itemId}
-            listMaxHeight={maxHeight}
             parentItemId={null}
             placeholder="Item title..."
             title="Add item"

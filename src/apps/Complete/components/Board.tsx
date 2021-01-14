@@ -1,5 +1,5 @@
 import React, {memo, useCallback} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {useRootSelector} from '../../../utils';
 import {completeConfig} from '../utils';
 import {AddItem} from './AddItem';
@@ -20,11 +20,7 @@ export const Board = memo(function Board({
   const board = useRootSelector((s) => s.completeItem.items[projectItemId]);
   const getItemId = useCallback((item) => item, []);
   const getItemLayout = useCallback(
-    (_, index) => ({
-      length: listSize,
-      offset: listSize * index,
-      index,
-    }),
+    (_, index) => ({length: listSize, offset: listSize * index, index}),
     [listSize],
   );
 
@@ -42,16 +38,17 @@ export const Board = memo(function Board({
   const renderList = useCallback(
     ({item}) => {
       return (
-        <List
-          itemId={item}
-          key={item}
-          listMaxHeight={listMaxHeight}
-          listWidth={listWidth}
-          orientation="horizontal"
-          parentItemId={board.id}
-          placeholder="Item title..."
-          title="Add item"
-        />
+        <View style={{maxHeight: listMaxHeight}}>
+          <List
+            itemId={item}
+            key={item}
+            listWidth={listWidth}
+            orientation="horizontal"
+            parentItemId={board.id}
+            placeholder="Item title..."
+            title="Add item"
+          />
+        </View>
       );
     },
     [board.id, listMaxHeight, listWidth],
