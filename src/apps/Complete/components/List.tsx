@@ -1,4 +1,6 @@
-import React, {memo} from 'react';
+import React, {memo, ReactElement} from 'react';
+import {View} from 'react-native';
+import {completeConfig} from '../utils';
 import {AddItem} from './AddItem';
 import {Card} from './Card';
 import {ListHeader} from './ListHeader';
@@ -9,24 +11,33 @@ type ListProps = {
   itemId: string;
   parentItemId: string | null;
   orientation?: 'vertical' | 'horizontal';
-  title: string;
-  placeholder: string;
+  footer?: ReactElement;
+  maxHeight: number;
 };
 
 export const List = memo(function List({
   itemId,
   parentItemId,
-  orientation,
+  orientation = 'vertical',
   listWidth,
-  title,
-  placeholder,
+  maxHeight,
+  footer,
 }: ListProps) {
-  const margin = orientation === 'horizontal' ? 'right' : 'bottom';
+  const horizontal = orientation === 'horizontal';
+  const padding = horizontal ? 0 : completeConfig.padding;
+  const margin = horizontal ? 'right' : 'bottom';
   return (
-    <Card margin={margin} width={listWidth}>
-      <ListHeader itemId={itemId} parentItemId={parentItemId} />
-      <ListItems parentItemId={itemId} />
-      <AddItem parentItemId={itemId} placeholder={placeholder} title={title} />
-    </Card>
+    <View style={{padding, maxHeight}}>
+      <Card margin={margin} width={listWidth}>
+        <ListHeader itemId={itemId} parentItemId={parentItemId} />
+        <ListItems parentItemId={itemId} />
+        <AddItem
+          parentItemId={itemId}
+          placeholder="Item title..."
+          title="Add item"
+        />
+      </Card>
+      {footer ? footer : null}
+    </View>
   );
 });

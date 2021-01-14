@@ -1,12 +1,11 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {LayoutChangeEvent, View} from 'react-native';
+import {LayoutChangeEvent} from 'react-native';
 import {KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {config, useRootSelector} from '../../../../utils';
 import {List} from '../../components';
 import {getProjects} from '../../models';
-import {completeConfig} from '../../utils';
 import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
 
 // TODO: add journal
@@ -39,15 +38,12 @@ export const Projects = memo(function Projects() {
   return (
     <Screen onRightPress={navToAccount} rightIcon="account" title="Implement">
       <KeyboardHandler backgroundColor={color.surface} onLayout={onLayout}>
-        <View style={{padding: completeConfig.padding, maxHeight}}>
-          <List
-            itemId={itemId}
-            key={itemId}
-            parentItemId={null}
-            placeholder="Item title..."
-            title="Add item"
-          />
-        </View>
+        <List
+          itemId={itemId}
+          key={itemId}
+          maxHeight={maxHeight}
+          parentItemId={null}
+        />
       </KeyboardHandler>
     </Screen>
   );

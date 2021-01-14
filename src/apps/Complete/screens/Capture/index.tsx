@@ -1,12 +1,11 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useRef, useState} from 'react';
-import {LayoutChangeEvent, View} from 'react-native';
+import {LayoutChangeEvent} from 'react-native';
 import {Button, KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {config, useRootSelector} from '../../../../utils';
 import {Card, List} from '../../components';
 import {getInbox} from '../../models';
-import {completeConfig} from '../../utils';
 import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
 
 const initialState = {container: 0, button: 0, size: 0};
@@ -17,7 +16,7 @@ export const Capture = memo(function Capture() {
   const keyboardHeight = useKeyboardHeight();
   const [containerHeight, setContainerHeight] = useState(0);
   const keyboardPadding = config.padding(keyboardHeight ? 11 : 48);
-  const listHeight = containerHeight - keyboardHeight - keyboardPadding;
+  const maxHeight = containerHeight - keyboardHeight - keyboardPadding;
 
   const itemId = useRootSelector(getInbox);
   if (!itemId) throw new Error('missing item id');
@@ -48,23 +47,22 @@ export const Capture = memo(function Capture() {
       <KeyboardHandler
         backgroundColor={color.surface}
         onLayout={onLayout('container')}>
-        <View style={{padding: completeConfig.padding, maxHeight: listHeight}}>
-          <List
-            itemId={itemId}
-            parentItemId={null}
-            placeholder="Item title..."
-            title="Add item"
-          />
-          <Card onLayout={onLayout('button')}>
-            <Button
-              center
-              color="primary"
-              disable={noItemChildren}
-              onPress={onOrganize}
-              title="Organize"
-            />
-          </Card>
-        </View>
+        <List
+          footer={
+            <Card onLayout={onLayout('button')}>
+              <Button
+                center
+                color="primary"
+                disable={noItemChildren}
+                onPress={onOrganize}
+                title="Organize"
+              />
+            </Card>
+          }
+          itemId={itemId}
+          maxHeight={maxHeight}
+          parentItemId={null}
+        />
       </KeyboardHandler>
     </Screen>
   );
