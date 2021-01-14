@@ -38,6 +38,7 @@ export const AddItem = memo(function AddItem({
         tags: [],
         description: '',
         editable: true,
+        type: 'note',
       };
       dispatch(createItem(item));
       dispatch(updateItemAddItem({parentItemId, itemId}));
