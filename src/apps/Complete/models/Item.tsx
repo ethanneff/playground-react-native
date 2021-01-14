@@ -74,6 +74,7 @@ export type Item = {
   updatedAt: number;
   userId: string;
   tags: ReadonlyArray<string>;
+  type: 'board' | 'list' | 'note';
   editable: boolean;
   children: ReadonlyArray<string>;
 };
