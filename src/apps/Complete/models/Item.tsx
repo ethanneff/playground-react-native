@@ -1,7 +1,7 @@
 import {createSelector} from 'reselect';
 import {RootAction, RootState} from 'root-types';
 import {createAction, getType} from 'typesafe-actions';
-import {removeUser} from './User';
+import {getUser, removeUser} from './User';
 
 type ItemUpdateIds = {parentItemId: string; itemId: string};
 type ItemDetailsIds = {parentItemId: string | null; itemId: string};
@@ -46,6 +46,17 @@ export const getActiveItemOrderByCreatedAt = createSelector(
     Object.values(items)
       .filter((item) => item.active)
       .sort((a, b) => a.createdAt - b.createdAt),
+);
+
+export const getInbox = createSelector(
+  [getItems, getUser],
+  (items, user) => user?.items.filter((id) => items[id].title === 'Inbox')[0],
+);
+
+export const getProjects = createSelector(
+  [getItems, getUser],
+  (items, user) =>
+    user?.items.filter((id) => items[id].title === 'Projects')[0],
 );
 
 /* INTERFACES */
