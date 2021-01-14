@@ -16,6 +16,8 @@ export const Project = memo(function Project() {
   const screenWidth = useRootSelector(getSmallestDimension);
   const {projectItemId} = useRootSelector((s) => s.completeItem.nav);
   if (!projectItemId) throw new Error('missing projectItemId on board screen');
+  if (!projectItemType)
+    throw new Error('missing projectItemType on board screen');
   const listWidth = screenWidth * 0.7;
   const [container, setContainer] = useState(0);
   const keyboardHeight = useKeyboardHeight();
@@ -35,7 +37,7 @@ export const Project = memo(function Project() {
   }, [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} title="Focus">
+    <Screen onLeftPress={navBack} title={projectItemTitle}>
       <KeyboardHandler backgroundColor={color.surface} onLayout={onLayout}>
         <Board
           listMaxHeight={listMaxHeight}
