@@ -4,6 +4,12 @@ import {createAction, getType} from 'typesafe-actions';
 import {getUser, removeUser} from './User';
 
 type ItemUpdateIds = {parentItemId: string; itemId: string};
+type ItemSwapId = {parentItemId: string; i: number; j: number};
+type ItemMoveId = {
+  itemId: string;
+  fromParentItemId: string;
+  toParentItemId: string;
+};
 type ItemDetailsIds = {parentItemId: string | null; itemId: string};
 type ItemProjectIds = {projectItemId: string};
 type ItemNav = {
@@ -13,29 +19,37 @@ type ItemNav = {
 };
 
 /* ACTIONS */
-export const createItem = createAction('complete/item/create')<Item>();
-export const updateItem = createAction('complete/item/update')<Item>();
-export const removeItem = createAction('complete/item/remove')<string>();
-export const updateItemAddItem = createAction(
-  'complete/item/addItem',
+export const createItem = createAction('complete/item/createItem')<Item>();
+export const updateItem = createAction('complete/item/updateItem')<Item>();
+export const removeItem = createAction('complete/item/removeItem')<string>();
+export const addItemToItem = createAction(
+  'complete/item/addItemToItem',
 )<ItemUpdateIds>();
-export const setNavItemProject = createAction(
-  'complete/item/setNavItemProject',
+export const navItemProject = createAction(
+  'complete/item/navItemProject',
 )<ItemProjectIds>();
-export const setNavItemDetail = createAction(
-  'complete/item/setNavItemDetail',
+export const navItemDetails = createAction(
+  'complete/item/navItemDetails',
 )<ItemDetailsIds>();
-export const updateItemRemoveItem = createAction(
-  'complete/item/removeItem',
+export const removeItemFromItem = createAction(
+  'complete/item/removeItemFromItem',
 )<ItemUpdateIds>();
+export const swapItemOrderInItem = createAction(
+  'complete/item/swapItemOrderInItem',
+)<ItemSwapId>();
+export const moveItemToItem = createAction(
+  'complete/item/moveItemToItem',
+)<ItemMoveId>();
 export const completeItemActions = {
   createItem,
   removeItem,
   updateItem,
-  setNavItemProject,
-  setNavItemDetail,
-  updateItemAddItem,
-  updateItemRemoveItem,
+  navItemProject,
+  navItemDetails,
+  addItemToItem,
+  removeItemFromItem,
+  swapItemOrderInItem,
+  moveItemToItem,
 };
 
 /* SELECTORS */
@@ -90,13 +104,29 @@ export const completeItemReducer = (
   action: RootAction,
 ): CompleteItemReducer => {
   switch (action.type) {
-    case getType(setNavItemProject):
-    case getType(setNavItemDetail):
+    case getType(navItemProject):
+    case getType(navItemDetails):
       return {
         ...state,
         nav: {
           ...state.nav,
           ...action.payload,
+        },
+      };
+    case getType(swapItemOrderInItem):
+      const swapParent = state.items[action.payload.parentItemId];
+      const children = [...swapParent.children];
+      const temp = children[action.payload.i];
+      children[action.payload.i] = children[action.payload.j];
+      children[action.payload.j] = temp;
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.parentItemId]: {
+            ...swapParent,
+            children,
+          },
         },
       };
     case getType(createItem):
@@ -119,7 +149,7 @@ export const completeItemReducer = (
           },
         },
       };
-    case getType(updateItemAddItem):
+    case getType(addItemToItem):
       const addParent = state.items[action.payload.parentItemId];
       return {
         ...state,
@@ -132,7 +162,7 @@ export const completeItemReducer = (
           },
         },
       };
-    case getType(updateItemRemoveItem):
+    case getType(removeItemFromItem):
       const deleteParent = state.items[action.payload.parentItemId];
       return {
         ...state,

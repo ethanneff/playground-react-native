@@ -2,7 +2,7 @@ import React, {memo, useCallback} from 'react';
 import {Keyboard} from 'react-native';
 import {v4} from 'uuid';
 import {useRootDispatch, useRootSelector} from '../../../utils';
-import {createItem, Item, updateItemAddItem} from '../models';
+import {addItemToItem, createItem, Item} from '../models';
 import {AddButton} from './AddButton';
 
 type AddItemProps = {
@@ -41,7 +41,7 @@ export const AddItem = memo(function AddItem({
         type: 'note',
       };
       dispatch(createItem(item));
-      dispatch(updateItemAddItem({parentItemId, itemId}));
+      dispatch(addItemToItem({parentItemId, itemId}));
     },
     [dispatch, parentItemId, userId],
   );

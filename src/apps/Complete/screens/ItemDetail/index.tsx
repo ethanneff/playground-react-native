@@ -5,7 +5,7 @@ import {Button, Modal, Text} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {config, useRootDispatch, useRootSelector} from '../../../../utils';
 import {Card, DeleteModal, ItemContext, ItemEdit} from '../../components';
-import {removeItem, updateItem, updateItemRemoveItem} from '../../models';
+import {removeItem, removeItemFromItem, updateItem} from '../../models';
 
 export const ItemDetail = memo(function ItemDetail() {
   const dispatch = useRootDispatch();
@@ -20,7 +20,7 @@ export const ItemDetail = memo(function ItemDetail() {
     if (!itemId || !parentItemId)
       throw new Error('missing listId or itemId on item detail screen');
     dispatch(removeItem(itemId));
-    dispatch(updateItemRemoveItem({parentItemId, itemId}));
+    dispatch(removeItemFromItem({parentItemId, itemId}));
     setDeleteModal(false);
     goBack();
   }, [dispatch, goBack, itemId, parentItemId]);

@@ -4,20 +4,30 @@ import {Keyboard, TextInput as OriginalTextInput} from 'react-native';
 import {TouchableWithoutFeedback} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../utils';
-import {setNavItemDetail, setNavItemProject, updateItem} from '../models';
+import {
+  navItemDetails,
+  navItemProject,
+  swapItemOrderInItem,
+  updateItem,
+} from '../models';
 import {completeConfig} from '../utils';
 import {TextInputWithIcons} from './TextInputWithIcons';
 
 type ListItemProps = {
+  index: number;
   itemId: string;
   parentItemId: string;
 };
 
 export const ListItem = memo(function ListItem({
+  index,
   itemId,
   parentItemId,
 }: ListItemProps) {
   const item = useRootSelector((s) => s.completeItem.items[itemId]);
+  const parentChildrenCount = useRootSelector(
+    (s) => s.completeItem.items[parentItemId].children.length,
+  );
   const textInputRef = useRef<OriginalTextInput | null>(null);
   const dispatch = useRootDispatch();
   const {navigate} = useNavigation();
@@ -36,12 +46,12 @@ export const ListItem = memo(function ListItem({
   );
 
   const onItemNav = useCallback(() => {
-    dispatch(setNavItemProject({projectItemId: itemId}));
+    dispatch(navItemProject({projectItemId: itemId}));
     navigate('project');
   }, [dispatch, itemId, navigate]);
 
   const onItemDetails = useCallback(() => {
-    dispatch(setNavItemDetail({parentItemId, itemId}));
+    dispatch(navItemDetails({parentItemId, itemId}));
     navigate('item-detail');
   }, [dispatch, itemId, navigate, parentItemId]);
 
@@ -50,6 +60,18 @@ export const ListItem = memo(function ListItem({
   const onItemPress = useCallback(() => {
     textInputRef.current?.focus();
   }, []);
+
+  const onItemUp = useCallback(() => {
+    console.log('up', index);
+    if (index === 0) return;
+    dispatch(swapItemOrderInItem({parentItemId, i: index, j: index - 1}));
+  }, [dispatch, index, parentItemId]);
+
+  const onItemDown = useCallback(() => {
+    console.log('down', index, parentChildrenCount);
+    if (index >= parentChildrenCount - 1) return;
+    dispatch(swapItemOrderInItem({parentItemId, i: index, j: index + 1}));
+  }, [dispatch, index, parentChildrenCount, parentItemId]);
 
   const icons = [
     {name: 'close', onPress: onItemTitleClose, focus: true},
@@ -60,6 +82,8 @@ export const ListItem = memo(function ListItem({
       focus: true,
       required: true,
     },
+    {name: 'chevron-up', onPress: onItemUp},
+    {name: 'chevron-down', onPress: onItemDown},
     {name: 'dots-horizontal', onPress: onItemDetails},
     {
       name: 'chevron-right',

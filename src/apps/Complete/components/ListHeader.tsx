@@ -3,7 +3,7 @@ import React, {memo, useCallback} from 'react';
 import {Keyboard, View} from 'react-native';
 import {useColor} from '../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../utils';
-import {setNavItemDetail, updateItem} from '../models';
+import {navItemDetails, updateItem} from '../models';
 import {TextInputWithIcons} from './TextInputWithIcons';
 
 type ListHeaderProps = {
@@ -29,7 +29,7 @@ export const ListHeader = memo(function ListHeader({
   );
 
   const onDetail = useCallback(() => {
-    dispatch(setNavItemDetail({parentItemId, itemId}));
+    dispatch(navItemDetails({parentItemId, itemId}));
     navigate('item-detail');
   }, [dispatch, itemId, navigate, parentItemId]);
 
