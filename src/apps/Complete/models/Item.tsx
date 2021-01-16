@@ -129,6 +129,25 @@ export const completeItemReducer = (
           },
         },
       };
+    case getType(moveItemToItem): //TODO: test this
+      const moveToParent = state.items[action.payload.toParentItemId];
+      const moveFromParent = state.items[action.payload.fromParentItemId];
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.fromParentItemId]: {
+            ...moveFromParent,
+            children: moveFromParent.children.filter(
+              (id) => id !== action.payload.itemId,
+            ),
+          },
+          [action.payload.toParentItemId]: {
+            ...moveToParent,
+            children: [action.payload.itemId, ...moveFromParent.children],
+          },
+        },
+      };
     case getType(createItem):
       return {
         ...state,
