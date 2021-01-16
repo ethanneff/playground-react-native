@@ -49,6 +49,7 @@ import {
   themeActions,
   themeReducer,
 } from '../../models';
+import {syncMiddleware, useSync} from './sync';
 
 export const actions = {
   auth: authActions,
@@ -84,7 +85,7 @@ export const reducers = combineReducers({
 });
 
 const persistConfig = {key: 'root', storage: Storage};
-const middlewares: Middleware[] = [thunk];
+const middlewares: Middleware[] = [thunk, syncMiddleware];
 const composers =
   (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancers = composers(applyMiddleware(...middlewares));
@@ -96,6 +97,7 @@ const persistor = persistStore(store);
 
 type Props = {children: ReactNode};
 export const Redux = memo(function Redux({children}: Props) {
+  useSync();
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
