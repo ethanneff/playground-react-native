@@ -10,7 +10,7 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:import/typescript',
   ],
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'import'],
   ignorePatterns: [
     'node_modules/',
     'coverage/',
