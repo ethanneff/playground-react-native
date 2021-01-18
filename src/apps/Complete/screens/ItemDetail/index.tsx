@@ -60,6 +60,7 @@ export const ItemDetail = memo(function ItemDetail() {
             </Card>
             <ItemContext
               createdAt={item.createdAt}
+              type={item.type}
               updatedAt={item.updatedAt}
               userId={item.userId}
             />
