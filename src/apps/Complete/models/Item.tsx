@@ -126,6 +126,7 @@ export const completeItemReducer = (
           [action.payload.parentItemId]: {
             ...swapParent,
             children,
+            updatedAt: Date.now(),
           },
         },
       };
@@ -141,10 +142,12 @@ export const completeItemReducer = (
             children: moveFromParent.children.filter(
               (id) => id !== action.payload.itemId,
             ),
+            updatedAt: Date.now(),
           },
           [action.payload.toParentItemId]: {
             ...moveToParent,
             children: [action.payload.itemId, ...moveFromParent.children],
+            updatedAt: Date.now(),
           },
         },
       };
