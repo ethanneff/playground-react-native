@@ -82,8 +82,8 @@ export const ListItem = memo(function ListItem({
       focus: true,
       required: true,
     },
-    {name: 'chevron-up', onPress: onItemUp},
-    {name: 'chevron-down', onPress: onItemDown},
+    {name: 'chevron-up', onPress: onItemUp, hidden: true},
+    {name: 'chevron-down', onPress: onItemDown, hidden: true},
     {name: 'dots-horizontal', onPress: onItemDetails},
     {
       name: 'chevron-right',
