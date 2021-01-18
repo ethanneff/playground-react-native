@@ -1,5 +1,40 @@
 # Changelog
 
+# [2.48.0](https://github.com/ethanneff/example/compare/v2.47.1...v2.48.0) (2021-01-18)
+
+
+### Bug Fixes
+
+* add item type ([6f4d0ac](https://github.com/ethanneff/example/commit/6f4d0aca9f77f877ee0ccea8681596ab1f9edfd0))
+* add missing type on item creation ([5a564cf](https://github.com/ethanneff/example/commit/5a564cf29a03183a79202fd0fbca3e88fd9e6096))
+* add move item to item ([61b9327](https://github.com/ethanneff/example/commit/61b9327cdeba19df5374df3b1e8d5e3ada8390c7))
+* add move item up and down ([767fa41](https://github.com/ethanneff/example/commit/767fa41098559ae4ab0b726a02dccaf44ce269cf))
+* add updated at to item movements ([e32078f](https://github.com/ethanneff/example/commit/e32078fb277f27dfe80286ff29147c88526851c5))
+* correct vertical padding on admin ([85c2b57](https://github.com/ethanneff/example/commit/85c2b57739a6dfb475c779011ba4cfcb1e17a2b2))
+* create a hook for useKeyboardHeight ([33481df](https://github.com/ethanneff/example/commit/33481dffd0d019491cc3c905eca5a838f4182c3a))
+* hide move arrows ([4ee66d6](https://github.com/ethanneff/example/commit/4ee66d631d9b14c693f6ecbe0f953300be789216))
+* make board render type list ([2fa3995](https://github.com/ethanneff/example/commit/2fa39955e1d2da2cc0b5ec92bf15a4d3534a3ed3))
+* make header icon show again ([51ecc1b](https://github.com/ethanneff/example/commit/51ecc1bf2a9c7b4f958317cb9b9fb0ee8ddcfbae))
+* make list generic for both board and list ([c43dbb7](https://github.com/ethanneff/example/commit/c43dbb755a1d4065c65e071341a9e36021fd1d2b))
+* make selectors for inbox and projects ([3d6a18a](https://github.com/ethanneff/example/commit/3d6a18a9e5544a604b5c8b348f0c639dd2478c8e))
+* re-enable vscode ([e34dc24](https://github.com/ethanneff/example/commit/e34dc247a5f642c2ddcbd3a925af2e3e33fe71d0))
+* remove height from list ([c9b4fa9](https://github.com/ethanneff/example/commit/c9b4fa9da239129e3d1129799c9f4479e4f2d57b))
+* remove render from keyboardhandler ([c728a70](https://github.com/ethanneff/example/commit/c728a7095e08dd1d1f9ce41ab70678370f569a14))
+* set height on container instead of inner flatlist ([80fe860](https://github.com/ethanneff/example/commit/80fe860858dddc24dad097275b5a431925e2e5e2))
+* show item title on project ([78f7f33](https://github.com/ethanneff/example/commit/78f7f33f7dbf49c4e293d40a318efe887e1f53f6))
+* show item type on details screen ([8e04085](https://github.com/ethanneff/example/commit/8e040858748ed95f890a56dc2178ba8e7a7e033e))
+* show type on detail screen ([cfe94bc](https://github.com/ethanneff/example/commit/cfe94bc70483306efa87c41f0d3b10ca59000b45))
+* update deps ([ddb2360](https://github.com/ethanneff/example/commit/ddb23602e2f994a06e221112a210da528cec352b))
+* update deps ([cbc9d4a](https://github.com/ethanneff/example/commit/cbc9d4ae948f8f31f3d8f56852aed75c1093a652))
+* update keyboard padding based on item type ([fe483b8](https://github.com/ethanneff/example/commit/fe483b8f3829ea2628a6fb1f04f20885e6b097cd))
+* update lint configs ([003f24c](https://github.com/ethanneff/example/commit/003f24c8137134c377a6a554df4b89227ca7ec4e))
+* update tsconfig ([e6f2aff](https://github.com/ethanneff/example/commit/e6f2affd4c8ca49672cd757244772f1245ea59fc))
+
+
+### Features
+
+* add sync hook and middleware ([5ff4892](https://github.com/ethanneff/example/commit/5ff4892ec4854549b6ad278ddf64ae9c11ec90a7))
+
 ## [2.47.1](https://github.com/ethanneff/example/compare/v2.47.0...v2.47.1) (2021-01-13)
 
 
