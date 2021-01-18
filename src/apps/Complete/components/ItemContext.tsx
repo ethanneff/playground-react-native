@@ -9,9 +9,11 @@ type ItemContextProps = {
   userId: string;
   createdAt: number;
   updatedAt: number;
+  type: string;
 };
 
 export const ItemContext = memo(function ItemContext({
+  type,
   userId,
   createdAt,
   updatedAt,
@@ -19,6 +21,8 @@ export const ItemContext = memo(function ItemContext({
   return (
     <View>
       <Card margin="bottom">
+        <ItemDetailHeader title="Type" />
+        <Text style={{padding: config.padding(2)}} title={type} />
         <ItemDetailHeader title="Creator" />
         <Text style={{padding: config.padding(2)}} title={userId} />
         <ItemDetailHeader title="Created" />
