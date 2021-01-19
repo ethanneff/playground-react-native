@@ -30,7 +30,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "@mdi/js": "5.8.55",
+    "@mdi/js": "5.9.55",
     "@mdi/react": "1.4.0",
     "@react-native-community/async-storage": "1.12.1",
     "@react-native-community/masked-view": "0.1.10",
@@ -69,7 +69,7 @@
     "react-native-sensors": "7.0.2",
     "react-native-sound": "0.11.0",
     "react-native-svg": "12.1.0",
-    "react-native-vector-icons": "7.1.0",
+    "react-native-vector-icons": "8.0.0",
     "react-native-web": "0.14.10",
     "react-native-web-linear-gradient": "1.1.1",
     "react-redux": "7.2.2",
@@ -105,8 +105,8 @@
     "@types/react-redux": "7.1.15",
     "@types/react-test-renderer": "17.0.0",
     "@types/uuid": "8.3.0",
-    "@typescript-eslint/eslint-plugin": "4.13.0",
-    "@typescript-eslint/parser": "4.13.0",
+    "@typescript-eslint/eslint-plugin": "4.14.0",
+    "@typescript-eslint/parser": "4.14.0",
     "@welldone-software/why-did-you-render": "6.0.5",
     "babel-plugin-transform-remove-console": "6.9.4",
     "codecov": "3.8.1",
