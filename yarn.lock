@@ -2849,40 +2849,40 @@
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-3.0.3.tgz#830167fd757ba70ac638747ba3169b2dbae60330"
 
-"@react-native-firebase/analytics@10.4.1":
-  version "10.4.1"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-10.4.1.tgz#812315b71a1e1fb2a6848e7e5b6aeba24392554a"
-  integrity sha512-g1B/twbX0Z2jsb6dEGjD89RPcshLJ96KowsnGKccSTF8VJkp+yMO2aUvQAY3TWKPv7OD/so05HrdbgHAepQ+7g==
+"@react-native-firebase/analytics@10.5.1":
+  version "10.5.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-10.5.1.tgz#cfe6980d55261e0ea93ae1491654d7a01a8ed8da"
+  integrity sha512-qfxgQtRfF5e7cHUnK2se90EyndItH7GKxe6EnY4+vJEcpRjzgJXi3S8sH+VR2xGZr6nFslZBn3iY1peYUUBYgA==
 
-"@react-native-firebase/app@10.4.0":
-  version "10.4.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-10.4.0.tgz#f0de2117ac36f58abb690c7b0560207b42d80482"
-  integrity sha512-X+4VS3AlLs1TwQLjFZAfT6SbjeWoSsxf5P+21fJWriHNo3Qv3k8G8TgqXjiNZizWW1FUlhJdVKb+v38yrudjag==
+"@react-native-firebase/app@10.5.0":
+  version "10.5.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-10.5.0.tgz#aa46cd3a62d2117914a6f81ffea0d1b3b9ef15c6"
+  integrity sha512-pEINud4A90RlwfTcE51m/5cOEGI4jiSi5Q4jsQ5UGGlsYqtbOw4Ja7b17x19o2OViJEQVjScpq4pH2bq9vie7Q==
   dependencies:
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/auth@10.4.1":
-  version "10.4.1"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-10.4.1.tgz#6653000ea659e8f1a17b59419e84d525b1ea2617"
-  integrity sha512-Zle6xJin3u0a0oTrPqmumc7HgANXxJLhKxeJO+KQYp/AdCWU5/JYcxjVuOZjBhr8Vuvs/oVRC/7vt9p+CUasqQ==
+"@react-native-firebase/auth@10.5.1":
+  version "10.5.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-10.5.1.tgz#fb44d4aaa60e99aa782c0644ac291c5963f92d89"
+  integrity sha512-CPqTYQ0fMHGST663I9fW43Yj7uA7w0nNxXQtFxr4oBCs4ykWzy89mqLeiBSMtWufkrrPE0nFoTdJ1YJiQchOxg==
 
-"@react-native-firebase/crashlytics@10.4.1":
-  version "10.4.1"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-10.4.1.tgz#1a4753ab6d03516011a1130d7e0e205261f60985"
-  integrity sha512-C6zAo28t8MqcSDU9b4TNMlck/q2+j5PPEAre3IoVVci2bShBe7VzfgFlaZbvZpu1yJftzh/RAu2RLachufF7JQ==
+"@react-native-firebase/crashlytics@10.5.1":
+  version "10.5.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-10.5.1.tgz#8911ce15a0ee9c658cec44233e731c423a2900bf"
+  integrity sha512-czH0p6KWf7gIJScqyPRUWSrRUbgYK4NpqESW0vc57V1KlkGSv+MivuFTEeDQNvH8Hwgi3W5m8L5dZ4r6pTRzSw==
   dependencies:
     stacktrace-js "^2.0.0"
 
-"@react-native-firebase/firestore@10.4.1":
-  version "10.4.1"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-10.4.1.tgz#a02bdb3a9fe15a05f6a6a70203882d2db1fca83e"
-  integrity sha512-7atrtWA/VHmvAIgbveNmT1O5r8l9BEuqsYN8vKzRnh7O3Z/hhh7Epc3BDgHdKzyX3YCOmMLvQqko6AJ7xr5pKw==
+"@react-native-firebase/firestore@10.5.1":
+  version "10.5.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-10.5.1.tgz#ecf047a38e20838297e2ab307b0769f1ca114c33"
+  integrity sha512-c51AynnkAm1ErnKKY5nIBFHUERkxD7nQE5G7zBo8t7T0P8YBofErxCjT7QTttILiyE/gFpAHsIsaX5a+CHCYDA==
 
-"@react-native-firebase/remote-config@10.4.1":
-  version "10.4.1"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-10.4.1.tgz#79f57b3ab5f716e090be33a67d9c5bbbe2be38b4"
-  integrity sha512-gsj61fwv9ihpPGlcJi5uOv2e/ubWwsjtxI730vQ95hyAg/9m3uo4Yxl1hO0SeC097qRCf1KftUCA7Twf2i8kCw==
+"@react-native-firebase/remote-config@10.5.1":
+  version "10.5.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-10.5.1.tgz#01daa59a5d78fea7eaec933928b972dcd5290e99"
+  integrity sha512-6kI1OpGUZ45EM5h2GTN27Qg7mKWFcXKIVsCkcTUuatSAju8L1snGWFOXeSuMpRw2yWrdczwh/2c8TNl3qFXzyg==
 
 "@react-navigation/bottom-tabs@5.11.3":
   version "5.11.3"
@@ -14349,10 +14349,10 @@ selfsigned@^1.10.7:
   dependencies:
     node-forge "0.9.0"
 
-semantic-release@17.3.3:
-  version "17.3.3"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.3.3.tgz#8f3d2909e9570d9053ef195c138d8d15d7fe5815"
-  integrity sha512-StUBghTuh98O0XpDWj5aRLmZwY9zV6gGgbXnw5faon3Br1fRk8r2VSaYozfQTx8o5C8Mtem+a0KWEiTTd4Iylw==
+semantic-release@17.3.4:
+  version "17.3.4"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.3.4.tgz#62bd16e4f7d600ba7c44b371b3973f733e2db001"
+  integrity sha512-rifRJU2am90uheTG5j3cXFaoS9aoROsQmijCxalE/C28dom6qkb1vzQbNKdPK0oKn6VGZ+HVojJLPlJQuEsRvw==
   dependencies:
     "@semantic-release/commit-analyzer" "^8.0.0"
     "@semantic-release/error" "^2.2.0"
@@ -14381,7 +14381,7 @@ semantic-release@17.3.3:
     semver "^7.3.2"
     semver-diff "^3.1.1"
     signale "^1.2.1"
-    yargs "^15.0.1"
+    yargs "^16.2.0"
 
 semver-compare@^1.0.0:
   version "1.0.0"
@@ -16740,7 +16740,7 @@ yargs@^14.2.0, yargs@^14.2.3:
     y18n "^4.0.0"
     yargs-parser "^15.0.1"
 
-yargs@^15.0.1, yargs@^15.1.0, yargs@^15.4.1:
+yargs@^15.1.0, yargs@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.4.1.tgz#0d87a16de01aee9d8bec2bfbf74f67851730f4f8"
   dependencies:
@@ -16756,7 +16756,7 @@ yargs@^15.0.1, yargs@^15.1.0, yargs@^15.4.1:
     y18n "^4.0.0"
     yargs-parser "^18.1.2"
 
-yargs@^16.1.1:
+yargs@^16.1.1, yargs@^16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-16.2.0.tgz#1c82bf0f6b6a66eafce7ef30e376f49a12477f66"
   integrity sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==
