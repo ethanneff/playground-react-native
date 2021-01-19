@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.48.1](https://github.com/ethanneff/example/compare/v2.48.0...v2.48.1) (2021-01-19)
+
+
+### Bug Fixes
+
+* update deps ([c7db5f9](https://github.com/ethanneff/example/commit/c7db5f9b442d56c72a2b26830ba95202053e5cc8))
+
 # [2.48.0](https://github.com/ethanneff/example/compare/v2.47.1...v2.48.0) (2021-01-18)
 
 
