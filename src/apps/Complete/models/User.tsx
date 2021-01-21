@@ -22,6 +22,7 @@ export type CompleteUserReducer = User | null;
 export type User = {
   id: string;
   name: string;
+  email: string;
   active: boolean;
   createdAt: number;
   updatedAt: number;

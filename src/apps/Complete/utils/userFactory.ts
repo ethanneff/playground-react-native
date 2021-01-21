@@ -174,6 +174,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   const user: User = {
     id: u,
     active: true,
+    email: 'bob@smith.com',
     createdAt: date,
     updatedAt: date,
     name: 'Bob Smith',
