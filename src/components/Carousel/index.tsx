@@ -23,11 +23,13 @@ export const Carousel = memo(function Carousel({
   viewabilityConfig = {itemVisiblePercentThreshold: 50},
 }: Props) {
   const color = useColor();
-  const looping = useRef(false);
+  const loopingEnabled = useRef(false);
   const width = useRootSelector(getWidth);
   const flatList = useRef<FlatList | null>(null);
   const activeIndexRef = useRef(0);
   const [activeIndex, setActiveIndex] = useState(0);
+  const loopTimeout = useRef<NodeJS.Timeout | null>(null);
+  const touchTimeout = useRef<NodeJS.Timeout | null>(null);
 
   const onViewableItemsChanged = useCallback(({viewableItems}) => {
     const index = viewableItems[0].index || 0;
@@ -45,22 +47,36 @@ export const Carousel = memo(function Carousel({
   );
 
   const scrollToIndex = useCallback(() => {
+    if (!loopingEnabled.current) return;
     const index = (activeIndexRef.current + 1) % slides.length;
     flatList.current?.scrollToIndex({index});
   }, [slides.length]);
 
   const loop = useCallback(() => {
-    setTimeout(() => {
+    loopTimeout.current = setTimeout(() => {
       scrollToIndex();
       loop();
     }, duration);
   }, [duration, scrollToIndex]);
 
+  const onTouchPauseLooping = useCallback(() => {
+    if (!duration) return;
+    if (touchTimeout.current) clearTimeout(touchTimeout.current);
+    loopingEnabled.current = false;
+    touchTimeout.current = setTimeout(() => {
+      loopingEnabled.current = true;
+    }, duration * 3);
+  }, [duration]);
+
   useEffect(() => {
-    if (duration && !looping.current) {
+    if (duration && !loopingEnabled.current) {
       loop();
-      looping.current = true;
+      loopingEnabled.current = true;
     }
+    return () => {
+      if (loopTimeout.current) clearTimeout(loopTimeout.current);
+      if (touchTimeout.current) clearTimeout(touchTimeout.current);
+    };
   }, [duration, loop]);
 
   const renderItem = useCallback<ListRenderItem<Slide>>(
@@ -98,7 +114,7 @@ export const Carousel = memo(function Carousel({
   );
 
   return (
-    <View style={{flex: 1}}>
+    <View onTouchStart={onTouchPauseLooping} style={{flex: 1}}>
       <FlatList
         data={slides}
         horizontal

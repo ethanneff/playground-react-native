@@ -121,7 +121,7 @@ export const Welcome = memo(function Landing() {
   return (
     <Screen>
       <View style={{flex: 1}}>
-        <Carousel duration={6000} slides={slides} />
+        <Carousel duration={2000} slides={slides} />
         <View style={{padding: completeConfig.padding}}>
           <Button
             center
