@@ -1,179 +1,84 @@
-import {ContentBody} from '../../../components/Content';
+import {Sections} from './../../../components/Content/types';
 
-export const data: ContentBody = {
-  sections: [
-    {
-      paragraphs: [
+const onPress = (): void => undefined;
+
+export const data: Sections = [
+  {
+    paragraphs: [[{title: 'best way to get your life together'}]],
+    title: 'h1 title',
+    titleType: 'h1',
+  },
+  {
+    paragraphs: [
+      [
+        {title: 'first paragraph'},
+        {title: 'nav here', onPress},
+        {title: 'blah bldah blah. blah blah blah'},
+      ],
+      [
+        {title: 'second paragraph'},
+        {title: 'nav here', onPress},
         {
-          sentences: [
-            {
-              content: 'best way to get your life together',
-              type: 'phrase',
-            },
-          ],
+          title:
+            'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
         },
       ],
-      title: 'Do This',
-      titleType: 'h1',
-    },
-    {
-      paragraphs: [
+    ],
+    title: 'h2 title',
+    titleType: 'h2',
+  },
+  {
+    paragraphs: [
+      [
+        {title: 'first paragraph'},
+        {title: 'nav here', onPress},
+        {title: 'blah bldah blah. blah blah blah'},
+      ],
+      [
+        {title: 'second paragraph'},
+        {title: 'nav here', onPress},
         {
-          sentences: [
-            {
-              content: 'first paragraph',
-              type: 'phrase',
-            },
-            {
-              content: 'nav here',
-              onPress: (): void => undefined,
-              type: 'link',
-            },
-            {
-              content: 'blah bldah blah. blah blah blah',
-              type: 'phrase',
-            },
-          ],
-        },
-        {
-          sentences: [
-            {
-              content: 'second paragraph',
-              type: 'phrase',
-            },
-            {
-              content: 'nav here',
-              onPress: (): void => undefined,
-              type: 'link',
-            },
-            {
-              content:
-                'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
-              type: 'phrase',
-            },
-          ],
+          title:
+            'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
         },
       ],
-      title: 'h2 title',
-      titleType: 'h2',
-    },
-    {
-      paragraphs: [
+      [
+        {title: 'third paragraph'},
+        {title: 'nav here', onPress},
         {
-          sentences: [
-            {
-              content: 'first paragraph',
-              type: 'phrase',
-            },
-            {
-              content: 'nav here',
-              onPress: (): void => undefined,
-              type: 'link',
-            },
-            {
-              content: 'blah bldah blah. blah blah blah',
-              type: 'phrase',
-            },
-          ],
-        },
-        {
-          sentences: [
-            {
-              content: 'second paragraph',
-              type: 'phrase',
-            },
-            {
-              content: 'nav here',
-              onPress: (): void => undefined,
-              type: 'link',
-            },
-            {
-              content:
-                'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
-              type: 'phrase',
-            },
-          ],
-        },
-        {
-          sentences: [
-            {
-              content: 'third paragraph',
-              type: 'phrase',
-            },
-            {
-              content: 'nav here',
-              onPress: (): void => undefined,
-              type: 'link',
-            },
-            {
-              content:
-                'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
-              type: 'phrase',
-            },
-          ],
+          title:
+            'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
         },
       ],
-      title: 'h3 content',
-      titleType: 'h3',
-    },
-    {
-      paragraphs: [
+    ],
+    title: 'h3 title',
+    titleType: 'h3',
+  },
+  {
+    paragraphs: [
+      [
+        {title: 'first paragraph'},
+        {title: 'nav here', onPress},
+        {title: 'blah bldah blah. blah blah blah'},
+      ],
+      [
+        {title: 'second paragraph'},
+        {title: 'nav here', onPress},
         {
-          sentences: [
-            {
-              content: 'first paragraph',
-              type: 'phrase',
-            },
-            {
-              content: 'nav here',
-              onPress: (): void => undefined,
-              type: 'link',
-            },
-            {
-              content: 'blah bldah blah. blah blah blah',
-              type: 'phrase',
-            },
-          ],
-        },
-        {
-          sentences: [
-            {
-              content: 'second paragraph',
-              type: 'phrase',
-            },
-            {
-              content: 'nav herhere',
-              onPress: (): void => undefined,
-              type: 'link',
-            },
-            {
-              content:
-                'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
-              type: 'phrase',
-            },
-          ],
-        },
-        {
-          sentences: [
-            {
-              content: 'third paragraph',
-              type: 'phrase',
-            },
-            {
-              content: 'nav here',
-              onPress: (): void => undefined,
-              type: 'link',
-            },
-            {
-              content:
-                'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
-              type: 'phrase',
-            },
-          ],
+          title:
+            'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
         },
       ],
-      title: 'h4 content',
-      titleType: 'h4',
-    },
-  ],
-};
+      [
+        {title: 'third paragraph'},
+        {title: 'nav here', onPress},
+        {
+          title:
+            'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
+        },
+      ],
+    ],
+    title: 'h4 title',
+    titleType: 'h4',
+  },
+];

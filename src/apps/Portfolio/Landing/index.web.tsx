@@ -3,9 +3,9 @@ import {Image, View} from 'react-native';
 import {
   Icon,
   Sentence,
+  SentenceType,
   Text,
   TouchableOpacity,
-  Word,
 } from '../../../components';
 import {useColor} from '../../../hooks';
 import {config} from '../../../utils';
@@ -169,11 +169,11 @@ const image = require('../../../assets/line-chart.png');
 
 export const Landing = memo(function PortfolioLanding() {
   const height = config.padding(18);
-  const titleSentence: Word[] = [
+  const titleSentence: SentenceType[] = [
     {title: 'Get started with ', type: 'h2'},
     {title: 'Core', bold: true, type: 'h2'},
   ];
-  const passwordSentence: Word[] = [
+  const passwordSentence: SentenceType[] = [
     {title: 'Or use your password to '},
     {
       title: 'sign up ',
@@ -196,8 +196,8 @@ export const Landing = memo(function PortfolioLanding() {
       <Header height={height} />
       <Section backgroundColor={color.light} paddingTop={height}>
         <Sentence
+          sentences={titleSentence}
           style={{paddingVertical: config.padding(8), alignSelf: 'center'}}
-          words={titleSentence}
         />
         <View style={{width: '400px', alignSelf: 'center'}}>
           <SignInButton
@@ -216,11 +216,11 @@ export const Landing = memo(function PortfolioLanding() {
             title="Continue with Facebook"
           />
           <Sentence
+            sentences={passwordSentence}
             style={{
               alignSelf: 'center',
               paddingVertical: config.padding(4),
             }}
-            words={passwordSentence}
           />
         </View>
         <View style={{flex: 1}} />

@@ -11,10 +11,10 @@ export const Landing = memo(function PortfolioLanding() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   const slides: Slide[] = [
-    {id: '1', text: 'hello', color: color.info},
-    {id: '2', text: 'bob', color: color.warning},
-    {id: '3', text: 'steve', color: color.success},
-    {id: '4', text: 'jill', color: color.brand},
+    {id: '1', title: 'hello', backgroundColor: color.info},
+    {id: '2', title: 'bob', backgroundColor: color.warning},
+    {id: '3', title: 'steve', backgroundColor: color.success},
+    {id: '4', title: 'jill', backgroundColor: color.brand},
   ];
 
   return (
