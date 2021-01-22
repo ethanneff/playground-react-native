@@ -1,9 +1,9 @@
 import React, {memo} from 'react';
-import {StyleSheet, Text as Original, View} from 'react-native';
-import {ScrollView} from '../../conversions';
-import {useColor} from '../../hooks';
-import {config, FontType} from '../../utils';
+import {StyleSheet, View} from 'react-native';
+import {config} from '../../utils';
+import {Sentence} from '../Sentence';
 import {Text} from '../Text';
+import {Sections} from './types';
 
 export interface ContentBody {
   sections: Sections;
@@ -61,21 +61,12 @@ export const Content = memo(function Content({sections, center}: Props) {
             />
           )}
           {section.paragraphs.map((paragraph, paragraphIndex) => (
-            <Original key={`p-${paragraphIndex}`} style={styles.paragraph}>
-              {paragraph.sentences.map(({onPress, content, type}) =>
-                type === 'link' ? (
-                  <Text
-                    key={content}
-                    onPress={onPress}
-                    style={styles.link}
-                    title={`${content} `}
-                  />
-                ) : (
-                  <Text key={content} title={`${content} `} />
-                ),
-              )}
-            </Original>
+            <Sentence
               center={center}
+              key={`p-${paragraphIndex}`}
+              sentences={paragraph}
+              style={styles.paragraph}
+            />
           ))}
         </View>
       ))}
