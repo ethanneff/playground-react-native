@@ -1,8 +1,8 @@
-import React, {ReactElement} from 'react';
+import React, {memo, useCallback, useRef} from 'react';
 import {Animated, StyleProp, StyleSheet, TextStyle} from 'react-native';
 import {useColor, useDriver} from '../../hooks';
 import {Color} from '../../models';
-import {FontEmphasis, FontType, getFontStyles, config} from '../../utils';
+import {config, FontEmphasis, FontType, getFontStyles} from '../../utils';
 import {SoundManager} from '../../utils/Sound';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
@@ -30,7 +30,7 @@ export interface TextProps {
   onPress?(): void;
 }
 
-export const Text = ({
+export const Text = memo(function Text({
   type,
   emphasis,
   title,
@@ -47,8 +47,8 @@ export const Text = ({
   style,
   adjustsFontSizeToFit,
   numberOfLines,
-}: TextProps): ReactElement => {
-  const opacity = new Animated.Value(1);
+}: TextProps) {
+  const opacity = useRef(new Animated.Value(1)).current;
   const useNativeDriver = useDriver();
   const colorScheme = useColor();
   const {fontSize, textColor} = getFontStyles({
@@ -84,11 +84,10 @@ export const Text = ({
     },
   });
 
-  const handlePress = () => {
+  const handlePress = useCallback(() => {
     if (!onPress) return;
 
     SoundManager.play('tap');
-    // TODO: does not work on real devices
     Animated.sequence([
       Animated.timing(opacity, {
         duration: 50,
@@ -102,7 +101,7 @@ export const Text = ({
       }),
     ]).start();
     onPress();
-  };
+  }, [onPress, opacity, useNativeDriver]);
 
   const textStyle = [
     styles.color,
@@ -123,9 +122,9 @@ export const Text = ({
       adjustsFontSizeToFit={adjustsFontSizeToFit}
       ellipsizeMode={ellipsizeMode}
       numberOfLines={numberOfLines}
-      onPress={onPress ? handlePress : undefined}
+      onPress={handlePress}
       style={textStyle}>
       {text}
     </Animated.Text>
   );
-};
+});
