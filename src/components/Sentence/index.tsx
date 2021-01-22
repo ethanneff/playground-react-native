@@ -1,30 +1,30 @@
 import React, {memo} from 'react';
 import {StyleProp, Text as OriginalText, TextStyle} from 'react-native';
-import {FontType} from '../../utils';
 import {Text} from '../Text';
-
-export type Word = {
-  title: string;
-  bold?: boolean;
-  type?: FontType;
-  functionality?: 'link' | 'text';
-  onPress?: () => void;
-};
+import {SentenceType} from './types';
 
 interface Props {
-  words: Word[];
+  sentences: SentenceType[];
   style: StyleProp<TextStyle>;
+  center?: boolean;
 }
 
-export const Sentence = memo(function Sentence({words, style}: Props) {
+export const Sentence = memo(function Sentence({
+  sentences,
+  style,
+  center,
+}: Props) {
   return (
     <OriginalText style={style}>
-      {words.map(({bold, title, onPress, type}) => (
+      {sentences.map(({bold, title, onPress, type, emphasis}) => (
         <Text
           bold={bold}
+          center={center}
+          color={onPress ? 'primary' : 'text'}
+          emphasis={emphasis}
           key={title}
           onPress={onPress}
-          title={title}
+          title={`${title} `}
           type={type}
         />
       ))}
