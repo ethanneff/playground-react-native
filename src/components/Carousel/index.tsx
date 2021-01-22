@@ -1,4 +1,4 @@
-import React, {memo, useCallback, useRef, useState} from 'react';
+import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {FlatList, ListRenderItem, StyleSheet, View} from 'react-native';
 import {useColor} from '../../hooks';
 import {getWidth} from '../../models';
@@ -12,21 +12,27 @@ import {Slide} from './types';
 type Props = {
   dotSize?: number;
   slides: Slide[];
+  duration?: number;
   viewabilityConfig?: Record<string, unknown>;
 };
 
 export const Carousel = memo(function Carousel({
   dotSize = config.padding(4),
   slides,
+  duration,
   viewabilityConfig = {itemVisiblePercentThreshold: 50},
 }: Props) {
   const color = useColor();
+  const looping = useRef(false);
   const width = useRootSelector(getWidth);
   const flatList = useRef<FlatList | null>(null);
+  const activeIndexRef = useRef(0);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const onViewableItemsChanged = useCallback(({viewableItems}) => {
-    setActiveIndex(viewableItems[0].index || 0);
+    const index = viewableItems[0].index || 0;
+    setActiveIndex(index);
+    activeIndexRef.current = index;
   }, []);
 
   const keyExtractor = useCallback((item) => String(item.id), []);
@@ -37,6 +43,25 @@ export const Carousel = memo(function Carousel({
     },
     [],
   );
+
+  const scrollToIndex = useCallback(() => {
+    const index = (activeIndexRef.current + 1) % slides.length;
+    flatList.current?.scrollToIndex({index});
+  }, [slides.length]);
+
+  const loop = useCallback(() => {
+    setTimeout(() => {
+      scrollToIndex();
+      loop();
+    }, duration);
+  }, [duration, scrollToIndex]);
+
+  useEffect(() => {
+    if (duration && !looping.current) {
+      loop();
+      looping.current = true;
+    }
+  }, [duration, loop]);
 
   const renderItem = useCallback<ListRenderItem<Slide>>(
     ({item}) => {
