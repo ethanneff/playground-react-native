@@ -57,8 +57,8 @@ export const Content = memo(({body}: Props) => {
   });
 
   return (
-    <ScrollView contentContainerStyle={styles.content}>
-      {body.sections.map((section, sectionIndex) => (
+    <View>
+      {sections.map((section, sectionIndex) => (
         <View key={`s-${sectionIndex}`} style={styles.section}>
           {section.title && (
             <Text
@@ -86,6 +86,6 @@ export const Content = memo(({body}: Props) => {
           ))}
         </View>
       ))}
-    </ScrollView>
+    </View>
   );
 });
