@@ -51,6 +51,7 @@ export const Carousel = memo(function Carousel({
   }, [slides.length]);
 
   const loop = useCallback(() => {
+    if (!duration) return;
     loopTimeout.current = setTimeout(() => {
       scrollToIndex();
       loop();
