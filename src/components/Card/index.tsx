@@ -1,10 +1,10 @@
-import React, {ReactNode} from 'react';
+import React, {memo, ReactNode} from 'react';
 import {StyleSheet, View, ViewStyle} from 'react-native';
 import {useColor, useDropShadow} from '../../hooks';
 import {config} from '../../utils';
 import {TouchableOpacity} from '../TouchableOpacity';
 
-interface Props {
+type Props = {
   testID?: string;
   flex?: boolean;
   style?: ViewStyle;
@@ -17,10 +17,18 @@ interface Props {
   onPress?(): void;
   onLongPress?(): void;
   children?: ReactNode | ReactNode[];
-}
+};
 
+const getOpacity = (elevation: number) =>
+  elevation === 0
+    ? 0
+    : elevation === 1
+    ? 0.05
+    : ((elevation - 2) * 0.01 + 0.07).toFixed(2);
 const touchOpacity = 0.3;
-export const Card = ({
+
+export const Card = memo(function Card({
+  testID,
   borderRadius = config.sizing.borderRadius,
   borderWidth = 1,
   children,
@@ -31,17 +39,11 @@ export const Card = ({
   noPadding,
   flex,
   selected,
-  testID,
   style,
-}: Props): JSX.Element => {
+}: Props) {
   const color = useColor();
   const dropShadow = useDropShadow();
-  const opacity =
-    elevation === 0
-      ? 0
-      : elevation === 1
-      ? 0.05
-      : ((elevation - 2) * 0.01 + 0.07).toFixed(2);
+  const opacity = getOpacity(elevation);
   const styles = StyleSheet.create({
     containerStyle: {
       backgroundColor: color.background,
@@ -56,12 +58,8 @@ export const Card = ({
       borderRadius,
       padding: noPadding ? 0 : config.padding(4),
     },
-    flex: {
-      flex: 1,
-    },
-    selected: {
-      backgroundColor: color.primary,
-    },
+    flex: {flex: 1},
+    selected: {backgroundColor: color.primary},
   });
 
   const containerStyles = [
@@ -71,15 +69,20 @@ export const Card = ({
     style,
   ];
   const contentStyles = [styles.contents, flex ? styles.flex : undefined];
-  return (
+  const child = <View style={contentStyles}>{children}</View>;
+
+  return onPress || onLongPress ? (
     <TouchableOpacity
       activeOpacity={onPress ? touchOpacity : 1}
-      disabled={!onPress}
-      onLongPress={onLongPress && onLongPress}
-      onPress={onPress && onPress}
+      onLongPress={onLongPress}
+      onPress={onPress}
       style={containerStyles}
       testID={testID}>
-      <View style={contentStyles}>{children}</View>
+      {child}
     </TouchableOpacity>
+  ) : (
+    <View style={containerStyles} testID={testID}>
+      {child}
+    </View>
   );
-};
+});
