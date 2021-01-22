@@ -56,12 +56,14 @@ export const Carousel = memo(function Carousel({
             {item.icon && <Icon name={item.icon} size={config.padding(40)} />}
           </View>
           <View style={{flex: 1}}>
-            <Text
-              center
-              style={{paddingVertical: config.padding(8)}}
-              title={item.title}
-              type="h4"
-            />
+            {item.title && (
+              <Text
+                center
+                style={{paddingVertical: config.padding(8)}}
+                title={item.title}
+                type="h4"
+              />
+            )}
             {item.sections && <Content center sections={item.sections} />}
           </View>
         </View>
