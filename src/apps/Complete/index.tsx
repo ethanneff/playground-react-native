@@ -1,10 +1,10 @@
 import React, {memo} from 'react';
 import {useRootSelector} from '../../utils';
-import {HomeStack, LandingStack} from './navigation';
+import {Landing, Main} from './navigation';
 
 export default memo(function Complete() {
   const user = useRootSelector((s) => s.completeUser);
-  const App = user ? HomeStack : LandingStack;
+  const App = user ? Main : Landing;
   return <App />;
 });
 

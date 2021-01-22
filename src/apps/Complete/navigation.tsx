@@ -2,7 +2,6 @@ import {
   BottomTabBarOptions,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
-import {Route} from '@react-navigation/native';
 import {
   createStackNavigator,
   StackNavigationOptions,
@@ -12,39 +11,34 @@ import {Icon} from '../../components';
 import {useColor} from '../../hooks';
 import {rootMode, rootScreenOptions} from '../../providers/Navigation/configs';
 import {
+  HomeStackParams,
+  ImplementStackParams,
+  LandingStackParams,
+  MainStackParams,
+} from './navigation-types';
+import {
   Account,
+  Auth,
   Capture,
   ItemDetail,
-  LogIn,
   Project,
   Projects,
   Reflect,
-  SignUp,
   Welcome,
 } from './screens';
 
 const noHeader: StackNavigationOptions = {headerShown: false};
-const RootTab = createBottomTabNavigator();
-const RootStack = createStackNavigator();
-const ProjectsStack = createStackNavigator();
-
-type Tabs = 'plan' | 'implement' | 'reflect';
-type TabIcons = {[key in Tabs]: {focused: string; unFocused: string}};
+type TabIcons = {
+  [key in keyof HomeStackParams]: {focused: string; unFocused: string};
+};
 
 const tabIcons: TabIcons = {
-  plan: {
-    focused: 'pencil-plus-outline',
-    unFocused: 'pencil-plus-outline',
-  },
+  plan: {focused: 'pencil-plus-outline', unFocused: 'pencil-plus-outline'},
   implement: {
     focused: 'checkbox-multiple-marked-outline',
     unFocused: 'checkbox-multiple-marked-outline',
   },
   reflect: {focused: 'finance', unFocused: 'finance'},
-};
-
-type ScreenOptionsProps = {
-  route: Route<string, Record<string, unknown> | undefined>;
 };
 
 type TabBarIconProps = {
@@ -61,7 +55,7 @@ const useTabs = () => {
     showLabel: false,
   };
   const screenOptions = useCallback(
-    ({route}: ScreenOptionsProps) => ({
+    ({route}) => ({
       tabBarIcon: function tabBarIcon({focused, size}: TabBarIconProps) {
         const key = focused ? 'focused' : 'unFocused';
         const iconColor = focused ? color.text : color.secondary;
@@ -75,44 +69,47 @@ const useTabs = () => {
   return {tabBarOptions, screenOptions};
 };
 
-const TabStack = (): ReactElement => {
+const HomeStack = createBottomTabNavigator<HomeStackParams>();
+const Home = () => {
   const {tabBarOptions, screenOptions} = useTabs();
   return (
-    <RootTab.Navigator
-      screenOptions={screenOptions as any}
+    <HomeStack.Navigator
+      screenOptions={screenOptions}
       tabBarOptions={tabBarOptions}>
-      <RootTab.Screen component={Capture} name="plan" />
-      <RootTab.Screen component={ImplementStack} name="implement" />
-      <RootTab.Screen component={Reflect} name="reflect" />
-    </RootTab.Navigator>
+      <HomeStack.Screen component={Capture} name="plan" />
+      <HomeStack.Screen component={Implement} name="implement" />
+      <HomeStack.Screen component={Reflect} name="reflect" />
+    </HomeStack.Navigator>
   );
 };
 
-const ImplementStack = (): ReactElement => {
+const ImplementStack = createBottomTabNavigator<ImplementStackParams>();
+const Implement = () => {
   return (
-    <ProjectsStack.Navigator screenOptions={noHeader}>
-      <ProjectsStack.Screen component={Projects} name="projects" />
-      <ProjectsStack.Screen component={Project} name="project" />
-    </ProjectsStack.Navigator>
+    <ImplementStack.Navigator screenOptions={noHeader}>
+      <ImplementStack.Screen component={Projects} name="projects" />
+      <ImplementStack.Screen component={Project} name="project" />
+    </ImplementStack.Navigator>
   );
 };
 
-export const LandingStack = (): ReactElement => {
+const LandingStack = createStackNavigator<LandingStackParams>();
+export const Landing = (): ReactElement => {
   return (
-    <RootStack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
-      <RootTab.Screen component={Welcome} name="welcome" />
-      <RootTab.Screen component={SignUp} name="sign-up" />
-      <RootTab.Screen component={LogIn} name="log-in" />
-    </RootStack.Navigator>
+    <LandingStack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
+      <LandingStack.Screen component={Welcome} name="welcome" />
+      <LandingStack.Screen component={Auth} name="auth" />
+    </LandingStack.Navigator>
   );
 };
 
-export const HomeStack = (): ReactElement => {
+const MainStack = createStackNavigator<MainStackParams>();
+export const Main = (): ReactElement => {
   return (
-    <RootStack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
-      <RootStack.Screen component={TabStack} name="home" />
-      <RootStack.Screen component={Account} name="account" />
-      <RootStack.Screen component={ItemDetail} name="item-detail" />
-    </RootStack.Navigator>
+    <MainStack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
+      <MainStack.Screen component={Home} name="home" />
+      <MainStack.Screen component={Account} name="account" />
+      <MainStack.Screen component={ItemDetail} name="item-detail" />
+    </MainStack.Navigator>
   );
 };
