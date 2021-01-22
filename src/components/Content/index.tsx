@@ -30,6 +30,7 @@ interface Link {
   type: 'link';
   onPress(): void;
 }
+type Props = {sections: Sections; center?: boolean};
 
 interface Props {
   body: ContentBody;
@@ -38,22 +39,11 @@ interface Props {
 // TODO: use Sentence component
 export const Content = memo(({body}: Props) => {
   const color = useColor();
+export const Content = memo(function Content({sections, center}: Props) {
   const styles = StyleSheet.create({
-    content: {
-      paddingHorizontal: config.padding(4),
-    },
-    link: {
-      color: color.primary,
-    },
-    paragraph: {
-      paddingBottom: config.padding(2),
-    },
-    section: {
-      paddingBottom: config.padding(4),
-    },
-    title: {
-      paddingBottom: config.padding(2),
-    },
+    paragraph: {paddingBottom: config.padding(4)},
+    section: {paddingBottom: config.padding(2)},
+    title: {paddingBottom: config.padding(2)},
   });
 
   return (
@@ -62,6 +52,8 @@ export const Content = memo(({body}: Props) => {
         <View key={`s-${sectionIndex}`} style={styles.section}>
           {section.title && (
             <Text
+              center={center}
+              emphasis={section.titleEmphasis}
               key={section.title}
               style={styles.title}
               title={section.title}
@@ -83,6 +75,7 @@ export const Content = memo(({body}: Props) => {
                 ),
               )}
             </Original>
+              center={center}
           ))}
         </View>
       ))}
