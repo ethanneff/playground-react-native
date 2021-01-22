@@ -1,5 +1,8 @@
+import {Sections} from './../Content/types';
 export type Slide = {
   id: string;
-  text: string;
-  color: string;
+  title: string;
+  sections?: Sections;
+  icon?: string;
+  backgroundColor?: string;
 };

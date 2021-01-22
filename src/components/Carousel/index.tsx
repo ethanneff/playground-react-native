@@ -1,22 +1,28 @@
 import React, {memo, useCallback, useRef, useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
+import {useColor} from '../../hooks';
 import {getWidth} from '../../models';
 import {config, useRootSelector} from '../../utils';
+import {Content} from '../Content';
+import {Icon} from '../Icon';
 import {Text} from '../Text';
 import {Dots} from './Dots';
 import {Slide} from './types';
 
-interface Props {
+type Props = {
   dotSize?: number;
   slides: Slide[];
   viewabilityConfig?: Record<string, unknown>;
-}
+};
+
+type RenderItem = {item: Slide};
 
 export const Carousel = memo(function Carousel({
   dotSize = config.padding(4),
   slides,
   viewabilityConfig = {itemVisiblePercentThreshold: 50},
 }: Props) {
+  const color = useColor();
   const width = useRootSelector(getWidth);
   const flatList = useRef<FlatList | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -35,22 +41,35 @@ export const Carousel = memo(function Carousel({
   );
 
   const renderItem = useCallback(
-    ({item}) => {
+    ({item}: RenderItem) => {
       const styles = StyleSheet.create({
         item: {
-          backgroundColor: item.color,
+          alignItems: 'center',
+          backgroundColor: item.backgroundColor || color.background,
           justifyContent: 'center',
+          padding: config.padding(4),
           width,
         },
       });
 
       return (
         <View style={styles.item}>
-          <Text center title={item.text} />
+          <View style={{flex: 1, justifyContent: 'center'}}>
+            {item.icon && <Icon name={item.icon} size={config.padding(40)} />}
+          </View>
+          <View style={{flex: 1}}>
+            <Text
+              center
+              style={{paddingVertical: config.padding(8)}}
+              title={item.title}
+              type="h4"
+            />
+            {item.sections && <Content center sections={item.sections} />}
+          </View>
         </View>
       );
     },
-    [width],
+    [color.background, width],
   );
 
   return (
