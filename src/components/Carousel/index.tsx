@@ -1,5 +1,5 @@
 import React, {memo, useCallback, useRef, useState} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, ListRenderItem, StyleSheet, View} from 'react-native';
 import {useColor} from '../../hooks';
 import {getWidth} from '../../models';
 import {config, useRootSelector} from '../../utils';
@@ -14,8 +14,6 @@ type Props = {
   slides: Slide[];
   viewabilityConfig?: Record<string, unknown>;
 };
-
-type RenderItem = {item: Slide};
 
 export const Carousel = memo(function Carousel({
   dotSize = config.padding(4),
@@ -40,8 +38,8 @@ export const Carousel = memo(function Carousel({
     [],
   );
 
-  const renderItem = useCallback(
-    ({item}: RenderItem) => {
+  const renderItem = useCallback<ListRenderItem<Slide>>(
+    ({item}) => {
       const styles = StyleSheet.create({
         item: {
           alignItems: 'center',
