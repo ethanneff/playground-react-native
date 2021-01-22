@@ -23,7 +23,7 @@ export const Content = memo(function Content({sections, center}: Props) {
               center={center}
               emphasis={section.titleEmphasis}
               key={section.title}
-              style={styles.title}
+              style={[styles.title, section.titleStyle]}
               title={section.title}
               type={section.titleType}
             />
