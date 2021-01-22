@@ -1,11 +1,11 @@
 import React, {memo, useCallback, useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, View} from 'react-native';
+import {ActivityIndicator, FlatList, ListRenderItem, View} from 'react-native';
 import {config} from '../../utils';
 import {Button} from '../Button';
 import {Card} from '../Card';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
-import {ActivityDay, ActivityModel, Site} from './types';
+import {ActivityDay, ActivityModel, ActivityWeek, Site} from './types';
 import {
   getActivitySquares,
   getApiActivity,
@@ -87,7 +87,7 @@ export const Activity = memo(function Activity({
     [],
   );
 
-  const renderItem = useCallback(
+  const renderItem = useCallback<ListRenderItem<ActivityWeek>>(
     ({item, index}) => (
       <Week
         index={index}

@@ -1,7 +1,7 @@
 // TODO: slider on web
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {Image, ImageSourcePropType, View} from 'react-native';
+import {Image, ImageSourcePropType, ListRenderItem, View} from 'react-native';
 import {Button, Card, Masonry, Screen, Slider, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
@@ -86,7 +86,7 @@ export const DarkMode = memo(function DarkMode() {
   const columns = landscape ? 5 : 2;
   const onPress = useCallback(() => undefined, []);
 
-  const renderItem = useCallback(
+  const renderItem = useCallback<ListRenderItem<Card>>(
     ({item, index}) => (
       <Card elevation={elevation} key={index} onPress={onPress}>
         <Text title={item.title} type="overline" />

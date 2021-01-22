@@ -1,10 +1,11 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList, ListRenderItem, View} from 'react-native';
 import {Button, Icon, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {
+  ChecklistItem,
   getCurrentActiveChecklistItemsOrderByCreatedAt,
   removeChecklistItem,
   setActiveChecklistItem,
@@ -33,7 +34,7 @@ export default memo(function Checklist() {
     [dispatch, navigate],
   );
 
-  const renderItem = useCallback(
+  const renderItem = useCallback<ListRenderItem<ChecklistItem>>(
     ({item}) => (
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Icon color={color.success} name="checkbox-marked-circle" />

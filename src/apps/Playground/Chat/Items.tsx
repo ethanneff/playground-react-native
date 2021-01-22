@@ -1,5 +1,5 @@
 import React, {memo, useCallback, useEffect, useRef} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, ListRenderItem} from 'react-native';
 import {useColor} from '../../../hooks';
 import {config, useRootSelector} from '../../../utils';
 import {Item} from './Item';
@@ -9,7 +9,7 @@ export const Items = memo(function ChatMessageItems() {
   const itemsRef = useRef<FlatList | null>(null);
   const color = useColor();
   const messages = useRootSelector(getActiveChatMessagesOrderByCreatedAt);
-  const renderItem = useCallback(
+  const renderItem = useCallback<ListRenderItem<Message>>(
     ({item}) => <Item item={item} marginBottom={item.id !== messages[0].id} />,
     [messages],
   );

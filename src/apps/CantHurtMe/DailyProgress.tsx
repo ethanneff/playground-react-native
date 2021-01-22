@@ -1,6 +1,6 @@
 import dayjs, {Dayjs} from 'dayjs';
 import React, {memo, useCallback, useState} from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList, ListRenderItem, View} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../components';
 import {useColor} from '../../hooks';
 import {config} from '../../utils';
@@ -56,7 +56,10 @@ const ProgressItem = ({item}: ProgressItemProps) => {
 export const DailyProgress = memo(function DailyProgress() {
   const data: Item[] = generateHistory();
 
-  const renderItem = useCallback(({item}) => <ProgressItem item={item} />, []);
+  const renderItem = useCallback<ListRenderItem<Item>>(
+    ({item}) => <ProgressItem item={item} />,
+    [],
+  );
 
   const keyExtractor = useCallback((item: Item) => String(item.date), []);
 

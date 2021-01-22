@@ -1,6 +1,11 @@
 import dayjs from 'dayjs';
 import React, {memo, useCallback, useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, StyleSheet} from 'react-native';
+import {
+  ActivityIndicator,
+  FlatList,
+  ListRenderItem,
+  StyleSheet,
+} from 'react-native';
 import {config} from '../../utils';
 import {ListItem} from './ListItem';
 import {Item} from './types';
@@ -58,7 +63,7 @@ export const List = memo(
 
     useEffect(() => onLoad(), [onLoad]);
 
-    const renderItem = useCallback(
+    const renderItem = useCallback<ListRenderItem<Item>>(
       ({item, index}) => (
         <ListItem
           currentItem={getCurrentItem(item)}
