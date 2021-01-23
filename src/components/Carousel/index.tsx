@@ -1,6 +1,5 @@
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {FlatList, ListRenderItem, View} from 'react-native';
-import {useColor} from '../../hooks';
 import {getWidth} from '../../models';
 import {config, useRootSelector} from '../../utils';
 import {Dots} from './Dots';
@@ -20,7 +19,6 @@ export const Carousel = memo(function Carousel({
   duration,
   viewabilityConfig = {itemVisiblePercentThreshold: 50},
 }: Props) {
-  const color = useColor();
   const loopingEnabled = useRef(false);
   const width = useRootSelector(getWidth);
   const flatList = useRef<FlatList | null>(null);
