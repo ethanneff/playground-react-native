@@ -18,12 +18,14 @@ import {
 } from './navigation-types';
 import {
   Account,
-  Auth,
   Capture,
   ItemDetail,
+  LogIn,
   Project,
   Projects,
   Reflect,
+  ResetPassword,
+  SignUp,
   Welcome,
 } from './screens';
 import {useTabTap} from './utils';
@@ -100,7 +102,9 @@ export const Landing = (): ReactElement => {
   return (
     <LandingStack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
       <LandingStack.Screen component={Welcome} name="welcome" />
-      <LandingStack.Screen component={Auth} name="auth" />
+      <LandingStack.Screen component={SignUp} name="sign-up" />
+      <LandingStack.Screen component={LogIn} name="log-in" />
+      <LandingStack.Screen component={ResetPassword} name="reset-password" />
     </LandingStack.Navigator>
   );
 };

@@ -5,7 +5,9 @@ export type MainStackParams = {
 };
 export type LandingStackParams = {
   welcome: undefined;
-  auth: {state: 'log-in' | 'sign-up' | 'forgot-password'};
+  'sign-up': undefined;
+  'log-in': undefined;
+  'reset-password': undefined;
 };
 export type ImplementStackParams = {
   projects: undefined;
