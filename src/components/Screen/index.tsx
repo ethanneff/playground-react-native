@@ -1,4 +1,4 @@
-import React, {ReactElement, ReactNode} from 'react';
+import React, {memo, ReactNode} from 'react';
 import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
 import {useColor} from '../../hooks';
 import {config} from '../../utils';
@@ -13,14 +13,17 @@ interface OwnProps {
   rightIcon?: string;
   onLeftPress?(): void;
   onRightPress?(): void;
+  secondLeftIcon?: string;
+  secondRightIcon?: string;
+  onSecondLeftPress?(): void;
+  onSecondRightPress?(): void;
   children?: ReactNode;
   dropShadow?: boolean;
-  height?: number;
 }
 
 type Props = OwnProps;
 
-export const Screen = ({
+export const Screen = memo(function Screen({
   title,
   gutter,
   border,
@@ -29,10 +32,13 @@ export const Screen = ({
   children,
   leftIcon,
   rightIcon,
+  secondLeftIcon,
+  secondRightIcon,
+  onSecondLeftPress,
+  onSecondRightPress,
   testID,
-  height = config.padding(18),
   dropShadow,
-}: Props): ReactElement => {
+}: Props) {
   const color = useColor();
   const styles = StyleSheet.create({
     container: {
@@ -53,11 +59,14 @@ export const Screen = ({
         <NavBar
           border={border}
           dropShadow={dropShadow}
-          height={height}
           leftIcon={leftIcon}
           onLeftPress={onLeftPress}
           onRightPress={onRightPress}
+          onSecondLeftPress={onSecondLeftPress}
+          onSecondRightPress={onSecondRightPress}
           rightIcon={rightIcon}
+          secondLeftIcon={secondLeftIcon}
+          secondRightIcon={secondRightIcon}
           title={title}
         />
         <View style={styles.gutter} testID={testID}>
@@ -66,4 +75,4 @@ export const Screen = ({
       </SafeAreaView>
     </View>
   );
-};
+});
