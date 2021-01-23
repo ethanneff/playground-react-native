@@ -1,6 +1,7 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import {useColor, useDropShadow} from '../../hooks';
+import {useColor} from '../../hooks';
+import {Color} from '../../models';
 import {colorWithOpacity, config} from '../../utils';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {Slide} from './types';
@@ -12,6 +13,9 @@ type DotsProps = {
   onDotPress: (index: number) => () => void;
 };
 
+const getBackgroundColor = (color: Color, active: boolean) =>
+  colorWithOpacity(active ? color.primary : color.secondary, 0.6);
+
 export const Dots = memo(function Dots({
   slides,
   onDotPress,
@@ -19,7 +23,6 @@ export const Dots = memo(function Dots({
   activeIndex,
 }: DotsProps) {
   const color = useColor();
-  const dropShadow = useDropShadow();
   return (
     <View
       style={{
@@ -41,11 +44,7 @@ export const Dots = memo(function Dots({
               height: dotSize,
               borderRadius: dotSize,
               borderColor: color.text,
-              ...dropShadow(4),
-              backgroundColor: colorWithOpacity(
-                activeIndex === index ? color.text : color.background,
-                0.6,
-              ),
+              backgroundColor: getBackgroundColor(color, activeIndex === index),
             }}
           />
         );
