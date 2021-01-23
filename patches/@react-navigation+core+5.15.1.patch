@@ -1,0 +1,28 @@
+diff --git a/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts b/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts
+index acc1489..155cb8d 100644
+--- a/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts
++++ b/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts
+@@ -1,5 +1,5 @@
++import type {DefaultRouterOptions, InitialState, NavigationAction, NavigationState, ParamListBase, PartialState, Route} from '@react-navigation/routers';
+ import type * as React from 'react';
+-import type { DefaultRouterOptions, NavigationState, NavigationAction, InitialState, PartialState, Route, ParamListBase } from '@react-navigation/routers';
+ export declare type DefaultNavigatorOptions<ScreenOptions extends {}, ParamList extends ParamListBase = ParamListBase> = DefaultRouterOptions<Extract<keyof ParamList, string>> & {
+     /**
+      * Children React Elements to extract the route configuration from.
+@@ -36,6 +36,9 @@ export declare type EventMapCore<State extends NavigationState> = {
+         };
+         canPreventDefault: true;
+     };
++    tabPress: {
++        data: undefined;
++    }
+ };
+ export declare type EventArg<EventName extends string, CanPreventDefault extends boolean | undefined = false, Data = undefined> = {
+     /**
+@@ -414,4 +417,5 @@ export declare type PathConfig = {
+ export declare type PathConfigMap = {
+     [routeName: string]: string | PathConfig;
+ };
+-export {};
++export { };
++
