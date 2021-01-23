@@ -6,7 +6,7 @@ import {ScrollView} from '../../../../conversions';
 import {useColor} from '../../../../hooks';
 import {config} from '../../../../utils';
 import {Card} from '../../components/Card';
-import {completeConfig} from '../../utils';
+import {completeConfig, useTabTap} from '../../utils';
 import {Graph} from './Graph';
 
 // TODO: add journal
@@ -37,6 +37,7 @@ const data = [
 ];
 
 export const Reflect = memo(function Reflect() {
+  useTabTap();
   const color = useColor();
   const {navigate} = useNavigation();
   const navToAccount = useCallback(() => navigate('account'), [navigate]);

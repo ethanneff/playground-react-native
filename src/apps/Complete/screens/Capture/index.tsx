@@ -6,12 +6,14 @@ import {useColor} from '../../../../hooks';
 import {config, useRootSelector} from '../../../../utils';
 import {Card, List} from '../../components';
 import {getInbox} from '../../models';
+import {useTabTap} from '../../utils';
 import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
 
 const initialState = {container: 0, button: 0, size: 0};
 export const Capture = memo(function Capture() {
-  const color = useColor();
+  useTabTap();
   const {navigate} = useNavigation();
+  const color = useColor();
   const containerRefs = useRef(initialState);
   const keyboardHeight = useKeyboardHeight();
   const [containerHeight, setContainerHeight] = useState(0);

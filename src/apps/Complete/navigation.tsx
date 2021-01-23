@@ -26,6 +26,7 @@ import {
   Reflect,
   Welcome,
 } from './screens';
+import {useTabTap} from './utils';
 
 const noHeader: StackNavigationOptions = {headerShown: false};
 type TabIcons = {
@@ -85,6 +86,7 @@ const Home = () => {
 
 const ImplementStack = createStackNavigator<ImplementStackParams>();
 const Implement = () => {
+  useTabTap();
   return (
     <ImplementStack.Navigator screenOptions={noHeader}>
       <ImplementStack.Screen component={Projects} name="projects" />
