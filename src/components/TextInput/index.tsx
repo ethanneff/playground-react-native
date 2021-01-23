@@ -11,6 +11,7 @@ import {
 import {useColor} from '../../hooks';
 import {Color} from '../../models';
 import {config, FontEmphasis, FontType, getFontStyles} from '../../utils';
+import {SoundManager} from '../../utils/Sound';
 import {PointerEvents, TextContentType} from './types';
 
 /*
@@ -132,6 +133,12 @@ export const TextInput = ({
     [onRef],
   );
 
+  const onInternalSubmit = useCallback(() => {
+    if (!onSubmitEditing) return;
+    SoundManager.play('tap');
+    onSubmitEditing();
+  }, [onSubmitEditing]);
+
   return (
     <View style={containerStyles}>
       <Original
@@ -145,7 +152,7 @@ export const TextInput = ({
         onBlur={didBlur}
         onChangeText={onChangeText}
         onFocus={didFocus}
-        onSubmitEditing={onSubmitEditing}
+        onSubmitEditing={onInternalSubmit}
         placeholder={placeholder}
         placeholderTextColor={colorScheme.secondary}
         pointerEvents={pointerEvents}
