@@ -83,7 +83,7 @@ const Home = () => {
   );
 };
 
-const ImplementStack = createBottomTabNavigator<ImplementStackParams>();
+const ImplementStack = createStackNavigator<ImplementStackParams>();
 const Implement = () => {
   return (
     <ImplementStack.Navigator screenOptions={noHeader}>
