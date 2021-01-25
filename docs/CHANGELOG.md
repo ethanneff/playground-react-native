@@ -1,5 +1,58 @@
 # Changelog
 
+# [2.49.0](https://github.com/ethanneff/example/compare/v2.48.1...v2.49.0) (2021-01-23)
+
+
+### Bug Fixes
+
+* add auto scroll to carousel ([b21004e](https://github.com/ethanneff/example/commit/b21004ef7750662f67470d217b14ee4073319bf8))
+* add email to user object ([207c022](https://github.com/ethanneff/example/commit/207c022abec85c6649f7cc0f451bd86add617d1f))
+* add icon and content to carousel ([be5093c](https://github.com/ethanneff/example/commit/be5093cf5849e62d47d2df1941c5a05d38a63f83))
+* add modal header component ([624e355](https://github.com/ethanneff/example/commit/624e355c3cd240d1fbcd5d7b391109fe1f5ab9c9))
+* add navigation types ([b1de588](https://github.com/ethanneff/example/commit/b1de5880ea388470d311484d8a5acdef59252dab))
+* add search to projects ([6f80944](https://github.com/ethanneff/example/commit/6f8094434ef5db2c2d068adfb17613610d3be52f))
+* add secondary icons to screen ([1f56eb9](https://github.com/ethanneff/example/commit/1f56eb9ec049c93421a72761d8f8d548de0637e6))
+* add style prop to content title ([b2aeca0](https://github.com/ethanneff/example/commit/b2aeca0377f88327307abc2dcc4ec6c6bd509c41))
+* add tap on enter submit ([93f6832](https://github.com/ethanneff/example/commit/93f6832683faf7ed8a90d4bf0e3dad43a6b3464b))
+* add tap sound to nav bar ([09ccea5](https://github.com/ethanneff/example/commit/09ccea5442a4b8c65e9ee397e06d3288d5d25528))
+* add touch pause on looping ([b10e406](https://github.com/ethanneff/example/commit/b10e406656e4aa58cf36cfca9241b055175064d0))
+* add typing to renderItem ([536b97e](https://github.com/ethanneff/example/commit/536b97e74823cdfd277be770f62650430a73a339))
+* allow touchable events in card if card is not touchable ([b577fb3](https://github.com/ethanneff/example/commit/b577fb31b9e4c43ad8a546157689d29fdc8475cf))
+* change content body to use section array ([28e673e](https://github.com/ethanneff/example/commit/28e673ef5d7680b43be06e6bbb35e9b015431a0a))
+* correct navigation stack on project ([8c2716e](https://github.com/ethanneff/example/commit/8c2716e10972510f65a1ddc0bf4a49aa59de2010))
+* correct typeing on NodeJS.timeout ([892416c](https://github.com/ethanneff/example/commit/892416c2dbc1da36c04fe3f219407ccafc1bcab3))
+* extract the welcome slides from the component ([8427787](https://github.com/ethanneff/example/commit/8427787f9d14b15066f3de70009333d2ca9ca7c4))
+* make text handle onPress ([1bfc411](https://github.com/ethanneff/example/commit/1bfc4114220a1966c5f28d56ca947467dee7e3cf))
+* make title optional ([3bd5ca2](https://github.com/ethanneff/example/commit/3bd5ca2d3c5dfeb4710dcc15c12e09859e95bb0f))
+* move carousel item to own file ([a239b48](https://github.com/ethanneff/example/commit/a239b4812a419f4557bf2f8f5fd8411435996be9))
+* move navigation to own file ([0c95b99](https://github.com/ethanneff/example/commit/0c95b99fc56a3d4fbceb50a26e02fc0fabc39b9b))
+* pass center prop to content ([5ffb328](https://github.com/ethanneff/example/commit/5ffb328517d6a2f0bca57a02cd8f405d5fd82c48))
+* remove drop shadow from carousel dots ([01afcf1](https://github.com/ethanneff/example/commit/01afcf155c50f8e35c117f6a5469b47ffe6fa926))
+* remove login from account ([b87fe97](https://github.com/ethanneff/example/commit/b87fe97eadaa13ccb540a6b5c62e619aebe9af2b))
+* remove scrollview from content ([ce1acfe](https://github.com/ethanneff/example/commit/ce1acfef96187e7434f8066d974849db8038a4e3))
+* remove unused color hook on carousel ([78f1124](https://github.com/ethanneff/example/commit/78f1124a389e86e1268d500b720561a997d880f4))
+* rename landing to welcome ([b09d11c](https://github.com/ethanneff/example/commit/b09d11c6941da158f0adab755b1c77c2098c0dfc))
+* update article data with updated content type ([34b3817](https://github.com/ethanneff/example/commit/34b3817e176887cb095f225aea79c57004652ee0))
+* update article with scrollview and card ([7660755](https://github.com/ethanneff/example/commit/7660755dae85447c9fbf06b70040c28709d3b494))
+* update deps ([04d83e0](https://github.com/ethanneff/example/commit/04d83e0c10e83ff3262e34aa53c963199017e9e0))
+* update deps ([c597226](https://github.com/ethanneff/example/commit/c597226f0b7d74ef5562e0e04cc1d50be63db1c9))
+* update deps ([b81ec8b](https://github.com/ethanneff/example/commit/b81ec8b8582b324d0fa5cc23010b266c508d5009))
+* update deps ([caae78a](https://github.com/ethanneff/example/commit/caae78a18ba8193d1456133bc53d9d6341d341a8))
+* update deps ([1d8660a](https://github.com/ethanneff/example/commit/1d8660ae72ab095e3bd4dd7b9459cadc479389c3))
+* update navigation stack to allow login back nav ([fae6962](https://github.com/ethanneff/example/commit/fae69629d718ec153e1c6eda10fac1da95898210))
+* update renderItem typings ([738dde4](https://github.com/ethanneff/example/commit/738dde47042b4d70d7cd1efc579d5d2b9b915f44))
+* update sentence type ([6105421](https://github.com/ethanneff/example/commit/61054212a4df291a3c36f3d854ccd8201cb5910b))
+* update sentence with additional props ([5af51ed](https://github.com/ethanneff/example/commit/5af51ed0913039a7b9cc9e543739a067fd6e6c61))
+* update typings on useTabTap ([50d1bbd](https://github.com/ethanneff/example/commit/50d1bbdaa0262d2fb59599feaa7dda42ae3bb686))
+* update welcome to robinhood template ([01a1898](https://github.com/ethanneff/example/commit/01a1898ab4bf9caf3ac9a7b923ff932751e0f19b))
+* use robinhood timing for carousel ([b491f5b](https://github.com/ethanneff/example/commit/b491f5b92199a3620d07a1061cf641e49020be1f))
+* use sentence component within content ([a7b0e87](https://github.com/ethanneff/example/commit/a7b0e87d44e6dbac7fafa2be4c1763b6c14f65ef))
+
+
+### Features
+
+* add login, signup, and reset password modals ([5e28d27](https://github.com/ethanneff/example/commit/5e28d2775bed97ab2140a333942d5f9ba05a1520))
+
 ## [2.48.1](https://github.com/ethanneff/example/compare/v2.48.0...v2.48.1) (2021-01-19)
 
 
