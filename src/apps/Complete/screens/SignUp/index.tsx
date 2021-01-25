@@ -3,7 +3,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import React, {memo, useCallback, useState} from 'react';
 import {Button, Modal, Text, TextInput} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {useRootDispatch} from '../../../../utils';
+import {config, useRootDispatch} from '../../../../utils';
 import {ModalHeader} from '../../components';
 import {createItem, createUser} from '../../models';
 import {LandingStackParams} from '../../navigation-types';
@@ -49,6 +49,7 @@ export const SignUp = memo(function SignUp() {
       <TextInput
         onChangeText={onFormChange('email')}
         placeholder="Email address"
+        style={{marginBottom: config.padding(4)}}
         value={form.email}
       />
       <TextInput
@@ -62,6 +63,7 @@ export const SignUp = memo(function SignUp() {
         title={passwordError}
       />
       <Button
+        buttonStyle={{marginBottom: config.padding(4)}}
         center
         color="primary"
         lowercase

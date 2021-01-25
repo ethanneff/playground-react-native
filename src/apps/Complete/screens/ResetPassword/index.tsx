@@ -31,7 +31,7 @@ export const ResetPassword = memo(function ResetPassword() {
       <TextInput
         onChangeText={onFormChange('email')}
         placeholder="Email address"
-        style={{padding: config.padding(2)}}
+        style={{marginBottom: config.padding(4)}}
         value={form.email}
       />
       <Button
@@ -40,7 +40,7 @@ export const ResetPassword = memo(function ResetPassword() {
         disable={!form.email.length}
         emphasis="high"
         onPress={onSubmit}
-        title="Reset"
+        title="Reset password"
       />
     </Modal>
   );

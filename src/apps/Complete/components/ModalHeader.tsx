@@ -17,7 +17,12 @@ export const ModalHeader = memo(function ModalHeader({
   onRightPress,
 }: Props) {
   return (
-    <View style={{flexDirection: 'row', alignItems: 'center'}}>
+    <View
+      style={{
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: config.padding(4),
+      }}>
       <Icon
         invisible={!onLeftPress}
         name="chevron-left"
