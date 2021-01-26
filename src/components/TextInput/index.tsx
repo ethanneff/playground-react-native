@@ -52,7 +52,7 @@ type TextInputProps = {
   value: string;
   icons?: Icon[];
   onRef?: MutableRefObject<Original | null>;
-  onSubmitEditing: (text: string) => void;
+  onSubmitEditing?: (text: string) => void;
   onChangeText?: (text: string) => void;
   multiline?: boolean;
   iconHeight?: number;

@@ -73,7 +73,7 @@ export const AddButton = memo(function AddButton({
           icons={icons}
           onBlur={onBlur}
           onRef={textInputRef}
-          onSubmit={onItemTitleSubmit}
+          onSubmitEditing={onItemTitleSubmit}
           placeholder={placeholder}
           value=""
         />
