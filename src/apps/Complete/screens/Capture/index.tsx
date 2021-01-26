@@ -8,7 +8,7 @@ import {getInbox} from '../../models';
 import {useTabTap} from '../../utils';
 import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
 
-const initialState = {container: 0, button: 0, size: 0};
+const initialState = {container: 0, button: 0};
 export const Capture = memo(function Capture() {
   useTabTap();
   const color = useColor();
@@ -29,15 +29,16 @@ export const Capture = memo(function Capture() {
   const onLayout = useCallback(
     (key: keyof typeof initialState) => (event: LayoutChangeEvent) => {
       const {height} = event.nativeEvent.layout;
+
       if (!containerRefs.current[key]) containerRefs.current[key] = height;
-      const {container, button, size} = containerRefs.current;
-      if (container > 0 && button > 0 && !size) {
+      const {container, button} = containerRefs.current;
+      console.log(containerRefs.current);
+      if (container > 0 && button > 0 && !containerHeight) {
         const dimensions = container - button;
         setContainerHeight(dimensions);
-        containerRefs.current.size = dimensions;
       }
     },
-    [],
+    [containerHeight],
   );
 
   const showSearchBar = useCallback(() => undefined, []);
