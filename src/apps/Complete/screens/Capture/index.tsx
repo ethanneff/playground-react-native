@@ -29,10 +29,8 @@ export const Capture = memo(function Capture() {
   const onLayout = useCallback(
     (key: keyof typeof initialState) => (event: LayoutChangeEvent) => {
       const {height} = event.nativeEvent.layout;
-
       if (!containerRefs.current[key]) containerRefs.current[key] = height;
       const {container, button} = containerRefs.current;
-      console.log(containerRefs.current);
       if (container > 0 && button > 0 && !containerHeight) {
         const dimensions = container - button;
         setContainerHeight(dimensions);
