@@ -116,7 +116,9 @@ export const Modal = memo(function Modal({
               {noScroll ? (
                 children
               ) : (
-                <ScrollView showsVerticalScrollIndicator={false}>
+                <ScrollView
+                  keyboardShouldPersistTaps="handled"
+                  showsVerticalScrollIndicator={false}>
                   {children}
                 </ScrollView>
               )}
