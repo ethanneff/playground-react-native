@@ -1,9 +1,9 @@
 import React, {memo, useCallback} from 'react';
 import {Keyboard, View} from 'react-native';
+import {TextInput} from '../../../components';
 import {useColor} from '../../../hooks';
 import {Card} from './Card';
 import {ItemDetailHeader} from './ItemDetailHeader';
-import {TextInputWithIcons} from './TextInputWithIcons';
 
 type ItemEditProps = {
   title: string;
@@ -41,7 +41,7 @@ export const ItemEdit = memo(function ItemEdit({
     <View>
       <Card margin="bottom">
         <ItemDetailHeader title="Title" />
-        <TextInputWithIcons
+        <TextInput
           editable={titleEditable}
           icons={icons('title')}
           onSubmit={onSubmit('title')}
@@ -49,7 +49,7 @@ export const ItemEdit = memo(function ItemEdit({
           value={title}
         />
         <ItemDetailHeader title="Details" />
-        <TextInputWithIcons
+        <TextInput
           icons={icons('description')}
           multiline
           onSubmit={onSubmit('description')}

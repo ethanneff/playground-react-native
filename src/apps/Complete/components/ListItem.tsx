@@ -1,6 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useRef} from 'react';
 import {Keyboard, TextInput as OriginalTextInput} from 'react-native';
+import {TextInput} from '../../../components';
 import {TouchableWithoutFeedback} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../utils';
@@ -11,7 +12,6 @@ import {
   updateItem,
 } from '../models';
 import {completeConfig} from '../utils';
-import {TextInputWithIcons} from './TextInputWithIcons';
 
 type ListItemProps = {
   index: number;
@@ -62,13 +62,11 @@ export const ListItem = memo(function ListItem({
   }, []);
 
   const onItemUp = useCallback(() => {
-    console.log('up', index);
     if (index === 0) return;
     dispatch(swapItemOrderInItem({parentItemId, i: index, j: index - 1}));
   }, [dispatch, index, parentItemId]);
 
   const onItemDown = useCallback(() => {
-    console.log('down', index, parentChildrenCount);
     if (index >= parentChildrenCount - 1) return;
     dispatch(swapItemOrderInItem({parentItemId, i: index, j: index + 1}));
   }, [dispatch, index, parentChildrenCount, parentItemId]);
@@ -104,11 +102,11 @@ export const ListItem = memo(function ListItem({
         backgroundColor: color.surface,
         flexDirection: 'row',
       }}>
-      <TextInputWithIcons
+      <TextInput
         backgroundColor={color.surface}
         icons={icons}
         onRef={textInputRef}
-        onSubmit={onItemTitleSubmit}
+        onSubmitEditing={onItemTitleSubmit}
         placeholder="Item name..."
         pointerEvents="none"
         value={item.title}

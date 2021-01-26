@@ -1,10 +1,10 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {Keyboard, View} from 'react-native';
+import {TextInput} from '../../../components';
 import {useColor} from '../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../utils';
 import {navItemDetails, updateItem} from '../models';
-import {TextInputWithIcons} from './TextInputWithIcons';
 
 type ListHeaderProps = {
   itemId: string;
@@ -54,7 +54,7 @@ export const ListHeader = memo(function ListHeader({
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
-      <TextInputWithIcons
+      <TextInput
         editable={item.editable}
         icons={icons}
         onSubmit={onSave}

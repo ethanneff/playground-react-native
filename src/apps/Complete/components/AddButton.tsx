@@ -1,10 +1,9 @@
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {TextInput as OriginalTextInput, View} from 'react-native';
-import {Button} from '../../../components';
+import {Button, TextInput} from '../../../components';
 import {useColor} from '../../../hooks';
 import {config} from '../../../utils';
 import {completeConfig} from '../utils';
-import {TextInputWithIcons} from './TextInputWithIcons';
 
 type AddButtonProps = {
   width?: number;
@@ -69,7 +68,7 @@ export const AddButton = memo(function AddButton({
         justifyContent: 'center',
       }}>
       {showInput ? (
-        <TextInputWithIcons
+        <TextInput
           blurOnSubmit={false}
           icons={icons}
           onBlur={onBlur}
