@@ -48,6 +48,7 @@ export const ItemDetail = memo(function ItemDetail() {
               onSubmit={onItemSubmit}
               placeholder="Item"
               title={item.title}
+              titleEditable={item.editable}
             />
             <Card margin="bottom">
               <Text title="Reminders" />

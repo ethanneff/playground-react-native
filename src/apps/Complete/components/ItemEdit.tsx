@@ -7,6 +7,7 @@ import {TextInputWithIcons} from './TextInputWithIcons';
 
 type ItemEditProps = {
   title: string;
+  titleEditable: boolean;
   description?: string;
   placeholder: string;
   onSubmit: (type: string) => (text: string) => void;
@@ -14,6 +15,7 @@ type ItemEditProps = {
 
 export const ItemEdit = memo(function ItemEdit({
   title,
+  titleEditable,
   description = '',
   placeholder,
   onSubmit,
@@ -40,6 +42,7 @@ export const ItemEdit = memo(function ItemEdit({
       <Card margin="bottom">
         <ItemDetailHeader title="Title" />
         <TextInputWithIcons
+          editable={titleEditable}
           icons={icons('title')}
           onSubmit={onSubmit('title')}
           placeholder={`${placeholder} title...`}
