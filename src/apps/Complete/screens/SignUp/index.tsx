@@ -1,6 +1,7 @@
 import {useIsFocused, useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import React, {memo, useCallback, useState} from 'react';
+import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
+import {TextInput as OriginalTextInput} from 'react-native';
 import {Button, Modal, Text, TextInput} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {config, useRootDispatch} from '../../../../utils';
@@ -25,6 +26,7 @@ export const SignUp = memo(function SignUp() {
   const onSecondary = useCallback(() => navigate('log-in'), [navigate]);
   const completeForm =
     form.email.length && form.password.length && !form.passwordError;
+  const emailRef = useRef<OriginalTextInput | null>(null);
 
   const onSubmit = useCallback(() => {
     const {user, items} = getDefaultUserTemplate();
@@ -43,11 +45,17 @@ export const SignUp = memo(function SignUp() {
     [],
   );
 
+  useEffect(() => {
+    if (focus && emailRef.current) emailRef.current.focus();
+    if (!focus) setForm(initialState);
+  }, [focus]);
+
   return !focus ? null : (
     <Modal backgroundColor={color.surface} onBackgroundPress={navWelcome}>
       <ModalHeader onRightPress={navBack} title="Sign up" />
       <TextInput
         onChangeText={onFormChange('email')}
+        onRef={emailRef}
         placeholder="Email address"
         style={{marginBottom: config.padding(4)}}
         value={form.email}

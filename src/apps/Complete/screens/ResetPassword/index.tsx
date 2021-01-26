@@ -28,8 +28,8 @@ export const ResetPassword = memo(function ResetPassword() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   useEffect(() => {
-    if (!focus || !emailRef.current) return;
-    emailRef.current.focus();
+    if (focus && emailRef.current) emailRef.current.focus();
+    if (!focus) setForm(initialState);
   }, [focus]);
 
   return !focus ? null : (
