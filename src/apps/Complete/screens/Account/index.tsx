@@ -17,7 +17,7 @@ export const Account = memo(function Account() {
   useTabTap();
   const color = useColor();
   const dispatch = useRootDispatch();
-  const {goBack, navigate} = useNavigation();
+  const {navigate} = useNavigation();
 
   const onLogout = useCallback(() => {
     dispatch(removeUser());

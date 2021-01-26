@@ -83,7 +83,7 @@ const Home = () => {
       <HomeStack.Screen component={Capture} name="plan" />
       <HomeStack.Screen component={Implement} name="implement" />
       <HomeStack.Screen component={Reflect} name="reflect" />
-      <MainStack.Screen component={Account} name="account" />
+      <HomeStack.Screen component={Account} name="account" />
     </HomeStack.Navigator>
   );
 };
