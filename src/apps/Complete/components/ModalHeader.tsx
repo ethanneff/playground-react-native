@@ -27,7 +27,6 @@ export const ModalHeader = memo(function ModalHeader({
         invisible={!onLeftPress}
         name="chevron-left"
         onPress={onLeftPress}
-        padded
         size={size}
       />
       <Text center flex title={title} type="h4" />
@@ -35,7 +34,6 @@ export const ModalHeader = memo(function ModalHeader({
         invisible={!onRightPress}
         name="close"
         onPress={onRightPress}
-        padded
         size={size}
       />
     </View>
