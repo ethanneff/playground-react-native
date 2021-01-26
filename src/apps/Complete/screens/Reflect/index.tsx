@@ -1,5 +1,4 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
+import React, {memo} from 'react';
 import {Dimensions, View} from 'react-native';
 import {Calendar, Screen, Text} from '../../../../components';
 import {ScrollView} from '../../../../conversions';
@@ -39,11 +38,9 @@ const data = [
 export const Reflect = memo(function Reflect() {
   useTabTap();
   const color = useColor();
-  const {navigate} = useNavigation();
-  const navToAccount = useCallback(() => navigate('account'), [navigate]);
 
   return (
-    <Screen onRightPress={navToAccount} rightIcon="account" title="Reflect">
+    <Screen title="Reflect">
       <ScrollView
         contentContainerStyle={{
           padding: config.padding(4),

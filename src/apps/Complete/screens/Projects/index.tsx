@@ -1,4 +1,3 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent} from 'react-native';
 import {KeyboardHandler, Screen} from '../../../../components';
@@ -17,7 +16,6 @@ import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
 
 export const Projects = memo(function Projects() {
   const color = useColor();
-  const {navigate} = useNavigation();
   const [dimensions, setDimensions] = useState(0);
   const keyboardHeight = useKeyboardHeight();
   const itemId = useRootSelector(getProjects);
@@ -33,15 +31,10 @@ export const Projects = memo(function Projects() {
     [dimensions],
   );
 
-  const navToAccount = useCallback(() => navigate('account'), [navigate]);
+  const showSearchBar = useCallback(() => undefined, []);
 
   return (
-    <Screen
-      onRightPress={navToAccount}
-      onSecondRightPress={navToAccount}
-      rightIcon="account"
-      secondRightIcon="magnify"
-      title="Implement">
+    <Screen onRightPress={showSearchBar} rightIcon="magnify" title="Implement">
       <KeyboardHandler backgroundColor={color.surface} onLayout={onLayout}>
         <List
           itemId={itemId}

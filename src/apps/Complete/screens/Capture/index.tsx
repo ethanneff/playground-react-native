@@ -1,4 +1,3 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useRef, useState} from 'react';
 import {LayoutChangeEvent} from 'react-native';
 import {Button, KeyboardHandler, Screen} from '../../../../components';
@@ -12,7 +11,6 @@ import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
 const initialState = {container: 0, button: 0, size: 0};
 export const Capture = memo(function Capture() {
   useTabTap();
-  const {navigate} = useNavigation();
   const color = useColor();
   const containerRefs = useRef(initialState);
   const keyboardHeight = useKeyboardHeight();
@@ -42,10 +40,10 @@ export const Capture = memo(function Capture() {
     [],
   );
 
-  const navToAccount = useCallback(() => navigate('account'), [navigate]);
+  const showSearchBar = useCallback(() => undefined, []);
 
   return (
-    <Screen onRightPress={navToAccount} rightIcon="account" title="Plan">
+    <Screen onRightPress={showSearchBar} rightIcon="magnify" title="Plan">
       <KeyboardHandler
         backgroundColor={color.surface}
         onLayout={onLayout('container')}>

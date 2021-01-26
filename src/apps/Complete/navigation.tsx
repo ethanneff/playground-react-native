@@ -42,6 +42,7 @@ const tabIcons: TabIcons = {
     unFocused: 'checkbox-multiple-marked-outline',
   },
   reflect: {focused: 'finance', unFocused: 'finance'},
+  account: {focused: 'account', unFocused: 'account'},
 };
 
 type TabBarIconProps = {
@@ -82,6 +83,7 @@ const Home = () => {
       <HomeStack.Screen component={Capture} name="plan" />
       <HomeStack.Screen component={Implement} name="implement" />
       <HomeStack.Screen component={Reflect} name="reflect" />
+      <MainStack.Screen component={Account} name="account" />
     </HomeStack.Navigator>
   );
 };
@@ -114,7 +116,7 @@ export const Main = (): ReactElement => {
   return (
     <MainStack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
       <MainStack.Screen component={Home} name="home" />
-      <MainStack.Screen component={Account} name="account" />
+
       <MainStack.Screen component={ItemDetail} name="item-detail" />
     </MainStack.Navigator>
   );

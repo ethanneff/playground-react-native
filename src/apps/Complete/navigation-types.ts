@@ -17,4 +17,5 @@ export type HomeStackParams = {
   plan: undefined;
   implement: undefined;
   reflect: undefined;
+  account: undefined;
 };

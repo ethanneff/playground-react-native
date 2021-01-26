@@ -44,8 +44,14 @@ export const Project = memo(function Project() {
     goBack();
   }, [goBack]);
 
+  const showSearchBar = useCallback(() => undefined, []);
+
   return (
-    <Screen onLeftPress={navBack} title={projectItemTitle}>
+    <Screen
+      onLeftPress={navBack}
+      onRightPress={showSearchBar}
+      rightIcon="magnify"
+      title={projectItemTitle}>
       <KeyboardHandler backgroundColor={color.surface} onLayout={onLayout}>
         <Board
           listMaxHeight={listMaxHeight}
