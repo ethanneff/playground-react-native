@@ -1,7 +1,8 @@
 import {useIsFocused, useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import React, {memo, useCallback, useState} from 'react';
-import {Button, Modal, TextInput} from '../../../../components';
+import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
+import {TextInput as OriginalTextInput} from 'react-native';
+import {Button, Modal, Text, TextInput} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {config} from '../../../../utils';
 import {ModalHeader} from '../../components';
@@ -15,6 +16,7 @@ export const ResetPassword = memo(function ResetPassword() {
     StackNavigationProp<LandingStackParams>
   >();
   const focus = useIsFocused();
+  const emailRef = useRef<OriginalTextInput | null>(null);
 
   const onSubmit = useCallback(() => goBack(), [goBack]);
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
@@ -25,11 +27,17 @@ export const ResetPassword = memo(function ResetPassword() {
   );
   const navBack = useCallback(() => goBack(), [goBack]);
 
+  useEffect(() => {
+    if (!focus || !emailRef.current) return;
+    emailRef.current.focus();
+  }, [focus]);
+
   return !focus ? null : (
     <Modal backgroundColor={color.surface} onBackgroundPress={navWelcome}>
       <ModalHeader onRightPress={navBack} title="Reset password" />
       <TextInput
         onChangeText={onFormChange('email')}
+        onRef={emailRef}
         placeholder="Email address"
         style={{marginBottom: config.padding(4)}}
         value={form.email}
