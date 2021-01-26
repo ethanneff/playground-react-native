@@ -34,7 +34,17 @@ export const ResetPassword = memo(function ResetPassword() {
 
   return !focus ? null : (
     <Modal backgroundColor={color.surface} onBackgroundPress={navWelcome}>
-      <ModalHeader onRightPress={navBack} title="Reset password" />
+      <ModalHeader onRightPress={navBack} title="Password reset" />
+      <Text
+        center
+        style={{paddingBottom: config.padding(4)}}
+        title="Please enter the email address associated with your account."
+      />
+      <Text
+        center
+        style={{paddingBottom: config.padding(4)}}
+        title="We'll send you an email with your login email as well as a password reset instructions."
+      />
       <TextInput
         onChangeText={onFormChange('email')}
         onRef={emailRef}
