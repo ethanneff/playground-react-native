@@ -28,7 +28,7 @@ export const Modal = memo(function Modal({
   noScroll,
   showOverlay,
   widthPercent = 0.8,
-  heightPercent = 0.6,
+  heightPercent = 0.8,
   elevation,
   testID,
 }: ModalProps) {
