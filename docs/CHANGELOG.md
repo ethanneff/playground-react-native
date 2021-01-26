@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.49.1](https://github.com/ethanneff/example/compare/v2.49.0...v2.49.1) (2021-01-25)
+
+
+### Bug Fixes
+
+* add padding to modals ([ae75b7d](https://github.com/ethanneff/example/commit/ae75b7d7b26119f1c991c7ec23aed9df68ac9932))
+
 # [2.49.0](https://github.com/ethanneff/example/compare/v2.48.1...v2.49.0) (2021-01-23)
 
 
