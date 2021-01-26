@@ -1,13 +1,12 @@
 export type MainStackParams = {
   home: undefined;
-  account: undefined;
   'item-detail': undefined;
 };
 export type LandingStackParams = {
   welcome: undefined;
   'sign-up': undefined;
   'log-in': undefined;
-  'reset-password': undefined;
+  'password-reset': undefined;
 };
 export type ImplementStackParams = {
   projects: undefined;

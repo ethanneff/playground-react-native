@@ -9,7 +9,7 @@ import {ModalHeader} from '../../components';
 import {LandingStackParams} from '../../navigation-types';
 
 const initialState = {email: ''};
-export const ResetPassword = memo(function ResetPassword() {
+export const PasswordReset = memo(function PasswordReset() {
   const color = useColor();
   const [form, setForm] = useState(initialState);
   const {goBack, navigate} = useNavigation<

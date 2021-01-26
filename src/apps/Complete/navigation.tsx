@@ -21,10 +21,10 @@ import {
   Capture,
   ItemDetail,
   LogIn,
+  PasswordReset,
   Project,
   Projects,
   Reflect,
-  ResetPassword,
   SignUp,
   Welcome,
 } from './screens';
@@ -106,7 +106,7 @@ export const Landing = (): ReactElement => {
       <LandingStack.Screen component={Welcome} name="welcome" />
       <LandingStack.Screen component={SignUp} name="sign-up" />
       <LandingStack.Screen component={LogIn} name="log-in" />
-      <LandingStack.Screen component={ResetPassword} name="reset-password" />
+      <LandingStack.Screen component={PasswordReset} name="password-reset" />
     </LandingStack.Navigator>
   );
 };
@@ -116,7 +116,6 @@ export const Main = (): ReactElement => {
   return (
     <MainStack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
       <MainStack.Screen component={Home} name="home" />
-
       <MainStack.Screen component={ItemDetail} name="item-detail" />
     </MainStack.Navigator>
   );

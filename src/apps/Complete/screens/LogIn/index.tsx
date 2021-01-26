@@ -22,7 +22,7 @@ export const LogIn = memo(function LogIn() {
   >();
   const navBack = useCallback(() => goBack(), [goBack]);
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
-  const onSecondary = useCallback(() => navigate('reset-password'), [navigate]);
+  const onSecondary = useCallback(() => navigate('password-reset'), [navigate]);
   const completeForm = form.email.length > 0 && form.password.length > 0;
   const emailRef = useRef<OriginalTextInput | null>(null);
 
