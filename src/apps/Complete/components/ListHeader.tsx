@@ -57,7 +57,7 @@ export const ListHeader = memo(function ListHeader({
       <TextInput
         editable={item.editable}
         icons={icons}
-        onSubmit={onSave}
+        onSubmitEditing={onSave}
         placeholder="List title..."
         type="h4"
         value={item.title}
