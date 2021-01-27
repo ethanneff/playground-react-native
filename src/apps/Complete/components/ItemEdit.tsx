@@ -25,7 +25,7 @@ export const ItemEdit = memo(function ItemEdit({
 
   const icons = useCallback(
     (type: string) => [
-      {name: 'close', onPress: onClose, focus: true},
+      {name: 'close', onPress: onClose, focus: true, reset: true},
       {
         name: 'send',
         onPress: onSubmit(type),
