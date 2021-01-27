@@ -199,7 +199,7 @@ export const TextInput = memo(function TextInput({
               (!focus && icon.focus) ? null : (
                 <Icon
                   color={icon.color}
-                  disabled={icon.required && value.trim().length === 0}
+                  disabled={icon.required && text.trim().length === 0}
                   key={`${icon.name}-focus`}
                   name={icon.name}
                   onPress={onIconPressInternal(icon.onPress)}
