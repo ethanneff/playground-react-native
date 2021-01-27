@@ -1,27 +1,33 @@
-import React, {memo, useCallback} from 'react';
-import {Keyboard} from 'react-native';
+import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
+import {Keyboard, TextInput as OriginalTextInput, View} from 'react-native';
 import {v4} from 'uuid';
-import {useRootDispatch, useRootSelector} from '../../../utils';
+import {Button, TextInput} from '../../../components';
+import {useColor} from '../../../hooks';
+import {config, useRootDispatch, useRootSelector} from '../../../utils';
 import {addItemToItem, createItem, Item} from '../models';
-import {AddButton} from './AddButton';
+import {completeConfig} from '../utils';
 
 type AddItemProps = {
-  parentItemId: string | null;
+  width?: number;
+  parentItemId: string;
   placeholder: string;
   title: string;
-  width?: number;
 };
 
 export const AddItem = memo(function AddItem({
+  width,
+  parentItemId,
   placeholder,
   title,
-  parentItemId,
-  width,
 }: AddItemProps) {
+  const color = useColor();
+  const textInputRef = useRef<OriginalTextInput | null>(null);
+  const [showInput, setShowInput] = useState(false);
   const dispatch = useRootDispatch();
   const userId = useRootSelector((s) => s.completeUser?.id);
   if (!userId) throw new Error('missing userId on add item');
   if (!parentItemId) throw new Error('missing parentItemId on add item');
+
   const onSubmit = useCallback(
     (value: string) => {
       if (!value) return Keyboard.dismiss();
@@ -46,12 +52,49 @@ export const AddItem = memo(function AddItem({
     [dispatch, parentItemId, userId],
   );
 
+  const onAddItemPress = useCallback(() => setShowInput((p) => !p), []);
+  const onClose = useCallback(() => setShowInput(false), []);
+  const onBlur = useCallback(() => setShowInput(false), []);
+
+  const icons = [
+    {name: 'close', onPress: onClose, focus: true, reset: true},
+    {
+      name: 'send',
+      onPress: onSubmit,
+      color: color.primary,
+      focus: true,
+      required: true,
+      clear: true,
+    },
+  ];
+
+  useEffect(() => {
+    if (showInput) textInputRef.current?.focus();
+  }, [showInput]);
+
   return (
-    <AddButton
-      onSubmit={onSubmit}
-      placeholder={placeholder}
-      title={title}
-      width={width}
-    />
+    <View
+      style={{
+        width,
+        height: config.padding(12),
+        borderRadius: completeConfig.borderRadius,
+        backgroundColor: color.background,
+        justifyContent: 'center',
+      }}>
+      {showInput ? (
+        <TextInput
+          blurOnSubmit={false}
+          icons={icons}
+          onBlur={onBlur}
+          onRef={textInputRef}
+          onSubmitEditing={onSubmit}
+          placeholder={placeholder}
+          returnKeyType="done"
+          submitClear
+        />
+      ) : (
+        <Button center color="primary" onPress={onAddItemPress} title={title} />
+      )}
+    </View>
   );
 });
