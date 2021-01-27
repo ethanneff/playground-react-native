@@ -72,7 +72,7 @@ export const ListItem = memo(function ListItem({
   }, [dispatch, index, parentChildrenCount, parentItemId]);
 
   const icons = [
-    {name: 'close', onPress: onItemTitleClose, focus: true},
+    {name: 'close', onPress: onItemTitleClose, focus: true, reset: true},
     {
       name: 'send',
       onPress: onItemTitleSubmit,
@@ -109,6 +109,7 @@ export const ListItem = memo(function ListItem({
         onSubmitEditing={onItemTitleSubmit}
         placeholder="Item name..."
         pointerEvents="none"
+        returnKeyType="done"
         value={item.title}
       />
     </TouchableWithoutFeedback>

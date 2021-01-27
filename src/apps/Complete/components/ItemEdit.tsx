@@ -44,8 +44,9 @@ export const ItemEdit = memo(function ItemEdit({
         <TextInput
           editable={titleEditable}
           icons={icons('title')}
-          onSubmit={onSubmit('title')}
+          onSubmitEditing={onSubmit('title')}
           placeholder={`${placeholder} title...`}
+          returnKeyType="done"
           value={title}
         />
         <ItemDetailHeader title="Details" />
