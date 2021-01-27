@@ -1,5 +1,38 @@
 # Changelog
 
+## [2.49.2](https://github.com/ethanneff/example/compare/v2.49.1...v2.49.2) (2021-01-27)
+
+
+### Bug Fixes
+
+* add details to password reset ([d8ba8fa](https://github.com/ethanneff/example/commit/d8ba8fae1c801337a7c6366b56b6df5c6e67c45b))
+* allow return on item details ([86d7c42](https://github.com/ethanneff/example/commit/86d7c42ada5ae8550269b0651bbd2b9713398208))
+* allow taps in modal ([c69d82f](https://github.com/ethanneff/example/commit/c69d82fae7db58fd835c5ef4578346d1c79bb4b9))
+* allow textinput reset on submit and icon press ([0e22386](https://github.com/ethanneff/example/commit/0e2238614fcdc58438c91cff907b17eae1de1b97))
+* change return type on item edit ([26dd7c8](https://github.com/ethanneff/example/commit/26dd7c83f66ae4e0cdd364f71482c09037d26fed))
+* combine addItem and addButton ([df1987e](https://github.com/ethanneff/example/commit/df1987e90044aa53bd72bca60f4857634c504219))
+* combine textinput with icons ([8ebcc56](https://github.com/ethanneff/example/commit/8ebcc565e6127f6eb19e6f01a69a0d8ae4cfa8bd))
+* correct icon disable for text value ([cf32df9](https://github.com/ethanneff/example/commit/cf32df9ca2b07fd7f735dbd12774ede728166e93))
+* correct modal height on keyboard ([7085529](https://github.com/ethanneff/example/commit/70855293ab821bbda6c8389cb4baa482f9748f9a))
+* correct prop ([c4d17ec](https://github.com/ethanneff/example/commit/c4d17ec01edbd922bdde6dd919708143fd6ce898))
+* focus email on login and signup ([74bff4e](https://github.com/ethanneff/example/commit/74bff4eaa47cfa47956612bcd20abdc12a9305cc))
+* make account its own screen ([ae38dc9](https://github.com/ethanneff/example/commit/ae38dc9d454808027da69f086543cac40a870198))
+* move modal nav button left ([d126aba](https://github.com/ethanneff/example/commit/d126aba3a2e8d43c808f4fc8e1a1bb83ab88c834))
+* prevent editing title on non-edit items ([56bda4f](https://github.com/ethanneff/example/commit/56bda4fe7814a9454fcba9e23a0b1a01d7c8894b))
+* prevent height zero sizing with extra rerender ([9bb1b17](https://github.com/ethanneff/example/commit/9bb1b1782b7322aa384d5d5b8d51987840145df6))
+* reference textinput to pass icons ([08bdc30](https://github.com/ethanneff/example/commit/08bdc3050decb779b2307479756675333cf2dfab))
+* remove console logs ([61f3bff](https://github.com/ethanneff/example/commit/61f3bff5f0ea607fa237c05a17f30675f1aff6e5))
+* rename screen to password reset ([6c1e480](https://github.com/ethanneff/example/commit/6c1e48023cf41cdb8e49b60210d368e40c1f6dc9))
+* reset on clear item edit ([6e0fc0d](https://github.com/ethanneff/example/commit/6e0fc0d7f139c1a25b96f485aaae3b89ca72beaf))
+* select email on password reset ([b56a684](https://github.com/ethanneff/example/commit/b56a68421648de3ebef38bb615ef4788e0ef9424))
+* update deps ([ff7e3ae](https://github.com/ethanneff/example/commit/ff7e3aef0bc6e363203f2935bbb4ea1e9c2b0cbb))
+* update deps ([749712e](https://github.com/ethanneff/example/commit/749712e2f84762b4e0964b9a8d3c1e80975d7222))
+* update deps ([5b98406](https://github.com/ethanneff/example/commit/5b98406f247b76a2e014cecce535c1f68d5be4fb))
+* update linting ([cdeab56](https://github.com/ethanneff/example/commit/cdeab56644833aae2ae4a4bb6ef266f9be308b0e))
+* update list header keyboard ([bed0e44](https://github.com/ethanneff/example/commit/bed0e44e74920f73feb4e15b3d18e7a6ae5e9cdc))
+* update login input forms for keyboard settings ([43d2a84](https://github.com/ethanneff/example/commit/43d2a84242d5cfe96c36e3206aa905771fb1a084))
+* update optional props ([32161c7](https://github.com/ethanneff/example/commit/32161c7d961f20b27e5b342e4a8347ef2861d0cd))
+
 ## [2.49.1](https://github.com/ethanneff/example/compare/v2.49.0...v2.49.1) (2021-01-25)
 
 
