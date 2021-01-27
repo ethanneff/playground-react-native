@@ -8,28 +8,40 @@ import {config} from '../../../../utils';
 import {ModalHeader} from '../../components';
 import {LandingStackParams} from '../../navigation-types';
 
-const initialState = {email: ''};
+const initialRef = {email: ''};
+const initialState = {complete: false};
 export const PasswordReset = memo(function PasswordReset() {
   const color = useColor();
-  const [form, setForm] = useState(initialState);
+  const form = useRef(initialRef);
+  const [state, setState] = useState(initialState);
   const {goBack, navigate} = useNavigation<
     StackNavigationProp<LandingStackParams>
   >();
   const focus = useIsFocused();
   const emailRef = useRef<OriginalTextInput | null>(null);
 
-  const onSubmit = useCallback(() => goBack(), [goBack]);
+  const onSubmit = useCallback(() => {
+    if (!state.complete) return;
+    goBack();
+  }, [goBack, state.complete]);
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
   const onFormChange = useCallback(
-    (key: keyof typeof form) => (val: string) =>
-      setForm((p) => ({...p, [key]: val})),
+    (key: keyof typeof initialRef) => (val: string) => {
+      form.current = {...form.current, [key]: val};
+      const complete = val.length > 0;
+      setState((p) => ({...p, complete}));
+    },
     [],
   );
   const navBack = useCallback(() => goBack(), [goBack]);
 
   useEffect(() => {
-    if (focus && emailRef.current) emailRef.current.focus();
-    if (!focus) setForm(initialState);
+    if (focus) {
+      emailRef.current?.focus();
+    } else {
+      form.current = initialRef;
+      setState(initialState);
+    }
   }, [focus]);
 
   return !focus ? null : (
@@ -46,16 +58,22 @@ export const PasswordReset = memo(function PasswordReset() {
         title="We'll send you an email with your login email as well as a password reset instructions."
       />
       <TextInput
+        autoCorrect={false}
+        blurOnSubmit={false}
+        keyboardType="email-address"
         onChangeText={onFormChange('email')}
         onRef={emailRef}
+        onSubmitEditing={onSubmit}
         placeholder="Email address"
+        returnKeyType="send"
         style={{marginBottom: config.padding(4)}}
-        value={form.email}
+        textContentType="username"
+        value=""
       />
       <Button
         center
         color="primary"
-        disable={!form.email.length}
+        disable={!state.complete}
         emphasis="high"
         onPress={onSubmit}
         title="Reset password"
