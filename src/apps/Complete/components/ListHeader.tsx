@@ -36,7 +36,7 @@ export const ListHeader = memo(function ListHeader({
   const onClose = useCallback(() => Keyboard.dismiss(), []);
 
   const icons = [
-    {name: 'close', onPress: onClose, focus: true},
+    {name: 'close', onPress: onClose, focus: true, reset: true},
     {
       name: 'send',
       onPress: onSave,
@@ -59,6 +59,7 @@ export const ListHeader = memo(function ListHeader({
         icons={icons}
         onSubmitEditing={onSave}
         placeholder="List title..."
+        returnKeyType="done"
         type="h4"
         value={item.title}
       />
