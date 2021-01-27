@@ -28,6 +28,8 @@ type Icon = {
   color?: string;
   focus?: boolean;
   required?: boolean;
+  clear?: boolean;
+  reset?: boolean;
 };
 
 type TextInputProps = {
@@ -49,8 +51,9 @@ type TextInputProps = {
   onFocus?: (text: string) => void;
   onBlur?: (text: string) => void;
   pointerEvents?: PointerEvents;
-  value: string;
+  value?: string;
   icons?: Icon[];
+  submitClear?: boolean;
   onRef?: MutableRefObject<Original | null>;
   onSubmitEditing?: (text: string) => void;
   onChangeText?: (text: string) => void;
@@ -60,13 +63,14 @@ type TextInputProps = {
 };
 
 export const TextInput = memo(function TextInput({
-  value,
+  value = '',
   multiline,
   autoCorrect,
   emphasis,
   disableFullscreenUI,
   iconHeight = config.padding(5),
   placeholder,
+  submitClear,
   onChangeText,
   backgroundColor,
   editable,
@@ -109,7 +113,8 @@ export const TextInput = memo(function TextInput({
 
   const onSubmitEditingInternal = useCallback(() => {
     if (onSubmitEditing) onSubmitEditing(text);
-  }, [onSubmitEditing, text]);
+    if (submitClear) setText('');
+  }, [onSubmitEditing, submitClear, text]);
 
   const onFocusInternal = useCallback(() => {
     setFocus(true);
@@ -121,9 +126,14 @@ export const TextInput = memo(function TextInput({
     if (onBlur) onBlur(text);
   }, [onBlur, text]);
 
-  const onIconPressInternal = useCallback((callback) => () => callback(text), [
-    text,
-  ]);
+  const onIconPressInternal = useCallback(
+    (icon: Icon) => () => {
+      icon.onPress(text);
+      if (icon.clear) setText('');
+      if (icon.reset) setText(value);
+    },
+    [text, value],
+  );
 
   const onInternalRef = useCallback(
     (ref: Original | null) => {
@@ -202,7 +212,7 @@ export const TextInput = memo(function TextInput({
                   disabled={icon.required && text.trim().length === 0}
                   key={`${icon.name}-focus`}
                   name={icon.name}
-                  onPress={onIconPressInternal(icon.onPress)}
+                  onPress={onIconPressInternal(icon)}
                   padded
                   size={iconHeight}
                 />
