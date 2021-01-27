@@ -52,7 +52,6 @@ export const ItemEdit = memo(function ItemEdit({
         <TextInput
           icons={icons('description')}
           multiline
-          onSubmit={onSubmit('description')}
           placeholder={`${placeholder} details...`}
           value={description || ''}
         />
