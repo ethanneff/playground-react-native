@@ -36,6 +36,7 @@ export const ItemEdit = memo(function ItemEdit({
     ],
     [color.primary, onClose, onSubmit],
   );
+  // TODO: need to clear on blur
 
   return (
     <View>
