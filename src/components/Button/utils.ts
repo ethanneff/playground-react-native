@@ -49,12 +49,6 @@ export const getStyles = ({
     invisible: {
       opacity: 0,
     },
-    label: {
-      height: config.padding(5),
-      justifyContent: 'flex-start',
-      marginVertical: config.padding(1),
-      paddingHorizontal: 0,
-    },
     right: {
       alignSelf: 'flex-end',
     },
