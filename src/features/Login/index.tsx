@@ -16,7 +16,6 @@ interface Props {
   onBackgroundPress: () => void;
 }
 
-// TODO: relocate to somewhere
 interface SignInButtonProps {
   onPress: () => void;
   icon: string;
