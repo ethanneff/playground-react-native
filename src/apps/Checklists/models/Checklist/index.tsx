@@ -46,7 +46,7 @@ export type Checklist = {
   createdAt: number;
   updatedAt: number;
   userId: string;
-  // item: string[]; // TODO: move into other reducers
+  // item: string[];
   // history: string[];
   // viewed: string[];
   // liked: UserId[];
