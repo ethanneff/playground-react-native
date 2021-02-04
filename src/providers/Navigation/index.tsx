@@ -1,6 +1,7 @@
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React, {lazy, memo, Suspense, useCallback} from 'react';
+import Config from 'react-native-config';
 import {
   ActivityIndicator,
   Button,
@@ -50,10 +51,12 @@ const Stack = createStackNavigator();
 const linking = {
   prefixes: ['https://app.example.com', 'mychat://'],
 };
+console.log(Config.APP);
 
 export const Navigation = memo(function Navigation() {
   const {initialState, isReady, onStateChange, onRef} = usePersistedState();
   const fallback = <ActivityIndicator />;
+  const initialRouteName = Config.APP || 'admin';
 
   if (!isReady) return fallback;
 
@@ -70,7 +73,10 @@ export const Navigation = memo(function Navigation() {
         linking={linking}
         onStateChange={onStateChange}
         ref={onRef}>
-        <Stack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
+        <Stack.Navigator
+          initialRouteName={initialRouteName}
+          mode={rootMode}
+          screenOptions={rootScreenOptions}>
           <Stack.Screen component={Admin} name="admin" />
           <Stack.Screen component={Arcade} name="arcade" />
           <Stack.Screen component={Portfolio} name="portfolio" />

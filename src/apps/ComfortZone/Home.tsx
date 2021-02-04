@@ -1,9 +1,8 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {TextInput, View} from 'react-native';
 import {Button, Calendar, Card, Input, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
-import {useColor} from '../../hooks';
+import {useAdminNavBack, useColor} from '../../hooks';
 import {config} from '../../utils';
 
 const data = [
@@ -148,14 +147,13 @@ const data = [
 ];
 
 export const Home = memo(function Home() {
-  const {goBack} = useNavigation();
+  const {onLeftPress} = useAdminNavBack();
   const color = useColor();
   const inputRef = useRef<TextInput | null>(null);
   const [challenge, setChallenge] = useState('...');
   const [customInput, setCustomInput] = useState('');
   const [showCustomInput, setShowCustomInput] = useState(false);
 
-  const navBack = useCallback(() => goBack(), [goBack]);
   const onRandom = useCallback(() => {
     setChallenge(data[Math.floor(Math.random() * data.length)]);
     setShowCustomInput(false);
@@ -178,7 +176,7 @@ export const Home = memo(function Home() {
   }, [showCustomInput]);
 
   return (
-    <Screen onLeftPress={navBack} title="Comfort Zone">
+    <Screen onLeftPress={onLeftPress} title="Comfort Zone">
       <ScrollView
         contentContainerStyle={{
           padding: config.padding(4),

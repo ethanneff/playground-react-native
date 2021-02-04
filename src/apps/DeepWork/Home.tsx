@@ -3,7 +3,7 @@ import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Activity, Card, Icon, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
-import {useColor} from '../../hooks';
+import {useAdminNavBack, useColor} from '../../hooks';
 import {config} from '../../utils';
 
 /*
@@ -31,18 +31,16 @@ import {config} from '../../utils';
 */
 
 export const Home = memo(function Home() {
-  const {goBack, navigate} = useNavigation();
+  const {navigate} = useNavigation();
   const color = useColor();
-
-  const navBack = useCallback(() => goBack(), [goBack]);
-
+  const {onLeftPress} = useAdminNavBack();
   const onItemAdd = useCallback(() => undefined, []);
   const navToAccount = useCallback(() => navigate('account'), [navigate]);
 
   return (
     <Screen
       dropShadow
-      onLeftPress={navBack}
+      onLeftPress={onLeftPress}
       onRightPress={navToAccount}
       rightIcon="account"
       title="Deep Work">

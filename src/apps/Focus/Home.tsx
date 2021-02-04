@@ -1,7 +1,7 @@
-import {useNavigation} from '@react-navigation/native';
 import dayjs from 'dayjs';
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {Modal, Screen, Text} from '../../components';
+import {useAdminNavBack} from '../../hooks';
 import {List} from './List';
 import {Item} from './types';
 
@@ -21,7 +21,7 @@ export const Home = memo(function Home() {
   const [modalProfile] = useState(false);
   const [modalLogin] = useState(false);
   const [items, setItems] = useState<Item[]>([]);
-  const {goBack} = useNavigation();
+  const {onLeftPress} = useAdminNavBack();
 
   const generateMoreItems = useCallback(() => {
     const group = [...items];
@@ -61,10 +61,9 @@ export const Home = memo(function Home() {
 
   useEffect(() => handleLoad(), [handleLoad]);
 
-  const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <>
-      <Screen border onLeftPress={navBack} title="Focus">
+      <Screen border onLeftPress={onLeftPress} title="Focus">
         {items.length > 0 && (
           <List
             items={items}

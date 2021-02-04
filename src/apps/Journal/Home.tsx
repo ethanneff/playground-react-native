@@ -1,14 +1,13 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Calendar, Card, Input, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
-import {useColor} from '../../hooks';
+import {useAdminNavBack, useColor} from '../../hooks';
 import {config} from '../../utils';
 
 export const Home = memo(function Home() {
   const color = useColor();
-  const {goBack} = useNavigation();
+  const {onLeftPress} = useAdminNavBack();
   const styles = StyleSheet.create({
     bottom: {
       paddingBottom: config.padding(4),
@@ -16,10 +15,9 @@ export const Home = memo(function Home() {
   });
 
   const handleChangeText = useCallback(() => undefined, []);
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Journal">
+    <Screen dropShadow onLeftPress={onLeftPress} title="Journal">
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: config.padding(4),
