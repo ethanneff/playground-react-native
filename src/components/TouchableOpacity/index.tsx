@@ -1,7 +1,7 @@
 import React, {ReactElement, ReactNode, useCallback} from 'react';
 import {StyleProp, ViewStyle} from 'react-native';
 import {TouchableOpacity as Original} from '../../conversions';
-import {SoundManager} from '../../utils/Sound';
+import {SoundManager} from '../../utils';
 
 interface Props {
   testID?: string;

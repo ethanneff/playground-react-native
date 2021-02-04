@@ -1,15 +1,14 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {Button, Card, Icon, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
 import {Login} from '../../features/Login';
-import {useColor} from '../../hooks';
+import {useAdminNavBack, useColor} from '../../hooks';
 import {config} from '../../utils';
 
 export const Home = memo(function Checklists() {
   const color = useColor();
-  const {goBack} = useNavigation();
+  const {onLeftPress} = useAdminNavBack();
   const styles = StyleSheet.create({
     bottom: {
       paddingBottom: config.padding(4),
@@ -17,11 +16,10 @@ export const Home = memo(function Checklists() {
   });
   const [showLogin, setShowLogin] = useState(false);
   const onToggleLogin = useCallback(() => setShowLogin((prev) => !prev), []);
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <>
-      <Screen onLeftPress={navBack} title="Checklists">
+      <Screen onLeftPress={onLeftPress} title="Checklists">
         <ScrollView
           contentContainerStyle={{
             paddingHorizontal: config.padding(4),

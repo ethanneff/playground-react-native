@@ -14,7 +14,7 @@ const slides: Slide[] = [
     icon: 'trophy-outline',
     sections: [
       {
-        title: 'Welcome to accomplish',
+        title: 'Welcome to Accomplish',
         titleType: 'h4',
         titleStyle: {paddingBottom: config.padding(10)},
         paragraphs: [

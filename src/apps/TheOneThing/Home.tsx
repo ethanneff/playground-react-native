@@ -1,9 +1,8 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {View} from 'react-native';
 import {Card, Icon, Screen, Text, TouchableOpacity} from '../../components';
 import {ScrollView} from '../../conversions';
-import {useColor} from '../../hooks';
+import {useAdminNavBack, useColor} from '../../hooks';
 import {config} from '../../utils';
 
 interface SectionProps {
@@ -72,11 +71,10 @@ const Section = ({title, subtitle, description, items = []}: SectionProps) => {
 
 export const Home = memo(function Home() {
   const color = useColor();
-  const {goBack} = useNavigation();
-  const navBack = useCallback(() => goBack(), [goBack]);
+  const {onLeftPress} = useAdminNavBack();
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="The One Thing">
+    <Screen dropShadow onLeftPress={onLeftPress} title="The One Thing">
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: config.padding(4),

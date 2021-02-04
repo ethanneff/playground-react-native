@@ -1,9 +1,8 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
+import React, {memo} from 'react';
 import {StyleSheet} from 'react-native';
 import {Activity, Icon, Screen} from '../../components';
 import {ScrollView} from '../../conversions';
-import {useColor} from '../../hooks';
+import {useAdminNavBack, useColor} from '../../hooks';
 import {config} from '../../utils';
 
 // TODO: gitlab
@@ -16,7 +15,7 @@ import {config} from '../../utils';
 
 export const Home = memo(function ActivityTracker() {
   const color = useColor();
-  const {goBack} = useNavigation();
+  const {onLeftPress} = useAdminNavBack();
   const styles = StyleSheet.create({
     background: {
       backgroundColor: color.surface,
@@ -27,10 +26,8 @@ export const Home = memo(function ActivityTracker() {
     },
   });
 
-  const navBack = useCallback(() => goBack(), [goBack]);
-
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Progress">
+    <Screen dropShadow onLeftPress={onLeftPress} title="Progress">
       <ScrollView
         contentContainerStyle={styles.container}
         style={styles.background}>

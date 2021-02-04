@@ -1,13 +1,13 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {Modal, Screen, Text} from '../../components';
+import {useAdminNavBack} from '../../hooks';
 import {List} from './List';
 
 const initialState = {settings: false, profile: false};
 
 export const Home = memo(function CantHurtMeMain() {
   const [showModal, setShowModal] = useState(initialState);
-  const {goBack} = useNavigation();
+  const {onLeftPress} = useAdminNavBack();
 
   const handleModalBackgroundPress = useCallback(
     () => setShowModal(initialState),
@@ -23,11 +23,9 @@ export const Home = memo(function CantHurtMeMain() {
     [],
   );
 
-  const navBack = useCallback(() => goBack(), [goBack]);
-
   return (
     <>
-      <Screen dropShadow onLeftPress={navBack} title="Can't Hurt Me">
+      <Screen dropShadow onLeftPress={onLeftPress} title="Can't Hurt Me">
         <List
           onProfilePress={handleProfilePress}
           onSettingsPress={handleSettingsPress}

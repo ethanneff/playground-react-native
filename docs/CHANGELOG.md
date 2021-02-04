@@ -1,5 +1,31 @@
 # Changelog
 
+# [2.50.0](https://github.com/ethanneff/example/compare/v2.49.2...v2.50.0) (2021-02-04)
+
+
+### Bug Fixes
+
+* add auth dependencies ([97c3783](https://github.com/ethanneff/example/commit/97c37834c8c2add6949d5795a3c028d5f9210155))
+* add error landing to useAuth ([da3360e](https://github.com/ethanneff/example/commit/da3360e7a5e04bbb4981c28748682f7039fa35ce))
+* correct linting ([3779ee1](https://github.com/ethanneff/example/commit/3779ee1a79aff410cadb1f6bf8de3b74e55f7b73))
+* navigate to app based on env ([6f15c28](https://github.com/ethanneff/example/commit/6f15c28aaff3c00f0979bda4efd01b65cf41bc54))
+* pass size to activity indicator ([b2b1e78](https://github.com/ethanneff/example/commit/b2b1e78f036a67715e9d1daa7bd7870d0dcb3732))
+* pass styling to activity indicator ([dbfdc41](https://github.com/ethanneff/example/commit/dbfdc417dd3a033bc928e711f9b6cc9875998bdc))
+* remove doc ([5d83f45](https://github.com/ethanneff/example/commit/5d83f45b2fb2294188941ae7fe29f481f053dc98))
+* remove gem pod install because needs sudo ([a211bcb](https://github.com/ethanneff/example/commit/a211bcbb8c8c67f5a313915ffabb081de6f76f2f))
+* remove unused style ([09faa97](https://github.com/ethanneff/example/commit/09faa979269c83bbb34e194eeb527779f3c06750))
+* update cocoapods on reset ([cc1aeae](https://github.com/ethanneff/example/commit/cc1aeaec6a85bdd3db67e4c6a954f9061dd67fd1))
+* update deps ([743fbb1](https://github.com/ethanneff/example/commit/743fbb14f5d25a4bd5eee68b12bc7bd8489128d6))
+* update last upgrade version ([26d1824](https://github.com/ethanneff/example/commit/26d1824037e347f012ecb41f7bfdf8a14c464e41))
+* update pod file to ios 10 ([a3ff4ec](https://github.com/ethanneff/example/commit/a3ff4ecdeafde7a837d75df98add25369d217bb3))
+* update sound import to use utils ([2a9bcb0](https://github.com/ethanneff/example/commit/2a9bcb0b8b4ee912e64644da1f5890f22a45e236))
+* update welcome title ([9c67027](https://github.com/ethanneff/example/commit/9c67027175712b39fa97caeb4caf7b837c5100fb))
+
+
+### Features
+
+* add useAuth hook ([a9bcbe2](https://github.com/ethanneff/example/commit/a9bcbe2c72db25ec6501cb9c19565519fe2c36c9))
+
 ## [2.49.2](https://github.com/ethanneff/example/compare/v2.49.1...v2.49.2) (2021-01-27)
 
 

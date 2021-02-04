@@ -2,8 +2,13 @@ import React, {memo, useCallback, useRef} from 'react';
 import {Animated, StyleProp, StyleSheet, TextStyle} from 'react-native';
 import {useColor, useDriver} from '../../hooks';
 import {Color} from '../../models';
-import {config, FontEmphasis, FontType, getFontStyles} from '../../utils';
-import {SoundManager} from '../../utils/Sound';
+import {
+  config,
+  FontEmphasis,
+  FontType,
+  getFontStyles,
+  SoundManager,
+} from '../../utils';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
 

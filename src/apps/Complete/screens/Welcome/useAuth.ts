@@ -1,25 +1,42 @@
 import {appleAuth} from '@invertase/react-native-apple-authentication';
-import {GoogleSignin} from '@react-native-community/google-signin';
+import {GoogleSignin as GoogleSignIn} from '@react-native-community/google-signin';
 import {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import {useCallback, useEffect, useState} from 'react';
-import {AccessToken, LoginManager} from 'react-native-fbsdk';
+import Config from 'react-native-config';
+// import {AccessToken, LoginManager} from 'react-native-fbsdk';
 import {auth} from '../../../../conversions/Firebase';
 
-GoogleSignin.configure({
-  webClientId: '',
-});
+GoogleSignIn.configure({webClientId: Config.GOOGLE_SIGN_IN});
 
-export const useAuth = (): any => {
+type UserOrNull = FirebaseAuthTypes.User | null;
+type ConfirmOrNull = FirebaseAuthTypes.ConfirmationResult | null;
+
+type UseAuth = {
+  initializing: boolean;
+  user: UserOrNull;
+  error: string | null;
+  confirm: ConfirmOrNull;
+  onEmail: (email: string, password: string) => () => void;
+  onApple: () => void;
+  onAnonymous: () => void;
+  onPhone: (phone: string) => () => void;
+  onPhoneConfirm: (code: string) => () => void;
+  onFacebook: () => void;
+  onGoogle: () => void;
+  onLogout: () => void;
+  onErrorClear: () => void;
+  onPasswordReset: (email: string) => () => void;
+};
+
+export const useAuth = (): UseAuth => {
   const [initializing, setInitializing] = useState(true);
-  const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
-  const [
-    confirm,
-    setConfirm,
-  ] = useState<FirebaseAuthTypes.ConfirmationResult | null>(null);
+  const [user, setUser] = useState<UserOrNull>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [confirm, setConfirm] = useState<ConfirmOrNull>(null);
 
   const onAuthStateChanged = useCallback(
-    (user: FirebaseAuthTypes.User | null) => {
-      setUser(user);
+    (userData: FirebaseAuthTypes.User | null) => {
+      setUser(userData);
       if (initializing) setInitializing(false);
     },
     [initializing],
@@ -30,110 +47,150 @@ export const useAuth = (): any => {
     return subscriber;
   }, [onAuthStateChanged]);
 
-  const onEmail = useCallback((email, password) => {
-    auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        console.log('User account created & signed in!');
-      })
-      .catch((error) => {
-        if (error.code === 'auth/email-already-in-use')
-          console.log('That email address is already in use!');
-        if (error.code === 'auth/invalid-email')
-          console.log('That email address is invalid!');
-        console.error(error);
-      });
-  }, []);
+  const onErrorClear = useCallback(() => setError(null), []);
 
-  const onAnonymous = useCallback(() => {
-    auth()
-      .signInAnonymously()
-      .then(() => {
-        console.log('User signed in anonymously');
-      })
-      .catch((error) => {
-        if (error.code === 'auth/operation-not-allowed')
-          console.log('Enable anonymous in your firebase console.');
+  const onEmail = useCallback(
+    (email, password) => async () => {
+      try {
+        await auth().createUserWithEmailAndPassword(email, password);
+      } catch (e) {
+        setError(
+          e.code === 'auth/email-already-in-use'
+            ? 'That email address is already in use!'
+            : e.code === 'auth/invalid-email'
+            ? 'That email address is invalid!'
+            : 'Unknown error on login',
+        );
+      }
+    },
+    [],
+  );
 
-        console.error(error);
-      });
+  const onPasswordReset = useCallback(
+    (email) => async () => {
+      try {
+        await auth().sendPasswordResetEmail(email);
+      } catch (e) {
+        setError('Unknown error on password reset');
+      }
+    },
+    [],
+  );
+
+  const onAnonymous = useCallback(async () => {
+    try {
+      await auth().signInAnonymously();
+    } catch (e) {
+      setError(
+        e.code === 'auth/operation-not-allowed'
+          ? 'Anonymous sign in not enabled'
+          : 'Unknown error on anonymous sign in',
+      );
+    }
   }, []);
 
   const onApple = useCallback(async () => {
-    const appleAuthRequestResponse = await appleAuth.performRequest({
-      requestedOperation: appleAuth.Operation.LOGIN,
-      requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
-    });
-    if (!appleAuthRequestResponse.identityToken)
-      throw 'Apple Sign-In failed - no identify token returned';
-    const {identityToken, nonce} = appleAuthRequestResponse;
-    const appleCredential = auth.AppleAuthProvider.credential(
-      identityToken,
-      nonce,
-    );
-    return auth().signInWithCredential(appleCredential);
+    try {
+      const appleAuthRequestResponse = await appleAuth.performRequest({
+        requestedOperation: appleAuth.Operation.LOGIN,
+        requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
+      });
+      if (!appleAuthRequestResponse.identityToken)
+        throw 'Apple Sign-In failed - no identify token returned';
+      const {identityToken, nonce} = appleAuthRequestResponse;
+      const appleCredential = auth.AppleAuthProvider.credential(
+        identityToken,
+        nonce,
+      );
+      auth().signInWithCredential(appleCredential);
+    } catch (e) {
+      setError('Unknown error on apple sign in');
+    }
   }, []);
 
-  const onPhone = useCallback(async (phoneNumber: string) => {
-    const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
-    setConfirm(confirmation);
-  }, []);
+  const onPhone = useCallback(
+    (phoneNumber: string) => async () => {
+      try {
+        const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
+        setConfirm(confirmation);
+      } catch (e) {
+        setError('Unknown error on phone sign in');
+      }
+    },
+    [],
+  );
 
   const onPhoneConfirm = useCallback(
-    async (code: string) => {
+    (code: string) => async () => {
       try {
-        const credential = auth.PhoneAuthProvider.credential(
+        if (!confirm) throw new Error('missing confirm number');
+        const cred = auth.PhoneAuthProvider.credential(
           confirm.verificationId,
           code,
         );
-        const userData = await auth().currentUser?.linkWithCredential(
-          credential,
-        );
+        const userData = await auth().currentUser?.linkWithCredential(cred);
+        if (!userData) throw new Error('missing use data on phone confirm');
         setUser(userData.user);
-      } catch (error) {
-        if (error.code == 'auth/invalid-verification-code')
-          console.log('Invalid code.');
-        else console.log('Account linking error');
+      } catch (e) {
+        setError(
+          e.code === 'auth/invalid-verification-code'
+            ? 'Invalid code'
+            : 'Account linking error',
+        );
       }
     },
     [confirm],
   );
 
   const onFacebook = useCallback(async () => {
-    const result = await LoginManager.logInWithPermissions([
-      'public_profile',
-      'email',
-    ]);
-    if (result.isCancelled) throw 'User cancelled the login process';
-    const data = await AccessToken.getCurrentAccessToken();
-    if (!data) throw 'Something went wrong obtaining access token';
-    const facebookCredential = auth.FacebookAuthProvider.credential(
-      data.accessToken,
-    );
-    return auth().signInWithCredential(facebookCredential);
+    // const result = await LoginManager.logInWithPermissions([
+    //   'public_profile',
+    //   'email',
+    // ]);
+    // if (result.isCancelled) throw 'User cancelled the login process';
+    // const data = await AccessToken.getCurrentAccessToken();
+    // if (!data) throw 'Something went wrong obtaining access token';
+    // const facebookCredential = auth.FacebookAuthProvider.credential(
+    //   data.accessToken,
+    // );
+    // return auth().signInWithCredential(facebookCredential);
   }, []);
 
   const onGoogle = useCallback(async () => {
-    const {idToken} = await GoogleSignin.signIn();
-    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-    return auth().signInWithCredential(googleCredential);
+    try {
+      const {idToken} = await GoogleSignIn.signIn();
+      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+      auth().signInWithCredential(googleCredential);
+    } catch (e) {
+      setError('Unknown error google sign in');
+    }
   }, []);
 
-  const onLogout = useCallback(() => {
-    auth()
-      .signOut()
-      .then(() => console.log('User signed out!'));
+  const onLogout = useCallback(async () => {
+    try {
+      await auth().signOut();
+    } catch (e) {
+      setError(
+        e.code === 'auth/no-current-user'
+          ? 'No user signed in'
+          : 'Unknown error on sign out',
+      );
+    }
   }, []);
 
   return {
     initializing,
     user,
+    error,
+    confirm,
+    onErrorClear,
     onEmail,
     onApple,
     onAnonymous,
     onPhone,
     onPhoneConfirm,
     onFacebook,
+    onPasswordReset,
     onGoogle,
     onLogout,
   };
