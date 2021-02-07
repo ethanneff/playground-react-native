@@ -1,11 +1,11 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
+import React, {memo, useCallback, useEffect} from 'react';
 import {Button, Screen, Text} from '../../../../components';
 import {ScrollView} from '../../../../conversions';
-import {useColor} from '../../../../hooks';
+import {useAuth, useColor} from '../../../../hooks';
 import {config, useRootDispatch} from '../../../../utils';
 import {Card} from '../../components';
-import {removeUser} from '../../models';
+import {logout} from '../../models';
 import {useTabTap} from '../../utils';
 
 // TODO: figure out a place for this
@@ -18,12 +18,12 @@ export const Account = memo(function Account() {
   const color = useColor();
   const dispatch = useRootDispatch();
   const {navigate} = useNavigation();
-
-  const onLogout = useCallback(() => {
-    dispatch(removeUser());
-  }, [dispatch]);
-
+  const {onLogout, user, error, initializing} = useAuth();
   const onNavToAdmin = useCallback(() => navigate('admin'), [navigate]);
+
+  useEffect(() => {
+    if (!user && !initializing) dispatch(logout());
+  }, [dispatch, initializing, user]);
 
   return (
     <Screen title="Account">
@@ -70,6 +70,7 @@ export const Account = memo(function Account() {
           <Text center emphasis="medium" title="..." type="h4" />
         </Card>
         <Button onPress={onLogout} title="logout" />
+        {error && <Text color="danger" title={error} />}
         <Button onPress={onNavToAdmin} title="go to admin" />
       </ScrollView>
     </Screen>
