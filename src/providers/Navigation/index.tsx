@@ -51,7 +51,6 @@ const Stack = createStackNavigator();
 const linking = {
   prefixes: ['https://app.example.com', 'mychat://'],
 };
-console.log(Config.APP);
 
 export const Navigation = memo(function Navigation() {
   const {initialState, isReady, onStateChange, onRef} = usePersistedState();
