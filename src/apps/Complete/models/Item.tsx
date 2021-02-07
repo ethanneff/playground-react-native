@@ -1,7 +1,8 @@
 import {createSelector} from 'reselect';
 import {RootAction, RootState} from 'root-types';
 import {createAction, getType} from 'typesafe-actions';
-import {getUser, removeUser} from './User';
+import {logout} from './Auth';
+import {getUser} from './User';
 
 type ItemUpdateIds = {parentItemId: string; itemId: string};
 type ItemSwapId = {parentItemId: string; i: number; j: number};
@@ -211,7 +212,7 @@ export const completeItemReducer = (
           },
         },
       };
-    case getType(removeUser):
+    case getType(logout):
       return initialState;
     default:
       return state;
