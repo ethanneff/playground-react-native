@@ -3,8 +3,8 @@ import {GoogleSignin as GoogleSignIn} from '@react-native-community/google-signi
 import {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import {useCallback, useEffect, useState} from 'react';
 import Config from 'react-native-config';
+import {auth} from '../../conversions/Firebase';
 // import {AccessToken, LoginManager} from 'react-native-fbsdk';
-import {auth} from '../../../../conversions/Firebase';
 
 GoogleSignIn.configure({webClientId: Config.GOOGLE_SIGN_IN});
 
@@ -29,7 +29,7 @@ type UseAuth = {
 };
 
 export const useAuth = (): UseAuth => {
-  const [initializing, setInitializing] = useState(true);
+  const [initializing, setInitializing] = useState<boolean>(true);
   const [user, setUser] = useState<UserOrNull>(null);
   const [error, setError] = useState<string | null>(null);
   const [confirm, setConfirm] = useState<ConfirmOrNull>(null);
@@ -37,9 +37,9 @@ export const useAuth = (): UseAuth => {
   const onAuthStateChanged = useCallback(
     (userData: FirebaseAuthTypes.User | null) => {
       setUser(userData);
-      if (initializing) setInitializing(false);
+      setInitializing(false);
     },
-    [initializing],
+    [],
   );
 
   useEffect(() => {
@@ -104,6 +104,7 @@ export const useAuth = (): UseAuth => {
       );
       auth().signInWithCredential(appleCredential);
     } catch (e) {
+      console.log(e);
       setError('Unknown error on apple sign in');
     }
   }, []);
@@ -172,7 +173,7 @@ export const useAuth = (): UseAuth => {
     } catch (e) {
       setError(
         e.code === 'auth/no-current-user'
-          ? 'No user signed in'
+          ? 'No user signed in to log out'
           : 'Unknown error on sign out',
       );
     }
