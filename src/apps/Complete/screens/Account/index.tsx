@@ -3,7 +3,7 @@ import React, {memo, useCallback, useEffect} from 'react';
 import {Button, Screen, Text} from '../../../../components';
 import {ScrollView} from '../../../../conversions';
 import {useAuth, useColor} from '../../../../hooks';
-import {config, useRootDispatch} from '../../../../utils';
+import {config, useRootDispatch, useRootSelector} from '../../../../utils';
 import {Card} from '../../components';
 import {logout} from '../../models';
 import {useTabTap} from '../../utils';
@@ -19,6 +19,7 @@ export const Account = memo(function Account() {
   const dispatch = useRootDispatch();
   const {navigate} = useNavigation();
   const {onLogout, user, error, initializing} = useAuth();
+  const profile = useRootSelector((s) => s.completeAuth);
   const onNavToAdmin = useCallback(() => navigate('admin'), [navigate]);
 
   useEffect(() => {
@@ -40,6 +41,10 @@ export const Account = memo(function Account() {
             title="Profile"
             type="h5"
           />
+          <Text title={profile?.displayName} />
+          <Text title={profile?.email} />
+          <Text title={profile?.emailVerified} />
+          <Text title={profile?.uid} />
           <Text center emphasis="medium" title="..." type="h4" />
         </Card>
         <Card margin="bottom">
