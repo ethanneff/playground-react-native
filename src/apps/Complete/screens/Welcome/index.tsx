@@ -1,12 +1,11 @@
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import React, {memo, useCallback} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {View} from 'react-native';
 import {Button, Carousel, Screen} from '../../../../components';
 import {Slide} from '../../../../components/Carousel/types';
-import {config} from '../../../../utils';
-import {LandingStackParams} from '../../navigation-types';
-import {completeConfig} from '../../utils';
+import {config, useRootDispatch} from '../../../../utils';
+import {createItem, loadUser, login} from '../../models';
+import {completeConfig, getDefaultUserTemplate} from '../../utils';
+import {Login} from './Login';
 
 const slides: Slide[] = [
   {
@@ -110,25 +109,64 @@ const slides: Slide[] = [
 ];
 
 export const Welcome = memo(function Welcome() {
-  const {navigate} = useNavigation<StackNavigationProp<LandingStackParams>>();
-  const onSignUp = useCallback(() => navigate('sign-up'), [navigate]);
-  const onLogIn = useCallback(() => navigate('log-in'), [navigate]);
+  const dispatch = useRootDispatch();
+  const [showLogin, setShowLogin] = useState(false);
+  const onToggleLogin = useCallback(() => setShowLogin((p) => !p), []);
+  const onLoginSuccess = useCallback(
+    (auth) => {
+      const {
+        displayName,
+        email,
+        emailVerified,
+        isAnonymous,
+        phoneNumber,
+        photoURL,
+        uid,
+      } = auth;
+      const data = {
+        displayName,
+        email,
+        emailVerified,
+        isAnonymous,
+        phoneNumber,
+        photoURL,
+        uid,
+      };
+      dispatch(login(data));
+      const {user, items} = getDefaultUserTemplate();
+      items.map((item) => dispatch(createItem(item)));
+      dispatch(loadUser({...user, email}));
+    },
+    [dispatch],
+  );
 
   return (
-    <Screen>
-      <View style={{flex: 1}}>
-        <Carousel duration={6000} slides={slides} />
-        <View style={{padding: completeConfig.padding}}>
-          <Button
-            center
-            color="primary"
-            emphasis="high"
-            onPress={onSignUp}
-            title="Sign up"
-          />
-          <Button center color="primary" onPress={onLogIn} title="Log in" />
+    <>
+      <Screen>
+        <View style={{flex: 1}}>
+          <Carousel duration={6000} slides={slides} />
+          <View style={{padding: completeConfig.padding}}>
+            <Button
+              buttonStyle={{marginBottom: config.padding(2)}}
+              center
+              color="primary"
+              emphasis="high"
+              onPress={onToggleLogin}
+              title="Get Started"
+            />
+          </View>
         </View>
-      </View>
-    </Screen>
+      </Screen>
+      {showLogin && (
+        <Login
+          onBackgroundPress={onToggleLogin}
+          onSuccess={onLoginSuccess}
+          showAnonymous
+          showEmail
+          showFacebook
+          showGoogle
+        />
+      )}
+    </>
   );
 });
