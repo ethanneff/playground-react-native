@@ -1,7 +1,7 @@
 import {appleAuth} from '@invertase/react-native-apple-authentication';
 import {GoogleSignin as GoogleSignIn} from '@react-native-community/google-signin';
 import {FirebaseAuthTypes} from '@react-native-firebase/auth';
-import {useCallback, useEffect, useState} from 'react';
+import {useCallback, useEffect, useRef, useState} from 'react';
 import Config from 'react-native-config';
 import {auth} from '../../conversions/Firebase';
 // import {AccessToken, LoginManager} from 'react-native-fbsdk';
@@ -16,7 +16,6 @@ type UseAuth = {
   user: UserOrNull;
   error: string | null;
   loading: boolean;
-  confirm: ConfirmOrNull;
   onEmail: (email: string, password: string) => void;
   onApple: () => void;
   onAnonymous: () => void;
@@ -34,7 +33,7 @@ export const useAuth = (): UseAuth => {
   const [user, setUser] = useState<UserOrNull>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
-  const [confirm, setConfirm] = useState<ConfirmOrNull>(null);
+  const confirm = useRef<ConfirmOrNull>(null);
 
   const onAuthStateChanged = useCallback(
     (userData: FirebaseAuthTypes.User | null) => {
@@ -115,9 +114,9 @@ export const useAuth = (): UseAuth => {
 
   const onPhone = useCallback(async (phoneNumber: string) => {
     try {
-      const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
-      setConfirm(confirmation);
+      confirm.current = await auth().signInWithPhoneNumber(phoneNumber);
     } catch (e) {
+      console.log(e);
       setError('Unknown error on phone sign in');
     }
   }, []);
@@ -126,11 +125,9 @@ export const useAuth = (): UseAuth => {
     async (code: string) => {
       setLoading(true);
       try {
-        if (!confirm) throw new Error('missing confirm number');
-        const cred = auth.PhoneAuthProvider.credential(
-          confirm.verificationId,
-          code,
-        );
+        const verification = confirm.current?.verificationId;
+        if (!verification) throw new Error('missing confirm number');
+        const cred = auth.PhoneAuthProvider.credential(verification, code);
         const userData = await auth().currentUser?.linkWithCredential(cred);
         if (!userData) throw new Error('missing use data on phone confirm');
         setUser(userData.user);
@@ -191,7 +188,7 @@ export const useAuth = (): UseAuth => {
     user,
     error,
     loading,
-    confirm,
+
     onErrorClear,
     onEmail,
     onApple,
