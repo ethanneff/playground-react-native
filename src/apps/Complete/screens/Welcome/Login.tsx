@@ -315,20 +315,33 @@ export const Login = memo(function Login({
               title="Log in"
             />
             <TextInput
-              backgroundColor={color.surface}
+              autoCorrect={false}
+              blurOnSubmit={false}
+              editable={!loading}
               keyboardType="email-address"
               onChangeText={onFormChange('email')}
-              placeholder="email"
+              onRef={emailRef}
+              onSubmitEditing={onSubmitEditing('email')}
+              placeholder="Email address"
+              returnKeyType="next"
               style={{marginBottom: config.padding(4)}}
               textContentType="username"
+              value=""
             />
             <TextInput
-              backgroundColor={color.surface}
+              autoCorrect={false}
+              blurOnSubmit={false}
+              editable={!loading}
+              icons={[{name: eyeIcon, onPress: onEye, focus: true}]}
               onChangeText={onFormChange('password')}
-              placeholder="password"
-              secureTextEntry
+              onRef={passwordRef}
+              onSubmitEditing={onSubmitEditing('password')}
+              placeholder="Password"
+              returnKeyType="done"
+              secureTextEntry={!state.eye}
               style={{marginBottom: config.padding(4)}}
               textContentType="password"
+              value=""
             />
             <Button
               buttonStyle={{marginBottom: config.padding(4)}}
@@ -342,7 +355,7 @@ export const Login = memo(function Login({
               center
               color="primary"
               emphasis="high"
-              onPress={onEmail(form.current.email, form.current.password)}
+              onPress={onSubmitEditing('password')}
               title="Log in"
             />
           </>
