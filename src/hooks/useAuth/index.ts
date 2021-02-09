@@ -20,8 +20,8 @@ type UseAuth = {
   onEmail: (email: string, password: string) => void;
   onApple: () => void;
   onAnonymous: () => void;
-  onPhone: (phone: string) => () => void;
-  onPhoneConfirm: (code: string) => () => void;
+  onPhone: (phone: string) => void;
+  onPhoneConfirm: (code: string) => void;
   onFacebook: () => void;
   onGoogle: () => void;
   onLogout: () => void;

@@ -165,6 +165,7 @@ export const Welcome = memo(function Welcome() {
           showEmail
           showFacebook
           showGoogle
+          showPhone
         />
       )}
     </>

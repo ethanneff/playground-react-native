@@ -141,6 +141,10 @@ export const Login = memo(function Login({
     [],
   );
 
+  const onPhonePress = useCallback(() => {
+    onPhone(form.current.phone);
+  }, [onPhone]);
+
   const onEye = useCallback(() => {
     setState((p) => ({...p, eye: !p.eye}));
     passwordRef.current?.focus();
@@ -149,10 +153,8 @@ export const Login = memo(function Login({
   const onSubmitEditing = useCallback(
     (key: keyof typeof initialRef) => () => {
       if (key === 'email') passwordRef.current?.focus();
-      if (key === 'password') {
-        console.log('here', form.current);
+      if (key === 'password')
         onEmail(form.current.email, form.current.password);
-      }
     },
     [onEmail],
   );
@@ -192,18 +194,29 @@ export const Login = memo(function Login({
           </>
         ) : state.screen === 'phone' ? (
           <>
+            <ModalHeader
+              onRightPress={onScreenChange('landing')}
+              title="Phone Confirmation"
+            />
             <TextInput
+              autoCorrect={false}
+              blurOnSubmit={false}
               keyboardType="number-pad"
               onChangeText={onFormChange('phone')}
-              placeholder="phone"
+              onRef={emailRef}
+              onSubmitEditing={onSubmitEditing('phone')}
+              placeholder="Phone number"
+              returnKeyType="send"
+              style={{marginBottom: config.padding(4)}}
+              value=""
             />
             <Button
+              center
               color="primary"
               emphasis="high"
-              onPress={onPhone(form.current.phone)}
+              onPress={onPhonePress}
               title="send confirmation code"
             />
-            <Button onPress={onScreenChange('landing')} title="go back" />
           </>
         ) : state.screen === 'forgotPassword' ? (
           <>
