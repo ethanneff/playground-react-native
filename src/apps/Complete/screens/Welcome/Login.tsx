@@ -180,6 +180,7 @@ export const Login = memo(function Login({
         ) : state.screen === 'phoneCode' ? (
           <>
             <TextInput
+              backgroundColor={color.surface}
               keyboardType="number-pad"
               onChangeText={onFormChange('phoneCode')}
               placeholder="phone confirmation code"
@@ -200,6 +201,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
+              backgroundColor={color.surface}
               blurOnSubmit={false}
               keyboardType="number-pad"
               onChangeText={onFormChange('phone')}
@@ -236,6 +238,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
+              backgroundColor={color.surface}
               blurOnSubmit={false}
               keyboardType="email-address"
               onChangeText={onFormChange('email')}
@@ -263,6 +266,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
+              backgroundColor={color.surface}
               blurOnSubmit={false}
               editable={!loading}
               keyboardType="email-address"
@@ -277,6 +281,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
+              backgroundColor={color.surface}
               blurOnSubmit={false}
               editable={!loading}
               icons={[{name: eyeIcon, onPress: onEye, focus: true}]}
@@ -316,6 +321,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
+              backgroundColor={color.surface}
               blurOnSubmit={false}
               editable={!loading}
               keyboardType="email-address"
@@ -330,6 +336,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
+              backgroundColor={color.surface}
               blurOnSubmit={false}
               editable={!loading}
               icons={[{name: eyeIcon, onPress: onEye, focus: true}]}
