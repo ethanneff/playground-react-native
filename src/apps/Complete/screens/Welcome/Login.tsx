@@ -92,10 +92,12 @@ type State = {
   completeForm: boolean;
   passwordError: boolean;
   screen: Screen;
+  error: string | null;
 };
 
 const initialState: State = {
   eye: false,
+  error: null,
   completeForm: false,
   passwordError: false,
   screen: 'landing',
@@ -112,11 +114,7 @@ export const Login = memo(function Login({
   onSuccess,
 }: Props) {
   const {
-    initializing,
-    user,
-    error,
-    loading,
-    onErrorClear,
+    response,
     onApple,
     onGoogle,
     onFacebook,
@@ -126,6 +124,8 @@ export const Login = memo(function Login({
     onPasswordReset,
     onAnonymous,
   } = useAuth();
+  const {type, error, user} = response;
+  const loading = type === 'loading';
   const color = useColor();
   const successful = useRef(false);
   const form = useRef<Ref>(initialRef);
@@ -141,9 +141,15 @@ export const Login = memo(function Login({
     [],
   );
 
-  const onPhonePress = useCallback(() => {
-    onPhone(form.current.phone);
-  }, [onPhone]);
+  const handleConfirm = useCallback(
+    () => onPhoneConfirm(form.current.phoneCode),
+    [onPhoneConfirm],
+  );
+
+  const handlePhone = useCallback(() => onPhone(form.current.phone), [onPhone]);
+  const handleReset = useCallback(() => onPasswordReset(form.current.email), [
+    onPasswordReset,
+  ]);
 
   const onEye = useCallback(() => {
     setState((p) => ({...p, eye: !p.eye}));
@@ -175,7 +181,7 @@ export const Login = memo(function Login({
     <Modal onBackgroundPress={onBackgroundPress} showOverlay>
       <>
         {error && <Text center color="danger" title={error} />}
-        {state.screen === 'loading' || initializing ? (
+        {state.screen === 'loading' || type === 'initalizing' ? (
           <ActivityIndicator />
         ) : state.screen === 'phoneCode' ? (
           <>
@@ -188,7 +194,7 @@ export const Login = memo(function Login({
             <Button
               color="primary"
               emphasis="high"
-              onPress={onPhoneConfirm(form.current.phoneCode)}
+              onPress={handleConfirm}
               title="verify phone confirmation code"
             />
             <Button onPress={onScreenChange('landing')} title="go back" />
@@ -216,7 +222,7 @@ export const Login = memo(function Login({
               center
               color="primary"
               emphasis="high"
-              onPress={onPhonePress}
+              onPress={handlePhone}
               title="send confirmation code"
             />
           </>
@@ -254,7 +260,7 @@ export const Login = memo(function Login({
               center
               color="primary"
               emphasis="high"
-              onPress={onPasswordReset(form.current.email)}
+              onPress={handleReset}
               title="Reset password"
             />
           </>

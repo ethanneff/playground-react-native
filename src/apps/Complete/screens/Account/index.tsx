@@ -18,13 +18,13 @@ export const Account = memo(function Account() {
   const color = useColor();
   const dispatch = useRootDispatch();
   const {navigate} = useNavigation();
-  const {onLogout, user, error, initializing} = useAuth();
+  const {onLogout, response} = useAuth();
   const profile = useRootSelector((s) => s.completeAuth);
   const onNavToAdmin = useCallback(() => navigate('admin'), [navigate]);
 
   useEffect(() => {
-    if (!user && !initializing) dispatch(logout());
-  }, [dispatch, initializing, user]);
+    if (response.type === 'logout') dispatch(logout());
+  }, [dispatch, response.type]);
 
   return (
     <Screen title="Account">
@@ -41,10 +41,10 @@ export const Account = memo(function Account() {
             title="Profile"
             type="h5"
           />
-          <Text title={profile?.displayName} />
-          <Text title={profile?.email} />
-          <Text title={profile?.emailVerified} />
-          <Text title={profile?.uid} />
+          <Text title={profile?.displayName || ''} />
+          <Text title={profile?.email || ''} />
+          <Text title={String(profile?.emailVerified) || ''} />
+          <Text title={profile?.uid || ''} />
           <Text center emphasis="medium" title="..." type="h4" />
         </Card>
         <Card margin="bottom">
@@ -75,7 +75,7 @@ export const Account = memo(function Account() {
           <Text center emphasis="medium" title="..." type="h4" />
         </Card>
         <Button onPress={onLogout} title="logout" />
-        {error && <Text color="danger" title={error} />}
+        {response.error && <Text color="danger" title={response.error} />}
         <Button onPress={onNavToAdmin} title="go to admin" />
       </ScrollView>
     </Screen>

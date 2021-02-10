@@ -6,7 +6,7 @@ import {Button, Modal, TextInput} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {config, useRootDispatch} from '../../../../utils';
 import {ModalHeader} from '../../components';
-import {createItem, createUser} from '../../models';
+import {createItem, loadUser} from '../../models';
 import {LandingStackParams} from '../../navigation-types';
 import {getDefaultUserTemplate} from '../../utils';
 
@@ -38,7 +38,7 @@ export const LogIn = memo(function LogIn() {
     if (!state.completeForm) return;
     const {user, items} = getDefaultUserTemplate();
     items.map((item) => dispatch(createItem(item)));
-    dispatch(createUser({...user, email: form.current.email}));
+    dispatch(loadUser({...user, email: form.current.email}));
   }, [dispatch, state.completeForm]);
 
   const onFormChange = useCallback(
