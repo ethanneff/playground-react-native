@@ -21,11 +21,11 @@ type UseAuth = {
   onPasswordReset: (email: string) => void;
 };
 
-type Response = {
-  type: 'initalizing' | 'login' | 'logout' | 'loading' | 'error';
-  user: FirebaseAuthTypes.User | null;
-  error: string | null;
-};
+type NullType = 'initalizing' | 'waiting' | 'logout' | 'loading';
+type Response =
+  | {type: NullType; error: null; user: null}
+  | {type: 'error'; error: string; user: null}
+  | {type: 'login'; error: null; user: FirebaseAuthTypes.User};
 
 const initialResponse: Response = {
   type: 'initalizing',
@@ -61,7 +61,7 @@ export const useAuth = (): UseAuth => {
       try {
         setResponse({...initialResponse, type: 'loading'});
         await auth().sendPasswordResetEmail(email);
-        setResponse({...initialResponse, type: 'login'});
+        setResponse({...initialResponse, type: 'waiting'});
       } catch (e) {
         setResponse({...initialResponse, type: 'error', error: e});
       }
@@ -101,7 +101,7 @@ export const useAuth = (): UseAuth => {
       try {
         setResponse({...initialResponse, type: 'loading'});
         await auth().signInWithPhoneNumber(phoneNumber);
-        setResponse({...initialResponse, type: 'login'});
+        setResponse({...initialResponse, type: 'waiting'});
       } catch (e) {
         setResponse({...initialResponse, type: 'error', error: e});
       }
