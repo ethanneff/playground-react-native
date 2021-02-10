@@ -1,17 +1,11 @@
 import {RootAction, RootState} from 'root-types';
 import {createAction, getType} from 'typesafe-actions';
+import {logout} from './Auth';
 
 /* ACTIONS */
-export const createUser = createAction('complete/user/create')<User>();
+export const loadUser = createAction('complete/user/load')<User>();
 export const updateUser = createAction('complete/user/update')<User>();
-export const removeUser = createAction('complete/user/remove')();
-export const setActiveUser = createAction('complete/user/setActive')<boolean>();
-export const completeUserActions = {
-  createUser,
-  removeUser,
-  updateUser,
-  setActiveUser,
-};
+export const completeUserActions = {loadUser, updateUser};
 
 /* SELECTORS */
 export const getUser = (state: RootState): CompleteUserReducer =>
@@ -36,10 +30,7 @@ export const completeUserReducer = (
   action: RootAction,
 ): CompleteUserReducer => {
   switch (action.type) {
-    case getType(setActiveUser):
-      if (!state) throw new Error('cannot set active to no user'); // TODO: error boundary redux? or just update state.error and capture at a root level?
-      return {...state, active: action.payload};
-    case getType(createUser):
+    case getType(loadUser):
       return action.payload;
     case getType(updateUser):
       return {
@@ -47,7 +38,7 @@ export const completeUserReducer = (
         ...action.payload,
         updatedAt: Date.now(),
       };
-    case getType(removeUser):
+    case getType(logout):
       return initialState;
     default:
       return state;

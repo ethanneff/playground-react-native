@@ -17,6 +17,8 @@ import {
   checklistReducer,
 } from '../../apps/Checklists/models';
 import {
+  completeAuthActions,
+  completeAuthReducer,
   completeItemActions,
   completeItemReducer,
   completeUserActions,
@@ -66,6 +68,7 @@ export const actions = {
   theme: themeActions,
   completeItem: completeItemActions,
   completeUser: completeUserActions,
+  completeAuth: completeAuthActions,
 };
 export const reducers = combineReducers({
   auth: authReducer,
@@ -82,6 +85,7 @@ export const reducers = combineReducers({
   theme: themeReducer,
   completeItem: completeItemReducer,
   completeUser: completeUserReducer,
+  completeAuth: completeAuthReducer,
 });
 
 const persistConfig = {key: 'root', storage: Storage};

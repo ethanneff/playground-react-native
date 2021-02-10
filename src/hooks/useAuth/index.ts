@@ -1,10 +1,10 @@
 import {appleAuth} from '@invertase/react-native-apple-authentication';
 import {GoogleSignin as GoogleSignIn} from '@react-native-community/google-signin';
 import {FirebaseAuthTypes} from '@react-native-firebase/auth';
-import {useCallback, useEffect, useState} from 'react';
+import {useCallback, useEffect, useRef, useState} from 'react';
 import Config from 'react-native-config';
+import {auth} from '../../conversions/Firebase';
 // import {AccessToken, LoginManager} from 'react-native-fbsdk';
-import {auth} from '../../../../conversions/Firebase';
 
 GoogleSignIn.configure({webClientId: Config.GOOGLE_SIGN_IN});
 
@@ -15,12 +15,12 @@ type UseAuth = {
   initializing: boolean;
   user: UserOrNull;
   error: string | null;
-  confirm: ConfirmOrNull;
-  onEmail: (email: string, password: string) => () => void;
+  loading: boolean;
+  onEmail: (email: string, password: string) => void;
   onApple: () => void;
   onAnonymous: () => void;
-  onPhone: (phone: string) => () => void;
-  onPhoneConfirm: (code: string) => () => void;
+  onPhone: (phone: string) => void;
+  onPhoneConfirm: (code: string) => void;
   onFacebook: () => void;
   onGoogle: () => void;
   onLogout: () => void;
@@ -29,17 +29,19 @@ type UseAuth = {
 };
 
 export const useAuth = (): UseAuth => {
-  const [initializing, setInitializing] = useState(true);
+  const [initializing, setInitializing] = useState<boolean>(true);
   const [user, setUser] = useState<UserOrNull>(null);
   const [error, setError] = useState<string | null>(null);
-  const [confirm, setConfirm] = useState<ConfirmOrNull>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const confirm = useRef<ConfirmOrNull>(null);
 
   const onAuthStateChanged = useCallback(
     (userData: FirebaseAuthTypes.User | null) => {
       setUser(userData);
-      if (initializing) setInitializing(false);
+      setLoading(false);
+      setInitializing(false);
     },
-    [initializing],
+    [],
   );
 
   useEffect(() => {
@@ -49,22 +51,21 @@ export const useAuth = (): UseAuth => {
 
   const onErrorClear = useCallback(() => setError(null), []);
 
-  const onEmail = useCallback(
-    (email, password) => async () => {
-      try {
-        await auth().createUserWithEmailAndPassword(email, password);
-      } catch (e) {
-        setError(
-          e.code === 'auth/email-already-in-use'
-            ? 'That email address is already in use!'
-            : e.code === 'auth/invalid-email'
-            ? 'That email address is invalid!'
-            : 'Unknown error on login',
-        );
-      }
-    },
-    [],
-  );
+  const onEmail = useCallback(async (email, password) => {
+    setLoading(true);
+    try {
+      await auth().createUserWithEmailAndPassword(email, password);
+    } catch (e) {
+      setError(
+        e.code === 'auth/email-already-in-use'
+          ? 'That email address is already in use!'
+          : e.code === 'auth/invalid-email'
+          ? 'That email address is invalid!'
+          : 'Unknown error on login',
+      );
+      setLoading(false);
+    }
+  }, []);
 
   const onPasswordReset = useCallback(
     (email) => async () => {
@@ -78,6 +79,7 @@ export const useAuth = (): UseAuth => {
   );
 
   const onAnonymous = useCallback(async () => {
+    setLoading(true);
     try {
       await auth().signInAnonymously();
     } catch (e) {
@@ -86,6 +88,7 @@ export const useAuth = (): UseAuth => {
           ? 'Anonymous sign in not enabled'
           : 'Unknown error on anonymous sign in',
       );
+      setLoading(false);
     }
   }, []);
 
@@ -104,30 +107,27 @@ export const useAuth = (): UseAuth => {
       );
       auth().signInWithCredential(appleCredential);
     } catch (e) {
+      console.log(e);
       setError('Unknown error on apple sign in');
     }
   }, []);
 
-  const onPhone = useCallback(
-    (phoneNumber: string) => async () => {
-      try {
-        const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
-        setConfirm(confirmation);
-      } catch (e) {
-        setError('Unknown error on phone sign in');
-      }
-    },
-    [],
-  );
+  const onPhone = useCallback(async (phoneNumber: string) => {
+    try {
+      confirm.current = await auth().signInWithPhoneNumber(phoneNumber);
+    } catch (e) {
+      console.log(e);
+      setError('Unknown error on phone sign in');
+    }
+  }, []);
 
   const onPhoneConfirm = useCallback(
-    (code: string) => async () => {
+    async (code: string) => {
+      setLoading(true);
       try {
-        if (!confirm) throw new Error('missing confirm number');
-        const cred = auth.PhoneAuthProvider.credential(
-          confirm.verificationId,
-          code,
-        );
+        const verification = confirm.current?.verificationId;
+        if (!verification) throw new Error('missing confirm number');
+        const cred = auth.PhoneAuthProvider.credential(verification, code);
         const userData = await auth().currentUser?.linkWithCredential(cred);
         if (!userData) throw new Error('missing use data on phone confirm');
         setUser(userData.user);
@@ -137,6 +137,7 @@ export const useAuth = (): UseAuth => {
             ? 'Invalid code'
             : 'Account linking error',
         );
+        setLoading(false);
       }
     },
     [confirm],
@@ -157,24 +158,28 @@ export const useAuth = (): UseAuth => {
   }, []);
 
   const onGoogle = useCallback(async () => {
+    setLoading(true);
     try {
       const {idToken} = await GoogleSignIn.signIn();
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
       auth().signInWithCredential(googleCredential);
     } catch (e) {
       setError('Unknown error google sign in');
+      setLoading(false);
     }
   }, []);
 
   const onLogout = useCallback(async () => {
+    setLoading(true);
     try {
       await auth().signOut();
     } catch (e) {
       setError(
         e.code === 'auth/no-current-user'
-          ? 'No user signed in'
+          ? 'No user signed in to log out'
           : 'Unknown error on sign out',
       );
+      setLoading(false);
     }
   }, []);
 
@@ -182,7 +187,8 @@ export const useAuth = (): UseAuth => {
     initializing,
     user,
     error,
-    confirm,
+    loading,
+
     onErrorClear,
     onEmail,
     onApple,
