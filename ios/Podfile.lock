@@ -714,7 +714,7 @@ PODS:
     - Firebase/RemoteConfig (~> 7.6.0)
     - React-Core
     - RNFBApp
-  - RNGestureHandler (1.10.0):
+  - RNGestureHandler (1.9.0):
     - React-Core
   - RNGoogleSignin (5.0.0):
     - GoogleSignIn (~> 5.0.0)
@@ -1042,7 +1042,7 @@ SPEC CHECKSUMS:
   RNFBCrashlytics: 06ae20e6b311b60bb9a09f4d92a98ec865c2366c
   RNFBFirestore: a767270f495a44465dda98de30ad4ea4b82f091e
   RNFBRemoteConfig: bf5897ddf30e2be0141723e05a8537745a88c15c
-  RNGestureHandler: 03f587ba19a7e2d9fe48fb9aa6e33ace5fd07dd5
+  RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
   RNRate: 15b861025a7821730761fce7f44561ce7e0b2de0
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad

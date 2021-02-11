@@ -2600,7 +2600,7 @@
     update-notifier "^2.2.0"
     yargs "^8.0.2"
 
-"@invertase/react-native-apple-authentication@^2.1.0":
+"@invertase/react-native-apple-authentication@2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@invertase/react-native-apple-authentication/-/react-native-apple-authentication-2.1.0.tgz#ae58fe8cafa17272e363cbc68f342b9aefd6414c"
   integrity sha512-9F4aZVS2wpwZS81zi6I4R3OEctrpDUjDfJaJRHaedQ9d3DQjsbFNpKN2eKUMLnJoY2hweE2dRdgwXrJaNaEZ+g==
@@ -3477,7 +3477,7 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-plugin/-/eslint-plugin-1.1.0.tgz#e42b1bef12d2415411519fd528e64b593b1363dc"
 
-"@react-native-community/google-signin@^5.0.0":
+"@react-native-community/google-signin@5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/google-signin/-/google-signin-5.0.0.tgz#d1d89c697cc214c10017fa283817e84bd03b2d76"
   integrity sha512-MvFHImmtlmE1kJZgZ9XaULm/OBuQ/AQWOCPr3NzYTUv2cCqyGwfFrealo5PS/fuL/InCGcfqK1k/1dZ+67Hjmg==
@@ -14127,7 +14127,7 @@ react-is@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
 
-react-native-apple-authentication@^1.0.8:
+react-native-apple-authentication@1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/react-native-apple-authentication/-/react-native-apple-authentication-1.0.8.tgz#73887e795436a6db9e81559deee49f329f3eade6"
   integrity sha512-6mlUp7KK76aHXSbxiiTexxYSydv5vz/xnsrYXJVsFMAtu+yNXoMcmZwP+rIoXb2tLB4Jg9KXkB2h6XnFrSj9rw==
@@ -14144,7 +14144,7 @@ react-native-bundle-visualizer@2.2.1:
     rimraf "^3.0.2"
     source-map-explorer "^2.4.2"
 
-react-native-config@^1.4.2:
+react-native-config@1.4.2:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/react-native-config/-/react-native-config-1.4.2.tgz#cc39f22ed72c5cb06af1adf0ba70ef01593900b4"
   integrity sha512-iTvCvThvFTH7SdiBcsxYtpLy86zglsh51ZBqFPPZ75tdrQMdlRnDNnb86kNjQf03KT0qs1nCMLRejfPMIim8iA==
