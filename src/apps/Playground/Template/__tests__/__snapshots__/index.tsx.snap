@@ -310,15 +310,15 @@ exports[`renders correctly 1`] = `
                               "borderBottomColor": "hsl(0, 0%, 100%)",
                               "borderBottomWidth": 1,
                               "flexDirection": "row",
-                              "height": 72,
                               "justifyContent": "space-between",
+                              "paddingHorizontal": 8,
                             }
                           }
                         >
                           <View
                             style={
                               Object {
-                                "padding": 12,
+                                "padding": 8,
                               }
                             }
                           >
@@ -354,7 +354,7 @@ exports[`renders correctly 1`] = `
                                     Array [
                                       Object {
                                         "color": "hsl(208, 7%, 46%)",
-                                        "fontSize": 36,
+                                        "fontSize": 32,
                                       },
                                       Array [
                                         undefined,
@@ -376,9 +376,10 @@ exports[`renders correctly 1`] = `
                           </View>
                           <Text
                             numberOfLines={1}
+                            onPress={[Function]}
                             style={
                               Object {
-                                "color": "hsla(0, 0%, 0%, 0.87)",
+                                "color": "hsla(0, 0%, 0%, 1)",
                                 "flex": 1,
                                 "fontSize": 48,
                                 "fontWeight": "300",
@@ -393,7 +394,7 @@ exports[`renders correctly 1`] = `
                           <View
                             style={
                               Object {
-                                "padding": 12,
+                                "padding": 8,
                               }
                             }
                           >
@@ -430,7 +431,7 @@ exports[`renders correctly 1`] = `
                                     Array [
                                       Object {
                                         "color": "transparent",
-                                        "fontSize": 36,
+                                        "fontSize": 32,
                                       },
                                       Array [
                                         undefined,

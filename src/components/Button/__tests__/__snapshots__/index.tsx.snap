@@ -317,6 +317,7 @@ exports[`renders correctly 1`] = `
                         }
                       >
                         <Text
+                          onPress={[Function]}
                           style={
                             Object {
                               "color": "hsl(0, 0%, 0%)",
@@ -662,6 +663,7 @@ exports[`renders disable 1`] = `
                         }
                       >
                         <Text
+                          onPress={[Function]}
                           style={
                             Object {
                               "color": "hsla(0, 0%, 0%, 0.38)",

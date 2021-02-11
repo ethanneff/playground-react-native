@@ -490,6 +490,7 @@ exports[`renders correctly 1`] = `
                             }
                           >
                             <Text
+                              onPress={[Function]}
                               style={
                                 Object {
                                   "color": "hsl(354, 70%, 54%)",

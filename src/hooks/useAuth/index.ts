@@ -1,12 +1,12 @@
 import {appleAuth} from '@invertase/react-native-apple-authentication';
-import {GoogleSignin as GoogleSignIn} from '@react-native-community/google-signin';
+import {GoogleSignin} from '@react-native-community/google-signin';
 import {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import {useCallback, useEffect, useRef, useState} from 'react';
 import Config from 'react-native-config';
 import {auth} from '../../conversions/Firebase';
 // import {AccessToken, LoginManager} from 'react-native-fbsdk';
 
-GoogleSignIn.configure({webClientId: Config.GOOGLE_SIGN_IN});
+GoogleSignin.configure({webClientId: Config.GOOGLE_SIGN_IN});
 
 type UseAuth = {
   response: Response;
@@ -143,7 +143,7 @@ export const useAuth = (): UseAuth => {
   const onGoogle = useCallback(async () => {
     try {
       setResponse({...initialResponse, type: 'loading'});
-      const {idToken} = await GoogleSignIn.signIn();
+      const {idToken} = await GoogleSignin.signIn();
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
       const {user} = await auth().signInWithCredential(googleCredential);
       setResponse({...initialResponse, type: 'login', user});

@@ -1,5 +1,43 @@
-import 'react-native-gesture-handler/jestSetup';
 import {NativeModules} from 'react-native';
+import 'react-native-gesture-handler/jestSetup';
+
+jest.mock('@invertase/react-native-apple-authentication', () => () => ({
+  appleAuth: jest.fn(),
+}));
+
+const mockUserInfo = {
+  idToken: 'mockIdToken',
+  accessToken: null,
+  accessTokenExpirationDate: null,
+  serverAuthCode: 'mockServerAuthCode',
+  scopes: [],
+  user: {
+    email: 'mockEmail',
+    id: 'mockId',
+    givenName: 'mockGivenName',
+    familyName: 'mockFamilyName',
+    photo: 'mockPhotoUtl',
+    name: 'mockFullName',
+  },
+};
+
+jest.mock('@react-native-community/google-signin', () => ({
+  GoogleSignin: {
+    configure: jest.fn(),
+    hasPlayServices: jest.fn(() => Promise.resolve(true)),
+    signIn: jest.fn(() => Promise.resolve(mockUserInfo)),
+    signInSilently: jest.fn(() => Promise.resolve(mockUserInfo)),
+    revokeAccess: jest.fn(() => Promise.resolve(true)),
+    signOut: jest.fn(() => Promise.resolve(true)),
+  },
+}));
+
+jest.mock('@react-native-firebase/analytics', () => () => ({
+  logEvent: jest.fn(),
+  setUserProperties: jest.fn(),
+  setUserId: jest.fn(),
+  setCurrentScreen: jest.fn(),
+}));
 
 jest.mock('react-native-sound', () => {
   return class Mock {
@@ -79,3 +117,4 @@ jest.mock('react-native-reanimated', () => {
 });
 
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
+jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');

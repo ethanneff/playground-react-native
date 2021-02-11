@@ -696,6 +696,7 @@ exports[`renders correctly with clear and max badge 1`] = `
                           }
                         >
                           <Text
+                            onPress={[Function]}
                             style={
                               Object {
                                 "color": "hsl(0, 0%, 100%)",
@@ -1073,6 +1074,7 @@ exports[`renders correctly without defaults 1`] = `
                           }
                         >
                           <Text
+                            onPress={[Function]}
                             style={
                               Object {
                                 "color": "hsl(0, 0%, 100%)",

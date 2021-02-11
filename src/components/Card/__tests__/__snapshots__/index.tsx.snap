@@ -285,25 +285,9 @@ exports[`renders correctly 1`] = `
                       }
                     }
                   >
-                    <RNGestureHandlerButton
-                      collapsable={false}
-                      onGestureEvent={[Function]}
-                      onGestureHandlerEvent={[Function]}
-                      onGestureHandlerStateChange={[Function]}
-                      onHandlerStateChange={[Function]}
-                      rippleColor={0}
+                    <View
                       style={
                         Array [
-                          Object {
-                            "flex": 0,
-                          },
-                          undefined,
-                        ]
-                      }
-                    >
-                      <View
-                        accessible={true}
-                        style={
                           Object {
                             "backgroundColor": "hsl(0, 0%, 100%)",
                             "borderColor": "hsl(0, 0%, 100%)",
@@ -311,7 +295,6 @@ exports[`renders correctly 1`] = `
                             "borderWidth": 1,
                             "elevation": 2,
                             "marginVertical": 8,
-                            "opacity": 1,
                             "shadowColor": "hsl(210, 10%, 23%)",
                             "shadowOffset": Object {
                               "height": 2,
@@ -320,23 +303,26 @@ exports[`renders correctly 1`] = `
                             "shadowOpacity": 0.192,
                             "shadowRadius": 1.92,
                             "zIndex": 2,
-                          }
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                        ]
+                      }
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "hsla(0,0%,100%,0.07)",
+                              "borderRadius": 8,
+                              "padding": 16,
+                            },
+                            undefined,
+                          ]
                         }
-                      >
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "hsla(0,0%,100%,0.07)",
-                                "borderRadius": 8,
-                                "padding": 16,
-                              },
-                              undefined,
-                            ]
-                          }
-                        />
-                      </View>
-                    </RNGestureHandlerButton>
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
