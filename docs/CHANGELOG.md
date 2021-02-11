@@ -1,5 +1,40 @@
 # Changelog
 
+# [2.51.0](https://github.com/ethanneff/example/compare/v2.50.2...v2.51.0) (2021-02-11)
+
+
+### Bug Fixes
+
+* add account details ([5c6e8fc](https://github.com/ethanneff/example/commit/5c6e8fc18bf9d675b03eab4073b4319b284575ce))
+* add background color ([b0acc9f](https://github.com/ethanneff/example/commit/b0acc9feec216a35ccf0c4218ed1d04f6732b1ec))
+* add complete auth to redux ([1ce8dcf](https://github.com/ethanneff/example/commit/1ce8dcfa466238e364e049468788d55feab573ee))
+* add loading ([55af243](https://github.com/ethanneff/example/commit/55af2430c25da187f08888f37291b534944d9a15))
+* better typings ([faa1ac1](https://github.com/ethanneff/example/commit/faa1ac1d73cf4a352292ff208bc397f61e7de1e3))
+* clean up useAuth to a single state ([b3b9962](https://github.com/ethanneff/example/commit/b3b9962b457a55c7929d6b63117772afb9cb5b46))
+* cleanup use model to use auth logout ([b6fda9f](https://github.com/ethanneff/example/commit/b6fda9f093a3261d1f724829875d508c5103d497))
+* correct linting ([e86ea3b](https://github.com/ethanneff/example/commit/e86ea3bcd2657d1b8638af8fc8f2a3205b703980))
+* create boilerplate login modal ([246db46](https://github.com/ethanneff/example/commit/246db465c306a6fc7fc86e073e1af5e1be973b4b))
+* make account logout of firebase ([8e3f9e0](https://github.com/ethanneff/example/commit/8e3f9e0bdd18bbe89671026b2da3cf2280fe8695))
+* make confirm non state ([94d2ed6](https://github.com/ethanneff/example/commit/94d2ed69f79322ca5d8c7bdd83e4b516b8d75467))
+* make login not crash ([b298b02](https://github.com/ethanneff/example/commit/b298b0286232f13418ce3a25011cdec2a83f95f5))
+* make phone not crash ([cd94204](https://github.com/ethanneff/example/commit/cd942047ae752a793267d9dd2e38dceb6b4a9ea6))
+* make phone work on ios ([0e2c418](https://github.com/ethanneff/example/commit/0e2c418671ca9cb0c3fc82b8d336e4de0b8eff44))
+* make tests work ([0c20859](https://github.com/ethanneff/example/commit/0c2085908e8f2df5351d62d42829b55e567048d0))
+* make web work ([d629270](https://github.com/ethanneff/example/commit/d629270a8a5fd705655550d2842986ee74b0abd1))
+* make welcome navigate on auth and email login ([f665a2a](https://github.com/ethanneff/example/commit/f665a2afccbc462363f717b5381dee348c76c19f))
+* prevent crash on device rotate ([cb002ec](https://github.com/ethanneff/example/commit/cb002ec4212180f80a2ac40eb2939deae77eea07))
+* relocate useAuth ([77b4e1e](https://github.com/ethanneff/example/commit/77b4e1e7adf026db6af51c852278404855197939))
+* remove carrots ([ac86b66](https://github.com/ethanneff/example/commit/ac86b66c6f44772a54159087e658ac7b818190dc))
+* remove unused console ([e0f1e8b](https://github.com/ethanneff/example/commit/e0f1e8ba953e937735d2f89534478b2e6889cea3))
+* revert gesture handler ([6dfef3b](https://github.com/ethanneff/example/commit/6dfef3b004e915cbf4d7854cb08bbaebdb866c90))
+* update deps ([ed4a0a3](https://github.com/ethanneff/example/commit/ed4a0a317cdd7474eccbf6c52ec28f16ea11f9bb))
+* update deps ([e800b00](https://github.com/ethanneff/example/commit/e800b0048ac209181ed97466e2029dea17c33926))
+
+
+### Features
+
+* add auth model for firebase login ([84869fa](https://github.com/ethanneff/example/commit/84869fa944120a979047c1412fdaf63cb5f084c4))
+
 ## [2.50.2](https://github.com/ethanneff/example/compare/v2.50.1...v2.50.2) (2021-02-05)
 
 
