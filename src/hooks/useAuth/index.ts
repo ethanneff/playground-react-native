@@ -1,9 +1,12 @@
-import {appleAuth} from '@invertase/react-native-apple-authentication';
-import {GoogleSignin} from '@react-native-community/google-signin';
-import {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import {useCallback, useEffect, useRef, useState} from 'react';
 import Config from 'react-native-config';
-import {auth} from '../../conversions/Firebase';
+import {
+  appleAuth,
+  auth,
+  FirebaseAuthTypes,
+  GoogleSignin,
+} from '../../conversions';
+
 // import {AccessToken, LoginManager} from 'react-native-fbsdk';
 
 GoogleSignin.configure({webClientId: Config.GOOGLE_SIGN_IN});

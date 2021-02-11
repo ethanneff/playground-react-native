@@ -1,5 +1,7 @@
+export * from './AppleAuthentication';
 export * from './Firebase';
 export * from './GestureHandler';
+export * from './GoogleSignIn';
 export * from './KeyboardAwareScrollView';
 export * from './LinearGradient';
 export * from './MaskedView';
