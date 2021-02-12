@@ -139,8 +139,8 @@ android {
         applicationId "com.eneff.app.core"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1613102298
-        versionName "1613102298"
+        versionCode 1613103779
+        versionName "1613103779"
     }
 
     splits {
