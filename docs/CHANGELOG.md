@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.51.2](https://github.com/ethanneff/example/compare/v2.51.1...v2.51.2) (2021-02-12)
+
+
+### Bug Fixes
+
+* add bundle install to reset script ([1583d1d](https://github.com/ethanneff/example/commit/1583d1d155591a6b1a39af6108ad2a6a699061d9))
+
 ## [2.51.1](https://github.com/ethanneff/example/compare/v2.51.0...v2.51.1) (2021-02-12)
 
 
