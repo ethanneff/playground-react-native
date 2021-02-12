@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.51.3](https://github.com/ethanneff/example/compare/v2.51.2...v2.51.3) (2021-02-12)
+
+
+### Bug Fixes
+
+* target the correct keystore ([1868672](https://github.com/ethanneff/example/commit/18686727a0e0a6e1282099b244654d2efbd17090))
+* update fastlane in reset ([950f9f6](https://github.com/ethanneff/example/commit/950f9f60fdbe708caa8dc10a2e0943e504f489b2))
+
 ## [2.51.2](https://github.com/ethanneff/example/compare/v2.51.1...v2.51.2) (2021-02-12)
 
 
