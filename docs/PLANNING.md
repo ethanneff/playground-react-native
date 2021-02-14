@@ -5,6 +5,7 @@
 - [x] complete bouncing loading screen
 - [x] react navigation
 - [x] fastlane build multiple apps
+
   - [x] ios (core)
   - [ ] ios (journal)
   - [ ] ios (progress)
@@ -14,13 +15,14 @@
   - [ ] android (journal)
   - [ ] android (progress)
   - [ ] android (accomplish)
+  - [ ] github release branch for all builds
   - [ ] app center
   - [ ] code push
   - [ ] ios app version = package version
   - [ ] test ipa
   - [ ] test apk
-  - [ ] schedule travis
   - [ ] upload zshrc
+
 - [ ] Deploy Android app
   - [ ] login flow
   - [ ] activity
