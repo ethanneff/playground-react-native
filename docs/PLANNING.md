@@ -16,6 +16,7 @@
   - [ ] android (progress)
   - [ ] android (accomplish)
   - [ ] github release branch for all builds
+  - [ ] navigation
   - [ ] app center
   - [ ] code push
   - [ ] ios app version = package version
