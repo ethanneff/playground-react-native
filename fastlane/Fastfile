@@ -36,7 +36,7 @@ platform :ios do
 
     desc "deploy"
     changelog_from_git_commits
-    upload_to_app_store(force: true)
+    deliver
   end
 
   lane :core do
