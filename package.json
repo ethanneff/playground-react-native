@@ -21,12 +21,6 @@
     "ncu": "ncu",
     "ncu-u": "ncu -u && yarn && cd ios && pod install",
     "visualize-size": "react-native-bundle-visualizer",
-    "deploy-ios-core": "fastlane ios core",
-    "deploy-ios-progress": "fastlane ios progress",
-    "deploy-ios-journal": "fastlane ios journal",
-    "deploy-android-core": "fastlane android core",
-    "deploy-android-progress": "fastlane android progress",
-    "deploy-android-journal": "fastlane android journal",
     "postinstall": "patch-package"
   },
   "dependencies": {

@@ -1,4 +1,7 @@
-setup_travis
+# fastlane ios|android deploy app:core|progress|journal|accomplish type:prod|test|codepush
+# e.g. fastlane ios deploy app:core type:prod
+# e.g. fastlane android deploy app:core type:codepush
+
 timestamp = Time.now.to_i
 
 before_all do
@@ -9,9 +12,9 @@ end
 
 platform :ios do
 
-  private_lane :generate_ios do |options|
+  lane :deploy do |options|
     desc "parse arguments"
-    app_name = options[:app_name]
+    app_name = options[:app]
     new_package_name = "com.eneff.app." + app_name.downcase
 
     desc "increment version"
@@ -28,9 +31,6 @@ platform :ios do
     desc "build ipa"
     get_push_certificate(app_identifier: new_package_name)
     match(app_identifier: new_package_name)
-    # get_certificates TODO: validate
-    # get_provisioning_profile(app_identifier: new_package_name)
-    # enable_automatic_code_signing(path:"./ios/core.xcodeproj")
     build_app(scheme: "core", workspace:"./ios/core.xcworkspace")
 
     desc "clean configs"
@@ -43,23 +43,11 @@ platform :ios do
     deliver
   end
 
-  lane :core do
-    generate_ios(app_name: "Core")
-  end 
-
-  lane :progress do
-    generate_ios(app_name: "Progress")
-  end 
-
-  lane :journal do
-    generate_ios(app_name: "Journal")
-  end 
-
 end
 
 platform :android do
 
-  private_lane :generate_android do |options|
+  lane :deploy do |options|
     desc "parse arguments"
     app_name = options[:app_name]
     new_package_name = "com.eneff.app." + app_name.downcase
@@ -93,17 +81,5 @@ platform :android do
     desc "submit to google"
     upload_to_play_store(track: "beta", package_name: new_package_name)
   end
-
-  lane :core do
-    generate_android(app_name: "Core")
-  end 
-
-  lane :progress do
-    generate_android(app_name: "Progress")
-  end 
-
-  lane :journal do
-    generate_android(app_name: "Journal")
-  end 
 
 end
