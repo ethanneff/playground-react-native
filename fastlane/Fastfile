@@ -1,8 +1,9 @@
+setup_travis
 timestamp = Time.now.to_i
 
 before_all do
   ensure_git_branch
-  ensure_git_status_clean
+  # ensure_git_status_clean
   git_pull
 end
 
@@ -15,7 +16,7 @@ platform :ios do
 
     desc "increment version"
     increment_build_number(xcodeproj: "./ios/core.xcodeproj", build_number: timestamp)
-    increment_version_number(xcodeproj: "./ios/core.xcodeproj", bump_type: "patch")
+    increment_version_number(xcodeproj: "./ios/core.xcodeproj", bump_type: "patch") # TODO: read changelog and update package.json
     git_commit(path: "./ios/*", message: "chore: bump ios version", skip_git_hooks: true)
     push_to_git_remote(no_verify: true)
 
@@ -26,7 +27,10 @@ platform :ios do
 
     desc "build ipa"
     get_push_certificate(app_identifier: new_package_name)
-    sync_code_signing(type: "appstore", git_url: "https://github.com/ethanneff/example-certificates", app_identifier: new_package_name)
+    match(app_identifier: new_package_name)
+    # get_certificates TODO: validate
+    # get_provisioning_profile(app_identifier: new_package_name)
+    # enable_automatic_code_signing(path:"./ios/core.xcodeproj")
     build_app(scheme: "core", workspace:"./ios/core.xcworkspace")
 
     desc "clean configs"
