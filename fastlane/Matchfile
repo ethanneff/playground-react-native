@@ -1,0 +1,6 @@
+git_url("git@github.com:ethanneff/example-certs.git")
+storage_mode("git")
+username("ethan.neff@eneff.com")
+type("appstore")
+app_identifier(["com.eneff.app.core", "com.eneff.app.journal", "com.eneff.app.progress"])
+git_basic_authorization('48c298f87aeebd93eff8371bc8d4c1fc9873e4a8')
