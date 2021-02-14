@@ -1,0 +1,12 @@
+force(true)
+automatic_release(false)
+reset_ratings(false)
+app_review_information(
+  first_name: "Ethan",
+  last_name: "Neff",
+  phone_number: "+18173724795",
+  email_address: "ethan.neff@eneff.com",
+  demo_user: "demo",
+  demo_password: "pass",
+  notes: "notes"
+)
