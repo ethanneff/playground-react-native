@@ -1,6 +1,6 @@
-# fastlane ios|android deploy app:core|progress|journal|accomplish type:prod|test|codepush
-# e.g. fastlane ios deploy app:core type:prod
-# e.g. fastlane android deploy app:core type:codepush
+# fastlane ios|android deploy app:core|progress|journal|accomplish method:prod|test|codepush
+# e.g. fastlane ios deploy app:core method:prod
+# e.g. fastlane android deploy app:core method:codepush
 
 timestamp = Time.now.to_i
 
@@ -15,7 +15,10 @@ platform :ios do
   lane :deploy do |options|
     desc "parse arguments"
     app_name = options[:app]
+    method_name = options[:method]
     new_package_name = "com.eneff.app." + app_name.downcase
+    abort("missing app: argument") if !app_name
+    abort("missing method: argument") if !method_name
 
     desc "increment version"
     increment_build_number(xcodeproj: "./ios/core.xcodeproj", build_number: timestamp)
@@ -49,8 +52,11 @@ platform :android do
 
   lane :deploy do |options|
     desc "parse arguments"
-    app_name = options[:app_name]
+    app_name = options[:app]
+    method_name = options[:method]
     new_package_name = "com.eneff.app." + app_name.downcase
+    abort("missing app: argument") if !app_name
+    abort("missing method: argument") if !method_name
  
     desc "increment version"
     android_set_version_name(version_name: timestamp.to_s, gradle_file: "android/app/build.gradle")

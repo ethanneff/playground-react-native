@@ -19,7 +19,7 @@ fastlane
 ios|android
 deploy
 app:core|progress|journal|accomplish
-type:prod|test|codepush
+method:prod|test|codepush
 ```
 
 ## Usage
@@ -29,9 +29,9 @@ Deploy locally. No free CI.
 ## Examples
 
 ```sh
-fastlane ios deploy app:core type:prod
+fastlane ios deploy app:core method:prod
 ```
 
 ```sh
-fastlane android deploy app:core type:prod
+fastlane android deploy app:core method:prod
 ```
