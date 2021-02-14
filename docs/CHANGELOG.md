@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.51.4](https://github.com/ethanneff/example/compare/v2.51.3...v2.51.4) (2021-02-14)
+
+
+### Bug Fixes
+
+* add deliver file ([56dec39](https://github.com/ethanneff/example/commit/56dec39f644cd2f7c53680f362f00592d17ab5c0))
+* add matchfile ([197be99](https://github.com/ethanneff/example/commit/197be993f520def35389ed3eacbb0cfe8607cad7))
+* add push notifications ([d3fdfe7](https://github.com/ethanneff/example/commit/d3fdfe7df07415cd49c70c08552a11b7ac790f4a))
+* add type checking on args ([ce67de1](https://github.com/ethanneff/example/commit/ce67de1db3169fdbe6ca565b703747947008a37f))
+* app does not use encryption ([21c316b](https://github.com/ethanneff/example/commit/21c316b2e3e48260e78e59adfe6c528dd3e77348))
+* cannot travis ci fastlane ([fcee9f6](https://github.com/ethanneff/example/commit/fcee9f6da91490f7d6e94f1efbb6de04a33e8ffa))
+* make branch clean before fastlane ([09d946a](https://github.com/ethanneff/example/commit/09d946a851abaee47c403d03823f020655ed66c9))
+* prevent ios warning ([371a4af](https://github.com/ethanneff/example/commit/371a4affb3095bc615d0166bccf1b52fbcab9cce))
+* remove deploy scripts from yarn ([baeed4e](https://github.com/ethanneff/example/commit/baeed4ed3c6f639ae4d056aac809b7acf998c001))
+* revert travis ci to only lint and test ([7c70fd6](https://github.com/ethanneff/example/commit/7c70fd64ac9749d18c5db83210f3c8b84f6ba7ba))
+* setup travis ([10cbabc](https://github.com/ethanneff/example/commit/10cbabce8fdab73d03d70ecfbaf2b0e518b7b503))
+* update deps ([ba84a21](https://github.com/ethanneff/example/commit/ba84a2192a488c899357a4b2d3164776c04435ae))
+* update package json version ([206e9f1](https://github.com/ethanneff/example/commit/206e9f1f1f9a33d2852c7328450f27433347251f))
+* use delieverfile ([6f429cf](https://github.com/ethanneff/example/commit/6f429cf501a134ecb5501bb7750160c1a8f3304e))
+* use env vars ([e783202](https://github.com/ethanneff/example/commit/e78320292772219aff122d452d572062db6108ba))
+
 ## [2.51.3](https://github.com/ethanneff/example/compare/v2.51.2...v2.51.3) (2021-02-12)
 
 
