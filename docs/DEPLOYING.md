@@ -18,7 +18,7 @@ export GIT_AUTH=''
 fastlane
 ios|android
 deploy
-app:core|progress|journal|accomplish
+app:core|progress|journal|complete
 method:prod|test|codepush
 ```
 
