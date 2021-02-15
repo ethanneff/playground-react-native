@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.51.7](https://github.com/ethanneff/example/compare/v2.51.6...v2.51.7) (2021-02-15)
+
+
+### Bug Fixes
+
+* add complete app ([4acc5f7](https://github.com/ethanneff/example/commit/4acc5f7fa8cbb08fd0f8633afe253b71f0c51aa9))
+* rename stuff ([c020f42](https://github.com/ethanneff/example/commit/c020f42bc03e947daf031844191c9b1d265e85c3))
+
 ## [2.51.6](https://github.com/ethanneff/example/compare/v2.51.5...v2.51.6) (2021-02-15)
 
 
