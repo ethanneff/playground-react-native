@@ -1,4 +1,4 @@
-# fastlane ios|android deploy app:core|progress|journal|accomplish method:prod|test|codepush
+# fastlane ios|android deploy app:core|progress|journal|complete method:prod|test|codepush
 # e.g. fastlane ios deploy app:core method:prod
 # e.g. fastlane android deploy app:core method:codepush
 
