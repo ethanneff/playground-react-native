@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.51.6](https://github.com/ethanneff/example/compare/v2.51.5...v2.51.6) (2021-02-15)
+
+
+### Bug Fixes
+
+* add complete ([cd3f444](https://github.com/ethanneff/example/commit/cd3f444c099c409dfb1010b6c8ec1a3ddb2ce3c3))
+* rename to complete ([6ae626c](https://github.com/ethanneff/example/commit/6ae626c51e181eaf3dc07ef99ec68e9bb0bf1661))
+
 ## [2.51.5](https://github.com/ethanneff/example/compare/v2.51.4...v2.51.5) (2021-02-15)
 
 
