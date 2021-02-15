@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.51.5](https://github.com/ethanneff/example/compare/v2.51.4...v2.51.5) (2021-02-15)
+
+
+### Bug Fixes
+
+* update package json version ([8c0b9fe](https://github.com/ethanneff/example/commit/8c0b9fefaa36d40a361a97bd26f8b3e0d2b0e313))
+* update the package json file ([f78d456](https://github.com/ethanneff/example/commit/f78d456f952f9eb21a4c5d56ac377dcd43523cd8))
+
 ## [2.51.4](https://github.com/ethanneff/example/compare/v2.51.3...v2.51.4) (2021-02-14)
 
 
