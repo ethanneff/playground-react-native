@@ -9,12 +9,12 @@
   - [x] ios (core)
   - [ ] ios (journal)
   - [ ] ios (progress)
-  - [ ] ios (accomplish)
+  - [ ] ios (complete)
   - [ ] ios (travis ci)
   - [ ] android (core)
   - [ ] android (journal)
   - [ ] android (progress)
-  - [ ] android (accomplish)
+  - [x] android (complete)
   - [ ] github release branch for all builds
   - [ ] navigation
   - [ ] app center
