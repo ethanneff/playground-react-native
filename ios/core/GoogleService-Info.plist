@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>511808948996-rtdfhovobg1rbbqih1c8if3femnsgg92.apps.googleusercontent.com</string>
+	<string>99811324798-tfc5kb1a2u0rrp230fav2snvskqoe15q.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.511808948996-rtdfhovobg1rbbqih1c8if3femnsgg92</string>
+	<string>com.googleusercontent.apps.99811324798-tfc5kb1a2u0rrp230fav2snvskqoe15q</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBYxsCUlfF-B2WmpeLn1vYgSmpEof60B_c</string>
+	<string>AIzaSyD8g1C6kZBD8ubIkxe5_SerSxh4OiPHkPs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>511808948996</string>
+	<string>99811324798</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.eneff.app.complete</string>
+	<string>com.eneff.app.core</string>
 	<key>PROJECT_ID</key>
-	<string>complete-345b6</string>
+	<string>core-b7a57</string>
 	<key>STORAGE_BUCKET</key>
-	<string>complete-345b6.appspot.com</string>
+	<string>core-b7a57.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:511808948996:ios:37e7930c14eadb6ba85e51</string>
+	<string>1:99811324798:ios:2afa166933e2d3b9a9392f</string>
+	<key>DATABASE_URL</key>
+	<string>https://core-b7a57.firebaseio.com</string>
 </dict>
 </plist>
