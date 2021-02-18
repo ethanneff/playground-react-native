@@ -69,7 +69,7 @@ platform :ios do
 
     desc "deploy"
     changelog_from_git_commits()
-    upload_app_privacy_details_to_app_store(  app_identifier: new_package_name, json_path: "privacy.json")
+    upload_app_privacy_details_to_app_store(app_identifier: new_package_name, json_path: "./fastlane/privacy.json")
     deliver()
   end
 
