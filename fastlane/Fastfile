@@ -24,8 +24,8 @@ platform :ios do
     xcodeproj = "./ios/core.xcodeproj"
     new_package_name = "com.eneff.app." + app_name.downcase
     abort("missing app: argument") if !app_name
+
     abort("missing method: argument") if !method_name
-    
     desc "increment version"
     increment_build_number(xcodeproj: xcodeproj, build_number: timestamp)
     increment_version_number(xcodeproj: xcodeproj, bump_type: "patch") # TODO: read changelog and update package.json
@@ -69,7 +69,7 @@ platform :android do
     new_package_name = "com.eneff.app." + app_name.downcase
     abort("missing app: argument") if !app_name
     abort("missing method: argument") if !method_name
- 
+
     desc "increment version"
     android_set_version_name(version_name: timestamp.to_s, gradle_file: "android/app/build.gradle")
     android_set_version_code(version_code: timestamp, gradle_file: "android/app/build.gradle")
