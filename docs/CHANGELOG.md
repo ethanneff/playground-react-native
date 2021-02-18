@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.52.1](https://github.com/ethanneff/example/compare/v2.52.0...v2.52.1) (2021-02-18)
+
+
+### Bug Fixes
+
+* point to correct ios privacy location ([f6875ea](https://github.com/ethanneff/example/commit/f6875ea8c28653e05491b7db45e73e6987f6e8a0))
+* re-enabled git clean on fastlane ([3bd632e](https://github.com/ethanneff/example/commit/3bd632e86a228d89f789f1d0a261282498c1b2af))
+* typecheck arguments ([e063c46](https://github.com/ethanneff/example/commit/e063c463e3f692b0ab3cdaeea81712cd45c817dc))
+* update metadata based on app ([612c1a7](https://github.com/ethanneff/example/commit/612c1a727307e27abbd4b02d445f8539e397e64a))
+
 # [2.52.0](https://github.com/ethanneff/example/compare/v2.51.10...v2.52.0) (2021-02-18)
 
 

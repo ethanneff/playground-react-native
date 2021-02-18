@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "version": "2.52.0",
+  "version": "2.52.1",
   "private": true,
   "homepage": "http://ethanneff.github.io/example",
   "scripts": {
