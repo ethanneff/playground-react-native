@@ -24,8 +24,8 @@ platform :ios do
     xcodeproj = "./ios/core.xcodeproj"
     new_package_name = "com.eneff.app." + app_name.downcase
     abort("missing app: argument") if !app_name
-
     abort("missing method: argument") if !method_name
+
     desc "increment version"
     increment_build_number(xcodeproj: xcodeproj, build_number: timestamp)
     increment_version_number(xcodeproj: xcodeproj, bump_type: "patch") # TODO: read changelog and update package.json
@@ -54,9 +54,9 @@ platform :ios do
     end
 
     desc "deploy"
-    changelog_from_git_commits
-    deliver
+    changelog_from_git_commits()
     upload_app_privacy_details_to_app_store(  app_identifier: new_package_name, json_path: "privacy.json")
+    deliver()
   end
 
 end
@@ -86,7 +86,7 @@ platform :android do
     end
 
     desc "build aab"
-    changelog_from_git_commits
+    changelog_from_git_commits()
     gradle(task: "clean", project_dir: "./android/")
     gradle(task: "bundle", build_type: "Release", project_dir: "./android/")
 
