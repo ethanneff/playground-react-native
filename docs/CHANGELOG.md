@@ -1,5 +1,20 @@
 # Changelog
 
+# [2.52.0](https://github.com/ethanneff/example/compare/v2.51.10...v2.52.0) (2021-02-18)
+
+
+### Bug Fixes
+
+* correct ios core files ([1a93049](https://github.com/ethanneff/example/commit/1a93049a2b7ba526e891dbd974dabb5eef75531c))
+* remove spacing ([3005676](https://github.com/ethanneff/example/commit/3005676baaf98cacbcf0117e02b289fdbb2d9073))
+* update deps ([d9f25b3](https://github.com/ethanneff/example/commit/d9f25b3d47f652b4252499c8370461f3bf55c77e))
+* update pod file ([2ad7f86](https://github.com/ethanneff/example/commit/2ad7f8637e2aabd1315d9b2fd1b419d9a65c595c))
+
+
+### Features
+
+* upload privacy to apple ([35ad3f0](https://github.com/ethanneff/example/commit/35ad3f074ab158ed599f449925c4ddd09435655a))
+
 ## [2.51.10](https://github.com/ethanneff/example/compare/v2.51.9...v2.51.10) (2021-02-18)
 
 
