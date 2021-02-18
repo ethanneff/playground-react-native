@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.51.9](https://github.com/ethanneff/example/compare/v2.51.8...v2.51.9) (2021-02-17)
+
+
+### Bug Fixes
+
+* extract xcodeproj prop ([9c01469](https://github.com/ethanneff/example/commit/9c014695bcfb0ddfef6e6c50dc5fea3db3fc896f))
+* update app navigation via fastlane ([acc6647](https://github.com/ethanneff/example/commit/acc664772b06381964962670466903dbac8ea8c3))
+
 ## [2.51.8](https://github.com/ethanneff/example/compare/v2.51.7...v2.51.8) (2021-02-16)
 
 
