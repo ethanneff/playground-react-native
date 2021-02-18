@@ -27,13 +27,16 @@ methods = ["prod", "test", "codepush"]
 platform :ios do
 
   lane :deploy do |options|
-    desc "parse arguments"
+    desc "get arguments"
     app_name = options[:app]
     method_name = options[:method]
+    abort("missing app: argument") if !app_name || !apps.keys.include?(app_name)
+    abort("missing method: argument") if !method_name || !methods.include?(method_name)
+    
+    desc "set properties"
+    config = apps[app_name]
     xcodeproj = "./ios/core.xcodeproj"
     new_package_name = "com.eneff.app." + app_name.downcase
-    abort("missing app: argument") if !app_name
-    abort("missing method: argument") if !method_name
 
     desc "increment version"
     increment_build_number(xcodeproj: xcodeproj, build_number: timestamp)
@@ -75,12 +78,14 @@ end
 platform :android do
 
   lane :deploy do |options|
-    desc "parse arguments"
+    desc "get arguments"
     app_name = options[:app]
     method_name = options[:method]
+    abort("missing app: argument") if !app_name || !apps.keys.include?(app_name)
+    abort("missing method: argument") if !method_name || !methods.include?(method_name)
+
+    desc "set properties"
     new_package_name = "com.eneff.app." + app_name.downcase
-    abort("missing app: argument") if !app_name
-    abort("missing method: argument") if !method_name
 
     desc "increment version"
     android_set_version_name(version_name: timestamp.to_s, gradle_file: "android/app/build.gradle")
