@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.51.10](https://github.com/ethanneff/example/compare/v2.51.9...v2.51.10) (2021-02-18)
+
+
+### Bug Fixes
+
+* download metadata from core ([ae5a2b3](https://github.com/ethanneff/example/commit/ae5a2b3f9d8c9e445bc72e6b31f6a2e6b66b57cb))
+* update bundler in reset ([192e229](https://github.com/ethanneff/example/commit/192e229c8f010a826c051a6343d9ebb8c56ef2f4))
+* update gem dependences ([49c42a4](https://github.com/ethanneff/example/commit/49c42a4a58223089d114818bac88379b0c5aa7d0))
+* upload metadata for ios ([fd23af3](https://github.com/ethanneff/example/commit/fd23af3a84a38a24230a031670dcc8a4ec302fcc))
+
 ## [2.51.9](https://github.com/ethanneff/example/compare/v2.51.8...v2.51.9) (2021-02-17)
 
 
