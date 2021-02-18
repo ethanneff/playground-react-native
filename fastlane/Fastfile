@@ -56,6 +56,7 @@ platform :ios do
     desc "deploy"
     changelog_from_git_commits
     deliver
+    upload_app_privacy_details_to_app_store(  app_identifier: new_package_name, json_path: "privacy.json")
   end
 
 end
