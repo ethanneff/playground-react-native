@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.52.2](https://github.com/ethanneff/example/compare/v2.52.1...v2.52.2) (2021-02-18)
+
+
+### Bug Fixes
+
+* update deps ([a1d19d3](https://github.com/ethanneff/example/commit/a1d19d331bf446ab52491cc25567f5b9784cc8ed))
+
 ## [2.52.1](https://github.com/ethanneff/example/compare/v2.52.0...v2.52.1) (2021-02-18)
 
 
