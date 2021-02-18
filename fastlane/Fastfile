@@ -15,6 +15,15 @@ before_all do
   git_pull
 end
 
+apps = {
+  "core" => {"name" => "Core - Admin Panel"},  
+  "complete" => {"name" => "Complete - Task Management"},
+  "journal" => {"name" => "Journal, Reflect, Improve"},
+  "progress" => {"name" => "Progress - Coding Tracker"},
+}
+
+methods = ["prod", "test", "codepush"]
+
 platform :ios do
 
   lane :deploy do |options|
@@ -34,6 +43,7 @@ platform :ios do
 
     desc "clone configs"
     if new_package_name != "com.eneff.app.core"
+      sh("echo #{config["name"]}> ./metadata/en-US/name.txt")
       sh("sed -i '' -E 's/^(APP=*).*/\\1#{app_name}/' ../.env")
       sh("cp", "../ios/core/GoogleService-Info." + app_name.downcase + ".plist", "../ios/core/GoogleService-Info.plist")
       update_info_plist(xcodeproj: xcodeproj, scheme: "core", display_name: app_name, app_identifier: new_package_name)
@@ -47,6 +57,7 @@ platform :ios do
 
     desc "clean configs"
     if new_package_name != "com.eneff.app.core"
+      sh("echo #{apps["core"]["name"]}> ./metadata/en-US/name.txt")
       sh("sed -i '' -E 's/^(APP=*).*/\\1core/' ../.env")
       sh("cp", "../ios/core/GoogleService-Info.core.plist", "../ios/core/GoogleService-Info.plist")
       update_info_plist(xcodeproj: xcodeproj, scheme: "core", display_name: 'Core', app_identifier: "com.eneff.app.core")
@@ -79,6 +90,7 @@ platform :android do
 
     desc "clone configs"
     if new_package_name != "com.eneff.app.core"
+      sh("echo #{config["name"]}> ./metadata/en-US/name.txt")
       sh("sed -i '' -E 's/^(APP=*).*/\\1#{app_name}/' ../.env")
       sh("cp", "../android/app/google-services." + app_name.downcase + ".json", "../android/app/google-services.json")
       rename_android_package(path: "./android/", package_name: "com.eneff.app.core", new_package_name: new_package_name)
@@ -92,6 +104,7 @@ platform :android do
 
     desc "clean configs"
     if new_package_name != "com.eneff.app.core"
+      sh("echo #{apps["core"]["name"]}> ./metadata/en-US/name.txt")
       sh("sed -i '' -E 's/^(APP=*).*/\\1core/' ../.env")
       sh("cp", "../android/app/google-services.core.json", "../android/app/google-services.json")
       sh("rm", "-rf", "../android/app/src/main/java/com/eneff/app/!(core)/*")
