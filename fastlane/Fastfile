@@ -1,6 +1,11 @@
+## USAGE
 # fastlane ios|android deploy app:core|progress|journal|complete method:prod|test|codepush
 # e.g. fastlane ios deploy app:core method:prod
 # e.g. fastlane android deploy app:core method:codepush
+
+## OTHER
+# fastlane deliver download_metadata -a com.eneff.app.core
+# fastlane deliver download_screenshots -a com.eneff.app.core
 
 timestamp = Time.now.to_i
 
