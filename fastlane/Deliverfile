@@ -10,3 +10,5 @@ app_review_information(
   demo_password: "pass",
   notes: "notes"
 )
+metadata_path("./metadata")
+screenshots_path('./screenshots')
