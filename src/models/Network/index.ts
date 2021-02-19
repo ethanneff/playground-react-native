@@ -15,7 +15,7 @@ export const networkActions = {updateNetwork};
 
 /* INTERFACES */
 export type NetworkState = {
-  connected: boolean;
+  connected: boolean | null;
   details: NetInfoConnectedDetails | null;
   reachable: boolean;
   type: NetInfoStateType;
@@ -23,7 +23,7 @@ export type NetworkState = {
 
 /* REDUCERS */
 export const networkInitialState: NetworkState = {
-  connected: false,
+  connected: null,
   details: null,
   reachable: false,
   type: NetInfoStateType.unknown,

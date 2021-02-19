@@ -3569,10 +3569,10 @@
   version "0.1.10"
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.10.tgz#5dda643e19e587793bc2034dd9bf7398ad43d401"
 
-"@react-native-community/netinfo@5.9.10":
-  version "5.9.10"
-  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-5.9.10.tgz#97d3a9fa62a3a4838ec7a6ec91cfec5a26e365b6"
-  integrity sha512-1NPlBA2Hu/KWc3EnQcDRPRX0x8Dg9tuQlQQVWVQjlg+u+PjCq7ANEtbikOFKp5yQqfF8tqzU5+84/IfDO8zpiA==
+"@react-native-community/netinfo@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-6.0.0.tgz#2a4d7190b508dd0c2293656c9c1aa068f6f60a71"
+  integrity sha512-Z9M8VGcF2IZVOo2x+oUStvpCW/8HjIRi4+iQCu5n+PhC7OqCQX58KYAzdBr///alIfRXiu6oMb+lK+rXQH1FvQ==
 
 "@react-native-community/slider@3.0.3":
   version "3.0.3"
@@ -14471,9 +14471,10 @@ react-native-screens@2.17.1:
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.17.1.tgz#c3c0ac750af48741c5b1635511e6af2a27b74309"
   integrity sha512-B4gD5e4csvlVwlhf+RNqjQZ9mHTwe/iL3rXondgZxnKz4oW0QAmtLnLRKOrYVxoaJaF9Fy7jhjo//24/472APQ==
 
-react-native-sensors@7.0.2:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/react-native-sensors/-/react-native-sensors-7.0.2.tgz#c910cf3b5c763868c4a8015517eb1f4882b65c89"
+react-native-sensors@7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-sensors/-/react-native-sensors-7.1.0.tgz#d3d44fc273e79304f59ea3babc42f6de72dfd660"
+  integrity sha512-KUfrgogIQdK+s3huv3yfmMpfc8loN0wziehB86tqDxeX7eBqkZliLmre80UElKazjqGo/Jb4yECmzaG+1QV87A==
   dependencies:
     rxjs ">= 6"
 
