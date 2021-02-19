@@ -9,20 +9,19 @@
   - [x] ios (core)
   - [ ] ios (journal)
   - [ ] ios (progress)
-  - [ ] ios (complete)
-  - [ ] ios (travis ci)
+  - [x] ios (complete)
   - [ ] android (core)
   - [ ] android (journal)
   - [ ] android (progress)
   - [x] android (complete)
-  - [ ] github release branch for all builds
-  - [ ] navigation
+  - [ ] release branch for all builds
+  - [x] navigation
   - [ ] app center
   - [ ] code push
   - [ ] ios app version = package version
   - [ ] test ipa
   - [ ] test apk
-  - [ ] upload zshrc
+  - [x] upload zshrc
 
 - [ ] Deploy Android app
   - [ ] login flow
