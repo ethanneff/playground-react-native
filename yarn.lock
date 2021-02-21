@@ -14471,10 +14471,10 @@ react-native-screens@2.17.1:
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.17.1.tgz#c3c0ac750af48741c5b1635511e6af2a27b74309"
   integrity sha512-B4gD5e4csvlVwlhf+RNqjQZ9mHTwe/iL3rXondgZxnKz4oW0QAmtLnLRKOrYVxoaJaF9Fy7jhjo//24/472APQ==
 
-react-native-sensors@7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-sensors/-/react-native-sensors-7.1.0.tgz#d3d44fc273e79304f59ea3babc42f6de72dfd660"
-  integrity sha512-KUfrgogIQdK+s3huv3yfmMpfc8loN0wziehB86tqDxeX7eBqkZliLmre80UElKazjqGo/Jb4yECmzaG+1QV87A==
+react-native-sensors@7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-sensors/-/react-native-sensors-7.2.0.tgz#e7fa3f7392eece19549c8af99617e26ebae1ca73"
+  integrity sha512-SGTlLqgUju5NwkPteYRBS6HxpqrmxdniDRJN4Waq7ip33JqrDhQU1htrUJRcp91LIpxcctFbDDfo7j66mK/Aew==
   dependencies:
     rxjs ">= 6"
 
