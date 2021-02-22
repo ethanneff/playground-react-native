@@ -72,6 +72,14 @@ platform :ios do
     changelog_from_git_commits()
     upload_app_privacy_details_to_app_store(app_identifier: new_package_name, json_path: "./fastlane/privacy.json")
     deliver()
+    # appcenter_upload(
+    #   api_token: ENV["APP_CENTER_API"],
+    #   owner_name: "ethanneff",
+    #   owner_type: "user"
+    #   app_name: new_package_name,
+    #   file: "./core.ipa",
+    #   notify_testers: true
+    # )
   end
 
 end
@@ -120,6 +128,14 @@ platform :android do
 
     desc "submit to google"
     upload_to_play_store(track: "beta", package_name: new_package_name)
+    # appcenter_upload(
+    #   api_token: ENV["APP_CENTER_API"],
+    #   owner_name: "ethanneff",
+    #   owner_type: "user",
+    #   app_name: new_package_name,
+    #   file: "./android/app/build/outputs/bundle/release/app-release.aab",
+    #   notify_testers: true
+    # )
   end
 
 end
