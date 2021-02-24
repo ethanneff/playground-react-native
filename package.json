@@ -47,7 +47,7 @@
     "date-fns": "2.17.0",
     "dayjs": "1.10.4",
     "howler": "2.2.1",
-    "npm-check-updates": "11.1.8",
+    "npm-check-updates": "11.1.9",
     "patch-package": "6.2.2",
     "postinstall-postinstall": "2.1.0",
     "react": "16.14.0",
@@ -83,7 +83,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.13.1",
-    "@babel/runtime": "7.13.4",
+    "@babel/runtime": "7.13.7",
     "@commitlint/cli": "12.0.0",
     "@commitlint/config-conventional": "12.0.0",
     "@react-native-community/eslint-config": "2.0.0",
@@ -104,8 +104,8 @@
     "@types/react-redux": "7.1.16",
     "@types/react-test-renderer": "17.0.1",
     "@types/uuid": "8.3.0",
-    "@typescript-eslint/eslint-plugin": "4.15.1",
-    "@typescript-eslint/parser": "4.15.1",
+    "@typescript-eslint/eslint-plugin": "4.15.2",
+    "@typescript-eslint/parser": "4.15.2",
     "@welldone-software/why-did-you-render": "6.0.5",
     "babel-plugin-transform-remove-console": "6.9.4",
     "codecov": "3.8.1",
@@ -120,7 +120,7 @@
     "react-test-renderer": "16.14.0",
     "semantic-release": "17.3.9",
     "travis-deploy-once": "5.0.11",
-    "typescript": "4.1.5"
+    "typescript": "4.2.2"
   },
   "husky": {
     "hooks": {
