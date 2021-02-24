@@ -24,8 +24,8 @@ export const Carousel = memo(function Carousel({
   const flatList = useRef<FlatList | null>(null);
   const activeIndexRef = useRef(0);
   const [activeIndex, setActiveIndex] = useState(0);
-  const loopTimeout = useRef<NodeJS.Timeout | null>(null);
-  const touchTimeout = useRef<NodeJS.Timeout | null>(null);
+  const loopTimeout = useRef<number | null>(null);
+  const touchTimeout = useRef<number | null>(null);
 
   const onViewableItemsChanged = useCallback(({viewableItems}) => {
     const index = viewableItems[0]?.index || 0;

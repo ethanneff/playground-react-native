@@ -1,0 +1,35 @@
+diff --git a/node_modules/react-native-gesture-handler/lib/typescript/components/touchables/GenericTouchable.d.ts b/node_modules/react-native-gesture-handler/lib/typescript/components/touchables/GenericTouchable.d.ts
+index 8cca525..4090e79 100644
+--- a/node_modules/react-native-gesture-handler/lib/typescript/components/touchables/GenericTouchable.d.ts
++++ b/node_modules/react-native-gesture-handler/lib/typescript/components/touchables/GenericTouchable.d.ts
+@@ -1,9 +1,9 @@
+ /// <reference types="node" />
+-import { Component } from 'react';
+-import { StyleProp, ViewStyle, TouchableWithoutFeedbackProps } from 'react-native';
+-import { GestureEvent, HandlerStateChangeEvent } from '../../handlers/gestureHandlers';
+-import { NativeViewGestureHandlerPayload } from '../../handlers/NativeViewGestureHandler';
+-import { TouchableNativeFeedbackExtraProps } from './TouchableNativeFeedback.android';
++import {Component} from 'react';
++import {StyleProp, TouchableWithoutFeedbackProps, ViewStyle} from 'react-native';
++import {GestureEvent, HandlerStateChangeEvent} from '../../handlers/gestureHandlers';
++import {NativeViewGestureHandlerPayload} from '../../handlers/NativeViewGestureHandler';
++import {TouchableNativeFeedbackExtraProps} from './TouchableNativeFeedback.android';
+ /**
+  * Each touchable is a states' machine which preforms transitions.
+  * On very beginning (and on the very end or recognition) touchable is
+@@ -18,7 +18,7 @@ export declare const TOUCHABLE_STATE: {
+ };
+ declare type TouchableState = typeof TOUCHABLE_STATE[keyof typeof TOUCHABLE_STATE];
+ export interface GenericTouchableProps extends TouchableWithoutFeedbackProps {
+-    onPress?: () => void;
++    onPress?: (e:any) => void;
+     onPressIn?: () => void;
+     onPressOut?: () => void;
+     onLongPress?: () => void;
+@@ -63,4 +63,5 @@ export default class GenericTouchable extends Component<GenericTouchableProps &
+     onMoveOut(): void;
+     render(): JSX.Element;
+ }
+-export {};
++export { };
++
