@@ -723,7 +723,7 @@ PODS:
     - React
   - RNReanimated (1.13.2):
     - React-Core
-  - RNScreens (2.17.1):
+  - RNScreens (2.18.0):
     - React-Core
   - RNSensors (7.2.0):
     - React-Core
@@ -1046,7 +1046,7 @@ SPEC CHECKSUMS:
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
   RNRate: 15b861025a7821730761fce7f44561ce7e0b2de0
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
-  RNScreens: b6c9607e6fe47c1b6e2f1910d2acd46dd7ecea3a
+  RNScreens: f0d7a2a440a8ba9f4574ca1ddb3368f473891be4
   RNSensors: aefce56de71b313fbdeb6d26c024d7fc9258373f
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
