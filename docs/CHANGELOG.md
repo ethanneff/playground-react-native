@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.52.5](https://github.com/ethanneff/example/compare/v2.52.4...v2.52.5) (2021-02-25)
+
+
+### Bug Fixes
+
+* add config for typescript 4.1.5 ([9e973f4](https://github.com/ethanneff/example/commit/9e973f4c455dba31d3fd4b6b5833cfb980572236))
+* add default_app property ([ba6500b](https://github.com/ethanneff/example/commit/ba6500b857a5b5c6a8829c64f7cb99dffae50123))
+* add template for app center upload ([edfc501](https://github.com/ethanneff/example/commit/edfc501253db5eb76dbbeff2908a9d3a38e927f3))
+* remove dupe local env ([507098c](https://github.com/ethanneff/example/commit/507098c38e3a4cb3fb29d89e396a064708ca37f9))
+* remove extra space ([f382abf](https://github.com/ethanneff/example/commit/f382abf438c79e15f48f37da84f9f74c4a755092))
+* set config for android ([c2e3159](https://github.com/ethanneff/example/commit/c2e31597572da0eeeeb41a248da077226c1aead2))
+* styling on tsconfig ([d30198f](https://github.com/ethanneff/example/commit/d30198f7e8eb7d4e98b40f933d2bc315406976e6))
+* update changelog styling ([36b0aef](https://github.com/ethanneff/example/commit/36b0aef6c34723a3aff593da498ebe41947f0280))
+* update deps ([4bd0254](https://github.com/ethanneff/example/commit/4bd0254bf694f3e2d84d9b9f2b50dc36405359e0))
+* update deps ([059dd3d](https://github.com/ethanneff/example/commit/059dd3d583c3f3f3a59fe23f95fca5bf1422f746))
+* update deps ([f7f4bc4](https://github.com/ethanneff/example/commit/f7f4bc4b43ca5f29a71af296517d16bc4f695f03))
+* update deps ([cfc7315](https://github.com/ethanneff/example/commit/cfc7315b79dc5c6d015fac461076b40f4a098c78))
+* update deps ([28fe202](https://github.com/ethanneff/example/commit/28fe2025629da94ee76abbdb2c7be1f973c1f9d2))
+* update gems ([5abe120](https://github.com/ethanneff/example/commit/5abe12073279df732a5004d1cfb01585a80de6cb))
+* update gesture handler ([0fec2a8](https://github.com/ethanneff/example/commit/0fec2a82e991c9a5a378fb120578d3862503ee53))
+
 ## [2.52.4](https://github.com/ethanneff/example/compare/v2.52.3...v2.52.4) (2021-02-21)
 
 ### Bug Fixes
