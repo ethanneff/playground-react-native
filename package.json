@@ -21,7 +21,7 @@
     "ncu": "ncu",
     "ncu-u": "ncu -u && yarn && cd ios && pod install",
     "visualize-size": "react-native-bundle-visualizer",
-    "postinstall": "husky install"
+    "postinstall": "patch-package && husky install"
   },
   "dependencies": {
     "@invertase/react-native-apple-authentication": "2.1.0",
