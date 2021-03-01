@@ -37,10 +37,10 @@ const fontWeight: {[key: string]: FontWeight} = {
 };
 
 const fontEmphases: FontEmphases = {
+  none: 1.0,
   high: 0.87,
   medium: 0.6,
   low: 0.38,
-  none: 1.0,
 };
 const fontSizes: FontSizes = {
   body1: {
