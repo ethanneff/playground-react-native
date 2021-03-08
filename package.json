@@ -48,7 +48,7 @@
     "dayjs": "1.10.4",
     "howler": "2.2.1",
     "npm-check-updates": "11.2.0",
-    "patch-package": "6.4.5",
+    "patch-package": "6.4.6",
     "postinstall-postinstall": "2.1.0",
     "react": "16.14.0",
     "react-dom": "16.14.0",
