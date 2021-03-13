@@ -3,14 +3,24 @@ import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Button, Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
-import {changeTheme, ColorTheme, colorThemes} from '../../../models';
+import {
+  changeTheme,
+  ColorTheme,
+  colorThemes,
+  getCurrentColor,
+} from '../../../models';
 import {config, useRootDispatch, useRootSelector} from '../../../utils';
+
+// create tag component with colors https://oomphinc.github.io/colorcube/#results-content https://stripe.com/blog/accessible-color-systems
+// add light + dark + border + secondary greys
+// keep original colors
 
 export const Colors = memo(function DebugColors() {
   const {goBack} = useNavigation();
   const navBack = useCallback(() => goBack(), [goBack]);
   const dispatch = useRootDispatch();
   const currentTheme = useRootSelector((state) => state.theme.currentColor);
+  const themeColors = useRootSelector(getCurrentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   // text: high 87% medium 60% disabled 38%
   // icon: active 100% inactive 60% disabled 38%
@@ -28,7 +38,7 @@ export const Colors = memo(function DebugColors() {
           {colorThemes.map((item) => (
             <Button
               center
-              color={currentTheme === item ? 'success' : 'text'}
+              color={currentTheme === item ? 'green' : 'text'}
               emphasis="medium"
               key={item}
               onPress={themePress(item)}
@@ -44,21 +54,12 @@ export const Colors = memo(function DebugColors() {
         />
         <View style={{flexDirection: 'row'}}>
           <View style={{flex: 1}}>
-            <Button center color="primary" emphasis="high" title="primary" />
-            <Button
-              center
-              color="secondary"
-              emphasis="high"
-              title="secondary"
-            />
-            <Button center color="success" emphasis="high" title="success" />
-            <Button center color="danger" emphasis="high" title="danger" />
-            <Button center color="warning" emphasis="high" title="warning" />
-            <Button center color="info" emphasis="high" title="info" />
-            <Button center color="light" emphasis="high" title="light" />
-            <Button center color="dark" emphasis="high" title="dark" />
-            <Button center color="text" emphasis="high" title="text" />
-            <Button center emphasis="high" title="default" />
+            {Object.keys(themeColors).map((color) => {
+              if (color === 'statusBar') return null;
+              return (
+                <Button center color={color} emphasis="high" title={color} />
+              );
+            })}
             <Button center disable emphasis="high" title="disable" />
             <Button
               center

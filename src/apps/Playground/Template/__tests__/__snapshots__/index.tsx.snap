@@ -353,7 +353,7 @@ exports[`renders correctly 1`] = `
                                   style={
                                     Array [
                                       Object {
-                                        "color": "hsl(208, 7%, 46%)",
+                                        "color": undefined,
                                         "fontSize": 32,
                                       },
                                       Array [

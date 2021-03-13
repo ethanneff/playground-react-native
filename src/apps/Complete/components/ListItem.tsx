@@ -104,6 +104,7 @@ export const ListItem = memo(function ListItem({
       }}>
       <TextInput
         backgroundColor={color.surface}
+        editable={false}
         icons={icons}
         onRef={textInputRef}
         onSubmitEditing={onItemTitleSubmit}
