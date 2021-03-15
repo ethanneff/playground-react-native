@@ -2760,10 +2760,10 @@
     update-notifier "^2.2.0"
     yargs "^8.0.2"
 
-"@invertase/react-native-apple-authentication@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@invertase/react-native-apple-authentication/-/react-native-apple-authentication-2.1.0.tgz#ae58fe8cafa17272e363cbc68f342b9aefd6414c"
-  integrity sha512-9F4aZVS2wpwZS81zi6I4R3OEctrpDUjDfJaJRHaedQ9d3DQjsbFNpKN2eKUMLnJoY2hweE2dRdgwXrJaNaEZ+g==
+"@invertase/react-native-apple-authentication@2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@invertase/react-native-apple-authentication/-/react-native-apple-authentication-2.1.1.tgz#30e15068aa4d8bc19f9dab551a259cfd22f27f15"
+  integrity sha512-gf89UrqvOsB2m8IDs8b5vhXjTasH6sEPOszMVjkV2Qpi/vqsUSNxjWFEhyYXEPNoNK1W61KHkSc/pyBULpy6lA==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
@@ -3669,40 +3669,40 @@
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-3.0.3.tgz#830167fd757ba70ac638747ba3169b2dbae60330"
 
-"@react-native-firebase/analytics@11.0.0":
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-11.0.0.tgz#cfcf9984002756c61d65bf13cac6018d9951046d"
-  integrity sha512-d1jCdoZoueZeQL6fiSZTx69AvjppbPs3RMLB299cMbmCxcCgEvTTw/C6Tr73+8PMVeju64IWTrm8HRwTGhk7Tw==
+"@react-native-firebase/analytics@11.1.0":
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-11.1.0.tgz#420cbe70aae4e96a5546590c0836adec178065a6"
+  integrity sha512-+89e6oWa9RxWThPoTDe6/qTLLscyli4kv584CxPuSBIMikRYR2nOE7EIKkbCYTtt9TayG5Qd99mPeGyYrk0eGg==
 
-"@react-native-firebase/app@11.0.0":
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-11.0.0.tgz#dee23fd79efa42c008306d2e9163afd9391f1567"
-  integrity sha512-jsystyGQX8Vx8w32YTySJGNwBNeRpEvUIxa+u7GWR8MngkwenyJOGwGT+5sHxZwJUGQl3X/7i1UKWzcrSDG5jg==
+"@react-native-firebase/app@11.1.0":
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-11.1.0.tgz#08802784d68038c83568ea02a910ed1d64432535"
+  integrity sha512-jZrPjwFxUaayugU5sqk98VYejwkRzhS+eaiHOegdSGbHMMcUBR5vIl7HuEjtvwfd5u6dvJWnstHk237fvwwFZQ==
   dependencies:
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/auth@11.0.0":
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-11.0.0.tgz#1bf3afd53c88d7c6701440bb2530477fb4ac53ac"
-  integrity sha512-N5nsK0S6jWWUSGEzSNkCdlAzEdZRa5xA0VOklKlQ29uYiKwegog+bY0zxmDK+m6hqbLF0IABf4k6goZ/D0P9qg==
+"@react-native-firebase/auth@11.1.0":
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-11.1.0.tgz#83d7651b5ce74af408d0d6b8207f61d6308d1c0e"
+  integrity sha512-53emDL/7Onhv2w3tLQMGsGjes/RsyYvI2XKW2e9vrGOmN43lIvDBjbnMS1ChnEPgNTSjuYJAmoZJMdUjKEHBSw==
 
-"@react-native-firebase/crashlytics@11.0.0":
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-11.0.0.tgz#99bfe0b51659adb4494260dd9d65da7442c35911"
-  integrity sha512-iAR2YDB4OGRrvFZsCFH+yh4jVIRVaPDyU6wPIPO7a5ZDHaJ+RxtNPGVM7WZVSeRsHVed79CIJriiLqO07vstaA==
+"@react-native-firebase/crashlytics@11.1.0":
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-11.1.0.tgz#4a167c34efae1cc8ffed8666ff0da37564eddede"
+  integrity sha512-fkHs9vAAhD4swgYLeYZi8mDHV3Atpn6suYJoigODzocgF3bOYXu5oTEVs0HnQ458es2Ql+UliE6IDRubgV/ETQ==
   dependencies:
     stacktrace-js "^2.0.0"
 
-"@react-native-firebase/firestore@11.0.0":
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-11.0.0.tgz#5e609076a03f3ec231f46c464f5761259ee425e3"
-  integrity sha512-wj7ZPYhZdScWYEn5ctCkvrxPYmsgLcvHNykuYmAGBNr6ZSCXhDC1Ccv2DQ9WNaY3fdSYl52Fqck3sgl5orGVXg==
+"@react-native-firebase/firestore@11.1.0":
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-11.1.0.tgz#a3013ecfa0633939a818de49b8b7c143f07fc691"
+  integrity sha512-KMnm1Ck6rBlwE3Q1mvN+BdIx1h3P2/uNW30W9hRlVh3sBDHoQGg1eDKr9y5cDUSbbypvnTqSqnIQhA65bL5lSw==
 
-"@react-native-firebase/remote-config@11.0.0":
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-11.0.0.tgz#c3f1c089c5efe810a6bf203bd04f912af51eae5c"
-  integrity sha512-uZtFMkvGl+frUXrfYxHkQcnIzotMsJoRH0b97ui9vUhAR18JvhcMQtWVbjn/hb/tHt9Jsj8saq1j4OrSmoJOcg==
+"@react-native-firebase/remote-config@11.1.0":
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-11.1.0.tgz#28b260563fe2521fd8d016f7f1740db351c762d6"
+  integrity sha512-ChBPVqmGQxalYhC4FDqd5nDwNyI8OpofBmFsm22IaQMJYXdv6n4JRok+qZx4fOKMDZb2YJo8dy031a3IYngVpQ==
 
 "@react-navigation/bottom-tabs@5.11.8":
   version "5.11.8"
@@ -4687,10 +4687,10 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@welldone-software/why-did-you-render@6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@welldone-software/why-did-you-render/-/why-did-you-render-6.1.0.tgz#48dd1585e115e7163761718b95fb1a7f4e618384"
-  integrity sha512-0s+PuKQ4v9VV1SZSM6iS7d2T7X288T3DF+K8yfkFAhI31HhJGGH1SY1ssVm+LqjSMyrVWT60ZF5r0qUsO0Z9Lw==
+"@welldone-software/why-did-you-render@6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@welldone-software/why-did-you-render/-/why-did-you-render-6.1.1.tgz#3dcf66620fcafbf79e5260bd6ace5e51254055ac"
+  integrity sha512-BMFp33T4MC27qvCWsI1SqwZCxIlxoQXsPQFdGLDsPSg7sgoWX4Gzj0+hlKVrWrCBiIxi7gP2JcS9IK6CZzk8mg==
   dependencies:
     lodash "^4"
 
@@ -12319,10 +12319,10 @@ npm-cache-filename@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/npm-cache-filename/-/npm-cache-filename-1.0.2.tgz#ded306c5b0bfc870a9e9faf823bc5f283e05ae11"
 
-npm-check-updates@11.2.2:
-  version "11.2.2"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.2.2.tgz#cb3b00fddbbace46b3074e2ae71e1231794c3596"
-  integrity sha512-DZCwlP2L5Me6PlrEHQe1uPqjB4vFBFSG9O1hjv0rF3l8YLBpR6Nlhl00sa4wYKqMM9dkLT2Kyh/n4yTH8o952w==
+npm-check-updates@11.3.0:
+  version "11.3.0"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.3.0.tgz#f1af6da11be5a54ffe3c1065ce34de0f2ba2595a"
+  integrity sha512-7GMDj40cWw/nRn3BsN+20ca3T6CvHqIiFhooVa5a3VybrS7TNBdbR3/BIi9dw4vFORgFZw/OsW3ZtRTFamnPDQ==
   dependencies:
     chalk "^4.1.0"
     cint "^8.2.1"
@@ -13315,10 +13315,10 @@ pascalcase@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
 
-patch-package@6.4.6:
-  version "6.4.6"
-  resolved "https://registry.yarnpkg.com/patch-package/-/patch-package-6.4.6.tgz#e61fe9f0d23df509338e3b79be6e89b81d5760e4"
-  integrity sha512-AO2bh42z8AQL+0OUdcRpS5Z/0X8k9IQ1uc1HzlVye+2RQrtDeNgTk5SbS4rdbLJKtUWRpvPISrYZeyh+OK4AKw==
+patch-package@6.4.7:
+  version "6.4.7"
+  resolved "https://registry.yarnpkg.com/patch-package/-/patch-package-6.4.7.tgz#2282d53c397909a0d9ef92dae3fdeb558382b148"
+  integrity sha512-S0vh/ZEafZ17hbhgqdnpunKDfzHQibQizx9g8yEf5dcVk3KOflOfdufRXQX8CSEkyOQwuM/bNz1GwKvFj54kaQ==
   dependencies:
     "@yarnpkg/lockfile" "^1.1.0"
     chalk "^2.4.2"
