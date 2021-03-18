@@ -7,12 +7,12 @@
 - [x] fastlane build multiple apps
 
   - [x] ios (core)
-  - [ ] ios (journal)
-  - [ ] ios (progress)
+  - [x] ios (journal)
+  - [x] ios (progress)
   - [x] ios (complete)
-  - [ ] android (core)
-  - [ ] android (journal)
-  - [ ] android (progress)
+  - [x] android (core)
+  - [x] android (journal)
+  - [x] android (progress)
   - [x] android (complete)
   - [ ] release branch for all builds
   - [x] navigation
@@ -29,6 +29,7 @@
   - [x] deploy android
 - [ ] Deploy iOS app
 - [ ] Publish landing page
+- [ ] color
 - [ ] Obtain 10 users
 - [ ] Question users
 - [ ] date-fns to dayjs
