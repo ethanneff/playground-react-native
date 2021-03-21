@@ -22,6 +22,7 @@
   - [ ] test ipa
   - [ ] test apk
   - [x] upload zshrc
+  - [ ] fix android https://github.com/fastlane/fastlane/issues/18403
 
 - [ ] Deploy Android app
   - [ ] login flow
