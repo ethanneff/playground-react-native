@@ -29,7 +29,7 @@ export const PasswordReset = memo(function PasswordReset() {
     (key: keyof typeof initialRef) => (val: string) => {
       form.current = {...form.current, [key]: val};
       const complete = val.length > 0;
-      setState((p) => ({...p, complete}));
+      setState(p => ({...p, complete}));
     },
     [],
   );

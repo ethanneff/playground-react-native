@@ -1,7 +1,7 @@
 import {
   BaseNavigationContainer,
   NavigationContext,
-  NavigationRouteContext
+  NavigationRouteContext,
 } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React, {ReactNode} from 'react';

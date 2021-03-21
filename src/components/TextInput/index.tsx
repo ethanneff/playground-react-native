@@ -144,7 +144,7 @@ export const TextInput = memo(function TextInput({
     [onRef],
   );
 
-  const onIconParentPress = useCallback((e) => {
+  const onIconParentPress = useCallback(e => {
     e.preventDefault();
   }, []);
 
@@ -203,7 +203,7 @@ export const TextInput = memo(function TextInput({
           <TouchableWithoutFeedback
             onPress={onIconParentPress}
             style={{flexDirection: 'row'}}>
-            {icons.map((icon) =>
+            {icons.map(icon =>
               icon.hidden ||
               (focus && !icon.focus) ||
               (!focus && icon.focus) ? null : (

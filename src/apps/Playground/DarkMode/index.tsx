@@ -78,7 +78,7 @@ export const DarkMode = memo(function DarkMode() {
   const dispatch = useRootDispatch();
   const color = useColor();
   const {goBack} = useNavigation();
-  const currentTheme = useRootSelector((state) => state.theme.currentColor);
+  const currentTheme = useRootSelector(state => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   const [elevation, setElevation] = useState(2);
   const handleSlider = useCallback((value: number) => setElevation(value), []);
@@ -138,7 +138,7 @@ export const DarkMode = memo(function DarkMode() {
               alignItems: 'center',
             }}>
             <Text title="theme: " />
-            {colorThemes.map((item) => (
+            {colorThemes.map(item => (
               <Button
                 color={currentTheme === item ? 'primary' : 'text'}
                 emphasis="high"

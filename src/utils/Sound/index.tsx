@@ -30,7 +30,7 @@ const stopSound = (callback?: () => void) => {
 };
 
 export const SoundManager: SoundManagerType = {
-  play: (soundName) => {
+  play: soundName => {
     if (active === null) {
       playSound(soundName);
       return;

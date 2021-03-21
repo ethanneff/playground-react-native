@@ -19,7 +19,7 @@ export const Account = memo(function Account() {
   const dispatch = useRootDispatch();
   const {navigate} = useNavigation();
   const {onLogout, response} = useAuth();
-  const profile = useRootSelector((s) => s.completeAuth);
+  const profile = useRootSelector(s => s.completeAuth);
   const onNavToAdmin = useCallback(() => navigate('admin'), [navigate]);
 
   useEffect(() => {

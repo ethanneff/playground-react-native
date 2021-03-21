@@ -33,7 +33,7 @@ export const FortuneWheel = memo(function PlaygroundFortuneWheel() {
   const {goBack} = useNavigation();
   const [winner, setWinner] = useState(null);
 
-  const onComplete = useCallback((a) => {
+  const onComplete = useCallback(a => {
     setWinner(a.display);
   }, []);
 

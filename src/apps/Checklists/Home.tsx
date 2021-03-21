@@ -15,7 +15,7 @@ export const Home = memo(function Checklists() {
     },
   });
   const [showLogin, setShowLogin] = useState(false);
-  const onToggleLogin = useCallback(() => setShowLogin((prev) => !prev), []);
+  const onToggleLogin = useCallback(() => setShowLogin(prev => !prev), []);
 
   return (
     <>

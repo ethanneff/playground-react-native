@@ -62,7 +62,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     {...dItem(u), title: 'fix sink'},
   ];
   const homeItems: Item[] = dKanban(u);
-  homeItems[0].children = homeTodoItems.map((i) => i.id);
+  homeItems[0].children = homeTodoItems.map(i => i.id);
   const townItems: Item[] = dKanban(u);
   const workItems: Item[] = dKanban(u);
   const gymItems: Item[] = dKanban(u);
@@ -96,61 +96,61 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
       ...dItem(u),
       type: 'board',
       title: 'at home',
-      children: homeItems.map((i) => i.id),
+      children: homeItems.map(i => i.id),
     },
     {
       ...dItem(u),
       type: 'board',
       title: 'at town',
-      children: townItems.map((i) => i.id),
+      children: townItems.map(i => i.id),
     },
     {
       ...dItem(u),
       type: 'board',
       title: 'at work',
-      children: workItems.map((i) => i.id),
+      children: workItems.map(i => i.id),
     },
     {
       ...dItem(u),
       type: 'board',
       title: 'at gym',
-      children: gymItems.map((i) => i.id),
+      children: gymItems.map(i => i.id),
     },
     {
       ...dItem(u),
       type: 'board',
       title: 'app release',
-      children: appItems.map((i) => i.id),
+      children: appItems.map(i => i.id),
     },
     {
       ...dItem(u),
       type: 'list',
       title: 'meeting notes',
-      children: meetItems.map((i) => i.id),
+      children: meetItems.map(i => i.id),
     },
     {
       ...dItem(u),
       type: 'list',
       title: 'book notes',
-      children: bookItems.map((i) => i.id),
+      children: bookItems.map(i => i.id),
     },
     {
       ...dItem(u),
       type: 'list',
       title: 'gift ideas',
-      children: giftItems.map((i) => i.id),
+      children: giftItems.map(i => i.id),
     },
     {
       ...dItem(u),
       type: 'list',
       title: 'checklists',
-      children: checkItems.map((i) => i.id),
+      children: checkItems.map(i => i.id),
     },
     {
       ...dItem(u),
       type: 'list',
       title: 'coding',
-      children: codeItems.map((i) => i.id),
+      children: codeItems.map(i => i.id),
     },
   ];
 
@@ -160,14 +160,14 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
       ...dItem(u),
       title: 'Inbox',
       type: 'list',
-      children: inboxItems.map((i) => i.id),
+      children: inboxItems.map(i => i.id),
       editable: false,
     },
     {
       ...dItem(u),
       title: 'Projects',
       type: 'list',
-      children: projectItems.map((i) => i.id),
+      children: projectItems.map(i => i.id),
       editable: false,
     },
   ];
@@ -178,7 +178,7 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     createdAt: date,
     updatedAt: date,
     name: 'Bob Smith',
-    items: userItems.map((i) => i.id),
+    items: userItems.map(i => i.id),
   };
 
   return {

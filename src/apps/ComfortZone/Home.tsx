@@ -159,7 +159,7 @@ export const Home = memo(function Home() {
     setShowCustomInput(false);
   }, []);
   const onCustom = useCallback(() => {
-    setShowCustomInput((v) => !v);
+    setShowCustomInput(v => !v);
   }, []);
   const onCustomInputChange = useCallback((value: string) => {
     setCustomInput(value);

@@ -33,10 +33,7 @@ export const CreateReminderModal = memo(function CreateReminderModal({
     },
   });
 
-  const handleReminderTypePress = useCallback(
-    (type) => () => setState(type),
-    [],
-  );
+  const handleReminderTypePress = useCallback(type => () => setState(type), []);
 
   return (
     <Modal onBackgroundPress={onBackgroundPress} showOverlay>

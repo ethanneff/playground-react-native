@@ -8,7 +8,7 @@ export const Questionnaire = (): JSX.Element => {
   const [activeItem, setActiveItem] = useState('');
 
   const handleLongPress = (id: string) => () => {
-    setActionSheet((state) => !state);
+    setActionSheet(state => !state);
     setActiveItem(id);
   };
   const handleItemPress = useCallback(
@@ -42,7 +42,7 @@ export const Questionnaire = (): JSX.Element => {
     [activeItem, handleItemPress],
   );
 
-  const keyExtractor = useCallback((item) => item.id, []);
+  const keyExtractor = useCallback(item => item.id, []);
 
   return (
     <>

@@ -28,15 +28,15 @@ export const Graph = ({
   height,
 }: GraphProps): React.ReactElement => {
   const scaleX = scaleTime()
-    .domain(getDomain(data.map((d) => d.date)))
+    .domain(getDomain(data.map(d => d.date)))
     .range([0, width]);
   const scaleY = scaleLinear()
-    .domain(getDomain(data.map((d) => d.value)))
+    .domain(getDomain(data.map(d => d.value)))
     .range([height - padding, padding]);
   const d = shape
     .line<DataPoint>()
-    .x((p) => scaleX(p.date))
-    .y((p) => scaleY(p.value))
+    .x(p => scaleX(p.date))
+    .y(p => scaleY(p.value))
     .curve(shape.curveBasis)(data) as string;
   return (
     <View style={{width, height}}>

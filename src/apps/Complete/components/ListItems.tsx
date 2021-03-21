@@ -11,12 +11,12 @@ export const ListItems = memo(function ListItems({
   parentItemId,
 }: ListItemsProps) {
   const list = useRootSelector(
-    (s) => s.completeItem.items[parentItemId].children,
+    s => s.completeItem.items[parentItemId].children,
   );
   const cardsRef = useRef<FlatList | null>(null);
   const cardsLength = useRef(list.length);
 
-  const onKeyExtractor = useCallback((item) => item, []);
+  const onKeyExtractor = useCallback(item => item, []);
 
   const onCardSizeChange = useCallback(() => {
     if (list.length > cardsLength.current) {

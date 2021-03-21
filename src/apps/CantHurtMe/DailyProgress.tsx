@@ -24,7 +24,7 @@ const ProgressItem = ({item}: ProgressItemProps) => {
   const color = useColor();
   const [dateFormat, setDateFormat] = useState('ddd');
   const onPress = useCallback(() => {
-    setDateFormat((prev) => (prev === 'ddd' ? 'MMM DD' : 'ddd'));
+    setDateFormat(prev => (prev === 'ddd' ? 'MMM DD' : 'ddd'));
   }, []);
   const iconColor = item.date.isSame(dayjs(), 'day')
     ? color.success

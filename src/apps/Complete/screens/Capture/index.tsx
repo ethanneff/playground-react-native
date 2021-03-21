@@ -21,7 +21,7 @@ export const Capture = memo(function Capture() {
   const itemId = useRootSelector(getInbox);
   if (!itemId) throw new Error('missing item id');
   const noItemChildren = useRootSelector(
-    (s) => s.completeItem.items[itemId].children.length === 0,
+    s => s.completeItem.items[itemId].children.length === 0,
   );
 
   const onOrganize = useCallback(() => undefined, []);

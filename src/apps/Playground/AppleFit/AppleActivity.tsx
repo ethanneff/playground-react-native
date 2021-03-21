@@ -47,7 +47,7 @@ export const AppleActivity = ({
         clearInterval(interval);
         return;
       }
-      setProgress((p) => (p += speed));
+      setProgress(p => (p += speed));
     }, 16);
     return () => clearInterval(interval);
   }, [animate, progress, speed]);

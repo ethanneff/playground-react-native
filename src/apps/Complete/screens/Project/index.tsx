@@ -14,13 +14,13 @@ export const Project = memo(function Project() {
   const {goBack} = useNavigation();
   const color = useColor();
   const screenWidth = useRootSelector(getSmallestDimension);
-  const {projectItemId} = useRootSelector((s) => s.completeItem.nav);
+  const {projectItemId} = useRootSelector(s => s.completeItem.nav);
   if (!projectItemId) throw new Error('missing projectItemId on board screen');
   const projectItemType = useRootSelector(
-    (s) => s.completeItem.items[projectItemId].type,
+    s => s.completeItem.items[projectItemId].type,
   );
   const projectItemTitle = useRootSelector(
-    (s) => s.completeItem.items[projectItemId].title,
+    s => s.completeItem.items[projectItemId].title,
   );
   if (!projectItemType)
     throw new Error('missing projectItemType on board screen');

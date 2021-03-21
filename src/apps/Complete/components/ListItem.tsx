@@ -24,9 +24,9 @@ export const ListItem = memo(function ListItem({
   itemId,
   parentItemId,
 }: ListItemProps) {
-  const item = useRootSelector((s) => s.completeItem.items[itemId]);
+  const item = useRootSelector(s => s.completeItem.items[itemId]);
   const parentChildrenCount = useRootSelector(
-    (s) => s.completeItem.items[parentItemId].children.length,
+    s => s.completeItem.items[parentItemId].children.length,
   );
   const textInputRef = useRef<OriginalTextInput | null>(null);
   const dispatch = useRootDispatch();

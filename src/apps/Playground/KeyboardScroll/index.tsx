@@ -77,7 +77,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
 
   const [data, setData] = useState<Data[]>(() => generateItems(color, 200000));
 
-  const onChangeText = useCallback((v) => {
+  const onChangeText = useCallback(v => {
     setMessage(v);
   }, []);
 
@@ -85,7 +85,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
 
   const onSubmit = useCallback(() => {
     const date = Date.now().toString();
-    setData((p) => [...p, {id: date, name: date, color: color.info}]);
+    setData(p => [...p, {id: date, name: date, color: color.info}]);
     listRef.current?.scrollToEnd(true);
   }, [color.info]);
 

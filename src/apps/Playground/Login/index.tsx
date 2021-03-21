@@ -14,13 +14,13 @@ export const Login = memo(function Login() {
 
   const handleChange = useCallback(
     (key: string) => (val: string) => {
-      setForm((prev) => ({...prev, [key]: val}));
+      setForm(prev => ({...prev, [key]: val}));
     },
     [],
   );
 
   const handleSubmit = useCallback(() => {
-    setForm((prev) => ({...prev, error: 'Invalid Email'}));
+    setForm(prev => ({...prev, error: 'Invalid Email'}));
   }, []);
   const navBack = useCallback(() => goBack(), [goBack]);
 

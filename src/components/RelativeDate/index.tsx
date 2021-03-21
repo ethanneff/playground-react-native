@@ -31,11 +31,11 @@ export const RelativeDate = memo(function RelativeDate({
       : dayjs(date).format(format);
 
   const toggleRelativeDate = useCallback(() => {
-    setShowRelativeDate((prev) => !prev);
+    setShowRelativeDate(prev => !prev);
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => setUpdate((prev) => prev + 1), minute);
+    const interval = setInterval(() => setUpdate(prev => prev + 1), minute);
     return () => clearInterval(interval);
   }, []);
 

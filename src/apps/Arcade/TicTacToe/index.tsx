@@ -35,7 +35,7 @@ export const TicTacToe = memo(function TicTacToe() {
 
   const onCellPress = useCallback(
     (i: number, j: number) => () => {
-      setGame((p) => {
+      setGame(p => {
         const nextValue = getNextValue(p.turn);
         const updatedBoard = getUpdatedBoard(p.board, i, j, nextValue);
         const didWin = getWinner(p.board, i, j, boardSize);

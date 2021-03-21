@@ -13,7 +13,7 @@ import {
 
 export const Questionnaires = (): JSX.Element => {
   const questionnaires = useRootSelector(getQuestionnaireArray);
-  const selected = useRootSelector((state) => state.questionnaires.selected);
+  const selected = useRootSelector(state => state.questionnaires.selected);
   const [actionSheet, setActionSheet] = useState(false);
   const dispatch = useRootDispatch();
   const color = useColor();
@@ -31,7 +31,7 @@ export const Questionnaires = (): JSX.Element => {
     [dispatch],
   );
   const handleItemMenu = useCallback(() => {
-    setActionSheet((state) => !state);
+    setActionSheet(state => !state);
   }, []);
   const renderItem = useCallback(
     ({item}) => {

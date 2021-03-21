@@ -60,7 +60,7 @@ export const RecyclerFlatList = <T extends unknown>({
 
   const [layoutProvider] = useState(
     new LayoutProvider(
-      (_) => 1,
+      _ => 1,
       (_, dim) => {
         dim.width = itemWidth;
         dim.height = itemHeight;
@@ -78,10 +78,9 @@ export const RecyclerFlatList = <T extends unknown>({
     [onRowRender],
   );
 
-  useEffect(
-    () => setDataProvider((prevState) => prevState.cloneWithRows(data)),
-    [data],
-  );
+  useEffect(() => setDataProvider(prevState => prevState.cloneWithRows(data)), [
+    data,
+  ]);
 
   return (
     <RecyclerListView

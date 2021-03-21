@@ -10,7 +10,7 @@ export const Colors = memo(function DebugColors() {
   const {goBack} = useNavigation();
   const navBack = useCallback(() => goBack(), [goBack]);
   const dispatch = useRootDispatch();
-  const currentTheme = useRootSelector((state) => state.theme.currentColor);
+  const currentTheme = useRootSelector(state => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   // text: high 87% medium 60% disabled 38%
   // icon: active 100% inactive 60% disabled 38%
@@ -25,7 +25,7 @@ export const Colors = memo(function DebugColors() {
           type="h4"
         />
         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-          {colorThemes.map((item) => (
+          {colorThemes.map(item => (
             <Button
               center
               color={currentTheme === item ? 'success' : 'text'}

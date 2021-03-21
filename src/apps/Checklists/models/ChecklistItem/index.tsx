@@ -41,7 +41,7 @@ export const getCurrentActiveChecklistItemsOrderByCreatedAt = createSelector(
   [getCurrentChecklist, getChecklistItems],
   (checklist, items) =>
     Object.values(items)
-      .filter((item) => item.checklistId === checklist.id && item.active)
+      .filter(item => item.checklistId === checklist.id && item.active)
       .sort((a, b) => a.createdAt - b.createdAt),
 );
 

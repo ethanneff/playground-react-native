@@ -46,7 +46,7 @@ const generateCalendarMatrix = (date: Date) => {
   let prevDayCounter = prevMaxDays - firstDay + 1;
   let nextDayCounter = 1;
   const calendarMatrix: CalendarMatrix = [];
-  calendarMatrix.push(days.map((day) => createDayObj(day, day, false, true)));
+  calendarMatrix.push(days.map(day => createDayObj(day, day, false, true)));
   for (let row = 1; row < 7; row++) {
     calendarMatrix[row] = [];
     for (let col = 0; col < 7; col++)

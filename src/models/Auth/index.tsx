@@ -14,7 +14,7 @@ export const logout = createAction('Auth/LOGOUT')();
 const timeout = 5000;
 
 /* ACTION CREATORS */
-export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
+export const onLogin = (): RootThunkAction<void> => async dispatch => {
   dispatch(loginRequest());
   try {
     const res = await axios({
@@ -31,7 +31,7 @@ export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
     dispatch(loginFailure(error));
   }
 };
-export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
+export const onRegister = (): RootThunkAction<void> => async dispatch => {
   dispatch(loginRequest());
   try {
     const res = await axios({

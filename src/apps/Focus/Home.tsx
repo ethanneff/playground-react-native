@@ -56,7 +56,7 @@ export const Home = memo(function Home() {
   }, [generateMoreItems, items.length]);
 
   const handleModalEditBackgroundPress = useCallback(() => {
-    setModalItemEdit((state) => ({...state, visible: false}));
+    setModalItemEdit(state => ({...state, visible: false}));
   }, []);
 
   useEffect(() => handleLoad(), [handleLoad]);

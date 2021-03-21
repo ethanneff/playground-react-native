@@ -37,7 +37,7 @@ export const getQuestionnaires = (state: RootState): QuestionnairesObject =>
   state.questionnaires.items;
 export const getQuestionnaireArray = createSelector(
   [getQuestionnaires],
-  (questionnaires) => Object.values(questionnaires).filter((item) => item),
+  questionnaires => Object.values(questionnaires).filter(item => item),
 );
 
 /* INTERFACES */

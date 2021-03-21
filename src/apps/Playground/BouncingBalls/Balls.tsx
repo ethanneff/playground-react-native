@@ -51,7 +51,7 @@ export const Balls = ({
   );
 
   const draw = useCallback(() => {
-    setItems((prev) => {
+    setItems(prev => {
       for (let i = 0; i < prev.length; i++) {
         const a = prev[i];
         for (let j = i + 1; j < prev.length; j++) {
@@ -75,7 +75,7 @@ export const Balls = ({
 
   const onPress = useCallback(
     ({index}) => () => {
-      setItems((prev) => {
+      setItems(prev => {
         const item = prev[index];
         item.radius *= 1 - mitosis;
         item.dx *= 2 - mitosis;

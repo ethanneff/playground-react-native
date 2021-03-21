@@ -35,7 +35,7 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
 
   const onItemPress = useCallback(
     (x: number, y: number) => () => {
-      setBoard((state) =>
+      setBoard(state =>
         state.map((rows, i) =>
           rows.map((item, j) => swapBoardItem(item, x, y, i, j)),
         ),
@@ -51,7 +51,7 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
   const loop = useCallback(() => {
     if (!runRef.current) return;
 
-    setBoard((state) =>
+    setBoard(state =>
       state.map((rows, i) =>
         rows.map((_, j) => determineBoardItem(state, i, j)),
       ),
@@ -61,18 +61,18 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
   }, []);
 
   const onStart = useCallback(() => {
-    setForm((state) => ({...state, run: !state.run}));
+    setForm(state => ({...state, run: !state.run}));
     runRef.current = !runRef.current;
     loop();
   }, [loop]);
 
   const onCountSlide = useCallback((value: number) => {
-    setForm((state) => ({...state, count: value}));
+    setForm(state => ({...state, count: value}));
     setBoard(generateBoard(value, 0.5));
   }, []);
 
   const onDelaySlide = useCallback((value: number) => {
-    setForm((state) => ({...state, delay: value}));
+    setForm(state => ({...state, delay: value}));
     delayRef.current = value;
   }, []);
 

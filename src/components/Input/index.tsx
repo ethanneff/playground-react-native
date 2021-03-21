@@ -128,7 +128,7 @@ export const Input = ({
   }, [onChangeText]);
 
   const onRefInternal = useCallback(
-    (ref) => {
+    ref => {
       textInput.current = ref;
       if (onRef) onRef.current = ref;
     },

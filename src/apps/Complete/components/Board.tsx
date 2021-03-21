@@ -18,8 +18,8 @@ export const Board = memo(function Board({
   listWidth,
 }: BoardProps) {
   const listSize = listWidth + completeConfig.padding;
-  const board = useRootSelector((s) => s.completeItem.items[projectItemId]);
-  const getItemId = useCallback((item) => item, []);
+  const board = useRootSelector(s => s.completeItem.items[projectItemId]);
+  const getItemId = useCallback(item => item, []);
   const getItemLayout = useCallback(
     (_, index) => ({length: listSize, offset: listSize * index, index}),
     [listSize],
