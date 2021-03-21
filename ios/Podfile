@@ -6,7 +6,10 @@ platform :ios, '10.0'
 target 'core' do
   config = use_native_modules!
 
-  use_react_native!(:path => config["reactNativePath"])
+  use_react_native!(
+    :path => config[:reactNativePath],
+    :hermes_enabled => true
+  )
 
   pod 'RNRate', :path => '../node_modules/react-native-rate'
   pod 'RNSensors', :path => '../node_modules/react-native-sensors'
@@ -18,17 +21,8 @@ target 'core' do
     # Pods for testing
   end
 
-  use_flipper!
+  use_flipper!()
   post_install do |installer|
-    flipper_post_install(installer)
-  end
-end
-
-target 'core-tvOS' do
-  # Pods for core-tvOS
-
-  target 'core-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
+    react_native_post_install(installer)
   end
 end
