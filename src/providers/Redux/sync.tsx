@@ -22,7 +22,8 @@ type GenericMiddleware<S, E extends AnyAction> = (
   api: Dispatch<E> extends Dispatch<AnyAction>
     ? MiddlewareAPI<Dispatch<E>, S>
     : never,
-) => (next: Dispatch<E>) => (event: E) => ReturnType<Dispatch<E>>;
+) => (_: Dispatch<E>) => (__: E) => ReturnType<Dispatch<E>>;
+
 type Middleware = GenericMiddleware<RootStore, RootAction>;
 export const syncMiddleware: Middleware = _ => dispatch => action => {
   if (reduxWhiteList[action.type] && enabled) syncQueue.set([action.type]);

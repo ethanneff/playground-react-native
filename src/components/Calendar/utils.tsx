@@ -70,7 +70,7 @@ const generateCalendarMatrix = (date: Date) => {
   return calendarMatrix;
 };
 
-const calendarMatrixMemo: {[key in string]: CalendarMatrix} = {};
+const calendarMatrixMemo: {[key: string]: CalendarMatrix} = {};
 export const getCalendarMatrix = (date: Date): CalendarMatrix => {
   const memo = calendarMatrixMemo[date.valueOf()];
   if (memo) return memo;

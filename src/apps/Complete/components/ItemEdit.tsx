@@ -5,12 +5,14 @@ import {useColor} from '../../../hooks';
 import {Card} from './Card';
 import {ItemDetailHeader} from './ItemDetailHeader';
 
+type OnSubmit = (text: string) => void;
+
 type ItemEditProps = {
   title: string;
   titleEditable: boolean;
   description?: string;
   placeholder: string;
-  onSubmit: (type: string) => (text: string) => void;
+  onSubmit: (type: string) => OnSubmit;
 };
 
 export const ItemEdit = memo(function ItemEdit({

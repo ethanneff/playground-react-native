@@ -18,7 +18,9 @@ type UseGameLoop = {
   stop: () => void;
 };
 
-export const useGameLoop = (callback: (frame: Frame) => void): UseGameLoop => {
+type Callback = (frame: Frame) => void;
+
+export const useGameLoop = (callback: Callback): UseGameLoop => {
   const fps = 16;
   const off = useRef(false);
   const frame = useRef(initialFrame);
