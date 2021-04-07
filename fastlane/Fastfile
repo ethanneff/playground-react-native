@@ -33,7 +33,7 @@ platform :ios do
     method_name = options[:method]
     abort("missing app: argument") if !app_name || !apps.keys.include?(app_name)
     abort("missing method: argument") if !method_name || !methods.include?(method_name)
-    
+
     desc "set properties"
     config = apps[app_name]
     xcodeproj = "./ios/core.xcodeproj"
