@@ -723,7 +723,7 @@ PODS:
     - React-Core
   - RNCMaskedView (0.1.10):
     - React
-  - RNDeviceInfo (8.0.7):
+  - RNDeviceInfo (8.0.8):
     - React-Core
   - RNDevMenu (4.0.2):
     - React-Core
@@ -759,7 +759,7 @@ PODS:
     - React-Core
   - RNRate (1.2.4):
     - React
-  - RNReanimated (2.0.1):
+  - RNReanimated (2.1.0):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -788,7 +788,7 @@ PODS:
     - React-RCTVibration
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (2.18.1):
+  - RNScreens (3.1.0):
     - React-Core
   - RNSensors (7.2.0):
     - React-Core
@@ -1112,7 +1112,7 @@ SPEC CHECKSUMS:
   RNAppleAuthentication: f4cc93d710f1337f66550d04d84bf47553bc0eae
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
-  RNDeviceInfo: 55463fa6e252ca3f0e2ba6001a7b82f879914338
+  RNDeviceInfo: 41a8c8a41ae0e70d85cbe652cd5318150cb2cc40
   RNDevMenu: fd325b5554b61fe7f48d9205a3877cf5ee88cd7c
   RNFBAnalytics: 11873c6dccab66da20fc1c75fc47c88244845410
   RNFBApp: d9ab9f2e63c70a9974294bb44c749b728cd4028f
@@ -1123,8 +1123,8 @@ SPEC CHECKSUMS:
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
   RNRate: 15b861025a7821730761fce7f44561ce7e0b2de0
-  RNReanimated: 7d2b97cf2dd7c8c69956080fe911edc08cf0a8c7
-  RNScreens: f7ad633b2e0190b77b6a7aab7f914fad6f198d8d
+  RNReanimated: b8c8004b43446e3c2709fe64b2b41072f87428ad
+  RNScreens: 3ba2198ca3179f77f6158425fc31ba3c90a0d49f
   RNSensors: aefce56de71b313fbdeb6d26c024d7fc9258373f
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e

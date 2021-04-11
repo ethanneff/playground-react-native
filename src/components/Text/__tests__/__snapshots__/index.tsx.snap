@@ -125,7 +125,7 @@ exports[`renders body1 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -133,7 +133,9 @@ exports[`renders body1 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -305,8 +307,8 @@ exports[`renders body1 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -436,7 +438,7 @@ exports[`renders body2 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -444,7 +446,9 @@ exports[`renders body2 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -616,8 +620,8 @@ exports[`renders body2 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -747,7 +751,7 @@ exports[`renders button 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -755,7 +759,9 @@ exports[`renders button 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -927,8 +933,8 @@ exports[`renders button 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -1058,7 +1064,7 @@ exports[`renders button empty 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -1066,7 +1072,9 @@ exports[`renders button empty 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -1238,8 +1246,8 @@ exports[`renders button empty 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -1369,7 +1377,7 @@ exports[`renders caption 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -1377,7 +1385,9 @@ exports[`renders caption 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -1549,8 +1559,8 @@ exports[`renders caption 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -1680,7 +1690,7 @@ exports[`renders correctly 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -1688,7 +1698,9 @@ exports[`renders correctly 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -1860,8 +1872,8 @@ exports[`renders correctly 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -1991,7 +2003,7 @@ exports[`renders empty 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -1999,7 +2011,9 @@ exports[`renders empty 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -2171,8 +2185,8 @@ exports[`renders empty 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -2302,7 +2316,7 @@ exports[`renders h1 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -2310,7 +2324,9 @@ exports[`renders h1 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -2482,8 +2498,8 @@ exports[`renders h1 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -2613,7 +2629,7 @@ exports[`renders h3 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -2621,7 +2637,9 @@ exports[`renders h3 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -2793,8 +2811,8 @@ exports[`renders h3 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -2924,7 +2942,7 @@ exports[`renders h4 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -2932,7 +2950,9 @@ exports[`renders h4 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -3104,8 +3124,8 @@ exports[`renders h4 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -3235,7 +3255,7 @@ exports[`renders h5 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -3243,7 +3263,9 @@ exports[`renders h5 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -3415,8 +3437,8 @@ exports[`renders h5 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -3546,7 +3568,7 @@ exports[`renders h6 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -3554,7 +3576,9 @@ exports[`renders h6 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -3726,8 +3750,8 @@ exports[`renders h6 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -3857,7 +3881,7 @@ exports[`renders overline 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -3865,7 +3889,9 @@ exports[`renders overline 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -4037,8 +4063,8 @@ exports[`renders overline 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -4168,7 +4194,7 @@ exports[`renders subtitle1 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -4176,7 +4202,9 @@ exports[`renders subtitle1 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -4348,8 +4376,8 @@ exports[`renders subtitle1 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -4479,7 +4507,7 @@ exports[`renders subtitle2 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -4487,7 +4515,9 @@ exports[`renders subtitle2 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -4659,8 +4689,8 @@ exports[`renders subtitle2 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -4790,7 +4820,7 @@ exports[`renders type="h2"   1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -4798,7 +4828,9 @@ exports[`renders type="h2"   1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -4970,8 +5002,8 @@ exports[`renders type="h2"   1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
