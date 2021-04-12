@@ -645,7 +645,7 @@ PODS:
     - react-native-config/App (= 1.4.2)
   - react-native-config/App (1.4.2):
     - React-Core
-  - react-native-get-random-values (1.6.0):
+  - react-native-get-random-values (1.7.0):
     - React-Core
   - react-native-netinfo (6.0.0):
     - React-Core
@@ -1093,7 +1093,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 0ae35a37b20d5e031eb020a69cc5afdbd6406301
   react-native-apple-authentication: be849b8aefe45de190f8125126ef8cf8b02674ec
   react-native-config: c98128a72bc2c3a1ca72caec0b021f0fa944aa29
-  react-native-get-random-values: f0fc24a5887a3341589515a86282a574407b59e4
+  react-native-get-random-values: 237bffb1c7e05fb142092681531810a29ba53015
   react-native-netinfo: e849fc21ca2f4128a5726c801a82fc6f4a6db50d
   react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
   react-native-slider: e99fc201cefe81270fc9d81714a7a0f5e566b168
