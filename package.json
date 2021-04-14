@@ -44,7 +44,7 @@
     "axios": "0.21.1",
     "d3-scale": "3.2.4",
     "d3-shape": "2.1.0",
-    "date-fns": "2.20.2",
+    "date-fns": "2.20.3",
     "dayjs": "1.10.4",
     "howler": "2.2.1",
     "npm-check-updates": "11.4.1",
