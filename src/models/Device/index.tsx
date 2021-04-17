@@ -52,6 +52,7 @@ export interface DeviceInfo {
   ipAddress: string;
   incremental: string;
   installReferrer: string;
+  installerPackageName: string;
   instanceId: string;
   lastUpdateTime: number;
   macAddress: string;
@@ -76,12 +77,15 @@ export interface DeviceInfo {
   usedMemory: number;
   userAgent: string;
   version: string;
+  hasGms: boolean;
+  hasHms: boolean;
   hasNotch: boolean;
   hasSystemFeature: boolean;
   isAirplaneMode: boolean;
   isBatteryCharging: boolean;
-  isCameraPresence: false;
+  isCameraPresent: false;
   isEmulator: boolean;
+  isHeadphonesConnected: boolean;
   isLandscape: boolean;
   isLocationEnabled: boolean;
   isPinOrFingerprintSet: boolean;
@@ -89,6 +93,7 @@ export interface DeviceInfo {
   supported32BitAbis: ReadonlyArray<string>;
   supported64BitAbis: ReadonlyArray<string>;
   supportedAbis: ReadonlyArray<string>;
+  syncUniqueId: string;
 }
 
 export type DeviceState = {
@@ -127,6 +132,7 @@ export const deviceInfoInitialState: DeviceInfo = {
   ipAddress: '',
   incremental: '',
   installReferrer: '',
+  installerPackageName: '',
   instanceId: '',
   lastUpdateTime: 0,
   macAddress: '',
@@ -151,12 +157,15 @@ export const deviceInfoInitialState: DeviceInfo = {
   usedMemory: 0,
   userAgent: '',
   version: '',
+  hasGms: false,
+  hasHms: false,
   hasNotch: false,
   hasSystemFeature: false,
   isAirplaneMode: false,
   isBatteryCharging: false,
-  isCameraPresence: false,
+  isCameraPresent: false,
   isEmulator: false,
+  isHeadphonesConnected: false,
   isLandscape: false,
   isLocationEnabled: false,
   isPinOrFingerprintSet: false,
@@ -164,6 +173,7 @@ export const deviceInfoInitialState: DeviceInfo = {
   supported32BitAbis: [],
   supported64BitAbis: [],
   supportedAbis: [],
+  syncUniqueId: '',
 };
 export const deviceInitialState: DeviceState = {
   ...deviceInfoInitialState,
