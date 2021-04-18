@@ -1,14 +1,18 @@
 import React, {memo, ReactNode} from 'react';
-import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
+import {
+  SafeAreaView,
+  StatusBar,
+  StyleProp,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from 'react-native';
 import {useColor} from '../../hooks';
-import {config} from '../../utils';
 import {NavBar} from './NavBar';
 
-interface OwnProps {
+type Props = {
   title?: string;
-  testID?: string;
   border?: boolean;
-  gutter?: boolean;
   leftIcon?: string;
   rightIcon?: string;
   onLeftPress?(): void;
@@ -19,14 +23,13 @@ interface OwnProps {
   onSecondRightPress?(): void;
   children?: ReactNode;
   dropShadow?: boolean;
-}
-
-type Props = OwnProps;
+  style?: StyleProp<ViewStyle>;
+};
 
 export const Screen = memo(function Screen({
   title,
-  gutter,
   border,
+  style,
   onLeftPress,
   onRightPress,
   children,
@@ -36,7 +39,6 @@ export const Screen = memo(function Screen({
   secondRightIcon,
   onSecondLeftPress,
   onSecondRightPress,
-  testID,
   dropShadow,
 }: Props) {
   const color = useColor();
@@ -45,16 +47,14 @@ export const Screen = memo(function Screen({
       backgroundColor: color.background,
       flex: 1,
     },
-    gutter: {
-      backgroundColor: color.background,
+    flex: {
       flex: 1,
-      padding: gutter ? config.padding(4) : config.padding(0),
     },
   });
 
   return (
     <View style={styles.container}>
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={styles.flex}>
         <StatusBar barStyle={color.statusBar} />
         <NavBar
           border={border}
@@ -69,9 +69,7 @@ export const Screen = memo(function Screen({
           secondRightIcon={secondRightIcon}
           title={title}
         />
-        <View style={styles.gutter} testID={testID}>
-          {children}
-        </View>
+        <View style={[styles.flex, style]}>{children}</View>
       </SafeAreaView>
     </View>
   );

@@ -1,7 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {Button, Input, Screen} from '../../../components';
+import {useColor} from '../../../hooks';
+import {config} from '../../../utils';
 
 const styles = StyleSheet.create({
   row: {flexDirection: 'row', justifyContent: 'space-around'},
@@ -12,17 +14,21 @@ export const ForgotPassword = memo(function PortfolioForgotPassword() {
   const {goBack} = useNavigation();
   const handleEmail = useCallback((val: string) => setEmail(val), []);
   const navLogin = useCallback(() => goBack(), [goBack]);
+  const color = useColor();
   return (
-    <Screen gutter onLeftPress={navLogin} title="Forgot Password">
-      <Input
-        onChangeText={handleEmail}
-        placeholder="example@gmail.com"
-        title="email"
-        value={email}
-      />
-      <View style={styles.row}>
-        <Button onPress={navLogin} title="Send email" />
-      </View>
+    <Screen dropShadow onLeftPress={navLogin} title="Forgot Password">
+      <ScrollView
+        style={{padding: config.padding(4), backgroundColor: color.surface}}>
+        <Input
+          onChangeText={handleEmail}
+          placeholder="example@gmail.com"
+          title="email"
+          value={email}
+        />
+        <View style={styles.row}>
+          <Button onPress={navLogin} title="Send email" />
+        </View>
+      </ScrollView>
     </Screen>
   );
 });

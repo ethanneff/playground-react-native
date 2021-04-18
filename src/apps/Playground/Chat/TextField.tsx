@@ -2,6 +2,7 @@ import React, {memo, useCallback} from 'react';
 import {Keyboard, View} from 'react-native';
 import {v4} from 'uuid';
 import {Icon, Input} from '../../../components';
+import {useColor, useDropShadow} from '../../../hooks';
 import {config, useRootDispatch, useRootSelector} from '../../../utils';
 import {createChatMessage, Message, typeChatMessage} from './Messages';
 
@@ -12,6 +13,8 @@ export const TextField = memo(function TextField() {
     (message: string) => dispatch(typeChatMessage(message)),
     [dispatch],
   );
+  const dropShadow = useDropShadow();
+  const color = useColor();
 
   const onSubmit = useCallback(() => {
     if (textField.trim().length === 0) return;
@@ -37,6 +40,9 @@ export const TextField = memo(function TextField() {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: color.background,
+        ...dropShadow(2),
+        shadowOffset: {height: -2, width: 0},
       }}>
       <Input
         flex

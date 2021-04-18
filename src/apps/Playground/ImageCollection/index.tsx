@@ -2,12 +2,13 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {Dimensions, FlatList} from 'react-native';
 import {Screen} from '../../../components';
+import {useColor} from '../../../hooks';
 import {AsyncImage} from './AsyncImage';
 
 const numColumns = 3;
 const handleInfiniteScrollThreshold = 0.3;
 const columnWidth = Dimensions.get('window').width / numColumns;
-const imageUrl = `http://lorempixel.com/${columnWidth}/${columnWidth}`;
+const imageUrl = `https://picsum.photos/${columnWidth}/${columnWidth}`;
 const data: number[] = [
   Math.random(),
   Math.random(),
@@ -28,6 +29,7 @@ export const ImageCollection = memo(function ImageCollection() {
     data.push(Math.random());
     data.push(Math.random());
   }, []);
+  const color = useColor();
 
   const renderImage = useCallback(
     () => (
@@ -35,11 +37,13 @@ export const ImageCollection = memo(function ImageCollection() {
     ),
     [],
   );
+
   const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} title="Image Collection">
+    <Screen dropShadow onLeftPress={navBack} title="Images">
       <FlatList
+        contentContainerStyle={{backgroundColor: color.surface}}
         data={data}
         keyExtractor={keyExtractor}
         keyboardShouldPersistTaps="handled"

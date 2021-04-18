@@ -313,10 +313,12 @@ const ImagePlaceholder = memo(function ImagePlaceholder() {
 
 export const SwipeFeed = memo(function SwipeFeed() {
   const {goBack} = useNavigation();
+  const color = useColor();
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen onLeftPress={navBack} title="Swipe Feed">
-      <ScrollView style={{padding: config.padding(4)}}>
+    <Screen dropShadow onLeftPress={navBack} title="Swipe Feed">
+      <ScrollView
+        style={{padding: config.padding(4), backgroundColor: color.surface}}>
         <ImagePlaceholder />
         <ImagePlaceholder />
         <SwipeCards items={initialItems} />

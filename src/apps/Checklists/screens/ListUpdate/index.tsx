@@ -52,7 +52,7 @@ export default memo(function ChecklistUpdate() {
 
   return (
     <>
-      <Screen gutter onLeftPress={navBack} title="Update Checklist">
+      <Screen onLeftPress={navBack} title="Update Checklist">
         <Input onChangeText={handleNameChange} title="name" value={form.name} />
         <Input
           onChangeText={handleDescriptionChange}

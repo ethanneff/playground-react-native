@@ -44,7 +44,7 @@ export default memo(function Checklists() {
   const navCreate = useCallback(() => navigate('playground'), [navigate]);
 
   return (
-    <Screen gutter onLeftPress={navBack} title="Checklists">
+    <Screen onLeftPress={navBack} title="Checklists">
       <FlatList
         data={items}
         keyExtractor={keyExtractor}

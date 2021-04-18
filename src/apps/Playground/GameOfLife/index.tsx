@@ -85,7 +85,7 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} title="Game of life">
+    <Screen dropShadow onLeftPress={navBack} title="Game of life">
       {loading ? (
         <Text emphasis="medium" title="loading..." type="h5" />
       ) : (

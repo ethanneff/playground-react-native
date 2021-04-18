@@ -299,7 +299,6 @@ exports[`renders correctly 1`] = `
                         emulateUnlessSupported={true}
                         style={
                           Object {
-                            "backgroundColor": "hsl(0, 0%, 100%)",
                             "flex": 1,
                           }
                         }
@@ -319,11 +318,12 @@ exports[`renders correctly 1`] = `
                         />
                         <View
                           style={
-                            Object {
-                              "backgroundColor": "hsl(0, 0%, 100%)",
-                              "flex": 1,
-                              "padding": 0,
-                            }
+                            Array [
+                              Object {
+                                "flex": 1,
+                              },
+                              undefined,
+                            ]
                           }
                         >
                           <View />

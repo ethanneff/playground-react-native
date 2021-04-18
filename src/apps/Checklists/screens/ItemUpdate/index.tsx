@@ -48,7 +48,7 @@ export default memo(function ChecklistUpdate() {
 
   const navItem = useCallback(() => navigate('checklistsList'), [navigate]);
   return (
-    <Screen gutter onLeftPress={navItem} title="Update Checklist Item">
+    <Screen onLeftPress={navItem} title="Update Checklist Item">
       <Input onChangeText={handleNameChange} title="name" value={form.name} />
       <Input
         onChangeText={handleDescriptionChange}

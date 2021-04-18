@@ -94,11 +94,16 @@ export const AppleMask = memo(function AppleMask() {
     },
   ];
 
+  const color = useColor();
   const paddingHorizontal = config.padding(4);
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen border onLeftPress={navBack} title="Apple Mask">
-      <ScrollView contentContainerStyle={{paddingHorizontal}}>
+    <Screen dropShadow onLeftPress={navBack} title="Apple Mask">
+      <ScrollView
+        style={{
+          paddingHorizontal: config.padding(4),
+          backgroundColor: color.surface,
+        }}>
         <Text title="Assemble and adjust your Face Shield" type="h2" />
         <Text
           style={{paddingTop: config.padding(4)}}

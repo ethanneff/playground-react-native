@@ -72,7 +72,7 @@ export default memo(function Checklist() {
   ]);
 
   return (
-    <Screen gutter onLeftPress={navBack} title="Checklist">
+    <Screen onLeftPress={navBack} title="Checklist">
       <FlatList
         data={items}
         keyExtractor={keyExtractor}

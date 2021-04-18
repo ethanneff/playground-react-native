@@ -26,17 +26,15 @@ export const Settings = memo(function PortfolioSettings() {
     ),
     [currentTheme, themePress],
   );
-
   const renderHeader = useCallback(() => <Button disable title="Theme" />, []);
   const keyExtractor = useCallback(item => item, []);
 
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen onLeftPress={navBack} title="Settings">
+    <Screen dropShadow onLeftPress={navBack} title="Settings">
       <FlatList
         ListHeaderComponent={renderHeader}
         data={colorThemes}
-        horizontal
         keyExtractor={keyExtractor}
         keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
