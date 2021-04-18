@@ -11,6 +11,7 @@ import {useColor} from '../../hooks';
 import {NavBar} from './NavBar';
 
 type Props = {
+  testID?: string;
   title?: string;
   border?: boolean;
   leftIcon?: string;
@@ -28,6 +29,7 @@ type Props = {
 
 export const Screen = memo(function Screen({
   title,
+  testID,
   border,
   style,
   onLeftPress,
@@ -69,7 +71,9 @@ export const Screen = memo(function Screen({
           secondRightIcon={secondRightIcon}
           title={title}
         />
-        <View style={[styles.flex, style]}>{children}</View>
+        <View style={[styles.flex, style]} testID={testID}>
+          {children}
+        </View>
       </SafeAreaView>
     </View>
   );
