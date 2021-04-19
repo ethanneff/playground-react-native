@@ -1,21 +1,16 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Button} from '../../../components';
-import {config} from '../../../utils';
+import {config, useRootDispatch, useRootSelector} from '../../../utils';
+import {resetBoard, toggleRun} from './redux';
 
-type Props = {
-  run: boolean;
-  onStart: () => void;
-  onRandom: () => void;
-  onClear: () => void;
-};
+export const Buttons = memo(function Buttons() {
+  const dispatch = useRootDispatch();
+  const run = useRootSelector(state => state.gameOfLife.run);
+  const onRandom = useCallback(() => dispatch(resetBoard(0.5)), [dispatch]);
+  const onStart = useCallback(() => dispatch(toggleRun()), [dispatch]);
+  const onClear = useCallback(() => dispatch(resetBoard(0)), [dispatch]);
 
-export const Buttons = memo(function Buttons({
-  run,
-  onStart,
-  onRandom,
-  onClear,
-}: Props) {
   return (
     <View
       style={{

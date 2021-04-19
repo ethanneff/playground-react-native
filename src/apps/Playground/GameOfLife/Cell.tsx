@@ -1,26 +1,32 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
+import {getSmallestDimension} from '../../../models';
+import {useRootDispatch, useRootSelector} from '../../../utils';
+import {getCell, updateCell} from './redux';
 
-interface CellProps {
+type Props = {
   x: number;
   y: number;
-  selected: boolean;
-  size: number;
-  onItemPress(x: number, y: number): () => void;
-}
+};
 
-export const Cell = memo(function Cell({
-  x,
-  y,
-  selected,
-  size,
-  onItemPress,
-}: CellProps) {
+export const Cell = memo(function Cell({x, y}: Props) {
   const color = useColor();
+  const dispatch = useRootDispatch();
+  const smallest = useRootSelector(getSmallestDimension);
+  const selected = useRootSelector(getCell(x, y));
+  const count = useRootSelector(state => state.gameOfLife.count);
+  const size = smallest / count;
+
+  const onItemPress = useCallback(
+    (dx: number, dy: number) => () => {
+      dispatch(updateCell(dx, dy));
+    },
+    [dispatch],
+  );
+
   return (
     <TouchableOpacity
-      key={`${x}-${y}`}
       onPress={onItemPress(x, y)}
       style={{
         height: size,

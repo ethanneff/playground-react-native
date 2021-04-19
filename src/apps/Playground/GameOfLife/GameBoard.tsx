@@ -1,34 +1,22 @@
-import React, {memo} from 'react';
+import React, {memo, useMemo} from 'react';
 import {View} from 'react-native';
+import {useRootSelector} from '../../../utils';
 import {Cell} from './Cell';
-import {Board} from './utils';
+import {useLoop} from './useLoop';
 
-type Props = {
-  board: Board;
-  onItemPress: (x: number, y: number) => () => void;
-  size: number;
-};
+export const GameBoard = memo(function GameBoard() {
+  const count = useRootSelector(state => state.gameOfLife.count);
+  const array = useMemo(() => Array(count).fill(0), [count]);
+  useLoop();
 
-export const GameBoard = memo(function GameBoard({
-  board,
-  onItemPress,
-  size,
-}: Props) {
   return (
     <View>
-      {board.map((rows, x) => (
+      {array.map((_, x) => (
         <View
           key={`${x}`}
           style={{flexDirection: 'row', justifyContent: 'center'}}>
-          {rows.map((row, y) => (
-            <Cell
-              key={`${x}-${y}`}
-              onItemPress={onItemPress}
-              selected={!!row}
-              size={size}
-              x={x}
-              y={y}
-            />
+          {array.map((__, y) => (
+            <Cell key={`${x}-${y}`} x={x} y={y} />
           ))}
         </View>
       ))}

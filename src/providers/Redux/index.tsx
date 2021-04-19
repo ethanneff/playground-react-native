@@ -29,6 +29,10 @@ import {
   chatMessageReducer,
 } from '../../apps/Playground/Chat/Messages';
 import {
+  gameOfLifeActions,
+  gameOfLifeReducer,
+} from '../../apps/Playground/GameOfLife/redux';
+import {
   choicesActions,
   choicesReducer,
   questionnairesActions,
@@ -69,7 +73,9 @@ export const actions = {
   completeItem: completeItemActions,
   completeUser: completeUserActions,
   completeAuth: completeAuthActions,
+  gameOfLife: gameOfLifeActions,
 };
+
 export const reducers = combineReducers({
   auth: authReducer,
   choices: choicesReducer,
@@ -86,9 +92,11 @@ export const reducers = combineReducers({
   completeItem: completeItemReducer,
   completeUser: completeUserReducer,
   completeAuth: completeAuthReducer,
+  gameOfLife: gameOfLifeReducer,
 });
 
-const persistConfig = {key: 'root', storage: Storage};
+const blacklist = ['gameOfLife'];
+const persistConfig = {key: 'root', storage: Storage, blacklist};
 const middlewares: Middleware[] = [thunk, syncMiddleware];
 const composers =
   (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

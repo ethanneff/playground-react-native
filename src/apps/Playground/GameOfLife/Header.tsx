@@ -1,20 +1,16 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Slider, Text} from '../../../components';
+import {useRootDispatch, useRootSelector} from '../../../utils';
+import {updateCount, updateDelay} from './redux';
 
-type Props = {
-  count: number;
-  delay: number;
-  onCountSlide: (value: number) => void;
-  onDelaySlide: (value: number) => void;
-};
+export const Header = memo(function Header() {
+  const dispatch = useRootDispatch();
+  const delay = useRootSelector(state => state.gameOfLife.delay);
+  const count = useRootSelector(state => state.gameOfLife.count);
+  const onCountSlide = useCallback(v => dispatch(updateCount(v)), [dispatch]);
+  const onDelaySlide = useCallback(v => dispatch(updateDelay(v)), [dispatch]);
 
-export const Header = memo(function Header({
-  count,
-  delay,
-  onCountSlide,
-  onDelaySlide,
-}: Props) {
   return (
     <View>
       <View style={{flexDirection: 'row'}}>
