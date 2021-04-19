@@ -8,10 +8,10 @@ install:
 script:
   - yarn lint
   - yarn test
-  - CI=false yarn build
+  - yarn build
 after_success:
   - codecov
-  - npm run travis-deploy-once "npm run semantic-release"
+  - yarn semantic-release
 branches:
   except:
     - "/^v\\d+\\.\\d+\\.\\d+$/"
