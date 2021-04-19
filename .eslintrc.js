@@ -44,7 +44,6 @@ module.exports = {
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-newline': 'off',
     // TODO: remove (good rules with extra effort)
-    // 'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     'react-native/no-inline-styles': 'off',
     'react/jsx-props-no-spreading': 'off',
