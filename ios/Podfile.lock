@@ -723,32 +723,32 @@ PODS:
     - React-Core
   - RNCMaskedView (0.1.10):
     - React
-  - RNDeviceInfo (8.1.0):
+  - RNDeviceInfo (8.1.2):
     - React-Core
   - RNDevMenu (4.0.2):
     - React-Core
     - React-Core/DevSupport
     - React-RCTNetwork
-  - RNFBAnalytics (11.3.0):
+  - RNFBAnalytics (11.3.1):
     - Firebase/Analytics (= 7.10.0)
     - React-Core
     - RNFBApp
-  - RNFBApp (11.3.0):
+  - RNFBApp (11.3.1):
     - Firebase/CoreOnly (= 7.10.0)
     - React-Core
-  - RNFBAuth (11.3.0):
+  - RNFBAuth (11.3.1):
     - Firebase/Auth (= 7.10.0)
     - React-Core
     - RNFBApp
-  - RNFBCrashlytics (11.3.0):
+  - RNFBCrashlytics (11.3.1):
     - Firebase/Crashlytics (= 7.10.0)
     - React-Core
     - RNFBApp
-  - RNFBFirestore (11.3.0):
+  - RNFBFirestore (11.3.1):
     - Firebase/Firestore (= 7.10.0)
     - React-Core
     - RNFBApp
-  - RNFBRemoteConfig (11.3.0):
+  - RNFBRemoteConfig (11.3.1):
     - Firebase/RemoteConfig (= 7.10.0)
     - React-Core
     - RNFBApp
@@ -1112,14 +1112,14 @@ SPEC CHECKSUMS:
   RNAppleAuthentication: f4cc93d710f1337f66550d04d84bf47553bc0eae
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
-  RNDeviceInfo: 677a08eaafcfac4e85d2d2aab68a3708ff261c04
+  RNDeviceInfo: 3266783bcb6aa4b0c785d6080a407f8a5fc68326
   RNDevMenu: fd325b5554b61fe7f48d9205a3877cf5ee88cd7c
-  RNFBAnalytics: f687421a40bef19ecabad20d8ad86274967ef8a7
-  RNFBApp: 7762bda61ae7be53309d0c929119af32eaad82f4
-  RNFBAuth: 84b4ce87f3d09aa9d0f4c64658871238e741ac1b
-  RNFBCrashlytics: 62ee5d607bd37a3a5c45268947d37489d2a3f90e
-  RNFBFirestore: af7164e48105cb7bcc42fed4bc866b280ad9b17a
-  RNFBRemoteConfig: 8ddf750729781f94a50f62f9ed7d8f67dac3de20
+  RNFBAnalytics: 9d82838d751736cc626f1265e8412ae62e93eb85
+  RNFBApp: 3b002b58041b71034efd09ae7394af65a58df1e4
+  RNFBAuth: 729c71a497af14240652f90a447ad33aa2180193
+  RNFBCrashlytics: c11c65fa40e94b6efb070e9a1e99466bbdac4fb1
+  RNFBFirestore: 657fd2ac74e98668edf8929e2c6c77c87c46bd06
+  RNFBRemoteConfig: 756df2d60c681829fda27e7662bc2f70569a34ee
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
   RNRate: 15b861025a7821730761fce7f44561ce7e0b2de0
