@@ -2,9 +2,9 @@ import {NetInfoState, NetInfoStateType} from '@react-native-community/netinfo';
 import {getType} from 'typesafe-actions';
 import {loginRequest, logout} from '../../Auth';
 import {
-  NetworkState,
   networkInitialState,
   networkReducer,
+  NetworkState,
   updateNetwork,
 } from './..';
 
@@ -24,7 +24,7 @@ it('updateNetwork action', () => {
   expect(updateNetwork(payload)).toEqual(expectedAction);
 });
 
-it(getType(updateNetwork), () => {
+it('updateNetwork', () => {
   const payload: NetInfoState = {
     details: {
       isConnectionExpensive: true,
@@ -48,7 +48,7 @@ it(getType(updateNetwork), () => {
   });
 });
 
-it(getType(logout), () => {
+it('logout', () => {
   const customState: NetworkState = {
     ...networkInitialState,
     reachable: true,
@@ -60,7 +60,7 @@ it(getType(logout), () => {
   ).toEqual(networkInitialState);
 });
 
-it(getType(loginRequest), () => {
+it('loginRequest', () => {
   expect(
     networkReducer(undefined, {
       type: getType(loginRequest),

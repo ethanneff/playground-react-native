@@ -111,7 +111,7 @@ export const completeItemReducer = (
           ...action.payload,
         },
       };
-    case getType(swapItemOrderInItem):
+    case getType(swapItemOrderInItem): {
       const swapParent = state.items[action.payload.parentItemId];
       const children = [...swapParent.children];
       const temp = children[action.payload.i];
@@ -128,7 +128,9 @@ export const completeItemReducer = (
           },
         },
       };
-    case getType(moveItemToItem): //TODO: test this
+    }
+    case getType(moveItemToItem): {
+      //TODO: test this
       const moveToParent = state.items[action.payload.toParentItemId];
       const moveFromParent = state.items[action.payload.fromParentItemId];
       return {
@@ -149,6 +151,7 @@ export const completeItemReducer = (
           },
         },
       };
+    }
     case getType(createItem):
       return {
         ...state,
@@ -169,7 +172,7 @@ export const completeItemReducer = (
           },
         },
       };
-    case getType(addItemToItem):
+    case getType(addItemToItem): {
       const addParent = state.items[action.payload.parentItemId];
       return {
         ...state,
@@ -182,7 +185,8 @@ export const completeItemReducer = (
           },
         },
       };
-    case getType(removeItemFromItem):
+    }
+    case getType(removeItemFromItem): {
       const deleteParent = state.items[action.payload.parentItemId];
       return {
         ...state,
@@ -197,6 +201,7 @@ export const completeItemReducer = (
           },
         },
       };
+    }
     case getType(removeItem):
       return {
         ...state,

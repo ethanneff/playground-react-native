@@ -3,14 +3,17 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     '@react-native-community',
+    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/all',
     'plugin:react-native/all',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
+    'plugin:jest/recommended',
+    'prettier',
   ],
-  plugins: ['@typescript-eslint', 'import'],
+  plugins: ['@typescript-eslint', 'import', 'jest'],
   ignorePatterns: [
     'node_modules/',
     'coverage/',

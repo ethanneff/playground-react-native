@@ -9,8 +9,8 @@ import {
   getWidth,
   updateDimension,
 } from '..';
-import {loginRequest, logout} from '../../Auth';
 import {store} from '../../../providers';
+import {loginRequest, logout} from '../../Auth';
 
 describe('selectors', () => {
   beforeEach(() => {
@@ -81,7 +81,7 @@ it('updateDimension action', () => {
   expect(updateDimension(payload)).toEqual(expectedAction);
 });
 
-it(getType(updateDimension), () => {
+it('updateDimension', () => {
   const size = {
     fontScale: 123,
     height: 123,
@@ -104,7 +104,7 @@ it(getType(updateDimension), () => {
   });
 });
 
-it(getType(logout), () => {
+it('logout', () => {
   expect(
     dimensionReducer(dimensionInitialState, {
       type: getType(logout),
@@ -112,7 +112,7 @@ it(getType(logout), () => {
   ).toMatchObject(dimensionInitialState);
 });
 
-it(getType(loginRequest), () => {
+it('loginRequest', () => {
   expect(
     dimensionReducer(undefined, {
       type: getType(loginRequest),

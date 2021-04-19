@@ -5,8 +5,8 @@ import {
   themeInitialState,
   themeReducer,
 } from '..';
-import {loginRequest, logout} from '../../Auth';
 import {store} from '../../../providers';
+import {loginRequest, logout} from '../../Auth';
 
 it('getCurrentColor dark', () => {
   store.dispatch(changeTheme('dark'));
@@ -22,7 +22,7 @@ it('getCurrentColor light', () => {
   });
 });
 
-it(getType(changeTheme), () => {
+it('changeTheme', () => {
   const payload = 'dark';
   expect(
     themeReducer(themeInitialState, {
@@ -32,7 +32,7 @@ it(getType(changeTheme), () => {
   ).toMatchObject({currentColor: payload});
 });
 
-it(getType(logout), () => {
+it('logout', () => {
   expect(
     themeReducer(themeInitialState, {
       type: getType(logout),
@@ -40,7 +40,7 @@ it(getType(logout), () => {
   ).toMatchObject(themeInitialState);
 });
 
-it(getType(loginRequest), () => {
+it('loginRequest', () => {
   expect(
     themeReducer(undefined, {
       type: getType(loginRequest),

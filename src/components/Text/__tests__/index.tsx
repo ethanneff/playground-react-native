@@ -16,7 +16,7 @@ it('renders h1', () => {
   });
   expect(tree.toJSON()).toMatchSnapshot();
 });
-it('renders type="h2"  ', () => {
+it('renders type="h2"', () => {
   const {tree} = mockRenderer({
     component: <Text title="hello" type="h2" />,
   });
