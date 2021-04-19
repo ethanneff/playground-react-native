@@ -2,93 +2,111 @@ import React from 'react';
 import {Text} from '..';
 import {mockRenderer} from '../../../mocks/Renderer';
 
-it('renders correctly', () => {
-  const {tree} = mockRenderer({component: <Text title="hello" />});
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders empty', () => {
-  const {tree} = mockRenderer({component: <Text title="" />});
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders h1', () => {
-  const {tree} = mockRenderer({
-    component: <Text title="hello" type="h1" />,
+describe('text', () => {
+  it('renders correctly', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({component: <Text title="hello" />});
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders type="h2"', () => {
-  const {tree} = mockRenderer({
-    component: <Text title="hello" type="h2" />,
+  it('renders empty', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({component: <Text title="" />});
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders h3', () => {
-  const {tree} = mockRenderer({
-    component: <Text title="hello" type="h3" />,
+  it('renders h1', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: <Text title="hello" type="h1" />,
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders h4', () => {
-  const {tree} = mockRenderer({
-    component: <Text title="hello" type="h4" />,
+  it('renders type="h2"', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: <Text title="hello" type="h2" />,
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders h5', () => {
-  const {tree} = mockRenderer({
-    component: <Text title="hello" type="h5" />,
+  it('renders h3', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: <Text title="hello" type="h3" />,
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders h6', () => {
-  const {tree} = mockRenderer({
-    component: <Text title="hello" type="h6" />,
+  it('renders h4', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: <Text title="hello" type="h4" />,
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders subtitle1', () => {
-  const {tree} = mockRenderer({
-    component: <Text title="hello" type="subtitle1" />,
+  it('renders h5', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: <Text title="hello" type="h5" />,
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders subtitle2', () => {
-  const {tree} = mockRenderer({
-    component: <Text title="hello" type="subtitle2" />,
+  it('renders h6', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: <Text title="hello" type="h6" />,
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders body1', () => {
-  const {tree} = mockRenderer({
-    component: <Text title="hello" type="body1" />,
+  it('renders subtitle1', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: <Text title="hello" type="subtitle1" />,
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders body2', () => {
-  const {tree} = mockRenderer({
-    component: <Text title="hello" type="body2" />,
+  it('renders subtitle2', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: <Text title="hello" type="subtitle2" />,
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders button', () => {
-  const {tree} = mockRenderer({
-    component: <Text title="hello" type="button" />,
+  it('renders body1', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: <Text title="hello" type="body1" />,
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders button empty', () => {
-  const {tree} = mockRenderer({component: <Text title="" type="button" />});
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders caption', () => {
-  const {tree} = mockRenderer({
-    component: <Text title="hello" type="caption" />,
+  it('renders body2', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: <Text title="hello" type="body2" />,
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
-});
-it('renders overline', () => {
-  const {tree} = mockRenderer({
-    component: <Text title="hello" type="overline" />,
+  it('renders button', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: <Text title="hello" type="button" />,
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
+  it('renders button empty', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({component: <Text title="" type="button" />});
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+  it('renders caption', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: <Text title="hello" type="caption" />,
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+  it('renders overline', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: <Text title="hello" type="overline" />,
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
 });

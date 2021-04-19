@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`button renders correctly 1`] = `
 <View
   style={
     Object {
@@ -347,7 +347,7 @@ exports[`renders correctly 1`] = `
 </View>
 `;
 
-exports[`renders disable 1`] = `
+exports[`button renders disable 1`] = `
 <View
   style={
     Object {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`card renders correctly 1`] = `
 <View
   style={
     Object {
@@ -337,7 +337,7 @@ exports[`renders correctly 1`] = `
 </View>
 `;
 
-exports[`renders correctly with onPress 1`] = `
+exports[`card renders correctly with onPress 1`] = `
 <View
   style={
     Object {

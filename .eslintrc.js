@@ -5,12 +5,12 @@ module.exports = {
     '@react-native-community',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:jest/all',
     'plugin:react/all',
     'plugin:react-native/all',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
-    'plugin:jest/recommended',
     'prettier',
   ],
   plugins: ['@typescript-eslint', 'import', 'jest'],
@@ -23,7 +23,7 @@ module.exports = {
     'src/conversions/',
   ],
   rules: {
-    // added
+    // Added
     'react/function-component-definition': [
       'warn',
       {namedComponents: 'arrow-function', unnamedComponents: 'arrow-function'},
@@ -35,7 +35,7 @@ module.exports = {
     'import/no-cycle': 'error',
     'import/no-unresolved': ['error', {ignore: ['root-types']}],
     curly: ['error', 'multi', 'consistent'],
-    // ignored (outside prettier and typescript rules)
+    // Ignored (outside prettier and typescript rules)
     '@typescript-eslint/no-var-requires': 'off',
     'react/require-default-props': 'off',
     'react/jsx-indent': 'off',

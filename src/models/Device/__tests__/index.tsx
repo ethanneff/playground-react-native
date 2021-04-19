@@ -10,6 +10,7 @@ import {logout} from '../../Auth';
 
 describe('actions', () => {
   it('loadDevice', () => {
+    expect.hasAssertions();
     const size = {
       fontScale: 1,
       height: 1,
@@ -26,30 +27,33 @@ describe('actions', () => {
       payload,
       type: getType(loadDevice),
     };
-    expect(loadDevice(payload)).toEqual(expectedAction);
+    expect(loadDevice(payload)).toStrictEqual(expectedAction);
   });
 
   it('changeAppStatus', () => {
+    expect.hasAssertions();
     const payload = 'background';
     const expectedAction = {
       payload,
       type: getType(changeAppStatus),
     };
-    expect(changeAppStatus(payload)).toEqual(expectedAction);
+    expect(changeAppStatus(payload)).toStrictEqual(expectedAction);
   });
 
   it('changeKeyboardStatus', () => {
+    expect.hasAssertions();
     const payload = 43;
     const expectedAction = {
       payload,
       type: getType(changeKeyboardStatus),
     };
-    expect(changeKeyboardStatus(payload)).toEqual(expectedAction);
+    expect(changeKeyboardStatus(payload)).toStrictEqual(expectedAction);
   });
 });
 
 describe('reducer', () => {
   it('loadDevice', () => {
+    expect.hasAssertions();
     const size = {
       fontScale: 1,
       height: 1,
@@ -86,16 +90,17 @@ describe('reducer', () => {
         payload: data,
         type: getType(loadDevice),
       }),
-    ).toEqual(data);
+    ).toStrictEqual(data);
   });
 
   it('changeKeyboardStatus', () => {
+    expect.hasAssertions();
     expect(
       deviceReducer(deviceInitialState, {
         payload: 12,
         type: getType(changeKeyboardStatus),
       }),
-    ).toEqual({
+    ).toStrictEqual({
       ...deviceInitialState,
       keyboardVisible: true,
       keyboardHeight: 12,
@@ -103,15 +108,17 @@ describe('reducer', () => {
   });
 
   it('changeAppStatus', () => {
+    expect.hasAssertions();
     expect(
       deviceReducer(deviceInitialState, {
         payload: 'background',
         type: getType(changeAppStatus),
       }),
-    ).toEqual({...deviceInitialState, appStatus: 'background'});
+    ).toStrictEqual({...deviceInitialState, appStatus: 'background'});
   });
 
   it('logout', () => {
+    expect.hasAssertions();
     expect(
       deviceReducer(deviceInitialState, {
         type: getType(logout),
