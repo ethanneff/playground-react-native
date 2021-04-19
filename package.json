@@ -15,6 +15,8 @@
     "lint": "tsc && eslint '**/*.[jt]s?(x)' --cache --fix",
     "test": "jest -u --forceExit --coverage --detectOpenHandles",
     "watch": "jest -u --forceExit --detectOpenHandles --watchAll",
+    "test": "jest -u --forceExit --coverage --detectOpenHandles --config .github/jest.config.js",
+    "watch": "jest -u --forceExit --detectOpenHandles --watchAll --config .github/jest.config.js",
     "reset": "watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; jest --clearCache; gem install fastlane; bundler update --all; bundler install; cd ios; pod install --repo-update; cd ..; npx jetify; cd android; ./gradlew clean; cd ..; react-native start --reset-cache",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
@@ -147,22 +149,6 @@
         }
       ]
     ]
-  },
-  "jest": {
-    "preset": "react-native",
-    "transform": {
-      ".+\\.(bmp|gif|jpg|jpeg|mp4|png|psd|svg|webp|ttf|otf|m4v|mov|mp4|mpeg|mpg|webm|aac|aiff|caf|m4a|mp3|wav|html|pdf|obj)$": "<rootDir>/src/mocks/Files/index.js"
-    },
-    "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|@react-native-community|@react-navigation|@react-native-firebase|@react-native)"
-    ],
-    "setupFiles": [
-      "./node_modules/react-native-gesture-handler/jestSetup.js",
-      "<rootDir>/src/mocks/Setup/index.ts"
-    ],
-    "globals": {
-      "window": {}
-    }
   },
   "browserslist": {
     "production": [
