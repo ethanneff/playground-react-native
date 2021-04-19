@@ -27,6 +27,7 @@ export default memo(function Admin() {
         <Text emphasis="medium" title="Navigation" type="h3" />
         <Button onPress={onPress('notification')} title="notification" />
         <Button onPress={onPress('alert')} title="alert" />
+        <Button onPress={onPress('actionSheet')} title="action sheet" />
 
         <Text emphasis="medium" title="Learning" type="h3" />
         <Button onPress={onPress('playground')} title="playground" />

@@ -87,7 +87,12 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
   );
   const onLanding = useCallback(
     () =>
-      setForm(prev => ({...prev, email: '', password: '', state: 'landing'})),
+      setForm(prev => ({
+        ...prev,
+        email: '',
+        password: '',
+        state: 'landing',
+      })),
     [],
   );
   const onPhone = useCallback(

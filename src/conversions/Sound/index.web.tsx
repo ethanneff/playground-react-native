@@ -16,19 +16,14 @@ export class Sound {
   }
 
   play = async (callback?: Callback): Promise<void> => {
-    if (this.sound.state() !== 'loaded') {
-      return;
-    }
+    if (this.sound.state() !== 'loaded') return;
+
     await this.sound.play();
-    if (callback) {
-      callback(this);
-    }
+    if (callback) callback(this);
   };
 
   stop = async (callback?: Callback): Promise<void> => {
     await this.sound.stop();
-    if (callback) {
-      callback(this);
-    }
+    if (callback) callback(this);
   };
 }
