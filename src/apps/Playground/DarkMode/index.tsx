@@ -13,16 +13,16 @@ import {
 } from '../../../models';
 import {config, useRootDispatch, useRootSelector} from '../../../utils';
 
-interface Card {
+type CardItem = {
   title: string;
   value: string;
   target?: string;
   chart?: ImageSourcePropType;
   button?: string;
-}
+};
 
 const image = require('../../../assets/placeholder.png');
-const cards: Card[] = [
+const cards: CardItem[] = [
   {
     title: 'Marketing',
     value: '12.4 M',
@@ -86,7 +86,7 @@ export const DarkMode = memo(function DarkMode() {
   const columns = landscape ? 5 : 2;
   const onPress = useCallback(() => undefined, []);
 
-  const renderItem = useCallback<ListRenderItem<Card>>(
+  const renderItem = useCallback<ListRenderItem<CardItem>>(
     ({item, index}) => (
       <Card elevation={elevation} key={index} onPress={onPress}>
         <Text title={item.title} type="overline" />

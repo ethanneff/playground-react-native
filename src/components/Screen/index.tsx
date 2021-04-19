@@ -16,12 +16,12 @@ type Props = {
   border?: boolean;
   leftIcon?: string;
   rightIcon?: string;
-  onLeftPress?(): void;
-  onRightPress?(): void;
+  onLeftPress?: () => void;
+  onRightPress?: () => void;
   secondLeftIcon?: string;
   secondRightIcon?: string;
-  onSecondLeftPress?(): void;
-  onSecondRightPress?(): void;
+  onSecondLeftPress?: () => void;
+  onSecondRightPress?: () => void;
   children?: ReactNode;
   dropShadow?: boolean;
   style?: StyleProp<ViewStyle>;

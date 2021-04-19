@@ -19,7 +19,7 @@ interface Question {
   title: string;
   type: QuestionType;
   description?: string;
-  choices: readonly string[];
+  choices: string[];
 }
 
 export interface Questions {

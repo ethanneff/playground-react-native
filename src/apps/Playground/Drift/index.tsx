@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useReducer} from 'react';
+import React, {memo, useCallback, useMemo, useReducer} from 'react';
 import {View} from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import {Screen, Text} from '../../../components';
@@ -12,11 +12,11 @@ export const Drift = memo(function PlaygroundDrift() {
   const [state, dispatch] = useReducer(driftReducer, driftInitialState);
   const isEmulator = DeviceInfo.isEmulatorSync();
   const navBack = useCallback(() => goBack(), [goBack]);
+  const value = useMemo(() => ({state, dispatch}), [state, dispatch]);
 
-  // TODO: figure out why Screen re-renders (because of useReducer.state)
   return (
     <Screen border onLeftPress={navBack} title="Drift">
-      <DriftContext.Provider value={{state, dispatch}}>
+      <DriftContext.Provider value={value}>
         {isEmulator ? (
           <Text center title="simulators not supported" />
         ) : (

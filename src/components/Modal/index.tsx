@@ -9,7 +9,7 @@ type ModalProps = {
   duration?: number;
   elevation?: number;
   noScroll?: boolean;
-  onBackgroundPress?(): void;
+  onBackgroundPress?: () => void;
   backgroundColor?: string;
   showOverlay?: boolean;
   children: ReactElement | ReactElement[];

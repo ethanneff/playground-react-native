@@ -42,7 +42,7 @@ interface Props {
   value: string;
   onChangeText(text: string): void;
   onRef?: MutableRefObject<Original | null>;
-  onSubmitEditing?(): void;
+  onSubmitEditing?: () => void;
 }
 
 export const Input = ({

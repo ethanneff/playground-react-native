@@ -33,7 +33,7 @@ export const Graph = ({
   const scaleY = scaleLinear()
     .domain(getDomain(data.map(d => d.value)))
     .range([height - padding, padding]);
-  const d = shape
+  const d: string = shape
     .line<DataPoint>()
     .x(p => scaleX(p.date))
     .y(p => scaleY(p.value))
