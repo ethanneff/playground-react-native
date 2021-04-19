@@ -1,11 +1,11 @@
 import React, {memo} from 'react';
-import {useColor} from '../../../hooks';
 import {TouchableOpacity} from '../../../components';
+import {useColor} from '../../../hooks';
 
 interface CellProps {
   x: number;
   y: number;
-  row: number;
+  selected: boolean;
   size: number;
   onItemPress(x: number, y: number): () => void;
 }
@@ -13,7 +13,7 @@ interface CellProps {
 export const Cell = memo(function Cell({
   x,
   y,
-  row,
+  selected,
   size,
   onItemPress,
 }: CellProps) {
@@ -25,7 +25,7 @@ export const Cell = memo(function Cell({
       style={{
         height: size,
         width: size,
-        backgroundColor: row ? color.primary : color.surface,
+        backgroundColor: selected ? color.primary : color.background,
         borderWidth: 1,
         borderColor: color.light,
       }}
