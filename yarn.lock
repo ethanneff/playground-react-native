@@ -4017,10 +4017,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-11.3.1.tgz#ab8d55eefe61b08be3be66b1f7fa89c5b5ab0746"
   integrity sha512-WPMNfUueNVP8LvYiKQgRkApBISQpthA9L/gqZgoSA5dIHYLWtolZjAcaQ6qoUUX/rmK0XieyqNRZvh1g4SVctA==
 
-"@react-native-firebase/crashlytics@11.3.1":
-  version "11.3.1"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-11.3.1.tgz#b3dc179588156fb44ce0adc463297550906a4f87"
-  integrity sha512-vxkQVOOQmDQ/gZ2X7woVO6as3GUDoJz3hNijTsQFtJsYUqN1mRD/RsKRM6SCIgtsxg5ENHNg5a1/jJmCeuGlbA==
+"@react-native-firebase/crashlytics@11.3.2":
+  version "11.3.2"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-11.3.2.tgz#76b21311b7fb7ee2573cf8207cab521e65c2884d"
+  integrity sha512-UNwryX+IbQOlVLEAMEccxFlbI75beCxt9Xd0lj7hCWKC0ugw0uyH9XLLBKuSR5oUzOghoOCJc3L3cbmbxxFzaQ==
   dependencies:
     stacktrace-js "^2.0.0"
 
@@ -12470,7 +12470,6 @@ minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
-    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
