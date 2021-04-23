@@ -23,14 +23,12 @@ export const Landing = memo(function Playground() {
   return (
     <Screen dropShadow onLeftPress={navBack} title="Playground">
       <FlatList
+        contentContainerStyle={{paddingHorizontal: config.padding(4)}}
         data={screens}
         keyExtractor={keyExtractor}
         keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
-        style={{
-          padding: config.padding(4),
-          backgroundColor: color.surface,
-        }}
+        style={{backgroundColor: color.surface}}
       />
     </Screen>
   );

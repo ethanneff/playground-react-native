@@ -13,10 +13,8 @@ export default memo(function Admin() {
   return (
     <Screen dropShadow title="admin">
       <ScrollView
-        style={{
-          paddingHorizontal: config.padding(4),
-          backgroundColor: color.surface,
-        }}>
+        contentContainerStyle={{paddingHorizontal: config.padding(4)}}
+        style={{backgroundColor: color.surface}}>
         <Text emphasis="medium" title="Apps" type="h3" />
         <Button onPress={onPress('arcade')} title="arcade" />
         <Button onPress={onPress('portfolio')} title="portfolio" />

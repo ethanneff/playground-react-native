@@ -717,7 +717,7 @@ PODS:
     - React-cxxreact (= 0.64.0)
     - React-jsi (= 0.64.0)
     - React-perflogger (= 0.64.0)
-  - RNAppleAuthentication (2.1.1):
+  - RNAppleAuthentication (2.1.2):
     - React-Core
   - RNCAsyncStorage (1.12.1):
     - React-Core
@@ -729,26 +729,26 @@ PODS:
     - React-Core
     - React-Core/DevSupport
     - React-RCTNetwork
-  - RNFBAnalytics (11.3.1):
+  - RNFBAnalytics (11.3.2):
     - Firebase/Analytics (= 7.10.0)
     - React-Core
     - RNFBApp
-  - RNFBApp (11.3.1):
+  - RNFBApp (11.3.2):
     - Firebase/CoreOnly (= 7.10.0)
     - React-Core
-  - RNFBAuth (11.3.1):
+  - RNFBAuth (11.3.2):
     - Firebase/Auth (= 7.10.0)
     - React-Core
     - RNFBApp
-  - RNFBCrashlytics (11.3.1):
+  - RNFBCrashlytics (11.3.2):
     - Firebase/Crashlytics (= 7.10.0)
     - React-Core
     - RNFBApp
-  - RNFBFirestore (11.3.1):
+  - RNFBFirestore (11.3.2):
     - Firebase/Firestore (= 7.10.0)
     - React-Core
     - RNFBApp
-  - RNFBRemoteConfig (11.3.1):
+  - RNFBRemoteConfig (11.3.2):
     - Firebase/RemoteConfig (= 7.10.0)
     - React-Core
     - RNFBApp
@@ -1109,17 +1109,17 @@ SPEC CHECKSUMS:
   React-RCTVibration: 0fd6b21751a33cb72fce1a4a33ab9678416d307a
   React-runtimeexecutor: cad74a1eaa53ee6e7a3620231939d8fe2c6afcf0
   ReactCommon: cfe2b7fd20e0dbd2d1185cd7d8f99633fbc5ff05
-  RNAppleAuthentication: f4cc93d710f1337f66550d04d84bf47553bc0eae
+  RNAppleAuthentication: e95bcfbd044013667f35c5ca20ae17d39500c009
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNDeviceInfo: 3266783bcb6aa4b0c785d6080a407f8a5fc68326
   RNDevMenu: fd325b5554b61fe7f48d9205a3877cf5ee88cd7c
-  RNFBAnalytics: 9d82838d751736cc626f1265e8412ae62e93eb85
-  RNFBApp: 3b002b58041b71034efd09ae7394af65a58df1e4
-  RNFBAuth: 729c71a497af14240652f90a447ad33aa2180193
-  RNFBCrashlytics: c11c65fa40e94b6efb070e9a1e99466bbdac4fb1
-  RNFBFirestore: 657fd2ac74e98668edf8929e2c6c77c87c46bd06
-  RNFBRemoteConfig: 756df2d60c681829fda27e7662bc2f70569a34ee
+  RNFBAnalytics: 190aac2a60181625826f9a132e30a7d297755afa
+  RNFBApp: f3f728097b3f8f51a4afcec01424534a3a6106af
+  RNFBAuth: c29586f2a7e6db860c699adc5fedf6a27fd84992
+  RNFBCrashlytics: 2d5209bd281fd327a6b16d677d76567895d86599
+  RNFBFirestore: 580c120d8e4c0ba3bac244d8a7977ea9664e0118
+  RNFBRemoteConfig: ae0ec7c81c09235bee67c5b44110b7580bed67be
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
   RNRate: 15b861025a7821730761fce7f44561ce7e0b2de0
