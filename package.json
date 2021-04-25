@@ -34,7 +34,7 @@
     "@react-native-community/slider": "3.0.3",
     "@react-native-firebase/analytics": "11.3.2",
     "@react-native-firebase/app": "11.3.2",
-    "@react-native-firebase/auth": "11.3.2",
+    "@react-native-firebase/auth": "11.3.3",
     "@react-native-firebase/crashlytics": "11.3.2",
     "@react-native-firebase/firestore": "11.3.2",
     "@react-native-firebase/remote-config": "11.3.2",
