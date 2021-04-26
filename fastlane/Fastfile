@@ -8,7 +8,7 @@
 # fastlane deliver download_screenshots -a com.eneff.app.core
 
 timestamp = Time.now.to_i
-default_app = "com.eneff.app.core"
+default_app = 'com.eneff.app.core'
 
 before_all do
   ensure_git_branch
@@ -17,126 +17,122 @@ before_all do
 end
 
 apps = {
-  "core" => {"name" => "Core - Admin Panel"},  
-  "complete" => {"name" => "Complete - Task Management"},
-  "journal" => {"name" => "Journal, Reflect, Improve"},
-  "progress" => {"name" => "Progress - Coding Tracker"},
+  'core' => { 'name' => 'Core - Admin Panel' },
+  'complete' => { 'name' => 'Complete - Task Management' },
+  'journal' => { 'name' => 'Journal, Reflect, Improve' },
+  'progress' => { 'name' => 'Progress - Coding Tracker' }
 }
 
-methods = ["prod", "test", "codepush"]
+methods = ['prod', 'test', 'codepush']
 
 platform :ios do
-
   lane :deploy do |options|
-    desc "get arguments"
+    desc 'get arguments'
     app_name = options[:app]
     method_name = options[:method]
-    abort("missing app: argument") if !app_name || !apps.keys.include?(app_name)
-    abort("missing method: argument") if !method_name || !methods.include?(method_name)
-    
-    desc "set properties"
-    config = apps[app_name]
-    xcodeproj = "./ios/core.xcodeproj"
-    new_package_name = "com.eneff.app." + app_name.downcase
+    abort('missing app: argument') if !app_name || !apps.keys.include?(app_name)
+    abort('missing method: argument') if !method_name || !methods.include?(method_name)
 
-    desc "increment version"
+    desc 'set properties'
+    config = apps[app_name]
+    xcodeproj = './ios/core.xcodeproj'
+    new_package_name = 'com.eneff.app.' + app_name.downcase
+
+    desc 'increment version'
     increment_build_number(xcodeproj: xcodeproj, build_number: timestamp)
-    increment_version_number(xcodeproj: xcodeproj, bump_type: "patch") # TODO: read changelog and update package.json
-    git_commit(path: "./ios/*", message: "chore: bump ios version", skip_git_hooks: true)
+    increment_version_number(xcodeproj: xcodeproj, bump_type: 'patch') # TODO: read changelog and update package.json
+    git_commit(path: './ios/*', message: 'chore: bump ios version', skip_git_hooks: true)
     push_to_git_remote(no_verify: true)
 
-    desc "clone configs"
+    desc 'clone configs'
     if new_package_name != default_app
-      sh("echo #{config["name"]}> ./metadata/en-US/name.txt")
+      sh("echo #{config['name']}> ./metadata/en-US/name.txt")
       sh("sed -i '' -E 's/^(APP=*).*/\\1#{app_name}/' ../.env")
-      sh("cp", "../ios/core/GoogleService-Info." + app_name.downcase + ".plist", "../ios/core/GoogleService-Info.plist")
-      update_info_plist(xcodeproj: xcodeproj, scheme: "core", display_name: app_name, app_identifier: new_package_name)
+      sh('cp', "../ios/core/GoogleService-Info.#{app_name.downcase}.plist", '../ios/core/GoogleService-Info.plist')
+      update_info_plist(xcodeproj: xcodeproj, scheme: 'core', display_name: app_name, app_identifier: new_package_name)
       sh("sed -i '' 's/com.eneff.app.core/#{new_package_name}/g' ../ios/core.xcodeproj/project.pbxproj")
     end
 
-    desc "build ipa"
+    desc 'build ipa'
     get_push_certificate(app_identifier: new_package_name)
     match(app_identifier: new_package_name)
-    build_app(scheme: "core", workspace:"./ios/core.xcworkspace")
+    build_app(scheme: 'core', workspace: './ios/core.xcworkspace')
 
-    desc "clean configs"
+    desc 'clean configs'
     if new_package_name != default_app
-      sh("echo #{apps["core"]["name"]}> ./metadata/en-US/name.txt")
-      sh("sed -i '' -E 's/^(APP=*).*/\\1core/' ../.env")
-      sh("cp", "../ios/core/GoogleService-Info.core.plist", "../ios/core/GoogleService-Info.plist")
-      update_info_plist(xcodeproj: xcodeproj, scheme: "core", display_name: 'Core', app_identifier: default_app)
+      sh("echo #{apps['core']['name']}> ./metadata/en-US/name.txt")
+      sh('sed -i "" -E "s/^(APP=*).*/\\1core/" ../.env')
+      sh('cp', '../ios/core/GoogleService-Info.core.plist', '../ios/core/GoogleService-Info.plist')
+      update_info_plist(xcodeproj: xcodeproj, scheme: 'core', display_name: 'Core', app_identifier: default_app)
       sh("sed -i '' 's/#{new_package_name}/com.eneff.app.core/g' ../ios/core.xcodeproj/project.pbxproj")
     end
 
-    desc "deploy"
-    changelog_from_git_commits()
-    upload_app_privacy_details_to_app_store(app_identifier: new_package_name, json_path: "./fastlane/privacy.json")
-    deliver()
+    desc 'deploy'
+    changelog_from_git_commits
+    upload_app_privacy_details_to_app_store(app_identifier: new_package_name, json_path: './fastlane/privacy.json')
+    deliver
     # appcenter_upload(
-    #   api_token: ENV["APP_CENTER_API"],
-    #   owner_name: "ethanneff",
-    #   owner_type: "user"
+    #   api_token: ENV['APP_CENTER_API'],
+    #   owner_name: 'ethanneff',
+    #   owner_type: 'user'
     #   app_name: new_package_name,
-    #   file: "./core.ipa",
+    #   file: './core.ipa',
     #   notify_testers: true
     # )
   end
-
 end
 
 platform :android do
-
   lane :deploy do |options|
-    desc "get arguments"
+    desc 'get arguments'
     app_name = options[:app]
     method_name = options[:method]
-    abort("missing app: argument") if !app_name || !apps.keys.include?(app_name)
-    abort("missing method: argument") if !method_name || !methods.include?(method_name)
+    abort('missing app: argument') if !app_name || !apps.keys.include?(app_name)
+    abort('missing method: argument') if !method_name || !methods.include?(method_name)
 
-    desc "set properties"
-    config = apps[app_name]    
-    new_package_name = "com.eneff.app." + app_name.downcase
+    desc 'set properties'
+    config = apps[app_name]
+    new_package_name = 'com.eneff.app.' + app_name.downcase
 
-    desc "increment version"
-    android_set_version_name(version_name: timestamp.to_s, gradle_file: "android/app/build.gradle")
-    android_set_version_code(version_code: timestamp, gradle_file: "android/app/build.gradle")
-    git_commit(path: "./android/*", message: "chore: bump android version to " + timestamp.to_s, skip_git_hooks: true)
+    desc 'increment version'
+    android_set_version_name(version_name: timestamp.to_s, gradle_file: 'android/app/build.gradle')
+    android_set_version_code(version_code: timestamp, gradle_file: 'android/app/build.gradle')
+    git_commit(path: './android/*', message: 'chore: bump android version to ' + timestamp.to_s, skip_git_hooks: true)
     push_to_git_remote(no_verify: true)
 
-    desc "clone configs"
+    desc 'clone configs'
     if new_package_name != default_app
-      sh("echo #{config["name"]}> ./metadata/en-US/name.txt")
+      sh("echo #{config['name']}> ./metadata/en-US/name.txt")
       sh("sed -i '' -E 's/^(APP=*).*/\\1#{app_name}/' ../.env")
-      sh("cp", "../android/app/google-services." + app_name.downcase + ".json", "../android/app/google-services.json")
-      rename_android_package(path: "./android/", package_name: default_app, new_package_name: new_package_name)
-      update_android_strings( block: lambda { |strings| strings['app_name'] = app_name } )
+      sh('cp', "../android/app/google-services.#{app_name.downcase}.json", '../android/app/google-services.json')
+      rename_android_package(path: './android/', package_name: default_app, new_package_name: new_package_name)
+      update_android_strings(block: lambda { |strings| strings['app_name'] = app_name } )
     end
 
-    desc "build aab"
-    changelog_from_git_commits()
-    gradle(task: "clean", project_dir: "./android/")
-    gradle(task: "bundle", build_type: "Release", project_dir: "./android/")
+    desc 'build aab'
+    changelog_from_git_commits
+    gradle(task: 'clean', project_dir: './android/')
+    gradle(task: 'bundle', build_type: 'Release', project_dir: './android/')
 
-    desc "clean configs"
+    desc 'clean configs'
     if new_package_name != default_app
-      sh("echo #{apps["core"]["name"]}> ./metadata/en-US/name.txt")
+      sh("echo #{apps['core']['name']}> ./metadata/en-US/name.txt")
       sh("sed -i '' -E 's/^(APP=*).*/\\1core/' ../.env")
-      sh("cp", "../android/app/google-services.core.json", "../android/app/google-services.json")
-      sh("rm", "-rf", "../android/app/src/main/java/com/eneff/app/!(core)/*")
-      rename_android_package(path: "./android/", package_name: new_package_name, new_package_name: default_app)
-      update_android_strings( block: lambda { |strings| strings['app_name'] = 'Core' } )
+      sh('cp', '../android/app/google-services.core.json', '../android/app/google-services.json')
+      sh('rm', '-rf', '../android/app/src/main/java/com/eneff/app/!(core)/*')
+      rename_android_package(path: './android/', package_name: new_package_name, new_package_name: default_app)
+      update_android_strings(block: lambda { |strings| strings['app_name'] = 'Core' })
     end
 
-    desc "submit to google"
-    upload_to_play_store(track: "beta", package_name: new_package_name)
+    desc 'submit to google'
+    upload_to_play_store(track: 'beta', package_name: new_package_name)
     # appcenter_upload(
-    #   api_token: ENV["APP_CENTER_API"],
-    #   owner_name: "ethanneff",
-    #   owner_type: "user",
+    #   api_token: ENV['APP_CENTER_API'],
+    #   owner_name: 'ethanneff',
+    #   owner_type: 'user',
     #   app_name: new_package_name,
-    #   file: "./android/app/build/outputs/bundle/release/app-release.aab",
+    #   file: './android/app/build/outputs/bundle/release/app-release.aab',
     #   notify_testers: true
     # )
   end
-
 end
