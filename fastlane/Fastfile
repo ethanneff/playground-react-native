@@ -46,7 +46,8 @@ platform :ios do
 
     desc 'increment version'
     increment_build_number(xcodeproj: xcodeproj, build_number: timestamp)
-    increment_version_number(xcodeproj: xcodeproj, bump_type: 'patch') # TODO: read changelog and update package.json
+    # TODO: read changelog and update package.json
+    # increment_version_number(xcodeproj: xcodeproj, bump_type: 'patch')
     git_commit(path: './ios/*', message: 'chore: bump ios version', skip_git_hooks: true)
     push_to_git_remote(no_verify: true)
 
@@ -61,7 +62,7 @@ platform :ios do
 
     desc 'build ipa'
     get_push_certificate(app_identifier: new_package_name)
-    match(app_identifier: new_package_name)
+    sync_code_signing(app_identifier: new_package_name)
     build_app(scheme: 'core', workspace: './ios/core.xcworkspace')
 
     desc 'clean configs'
