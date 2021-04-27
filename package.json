@@ -29,7 +29,7 @@
     "@mdi/react": "1.5.0",
     "@react-native-community/async-storage": "1.12.1",
     "@react-native-community/google-signin": "5.0.0",
-    "@react-native-community/masked-view": "0.1.10",
+    "@react-native-community/masked-view": "0.1.11",
     "@react-native-community/netinfo": "6.0.0",
     "@react-native-community/slider": "3.0.3",
     "@react-native-firebase/analytics": "11.3.3",
