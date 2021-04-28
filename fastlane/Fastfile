@@ -9,6 +9,8 @@
 
 timestamp = Time.now.to_i
 default_app = 'com.eneff.app.core'
+package = load_json(json_path: './package.json')
+version = package['version']
 
 before_all do
   ensure_git_branch

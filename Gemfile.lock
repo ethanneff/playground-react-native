@@ -86,6 +86,7 @@ GEM
       xcodeproj (>= 1.13.0, < 2.0.0)
       xcpretty (~> 0.3.0)
       xcpretty-travis-formatter (>= 0.0.3)
+    fastlane-plugin-load_json (0.0.1)
     fastlane-plugin-rename_android_package (0.1.0)
     fastlane-plugin-update_android_strings (0.1.0)
       ox
@@ -202,9 +203,10 @@ PLATFORMS
 
 DEPENDENCIES
   fastlane
+  fastlane-plugin-load_json
   fastlane-plugin-rename_android_package
   fastlane-plugin-update_android_strings
   fastlane-plugin-versioning_android
 
 BUNDLED WITH
-   2.2.10
+   2.2.15
