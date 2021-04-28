@@ -31,8 +31,8 @@ type InitialState = {
 
 const getInitialState = ({randomize, reels, credits}: InitialState): State => {
   const reelsArray = randomize
-    ? reels.map((reel) => shuffleArray([...(reel as any)]))
-    : reels.map((reel) => [...(reel as any)]);
+    ? reels.map(reel => shuffleArray([...(reel as any)]))
+    : reels.map(reel => [...(reel as any)]);
   return {
     activity: 'idle',
     credits,
@@ -47,7 +47,7 @@ const getWildCards = (
   reels: string[],
 ): WildCards => {
   const wildCards: WildCards = [];
-  Object.keys(combinations).map((combination) => {
+  Object.keys(combinations).map(combination => {
     const unicodeCombination = [...(combination as any)];
     if (unicodeCombination.length < reels.length)
       wildCards.push({line: combination, amount: combinations[combination]});
@@ -58,7 +58,7 @@ const getWildCards = (
 };
 
 const getRandomLineIndexes = (reelsArray: string[][]): number[] => {
-  return reelsArray.map((reel) => Math.floor(Math.random() * reel.length));
+  return reelsArray.map(reel => Math.floor(Math.random() * reel.length));
 };
 
 const getWinningLine = (
@@ -160,7 +160,7 @@ export const Slots = memo(function Slots({
   const onSpin = useCallback(() => {
     const remainingCredits = state.credits - multiplier;
     if (remainingCredits < 0) {
-      setState((p) => ({...p, activity: 'insufficient credits'}));
+      setState(p => ({...p, activity: 'insufficient credits'}));
       return;
     }
     const lineIndexes = getRandomLineIndexes(state.reelsArray);
@@ -171,7 +171,7 @@ export const Slots = memo(function Slots({
       wildCards,
     );
 
-    setState((p) => ({
+    setState(p => ({
       ...p,
       activity: 'spinning',
       lineIndexes,
@@ -179,7 +179,7 @@ export const Slots = memo(function Slots({
     }));
     setTimeout(() => {
       console.log(winningLine, winningAmount);
-      setState((p) => ({
+      setState(p => ({
         ...p,
         activity: 'idle',
         credits: p.credits + winningAmount * multiplier,
@@ -188,7 +188,7 @@ export const Slots = memo(function Slots({
   }, [combinations, multiplier, state.credits, state.reelsArray, wildCards]);
 
   const onMultiplier = useCallback(() => {
-    setState((p) => {
+    setState(p => {
       const nextIndex = p.multiplierIndex + 1;
       const multiplierIndex =
         multipliers.length <= nextIndex || p.credits < multipliers[nextIndex]

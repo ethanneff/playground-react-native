@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`icon renders correctly 1`] = `
 <View
   style={
     Object {
@@ -125,7 +125,7 @@ exports[`renders correctly 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -133,7 +133,9 @@ exports[`renders correctly 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -341,13 +343,13 @@ exports[`renders correctly 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
 
-exports[`renders correctly with clear and max badge 1`] = `
+exports[`icon renders correctly with clear and max badge 1`] = `
 <View
   style={
     Object {
@@ -472,7 +474,7 @@ exports[`renders correctly with clear and max badge 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -480,7 +482,9 @@ exports[`renders correctly with clear and max badge 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -719,13 +723,13 @@ exports[`renders correctly with clear and max badge 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;
 
-exports[`renders correctly without defaults 1`] = `
+exports[`icon renders correctly without defaults 1`] = `
 <View
   style={
     Object {
@@ -850,7 +854,7 @@ exports[`renders correctly without defaults 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -858,7 +862,9 @@ exports[`renders correctly without defaults 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -1097,8 +1103,8 @@ exports[`renders correctly without defaults 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;

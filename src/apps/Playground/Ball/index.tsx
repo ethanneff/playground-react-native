@@ -26,7 +26,7 @@ export const Ball = memo(function PlaygroundBall() {
       marginTop: -size,
       width: size * 2,
     },
-    button: {
+    buttons: {
       flexDirection: 'row',
       justifyContent: 'space-around',
     },
@@ -48,12 +48,17 @@ export const Ball = memo(function PlaygroundBall() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} testID="ballScreen" title="Ball">
+    <Screen
+      dropShadow
+      onLeftPress={navBack}
+      style={{backgroundColor: color.surface}}
+      testID="ballScreen"
+      title="Ball">
       <Animated.View
         style={[ballPosition.getLayout(), styles.ball]}
         testID="ball"
       />
-      <View style={styles.button}>
+      <View style={styles.buttons}>
         <Button
           onPress={onInitialPress}
           testID="initialButton"

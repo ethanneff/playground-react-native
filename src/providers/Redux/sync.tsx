@@ -22,9 +22,10 @@ type GenericMiddleware<S, E extends AnyAction> = (
   api: Dispatch<E> extends Dispatch<AnyAction>
     ? MiddlewareAPI<Dispatch<E>, S>
     : never,
-) => (next: Dispatch<E>) => (event: E) => ReturnType<Dispatch<E>>;
+) => (_: Dispatch<E>) => (__: E) => ReturnType<Dispatch<E>>;
+
 type Middleware = GenericMiddleware<RootStore, RootAction>;
-export const syncMiddleware: Middleware = (_) => (dispatch) => (action) => {
+export const syncMiddleware: Middleware = _ => dispatch => action => {
   if (reduxWhiteList[action.type] && enabled) syncQueue.set([action.type]);
   return dispatch(action);
 };
@@ -40,7 +41,7 @@ type SyncQueue = {
 const syncQueue: SyncQueue = {
   key: '@syncQuery',
   cache: [],
-  set: async (value) => {
+  set: async value => {
     try {
       const combined = [...syncQueue.cache, ...value];
       const stringify = JSON.stringify(combined);
@@ -69,7 +70,7 @@ let retryTimeout = retryDefaultTimeout;
 export const useSync = (): void => {
   const timer = useRef<number | null>(null);
 
-  const processSync = useCallback((data) => {
+  const processSync = useCallback(data => {
     console.log(data); // TODO: only update redux if data is different
   }, []);
 

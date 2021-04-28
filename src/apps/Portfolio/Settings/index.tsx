@@ -7,7 +7,7 @@ import {useRootDispatch, useRootSelector} from '../../../utils';
 
 export const Settings = memo(function PortfolioSettings() {
   const dispatch = useRootDispatch();
-  const currentTheme = useRootSelector((state) => state.theme.currentColor);
+  const currentTheme = useRootSelector(state => state.theme.currentColor);
   const {goBack} = useNavigation();
   const themePress = useCallback(
     (theme: ColorTheme) => () => dispatch(changeTheme(theme)),
@@ -26,17 +26,15 @@ export const Settings = memo(function PortfolioSettings() {
     ),
     [currentTheme, themePress],
   );
-
   const renderHeader = useCallback(() => <Button disable title="Theme" />, []);
-  const keyExtractor = useCallback((item) => item, []);
+  const keyExtractor = useCallback(item => item, []);
 
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen onLeftPress={navBack} title="Settings">
+    <Screen dropShadow onLeftPress={navBack} title="Settings">
       <FlatList
         ListHeaderComponent={renderHeader}
         data={colorThemes}
-        horizontal
         keyExtractor={keyExtractor}
         keyboardShouldPersistTaps="handled"
         renderItem={renderItem}

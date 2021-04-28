@@ -3,14 +3,17 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     '@react-native-community',
+    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:jest/all',
     'plugin:react/all',
     'plugin:react-native/all',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
+    'prettier',
   ],
-  plugins: ['@typescript-eslint', 'import'],
+  plugins: ['@typescript-eslint', 'import', 'jest'],
   ignorePatterns: [
     'node_modules/',
     'coverage/',
@@ -20,7 +23,7 @@ module.exports = {
     'src/conversions/',
   ],
   rules: {
-    // added
+    // Added
     'react/function-component-definition': [
       'warn',
       {namedComponents: 'arrow-function', unnamedComponents: 'arrow-function'},
@@ -32,7 +35,7 @@ module.exports = {
     'import/no-cycle': 'error',
     'import/no-unresolved': ['error', {ignore: ['root-types']}],
     curly: ['error', 'multi', 'consistent'],
-    // ignored (outside prettier and typescript rules)
+    // Ignored (outside prettier and typescript rules)
     '@typescript-eslint/no-var-requires': 'off',
     'react/require-default-props': 'off',
     'react/jsx-indent': 'off',
@@ -42,6 +45,7 @@ module.exports = {
     'react/jsx-max-props-per-line': 'off',
     'react/jsx-no-useless-fragment': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-newline': 'off',
     // TODO: remove (good rules with extra effort)
     '@typescript-eslint/no-explicit-any': 'off',
     'react-native/no-inline-styles': 'off',

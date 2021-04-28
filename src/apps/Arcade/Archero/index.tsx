@@ -27,7 +27,7 @@ export const Archero = memo(function Archero() {
   const timer = useRef(false);
   const interval = useRef<number | null>(null);
   const gesture = useRef({x0: 0, y0: 0, dx: 0, dy: 0});
-  const window = useRootSelector((state) => state.dimension.window);
+  const window = useRootSelector(state => state.dimension.window);
   const [dimensions, setDimensions] = useState({width: 1000, height: 1000});
   const {width, height} = dimensions;
   const smallest = width > height ? height : width;

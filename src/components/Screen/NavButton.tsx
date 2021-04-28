@@ -7,7 +7,7 @@ import {Icon} from '../Icon';
 interface Props {
   icon?: string;
   isRight?: boolean;
-  onPress?(): void;
+  onPress?: () => void;
   testID: string;
 }
 

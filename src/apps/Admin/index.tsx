@@ -2,15 +2,19 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {Button, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
+import {useColor} from '../../hooks';
 import {config} from '../../utils';
 
 export default memo(function Admin() {
   const {navigate} = useNavigation();
   const onPress = useCallback((to: string) => () => navigate(to), [navigate]);
+  const color = useColor();
 
   return (
-    <Screen title="admin">
-      <ScrollView style={{paddingHorizontal: config.padding(4)}}>
+    <Screen dropShadow title="admin">
+      <ScrollView
+        contentContainerStyle={{paddingHorizontal: config.padding(4)}}
+        style={{backgroundColor: color.surface}}>
         <Text emphasis="medium" title="Apps" type="h3" />
         <Button onPress={onPress('arcade')} title="arcade" />
         <Button onPress={onPress('portfolio')} title="portfolio" />
@@ -27,6 +31,7 @@ export default memo(function Admin() {
         <Text emphasis="medium" title="Navigation" type="h3" />
         <Button onPress={onPress('notification')} title="notification" />
         <Button onPress={onPress('alert')} title="alert" />
+        <Button onPress={onPress('actionSheet')} title="action sheet" />
 
         <Text emphasis="medium" title="Learning" type="h3" />
         <Button onPress={onPress('playground')} title="playground" />

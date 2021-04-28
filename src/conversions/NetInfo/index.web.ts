@@ -8,21 +8,21 @@
  */
 
 export enum NetInfoStateType {
-  unknown = 'unknown',
-  none = 'none',
-  cellular = 'cellular',
-  wifi = 'wifi',
-  bluetooth = 'bluetooth',
-  ethernet = 'ethernet',
-  wimax = 'wimax',
-  vpn = 'vpn',
-  other = 'other',
+  Unknown = 'unknown',
+  None = 'none',
+  Cellular = 'cellular',
+  Wifi = 'wifi',
+  Bluetooth = 'bluetooth',
+  Ethernet = 'ethernet',
+  Wimax = 'wimax',
+  Vpn = 'vpn',
+  Other = 'other',
 }
 
 export enum NetInfoCellularGeneration {
-  '2g' = '2g',
-  '3g' = '3g',
-  '4g' = '4g',
+  '2G' = '2G',
+  '3G' = '3G',
+  '4G' = '4G',
 }
 export interface NetInfoConnectedDetails {
   isConnectionExpensive: boolean;
@@ -42,20 +42,20 @@ interface NetInfoDisconnectedState<T extends NetInfoStateType> {
   isInternetReachable: false;
   details: null;
 }
-export type NetInfoUnknownState = NetInfoDisconnectedState<NetInfoStateType.unknown>;
-export type NetInfoNoConnectionState = NetInfoDisconnectedState<NetInfoStateType.none>;
+export type NetInfoUnknownState = NetInfoDisconnectedState<NetInfoStateType.Unknown>;
+export type NetInfoNoConnectionState = NetInfoDisconnectedState<NetInfoStateType.None>;
 export type NetInfoCellularState = NetInfoConnectedState<
-  NetInfoStateType.cellular,
+  NetInfoStateType.Cellular,
   {
     cellularGeneration: NetInfoCellularGeneration | null;
   }
 >;
-export type NetInfoWifiState = NetInfoConnectedState<NetInfoStateType.wifi>;
-export type NetInfoBluetoothState = NetInfoConnectedState<NetInfoStateType.bluetooth>;
-export type NetInfoEthernetState = NetInfoConnectedState<NetInfoStateType.ethernet>;
-export type NetInfoWimaxState = NetInfoConnectedState<NetInfoStateType.wimax>;
-export type NetInfoVpnState = NetInfoConnectedState<NetInfoStateType.vpn>;
-export type NetInfoOtherState = NetInfoConnectedState<NetInfoStateType.other>;
+export type NetInfoWifiState = NetInfoConnectedState<NetInfoStateType.Wifi>;
+export type NetInfoBluetoothState = NetInfoConnectedState<NetInfoStateType.Bluetooth>;
+export type NetInfoEthernetState = NetInfoConnectedState<NetInfoStateType.Ethernet>;
+export type NetInfoWimaxState = NetInfoConnectedState<NetInfoStateType.Wimax>;
+export type NetInfoVpnState = NetInfoConnectedState<NetInfoStateType.Vpn>;
+export type NetInfoOtherState = NetInfoConnectedState<NetInfoStateType.Other>;
 export type NetInfoState =
   | NetInfoUnknownState
   | NetInfoNoConnectionState

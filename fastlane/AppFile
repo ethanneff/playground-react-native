@@ -1,7 +1,7 @@
 # ios
-apple_id "ethan.neff@eneff.com"
-team_name "Ethan Neff"
-team_id "PW4Q8885U7"
+apple_id('ethan.neff@eneff.com')
+team_name('Ethan Neff')
+team_id('PW4Q8885U7')
 
 # android
-json_key_file "./certs/key.json"
+json_key_file('./certs/key.json')

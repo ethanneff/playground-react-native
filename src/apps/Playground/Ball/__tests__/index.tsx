@@ -12,34 +12,37 @@ const getBallLocation = (tree: ReactTestRenderer) => {
 
 describe('ball', () => {
   it('renders correctly', () => {
+    expect.hasAssertions();
     const {tree} = mockRenderer({component: <Ball />});
     const screen = tree.root.findByProps({testID: 'ballScreen'});
     expect(screen).toBeTruthy();
   });
 
   it('navigates back correctly', () => {
+    expect.hasAssertions();
     const {tree, navigation} = mockRenderer({component: <Ball />});
     const leftNav = tree.root.findByProps({testID: 'leftNav'});
     act(() => leftNav.props.onPress());
-
-    expect(navigation.goBack).toBeCalled();
+    expect(navigation.goBack).toHaveBeenCalledWith();
   });
 
   it('handles initial state', () => {
+    expect.hasAssertions();
     const {tree} = mockRenderer({component: <Ball />});
     const locationBefore = getBallLocation(tree);
     const button = tree.root.findByProps({testID: 'initialButton'});
     act(() => button.props.onPress());
     const locationAfter = getBallLocation(tree);
-    expect(locationBefore).toEqual(locationAfter);
+    expect(locationBefore).toStrictEqual(locationAfter);
   });
 
   it('handles random state', () => {
+    expect.hasAssertions();
     const {tree} = mockRenderer({component: <Ball />});
     const locationBefore = getBallLocation(tree);
     const button = tree.root.findByProps({testID: 'randomButton'});
     act(() => button.props.onPress());
     const locationAfter = getBallLocation(tree);
-    expect(locationBefore).toEqual(locationAfter);
+    expect(locationBefore).toStrictEqual(locationAfter);
   });
 });

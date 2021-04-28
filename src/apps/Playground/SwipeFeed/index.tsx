@@ -45,7 +45,7 @@ const SwipeCard = memo(function SwipeCard({
   const position = new Animated.ValueXY();
 
   const onLayout = useCallback(
-    (event) => {
+    event => {
       cardWidth.current = event.nativeEvent.layout.width;
     },
     [cardWidth],
@@ -269,7 +269,7 @@ const SwipeCards = memo(function SwipeCardList({
   });
 
   const onSwipeComplete = useCallback(() => {
-    setFeed((state) => ({
+    setFeed(state => ({
       ...state,
       percent: 1,
       items: state.items.filter((_, i) => i !== state.items.length - 1),
@@ -277,7 +277,7 @@ const SwipeCards = memo(function SwipeCardList({
   }, []);
 
   const onSwipePercentChange = useCallback((percent: number) => {
-    setFeed((state) => ({
+    setFeed(state => ({
       ...state,
       percent,
     }));
@@ -313,10 +313,12 @@ const ImagePlaceholder = memo(function ImagePlaceholder() {
 
 export const SwipeFeed = memo(function SwipeFeed() {
   const {goBack} = useNavigation();
+  const color = useColor();
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen onLeftPress={navBack} title="Swipe Feed">
-      <ScrollView style={{padding: config.padding(4)}}>
+    <Screen dropShadow onLeftPress={navBack} title="Swipe Feed">
+      <ScrollView
+        style={{padding: config.padding(4), backgroundColor: color.surface}}>
         <ImagePlaceholder />
         <ImagePlaceholder />
         <SwipeCards items={initialItems} />

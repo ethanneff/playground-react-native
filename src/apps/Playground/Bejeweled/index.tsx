@@ -87,7 +87,7 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
     if (sum === 0) {
       setSelected(initialSelected);
     } else if (sum === 1) {
-      setBoard((prev) => {
+      setBoard(prev => {
         const temp = prev[x][y];
         prev[x][y] = prev[selected.x][selected.y];
         prev[selected.x][selected.y] = temp;

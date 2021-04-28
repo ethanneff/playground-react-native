@@ -55,23 +55,20 @@ export const completeItemActions = {
 
 /* SELECTORS */
 export const getItems = (state: RootState): Items => state.completeItem.items;
-export const getActiveItemOrderByCreatedAt = createSelector(
-  [getItems],
-  (items) =>
-    Object.values(items)
-      .filter((item) => item.active)
-      .sort((a, b) => a.createdAt - b.createdAt),
+export const getActiveItemOrderByCreatedAt = createSelector([getItems], items =>
+  Object.values(items)
+    .filter(item => item.active)
+    .sort((a, b) => a.createdAt - b.createdAt),
 );
 
 export const getInbox = createSelector(
   [getItems, getUser],
-  (items, user) => user?.items.filter((id) => items[id].title === 'Inbox')[0],
+  (items, user) => user?.items.filter(id => items[id].title === 'Inbox')[0],
 );
 
 export const getProjects = createSelector(
   [getItems, getUser],
-  (items, user) =>
-    user?.items.filter((id) => items[id].title === 'Projects')[0],
+  (items, user) => user?.items.filter(id => items[id].title === 'Projects')[0],
 );
 
 /* INTERFACES */
@@ -114,7 +111,7 @@ export const completeItemReducer = (
           ...action.payload,
         },
       };
-    case getType(swapItemOrderInItem):
+    case getType(swapItemOrderInItem): {
       const swapParent = state.items[action.payload.parentItemId];
       const children = [...swapParent.children];
       const temp = children[action.payload.i];
@@ -131,7 +128,9 @@ export const completeItemReducer = (
           },
         },
       };
-    case getType(moveItemToItem): //TODO: test this
+    }
+    case getType(moveItemToItem): {
+      //TODO: test this
       const moveToParent = state.items[action.payload.toParentItemId];
       const moveFromParent = state.items[action.payload.fromParentItemId];
       return {
@@ -141,7 +140,7 @@ export const completeItemReducer = (
           [action.payload.fromParentItemId]: {
             ...moveFromParent,
             children: moveFromParent.children.filter(
-              (id) => id !== action.payload.itemId,
+              id => id !== action.payload.itemId,
             ),
             updatedAt: Date.now(),
           },
@@ -152,6 +151,7 @@ export const completeItemReducer = (
           },
         },
       };
+    }
     case getType(createItem):
       return {
         ...state,
@@ -172,7 +172,7 @@ export const completeItemReducer = (
           },
         },
       };
-    case getType(addItemToItem):
+    case getType(addItemToItem): {
       const addParent = state.items[action.payload.parentItemId];
       return {
         ...state,
@@ -185,7 +185,8 @@ export const completeItemReducer = (
           },
         },
       };
-    case getType(removeItemFromItem):
+    }
+    case getType(removeItemFromItem): {
       const deleteParent = state.items[action.payload.parentItemId];
       return {
         ...state,
@@ -194,12 +195,13 @@ export const completeItemReducer = (
           [action.payload.parentItemId]: {
             ...deleteParent,
             children: deleteParent.children.filter(
-              (itemId) => itemId !== action.payload.itemId,
+              itemId => itemId !== action.payload.itemId,
             ),
             updatedAt: Date.now(),
           },
         },
       };
+    }
     case getType(removeItem):
       return {
         ...state,

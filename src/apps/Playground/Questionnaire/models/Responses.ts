@@ -15,7 +15,7 @@ export const responsesActions = {
 interface Response {
   id: string;
   userId: string;
-  responses: {[questionId: string]: readonly string[]};
+  responses: {[questionId: string]: string[]};
   createdAt: string;
 }
 

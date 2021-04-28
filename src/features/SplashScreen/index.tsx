@@ -91,7 +91,7 @@ export const SplashScreen = memo(
         useNativeDriver,
         delay,
         easing: Easing.in(Easing.cubic),
-      }).start(() => setState((p) => ({...p, complete: true})));
+      }).start(() => setState(p => ({...p, complete: true})));
     }, [delay, duration, state.progress, useNativeDriver]);
 
     return (

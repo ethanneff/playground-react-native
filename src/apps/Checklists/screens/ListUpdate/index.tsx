@@ -17,11 +17,11 @@ export default memo(function ChecklistUpdate() {
   const isInvalidForm = form.name.trim().length === 0;
 
   const handleNameChange = useCallback(
-    (name: string) => setForm((state) => ({...state, name})),
+    (name: string) => setForm(state => ({...state, name})),
     [],
   );
   const handleDescriptionChange = useCallback(
-    (description: string) => setForm((state) => ({...state, description})),
+    (description: string) => setForm(state => ({...state, description})),
     [],
   );
   const handleSubmit = useCallback(() => {
@@ -52,7 +52,7 @@ export default memo(function ChecklistUpdate() {
 
   return (
     <>
-      <Screen gutter onLeftPress={navBack} title="Update Checklist">
+      <Screen onLeftPress={navBack} title="Update Checklist">
         <Input onChangeText={handleNameChange} title="name" value={form.name} />
         <Input
           onChangeText={handleDescriptionChange}

@@ -42,7 +42,7 @@ interface Props {
   value: string;
   onChangeText(text: string): void;
   onRef?: MutableRefObject<Original | null>;
-  onSubmitEditing?(): void;
+  onSubmitEditing?: () => void;
 }
 
 export const Input = ({
@@ -128,7 +128,7 @@ export const Input = ({
   }, [onChangeText]);
 
   const onRefInternal = useCallback(
-    (ref) => {
+    ref => {
       textInput.current = ref;
       if (onRef) onRef.current = ref;
     },

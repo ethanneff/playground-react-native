@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {StyleProp, TextStyle, ViewStyle} from 'react-native';
 import {useColor, useDropShadow} from '../../hooks';
 import {Color} from '../../models';
@@ -38,7 +38,7 @@ interface Props {
   onLongPress?(): void;
 }
 
-export const Button = ({
+export const Button = memo(function Button({
   activeOpacity,
   buttonStyle,
   center,
@@ -57,7 +57,7 @@ export const Button = ({
   right,
   textStyle,
   title,
-}: Props): JSX.Element => {
+}: Props) {
   const colorScheme = useColor();
   const dropShadowStyling = useDropShadow();
   const buttonColor = colorScheme[color || 'text'];
@@ -96,4 +96,4 @@ export const Button = ({
       />
     </TouchableOpacity>
   );
-};
+});

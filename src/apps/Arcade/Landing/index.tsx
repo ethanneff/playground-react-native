@@ -14,7 +14,7 @@ export const Landing = memo(function Landing() {
 
   return (
     <Screen onLeftPress={onLeftPress} title="Arcade">
-      {arcadeScreens.map((screen) => (
+      {arcadeScreens.map(screen => (
         <Button key={screen} onPress={onPress(screen)} title={screen} />
       ))}
     </Screen>

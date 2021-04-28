@@ -5,7 +5,7 @@ import {useColor} from '../../hooks';
 import {config} from '../../utils';
 
 interface Props {
-  onPress?(): void;
+  onPress?: () => void;
 }
 
 export const ProfileLevel = ({onPress}: Props): JSX.Element => {

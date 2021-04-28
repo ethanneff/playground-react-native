@@ -3,12 +3,8 @@ import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Button, Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
-import {
-  changeTheme,
-  ColorTheme,
-  colorThemes,
-  getCurrentColor,
-} from '../../../models';
+import {useColor} from '../../../hooks';
+import {changeTheme, ColorTheme, colorThemes} from '../../../models';
 import {config, useRootDispatch, useRootSelector} from '../../../utils';
 
 // create tag component with colors https://oomphinc.github.io/colorcube/#results-content https://stripe.com/blog/accessible-color-systems
@@ -17,17 +13,17 @@ import {config, useRootDispatch, useRootSelector} from '../../../utils';
 
 export const Colors = memo(function DebugColors() {
   const {goBack} = useNavigation();
+  const color = useColor();
   const navBack = useCallback(() => goBack(), [goBack]);
   const dispatch = useRootDispatch();
-  const currentTheme = useRootSelector((state) => state.theme.currentColor);
-  const themeColors = useRootSelector(getCurrentColor);
+  const currentTheme = useRootSelector(state => state.theme.currentColor);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   // text: high 87% medium 60% disabled 38%
   // icon: active 100% inactive 60% disabled 38%
 
   return (
-    <Screen gutter onLeftPress={navBack} title="Colors">
-      <ScrollView>
+    <Screen dropShadow onLeftPress={navBack} title="Colors">
+      <ScrollView style={{backgroundColor: color.surface}}>
         <Text
           center
           style={{paddingBottom: config.padding(8)}}
@@ -35,7 +31,7 @@ export const Colors = memo(function DebugColors() {
           type="h4"
         />
         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-          {colorThemes.map((item) => (
+          {colorThemes.map(item => (
             <Button
               center
               color={currentTheme === item ? 'green' : 'text'}
@@ -122,7 +118,7 @@ export const Colors = memo(function DebugColors() {
           type="h4"
         />
         <View style={{flexDirection: 'row'}}>
-          <View style={{flex: 1}}>
+          <View style={{flex: 1, alignItems: 'center'}}>
             <Text center title="default" />
             <Text title="h1" type="h1" />
             <Text title="h2" type="h2" />
@@ -139,7 +135,7 @@ export const Colors = memo(function DebugColors() {
             <Text title="button" type="button" />
             <Text title="default" />
           </View>
-          <View style={{flex: 1}}>
+          <View style={{flex: 1, alignItems: 'center'}}>
             <Text center title="high" />
             <Text emphasis="high" title="h1" type="h1" />
             <Text emphasis="high" title="h2" type="h2" />
@@ -156,7 +152,7 @@ export const Colors = memo(function DebugColors() {
             <Text emphasis="high" title="button" type="button" />
             <Text emphasis="high" title="default" />
           </View>
-          <View style={{flex: 1}}>
+          <View style={{flex: 1, alignItems: 'center'}}>
             <Text center title="medium" />
             <Text emphasis="medium" title="h1" type="h1" />
             <Text emphasis="medium" title="h2" type="h2" />
@@ -173,7 +169,7 @@ export const Colors = memo(function DebugColors() {
             <Text emphasis="medium" title="button" type="button" />
             <Text emphasis="medium" title="default" />
           </View>
-          <View style={{flex: 1}}>
+          <View style={{flex: 1, alignItems: 'center'}}>
             <Text center title="low" />
             <Text emphasis="low" title="h1" type="h1" />
             <Text emphasis="low" title="h2" type="h2" />

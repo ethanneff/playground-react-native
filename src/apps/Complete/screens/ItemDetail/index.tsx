@@ -12,8 +12,8 @@ export const ItemDetail = memo(function ItemDetail() {
   const {goBack} = useNavigation();
   const color = useColor();
   const navBack = useCallback(() => goBack(), [goBack]);
-  const {itemId, parentItemId} = useRootSelector((s) => s.completeItem.nav);
-  const item = useRootSelector((s) => s.completeItem.items[itemId || '']);
+  const {itemId, parentItemId} = useRootSelector(s => s.completeItem.nav);
+  const item = useRootSelector(s => s.completeItem.items[itemId || '']);
   const [deleteModal, setDeleteModal] = useState(false);
 
   const onItemDelete = useCallback(() => {

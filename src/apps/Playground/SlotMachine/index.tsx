@@ -37,7 +37,7 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
   const navBack = useCallback(() => goBack(), [goBack]);
 
   const onSpin = useCallback(() => {
-    setState((p) => ({...p, spinning: true}));
+    setState(p => ({...p, spinning: true}));
   }, []);
 
   return (

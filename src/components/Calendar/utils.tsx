@@ -46,7 +46,7 @@ const generateCalendarMatrix = (date: Date) => {
   let prevDayCounter = prevMaxDays - firstDay + 1;
   let nextDayCounter = 1;
   const calendarMatrix: CalendarMatrix = [];
-  calendarMatrix.push(days.map((day) => createDayObj(day, day, false, true)));
+  calendarMatrix.push(days.map(day => createDayObj(day, day, false, true)));
   for (let row = 1; row < 7; row++) {
     calendarMatrix[row] = [];
     for (let col = 0; col < 7; col++)
@@ -70,7 +70,7 @@ const generateCalendarMatrix = (date: Date) => {
   return calendarMatrix;
 };
 
-const calendarMatrixMemo: {[key in string]: CalendarMatrix} = {};
+const calendarMatrixMemo: {[key: string]: CalendarMatrix} = {};
 export const getCalendarMatrix = (date: Date): CalendarMatrix => {
   const memo = calendarMatrixMemo[date.valueOf()];
   if (memo) return memo;

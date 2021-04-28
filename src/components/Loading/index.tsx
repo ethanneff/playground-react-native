@@ -31,7 +31,7 @@ export const Loading = memo(function Loading({title, center, style}: Props) {
     index >= ellipsis.length - 1 ? 0 : index + 1;
   const animateText = useCallback(() => {
     setTimeout(() => {
-      setEllipsisIndex((index) => animateTextNextIndex(index));
+      setEllipsisIndex(index => animateTextNextIndex(index));
       animateText();
     }, ellipsisDuration);
   }, []);

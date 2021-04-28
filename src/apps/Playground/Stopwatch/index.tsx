@@ -74,7 +74,7 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
 
   const run = useCallback(() => {
     timer.current = setInterval(() => {
-      setState((prev) => ({...prev, now: new Date().getTime()}));
+      setState(prev => ({...prev, now: new Date().getTime()}));
     }, 100);
   }, []);
 
@@ -86,7 +86,7 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
 
   const resume = useCallback(() => {
     const now = new Date().getTime();
-    setState((prev) => ({
+    setState(prev => ({
       ...prev,
       now,
       start: now,

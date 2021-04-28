@@ -65,14 +65,14 @@ export default memo(function Checklist() {
       handleToggle,
     ],
   );
-  const keyExtractor = useCallback((item) => item.id, []);
+  const keyExtractor = useCallback(item => item.id, []);
   const navBack = useCallback(() => navigate('checklists'), [navigate]);
   const navCreate = useCallback(() => navigate('checklistsItemCreate'), [
     navigate,
   ]);
 
   return (
-    <Screen gutter onLeftPress={navBack} title="Checklist">
+    <Screen onLeftPress={navBack} title="Checklist">
       <FlatList
         data={items}
         keyExtractor={keyExtractor}

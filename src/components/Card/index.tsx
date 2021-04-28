@@ -14,8 +14,8 @@ type Props = {
   elevation?: number;
   borderWidth?: number;
   borderRadius?: number;
-  onPress?(): void;
-  onLongPress?(): void;
+  onPress?: () => void;
+  onLongPress?: () => void;
   children?: ReactNode | ReactNode[];
 };
 

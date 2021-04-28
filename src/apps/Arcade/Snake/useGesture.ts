@@ -11,7 +11,7 @@ type Props = {
   noReverse?: boolean;
 };
 
-const inverse: {[key in Direction]: Direction} = {
+const inverse: {[key: string]: Direction} = {
   left: 'right',
   right: 'left',
   up: 'down',

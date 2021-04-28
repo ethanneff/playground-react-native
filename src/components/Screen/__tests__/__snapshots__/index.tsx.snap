@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`screen renders correctly 1`] = `
 <View
   style={
     Object {
@@ -125,7 +125,7 @@ exports[`renders correctly 1`] = `
         </View>
       </View>
     </View>
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -133,7 +133,9 @@ exports[`renders correctly 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -297,7 +299,6 @@ exports[`renders correctly 1`] = `
                         emulateUnlessSupported={true}
                         style={
                           Object {
-                            "backgroundColor": "hsl(0, 0%, 100%)",
                             "flex": 1,
                           }
                         }
@@ -317,11 +318,12 @@ exports[`renders correctly 1`] = `
                         />
                         <View
                           style={
-                            Object {
-                              "backgroundColor": "hsl(0, 0%, 100%)",
-                              "flex": 1,
-                              "padding": 0,
-                            }
+                            Array [
+                              Object {
+                                "flex": 1,
+                              },
+                              undefined,
+                            ]
                           }
                         >
                           <View />
@@ -334,8 +336,8 @@ exports[`renders correctly 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
   </RNCSafeAreaProvider>
 </View>
 `;

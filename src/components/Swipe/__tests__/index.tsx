@@ -2,7 +2,10 @@ import React from 'react';
 import {create} from 'react-test-renderer';
 import {Swipe} from '..';
 
-it('renders correctly', () => {
-  const tree = create(<Swipe />).toJSON();
-  expect(tree).toMatchSnapshot();
+describe('swipe', () => {
+  it('renders correctly', () => {
+    expect.hasAssertions();
+    const tree = create(<Swipe />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

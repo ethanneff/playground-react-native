@@ -1,7 +1,7 @@
 import {
   BaseNavigationContainer,
   NavigationContext,
-  NavigationRouteContext
+  NavigationRouteContext,
 } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React, {ReactNode} from 'react';
@@ -48,7 +48,7 @@ export const mockRenderer = ({
     <Provider store={store}>
       <BaseNavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="MockedScreen" component={Component} />
+          <Stack.Screen component={Component} name="MockedScreen" />
         </Stack.Navigator>
       </BaseNavigationContainer>
     </Provider>

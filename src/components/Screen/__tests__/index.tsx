@@ -3,13 +3,16 @@ import {View} from 'react-native';
 import {Screen} from '..';
 import {mockRenderer} from '../../../mocks/Renderer';
 
-it('renders correctly', () => {
-  const {tree} = mockRenderer({
-    component: (
-      <Screen>
-        <View />
-      </Screen>
-    ),
+describe('screen', () => {
+  it('renders correctly', () => {
+    expect.hasAssertions();
+    const {tree} = mockRenderer({
+      component: (
+        <Screen>
+          <View />
+        </Screen>
+      ),
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
-  expect(tree.toJSON()).toMatchSnapshot();
 });
