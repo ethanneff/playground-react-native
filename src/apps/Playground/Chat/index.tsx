@@ -20,7 +20,7 @@ export const Chat = memo(function PlaygroundChat() {
   );
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Chat">
+    <Screen onLeftPress={navBack} title="Chat">
       <KeyboardHandler onLayout={onLayout}>
         <View style={{height}}>
           <Items />
