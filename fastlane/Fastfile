@@ -1,7 +1,7 @@
 ## USAGE
 # fastlane ios|android deploy app:core|progress|journal|complete method:prod|test|codepush
 # e.g. fastlane ios deploy app:core method:prod
-# e.g. fastlane android deploy app:core method:codepush
+# e.g. fastlane android deploy app:core method:prod
 
 ## OTHER
 # fastlane deliver download_metadata -a com.eneff.app.core
@@ -11,27 +11,24 @@ timestamp = Time.now.to_i
 default_app = 'com.eneff.app.core'
 package = load_json(json_path: './package.json')
 version = package['version']
-
-before_all do
-  ensure_git_branch
-  ensure_git_status_clean
-  git_pull
-end
-
+methods = ['prod', 'test', 'codepush']
 apps = {
   'core' => { 'name' => 'Core - Admin Panel' },
   'complete' => { 'name' => 'Complete - Task Management' },
   'journal' => { 'name' => 'Journal, Reflect, Improve' },
   'progress' => { 'name' => 'Progress - Coding Tracker' }
 }
-
 api_key = app_store_connect_api_key(
   key_id: 'P4P5NVV843',
   issuer_id: '69a6de8c-6c9d-47e3-e053-5b8c7c11a4d1',
   key_filepath: './certs/appstore_key.p8'
 )
 
-methods = ['prod', 'test', 'codepush']
+before_all do
+  ensure_git_branch
+  # ensure_git_status_clean
+  git_pull
+end
 
 platform :ios do
   lane :deploy do |options|
@@ -81,15 +78,6 @@ platform :ios do
       upload_app_privacy_details_to_app_store(app_identifier: new_package_name, json_path: './fastlane/privacy.json')
       upload_to_testflight(api_key: api_key)
 
-      # desc 'submit to app center'
-      # appcenter_upload(
-      #   api_token: ENV['APP_CENTER_API'],
-      #   owner_name: 'ethanneff',
-      #   owner_type: 'user',
-      #   app_name: new_package_name,
-      #   file: './core.ipa',
-      #   notify_testers: true
-      # )
       slack_success('ios', app_name, method_name)
     rescue => e
       slack_failure('ios', app_name, method_name, e)
@@ -143,15 +131,6 @@ platform :android do
       desc 'submit to google'
       upload_to_play_store(track: 'beta', package_name: new_package_name)
 
-      # desc 'submit to app center'
-      # appcenter_upload(
-      #   api_token: ENV['APP_CENTER_API'],
-      #   owner_name: 'ethanneff',
-      #   owner_type: 'user',
-      #   app_name: new_package_name,
-      #   file: './android/app/build/outputs/bundle/release/app-release.aab',
-      #   notify_testers: true
-      # )
       slack_success('android', app_name, method_name)
     rescue => e
       slack_failure('android', app_name, method_name, e)
