@@ -43,26 +43,6 @@ const fontEmphases: FontEmphases = {
   low: 0.38,
 };
 const fontSizes: FontSizes = {
-  body1: {
-    fontSize: 16,
-    fontWeight: fontWeight.regular,
-    letterSpacing: 0.5,
-  },
-  body2: {
-    fontSize: 14,
-    fontWeight: fontWeight.regular,
-    letterSpacing: 0.25,
-  },
-  button: {
-    fontSize: 14,
-    fontWeight: fontWeight.medium,
-    letterSpacing: 0.75,
-  },
-  caption: {
-    fontSize: 12,
-    fontWeight: fontWeight.regular,
-    letterSpacing: 0.4,
-  },
   h1: {
     fontSize: 96,
     fontWeight: fontWeight.light,
@@ -93,10 +73,10 @@ const fontSizes: FontSizes = {
     fontWeight: fontWeight.medium,
     letterSpacing: 0.15,
   },
-  overline: {
-    fontSize: 10,
-    fontWeight: fontWeight.regular,
-    letterSpacing: 1.5,
+  button: {
+    fontSize: 14,
+    fontWeight: fontWeight.medium,
+    letterSpacing: 0.75,
   },
   subtitle1: {
     fontSize: 16,
@@ -107,6 +87,26 @@ const fontSizes: FontSizes = {
     fontSize: 14,
     fontWeight: fontWeight.medium,
     letterSpacing: 0.1,
+  },
+  body1: {
+    fontSize: 16,
+    fontWeight: fontWeight.regular,
+    letterSpacing: 0.5,
+  },
+  body2: {
+    fontSize: 14,
+    fontWeight: fontWeight.regular,
+    letterSpacing: 0.25,
+  },
+  overline: {
+    fontSize: 10,
+    fontWeight: fontWeight.regular,
+    letterSpacing: 1.5,
+  },
+  caption: {
+    fontSize: 12,
+    fontWeight: fontWeight.regular,
+    letterSpacing: 0.4,
   },
 };
 
@@ -125,7 +125,7 @@ export const config = {
 export const colorWithOpacity = (colorCode: string, opacity = 0.5): string => {
   const boundedOpacity = opacity < 0 ? 0 : opacity > 1 ? 1 : opacity;
   const leading = 4;
-  if (!colorCode.startsWith('hsl')) return colorCode;
+  if (!colorCode || !colorCode.startsWith('hsl')) return colorCode;
 
   const substr = colorCode.substring(leading, colorCode.length - 1);
   return `hsla(${substr}, ${boundedOpacity})`;
