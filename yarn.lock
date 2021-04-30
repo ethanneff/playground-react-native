@@ -13055,10 +13055,10 @@ npm-cache-filename@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/npm-cache-filename/-/npm-cache-filename-1.0.2.tgz#ded306c5b0bfc870a9e9faf823bc5f283e05ae11"
 
-npm-check-updates@11.5.4:
-  version "11.5.4"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.5.4.tgz#cdb65a1e88809e74ace38b57f9a21de4982c5484"
-  integrity sha512-rErQZR/O95L2ejYFrs37E5QWbo0VEuR74EKNq9z0WlcO/V9p9AtKzeaBqhtfbfO0ABqT19Z9WWZy8XEP1u/nHA==
+npm-check-updates@11.5.7:
+  version "11.5.7"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.5.7.tgz#01d0cdf4597696644373f2d4332319a6566ca9e4"
+  integrity sha512-pdsOkBB/Gdl4YmfblZg8QsZLeDP6JveqGlue1WYCbF3TK5AjC2J7ldn5TvXq8SHmaFXi9TETrmbCQ0JEU6O8dA==
   dependencies:
     chalk "^4.1.1"
     cint "^8.2.1"
