@@ -47,7 +47,7 @@
     "date-fns": "2.21.1",
     "dayjs": "1.10.4",
     "howler": "2.2.1",
-    "npm-check-updates": "11.5.7",
+    "npm-check-updates": "11.5.10",
     "patch-package": "6.4.7",
     "postinstall-postinstall": "2.1.0",
     "react": "17.0.2",
