@@ -108,7 +108,7 @@
     "@typescript-eslint/parser": "4.22.0",
     "@welldone-software/why-did-you-render": "6.1.1",
     "babel-plugin-transform-remove-console": "6.9.4",
-    "codecov": "3.8.1",
+    "codecov": "3.8.2",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-prettier": "3.4.0",
     "husky": "6.0.0",
