@@ -12585,7 +12585,6 @@ minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
-    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
@@ -15474,10 +15473,10 @@ react-native-web-linear-gradient@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/react-native-web-linear-gradient/-/react-native-web-linear-gradient-1.1.1.tgz#3c872f099695a31d90448fa5d137f04e81ad7a11"
 
-react-native-web@0.16.1:
-  version "0.16.1"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.16.1.tgz#e9a2f9c68d118084396ae209e4b67422bf84a22f"
-  integrity sha512-quSpgBLIg4MiVPLSGX1M/rExdLHjFsXArP4smdD3PvXCTSD5MtdXWsjrbJ96AeYFf792M2BbvsWnj77cXp4gXA==
+react-native-web@0.16.2:
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.16.2.tgz#48bda9c94daea4dc9d7dbf937ccf106cf73e18d7"
+  integrity sha512-UqALRENjPmFGGbF6MO/+tLeBrGc/+2mne0xdxRfmlpPdrdaQXV8EQmiUTfz0HeWBPUP4U1y1OezohhPvKKJ60g==
   dependencies:
     array-find-index "^1.0.2"
     create-react-class "^15.7.0"
