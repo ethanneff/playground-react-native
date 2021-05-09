@@ -6,6 +6,7 @@ export * from './Card';
 export * from './CardSection';
 export * from './Carousel';
 export * from './Icon';
+export * from './Image';
 export * from './Input';
 export * from './KeyboardHandler';
 export * from './Loading';
