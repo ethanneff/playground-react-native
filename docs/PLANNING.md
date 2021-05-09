@@ -22,7 +22,7 @@
   - [ ] test ipa
   - [ ] test apk
   - [x] upload zshrc
-  - [ ] fix android https://github.com/fastlane/fastlane/issues/18403
+  - [x] fix android https://github.com/fastlane/fastlane/issues/18403
 
 - [ ] Deploy Android app
   - [ ] login flow
@@ -34,6 +34,8 @@
 - [ ] Obtain 10 users
 - [ ] Question users
 - [ ] date-fns to dayjs
+- [x] use createNativeStackNavigator instead of createStackNavigator (from 45fps to 55fps. does not work with modals)
+- [x] use react-native-fast-image
 
 ## Actionables
 

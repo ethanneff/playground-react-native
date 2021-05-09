@@ -13,7 +13,7 @@ module.exports = {
     'plugin:import/typescript',
     'prettier',
   ],
-  plugins: ['@typescript-eslint', 'import', 'jest'],
+  plugins: ['@typescript-eslint'],
   ignorePatterns: [
     'node_modules/',
     'coverage/',
@@ -25,7 +25,7 @@ module.exports = {
   rules: {
     // Added
     'react/function-component-definition': [
-      'warn',
+      'error',
       {namedComponents: 'arrow-function', unnamedComponents: 'arrow-function'},
     ],
     'react-hooks/exhaustive-deps': [
