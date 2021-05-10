@@ -1,5 +1,5 @@
-import React, {memo, useCallback} from 'react';
-import {Keyboard, View} from 'react-native';
+import React, {memo, useCallback, useEffect, useRef} from 'react';
+import {Keyboard, TextInput, View} from 'react-native';
 import {v4} from 'uuid';
 import {Icon, Input} from '../../../components';
 import {useColor} from '../../../hooks';
@@ -8,6 +8,7 @@ import {createChatMessage, Message, typeChatMessage} from './Messages';
 
 export const TextField = memo(function TextField() {
   const dispatch = useRootDispatch();
+  const textFieldRef = useRef<TextInput | null>(null);
   const textField = useRootSelector(state => state.chatMessage.textField);
   const onMessageChange = useCallback(
     (message: string) => dispatch(typeChatMessage(message)),
@@ -32,6 +33,10 @@ export const TextField = memo(function TextField() {
     dispatch(createChatMessage(message));
   }, [dispatch, textField]);
 
+  useEffect(() => {
+    textFieldRef.current?.focus();
+  }, []);
+
   return (
     <View
       style={{
@@ -44,6 +49,7 @@ export const TextField = memo(function TextField() {
       <Input
         flex
         onChangeText={onMessageChange}
+        onRef={textFieldRef}
         onSubmitEditing={onSubmit}
         placeholder="Write something..."
         removeError

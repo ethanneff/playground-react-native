@@ -1,4 +1,10 @@
-import React, {MutableRefObject, useCallback, useRef, useState} from 'react';
+import React, {
+  memo,
+  MutableRefObject,
+  useCallback,
+  useRef,
+  useState,
+} from 'react';
 import {
   KeyboardTypeOptions,
   ReturnKeyTypeOptions,
@@ -19,6 +25,9 @@ styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 */
 
 type TextContentType = 'username' | 'password' | 'none';
+
+// TODO: fix onClear
+// TODO: fix blurOnSubmit=false
 
 interface Props {
   autoCorrect?: boolean;
@@ -45,7 +54,7 @@ interface Props {
   onSubmitEditing?: () => void;
 }
 
-export const Input = ({
+export const Input = memo(function Input({
   autoCorrect,
   blurOnSubmit = true,
   clearIcon = 'close-circle',
@@ -68,7 +77,7 @@ export const Input = ({
   onRef,
   title = '',
   value,
-}: Props): JSX.Element => {
+}: Props) {
   const [focus, setFocus] = useState(false);
   const color = useColor();
   const focusColor = color.primary;
@@ -208,4 +217,4 @@ export const Input = ({
       )}
     </View>
   );
-};
+});
