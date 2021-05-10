@@ -5,8 +5,6 @@ import {Button, Screen} from '../../../components';
 import {useAdminNavBack, useColor} from '../../../hooks';
 import {config} from '../../../utils';
 
-// TODO: add state for login and logout
-
 export const Home = memo(function PortfolioHome() {
   const {navigate} = useNavigation();
   const navTo = useCallback((to: string) => () => navigate(to), [navigate]);

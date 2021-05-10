@@ -1,30 +1,30 @@
+import {useNavigation} from '@react-navigation/core';
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../components';
 import {useColor} from '../../hooks';
 import {config} from '../../utils';
 import {ListSection} from './ListSection';
-import {Item} from './types';
+import {HomeScreenNavigationProp, Item} from './types';
 
 interface Props {
   showSection: boolean;
   item: Item;
   currentItem: boolean;
-  onItemPress(item: Item): void;
 }
 
 export const ListItem = memo(function ListItem({
   showSection,
   item,
-  onItemPress,
   currentItem,
 }: Props) {
   const color = useColor();
   const future = item.id > Date.now();
   const iconColor = future ? color.secondary : color.success;
-  const title = currentItem ? 'current' : future ? 'future' : item.action;
+  const title = currentItem ? 'current' : future ? 'future' : item.title;
+  const {navigate} = useNavigation<HomeScreenNavigationProp>();
 
-  const onPress = useCallback(() => onItemPress(item), [item, onItemPress]);
+  const onPress = useCallback(() => navigate('item', {item}), [item, navigate]);
 
   return (
     <View
