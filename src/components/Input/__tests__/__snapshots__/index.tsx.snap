@@ -317,12 +317,14 @@ exports[`input renders correctly 1`] = `
                           onBlur={[Function]}
                           onChangeText={[MockFunction]}
                           onFocus={[Function]}
+                          placeholderTextColor="hsl(208, 7%, 46%)"
                           rejectResponderTermination={true}
+                          selectionColor="hsl(211, 100%, 50%)"
                           style={
                             Array [
                               Object {
                                 "backgroundColor": "hsl(0, 0%, 100%)",
-                                "borderColor": undefined,
+                                "borderColor": "hsl(208, 7%, 46%)",
                                 "borderRadius": 4,
                                 "borderWidth": 2,
                                 "color": "hsl(0, 0%, 0%)",
@@ -378,7 +380,7 @@ exports[`input renders correctly 1`] = `
                               style={
                                 Array [
                                   Object {
-                                    "color": undefined,
+                                    "color": "hsl(208, 7%, 46%)",
                                     "fontSize": 24,
                                   },
                                   Array [
@@ -436,7 +438,7 @@ exports[`input renders correctly 1`] = `
                               style={
                                 Array [
                                   Object {
-                                    "color": undefined,
+                                    "color": "hsl(354, 70%, 54%)",
                                     "fontSize": 24,
                                   },
                                   Array [
@@ -493,7 +495,7 @@ exports[`input renders correctly 1`] = `
                               onPress={[Function]}
                               style={
                                 Object {
-                                  "color": undefined,
+                                  "color": "hsl(354, 70%, 54%)",
                                   "fontSize": 16,
                                   "fontWeight": "300",
                                   "letterSpacing": 0.5,

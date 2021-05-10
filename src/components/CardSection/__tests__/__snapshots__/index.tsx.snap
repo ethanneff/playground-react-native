@@ -297,7 +297,7 @@ exports[`card section renders correctly 1`] = `
                             "borderWidth": 1,
                             "elevation": 2,
                             "marginVertical": 8,
-                            "shadowColor": undefined,
+                            "shadowColor": "hsl(210, 10%, 23%)",
                             "shadowOffset": Object {
                               "height": 2,
                               "width": 0,
@@ -330,7 +330,7 @@ exports[`card section renders correctly 1`] = `
                               Object {
                                 "backgroundColor": "hsl(0, 0%, 100%)",
                                 "borderBottomWidth": 0.5,
-                                "borderColor": undefined,
+                                "borderColor": "hsl(210, 10%, 23%)",
                                 "flexDirection": "row",
                                 "paddingHorizontal": 20,
                                 "paddingVertical": 10,
