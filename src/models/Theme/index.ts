@@ -55,6 +55,8 @@ export interface Theme {
   currentColor: ColorTheme;
 }
 
+// TODO: use uber color https://baseweb.design/guides/theming/
+
 /* REDUCERS */
 export const themeInitialState: Theme = {
   colors: {
