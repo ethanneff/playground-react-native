@@ -3,7 +3,7 @@ import {Keyboard, TextInput, View} from 'react-native';
 import {v4} from 'uuid';
 import {Icon, Input} from '../../../components';
 import {useColor} from '../../../hooks';
-import {config, useRootDispatch, useRootSelector} from '../../../utils';
+import {padding, useRootDispatch, useRootSelector} from '../../../utils';
 import {
   createChatMessage,
   getChatSubmittable,
@@ -46,7 +46,7 @@ export const TextField = memo(function TextField() {
   return (
     <View
       style={{
-        padding: config.padding(4),
+        padding: padding(4),
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -67,7 +67,7 @@ export const TextField = memo(function TextField() {
         name="send"
         onPress={onSubmit}
         style={{
-          paddingLeft: config.padding(2),
+          paddingLeft: padding(2),
           justifyContent: 'center',
         }}
       />

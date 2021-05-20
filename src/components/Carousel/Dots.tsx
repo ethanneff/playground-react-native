@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {View} from 'react-native';
 import {useColor} from '../../hooks';
 import {Color} from '../../models';
-import {colorWithOpacity, config} from '../../utils';
+import {colorWithOpacity, padding} from '../../utils';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {Slide} from './types';
 
@@ -38,8 +38,8 @@ export const Dots = memo(function Dots({
             key={slide.id}
             onPress={onDotPress(index)}
             style={{
-              marginHorizontal: config.padding(1),
-              marginBottom: config.padding(2),
+              marginHorizontal: padding(1),
+              marginBottom: padding(2),
               width: dotSize,
               height: dotSize,
               borderRadius: dotSize,

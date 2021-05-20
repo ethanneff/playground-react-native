@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 import {Sentence} from '../Sentence';
 import {Text} from '../Text';
 import {Sections} from './types';
@@ -9,9 +9,9 @@ type Props = {sections: Sections; center?: boolean};
 
 export const Content = memo(function Content({sections, center}: Props) {
   const styles = StyleSheet.create({
-    paragraph: {paddingBottom: config.padding(4)},
-    section: {paddingBottom: config.padding(2)},
-    title: {paddingBottom: config.padding(2)},
+    paragraph: {paddingBottom: padding(4)},
+    section: {paddingBottom: padding(2)},
+    title: {paddingBottom: padding(2)},
   });
 
   return (

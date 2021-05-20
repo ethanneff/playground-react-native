@@ -3,7 +3,7 @@ import React, {memo, useCallback} from 'react';
 import {Button, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useColor} from '../../hooks';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 
 export default memo(function Admin() {
   const {navigate} = useNavigation();
@@ -13,8 +13,8 @@ export default memo(function Admin() {
   return (
     <Screen dropShadow title="admin">
       <ScrollView
-        contentContainerStyle={{paddingHorizontal: config.padding(4)}}
-        style={{backgroundColor: color.surface}}>
+        contentContainerStyle={{paddingHorizontal: padding(4)}}
+        style={{backgroundColor: color.background.secondary}}>
         <Text emphasis="medium" title="Apps" type="h3" />
         <Button onPress={onPress('arcade')} title="arcade" />
         <Button onPress={onPress('portfolio')} title="portfolio" />

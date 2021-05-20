@@ -2,7 +2,7 @@ import React, {memo, useCallback, useMemo, useRef, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import Rate, {AndroidMarket} from 'react-native-rate';
 import {Button, Input, Modal, Text} from '../../components';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 import {Rating} from './Rating';
 
 type ModalState = 'default' | 'thank you' | 'review' | 'feedback';
@@ -43,8 +43,8 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
   const navigatedToAppStore = useRef(false);
   const [form, setForm] = useState<State>(initialState);
   const styles = StyleSheet.create({
-    modal: {padding: config.padding(6)},
-    title: {paddingBottom: config.padding(4)},
+    modal: {padding: padding(6)},
+    title: {paddingBottom: padding(4)},
   });
   const completeState = useMemo(
     () => ({
@@ -142,7 +142,7 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
             count={5}
             onPress={handleRating}
             rating={form.rating}
-            size={config.padding(8)}
+            size={padding(8)}
           />
         </>
       )}

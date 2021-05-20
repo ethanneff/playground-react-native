@@ -1,6 +1,5 @@
-import {ColorTheme} from './../../models/Theme/index';
 import {fontEmphases, fontSizes} from './fonts';
-import {FontEmphasis, FontType} from './types';
+import {ColorTheme, FontEmphasis, FontType, MonoMultiColor} from './types';
 
 export const padding = (value: number): number => value * 4;
 
@@ -18,7 +17,7 @@ export const getDisabledColor = (colorCode: string): string =>
 
 type GetFontStylesProps = {
   emphasis?: FontEmphasis;
-  color?: keyof Color;
+  color?: keyof MonoMultiColor;
   type?: FontType;
   inverse?: boolean;
   colorScheme: ColorTheme;
@@ -32,17 +31,17 @@ type GetFontStylesReturn = {
 export const getFontStyles = ({
   emphasis = 'none',
   type = 'body1',
-  inverse = false,
-  color = 'text',
+  inverse,
+  color = 'primaryA',
   colorScheme,
 }: GetFontStylesProps): GetFontStylesReturn => {
   const textColorPercent = fontEmphases[emphasis];
   const fontSize = fontSizes[type];
   const textColor = inverse
-    ? colorScheme.background
+    ? colorScheme.text.primaryB
     : color
-    ? colorScheme[color]
-    : colorScheme.text;
+    ? colorScheme.text[color]
+    : colorScheme.text.primaryA;
   const textColorWithOpacity = colorWithOpacity(textColor, textColorPercent);
   return {textColor: textColorWithOpacity, fontSize};
 };

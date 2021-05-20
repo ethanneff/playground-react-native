@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {Text} from '../../../components';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 
 type ItemDetailHeaderProps = {
   title: string;
@@ -12,7 +12,7 @@ export const ItemDetailHeader = memo(function ItemDetailHeader({
   return (
     <Text
       emphasis="medium"
-      style={{padding: config.padding(2)}}
+      style={{padding: padding(2)}}
       title={title}
       type="overline"
     />

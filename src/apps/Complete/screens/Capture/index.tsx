@@ -2,7 +2,7 @@ import React, {memo, useCallback, useRef, useState} from 'react';
 import {LayoutChangeEvent} from 'react-native';
 import {Button, KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {config, useRootSelector} from '../../../../utils';
+import {padding, useRootSelector} from '../../../../utils';
 import {Card, List} from '../../components';
 import {getInbox} from '../../models';
 import {useTabTap} from '../../utils';
@@ -15,7 +15,7 @@ export const Capture = memo(function Capture() {
   const containerRefs = useRef(initialState);
   const keyboardHeight = useKeyboardHeight();
   const [containerHeight, setContainerHeight] = useState(0);
-  const keyboardPadding = config.padding(keyboardHeight ? 11 : 48);
+  const keyboardPadding = padding(keyboardHeight ? 11 : 48);
   const maxHeight = containerHeight - keyboardHeight - keyboardPadding;
 
   const itemId = useRootSelector(getInbox);
@@ -51,7 +51,7 @@ export const Capture = memo(function Capture() {
             <Card onLayout={onLayout('button')}>
               <Button
                 center
-                color="primary"
+                color="accent"
                 disable={noItemChildren}
                 onPress={onOrganize}
                 title="Organize"

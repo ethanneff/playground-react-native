@@ -4,7 +4,7 @@ import {View} from 'react-native';
 import {Activity, Card, Icon, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useAdminNavBack, useColor} from '../../hooks';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 
 /*
 # Purpose
@@ -46,8 +46,8 @@ export const Home = memo(function Home() {
       title="Deep Work">
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: config.padding(4),
-          paddingVertical: config.padding(2),
+          paddingHorizontal: padding(4),
+          paddingVertical: padding(2),
         }}
         style={{backgroundColor: color.surface}}>
         <Card>
@@ -69,7 +69,7 @@ export const Home = memo(function Home() {
           bottom: 0,
           right: 0,
           flexDirection: 'row',
-          margin: config.padding(2),
+          margin: padding(2),
           justifyContent: 'center',
         }}>
         <Icon

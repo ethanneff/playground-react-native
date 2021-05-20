@@ -2,7 +2,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {View} from 'react-native';
 import {Button, Carousel, Screen} from '../../../../components';
 import {Slide} from '../../../../components/Carousel/types';
-import {config, useRootDispatch} from '../../../../utils';
+import {padding, useRootDispatch} from '../../../../utils';
 import {createItem, loadUser, login} from '../../models';
 import {completeConfig, getDefaultUserTemplate} from '../../utils';
 import {Login} from './Login';
@@ -15,7 +15,7 @@ const slides: Slide[] = [
       {
         title: 'Welcome to Accomplish',
         titleType: 'h4',
-        titleStyle: {paddingBottom: config.padding(10)},
+        titleStyle: {paddingBottom: padding(10)},
         paragraphs: [
           [{title: 'Start investing commission-free'}],
           [
@@ -34,7 +34,7 @@ const slides: Slide[] = [
       {
         title: 'Enjoy commission-free stock trading',
         titleType: 'h4',
-        titleStyle: {paddingBottom: config.padding(10)},
+        titleStyle: {paddingBottom: padding(10)},
         paragraphs: [
           [
             {
@@ -54,7 +54,7 @@ const slides: Slide[] = [
       {
         title: 'No account minimum',
         titleType: 'h4',
-        titleStyle: {paddingBottom: config.padding(10)},
+        titleStyle: {paddingBottom: padding(10)},
         paragraphs: [
           [
             {
@@ -73,7 +73,7 @@ const slides: Slide[] = [
       {
         title: 'Everything at your fingertips',
         titleType: 'h4',
-        titleStyle: {paddingBottom: config.padding(10)},
+        titleStyle: {paddingBottom: padding(10)},
         paragraphs: [
           [
             {
@@ -92,7 +92,7 @@ const slides: Slide[] = [
       {
         title: 'Account protection',
         titleType: 'h4',
-        titleStyle: {paddingBottom: config.padding(10)},
+        titleStyle: {paddingBottom: padding(10)},
         paragraphs: [
           [
             {
@@ -147,9 +147,9 @@ export const Welcome = memo(function Welcome() {
           <Carousel duration={6000} slides={slides} />
           <View style={{padding: completeConfig.padding}}>
             <Button
-              buttonStyle={{marginBottom: config.padding(2)}}
+              buttonStyle={{marginBottom: padding(2)}}
               center
-              color="primary"
+              color="accent"
               emphasis="high"
               onPress={onToggleLogin}
               title="Get Started"

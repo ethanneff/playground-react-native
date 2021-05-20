@@ -116,13 +116,13 @@ export const ReminderExample = memo(function PlaygroundReminder() {
           <Text center emphasis="low" title="Modals" type="h4" />
           <Button
             center
-            color="primary"
+            color="accent"
             onPress={handleCreateReminder}
             title="create reminder"
           />
           <Button
             center
-            color="primary"
+            color="accent"
             onPress={handleRate(true)}
             title="rate me"
           />

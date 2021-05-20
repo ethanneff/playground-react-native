@@ -143,6 +143,7 @@ export const lightTheme: ColorTheme = {
     light: 'rgba(0, 0, 0, 0.03)',
     dark: 'rgba(0, 0, 0, 0.08)',
   },
+  statusBar: 'dark-content',
 };
 
 export const darkTheme: ColorTheme = {
@@ -186,4 +187,5 @@ export const darkTheme: ColorTheme = {
     light: 'rgba(0, 0, 0, 0.03)',
     dark: 'rgba(0, 0, 0, 0.08)',
   },
+  statusBar: 'light-content',
 };

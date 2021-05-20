@@ -3,7 +3,7 @@ import React, {memo, useCallback} from 'react';
 import {Calendar, Card, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useColor} from '../../hooks';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 
 export const Account = memo(function Account() {
   const {goBack} = useNavigation();
@@ -12,12 +12,12 @@ export const Account = memo(function Account() {
   return (
     <Screen onLeftPress={navBack} title="Account">
       <ScrollView
-        contentContainerStyle={{padding: config.padding(4)}}
+        contentContainerStyle={{padding: padding(4)}}
         style={{backgroundColor: color.surface}}>
         <Card>
           <Text
             center
-            style={{paddingBottom: config.padding(4)}}
+            style={{paddingBottom: padding(4)}}
             title="Progress"
             type="h5"
           />

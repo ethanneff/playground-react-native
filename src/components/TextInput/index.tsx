@@ -16,8 +16,13 @@ import {
 } from 'react-native';
 import {TouchableWithoutFeedback} from '../../conversions';
 import {useColor} from '../../hooks';
-import {Color} from '../../models';
-import {config, FontEmphasis, FontType, getFontStyles} from '../../utils';
+import {
+  FontEmphasis,
+  FontType,
+  getFontStyles,
+  MonoMultiColor,
+  padding,
+} from '../../utils';
 import {Icon} from '../Icon';
 import {PointerEvents, TextContentType} from './types';
 
@@ -38,7 +43,7 @@ type TextInputProps = {
   autoCorrect?: boolean;
   blurOnSubmit?: boolean;
   disableFullscreenUI?: boolean;
-  backgroundColor?: string;
+  backgroundColor?: keyof MonoMultiColor;
   editable?: boolean;
   error?: boolean;
   keyboardType?: KeyboardTypeOptions;
@@ -47,7 +52,7 @@ type TextInputProps = {
   textContentType?: TextContentType;
   secureTextEntry?: boolean;
   style?: StyleProp<ViewStyle>;
-  color?: keyof Color;
+  color?: keyof MonoMultiColor;
   onFocus?: (text: string) => void;
   onBlur?: (text: string) => void;
   pointerEvents?: PointerEvents;
@@ -68,7 +73,7 @@ export const TextInput = memo(function TextInput({
   autoCorrect,
   emphasis,
   disableFullscreenUI,
-  iconHeight = config.padding(5),
+  iconHeight = padding(5),
   placeholder,
   submitClear,
   onChangeText,
@@ -94,13 +99,14 @@ export const TextInput = memo(function TextInput({
   const [focus, setFocus] = useState(false);
   const [text, setText] = useState(value);
   const colorScheme = useColor();
-  const backColor = backgroundColor || colorScheme.background;
+  const backColor = colorScheme.background[backgroundColor || 'primaryA'];
   const {fontSize, textColor} = getFontStyles({
     emphasis,
     type,
     color,
     colorScheme,
   });
+
   const textInput = useRef<Original | null>(null);
 
   const onChangeTextInternal = useCallback(
@@ -160,12 +166,12 @@ export const TextInput = memo(function TextInput({
           alignItems: 'center',
           backgroundColor: backColor,
           borderBottomColor: error
-            ? colorScheme.danger
+            ? colorScheme.text.negative
             : focus
-            ? colorScheme.primary
+            ? colorScheme.text.accent
             : backColor,
           borderLeftColor: backColor,
-          borderRadius: config.padding(1),
+          borderRadius: padding(1),
           borderRightColor: backColor,
           borderTopColor: backColor,
           borderWidth: 2,
@@ -183,16 +189,16 @@ export const TextInput = memo(function TextInput({
           onFocus={onFocusInternal}
           onSubmitEditing={onSubmitEditingInternal}
           placeholder={placeholder}
-          placeholderTextColor={colorScheme.secondary}
+          placeholderTextColor={colorScheme.text.secondary}
           pointerEvents={pointerEvents}
           ref={onInternalRef}
           returnKeyType={returnKeyType}
           secureTextEntry={secureTextEntry}
-          selectionColor={colorScheme.primary}
+          selectionColor={colorScheme.text.accent}
           style={{
             color: textColor,
             flex: 1,
-            padding: config.padding(2),
+            padding: padding(2),
             ...fontSize,
           }}
           textContentType={textContentType}

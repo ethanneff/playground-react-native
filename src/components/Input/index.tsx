@@ -16,7 +16,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import {useColor} from '../../hooks';
-import {config} from '../../utils';
+import {padding,fontSizes} from '../../utils';
 import {Button} from '../Button';
 import {Icon} from '../Icon';
 
@@ -103,11 +103,11 @@ export const Input = memo(function Input({
     textInput: {
       backgroundColor: color.background,
       borderColor: color.secondary,
-      borderRadius: config.padding(1),
+      borderRadius: padding(1),
       borderWidth: 2,
       color: color.text,
-      padding: config.padding(2),
-      paddingRight: config.padding(8),
+      padding: padding(2),
+      paddingRight: padding(8),
       width: '100%',
     },
   });
@@ -117,7 +117,7 @@ export const Input = memo(function Input({
     styles.textInput,
     error ? styles.borderError : undefined,
     focus ? styles.borderFocus : undefined,
-    config.fontSizes.body2,
+    fontSizes.body2,
     textStyle,
   ];
   const noValue = value.length === 0;

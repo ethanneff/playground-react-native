@@ -1,11 +1,9 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Screen} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {ButtonGroup} from './ButtonGroup';
 import {FontGroup} from './FontGroup';
-import {ThemeGroup} from './ThemeGroup';
 import {Title} from './Title';
 
 // text: high 87% medium 60% disabled 38%
@@ -16,14 +14,14 @@ import {Title} from './Title';
 // keep original colors
 
 export const Colors = memo(function DebugColors() {
-  const {goBack} = useNavigation();
-  const navBack = useCallback(() => goBack(), [goBack]);
+  // const {goBack} = useNavigation();
+  const navBack = useCallback(() => undefined, []);
 
   return (
     <Screen dropShadow onLeftPress={navBack} title="Colors">
       <ScrollView>
         <Title title="Theme" />
-        <ThemeGroup />
+        {/* <ThemeGroup /> */}
         <Title title="Buttons" />
         <View style={{flexDirection: 'row'}}>
           <ButtonGroup emphasis="high" />

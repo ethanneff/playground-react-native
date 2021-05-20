@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {StyleProp, TextStyle, ViewStyle} from 'react-native';
 import {useColor, useDropShadow} from '../../hooks';
-import {Color} from '../../models';
+import {MonoMultiColor} from '../../utils';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {ButtonEmphasis} from './types';
@@ -27,7 +27,7 @@ interface Props {
   invisible?: boolean;
   /* color */
   emphasis?: ButtonEmphasis;
-  color?: keyof Color;
+  color?: keyof MonoMultiColor;
   /* size */
   noPadding?: boolean;
   center?: boolean;
@@ -52,7 +52,7 @@ export const Button = memo(function Button({
   emphasis = 'low',
   lowercase,
   onPress,
-  color = 'text',
+  color = 'primaryB',
   onLongPress,
   right,
   textStyle,
@@ -60,7 +60,7 @@ export const Button = memo(function Button({
 }: Props) {
   const colorScheme = useColor();
   const dropShadowStyling = useDropShadow();
-  const buttonColor = colorScheme[color || 'text'];
+  const buttonColor = colorScheme.background[color || 'primaryA'];
   const styles = getStyles({
     colorScheme,
     color: buttonColor,

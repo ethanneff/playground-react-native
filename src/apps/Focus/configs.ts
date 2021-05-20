@@ -1,4 +1,4 @@
-import {config} from '../../utils';
+import {padding} from '../../utils';
 
-export const itemHeight = config.padding(10);
+export const itemHeight = padding(10);
 export const infiniteScrollRegeneration = 100;

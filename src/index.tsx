@@ -1,7 +1,7 @@
 import React from 'react';
 import {AppRegistry, Platform} from 'react-native';
 import 'react-native-get-random-values';
-import {Navigation} from './providers';
+import {Colors} from './apps/Playground/Colors';
 import {App} from './providers/App';
 import {ErrorBoundary} from './providers/ErrorBoundary';
 import {Redux} from './providers/Redux';
@@ -13,7 +13,7 @@ export const Main = (): JSX.Element => {
     <Redux>
       <ErrorBoundary>
         <App>
-          <Navigation />
+          <Colors />
         </App>
       </ErrorBoundary>
     </Redux>

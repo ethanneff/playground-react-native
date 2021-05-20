@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {FlatList, ListRenderItem, View} from 'react-native';
 import {getWidth} from '../../models';
-import {config, useRootSelector} from '../../utils';
+import {padding, useRootSelector} from '../../utils';
 import {Dots} from './Dots';
 import {Item} from './Item';
 import {Slide} from './types';
@@ -14,7 +14,7 @@ type Props = {
 };
 
 export const Carousel = memo(function Carousel({
-  dotSize = config.padding(4),
+  dotSize = padding(4),
   slides,
   duration,
   viewabilityConfig = {itemVisiblePercentThreshold: 50},

@@ -11,7 +11,7 @@ import {
   colorThemes,
   getLandscapeOrientation,
 } from '../../../models';
-import {config, useRootDispatch, useRootSelector} from '../../../utils';
+import {padding, useRootDispatch, useRootSelector} from '../../../utils';
 
 type CardItem = {
   title: string;
@@ -90,14 +90,10 @@ export const DarkMode = memo(function DarkMode() {
     ({item, index}) => (
       <Card elevation={elevation} key={index} onPress={onPress}>
         <Text title={item.title} type="overline" />
-        <Text
-          style={{marginTop: config.padding(2)}}
-          title={item.value}
-          type="h4"
-        />
+        <Text style={{marginTop: padding(2)}} title={item.value} type="h4" />
         {item.target && (
           <Text
-            style={{marginTop: config.padding(2)}}
+            style={{marginTop: padding(2)}}
             title={item.target}
             type="body2"
           />
@@ -107,7 +103,7 @@ export const DarkMode = memo(function DarkMode() {
             source={item.chart}
             style={{
               height: 100,
-              marginTop: config.padding(2),
+              marginTop: padding(2),
               resizeMode: 'cover',
               width: '100%',
             }}
@@ -115,9 +111,9 @@ export const DarkMode = memo(function DarkMode() {
         )}
         {item.button && (
           <Button
-            buttonStyle={{marginTop: config.padding(2)}}
+            buttonStyle={{marginTop: padding(2)}}
             center
-            color="primary"
+            color="accent"
             emphasis="high"
             title={item.button}
           />
@@ -131,7 +127,7 @@ export const DarkMode = memo(function DarkMode() {
   return (
     <Screen dropShadow onLeftPress={navBack} title="Dark mode">
       <ScrollView style={{backgroundColor: color.surface}}>
-        <View style={{padding: config.padding(4)}}>
+        <View style={{padding: padding(4)}}>
           <View
             style={{
               flexDirection: 'row',

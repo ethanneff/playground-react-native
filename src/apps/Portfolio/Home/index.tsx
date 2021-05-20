@@ -3,7 +3,7 @@ import React, {memo, useCallback} from 'react';
 import {ScrollView} from 'react-native';
 import {Button, Screen} from '../../../components';
 import {useAdminNavBack, useColor} from '../../../hooks';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 
 export const Home = memo(function PortfolioHome() {
   const {navigate} = useNavigation();
@@ -13,7 +13,7 @@ export const Home = memo(function PortfolioHome() {
   return (
     <Screen dropShadow onLeftPress={onLeftPress} title="Home">
       <ScrollView
-        style={{padding: config.padding(4), backgroundColor: color.surface}}>
+        style={{padding: padding(4), backgroundColor: color.surface}}>
         <Button center onPress={navTo('login')} title="logout" />
         <Button center onPress={navTo('settings')} title="settings" />
         <Button center onPress={navTo('notFound')} title="not found" />

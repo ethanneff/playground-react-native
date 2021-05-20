@@ -111,15 +111,18 @@ type MultiColored = {
   disabled: string;
 };
 
+export type MonoMultiColor = MonoChrome & MultiColored;
+
 export type ColorTheme = {
-  text: MonoChrome & MultiColored;
-  background: MonoChrome & MultiColored;
+  text: MonoMultiColor;
+  background: MonoMultiColor;
   border: MultiColored;
   tags: MultiColored;
   overlay: {
     light: string;
     dark: string;
   };
+  statusBar: 'default' | 'light-content' | 'dark-content';
 };
 
 export type FontType =

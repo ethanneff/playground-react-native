@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {ScrollView} from 'react-native';
 import {Button, Input, Screen} from '../../../components';
 import {useColor} from '../../../hooks';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 
 export const Login = memo(function Login() {
   const {goBack} = useNavigation();
@@ -30,8 +30,7 @@ export const Login = memo(function Login() {
 
   return (
     <Screen dropShadow onLeftPress={navBack} title="Login">
-      <ScrollView
-        style={{backgroundColor: color.surface, padding: config.padding(4)}}>
+      <ScrollView style={{backgroundColor: color.surface, padding: padding(4)}}>
         <Input
           error={form.error}
           onChangeText={handleChange('name')}
@@ -59,7 +58,7 @@ export const Login = memo(function Login() {
         />
         <Button
           center
-          color="primary"
+          color="accent"
           emphasis="high"
           onPress={handleSubmit}
           title="complete form"

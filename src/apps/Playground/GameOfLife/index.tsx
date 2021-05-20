@@ -3,7 +3,7 @@ import React, {memo, useCallback, useEffect, useState} from 'react';
 import {ScrollView, View} from 'react-native';
 import {Screen, Text} from '../../../components';
 import {useColor} from '../../../hooks';
-import {config, useRootDispatch} from '../../../utils';
+import {padding, useRootDispatch} from '../../../utils';
 import {Buttons} from './Buttons';
 import {GameBoard} from './GameBoard';
 import {Header} from './Header';
@@ -24,7 +24,7 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
   return (
     <Screen dropShadow onLeftPress={navBack} title="Game of life">
       <ScrollView
-        style={{backgroundColor: color.surface, padding: config.padding(4)}}>
+        style={{backgroundColor: color.surface, padding: padding(4)}}>
         {loading ? (
           <Text center emphasis="medium" title="loading..." type="h5" />
         ) : (

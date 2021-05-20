@@ -1,7 +1,7 @@
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Button} from '../../../components';
-import {config, useRootDispatch, useRootSelector} from '../../../utils';
+import {padding, useRootDispatch, useRootSelector} from '../../../utils';
 import {resetBoard, toggleRun} from './redux';
 
 export const Buttons = memo(function Buttons() {
@@ -16,7 +16,7 @@ export const Buttons = memo(function Buttons() {
       style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: config.padding(4),
+        padding: padding(4),
       }}>
       <Button
         emphasis="medium"

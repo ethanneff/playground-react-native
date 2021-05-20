@@ -4,7 +4,7 @@ import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {TextInput as OriginalTextInput} from 'react-native';
 import {Button, Modal, Text, TextInput} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {config, useRootDispatch} from '../../../../utils';
+import {padding, useRootDispatch} from '../../../../utils';
 import {ModalHeader} from '../../components';
 import {createItem, loadUser} from '../../models';
 import {LandingStackParams} from '../../navigation-types';
@@ -19,9 +19,8 @@ export const SignUp = memo(function SignUp() {
   const focus = useIsFocused();
   const form = useRef(initialRef);
   const [state, setState] = useState(initialState);
-  const {goBack, navigate} = useNavigation<
-    StackNavigationProp<LandingStackParams>
-  >();
+  const {goBack, navigate} =
+    useNavigation<StackNavigationProp<LandingStackParams>>();
   const navBack = useCallback(() => goBack(), [goBack]);
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
   const onSecondary = useCallback(() => navigate('log-in'), [navigate]);
@@ -80,7 +79,7 @@ export const SignUp = memo(function SignUp() {
         onSubmitEditing={onSubmitEditing('email')}
         placeholder="Email address"
         returnKeyType="next"
-        style={{marginBottom: config.padding(4)}}
+        style={{marginBottom: padding(4)}}
         textContentType="username"
         value=""
       />
@@ -95,7 +94,7 @@ export const SignUp = memo(function SignUp() {
         placeholder="Password"
         returnKeyType="done"
         secureTextEntry={!state.eye}
-        style={{marginBottom: config.padding(2)}}
+        style={{marginBottom: padding(2)}}
         textContentType="password"
         value=""
       />
@@ -105,16 +104,16 @@ export const SignUp = memo(function SignUp() {
         title="Password is too short."
       />
       <Button
-        buttonStyle={{marginBottom: config.padding(4)}}
+        buttonStyle={{marginBottom: padding(4)}}
         center
-        color="primary"
+        color="accent"
         lowercase
         onPress={onSecondary}
         title="Already have an account?"
       />
       <Button
         center
-        color="primary"
+        color="accent"
         disable={!state.completeForm}
         emphasis="high"
         onPress={onSubmit}

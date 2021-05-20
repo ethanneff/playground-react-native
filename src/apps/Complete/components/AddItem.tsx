@@ -3,7 +3,7 @@ import {Keyboard, TextInput as OriginalTextInput, View} from 'react-native';
 import {v4} from 'uuid';
 import {Button, TextInput} from '../../../components';
 import {useColor} from '../../../hooks';
-import {config, useRootDispatch, useRootSelector} from '../../../utils';
+import {padding, useRootDispatch, useRootSelector} from '../../../utils';
 import {addItemToItem, createItem, Item} from '../models';
 import {completeConfig} from '../utils';
 
@@ -76,7 +76,7 @@ export const AddItem = memo(function AddItem({
     <View
       style={{
         width,
-        height: config.padding(12),
+        height: padding(12),
         borderRadius: completeConfig.borderRadius,
         backgroundColor: color.background,
         justifyContent: 'center',
@@ -93,7 +93,7 @@ export const AddItem = memo(function AddItem({
           submitClear
         />
       ) : (
-        <Button center color="primary" onPress={onAddItemPress} title={title} />
+        <Button center color="accent" onPress={onAddItemPress} title={title} />
       )}
     </View>
   );

@@ -2,7 +2,7 @@ import React, {memo, useCallback, useMemo, useState} from 'react';
 import {View} from 'react-native';
 import {Button, Icon, Text, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 import {shuffleArray} from './utils';
 
 type Combinations = {[key: string]: number};
@@ -149,10 +149,10 @@ export const Slots = memo(function Slots({
   );
   const multiplier = multipliers[state.multiplierIndex];
   const disable = state.activity === 'spinning';
-  const wildCards = useMemo(() => getWildCards(combinations, reels), [
-    combinations,
-    reels,
-  ]);
+  const wildCards = useMemo(
+    () => getWildCards(combinations, reels),
+    [combinations, reels],
+  );
 
   const creditError =
     state.activity === 'insufficient credits' ? 'insufficient credits' : '';
@@ -205,12 +205,12 @@ export const Slots = memo(function Slots({
       <Text
         center
         emphasis="high"
-        style={{padding: config.padding(2)}}
+        style={{padding: padding(2)}}
         title={`${state.credits} credits`}
         type="h4"
       />
       <Button
-        color="primary"
+        color="accent"
         disable={disable}
         emphasis="high"
         onPress={onSpin}
@@ -220,7 +220,7 @@ export const Slots = memo(function Slots({
         center
         color="danger"
         emphasis="high"
-        style={{padding: config.padding(2)}}
+        style={{padding: padding(2)}}
         title={creditError}
       />
     </View>

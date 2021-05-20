@@ -1,12 +1,12 @@
 import React, {memo, useCallback, useRef} from 'react';
 import {Animated, StyleProp, StyleSheet, TextStyle} from 'react-native';
 import {useColor, useDriver} from '../../hooks';
-import {Color} from '../../models';
 import {
-  config,
   FontEmphasis,
   FontType,
+  fontWeight,
   getFontStyles,
+  MonoMultiColor,
   SoundManager,
 } from '../../utils';
 
@@ -22,7 +22,7 @@ export interface TextProps {
   hidden?: boolean;
   invisible?: boolean;
   inverse?: boolean;
-  color?: keyof Color;
+  color?: keyof MonoMultiColor;
   flex?: boolean;
   adjustsFontSizeToFit?: boolean;
 
@@ -69,7 +69,7 @@ export const Text = memo(function Text({
       : title;
   const styles = StyleSheet.create({
     bold: {
-      fontWeight: config.fontWeight.medium,
+      fontWeight: fontWeight.medium,
     },
     center: {
       textAlign: 'center',

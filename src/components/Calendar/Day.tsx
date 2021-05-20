@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import React from 'react';
 import {View} from 'react-native';
 import {useColor} from '../../hooks';
-import {colorWithOpacity, config} from '../../utils';
+import {colorWithOpacity,padding} from '../../utils';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {Day} from './utils';
@@ -46,9 +46,9 @@ export const CalendarDay = ({
       onPress={onSelected}>
       <View
         style={{
-          height: config.padding(8),
-          width: config.padding(8),
-          borderRadius: config.padding(20),
+          height: padding(8),
+          width: padding(8),
+          borderRadius: padding(20),
           justifyContent: 'center',
           backgroundColor,
         }}>

@@ -1,15 +1,15 @@
 import {StyleSheet} from 'react-native';
-import {Color} from './../../models/Theme';
-import {config, getDisabledColor} from './../../utils/Config/index';
+import {padding} from './../../utils/Config/index';
+import {ColorTheme, MonoMultiColor} from './../../utils/Config/types';
 import {ButtonEmphasis} from './types';
 
 export const getButtonColor = (
-  colorScheme: Color,
-  color: keyof Color,
-): string => colorScheme[color];
+  colorScheme: ColorTheme,
+  color: keyof MonoMultiColor,
+): string => colorScheme.background[color];
 
 interface StyleInterface {
-  colorScheme: Color;
+  colorScheme: ColorTheme;
   color: string;
   emphasis: ButtonEmphasis;
   noPadding?: boolean;
@@ -30,21 +30,21 @@ export const getStyles = ({
     container: {
       backgroundColor:
         disable && emphasis === 'high'
-          ? getDisabledColor(color)
+          ? colorScheme.background.disabled
           : emphasis === 'high'
           ? color
           : 'transparent',
       borderColor:
         disable && emphasis === 'medium'
-          ? getDisabledColor(color)
+          ? colorScheme.border.disabled
           : emphasis === 'medium'
-          ? colorScheme.dark
+          ? color
           : 'transparent',
-      borderRadius: config.padding(1),
+      borderRadius: padding(1),
       borderWidth: 1,
       flexDirection: 'row',
-      padding: noPadding ? config.padding(0) : config.padding(2),
-      paddingHorizontal: noPadding ? config.padding(0) : config.padding(4),
+      padding: noPadding ? padding(0) : padding(2),
+      paddingHorizontal: noPadding ? padding(0) : padding(4),
     },
     invisible: {
       opacity: 0,
@@ -54,9 +54,9 @@ export const getStyles = ({
     },
     text: {
       color: disable
-        ? getDisabledColor(color)
+        ? colorScheme.text.disabled
         : emphasis === 'high'
-        ? colorScheme.background
+        ? colorScheme.text.primaryB
         : color,
     },
   });
