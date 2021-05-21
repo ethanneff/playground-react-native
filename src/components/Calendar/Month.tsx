@@ -16,9 +16,10 @@ export const CalendarMonth = memo(function Month({
   onSelected,
   selected,
 }: Props) {
-  const handleSelected = useCallback((id: string) => () => onSelected(id), [
-    onSelected,
-  ]);
+  const handleSelected = useCallback(
+    (id: string) => () => onSelected(id),
+    [onSelected],
+  );
   return (
     <View>
       {matrix.map((row, i) => (

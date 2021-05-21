@@ -35,12 +35,5 @@ export const strawberry = 10;
 export const bonus = ['threeShield', 'threeHammer']; // x2/3/4 each, 5 (2/4) (50 energy) 10 (2) (700k) 15 (4) (1.5m) 20 (10m, 120 energy)
 
 export const wheel = [
-  250000,
-  12500000,
-  650000,
-  2500000,
-  400000,
-  50000000,
-  1200000,
-  4000000,
+  250000, 12500000, 650000, 2500000, 400000, 50000000, 1200000, 4000000,
 ];

@@ -7,8 +7,7 @@ type Example = {
 export const examples: Example[] = [
   {
     category: 'Your personal life',
-    goal:
-      "Let the ONE Thing bring clarity to the key areas of your life. Here's a short sampling.",
+    goal: "Let the ONE Thing bring clarity to the key areas of your life. Here's a short sampling.",
     examples: [
       "What's the ONE Thing I can do this week to discover or affirm my life's purpose... ?",
       "What's the ONE Thing I can do in 90 days to get in the physical shape I want... ?",
@@ -20,8 +19,7 @@ export const examples: Example[] = [
   },
   {
     category: 'Your family',
-    goal:
-      'Use the ONE Thing with your family for fun and rewarding experiences',
+    goal: 'Use the ONE Thing with your family for fun and rewarding experiences',
     examples: [
       "What's the ONE Thing we can do this week to improve our marriage... ?",
       "What's the ONE Thing we can do every week to spend more quality family time together... ?",
@@ -41,8 +39,7 @@ export const examples: Example[] = [
   },
   {
     category: 'Your team',
-    goal:
-      'Use the ONE Thing thinking into your everyday work situations to drive productivity upward.',
+    goal: 'Use the ONE Thing thinking into your everyday work situations to drive productivity upward.',
     examples: [
       "What's the ONE Thing I accomplish in this meeting and end early... ?",
       "What's the ONE Thing I can do in the next six months to find and develop incredible talent... ?",
@@ -75,8 +72,7 @@ export const productivityCommitments = [
 ];
 
 export const dailyPlan = {
-  goal:
-    'When you spend the early hours energizing yourself, you get pulled through the rest of the day with little additional effort',
+  goal: 'When you spend the early hours energizing yourself, you get pulled through the rest of the day with little additional effort',
   plan: [
     'Meditate and pray for spiritual energy.',
     'Eat right, exercise, and sleep sufficiently for physical energy.',
