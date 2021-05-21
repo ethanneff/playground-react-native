@@ -19,9 +19,8 @@ export const SignUp = memo(function SignUp() {
   const focus = useIsFocused();
   const form = useRef(initialRef);
   const [state, setState] = useState(initialState);
-  const {goBack, navigate} = useNavigation<
-    StackNavigationProp<LandingStackParams>
-  >();
+  const {goBack, navigate} =
+    useNavigation<StackNavigationProp<LandingStackParams>>();
   const navBack = useCallback(() => goBack(), [goBack]);
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
   const onSecondary = useCallback(() => navigate('log-in'), [navigate]);

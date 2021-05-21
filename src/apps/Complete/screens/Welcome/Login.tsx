@@ -147,9 +147,10 @@ export const Login = memo(function Login({
   );
 
   const handlePhone = useCallback(() => onPhone(form.current.phone), [onPhone]);
-  const handleReset = useCallback(() => onPasswordReset(form.current.email), [
-    onPasswordReset,
-  ]);
+  const handleReset = useCallback(
+    () => onPasswordReset(form.current.email),
+    [onPasswordReset],
+  );
 
   const onEye = useCallback(() => {
     setState(p => ({...p, eye: !p.eye}));

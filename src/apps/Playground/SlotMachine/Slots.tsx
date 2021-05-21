@@ -149,10 +149,10 @@ export const Slots = memo(function Slots({
   );
   const multiplier = multipliers[state.multiplierIndex];
   const disable = state.activity === 'spinning';
-  const wildCards = useMemo(() => getWildCards(combinations, reels), [
-    combinations,
-    reels,
-  ]);
+  const wildCards = useMemo(
+    () => getWildCards(combinations, reels),
+    [combinations, reels],
+  );
 
   const creditError =
     state.activity === 'insufficient credits' ? 'insufficient credits' : '';

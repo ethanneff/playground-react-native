@@ -19,9 +19,8 @@ export const LogIn = memo(function LogIn() {
   const focus = useIsFocused();
   const form = useRef(initialRef);
   const [state, setState] = useState(initialState);
-  const {goBack, navigate} = useNavigation<
-    StackNavigationProp<LandingStackParams>
-  >();
+  const {goBack, navigate} =
+    useNavigation<StackNavigationProp<LandingStackParams>>();
   const navBack = useCallback(() => goBack(), [goBack]);
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
   const onSecondary = useCallback(() => navigate('password-reset'), [navigate]);

@@ -14,9 +14,8 @@ export const PasswordReset = memo(function PasswordReset() {
   const color = useColor();
   const form = useRef(initialRef);
   const [state, setState] = useState(initialState);
-  const {goBack, navigate} = useNavigation<
-    StackNavigationProp<LandingStackParams>
-  >();
+  const {goBack, navigate} =
+    useNavigation<StackNavigationProp<LandingStackParams>>();
   const focus = useIsFocused();
   const emailRef = useRef<OriginalTextInput | null>(null);
 

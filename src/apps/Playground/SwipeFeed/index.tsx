@@ -164,8 +164,7 @@ const initialItems: SwipeItem[] = [
     title: 'Marketwatch',
     icon: 'file-document-box-outline',
     date: dayjs().subtract(11, 'hour'),
-    body:
-      'Disney heiress Abigail Disney and other superrich American demand the 1% pay higher taxes than other Americans.',
+    body: 'Disney heiress Abigail Disney and other superrich American demand the 1% pay higher taxes than other Americans.',
     button: 'View Article',
     onPress: () => undefined,
   },
@@ -175,8 +174,7 @@ const initialItems: SwipeItem[] = [
     title: 'Reuters',
     icon: 'book',
     date: dayjs().subtract(1, 'day'),
-    body:
-      "Amazon files motion to halt Microsoft's work on Pentagon's JEDI contract",
+    body: "Amazon files motion to halt Microsoft's work on Pentagon's JEDI contract",
     button: 'View Article',
     onPress: () => undefined,
   },
@@ -196,8 +194,7 @@ const initialItems: SwipeItem[] = [
     title: 'Enjoying robinhood?',
     icon: 'star-outline',
     date: dayjs(),
-    body:
-      "Invite your friends! When they sign up, you'll both get a free stock",
+    body: "Invite your friends! When they sign up, you'll both get a free stock",
     button: 'Invite friends',
     onPress: () => undefined,
   },
@@ -207,8 +204,7 @@ const initialItems: SwipeItem[] = [
     title: 'Introducing cards',
     icon: 'lightbulb-outline',
     date: dayjs(),
-    body:
-      'Swipe through cards to see your personalized notifications and news stories.',
+    body: 'Swipe through cards to see your personalized notifications and news stories.',
     button: 'Swipe to dismiss',
     onPress: () => undefined, // complete
   },

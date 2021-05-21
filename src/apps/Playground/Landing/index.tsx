@@ -10,9 +10,10 @@ const screens = Object.keys(stackParams);
 
 export const Landing = memo(function Playground() {
   const {goBack, navigate} = useNavigation();
-  const navToItem = useCallback((item: string) => () => navigate(item), [
-    navigate,
-  ]);
+  const navToItem = useCallback(
+    (item: string) => () => navigate(item),
+    [navigate],
+  );
   const renderItem = useCallback(
     ({item}) => <Button key={item} onPress={navToItem(item)} title={item} />,
     [navToItem],

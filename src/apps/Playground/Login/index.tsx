@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
-import {ScrollView} from 'react-native';
-import {Button, Input, Screen} from '../../../components';
+import {Button, Input, Screen, Text, TextInput} from '../../../components';
+import {KeyboardAwareScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {config} from '../../../utils';
 
@@ -30,9 +30,10 @@ export const Login = memo(function Login() {
 
   return (
     <Screen dropShadow onLeftPress={navBack} title="Login">
-      <ScrollView
+      <KeyboardAwareScrollView
         keyboardShouldPersistTaps="handled"
         style={{backgroundColor: color.surface, padding: config.padding(4)}}>
+        <Text center title="border" type="h3" />
         <Input
           error={form.error}
           onChangeText={handleChange('name')}
@@ -65,7 +66,34 @@ export const Login = memo(function Login() {
           onPress={handleSubmit}
           title="complete form"
         />
-      </ScrollView>
+        <Text center title="non border" type="h3" />
+        <TextInput
+          onChangeText={handleChange('name')}
+          placeholder="jane doe"
+          value={form.name}
+        />
+        <TextInput
+          keyboardType="email-address"
+          onChangeText={handleChange('email')}
+          placeholder="example@gmail.com"
+          textContentType="username"
+          value={form.email}
+        />
+        <TextInput
+          onChangeText={handleChange('password')}
+          placeholder="•••••••"
+          secureTextEntry
+          textContentType="password"
+          value={form.password}
+        />
+        <Button
+          center
+          color="primary"
+          emphasis="high"
+          onPress={handleSubmit}
+          title="complete form"
+        />
+      </KeyboardAwareScrollView>
     </Screen>
   );
 });

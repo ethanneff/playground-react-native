@@ -8,9 +8,10 @@ import {arcadeScreens} from '../types';
 export const Landing = memo(function Landing() {
   const {navigate} = useNavigation();
   const {onLeftPress} = useAdminNavBack();
-  const onPress = useCallback((screen: string) => () => navigate(screen), [
-    navigate,
-  ]);
+  const onPress = useCallback(
+    (screen: string) => () => navigate(screen),
+    [navigate],
+  );
 
   return (
     <Screen onLeftPress={onLeftPress} title="Arcade">

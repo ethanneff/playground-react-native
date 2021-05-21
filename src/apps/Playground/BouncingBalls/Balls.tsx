@@ -74,18 +74,19 @@ export const Balls = ({
   }, [draw]);
 
   const onPress = useCallback(
-    ({index}) => () => {
-      setItems(prev => {
-        const item = prev[index];
-        item.radius *= 1 - mitosis;
-        item.dx *= 2 - mitosis;
-        item.dy *= 2 - mitosis;
-        const copy = {...prev[index]};
-        copy.dx *= -1;
-        copy.dy *= -1;
-        return [...prev, copy];
-      });
-    },
+    ({index}) =>
+      () => {
+        setItems(prev => {
+          const item = prev[index];
+          item.radius *= 1 - mitosis;
+          item.dx *= 2 - mitosis;
+          item.dy *= 2 - mitosis;
+          const copy = {...prev[index]};
+          copy.dx *= -1;
+          copy.dy *= -1;
+          return [...prev, copy];
+        });
+      },
     [mitosis],
   );
 
