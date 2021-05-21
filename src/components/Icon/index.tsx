@@ -11,7 +11,7 @@ usage: <Icon name='check' />
 source: https://materialdesignicons.com/
 */
 
-interface Props {
+type Props = {
   badge?: number;
   elevation?: number;
   right?: boolean;
@@ -29,7 +29,7 @@ interface Props {
   onPress?: () => void;
   testID?: string;
   disabled?: boolean;
-}
+};
 
 export const Icon = memo(function Icon({
   name,

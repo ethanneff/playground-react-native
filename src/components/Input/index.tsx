@@ -1,4 +1,10 @@
-import React, {MutableRefObject, useCallback, useRef, useState} from 'react';
+import React, {
+  memo,
+  MutableRefObject,
+  useCallback,
+  useRef,
+  useState,
+} from 'react';
 import {
   KeyboardTypeOptions,
   ReturnKeyTypeOptions,
@@ -13,6 +19,7 @@ import {useColor} from '../../hooks';
 import {config} from '../../utils';
 import {Button} from '../Button';
 import {Icon} from '../Icon';
+import {Text} from '../Text';
 
 /*
 styling https://uxdesign.cc/design-better-forms-96fadca0f49c
@@ -45,7 +52,7 @@ interface Props {
   onSubmitEditing?: () => void;
 }
 
-export const Input = ({
+export const Input = memo(function Input({
   autoCorrect,
   blurOnSubmit = true,
   clearIcon = 'close-circle',
@@ -68,49 +75,39 @@ export const Input = ({
   onRef,
   title = '',
   value,
-}: Props): JSX.Element => {
+}: Props) {
   const [focus, setFocus] = useState(false);
   const color = useColor();
-  const focusColor = color.primary;
   const styles = StyleSheet.create({
-    borderError: {
-      borderColor: color.danger,
-    },
-    borderFocus: {
-      borderColor: focusColor,
-    },
     clear: {
-      position: 'absolute',
-      right: 0,
-      top: 6,
-      width: 30,
+      paddingLeft: config.padding(2),
     },
     flex: {
       flex: 1,
+    },
+    input: {
+      backgroundColor: color.background,
+      borderColor: error
+        ? color.danger
+        : focus
+        ? color.primary
+        : color.secondary,
+      borderRadius: config.padding(1),
+      borderWidth: 2,
+      flexDirection: 'row',
+      padding: config.padding(2),
     },
     row: {
       flexDirection: 'row',
     },
     textInput: {
-      backgroundColor: color.background,
-      borderColor: color.secondary,
-      borderRadius: config.padding(1),
-      borderWidth: 2,
       color: color.text,
-      padding: config.padding(2),
-      paddingRight: config.padding(8),
-      width: '100%',
+      flex: 1,
     },
   });
   const textInput = useRef<Original | null>(null);
   const optionalText = ' - optional';
-  const textInputStyles = [
-    styles.textInput,
-    error ? styles.borderError : undefined,
-    focus ? styles.borderFocus : undefined,
-    config.fontSizes.body2,
-    textStyle,
-  ];
+  const textInputStyles = [styles.textInput, config.fontSizes.body2, textStyle];
   const noValue = value.length === 0;
   const noError = error.length === 0;
   const noTitle = title.length === 0;
@@ -138,25 +135,15 @@ export const Input = ({
   return (
     <View style={containerStyles}>
       <View style={styles.row}>
-        <Button
-          activeOpacity={1}
-          hidden={noTitle}
-          lowercase
-          noPadding
-          onPress={focusOnInput}
-          title={title}
-        />
-        <Button
-          activeOpacity={1}
+        <Text hidden={noTitle} onPress={focusOnInput} title={title} />
+        <Text
           color="secondary"
           hidden={!optional}
-          lowercase
-          noPadding
           onPress={focusOnInput}
           title={optionalText}
         />
       </View>
-      <View style={styles.row}>
+      <View style={styles.input}>
         <Original
           autoCorrect={autoCorrect}
           blurOnSubmit={blurOnSubmit}
@@ -172,7 +159,7 @@ export const Input = ({
           ref={onRefInternal}
           returnKeyType={returnKeyType}
           secureTextEntry={secureTextEntry}
-          selectionColor={focusColor}
+          selectionColor={color.primary}
           style={textInputStyles}
           textContentType={textContentType}
           underlineColorAndroid="transparent"
@@ -208,4 +195,4 @@ export const Input = ({
       )}
     </View>
   );
-};
+});
