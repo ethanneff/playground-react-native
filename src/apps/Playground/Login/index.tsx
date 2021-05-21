@@ -30,7 +30,12 @@ export const Login = memo(function Login() {
 
   return (
     <Screen dropShadow onLeftPress={navBack} title="Login">
-      <ScrollView style={{backgroundColor: color.surface, padding: padding(4)}}>
+      <ScrollView
+        keyboardShouldPersistTaps="handled"
+        style={{
+          backgroundColor: color.background.tertiary,
+          padding: padding(4),
+        }}>
         <Input
           error={form.error}
           onChangeText={handleChange('name')}

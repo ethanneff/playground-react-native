@@ -16,9 +16,10 @@ import {
   ViewStyle,
 } from 'react-native';
 import {useColor} from '../../hooks';
-import {padding,fontSizes} from '../../utils';
+import {fontSizes, padding} from '../../utils';
 import {Button} from '../Button';
 import {Icon} from '../Icon';
+import {Text} from '../Text';
 
 /*
 styling https://uxdesign.cc/design-better-forms-96fadca0f49c
@@ -26,7 +27,6 @@ styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 
 type TextContentType = 'username' | 'password' | 'none';
 
-// TODO: fix onClear
 // TODO: fix blurOnSubmit=false
 
 interface Props {
@@ -80,46 +80,36 @@ export const Input = memo(function Input({
 }: Props) {
   const [focus, setFocus] = useState(false);
   const color = useColor();
-  const focusColor = color.primary;
   const styles = StyleSheet.create({
-    borderError: {
-      borderColor: color.danger,
-    },
-    borderFocus: {
-      borderColor: focusColor,
-    },
     clear: {
-      position: 'absolute',
-      right: 0,
-      top: 6,
-      width: 30,
+      paddingLeft: padding(2),
     },
     flex: {
       flex: 1,
+    },
+    input: {
+      backgroundColor: color.background.primaryA,
+      borderColor: error
+        ? color.text.negative
+        : focus
+        ? color.text.accent
+        : color.text.secondary,
+      borderRadius: padding(1),
+      borderWidth: 2,
+      flexDirection: 'row',
+      padding: padding(2),
     },
     row: {
       flexDirection: 'row',
     },
     textInput: {
-      backgroundColor: color.background,
-      borderColor: color.secondary,
-      borderRadius: padding(1),
-      borderWidth: 2,
-      color: color.text,
-      padding: padding(2),
-      paddingRight: padding(8),
-      width: '100%',
+      color: color.text.primaryA,
+      flex: 1,
     },
   });
   const textInput = useRef<Original | null>(null);
   const optionalText = ' - optional';
-  const textInputStyles = [
-    styles.textInput,
-    error ? styles.borderError : undefined,
-    focus ? styles.borderFocus : undefined,
-    fontSizes.body2,
-    textStyle,
-  ];
+  const textInputStyles = [styles.textInput, fontSizes.body2, textStyle];
   const noValue = value.length === 0;
   const noError = error.length === 0;
   const noTitle = title.length === 0;
@@ -147,25 +137,15 @@ export const Input = memo(function Input({
   return (
     <View style={containerStyles}>
       <View style={styles.row}>
-        <Button
-          activeOpacity={1}
-          hidden={noTitle}
-          lowercase
-          noPadding
-          onPress={focusOnInput}
-          title={title}
-        />
-        <Button
-          activeOpacity={1}
+        <Text hidden={noTitle} onPress={focusOnInput} title={title} />
+        <Text
           color="secondary"
           hidden={!optional}
-          lowercase
-          noPadding
           onPress={focusOnInput}
           title={optionalText}
         />
       </View>
-      <View style={styles.row}>
+      <View style={styles.input}>
         <Original
           autoCorrect={autoCorrect}
           blurOnSubmit={blurOnSubmit}
@@ -177,18 +157,18 @@ export const Input = memo(function Input({
           onFocus={onFocus}
           onSubmitEditing={onSubmitEditing}
           placeholder={placeholder}
-          placeholderTextColor={color.secondary}
+          placeholderTextColor={color.text.secondary}
           ref={onRefInternal}
           returnKeyType={returnKeyType}
           secureTextEntry={secureTextEntry}
-          selectionColor={focusColor}
+          selectionColor={color.text.accent}
           style={textInputStyles}
           textContentType={textContentType}
           underlineColorAndroid="transparent"
           value={value}
         />
         <Icon
-          color={color.secondary}
+          color={color.text.secondary}
           hidden={noValue}
           name={clearIcon}
           onPress={textClear}
@@ -199,14 +179,14 @@ export const Input = memo(function Input({
         <View style={{flexDirection: 'row'}}>
           <Icon
             activeOpacity={1}
-            color={color.danger}
+            color={color.text.negative}
             invisible={noError}
             name={errorIcon}
             onPress={focusOnInput}
           />
           <Button
             activeOpacity={1}
-            color="danger"
+            color="negative"
             invisible={noError}
             lowercase
             noPadding
