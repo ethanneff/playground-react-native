@@ -21,7 +21,8 @@
     "ncu": "ncu",
     "ncu-u": "ncu -u && yarn && cd ios && pod install",
     "visualize-size": "react-native-bundle-visualizer",
-    "postinstall": "patch-package && husky install",
+    "postinstall": "patch-package",
+    "prepare": "husky install",
     "code-dupe": "jsinspect ./src"
   },
   "dependencies": {
