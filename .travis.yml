@@ -8,6 +8,7 @@ install:
 script:
   - yarn lint
   - yarn test
+  - yarn code-dupe
   - yarn build
 after_success:
   - codecov
