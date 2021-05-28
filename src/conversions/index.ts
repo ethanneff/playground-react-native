@@ -1,4 +1,5 @@
 export * from './AppleAuthentication';
+export * from './FastImage';
 export * from './Firebase';
 export * from './GestureHandler';
 export * from './GoogleSignIn';

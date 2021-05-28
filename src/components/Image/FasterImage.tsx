@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import FastImage from 'react-native-fast-image';
+import {FastImage} from '../../conversions';
 
 type Props = {
   onImageLoad: () => void;
