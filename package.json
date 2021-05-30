@@ -112,7 +112,7 @@
     "@welldone-software/why-did-you-render": "6.1.4",
     "babel-plugin-transform-remove-console": "6.9.4",
     "codecov": "3.8.2",
-    "eslint-plugin-import": "2.23.3",
+    "eslint-plugin-import": "2.23.4",
     "eslint-plugin-prettier": "3.4.0",
     "husky": "6.0.0",
     "jsinspect": "0.12.7",
