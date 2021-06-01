@@ -50,7 +50,7 @@ export const Startup = memo(function PlaygroundStartup() {
     [],
   );
   const handleLaunchChange = useCallback(
-    (value: boolean) => updateForm('launched', value),
+    (value?: boolean) => updateForm('launched', !!value),
     [updateForm],
   );
   const handleUserChange = useCallback(
