@@ -117,7 +117,7 @@
     "husky": "6.0.0",
     "jsinspect": "0.12.7",
     "metro-react-native-babel-preset": "0.66.0",
-    "prettier": "2.3.0",
+    "prettier": "2.3.1",
     "react-native-bundle-visualizer": "2.2.1",
     "react-native-dev-menu": "4.0.2",
     "react-native-highlight-updates": "1.2.0",
