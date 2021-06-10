@@ -1,5 +1,6 @@
 {
   "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
   "editor.codeActionsOnSave": ["source.organizeImports", "source.fixAll"],
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
