@@ -109,7 +109,7 @@
     "@types/uuid": "8.3.0",
     "@typescript-eslint/eslint-plugin": "4.26.1",
     "@typescript-eslint/parser": "4.26.1",
-    "@welldone-software/why-did-you-render": "6.1.4",
+    "@welldone-software/why-did-you-render": "6.2.0",
     "babel-plugin-transform-remove-console": "6.9.4",
     "codecov": "3.8.2",
     "eslint-plugin-import": "2.23.4",
