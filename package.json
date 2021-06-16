@@ -1,6 +1,6 @@
 {
   "name": "@ethanneff/example",
-  "version": "2.52.7",
+  "version": "2.53.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@ethanneff"
   },
