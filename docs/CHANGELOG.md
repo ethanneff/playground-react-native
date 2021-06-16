@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.53.1](https://github.com/ethanneff/example/compare/v2.53.0...v2.53.1) (2021-06-16)
+
+
+### Bug Fixes
+
+* deploy to github packages ([941620c](https://github.com/ethanneff/example/commit/941620cf907ced561f1c68639cd164dfec0fc741))
+* ignore prettier build ([2ae9cf4](https://github.com/ethanneff/example/commit/2ae9cf40d5515ce3fceb57dcdbfc29a1557a6cfe))
+* only ignore changelog ([8d4d0bf](https://github.com/ethanneff/example/commit/8d4d0bf2cdcde787f1f990b764c02f0e0daad3e3))
+
 # [2.53.0](https://github.com/ethanneff/example/compare/v2.52.7...v2.53.0) (2021-06-16)
 
 
