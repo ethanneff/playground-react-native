@@ -1,29 +1,32 @@
 {
-  "name": "example",
+  "name": "@ethanneff/example",
   "version": "2.52.7",
   "private": true,
-  "homepage": "http://ethanneff.github.io/example",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@ethanneff"
+  },
+  "repository": "https://github.com/ethanneff/example",
+  "license": "MIT",
+  "homepage": "https://ethanneff.github.io/example",
   "scripts": {
     "ios": "react-native run-ios",
     "android": "react-native run-android",
-    "web": "react-scripts start",
-    "shake": "adb shell input keyevent 82",
-    "reload": "adb shell input text 'RR'",
-    "build": "react-scripts build",
     "start": "react-native start --reset-cache",
-    "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
+    "web": "react-scripts start",
+    "build": "react-scripts build",
     "lint": "tsc && eslint '**/*.[jt]s?(x)' --cache --fix",
-    "test": "jest -u --forceExit --coverage --detectOpenHandles --config .github/jest.config.js",
-    "watch": "jest -u --forceExit --detectOpenHandles --watchAll --config .github/jest.config.js",
+    "test": "jest -u --coverage --cache --config .github/jest.config.js",
+    "watch": "jest -u --watchAll --cache --config .github/jest.config.js",
+    "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
     "reset": "watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; jest --clearCache; gem install fastlane; bundler update --all; bundler install; cd ios; pod install --repo-update; cd ..; npx jetify; cd android; ./gradlew clean; cd ..; react-native start --reset-cache",
-    "semantic-release": "semantic-release -e .github/release.config.js",
-    "prettify": "prettier --write .",
-    "ncu": "ncu",
-    "ncu-u": "ncu -u && yarn && cd ios && pod install",
-    "visualize-size": "react-native-bundle-visualizer",
+    "ci-release": "semantic-release -e .github/release.config.js",
+    "ci-prettify": "prettier --write .",
+    "ci-install": "yarn install --frozen-lockfile",
+    "ci-dupe": "jsinspect ./src",
+    "ci-lint": "tsc && eslint '**/*.[jt]s?(x)' --cache --max-warnings=0",
+    "ci-test": "TZ=America/Los_Angeles jest --ci --forceExit --detectOpenHandles --silent --coverage --config .github/jest.config.js",
     "postinstall": "patch-package",
-    "prepare": "husky install",
-    "code-dupe": "jsinspect ./src"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@invertase/react-native-apple-authentication": "2.1.2",
@@ -125,9 +128,6 @@
     "semantic-release": "17.4.4",
     "travis-deploy-once": "5.0.11",
     "typescript": "4.3.2"
-  },
-  "resolutions": {
-    "d3-array": "2.3.3"
   },
   "browserslist": {
     "production": [

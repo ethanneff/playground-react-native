@@ -1,4 +1,4 @@
-name: Validate Commits
+name: Validate PR Title
 
 on:
   pull_request_target:

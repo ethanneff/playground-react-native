@@ -1,0 +1,25 @@
+name: Validate Lint and Test
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install modules
+        run: yarn ci-install
+
+      - name: Run prettier
+        run: yarn ci-prettify
+
+      - name: Run code dupe
+        run: yarn ci-dupe
+
+      - name: Run lint
+        run: yarn ci-lint
+
+      - name: Run tests
+        run: yarn ci-test
