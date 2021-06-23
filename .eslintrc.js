@@ -19,6 +19,7 @@ module.exports = {
     'coverage/',
     'android/',
     'ios/',
+    'build/',
     'src/mocks/',
     'src/conversions/',
   ],
