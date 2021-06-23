@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.53.3](https://github.com/ethanneff/example/compare/v2.53.2...v2.53.3) (2021-06-23)
+
+
+### Bug Fixes
+
+* make lint work ([80af792](https://github.com/ethanneff/example/commit/80af79247d2f16f3ab31f87cb8451865bbb17402))
+
 ## [2.53.2](https://github.com/ethanneff/example/compare/v2.53.1...v2.53.2) (2021-06-23)
 
 
