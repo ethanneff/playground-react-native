@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.53.5](https://github.com/ethanneff/example/compare/v2.53.4...v2.53.5) (2021-06-23)
+
+
+### Bug Fixes
+
+* ignore build file on lints ([072b966](https://github.com/ethanneff/example/commit/072b96626a3f8361fff84aefb263dea64fec17d1))
+* update deps ([aac56a0](https://github.com/ethanneff/example/commit/aac56a03c8d889f42a2f04ce496f0ee1031c60b6))
+
 ## [2.53.4](https://github.com/ethanneff/example/compare/v2.53.3...v2.53.4) (2021-06-23)
 
 ## [2.53.3](https://github.com/ethanneff/example/compare/v2.53.2...v2.53.3) (2021-06-23)
