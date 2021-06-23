@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.53.2](https://github.com/ethanneff/example/compare/v2.53.1...v2.53.2) (2021-06-23)
+
+
+### Bug Fixes
+
+* only run lint and tests from pull requests ([89a53fd](https://github.com/ethanneff/example/commit/89a53fd3c2e279cd8244e96e44ddfeb453c886d0))
+* update deps ([64867c0](https://github.com/ethanneff/example/commit/64867c01e23ce7e575e4301a363662bc4bfb28c8))
+* update deps ([b17870a](https://github.com/ethanneff/example/commit/b17870ac66692130ab43cd8cd60d908615a5f331))
+
 ## [2.53.1](https://github.com/ethanneff/example/compare/v2.53.0...v2.53.1) (2021-06-16)
 
 
