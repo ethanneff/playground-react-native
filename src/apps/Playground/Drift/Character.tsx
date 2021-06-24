@@ -25,8 +25,9 @@ export const Character = memo(function Character({canvas}: CharacterProps) {
     x: canvas.width / 2 - size,
     y: canvas.height / 2 - size,
   });
-  const position = useRef(new Animated.ValueXY(initialPositionRef.current))
-    .current;
+  const position = useRef(
+    new Animated.ValueXY(initialPositionRef.current),
+  ).current;
   const useNativeDriver = useDriver();
   const {dispatch} = useContext(DriftContext);
   const color = useColor();

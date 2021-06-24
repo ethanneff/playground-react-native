@@ -38,10 +38,10 @@ export const ButtonRound = memo(function ButtonRound({
     },
   });
 
-  const handlePress = useCallback(() => !disabled && onPress(), [
-    onPress,
-    disabled,
-  ]);
+  const handlePress = useCallback(
+    () => !disabled && onPress(),
+    [onPress, disabled],
+  );
 
   return (
     <TouchableOpacity

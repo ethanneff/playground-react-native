@@ -1,0 +1,19 @@
+diff --git a/node_modules/d3-array/dist/d3-array.js b/node_modules/d3-array/dist/d3-array.js
+index ec6ae78..c6425d2 100644
+--- a/node_modules/d3-array/dist/d3-array.js
++++ b/node_modules/d3-array/dist/d3-array.js
+@@ -134,10 +134,11 @@ function cross(...values) {
+ }
+ 
+ function cumsum(values, valueof) {
++  let fn = (v) => (sum += +valueof(v, index++, values) || 0);
++  if (valueof === undefined)
++    fn = (v) => (sum += +v || 0);
+   var sum = 0, index = 0;
+-  return Float64Array.from(values, valueof === undefined
+-    ? v => (sum += +v || 0)
+-    : v => (sum += +valueof(v, index++, values) || 0));
++  return Float64Array.from(values, fn);
+ }
+ 
+ function descending(a, b) {

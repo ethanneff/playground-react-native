@@ -78,9 +78,10 @@ export const RecyclerFlatList = <T extends unknown>({
     [onRowRender],
   );
 
-  useEffect(() => setDataProvider(prevState => prevState.cloneWithRows(data)), [
-    data,
-  ]);
+  useEffect(
+    () => setDataProvider(prevState => prevState.cloneWithRows(data)),
+    [data],
+  );
 
   return (
     <RecyclerListView

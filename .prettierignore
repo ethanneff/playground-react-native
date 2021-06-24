@@ -1,4 +1,5 @@
 android/
 ios/
 coverage/
-docs/
+docs/CHANGELOG.md
+build/

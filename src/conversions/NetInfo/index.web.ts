@@ -29,7 +29,7 @@ export interface NetInfoConnectedDetails {
 }
 interface NetInfoConnectedState<
   T extends NetInfoStateType,
-  D extends any = any
+  D extends any = any,
 > {
   type: T;
   isConnected: true;
@@ -42,8 +42,10 @@ interface NetInfoDisconnectedState<T extends NetInfoStateType> {
   isInternetReachable: false;
   details: null;
 }
-export type NetInfoUnknownState = NetInfoDisconnectedState<NetInfoStateType.Unknown>;
-export type NetInfoNoConnectionState = NetInfoDisconnectedState<NetInfoStateType.None>;
+export type NetInfoUnknownState =
+  NetInfoDisconnectedState<NetInfoStateType.Unknown>;
+export type NetInfoNoConnectionState =
+  NetInfoDisconnectedState<NetInfoStateType.None>;
 export type NetInfoCellularState = NetInfoConnectedState<
   NetInfoStateType.Cellular,
   {
@@ -51,8 +53,10 @@ export type NetInfoCellularState = NetInfoConnectedState<
   }
 >;
 export type NetInfoWifiState = NetInfoConnectedState<NetInfoStateType.Wifi>;
-export type NetInfoBluetoothState = NetInfoConnectedState<NetInfoStateType.Bluetooth>;
-export type NetInfoEthernetState = NetInfoConnectedState<NetInfoStateType.Ethernet>;
+export type NetInfoBluetoothState =
+  NetInfoConnectedState<NetInfoStateType.Bluetooth>;
+export type NetInfoEthernetState =
+  NetInfoConnectedState<NetInfoStateType.Ethernet>;
 export type NetInfoWimaxState = NetInfoConnectedState<NetInfoStateType.Wimax>;
 export type NetInfoVpnState = NetInfoConnectedState<NetInfoStateType.Vpn>;
 export type NetInfoOtherState = NetInfoConnectedState<NetInfoStateType.Other>;

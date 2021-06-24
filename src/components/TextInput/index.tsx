@@ -205,7 +205,7 @@ export const TextInput = memo(function TextInput({
           underlineColorAndroid="transparent"
           value={text}
         />
-        {icons.length > 0 && (
+        {icons.length > 0 && ( // TODO: refactor to declarative
           <TouchableWithoutFeedback
             onPress={onIconParentPress}
             style={{flexDirection: 'row'}}>

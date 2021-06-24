@@ -14,22 +14,23 @@ export const loopBoard = (): RootThunkAction<void> => (dispatch, getState) => {
   );
   dispatch(updateBoard(newBoard));
 };
-export const updateCell = (x: number, y: number): RootThunkAction<void> => (
-  dispatch,
-  getState,
-) => {
-  const {board} = getState().gameOfLife;
-  const copy = [...board];
-  copy[x][y] = copy[x][y] === 1 ? 0 : 1;
-  dispatch(updateBoard(copy));
-};
+export const updateCell =
+  (x: number, y: number): RootThunkAction<void> =>
+  (dispatch, getState) => {
+    const {board} = getState().gameOfLife;
+    const copy = [...board];
+    copy[x][y] = copy[x][y] === 1 ? 0 : 1;
+    dispatch(updateBoard(copy));
+  };
 
-export const getCell = (x: number, y: number) => (state: RootState): number => {
-  const {board} = state.gameOfLife;
-  if (!board) return 0;
-  if (board.length <= x || board.length <= y) return 0;
-  return board[x][y];
-};
+export const getCell =
+  (x: number, y: number) =>
+  (state: RootState): number => {
+    const {board} = state.gameOfLife;
+    if (!board) return 0;
+    if (board.length <= x || board.length <= y) return 0;
+    return board[x][y];
+  };
 
 export const gameOfLifeActions = {
   updateDelay,

@@ -305,7 +305,12 @@ exports[`input renders correctly 1`] = `
                       <View
                         style={
                           Object {
+                            "backgroundColor": "hsl(0, 0%, 100%)",
+                            "borderColor": "hsl(208, 7%, 46%)",
+                            "borderRadius": 4,
+                            "borderWidth": 2,
                             "flexDirection": "row",
+                            "padding": 8,
                           }
                         }
                       >
@@ -323,17 +328,9 @@ exports[`input renders correctly 1`] = `
                           style={
                             Array [
                               Object {
-                                "backgroundColor": "hsl(0, 0%, 100%)",
-                                "borderColor": "hsl(208, 7%, 46%)",
-                                "borderRadius": 4,
-                                "borderWidth": 2,
                                 "color": "hsl(0, 0%, 0%)",
-                                "padding": 8,
-                                "paddingRight": 32,
-                                "width": "100%",
+                                "flex": 1,
                               },
-                              undefined,
-                              undefined,
                               Object {
                                 "fontSize": 14,
                                 "fontWeight": "300",
@@ -368,10 +365,7 @@ exports[`input renders correctly 1`] = `
                               Object {
                                 "justifyContent": "center",
                                 "opacity": 1,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 6,
-                                "width": 30,
+                                "paddingLeft": 8,
                               }
                             }
                           >

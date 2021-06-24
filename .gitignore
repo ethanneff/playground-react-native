@@ -65,3 +65,4 @@ certs/
 fastlane/README.md
 fastlane/report.xml
 core.app.dSYM.zip
+tsconfig.tsbuildinfo

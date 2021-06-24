@@ -1,8 +1,6 @@
 import {useColor} from '../useColor';
 
-type UseDropShadow = (
-  elevation: number,
-) => {
+type UseDropShadow = (elevation: number) => {
   elevation: number;
   shadowColor: string;
   shadowOffset: {

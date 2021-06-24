@@ -26,9 +26,10 @@ export const useKeyboard = (): void => {
       dispatch(changeKeyboardStatus(event.endCoordinates.height)),
     [dispatch],
   );
-  const onHide = useCallback(() => dispatch(changeKeyboardStatus(0)), [
-    dispatch,
-  ]);
+  const onHide = useCallback(
+    () => dispatch(changeKeyboardStatus(0)),
+    [dispatch],
+  );
 
   useEffect(() => {
     const android = Platform.OS === 'android';
@@ -98,7 +99,8 @@ export const useDeviceInfo = async (): Promise<void> => {
         androidId: await DeviceInfo.getAndroidId(),
         apiLevel: await DeviceInfo.getApiLevel(),
         applicationName: await DeviceInfo.getApplicationName(),
-        availableLocationProviders: await DeviceInfo.getAvailableLocationProviders(),
+        availableLocationProviders:
+          await DeviceInfo.getAvailableLocationProviders(),
         baseOs: await DeviceInfo.getBaseOs(),
         buildId: await DeviceInfo.getBuildId(),
         batteryLevel: isEmulator ? 0 : await DeviceInfo.getBatteryLevel(),
