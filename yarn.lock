@@ -4546,10 +4546,10 @@
   resolved "https://registry.yarnpkg.com/@types/d3-path/-/d3-path-3.0.0.tgz#939e3a784ae4f80b1fde8098b91af1776ff1312b"
   integrity sha512-0g/A+mZXgFkQxN3HniRDbXMN79K3CdTpLsevj+PXiTcb2hVyvkZUBg37StmgCQkaD84cUJ4uaDAWq7UJOQy2Tg==
 
-"@types/d3-scale@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@types/d3-scale/-/d3-scale-4.0.0.tgz#c0cb119f97648f7ed1c33590b48b8cceb82db8f1"
-  integrity sha512-uX3oIzwNu2z85qE2G7fDSS5swWpx8HwMBG8HjEZeevRNX2zwCTPlMqglBr1/zOhDlV4cpw5sjgpBBbnnewB8mw==
+"@types/d3-scale@4.0.1":
+  version "4.0.1"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@types/d3-scale/-/d3-scale-4.0.1.tgz#fbe8238e2eff27af577d2b7d0b933ae50a546970"
+  integrity sha1-++gjji7/J69XfSt9C5M65QpUaXA=
   dependencies:
     "@types/d3-time" "*"
 
@@ -4728,10 +4728,10 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
-"@types/react@17.0.11":
-  version "17.0.11"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.11.tgz#67fcd0ddbf5a0b083a0f94e926c7d63f3b836451"
-  integrity sha512-yFRQbD+whVonItSk7ZzP/L+gPTJVBkL/7shLEF+i9GC/1cV3JmUxEQz6+9ylhUpWSDuqo1N9qEvqS6vTj4USUA==
+"@types/react@17.0.13":
+  version "17.0.13"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@types/react/-/react-17.0.13.tgz#6b7c9a8f2868586ad87d941c02337c6888fb874f"
+  integrity sha1-a3yajyhoWGrYfZQcAjN8aIj7h08=
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -9811,10 +9811,10 @@ hosted-git-info@^4.0.0, hosted-git-info@^4.0.1, hosted-git-info@^4.0.2:
   dependencies:
     lru-cache "^6.0.0"
 
-howler@2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/howler/-/howler-2.2.2.tgz#0523b737bd2a7b0a0885e57acb9eede26c13807d"
-  integrity sha512-Yhztkhd1gQPyIC2aFTHBeZExRBmdobBhVDoGgW6Tro8h/pv3GdJew0ZbkYOK83BMwAjX9wRuEXAH4bAIzOq2Hg==
+howler@2.2.3:
+  version "2.2.3"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/howler/-/howler-2.2.3.tgz#a2eff9b08b586798e7a2ee17a602a90df28715da"
+  integrity sha1-ou/5sItYZ5jnou4XpgKpDfKHFdo=
 
 hpack.js@^2.1.6:
   version "2.1.6"
@@ -10006,10 +10006,10 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-husky@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-6.0.0.tgz#810f11869adf51604c32ea577edbc377d7f9319e"
-  integrity sha512-SQS2gDTB7tBN486QSoKPKQItZw97BMOd+Kdb6ghfpBc0yXyzrddI0oDV5MkDAbuB4X2mO3/nj60TRMcYxwzZeQ==
+husky@7.0.0:
+  version "7.0.0"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/husky/-/husky-7.0.0.tgz#3dbd5d28e76234689ee29bb41e048f28e3e46616"
+  integrity sha1-Pb1dKOdiNGie4pu0HgSPKOPkZhY=
 
 hyphenate-style-name@^1.0.2, hyphenate-style-name@^1.0.4:
   version "1.0.4"
@@ -13426,10 +13426,10 @@ npm-cache-filename@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/npm-cache-filename/-/npm-cache-filename-1.0.2.tgz#ded306c5b0bfc870a9e9faf823bc5f283e05ae11"
 
-npm-check-updates@11.7.1:
-  version "11.7.1"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.7.1.tgz#4d629836a8744a11e3b8acec631bc9f4677a0f15"
-  integrity sha512-1ZH1le6fIuCS/Lrj9hKzds2bBcpc60cENZJ681rJ+cx202JmwsmnVmPj6lC4f9MNb0/D81QXR0QbIt5oqDKQtA==
+npm-check-updates@11.8.0:
+  version "11.8.0"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/npm-check-updates/-/npm-check-updates-11.8.0.tgz#97fc9573e35ce12f325e498e93a94090f2197ef3"
+  integrity sha1-l/yVc+Nc4S8yXkmOk6lAkPIZfvM=
   dependencies:
     chalk "^4.1.1"
     cint "^8.2.1"
@@ -18284,10 +18284,10 @@ typesafe-actions@5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/typesafe-actions/-/typesafe-actions-5.1.0.tgz#9afe8b1e6a323af1fd59e6a57b11b7dd6623d2f1"
 
-typescript@4.3.4:
-  version "4.3.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.4.tgz#3f85b986945bcf31071decdd96cf8bfa65f9dcbc"
-  integrity sha512-uauPG7XZn9F/mo+7MrsRjyvbxFpzemRjKEZXS4AK83oP2KKOJPvb+9cO/gmnv8arWZvhnjVOXz7B49m1l0e9Ew==
+typescript@4.3.5:
+  version "4.3.5"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/typescript/-/typescript-4.3.5.tgz#4d1c37cc16e893973c45a06886b7113234f119f4"
+  integrity sha1-TRw3zBbok5c8RaBohrcRMjTxGfQ=
 
 ua-parser-js@^0.7.18:
   version "0.7.28"
