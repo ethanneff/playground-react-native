@@ -116,7 +116,7 @@
     "codecov": "3.8.2",
     "eslint-plugin-import": "2.23.4",
     "eslint-plugin-prettier": "3.4.0",
-    "husky": "6.0.0",
+    "husky": "7.0.0",
     "jsinspect": "0.12.7",
     "metro-react-native-babel-preset": "0.66.0",
     "prettier": "2.3.2",
