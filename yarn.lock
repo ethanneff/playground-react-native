@@ -71,7 +71,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@7.14.6":
+"@babel/core@7.14.6", "@babel/core@^7.14.0":
   version "7.14.6"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.14.6.tgz#e0814ec1a950032ff16c13a2721de39a8416fcab"
   integrity sha512-gJnOEWSqTk96qG5BoIrl5bVtc23DCycmIePPYnamY9RboYdI4nFy5vAQMSl81O5K/W0sLDWfGysnOECC+KUUCA==
@@ -4553,10 +4553,10 @@
   dependencies:
     "@types/d3-time" "*"
 
-"@types/d3-shape@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@types/d3-shape/-/d3-shape-3.0.0.tgz#bb1f9f4b06314bf271828abd21e7a5f2fce9cec4"
-  integrity sha512-c1Wu/JwJJHSeY/M26pzNfuaybLCcTOkn1xxxVH7riuYObpvI8SfyDD30F8mqG+NHZuZTeIdKj4lej1USZ0V5vQ==
+"@types/d3-shape@3.0.1":
+  version "3.0.1"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@types/d3-shape/-/d3-shape-3.0.1.tgz#8cebf5f3d56dd81674e1822279db58a38848a250"
+  integrity sha1-jOv189Vt2BZ04YIiedtYo4hIolA=
   dependencies:
     "@types/d3-path" "*"
 
@@ -4605,10 +4605,10 @@
     "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
 
-"@types/howler@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@types/howler/-/howler-2.2.2.tgz#54f621983c3635e2e071a95644ba28eea84814c2"
-  integrity sha512-/znab/CjipQ25epk7YcsoEsR96rB77Y/fCLMaNtIzV5oPeUeilc7dYGyMjYi+OQklkllADLM+jGZRSt3d6lhiA==
+"@types/howler@2.2.3":
+  version "2.2.3"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@types/howler/-/howler-2.2.3.tgz#236ff8ba2da2ed25b0b0ab959ad2f15effc93dff"
+  integrity sha1-I2/4ui2i7SWwsKuVmtLxXv/JPf8=
 
 "@types/html-minifier-terser@^5.0.0":
   version "5.1.1"
@@ -4630,10 +4630,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@26.0.23":
-  version "26.0.23"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.23.tgz#a1b7eab3c503b80451d019efb588ec63522ee4e7"
-  integrity sha512-ZHLmWMJ9jJ9PTiT58juykZpL7KjwJywFN3Rr2pTSkyQfydf/rk22yS7W8p5DaVUMQ2BQC7oYiU3FjbTM/mYrOA==
+"@types/jest@26.0.24":
+  version "26.0.24"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@types/jest/-/jest-26.0.24.tgz#943d11976b16739185913a1936e0de0c4a7d595a"
+  integrity sha1-lD0Rl2sWc5GFkToZNuDeDEp9WVo=
   dependencies:
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
@@ -4770,9 +4770,10 @@
   dependencies:
     source-map "^0.6.1"
 
-"@types/uuid@8.3.0":
-  version "8.3.0"
-  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.0.tgz#215c231dff736d5ba92410e6d602050cce7e273f"
+"@types/uuid@8.3.1":
+  version "8.3.1"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@types/uuid/-/uuid-8.3.1.tgz#1a32969cf8f0364b3d8c8af9cc3555b7805df14f"
+  integrity sha1-GjKWnPjwNks9jIr5zDVVt4Bd8U8=
 
 "@types/webpack-sources@*":
   version "2.0.0"
@@ -4803,13 +4804,13 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@4.28.1":
-  version "4.28.1"
-  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.28.1.tgz#c045e440196ae45464e08e20c38aff5c3a825947"
-  integrity sha1-wEXkQBlq5FRk4I4gw4r/XDqCWUc=
+"@typescript-eslint/eslint-plugin@4.28.2":
+  version "4.28.2"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.28.2.tgz#7a8320f00141666813d0ae43b49ee8244f7cf92a"
+  integrity sha1-eoMg8AFBZmgT0K5DtJ7oJE98+So=
   dependencies:
-    "@typescript-eslint/experimental-utils" "4.28.1"
-    "@typescript-eslint/scope-manager" "4.28.1"
+    "@typescript-eslint/experimental-utils" "4.28.2"
+    "@typescript-eslint/scope-manager" "4.28.2"
     debug "^4.3.1"
     functional-red-black-tree "^1.0.1"
     regexpp "^3.1.0"
@@ -4854,15 +4855,15 @@
     eslint-scope "^5.1.1"
     eslint-utils "^3.0.0"
 
-"@typescript-eslint/experimental-utils@4.28.1":
-  version "4.28.1"
-  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/experimental-utils/-/experimental-utils-4.28.1.tgz#3869489dcca3c18523c46018b8996e15948dbadc"
-  integrity sha1-OGlIncyjwYUjxGAYuJluFZSNutw=
+"@typescript-eslint/experimental-utils@4.28.2":
+  version "4.28.2"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/experimental-utils/-/experimental-utils-4.28.2.tgz#4ebdec06a10888e9326e1d51d81ad52a361bd0b0"
+  integrity sha1-Tr3sBqEIiOkybh1R2BrVKjYb0LA=
   dependencies:
     "@types/json-schema" "^7.0.7"
-    "@typescript-eslint/scope-manager" "4.28.1"
-    "@typescript-eslint/types" "4.28.1"
-    "@typescript-eslint/typescript-estree" "4.28.1"
+    "@typescript-eslint/scope-manager" "4.28.2"
+    "@typescript-eslint/types" "4.28.2"
+    "@typescript-eslint/typescript-estree" "4.28.2"
     eslint-scope "^5.1.1"
     eslint-utils "^3.0.0"
 
@@ -4887,14 +4888,14 @@
     eslint-scope "^5.0.0"
     eslint-utils "^2.0.0"
 
-"@typescript-eslint/parser@4.28.1":
-  version "4.28.1"
-  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/parser/-/parser-4.28.1.tgz#5181b81658414f47291452c15bf6cd44a32f85bd"
-  integrity sha1-UYG4FlhBT0cpFFLBW/bNRKMvhb0=
+"@typescript-eslint/parser@4.28.2":
+  version "4.28.2"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/parser/-/parser-4.28.2.tgz#6aff11bf4b91eb67ca7517962eede951e9e2a15d"
+  integrity sha1-av8Rv0uR62fKdReWLu3pUenioV0=
   dependencies:
-    "@typescript-eslint/scope-manager" "4.28.1"
-    "@typescript-eslint/types" "4.28.1"
-    "@typescript-eslint/typescript-estree" "4.28.1"
+    "@typescript-eslint/scope-manager" "4.28.2"
+    "@typescript-eslint/types" "4.28.2"
+    "@typescript-eslint/typescript-estree" "4.28.2"
     debug "^4.3.1"
 
 "@typescript-eslint/parser@^4.22.1":
@@ -4924,13 +4925,13 @@
     "@typescript-eslint/types" "4.27.0"
     "@typescript-eslint/visitor-keys" "4.27.0"
 
-"@typescript-eslint/scope-manager@4.28.1":
-  version "4.28.1"
-  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/scope-manager/-/scope-manager-4.28.1.tgz#fd3c20627cdc12933f6d98b386940d8d0ce8a991"
-  integrity sha1-/TwgYnzcEpM/bZizhpQNjQzoqZE=
+"@typescript-eslint/scope-manager@4.28.2":
+  version "4.28.2"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/scope-manager/-/scope-manager-4.28.2.tgz#451dce90303a3ce283750111495d34c9c204e510"
+  integrity sha1-RR3OkDA6POKDdQERSV00ycIE5RA=
   dependencies:
-    "@typescript-eslint/types" "4.28.1"
-    "@typescript-eslint/visitor-keys" "4.28.1"
+    "@typescript-eslint/types" "4.28.2"
+    "@typescript-eslint/visitor-keys" "4.28.2"
 
 "@typescript-eslint/scope-manager@4.5.0":
   version "4.5.0"
@@ -4948,10 +4949,10 @@
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-4.27.0.tgz#712b408519ed699baff69086bc59cd2fc13df8d8"
   integrity sha512-I4ps3SCPFCKclRcvnsVA/7sWzh7naaM/b4pBO2hVxnM3wrU51Lveybdw5WoIktU/V4KfXrTt94V9b065b/0+wA==
 
-"@typescript-eslint/types@4.28.1":
-  version "4.28.1"
-  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/types/-/types-4.28.1.tgz#d0f2ecbef3684634db357b9bbfc97b94b828f83f"
-  integrity sha1-0PLsvvNoRjTbNXubv8l7lLgo+D8=
+"@typescript-eslint/types@4.28.2":
+  version "4.28.2"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/types/-/types-4.28.2.tgz#e6b9e234e0e9a66c4d25bab881661e91478223b5"
+  integrity sha1-5rniNODppmxNJbq4gWYekUeCI7U=
 
 "@typescript-eslint/types@4.5.0":
   version "4.5.0"
@@ -4983,13 +4984,13 @@
     semver "^7.3.5"
     tsutils "^3.21.0"
 
-"@typescript-eslint/typescript-estree@4.28.1":
-  version "4.28.1"
-  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/typescript-estree/-/typescript-estree-4.28.1.tgz#af882ae41740d1f268e38b4d0fad21e7e8d86a81"
-  integrity sha1-r4gq5BdA0fJo44tND60h5+jYaoE=
+"@typescript-eslint/typescript-estree@4.28.2":
+  version "4.28.2"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/typescript-estree/-/typescript-estree-4.28.2.tgz#680129b2a285289a15e7c6108c84739adf3a798c"
+  integrity sha1-aAEpsqKFKJoV58YQjIRzmt86eYw=
   dependencies:
-    "@typescript-eslint/types" "4.28.1"
-    "@typescript-eslint/visitor-keys" "4.28.1"
+    "@typescript-eslint/types" "4.28.2"
+    "@typescript-eslint/visitor-keys" "4.28.2"
     debug "^4.3.1"
     globby "^11.0.3"
     is-glob "^4.0.1"
@@ -5023,12 +5024,12 @@
     "@typescript-eslint/types" "4.27.0"
     eslint-visitor-keys "^2.0.0"
 
-"@typescript-eslint/visitor-keys@4.28.1":
-  version "4.28.1"
-  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/visitor-keys/-/visitor-keys-4.28.1.tgz#162a515ee255f18a6068edc26df793cdc1ec9157"
-  integrity sha1-FipRXuJV8YpgaO3CbfeTzcHskVc=
+"@typescript-eslint/visitor-keys@4.28.2":
+  version "4.28.2"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@typescript-eslint/visitor-keys/-/visitor-keys-4.28.2.tgz#bf56a400857bb68b59b311e6d0a5fbef5c3b5130"
+  integrity sha1-v1akAIV7totZsxHm0KX771w7UTA=
   dependencies:
-    "@typescript-eslint/types" "4.28.1"
+    "@typescript-eslint/types" "4.28.2"
     eslint-visitor-keys "^2.0.0"
 
 "@typescript-eslint/visitor-keys@4.5.0":
@@ -7638,10 +7639,10 @@ dateformat@^3.0.0:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
 
-dayjs@1.10.5:
-  version "1.10.5"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.5.tgz#5600df4548fc2453b3f163ebb2abbe965ccfb986"
-  integrity sha512-BUFis41ikLz+65iH6LHQCDm4YPMj5r1YFLdupPIyM4SGcXMmtiLQ7U37i+hGS8urIuqe7I/ou3IS1jVc4nbN4g==
+dayjs@1.10.6:
+  version "1.10.6"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/dayjs/-/dayjs-1.10.6.tgz#288b2aa82f2d8418a6c9d4df5898c0737ad02a63"
+  integrity sha1-KIsqqC8thBimydTfWJjAc3rQKmM=
 
 dayjs@^1.8.15:
   version "1.8.35"
@@ -10006,10 +10007,10 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-husky@7.0.0:
-  version "7.0.0"
-  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/husky/-/husky-7.0.0.tgz#3dbd5d28e76234689ee29bb41e048f28e3e46616"
-  integrity sha1-Pb1dKOdiNGie4pu0HgSPKOPkZhY=
+husky@7.0.1:
+  version "7.0.1"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/husky/-/husky-7.0.1.tgz#579f4180b5da4520263e8713cc832942b48e1f1c"
+  integrity sha1-V59BgLXaRSAmPocTzIMpQrSOHxw=
 
 hyphenate-style-name@^1.0.2, hyphenate-style-name@^1.0.4:
   version "1.0.4"
@@ -12595,12 +12596,12 @@ metro-react-native-babel-preset@0.64.0:
     "@babel/template" "^7.0.0"
     react-refresh "^0.4.0"
 
-metro-react-native-babel-preset@0.66.0:
-  version "0.66.0"
-  resolved "https://registry.yarnpkg.com/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.66.0.tgz#a4495df4b24a2eb9f82705e0a53f4cbbd36d983e"
-  integrity sha512-rO3yayxplLNxFDc7HyMShN+psgEb2mbw15EMreNvgV8QnXNYHmgU6e15tLbtEvC8LuftOLuSufEdSmR/ykm+aA==
+metro-react-native-babel-preset@0.66.1:
+  version "0.66.1"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.66.1.tgz#93dee1e7f1d973549fa5092baa4d38537ee8521a"
+  integrity sha1-k97h5/HZc1SfpQkrqk04U37oUho=
   dependencies:
-    "@babel/core" "^7.0.0"
+    "@babel/core" "^7.14.0"
     "@babel/plugin-proposal-class-properties" "^7.0.0"
     "@babel/plugin-proposal-export-default-from" "^7.0.0"
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.0.0"
@@ -13426,10 +13427,10 @@ npm-cache-filename@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/npm-cache-filename/-/npm-cache-filename-1.0.2.tgz#ded306c5b0bfc870a9e9faf823bc5f283e05ae11"
 
-npm-check-updates@11.8.0:
-  version "11.8.0"
-  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/npm-check-updates/-/npm-check-updates-11.8.0.tgz#97fc9573e35ce12f325e498e93a94090f2197ef3"
-  integrity sha1-l/yVc+Nc4S8yXkmOk6lAkPIZfvM=
+npm-check-updates@11.8.1:
+  version "11.8.1"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/npm-check-updates/-/npm-check-updates-11.8.1.tgz#58ce3b0a6346d23a56815ed24ddfbac5c55ee35c"
+  integrity sha1-WM47CmNG0jpWgV7STd+6xcVe41w=
   dependencies:
     chalk "^4.1.1"
     cint "^8.2.1"
@@ -15792,10 +15793,10 @@ react-native-device-info@8.1.3:
   resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-8.1.3.tgz#022fc01372632bf80c0a6d201aab53344efc715f"
   integrity sha512-73e3wiGFL8DvIXEd8x4Aq+mO8mZvHARwfYorIEu+X0trLHY92bP5Ict8DJHDjCQ0+HtAvpA4Wda2VoUVN1zh6Q==
 
-react-native-fast-image@8.3.4:
-  version "8.3.4"
-  resolved "https://registry.yarnpkg.com/react-native-fast-image/-/react-native-fast-image-8.3.4.tgz#79edca177e30311b19d59ff335625bcbe22650d7"
-  integrity sha512-LpzAdjUphihUpVEBn5fEv5AILe55rHav0YiZroPZ1rumKDhAl4u2cG01ku2Pb7l8sayjTsNu7FuURAlXUUDsow==
+react-native-fast-image@8.3.5:
+  version "8.3.5"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/react-native-fast-image/-/react-native-fast-image-8.3.5.tgz#1802ee69e98cf84310d7fa68f50f842ad0cc9f84"
+  integrity sha1-GALuaemM+EMQ1/po9Q+EKtDMn4Q=
 
 react-native-gesture-handler@1.10.3:
   version "1.10.3"
