@@ -4683,10 +4683,10 @@
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
 
-"@types/react-native-vector-icons@6.4.7":
-  version "6.4.7"
-  resolved "https://registry.yarnpkg.com/@types/react-native-vector-icons/-/react-native-vector-icons-6.4.7.tgz#862039d668afcff42690b179b2a61dc762b84f73"
-  integrity sha512-srU4IWO5ghzm96dwyiKRYJCGD+Q0Lcu8NsWOXLi4pRPH24mb68XhrqW5Gb63AeiXlAOFsaOl2Irlsg79BNYt4A==
+"@types/react-native-vector-icons@6.4.8":
+  version "6.4.8"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@types/react-native-vector-icons/-/react-native-vector-icons-6.4.8.tgz#7dd9740f36a71e98c484b9ea12155940c85cedc2"
+  integrity sha1-fdl0DzanHpjEhLnqEhVZQMhc7cI=
   dependencies:
     "@types/react" "*"
     "@types/react-native" "*"
@@ -4697,14 +4697,24 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-native@0.64.10":
-  version "0.64.10"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.64.10.tgz#5eb6a72c77ce0f7e6e14b19c61a6bc585975eef5"
-  integrity sha512-3Kb9QM5/WZ6p58yZ7VPbvjvi6Wc/ZkESgJhKso1gKkNuHBe/4WL6586R2JRDiz9Tsxal9lMnbj3fligBVGl8PA==
+"@types/react-native@0.64.11":
+  version "0.64.11"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@types/react-native/-/react-native-0.64.11.tgz#c40264c5bd916e589b6c914982df324f5107960a"
+  integrity sha1-xAJkxb2RblibbJFJgt8yT1EHlgo=
   dependencies:
     "@types/react" "*"
 
-"@types/react-redux@7.1.16", "@types/react-redux@^7.1.16":
+"@types/react-redux@7.1.17":
+  version "7.1.17"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@types/react-redux/-/react-redux-7.1.17.tgz#b9ccd01624c2a282b7af3762411cbf8945712438"
+  integrity sha1-uczQFiTCooK3rzdiQRy/iUVxJDg=
+  dependencies:
+    "@types/hoist-non-react-statics" "^3.3.0"
+    "@types/react" "*"
+    hoist-non-react-statics "^3.3.0"
+    redux "^4.0.0"
+
+"@types/react-redux@^7.1.16":
   version "7.1.16"
   resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-7.1.16.tgz#0fbd04c2500c12105494c83d4a3e45c084e3cb21"
   integrity sha512-f/FKzIrZwZk7YEO9E1yoxIuDNRiDducxkFlkw/GNMGEnK9n4K8wJzlJBghpSuOVDgEUHoDkDF7Gi9lHNQR4siw==
@@ -4728,10 +4738,10 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
-"@types/react@17.0.13":
-  version "17.0.13"
-  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@types/react/-/react-17.0.13.tgz#6b7c9a8f2868586ad87d941c02337c6888fb874f"
-  integrity sha1-a3yajyhoWGrYfZQcAjN8aIj7h08=
+"@types/react@17.0.14":
+  version "17.0.14"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/@types/react/-/react-17.0.14.tgz#f0629761ca02945c4e8fea99b8177f4c5c61fb0f"
+  integrity sha1-8GKXYcoClFxOj+qZuBd/TFxh+w8=
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -13427,10 +13437,10 @@ npm-cache-filename@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/npm-cache-filename/-/npm-cache-filename-1.0.2.tgz#ded306c5b0bfc870a9e9faf823bc5f283e05ae11"
 
-npm-check-updates@11.8.1:
-  version "11.8.1"
-  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/npm-check-updates/-/npm-check-updates-11.8.1.tgz#58ce3b0a6346d23a56815ed24ddfbac5c55ee35c"
-  integrity sha1-WM47CmNG0jpWgV7STd+6xcVe41w=
+npm-check-updates@11.8.2:
+  version "11.8.2"
+  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/npm-check-updates/-/npm-check-updates-11.8.2.tgz#940812ae837cc96d7a975a9e5073a9dca824cd4c"
+  integrity sha1-lAgSroN8yW16l1qeUHOp3KgkzUw=
   dependencies:
     chalk "^4.1.1"
     cint "^8.2.1"
