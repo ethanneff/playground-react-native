@@ -12972,7 +12972,6 @@ minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
-    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
@@ -15803,10 +15802,10 @@ react-native-device-info@8.1.3:
   resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-8.1.3.tgz#022fc01372632bf80c0a6d201aab53344efc715f"
   integrity sha512-73e3wiGFL8DvIXEd8x4Aq+mO8mZvHARwfYorIEu+X0trLHY92bP5Ict8DJHDjCQ0+HtAvpA4Wda2VoUVN1zh6Q==
 
-react-native-fast-image@8.3.5:
-  version "8.3.5"
-  resolved "https://artifactory.infra.alto.com/artifactory/api/npm/alto-npm/react-native-fast-image/-/react-native-fast-image-8.3.5.tgz#1802ee69e98cf84310d7fa68f50f842ad0cc9f84"
-  integrity sha1-GALuaemM+EMQ1/po9Q+EKtDMn4Q=
+react-native-fast-image@8.3.6:
+  version "8.3.6"
+  resolved "https://registry.yarnpkg.com/react-native-fast-image/-/react-native-fast-image-8.3.6.tgz#b9f2d2e615919fd46ccbc9f8ad85d372196b0f0c"
+  integrity sha512-vjecBJXg9mCXGGfoUZ94SBEP1SYOkRN/w9SORH7D86PIQUVIqGbxW/Di3N79GI8Wsbay8qI7IWVHK7x26kIHbw==
 
 react-native-gesture-handler@1.10.3:
   version "1.10.3"
