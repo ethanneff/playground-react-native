@@ -1,8 +1,8 @@
 diff --git a/node_modules/d3-array/dist/d3-array.js b/node_modules/d3-array/dist/d3-array.js
-index ec6ae78..c6425d2 100644
+index 2875fe8..1b8527e 100644
 --- a/node_modules/d3-array/dist/d3-array.js
 +++ b/node_modules/d3-array/dist/d3-array.js
-@@ -134,10 +134,11 @@ function cross(...values) {
+@@ -138,10 +138,11 @@ function cross(...values) {
  }
  
  function cumsum(values, valueof) {
