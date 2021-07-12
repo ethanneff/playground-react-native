@@ -68,7 +68,7 @@ const syncQueue: SyncQueue = {
 
 let retryTimeout = retryDefaultTimeout;
 export const useSync = (): void => {
-  const timer = useRef<number | null>(null);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const processSync = useCallback(data => {
     console.log(data); // TODO: only update redux if data is different

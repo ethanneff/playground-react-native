@@ -17,7 +17,7 @@ export const useClock = ({
 }: Props): UseClock => {
   const state = useRef<State>('off');
   const prev = useRef(0);
-  const timeout = useRef<number | null>(null);
+  const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const loop = useCallback(() => {
     timeout.current = setTimeout(() => {
       const time = Date.now();
