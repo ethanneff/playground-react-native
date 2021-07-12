@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  deploy_to_github_packages:
+  deploy-to-github-packages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
