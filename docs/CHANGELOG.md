@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.53.7](https://github.com/ethanneff/example/compare/v2.53.6...v2.53.7) (2021-07-12)
+
+
+### Bug Fixes
+
+* add npm registry ([a09881f](https://github.com/ethanneff/example/commit/a09881f765e4b9d77fd80d0af766a0f4678fca82))
+* add npmrc to bypass artifactory ([ff3527c](https://github.com/ethanneff/example/commit/ff3527c2f324f0a9367029c23699babecb65c02e))
+* add yarn rc ([dc55502](https://github.com/ethanneff/example/commit/dc5550233a2aa85bc2b84e76cafe521346b2371c))
+* add yarn rc ([c1ea7b1](https://github.com/ethanneff/example/commit/c1ea7b1ccf5829e087470829a348293eaf48bbf2))
+* add yarn rc ([5b6b33b](https://github.com/ethanneff/example/commit/5b6b33bd3778810f5242c5a0a8e2a2a51d02adab))
+* update deps ([0a60522](https://github.com/ethanneff/example/commit/0a605226f1587926b9069ff7b2588ac477bb44e2))
+* update deps ([6abcafc](https://github.com/ethanneff/example/commit/6abcafcfcec497f17a035693c44c5997f8196ec0))
+* update deps ([c33d9ad](https://github.com/ethanneff/example/commit/c33d9adf548ee2cc7a9d47f45df5be6801f6706a))
+* update deps ([4065ca8](https://github.com/ethanneff/example/commit/4065ca8e6f7095240e0cc84847bbbd8991697f52))
+* update deps ([2afbdcc](https://github.com/ethanneff/example/commit/2afbdcc50c9c003e7b3c1f4013d0492322b02988))
+
 ## [2.53.6](https://github.com/ethanneff/example/compare/v2.53.5...v2.53.6) (2021-06-28)
 
 
