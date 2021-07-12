@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.53.8](https://github.com/ethanneff/example/compare/v2.53.7...v2.53.8) (2021-07-12)
+
+
+### Bug Fixes
+
+* add description for github packages ([6bf3847](https://github.com/ethanneff/example/commit/6bf3847a56321aa9bb738a0901d227416c1585f5))
+* correct timeout types ([a292aca](https://github.com/ethanneff/example/commit/a292acaf7624097c5b99383c96477f3f653a3fef))
+* update naming of github actions ([c2fd9e8](https://github.com/ethanneff/example/commit/c2fd9e82ea6b4d31b7df24c0a25416708e20b0b5))
+
 ## [2.53.7](https://github.com/ethanneff/example/compare/v2.53.6...v2.53.7) (2021-07-12)
 
 
