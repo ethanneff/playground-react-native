@@ -2358,40 +2358,40 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-3.0.3.tgz#830167fd757ba70ac638747ba3169b2dbae60330"
   integrity sha512-8IeHfDwJ9/CTUwFs6x90VlobV3BfuPgNLjTgC6dRZovfCWigaZwVNIFFJnHBakK3pW2xErAPwhdvNR4JeNoYbw==
 
-"@react-native-firebase/analytics@12.1.0":
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-12.1.0.tgz#fe748c89219b992487eceaf2a3317599f93ec488"
-  integrity sha512-n9UY50JeU4In0If+g9dEhIXYL14uPclqRxNK3tnUr24tmdY6Xbv76mdIELgcd8UW7npuU4st+kppmiyrIO7Qfw==
+"@react-native-firebase/analytics@12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-12.2.0.tgz#ddee2f26c92c8f463542624a6d7789d745d19834"
+  integrity sha512-vgl5/t6DNWTigtuq1fnF6uHnVARjVWHhjd1Hr89aH9yuh0S/6ig/IevVbBXcvBWExsfH0dT7/y2Yvpa+sE6OrA==
 
-"@react-native-firebase/app@12.1.0":
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-12.1.0.tgz#fa2c989af2bd876ed83f792c0152067184a7db27"
-  integrity sha512-goulw5PFGo2NIqqZXpv7kyv0XPKWQT2G/2ZXEFMdgDnxZGRyiAH82gR/v9rAMCww1lFVTeMZdphU5WFN/qdptg==
+"@react-native-firebase/app@12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-12.2.0.tgz#03b1e11b0d2fb90db368f2b331002e4733908951"
+  integrity sha512-3VGR5N3WtCW6/Bn/P2AqT8lHlpbUpFHpNg7gld/cN/YlRazGMl+OyMwdFXh28yE8IrWpYvcwrcE/X+O/U7AIzQ==
   dependencies:
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/auth@12.1.0":
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-12.1.0.tgz#1897714d7650f49946611f932e3c6119482e49e9"
-  integrity sha512-9/peQaPYl5M2q4q/06Sih3z+BL9wOlmXgPex7jqbF99DN6IUigEq6eOt0sR3/g0ftS/IRDG7BfbIN5MtuY1vbg==
+"@react-native-firebase/auth@12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-12.2.0.tgz#782742e517b1867ee747feec9e2df9edc1d4781b"
+  integrity sha512-8dloi7I+hR2bgVvjzoCp9Nh/Vno21KUns1Wc9okekEZ3vs2+8s3PZJLl4wvvgw4fkMkNtlTdVEcPPNjJMGPR4g==
 
-"@react-native-firebase/crashlytics@12.1.0":
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-12.1.0.tgz#e9f15a4c5a090ddf587ae67ed7726936aaf928a8"
-  integrity sha512-QTYv0ezKEsmPRCTT9eqS+hZj7H9D8WAvBOV2McG7osQ2VMWl1LMeyYVY4DXJ7NUErprJUMIoA1FU1nk/D5xwIQ==
+"@react-native-firebase/crashlytics@12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-12.2.0.tgz#7e35b68aec73da319a88b8716559be62d5501ec3"
+  integrity sha512-dzJgbk+pdaBCpzBbLR3HAJbCSiXl1LUcJHkEZwV4Po4r0tC9olnJz3C42N8MhiAbhbQ0loBafO7fGuW4TlOvrQ==
   dependencies:
     stacktrace-js "^2.0.0"
 
-"@react-native-firebase/firestore@12.1.0":
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-12.1.0.tgz#079d1c01ec72b2f3602eacdaace4da5b285a6c26"
-  integrity sha512-SyiqRAQRS0C0Gh5gOZBp9UM0FFOF555uqJK+3NzO2GHGYM7ofLONyhnhZEJGWk9iDog/TnRjlAHC3C1zsDe+1w==
+"@react-native-firebase/firestore@12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-12.2.0.tgz#a03260117692268b8150365534ff210b7fa5ed12"
+  integrity sha512-poI05EROeotcy4ddfNVPgbAv6e2WgTUJvjcrT90H6+fDP3xMtC01w92W7uoANjObfFYpaoydXBR6gKNRd7nKUA==
 
-"@react-native-firebase/remote-config@12.1.0":
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-12.1.0.tgz#91678af45dfc1789730e3637c304db6aefaea614"
-  integrity sha512-h8R2z7spIjlkFx1nCJ/mD6Ycaj7xBigb85dRDc6/9DRDqWm39RsQXELEQOLvijOudI3+CvbOBbC3lmNdWM12Gw==
+"@react-native-firebase/remote-config@12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-12.2.0.tgz#c26b8fe1eed28a57c25aada7a4629783970e5662"
+  integrity sha512-S6CiFAqnxs7QCidkdT4pk1+EicniJjQ7qVc95E93a9cfXgzUWeCDU+yEmGs1X37TZgrHxuS0F5ogzTu23fxhOw==
 
 "@react-native/assets@1.0.0":
   version "1.0.0"
@@ -2789,10 +2789,10 @@
   dependencies:
     "@types/d3-time" "*"
 
-"@types/d3-shape@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@types/d3-shape/-/d3-shape-3.0.1.tgz#8cebf5f3d56dd81674e1822279db58a38848a250"
-  integrity sha512-HnpwE2zl45cOaXLLo0zR4OfRQM9u9sI/ESb0w41PrrsQfkibj8pVIS8VYMSem2Wf5RuWxcgy3/8Kw2/FcIqAEQ==
+"@types/d3-shape@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@types/d3-shape/-/d3-shape-3.0.2.tgz#4b1ca4ddaac294e76b712429726d40365cd1e8ca"
+  integrity sha512-5+ButCmIfNX8id5seZ7jKj3igdcxx+S9IDBiT35fQGTLZUfkFgTv+oBH34xgeoWDKpWcMITSzBILWQtBoN5Piw==
   dependencies:
     "@types/d3-path" "*"
 
@@ -7099,6 +7099,11 @@ fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.6:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
+fast-memoize@^2.5.2:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/fast-memoize/-/fast-memoize-2.5.2.tgz#79e3bb6a4ec867ea40ba0e7146816f6cdce9b57e"
+  integrity sha512-Ue0LwpDYErFbmNnZSF0UH6eImUwDmogUO1jyE+JbN2gsQz/jICm1Ve7t9QT0rNSsfJt+Hs4/S3GnsDVjL4HVrw==
+
 fastq@^1.6.0:
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.11.1.tgz#5d8175aae17db61947f8b162cfc7f63264d22807"
@@ -10282,7 +10287,7 @@ makeerror@1.0.x:
   dependencies:
     tmpl "1.0.x"
 
-map-age-cleaner@^0.1.1, map-age-cleaner@^0.1.3:
+map-age-cleaner@^0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/map-age-cleaner/-/map-age-cleaner-0.1.3.tgz#7d583a7306434c055fe474b0f45078e6e1b4b92a"
   integrity sha512-bJzx6nMoP6PDLPBFmg7+xRKeFZvFboMrGlxmNj9ClvX53KrmvM5bXFXEWjbz4cz1AFn+jWJ9z/DJSz7hrs0w3w==
@@ -10360,14 +10365,6 @@ mem@^4.0.0:
     map-age-cleaner "^0.1.1"
     mimic-fn "^2.0.0"
     p-is-promise "^2.0.0"
-
-mem@^8.1.1:
-  version "8.1.1"
-  resolved "https://registry.yarnpkg.com/mem/-/mem-8.1.1.tgz#cf118b357c65ab7b7e0817bdf00c8062297c0122"
-  integrity sha512-qFCFUDs7U3b8mBDPyz5EToEKoAkgCzqquIgi9nkkR9bixxOVOre+09lbuH7+9Kn2NFpm56M3GUWVbU2hQgdACA==
-  dependencies:
-    map-age-cleaner "^0.1.3"
-    mimic-fn "^3.1.0"
 
 memory-fs@^0.4.1:
   version "0.4.1"
@@ -10889,11 +10886,6 @@ mimic-fn@^2.0.0, mimic-fn@^2.1.0:
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
 
-mimic-fn@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-3.1.0.tgz#65755145bbf3e36954b949c16450427451d5ca74"
-  integrity sha512-Ysbi9uYW9hFyfrThdDEQuykN4Ey6BuwPD2kpI5ES/nFTDn/98yxYNLZJcgUAKPT/mcrLLKaGzJR9YVxJrIdASQ==
-
 mimic-response@^1.0.0, mimic-response@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-1.0.1.tgz#4923538878eef42063cb8a3e3b0798781487ab1b"
@@ -11395,15 +11387,16 @@ npm-bundled@^1.1.1:
   dependencies:
     npm-normalize-package-bin "^1.0.1"
 
-npm-check-updates@11.8.2:
-  version "11.8.2"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.8.2.tgz#940812ae837cc96d7a975a9e5073a9dca824cd4c"
-  integrity sha512-+TWwhsFUJrar3z1KdCdwNLW6VQkqbU6pBZQtUVMfoAaeHq/L5SAnF6CwIzE/8hmKMNvxFAEe5Ow41ibhLa2iIg==
+npm-check-updates@11.8.3:
+  version "11.8.3"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.8.3.tgz#3c3541ad855bbc42b0d60e8eb293d3f6125c80e5"
+  integrity sha512-NslIB6Af7GagVrN+bvBkObLyawIZfOnDnl8n9MHE+dFt0aChRYtvR6T2BLJKzOPIepCLmmh0NRR/qha0ExAELQ==
   dependencies:
     chalk "^4.1.1"
     cint "^8.2.1"
     cli-table "^0.3.6"
     commander "^6.2.1"
+    fast-memoize "^2.5.2"
     find-up "5.0.0"
     fp-and-or "^0.1.3"
     get-stdin "^8.0.0"
@@ -11413,7 +11406,6 @@ npm-check-updates@11.8.2:
     jsonlines "^0.1.1"
     libnpmconfig "^1.2.1"
     lodash "^4.17.21"
-    mem "^8.1.1"
     minimatch "^3.0.4"
     p-map "^4.0.0"
     pacote "^11.3.4"
