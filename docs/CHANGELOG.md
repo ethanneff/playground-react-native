@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.53.10](https://github.com/ethanneff/example/compare/v2.53.9...v2.53.10) (2021-07-18)
+
+
+### Bug Fixes
+
+* make deps works ([5c28832](https://github.com/ethanneff/example/commit/5c28832c5562a63f26a806342d88fb28ba0f4b58))
+* patch d3-array ([e2a8d41](https://github.com/ethanneff/example/commit/e2a8d416034a7248cc9f0fd087a54154c43e1a25))
+
 ## [2.53.9](https://github.com/ethanneff/example/compare/v2.53.8...v2.53.9) (2021-07-18)
 
 
