@@ -17,3 +17,18 @@ index 2875fe8..1b8527e 100644
  }
  
  function descending(a, b) {
+diff --git a/node_modules/d3-array/src/cumsum.js b/node_modules/d3-array/src/cumsum.js
+index 86fb052..8b67850 100644
+--- a/node_modules/d3-array/src/cumsum.js
++++ b/node_modules/d3-array/src/cumsum.js
+@@ -1,6 +1,7 @@
+ export default function cumsum(values, valueof) {
++  let fn = (v) => (sum += +valueof(v, index++, values) || 0);
++  if (valueof === undefined)
++    fn = (v) => (sum += +v || 0);
+   var sum = 0, index = 0;
+-  return Float64Array.from(values, valueof === undefined
+-    ? v => (sum += +v || 0)
+-    : v => (sum += +valueof(v, index++, values) || 0));
++  return Float64Array.from(values, fn);
+ }
