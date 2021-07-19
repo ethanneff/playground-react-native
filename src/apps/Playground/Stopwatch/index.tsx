@@ -21,7 +21,7 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
     now: 0,
     start: 0,
   });
-  const timer = useRef<number | null>(null);
+  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
   const elapsed = state.now - state.start;
   const interval =
     state.laps.reduce((total, curr) => total + curr, 0) + elapsed;

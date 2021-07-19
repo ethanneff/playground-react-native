@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  validate-code:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

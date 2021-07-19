@@ -1,5 +1,52 @@
 # Changelog
 
+## [2.53.10](https://github.com/ethanneff/example/compare/v2.53.9...v2.53.10) (2021-07-18)
+
+
+### Bug Fixes
+
+* make deps works ([5c28832](https://github.com/ethanneff/example/commit/5c28832c5562a63f26a806342d88fb28ba0f4b58))
+* patch d3-array ([e2a8d41](https://github.com/ethanneff/example/commit/e2a8d416034a7248cc9f0fd087a54154c43e1a25))
+
+## [2.53.9](https://github.com/ethanneff/example/compare/v2.53.8...v2.53.9) (2021-07-18)
+
+
+### Bug Fixes
+
+* update deps ([f6edb70](https://github.com/ethanneff/example/commit/f6edb70e441574e77be14810633eca286542123b))
+
+## [2.53.8](https://github.com/ethanneff/example/compare/v2.53.7...v2.53.8) (2021-07-12)
+
+
+### Bug Fixes
+
+* add description for github packages ([6bf3847](https://github.com/ethanneff/example/commit/6bf3847a56321aa9bb738a0901d227416c1585f5))
+* correct timeout types ([a292aca](https://github.com/ethanneff/example/commit/a292acaf7624097c5b99383c96477f3f653a3fef))
+* update naming of github actions ([c2fd9e8](https://github.com/ethanneff/example/commit/c2fd9e82ea6b4d31b7df24c0a25416708e20b0b5))
+
+## [2.53.7](https://github.com/ethanneff/example/compare/v2.53.6...v2.53.7) (2021-07-12)
+
+
+### Bug Fixes
+
+* add npm registry ([a09881f](https://github.com/ethanneff/example/commit/a09881f765e4b9d77fd80d0af766a0f4678fca82))
+* add npmrc to bypass artifactory ([ff3527c](https://github.com/ethanneff/example/commit/ff3527c2f324f0a9367029c23699babecb65c02e))
+* add yarn rc ([dc55502](https://github.com/ethanneff/example/commit/dc5550233a2aa85bc2b84e76cafe521346b2371c))
+* add yarn rc ([c1ea7b1](https://github.com/ethanneff/example/commit/c1ea7b1ccf5829e087470829a348293eaf48bbf2))
+* add yarn rc ([5b6b33b](https://github.com/ethanneff/example/commit/5b6b33bd3778810f5242c5a0a8e2a2a51d02adab))
+* update deps ([0a60522](https://github.com/ethanneff/example/commit/0a605226f1587926b9069ff7b2588ac477bb44e2))
+* update deps ([6abcafc](https://github.com/ethanneff/example/commit/6abcafcfcec497f17a035693c44c5997f8196ec0))
+* update deps ([c33d9ad](https://github.com/ethanneff/example/commit/c33d9adf548ee2cc7a9d47f45df5be6801f6706a))
+* update deps ([4065ca8](https://github.com/ethanneff/example/commit/4065ca8e6f7095240e0cc84847bbbd8991697f52))
+* update deps ([2afbdcc](https://github.com/ethanneff/example/commit/2afbdcc50c9c003e7b3c1f4013d0492322b02988))
+
+## [2.53.6](https://github.com/ethanneff/example/compare/v2.53.5...v2.53.6) (2021-06-28)
+
+
+### Bug Fixes
+
+* update deps ([c3e77af](https://github.com/ethanneff/example/commit/c3e77af9f4eed9473960931710605ee0de7df47f))
+
 ## [2.53.5](https://github.com/ethanneff/example/compare/v2.53.4...v2.53.5) (2021-06-23)
 
 

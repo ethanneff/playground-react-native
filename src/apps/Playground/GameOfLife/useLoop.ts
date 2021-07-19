@@ -7,7 +7,7 @@ export const useLoop = (): void => {
   const dispatch = useRootDispatch();
   const run = useRootSelector(state => state.gameOfLife.run);
   const delay = useRootSelector(state => state.gameOfLife.delay);
-  const timeoutRef = useRef<number | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const loop = useCallback(() => {
     if (!run) return;
