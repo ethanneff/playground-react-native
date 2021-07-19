@@ -116,7 +116,7 @@ export type MonoMultiColor = MonoChrome & MultiColored;
 export type ColorTheme = {
   text: MonoMultiColor;
   background: MonoMultiColor;
-  border: MultiColored;
+  border: MonoMultiColor;
   tags: MultiColored;
   overlay: {
     light: string;

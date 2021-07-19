@@ -27,7 +27,7 @@ export const ButtonGroup = memo(function ButtonGroup({
             buttonStyle={{margin: 4}}
             center
             color={c}
-            disable={c === 'disabled'}
+            disabled={c === 'disabled'}
             emphasis={emphasis}
             key={c}
             title={c}
@@ -40,7 +40,7 @@ export const ButtonGroup = memo(function ButtonGroup({
             buttonStyle={{margin: 4}}
             center
             color={c}
-            disable={c === 'disabled'}
+            disabled={c === 'disabled'}
             dropShadow
             emphasis={emphasis}
             key={c}

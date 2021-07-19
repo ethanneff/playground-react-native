@@ -10,10 +10,10 @@ export const getButtonColor = (
 
 interface StyleInterface {
   colorScheme: ColorTheme;
-  color: string;
+  color: keyof MonoMultiColor;
   emphasis: ButtonEmphasis;
   noPadding?: boolean;
-  disable?: boolean;
+  disabled?: boolean;
 }
 
 export const getStyles = ({
@@ -21,7 +21,7 @@ export const getStyles = ({
   color,
   emphasis,
   noPadding,
-  disable,
+  disabled,
 }: StyleInterface): any =>
   StyleSheet.create({
     center: {
@@ -29,18 +29,18 @@ export const getStyles = ({
     },
     container: {
       backgroundColor:
-        disable && emphasis === 'high'
+        disabled && emphasis === 'high'
           ? colorScheme.background.disabled
           : emphasis === 'high'
-          ? color
+          ? colorScheme.background[color]
           : emphasis === 'medium'
           ? colorScheme.background.primaryA
           : 'transparent',
       borderColor:
-        disable && emphasis === 'medium'
+        disabled && emphasis === 'medium'
           ? colorScheme.border.disabled
           : emphasis === 'medium'
-          ? color
+          ? colorScheme.border[color]
           : 'transparent',
       borderRadius: padding(1),
       borderWidth: 1,
@@ -55,14 +55,15 @@ export const getStyles = ({
       alignSelf: 'flex-end',
     },
     text: {
-      color: disable
+      color: disabled
         ? colorScheme.text.disabled
-        : color === colorScheme.background.primaryA ||
-          color === colorScheme.background.secondary ||
-          color === colorScheme.background.tertiary
+        : emphasis === 'high' &&
+          ['primaryA', 'secondary', 'tertiary'].some(c => c === color)
+        ? colorScheme.text.primaryA
+        : emphasis !== 'high' && ['primaryB'].some(c => c === color)
         ? colorScheme.text.primaryA
         : emphasis === 'high'
         ? colorScheme.text.primaryB
-        : color,
+        : colorScheme.text[color],
     },
   });

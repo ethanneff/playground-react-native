@@ -127,6 +127,10 @@ export const lightTheme: ColorTheme = {
     disabled: colors.gray50,
   },
   border: {
+    primaryA: colors.gray500,
+    primaryB: colors.gray700,
+    secondary: colors.gray400,
+    tertiary: colors.gray300,
     accent: colors.blue400,
     negative: colors.red200,
     warning: colors.yellow200,
@@ -171,6 +175,10 @@ export const darkTheme: ColorTheme = {
     disabled: colors.gray800,
   },
   border: {
+    primaryA: colors.gray300,
+    primaryB: colors.gray100,
+    secondary: colors.gray500,
+    tertiary: colors.gray600,
     accent: colors.blue400,
     negative: colors.red500,
     warning: colors.yellow500,

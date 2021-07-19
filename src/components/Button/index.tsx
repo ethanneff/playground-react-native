@@ -11,7 +11,7 @@ import {getStyles} from './utils';
 styling: https://material.io/design/components/buttons.html#usage
 */
 
-interface Props {
+type Props = {
   /* content */
   title: string;
   testID?: string;
@@ -23,7 +23,7 @@ interface Props {
   activeOpacity?: number;
   /* state */
   hidden?: boolean;
-  disable?: boolean;
+  disabled?: boolean;
   invisible?: boolean;
   /* color */
   emphasis?: ButtonEmphasis;
@@ -36,13 +36,13 @@ interface Props {
   /* event */
   onPress?(): void;
   onLongPress?(): void;
-}
+};
 
 export const Button = memo(function Button({
   activeOpacity,
   buttonStyle,
   center,
-  disable,
+  disabled,
   noPadding,
   dropShadow,
   elevation = 2,
@@ -60,12 +60,11 @@ export const Button = memo(function Button({
 }: Props) {
   const colorScheme = useColor();
   const dropShadowStyling = useDropShadow();
-  const buttonColor = colorScheme.background[color || 'primaryA'];
   const styles = getStyles({
     colorScheme,
-    color: buttonColor,
+    color,
     emphasis,
-    disable,
+    disabled,
     noPadding,
   });
   const buttonStyleGroup = [
@@ -83,7 +82,7 @@ export const Button = memo(function Button({
   ) : (
     <TouchableOpacity
       activeOpacity={activeOpacity}
-      disabled={disable || invisible}
+      disabled={disabled || invisible}
       onLongPress={onLongPress}
       onPress={onPress}
       style={buttonStyleGroup}
