@@ -40,8 +40,10 @@ export const NavBar = memo(function NavBar({
   const styles = StyleSheet.create({
     container: {
       alignItems: 'center',
-      backgroundColor: color.background,
-      borderBottomColor: border ? color.secondary : color.background,
+      backgroundColor: color.background.primaryA,
+      borderBottomColor: border
+        ? color.background.secondary
+        : color.background.primaryA,
       borderBottomWidth: 1,
       flexDirection: 'row',
       justifyContent: 'space-between',

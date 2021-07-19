@@ -19,7 +19,7 @@ export const useDropShadow = (): UseDropShadow => {
     const shadowRadius = elevation * 0.36 + 1.2;
     return {
       elevation,
-      shadowColor: color.dark,
+      shadowColor: color.background.primaryB,
       shadowOffset: {
         height: 2,
         width: 0,

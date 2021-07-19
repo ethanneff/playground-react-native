@@ -1,23 +1,24 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Button} from '../../../components';
-import {changeTheme, ColorTheme, colorThemes} from '../../../models';
+import {changeTheme, Theme} from '../../../models';
 import {useRootDispatch, useRootSelector} from '../../../utils';
 
 export const ThemeGroup = memo(function ThemeGroup() {
   const dispatch = useRootDispatch();
-  const currentTheme = useRootSelector(state => state.theme.currentColor);
-  const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
+  const currentTheme = useRootSelector(state => state.theme.currentTheme);
+  const themes = useRootSelector(state => state.theme.themes);
+  const themePress = (theme: Theme) => () => dispatch(changeTheme(theme));
   return (
     <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-      {colorThemes.map(item => (
+      {Object.keys(themes).map(key => (
         <Button
           center
-          color={currentTheme === item ? 'green' : 'text'}
+          color={currentTheme === key ? 'positive' : 'primaryB'}
           emphasis="medium"
-          key={item}
-          onPress={themePress(item)}
-          title={item}
+          key={key}
+          onPress={themePress(key as Theme)}
+          title={key}
         />
       ))}
     </View>

@@ -25,7 +25,7 @@ export const NavButton = memo(function NavButton({
   return (
     <View style={styles.button}>
       <Icon
-        color={color.secondary}
+        color={color.text.secondary}
         hidden={!onPress}
         name={icon}
         onPress={onPress}

@@ -5,37 +5,37 @@ import {logout} from '../Auth';
 
 /*
 https://material.io/design/color/dark-theme.html#ui-application
-https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+https://material.io/design/color/the-color-system.html#tools-for-picking-themes
 */
 
 export type Theme = 'light' | 'dark';
 export const themes: Theme[] = ['light', 'dark'];
 
 /* ACTIONS */
-export const changeTheme = createAction('theme/CHANGE')<Theme>();
+export const changeTheme = createAction('theme/change')<Theme>();
 export const themeActions = {changeTheme};
 
 /* SELECTORS */
-export const getCurrentColor = (state: RootState): ColorTheme =>
-  state.theme.colors[state.theme.currentColor];
+export const getCurrentTheme = (state: RootState): ColorTheme =>
+  state.theme.themes[state.theme.currentTheme];
 
 /* INTERFACES */
-type Colors = {
+type Themes = {
   [key in Theme]: ColorTheme;
 };
 
 type ThemeState = {
-  colors: Colors;
-  currentColor: Theme;
+  themes: Themes;
+  currentTheme: Theme;
 };
 
 /* REDUCERS */
 export const themeInitialState: ThemeState = {
-  colors: {
+  themes: {
     dark: darkTheme,
     light: lightTheme,
   },
-  currentColor: 'light',
+  currentTheme: 'light',
 };
 
 export function themeReducer(
@@ -44,7 +44,7 @@ export function themeReducer(
 ): ThemeState {
   switch (action.type) {
     case getType(changeTheme):
-      return {...state, currentColor: action.payload};
+      return {...state, currentTheme: action.payload};
     case getType(logout):
       return themeInitialState;
     default:
