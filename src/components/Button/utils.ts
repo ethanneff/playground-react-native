@@ -33,6 +33,8 @@ export const getStyles = ({
           ? colorScheme.background.disabled
           : emphasis === 'high'
           ? color
+          : emphasis === 'medium'
+          ? colorScheme.background.primaryA
           : 'transparent',
       borderColor:
         disable && emphasis === 'medium'
@@ -55,8 +57,10 @@ export const getStyles = ({
     text: {
       color: disable
         ? colorScheme.text.disabled
-        : emphasis === 'high'
+        : emphasis === 'high' && color === colorScheme.text.primaryA
         ? colorScheme.text.primaryB
+        : emphasis === 'high'
+        ? colorScheme.text.primaryA
         : color,
     },
   });
