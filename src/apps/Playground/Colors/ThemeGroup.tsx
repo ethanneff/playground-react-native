@@ -14,8 +14,8 @@ export const ThemeGroup = memo(function ThemeGroup() {
       {Object.keys(themes).map(key => (
         <Button
           center
-          color={currentTheme === key ? 'positive' : 'primaryB'}
-          emphasis="medium"
+          color={currentTheme === key ? 'positive' : 'primaryA'}
+          emphasis="high"
           key={key}
           onPress={themePress(key as Theme)}
           title={key}

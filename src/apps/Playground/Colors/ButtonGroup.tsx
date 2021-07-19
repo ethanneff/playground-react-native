@@ -17,16 +17,17 @@ export const ButtonGroup = memo(function ButtonGroup({
     <View style={{flex: 1}}>
       <Text
         center
-        style={{paddingBottom: padding(10)}}
+        style={{paddingBottom: padding(5)}}
         title={emphasis}
-        type="h6"
+        type="h5"
       />
       {Object.keys(color.text).map((c: any) =>
-        c === 'statusBar' || c === 'disabled' ? null : (
+        c === 'statusBar' ? null : (
           <Button
             buttonStyle={{margin: 4}}
             center
             color={c}
+            disable={c === 'disabled'}
             emphasis={emphasis}
             key={c}
             title={c}
@@ -34,24 +35,12 @@ export const ButtonGroup = memo(function ButtonGroup({
         ),
       )}
       {Object.keys(color.text).map((c: any) =>
-        c === 'statusBar' || c === 'disabled' ? null : (
+        c === 'statusBar' ? null : (
           <Button
             buttonStyle={{margin: 4}}
             center
             color={c}
-            disable
-            emphasis={emphasis}
-            key={c}
-            title={c}
-          />
-        ),
-      )}
-      {Object.keys(color.text).map((c: any) =>
-        c === 'statusBar' || c === 'disabled' ? null : (
-          <Button
-            buttonStyle={{margin: 4}}
-            center
-            color={c}
+            disable={c === 'disabled'}
             dropShadow
             emphasis={emphasis}
             key={c}

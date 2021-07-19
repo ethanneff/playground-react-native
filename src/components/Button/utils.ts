@@ -57,10 +57,12 @@ export const getStyles = ({
     text: {
       color: disable
         ? colorScheme.text.disabled
-        : emphasis === 'high' && color === colorScheme.text.primaryA
-        ? colorScheme.text.primaryB
-        : emphasis === 'high'
+        : color === colorScheme.background.primaryA ||
+          color === colorScheme.background.secondary ||
+          color === colorScheme.background.tertiary
         ? colorScheme.text.primaryA
+        : emphasis === 'high'
+        ? colorScheme.text.primaryB
         : color,
     },
   });
