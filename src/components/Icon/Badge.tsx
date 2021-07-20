@@ -26,7 +26,7 @@ export const Badge = memo(({badge}: Props) => {
       width: padding(5),
     },
     badgeText: {
-      color: color.background,
+      color: color.background.primaryA,
       fontSize: padding(2),
     },
   });

@@ -25,7 +25,7 @@ const SignInButton = memo(function SignInButton({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
-        borderColor: color.text,
+        borderColor: color.border.primaryA,
         borderWidth: 2,
         padding: padding(2),
         marginBottom: padding(2),
@@ -56,7 +56,9 @@ const NavButton = memo(function NavButton({
         borderRadius: padding(10),
         paddingVertical: padding(2),
         paddingHorizontal: padding(2),
-        backgroundColor: inverted ? color.text : color.background,
+        backgroundColor: inverted
+          ? color.background.primaryB
+          : color.background.primaryA,
       }}>
       <Text bold inverse={inverted} title={title} type="h5" />
     </TouchableOpacity>
@@ -77,7 +79,7 @@ export const Header = memo(function Header({height}: HeaderProps) {
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        borderColor: color.secondary,
+        borderColor: color.border.primaryA,
         padding: padding(4),
         borderBottomWidth: 1,
         zIndex: 2,
@@ -125,7 +127,7 @@ const AppIcon = memo(function AppIcon({onPress, type}: AppIconProps) {
         paddingHorizontal: padding(4),
       }}>
       <Icon
-        color={color.background}
+        color={color.background.primaryA}
         name={type}
         style={{width: iconSize, height: iconSize, alignSelf: 'center'}}
       />
@@ -189,7 +191,7 @@ export const Landing = memo(function PortfolioLanding() {
   return (
     <>
       <Header height={height} />
-      <Section backgroundColor={color.light} paddingTop={height}>
+      <Section backgroundColor={color.background.secondary} paddingTop={height}>
         <Sentence
           sentences={titleSentence}
           style={{paddingVertical: padding(8), alignSelf: 'center'}}
@@ -224,7 +226,7 @@ export const Landing = memo(function PortfolioLanding() {
           <AppIcon onPress={missingCallback} type="google-play" />
         </View>
       </Section>
-      <Section backgroundColor={color.background}>
+      <Section backgroundColor={color.background.primaryA}>
         <View style={{flex: 1}} />
         <View
           style={{

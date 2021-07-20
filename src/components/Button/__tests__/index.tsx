@@ -16,7 +16,7 @@ describe('button', () => {
     expect.hasAssertions();
     const callback = jest.fn();
     const {tree} = mockRenderer({
-      component: <Button center disable onPress={callback} title="hello" />,
+      component: <Button center disabled onPress={callback} title="hello" />,
     });
     expect(tree.toJSON()).toMatchSnapshot();
   });

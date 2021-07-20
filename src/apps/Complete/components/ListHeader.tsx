@@ -40,7 +40,7 @@ export const ListHeader = memo(function ListHeader({
     {
       name: 'send',
       onPress: onSave,
-      color: color.primary,
+      color: color.background.accent,
       focus: true,
       required: true,
     },

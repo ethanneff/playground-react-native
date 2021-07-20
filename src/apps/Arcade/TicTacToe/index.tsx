@@ -79,7 +79,7 @@ export const TicTacToe = memo(function TicTacToe() {
                     alignItems: 'center',
                     backgroundColor: color.background.primaryA,
                     borderWidth: 2,
-                    borderColor: color.surface,
+                    borderColor: color.background.secondary,
                   }}>
                   <Text title={getValue(game.board[i][j])} type="h4" />
                 </TouchableOpacity>

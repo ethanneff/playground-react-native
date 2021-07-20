@@ -61,7 +61,7 @@ export const AddItem = memo(function AddItem({
     {
       name: 'send',
       onPress: onSubmit,
-      color: color.primary,
+      color: color.background.accent,
       focus: true,
       required: true,
       clear: true,

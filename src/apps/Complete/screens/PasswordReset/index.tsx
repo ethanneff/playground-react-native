@@ -44,7 +44,9 @@ export const PasswordReset = memo(function PasswordReset() {
   }, [focus]);
 
   return !focus ? null : (
-    <Modal backgroundColor={color.surface} onBackgroundPress={navWelcome}>
+    <Modal
+      backgroundColor={color.background.secondary}
+      onBackgroundPress={navWelcome}>
       <ModalHeader onRightPress={navBack} title="Password reset" />
       <Text
         center

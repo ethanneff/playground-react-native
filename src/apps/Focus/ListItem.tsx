@@ -20,7 +20,7 @@ export const ListItem = memo(function ListItem({
 }: Props) {
   const color = useColor();
   const future = item.id > Date.now();
-  const iconColor = future ? color.secondary : color.success;
+  const iconColor = future ? color.text.tertiary : color.text.positive;
   const title = currentItem ? 'current' : future ? 'future' : item.title;
   const {navigate} = useNavigation<HomeScreenNavigationProp>();
 
@@ -29,7 +29,9 @@ export const ListItem = memo(function ListItem({
   return (
     <View
       style={{
-        borderColor: currentItem ? color.primary : color.background,
+        borderColor: currentItem
+          ? color.background.accent
+          : color.background.primaryA,
         borderLeftWidth: padding(1),
         flex: 1,
       }}>
@@ -60,7 +62,7 @@ export const ListItem = memo(function ListItem({
           ellipsizeMode="tail"
           numberOfLines={1}
           style={{
-            color: color.secondary,
+            color: color.text.secondary,
             flex: 1,
           }}
           title={title}

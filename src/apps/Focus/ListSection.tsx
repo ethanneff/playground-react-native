@@ -15,7 +15,7 @@ export const ListSection = memo(function ListSection({item}: Props) {
     <View
       style={{
         alignItems: 'center',
-        borderTopColor: color.secondary,
+        borderTopColor: color.border.secondary,
         borderTopWidth: 1,
         flexDirection: 'row',
         justifyContent: 'center',

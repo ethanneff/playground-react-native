@@ -20,24 +20,18 @@ export const CalendarHeader = memo(function CalendarHeader({
 }: Props) {
   return (
     <View style={{flexDirection: 'row'}}>
-      <Icon
-        name="chevron-left"
-        onPress={onMonthDecrease}
-        padded
-        size={padding(6)}
-      />
+      <TouchableOpacity onPress={onMonthDecrease}>
+        <Icon name="chevron-left" padded size={padding(6)} />
+      </TouchableOpacity>
       <TouchableOpacity
         containerStyle={{justifyContent: 'center', alignItems: 'center'}}
         flex
         onPress={onTitlePress}>
         <Text center title={dayjs(unix).format('MMMM YYYY')} type="h5" />
       </TouchableOpacity>
-      <Icon
-        name="chevron-right"
-        onPress={onMonthIncrease}
-        padded
-        size={padding(6)}
-      />
+      <TouchableOpacity onPress={onMonthIncrease}>
+        <Icon name="chevron-right" padded size={padding(6)} />
+      </TouchableOpacity>
     </View>
   );
 });

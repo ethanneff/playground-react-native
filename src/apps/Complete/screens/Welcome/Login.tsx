@@ -47,7 +47,7 @@ const SignInButton = memo(function SignInButton({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
-        borderColor: color.secondary,
+        borderColor: color.background.secondary,
         borderWidth: 1,
         padding: padding(2),
         marginBottom: padding(margin ? 4 : 0),
@@ -122,7 +122,6 @@ export const Login = memo(function Login({
   } = useAuth();
   const {type, error, user} = response;
   const loading = type === 'loading';
-  const color = useColor();
   const successful = useRef(false);
   const form = useRef<Ref>(initialRef);
   const [state, setState] = useState<State>(initialState);
@@ -177,13 +176,13 @@ export const Login = memo(function Login({
   return (
     <Modal onBackgroundPress={onBackgroundPress} showOverlay>
       <>
-        {error && <Text center color="danger" title={error} />}
+        {error && <Text center color="negative" title={error} />}
         {state.screen === 'loading' || type === 'initalizing' ? (
           <ActivityIndicator />
         ) : state.screen === 'phoneCode' ? (
           <>
             <TextInput
-              backgroundColor={color.surface}
+              backgroundColor="secondary"
               keyboardType="number-pad"
               onChangeText={onFormChange('phoneCode')}
               placeholder="phone confirmation code"
@@ -204,7 +203,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
-              backgroundColor={color.surface}
+              backgroundColor="secondary"
               blurOnSubmit={false}
               keyboardType="number-pad"
               onChangeText={onFormChange('phone')}
@@ -241,7 +240,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
-              backgroundColor={color.surface}
+              backgroundColor="secondary"
               blurOnSubmit={false}
               keyboardType="email-address"
               onChangeText={onFormChange('email')}
@@ -269,7 +268,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
-              backgroundColor={color.surface}
+              backgroundColor="secondary"
               blurOnSubmit={false}
               editable={!loading}
               keyboardType="email-address"
@@ -284,7 +283,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
-              backgroundColor={color.surface}
+              backgroundColor="secondary"
               blurOnSubmit={false}
               editable={!loading}
               icons={[{name: eyeIcon, onPress: onEye, focus: true}]}
@@ -324,7 +323,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
-              backgroundColor={color.surface}
+              backgroundColor="secondary"
               blurOnSubmit={false}
               editable={!loading}
               keyboardType="email-address"
@@ -339,7 +338,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
-              backgroundColor={color.surface}
+              backgroundColor="primaryA"
               blurOnSubmit={false}
               editable={!loading}
               icons={[{name: eyeIcon, onPress: onEye, focus: true}]}

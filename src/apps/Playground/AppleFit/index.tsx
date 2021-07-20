@@ -46,7 +46,7 @@ export const AppleFit = memo(function PlaygroundAppleFit() {
       <View style={{alignItems: 'center'}}>
         <AppleActivity
           animate
-          backgroundColor={color.background}
+          backgroundColor={color.background.primaryA}
           rings={rings}
           size={size}
           strokeWidth={strokeWidth}

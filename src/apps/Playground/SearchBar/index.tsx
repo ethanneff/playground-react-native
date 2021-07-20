@@ -54,20 +54,23 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
   });
   const fadeContainer = state.animation.interpolate({
     inputRange: [0, 1],
-    outputRange: [color.background, colorWithOpacity(color.secondary)],
+    outputRange: [
+      color.background.primaryA,
+      colorWithOpacity(color.background.secondary),
+    ],
   });
   const styles = StyleSheet.create({
     container: {
       flex: 1,
     },
     header: {
-      backgroundColor: color.light,
+      backgroundColor: color.background.secondary,
       height: padding(20),
       justifyContent: 'center',
       padding: padding(2),
     },
     item: {
-      borderBottomColor: color.light,
+      borderBottomColor: color.background.secondary,
       borderWidth: 0.2,
       padding: padding(6),
     },

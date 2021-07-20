@@ -3,7 +3,6 @@ export * from './ActivityIndicator';
 export * from './Button';
 export * from './Calendar';
 export * from './Card';
-export * from './CardSection';
 export * from './Carousel';
 export * from './Icon';
 export * from './Image';

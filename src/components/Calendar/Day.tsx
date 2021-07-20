@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import React from 'react';
 import {View} from 'react-native';
 import {useColor} from '../../hooks';
-import {colorWithOpacity,padding} from '../../utils';
+import {padding} from '../../utils';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {Day} from './utils';
@@ -23,18 +23,18 @@ export const CalendarDay = ({
   const color = useColor();
   const selected = day.id === selectedDay;
   const today = dayjs(day.id).isSame(dayjs(), 'day');
-  const backgroundColor = selected ? color.primary : 'transparent';
+  const backgroundColor = selected ? color.background.accent : 'transparent';
   const nonMonthDay = hiddenDays && !day.current;
   const textColor =
     nonMonthDay && !day.header
       ? 'transparent'
       : selected
-      ? color.background
+      ? color.text.primaryB
       : today
-      ? color.success
+      ? color.text.positive
       : day.current
-      ? color.text
-      : colorWithOpacity(color.secondary, 0.6);
+      ? color.text.primaryA
+      : color.text.tertiary;
   const disabled = day.header || nonMonthDay;
 
   return (

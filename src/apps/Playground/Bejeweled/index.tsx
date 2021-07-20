@@ -68,12 +68,12 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
   const height = 6;
   const size = dimension / width;
   const gems: Gem[] = [
-    {key: 'primary', color: color.primary},
-    {key: 'brand', color: color.brand},
-    {key: 'success', color: color.success},
-    {key: 'info', color: color.info},
-    {key: 'warning', color: color.warning},
-    {key: 'danger', color: color.danger},
+    {key: 'primary', color: color.background.primaryA},
+    {key: 'brand', color: color.background.primaryB},
+    {key: 'success', color: color.background.positive},
+    {key: 'info', color: color.background.accent},
+    {key: 'warning', color: color.background.warning},
+    {key: 'danger', color: color.background.negative},
   ];
 
   const [board, setBoard] = useState<Board>(() =>
@@ -118,8 +118,8 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
                     flex: 1,
                     borderColor:
                       selected.x === x && selected.y === y
-                        ? color.text
-                        : color.background,
+                        ? color.border.primaryB
+                        : color.border.primaryA,
                     borderWidth: 4,
                     backgroundColor: gem.color,
                   }}

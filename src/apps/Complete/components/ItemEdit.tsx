@@ -31,12 +31,12 @@ export const ItemEdit = memo(function ItemEdit({
       {
         name: 'send',
         onPress: onSubmit(type),
-        color: color.primary,
+        color: color.background.accent,
         focus: true,
         required: true,
       },
     ],
-    [color.primary, onClose, onSubmit],
+    [color.background.accent, onClose, onSubmit],
   );
   // TODO: need to clear on blur
 

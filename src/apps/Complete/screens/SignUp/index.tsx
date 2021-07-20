@@ -69,7 +69,9 @@ export const SignUp = memo(function SignUp() {
   }, [focus]);
 
   return !focus ? null : (
-    <Modal backgroundColor={color.surface} onBackgroundPress={navWelcome}>
+    <Modal
+      backgroundColor={color.background.secondary}
+      onBackgroundPress={navWelcome}>
       <ModalHeader onRightPress={navBack} title="Log in" />
       <TextInput
         autoCorrect={false}
@@ -99,7 +101,7 @@ export const SignUp = memo(function SignUp() {
         value=""
       />
       <Text
-        color="danger"
+        color="negative"
         invisible={!state.passwordError}
         title="Password is too short."
       />

@@ -18,7 +18,6 @@ export const Ball = memo(function PlaygroundBall() {
   const size = padding(8);
   const styles = StyleSheet.create({
     ball: {
-      borderColor: color.text,
       borderRadius: size,
       borderWidth: size,
       height: size * 2,

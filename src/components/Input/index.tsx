@@ -20,6 +20,7 @@ import {fontSizes, padding} from '../../utils';
 import {Button} from '../Button';
 import {Icon} from '../Icon';
 import {Text} from '../Text';
+import {TouchableOpacity} from '../TouchableOpacity';
 
 /*
 styling https://uxdesign.cc/design-better-forms-96fadca0f49c
@@ -167,23 +168,24 @@ export const Input = memo(function Input({
           underlineColorAndroid="transparent"
           value={value}
         />
-        <Icon
-          color={color.text.secondary}
-          hidden={noValue}
-          name={clearIcon}
-          onPress={textClear}
-          style={styles.clear}
-        />
+        <TouchableOpacity onPress={textClear}>
+          <Icon
+            color={color.text.secondary}
+            hidden={noValue}
+            name={clearIcon}
+            style={styles.clear}
+          />
+        </TouchableOpacity>
       </View>
       {!removeError && (
         <View style={{flexDirection: 'row'}}>
-          <Icon
-            activeOpacity={1}
-            color={color.text.negative}
-            invisible={noError}
-            name={errorIcon}
-            onPress={focusOnInput}
-          />
+          <TouchableOpacity activeOpacity={1} onPress={focusOnInput}>
+            <Icon
+              color={color.text.negative}
+              invisible={noError}
+              name={errorIcon}
+            />
+          </TouchableOpacity>
           <Button
             activeOpacity={1}
             color="negative"

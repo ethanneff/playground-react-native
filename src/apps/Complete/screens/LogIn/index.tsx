@@ -68,7 +68,9 @@ export const LogIn = memo(function LogIn() {
   }, [focus]);
 
   return !focus ? null : (
-    <Modal backgroundColor={color.surface} onBackgroundPress={navWelcome}>
+    <Modal
+      backgroundColor={color.background.secondary}
+      onBackgroundPress={navWelcome}>
       <ModalHeader onRightPress={navBack} title="Log in" />
       <TextInput
         autoCorrect={false}

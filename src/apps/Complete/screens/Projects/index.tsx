@@ -35,7 +35,9 @@ export const Projects = memo(function Projects() {
 
   return (
     <Screen onRightPress={showSearchBar} rightIcon="magnify" title="Implement">
-      <KeyboardHandler backgroundColor={color.surface} onLayout={onLayout}>
+      <KeyboardHandler
+        backgroundColor={color.background.secondary}
+        onLayout={onLayout}>
         <List
           itemId={itemId}
           key={itemId}

@@ -38,7 +38,9 @@ export const ItemDetail = memo(function ItemDetail() {
 
   return !item ? null : (
     <>
-      <Modal backgroundColor={color.surface} onBackgroundPress={navBack}>
+      <Modal
+        backgroundColor={color.background.secondary}
+        onBackgroundPress={navBack}>
         {!item ? (
           <Text title="missing item" />
         ) : (
@@ -83,7 +85,7 @@ export const ItemDetail = memo(function ItemDetail() {
                 <Card flex>
                   <Button
                     center
-                    color="danger"
+                    color="negative"
                     onPress={onDeletePress}
                     title="delete"
                   />

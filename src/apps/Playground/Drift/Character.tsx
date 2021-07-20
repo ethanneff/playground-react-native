@@ -67,7 +67,7 @@ export const Character = memo(function Character({canvas}: CharacterProps) {
           height: size,
           borderRadius: size,
           elevation,
-          shadowColor: color.text,
+          shadowColor: color.background.primaryB,
           shadowOffset: {
             height: 2,
             width: 0,
@@ -75,7 +75,7 @@ export const Character = memo(function Character({canvas}: CharacterProps) {
           shadowOpacity,
           shadowRadius,
           zIndex: elevation,
-          backgroundColor: color.primary,
+          backgroundColor: color.background.accent,
         },
       ]}
     />

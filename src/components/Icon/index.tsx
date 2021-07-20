@@ -46,7 +46,7 @@ export const Icon = memo(function Icon({
   testID,
 }: Props) {
   const colors = useColor();
-  const bgColor = backgroundColor ? backgroundColor : colors.text.positive;
+  const bgColor = backgroundColor ? backgroundColor : colors.text.accent;
   const dropShadow = useDropShadow();
   const styles = StyleSheet.create({
     fab: {

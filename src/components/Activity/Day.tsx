@@ -17,9 +17,12 @@ export const Day = memo(function Day({day, max, size, margin, onPress}: Props) {
   const color = useColor();
   const backgroundColor =
     day.count === 0
-      ? color.surface
-      : colorWithOpacity(color.success, (day.count / max) * 3 + 0.25);
-  const borderColor = isToday(day.date) ? color.danger : 'transparent';
+      ? color.background.secondary
+      : colorWithOpacity(
+          color.background.positive,
+          (day.count / max) * 3 + 0.25,
+        );
+  const borderColor = isToday(day.date) ? color.border.negative : 'transparent';
   return (
     <TouchableOpacity
       key={String(day.date)}

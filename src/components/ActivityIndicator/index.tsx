@@ -27,7 +27,7 @@ export const ActivityIndicator = memo(function ActivityIndicator({
 
   return (
     <View style={[styles.container, style]}>
-      <Original color={color.dark} size={size} />
+      <Original color={color.text.secondary} size={size} />
     </View>
   );
 });

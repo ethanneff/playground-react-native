@@ -7,8 +7,9 @@ import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {
   changeTheme,
-  ColorTheme,
   getLandscapeOrientation,
+  Theme,
+  themes,
 } from '../../../models';
 import {padding, useRootDispatch, useRootSelector} from '../../../utils';
 
@@ -77,9 +78,8 @@ export const DarkMode = memo(function DarkMode() {
   const dispatch = useRootDispatch();
   const color = useColor();
   const {goBack} = useNavigation();
-  const themes = useRootSelector(state => state.theme.themes);
   const currentTheme = useRootSelector(state => state.theme.currentTheme);
-  const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
+  const themePress = (theme: Theme) => () => dispatch(changeTheme(theme));
   const [elevation, setElevation] = useState(2);
   const handleSlider = useCallback((value: number) => setElevation(value), []);
   const landscape = useRootSelector(getLandscapeOrientation);
@@ -134,7 +134,7 @@ export const DarkMode = memo(function DarkMode() {
               alignItems: 'center',
             }}>
             <Text title="theme: " />
-            {Object.keys(themes).map(item => (
+            {themes.map(item => (
               <Button
                 color={currentTheme === item ? 'positive' : 'primaryA'}
                 emphasis="low"

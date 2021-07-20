@@ -1,13 +1,13 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 import {Button, Screen, Text} from '../../../components';
 import {useColor} from '../../../hooks';
-import {BoardContext, getBoard, updateBoard} from './utils';
 import {Board} from './Board';
-import {useGesture} from './useGesture';
 import {EndGame} from './EndGame';
 import {useClock} from './useClock';
+import {useGesture} from './useGesture';
+import {BoardContext, getBoard, updateBoard} from './utils';
 
 type State = 'on' | 'off' | 'error' | 'win';
 
@@ -72,7 +72,7 @@ export const Snake = memo(function Snake() {
           <Text title={`points: ${game.points}`} />
         </View>
         <View
-          style={{flex: 1, backgroundColor: color.success}}
+          style={{flex: 1, backgroundColor: color.background.positive}}
           {...panHandlers}>
           <Board matrix={game.board.matrix} />
         </View>

@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import {Icon, Text} from '../../../components';
+import {Icon, Text, TouchableOpacity} from '../../../components';
 import {padding} from '../../../utils';
 
 type Props = {
@@ -23,19 +23,13 @@ export const ModalHeader = memo(function ModalHeader({
         alignItems: 'center',
         marginBottom: padding(4),
       }}>
-      <Icon
-        invisible={!onLeftPress}
-        name="chevron-left"
-        onPress={onLeftPress}
-        size={size}
-      />
+      <TouchableOpacity onPress={onLeftPress}>
+        <Icon invisible={!onLeftPress} name="chevron-left" size={size} />
+      </TouchableOpacity>
       <Text center flex title={title} type="h4" />
-      <Icon
-        invisible={!onRightPress}
-        name="close"
-        onPress={onRightPress}
-        size={size}
-      />
+      <TouchableOpacity onPress={onRightPress}>
+        <Icon invisible={!onRightPress} name="close" size={size} />
+      </TouchableOpacity>
     </View>
   );
 });

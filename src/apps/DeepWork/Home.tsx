@@ -1,7 +1,14 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
-import {Activity, Card, Icon, Screen, Text} from '../../components';
+import {
+  Activity,
+  Card,
+  Icon,
+  Screen,
+  Text,
+  TouchableOpacity,
+} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useAdminNavBack, useColor} from '../../hooks';
 import {padding} from '../../utils';
@@ -69,17 +76,20 @@ export const Home = memo(function Home() {
           bottom: 0,
           right: 0,
           flexDirection: 'row',
-          margin: padding(2),
+          margin: padding(4),
           justifyContent: 'center',
         }}>
-        <Icon
-          backgroundColor={color.secondary}
-          color={color.background}
-          fab
-          name="plus"
-          onPress={onItemAdd}
-        />
-        <Icon color={color.background} fab name="pencil" onPress={onItemAdd} />
+        <TouchableOpacity onPress={onItemAdd} style={{marginRight: padding(2)}}>
+          <Icon
+            backgroundColor={color.background.secondary}
+            color={color.text.primaryA}
+            fab
+            name="plus"
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={onItemAdd}>
+          <Icon color={color.background.primaryA} fab name="pencil" />
+        </TouchableOpacity>
       </View>
     </Screen>
   );

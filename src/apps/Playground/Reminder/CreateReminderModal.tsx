@@ -57,7 +57,7 @@ export const CreateReminderModal = memo(function CreateReminderModal({
       <Button
         buttonStyle={styles.submit}
         color="accent"
-        disable
+        disabled
         emphasis="high"
         title="submit"
       />

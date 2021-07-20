@@ -47,14 +47,13 @@ export const Drag = memo(function PlaygroundDrag() {
   const size = 30;
   const styles = StyleSheet.create({
     ball: {
-      borderColor: color.background,
       borderRadius: size,
       borderWidth: size,
       height: size,
       marginLeft: -size,
       marginTop: -size,
       width: size,
-      ...dropShadow(10),
+      ...dropShadow(5),
     },
     canvas: {
       backgroundColor: color.background.secondary,

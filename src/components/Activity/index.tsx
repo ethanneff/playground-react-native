@@ -127,7 +127,7 @@ export const Activity = memo(function Activity({
       ) : state.request === 'failure' ? (
         <>
           <Text title="Missing network connection" />
-          <Button color="danger" onPress={refresh} title="Retry" />
+          <Button color="negative" onPress={refresh} title="Retry" />
         </>
       ) : (
         <>

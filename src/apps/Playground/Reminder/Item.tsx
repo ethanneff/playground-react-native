@@ -27,7 +27,7 @@ export const Item = memo(function ReminderItem({
   const color = useColor();
   const styles = StyleSheet.create({
     button: {
-      borderColor: color.secondary,
+      borderColor: color.border.primaryA,
       borderRadius: padding(1),
       borderWidth: 1,
       flexDirection: 'row',
@@ -52,7 +52,7 @@ export const Item = memo(function ReminderItem({
       justifyContent: 'center',
     },
     title: {
-      color: active ? color.primary : color.text,
+      color: active ? color.text.accent : color.text.primaryA,
     },
   });
 
@@ -68,9 +68,7 @@ export const Item = memo(function ReminderItem({
             <Text style={styles.subtitle} title={description} type="caption" />
           )}
         </View>
-        {icon && (
-          <Icon name={icon} size={padding(5)} style={styles.icon} />
-        )}
+        {icon && <Icon name={icon} size={padding(5)} style={styles.icon} />}
       </View>
     </TouchableOpacity>
   );

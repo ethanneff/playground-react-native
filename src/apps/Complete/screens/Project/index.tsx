@@ -52,7 +52,9 @@ export const Project = memo(function Project() {
       onRightPress={showSearchBar}
       rightIcon="magnify"
       title={projectItemTitle}>
-      <KeyboardHandler backgroundColor={color.surface} onLayout={onLayout}>
+      <KeyboardHandler
+        backgroundColor={color.background.secondary}
+        onLayout={onLayout}>
         <Board
           listMaxHeight={listMaxHeight}
           listWidth={listWidth}

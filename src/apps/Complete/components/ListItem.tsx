@@ -76,7 +76,7 @@ export const ListItem = memo(function ListItem({
     {
       name: 'send',
       onPress: onItemTitleSubmit,
-      color: color.primary,
+      color: color.background.accent,
       focus: true,
       required: true,
     },
@@ -103,7 +103,7 @@ export const ListItem = memo(function ListItem({
         flexDirection: 'row',
       }}>
       <TextInput
-        backgroundColor={color.surface}
+        backgroundColor="secondary"
         editable={false}
         icons={icons}
         onRef={textInputRef}
