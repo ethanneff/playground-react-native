@@ -46,8 +46,8 @@ export const Card = memo(function Card({
   const opacity = getOpacity(elevation);
   const styles = StyleSheet.create({
     containerStyle: {
-      backgroundColor: color.background,
-      borderColor: color.background,
+      backgroundColor: color.background.primaryA,
+      borderColor: color.background.primaryA,
       borderRadius,
       borderWidth,
       marginVertical: noMargin ? 0 : padding(2),
@@ -58,8 +58,10 @@ export const Card = memo(function Card({
       borderRadius,
       padding: noPadding ? 0 : padding(4),
     },
-    flex: {flex: 1},
-    selected: {backgroundColor: color.primary},
+    flex: {
+      flex: 1,
+    },
+    selected: {backgroundColor: color.background.positive},
   });
 
   const containerStyles = [

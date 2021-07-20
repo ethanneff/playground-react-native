@@ -145,8 +145,8 @@ export const lightTheme: ColorTheme = {
     disabled: colors.gray50,
   },
   overlay: {
-    light: 'rgba(0, 0, 0, 0.03)',
-    dark: 'rgba(0, 0, 0, 0.08)',
+    light: 'rgba(0, 0, 0, 0.38)',
+    dark: 'rgba(0, 0, 0, 0.6)',
   },
   statusBar: 'dark-content',
 };

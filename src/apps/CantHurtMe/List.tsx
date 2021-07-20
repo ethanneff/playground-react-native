@@ -1,6 +1,6 @@
 import React, {memo, useCallback} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import {Card, Icon, Text} from '../../components';
+import {Card, Icon, Text, TouchableOpacity} from '../../components';
 import {useColor} from '../../hooks';
 import {getLandscapeOrientation} from '../../models';
 import {padding, useRootSelector} from '../../utils';
@@ -42,7 +42,7 @@ export const List = memo(function List({
             marginRight: index % 2 === 0 ? padding(2) : 0,
             marginLeft: index % 2 !== 0 ? padding(2) : 0,
           }}>
-          <Card key={data.id} onPress={onPress} style={{}}>
+          <Card key={data.id} onPress={onPress}>
             <Text
               bold
               center
@@ -61,12 +61,7 @@ export const List = memo(function List({
   const renderHeader = useCallback(
     () => (
       <View>
-        <Text
-          center
-          style={{padding: padding(4)}}
-          title="Progress"
-          type="h4"
-        />
+        <Text center style={{padding: padding(4)}} title="Progress" type="h4" />
         <Card>
           <View
             style={{
@@ -75,7 +70,9 @@ export const List = memo(function List({
               paddingBottom: padding(2),
             }}>
             <ProfileLevel onPress={onProfilePress} />
-            <Icon name="cog" onPress={onSettingsPress} />
+            <TouchableOpacity onPress={onSettingsPress}>
+              <Icon name="cog" />
+            </TouchableOpacity>
           </View>
           <DailyProgress />
         </Card>
@@ -101,7 +98,7 @@ export const List = memo(function List({
       numColumns={columns}
       renderItem={renderItem}
       showsVerticalScrollIndicator={false}
-      style={{backgroundColor: color.surface}}
+      style={{backgroundColor: color.background.secondary}}
     />
   );
 });

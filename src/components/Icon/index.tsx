@@ -1,8 +1,7 @@
 import React, {memo} from 'react';
-import {Platform, StyleProp, StyleSheet, ViewStyle} from 'react-native';
+import {Platform, StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
 import {useColor, useDropShadow} from '../../hooks';
-import {padding, getDisabledColor} from '../../utils';
-import {TouchableOpacity} from '../TouchableOpacity';
+import {getDisabledColor, padding} from '../../utils';
 import {Badge} from './Badge';
 import {Source} from './Source';
 
@@ -16,7 +15,6 @@ type Props = {
   elevation?: number;
   right?: boolean;
   fab?: boolean;
-  activeOpacity?: number;
   style?: StyleProp<ViewStyle>;
   clear?: boolean;
   hidden?: boolean;
@@ -26,7 +24,6 @@ type Props = {
   color?: string;
   backgroundColor?: string;
   name?: string;
-  onPress?: () => void;
   testID?: string;
   disabled?: boolean;
 };
@@ -34,7 +31,6 @@ type Props = {
 export const Icon = memo(function Icon({
   name,
   style,
-  activeOpacity,
   badge = 0,
   clear,
   elevation = 4,
@@ -47,11 +43,10 @@ export const Icon = memo(function Icon({
   invisible,
   disabled,
   padded,
-  onPress,
   testID,
 }: Props) {
   const colors = useColor();
-  const bgColor = backgroundColor ? backgroundColor : colors.primary;
+  const bgColor = backgroundColor ? backgroundColor : colors.text.positive;
   const dropShadow = useDropShadow();
   const styles = StyleSheet.create({
     fab: {
@@ -80,12 +75,12 @@ export const Icon = memo(function Icon({
   const colored = hidden
     ? 'transparent'
     : disabled
-    ? getDisabledColor(color || colors.text)
+    ? getDisabledColor(color || colors.text.primaryA)
     : clear
-    ? colors.background
+    ? colors.text.primaryB
     : color
     ? color
-    : colors.dark;
+    : colors.text.secondary;
   const containerStyles = [
     Platform.OS === 'web' ? styles.web : undefined,
     fab ? styles.fab : undefined,
@@ -95,14 +90,9 @@ export const Icon = memo(function Icon({
     style,
   ];
   return !name ? null : (
-    <TouchableOpacity
-      activeOpacity={activeOpacity}
-      disabled={!onPress || disabled || hidden}
-      onPress={onPress}
-      style={containerStyles}
-      testID={testID}>
+    <View style={containerStyles} testID={testID}>
       <Source color={colored} invisible={invisible} name={name} size={size} />
       <Badge badge={badge} />
-    </TouchableOpacity>
+    </View>
   );
 });

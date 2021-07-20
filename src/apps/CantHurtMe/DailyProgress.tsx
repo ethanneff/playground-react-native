@@ -27,10 +27,10 @@ const ProgressItem = ({item}: ProgressItemProps) => {
     setDateFormat(prev => (prev === 'ddd' ? 'MMM DD' : 'ddd'));
   }, []);
   const iconColor = item.date.isSame(dayjs(), 'day')
-    ? color.success
+    ? color.text.positive
     : item.date > dayjs()
-    ? color.secondary
-    : color.danger;
+    ? color.text.tertiary
+    : color.text.negative;
   const iconName = item.date.isSame(dayjs(), 'day')
     ? 'check'
     : item.date > dayjs()
@@ -42,7 +42,7 @@ const ProgressItem = ({item}: ProgressItemProps) => {
       <Icon color={iconColor} name={iconName} style={{alignSelf: 'center'}} />
       <View
         style={{
-          borderTopColor: color.text,
+          borderTopColor: color.border.primaryA,
           borderTopWidth: 2,
           margin: padding(1),
           width: padding(12),
