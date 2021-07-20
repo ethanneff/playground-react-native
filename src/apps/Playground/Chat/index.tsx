@@ -11,8 +11,7 @@ export const Chat = memo(function PlaygroundChat() {
   const navBack = useCallback(() => goBack(), [goBack]);
   const [container, setContainer] = useState(0);
   const keyboardHeight = useRootSelector(s => s.device.keyboardHeight);
-  const keyboardPadding =
-    keyboardHeight > 0 ? padding(8) : padding(0);
+  const keyboardPadding = keyboardHeight > 0 ? padding(8) : padding(0);
   const height = container - keyboardHeight + keyboardPadding;
   const onLayout = useCallback(
     (e: LayoutChangeEvent) => setContainer(e.nativeEvent.layout.height),

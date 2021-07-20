@@ -20,7 +20,7 @@ export const Sentence = memo(function Sentence({
         <Text
           bold={bold}
           center={center}
-          color={onPress ? 'primary' : 'text'}
+          color={onPress ? 'accent' : 'primaryA'}
           emphasis={emphasis}
           key={title}
           onPress={onPress}

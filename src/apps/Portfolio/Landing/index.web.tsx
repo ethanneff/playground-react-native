@@ -120,7 +120,7 @@ const AppIcon = memo(function AppIcon({onPress, type}: AppIconProps) {
         justifyContent: 'center',
         borderRadius: padding(2),
         flexDirection: 'row',
-        backgroundColor: color.text,
+        backgroundColor: color.background.primaryB,
         paddingVertical: padding(2),
         paddingHorizontal: padding(4),
       }}>

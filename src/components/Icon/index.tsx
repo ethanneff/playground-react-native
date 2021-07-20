@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {Platform, StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
 import {useColor, useDropShadow} from '../../hooks';
-import {getDisabledColor, padding} from '../../utils';
+import {padding} from '../../utils';
 import {Badge} from './Badge';
 import {Source} from './Source';
 
@@ -21,8 +21,8 @@ type Props = {
   invisible?: boolean;
   padded?: boolean;
   size?: number;
-  color?: string;
-  backgroundColor?: string;
+  color?: string; // TODO: pass color
+  backgroundColor?: string; // TODO: pass color
   name?: string;
   testID?: string;
   disabled?: boolean;
@@ -75,7 +75,7 @@ export const Icon = memo(function Icon({
   const colored = hidden
     ? 'transparent'
     : disabled
-    ? getDisabledColor(color || colors.text.primaryA)
+    ? colors.text.disabled
     : clear
     ? colors.text.primaryB
     : color

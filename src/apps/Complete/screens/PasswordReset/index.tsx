@@ -72,7 +72,7 @@ export const PasswordReset = memo(function PasswordReset() {
       <Button
         center
         color="accent"
-        disable={!state.complete}
+        disabled={!state.complete}
         emphasis="high"
         onPress={onSubmit}
         title="Reset password"

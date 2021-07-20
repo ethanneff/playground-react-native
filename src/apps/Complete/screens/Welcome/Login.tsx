@@ -302,7 +302,7 @@ export const Login = memo(function Login({
               buttonStyle={{marginBottom: padding(4)}}
               center
               color="accent"
-              disable={loading}
+              disabled={loading}
               lowercase
               onPress={onScreenChange('logIn')}
               title="Already have an account?"
@@ -310,7 +310,7 @@ export const Login = memo(function Login({
             <Button
               center
               color="accent"
-              disable={loading}
+              disabled={loading}
               emphasis="high"
               onPress={onSubmitEditing('password')}
               title="Sign up"

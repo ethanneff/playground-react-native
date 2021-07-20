@@ -33,18 +33,23 @@ const Section = ({
     <View
       style={{
         paddingVertical: padding(8),
-        borderBottomColor: color.surface,
+        borderBottomColor: color.border.tertiary,
         borderBottomWidth: 2,
       }}>
       <View style={{flexDirection: 'row'}}>
         <Text
-          style={{width: leftWidth, color: color.primary}}
+          color="accent"
+          style={{width: leftWidth}}
           title={String(index)}
           type="h2"
         />
         <View style={{flex: 1}}>
-          <Text title={title} type="h5" />
-          <Text title={description} type="subtitle1" />
+          <Text style={{marginBottom: padding(4)}} title={title} type="h5" />
+          <Text
+            style={{marginBottom: padding(4)}}
+            title={description}
+            type="subtitle1"
+          />
           {image && (
             <Image
               source={image}

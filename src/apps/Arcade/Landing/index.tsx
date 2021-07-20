@@ -16,8 +16,7 @@ export const Landing = memo(function Landing() {
 
   return (
     <Screen onLeftPress={onLeftPress} title="Arcade">
-      <ScrollView
-        style={{backgroundColor: color.background.primaryA.secondary}}>
+      <ScrollView style={{backgroundColor: color.background.secondary}}>
         {arcadeScreens.map(screen => (
           <Button key={screen} onPress={onPress(screen)} title={screen} />
         ))}

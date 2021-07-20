@@ -139,7 +139,7 @@ export const Archero = memo(function Archero() {
     <Screen onLeftPress={navBack} title="Archero">
       <View
         onLayout={onLayout}
-        style={{flex: 1, backgroundColor: color.background.primaryA.tertiary}}
+        style={{flex: 1, backgroundColor: color.background.tertiary}}
         {...panGesture.panHandlers}>
         <Animated.View
           style={[
@@ -147,7 +147,7 @@ export const Archero = memo(function Archero() {
             {
               width: charSize,
               height: charSize,
-              backgroundColor: color.background.primaryA.accent,
+              backgroundColor: color.background.accent,
             },
           ]}
         />

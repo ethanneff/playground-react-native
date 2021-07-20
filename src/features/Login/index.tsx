@@ -34,7 +34,7 @@ const SignInButton = memo(function SignInButton({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
-        borderColor: color.text,
+        borderColor: color.border.primaryA,
         borderWidth: 2,
         padding: padding(2),
         marginBottom: padding(2),

@@ -17,7 +17,7 @@ export const Item = memo(function Item({item, width}: Props) {
   const styles = StyleSheet.create({
     item: {
       alignItems: 'center',
-      backgroundColor: item.backgroundColor || color.background,
+      backgroundColor: item.backgroundColor || color.background.primaryA,
       justifyContent: 'center',
       padding: padding(4),
       width,

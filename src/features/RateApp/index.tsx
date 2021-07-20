@@ -1,5 +1,5 @@
 import React, {memo, useCallback, useMemo, useRef, useState} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import Rate, {AndroidMarket} from 'react-native-rate';
 import {Button, Input, Modal, Text} from '../../components';
 import {padding} from '../../utils';
@@ -16,7 +16,7 @@ const initialState: State = {
   modal: 'default',
   feedback: '',
 };
-const ratingMin = 5;
+const ratingMin = 4;
 const ratingOptions = {
   AppleAppID: '899247664',
   GooglePackageName: 'com.google.android.apps.maps', // TODO: use configs
@@ -102,15 +102,33 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
             style={styles.title}
             title="Do you mind reviewing us on the app store?"
           />
-          <Button onPress={handleReviewApp} title="Okay" />
+          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+            <Button
+              center
+              color="secondary"
+              onPress={handleComplete}
+              title="No Thanks"
+            />
+            <Button
+              center
+              color="accent"
+              onPress={handleReviewApp}
+              title="Okay"
+            />
+          </View>
         </>
       ) : form.modal === 'feedback' ? (
         <>
-          <Text center style={styles.title} title="Thank you" type="h4" />
           <Text
             center
             style={styles.title}
-            title="Can you provide us with some feedback to help us improve?"
+            title="Thank you for your rating!"
+            type="h4"
+          />
+          <Text
+            center
+            style={styles.title}
+            title="Could you provide us some additional feedback to help us improve?"
           />
           <Input
             onChangeText={handleTextChange}
@@ -118,25 +136,48 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
             placeholder="How can we improve?"
             value={form.feedback}
           />
-          <Button onPress={handleFeedbackSubmit} title="Submit" />
+          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+            <Button
+              center
+              color="secondary"
+              onPress={handleComplete}
+              title="No Thanks"
+            />
+            <Button
+              center
+              color="accent"
+              onPress={handleFeedbackSubmit}
+              title="Submit"
+            />
+          </View>
         </>
       ) : form.modal === 'thank you' ? (
         <>
-          <Text center style={styles.title} title="Thank you" type="h4" />
           <Text
             center
             style={styles.title}
-            title="We have sent your feedback to our team"
+            title="Your feedback has been submitted!"
+            type="h4"
           />
-          <Button onPress={handleComplete} title="Close" />
+          <Text
+            center
+            style={styles.title}
+            title="Our team will review your feedback in the next few days."
+          />
+          <Button
+            center
+            color="accent"
+            onPress={handleComplete}
+            title="Close"
+          />
         </>
       ) : (
         <>
+          <Text center style={styles.title} title="Hello!" type="h4" />
           <Text
             center
             style={styles.title}
-            title="How are you enjoying the app so far?"
-            type="h4"
+            title="How are your enjoying the app so far? Please tap a star to rate the app."
           />
           <Rating
             count={5}

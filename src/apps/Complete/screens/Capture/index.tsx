@@ -44,7 +44,7 @@ export const Capture = memo(function Capture() {
   return (
     <Screen onRightPress={showSearchBar} rightIcon="magnify" title="Plan">
       <KeyboardHandler
-        backgroundColor={color.surface}
+        backgroundColor={color.background.secondary}
         onLayout={onLayout('container')}>
         <List
           footer={
@@ -52,7 +52,7 @@ export const Capture = memo(function Capture() {
               <Button
                 center
                 color="accent"
-                disable={noItemChildren}
+                disabled={noItemChildren}
                 onPress={onOrganize}
                 title="Organize"
               />

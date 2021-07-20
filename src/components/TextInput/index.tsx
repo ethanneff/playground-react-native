@@ -24,6 +24,7 @@ import {
   padding,
 } from '../../utils';
 import {Icon} from '../Icon';
+import {TouchableOpacity} from '../TouchableOpacity';
 import {PointerEvents, TextContentType} from './types';
 
 type Icon = {
@@ -213,15 +214,18 @@ export const TextInput = memo(function TextInput({
               icon.hidden ||
               (focus && !icon.focus) ||
               (!focus && icon.focus) ? null : (
-                <Icon
-                  color={icon.color}
+                <TouchableOpacity
                   disabled={icon.required && text.trim().length === 0}
-                  key={`${icon.name}-focus`}
-                  name={icon.name}
-                  onPress={onIconPressInternal(icon)}
-                  padded
-                  size={iconHeight}
-                />
+                  onPress={onIconPressInternal(icon)}>
+                  <Icon
+                    color={icon.color}
+                    disabled={icon.required && text.trim().length === 0}
+                    key={`${icon.name}-focus`}
+                    name={icon.name}
+                    padded
+                    size={iconHeight}
+                  />
+                </TouchableOpacity>
               ),
             )}
           </TouchableWithoutFeedback>

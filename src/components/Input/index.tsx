@@ -88,7 +88,7 @@ export const Input = memo(function Input({
       flex: 1,
     },
     input: {
-      backgroundColor: color.background.primaryA.primaryA,
+      backgroundColor: color.background.primaryA,
       borderColor: error
         ? color.text.negative
         : focus

@@ -30,7 +30,7 @@ const Papi = memo(function PapiMemo({size}: PapiProps) {
           height: size,
           width: size,
           borderRadius: size,
-          backgroundColor: color.background.primaryA.positive,
+          backgroundColor: color.background.positive,
           ...dropShadow(5),
         },
       ]}
@@ -43,7 +43,7 @@ export const PapiJump = memo(function PapiJump() {
   const {goBack} = useNavigation();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background.primaryA.secondary,
+      backgroundColor: color.background.secondary,
       flex: 1,
     },
   });

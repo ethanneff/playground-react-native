@@ -92,7 +92,7 @@ const SwipeCard = memo(function SwipeCard({
         height: height,
         backgroundColor: color.background.primaryA,
         borderRadius: padding(1),
-        borderColor: color.brand,
+        borderColor: color.border.accent,
         ...dropShadow(4),
       }}>
       <TouchableOpacity onPress={onSwipeComplete} style={{flex: 1}}>
@@ -128,7 +128,7 @@ const SwipeCard = memo(function SwipeCard({
               style={{flex: 1, paddingTop: padding(2)}}
               title={body}
             />
-            <Text style={{color: color.primary}} title={button.toUpperCase()} />
+            <Text color="positive" title={button.toUpperCase()} />
           </View>
         </View>
       </TouchableOpacity>
@@ -236,15 +236,11 @@ const Badge = memo(function Badge({count, percent}: BadgeProps) {
           width: badgeSize,
           height: badgeSize,
           borderRadius: size,
-          backgroundColor: color.danger,
+          backgroundColor: color.background.negative,
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Text
-          adjustsFontSizeToFit
-          style={{color: color.background}}
-          title={`${count}`}
-        />
+        <Text adjustsFontSizeToFit color="primaryB" title={`${count}`} />
       </View>
     </View>
   );

@@ -9,7 +9,7 @@ const Bird = () => {
   return (
     <Animated.View
       style={{
-        backgroundColor: color.background.primaryA.negative,
+        backgroundColor: color.background.negative,
         width: 50,
         height: 50,
       }}
@@ -47,7 +47,7 @@ const Pillar = () => {
       style={[
         location.current.getLayout(),
         {
-          backgroundColor: color.background.primaryA.positive,
+          backgroundColor: color.background.positive,
           width: 50,
           height: 50,
         },
@@ -63,8 +63,7 @@ export const FlappyBird = memo(function FlappyBird() {
 
   return (
     <Screen onLeftPress={navBack} title="Flappy Bird">
-      <View
-        style={{flex: 1, backgroundColor: color.background.primaryA.secondary}}>
+      <View style={{flex: 1, backgroundColor: color.background.secondary}}>
         <Bird />
         <Pillar />
       </View>

@@ -16,7 +16,7 @@ export const Badge = memo(({badge}: Props) => {
   const styles = StyleSheet.create({
     badgeContainer: {
       alignItems: 'center',
-      backgroundColor: color.primary,
+      backgroundColor: color.background.accent,
       borderRadius: padding(5),
       height: padding(5),
       justifyContent: 'center',

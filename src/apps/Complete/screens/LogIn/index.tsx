@@ -108,7 +108,7 @@ export const LogIn = memo(function LogIn() {
       <Button
         center
         color="accent"
-        disable={!state.completeForm}
+        disabled={!state.completeForm}
         emphasis="high"
         onPress={onSubmit}
         title="Log In"

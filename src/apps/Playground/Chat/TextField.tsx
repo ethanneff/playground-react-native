@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useEffect, useRef} from 'react';
 import {Keyboard, TextInput, View} from 'react-native';
 import {v4} from 'uuid';
-import {Icon, Input} from '../../../components';
+import {Icon, Input, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
 import {padding, useRootDispatch, useRootSelector} from '../../../utils';
 import {
@@ -61,16 +61,17 @@ export const TextField = memo(function TextField() {
         removeError
         value={textField}
       />
-      <Icon
-        color={submittable ? color.primary : color.secondary}
-        disabled={!submittable}
-        name="send"
-        onPress={onSubmit}
-        style={{
-          paddingLeft: padding(2),
-          justifyContent: 'center',
-        }}
-      />
+      <TouchableOpacity disabled={!submittable} onPress={onSubmit}>
+        <Icon
+          color={submittable ? color.text.accent : color.text.primaryA}
+          disabled={!submittable}
+          name="send"
+          style={{
+            paddingLeft: padding(2),
+            justifyContent: 'center',
+          }}
+        />
+      </TouchableOpacity>
     </View>
   );
 });

@@ -20,22 +20,22 @@ export const Lap = memo(function Lap({
   const color = useColor();
   const styles = StyleSheet.create({
     fastest: {
-      color: color.success,
+      color: color.text.positive,
     },
     lap: {
-      borderColor: color.secondary,
+      borderColor: color.border.secondary,
       borderTopWidth: 1,
       flexDirection: 'row',
       justifyContent: 'space-between',
       paddingVertical: 10,
     },
     lapText: {
-      color: color.background,
+      color: color.text.primaryB,
       fontFamily: 'Courier',
       fontSize: 18,
     },
     slowest: {
-      color: color.danger,
+      color: color.text.negative,
     },
   });
   const lapStyle = [
