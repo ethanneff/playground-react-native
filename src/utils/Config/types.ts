@@ -103,7 +103,7 @@ type MonoChrome = {
   tertiary: string;
 };
 
-type MultiColored = {
+export type MultiColored = {
   accent: string;
   negative: string;
   warning: string;

@@ -4,6 +4,7 @@ import {Screen} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {ButtonGroup} from './ButtonGroup';
 import {FontGroup} from './FontGroup';
+import {TagGroup} from './TagGroup';
 import {ThemeGroup} from './ThemeGroup';
 import {Title} from './Title';
 
@@ -30,6 +31,8 @@ export const Colors = memo(function DebugColors() {
           <ButtonGroup emphasis="medium" />
           <ButtonGroup emphasis="low" />
         </View>
+        <Title title="Tags" />
+        <TagGroup />
         <Title title="Fonts" />
         <View style={{flexDirection: 'row'}}>
           <FontGroup emphasis="none" />

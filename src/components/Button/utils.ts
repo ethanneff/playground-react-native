@@ -8,13 +8,13 @@ export const getButtonColor = (
   color: keyof MonoMultiColor,
 ): string => colorScheme.background[color];
 
-interface StyleInterface {
+type StyleInterface = {
   colorScheme: ColorTheme;
   color: keyof MonoMultiColor;
   emphasis: ButtonEmphasis;
   noPadding?: boolean;
   disabled?: boolean;
-}
+};
 
 export const getStyles = ({
   colorScheme,
@@ -22,26 +22,41 @@ export const getStyles = ({
   emphasis,
   noPadding,
   disabled,
-}: StyleInterface): any =>
-  StyleSheet.create({
+}: StyleInterface): any => {
+  const backgroundColor =
+    disabled && emphasis === 'high'
+      ? colorScheme.background.disabled
+      : emphasis === 'high'
+      ? colorScheme.background[color]
+      : emphasis === 'medium'
+      ? colorScheme.background.primaryA
+      : 'transparent';
+
+  const borderColor =
+    disabled && emphasis === 'medium'
+      ? colorScheme.border.disabled
+      : emphasis === 'medium'
+      ? colorScheme.border[color]
+      : 'transparent';
+
+  const textColor = disabled
+    ? colorScheme.text.disabled
+    : emphasis === 'high' &&
+      ['primaryA', 'secondary', 'tertiary'].some(c => c === color)
+    ? colorScheme.text.primaryA
+    : emphasis !== 'high' && ['primaryB'].some(c => c === color)
+    ? colorScheme.text.primaryA
+    : emphasis === 'high'
+    ? colorScheme.text.primaryB
+    : colorScheme.text[color];
+
+  return StyleSheet.create({
     center: {
       justifyContent: 'center',
     },
     container: {
-      backgroundColor:
-        disabled && emphasis === 'high'
-          ? colorScheme.background.disabled
-          : emphasis === 'high'
-          ? colorScheme.background[color]
-          : emphasis === 'medium'
-          ? colorScheme.background.primaryA
-          : 'transparent',
-      borderColor:
-        disabled && emphasis === 'medium'
-          ? colorScheme.border.disabled
-          : emphasis === 'medium'
-          ? colorScheme.border[color]
-          : 'transparent',
+      backgroundColor,
+      borderColor,
       borderRadius: padding(1),
       borderWidth: 1,
       flexDirection: 'row',
@@ -55,15 +70,7 @@ export const getStyles = ({
       alignSelf: 'flex-end',
     },
     text: {
-      color: disabled
-        ? colorScheme.text.disabled
-        : emphasis === 'high' &&
-          ['primaryA', 'secondary', 'tertiary'].some(c => c === color)
-        ? colorScheme.text.primaryA
-        : emphasis !== 'high' && ['primaryB'].some(c => c === color)
-        ? colorScheme.text.primaryA
-        : emphasis === 'high'
-        ? colorScheme.text.primaryB
-        : colorScheme.text[color],
+      color: textColor,
     },
   });
+};
