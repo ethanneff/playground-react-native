@@ -112,7 +112,7 @@ export const ReminderExample = memo(function PlaygroundReminder() {
   return (
     <>
       <Screen dropShadow onLeftPress={navBack} title="Reminder">
-        <ScrollView style={{backgroundColor: color.surface}}>
+        <ScrollView style={{backgroundColor: color.background.secondary}}>
           <Text center emphasis="low" title="Modals" type="h4" />
           <Button
             center

@@ -91,7 +91,7 @@ export const Startup = memo(function PlaygroundStartup() {
         contentContainerStyle={{
           padding: padding(4),
         }}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Text center title={dayjs().format('MMM DD, YYYY')} type="h4" />
         <Section title="Launch">
           <Text title="Are you launched?" />

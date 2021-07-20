@@ -61,7 +61,7 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
 
   const color = useColor();
   const styles = StyleSheet.create({
-    container: {backgroundColor: color.surface},
+    container: {backgroundColor: color.background.secondary},
   });
 
   const width = 6;

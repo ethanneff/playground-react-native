@@ -1,8 +1,9 @@
 import React, {memo} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {useColor} from '../../hooks';
 import {padding} from '../../utils';
 import {Icon} from '../Icon';
+import {TouchableOpacity} from '../TouchableOpacity';
 
 interface Props {
   icon?: string;
@@ -23,16 +24,15 @@ export const NavButton = memo(function NavButton({
     buttonRight: {alignSelf: 'flex-end'},
   });
   return (
-    <View style={styles.button}>
+    <TouchableOpacity onPress={onPress} style={styles.button}>
       <Icon
         color={color.text.secondary}
         hidden={!onPress}
         name={icon}
-        onPress={onPress}
         size={padding(8)}
         style={isRight && styles.buttonRight}
         testID={testID}
       />
-    </View>
+    </TouchableOpacity>
   );
 });

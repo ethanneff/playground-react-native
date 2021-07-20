@@ -13,7 +13,7 @@ export const Account = memo(function Account() {
     <Screen onLeftPress={navBack} title="Account">
       <ScrollView
         contentContainerStyle={{padding: padding(4)}}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Card>
           <Text
             center

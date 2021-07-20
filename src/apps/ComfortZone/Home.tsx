@@ -181,7 +181,7 @@ export const Home = memo(function Home() {
         contentContainerStyle={{
           padding: padding(4),
         }}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Card>
           <Text
             center

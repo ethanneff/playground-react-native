@@ -18,7 +18,10 @@ export const ForgotPassword = memo(function PortfolioForgotPassword() {
   return (
     <Screen dropShadow onLeftPress={navLogin} title="Forgot Password">
       <ScrollView
-        style={{padding: padding(4), backgroundColor: color.surface}}>
+        style={{
+          padding: padding(4),
+          backgroundColor: color.background.secondary,
+        }}>
         <Input
           onChangeText={handleEmail}
           placeholder="example@gmail.com"

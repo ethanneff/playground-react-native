@@ -18,7 +18,7 @@ export const Home = memo(function ActivityTracker() {
   const {onLeftPress} = useAdminNavBack();
   const styles = StyleSheet.create({
     background: {
-      backgroundColor: color.surface,
+      backgroundColor: color.background.secondary,
     },
     container: {
       paddingHorizontal: padding(4),

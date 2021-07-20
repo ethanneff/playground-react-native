@@ -24,7 +24,10 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
   return (
     <Screen dropShadow onLeftPress={navBack} title="Game of life">
       <ScrollView
-        style={{backgroundColor: color.surface, padding: padding(4)}}>
+        style={{
+          backgroundColor: color.background.secondary,
+          padding: padding(4),
+        }}>
         {loading ? (
           <Text center emphasis="medium" title="loading..." type="h5" />
         ) : (

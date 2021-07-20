@@ -50,7 +50,7 @@ export const TextField = memo(function TextField() {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: color.background,
+        backgroundColor: color.background.primaryA,
       }}>
       <Input
         flex

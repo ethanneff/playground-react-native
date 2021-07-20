@@ -25,7 +25,7 @@ export const Item = memo(function ChatMessage({item, marginBottom}: Props) {
         borderRadius: padding(4),
         flexDirection: 'row',
         marginBottom: marginBottom ? padding(6) : 0,
-        backgroundColor: color.background,
+        backgroundColor: color.background.primaryA,
       }}>
       <View style={{width: 40}}>
         <Image
@@ -41,11 +41,7 @@ export const Item = memo(function ChatMessage({item, marginBottom}: Props) {
       </View>
       <View style={{flex: 1}}>
         <View style={{flexDirection: 'row'}}>
-          <Text
-            bold
-            style={{paddingRight: padding(2)}}
-            title={item.userId}
-          />
+          <Text bold style={{paddingRight: padding(2)}} title={item.userId} />
           <RelativeDate date={item.createdAt} />
         </View>
         <Text

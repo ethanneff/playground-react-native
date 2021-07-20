@@ -13,7 +13,10 @@ export const Home = memo(function PortfolioHome() {
   return (
     <Screen dropShadow onLeftPress={onLeftPress} title="Home">
       <ScrollView
-        style={{padding: padding(4), backgroundColor: color.surface}}>
+        style={{
+          padding: padding(4),
+          backgroundColor: color.background.secondary,
+        }}>
         <Button center onPress={navTo('login')} title="logout" />
         <Button center onPress={navTo('settings')} title="settings" />
         <Button center onPress={navTo('notFound')} title="not found" />

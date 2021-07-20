@@ -10,7 +10,7 @@ export const Template = memo(function PlaygroundTemplate() {
   const navBack = useCallback(() => goBack(), [goBack]);
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
     },
   });
   return (

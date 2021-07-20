@@ -49,7 +49,7 @@ export const Home = memo(function Home() {
           paddingHorizontal: padding(4),
           paddingVertical: padding(2),
         }}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Card>
           <Text
             center

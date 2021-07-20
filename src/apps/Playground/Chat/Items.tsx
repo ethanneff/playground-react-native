@@ -28,7 +28,7 @@ export const Items = memo(function ChatMessageItems() {
       keyboardShouldPersistTaps="handled"
       ref={itemsRef}
       renderItem={renderItem}
-      style={{backgroundColor: color.surface}}
+      style={{backgroundColor: color.background.secondary}}
     />
   );
 });

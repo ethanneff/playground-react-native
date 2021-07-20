@@ -19,7 +19,7 @@ export const ActivityIndicator = memo(function ActivityIndicator({
   const color = useColor();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
       flex: 1,
       justifyContent: 'center',
     },

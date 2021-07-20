@@ -102,7 +102,7 @@ export const AppleMask = memo(function AppleMask() {
       <ScrollView
         style={{
           paddingHorizontal: padding(4),
-          backgroundColor: color.surface,
+          backgroundColor: color.background.secondary,
         }}>
         <Text title="Assemble and adjust your Face Shield" type="h2" />
         <Text

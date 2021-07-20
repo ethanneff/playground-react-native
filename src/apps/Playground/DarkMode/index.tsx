@@ -8,7 +8,6 @@ import {useColor} from '../../../hooks';
 import {
   changeTheme,
   ColorTheme,
-  colorThemes,
   getLandscapeOrientation,
 } from '../../../models';
 import {padding, useRootDispatch, useRootSelector} from '../../../utils';
@@ -78,7 +77,8 @@ export const DarkMode = memo(function DarkMode() {
   const dispatch = useRootDispatch();
   const color = useColor();
   const {goBack} = useNavigation();
-  const currentTheme = useRootSelector(state => state.theme.currentColor);
+  const themes = useRootSelector(state => state.theme.themes);
+  const currentTheme = useRootSelector(state => state.theme.currentTheme);
   const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
   const [elevation, setElevation] = useState(2);
   const handleSlider = useCallback((value: number) => setElevation(value), []);
@@ -126,7 +126,7 @@ export const DarkMode = memo(function DarkMode() {
   const navBack = useCallback(() => goBack(), [goBack]);
   return (
     <Screen dropShadow onLeftPress={navBack} title="Dark mode">
-      <ScrollView style={{backgroundColor: color.surface}}>
+      <ScrollView style={{backgroundColor: color.background.primaryA}}>
         <View style={{padding: padding(4)}}>
           <View
             style={{
@@ -134,10 +134,10 @@ export const DarkMode = memo(function DarkMode() {
               alignItems: 'center',
             }}>
             <Text title="theme: " />
-            {colorThemes.map(item => (
+            {Object.keys(themes).map(item => (
               <Button
-                color={currentTheme === item ? 'primary' : 'text'}
-                emphasis="high"
+                color={currentTheme === item ? 'positive' : 'primaryA'}
+                emphasis="low"
                 key={item}
                 onPress={themePress(item)}
                 title={item}
@@ -147,7 +147,7 @@ export const DarkMode = memo(function DarkMode() {
           <Text title={`elevation: ${elevation}`} />
           <Slider
             maximumValue={10}
-            minimumTrackTintColor={color.primary}
+            minimumTrackTintColor={color.background.accent}
             minimumValue={0}
             onValueChange={handleSlider}
             step={1}

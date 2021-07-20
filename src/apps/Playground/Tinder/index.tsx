@@ -9,7 +9,7 @@ export const Tinder = memo(function PlaygroundTinder() {
   const {goBack} = useNavigation();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
     },
   });
   const navBack = useCallback(() => goBack(), [goBack]);

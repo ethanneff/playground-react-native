@@ -31,9 +31,9 @@ export const Account = memo(function Account() {
       <ScrollView
         contentContainerStyle={{
           padding: padding(4),
-          backgroundColor: color.surface,
+          backgroundColor: color.background.secondary,
         }}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Card margin="bottom">
           <Text
             emphasis="low"

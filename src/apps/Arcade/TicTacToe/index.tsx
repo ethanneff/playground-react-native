@@ -59,7 +59,7 @@ export const TicTacToe = memo(function TicTacToe() {
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: color.surface,
+          backgroundColor: color.background.secondary,
           flexDirection: landscape ? 'row' : 'column',
         }}>
         <View>
@@ -77,7 +77,7 @@ export const TicTacToe = memo(function TicTacToe() {
                     height: size,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    backgroundColor: color.background,
+                    backgroundColor: color.background.primaryA,
                     borderWidth: 2,
                     borderColor: color.surface,
                   }}>

@@ -72,7 +72,7 @@ export const Header = memo(function Header({height}: HeaderProps) {
   return (
     <View
       style={{
-        backgroundColor: color.background,
+        backgroundColor: color.background.primaryA,
         position: 'absolute',
         width: '100%',
         flexDirection: 'row',

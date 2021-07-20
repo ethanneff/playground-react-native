@@ -20,7 +20,7 @@ export const Article = memo(function PlaygroundArticle() {
         }}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Card>
           <Content sections={data} />
         </Card>

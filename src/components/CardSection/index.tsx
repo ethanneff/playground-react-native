@@ -11,7 +11,7 @@ export const CardSection = memo(({style, children}: Props) => {
   const color = useColor();
   const styles = StyleSheet.create({
     containerStyle: {
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
       borderBottomWidth: 0.5,
       borderColor: color.dark,
       flexDirection: 'row',

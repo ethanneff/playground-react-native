@@ -11,7 +11,7 @@ export const Fonts = memo(function PlaygroundFonts() {
 
   return (
     <Screen dropShadow onLeftPress={navBack} title="Fonts">
-      <ScrollView style={{backgroundColor: color.surface}}>
+      <ScrollView style={{backgroundColor: color.background.secondary}}>
         <Text
           title="H1: The quick brown fox jumps over the lazy dog."
           type="h1"

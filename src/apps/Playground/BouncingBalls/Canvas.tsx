@@ -1,4 +1,4 @@
-import React, {ReactNode, memo} from 'react';
+import React, {memo, ReactNode} from 'react';
 import {LayoutChangeEvent, StyleSheet, View} from 'react-native';
 import {useColor} from '../../../hooks';
 
@@ -18,7 +18,7 @@ export const Canvas = memo(function Canvas({children, onLayout}: Props) {
   const color = useColor();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.surface,
+      backgroundColor: color.background.secondary,
       flex: 1,
     },
   });

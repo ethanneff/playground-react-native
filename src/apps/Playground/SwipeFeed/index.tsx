@@ -90,7 +90,7 @@ const SwipeCard = memo(function SwipeCard({
         width: '100%',
         left: position.x,
         height: height,
-        backgroundColor: color.background,
+        backgroundColor: color.background.primaryA,
         borderRadius: padding(1),
         borderColor: color.brand,
         ...dropShadow(4),
@@ -314,7 +314,10 @@ export const SwipeFeed = memo(function SwipeFeed() {
   return (
     <Screen dropShadow onLeftPress={navBack} title="Swipe Feed">
       <ScrollView
-        style={{padding: padding(4), backgroundColor: color.surface}}>
+        style={{
+          padding: padding(4),
+          backgroundColor: color.background.secondary,
+        }}>
         <ImagePlaceholder />
         <ImagePlaceholder />
         <SwipeCards items={initialItems} />

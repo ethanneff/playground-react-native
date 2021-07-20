@@ -12,7 +12,10 @@ export const NotFound = memo(function PortfolioNotFound() {
   return (
     <Screen dropShadow title="404 :(">
       <ScrollView
-        style={{padding: padding(4), backgroundColor: color.surface}}>
+        style={{
+          padding: padding(4),
+          backgroundColor: color.background.secondary,
+        }}>
         <Button center onPress={navBack} title="go back" />
       </ScrollView>
     </Screen>

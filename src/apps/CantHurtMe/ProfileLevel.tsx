@@ -26,7 +26,7 @@ export const ProfileLevel = ({onPress}: Props): JSX.Element => {
     },
     levelContainer: {
       alignItems: 'center',
-      backgroundColor: color.background.primaryA,
+      backgroundColor: color.background.primaryA.primaryA,
       borderColor: color.border.primaryA,
       borderRadius: padding(20),
       borderWidth: 1,
@@ -40,14 +40,14 @@ export const ProfileLevel = ({onPress}: Props): JSX.Element => {
       zIndex: 2,
     },
     progressBar: {
-      backgroundColor: color.background.positive,
+      backgroundColor: color.background.primaryA.positive,
       borderBottomLeftRadius: 0,
       borderRadius: padding(20),
       borderTopLeftRadius: 0,
       height: '100%',
     },
     progressContainer: {
-      backgroundColor: color.background.primaryA,
+      backgroundColor: color.background.primaryA.primaryA,
       borderBottomLeftRadius: 0,
       borderColor: color.border.primaryA,
       borderRadius: padding(20),

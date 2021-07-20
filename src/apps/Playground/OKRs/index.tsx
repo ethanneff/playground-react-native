@@ -13,7 +13,7 @@ export const OKRs = memo(function PlaygroundOKRs() {
     <Screen dropShadow onLeftPress={navBack} title="OKRs">
       <ScrollView
         contentContainerStyle={{padding: padding(4)}}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Card>
           <Text title="Company" type="h6" />
           <Card>

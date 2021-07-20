@@ -33,7 +33,7 @@ export const Login = memo(function Login() {
       <KeyboardAwareScrollView
         keyboardShouldPersistTaps="handled"
         style={{
-          backgroundColor: color.background.tertiary,
+          backgroundColor: color.background.secondary,
           padding: padding(4),
         }}>
         <Text center title="border" type="h3" />
@@ -91,7 +91,7 @@ export const Login = memo(function Login() {
         />
         <Button
           center
-          color="primary"
+          color="accent"
           emphasis="high"
           onPress={handleSubmit}
           title="complete form"

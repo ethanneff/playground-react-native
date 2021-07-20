@@ -57,7 +57,7 @@ export const Drag = memo(function PlaygroundDrag() {
       ...dropShadow(10),
     },
     canvas: {
-      backgroundColor: color.surface,
+      backgroundColor: color.background.secondary,
       flex: 1,
     },
   });

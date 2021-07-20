@@ -139,7 +139,7 @@ export const Archero = memo(function Archero() {
     <Screen onLeftPress={navBack} title="Archero">
       <View
         onLayout={onLayout}
-        style={{flex: 1, backgroundColor: color.success}}
+        style={{flex: 1, backgroundColor: color.background.primaryA.tertiary}}
         {...panGesture.panHandlers}>
         <Animated.View
           style={[
@@ -147,7 +147,7 @@ export const Archero = memo(function Archero() {
             {
               width: charSize,
               height: charSize,
-              backgroundColor: color.brand,
+              backgroundColor: color.background.primaryA.accent,
             },
           ]}
         />
@@ -160,7 +160,7 @@ export const Archero = memo(function Archero() {
               borderRadius: 500,
               width: joystickSize,
               height: joystickSize,
-              backgroundColor: color.overlay,
+              backgroundColor: color.overlay.light,
             },
           ]}>
           <View
@@ -170,7 +170,7 @@ export const Archero = memo(function Archero() {
               borderRadius: 500,
               width: thumbSize,
               height: thumbSize,
-              backgroundColor: color.overlay,
+              backgroundColor: color.overlay.light,
             }}>
             <Animated.View
               style={[
@@ -179,7 +179,10 @@ export const Archero = memo(function Archero() {
                   borderRadius: 500,
                   width: thumbSize,
                   height: thumbSize,
-                  backgroundColor: colorWithOpacity(color.brand, 0.8),
+                  backgroundColor: colorWithOpacity(
+                    color.background.accent,
+                    0.8,
+                  ),
                 },
               ]}
             />

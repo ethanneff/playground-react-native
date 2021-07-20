@@ -98,7 +98,7 @@ export const List = memo(function List({
       numColumns={columns}
       renderItem={renderItem}
       showsVerticalScrollIndicator={false}
-      style={{backgroundColor: color.background.secondary}}
+      style={{backgroundColor: color.background.primaryA.secondary}}
     />
   );
 });

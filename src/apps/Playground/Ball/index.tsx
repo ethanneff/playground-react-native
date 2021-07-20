@@ -51,7 +51,7 @@ export const Ball = memo(function PlaygroundBall() {
     <Screen
       dropShadow
       onLeftPress={navBack}
-      style={{backgroundColor: color.surface}}
+      style={{backgroundColor: color.background.secondary}}
       testID="ballScreen"
       title="Ball">
       <Animated.View

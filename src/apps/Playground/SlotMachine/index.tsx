@@ -31,7 +31,7 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
   const [state, setState] = useState(() => getInitialState());
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
     },
   });
   const navBack = useCallback(() => goBack(), [goBack]);

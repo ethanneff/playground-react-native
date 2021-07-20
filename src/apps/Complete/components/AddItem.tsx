@@ -78,7 +78,7 @@ export const AddItem = memo(function AddItem({
         width,
         height: padding(12),
         borderRadius: completeConfig.borderRadius,
-        backgroundColor: color.background,
+        backgroundColor: color.background.primaryA,
         justifyContent: 'center',
       }}>
       {showInput ? (

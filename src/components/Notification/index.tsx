@@ -32,7 +32,7 @@ export const Notification = memo(function Notification({
     flex: {flex: 1},
     modal: {
       alignItems: 'center',
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
       flexDirection: 'row',
       height,
       padding: padding(4),
@@ -40,7 +40,7 @@ export const Notification = memo(function Notification({
     },
     notification: {elevation: 2, zIndex: 2},
     notificationSafeArea: {
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
       height,
       position: 'absolute',
       width: '100%',
@@ -113,11 +113,7 @@ export const Notification = memo(function Notification({
         <View style={styles.notificationSafeArea} />
         <SafeAreaView>
           <View style={styles.modal}>
-            <Icon
-              color={color.background}
-              name="close"
-              size={padding(8)}
-            />
+            <Icon color={color.background} name="close" size={padding(8)} />
             <Text center style={styles.flex} title={title} type="h4" />
             <Icon name="close" onPress={onCancel} size={padding(8)} />
           </View>

@@ -99,7 +99,7 @@ export const ListItem = memo(function ListItem({
         flex: 1,
         borderRadius: completeConfig.borderRadius,
         margin: completeConfig.padding / 2,
-        backgroundColor: color.surface,
+        backgroundColor: color.background.secondary,
         flexDirection: 'row',
       }}>
       <TextInput

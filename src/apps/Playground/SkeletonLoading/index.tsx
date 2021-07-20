@@ -134,7 +134,7 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
     <Screen dropShadow onLeftPress={navBack} title="Skeleton Loading">
       <ScrollView
         contentContainerStyle={{padding: padding(4)}}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         {loading ? (
           <View>
             <LoadingProfile />

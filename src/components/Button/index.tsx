@@ -49,7 +49,7 @@ export const Button = memo(function Button({
   hidden,
   invisible,
   testID,
-  emphasis = 'high',
+  emphasis = 'low',
   lowercase,
   onPress,
   color = 'primaryA',

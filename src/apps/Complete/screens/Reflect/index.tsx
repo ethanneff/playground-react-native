@@ -44,9 +44,9 @@ export const Reflect = memo(function Reflect() {
       <ScrollView
         contentContainerStyle={{
           padding: padding(4),
-          backgroundColor: color.surface,
+          backgroundColor: color.background.secondary,
         }}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Card margin="bottom">
           <View>
             <Title name="Purpose" />

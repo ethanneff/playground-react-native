@@ -80,7 +80,7 @@ export const Home = memo(function Home() {
           paddingHorizontal: padding(4),
           paddingVertical: padding(2),
         }}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Section
           description="What’s the thing that gets you up in the morning and keeps you going when you’re tired and worn down - why you’re excited with your life?"
           subtitle="Your Life Missioxn"

@@ -14,7 +14,7 @@ export const PinchSpread = memo(function PinchSpread() {
   const color = useColor();
   const {goBack} = useNavigation();
   const styles = StyleSheet.create({
-    container: {backgroundColor: color.surface, flex: 1},
+    container: {backgroundColor: color.background.secondary, flex: 1},
   });
   const gestureHandler = new GestureHandler({minTouches});
   const panGesture = PanResponder.create({

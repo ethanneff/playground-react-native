@@ -1,4 +1,4 @@
-import React, {ReactNode, memo} from 'react';
+import React, {memo, ReactNode} from 'react';
 import {LayoutChangeEvent, View} from 'react-native';
 import {useColor} from '../../../hooks';
 
@@ -10,7 +10,9 @@ interface Props {
 export const Canvas = memo(function Canvas({children, onLayout}: Props) {
   const color = useColor();
   return (
-    <View onLayout={onLayout} style={{flex: 1, backgroundColor: color.surface}}>
+    <View
+      onLayout={onLayout}
+      style={{flex: 1, backgroundColor: color.background.secondary}}>
       {children}
     </View>
   );

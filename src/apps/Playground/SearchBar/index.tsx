@@ -73,7 +73,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     },
     textContainer: {
       alignItems: 'center',
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
       flexDirection: 'row',
       height: '100%',
       padding: padding(2),

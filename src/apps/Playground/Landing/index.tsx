@@ -29,7 +29,7 @@ export const Landing = memo(function Playground() {
         keyExtractor={keyExtractor}
         keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
-        style={{backgroundColor: color.surface}}
+        style={{backgroundColor: color.background.secondary}}
       />
     </Screen>
   );

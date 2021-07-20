@@ -23,7 +23,10 @@ export const Login = memo(function PortfolioLogin() {
   return (
     <Screen dropShadow onLeftPress={navBack} title="Login">
       <ScrollView
-        style={{padding: padding(4), backgroundColor: color.surface}}>
+        style={{
+          padding: padding(4),
+          backgroundColor: color.background.secondary,
+        }}>
         <Input
           onChangeText={handleEmail}
           placeholder="example@gmail.com"
