@@ -21,6 +21,7 @@ export * from './Sentence';
 export * from './SkeletonLoader';
 export * from './Slider';
 export * from './Swipe';
+export * from './Tag';
 export * from './Text';
 export * from './TextInput';
 export * from './TouchableOpacity';
