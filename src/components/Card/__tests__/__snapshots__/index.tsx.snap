@@ -297,7 +297,7 @@ exports[`card renders correctly 1`] = `
                             "borderWidth": 1,
                             "elevation": 2,
                             "marginVertical": 8,
-                            "shadowColor": "hsl(0,0%,0%)",
+                            "shadowColor": "black",
                             "shadowOffset": Object {
                               "height": 2,
                               "width": 0,
@@ -651,7 +651,7 @@ exports[`card renders correctly with onPress 1`] = `
                             "elevation": 2,
                             "marginVertical": 8,
                             "opacity": 1,
-                            "shadowColor": "hsl(0,0%,0%)",
+                            "shadowColor": "black",
                             "shadowOffset": Object {
                               "height": 2,
                               "width": 0,
