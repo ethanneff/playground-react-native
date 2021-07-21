@@ -41,59 +41,55 @@ export const ItemDetail = memo(function ItemDetail() {
       <Modal
         backgroundColor={color.background.secondary}
         onBackgroundPress={goBack}>
-        {!item ? (
-          <Text title="missing item" />
-        ) : (
-          <View>
-            <ItemEdit
-              description={item.description}
-              onSubmit={onItemSubmit}
-              placeholder="Item"
-              title={item.title}
-              titleEditable={item.editable}
-            />
-            <Card margin="bottom">
-              <Text title="Reminders" />
+        <View>
+          <ItemEdit
+            description={item.description}
+            onSubmit={onItemSubmit}
+            placeholder="Item"
+            title={item.title}
+            titleEditable={item.editable}
+          />
+          <Card margin="bottom">
+            <Text title="Reminders" />
+          </Card>
+          <Card margin="bottom">
+            <Text title="Tags" />
+          </Card>
+          <Card margin="bottom">
+            <Text title="Comments" />
+          </Card>
+          <ItemContext
+            createdAt={item.createdAt}
+            type={item.type}
+            updatedAt={item.updatedAt}
+            userId={item.userId}
+          />
+          {!item.editable ? (
+            <Card flex>
+              <Button center onPress={goBack} title="close" />
             </Card>
-            <Card margin="bottom">
-              <Text title="Tags" />
-            </Card>
-            <Card margin="bottom">
-              <Text title="Comments" />
-            </Card>
-            <ItemContext
-              createdAt={item.createdAt}
-              type={item.type}
-              updatedAt={item.updatedAt}
-              userId={item.userId}
-            />
-            {!item.editable ? (
+          ) : (
+            <View
+              style={{
+                flexDirection: 'row',
+                flex: 1,
+                justifyContent: 'space-between',
+              }}>
               <Card flex>
                 <Button center onPress={goBack} title="close" />
               </Card>
-            ) : (
-              <View
-                style={{
-                  flexDirection: 'row',
-                  flex: 1,
-                  justifyContent: 'space-between',
-                }}>
-                <Card flex>
-                  <Button center onPress={goBack} title="close" />
-                </Card>
-                <View style={{padding: padding(2)}} />
-                <Card flex>
-                  <Button
-                    center
-                    color="negative"
-                    onPress={onDeletePress}
-                    title="delete"
-                  />
-                </Card>
-              </View>
-            )}
-          </View>
-        )}
+              <View style={{padding: padding(2)}} />
+              <Card flex>
+                <Button
+                  center
+                  color="negative"
+                  onPress={onDeletePress}
+                  title="delete"
+                />
+              </Card>
+            </View>
+          )}
+        </View>
       </Modal>
       {!deleteModal ? null : (
         <DeleteModal onCancel={onDeleteClose} onDelete={onItemDelete} />
