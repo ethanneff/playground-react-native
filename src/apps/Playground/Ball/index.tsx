@@ -44,12 +44,11 @@ export const Ball = memo(function PlaygroundBall() {
     () => animate(Math.random(), Math.random()),
     [animate],
   );
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen
       dropShadow
-      onLeftPress={navBack}
+      onLeftPress={goBack}
       style={{backgroundColor: color.background.secondary}}
       testID="ballScreen"
       title="Ball">

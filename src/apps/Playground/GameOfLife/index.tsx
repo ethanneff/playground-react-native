@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useEffect, useState} from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import {ScrollView, View} from 'react-native';
 import {Screen, Text} from '../../../components';
 import {useColor} from '../../../hooks';
@@ -14,7 +14,6 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
   const [loading, setLoading] = useState(true);
   const dispatch = useRootDispatch();
   const {goBack} = useNavigation();
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   useEffect(() => {
     dispatch(resetBoard(0.5));
@@ -22,7 +21,7 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
   }, [dispatch]);
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Game of life">
+    <Screen dropShadow onLeftPress={goBack} title="Game of life">
       <ScrollView
         style={{
           backgroundColor: color.background.secondary,

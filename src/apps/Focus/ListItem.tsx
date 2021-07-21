@@ -20,7 +20,7 @@ export const ListItem = memo(function ListItem({
 }: Props) {
   const color = useColor();
   const future = item.id > Date.now();
-  const iconColor = future ? color.text.tertiary : color.text.positive;
+  const iconColor = future ? 'tertiary' : 'positive';
   const title = currentItem ? 'current' : future ? 'future' : item.title;
   const {navigate} = useNavigation<HomeScreenNavigationProp>();
 

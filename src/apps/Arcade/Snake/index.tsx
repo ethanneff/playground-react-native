@@ -61,11 +61,10 @@ export const Snake = memo(function Snake() {
       stop();
     }
   }, [game.state, start, stop, direction]);
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <>
-      <Screen onLeftPress={navBack} title="Snake">
+      <Screen onLeftPress={goBack} title="Snake">
         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
           <Button onPress={onStart} title="start" />
           <Button onPress={onStop} title="stop" />

@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {Platform, StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
 import {useColor, useDropShadow} from '../../hooks';
-import {padding} from '../../utils';
+import {MonoMultiColor, padding} from '../../utils';
 import {Badge} from './Badge';
 import {Source} from './Source';
 
@@ -21,8 +21,8 @@ type Props = {
   invisible?: boolean;
   padded?: boolean;
   size?: number;
-  color?: string; // TODO: pass color
-  backgroundColor?: string; // TODO: pass color
+  color?: keyof MonoMultiColor;
+  backgroundColor?: keyof MonoMultiColor;
   name?: string;
   testID?: string;
   disabled?: boolean;
@@ -46,7 +46,9 @@ export const Icon = memo(function Icon({
   testID,
 }: Props) {
   const colors = useColor();
-  const bgColor = backgroundColor ? backgroundColor : colors.text.accent;
+  const bgColor = backgroundColor
+    ? colors.background[backgroundColor]
+    : colors.text.accent;
   const dropShadow = useDropShadow();
   const styles = StyleSheet.create({
     fab: {
@@ -79,7 +81,7 @@ export const Icon = memo(function Icon({
     : clear
     ? colors.text.primaryB
     : color
-    ? color
+    ? colors.text[color]
     : colors.text.secondary;
   const containerStyles = [
     Platform.OS === 'web' ? styles.web : undefined,

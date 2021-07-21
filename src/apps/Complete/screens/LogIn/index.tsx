@@ -21,7 +21,7 @@ export const LogIn = memo(function LogIn() {
   const [state, setState] = useState(initialState);
   const {goBack, navigate} =
     useNavigation<StackNavigationProp<LandingStackParams>>();
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
   const onSecondary = useCallback(() => navigate('password-reset'), [navigate]);
   const emailRef = useRef<OriginalTextInput | null>(null);
@@ -71,7 +71,7 @@ export const LogIn = memo(function LogIn() {
     <Modal
       backgroundColor={color.background.secondary}
       onBackgroundPress={navWelcome}>
-      <ModalHeader onRightPress={navBack} title="Log in" />
+      <ModalHeader onRightPress={goBack} title="Log in" />
       <TextInput
         autoCorrect={false}
         blurOnSubmit={false}

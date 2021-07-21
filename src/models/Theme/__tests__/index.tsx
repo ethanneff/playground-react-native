@@ -13,7 +13,7 @@ describe('theme', () => {
     expect.hasAssertions();
     store.dispatch(changeTheme('dark'));
     expect(getCurrentTheme(store.getState())).toMatchObject({
-      primary: 'hsl(263, 84%, 75%)',
+      statusBar: 'light-content',
     });
   });
 
@@ -21,7 +21,7 @@ describe('theme', () => {
     expect.hasAssertions();
     store.dispatch(changeTheme('light'));
     expect(getCurrentTheme(store.getState())).toMatchObject({
-      primary: 'hsl(211, 100%, 50%)',
+      statusBar: 'dark-content',
     });
   });
 
@@ -33,7 +33,7 @@ describe('theme', () => {
         payload,
         type: getType(changeTheme),
       }),
-    ).toMatchObject({currentColor: payload});
+    ).toMatchObject({currentTheme: payload});
   });
 
   it('logout', () => {

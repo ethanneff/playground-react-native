@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
+import React, {memo} from 'react';
 import {Calendar, Card, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useColor} from '../../hooks';
@@ -8,9 +8,9 @@ import {padding} from '../../utils';
 export const Account = memo(function Account() {
   const {goBack} = useNavigation();
   const color = useColor();
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   return (
-    <Screen onLeftPress={navBack} title="Account">
+    <Screen onLeftPress={goBack} title="Account">
       <ScrollView
         contentContainerStyle={{padding: padding(4)}}
         style={{backgroundColor: color.background.secondary}}>

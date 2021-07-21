@@ -29,9 +29,8 @@ export const Settings = memo(function PortfolioSettings() {
   const renderHeader = useCallback(() => <Button disabled title="Theme" />, []);
   const keyExtractor = useCallback(item => item, []);
 
-  const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Settings">
+    <Screen dropShadow onLeftPress={goBack} title="Settings">
       <FlatList
         ListHeaderComponent={renderHeader}
         data={themes}

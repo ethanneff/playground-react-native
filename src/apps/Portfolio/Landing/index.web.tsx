@@ -127,7 +127,7 @@ const AppIcon = memo(function AppIcon({onPress, type}: AppIconProps) {
         paddingHorizontal: padding(4),
       }}>
       <Icon
-        color={color.background.primaryA}
+        color="primaryA"
         name={type}
         style={{width: iconSize, height: iconSize, alignSelf: 'center'}}
       />

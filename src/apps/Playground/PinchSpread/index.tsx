@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
+import React, {memo, useState} from 'react';
 import {Animated, PanResponder, StyleSheet, View} from 'react-native';
 import {Screen, Text} from '../../../components';
 import {useColor} from '../../../hooks';
@@ -29,10 +29,9 @@ export const PinchSpread = memo(function PinchSpread() {
         setState(prev => ({...prev, pinchCount: prev.pinchCount++}));
     },
   });
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Pinch Spread">
+    <Screen dropShadow onLeftPress={goBack} title="Pinch Spread">
       <Animated.View style={styles.container} {...panGesture.panHandlers} />
       <View style={{padding: padding(2)}}>
         <Text center title={title} />

@@ -8,7 +8,6 @@ export const Landing = memo(function PortfolioLanding() {
   const {navigate, goBack} = useNavigation();
   const color = useColor();
   const navPortfolioLogin = useCallback(() => navigate('login'), [navigate]);
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   const slides: Slide[] = [
     {id: '1', title: 'hello', backgroundColor: color.background.accent},
@@ -18,7 +17,7 @@ export const Landing = memo(function PortfolioLanding() {
   ];
 
   return (
-    <Screen onLeftPress={navBack} title="Landing">
+    <Screen onLeftPress={goBack} title="Landing">
       <Carousel slides={slides} />
       <Button center onPress={navPortfolioLogin} title="Login" />
     </Screen>

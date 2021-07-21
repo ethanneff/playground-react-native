@@ -7,7 +7,6 @@ import {
   Text,
   TouchableOpacity,
 } from '../../../../components';
-import {useColor} from '../../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {
   createQuestionnaire,
@@ -22,7 +21,6 @@ export const Questionnaires = (): JSX.Element => {
   const selected = useRootSelector(state => state.questionnaires.selected);
   const [actionSheet, setActionSheet] = useState(false);
   const dispatch = useRootDispatch();
-  const color = useColor();
   const handleLongPress = useCallback(
     (id: string) => () => dispatch(removeQuestionnaire(id)),
     [dispatch],
@@ -80,7 +78,7 @@ export const Questionnaires = (): JSX.Element => {
       />
       <TouchableOpacity onPress={handleCreate}>
         <Icon
-          color={color.background.primaryA}
+          color="primaryA"
           fab
           name="plus"
           style={{

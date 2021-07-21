@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
+import React, {memo} from 'react';
 import {Image, ImageSourcePropType, View} from 'react-native';
 import {Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
@@ -101,9 +101,9 @@ export const AppleMask = memo(function AppleMask() {
 
   const color = useColor();
   const paddingHorizontal = padding(4);
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Apple Mask">
+    <Screen dropShadow onLeftPress={goBack} title="Apple Mask">
       <ScrollView
         style={{
           paddingHorizontal: padding(4),

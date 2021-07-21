@@ -9,9 +9,9 @@ export const TagGroup = memo(function TagGroup() {
   const onPress = useCallback(() => undefined, []);
   return (
     <>
-      {Object.keys(color.tags).map((c: any) =>
+      {Object.keys(color.tag).map((c: any) =>
         c === 'statusBar' ? null : (
-          <View style={{margin: padding(1)}}>
+          <View key={c} style={{margin: padding(1)}}>
             <Tag
               color={c}
               disabled={c === 'disabled'}

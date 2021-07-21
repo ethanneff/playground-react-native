@@ -32,7 +32,6 @@ export const PasswordReset = memo(function PasswordReset() {
     },
     [],
   );
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   useEffect(() => {
     if (focus) {
@@ -47,7 +46,7 @@ export const PasswordReset = memo(function PasswordReset() {
     <Modal
       backgroundColor={color.background.secondary}
       onBackgroundPress={navWelcome}>
-      <ModalHeader onRightPress={navBack} title="Password reset" />
+      <ModalHeader onRightPress={goBack} title="Password reset" />
       <Text
         center
         style={{paddingBottom: padding(4)}}

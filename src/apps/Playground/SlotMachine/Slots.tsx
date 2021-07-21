@@ -123,7 +123,6 @@ type BetProps = {
 };
 
 const Bet = memo(function Bet({onBet, disabled, multiplier}: BetProps) {
-  const color = useColor();
   return (
     <TouchableOpacity
       disabled={disabled}
@@ -134,7 +133,7 @@ const Bet = memo(function Bet({onBet, disabled, multiplier}: BetProps) {
         alignItems: 'center',
       }}>
       <Text bold emphasis="high" title={`BET X${multiplier}`} />
-      <Icon color={color.text.accent} name="lightning-bolt" />
+      <Icon color="accent" name="lightning-bolt" />
     </TouchableOpacity>
   );
 });

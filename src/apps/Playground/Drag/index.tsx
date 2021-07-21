@@ -82,10 +82,9 @@ export const Drag = memo(function PlaygroundDrag() {
     const {x, y, height, width} = event.nativeEvent.layout;
     setCanvas({x, y, height, width});
   }, []);
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Drag">
+    <Screen dropShadow onLeftPress={goBack} title="Drag">
       <View onLayout={handleCanvas} style={styles.canvas}>
         <Text
           center

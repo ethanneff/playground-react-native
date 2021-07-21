@@ -51,7 +51,7 @@ export const Home = memo(function Checklists() {
           </Card>
         </ScrollView>
         <Icon
-          color={color.text.primaryB}
+          color="primaryB"
           fab
           name="plus"
           style={{

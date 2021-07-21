@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
+import {useColor} from '../../../hooks';
+import {MonoMultiColor} from '../../../utils';
 import {CenterCircle} from './CenterCircle';
 import {CircularRing} from './CircularRing';
 import {Stickers} from './Stickers';
@@ -7,7 +9,7 @@ import {Ring} from './types';
 
 type Props = {
   rings: Ring[];
-  backgroundColor: string;
+  backgroundColor: keyof MonoMultiColor;
   strokeWidth: number;
   size: number;
   animate?: boolean;
@@ -22,9 +24,10 @@ export const AppleActivity = ({
   animate,
   speed = 0.02,
 }: Props): JSX.Element => {
+  const color = useColor();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor,
+      backgroundColor: color.background[backgroundColor],
       height: size,
       width: size,
     },

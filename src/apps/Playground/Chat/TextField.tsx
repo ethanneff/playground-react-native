@@ -63,7 +63,7 @@ export const TextField = memo(function TextField() {
       />
       <TouchableOpacity disabled={!submittable} onPress={onSubmit}>
         <Icon
-          color={submittable ? color.text.accent : color.text.primaryA}
+          color={submittable ? 'accent' : 'primaryA'}
           disabled={!submittable}
           name="send"
           style={{

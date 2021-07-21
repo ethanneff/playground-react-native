@@ -133,10 +133,8 @@ export const Archero = memo(function Archero() {
     setDimensions({width: layout.width, height: layout.height});
   }, []);
 
-  const navBack = useCallback(() => goBack(), [goBack]);
-
   return (
-    <Screen onLeftPress={navBack} title="Archero">
+    <Screen onLeftPress={goBack} title="Archero">
       <View
         onLayout={onLayout}
         style={{flex: 1, backgroundColor: color.background.tertiary}}

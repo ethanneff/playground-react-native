@@ -11,7 +11,7 @@ export default memo(function Admin() {
   const color = useColor();
 
   return (
-    <Screen dropShadow title="admin">
+    <Screen dropShadow title="Admin">
       <ScrollView
         contentContainerStyle={{paddingHorizontal: padding(4)}}
         style={{backgroundColor: color.background.secondary}}>

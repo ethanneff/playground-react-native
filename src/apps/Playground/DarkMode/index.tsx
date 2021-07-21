@@ -123,9 +123,8 @@ export const DarkMode = memo(function DarkMode() {
     [elevation, onPress],
   );
 
-  const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Dark mode">
+    <Screen dropShadow onLeftPress={goBack} title="Dark mode">
       <ScrollView style={{backgroundColor: color.background.primaryA}}>
         <View style={{padding: padding(4)}}>
           <View

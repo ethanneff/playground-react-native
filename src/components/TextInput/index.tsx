@@ -14,7 +14,6 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {TouchableWithoutFeedback} from '../../conversions';
 import {useColor} from '../../hooks';
 import {
   FontEmphasis,
@@ -27,11 +26,11 @@ import {Icon} from '../Icon';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {PointerEvents, TextContentType} from './types';
 
-type Icon = {
+export type TextInputIcon = {
   name: string;
   onPress: (text: string) => void;
   hidden?: boolean;
-  color?: string;
+  color?: keyof MonoMultiColor;
   focus?: boolean;
   required?: boolean;
   clear?: boolean;
@@ -58,7 +57,7 @@ type TextInputProps = {
   onBlur?: (text: string) => void;
   pointerEvents?: PointerEvents;
   value?: string;
-  icons?: Icon[];
+  icons?: TextInputIcon[];
   submitClear?: boolean;
   onRef?: MutableRefObject<Original | null>;
   onSubmitEditing?: (text: string) => void;
@@ -134,7 +133,7 @@ export const TextInput = memo(function TextInput({
   }, [onBlur, text]);
 
   const onIconPressInternal = useCallback(
-    (icon: Icon) => () => {
+    (icon: TextInputIcon) => () => {
       icon.onPress(text);
       if (icon.clear) setText('');
       if (icon.reset) setText(value);
@@ -150,10 +149,6 @@ export const TextInput = memo(function TextInput({
     },
     [onRef],
   );
-
-  const onIconParentPress = useCallback(e => {
-    e.preventDefault();
-  }, []);
 
   useEffect(() => {
     setText(value);
@@ -207,20 +202,18 @@ export const TextInput = memo(function TextInput({
           value={text}
         />
         {icons.length > 0 && ( // TODO: refactor to declarative
-          <TouchableWithoutFeedback
-            onPress={onIconParentPress}
-            style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row'}}>
             {icons.map(icon =>
               icon.hidden ||
               (focus && !icon.focus) ||
               (!focus && icon.focus) ? null : (
                 <TouchableOpacity
                   disabled={icon.required && text.trim().length === 0}
+                  key={`${icon.name}-focus`}
                   onPress={onIconPressInternal(icon)}>
                   <Icon
                     color={icon.color}
                     disabled={icon.required && text.trim().length === 0}
-                    key={`${icon.name}-focus`}
                     name={icon.name}
                     padded
                     size={iconHeight}
@@ -228,7 +221,7 @@ export const TextInput = memo(function TextInput({
                 </TouchableOpacity>
               ),
             )}
-          </TouchableWithoutFeedback>
+          </View>
         )}
       </View>
     </View>

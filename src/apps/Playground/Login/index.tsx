@@ -26,10 +26,9 @@ export const Login = memo(function Login() {
   const handleSubmit = useCallback(() => {
     setForm(prev => ({...prev, error: 'Invalid Email'}));
   }, []);
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Login">
+    <Screen dropShadow onLeftPress={goBack} title="Login">
       <KeyboardAwareScrollView
         keyboardShouldPersistTaps="handled"
         style={{

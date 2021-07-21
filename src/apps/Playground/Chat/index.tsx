@@ -8,7 +8,6 @@ import {TextField} from './TextField';
 
 export const Chat = memo(function PlaygroundChat() {
   const {goBack} = useNavigation();
-  const navBack = useCallback(() => goBack(), [goBack]);
   const [container, setContainer] = useState(0);
   const keyboardHeight = useRootSelector(s => s.device.keyboardHeight);
   const keyboardPadding = keyboardHeight > 0 ? padding(8) : padding(0);
@@ -19,7 +18,7 @@ export const Chat = memo(function PlaygroundChat() {
   );
 
   return (
-    <Screen onLeftPress={navBack} title="Chat">
+    <Screen onLeftPress={goBack} title="Chat">
       <KeyboardHandler onLayout={onLayout}>
         <View style={{height}}>
           <Items />

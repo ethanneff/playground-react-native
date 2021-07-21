@@ -19,10 +19,10 @@ export const Landing = memo(function Playground() {
     [navToItem],
   );
   const keyExtractor = useCallback((item: string) => item, []);
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   const color = useColor();
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Playground">
+    <Screen dropShadow onLeftPress={goBack} title="Playground">
       <FlatList
         contentContainerStyle={{paddingHorizontal: padding(4)}}
         data={screens}

@@ -1,6 +1,6 @@
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import React, {lazy, memo, Suspense, useCallback} from 'react';
+import React, {lazy, memo, Suspense} from 'react';
 import Config from 'react-native-config';
 import {
   ActivityIndicator,
@@ -27,21 +27,21 @@ const Complete = lazy(() => import('../../apps/Complete'));
 const DeepWork = lazy(() => import('../../apps/DeepWork'));
 const AlertExample = () => {
   const {goBack} = useNavigation();
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   return (
-    <Modal onBackgroundPress={navBack}>
+    <Modal onBackgroundPress={goBack}>
       <Text center title="This is a alert!" type="h4" />
-      <Button center onPress={navBack} title="Dismiss" />
+      <Button center onPress={goBack} title="Dismiss" />
     </Modal>
   );
 };
 const NotificationExample = () => {
   const {goBack} = useNavigation();
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   return (
     <Notification
-      onBackgroundPress={navBack}
-      onCancel={navBack}
+      onBackgroundPress={goBack}
+      onCancel={goBack}
       title="this is a notification!"
     />
   );

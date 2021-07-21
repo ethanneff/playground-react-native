@@ -2,7 +2,6 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {FlatList, ListRenderItem, View} from 'react-native';
 import {Button, Icon, Screen, TouchableOpacity} from '../../../../components';
-import {useColor} from '../../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {
   ChecklistItem,
@@ -14,7 +13,6 @@ import {
 
 export default memo(function Checklist() {
   const {navigate} = useNavigation();
-  const color = useColor();
   const dispatch = useRootDispatch();
   const items = useRootSelector(getCurrentActiveChecklistItemsOrderByCreatedAt);
 
@@ -37,12 +35,12 @@ export default memo(function Checklist() {
   const renderItem = useCallback<ListRenderItem<ChecklistItem>>(
     ({item}) => (
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <Icon color={color.text.positive} name="checkbox-marked-circle" />
+        <Icon color="positive" name="checkbox-marked-circle" />
         <TouchableOpacity onPress={handleRemove(item.id)}>
-          <Icon color={color.text.negative} name="close-circle" />
+          <Icon color="negative" name="close-circle" />
         </TouchableOpacity>
         <TouchableOpacity onPress={handleToggle(item.id)}>
-          <Icon color={color.text.warning} name="clock" />
+          <Icon color="warning" name="clock" />
         </TouchableOpacity>
         <Button
           color={item.completed ? 'accent' : 'primaryA'}
@@ -52,14 +50,7 @@ export default memo(function Checklist() {
         />
       </View>
     ),
-    [
-      color.text.negative,
-      color.text.positive,
-      color.text.warning,
-      handleEdit,
-      handleRemove,
-      handleToggle,
-    ],
+    [handleEdit, handleRemove, handleToggle],
   );
   const keyExtractor = useCallback(item => item.id, []);
   const navBack = useCallback(() => navigate('checklists'), [navigate]);
@@ -77,7 +68,7 @@ export default memo(function Checklist() {
         renderItem={renderItem}
       />
       <TouchableOpacity onPress={navCreate}>
-        <Icon color={color.background.primaryA} fab name="plus" right />
+        <Icon color="primaryA" fab name="plus" right />
       </TouchableOpacity>
     </Screen>
   );

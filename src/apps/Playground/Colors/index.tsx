@@ -1,4 +1,5 @@
-import React, {memo, useCallback} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Screen} from '../../../components';
 import {ScrollView} from '../../../conversions';
@@ -16,12 +17,10 @@ import {Title} from './Title';
 // keep original colors
 
 export const Colors = memo(function DebugColors() {
-  // const {goBack} = useNavigation();
-
-  const navBack = useCallback(() => undefined, []);
+  const {goBack} = useNavigation();
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Colors">
+    <Screen dropShadow onLeftPress={goBack} title="Colors">
       <ScrollView>
         <Title title="Theme" />
         <ThemeGroup />

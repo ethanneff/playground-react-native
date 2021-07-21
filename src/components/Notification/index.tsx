@@ -113,11 +113,7 @@ export const Notification = memo(function Notification({
         <View style={styles.notificationSafeArea} />
         <SafeAreaView>
           <View style={styles.modal}>
-            <Icon
-              color={color.background.primaryA}
-              name="close"
-              size={padding(8)}
-            />
+            <Icon color="primaryA" name="close" size={padding(8)} />
             <Text center style={styles.flex} title={title} type="h4" />
             <TouchableOpacity onPress={onCancel}>
               <Icon name="close" size={padding(8)} />

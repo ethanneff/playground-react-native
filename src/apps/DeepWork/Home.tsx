@@ -80,15 +80,10 @@ export const Home = memo(function Home() {
           justifyContent: 'center',
         }}>
         <TouchableOpacity onPress={onItemAdd} style={{marginRight: padding(2)}}>
-          <Icon
-            backgroundColor={color.background.secondary}
-            color={color.text.primaryA}
-            fab
-            name="plus"
-          />
+          <Icon backgroundColor="secondary" color="primaryA" fab name="plus" />
         </TouchableOpacity>
         <TouchableOpacity onPress={onItemAdd}>
-          <Icon color={color.background.primaryA} fab name="pencil" />
+          <Icon color="primaryA" fab name="pencil" />
         </TouchableOpacity>
       </View>
     </Screen>

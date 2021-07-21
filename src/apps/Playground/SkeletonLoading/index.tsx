@@ -11,7 +11,7 @@ import {LoadingSection} from './LoadingSection';
 export const SkeletonLoading = memo(function PlaygroundTemplate() {
   const {goBack} = useNavigation();
   const color = useColor();
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   const [loading, setLoading] = useState(true);
 
   const load = useCallback(() => {
@@ -31,7 +31,7 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
   }, [load]);
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Skeleton Loading">
+    <Screen dropShadow onLeftPress={goBack} title="Skeleton Loading">
       <ScrollView
         contentContainerStyle={{padding: padding(4)}}
         style={{backgroundColor: color.background.secondary}}>

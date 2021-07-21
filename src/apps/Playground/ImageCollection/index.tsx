@@ -32,10 +32,8 @@ export const ImageCollection = memo(function ImageCollection() {
     [],
   );
 
-  const navBack = useCallback(() => goBack(), [goBack]);
-
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Images">
+    <Screen dropShadow onLeftPress={goBack} title="Images">
       <FlatList
         contentContainerStyle={{backgroundColor: color.background.secondary}}
         data={data}

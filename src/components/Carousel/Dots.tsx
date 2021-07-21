@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
 import {useColor} from '../../hooks';
-import {ColorTheme, colorWithOpacity, padding} from '../../utils';
+import {padding} from '../../utils';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {Slide} from './types';
 
@@ -11,12 +11,6 @@ type DotsProps = {
   activeIndex: number;
   onDotPress: (index: number) => () => void;
 };
-
-const getBackgroundColor = (color: ColorTheme, active: boolean) =>
-  colorWithOpacity(
-    active ? color.background.primaryB : color.background.primaryA,
-    0.6,
-  );
 
 export const Dots = memo(function Dots({
   slides,
@@ -45,7 +39,10 @@ export const Dots = memo(function Dots({
               width: dotSize,
               height: dotSize,
               borderRadius: dotSize,
-              backgroundColor: getBackgroundColor(color, activeIndex === index),
+              backgroundColor:
+                activeIndex === index
+                  ? color.text.secondary
+                  : color.text.disabled,
             }}
           />
         );

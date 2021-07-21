@@ -62,12 +62,12 @@ const useTabs = () => {
     ({route}) => ({
       tabBarIcon: function tabBarIcon({focused, size}: TabBarIconProps) {
         const key = focused ? 'focused' : 'unFocused';
-        const iconColor = focused ? color.text.primaryA : color.text.tertiary;
+        const iconColor = focused ? 'primaryA' : 'tertiary';
         const name = (tabIcons as any)[route.name][key];
         return <Icon color={iconColor} name={name} size={size} />;
       },
     }),
-    [color],
+    [],
   );
 
   return {tabBarOptions, screenOptions};

@@ -36,7 +36,7 @@ export const Home = memo(function ActivityTracker() {
         <Activity site="hackerRank" title="HackerRank" username="ethanneff" />
       </ScrollView>
       <Icon
-        color={color.background.primaryA}
+        color="primaryA"
         fab
         name="plus"
         style={{

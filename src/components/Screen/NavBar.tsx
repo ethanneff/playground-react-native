@@ -64,7 +64,7 @@ export const NavBar = memo(function NavBar({
           testID="secondLeftNav"
         />
       )}
-      <Text center flex numberOfLines={1} title={title} type="h3" />
+      <Text center flex numberOfLines={1} title={title} type="h4" />
       {secondary && (
         <NavButton
           icon={secondRightIcon}

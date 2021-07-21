@@ -26,16 +26,14 @@ export const ListItems = memo(function ListItems({
   }, [list.length]);
 
   const onRenderItem: ListRenderItem<string> = useCallback(
-    ({item, index}) => {
-      return (
-        <ListItem
-          index={index}
-          itemId={item}
-          key={item}
-          parentItemId={parentItemId}
-        />
-      );
-    },
+    ({item, index}) => (
+      <ListItem
+        index={index}
+        itemId={item}
+        key={item}
+        parentItemId={parentItemId}
+      />
+    ),
     [parentItemId],
   );
 

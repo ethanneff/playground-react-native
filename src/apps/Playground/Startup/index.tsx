@@ -83,10 +83,9 @@ export const Startup = memo(function PlaygroundStartup() {
   );
 
   const handleSubmit = useCallback(() => undefined, []);
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Weekly Update">
+    <Screen dropShadow onLeftPress={goBack} title="Weekly Update">
       <ScrollView
         contentContainerStyle={{
           padding: padding(4),

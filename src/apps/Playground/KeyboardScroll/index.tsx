@@ -39,7 +39,6 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
   const {goBack} = useNavigation();
   const color = useColor();
   const [message, setMessage] = useState('');
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   const width = Dimensions.get('window').width;
   const [loading, setLoading] = useState(false);
@@ -89,7 +88,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
   }, [color.text.accent]);
 
   return (
-    <Screen onLeftPress={navBack} title="Keyboard">
+    <Screen onLeftPress={goBack} title="Keyboard">
       <KeyboardAwareScrollView
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}>

@@ -37,13 +37,11 @@ export const FortuneWheel = memo(function PlaygroundFortuneWheel() {
     setWinner(a.display);
   }, []);
 
-  const navBack = useCallback(() => goBack(), [goBack]);
-
   // TODO: fix text on android
   // TODO: increase duration based on spin
 
   return (
-    <Screen onLeftPress={navBack} title="FortuneWheel">
+    <Screen onLeftPress={goBack} title="FortuneWheel">
       <Wheel onComplete={onComplete} segments={segments} />
       <Text center title={String(winner)} />
     </Screen>

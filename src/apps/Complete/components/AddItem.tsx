@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {Keyboard, TextInput as OriginalTextInput, View} from 'react-native';
 import {v4} from 'uuid';
-import {Button, TextInput} from '../../../components';
+import {Button, TextInput, TextInputIcon} from '../../../components';
 import {useColor} from '../../../hooks';
 import {padding, useRootDispatch, useRootSelector} from '../../../utils';
 import {addItemToItem, createItem, Item} from '../models';
@@ -56,12 +56,12 @@ export const AddItem = memo(function AddItem({
   const onClose = useCallback(() => setShowInput(false), []);
   const onBlur = useCallback(() => setShowInput(false), []);
 
-  const icons = [
+  const icons: TextInputIcon[] = [
     {name: 'close', onPress: onClose, focus: true, reset: true},
     {
       name: 'send',
       onPress: onSubmit,
-      color: color.background.accent,
+      color: 'accent',
       focus: true,
       required: true,
       clear: true,

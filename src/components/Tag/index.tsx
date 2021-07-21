@@ -1,13 +1,13 @@
 import React, {memo} from 'react';
 import {useColor} from '../../hooks';
-import {MultiColored, padding} from '../../utils';
+import {padding, TagColor} from '../../utils';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 
 type TagProps = {
   onPress?: () => void;
   title: string;
-  color: keyof MultiColored;
+  color: keyof TagColor;
   disabled?: boolean;
 };
 
@@ -23,15 +23,15 @@ export const Tag = memo(function Tag({
       disabled={disabled}
       onPress={onPress}
       style={{
-        backgroundColor: colorScheme.tags[color],
-        borderColor: colorScheme.border[color],
+        backgroundColor: colorScheme.tag[color],
+        borderColor: colorScheme.border.primaryA,
         borderWidth: 1,
         borderRadius: padding(2),
         alignSelf: 'flex-start',
         paddingHorizontal: padding(2),
         paddingVertical: padding(1),
       }}>
-      <Text color={color} title={title} />
+      <Text color="primaryA" title={title} />
     </TouchableOpacity>
   );
 });

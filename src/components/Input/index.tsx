@@ -170,7 +170,7 @@ export const Input = memo(function Input({
         />
         <TouchableOpacity onPress={textClear}>
           <Icon
-            color={color.text.secondary}
+            color="tertiary"
             hidden={noValue}
             name={clearIcon}
             style={styles.clear}
@@ -180,11 +180,7 @@ export const Input = memo(function Input({
       {!removeError && (
         <View style={{flexDirection: 'row'}}>
           <TouchableOpacity activeOpacity={1} onPress={focusOnInput}>
-            <Icon
-              color={color.text.negative}
-              invisible={noError}
-              name={errorIcon}
-            />
+            <Icon color="negative" invisible={noError} name={errorIcon} />
           </TouchableOpacity>
           <Button
             activeOpacity={1}

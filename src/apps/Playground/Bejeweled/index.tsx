@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
+import React, {memo, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Screen, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
@@ -98,10 +98,9 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
       setSelected({x, y});
     }
   };
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} title="Bejeweled">
+    <Screen onLeftPress={goBack} title="Bejeweled">
       <View style={styles.container}>
         {board.map((col, x) => (
           <View key={`${x}${col[0].key}`} style={{flexDirection: 'row'}}>

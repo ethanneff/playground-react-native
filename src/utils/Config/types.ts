@@ -103,7 +103,7 @@ type MonoChrome = {
   tertiary: string;
 };
 
-export type MultiColored = {
+export type MultiColor = {
   accent: string;
   negative: string;
   warning: string;
@@ -111,13 +111,26 @@ export type MultiColored = {
   disabled: string;
 };
 
-export type MonoMultiColor = MonoChrome & MultiColored;
+export type TagColor = {
+  gray: string;
+  platinum: string;
+  red: string;
+  orange: string;
+  yellow: string;
+  green: string;
+  blue: string;
+  cobalt: string;
+  purple: string;
+  brown: string;
+};
+
+export type MonoMultiColor = MonoChrome & MultiColor;
 
 export type ColorTheme = {
   text: MonoMultiColor;
   background: MonoMultiColor;
   border: MonoMultiColor;
-  tags: MultiColored;
+  tag: TagColor;
   overlay: {
     light: string;
     dark: string;

@@ -11,7 +11,7 @@ export const ItemDetail = memo(function ItemDetail() {
   const dispatch = useRootDispatch();
   const {goBack} = useNavigation();
   const color = useColor();
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   const {itemId, parentItemId} = useRootSelector(s => s.completeItem.nav);
   const item = useRootSelector(s => s.completeItem.items[itemId || '']);
   const [deleteModal, setDeleteModal] = useState(false);
@@ -40,7 +40,7 @@ export const ItemDetail = memo(function ItemDetail() {
     <>
       <Modal
         backgroundColor={color.background.secondary}
-        onBackgroundPress={navBack}>
+        onBackgroundPress={goBack}>
         {!item ? (
           <Text title="missing item" />
         ) : (
@@ -69,7 +69,7 @@ export const ItemDetail = memo(function ItemDetail() {
             />
             {!item.editable ? (
               <Card flex>
-                <Button center onPress={navBack} title="close" />
+                <Button center onPress={goBack} title="close" />
               </Card>
             ) : (
               <View
@@ -79,7 +79,7 @@ export const ItemDetail = memo(function ItemDetail() {
                   justifyContent: 'space-between',
                 }}>
                 <Card flex>
-                  <Button center onPress={navBack} title="close" />
+                  <Button center onPress={goBack} title="close" />
                 </Card>
                 <View style={{padding: padding(2)}} />
                 <Card flex>

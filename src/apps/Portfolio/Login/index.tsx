@@ -15,13 +15,13 @@ export const Login = memo(function PortfolioLogin() {
   const {goBack, navigate} = useNavigation();
   const handlePassword = useCallback((val: string) => setPassword(val), []);
   const handleEmail = useCallback((val: string) => setEmail(val), []);
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   const navPortfolio = useCallback(() => navigate('home'), [navigate]);
   const navPassword = useCallback(() => navigate('forgotPassword'), [navigate]);
   const color = useColor();
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Login">
+    <Screen dropShadow onLeftPress={goBack} title="Login">
       <ScrollView
         style={{
           padding: padding(4),
