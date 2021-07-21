@@ -12,7 +12,7 @@ describe('icon', () => {
   it('renders correctly without defaults', () => {
     expect.hasAssertions();
     const {tree} = mockRenderer({
-      component: <Icon badge={1} color="blue" name="check" size={1} />,
+      component: <Icon badge={1} color="accent" name="check" size={1} />,
     });
     expect(tree.toJSON()).toMatchSnapshot();
   });
@@ -20,7 +20,9 @@ describe('icon', () => {
   it('renders correctly with clear and max badge', () => {
     expect.hasAssertions();
     const {tree} = mockRenderer({
-      component: <Icon badge={1100} clear color="blue" name="check" size={1} />,
+      component: (
+        <Icon badge={1100} clear color="positive" name="check" size={1} />
+      ),
     });
     expect(tree.toJSON()).toMatchSnapshot();
   });

@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {FlatList, ListRenderItem, View} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../components';
 import {useColor} from '../../hooks';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 
 const generateHistory = () => {
   const data = [];
@@ -27,10 +27,10 @@ const ProgressItem = ({item}: ProgressItemProps) => {
     setDateFormat(prev => (prev === 'ddd' ? 'MMM DD' : 'ddd'));
   }, []);
   const iconColor = item.date.isSame(dayjs(), 'day')
-    ? color.success
+    ? 'positive'
     : item.date > dayjs()
-    ? color.secondary
-    : color.danger;
+    ? 'tertiary'
+    : 'negative';
   const iconName = item.date.isSame(dayjs(), 'day')
     ? 'check'
     : item.date > dayjs()
@@ -42,10 +42,10 @@ const ProgressItem = ({item}: ProgressItemProps) => {
       <Icon color={iconColor} name={iconName} style={{alignSelf: 'center'}} />
       <View
         style={{
-          borderTopColor: color.text,
+          borderTopColor: color.border.primaryA,
           borderTopWidth: 2,
-          margin: config.padding(1),
-          width: config.padding(12),
+          margin: padding(1),
+          width: padding(12),
         }}>
         <Text center title={item.date.format(dateFormat)} />
       </View>

@@ -1,12 +1,13 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useEffect, useRef} from 'react';
+import React, {memo, useEffect, useRef} from 'react';
 import {Animated, Easing, StyleSheet, View} from 'react-native';
 import {Screen} from '../../../components';
 import {useColor, useDriver, useDropShadow} from '../../../hooks';
 
-type PapiProps = {size: number; color: string};
+type PapiProps = {size: number};
 
-const Papi = memo(function PapiMemo({size, color}: PapiProps) {
+const Papi = memo(function PapiMemo({size}: PapiProps) {
+  const color = useColor();
   const dropShadow = useDropShadow();
   const useNativeDriver = useDriver();
   const location = useRef(new Animated.ValueXY({x: 0, y: 0})).current;
@@ -29,8 +30,8 @@ const Papi = memo(function PapiMemo({size, color}: PapiProps) {
           height: size,
           width: size,
           borderRadius: size,
-          backgroundColor: color,
-          ...dropShadow(10),
+          backgroundColor: color.background.positive,
+          ...dropShadow(5),
         },
       ]}
     />
@@ -42,15 +43,15 @@ export const PapiJump = memo(function PapiJump() {
   const {goBack} = useNavigation();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.surface,
+      backgroundColor: color.background.secondary,
       flex: 1,
     },
   });
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   return (
-    <Screen onLeftPress={navBack} title="Papi Jump">
+    <Screen onLeftPress={goBack} title="Papi Jump">
       <View style={styles.container}>
-        <Papi color={color.primary} size={50} />
+        <Papi size={50} />
       </View>
     </Screen>
   );

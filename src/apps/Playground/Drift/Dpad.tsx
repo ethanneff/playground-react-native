@@ -33,7 +33,7 @@ export const Dpad = memo(function Dpad() {
           onPress={onPress('violet')}
           style={{
             ...box,
-            backgroundColor: color.info,
+            backgroundColor: color.background.warning,
             borderTopLeftRadius: size,
             ...useShadow(10),
           }}
@@ -42,7 +42,7 @@ export const Dpad = memo(function Dpad() {
           onPress={onPress('mediumseagreen')}
           style={{
             ...box,
-            backgroundColor: color.success,
+            backgroundColor: color.background.positive,
             borderTopRightRadius: size,
             ...useShadow(10),
           }}
@@ -53,7 +53,7 @@ export const Dpad = memo(function Dpad() {
           onPress={onPress('slateblue')}
           style={{
             ...box,
-            backgroundColor: color.primary,
+            backgroundColor: color.background.accent,
             borderBottomLeftRadius: size,
             ...useShadow(10),
           }}
@@ -62,7 +62,7 @@ export const Dpad = memo(function Dpad() {
           onPress={onPress('orange')}
           style={{
             ...box,
-            backgroundColor: color.warning,
+            backgroundColor: color.background.negative,
             borderBottomRightRadius: size,
             ...useShadow(10),
           }}

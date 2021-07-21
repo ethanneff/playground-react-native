@@ -1,7 +1,7 @@
 import {getType} from 'typesafe-actions';
 import {
   changeTheme,
-  getCurrentColor,
+  getCurrentTheme,
   themeInitialState,
   themeReducer,
 } from '..';
@@ -9,19 +9,19 @@ import {store} from '../../../providers';
 import {loginRequest, logout} from '../../Auth';
 
 describe('theme', () => {
-  it('getCurrentColor dark', () => {
+  it('getCurrentTheme dark', () => {
     expect.hasAssertions();
     store.dispatch(changeTheme('dark'));
-    expect(getCurrentColor(store.getState())).toMatchObject({
-      primary: 'hsl(263, 84%, 75%)',
+    expect(getCurrentTheme(store.getState())).toMatchObject({
+      statusBar: 'light-content',
     });
   });
 
-  it('getCurrentColor light', () => {
+  it('getCurrentTheme light', () => {
     expect.hasAssertions();
     store.dispatch(changeTheme('light'));
-    expect(getCurrentColor(store.getState())).toMatchObject({
-      primary: 'hsl(211, 100%, 50%)',
+    expect(getCurrentTheme(store.getState())).toMatchObject({
+      statusBar: 'dark-content',
     });
   });
 
@@ -33,7 +33,7 @@ describe('theme', () => {
         payload,
         type: getType(changeTheme),
       }),
-    ).toMatchObject({currentColor: payload});
+    ).toMatchObject({currentTheme: payload});
   });
 
   it('logout', () => {

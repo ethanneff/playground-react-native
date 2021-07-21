@@ -46,7 +46,7 @@ export const Screen = memo(function Screen({
   const color = useColor();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
       flex: 1,
     },
     flex: {

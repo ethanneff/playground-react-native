@@ -305,8 +305,8 @@ exports[`input renders correctly 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "hsl(0, 0%, 100%)",
-                            "borderColor": "hsl(208, 7%, 46%)",
+                            "backgroundColor": "hsl(0,0%,100%)",
+                            "borderColor": "hsl(0,0%,32.9%)",
                             "borderRadius": 4,
                             "borderWidth": 2,
                             "flexDirection": "row",
@@ -322,13 +322,13 @@ exports[`input renders correctly 1`] = `
                           onBlur={[Function]}
                           onChangeText={[MockFunction]}
                           onFocus={[Function]}
-                          placeholderTextColor="hsl(208, 7%, 46%)"
+                          placeholderTextColor="hsl(0,0%,32.9%)"
                           rejectResponderTermination={true}
-                          selectionColor="hsl(211, 100%, 50%)"
+                          selectionColor="hsl(219,87.8%,54.9%)"
                           style={
                             Array [
                               Object {
-                                "color": "hsl(0, 0%, 0%)",
+                                "color": "hsl(0,0%,0%)",
                                 "flex": 1,
                               },
                               Object {
@@ -363,35 +363,50 @@ exports[`input renders correctly 1`] = `
                             accessible={true}
                             style={
                               Object {
-                                "justifyContent": "center",
                                 "opacity": 1,
-                                "paddingLeft": 8,
                               }
                             }
                           >
-                            <Text
-                              allowFontScaling={false}
+                            <View
                               style={
                                 Array [
+                                  undefined,
+                                  undefined,
+                                  undefined,
+                                  undefined,
                                   Object {
-                                    "color": "hsl(208, 7%, 46%)",
-                                    "fontSize": 24,
+                                    "justifyContent": "center",
                                   },
-                                  Array [
-                                    undefined,
-                                    undefined,
-                                  ],
                                   Object {
-                                    "fontFamily": "Material Design Icons",
-                                    "fontStyle": "normal",
-                                    "fontWeight": "normal",
+                                    "paddingLeft": 8,
                                   },
-                                  Object {},
                                 ]
                               }
                             >
-                              󰅙
-                            </Text>
+                              <Text
+                                allowFontScaling={false}
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "hsl(0,0%,45.9%)",
+                                      "fontSize": 24,
+                                    },
+                                    Array [
+                                      undefined,
+                                      undefined,
+                                    ],
+                                    Object {
+                                      "fontFamily": "Material Design Icons",
+                                      "fontStyle": "normal",
+                                      "fontWeight": "normal",
+                                    },
+                                    Object {},
+                                  ]
+                                }
+                              >
+                                󰅙
+                              </Text>
+                            </View>
                           </View>
                         </RNGestureHandlerButton>
                       </View>
@@ -422,36 +437,50 @@ exports[`input renders correctly 1`] = `
                             accessible={true}
                             style={
                               Object {
-                                "justifyContent": "center",
                                 "opacity": 1,
                               }
                             }
                           >
-                            <Text
-                              allowFontScaling={false}
+                            <View
                               style={
                                 Array [
+                                  undefined,
+                                  undefined,
+                                  undefined,
+                                  undefined,
                                   Object {
-                                    "color": "hsl(354, 70%, 54%)",
-                                    "fontSize": 24,
+                                    "justifyContent": "center",
                                   },
-                                  Array [
-                                    Object {
-                                      "opacity": 0,
-                                    },
-                                    undefined,
-                                  ],
-                                  Object {
-                                    "fontFamily": "Material Design Icons",
-                                    "fontStyle": "normal",
-                                    "fontWeight": "normal",
-                                  },
-                                  Object {},
+                                  undefined,
                                 ]
                               }
                             >
-                              󰀨
-                            </Text>
+                              <Text
+                                allowFontScaling={false}
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "hsl(7,100%,44.1%)",
+                                      "fontSize": 24,
+                                    },
+                                    Array [
+                                      Object {
+                                        "opacity": 0,
+                                      },
+                                      undefined,
+                                    ],
+                                    Object {
+                                      "fontFamily": "Material Design Icons",
+                                      "fontStyle": "normal",
+                                      "fontWeight": "normal",
+                                    },
+                                    Object {},
+                                  ]
+                                }
+                              >
+                                󰀨
+                              </Text>
+                            </View>
                           </View>
                         </RNGestureHandlerButton>
                         <RNGestureHandlerButton
@@ -489,7 +518,7 @@ exports[`input renders correctly 1`] = `
                               onPress={[Function]}
                               style={
                                 Object {
-                                  "color": "hsl(354, 70%, 54%)",
+                                  "color": "hsl(7,100%,44.1%)",
                                   "fontSize": 16,
                                   "fontWeight": "300",
                                   "letterSpacing": 0.5,

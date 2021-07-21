@@ -1,9 +1,9 @@
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {Keyboard, TextInput as OriginalTextInput, View} from 'react-native';
 import {v4} from 'uuid';
-import {Button, TextInput} from '../../../components';
+import {Button, TextInput, TextInputIcon} from '../../../components';
 import {useColor} from '../../../hooks';
-import {config, useRootDispatch, useRootSelector} from '../../../utils';
+import {padding, useRootDispatch, useRootSelector} from '../../../utils';
 import {addItemToItem, createItem, Item} from '../models';
 import {completeConfig} from '../utils';
 
@@ -56,12 +56,12 @@ export const AddItem = memo(function AddItem({
   const onClose = useCallback(() => setShowInput(false), []);
   const onBlur = useCallback(() => setShowInput(false), []);
 
-  const icons = [
+  const icons: TextInputIcon[] = [
     {name: 'close', onPress: onClose, focus: true, reset: true},
     {
       name: 'send',
       onPress: onSubmit,
-      color: color.primary,
+      color: 'accent',
       focus: true,
       required: true,
       clear: true,
@@ -76,9 +76,9 @@ export const AddItem = memo(function AddItem({
     <View
       style={{
         width,
-        height: config.padding(12),
+        height: padding(12),
         borderRadius: completeConfig.borderRadius,
-        backgroundColor: color.background,
+        backgroundColor: color.background.primaryA,
         justifyContent: 'center',
       }}>
       {showInput ? (
@@ -93,7 +93,7 @@ export const AddItem = memo(function AddItem({
           submitClear
         />
       ) : (
-        <Button center color="primary" onPress={onAddItemPress} title={title} />
+        <Button center color="accent" onPress={onAddItemPress} title={title} />
       )}
     </View>
   );

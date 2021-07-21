@@ -1,11 +1,11 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
+import React, {memo} from 'react';
 import {Image, ImageSourcePropType, View} from 'react-native';
 import {Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {getWidth} from '../../../models';
-import {config, useRootSelector} from '../../../utils';
+import {padding, useRootSelector} from '../../../utils';
 
 // https://support.apple.com/en-us/HT211028
 
@@ -27,24 +27,29 @@ const Section = ({
 }: SectionProps) => {
   const color = useColor();
   const width = useRootSelector(getWidth);
-  const leftWidth = config.padding(12);
+  const leftWidth = padding(12);
   const imageWidth = width - leftWidth - 2 * paddingHorizontal;
   return (
     <View
       style={{
-        paddingVertical: config.padding(8),
-        borderBottomColor: color.surface,
+        paddingVertical: padding(8),
+        borderBottomColor: color.border.tertiary,
         borderBottomWidth: 2,
       }}>
       <View style={{flexDirection: 'row'}}>
         <Text
-          style={{width: leftWidth, color: color.primary}}
+          color="accent"
+          style={{width: leftWidth}}
           title={String(index)}
           type="h2"
         />
         <View style={{flex: 1}}>
-          <Text title={title} type="h5" />
-          <Text title={description} type="subtitle1" />
+          <Text style={{marginBottom: padding(4)}} title={title} type="h5" />
+          <Text
+            style={{marginBottom: padding(4)}}
+            title={description}
+            type="subtitle1"
+          />
           {image && (
             <Image
               source={image}
@@ -95,18 +100,18 @@ export const AppleMask = memo(function AppleMask() {
   ];
 
   const color = useColor();
-  const paddingHorizontal = config.padding(4);
-  const navBack = useCallback(() => goBack(), [goBack]);
+  const paddingHorizontal = padding(4);
+
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Apple Mask">
+    <Screen dropShadow onLeftPress={goBack} title="Apple Mask">
       <ScrollView
         style={{
-          paddingHorizontal: config.padding(4),
-          backgroundColor: color.surface,
+          paddingHorizontal: padding(4),
+          backgroundColor: color.background.secondary,
         }}>
         <Text title="Assemble and adjust your Face Shield" type="h2" />
         <Text
-          style={{paddingTop: config.padding(4)}}
+          style={{paddingTop: padding(4)}}
           title="To assemble your face shield, follow these steps."
           type="subtitle1"
         />

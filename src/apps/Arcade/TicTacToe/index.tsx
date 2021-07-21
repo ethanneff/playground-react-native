@@ -19,7 +19,7 @@ export const TicTacToe = memo(function TicTacToe() {
   const boardSize = 3;
   const color = useColor();
   const {goBack} = useNavigation();
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   const [game, setGame] = useState<State>(getInitialState(boardSize));
   const smallest = useRootSelector(getSmallestDimension);
   const landscape = useRootSelector(getLandscapeOrientation);
@@ -53,13 +53,13 @@ export const TicTacToe = memo(function TicTacToe() {
   );
 
   return (
-    <Screen onLeftPress={navBack} title="Tic Tac Toe">
+    <Screen onLeftPress={goBack} title="Tic Tac Toe">
       <View
         style={{
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: color.surface,
+          backgroundColor: color.background.secondary,
           flexDirection: landscape ? 'row' : 'column',
         }}>
         <View>
@@ -77,9 +77,9 @@ export const TicTacToe = memo(function TicTacToe() {
                     height: size,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    backgroundColor: color.background,
+                    backgroundColor: color.background.primaryA,
                     borderWidth: 2,
-                    borderColor: color.surface,
+                    borderColor: color.background.secondary,
                   }}>
                   <Text title={getValue(game.board[i][j])} type="h4" />
                 </TouchableOpacity>

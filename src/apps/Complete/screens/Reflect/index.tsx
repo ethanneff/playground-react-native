@@ -3,7 +3,7 @@ import {Dimensions, View} from 'react-native';
 import {Calendar, Screen, Text} from '../../../../components';
 import {ScrollView} from '../../../../conversions';
 import {useColor} from '../../../../hooks';
-import {config} from '../../../../utils';
+import {padding} from '../../../../utils';
 import {Card} from '../../components/Card';
 import {completeConfig, useTabTap} from '../../utils';
 import {Graph} from './Graph';
@@ -43,10 +43,10 @@ export const Reflect = memo(function Reflect() {
     <Screen title="Reflect">
       <ScrollView
         contentContainerStyle={{
-          padding: config.padding(4),
-          backgroundColor: color.surface,
+          padding: padding(4),
+          backgroundColor: color.background.secondary,
         }}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Card margin="bottom">
           <View>
             <Title name="Purpose" />

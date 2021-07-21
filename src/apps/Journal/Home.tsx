@@ -3,14 +3,14 @@ import {StyleSheet, View} from 'react-native';
 import {Calendar, Card, Input, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useAdminNavBack, useColor} from '../../hooks';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 
 export const Home = memo(function Home() {
   const color = useColor();
   const {onLeftPress} = useAdminNavBack();
   const styles = StyleSheet.create({
     bottom: {
-      paddingBottom: config.padding(4),
+      paddingBottom: padding(4),
     },
   });
 
@@ -20,10 +20,10 @@ export const Home = memo(function Home() {
     <Screen dropShadow onLeftPress={onLeftPress} title="Journal">
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: config.padding(4),
-          paddingVertical: config.padding(2),
+          paddingHorizontal: padding(4),
+          paddingVertical: padding(2),
         }}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Card>
           <Text style={styles.bottom} title="Calendar" type="h4" />
           <Calendar hiddenDays />
@@ -139,7 +139,7 @@ export const Home = memo(function Home() {
             value=""
           />
         </Card>
-        <View style={{height: config.padding(4)}} />
+        <View style={{height: padding(4)}} />
       </ScrollView>
     </Screen>
   );

@@ -1,14 +1,12 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
-import {Button, Icon, Screen} from '../../../../components';
-import {useColor} from '../../../../hooks';
+import {Button, Icon, Screen, TouchableOpacity} from '../../../../components';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {getActiveChecklistOrderByCreatedAt, setActiveList} from '../../models';
 
 export default memo(function Checklists() {
   const {navigate} = useNavigation();
-  const color = useColor();
   const dispatch = useRootDispatch();
   const items = useRootSelector(getActiveChecklistOrderByCreatedAt);
 
@@ -51,13 +49,9 @@ export default memo(function Checklists() {
         keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
       />
-      <Icon
-        color={color.background}
-        fab
-        name="plus"
-        onPress={navCreate}
-        right
-      />
+      <TouchableOpacity onPress={navCreate}>
+        <Icon color="primaryA" fab name="plus" right />
+      </TouchableOpacity>
     </Screen>
   );
 });

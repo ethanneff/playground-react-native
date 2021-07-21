@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {Button, Input, Screen} from '../../../components';
 import {useColor} from '../../../hooks';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 
 const styles = StyleSheet.create({
   row: {flexDirection: 'row', justifyContent: 'space-around'},
@@ -15,15 +15,18 @@ export const Login = memo(function PortfolioLogin() {
   const {goBack, navigate} = useNavigation();
   const handlePassword = useCallback((val: string) => setPassword(val), []);
   const handleEmail = useCallback((val: string) => setEmail(val), []);
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   const navPortfolio = useCallback(() => navigate('home'), [navigate]);
   const navPassword = useCallback(() => navigate('forgotPassword'), [navigate]);
   const color = useColor();
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Login">
+    <Screen dropShadow onLeftPress={goBack} title="Login">
       <ScrollView
-        style={{padding: config.padding(4), backgroundColor: color.surface}}>
+        style={{
+          padding: padding(4),
+          backgroundColor: color.background.secondary,
+        }}>
         <Input
           onChangeText={handleEmail}
           placeholder="example@gmail.com"

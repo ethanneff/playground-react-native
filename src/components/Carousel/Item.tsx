@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {useColor} from '../../hooks';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 import {Content} from '../Content';
 import {Icon} from '../Icon';
 import {Text} from '../Text';
@@ -17,9 +17,9 @@ export const Item = memo(function Item({item, width}: Props) {
   const styles = StyleSheet.create({
     item: {
       alignItems: 'center',
-      backgroundColor: item.backgroundColor || color.background,
+      backgroundColor: item.backgroundColor || color.background.primaryA,
       justifyContent: 'center',
-      padding: config.padding(4),
+      padding: padding(4),
       width,
     },
   });
@@ -27,13 +27,13 @@ export const Item = memo(function Item({item, width}: Props) {
   return (
     <View style={styles.item}>
       <View style={{flex: 1, justifyContent: 'center'}}>
-        {item.icon && <Icon name={item.icon} size={config.padding(40)} />}
+        {item.icon && <Icon name={item.icon} size={padding(40)} />}
       </View>
       <View style={{flex: 1}}>
         {item.title && (
           <Text
             center
-            style={{paddingVertical: config.padding(8)}}
+            style={{paddingVertical: padding(8)}}
             title={item.title}
             type="h4"
           />

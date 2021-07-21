@@ -105,7 +105,7 @@ const enhancers = composers(applyMiddleware(...middlewares));
 const persistedReducer = persistReducer(persistConfig, reducers);
 export const store = createStore(persistedReducer, enhancers);
 const persistor = persistStore(store);
-// persistor.purge();
+persistor.purge();
 
 type Props = {children: ReactNode};
 export const Redux = memo(function Redux({children}: Props) {

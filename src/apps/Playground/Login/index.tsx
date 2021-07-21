@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {Button, Input, Screen, Text, TextInput} from '../../../components';
 import {KeyboardAwareScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 
 export const Login = memo(function Login() {
   const {goBack} = useNavigation();
@@ -26,13 +26,15 @@ export const Login = memo(function Login() {
   const handleSubmit = useCallback(() => {
     setForm(prev => ({...prev, error: 'Invalid Email'}));
   }, []);
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Login">
+    <Screen dropShadow onLeftPress={goBack} title="Login">
       <KeyboardAwareScrollView
         keyboardShouldPersistTaps="handled"
-        style={{backgroundColor: color.surface, padding: config.padding(4)}}>
+        style={{
+          backgroundColor: color.background.secondary,
+          padding: padding(4),
+        }}>
         <Text center title="border" type="h3" />
         <Input
           error={form.error}
@@ -61,7 +63,7 @@ export const Login = memo(function Login() {
         />
         <Button
           center
-          color="primary"
+          color="accent"
           emphasis="high"
           onPress={handleSubmit}
           title="complete form"
@@ -88,7 +90,7 @@ export const Login = memo(function Login() {
         />
         <Button
           center
-          color="primary"
+          color="accent"
           emphasis="high"
           onPress={handleSubmit}
           title="complete form"

@@ -11,7 +11,7 @@ import {
   TouchableOpacity,
 } from '../../../../components';
 import {useAuth, useColor} from '../../../../hooks';
-import {config} from '../../../../utils';
+import {padding} from '../../../../utils';
 import {ModalHeader} from '../../components/';
 
 interface Props {
@@ -47,18 +47,14 @@ const SignInButton = memo(function SignInButton({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
-        borderColor: color.secondary,
+        borderColor: color.background.secondary,
         borderWidth: 1,
-        padding: config.padding(2),
-        marginBottom: config.padding(margin ? 4 : 0),
-        borderRadius: config.sizing.borderRadius,
+        padding: padding(2),
+        marginBottom: padding(margin ? 4 : 0),
+        borderRadius: padding(2),
       }}>
       <Icon name={icon} />
-      <Text
-        style={{paddingLeft: config.padding(2)}}
-        title={title}
-        type="button"
-      />
+      <Text style={{paddingLeft: padding(2)}} title={title} type="button" />
     </TouchableOpacity>
   );
 });
@@ -126,7 +122,6 @@ export const Login = memo(function Login({
   } = useAuth();
   const {type, error, user} = response;
   const loading = type === 'loading';
-  const color = useColor();
   const successful = useRef(false);
   const form = useRef<Ref>(initialRef);
   const [state, setState] = useState<State>(initialState);
@@ -181,19 +176,19 @@ export const Login = memo(function Login({
   return (
     <Modal onBackgroundPress={onBackgroundPress} showOverlay>
       <>
-        {error && <Text center color="danger" title={error} />}
+        {error && <Text center color="negative" title={error} />}
         {state.screen === 'loading' || type === 'initalizing' ? (
           <ActivityIndicator />
         ) : state.screen === 'phoneCode' ? (
           <>
             <TextInput
-              backgroundColor={color.surface}
+              backgroundColor="secondary"
               keyboardType="number-pad"
               onChangeText={onFormChange('phoneCode')}
               placeholder="phone confirmation code"
             />
             <Button
-              color="primary"
+              color="accent"
               emphasis="high"
               onPress={handleConfirm}
               title="verify phone confirmation code"
@@ -208,7 +203,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
-              backgroundColor={color.surface}
+              backgroundColor="secondary"
               blurOnSubmit={false}
               keyboardType="number-pad"
               onChangeText={onFormChange('phone')}
@@ -216,12 +211,12 @@ export const Login = memo(function Login({
               onSubmitEditing={onSubmitEditing('phone')}
               placeholder="Phone number"
               returnKeyType="send"
-              style={{marginBottom: config.padding(4)}}
+              style={{marginBottom: padding(4)}}
               value=""
             />
             <Button
               center
-              color="primary"
+              color="accent"
               emphasis="high"
               onPress={handlePhone}
               title="send confirmation code"
@@ -235,17 +230,17 @@ export const Login = memo(function Login({
             />
             <Text
               center
-              style={{paddingBottom: config.padding(4)}}
+              style={{paddingBottom: padding(4)}}
               title="Please enter the email address associated with your account."
             />
             <Text
               center
-              style={{paddingBottom: config.padding(4)}}
+              style={{paddingBottom: padding(4)}}
               title="We'll send you an email with your login email as well as a password reset instructions."
             />
             <TextInput
               autoCorrect={false}
-              backgroundColor={color.surface}
+              backgroundColor="secondary"
               blurOnSubmit={false}
               keyboardType="email-address"
               onChangeText={onFormChange('email')}
@@ -253,13 +248,13 @@ export const Login = memo(function Login({
               onSubmitEditing={onSubmitEditing('email')}
               placeholder="Email address"
               returnKeyType="send"
-              style={{marginBottom: config.padding(4)}}
+              style={{marginBottom: padding(4)}}
               textContentType="username"
               value=""
             />
             <Button
               center
-              color="primary"
+              color="accent"
               emphasis="high"
               onPress={handleReset}
               title="Reset password"
@@ -273,7 +268,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
-              backgroundColor={color.surface}
+              backgroundColor="secondary"
               blurOnSubmit={false}
               editable={!loading}
               keyboardType="email-address"
@@ -282,13 +277,13 @@ export const Login = memo(function Login({
               onSubmitEditing={onSubmitEditing('email')}
               placeholder="Email address"
               returnKeyType="next"
-              style={{marginBottom: config.padding(4)}}
+              style={{marginBottom: padding(4)}}
               textContentType="username"
               value=""
             />
             <TextInput
               autoCorrect={false}
-              backgroundColor={color.surface}
+              backgroundColor="secondary"
               blurOnSubmit={false}
               editable={!loading}
               icons={[{name: eyeIcon, onPress: onEye, focus: true}]}
@@ -298,23 +293,23 @@ export const Login = memo(function Login({
               placeholder="Password"
               returnKeyType="done"
               secureTextEntry={!state.eye}
-              style={{marginBottom: config.padding(4)}}
+              style={{marginBottom: padding(4)}}
               textContentType="password"
               value=""
             />
             <Button
-              buttonStyle={{marginBottom: config.padding(4)}}
+              buttonStyle={{marginBottom: padding(4)}}
               center
-              color="primary"
-              disable={loading}
+              color="accent"
+              disabled={loading}
               lowercase
               onPress={onScreenChange('logIn')}
               title="Already have an account?"
             />
             <Button
               center
-              color="primary"
-              disable={loading}
+              color="accent"
+              disabled={loading}
               emphasis="high"
               onPress={onSubmitEditing('password')}
               title="Sign up"
@@ -328,7 +323,7 @@ export const Login = memo(function Login({
             />
             <TextInput
               autoCorrect={false}
-              backgroundColor={color.surface}
+              backgroundColor="secondary"
               blurOnSubmit={false}
               editable={!loading}
               keyboardType="email-address"
@@ -337,13 +332,13 @@ export const Login = memo(function Login({
               onSubmitEditing={onSubmitEditing('email')}
               placeholder="Email address"
               returnKeyType="next"
-              style={{marginBottom: config.padding(4)}}
+              style={{marginBottom: padding(4)}}
               textContentType="username"
               value=""
             />
             <TextInput
               autoCorrect={false}
-              backgroundColor={color.surface}
+              backgroundColor="primaryA"
               blurOnSubmit={false}
               editable={!loading}
               icons={[{name: eyeIcon, onPress: onEye, focus: true}]}
@@ -353,21 +348,21 @@ export const Login = memo(function Login({
               placeholder="Password"
               returnKeyType="done"
               secureTextEntry={!state.eye}
-              style={{marginBottom: config.padding(4)}}
+              style={{marginBottom: padding(4)}}
               textContentType="password"
               value=""
             />
             <Button
-              buttonStyle={{marginBottom: config.padding(4)}}
+              buttonStyle={{marginBottom: padding(4)}}
               center
-              color="primary"
+              color="accent"
               lowercase
               onPress={onScreenChange('forgotPassword')}
               title="Forgot password?"
             />
             <Button
               center
-              color="primary"
+              color="accent"
               emphasis="high"
               onPress={onSubmitEditing('password')}
               title="Log in"

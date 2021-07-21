@@ -298,7 +298,7 @@ exports[`markdown renders correctly 1`] = `
                         onPress={[Function]}
                         style={
                           Object {
-                            "color": "hsla(0, 0%, 0%, 1)",
+                            "color": "hsla(0,0%,0%, 1)",
                             "fontSize": 16,
                             "fontWeight": "300",
                             "letterSpacing": 0.5,
@@ -312,7 +312,7 @@ exports[`markdown renders correctly 1`] = `
                         onPress={[Function]}
                         style={
                           Object {
-                            "color": "hsla(0, 0%, 0%, 1)",
+                            "color": "hsla(0,0%,0%, 1)",
                             "fontSize": 16,
                             "fontWeight": "600",
                             "letterSpacing": 0.5,

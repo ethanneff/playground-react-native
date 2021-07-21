@@ -1,6 +1,12 @@
 import React, {useCallback, useState} from 'react';
 import {FlatList, View} from 'react-native';
-import {Card, Icon, Modal, Text} from '../../../../components';
+import {
+  Card,
+  Icon,
+  Modal,
+  Text,
+  TouchableOpacity,
+} from '../../../../components';
 import {questionnairesInitialState} from '../models';
 
 export const Questionnaire = (): JSX.Element => {
@@ -34,7 +40,9 @@ export const Questionnaire = (): JSX.Element => {
               <Text title={item.title} type="h3" />
               <Text title={subtitle} type="caption" />
             </View>
-            <Icon name="dots-horizontal" onPress={handleLongPress(item.id)} />
+            <TouchableOpacity onPress={handleLongPress(item.id)}>
+              <Icon name="dots-horizontal" />
+            </TouchableOpacity>
           </View>
         </Card>
       );

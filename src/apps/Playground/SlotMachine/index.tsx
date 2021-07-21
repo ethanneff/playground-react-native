@@ -31,17 +31,16 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
   const [state, setState] = useState(() => getInitialState());
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
     },
   });
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   const onSpin = useCallback(() => {
     setState(p => ({...p, spinning: true}));
   }, []);
 
   return (
-    <Screen onLeftPress={navBack} title="Slot Machine">
+    <Screen onLeftPress={goBack} title="Slot Machine">
       <ScrollView style={styles.container}>
         <Text title={`win percentage: ${winPercentage}%`} />
         <Text title={`return percentage: ${returnPercentage}%`} />

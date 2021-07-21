@@ -1,8 +1,8 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
 import {useColor} from '../../../hooks';
-import {useRootSelector} from '../../../utils';
 import {getSmallestDimension} from '../../../models';
+import {useRootSelector} from '../../../utils';
 
 interface CellProps {
   value: number;
@@ -13,7 +13,11 @@ export const Cell = memo(function Cell({value, length}: CellProps) {
   const color = useColor();
   const width = useRootSelector(getSmallestDimension) / length;
   const backgroundColor =
-    value === 0 ? color.light : value === 1 ? color.success : color.danger;
+    value === 0
+      ? color.background.secondary
+      : value === 1
+      ? color.background.positive
+      : color.background.negative;
   return (
     <View
       style={{
@@ -21,7 +25,7 @@ export const Cell = memo(function Cell({value, length}: CellProps) {
         width,
         height: width,
         borderWidth: 1,
-        borderColor: color.surface,
+        borderColor: color.background.secondary,
         backgroundColor,
       }}
     />

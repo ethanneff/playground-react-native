@@ -4,7 +4,7 @@ import {LayoutChangeEvent} from 'react-native';
 import {KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {getSmallestDimension} from '../../../../models';
-import {config, useRootSelector} from '../../../../utils';
+import {padding, useRootSelector} from '../../../../utils';
 import {Board} from '../../components';
 import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
 
@@ -27,8 +27,8 @@ export const Project = memo(function Project() {
   const listWidth = screenWidth * 0.7;
   const [container, setContainer] = useState(0);
   const keyboardHeight = useKeyboardHeight();
-  const typePadding = config.padding(projectItemType === 'list' ? 12 : 0);
-  const keyboardPadding = config.padding(keyboardHeight ? 28 : 48);
+  const typePadding = padding(projectItemType === 'list' ? 12 : 0);
+  const keyboardPadding = padding(keyboardHeight ? 28 : 48);
   const listMaxHeight =
     container - keyboardHeight - keyboardPadding + typePadding;
 
@@ -52,7 +52,9 @@ export const Project = memo(function Project() {
       onRightPress={showSearchBar}
       rightIcon="magnify"
       title={projectItemTitle}>
-      <KeyboardHandler backgroundColor={color.surface} onLayout={onLayout}>
+      <KeyboardHandler
+        backgroundColor={color.background.secondary}
+        onLayout={onLayout}>
         <Board
           listMaxHeight={listMaxHeight}
           listWidth={listWidth}

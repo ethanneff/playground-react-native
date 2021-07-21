@@ -3,7 +3,7 @@ import {TextInput, View} from 'react-native';
 import {Button, Calendar, Card, Input, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useAdminNavBack, useColor} from '../../hooks';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 
 const data = [
   'Set your alarm for 10 minutes earlier than usual',
@@ -179,13 +179,13 @@ export const Home = memo(function Home() {
     <Screen onLeftPress={onLeftPress} title="Comfort Zone">
       <ScrollView
         contentContainerStyle={{
-          padding: config.padding(4),
+          padding: padding(4),
         }}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Card>
           <Text
             center
-            style={{paddingBottom: config.padding(4)}}
+            style={{paddingBottom: padding(4)}}
             title="Try something new every day"
             type="h4"
           />
@@ -199,14 +199,14 @@ export const Home = memo(function Home() {
         <Card>
           <Text
             center
-            style={{paddingBottom: config.padding(4)}}
+            style={{paddingBottom: padding(4)}}
             title="Today's Challenge"
             type="h4"
           />
           <Text
             center
             emphasis="medium"
-            style={{paddingBottom: config.padding(4)}}
+            style={{paddingBottom: padding(4)}}
             title={challenge}
             type="subtitle1"
           />
@@ -218,15 +218,15 @@ export const Home = memo(function Home() {
               flexDirection: 'row',
               justifyContent: 'space-around',
             }}>
-            <Button color="primary" onPress={onRandom} title="random" />
-            <Button color="primary" onPress={onCustom} title="custom" />
+            <Button color="accent" onPress={onRandom} title="random" />
+            <Button color="accent" onPress={onCustom} title="custom" />
           </View>
           {!showCustomInput ? null : (
             <View
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingTop: config.padding(6),
+                paddingTop: padding(6),
               }}>
               <Input
                 onChangeText={onCustomInputChange}
@@ -236,7 +236,7 @@ export const Home = memo(function Home() {
                 value={customInput}
               />
               <Button
-                color="primary"
+                color="accent"
                 onPress={onCustomInputSubmit}
                 title="submit"
               />
@@ -246,7 +246,7 @@ export const Home = memo(function Home() {
         <Card>
           <Text
             center
-            style={{paddingBottom: config.padding(4)}}
+            style={{paddingBottom: padding(4)}}
             title="Progress"
             type="h4"
           />

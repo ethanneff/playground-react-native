@@ -8,7 +8,11 @@ const Bird = () => {
   const color = useColor();
   return (
     <Animated.View
-      style={{backgroundColor: color.warning, width: 50, height: 50}}
+      style={{
+        backgroundColor: color.background.negative,
+        width: 50,
+        height: 50,
+      }}
     />
   );
 };
@@ -42,7 +46,11 @@ const Pillar = () => {
       onTouchStart={onPress}
       style={[
         location.current.getLayout(),
-        {backgroundColor: color.success, width: 50, height: 50},
+        {
+          backgroundColor: color.background.positive,
+          width: 50,
+          height: 50,
+        },
       ]}
     />
   );
@@ -51,11 +59,10 @@ const Pillar = () => {
 export const FlappyBird = memo(function FlappyBird() {
   const color = useColor();
   const {goBack} = useNavigation();
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} title="Flappy Bird">
-      <View style={{flex: 1, backgroundColor: color.surface}}>
+    <Screen onLeftPress={goBack} title="Flappy Bird">
+      <View style={{flex: 1, backgroundColor: color.background.secondary}}>
         <Bird />
         <Pillar />
       </View>

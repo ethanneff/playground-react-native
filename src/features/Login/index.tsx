@@ -10,7 +10,7 @@ import {
 } from '../../components';
 import {auth, FirebaseAuthTypes} from '../../conversions/Firebase';
 import {useColor} from '../../hooks';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 
 interface Props {
   onBackgroundPress: () => void;
@@ -34,18 +34,14 @@ const SignInButton = memo(function SignInButton({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
-        borderColor: color.text,
+        borderColor: color.border.primaryA,
         borderWidth: 2,
-        padding: config.padding(2),
-        marginBottom: config.padding(2),
-        borderRadius: config.padding(10),
+        padding: padding(2),
+        marginBottom: padding(2),
+        borderRadius: padding(10),
       }}>
       <Icon name={icon} />
-      <Text
-        style={{paddingLeft: config.padding(2)}}
-        title={title}
-        type="button"
-      />
+      <Text style={{paddingLeft: padding(2)}} title={title} type="button" />
     </TouchableOpacity>
   );
 });
@@ -193,7 +189,7 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
             value={form.phoneCode}
           />
           <Button
-            color="primary"
+            color="accent"
             emphasis="high"
             onPress={onPhoneConfirm}
             title="verify phone confirmation code"
@@ -209,7 +205,7 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
             value={form.phone}
           />
           <Button
-            color="primary"
+            color="accent"
             emphasis="high"
             onPress={onPhoneSubmit}
             title="send confirmation code"
@@ -226,7 +222,7 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
             value={form.email}
           />
           <Button
-            color="primary"
+            color="accent"
             emphasis="high"
             onPress={onEmailSubmit}
             title="send password reset"
@@ -249,7 +245,7 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
             textContentType="password"
             value={form.password}
           />
-          <Button color="primary" emphasis="high" title="submit" />
+          <Button color="accent" emphasis="high" title="submit" />
           <Button onPress={onForgotPassword} title="forgot password" />
           <Button onPress={onLanding} title="go back" />
         </>

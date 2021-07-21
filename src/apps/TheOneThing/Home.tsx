@@ -3,7 +3,7 @@ import {View} from 'react-native';
 import {Card, Icon, Screen, Text, TouchableOpacity} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useAdminNavBack, useColor} from '../../hooks';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 
 interface SectionProps {
   title: string;
@@ -30,7 +30,7 @@ const ChecklistItem = ({item, index}: ChecklistItemProps) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
-        <Icon name={toggle} style={{paddingRight: config.padding(2)}} />
+        <Icon name={toggle} style={{paddingRight: padding(2)}} />
         <View style={{flex: 1}}>
           <Text title={`${index + 1}. ${item}`} />
         </View>
@@ -53,12 +53,12 @@ const Section = ({title, subtitle, description, items = []}: SectionProps) => {
       {subtitle && (
         <Text
           emphasis="medium"
-          style={{paddingVertical: config.padding(1)}}
+          style={{paddingVertical: padding(1)}}
           title={subtitle}
           type="subtitle1"
         />
       )}
-      <View style={{paddingTop: config.padding(2)}}>
+      <View style={{paddingTop: padding(2)}}>
         {description && <Text title={description} />}
         {items &&
           items.map((item, index) => (
@@ -77,10 +77,10 @@ export const Home = memo(function Home() {
     <Screen dropShadow onLeftPress={onLeftPress} title="The One Thing">
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: config.padding(4),
-          paddingVertical: config.padding(2),
+          paddingHorizontal: padding(4),
+          paddingVertical: padding(2),
         }}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Section
           description="What’s the thing that gets you up in the morning and keeps you going when you’re tired and worn down - why you’re excited with your life?"
           subtitle="Your Life Missioxn"

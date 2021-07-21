@@ -2,7 +2,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent} from 'react-native';
 import {KeyboardHandler, Screen} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {config, useRootSelector} from '../../../../utils';
+import {padding, useRootSelector} from '../../../../utils';
 import {List} from '../../components';
 import {getProjects} from '../../models';
 import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
@@ -20,7 +20,7 @@ export const Projects = memo(function Projects() {
   const keyboardHeight = useKeyboardHeight();
   const itemId = useRootSelector(getProjects);
   if (!itemId) throw new Error('missing item id');
-  const keyboardPadding = config.padding(keyboardHeight ? 16 : 35);
+  const keyboardPadding = padding(keyboardHeight ? 16 : 35);
   const maxHeight = dimensions - keyboardHeight - keyboardPadding;
 
   const onLayout = useCallback(
@@ -35,7 +35,9 @@ export const Projects = memo(function Projects() {
 
   return (
     <Screen onRightPress={showSearchBar} rightIcon="magnify" title="Implement">
-      <KeyboardHandler backgroundColor={color.surface} onLayout={onLayout}>
+      <KeyboardHandler
+        backgroundColor={color.background.secondary}
+        onLayout={onLayout}>
         <List
           itemId={itemId}
           key={itemId}

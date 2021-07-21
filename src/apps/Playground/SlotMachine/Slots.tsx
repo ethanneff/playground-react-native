@@ -2,7 +2,7 @@ import React, {memo, useCallback, useMemo, useState} from 'react';
 import {View} from 'react-native';
 import {Button, Icon, Text, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 import {shuffleArray} from './utils';
 
 type Combinations = {[key: string]: number};
@@ -103,7 +103,9 @@ const Reels = memo(function Reels({reelsArray, lineIndexes}: ReelsProps) {
               style={{
                 borderWidth: 2,
                 borderColor:
-                  lineIndexes[i] === j ? color.primary : color.background,
+                  lineIndexes[i] === j
+                    ? color.border.accent
+                    : color.border.primaryA,
               }}
               title={item}
             />
@@ -115,16 +117,15 @@ const Reels = memo(function Reels({reelsArray, lineIndexes}: ReelsProps) {
 });
 
 type BetProps = {
-  disable: boolean;
+  disabled: boolean;
   multiplier: number;
   onBet: () => void;
 };
 
-const Bet = memo(function Bet({onBet, disable, multiplier}: BetProps) {
-  const color = useColor();
+const Bet = memo(function Bet({onBet, disabled, multiplier}: BetProps) {
   return (
     <TouchableOpacity
-      disabled={disable}
+      disabled={disabled}
       onPress={onBet}
       style={{
         flexDirection: 'row',
@@ -132,7 +133,7 @@ const Bet = memo(function Bet({onBet, disable, multiplier}: BetProps) {
         alignItems: 'center',
       }}>
       <Text bold emphasis="high" title={`BET X${multiplier}`} />
-      <Icon color={color.primary} name="lightning-bolt" />
+      <Icon color="accent" name="lightning-bolt" />
     </TouchableOpacity>
   );
 });
@@ -148,7 +149,7 @@ export const Slots = memo(function Slots({
     getInitialState({randomize, reels, credits}),
   );
   const multiplier = multipliers[state.multiplierIndex];
-  const disable = state.activity === 'spinning';
+  const disabled = state.activity === 'spinning';
   const wildCards = useMemo(
     () => getWildCards(combinations, reels),
     [combinations, reels],
@@ -201,26 +202,26 @@ export const Slots = memo(function Slots({
   return (
     <View>
       <Reels lineIndexes={state.lineIndexes} reelsArray={state.reelsArray} />
-      <Bet disable={disable} multiplier={multiplier} onBet={onMultiplier} />
+      <Bet disabled={disabled} multiplier={multiplier} onBet={onMultiplier} />
       <Text
         center
         emphasis="high"
-        style={{padding: config.padding(2)}}
+        style={{padding: padding(2)}}
         title={`${state.credits} credits`}
         type="h4"
       />
       <Button
-        color="primary"
-        disable={disable}
+        color="accent"
+        disabled={disabled}
         emphasis="high"
         onPress={onSpin}
         title="spin"
       />
       <Text
         center
-        color="danger"
+        color="negative"
         emphasis="high"
-        style={{padding: config.padding(2)}}
+        style={{padding: padding(2)}}
         title={creditError}
       />
     </View>

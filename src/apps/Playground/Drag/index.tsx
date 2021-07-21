@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import {Screen, Text} from '../../../components';
 import {useColor, useDriver, useDropShadow} from '../../../hooks';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 
 const getPosition = (
   gestureState: PanResponderGestureState,
@@ -47,17 +47,16 @@ export const Drag = memo(function PlaygroundDrag() {
   const size = 30;
   const styles = StyleSheet.create({
     ball: {
-      borderColor: color.background,
       borderRadius: size,
       borderWidth: size,
       height: size,
       marginLeft: -size,
       marginTop: -size,
       width: size,
-      ...dropShadow(10),
+      ...dropShadow(5),
     },
     canvas: {
-      backgroundColor: color.surface,
+      backgroundColor: color.background.secondary,
       flex: 1,
     },
   });
@@ -83,10 +82,9 @@ export const Drag = memo(function PlaygroundDrag() {
     const {x, y, height, width} = event.nativeEvent.layout;
     setCanvas({x, y, height, width});
   }, []);
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Drag">
+    <Screen dropShadow onLeftPress={goBack} title="Drag">
       <View onLayout={handleCanvas} style={styles.canvas}>
         <Text
           center
@@ -95,7 +93,7 @@ export const Drag = memo(function PlaygroundDrag() {
             left: 0,
             right: 0,
             top: 0,
-            padding: config.padding(2),
+            padding: padding(2),
           }}
           title="drag the circle"
           type="overline"

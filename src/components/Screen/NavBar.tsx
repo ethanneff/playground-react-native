@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {useColor, useDropShadow} from '../../hooks';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 import {Text} from '../Text';
 import {NavButton} from './NavButton';
 
@@ -40,12 +40,14 @@ export const NavBar = memo(function NavBar({
   const styles = StyleSheet.create({
     container: {
       alignItems: 'center',
-      backgroundColor: color.background,
-      borderBottomColor: border ? color.secondary : color.background,
+      backgroundColor: color.background.primaryA,
+      borderBottomColor: border
+        ? color.background.secondary
+        : color.background.primaryA,
       borderBottomWidth: 1,
       flexDirection: 'row',
       justifyContent: 'space-between',
-      paddingHorizontal: config.padding(2),
+      paddingHorizontal: padding(2),
       ...showShadow,
     },
   });
@@ -62,7 +64,7 @@ export const NavBar = memo(function NavBar({
           testID="secondLeftNav"
         />
       )}
-      <Text center flex numberOfLines={1} title={title} type="h3" />
+      <Text center flex numberOfLines={1} title={title} type="h4" />
       {secondary && (
         <NavButton
           icon={secondRightIcon}

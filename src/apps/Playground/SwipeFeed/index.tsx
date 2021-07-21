@@ -13,7 +13,7 @@ import {Card, Icon, Screen, Text, TouchableOpacity} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {useColor, useDriver, useDropShadow} from '../../../hooks';
 import {getWidth} from '../../../models';
-import {config, useRootSelector} from '../../../utils';
+import {padding, useRootSelector} from '../../../utils';
 import {formatRelativeDate} from './utils';
 
 interface SwipeCardProps extends SwipeItem {
@@ -90,9 +90,9 @@ const SwipeCard = memo(function SwipeCard({
         width: '100%',
         left: position.x,
         height: height,
-        backgroundColor: color.background,
-        borderRadius: config.padding(1),
-        borderColor: color.brand,
+        backgroundColor: color.background.primaryA,
+        borderRadius: padding(1),
+        borderColor: color.border.accent,
         ...dropShadow(4),
       }}>
       <TouchableOpacity onPress={onSwipeComplete} style={{flex: 1}}>
@@ -107,7 +107,7 @@ const SwipeCard = memo(function SwipeCard({
               }}
             />
           )}
-          <View style={{flex: 1, padding: config.padding(2)}}>
+          <View style={{flex: 1, padding: padding(2)}}>
             <View
               style={{
                 flexDirection: 'row',
@@ -116,7 +116,7 @@ const SwipeCard = memo(function SwipeCard({
               <Icon name={icon} size={15} />
               <Text
                 bold
-                style={{paddingHorizontal: config.padding(1)}}
+                style={{paddingHorizontal: padding(1)}}
                 title={title}
                 type="overline"
               />
@@ -125,10 +125,10 @@ const SwipeCard = memo(function SwipeCard({
             <Text
               ellipsizeMode="tail"
               numberOfLines={2}
-              style={{flex: 1, paddingTop: config.padding(2)}}
+              style={{flex: 1, paddingTop: padding(2)}}
               title={body}
             />
-            <Text style={{color: color.primary}} title={button.toUpperCase()} />
+            <Text color="positive" title={button.toUpperCase()} />
           </View>
         </View>
       </TouchableOpacity>
@@ -216,7 +216,7 @@ interface BadgeProps {
 }
 
 const Badge = memo(function Badge({count, percent}: BadgeProps) {
-  const size = config.padding(6);
+  const size = padding(6);
   const badgeSize = size * percent;
   const color = useColor();
   return (
@@ -226,7 +226,7 @@ const Badge = memo(function Badge({count, percent}: BadgeProps) {
         right: 0,
         width: size,
         height: size,
-        margin: config.padding(1),
+        margin: padding(1),
         zIndex: count * 10,
         alignItems: 'center',
         justifyContent: 'center',
@@ -236,15 +236,11 @@ const Badge = memo(function Badge({count, percent}: BadgeProps) {
           width: badgeSize,
           height: badgeSize,
           borderRadius: size,
-          backgroundColor: color.danger,
+          backgroundColor: color.background.negative,
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Text
-          adjustsFontSizeToFit
-          style={{color: color.background}}
-          title={`${count}`}
-        />
+        <Text adjustsFontSizeToFit color="primaryB" title={`${count}`} />
       </View>
     </View>
   );
@@ -310,11 +306,14 @@ const ImagePlaceholder = memo(function ImagePlaceholder() {
 export const SwipeFeed = memo(function SwipeFeed() {
   const {goBack} = useNavigation();
   const color = useColor();
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Swipe Feed">
+    <Screen dropShadow onLeftPress={goBack} title="Swipe Feed">
       <ScrollView
-        style={{padding: config.padding(4), backgroundColor: color.surface}}>
+        style={{
+          padding: padding(4),
+          backgroundColor: color.background.secondary,
+        }}>
         <ImagePlaceholder />
         <ImagePlaceholder />
         <SwipeCards items={initialItems} />

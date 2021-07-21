@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 import {Activity, Icon, Screen} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useAdminNavBack, useColor} from '../../hooks';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 
 // TODO: gitlab
 // TODO: selected
@@ -18,11 +18,11 @@ export const Home = memo(function ActivityTracker() {
   const {onLeftPress} = useAdminNavBack();
   const styles = StyleSheet.create({
     background: {
-      backgroundColor: color.surface,
+      backgroundColor: color.background.secondary,
     },
     container: {
-      paddingHorizontal: config.padding(4),
-      paddingVertical: config.padding(2),
+      paddingHorizontal: padding(4),
+      paddingVertical: padding(2),
     },
   });
 
@@ -36,14 +36,14 @@ export const Home = memo(function ActivityTracker() {
         <Activity site="hackerRank" title="HackerRank" username="ethanneff" />
       </ScrollView>
       <Icon
-        color={color.background}
+        color="primaryA"
         fab
         name="plus"
         style={{
           position: 'absolute',
           bottom: 0,
           right: 0,
-          margin: config.padding(4),
+          margin: padding(4),
         }}
       />
     </Screen>

@@ -1,11 +1,12 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
-import {Button} from 'react-native';
-import {Screen} from '../../../components';
-import {useAdminNavBack} from '../../../hooks';
+import {ScrollView} from 'react-native';
+import {Button, Screen} from '../../../components';
+import {useAdminNavBack, useColor} from '../../../hooks';
 import {arcadeScreens} from '../types';
 
 export const Landing = memo(function Landing() {
+  const color = useColor();
   const {navigate} = useNavigation();
   const {onLeftPress} = useAdminNavBack();
   const onPress = useCallback(
@@ -15,9 +16,11 @@ export const Landing = memo(function Landing() {
 
   return (
     <Screen onLeftPress={onLeftPress} title="Arcade">
-      {arcadeScreens.map(screen => (
-        <Button key={screen} onPress={onPress(screen)} title={screen} />
-      ))}
+      <ScrollView style={{backgroundColor: color.background.secondary}}>
+        {arcadeScreens.map(screen => (
+          <Button key={screen} onPress={onPress(screen)} title={screen} />
+        ))}
+      </ScrollView>
     </Screen>
   );
 });

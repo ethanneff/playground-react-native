@@ -14,9 +14,8 @@ export const BouncingBalls = memo(function PlaygroundBouncingBalls() {
     setCanvas({x, y, height, width});
   }, []);
 
-  const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen dropShadow onLeftPress={navBack} title="BouncingBalls">
+    <Screen dropShadow onLeftPress={goBack} title="BouncingBalls">
       <Canvas onLayout={onLayout}>
         {canvas && (
           <Balls

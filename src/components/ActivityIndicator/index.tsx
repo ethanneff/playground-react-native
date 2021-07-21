@@ -19,7 +19,7 @@ export const ActivityIndicator = memo(function ActivityIndicator({
   const color = useColor();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
       flex: 1,
       justifyContent: 'center',
     },
@@ -27,7 +27,7 @@ export const ActivityIndicator = memo(function ActivityIndicator({
 
   return (
     <View style={[styles.container, style]}>
-      <Original color={color.dark} size={size} />
+      <Original color={color.text.secondary} size={size} />
     </View>
   );
 });

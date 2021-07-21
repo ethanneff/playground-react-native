@@ -107,22 +107,22 @@ export const ReminderExample = memo(function PlaygroundReminder() {
   const [showRate, setShowRate] = useState(false);
 
   const handleRate = (value: boolean) => () => setShowRate(value);
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   const color = useColor();
   return (
     <>
-      <Screen dropShadow onLeftPress={navBack} title="Reminder">
-        <ScrollView style={{backgroundColor: color.surface}}>
+      <Screen dropShadow onLeftPress={goBack} title="Reminder">
+        <ScrollView style={{backgroundColor: color.background.secondary}}>
           <Text center emphasis="low" title="Modals" type="h4" />
           <Button
             center
-            color="primary"
+            color="accent"
             onPress={handleCreateReminder}
             title="create reminder"
           />
           <Button
             center
-            color="primary"
+            color="accent"
             onPress={handleRate(true)}
             title="rate me"
           />

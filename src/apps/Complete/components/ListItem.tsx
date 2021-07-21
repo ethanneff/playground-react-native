@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useRef} from 'react';
 import {Keyboard, TextInput as OriginalTextInput} from 'react-native';
-import {TextInput} from '../../../components';
+import {TextInput, TextInputIcon} from '../../../components';
 import {TouchableWithoutFeedback} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {useRootDispatch, useRootSelector} from '../../../utils';
@@ -71,12 +71,12 @@ export const ListItem = memo(function ListItem({
     dispatch(swapItemOrderInItem({parentItemId, i: index, j: index + 1}));
   }, [dispatch, index, parentChildrenCount, parentItemId]);
 
-  const icons = [
+  const icons: TextInputIcon[] = [
     {name: 'close', onPress: onItemTitleClose, focus: true, reset: true},
     {
       name: 'send',
       onPress: onItemTitleSubmit,
-      color: color.primary,
+      color: 'accent',
       focus: true,
       required: true,
     },
@@ -99,11 +99,11 @@ export const ListItem = memo(function ListItem({
         flex: 1,
         borderRadius: completeConfig.borderRadius,
         margin: completeConfig.padding / 2,
-        backgroundColor: color.surface,
+        backgroundColor: color.background.secondary,
         flexDirection: 'row',
       }}>
       <TextInput
-        backgroundColor={color.surface}
+        backgroundColor="secondary"
         icons={icons}
         onRef={textInputRef}
         onSubmitEditing={onItemTitleSubmit}

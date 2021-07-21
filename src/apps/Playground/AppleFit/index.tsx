@@ -1,8 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
+import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Screen} from '../../../components';
-import {useColor} from '../../../hooks';
 import {AppleActivity} from './AppleActivity';
 import {Ring} from './types';
 
@@ -38,15 +37,13 @@ const rings: Ring[] = [
 
 export const AppleFit = memo(function PlaygroundAppleFit() {
   const {goBack} = useNavigation();
-  const color = useColor();
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} title="Apple Fit">
+    <Screen onLeftPress={goBack} title="Apple Fit">
       <View style={{alignItems: 'center'}}>
         <AppleActivity
           animate
-          backgroundColor={color.background}
+          backgroundColor="primaryA"
           rings={rings}
           size={size}
           strokeWidth={strokeWidth}

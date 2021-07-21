@@ -1,7 +1,6 @@
 import React, {memo, useCallback} from 'react';
 import {Keyboard, View} from 'react-native';
-import {TextInput} from '../../../components';
-import {useColor} from '../../../hooks';
+import {TextInput, TextInputIcon} from '../../../components';
 import {Card} from './Card';
 import {ItemDetailHeader} from './ItemDetailHeader';
 
@@ -15,6 +14,7 @@ type ItemEditProps = {
   onSubmit: (type: string) => OnSubmit;
 };
 
+// TODO: need to clear on blur
 export const ItemEdit = memo(function ItemEdit({
   title,
   titleEditable,
@@ -22,23 +22,21 @@ export const ItemEdit = memo(function ItemEdit({
   placeholder,
   onSubmit,
 }: ItemEditProps) {
-  const color = useColor();
   const onClose = useCallback(() => Keyboard.dismiss(), []);
 
   const icons = useCallback(
-    (type: string) => [
+    (type: string): TextInputIcon[] => [
       {name: 'close', onPress: onClose, focus: true, reset: true},
       {
         name: 'send',
         onPress: onSubmit(type),
-        color: color.primary,
+        color: 'accent',
         focus: true,
         required: true,
       },
     ],
-    [color.primary, onClose, onSubmit],
+    [onClose, onSubmit],
   );
-  // TODO: need to clear on blur
 
   return (
     <View>

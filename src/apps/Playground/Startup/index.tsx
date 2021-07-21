@@ -5,7 +5,7 @@ import {Switch} from 'react-native';
 import {Button, Input, Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 import {Section} from './Section';
 
 // https://www.startupschool.org/updates/250717/edit
@@ -83,15 +83,14 @@ export const Startup = memo(function PlaygroundStartup() {
   );
 
   const handleSubmit = useCallback(() => undefined, []);
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Weekly Update">
+    <Screen dropShadow onLeftPress={goBack} title="Weekly Update">
       <ScrollView
         contentContainerStyle={{
-          padding: config.padding(4),
+          padding: padding(4),
         }}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Text center title={dayjs().format('MMM DD, YYYY')} type="h4" />
         <Section title="Launch">
           <Text title="Are you launched?" />
@@ -143,7 +142,7 @@ export const Startup = memo(function PlaygroundStartup() {
         </Section>
         <Button
           center
-          color="primary"
+          color="accent"
           emphasis="high"
           onPress={handleSubmit}
           title="submit"

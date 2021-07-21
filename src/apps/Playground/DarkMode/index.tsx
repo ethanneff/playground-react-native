@@ -7,11 +7,11 @@ import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
 import {
   changeTheme,
-  ColorTheme,
-  colorThemes,
   getLandscapeOrientation,
+  Theme,
+  themes,
 } from '../../../models';
-import {config, useRootDispatch, useRootSelector} from '../../../utils';
+import {padding, useRootDispatch, useRootSelector} from '../../../utils';
 
 type CardItem = {
   title: string;
@@ -78,8 +78,8 @@ export const DarkMode = memo(function DarkMode() {
   const dispatch = useRootDispatch();
   const color = useColor();
   const {goBack} = useNavigation();
-  const currentTheme = useRootSelector(state => state.theme.currentColor);
-  const themePress = (theme: ColorTheme) => () => dispatch(changeTheme(theme));
+  const currentTheme = useRootSelector(state => state.theme.currentTheme);
+  const themePress = (theme: Theme) => () => dispatch(changeTheme(theme));
   const [elevation, setElevation] = useState(2);
   const handleSlider = useCallback((value: number) => setElevation(value), []);
   const landscape = useRootSelector(getLandscapeOrientation);
@@ -90,14 +90,10 @@ export const DarkMode = memo(function DarkMode() {
     ({item, index}) => (
       <Card elevation={elevation} key={index} onPress={onPress}>
         <Text title={item.title} type="overline" />
-        <Text
-          style={{marginTop: config.padding(2)}}
-          title={item.value}
-          type="h4"
-        />
+        <Text style={{marginTop: padding(2)}} title={item.value} type="h4" />
         {item.target && (
           <Text
-            style={{marginTop: config.padding(2)}}
+            style={{marginTop: padding(2)}}
             title={item.target}
             type="body2"
           />
@@ -107,7 +103,7 @@ export const DarkMode = memo(function DarkMode() {
             source={item.chart}
             style={{
               height: 100,
-              marginTop: config.padding(2),
+              marginTop: padding(2),
               resizeMode: 'cover',
               width: '100%',
             }}
@@ -115,9 +111,9 @@ export const DarkMode = memo(function DarkMode() {
         )}
         {item.button && (
           <Button
-            buttonStyle={{marginTop: config.padding(2)}}
+            buttonStyle={{marginTop: padding(2)}}
             center
-            color="primary"
+            color="accent"
             emphasis="high"
             title={item.button}
           />
@@ -127,21 +123,20 @@ export const DarkMode = memo(function DarkMode() {
     [elevation, onPress],
   );
 
-  const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Dark mode">
-      <ScrollView style={{backgroundColor: color.surface}}>
-        <View style={{padding: config.padding(4)}}>
+    <Screen dropShadow onLeftPress={goBack} title="Dark mode">
+      <ScrollView style={{backgroundColor: color.background.primaryA}}>
+        <View style={{padding: padding(4)}}>
           <View
             style={{
               flexDirection: 'row',
               alignItems: 'center',
             }}>
             <Text title="theme: " />
-            {colorThemes.map(item => (
+            {themes.map(item => (
               <Button
-                color={currentTheme === item ? 'primary' : 'text'}
-                emphasis="high"
+                color={currentTheme === item ? 'positive' : 'primaryA'}
+                emphasis="low"
                 key={item}
                 onPress={themePress(item)}
                 title={item}
@@ -151,7 +146,7 @@ export const DarkMode = memo(function DarkMode() {
           <Text title={`elevation: ${elevation}`} />
           <Slider
             maximumValue={10}
-            minimumTrackTintColor={color.primary}
+            minimumTrackTintColor={color.background.accent}
             minimumValue={0}
             onValueChange={handleSlider}
             step={1}

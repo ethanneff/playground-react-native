@@ -126,10 +126,8 @@ export const Questionnaire = memo(function Questionnaire() {
     [updateProgress, updateSelection],
   );
 
-  const navBack = useCallback(() => goBack(), [goBack]);
-
   return (
-    <Screen onLeftPress={navBack} title="Questionnaire">
+    <Screen onLeftPress={goBack} title="Questionnaire">
       <FlatList
         data={data}
         horizontal

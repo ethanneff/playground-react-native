@@ -46,8 +46,8 @@ export const Wheel = memo(
     const color = useColor();
     const dropShadow = useDropShadow();
     const useNativeDriver = useDriver();
-    const background = backgroundColor || color.background;
-    const text = textColor || color.text;
+    const background = backgroundColor || color.background.primaryA;
+    const text = textColor || color.text.primaryA;
     const radius = size / 2;
     const knobSize = size / 8;
     const knobOffset = knobSize * 0.6;
@@ -110,7 +110,6 @@ export const Wheel = memo(
 
     const onPress = useCallback(() => {
       if (spinning.current) return;
-
       spin();
     }, [spin]);
 
@@ -159,11 +158,11 @@ export const Wheel = memo(
               ...dropShadow(6),
             }}>
             <Polygon
-              fill={color.light}
+              fill={color.background.tertiary}
               points={`${knobSize / 2},0 ${knobSize * 0.85},${knobSize / 3} ${
                 knobSize / 2
               },${knobSize} ${knobSize * 0.15},${knobSize / 3},`}
-              stroke={color.secondary}
+              stroke={color.background.secondary}
               strokeWidth={0.2}
             />
           </Svg>

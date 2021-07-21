@@ -3,7 +3,7 @@ import {Image, View} from 'react-native';
 import {Icon, Sentence, Text, TouchableOpacity} from '../../../components';
 import {SentenceType} from '../../../components/Sentence/types';
 import {useColor} from '../../../hooks';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 
 const missingCallback = () => undefined;
 
@@ -25,14 +25,14 @@ const SignInButton = memo(function SignInButton({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
-        borderColor: color.text,
+        borderColor: color.border.primaryA,
         borderWidth: 2,
-        padding: config.padding(2),
-        marginBottom: config.padding(2),
-        borderRadius: config.padding(10),
+        padding: padding(2),
+        marginBottom: padding(2),
+        borderRadius: padding(10),
       }}>
       <Icon name={icon} style={{width: '30px', height: '30px'}} />
-      <Text style={{paddingLeft: config.padding(2)}} title={title} type="h4" />
+      <Text style={{paddingLeft: padding(2)}} title={title} type="h4" />
     </TouchableOpacity>
   );
 });
@@ -53,10 +53,12 @@ const NavButton = memo(function NavButton({
       onPress={onPress}
       style={{
         justifyContent: 'center',
-        borderRadius: config.padding(10),
-        paddingVertical: config.padding(2),
-        paddingHorizontal: config.padding(2),
-        backgroundColor: inverted ? color.text : color.background,
+        borderRadius: padding(10),
+        paddingVertical: padding(2),
+        paddingHorizontal: padding(2),
+        backgroundColor: inverted
+          ? color.background.primaryB
+          : color.background.primaryA,
       }}>
       <Text bold inverse={inverted} title={title} type="h5" />
     </TouchableOpacity>
@@ -72,13 +74,13 @@ export const Header = memo(function Header({height}: HeaderProps) {
   return (
     <View
       style={{
-        backgroundColor: color.background,
+        backgroundColor: color.background.primaryA,
         position: 'absolute',
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        borderColor: color.secondary,
-        padding: config.padding(4),
+        borderColor: color.border.primaryA,
+        padding: padding(4),
         borderBottomWidth: 1,
         zIndex: 2,
         height,
@@ -87,7 +89,7 @@ export const Header = memo(function Header({height}: HeaderProps) {
         <Image source={image} style={{width: '30px', height: '30px'}} />
         <Text
           bold
-          style={{paddingHorizontal: config.padding(4)}}
+          style={{paddingHorizontal: padding(4)}}
           title="Core"
           type="h3"
         />
@@ -118,18 +120,18 @@ const AppIcon = memo(function AppIcon({onPress, type}: AppIconProps) {
       style={{
         width: '248px',
         justifyContent: 'center',
-        borderRadius: config.padding(2),
+        borderRadius: padding(2),
         flexDirection: 'row',
-        backgroundColor: color.text,
-        paddingVertical: config.padding(2),
-        paddingHorizontal: config.padding(4),
+        backgroundColor: color.background.primaryB,
+        paddingVertical: padding(2),
+        paddingHorizontal: padding(4),
       }}>
       <Icon
-        color={color.background}
+        color="primaryA"
         name={type}
         style={{width: iconSize, height: iconSize, alignSelf: 'center'}}
       />
-      <View style={{paddingLeft: config.padding(2)}}>
+      <View style={{paddingLeft: padding(2)}}>
         <Text inverse title={text} type="h5" />
         <Text inverse title={store} type="h3" />
       </View>
@@ -163,7 +165,7 @@ const Section = memo(function Section({
 const image = require('../../../assets/line-chart.png');
 
 export const Landing = memo(function PortfolioLanding() {
-  const height = config.padding(18);
+  const height = padding(18);
   const titleSentence: SentenceType[] = [
     {title: 'Get started with ', type: 'h2'},
     {title: 'Core', bold: true, type: 'h2'},
@@ -189,10 +191,10 @@ export const Landing = memo(function PortfolioLanding() {
   return (
     <>
       <Header height={height} />
-      <Section backgroundColor={color.light} paddingTop={height}>
+      <Section backgroundColor={color.background.secondary} paddingTop={height}>
         <Sentence
           sentences={titleSentence}
-          style={{paddingVertical: config.padding(8), alignSelf: 'center'}}
+          style={{paddingVertical: padding(8), alignSelf: 'center'}}
         />
         <View style={{width: '400px', alignSelf: 'center'}}>
           <SignInButton
@@ -214,7 +216,7 @@ export const Landing = memo(function PortfolioLanding() {
             sentences={passwordSentence}
             style={{
               alignSelf: 'center',
-              paddingVertical: config.padding(4),
+              paddingVertical: padding(4),
             }}
           />
         </View>
@@ -224,13 +226,13 @@ export const Landing = memo(function PortfolioLanding() {
           <AppIcon onPress={missingCallback} type="google-play" />
         </View>
       </Section>
-      <Section backgroundColor={color.background}>
+      <Section backgroundColor={color.background.primaryA}>
         <View style={{flex: 1}} />
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'center',
-            marginBottom: config.padding(4),
+            marginBottom: padding(4),
           }}>
           <NavButton
             onPress={onNavLinkPress('https://www.linkedin.com/in/ethanneff')}

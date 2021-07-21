@@ -4,7 +4,7 @@ import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {TextInput as OriginalTextInput} from 'react-native';
 import {Button, Modal, TextInput} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {config, useRootDispatch} from '../../../../utils';
+import {padding, useRootDispatch} from '../../../../utils';
 import {ModalHeader} from '../../components';
 import {createItem, loadUser} from '../../models';
 import {LandingStackParams} from '../../navigation-types';
@@ -21,7 +21,7 @@ export const LogIn = memo(function LogIn() {
   const [state, setState] = useState(initialState);
   const {goBack, navigate} =
     useNavigation<StackNavigationProp<LandingStackParams>>();
-  const navBack = useCallback(() => goBack(), [goBack]);
+
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
   const onSecondary = useCallback(() => navigate('password-reset'), [navigate]);
   const emailRef = useRef<OriginalTextInput | null>(null);
@@ -68,8 +68,10 @@ export const LogIn = memo(function LogIn() {
   }, [focus]);
 
   return !focus ? null : (
-    <Modal backgroundColor={color.surface} onBackgroundPress={navWelcome}>
-      <ModalHeader onRightPress={navBack} title="Log in" />
+    <Modal
+      backgroundColor={color.background.secondary}
+      onBackgroundPress={navWelcome}>
+      <ModalHeader onRightPress={goBack} title="Log in" />
       <TextInput
         autoCorrect={false}
         blurOnSubmit={false}
@@ -79,7 +81,7 @@ export const LogIn = memo(function LogIn() {
         onSubmitEditing={onSubmitEditing('email')}
         placeholder="Email address"
         returnKeyType="next"
-        style={{marginBottom: config.padding(4)}}
+        style={{marginBottom: padding(4)}}
         textContentType="username"
         value=""
       />
@@ -93,22 +95,22 @@ export const LogIn = memo(function LogIn() {
         placeholder="Password"
         returnKeyType="done"
         secureTextEntry={!state.eye}
-        style={{marginBottom: config.padding(4)}}
+        style={{marginBottom: padding(4)}}
         textContentType="password"
         value=""
       />
       <Button
-        buttonStyle={{marginBottom: config.padding(4)}}
+        buttonStyle={{marginBottom: padding(4)}}
         center
-        color="primary"
+        color="accent"
         lowercase
         onPress={onSecondary}
         title="Forgot password?"
       />
       <Button
         center
-        color="primary"
-        disable={!state.completeForm}
+        color="accent"
+        disabled={!state.completeForm}
         emphasis="high"
         onPress={onSubmit}
         title="Log In"

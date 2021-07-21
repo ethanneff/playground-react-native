@@ -30,13 +30,13 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
   const styles = StyleSheet.create({
     container: {
       alignItems: 'center',
-      backgroundColor: color.text,
+      backgroundColor: color.background.primaryB,
       flex: 1,
       paddingHorizontal: 20,
       paddingTop: 130,
     },
     timer: {
-      color: color.background,
+      color: color.text.primaryB,
       fontFamily: 'Courier',
       fontSize: 54,
       fontWeight: '200',
@@ -94,10 +94,8 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
     run();
   }, [run]);
 
-  const navBack = useCallback(() => goBack(), [goBack]);
-
   return (
-    <Screen onLeftPress={navBack} title="Stop Watch">
+    <Screen onLeftPress={goBack} title="Stop Watch">
       <View style={styles.container}>
         <Timer interval={interval} style={styles.timer} />
         {state.laps.length === 0 && (
@@ -120,7 +118,7 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
         {state.start > 0 && (
           <ButtonsRow>
             <ButtonRound
-              background="#3D3D3D"
+              background="#3D3D3D" // TODO: use own colors
               color="#FFFFFF"
               onPress={lap}
               title="Lap"

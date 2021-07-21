@@ -2,7 +2,7 @@ import React, {memo, useCallback, useRef} from 'react';
 import {Animated, PanResponder, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useColor, useDriver} from '../../hooks';
-import {config, SoundManager} from '../../utils';
+import {padding, SoundManager} from '../../utils';
 import {Icon} from '../Icon';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
@@ -20,7 +20,7 @@ type NotificationProps = {
 const initialPosition = {x: 0, y: 0};
 export const Notification = memo(function Notification({
   title,
-  height = config.padding(18),
+  height = padding(18),
   thresholdPercent = 0.9,
   dismissDelay = 100,
   noSwipe,
@@ -32,15 +32,15 @@ export const Notification = memo(function Notification({
     flex: {flex: 1},
     modal: {
       alignItems: 'center',
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
       flexDirection: 'row',
       height,
-      padding: config.padding(4),
+      padding: padding(4),
       width: '100%',
     },
     notification: {elevation: 2, zIndex: 2},
     notificationSafeArea: {
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
       height,
       position: 'absolute',
       width: '100%',
@@ -113,13 +113,11 @@ export const Notification = memo(function Notification({
         <View style={styles.notificationSafeArea} />
         <SafeAreaView>
           <View style={styles.modal}>
-            <Icon
-              color={color.background}
-              name="close"
-              size={config.padding(8)}
-            />
+            <Icon color="primaryA" name="close" size={padding(8)} />
             <Text center style={styles.flex} title={title} type="h4" />
-            <Icon name="close" onPress={onCancel} size={config.padding(8)} />
+            <TouchableOpacity onPress={onCancel}>
+              <Icon name="close" size={padding(8)} />
+            </TouchableOpacity>
           </View>
         </SafeAreaView>
       </Animated.View>

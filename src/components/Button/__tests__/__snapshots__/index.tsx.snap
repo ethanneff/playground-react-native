@@ -322,7 +322,7 @@ exports[`button renders correctly 1`] = `
                           onPress={[Function]}
                           style={
                             Object {
-                              "color": "hsl(0, 0%, 0%)",
+                              "color": "hsl(0,0%,0%)",
                               "fontSize": 14,
                               "fontWeight": "600",
                               "letterSpacing": 0.75,
@@ -670,7 +670,7 @@ exports[`button renders disable 1`] = `
                           onPress={[Function]}
                           style={
                             Object {
-                              "color": "hsla(0, 0%, 0%, 0.38)",
+                              "color": "hsl(0,0%,68.6%)",
                               "fontSize": 14,
                               "fontWeight": "600",
                               "letterSpacing": 0.75,

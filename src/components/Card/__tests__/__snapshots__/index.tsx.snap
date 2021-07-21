@@ -291,13 +291,13 @@ exports[`card renders correctly 1`] = `
                       style={
                         Array [
                           Object {
-                            "backgroundColor": "hsl(0, 0%, 100%)",
-                            "borderColor": "hsl(0, 0%, 100%)",
+                            "backgroundColor": "hsl(0,0%,100%)",
+                            "borderColor": "hsl(0,0%,100%)",
                             "borderRadius": 8,
                             "borderWidth": 1,
                             "elevation": 2,
                             "marginVertical": 8,
-                            "shadowColor": "hsl(210, 10%, 23%)",
+                            "shadowColor": "black",
                             "shadowOffset": Object {
                               "height": 2,
                               "width": 0,
@@ -644,14 +644,14 @@ exports[`card renders correctly with onPress 1`] = `
                         accessible={true}
                         style={
                           Object {
-                            "backgroundColor": "hsl(0, 0%, 100%)",
-                            "borderColor": "hsl(0, 0%, 100%)",
+                            "backgroundColor": "hsl(0,0%,100%)",
+                            "borderColor": "hsl(0,0%,100%)",
                             "borderRadius": 8,
                             "borderWidth": 1,
                             "elevation": 2,
                             "marginVertical": 8,
                             "opacity": 1,
-                            "shadowColor": "hsl(210, 10%, 23%)",
+                            "shadowColor": "black",
                             "shadowOffset": Object {
                               "height": 2,
                               "width": 0,

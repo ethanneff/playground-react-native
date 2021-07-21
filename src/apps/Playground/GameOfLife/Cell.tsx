@@ -31,9 +31,11 @@ export const Cell = memo(function Cell({x, y}: Props) {
       style={{
         height: size,
         width: size,
-        backgroundColor: selected ? color.primary : color.background,
+        backgroundColor: selected
+          ? color.background.accent
+          : color.background.primaryA,
         borderWidth: 1,
-        borderColor: color.light,
+        borderColor: color.background.secondary,
       }}
     />
   );

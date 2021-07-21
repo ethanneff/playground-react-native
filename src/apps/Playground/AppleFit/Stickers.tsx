@@ -1,9 +1,10 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Icon} from '../../../components';
+import {MonoMultiColor} from '../../../utils';
 
 type Props = {
-  color: string;
+  color: keyof MonoMultiColor;
   index: number;
   icon: string;
   size: number;

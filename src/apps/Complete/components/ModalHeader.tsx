@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import {Icon, Text} from '../../../components';
-import {config} from '../../../utils';
+import {Icon, Text, TouchableOpacity} from '../../../components';
+import {padding} from '../../../utils';
 
 type Props = {
   title: string;
@@ -13,7 +13,7 @@ type Props = {
 export const ModalHeader = memo(function ModalHeader({
   title,
   onLeftPress,
-  size = config.padding(8),
+  size = padding(8),
   onRightPress,
 }: Props) {
   return (
@@ -21,21 +21,15 @@ export const ModalHeader = memo(function ModalHeader({
       style={{
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: config.padding(4),
+        marginBottom: padding(4),
       }}>
-      <Icon
-        invisible={!onLeftPress}
-        name="chevron-left"
-        onPress={onLeftPress}
-        size={size}
-      />
+      <TouchableOpacity onPress={onLeftPress}>
+        <Icon invisible={!onLeftPress} name="chevron-left" size={size} />
+      </TouchableOpacity>
       <Text center flex title={title} type="h4" />
-      <Icon
-        invisible={!onRightPress}
-        name="close"
-        onPress={onRightPress}
-        size={size}
-      />
+      <TouchableOpacity onPress={onRightPress}>
+        <Icon invisible={!onRightPress} name="close" size={size} />
+      </TouchableOpacity>
     </View>
   );
 });

@@ -2,22 +2,22 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {FlatList, ListRenderItem, View} from 'react-native';
 import {Button, Screen} from '../../../components';
-import {changeTheme, ColorTheme, colorThemes} from '../../../models';
+import {changeTheme, Theme, themes} from '../../../models';
 import {useRootDispatch, useRootSelector} from '../../../utils';
 
 export const Settings = memo(function PortfolioSettings() {
   const dispatch = useRootDispatch();
-  const currentTheme = useRootSelector(state => state.theme.currentColor);
+  const currentTheme = useRootSelector(state => state.theme.currentTheme);
   const {goBack} = useNavigation();
   const themePress = useCallback(
-    (theme: ColorTheme) => () => dispatch(changeTheme(theme)),
+    (theme: Theme) => () => dispatch(changeTheme(theme)),
     [dispatch],
   );
-  const renderItem = useCallback<ListRenderItem<ColorTheme>>(
+  const renderItem = useCallback<ListRenderItem<Theme>>(
     ({item}) => (
       <View>
         <Button
-          color={currentTheme === item ? 'primary' : 'text'}
+          color={currentTheme === item ? 'positive' : 'primaryA'}
           key={item}
           onPress={themePress(item)}
           title={item}
@@ -26,15 +26,14 @@ export const Settings = memo(function PortfolioSettings() {
     ),
     [currentTheme, themePress],
   );
-  const renderHeader = useCallback(() => <Button disable title="Theme" />, []);
+  const renderHeader = useCallback(() => <Button disabled title="Theme" />, []);
   const keyExtractor = useCallback(item => item, []);
 
-  const navBack = useCallback(() => goBack(), [goBack]);
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Settings">
+    <Screen dropShadow onLeftPress={goBack} title="Settings">
       <FlatList
         ListHeaderComponent={renderHeader}
-        data={colorThemes}
+        data={themes}
         keyExtractor={keyExtractor}
         keyboardShouldPersistTaps="handled"
         renderItem={renderItem}

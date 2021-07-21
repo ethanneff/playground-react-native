@@ -80,7 +80,6 @@ export const Archero = memo(function Archero() {
     const {x0, y0} = gesture.current;
     const offset = window.height - dimensions.height;
     const offset2 = window.width - dimensions.width;
-    // TODO: handle joystick location better in landscape
     const toValue = {
       x: x0 - joystickCenter - offset2 / 2,
       y: y0 - joystickCenter - offset / 2 - joystickSize / 1.5,
@@ -134,13 +133,11 @@ export const Archero = memo(function Archero() {
     setDimensions({width: layout.width, height: layout.height});
   }, []);
 
-  const navBack = useCallback(() => goBack(), [goBack]);
-
   return (
-    <Screen onLeftPress={navBack} title="Archero">
+    <Screen onLeftPress={goBack} title="Archero">
       <View
         onLayout={onLayout}
-        style={{flex: 1, backgroundColor: color.success}}
+        style={{flex: 1, backgroundColor: color.background.tertiary}}
         {...panGesture.panHandlers}>
         <Animated.View
           style={[
@@ -148,7 +145,7 @@ export const Archero = memo(function Archero() {
             {
               width: charSize,
               height: charSize,
-              backgroundColor: color.brand,
+              backgroundColor: color.background.accent,
             },
           ]}
         />
@@ -161,7 +158,7 @@ export const Archero = memo(function Archero() {
               borderRadius: 500,
               width: joystickSize,
               height: joystickSize,
-              backgroundColor: color.overlay,
+              backgroundColor: color.overlay.light,
             },
           ]}>
           <View
@@ -171,7 +168,7 @@ export const Archero = memo(function Archero() {
               borderRadius: 500,
               width: thumbSize,
               height: thumbSize,
-              backgroundColor: color.overlay,
+              backgroundColor: color.overlay.light,
             }}>
             <Animated.View
               style={[
@@ -180,7 +177,10 @@ export const Archero = memo(function Archero() {
                   borderRadius: 500,
                   width: thumbSize,
                   height: thumbSize,
-                  backgroundColor: colorWithOpacity(color.brand, 0.8),
+                  backgroundColor: colorWithOpacity(
+                    color.background.accent,
+                    0.8,
+                  ),
                 },
               ]}
             />

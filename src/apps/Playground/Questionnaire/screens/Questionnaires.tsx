@@ -1,7 +1,12 @@
 import React, {useCallback, useState} from 'react';
 import {FlatList, View} from 'react-native';
-import {Card, Icon, Modal, Text} from '../../../../components';
-import {useColor} from '../../../../hooks';
+import {
+  Card,
+  Icon,
+  Modal,
+  Text,
+  TouchableOpacity,
+} from '../../../../components';
 import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {
   createQuestionnaire,
@@ -16,7 +21,6 @@ export const Questionnaires = (): JSX.Element => {
   const selected = useRootSelector(state => state.questionnaires.selected);
   const [actionSheet, setActionSheet] = useState(false);
   const dispatch = useRootDispatch();
-  const color = useColor();
   const handleLongPress = useCallback(
     (id: string) => () => dispatch(removeQuestionnaire(id)),
     [dispatch],
@@ -51,7 +55,9 @@ export const Questionnaires = (): JSX.Element => {
               <Text title={item.title} type="h3" />
               <Text title={subtitle} type="caption" />
             </View>
-            <Icon name="dots-horizontal" onPress={handleItemMenu} />
+            <TouchableOpacity onPress={handleItemMenu}>
+              <Icon name="dots-horizontal" />
+            </TouchableOpacity>
           </View>
         </Card>
       );
@@ -70,18 +76,19 @@ export const Questionnaires = (): JSX.Element => {
         keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
       />
-      <Icon
-        color={color.background}
-        fab
-        name="plus"
-        onPress={handleCreate}
-        style={{
-          margin: 10,
-          position: 'absolute',
-          bottom: 0,
-          right: 0,
-        }}
-      />
+      <TouchableOpacity onPress={handleCreate}>
+        <Icon
+          color="primaryA"
+          fab
+          name="plus"
+          style={{
+            margin: 10,
+            position: 'absolute',
+            bottom: 0,
+            right: 0,
+          }}
+        />
+      </TouchableOpacity>
       {actionSheet && (
         <Modal onBackgroundPress={handleActionSheetClose}>
           <Text title="hello" />

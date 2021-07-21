@@ -48,14 +48,14 @@ export const Modal = memo(function Modal({
       zIndex: 1,
     },
     modal: {
-      backgroundColor: backgroundColor || color.background,
+      backgroundColor: backgroundColor || color.background.primaryA,
       maxHeight,
       width: screen.width * widthPercent,
       ...dropShadow(10),
     },
     overlay: {
       alignItems: 'center',
-      backgroundColor: showOverlay ? color.overlay : undefined,
+      backgroundColor: showOverlay ? color.overlay.light : undefined,
       height: '100%',
       justifyContent: 'center',
     },

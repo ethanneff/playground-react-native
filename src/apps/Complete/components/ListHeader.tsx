@@ -1,8 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {Keyboard, View} from 'react-native';
-import {TextInput} from '../../../components';
-import {useColor} from '../../../hooks';
+import {TextInput, TextInputIcon} from '../../../components';
 import {useRootDispatch, useRootSelector} from '../../../utils';
 import {navItemDetails, updateItem} from '../models';
 
@@ -17,7 +16,6 @@ export const ListHeader = memo(function ListHeader({
 }: ListHeaderProps) {
   const dispatch = useRootDispatch();
   const {navigate} = useNavigation();
-  const color = useColor();
   const item = useRootSelector(s => s.completeItem.items[itemId]);
 
   const onSave = useCallback(
@@ -35,12 +33,12 @@ export const ListHeader = memo(function ListHeader({
 
   const onClose = useCallback(() => Keyboard.dismiss(), []);
 
-  const icons = [
+  const icons: TextInputIcon[] = [
     {name: 'close', onPress: onClose, focus: true, reset: true},
     {
       name: 'send',
       onPress: onSave,
-      color: color.primary,
+      color: 'accent',
       focus: true,
       required: true,
     },

@@ -1,5 +1,3 @@
-import {useColor} from '../useColor';
-
 type UseDropShadow = (elevation: number) => {
   elevation: number;
   shadowColor: string;
@@ -13,13 +11,12 @@ type UseDropShadow = (elevation: number) => {
 };
 
 export const useDropShadow = (): UseDropShadow => {
-  const color = useColor();
   return (elevation = 10) => {
     const shadowOpacity = elevation * 0.036 + 0.12;
     const shadowRadius = elevation * 0.36 + 1.2;
     return {
       elevation,
-      shadowColor: color.dark,
+      shadowColor: 'black',
       shadowOffset: {
         height: 2,
         width: 0,

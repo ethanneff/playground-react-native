@@ -1,8 +1,8 @@
 import React, {memo} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {useColor} from '../../hooks';
-import {config} from '../../utils';
+import {StyleSheet} from 'react-native';
+import {padding} from '../../utils';
 import {Icon} from '../Icon';
+import {TouchableOpacity} from '../TouchableOpacity';
 
 interface Props {
   icon?: string;
@@ -17,22 +17,20 @@ export const NavButton = memo(function NavButton({
   isRight = false,
   testID,
 }: Props) {
-  const color = useColor();
   const styles = StyleSheet.create({
-    button: {padding: config.padding(2)},
+    button: {padding: padding(2)},
     buttonRight: {alignSelf: 'flex-end'},
   });
   return (
-    <View style={styles.button}>
+    <TouchableOpacity onPress={onPress} style={styles.button}>
       <Icon
-        color={color.secondary}
+        color="secondary"
         hidden={!onPress}
         name={icon}
-        onPress={onPress}
-        size={config.padding(8)}
+        size={padding(8)}
         style={isRight && styles.buttonRight}
         testID={testID}
       />
-    </View>
+    </TouchableOpacity>
   );
 });

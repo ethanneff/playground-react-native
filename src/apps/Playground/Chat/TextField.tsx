@@ -1,14 +1,21 @@
-import React, {memo, useCallback} from 'react';
-import {Keyboard, View} from 'react-native';
+import React, {memo, useCallback, useEffect, useRef} from 'react';
+import {Keyboard, TextInput, View} from 'react-native';
 import {v4} from 'uuid';
-import {Icon, Input} from '../../../components';
+import {Icon, Input, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
-import {config, useRootDispatch, useRootSelector} from '../../../utils';
-import {createChatMessage, Message, typeChatMessage} from './Messages';
+import {padding, useRootDispatch, useRootSelector} from '../../../utils';
+import {
+  createChatMessage,
+  getChatSubmittable,
+  Message,
+  typeChatMessage,
+} from './Messages';
 
 export const TextField = memo(function TextField() {
   const dispatch = useRootDispatch();
+  const textFieldRef = useRef<TextInput | null>(null);
   const textField = useRootSelector(state => state.chatMessage.textField);
+  const submittable = useRootSelector(getChatSubmittable);
   const onMessageChange = useCallback(
     (message: string) => dispatch(typeChatMessage(message)),
     [dispatch],
@@ -32,32 +39,39 @@ export const TextField = memo(function TextField() {
     dispatch(createChatMessage(message));
   }, [dispatch, textField]);
 
+  useEffect(() => {
+    textFieldRef.current?.focus();
+  }, []);
+
   return (
     <View
       style={{
-        padding: config.padding(4),
+        padding: padding(4),
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: color.background,
+        backgroundColor: color.background.primaryA,
       }}>
       <Input
         flex
         onChangeText={onMessageChange}
+        onRef={textFieldRef}
         onSubmitEditing={onSubmit}
         placeholder="Write something..."
         removeError
         value={textField}
       />
-      <Icon
-        name="send"
-        onPress={onSubmit}
-        size={20}
-        style={{
-          paddingLeft: config.padding(2),
-          justifyContent: 'center',
-        }}
-      />
+      <TouchableOpacity disabled={!submittable} onPress={onSubmit}>
+        <Icon
+          color={submittable ? 'accent' : 'primaryA'}
+          disabled={!submittable}
+          name="send"
+          style={{
+            paddingLeft: padding(2),
+            justifyContent: 'center',
+          }}
+        />
+      </TouchableOpacity>
     </View>
   );
 });

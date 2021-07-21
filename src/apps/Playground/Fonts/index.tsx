@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
+import React, {memo} from 'react';
 import {Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
@@ -7,11 +7,10 @@ import {useColor} from '../../../hooks';
 export const Fonts = memo(function PlaygroundFonts() {
   const {goBack} = useNavigation();
   const color = useColor();
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Fonts">
-      <ScrollView style={{backgroundColor: color.surface}}>
+    <Screen dropShadow onLeftPress={goBack} title="Fonts">
+      <ScrollView style={{backgroundColor: color.background.secondary}}>
         <Text
           title="H1: The quick brown fox jumps over the lazy dog."
           type="h1"

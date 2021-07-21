@@ -60,7 +60,7 @@ export default memo(function ChecklistUpdate() {
           value={form.description}
         />
         <Button onPress={handleSubmit} title="update" />
-        <Button color="danger" onPress={handleDeletePress} title="delete" />
+        <Button color="negative" onPress={handleDeletePress} title="delete" />
       </Screen>
       {showDeleteModal && (
         <Modal onBackgroundPress={handleDeleteCancel}>

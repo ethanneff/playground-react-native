@@ -14,18 +14,23 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {TouchableWithoutFeedback} from '../../conversions';
 import {useColor} from '../../hooks';
-import {Color} from '../../models';
-import {config, FontEmphasis, FontType, getFontStyles} from '../../utils';
+import {
+  FontEmphasis,
+  FontType,
+  getFontStyles,
+  MonoMultiColor,
+  padding,
+} from '../../utils';
 import {Icon} from '../Icon';
+import {TouchableOpacity} from '../TouchableOpacity';
 import {PointerEvents, TextContentType} from './types';
 
-type Icon = {
+export type TextInputIcon = {
   name: string;
   onPress: (text: string) => void;
   hidden?: boolean;
-  color?: string;
+  color?: keyof MonoMultiColor;
   focus?: boolean;
   required?: boolean;
   clear?: boolean;
@@ -38,7 +43,7 @@ type TextInputProps = {
   autoCorrect?: boolean;
   blurOnSubmit?: boolean;
   disableFullscreenUI?: boolean;
-  backgroundColor?: string;
+  backgroundColor?: keyof MonoMultiColor;
   editable?: boolean;
   error?: boolean;
   keyboardType?: KeyboardTypeOptions;
@@ -47,12 +52,12 @@ type TextInputProps = {
   textContentType?: TextContentType;
   secureTextEntry?: boolean;
   style?: StyleProp<ViewStyle>;
-  color?: keyof Color;
+  color?: keyof MonoMultiColor;
   onFocus?: (text: string) => void;
   onBlur?: (text: string) => void;
   pointerEvents?: PointerEvents;
   value?: string;
-  icons?: Icon[];
+  icons?: TextInputIcon[];
   submitClear?: boolean;
   onRef?: MutableRefObject<Original | null>;
   onSubmitEditing?: (text: string) => void;
@@ -68,7 +73,7 @@ export const TextInput = memo(function TextInput({
   autoCorrect,
   emphasis,
   disableFullscreenUI,
-  iconHeight = config.padding(5),
+  iconHeight = padding(5),
   placeholder,
   submitClear,
   onChangeText,
@@ -94,13 +99,14 @@ export const TextInput = memo(function TextInput({
   const [focus, setFocus] = useState(false);
   const [text, setText] = useState(value);
   const colorScheme = useColor();
-  const backColor = backgroundColor || colorScheme.background;
+  const backColor = colorScheme.background[backgroundColor || 'primaryA'];
   const {fontSize, textColor} = getFontStyles({
     emphasis,
     type,
     color,
     colorScheme,
   });
+
   const textInput = useRef<Original | null>(null);
 
   const onChangeTextInternal = useCallback(
@@ -127,7 +133,7 @@ export const TextInput = memo(function TextInput({
   }, [onBlur, text]);
 
   const onIconPressInternal = useCallback(
-    (icon: Icon) => () => {
+    (icon: TextInputIcon) => () => {
       icon.onPress(text);
       if (icon.clear) setText('');
       if (icon.reset) setText(value);
@@ -144,10 +150,6 @@ export const TextInput = memo(function TextInput({
     [onRef],
   );
 
-  const onIconParentPress = useCallback(e => {
-    e.preventDefault();
-  }, []);
-
   useEffect(() => {
     setText(value);
   }, [value]);
@@ -160,12 +162,12 @@ export const TextInput = memo(function TextInput({
           alignItems: 'center',
           backgroundColor: backColor,
           borderBottomColor: error
-            ? colorScheme.danger
+            ? colorScheme.text.negative
             : focus
-            ? colorScheme.primary
+            ? colorScheme.text.accent
             : backColor,
           borderLeftColor: backColor,
-          borderRadius: config.padding(1),
+          borderRadius: padding(1),
           borderRightColor: backColor,
           borderTopColor: backColor,
           borderWidth: 2,
@@ -183,16 +185,16 @@ export const TextInput = memo(function TextInput({
           onFocus={onFocusInternal}
           onSubmitEditing={onSubmitEditingInternal}
           placeholder={placeholder}
-          placeholderTextColor={colorScheme.secondary}
+          placeholderTextColor={colorScheme.text.secondary}
           pointerEvents={pointerEvents}
           ref={onInternalRef}
           returnKeyType={returnKeyType}
           secureTextEntry={secureTextEntry}
-          selectionColor={colorScheme.primary}
+          selectionColor={colorScheme.text.accent}
           style={{
             color: textColor,
             flex: 1,
-            padding: config.padding(2),
+            padding: padding(2),
             ...fontSize,
           }}
           textContentType={textContentType}
@@ -200,25 +202,26 @@ export const TextInput = memo(function TextInput({
           value={text}
         />
         {icons.length > 0 && ( // TODO: refactor to declarative
-          <TouchableWithoutFeedback
-            onPress={onIconParentPress}
-            style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row'}}>
             {icons.map(icon =>
               icon.hidden ||
               (focus && !icon.focus) ||
               (!focus && icon.focus) ? null : (
-                <Icon
-                  color={icon.color}
+                <TouchableOpacity
                   disabled={icon.required && text.trim().length === 0}
                   key={`${icon.name}-focus`}
-                  name={icon.name}
-                  onPress={onIconPressInternal(icon)}
-                  padded
-                  size={iconHeight}
-                />
+                  onPress={onIconPressInternal(icon)}>
+                  <Icon
+                    color={icon.color}
+                    disabled={icon.required && text.trim().length === 0}
+                    name={icon.name}
+                    padded
+                    size={iconHeight}
+                  />
+                </TouchableOpacity>
               ),
             )}
-          </TouchableWithoutFeedback>
+          </View>
         )}
       </View>
     </View>

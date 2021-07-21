@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {Button, Input, Screen} from '../../../components';
 import {useColor} from '../../../hooks';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 
 const styles = StyleSheet.create({
   row: {flexDirection: 'row', justifyContent: 'space-around'},
@@ -18,7 +18,10 @@ export const ForgotPassword = memo(function PortfolioForgotPassword() {
   return (
     <Screen dropShadow onLeftPress={navLogin} title="Forgot Password">
       <ScrollView
-        style={{padding: config.padding(4), backgroundColor: color.surface}}>
+        style={{
+          padding: padding(4),
+          backgroundColor: color.background.secondary,
+        }}>
         <Input
           onChangeText={handleEmail}
           placeholder="example@gmail.com"

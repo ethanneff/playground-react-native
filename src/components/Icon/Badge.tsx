@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {useColor} from '../../hooks';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 import {Text} from '../Text';
 
 interface Props {
@@ -16,18 +16,18 @@ export const Badge = memo(({badge}: Props) => {
   const styles = StyleSheet.create({
     badgeContainer: {
       alignItems: 'center',
-      backgroundColor: color.primary,
-      borderRadius: config.padding(5),
-      height: config.padding(5),
+      backgroundColor: color.background.accent,
+      borderRadius: padding(5),
+      height: padding(5),
       justifyContent: 'center',
       position: 'absolute',
-      right: -config.padding(2),
-      top: -config.padding(2),
-      width: config.padding(5),
+      right: -padding(2),
+      top: -padding(2),
+      width: padding(5),
     },
     badgeText: {
-      color: color.background,
-      fontSize: config.padding(2),
+      color: color.background.primaryA,
+      fontSize: padding(2),
     },
   });
 

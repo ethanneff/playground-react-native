@@ -3,7 +3,7 @@ import React, {memo, useCallback, useEffect} from 'react';
 import {Button, Screen, Text} from '../../../../components';
 import {ScrollView} from '../../../../conversions';
 import {useAuth, useColor} from '../../../../hooks';
-import {config, useRootDispatch, useRootSelector} from '../../../../utils';
+import {padding, useRootDispatch, useRootSelector} from '../../../../utils';
 import {Card} from '../../components';
 import {logout} from '../../models';
 import {useTabTap} from '../../utils';
@@ -30,14 +30,14 @@ export const Account = memo(function Account() {
     <Screen title="Account">
       <ScrollView
         contentContainerStyle={{
-          padding: config.padding(4),
-          backgroundColor: color.surface,
+          padding: padding(4),
+          backgroundColor: color.background.secondary,
         }}
-        style={{backgroundColor: color.surface}}>
+        style={{backgroundColor: color.background.secondary}}>
         <Card margin="bottom">
           <Text
             emphasis="low"
-            style={{paddingBottom: config.padding(4)}}
+            style={{paddingBottom: padding(4)}}
             title="Profile"
             type="h5"
           />
@@ -50,7 +50,7 @@ export const Account = memo(function Account() {
         <Card margin="bottom">
           <Text
             emphasis="low"
-            style={{paddingBottom: config.padding(4)}}
+            style={{paddingBottom: padding(4)}}
             title="Reminders"
             type="h5"
           />
@@ -59,7 +59,7 @@ export const Account = memo(function Account() {
         <Card margin="bottom">
           <Text
             emphasis="low"
-            style={{paddingBottom: config.padding(4)}}
+            style={{paddingBottom: padding(4)}}
             title="Payment"
             type="h5"
           />
@@ -68,14 +68,14 @@ export const Account = memo(function Account() {
         <Card margin="bottom">
           <Text
             emphasis="low"
-            style={{paddingBottom: config.padding(4)}}
+            style={{paddingBottom: padding(4)}}
             title="Feedback"
             type="h5"
           />
           <Text center emphasis="medium" title="..." type="h4" />
         </Card>
         <Button onPress={onLogout} title="logout" />
-        {response.error && <Text color="danger" title={response.error} />}
+        {response.error && <Text color="negative" title={response.error} />}
         <Button onPress={onNavToAdmin} title="go to admin" />
       </ScrollView>
     </Screen>

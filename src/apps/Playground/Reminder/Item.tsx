@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 
 interface Props {
   title: string;
@@ -27,32 +27,32 @@ export const Item = memo(function ReminderItem({
   const color = useColor();
   const styles = StyleSheet.create({
     button: {
-      borderColor: color.secondary,
-      borderRadius: config.padding(1),
+      borderColor: color.border.primaryA,
+      borderRadius: padding(1),
       borderWidth: 1,
       flexDirection: 'row',
-      height: config.padding(13),
+      height: padding(13),
       justifyContent: 'space-between',
-      marginBottom: marginBottom ? config.padding(2) : 0,
+      marginBottom: marginBottom ? padding(2) : 0,
     },
     container: {
       flex: 1,
       flexDirection: 'row',
-      paddingHorizontal: config.padding(2),
+      paddingHorizontal: padding(2),
     },
     icon: {
       justifyContent: 'center',
     },
     subtitle: {
       paddingLeft: 1,
-      paddingTop: config.padding(1),
+      paddingTop: padding(1),
     },
     textContainer: {
       flex: 1,
       justifyContent: 'center',
     },
     title: {
-      color: active ? color.primary : color.text,
+      color: active ? color.text.accent : color.text.primaryA,
     },
   });
 
@@ -68,9 +68,7 @@ export const Item = memo(function ReminderItem({
             <Text style={styles.subtitle} title={description} type="caption" />
           )}
         </View>
-        {icon && (
-          <Icon name={icon} size={config.padding(5)} style={styles.icon} />
-        )}
+        {icon && <Icon name={icon} size={padding(5)} style={styles.icon} />}
       </View>
     </TouchableOpacity>
   );

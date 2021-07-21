@@ -1,103 +1,77 @@
-import dayjs from 'dayjs';
 import React, {memo, useCallback, useEffect, useState} from 'react';
-import {Modal, Screen, Text} from '../../components';
+import {
+  ActivityIndicator,
+  FlatList,
+  ListRenderItem,
+  StyleSheet,
+} from 'react-native';
+import {Screen} from '../../components';
 import {useAdminNavBack} from '../../hooks';
-import {List} from './List';
+import {ListItem} from './ListItem';
 import {Item} from './types';
+import {
+  getCurrentItem,
+  getFirstItemOfDay,
+  getItemLayout,
+  getMoreItems,
+  initialIndex,
+  keyExtractor,
+} from './utils';
 
 // TODO: flatlist on web
-// TODO: rename item.action to item.title
-// TODO: fix refresh scroll jitter
-// TODO: re-rendering everything because dialog is same level as list
-
-const infiniteScrollRegeneration = 100;
-const editItem: {visible: boolean; item: Item | null} = {
-  visible: false,
-  item: null,
-};
 
 export const Home = memo(function Home() {
-  const [modalItemEdit, setModalItemEdit] = useState(editItem);
-  const [modalProfile] = useState(false);
-  const [modalLogin] = useState(false);
-  const [items, setItems] = useState<Item[]>([]);
   const {onLeftPress} = useAdminNavBack();
+  const [loading, setLoading] = useState(true);
+  const [items, setItems] = useState<Item[]>(() => getMoreItems([]));
 
-  const generateMoreItems = useCallback(() => {
-    const group = [...items];
-    for (let i = 0; i < infiniteScrollRegeneration; i++) {
-      const lastItem =
-        group.length === 0
-          ? dayjs().startOf('day').add(2, 'day').valueOf()
-          : group[group.length - 1].id;
-      const next = dayjs(lastItem).subtract(1, 'hour');
-      const id = next.valueOf();
-      group.push({
-        action: String(Math.random()) + String(Math.random()),
-        dayOfMonth: next.format('D'),
-        dayOfWeek: next.format('ddd'),
-        hour: next.format('h'),
-        id,
-        month: next.format('MMM'),
-        zone: next.format('a'),
-      });
-    }
-    setItems(group);
+  const addMoreItems = useCallback(() => {
+    const moreItems = getMoreItems(items);
+    setItems(moreItems);
   }, [items]);
 
-  const handleItemPress = useCallback((item: Item) => {
-    setModalItemEdit({visible: true, item});
-  }, []);
+  const styles = StyleSheet.create({
+    list: {
+      opacity: loading ? 0 : 1,
+    },
+    loading: {
+      height: '100%',
+      position: 'absolute',
+      width: '100%',
+    },
+  });
 
-  const handleLoad = useCallback(() => {
-    if (items.length > 0) return;
+  const renderItem = useCallback<ListRenderItem<Item>>(
+    ({item, index}) => (
+      <ListItem
+        currentItem={getCurrentItem(item)}
+        item={item}
+        showSection={getFirstItemOfDay(index, item, items)}
+      />
+    ),
+    [items],
+  );
 
-    generateMoreItems();
-  }, [generateMoreItems, items.length]);
-
-  const handleModalEditBackgroundPress = useCallback(() => {
-    setModalItemEdit(state => ({...state, visible: false}));
-  }, []);
-
-  useEffect(() => handleLoad(), [handleLoad]);
+  useEffect(() => {
+    if (loading && items.length > 0) setTimeout(() => setLoading(false), 1000);
+  }, [items.length, loading]);
 
   return (
-    <>
-      <Screen border onLeftPress={onLeftPress} title="Focus">
-        {items.length > 0 && (
-          <List
-            items={items}
-            onEndReached={generateMoreItems}
-            onEndReachedThreshold={0.5}
-            onItemPress={handleItemPress}
-          />
-        )}
-      </Screen>
-      {modalItemEdit.visible && (
-        <Modal
-          duration={2000}
-          onBackgroundPress={handleModalEditBackgroundPress}
-          showOverlay
-          testID="editItem">
-          <Text title={modalItemEdit.item?.action || 'empty'} />
-        </Modal>
-      )}
-      {modalProfile && (
-        <Modal
-          onBackgroundPress={handleModalEditBackgroundPress}
-          showOverlay
-          testID="editItem">
-          <Text title="hello" />
-        </Modal>
-      )}
-      {modalLogin && (
-        <Modal
-          onBackgroundPress={handleModalEditBackgroundPress}
-          showOverlay
-          testID="login">
-          <Text title="hello" />
-        </Modal>
-      )}
-    </>
+    <Screen border onLeftPress={onLeftPress} title="Focus">
+      <FlatList
+        data={items}
+        getItemLayout={getItemLayout}
+        initialNumToRender={0}
+        initialScrollIndex={initialIndex}
+        inverted
+        keyExtractor={keyExtractor}
+        keyboardShouldPersistTaps="handled"
+        onEndReached={addMoreItems}
+        onEndReachedThreshold={0.5}
+        renderItem={renderItem}
+        style={styles.list}
+      />
+      {loading && <ActivityIndicator size="large" style={styles.loading} />}
+    </Screen>
   );
 });

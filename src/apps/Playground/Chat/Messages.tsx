@@ -25,6 +25,9 @@ export const getActiveChatMessagesOrderByCreatedAt = createSelector(
       .sort((a, b) => b.createdAt - a.createdAt),
 );
 
+export const getChatSubmittable = (state: RootState): boolean =>
+  state.chatMessage.textField.trim().length > 0;
+
 /* INTERFACES */
 export type ChatMessageReducer = {
   textField: string;

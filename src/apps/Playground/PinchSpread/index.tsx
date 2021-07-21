@@ -1,9 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
+import React, {memo, useState} from 'react';
 import {Animated, PanResponder, StyleSheet, View} from 'react-native';
 import {Screen, Text} from '../../../components';
 import {useColor} from '../../../hooks';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 import {GestureHandler} from './logic';
 
 const minTouches = 2;
@@ -14,7 +14,7 @@ export const PinchSpread = memo(function PinchSpread() {
   const color = useColor();
   const {goBack} = useNavigation();
   const styles = StyleSheet.create({
-    container: {backgroundColor: color.surface, flex: 1},
+    container: {backgroundColor: color.background.secondary, flex: 1},
   });
   const gestureHandler = new GestureHandler({minTouches});
   const panGesture = PanResponder.create({
@@ -29,12 +29,11 @@ export const PinchSpread = memo(function PinchSpread() {
         setState(prev => ({...prev, pinchCount: prev.pinchCount++}));
     },
   });
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen dropShadow onLeftPress={navBack} title="Pinch Spread">
+    <Screen dropShadow onLeftPress={goBack} title="Pinch Spread">
       <Animated.View style={styles.container} {...panGesture.panHandlers} />
-      <View style={{padding: config.padding(2)}}>
+      <View style={{padding: padding(2)}}>
         <Text center title={title} />
         <Text center title={`spread: ${state.spreadCount}`} />
         <Text center title={`pinch: ${state.pinchCount}`} />

@@ -1,6 +1,6 @@
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {ActivityIndicator, FlatList, ListRenderItem, View} from 'react-native';
-import {config} from '../../utils';
+import {padding} from '../../utils';
 import {Button} from '../Button';
 import {Card} from '../Card';
 import {Text} from '../Text';
@@ -33,7 +33,7 @@ const initialActivity: ActivityModel = {
 };
 
 export const Activity = memo(function Activity({
-  size = config.padding(6),
+  size = padding(6),
   margin = 2,
   username,
   site,
@@ -107,7 +107,7 @@ export const Activity = memo(function Activity({
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
-          paddingBottom: config.padding(4),
+          paddingBottom: padding(4),
           alignContent: 'center',
           alignItems: 'center',
         }}>
@@ -127,7 +127,7 @@ export const Activity = memo(function Activity({
       ) : state.request === 'failure' ? (
         <>
           <Text title="Missing network connection" />
-          <Button color="danger" onPress={refresh} title="Retry" />
+          <Button color="negative" onPress={refresh} title="Retry" />
         </>
       ) : (
         <>
@@ -144,7 +144,7 @@ export const Activity = memo(function Activity({
           <Text
             center
             emphasis="medium"
-            style={{paddingTop: config.padding(3)}}
+            style={{paddingTop: padding(3)}}
             title={state.selected.submissions}
             type="overline"
           />

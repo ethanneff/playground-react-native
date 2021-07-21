@@ -16,16 +16,19 @@ import {
   ViewStyle,
 } from 'react-native';
 import {useColor} from '../../hooks';
-import {config} from '../../utils';
+import {fontSizes, padding} from '../../utils';
 import {Button} from '../Button';
 import {Icon} from '../Icon';
 import {Text} from '../Text';
+import {TouchableOpacity} from '../TouchableOpacity';
 
 /*
 styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 */
 
 type TextContentType = 'username' | 'password' | 'none';
+
+// TODO: fix blurOnSubmit=false
 
 interface Props {
   autoCorrect?: boolean;
@@ -80,34 +83,34 @@ export const Input = memo(function Input({
   const color = useColor();
   const styles = StyleSheet.create({
     clear: {
-      paddingLeft: config.padding(2),
+      paddingLeft: padding(2),
     },
     flex: {
       flex: 1,
     },
     input: {
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
       borderColor: error
-        ? color.danger
+        ? color.text.negative
         : focus
-        ? color.primary
-        : color.secondary,
-      borderRadius: config.padding(1),
+        ? color.text.accent
+        : color.text.secondary,
+      borderRadius: padding(1),
       borderWidth: 2,
       flexDirection: 'row',
-      padding: config.padding(2),
+      padding: padding(2),
     },
     row: {
       flexDirection: 'row',
     },
     textInput: {
-      color: color.text,
+      color: color.text.primaryA,
       flex: 1,
     },
   });
   const textInput = useRef<Original | null>(null);
   const optionalText = ' - optional';
-  const textInputStyles = [styles.textInput, config.fontSizes.body2, textStyle];
+  const textInputStyles = [styles.textInput, fontSizes.body2, textStyle];
   const noValue = value.length === 0;
   const noError = error.length === 0;
   const noTitle = title.length === 0;
@@ -155,36 +158,33 @@ export const Input = memo(function Input({
           onFocus={onFocus}
           onSubmitEditing={onSubmitEditing}
           placeholder={placeholder}
-          placeholderTextColor={color.secondary}
+          placeholderTextColor={color.text.secondary}
           ref={onRefInternal}
           returnKeyType={returnKeyType}
           secureTextEntry={secureTextEntry}
-          selectionColor={color.primary}
+          selectionColor={color.text.accent}
           style={textInputStyles}
           textContentType={textContentType}
           underlineColorAndroid="transparent"
           value={value}
         />
-        <Icon
-          color={color.secondary}
-          hidden={noValue}
-          name={clearIcon}
-          onPress={textClear}
-          style={styles.clear}
-        />
+        <TouchableOpacity onPress={textClear}>
+          <Icon
+            color="tertiary"
+            hidden={noValue}
+            name={clearIcon}
+            style={styles.clear}
+          />
+        </TouchableOpacity>
       </View>
       {!removeError && (
         <View style={{flexDirection: 'row'}}>
-          <Icon
-            activeOpacity={1}
-            color={color.danger}
-            invisible={noError}
-            name={errorIcon}
-            onPress={focusOnInput}
-          />
+          <TouchableOpacity activeOpacity={1} onPress={focusOnInput}>
+            <Icon color="negative" invisible={noError} name={errorIcon} />
+          </TouchableOpacity>
           <Button
             activeOpacity={1}
-            color="danger"
+            color="negative"
             invisible={noError}
             lowercase
             noPadding

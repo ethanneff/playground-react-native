@@ -4,7 +4,7 @@ import {Animated, StyleSheet, View} from 'react-native';
 import {Button, Screen} from '../../../components';
 import {useColor, useDriver} from '../../../hooks';
 import {getHeight, getWidth} from '../../../models';
-import {config, useRootSelector} from '../../../utils';
+import {padding, useRootSelector} from '../../../utils';
 
 export const Ball = memo(function PlaygroundBall() {
   const height = useRootSelector(getHeight);
@@ -15,10 +15,9 @@ export const Ball = memo(function PlaygroundBall() {
   ).current;
   const useNativeDriver = useDriver();
   const color = useColor();
-  const size = config.padding(8);
+  const size = padding(8);
   const styles = StyleSheet.create({
     ball: {
-      borderColor: color.text,
       borderRadius: size,
       borderWidth: size,
       height: size * 2,
@@ -45,13 +44,12 @@ export const Ball = memo(function PlaygroundBall() {
     () => animate(Math.random(), Math.random()),
     [animate],
   );
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
     <Screen
       dropShadow
-      onLeftPress={navBack}
-      style={{backgroundColor: color.surface}}
+      onLeftPress={goBack}
+      style={{backgroundColor: color.background.secondary}}
       testID="ballScreen"
       title="Ball">
       <Animated.View

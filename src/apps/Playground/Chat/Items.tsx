@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useEffect, useRef} from 'react';
 import {FlatList, ListRenderItem} from 'react-native';
 import {useColor} from '../../../hooks';
-import {config, useRootSelector} from '../../../utils';
+import {padding, useRootSelector} from '../../../utils';
 import {Item} from './Item';
 import {getActiveChatMessagesOrderByCreatedAt, Message} from './Messages';
 
@@ -21,14 +21,14 @@ export const Items = memo(function ChatMessageItems() {
 
   return (
     <FlatList
-      contentContainerStyle={{padding: config.padding(4)}}
+      contentContainerStyle={{padding: padding(4)}}
       data={messages}
       inverted
       keyExtractor={keyExtractor}
       keyboardShouldPersistTaps="handled"
       ref={itemsRef}
       renderItem={renderItem}
-      style={{backgroundColor: color.surface}}
+      style={{backgroundColor: color.background.secondary}}
     />
   );
 });

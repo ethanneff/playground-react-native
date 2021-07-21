@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
+import React, {memo, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Screen, TouchableOpacity} from '../../../components';
 import {useColor} from '../../../hooks';
@@ -61,19 +61,19 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
 
   const color = useColor();
   const styles = StyleSheet.create({
-    container: {backgroundColor: color.surface},
+    container: {backgroundColor: color.background.secondary},
   });
 
   const width = 6;
   const height = 6;
   const size = dimension / width;
   const gems: Gem[] = [
-    {key: 'primary', color: color.primary},
-    {key: 'brand', color: color.brand},
-    {key: 'success', color: color.success},
-    {key: 'info', color: color.info},
-    {key: 'warning', color: color.warning},
-    {key: 'danger', color: color.danger},
+    {key: 'primary', color: color.background.primaryA},
+    {key: 'brand', color: color.background.primaryB},
+    {key: 'success', color: color.background.positive},
+    {key: 'info', color: color.background.accent},
+    {key: 'warning', color: color.background.warning},
+    {key: 'danger', color: color.background.negative},
   ];
 
   const [board, setBoard] = useState<Board>(() =>
@@ -98,10 +98,9 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
       setSelected({x, y});
     }
   };
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} title="Bejeweled">
+    <Screen onLeftPress={goBack} title="Bejeweled">
       <View style={styles.container}>
         {board.map((col, x) => (
           <View key={`${x}${col[0].key}`} style={{flexDirection: 'row'}}>
@@ -118,8 +117,8 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
                     flex: 1,
                     borderColor:
                       selected.x === x && selected.y === y
-                        ? color.text
-                        : color.background,
+                        ? color.border.primaryB
+                        : color.border.primaryA,
                     borderWidth: 4,
                     backgroundColor: gem.color,
                   }}

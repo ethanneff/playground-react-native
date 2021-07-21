@@ -3,7 +3,7 @@ import React, {memo, useCallback, useEffect, useState} from 'react';
 import {Animated, FlatList, StyleSheet, View} from 'react-native';
 import {Icon, Input, Screen, Text} from '../../../components';
 import {useColor, useDriver} from '../../../hooks';
-import {colorWithOpacity, config, useRootSelector} from '../../../utils';
+import {colorWithOpacity, padding, useRootSelector} from '../../../utils';
 
 const data = [
   {id: 1, name: '1'},
@@ -54,33 +54,36 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
   });
   const fadeContainer = state.animation.interpolate({
     inputRange: [0, 1],
-    outputRange: [color.background, colorWithOpacity(color.secondary)],
+    outputRange: [
+      color.background.primaryA,
+      colorWithOpacity(color.background.secondary),
+    ],
   });
   const styles = StyleSheet.create({
     container: {
       flex: 1,
     },
     header: {
-      backgroundColor: color.light,
-      height: config.padding(20),
+      backgroundColor: color.background.secondary,
+      height: padding(20),
       justifyContent: 'center',
-      padding: config.padding(2),
+      padding: padding(2),
     },
     item: {
-      borderBottomColor: color.light,
+      borderBottomColor: color.background.secondary,
       borderWidth: 0.2,
-      padding: config.padding(6),
+      padding: padding(6),
     },
     textContainer: {
       alignItems: 'center',
-      backgroundColor: color.background,
+      backgroundColor: color.background.primaryA,
       flexDirection: 'row',
       height: '100%',
-      padding: config.padding(2),
+      padding: padding(2),
     },
     textInput: {
       flex: 1,
-      marginLeft: config.padding(2),
+      marginLeft: padding(2),
     },
   });
 
@@ -131,10 +134,9 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     (value: string) => setState(prev => ({...prev, input: value})),
     [],
   );
-  const navBack = useCallback(() => goBack(), [goBack]);
 
   return (
-    <Screen onLeftPress={navBack} title="Search Bar">
+    <Screen onLeftPress={goBack} title="Search Bar">
       <View style={styles.header}>
         <View style={styles.textContainer}>
           <Animated.View
