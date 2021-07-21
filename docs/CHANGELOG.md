@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.54.1](https://github.com/ethanneff/example/compare/v2.54.0...v2.54.1) (2021-07-21)
+
+
+### Bug Fixes
+
+* remove comments ([45adfa2](https://github.com/ethanneff/example/commit/45adfa20a06bb558ed3c1d01fcf9f16932d6d80d))
+* update deps ([ee2dc6e](https://github.com/ethanneff/example/commit/ee2dc6eeac20e07361f505aba6f42e794716ae14))
+
 # [2.54.0](https://github.com/ethanneff/example/compare/v2.53.11...v2.54.0) (2021-07-21)
 
 
