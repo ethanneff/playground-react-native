@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.54.0](https://github.com/ethanneff/example/compare/v2.53.11...v2.54.0) (2021-07-21)
+
+
+### Features
+
+* update color scheme ([#325](https://github.com/ethanneff/example/issues/325)) ([0cc67af](https://github.com/ethanneff/example/commit/0cc67afb55da2f2a8ef9020ce7686b904056e270))
+
 ## [2.53.11](https://github.com/ethanneff/example/compare/v2.53.10...v2.53.11) (2021-07-20)
 
 

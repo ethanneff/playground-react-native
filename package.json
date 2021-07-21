@@ -1,6 +1,6 @@
 {
   "name": "@ethanneff/example",
-  "version": "2.53.11",
+  "version": "2.54.0",
   "description": "A playground for react-native",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@ethanneff"
