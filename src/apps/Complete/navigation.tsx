@@ -57,6 +57,7 @@ const useTabs = () => {
     activeTintColor: color.text.primaryA,
     inactiveTintColor: color.text.tertiary,
     showLabel: false,
+    style: {backgroundColor: color.background.primaryA},
   };
   const screenOptions = useCallback(
     ({route}) => ({
