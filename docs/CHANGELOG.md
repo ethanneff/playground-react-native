@@ -570,7 +570,7 @@
 - rename screens ([e658b45](https://github.com/ethanneff/example/commit/e658b45a4facbde7fa75526c2bafeb86edbd00ef))
 - rename titles for each screen ([88e777a](https://github.com/ethanneff/example/commit/88e777a7c3eacd800a5c8a3b0bb4b5a361d65042))
 - rewrite projects to be a single list to work with keyboard ([5d8bea0](https://github.com/ethanneff/example/commit/5d8bea01b10495fd322803dafe29fb25c67439d1))
-- transform Theme.padding to padding() ([428d200](https://github.com/ethanneff/example/commit/428d2006693b96af708c502bfa198325dc16f998))
+- transform Theme.padding to Config.padding() ([428d200](https://github.com/ethanneff/example/commit/428d2006693b96af708c502bfa198325dc16f998))
 - update account screen font ([b566c4c](https://github.com/ethanneff/example/commit/b566c4c0e11bc924aa36865ca57d778790059ff3))
 - update components to use item model ([19452df](https://github.com/ethanneff/example/commit/19452dfecc0d69e152abc1b193228dc7812b95ba))
 - update data model to remove lists and boards ([1c62618](https://github.com/ethanneff/example/commit/1c6261867ce9b10c9cf01c62f1efa4406938fd54))
