@@ -9,13 +9,6 @@ import {TagGroup} from './TagGroup';
 import {ThemeGroup} from './ThemeGroup';
 import {Title} from './Title';
 
-// text: high 87% medium 60% disabled 38%
-// icon: active 100% inactive 60% disabled 38%
-
-// create tag component with colors https://oomphinc.github.io/colorcube/#results-content https://stripe.com/blog/accessible-color-systems
-// add light + dark + border + secondary greys
-// keep original colors
-
 export const Colors = memo(function DebugColors() {
   const {goBack} = useNavigation();
 
