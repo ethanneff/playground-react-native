@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.54.2](https://github.com/ethanneff/example/compare/v2.54.1...v2.54.2) (2021-07-22)
+
+
+### Bug Fixes
+
+* dep update ([20a9d2d](https://github.com/ethanneff/example/commit/20a9d2da2fadab7436ecc0520f12165c011c260c))
+* update stuff ([6cc6e95](https://github.com/ethanneff/example/commit/6cc6e95b47062fb888391325325090328f0b89c9))
+
 ## [2.54.1](https://github.com/ethanneff/example/compare/v2.54.0...v2.54.1) (2021-07-21)
 
 
