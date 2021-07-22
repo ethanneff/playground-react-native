@@ -40,7 +40,7 @@
     "@react-native-firebase/analytics": "12.2.0",
     "@react-native-firebase/app": "12.2.0",
     "@react-native-firebase/auth": "12.2.0",
-    "@react-native-firebase/crashlytics": "12.2.0",
+    "@react-native-firebase/crashlytics": "12.3.0",
     "@react-native-firebase/firestore": "12.2.0",
     "@react-native-firebase/remote-config": "12.2.0",
     "@react-navigation/bottom-tabs": "5.11.11",
