@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.54.3](https://github.com/ethanneff/example/compare/v2.54.2...v2.54.3) (2021-07-23)
+
+
+### Bug Fixes
+
+* remove types ([3a2371d](https://github.com/ethanneff/example/commit/3a2371d0a3abcb5f0e6082cb42f69f065072be52))
+* update deps ([6c1abfe](https://github.com/ethanneff/example/commit/6c1abfee8b538f2e1be5845e4cf3ab6d051d6e0e))
+
 ## [2.54.2](https://github.com/ethanneff/example/compare/v2.54.1...v2.54.2) (2021-07-22)
 
 
