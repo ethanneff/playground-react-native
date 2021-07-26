@@ -751,7 +751,7 @@ PODS:
     - React-Core
     - React-Core/DevSupport
     - React-RCTNetwork
-  - RNFastImage (8.3.6):
+  - RNFastImage (8.3.7):
     - React-Core
     - SDWebImage (~> 5.8)
     - SDWebImageWebPCoder (~> 0.6.1)
@@ -817,7 +817,7 @@ PODS:
   - RNScreens (3.4.0):
     - React-Core
     - React-RCTImage
-  - RNSensors (7.2.0):
+  - RNSensors (7.3.0):
     - React-Core
   - RNSound (0.11.0):
     - React
@@ -1154,7 +1154,7 @@ SPEC CHECKSUMS:
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
   RNDeviceInfo: 0b3e0154c1c659ea9779cb3e883e66ece92326a9
   RNDevMenu: fd325b5554b61fe7f48d9205a3877cf5ee88cd7c
-  RNFastImage: 044259b52d726b183fa401f3521b2e5a864afc0a
+  RNFastImage: a7384db75df352500261e8e8f1ac2026def26102
   RNFBAnalytics: 8ba84c2d31c64374d054c8621b998f25145ffddc
   RNFBApp: 64c90ab78b6010ed5c3ade026dfe5ff6442c21fd
   RNFBAuth: 59fe503707ab7bd2c2790ac5b7a11d4e14b44452
@@ -1166,7 +1166,7 @@ SPEC CHECKSUMS:
   RNRate: cb88d5a0aa7be8bfae67dafbbbba2c9cd5e6faf2
   RNReanimated: 9c13c86454bfd54dab7505c1a054470bfecd2563
   RNScreens: 21b73c94c9117e1110a79ee0ee80c93ccefed8ce
-  RNSensors: aefce56de71b313fbdeb6d26c024d7fc9258373f
+  RNSensors: 2301fa81020b02634ec6da54b9c8de61bad423ce
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
