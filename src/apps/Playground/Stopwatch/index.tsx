@@ -101,15 +101,15 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
         {state.laps.length === 0 && (
           <ButtonsRow>
             <ButtonRound
-              background="#151515"
-              color="#8B8B90"
+              background={color.background.disabled}
+              color="disabled"
               disabled
               onPress={lap}
               title="Lap"
             />
             <ButtonRound
-              background="#1B361F"
-              color="#50D167"
+              background={color.background.positive}
+              color="primaryA"
               onPress={start}
               title="Start"
             />
@@ -118,14 +118,14 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
         {state.start > 0 && (
           <ButtonsRow>
             <ButtonRound
-              background="#3D3D3D" // TODO: use own colors
-              color="#FFFFFF"
+              background={color.background.disabled}
+              color="primaryA"
               onPress={lap}
               title="Lap"
             />
             <ButtonRound
-              background="#3C1715"
-              color="#E33935"
+              background={color.background.negative}
+              color="primaryA"
               onPress={stop}
               title="Stop"
             />
@@ -134,14 +134,14 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
         {state.laps.length > 0 && state.start === 0 && (
           <ButtonsRow>
             <ButtonRound
-              background="#3D3D3D"
-              color="#FFFFFF"
+              background={color.background.negative}
+              color="primaryA"
               onPress={reset}
               title="Reset"
             />
             <ButtonRound
-              background="#1B361F"
-              color="#50D167"
+              background={color.background.positive}
+              color="primaryA"
               onPress={resume}
               title="Start"
             />

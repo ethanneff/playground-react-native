@@ -1,10 +1,12 @@
 import React, {memo, useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Text, TouchableOpacity} from '../../../components';
+import {useColor} from '../../../hooks';
+import {MonoMultiColor} from '../../../utils';
 
 interface RoundButtonProps {
   title: string;
-  color: string;
+  color: keyof MonoMultiColor;
   background: string;
   disabled?: boolean;
   onPress(): void;
@@ -17,9 +19,11 @@ export const ButtonRound = memo(function ButtonRound({
   onPress,
   disabled = false,
 }: RoundButtonProps) {
+  const colorScheme = useColor();
   const styles = StyleSheet.create({
     button: {
       alignItems: 'center',
+      backgroundColor: background,
       borderRadius: 40,
       height: 80,
       justifyContent: 'center',
@@ -27,6 +31,7 @@ export const ButtonRound = memo(function ButtonRound({
     },
     buttonBorder: {
       alignItems: 'center',
+      borderColor: colorScheme.background.primaryB,
       borderRadius: 38,
       borderWidth: 1,
       height: 76,
@@ -45,11 +50,11 @@ export const ButtonRound = memo(function ButtonRound({
 
   return (
     <TouchableOpacity
-      activeOpacity={disabled ? 1.0 : 0.7}
+      disabled={disabled}
       onPress={handlePress}
-      style={[styles.button, {backgroundColor: background}]}>
+      style={styles.button}>
       <View style={styles.buttonBorder}>
-        <Text style={[styles.buttonTitle, {color}]} title={title} />
+        <Text color={color} style={styles.buttonTitle} title={title} />
       </View>
     </TouchableOpacity>
   );
