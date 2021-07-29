@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.54.5](https://github.com/ethanneff/example/compare/v2.54.4...v2.54.5) (2021-07-29)
+
+
+### Bug Fixes
+
+* make progress apis work again ([4603706](https://github.com/ethanneff/example/commit/4603706fea91c8b093ed6829be0ab366a45a8762))
+* more deps ([6af4ac6](https://github.com/ethanneff/example/commit/6af4ac697e5bdd0cf33f68eafaa2f9b7e128b333))
+* update deps ([7d76a76](https://github.com/ethanneff/example/commit/7d76a7687870237de5106340fe0a88adab678332))
+* update deps ([dd34336](https://github.com/ethanneff/example/commit/dd343369c7fc2415e08a02b2d5b7867462bf683b))
+* update pod file ([c47d7a6](https://github.com/ethanneff/example/commit/c47d7a6dcfc4896d9bff4746373bb610007c1259))
+
 ## [2.54.4](https://github.com/ethanneff/example/compare/v2.54.3...v2.54.4) (2021-07-26)
 
 
