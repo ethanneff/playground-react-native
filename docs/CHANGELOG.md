@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.54.4](https://github.com/ethanneff/example/compare/v2.54.3...v2.54.4) (2021-07-26)
+
+
+### Bug Fixes
+
+* update colors in stopwatch ([d9ba1d1](https://github.com/ethanneff/example/commit/d9ba1d1b0d0267b7f910b19f5ac029bd5483cb88))
+* update deps ([9746668](https://github.com/ethanneff/example/commit/974666887add4a4ad5d17bdce88840c1c7a658a2))
+* update deps ([5186a94](https://github.com/ethanneff/example/commit/5186a9408d4645e03b3ea2f653d3f28e202113ab))
+
 ## [2.54.3](https://github.com/ethanneff/example/compare/v2.54.2...v2.54.3) (2021-07-23)
 
 
