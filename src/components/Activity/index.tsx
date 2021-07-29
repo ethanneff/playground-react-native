@@ -5,10 +5,10 @@ import {Button} from '../Button';
 import {Card} from '../Card';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
+import {getApiActivity} from './api';
 import {ActivityDay, ActivityModel, ActivityWeek, Site} from './types';
 import {
   getActivitySquares,
-  getApiActivity,
   getDateFormat,
   getSubmissionFormat,
   updateActivitySquares,

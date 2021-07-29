@@ -1,25 +1,9 @@
-import axios from 'axios';
 import endOfWeek from 'date-fns/endOfWeek';
 import format from 'date-fns/format';
 import isToday from 'date-fns/isToday';
 import startOfWeek from 'date-fns/startOfWeek';
 import sub from 'date-fns/sub';
-import {ActivityMatrix, Site} from './types';
-
-type ApiResponse = {[unix: string]: number};
-
-type ApiPromise = Promise<ApiResponse>;
-
-type ApiInput = {
-  username: string;
-  site: Site;
-};
-
-type ActivitySquares = {
-  matrix: ActivityMatrix;
-  max: number;
-  total: number;
-};
+import {ActivitySquares, ApiResponse} from './types';
 
 export const getDateFormat = (date: number): string =>
   format(date, 'yyyy-MM-dd');
@@ -68,45 +52,4 @@ export const updateActivitySquares = (
     }),
   );
   return {matrix, max, total};
-};
-
-const getGithubActivity = async (username: string): Promise<ApiResponse> => {
-  const url = `https://github-contributions-json-api.now.sh/api?username=${username}`;
-  const res = await axios.get(url);
-  return res.data;
-};
-
-const getLeetCodeActivity = async (username: string) => {
-  const url = `https://leetcode.com/api/user_submission_calendar/${username}`;
-  const res = await axios.get(url);
-  const data = JSON.parse(res.data);
-  return Object.keys(data).reduce((total: ApiResponse, item) => {
-    const day = getDateFormat(Number(item) * 1000);
-    if (day in total) total[day] += data[item];
-    else total[day] = data[item];
-
-    return total;
-  }, {});
-};
-
-const getHackerRankActivity = async (username: string) => {
-  const url = `https://www.hackerrank.com/rest/hackers/${username}/submission_histories`;
-  const res = await axios.get(url);
-  return Object.keys(res.data).reduce((total: ApiResponse, item) => {
-    total[item] = Number(res.data[item]);
-    return total;
-  }, {});
-};
-
-export const getApiActivity = ({username, site}: ApiInput): ApiPromise => {
-  switch (site) {
-    case 'github':
-      return getGithubActivity(username);
-    case 'leetCode':
-      return getLeetCodeActivity(username);
-    case 'hackerRank':
-      return getHackerRankActivity(username);
-    default:
-      return Promise.resolve({});
-  }
 };

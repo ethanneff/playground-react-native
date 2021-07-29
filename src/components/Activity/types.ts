@@ -21,3 +21,18 @@ export type ActivityDay = {
   date: number;
   count: number;
 };
+
+export type ApiResponse = {[unix: string]: number};
+
+export type ActivitySquares = {
+  matrix: ActivityMatrix;
+  max: number;
+  total: number;
+};
+
+export type ApiPromise = Promise<ApiResponse>;
+
+export type ApiInput = {
+  username: string;
+  site: Site;
+};
