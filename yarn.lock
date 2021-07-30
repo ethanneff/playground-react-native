@@ -13693,10 +13693,10 @@ react-native-dev-menu@4.0.2:
   resolved "https://registry.yarnpkg.com/react-native-dev-menu/-/react-native-dev-menu-4.0.2.tgz#1e569b1fbb2740d1eab8cb3d5adfa4bf9fd89d71"
   integrity sha512-tjWAULoJgOr/WjcfhFsCYaZGtQNmApm7gD5d7G/kSAWVBdEbFFuN2MIq+CxAxBsjHSwscysD1C55TCcmXP/82w==
 
-react-native-device-info@8.1.4:
-  version "8.1.4"
-  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-8.1.4.tgz#709a424b64cd01b26e91000e9b7e2c36e8b832f0"
-  integrity sha512-PiYRJf3GBaVnGAUUB9YKzaGc5h6Rmn7NniD328JUXLeepKvLaDhK6EvFWU98YiZ2jePOF9/jg2cxfyN4jhZ2LA==
+react-native-device-info@8.1.5:
+  version "8.1.5"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-8.1.5.tgz#6ee3fe919b66675a1938b4d13c740de7868be308"
+  integrity sha512-w92x+FGIZdzEmU4SN+Zr+0zESubKb+zWRmHFECr0l+AtQlOZZ6AvO9WNwe2RBGpPkOUf54d7k8D0YgGvnRGIdQ==
 
 react-native-fast-image@8.3.7:
   version "8.3.7"
