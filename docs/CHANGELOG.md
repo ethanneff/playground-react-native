@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.55.1](https://github.com/ethanneff/example/compare/v2.55.0...v2.55.1) (2021-08-02)
+
+
+### Bug Fixes
+
+* rebase with master ([2292231](https://github.com/ethanneff/example/commit/2292231d53a9abd3bb41a1660492fa93ce96ae84))
+* update snaps for react navigation upgrade ([0873bcf](https://github.com/ethanneff/example/commit/0873bcfcc49c989a7cec73d49b86e7377c186116))
+
 # [2.55.0](https://github.com/ethanneff/example/compare/v2.54.6...v2.55.0) (2021-08-02)
 
 
