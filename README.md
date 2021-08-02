@@ -36,7 +36,7 @@
       <img src="https://www.codefactor.io/repository/github/ethanneff/example/badge" alt="CodeFactor" />
     </a>
     <a href="https://codeclimate.com/github/ethanneff/example">
-      <img src="https://codeclimate.com/github/ethanneff/example/maintainability" alt="CodeClimate" />
+      <img src="https://api.codeclimate.com/v1/badges/0f040f1f40b1976af3ab/maintainability" alt="CodeClimate" />
     </a>
   </div>
   <div>
