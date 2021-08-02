@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.55.2](https://github.com/ethanneff/example/compare/v2.55.1...v2.55.2) (2021-08-02)
+
 ## [2.55.1](https://github.com/ethanneff/example/compare/v2.55.0...v2.55.1) (2021-08-02)
 
 
