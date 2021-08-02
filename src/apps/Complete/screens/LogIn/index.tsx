@@ -7,7 +7,7 @@ import {useColor} from '../../../../hooks';
 import {padding, useRootDispatch} from '../../../../utils';
 import {ModalHeader} from '../../components';
 import {createItem, loadUser} from '../../models';
-import {LandingStackParams} from '../../navigation-types';
+import {LandingStackRoutes} from '../../navigationTypes';
 import {getDefaultUserTemplate} from '../../utils';
 
 const initialRef = {email: '', password: ''};
@@ -20,7 +20,7 @@ export const LogIn = memo(function LogIn() {
   const form = useRef(initialRef);
   const [state, setState] = useState(initialState);
   const {goBack, navigate} =
-    useNavigation<StackNavigationProp<LandingStackParams>>();
+    useNavigation<StackNavigationProp<LandingStackRoutes>>();
 
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
   const onSecondary = useCallback(() => navigate('password-reset'), [navigate]);

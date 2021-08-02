@@ -6,7 +6,7 @@ import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {getCurrentChecklist, removeList, updateList} from '../../models';
 
 export default memo(function ChecklistUpdate() {
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<any>();
   const dispatch = useRootDispatch();
   const checklist = useRootSelector(getCurrentChecklist);
   const [showDeleteModal, setShowDeleteModal] = useState(false);

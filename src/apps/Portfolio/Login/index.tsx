@@ -4,6 +4,7 @@ import {ScrollView, StyleSheet, View} from 'react-native';
 import {Button, Input, Screen} from '../../../components';
 import {useColor} from '../../../hooks';
 import {padding} from '../../../utils';
+import {PortfolioNavigation} from '../types';
 
 const styles = StyleSheet.create({
   row: {flexDirection: 'row', justifyContent: 'space-around'},
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
 export const Login = memo(function PortfolioLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const {goBack, navigate} = useNavigation();
+  const {goBack, navigate} = useNavigation<PortfolioNavigation>();
   const handlePassword = useCallback((val: string) => setPassword(val), []);
   const handleEmail = useCallback((val: string) => setEmail(val), []);
 

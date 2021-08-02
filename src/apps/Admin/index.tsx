@@ -3,11 +3,15 @@ import React, {memo, useCallback} from 'react';
 import {Button, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
 import {useColor} from '../../hooks';
+import {RootNavigation, RootRoutes} from '../../providers/Navigation/types';
 import {padding} from '../../utils';
 
 export default memo(function Admin() {
-  const {navigate} = useNavigation();
-  const onPress = useCallback((to: string) => () => navigate(to), [navigate]);
+  const {navigate} = useNavigation<RootNavigation>();
+  const onPress = useCallback(
+    (to: keyof RootRoutes) => () => navigate(to),
+    [navigate],
+  );
   const color = useColor();
 
   return (

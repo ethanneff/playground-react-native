@@ -12,6 +12,7 @@ import {
 import {ScrollView} from '../../conversions';
 import {useAdminNavBack, useColor} from '../../hooks';
 import {padding} from '../../utils';
+import {DeepWorkNavigation} from './types';
 
 /*
 # Purpose
@@ -38,7 +39,7 @@ import {padding} from '../../utils';
 */
 
 export const Home = memo(function Home() {
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<DeepWorkNavigation>();
   const color = useColor();
   const {onLeftPress} = useAdminNavBack();
   const onItemAdd = useCallback(() => undefined, []);

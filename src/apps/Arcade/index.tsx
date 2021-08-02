@@ -6,10 +6,10 @@ import {Landing} from './Landing';
 import {PapiJump} from './PapiJump';
 import {Snake} from './Snake';
 import {TicTacToe} from './TicTacToe';
-import {StackParams} from './types';
+import {ArcadeRoutes} from './types';
 
 const noHeader = {headerShown: false};
-const Stack = createStackNavigator<StackParams>();
+const Stack = createStackNavigator<ArcadeRoutes>();
 
 export default memo(function Games() {
   return (

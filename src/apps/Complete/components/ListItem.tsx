@@ -11,6 +11,7 @@ import {
   swapItemOrderInItem,
   updateItem,
 } from '../models';
+import {ImplementTabNavigation} from '../navigationTypes';
 import {completeConfig} from '../utils';
 
 type ListItemProps = {
@@ -30,7 +31,7 @@ export const ListItem = memo(function ListItem({
   );
   const textInputRef = useRef<OriginalTextInput | null>(null);
   const dispatch = useRootDispatch();
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<ImplementTabNavigation>();
   const color = useColor();
 
   const onItemTitleClose = useCallback(() => {

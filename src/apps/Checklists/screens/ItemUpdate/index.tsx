@@ -9,7 +9,7 @@ import {
 } from '../../models';
 
 export default memo(function ChecklistUpdate() {
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<any>();
   const dispatch = useRootDispatch();
   const item = useRootSelector(getCurrentChecklistItem);
   const [form, setForm] = useState({

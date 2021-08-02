@@ -1,8 +1,8 @@
 import {StackNavigationOptions} from '@react-navigation/stack';
 import {Platform} from 'react-native';
 
-export const rootMode = Platform.OS === 'web' ? 'card' : 'modal';
 export const rootScreenOptions: StackNavigationOptions = {
+  presentation: Platform.OS === 'web' ? 'card' : 'modal',
   headerShown: false,
   cardStyle: {backgroundColor: 'transparent'},
   cardOverlayEnabled: true,

@@ -3,6 +3,7 @@ import React, {memo, useCallback, useEffect} from 'react';
 import {Button, Screen, Text} from '../../../../components';
 import {ScrollView} from '../../../../conversions';
 import {useAuth, useColor} from '../../../../hooks';
+import {RootNavigation} from '../../../../providers/Navigation/types';
 import {padding, useRootDispatch, useRootSelector} from '../../../../utils';
 import {Card} from '../../components';
 import {logout} from '../../models';
@@ -17,7 +18,7 @@ export const Account = memo(function Account() {
   useTabTap();
   const color = useColor();
   const dispatch = useRootDispatch();
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<RootNavigation>();
   const {onLogout, response} = useAuth();
   const profile = useRootSelector(s => s.completeAuth);
   const onNavToAdmin = useCallback(() => navigate('admin'), [navigate]);

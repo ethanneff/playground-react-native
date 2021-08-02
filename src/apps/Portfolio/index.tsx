@@ -1,14 +1,15 @@
-import React, {memo} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Landing} from './Landing';
+import React, {memo} from 'react';
 import {ForgotPassword} from './ForgotPassword';
+import {Home} from './Home';
+import {Landing} from './Landing';
 import {Login} from './Login';
 import {NotFound} from './NotFound';
 import {Settings} from './Settings';
-import {Home} from './Home';
+import {PortfolioRoutes} from './types';
 
 const noHeader = {headerShown: false};
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<PortfolioRoutes>();
 
 export default memo(function Portfolio() {
   return (

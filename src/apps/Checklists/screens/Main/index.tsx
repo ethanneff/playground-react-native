@@ -6,7 +6,7 @@ import {useRootDispatch, useRootSelector} from '../../../../utils';
 import {getActiveChecklistOrderByCreatedAt, setActiveList} from '../../models';
 
 export default memo(function Checklists() {
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<any>();
   const dispatch = useRootDispatch();
   const items = useRootSelector(getActiveChecklistOrderByCreatedAt);
 
@@ -21,9 +21,8 @@ export default memo(function Checklists() {
   const handleItemLongPress = useCallback(
     (id: string) => () => {
       dispatch(setActiveList(id));
-      navigate('checklistsListUpdate');
     },
-    [dispatch, navigate],
+    [dispatch],
   );
 
   const renderItem = useCallback(

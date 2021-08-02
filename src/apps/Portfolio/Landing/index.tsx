@@ -3,9 +3,10 @@ import React, {memo, useCallback} from 'react';
 import {Button, Carousel, Screen} from '../../../components';
 import {Slide} from '../../../components/Carousel/types';
 import {useColor} from '../../../hooks';
+import {PortfolioNavigation} from '../types';
 
 export const Landing = memo(function PortfolioLanding() {
-  const {navigate, goBack} = useNavigation();
+  const {navigate, goBack} = useNavigation<PortfolioNavigation>();
   const color = useColor();
   const navPortfolioLogin = useCallback(() => navigate('login'), [navigate]);
 

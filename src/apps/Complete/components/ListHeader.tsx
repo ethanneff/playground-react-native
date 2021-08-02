@@ -1,9 +1,11 @@
 import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 import React, {memo, useCallback} from 'react';
 import {Keyboard, View} from 'react-native';
 import {TextInput, TextInputIcon} from '../../../components';
 import {useRootDispatch, useRootSelector} from '../../../utils';
 import {navItemDetails, updateItem} from '../models';
+import {MainStackRoutes} from '../navigationTypes';
 
 type ListHeaderProps = {
   itemId: string;
@@ -15,7 +17,7 @@ export const ListHeader = memo(function ListHeader({
   parentItemId,
 }: ListHeaderProps) {
   const dispatch = useRootDispatch();
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<StackNavigationProp<MainStackRoutes>>();
   const item = useRootSelector(s => s.completeItem.items[itemId]);
 
   const onSave = useCallback(

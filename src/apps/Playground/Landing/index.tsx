@@ -4,14 +4,15 @@ import {FlatList} from 'react-native';
 import {Button, Screen} from '../../../components';
 import {useColor} from '../../../hooks';
 import {padding} from '../../../utils';
+import {PortfolioNavigation, PortfolioRoutes} from '../../Portfolio/types';
 import {stackParams} from '../navParams';
 
 const screens = Object.keys(stackParams);
 
 export const Landing = memo(function Playground() {
-  const {goBack, navigate} = useNavigation();
+  const {goBack, navigate} = useNavigation<PortfolioNavigation>();
   const navToItem = useCallback(
-    (item: string) => () => navigate(item),
+    (item: keyof PortfolioRoutes) => () => navigate(item),
     [navigate],
   );
   const renderItem = useCallback(

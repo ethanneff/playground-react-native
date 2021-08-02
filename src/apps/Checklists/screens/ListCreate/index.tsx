@@ -9,7 +9,7 @@ import {createList} from '../../models';
 const initialState = {name: '', description: ''};
 
 export default memo(function ChecklistCreate() {
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<any>();
   const dispatch = useRootDispatch();
   const [form, setForm] = useState(initialState);
   const isInvalidForm = form.name.trim().length === 0;

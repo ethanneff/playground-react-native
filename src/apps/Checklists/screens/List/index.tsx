@@ -12,7 +12,7 @@ import {
 } from '../../models';
 
 export default memo(function Checklist() {
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<any>();
   const dispatch = useRootDispatch();
   const items = useRootSelector(getCurrentActiveChecklistItemsOrderByCreatedAt);
 

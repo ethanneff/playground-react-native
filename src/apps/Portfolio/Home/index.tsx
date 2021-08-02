@@ -4,10 +4,14 @@ import {ScrollView} from 'react-native';
 import {Button, Screen} from '../../../components';
 import {useAdminNavBack, useColor} from '../../../hooks';
 import {padding} from '../../../utils';
+import {PortfolioNavigation, PortfolioRoutes} from '../types';
 
 export const Home = memo(function PortfolioHome() {
-  const {navigate} = useNavigation();
-  const navTo = useCallback((to: string) => () => navigate(to), [navigate]);
+  const {navigate} = useNavigation<PortfolioNavigation>();
+  const navTo = useCallback(
+    (to: keyof PortfolioRoutes) => () => navigate(to),
+    [navigate],
+  );
   const {onLeftPress} = useAdminNavBack();
   const color = useColor();
   return (

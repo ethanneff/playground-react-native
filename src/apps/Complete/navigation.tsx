@@ -1,7 +1,4 @@
-import {
-  BottomTabBarOptions,
-  createBottomTabNavigator,
-} from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   createStackNavigator,
   StackNavigationOptions,
@@ -9,13 +6,13 @@ import {
 import React, {ReactElement, useCallback} from 'react';
 import {Icon} from '../../components';
 import {useColor} from '../../hooks';
-import {rootMode, rootScreenOptions} from '../../providers/Navigation/configs';
+import {rootScreenOptions} from '../../providers/Navigation/configs';
 import {
-  HomeStackParams,
-  ImplementStackParams,
-  LandingStackParams,
-  MainStackParams,
-} from './navigation-types';
+  HomeStackRoutes,
+  ImplementStackRoutes,
+  LandingStackRoutes,
+  MainStackRoutes,
+} from './navigationTypes';
 import {
   Account,
   Capture,
@@ -32,7 +29,7 @@ import {useTabTap} from './utils';
 
 const noHeader: StackNavigationOptions = {headerShown: false};
 type TabIcons = {
-  [key in keyof HomeStackParams]: {focused: string; unFocused: string};
+  [key in keyof HomeStackRoutes]: {focused: string; unFocused: string};
 };
 
 const tabIcons: TabIcons = {
@@ -52,35 +49,33 @@ type TabBarIconProps = {
 
 const useTabs = () => {
   const color = useColor();
-  const tabBarOptions: BottomTabBarOptions = {
-    keyboardHidesTabBar: true,
-    activeTintColor: color.text.primaryA,
-    inactiveTintColor: color.text.tertiary,
-    showLabel: false,
-    style: {backgroundColor: color.background.primaryA},
-  };
+
   const screenOptions = useCallback(
     ({route}) => ({
+      headerShown: false,
       tabBarIcon: function tabBarIcon({focused, size}: TabBarIconProps) {
-        const key = focused ? 'focused' : 'unFocused';
         const iconColor = focused ? 'primaryA' : 'tertiary';
+        const key = focused ? 'focused' : 'unFocused';
         const name = (tabIcons as any)[route.name][key];
         return <Icon color={iconColor} name={name} size={size} />;
       },
+      tabBarHideOnKeyboard: true,
+      tabBarActiveTintColor: color.text.primaryA,
+      tabBarInactiveTintColor: color.text.tertiary,
+      tabBarShowLabel: false,
+      tabBarStyle: {backgroundColor: color.background.primaryA},
     }),
-    [],
+    [color.background.primaryA, color.text.primaryA, color.text.tertiary],
   );
 
-  return {tabBarOptions, screenOptions};
+  return {screenOptions};
 };
 
-const HomeStack = createBottomTabNavigator<HomeStackParams>();
+const HomeStack = createBottomTabNavigator<HomeStackRoutes>();
 const Home = () => {
-  const {tabBarOptions, screenOptions} = useTabs();
+  const {screenOptions} = useTabs();
   return (
-    <HomeStack.Navigator
-      screenOptions={screenOptions}
-      tabBarOptions={tabBarOptions}>
+    <HomeStack.Navigator screenOptions={screenOptions}>
       <HomeStack.Screen component={Capture} name="plan" />
       <HomeStack.Screen component={Implement} name="implement" />
       <HomeStack.Screen component={Reflect} name="reflect" />
@@ -89,7 +84,7 @@ const Home = () => {
   );
 };
 
-const ImplementStack = createStackNavigator<ImplementStackParams>();
+const ImplementStack = createStackNavigator<ImplementStackRoutes>();
 const Implement = () => {
   useTabTap();
   return (
@@ -100,10 +95,10 @@ const Implement = () => {
   );
 };
 
-const LandingStack = createStackNavigator<LandingStackParams>();
+const LandingStack = createStackNavigator<LandingStackRoutes>();
 export const Landing = (): ReactElement => {
   return (
-    <LandingStack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
+    <LandingStack.Navigator screenOptions={rootScreenOptions}>
       <LandingStack.Screen component={Welcome} name="welcome" />
       <LandingStack.Screen component={SignUp} name="sign-up" />
       <LandingStack.Screen component={LogIn} name="log-in" />
@@ -112,10 +107,10 @@ export const Landing = (): ReactElement => {
   );
 };
 
-const MainStack = createStackNavigator<MainStackParams>();
+const MainStack = createStackNavigator<MainStackRoutes>();
 export const Main = (): ReactElement => {
   return (
-    <MainStack.Navigator mode={rootMode} screenOptions={rootScreenOptions}>
+    <MainStack.Navigator screenOptions={rootScreenOptions}>
       <MainStack.Screen component={Home} name="home" />
       <MainStack.Screen component={ItemDetail} name="item-detail" />
     </MainStack.Navigator>

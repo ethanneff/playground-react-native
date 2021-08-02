@@ -9,7 +9,7 @@ import {createChecklistItem} from '../../models';
 const initialState = {name: '', description: ''};
 
 export default memo(function ChecklistItemCreate() {
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<any>();
   const dispatch = useRootDispatch();
   const [form, setForm] = useState(initialState);
   const currentChecklist = useRootSelector(state => state.checklist.active);

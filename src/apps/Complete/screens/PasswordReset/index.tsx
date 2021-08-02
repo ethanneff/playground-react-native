@@ -6,7 +6,7 @@ import {Button, Modal, Text, TextInput} from '../../../../components';
 import {useColor} from '../../../../hooks';
 import {padding} from '../../../../utils';
 import {ModalHeader} from '../../components';
-import {LandingStackParams} from '../../navigation-types';
+import {LandingStackRoutes} from '../../navigationTypes';
 
 const initialRef = {email: ''};
 const initialState = {complete: false};
@@ -15,7 +15,7 @@ export const PasswordReset = memo(function PasswordReset() {
   const form = useRef(initialRef);
   const [state, setState] = useState(initialState);
   const {goBack, navigate} =
-    useNavigation<StackNavigationProp<LandingStackParams>>();
+    useNavigation<StackNavigationProp<LandingStackRoutes>>();
   const focus = useIsFocused();
   const emailRef = useRef<OriginalTextInput | null>(null);
 

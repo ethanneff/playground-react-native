@@ -9,7 +9,8 @@ import {
   Notification,
   Text,
 } from '../../components';
-import {rootMode, rootScreenOptions} from './configs';
+import {rootScreenOptions} from './configs';
+import {RootRoutes} from './types';
 import {usePersistedState} from './usePersistedState';
 
 const Arcade = lazy(() => import('../../apps/Arcade'));
@@ -47,7 +48,7 @@ const NotificationExample = () => {
   );
 };
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootRoutes>();
 const linking = {
   prefixes: ['https://app.example.com', 'mychat://'],
 };
@@ -55,7 +56,7 @@ const linking = {
 export const Navigation = memo(function Navigation() {
   const {initialState, isReady, onStateChange, onRef} = usePersistedState();
   const fallback = <ActivityIndicator />;
-  const initialRouteName = Config.APP || 'admin';
+  const initialRouteName: any = Config.APP || 'admin';
 
   if (!isReady) return fallback;
 
@@ -74,7 +75,6 @@ export const Navigation = memo(function Navigation() {
         ref={onRef}>
         <Stack.Navigator
           initialRouteName={initialRouteName}
-          mode={rootMode}
           screenOptions={rootScreenOptions}>
           <Stack.Screen component={Admin} name="admin" />
           <Stack.Screen component={Arcade} name="arcade" />
