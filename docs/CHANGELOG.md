@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.55.0](https://github.com/ethanneff/example/compare/v2.54.6...v2.55.0) (2021-08-02)
+
+
+### Features
+
+* update to react navigation 6 ([f429292](https://github.com/ethanneff/example/commit/f4292925c60e0834f3aaa06ea7a151388fd9ad58))
+
 ## [2.54.6](https://github.com/ethanneff/example/compare/v2.54.5...v2.54.6) (2021-07-30)
 
 
