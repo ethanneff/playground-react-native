@@ -35,6 +35,9 @@
     <a href="https://www.codefactor.io/repository/github/ethanneff/example">
       <img src="https://www.codefactor.io/repository/github/ethanneff/example/badge" alt="CodeFactor" />
     </a>
+    <a href="https://codeclimate.com/github/ethanneff/example">
+      <img src="https://codeclimate.com/github/ethanneff/example/maintainability" alt="CodeClimate" />
+    </a>
   </div>
   <div>
     <a href="https://depfu.com/github/ethanneff/example?project_id=13687">
