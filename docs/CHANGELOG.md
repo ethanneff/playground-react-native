@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.54.6](https://github.com/ethanneff/example/compare/v2.54.5...v2.54.6) (2021-07-30)
+
+
+### Bug Fixes
+
+* update coloring of progress app ([bbb53f0](https://github.com/ethanneff/example/commit/bbb53f07fae3dcc21277da0229ec89a2f67e9393))
+
 ## [2.54.5](https://github.com/ethanneff/example/compare/v2.54.4...v2.54.5) (2021-07-29)
 
 
