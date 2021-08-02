@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-complete-tag",
+    "gimenete.github-linker",
+    "gurumukhi.selected-lines-count",
+    "humao.rest-client",
+    "mohsen1.prettify-json",
+    "ms-vscode.sublime-keybindings",
+    "ms-vscode.wordcount",
+    "quicktype.quicktype",
+    "steoates.autoimport",
+    "streetsidesoftware.code-spell-checker",
+    "tyriar.sort-lines",
+    "waderyan.gitblame",
+    "yzhang.markdown-all-in-one"
+  ]
+}
