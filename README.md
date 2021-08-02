@@ -1,9 +1,17 @@
 <div align="center">
   <h1>example</h1>
   <div>
-    <a href="https://travis-ci.org/ethanneff/example">
-        <img src="https://travis-ci.org/ethanneff/example.svg" alt="Build Status" />
+    <a href="https://github.com/ethanneff/example/actions/workflows/validate-code.yml">
+        <img src="https://github.com/ethanneff/example/actions/workflows/validate-code.yml/badge.svg" alt="Build Status" />
     </a>
+    <a href="https://github.com/ethanneff/example/actions/workflows/deploy-to-github-pages.yml">
+        <img src="https://github.com/ethanneff/example/actions/workflows/deploy-to-github-pages.yml/badge.svg" alt="Build Status" />
+    </a>
+    <a href="https://github.com/ethanneff/example/actions/workflows/deploy-to-github-packages.yml">
+        <img src="https://github.com/ethanneff/example/actions/workflows/deploy-to-github-packages.yml/badge.svg" alt="Build Status" />
+    </a>
+  </div>
+  <div>
     <a href="https://ethanneff.github.io/example/">
         <img src="https://img.shields.io/website/https/ethanneff.github.io/example.svg" alt="Website Status" />
     </a>
