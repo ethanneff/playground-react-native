@@ -30,10 +30,10 @@
   - [x] deploy android
 - [ ] Deploy iOS app
 - [ ] Publish landing page
-- [ ] color
+- [x] color
 - [ ] Obtain 10 users
 - [ ] Question users
-- [ ] date-fns to dayjs
+- [x] date-fns to dayjs
 - [x] use createNativeStackNavigator instead of createStackNavigator (from 45fps to 55fps. does not work with modals)
 - [x] use react-native-fast-image
 

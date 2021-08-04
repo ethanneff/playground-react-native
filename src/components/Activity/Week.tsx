@@ -1,4 +1,4 @@
-import format from 'date-fns/format';
+import dayjs from 'dayjs';
 import React, {memo} from 'react';
 import {View} from 'react-native';
 import {padding} from '../../utils';
@@ -24,8 +24,8 @@ export const Week = memo(function Week({
   onPress,
 }: Props) {
   const first = item[0].date;
-  const showHeader = Number(format(first, 'dd')) <= 7;
-  const header = showHeader ? format(first, 'MMM') : ' ';
+  const showHeader = Number(dayjs(first).format('DD')) <= 7;
+  const header = showHeader ? dayjs(first).format('MMM') : ' ';
 
   return (
     <View key={index}>

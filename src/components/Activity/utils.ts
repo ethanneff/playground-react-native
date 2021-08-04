@@ -1,25 +1,24 @@
-import endOfWeek from 'date-fns/endOfWeek';
-import format from 'date-fns/format';
-import isToday from 'date-fns/isToday';
-import startOfWeek from 'date-fns/startOfWeek';
-import sub from 'date-fns/sub';
+import dayjs from 'dayjs';
+import isToday from 'dayjs/plugin/isToday';
 import {ActivitySquares, ApiResponse} from './types';
+dayjs.extend(isToday);
 
 export const getDateFormat = (date: number): string =>
-  format(date, 'yyyy-MM-dd');
+  dayjs(date).format('YYYY-MM-DD');
 
 export const getSubmissionFormat = (count: number, date: number): string => {
   const submissions = count === 1 ? 'submission' : 'submissions';
-  const day = isToday(date) ? 'today' : `on ${format(date, 'MMM dd, yyyy')}`;
+  const day = dayjs(date).isToday()
+    ? 'today'
+    : `on ${dayjs(date).format('MMM DD, YYYY')}`;
   return `${count} ${submissions} ${day}`;
 };
 
 export const getActivitySquares = (): ActivitySquares => {
-  const today = Date.now();
   const matrix = [];
   const oneDay = 60 * 60 * 24 * 1000;
-  const begin = sub(startOfWeek(today), {years: 1}).valueOf();
-  let end = endOfWeek(today).valueOf();
+  const begin = dayjs().startOf('week').subtract(1, 'year').valueOf();
+  let end = dayjs().endOf('week').valueOf();
   let day = 0;
   let week = [];
   while (end >= begin) {
