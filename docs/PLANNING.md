@@ -2,40 +2,56 @@
 
 ## Top goals
 
-- [x] complete bouncing loading screen
-- [x] react navigation
-- [x] fastlane build multiple apps
+Deploy Android App (Focus)
 
-  - [x] ios (core)
-  - [x] ios (journal)
-  - [x] ios (progress)
-  - [x] ios (complete)
-  - [x] android (core)
-  - [x] android (journal)
-  - [x] android (progress)
-  - [x] android (complete)
-  - [ ] release branch for all builds
-  - [x] navigation
-  - [ ] app center
-  - [ ] code push
-  - [ ] ios app version = package version
-  - [ ] test ipa
-  - [ ] test apk
-  - [x] upload zshrc
-  - [x] fix android https://github.com/fastlane/fastlane/issues/18403
+- [ ] add tab bar (day view, calendar, settings)
+- [ ] landing screens
+- [ ] login/ logout
+- [ ] backend storage
+- [ ] redux
+- [ ] fix modal shadow
 
-- [ ] Deploy Android app
-  - [ ] login flow
-  - [ ] activity
-  - [x] deploy android
-- [ ] Deploy iOS app
-- [ ] Publish landing page
-- [x] color
-- [ ] Obtain 10 users
-- [ ] Question users
-- [x] date-fns to dayjs
-- [x] use createNativeStackNavigator instead of createStackNavigator (from 45fps to 55fps. does not work with modals)
-- [x] use react-native-fast-image
+Deploy iOS App (Focus)
+
+- [ ] assets
+- [ ] landing page
+- [ ] push notifications
+- [ ] nps survey
+- [ ] app review survey
+- [ ] find 10 users
+
+Deploy 2nd Android App (Journal)
+
+- [ ] landing screens
+- [ ] daily view
+- [ ] scrollable entries
+- [ ] input view
+- [ ] settings icon
+- [ ] backend storage
+- [ ] assets
+- [ ] push notifications
+
+Automate Deploys
+
+- [ ] release branch for all builds
+- [ ] ios app version = package version
+- [ ] test ipa
+- [ ] test apk
+
+Faster Releases
+
+- [ ] app center
+- [ ] code push
+
+Deploy 2nd iOS App (Journal)
+
+- [ ] assets
+
+Deploy 3nd App (Complete)
+
+- [ ] drag and drop
+- [ ] backend
+- [ ] sync/offline
 
 ## Actionables
 
@@ -98,6 +114,24 @@
 
 ## Done
 
+- [x] complete bouncing loading screen
+- [x] react navigation
+- [x] fastlane build multiple apps
+- [x] ios (core)
+- [x] ios (journal)
+- [x] ios (progress)
+- [x] ios (complete)
+- [x] android (core)
+- [x] android (journal)
+- [x] android (progress)
+- [x] android (complete)
+- [x] navigation
+- [x] upload zshrc
+- [x] fix android https://github.com/fastlane/fastlane/issues/18403
+- [x] color
+- [x] date-fns to dayjs
+- [x] use createNativeStackNavigator instead of createStackNavigator (from 45fps to 55fps. does not work with modals)
+- [x] use react-native-fast-image
 - [x] `{showReview && <Review onComplete />`
 - [x] install accelerator
 - [x] fix ios build (pods)
