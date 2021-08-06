@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.55.7](https://github.com/ethanneff/example/compare/v2.55.6...v2.55.7) (2021-08-06)
+
+
+### Bug Fixes
+
+* update deps ([d18463f](https://github.com/ethanneff/example/commit/d18463f672d17128c3e385f1f137b87f53a5ca4c))
+
 ## [2.55.6](https://github.com/ethanneff/example/compare/v2.55.5...v2.55.6) (2021-08-04)
 
 ## [2.55.5](https://github.com/ethanneff/example/compare/v2.55.4...v2.55.5) (2021-08-04)
