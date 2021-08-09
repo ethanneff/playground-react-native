@@ -2659,12 +2659,12 @@
   resolved "https://registry.yarnpkg.com/@react-native/polyfills/-/polyfills-1.0.0.tgz#05bb0031533598f9458cf65a502b8df0eecae780"
   integrity sha512-0jbp4RxjYopTsIdLl+/Fy2TiwVYHy4mgeu07DG4b/LyM0OS/+lPP5c9sbnt/AMlnF6qz2JRZpPpGw1eMNS6A4w==
 
-"@react-navigation/bottom-tabs@6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-6.0.1.tgz#bd2b481d0671a7c2443525ea92f788b7cd9699e3"
-  integrity sha512-abbT132aFTAIRcRu7rrnZViNFTdJwZzZr9WQ3ZepuVVn+EzSBveaqrSWnEdIDyuex3XR69V7Fuadzpjt+Cf2oQ==
+"@react-navigation/bottom-tabs@6.0.2":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-6.0.2.tgz#d0d6e9a9d770050e6313ad7050a9951056a555c4"
+  integrity sha512-XrQZVZYpmdDU24wXE6Hjb5B41D2OkIxLGLLd1DHaaC7+Qa0Au7S/VtjFdiK1wfwJADbKHaEMCnKkwzZh7lW+fQ==
   dependencies:
-    "@react-navigation/elements" "^1.0.1"
+    "@react-navigation/elements" "^1.0.2"
     color "^3.1.3"
     warn-once "^0.1.0"
 
@@ -2679,15 +2679,15 @@
     query-string "^7.0.0"
     react-is "^16.13.0"
 
-"@react-navigation/elements@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-1.0.1.tgz#effcdb59aa5cf64445ff2ca7f50ee35df484fa72"
-  integrity sha512-KU6DPqmFmD4E+AwXOBzrqVBYG1Gd8HzPfbCk1PGzUjIiQOg6xv1pyfJ/d2x6aEOzxX5jtuNVCx6S553ZLkJP9Q==
+"@react-navigation/elements@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-1.0.2.tgz#ddc99a2c6b52c72bb4686c0037e17623c48ca7d0"
+  integrity sha512-V4rSDYgK1m14CpHlqpTi83auub1mVaItOb8kr+7rzhC7BUYO5wbMh/T88qZOrxMNMeZfveb6MI3zTw+u31eAUw==
 
-"@react-navigation/native@6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-6.0.1.tgz#1d8047b2b91b5adadb7f1d9b4f3499d9e16d36b3"
-  integrity sha512-hzp+c21hCrHWcvV78cTBWlabsZSgtaSkdzNc0GWum94MtjBEUTcgewxjEDKPwXyUwouEX/319jzrCusJ2Bzxog==
+"@react-navigation/native@6.0.2":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-6.0.2.tgz#6bdb3cfafb6a9cfb603c1555dd61faafca35b7c2"
+  integrity sha512-HDqEwgvQ4Cu16vz8jQ55lfyNK9CGbECI1wM9cPOcUa+gkOQEDZ/95VFfFjGGflXZs3ybPvGXlMC4ZAyh1CcO6w==
   dependencies:
     "@react-navigation/core" "^6.0.1"
     escape-string-regexp "^4.0.0"
@@ -2700,12 +2700,12 @@
   dependencies:
     nanoid "^3.1.23"
 
-"@react-navigation/stack@6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-6.0.1.tgz#d4d2576b41cc9681c024a67cd7edf06411a632bc"
-  integrity sha512-Uev7zLcQ10YAQpxCRwHbPJc3QEP6AsPnSVHCWD/uR0xnGYCk2t2SQMGmZFiPJ0YXRmpa0zHpeJIJciN2gfLxmA==
+"@react-navigation/stack@6.0.2":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-6.0.2.tgz#79a68c28e251fa28f1f9ede9fc10d303c3426b61"
+  integrity sha512-lJRXvb8g8svG0wGEwIxJbbXnaVhFlc5xPvh+ktDUfnZ/PpJpeLbYLMnN7Glxcd44RYpXrUrSbmibR8bbBQvzQQ==
   dependencies:
-    "@react-navigation/elements" "^1.0.1"
+    "@react-navigation/elements" "^1.0.2"
     color "^3.1.3"
     warn-once "^0.1.0"
 
@@ -6913,10 +6913,26 @@ eslint-import-resolver-node@^0.3.4:
     debug "^2.6.9"
     resolve "^1.13.1"
 
+eslint-import-resolver-node@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.5.tgz#939bbb0f74e179e757ca87f7a4a890dabed18ac4"
+  integrity sha512-XMoPKjSpXbkeJ7ZZ9icLnJMTY5Mc1kZbCakHquaFsXPpyWOwK0TK6CODO+0ca54UoM9LKOxyUNnoVZRl8TeaAg==
+  dependencies:
+    debug "^3.2.7"
+    resolve "^1.20.0"
+
 eslint-module-utils@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.6.1.tgz#b51be1e473dd0de1c5ea638e22429c2490ea8233"
   integrity sha512-ZXI9B8cxAJIH4nfkhTwcRTEAnrVfobYqwjWy/QMCZ8rHkZHFjf9yO4BzpiF9kCSfNlMG54eKigISHpX0+AaT4A==
+  dependencies:
+    debug "^3.2.7"
+    pkg-dir "^2.0.0"
+
+eslint-module-utils@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.6.2.tgz#94e5540dd15fe1522e8ffa3ec8db3b7fa7e7a534"
+  integrity sha512-QG8pcgThYOuqxupd06oYTZoNOGaUdTY1PqK+oS6ElF6vs4pBdk/aYxFVQQXzcrAqp9m7cl7lb2ubazX+g16k2Q==
   dependencies:
     debug "^3.2.7"
     pkg-dir "^2.0.0"
@@ -6944,7 +6960,28 @@ eslint-plugin-flowtype@^5.2.0:
     lodash "^4.17.15"
     string-natural-compare "^3.0.1"
 
-eslint-plugin-import@2.23.4, eslint-plugin-import@^2.22.1:
+eslint-plugin-import@2.24.0:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.24.0.tgz#697ffd263e24da5e84e03b282f5fb62251777177"
+  integrity sha512-Kc6xqT9hiYi2cgybOc0I2vC9OgAYga5o/rAFinam/yF/t5uBqxQbauNPMC6fgb640T/89P0gFoO27FOilJ/Cqg==
+  dependencies:
+    array-includes "^3.1.3"
+    array.prototype.flat "^1.2.4"
+    debug "^2.6.9"
+    doctrine "^2.1.0"
+    eslint-import-resolver-node "^0.3.5"
+    eslint-module-utils "^2.6.2"
+    find-up "^2.0.0"
+    has "^1.0.3"
+    is-core-module "^2.4.0"
+    minimatch "^3.0.4"
+    object.values "^1.1.3"
+    pkg-up "^2.0.0"
+    read-pkg-up "^3.0.0"
+    resolve "^1.20.0"
+    tsconfig-paths "^3.9.0"
+
+eslint-plugin-import@^2.22.1:
   version "2.23.4"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.23.4.tgz#8dceb1ed6b73e46e50ec9a5bb2411b645e7d3d97"
   integrity sha512-6/wP8zZRsnQFiR3iaPFgh5ImVRM1WN5NUWfTIRqwOdeiGJlBcSk82o1FEVq8yXmy4lkIzTo7YhHCIxlU/2HyEQ==
@@ -13915,10 +13952,10 @@ react-native-screens@3.5.0:
   dependencies:
     warn-once "^0.1.0"
 
-react-native-sensors@7.3.1:
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/react-native-sensors/-/react-native-sensors-7.3.1.tgz#37f7fb4f875da4c3de8234edade66c308eb59045"
-  integrity sha512-hZRgUWI7RdnMYAmdOhYPrUVQ02gL0ptqwcqCflx0YcqSR7dPe7FOFfdOkQZE4Xl2MJVewVAcwxcjiBaI7F+Gmw==
+react-native-sensors@7.3.2:
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/react-native-sensors/-/react-native-sensors-7.3.2.tgz#48f39ade4fc612701d0576b6dabc87988bf07add"
+  integrity sha512-dY9CxEMFyQQijuK0Q6FvPP2VesIsHQS8lCQS6TqF3sqoS5LF2TreoFSrFLZQQ5ExqCidJOs5WbYI8NPETrRIXQ==
   dependencies:
     rxjs ">= 6"
 

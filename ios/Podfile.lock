@@ -817,7 +817,7 @@ PODS:
   - RNScreens (3.5.0):
     - React-Core
     - React-RCTImage
-  - RNSensors (7.3.1):
+  - RNSensors (7.3.2):
     - React-Core
   - RNSound (0.11.0):
     - React
@@ -1166,7 +1166,7 @@ SPEC CHECKSUMS:
   RNRate: cb88d5a0aa7be8bfae67dafbbbba2c9cd5e6faf2
   RNReanimated: 9c13c86454bfd54dab7505c1a054470bfecd2563
   RNScreens: 01ab149b5dd5c27f5ff26741b1d2bdf2cee1af35
-  RNSensors: 96973831f07bf22a3c2488b45f809d7137023580
+  RNSensors: c7c261211cca3928c47e05cf9c35e59a9e59a4e7
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
