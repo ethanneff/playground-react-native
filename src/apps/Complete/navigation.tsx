@@ -3,10 +3,11 @@ import {
   createStackNavigator,
   StackNavigationOptions,
 } from '@react-navigation/stack';
-import React, {ReactElement, useCallback} from 'react';
-import {Icon} from '../../components';
-import {useColor} from '../../hooks';
-import {rootScreenOptions} from '../../providers/Navigation/configs';
+import React, {ReactElement} from 'react';
+import {
+  rootScreenOptions,
+  useNavScreenOptions,
+} from '../../providers/Navigation/configs';
 import {
   HomeStackRoutes,
   ImplementStackRoutes,
@@ -28,11 +29,8 @@ import {
 import {useTabTap} from './utils';
 
 const noHeader: StackNavigationOptions = {headerShown: false};
-type TabIcons = {
-  [key in keyof HomeStackRoutes]: {focused: string; unFocused: string};
-};
 
-const tabIcons: TabIcons = {
+const tabIcons = {
   plan: {focused: 'pencil-plus-outline', unFocused: 'pencil-plus-outline'},
   implement: {
     focused: 'checkbox-multiple-marked-outline',
@@ -42,45 +40,16 @@ const tabIcons: TabIcons = {
   account: {focused: 'account', unFocused: 'account'},
 };
 
-type TabBarIconProps = {
-  focused: boolean;
-  size: number;
-};
-
-const useTabs = () => {
-  const color = useColor();
-
-  const screenOptions = useCallback(
-    ({route}) => ({
-      headerShown: false,
-      tabBarIcon: function tabBarIcon({focused, size}: TabBarIconProps) {
-        const iconColor = focused ? 'primaryA' : 'tertiary';
-        const key = focused ? 'focused' : 'unFocused';
-        const name = (tabIcons as any)[route.name][key];
-        return <Icon color={iconColor} name={name} size={size} />;
-      },
-      tabBarHideOnKeyboard: true,
-      tabBarActiveTintColor: color.text.primaryA,
-      tabBarInactiveTintColor: color.text.tertiary,
-      tabBarShowLabel: false,
-      tabBarStyle: {backgroundColor: color.background.primaryA},
-    }),
-    [color.background.primaryA, color.text.primaryA, color.text.tertiary],
-  );
-
-  return {screenOptions};
-};
-
-const HomeStack = createBottomTabNavigator<HomeStackRoutes>();
+const TabStack = createBottomTabNavigator<HomeStackRoutes>();
 const Home = () => {
-  const {screenOptions} = useTabs();
+  const {tabScreenOptions} = useNavScreenOptions();
   return (
-    <HomeStack.Navigator screenOptions={screenOptions}>
-      <HomeStack.Screen component={Capture} name="plan" />
-      <HomeStack.Screen component={Implement} name="implement" />
-      <HomeStack.Screen component={Reflect} name="reflect" />
-      <HomeStack.Screen component={Account} name="account" />
-    </HomeStack.Navigator>
+    <TabStack.Navigator screenOptions={tabScreenOptions(tabIcons)}>
+      <TabStack.Screen component={Capture} name="plan" />
+      <TabStack.Screen component={Implement} name="implement" />
+      <TabStack.Screen component={Reflect} name="reflect" />
+      <TabStack.Screen component={Account} name="account" />
+    </TabStack.Navigator>
   );
 };
 
