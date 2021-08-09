@@ -1,5 +1,6 @@
 import {RouteProp} from '@react-navigation/core';
 import {StackNavigationProp} from '@react-navigation/stack';
+
 export type Item = {
   title: string;
   dayOfMonth: string;
@@ -10,18 +11,27 @@ export type Item = {
   zone: string;
 };
 
-export type StackParamList = {
+export type AuthStackRoutes = {
   home: undefined;
-  item: {item: Item};
+  details: {item: Item};
+};
+export type UnAuthStackRoutes = {
+  landing: undefined;
+};
+
+export type HomeTabRoutes = {
+  hourly: undefined;
+  daily: undefined;
+  profile: undefined;
 };
 
 export type ItemScreenNavigationProp = StackNavigationProp<
-  StackParamList,
-  'item'
+  AuthStackRoutes,
+  'details'
 >;
-export type ItemScreenRouteProp = RouteProp<StackParamList, 'item'>;
+export type ItemScreenRouteProp = RouteProp<AuthStackRoutes, 'details'>;
 export type HomeScreenNavigationProp = StackNavigationProp<
-  StackParamList,
+  AuthStackRoutes,
   'home'
 >;
-export type HomeScreenRouteProp = RouteProp<StackParamList, 'home'>;
+export type HomeScreenRouteProp = RouteProp<AuthStackRoutes, 'home'>;

@@ -11,6 +11,13 @@ Deploy Android App (Focus)
 - [ ] redux
 - [ ] fix modal shadow
 
+* Bonus
+
+- [ ] Notification.show(), alert.show(), actionsheet.show()
+- [ ] remove /providers
+- [ ] remove /hooks
+- [ ] remove /utils
+
 Deploy iOS App (Focus)
 
 - [ ] assets

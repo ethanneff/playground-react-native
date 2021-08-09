@@ -20,10 +20,15 @@ export const rootScreenOptions: StackNavigationOptions = {
 type TabIcons = {[key: string]: {focused: string; unFocused: string}};
 type NavOptions = {route: RouteProp<ParamListBase>};
 
+type TabScreenOptions = {
+  tabIcons: TabIcons;
+  headerShown?: boolean;
+};
+
 type UseNavScreenOptions = {
   modalScreenOptions: StackNavigationOptions;
   tabScreenOptions: (
-    tabIcons: TabIcons,
+    options: TabScreenOptions,
   ) => (screenOptions: NavOptions) => BottomTabNavigationOptions;
 };
 
@@ -33,9 +38,9 @@ export const useNavScreenOptions = (): UseNavScreenOptions => {
   const modalScreenOptions: StackNavigationOptions = rootScreenOptions;
 
   const tabScreenOptions = useCallback(
-    tabIcons =>
+    ({tabIcons, headerShown = false}) =>
       ({route}: NavOptions): BottomTabNavigationOptions => ({
-        headerShown: false,
+        headerShown,
         tabBarIcon: function tabBarIcon({focused, size}) {
           const iconColor = focused ? 'primaryA' : 'tertiary';
           const key = focused ? 'focused' : 'unFocused';

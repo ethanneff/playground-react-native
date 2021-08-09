@@ -1,11 +1,11 @@
 import {useNavigation} from '@react-navigation/core';
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
-import {Icon, Text, TouchableOpacity} from '../../components';
-import {useColor} from '../../hooks';
-import {padding} from '../../utils';
+import {Icon, Text, TouchableOpacity} from '../../../../components';
+import {useColor} from '../../../../hooks';
+import {padding} from '../../../../utils';
+import {HomeScreenNavigationProp, Item} from '../../types';
 import {ListSection} from './ListSection';
-import {HomeScreenNavigationProp, Item} from './types';
 
 interface Props {
   showSection: boolean;
@@ -24,7 +24,10 @@ export const ListItem = memo(function ListItem({
   const title = currentItem ? 'current' : future ? 'future' : item.title;
   const {navigate} = useNavigation<HomeScreenNavigationProp>();
 
-  const onPress = useCallback(() => navigate('item', {item}), [item, navigate]);
+  const onPress = useCallback(
+    () => navigate('details', {item}),
+    [item, navigate],
+  );
 
   return (
     <View

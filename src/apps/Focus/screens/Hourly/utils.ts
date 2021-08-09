@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
-import {infiniteScrollRegeneration, itemHeight} from './configs';
-import {Item} from './types';
+import {infiniteScrollRegeneration, itemHeight} from '../../configs';
+import {Item} from '../../types';
 
 export const initialIndex =
   dayjs().startOf('day').add(2, 'day').diff(dayjs(), 'hour') - 4;

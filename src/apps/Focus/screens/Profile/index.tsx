@@ -1,6 +1,10 @@
 import React, {memo} from 'react';
-import {View} from 'react-native';
+import {Screen, Text} from '../../../../components';
 
 export const Profile = memo(function Profile() {
-  return <View />;
+  return (
+    <Screen dropShadow title="Profile">
+      <Text title="Profile" />
+    </Screen>
+  );
 });

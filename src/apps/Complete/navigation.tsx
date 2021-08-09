@@ -44,7 +44,7 @@ const TabStack = createBottomTabNavigator<HomeStackRoutes>();
 const Home = () => {
   const {tabScreenOptions} = useNavScreenOptions();
   return (
-    <TabStack.Navigator screenOptions={tabScreenOptions(tabIcons)}>
+    <TabStack.Navigator screenOptions={tabScreenOptions({tabIcons})}>
       <TabStack.Screen component={Capture} name="plan" />
       <TabStack.Screen component={Implement} name="implement" />
       <TabStack.Screen component={Reflect} name="reflect" />

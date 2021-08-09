@@ -1,9 +1,9 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import {Text} from '../../components';
-import {useColor} from '../../hooks';
-import {padding} from '../../utils';
-import {Item} from './types';
+import {Text} from '../../../../components';
+import {useColor} from '../../../../hooks';
+import {padding} from '../../../../utils';
+import {Item} from '../../types';
 
 interface Props {
   item: Item;

@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
-import {View} from 'react-native';
+import {Screen} from '../../../../components';
 
 export const Daily = memo(function Daily() {
-  return <View />;
+  return <Screen dropShadow title="Daily" />;
 });

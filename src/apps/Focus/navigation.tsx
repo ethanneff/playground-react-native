@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useMemo} from 'react';
 import {useNavScreenOptions} from '../../providers/Navigation/configs';
 import {
   AuthStackRoutes,
@@ -9,33 +9,50 @@ import {
 } from './navigationTypes';
 import {Daily, Details, Hourly, Landing, Profile} from './screens';
 
-const tabIcons = {
-  hourly: {focused: 'pencil-plus-outline', unFocused: 'pencil-plus-outline'},
-  daily: {
-    focused: 'checkbox-multiple-marked-outline',
-    unFocused: 'checkbox-multiple-marked-outline',
-  },
-  profile: {focused: 'finance', unFocused: 'finance'},
-};
 const AuthStack = createStackNavigator<AuthStackRoutes>();
 const UnAuthStack = createStackNavigator<UnAuthStackRoutes>();
 const TabBar = createBottomTabNavigator<HomeTabRoutes>();
 
+const Tabs = () => {
+  const tabIcons = useMemo(
+    () => ({
+      hourly: {
+        focused: 'format-list-bulleted',
+        unFocused: 'format-list-bulleted',
+      },
+      daily: {
+        focused: 'calendar-month',
+        unFocused: 'calendar-month',
+      },
+      profile: {
+        focused: 'account-outline',
+        unFocused: 'account-outline',
+      },
+    }),
+    [],
+  );
+  const {tabScreenOptions} = useNavScreenOptions();
+  const screenOptions = tabScreenOptions({tabIcons});
+  return (
+    <TabBar.Navigator screenOptions={screenOptions}>
+      <TabBar.Screen component={Hourly} name="hourly" />
+      <TabBar.Screen component={Daily} name="daily" />
+      <TabBar.Screen component={Profile} name="profile" />
+    </TabBar.Navigator>
+  );
+};
+
 export const Navigation = (): ReactElement => {
-  const {tabScreenOptions, modalScreenOptions} = useNavScreenOptions();
-  const login = true;
+  const {modalScreenOptions} = useNavScreenOptions();
+  const login = false;
 
   return login ? (
-    <UnAuthStack.Navigator screenOptions={modalScreenOptions}>
+    <UnAuthStack.Navigator screenOptions={{}}>
       <UnAuthStack.Screen component={Landing} name="landing" />
     </UnAuthStack.Navigator>
   ) : (
     <AuthStack.Navigator screenOptions={modalScreenOptions}>
-      <TabBar.Navigator screenOptions={tabScreenOptions(tabIcons)}>
-        <TabBar.Screen component={Hourly} name="hourly" />
-        <TabBar.Screen component={Daily} name="daily" />
-        <TabBar.Screen component={Profile} name="profile" />
-      </TabBar.Navigator>
+      <AuthStack.Screen component={Tabs} name="home" />
       <AuthStack.Screen component={Details} name="details" />
     </AuthStack.Navigator>
   );
