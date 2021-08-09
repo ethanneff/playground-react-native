@@ -8,7 +8,6 @@
 cd android/app
 keytool -genkeypair -v -keystore debug.jks -alias debug -keyalg RSA -keysize 2048 -validity 10000
 keytool -genkeypair -v -keystore release.jks -alias debug -keyalg RSA -keysize 2048 -validity 10000
-
 ```
 
 ### build .apk
