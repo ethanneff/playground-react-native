@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.57.0](https://github.com/ethanneff/example/compare/v2.56.0...v2.57.0) (2021-08-09)
+
+
+### Features
+
+* add tabs to focus ([56d3e3f](https://github.com/ethanneff/example/commit/56d3e3ffa2a4082541e81e9a7f321efe8325cecd))
+
 # [2.56.0](https://github.com/ethanneff/example/compare/v2.55.7...v2.56.0) (2021-08-09)
 
 
