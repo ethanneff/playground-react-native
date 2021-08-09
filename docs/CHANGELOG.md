@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.56.0](https://github.com/ethanneff/example/compare/v2.55.7...v2.56.0) (2021-08-09)
+
+
+### Features
+
+* add navigation for focus ([304dced](https://github.com/ethanneff/example/commit/304dced68d8f990acfaeb5a10061014c935ae930))
+
 ## [2.55.7](https://github.com/ethanneff/example/compare/v2.55.6...v2.55.7) (2021-08-06)
 
 
