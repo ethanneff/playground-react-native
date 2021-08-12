@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.57.1](https://github.com/ethanneff/example/compare/v2.57.0...v2.57.1) (2021-08-12)
+
+
+### Bug Fixes
+
+* relocate utils to features ([b6434f5](https://github.com/ethanneff/example/commit/b6434f5a246ee3bbeca03176c2a71d472241cda1))
+
 # [2.57.0](https://github.com/ethanneff/example/compare/v2.56.0...v2.57.0) (2021-08-09)
 
 
