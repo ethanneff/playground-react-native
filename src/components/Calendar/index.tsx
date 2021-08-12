@@ -9,9 +9,9 @@ type State = {
   selected: string | undefined;
 };
 
-interface Props {
+type Props = {
   hiddenDays?: boolean;
-}
+};
 
 const today = new Date();
 const initialState = {

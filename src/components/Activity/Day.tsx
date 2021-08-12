@@ -7,13 +7,13 @@ import {TouchableOpacity} from '../TouchableOpacity';
 import {ActivityDay} from './types';
 dayjs.extend(isToday);
 
-interface Props {
+type Props = {
   day: ActivityDay;
   max: number;
   size: number;
   margin: number;
   onPress: (item: ActivityDay) => () => void;
-}
+};
 
 export const Day = memo(function Day({day, max, size, margin, onPress}: Props) {
   const color = useColor();

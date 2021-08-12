@@ -4,9 +4,9 @@ import {Button, Input, Modal} from '../../components';
 import {auth, FirebaseAuthTypes} from '../../conversions/Firebase';
 import {LoginButton} from './LoginButton';
 
-interface Props {
+type Props = {
   onBackgroundPress: () => void;
-}
+};
 
 type FormState =
   | 'loading'

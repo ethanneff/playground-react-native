@@ -1,10 +1,9 @@
 import React, {memo} from 'react';
 import {StyleProp, TextStyle, ViewStyle} from 'react-native';
-import {MonoMultiColor} from '../../features/Config';
+import {FontEmphasis, MonoMultiColor} from '../../features/Config';
 import {useColor, useDropShadow} from '../../features/Theme';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
-import {ButtonEmphasis} from './types';
 import {getStyles} from './utils';
 
 /*
@@ -26,7 +25,7 @@ type Props = {
   disabled?: boolean;
   invisible?: boolean;
   /* color */
-  emphasis?: ButtonEmphasis;
+  emphasis?: FontEmphasis;
   color?: keyof MonoMultiColor;
   /* size */
   noPadding?: boolean;

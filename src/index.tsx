@@ -1,7 +1,7 @@
 import React from 'react';
 import {AppRegistry, Platform} from 'react-native';
 import 'react-native-get-random-values';
-import {ErrorBoundary} from './components/ErrorBoundary';
+import {ErrorBoundary} from './components';
 import {debugDev} from './features';
 import {App, Navigation, Redux} from './providers';
 

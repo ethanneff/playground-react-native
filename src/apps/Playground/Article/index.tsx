@@ -1,7 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo} from 'react';
-import {Card, Screen} from '../../../components';
-import {Content} from '../../../components/Content';
+import {Card, Content, Screen} from '../../../components';
 import {ScrollView} from '../../../conversions';
 import {padding, useColor} from '../../../features';
 import {data} from './data';

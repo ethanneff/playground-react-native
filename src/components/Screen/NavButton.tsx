@@ -4,12 +4,12 @@ import {padding} from '../../features/Config';
 import {Icon} from '../Icon';
 import {TouchableOpacity} from '../TouchableOpacity';
 
-interface Props {
+type Props = {
   icon?: string;
   isRight?: boolean;
   onPress?: () => void;
   testID: string;
-}
+};
 
 export const NavButton = memo(function NavButton({
   onPress = undefined,

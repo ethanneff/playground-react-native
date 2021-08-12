@@ -34,9 +34,9 @@ type CompleteState = {
   navigatedToAppStore: boolean;
 };
 
-interface Props {
+type Props = {
   onComplete: (completeState: CompleteState) => void;
-}
+};
 
 export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
   const ratingRef = useRef(0);

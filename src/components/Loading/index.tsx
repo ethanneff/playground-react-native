@@ -2,11 +2,11 @@ import React, {memo, useCallback, useEffect, useState} from 'react';
 import {StyleSheet, View, ViewStyle} from 'react-native';
 import {Text} from '../Text';
 
-interface Props {
+type Props = {
   title: string;
   center?: boolean;
   style?: ViewStyle;
-}
+};
 
 const ellipsis = ['', '.', '.', '.'];
 const ellipsisDuration = 400;

@@ -3,7 +3,7 @@ import {StyleProp, ViewStyle} from 'react-native';
 import {TouchableOpacity as Original} from '../../conversions';
 import {SoundManager} from '../../features/Sound';
 
-interface Props {
+type Props = {
   testID?: string;
   containerStyle?: StyleProp<ViewStyle>;
   style?: StyleProp<ViewStyle>;
@@ -13,7 +13,7 @@ interface Props {
   onPress?(): void;
   onLongPress?(): void;
   children?: ReactNode | ReactNode[];
-}
+};
 
 export const TouchableOpacity = ({
   testID,

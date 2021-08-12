@@ -4,9 +4,9 @@ import {padding} from '../../features/Config';
 import {useColor} from '../../features/Theme';
 import {Text} from '../Text';
 
-interface Props {
+type Props = {
   badge: number;
-}
+};
 
 const badgeLimit = '!';
 const maxBadgeNumber = 99;

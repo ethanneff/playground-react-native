@@ -3,7 +3,7 @@ import {StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../../components';
 import {padding, useColor} from '../../../features';
 
-interface Props {
+type Props = {
   title: string;
   description?: string;
   icon?: string;
@@ -12,7 +12,7 @@ interface Props {
   marginBottom?: boolean;
   active?: boolean;
   hidden?: boolean;
-}
+};
 export const Item = memo(function ReminderItem({
   title,
   description = '',

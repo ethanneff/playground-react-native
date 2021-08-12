@@ -2,10 +2,10 @@ import React, {memo, ReactNode} from 'react';
 import {LayoutChangeEvent, StyleSheet, View} from 'react-native';
 import {useColor} from '../../../features';
 
-interface Props {
+type Props = {
   onLayout: (event: LayoutChangeEvent) => void;
   children: ReactNode;
-}
+};
 
 export type CanvasDimensions = {
   x: number;

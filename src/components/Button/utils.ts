@@ -1,7 +1,10 @@
 import {StyleSheet} from 'react-native';
-import {padding} from '../../features/Config/index';
-import {ColorTheme, MonoMultiColor} from '../../features/Config/types';
-import {ButtonEmphasis} from './types';
+import {
+  ColorTheme,
+  FontEmphasis,
+  MonoMultiColor,
+  padding,
+} from '../../features/Config';
 
 export const getButtonColor = (
   colorScheme: ColorTheme,
@@ -11,7 +14,7 @@ export const getButtonColor = (
 type StyleInterface = {
   colorScheme: ColorTheme;
   color: keyof MonoMultiColor;
-  emphasis: ButtonEmphasis;
+  emphasis: FontEmphasis;
   noPadding?: boolean;
   disabled?: boolean;
 };

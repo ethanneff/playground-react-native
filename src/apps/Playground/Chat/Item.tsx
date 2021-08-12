@@ -7,10 +7,10 @@ import {padding, useColor} from '../../../features';
 import {Message} from './Messages';
 dayjs.extend(relativeTime);
 
-interface Props {
+type Props = {
   item: Message;
   marginBottom: boolean;
-}
+};
 
 export const Item = memo(function ChatMessage({item, marginBottom}: Props) {
   const color = useColor();

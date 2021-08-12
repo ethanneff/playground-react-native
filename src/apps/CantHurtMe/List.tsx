@@ -7,10 +7,10 @@ import {DailyProgress} from './DailyProgress';
 import {app} from './data';
 import {ProfileLevel} from './ProfileLevel';
 
-interface Props {
+type Props = {
   onProfilePress(): void;
   onSettingsPress(): void;
-}
+};
 
 export const List = memo(function List({
   onProfilePress,

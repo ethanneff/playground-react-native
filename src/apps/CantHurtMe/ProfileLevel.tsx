@@ -3,9 +3,9 @@ import {Image, StyleSheet, View} from 'react-native';
 import {Text, TouchableOpacity} from '../../components';
 import {padding, useColor} from '../../features';
 
-interface Props {
+type Props = {
   onPress?: () => void;
-}
+};
 
 export const ProfileLevel = ({onPress}: Props): JSX.Element => {
   const color = useColor();

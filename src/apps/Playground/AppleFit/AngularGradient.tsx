@@ -2,10 +2,10 @@ import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import {MaskedView} from '../../../conversions';
 
-interface Props {
+type Props = {
   size: number;
   colors: [string, string];
-}
+};
 
 export const AngularGradient = ({
   size,

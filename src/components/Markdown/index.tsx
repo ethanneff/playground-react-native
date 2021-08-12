@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
   },
 });
 
-interface Props {
+type Props = {
   title: string;
   style?: TextStyle;
-}
+};
 
 export class Markdown extends React.PureComponent<Props> {
   boldSyntax = '*';

@@ -3,12 +3,12 @@ import {StyleSheet, View} from 'react-native';
 import {AngularGradient} from './AngularGradient';
 import {Ring} from './types';
 
-interface Props {
+type Props = {
   radius: number;
   flip?: boolean;
   ring: Ring;
   type: 'foreground' | 'background';
-}
+};
 
 export const HalfCircle = memo(function HalfCircle({
   type,

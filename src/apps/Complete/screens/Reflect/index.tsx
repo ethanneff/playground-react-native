@@ -3,7 +3,7 @@ import {Dimensions, View} from 'react-native';
 import {Calendar, Screen, Text} from '../../../../components';
 import {ScrollView} from '../../../../conversions';
 import {padding, useColor, useTabTap} from '../../../../features';
-import {Card} from '../../components/Card';
+import {Card} from '../../components';
 import {completeConfig} from '../../utils';
 import {Graph} from './Graph';
 

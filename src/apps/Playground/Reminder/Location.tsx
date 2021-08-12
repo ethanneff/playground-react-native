@@ -8,9 +8,9 @@ interface LocationItem {
   subtitle?: string;
 }
 
-interface Props {
+type Props = {
   onPress: (value: string) => () => void;
-}
+};
 
 export const Location = memo(function Location({onPress}: Props) {
   const locations: LocationItem[] = [

@@ -11,9 +11,9 @@ import {
   TouchableOpacity,
 } from '../../../../components';
 import {padding, useAuth, useColor} from '../../../../features';
-import {ModalHeader} from '../../components/';
+import {ModalHeader} from '../../components';
 
-interface Props {
+type Props = {
   onBackgroundPress: () => void;
   showFacebook?: boolean;
   showGoogle?: boolean;
@@ -22,7 +22,7 @@ interface Props {
   showPhone?: boolean;
   showAnonymous?: boolean;
   onSuccess: (user: FirebaseAuthTypes.User | null) => void;
-}
+};
 
 // TODO: relocate to somewhere
 interface SignInButtonProps {

@@ -2,12 +2,12 @@ import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Item} from './Item';
 
-interface Props {
+type Props = {
   buttons: string[];
   horizontal?: boolean;
   value: string;
   onChange: (id: string) => () => void;
-}
+};
 
 export const Radio = memo(function Radio({
   buttons,

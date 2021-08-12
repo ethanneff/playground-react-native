@@ -6,12 +6,12 @@ import {Icon} from '../Icon';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 
-interface Props {
+type Props = {
   unix: number;
   onMonthIncrease(): void;
   onMonthDecrease(): void;
   onTitlePress(): void;
-}
+};
 export const CalendarHeader = memo(function CalendarHeader({
   unix,
   onTitlePress,

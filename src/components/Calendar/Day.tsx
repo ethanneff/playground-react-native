@@ -7,12 +7,12 @@ import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {Day} from './utils';
 
-interface Props {
+type Props = {
   day: Day;
   onSelected: () => void;
   selectedDay: string | undefined;
   hiddenDays?: boolean;
-}
+};
 
 export const CalendarDay = ({
   day,

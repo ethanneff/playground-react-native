@@ -3,10 +3,10 @@ import {View} from 'react-native';
 import {padding} from '../../features/Config';
 import {useColor} from '../../features/Theme';
 import {TouchableOpacity} from '../TouchableOpacity';
-import {Slide} from './types';
+import {CarouselSlide} from './types';
 
 type DotsProps = {
-  slides: Slide[];
+  slides: CarouselSlide[];
   dotSize: number;
   activeIndex: number;
   onDotPress: (index: number) => () => void;

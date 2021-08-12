@@ -7,13 +7,13 @@ import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 dayjs.extend(relativeTime);
 
-interface Props {
+type Props = {
   date: number;
   type?: FontType;
   emphasis?: FontEmphasis;
   format?: string;
   style?: ViewStyle;
-}
+};
 
 const minute = 60 * 1000;
 export const RelativeDate = memo(function RelativeDate({

@@ -6,11 +6,11 @@ import {padding, useColor} from '../../../../features';
 import {HomeScreenNavigationProp, Item} from '../../types';
 import {ListSection} from './ListSection';
 
-interface Props {
+type Props = {
   showSection: boolean;
   item: Item;
   currentItem: boolean;
-}
+};
 
 export const ListItem = memo(function ListItem({
   showSection,

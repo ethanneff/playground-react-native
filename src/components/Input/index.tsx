@@ -30,7 +30,7 @@ type TextContentType = 'username' | 'password' | 'none';
 
 // TODO: fix blurOnSubmit=false
 
-interface Props {
+type Props = {
   autoCorrect?: boolean;
   blurOnSubmit?: boolean;
   clearIcon?: string;
@@ -53,7 +53,7 @@ interface Props {
   onChangeText(text: string): void;
   onRef?: MutableRefObject<Original | null>;
   onSubmitEditing?: () => void;
-}
+};
 
 export const Input = memo(function Input({
   autoCorrect,

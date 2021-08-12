@@ -11,11 +11,11 @@ import {Repeat} from './Repeat';
 type ReminderType = 'One time' | 'Repeat' | 'Location';
 const reminderTypes: ReminderType[] = ['One time', 'Repeat', 'Location'];
 
-interface Props {
+type Props = {
   onBackgroundPress: () => void;
   onOneTimePress: (date: Dayjs) => () => void; // TODO: handle models better so don't have to pass up to parent
   onLocationPress: (id: string) => () => void;
-}
+};
 
 export const CreateReminderModal = memo(function CreateReminderModal({
   onBackgroundPress,

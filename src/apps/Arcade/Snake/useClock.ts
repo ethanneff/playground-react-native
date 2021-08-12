@@ -1,10 +1,10 @@
 import {useCallback, useEffect, useRef} from 'react';
 
-interface Props {
+type Props = {
   precision?: number;
   frequency?: number;
   onUpdate: (time: number) => void;
-}
+};
 
 type State = 'off' | 'on';
 

@@ -1,11 +1,10 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Button, Text} from '../../../components';
-import {ButtonEmphasis} from '../../../components/Button/types';
-import {padding, useColor} from '../../../features';
+import {FontEmphasis, padding, useColor} from '../../../features';
 
 type ButtonGroupProps = {
-  emphasis: ButtonEmphasis;
+  emphasis: FontEmphasis;
 };
 
 export const ButtonGroup = memo(function ButtonGroup({

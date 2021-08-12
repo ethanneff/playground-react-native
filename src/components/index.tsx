@@ -5,6 +5,7 @@ export * from './Button';
 export * from './Calendar';
 export * from './Card';
 export * from './Carousel';
+export * from './Content';
 export * from './ErrorBoundary';
 export * from './Icon';
 export * from './Image';

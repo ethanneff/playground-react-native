@@ -58,9 +58,9 @@ const generateButtons = () => {
   ];
 };
 
-interface Props {
+type Props = {
   onPress: (value: Dayjs) => () => void;
-}
+};
 
 export const OneTime = memo(function OneTime({onPress}: Props) {
   const buttons = generateButtons();

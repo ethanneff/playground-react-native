@@ -4,9 +4,9 @@ import {Text} from '../../../../components';
 import {padding, useColor} from '../../../../features';
 import {Item} from '../../types';
 
-interface Props {
+type Props = {
   item: Item;
-}
+};
 
 export const ListSection = memo(function ListSection({item}: Props) {
   const color = useColor();

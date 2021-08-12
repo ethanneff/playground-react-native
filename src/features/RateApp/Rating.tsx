@@ -3,7 +3,7 @@ import {View} from 'react-native';
 import {Icon, TouchableOpacity} from '../../components';
 import {MonoMultiColor, padding} from '../../features/Config';
 
-interface Props {
+type Props = {
   size: number;
   count: number;
   rating: number;
@@ -12,7 +12,7 @@ interface Props {
   colorUnfilled?: keyof MonoMultiColor;
   iconFilled?: string;
   iconUnfilled?: string;
-}
+};
 
 export const Rating = memo(function RatingMemo({
   size,

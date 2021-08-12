@@ -5,7 +5,7 @@ import {useColor, useDropShadow} from '../../features/Theme';
 import {Text} from '../Text';
 import {NavButton} from './NavButton';
 
-interface Props {
+type Props = {
   title?: string;
   border?: boolean;
   leftIcon?: string;
@@ -17,7 +17,7 @@ interface Props {
   onSecondLeftPress?: () => void;
   onSecondRightPress?: () => void;
   dropShadow?: boolean;
-}
+};
 
 export const NavBar = memo(function NavBar({
   title,

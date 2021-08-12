@@ -5,11 +5,11 @@ import {useColor} from '../../features/Theme';
 import {Content} from '../Content';
 import {Icon} from '../Icon';
 import {Text} from '../Text';
-import {Slide} from './types';
+import {CarouselSlide} from './types';
 
 type Props = {
   width: number;
-  item: Slide;
+  item: CarouselSlide;
 };
 
 export const Item = memo(function Item({item, width}: Props) {

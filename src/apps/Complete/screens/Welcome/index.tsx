@@ -1,14 +1,14 @@
 import React, {memo, useCallback, useState} from 'react';
 import {View} from 'react-native';
 import {Button, Carousel, Screen} from '../../../../components';
-import {Slide} from '../../../../components/Carousel/types';
+import {CarouselSlide} from '../../../../components/Carousel/types';
 import {padding} from '../../../../features';
 import {useRootDispatch} from '../../../../redux';
 import {createItem, loadUser, login} from '../../models';
 import {completeConfig, getDefaultUserTemplate} from '../../utils';
 import {Login} from './Login';
 
-const slides: Slide[] = [
+const slides: CarouselSlide[] = [
   {
     id: '1',
     icon: 'trophy-outline',

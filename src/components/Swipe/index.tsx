@@ -19,7 +19,7 @@ export const Swipe = (): JSX.Element => {
 // const SWIPE_THRESHOLD = 0.25 * SCREEN_WIDTH;
 // const SWIPE_OUT_DURATION = 250;
 
-// interface Props {}
+// type Props = {}
 // interface State {
 //   panResponder: number;
 //   position: number;

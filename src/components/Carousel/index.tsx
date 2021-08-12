@@ -4,11 +4,11 @@ import {padding} from '../../features/Config';
 import {getWidth, useRootSelector} from '../../redux';
 import {Dots} from './Dots';
 import {Item} from './Item';
-import {Slide} from './types';
+import {CarouselSlide} from './types';
 
 type Props = {
   dotSize?: number;
-  slides: Slide[];
+  slides: CarouselSlide[];
   duration?: number;
   viewabilityConfig?: Record<string, unknown>;
 };
@@ -76,7 +76,7 @@ export const Carousel = memo(function Carousel({
     };
   }, [duration, loop]);
 
-  const renderItem = useCallback<ListRenderItem<Slide>>(
+  const renderItem = useCallback<ListRenderItem<CarouselSlide>>(
     ({item}) => <Item item={item} width={width} />,
     [width],
   );

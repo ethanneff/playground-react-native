@@ -6,14 +6,14 @@ import {Text} from '../Text';
 import {Day} from './Day';
 import {ActivityDay, ActivityWeek} from './types';
 
-interface Props {
+type Props = {
   item: ActivityWeek;
   max: number;
   index: number;
   size: number;
   margin: number;
   onPress: (item: ActivityDay) => () => void;
-}
+};
 
 export const Week = memo(function Week({
   item,

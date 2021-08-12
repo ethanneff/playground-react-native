@@ -1,9 +1,9 @@
 import React, {memo} from 'react';
 import {Button, Modal, Text} from '../../../components';
 
-interface Props {
+type Props = {
   onPress(): void;
-}
+};
 
 export const EndGame = memo(function EndGame({onPress}: Props) {
   return (

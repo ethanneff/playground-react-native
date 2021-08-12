@@ -15,13 +15,13 @@ import {
 } from './utils';
 import {Week} from './Week';
 
-interface Props {
+type Props = {
   username: string;
   site: Site;
   size?: number;
   margin?: number;
   title: string;
-}
+};
 
 const initialActivity: ActivityModel = {
   activity: getActivitySquares(),
