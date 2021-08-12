@@ -1,5 +1,6 @@
 import React, {memo, useCallback, useRef} from 'react';
 import {Animated, StyleProp, StyleSheet, TextStyle} from 'react-native';
+import {SoundManager} from '../../features/Sound';
 import {useColor, useDriver} from '../../hooks';
 import {
   FontEmphasis,
@@ -7,7 +8,6 @@ import {
   fontWeight,
   getFontStyles,
   MonoMultiColor,
-  SoundManager,
 } from '../../utils';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';

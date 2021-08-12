@@ -1,8 +1,9 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {Animated, TouchableOpacity} from 'react-native';
 import {Text} from '../../../components';
+import {SoundManager} from '../../../features';
 import {useColor} from '../../../hooks';
-import {padding, SoundManager} from '../../../utils';
+import {padding} from '../../../utils';
 import {CanvasDimensions} from './Canvas';
 import {Item} from './types';
 import {

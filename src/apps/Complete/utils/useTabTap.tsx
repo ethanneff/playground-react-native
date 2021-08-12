@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import {useEffect} from 'react';
-import {SoundManager} from '../../../utils';
+import {SoundManager} from '../../../features';
 
 export const useTabTap = (): void => {
   const {addListener} = useNavigation();
