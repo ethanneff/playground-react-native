@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Screen} from '../../../components';
-import {useColor} from '../../../hooks';
+import {useColor} from '../../../features';
 import {ButtonRound} from './ButtonRound';
 import {ButtonsRow} from './ButtonsRow';
 import {LapsTable} from './LapsTable';

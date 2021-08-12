@@ -14,14 +14,14 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {useColor} from '../../hooks';
 import {
   FontEmphasis,
   FontType,
   getFontStyles,
   MonoMultiColor,
   padding,
-} from '../../utils';
+} from '../../features/Config';
+import {useColor} from '../../features/Theme';
 import {Icon} from '../Icon';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {PointerEvents, TextContentType} from './types';

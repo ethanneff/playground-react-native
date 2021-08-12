@@ -2,8 +2,7 @@ import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Button, Text} from '../../../components';
 import {ButtonEmphasis} from '../../../components/Button/types';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 
 type ButtonGroupProps = {
   emphasis: ButtonEmphasis;

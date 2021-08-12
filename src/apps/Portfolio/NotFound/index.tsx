@@ -2,8 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo} from 'react';
 import {ScrollView} from 'react-native';
 import {Button, Screen} from '../../../components';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 
 export const NotFound = memo(function PortfolioNotFound() {
   const {goBack} = useNavigation();

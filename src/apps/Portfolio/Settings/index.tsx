@@ -2,8 +2,13 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {FlatList, ListRenderItem, View} from 'react-native';
 import {Button, Screen} from '../../../components';
-import {changeTheme, Theme, themes} from '../../../models';
-import {useRootDispatch, useRootSelector} from '../../../utils';
+import {
+  changeTheme,
+  Theme,
+  themes,
+  useRootDispatch,
+  useRootSelector,
+} from '../../../redux';
 
 export const Settings = memo(function PortfolioSettings() {
   const dispatch = useRootDispatch();

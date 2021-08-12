@@ -1,6 +1,6 @@
 import React, {memo, ReactNode} from 'react';
 import {LayoutChangeEvent, StyleSheet, View} from 'react-native';
-import {useColor} from '../../../hooks';
+import {useColor} from '../../../features';
 
 interface Props {
   onLayout: (event: LayoutChangeEvent) => void;

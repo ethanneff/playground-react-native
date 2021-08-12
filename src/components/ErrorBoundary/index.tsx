@@ -1,5 +1,5 @@
 import React, {ErrorInfo, ReactNode} from 'react';
-import {Text} from '../../components/Text';
+import {Text} from '../Text';
 
 type Props = {
   children: ReactNode;

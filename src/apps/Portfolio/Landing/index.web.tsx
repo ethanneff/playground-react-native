@@ -2,8 +2,7 @@ import React, {memo, ReactNode} from 'react';
 import {Image, View} from 'react-native';
 import {Icon, Sentence, Text, TouchableOpacity} from '../../../components';
 import {SentenceType} from '../../../components/Sentence/types';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 
 const missingCallback = () => undefined;
 

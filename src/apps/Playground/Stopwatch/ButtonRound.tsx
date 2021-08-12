@@ -1,8 +1,7 @@
 import React, {memo, useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Text, TouchableOpacity} from '../../../components';
-import {useColor} from '../../../hooks';
-import {MonoMultiColor} from '../../../utils';
+import {MonoMultiColor, useColor} from '../../../features';
 
 interface RoundButtonProps {
   title: string;

@@ -1,6 +1,6 @@
 import React, {memo, ReactElement} from 'react';
 import {LayoutChangeEvent, View} from 'react-native';
-import {useColor} from '../../../hooks';
+import {useColor} from '../../../features';
 import {completeConfig} from '../utils';
 
 // TODO: combine card components with global card

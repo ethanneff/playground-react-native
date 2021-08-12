@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {padding} from '../../utils';
+import {padding} from '../../features/Config';
 import {Sentence} from '../Sentence';
 import {Text} from '../Text';
 import {Sections} from './types';

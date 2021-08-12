@@ -2,8 +2,8 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {Keyboard, View} from 'react-native';
 import {Button, Modal, Text} from '../../../../components';
-import {useColor} from '../../../../hooks';
-import {padding, useRootDispatch, useRootSelector} from '../../../../utils';
+import {padding, useColor} from '../../../../features';
+import {useRootDispatch, useRootSelector} from '../../../../redux';
 import {Card, DeleteModal, ItemContext, ItemEdit} from '../../components';
 import {removeItem, removeItemFromItem, updateItem} from '../../models';
 

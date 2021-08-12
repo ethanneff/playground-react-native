@@ -1,7 +1,7 @@
 import React, {memo, ReactNode} from 'react';
 import {StyleSheet, View, ViewStyle} from 'react-native';
-import {useColor, useDropShadow} from '../../hooks';
-import {padding} from '../../utils';
+import {padding} from '../../features/Config';
+import {useColor, useDropShadow} from '../../features/Theme';
 import {TouchableOpacity} from '../TouchableOpacity';
 
 type Props = {

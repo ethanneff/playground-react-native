@@ -2,8 +2,8 @@ import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {Keyboard, TextInput as OriginalTextInput, View} from 'react-native';
 import {v4} from 'uuid';
 import {Button, TextInput, TextInputIcon} from '../../../components';
-import {useColor} from '../../../hooks';
-import {padding, useRootDispatch, useRootSelector} from '../../../utils';
+import {padding, useColor} from '../../../features';
+import {useRootDispatch, useRootSelector} from '../../../redux';
 import {addItemToItem, createItem, Item} from '../models';
 import {completeConfig} from '../utils';
 

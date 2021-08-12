@@ -1,50 +1,12 @@
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {ActivityIndicator, Platform} from 'react-native';
-import {
-  Button,
-  Icon,
-  Input,
-  Modal,
-  Text,
-  TouchableOpacity,
-} from '../../components';
+import {Button, Input, Modal} from '../../components';
 import {auth, FirebaseAuthTypes} from '../../conversions/Firebase';
-import {useColor} from '../../hooks';
-import {padding} from '../../utils';
+import {LoginButton} from './LoginButton';
 
 interface Props {
   onBackgroundPress: () => void;
 }
-
-interface SignInButtonProps {
-  onPress: () => void;
-  icon: string;
-  title: string;
-}
-const SignInButton = memo(function SignInButton({
-  onPress,
-  icon,
-  title,
-}: SignInButtonProps) {
-  const color = useColor();
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={{
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'row',
-        borderColor: color.border.primaryA,
-        borderWidth: 2,
-        padding: padding(2),
-        marginBottom: padding(2),
-        borderRadius: padding(10),
-      }}>
-      <Icon name={icon} />
-      <Text style={{paddingLeft: padding(2)}} title={title} type="button" />
-    </TouchableOpacity>
-  );
-});
 
 type FormState =
   | 'loading'
@@ -63,7 +25,7 @@ type State = {
   state: FormState;
 };
 
-export const Login = memo(function Login({onBackgroundPress}: Props) {
+export const LoginFlow = memo(function LoginFlow({onBackgroundPress}: Props) {
   const [form, setForm] = useState<State>({
     email: '',
     password: '',
@@ -252,33 +214,33 @@ export const Login = memo(function Login({onBackgroundPress}: Props) {
       ) : (
         <>
           {Platform.OS === 'ios' && (
-            <SignInButton
+            <LoginButton
               icon="apple"
               onPress={onMissingCallback}
               title="Continue with Apple"
             />
           )}
-          <SignInButton
+          <LoginButton
             icon="google"
             onPress={onMissingCallback}
             title="Continue with Google"
           />
-          <SignInButton
+          <LoginButton
             icon="facebook"
             onPress={onMissingCallback}
             title="Continue with Facebook"
           />
-          <SignInButton
+          <LoginButton
             icon="email"
             onPress={onEmail}
             title="Continue with Email"
           />
-          <SignInButton
+          <LoginButton
             icon="phone"
             onPress={onPhone}
             title="Continue with Phone"
           />
-          <SignInButton
+          <LoginButton
             icon="close"
             onPress={onAnonymous}
             title="Continue trial"

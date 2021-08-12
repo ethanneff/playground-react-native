@@ -2,7 +2,8 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent, View} from 'react-native';
 import {KeyboardHandler, Screen} from '../../../components';
-import {padding, useRootSelector} from '../../../utils';
+import {padding} from '../../../features';
+import {useRootSelector} from '../../../redux';
 import {Items} from './Items';
 import {TextField} from './TextField';
 

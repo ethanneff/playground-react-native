@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {Dimensions, FlatList} from 'react-native';
 import {Image, Screen} from '../../../components';
-import {useColor} from '../../../hooks';
+import {useColor} from '../../../features';
 
 const numColumns = 3;
 const handleInfiniteScrollThreshold = 0.3;

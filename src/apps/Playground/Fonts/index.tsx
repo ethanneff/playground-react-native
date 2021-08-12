@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo} from 'react';
 import {Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
-import {useColor} from '../../../hooks';
+import {useColor} from '../../../features';
 
 export const Fonts = memo(function PlaygroundFonts() {
   const {goBack} = useNavigation();

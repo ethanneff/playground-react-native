@@ -2,8 +2,7 @@ import React, {memo} from 'react';
 import {StyleSheet} from 'react-native';
 import {Activity, Icon, Screen} from '../../components';
 import {ScrollView} from '../../conversions';
-import {useAdminNavBack, useColor} from '../../hooks';
-import {padding} from '../../utils';
+import {padding, useAdminNavBack, useColor} from '../../features';
 
 // TODO: gitlab
 // TODO: selected

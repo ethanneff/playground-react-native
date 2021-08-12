@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../../components';
-import {padding} from '../../../utils';
+import {padding} from '../../../features';
 
 type Props = {
   title: string;

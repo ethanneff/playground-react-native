@@ -2,7 +2,7 @@ import {Dayjs} from 'dayjs';
 import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {Button, Modal, Text} from '../../../components';
-import {padding} from '../../../utils';
+import {padding} from '../../../features';
 import {Location} from './Location';
 import {OneTime} from './OneTime';
 import {Radio} from './Radio';

@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {Button, Input, Screen} from '../../../../components';
-import {useRootDispatch, useRootSelector} from '../../../../utils';
+import {useRootDispatch, useRootSelector} from '../../../../redux';
 import {
   getCurrentChecklistItem,
   removeChecklistItem,

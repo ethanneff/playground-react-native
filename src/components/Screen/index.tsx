@@ -7,7 +7,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {useColor} from '../../hooks';
+import {useColor} from '../../features/Theme';
 import {NavBar} from './NavBar';
 
 type Props = {

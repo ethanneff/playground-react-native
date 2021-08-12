@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import {useColor} from '../../hooks';
-import {padding} from '../../utils';
+import {padding} from '../../features/Config';
+import {useColor} from '../../features/Theme';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {Slide} from './types';
 

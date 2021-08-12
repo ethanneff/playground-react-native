@@ -2,8 +2,7 @@ import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {TextInput, View} from 'react-native';
 import {Button, Calendar, Card, Input, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
-import {useAdminNavBack, useColor} from '../../hooks';
-import {padding} from '../../utils';
+import {padding, useAdminNavBack, useColor} from '../../features';
 
 const data = [
   'Set your alarm for 10 minutes earlier than usual',

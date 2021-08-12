@@ -1,6 +1,6 @@
 import React, {memo, useCallback, useState} from 'react';
 import {Modal, Screen, Text} from '../../components';
-import {useAdminNavBack} from '../../hooks';
+import {useAdminNavBack} from '../../features';
 import {List} from './List';
 
 const initialState = {settings: false, profile: false};

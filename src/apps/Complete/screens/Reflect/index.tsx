@@ -2,10 +2,9 @@ import React, {memo} from 'react';
 import {Dimensions, View} from 'react-native';
 import {Calendar, Screen, Text} from '../../../../components';
 import {ScrollView} from '../../../../conversions';
-import {useColor} from '../../../../hooks';
-import {padding} from '../../../../utils';
+import {padding, useColor, useTabTap} from '../../../../features';
 import {Card} from '../../components/Card';
-import {completeConfig, useTabTap} from '../../utils';
+import {completeConfig} from '../../utils';
 import {Graph} from './Graph';
 
 // TODO: add journal

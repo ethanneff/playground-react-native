@@ -2,8 +2,13 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {Animated, FlatList, StyleSheet, View} from 'react-native';
 import {Icon, Input, Screen, Text} from '../../../components';
-import {useColor, useDriver} from '../../../hooks';
-import {colorWithOpacity, padding, useRootSelector} from '../../../utils';
+import {
+  colorWithOpacity,
+  padding,
+  useColor,
+  useDriver,
+} from '../../../features';
+import {useRootSelector} from '../../../redux';
 
 const data = [
   {id: 1, name: '1'},

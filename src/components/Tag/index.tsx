@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
-import {useColor} from '../../hooks';
-import {padding, TagColor} from '../../utils';
+import {padding, TagColor} from '../../features/Config';
+import {useColor} from '../../features/Theme';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 

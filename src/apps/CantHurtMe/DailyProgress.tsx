@@ -2,8 +2,7 @@ import dayjs, {Dayjs} from 'dayjs';
 import React, {memo, useCallback, useState} from 'react';
 import {FlatList, ListRenderItem, View} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../components';
-import {useColor} from '../../hooks';
-import {padding} from '../../utils';
+import {padding, useColor} from '../../features';
 
 const generateHistory = () => {
   const data = [];

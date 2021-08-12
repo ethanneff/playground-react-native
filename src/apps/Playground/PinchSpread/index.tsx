@@ -2,8 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useState} from 'react';
 import {Animated, PanResponder, StyleSheet, View} from 'react-native';
 import {Screen, Text} from '../../../components';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 import {GestureHandler} from './logic';
 
 const minTouches = 2;

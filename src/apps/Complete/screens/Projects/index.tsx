@@ -1,11 +1,10 @@
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent} from 'react-native';
 import {KeyboardHandler, Screen} from '../../../../components';
-import {useColor} from '../../../../hooks';
-import {padding, useRootSelector} from '../../../../utils';
+import {padding, useColor, useKeyboardHeight} from '../../../../features';
+import {useRootSelector} from '../../../../redux';
 import {List} from '../../components';
 import {getProjects} from '../../models';
-import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
 
 // TODO: add journal
 // TODO: add historical data

@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Text} from '../../../components';
-import {FontEmphasis, fontSizes, padding} from '../../../utils';
+import {FontEmphasis, fontSizes, padding} from '../../../features';
 
 type FontGroupProps = {
   emphasis: FontEmphasis;

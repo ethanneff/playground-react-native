@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {useColor} from '../../../hooks';
-import {MonoMultiColor} from '../../../utils';
+import {MonoMultiColor, useColor} from '../../../features';
 import {CenterCircle} from './CenterCircle';
 import {CircularRing} from './CircularRing';
 import {Stickers} from './Stickers';

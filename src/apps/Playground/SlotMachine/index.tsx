@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
-import {useColor} from '../../../hooks';
+import {useColor} from '../../../features';
 import {combinations, reels} from './config';
 import {Slots} from './Slots';
 import {

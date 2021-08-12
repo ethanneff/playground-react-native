@@ -1,6 +1,6 @@
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {ActivityIndicator, FlatList, ListRenderItem, View} from 'react-native';
-import {padding} from '../../utils';
+import {padding} from '../../features/Config';
 import {Button} from '../Button';
 import {Card} from '../Card';
 import {Text} from '../Text';

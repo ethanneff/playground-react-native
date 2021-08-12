@@ -4,8 +4,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {Switch} from 'react-native';
 import {Button, Input, Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 import {Section} from './Section';
 
 // https://www.startupschool.org/updates/250717/edit

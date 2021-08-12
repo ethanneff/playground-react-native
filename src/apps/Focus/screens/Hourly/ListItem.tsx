@@ -2,8 +2,7 @@ import {useNavigation} from '@react-navigation/core';
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../../../components';
-import {useColor} from '../../../../hooks';
-import {padding} from '../../../../utils';
+import {padding, useColor} from '../../../../features';
 import {HomeScreenNavigationProp, Item} from '../../types';
 import {ListSection} from './ListSection';
 

@@ -1,14 +1,15 @@
 import React, {memo, useCallback, useRef} from 'react';
 import {Animated, StyleProp, StyleSheet, TextStyle} from 'react-native';
-import {SoundManager} from '../../features/Sound';
-import {useColor, useDriver} from '../../hooks';
+import {useDriver} from '../../features/Animation';
 import {
   FontEmphasis,
   FontType,
   fontWeight,
   getFontStyles,
   MonoMultiColor,
-} from '../../utils';
+} from '../../features/Config';
+import {SoundManager} from '../../features/Sound';
+import {useColor} from '../../features/Theme';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
 

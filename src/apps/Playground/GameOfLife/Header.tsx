@@ -1,7 +1,7 @@
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Slider, Text} from '../../../components';
-import {useRootDispatch, useRootSelector} from '../../../utils';
+import {useRootDispatch, useRootSelector} from '../../../redux';
 import {updateCount, updateDelay} from './redux';
 
 export const Header = memo(function Header() {

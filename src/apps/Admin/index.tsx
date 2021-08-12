@@ -2,9 +2,8 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {Button, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
-import {useColor} from '../../hooks';
+import {padding, useColor} from '../../features';
 import {RootNavigation, RootRoutes} from '../../providers/Navigation/types';
-import {padding} from '../../utils';
 
 export default memo(function Admin() {
   const {navigate} = useNavigation<RootNavigation>();

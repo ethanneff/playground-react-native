@@ -2,9 +2,8 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Screen, TouchableOpacity} from '../../../components';
-import {useColor} from '../../../hooks';
-import {getSmallestDimension} from '../../../models';
-import {useRootSelector} from '../../../utils';
+import {useColor} from '../../../features';
+import {getSmallestDimension, useRootSelector} from '../../../redux';
 
 const getRandom = (max: number) => {
   return Math.floor(Math.random() * max);

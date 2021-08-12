@@ -6,7 +6,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {useColor} from '../../hooks';
+import {useColor} from '../../features/Theme';
 
 type Props = {
   size?: number | 'small' | 'large';

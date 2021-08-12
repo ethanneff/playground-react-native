@@ -4,6 +4,7 @@ import {
   StackNavigationOptions,
 } from '@react-navigation/stack';
 import React, {ReactElement} from 'react';
+import {useTabTap} from '../../features';
 import {
   rootScreenOptions,
   useNavScreenOptions,
@@ -26,7 +27,6 @@ import {
   SignUp,
   Welcome,
 } from './screens';
-import {useTabTap} from './utils';
 
 const noHeader: StackNavigationOptions = {headerShown: false};
 

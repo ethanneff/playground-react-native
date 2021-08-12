@@ -3,8 +3,8 @@ import React, {memo, useCallback, useRef} from 'react';
 import {Keyboard, TextInput as OriginalTextInput} from 'react-native';
 import {TextInput, TextInputIcon} from '../../../components';
 import {TouchableWithoutFeedback} from '../../../conversions';
-import {useColor} from '../../../hooks';
-import {useRootDispatch, useRootSelector} from '../../../utils';
+import {useColor} from '../../../features';
+import {useRootDispatch, useRootSelector} from '../../../redux';
 import {
   navItemDetails,
   navItemProject,

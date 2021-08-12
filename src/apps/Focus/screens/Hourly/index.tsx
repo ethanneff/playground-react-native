@@ -6,7 +6,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import {Screen} from '../../../../components';
-import {useAdminNavBack} from '../../../../hooks';
+import {useAdminNavBack} from '../../../../features';
 import {Item} from '../../types';
 import {ListItem} from './ListItem';
 import {

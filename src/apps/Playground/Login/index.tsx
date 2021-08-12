@@ -2,8 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {Button, Input, Screen, Text, TextInput} from '../../../components';
 import {KeyboardAwareScrollView} from '../../../conversions';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 
 export const Login = memo(function Login() {
   const {goBack} = useNavigation();

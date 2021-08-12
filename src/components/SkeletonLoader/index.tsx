@@ -1,8 +1,9 @@
 import React, {ReactElement, useEffect, useRef} from 'react';
 import {Animated, Easing, StyleSheet, View} from 'react-native';
 import {LinearGradient, MaskedView} from '../../conversions';
-import {useColor, useDriver} from '../../hooks';
-import {padding} from '../../utils';
+import {useDriver} from '../../features/Animation';
+import {padding} from '../../features/Config';
+import {useColor} from '../../features/Theme';
 
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
 

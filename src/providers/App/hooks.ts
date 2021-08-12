@@ -16,8 +16,8 @@ import {
   loadDevice,
   updateDimension,
   updateNetwork,
-} from '../../models';
-import {useRootDispatch} from '../../utils';
+  useRootDispatch,
+} from '../../redux';
 
 export const useKeyboard = (): void => {
   const dispatch = useRootDispatch();

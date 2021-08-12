@@ -1,8 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import {Text, TouchableOpacity} from '../../components';
-import {useColor} from '../../hooks';
-import {padding} from '../../utils';
+import {padding, useColor} from '../../features';
 
 interface Props {
   onPress?: () => void;

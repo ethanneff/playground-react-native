@@ -7,7 +7,7 @@ import {
 import React, {useCallback} from 'react';
 import {Platform} from 'react-native';
 import {Icon} from '../../components';
-import {useColor} from './../../hooks/useColor/index';
+import {useColor} from '../../features';
 
 // TODO: remove for hook
 export const rootScreenOptions: StackNavigationOptions = {

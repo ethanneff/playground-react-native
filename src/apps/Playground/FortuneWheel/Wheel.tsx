@@ -2,7 +2,7 @@ import * as d3 from 'd3-shape';
 import React, {memo, useCallback, useEffect, useRef} from 'react';
 import {Animated, Dimensions, Easing, TouchableOpacity} from 'react-native';
 import Svg, {G, Path, Polygon, Text} from 'react-native-svg';
-import {useColor, useDriver, useDropShadow} from '../../../hooks';
+import {useColor, useDriver, useDropShadow} from '../../../features';
 import {getNewLocation, getWinnerIndex} from './utils';
 
 type Segment = {

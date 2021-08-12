@@ -1,9 +1,8 @@
 import React, {memo, useCallback} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import {Card, Icon, Text, TouchableOpacity} from '../../components';
-import {useColor} from '../../hooks';
-import {getLandscapeOrientation} from '../../models';
-import {padding, useRootSelector} from '../../utils';
+import {padding, useColor} from '../../features';
+import {getLandscapeOrientation, useRootSelector} from '../../redux';
 import {DailyProgress} from './DailyProgress';
 import {app} from './data';
 import {ProfileLevel} from './ProfileLevel';

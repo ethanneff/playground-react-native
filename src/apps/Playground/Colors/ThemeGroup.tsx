@@ -1,8 +1,12 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Button} from '../../../components';
-import {changeTheme, Theme} from '../../../models';
-import {useRootDispatch, useRootSelector} from '../../../utils';
+import {
+  changeTheme,
+  Theme,
+  useRootDispatch,
+  useRootSelector,
+} from '../../../redux';
 
 export const ThemeGroup = memo(function ThemeGroup() {
   const dispatch = useRootDispatch();

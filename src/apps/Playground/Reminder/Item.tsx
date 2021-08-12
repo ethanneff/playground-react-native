@@ -1,8 +1,7 @@
 import React, {memo} from 'react';
 import {StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
 import {Icon, Text, TouchableOpacity} from '../../../components';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 
 interface Props {
   title: string;

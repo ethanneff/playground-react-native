@@ -3,8 +3,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {TextInput as OriginalTextInput} from 'react-native';
 import {Button, Modal, Text, TextInput} from '../../../../components';
-import {useColor} from '../../../../hooks';
-import {padding} from '../../../../utils';
+import {padding, useColor} from '../../../../features';
 import {ModalHeader} from '../../components';
 import {LandingStackRoutes} from '../../navigationTypes';
 

@@ -1,7 +1,6 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {useColor} from '../../../hooks';
-import {MonoMultiColor} from '../../../utils';
+import {MonoMultiColor, useColor} from '../../../features';
 
 type Props = {
   radius: number;

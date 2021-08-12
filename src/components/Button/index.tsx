@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {StyleProp, TextStyle, ViewStyle} from 'react-native';
-import {useColor, useDropShadow} from '../../hooks';
-import {MonoMultiColor} from '../../utils';
+import {MonoMultiColor} from '../../features/Config';
+import {useColor, useDropShadow} from '../../features/Theme';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {ButtonEmphasis} from './types';

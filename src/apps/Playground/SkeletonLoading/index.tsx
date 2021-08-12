@@ -3,8 +3,7 @@ import React, {memo, useCallback, useEffect, useState} from 'react';
 import {View} from 'react-native';
 import {Button, Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 import {LoadingProfile} from './LoadingProfile';
 import {LoadingSection} from './LoadingSection';
 

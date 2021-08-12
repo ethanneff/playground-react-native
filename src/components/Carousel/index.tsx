@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {FlatList, ListRenderItem, View} from 'react-native';
-import {getWidth} from '../../models';
-import {padding, useRootSelector} from '../../utils';
+import {padding} from '../../features/Config';
+import {getWidth, useRootSelector} from '../../redux';
 import {Dots} from './Dots';
 import {Item} from './Item';
 import {Slide} from './types';

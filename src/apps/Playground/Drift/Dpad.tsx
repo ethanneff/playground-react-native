@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useContext} from 'react';
 import {View} from 'react-native';
 import {TouchableOpacity} from '../../../components';
-import {useColor, useDropShadow} from '../../../hooks';
+import {useColor, useDropShadow} from '../../../features';
 import {DriftContext} from './Context';
 import {ColorChoice} from './types';
 

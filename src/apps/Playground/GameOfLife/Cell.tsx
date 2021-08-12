@@ -1,8 +1,11 @@
 import React, {memo, useCallback} from 'react';
 import {TouchableOpacity} from '../../../components';
-import {useColor} from '../../../hooks';
-import {getSmallestDimension} from '../../../models';
-import {useRootDispatch, useRootSelector} from '../../../utils';
+import {useColor} from '../../../features';
+import {
+  getSmallestDimension,
+  useRootDispatch,
+  useRootSelector,
+} from '../../../redux';
 import {getCell, updateCell} from './redux';
 
 type Props = {

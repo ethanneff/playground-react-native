@@ -1,12 +1,15 @@
 import React, {memo, useCallback, useRef, useState} from 'react';
 import {LayoutChangeEvent} from 'react-native';
 import {Button, KeyboardHandler, Screen} from '../../../../components';
-import {useColor} from '../../../../hooks';
-import {padding, useRootSelector} from '../../../../utils';
+import {
+  padding,
+  useColor,
+  useKeyboardHeight,
+  useTabTap,
+} from '../../../../features';
+import {useRootSelector} from '../../../../redux';
 import {Card, List} from '../../components';
 import {getInbox} from '../../models';
-import {useTabTap} from '../../utils';
-import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
 
 const initialState = {container: 0, button: 0};
 export const Capture = memo(function Capture() {

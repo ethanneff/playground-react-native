@@ -2,12 +2,11 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useEffect} from 'react';
 import {Button, Screen, Text} from '../../../../components';
 import {ScrollView} from '../../../../conversions';
-import {useAuth, useColor} from '../../../../hooks';
+import {padding, useAuth, useColor, useTabTap} from '../../../../features';
 import {RootNavigation} from '../../../../providers/Navigation/types';
-import {padding, useRootDispatch, useRootSelector} from '../../../../utils';
+import {useRootDispatch, useRootSelector} from '../../../../redux';
 import {Card} from '../../components';
 import {logout} from '../../models';
-import {useTabTap} from '../../utils';
 
 // TODO: figure out a place for this
 // TODO: add reminders

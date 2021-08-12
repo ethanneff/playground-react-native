@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {ScrollView} from 'react-native';
 import {Button, Screen} from '../../../components';
-import {useAdminNavBack, useColor} from '../../../hooks';
+import {useAdminNavBack, useColor} from '../../../features';
 import {ArcadeNavigation, arcadeScreens} from '../types';
 
 export const Landing = memo(function Landing() {

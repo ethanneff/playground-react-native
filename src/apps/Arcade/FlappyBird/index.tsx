@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useEffect, useRef} from 'react';
 import {Animated, View} from 'react-native';
 import {Screen} from '../../../components';
-import {useColor, useDriver} from '../../../hooks';
+import {useColor, useDriver} from '../../../features';
 
 const Bird = () => {
   const color = useColor();

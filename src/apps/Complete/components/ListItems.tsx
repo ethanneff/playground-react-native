@@ -1,6 +1,6 @@
 import React, {memo, useCallback, useRef} from 'react';
 import {FlatList, ListRenderItem} from 'react-native';
-import {useRootSelector} from '../../../utils';
+import {useRootSelector} from '../../../redux';
 import {ListItem} from './ListItem';
 
 type ListItemsProps = {

@@ -2,8 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
 import {Button, Screen} from '../../../components';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 import {PortfolioNavigation, PortfolioRoutes} from '../../Portfolio/types';
 import {stackParams} from '../navParams';
 

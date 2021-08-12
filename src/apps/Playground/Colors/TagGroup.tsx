@@ -1,8 +1,7 @@
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Tag} from '../../../components';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 
 export const TagGroup = memo(function TagGroup() {
   const color = useColor();

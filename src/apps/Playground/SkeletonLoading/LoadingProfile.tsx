@@ -1,8 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import {Card, SkeletonLoader} from '../../../components';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 
 export const LoadingProfile = (): JSX.Element => {
   const color = useColor();

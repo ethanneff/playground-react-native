@@ -1,7 +1,7 @@
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Icon, TouchableOpacity} from '../../components';
-import {MonoMultiColor, padding} from '../../utils';
+import {MonoMultiColor, padding} from '../../features/Config';
 
 interface Props {
   size: number;

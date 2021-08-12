@@ -3,9 +3,12 @@ import React, {memo, useCallback, useState} from 'react';
 import {View} from 'react-native';
 import {Button, Screen, Text} from '../../../components';
 import {TouchableOpacity} from '../../../conversions';
-import {useColor} from '../../../hooks';
-import {getLandscapeOrientation, getSmallestDimension} from '../../../models';
-import {useRootSelector} from '../../../utils';
+import {useColor} from '../../../features';
+import {
+  getLandscapeOrientation,
+  getSmallestDimension,
+  useRootSelector,
+} from '../../../redux';
 import {State} from './types';
 import {
   getInitialState,

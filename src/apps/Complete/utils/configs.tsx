@@ -1,4 +1,4 @@
-import {padding} from '../../../utils';
+import {padding} from '../../../features';
 
 export const completeConfig = {
   borderRadius: padding(2),

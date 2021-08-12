@@ -1,5 +1,5 @@
 import {Platform} from 'react-native';
-import {useRootSelector} from '../../utils';
+import {useRootSelector} from '../../redux';
 
 export const useDriver = (): boolean => {
   const emulator = useRootSelector(state => state.device.isEmulator);

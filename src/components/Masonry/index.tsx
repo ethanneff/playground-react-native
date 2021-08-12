@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import {padding} from '../../utils';
+import {padding} from '../../features/Config';
 
 interface Item<T> {
   item: T;

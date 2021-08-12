@@ -4,8 +4,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {v4} from 'uuid';
 import {Button, Modal, Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
-import {RateApp} from '../../../features';
-import {useColor} from '../../../hooks';
+import {RateApp, useColor} from '../../../features';
 import {CreateReminderModal} from './CreateReminderModal';
 import {Reminder, ReminderType} from './types';
 

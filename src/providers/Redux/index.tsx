@@ -54,7 +54,7 @@ import {
   networkReducer,
   themeActions,
   themeReducer,
-} from '../../models';
+} from '../../redux';
 import {syncMiddleware, useSync} from './sync';
 
 export const actions = {

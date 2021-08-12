@@ -1,4 +1,4 @@
-import React, {ReactNode, memo, useEffect, useState} from 'react';
+import React, {memo, ReactNode, useEffect, useState} from 'react';
 import {
   Animated,
   Easing,
@@ -7,9 +7,8 @@ import {
   View,
 } from 'react-native';
 import {MaskedView} from '../../conversions';
-import {useDriver} from '../../hooks';
-import {getSmallestDimension} from '../../models';
-import {useRootSelector} from '../../utils';
+import {useDriver} from '../../features/Animation';
+import {getSmallestDimension, useRootSelector} from '../../redux';
 
 // TODO: convert to svg, remove mask, fade in and out
 

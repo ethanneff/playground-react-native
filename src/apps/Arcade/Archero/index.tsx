@@ -8,8 +8,8 @@ import {
   View,
 } from 'react-native';
 import {Screen} from '../../../components';
-import {useColor, useDriver} from '../../../hooks';
-import {colorWithOpacity, useRootSelector} from '../../../utils';
+import {colorWithOpacity, useColor, useDriver} from '../../../features';
+import {useRootSelector} from '../../../redux';
 
 const charSize = 50;
 const charSpeed = 40;

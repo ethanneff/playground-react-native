@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {FlatList} from 'react-native';
 import {Button, Icon, Screen, TouchableOpacity} from '../../../../components';
-import {useRootDispatch, useRootSelector} from '../../../../utils';
+import {useRootDispatch, useRootSelector} from '../../../../redux';
 import {getActiveChecklistOrderByCreatedAt, setActiveList} from '../../models';
 
 export default memo(function Checklists() {

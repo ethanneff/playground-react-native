@@ -10,8 +10,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from '../../../../components';
-import {useAuth, useColor} from '../../../../hooks';
-import {padding} from '../../../../utils';
+import {padding, useAuth, useColor} from '../../../../features';
 import {ModalHeader} from '../../components/';
 
 interface Props {

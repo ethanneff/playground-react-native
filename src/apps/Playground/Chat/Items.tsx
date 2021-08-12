@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useEffect, useRef} from 'react';
 import {FlatList, ListRenderItem} from 'react-native';
-import {useColor} from '../../../hooks';
-import {padding, useRootSelector} from '../../../utils';
+import {padding, useColor} from '../../../features';
+import {useRootSelector} from '../../../redux';
 import {Item} from './Item';
 import {getActiveChatMessagesOrderByCreatedAt, Message} from './Messages';
 

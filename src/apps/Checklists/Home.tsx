@@ -2,9 +2,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {Button, Card, Icon, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
-import {Login} from '../../features/Login';
-import {useAdminNavBack, useColor} from '../../hooks';
-import {padding} from '../../utils';
+import {LoginFlow, padding, useAdminNavBack, useColor} from '../../features';
 
 export const Home = memo(function Checklists() {
   const color = useColor();
@@ -63,7 +61,7 @@ export const Home = memo(function Checklists() {
         />
         <Button onPress={onToggleLogin} title="showLogin" />
       </Screen>
-      {showLogin && <Login onBackgroundPress={onToggleLogin} />}
+      {showLogin && <LoginFlow onBackgroundPress={onToggleLogin} />}
     </>
   );
 });

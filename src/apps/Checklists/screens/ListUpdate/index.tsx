@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {View} from 'react-native';
 import {Button, Input, Modal, Screen, Text} from '../../../../components';
-import {useRootDispatch, useRootSelector} from '../../../../utils';
+import {useRootDispatch, useRootSelector} from '../../../../redux';
 import {getCurrentChecklist, removeList, updateList} from '../../models';
 
 export default memo(function ChecklistUpdate() {

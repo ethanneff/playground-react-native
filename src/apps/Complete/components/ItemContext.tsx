@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
 import {RelativeDate, Text} from '../../../components';
-import {padding} from '../../../utils';
+import {padding} from '../../../features';
 import {Card} from './Card';
 import {ItemDetailHeader} from './ItemDetailHeader';
 

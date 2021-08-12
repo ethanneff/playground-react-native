@@ -11,9 +11,8 @@ import {
 import {v4} from 'uuid';
 import {Card, Icon, Screen, Text, TouchableOpacity} from '../../../components';
 import {ScrollView} from '../../../conversions';
-import {useColor, useDriver, useDropShadow} from '../../../hooks';
-import {getWidth} from '../../../models';
-import {padding, useRootSelector} from '../../../utils';
+import {padding, useColor, useDriver, useDropShadow} from '../../../features';
+import {getWidth, useRootSelector} from '../../../redux';
 import {formatRelativeDate} from './utils';
 
 interface SwipeCardProps extends SwipeItem {

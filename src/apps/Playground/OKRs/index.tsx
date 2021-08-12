@@ -2,8 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo} from 'react';
 import {Card, Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 
 export const OKRs = memo(function PlaygroundOKRs() {
   const {goBack} = useNavigation();

@@ -10,8 +10,7 @@ import {
   TouchableOpacity,
 } from '../../components';
 import {ScrollView} from '../../conversions';
-import {useAdminNavBack, useColor} from '../../hooks';
-import {padding} from '../../utils';
+import {padding, useAdminNavBack, useColor} from '../../features';
 import {DeepWorkNavigation} from './types';
 
 /*

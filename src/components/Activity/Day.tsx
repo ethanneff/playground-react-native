@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
 import isToday from 'dayjs/plugin/isToday';
 import React, {memo} from 'react';
-import {useColor} from '../../hooks';
-import {colorWithOpacity} from '../../utils';
+import {colorWithOpacity} from '../../features/Config';
+import {useColor} from '../../features/Theme';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {ActivityDay} from './types';
 dayjs.extend(isToday);

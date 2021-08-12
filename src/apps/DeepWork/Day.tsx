@@ -2,8 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo} from 'react';
 import {Calendar, Card, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
-import {useColor} from '../../hooks';
-import {padding} from '../../utils';
+import {padding, useColor} from '../../features';
 
 export const Day = memo(function Day() {
   const {goBack} = useNavigation();

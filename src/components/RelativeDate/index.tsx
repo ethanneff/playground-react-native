@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import {ViewStyle} from 'react-native';
-import {FontEmphasis, FontType} from '../../utils';
+import {FontEmphasis, FontType} from '../../features/Config';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
 dayjs.extend(relativeTime);

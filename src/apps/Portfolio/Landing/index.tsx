@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {Button, Carousel, Screen} from '../../../components';
 import {Slide} from '../../../components/Carousel/types';
-import {useColor} from '../../../hooks';
+import {useColor} from '../../../features';
 import {PortfolioNavigation} from '../types';
 
 export const Landing = memo(function PortfolioLanding() {

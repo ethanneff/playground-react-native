@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {useColor} from '../../hooks';
-import {padding} from '../../utils';
+import {padding} from '../../features/Config';
+import {useColor} from '../../features/Theme';
 import {Content} from '../Content';
 import {Icon} from '../Icon';
 import {Text} from '../Text';

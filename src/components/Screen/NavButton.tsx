@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {StyleSheet} from 'react-native';
-import {padding} from '../../utils';
+import {padding} from '../../features/Config';
 import {Icon} from '../Icon';
 import {TouchableOpacity} from '../TouchableOpacity';
 

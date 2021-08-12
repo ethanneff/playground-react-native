@@ -2,8 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback} from 'react';
 import {ScrollView} from 'react-native';
 import {Button, Screen} from '../../../components';
-import {useAdminNavBack, useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useAdminNavBack, useColor} from '../../../features';
 import {PortfolioNavigation, PortfolioRoutes} from '../types';
 
 export const Home = memo(function PortfolioHome() {

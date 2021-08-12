@@ -2,7 +2,7 @@ import React, {memo, useCallback, useMemo, useRef, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import Rate, {AndroidMarket} from 'react-native-rate';
 import {Button, Input, Modal, Text} from '../../components';
-import {padding} from '../../utils';
+import {padding} from '../../features/Config';
 import {Rating} from './Rating';
 
 type ModalState = 'default' | 'thank you' | 'review' | 'feedback';

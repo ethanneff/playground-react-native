@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {View} from 'react-native';
 import {Button, Modal, Text} from '../../../components';
-import {padding} from '../../../utils';
+import {padding} from '../../../features';
 
 type DeleteModalProps = {
   onDelete: () => void;

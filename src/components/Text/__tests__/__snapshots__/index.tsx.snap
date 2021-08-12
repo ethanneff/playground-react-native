@@ -100,10 +100,9 @@ exports[`text renders body1 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -124,7 +123,9 @@ exports[`text renders body1 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -432,10 +433,9 @@ exports[`text renders body2 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -456,7 +456,9 @@ exports[`text renders body2 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -764,10 +766,9 @@ exports[`text renders button 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -788,7 +789,9 @@ exports[`text renders button 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -1096,10 +1099,9 @@ exports[`text renders button empty 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -1120,7 +1122,9 @@ exports[`text renders button empty 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -1428,10 +1432,9 @@ exports[`text renders caption 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -1452,7 +1455,9 @@ exports[`text renders caption 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -1760,10 +1765,9 @@ exports[`text renders correctly 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -1784,7 +1788,9 @@ exports[`text renders correctly 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -2092,10 +2098,9 @@ exports[`text renders empty 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -2116,7 +2121,9 @@ exports[`text renders empty 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -2424,10 +2431,9 @@ exports[`text renders h1 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -2448,7 +2454,9 @@ exports[`text renders h1 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -2756,10 +2764,9 @@ exports[`text renders h3 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -2780,7 +2787,9 @@ exports[`text renders h3 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -3088,10 +3097,9 @@ exports[`text renders h4 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -3112,7 +3120,9 @@ exports[`text renders h4 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -3420,10 +3430,9 @@ exports[`text renders h5 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -3444,7 +3453,9 @@ exports[`text renders h5 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -3752,10 +3763,9 @@ exports[`text renders h6 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -3776,7 +3786,9 @@ exports[`text renders h6 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -4084,10 +4096,9 @@ exports[`text renders overline 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -4108,7 +4119,9 @@ exports[`text renders overline 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -4416,10 +4429,9 @@ exports[`text renders subtitle1 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -4440,7 +4452,9 @@ exports[`text renders subtitle1 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -4748,10 +4762,9 @@ exports[`text renders subtitle2 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -4772,7 +4785,9 @@ exports[`text renders subtitle2 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }
@@ -5080,10 +5095,9 @@ exports[`text renders type="h2" 1`] = `
               pointerEvents="box-none"
               style={
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "stretch",
                   "flex": 1,
                   "flexDirection": "row",
-                  "justifyContent": "center",
                 }
               }
             >
@@ -5104,7 +5118,9 @@ exports[`text renders type="h2" 1`] = `
                 pointerEvents="box-none"
                 style={
                   Object {
+                    "justifyContent": "center",
                     "marginHorizontal": 16,
+                    "maxWidth": 718,
                     "opacity": 1,
                   }
                 }

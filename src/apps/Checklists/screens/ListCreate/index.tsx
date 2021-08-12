@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import 'react-native-get-random-values';
 import {v4} from 'uuid';
 import {Button, Input, Screen} from '../../../../components';
-import {useRootDispatch} from '../../../../utils';
+import {useRootDispatch} from '../../../../redux';
 import {createList} from '../../models';
 
 const initialState = {name: '', description: ''};

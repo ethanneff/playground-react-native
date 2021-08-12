@@ -15,8 +15,8 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {useColor} from '../../hooks';
-import {fontSizes, padding} from '../../utils';
+import {fontSizes, padding} from '../../features/Config';
+import {useColor} from '../../features/Theme';
 import {Button} from '../Button';
 import {Icon} from '../Icon';
 import {Text} from '../Text';

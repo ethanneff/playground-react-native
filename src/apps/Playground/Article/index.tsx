@@ -3,8 +3,7 @@ import React, {memo} from 'react';
 import {Card, Screen} from '../../../components';
 import {Content} from '../../../components/Content';
 import {ScrollView} from '../../../conversions';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 import {data} from './data';
 
 export const Article = memo(function PlaygroundArticle() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import {Card, SkeletonLoader} from '../../../components';
-import {padding} from '../../../utils';
+import {padding} from '../../../features';
 
 export const LoadingSection = (): JSX.Element => {
   return (

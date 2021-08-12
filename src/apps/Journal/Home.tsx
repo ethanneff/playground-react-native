@@ -2,8 +2,7 @@ import React, {memo, useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Calendar, Card, Input, Screen, Text} from '../../components';
 import {ScrollView} from '../../conversions';
-import {useAdminNavBack, useColor} from '../../hooks';
-import {padding} from '../../utils';
+import {padding, useAdminNavBack, useColor} from '../../features';
 
 export const Home = memo(function Home() {
   const color = useColor();

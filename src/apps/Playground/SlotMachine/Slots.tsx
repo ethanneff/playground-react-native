@@ -1,8 +1,7 @@
 import React, {memo, useCallback, useMemo, useState} from 'react';
 import {View} from 'react-native';
 import {Button, Icon, Text, TouchableOpacity} from '../../../components';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 import {shuffleArray} from './utils';
 
 type Combinations = {[key: string]: number};

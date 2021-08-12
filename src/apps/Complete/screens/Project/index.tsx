@@ -2,11 +2,9 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useState} from 'react';
 import {LayoutChangeEvent} from 'react-native';
 import {KeyboardHandler, Screen} from '../../../../components';
-import {useColor} from '../../../../hooks';
-import {getSmallestDimension} from '../../../../models';
-import {padding, useRootSelector} from '../../../../utils';
+import {padding, useColor, useKeyboardHeight} from '../../../../features';
+import {getSmallestDimension, useRootSelector} from '../../../../redux';
 import {Board} from '../../components';
-import {useKeyboardHeight} from '../../utils/useKeyboardHeight';
 
 // TODO: figure out centering of list
 

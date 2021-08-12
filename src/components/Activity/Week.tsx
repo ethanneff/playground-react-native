@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import React, {memo} from 'react';
 import {View} from 'react-native';
-import {padding} from '../../utils';
+import {padding} from '../../features/Config';
 import {Text} from '../Text';
 import {Day} from './Day';
 import {ActivityDay, ActivityWeek} from './types';

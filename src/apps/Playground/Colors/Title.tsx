@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {Text} from '../../../components';
-import {padding} from '../../../utils';
+import {padding} from '../../../features';
 
 type Props = {title: string};
 

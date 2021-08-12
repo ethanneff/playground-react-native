@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
-import {padding} from './../../utils/Config/index';
-import {ColorTheme, MonoMultiColor} from './../../utils/Config/types';
+import {padding} from '../../features/Config/index';
+import {ColorTheme, MonoMultiColor} from '../../features/Config/types';
 import {ButtonEmphasis} from './types';
 
 export const getButtonColor = (

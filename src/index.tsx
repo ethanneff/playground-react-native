@@ -1,11 +1,9 @@
 import React from 'react';
 import {AppRegistry, Platform} from 'react-native';
 import 'react-native-get-random-values';
+import {ErrorBoundary} from './components/ErrorBoundary';
 import {debugDev} from './features';
-import {Navigation} from './providers';
-import {App} from './providers/App';
-import {ErrorBoundary} from './providers/ErrorBoundary';
-import {Redux} from './providers/Redux';
+import {App, Navigation, Redux} from './providers';
 
 debugDev();
 export const Main = (): JSX.Element => {

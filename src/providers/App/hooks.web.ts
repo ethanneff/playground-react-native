@@ -1,8 +1,7 @@
-import {Dimensions} from 'react-native';
 import {useCallback, useEffect} from 'react';
-import {useRootDispatch} from '../../utils';
-import {updateDimension} from '../../models';
-import {DimensionsProps} from './../../models/Device';
+import {Dimensions} from 'react-native';
+import {updateDimension, useRootDispatch} from '../../redux';
+import {DimensionsProps} from '../../redux/Device';
 
 export const useAppLoad = (): void => undefined;
 export const useNetInfo = (): void => undefined;

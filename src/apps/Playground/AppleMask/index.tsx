@@ -3,9 +3,8 @@ import React, {memo} from 'react';
 import {Image, ImageSourcePropType, View} from 'react-native';
 import {Screen, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
-import {useColor} from '../../../hooks';
-import {getWidth} from '../../../models';
-import {padding, useRootSelector} from '../../../utils';
+import {padding, useColor} from '../../../features';
+import {getWidth, useRootSelector} from '../../../redux';
 
 // https://support.apple.com/en-us/HT211028
 

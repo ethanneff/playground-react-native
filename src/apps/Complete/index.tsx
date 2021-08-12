@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import {useRootSelector} from '../../utils';
+import {useRootSelector} from '../../redux';
 import {Landing, Main} from './navigation';
 
 export default memo(function Complete() {

@@ -5,7 +5,7 @@ import {
   SensorTypes,
   setUpdateIntervalForType,
 } from 'react-native-sensors';
-import {useColor, useDriver} from '../../../hooks';
+import {useColor, useDriver} from '../../../features';
 import {DriftContext} from './Context';
 import {CanvasDimensions} from './types';
 import {getPosition} from './utils';

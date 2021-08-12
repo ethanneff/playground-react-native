@@ -4,14 +4,15 @@ import React, {memo, useCallback, useState} from 'react';
 import {Image, ImageSourcePropType, ListRenderItem, View} from 'react-native';
 import {Button, Card, Masonry, Screen, Slider, Text} from '../../../components';
 import {ScrollView} from '../../../conversions';
-import {useColor} from '../../../hooks';
+import {padding, useColor} from '../../../features';
 import {
   changeTheme,
   getLandscapeOrientation,
   Theme,
   themes,
-} from '../../../models';
-import {padding, useRootDispatch, useRootSelector} from '../../../utils';
+  useRootDispatch,
+  useRootSelector,
+} from '../../../redux';
 
 type CardItem = {
   title: string;

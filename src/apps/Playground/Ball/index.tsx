@@ -2,9 +2,8 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useRef} from 'react';
 import {Animated, StyleSheet, View} from 'react-native';
 import {Button, Screen} from '../../../components';
-import {useColor, useDriver} from '../../../hooks';
-import {getHeight, getWidth} from '../../../models';
-import {padding, useRootSelector} from '../../../utils';
+import {padding, useColor, useDriver} from '../../../features';
+import {getHeight, getWidth, useRootSelector} from '../../../redux';
 
 export const Ball = memo(function PlaygroundBall() {
   const height = useRootSelector(getHeight);

@@ -1,9 +1,10 @@
 import React, {memo, ReactElement, useCallback, useEffect, useRef} from 'react';
 import {Animated, StyleSheet, View} from 'react-native';
 import {ScrollView, TouchableWithoutFeedback} from '../../conversions';
+import {useDriver} from '../../features/Animation';
 import {SoundManager} from '../../features/Sound';
-import {useColor, useDriver, useDropShadow} from '../../hooks';
-import {useRootSelector} from '../../utils';
+import {useColor, useDropShadow} from '../../features/Theme';
+import {useRootSelector} from '../../redux';
 import {Card} from '../Card';
 
 type ModalProps = {

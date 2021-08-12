@@ -3,8 +3,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import React, {memo} from 'react';
 import {Image, View} from 'react-native';
 import {RelativeDate, Text} from '../../../components';
-import {useColor} from '../../../hooks';
-import {padding} from '../../../utils';
+import {padding, useColor} from '../../../features';
 import {Message} from './Messages';
 dayjs.extend(relativeTime);
 

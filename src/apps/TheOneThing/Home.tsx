@@ -2,8 +2,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {View} from 'react-native';
 import {Card, Icon, Screen, Text, TouchableOpacity} from '../../components';
 import {ScrollView} from '../../conversions';
-import {useAdminNavBack, useColor} from '../../hooks';
-import {padding} from '../../utils';
+import {padding, useAdminNavBack, useColor} from '../../features';
 
 interface SectionProps {
   title: string;

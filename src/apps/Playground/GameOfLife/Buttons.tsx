@@ -1,7 +1,8 @@
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
 import {Button} from '../../../components';
-import {padding, useRootDispatch, useRootSelector} from '../../../utils';
+import {padding} from '../../../features';
+import {useRootDispatch, useRootSelector} from '../../../redux';
 import {resetBoard, toggleRun} from './redux';
 
 export const Buttons = memo(function Buttons() {

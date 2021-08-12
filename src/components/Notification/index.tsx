@@ -1,9 +1,10 @@
 import React, {memo, useCallback, useRef} from 'react';
 import {Animated, PanResponder, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {useDriver} from '../../features/Animation';
+import {padding} from '../../features/Config';
 import {SoundManager} from '../../features/Sound';
-import {useColor, useDriver} from '../../hooks';
-import {padding} from '../../utils';
+import {useColor} from '../../features/Theme';
 import {Icon} from '../Icon';
 import {Text} from '../Text';
 import {TouchableOpacity} from '../TouchableOpacity';
