@@ -7,23 +7,11 @@ import {
 import React, {useCallback} from 'react';
 import {Platform} from 'react-native';
 import {Icon} from '../../components';
-import {useColor} from '../../features';
-
-// TODO: remove for hook
-export const rootScreenOptions: StackNavigationOptions = {
-  cardOverlayEnabled: true,
-  presentation: Platform.OS === 'web' ? 'card' : 'transparentModal',
-  headerShown: false,
-  ...TransitionPresets.ModalFadeTransition,
-};
+import {useColor} from '../../features/Theme';
 
 type TabIcons = {[key: string]: {focused: string; unFocused: string}};
 type NavOptions = {route: RouteProp<ParamListBase>};
-
-type TabScreenOptions = {
-  tabIcons: TabIcons;
-  headerShown?: boolean;
-};
+type TabScreenOptions = {tabIcons: TabIcons; headerShown?: boolean};
 
 type UseNavScreenOptions = {
   modalScreenOptions: StackNavigationOptions;
@@ -35,7 +23,12 @@ type UseNavScreenOptions = {
 export const useNavScreenOptions = (): UseNavScreenOptions => {
   const color = useColor();
 
-  const modalScreenOptions: StackNavigationOptions = rootScreenOptions;
+  const modalScreenOptions: StackNavigationOptions = {
+    cardOverlayEnabled: true,
+    presentation: Platform.OS === 'web' ? 'card' : 'transparentModal',
+    headerShown: false,
+    ...TransitionPresets.ModalFadeTransition,
+  };
 
   const tabScreenOptions = useCallback(
     ({tabIcons, headerShown = false}) =>

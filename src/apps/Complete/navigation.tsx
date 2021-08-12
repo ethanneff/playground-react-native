@@ -4,11 +4,7 @@ import {
   StackNavigationOptions,
 } from '@react-navigation/stack';
 import React, {ReactElement} from 'react';
-import {useTabTap} from '../../features';
-import {
-  rootScreenOptions,
-  useNavScreenOptions,
-} from '../../providers/Navigation/configs';
+import {useNavScreenOptions, useTabTap} from '../../features';
 import {
   HomeStackRoutes,
   ImplementStackRoutes,
@@ -66,8 +62,9 @@ const Implement = () => {
 
 const LandingStack = createStackNavigator<LandingStackRoutes>();
 export const Landing = (): ReactElement => {
+  const {modalScreenOptions} = useNavScreenOptions();
   return (
-    <LandingStack.Navigator screenOptions={rootScreenOptions}>
+    <LandingStack.Navigator screenOptions={modalScreenOptions}>
       <LandingStack.Screen component={Welcome} name="welcome" />
       <LandingStack.Screen component={SignUp} name="sign-up" />
       <LandingStack.Screen component={LogIn} name="log-in" />
@@ -78,8 +75,9 @@ export const Landing = (): ReactElement => {
 
 const MainStack = createStackNavigator<MainStackRoutes>();
 export const Main = (): ReactElement => {
+  const {modalScreenOptions} = useNavScreenOptions();
   return (
-    <MainStack.Navigator screenOptions={rootScreenOptions}>
+    <MainStack.Navigator screenOptions={modalScreenOptions}>
       <MainStack.Screen component={Home} name="home" />
       <MainStack.Screen component={ItemDetail} name="item-detail" />
     </MainStack.Navigator>

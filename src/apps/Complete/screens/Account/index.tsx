@@ -2,8 +2,13 @@ import {useNavigation} from '@react-navigation/native';
 import React, {memo, useCallback, useEffect} from 'react';
 import {Button, Screen, Text} from '../../../../components';
 import {ScrollView} from '../../../../conversions';
-import {padding, useAuth, useColor, useTabTap} from '../../../../features';
-import {RootNavigation} from '../../../../providers/Navigation/types';
+import {
+  padding,
+  RootNavigation,
+  useAuth,
+  useColor,
+  useTabTap,
+} from '../../../../features';
 import {useRootDispatch, useRootSelector} from '../../../../redux';
 import {Card} from '../../components';
 import {logout} from '../../models';

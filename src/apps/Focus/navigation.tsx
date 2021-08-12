@@ -1,7 +1,7 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import React, {ReactElement, useMemo} from 'react';
-import {useNavScreenOptions} from '../../providers/Navigation/configs';
+import {useNavScreenOptions} from '../../features';
 import {
   AuthStackRoutes,
   HomeTabRoutes,

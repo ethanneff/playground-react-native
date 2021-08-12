@@ -9,8 +9,8 @@ import {
   Notification,
   Text,
 } from '../../components';
-import {rootScreenOptions} from './configs';
 import {RootRoutes} from './types';
+import {useNavScreenOptions} from './useNavScreenOptions';
 import {usePersistedState} from './usePersistedState';
 
 const Arcade = lazy(() => import('../../apps/Arcade'));
@@ -53,20 +53,16 @@ const linking = {
   prefixes: ['https://app.example.com', 'mychat://'],
 };
 
-export const Navigation = memo(function Navigation() {
+export const NavigationProvider = memo(function NavigationProvider() {
   const {initialState, isReady, onStateChange, onRef} = usePersistedState();
+  const {modalScreenOptions} = useNavScreenOptions();
   const fallback = <ActivityIndicator />;
   const initialRouteName: any = Config.APP || 'admin';
 
   if (!isReady) return fallback;
 
-  // TODO: fix splash screen
   return (
     <Suspense fallback={fallback}>
-      {/* <SplashScreen
-        backgroundColor={color.background}
-        primaryColor={color.brand}
-        source={require('../../assets/line-chart.png')}> */}
       <NavigationContainer
         fallback={fallback}
         initialState={initialState}
@@ -75,7 +71,7 @@ export const Navigation = memo(function Navigation() {
         ref={onRef}>
         <Stack.Navigator
           initialRouteName={initialRouteName}
-          screenOptions={rootScreenOptions}>
+          screenOptions={modalScreenOptions}>
           <Stack.Screen component={Admin} name="admin" />
           <Stack.Screen component={Arcade} name="arcade" />
           <Stack.Screen component={Portfolio} name="portfolio" />
@@ -93,7 +89,6 @@ export const Navigation = memo(function Navigation() {
           <Stack.Screen component={AlertExample} name="alert" />
         </Stack.Navigator>
       </NavigationContainer>
-      {/* </SplashScreen> */}
     </Suspense>
   );
 });

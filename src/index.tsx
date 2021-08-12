@@ -3,7 +3,8 @@ import {AppRegistry, Platform} from 'react-native';
 import 'react-native-get-random-values';
 import {ErrorBoundary} from './components';
 import {debugDev} from './features';
-import {App, Navigation, Redux} from './providers';
+import {NavigationProvider} from './features/Navigation/Provider';
+import {App, Redux} from './providers';
 
 debugDev();
 export const Main = (): JSX.Element => {
@@ -11,7 +12,7 @@ export const Main = (): JSX.Element => {
     <Redux>
       <ErrorBoundary>
         <App>
-          <Navigation />
+          <NavigationProvider />
         </App>
       </ErrorBoundary>
     </Redux>
