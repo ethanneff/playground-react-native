@@ -5,8 +5,8 @@ import {
   themeInitialState,
   themeReducer,
 } from '..';
-import {store} from '../../../providers';
 import {loginRequest, logout} from '../../Auth';
+import {store} from '../../core';
 
 describe('theme', () => {
   it('getCurrentTheme dark', () => {

@@ -2,20 +2,20 @@ import React from 'react';
 import {AppRegistry, Platform} from 'react-native';
 import 'react-native-get-random-values';
 import {ErrorBoundary} from './components';
-import {debugDev} from './features';
-import {NavigationProvider} from './features/Navigation/Provider';
-import {App, Redux} from './providers';
+import {AppProvider, debugDev} from './features';
+import {NavigationProvider} from './features/Navigation/core';
+import {ReduxProvider} from './redux/core';
 
 debugDev();
 export const Main = (): JSX.Element => {
   return (
-    <Redux>
+    <ReduxProvider>
       <ErrorBoundary>
-        <App>
+        <AppProvider>
           <NavigationProvider />
-        </App>
+        </AppProvider>
       </ErrorBoundary>
-    </Redux>
+    </ReduxProvider>
   );
 };
 

@@ -1,4 +1,5 @@
 export * from './Animation';
+export * from './App';
 export * from './Config';
 export * from './Debugger';
 export * from './Keyboard';

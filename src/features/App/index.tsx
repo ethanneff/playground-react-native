@@ -1,4 +1,4 @@
-import React, {ReactNode, memo} from 'react';
+import React, {memo, ReactNode} from 'react';
 import {
   useAppState,
   useDeviceInfo,
@@ -11,7 +11,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const App = memo(function App({children}: Props) {
+export const AppProvider = memo(function AppProvider({children}: Props) {
   useNetInfo();
   useDeviceInfo();
   useDimensions();

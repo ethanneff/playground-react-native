@@ -11,39 +11,6 @@ import {persistReducer, persistStore} from 'redux-persist';
 import {PersistGate} from 'redux-persist/integration/react';
 import thunk from 'redux-thunk';
 import {
-  checklistActions,
-  checklistItemActions,
-  checklistItemReducer,
-  checklistReducer,
-} from '../../apps/Checklists/models';
-import {
-  completeAuthActions,
-  completeAuthReducer,
-  completeItemActions,
-  completeItemReducer,
-  completeUserActions,
-  completeUserReducer,
-} from '../../apps/Complete/models';
-import {
-  chatMessageActions,
-  chatMessageReducer,
-} from '../../apps/Playground/Chat/Messages';
-import {
-  gameOfLifeActions,
-  gameOfLifeReducer,
-} from '../../apps/Playground/GameOfLife/redux';
-import {
-  choicesActions,
-  choicesReducer,
-  questionnairesActions,
-  questionnairesReducer,
-  questionsActions,
-  questionsReducer,
-  responsesActions,
-  responsesReducer,
-} from '../../apps/Playground/Questionnaire/models';
-import {Storage} from '../../conversions';
-import {
   authActions,
   authReducer,
   deviceActions,
@@ -54,7 +21,40 @@ import {
   networkReducer,
   themeActions,
   themeReducer,
-} from '../../redux';
+} from '.';
+import {
+  checklistActions,
+  checklistItemActions,
+  checklistItemReducer,
+  checklistReducer,
+} from '../apps/Checklists/models';
+import {
+  completeAuthActions,
+  completeAuthReducer,
+  completeItemActions,
+  completeItemReducer,
+  completeUserActions,
+  completeUserReducer,
+} from '../apps/Complete/models';
+import {
+  chatMessageActions,
+  chatMessageReducer,
+} from '../apps/Playground/Chat/Messages';
+import {
+  gameOfLifeActions,
+  gameOfLifeReducer,
+} from '../apps/Playground/GameOfLife/redux';
+import {
+  choicesActions,
+  choicesReducer,
+  questionnairesActions,
+  questionnairesReducer,
+  questionsActions,
+  questionsReducer,
+  responsesActions,
+  responsesReducer,
+} from '../apps/Playground/Questionnaire/models';
+import {Storage} from '../conversions';
 import {syncMiddleware, useSync} from './sync';
 
 export const actions = {
@@ -108,7 +108,7 @@ const persistor = persistStore(store);
 persistor.purge();
 
 type Props = {children: ReactNode};
-export const Redux = memo(function Redux({children}: Props) {
+export const ReduxProvider = memo(function ReduxProvider({children}: Props) {
   useSync();
   return (
     <Provider store={store}>
