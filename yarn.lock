@@ -1820,6 +1820,25 @@
     xcode "^3.0.1"
     xml2js "^0.4.23"
 
+"@expo/config-plugins@^3.0.6":
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-3.0.7.tgz#50870e26d34b11740a5841076c921729381d4319"
+  integrity sha512-7YOoFtxB6XqDil+OlGXi7iredKHxXVFCAOIVfFyEDzO3oo0gBmWGmUnHgrPDvpMj0q+adCCh5BL8OcvGfc9ITQ==
+  dependencies:
+    "@expo/config-types" "^42.0.0"
+    "@expo/json-file" "8.2.33"
+    "@expo/plist" "0.0.13"
+    debug "^4.3.1"
+    find-up "~5.0.0"
+    fs-extra "9.0.0"
+    getenv "^1.0.0"
+    glob "7.1.6"
+    resolve-from "^5.0.0"
+    semver "^7.3.5"
+    slash "^3.0.0"
+    xcode "^3.0.1"
+    xml2js "^0.4.23"
+
 "@expo/config-types@^42.0.0":
   version "42.0.0"
   resolved "https://registry.yarnpkg.com/@expo/config-types/-/config-types-42.0.0.tgz#3e3e125ec092c0c34dbfaf19be5480402de3d677"
@@ -1858,6 +1877,15 @@
   version "8.2.32"
   resolved "https://registry.yarnpkg.com/@expo/json-file/-/json-file-8.2.32.tgz#612e83433559637a3b853b170ae6d86cccb98064"
   integrity sha512-VnpoEnjMptBQr/zgkfGHd7L8iJBme9g2AVpUIecI+aoW6qmeIRbBViPmyNABgH4UUQn3ObQCxe+q1dAdJo8KGg==
+  dependencies:
+    "@babel/code-frame" "~7.10.4"
+    json5 "^1.0.1"
+    write-file-atomic "^2.3.0"
+
+"@expo/json-file@8.2.33":
+  version "8.2.33"
+  resolved "https://registry.yarnpkg.com/@expo/json-file/-/json-file-8.2.33.tgz#78f56f33a2cfb807b23c81e00237a33159aa1f32"
+  integrity sha512-CDnhjdirUs6OdN5hOSTJ2y3i9EiJMk7Z5iDljC5xyCHCrUex7oyI8vbRsZEojAahxZccgL/PrO+CjakiFFWurg==
   dependencies:
     "@babel/code-frame" "~7.10.4"
     json5 "^1.0.1"
@@ -2612,12 +2640,12 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-12.4.0.tgz#5371bca134e698563c7a35bbf0733f792e766841"
   integrity sha512-yaw7TMM9lc6iAsJ8rrQj8EMy8s2H3WgzwNlEFP8OvEr2uo5hHB0v3iRhpkWwH6mw9Tsppub7eIZ1Rdk3ohGDKg==
 
-"@react-native-firebase/app@12.4.0":
-  version "12.4.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-12.4.0.tgz#879ce26be46a8d3e40fbd371eacdef28c608c59e"
-  integrity sha512-zBA+LSBXOYBpDnO/n0EW2+cZlHyf8aYSHpyTKOIIt5QXj7DNuB46Hk2cRSXFxOZNOU6fiIuf8i9jFsWdYtOlpQ==
+"@react-native-firebase/app@12.5.0":
+  version "12.5.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-12.5.0.tgz#6b394301a18917aa9fdf4c2a2b8191fea7478d93"
+  integrity sha512-QRbJaNZjS2Noj7Adcqom9ewrD78wNeC3yZTjsbDAeRUjb2wBk4J7mg6flPK+TW3bZaiCoj2NgqAbNqEmHLzIhw==
   dependencies:
-    "@expo/config-plugins" "^3.0.2"
+    "@expo/config-plugins" "^3.0.6"
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
@@ -11342,7 +11370,6 @@ minipass-fetch@^1.3.0, minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
-    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
