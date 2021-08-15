@@ -1,6 +1,6 @@
 {
   "name": "@ethanneff/example",
-  "version": "2.57.1",
+  "version": "2.57.2",
   "description": "A playground for react-native",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@ethanneff"
@@ -103,7 +103,7 @@
     "@types/d3-shape": "3.0.2",
     "@types/howler": "2.2.3",
     "@types/jest": "27.0.1",
-    "@types/react": "17.0.17",
+    "@types/react": "17.0.18",
     "@types/react-native": "0.64.13",
     "@types/react-native-vector-icons": "6.4.8",
     "@types/react-redux": "7.1.18",
