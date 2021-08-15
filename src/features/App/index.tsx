@@ -7,9 +7,7 @@ import {
   useNetInfo,
 } from './hooks';
 
-type Props = {
-  children: ReactNode;
-};
+type Props = {children: ReactNode};
 
 export const AppProvider = memo(function AppProvider({children}: Props) {
   useNetInfo();

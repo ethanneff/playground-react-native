@@ -1,6 +1,13 @@
 import React, {memo, useCallback, useState} from 'react';
 import {StyleSheet} from 'react-native';
-import {Button, Card, Icon, Screen, Text} from '../../components';
+import {
+  Button,
+  Card,
+  Icon,
+  Screen,
+  Text,
+  TouchableOpacity,
+} from '../../components';
 import {ScrollView} from '../../conversions';
 import {LoginFlow, padding, useAdminNavBack, useColor} from '../../features';
 
@@ -47,19 +54,18 @@ export const Home = memo(function Checklists() {
             <Text title="Before I one on one" type="caption" />
             <Text title="Before I get on the train" type="caption" />
           </Card>
+          <Button onPress={onToggleLogin} title="showLogin" />
         </ScrollView>
-        <Icon
-          color="primaryB"
-          fab
-          name="plus"
+        <TouchableOpacity
+          onPress={onToggleLogin}
           style={{
             position: 'absolute',
             bottom: 0,
             right: 0,
             margin: padding(4),
-          }}
-        />
-        <Button onPress={onToggleLogin} title="showLogin" />
+          }}>
+          <Icon color="primaryB" fab name="plus" />
+        </TouchableOpacity>
       </Screen>
       {showLogin && <LoginFlow onBackgroundPress={onToggleLogin} />}
     </>

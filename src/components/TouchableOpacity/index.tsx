@@ -36,7 +36,7 @@ export const TouchableOpacity = ({
     if (onLongPress) onLongPress();
   }, [onLongPress]);
 
-  const containerStyles = [{flex: flex ? 1 : 0}, containerStyle];
+  const containerStyles = [{flex: flex ? 1 : 0}, containerStyle, style];
   return (
     <Original
       activeOpacity={activeOpacity}
@@ -44,7 +44,6 @@ export const TouchableOpacity = ({
       disabled={disabled}
       onLongPress={onLongPressHandler}
       onPress={onPressHandler}
-      style={style}
       testID={testID}>
       {children}
     </Original>

@@ -110,12 +110,20 @@ export const Notification = memo(function Notification({
   ).current;
 
   return (
-    <View style={styles.flex} {...panResponder.panHandlers}>
+    <View
+      style={{
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        top: 0,
+      }}
+      {...panResponder.panHandlers}>
       <Animated.View style={[pan.getLayout(), styles.notification]}>
         <View style={styles.notificationSafeArea} />
         <SafeAreaView>
           <View style={styles.modal}>
-            <Icon color="primaryA" name="close" size={padding(8)} />
+            <Icon color="primaryA" hidden name="close" size={padding(8)} />
             <Text center style={styles.flex} title={title} type="h4" />
             <TouchableOpacity onPress={onCancel}>
               <Icon name="close" size={padding(8)} />
