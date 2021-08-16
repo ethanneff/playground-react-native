@@ -1801,7 +1801,7 @@
     "@babel/preset-env" "^7.4.4"
     "@babel/preset-typescript" "^7.3.3"
 
-"@expo/config-plugins@^3.0.6":
+"@expo/config-plugins@^3.0.7":
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-3.0.7.tgz#50870e26d34b11740a5841076c921729381d4319"
   integrity sha512-7YOoFtxB6XqDil+OlGXi7iredKHxXVFCAOIVfFyEDzO3oo0gBmWGmUnHgrPDvpMj0q+adCCh5BL8OcvGfc9ITQ==
@@ -2618,42 +2618,42 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-3.0.3.tgz#830167fd757ba70ac638747ba3169b2dbae60330"
   integrity sha512-8IeHfDwJ9/CTUwFs6x90VlobV3BfuPgNLjTgC6dRZovfCWigaZwVNIFFJnHBakK3pW2xErAPwhdvNR4JeNoYbw==
 
-"@react-native-firebase/analytics@12.5.0":
-  version "12.5.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-12.5.0.tgz#805e6ddcae8f653cc249b0b77cee76aed80e2205"
-  integrity sha512-GIhFrn7Gr9jZUGEQj0BPdOjYPOtqyRvj8Dn6OfqEvTyHNecYRaWhAtGtroMcrGGEGYbMKl4Xn9b2miRYkL8esg==
+"@react-native-firebase/analytics@12.6.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-12.6.0.tgz#8e8d72f1be14250214ced8a59bd7d47df2aa001b"
+  integrity sha512-8n44rhRWWzVPiFmTAzL+9O5lPSIS3CrXqZATCLE/tJZOeQIyNIjZ3HsavDWQxy/5n8twfa7h4XPFc8TCsGzgwA==
 
-"@react-native-firebase/app@12.5.0":
-  version "12.5.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-12.5.0.tgz#6b394301a18917aa9fdf4c2a2b8191fea7478d93"
-  integrity sha512-QRbJaNZjS2Noj7Adcqom9ewrD78wNeC3yZTjsbDAeRUjb2wBk4J7mg6flPK+TW3bZaiCoj2NgqAbNqEmHLzIhw==
+"@react-native-firebase/app@12.6.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-12.6.0.tgz#84bbd186f8979ee83f4a9ebae51bf93b943c4888"
+  integrity sha512-2DJG4LEto1lpcDxWo1Gen93+iDpCVd1KCaGuegqNOHozI7FRUEKN/rjqjgd3z+NnJWIhZaEmoQRVqx9Av4zYRw==
   dependencies:
-    "@expo/config-plugins" "^3.0.6"
+    "@expo/config-plugins" "^3.0.7"
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/auth@12.5.0":
-  version "12.5.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-12.5.0.tgz#dc93cc139a1201bdf8f7bf6eb4616920d90b91b9"
-  integrity sha512-KtQv+FQLO+jDfzFvvS3OkHkr7YeaTuqsRe4nRZpXA4HhE/EpXlsH7RZSWVutE5tet9Q7+ee/dKDI44409E2IQA==
+"@react-native-firebase/auth@12.6.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-12.6.0.tgz#3e743d04513366a141724cbdebb8db4e35a24df8"
+  integrity sha512-9NRB1ld+qe+TR33mqOGRyLZa4UE5sC8pLZ9pqCvCwpekCB6+SbUNnxeTxKvvvJzfrk9ZmLG+kHY4ONS/yECEVg==
 
-"@react-native-firebase/crashlytics@12.5.0":
-  version "12.5.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-12.5.0.tgz#b7f7fb0bbf093a22fdcbf9ba68eb82f464366e4a"
-  integrity sha512-XNF5BaaObuCRGJvR2wz76TT+A+2Ywxq8NoOmBo/x0gSXS1nP7yRYRTqFo1uFASfjq0bmdIf6VPcvNMnM46vfUg==
+"@react-native-firebase/crashlytics@12.6.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-12.6.0.tgz#676f31f7774ce656eacdc9266d17839b49732029"
+  integrity sha512-0Aq9QujL7Gf9DuYOQtUhYyoig9V5MI9/7cvzibyMtHWytRbi49dyWO3Mqjtspelay0tzhR1dST1LCkOBug3xew==
   dependencies:
-    "@expo/config-plugins" "^3.0.6"
+    "@expo/config-plugins" "^3.0.7"
     stacktrace-js "^2.0.0"
 
-"@react-native-firebase/firestore@12.5.0":
-  version "12.5.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-12.5.0.tgz#e10d140a41e89348f742c6e1034041ac3896b1a0"
-  integrity sha512-fW4qUZWO3cCs0wfzkPqfntfWY5X86UKq1Fq0F2Pw1raop6du6NlN0XSCtyO9BCU5xn/H5sDCpn+5lvKqTRlhAg==
+"@react-native-firebase/firestore@12.6.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-12.6.0.tgz#05ecf2badbd80d682dae62a276411b0ae1d3c52d"
+  integrity sha512-OK44tvut8Eq9Qfw5PcwFVfWbqgvKQWZ4ukttV7rzBAjaPrBrrgO9RcTxNlxPhxqrwKzDGTFhLuLzg3+GteDgYQ==
 
-"@react-native-firebase/remote-config@12.5.0":
-  version "12.5.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-12.5.0.tgz#20360155d4bb8b081ad14f3ef78ac154422a6625"
-  integrity sha512-ZXwJ5bJmC1QQ5PLhvi+aimSXfQtKpT0qMDcRXqrKag8WkLQGIrBhqSFIJb/HqBZUBLg9zoIQAp6kuSV3U0q7Jw==
+"@react-native-firebase/remote-config@12.6.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-12.6.0.tgz#b4721202cecef45a59e2d6a72820882b5ef66f23"
+  integrity sha512-vOizDZxmteYAHRnF25bCu+DqYWmpkn6pedPwK4JeFJU2CILeL5RUS0kRsrSVgIpcZSZ9f6yPFc6AMkLaiCCh0w==
 
 "@react-native/assets@1.0.0":
   version "1.0.0"
@@ -10767,10 +10767,10 @@ marked-terminal@^4.1.1:
     node-emoji "^1.10.0"
     supports-hyperlinks "^2.1.0"
 
-marked@^2.0.0:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-2.1.3.tgz#bd017cef6431724fd4b27e0657f5ceb14bff3753"
-  integrity sha512-/Q+7MGzaETqifOMWYEA7HVMaZb4XbcRfaOzcSsHZEith83KGlvaSG33u0SKu89Mj5h+T8V2hM+8O45Qc5XTgwA==
+marked@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-3.0.0.tgz#ac8369b7ddeef15fbbce870d14f321bdb20ca4e2"
+  integrity sha512-IF2MYfFafPsLIhzLTu63secRBwOmIY+vwS+ei6qg8F+bTS+MxH6ONYRmuseGdZqF44qvoi3nP/rlpClBdgLbiQ==
 
 md5.js@^1.3.4:
   version "1.3.5"
@@ -14948,10 +14948,10 @@ selfsigned@^1.10.8:
   dependencies:
     node-forge "^0.10.0"
 
-semantic-release@17.4.4:
-  version "17.4.4"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.4.4.tgz#650dd50ecb520a5a2bc6811305bc9d4d5c3128b1"
-  integrity sha512-fQIA0lw2Sy/9+TcoM/BxyzKCSwdUd8EPRwGoOuBLgxKigPCY6kaKs8TOsgUVy6QrlTYwni2yzbMb5Q2107P9eA==
+semantic-release@17.4.5:
+  version "17.4.5"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.4.5.tgz#b636065f3fdc8392e2fdfeac0e99d9c3805f8a3a"
+  integrity sha512-s9JqU46nK1TQla37+kA7aSoNWDCkQq9/T5K2QX/z7bfI+zW3o1Pg/2nlZuZffnnROnt5sT0ysE49yhedINTtTw==
   dependencies:
     "@semantic-release/commit-analyzer" "^8.0.0"
     "@semantic-release/error" "^2.2.0"
@@ -14970,7 +14970,7 @@ semantic-release@17.4.4:
     hook-std "^2.0.0"
     hosted-git-info "^4.0.0"
     lodash "^4.17.21"
-    marked "^2.0.0"
+    marked "^3.0.0"
     marked-terminal "^4.1.1"
     micromatch "^4.0.2"
     p-each-series "^2.1.0"
