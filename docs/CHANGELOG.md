@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.57.4](https://github.com/ethanneff/example/compare/v2.57.3...v2.57.4) (2021-08-16)
+
+
+### Bug Fixes
+
+* make notifications work ([ad1be9e](https://github.com/ethanneff/example/commit/ad1be9e95e0baec409d9aefb6edfbd9af70abd1e))
+
 ## [2.57.3](https://github.com/ethanneff/example/compare/v2.57.2...v2.57.3) (2021-08-15)
 
 
