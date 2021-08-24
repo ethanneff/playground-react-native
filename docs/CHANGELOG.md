@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.57.6](https://github.com/ethanneff/example/compare/v2.57.5...v2.57.6) (2021-08-24)
+
+
+### Bug Fixes
+
+* update reset script to remove pods ([bccbf94](https://github.com/ethanneff/example/commit/bccbf9455f031d0674e76664f001fa3f9aaeca3a))
+
 ## [2.57.5](https://github.com/ethanneff/example/compare/v2.57.4...v2.57.5) (2021-08-16)
 
 
