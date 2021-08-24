@@ -11,6 +11,15 @@ import {
 import {ScrollView} from '../../conversions';
 import {LoginFlow, padding, useAdminNavBack, useColor} from '../../features';
 
+// const
+
+// Notification.show()
+// Alert.show()
+// ShareSheet.show()
+// Badge.show()
+// Badge.show()
+// Badge.show()
+
 export const Home = memo(function Checklists() {
   const color = useColor();
   const {onLeftPress} = useAdminNavBack();
