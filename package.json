@@ -18,7 +18,7 @@
     "test": "jest -u --coverage --cache --config .github/jest.config.js",
     "watch": "jest -u --watchAll --cache --config .github/jest.config.js",
     "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
-    "reset": "watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; jest --clearCache; gem install fastlane; bundler update --all; bundler install; cd ios; pod install --repo-update; cd ..; npx jetify; cd android; ./gradlew clean; cd ..; react-native start --reset-cache",
+    "reset": "watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; rm -rf ./ios/Pods/*; jest --clearCache; gem install fastlane; bundler update --all; bundler install; cd ios; pod install --repo-update; cd ..; npx jetify; cd android; ./gradlew clean; cd ..; react-native start --reset-cache",
     "ci-release": "semantic-release -e ./.github/release.config.js",
     "ci-prettify": "prettier --write .",
     "ci-install": "yarn install --frozen-lockfile",
