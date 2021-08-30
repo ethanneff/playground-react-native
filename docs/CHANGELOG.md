@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.57.7](https://github.com/ethanneff/example/compare/v2.57.6...v2.57.7) (2021-08-30)
+
+
+### Bug Fixes
+
+* update eslint import to recommendd ([710de20](https://github.com/ethanneff/example/commit/710de20417493492879921c7f237af1daffc529d))
+
 ## [2.57.6](https://github.com/ethanneff/example/compare/v2.57.5...v2.57.6) (2021-08-24)
 
 
