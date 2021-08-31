@@ -8,7 +8,7 @@ module.exports = {
     'plugin:jest/all',
     'plugin:react/all',
     'plugin:react-native/all',
-    'plugin:import/recommend',
+    'plugin:import/recommended',
     'plugin:import/typescript',
     'prettier',
   ],

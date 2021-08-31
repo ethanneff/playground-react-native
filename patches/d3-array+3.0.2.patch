@@ -1,11 +1,12 @@
 diff --git a/node_modules/d3-array/src/cumsum.js b/node_modules/d3-array/src/cumsum.js
-index 86fb052..b7eea8f 100644
+index 86fb052..b4714c0 100644
 --- a/node_modules/d3-array/src/cumsum.js
 +++ b/node_modules/d3-array/src/cumsum.js
 @@ -2,5 +2,5 @@ export default function cumsum(values, valueof) {
-   var sum = 0, index = 0; 
-   return Float64Array.from(values, valueof === undefined 
-     ? v => (sum += +v || 0) 
+   var sum = 0, index = 0;
+   return Float64Array.from(values, valueof === undefined
+     ? v => (sum += +v || 0)
 -    : v => (sum += +valueof(v, index++, values) || 0));
 +    : (v => (sum += +valueof(v, index++, values) || 0)));
- } 
+ }
+\ No newline at end of file
