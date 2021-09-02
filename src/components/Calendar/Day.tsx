@@ -39,11 +39,11 @@ export const CalendarDay = ({
 
   return (
     <TouchableOpacity
-      containerStyle={{alignItems: 'center'}}
       disabled={disabled}
       flex
       key={day.id}
-      onPress={onSelected}>
+      onPress={onSelected}
+      style={{alignItems: 'center'}}>
       <View
         style={{
           height: padding(8),

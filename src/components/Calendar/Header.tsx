@@ -19,14 +19,14 @@ export const CalendarHeader = memo(function CalendarHeader({
   onMonthDecrease,
 }: Props) {
   return (
-    <View style={{flexDirection: 'row'}}>
+    <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
       <TouchableOpacity onPress={onMonthDecrease}>
         <Icon name="chevron-left" padded size={padding(6)} />
       </TouchableOpacity>
       <TouchableOpacity
-        containerStyle={{justifyContent: 'center', alignItems: 'center'}}
         flex
-        onPress={onTitlePress}>
+        onPress={onTitlePress}
+        style={{justifyContent: 'center', alignItems: 'center'}}>
         <Text center title={dayjs(unix).format('MMMM YYYY')} type="h5" />
       </TouchableOpacity>
       <TouchableOpacity onPress={onMonthIncrease}>

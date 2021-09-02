@@ -1,4 +1,5 @@
 import React, {memo, useCallback, useState} from 'react';
+import {View} from 'react-native';
 import {CalendarHeader} from './Header';
 import {CalendarMonth} from './Month';
 import {addMonths, CalendarMatrix, getCalendarMatrix} from './utils';
@@ -53,7 +54,7 @@ export const Calendar = memo(function Calendar({hiddenDays}: Props) {
   }, []);
 
   return (
-    <>
+    <View>
       <CalendarHeader
         onMonthDecrease={onMonthDecrease}
         onMonthIncrease={onMonthIncrease}
@@ -62,10 +63,10 @@ export const Calendar = memo(function Calendar({hiddenDays}: Props) {
       />
       <CalendarMonth
         hiddenDays={hiddenDays}
-        matrix={calendar.matrix}
+        matrix={calendar.matrix} // TODO: pass through redux instead... object is causing re-renders
         onSelected={onSelected}
         selected={calendar.selected}
       />
-    </>
+    </View>
   );
 });

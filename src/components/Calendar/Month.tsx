@@ -1,5 +1,6 @@
 import React, {memo, useCallback} from 'react';
 import {View} from 'react-native';
+import {padding} from '../../features/Config';
 import {CalendarDay} from './Day';
 import {CalendarMatrix} from './utils';
 
@@ -21,9 +22,11 @@ export const CalendarMonth = memo(function Month({
     [onSelected],
   );
   return (
-    <View>
+    <View style={{paddingHorizontal: padding(2)}}>
       {matrix.map((row, i) => (
-        <View key={i} style={{flexDirection: 'row'}}>
+        <View
+          key={i}
+          style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           {row.map((col, j) => (
             <CalendarDay
               day={col}

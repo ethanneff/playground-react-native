@@ -57,7 +57,3 @@ export const Navigation = (): ReactElement => {
     </AuthStack.Navigator>
   );
 };
-
-// Notification.show()
-// Alert.show()
-// ShareSheet.show()

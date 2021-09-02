@@ -5,7 +5,6 @@ import {SoundManager} from '../../features/Sound';
 
 type Props = {
   testID?: string;
-  containerStyle?: StyleProp<ViewStyle>;
   style?: StyleProp<ViewStyle>;
   flex?: boolean;
   activeOpacity?: number;
@@ -22,7 +21,6 @@ export const TouchableOpacity = ({
   children,
   disabled,
   activeOpacity,
-  containerStyle,
   flex,
   style,
 }: Props): ReactElement => {
@@ -36,14 +34,14 @@ export const TouchableOpacity = ({
     if (onLongPress) onLongPress();
   }, [onLongPress]);
 
-  const containerStyles = [{flex: flex ? 1 : 0}, containerStyle, style];
+  const containerStyles = [{flex: flex ? 1 : 0}, style];
   return (
     <Original
       activeOpacity={activeOpacity}
-      containerStyle={containerStyles}
       disabled={disabled}
       onLongPress={onLongPressHandler}
       onPress={onPressHandler}
+      style={containerStyles}
       testID={testID}>
       {children}
     </Original>

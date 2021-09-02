@@ -43,7 +43,6 @@ export const ListItem = memo(function ListItem({
         style={{
           flex: 1,
           flexDirection: 'row',
-          height: padding(10),
           paddingHorizontal: padding(4),
           paddingVertical: padding(2),
         }}>
@@ -61,12 +60,10 @@ export const ListItem = memo(function ListItem({
           <Text title={`${item.hour} ${item.zone}`} />
         </View>
         <Text
+          color="secondary"
           ellipsizeMode="tail"
+          flex
           numberOfLines={1}
-          style={{
-            color: color.text.secondary,
-            flex: 1,
-          }}
           title={title}
           type="body1"
         />
