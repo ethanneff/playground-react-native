@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.57.10](https://github.com/ethanneff/example/compare/v2.57.9...v2.57.10) (2021-09-23)
+
+
+### Bug Fixes
+
+* ios manually linking ([901e8ce](https://github.com/ethanneff/example/commit/901e8ceab176ea55cb757534e5f1ebdf396a7744))
+* make react native config work with android ([2962724](https://github.com/ethanneff/example/commit/29627247d7f68b951bf92dab1218d1f5cef2dfdd))
+* make yarn ios work ([1f5d837](https://github.com/ethanneff/example/commit/1f5d83752f8c5c3420a6dc69441eff5f602b1a14))
+* update reset to remove workspace ([40d433c](https://github.com/ethanneff/example/commit/40d433c11e85a7d0747acbb27a44d0d23a3e5c52))
+* update subscription removals ([9178e8f](https://github.com/ethanneff/example/commit/9178e8fcde5e559488379348fd5392e7b9da5e13))
+
 ## [2.57.9](https://github.com/ethanneff/example/compare/v2.57.8...v2.57.9) (2021-09-23)
 
 
