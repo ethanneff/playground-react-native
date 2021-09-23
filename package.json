@@ -127,6 +127,7 @@
     "react-test-renderer": "17.0.2",
     "semantic-release": "17.4.5",
     "travis-deploy-once": "5.0.11",
+    "ts-essentials": "8.1.0",
     "typescript": "4.3.5"
   },
   "browserslist": {
