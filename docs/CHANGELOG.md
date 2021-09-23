@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.57.8](https://github.com/ethanneff/example/compare/v2.57.7...v2.57.8) (2021-09-02)
+
+
+### Bug Fixes
+
+* make button only pass style ([49e13c4](https://github.com/ethanneff/example/commit/49e13c47c8a76d1d64469953f89a70a70fb70021))
+* make ios work again ([acc9697](https://github.com/ethanneff/example/commit/acc9697f23ef68b5f35a3c5ecd13e73b397cdb98))
+
 ## [2.57.7](https://github.com/ethanneff/example/compare/v2.57.6...v2.57.7) (2021-08-30)
 
 
