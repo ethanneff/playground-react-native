@@ -1,7 +1,7 @@
-import React, {memo} from 'react';
-import {StyleProp, Text as OriginalText, TextStyle} from 'react-native';
-import {Text} from '../Text';
-import {SentenceType} from './types';
+import React, { memo } from 'react';
+import { StyleProp, Text as OriginalText, TextStyle } from 'react-native';
+import { Text } from '../Text';
+import { SentenceType } from './types';
 
 type Props = {
   sentences: SentenceType[];
@@ -16,7 +16,7 @@ export const Sentence = memo(function Sentence({
 }: Props) {
   return (
     <OriginalText style={style}>
-      {sentences.map(({bold, title, onPress, type, emphasis}) => (
+      {sentences.map(({ bold, title, onPress, type, emphasis }) => (
         <Text
           bold={bold}
           center={center}

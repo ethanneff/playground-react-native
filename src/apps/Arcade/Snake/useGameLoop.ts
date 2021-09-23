@@ -1,4 +1,4 @@
-import {MutableRefObject, useCallback, useEffect, useRef} from 'react';
+import { MutableRefObject, useCallback, useEffect, useRef } from 'react';
 
 export type Frame = {
   start: number;

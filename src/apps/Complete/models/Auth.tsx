@@ -1,10 +1,10 @@
-import {RootAction} from 'root-types';
-import {createAction, getType} from 'typesafe-actions';
+import { RootAction } from 'root-types';
+import { createAction, getType } from 'typesafe-actions';
 
 /* ACTIONS */
 export const login = createAction('complete/auth/login')<Auth>();
 export const logout = createAction('complete/auth/logout')();
-export const completeAuthActions = {login, logout};
+export const completeAuthActions = { login, logout };
 
 /* INTERFACES */
 export type CompleteAuthReducer = Auth | null;

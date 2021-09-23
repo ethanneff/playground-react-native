@@ -1,6 +1,6 @@
-import React, {memo, useCallback, useEffect, useState} from 'react';
-import {StyleSheet, View, ViewStyle} from 'react-native';
-import {Text} from '../Text';
+import React, { memo, useCallback, useEffect, useState } from 'react';
+import { StyleSheet, View, ViewStyle } from 'react-native';
+import { Text } from '../Text';
 
 type Props = {
   title: string;
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const Loading = memo(function Loading({title, center, style}: Props) {
+export const Loading = memo(function Loading({ title, center, style }: Props) {
   const containerStyles = [
     styles.row,
     center ? styles.center : undefined,

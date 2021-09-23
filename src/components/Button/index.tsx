@@ -1,10 +1,10 @@
-import React, {memo} from 'react';
-import {StyleProp, TextStyle, ViewStyle} from 'react-native';
-import {FontEmphasis, MonoMultiColor} from '../../features/Config';
-import {useColor, useDropShadow} from '../../features/Theme';
-import {Text} from '../Text';
-import {TouchableOpacity} from '../TouchableOpacity';
-import {getStyles} from './utils';
+import React, { memo } from 'react';
+import { StyleProp, TextStyle, ViewStyle } from 'react-native';
+import { FontEmphasis, MonoMultiColor } from '../../features/Config';
+import { useColor, useDropShadow } from '../../features/Theme';
+import { Text } from '../Text';
+import { TouchableOpacity } from '../TouchableOpacity';
+import { getStyles } from './utils';
 
 /*
 styling: https://material.io/design/components/buttons.html#usage
@@ -85,7 +85,8 @@ export const Button = memo(function Button({
       onLongPress={onLongPress}
       onPress={onPress}
       style={buttonStyleGroup}
-      testID={testID}>
+      testID={testID}
+    >
       <Text
         center
         style={textStyleGroup}

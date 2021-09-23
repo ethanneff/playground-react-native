@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import {formatRelativeDate} from '../utils';
+import { formatRelativeDate } from '../utils';
 
 describe('formatRelativeDate', () => {
   it('a few seconds ago', () => {

@@ -27,7 +27,7 @@ export const combinations: Combinations = [
   ['🍒', 'any', 'any', 2],
 ];
 
-export type Reel = {[key in Element]: number};
+export type Reel = { [key in Element]: number };
 export type Reels = [Reel, Reel, Reel];
 
 export const reels: Reels = [

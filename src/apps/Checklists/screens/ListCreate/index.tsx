@@ -1,21 +1,21 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useState } from 'react';
 import 'react-native-get-random-values';
-import {v4} from 'uuid';
-import {Button, Input, Screen} from '../../../../components';
-import {useRootDispatch} from '../../../../redux';
-import {createList} from '../../models';
+import { v4 } from 'uuid';
+import { Button, Input, Screen } from '../../../../components';
+import { useRootDispatch } from '../../../../redux';
+import { createList } from '../../models';
 
-const initialState = {name: '', description: ''};
+const initialState = { name: '', description: '' };
 
 export default memo(function ChecklistCreate() {
-  const {navigate} = useNavigation<any>();
+  const { navigate } = useNavigation<any>();
   const dispatch = useRootDispatch();
   const [form, setForm] = useState(initialState);
   const isInvalidForm = form.name.trim().length === 0;
 
   const handleSubmit = useCallback(() => {
-    const {name, description} = form;
+    const { name, description } = form;
     if (isInvalidForm) return;
 
     const now = Date.now();
@@ -33,11 +33,11 @@ export default memo(function ChecklistCreate() {
     navigate('checklists');
   }, [dispatch, form, isInvalidForm, navigate]);
   const handleNameChange = useCallback(
-    (name: string) => setForm(state => ({...state, name})),
+    (name: string) => setForm(state => ({ ...state, name })),
     [],
   );
   const handleDescriptionChange = useCallback(
-    (description: string) => setForm(state => ({...state, description})),
+    (description: string) => setForm(state => ({ ...state, description })),
     [],
   );
 

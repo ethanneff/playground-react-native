@@ -1,5 +1,5 @@
-import React, {ErrorInfo, ReactNode} from 'react';
-import {Text} from '../Text';
+import React, { ErrorInfo, ReactNode } from 'react';
+import { Text } from '../Text';
 
 type Props = {
   children: ReactNode;
@@ -11,12 +11,12 @@ type State = {
 
 export class ErrorBoundary extends React.PureComponent<Props, State> {
   static getDerivedStateFromError(): State {
-    return {hasError: true};
+    return { hasError: true };
   }
 
   constructor(props: Props) {
     super(props);
-    this.state = {hasError: false};
+    this.state = { hasError: false };
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
@@ -24,8 +24,8 @@ export class ErrorBoundary extends React.PureComponent<Props, State> {
   }
 
   render(): JSX.Element {
-    const {hasError} = this.state;
-    const {children} = this.props;
+    const { hasError } = this.state;
+    const { children } = this.props;
     return hasError ? (
       <Text center title="something went wrong" />
     ) : (

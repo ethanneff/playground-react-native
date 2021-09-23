@@ -1,17 +1,17 @@
-import {BottomTabNavigationOptions} from '@react-navigation/bottom-tabs';
-import {ParamListBase, RouteProp} from '@react-navigation/native';
+import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
+import { ParamListBase, RouteProp } from '@react-navigation/native';
 import {
   StackNavigationOptions,
   TransitionPresets,
 } from '@react-navigation/stack';
-import React, {useCallback} from 'react';
-import {Platform} from 'react-native';
-import {Icon} from '../../components';
-import {useColor} from '../../features/Theme';
+import React, { useCallback } from 'react';
+import { Platform } from 'react-native';
+import { Icon } from '../../components';
+import { useColor } from '../../features/Theme';
 
-type TabIcons = {[key: string]: {focused: string; unFocused: string}};
-type NavOptions = {route: RouteProp<ParamListBase>};
-type TabScreenOptions = {tabIcons: TabIcons; headerShown?: boolean};
+type TabIcons = { [key: string]: { focused: string; unFocused: string } };
+type NavOptions = { route: RouteProp<ParamListBase> };
+type TabScreenOptions = { tabIcons: TabIcons; headerShown?: boolean };
 
 type UseNavScreenOptions = {
   modalScreenOptions: StackNavigationOptions;
@@ -31,10 +31,10 @@ export const useNavScreenOptions = (): UseNavScreenOptions => {
   };
 
   const tabScreenOptions = useCallback(
-    ({tabIcons, headerShown = false}) =>
-      ({route}: NavOptions): BottomTabNavigationOptions => ({
+    ({ tabIcons, headerShown = false }) =>
+      ({ route }: NavOptions): BottomTabNavigationOptions => ({
         headerShown,
-        tabBarIcon: function tabBarIcon({focused, size}) {
+        tabBarIcon: function tabBarIcon({ focused, size }) {
           const iconColor = focused ? 'primaryA' : 'tertiary';
           const key = focused ? 'focused' : 'unFocused';
           const name = tabIcons[route.name][key];
@@ -44,10 +44,10 @@ export const useNavScreenOptions = (): UseNavScreenOptions => {
         tabBarActiveTintColor: color.text.primaryA,
         tabBarInactiveTintColor: color.text.tertiary,
         tabBarShowLabel: false,
-        tabBarStyle: {backgroundColor: color.background.primaryA},
+        tabBarStyle: { backgroundColor: color.background.primaryA },
       }),
     [color.background.primaryA, color.text.primaryA, color.text.tertiary],
   );
 
-  return {modalScreenOptions, tabScreenOptions};
+  return { modalScreenOptions, tabScreenOptions };
 };

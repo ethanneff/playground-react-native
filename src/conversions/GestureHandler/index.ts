@@ -6,4 +6,4 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native-gesture-handler';
 
-export {TouchableOpacity, TouchableWithoutFeedback, ScrollView, FlatList};
+export { TouchableOpacity, TouchableWithoutFeedback, ScrollView, FlatList };

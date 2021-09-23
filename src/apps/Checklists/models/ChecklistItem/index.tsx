@@ -1,7 +1,7 @@
-import {createSelector} from 'reselect';
-import {RootAction, RootState} from 'root-types';
-import {createAction, getType} from 'typesafe-actions';
-import {getCurrentChecklist} from '../Checklist';
+import { createSelector } from 'reselect';
+import { RootAction, RootState } from 'root-types';
+import { createAction, getType } from 'typesafe-actions';
+import { getCurrentChecklist } from '../Checklist';
 
 /* ACTIONS */
 export const createChecklistItem = createAction(
@@ -63,7 +63,7 @@ export type ChecklistItem = {
   createdAt: number;
   updatedAt: number;
 };
-export type ChecklistItems = {[key: string]: ChecklistItem};
+export type ChecklistItems = { [key: string]: ChecklistItem };
 
 /* REDUCER */
 const initialState: ChecklistItemReducer = {
@@ -76,7 +76,7 @@ export const checklistItemReducer = (
 ): ChecklistItemReducer => {
   switch (action.type) {
     case getType(setActiveChecklistItem):
-      return {...state, active: action.payload};
+      return { ...state, active: action.payload };
     case getType(createChecklistItem):
       return {
         ...state,

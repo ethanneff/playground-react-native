@@ -1,2 +1,2 @@
 const auth = {};
-export {auth};
+export { auth };

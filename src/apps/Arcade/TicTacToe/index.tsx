@@ -1,15 +1,15 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
-import {View} from 'react-native';
-import {Button, Screen, Text} from '../../../components';
-import {TouchableOpacity} from '../../../conversions';
-import {useColor} from '../../../features';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useState } from 'react';
+import { View } from 'react-native';
+import { Button, Screen, Text } from '../../../components';
+import { TouchableOpacity } from '../../../conversions';
+import { useColor } from '../../../features';
 import {
   getLandscapeOrientation,
   getSmallestDimension,
   useRootSelector,
 } from '../../../redux';
-import {State} from './types';
+import { State } from './types';
 import {
   getInitialState,
   getNextValue,
@@ -21,7 +21,7 @@ import {
 export const TicTacToe = memo(function TicTacToe() {
   const boardSize = 3;
   const color = useColor();
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
 
   const [game, setGame] = useState<State>(getInitialState(boardSize));
   const smallest = useRootSelector(getSmallestDimension);
@@ -64,10 +64,11 @@ export const TicTacToe = memo(function TicTacToe() {
           alignItems: 'center',
           backgroundColor: color.background.secondary,
           flexDirection: landscape ? 'row' : 'column',
-        }}>
+        }}
+      >
         <View>
           {game.board.map((row, i) => (
-            <View key={`row-${i}`} style={{flexDirection: 'row'}}>
+            <View key={`row-${i}`} style={{ flexDirection: 'row' }}>
               {row.map((_, j) => (
                 <TouchableOpacity
                   disabled={
@@ -83,14 +84,15 @@ export const TicTacToe = memo(function TicTacToe() {
                     backgroundColor: color.background.primaryA,
                     borderWidth: 2,
                     borderColor: color.background.secondary,
-                  }}>
+                  }}
+                >
                   <Text title={getValue(game.board[i][j])} type="h4" />
                 </TouchableOpacity>
               ))}
             </View>
           ))}
         </View>
-        <View style={{alignItems: 'center'}}>
+        <View style={{ alignItems: 'center' }}>
           <Text title={turnTitle} />
           <Button onPress={onButtonPress} title={buttonTitle} />
         </View>

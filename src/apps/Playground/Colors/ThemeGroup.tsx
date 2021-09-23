@@ -1,6 +1,6 @@
-import React, {memo} from 'react';
-import {View} from 'react-native';
-import {Button} from '../../../components';
+import React, { memo } from 'react';
+import { View } from 'react-native';
+import { Button } from '../../../components';
 import {
   changeTheme,
   Theme,
@@ -14,7 +14,7 @@ export const ThemeGroup = memo(function ThemeGroup() {
   const themes = useRootSelector(state => state.theme.themes);
   const themePress = (theme: Theme) => () => dispatch(changeTheme(theme));
   return (
-    <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+    <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
       {Object.keys(themes).map(key => (
         <Button
           center

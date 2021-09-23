@@ -1,4 +1,4 @@
-import {colorWithOpacity} from '..';
+import { colorWithOpacity } from '..';
 
 describe('colorWithOpacity', () => {
   it('returns when passed an opacity', () => {

@@ -1,24 +1,24 @@
-import React, {memo} from 'react';
-import {Dimensions, View} from 'react-native';
-import {Calendar, Screen, Text} from '../../../../components';
-import {ScrollView} from '../../../../conversions';
-import {padding, useColor, useTabTap} from '../../../../features';
-import {Card} from '../../components';
-import {completeConfig} from '../../utils';
-import {Graph} from './Graph';
+import React, { memo } from 'react';
+import { Dimensions, View } from 'react-native';
+import { Calendar, Screen, Text } from '../../../../components';
+import { ScrollView } from '../../../../conversions';
+import { padding, useColor, useTabTap } from '../../../../features';
+import { Card } from '../../components';
+import { completeConfig } from '../../utils';
+import { Graph } from './Graph';
 
 // TODO: add journal
 // TODO: add historical data
 // TODO: add purpose
 // TODO: add goals
 
-type TitleProps = {name: string};
+type TitleProps = { name: string };
 
-const Title = ({name}: TitleProps) => {
+const Title = ({ name }: TitleProps) => {
   return (
     <Text
       emphasis="high"
-      style={{paddingBottom: completeConfig.padding}}
+      style={{ paddingBottom: completeConfig.padding }}
       title={name}
       type="h4"
     />
@@ -26,12 +26,12 @@ const Title = ({name}: TitleProps) => {
 };
 
 const data = [
-  {date: new Date(2018, 9, 1).getTime(), value: 0},
-  {date: new Date(2018, 9, 16).getTime(), value: 0},
-  {date: new Date(2018, 9, 17).getTime(), value: 200},
-  {date: new Date(2018, 10, 1).getTime(), value: 200},
-  {date: new Date(2018, 10, 2).getTime(), value: 300},
-  {date: new Date(2018, 10, 5).getTime(), value: 300},
+  { date: new Date(2018, 9, 1).getTime(), value: 0 },
+  { date: new Date(2018, 9, 16).getTime(), value: 0 },
+  { date: new Date(2018, 9, 17).getTime(), value: 200 },
+  { date: new Date(2018, 10, 1).getTime(), value: 200 },
+  { date: new Date(2018, 10, 2).getTime(), value: 300 },
+  { date: new Date(2018, 10, 5).getTime(), value: 300 },
 ];
 
 export const Reflect = memo(function Reflect() {
@@ -45,7 +45,8 @@ export const Reflect = memo(function Reflect() {
           padding: padding(4),
           backgroundColor: color.background.secondary,
         }}
-        style={{backgroundColor: color.background.secondary}}>
+        style={{ backgroundColor: color.background.secondary }}
+      >
         <Card margin="bottom">
           <View>
             <Title name="Purpose" />
@@ -69,7 +70,8 @@ export const Reflect = memo(function Reflect() {
                 flex: 1,
                 justifyContent: 'center',
                 alignItems: 'center',
-              }}>
+              }}
+            >
               <Graph
                 data={data}
                 height={200}

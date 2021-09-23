@@ -1,4 +1,4 @@
-import {Combinations, Element, Reel, Reels} from './config';
+import { Combinations, Element, Reel, Reels } from './config';
 
 const getWinsPerCombination = (
   combinations: Combinations,

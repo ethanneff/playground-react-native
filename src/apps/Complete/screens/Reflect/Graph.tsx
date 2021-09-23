@@ -1,8 +1,8 @@
-import {scaleLinear, scaleTime} from 'd3-scale';
+import { scaleLinear, scaleTime } from 'd3-scale';
 import * as shape from 'd3-shape';
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
-import Svg, {Defs, LinearGradient, Path, Stop} from 'react-native-svg';
+import { StyleSheet, View } from 'react-native';
+import Svg, { Defs, LinearGradient, Path, Stop } from 'react-native-svg';
 
 interface DataPoint {
   date: number;
@@ -39,7 +39,7 @@ export const Graph = ({
     .y(p => scaleY(p.value))
     .curve(shape.curveBasis)(data) as string;
   return (
-    <View style={{width, height}}>
+    <View style={{ width, height }}>
       <Svg style={StyleSheet.absoluteFill}>
         <Defs>
           <LinearGradient id="gradient" x1="50%" x2="50%" y1="0%" y2="100%">
@@ -52,7 +52,7 @@ export const Graph = ({
           d={`${d}L ${width} ${height} L 0 ${height}`}
           fill="url(#gradient)"
         />
-        <Path fill="transparent" stroke="#3977e3" {...{d, strokeWidth}} />
+        <Path fill="transparent" stroke="#3977e3" {...{ d, strokeWidth }} />
       </Svg>
     </View>
   );

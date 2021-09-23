@@ -1,5 +1,5 @@
-import React, {useCallback, useState} from 'react';
-import {FlatList, View} from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { FlatList, View } from 'react-native';
 import {
   Card,
   Icon,
@@ -7,7 +7,7 @@ import {
   Text,
   TouchableOpacity,
 } from '../../../../components';
-import {questionnairesInitialState} from '../models';
+import { questionnairesInitialState } from '../models';
 
 export const Questionnaire = (): JSX.Element => {
   const [actionSheet, setActionSheet] = useState(false);
@@ -24,19 +24,21 @@ export const Questionnaire = (): JSX.Element => {
   const handleActionSheetClose = useCallback(() => setActionSheet(false), []);
 
   const renderItem = useCallback(
-    ({item}) => {
+    ({ item }) => {
       const length = item.questions.length;
       const subtitle = `${length} question${length === 1 ? '' : 's'}`;
       return (
         <Card
           onPress={handleItemPress(item.id)}
-          selected={activeItem === item.id}>
+          selected={activeItem === item.id}
+        >
           <View
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-            }}>
-            <View style={{flex: 0.9}}>
+            }}
+          >
+            <View style={{ flex: 0.9 }}>
               <Text title={item.title} type="h3" />
               <Text title={subtitle} type="caption" />
             </View>

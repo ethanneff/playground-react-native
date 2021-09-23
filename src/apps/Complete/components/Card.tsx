@@ -1,7 +1,7 @@
-import React, {memo, ReactElement} from 'react';
-import {LayoutChangeEvent, View} from 'react-native';
-import {useColor} from '../../../features';
-import {completeConfig} from '../utils';
+import React, { memo, ReactElement } from 'react';
+import { LayoutChangeEvent, View } from 'react-native';
+import { useColor } from '../../../features';
+import { completeConfig } from '../utils';
 
 // TODO: combine card components with global card
 
@@ -32,7 +32,8 @@ export const Card = memo(function Card({
         padding: completeConfig.padding / 2,
         marginRight: margin === 'right' ? completeConfig.padding : 0,
         marginBottom: margin === 'bottom' ? completeConfig.padding : 0,
-      }}>
+      }}
+    >
       {children}
     </View>
   );

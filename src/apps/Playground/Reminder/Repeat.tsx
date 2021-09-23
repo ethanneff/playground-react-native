@@ -1,5 +1,5 @@
-import React, {memo, useState} from 'react';
-import {Item} from './Item';
+import React, { memo, useState } from 'react';
+import { Item } from './Item';
 
 type RepeatType = 'Daily' | 'Weekly' | 'Monthly' | 'Yearly';
 

@@ -1,17 +1,17 @@
-import React, {memo, useCallback, useRef, useState} from 'react';
-import {LayoutChangeEvent} from 'react-native';
-import {Button, KeyboardHandler, Screen} from '../../../../components';
+import React, { memo, useCallback, useRef, useState } from 'react';
+import { LayoutChangeEvent } from 'react-native';
+import { Button, KeyboardHandler, Screen } from '../../../../components';
 import {
   padding,
   useColor,
   useKeyboardHeight,
   useTabTap,
 } from '../../../../features';
-import {useRootSelector} from '../../../../redux';
-import {Card, List} from '../../components';
-import {getInbox} from '../../models';
+import { useRootSelector } from '../../../../redux';
+import { Card, List } from '../../components';
+import { getInbox } from '../../models';
 
-const initialState = {container: 0, button: 0};
+const initialState = { container: 0, button: 0 };
 export const Capture = memo(function Capture() {
   useTabTap();
   const color = useColor();
@@ -31,9 +31,9 @@ export const Capture = memo(function Capture() {
 
   const onLayout = useCallback(
     (key: keyof typeof initialState) => (event: LayoutChangeEvent) => {
-      const {height} = event.nativeEvent.layout;
+      const { height } = event.nativeEvent.layout;
       if (!containerRefs.current[key]) containerRefs.current[key] = height;
-      const {container, button} = containerRefs.current;
+      const { container, button } = containerRefs.current;
       if (container > 0 && button > 0 && !containerHeight) {
         const dimensions = container - button;
         setContainerHeight(dimensions);
@@ -48,7 +48,8 @@ export const Capture = memo(function Capture() {
     <Screen onRightPress={showSearchBar} rightIcon="magnify" title="Plan">
       <KeyboardHandler
         backgroundColor={color.background.secondary}
-        onLayout={onLayout('container')}>
+        onLayout={onLayout('container')}
+      >
         <List
           footer={
             <Card onLayout={onLayout('button')}>

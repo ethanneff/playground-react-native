@@ -1,8 +1,8 @@
-import {createSelector} from 'reselect';
-import {RootAction, RootState} from 'root-types';
-import {createAction, createCustomAction, getType} from 'typesafe-actions';
-import {v4} from 'uuid';
-import {logout} from '../../../../redux/Auth';
+import { createSelector } from 'reselect';
+import { RootAction, RootState } from 'root-types';
+import { createAction, createCustomAction, getType } from 'typesafe-actions';
+import { v4 } from 'uuid';
+import { logout } from '../../../../redux/Auth';
 
 /* ACTIONS */
 export const createQuestionnaire = createCustomAction(
@@ -119,7 +119,7 @@ export const questionnairesReducer = (
         ...state,
         items: Object.keys(state.items).reduce(
           (acc, key) =>
-            key !== action.payload ? {...acc, [key]: state.items[key]} : acc,
+            key !== action.payload ? { ...acc, [key]: state.items[key] } : acc,
           {},
         ),
         selected:

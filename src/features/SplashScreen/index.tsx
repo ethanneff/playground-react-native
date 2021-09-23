@@ -1,4 +1,4 @@
-import React, {memo, ReactNode, useEffect, useState} from 'react';
+import React, { memo, ReactNode, useEffect, useState } from 'react';
 import {
   Animated,
   Easing,
@@ -6,9 +6,9 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import {MaskedView} from '../../conversions';
-import {useDriver} from '../../features/Animation';
-import {getSmallestDimension, useRootSelector} from '../../redux';
+import { MaskedView } from '../../conversions';
+import { useDriver } from '../../features/Animation';
+import { getSmallestDimension, useRootSelector } from '../../redux';
 
 // TODO: convert to svg, remove mask, fade in and out
 
@@ -64,23 +64,23 @@ export const SplashScreen = memo(
       complete: false,
     });
     const width = smallest * 4;
-    const {imageScale, fade, bleed} = getInterpolate(state.progress);
+    const { imageScale, fade, bleed } = getInterpolate(state.progress);
     const primaryColorStyles = [
       StyleSheet.absoluteFill,
-      {backgroundColor: primaryColor},
+      { backgroundColor: primaryColor },
       fade,
     ];
-    const imageStyles = [{width, height: width}, imageScale];
-    const childrenStyles = [{flex: 1}, bleed];
+    const imageStyles = [{ width, height: width }, imageScale];
+    const childrenStyles = [{ flex: 1 }, bleed];
     const backgroundColorStyles = [
       StyleSheet.absoluteFill,
-      {backgroundColor},
+      { backgroundColor },
       fade,
     ];
     const styles = StyleSheet.create({
-      centered: {alignItems: 'center', flex: 1, justifyContent: 'center'},
-      container: {backgroundColor, flex: 1},
-      flex: {flex: 1},
+      centered: { alignItems: 'center', flex: 1, justifyContent: 'center' },
+      container: { backgroundColor, flex: 1 },
+      flex: { flex: 1 },
     });
 
     useEffect(() => {
@@ -90,7 +90,7 @@ export const SplashScreen = memo(
         useNativeDriver,
         delay,
         easing: Easing.in(Easing.cubic),
-      }).start(() => setState(p => ({...p, complete: true})));
+      }).start(() => setState(p => ({ ...p, complete: true })));
     }, [delay, duration, state.progress, useNativeDriver]);
 
     return (
@@ -102,7 +102,8 @@ export const SplashScreen = memo(
               <Animated.Image source={source} style={imageStyles} />
             </Animated.View>
           }
-          style={styles.flex}>
+          style={styles.flex}
+        >
           <Animated.View style={backgroundColorStyles} />
           <Animated.View style={childrenStyles}>{children}</Animated.View>
         </MaskedView>

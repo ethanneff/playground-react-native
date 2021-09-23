@@ -1,6 +1,6 @@
-import {FirebaseAuthTypes} from '@react-native-firebase/auth';
-import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
-import {Platform, TextInput as OriginalTextInput} from 'react-native';
+import { FirebaseAuthTypes } from '@react-native-firebase/auth';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { Platform, TextInput as OriginalTextInput } from 'react-native';
 import {
   ActivityIndicator,
   Button,
@@ -10,8 +10,8 @@ import {
   TextInput,
   TouchableOpacity,
 } from '../../../../components';
-import {padding, useAuth, useColor} from '../../../../features';
-import {ModalHeader} from '../../components';
+import { padding, useAuth, useColor } from '../../../../features';
+import { ModalHeader } from '../../components';
 
 type Props = {
   onBackgroundPress: () => void;
@@ -51,9 +51,10 @@ const SignInButton = memo(function SignInButton({
         padding: padding(2),
         marginBottom: padding(margin ? 4 : 0),
         borderRadius: padding(2),
-      }}>
+      }}
+    >
       <Icon name={icon} />
-      <Text style={{paddingLeft: padding(2)}} title={title} type="button" />
+      <Text style={{ paddingLeft: padding(2) }} title={title} type="button" />
     </TouchableOpacity>
   );
 });
@@ -119,7 +120,7 @@ export const Login = memo(function Login({
     onPasswordReset,
     onAnonymous,
   } = useAuth();
-  const {type, error, user} = response;
+  const { type, error, user } = response;
   const loading = type === 'loading';
   const successful = useRef(false);
   const form = useRef<Ref>(initialRef);
@@ -130,7 +131,7 @@ export const Login = memo(function Login({
 
   const onFormChange = useCallback(
     (key: keyof Ref) => (val: string) => {
-      form.current = {...form.current, [key]: val};
+      form.current = { ...form.current, [key]: val };
     },
     [],
   );
@@ -147,7 +148,7 @@ export const Login = memo(function Login({
   );
 
   const onEye = useCallback(() => {
-    setState(p => ({...p, eye: !p.eye}));
+    setState(p => ({ ...p, eye: !p.eye }));
     passwordRef.current?.focus();
   }, []);
 
@@ -161,7 +162,7 @@ export const Login = memo(function Login({
   );
 
   const onScreenChange = useCallback(
-    (screen: Screen) => () => setState(p => ({...p, screen})),
+    (screen: Screen) => () => setState(p => ({ ...p, screen })),
     [],
   );
 
@@ -210,7 +211,7 @@ export const Login = memo(function Login({
               onSubmitEditing={onSubmitEditing('phone')}
               placeholder="Phone number"
               returnKeyType="send"
-              style={{marginBottom: padding(4)}}
+              style={{ marginBottom: padding(4) }}
               value=""
             />
             <Button
@@ -229,12 +230,12 @@ export const Login = memo(function Login({
             />
             <Text
               center
-              style={{paddingBottom: padding(4)}}
+              style={{ paddingBottom: padding(4) }}
               title="Please enter the email address associated with your account."
             />
             <Text
               center
-              style={{paddingBottom: padding(4)}}
+              style={{ paddingBottom: padding(4) }}
               title="We'll send you an email with your login email as well as a password reset instructions."
             />
             <TextInput
@@ -247,7 +248,7 @@ export const Login = memo(function Login({
               onSubmitEditing={onSubmitEditing('email')}
               placeholder="Email address"
               returnKeyType="send"
-              style={{marginBottom: padding(4)}}
+              style={{ marginBottom: padding(4) }}
               textContentType="username"
               value=""
             />
@@ -276,7 +277,7 @@ export const Login = memo(function Login({
               onSubmitEditing={onSubmitEditing('email')}
               placeholder="Email address"
               returnKeyType="next"
-              style={{marginBottom: padding(4)}}
+              style={{ marginBottom: padding(4) }}
               textContentType="username"
               value=""
             />
@@ -285,19 +286,19 @@ export const Login = memo(function Login({
               backgroundColor="secondary"
               blurOnSubmit={false}
               editable={!loading}
-              icons={[{name: eyeIcon, onPress: onEye, focus: true}]}
+              icons={[{ name: eyeIcon, onPress: onEye, focus: true }]}
               onChangeText={onFormChange('password')}
               onRef={passwordRef}
               onSubmitEditing={onSubmitEditing('password')}
               placeholder="Password"
               returnKeyType="done"
               secureTextEntry={!state.eye}
-              style={{marginBottom: padding(4)}}
+              style={{ marginBottom: padding(4) }}
               textContentType="password"
               value=""
             />
             <Button
-              buttonStyle={{marginBottom: padding(4)}}
+              buttonStyle={{ marginBottom: padding(4) }}
               center
               color="accent"
               disabled={loading}
@@ -331,7 +332,7 @@ export const Login = memo(function Login({
               onSubmitEditing={onSubmitEditing('email')}
               placeholder="Email address"
               returnKeyType="next"
-              style={{marginBottom: padding(4)}}
+              style={{ marginBottom: padding(4) }}
               textContentType="username"
               value=""
             />
@@ -340,19 +341,19 @@ export const Login = memo(function Login({
               backgroundColor="primaryA"
               blurOnSubmit={false}
               editable={!loading}
-              icons={[{name: eyeIcon, onPress: onEye, focus: true}]}
+              icons={[{ name: eyeIcon, onPress: onEye, focus: true }]}
               onChangeText={onFormChange('password')}
               onRef={passwordRef}
               onSubmitEditing={onSubmitEditing('password')}
               placeholder="Password"
               returnKeyType="done"
               secureTextEntry={!state.eye}
-              style={{marginBottom: padding(4)}}
+              style={{ marginBottom: padding(4) }}
               textContentType="password"
               value=""
             />
             <Button
-              buttonStyle={{marginBottom: padding(4)}}
+              buttonStyle={{ marginBottom: padding(4) }}
               center
               color="accent"
               lowercase

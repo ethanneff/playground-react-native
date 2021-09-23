@@ -1,7 +1,7 @@
-import React, {memo, useCallback, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {ActivityIndicator} from '../ActivityIndicator';
-import {FasterImage} from './FasterImage';
+import React, { memo, useCallback, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { ActivityIndicator } from '../ActivityIndicator';
+import { FasterImage } from './FasterImage';
 
 type Props = {
   uri: string;

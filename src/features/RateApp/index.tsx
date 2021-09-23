@@ -1,9 +1,9 @@
-import React, {memo, useCallback, useMemo, useRef, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
-import Rate, {AndroidMarket} from 'react-native-rate';
-import {Button, Input, Modal, Text} from '../../components';
-import {padding} from '../../features/Config';
-import {Rating} from './Rating';
+import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import Rate, { AndroidMarket } from 'react-native-rate';
+import { Button, Input, Modal, Text } from '../../components';
+import { padding } from '../../features/Config';
+import { Rating } from './Rating';
 
 type ModalState = 'default' | 'thank you' | 'review' | 'feedback';
 type State = {
@@ -38,13 +38,13 @@ type Props = {
   onComplete: (completeState: CompleteState) => void;
 };
 
-export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
+export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
   const ratingRef = useRef(0);
   const navigatedToAppStore = useRef(false);
   const [form, setForm] = useState<State>(initialState);
   const styles = StyleSheet.create({
-    modal: {padding: padding(6)},
-    title: {paddingBottom: padding(4)},
+    modal: { padding: padding(6) },
+    title: { paddingBottom: padding(4) },
   });
   const completeState = useMemo(
     () => ({
@@ -62,25 +62,25 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
 
   const handleReviewApp = useCallback(() => {
     handleReset();
-    onComplete({...completeState, navigatedToAppStore: true});
+    onComplete({ ...completeState, navigatedToAppStore: true });
     Rate.rate(ratingOptions, () => undefined);
   }, [completeState, onComplete, handleReset]);
 
   const handleRating = useCallback((rating: number) => {
     ratingRef.current = rating;
-    setForm(prev => ({...prev, rating}));
+    setForm(prev => ({ ...prev, rating }));
     setTimeout(() => {
       const success = ratingRef.current >= ratingMin;
-      setForm(prev => ({...prev, modal: success ? 'review' : 'feedback'}));
+      setForm(prev => ({ ...prev, modal: success ? 'review' : 'feedback' }));
     }, 300);
   }, []);
 
   const handleTextChange = useCallback((feedback: string) => {
-    setForm(prev => ({...prev, feedback}));
+    setForm(prev => ({ ...prev, feedback }));
   }, []);
 
   const handleFeedbackSubmit = useCallback(() => {
-    setForm(prev => ({...prev, modal: 'thank you'}));
+    setForm(prev => ({ ...prev, modal: 'thank you' }));
   }, []);
 
   const handleComplete = useCallback(() => {
@@ -102,7 +102,7 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
             style={styles.title}
             title="Do you mind reviewing us on the app store?"
           />
-          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
             <Button
               center
               color="secondary"
@@ -136,7 +136,7 @@ export const RateApp = memo(function RateAppMemo({onComplete}: Props) {
             placeholder="How can we improve?"
             value={form.feedback}
           />
-          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
             <Button
               center
               color="secondary"

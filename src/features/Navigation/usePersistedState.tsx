@@ -4,8 +4,8 @@ import {
   NavigationContainerRef,
   NavigationState,
 } from '@react-navigation/native';
-import {useCallback, useEffect, useRef, useState} from 'react';
-import {Linking, Platform} from 'react-native';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { Linking, Platform } from 'react-native';
 
 const persistanceKey = 'navigation';
 
@@ -71,5 +71,5 @@ export const usePersistedState = (): UsePersistedState => {
     restoreState();
   }, [isReady, restoreState]);
 
-  return {isReady, initialState, onStateChange, onReady, onRef};
+  return { isReady, initialState, onStateChange, onReady, onRef };
 };

@@ -1,13 +1,13 @@
-import React, {memo, useCallback, useRef} from 'react';
-import {Animated, PanResponder, StyleSheet, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {useDriver} from '../../features/Animation';
-import {padding} from '../../features/Config';
-import {SoundManager} from '../../features/Sound';
-import {useColor} from '../../features/Theme';
-import {Icon} from '../Icon';
-import {Text} from '../Text';
-import {TouchableOpacity} from '../TouchableOpacity';
+import React, { memo, useCallback, useRef } from 'react';
+import { Animated, PanResponder, StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useDriver } from '../../features/Animation';
+import { padding } from '../../features/Config';
+import { SoundManager } from '../../features/Sound';
+import { useColor } from '../../features/Theme';
+import { Icon } from '../Icon';
+import { Text } from '../Text';
+import { TouchableOpacity } from '../TouchableOpacity';
 
 type NotificationProps = {
   title: string;
@@ -19,7 +19,7 @@ type NotificationProps = {
   onBackgroundPress?: () => void;
 };
 
-const initialPosition = {x: 0, y: 0};
+const initialPosition = { x: 0, y: 0 };
 export const ActionSheet = memo(function ActionSheet({
   title,
   height = padding(18),
@@ -31,7 +31,7 @@ export const ActionSheet = memo(function ActionSheet({
 }: NotificationProps) {
   const color = useColor();
   const styles = StyleSheet.create({
-    flex: {flex: 1},
+    flex: { flex: 1 },
     modal: {
       alignItems: 'center',
       backgroundColor: color.background.primaryA,
@@ -40,7 +40,7 @@ export const ActionSheet = memo(function ActionSheet({
       padding: padding(4),
       width: '100%',
     },
-    notification: {elevation: 2, zIndex: 2},
+    notification: { elevation: 2, zIndex: 2 },
     notificationSafeArea: {
       backgroundColor: color.background.primaryA,
       height,
@@ -70,7 +70,7 @@ export const ActionSheet = memo(function ActionSheet({
 
       const min = thresholdPercent * height * -1;
       const success = g.dy < min;
-      const toValue = success ? {x: 0, y: -height * 2} : initialPosition;
+      const toValue = success ? { x: 0, y: -height * 2 } : initialPosition;
       Animated.spring(pan, {
         toValue,
         useNativeDriver,
@@ -99,7 +99,7 @@ export const ActionSheet = memo(function ActionSheet({
     (_, g) => {
       if (g.dy > 0 || noSwipe) return;
 
-      const toValue = {x: 0, y: g.dy};
+      const toValue = { x: 0, y: g.dy };
       Animated.spring(pan, {
         toValue,
         useNativeDriver,

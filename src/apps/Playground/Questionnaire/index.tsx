@@ -1,8 +1,8 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useRef, useState} from 'react';
-import {Dimensions, FlatList, View} from 'react-native';
-import {Button, Screen, Text} from '../../../components';
-import {Questionnaires} from './screens/Questionnaires';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useRef, useState } from 'react';
+import { Dimensions, FlatList, View } from 'react-native';
+import { Button, Screen, Text } from '../../../components';
+import { Questionnaires } from './screens/Questionnaires';
 
 const data = [
   {
@@ -28,20 +28,20 @@ const data = [
     title: 'What type of counseling are you looking for',
     type: 'radio',
   },
-  {key: '2', title: '2'},
-  {key: '3', title: '3'},
-  {key: '4', title: '4'},
-  {key: '5', title: '5'},
+  { key: '2', title: '2' },
+  { key: '3', title: '3' },
+  { key: '4', title: '4' },
+  { key: '5', title: '5' },
 ];
 const width = Dimensions.get('window').width;
-const viewabilityConfig = {itemVisiblePercentThreshold: 50};
+const viewabilityConfig = { itemVisiblePercentThreshold: 50 };
 
 export const Questionnaire = memo(function Questionnaire() {
   const [output, setOutput] = useState<any>({});
   const currentIndex = useRef(0);
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const tableViewRef = useRef<FlatList | null>(null);
-  const handleViewableItemsChanged = useCallback(({viewableItems}: any) => {
+  const handleViewableItemsChanged = useCallback(({ viewableItems }: any) => {
     currentIndex.current = viewableItems[0]?.index || 0;
   }, []);
 
@@ -89,12 +89,12 @@ export const Questionnaire = memo(function Questionnaire() {
   );
 
   const renderItem = useCallback(
-    ({item}) => {
-      let items: any = <View style={{flex: 1}} />;
+    ({ item }) => {
+      let items: any = <View style={{ flex: 1 }} />;
 
       if (item.choices)
         items = (
-          <View style={{flex: 1}}>
+          <View style={{ flex: 1 }}>
             {item.choices.map((choice: any) => {
               return (
                 <Button
@@ -108,14 +108,15 @@ export const Questionnaire = memo(function Questionnaire() {
         );
 
       return (
-        <View style={{width: width}}>
+        <View style={{ width: width }}>
           <Text title={item.title} />
           {items}
           <View
             style={{
               flexDirection: 'row',
               justifyContent: 'space-around',
-            }}>
+            }}
+          >
             <Button onPress={updateProgress(-1)} title="prev" />
             <Button onPress={updateProgress(1)} title="next" />
             <Button onPress={updateProgress(2)} title="next2" />

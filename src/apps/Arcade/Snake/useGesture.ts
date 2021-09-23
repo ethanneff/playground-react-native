@@ -1,4 +1,4 @@
-import {MutableRefObject, useRef} from 'react';
+import { MutableRefObject, useRef } from 'react';
 import {
   GestureResponderHandlers,
   PanResponder,
@@ -11,7 +11,7 @@ type Props = {
   noReverse?: boolean;
 };
 
-const inverse: {[key: string]: Direction} = {
+const inverse: { [key: string]: Direction } = {
   left: 'right',
   right: 'left',
   up: 'down',
@@ -38,5 +38,5 @@ export const useGesture = ({
     },
   });
 
-  return {direction, panHandlers: panResponder.panHandlers};
+  return { direction, panHandlers: panResponder.panHandlers };
 };

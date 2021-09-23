@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, { memo } from 'react';
 import {
   ActivityIndicator as Original,
   StyleProp,
@@ -6,7 +6,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {useColor} from '../../features/Theme';
+import { useColor } from '../../features/Theme';
 
 type Props = {
   size?: number | 'small' | 'large';

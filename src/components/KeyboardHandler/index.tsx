@@ -1,6 +1,6 @@
-import React, {memo, ReactElement, useCallback} from 'react';
-import {Keyboard, LayoutChangeEvent, View} from 'react-native';
-import {TouchableWithoutFeedback} from '../../conversions';
+import React, { memo, ReactElement, useCallback } from 'react';
+import { Keyboard, LayoutChangeEvent, View } from 'react-native';
+import { TouchableWithoutFeedback } from '../../conversions';
 
 type HandleKeyboardProps = {
   onLayout: (event: LayoutChangeEvent) => void;
@@ -18,8 +18,9 @@ export const KeyboardHandler = memo(function KeyboardHandler({
     <TouchableWithoutFeedback
       onLayout={onLayout}
       onPress={onDismissKeyboard}
-      style={{height: '100%'}}>
-      <View style={{flex: 1, backgroundColor}}>{children}</View>
+      style={{ height: '100%' }}
+    >
+      <View style={{ flex: 1, backgroundColor }}>{children}</View>
     </TouchableWithoutFeedback>
   );
 });

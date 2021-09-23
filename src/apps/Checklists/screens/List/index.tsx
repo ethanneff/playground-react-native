@@ -1,8 +1,8 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
-import {FlatList, ListRenderItem, View} from 'react-native';
-import {Button, Icon, Screen, TouchableOpacity} from '../../../../components';
-import {useRootDispatch, useRootSelector} from '../../../../redux';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback } from 'react';
+import { FlatList, ListRenderItem, View } from 'react-native';
+import { Button, Icon, Screen, TouchableOpacity } from '../../../../components';
+import { useRootDispatch, useRootSelector } from '../../../../redux';
 import {
   ChecklistItem,
   getCurrentActiveChecklistItemsOrderByCreatedAt,
@@ -12,7 +12,7 @@ import {
 } from '../../models';
 
 export default memo(function Checklist() {
-  const {navigate} = useNavigation<any>();
+  const { navigate } = useNavigation<any>();
   const dispatch = useRootDispatch();
   const items = useRootSelector(getCurrentActiveChecklistItemsOrderByCreatedAt);
 
@@ -33,8 +33,8 @@ export default memo(function Checklist() {
   );
 
   const renderItem = useCallback<ListRenderItem<ChecklistItem>>(
-    ({item}) => (
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+    ({ item }) => (
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Icon color="positive" name="checkbox-marked-circle" />
         <TouchableOpacity onPress={handleRemove(item.id)}>
           <Icon color="negative" name="close-circle" />

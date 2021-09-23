@@ -1,13 +1,13 @@
-import React, {memo, useContext} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {DriftContext} from './Context';
-import {TrackPositionWithColor} from './types';
+import React, { memo, useContext } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { DriftContext } from './Context';
+import { TrackPositionWithColor } from './types';
 
 interface TrackProps {
   track: TrackPositionWithColor;
 }
 
-const Track = memo(function TrackMemo({track}: TrackProps) {
+const Track = memo(function TrackMemo({ track }: TrackProps) {
   const size = track.size / 4;
   const styles = StyleSheet.create({
     tracks: {
@@ -40,7 +40,7 @@ const Track = memo(function TrackMemo({track}: TrackProps) {
 });
 
 export const Tracks = memo(function TracksMemo() {
-  const {state} = useContext(DriftContext);
+  const { state } = useContext(DriftContext);
   return (
     <>
       {state.tracks.map((track: TrackPositionWithColor, index: number) => (

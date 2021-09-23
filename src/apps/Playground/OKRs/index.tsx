@@ -1,18 +1,19 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo} from 'react';
-import {Card, Screen, Text} from '../../../components';
-import {ScrollView} from '../../../conversions';
-import {padding, useColor} from '../../../features';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo } from 'react';
+import { Card, Screen, Text } from '../../../components';
+import { ScrollView } from '../../../conversions';
+import { padding, useColor } from '../../../features';
 
 export const OKRs = memo(function PlaygroundOKRs() {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const color = useColor();
 
   return (
     <Screen dropShadow onLeftPress={goBack} title="OKRs">
       <ScrollView
-        contentContainerStyle={{padding: padding(4)}}
-        style={{backgroundColor: color.background.secondary}}>
+        contentContainerStyle={{ padding: padding(4) }}
+        style={{ backgroundColor: color.background.secondary }}
+      >
         <Card>
           <Text title="Company" type="h6" />
           <Card>

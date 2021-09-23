@@ -1,7 +1,7 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
-import {FlatList, ListRenderItem, View} from 'react-native';
-import {Button, Screen} from '../../../components';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback } from 'react';
+import { FlatList, ListRenderItem, View } from 'react-native';
+import { Button, Screen } from '../../../components';
 import {
   changeTheme,
   Theme,
@@ -13,13 +13,13 @@ import {
 export const Settings = memo(function PortfolioSettings() {
   const dispatch = useRootDispatch();
   const currentTheme = useRootSelector(state => state.theme.currentTheme);
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const themePress = useCallback(
     (theme: Theme) => () => dispatch(changeTheme(theme)),
     [dispatch],
   );
   const renderItem = useCallback<ListRenderItem<Theme>>(
-    ({item}) => (
+    ({ item }) => (
       <View>
         <Button
           color={currentTheme === item ? 'positive' : 'primaryA'}

@@ -1,7 +1,7 @@
-import React, {memo, useCallback} from 'react';
-import {View} from 'react-native';
-import {Tag} from '../../../components';
-import {padding, useColor} from '../../../features';
+import React, { memo, useCallback } from 'react';
+import { View } from 'react-native';
+import { Tag } from '../../../components';
+import { padding, useColor } from '../../../features';
 
 export const TagGroup = memo(function TagGroup() {
   const color = useColor();
@@ -10,7 +10,7 @@ export const TagGroup = memo(function TagGroup() {
     <>
       {Object.keys(color.tag).map((c: any) =>
         c === 'statusBar' ? null : (
-          <View key={c} style={{margin: padding(1)}}>
+          <View key={c} style={{ margin: padding(1) }}>
             <Tag
               color={c}
               disabled={c === 'disabled'}

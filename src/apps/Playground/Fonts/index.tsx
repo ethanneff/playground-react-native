@@ -1,16 +1,16 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo} from 'react';
-import {Screen, Text} from '../../../components';
-import {ScrollView} from '../../../conversions';
-import {useColor} from '../../../features';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo } from 'react';
+import { Screen, Text } from '../../../components';
+import { ScrollView } from '../../../conversions';
+import { useColor } from '../../../features';
 
 export const Fonts = memo(function PlaygroundFonts() {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const color = useColor();
 
   return (
     <Screen dropShadow onLeftPress={goBack} title="Fonts">
-      <ScrollView style={{backgroundColor: color.background.secondary}}>
+      <ScrollView style={{ backgroundColor: color.background.secondary }}>
         <Text
           title="H1: The quick brown fox jumps over the lazy dog."
           type="h1"

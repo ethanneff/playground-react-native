@@ -1,6 +1,6 @@
-import React, {memo, useCallback, useRef} from 'react';
-import {Animated, StyleProp, StyleSheet, TextStyle} from 'react-native';
-import {useDriver} from '../../features/Animation';
+import React, { memo, useCallback, useRef } from 'react';
+import { Animated, StyleProp, StyleSheet, TextStyle } from 'react-native';
+import { useDriver } from '../../features/Animation';
 import {
   FontEmphasis,
   FontType,
@@ -8,8 +8,8 @@ import {
   getFontStyles,
   MonoMultiColor,
 } from '../../features/Config';
-import {SoundManager} from '../../features/Sound';
-import {useColor} from '../../features/Theme';
+import { SoundManager } from '../../features/Sound';
+import { useColor } from '../../features/Theme';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
 
@@ -57,7 +57,7 @@ export const Text = memo(function Text({
   const opacity = useRef(new Animated.Value(1)).current;
   const useNativeDriver = useDriver();
   const colorScheme = useColor();
-  const {fontSize, textColor} = getFontStyles({
+  const { fontSize, textColor } = getFontStyles({
     emphasis,
     type,
     inverse,
@@ -115,7 +115,7 @@ export const Text = memo(function Text({
     center && styles.center,
     centerVertically && styles.centerVertically,
     bold && styles.bold,
-    {opacity},
+    { opacity },
     invisible && styles.invisible,
     flex && styles.flex,
     style,
@@ -129,7 +129,8 @@ export const Text = memo(function Text({
       ellipsizeMode={ellipsizeMode}
       numberOfLines={numberOfLines}
       onPress={handlePress}
-      style={textStyle}>
+      style={textStyle}
+    >
       {text}
     </Animated.Text>
   );

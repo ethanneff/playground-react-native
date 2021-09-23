@@ -1,7 +1,7 @@
-import React, {memo} from 'react';
-import {StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
-import {Icon, Text, TouchableOpacity} from '../../../components';
-import {padding, useColor} from '../../../features';
+import React, { memo } from 'react';
+import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import { Icon, Text, TouchableOpacity } from '../../../components';
+import { padding, useColor } from '../../../features';
 
 type Props = {
   title: string;
@@ -59,7 +59,8 @@ export const Item = memo(function ReminderItem({
     <TouchableOpacity
       key={title}
       onPress={onPress}
-      style={[styles.button, style]}>
+      style={[styles.button, style]}
+    >
       <View style={styles.container}>
         <View style={styles.textContainer}>
           <Text style={styles.title} title={title} type="body1" />

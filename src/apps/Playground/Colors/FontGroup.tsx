@@ -1,19 +1,19 @@
-import React, {memo} from 'react';
-import {View} from 'react-native';
-import {Text} from '../../../components';
-import {FontEmphasis, fontSizes, padding} from '../../../features';
+import React, { memo } from 'react';
+import { View } from 'react-native';
+import { Text } from '../../../components';
+import { FontEmphasis, fontSizes, padding } from '../../../features';
 
 type FontGroupProps = {
   emphasis: FontEmphasis;
 };
 
-export const FontGroup = memo(function FontGroup({emphasis}: FontGroupProps) {
+export const FontGroup = memo(function FontGroup({ emphasis }: FontGroupProps) {
   return (
-    <View style={{flex: 1, alignItems: 'center'}}>
+    <View style={{ flex: 1, alignItems: 'center' }}>
       <Text
         bold
         center
-        style={{paddingBottom: padding(10)}}
+        style={{ paddingBottom: padding(10) }}
         title={emphasis}
         type="h6"
       />

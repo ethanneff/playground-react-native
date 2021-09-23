@@ -1,4 +1,4 @@
-import {DeepReadonly} from 'ts-essentials';
+import { DeepReadonly } from 'ts-essentials';
 
 const operations = [
   [0, 1],

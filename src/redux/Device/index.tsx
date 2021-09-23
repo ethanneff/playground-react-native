@@ -1,7 +1,7 @@
-import {AppState, AppStateStatus, ScaledSize} from 'react-native';
-import {RootAction} from 'root-types';
-import {createAction, getType} from 'typesafe-actions';
-import {logout} from '../Auth';
+import { AppState, AppStateStatus, ScaledSize } from 'react-native';
+import { RootAction } from 'root-types';
+import { createAction, getType } from 'typesafe-actions';
+import { logout } from '../Auth';
 
 /* ACTIONS */
 export const loadDevice = createAction('device/LOAD')<DeviceInfo>();

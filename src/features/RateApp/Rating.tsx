@@ -1,7 +1,7 @@
-import React, {memo, useCallback} from 'react';
-import {View} from 'react-native';
-import {Icon, TouchableOpacity} from '../../components';
-import {MonoMultiColor, padding} from '../../features/Config';
+import React, { memo, useCallback } from 'react';
+import { View } from 'react-native';
+import { Icon, TouchableOpacity } from '../../components';
+import { MonoMultiColor, padding } from '../../features/Config';
 
 type Props = {
   size: number;
@@ -36,7 +36,8 @@ export const Rating = memo(function RatingMemo({
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: padding(4),
-      }}>
+      }}
+    >
       {Array(count)
         .fill(0)
         .map((_, index) => (

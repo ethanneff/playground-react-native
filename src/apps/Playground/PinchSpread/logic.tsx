@@ -18,7 +18,7 @@ export class GestureHandler {
   finish: Touches = {};
   start: Touches = {};
 
-  constructor({minTouches = 2} = {}) {
+  constructor({ minTouches = 2 } = {}) {
     this.minTouches = minTouches;
   }
 
@@ -71,7 +71,7 @@ export class GestureHandler {
     );
   }
 
-  determineCenter(points: Touches): {x: number; y: number} {
+  determineCenter(points: Touches): { x: number; y: number } {
     const numRecordedTouched = Object.keys(points).length;
     let x = 0;
     let y = 0;
@@ -80,7 +80,7 @@ export class GestureHandler {
       x += point.x;
       y += point.x;
     }
-    return {x: x / numRecordedTouched, y: y / numRecordedTouched};
+    return { x: x / numRecordedTouched, y: y / numRecordedTouched };
   }
 
   determineOutcome(): Outcome {
@@ -110,6 +110,6 @@ export class GestureHandler {
       pinch = isPinch;
       spread = isSpread;
     }
-    return {spread, pinch};
+    return { spread, pinch };
   }
 }

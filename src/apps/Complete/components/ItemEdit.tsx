@@ -1,8 +1,8 @@
-import React, {memo, useCallback} from 'react';
-import {Keyboard, View} from 'react-native';
-import {TextInput, TextInputIcon} from '../../../components';
-import {Card} from './Card';
-import {ItemDetailHeader} from './ItemDetailHeader';
+import React, { memo, useCallback } from 'react';
+import { Keyboard, View } from 'react-native';
+import { TextInput, TextInputIcon } from '../../../components';
+import { Card } from './Card';
+import { ItemDetailHeader } from './ItemDetailHeader';
 
 type OnSubmit = (text: string) => void;
 
@@ -26,7 +26,7 @@ export const ItemEdit = memo(function ItemEdit({
 
   const icons = useCallback(
     (type: string): TextInputIcon[] => [
-      {name: 'close', onPress: onClose, focus: true, reset: true},
+      { name: 'close', onPress: onClose, focus: true, reset: true },
       {
         name: 'send',
         onPress: onSubmit(type),

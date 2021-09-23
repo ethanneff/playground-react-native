@@ -1,8 +1,8 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import axios, {AxiosRequestConfig} from 'axios';
-import {useCallback, useEffect, useRef} from 'react';
-import {AnyAction, Dispatch, MiddlewareAPI} from 'redux';
-import {RootAction, RootStore} from 'root-types';
+import axios, { AxiosRequestConfig } from 'axios';
+import { useCallback, useEffect, useRef } from 'react';
+import { AnyAction, Dispatch, MiddlewareAPI } from 'redux';
+import { RootAction, RootStore } from 'root-types';
 
 const enabled = false; // TODO: turn on
 const refreshTimeout = 2000;
@@ -10,7 +10,7 @@ const timeout = 10000;
 const retryDefaultTimeout = 250;
 
 type RootActionTypes = RootAction['type'] | 'sync/download';
-type ReduxWhitelist = {[key in RootActionTypes]?: 1};
+type ReduxWhitelist = { [key in RootActionTypes]?: 1 };
 const reduxWhiteList: ReduxWhitelist = {
   'complete/item/createItem': 1,
   'complete/item/updateItem': 1,
@@ -94,7 +94,7 @@ export const useSync = (): void => {
       const len = queue.length;
       const url = 'https://jsonplaceholder.typicode.com/posts';
       const method = 'POST';
-      const payload: AxiosRequestConfig = {method, url, data: queue, timeout};
+      const payload: AxiosRequestConfig = { method, url, data: queue, timeout };
       const res = await axios(payload);
       processSync(res.data);
       queue.splice(0, len);

@@ -1,11 +1,11 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
-import {Button, Input, Screen, Text, TextInput} from '../../../components';
-import {KeyboardAwareScrollView} from '../../../conversions';
-import {padding, useColor} from '../../../features';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useState } from 'react';
+import { Button, Input, Screen, Text, TextInput } from '../../../components';
+import { KeyboardAwareScrollView } from '../../../conversions';
+import { padding, useColor } from '../../../features';
 
 export const Login = memo(function Login() {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const color = useColor();
 
   const [form, setForm] = useState({
@@ -17,13 +17,13 @@ export const Login = memo(function Login() {
 
   const handleChange = useCallback(
     (key: string) => (val: string) => {
-      setForm(prev => ({...prev, [key]: val}));
+      setForm(prev => ({ ...prev, [key]: val }));
     },
     [],
   );
 
   const handleSubmit = useCallback(() => {
-    setForm(prev => ({...prev, error: 'Invalid Email'}));
+    setForm(prev => ({ ...prev, error: 'Invalid Email' }));
   }, []);
 
   return (
@@ -33,7 +33,8 @@ export const Login = memo(function Login() {
         style={{
           backgroundColor: color.background.secondary,
           padding: padding(4),
-        }}>
+        }}
+      >
         <Text center title="border" type="h3" />
         <Input
           error={form.error}

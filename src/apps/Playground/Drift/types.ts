@@ -5,9 +5,9 @@ export type ColorChoice =
   | 'violet'
   | 'lightgrey';
 
-export type TrackPosition = {x: number; y: number; size: number};
+export type TrackPosition = { x: number; y: number; size: number };
 
-export type TrackPositionWithColor = TrackPosition & {color: ColorChoice};
+export type TrackPositionWithColor = TrackPosition & { color: ColorChoice };
 
 export type CanvasDimensions = {
   x: number;

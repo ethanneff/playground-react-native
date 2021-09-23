@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useRef} from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 type Props = {
   precision?: number;
@@ -8,7 +8,7 @@ type Props = {
 
 type State = 'off' | 'on';
 
-type UseClock = {start: () => void; stop: () => void};
+type UseClock = { start: () => void; stop: () => void };
 
 export const useClock = ({
   precision = 16,
@@ -47,5 +47,5 @@ export const useClock = ({
     return () => stop();
   }, [stop]);
 
-  return {stop, start};
+  return { stop, start };
 };

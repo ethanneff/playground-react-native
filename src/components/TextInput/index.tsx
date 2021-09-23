@@ -21,10 +21,10 @@ import {
   MonoMultiColor,
   padding,
 } from '../../features/Config';
-import {useColor} from '../../features/Theme';
-import {Icon} from '../Icon';
-import {TouchableOpacity} from '../TouchableOpacity';
-import {PointerEvents, TextContentType} from './types';
+import { useColor } from '../../features/Theme';
+import { Icon } from '../Icon';
+import { TouchableOpacity } from '../TouchableOpacity';
+import { PointerEvents, TextContentType } from './types';
 
 export type TextInputIcon = {
   name: string;
@@ -100,7 +100,7 @@ export const TextInput = memo(function TextInput({
   const [text, setText] = useState(value);
   const colorScheme = useColor();
   const backColor = colorScheme.background[backgroundColor || 'primaryA'];
-  const {fontSize, textColor} = getFontStyles({
+  const { fontSize, textColor } = getFontStyles({
     emphasis,
     type,
     color,
@@ -155,7 +155,7 @@ export const TextInput = memo(function TextInput({
   }, [value]);
 
   return (
-    <View style={[{flex: 1}, style]}>
+    <View style={[{ flex: 1 }, style]}>
       <View
         style={{
           flexDirection: 'row',
@@ -171,7 +171,8 @@ export const TextInput = memo(function TextInput({
           borderRightColor: backColor,
           borderTopColor: backColor,
           borderWidth: 2,
-        }}>
+        }}
+      >
         <Original
           autoCorrect={autoCorrect}
           blurOnSubmit={blurOnSubmit}
@@ -202,7 +203,7 @@ export const TextInput = memo(function TextInput({
           value={text}
         />
         {icons.length > 0 && ( // TODO: refactor to declarative
-          <View style={{flexDirection: 'row'}}>
+          <View style={{ flexDirection: 'row' }}>
             {icons.map(icon =>
               icon.hidden ||
               (focus && !icon.focus) ||
@@ -210,7 +211,8 @@ export const TextInput = memo(function TextInput({
                 <TouchableOpacity
                   disabled={icon.required && text.trim().length === 0}
                   key={`${icon.name}-focus`}
-                  onPress={onIconPressInternal(icon)}>
+                  onPress={onIconPressInternal(icon)}
+                >
                   <Icon
                     color={icon.color}
                     disabled={icon.required && text.trim().length === 0}

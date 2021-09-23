@@ -1,18 +1,18 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
-import {Button, Input, Screen} from '../../../components';
-import {padding, useColor} from '../../../features';
-import {PortfolioNavigation} from '../types';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useState } from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { Button, Input, Screen } from '../../../components';
+import { padding, useColor } from '../../../features';
+import { PortfolioNavigation } from '../types';
 
 const styles = StyleSheet.create({
-  row: {flexDirection: 'row', justifyContent: 'space-around'},
+  row: { flexDirection: 'row', justifyContent: 'space-around' },
 });
 
 export const Login = memo(function PortfolioLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const {goBack, navigate} = useNavigation<PortfolioNavigation>();
+  const { goBack, navigate } = useNavigation<PortfolioNavigation>();
   const handlePassword = useCallback((val: string) => setPassword(val), []);
   const handleEmail = useCallback((val: string) => setEmail(val), []);
 
@@ -26,7 +26,8 @@ export const Login = memo(function PortfolioLogin() {
         style={{
           padding: padding(4),
           backgroundColor: color.background.secondary,
-        }}>
+        }}
+      >
         <Input
           onChangeText={handleEmail}
           placeholder="example@gmail.com"

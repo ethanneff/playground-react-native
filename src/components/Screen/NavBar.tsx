@@ -1,9 +1,9 @@
-import React, {memo} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {padding} from '../../features/Config';
-import {useColor, useDropShadow} from '../../features/Theme';
-import {Text} from '../Text';
-import {NavButton} from './NavButton';
+import React, { memo } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { padding } from '../../features/Config';
+import { useColor, useDropShadow } from '../../features/Theme';
+import { Text } from '../Text';
+import { NavButton } from './NavButton';
 
 type Props = {
   title?: string;

@@ -5,13 +5,17 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import {RefreshControl, ScrollViewProps, ViewStyle} from 'react-native';
-import {DataProvider, LayoutProvider, RecyclerListView} from 'recyclerlistview';
+import { RefreshControl, ScrollViewProps, ViewStyle } from 'react-native';
+import {
+  DataProvider,
+  LayoutProvider,
+  RecyclerListView,
+} from 'recyclerlistview';
 import {
   RecyclerListViewProps,
   RecyclerListViewState,
 } from 'recyclerlistview/dist/reactnative/core/RecyclerListView';
-import {ActivityIndicator} from '../ActivityIndicator';
+import { ActivityIndicator } from '../ActivityIndicator';
 
 export type RecyclerFlatListRef = RecyclerListView<
   RecyclerListViewProps,
@@ -44,7 +48,7 @@ export const RecyclerFlatList = <T extends unknown>({
   loading,
   itemWidth,
   itemHeight,
-  style = {flex: 1},
+  style = { flex: 1 },
   onRef,
   horizontal,
   scrollViewProps = {

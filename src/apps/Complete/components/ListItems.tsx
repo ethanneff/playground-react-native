@@ -1,7 +1,7 @@
-import React, {memo, useCallback, useRef} from 'react';
-import {FlatList, ListRenderItem} from 'react-native';
-import {useRootSelector} from '../../../redux';
-import {ListItem} from './ListItem';
+import React, { memo, useCallback, useRef } from 'react';
+import { FlatList, ListRenderItem } from 'react-native';
+import { useRootSelector } from '../../../redux';
+import { ListItem } from './ListItem';
 
 type ListItemsProps = {
   parentItemId: string;
@@ -26,7 +26,7 @@ export const ListItems = memo(function ListItems({
   }, [list.length]);
 
   const onRenderItem: ListRenderItem<string> = useCallback(
-    ({item, index}) => (
+    ({ item, index }) => (
       <ListItem
         index={index}
         itemId={item}

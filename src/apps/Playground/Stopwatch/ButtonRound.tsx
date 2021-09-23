@@ -1,7 +1,7 @@
-import React, {memo, useCallback} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Text, TouchableOpacity} from '../../../components';
-import {MonoMultiColor, useColor} from '../../../features';
+import React, { memo, useCallback } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Text, TouchableOpacity } from '../../../components';
+import { MonoMultiColor, useColor } from '../../../features';
 
 interface RoundButtonProps {
   title: string;
@@ -51,7 +51,8 @@ export const ButtonRound = memo(function ButtonRound({
     <TouchableOpacity
       disabled={disabled}
       onPress={handlePress}
-      style={styles.button}>
+      style={styles.button}
+    >
       <View style={styles.buttonBorder}>
         <Text color={color} style={styles.buttonTitle} title={title} />
       </View>

@@ -1,5 +1,5 @@
-import React, {useCallback, useState} from 'react';
-import {FlatList, View} from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { FlatList, View } from 'react-native';
 import {
   Card,
   Icon,
@@ -7,7 +7,7 @@ import {
   Text,
   TouchableOpacity,
 } from '../../../../components';
-import {useRootDispatch, useRootSelector} from '../../../../redux';
+import { useRootDispatch, useRootSelector } from '../../../../redux';
 import {
   createQuestionnaire,
   getQuestionnaireArray,
@@ -38,20 +38,22 @@ export const Questionnaires = (): JSX.Element => {
     setActionSheet(state => !state);
   }, []);
   const renderItem = useCallback(
-    ({item}) => {
+    ({ item }) => {
       const length = item.questions.length;
       const subtitle = `${length} question${length === 1 ? '' : 's'}`;
       return (
         <Card
           onLongPress={handleLongPress(item.id)}
           onPress={handleItemPress(item.id)}
-          selected={selected === item.id}>
+          selected={selected === item.id}
+        >
           <View
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-            }}>
-            <View style={{flex: 0.9}}>
+            }}
+          >
+            <View style={{ flex: 0.9 }}>
               <Text title={item.title} type="h3" />
               <Text title={subtitle} type="caption" />
             </View>

@@ -1,9 +1,9 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Screen, TouchableOpacity} from '../../../components';
-import {useColor} from '../../../features';
-import {getSmallestDimension, useRootSelector} from '../../../redux';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Screen, TouchableOpacity } from '../../../components';
+import { useColor } from '../../../features';
+import { getSmallestDimension, useRootSelector } from '../../../redux';
 
 const getRandom = (max: number) => {
   return Math.floor(Math.random() * max);
@@ -20,10 +20,10 @@ const getInitialState = (rows: number, cols: number, gems: Gem[]): Board => {
   return col;
 };
 
-type Vector = {x: number; y: number};
-type Gem = {key: string; color: string};
+type Vector = { x: number; y: number };
+type Gem = { key: string; color: string };
 type Board = Gem[][];
-type Matches = {[key: string]: Vector};
+type Matches = { [key: string]: Vector };
 
 const getMatches = (board: Board): Matches => {
   const matches: Matches = {};
@@ -37,14 +37,14 @@ const getMatches = (board: Board): Matches => {
       const vertical = up?.key === mid.key && down?.key === mid.key;
       const horizontal = left?.key === mid.key && right?.key === mid.key;
       if (vertical) {
-        matches[`${i}${j - 1}`] = {x: i, y: j - 1};
-        matches[`${i}${j}`] = {x: i, y: j};
-        matches[`${i}${j + 1}`] = {x: i, y: j + 1};
+        matches[`${i}${j - 1}`] = { x: i, y: j - 1 };
+        matches[`${i}${j}`] = { x: i, y: j };
+        matches[`${i}${j + 1}`] = { x: i, y: j + 1 };
       }
       if (horizontal) {
-        matches[`${i - 1}${j}`] = {x: i - 1, y: j};
-        matches[`${i}${j}`] = {x: i, y: j};
-        matches[`${i + 1}${j}`] = {x: i + 1, y: j};
+        matches[`${i - 1}${j}`] = { x: i - 1, y: j };
+        matches[`${i}${j}`] = { x: i, y: j };
+        matches[`${i + 1}${j}`] = { x: i + 1, y: j };
       }
     }
 
@@ -53,26 +53,26 @@ const getMatches = (board: Board): Matches => {
 
 export type States = 'idle' | 'swap' | 'validate' | 'swap back' | 'fill gems';
 
-const initialSelected = {x: -10, y: -10};
+const initialSelected = { x: -10, y: -10 };
 export const Bejeweled = memo(function PlaygroundBejeweled() {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const dimension = useRootSelector(getSmallestDimension);
 
   const color = useColor();
   const styles = StyleSheet.create({
-    container: {backgroundColor: color.background.secondary},
+    container: { backgroundColor: color.background.secondary },
   });
 
   const width = 6;
   const height = 6;
   const size = dimension / width;
   const gems: Gem[] = [
-    {key: 'primary', color: color.background.primaryA},
-    {key: 'brand', color: color.background.primaryB},
-    {key: 'success', color: color.background.positive},
-    {key: 'info', color: color.background.accent},
-    {key: 'warning', color: color.background.warning},
-    {key: 'danger', color: color.background.negative},
+    { key: 'primary', color: color.background.primaryA },
+    { key: 'brand', color: color.background.primaryB },
+    { key: 'success', color: color.background.positive },
+    { key: 'info', color: color.background.accent },
+    { key: 'warning', color: color.background.warning },
+    { key: 'danger', color: color.background.negative },
   ];
 
   const [board, setBoard] = useState<Board>(() =>
@@ -94,7 +94,7 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
       });
       setSelected(initialSelected);
     } else {
-      setSelected({x, y});
+      setSelected({ x, y });
     }
   };
 
@@ -102,14 +102,15 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
     <Screen onLeftPress={goBack} title="Bejeweled">
       <View style={styles.container}>
         {board.map((col, x) => (
-          <View key={`${x}${col[0].key}`} style={{flexDirection: 'row'}}>
+          <View key={`${x}${col[0].key}`} style={{ flexDirection: 'row' }}>
             {col.map((gem, y) => (
               <View
                 key={`${x}${y}${gem.key}`}
                 style={{
                   width: size,
                   height: size,
-                }}>
+                }}
+              >
                 <TouchableOpacity
                   onPress={onPress(x, y)}
                   style={{

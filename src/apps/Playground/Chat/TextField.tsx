@@ -1,9 +1,9 @@
-import React, {memo, useCallback, useEffect, useRef} from 'react';
-import {Keyboard, TextInput, View} from 'react-native';
-import {v4} from 'uuid';
-import {Icon, Input, TouchableOpacity} from '../../../components';
-import {padding, useColor} from '../../../features';
-import {useRootDispatch, useRootSelector} from '../../../redux';
+import React, { memo, useCallback, useEffect, useRef } from 'react';
+import { Keyboard, TextInput, View } from 'react-native';
+import { v4 } from 'uuid';
+import { Icon, Input, TouchableOpacity } from '../../../components';
+import { padding, useColor } from '../../../features';
+import { useRootDispatch, useRootSelector } from '../../../redux';
 import {
   createChatMessage,
   getChatSubmittable,
@@ -51,7 +51,8 @@ export const TextField = memo(function TextField() {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: color.background.primaryA,
-      }}>
+      }}
+    >
       <Input
         flex
         onChangeText={onMessageChange}

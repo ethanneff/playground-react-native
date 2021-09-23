@@ -1,8 +1,8 @@
-import React, {memo} from 'react';
-import {padding, TagColor} from '../../features/Config';
-import {useColor} from '../../features/Theme';
-import {Text} from '../Text';
-import {TouchableOpacity} from '../TouchableOpacity';
+import React, { memo } from 'react';
+import { padding, TagColor } from '../../features/Config';
+import { useColor } from '../../features/Theme';
+import { Text } from '../Text';
+import { TouchableOpacity } from '../TouchableOpacity';
 
 type TagProps = {
   onPress?: () => void;
@@ -30,7 +30,8 @@ export const Tag = memo(function Tag({
         alignSelf: 'flex-start',
         paddingHorizontal: padding(2),
         paddingVertical: padding(1),
-      }}>
+      }}
+    >
       <Text color="primaryA" title={title} />
     </TouchableOpacity>
   );

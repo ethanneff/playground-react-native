@@ -1,11 +1,11 @@
-import React, {memo, useCallback, useMemo, useState} from 'react';
-import {View} from 'react-native';
-import {Button, Icon, Text, TouchableOpacity} from '../../../components';
-import {padding, useColor} from '../../../features';
-import {shuffleArray} from './utils';
+import React, { memo, useCallback, useMemo, useState } from 'react';
+import { View } from 'react-native';
+import { Button, Icon, Text, TouchableOpacity } from '../../../components';
+import { padding, useColor } from '../../../features';
+import { shuffleArray } from './utils';
 
-type Combinations = {[key: string]: number};
-type WildCards = {line: string; amount: number}[];
+type Combinations = { [key: string]: number };
+type WildCards = { line: string; amount: number }[];
 type Props = {
   reels: string[];
   combinations: Combinations;
@@ -28,7 +28,11 @@ type InitialState = {
   credits: number;
 };
 
-const getInitialState = ({randomize, reels, credits}: InitialState): State => {
+const getInitialState = ({
+  randomize,
+  reels,
+  credits,
+}: InitialState): State => {
   const reelsArray = randomize
     ? reels.map(reel => shuffleArray([...(reel as any)]))
     : reels.map(reel => [...(reel as any)]);
@@ -49,7 +53,7 @@ const getWildCards = (
   Object.keys(combinations).map(combination => {
     const unicodeCombination = [...(combination as any)];
     if (unicodeCombination.length < reels.length)
-      wildCards.push({line: combination, amount: combinations[combination]});
+      wildCards.push({ line: combination, amount: combinations[combination] });
 
     return combination;
   });
@@ -90,10 +94,10 @@ type ReelsProps = {
   lineIndexes: number[];
 };
 
-const Reels = memo(function Reels({reelsArray, lineIndexes}: ReelsProps) {
+const Reels = memo(function Reels({ reelsArray, lineIndexes }: ReelsProps) {
   const color = useColor();
   return (
-    <View style={{flexDirection: 'row'}}>
+    <View style={{ flexDirection: 'row' }}>
       {reelsArray.map((reel, i) => (
         <View key={`${i}`}>
           {reel.map((item, j) => (
@@ -121,7 +125,7 @@ type BetProps = {
   onBet: () => void;
 };
 
-const Bet = memo(function Bet({onBet, disabled, multiplier}: BetProps) {
+const Bet = memo(function Bet({ onBet, disabled, multiplier }: BetProps) {
   return (
     <TouchableOpacity
       disabled={disabled}
@@ -130,7 +134,8 @@ const Bet = memo(function Bet({onBet, disabled, multiplier}: BetProps) {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-      }}>
+      }}
+    >
       <Text bold emphasis="high" title={`BET X${multiplier}`} />
       <Icon color="accent" name="lightning-bolt" />
     </TouchableOpacity>
@@ -145,7 +150,7 @@ export const Slots = memo(function Slots({
   credits,
 }: Props) {
   const [state, setState] = useState<State>(() =>
-    getInitialState({randomize, reels, credits}),
+    getInitialState({ randomize, reels, credits }),
   );
   const multiplier = multipliers[state.multiplierIndex];
   const disabled = state.activity === 'spinning';
@@ -160,7 +165,7 @@ export const Slots = memo(function Slots({
   const onSpin = useCallback(() => {
     const remainingCredits = state.credits - multiplier;
     if (remainingCredits < 0) {
-      setState(p => ({...p, activity: 'insufficient credits'}));
+      setState(p => ({ ...p, activity: 'insufficient credits' }));
       return;
     }
     const lineIndexes = getRandomLineIndexes(state.reelsArray);
@@ -194,7 +199,7 @@ export const Slots = memo(function Slots({
         multipliers.length <= nextIndex || p.credits < multipliers[nextIndex]
           ? 0
           : nextIndex;
-      return {...p, multiplierIndex};
+      return { ...p, multiplierIndex };
     });
   }, [multipliers]);
 
@@ -205,7 +210,7 @@ export const Slots = memo(function Slots({
       <Text
         center
         emphasis="high"
-        style={{padding: padding(2)}}
+        style={{ padding: padding(2) }}
         title={`${state.credits} credits`}
         type="h4"
       />
@@ -220,7 +225,7 @@ export const Slots = memo(function Slots({
         center
         color="negative"
         emphasis="high"
-        style={{padding: padding(2)}}
+        style={{ padding: padding(2) }}
         title={creditError}
       />
     </View>

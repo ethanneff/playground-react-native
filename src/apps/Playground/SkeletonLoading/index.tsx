@@ -1,14 +1,14 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useEffect, useState} from 'react';
-import {View} from 'react-native';
-import {Button, Screen, Text} from '../../../components';
-import {ScrollView} from '../../../conversions';
-import {padding, useColor} from '../../../features';
-import {LoadingProfile} from './LoadingProfile';
-import {LoadingSection} from './LoadingSection';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useEffect, useState } from 'react';
+import { View } from 'react-native';
+import { Button, Screen, Text } from '../../../components';
+import { ScrollView } from '../../../conversions';
+import { padding, useColor } from '../../../features';
+import { LoadingProfile } from './LoadingProfile';
+import { LoadingSection } from './LoadingSection';
 
 export const SkeletonLoading = memo(function PlaygroundTemplate() {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const color = useColor();
 
   const [loading, setLoading] = useState(true);
@@ -32,8 +32,9 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
   return (
     <Screen dropShadow onLeftPress={goBack} title="Skeleton Loading">
       <ScrollView
-        contentContainerStyle={{padding: padding(4)}}
-        style={{backgroundColor: color.background.secondary}}>
+        contentContainerStyle={{ padding: padding(4) }}
+        style={{ backgroundColor: color.background.secondary }}
+      >
         {loading ? (
           <View>
             <LoadingProfile />

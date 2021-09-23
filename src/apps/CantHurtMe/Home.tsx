@@ -1,25 +1,25 @@
-import React, {memo, useCallback, useState} from 'react';
-import {Modal, Screen, Text} from '../../components';
-import {useAdminNavBack} from '../../features';
-import {List} from './List';
+import React, { memo, useCallback, useState } from 'react';
+import { Modal, Screen, Text } from '../../components';
+import { useAdminNavBack } from '../../features';
+import { List } from './List';
 
-const initialState = {settings: false, profile: false};
+const initialState = { settings: false, profile: false };
 
 export const Home = memo(function CantHurtMeMain() {
   const [showModal, setShowModal] = useState(initialState);
-  const {onLeftPress} = useAdminNavBack();
+  const { onLeftPress } = useAdminNavBack();
 
   const handleModalBackgroundPress = useCallback(
     () => setShowModal(initialState),
     [],
   );
   const handleProfilePress = useCallback(
-    () => setShowModal({...initialState, profile: true}),
+    () => setShowModal({ ...initialState, profile: true }),
     [],
   );
 
   const handleSettingsPress = useCallback(
-    () => setShowModal({...initialState, settings: true}),
+    () => setShowModal({ ...initialState, settings: true }),
     [],
   );
 
@@ -35,7 +35,8 @@ export const Home = memo(function CantHurtMeMain() {
         <Modal
           duration={2000}
           onBackgroundPress={handleModalBackgroundPress}
-          showOverlay>
+          showOverlay
+        >
           <Text title="profile" />
         </Modal>
       )}
@@ -43,7 +44,8 @@ export const Home = memo(function CantHurtMeMain() {
         <Modal
           duration={2000}
           onBackgroundPress={handleModalBackgroundPress}
-          showOverlay>
+          showOverlay
+        >
           <Text title="settings" />
         </Modal>
       )}

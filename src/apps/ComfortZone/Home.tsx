@@ -1,8 +1,8 @@
-import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
-import {TextInput, View} from 'react-native';
-import {Button, Calendar, Card, Input, Screen, Text} from '../../components';
-import {ScrollView} from '../../conversions';
-import {padding, useAdminNavBack, useColor} from '../../features';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { TextInput, View } from 'react-native';
+import { Button, Calendar, Card, Input, Screen, Text } from '../../components';
+import { ScrollView } from '../../conversions';
+import { padding, useAdminNavBack, useColor } from '../../features';
 
 const data = [
   'Set your alarm for 10 minutes earlier than usual',
@@ -146,7 +146,7 @@ const data = [
 ];
 
 export const Home = memo(function Home() {
-  const {onLeftPress} = useAdminNavBack();
+  const { onLeftPress } = useAdminNavBack();
   const color = useColor();
   const inputRef = useRef<TextInput | null>(null);
   const [challenge, setChallenge] = useState('...');
@@ -180,11 +180,12 @@ export const Home = memo(function Home() {
         contentContainerStyle={{
           padding: padding(4),
         }}
-        style={{backgroundColor: color.background.secondary}}>
+        style={{ backgroundColor: color.background.secondary }}
+      >
         <Card>
           <Text
             center
-            style={{paddingBottom: padding(4)}}
+            style={{ paddingBottom: padding(4) }}
             title="Try something new every day"
             type="h4"
           />
@@ -198,14 +199,14 @@ export const Home = memo(function Home() {
         <Card>
           <Text
             center
-            style={{paddingBottom: padding(4)}}
+            style={{ paddingBottom: padding(4) }}
             title="Today's Challenge"
             type="h4"
           />
           <Text
             center
             emphasis="medium"
-            style={{paddingBottom: padding(4)}}
+            style={{ paddingBottom: padding(4) }}
             title={challenge}
             type="subtitle1"
           />
@@ -216,7 +217,8 @@ export const Home = memo(function Home() {
               flex: 1,
               flexDirection: 'row',
               justifyContent: 'space-around',
-            }}>
+            }}
+          >
             <Button color="accent" onPress={onRandom} title="random" />
             <Button color="accent" onPress={onCustom} title="custom" />
           </View>
@@ -226,7 +228,8 @@ export const Home = memo(function Home() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 paddingTop: padding(6),
-              }}>
+              }}
+            >
               <Input
                 onChangeText={onCustomInputChange}
                 onRef={inputRef}
@@ -245,7 +248,7 @@ export const Home = memo(function Home() {
         <Card>
           <Text
             center
-            style={{paddingBottom: padding(4)}}
+            style={{ paddingBottom: padding(4) }}
             title="Progress"
             type="h4"
           />

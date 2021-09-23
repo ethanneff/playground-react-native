@@ -15,12 +15,12 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {fontSizes, padding} from '../../features/Config';
-import {useColor} from '../../features/Theme';
-import {Button} from '../Button';
-import {Icon} from '../Icon';
-import {Text} from '../Text';
-import {TouchableOpacity} from '../TouchableOpacity';
+import { fontSizes, padding } from '../../features/Config';
+import { useColor } from '../../features/Theme';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
+import { Text } from '../Text';
+import { TouchableOpacity } from '../TouchableOpacity';
 
 /*
 styling https://uxdesign.cc/design-better-forms-96fadca0f49c
@@ -178,7 +178,7 @@ export const Input = memo(function Input({
         </TouchableOpacity>
       </View>
       {!removeError && (
-        <View style={{flexDirection: 'row'}}>
+        <View style={{ flexDirection: 'row' }}>
           <TouchableOpacity activeOpacity={1} onPress={focusOnInput}>
             <Icon color="negative" invisible={noError} name={errorIcon} />
           </TouchableOpacity>

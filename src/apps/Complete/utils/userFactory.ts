@@ -1,5 +1,5 @@
-import {v4} from 'uuid';
-import {Item, User} from '../models';
+import { v4 } from 'uuid';
+import { Item, User } from '../models';
 
 type GetDefaultUserTemplate = {
   user: User;
@@ -25,10 +25,10 @@ const dItem = (u: string): Item => {
 
 const dKanban = (u: string): Item[] => {
   const items: Item[] = [
-    {...dItem(u), title: 'Backlog', type: 'list'},
-    {...dItem(u), title: 'Todo', type: 'list'},
-    {...dItem(u), title: 'In Progress', type: 'list'},
-    {...dItem(u), title: 'Done', type: 'list'},
+    { ...dItem(u), title: 'Backlog', type: 'list' },
+    { ...dItem(u), title: 'Todo', type: 'list' },
+    { ...dItem(u), title: 'In Progress', type: 'list' },
+    { ...dItem(u), title: 'Done', type: 'list' },
   ];
   return items;
 };
@@ -40,26 +40,26 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
 
   // inbox
   const inboxItems: Item[] = [
-    {...dItem(u), title: 'do dishes'},
-    {...dItem(u), title: 'schedule meeting with Jim'},
-    {...dItem(u), title: 'run 4 miles'},
-    {...dItem(u), title: 'change oil'},
-    {...dItem(u), title: 'what is the best mediation'},
-    {...dItem(u), title: 'record Kelly birthday on Sep 22'},
-    {...dItem(u), title: 'drink water'},
-    {...dItem(u), title: 'intensity + focus = deep work'},
-    {...dItem(u), title: 'put $20 in phone'},
-    {...dItem(u), title: 'clear emails'},
+    { ...dItem(u), title: 'do dishes' },
+    { ...dItem(u), title: 'schedule meeting with Jim' },
+    { ...dItem(u), title: 'run 4 miles' },
+    { ...dItem(u), title: 'change oil' },
+    { ...dItem(u), title: 'what is the best mediation' },
+    { ...dItem(u), title: 'record Kelly birthday on Sep 22' },
+    { ...dItem(u), title: 'drink water' },
+    { ...dItem(u), title: 'intensity + focus = deep work' },
+    { ...dItem(u), title: 'put $20 in phone' },
+    { ...dItem(u), title: 'clear emails' },
   ];
 
   // projects
   const homeTodoItems: Item[] = [
-    {...dItem(u), title: 'clean desk'},
-    {...dItem(u), title: 'clean room'},
-    {...dItem(u), title: 'walk dog'},
-    {...dItem(u), title: 'brush teeth'},
-    {...dItem(u), title: 'do laundry'},
-    {...dItem(u), title: 'fix sink'},
+    { ...dItem(u), title: 'clean desk' },
+    { ...dItem(u), title: 'clean room' },
+    { ...dItem(u), title: 'walk dog' },
+    { ...dItem(u), title: 'brush teeth' },
+    { ...dItem(u), title: 'do laundry' },
+    { ...dItem(u), title: 'fix sink' },
   ];
   const homeItems: Item[] = dKanban(u);
   homeItems[0].children = homeTodoItems.map(i => i.id);
@@ -68,28 +68,28 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
   const gymItems: Item[] = dKanban(u);
   const appItems: Item[] = dKanban(u);
   const meetItems: Item[] = [
-    {...dItem(u), title: 'one one one'},
-    {...dItem(u), title: 'q1 planning'},
+    { ...dItem(u), title: 'one one one' },
+    { ...dItem(u), title: 'q1 planning' },
   ];
   const bookItems: Item[] = [
-    {...dItem(u), title: 'eat that frog'},
-    {...dItem(u), title: 'deep work'},
-    {...dItem(u), title: 'the one thing'},
+    { ...dItem(u), title: 'eat that frog' },
+    { ...dItem(u), title: 'deep work' },
+    { ...dItem(u), title: 'the one thing' },
   ];
   const giftItems: Item[] = [
-    {...dItem(u), title: 'girlfriend'},
-    {...dItem(u), title: 'sister'},
-    {...dItem(u), title: 'parents'},
+    { ...dItem(u), title: 'girlfriend' },
+    { ...dItem(u), title: 'sister' },
+    { ...dItem(u), title: 'parents' },
   ];
   const checkItems: Item[] = [
-    {...dItem(u), title: 'after bathroom'},
-    {...dItem(u), title: 'before car'},
-    {...dItem(u), title: 'before sleep'},
+    { ...dItem(u), title: 'after bathroom' },
+    { ...dItem(u), title: 'before car' },
+    { ...dItem(u), title: 'before sleep' },
   ];
   const codeItems: Item[] = [
-    {...dItem(u), title: 'php'},
-    {...dItem(u), title: 'javascript'},
-    {...dItem(u), title: 'swift'},
+    { ...dItem(u), title: 'php' },
+    { ...dItem(u), title: 'javascript' },
+    { ...dItem(u), title: 'swift' },
   ];
   const projectItems: Item[] = [
     {

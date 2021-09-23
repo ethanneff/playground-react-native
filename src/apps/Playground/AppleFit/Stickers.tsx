@@ -1,7 +1,7 @@
-import React, {memo} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Icon} from '../../../components';
-import {MonoMultiColor} from '../../../features';
+import React, { memo } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Icon } from '../../../components';
+import { MonoMultiColor } from '../../../features';
 
 type Props = {
   color: keyof MonoMultiColor;
@@ -19,7 +19,7 @@ export const Stickers = memo(function Sticker({
   strokeWidth,
 }: Props) {
   const styles = StyleSheet.create({
-    canvas: {height: size, width: size},
+    canvas: { height: size, width: size },
     overlay: {
       ...StyleSheet.absoluteFillObject,
       alignItems: 'center',

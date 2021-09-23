@@ -1,9 +1,9 @@
-import React, {memo} from 'react';
-import {Platform, StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
-import {MonoMultiColor, padding} from '../../features/Config';
-import {useColor, useDropShadow} from '../../features/Theme';
-import {Badge} from './Badge';
-import {Source} from './Source';
+import React, { memo } from 'react';
+import { Platform, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import { MonoMultiColor, padding } from '../../features/Config';
+import { useColor, useDropShadow } from '../../features/Theme';
+import { Badge } from './Badge';
+import { Source } from './Source';
 
 /*
 usage: <Icon name='check' />

@@ -1,8 +1,8 @@
-import React, {memo, ReactNode} from 'react';
-import {Image, View} from 'react-native';
-import {Icon, Sentence, Text, TouchableOpacity} from '../../../components';
-import {SentenceType} from '../../../components/Sentence/types';
-import {padding, useColor} from '../../../features';
+import React, { memo, ReactNode } from 'react';
+import { Image, View } from 'react-native';
+import { Icon, Sentence, Text, TouchableOpacity } from '../../../components';
+import { SentenceType } from '../../../components/Sentence/types';
+import { padding, useColor } from '../../../features';
 
 const missingCallback = () => undefined;
 
@@ -29,9 +29,10 @@ const SignInButton = memo(function SignInButton({
         padding: padding(2),
         marginBottom: padding(2),
         borderRadius: padding(10),
-      }}>
-      <Icon name={icon} style={{width: '30px', height: '30px'}} />
-      <Text style={{paddingLeft: padding(2)}} title={title} type="h4" />
+      }}
+    >
+      <Icon name={icon} style={{ width: '30px', height: '30px' }} />
+      <Text style={{ paddingLeft: padding(2) }} title={title} type="h4" />
     </TouchableOpacity>
   );
 });
@@ -58,7 +59,8 @@ const NavButton = memo(function NavButton({
         backgroundColor: inverted
           ? color.background.primaryB
           : color.background.primaryA,
-      }}>
+      }}
+    >
       <Text bold inverse={inverted} title={title} type="h5" />
     </TouchableOpacity>
   );
@@ -68,7 +70,7 @@ interface HeaderProps {
   height: number;
 }
 
-export const Header = memo(function Header({height}: HeaderProps) {
+export const Header = memo(function Header({ height }: HeaderProps) {
   const color = useColor();
   return (
     <View
@@ -83,19 +85,20 @@ export const Header = memo(function Header({height}: HeaderProps) {
         borderBottomWidth: 1,
         zIndex: 2,
         height,
-      }}>
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <Image source={image} style={{width: '30px', height: '30px'}} />
+      }}
+    >
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <Image source={image} style={{ width: '30px', height: '30px' }} />
         <Text
           bold
-          style={{paddingHorizontal: padding(4)}}
+          style={{ paddingHorizontal: padding(4) }}
           title="Core"
           type="h3"
         />
         <NavButton onPress={missingCallback} title="Features" />
         <NavButton onPress={missingCallback} title="Premium" />
       </View>
-      <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
+      <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
         <NavButton onPress={missingCallback} title="Sign In" />
         <NavButton inverted onPress={missingCallback} title="Sign Up" />
       </View>
@@ -108,7 +111,7 @@ interface AppIconProps {
   type: 'google-play' | 'apple';
 }
 
-const AppIcon = memo(function AppIcon({onPress, type}: AppIconProps) {
+const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
   const color = useColor();
   const iconSize = '48px';
   const text = type === 'apple' ? 'Download on the' : 'GET IT ON';
@@ -124,13 +127,14 @@ const AppIcon = memo(function AppIcon({onPress, type}: AppIconProps) {
         backgroundColor: color.background.primaryB,
         paddingVertical: padding(2),
         paddingHorizontal: padding(4),
-      }}>
+      }}
+    >
       <Icon
         color="primaryA"
         name={type}
-        style={{width: iconSize, height: iconSize, alignSelf: 'center'}}
+        style={{ width: iconSize, height: iconSize, alignSelf: 'center' }}
       />
-      <View style={{paddingLeft: padding(2)}}>
+      <View style={{ paddingLeft: padding(2) }}>
         <Text inverse title={text} type="h5" />
         <Text inverse title={store} type="h3" />
       </View>
@@ -155,7 +159,8 @@ const Section = memo(function Section({
         paddingTop: paddingTop,
         height: '100vh',
         backgroundColor: backgroundColor,
-      }}>
+      }}
+    >
       {children}
     </View>
   );
@@ -166,17 +171,17 @@ const image = require('../../../assets/line-chart.png');
 export const Landing = memo(function PortfolioLanding() {
   const height = padding(18);
   const titleSentence: SentenceType[] = [
-    {title: 'Get started with ', type: 'h2'},
-    {title: 'Core', bold: true, type: 'h2'},
+    { title: 'Get started with ', type: 'h2' },
+    { title: 'Core', bold: true, type: 'h2' },
   ];
   const passwordSentence: SentenceType[] = [
-    {title: 'Or use your password to '},
+    { title: 'Or use your password to ' },
     {
       title: 'sign up ',
       bold: true,
       onPress: () => undefined,
     },
-    {title: 'or '},
+    { title: 'or ' },
     {
       title: 'sign in ',
       bold: true,
@@ -193,9 +198,9 @@ export const Landing = memo(function PortfolioLanding() {
       <Section backgroundColor={color.background.secondary} paddingTop={height}>
         <Sentence
           sentences={titleSentence}
-          style={{paddingVertical: padding(8), alignSelf: 'center'}}
+          style={{ paddingVertical: padding(8), alignSelf: 'center' }}
         />
-        <View style={{width: '400px', alignSelf: 'center'}}>
+        <View style={{ width: '400px', alignSelf: 'center' }}>
           <SignInButton
             icon="apple"
             onPress={missingCallback}
@@ -219,20 +224,21 @@ export const Landing = memo(function PortfolioLanding() {
             }}
           />
         </View>
-        <View style={{flex: 1}} />
-        <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+        <View style={{ flex: 1 }} />
+        <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
           <AppIcon onPress={missingCallback} type="apple" />
           <AppIcon onPress={missingCallback} type="google-play" />
         </View>
       </Section>
       <Section backgroundColor={color.background.primaryA}>
-        <View style={{flex: 1}} />
+        <View style={{ flex: 1 }} />
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'center',
             marginBottom: padding(4),
-          }}>
+          }}
+        >
           <NavButton
             onPress={onNavLinkPress('https://www.linkedin.com/in/ethanneff')}
             title="About us"

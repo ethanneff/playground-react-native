@@ -1,6 +1,6 @@
-import {createSelector} from 'reselect';
-import {RootAction, RootState} from 'root-types';
-import {createAction, getType} from 'typesafe-actions';
+import { createSelector } from 'reselect';
+import { RootAction, RootState } from 'root-types';
+import { createAction, getType } from 'typesafe-actions';
 
 /* ACTIONS */
 export const createList = createAction('checklist/create')<Checklist>();
@@ -53,7 +53,7 @@ export type Checklist = {
   // copied: UserId[];
   // modified: string[];
 };
-export type Checklists = {[key: string]: Checklist};
+export type Checklists = { [key: string]: Checklist };
 
 /* REDUCER */
 const initialState: ChecklistReducer = {
@@ -66,7 +66,7 @@ export const checklistReducer = (
 ): ChecklistReducer => {
   switch (action.type) {
     case getType(setActiveList):
-      return {...state, active: action.payload};
+      return { ...state, active: action.payload };
     case getType(createList):
       return {
         ...state,

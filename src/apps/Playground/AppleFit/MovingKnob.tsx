@@ -1,6 +1,6 @@
 import React from 'react';
-import {Animated, StyleSheet} from 'react-native';
-import {Shadow} from './Shadow';
+import { Animated, StyleSheet } from 'react-native';
+import { Shadow } from './Shadow';
 
 type MovingKnobProps = {
   backgroundColor: string;
@@ -17,9 +17,9 @@ export const MovingKnob = ({
 }: MovingKnobProps): JSX.Element => {
   const half = strokeWidth / 2;
   const transform = [
-    {translateX: radius - half},
-    {rotate: `${theta}rad`},
-    {translateX: -(radius - half)},
+    { translateX: radius - half },
+    { rotate: `${theta}rad` },
+    { translateX: -(radius - half) },
   ];
   const styles = StyleSheet.create({
     knob: {
@@ -34,10 +34,11 @@ export const MovingKnob = ({
   return (
     <>
       <Animated.View
-        style={[styles.knob, {transform: [...transform, {translateY: -4}]}]}>
+        style={[styles.knob, { transform: [...transform, { translateY: -4 }] }]}
+      >
         <Shadow strokeWidth={strokeWidth} />
       </Animated.View>
-      <Animated.View style={[styles.knob, {backgroundColor, transform}]} />
+      <Animated.View style={[styles.knob, { backgroundColor, transform }]} />
     </>
   );
 };

@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {MonoMultiColor, useColor} from '../../../features';
-import {CenterCircle} from './CenterCircle';
-import {CircularRing} from './CircularRing';
-import {Stickers} from './Stickers';
-import {Ring} from './types';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { MonoMultiColor, useColor } from '../../../features';
+import { CenterCircle } from './CenterCircle';
+import { CircularRing } from './CircularRing';
+import { Stickers } from './Stickers';
+import { Ring } from './types';
 
 type Props = {
   rings: Ring[];

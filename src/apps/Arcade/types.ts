@@ -1,4 +1,4 @@
-import {StackNavigationProp} from '@react-navigation/stack';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 type Routes =
   | 'landing'
@@ -8,7 +8,7 @@ type Routes =
   | 'archero'
   | 'tic-tac-toe';
 
-export type ArcadeRoutes = {[key in Routes]: undefined};
+export type ArcadeRoutes = { [key in Routes]: undefined };
 
 export type ArcadeNavigation = StackNavigationProp<ArcadeRoutes>;
 

@@ -1,18 +1,18 @@
-import {createSelector} from 'reselect';
-import {RootAction, RootState} from 'root-types';
-import {createAction, getType} from 'typesafe-actions';
-import {logout} from './Auth';
-import {getUser} from './User';
+import { createSelector } from 'reselect';
+import { RootAction, RootState } from 'root-types';
+import { createAction, getType } from 'typesafe-actions';
+import { logout } from './Auth';
+import { getUser } from './User';
 
-type ItemUpdateIds = {parentItemId: string; itemId: string};
-type ItemSwapId = {parentItemId: string; i: number; j: number};
+type ItemUpdateIds = { parentItemId: string; itemId: string };
+type ItemSwapId = { parentItemId: string; i: number; j: number };
 type ItemMoveId = {
   itemId: string;
   fromParentItemId: string;
   toParentItemId: string;
 };
-type ItemDetailsIds = {parentItemId: string | null; itemId: string};
-type ItemProjectIds = {projectItemId: string};
+type ItemDetailsIds = { parentItemId: string | null; itemId: string };
+type ItemProjectIds = { projectItemId: string };
 type ItemNav = {
   parentItemId: string | null;
   itemId: string | null;
@@ -90,11 +90,11 @@ export type Item = {
   editable: boolean;
   children: ReadonlyArray<string>;
 };
-export type Items = {[key: string]: Item};
+export type Items = { [key: string]: Item };
 
 /* REDUCER */
 const initialState: CompleteItemReducer = {
-  nav: {projectItemId: null, parentItemId: null, itemId: null},
+  nav: { projectItemId: null, parentItemId: null, itemId: null },
   items: {},
 };
 export const completeItemReducer = (

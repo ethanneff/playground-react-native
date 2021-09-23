@@ -1,12 +1,15 @@
-import {NetInfoState, NetInfoStateType} from '@react-native-community/netinfo';
-import {getType} from 'typesafe-actions';
+import {
+  NetInfoState,
+  NetInfoStateType,
+} from '@react-native-community/netinfo';
+import { getType } from 'typesafe-actions';
 import {
   networkInitialState,
   networkReducer,
   NetworkState,
   updateNetwork,
 } from '..';
-import {loginRequest, logout} from '../../Auth';
+import { loginRequest, logout } from '../../Auth';
 
 describe('network', () => {
   it('updateNetwork action', () => {

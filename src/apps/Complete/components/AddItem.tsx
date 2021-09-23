@@ -1,11 +1,11 @@
-import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
-import {Keyboard, TextInput as OriginalTextInput, View} from 'react-native';
-import {v4} from 'uuid';
-import {Button, TextInput, TextInputIcon} from '../../../components';
-import {padding, useColor} from '../../../features';
-import {useRootDispatch, useRootSelector} from '../../../redux';
-import {addItemToItem, createItem, Item} from '../models';
-import {completeConfig} from '../utils';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { Keyboard, TextInput as OriginalTextInput, View } from 'react-native';
+import { v4 } from 'uuid';
+import { Button, TextInput, TextInputIcon } from '../../../components';
+import { padding, useColor } from '../../../features';
+import { useRootDispatch, useRootSelector } from '../../../redux';
+import { addItemToItem, createItem, Item } from '../models';
+import { completeConfig } from '../utils';
 
 type AddItemProps = {
   width?: number;
@@ -47,7 +47,7 @@ export const AddItem = memo(function AddItem({
         type: 'note',
       };
       dispatch(createItem(item));
-      dispatch(addItemToItem({parentItemId, itemId}));
+      dispatch(addItemToItem({ parentItemId, itemId }));
     },
     [dispatch, parentItemId, userId],
   );
@@ -57,7 +57,7 @@ export const AddItem = memo(function AddItem({
   const onBlur = useCallback(() => setShowInput(false), []);
 
   const icons: TextInputIcon[] = [
-    {name: 'close', onPress: onClose, focus: true, reset: true},
+    { name: 'close', onPress: onClose, focus: true, reset: true },
     {
       name: 'send',
       onPress: onSubmit,
@@ -80,7 +80,8 @@ export const AddItem = memo(function AddItem({
         borderRadius: completeConfig.borderRadius,
         backgroundColor: color.background.primaryA,
         justifyContent: 'center',
-      }}>
+      }}
+    >
       {showInput ? (
         <TextInput
           blurOnSubmit={false}

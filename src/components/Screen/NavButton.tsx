@@ -1,8 +1,8 @@
-import React, {memo} from 'react';
-import {StyleSheet} from 'react-native';
-import {padding} from '../../features/Config';
-import {Icon} from '../Icon';
-import {TouchableOpacity} from '../TouchableOpacity';
+import React, { memo } from 'react';
+import { StyleSheet } from 'react-native';
+import { padding } from '../../features/Config';
+import { Icon } from '../Icon';
+import { TouchableOpacity } from '../TouchableOpacity';
 
 type Props = {
   icon?: string;
@@ -18,8 +18,8 @@ export const NavButton = memo(function NavButton({
   testID,
 }: Props) {
   const styles = StyleSheet.create({
-    button: {padding: padding(2)},
-    buttonRight: {alignSelf: 'flex-end'},
+    button: { padding: padding(2) },
+    buttonRight: { alignSelf: 'flex-end' },
   });
   return (
     <TouchableOpacity onPress={onPress} style={styles.button}>

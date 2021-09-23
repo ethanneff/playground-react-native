@@ -1,5 +1,5 @@
-import React, {memo} from 'react';
-import {Screen, Text} from '../../../../components';
+import React, { memo } from 'react';
+import { Screen, Text } from '../../../../components';
 
 export const Profile = memo(function Profile() {
   return (

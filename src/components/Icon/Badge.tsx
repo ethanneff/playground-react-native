@@ -1,8 +1,8 @@
-import React, {memo} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {padding} from '../../features/Config';
-import {useColor} from '../../features/Theme';
-import {Text} from '../Text';
+import React, { memo } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { padding } from '../../features/Config';
+import { useColor } from '../../features/Theme';
+import { Text } from '../Text';
 
 type Props = {
   badge: number;
@@ -11,7 +11,7 @@ type Props = {
 const badgeLimit = '!';
 const maxBadgeNumber = 99;
 
-export const Badge = memo(({badge}: Props) => {
+export const Badge = memo(({ badge }: Props) => {
   const color = useColor();
   const styles = StyleSheet.create({
     badgeContainer: {

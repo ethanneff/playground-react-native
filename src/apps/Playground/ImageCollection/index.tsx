@@ -1,8 +1,8 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
-import {Dimensions, FlatList} from 'react-native';
-import {Image, Screen} from '../../../components';
-import {useColor} from '../../../features';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback } from 'react';
+import { Dimensions, FlatList } from 'react-native';
+import { Image, Screen } from '../../../components';
+import { useColor } from '../../../features';
 
 const numColumns = 3;
 const handleInfiniteScrollThreshold = 0.3;
@@ -14,7 +14,7 @@ const data: number[] = Array(batch)
   .map((_, x) => Date.now() + x);
 
 export const ImageCollection = memo(function ImageCollection() {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const keyExtractor = useCallback((d: number) => d.toString(), []);
   const handleFetchMore = useCallback(() => {
     for (let i = 0; i < batch; i++) data.push(Date.now() + i);
@@ -22,7 +22,7 @@ export const ImageCollection = memo(function ImageCollection() {
   const color = useColor();
 
   const renderImage = useCallback(
-    ({item}) => (
+    ({ item }) => (
       <Image
         height={columnWidth}
         uri={`${imageUrl}/${item}`}
@@ -35,7 +35,7 @@ export const ImageCollection = memo(function ImageCollection() {
   return (
     <Screen dropShadow onLeftPress={goBack} title="Images">
       <FlatList
-        contentContainerStyle={{backgroundColor: color.background.secondary}}
+        contentContainerStyle={{ backgroundColor: color.background.secondary }}
         data={data}
         keyExtractor={keyExtractor}
         keyboardShouldPersistTaps="handled"

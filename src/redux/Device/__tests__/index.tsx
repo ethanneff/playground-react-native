@@ -1,4 +1,4 @@
-import {getType} from 'typesafe-actions';
+import { getType } from 'typesafe-actions';
 import {
   changeAppStatus,
   changeKeyboardStatus,
@@ -6,7 +6,7 @@ import {
   deviceReducer,
   loadDevice,
 } from '..';
-import {logout} from '../../Auth';
+import { logout } from '../../Auth';
 
 describe('actions', () => {
   it('loadDevice', () => {
@@ -114,7 +114,7 @@ describe('reducer', () => {
         payload: 'background',
         type: getType(changeAppStatus),
       }),
-    ).toStrictEqual({...deviceInitialState, appStatus: 'background'});
+    ).toStrictEqual({ ...deviceInitialState, appStatus: 'background' });
   });
 
   it('logout', () => {

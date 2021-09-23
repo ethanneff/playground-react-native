@@ -1,11 +1,11 @@
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import React, {memo, useCallback} from 'react';
-import {Keyboard, View} from 'react-native';
-import {TextInput, TextInputIcon} from '../../../components';
-import {useRootDispatch, useRootSelector} from '../../../redux';
-import {navItemDetails, updateItem} from '../models';
-import {MainStackRoutes} from '../navigationTypes';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import React, { memo, useCallback } from 'react';
+import { Keyboard, View } from 'react-native';
+import { TextInput, TextInputIcon } from '../../../components';
+import { useRootDispatch, useRootSelector } from '../../../redux';
+import { navItemDetails, updateItem } from '../models';
+import { MainStackRoutes } from '../navigationTypes';
 
 type ListHeaderProps = {
   itemId: string;
@@ -17,26 +17,26 @@ export const ListHeader = memo(function ListHeader({
   parentItemId,
 }: ListHeaderProps) {
   const dispatch = useRootDispatch();
-  const {navigate} = useNavigation<StackNavigationProp<MainStackRoutes>>();
+  const { navigate } = useNavigation<StackNavigationProp<MainStackRoutes>>();
   const item = useRootSelector(s => s.completeItem.items[itemId]);
 
   const onSave = useCallback(
     title => {
-      dispatch(updateItem({...item, title}));
+      dispatch(updateItem({ ...item, title }));
       Keyboard.dismiss();
     },
     [dispatch, item],
   );
 
   const onDetail = useCallback(() => {
-    dispatch(navItemDetails({parentItemId, itemId}));
+    dispatch(navItemDetails({ parentItemId, itemId }));
     navigate('item-detail');
   }, [dispatch, itemId, navigate, parentItemId]);
 
   const onClose = useCallback(() => Keyboard.dismiss(), []);
 
   const icons: TextInputIcon[] = [
-    {name: 'close', onPress: onClose, focus: true, reset: true},
+    { name: 'close', onPress: onClose, focus: true, reset: true },
     {
       name: 'send',
       onPress: onSave,
@@ -44,7 +44,7 @@ export const ListHeader = memo(function ListHeader({
       focus: true,
       required: true,
     },
-    {name: 'dots-horizontal', onPress: onDetail},
+    { name: 'dots-horizontal', onPress: onDetail },
   ];
 
   return (
@@ -53,7 +53,8 @@ export const ListHeader = memo(function ListHeader({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-      }}>
+      }}
+    >
       <TextInput
         editable={item.editable}
         icons={icons}

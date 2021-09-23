@@ -1,10 +1,10 @@
-import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
-import {FlatList, ListRenderItem, View} from 'react-native';
-import {padding} from '../../features/Config';
-import {getWidth, useRootSelector} from '../../redux';
-import {Dots} from './Dots';
-import {Item} from './Item';
-import {CarouselSlide} from './types';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { FlatList, ListRenderItem, View } from 'react-native';
+import { padding } from '../../features/Config';
+import { getWidth, useRootSelector } from '../../redux';
+import { Dots } from './Dots';
+import { Item } from './Item';
+import { CarouselSlide } from './types';
 
 type Props = {
   dotSize?: number;
@@ -17,7 +17,7 @@ export const Carousel = memo(function Carousel({
   dotSize = padding(4),
   slides,
   duration,
-  viewabilityConfig = {itemVisiblePercentThreshold: 50},
+  viewabilityConfig = { itemVisiblePercentThreshold: 50 },
 }: Props) {
   const loopingEnabled = useRef(false);
   const width = useRootSelector(getWidth);
@@ -27,7 +27,7 @@ export const Carousel = memo(function Carousel({
   const loopTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const touchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const onViewableItemsChanged = useCallback(({viewableItems}) => {
+  const onViewableItemsChanged = useCallback(({ viewableItems }) => {
     const index = viewableItems[0]?.index || 0;
     setActiveIndex(index);
     activeIndexRef.current = index;
@@ -37,7 +37,7 @@ export const Carousel = memo(function Carousel({
   const onDotPress = useCallback(
     (index: number) => () => {
       if (!flatList.current) return;
-      flatList.current.scrollToIndex({index});
+      flatList.current.scrollToIndex({ index });
     },
     [],
   );
@@ -45,7 +45,7 @@ export const Carousel = memo(function Carousel({
   const scrollToIndex = useCallback(() => {
     if (!loopingEnabled.current) return;
     const index = (activeIndexRef.current + 1) % slides.length;
-    flatList.current?.scrollToIndex({index});
+    flatList.current?.scrollToIndex({ index });
   }, [slides.length]);
 
   const loop = useCallback(() => {
@@ -77,12 +77,12 @@ export const Carousel = memo(function Carousel({
   }, [duration, loop]);
 
   const renderItem = useCallback<ListRenderItem<CarouselSlide>>(
-    ({item}) => <Item item={item} width={width} />,
+    ({ item }) => <Item item={item} width={width} />,
     [width],
   );
 
   return (
-    <View onTouchStart={onTouchPauseLooping} style={{flex: 1}}>
+    <View onTouchStart={onTouchPauseLooping} style={{ flex: 1 }}>
       <FlatList
         data={slides}
         horizontal

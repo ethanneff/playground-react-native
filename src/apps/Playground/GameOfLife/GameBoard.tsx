@@ -1,8 +1,8 @@
-import React, {memo, useMemo} from 'react';
-import {View} from 'react-native';
-import {useRootSelector} from '../../../redux';
-import {Cell} from './Cell';
-import {useLoop} from './useLoop';
+import React, { memo, useMemo } from 'react';
+import { View } from 'react-native';
+import { useRootSelector } from '../../../redux';
+import { Cell } from './Cell';
+import { useLoop } from './useLoop';
 
 export const GameBoard = memo(function GameBoard() {
   const count = useRootSelector(state => state.gameOfLife.count);
@@ -14,7 +14,8 @@ export const GameBoard = memo(function GameBoard() {
       {array.map((_, x) => (
         <View
           key={`${x}`}
-          style={{flexDirection: 'row', justifyContent: 'center'}}>
+          style={{ flexDirection: 'row', justifyContent: 'center' }}
+        >
           {array.map((__, y) => (
             <Cell key={`${x}-${y}`} x={x} y={y} />
           ))}

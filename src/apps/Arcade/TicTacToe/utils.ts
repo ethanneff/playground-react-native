@@ -1,4 +1,4 @@
-import {Board, BoardValue, Direction, PlayerTurn, State} from './types';
+import { Board, BoardValue, Direction, PlayerTurn, State } from './types';
 
 const dfs = (
   m: Board,
@@ -53,5 +53,5 @@ export const getInitialState = (boardSize: number): State => {
     for (let j = 0; j < boardSize; j++) row.push(0);
     board.push(row);
   }
-  return {board, turn: 'white', state: 'playing', winner: null};
+  return { board, turn: 'white', state: 'playing', winner: null };
 };

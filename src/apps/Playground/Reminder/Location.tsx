@@ -1,6 +1,6 @@
-import React, {memo, useCallback} from 'react';
-import {v4} from 'uuid';
-import {Item} from './Item';
+import React, { memo, useCallback } from 'react';
+import { v4 } from 'uuid';
+import { Item } from './Item';
 
 interface LocationItem {
   id: string;
@@ -12,7 +12,7 @@ type Props = {
   onPress: (value: string) => () => void;
 };
 
-export const Location = memo(function Location({onPress}: Props) {
+export const Location = memo(function Location({ onPress }: Props) {
   const locations: LocationItem[] = [
     {
       id: v4(),

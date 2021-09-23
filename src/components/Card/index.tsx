@@ -1,8 +1,8 @@
-import React, {memo, ReactNode} from 'react';
-import {StyleSheet, View, ViewStyle} from 'react-native';
-import {padding} from '../../features/Config';
-import {useColor, useDropShadow} from '../../features/Theme';
-import {TouchableOpacity} from '../TouchableOpacity';
+import React, { memo, ReactNode } from 'react';
+import { StyleSheet, View, ViewStyle } from 'react-native';
+import { padding } from '../../features/Config';
+import { useColor, useDropShadow } from '../../features/Theme';
+import { TouchableOpacity } from '../TouchableOpacity';
 
 type Props = {
   testID?: string;
@@ -61,7 +61,7 @@ export const Card = memo(function Card({
     flex: {
       flex: 1,
     },
-    selected: {backgroundColor: color.background.positive},
+    selected: { backgroundColor: color.background.positive },
   });
 
   const containerStyles = [
@@ -79,7 +79,8 @@ export const Card = memo(function Card({
       onLongPress={onLongPress}
       onPress={onPress}
       style={containerStyles}
-      testID={testID}>
+      testID={testID}
+    >
       {child}
     </TouchableOpacity>
   ) : (

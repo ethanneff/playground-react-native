@@ -1,6 +1,6 @@
-import React, {memo} from 'react';
-import {View} from 'react-native';
-import {Item} from './Item';
+import React, { memo } from 'react';
+import { View } from 'react-native';
+import { Item } from './Item';
 
 type Props = {
   buttons: string[];
@@ -20,7 +20,8 @@ export const Radio = memo(function Radio({
       style={{
         justifyContent: 'center',
         flexDirection: horizontal ? 'row' : 'column',
-      }}>
+      }}
+    >
       {buttons.map((button, index) => (
         <Item
           active={button === value}

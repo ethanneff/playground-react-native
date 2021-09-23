@@ -1,19 +1,19 @@
-import React, {memo, useCallback} from 'react';
-import {TouchableOpacity} from '../../../components';
-import {useColor} from '../../../features';
+import React, { memo, useCallback } from 'react';
+import { TouchableOpacity } from '../../../components';
+import { useColor } from '../../../features';
 import {
   getSmallestDimension,
   useRootDispatch,
   useRootSelector,
 } from '../../../redux';
-import {getCell, updateCell} from './redux';
+import { getCell, updateCell } from './redux';
 
 type Props = {
   x: number;
   y: number;
 };
 
-export const Cell = memo(function Cell({x, y}: Props) {
+export const Cell = memo(function Cell({ x, y }: Props) {
   const color = useColor();
   const dispatch = useRootDispatch();
   const smallest = useRootSelector(getSmallestDimension);

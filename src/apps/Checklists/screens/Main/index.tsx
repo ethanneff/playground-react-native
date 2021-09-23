@@ -1,12 +1,15 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
-import {FlatList} from 'react-native';
-import {Button, Icon, Screen, TouchableOpacity} from '../../../../components';
-import {useRootDispatch, useRootSelector} from '../../../../redux';
-import {getActiveChecklistOrderByCreatedAt, setActiveList} from '../../models';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback } from 'react';
+import { FlatList } from 'react-native';
+import { Button, Icon, Screen, TouchableOpacity } from '../../../../components';
+import { useRootDispatch, useRootSelector } from '../../../../redux';
+import {
+  getActiveChecklistOrderByCreatedAt,
+  setActiveList,
+} from '../../models';
 
 export default memo(function Checklists() {
-  const {navigate} = useNavigation<any>();
+  const { navigate } = useNavigation<any>();
   const dispatch = useRootDispatch();
   const items = useRootSelector(getActiveChecklistOrderByCreatedAt);
 
@@ -26,7 +29,7 @@ export default memo(function Checklists() {
   );
 
   const renderItem = useCallback(
-    ({item}) => (
+    ({ item }) => (
       <Button
         onLongPress={handleItemLongPress(item.id)}
         onPress={handleItemPress(item.id)}

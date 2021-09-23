@@ -1,16 +1,16 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useRef} from 'react';
-import {Animated, StyleSheet, View} from 'react-native';
-import {Button, Screen} from '../../../components';
-import {padding, useColor, useDriver} from '../../../features';
-import {getHeight, getWidth, useRootSelector} from '../../../redux';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useRef } from 'react';
+import { Animated, StyleSheet, View } from 'react-native';
+import { Button, Screen } from '../../../components';
+import { padding, useColor, useDriver } from '../../../features';
+import { getHeight, getWidth, useRootSelector } from '../../../redux';
 
 export const Ball = memo(function PlaygroundBall() {
   const height = useRootSelector(getHeight);
   const width = useRootSelector(getWidth);
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const ballPosition = useRef(
-    new Animated.ValueXY({x: width / 2, y: height / 2}),
+    new Animated.ValueXY({ x: width / 2, y: height / 2 }),
   ).current;
   const useNativeDriver = useDriver();
   const color = useColor();
@@ -32,7 +32,7 @@ export const Ball = memo(function PlaygroundBall() {
   const animate = useCallback(
     (dx: number, dy: number) => {
       Animated.spring(ballPosition, {
-        toValue: {x: width * dx, y: height * dy},
+        toValue: { x: width * dx, y: height * dy },
         useNativeDriver,
       }).start();
     },
@@ -48,9 +48,10 @@ export const Ball = memo(function PlaygroundBall() {
     <Screen
       dropShadow
       onLeftPress={goBack}
-      style={{backgroundColor: color.background.secondary}}
+      style={{ backgroundColor: color.background.secondary }}
       testID="ballScreen"
-      title="Ball">
+      title="Ball"
+    >
       <Animated.View
         style={[ballPosition.getLayout(), styles.ball]}
         testID="ball"

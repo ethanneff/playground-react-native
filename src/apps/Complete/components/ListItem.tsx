@@ -1,18 +1,18 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useRef} from 'react';
-import {Keyboard, TextInput as OriginalTextInput} from 'react-native';
-import {TextInput, TextInputIcon} from '../../../components';
-import {TouchableWithoutFeedback} from '../../../conversions';
-import {useColor} from '../../../features';
-import {useRootDispatch, useRootSelector} from '../../../redux';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useRef } from 'react';
+import { Keyboard, TextInput as OriginalTextInput } from 'react-native';
+import { TextInput, TextInputIcon } from '../../../components';
+import { TouchableWithoutFeedback } from '../../../conversions';
+import { useColor } from '../../../features';
+import { useRootDispatch, useRootSelector } from '../../../redux';
 import {
   navItemDetails,
   navItemProject,
   swapItemOrderInItem,
   updateItem,
 } from '../models';
-import {ImplementTabNavigation} from '../navigationTypes';
-import {completeConfig} from '../utils';
+import { ImplementTabNavigation } from '../navigationTypes';
+import { completeConfig } from '../utils';
 
 type ListItemProps = {
   index: number;
@@ -31,7 +31,7 @@ export const ListItem = memo(function ListItem({
   );
   const textInputRef = useRef<OriginalTextInput | null>(null);
   const dispatch = useRootDispatch();
-  const {navigate} = useNavigation<ImplementTabNavigation>();
+  const { navigate } = useNavigation<ImplementTabNavigation>();
   const color = useColor();
 
   const onItemTitleClose = useCallback(() => {
@@ -40,19 +40,19 @@ export const ListItem = memo(function ListItem({
 
   const onItemTitleSubmit = useCallback(
     (title: string) => {
-      dispatch(updateItem({...item, title}));
+      dispatch(updateItem({ ...item, title }));
       Keyboard.dismiss();
     },
     [dispatch, item],
   );
 
   const onItemNav = useCallback(() => {
-    dispatch(navItemProject({projectItemId: itemId}));
+    dispatch(navItemProject({ projectItemId: itemId }));
     navigate('project');
   }, [dispatch, itemId, navigate]);
 
   const onItemDetails = useCallback(() => {
-    dispatch(navItemDetails({parentItemId, itemId}));
+    dispatch(navItemDetails({ parentItemId, itemId }));
     navigate('item-detail');
   }, [dispatch, itemId, navigate, parentItemId]);
 
@@ -64,16 +64,16 @@ export const ListItem = memo(function ListItem({
 
   const onItemUp = useCallback(() => {
     if (index === 0) return;
-    dispatch(swapItemOrderInItem({parentItemId, i: index, j: index - 1}));
+    dispatch(swapItemOrderInItem({ parentItemId, i: index, j: index - 1 }));
   }, [dispatch, index, parentItemId]);
 
   const onItemDown = useCallback(() => {
     if (index >= parentChildrenCount - 1) return;
-    dispatch(swapItemOrderInItem({parentItemId, i: index, j: index + 1}));
+    dispatch(swapItemOrderInItem({ parentItemId, i: index, j: index + 1 }));
   }, [dispatch, index, parentChildrenCount, parentItemId]);
 
   const icons: TextInputIcon[] = [
-    {name: 'close', onPress: onItemTitleClose, focus: true, reset: true},
+    { name: 'close', onPress: onItemTitleClose, focus: true, reset: true },
     {
       name: 'send',
       onPress: onItemTitleSubmit,
@@ -81,9 +81,9 @@ export const ListItem = memo(function ListItem({
       focus: true,
       required: true,
     },
-    {name: 'chevron-up', onPress: onItemUp, hidden: true},
-    {name: 'chevron-down', onPress: onItemDown, hidden: true},
-    {name: 'dots-horizontal', onPress: onItemDetails},
+    { name: 'chevron-up', onPress: onItemUp, hidden: true },
+    { name: 'chevron-down', onPress: onItemDown, hidden: true },
+    { name: 'dots-horizontal', onPress: onItemDetails },
     {
       name: 'chevron-right',
       onPress: onItemNav,
@@ -102,7 +102,8 @@ export const ListItem = memo(function ListItem({
         margin: completeConfig.padding / 2,
         backgroundColor: color.background.secondary,
         flexDirection: 'row',
-      }}>
+      }}
+    >
       <TextInput
         backgroundColor="secondary"
         icons={icons}

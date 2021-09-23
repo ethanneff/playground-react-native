@@ -1,16 +1,16 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
-import {Button, Input, Screen} from '../../../components';
-import {padding, useColor} from '../../../features';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useState } from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { Button, Input, Screen } from '../../../components';
+import { padding, useColor } from '../../../features';
 
 const styles = StyleSheet.create({
-  row: {flexDirection: 'row', justifyContent: 'space-around'},
+  row: { flexDirection: 'row', justifyContent: 'space-around' },
 });
 
 export const ForgotPassword = memo(function PortfolioForgotPassword() {
   const [email, setEmail] = useState('');
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const handleEmail = useCallback((val: string) => setEmail(val), []);
   const navLogin = useCallback(() => goBack(), [goBack]);
   const color = useColor();
@@ -20,7 +20,8 @@ export const ForgotPassword = memo(function PortfolioForgotPassword() {
         style={{
           padding: padding(4),
           backgroundColor: color.background.secondary,
-        }}>
+        }}
+      >
         <Input
           onChangeText={handleEmail}
           placeholder="example@gmail.com"

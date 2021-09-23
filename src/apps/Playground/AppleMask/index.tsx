@@ -1,10 +1,10 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo} from 'react';
-import {Image, ImageSourcePropType, View} from 'react-native';
-import {Screen, Text} from '../../../components';
-import {ScrollView} from '../../../conversions';
-import {padding, useColor} from '../../../features';
-import {getWidth, useRootSelector} from '../../../redux';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo } from 'react';
+import { Image, ImageSourcePropType, View } from 'react-native';
+import { Screen, Text } from '../../../components';
+import { ScrollView } from '../../../conversions';
+import { padding, useColor } from '../../../features';
+import { getWidth, useRootSelector } from '../../../redux';
 
 // https://support.apple.com/en-us/HT211028
 
@@ -34,18 +34,19 @@ const Section = ({
         paddingVertical: padding(8),
         borderBottomColor: color.border.tertiary,
         borderBottomWidth: 2,
-      }}>
-      <View style={{flexDirection: 'row'}}>
+      }}
+    >
+      <View style={{ flexDirection: 'row' }}>
         <Text
           color="accent"
-          style={{width: leftWidth}}
+          style={{ width: leftWidth }}
           title={String(index)}
           type="h2"
         />
-        <View style={{flex: 1}}>
-          <Text style={{marginBottom: padding(4)}} title={title} type="h5" />
+        <View style={{ flex: 1 }}>
+          <Text style={{ marginBottom: padding(4) }} title={title} type="h5" />
           <Text
-            style={{marginBottom: padding(4)}}
+            style={{ marginBottom: padding(4) }}
             title={description}
             type="subtitle1"
           />
@@ -66,7 +67,7 @@ const Section = ({
 };
 
 export const AppleMask = memo(function AppleMask() {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
 
   const sections = [
     {
@@ -86,7 +87,7 @@ export const AppleMask = memo(function AppleMask() {
       image: require('./three.gif'),
       imageRatio: 1560 / 950,
     },
-    {title: 'Repeat on other side'},
+    { title: 'Repeat on other side' },
     {
       title: 'Adjust your face shield',
       image: require('./four.gif'),
@@ -107,14 +108,15 @@ export const AppleMask = memo(function AppleMask() {
         style={{
           paddingHorizontal: padding(4),
           backgroundColor: color.background.secondary,
-        }}>
+        }}
+      >
         <Text title="Assemble and adjust your Face Shield" type="h2" />
         <Text
-          style={{paddingTop: padding(4)}}
+          style={{ paddingTop: padding(4) }}
           title="To assemble your face shield, follow these steps."
           type="subtitle1"
         />
-        {sections.map(({title, description, image, imageRatio}, index) => (
+        {sections.map(({ title, description, image, imageRatio }, index) => (
           <Section
             description={description}
             image={image}

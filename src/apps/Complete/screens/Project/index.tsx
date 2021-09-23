@@ -1,18 +1,18 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
-import {LayoutChangeEvent} from 'react-native';
-import {KeyboardHandler, Screen} from '../../../../components';
-import {padding, useColor, useKeyboardHeight} from '../../../../features';
-import {getSmallestDimension, useRootSelector} from '../../../../redux';
-import {Board} from '../../components';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useState } from 'react';
+import { LayoutChangeEvent } from 'react-native';
+import { KeyboardHandler, Screen } from '../../../../components';
+import { padding, useColor, useKeyboardHeight } from '../../../../features';
+import { getSmallestDimension, useRootSelector } from '../../../../redux';
+import { Board } from '../../components';
 
 // TODO: figure out centering of list
 
 export const Project = memo(function Project() {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const color = useColor();
   const screenWidth = useRootSelector(getSmallestDimension);
-  const {projectItemId} = useRootSelector(s => s.completeItem.nav);
+  const { projectItemId } = useRootSelector(s => s.completeItem.nav);
   if (!projectItemId) throw new Error('missing projectItemId on board screen');
   const projectItemType = useRootSelector(
     s => s.completeItem.items[projectItemId].type,
@@ -49,10 +49,12 @@ export const Project = memo(function Project() {
       onLeftPress={navBack}
       onRightPress={showSearchBar}
       rightIcon="magnify"
-      title={projectItemTitle}>
+      title={projectItemTitle}
+    >
       <KeyboardHandler
         backgroundColor={color.background.secondary}
-        onLayout={onLayout}>
+        onLayout={onLayout}
+      >
         <Board
           listMaxHeight={listMaxHeight}
           listWidth={listWidth}

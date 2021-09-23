@@ -1,13 +1,13 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
-import {Text, TouchableOpacity} from '../../components';
-import {padding, useColor} from '../../features';
+import { Image, StyleSheet, View } from 'react-native';
+import { Text, TouchableOpacity } from '../../components';
+import { padding, useColor } from '../../features';
 
 type Props = {
   onPress?: () => void;
 };
 
-export const ProfileLevel = ({onPress}: Props): JSX.Element => {
+export const ProfileLevel = ({ onPress }: Props): JSX.Element => {
   const color = useColor();
   const image = require('../../assets/placeholder.png');
   const width = 0.2;
@@ -62,9 +62,9 @@ export const ProfileLevel = ({onPress}: Props): JSX.Element => {
   return (
     <TouchableOpacity disabled={!onPress} onPress={onPress}>
       <Image source={image} style={styles.imageContainer} />
-      <View style={{flex: 1}}>
+      <View style={{ flex: 1 }}>
         <View style={styles.progressContainer}>
-          <View style={[styles.progressBar, {width}]} />
+          <View style={[styles.progressBar, { width }]} />
         </View>
         <View style={styles.levelContainer}>
           <Text title={String(level)} type="subtitle2" />

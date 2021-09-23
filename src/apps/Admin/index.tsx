@@ -1,11 +1,11 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
-import {Button, Screen, Text} from '../../components';
-import {ScrollView} from '../../conversions';
-import {padding, RootNavigation, RootRoutes, useColor} from '../../features';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback } from 'react';
+import { Button, Screen, Text } from '../../components';
+import { ScrollView } from '../../conversions';
+import { padding, RootNavigation, RootRoutes, useColor } from '../../features';
 
 export default memo(function Admin() {
-  const {navigate} = useNavigation<RootNavigation>();
+  const { navigate } = useNavigation<RootNavigation>();
   const onPress = useCallback(
     (to: keyof RootRoutes) => () => navigate(to),
     [navigate],
@@ -15,8 +15,9 @@ export default memo(function Admin() {
   return (
     <Screen dropShadow title="Admin">
       <ScrollView
-        contentContainerStyle={{paddingHorizontal: padding(4)}}
-        style={{backgroundColor: color.background.secondary}}>
+        contentContainerStyle={{ paddingHorizontal: padding(4) }}
+        style={{ backgroundColor: color.background.secondary }}
+      >
         <Text emphasis="medium" title="Apps" type="h3" />
         <Button onPress={onPress('arcade')} title="arcade" />
         <Button onPress={onPress('portfolio')} title="portfolio" />

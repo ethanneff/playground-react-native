@@ -1,12 +1,12 @@
-import React, {memo, useCallback, useState} from 'react';
-import {View} from 'react-native';
-import {Button, Carousel, Screen} from '../../../../components';
-import {CarouselSlide} from '../../../../components/Carousel/types';
-import {padding} from '../../../../features';
-import {useRootDispatch} from '../../../../redux';
-import {createItem, loadUser, login} from '../../models';
-import {completeConfig, getDefaultUserTemplate} from '../../utils';
-import {Login} from './Login';
+import React, { memo, useCallback, useState } from 'react';
+import { View } from 'react-native';
+import { Button, Carousel, Screen } from '../../../../components';
+import { CarouselSlide } from '../../../../components/Carousel/types';
+import { padding } from '../../../../features';
+import { useRootDispatch } from '../../../../redux';
+import { createItem, loadUser, login } from '../../models';
+import { completeConfig, getDefaultUserTemplate } from '../../utils';
+import { Login } from './Login';
 
 const slides: CarouselSlide[] = [
   {
@@ -16,13 +16,13 @@ const slides: CarouselSlide[] = [
       {
         title: 'Welcome to Accomplish',
         titleType: 'h4',
-        titleStyle: {paddingBottom: padding(10)},
+        titleStyle: { paddingBottom: padding(10) },
         paragraphs: [
-          [{title: 'Start investing commission-free'}],
+          [{ title: 'Start investing commission-free' }],
           [
-            {title: 'Other fees may apply. View our'},
-            {title: 'fee schedule', onPress: () => undefined},
-            {title: 'to learn more. All investments have risks.'},
+            { title: 'Other fees may apply. View our' },
+            { title: 'fee schedule', onPress: () => undefined },
+            { title: 'to learn more. All investments have risks.' },
           ],
         ],
       },
@@ -35,7 +35,7 @@ const slides: CarouselSlide[] = [
       {
         title: 'Enjoy commission-free stock trading',
         titleType: 'h4',
-        titleStyle: {paddingBottom: padding(10)},
+        titleStyle: { paddingBottom: padding(10) },
         paragraphs: [
           [
             {
@@ -43,7 +43,7 @@ const slides: CarouselSlide[] = [
                 'Invest in thousands of US an global stocks without paying commission or foreign exchange fees.',
             },
           ],
-          [{title: 'View fee disclosures', onPress: () => undefined}],
+          [{ title: 'View fee disclosures', onPress: () => undefined }],
         ],
       },
     ],
@@ -55,7 +55,7 @@ const slides: CarouselSlide[] = [
       {
         title: 'No account minimum',
         titleType: 'h4',
-        titleStyle: {paddingBottom: padding(10)},
+        titleStyle: { paddingBottom: padding(10) },
         paragraphs: [
           [
             {
@@ -74,7 +74,7 @@ const slides: CarouselSlide[] = [
       {
         title: 'Everything at your fingertips',
         titleType: 'h4',
-        titleStyle: {paddingBottom: padding(10)},
+        titleStyle: { paddingBottom: padding(10) },
         paragraphs: [
           [
             {
@@ -93,15 +93,15 @@ const slides: CarouselSlide[] = [
       {
         title: 'Account protection',
         titleType: 'h4',
-        titleStyle: {paddingBottom: padding(10)},
+        titleStyle: { paddingBottom: padding(10) },
         paragraphs: [
           [
             {
               title:
                 'Robinhood Financial is a member of SIPC. Securities in your account are protected up to $500,000. For details, please see',
             },
-            {title: 'www.sipc.org', onPress: () => undefined},
-            {title: '.'},
+            { title: 'www.sipc.org', onPress: () => undefined },
+            { title: '.' },
           ],
         ],
       },
@@ -134,9 +134,9 @@ export const Welcome = memo(function Welcome() {
         uid,
       };
       dispatch(login(data));
-      const {user, items} = getDefaultUserTemplate();
+      const { user, items } = getDefaultUserTemplate();
       items.map(item => dispatch(createItem(item)));
-      dispatch(loadUser({...user, email}));
+      dispatch(loadUser({ ...user, email }));
     },
     [dispatch],
   );
@@ -144,11 +144,11 @@ export const Welcome = memo(function Welcome() {
   return (
     <>
       <Screen>
-        <View style={{flex: 1}}>
+        <View style={{ flex: 1 }}>
           <Carousel duration={6000} slides={slides} />
-          <View style={{padding: completeConfig.padding}}>
+          <View style={{ padding: completeConfig.padding }}>
             <Button
-              buttonStyle={{marginBottom: padding(2)}}
+              buttonStyle={{ marginBottom: padding(2) }}
               center
               color="accent"
               emphasis="high"

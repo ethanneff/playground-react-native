@@ -1,9 +1,9 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo} from 'react';
-import {View} from 'react-native';
-import {Screen} from '../../../components';
-import {AppleActivity} from './AppleActivity';
-import {Ring} from './types';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo } from 'react';
+import { View } from 'react-native';
+import { Screen } from '../../../components';
+import { AppleActivity } from './AppleActivity';
+import { Ring } from './types';
 
 const TAU = 2 * Math.PI;
 const size = 300;
@@ -36,11 +36,11 @@ const rings: Ring[] = [
 ];
 
 export const AppleFit = memo(function PlaygroundAppleFit() {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
 
   return (
     <Screen onLeftPress={goBack} title="Apple Fit">
-      <View style={{alignItems: 'center'}}>
+      <View style={{ alignItems: 'center' }}>
         <AppleActivity
           animate
           backgroundColor="primaryA"

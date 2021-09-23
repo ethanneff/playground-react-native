@@ -1,11 +1,11 @@
-import React, {memo, useCallback} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
-import {Card, Icon, Text, TouchableOpacity} from '../../components';
-import {padding, useColor} from '../../features';
-import {getLandscapeOrientation, useRootSelector} from '../../redux';
-import {DailyProgress} from './DailyProgress';
-import {app} from './data';
-import {ProfileLevel} from './ProfileLevel';
+import React, { memo, useCallback } from 'react';
+import { FlatList, StyleSheet, View } from 'react-native';
+import { Card, Icon, Text, TouchableOpacity } from '../../components';
+import { padding, useColor } from '../../features';
+import { getLandscapeOrientation, useRootSelector } from '../../redux';
+import { DailyProgress } from './DailyProgress';
+import { app } from './data';
+import { ProfileLevel } from './ProfileLevel';
 
 type Props = {
   onProfilePress(): void;
@@ -32,7 +32,7 @@ export const List = memo(function List({
   const onPress = useCallback(() => undefined, []);
 
   const renderItem = useCallback(
-    ({item, index}) => {
+    ({ item, index }) => {
       const data = app.goals.byId[item];
       return (
         <View
@@ -40,12 +40,13 @@ export const List = memo(function List({
             flex: 1,
             marginRight: index % 2 === 0 ? padding(2) : 0,
             marginLeft: index % 2 !== 0 ? padding(2) : 0,
-          }}>
+          }}
+        >
           <Card key={data.id} onPress={onPress}>
             <Text
               bold
               center
-              style={{paddingBottom: padding(4)}}
+              style={{ paddingBottom: padding(4) }}
               title={`Challenge #${index + 1}`}
               type="subtitle1"
             />
@@ -60,14 +61,20 @@ export const List = memo(function List({
   const renderHeader = useCallback(
     () => (
       <View>
-        <Text center style={{padding: padding(4)}} title="Progress" type="h4" />
+        <Text
+          center
+          style={{ padding: padding(4) }}
+          title="Progress"
+          type="h4"
+        />
         <Card>
           <View
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
               paddingBottom: padding(2),
-            }}>
+            }}
+          >
             <ProfileLevel onPress={onProfilePress} />
             <TouchableOpacity onPress={onSettingsPress}>
               <Icon name="cog" />
@@ -77,7 +84,7 @@ export const List = memo(function List({
         </Card>
         <Text
           center
-          style={{padding: padding(4)}}
+          style={{ padding: padding(4) }}
           title="Challenges"
           type="h4"
         />
@@ -97,7 +104,7 @@ export const List = memo(function List({
       numColumns={columns}
       renderItem={renderItem}
       showsVerticalScrollIndicator={false}
-      style={{backgroundColor: color.background.secondary}}
+      style={{ backgroundColor: color.background.secondary }}
     />
   );
 });

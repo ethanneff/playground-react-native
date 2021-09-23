@@ -1,12 +1,12 @@
-import {useNavigation} from '@react-navigation/native';
-import dayjs, {Dayjs} from 'dayjs';
-import React, {memo, useCallback, useState} from 'react';
-import {v4} from 'uuid';
-import {Button, Modal, Screen, Text} from '../../../components';
-import {ScrollView} from '../../../conversions';
-import {RateApp, useColor} from '../../../features';
-import {CreateReminderModal} from './CreateReminderModal';
-import {Reminder, ReminderType} from './types';
+import { useNavigation } from '@react-navigation/native';
+import dayjs, { Dayjs } from 'dayjs';
+import React, { memo, useCallback, useState } from 'react';
+import { v4 } from 'uuid';
+import { Button, Modal, Screen, Text } from '../../../components';
+import { ScrollView } from '../../../conversions';
+import { RateApp, useColor } from '../../../features';
+import { CreateReminderModal } from './CreateReminderModal';
+import { Reminder, ReminderType } from './types';
 
 type State = {
   type: ReminderType;
@@ -22,7 +22,7 @@ type State = {
 };
 
 export const ReminderExample = memo(function PlaygroundReminder() {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const [form, setForm] = useState<State>({
     type: 'one time',
     reminders: [],
@@ -41,7 +41,7 @@ export const ReminderExample = memo(function PlaygroundReminder() {
       if (date.isBefore(dayjs())) {
         setForm(prev => ({
           ...prev,
-          modals: {...prev.modals, customDate: true},
+          modals: { ...prev.modals, customDate: true },
         }));
         return;
       }
@@ -67,21 +67,21 @@ export const ReminderExample = memo(function PlaygroundReminder() {
   const handleCustomDateClose = useCallback(() => {
     setForm(prev => ({
       ...prev,
-      modals: {...prev.modals, customDate: false},
+      modals: { ...prev.modals, customDate: false },
     }));
   }, []);
 
   const handleCreateReminder = useCallback(() => {
     setForm(prev => ({
       ...prev,
-      modals: {...prev.modals, createReminder: true},
+      modals: { ...prev.modals, createReminder: true },
     }));
   }, []);
 
   const handleCreateReminderClose = useCallback(() => {
     setForm(prev => ({
       ...prev,
-      modals: {...prev.modals, createReminder: false},
+      modals: { ...prev.modals, createReminder: false },
     }));
   }, []);
 
@@ -89,8 +89,8 @@ export const ReminderExample = memo(function PlaygroundReminder() {
     (id: string) => () => {
       setForm(prev => ({
         ...prev,
-        modals: {...prev.modals, location: true},
-        selected: {location: id},
+        modals: { ...prev.modals, location: true },
+        selected: { location: id },
       }));
     },
     [],
@@ -99,7 +99,7 @@ export const ReminderExample = memo(function PlaygroundReminder() {
   const handleLocationClose = useCallback(() => {
     setForm(prev => ({
       ...prev,
-      modals: {...prev.modals, location: false},
+      modals: { ...prev.modals, location: false },
     }));
   }, []);
 
@@ -111,7 +111,7 @@ export const ReminderExample = memo(function PlaygroundReminder() {
   return (
     <>
       <Screen dropShadow onLeftPress={goBack} title="Reminder">
-        <ScrollView style={{backgroundColor: color.background.secondary}}>
+        <ScrollView style={{ backgroundColor: color.background.secondary }}>
           <Text center emphasis="low" title="Modals" type="h4" />
           <Button
             center

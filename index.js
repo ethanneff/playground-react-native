@@ -1,2 +1,2 @@
-import {Main} from './src';
+import { Main } from './src';
 export default Main;

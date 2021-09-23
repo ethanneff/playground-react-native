@@ -1,4 +1,4 @@
-import {getType} from 'typesafe-actions';
+import { getType } from 'typesafe-actions';
 import {
   dimensionInitialState,
   dimensionReducer,
@@ -9,8 +9,8 @@ import {
   getWidth,
   updateDimension,
 } from '..';
-import {loginRequest, logout} from '../../Auth';
-import {store} from '../../core';
+import { loginRequest, logout } from '../../Auth';
+import { store } from '../../core';
 
 const setupSelectors = () => {
   const dimensionChange = {
@@ -89,7 +89,7 @@ describe('actions', () => {
       scale: 1,
       width: 1,
     };
-    const payload = {window: size, screen: size};
+    const payload = { window: size, screen: size };
     const expectedAction = {
       payload,
       type: getType(updateDimension),

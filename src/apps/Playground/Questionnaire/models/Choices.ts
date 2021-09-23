@@ -1,12 +1,12 @@
-import {RootAction} from 'root-types';
-import {createAction} from 'typesafe-actions';
+import { RootAction } from 'root-types';
+import { createAction } from 'typesafe-actions';
 
 /* ACTIONS */
 export const createChoice = createAction('choices/CREATE')<Choice>();
 export const updateChoice = createAction('choices/UPDATE')<Choice>();
 export const removeChoice = createAction('choices/REMOVE')<string>();
 
-export const choicesActions = {createChoice, updateChoice, removeChoice};
+export const choicesActions = { createChoice, updateChoice, removeChoice };
 
 /* INTERFACES */
 interface Choice {

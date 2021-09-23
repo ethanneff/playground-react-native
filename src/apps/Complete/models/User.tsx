@@ -1,11 +1,11 @@
-import {RootAction, RootState} from 'root-types';
-import {createAction, getType} from 'typesafe-actions';
-import {logout} from './Auth';
+import { RootAction, RootState } from 'root-types';
+import { createAction, getType } from 'typesafe-actions';
+import { logout } from './Auth';
 
 /* ACTIONS */
 export const loadUser = createAction('complete/user/load')<User>();
 export const updateUser = createAction('complete/user/update')<User>();
-export const completeUserActions = {loadUser, updateUser};
+export const completeUserActions = { loadUser, updateUser };
 
 /* SELECTORS */
 export const getUser = (state: RootState): CompleteUserReducer =>

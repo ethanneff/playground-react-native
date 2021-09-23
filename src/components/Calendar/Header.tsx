@@ -1,10 +1,10 @@
 import dayjs from 'dayjs';
-import React, {memo} from 'react';
-import {View} from 'react-native';
-import {padding} from '../../features/Config';
-import {Icon} from '../Icon';
-import {Text} from '../Text';
-import {TouchableOpacity} from '../TouchableOpacity';
+import React, { memo } from 'react';
+import { View } from 'react-native';
+import { padding } from '../../features/Config';
+import { Icon } from '../Icon';
+import { Text } from '../Text';
+import { TouchableOpacity } from '../TouchableOpacity';
 
 type Props = {
   unix: number;
@@ -19,14 +19,15 @@ export const CalendarHeader = memo(function CalendarHeader({
   onMonthDecrease,
 }: Props) {
   return (
-    <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
       <TouchableOpacity onPress={onMonthDecrease}>
         <Icon name="chevron-left" padded size={padding(6)} />
       </TouchableOpacity>
       <TouchableOpacity
         flex
         onPress={onTitlePress}
-        style={{justifyContent: 'center', alignItems: 'center'}}>
+        style={{ justifyContent: 'center', alignItems: 'center' }}
+      >
         <Text center title={dayjs(unix).format('MMMM YYYY')} type="h5" />
       </TouchableOpacity>
       <TouchableOpacity onPress={onMonthIncrease}>

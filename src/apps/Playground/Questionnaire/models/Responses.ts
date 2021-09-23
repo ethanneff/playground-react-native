@@ -1,5 +1,5 @@
-import {RootAction} from 'root-types';
-import {createAction} from 'typesafe-actions';
+import { RootAction } from 'root-types';
+import { createAction } from 'typesafe-actions';
 
 /* ACTIONS */
 export const createResponse = createAction('responses/CREATE')<Response>();
@@ -15,7 +15,7 @@ export const responsesActions = {
 interface Response {
   id: string;
   userId: string;
-  responses: {[questionId: string]: string[]};
+  responses: { [questionId: string]: string[] };
   createdAt: string;
 }
 

@@ -5,4 +5,4 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 
-export {TouchableOpacity, TouchableWithoutFeedback, ScrollView, FlatList};
+export { TouchableOpacity, TouchableWithoutFeedback, ScrollView, FlatList };

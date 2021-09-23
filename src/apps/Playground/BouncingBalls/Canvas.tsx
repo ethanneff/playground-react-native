@@ -1,6 +1,6 @@
-import React, {memo, ReactNode} from 'react';
-import {LayoutChangeEvent, StyleSheet, View} from 'react-native';
-import {useColor} from '../../../features';
+import React, { memo, ReactNode } from 'react';
+import { LayoutChangeEvent, StyleSheet, View } from 'react-native';
+import { useColor } from '../../../features';
 
 type Props = {
   onLayout: (event: LayoutChangeEvent) => void;
@@ -14,7 +14,7 @@ export type CanvasDimensions = {
   height: number;
 };
 
-export const Canvas = memo(function Canvas({children, onLayout}: Props) {
+export const Canvas = memo(function Canvas({ children, onLayout }: Props) {
   const color = useColor();
   const styles = StyleSheet.create({
     container: {

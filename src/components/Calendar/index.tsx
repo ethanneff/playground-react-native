@@ -1,8 +1,8 @@
-import React, {memo, useCallback, useState} from 'react';
-import {View} from 'react-native';
-import {CalendarHeader} from './Header';
-import {CalendarMonth} from './Month';
-import {addMonths, CalendarMatrix, getCalendarMatrix} from './utils';
+import React, { memo, useCallback, useState } from 'react';
+import { View } from 'react-native';
+import { CalendarHeader } from './Header';
+import { CalendarMonth } from './Month';
+import { addMonths, CalendarMatrix, getCalendarMatrix } from './utils';
 
 type State = {
   today: Date;
@@ -27,7 +27,7 @@ const getState = (date: Date) => ({
   selected: undefined,
 });
 
-export const Calendar = memo(function Calendar({hiddenDays}: Props) {
+export const Calendar = memo(function Calendar({ hiddenDays }: Props) {
   const [calendar, setCalendar] = useState<State>(initialState);
 
   const onSelected = useCallback(

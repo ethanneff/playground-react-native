@@ -1,4 +1,4 @@
-import dayjs, {Dayjs} from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 
 export const formatRelativeDate = (date: Dayjs): string => {
   const now = dayjs();

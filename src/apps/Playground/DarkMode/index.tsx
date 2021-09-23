@@ -1,10 +1,17 @@
 // TODO: slider on web
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
-import {Image, ImageSourcePropType, ListRenderItem, View} from 'react-native';
-import {Button, Card, Masonry, Screen, Slider, Text} from '../../../components';
-import {ScrollView} from '../../../conversions';
-import {padding, useColor} from '../../../features';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useState } from 'react';
+import { Image, ImageSourcePropType, ListRenderItem, View } from 'react-native';
+import {
+  Button,
+  Card,
+  Masonry,
+  Screen,
+  Slider,
+  Text,
+} from '../../../components';
+import { ScrollView } from '../../../conversions';
+import { padding, useColor } from '../../../features';
 import {
   changeTheme,
   getLandscapeOrientation,
@@ -78,7 +85,7 @@ const cards: CardItem[] = [
 export const DarkMode = memo(function DarkMode() {
   const dispatch = useRootDispatch();
   const color = useColor();
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const currentTheme = useRootSelector(state => state.theme.currentTheme);
   const themePress = (theme: Theme) => () => dispatch(changeTheme(theme));
   const [elevation, setElevation] = useState(2);
@@ -88,13 +95,13 @@ export const DarkMode = memo(function DarkMode() {
   const onPress = useCallback(() => undefined, []);
 
   const renderItem = useCallback<ListRenderItem<CardItem>>(
-    ({item, index}) => (
+    ({ item, index }) => (
       <Card elevation={elevation} key={index} onPress={onPress}>
         <Text title={item.title} type="overline" />
-        <Text style={{marginTop: padding(2)}} title={item.value} type="h4" />
+        <Text style={{ marginTop: padding(2) }} title={item.value} type="h4" />
         {item.target && (
           <Text
-            style={{marginTop: padding(2)}}
+            style={{ marginTop: padding(2) }}
             title={item.target}
             type="body2"
           />
@@ -112,7 +119,7 @@ export const DarkMode = memo(function DarkMode() {
         )}
         {item.button && (
           <Button
-            buttonStyle={{marginTop: padding(2)}}
+            buttonStyle={{ marginTop: padding(2) }}
             center
             color="accent"
             emphasis="high"
@@ -126,13 +133,14 @@ export const DarkMode = memo(function DarkMode() {
 
   return (
     <Screen dropShadow onLeftPress={goBack} title="Dark mode">
-      <ScrollView style={{backgroundColor: color.background.primaryA}}>
-        <View style={{padding: padding(4)}}>
+      <ScrollView style={{ backgroundColor: color.background.primaryA }}>
+        <View style={{ padding: padding(4) }}>
           <View
             style={{
               flexDirection: 'row',
               alignItems: 'center',
-            }}>
+            }}
+          >
             <Text title="theme: " />
             {themes.map(item => (
               <Button

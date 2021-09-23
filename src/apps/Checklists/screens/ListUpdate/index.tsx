@@ -1,12 +1,12 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
-import {View} from 'react-native';
-import {Button, Input, Modal, Screen, Text} from '../../../../components';
-import {useRootDispatch, useRootSelector} from '../../../../redux';
-import {getCurrentChecklist, removeList, updateList} from '../../models';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useState } from 'react';
+import { View } from 'react-native';
+import { Button, Input, Modal, Screen, Text } from '../../../../components';
+import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { getCurrentChecklist, removeList, updateList } from '../../models';
 
 export default memo(function ChecklistUpdate() {
-  const {navigate} = useNavigation<any>();
+  const { navigate } = useNavigation<any>();
   const dispatch = useRootDispatch();
   const checklist = useRootSelector(getCurrentChecklist);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -17,15 +17,15 @@ export default memo(function ChecklistUpdate() {
   const isInvalidForm = form.name.trim().length === 0;
 
   const handleNameChange = useCallback(
-    (name: string) => setForm(state => ({...state, name})),
+    (name: string) => setForm(state => ({ ...state, name })),
     [],
   );
   const handleDescriptionChange = useCallback(
-    (description: string) => setForm(state => ({...state, description})),
+    (description: string) => setForm(state => ({ ...state, description })),
     [],
   );
   const handleSubmit = useCallback(() => {
-    const {name, description} = form;
+    const { name, description } = form;
     const now = Date.now();
     if (isInvalidForm) return;
 

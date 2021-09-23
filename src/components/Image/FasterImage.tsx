@@ -1,5 +1,5 @@
-import React, {memo} from 'react';
-import {FastImage} from '../../conversions';
+import React, { memo } from 'react';
+import { FastImage } from '../../conversions';
 
 type Props = {
   onImageLoad: () => void;
@@ -14,12 +14,12 @@ export const FasterImage = memo(function FasterImage({
   width,
   height,
 }: Props) {
-  const containerStyle = {width, height};
+  const containerStyle = { width, height };
   return (
     <FastImage
       onLoad={onImageLoad}
       resizeMode={FastImage.resizeMode.cover}
-      source={{uri}}
+      source={{ uri }}
       style={containerStyle}
     />
   );

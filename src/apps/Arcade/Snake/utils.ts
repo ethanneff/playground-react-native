@@ -1,4 +1,4 @@
-import {Direction} from './useGesture';
+import { Direction } from './useGesture';
 
 export type Matrix = Array<Array<0 | 1 | 2>>;
 type Cell = [number, number];
@@ -44,7 +44,7 @@ export const getBoard = (size: number): BoardContext => {
   matrix[center][center] = 1;
   matrix[food[0]][food[1]] = 2;
 
-  return {matrix, head, tail, food, state: 'ok'};
+  return { matrix, head, tail, food, state: 'ok' };
 };
 
 const getNext = (

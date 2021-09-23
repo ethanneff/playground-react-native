@@ -1,8 +1,8 @@
-import React, {memo, useCallback, useState} from 'react';
-import {View} from 'react-native';
-import {Card, Icon, Screen, Text, TouchableOpacity} from '../../components';
-import {ScrollView} from '../../conversions';
-import {padding, useAdminNavBack, useColor} from '../../features';
+import React, { memo, useCallback, useState } from 'react';
+import { View } from 'react-native';
+import { Card, Icon, Screen, Text, TouchableOpacity } from '../../components';
+import { ScrollView } from '../../conversions';
+import { padding, useAdminNavBack, useColor } from '../../features';
 
 interface SectionProps {
   title: string;
@@ -16,7 +16,7 @@ type ChecklistItemProps = {
   index: number;
 };
 
-const ChecklistItem = ({item, index}: ChecklistItemProps) => {
+const ChecklistItem = ({ item, index }: ChecklistItemProps) => {
   const [toggle, setToggle] = useState('checkbox-blank-outline');
   const onPress = useCallback(() => {
     setToggle(prev =>
@@ -28,15 +28,15 @@ const ChecklistItem = ({item, index}: ChecklistItemProps) => {
   const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
   return (
     <TouchableOpacity onPress={onPress}>
-      <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
-        <Icon name={toggle} style={{paddingRight: padding(2)}} />
-        <View style={{flex: 1}}>
+      <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+        <Icon name={toggle} style={{ paddingRight: padding(2) }} />
+        <View style={{ flex: 1 }}>
           <Text title={`${index + 1}. ${item}`} />
         </View>
       </View>
-      <View style={{flexDirection: 'row'}}>
+      <View style={{ flexDirection: 'row' }}>
         {days.map(day => (
-          <View key={day} style={{flex: 1}}>
+          <View key={day} style={{ flex: 1 }}>
             <Text center emphasis="low" title={day} type="caption" />
           </View>
         ))}
@@ -45,19 +45,24 @@ const ChecklistItem = ({item, index}: ChecklistItemProps) => {
   );
 };
 
-const Section = ({title, subtitle, description, items = []}: SectionProps) => {
+const Section = ({
+  title,
+  subtitle,
+  description,
+  items = [],
+}: SectionProps) => {
   return (
     <Card>
       <Text title={title} type="h4" />
       {subtitle && (
         <Text
           emphasis="medium"
-          style={{paddingVertical: padding(1)}}
+          style={{ paddingVertical: padding(1) }}
           title={subtitle}
           type="subtitle1"
         />
       )}
-      <View style={{paddingTop: padding(2)}}>
+      <View style={{ paddingTop: padding(2) }}>
         {description && <Text title={description} />}
         {items &&
           items.map((item, index) => (
@@ -70,7 +75,7 @@ const Section = ({title, subtitle, description, items = []}: SectionProps) => {
 
 export const Home = memo(function Home() {
   const color = useColor();
-  const {onLeftPress} = useAdminNavBack();
+  const { onLeftPress } = useAdminNavBack();
 
   return (
     <Screen dropShadow onLeftPress={onLeftPress} title="The One Thing">
@@ -79,7 +84,8 @@ export const Home = memo(function Home() {
           paddingHorizontal: padding(4),
           paddingVertical: padding(2),
         }}
-        style={{backgroundColor: color.background.secondary}}>
+        style={{ backgroundColor: color.background.secondary }}
+      >
         <Section
           description="What’s the thing that gets you up in the morning and keeps you going when you’re tired and worn down - why you’re excited with your life?"
           subtitle="Your Life Missioxn"

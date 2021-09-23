@@ -1,17 +1,17 @@
-import React, {memo} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {padding} from '../../features/Config';
-import {Sentence} from '../Sentence';
-import {Text} from '../Text';
-import {Sections} from './types';
+import React, { memo } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { padding } from '../../features/Config';
+import { Sentence } from '../Sentence';
+import { Text } from '../Text';
+import { Sections } from './types';
 
-type Props = {sections: Sections; center?: boolean};
+type Props = { sections: Sections; center?: boolean };
 
-export const Content = memo(function Content({sections, center}: Props) {
+export const Content = memo(function Content({ sections, center }: Props) {
   const styles = StyleSheet.create({
-    paragraph: {paddingBottom: padding(4)},
-    section: {paddingBottom: padding(2)},
-    title: {paddingBottom: padding(2)},
+    paragraph: { paddingBottom: padding(4) },
+    section: { paddingBottom: padding(2) },
+    title: { paddingBottom: padding(2) },
   });
 
   return (

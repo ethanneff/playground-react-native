@@ -1,12 +1,12 @@
-import React, {memo, useCallback} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Calendar, Card, Input, Screen, Text} from '../../components';
-import {ScrollView} from '../../conversions';
-import {padding, useAdminNavBack, useColor} from '../../features';
+import React, { memo, useCallback } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Calendar, Card, Input, Screen, Text } from '../../components';
+import { ScrollView } from '../../conversions';
+import { padding, useAdminNavBack, useColor } from '../../features';
 
 export const Home = memo(function Home() {
   const color = useColor();
-  const {onLeftPress} = useAdminNavBack();
+  const { onLeftPress } = useAdminNavBack();
   const styles = StyleSheet.create({
     bottom: {
       paddingBottom: padding(4),
@@ -22,7 +22,8 @@ export const Home = memo(function Home() {
           paddingHorizontal: padding(4),
           paddingVertical: padding(2),
         }}
-        style={{backgroundColor: color.background.secondary}}>
+        style={{ backgroundColor: color.background.secondary }}
+      >
         <Card>
           <Text style={styles.bottom} title="Calendar" type="h4" />
           <Calendar hiddenDays />
@@ -138,7 +139,7 @@ export const Home = memo(function Home() {
             value=""
           />
         </Card>
-        <View style={{height: padding(4)}} />
+        <View style={{ height: padding(4) }} />
       </ScrollView>
     </Screen>
   );

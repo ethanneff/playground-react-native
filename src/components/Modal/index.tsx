@@ -1,11 +1,17 @@
-import React, {memo, ReactElement, useCallback, useEffect, useRef} from 'react';
-import {Animated, StyleSheet, View} from 'react-native';
-import {ScrollView, TouchableWithoutFeedback} from '../../conversions';
-import {useDriver} from '../../features/Animation';
-import {SoundManager} from '../../features/Sound';
-import {useColor, useDropShadow} from '../../features/Theme';
-import {useRootSelector} from '../../redux';
-import {Card} from '../Card';
+import React, {
+  memo,
+  ReactElement,
+  useCallback,
+  useEffect,
+  useRef,
+} from 'react';
+import { Animated, StyleSheet, View } from 'react-native';
+import { ScrollView, TouchableWithoutFeedback } from '../../conversions';
+import { useDriver } from '../../features/Animation';
+import { SoundManager } from '../../features/Sound';
+import { useColor, useDropShadow } from '../../features/Theme';
+import { useRootSelector } from '../../redux';
+import { Card } from '../Card';
 
 type ModalProps = {
   duration?: number;
@@ -64,7 +70,7 @@ export const Modal = memo(function Modal({
   });
   const fade = useRef(new Animated.Value(0)).current;
   const opacity = fade;
-  const containerStyle = [styles.container, {opacity}];
+  const containerStyle = [styles.container, { opacity }];
   const preventDismissSpam = useRef(false);
 
   // TODO: animation is not clean on devices
@@ -106,20 +112,23 @@ export const Modal = memo(function Modal({
     <Animated.View style={containerStyle}>
       <TouchableWithoutFeedback
         onPress={dismiss(onBackgroundPress)}
-        testID={testID}>
+        testID={testID}
+      >
         <View style={styles.overlay}>
           <TouchableWithoutFeedback>
             <Card
               elevation={elevation}
               noMargin
               style={styles.modal}
-              testID="modal">
+              testID="modal"
+            >
               {noScroll ? (
                 children
               ) : (
                 <ScrollView
                   keyboardShouldPersistTaps="handled"
-                  showsVerticalScrollIndicator={false}>
+                  showsVerticalScrollIndicator={false}
+                >
                   {children}
                 </ScrollView>
               )}

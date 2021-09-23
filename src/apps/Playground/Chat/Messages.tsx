@@ -1,6 +1,6 @@
-import {createSelector} from 'reselect';
-import {RootAction, RootState} from 'root-types';
-import {createAction, getType} from 'typesafe-actions';
+import { createSelector } from 'reselect';
+import { RootAction, RootState } from 'root-types';
+import { createAction, getType } from 'typesafe-actions';
 
 /* ACTIONS */
 export const createChatMessage = createAction('chat/create')<Message>();
@@ -44,7 +44,7 @@ export type Message = {
   updatedAt: number;
   userId: string; // need name and id
 };
-type Messages = {[key: string]: Message};
+type Messages = { [key: string]: Message };
 
 /* REDUCER */
 const initialState: ChatMessageReducer = {
@@ -57,7 +57,7 @@ export const chatMessageReducer = (
 ): ChatMessageReducer => {
   switch (action.type) {
     case getType(typeChatMessage):
-      return {...state, textField: action.payload};
+      return { ...state, textField: action.payload };
     case getType(createChatMessage):
       return {
         ...state,

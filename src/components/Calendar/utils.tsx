@@ -36,7 +36,7 @@ const createDayObj = (
   display: string | number,
   current = false,
   header = false,
-): Day => ({id: String(id), display: String(display), current, header});
+): Day => ({ id: String(id), display: String(display), current, header });
 
 const generateCalendarMatrix = (date: Date) => {
   const firstDay = firstDayOfMonth(date).getDay();
@@ -70,7 +70,7 @@ const generateCalendarMatrix = (date: Date) => {
   return calendarMatrix;
 };
 
-const calendarMatrixMemo: {[key: string]: CalendarMatrix} = {};
+const calendarMatrixMemo: { [key: string]: CalendarMatrix } = {};
 export const getCalendarMatrix = (date: Date): CalendarMatrix => {
   const memo = calendarMatrixMemo[date.valueOf()];
   if (memo) return memo;

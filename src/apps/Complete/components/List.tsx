@@ -1,10 +1,10 @@
-import React, {memo, ReactElement} from 'react';
-import {View} from 'react-native';
-import {completeConfig} from '../utils';
-import {AddItem} from './AddItem';
-import {Card} from './Card';
-import {ListHeader} from './ListHeader';
-import {ListItems} from './ListItems';
+import React, { memo, ReactElement } from 'react';
+import { View } from 'react-native';
+import { completeConfig } from '../utils';
+import { AddItem } from './AddItem';
+import { Card } from './Card';
+import { ListHeader } from './ListHeader';
+import { ListItems } from './ListItems';
 
 type ListProps = {
   listWidth?: number;
@@ -27,7 +27,7 @@ export const List = memo(function List({
   const padding = horizontal ? 0 : completeConfig.padding;
   const margin = horizontal ? 'right' : 'bottom';
   return (
-    <View style={{padding, maxHeight}}>
+    <View style={{ padding, maxHeight }}>
       <Card margin={margin} width={listWidth}>
         <ListHeader itemId={itemId} parentItemId={parentItemId} />
         <ListItems parentItemId={itemId} />

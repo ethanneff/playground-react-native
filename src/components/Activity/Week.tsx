@@ -1,10 +1,10 @@
 import dayjs from 'dayjs';
-import React, {memo} from 'react';
-import {View} from 'react-native';
-import {padding} from '../../features/Config';
-import {Text} from '../Text';
-import {Day} from './Day';
-import {ActivityDay, ActivityWeek} from './types';
+import React, { memo } from 'react';
+import { View } from 'react-native';
+import { padding } from '../../features/Config';
+import { Text } from '../Text';
+import { Day } from './Day';
+import { ActivityDay, ActivityWeek } from './types';
 
 type Props = {
   item: ActivityWeek;
@@ -32,7 +32,7 @@ export const Week = memo(function Week({
       <Text
         center
         emphasis="medium"
-        style={{paddingBottom: padding(3)}}
+        style={{ paddingBottom: padding(3) }}
         title={header}
         type="overline"
       />

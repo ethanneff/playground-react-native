@@ -1,20 +1,20 @@
-import React, {memo, useCallback, useContext, useEffect, useRef} from 'react';
-import {Animated} from 'react-native';
+import React, { memo, useCallback, useContext, useEffect, useRef } from 'react';
+import { Animated } from 'react-native';
 import {
   accelerometer,
   SensorTypes,
   setUpdateIntervalForType,
 } from 'react-native-sensors';
-import {useColor, useDriver} from '../../../features';
-import {DriftContext} from './Context';
-import {CanvasDimensions} from './types';
-import {getPosition} from './utils';
+import { useColor, useDriver } from '../../../features';
+import { DriftContext } from './Context';
+import { CanvasDimensions } from './types';
+import { getPosition } from './utils';
 
 type CharacterProps = {
   canvas: CanvasDimensions;
 };
 
-export const Character = memo(function Character({canvas}: CharacterProps) {
+export const Character = memo(function Character({ canvas }: CharacterProps) {
   const elevation = 5;
   const size = 30;
   const speed = 6;
@@ -29,19 +29,19 @@ export const Character = memo(function Character({canvas}: CharacterProps) {
     new Animated.ValueXY(initialPositionRef.current),
   ).current;
   const useNativeDriver = useDriver();
-  const {dispatch} = useContext(DriftContext);
+  const { dispatch } = useContext(DriftContext);
   const color = useColor();
 
   const animate = useCallback(
     (dx: number, dy: number) => {
       const toValue = getPosition({
         canvas,
-        change: {dx: dx * speed, dy: dy * speed},
+        change: { dx: dx * speed, dy: dy * speed },
         current: initialPositionRef.current,
         size,
       });
       initialPositionRef.current = toValue;
-      dispatch({type: 'addTrack', payload: {...toValue, size}});
+      dispatch({ type: 'addTrack', payload: { ...toValue, size } });
       Animated.spring(position, {
         toValue,
         useNativeDriver,
@@ -52,7 +52,7 @@ export const Character = memo(function Character({canvas}: CharacterProps) {
 
   useEffect(() => {
     setUpdateIntervalForType(SensorTypes.accelerometer, rate);
-    const acc = accelerometer.subscribe(({x, y}) => animate(x, y));
+    const acc = accelerometer.subscribe(({ x, y }) => animate(x, y));
     return () => {
       acc.unsubscribe();
     };

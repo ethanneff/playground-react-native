@@ -1,7 +1,7 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Card, SkeletonLoader} from '../../../components';
-import {padding, useColor} from '../../../features';
+import { View } from 'react-native';
+import { Card, SkeletonLoader } from '../../../components';
+import { padding, useColor } from '../../../features';
 
 export const LoadingProfile = (): JSX.Element => {
   const color = useColor();
@@ -13,7 +13,8 @@ export const LoadingProfile = (): JSX.Element => {
       style={{
         marginBottom: padding(4),
         paddingBottom: padding(20),
-      }}>
+      }}
+    >
       <View
         style={{
           borderTopLeftRadius: padding(2),
@@ -31,11 +32,12 @@ export const LoadingProfile = (): JSX.Element => {
           left: 0,
           top: banner * 0.5,
           zIndex: 1,
-        }}>
+        }}
+      >
         <SkeletonLoader borderRadius={banner} height={banner} width={banner} />
       </View>
-      <View style={{marginTop: banner * 0.5, alignItems: 'center'}}>
-        <View style={{paddingVertical: padding(4)}}>
+      <View style={{ marginTop: banner * 0.5, alignItems: 'center' }}>
+        <View style={{ paddingVertical: padding(4) }}>
           <SkeletonLoader
             borderRadius={0}
             height={padding(6)}

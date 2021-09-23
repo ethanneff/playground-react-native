@@ -1,11 +1,11 @@
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import dayjs from 'dayjs';
-import React, {memo, useCallback, useState} from 'react';
-import {Switch} from 'react-native';
-import {Button, Input, Screen, Text} from '../../../components';
-import {ScrollView} from '../../../conversions';
-import {padding, useColor} from '../../../features';
-import {Section} from './Section';
+import React, { memo, useCallback, useState } from 'react';
+import { Switch } from 'react-native';
+import { Button, Input, Screen, Text } from '../../../components';
+import { ScrollView } from '../../../conversions';
+import { padding, useColor } from '../../../features';
+import { Section } from './Section';
 
 // https://www.startupschool.org/updates/250717/edit
 
@@ -35,7 +35,7 @@ const initialState: Form = {
 
 export const Startup = memo(function PlaygroundStartup() {
   const color = useColor();
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const [form, setForm] = useState<Form>(initialState);
   const launchWeeks = parseInt(form.launchWeeks, 10);
   const launchSubText =
@@ -45,7 +45,7 @@ export const Startup = memo(function PlaygroundStartup() {
 
   const updateForm = useCallback(
     (key: keyof Form, value: string | boolean) =>
-      setForm(state => ({...state, [key]: value})),
+      setForm(state => ({ ...state, [key]: value })),
     [],
   );
   const handleLaunchChange = useCallback(
@@ -89,7 +89,8 @@ export const Startup = memo(function PlaygroundStartup() {
         contentContainerStyle={{
           padding: padding(4),
         }}
-        style={{backgroundColor: color.background.secondary}}>
+        style={{ backgroundColor: color.background.secondary }}
+      >
         <Text center title={dayjs().format('MMM DD, YYYY')} type="h4" />
         <Section title="Launch">
           <Text title="Are you launched?" />

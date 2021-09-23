@@ -1,8 +1,8 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useEffect, useRef} from 'react';
-import {Animated, View} from 'react-native';
-import {Screen} from '../../../components';
-import {useColor, useDriver} from '../../../features';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useEffect, useRef } from 'react';
+import { Animated, View } from 'react-native';
+import { Screen } from '../../../components';
+import { useColor, useDriver } from '../../../features';
 
 const Bird = () => {
   const color = useColor();
@@ -20,12 +20,12 @@ const Bird = () => {
 const Pillar = () => {
   const color = useColor();
   const useNativeDriver = useDriver();
-  const location = useRef(new Animated.ValueXY({x: 0, y: 0}));
-  const state = useRef({x: 0, y: 0, direction: 1});
+  const location = useRef(new Animated.ValueXY({ x: 0, y: 0 }));
+  const state = useRef({ x: 0, y: 0, direction: 1 });
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const {y, direction} = state.current;
+      const { y, direction } = state.current;
       state.current.y = y + 1 * direction;
       Animated.spring(location.current, {
         toValue: state.current,
@@ -58,11 +58,11 @@ const Pillar = () => {
 
 export const FlappyBird = memo(function FlappyBird() {
   const color = useColor();
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
 
   return (
     <Screen onLeftPress={goBack} title="Flappy Bird">
-      <View style={{flex: 1, backgroundColor: color.background.secondary}}>
+      <View style={{ flex: 1, backgroundColor: color.background.secondary }}>
         <Bird />
         <Pillar />
       </View>

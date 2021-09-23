@@ -1,8 +1,8 @@
-import React, {memo, useCallback} from 'react';
-import {View} from 'react-native';
-import {Slider, Text} from '../../../components';
-import {useRootDispatch, useRootSelector} from '../../../redux';
-import {updateCount, updateDelay} from './redux';
+import React, { memo, useCallback } from 'react';
+import { View } from 'react-native';
+import { Slider, Text } from '../../../components';
+import { useRootDispatch, useRootSelector } from '../../../redux';
+import { updateCount, updateDelay } from './redux';
 
 export const Header = memo(function Header() {
   const dispatch = useRootDispatch();
@@ -13,9 +13,9 @@ export const Header = memo(function Header() {
 
   return (
     <View>
-      <View style={{flexDirection: 'row'}}>
+      <View style={{ flexDirection: 'row' }}>
         <Text
-          style={{alignSelf: 'center'}}
+          style={{ alignSelf: 'center' }}
           title={`count: ${count}`}
           type="h5"
         />
@@ -24,13 +24,13 @@ export const Header = memo(function Header() {
           minimumValue={1}
           onSlidingComplete={onCountSlide}
           step={1}
-          style={{flex: 1}}
+          style={{ flex: 1 }}
           value={10}
         />
       </View>
-      <View style={{flexDirection: 'row'}}>
+      <View style={{ flexDirection: 'row' }}>
         <Text
-          style={{alignSelf: 'center'}}
+          style={{ alignSelf: 'center' }}
           title={`delay: ${Math.floor(delay)}`}
           type="h5"
         />
@@ -39,7 +39,7 @@ export const Header = memo(function Header() {
           minimumValue={1}
           onSlidingComplete={onDelaySlide}
           step={1}
-          style={{flex: 1}}
+          style={{ flex: 1 }}
           value={10}
         />
       </View>

@@ -1,10 +1,10 @@
 import dayjs from 'dayjs';
 import isToday from 'dayjs/plugin/isToday';
-import React, {memo} from 'react';
-import {colorWithOpacity} from '../../features/Config';
-import {useColor} from '../../features/Theme';
-import {TouchableOpacity} from '../TouchableOpacity';
-import {ActivityDay} from './types';
+import React, { memo } from 'react';
+import { colorWithOpacity } from '../../features/Config';
+import { useColor } from '../../features/Theme';
+import { TouchableOpacity } from '../TouchableOpacity';
+import { ActivityDay } from './types';
 dayjs.extend(isToday);
 
 type Props = {
@@ -15,7 +15,13 @@ type Props = {
   onPress: (item: ActivityDay) => () => void;
 };
 
-export const Day = memo(function Day({day, max, size, margin, onPress}: Props) {
+export const Day = memo(function Day({
+  day,
+  max,
+  size,
+  margin,
+  onPress,
+}: Props) {
   const color = useColor();
   const backgroundColor =
     day.count === 0

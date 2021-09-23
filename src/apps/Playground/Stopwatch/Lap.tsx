@@ -1,8 +1,8 @@
-import React, {memo} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Text} from '../../../components';
-import {useColor} from '../../../features';
-import {Timer} from './Timer';
+import React, { memo } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Text } from '../../../components';
+import { useColor } from '../../../features';
+import { Timer } from './Timer';
 
 interface LapProps {
   num: number;

@@ -1,9 +1,9 @@
 import React from 'react';
-import {PixelRatio, StyleSheet, View} from 'react-native';
-import {CircularProgress} from './CircularProgress';
-import {InitialKnob} from './InitialKnob';
-import {MovingKnob} from './MovingKnob';
-import {Ring} from './types';
+import { PixelRatio, StyleSheet, View } from 'react-native';
+import { CircularProgress } from './CircularProgress';
+import { InitialKnob } from './InitialKnob';
+import { MovingKnob } from './MovingKnob';
+import { Ring } from './types';
 
 interface RingProps {
   ring: Ring;
@@ -18,7 +18,7 @@ export const CircularRing = ({
 }: RingProps): JSX.Element => {
   const radius = PixelRatio.roundToNearestPixel(ring.size / 2);
   const styles = StyleSheet.create({
-    container: {transform: [{rotate: '-270deg'}]},
+    container: { transform: [{ rotate: '-270deg' }] },
   });
 
   // interpolateColor(theta, {

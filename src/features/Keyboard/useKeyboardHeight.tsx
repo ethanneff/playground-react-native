@@ -1,5 +1,5 @@
-import {useIsFocused} from '@react-navigation/native';
-import {useRootSelector} from '../../redux';
+import { useIsFocused } from '@react-navigation/native';
+import { useRootSelector } from '../../redux';
 
 export const useKeyboardHeight = (): number => {
   const isFocused = useIsFocused();

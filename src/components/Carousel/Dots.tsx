@@ -1,9 +1,9 @@
-import React, {memo} from 'react';
-import {View} from 'react-native';
-import {padding} from '../../features/Config';
-import {useColor} from '../../features/Theme';
-import {TouchableOpacity} from '../TouchableOpacity';
-import {CarouselSlide} from './types';
+import React, { memo } from 'react';
+import { View } from 'react-native';
+import { padding } from '../../features/Config';
+import { useColor } from '../../features/Theme';
+import { TouchableOpacity } from '../TouchableOpacity';
+import { CarouselSlide } from './types';
 
 type DotsProps = {
   slides: CarouselSlide[];
@@ -27,7 +27,8 @@ export const Dots = memo(function Dots({
         bottom: 0,
         width: '100%',
         justifyContent: 'center',
-      }}>
+      }}
+    >
       {slides.map((slide, index) => {
         return (
           <TouchableOpacity

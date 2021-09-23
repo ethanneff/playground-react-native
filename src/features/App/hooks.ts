@@ -1,5 +1,5 @@
-import NetInfo, {NetInfoState} from '@react-native-community/netinfo';
-import {useCallback, useEffect} from 'react';
+import NetInfo, { NetInfoState } from '@react-native-community/netinfo';
+import { useCallback, useEffect } from 'react';
 import {
   AppState,
   AppStateStatus,

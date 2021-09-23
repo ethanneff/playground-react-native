@@ -1,11 +1,11 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Button, Screen, Text} from '../../../components';
-import {ScrollView} from '../../../conversions';
-import {useColor} from '../../../features';
-import {combinations, reels} from './config';
-import {Slots} from './Slots';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Button, Screen, Text } from '../../../components';
+import { ScrollView } from '../../../conversions';
+import { useColor } from '../../../features';
+import { combinations, reels } from './config';
+import { Slots } from './Slots';
 import {
   getRandomReelArrays,
   getReturnPercentage,
@@ -26,7 +26,7 @@ const getInitialState = () => ({
 
 export const SlotMachine = memo(function PlaygroundSlotMachine() {
   const color = useColor();
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
 
   const [state, setState] = useState(() => getInitialState());
   const styles = StyleSheet.create({
@@ -36,7 +36,7 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
   });
 
   const onSpin = useCallback(() => {
-    setState(p => ({...p, spinning: true}));
+    setState(p => ({ ...p, spinning: true }));
   }, []);
 
   return (

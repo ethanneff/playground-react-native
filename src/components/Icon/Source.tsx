@@ -1,5 +1,5 @@
-import React, {memo} from 'react';
-import {StyleSheet} from 'react-native';
+import React, { memo } from 'react';
+import { StyleSheet } from 'react-native';
 import Original from 'react-native-vector-icons/MaterialCommunityIcons';
 
 type Props = {

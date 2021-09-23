@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import isToday from 'dayjs/plugin/isToday';
-import {ActivitySquares, ApiResponse} from './types';
+import { ActivitySquares, ApiResponse } from './types';
 dayjs.extend(isToday);
 
 export const getDateFormat = (date: number): string =>
@@ -22,7 +22,7 @@ export const getActivitySquares = (): ActivitySquares => {
   let day = 0;
   let week = [];
   while (end >= begin) {
-    week.unshift({date: end, count: 0});
+    week.unshift({ date: end, count: 0 });
     if (day > 5) {
       matrix.push(week);
       week = [];
@@ -33,7 +33,7 @@ export const getActivitySquares = (): ActivitySquares => {
     end -= oneDay;
   }
 
-  return {matrix, max: 0, total: 0};
+  return { matrix, max: 0, total: 0 };
 };
 
 export const updateActivitySquares = (
@@ -47,8 +47,8 @@ export const updateActivitySquares = (
       const count = active[getDateFormat(day.date)] || 0;
       max = Math.max(count, max);
       total += count;
-      return {...day, count};
+      return { ...day, count };
     }),
   );
-  return {matrix, max, total};
+  return { matrix, max, total };
 };

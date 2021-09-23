@@ -1,12 +1,12 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo} from 'react';
-import {Card, Content, Screen} from '../../../components';
-import {ScrollView} from '../../../conversions';
-import {padding, useColor} from '../../../features';
-import {data} from './data';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo } from 'react';
+import { Card, Content, Screen } from '../../../components';
+import { ScrollView } from '../../../conversions';
+import { padding, useColor } from '../../../features';
+import { data } from './data';
 
 export const Article = memo(function PlaygroundArticle() {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
 
   const color = useColor();
   return (
@@ -18,7 +18,8 @@ export const Article = memo(function PlaygroundArticle() {
         }}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
-        style={{backgroundColor: color.background.secondary}}>
+        style={{ backgroundColor: color.background.secondary }}
+      >
         <Card>
           <Content sections={data} />
         </Card>

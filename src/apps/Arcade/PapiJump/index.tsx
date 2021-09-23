@@ -1,19 +1,19 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useEffect, useRef} from 'react';
-import {Animated, Easing, StyleSheet, View} from 'react-native';
-import {Screen} from '../../../components';
-import {useColor, useDriver, useDropShadow} from '../../../features';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useEffect, useRef } from 'react';
+import { Animated, Easing, StyleSheet, View } from 'react-native';
+import { Screen } from '../../../components';
+import { useColor, useDriver, useDropShadow } from '../../../features';
 
-type PapiProps = {size: number};
+type PapiProps = { size: number };
 
-const Papi = memo(function PapiMemo({size}: PapiProps) {
+const Papi = memo(function PapiMemo({ size }: PapiProps) {
   const color = useColor();
   const dropShadow = useDropShadow();
   const useNativeDriver = useDriver();
-  const location = useRef(new Animated.ValueXY({x: 0, y: 0})).current;
+  const location = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
 
   useEffect(() => {
-    const toValue = {x: 300, y: 600};
+    const toValue = { x: 300, y: 600 };
     Animated.timing(location, {
       toValue,
       duration: 3000,
@@ -40,7 +40,7 @@ const Papi = memo(function PapiMemo({size}: PapiProps) {
 
 export const PapiJump = memo(function PapiJump() {
   const color = useColor();
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const styles = StyleSheet.create({
     container: {
       backgroundColor: color.background.secondary,

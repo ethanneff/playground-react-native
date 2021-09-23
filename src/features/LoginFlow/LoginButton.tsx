@@ -1,7 +1,7 @@
-import React, {memo} from 'react';
-import {Icon, Text, TouchableOpacity} from '../../components';
-import {padding} from '../../features/Config';
-import {useColor} from '../Theme';
+import React, { memo } from 'react';
+import { Icon, Text, TouchableOpacity } from '../../components';
+import { padding } from '../../features/Config';
+import { useColor } from '../Theme';
 
 type Props = {
   onPress: () => void;
@@ -27,9 +27,10 @@ export const LoginButton = memo(function LoginButton({
         padding: padding(2),
         marginBottom: padding(2),
         borderRadius: padding(10),
-      }}>
+      }}
+    >
       <Icon name={icon} />
-      <Text style={{paddingLeft: padding(2)}} title={title} type="button" />
+      <Text style={{ paddingLeft: padding(2) }} title={title} type="button" />
     </TouchableOpacity>
   );
 });

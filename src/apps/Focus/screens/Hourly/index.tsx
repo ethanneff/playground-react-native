@@ -1,14 +1,14 @@
-import React, {memo, useCallback, useEffect, useState} from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   FlatList,
   ListRenderItem,
   StyleSheet,
 } from 'react-native';
-import {Screen} from '../../../../components';
-import {useAdminNavBack} from '../../../../features';
-import {Item} from '../../types';
-import {ListItem} from './ListItem';
+import { Screen } from '../../../../components';
+import { useAdminNavBack } from '../../../../features';
+import { Item } from '../../types';
+import { ListItem } from './ListItem';
 import {
   getCurrentItem,
   getFirstItemOfDay,
@@ -19,7 +19,7 @@ import {
 } from './utils';
 
 export const Hourly = memo(function Hourly() {
-  const {onLeftPress} = useAdminNavBack();
+  const { onLeftPress } = useAdminNavBack();
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState<Item[]>(() => getMoreItems([]));
 
@@ -40,7 +40,7 @@ export const Hourly = memo(function Hourly() {
   });
 
   const renderItem = useCallback<ListRenderItem<Item>>(
-    ({item, index}) => (
+    ({ item, index }) => (
       <ListItem
         currentItem={getCurrentItem(item)}
         item={item}

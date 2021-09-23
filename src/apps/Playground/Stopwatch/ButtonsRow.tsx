@@ -1,11 +1,13 @@
-import React, {ReactNode, memo} from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, { ReactNode, memo } from 'react';
+import { StyleSheet, View } from 'react-native';
 
 interface ButtonRowProps {
   children: ReactNode | ReactNode[];
 }
 
-export const ButtonsRow = memo(function ButtonsRow({children}: ButtonRowProps) {
+export const ButtonsRow = memo(function ButtonsRow({
+  children,
+}: ButtonRowProps) {
   const styles = StyleSheet.create({
     buttonsRow: {
       alignSelf: 'stretch',

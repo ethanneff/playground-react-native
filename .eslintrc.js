@@ -26,14 +26,17 @@ module.exports = {
     // Added
     'react/function-component-definition': [
       'error',
-      {namedComponents: 'arrow-function', unnamedComponents: 'arrow-function'},
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
     ],
     'react-hooks/exhaustive-deps': [
       'error',
-      {enableDangerousAutofixThisMayCauseInfiniteLoops: true},
+      { enableDangerousAutofixThisMayCauseInfiniteLoops: true },
     ],
     'import/no-cycle': 'error',
-    'import/no-unresolved': ['error', {ignore: ['root-types']}],
+    'import/no-unresolved': ['error', { ignore: ['root-types'] }],
     curly: ['error', 'multi', 'consistent'],
     // Ignored (outside prettier and typescript rules)
     '@typescript-eslint/no-var-requires': 'off',

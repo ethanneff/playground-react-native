@@ -1,6 +1,6 @@
 import React from 'react';
-import {create} from 'react-test-renderer';
-import {Swipe} from '..';
+import { create } from 'react-test-renderer';
+import { Swipe } from '..';
 
 describe('swipe', () => {
   it('renders correctly', () => {

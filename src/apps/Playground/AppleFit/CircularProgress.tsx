@@ -1,7 +1,7 @@
 import React from 'react';
-import {Animated, StyleSheet, View} from 'react-native';
-import {HalfCircle} from './HalfCircle';
-import {Ring} from './types';
+import { Animated, StyleSheet, View } from 'react-native';
+import { HalfCircle } from './HalfCircle';
+import { Ring } from './types';
 
 interface CircularProgressProps {
   theta: number;
@@ -24,19 +24,19 @@ export const CircularProgress = ({
     extrapolate: 'clamp',
   });
   const styles = StyleSheet.create({
-    bottom: {transform: [{rotate: '180deg'}]},
-    container: {transform: [{rotate: `${rotate}rad`}]},
+    bottom: { transform: [{ rotate: '180deg' }] },
+    container: { transform: [{ rotate: `${rotate}rad` }] },
     left: {
       ...StyleSheet.absoluteFillObject,
       opacity: Number(opacity),
       transform: [
-        {translateX: 0},
-        {translateY: radius / 2},
-        {rotate: `${theta}rad`},
-        {translateY: (radius / 2) * -1},
+        { translateX: 0 },
+        { translateY: radius / 2 },
+        { rotate: `${theta}rad` },
+        { translateY: (radius / 2) * -1 },
       ],
     },
-    top: {zIndex: 1},
+    top: { zIndex: 1 },
   });
   return (
     <Animated.View style={styles.container}>
@@ -52,12 +52,13 @@ export const CircularProgress = ({
           style={{
             ...StyleSheet.absoluteFillObject,
             transform: [
-              {translateX: 0},
-              {translateY: radius / 2},
-              {rotate: spin},
-              {translateY: (radius / 2) * -1},
+              { translateX: 0 },
+              { translateY: radius / 2 },
+              { rotate: spin },
+              { translateY: (radius / 2) * -1 },
             ],
-          }}>
+          }}
+        >
           <HalfCircle radius={radius} ring={ring} type="background" />
         </Animated.View>
       </View>

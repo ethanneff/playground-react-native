@@ -1,6 +1,6 @@
-import {useCallback, useEffect, useRef} from 'react';
-import {useRootDispatch, useRootSelector} from '../../../redux';
-import {loopBoard} from './redux';
+import { useCallback, useEffect, useRef } from 'react';
+import { useRootDispatch, useRootSelector } from '../../../redux';
+import { loopBoard } from './redux';
 
 export const useLoop = (): void => {
   const dispatch = useRootDispatch();

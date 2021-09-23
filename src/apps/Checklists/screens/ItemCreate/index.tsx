@@ -1,15 +1,15 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useState} from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useState } from 'react';
 import 'react-native-get-random-values';
-import {v4} from 'uuid';
-import {Button, Input, Screen} from '../../../../components';
-import {useRootDispatch, useRootSelector} from '../../../../redux';
-import {createChecklistItem} from '../../models';
+import { v4 } from 'uuid';
+import { Button, Input, Screen } from '../../../../components';
+import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { createChecklistItem } from '../../models';
 
-const initialState = {name: '', description: ''};
+const initialState = { name: '', description: '' };
 
 export default memo(function ChecklistItemCreate() {
-  const {navigate} = useNavigation<any>();
+  const { navigate } = useNavigation<any>();
   const dispatch = useRootDispatch();
   const [form, setForm] = useState(initialState);
   const currentChecklist = useRootSelector(state => state.checklist.active);
@@ -18,7 +18,7 @@ export default memo(function ChecklistItemCreate() {
   const handleSubmit = useCallback(() => {
     if (isInvalidForm) return;
 
-    const {name, description} = form;
+    const { name, description } = form;
     const now = Date.now();
     if (!currentChecklist)
       throw new Error('missing current checklist item when creating');
@@ -41,11 +41,11 @@ export default memo(function ChecklistItemCreate() {
   }, [currentChecklist, dispatch, form, isInvalidForm, navigate]);
 
   const handleNameChange = useCallback(
-    (name: string) => setForm(state => ({...state, name})),
+    (name: string) => setForm(state => ({ ...state, name })),
     [],
   );
   const handleDescriptionChange = useCallback(
-    (description: string) => setForm(state => ({...state, description})),
+    (description: string) => setForm(state => ({ ...state, description })),
     [],
   );
 

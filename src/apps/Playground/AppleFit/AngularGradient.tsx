@@ -1,6 +1,6 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
-import {MaskedView} from '../../../conversions';
+import { Image, StyleSheet, View } from 'react-native';
+import { MaskedView } from '../../../conversions';
 
 type Props = {
   size: number;
@@ -19,9 +19,9 @@ export const AngularGradient = ({
       height: size,
       width: size,
     },
-    flex: {flex: 1},
-    image: {borderRadius, height: size, width: size},
-    view: {backgroundColor: end, borderRadius, flex: 1},
+    flex: { flex: 1 },
+    image: { borderRadius, height: size, width: size },
+    view: { backgroundColor: end, borderRadius, flex: 1 },
   });
   const Mask = <Image source={require('./mask.png')} style={styles.image} />;
   return (

@@ -1,9 +1,9 @@
-import React, {ReactElement, useEffect, useRef} from 'react';
-import {Animated, Easing, StyleSheet, View} from 'react-native';
-import {LinearGradient, MaskedView} from '../../conversions';
-import {useDriver} from '../../features/Animation';
-import {padding} from '../../features/Config';
-import {useColor} from '../../features/Theme';
+import React, { ReactElement, useEffect, useRef } from 'react';
+import { Animated, Easing, StyleSheet, View } from 'react-native';
+import { LinearGradient, MaskedView } from '../../conversions';
+import { useDriver } from '../../features/Animation';
+import { padding } from '../../features/Config';
+import { useColor } from '../../features/Theme';
 
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
 
@@ -29,16 +29,16 @@ export const SkeletonLoader = ({
   const fgColor = foregroundColor || color.background.primaryA;
   const value = useRef(new Animated.Value(0)).current;
   const useNativeDriver = useDriver();
-  const end = {x: 1, y: 0};
-  const start = {x: 0, y: 0};
+  const end = { x: 1, y: 0 };
+  const start = { x: 0, y: 0 };
   const colors = [bgColor, fgColor, bgColor];
   const translateX = value.interpolate({
     inputRange: [0, 1],
     outputRange: [-width, width],
   });
   const styles = StyleSheet.create({
-    background: {...StyleSheet.absoluteFillObject, backgroundColor: bgColor},
-    foreground: {...StyleSheet.absoluteFillObject},
+    background: { ...StyleSheet.absoluteFillObject, backgroundColor: bgColor },
+    foreground: { ...StyleSheet.absoluteFillObject },
     maskElement: {
       backgroundColor: bgColor,
       borderColor: fgColor,
@@ -51,7 +51,7 @@ export const SkeletonLoader = ({
       width,
     },
   });
-  const foregroundStyles = [styles.foreground, {transform: [{translateX}]}];
+  const foregroundStyles = [styles.foreground, { transform: [{ translateX }] }];
 
   useEffect(() => {
     Animated.loop(
@@ -67,7 +67,8 @@ export const SkeletonLoader = ({
   return (
     <MaskedView
       maskElement={<View style={styles.maskElement} />}
-      style={styles.maskElementContainer}>
+      style={styles.maskElementContainer}
+    >
       <View style={styles.background} />
       <AnimatedLinearGradient
         colors={colors}

@@ -1,4 +1,4 @@
-import {Sections} from './../Content/types';
+import { Sections } from './../Content/types';
 
 export type CarouselSlide = {
   id: string;

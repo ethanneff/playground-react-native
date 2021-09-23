@@ -1,4 +1,4 @@
-import React, {memo, ReactNode} from 'react';
+import React, { memo, ReactNode } from 'react';
 import {
   SafeAreaView,
   StatusBar,
@@ -7,8 +7,8 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {useColor} from '../../features/Theme';
-import {NavBar} from './NavBar';
+import { useColor } from '../../features/Theme';
+import { NavBar } from './NavBar';
 
 type Props = {
   testID?: string;

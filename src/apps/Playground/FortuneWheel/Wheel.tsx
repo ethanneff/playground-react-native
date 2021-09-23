@@ -1,9 +1,9 @@
 import * as d3 from 'd3-shape';
-import React, {memo, useCallback, useEffect, useRef} from 'react';
-import {Animated, Dimensions, Easing, TouchableOpacity} from 'react-native';
-import Svg, {G, Path, Polygon, Text} from 'react-native-svg';
-import {useColor, useDriver, useDropShadow} from '../../../features';
-import {getNewLocation, getWinnerIndex} from './utils';
+import React, { memo, useCallback, useEffect, useRef } from 'react';
+import { Animated, Dimensions, Easing, TouchableOpacity } from 'react-native';
+import Svg, { G, Path, Polygon, Text } from 'react-native-svg';
+import { useColor, useDriver, useDropShadow } from '../../../features';
+import { getNewLocation, getWinnerIndex } from './utils';
 
 type Segment = {
   value: string;
@@ -115,7 +115,7 @@ export const Wheel = memo(
 
     const bounce = useCallback(
       (toValue: number) => {
-        const config = {toValue, duration: bounceSpeed, useNativeDriver};
+        const config = { toValue, duration: bounceSpeed, useNativeDriver };
         Animated.timing(yPosition, config).start(() =>
           bounce(toValue === 1 ? -1 : 1),
         );
@@ -148,7 +148,8 @@ export const Wheel = memo(
             alignItems: 'center',
             marginTop: knobOffset,
             ...dropShadow(3),
-          }}>
+          }}
+        >
           <Svg
             style={{
               marginTop: -knobOffset,
@@ -156,7 +157,8 @@ export const Wheel = memo(
               width: knobSize,
               height: knobSize,
               ...dropShadow(6),
-            }}>
+            }}
+          >
             <Polygon
               fill={color.background.tertiary}
               points={`${knobSize / 2},0 ${knobSize * 0.85},${knobSize / 3} ${
@@ -178,24 +180,28 @@ export const Wheel = memo(
                   }),
                 },
               ],
-            }}>
+            }}
+          >
             <Svg
               style={{
-                transform: [{rotate: `-${angleOffset}deg`}],
-              }}>
+                transform: [{ rotate: `-${angleOffset}deg` }],
+              }}
+            >
               <G x={radius} y={radius}>
                 {arcs.map((arc, i) => (
                   <G key={`arc-${i}`}>
                     <Path d={String(arc.path)} fill={arc.segment.color} />
                     <G
                       origin={`${arc.centroid}`}
-                      rotation={(i * 360) / segments.length + angleOffset}>
+                      rotation={(i * 360) / segments.length + angleOffset}
+                    >
                       <Text
                         fill={text}
                         fontSize={fontSize}
                         textAnchor="middle"
                         x={arc.centroid[0]}
-                        y={arc.centroid[1] - knobOffset / 2}>
+                        y={arc.centroid[1] - knobOffset / 2}
+                      >
                         {arc.segment.display}
                       </Text>
                     </G>

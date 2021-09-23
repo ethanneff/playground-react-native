@@ -1,7 +1,7 @@
-import React, {memo} from 'react';
-import {View} from 'react-native';
-import {Button, Text} from '../../../components';
-import {FontEmphasis, padding, useColor} from '../../../features';
+import React, { memo } from 'react';
+import { View } from 'react-native';
+import { Button, Text } from '../../../components';
+import { FontEmphasis, padding, useColor } from '../../../features';
 
 type ButtonGroupProps = {
   emphasis: FontEmphasis;
@@ -12,17 +12,17 @@ export const ButtonGroup = memo(function ButtonGroup({
 }: ButtonGroupProps) {
   const color = useColor();
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <Text
         center
-        style={{paddingBottom: padding(5)}}
+        style={{ paddingBottom: padding(5) }}
         title={emphasis}
         type="h5"
       />
       {Object.keys(color.text).map((c: any) =>
         c === 'statusBar' ? null : (
           <Button
-            buttonStyle={{margin: 4}}
+            buttonStyle={{ margin: 4 }}
             center
             color={c}
             disabled={c === 'disabled'}
@@ -35,7 +35,7 @@ export const ButtonGroup = memo(function ButtonGroup({
       {Object.keys(color.text).map((c: any) =>
         c === 'statusBar' ? null : (
           <Button
-            buttonStyle={{margin: 4}}
+            buttonStyle={{ margin: 4 }}
             center
             color={c}
             disabled={c === 'disabled'}

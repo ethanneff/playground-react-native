@@ -1,5 +1,5 @@
-import React, {memo, useCallback, useState} from 'react';
-import {StyleSheet} from 'react-native';
+import React, { memo, useCallback, useState } from 'react';
+import { StyleSheet } from 'react-native';
 import {
   Button,
   Card,
@@ -8,8 +8,8 @@ import {
   Text,
   TouchableOpacity,
 } from '../../components';
-import {ScrollView} from '../../conversions';
-import {LoginFlow, padding, useAdminNavBack, useColor} from '../../features';
+import { ScrollView } from '../../conversions';
+import { LoginFlow, padding, useAdminNavBack, useColor } from '../../features';
 
 // const
 
@@ -22,7 +22,7 @@ import {LoginFlow, padding, useAdminNavBack, useColor} from '../../features';
 
 export const Home = memo(function Checklists() {
   const color = useColor();
-  const {onLeftPress} = useAdminNavBack();
+  const { onLeftPress } = useAdminNavBack();
   const styles = StyleSheet.create({
     bottom: {
       paddingBottom: padding(4),
@@ -39,7 +39,8 @@ export const Home = memo(function Checklists() {
             paddingHorizontal: padding(4),
             paddingVertical: padding(2),
           }}
-          style={{backgroundColor: color.background.secondary}}>
+          style={{ backgroundColor: color.background.secondary }}
+        >
           <Card>
             <Text
               emphasis="medium"
@@ -72,7 +73,8 @@ export const Home = memo(function Checklists() {
             bottom: 0,
             right: 0,
             margin: padding(4),
-          }}>
+          }}
+        >
           <Icon color="primaryB" fab name="plus" />
         </TouchableOpacity>
       </Screen>

@@ -1,7 +1,7 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback, useEffect} from 'react';
-import {Button, Screen, Text} from '../../../../components';
-import {ScrollView} from '../../../../conversions';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback, useEffect } from 'react';
+import { Button, Screen, Text } from '../../../../components';
+import { ScrollView } from '../../../../conversions';
 import {
   padding,
   RootNavigation,
@@ -9,9 +9,9 @@ import {
   useColor,
   useTabTap,
 } from '../../../../features';
-import {useRootDispatch, useRootSelector} from '../../../../redux';
-import {Card} from '../../components';
-import {logout} from '../../models';
+import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { Card } from '../../components';
+import { logout } from '../../models';
 
 // TODO: figure out a place for this
 // TODO: add reminders
@@ -22,8 +22,8 @@ export const Account = memo(function Account() {
   useTabTap();
   const color = useColor();
   const dispatch = useRootDispatch();
-  const {navigate} = useNavigation<RootNavigation>();
-  const {onLogout, response} = useAuth();
+  const { navigate } = useNavigation<RootNavigation>();
+  const { onLogout, response } = useAuth();
   const profile = useRootSelector(s => s.completeAuth);
   const onNavToAdmin = useCallback(() => navigate('admin'), [navigate]);
 
@@ -38,11 +38,12 @@ export const Account = memo(function Account() {
           padding: padding(4),
           backgroundColor: color.background.secondary,
         }}
-        style={{backgroundColor: color.background.secondary}}>
+        style={{ backgroundColor: color.background.secondary }}
+      >
         <Card margin="bottom">
           <Text
             emphasis="low"
-            style={{paddingBottom: padding(4)}}
+            style={{ paddingBottom: padding(4) }}
             title="Profile"
             type="h5"
           />
@@ -55,7 +56,7 @@ export const Account = memo(function Account() {
         <Card margin="bottom">
           <Text
             emphasis="low"
-            style={{paddingBottom: padding(4)}}
+            style={{ paddingBottom: padding(4) }}
             title="Reminders"
             type="h5"
           />
@@ -64,7 +65,7 @@ export const Account = memo(function Account() {
         <Card margin="bottom">
           <Text
             emphasis="low"
-            style={{paddingBottom: padding(4)}}
+            style={{ paddingBottom: padding(4) }}
             title="Payment"
             type="h5"
           />
@@ -73,7 +74,7 @@ export const Account = memo(function Account() {
         <Card margin="bottom">
           <Text
             emphasis="low"
-            style={{paddingBottom: padding(4)}}
+            style={{ paddingBottom: padding(4) }}
             title="Feedback"
             type="h5"
           />

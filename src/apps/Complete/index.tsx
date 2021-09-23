@@ -1,6 +1,6 @@
-import React, {memo} from 'react';
-import {useRootSelector} from '../../redux';
-import {Landing, Main} from './navigation';
+import React, { memo } from 'react';
+import { useRootSelector } from '../../redux';
+import { Landing, Main } from './navigation';
 
 export default memo(function Complete() {
   const user = useRootSelector(s => s.completeUser);

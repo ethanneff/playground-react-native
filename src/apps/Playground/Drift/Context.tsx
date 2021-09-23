@@ -1,5 +1,5 @@
-import {createContext} from 'react';
-import {ColorChoice, TrackPosition, TrackPositionWithColor} from './types';
+import { createContext } from 'react';
+import { ColorChoice, TrackPosition, TrackPositionWithColor } from './types';
 
 export type DriftState = {
   tracks: TrackPositionWithColor[];
@@ -12,20 +12,20 @@ export const driftInitialState: DriftState = {
 };
 
 type Action =
-  | {type: 'addColor'; payload: ColorChoice}
-  | {type: 'addTrack'; payload: TrackPosition};
+  | { type: 'addColor'; payload: ColorChoice }
+  | { type: 'addTrack'; payload: TrackPosition };
 
 export const driftReducer = (state: DriftState, action: Action): DriftState => {
   switch (action.type) {
     case 'addColor':
-      return {...state, color: action.payload};
+      return { ...state, color: action.payload };
     case 'addTrack': {
       const tracks = [...state.tracks];
       while (tracks.length > 10) tracks.pop();
 
       return {
         ...state,
-        tracks: [{...action.payload, color: state.color}, ...tracks],
+        tracks: [{ ...action.payload, color: state.color }, ...tracks],
       };
     }
     default:

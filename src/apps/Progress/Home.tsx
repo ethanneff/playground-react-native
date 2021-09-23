@@ -1,8 +1,8 @@
-import React, {memo} from 'react';
-import {StyleSheet} from 'react-native';
-import {Activity, Icon, Screen} from '../../components';
-import {ScrollView} from '../../conversions';
-import {padding, useAdminNavBack, useColor} from '../../features';
+import React, { memo } from 'react';
+import { StyleSheet } from 'react-native';
+import { Activity, Icon, Screen } from '../../components';
+import { ScrollView } from '../../conversions';
+import { padding, useAdminNavBack, useColor } from '../../features';
 
 // TODO: gitlab
 // TODO: selected
@@ -14,7 +14,7 @@ import {padding, useAdminNavBack, useColor} from '../../features';
 
 export const Home = memo(function ActivityTracker() {
   const color = useColor();
-  const {onLeftPress} = useAdminNavBack();
+  const { onLeftPress } = useAdminNavBack();
   const styles = StyleSheet.create({
     background: {
       backgroundColor: color.background.secondary,
@@ -29,7 +29,8 @@ export const Home = memo(function ActivityTracker() {
     <Screen dropShadow onLeftPress={onLeftPress} title="Progress">
       <ScrollView
         contentContainerStyle={styles.container}
-        style={styles.background}>
+        style={styles.background}
+      >
         <Activity site="github" title="Github" username="ethanneff" />
         <Activity site="leetCode" title="LeetCode" username="ethanneff" />
         <Activity site="hackerRank" title="HackerRank" username="ethanneff" />

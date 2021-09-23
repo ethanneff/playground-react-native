@@ -1,12 +1,12 @@
-import {getType} from 'typesafe-actions';
+import { getType } from 'typesafe-actions';
 import {
   changeTheme,
   getCurrentTheme,
   themeInitialState,
   themeReducer,
 } from '..';
-import {loginRequest, logout} from '../../Auth';
-import {store} from '../../core';
+import { loginRequest, logout } from '../../Auth';
+import { store } from '../../core';
 
 describe('theme', () => {
   it('getCurrentTheme dark', () => {
@@ -33,7 +33,7 @@ describe('theme', () => {
         payload,
         type: getType(changeTheme),
       }),
-    ).toMatchObject({currentTheme: payload});
+    ).toMatchObject({ currentTheme: payload });
   });
 
   it('logout', () => {

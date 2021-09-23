@@ -1,11 +1,11 @@
 import dayjs from 'dayjs';
 import React from 'react';
-import {View} from 'react-native';
-import {padding} from '../../features/Config';
-import {useColor} from '../../features/Theme';
-import {Text} from '../Text';
-import {TouchableOpacity} from '../TouchableOpacity';
-import {Day} from './utils';
+import { View } from 'react-native';
+import { padding } from '../../features/Config';
+import { useColor } from '../../features/Theme';
+import { Text } from '../Text';
+import { TouchableOpacity } from '../TouchableOpacity';
+import { Day } from './utils';
 
 type Props = {
   day: Day;
@@ -43,7 +43,8 @@ export const CalendarDay = ({
       flex
       key={day.id}
       onPress={onSelected}
-      style={{alignItems: 'center'}}>
+      style={{ alignItems: 'center' }}
+    >
       <View
         style={{
           height: padding(8),
@@ -51,11 +52,12 @@ export const CalendarDay = ({
           borderRadius: padding(20),
           justifyContent: 'center',
           backgroundColor,
-        }}>
+        }}
+      >
         <Text
           bold={today}
           center
-          style={{color: textColor}}
+          style={{ color: textColor }}
           title={day.display}
         />
       </View>

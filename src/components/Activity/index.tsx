@@ -1,19 +1,24 @@
-import React, {memo, useCallback, useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, ListRenderItem, View} from 'react-native';
-import {padding} from '../../features/Config';
-import {Button} from '../Button';
-import {Card} from '../Card';
-import {Text} from '../Text';
-import {TouchableOpacity} from '../TouchableOpacity';
-import {getApiActivity} from './api';
-import {ActivityDay, ActivityModel, ActivityWeek, Site} from './types';
+import React, { memo, useCallback, useEffect, useState } from 'react';
+import {
+  ActivityIndicator,
+  FlatList,
+  ListRenderItem,
+  View,
+} from 'react-native';
+import { padding } from '../../features/Config';
+import { Button } from '../Button';
+import { Card } from '../Card';
+import { Text } from '../Text';
+import { TouchableOpacity } from '../TouchableOpacity';
+import { getApiActivity } from './api';
+import { ActivityDay, ActivityModel, ActivityWeek, Site } from './types';
 import {
   getActivitySquares,
   getDateFormat,
   getSubmissionFormat,
   updateActivitySquares,
 } from './utils';
-import {Week} from './Week';
+import { Week } from './Week';
 
 type Props = {
   username: string;
@@ -45,7 +50,7 @@ export const Activity = memo(function Activity({
   const getActivity = useCallback(async () => {
     try {
       const today = Date.now();
-      const api = await getApiActivity({username, site});
+      const api = await getApiActivity({ username, site });
       const todayFormat = getDateFormat(today);
       const count = api[todayFormat] || 0;
       setState(prev => ({
@@ -88,7 +93,7 @@ export const Activity = memo(function Activity({
   );
 
   const renderItem = useCallback<ListRenderItem<ActivityWeek>>(
-    ({item, index}) => (
+    ({ item, index }) => (
       <Week
         index={index}
         item={item}
@@ -110,7 +115,8 @@ export const Activity = memo(function Activity({
           paddingBottom: padding(4),
           alignContent: 'center',
           alignItems: 'center',
-        }}>
+        }}
+      >
         <TouchableOpacity onPress={refresh}>
           <Text emphasis="medium" title={title} type="h4" />
         </TouchableOpacity>
@@ -144,7 +150,7 @@ export const Activity = memo(function Activity({
           <Text
             center
             emphasis="medium"
-            style={{paddingTop: padding(3)}}
+            style={{ paddingTop: padding(3) }}
             title={state.selected.submissions}
             type="overline"
           />

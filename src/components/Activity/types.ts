@@ -22,7 +22,7 @@ export type ActivityDay = {
   count: number;
 };
 
-export type ApiResponse = {[unix: string]: number};
+export type ApiResponse = { [unix: string]: number };
 
 export type ActivitySquares = {
   matrix: ActivityMatrix;

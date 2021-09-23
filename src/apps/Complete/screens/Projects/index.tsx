@@ -1,10 +1,10 @@
-import React, {memo, useCallback, useState} from 'react';
-import {LayoutChangeEvent} from 'react-native';
-import {KeyboardHandler, Screen} from '../../../../components';
-import {padding, useColor, useKeyboardHeight} from '../../../../features';
-import {useRootSelector} from '../../../../redux';
-import {List} from '../../components';
-import {getProjects} from '../../models';
+import React, { memo, useCallback, useState } from 'react';
+import { LayoutChangeEvent } from 'react-native';
+import { KeyboardHandler, Screen } from '../../../../components';
+import { padding, useColor, useKeyboardHeight } from '../../../../features';
+import { useRootSelector } from '../../../../redux';
+import { List } from '../../components';
+import { getProjects } from '../../models';
 
 // TODO: add journal
 // TODO: add historical data
@@ -36,7 +36,8 @@ export const Projects = memo(function Projects() {
     <Screen onRightPress={showSearchBar} rightIcon="magnify" title="Implement">
       <KeyboardHandler
         backgroundColor={color.background.secondary}
-        onLayout={onLayout}>
+        onLayout={onLayout}
+      >
         <List
           itemId={itemId}
           key={itemId}

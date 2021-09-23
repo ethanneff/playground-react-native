@@ -1,5 +1,5 @@
-import {Animated} from 'react-native';
-import {CanvasDimensions, Item} from './types';
+import { Animated } from 'react-native';
+import { CanvasDimensions, Item } from './types';
 
 const rotate = (dx: number, dy: number, angle: number) => {
   const rotatedVelocities = {
@@ -69,8 +69,8 @@ export const getOverlap = (
   bRadius: number,
   center: boolean,
 ): boolean => {
-  const aCenter = {x: aX + aRadius, y: aY + aRadius};
-  const bCenter = {x: bX + bRadius, y: bY + bRadius};
+  const aCenter = { x: aX + aRadius, y: aY + aRadius };
+  const bCenter = { x: bX + bRadius, y: bY + bRadius };
   const dx = center ? aCenter.x - bCenter.x : aX - bX;
   const dy = center ? aCenter.y - bCenter.y : aY - bY;
   const radius = aRadius + bRadius;
@@ -130,7 +130,7 @@ export const getItems = ({
       dy,
       radius,
       mass,
-      position: new Animated.ValueXY({x, y}),
+      position: new Animated.ValueXY({ x, y }),
     });
   }
 

@@ -1,17 +1,17 @@
 import React from 'react';
-import {Icon} from '..';
-import {mockRenderer} from '../../../mocks/Renderer';
+import { Icon } from '..';
+import { mockRenderer } from '../../../mocks/Renderer';
 
 describe('icon', () => {
   it('renders correctly', () => {
     expect.hasAssertions();
-    const {tree} = mockRenderer({component: <Icon name="check" />});
+    const { tree } = mockRenderer({ component: <Icon name="check" /> });
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('renders correctly without defaults', () => {
     expect.hasAssertions();
-    const {tree} = mockRenderer({
+    const { tree } = mockRenderer({
       component: <Icon badge={1} color="accent" name="check" size={1} />,
     });
     expect(tree.toJSON()).toMatchSnapshot();
@@ -19,7 +19,7 @@ describe('icon', () => {
 
   it('renders correctly with clear and max badge', () => {
     expect.hasAssertions();
-    const {tree} = mockRenderer({
+    const { tree } = mockRenderer({
       component: (
         <Icon badge={1100} clear color="positive" name="check" size={1} />
       ),

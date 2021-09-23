@@ -1,9 +1,9 @@
-import React, {useCallback, useEffect, useState} from 'react';
-import {Animated, TouchableOpacity} from 'react-native';
-import {Text} from '../../../components';
-import {padding, SoundManager, useColor} from '../../../features';
-import {CanvasDimensions} from './Canvas';
-import {Item} from './types';
+import React, { useCallback, useEffect, useState } from 'react';
+import { Animated, TouchableOpacity } from 'react-native';
+import { Text } from '../../../components';
+import { padding, SoundManager, useColor } from '../../../features';
+import { CanvasDimensions } from './Canvas';
+import { Item } from './types';
 import {
   getItems,
   getOverlap,
@@ -61,7 +61,7 @@ export const Balls = ({
         resolveBoundCollision(a, canvas);
         a.x += a.dx;
         a.y += a.dy;
-        a.position = new Animated.ValueXY({x: a.x, y: a.y});
+        a.position = new Animated.ValueXY({ x: a.x, y: a.y });
       }
       return [...prev];
     });
@@ -73,7 +73,7 @@ export const Balls = ({
   }, [draw]);
 
   const onPress = useCallback(
-    ({index}) =>
+    ({ index }) =>
       () => {
         SoundManager.play('tap');
         setItems(prev => {
@@ -81,7 +81,7 @@ export const Balls = ({
           item.radius *= 1 - mitosis;
           item.dx *= 2 - mitosis;
           item.dy *= 2 - mitosis;
-          const copy = {...prev[index]};
+          const copy = { ...prev[index] };
           copy.dx *= -1;
           copy.dy *= -1;
           return [...prev, copy];
@@ -95,7 +95,7 @@ export const Balls = ({
       {items.map((item, index) => (
         <Animated.View key={index} style={item.position.getLayout()}>
           <TouchableOpacity
-            onPress={onPress({index})}
+            onPress={onPress({ index })}
             style={{
               alignItems: 'center',
               borderColor: color.border.accent,
@@ -107,7 +107,8 @@ export const Balls = ({
               justifyContent: 'center',
               position: 'absolute',
               width: item.radius * 2,
-            }}>
+            }}
+          >
             <Text adjustsFontSizeToFit title={String(index)} type="h3" />
           </TouchableOpacity>
         </Animated.View>

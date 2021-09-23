@@ -1,9 +1,9 @@
-import React, {ReactNode} from 'react';
-import {View} from 'react-native';
+import React, { ReactNode } from 'react';
+import { View } from 'react-native';
 
 type Props = {
   children: ReactNode;
 };
-export const MaskedView = ({children}: Props): JSX.Element => {
+export const MaskedView = ({ children }: Props): JSX.Element => {
   return <View>{children}</View>;
 };

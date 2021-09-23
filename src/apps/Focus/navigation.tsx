@@ -1,13 +1,13 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
-import React, {ReactElement, useMemo} from 'react';
-import {useNavScreenOptions} from '../../features';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
+import React, { ReactElement, useMemo } from 'react';
+import { useNavScreenOptions } from '../../features';
 import {
   AuthStackRoutes,
   HomeTabRoutes,
   UnAuthStackRoutes,
 } from './navigationTypes';
-import {Daily, Details, Hourly, Landing, Profile} from './screens';
+import { Daily, Details, Hourly, Landing, Profile } from './screens';
 
 const AuthStack = createStackNavigator<AuthStackRoutes>();
 const UnAuthStack = createStackNavigator<UnAuthStackRoutes>();
@@ -31,8 +31,8 @@ const Tabs = () => {
     }),
     [],
   );
-  const {tabScreenOptions} = useNavScreenOptions();
-  const screenOptions = tabScreenOptions({tabIcons});
+  const { tabScreenOptions } = useNavScreenOptions();
+  const screenOptions = tabScreenOptions({ tabIcons });
   return (
     <TabBar.Navigator screenOptions={screenOptions}>
       <TabBar.Screen component={Hourly} name="hourly" />
@@ -43,7 +43,7 @@ const Tabs = () => {
 };
 
 export const Navigation = (): ReactElement => {
-  const {modalScreenOptions} = useNavScreenOptions();
+  const { modalScreenOptions } = useNavScreenOptions();
   const login = false;
 
   return login ? (

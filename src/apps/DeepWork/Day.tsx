@@ -1,11 +1,11 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo} from 'react';
-import {Calendar, Card, Screen, Text} from '../../components';
-import {ScrollView} from '../../conversions';
-import {padding, useColor} from '../../features';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo } from 'react';
+import { Calendar, Card, Screen, Text } from '../../components';
+import { ScrollView } from '../../conversions';
+import { padding, useColor } from '../../features';
 
 export const Day = memo(function Day() {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
   const color = useColor();
 
   return (
@@ -14,11 +14,12 @@ export const Day = memo(function Day() {
         contentContainerStyle={{
           padding: padding(4),
           backgroundColor: color.background.secondary,
-        }}>
+        }}
+      >
         <Card>
           <Text
             center
-            style={{paddingBottom: padding(4)}}
+            style={{ paddingBottom: padding(4) }}
             title="Progress"
             type="h3"
           />

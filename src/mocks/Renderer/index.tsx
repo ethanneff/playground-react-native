@@ -3,11 +3,11 @@ import {
   NavigationContext,
   NavigationRouteContext,
 } from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import React, {ReactNode} from 'react';
-import {Provider} from 'react-redux';
-import {create, ReactTestRenderer} from 'react-test-renderer';
-import {store} from '../../redux/core';
+import { createStackNavigator } from '@react-navigation/stack';
+import React, { ReactNode } from 'react';
+import { Provider } from 'react-redux';
+import { create, ReactTestRenderer } from 'react-test-renderer';
+import { store } from '../../redux/core';
 
 type MockNavigation = any;
 type MockRenderer = {
@@ -16,13 +16,13 @@ type MockRenderer = {
 };
 type Props = {
   component: ReactNode;
-  route?: {key: string; name: string};
+  route?: { key: string; name: string };
   navigation?: MockNavigation;
 };
 
 export const mockRenderer = ({
   component,
-  route = {key: '', name: ''},
+  route = { key: '', name: '' },
   navigation = {
     goBack: jest.fn(),
     navigate: jest.fn(),
@@ -56,5 +56,5 @@ export const mockRenderer = ({
 
   const tree = create(<Providers />);
 
-  return {tree, navigation};
+  return { tree, navigation };
 };

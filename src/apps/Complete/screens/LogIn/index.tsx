@@ -1,17 +1,17 @@
-import {useIsFocused, useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
-import {TextInput as OriginalTextInput} from 'react-native';
-import {Button, Modal, TextInput} from '../../../../components';
-import {padding, useColor} from '../../../../features';
-import {useRootDispatch} from '../../../../redux';
-import {ModalHeader} from '../../components';
-import {createItem, loadUser} from '../../models';
-import {LandingStackRoutes} from '../../navigationTypes';
-import {getDefaultUserTemplate} from '../../utils';
+import { useIsFocused, useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { TextInput as OriginalTextInput } from 'react-native';
+import { Button, Modal, TextInput } from '../../../../components';
+import { padding, useColor } from '../../../../features';
+import { useRootDispatch } from '../../../../redux';
+import { ModalHeader } from '../../components';
+import { createItem, loadUser } from '../../models';
+import { LandingStackRoutes } from '../../navigationTypes';
+import { getDefaultUserTemplate } from '../../utils';
 
-const initialRef = {email: '', password: ''};
-const initialState = {eye: false, completeForm: false};
+const initialRef = { email: '', password: '' };
+const initialState = { eye: false, completeForm: false };
 
 export const LogIn = memo(function LogIn() {
   const color = useColor();
@@ -19,7 +19,7 @@ export const LogIn = memo(function LogIn() {
   const focus = useIsFocused();
   const form = useRef(initialRef);
   const [state, setState] = useState(initialState);
-  const {goBack, navigate} =
+  const { goBack, navigate } =
     useNavigation<StackNavigationProp<LandingStackRoutes>>();
 
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
@@ -29,23 +29,23 @@ export const LogIn = memo(function LogIn() {
   const eyeIcon = state.eye ? 'eye-outline' : 'eye-off-outline';
 
   const onEye = useCallback(() => {
-    setState(p => ({...p, eye: !p.eye}));
+    setState(p => ({ ...p, eye: !p.eye }));
     passwordRef.current?.focus();
   }, []);
 
   const onSubmit = useCallback(() => {
     if (!state.completeForm) return;
-    const {user, items} = getDefaultUserTemplate();
+    const { user, items } = getDefaultUserTemplate();
     items.map(item => dispatch(createItem(item)));
-    dispatch(loadUser({...user, email: form.current.email}));
+    dispatch(loadUser({ ...user, email: form.current.email }));
   }, [dispatch, state.completeForm]);
 
   const onFormChange = useCallback(
     (key: keyof typeof initialRef) => (val: string) => {
-      form.current = {...form.current, [key]: val};
-      const {email, password} = form.current;
+      form.current = { ...form.current, [key]: val };
+      const { email, password } = form.current;
       const completeForm = email.length > 0 && password.length > 0;
-      setState(p => ({...p, completeForm}));
+      setState(p => ({ ...p, completeForm }));
     },
     [],
   );
@@ -70,7 +70,8 @@ export const LogIn = memo(function LogIn() {
   return !focus ? null : (
     <Modal
       backgroundColor={color.background.secondary}
-      onBackgroundPress={navWelcome}>
+      onBackgroundPress={navWelcome}
+    >
       <ModalHeader onRightPress={goBack} title="Log in" />
       <TextInput
         autoCorrect={false}
@@ -81,26 +82,26 @@ export const LogIn = memo(function LogIn() {
         onSubmitEditing={onSubmitEditing('email')}
         placeholder="Email address"
         returnKeyType="next"
-        style={{marginBottom: padding(4)}}
+        style={{ marginBottom: padding(4) }}
         textContentType="username"
         value=""
       />
       <TextInput
         autoCorrect={false}
         blurOnSubmit={false}
-        icons={[{name: eyeIcon, onPress: onEye, focus: true}]}
+        icons={[{ name: eyeIcon, onPress: onEye, focus: true }]}
         onChangeText={onFormChange('password')}
         onRef={passwordRef}
         onSubmitEditing={onSubmitEditing('password')}
         placeholder="Password"
         returnKeyType="done"
         secureTextEntry={!state.eye}
-        style={{marginBottom: padding(4)}}
+        style={{ marginBottom: padding(4) }}
         textContentType="password"
         value=""
       />
       <Button
-        buttonStyle={{marginBottom: padding(4)}}
+        buttonStyle={{ marginBottom: padding(4) }}
         center
         color="accent"
         lowercase

@@ -1,10 +1,10 @@
-import React, {memo, useCallback} from 'react';
-import {View} from 'react-native';
-import {FlatList} from '../../../conversions';
-import {useRootSelector} from '../../../redux';
-import {completeConfig} from '../utils';
-import {AddItem} from './AddItem';
-import {List} from './List';
+import React, { memo, useCallback } from 'react';
+import { View } from 'react-native';
+import { FlatList } from '../../../conversions';
+import { useRootSelector } from '../../../redux';
+import { completeConfig } from '../utils';
+import { AddItem } from './AddItem';
+import { List } from './List';
 
 type BoardProps = {
   projectItemId: string;
@@ -21,7 +21,7 @@ export const Board = memo(function Board({
   const board = useRootSelector(s => s.completeItem.items[projectItemId]);
   const getItemId = useCallback(item => item, []);
   const getItemLayout = useCallback(
-    (_, index) => ({length: listSize, offset: listSize * index, index}),
+    (_, index) => ({ length: listSize, offset: listSize * index, index }),
     [listSize],
   );
 
@@ -37,7 +37,7 @@ export const Board = memo(function Board({
   }, [board.id, listWidth]);
 
   const renderList = useCallback(
-    ({item}) => {
+    ({ item }) => {
       return (
         <List
           itemId={item}
@@ -63,7 +63,7 @@ export const Board = memo(function Board({
       ) : (
         <FlatList
           ListFooterComponent={renderAddList}
-          contentContainerStyle={{padding: completeConfig.padding}}
+          contentContainerStyle={{ padding: completeConfig.padding }}
           data={board.children}
           decelerationRate="fast"
           getItemLayout={getItemLayout}
@@ -74,7 +74,7 @@ export const Board = memo(function Board({
           showsHorizontalScrollIndicator={false}
           snapToAlignment="center"
           snapToInterval={listSize}
-          style={{height: '100%'}}
+          style={{ height: '100%' }}
         />
       )}
     </View>

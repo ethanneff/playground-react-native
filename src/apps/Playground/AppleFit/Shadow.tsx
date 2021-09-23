@@ -1,11 +1,11 @@
-import React, {memo} from 'react';
-import Svg, {Circle, Defs, RadialGradient, Stop} from 'react-native-svg';
+import React, { memo } from 'react';
+import Svg, { Circle, Defs, RadialGradient, Stop } from 'react-native-svg';
 
 type Props = {
   strokeWidth: number;
 };
 
-export const Shadow = memo(function Shadow({strokeWidth}: Props) {
+export const Shadow = memo(function Shadow({ strokeWidth }: Props) {
   const center = strokeWidth / 2;
   return (
     <Svg height={strokeWidth} width={strokeWidth}>

@@ -1,5 +1,5 @@
-import {RootAction} from 'root-types';
-import {createAction} from 'typesafe-actions';
+import { RootAction } from 'root-types';
+import { createAction } from 'typesafe-actions';
 
 /* ACTIONS */
 export const createQuestion = createAction('questions/CREATE')<Question>();

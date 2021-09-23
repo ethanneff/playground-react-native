@@ -163,6 +163,6 @@ export type FontWeight = '100' | '300' | '600';
 
 export type FontEmphasis = 'high' | 'medium' | 'low' | 'none';
 
-export type FontSizes = {[key in FontType]: FontSize};
+export type FontSizes = { [key in FontType]: FontSize };
 
-export type FontEmphases = {[key in FontEmphasis]: number};
+export type FontEmphases = { [key in FontEmphasis]: number };

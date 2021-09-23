@@ -1,6 +1,6 @@
-import dayjs, {Dayjs} from 'dayjs';
-import React, {memo} from 'react';
-import {Item} from './Item';
+import dayjs, { Dayjs } from 'dayjs';
+import React, { memo } from 'react';
+import { Item } from './Item';
 
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const generateButtons = () => {
@@ -62,7 +62,7 @@ type Props = {
   onPress: (value: Dayjs) => () => void;
 };
 
-export const OneTime = memo(function OneTime({onPress}: Props) {
+export const OneTime = memo(function OneTime({ onPress }: Props) {
   const buttons = generateButtons();
   return (
     <>

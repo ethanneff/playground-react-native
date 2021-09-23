@@ -1,10 +1,10 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   createStackNavigator,
   StackNavigationOptions,
 } from '@react-navigation/stack';
-import React, {ReactElement} from 'react';
-import {useNavScreenOptions, useTabTap} from '../../features';
+import React, { ReactElement } from 'react';
+import { useNavScreenOptions, useTabTap } from '../../features';
 import {
   HomeStackRoutes,
   ImplementStackRoutes,
@@ -24,23 +24,23 @@ import {
   Welcome,
 } from './screens';
 
-const noHeader: StackNavigationOptions = {headerShown: false};
+const noHeader: StackNavigationOptions = { headerShown: false };
 
 const tabIcons = {
-  plan: {focused: 'pencil-plus-outline', unFocused: 'pencil-plus-outline'},
+  plan: { focused: 'pencil-plus-outline', unFocused: 'pencil-plus-outline' },
   implement: {
     focused: 'checkbox-multiple-marked-outline',
     unFocused: 'checkbox-multiple-marked-outline',
   },
-  reflect: {focused: 'finance', unFocused: 'finance'},
-  account: {focused: 'account', unFocused: 'account'},
+  reflect: { focused: 'finance', unFocused: 'finance' },
+  account: { focused: 'account', unFocused: 'account' },
 };
 
 const TabStack = createBottomTabNavigator<HomeStackRoutes>();
 const Home = () => {
-  const {tabScreenOptions} = useNavScreenOptions();
+  const { tabScreenOptions } = useNavScreenOptions();
   return (
-    <TabStack.Navigator screenOptions={tabScreenOptions({tabIcons})}>
+    <TabStack.Navigator screenOptions={tabScreenOptions({ tabIcons })}>
       <TabStack.Screen component={Capture} name="plan" />
       <TabStack.Screen component={Implement} name="implement" />
       <TabStack.Screen component={Reflect} name="reflect" />
@@ -62,7 +62,7 @@ const Implement = () => {
 
 const LandingStack = createStackNavigator<LandingStackRoutes>();
 export const Landing = (): ReactElement => {
-  const {modalScreenOptions} = useNavScreenOptions();
+  const { modalScreenOptions } = useNavScreenOptions();
   return (
     <LandingStack.Navigator screenOptions={modalScreenOptions}>
       <LandingStack.Screen component={Welcome} name="welcome" />
@@ -75,7 +75,7 @@ export const Landing = (): ReactElement => {
 
 const MainStack = createStackNavigator<MainStackRoutes>();
 export const Main = (): ReactElement => {
-  const {modalScreenOptions} = useNavScreenOptions();
+  const { modalScreenOptions } = useNavScreenOptions();
   return (
     <MainStack.Navigator screenOptions={modalScreenOptions}>
       <MainStack.Screen component={Home} name="home" />

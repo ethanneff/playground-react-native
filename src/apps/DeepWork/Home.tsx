@@ -1,6 +1,6 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
-import {View} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import React, { memo, useCallback } from 'react';
+import { View } from 'react-native';
 import {
   Activity,
   Card,
@@ -9,9 +9,9 @@ import {
   Text,
   TouchableOpacity,
 } from '../../components';
-import {ScrollView} from '../../conversions';
-import {padding, useAdminNavBack, useColor} from '../../features';
-import {DeepWorkNavigation} from './types';
+import { ScrollView } from '../../conversions';
+import { padding, useAdminNavBack, useColor } from '../../features';
+import { DeepWorkNavigation } from './types';
 
 /*
 # Purpose
@@ -38,9 +38,9 @@ import {DeepWorkNavigation} from './types';
 */
 
 export const Home = memo(function Home() {
-  const {navigate} = useNavigation<DeepWorkNavigation>();
+  const { navigate } = useNavigation<DeepWorkNavigation>();
   const color = useColor();
-  const {onLeftPress} = useAdminNavBack();
+  const { onLeftPress } = useAdminNavBack();
   const onItemAdd = useCallback(() => undefined, []);
   const navToAccount = useCallback(() => navigate('account'), [navigate]);
 
@@ -50,13 +50,15 @@ export const Home = memo(function Home() {
       onLeftPress={onLeftPress}
       onRightPress={navToAccount}
       rightIcon="account"
-      title="Deep Work">
+      title="Deep Work"
+    >
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: padding(4),
           paddingVertical: padding(2),
         }}
-        style={{backgroundColor: color.background.secondary}}>
+        style={{ backgroundColor: color.background.secondary }}
+      >
         <Card>
           <Text
             center
@@ -78,8 +80,12 @@ export const Home = memo(function Home() {
           flexDirection: 'row',
           margin: padding(4),
           justifyContent: 'center',
-        }}>
-        <TouchableOpacity onPress={onItemAdd} style={{marginRight: padding(2)}}>
+        }}
+      >
+        <TouchableOpacity
+          onPress={onItemAdd}
+          style={{ marginRight: padding(2) }}
+        >
           <Icon backgroundColor="secondary" color="primaryA" fab name="plus" />
         </TouchableOpacity>
         <TouchableOpacity onPress={onItemAdd}>

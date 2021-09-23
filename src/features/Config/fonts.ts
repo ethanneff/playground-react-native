@@ -2,9 +2,9 @@
 SIZING https://material.io/design/typography/the-type-system.html#applying-the-type-scale
 */
 
-import {FontEmphases, FontSizes, FontWeight} from './types';
+import { FontEmphases, FontSizes, FontWeight } from './types';
 
-export const fontWeight: {[key: string]: FontWeight} = {
+export const fontWeight: { [key: string]: FontWeight } = {
   light: '100',
   medium: '600',
   regular: '300',

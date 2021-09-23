@@ -1,5 +1,5 @@
-import {RouteProp} from '@react-navigation/core';
-import {StackNavigationProp} from '@react-navigation/stack';
+import { RouteProp } from '@react-navigation/core';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 export type Item = {
   title: string;
@@ -13,7 +13,7 @@ export type Item = {
 
 export type AuthStackRoutes = {
   home: undefined;
-  details: {item: Item};
+  details: { item: Item };
 };
 export type UnAuthStackRoutes = {
   landing: undefined;

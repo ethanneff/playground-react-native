@@ -1,14 +1,14 @@
-import {createStackNavigator} from '@react-navigation/stack';
-import React, {memo} from 'react';
-import {Archero} from './Archero';
-import {FlappyBird} from './FlappyBird';
-import {Landing} from './Landing';
-import {PapiJump} from './PapiJump';
-import {Snake} from './Snake';
-import {TicTacToe} from './TicTacToe';
-import {ArcadeRoutes} from './types';
+import { createStackNavigator } from '@react-navigation/stack';
+import React, { memo } from 'react';
+import { Archero } from './Archero';
+import { FlappyBird } from './FlappyBird';
+import { Landing } from './Landing';
+import { PapiJump } from './PapiJump';
+import { Snake } from './Snake';
+import { TicTacToe } from './TicTacToe';
+import { ArcadeRoutes } from './types';
 
-const noHeader = {headerShown: false};
+const noHeader = { headerShown: false };
 const Stack = createStackNavigator<ArcadeRoutes>();
 
 export default memo(function Games() {
