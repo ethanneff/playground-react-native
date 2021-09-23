@@ -10,7 +10,7 @@ module.exports = {
     'plugin:react-native/all',
     'plugin:import/recommended',
     'plugin:import/typescript',
-    'prettier',
+    'plugin:prettier/recommended',
   ],
   plugins: ['@typescript-eslint'],
   ignorePatterns: [
