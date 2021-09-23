@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.57.9](https://github.com/ethanneff/example/compare/v2.57.8...v2.57.9) (2021-09-23)
+
+
+### Bug Fixes
+
+* add spaces in brackets ([cc39a53](https://github.com/ethanneff/example/commit/cc39a534886b646def0f81c6ad7ce7251a0b07e5))
+* correct vscode shell to zsh ([1f734dc](https://github.com/ethanneff/example/commit/1f734dc40fa5aed6d193ac468f2e24c234708569))
+* deep readonly redux ([a44657b](https://github.com/ethanneff/example/commit/a44657b045b7e8633cf41cea6061d213b39ace80))
+* jsxBracketSameLine deprecated ([2061c53](https://github.com/ethanneff/example/commit/2061c5314e39021ddf80f65a890c31e620605bc3))
+* remove bracket spacing ([1d809a3](https://github.com/ethanneff/example/commit/1d809a3659a3c185640e4884d1412d374a90f867))
+* remove prettier as an eslint ([b858c8c](https://github.com/ethanneff/example/commit/b858c8cdaa92e294cf62db760b5c10f8bd132f92))
+* update deps ([0cf1af1](https://github.com/ethanneff/example/commit/0cf1af1b00a125b4edb5802c18a64bdeb12d3f8d))
+* update react native to 65 ([63bd0aa](https://github.com/ethanneff/example/commit/63bd0aacdb15e5bc2826ae236fd4afe242f74059))
+
 ## [2.57.8](https://github.com/ethanneff/example/compare/v2.57.7...v2.57.8) (2021-09-02)
 
 
