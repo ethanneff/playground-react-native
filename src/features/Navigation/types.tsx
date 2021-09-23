@@ -1,4 +1,4 @@
-import {StackNavigationProp} from '@react-navigation/stack';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 export type RootRoutes = {
   admin: undefined;
@@ -18,6 +18,7 @@ export type RootRoutes = {
   complete: undefined;
   deep: undefined;
   notification: undefined;
+  'action-sheet': undefined;
   alert: undefined;
   actionSheet: undefined;
   playground: undefined;

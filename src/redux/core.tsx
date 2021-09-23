@@ -1,5 +1,5 @@
-import React, {memo, ReactNode} from 'react';
-import {Provider} from 'react-redux';
+import React, { memo, ReactNode } from 'react';
+import { Provider } from 'react-redux';
 import {
   applyMiddleware,
   combineReducers,
@@ -7,8 +7,8 @@ import {
   createStore,
   Middleware,
 } from 'redux';
-import {persistReducer, persistStore} from 'redux-persist';
-import {PersistGate} from 'redux-persist/integration/react';
+import { persistReducer, persistStore } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
 import thunk from 'redux-thunk';
 import {
   authActions,
@@ -54,8 +54,8 @@ import {
   responsesActions,
   responsesReducer,
 } from '../apps/Playground/Questionnaire/models';
-import {Storage} from '../conversions';
-import {syncMiddleware, useSync} from './sync';
+import { Storage } from '../conversions';
+import { syncMiddleware, useSync } from './sync';
 
 export const actions = {
   auth: authActions,
@@ -96,7 +96,7 @@ export const reducers = combineReducers({
 });
 
 const blacklist = ['gameOfLife'];
-const persistConfig = {key: 'root', storage: Storage, blacklist};
+const persistConfig = { key: 'root', storage: Storage, blacklist };
 const middlewares: Middleware[] = [thunk, syncMiddleware];
 const composers =
   (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -107,8 +107,8 @@ export const store = createStore(persistedReducer, enhancers);
 const persistor = persistStore(store);
 persistor.purge();
 
-type Props = {children: ReactNode};
-export const ReduxProvider = memo(function ReduxProvider({children}: Props) {
+type Props = { children: ReactNode };
+export const ReduxProvider = memo(function ReduxProvider({ children }: Props) {
   useSync();
   return (
     <Provider store={store}>

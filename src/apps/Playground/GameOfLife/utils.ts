@@ -1,3 +1,5 @@
+import {DeepReadonly} from 'ts-essentials';
+
 const operations = [
   [0, 1],
   [0, -1],
@@ -11,15 +13,12 @@ const operations = [
 
 type BoardItem = 0 | 1;
 
-export type Board = Array<Array<BoardItem>>;
+export type Board = DeepReadonly<BoardItem[][]>;
 
 export const generateBoard = (size: number, random = 0): Board => {
-  const board: Board = [];
-  for (let i = 0; i < size; i++) {
-    board[i] = [];
-    for (let j = 0; j < size; j++) board[i][j] = Math.random() > random ? 0 : 1;
-  }
-  return board;
+  return Array.from(Array(size), () =>
+    Array(size).fill(Math.random() > random ? 0 : 1),
+  );
 };
 
 export const determineBoardItem = (

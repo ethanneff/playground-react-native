@@ -1,4 +1,4 @@
-import {Sound} from '../../conversions';
+import { Sound } from '../../conversions';
 
 type Sounds = 'tap';
 

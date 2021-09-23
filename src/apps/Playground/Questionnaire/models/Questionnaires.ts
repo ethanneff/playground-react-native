@@ -35,6 +35,7 @@ export const questionnairesActions = {
 /* SELECTORS */
 export const getQuestionnaires = (state: RootState): QuestionnairesObject =>
   state.questionnaires.items;
+
 export const getQuestionnaireArray = createSelector(
   [getQuestionnaires],
   questionnaires => Object.values(questionnaires).filter(item => item),
@@ -45,7 +46,7 @@ export interface Questionnaire {
   acronym?: string;
   formula?: string;
   id: string;
-  questions: string[];
+  questions: ReadonlyArray<string>;
   title: string;
 }
 interface QuestionnairesObject {

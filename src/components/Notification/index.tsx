@@ -1,13 +1,13 @@
-import React, {memo, useCallback, useRef} from 'react';
-import {Animated, PanResponder, StyleSheet, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {useDriver} from '../../features/Animation';
-import {padding} from '../../features/Config';
-import {SoundManager} from '../../features/Sound';
-import {useColor} from '../../features/Theme';
-import {Icon} from '../Icon';
-import {Text} from '../Text';
-import {TouchableOpacity} from '../TouchableOpacity';
+import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
+import { Animated, PanResponder, StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useDriver } from '../../features/Animation';
+import { padding } from '../../features/Config';
+import { SoundManager } from '../../features/Sound';
+import { useColor } from '../../features/Theme';
+import { Icon } from '../Icon';
+import { Text } from '../Text';
+import { TouchableOpacity } from '../TouchableOpacity';
 
 type NotificationProps = {
   title: string;
@@ -19,7 +19,6 @@ type NotificationProps = {
   onBackgroundPress?: () => void;
 };
 
-const initialPosition = {x: 0, y: 0};
 export const Notification = memo(function Notification({
   title,
   height = padding(18),
@@ -30,8 +29,16 @@ export const Notification = memo(function Notification({
   onBackgroundPress,
 }: NotificationProps) {
   const color = useColor();
+  const initialPosition = useMemo(() => ({ x: 0, y: -height }), [height]);
   const styles = StyleSheet.create({
-    flex: {flex: 1},
+    container: {
+      bottom: 0,
+      left: 0,
+      position: 'absolute',
+      right: 0,
+      top: 0,
+    },
+    flex: { flex: 1 },
     modal: {
       alignItems: 'center',
       backgroundColor: color.background.primaryA,
@@ -40,7 +47,7 @@ export const Notification = memo(function Notification({
       padding: padding(4),
       width: '100%',
     },
-    notification: {elevation: 2, zIndex: 2},
+    notification: { elevation: 2, zIndex: 2 },
     notificationSafeArea: {
       backgroundColor: color.background.primaryA,
       height,
@@ -53,9 +60,15 @@ export const Notification = memo(function Notification({
       width: '100%',
     },
   });
-
-  const pan = useRef(new Animated.ValueXY(initialPosition)).current;
   const useNativeDriver = useDriver();
+  const pan = useRef(new Animated.ValueXY(initialPosition)).current;
+
+  useEffect(() => {
+    Animated.spring(pan, {
+      toValue: { x: 0, y: 0 },
+      useNativeDriver,
+    }).start();
+  }, [height, onCancel, pan, useNativeDriver]);
 
   const onPanResponderRelease = useCallback(
     (_, g) => {
@@ -63,7 +76,7 @@ export const Notification = memo(function Notification({
 
       const min = thresholdPercent * height * -1;
       const success = g.dy < min;
-      const toValue = success ? {x: 0, y: -height * 2} : initialPosition;
+      const toValue = success ? { x: 0, y: -height * 2 } : initialPosition;
       Animated.spring(pan, {
         toValue,
         useNativeDriver,
@@ -79,6 +92,7 @@ export const Notification = memo(function Notification({
     [
       dismissDelay,
       height,
+      initialPosition,
       noSwipe,
       onBackgroundPress,
       onCancel,
@@ -92,7 +106,7 @@ export const Notification = memo(function Notification({
     (_, g) => {
       if (g.dy > 0 || noSwipe) return;
 
-      const toValue = {x: 0, y: g.dy};
+      const toValue = { x: 0, y: g.dy };
       Animated.spring(pan, {
         toValue,
         useNativeDriver,
@@ -110,15 +124,7 @@ export const Notification = memo(function Notification({
   ).current;
 
   return (
-    <View
-      style={{
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        bottom: 0,
-        top: 0,
-      }}
-      {...panResponder.panHandlers}>
+    <View style={styles.container} {...panResponder.panHandlers}>
       <Animated.View style={[pan.getLayout(), styles.notification]}>
         <View style={styles.notificationSafeArea} />
         <SafeAreaView>
@@ -131,11 +137,11 @@ export const Notification = memo(function Notification({
           </View>
         </SafeAreaView>
       </Animated.View>
-      <TouchableOpacity
-        disabled={!onBackgroundPress}
+      {/* <TouchableOpacity
+        disabled={!onBackgroundPress} // containerStyle?
         onPress={onBackgroundPress}
         style={styles.overlay}
-      />
+      /> */}
     </View>
   );
 });

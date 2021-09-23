@@ -17,6 +17,7 @@ Deploy Android App (Focus)
 - [ ] remove /providers
 - [ ] remove /hooks
 - [ ] remove /utils
+- [ ] add yup for runtime typeshecking
 
 Deploy iOS App (Focus)
 

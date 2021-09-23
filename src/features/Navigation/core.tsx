@@ -1,17 +1,18 @@
-import {NavigationContainer, useNavigation} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import React, {lazy, memo, Suspense} from 'react';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import React, { lazy, memo, Suspense } from 'react';
 import Config from 'react-native-config';
 import {
+  ActionSheet,
   ActivityIndicator,
   Button,
   Modal,
   Notification,
   Text,
 } from '../../components';
-import {RootRoutes} from './types';
-import {useNavScreenOptions} from './useNavScreenOptions';
-import {usePersistedState} from './usePersistedState';
+import { RootRoutes } from './types';
+import { useNavScreenOptions } from './useNavScreenOptions';
+import { usePersistedState } from './usePersistedState';
 
 const Arcade = lazy(() => import('../../apps/Arcade'));
 const Portfolio = lazy(() => import('../../apps/Portfolio'));
@@ -27,7 +28,7 @@ const TheOneThing = lazy(() => import('../../apps/TheOneThing'));
 const Complete = lazy(() => import('../../apps/Complete'));
 const DeepWork = lazy(() => import('../../apps/DeepWork'));
 const AlertExample = () => {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
 
   return (
     <Modal onBackgroundPress={goBack}>
@@ -37,10 +38,22 @@ const AlertExample = () => {
   );
 };
 const NotificationExample = () => {
-  const {goBack} = useNavigation();
+  const { goBack } = useNavigation();
 
   return (
     <Notification
+      onBackgroundPress={goBack}
+      onCancel={goBack}
+      title="this is a notification!"
+    />
+  );
+};
+
+const ActionSheetExample = () => {
+  const { goBack } = useNavigation();
+
+  return (
+    <ActionSheet
       onBackgroundPress={goBack}
       onCancel={goBack}
       title="this is a notification!"
@@ -54,8 +67,8 @@ const linking = {
 };
 
 export const NavigationProvider = memo(function NavigationProvider() {
-  const {initialState, isReady, onStateChange, onRef} = usePersistedState();
-  const {modalScreenOptions} = useNavScreenOptions();
+  const { initialState, isReady, onStateChange, onRef } = usePersistedState();
+  const { modalScreenOptions } = useNavScreenOptions();
   const fallback = <ActivityIndicator />;
   const initialRouteName: any = Config.APP || 'admin';
 
@@ -68,10 +81,12 @@ export const NavigationProvider = memo(function NavigationProvider() {
         initialState={initialState}
         linking={linking}
         onStateChange={onStateChange}
-        ref={onRef}>
+        ref={onRef}
+      >
         <Stack.Navigator
           initialRouteName={initialRouteName}
-          screenOptions={modalScreenOptions}>
+          screenOptions={modalScreenOptions}
+        >
           <Stack.Screen component={Admin} name="admin" />
           <Stack.Screen component={Arcade} name="arcade" />
           <Stack.Screen component={Portfolio} name="portfolio" />
@@ -87,6 +102,7 @@ export const NavigationProvider = memo(function NavigationProvider() {
           <Stack.Screen component={DeepWork} name="deep-work" />
           <Stack.Screen component={NotificationExample} name="notification" />
           <Stack.Screen component={AlertExample} name="alert" />
+          <Stack.Screen component={ActionSheetExample} name="action-sheet" />
         </Stack.Navigator>
       </NavigationContainer>
     </Suspense>

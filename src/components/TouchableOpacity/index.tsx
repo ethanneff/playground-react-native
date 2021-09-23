@@ -1,7 +1,7 @@
-import React, {ReactElement, ReactNode, useCallback} from 'react';
-import {StyleProp, ViewStyle} from 'react-native';
-import {TouchableOpacity as Original} from '../../conversions';
-import {SoundManager} from '../../features/Sound';
+import React, { ReactElement, ReactNode, useCallback } from 'react';
+import { StyleProp, ViewStyle } from 'react-native';
+import { TouchableOpacity as Original } from '../../conversions';
+import { SoundManager } from '../../features/Sound';
 
 type Props = {
   testID?: string;
@@ -34,15 +34,16 @@ export const TouchableOpacity = ({
     if (onLongPress) onLongPress();
   }, [onLongPress]);
 
-  const containerStyles = [{flex: flex ? 1 : 0}, style];
+  const styles = [{ flex: flex ? 1 : 0 }, style];
   return (
     <Original
       activeOpacity={activeOpacity}
       disabled={disabled}
       onLongPress={onLongPressHandler}
       onPress={onPressHandler}
-      style={containerStyles}
-      testID={testID}>
+      style={styles}
+      testID={testID}
+    >
       {children}
     </Original>
   );

@@ -9,17 +9,21 @@ export const updateBoard = createAction('gameOfLife/updateBoard')<Board>();
 export const resetBoard = createAction('gameOfLife/resetBoard')<number>();
 export const loopBoard = (): RootThunkAction<void> => (dispatch, getState) => {
   const {board} = getState().gameOfLife;
+  // TODO: save change list.. only iterate through items that changed instead of whole board https://stackoverflow.com/a/40564
   const newBoard = board.map((rows, i) =>
     rows.map((_, j) => determineBoardItem(board, i, j)),
   );
   dispatch(updateBoard(newBoard));
 };
+
 export const updateCell =
   (x: number, y: number): RootThunkAction<void> =>
   (dispatch, getState) => {
     const {board} = getState().gameOfLife;
-    const copy = [...board];
-    copy[x][y] = copy[x][y] === 1 ? 0 : 1;
+    const flip = board[x][y] === 1 ? 0 : 1;
+    const copy = board.map((rows, i) =>
+      rows.map((_, j) => (i === x && y === j ? flip : board[i][j])),
+    );
     dispatch(updateBoard(copy));
   };
 
