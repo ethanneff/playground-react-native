@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-native/scripts/find-node.sh b/node_modules/react-native/scripts/find-node.sh
+index c498ba6..cdb20cd 100755
+--- a/node_modules/react-native/scripts/find-node.sh
++++ b/node_modules/react-native/scripts/find-node.sh
+@@ -4,6 +4,8 @@
+ # This source code is licensed under the MIT license found in the
+ # LICENSE file in the root directory of this source tree.
+ 
++unset PREFIX
++
+ set -e
+ 
+ # Support Homebrew on M1
