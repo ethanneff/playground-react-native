@@ -53,9 +53,9 @@ export const useDimensions = (): void => {
   );
 
   useEffect(() => {
-    Dimensions.addEventListener('change', handleChange);
+    const subscription = Dimensions.addEventListener('change', handleChange);
     return () => {
-      Dimensions.removeEventListener('change', handleChange);
+      subscription.remove();
     };
   }, [handleChange, dispatch]);
 };
@@ -69,9 +69,9 @@ export const useAppState = (): void => {
   );
 
   useEffect(() => {
-    AppState.addEventListener('change', handleChange);
+    const subscription = AppState.addEventListener('change', handleChange);
     return () => {
-      AppState.removeEventListener('change', handleChange);
+      subscription.remove();
     };
   }, [handleChange]);
 };

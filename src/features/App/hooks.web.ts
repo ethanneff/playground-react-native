@@ -15,9 +15,9 @@ export const useDimensions = (): void => {
   );
 
   useEffect(() => {
-    Dimensions.addEventListener('change', handleChange);
+    const subscription = Dimensions.addEventListener('change', handleChange);
     return () => {
-      Dimensions.removeEventListener('change', handleChange);
+      subscription.remove();
     };
   }, [handleChange, dispatch]);
 };
