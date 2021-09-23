@@ -14,7 +14,6 @@
   "workbench.editor.showTabs": true,
   "workbench.editor.labelFormat": "short",
   "typescript.preferences.importModuleSpecifier": "relative",
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
   "search.exclude": {
     "**/node_modules/": true,
     "**/coverage/": true,
