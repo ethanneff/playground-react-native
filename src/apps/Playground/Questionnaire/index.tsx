@@ -33,7 +33,7 @@ const data = [
   { key: '4', title: '4' },
   { key: '5', title: '5' },
 ];
-const width = Dimensions.get('window').width;
+const { width } = Dimensions.get('window');
 const viewabilityConfig = { itemVisiblePercentThreshold: 50 };
 
 export const Questionnaire = memo(function Questionnaire() {
@@ -44,6 +44,8 @@ export const Questionnaire = memo(function Questionnaire() {
   const handleViewableItemsChanged = useCallback(({ viewableItems }: any) => {
     currentIndex.current = viewableItems[0]?.index || 0;
   }, []);
+
+  const onFinish = () => undefined;
 
   const onProgress = useCallback(
     (direction = 1) => {
@@ -76,8 +78,6 @@ export const Questionnaire = memo(function Questionnaire() {
     [onProgress, output],
   );
 
-  const onFinish = () => undefined;
-
   const updateSelection = useCallback(
     (item: any, choice: any) => () => onSelection(item, choice),
     [onSelection],
@@ -108,7 +108,7 @@ export const Questionnaire = memo(function Questionnaire() {
         );
 
       return (
-        <View style={{ width: width }}>
+        <View style={{ width }}>
           <Text title={item.title} />
           {items}
           <View

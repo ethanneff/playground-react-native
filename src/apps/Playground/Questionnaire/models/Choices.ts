@@ -1216,6 +1216,9 @@ export const choicesReducer = (
   action: RootAction,
 ): Choices => {
   switch (action.type) {
+    case 'choices/CREATE':
+    case 'choices/UPDATE':
+    case 'choices/REMOVE':
     default:
       return state;
   }

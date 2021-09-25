@@ -29,14 +29,14 @@ export const SignUp = memo(function SignUp() {
   const eyeIcon = state.eye ? 'eye-outline' : 'eye-off-outline';
 
   const onEye = useCallback(() => {
-    setState(p => ({ ...p, eye: !p.eye }));
+    setState((p) => ({ ...p, eye: !p.eye }));
     passwordRef.current?.focus();
   }, []);
 
   const onSubmit = useCallback(() => {
     if (!state.completeForm) return;
     const { user, items } = getDefaultUserTemplate();
-    items.map(item => dispatch(createItem(item)));
+    items.map((item) => dispatch(createItem(item)));
     dispatch(loadUser({ ...user, email: form.current.email }));
   }, [dispatch, state.completeForm]);
 
@@ -46,7 +46,7 @@ export const SignUp = memo(function SignUp() {
       const { email, password } = form.current;
       const passwordError = password.length < 10 && key === 'password';
       const completeForm = email.length > 0 && password.length >= 10;
-      setState(p => ({ ...p, completeForm, passwordError }));
+      setState((p) => ({ ...p, completeForm, passwordError }));
     },
     [],
   );
@@ -68,7 +68,7 @@ export const SignUp = memo(function SignUp() {
     }
   }, [focus]);
 
-  return !focus ? null : (
+  return focus ? (
     <Modal
       backgroundColor={color.background.secondary}
       onBackgroundPress={navWelcome}
@@ -123,5 +123,5 @@ export const SignUp = memo(function SignUp() {
         title="Sign Up"
       />
     </Modal>
-  );
+  ) : null;
 });

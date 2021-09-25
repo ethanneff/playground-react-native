@@ -12,7 +12,7 @@ import {
 
 export const Settings = memo(function PortfolioSettings() {
   const dispatch = useRootDispatch();
-  const currentTheme = useRootSelector(state => state.theme.currentTheme);
+  const currentTheme = useRootSelector((state) => state.theme.currentTheme);
   const { goBack } = useNavigation();
   const themePress = useCallback(
     (theme: Theme) => () => dispatch(changeTheme(theme)),
@@ -32,7 +32,7 @@ export const Settings = memo(function PortfolioSettings() {
     [currentTheme, themePress],
   );
   const renderHeader = useCallback(() => <Button disabled title="Theme" />, []);
-  const keyExtractor = useCallback(item => item, []);
+  const keyExtractor = useCallback((item) => item, []);
 
   return (
     <Screen dropShadow onLeftPress={goBack} title="Settings">

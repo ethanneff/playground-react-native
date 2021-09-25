@@ -15,7 +15,9 @@ interface Outcome {
 
 export class GestureHandler {
   minTouches: number;
+
   finish: Touches = {};
+
   start: Touches = {};
 
   constructor({ minTouches = 2 } = {}) {
@@ -23,7 +25,7 @@ export class GestureHandler {
   }
 
   onPanResponderMove(event: GestureResponderEvent): void {
-    const touches: NativeTouchEvent[] = event.nativeEvent.touches;
+    const { touches } = event.nativeEvent;
     touches.forEach((touch: NativeTouchEvent) => {
       this.recordFinish(touch);
       this.recordStart(touch);

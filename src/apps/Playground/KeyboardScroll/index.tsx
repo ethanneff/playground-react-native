@@ -22,14 +22,20 @@ const lorem =
 
 type Data = { id: string; name: string; color: string };
 
-const generateItems = (
-  color: ColorTheme,
-  n: number,
+type GenerateItems = {
+  color: ColorTheme;
+  length: number;
+  min?: number;
+  max?: number;
+};
+const generateItems = ({
+  color,
+  length,
   min = 0.4,
   max = 0.6,
-): Data[] => {
+}: GenerateItems): Data[] => {
   const output = [];
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < length; i++) {
     const random = Math.random() * (max - min) + min;
     output.push({
       id: String(i),
@@ -44,7 +50,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
   const color = useColor();
   const [message, setMessage] = useState('');
 
-  const width = Dimensions.get('window').width;
+  const { width } = Dimensions.get('window');
   const [loading, setLoading] = useState(false);
   const onEndReached = useCallback(() => {
     const timeout = setTimeout(() => {
@@ -78,9 +84,11 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
     );
   }, []);
 
-  const [data, setData] = useState<Data[]>(() => generateItems(color, 200000));
+  const [data, setData] = useState<Data[]>(() =>
+    generateItems({ color, length: 200000 }),
+  );
 
-  const onChangeText = useCallback(v => {
+  const onChangeText = useCallback((v) => {
     setMessage(v);
   }, []);
 
@@ -88,7 +96,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
 
   const onSubmit = useCallback(() => {
     const date = Date.now().toString();
-    setData(p => [...p, { id: date, name: date, color: color.text.accent }]);
+    setData((p) => [...p, { id: date, name: date, color: color.text.accent }]);
     listRef.current?.scrollToEnd(true);
   }, [color.text.accent]);
 

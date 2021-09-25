@@ -14,7 +14,7 @@ const rings: Ring[] = [
     end: 'rgb(249, 56, 133)',
     bg: 'rgb(50, 1, 14)',
     theta: 1.7 * TAU,
-    size: size,
+    size,
     icon: 'chevron-right',
   },
   {

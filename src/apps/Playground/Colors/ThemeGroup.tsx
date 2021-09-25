@@ -10,12 +10,12 @@ import {
 
 export const ThemeGroup = memo(function ThemeGroup() {
   const dispatch = useRootDispatch();
-  const currentTheme = useRootSelector(state => state.theme.currentTheme);
-  const themes = useRootSelector(state => state.theme.themes);
+  const currentTheme = useRootSelector((state) => state.theme.currentTheme);
+  const themes = useRootSelector((state) => state.theme.themes);
   const themePress = (theme: Theme) => () => dispatch(changeTheme(theme));
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-      {Object.keys(themes).map(key => (
+      {Object.keys(themes).map((key) => (
         <Button
           center
           color={currentTheme === key ? 'positive' : 'primaryA'}

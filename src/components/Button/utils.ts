@@ -45,9 +45,9 @@ export const getStyles = ({
   const textColor = disabled
     ? colorScheme.text.disabled
     : emphasis === 'high' &&
-      ['primaryA', 'secondary', 'tertiary'].some(c => c === color)
+      ['primaryA', 'secondary', 'tertiary'].some((c) => c === color)
     ? colorScheme.text.primaryA
-    : emphasis !== 'high' && ['primaryB'].some(c => c === color)
+    : emphasis !== 'high' && ['primaryB'].some((c) => c === color)
     ? colorScheme.text.primaryA
     : emphasis === 'high'
     ? colorScheme.text.primaryB

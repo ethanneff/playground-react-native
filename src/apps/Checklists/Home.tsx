@@ -11,8 +11,6 @@ import {
 import { ScrollView } from '../../conversions';
 import { LoginFlow, padding, useAdminNavBack, useColor } from '../../features';
 
-// const
-
 // Notification.show()
 // Alert.show()
 // ShareSheet.show()
@@ -29,7 +27,7 @@ export const Home = memo(function Checklists() {
     },
   });
   const [showLogin, setShowLogin] = useState(false);
-  const onToggleLogin = useCallback(() => setShowLogin(prev => !prev), []);
+  const onToggleLogin = useCallback(() => setShowLogin((prev) => !prev), []);
 
   return (
     <>

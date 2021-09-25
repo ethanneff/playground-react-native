@@ -158,7 +158,7 @@ export const Home = memo(function Home() {
     setShowCustomInput(false);
   }, []);
   const onCustom = useCallback(() => {
-    setShowCustomInput(v => !v);
+    setShowCustomInput((v) => !v);
   }, []);
   const onCustomInputChange = useCallback((value: string) => {
     setCustomInput(value);
@@ -222,7 +222,7 @@ export const Home = memo(function Home() {
             <Button color="accent" onPress={onRandom} title="random" />
             <Button color="accent" onPress={onCustom} title="custom" />
           </View>
-          {!showCustomInput ? null : (
+          {showCustomInput ? (
             <View
               style={{
                 justifyContent: 'center',
@@ -243,7 +243,7 @@ export const Home = memo(function Home() {
                 title="submit"
               />
             </View>
-          )}
+          ) : null}
         </Card>
         <Card>
           <Text

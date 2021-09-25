@@ -18,8 +18,7 @@ export const getCurrentItem = (item: Item): boolean => {
   const currentTime = new Date();
   const before = currentTime.setHours(currentTime.getHours() - 1);
   const after = currentTime.setHours(currentTime.getHours() + 1);
-  const between = item.id > before && item.id < after;
-  return between;
+  return item.id > before && item.id < after;
 };
 
 export const getFirstItemOfDay = (

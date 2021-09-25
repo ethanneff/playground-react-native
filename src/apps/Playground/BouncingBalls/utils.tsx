@@ -2,12 +2,10 @@ import { Animated } from 'react-native';
 import { CanvasDimensions, Item } from './types';
 
 const rotate = (dx: number, dy: number, angle: number) => {
-  const rotatedVelocities = {
+  return {
     x: dx * Math.cos(angle) - dy * Math.sin(angle),
     y: dx * Math.sin(angle) + dy * Math.cos(angle),
   };
-
-  return rotatedVelocities;
 };
 
 export const resolveItemCollision = (

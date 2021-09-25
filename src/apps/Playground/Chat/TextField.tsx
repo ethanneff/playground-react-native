@@ -14,7 +14,7 @@ import {
 export const TextField = memo(function TextField() {
   const dispatch = useRootDispatch();
   const textFieldRef = useRef<TextInput | null>(null);
-  const textField = useRootSelector(state => state.chatMessage.textField);
+  const textField = useRootSelector((state) => state.chatMessage.textField);
   const submittable = useRootSelector(getChatSubmittable);
   const onMessageChange = useCallback(
     (message: string) => dispatch(typeChatMessage(message)),

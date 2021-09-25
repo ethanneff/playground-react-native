@@ -12,7 +12,7 @@ export default memo(function ChecklistItemCreate() {
   const { navigate } = useNavigation<any>();
   const dispatch = useRootDispatch();
   const [form, setForm] = useState(initialState);
-  const currentChecklist = useRootSelector(state => state.checklist.active);
+  const currentChecklist = useRootSelector((state) => state.checklist.active);
   const isInvalidForm = form.name.trim().length === 0;
 
   const handleSubmit = useCallback(() => {
@@ -41,11 +41,11 @@ export default memo(function ChecklistItemCreate() {
   }, [currentChecklist, dispatch, form, isInvalidForm, navigate]);
 
   const handleNameChange = useCallback(
-    (name: string) => setForm(state => ({ ...state, name })),
+    (name: string) => setForm((state) => ({ ...state, name })),
     [],
   );
   const handleDescriptionChange = useCallback(
-    (description: string) => setForm(state => ({ ...state, description })),
+    (description: string) => setForm((state) => ({ ...state, description })),
     [],
   );
 

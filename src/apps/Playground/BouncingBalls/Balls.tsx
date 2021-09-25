@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Animated, TouchableOpacity } from 'react-native';
+import { v4 } from 'uuid';
 import { Text } from '../../../components';
 import { padding, SoundManager, useColor } from '../../../features';
 import { CanvasDimensions } from './Canvas';
@@ -50,7 +51,7 @@ export const Balls = ({
   );
 
   const draw = useCallback(() => {
-    setItems(prev => {
+    setItems((prev) => {
       for (let i = 0; i < prev.length; i++) {
         const a = prev[i];
         for (let j = i + 1; j < prev.length; j++) {
@@ -76,7 +77,7 @@ export const Balls = ({
     ({ index }) =>
       () => {
         SoundManager.play('tap');
-        setItems(prev => {
+        setItems((prev) => {
           const item = prev[index];
           item.radius *= 1 - mitosis;
           item.dx *= 2 - mitosis;
@@ -93,7 +94,7 @@ export const Balls = ({
   return (
     <>
       {items.map((item, index) => (
-        <Animated.View key={index} style={item.position.getLayout()}>
+        <Animated.View key={v4()} style={item.position.getLayout()}>
           <TouchableOpacity
             onPress={onPress({ index })}
             style={{

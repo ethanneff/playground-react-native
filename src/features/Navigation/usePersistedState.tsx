@@ -52,7 +52,7 @@ export const usePersistedState = (): UsePersistedState => {
     try {
       const initialUrl = await Linking.getInitialURL();
 
-      if (Platform.OS !== 'web' && initialUrl == null) {
+      if (Platform.OS !== 'web' && initialUrl === null) {
         const savedStateString = await AsyncStorage.getItem(persistanceKey);
         const state = savedStateString
           ? JSON.parse(savedStateString)

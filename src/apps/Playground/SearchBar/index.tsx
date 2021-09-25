@@ -51,7 +51,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     iconName: iconSearch,
     input: '',
   });
-  const keyboardVisible = useRootSelector(s => s.device.keyboardVisible);
+  const keyboardVisible = useRootSelector((s) => s.device.keyboardVisible);
   const useNativeDriver = useDriver();
   const translateIcon = state.animation.interpolate({
     inputRange: [0, 0.5, 1],
@@ -124,8 +124,8 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
   }, [animate, changeIcon]);
 
   useEffect(() => {
-    if (!keyboardVisible) onSearchBarUnFocus();
-    else onSearchBarFocus();
+    if (keyboardVisible) onSearchBarFocus();
+    else onSearchBarUnFocus();
   });
 
   const renderItem = useCallback(
@@ -135,10 +135,10 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     [styles.item],
   );
 
-  const keyExtractor = useCallback(item => item.id.toString(), []);
+  const keyExtractor = useCallback((item) => item.id.toString(), []);
 
   const onChangeText = useCallback(
-    (value: string) => setState(prev => ({ ...prev, input: value })),
+    (value: string) => setState((prev) => ({ ...prev, input: value })),
     [],
   );
 

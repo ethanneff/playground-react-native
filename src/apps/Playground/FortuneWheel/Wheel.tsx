@@ -2,6 +2,7 @@ import * as d3 from 'd3-shape';
 import React, { memo, useCallback, useEffect, useRef } from 'react';
 import { Animated, Dimensions, Easing, TouchableOpacity } from 'react-native';
 import Svg, { G, Path, Polygon, Text } from 'react-native-svg';
+import { v4 } from 'uuid';
 import { useColor, useDriver, useDropShadow } from '../../../features';
 import { getNewLocation, getWinnerIndex } from './utils';
 
@@ -189,7 +190,7 @@ export const Wheel = memo(
             >
               <G x={radius} y={radius}>
                 {arcs.map((arc, i) => (
-                  <G key={`arc-${i}`}>
+                  <G key={v4()}>
                     <Path d={String(arc.path)} fill={arc.segment.color} />
                     <G
                       origin={`${arc.centroid}`}

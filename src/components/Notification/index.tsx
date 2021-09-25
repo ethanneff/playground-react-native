@@ -124,6 +124,7 @@ export const Notification = memo(function Notification({
   ).current;
 
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <View style={styles.container} {...panResponder.panHandlers}>
       <Animated.View style={[pan.getLayout(), styles.notification]}>
         <View style={styles.notificationSafeArea} />

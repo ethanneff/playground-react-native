@@ -22,9 +22,7 @@ import { Icon } from '../Icon';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 
-/*
-styling https://uxdesign.cc/design-better-forms-96fadca0f49c
-*/
+// styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 
 type TextContentType = 'username' | 'password' | 'none';
 
@@ -128,7 +126,7 @@ export const Input = memo(function Input({
   }, [onChangeText]);
 
   const onRefInternal = useCallback(
-    ref => {
+    (ref) => {
       textInput.current = ref;
       if (onRef) onRef.current = ref;
     },

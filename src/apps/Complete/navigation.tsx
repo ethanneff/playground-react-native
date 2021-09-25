@@ -36,6 +36,17 @@ const tabIcons = {
   account: { focused: 'account', unFocused: 'account' },
 };
 
+const ImplementStack = createStackNavigator<ImplementStackRoutes>();
+const Implement = () => {
+  useTabTap();
+  return (
+    <ImplementStack.Navigator screenOptions={noHeader}>
+      <ImplementStack.Screen component={Projects} name="projects" />
+      <ImplementStack.Screen component={Project} name="project" />
+    </ImplementStack.Navigator>
+  );
+};
+
 const TabStack = createBottomTabNavigator<HomeStackRoutes>();
 const Home = () => {
   const { tabScreenOptions } = useNavScreenOptions();
@@ -46,17 +57,6 @@ const Home = () => {
       <TabStack.Screen component={Reflect} name="reflect" />
       <TabStack.Screen component={Account} name="account" />
     </TabStack.Navigator>
-  );
-};
-
-const ImplementStack = createStackNavigator<ImplementStackRoutes>();
-const Implement = () => {
-  useTabTap();
-  return (
-    <ImplementStack.Navigator screenOptions={noHeader}>
-      <ImplementStack.Screen component={Projects} name="projects" />
-      <ImplementStack.Screen component={Project} name="project" />
-    </ImplementStack.Navigator>
   );
 };
 

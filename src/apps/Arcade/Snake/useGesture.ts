@@ -28,7 +28,7 @@ export const useGesture = ({
   const panResponder: PanResponderInstance = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
     onPanResponderRelease: (_, g) => {
-      let direct: Direction;
+      let direct: Direction = 'up';
       if (Math.abs(g.dx) >= Math.abs(g.dy))
         direct = g.dx >= 0 ? 'right' : 'left';
       else direct = g.dy >= 0 ? 'down' : 'up';

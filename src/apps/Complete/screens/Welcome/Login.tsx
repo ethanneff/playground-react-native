@@ -148,7 +148,7 @@ export const Login = memo(function Login({
   );
 
   const onEye = useCallback(() => {
-    setState(p => ({ ...p, eye: !p.eye }));
+    setState((p) => ({ ...p, eye: !p.eye }));
     passwordRef.current?.focus();
   }, []);
 
@@ -162,7 +162,7 @@ export const Login = memo(function Login({
   );
 
   const onScreenChange = useCallback(
-    (screen: Screen) => () => setState(p => ({ ...p, screen })),
+    (screen: Screen) => () => setState((p) => ({ ...p, screen })),
     [],
   );
 

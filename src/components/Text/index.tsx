@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useRef } from 'react';
-import { Animated, StyleProp, StyleSheet, TextStyle } from 'react-native';
+import { Animated, StyleProp, StyleSheet, TextStyle, View } from 'react-native';
 import { useDriver } from '../../features/Animation';
 import {
   FontEmphasis,
@@ -122,7 +122,7 @@ export const Text = memo(function Text({
   ];
 
   return title === undefined || hidden ? (
-    <></>
+    <View />
   ) : (
     <Animated.Text
       adjustsFontSizeToFit={adjustsFontSizeToFit}

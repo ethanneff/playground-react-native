@@ -99,7 +99,7 @@ export const Drag = memo(function PlaygroundDrag() {
         />
         <Animated.View
           style={[ballPosition.getLayout(), styles.ball]}
-          {...panGesture.panHandlers}
+          {...panGesture.panHandlers} // eslint-disable-line react/jsx-props-no-spreading
         />
       </View>
     </Screen>

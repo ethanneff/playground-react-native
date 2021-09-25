@@ -39,7 +39,7 @@ export default memo(function Checklists() {
     [handleItemLongPress, handleItemPress],
   );
 
-  const keyExtractor = useCallback(item => item.id, []);
+  const keyExtractor = useCallback((item) => item.id, []);
   const navBack = useCallback(() => navigate('portfolioLanding'), [navigate]);
   const navCreate = useCallback(() => navigate('playground'), [navigate]);
 

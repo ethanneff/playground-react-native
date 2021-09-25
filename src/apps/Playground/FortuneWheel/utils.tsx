@@ -23,8 +23,7 @@ export const getNewLocation = ({
   const spins = getRandomRange({ min: minSpin, max: maxSpin }) * 360;
   const winner = Math.floor(Math.random() * numOfSegments);
   const winnerSection = (winner * 360) / numOfSegments;
-  const newLocation = location + spins + winnerSection;
-  return newLocation;
+  return location + spins + winnerSection;
 };
 
 type GetWinnerIndex = {

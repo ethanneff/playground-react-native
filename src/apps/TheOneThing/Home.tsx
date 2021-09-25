@@ -19,7 +19,7 @@ type ChecklistItemProps = {
 const ChecklistItem = ({ item, index }: ChecklistItemProps) => {
   const [toggle, setToggle] = useState('checkbox-blank-outline');
   const onPress = useCallback(() => {
-    setToggle(prev =>
+    setToggle((prev) =>
       prev === 'checkbox-marked-outline'
         ? 'checkbox-blank-outline'
         : 'checkbox-marked-outline',
@@ -35,7 +35,7 @@ const ChecklistItem = ({ item, index }: ChecklistItemProps) => {
         </View>
       </View>
       <View style={{ flexDirection: 'row' }}>
-        {days.map(day => (
+        {days.map((day) => (
           <View key={day} style={{ flex: 1 }}>
             <Text center emphasis="low" title={day} type="caption" />
           </View>

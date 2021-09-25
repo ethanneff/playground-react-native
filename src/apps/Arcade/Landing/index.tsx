@@ -9,12 +9,12 @@ export const Landing = memo(function Landing() {
   const color = useColor();
   const { navigate } = useNavigation<ArcadeNavigation>();
   const { onLeftPress } = useAdminNavBack();
-  const onPress = useCallback(screen => () => navigate(screen), [navigate]);
+  const onPress = useCallback((screen) => () => navigate(screen), [navigate]);
 
   return (
     <Screen onLeftPress={onLeftPress} title="Arcade">
       <ScrollView style={{ backgroundColor: color.background.secondary }}>
-        {arcadeScreens.map(screen => (
+        {arcadeScreens.map((screen) => (
           <Button key={screen} onPress={onPress(screen)} title={screen} />
         ))}
       </ScrollView>

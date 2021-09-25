@@ -45,7 +45,7 @@ export const Activity = memo(function Activity({
   title,
 }: Props) {
   const [state, setState] = useState<ActivityModel>(initialActivity);
-  const keyExtractor = useCallback(item => String(item[0].date), []);
+  const keyExtractor = useCallback((item) => String(item[0].date), []);
 
   const getActivity = useCallback(async () => {
     try {
@@ -53,7 +53,7 @@ export const Activity = memo(function Activity({
       const api = await getApiActivity({ username, site });
       const todayFormat = getDateFormat(today);
       const count = api[todayFormat] || 0;
-      setState(prev => ({
+      setState((prev) => ({
         ...prev,
         activity: updateActivitySquares(prev.activity, api),
         request: 'success',
@@ -81,7 +81,7 @@ export const Activity = memo(function Activity({
 
   const onItemPress = useCallback(
     (item: ActivityDay) => () => {
-      setState(data => ({
+      setState((data) => ({
         ...data,
         selected: {
           submissions: getSubmissionFormat(item.count, item.date),
@@ -120,13 +120,13 @@ export const Activity = memo(function Activity({
         <TouchableOpacity onPress={refresh}>
           <Text emphasis="medium" title={title} type="h4" />
         </TouchableOpacity>
-        {!state.activity.total ? null : (
+        {state.activity.total ? (
           <Text
             emphasis="medium"
             title={`${state.activity.total} submissions`}
             type="overline"
           />
-        )}
+        ) : null}
       </View>
       {state.request === 'loading' ? (
         <ActivityIndicator size="large" />

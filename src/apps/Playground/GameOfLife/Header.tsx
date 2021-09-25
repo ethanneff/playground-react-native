@@ -6,10 +6,10 @@ import { updateCount, updateDelay } from './redux';
 
 export const Header = memo(function Header() {
   const dispatch = useRootDispatch();
-  const delay = useRootSelector(state => state.gameOfLife.delay);
-  const count = useRootSelector(state => state.gameOfLife.count);
-  const onCountSlide = useCallback(v => dispatch(updateCount(v)), [dispatch]);
-  const onDelaySlide = useCallback(v => dispatch(updateDelay(v)), [dispatch]);
+  const delay = useRootSelector((state) => state.gameOfLife.delay);
+  const count = useRootSelector((state) => state.gameOfLife.count);
+  const onCountSlide = useCallback((v) => dispatch(updateCount(v)), [dispatch]);
+  const onDelaySlide = useCallback((v) => dispatch(updateDelay(v)), [dispatch]);
 
   return (
     <View>

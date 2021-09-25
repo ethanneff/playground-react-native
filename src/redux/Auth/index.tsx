@@ -14,7 +14,7 @@ export const logout = createAction('Auth/LOGOUT')();
 const timeout = 5000;
 
 /* ACTION CREATORS */
-export const onLogin = (): RootThunkAction<void> => async dispatch => {
+export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
   dispatch(loginRequest());
   try {
     const res = await axios({
@@ -31,7 +31,7 @@ export const onLogin = (): RootThunkAction<void> => async dispatch => {
     dispatch(loginFailure(error));
   }
 };
-export const onRegister = (): RootThunkAction<void> => async dispatch => {
+export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
   dispatch(loginRequest());
   try {
     const res = await axios({
@@ -49,7 +49,7 @@ export const onRegister = (): RootThunkAction<void> => async dispatch => {
   }
 };
 export const onLogout = (): RootThunkAction<void> => (dispatch, getState) => {
-  const token = getState().auth.token;
+  const { token } = getState().auth;
   dispatch(logout());
   axios({
     data: {
@@ -87,10 +87,10 @@ export interface AuthState {
 export const authInitialState: AuthState = {
   loading: false,
 };
-export function authReducer(
+export const authReducer = (
   state: AuthState = authInitialState,
   action: RootAction,
-): AuthState {
+): AuthState => {
   switch (action.type) {
     case getType(loginRequest):
     case getType(registerRequest):
@@ -117,4 +117,4 @@ export function authReducer(
     default:
       return state;
   }
-}
+};

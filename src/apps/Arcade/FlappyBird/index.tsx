@@ -26,7 +26,7 @@ const Pillar = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const { y, direction } = state.current;
-      state.current.y = y + 1 * direction;
+      state.current.y = y + Number(direction);
       Animated.spring(location.current, {
         toValue: state.current,
         useNativeDriver,

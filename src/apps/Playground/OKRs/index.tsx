@@ -4,6 +4,17 @@ import { Card, Screen, Text } from '../../../components';
 import { ScrollView } from '../../../conversions';
 import { padding, useColor } from '../../../features';
 
+export type ItemType =
+  | 'Mission'
+  | 'Vision'
+  | 'Values'
+  | 'KPI'
+  | 'Objective'
+  | 'Key Result'
+  | 'Problem'
+  | 'Idea'
+  | 'Learning';
+
 export const OKRs = memo(function PlaygroundOKRs() {
   const { goBack } = useNavigation();
   const color = useColor();

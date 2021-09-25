@@ -5,9 +5,8 @@ import { SoundManager } from '../Sound';
 export const useTabTap = (): void => {
   const { addListener } = useNavigation();
   useEffect(() => {
-    const unsubscribe = addListener('tabPress', () => {
+    return addListener('tabPress', () => {
       SoundManager.play('tap');
     });
-    return unsubscribe;
   }, [addListener]);
 };

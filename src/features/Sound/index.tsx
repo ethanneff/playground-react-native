@@ -21,7 +21,7 @@ const playSound = (soundName: Sounds) => {
 };
 
 const stopSound = (callback?: () => void) => {
-  if (active == null) return;
+  if (active === null) return;
 
   soundBank[active].play(() => {
     active = null;
@@ -30,7 +30,7 @@ const stopSound = (callback?: () => void) => {
 };
 
 export const SoundManager: SoundManagerType = {
-  play: soundName => {
+  play: (soundName) => {
     if (active === null) {
       playSound(soundName);
       return;

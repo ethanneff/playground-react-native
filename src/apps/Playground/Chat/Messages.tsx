@@ -19,9 +19,9 @@ export const getChatMessages = (state: RootState): Messages =>
   state.chatMessage.items;
 export const getActiveChatMessagesOrderByCreatedAt = createSelector(
   [getChatMessages],
-  messages =>
+  (messages) =>
     Object.values(messages)
-      .filter(item => item.active)
+      .filter((item) => item.active)
       .sort((a, b) => b.createdAt - a.createdAt),
 );
 
@@ -42,7 +42,7 @@ export type Message = {
   active: boolean;
   createdAt: number;
   updatedAt: number;
-  userId: string; // need name and id
+  userId: string; // Need name and id
 };
 type Messages = { [key: string]: Message };
 

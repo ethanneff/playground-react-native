@@ -31,6 +31,9 @@ export const responsesReducer = (
   action: RootAction,
 ): Responses => {
   switch (action.type) {
+    case 'responses/CREATE':
+    case 'responses/UPDATE':
+    case 'responses/REMOVE':
     default:
       return state;
   }

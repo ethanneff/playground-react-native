@@ -36,7 +36,7 @@ export const Week = memo(function Week({
         title={header}
         type="overline"
       />
-      {item.map(day => (
+      {item.map((day) => (
         <Day
           day={day}
           key={String(day.date)}

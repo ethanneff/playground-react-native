@@ -18,7 +18,7 @@ export const Cell = memo(function Cell({ x, y }: Props) {
   const dispatch = useRootDispatch();
   const smallest = useRootSelector(getSmallestDimension);
   const selected = useRootSelector(getCell(x, y));
-  const count = useRootSelector(state => state.gameOfLife.count);
+  const count = useRootSelector((state) => state.gameOfLife.count);
   const size = smallest / count;
 
   const onItemPress = useCallback(

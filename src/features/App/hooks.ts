@@ -89,7 +89,7 @@ export const useNetInfo = (): void => {
   }, [handleChange]);
 };
 
-export const useDeviceInfo = async (): Promise<void> => {
+export const useDeviceInfo = (): void => {
   const dispatch = useRootDispatch();
 
   const onLoad = useCallback(async () => {
@@ -134,7 +134,7 @@ export const useDeviceInfo = async (): Promise<void> => {
         maxMemory: await DeviceInfo.getMaxMemory(),
         model: await DeviceInfo.getModel(),
         phoneNumber: await DeviceInfo.getPhoneNumber(),
-        powerState: isEmulator ? 0 : await DeviceInfo.getPowerState(),
+        powerState: isEmulator ? null : await DeviceInfo.getPowerState(),
         product: await DeviceInfo.getProduct(),
         previewSdkInt: await DeviceInfo.getPreviewSdkInt(),
         readableVersion: await DeviceInfo.getReadableVersion(),
@@ -154,7 +154,6 @@ export const useDeviceInfo = async (): Promise<void> => {
         hasGms: await DeviceInfo.hasGms(),
         hasHms: await DeviceInfo.hasHms(),
         hasNotch: await DeviceInfo.hasNotch(),
-        hasSystemFeature: await DeviceInfo.hasSystemFeature(),
         isAirplaneMode: await DeviceInfo.isAirplaneMode(),
         isBatteryCharging: isEmulator
           ? false

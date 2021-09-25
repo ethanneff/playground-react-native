@@ -154,12 +154,15 @@ export const questionsInitialState: Questions = {
   },
 };
 
-export function questionsReducer(
+export const questionsReducer = (
   state: Questions = questionsInitialState,
   action: RootAction,
-): Questions {
+): Questions => {
   switch (action.type) {
+    case 'questions/CREATE':
+    case 'questions/UPDATE':
+    case 'questions/REMOVE':
     default:
       return state;
   }
-}
+};

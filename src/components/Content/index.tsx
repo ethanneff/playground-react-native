@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { v4 } from 'uuid';
 import { padding } from '../../features/Config';
 import { Sentence } from '../Sentence';
 import { Text } from '../Text';
@@ -16,22 +17,21 @@ export const Content = memo(function Content({ sections, center }: Props) {
 
   return (
     <View>
-      {sections.map((section, sectionIndex) => (
-        <View key={`s-${sectionIndex}`} style={styles.section}>
+      {sections.map((section) => (
+        <View key={v4()} style={styles.section}>
           {section.title && (
             <Text
               center={center}
               emphasis={section.titleEmphasis}
-              key={section.title}
               style={[styles.title, section.titleStyle]}
               title={section.title}
               type={section.titleType}
             />
           )}
-          {section.paragraphs.map((paragraph, paragraphIndex) => (
+          {section.paragraphs.map((paragraph) => (
             <Sentence
               center={center}
-              key={`p-${paragraphIndex}`}
+              key={v4()}
               sentences={paragraph}
               style={styles.paragraph}
             />

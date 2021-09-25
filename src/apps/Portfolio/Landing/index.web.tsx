@@ -6,6 +6,8 @@ import { padding, useColor } from '../../../features';
 
 const missingCallback = () => undefined;
 
+const image = require('../../../assets/line-chart.png');
+
 interface SignInButtonProps {
   onPress: () => void;
   icon: string;
@@ -156,17 +158,15 @@ const Section = memo(function Section({
   return (
     <View
       style={{
-        paddingTop: paddingTop,
+        paddingTop,
         height: '100vh',
-        backgroundColor: backgroundColor,
+        backgroundColor,
       }}
     >
       {children}
     </View>
   );
 });
-
-const image = require('../../../assets/line-chart.png');
 
 export const Landing = memo(function PortfolioLanding() {
   const height = padding(18);

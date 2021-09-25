@@ -1,5 +1,6 @@
 import React, { memo, useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { v4 } from 'uuid';
 import { DriftContext } from './Context';
 import { TrackPositionWithColor } from './types';
 
@@ -43,8 +44,8 @@ export const Tracks = memo(function TracksMemo() {
   const { state } = useContext(DriftContext);
   return (
     <>
-      {state.tracks.map((track: TrackPositionWithColor, index: number) => (
-        <Track key={`${track.x}${track.y}${index}`} track={track} />
+      {state.tracks.map((track: TrackPositionWithColor) => (
+        <Track key={v4()} track={track} />
       ))}
     </>
   );

@@ -27,7 +27,7 @@ export const Archero = memo(function Archero() {
   const timer = useRef(false);
   const interval = useRef<ReturnType<typeof setInterval> | null>(null);
   const gesture = useRef({ x0: 0, y0: 0, dx: 0, dy: 0 });
-  const window = useRootSelector(state => state.dimension.window);
+  const window = useRootSelector((state) => state.dimension.window);
   const [dimensions, setDimensions] = useState({ width: 1000, height: 1000 });
   const { width, height } = dimensions;
   const smallest = width > height ? height : width;
@@ -66,7 +66,7 @@ export const Archero = memo(function Archero() {
   const moveThumb = () => {
     const { dx, dy } = gesture.current;
     const angle = Math.atan2(dx, dy);
-    const dz = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+    const dz = Math.sqrt(dx ** 2 + dy ** 2);
     const z = getLimit(dz, thumbSize);
     const x = z * Math.sin(angle);
     const y = z * Math.cos(angle);
@@ -98,6 +98,20 @@ export const Archero = memo(function Archero() {
     }).start();
   };
 
+  const onUpdate = () => {
+    interval.current = setInterval(() => {
+      if (!timer.current) {
+        if (interval.current) clearInterval(interval.current);
+
+        resetJoystick();
+        return;
+      }
+      moveJoystick();
+      moveCharacter();
+      moveThumb();
+    }, fps);
+  };
+
   const panGesture: PanResponderInstance = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
     onMoveShouldSetPanResponderCapture: () => true,
@@ -114,22 +128,8 @@ export const Archero = memo(function Archero() {
     },
   });
 
-  const onUpdate = () => {
-    interval.current = setInterval(() => {
-      if (!timer.current) {
-        if (interval.current) clearInterval(interval.current);
-
-        resetJoystick();
-        return;
-      }
-      moveJoystick();
-      moveCharacter();
-      moveThumb();
-    }, fps);
-  };
-
   const onLayout = useCallback((event: LayoutChangeEvent) => {
-    const layout = event.nativeEvent.layout;
+    const { layout } = event.nativeEvent;
     setDimensions({ width: layout.width, height: layout.height });
   }, []);
 
@@ -138,7 +138,7 @@ export const Archero = memo(function Archero() {
       <View
         onLayout={onLayout}
         style={{ flex: 1, backgroundColor: color.background.tertiary }}
-        {...panGesture.panHandlers}
+        {...panGesture.panHandlers} // eslint-disable-line react/jsx-props-no-spreading
       >
         <Animated.View
           style={[

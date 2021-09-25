@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { v4 } from 'uuid';
 import { Screen, TouchableOpacity } from '../../../components';
 import { useColor } from '../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../redux';
@@ -86,7 +87,7 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
     if (sum === 0) {
       setSelected(initialSelected);
     } else if (sum === 1) {
-      setBoard(prev => {
+      setBoard((prev) => {
         const temp = prev[x][y];
         prev[x][y] = prev[selected.x][selected.y];
         prev[selected.x][selected.y] = temp;
@@ -102,10 +103,10 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
     <Screen onLeftPress={goBack} title="Bejeweled">
       <View style={styles.container}>
         {board.map((col, x) => (
-          <View key={`${x}${col[0].key}`} style={{ flexDirection: 'row' }}>
+          <View key={v4()} style={{ flexDirection: 'row' }}>
             {col.map((gem, y) => (
               <View
-                key={`${x}${y}${gem.key}`}
+                key={v4()}
                 style={{
                   width: size,
                   height: size,

@@ -18,16 +18,16 @@ export const checklistActions = {
 export const getChecklists = (state: RootState): Checklists =>
   state.checklist.items;
 export const getCurrentChecklist = (state: RootState): Checklist => {
-  const active = state.checklist.active;
+  const { active } = state.checklist;
   if (!active) throw new Error('missing current checklist');
 
   return state.checklist.items[active];
 };
 export const getActiveChecklistOrderByCreatedAt = createSelector(
   [getChecklists],
-  checklists =>
+  (checklists) =>
     Object.values(checklists)
-      .filter(item => item.active)
+      .filter((item) => item.active)
       .sort((a, b) => a.createdAt - b.createdAt),
 );
 

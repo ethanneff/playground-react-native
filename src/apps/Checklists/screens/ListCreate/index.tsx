@@ -33,11 +33,11 @@ export default memo(function ChecklistCreate() {
     navigate('checklists');
   }, [dispatch, form, isInvalidForm, navigate]);
   const handleNameChange = useCallback(
-    (name: string) => setForm(state => ({ ...state, name })),
+    (name: string) => setForm((state) => ({ ...state, name })),
     [],
   );
   const handleDescriptionChange = useCallback(
-    (description: string) => setForm(state => ({ ...state, description })),
+    (description: string) => setForm((state) => ({ ...state, description })),
     [],
   );
 

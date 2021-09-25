@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
+import { v4 } from 'uuid';
 import { padding } from '../../features/Config';
 
 interface Item<T> {
@@ -23,8 +24,8 @@ export const Masonry = memo(function Masonry<T>({
 
   return (
     <View style={{ flexDirection: 'row', padding: padding(2) }}>
-      {columns.map((column, j) => (
-        <View key={`column-${j}`} style={{ flex: 1, padding: padding(2) }}>
+      {columns.map((column) => (
+        <View key={`column-${v4()}`} style={{ flex: 1, padding: padding(2) }}>
           {column.map((item: T, index: number) => renderItem({ item, index }))}
         </View>
       ))}

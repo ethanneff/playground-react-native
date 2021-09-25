@@ -18,7 +18,7 @@ import {
 
 export const Questionnaires = (): JSX.Element => {
   const questionnaires = useRootSelector(getQuestionnaireArray);
-  const selected = useRootSelector(state => state.questionnaires.selected);
+  const selected = useRootSelector((state) => state.questionnaires.selected);
   const [actionSheet, setActionSheet] = useState(false);
   const dispatch = useRootDispatch();
   const handleLongPress = useCallback(
@@ -35,11 +35,11 @@ export const Questionnaires = (): JSX.Element => {
     [dispatch],
   );
   const handleItemMenu = useCallback(() => {
-    setActionSheet(state => !state);
+    setActionSheet((state) => !state);
   }, []);
   const renderItem = useCallback(
     ({ item }) => {
-      const length = item.questions.length;
+      const { length } = item.questions;
       const subtitle = `${length} question${length === 1 ? '' : 's'}`;
       return (
         <Card

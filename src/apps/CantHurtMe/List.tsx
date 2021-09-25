@@ -39,7 +39,7 @@ export const List = memo(function List({
           style={{
             flex: 1,
             marginRight: index % 2 === 0 ? padding(2) : 0,
-            marginLeft: index % 2 !== 0 ? padding(2) : 0,
+            marginLeft: index % 2 === 0 ? 0 : padding(2),
           }}
         >
           <Card key={data.id} onPress={onPress}>

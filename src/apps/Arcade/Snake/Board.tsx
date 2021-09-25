@@ -1,7 +1,8 @@
-import { View } from 'react-native';
 import React from 'react';
-import { Matrix } from './utils';
+import { View } from 'react-native';
+import { v4 } from 'uuid';
 import { Cell } from './Cell';
+import { Matrix } from './utils';
 
 interface BoardProps {
   matrix: Matrix;
@@ -11,10 +12,10 @@ interface BoardProps {
 export const Board = ({ matrix }: BoardProps): JSX.Element => {
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
-      {matrix.map((x, i) => (
-        <View key={i} style={{ flexDirection: 'row' }}>
-          {x.map((y, j) => (
-            <Cell key={`cell-${i}${j}`} length={matrix.length} value={y} />
+      {matrix.map((x) => (
+        <View key={v4()} style={{ flexDirection: 'row' }}>
+          {x.map((y) => (
+            <Cell key={v4()} length={matrix.length} value={y} />
           ))}
         </View>
       ))}

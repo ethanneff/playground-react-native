@@ -1,5 +1,9 @@
 import { Combinations, Element, Reel, Reels } from './config';
 
+const getSumOfReel = (reel: Reel): number => {
+  return Object.values(reel).reduce((sum, item) => sum + item, 0);
+};
+
 const getWinsPerCombination = (
   combinations: Combinations,
   reels: Reels,
@@ -20,10 +24,6 @@ const getWinsPerCombination = (
   return output;
 };
 
-const getSumOfReel = (reel: Reel): number => {
-  return Object.values(reel).reduce((sum, item) => sum + item, 0);
-};
-
 const getSumOfReels = (reels: Reels): number => {
   return reels.reduce((total, reel) => total * getSumOfReel(reel), 1);
 };
@@ -34,7 +34,7 @@ const getReturnsPerCombination = (
 ): Combinations => {
   return winsPerCombination.reduce(
     (output: Combinations, combination, index) => {
-      const payout = combinations[index][3];
+      const [, , , payout] = combinations[index];
       output[index][3] = combination[3] * payout;
       return output;
     },
@@ -70,6 +70,21 @@ export const getReturnPercentage = (
   return sumOfReturns / sumOfReels;
 };
 
+export const shuffleArray = <T>(array: T[]): T[] => {
+  const copy = [...array];
+  const swap = (a: T[], i: number, j: number) => {
+    const temp = a[i];
+    a[i] = a[j];
+    a[j] = temp;
+  };
+  const randomIndex = (a: T[]) => Math.floor(Math.random() * a.length);
+  for (let i = 0; i < copy.length; i++) {
+    const j = randomIndex(copy);
+    swap(copy, i, j);
+  }
+  return copy;
+};
+
 export const getRandomReelArrays = (reels: Reels): Element[][] => {
   const arrays: Element[][] = [];
   for (let i = 0; i < reels.length; i++) {
@@ -86,19 +101,4 @@ export const getRandomReelArrays = (reels: Reels): Element[][] => {
   for (let i = 0; i < arrays.length; i++) arrays[i] = shuffleArray(arrays[i]);
 
   return arrays;
-};
-
-export const shuffleArray = <T>(array: T[]): T[] => {
-  const copy = [...array];
-  const swap = (a: T[], i: number, j: number) => {
-    const temp = a[i];
-    a[i] = a[j];
-    a[j] = temp;
-  };
-  const randomIndex = (a: T[]) => Math.floor(Math.random() * a.length);
-  for (let i = 0; i < copy.length; i++) {
-    const j = randomIndex(copy);
-    swap(copy, i, j);
-  }
-  return copy;
 };

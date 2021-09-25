@@ -32,7 +32,7 @@ export const checklistItemActions = {
 export const getChecklistItems = (state: RootState): ChecklistItems =>
   state.checklistItem.items;
 export const getCurrentChecklistItem = (state: RootState): ChecklistItem => {
-  const active = state.checklistItem.active;
+  const { active } = state.checklistItem;
   if (!active) throw new Error('missing current checklist item');
 
   return state.checklistItem.items[active];
@@ -41,7 +41,7 @@ export const getCurrentActiveChecklistItemsOrderByCreatedAt = createSelector(
   [getCurrentChecklist, getChecklistItems],
   (checklist, items) =>
     Object.values(items)
-      .filter(item => item.checklistId === checklist.id && item.active)
+      .filter((item) => item.checklistId === checklist.id && item.active)
       .sort((a, b) => a.createdAt - b.createdAt),
 );
 

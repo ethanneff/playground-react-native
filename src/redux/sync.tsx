@@ -25,23 +25,11 @@ type GenericMiddleware<S, E extends AnyAction> = (
 ) => (_: Dispatch<E>) => (__: E) => ReturnType<Dispatch<E>>;
 
 type Middleware = GenericMiddleware<RootStore, RootAction>;
-export const syncMiddleware: Middleware = _ => dispatch => action => {
-  if (reduxWhiteList[action.type] && enabled) syncQueue.set([action.type]);
-  return dispatch(action);
-};
-
-type Queue = string[]; // TODO: better typing with {type, payload}
-type SyncQueue = {
-  key: '@syncQuery';
-  cache: Queue;
-  set: (value: Queue) => Promise<Queue>;
-  get: () => Promise<Queue>;
-};
 
 const syncQueue: SyncQueue = {
   key: '@syncQuery',
   cache: [],
-  set: async value => {
+  set: async (value) => {
     try {
       const combined = [...syncQueue.cache, ...value];
       const stringify = JSON.stringify(combined);
@@ -66,13 +54,28 @@ const syncQueue: SyncQueue = {
   },
 };
 
+export const syncMiddleware: Middleware = (_) => (dispatch) => (action) => {
+  if (reduxWhiteList[action.type] && enabled) syncQueue.set([action.type]);
+  return dispatch(action);
+};
+
+type Queue = string[]; // TODO: better typing with {type, payload}
+type SyncQueue = {
+  key: '@syncQuery';
+  cache: Queue;
+  set: (value: Queue) => Promise<Queue>;
+  get: () => Promise<Queue>;
+};
+
 let retryTimeout = retryDefaultTimeout;
 export const useSync = (): void => {
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const processSync = useCallback(data => {
+  const processSync = useCallback((data) => {
     console.log(data); // TODO: only update redux if data is different
   }, []);
+
+  const clearTimer = () => timer.current && clearTimeout(timer.current);
 
   const attemptSync = useCallback(async () => {
     const refresh = () => {
@@ -88,7 +91,10 @@ export const useSync = (): void => {
     };
 
     const queue = await syncQueue.get();
-    if (!queue.length) return refresh();
+    if (!queue.length) {
+      refresh();
+      return;
+    }
 
     try {
       const len = queue.length;
@@ -105,8 +111,6 @@ export const useSync = (): void => {
       console.log(e.message);
     }
   }, [processSync]);
-
-  const clearTimer = () => timer.current && clearTimeout(timer.current);
 
   const onLoad = useCallback(async () => {
     await syncQueue.set(['download']);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, TextStyle, View } from 'react-native';
+import { v4 } from 'uuid';
 import { Text } from '../Text';
 
 const styles = StyleSheet.create({
@@ -15,6 +16,7 @@ type Props = {
 
 export class Markdown extends React.PureComponent<Props> {
   boldSyntax = '*';
+
   withoutSyntaxIndex = 2;
 
   isWordBold(word: string): boolean {
@@ -41,7 +43,7 @@ export class Markdown extends React.PureComponent<Props> {
         {words.map((word: string, index: number) => (
           <Text
             bold={this.isWordBold(word)}
-            key={index}
+            key={v4()}
             style={style}
             title={this.formattedWord(words, word, index)}
           />

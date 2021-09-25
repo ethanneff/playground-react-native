@@ -1,5 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { View } from 'react-native';
+import { v4 } from 'uuid';
 import { Icon, TouchableOpacity } from '../../components';
 import { MonoMultiColor, padding } from '../../features/Config';
 
@@ -41,7 +42,7 @@ export const Rating = memo(function RatingMemo({
       {Array(count)
         .fill(0)
         .map((_, index) => (
-          <TouchableOpacity key={index} onPress={handleOnPress(index)}>
+          <TouchableOpacity key={v4()} onPress={handleOnPress(index)}>
             <Icon
               color={index > rating || !rating ? colorUnfilled : colorFilled}
               name={index > rating || !rating ? iconUnfilled : iconFilled}

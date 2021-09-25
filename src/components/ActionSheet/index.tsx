@@ -117,6 +117,7 @@ export const ActionSheet = memo(function ActionSheet({
   ).current;
 
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <View style={styles.top} {...panResponder.panHandlers}>
       <Animated.View style={[pan.getLayout(), styles.notification]}>
         <View style={styles.notificationSafeArea} />

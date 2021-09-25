@@ -35,6 +35,13 @@ const getRandomFood = (available: Cell[]) => {
   return Math.floor(Math.random() * available.length);
 };
 
+const getFood = (matrix: Matrix): Cell => {
+  const available = getAvailable(matrix);
+  const random = getRandomFood(available);
+  const food: Cell = available[random];
+  return food;
+};
+
 export const getBoard = (size: number): BoardContext => {
   const center = Math.floor(size / 2);
   const matrix = getBlankMatrix(size);
@@ -52,43 +59,32 @@ const getNext = (
   head: Cell,
   matrix: Matrix,
 ): Cell | null => {
-  let x;
-  let y;
+  let x = 0;
+  let y = 0;
   switch (direction) {
     case 'up':
       x = head[0] - 1;
-      y = head[1];
+      [, y] = head;
       if (x < 0) return null;
-
       return [x, y];
     case 'down':
       x = head[0] + 1;
-      y = head[1];
+      [, y] = head;
       if (x >= matrix.length) return null;
-
       return [x, y];
     case 'left':
-      x = head[0];
+      [x] = head;
       y = head[1] - 1;
       if (y < 0) return null;
-
       return [x, y];
     case 'right':
-      x = head[0];
+      [x] = head;
       y = head[1] + 1;
       if (y >= matrix[0].length) return null;
-
       return [x, y];
     default:
       return null;
   }
-};
-
-const getFood = (matrix: Matrix): Cell => {
-  const available = getAvailable(matrix);
-  const random = getRandomFood(available);
-  const food: Cell = available[random];
-  return food;
 };
 
 export const updateBoard = (

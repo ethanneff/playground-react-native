@@ -33,7 +33,7 @@ export const Carousel = memo(function Carousel({
     activeIndexRef.current = index;
   }, []);
 
-  const keyExtractor = useCallback(item => String(item.id), []);
+  const keyExtractor = useCallback((item) => String(item.id), []);
   const onDotPress = useCallback(
     (index: number) => () => {
       if (!flatList.current) return;

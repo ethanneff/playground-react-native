@@ -50,7 +50,7 @@ const SwipeCard = memo(function SwipeCard({
   const position = new Animated.ValueXY();
 
   const onLayout = useCallback(
-    event => {
+    (event) => {
       cardWidth.current = event.nativeEvent.layout.width;
     },
     [cardWidth],
@@ -89,12 +89,12 @@ const SwipeCard = memo(function SwipeCard({
   return (
     <Animated.View
       onLayout={onLayout}
-      {...panResponder.panHandlers}
+      {...panResponder.panHandlers} // eslint-disable-line react/jsx-props-no-spreading
       style={{
         position: 'absolute',
         width: '100%',
         left: position.x,
-        height: height,
+        height,
         backgroundColor: color.background.primaryA,
         borderRadius: padding(1),
         borderColor: color.border.accent,
@@ -213,7 +213,7 @@ const initialItems: SwipeItem[] = [
     date: dayjs(),
     body: 'Swipe through cards to see your personalized notifications and news stories.',
     button: 'Swipe to dismiss',
-    onPress: () => undefined, // complete
+    onPress: () => undefined,
   },
 ];
 
@@ -270,7 +270,7 @@ const SwipeCards = memo(function SwipeCardList({
   });
 
   const onSwipeComplete = useCallback(() => {
-    setFeed(state => ({
+    setFeed((state) => ({
       ...state,
       percent: 1,
       items: state.items.filter((_, i) => i !== state.items.length - 1),
@@ -278,13 +278,13 @@ const SwipeCards = memo(function SwipeCardList({
   }, []);
 
   const onSwipePercentChange = useCallback((percent: number) => {
-    setFeed(state => ({
+    setFeed((state) => ({
       ...state,
       percent,
     }));
   }, []);
 
-  return !feed.items.length ? null : (
+  return feed.items.length ? (
     <View style={{ height }}>
       {feed.items.map((item, index) => (
         <SwipeCard
@@ -298,7 +298,7 @@ const SwipeCards = memo(function SwipeCardList({
       ))}
       <Badge count={feed.items.length} percent={feed.percent} />
     </View>
-  );
+  ) : null;
 });
 
 const ImagePlaceholder = memo(function ImagePlaceholder() {

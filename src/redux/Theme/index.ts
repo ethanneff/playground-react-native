@@ -38,10 +38,10 @@ export const themeInitialState: ThemeState = {
   currentTheme: 'light',
 };
 
-export function themeReducer(
+export const themeReducer = (
   state: ThemeState = themeInitialState,
   action: RootAction,
-): ThemeState {
+): ThemeState => {
   switch (action.type) {
     case getType(changeTheme):
       return { ...state, currentTheme: action.payload };
@@ -50,4 +50,4 @@ export function themeReducer(
     default:
       return state;
   }
-}
+};

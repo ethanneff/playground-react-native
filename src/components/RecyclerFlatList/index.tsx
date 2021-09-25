@@ -32,10 +32,10 @@ type RecyclerFlatListProps<T> = {
   itemWidth: number;
   itemHeight: number;
   style?: ViewStyle;
-  horizontal?: boolean;
+  isHorizontal?: boolean;
   scrollViewProps?: ScrollViewProps;
   onRef?: RefObject<
-    RecyclerListView<RecyclerListViewProps, RecyclerListViewState> | null | any
+    RecyclerListView<RecyclerListViewProps, RecyclerListViewState>
   >;
 };
 
@@ -50,7 +50,7 @@ export const RecyclerFlatList = <T extends unknown>({
   itemHeight,
   style = { flex: 1 },
   onRef,
-  horizontal,
+  isHorizontal,
   scrollViewProps = {
     showsVerticalScrollIndicator: false,
     refreshControl: (
@@ -64,7 +64,7 @@ export const RecyclerFlatList = <T extends unknown>({
 
   const [layoutProvider] = useState(
     new LayoutProvider(
-      _ => 1,
+      (_) => 1,
       (_, dim) => {
         dim.width = itemWidth;
         dim.height = itemHeight;
@@ -83,14 +83,14 @@ export const RecyclerFlatList = <T extends unknown>({
   );
 
   useEffect(
-    () => setDataProvider(prevState => prevState.cloneWithRows(data)),
+    () => setDataProvider((prevState) => prevState.cloneWithRows(data)),
     [data],
   );
 
   return (
     <RecyclerListView
       dataProvider={dataProvider}
-      horizontal={horizontal}
+      isHorizontal={isHorizontal}
       layoutProvider={layoutProvider}
       onEndReached={onEndReached}
       ref={onRef}

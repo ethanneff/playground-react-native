@@ -24,13 +24,16 @@ export const AddItem = memo(function AddItem({
   const textInputRef = useRef<OriginalTextInput | null>(null);
   const [showInput, setShowInput] = useState(false);
   const dispatch = useRootDispatch();
-  const userId = useRootSelector(s => s.completeUser?.id);
+  const userId = useRootSelector((s) => s.completeUser?.id);
   if (!userId) throw new Error('missing userId on add item');
   if (!parentItemId) throw new Error('missing parentItemId on add item');
 
   const onSubmit = useCallback(
     (value: string) => {
-      if (!value) return Keyboard.dismiss();
+      if (!value) {
+        Keyboard.dismiss();
+        return;
+      }
       const itemId = v4();
       const date = Date.now();
       const item: Item = {
@@ -52,7 +55,7 @@ export const AddItem = memo(function AddItem({
     [dispatch, parentItemId, userId],
   );
 
-  const onAddItemPress = useCallback(() => setShowInput(p => !p), []);
+  const onAddItemPress = useCallback(() => setShowInput((p) => !p), []);
   const onClose = useCallback(() => setShowInput(false), []);
   const onBlur = useCallback(() => setShowInput(false), []);
 

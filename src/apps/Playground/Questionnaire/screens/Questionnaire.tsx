@@ -14,7 +14,7 @@ export const Questionnaire = (): JSX.Element => {
   const [activeItem, setActiveItem] = useState('');
 
   const handleLongPress = (id: string) => () => {
-    setActionSheet(state => !state);
+    setActionSheet((state) => !state);
     setActiveItem(id);
   };
   const handleItemPress = useCallback(
@@ -25,7 +25,7 @@ export const Questionnaire = (): JSX.Element => {
 
   const renderItem = useCallback(
     ({ item }) => {
-      const length = item.questions.length;
+      const { length } = item.questions;
       const subtitle = `${length} question${length === 1 ? '' : 's'}`;
       return (
         <Card
@@ -52,7 +52,7 @@ export const Questionnaire = (): JSX.Element => {
     [activeItem, handleItemPress],
   );
 
-  const keyExtractor = useCallback(item => item.id, []);
+  const keyExtractor = useCallback((item) => item.id, []);
 
   return (
     <>

@@ -204,7 +204,7 @@ export const TextInput = memo(function TextInput({
         />
         {icons.length > 0 && ( // TODO: refactor to declarative
           <View style={{ flexDirection: 'row' }}>
-            {icons.map(icon =>
+            {icons.map((icon) =>
               icon.hidden ||
               (focus && !icon.focus) ||
               (!focus && icon.focus) ? null : (

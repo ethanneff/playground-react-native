@@ -1,4 +1,5 @@
 import { AppState, AppStateStatus, ScaledSize } from 'react-native';
+import { LocationProviderInfo, PowerState } from 'react-native-device-info';
 import { RootAction } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 import { logout } from '../Auth';
@@ -23,11 +24,12 @@ export interface DimensionsProps {
   window: ScaledSize;
   screen: ScaledSize;
 }
+
 export interface DeviceInfo {
   androidId: string;
   apiLevel: number;
   applicationName: string;
-  availableLocationProviders: any;
+  availableLocationProviders: LocationProviderInfo;
   baseOs: string;
   buildId: string;
   batteryLevel: number;
@@ -57,10 +59,10 @@ export interface DeviceInfo {
   lastUpdateTime: number;
   macAddress: string;
   manufacturer: string;
-  maxMemory: string;
+  maxMemory: number;
   model: string;
   phoneNumber: string;
-  powerState: any;
+  powerState: Partial<PowerState> | null;
   product: string;
   previewSdkInt: number;
   readableVersion: string;
@@ -72,7 +74,7 @@ export interface DeviceInfo {
   tags: string;
   type: string;
   totalDiskCapacity: number;
-  totalMemory: string;
+  totalMemory: number;
   uniqueId: string;
   usedMemory: number;
   userAgent: string;
@@ -80,10 +82,9 @@ export interface DeviceInfo {
   hasGms: boolean;
   hasHms: boolean;
   hasNotch: boolean;
-  hasSystemFeature: boolean;
   isAirplaneMode: boolean;
   isBatteryCharging: boolean;
-  isCameraPresent: false;
+  isCameraPresent: boolean;
   isEmulator: boolean;
   isHeadphonesConnected: boolean;
   isLandscape: boolean;
@@ -137,10 +138,10 @@ export const deviceInfoInitialState: DeviceInfo = {
   lastUpdateTime: 0,
   macAddress: '',
   manufacturer: '',
-  maxMemory: '',
+  maxMemory: 0,
   model: '',
   phoneNumber: '',
-  powerState: {},
+  powerState: null,
   product: '',
   previewSdkInt: 0,
   readableVersion: '',
@@ -152,7 +153,7 @@ export const deviceInfoInitialState: DeviceInfo = {
   tags: '',
   type: '',
   totalDiskCapacity: 0,
-  totalMemory: '',
+  totalMemory: 0,
   uniqueId: '',
   usedMemory: 0,
   userAgent: '',
@@ -160,7 +161,6 @@ export const deviceInfoInitialState: DeviceInfo = {
   hasGms: false,
   hasHms: false,
   hasNotch: false,
-  hasSystemFeature: false,
   isAirplaneMode: false,
   isBatteryCharging: false,
   isCameraPresent: false,

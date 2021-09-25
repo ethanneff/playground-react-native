@@ -29,14 +29,14 @@ export const LogIn = memo(function LogIn() {
   const eyeIcon = state.eye ? 'eye-outline' : 'eye-off-outline';
 
   const onEye = useCallback(() => {
-    setState(p => ({ ...p, eye: !p.eye }));
+    setState((p) => ({ ...p, eye: !p.eye }));
     passwordRef.current?.focus();
   }, []);
 
   const onSubmit = useCallback(() => {
     if (!state.completeForm) return;
     const { user, items } = getDefaultUserTemplate();
-    items.map(item => dispatch(createItem(item)));
+    items.map((item) => dispatch(createItem(item)));
     dispatch(loadUser({ ...user, email: form.current.email }));
   }, [dispatch, state.completeForm]);
 
@@ -45,7 +45,7 @@ export const LogIn = memo(function LogIn() {
       form.current = { ...form.current, [key]: val };
       const { email, password } = form.current;
       const completeForm = email.length > 0 && password.length > 0;
-      setState(p => ({ ...p, completeForm }));
+      setState((p) => ({ ...p, completeForm }));
     },
     [],
   );
@@ -67,7 +67,7 @@ export const LogIn = memo(function LogIn() {
     }
   }, [focus]);
 
-  return !focus ? null : (
+  return focus ? (
     <Modal
       backgroundColor={color.background.secondary}
       onBackgroundPress={navWelcome}
@@ -117,5 +117,5 @@ export const LogIn = memo(function LogIn() {
         title="Log In"
       />
     </Modal>
-  );
+  ) : null;
 });

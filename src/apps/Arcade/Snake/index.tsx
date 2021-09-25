@@ -34,9 +34,9 @@ export const Snake = memo(function Snake() {
   const update = useCallback(() => {
     const board = updateBoard(game.board, direction.current);
     if (board.state === 'ate food')
-      setGame(prev => ({ ...prev, board, points: prev.points + 1 }));
-    else if (board.state === 'ok') setGame(prev => ({ ...prev, board }));
-    else setGame(prev => ({ ...prev, board, state: 'error' }));
+      setGame((prev) => ({ ...prev, board, points: prev.points + 1 }));
+    else if (board.state === 'ok') setGame((prev) => ({ ...prev, board }));
+    else setGame((prev) => ({ ...prev, board, state: 'error' }));
   }, [direction, game.board]);
 
   const { start, stop } = useClock({
@@ -46,11 +46,11 @@ export const Snake = memo(function Snake() {
 
   const onStart = useCallback(() => {
     const board = getBoard(size);
-    setGame(prev => ({ ...prev, board, points: 0, state: 'on' }));
+    setGame((prev) => ({ ...prev, board, points: 0, state: 'on' }));
   }, []);
 
   const onStop = useCallback(() => {
-    setGame(prev => ({ ...prev, state: 'off' }));
+    setGame((prev) => ({ ...prev, state: 'off' }));
   }, []);
 
   useEffect(() => {
@@ -72,7 +72,7 @@ export const Snake = memo(function Snake() {
         </View>
         <View
           style={{ flex: 1, backgroundColor: color.background.positive }}
-          {...panHandlers}
+          {...panHandlers} // eslint-disable-line react/jsx-props-no-spreading
         >
           <Board matrix={game.board.matrix} />
         </View>

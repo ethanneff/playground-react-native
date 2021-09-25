@@ -13,21 +13,22 @@ type Props = {
 };
 
 export const Location = memo(function Location({ onPress }: Props) {
+  const subtitle = 'Tap to add';
   const locations: LocationItem[] = [
     {
       id: v4(),
       title: 'Home',
-      subtitle: 'Tap to add',
+      subtitle,
     },
     {
       id: v4(),
       title: 'Work',
-      subtitle: 'Tap to add',
+      subtitle,
     },
     {
       id: v4(),
       title: 'Gym',
-      subtitle: 'Tap to add',
+      subtitle,
     },
     {
       id: v4(),

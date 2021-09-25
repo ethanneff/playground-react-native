@@ -12,8 +12,8 @@ export const ItemDetail = memo(function ItemDetail() {
   const { goBack } = useNavigation();
   const color = useColor();
 
-  const { itemId, parentItemId } = useRootSelector(s => s.completeItem.nav);
-  const item = useRootSelector(s => s.completeItem.items[itemId || '']);
+  const { itemId, parentItemId } = useRootSelector((s) => s.completeItem.nav);
+  const item = useRootSelector((s) => s.completeItem.items[itemId || '']);
   const [deleteModal, setDeleteModal] = useState(false);
 
   const onItemDelete = useCallback(() => {
@@ -36,7 +36,7 @@ export const ItemDetail = memo(function ItemDetail() {
   const onDeletePress = useCallback(() => setDeleteModal(true), []);
   const onDeleteClose = useCallback(() => setDeleteModal(false), []);
 
-  return !item ? null : (
+  return item ? (
     <>
       <Modal
         backgroundColor={color.background.secondary}
@@ -65,11 +65,7 @@ export const ItemDetail = memo(function ItemDetail() {
             updatedAt={item.updatedAt}
             userId={item.userId}
           />
-          {!item.editable ? (
-            <Card flex>
-              <Button center onPress={goBack} title="close" />
-            </Card>
-          ) : (
+          {item.editable ? (
             <View
               style={{
                 flexDirection: 'row',
@@ -90,12 +86,16 @@ export const ItemDetail = memo(function ItemDetail() {
                 />
               </Card>
             </View>
+          ) : (
+            <Card flex>
+              <Button center onPress={goBack} title="close" />
+            </Card>
           )}
         </View>
       </Modal>
-      {!deleteModal ? null : (
+      {deleteModal ? (
         <DeleteModal onCancel={onDeleteClose} onDelete={onItemDelete} />
-      )}
+      ) : null}
     </>
-  );
+  ) : null;
 });

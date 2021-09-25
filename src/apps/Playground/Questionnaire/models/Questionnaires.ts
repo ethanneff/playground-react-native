@@ -38,7 +38,7 @@ export const getQuestionnaires = (state: RootState): QuestionnairesObject =>
 
 export const getQuestionnaireArray = createSelector(
   [getQuestionnaires],
-  questionnaires => Object.values(questionnaires).filter(item => item),
+  (questionnaires) => Object.values(questionnaires).filter((item) => item),
 );
 
 /* INTERFACES */
@@ -99,13 +99,6 @@ export const questionnairesReducer = (
 ): Questionnaires => {
   switch (action.type) {
     case getType(createQuestionnaire):
-      return {
-        ...state,
-        items: {
-          ...state.items,
-          [action.payload.id]: action.payload,
-        },
-      };
     case getType(updateQuestionnaire):
       return {
         ...state,
@@ -119,17 +112,17 @@ export const questionnairesReducer = (
         ...state,
         items: Object.keys(state.items).reduce(
           (acc, key) =>
-            key !== action.payload ? { ...acc, [key]: state.items[key] } : acc,
+            key === action.payload ? acc : { ...acc, [key]: state.items[key] },
           {},
         ),
         selected:
-          state.selected !== action.payload ? state.selected : undefined,
+          state.selected === action.payload ? undefined : state.selected,
       };
     case getType(selectQuestionnaire):
       return {
         ...state,
         selected:
-          state.selected !== action.payload ? action.payload : undefined,
+          state.selected === action.payload ? undefined : action.payload,
       };
     case getType(logout):
       return questionnairesInitialState;

@@ -57,10 +57,10 @@ export const gameOfLifeInitialState: GameOfLifeState = {
   count: 20,
   board: [],
 };
-export function gameOfLifeReducer(
+export const gameOfLifeReducer = (
   state: GameOfLifeState = gameOfLifeInitialState,
   action: RootAction,
-): GameOfLifeState {
+): GameOfLifeState => {
   switch (action.type) {
     case getType(updateDelay):
       return {
@@ -93,4 +93,4 @@ export function gameOfLifeReducer(
     default:
       return state;
   }
-}
+};

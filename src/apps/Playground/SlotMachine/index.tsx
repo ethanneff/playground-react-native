@@ -36,7 +36,7 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
   });
 
   const onSpin = useCallback(() => {
-    setState(p => ({ ...p, spinning: true }));
+    setState((p) => ({ ...p, spinning: true }));
   }, []);
 
   return (

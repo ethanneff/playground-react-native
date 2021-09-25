@@ -9,7 +9,7 @@ interface TimerProps {
 
 export const Timer = memo(function Timer({ interval, style }: TimerProps) {
   const pad = (n: number): string =>
-    (n < 10 ? '0' + n.toString() : n).toString();
+    (n < 10 ? `0${n.toString()}` : n).toString();
   const minutes = Math.floor(interval / 60000);
   const seconds = Math.floor((interval % 60000) / 1000);
   const milliseconds = Math.floor((interval % 60000) % 1000);

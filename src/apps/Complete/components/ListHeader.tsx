@@ -18,10 +18,10 @@ export const ListHeader = memo(function ListHeader({
 }: ListHeaderProps) {
   const dispatch = useRootDispatch();
   const { navigate } = useNavigation<StackNavigationProp<MainStackRoutes>>();
-  const item = useRootSelector(s => s.completeItem.items[itemId]);
+  const item = useRootSelector((s) => s.completeItem.items[itemId]);
 
   const onSave = useCallback(
-    title => {
+    (title) => {
       dispatch(updateItem({ ...item, title }));
       Keyboard.dismiss();
     },

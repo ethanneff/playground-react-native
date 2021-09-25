@@ -41,9 +41,9 @@ export const Modal = memo(function Modal({
 }: ModalProps) {
   const color = useColor();
   const useNativeDriver = useDriver();
-  const keyboardHeight = useRootSelector(s => s.device.keyboardHeight);
+  const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
   const dropShadow = useDropShadow();
-  const screen = useRootSelector(s => s.dimension.screen);
+  const screen = useRootSelector((s) => s.dimension.screen);
   const maxHeight = (screen.height - keyboardHeight) * heightPercent;
   const styles = StyleSheet.create({
     container: {
@@ -76,7 +76,7 @@ export const Modal = memo(function Modal({
   // TODO: animation is not clean on devices
   const animate = useCallback(
     (toValue: number) => {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         Animated.timing(fade, {
           duration: fadeDuration,
           toValue,

@@ -7,7 +7,7 @@ import { resetBoard, toggleRun } from './redux';
 
 export const Buttons = memo(function Buttons() {
   const dispatch = useRootDispatch();
-  const run = useRootSelector(state => state.gameOfLife.run);
+  const run = useRootSelector((state) => state.gameOfLife.run);
   const onRandom = useCallback(() => dispatch(resetBoard(0.5)), [dispatch]);
   const onStart = useCallback(() => dispatch(toggleRun()), [dispatch]);
   const onClear = useCallback(() => dispatch(resetBoard(0)), [dispatch]);

@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
 import { Platform, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import { MonoMultiColor, padding } from '../../features/Config';
+import { ColorTheme, MonoMultiColor, padding } from '../../features/Config';
 import { useColor, useDropShadow } from '../../features/Theme';
 import { Badge } from './Badge';
 import { Source } from './Source';
 
 /*
-usage: <Icon name='check' />
+Usage: <Icon name='check' />
 source: https://materialdesignicons.com/
 */
 
@@ -26,6 +26,26 @@ type Props = {
   name?: string;
   testID?: string;
   disabled?: boolean;
+};
+
+type GetColors = {
+  colors: ColorTheme;
+  clear?: boolean;
+  hidden?: boolean;
+  color?: keyof MonoMultiColor;
+  disabled?: boolean;
+};
+
+const getColor = ({ hidden, color, colors, disabled, clear }: GetColors) => {
+  return hidden
+    ? 'transparent'
+    : disabled
+    ? colors.text.disabled
+    : clear
+    ? colors.text.primaryB
+    : color
+    ? colors.text[color]
+    : colors.text.secondary;
 };
 
 export const Icon = memo(function Icon({
@@ -74,15 +94,8 @@ export const Icon = memo(function Icon({
       width: padding(6),
     },
   });
-  const colored = hidden
-    ? 'transparent'
-    : disabled
-    ? colors.text.disabled
-    : clear
-    ? colors.text.primaryB
-    : color
-    ? colors.text[color]
-    : colors.text.secondary;
+  const colored = getColor({ hidden, color, colors, disabled, clear });
+
   const containerStyles = [
     Platform.OS === 'web' ? styles.web : undefined,
     fab ? styles.fab : undefined,
@@ -91,10 +104,10 @@ export const Icon = memo(function Icon({
     styles.icon,
     style,
   ];
-  return !name ? null : (
+  return name ? (
     <View style={containerStyles} testID={testID}>
       <Source color={colored} invisible={invisible} name={name} size={size} />
       <Badge badge={badge} />
     </View>
-  );
+  ) : null;
 });

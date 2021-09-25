@@ -11,4 +11,4 @@ export * from './Theme';
 
 export const useRootSelector: TypedUseSelectorHook<RootState> = useSelector;
 export const useRootDispatch: () => Dispatch<RootAction> &
-  ThunkDispatch<RootState, any, RootAction> = useDispatch;
+  ThunkDispatch<RootState, void, RootAction> = useDispatch;

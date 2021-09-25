@@ -36,16 +36,16 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
   });
 
   const onEmail = useCallback(
-    () => setForm(prev => ({ ...prev, password: '', state: 'email' })),
+    () => setForm((prev) => ({ ...prev, password: '', state: 'email' })),
     [],
   );
   const onForgotPassword = useCallback(
-    () => setForm(prev => ({ ...prev, state: 'forgot password' })),
+    () => setForm((prev) => ({ ...prev, state: 'forgot password' })),
     [],
   );
   const onLanding = useCallback(
     () =>
-      setForm(prev => ({
+      setForm((prev) => ({
         ...prev,
         email: '',
         password: '',
@@ -54,30 +54,30 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
     [],
   );
   const onPhone = useCallback(
-    () => setForm(prev => ({ ...prev, state: 'phone' })),
+    () => setForm((prev) => ({ ...prev, state: 'phone' })),
     [],
   );
 
   const onEmailChange = useCallback(
-    (email: string) => setForm(prev => ({ ...prev, email })),
+    (email: string) => setForm((prev) => ({ ...prev, email })),
     [],
   );
   const onPhoneChange = useCallback(
-    (phone: string) => setForm(prev => ({ ...prev, phone })),
+    (phone: string) => setForm((prev) => ({ ...prev, phone })),
     [],
   );
   const onPhoneCodeChange = useCallback(
-    (phoneCode: string) => setForm(prev => ({ ...prev, phoneCode })),
+    (phoneCode: string) => setForm((prev) => ({ ...prev, phoneCode })),
     [],
   );
   const onPasswordChange = useCallback(
-    (password: string) => setForm(prev => ({ ...prev, password })),
+    (password: string) => setForm((prev) => ({ ...prev, password })),
     [],
   );
 
   const onPhoneSubmit = useCallback(async () => {
     const phoneConfirmation = await auth().signInWithPhoneNumber(form.phone);
-    setForm(prev => ({ ...prev, state: 'phone confirm', phoneConfirmation }));
+    setForm((prev) => ({ ...prev, state: 'phone confirm', phoneConfirmation }));
   }, [setForm, form.phone]);
 
   const onPhoneConfirm = useCallback(async () => {
@@ -87,7 +87,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
     }
     try {
       await form.phoneConfirmation.confirm(form.phoneCode);
-      setForm(prev => ({ ...prev, state: 'landing' }));
+      setForm((prev) => ({ ...prev, state: 'landing' }));
     } catch {
       console.log('invalid code');
     }
@@ -99,7 +99,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
       .then(() => {
         console.log('User account created & signed in!');
       })
-      .catch(error => {
+      .catch((error) => {
         if (error.code === 'auth/email-already-in-use')
           console.log('That email address is already in use!');
 
@@ -118,7 +118,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
       .then(() => {
         console.log('User signed in anonymously');
       })
-      .catch(error => {
+      .catch((error) => {
         if (error.code === 'auth/operation-not-allowed')
           console.log('Enable anonymous in your firebase console.');
 
@@ -131,7 +131,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
       .signOut()
       .then(() => console.log('User signed out!'))
       .catch(() => console.log('no user to sign out'))
-      .finally(() => setForm(prev => ({ ...prev, state: 'landing' })));
+      .finally(() => setForm((prev) => ({ ...prev, state: 'landing' })));
   }, []);
 
   useEffect(() => {

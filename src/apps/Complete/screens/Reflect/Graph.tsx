@@ -28,15 +28,15 @@ export const Graph = ({
   height,
 }: GraphProps): React.ReactElement => {
   const scaleX = scaleTime()
-    .domain(getDomain(data.map(d => d.date)))
+    .domain(getDomain(data.map((d) => d.date)))
     .range([0, width]);
   const scaleY = scaleLinear()
-    .domain(getDomain(data.map(d => d.value)))
+    .domain(getDomain(data.map((d) => d.value)))
     .range([height - padding, padding]);
   const d: string = shape
     .line<DataPoint>()
-    .x(p => scaleX(p.date))
-    .y(p => scaleY(p.value))
+    .x((p) => scaleX(p.date))
+    .y((p) => scaleY(p.value))
     .curve(shape.curveBasis)(data) as string;
   return (
     <View style={{ width, height }}>
@@ -52,7 +52,12 @@ export const Graph = ({
           d={`${d}L ${width} ${height} L 0 ${height}`}
           fill="url(#gradient)"
         />
-        <Path fill="transparent" stroke="#3977e3" {...{ d, strokeWidth }} />
+        <Path
+          d={d}
+          fill="transparent"
+          stroke="#3977e3"
+          strokeWidth={strokeWidth}
+        />
       </Svg>
     </View>
   );

@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { View } from 'react-native';
+import { v4 } from 'uuid';
 import { Button, Screen, Text } from '../../../components';
 import { TouchableOpacity } from '../../../conversions';
 import { useColor } from '../../../features';
@@ -38,7 +39,7 @@ export const TicTacToe = memo(function TicTacToe() {
 
   const onCellPress = useCallback(
     (i: number, j: number) => () => {
-      setGame(p => {
+      setGame((p) => {
         const nextValue = getNextValue(p.turn);
         const updatedBoard = getUpdatedBoard(p.board, i, j, nextValue);
         const didWin = getWinner(p.board, i, j, boardSize);
@@ -47,7 +48,7 @@ export const TicTacToe = memo(function TicTacToe() {
           ...p,
           board: updatedBoard,
           turn: p.turn === 'white' ? 'black' : 'white',
-          state: didWin !== 0 ? 'game-over' : 'playing',
+          state: didWin === 0 ? 'playing' : 'game-over',
           winner,
         };
       });
@@ -68,13 +69,13 @@ export const TicTacToe = memo(function TicTacToe() {
       >
         <View>
           {game.board.map((row, i) => (
-            <View key={`row-${i}`} style={{ flexDirection: 'row' }}>
+            <View key={v4()} style={{ flexDirection: 'row' }}>
               {row.map((_, j) => (
                 <TouchableOpacity
                   disabled={
                     game.board[i][j] !== 0 || game.state === 'game-over'
                   }
-                  key={`cell-${i}${j}`}
+                  key={v4()}
                   onPress={onCellPress(i, j)}
                   style={{
                     width: size,

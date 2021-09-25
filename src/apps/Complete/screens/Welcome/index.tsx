@@ -112,9 +112,9 @@ const slides: CarouselSlide[] = [
 export const Welcome = memo(function Welcome() {
   const dispatch = useRootDispatch();
   const [showLogin, setShowLogin] = useState(false);
-  const onToggleLogin = useCallback(() => setShowLogin(p => !p), []);
+  const onToggleLogin = useCallback(() => setShowLogin((p) => !p), []);
   const onLoginSuccess = useCallback(
-    auth => {
+    (auth) => {
       const {
         displayName,
         email,
@@ -135,7 +135,7 @@ export const Welcome = memo(function Welcome() {
       };
       dispatch(login(data));
       const { user, items } = getDefaultUserTemplate();
-      items.map(item => dispatch(createItem(item)));
+      items.map((item) => dispatch(createItem(item)));
       dispatch(loadUser({ ...user, email }));
     },
     [dispatch],

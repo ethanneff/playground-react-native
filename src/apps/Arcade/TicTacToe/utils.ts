@@ -7,12 +7,11 @@ const dfs = (
   j: number,
   t: BoardValue,
   c = 0,
-) => {
+): number => {
   if (i < 0 || j < 0 || i >= m.length || j >= m[0].length || m[i][j] !== t)
     return 0;
   c++;
-  const val = Math.max(dfs(m, d, i + d[0], j + d[1], t, c), c);
-  return val;
+  return Math.max(dfs(m, d, i + d[0], j + d[1], t, c), c);
 };
 
 export const getWinner = (

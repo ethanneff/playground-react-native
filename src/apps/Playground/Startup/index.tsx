@@ -45,11 +45,11 @@ export const Startup = memo(function PlaygroundStartup() {
 
   const updateForm = useCallback(
     (key: keyof Form, value: string | boolean) =>
-      setForm(state => ({ ...state, [key]: value })),
+      setForm((state) => ({ ...state, [key]: value })),
     [],
   );
   const handleLaunchChange = useCallback(
-    (value?: boolean) => updateForm('launched', !!value),
+    (value?: boolean) => updateForm('launched', Boolean(value)),
     [updateForm],
   );
   const handleUserChange = useCallback(
@@ -137,7 +137,7 @@ export const Startup = memo(function PlaygroundStartup() {
             keyboardType="numeric"
             onChangeText={handleMoraleChange}
             title="On a scale of 1-10, what is your morale?"
-            value={form.morale} // 1 (we are totally burned out) to  10 (we couldn't be more excited and optimistic!)
+            value={form.morale} // 1 (we are totally burned out) to 10 (we couldn't be more excited and optimistic!)
           />
         </Section>
         <Button

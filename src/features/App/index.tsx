@@ -1,4 +1,5 @@
 import React, { memo, ReactNode } from 'react';
+import { View } from 'react-native';
 import {
   useAppState,
   useDeviceInfo,
@@ -16,5 +17,5 @@ export const AppProvider = memo(function AppProvider({ children }: Props) {
   useAppState();
   useKeyboard();
 
-  return <>{children}</>;
+  return <View>{children}</View>;
 });

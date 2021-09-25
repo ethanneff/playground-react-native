@@ -10,7 +10,7 @@ import { TextField } from './TextField';
 export const Chat = memo(function PlaygroundChat() {
   const { goBack } = useNavigation();
   const [container, setContainer] = useState(0);
-  const keyboardHeight = useRootSelector(s => s.device.keyboardHeight);
+  const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
   const keyboardPadding = keyboardHeight > 0 ? padding(8) : padding(0);
   const height = container - keyboardHeight + keyboardPadding;
   const onLayout = useCallback(

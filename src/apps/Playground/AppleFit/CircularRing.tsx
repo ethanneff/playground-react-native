@@ -21,10 +21,6 @@ export const CircularRing = ({
     container: { transform: [{ rotate: '-270deg' }] },
   });
 
-  // interpolateColor(theta, {
-  //   inputRange: [0, Math.PI * 2],
-  //   outputRange: [ring.start, ring.end],
-  // });
   return (
     <View style={styles.container}>
       <CircularProgress radius={radius} ring={ring} theta={theta} />

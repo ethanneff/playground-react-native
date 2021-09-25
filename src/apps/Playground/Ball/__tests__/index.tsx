@@ -5,9 +5,8 @@ import { mockRenderer } from '../../../../mocks/Renderer';
 
 const getBallLocation = (tree: ReactTestRenderer) => {
   const ball = tree.root.findByProps({ testID: 'ball' });
-  const styles = ball.props.style[0];
-  const location = { left: styles.left._value, top: styles.top._value };
-  return location;
+  const [styles] = ball.props.style;
+  return { left: styles.left._value, top: styles.top._value }; // eslint-disable-line no-underscore-dangle
 };
 
 describe('ball', () => {

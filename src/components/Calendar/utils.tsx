@@ -16,11 +16,11 @@ export const addMonths = (date: Date, months: number): Date => {
   return result;
 };
 
-export function addDays(date: Date, days: number): Date {
+export const addDays = (date: Date, days: number): Date => {
   const result = new Date(date);
   result.setDate(result.getDate() + days);
   return result;
-}
+};
 
 const firstDayOfMonth = (date: Date) => {
   return new Date(date.getFullYear(), date.getMonth(), 1);
@@ -46,7 +46,7 @@ const generateCalendarMatrix = (date: Date) => {
   let prevDayCounter = prevMaxDays - firstDay + 1;
   let nextDayCounter = 1;
   const calendarMatrix: CalendarMatrix = [];
-  calendarMatrix.push(days.map(day => createDayObj(day, day, false, true)));
+  calendarMatrix.push(days.map((day) => createDayObj(day, day, false, true)));
   for (let row = 1; row < 7; row++) {
     calendarMatrix[row] = [];
     for (let col = 0; col < 7; col++)
