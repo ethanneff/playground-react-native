@@ -61,6 +61,7 @@ module.exports = {
     'max-lines': 'off',
     'no-nested-ternary': 'off',
     'class-methods-use-this': 'off',
+    'sonarjs/no-duplicate-string': 'off',
     'capitalized-comments': 'off', // comments
     'multiline-comment-style': 'off', // comments
     'no-inline-comments': 'off', // comments

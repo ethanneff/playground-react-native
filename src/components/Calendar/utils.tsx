@@ -31,12 +31,24 @@ const lastDayOfMonth = (date: Date) => {
 };
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const createDayObj = (
-  id: string | number,
-  display: string | number,
+
+type DayObject = {
+  id: string | number;
+  display: string | number;
+  current?: boolean;
+  header?: boolean;
+};
+const createDayObj = ({
+  id,
+  display,
   current = false,
   header = false,
-): Day => ({ id: String(id), display: String(display), current, header });
+}: DayObject): Day => ({
+  id: String(id),
+  display: String(display),
+  current,
+  header,
+});
 
 const generateCalendarMatrix = (date: Date) => {
   const firstDay = firstDayOfMonth(date).getDay();
@@ -46,26 +58,30 @@ const generateCalendarMatrix = (date: Date) => {
   let prevDayCounter = prevMaxDays - firstDay + 1;
   let nextDayCounter = 1;
   const calendarMatrix: CalendarMatrix = [];
-  calendarMatrix.push(days.map((day) => createDayObj(day, day, false, true)));
+  calendarMatrix.push(
+    days.map((day) =>
+      createDayObj({ id: day, display: day, current: false, header: true }),
+    ),
+  );
   for (let row = 1; row < 7; row++) {
     calendarMatrix[row] = [];
     for (let col = 0; col < 7; col++)
       calendarMatrix[row][col] =
         row === 1 && col < firstDay
-          ? createDayObj(
-              addDays(addMonths(date, -1), prevDayCounter).valueOf(),
-              prevDayCounter++,
-            )
+          ? createDayObj({
+              id: addDays(addMonths(date, -1), prevDayCounter).valueOf(),
+              display: prevDayCounter++,
+            })
           : row > 1 && dayCounter > maxDays
-          ? createDayObj(
-              addDays(addMonths(date, 1), nextDayCounter).valueOf(),
-              nextDayCounter++,
-            )
-          : createDayObj(
-              addDays(addMonths(date, 0), dayCounter).valueOf(),
-              dayCounter++,
-              true,
-            );
+          ? createDayObj({
+              id: addDays(addMonths(date, 1), nextDayCounter).valueOf(),
+              display: nextDayCounter++,
+            })
+          : createDayObj({
+              id: addDays(addMonths(date, 0), dayCounter).valueOf(),
+              display: dayCounter++,
+              current: true,
+            });
   }
   return calendarMatrix;
 };

@@ -11,12 +11,12 @@ export const data: Sections = [
   {
     paragraphs: [
       [
-        { title: 'first paragraph' },
+        { title: 'first paragraph1' },
         { title: 'nav here', onPress },
         { title: 'blah bldah blah. blah blah blah' },
       ],
       [
-        { title: 'second paragraph' },
+        { title: 'second paragraph1' },
         { title: 'nav here', onPress },
         {
           title:
@@ -30,12 +30,12 @@ export const data: Sections = [
   {
     paragraphs: [
       [
-        { title: 'first paragraph' },
+        { title: 'first paragraph2' },
         { title: 'nav here', onPress },
         { title: 'blah bldah blah. blah blah blah' },
       ],
       [
-        { title: 'second paragraph' },
+        { title: 'second paragraph2' },
         { title: 'nav here', onPress },
         {
           title:
@@ -43,7 +43,7 @@ export const data: Sections = [
         },
       ],
       [
-        { title: 'third paragraph' },
+        { title: 'third paragraph2' },
         { title: 'nav here', onPress },
         {
           title:
@@ -57,12 +57,12 @@ export const data: Sections = [
   {
     paragraphs: [
       [
-        { title: 'first paragraph' },
+        { title: 'first paragraph3' },
         { title: 'nav here', onPress },
         { title: 'blah bldah blah. blah blah blah' },
       ],
       [
-        { title: 'second paragraph' },
+        { title: 'second paragraph3' },
         { title: 'nav here', onPress },
         {
           title:
@@ -70,7 +70,7 @@ export const data: Sections = [
         },
       ],
       [
-        { title: 'third paragraph' },
+        { title: 'third paragraph3' },
         { title: 'nav here', onPress },
         {
           title:

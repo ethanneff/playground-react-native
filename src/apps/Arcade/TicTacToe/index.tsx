@@ -40,9 +40,9 @@ export const TicTacToe = memo(function TicTacToe() {
   const onCellPress = useCallback(
     (i: number, j: number) => () => {
       setGame((p) => {
-        const nextValue = getNextValue(p.turn);
-        const updatedBoard = getUpdatedBoard(p.board, i, j, nextValue);
-        const didWin = getWinner(p.board, i, j, boardSize);
+        const v = getNextValue(p.turn);
+        const updatedBoard = getUpdatedBoard({ board: p.board, i, j, v });
+        const didWin = getWinner({ board: p.board, i, j, boardSize });
         const winner = didWin === 1 ? 'white' : didWin === -1 ? 'black' : null;
         return {
           ...p,

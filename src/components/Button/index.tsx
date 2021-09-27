@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { StyleProp, TextStyle, ViewStyle } from 'react-native';
+import { StyleProp, TextStyle, View, ViewStyle } from 'react-native';
 import { FontEmphasis, MonoMultiColor } from '../../features/Config';
 import { useColor, useDropShadow } from '../../features/Theme';
 import { Text } from '../Text';
@@ -77,7 +77,7 @@ export const Button = memo(function Button({
   const textStyleGroup = [styles.text, textStyle];
 
   return hidden ? (
-    <></>
+    <View />
   ) : (
     <TouchableOpacity
       activeOpacity={activeOpacity}
@@ -91,7 +91,7 @@ export const Button = memo(function Button({
         center
         style={textStyleGroup}
         title={title}
-        type={!lowercase ? 'button' : undefined}
+        type={lowercase ? undefined : 'button'}
       />
     </TouchableOpacity>
   );

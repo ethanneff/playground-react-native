@@ -58,15 +58,25 @@ export const resolveItemCollision = (
   }
 };
 
-export const getOverlap = (
-  aX: number,
-  aY: number,
-  aRadius: number,
-  bX: number,
-  bY: number,
-  bRadius: number,
-  center: boolean,
-): boolean => {
+type OverlapProps = {
+  aX: number;
+  aY: number;
+  aRadius: number;
+  bX: number;
+  bY: number;
+  bRadius: number;
+  center: boolean;
+};
+
+export const getOverlap = ({
+  aX,
+  aY,
+  aRadius,
+  bX,
+  bY,
+  bRadius,
+  center,
+}: OverlapProps): boolean => {
   const aCenter = { x: aX + aRadius, y: aY + aRadius };
   const bCenter = { x: bX + bRadius, y: bY + bRadius };
   const dx = center ? aCenter.x - bCenter.x : aX - bX;
@@ -113,7 +123,16 @@ export const getItems = ({
     if (i !== 0)
       for (let j = 0; j < initialItems.length; j++) {
         const item = initialItems[j];
-        if (getOverlap(x, y, radius, item.x, item.y, item.radius, false)) {
+        const overlap = getOverlap({
+          aX: x,
+          aY: y,
+          aRadius: radius,
+          bX: item.x,
+          bY: item.y,
+          bRadius: item.radius,
+          center: false,
+        });
+        if (overlap) {
           x = getRandomNumber(canvas.x, canvas.x + canvas.width - radius);
           y = getRandomNumber(canvas.x, canvas.x + canvas.height - radius);
           j = -1;

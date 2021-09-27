@@ -56,8 +56,16 @@ export const Balls = ({
         const a = prev[i];
         for (let j = i + 1; j < prev.length; j++) {
           const b = prev[j];
-          if (getOverlap(a.x, a.y, a.radius, b.x, b.y, b.radius, true))
-            resolveItemCollision(a, b, maxSpeed * 1.5);
+          const overlap = getOverlap({
+            aX: a.x,
+            aY: a.y,
+            aRadius: a.radius,
+            bX: b.x,
+            bY: b.y,
+            bRadius: b.radius,
+            center: true,
+          });
+          if (overlap) resolveItemCollision(a, b, maxSpeed * 1.5);
         }
         resolveBoundCollision(a, canvas);
         a.x += a.dx;
