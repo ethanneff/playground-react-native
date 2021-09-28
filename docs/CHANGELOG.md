@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.57.11](https://github.com/ethanneff/example/compare/v2.57.10...v2.57.11) (2021-09-28)
+
+
+### Bug Fixes
+
+* make app work again ([d1e3640](https://github.com/ethanneff/example/commit/d1e3640866e4867e47012c632ecfbaa6dd049913))
+* more linting ([004bb80](https://github.com/ethanneff/example/commit/004bb80081a69a89cf6988eaf9ca015d0407a53d))
+* more linting ([d5d42c5](https://github.com/ethanneff/example/commit/d5d42c5f0860535058a6d381e45f48daeef5c8d4))
+* update linting ([5686ce8](https://github.com/ethanneff/example/commit/5686ce80bc9378f023a9618ee28552023a5e94da))
+
 ## [2.57.10](https://github.com/ethanneff/example/compare/v2.57.9...v2.57.10) (2021-09-23)
 
 
