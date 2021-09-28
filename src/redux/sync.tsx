@@ -33,8 +33,8 @@ const syncQueue: SyncQueue = {
     try {
       const combined = [...syncQueue.cache, ...value];
       const stringify = JSON.stringify(combined);
-      await AsyncStorage.setItem(syncQueue.key, stringify);
       syncQueue.cache = combined;
+      await AsyncStorage.setItem(syncQueue.key, stringify);
       return syncQueue.cache;
     } catch (e) {
       console.log(e.message);
@@ -45,7 +45,7 @@ const syncQueue: SyncQueue = {
     try {
       const get = await AsyncStorage.getItem(syncQueue.key);
       const parse = get === null ? [] : JSON.parse(get);
-      syncQueue.cache = parse;
+      syncQueue.cache = [...syncQueue.cache, ...parse];
       return syncQueue.cache;
     } catch (e) {
       console.log(e.message);

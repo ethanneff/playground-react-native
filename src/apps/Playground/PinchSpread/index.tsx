@@ -29,6 +29,7 @@ export const PinchSpread = memo(function PinchSpread() {
     },
   });
 
+  /* eslint-disable react/jsx-props-no-spreading */
   return (
     <Screen dropShadow onLeftPress={goBack} title="Pinch Spread">
       <Animated.View style={styles.container} {...panGesture.panHandlers} />
