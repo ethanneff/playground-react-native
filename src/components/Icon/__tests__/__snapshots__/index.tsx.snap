@@ -60,6 +60,8 @@ exports[`icon renders correctly 1`] = `
             }
           >
             <View
+              collapsable={false}
+              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -77,6 +79,8 @@ exports[`icon renders correctly 1`] = `
             />
           </View>
           <View
+            collapsable={false}
+            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -133,6 +137,8 @@ exports[`icon renders correctly 1`] = `
                 <Text
                   accessibilityRole="header"
                   aria-level="1"
+                  collapsable={false}
+                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -248,6 +254,8 @@ exports[`icon renders correctly 1`] = `
             }
           >
             <View
+              collapsable={false}
+              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -417,6 +425,8 @@ exports[`icon renders correctly with clear and max badge 1`] = `
             }
           >
             <View
+              collapsable={false}
+              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -434,6 +444,8 @@ exports[`icon renders correctly with clear and max badge 1`] = `
             />
           </View>
           <View
+            collapsable={false}
+            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -490,6 +502,8 @@ exports[`icon renders correctly with clear and max badge 1`] = `
                 <Text
                   accessibilityRole="header"
                   aria-level="1"
+                  collapsable={false}
+                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -605,6 +619,8 @@ exports[`icon renders correctly with clear and max badge 1`] = `
             }
           >
             <View
+              collapsable={false}
+              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -716,6 +732,8 @@ exports[`icon renders correctly with clear and max badge 1`] = `
                           }
                         >
                           <Text
+                            collapsable={false}
+                            nativeID="animatedComponent"
                             onPress={[Function]}
                             style={
                               Object {
@@ -805,6 +823,8 @@ exports[`icon renders correctly without defaults 1`] = `
             }
           >
             <View
+              collapsable={false}
+              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -822,6 +842,8 @@ exports[`icon renders correctly without defaults 1`] = `
             />
           </View>
           <View
+            collapsable={false}
+            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -878,6 +900,8 @@ exports[`icon renders correctly without defaults 1`] = `
                 <Text
                   accessibilityRole="header"
                   aria-level="1"
+                  collapsable={false}
+                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -993,6 +1017,8 @@ exports[`icon renders correctly without defaults 1`] = `
             }
           >
             <View
+              collapsable={false}
+              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -1104,6 +1130,8 @@ exports[`icon renders correctly without defaults 1`] = `
                           }
                         >
                           <Text
+                            collapsable={false}
+                            nativeID="animatedComponent"
                             onPress={[Function]}
                             style={
                               Object {
