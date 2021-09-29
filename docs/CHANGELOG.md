@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.57.13](https://github.com/ethanneff/example/compare/v2.57.12...v2.57.13) (2021-09-29)
+
+
+### Bug Fixes
+
+* update snaps ([f568f09](https://github.com/ethanneff/example/commit/f568f0993766da70e27369e980f980376418151b))
+* update to typescript 4.4 ([48e8e80](https://github.com/ethanneff/example/commit/48e8e80b99197d69a0b273e7a6d39116f6b2269d))
+
 ## [2.57.12](https://github.com/ethanneff/example/compare/v2.57.11...v2.57.12) (2021-09-29)
 
 
