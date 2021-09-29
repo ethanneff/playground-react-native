@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.57.16](https://github.com/ethanneff/example/compare/v2.57.15...v2.57.16) (2021-09-29)
+
+
+### Bug Fixes
+
+* remove codeql ([04e115d](https://github.com/ethanneff/example/commit/04e115dcf1ed65129946ebe6467db9b00c712eb2))
+
 ## [2.57.15](https://github.com/ethanneff/example/compare/v2.57.14...v2.57.15) (2021-09-29)
 
 ## [2.57.14](https://github.com/ethanneff/example/compare/v2.57.13...v2.57.14) (2021-09-29)
