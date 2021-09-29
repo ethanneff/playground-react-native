@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.57.14](https://github.com/ethanneff/example/compare/v2.57.13...v2.57.14) (2021-09-29)
+
+
+### Bug Fixes
+
+* optimize images ([#429](https://github.com/ethanneff/example/issues/429)) ([f49dada](https://github.com/ethanneff/example/commit/f49dadaa8c8e6e54c0e46a92fe4475a0cbdc5012))
+
 ## [2.57.13](https://github.com/ethanneff/example/compare/v2.57.12...v2.57.13) (2021-09-29)
 
 
