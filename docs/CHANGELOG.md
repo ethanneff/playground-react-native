@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.57.12](https://github.com/ethanneff/example/compare/v2.57.11...v2.57.12) (2021-09-29)
+
+
+### Bug Fixes
+
+* better linting ([7de7510](https://github.com/ethanneff/example/commit/7de7510e6ec052661b5bae0fabce829790d9d411))
+
 ## [2.57.11](https://github.com/ethanneff/example/compare/v2.57.10...v2.57.11) (2021-09-28)
 
 
