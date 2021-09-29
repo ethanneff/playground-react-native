@@ -27,8 +27,8 @@ export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
       url: 'https://reqres.in/api/login',
     });
     dispatch(loginSuccess(res.data.token));
-  } catch (error) {
-    dispatch(loginFailure(error));
+  } catch (e) {
+    if (e instanceof Error) dispatch(loginFailure(e));
   }
 };
 export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
@@ -44,8 +44,8 @@ export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
       url: 'https://reqres.in/api/register',
     });
     dispatch(loginSuccess(res.data.token));
-  } catch (error) {
-    dispatch(loginFailure(error));
+  } catch (e) {
+    if (e instanceof Error) dispatch(loginFailure(e));
   }
 };
 export const onLogout = (): RootThunkAction<void> => (dispatch, getState) => {

@@ -74,7 +74,7 @@
     "react-native-sound": "0.11.1",
     "react-native-svg": "12.1.1",
     "react-native-vector-icons": "8.1.0",
-    "react-native-web": "0.17.2",
+    "react-native-web": "0.17.5",
     "react-native-web-linear-gradient": "1.1.2",
     "react-redux": "7.2.5",
     "react-scripts": "4.0.3",
@@ -105,8 +105,8 @@
     "@types/howler": "2.2.4",
     "@types/jest": "27.0.2",
     "@types/lodash": "^4.14.175",
-    "@types/react": "17.0.24",
-    "@types/react-native": "0.65.1",
+    "@types/react": "17.0.25",
+    "@types/react-native": "0.65.2",
     "@types/react-native-vector-icons": "6.4.9",
     "@types/react-redux": "7.1.18",
     "@types/react-test-renderer": "17.0.1",
@@ -131,8 +131,8 @@
     "react-test-renderer": "17.0.2",
     "semantic-release": "18.0.0",
     "travis-deploy-once": "5.0.11",
-    "ts-essentials": "8.1.0",
-    "typescript": "4.3.5"
+    "ts-essentials": "9.0.0",
+    "typescript": "4.4.3"
   },
   "browserslist": {
     "production": [

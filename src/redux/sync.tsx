@@ -37,7 +37,7 @@ const syncQueue: SyncQueue = {
       await AsyncStorage.setItem(syncQueue.key, stringify);
       return syncQueue.cache;
     } catch (e) {
-      console.log(e.message);
+      if (e instanceof Error) console.log(e.message);
       return [];
     }
   },
@@ -48,7 +48,7 @@ const syncQueue: SyncQueue = {
       syncQueue.cache = [...syncQueue.cache, ...parse];
       return syncQueue.cache;
     } catch (e) {
-      console.log(e.message);
+      if (e instanceof Error) console.log(e.message);
       return [];
     }
   },
@@ -108,7 +108,7 @@ export const useSync = (): void => {
       refresh();
     } catch (e) {
       exponentialRetry();
-      console.log(e.message);
+      if (e instanceof Error) console.log(e.message);
     }
   }, [processSync]);
 

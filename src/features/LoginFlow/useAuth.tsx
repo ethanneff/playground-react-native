@@ -53,7 +53,8 @@ export const useAuth = (): UseAuth => {
         const { user } = await auth().createUserWithEmailAndPassword(m, p);
         setResponse({ ...initialResponse, type: 'login', user });
       } catch (e) {
-        setResponse({ ...initialResponse, type: 'error', error: e });
+        if (e instanceof Error)
+          setResponse({ ...initialResponse, type: 'error', error: e.message });
       }
     },
     [setResponse],
@@ -66,7 +67,8 @@ export const useAuth = (): UseAuth => {
         await auth().sendPasswordResetEmail(email);
         setResponse({ ...initialResponse, type: 'waiting' });
       } catch (e) {
-        setResponse({ ...initialResponse, type: 'error', error: e });
+        if (e instanceof Error)
+          setResponse({ ...initialResponse, type: 'error', error: e.message });
       }
     },
     [setResponse],
@@ -78,7 +80,8 @@ export const useAuth = (): UseAuth => {
       const { user } = await auth().signInAnonymously();
       setResponse({ ...initialResponse, type: 'login', user });
     } catch (e) {
-      setResponse({ ...initialResponse, type: 'error', error: e });
+      if (e instanceof Error)
+        setResponse({ ...initialResponse, type: 'error', error: e.message });
     }
   }, [setResponse]);
 
@@ -95,7 +98,8 @@ export const useAuth = (): UseAuth => {
       const { user } = await auth().signInWithCredential(cred);
       setResponse({ ...initialResponse, type: 'login', user });
     } catch (e) {
-      setResponse({ ...initialResponse, type: 'error', error: e });
+      if (e instanceof Error)
+        setResponse({ ...initialResponse, type: 'error', error: e.message });
     }
   }, [setResponse]);
 
@@ -106,7 +110,8 @@ export const useAuth = (): UseAuth => {
         await auth().signInWithPhoneNumber(phoneNumber);
         setResponse({ ...initialResponse, type: 'waiting' });
       } catch (e) {
-        setResponse({ ...initialResponse, type: 'error', error: e });
+        if (e instanceof Error)
+          setResponse({ ...initialResponse, type: 'error', error: e.message });
       }
     },
     [setResponse],
@@ -123,7 +128,8 @@ export const useAuth = (): UseAuth => {
         if (!userData) throw new Error('missing user data on phone confirm');
         setResponse({ ...initialResponse, user: userData.user, type: 'login' });
       } catch (e) {
-        setResponse({ ...initialResponse, type: 'error', error: e });
+        if (e instanceof Error)
+          setResponse({ ...initialResponse, type: 'error', error: e.message });
       }
     },
     [setResponse],
@@ -151,7 +157,8 @@ export const useAuth = (): UseAuth => {
       const { user } = await auth().signInWithCredential(googleCredential);
       setResponse({ ...initialResponse, type: 'login', user });
     } catch (e) {
-      setResponse({ ...initialResponse, type: 'error', error: e });
+      if (e instanceof Error)
+        setResponse({ ...initialResponse, type: 'error', error: e.message });
     }
   }, [setResponse]);
 
@@ -161,7 +168,8 @@ export const useAuth = (): UseAuth => {
       await auth().signOut();
       setResponse({ ...initialResponse, type: 'logout' });
     } catch (e) {
-      setResponse({ ...initialResponse, type: 'error', error: e });
+      if (e instanceof Error)
+        setResponse({ ...initialResponse, type: 'error', error: e.message });
     }
   }, [setResponse]);
 
