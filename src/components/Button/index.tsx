@@ -76,9 +76,7 @@ export const Button = memo(function Button({
   ];
   const textStyleGroup = [styles.text, textStyle];
 
-  return hidden ? (
-    <></>
-  ) : (
+  return hidden ? null : (
     <TouchableOpacity
       activeOpacity={activeOpacity}
       disabled={disabled || invisible}

@@ -58,20 +58,9 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
     [],
   );
 
-  const onEmailChange = useCallback(
-    (email: string) => setForm((prev) => ({ ...prev, email })),
-    [],
-  );
-  const onPhoneChange = useCallback(
-    (phone: string) => setForm((prev) => ({ ...prev, phone })),
-    [],
-  );
-  const onPhoneCodeChange = useCallback(
-    (phoneCode: string) => setForm((prev) => ({ ...prev, phoneCode })),
-    [],
-  );
-  const onPasswordChange = useCallback(
-    (password: string) => setForm((prev) => ({ ...prev, password })),
+  const onChange = useCallback(
+    (key: keyof State) => (value: string) =>
+      setForm((prev) => ({ ...prev, [key]: value })),
     [],
   );
 
@@ -146,7 +135,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
         <>
           <Input
             keyboardType="number-pad"
-            onChangeText={onPhoneCodeChange}
+            onChangeText={onChange('phoneCode')}
             placeholder="phone confirmation code"
             value={form.phoneCode}
           />
@@ -162,7 +151,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
         <>
           <Input
             keyboardType="number-pad"
-            onChangeText={onPhoneChange}
+            onChangeText={onChange('phone')}
             placeholder="phone"
             value={form.phone}
           />
@@ -178,7 +167,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
         <>
           <Input
             keyboardType="email-address"
-            onChangeText={onEmailChange}
+            onChangeText={onChange('email')}
             placeholder="email"
             textContentType="username"
             value={form.email}
@@ -195,13 +184,13 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
         <>
           <Input
             keyboardType="email-address"
-            onChangeText={onEmailChange}
+            onChangeText={onChange('email')}
             placeholder="email"
             textContentType="username"
             value={form.email}
           />
           <Input
-            onChangeText={onPasswordChange}
+            onChangeText={onChange('password')}
             placeholder="password"
             secureTextEntry
             textContentType="password"

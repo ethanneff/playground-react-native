@@ -21,24 +21,21 @@ import { padding, useColor, useDriver, useDropShadow } from '../../../features';
 import { getWidth, useRootSelector } from '../../../redux';
 import { formatRelativeDate } from './utils';
 
-interface SwipeCardProps extends SwipeItem {
+type SwipeCardProps = {
+  item: SwipeItem;
   index: number;
   height: number;
   onSwipeComplete(): void;
   onSwipePercentChange(percent: number): void;
-}
+};
 
 const SwipeCard = memo(function SwipeCard({
-  image,
+  item,
   height,
-  icon,
-  title,
-  date,
-  body,
-  button,
   onSwipeComplete,
   onSwipePercentChange,
 }: SwipeCardProps) {
+  const { icon, title, date, body, button, image } = item;
   const cardWidth = useRef(0);
   const color = useColor();
   const useNativeDriver = useDriver();
@@ -288,9 +285,9 @@ const SwipeCards = memo(function SwipeCardList({
     <View style={{ height }}>
       {feed.items.map((item, index) => (
         <SwipeCard
-          {...item}
           height={height}
           index={index}
+          item={item}
           key={item.id}
           onSwipeComplete={onSwipeComplete}
           onSwipePercentChange={onSwipePercentChange}

@@ -112,18 +112,16 @@ export const Text = memo(function Text({
   const textStyle = [
     styles.color,
     fontSize,
-    center && styles.center,
-    centerVertically && styles.centerVertically,
-    bold && styles.bold,
+    center ? styles.center : undefined,
+    centerVertically ? styles.centerVertically : undefined,
+    bold ? styles.bold : undefined,
     { opacity },
-    invisible && styles.invisible,
-    flex && styles.flex,
+    invisible ? styles.invisible : undefined,
+    flex ? styles.flex : undefined,
     style,
   ];
 
-  return title === undefined || hidden ? (
-    <></>
-  ) : (
+  return title === undefined || hidden ? null : (
     <Animated.Text
       adjustsFontSizeToFit={adjustsFontSizeToFit}
       ellipsizeMode={ellipsizeMode}

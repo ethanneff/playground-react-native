@@ -99,7 +99,7 @@ const blacklist = ['gameOfLife'];
 const persistConfig = { key: 'root', storage: Storage, blacklist };
 const middlewares: Middleware[] = [thunk, syncMiddleware];
 const composers =
-  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // eslint-disable-line no-underscore-dangle
 const enhancers = composers(applyMiddleware(...middlewares));
 
 const persistedReducer = persistReducer(persistConfig, reducers);

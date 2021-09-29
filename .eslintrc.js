@@ -35,16 +35,16 @@ module.exports = {
     'import/no-cycle': 'error', // no circular dependencies
     'import/no-unresolved': ['error', { ignore: ['root-types'] }], // redux typing imports
     'react-hooks/exhaustive-deps': [
-      'error', // auto hook deps
+      'error',
       { enableDangerousAutofixThisMayCauseInfiniteLoops: true },
-    ],
+    ], // auto hook deps
     'react/function-component-definition': [
-      'error', // arrow functions
+      'error',
       {
         namedComponents: 'arrow-function',
         unnamedComponents: 'arrow-function',
       },
-    ],
+    ], // arrow functions
     '@typescript-eslint/no-var-requires': 'off', // react native images
     'react/jsx-filename-extension': 'off', // typescript
     'react/require-default-props': 'off', // typescript
@@ -53,6 +53,7 @@ module.exports = {
     'no-use-before-define': 'off', // typescript
     'default-param-last': 'off', // typescript
     'sort-keys': 'off', // sort-keys-fix
+    'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }], // typescript
     'no-magic-numbers': 'off',
     'no-ternary': 'off',
     'react/jsx-max-depth': 'off',
@@ -79,6 +80,8 @@ module.exports = {
     'no-warning-comments': 'off', // remove
     'react/no-multi-comp': 'off', // remove
     'no-console': 'off', // remove
+    '@typescript-eslint/no-explicit-any': 'off', // remove
+    'sonarjs/cognitive-complexity': 'off', // remove
   },
   settings: {
     'import/ignore': ['react-native'],
