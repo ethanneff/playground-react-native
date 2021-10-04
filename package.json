@@ -105,7 +105,7 @@
     "@types/howler": "2.2.4",
     "@types/jest": "27.0.2",
     "@types/lodash": "^4.14.175",
-    "@types/react": "17.0.25",
+    "@types/react": "17.0.27",
     "@types/react-native": "0.65.2",
     "@types/react-native-vector-icons": "6.4.9",
     "@types/react-redux": "7.1.18",
