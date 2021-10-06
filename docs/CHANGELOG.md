@@ -1,5 +1,20 @@
 # Changelog
 
+# [2.58.0](https://github.com/ethanneff/example/compare/v2.57.16...v2.58.0) (2021-10-06)
+
+
+### Bug Fixes
+
+* update deps ([bea266f](https://github.com/ethanneff/example/commit/bea266f252fa7899a3fb0843834a4d74b96ba260))
+* update deps ([481f989](https://github.com/ethanneff/example/commit/481f9892cb2cbaf578cd653ea66f146aeb28b442))
+* update deps ([4b675a8](https://github.com/ethanneff/example/commit/4b675a894bd36d52e09041bdc6ac5769cfff99fb))
+* update deps ([7dbf617](https://github.com/ethanneff/example/commit/7dbf6175f74dd85a58be28b840a232f396621c46))
+
+
+### Features
+
+* add yup ([63638ff](https://github.com/ethanneff/example/commit/63638fffdf3f34bd332a601300b9910d7fd43dcf))
+
 ## [2.57.16](https://github.com/ethanneff/example/compare/v2.57.15...v2.57.16) (2021-09-29)
 
 
