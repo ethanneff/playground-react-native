@@ -22,25 +22,11 @@ module.exports = {
       },
     ],
     '@semantic-release/release-notes-generator',
-    [
-      '@semantic-release/npm',
-      {
-        npmPublish: false,
-      },
-    ],
-    [
-      '@semantic-release/github',
-      {
-        successComment: false,
-        failComment: false,
-      },
-    ],
+    ['@semantic-release/npm', { npmPublish: false }],
+    ['@semantic-release/github', { successComment: false, failComment: false }],
     [
       '@semantic-release/changelog',
-      {
-        changelogFile: 'docs/CHANGELOG.md',
-        changelogTitle: '# Changelog',
-      },
+      { changelogFile: 'docs/CHANGELOG.md', changelogTitle: '# Changelog' },
     ],
     [
       '@semantic-release/git',
