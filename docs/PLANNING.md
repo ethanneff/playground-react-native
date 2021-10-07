@@ -1,3 +1,26 @@
+# Apps
+
+## Focus
+
+- hourly journal
+- notifications every hour
+
+## Deep Work
+
+- notifications every 30 mins
+- record intensity (y/n) + focus (y/n) + category (work, investments, workout)
+- timeline count of number of hours spent in each category
+
+## Complete
+
+- kanban todos
+- project management
+
+## Checklists
+
+- best practices
+- shareability + forking
+
 # Planning
 
 ## Top goals
@@ -9,15 +32,10 @@ Deploy Android App (Focus)
 - [ ] login/ logout
 - [ ] backend storage
 - [ ] redux
-- [ ] fix modal shadow
 
 * Bonus
 
 - [ ] Notification.show(), alert.show(), actionsheet.show()
-- [ ] remove /providers
-- [ ] remove /hooks
-- [ ] remove /utils
-- [ ] add yup for runtime typeshecking
 
 Deploy iOS App (Focus)
 
@@ -122,6 +140,11 @@ Deploy 3nd App (Complete)
 
 ## Done
 
+- [x] fix modal shadow
+- [x] remove /providers
+- [x] remove /hooks
+- [x] remove /utils
+- [x] add yup for runtime typeshecking
 - [x] complete bouncing loading screen
 - [x] react navigation
 - [x] fastlane build multiple apps

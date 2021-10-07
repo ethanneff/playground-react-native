@@ -25,7 +25,7 @@ type Props = {
   site: Site;
   size?: number;
   margin?: number;
-  title: string;
+  title?: string;
 };
 
 const initialActivity: ActivityModel = {
@@ -117,9 +117,11 @@ export const Activity = memo(function Activity({
           alignItems: 'center',
         }}
       >
-        <TouchableOpacity onPress={refresh}>
-          <Text emphasis="medium" title={title} type="h4" />
-        </TouchableOpacity>
+        {title ? (
+          <TouchableOpacity onPress={refresh}>
+            <Text emphasis="medium" title={title} type="h4" />
+          </TouchableOpacity>
+        ) : null}
         {state.activity.total ? (
           <Text
             emphasis="medium"
