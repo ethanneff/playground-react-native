@@ -18,7 +18,7 @@ import {
   keyExtractor,
 } from './utils';
 
-export const Hourly = memo(function Hourly() {
+export const Interval = memo(function Interval() {
   const { onLeftPress } = useAdminNavBack();
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState<Item[]>(() => getMoreItems([]));

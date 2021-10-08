@@ -1,9 +1,10 @@
 import { useNavigation } from '@react-navigation/core';
+import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback } from 'react';
 import { View } from 'react-native';
 import { Icon, Text, TouchableOpacity } from '../../../../components';
 import { padding, useColor } from '../../../../features';
-import { HomeScreenNavigationProp, Item } from '../../types';
+import { AuthStackRoutes, Item } from '../../types';
 import { ListSection } from './ListSection';
 
 type Props = {
@@ -21,10 +22,11 @@ export const ListItem = memo(function ListItem({
   const future = item.id > Date.now();
   const iconColor = future ? 'tertiary' : 'positive';
   const title = currentItem ? 'current' : future ? 'future' : item.title;
-  const { navigate } = useNavigation<HomeScreenNavigationProp>();
+  const { navigate } =
+    useNavigation<StackNavigationProp<AuthStackRoutes, 'home'>>();
 
   const onPress = useCallback(
-    () => navigate('details', { item }),
+    () => navigate('interval-detail', { item }),
     [item, navigate],
   );
 

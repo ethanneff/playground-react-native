@@ -1,8 +1,11 @@
+import { useNavigation } from '@react-navigation/core';
+import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Activity, Card, Screen, Text } from '../../../../components';
 import { padding, useColor } from '../../../../features';
+import { AuthStackRoutes, Category } from '../../types';
 
 // TODO: create CategoryDetail screen (activity, stats [total, streak, best], details, schedule [offdays])
 // TODO: click on category card opens CategoryDetail
@@ -12,10 +15,11 @@ import { padding, useColor } from '../../../../features';
 
 // TODO: create SegmentDetail screen (focus, intensity, category, notes)
 
-export const Daily = memo(function Daily() {
+export const Progress = memo(function Progress() {
+  const { navigate } = useNavigation<StackNavigationProp<AuthStackRoutes>>();
   const color = useColor();
 
-  const categories = [
+  const categories: Category[] = [
     { id: '7', name: 'Ship Apps', total: 4 },
     { id: '6', name: 'Grow Muscle', total: 3 },
     { id: '5', name: 'Profit on Investments', total: 12 },
@@ -23,6 +27,10 @@ export const Daily = memo(function Daily() {
     { id: '3', name: 'Master System Design', total: 1 },
     { id: '2', name: 'Lead Others', total: 12 },
   ];
+
+  const handleCategoryPress = (category: Category) => () => {
+    navigate('category-detail', { category });
+  };
 
   return (
     <Screen dropShadow title="Daily">
@@ -34,7 +42,7 @@ export const Daily = memo(function Daily() {
       >
         <Activity site="random" title="Deep Work" username="random" />
         {categories.map((category) => (
-          <Card key={category.id}>
+          <Card key={category.id} onPress={handleCategoryPress(category)}>
             <View
               style={{
                 flexDirection: 'row',

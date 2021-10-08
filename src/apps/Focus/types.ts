@@ -1,5 +1,8 @@
-import { RouteProp } from '@react-navigation/core';
-import { StackNavigationProp } from '@react-navigation/stack';
+export type Category = {
+  id: string;
+  name: string;
+  total: number;
+};
 
 export type Item = {
   title: string;
@@ -13,25 +16,15 @@ export type Item = {
 
 export type AuthStackRoutes = {
   home: undefined;
-  details: { item: Item };
+  'category-detail': { category: Category };
+  'interval-detail': { item: Item };
 };
 export type UnAuthStackRoutes = {
   landing: undefined;
 };
 
 export type HomeTabRoutes = {
-  hourly: undefined;
-  daily: undefined;
+  interval: undefined;
+  progress: undefined;
   profile: undefined;
 };
-
-export type ItemScreenNavigationProp = StackNavigationProp<
-  AuthStackRoutes,
-  'details'
->;
-export type ItemScreenRouteProp = RouteProp<AuthStackRoutes, 'details'>;
-export type HomeScreenNavigationProp = StackNavigationProp<
-  AuthStackRoutes,
-  'home'
->;
-export type HomeScreenRouteProp = RouteProp<AuthStackRoutes, 'home'>;

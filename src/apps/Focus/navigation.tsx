@@ -1,42 +1,43 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import React, { ReactElement, useMemo } from 'react';
+import React, { ReactElement } from 'react';
 import { useNavScreenOptions } from '../../features';
 import {
-  AuthStackRoutes,
-  HomeTabRoutes,
-  UnAuthStackRoutes,
-} from './navigationTypes';
-import { Daily, Details, Hourly, Landing, Profile } from './screens';
+  CategoryDetail,
+  Interval,
+  IntervalDetail,
+  Landing,
+  Profile,
+  Progress,
+} from './screens';
+import { AuthStackRoutes, HomeTabRoutes, UnAuthStackRoutes } from './types';
 
 const AuthStack = createStackNavigator<AuthStackRoutes>();
 const UnAuthStack = createStackNavigator<UnAuthStackRoutes>();
 const TabBar = createBottomTabNavigator<HomeTabRoutes>();
 
+const tabIcons = {
+  interval: {
+    focused: 'format-list-bulleted',
+    unFocused: 'format-list-bulleted',
+  },
+  progress: {
+    focused: 'calendar-month',
+    unFocused: 'calendar-month',
+  },
+  profile: {
+    focused: 'account-outline',
+    unFocused: 'account-outline',
+  },
+};
+
 const Tabs = () => {
-  const tabIcons = useMemo(
-    () => ({
-      hourly: {
-        focused: 'format-list-bulleted',
-        unFocused: 'format-list-bulleted',
-      },
-      daily: {
-        focused: 'calendar-month',
-        unFocused: 'calendar-month',
-      },
-      profile: {
-        focused: 'account-outline',
-        unFocused: 'account-outline',
-      },
-    }),
-    [],
-  );
   const { tabScreenOptions } = useNavScreenOptions();
   const screenOptions = tabScreenOptions({ tabIcons });
   return (
     <TabBar.Navigator screenOptions={screenOptions}>
-      <TabBar.Screen component={Hourly} name="hourly" />
-      <TabBar.Screen component={Daily} name="daily" />
+      <TabBar.Screen component={Interval} name="interval" />
+      <TabBar.Screen component={Progress} name="progress" />
       <TabBar.Screen component={Profile} name="profile" />
     </TabBar.Navigator>
   );
@@ -47,13 +48,14 @@ export const Navigation = (): ReactElement => {
   const login = false;
 
   return login ? (
-    <UnAuthStack.Navigator screenOptions={{}}>
+    <UnAuthStack.Navigator screenOptions={modalScreenOptions}>
       <UnAuthStack.Screen component={Landing} name="landing" />
     </UnAuthStack.Navigator>
   ) : (
     <AuthStack.Navigator screenOptions={modalScreenOptions}>
       <AuthStack.Screen component={Tabs} name="home" />
-      <AuthStack.Screen component={Details} name="details" />
+      <AuthStack.Screen component={IntervalDetail} name="interval-detail" />
+      <AuthStack.Screen component={CategoryDetail} name="category-detail" />
     </AuthStack.Navigator>
   );
 };
