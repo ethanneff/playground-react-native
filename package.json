@@ -37,15 +37,15 @@
     "@react-native-community/masked-view": "0.1.11",
     "@react-native-community/netinfo": "6.0.2",
     "@react-native-community/slider": "4.1.8",
-    "@react-native-firebase/analytics": "12.9.0",
-    "@react-native-firebase/app": "12.9.0",
-    "@react-native-firebase/auth": "12.9.0",
-    "@react-native-firebase/crashlytics": "12.9.0",
-    "@react-native-firebase/firestore": "12.9.0",
-    "@react-native-firebase/remote-config": "12.9.0",
-    "@react-navigation/bottom-tabs": "6.0.7",
-    "@react-navigation/native": "6.0.4",
-    "@react-navigation/stack": "6.0.9",
+    "@react-native-firebase/analytics": "12.9.1",
+    "@react-native-firebase/app": "12.9.1",
+    "@react-native-firebase/auth": "12.9.1",
+    "@react-native-firebase/crashlytics": "12.9.1",
+    "@react-native-firebase/firestore": "12.9.1",
+    "@react-native-firebase/remote-config": "12.9.1",
+    "@react-navigation/bottom-tabs": "6.0.8",
+    "@react-navigation/native": "6.0.5",
+    "@react-navigation/stack": "6.0.10",
     "axios": "0.22.0",
     "d3-scale": "4.0.2",
     "d3-shape": "3.0.1",
@@ -90,7 +90,7 @@
   "devDependencies": {
     "@babel/core": "7.15.8",
     "@babel/runtime": "7.15.4",
-    "@commitlint/cli": "13.2.0",
+    "@commitlint/cli": "13.2.1",
     "@commitlint/config-conventional": "13.2.0",
     "@react-native-community/eslint-config": "3.0.1",
     "@semantic-release/changelog": "6.0.0",
@@ -133,7 +133,7 @@
     "travis-deploy-once": "5.0.11",
     "ts-essentials": "9.0.0",
     "typescript": "4.4.3",
-    "yup": "0.32.9"
+    "yup": "0.32.10"
   },
   "browserslist": {
     "production": [
