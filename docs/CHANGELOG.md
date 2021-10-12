@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.58.1](https://github.com/ethanneff/example/compare/v2.58.0...v2.58.1) (2021-10-12)
+
+
+### Bug Fixes
+
+* add detail sceens ([b5fe36e](https://github.com/ethanneff/example/commit/b5fe36e22bcf34f211bb93a53f218029a2f5eb31))
+* better stuff ([2c7d781](https://github.com/ethanneff/example/commit/2c7d78170a58f64e7bff496009c76788efa11f93))
+* update deps ([320d57c](https://github.com/ethanneff/example/commit/320d57ce36522c61ee5eae697d8c919032d1dbb1))
+* update deps ([193afc5](https://github.com/ethanneff/example/commit/193afc51612e61b19f41e225b9d672256981c0f5))
+
 # [2.58.0](https://github.com/ethanneff/example/compare/v2.57.16...v2.58.0) (2021-10-06)
 
 
