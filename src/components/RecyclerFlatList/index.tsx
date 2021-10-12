@@ -39,7 +39,7 @@ type RecyclerFlatListProps<T> = {
   >;
 };
 
-export const RecyclerFlatList = <T extends unknown>({
+export const RecyclerFlatList = <T,>({
   data,
   onEndReached,
   onRefetch,
