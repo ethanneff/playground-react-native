@@ -97,15 +97,17 @@ export const reducers = combineReducers({
 
 const blacklist = ['gameOfLife'];
 const persistConfig = { key: 'root', storage: Storage, blacklist };
-const middlewares: Middleware[] = [thunk, syncMiddleware];
-const composers =
-  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // eslint-disable-line no-underscore-dangle
-const enhancers = composers(applyMiddleware(...middlewares));
-
+const middlewares = [thunk, syncMiddleware];
+if (__DEV__ && !process.env.JEST_WORKER_ID) {
+  const createDebugger = require('redux-flipper').default;
+  middlewares.push(createDebugger());
+}
 const persistedReducer = persistReducer(persistConfig, reducers);
-export const store = createStore(persistedReducer, enhancers);
+export const store = createStore(
+  persistedReducer,
+  applyMiddleware(...middlewares),
+);
 const persistor = persistStore(store);
-persistor.purge();
 
 type Props = { children: ReactNode };
 export const ReduxProvider = memo(function ReduxProvider({ children }: Props) {

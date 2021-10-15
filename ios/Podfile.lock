@@ -820,6 +820,8 @@ PODS:
     - react-native-config/App (= 1.4.4)
   - react-native-config/App (1.4.4):
     - React-Core
+  - react-native-flipper (0.115.0):
+    - React-Core
   - react-native-get-random-values (1.7.0):
     - React-Core
   - react-native-netinfo (6.0.2):
@@ -908,26 +910,26 @@ PODS:
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
-  - RNFBAnalytics (12.9.0):
+  - RNFBAnalytics (12.9.1):
     - Firebase/Analytics (= 8.8.0)
     - React-Core
     - RNFBApp
-  - RNFBApp (12.9.0):
+  - RNFBApp (12.9.1):
     - Firebase/CoreOnly (= 8.8.0)
     - React-Core
-  - RNFBAuth (12.9.0):
+  - RNFBAuth (12.9.1):
     - Firebase/Auth (= 8.8.0)
     - React-Core
     - RNFBApp
-  - RNFBCrashlytics (12.9.0):
+  - RNFBCrashlytics (12.9.1):
     - Firebase/Crashlytics (= 8.8.0)
     - React-Core
     - RNFBApp
-  - RNFBFirestore (12.9.0):
+  - RNFBFirestore (12.9.1):
     - Firebase/Firestore (= 8.8.0)
     - React-Core
     - RNFBApp
-  - RNFBRemoteConfig (12.9.0):
+  - RNFBRemoteConfig (12.9.1):
     - Firebase/RemoteConfig (= 8.8.0)
     - React-Core
     - RNFBApp
@@ -1036,6 +1038,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-apple-authentication (from `../node_modules/react-native-apple-authentication`)
   - react-native-config (from `../node_modules/react-native-config`)
+  - react-native-flipper (from `../node_modules/react-native-flipper`)
   - react-native-get-random-values (from `../node_modules/react-native-get-random-values`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
@@ -1160,6 +1163,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-apple-authentication"
   react-native-config:
     :path: "../node_modules/react-native-config"
+  react-native-flipper:
+    :path: "../node_modules/react-native-flipper"
   react-native-get-random-values:
     :path: "../node_modules/react-native-get-random-values"
   react-native-netinfo:
@@ -1297,6 +1302,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 41e58e5b8e3e0bf061fdf725b03f2144014a8fb0
   react-native-apple-authentication: b5981be2574a68db962b69e907dcb39264fea201
   react-native-config: 72d948053a442779b3178fddd571e37f118ef606
+  react-native-flipper: 64bca5153bca1b90cbec7ed49f495aaf1facf14b
   react-native-get-random-values: 237bffb1c7e05fb142092681531810a29ba53015
   react-native-netinfo: 92e6e4476eb8bf6fc2d7c0a6ca0a1406f663d73a
   react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
@@ -1319,12 +1325,12 @@ SPEC CHECKSUMS:
   RNDeviceInfo: 8a06046616c6b5c03787b04f265fa3b52b37c80b
   RNDevMenu: fd325b5554b61fe7f48d9205a3877cf5ee88cd7c
   RNFastImage: 1f2cab428712a4baaf78d6169eaec7f622556dd7
-  RNFBAnalytics: 3529535d627b4a9b481dac75f2a0c43ede3ae1c0
-  RNFBApp: d11e8ae04b9b6230f3a28b70761f2edd185deaa8
-  RNFBAuth: 5398407c7991175f0f3a8d0a9581ab6d326d3762
-  RNFBCrashlytics: 1b32d35f44bacdeee49c522585037d2ba32e074e
-  RNFBFirestore: 8891f315a65da5ace3c5a70a6f1b33cdc8dac5bd
-  RNFBRemoteConfig: 33f92ffdf6308e36bdab9aab48204fd8974f4e7b
+  RNFBAnalytics: 6bf7a27b94a795a688d837763d59090194e9f7c8
+  RNFBApp: ece97bfe0a926247591c0aa0bdfe384f06cf46b5
+  RNFBAuth: f4fe289725796c3515351e54697f22506ee7900a
+  RNFBCrashlytics: 6350d759bb73abb03c6505c0e424b37ed7ef28c5
+  RNFBFirestore: e4f8bad2014105cfcfe7be5c4b6cd5a6fb4af2e7
+  RNFBRemoteConfig: 0a0d05b9f16c1d063db09be0f8b303d0b3bcb78b
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
   RNRate: 94f57c773e155ca0d0aeeba9c10a32bce9030daf
