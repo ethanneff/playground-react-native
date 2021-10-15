@@ -1,8 +1,7 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import axios, { AxiosRequestConfig } from 'axios';
 import { useCallback, useEffect, useRef } from 'react';
-import { AnyAction, Dispatch, MiddlewareAPI } from 'redux';
-import { RootAction, RootStore } from 'root-types';
+import { RootAction, RootMiddleware } from 'root-types';
 
 const enabled = false; // TODO: turn on
 const refreshTimeout = 2000;
@@ -17,14 +16,6 @@ const reduxWhiteList: ReduxWhitelist = {
   'sync/download': 1,
   'device/LOAD': 1,
 };
-
-type GenericMiddleware<S, E extends AnyAction> = (
-  api: Dispatch<E> extends Dispatch<AnyAction>
-    ? MiddlewareAPI<Dispatch<E>, S>
-    : never,
-) => (_: Dispatch<E>) => (__: E) => ReturnType<Dispatch<E>>;
-
-type Middleware = GenericMiddleware<RootStore, RootAction>;
 
 const syncQueue: SyncQueue = {
   key: '@syncQuery',
@@ -54,7 +45,7 @@ const syncQueue: SyncQueue = {
   },
 };
 
-export const syncMiddleware: Middleware = (_) => (dispatch) => (action) => {
+export const syncMiddleware: RootMiddleware = (_) => (dispatch) => (action) => {
   if (reduxWhiteList[action.type] && enabled) syncQueue.set([action.type]);
   return dispatch(action);
 };
