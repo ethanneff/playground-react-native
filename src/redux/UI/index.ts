@@ -1,34 +1,71 @@
 import { RootAction } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
+import { MonoMultiColor } from '../../features/Config';
 import { logout } from '../Auth';
 
-export const toggleLoading = createAction('ui/loading')<boolean>();
-export const toggleActionSheet = createAction('ui/actionSheet')<boolean>();
-export const toggleToast = createAction('ui/toast')<boolean>();
-export const toggleNotification = createAction('ui/notification')<boolean>();
-export const toggleAlert = createAction('ui/alert')<boolean>();
+type ToggleLoading = {
+  visible: boolean;
+  onBackgroundPress?: () => void;
+};
+
+type ToggleAlert = {
+  visible: boolean;
+  title: string;
+  message?: string;
+  onBackgroundPress?: () => void;
+  confirmTitle?: string;
+  onConfirmPress?: () => void;
+  cancelTitle?: string;
+  onCancelPress?: () => void;
+};
+
+type ToggleNotification = {
+  visible: boolean;
+  title: string;
+  message?: string;
+  type?: keyof MonoMultiColor;
+};
+
+type ActionSheetItem = {
+  title: string;
+  color: keyof MonoMultiColor;
+  icon: string;
+};
+
+type ToggleActionSheet = {
+  visible: boolean;
+  title?: string;
+  message?: string;
+  items: ActionSheetItem[];
+  onBackgroundPress?: () => void;
+  onCancelPress?: () => void;
+};
+
+export const toggleLoading = createAction('ui/loading')<ToggleLoading>();
+export const toggleActionSheet =
+  createAction('ui/actionSheet')<ToggleActionSheet>();
+export const toggleNotification =
+  createAction('ui/notification')<ToggleNotification>();
+export const toggleAlert = createAction('ui/alert')<ToggleAlert>();
 export const uiActions = {
   toggleLoading,
   toggleActionSheet,
-  toggleToast,
   toggleNotification,
   toggleAlert,
 };
 
 type UiState = {
-  loading: boolean;
-  actionSheet: boolean;
-  toast: boolean;
-  notification: boolean;
-  alert: boolean;
+  loading: ToggleLoading;
+  actionSheet: ToggleActionSheet;
+  notification: ToggleNotification;
+  alert: ToggleAlert;
 };
 
 const uiInitialState: UiState = {
-  loading: false,
-  actionSheet: false,
-  toast: false,
-  notification: false,
-  alert: false,
+  loading: { visible: false },
+  actionSheet: { visible: false, items: [] },
+  notification: { visible: false, title: '' },
+  alert: { visible: false, title: '' },
 };
 
 export const uiReducer = (
@@ -44,9 +81,6 @@ export const uiReducer = (
     }
     case getType(toggleNotification): {
       return { ...state, notification: action.payload };
-    }
-    case getType(toggleToast): {
-      return { ...state, toast: action.payload };
     }
     case getType(toggleAlert): {
       return { ...state, alert: action.payload };
