@@ -1,4 +1,5 @@
 import React, { memo, ReactNode } from 'react';
+import { LoadingScreen } from '../../components';
 import {
   useAppState,
   useDeviceInfo,
@@ -16,5 +17,10 @@ export const AppProvider = memo(function AppProvider({ children }: Props) {
   useAppState();
   useKeyboard();
 
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <LoadingScreen />
+    </>
+  );
 });
