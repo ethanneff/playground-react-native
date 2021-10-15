@@ -70,7 +70,7 @@ export const NavigationProvider = memo(function NavigationProvider() {
   const { initialState, isReady, onStateChange, onRef } = usePersistedState();
   const { modalScreenOptions } = useNavScreenOptions();
   const fallback = <ActivityIndicator />;
-  const initialRouteName = (Config.APP || 'admin') as keyof RootRoutes;
+  const initialRouteName = Config.APP as keyof RootRoutes;
 
   if (!isReady) return fallback;
 
