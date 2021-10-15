@@ -35,11 +35,11 @@ export const useKeyboard = (): void => {
     const android = Platform.OS === 'android';
     const show = android ? 'keyboardDidShow' : 'keyboardWillShow';
     const hide = android ? 'keyboardDidHide' : 'keyboardWillHide';
-    Keyboard.addListener(show, onShow);
-    Keyboard.addListener(hide, onHide);
+    const showListener = Keyboard.addListener(show, onShow);
+    const hideListener = Keyboard.addListener(hide, onHide);
     return () => {
-      Keyboard.removeListener(show, onShow);
-      Keyboard.removeListener(hide, onHide);
+      showListener.remove();
+      hideListener.remove();
     };
   }, [onShow, onHide]);
 };
@@ -85,7 +85,10 @@ export const useNetInfo = (): void => {
   );
 
   useEffect(() => {
-    return NetInfo.addEventListener(handleChange);
+    const subscription = NetInfo.addEventListener(handleChange);
+    return () => {
+      subscription();
+    };
   }, [handleChange]);
 };
 
