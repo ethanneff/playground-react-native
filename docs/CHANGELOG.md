@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.59.1](https://github.com/ethanneff/example/compare/v2.59.0...v2.59.1) (2021-10-15)
+
+
+### Bug Fixes
+
+* update to RN 66 ([5b5ae1d](https://github.com/ethanneff/example/commit/5b5ae1de1b4115b47268db623e17dd7450773d8a))
+
 # [2.59.0](https://github.com/ethanneff/example/compare/v2.58.2...v2.59.0) (2021-10-15)
 
 
