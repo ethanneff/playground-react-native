@@ -1,12 +1,6 @@
 import React, { memo, ReactNode } from 'react';
 import { Provider } from 'react-redux';
-import {
-  applyMiddleware,
-  combineReducers,
-  compose,
-  createStore,
-  Middleware,
-} from 'redux';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import thunk from 'redux-thunk';
@@ -21,6 +15,8 @@ import {
   networkReducer,
   themeActions,
   themeReducer,
+  uiActions,
+  uiReducer,
 } from '.';
 import {
   checklistActions,
@@ -74,6 +70,7 @@ export const actions = {
   completeUser: completeUserActions,
   completeAuth: completeAuthActions,
   gameOfLife: gameOfLifeActions,
+  ui: uiActions,
 };
 
 export const reducers = combineReducers({
@@ -93,6 +90,7 @@ export const reducers = combineReducers({
   completeUser: completeUserReducer,
   completeAuth: completeAuthReducer,
   gameOfLife: gameOfLifeReducer,
+  ui: uiReducer,
 });
 
 const blacklist = ['gameOfLife'];

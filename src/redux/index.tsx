@@ -8,6 +8,7 @@ export * from './Device';
 export * from './Dimension';
 export * from './Network';
 export * from './Theme';
+export * from './UI';
 
 export const useRootSelector: TypedUseSelectorHook<RootState> = useSelector;
 export const useRootDispatch: () => Dispatch<RootAction> &
