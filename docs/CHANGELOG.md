@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.58.2](https://github.com/ethanneff/example/compare/v2.58.1...v2.58.2) (2021-10-15)
+
+
+### Bug Fixes
+
+* add flipper ([91dad0a](https://github.com/ethanneff/example/commit/91dad0ac8707b980067b45443094263a50f899d5))
+* add ui reducer ([a6ce39a](https://github.com/ethanneff/example/commit/a6ce39a0175da659781650fb05f35a9a87a37a5c))
+* change core to admin ([30bae89](https://github.com/ethanneff/example/commit/30bae8982c162228e3504ba561dc2e3d095e5950))
+* make rootmiddleware type ([f35d770](https://github.com/ethanneff/example/commit/f35d770aeb5a8dfe1613d75f878eecf1df37bd57))
+* update subscriptions ([c857ac9](https://github.com/ethanneff/example/commit/c857ac9b796dddba63c1902f822b803b196fa525))
+
 ## [2.58.1](https://github.com/ethanneff/example/compare/v2.58.0...v2.58.1) (2021-10-12)
 
 
