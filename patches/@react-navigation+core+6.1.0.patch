@@ -1,5 +1,5 @@
 diff --git a/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts b/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts
-index afd9639..b71c0f1 100644
+index 173ef18..de053e3 100644
 --- a/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts
 +++ b/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts
 @@ -1,4 +1,4 @@
@@ -18,7 +18,7 @@ index afd9639..b71c0f1 100644
  };
  export declare type EventArg<EventName extends string, CanPreventDefault extends boolean | undefined = false, Data = undefined> = {
      /**
-@@ -482,4 +485,5 @@ export declare type PathConfig<ParamList extends {}> = {
+@@ -493,4 +496,5 @@ export declare type PathConfig<ParamList extends {}> = {
  export declare type PathConfigMap<ParamList extends {}> = {
      [RouteName in keyof ParamList]?: NonNullable<ParamList[RouteName]> extends NavigatorScreenParams<infer T, any> ? string | PathConfig<T> : string | Omit<PathConfig<{}>, 'screens' | 'initialRouteName'>;
  };
