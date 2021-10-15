@@ -1,5 +1,18 @@
 # Changelog
 
+# [2.59.0](https://github.com/ethanneff/example/compare/v2.58.2...v2.59.0) (2021-10-15)
+
+
+### Bug Fixes
+
+* add container styles to touchable ([8fbd52b](https://github.com/ethanneff/example/commit/8fbd52ba56c49e21b84a7930afddd7d7e9669b93))
+
+
+### Features
+
+* add global navigation examples ([6cba9fc](https://github.com/ethanneff/example/commit/6cba9fc5fcaa8c5e19d18aeb349d0f5aaa33af86))
+* add loading screen ([f163b84](https://github.com/ethanneff/example/commit/f163b84352ee18dede77f49f2ab9b6dc4773ed77))
+
 ## [2.58.2](https://github.com/ethanneff/example/compare/v2.58.1...v2.58.2) (2021-10-15)
 
 
