@@ -10,8 +10,8 @@ type ToggleLoading = {
 
 type ToggleAlert = {
   visible: boolean;
-  title: string;
-  message?: string;
+  title?: string;
+  description?: string;
   onBackgroundPress?: () => void;
   confirmTitle?: string;
   onConfirmPress?: () => void;
@@ -21,8 +21,8 @@ type ToggleAlert = {
 
 type ToggleNotification = {
   visible: boolean;
-  title: string;
-  message?: string;
+  title?: string;
+  description?: string;
   type?: keyof MonoMultiColor;
 };
 
@@ -35,8 +35,8 @@ type ActionSheetItem = {
 type ToggleActionSheet = {
   visible: boolean;
   title?: string;
-  message?: string;
-  items: ActionSheetItem[];
+  description?: string;
+  items?: ActionSheetItem[];
   onBackgroundPress?: () => void;
   onCancelPress?: () => void;
 };
@@ -63,9 +63,9 @@ type UiState = {
 
 const uiInitialState: UiState = {
   loading: { visible: false },
-  actionSheet: { visible: false, items: [] },
-  notification: { visible: false, title: '' },
-  alert: { visible: false, title: '' },
+  actionSheet: { visible: false },
+  notification: { visible: false },
+  alert: { visible: false },
 };
 
 export const uiReducer = (

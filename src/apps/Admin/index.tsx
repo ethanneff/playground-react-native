@@ -39,12 +39,18 @@ export default memo(function Admin() {
       toggleAlert({
         visible: true,
         title: 'Alert',
-        message: 'This is an alert',
-        onBackgroundPress: () => undefined,
+        description: 'This is an alert',
+        onBackgroundPress: () => {
+          dispatch(toggleAlert({ visible: false }));
+        },
         confirmTitle: 'Confirm',
-        onConfirmPress: () => undefined,
+        onConfirmPress: () => {
+          dispatch(toggleAlert({ visible: false }));
+        },
         cancelTitle: 'Cancel',
-        onCancelPress: () => undefined,
+        onCancelPress: () => {
+          dispatch(toggleAlert({ visible: false }));
+        },
       }),
     );
   }, [dispatch]);
@@ -54,7 +60,7 @@ export default memo(function Admin() {
       toggleNotification({
         visible: true,
         title: 'Notification',
-        message: 'This is an notification',
+        description: 'This is an notification',
         type: 'accent',
       }),
     );
@@ -65,7 +71,7 @@ export default memo(function Admin() {
       toggleActionSheet({
         visible: true,
         title: 'Action sheet',
-        message: 'This is an action sheet',
+        description: 'This is an action sheet',
         items: [],
         onBackgroundPress: () => undefined,
         onCancelPress: () => undefined,
