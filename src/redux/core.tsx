@@ -50,7 +50,7 @@ import {
   responsesActions,
   responsesReducer,
 } from '../apps/Playground/Questionnaire/models';
-import { Storage } from '../conversions';
+import { addFlipperMiddleware, Storage } from '../conversions';
 import { syncMiddleware, useSync } from './sync';
 
 export const actions = {
@@ -96,10 +96,7 @@ export const reducers = combineReducers({
 const blacklist = ['gameOfLife'];
 const persistConfig = { key: 'root', storage: Storage, blacklist };
 const middlewares = [thunk, syncMiddleware];
-if (__DEV__ && !process.env.JEST_WORKER_ID) {
-  const createDebugger = require('redux-flipper').default;
-  middlewares.push(createDebugger());
-}
+addFlipperMiddleware(middlewares);
 const persistedReducer = persistReducer(persistConfig, reducers);
 export const store = createStore(
   persistedReducer,

@@ -1,6 +1,7 @@
 export * from './AppleAuthentication';
 export * from './FastImage';
 export * from './Firebase';
+export * from './Flipper';
 export * from './GestureHandler';
 export * from './GoogleSignIn';
 export * from './KeyboardAwareScrollView';
