@@ -1843,10 +1843,10 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@mdi/js@6.3.95":
-  version "6.3.95"
-  resolved "https://registry.yarnpkg.com/@mdi/js/-/js-6.3.95.tgz#cffd5f04502fe5d8a65656e6c437d66963d3836d"
-  integrity sha512-/EI+ao3caXcYTWGYwwOylZKmO0ilywwE8CsEZl5L82Rgsv1eLUlCmLIrViE5A9pISsaTZELkzgbP1lQSGwRY8A==
+"@mdi/js@6.5.95":
+  version "6.5.95"
+  resolved "https://registry.yarnpkg.com/@mdi/js/-/js-6.5.95.tgz#2d895b013408f213252b77c30e0fdaaba6dc8b4b"
+  integrity sha512-x/bwEoAGP+Mo10Dfk5audNIPi7Yz8ZBrILcbXLW3ShOI/njpgodzpgpC2WYK3D2ZSC392peRRemIFb/JsyzzYQ==
 
 "@mdi/react@1.5.0":
   version "1.5.0"
