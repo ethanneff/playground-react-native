@@ -1,5 +1,17 @@
 # Changelog
 
+# [2.60.0](https://github.com/ethanneff/example/compare/v2.59.5...v2.60.0) (2021-10-19)
+
+
+### Bug Fixes
+
+* make flipper work with web ([30d5e84](https://github.com/ethanneff/example/commit/30d5e84dd386a683eb950c14f37318a76b624f2b))
+
+
+### Features
+
+* add alert ([57f4e6b](https://github.com/ethanneff/example/commit/57f4e6bf36329a461db5b13e1f9c24b0ca67bb5f))
+
 ## [2.59.5](https://github.com/ethanneff/example/compare/v2.59.4...v2.59.5) (2021-10-19)
 
 
