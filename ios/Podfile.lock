@@ -823,11 +823,11 @@ PODS:
     - react-native-config/App (= 1.4.5)
   - react-native-config/App (1.4.5):
     - React-Core
-  - react-native-flipper (0.119.0):
+  - react-native-flipper (0.122.0):
     - React-Core
   - react-native-get-random-values (1.7.1):
     - React-Core
-  - react-native-netinfo (7.0.0):
+  - react-native-netinfo (7.1.2):
     - React-Core
   - react-native-safe-area-context (3.3.2):
     - React-Core
@@ -904,7 +904,7 @@ PODS:
     - React-Core
   - RNCMaskedView (0.1.11):
     - React
-  - RNDeviceInfo (8.4.7):
+  - RNDeviceInfo (8.4.8):
     - React-Core
   - RNDevMenu (4.0.2):
     - React-Core
@@ -1312,9 +1312,9 @@ SPEC CHECKSUMS:
   React-logger: e522e76fa3e9ec3e7d7115b49485cc065cf4ae06
   react-native-apple-authentication: b5981be2574a68db962b69e907dcb39264fea201
   react-native-config: 6502b1879f97ed5ac570a029961fc35ea606cd14
-  react-native-flipper: e079eb24149005c71ca9067a6ae49d74cfb3dfbd
+  react-native-flipper: 102931f77ac9c94294f2117b463be6f9d55fab39
   react-native-get-random-values: 2c4ff6b44cb71291dabe9a8ae87d3877dcf387da
-  react-native-netinfo: 261113e321544866a2e8f00650cbfd4df802e2ba
+  react-native-netinfo: 07e8299fff4d2bea17d00b519d4f9c67c7dbbe9b
   react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
   react-native-slider: 6e9b86e76cce4b9e35b3403193a6432ed07e0c81
   React-perflogger: 73732888d37d4f5065198727b167846743232882
@@ -1332,7 +1332,7 @@ SPEC CHECKSUMS:
   RNAppleAuthentication: 63c2127ace11985b94f852fc480eb84145653712
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
-  RNDeviceInfo: b32d24c84e40d54b736e62a7d2abd15e1225258d
+  RNDeviceInfo: 0400a6d0c94186d1120c3cbd97b23abc022187a9
   RNDevMenu: fd325b5554b61fe7f48d9205a3877cf5ee88cd7c
   RNFastImage: 1f2cab428712a4baaf78d6169eaec7f622556dd7
   RNFBAnalytics: f7216b73a72ba21fab0778e86c8257024f89cb3a
