@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.60.3](https://github.com/ethanneff/example/compare/v2.60.2...v2.60.3) (2021-11-29)
+
+
+### Bug Fixes
+
+* update deps ([e19d2e6](https://github.com/ethanneff/example/commit/e19d2e672b08dda9f8306dee3665b761a715319e))
+
 ## [2.60.2](https://github.com/ethanneff/example/compare/v2.60.1...v2.60.2) (2021-11-26)
 
 
