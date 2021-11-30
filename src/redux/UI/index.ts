@@ -2,6 +2,7 @@ import { RootAction } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 import { MonoMultiColor } from '../../features/Config';
 import { logout } from '../Auth';
+import { changeAppStatus } from './../Device/index';
 
 type ToggleLoading = {
   visible: boolean;
@@ -87,6 +88,12 @@ export const uiReducer = (
     }
     case getType(logout): {
       return { ...uiInitialState };
+    }
+    case getType(changeAppStatus): {
+      if (action.payload !== 'background') {
+        return { ...uiInitialState };
+      }
+      return state;
     }
     default:
       return state;
