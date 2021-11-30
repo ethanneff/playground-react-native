@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.60.4](https://github.com/ethanneff/example/compare/v2.60.3...v2.60.4) (2021-11-30)
+
+
+### Bug Fixes
+
+* category stuff ([c07655c](https://github.com/ethanneff/example/commit/c07655c094e14d8a5036fb9af107d3c5874729c4))
+* hide loading if app backgrounded ([559d753](https://github.com/ethanneff/example/commit/559d753f408f88a0dee70a07e69d077fd78eee8b))
+* show nav back based on admin not core ([0411147](https://github.com/ethanneff/example/commit/041114759ff83ce6b568e4c4cd73c7172c76a924))
+* update deps ([deef551](https://github.com/ethanneff/example/commit/deef551180deed09fe9e8d9d58c150ed29537cdb))
+
 ## [2.60.3](https://github.com/ethanneff/example/compare/v2.60.2...v2.60.3) (2021-11-29)
 
 
