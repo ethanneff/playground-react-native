@@ -4,6 +4,7 @@
 
 - hourly journal
 - notifications every hour
+- count deep work hours
 
 ## Deep Work
 
@@ -27,9 +28,9 @@
 
 Deploy Android App (Focus)
 
-- [ ] add tab bar (day view, calendar, settings)
+- [x] add tab bar (day view, calendar, settings)
 - [ ] landing screens
-- [ ] login/ logout
+- [ ] login/logout
 - [ ] backend storage
 - [ ] redux
 

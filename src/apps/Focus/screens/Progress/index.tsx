@@ -1,11 +1,9 @@
-import { useNavigation } from '@react-navigation/core';
-import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo } from 'react';
-import { View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { Activity, Card, Screen, Text } from '../../../../components';
+import { Calendar, Card, Screen, Text } from '../../../../components';
 import { padding, useColor } from '../../../../features';
-import { AuthStackRoutes, Category } from '../../types';
+import { Category } from '../../types';
+import { CategoryCard } from './CategoryCard';
 
 // TODO: create CategoryDetail screen (activity, stats [total, streak, best], details, schedule [offdays])
 // TODO: click on category card opens CategoryDetail
@@ -15,54 +13,51 @@ import { AuthStackRoutes, Category } from '../../types';
 
 // TODO: create SegmentDetail screen (focus, intensity, category, notes)
 
+// TODO: how to track milestones
+// TODO: show journal for calendar press
+// TODO: show deep work count on calendar (as opacity color dot)
+// TODO: show streak per item (as opacity color dot)
+// TODO: allow way to sort and add new categories
+// TODO: make categories as flatlist
+// TODO: intensity + focus = deep work splash screen (with rotating captions... e.g. where focus goes, energy flows)
+
+const categories: Category[] = [
+  { id: '7', name: 'Ship Apps', total: 4 },
+  { id: '6', name: 'Grow Muscle', total: 3 },
+  { id: '5', name: 'Profit on Investments', total: 0 },
+  { id: '4', name: 'Master Leetcode', total: 23 },
+  { id: '3', name: 'Master System Design', total: 1 },
+  { id: '2', name: 'Lead Others', total: 12 },
+].sort((a, b) => b.total - a.total);
+
 export const Progress = memo(function Progress() {
-  const { navigate } = useNavigation<StackNavigationProp<AuthStackRoutes>>();
   const color = useColor();
 
-  const categories: Category[] = [
-    { id: '7', name: 'Ship Apps', total: 4 },
-    { id: '6', name: 'Grow Muscle', total: 3 },
-    { id: '5', name: 'Profit on Investments', total: 12 },
-    { id: '4', name: 'Master Leetcode', total: 23 },
-    { id: '3', name: 'Master System Design', total: 1 },
-    { id: '2', name: 'Lead Others', total: 12 },
-  ];
-
-  const handleCategoryPress = (category: Category) => () => {
-    navigate('category-detail', { category });
-  };
-
   return (
-    <Screen dropShadow title="Daily">
+    <Screen dropShadow title="Progress">
       <ScrollView
         contentContainerStyle={{
           padding: padding(4),
         }}
         style={{ backgroundColor: color.background.secondary }}
       >
-        <Activity site="random" title="Deep Work" username="random" />
+        <Text
+          emphasis="medium"
+          style={{ paddingVertical: padding(2) }}
+          title="Deep work over time"
+          type="h4"
+        />
+        <Card>
+          <Calendar />
+        </Card>
+        <Text
+          emphasis="medium"
+          style={{ paddingVertical: padding(2) }}
+          title="Areas of deep work"
+          type="h4"
+        />
         {categories.map((category) => (
-          <Card key={category.id} onPress={handleCategoryPress(category)}>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}
-            >
-              <Text
-                bold={false}
-                emphasis="high"
-                title={category.name}
-                type="h5"
-              />
-              <Text
-                emphasis="low"
-                title={category.total.toString()}
-                type="h6"
-              />
-            </View>
-          </Card>
+          <CategoryCard category={category} key={category.id} />
         ))}
       </ScrollView>
     </Screen>

@@ -55,7 +55,7 @@ export const Interval = memo(function Interval() {
   }, [items.length, loading]);
 
   return (
-    <Screen dropShadow onLeftPress={onLeftPress} title="Hourly">
+    <Screen dropShadow onLeftPress={onLeftPress} title="Journal">
       <FlatList
         data={items}
         getItemLayout={getItemLayout}
