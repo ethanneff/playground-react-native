@@ -5,7 +5,7 @@ type UseAdminNavBack = { onLeftPress: (() => void) | undefined };
 
 export const useAdminNavBack = (): UseAdminNavBack => {
   const { goBack } = useNavigation();
-  const admin = Config.APP === 'core';
+  const admin = Config.APP === 'admin';
 
   const onLeftPress = admin ? goBack : undefined;
   return { onLeftPress };
