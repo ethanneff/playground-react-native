@@ -4,9 +4,9 @@ import { Text } from '../Text';
 import { SentenceType } from './types';
 
 type Props = {
+  center?: boolean;
   sentences: SentenceType[];
   style: StyleProp<TextStyle>;
-  center?: boolean;
 };
 
 export const Sentence = memo(function Sentence({

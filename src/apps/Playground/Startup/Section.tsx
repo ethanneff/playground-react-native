@@ -3,8 +3,8 @@ import { Card, Text } from '../../../components';
 import { padding } from '../../../features';
 
 type Props = {
-  title: string;
   children: ReactNode;
+  title: string;
 };
 
 export const Section = ({ title, children }: Props): JSX.Element => {

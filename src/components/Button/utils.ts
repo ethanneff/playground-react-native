@@ -12,11 +12,11 @@ export const getButtonColor = (
 ): string => colorScheme.background[color];
 
 type StyleInterface = {
-  colorScheme: ColorTheme;
   color: keyof MonoMultiColor;
+  colorScheme: ColorTheme;
+  disabled?: boolean;
   emphasis: FontEmphasis;
   noPadding?: boolean;
-  disabled?: boolean;
 };
 
 export const getStyles = ({

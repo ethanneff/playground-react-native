@@ -7,12 +7,12 @@ import { Day } from './Day';
 import { ActivityDay, ActivityWeek } from './types';
 
 type Props = {
-  item: ActivityWeek;
-  max: number;
   index: number;
-  size: number;
+  item: ActivityWeek;
   margin: number;
+  max: number;
   onPress: (item: ActivityDay) => () => void;
+  size: number;
 };
 
 export const Week = memo(function Week({

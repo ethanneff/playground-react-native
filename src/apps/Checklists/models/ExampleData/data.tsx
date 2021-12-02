@@ -5,8 +5,8 @@ interface Source {
 }
 
 interface Reminder {
-  id: string;
   day: string;
+  id: string;
   time: string;
 }
 
@@ -19,41 +19,41 @@ type ChecklistItemStatus = 'Todo' | 'InProgress' | 'Reminded' | 'Done';
 export type ChecklistAccess = 'Read' | 'Write' | 'Comment';
 
 interface ChecklistItem {
-  id: string;
-  checklistId: string;
   active: boolean;
-  title: string;
-  status: ChecklistItemStatus;
+  checklistId: string;
   history?: ChecklistItemHistories;
+  id: string;
   reminder?: Reminders;
   source: Sources;
+  status: ChecklistItemStatus;
+  title: string;
 }
 
 interface ChecklistItemHistory {
-  id: string;
   createdAt: number;
-  updatedAt: number;
+  id: string;
   itemId: number;
   status: ChecklistItemStatus;
+  updatedAt: number;
 }
 
 interface Checklist {
-  id: string;
-  userId: string;
-  createdAt: string;
-  updatedAt: string;
-  viewedAt: string[];
   completedAt: string[];
+  createdAt: string;
+  id: string;
   items: string[];
   tags: string[];
+  updatedAt: string;
+  userId: string;
+  viewedAt: string[];
 }
 
 interface User {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
   checklists: string[];
+  email: string;
+  firstName: string;
+  id: string;
+  lastName: string;
 }
 
 interface Reminders {

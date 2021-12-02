@@ -7,20 +7,20 @@ export type MainStackRoutes = {
   'item-detail': undefined;
 };
 export type LandingStackRoutes = {
-  welcome: undefined;
-  'sign-up': undefined;
   'log-in': undefined;
   'password-reset': undefined;
+  'sign-up': undefined;
+  welcome: undefined;
 };
 export type ImplementStackRoutes = {
-  projects: undefined;
   project: undefined;
+  projects: undefined;
 };
 export type HomeStackRoutes = {
-  plan: undefined;
-  implement: undefined;
-  reflect: undefined;
   account: undefined;
+  implement: undefined;
+  plan: undefined;
+  reflect: undefined;
 };
 
 export type ImplementTabNavigation = CompositeNavigationProp<

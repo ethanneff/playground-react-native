@@ -11,6 +11,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:typescript-sort-keys/recommended',
   ],
   ignorePatterns: [
     'node_modules/',
@@ -23,38 +24,47 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   plugins: [
-    '@typescript-eslint',
+    'react',
+    'react-hooks',
+    'react-native',
     'import',
+    'jest',
+    '@typescript-eslint',
     'prettier',
-    'sort-keys-fix',
     'sonarjs',
+    'sort-keys-fix',
+    'typescript-sort-keys',
   ],
   root: true,
   rules: {
-    'prettier/prettier': 'error', // prettier
-    '@typescript-eslint/no-use-before-define': 'error', // typescript
+    // imports
     'import/no-cycle': 'error', // no circular dependencies
     'import/no-unresolved': ['error', { ignore: ['root-types'] }], // redux typing imports
+    // react-native
+    '@typescript-eslint/no-var-requires': 'off', // images
+    // vscode
+    'sort-keys': 'off',
+    'sort-imports': 'off',
+    // typescript
+    'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
+    '@typescript-eslint/no-use-before-define': 'error',
+    'no-use-before-define': 'off',
+    'default-param-last': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/require-default-props': 'off',
+    // style
     'react-hooks/exhaustive-deps': [
       'error',
       { enableDangerousAutofixThisMayCauseInfiniteLoops: true },
-    ], // auto hook deps
+    ],
     'react/function-component-definition': [
       'error',
       {
         namedComponents: 'arrow-function',
         unnamedComponents: 'arrow-function',
       },
-    ], // arrow functions
-    '@typescript-eslint/no-var-requires': 'off', // react native images
-    'react/jsx-filename-extension': 'off', // typescript
-    'react/require-default-props': 'off', // typescript
-    'one-var': 'off', // use multiple const
-    'sort-imports': 'off', // vscode import sorting
-    'no-use-before-define': 'off', // typescript
-    'default-param-last': 'off', // typescript
-    'sort-keys': 'off', // sort-keys-fix
-    'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }], // typescript
+    ],
+    'one-var': 'off',
     'no-magic-numbers': 'off',
     'no-ternary': 'off',
     'react/jsx-max-depth': 'off',
@@ -64,25 +74,28 @@ module.exports = {
     'no-nested-ternary': 'off',
     'class-methods-use-this': 'off',
     'sonarjs/no-duplicate-string': 'off',
-    'capitalized-comments': 'off', // comments
-    'multiline-comment-style': 'off', // comments
-    'no-inline-comments': 'off', // comments
-    'line-comment-position': 'off', // comments
     'no-plusplus': 'off', // for loops
     'id-length': 'off', // 'x' and 'y' variables
     'no-undefined': 'off', // react navigation types
-    'react/jsx-one-expression-per-line': 'off', // prettier
-    'react/jsx-max-props-per-line': 'off', // prettier
-    'react/jsx-newline': 'off', // prettier
-    'react/jsx-indent': 'off', // prettier
-    'react/jsx-indent-props': 'off', // prettier
-    'react-native/no-inline-styles': 'off', // react native style prop
-    'react/forbid-component-props': 'off', // react native style prop
-    'no-warning-comments': 'off', // remove
-    'react/no-multi-comp': 'off', // remove
-    'no-console': 'off', // remove
-    '@typescript-eslint/no-explicit-any': 'off', // remove
-    'sonarjs/cognitive-complexity': 'off', // remove
+    // comments
+    'capitalized-comments': 'off',
+    'multiline-comment-style': 'off',
+    'no-inline-comments': 'off',
+    'line-comment-position': 'off',
+    // prettier
+    'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-max-props-per-line': 'off',
+    'react/jsx-newline': 'off',
+    'react/jsx-indent': 'off',
+    'react/jsx-indent-props': 'off',
+    // remove
+    'react-native/no-inline-styles': 'off',
+    'react/forbid-component-props': 'off',
+    'no-warning-comments': 'off',
+    'react/no-multi-comp': 'off',
+    'no-console': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    'sonarjs/cognitive-complexity': 'off',
   },
   settings: {
     'import/ignore': ['react-native'],

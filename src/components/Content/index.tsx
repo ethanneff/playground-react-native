@@ -6,7 +6,7 @@ import { Sentence } from '../Sentence';
 import { Text } from '../Text';
 import { Sections } from './types';
 
-type Props = { sections: Sections; center?: boolean };
+type Props = { center?: boolean; sections: Sections };
 
 export const Content = memo(function Content({ sections, center }: Props) {
   const styles = StyleSheet.create({

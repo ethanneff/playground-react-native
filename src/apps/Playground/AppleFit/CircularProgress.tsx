@@ -4,9 +4,9 @@ import { HalfCircle } from './HalfCircle';
 import { Ring } from './types';
 
 interface CircularProgressProps {
-  theta: number;
-  ring: Ring;
   radius: number;
+  ring: Ring;
+  theta: number;
 }
 
 export const CircularProgress = ({

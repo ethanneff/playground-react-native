@@ -5,15 +5,15 @@ import { ScrollView } from '../../conversions';
 import { padding, useAdminNavBack, useColor } from '../../features';
 
 interface SectionProps {
-  title: string;
-  subtitle?: string;
   description?: string;
   items?: string[];
+  subtitle?: string;
+  title: string;
 }
 
 type ChecklistItemProps = {
-  item: string;
   index: number;
+  item: string;
 };
 
 const ChecklistItem = ({ item, index }: ChecklistItemProps) => {

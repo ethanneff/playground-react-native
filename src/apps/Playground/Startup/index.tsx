@@ -10,15 +10,15 @@ import { Section } from './Section';
 // https://www.startupschool.org/updates/250717/edit
 
 type Form = {
-  launched: boolean;
-  launchWeeks: string;
-  usersTalkedTo: string;
-  usersLearnedFrom: string;
-  topGoals: string;
-  primaryMetric: string;
   biggestObstacle: string;
+  launchWeeks: string;
+  launched: boolean;
   morale: string;
+  primaryMetric: string;
   targetCustomer: string;
+  topGoals: string;
+  usersLearnedFrom: string;
+  usersTalkedTo: string;
 };
 
 const initialState: Form = {

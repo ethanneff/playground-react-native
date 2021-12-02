@@ -8,9 +8,9 @@ import { AuthStackRoutes, Item } from '../../types';
 import { ListSection } from './ListSection';
 
 type Props = {
-  showSection: boolean;
-  item: Item;
   currentItem: boolean;
+  item: Item;
+  showSection: boolean;
 };
 
 export const ListItem = memo(function ListItem({

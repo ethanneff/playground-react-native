@@ -9,8 +9,8 @@ interface Touches {
 }
 
 interface Outcome {
-  spread: boolean;
   pinch: boolean;
+  spread: boolean;
 }
 
 export class GestureHandler {

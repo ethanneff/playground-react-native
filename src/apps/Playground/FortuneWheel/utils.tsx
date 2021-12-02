@@ -1,6 +1,6 @@
 type GetRandomRange = {
-  min: number;
   max: number;
+  min: number;
 };
 
 const getRandomRange = ({ min, max }: GetRandomRange) => {
@@ -8,10 +8,10 @@ const getRandomRange = ({ min, max }: GetRandomRange) => {
 };
 
 type GetNewLocation = {
-  minSpin: number;
-  maxSpin: number;
-  numOfSegments: number;
   location: number;
+  maxSpin: number;
+  minSpin: number;
+  numOfSegments: number;
 };
 
 export const getNewLocation = ({
@@ -27,9 +27,9 @@ export const getNewLocation = ({
 };
 
 type GetWinnerIndex = {
+  angleOfSegment: number;
   location: number;
   numOfSegments: number;
-  angleOfSegment: number;
 };
 
 export const getWinnerIndex = ({

@@ -4,8 +4,8 @@ import { AngularGradient } from './AngularGradient';
 import { Ring } from './types';
 
 type Props = {
-  radius: number;
   flip?: boolean;
+  radius: number;
   ring: Ring;
   type: 'foreground' | 'background';
 };

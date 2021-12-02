@@ -7,25 +7,25 @@ import { useColor, useDriver, useDropShadow } from '../../../features';
 import { getNewLocation, getWinnerIndex } from './utils';
 
 type Segment = {
-  value: string;
-  display: string;
   color: string;
+  display: string;
+  value: string;
 };
 
 type Props = {
-  size?: number;
-  padAngle?: number;
   backgroundColor?: string;
-  textColor?: string;
+  bounceSpeed?: number;
   fontSize?: number;
   innerRadius?: number;
-  segments: Segment[];
-  spinSpeed?: number;
-  noBounce?: boolean;
-  bounceSpeed?: number;
-  minSpin?: number;
   maxSpin?: number;
+  minSpin?: number;
+  noBounce?: boolean;
   onComplete: (segment: Segment) => void;
+  padAngle?: number;
+  segments: Segment[];
+  size?: number;
+  spinSpeed?: number;
+  textColor?: string;
 };
 
 export const Wheel = memo(

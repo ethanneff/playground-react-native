@@ -5,14 +5,14 @@ import { Icon, TouchableOpacity } from '../../components';
 import { MonoMultiColor, padding } from '../../features/Config';
 
 type Props = {
-  size: number;
-  count: number;
-  rating: number;
-  onPress: (index: number) => void;
   colorFilled?: keyof MonoMultiColor;
   colorUnfilled?: keyof MonoMultiColor;
+  count: number;
   iconFilled?: string;
   iconUnfilled?: string;
+  onPress: (index: number) => void;
+  rating: number;
+  size: number;
 };
 
 export const Rating = memo(function RatingMemo({

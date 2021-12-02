@@ -7,12 +7,12 @@ import { ListHeader } from './ListHeader';
 import { ListItems } from './ListItems';
 
 type ListProps = {
-  listWidth?: number;
-  itemId: string;
-  parentItemId: string | null;
-  orientation?: 'vertical' | 'horizontal';
   footer?: ReactElement;
+  itemId: string;
+  listWidth?: number;
   maxHeight: number;
+  orientation?: 'vertical' | 'horizontal';
+  parentItemId: string | null;
 };
 
 export const List = memo(function List({

@@ -11,20 +11,20 @@ import { useColor } from '../../features/Theme';
 import { NavBar } from './NavBar';
 
 type Props = {
-  testID?: string;
-  title?: string;
   border?: boolean;
-  leftIcon?: string;
-  rightIcon?: string;
-  onLeftPress?: () => void;
-  onRightPress?: () => void;
-  secondLeftIcon?: string;
-  secondRightIcon?: string;
-  onSecondLeftPress?: () => void;
-  onSecondRightPress?: () => void;
   children?: ReactNode;
   dropShadow?: boolean;
+  leftIcon?: string;
+  onLeftPress?: () => void;
+  onRightPress?: () => void;
+  onSecondLeftPress?: () => void;
+  onSecondRightPress?: () => void;
+  rightIcon?: string;
+  secondLeftIcon?: string;
+  secondRightIcon?: string;
   style?: StyleProp<ViewStyle>;
+  testID?: string;
+  title?: string;
 };
 
 export const Screen = memo(function Screen({

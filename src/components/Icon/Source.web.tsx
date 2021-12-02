@@ -3,8 +3,8 @@ import React, { CSSProperties, memo } from 'react';
 import { Icons } from './config';
 
 type Props = {
-  name: keyof typeof Icons;
   color?: string;
+  name: keyof typeof Icons;
   style?: CSSProperties | undefined;
 };
 

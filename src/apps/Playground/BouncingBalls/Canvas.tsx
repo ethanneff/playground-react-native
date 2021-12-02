@@ -3,15 +3,15 @@ import { LayoutChangeEvent, StyleSheet, View } from 'react-native';
 import { useColor } from '../../../features';
 
 type Props = {
-  onLayout: (event: LayoutChangeEvent) => void;
   children: ReactNode;
+  onLayout: (event: LayoutChangeEvent) => void;
 };
 
 export type CanvasDimensions = {
+  height: number;
+  width: number;
   x: number;
   y: number;
-  width: number;
-  height: number;
 };
 
 export const Canvas = memo(function Canvas({ children, onLayout }: Props) {

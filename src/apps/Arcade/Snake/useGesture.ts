@@ -21,8 +21,8 @@ const inverse: { [key: string]: Direction } = {
 export const useGesture = ({
   noReverse,
 }: Props): {
-  panHandlers: GestureResponderHandlers;
   direction: MutableRefObject<Direction>;
+  panHandlers: GestureResponderHandlers;
 } => {
   const direction = useRef<Direction>('up');
   const panResponder: PanResponderInstance = PanResponder.create({

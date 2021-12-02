@@ -8,12 +8,12 @@ import { useColor } from '../../features/Theme';
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
 
 type Props = {
+  backgroundColor?: string;
+  borderRadius?: number;
+  duration?: number;
+  foregroundColor?: string;
   height?: number;
   width?: number;
-  borderRadius?: number;
-  backgroundColor?: string;
-  foregroundColor?: string;
-  duration?: number;
 };
 
 export const SkeletonLoader = ({

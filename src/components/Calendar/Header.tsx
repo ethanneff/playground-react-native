@@ -7,10 +7,10 @@ import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 
 type Props = {
-  unix: number;
-  onMonthIncrease(): void;
   onMonthDecrease(): void;
+  onMonthIncrease(): void;
   onTitlePress(): void;
+  unix: number;
 };
 export const CalendarHeader = memo(function CalendarHeader({
   unix,

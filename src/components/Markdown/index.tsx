@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
 });
 
 type Props = {
-  title: string;
   style?: TextStyle;
+  title: string;
 };
 
 export class Markdown extends React.PureComponent<Props> {

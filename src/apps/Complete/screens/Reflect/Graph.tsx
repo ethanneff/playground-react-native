@@ -11,8 +11,8 @@ interface DataPoint {
 
 interface GraphProps {
   data: DataPoint[];
-  width: number;
   height: number;
+  width: number;
 }
 
 const strokeWidth = 4;

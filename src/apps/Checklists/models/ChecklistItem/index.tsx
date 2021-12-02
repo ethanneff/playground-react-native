@@ -51,17 +51,17 @@ export type ChecklistItemReducer = {
   items: ChecklistItems;
 };
 export type ChecklistItem = {
+  active: boolean;
+  checklistId: string;
+  completed: boolean;
+  createdAt: number;
+  description?: string;
   id: string;
   name: string;
-  checklistId: string;
-  description?: string;
-  completed: boolean;
-  active: boolean;
-  userId: string;
   // sources?: string[]; // TODO: move into other reducer
   order?: number;
-  createdAt: number;
   updatedAt: number;
+  userId: string;
 };
 export type ChecklistItems = { [key: string]: ChecklistItem };
 

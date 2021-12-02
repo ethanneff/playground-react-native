@@ -5,13 +5,13 @@ export type ColorChoice =
   | 'violet'
   | 'lightgrey';
 
-export type TrackPosition = { x: number; y: number; size: number };
+export type TrackPosition = { size: number; x: number; y: number };
 
 export type TrackPositionWithColor = TrackPosition & { color: ColorChoice };
 
 export type CanvasDimensions = {
+  height: number;
+  width: number;
   x: number;
   y: number;
-  width: number;
-  height: number;
 };

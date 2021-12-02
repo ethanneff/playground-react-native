@@ -8,8 +8,8 @@ import { Text } from '../Text';
 import { CarouselSlide } from './types';
 
 type Props = {
-  width: number;
   item: CarouselSlide;
+  width: number;
 };
 
 export const Item = memo(function Item({ item, width }: Props) {

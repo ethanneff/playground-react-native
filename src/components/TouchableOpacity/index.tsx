@@ -4,15 +4,15 @@ import { TouchableOpacity as Original } from '../../conversions';
 import { SoundManager } from '../../features/Sound';
 
 type Props = {
-  testID?: string;
-  style?: StyleProp<ViewStyle>;
-  containerStyle?: StyleProp<ViewStyle>;
-  flex?: boolean;
   activeOpacity?: number;
-  disabled?: boolean;
-  onPress?(): void;
-  onLongPress?(): void;
   children?: ReactNode | ReactNode[];
+  containerStyle?: StyleProp<ViewStyle>;
+  disabled?: boolean;
+  flex?: boolean;
+  onLongPress?(): void;
+  onPress?(): void;
+  style?: StyleProp<ViewStyle>;
+  testID?: string;
 };
 
 export const TouchableOpacity = ({

@@ -4,8 +4,8 @@ import { v4 } from 'uuid';
 import { padding } from '../../features/Config';
 
 interface Item<T> {
-  item: T;
   index: number;
+  item: T;
 }
 
 interface Props<T> {

@@ -8,10 +8,10 @@ import { addItemToItem, createItem, Item } from '../models';
 import { completeConfig } from '../utils';
 
 type AddItemProps = {
-  width?: number;
   parentItemId: string;
   placeholder: string;
   title: string;
+  width?: number;
 };
 
 export const AddItem = memo(function AddItem({

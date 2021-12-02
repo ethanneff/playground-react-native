@@ -823,7 +823,7 @@ PODS:
     - react-native-config/App (= 1.4.5)
   - react-native-config/App (1.4.5):
     - React-Core
-  - react-native-flipper (0.122.0):
+  - react-native-flipper (0.123.0):
     - React-Core
   - react-native-get-random-values (1.7.1):
     - React-Core
@@ -937,7 +937,7 @@ PODS:
     - Firebase/RemoteConfig (= 8.9.1)
     - React-Core
     - RNFBApp
-  - RNGestureHandler (1.10.3):
+  - RNGestureHandler (2.0.0):
     - React-Core
   - RNGoogleSignin (5.0.0):
     - GoogleSignIn (~> 5.0.0)
@@ -1312,7 +1312,7 @@ SPEC CHECKSUMS:
   React-logger: e522e76fa3e9ec3e7d7115b49485cc065cf4ae06
   react-native-apple-authentication: b5981be2574a68db962b69e907dcb39264fea201
   react-native-config: 6502b1879f97ed5ac570a029961fc35ea606cd14
-  react-native-flipper: 102931f77ac9c94294f2117b463be6f9d55fab39
+  react-native-flipper: 33bba1cad647f4d56403012993f201e10518b78c
   react-native-get-random-values: 2c4ff6b44cb71291dabe9a8ae87d3877dcf387da
   react-native-netinfo: 42c0965fca99069b92e3f7360ab2d425985e5104
   react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
@@ -1341,7 +1341,7 @@ SPEC CHECKSUMS:
   RNFBCrashlytics: 425c8b11415495c7e771745ca0ab1142ed0bd5b2
   RNFBFirestore: 5ef6d5de0845fcbf7bec67bce453a17ea0aac416
   RNFBRemoteConfig: 5c43e5024ccf2ee5efd846cbf40e2d936fb89d03
-  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
+  RNGestureHandler: 51c9f32f43720c3a1c7660690a843f33acbcf01f
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
   RNRate: 94f57c773e155ca0d0aeeba9c10a32bce9030daf
   RNReanimated: 65583befd5706cc9c86ae9a081786181ced37b93

@@ -4,8 +4,8 @@ import { Item } from './Item';
 
 interface LocationItem {
   id: string;
-  title: string;
   subtitle?: string;
+  title: string;
 }
 
 type Props = {

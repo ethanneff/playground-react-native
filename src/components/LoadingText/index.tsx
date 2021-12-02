@@ -4,9 +4,9 @@ import { v4 } from 'uuid';
 import { Text } from '../Text';
 
 type Props = {
-  title: string;
   center?: boolean;
   style?: ViewStyle;
+  title: string;
 };
 
 const ellipsis = ['', '.', '.', '.'];

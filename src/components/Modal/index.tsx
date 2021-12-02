@@ -14,16 +14,16 @@ import { useRootSelector } from '../../redux';
 import { Card } from '../Card';
 
 type ModalProps = {
+  backgroundColor?: string;
+  children: ReactElement | ReactElement[];
   duration?: number;
   elevation?: number;
+  heightPercent?: number;
   noScroll?: boolean;
   onBackgroundPress?: () => void;
-  backgroundColor?: string;
   showOverlay?: boolean;
-  children: ReactElement | ReactElement[];
   testID?: string;
   widthPercent?: number;
-  heightPercent?: number;
 };
 
 const fadeDuration = 150;

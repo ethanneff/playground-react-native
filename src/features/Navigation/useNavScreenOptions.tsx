@@ -11,7 +11,7 @@ import { useColor } from '../../features/Theme';
 
 type TabIcons = { [key: string]: { focused: string; unFocused: string } };
 type NavOptions = { route: RouteProp<ParamListBase> };
-type TabScreenOptions = { tabIcons: TabIcons; headerShown?: boolean };
+type TabScreenOptions = { headerShown?: boolean; tabIcons: TabIcons };
 
 type UseNavScreenOptions = {
   modalScreenOptions: StackNavigationOptions;

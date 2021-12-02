@@ -8,7 +8,7 @@ export const initialIndex =
 export const getItemLayout = (
   _: Item[] | null | undefined,
   index: number,
-): { length: number; offset: number; index: number } => ({
+): { index: number; length: number; offset: number } => ({
   length: itemHeight,
   offset: itemHeight * index,
   index,

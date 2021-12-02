@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
-import { ScrollView } from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native';
+
 import { Calendar, Card, Screen, Text } from '../../../../components';
 import { padding, useColor } from '../../../../features';
 import { Category } from '../../types';

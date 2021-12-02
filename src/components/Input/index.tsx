@@ -32,25 +32,25 @@ type Props = {
   autoCorrect?: boolean;
   blurOnSubmit?: boolean;
   clearIcon?: string;
+  containerStyle?: StyleProp<ViewStyle>;
   disableFullscreenUI?: boolean;
   editable?: boolean;
   error?: string;
   errorIcon?: string;
   flex?: boolean;
-  removeError?: boolean;
   keyboardType?: KeyboardTypeOptions;
-  optional?: boolean;
-  placeholder?: string;
-  returnKeyType?: ReturnKeyTypeOptions;
-  textContentType?: TextContentType;
-  secureTextEntry?: boolean;
-  textStyle?: StyleProp<TextStyle>;
-  containerStyle?: StyleProp<ViewStyle>;
-  title?: string;
-  value: string;
   onChangeText(text: string): void;
   onRef?: MutableRefObject<Original | null>;
   onSubmitEditing?: () => void;
+  optional?: boolean;
+  placeholder?: string;
+  removeError?: boolean;
+  returnKeyType?: ReturnKeyTypeOptions;
+  secureTextEntry?: boolean;
+  textContentType?: TextContentType;
+  textStyle?: StyleProp<TextStyle>;
+  title?: string;
+  value: string;
 };
 
 export const Input = memo(function Input({

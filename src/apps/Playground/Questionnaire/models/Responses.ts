@@ -13,10 +13,10 @@ export const responsesActions = {
 
 /* INTERFACES */
 interface Response {
-  id: string;
-  userId: string;
-  responses: { [questionId: string]: string[] };
   createdAt: string;
+  id: string;
+  responses: { [questionId: string]: string[] };
+  userId: string;
 }
 
 export interface Responses {

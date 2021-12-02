@@ -1,10 +1,10 @@
 import { StackNavigationProp } from '@react-navigation/stack';
 
 export type PortfolioRoutes = {
-  landing: undefined;
-  login: undefined;
   forgotPassword: undefined;
   home: undefined;
+  landing: undefined;
+  login: undefined;
   notFound: undefined;
   settings: undefined;
 };

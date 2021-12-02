@@ -13,16 +13,16 @@ interface Users {
 }
 
 interface User {
-  id: string;
-  email: string;
   createdAt: number;
+  email: string;
+  id: string;
 }
 
 interface Goal {
-  id: string;
   challenge: string;
-  task: string;
+  id: string;
   mission: string;
+  task: string;
 }
 
 export const app: App = {

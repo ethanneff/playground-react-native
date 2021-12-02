@@ -2,8 +2,7 @@ import { RouteProp } from '@react-navigation/core';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback, useState } from 'react';
-import { TextInput } from 'react-native-gesture-handler';
-import { Modal, Text } from '../../../../components';
+import { Modal, Text, TextInput } from '../../../../components';
 import { AuthStackRoutes } from '../../types';
 
 export const IntervalDetail = memo(function IntervalDetail() {

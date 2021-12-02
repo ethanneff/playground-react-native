@@ -6,10 +6,10 @@ import { TouchableOpacity } from '../TouchableOpacity';
 import { CarouselSlide } from './types';
 
 type DotsProps = {
-  slides: CarouselSlide[];
-  dotSize: number;
   activeIndex: number;
+  dotSize: number;
   onDotPress: (index: number) => () => void;
+  slides: CarouselSlide[];
 };
 
 export const Dots = memo(function Dots({

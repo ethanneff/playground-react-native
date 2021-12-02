@@ -25,8 +25,8 @@ type Themes = {
 };
 
 type ThemeState = {
-  themes: Themes;
   currentTheme: Theme;
+  themes: Themes;
 };
 
 /* REDUCERS */

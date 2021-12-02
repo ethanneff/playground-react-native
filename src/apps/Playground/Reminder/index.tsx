@@ -9,16 +9,16 @@ import { CreateReminderModal } from './CreateReminderModal';
 import { Reminder, ReminderType } from './types';
 
 type State = {
-  type: ReminderType;
-  reminders: Reminder[];
   modals: {
-    customDate: boolean;
     createReminder: boolean;
+    customDate: boolean;
     location: boolean;
   };
+  reminders: Reminder[];
   selected: {
     location: string | undefined;
   };
+  type: ReminderType;
 };
 
 export const ReminderExample = memo(function PlaygroundReminder() {

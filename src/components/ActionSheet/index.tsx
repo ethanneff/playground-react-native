@@ -10,13 +10,13 @@ import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 
 type NotificationProps = {
-  title: string;
-  height?: number;
   dismissDelay?: number;
-  thresholdPercent?: number;
+  height?: number;
   noSwipe?: boolean;
-  onCancel?: () => void;
   onBackgroundPress?: () => void;
+  onCancel?: () => void;
+  thresholdPercent?: number;
+  title: string;
 };
 
 const initialPosition = { x: 0, y: 0 };

@@ -5,8 +5,8 @@ import { MonoMultiColor } from '../../../features';
 
 type Props = {
   color: keyof MonoMultiColor;
-  index: number;
   icon: string;
+  index: number;
   size: number;
   strokeWidth: number;
 };

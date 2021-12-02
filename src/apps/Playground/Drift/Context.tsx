@@ -2,8 +2,8 @@ import { createContext } from 'react';
 import { ColorChoice, TrackPosition, TrackPositionWithColor } from './types';
 
 export type DriftState = {
-  tracks: TrackPositionWithColor[];
   color: ColorChoice;
+  tracks: TrackPositionWithColor[];
 };
 
 export const driftInitialState: DriftState = {
@@ -12,8 +12,8 @@ export const driftInitialState: DriftState = {
 };
 
 type Action =
-  | { type: 'addColor'; payload: ColorChoice }
-  | { type: 'addTrack'; payload: TrackPosition };
+  | { payload: ColorChoice; type: 'addColor' }
+  | { payload: TrackPosition; type: 'addTrack' };
 
 export const driftReducer = (state: DriftState, action: Action): DriftState => {
   switch (action.type) {
@@ -34,8 +34,8 @@ export const driftReducer = (state: DriftState, action: Action): DriftState => {
 };
 
 type Context = {
-  state: DriftState;
   dispatch: (action: Action) => void;
+  state: DriftState;
 };
 
 export const DriftContext = createContext<Context>({

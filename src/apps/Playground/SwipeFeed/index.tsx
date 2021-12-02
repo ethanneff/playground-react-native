@@ -22,9 +22,9 @@ import { getWidth, useRootSelector } from '../../../redux';
 import { formatRelativeDate } from './utils';
 
 type SwipeCardProps = {
-  item: SwipeItem;
-  index: number;
   height: number;
+  index: number;
+  item: SwipeItem;
   onSwipeComplete(): void;
   onSwipePercentChange(percent: number): void;
 };
@@ -141,14 +141,14 @@ const SwipeCard = memo(function SwipeCard({
 });
 
 interface SwipeItem {
-  id: string;
-  image: ImageSourcePropType | null;
-  title: string;
-  icon: string;
-  date: Dayjs;
   body: string;
   button: string;
+  date: Dayjs;
+  icon: string;
+  id: string;
+  image: ImageSourcePropType | null;
   onPress(): void;
+  title: string;
 }
 
 const initialItems: SwipeItem[] = [

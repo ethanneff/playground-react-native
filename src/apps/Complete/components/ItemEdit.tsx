@@ -7,11 +7,11 @@ import { ItemDetailHeader } from './ItemDetailHeader';
 type OnSubmit = (text: string) => void;
 
 type ItemEditProps = {
+  description?: string;
+  onSubmit: (type: string) => OnSubmit;
+  placeholder: string;
   title: string;
   titleEditable: boolean;
-  description?: string;
-  placeholder: string;
-  onSubmit: (type: string) => OnSubmit;
 };
 
 // TODO: need to clear on blur

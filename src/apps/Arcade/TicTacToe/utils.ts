@@ -1,12 +1,12 @@
 import { Board, BoardValue, Direction, PlayerTurn, State } from './types';
 
 type DfsProps = {
-  m: Board;
+  c?: number;
   d: Direction;
   i: number;
   j: number;
+  m: Board;
   t: BoardValue;
-  c?: number;
 };
 
 const dfs = ({ m, d, i, j, t, c = 0 }: DfsProps): number => {
@@ -16,7 +16,7 @@ const dfs = ({ m, d, i, j, t, c = 0 }: DfsProps): number => {
   return Math.max(dfs({ m, d, i: i + d[0], j: j + d[1], t, c: next }), next);
 };
 
-type WinnerProps = { board: Board; i: number; j: number; boardSize: number };
+type WinnerProps = { board: Board; boardSize: number; i: number; j: number };
 
 export const getWinner = ({
   board,

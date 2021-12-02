@@ -5,10 +5,10 @@ import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 
 type TagProps = {
-  onPress?: () => void;
-  title: string;
   color: keyof TagColor;
   disabled?: boolean;
+  onPress?: () => void;
+  title: string;
 };
 
 export const Tag = memo(function Tag({

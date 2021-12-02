@@ -2,8 +2,8 @@ import { v4 } from 'uuid';
 import { Item, User } from '../models';
 
 type GetDefaultUserTemplate = {
-  user: User;
   items: Item[];
+  user: User;
 };
 
 const dItem = (u: string): Item => {

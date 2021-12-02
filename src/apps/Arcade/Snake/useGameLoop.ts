@@ -1,9 +1,9 @@
 import { MutableRefObject, useCallback, useEffect, useRef } from 'react';
 
 export type Frame = {
-  start: number;
-  current: number;
   count: number;
+  current: number;
+  start: number;
 };
 
 const initialFrame = {

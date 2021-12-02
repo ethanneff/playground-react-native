@@ -22,7 +22,7 @@ const getInitialState = (rows: number, cols: number, gems: Gem[]): Board => {
 };
 
 type Vector = { x: number; y: number };
-type Gem = { key: string; color: string };
+type Gem = { color: string; key: string };
 type Board = Gem[][];
 type Matches = { [key: string]: Vector };
 

@@ -4,10 +4,10 @@ import { ActivityIndicator } from '../ActivityIndicator';
 import { FasterImage } from './FasterImage';
 
 type Props = {
-  uri: string;
   height: number;
-  width: number;
   size?: number | 'small' | 'large';
+  uri: string;
+  width: number;
 };
 
 export const Image = memo(function Image({

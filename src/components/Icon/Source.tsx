@@ -3,11 +3,11 @@ import { StyleProp, StyleSheet, TextStyle } from 'react-native';
 import Original from 'react-native-vector-icons/MaterialCommunityIcons';
 
 type Props = {
+  color?: string;
+  invisible?: boolean;
   name: string;
   size?: number;
-  color?: string;
   style?: StyleProp<TextStyle>;
-  invisible?: boolean;
 };
 
 const styles = StyleSheet.create({

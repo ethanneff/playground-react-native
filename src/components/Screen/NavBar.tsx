@@ -6,17 +6,17 @@ import { Text } from '../Text';
 import { NavButton } from './NavButton';
 
 type Props = {
-  title?: string;
   border?: boolean;
+  dropShadow?: boolean;
   leftIcon?: string;
-  rightIcon?: string;
   onLeftPress?: () => void;
   onRightPress?: () => void;
-  secondLeftIcon?: string;
-  secondRightIcon?: string;
   onSecondLeftPress?: () => void;
   onSecondRightPress?: () => void;
-  dropShadow?: boolean;
+  rightIcon?: string;
+  secondLeftIcon?: string;
+  secondRightIcon?: string;
+  title?: string;
 };
 
 export const NavBar = memo(function NavBar({

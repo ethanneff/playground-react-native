@@ -5,9 +5,9 @@ import { useColor } from '../../../features';
 import { Timer } from './Timer';
 
 interface LapProps {
-  num: number;
-  interval: number;
   fastest: boolean;
+  interval: number;
+  num: number;
   slowest: boolean;
 }
 

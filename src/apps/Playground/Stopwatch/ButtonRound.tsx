@@ -4,11 +4,11 @@ import { Text, TouchableOpacity } from '../../../components';
 import { MonoMultiColor, useColor } from '../../../features';
 
 interface RoundButtonProps {
-  title: string;
-  color: keyof MonoMultiColor;
   background: string;
+  color: keyof MonoMultiColor;
   disabled?: boolean;
   onPress(): void;
+  title: string;
 }
 
 export const ButtonRound = memo(function ButtonRound({

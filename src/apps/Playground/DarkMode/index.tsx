@@ -22,11 +22,11 @@ import {
 } from '../../../redux';
 
 type CardItem = {
+  button?: string;
+  chart?: ImageSourcePropType;
+  target?: string;
   title: string;
   value: string;
-  target?: string;
-  chart?: ImageSourcePropType;
-  button?: string;
 };
 
 const image = require('../../../assets/placeholder.png');

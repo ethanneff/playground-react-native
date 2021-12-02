@@ -14,11 +14,11 @@ import { getSmallestDimension, useRootSelector } from '../../redux';
 
 type Props = {
   backgroundColor: string;
+  children: ReactNode;
+  delay?: number;
+  duration?: number;
   primaryColor: string;
   source: ImageSourcePropType;
-  duration?: number;
-  delay?: number;
-  children: ReactNode;
 };
 
 const getInterpolate = (progress: Animated.Value) => ({

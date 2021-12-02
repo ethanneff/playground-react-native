@@ -6,10 +6,10 @@ import { Card } from './Card';
 import { ItemDetailHeader } from './ItemDetailHeader';
 
 type ItemContextProps = {
-  userId: string;
   createdAt: number;
-  updatedAt: number;
   type: string;
+  updatedAt: number;
+  userId: string;
 };
 
 export const ItemContext = memo(function ItemContext({

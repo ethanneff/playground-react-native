@@ -9,8 +9,8 @@ const missingCallback = () => undefined;
 const image = require('../../../assets/line-chart.png');
 
 interface SignInButtonProps {
-  onPress: () => void;
   icon: string;
+  onPress: () => void;
   title: string;
 }
 const SignInButton = memo(function SignInButton({
@@ -40,8 +40,8 @@ const SignInButton = memo(function SignInButton({
 });
 
 interface NavButtonProps {
-  onPress: () => void;
   inverted?: boolean;
+  onPress: () => void;
   title: string;
 }
 const NavButton = memo(function NavButton({
@@ -145,9 +145,9 @@ const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
 });
 
 interface SectionProps {
+  backgroundColor: string;
   children: ReactNode | ReactNode[];
   paddingTop?: number;
-  backgroundColor: string;
 }
 
 const Section = memo(function Section({

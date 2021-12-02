@@ -5,9 +5,9 @@ import { CalendarMonth } from './Month';
 import { addMonths, CalendarMatrix, getCalendarMatrix } from './utils';
 
 type State = {
-  today: Date;
   matrix: CalendarMatrix;
   selected: string | undefined;
+  today: Date;
 };
 
 type Props = {

@@ -6,11 +6,11 @@ type BoardState = 'ok' | 'hit wall' | 'hit snake' | 'ate food' | 'won';
 
 // TODO: need to store the snake instead of tail to know the next tail
 export type BoardContext = {
-  matrix: Matrix;
-  head: Cell;
-  tail: Cell;
   food: Cell;
+  head: Cell;
+  matrix: Matrix;
   state: BoardState;
+  tail: Cell;
 };
 
 const getBlankMatrix = (size: number) => {

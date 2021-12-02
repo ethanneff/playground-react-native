@@ -33,9 +33,9 @@ const data = [
 ];
 
 interface State {
-  input: string;
-  iconName: string;
   animation: Animated.Value;
+  iconName: string;
+  input: string;
 }
 
 const iconSearch = 'magnify';

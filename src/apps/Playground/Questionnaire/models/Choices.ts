@@ -10,8 +10,8 @@ export const choicesActions = { createChoice, updateChoice, removeChoice };
 
 /* INTERFACES */
 interface Choice {
-  id: string;
   display: string;
+  id: string;
   value?: number;
 }
 

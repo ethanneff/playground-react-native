@@ -59,12 +59,12 @@ export const resolveItemCollision = (
 };
 
 type OverlapProps = {
+  aRadius: number;
   aX: number;
   aY: number;
-  aRadius: number;
+  bRadius: number;
   bX: number;
   bY: number;
-  bRadius: number;
   center: boolean;
 };
 
@@ -90,14 +90,14 @@ export const getRandomNumber = (min: number, max: number): number =>
   Math.random() * (max - min) + min;
 
 type GetItems = {
-  count: number;
   canvas: CanvasDimensions;
-  minSize: number;
+  count: number;
+  maxMass: number;
   maxSize: number;
-  minSpeed: number;
   maxSpeed: number;
   minMass: number;
-  maxMass: number;
+  minSize: number;
+  minSpeed: number;
 };
 
 export const getItems = ({

@@ -90,9 +90,9 @@ export const getAuthLoading = (state: RootState): boolean => state.auth.loading;
 
 /* INTERFACES */
 export interface AuthState {
-  token?: string;
-  loading: boolean;
   error?: string;
+  loading: boolean;
+  token?: string;
 }
 
 /* REDUCERS */

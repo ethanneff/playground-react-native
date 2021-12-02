@@ -6,27 +6,27 @@ import { padding, useColor } from '../../../features';
 import { shuffleArray } from './utils';
 
 type Combinations = { [key: string]: number };
-type WildCards = { line: string; amount: number }[];
+type WildCards = { amount: number; line: string }[];
 type Props = {
-  reels: string[];
   combinations: Combinations;
   credits: number;
   multipliers?: number[];
   randomize?: boolean;
+  reels: string[];
 };
 
 type State = {
   activity: 'idle' | 'spinning' | 'insufficient credits';
   credits: number;
-  reelsArray: string[][];
-  multiplierIndex: number;
   lineIndexes: number[];
+  multiplierIndex: number;
+  reelsArray: string[][];
 };
 
 type InitialState = {
+  credits: number;
   randomize?: boolean;
   reels: string[];
-  credits: number;
 };
 
 const getInitialState = ({
@@ -91,8 +91,8 @@ const getWinningAmount = (
 };
 
 type ReelsProps = {
-  reelsArray: string[][];
   lineIndexes: number[];
+  reelsArray: string[][];
 };
 
 const Reels = memo(function Reels({ reelsArray, lineIndexes }: ReelsProps) {

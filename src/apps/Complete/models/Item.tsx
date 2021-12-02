@@ -4,18 +4,18 @@ import { createAction, getType } from 'typesafe-actions';
 import { logout } from './Auth';
 import { getUser } from './User';
 
-type ItemUpdateIds = { parentItemId: string; itemId: string };
-type ItemSwapId = { parentItemId: string; i: number; j: number };
+type ItemUpdateIds = { itemId: string; parentItemId: string };
+type ItemSwapId = { i: number; j: number; parentItemId: string };
 type ItemMoveId = {
-  itemId: string;
   fromParentItemId: string;
+  itemId: string;
   toParentItemId: string;
 };
-type ItemDetailsIds = { parentItemId: string | null; itemId: string };
+type ItemDetailsIds = { itemId: string; parentItemId: string | null };
 type ItemProjectIds = { projectItemId: string };
 type ItemNav = {
-  parentItemId: string | null;
   itemId: string | null;
+  parentItemId: string | null;
   projectItemId: string | null;
 };
 
@@ -76,22 +76,22 @@ export const getProjects = createSelector(
 
 /* INTERFACES */
 export type CompleteItemReducer = {
-  nav: ItemNav;
   items: Items;
+  nav: ItemNav;
 };
 
 export type Item = {
-  id: string;
-  title: string;
-  description: string;
   active: boolean;
+  children: ReadonlyArray<string>;
   createdAt: number;
+  description: string;
+  editable: boolean;
+  id: string;
+  tags: ReadonlyArray<string>;
+  title: string;
+  type: 'board' | 'list' | 'note';
   updatedAt: number;
   userId: string;
-  tags: ReadonlyArray<string>;
-  type: 'board' | 'list' | 'note';
-  editable: boolean;
-  children: ReadonlyArray<string>;
 };
 export type Items = { [key: string]: Item };
 

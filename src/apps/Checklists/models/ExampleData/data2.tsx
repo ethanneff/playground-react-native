@@ -74,54 +74,54 @@ export type ListAccess = 'Read' | 'Write' | 'Comment';
 export type ListFrequency = 'Single' | 'Multiple';
 
 export interface User {
-  id: UserId;
-  firstName: string;
-  lastName: string;
   email: string;
+  firstName: string;
+  id: UserId;
+  lastName: string;
   lists: ListId[];
 }
 
 export interface Action {
-  id: ActionId;
-  userId: UserId;
-  listId: ListId;
   createdAt: Date;
+  id: ActionId;
+  listId: ListId;
+  userId: UserId;
 }
 
 export interface List {
-  userId: UserId;
-  name: string;
-  description?: string;
   active: boolean;
-  frequency: ListFrequency;
-  visibility: ListVisibility;
-  createdAt: Date;
-  updatedAt: Date;
-  item: ItemId[];
-  history: ListId[];
-  viewed: ActionId[];
-  liked: ActionId[];
   copied: ActionId[];
+  createdAt: Date;
+  description?: string;
+  frequency: ListFrequency;
+  history: ListId[];
+  item: ItemId[];
+  liked: ActionId[];
   modified: ActionId[];
+  name: string;
+  updatedAt: Date;
+  userId: UserId;
+  viewed: ActionId[];
+  visibility: ListVisibility;
 }
 
 export interface Item {
+  active: boolean;
+  createdAt: Date;
+  description?: string;
   id: ItemId;
   name: string;
-  description?: string;
-  active: boolean;
   sources?: SourceId[];
-  createdAt: Date;
   updatedAt: Date;
 }
 
 export interface Source {
-  id: SourceId;
-  title: string;
-  url?: string;
-  image?: string;
   createdAt: Date;
+  id: SourceId;
+  image?: string;
+  title: string;
   updatedAt: Date;
+  url?: string;
 }
 
 export const a = {

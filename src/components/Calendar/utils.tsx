@@ -1,8 +1,8 @@
 export type Day = {
-  id: string;
-  display: string;
   current: boolean;
+  display: string;
   header: boolean;
+  id: string;
 };
 
 export type CalendarMatrix = Day[][];
@@ -33,10 +33,10 @@ const lastDayOfMonth = (date: Date) => {
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 type DayObject = {
-  id: string | number;
-  display: string | number;
   current?: boolean;
+  display: string | number;
   header?: boolean;
+  id: string | number;
 };
 const createDayObj = ({
   id,

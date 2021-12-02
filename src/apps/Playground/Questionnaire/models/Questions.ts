@@ -15,11 +15,11 @@ export const questionsActions = {
 type QuestionType = 'Input' | 'Checkbox' | 'Slider' | 'Button';
 
 interface Question {
+  choices: string[];
+  description?: string;
   id: string;
   title: string;
   type: QuestionType;
-  description?: string;
-  choices: string[];
 }
 
 export interface Questions {

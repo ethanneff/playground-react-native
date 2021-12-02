@@ -5,8 +5,8 @@ import { Item } from './Item';
 type Props = {
   buttons: string[];
   horizontal?: boolean;
-  value: string;
   onChange: (id: string) => () => void;
+  value: string;
 };
 
 export const Radio = memo(function Radio({

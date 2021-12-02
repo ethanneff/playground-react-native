@@ -30,17 +30,17 @@ export const getChatSubmittable = (state: RootState): boolean =>
 
 /* INTERFACES */
 export type ChatMessageReducer = {
-  textField: string;
   items: Messages;
+  textField: string;
 };
 export type Message = {
-  id: string;
-  message: string;
+  active: boolean;
   // history?: string[];
   // attachments?:string[]
   conversationId: string;
-  active: boolean;
   createdAt: number;
+  id: string;
+  message: string;
   updatedAt: number;
   userId: string; // Need name and id
 };

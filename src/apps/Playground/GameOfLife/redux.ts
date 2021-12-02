@@ -45,10 +45,10 @@ export const gameOfLifeActions = {
 };
 
 export type GameOfLifeState = {
-  run: boolean;
-  delay: number;
-  count: number;
   board: Board;
+  count: number;
+  delay: number;
+  run: boolean;
 };
 
 export const gameOfLifeInitialState: GameOfLifeState = {

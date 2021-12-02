@@ -5,41 +5,41 @@ import { logout } from '../Auth';
 import { changeAppStatus } from './../Device/index';
 
 type ToggleLoading = {
-  visible: boolean;
   onBackgroundPress?: () => void;
+  visible: boolean;
 };
 
 type ToggleAlert = {
-  visible: boolean;
-  title?: string;
+  cancelTitle?: string;
+  confirmTitle?: string;
   description?: string;
   onBackgroundPress?: () => void;
-  confirmTitle?: string;
-  onConfirmPress?: () => void;
-  cancelTitle?: string;
   onCancelPress?: () => void;
+  onConfirmPress?: () => void;
+  title?: string;
+  visible: boolean;
 };
 
 type ToggleNotification = {
-  visible: boolean;
-  title?: string;
   description?: string;
+  title?: string;
   type?: keyof MonoMultiColor;
+  visible: boolean;
 };
 
 type ActionSheetItem = {
-  title: string;
   color: keyof MonoMultiColor;
   icon: string;
+  title: string;
 };
 
 type ToggleActionSheet = {
-  visible: boolean;
-  title?: string;
   description?: string;
   items?: ActionSheetItem[];
   onBackgroundPress?: () => void;
   onCancelPress?: () => void;
+  title?: string;
+  visible: boolean;
 };
 
 export const toggleLoading = createAction('ui/loading')<ToggleLoading>();
@@ -56,10 +56,10 @@ export const uiActions = {
 };
 
 type UiState = {
-  loading: ToggleLoading;
   actionSheet: ToggleActionSheet;
-  notification: ToggleNotification;
   alert: ToggleAlert;
+  loading: ToggleLoading;
+  notification: ToggleNotification;
 };
 
 const uiInitialState: UiState = {

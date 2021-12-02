@@ -2,10 +2,10 @@ import React, { memo } from 'react';
 import { FastImage } from '../../conversions';
 
 type Props = {
+  height: number;
   onImageLoad: () => void;
   uri: string;
   width: number;
-  height: number;
 };
 
 export const FasterImage = memo(function FasterImage({

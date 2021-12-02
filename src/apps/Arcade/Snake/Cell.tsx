@@ -4,8 +4,8 @@ import { useColor } from '../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../redux';
 
 interface CellProps {
-  value: number;
   length: number;
+  value: number;
 }
 
 export const Cell = memo(function Cell({ value, length }: CellProps) {

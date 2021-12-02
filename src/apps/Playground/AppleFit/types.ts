@@ -1,8 +1,8 @@
 export interface Ring {
-  start: string;
-  end: string;
   bg: string;
-  theta: number;
-  size: number;
+  end: string;
   icon: string;
+  size: number;
+  start: string;
+  theta: number;
 }

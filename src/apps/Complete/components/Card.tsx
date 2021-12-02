@@ -6,11 +6,11 @@ import { completeConfig } from '../utils';
 // TODO: combine card components with global card
 
 type CardProps = {
-  onLayout?: (event: LayoutChangeEvent) => void;
   children: ReactElement | ReactElement[];
-  margin?: 'bottom' | 'right' | 'none';
-  width?: number;
   flex?: boolean;
+  margin?: 'bottom' | 'right' | 'none';
+  onLayout?: (event: LayoutChangeEvent) => void;
+  width?: number;
 };
 
 export const Card = memo(function Card({

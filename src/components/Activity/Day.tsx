@@ -9,10 +9,10 @@ dayjs.extend(isToday);
 
 type Props = {
   day: ActivityDay;
-  max: number;
-  size: number;
   margin: number;
+  max: number;
   onPress: (item: ActivityDay) => () => void;
+  size: number;
 };
 
 export const Day = memo(function Day({

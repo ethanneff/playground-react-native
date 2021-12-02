@@ -12,16 +12,16 @@ export const colorWithOpacity = (colorCode: string, opacity = 0.5): string => {
 };
 
 type GetFontStylesProps = {
-  emphasis?: FontEmphasis;
   color?: keyof MonoMultiColor;
-  type?: FontType;
-  inverse?: boolean;
   colorScheme: ColorTheme;
+  emphasis?: FontEmphasis;
+  inverse?: boolean;
+  type?: FontType;
 };
 
 type GetFontStylesReturn = {
-  textColor: string;
   fontSize: { fontSize: number };
+  textColor: string;
 };
 
 export const getFontStyles = ({

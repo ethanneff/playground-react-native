@@ -10,11 +10,11 @@ import { Linking, Platform } from 'react-native';
 const persistanceKey = 'navigation';
 
 type UsePersistedState = {
-  isReady: boolean;
   initialState: InitialState | undefined;
-  onStateChange: (state: NavigationState | undefined) => void;
+  isReady: boolean;
   onReady: () => void;
   onRef: (ref: NavigationContainerRef<ReactNavigation.RootParamList>) => void;
+  onStateChange: (state: NavigationState | undefined) => void;
 };
 
 export const usePersistedState = (): UsePersistedState => {

@@ -13,14 +13,14 @@ import {
 } from './utils';
 
 type Props = {
-  count: number;
   canvas: CanvasDimensions;
-  minSize?: number;
+  count: number;
+  maxMass?: number;
   maxSize?: number;
-  minSpeed?: number;
   maxSpeed?: number;
   minMass?: number;
-  maxMass?: number;
+  minSize?: number;
+  minSpeed?: number;
   mitosis?: number;
 };
 

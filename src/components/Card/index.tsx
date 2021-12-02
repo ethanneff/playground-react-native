@@ -5,18 +5,18 @@ import { useColor, useDropShadow } from '../../features/Theme';
 import { TouchableOpacity } from '../TouchableOpacity';
 
 type Props = {
-  testID?: string;
-  flex?: boolean;
-  style?: ViewStyle;
-  selected?: boolean;
-  noPadding?: boolean;
-  noMargin?: boolean;
-  elevation?: number;
-  borderWidth?: number;
   borderRadius?: number;
-  onPress?: () => void;
-  onLongPress?: () => void;
+  borderWidth?: number;
   children?: ReactNode | ReactNode[];
+  elevation?: number;
+  flex?: boolean;
+  noMargin?: boolean;
+  noPadding?: boolean;
+  onLongPress?: () => void;
+  onPress?: () => void;
+  selected?: boolean;
+  style?: ViewStyle;
+  testID?: string;
 };
 
 const getOpacity = (elevation: number) =>

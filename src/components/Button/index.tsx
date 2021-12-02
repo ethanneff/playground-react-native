@@ -11,30 +11,30 @@ styling: https://material.io/design/components/buttons.html#usage
 */
 
 type Props = {
-  /* content */
-  title: string;
-  testID?: string;
+  activeOpacity?: number;
   /* styling */
   buttonStyle?: StyleProp<ViewStyle>;
-  textStyle?: StyleProp<TextStyle>;
+  center?: boolean;
+  color?: keyof MonoMultiColor;
+  disabled?: boolean;
   dropShadow?: boolean;
   elevation?: number;
-  activeOpacity?: number;
-  /* state */
-  hidden?: boolean;
-  disabled?: boolean;
-  invisible?: boolean;
   /* color */
   emphasis?: FontEmphasis;
-  color?: keyof MonoMultiColor;
+  /* state */
+  hidden?: boolean;
+  invisible?: boolean;
+  lowercase?: boolean;
   /* size */
   noPadding?: boolean;
-  center?: boolean;
-  right?: boolean;
-  lowercase?: boolean;
+  onLongPress?(): void;
   /* event */
   onPress?(): void;
-  onLongPress?(): void;
+  right?: boolean;
+  testID?: string;
+  textStyle?: StyleProp<TextStyle>;
+  /* content */
+  title: string;
 };
 
 export const Button = memo(function Button({

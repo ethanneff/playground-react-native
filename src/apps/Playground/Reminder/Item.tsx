@@ -4,14 +4,14 @@ import { Icon, Text, TouchableOpacity } from '../../../components';
 import { padding, useColor } from '../../../features';
 
 type Props = {
-  title: string;
+  active?: boolean;
   description?: string;
+  hidden?: boolean;
   icon?: string;
+  marginBottom?: boolean;
   onPress: () => void;
   style?: StyleProp<ViewStyle>;
-  marginBottom?: boolean;
-  active?: boolean;
-  hidden?: boolean;
+  title: string;
 };
 export const Item = memo(function ReminderItem({
   title,

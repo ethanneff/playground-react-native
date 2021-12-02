@@ -6,10 +6,10 @@ import { CalendarDay } from './Day';
 import { CalendarMatrix } from './utils';
 
 type Props = {
-  selected: string | undefined;
   hiddenDays?: boolean;
-  onSelected: (id: string) => void;
   matrix: CalendarMatrix;
+  onSelected: (id: string) => void;
+  selected: string | undefined;
 };
 
 export const CalendarMonth = memo(function Month({

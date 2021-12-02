@@ -15,21 +15,21 @@ import { ModalHeader } from '../../components';
 
 type Props = {
   onBackgroundPress: () => void;
-  showFacebook?: boolean;
-  showGoogle?: boolean;
+  onSuccess: (user: FirebaseAuthTypes.User | null) => void;
+  showAnonymous?: boolean;
   showApple?: boolean;
   showEmail?: boolean;
+  showFacebook?: boolean;
+  showGoogle?: boolean;
   showPhone?: boolean;
-  showAnonymous?: boolean;
-  onSuccess: (user: FirebaseAuthTypes.User | null) => void;
 };
 
 // TODO: relocate to somewhere
 interface SignInButtonProps {
-  onPress: () => void;
   icon: string;
-  title: string;
   margin?: boolean;
+  onPress: () => void;
+  title: string;
 }
 
 const SignInButton = memo(function SignInButton({
@@ -84,11 +84,11 @@ const initialRef: Ref = {
 };
 
 type State = {
-  eye: boolean;
   completeForm: boolean;
+  error: string | null;
+  eye: boolean;
   passwordError: boolean;
   screen: Screen;
-  error: string | null;
 };
 
 const initialState: State = {

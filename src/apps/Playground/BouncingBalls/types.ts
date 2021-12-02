@@ -1,19 +1,19 @@
 import { Animated } from 'react-native';
 
 export type Item = {
-  index: number;
-  position: Animated.ValueXY;
   dx: number;
   dy: number;
+  index: number;
+  mass: number;
+  position: Animated.ValueXY;
+  radius: number;
   x: number;
   y: number;
-  radius: number;
-  mass: number;
 };
 
 export type CanvasDimensions = {
+  height: number;
+  width: number;
   x: number;
   y: number;
-  width: number;
-  height: number;
 };

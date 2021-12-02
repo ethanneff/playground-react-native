@@ -21,8 +21,8 @@ export const deviceActions = {
 
 /* INTERFACES */
 export interface DimensionsProps {
-  window: ScaledSize;
   screen: ScaledSize;
+  window: ScaledSize;
 }
 
 export interface DeviceInfo {
@@ -31,57 +31,34 @@ export interface DeviceInfo {
   applicationName: string;
   availableLocationProviders: LocationProviderInfo;
   baseOs: string;
-  buildId: string;
   batteryLevel: number;
   bootloader: string;
   brand: string;
+  buildId: string;
   buildNumber: string;
   bundleId: string;
   carrier: string;
   codename: string;
   device: string;
   deviceId: string;
-  deviceType: string;
-  deviceToken: string;
-  display: string;
   deviceName: string;
-  firstInstallTime: number;
+  deviceToken: string;
+  deviceType: string;
+  display: string;
   fingerprint: string;
+  firstInstallTime: number;
   fontScale: number;
   freeDiskStorage: number;
   hardware: string;
+  hasGms: boolean;
+  hasHms: boolean;
+  hasNotch: boolean;
   host: string;
-  ipAddress: string;
   incremental: string;
   installReferrer: string;
   installerPackageName: string;
   instanceId: string;
-  lastUpdateTime: number;
-  macAddress: string;
-  manufacturer: string;
-  maxMemory: number;
-  model: string;
-  phoneNumber: string;
-  powerState: Partial<PowerState> | null;
-  product: string;
-  previewSdkInt: number;
-  readableVersion: string;
-  serialNumber: string;
-  securityPatch: string;
-  systemAvailableFeatures: ReadonlyArray<string>;
-  systemName: string;
-  systemVersion: string;
-  tags: string;
-  type: string;
-  totalDiskCapacity: number;
-  totalMemory: number;
-  uniqueId: string;
-  usedMemory: number;
-  userAgent: string;
-  version: string;
-  hasGms: boolean;
-  hasHms: boolean;
-  hasNotch: boolean;
+  ipAddress: string;
   isAirplaneMode: boolean;
   isBatteryCharging: boolean;
   isCameraPresent: boolean;
@@ -91,16 +68,39 @@ export interface DeviceInfo {
   isLocationEnabled: boolean;
   isPinOrFingerprintSet: boolean;
   isTablet: boolean;
+  lastUpdateTime: number;
+  macAddress: string;
+  manufacturer: string;
+  maxMemory: number;
+  model: string;
+  phoneNumber: string;
+  powerState: Partial<PowerState> | null;
+  previewSdkInt: number;
+  product: string;
+  readableVersion: string;
+  securityPatch: string;
+  serialNumber: string;
   supported32BitAbis: ReadonlyArray<string>;
   supported64BitAbis: ReadonlyArray<string>;
   supportedAbis: ReadonlyArray<string>;
   syncUniqueId: string;
+  systemAvailableFeatures: ReadonlyArray<string>;
+  systemName: string;
+  systemVersion: string;
+  tags: string;
+  totalDiskCapacity: number;
+  totalMemory: number;
+  type: string;
+  uniqueId: string;
+  usedMemory: number;
+  userAgent: string;
+  version: string;
 }
 
 export type DeviceState = {
-  keyboardVisible: boolean;
-  keyboardHeight: number;
   appStatus: AppStateStatus;
+  keyboardHeight: number;
+  keyboardVisible: boolean;
 } & DeviceInfo;
 
 /* REDUCERS */

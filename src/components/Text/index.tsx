@@ -14,26 +14,26 @@ import { useColor } from '../../features/Theme';
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
 
 export interface TextProps {
-  title?: string;
-  style?: StyleProp<TextStyle>;
+  adjustsFontSizeToFit?: boolean;
+  bold?: boolean;
 
   center?: boolean;
   centerVertically?: boolean;
-  bold?: boolean;
-  hidden?: boolean;
-  invisible?: boolean;
-  inverse?: boolean;
   color?: keyof MonoMultiColor;
+  ellipsizeMode?: EllipsizeMode;
+  emphasis?: FontEmphasis;
   flex?: boolean;
-  adjustsFontSizeToFit?: boolean;
+  hidden?: boolean;
+  inverse?: boolean;
+  invisible?: boolean;
 
   numberOfLines?: number;
-  ellipsizeMode?: EllipsizeMode;
+  onPress?(): void;
+
+  style?: StyleProp<TextStyle>;
+  title?: string;
 
   type?: FontType;
-  emphasis?: FontEmphasis;
-
-  onPress?(): void;
 }
 
 export const Text = memo(function Text({

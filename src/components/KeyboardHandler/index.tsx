@@ -3,9 +3,9 @@ import { Keyboard, LayoutChangeEvent, View } from 'react-native';
 import { TouchableWithoutFeedback } from '../../conversions';
 
 type HandleKeyboardProps = {
-  onLayout: (event: LayoutChangeEvent) => void;
   backgroundColor?: string;
   children: ReactElement | ReactElement[];
+  onLayout: (event: LayoutChangeEvent) => void;
 };
 
 export const KeyboardHandler = memo(function KeyboardHandler({

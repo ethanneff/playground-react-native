@@ -37,13 +37,13 @@ export type ChecklistReducer = {
   items: Checklists;
 };
 export type Checklist = {
-  id: string;
-  name: string;
-  description?: string;
   active: boolean;
   // frequency: string[];
   // visibility: UserId[];
   createdAt: number;
+  description?: string;
+  id: string;
+  name: string;
   updatedAt: number;
   userId: string;
   // item: string[];

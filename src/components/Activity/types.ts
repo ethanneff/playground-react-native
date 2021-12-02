@@ -10,16 +10,16 @@ export type ActivityModel = {
   };
   request: 'loading' | 'failure' | 'success';
   selected: {
-    submissions: string;
     day: number;
+    submissions: string;
   };
 };
 
 export type ActivityWeek = Array<ActivityDay>;
 
 export type ActivityDay = {
-  date: number;
   count: number;
+  date: number;
 };
 
 export type ApiResponse = { [unix: string]: number };
@@ -33,6 +33,6 @@ export type ActivitySquares = {
 export type ApiPromise = Promise<ApiResponse>;
 
 export type ApiInput = {
-  username: string;
   site: Site;
+  username: string;
 };

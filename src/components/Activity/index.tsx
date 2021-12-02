@@ -21,11 +21,11 @@ import {
 import { Week } from './Week';
 
 type Props = {
-  username: string;
+  margin?: number;
   site: Site;
   size?: number;
-  margin?: number;
   title?: string;
+  username: string;
 };
 
 const initialActivity: ActivityModel = {

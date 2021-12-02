@@ -11,29 +11,29 @@ source: https://materialdesignicons.com/
 */
 
 type Props = {
+  backgroundColor?: keyof MonoMultiColor;
   badge?: number;
-  elevation?: number;
-  right?: boolean;
-  fab?: boolean;
-  style?: StyleProp<ViewStyle>;
   clear?: boolean;
+  color?: keyof MonoMultiColor;
+  disabled?: boolean;
+  elevation?: number;
+  fab?: boolean;
   hidden?: boolean;
   invisible?: boolean;
-  padded?: boolean;
-  size?: number;
-  color?: keyof MonoMultiColor;
-  backgroundColor?: keyof MonoMultiColor;
   name?: string;
+  padded?: boolean;
+  right?: boolean;
+  size?: number;
+  style?: StyleProp<ViewStyle>;
   testID?: string;
-  disabled?: boolean;
 };
 
 type GetColors = {
-  colors: ColorTheme;
   clear?: boolean;
-  hidden?: boolean;
   color?: keyof MonoMultiColor;
+  colors: ColorTheme;
   disabled?: boolean;
+  hidden?: boolean;
 };
 
 const getColor = ({ hidden, color, colors, disabled, clear }: GetColors) => {

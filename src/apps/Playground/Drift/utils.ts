@@ -1,6 +1,6 @@
 type Position = {
+  canvas: { height: number; width: number; x: number; y: number };
   change: { dx: number; dy: number };
-  canvas: { x: number; y: number; width: number; height: number };
   current: { x: number; y: number };
   size: number;
 };

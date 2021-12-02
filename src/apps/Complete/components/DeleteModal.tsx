@@ -4,8 +4,8 @@ import { Button, Modal, Text } from '../../../components';
 import { padding } from '../../../features';
 
 type DeleteModalProps = {
-  onDelete: () => void;
   onCancel: () => void;
+  onDelete: () => void;
 };
 
 export const DeleteModal = memo(function DeleteModal({

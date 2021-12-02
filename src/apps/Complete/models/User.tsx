@@ -14,13 +14,13 @@ export const getUser = (state: RootState): CompleteUserReducer =>
 /* INTERFACES */
 export type CompleteUserReducer = User | null;
 export type User = {
-  id: string;
-  name: string;
-  email: string;
   active: boolean;
   createdAt: number;
-  updatedAt: number;
+  email: string;
+  id: string;
   items: ReadonlyArray<string>;
+  name: string;
+  updatedAt: number;
 };
 
 /* REDUCER */

@@ -7,12 +7,12 @@ import { Stickers } from './Stickers';
 import { Ring } from './types';
 
 type Props = {
-  rings: Ring[];
-  backgroundColor: keyof MonoMultiColor;
-  strokeWidth: number;
-  size: number;
   animate?: boolean;
+  backgroundColor: keyof MonoMultiColor;
+  rings: Ring[];
+  size: number;
   speed?: number;
+  strokeWidth: number;
 };
 
 export const AppleActivity = ({

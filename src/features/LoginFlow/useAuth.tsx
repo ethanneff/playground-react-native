@@ -12,23 +12,23 @@ import {
 GoogleSignin.configure({ webClientId: Config.GOOGLE_SIGN_IN });
 
 type UseAuth = {
-  response: Response;
-  onEmail: (email: string, password: string) => void;
-  onApple: () => void;
   onAnonymous: () => void;
-  onPhone: (phone: string) => void;
-  onPhoneConfirm: (code: string) => void;
+  onApple: () => void;
+  onEmail: (email: string, password: string) => void;
   onFacebook: () => void;
   onGoogle: () => void;
   onLogout: () => void;
   onPasswordReset: (email: string) => void;
+  onPhone: (phone: string) => void;
+  onPhoneConfirm: (code: string) => void;
+  response: Response;
 };
 
 type NullType = 'initalizing' | 'waiting' | 'logout' | 'loading';
 type Response =
-  | { type: NullType; error: null; user: null }
-  | { type: 'error'; error: string; user: null }
-  | { type: 'login'; error: null; user: FirebaseAuthTypes.User };
+  | { error: null; type: NullType; user: null }
+  | { error: string; type: 'error'; user: null }
+  | { error: null; type: 'login'; user: FirebaseAuthTypes.User };
 
 const initialResponse: Response = {
   type: 'initalizing',

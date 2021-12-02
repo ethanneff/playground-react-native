@@ -3,8 +3,8 @@ import { Image, StyleSheet, View } from 'react-native';
 import { MaskedView } from '../../../conversions';
 
 type Props = {
-  size: number;
   colors: [string, string];
+  size: number;
 };
 
 export const AngularGradient = ({

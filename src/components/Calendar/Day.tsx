@@ -9,9 +9,9 @@ import { Day } from './utils';
 
 type Props = {
   day: Day;
+  hiddenDays?: boolean;
   onSelected: () => void;
   selectedDay: string | undefined;
-  hiddenDays?: boolean;
 };
 
 export const CalendarDay = ({

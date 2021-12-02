@@ -3,8 +3,8 @@ import { LayoutChangeEvent, View } from 'react-native';
 import { useColor } from '../../../features';
 
 type Props = {
-  onLayout: (event: LayoutChangeEvent) => void;
   children: ReactNode;
+  onLayout: (event: LayoutChangeEvent) => void;
 };
 
 export const Canvas = memo(function Canvas({ children, onLayout }: Props) {

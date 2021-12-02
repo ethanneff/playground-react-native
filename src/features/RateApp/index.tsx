@@ -7,9 +7,9 @@ import { Rating } from './Rating';
 
 type ModalState = 'default' | 'thank you' | 'review' | 'feedback';
 type State = {
-  rating: number;
-  modal: ModalState;
   feedback: string;
+  modal: ModalState;
+  rating: number;
 };
 const initialState: State = {
   rating: 0,
@@ -29,9 +29,9 @@ const ratingOptions = {
 };
 
 type CompleteState = {
-  rating: number;
   feedback: string;
   navigatedToAppStore: boolean;
+  rating: number;
 };
 
 type Props = {

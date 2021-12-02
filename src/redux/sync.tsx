@@ -52,10 +52,10 @@ export const syncMiddleware: RootMiddleware = (_) => (dispatch) => (action) => {
 
 type Queue = string[]; // TODO: better typing with {type, payload}
 type SyncQueue = {
-  key: '@syncQuery';
   cache: Queue;
-  set: (value: Queue) => Promise<Queue>;
   get: () => Promise<Queue>;
+  key: '@syncQuery';
+  set: (value: Queue) => Promise<Queue>;
 };
 
 let retryTimeout = retryDefaultTimeout;

@@ -7,9 +7,9 @@ import { AddItem } from './AddItem';
 import { List } from './List';
 
 type BoardProps = {
-  projectItemId: string;
   listMaxHeight: number;
   listWidth: number;
+  projectItemId: string;
 };
 
 export const Board = memo(function Board({

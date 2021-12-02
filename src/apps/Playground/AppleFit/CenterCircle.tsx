@@ -3,8 +3,8 @@ import { StyleSheet, View } from 'react-native';
 import { MonoMultiColor, useColor } from '../../../features';
 
 type Props = {
-  radius: number;
   backgroundColor: keyof MonoMultiColor;
+  radius: number;
 };
 
 export const CenterCircle = memo(function CenterCircle({

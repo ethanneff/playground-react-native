@@ -1,7 +1,7 @@
 type Example = {
   category: string;
-  goal: string;
   examples: string[];
+  goal: string;
 };
 
 export const examples: Example[] = [

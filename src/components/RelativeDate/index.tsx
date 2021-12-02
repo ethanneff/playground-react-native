@@ -9,10 +9,10 @@ dayjs.extend(relativeTime);
 
 type Props = {
   date: number;
-  type?: FontType;
   emphasis?: FontEmphasis;
   format?: string;
   style?: ViewStyle;
+  type?: FontType;
 };
 
 const minute = 60 * 1000;

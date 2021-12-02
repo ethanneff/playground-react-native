@@ -8,8 +8,8 @@ import { CarouselSlide } from './types';
 
 type Props = {
   dotSize?: number;
-  slides: CarouselSlide[];
   duration?: number;
+  slides: CarouselSlide[];
   viewabilityConfig?: Record<string, unknown>;
 };
 

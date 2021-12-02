@@ -4,8 +4,8 @@ import { padding } from '../../features/Config';
 import { useColor } from '../Theme';
 
 type Props = {
-  onPress: () => void;
   icon: string;
+  onPress: () => void;
   title: string;
 };
 

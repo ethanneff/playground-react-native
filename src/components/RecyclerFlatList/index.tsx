@@ -24,19 +24,19 @@ export type RecyclerFlatListRef = RecyclerListView<
 
 type RecyclerFlatListProps<T> = {
   data: T[];
-  onEndReached?: () => void;
-  onRefetch?: () => void;
-  onRowRender: (item: T, index: number) => ReactElement;
-  loading?: boolean;
-  refreshing?: boolean;
-  itemWidth: number;
-  itemHeight: number;
-  style?: ViewStyle;
   isHorizontal?: boolean;
-  scrollViewProps?: ScrollViewProps;
+  itemHeight: number;
+  itemWidth: number;
+  loading?: boolean;
+  onEndReached?: () => void;
   onRef?: RefObject<
     RecyclerListView<RecyclerListViewProps, RecyclerListViewState>
   >;
+  onRefetch?: () => void;
+  onRowRender: (item: T, index: number) => ReactElement;
+  refreshing?: boolean;
+  scrollViewProps?: ScrollViewProps;
+  style?: ViewStyle;
 };
 
 export const RecyclerFlatList = <T,>({

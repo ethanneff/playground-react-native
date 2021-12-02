@@ -5,18 +5,18 @@ export type Category = {
 };
 
 export type Item = {
-  title: string;
   dayOfMonth: string;
   dayOfWeek: string;
   hour: string;
   id: number;
   month: string;
+  title: string;
   zone: string;
 };
 
 export type AuthStackRoutes = {
-  home: undefined;
   'category-detail': { category: Category };
+  home: undefined;
   'interval-detail': { item: Item };
 };
 export type UnAuthStackRoutes = {
@@ -25,6 +25,6 @@ export type UnAuthStackRoutes = {
 
 export type HomeTabRoutes = {
   interval: undefined;
-  progress: undefined;
   profile: undefined;
+  progress: undefined;
 };

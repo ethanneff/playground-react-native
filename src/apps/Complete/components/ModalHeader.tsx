@@ -4,10 +4,10 @@ import { Icon, Text, TouchableOpacity } from '../../../components';
 import { padding } from '../../../features';
 
 type Props = {
-  title: string;
   onLeftPress?: () => void;
   onRightPress?: () => void;
   size?: number;
+  title: string;
 };
 
 export const ModalHeader = memo(function ModalHeader({
