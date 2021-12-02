@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.60.6](https://github.com/ethanneff/example/compare/v2.60.5...v2.60.6) (2021-12-02)
+
+
+### Bug Fixes
+
+* add profile template ([f59b12d](https://github.com/ethanneff/example/commit/f59b12d660d27f9509a2ad3b1f9fe4975d3d2cb3))
+* correct padding on scrollview ([0c3a821](https://github.com/ethanneff/example/commit/0c3a82104710a4f4391c9fceff7cd455c82791f8))
+* update deps ([b24f1c4](https://github.com/ethanneff/example/commit/b24f1c49e8fa0f62830722b1cf5f4c270a311930))
+
 ## [2.60.5](https://github.com/ethanneff/example/compare/v2.60.4...v2.60.5) (2021-12-02)
 
 
