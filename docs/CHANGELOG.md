@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.60.5](https://github.com/ethanneff/example/compare/v2.60.4...v2.60.5) (2021-12-02)
+
+
+### Bug Fixes
+
+* sort typescript types ([aa1683e](https://github.com/ethanneff/example/commit/aa1683e6b4da7080f5568c46cb275839662169a3))
+
 ## [2.60.4](https://github.com/ethanneff/example/compare/v2.60.3...v2.60.4) (2021-11-30)
 
 
