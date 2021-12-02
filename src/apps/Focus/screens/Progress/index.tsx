@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import { ScrollView } from 'react-native';
-
 import { Calendar, Card, Screen, Text } from '../../../../components';
 import { padding, useColor } from '../../../../features';
 import { Category } from '../../types';
@@ -38,7 +37,8 @@ export const Progress = memo(function Progress() {
     <Screen dropShadow title="Progress">
       <ScrollView
         contentContainerStyle={{
-          padding: padding(4),
+          paddingHorizontal: padding(4),
+          paddingVertical: padding(2),
         }}
         style={{ backgroundColor: color.background.secondary }}
       >
