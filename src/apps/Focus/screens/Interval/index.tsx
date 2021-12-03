@@ -6,19 +6,21 @@ import {
   StyleSheet,
 } from 'react-native';
 import { Screen } from '../../../../components';
-import { useAdminNavBack } from '../../../../features';
+import { padding, useAdminNavBack, useColor } from '../../../../features';
 import { Item } from '../../types';
 import { ListItem } from './ListItem';
 import {
   getCurrentItem,
   getFirstItemOfDay,
   getItemLayout,
+  getLastItemOfDay,
   getMoreItems,
   initialIndex,
   keyExtractor,
 } from './utils';
 
 export const Interval = memo(function Interval() {
+  const color = useColor();
   const { onLeftPress } = useAdminNavBack();
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState<Item[]>(() => getMoreItems([]));
@@ -30,7 +32,9 @@ export const Interval = memo(function Interval() {
 
   const styles = StyleSheet.create({
     list: {
+      backgroundColor: color.background.secondary,
       opacity: loading ? 0 : 1,
+      paddingVertical: padding(4),
     },
     loading: {
       height: '100%',
@@ -44,7 +48,8 @@ export const Interval = memo(function Interval() {
       <ListItem
         currentItem={getCurrentItem(item)}
         item={item}
-        showSection={getFirstItemOfDay(index, item, items)}
+        showFooter={getLastItemOfDay(index, item, items)}
+        showHeader={getFirstItemOfDay(index, item, items)}
       />
     ),
     [items],

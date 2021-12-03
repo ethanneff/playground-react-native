@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import { Text } from '../../../../components';
-import { padding, useColor } from '../../../../features';
+import { padding } from '../../../../features';
 import { Item } from '../../types';
 
 type Props = {
@@ -9,16 +9,12 @@ type Props = {
 };
 
 export const ListSection = memo(function ListSection({ item }: Props) {
-  const color = useColor();
   return (
     <View
       style={{
         alignItems: 'center',
-        borderTopColor: color.border.secondary,
-        borderTopWidth: 1,
         flexDirection: 'row',
         justifyContent: 'center',
-        marginTop: padding(2),
         padding: padding(2),
       }}
     >

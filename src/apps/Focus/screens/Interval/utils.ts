@@ -26,7 +26,16 @@ export const getFirstItemOfDay = (
   item: Item,
   items: Item[],
 ): boolean =>
-  index < 1 ? false : item.dayOfMonth !== items[index - 1].dayOfMonth;
+  index >= items.length - 1
+    ? false
+    : item.dayOfMonth !== items[index + 1].dayOfMonth;
+
+export const getLastItemOfDay = (
+  index: number,
+  item: Item,
+  items: Item[],
+): boolean =>
+  index < 1 ? true : item.dayOfMonth !== items[index - 1].dayOfMonth;
 
 export const keyExtractor = (item: Item): string => String(item.id);
 
