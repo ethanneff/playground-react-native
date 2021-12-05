@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.60.7](https://github.com/ethanneff/example/compare/v2.60.6...v2.60.7) (2021-12-05)
+
+
+### Bug Fixes
+
+* make journal into card ([74f3900](https://github.com/ethanneff/example/commit/74f3900e6fd8b347010e07d534bdf6a11bbf3003))
+
 ## [2.60.6](https://github.com/ethanneff/example/compare/v2.60.5...v2.60.6) (2021-12-02)
 
 
