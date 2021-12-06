@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.60.9](https://github.com/ethanneff/example/compare/v2.60.8...v2.60.9) (2021-12-06)
+
+
+### Bug Fixes
+
+* style progress screen ([eedea36](https://github.com/ethanneff/example/commit/eedea363c950a81591bc76a6c8a2c3f80e146b81))
+
 ## [2.60.8](https://github.com/ethanneff/example/compare/v2.60.7...v2.60.8) (2021-12-05)
 
 
