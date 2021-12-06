@@ -16,7 +16,6 @@ type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
 export interface TextProps {
   adjustsFontSizeToFit?: boolean;
   bold?: boolean;
-
   center?: boolean;
   centerVertically?: boolean;
   color?: keyof MonoMultiColor;
@@ -26,13 +25,10 @@ export interface TextProps {
   hidden?: boolean;
   inverse?: boolean;
   invisible?: boolean;
-
   numberOfLines?: number;
   onPress?(): void;
-
   style?: StyleProp<TextStyle>;
   title?: string;
-
   type?: FontType;
 }
 

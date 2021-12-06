@@ -42,24 +42,26 @@ export const Progress = memo(function Progress() {
         }}
         style={{ backgroundColor: color.background.secondary }}
       >
-        <Text
-          emphasis="medium"
-          style={{ paddingVertical: padding(2) }}
-          title="Deep work over time"
-          type="h4"
-        />
         <Card>
+          <Text
+            emphasis="medium"
+            style={{ paddingBottom: padding(2) }}
+            title="Activity"
+            type="h4"
+          />
           <Calendar />
         </Card>
-        <Text
-          emphasis="medium"
-          style={{ paddingVertical: padding(2) }}
-          title="Areas of deep work"
-          type="h4"
-        />
-        {categories.map((category) => (
-          <CategoryCard category={category} key={category.id} />
-        ))}
+        <Card>
+          <Text
+            emphasis="medium"
+            style={{ paddingBottom: padding(2) }}
+            title="Categories"
+            type="h4"
+          />
+          {categories.map((category) => (
+            <CategoryCard category={category} key={category.id} />
+          ))}
+        </Card>
       </ScrollView>
     </Screen>
   );
