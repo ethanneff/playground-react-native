@@ -19,7 +19,7 @@ import {
   keyExtractor,
 } from './utils';
 
-export const Interval = memo(function Interval() {
+export const Journal = memo(function Journal() {
   const color = useColor();
   const { onLeftPress } = useAdminNavBack();
   const [loading, setLoading] = useState(true);

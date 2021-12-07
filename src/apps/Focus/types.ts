@@ -17,14 +17,14 @@ export type Item = {
 export type AuthStackRoutes = {
   'category-detail': { category: Category };
   home: undefined;
-  'interval-detail': { item: Item };
+  'journal-detail': { item: Item };
 };
 export type UnAuthStackRoutes = {
   landing: undefined;
 };
 
 export type HomeTabRoutes = {
-  interval: undefined;
+  journal: undefined;
   profile: undefined;
   progress: undefined;
 };

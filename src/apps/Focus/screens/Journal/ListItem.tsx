@@ -29,7 +29,7 @@ export const ListItem = memo(function ListItem({
     useNavigation<StackNavigationProp<AuthStackRoutes, 'home'>>();
 
   const onPress = useCallback(
-    () => navigate('interval-detail', { item }),
+    () => navigate('journal-detail', { item }),
     [item, navigate],
   );
 

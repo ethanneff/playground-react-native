@@ -2,14 +2,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import React, { ReactElement } from 'react';
 import { useNavScreenOptions } from '../../features';
-import {
-  CategoryDetail,
-  Interval,
-  IntervalDetail,
-  Landing,
-  Profile,
-  Progress,
-} from './screens';
+import { CategoryDetail, Journal, Landing, Profile, Progress } from './screens';
+import { JournalDetail } from './screens/JournalDetail';
 import { AuthStackRoutes, HomeTabRoutes, UnAuthStackRoutes } from './types';
 
 const AuthStack = createStackNavigator<AuthStackRoutes>();
@@ -36,7 +30,7 @@ const Tabs = () => {
   const screenOptions = tabScreenOptions({ tabIcons });
   return (
     <TabBar.Navigator screenOptions={screenOptions}>
-      <TabBar.Screen component={Interval} name="interval" />
+      <TabBar.Screen component={Journal} name="journal" />
       <TabBar.Screen component={Progress} name="progress" />
       <TabBar.Screen component={Profile} name="profile" />
     </TabBar.Navigator>
@@ -54,7 +48,7 @@ export const Navigation = (): ReactElement => {
   ) : (
     <AuthStack.Navigator screenOptions={modalScreenOptions}>
       <AuthStack.Screen component={Tabs} name="home" />
-      <AuthStack.Screen component={IntervalDetail} name="interval-detail" />
+      <AuthStack.Screen component={JournalDetail} name="journal-detail" />
       <AuthStack.Screen component={CategoryDetail} name="category-detail" />
     </AuthStack.Navigator>
   );

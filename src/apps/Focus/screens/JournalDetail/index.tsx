@@ -5,10 +5,10 @@ import React, { memo, useCallback, useState } from 'react';
 import { Modal, Text, TextInput } from '../../../../components';
 import { AuthStackRoutes } from '../../types';
 
-export const IntervalDetail = memo(function IntervalDetail() {
+export const JournalDetail = memo(function JournalDetail() {
   const { navigate } =
-    useNavigation<StackNavigationProp<AuthStackRoutes, 'interval-detail'>>();
-  const route = useRoute<RouteProp<AuthStackRoutes, 'interval-detail'>>();
+    useNavigation<StackNavigationProp<AuthStackRoutes, 'journal-detail'>>();
+  const route = useRoute<RouteProp<AuthStackRoutes, 'journal-detail'>>();
 
   const onModalClose = useCallback(() => {
     navigate('home');
