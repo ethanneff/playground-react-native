@@ -5,13 +5,18 @@ import {
   TransitionPresets,
 } from '@react-navigation/stack';
 import React, { useCallback } from 'react';
-import { Platform } from 'react-native';
-import { Icon } from '../../components';
+import { Platform, View } from 'react-native';
+import { Icon, Text } from '../../components';
+import { StringMethods } from '../../features/Extensions';
 import { useColor } from '../../features/Theme';
 
 type TabIcons = { [key: string]: { focused: string; unFocused: string } };
 type NavOptions = { route: RouteProp<ParamListBase> };
-type TabScreenOptions = { headerShown?: boolean; tabIcons: TabIcons };
+type TabScreenOptions = {
+  headerShown?: boolean;
+  tabIcons: TabIcons;
+  titleShown?: boolean;
+};
 
 type UseNavScreenOptions = {
   modalScreenOptions: StackNavigationOptions;
@@ -31,14 +36,23 @@ export const useNavScreenOptions = (): UseNavScreenOptions => {
   };
 
   const tabScreenOptions = useCallback(
-    ({ tabIcons, headerShown = false }) =>
+    ({ tabIcons, headerShown = false, titleShown = false }: TabScreenOptions) =>
       ({ route }: NavOptions): BottomTabNavigationOptions => ({
         headerShown,
         tabBarIcon: function tabBarIcon({ focused, size }) {
           const iconColor = focused ? 'primaryA' : 'tertiary';
+          const emphasis = focused ? 'none' : 'low';
           const key = focused ? 'focused' : 'unFocused';
           const name = tabIcons[route.name][key];
-          return <Icon color={iconColor} name={name} size={size} />;
+          const title = StringMethods.capitalize(route.name);
+          return (
+            <View style={{ alignItems: 'center' }}>
+              <Icon color={iconColor} name={name} size={size} />
+              {titleShown && (
+                <Text emphasis={emphasis} title={title} type="caption" />
+              )}
+            </View>
+          );
         },
         tabBarHideOnKeyboard: true,
         tabBarActiveTintColor: color.text.primaryA,
