@@ -10,8 +10,12 @@ const AuthStack = createStackNavigator<AuthStackRoutes>();
 const UnAuthStack = createStackNavigator<UnAuthStackRoutes>();
 const TabBar = createBottomTabNavigator<HomeTabRoutes>();
 
-const tabIcons = {
-  interval: {
+type TabIcons = {
+  [key in keyof HomeTabRoutes]: { focused: string; unFocused: string };
+};
+
+const tabIcons: TabIcons = {
+  journal: {
     focused: 'format-list-bulleted',
     unFocused: 'format-list-bulleted',
   },
