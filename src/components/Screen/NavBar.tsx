@@ -34,9 +34,8 @@ export const NavBar = memo(function NavBar({
 }: Props) {
   const color = useColor();
   const shadow = useDropShadow();
-  const showShadow = dropShadow ? shadow(2) : {};
+  const showShadow = dropShadow ? shadow(4) : {};
   const secondary = onSecondRightPress || onSecondLeftPress;
-  const primary = onRightPress || onLeftPress;
   const styles = StyleSheet.create({
     container: {
       alignItems: 'center',
@@ -48,39 +47,46 @@ export const NavBar = memo(function NavBar({
       flexDirection: 'row',
       justifyContent: 'space-between',
       paddingHorizontal: padding(2),
-      ...showShadow,
+      zIndex: 2,
     },
   });
 
   return (
-    <View style={styles.container}>
-      {primary && (
+    <>
+      <View style={styles.container}>
         <NavButton icon={leftIcon} onPress={onLeftPress} testID="leftNav" />
-      )}
-      {secondary && (
-        <NavButton
-          icon={secondLeftIcon}
-          onPress={onSecondLeftPress}
-          testID="secondLeftNav"
-        />
-      )}
-      <Text center flex numberOfLines={1} title={title} type="h4" />
-      {secondary && (
-        <NavButton
-          icon={secondRightIcon}
-          isRight
-          onPress={onSecondRightPress}
-          testID="secondRightNav"
-        />
-      )}
-      {primary && (
+        {secondary && (
+          <NavButton
+            icon={secondLeftIcon}
+            onPress={onSecondLeftPress}
+            testID="secondLeftNav"
+          />
+        )}
+        <Text center flex numberOfLines={1} title={title} type="h4" />
+        {secondary && (
+          <NavButton
+            icon={secondRightIcon}
+            notLeft
+            onPress={onSecondRightPress}
+            testID="secondRightNav"
+          />
+        )}
         <NavButton
           icon={rightIcon}
-          isRight
+          notLeft
           onPress={onRightPress}
           testID="rightNav"
         />
-      )}
-    </View>
+      </View>
+      <View
+        style={{
+          backgroundColor: color.background.primaryA,
+          width: '100%',
+          height: 2,
+          ...showShadow,
+          zIndex: 1,
+        }}
+      />
+    </>
   );
 });

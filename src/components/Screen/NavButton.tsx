@@ -6,7 +6,7 @@ import { TouchableOpacity } from '../TouchableOpacity';
 
 type Props = {
   icon?: string;
-  isRight?: boolean;
+  notLeft?: boolean;
   onPress?: () => void;
   testID: string;
 };
@@ -14,7 +14,7 @@ type Props = {
 export const NavButton = memo(function NavButton({
   onPress = undefined,
   icon = 'chevron-up',
-  isRight = false,
+  notLeft,
   testID,
 }: Props) {
   const styles = StyleSheet.create({
@@ -22,13 +22,17 @@ export const NavButton = memo(function NavButton({
     buttonRight: { alignSelf: 'flex-end' },
   });
   return (
-    <TouchableOpacity onPress={onPress} style={styles.button}>
+    <TouchableOpacity
+      disabled={!onPress}
+      onPress={onPress}
+      style={styles.button}
+    >
       <Icon
         color="secondary"
         hidden={!onPress}
         name={icon}
         size={padding(8)}
-        style={isRight && styles.buttonRight}
+        style={notLeft && styles.buttonRight}
         testID={testID}
       />
     </TouchableOpacity>
