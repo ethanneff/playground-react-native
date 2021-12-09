@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.60.10](https://github.com/ethanneff/example/compare/v2.60.9...v2.60.10) (2021-12-07)
+
+
+### Bug Fixes
+
+* allow tabs to show title ([916183a](https://github.com/ethanneff/example/commit/916183aa3197039ab0813050526786ac7e91277f))
+* better typing ([0fc24ed](https://github.com/ethanneff/example/commit/0fc24ed177177f9399a209b7b0a99ad9779f8d06))
+* make header same height with and without buttons ([30c77d8](https://github.com/ethanneff/example/commit/30c77d8956f88e1ef6a212be02409ba322f78f10))
+* rename files ([4e0552f](https://github.com/ethanneff/example/commit/4e0552f65b4015792593a2c4a9b82964220a0095))
+* update deps ([553fd01](https://github.com/ethanneff/example/commit/553fd01abf72a286ecb0f6c9aed8d200a04c64ca))
+
 ## [2.60.9](https://github.com/ethanneff/example/compare/v2.60.8...v2.60.9) (2021-12-06)
 
 
