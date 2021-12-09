@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.60.11](https://github.com/ethanneff/example/compare/v2.60.10...v2.60.11) (2021-12-09)
+
+
+### Bug Fixes
+
+* rebase ([b050182](https://github.com/ethanneff/example/commit/b0501821c794d230e27366149917877c78995a77))
+* update deps ([85623df](https://github.com/ethanneff/example/commit/85623df6ea05316db37f433ee091d6cf6bc34c62))
+* update deps ([a8f8528](https://github.com/ethanneff/example/commit/a8f8528fb81ed2fd666494868f3962675a7d8c24))
+
 ## [2.60.10](https://github.com/ethanneff/example/compare/v2.60.9...v2.60.10) (2021-12-07)
 
 
