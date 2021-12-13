@@ -823,7 +823,7 @@ PODS:
     - react-native-config/App (= 1.4.5)
   - react-native-config/App (1.4.5):
     - React-Core
-  - react-native-flipper (0.123.0):
+  - react-native-flipper (0.125.0):
     - React-Core
   - react-native-get-random-values (1.7.1):
     - React-Core
@@ -1311,7 +1311,7 @@ SPEC CHECKSUMS:
   React-logger: 933f80c97c633ee8965d609876848148e3fef438
   react-native-apple-authentication: b5981be2574a68db962b69e907dcb39264fea201
   react-native-config: 6502b1879f97ed5ac570a029961fc35ea606cd14
-  react-native-flipper: 33bba1cad647f4d56403012993f201e10518b78c
+  react-native-flipper: 3d9e214b412b3ce81e0d73bdcdc8097c0b0e8578
   react-native-get-random-values: 2c4ff6b44cb71291dabe9a8ae87d3877dcf387da
   react-native-netinfo: a3ece35948490a9507da0c56694da525b83357df
   react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
