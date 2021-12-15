@@ -370,6 +370,7 @@ exports[`input renders correctly 1`] = `
                           />
                           <RNGestureHandlerButton
                             collapsable={false}
+                            exclusive={true}
                             onGestureEvent={[Function]}
                             onGestureHandlerEvent={[Function]}
                             onGestureHandlerStateChange={[Function]}
@@ -439,6 +440,7 @@ exports[`input renders correctly 1`] = `
                         >
                           <RNGestureHandlerButton
                             collapsable={false}
+                            exclusive={true}
                             onGestureEvent={[Function]}
                             onGestureHandlerEvent={[Function]}
                             onGestureHandlerStateChange={[Function]}
@@ -500,6 +502,7 @@ exports[`input renders correctly 1`] = `
                           </RNGestureHandlerButton>
                           <RNGestureHandlerButton
                             collapsable={false}
+                            exclusive={true}
                             onGestureEvent={[Function]}
                             onGestureHandlerEvent={[Function]}
                             onGestureHandlerStateChange={[Function]}

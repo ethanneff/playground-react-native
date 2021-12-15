@@ -316,6 +316,7 @@ exports[`button renders correctly 1`] = `
                     >
                       <RNGestureHandlerButton
                         collapsable={false}
+                        exclusive={true}
                         onGestureEvent={[Function]}
                         onGestureHandlerEvent={[Function]}
                         onGestureHandlerStateChange={[Function]}
@@ -688,6 +689,7 @@ exports[`button renders disable 1`] = `
                     >
                       <RNGestureHandlerButton
                         collapsable={false}
+                        exclusive={true}
                         onGestureEvent={[Function]}
                         onGestureHandlerEvent={[Function]}
                         onGestureHandlerStateChange={[Function]}

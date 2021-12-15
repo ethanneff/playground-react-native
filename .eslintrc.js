@@ -2,7 +2,7 @@ module.exports = {
   extends: [
     '@react-native-community',
     'eslint:all',
-    'plugin:jest/all',
+    'plugin:jest/recommended',
     'plugin:react/all',
     'plugin:react-native/all',
     'plugin:sonarjs/recommended',

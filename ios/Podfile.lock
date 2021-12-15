@@ -914,26 +914,26 @@ PODS:
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
-  - RNFBAnalytics (13.1.0):
+  - RNFBAnalytics (14.0.0):
     - Firebase/Analytics (= 8.10.0)
     - React-Core
     - RNFBApp
-  - RNFBApp (13.1.0):
+  - RNFBApp (14.0.0):
     - Firebase/CoreOnly (= 8.10.0)
     - React-Core
-  - RNFBAuth (13.1.0):
+  - RNFBAuth (14.0.0):
     - Firebase/Auth (= 8.10.0)
     - React-Core
     - RNFBApp
-  - RNFBCrashlytics (13.1.0):
+  - RNFBCrashlytics (14.0.0):
     - Firebase/Crashlytics (= 8.10.0)
     - React-Core
     - RNFBApp
-  - RNFBFirestore (13.1.0):
+  - RNFBFirestore (14.0.0):
     - Firebase/Firestore (= 8.10.0)
     - React-Core
     - RNFBApp
-  - RNFBRemoteConfig (13.1.0):
+  - RNFBRemoteConfig (14.0.0):
     - Firebase/RemoteConfig (= 8.10.0)
     - React-Core
     - RNFBApp
@@ -944,7 +944,7 @@ PODS:
     - React-Core
   - RNRate (1.2.9):
     - React-Core
-  - RNReanimated (2.3.0):
+  - RNReanimated (2.3.1):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -1334,16 +1334,16 @@ SPEC CHECKSUMS:
   RNDeviceInfo: 0400a6d0c94186d1120c3cbd97b23abc022187a9
   RNDevMenu: fd325b5554b61fe7f48d9205a3877cf5ee88cd7c
   RNFastImage: 1f2cab428712a4baaf78d6169eaec7f622556dd7
-  RNFBAnalytics: a7527dd01cb02bfaebad2857733a2d01c22d8009
-  RNFBApp: 1d553b3f201e9aaeba03d777b1dea51eaacc24cc
-  RNFBAuth: af8bef00241eaab1c1c06d9b942c133d8a5135a8
-  RNFBCrashlytics: 5b0472223e5bfcdf5760ee787f1d114bc1cf2162
-  RNFBFirestore: d141f27f48e94c66830e561167aff712659d4d87
-  RNFBRemoteConfig: 5f249fe355082d6c12e080a41c832091515c9a2f
+  RNFBAnalytics: d3849b9f3c77144e0b0147743a3e4d947b43daaa
+  RNFBApp: e9a45e6edf3fd62a57a9cbffe4a7aaead5127d59
+  RNFBAuth: 5a6364a6a0633c7b57cadd73387efa713712abf0
+  RNFBCrashlytics: 75816126e5691d316c246567205e156d67ca7cb1
+  RNFBFirestore: 6a6ac200d758ac3ee3d41622e989c1e40955d636
+  RNFBRemoteConfig: cf7e9474fc8ba1b946d662feb51d72d024753f57
   RNGestureHandler: e5c7cab5f214503dcefd6b2b0cefb050e1f51c4a
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
   RNRate: 94f57c773e155ca0d0aeeba9c10a32bce9030daf
-  RNReanimated: 569c269480a76e39196aa17a5df08ef1561db5ff
+  RNReanimated: da3860204e5660c0dd66739936732197d359d753
   RNScreens: 522705f2e5c9d27efb17f24aceb2bf8335bc7b8e
   RNSensors: 7baffb62308e167902b28e5f74e072804bfc1ad1
   RNSound: 27e8268bdb0a1f191f219a33267f7e0445e8d62f
