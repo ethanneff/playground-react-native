@@ -3020,10 +3020,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-14.0.0.tgz#2fc99fd20f72672c4913ad9648b608f6b270632d"
   integrity sha512-67egdQvaGGrLW6v8U15aIGl5QjsI3VMDHFg6K2K6t06fBLnvPOj9o+LQ8R12nvmTTmLDWeQZ6X8u5DVnuyiuPg==
 
-"@react-native-firebase/crashlytics@14.0.0":
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-14.0.0.tgz#1d6c10bf94367e9fbf2187ea1356eb33e1653a35"
-  integrity sha512-jdP1eMa36WVwnXoEbLqPl6+zB57mSgLXdUhXLlR37K2PYb1ZHH3crH/ctJ9cW+do2Vjm+kqqSyXzW1vvlfK1Vw==
+"@react-native-firebase/crashlytics@14.1.0":
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-14.1.0.tgz#fd9ad1fb180bf92199f3e7ba5068b3725349fd45"
+  integrity sha512-bvk2fIUyXGNNpGhzwIv/PQJJrxgw2LZQM6xvnStSwDkprcFFoivMh2k9zcfwUnziCRUOt/nVvusq0OdSNqLYyA==
   dependencies:
     "@expo/config-plugins" "^4.0.12"
     stacktrace-js "^2.0.0"
