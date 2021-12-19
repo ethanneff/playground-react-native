@@ -3006,10 +3006,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-14.0.0.tgz#3cb1f2f2afcb37938b7201dc51fc0c0851fb048b"
   integrity sha512-QDZ0EKqnfxz81f/5uIAfs//PWYj8n4bn3NgYnNJ/hAHogLSZv2nDdwioAedUd3furiSGobRi7+ECVnS3FTXlyA==
 
-"@react-native-firebase/app@14.0.0":
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-14.0.0.tgz#e2af033dda1d7d8c2d28d7464cfe8abd0196d404"
-  integrity sha512-noP4bBn+7ODvViy/MbmeLcH55K3vqJgyOLqTWC93lqlQOtWQB1QrTrZ/iJtxhrUcZLrVfjnxrVWsxLW+VzXfWQ==
+"@react-native-firebase/app@14.1.0":
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-14.1.0.tgz#f3a26c893c86e9cb50f9735bc9ab0b1fef6462aa"
+  integrity sha512-xYGJEbKBfi3UNTeSHKSc1LcAZ9wuTi4uqgdmmm5vBiSF0+IkpxGmCk3izACDRaaji7eEBAHu4MaHFRmqwuil6Q==
   dependencies:
     "@expo/config-plugins" "^4.0.12"
     opencollective-postinstall "^2.0.1"
