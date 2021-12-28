@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.60.19](https://github.com/ethanneff/example/compare/v2.60.18...v2.60.19) (2021-12-28)
+
+
+### Bug Fixes
+
+* update deps ([e5c2ea3](https://github.com/ethanneff/example/commit/e5c2ea361a09ca9fff3998ffee2c49775f9db92b))
+* update deps ([1f17d5e](https://github.com/ethanneff/example/commit/1f17d5e777f664f743b68666bdef2ef01e8eecd3))
+
 ## [2.60.18](https://github.com/ethanneff/example/compare/v2.60.17...v2.60.18) (2021-12-26)
 
 
