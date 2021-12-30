@@ -48,7 +48,7 @@
     <a href="https://codecov.io/gh/ethanneff/playground-react-native">
       <img src="https://codecov.io/gh/ethanneff/playground-react-native/branch/master/graph/badge.svg" alt="Test Coverage" />
     </a>
-    <a href="https://github.com/ethanneff/playground-react-native">
+    <a href="https://github.com/ethanneff/playground-react-native/packages/1171467">
       <img src="https://img.shields.io/github/release/ethanneff/playground-react-native.svg" alt="Github Release" />
     </a>
     <a href="https://github.com/ethanneff/playground-react-native/blob/master/docs/LICENSE.md">
