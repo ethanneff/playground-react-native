@@ -11,7 +11,7 @@ type Props = {
 const badgeLimit = '!';
 const maxBadgeNumber = 99;
 
-export const Badge = memo(({ badge }: Props) => {
+export const Badge = memo(function IconMeme({ badge }: Props) {
   const color = useColor();
   const styles = StyleSheet.create({
     badgeContainer: {

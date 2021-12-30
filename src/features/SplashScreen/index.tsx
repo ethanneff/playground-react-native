@@ -48,66 +48,64 @@ const getInterpolate = (progress: Animated.Value) => ({
   },
 });
 
-export const SplashScreen = memo(
-  ({
-    backgroundColor,
-    primaryColor,
-    source,
-    duration = 1000,
-    delay = 300,
-    children,
-  }: Props) => {
-    const smallest = useRootSelector(getSmallestDimension);
-    const useNativeDriver = useDriver();
-    const [state, setState] = useState({
-      progress: new Animated.Value(0),
-      complete: false,
-    });
-    const width = smallest * 4;
-    const { imageScale, fade, bleed } = getInterpolate(state.progress);
-    const primaryColorStyles = [
-      StyleSheet.absoluteFill,
-      { backgroundColor: primaryColor },
-      fade,
-    ];
-    const imageStyles = [{ width, height: width }, imageScale];
-    const childrenStyles = [{ flex: 1 }, bleed];
-    const backgroundColorStyles = [
-      StyleSheet.absoluteFill,
-      { backgroundColor },
-      fade,
-    ];
-    const styles = StyleSheet.create({
-      centered: { alignItems: 'center', flex: 1, justifyContent: 'center' },
-      container: { backgroundColor, flex: 1 },
-      flex: { flex: 1 },
-    });
+export const SplashScreen = memo(function SplashScreenMemo({
+  backgroundColor,
+  primaryColor,
+  source,
+  duration = 1000,
+  delay = 300,
+  children,
+}: Props) {
+  const smallest = useRootSelector(getSmallestDimension);
+  const useNativeDriver = useDriver();
+  const [state, setState] = useState({
+    progress: new Animated.Value(0),
+    complete: false,
+  });
+  const width = smallest * 4;
+  const { imageScale, fade, bleed } = getInterpolate(state.progress);
+  const primaryColorStyles = [
+    StyleSheet.absoluteFill,
+    { backgroundColor: primaryColor },
+    fade,
+  ];
+  const imageStyles = [{ width, height: width }, imageScale];
+  const childrenStyles = [{ flex: 1 }, bleed];
+  const backgroundColorStyles = [
+    StyleSheet.absoluteFill,
+    { backgroundColor },
+    fade,
+  ];
+  const styles = StyleSheet.create({
+    centered: { alignItems: 'center', flex: 1, justifyContent: 'center' },
+    container: { backgroundColor, flex: 1 },
+    flex: { flex: 1 },
+  });
 
-    useEffect(() => {
-      Animated.timing(state.progress, {
-        toValue: 100,
-        duration,
-        useNativeDriver,
-        delay,
-        easing: Easing.in(Easing.cubic),
-      }).start(() => setState((p) => ({ ...p, complete: true })));
-    }, [delay, duration, state.progress, useNativeDriver]);
+  useEffect(() => {
+    Animated.timing(state.progress, {
+      toValue: 100,
+      duration,
+      useNativeDriver,
+      delay,
+      easing: Easing.in(Easing.cubic),
+    }).start(() => setState((p) => ({ ...p, complete: true })));
+  }, [delay, duration, state.progress, useNativeDriver]);
 
-    return (
-      <View style={styles.container}>
-        <Animated.View style={primaryColorStyles} />
-        <MaskedView
-          maskElement={
-            <Animated.View style={styles.centered}>
-              <Animated.Image source={source} style={imageStyles} />
-            </Animated.View>
-          }
-          style={styles.flex}
-        >
-          <Animated.View style={backgroundColorStyles} />
-          <Animated.View style={childrenStyles}>{children}</Animated.View>
-        </MaskedView>
-      </View>
-    );
-  },
-);
+  return (
+    <View style={styles.container}>
+      <Animated.View style={primaryColorStyles} />
+      <MaskedView
+        maskElement={
+          <Animated.View style={styles.centered}>
+            <Animated.Image source={source} style={imageStyles} />
+          </Animated.View>
+        }
+        style={styles.flex}
+      >
+        <Animated.View style={backgroundColorStyles} />
+        <Animated.View style={childrenStyles}>{children}</Animated.View>
+      </MaskedView>
+    </View>
+  );
+});
