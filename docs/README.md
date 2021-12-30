@@ -34,8 +34,8 @@
     <a href="https://www.codacy.com/manual/ethanneff/example">
       <img src="https://api.codacy.com/project/badge/Grade/dca655d1a64a40d7bd3e77ec4cd39061" alt="Codacy">
     </a>
-    <a href="https://www.codefactor.io/repository/github/ethanneff/example">
-      <img src="https://www.codefactor.io/repository/github/ethanneff/example/badge" alt="CodeFactor" />
+    <a href="https://www.codefactor.io/repository/github/ethanneff/playground-react-native">
+      <img src="https://www.codefactor.io/repository/github/ethanneff/playground-react-native/badge" alt="CodeFactor" />
     </a>
     <a href="https://codeclimate.com/github/ethanneff/example">
       <img src="https://api.codeclimate.com/v1/badges/0f040f1f40b1976af3ab/maintainability" alt="CodeClimate" />
