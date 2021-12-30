@@ -23,11 +23,11 @@
 ## Methodology
 
 - Design
-  - [Planning](https://github.com/ethanneff/example/blob/master/docs/PLANNING.md)
-  - [Dependencies](https://github.com/ethanneff/example/blob/master/docs/DEPENDENCIES.md)
-  - [Changelog](https://github.com/ethanneff/example/blob/master/docs/CHANGELOG.md)
-  - [License](https://github.com/ethanneff/example/blob/master/docs/LICENSE.md)
+  - [Planning](https://github.com/ethanneff/playground-react-native/blob/master/docs/PLANNING.md)
+  - [Dependencies](https://github.com/ethanneff/playground-react-native/blob/master/docs/DEPENDENCIES.md)
+  - [Changelog](https://github.com/ethanneff/playground-react-native/blob/master/docs/CHANGELOG.md)
+  - [License](https://github.com/ethanneff/playground-react-native/blob/master/docs/LICENSE.md)
 - Develop
-  - [Contributing](https://github.com/ethanneff/example/blob/master/docs/CONTRIBUTING.md)
-  - [Installation](https://github.com/ethanneff/example/blob/master/docs/INSTALLATION.md)
-  - [Troubleshooting](https://github.com/ethanneff/example/blob/master/docs/TROUBLESHOOTING.md)
+  - [Contributing](https://github.com/ethanneff/playground-react-native/blob/master/docs/CONTRIBUTING.md)
+  - [Installation](https://github.com/ethanneff/playground-react-native/blob/master/docs/INSTALLATION.md)
+  - [Troubleshooting](https://github.com/ethanneff/playground-react-native/blob/master/docs/TROUBLESHOOTING.md)

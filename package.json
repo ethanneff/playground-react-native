@@ -1,13 +1,13 @@
 {
-  "name": "@ethanneff/example",
+  "name": "@ethanneff/playground-react-native",
   "version": "2.60.20",
   "description": "A playground for react-native",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@ethanneff"
   },
-  "repository": "https://github.com/ethanneff/example",
+  "repository": "https://github.com/ethanneff/playground-react-native",
   "license": "MIT",
-  "homepage": "https://ethanneff.github.io/example",
+  "homepage": "https://ethanneff.github.io/playground-react-native",
   "scripts": {
     "ios": "react-native run-ios",
     "android": "react-native run-android",

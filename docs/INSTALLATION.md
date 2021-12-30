@@ -4,7 +4,7 @@
 
 ```sh
 npm i -g yarn
-git clone git@github.com:ethanneff/example.git
+git clone git@github.com:ethanneff/playground-react-native.git
 cd example
 yarn install
 ```
