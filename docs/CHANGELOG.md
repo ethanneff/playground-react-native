@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.60.21](https://github.com/ethanneff/example/compare/v2.60.20...v2.60.21) (2021-12-30)
+
+
+### Bug Fixes
+
+* update codefactor icon ([31a206e](https://github.com/ethanneff/example/commit/31a206ee340f044f55c0847ce212925e59499768))
+
 ## [2.60.20](https://github.com/ethanneff/example/compare/v2.60.19...v2.60.20) (2021-12-30)
 
 
