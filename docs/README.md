@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://www.appstud.com/wp-content/uploads/2018/03/React-Native-Titre.png" width="200" alt="react-native-playground">
+  <img src="https://www.appstud.com/wp-content/uploads/2018/03/React-Native-Titre.png" alt="react-native-playground">
   <h1 align="center">React Native Playground</h1>
   <p align="center">One repo, lots of code</p>
   <div>
