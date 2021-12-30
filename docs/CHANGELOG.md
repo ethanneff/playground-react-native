@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.60.20](https://github.com/ethanneff/example/compare/v2.60.19...v2.60.20) (2021-12-30)
+
+
+### Bug Fixes
+
+* add meta image for repo ([5573542](https://github.com/ethanneff/example/commit/55735429196e7f3d8ebd1308e40983fff1895d6a))
+* more readme ([1b8ce7a](https://github.com/ethanneff/example/commit/1b8ce7aaf93e8c59663156a7c7ecc3ea0d81a6a5))
+* move readme ([f0c0c30](https://github.com/ethanneff/example/commit/f0c0c3022766d4c4548ea17b52f19891fdec9d27))
+
 ## [2.60.19](https://github.com/ethanneff/example/compare/v2.60.18...v2.60.19) (2021-12-28)
 
 
