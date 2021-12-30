@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.60.23](https://github.com/ethanneff/playground-react-native/compare/v2.60.22...v2.60.23) (2021-12-30)
+
+
+### Bug Fixes
+
+* make deploys work again ([723b634](https://github.com/ethanneff/playground-react-native/commit/723b634a65d6501759604d85602f92919c9d4424))
+
 ## [2.60.22](https://github.com/ethanneff/playground-react-native/compare/v2.60.21...v2.60.22) (2021-12-30)
 
 
