@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.60.24](https://github.com/ethanneff/playground-react-native/compare/v2.60.23...v2.60.24) (2021-12-30)
+
+
+### Bug Fixes
+
+* relocate package ([ded37c2](https://github.com/ethanneff/playground-react-native/commit/ded37c2ee64986ce6495e18baecceda230d0dc7d))
+
 ## [2.60.23](https://github.com/ethanneff/playground-react-native/compare/v2.60.22...v2.60.23) (2021-12-30)
 
 
