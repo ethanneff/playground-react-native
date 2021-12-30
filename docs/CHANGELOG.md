@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.60.22](https://github.com/ethanneff/playground-react-native/compare/v2.60.21...v2.60.22) (2021-12-30)
+
+
+### Bug Fixes
+
+* rename app to playground react native ([2c687dd](https://github.com/ethanneff/playground-react-native/commit/2c687dd9253bf3394e2f9122826930fbed3b8695))
+
 ## [2.60.21](https://github.com/ethanneff/example/compare/v2.60.20...v2.60.21) (2021-12-30)
 
 
