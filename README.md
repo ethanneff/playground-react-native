@@ -45,8 +45,8 @@
     <a href="https://depfu.com/github/ethanneff/playground-react-native?project_id=13687">
       <img src="https://badges.depfu.com/badges/5db9285618b61ad8cb04aca559d53839/overview.svg" alt="Dependencies" />
     </a>
-    <a href="https://codecov.io/gh/ethanneff/playground-react-native">
-      <img src="https://codecov.io/gh/ethanneff/playground-react-native/branch/master/graph/badge.svg" alt="Test Coverage" />
+    <a href="https://codecov.io/gh/ethanneff/example">
+      <img src="https://codecov.io/gh/ethanneff/example/branch/master/graph/badge.svg" alt="Test Coverage" />
     </a>
     <a href="https://github.com/ethanneff/playground-react-native/packages/1171467">
       <img src="https://img.shields.io/github/release/ethanneff/playground-react-native.svg" alt="Github Release" />
