@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.60.25](https://github.com/ethanneff/playground-react-native/compare/v2.60.24...v2.60.25) (2021-12-31)
+
+
+### Bug Fixes
+
+* rename scripts to fit within readme ([72b39cf](https://github.com/ethanneff/playground-react-native/commit/72b39cf77436eb0e8d78d2c89604f5829e7338ec))
+* update deps ([280b34b](https://github.com/ethanneff/playground-react-native/commit/280b34ba4f776e1ce22ff724dbb92430756f8413))
+
 ## [2.60.24](https://github.com/ethanneff/playground-react-native/compare/v2.60.23...v2.60.24) (2021-12-30)
 
 
