@@ -3204,10 +3204,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-4.1.12.tgz#279ff7bbe487af92ad95ec758a029a54569e2a62"
   integrity sha512-CiuLZ2orueBiWHYxfaJF57jQY6HY2Q3z5pdAE4MKH8EqIImr/jgDJrJ/UxOVZHK1Ng9P+XlGIKfVIcuWZ6guuA==
 
-"@react-native-firebase/analytics@14.1.0":
-  version "14.1.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-14.1.0.tgz#ed239b01a379e84e8cb872ef71842e01774d0ed6"
-  integrity sha512-z1BkBx6c1/eynOcyMknezuC+zwLyGVc4qz3gvWOLiokLbqaneXiYVNPe6D/hhM0HIxSLM6JCptvkpAlUi0G7Pg==
+"@react-native-firebase/analytics@14.2.1":
+  version "14.2.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-14.2.1.tgz#4bad3ec18b0335131b7fe739ae0cf3ebd6aa6b5b"
+  integrity sha512-yY4l0Bi9POKkzOpdobRO7FilCyIXAlr2FYWse95BswGQ6ddmX2/txq/aaSEp5TN/AWZGuJiyhPMHsHZdqC41XA==
 
 "@react-native-firebase/app@14.1.0":
   version "14.1.0"
