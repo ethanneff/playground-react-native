@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.60.27](https://github.com/ethanneff/playground-react-native/compare/v2.60.26...v2.60.27) (2022-01-02)
+
+
+### Bug Fixes
+
+* correct code climate link ([fcd9692](https://github.com/ethanneff/playground-react-native/commit/fcd969266aa79dc2d78f768a7371e506646931c5))
+
 ## [2.60.26](https://github.com/ethanneff/playground-react-native/compare/v2.60.25...v2.60.26) (2021-12-31)
 
 
