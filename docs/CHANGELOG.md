@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.60.28](https://github.com/ethanneff/playground-react-native/compare/v2.60.27...v2.60.28) (2022-01-02)
+
+
+### Bug Fixes
+
+* update eslint for react-scripts 5 ([680a3d2](https://github.com/ethanneff/playground-react-native/commit/680a3d231fd930e8c7f6fc0ded6950b5b223644b))
+* update to eslint 8.6.0 ([cd44a71](https://github.com/ethanneff/playground-react-native/commit/cd44a71f21e425ee221be43cc17c42dc8a25f620))
+* updates firebase ([8d964ad](https://github.com/ethanneff/playground-react-native/commit/8d964ad92cf759452549353fd6c62e7dbf5dedb3))
+
 ## [2.60.27](https://github.com/ethanneff/playground-react-native/compare/v2.60.26...v2.60.27) (2022-01-02)
 
 
