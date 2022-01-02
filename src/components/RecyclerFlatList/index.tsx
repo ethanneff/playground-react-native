@@ -64,7 +64,7 @@ export const RecyclerFlatList = <T,>({
 
   const [layoutProvider] = useState(
     new LayoutProvider(
-      (_) => 1,
+      () => 1,
       (_, dim) => {
         dim.width = itemWidth;
         dim.height = itemHeight;

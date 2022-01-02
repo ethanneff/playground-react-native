@@ -1,6 +1,5 @@
 module.exports = {
   extends: [
-    '@react-native-community',
     'eslint:all',
     'plugin:jest/recommended',
     'plugin:react/all',
@@ -23,6 +22,7 @@ module.exports = {
     'src/mocks/',
     'src/conversions/',
   ],
+  env: { node: true },
   parser: '@typescript-eslint/parser',
   plugins: [
     'react',
@@ -100,5 +100,6 @@ module.exports = {
   },
   settings: {
     'import/ignore': ['react-native'],
+    react: { version: 'detect' },
   },
 };

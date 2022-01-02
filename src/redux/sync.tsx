@@ -45,7 +45,7 @@ const syncQueue: SyncQueue = {
   },
 };
 
-export const syncMiddleware: RootMiddleware = (_) => (dispatch) => (action) => {
+export const syncMiddleware: RootMiddleware = () => (dispatch) => (action) => {
   if (reduxWhiteList[action.type] && enabled) syncQueue.set([action.type]);
   return dispatch(action);
 };
