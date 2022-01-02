@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.60.26](https://github.com/ethanneff/playground-react-native/compare/v2.60.25...v2.60.26) (2021-12-31)
+
+
+### Bug Fixes
+
+* correct codecov badge ([c9571fc](https://github.com/ethanneff/playground-react-native/commit/c9571fcf8f71cee204d7195975a0e600f89e6994))
+
 ## [2.60.25](https://github.com/ethanneff/playground-react-native/compare/v2.60.24...v2.60.25) (2021-12-31)
 
 
