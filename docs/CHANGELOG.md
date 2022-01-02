@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.60.29](https://github.com/ethanneff/playground-react-native/compare/v2.60.28...v2.60.29) (2022-01-02)
+
+
+### Bug Fixes
+
+* make linting great again :thumbsup: ([ede52eb](https://github.com/ethanneff/playground-react-native/commit/ede52eb3bcecce49e8decb9a9706afad56b7dfeb))
+
 ## [2.60.28](https://github.com/ethanneff/playground-react-native/compare/v2.60.27...v2.60.28) (2022-01-02)
 
 
