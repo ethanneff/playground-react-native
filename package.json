@@ -108,7 +108,7 @@
     "@types/react-test-renderer": "17.0.1",
     "@types/uuid": "8.3.3",
     "@typescript-eslint/eslint-plugin": "5.8.1",
-    "@typescript-eslint/parser": "5.8.1",
+    "@typescript-eslint/parser": "5.9.0",
     "@welldone-software/why-did-you-render": "6.2.3",
     "babel-plugin-transform-remove-console": "6.9.4",
     "codecov": "3.8.3",
