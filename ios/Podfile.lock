@@ -914,30 +914,30 @@ PODS:
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
-  - RNFBAnalytics (14.2.1):
+  - RNFBAnalytics (14.2.2):
     - Firebase/Analytics (= 8.10.0)
     - React-Core
     - RNFBApp
-  - RNFBApp (14.2.1):
+  - RNFBApp (14.2.2):
     - Firebase/CoreOnly (= 8.10.0)
     - React-Core
-  - RNFBAuth (14.2.1):
+  - RNFBAuth (14.2.2):
     - Firebase/Auth (= 8.10.0)
     - React-Core
     - RNFBApp
-  - RNFBCrashlytics (14.2.1):
+  - RNFBCrashlytics (14.2.2):
     - Firebase/Crashlytics (= 8.10.0)
     - React-Core
     - RNFBApp
-  - RNFBFirestore (14.2.1):
+  - RNFBFirestore (14.2.2):
     - Firebase/Firestore (= 8.10.0)
     - React-Core
     - RNFBApp
-  - RNFBRemoteConfig (14.2.1):
+  - RNFBRemoteConfig (14.2.2):
     - Firebase/RemoteConfig (= 8.10.0)
     - React-Core
     - RNFBApp
-  - RNGestureHandler (2.1.0):
+  - RNGestureHandler (2.1.1):
     - React-Core
   - RNGoogleSignin (5.0.0):
     - GoogleSignIn (~> 5.0.0)
@@ -977,10 +977,10 @@ PODS:
     - React-RCTImage
   - RNSensors (7.3.3):
     - React-Core
-  - RNSound (0.11.1):
+  - RNSound (0.11.2):
     - React-Core
-    - RNSound/Core (= 0.11.1)
-  - RNSound/Core (0.11.1):
+    - RNSound/Core (= 0.11.2)
+  - RNSound/Core (0.11.2):
     - React-Core
   - RNSVG (12.1.1):
     - React
@@ -1334,19 +1334,19 @@ SPEC CHECKSUMS:
   RNDeviceInfo: 0400a6d0c94186d1120c3cbd97b23abc022187a9
   RNDevMenu: fd325b5554b61fe7f48d9205a3877cf5ee88cd7c
   RNFastImage: 1f2cab428712a4baaf78d6169eaec7f622556dd7
-  RNFBAnalytics: c2bc124906b6719c9d3e407f06f9222a15638edc
-  RNFBApp: 4f490a1e02e41721c55b354019f39f2323d72f82
-  RNFBAuth: 8a2d139824431757f1a6b71a8d086cb104e56a0d
-  RNFBCrashlytics: be2b4abeaf1cfe019a95f0ced8a7e7594a59f14e
-  RNFBFirestore: 1269c01e670c2b1833dc3ba1b09bc7b08669393e
-  RNFBRemoteConfig: 7dbac91747c7f8687b66c4fe2ea4b293bfaa4e94
-  RNGestureHandler: e5c7cab5f214503dcefd6b2b0cefb050e1f51c4a
+  RNFBAnalytics: e4a511c1f6d2eeca606a0acd7d43b39c937c9afa
+  RNFBApp: 78d0446e8b28dc30616c134a9e4d8d4b01f9f966
+  RNFBAuth: ac807e2ed1c08f1157bd866ede64faa706eab303
+  RNFBCrashlytics: 01b813547d6bd905563f6ba5bc706b01aa2466fe
+  RNFBFirestore: 0b11664ee7aef061378ad3a3acc48d0bc31d821a
+  RNFBRemoteConfig: 542d85179c812bc1770b956c5203caa43e2bd116
+  RNGestureHandler: e1ad51d31a580755079d5124d3ab66f0fcaa8311
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
   RNRate: 94f57c773e155ca0d0aeeba9c10a32bce9030daf
   RNReanimated: da3860204e5660c0dd66739936732197d359d753
   RNScreens: 522705f2e5c9d27efb17f24aceb2bf8335bc7b8e
   RNSensors: 7baffb62308e167902b28e5f74e072804bfc1ad1
-  RNSound: 27e8268bdb0a1f191f219a33267f7e0445e8d62f
+  RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   RNVectorIcons: 4143ba35feebab8fdbe6bc43d1e776b393d47ac8
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
