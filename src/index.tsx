@@ -1,10 +1,12 @@
 import React from 'react';
-import { AppRegistry, Platform } from 'react-native';
+import { AppRegistry, LogBox, Platform } from 'react-native';
 import 'react-native-get-random-values';
 import { ErrorBoundary } from './components';
 import { AppProvider, debugDev } from './features';
 import { NavigationProvider } from './features/Navigation/core';
 import { ReduxProvider } from './redux/core';
+
+LogBox.ignoreLogs(['new NativeEventEmitter']);
 
 debugDev();
 export const Main = (): JSX.Element => {
