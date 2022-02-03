@@ -44,7 +44,7 @@
     "@react-native-firebase/firestore": "14.3.0",
     "@react-native-firebase/remote-config": "14.3.0",
     "@react-navigation/bottom-tabs": "6.1.0",
-    "@react-navigation/native": "6.0.7",
+    "@react-navigation/native": "6.0.8",
     "@react-navigation/stack": "6.1.0",
     "axios": "0.25.0",
     "d3-scale": "4.0.2",
