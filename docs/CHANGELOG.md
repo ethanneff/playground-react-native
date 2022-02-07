@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.60.33](https://github.com/ethanneff/playground-react-native/compare/v2.60.32...v2.60.33) (2022-02-01)
+
+
+### Bug Fixes
+
+* update deps ([#628](https://github.com/ethanneff/playground-react-native/issues/628)) ([938227d](https://github.com/ethanneff/playground-react-native/commit/938227d1ab858276185762e0030a0899e59b1947))
+
 ## [2.60.32](https://github.com/ethanneff/playground-react-native/compare/v2.60.31...v2.60.32) (2022-01-26)
 
 

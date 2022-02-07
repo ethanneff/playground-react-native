@@ -1,6 +1,6 @@
 {
   "name": "@ethanneff/playground-react-native",
-  "version": "2.60.32",
+  "version": "2.60.33",
   "description": "A playground for react-native",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@ethanneff"
@@ -18,7 +18,7 @@
     "test": "jest -u --coverage --cache --config .github/jest.config.js",
     "watch": "jest -u --watchAll --cache --config .github/jest.config.js",
     "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
-    "reset": "watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-* ./android/build  ./android/.gradle ./android/app/build  ~/Library/Developer/Xcode/DerivedData  /tmp/haste-map-react-native-packager-* ./ios/build ./ios/Pods/* ./ios/Podfile.lock ./ios/core.xcworkspace; jest --clearCache; gem install fastlane; bundler update --all; bundler install; cd ios; pod update; pod update; cd ..; npx jetify; cd android; ./gradlew clean; cd ..; react-native start --reset-cache",
+    "reset": "watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-* ./android/build ./android/.gradle ./android/app/build ~/Library/Developer/Xcode/DerivedData /tmp/haste-map-react-native-packager-* ./ios/build ./ios/Pods/* ./ios/Podfile.lock ./ios/core.xcworkspace; jest --clearCache;  gem install fastlane; bundler update --all; bundler install; cd ios; pod update; pod update; cd ..; npx jetify; cd android; ./gradlew clean; cd ..; react-native start --reset-cache",
     "ci-release": "semantic-release -e ./.github/release.config.js",
     "ci-prettify": "prettier --write .",
     "ci-install": "yarn install --frozen-lockfile",
