@@ -87,7 +87,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.16.12",
-    "@babel/runtime": "7.16.7",
+    "@babel/runtime": "7.17.0",
     "@commitlint/cli": "16.1.0",
     "@commitlint/config-conventional": "16.0.0",
     "@semantic-release/changelog": "6.0.1",
