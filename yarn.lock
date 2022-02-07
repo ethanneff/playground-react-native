@@ -14345,10 +14345,10 @@ react-native-screens@^3.4.0:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
 
-react-native-sensors@7.3.3:
-  version "7.3.3"
-  resolved "https://registry.yarnpkg.com/react-native-sensors/-/react-native-sensors-7.3.3.tgz#27725c0656670557c92e6847917d4fece0e31bba"
-  integrity sha512-zBDqQdVlG2gy9ZjhwjB6azB+nbq0fFMOsfbqcNdLdi8CzhBTWA4YdE7rkwW7tcquRON3OgkBIpaefP9pjQTbuw==
+react-native-sensors@7.3.5:
+  version "7.3.5"
+  resolved "https://registry.yarnpkg.com/react-native-sensors/-/react-native-sensors-7.3.5.tgz#19ef06ca74197a7e118a44033cd656e964cdce83"
+  integrity sha512-DMxaxSmgUOLTyi7s0tDwaX5VwtljcCj9c1IhOo3EyjTjTrtSFyEHTyI61qvOxk+DXtbVYCybeqYKFe6TiM+Cbg==
   dependencies:
     rxjs ">= 6"
 
