@@ -829,7 +829,7 @@ PODS:
     - React-Core
   - react-native-netinfo (8.0.0):
     - React-Core
-  - react-native-safe-area-context (3.3.2):
+  - react-native-safe-area-context (3.4.0):
     - React-Core
   - react-native-slider (4.2.0):
     - React-Core
@@ -914,30 +914,30 @@ PODS:
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
-  - RNFBAnalytics (14.3.2):
+  - RNFBAnalytics (14.5.0):
     - Firebase/Analytics (= 8.12.1)
     - React-Core
     - RNFBApp
-  - RNFBApp (14.3.2):
+  - RNFBApp (14.5.0):
     - Firebase/CoreOnly (= 8.12.1)
     - React-Core
-  - RNFBAuth (14.3.2):
+  - RNFBAuth (14.5.0):
     - Firebase/Auth (= 8.12.1)
     - React-Core
     - RNFBApp
-  - RNFBCrashlytics (14.3.2):
+  - RNFBCrashlytics (14.5.0):
     - Firebase/Crashlytics (= 8.12.1)
     - React-Core
     - RNFBApp
-  - RNFBFirestore (14.3.2):
+  - RNFBFirestore (14.5.0):
     - Firebase/Firestore (= 8.12.1)
     - React-Core
     - RNFBApp
-  - RNFBRemoteConfig (14.3.2):
+  - RNFBRemoteConfig (14.5.0):
     - Firebase/RemoteConfig (= 8.12.1)
     - React-Core
     - RNFBApp
-  - RNGestureHandler (2.1.1):
+  - RNGestureHandler (2.2.0):
     - React-Core
   - RNGoogleSignin (5.0.0):
     - GoogleSignIn (~> 5.0.0)
@@ -972,7 +972,7 @@ PODS:
     - React-RCTText
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.11.1):
+  - RNScreens (3.12.0):
     - React-Core
     - React-RCTImage
   - RNSensors (7.3.5):
@@ -984,7 +984,7 @@ PODS:
     - React-Core
   - RNSVG (12.1.1):
     - React
-  - RNVectorIcons (9.0.0):
+  - RNVectorIcons (9.1.0):
     - React-Core
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
@@ -1314,7 +1314,7 @@ SPEC CHECKSUMS:
   react-native-flipper: 8d0ada062fbc2c7460cc0d343aded6fc3f9c90dc
   react-native-get-random-values: 30b3f74ca34e30e2e480de48e4add2706a40ac8f
   react-native-netinfo: ba4ea50d836c60580c59079233c400753fe5bcb6
-  react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
+  react-native-safe-area-context: f4f7cc09d81ae2d39dfd13e764d718969af07080
   react-native-slider: 37e1cf275dab20d3c015e40969aa9f5c309645a8
   React-perflogger: 93075d8931c32cd1fce8a98c15d2d5ccc4d891bd
   React-RCTActionSheet: 7d3041e6761b4f3044a37079ddcb156575fb6d89
@@ -1334,21 +1334,21 @@ SPEC CHECKSUMS:
   RNDeviceInfo: 4944cf8787b9c5bffaf301fda68cc1a2ec003341
   RNDevMenu: fd325b5554b61fe7f48d9205a3877cf5ee88cd7c
   RNFastImage: 1f2cab428712a4baaf78d6169eaec7f622556dd7
-  RNFBAnalytics: f762601843421b7644e4d827e7722831762cbc6e
-  RNFBApp: 096fb7586e167f3ba3dc7a4bf5811a19aec58735
-  RNFBAuth: 586d2548d4c5dfef663d6b0ee02b6434309b8e88
-  RNFBCrashlytics: 27c5474dfbbe9f7826b54663c44c23fae500c332
-  RNFBFirestore: cd240246412393409e80f5d6a701e43b8a52452c
-  RNFBRemoteConfig: f601da699a8f4de0301a5be5b263a46d185742c0
-  RNGestureHandler: e1ad51d31a580755079d5124d3ab66f0fcaa8311
+  RNFBAnalytics: afd361a31db57b61853ef321a872a132df0f4519
+  RNFBApp: 06c8447270d295edc431bccd55970d8711a07a42
+  RNFBAuth: e248a56b1d28d3b53b54b72a296cf9270df1d96e
+  RNFBCrashlytics: 0cfb53fcd558969ee498eb7030ee7065c7dacf8d
+  RNFBFirestore: 7e4fe3b009a193d2f2fb0a19d1d6ab06355d4a09
+  RNFBRemoteConfig: 440bb1657e45674f7ca6561581bedb6fb80ebfed
+  RNGestureHandler: bf572f552ea324acd5b5464b8d30755b2d8c1de6
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
   RNRate: 94f57c773e155ca0d0aeeba9c10a32bce9030daf
   RNReanimated: e8afbe2a9e08e9e778ea72ddb1a8533445812621
-  RNScreens: 4d83613b50b74ed277026375dc0810893b0c347f
+  RNScreens: 2559f98b0835103cbef3b26ba77fa61d4bb37ae7
   RNSensors: e74c8bd9606400c1048ab67af7f41eb2091cb2fc
   RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
-  RNVectorIcons: 4143ba35feebab8fdbe6bc43d1e776b393d47ac8
+  RNVectorIcons: 7923e585eaeb139b9f4531d25a125a1500162a0b
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageWebPCoder: f93010f3f6c031e2f8fb3081ca4ee6966c539815
   Yoga: e7dc4e71caba6472ff48ad7d234389b91dadc280
