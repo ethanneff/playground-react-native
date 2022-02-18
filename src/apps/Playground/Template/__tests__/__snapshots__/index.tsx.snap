@@ -382,6 +382,7 @@ exports[`template renders correctly 1`] = `
                                 >
                                   <Text
                                     allowFontScaling={false}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {
@@ -465,6 +466,7 @@ exports[`template renders correctly 1`] = `
                                 >
                                   <Text
                                     allowFontScaling={false}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {

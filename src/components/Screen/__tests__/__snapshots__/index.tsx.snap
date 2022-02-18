@@ -382,6 +382,7 @@ exports[`screen renders correctly 1`] = `
                                 >
                                   <Text
                                     allowFontScaling={false}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {
@@ -446,6 +447,7 @@ exports[`screen renders correctly 1`] = `
                                 >
                                   <Text
                                     allowFontScaling={false}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {

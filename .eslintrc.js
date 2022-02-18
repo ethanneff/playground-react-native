@@ -54,6 +54,7 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/require-default-props': 'off',
     // style
+    'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': [
       'error',
       { enableDangerousAutofixThisMayCauseInfiniteLoops: true },

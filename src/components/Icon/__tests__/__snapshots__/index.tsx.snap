@@ -330,6 +330,7 @@ exports[`icon renders correctly 1`] = `
                       >
                         <Text
                           allowFontScaling={false}
+                          selectable={false}
                           style={
                             Array [
                               Object {
@@ -695,6 +696,7 @@ exports[`icon renders correctly with clear and max badge 1`] = `
                       >
                         <Text
                           allowFontScaling={false}
+                          selectable={false}
                           style={
                             Array [
                               Object {
@@ -1093,6 +1095,7 @@ exports[`icon renders correctly without defaults 1`] = `
                       >
                         <Text
                           allowFontScaling={false}
+                          selectable={false}
                           style={
                             Array [
                               Object {
