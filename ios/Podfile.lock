@@ -823,13 +823,13 @@ PODS:
     - react-native-config/App (= 1.4.5)
   - react-native-config/App (1.4.5):
     - React-Core
-  - react-native-flipper (0.131.1):
+  - react-native-flipper (0.136.0):
     - React-Core
   - react-native-get-random-values (1.7.2):
     - React-Core
   - react-native-netinfo (8.0.0):
     - React-Core
-  - react-native-safe-area-context (3.4.0):
+  - react-native-safe-area-context (3.4.1):
     - React-Core
   - react-native-slider (4.2.0):
     - React-Core
@@ -1311,10 +1311,10 @@ SPEC CHECKSUMS:
   React-logger: 933f80c97c633ee8965d609876848148e3fef438
   react-native-apple-authentication: b5981be2574a68db962b69e907dcb39264fea201
   react-native-config: 6502b1879f97ed5ac570a029961fc35ea606cd14
-  react-native-flipper: 8d0ada062fbc2c7460cc0d343aded6fc3f9c90dc
+  react-native-flipper: 29573afb547256573ba6acc3b3c101534ea0aa83
   react-native-get-random-values: 30b3f74ca34e30e2e480de48e4add2706a40ac8f
   react-native-netinfo: ba4ea50d836c60580c59079233c400753fe5bcb6
-  react-native-safe-area-context: f4f7cc09d81ae2d39dfd13e764d718969af07080
+  react-native-safe-area-context: 9e40fb181dac02619414ba1294d6c2a807056ab9
   react-native-slider: 37e1cf275dab20d3c015e40969aa9f5c309645a8
   React-perflogger: 93075d8931c32cd1fce8a98c15d2d5ccc4d891bd
   React-RCTActionSheet: 7d3041e6761b4f3044a37079ddcb156575fb6d89
