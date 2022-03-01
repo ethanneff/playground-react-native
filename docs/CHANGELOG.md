@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.60.42](https://github.com/ethanneff/playground-react-native/compare/v2.60.41...v2.60.42) (2022-03-01)
+
+
+### Bug Fixes
+
+* remove setstate ([a8fcc28](https://github.com/ethanneff/playground-react-native/commit/a8fcc287122e4ea78422022606666888be2d9d65))
+* update deps ([6125429](https://github.com/ethanneff/playground-react-native/commit/6125429e9909c9be3a8c2a80224367e597440d69))
+* use ref instead of state ([ae333e7](https://github.com/ethanneff/playground-react-native/commit/ae333e7d9848244c09db507cb081a7163504f1ad))
+
 ## [2.60.41](https://github.com/ethanneff/playground-react-native/compare/v2.60.40...v2.60.41) (2022-02-27)
 
 
