@@ -829,7 +829,7 @@ PODS:
     - React-Core
   - react-native-netinfo (8.0.0):
     - React-Core
-  - react-native-safe-area-context (4.0.1):
+  - react-native-safe-area-context (4.1.0):
     - RCT-Folly
     - RCTRequired
     - RCTTypeSafety
@@ -941,7 +941,7 @@ PODS:
     - Firebase/RemoteConfig (= 8.12.1)
     - React-Core
     - RNFBApp
-  - RNGestureHandler (2.2.0):
+  - RNGestureHandler (2.3.0):
     - React-Core
   - RNGoogleSignin (5.0.0):
     - GoogleSignIn (~> 5.0.0)
@@ -976,7 +976,7 @@ PODS:
     - React-RCTText
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.12.0):
+  - RNScreens (3.13.0):
     - React-Core
     - React-RCTImage
   - RNSensors (7.3.5):
@@ -1318,7 +1318,7 @@ SPEC CHECKSUMS:
   react-native-flipper: 29573afb547256573ba6acc3b3c101534ea0aa83
   react-native-get-random-values: 30b3f74ca34e30e2e480de48e4add2706a40ac8f
   react-native-netinfo: ba4ea50d836c60580c59079233c400753fe5bcb6
-  react-native-safe-area-context: eec048ba481a7ec7b1bf9d7b7a78fb1103f4806d
+  react-native-safe-area-context: 4a7fbd72ff607377d4b3006705e757d6530912b7
   react-native-slider: 37e1cf275dab20d3c015e40969aa9f5c309645a8
   React-perflogger: 93075d8931c32cd1fce8a98c15d2d5ccc4d891bd
   React-RCTActionSheet: 7d3041e6761b4f3044a37079ddcb156575fb6d89
@@ -1344,11 +1344,11 @@ SPEC CHECKSUMS:
   RNFBCrashlytics: 0cfb53fcd558969ee498eb7030ee7065c7dacf8d
   RNFBFirestore: 7e4fe3b009a193d2f2fb0a19d1d6ab06355d4a09
   RNFBRemoteConfig: 440bb1657e45674f7ca6561581bedb6fb80ebfed
-  RNGestureHandler: bf572f552ea324acd5b5464b8d30755b2d8c1de6
+  RNGestureHandler: 77d59828d40838c9fabb76a12d2d0a80c006906f
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
   RNRate: 94f57c773e155ca0d0aeeba9c10a32bce9030daf
   RNReanimated: e8afbe2a9e08e9e778ea72ddb1a8533445812621
-  RNScreens: 2559f98b0835103cbef3b26ba77fa61d4bb37ae7
+  RNScreens: aa12070b21c1d6011b3627a0b1d09b627232b070
   RNSensors: e74c8bd9606400c1048ab67af7f41eb2091cb2fc
   RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
