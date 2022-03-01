@@ -3,6 +3,7 @@ import React, {
   RefObject,
   useCallback,
   useEffect,
+  useRef,
   useState,
 } from 'react';
 import { RefreshControl, ScrollViewProps, ViewStyle } from 'react-native';
@@ -62,13 +63,15 @@ export const RecyclerFlatList = <T,>({
     new DataProvider((r1, r2) => r1.id !== r2.id),
   );
 
-  const layoutProvider = new LayoutProvider(
-    () => 1,
-    (__, dim) => {
-      dim.width = itemWidth;
-      dim.height = itemHeight;
-    },
-  );
+  const layoutProvider = useRef(
+    new LayoutProvider(
+      () => 1,
+      (__, dim) => {
+        dim.width = itemWidth;
+        dim.height = itemHeight;
+      },
+    ),
+  ).current;
 
   const onRenderFooter = useCallback(
     () => (loading ? <ActivityIndicator /> : null),
