@@ -62,14 +62,12 @@ export const RecyclerFlatList = <T,>({
     new DataProvider((r1, r2) => r1.id !== r2.id),
   );
 
-  const [layoutProvider] = useState(
-    new LayoutProvider(
-      () => 1,
-      (_, dim) => {
-        dim.width = itemWidth;
-        dim.height = itemHeight;
-      },
-    ),
+  const layoutProvider = new LayoutProvider(
+    () => 1,
+    (__, dim) => {
+      dim.width = itemWidth;
+      dim.height = itemHeight;
+    },
   );
 
   const onRenderFooter = useCallback(
