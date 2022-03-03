@@ -823,13 +823,13 @@ PODS:
     - react-native-config/App (= 1.4.5)
   - react-native-config/App (1.4.5):
     - React-Core
-  - react-native-flipper (0.136.0):
+  - react-native-flipper (0.137.0):
     - React-Core
   - react-native-get-random-values (1.7.2):
     - React-Core
-  - react-native-netinfo (8.0.0):
+  - react-native-netinfo (8.1.0):
     - React-Core
-  - react-native-safe-area-context (4.1.0):
+  - react-native-safe-area-context (4.1.2):
     - RCT-Folly
     - RCTRequired
     - RCTTypeSafety
@@ -976,7 +976,7 @@ PODS:
     - React-RCTText
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.13.0):
+  - RNScreens (3.13.1):
     - React-Core
     - React-RCTImage
   - RNSensors (7.3.5):
@@ -986,8 +986,8 @@ PODS:
     - RNSound/Core (= 0.11.2)
   - RNSound/Core (0.11.2):
     - React-Core
-  - RNSVG (12.1.1):
-    - React
+  - RNSVG (12.3.0):
+    - React-Core
   - RNVectorIcons (9.1.0):
     - React-Core
   - SDWebImage (5.11.1):
@@ -1315,10 +1315,10 @@ SPEC CHECKSUMS:
   React-logger: 933f80c97c633ee8965d609876848148e3fef438
   react-native-apple-authentication: b5981be2574a68db962b69e907dcb39264fea201
   react-native-config: 6502b1879f97ed5ac570a029961fc35ea606cd14
-  react-native-flipper: 29573afb547256573ba6acc3b3c101534ea0aa83
+  react-native-flipper: 9ce0e50fc10cb4786901de4fa4c8726b4651b1ad
   react-native-get-random-values: 30b3f74ca34e30e2e480de48e4add2706a40ac8f
-  react-native-netinfo: ba4ea50d836c60580c59079233c400753fe5bcb6
-  react-native-safe-area-context: 4a7fbd72ff607377d4b3006705e757d6530912b7
+  react-native-netinfo: 379ba2af7d2abcec0c062267abe1c9a977c72bf9
+  react-native-safe-area-context: 114e9a74df2643012b9d6cc1460b94f3b6a90780
   react-native-slider: 37e1cf275dab20d3c015e40969aa9f5c309645a8
   React-perflogger: 93075d8931c32cd1fce8a98c15d2d5ccc4d891bd
   React-RCTActionSheet: 7d3041e6761b4f3044a37079ddcb156575fb6d89
@@ -1348,10 +1348,10 @@ SPEC CHECKSUMS:
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
   RNRate: 94f57c773e155ca0d0aeeba9c10a32bce9030daf
   RNReanimated: e8afbe2a9e08e9e778ea72ddb1a8533445812621
-  RNScreens: aa12070b21c1d6011b3627a0b1d09b627232b070
+  RNScreens: 40a2cb40a02a609938137a1e0acfbf8fc9eebf19
   RNSensors: e74c8bd9606400c1048ab67af7f41eb2091cb2fc
   RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
-  RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
+  RNSVG: 302bfc9905bd8122f08966dc2ce2d07b7b52b9f8
   RNVectorIcons: 7923e585eaeb139b9f4531d25a125a1500162a0b
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageWebPCoder: f93010f3f6c031e2f8fb3081ca4ee6966c539815
