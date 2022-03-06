@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 ruby '2.7.4'
 gem 'fastlane'
 gem 'fastlane-plugin-load_json'
