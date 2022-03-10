@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.60.45](https://github.com/ethanneff/playground-react-native/compare/v2.60.44...v2.60.45) (2022-03-10)
+
+
+### Bug Fixes
+
+* update deps ([dbb4f74](https://github.com/ethanneff/playground-react-native/commit/dbb4f74604745bd51631f2432558d6dd55d27635))
+* use lint-staged instead of husky hooks ([4a1fcdf](https://github.com/ethanneff/playground-react-native/commit/4a1fcdf956252995df2c3c539be1bfc103619e70))
+
 ## [2.60.44](https://github.com/ethanneff/playground-react-native/compare/v2.60.43...v2.60.44) (2022-03-08)
 
 
