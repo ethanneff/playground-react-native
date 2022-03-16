@@ -31,6 +31,7 @@ exports[`text renders body1 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -46,6 +47,7 @@ exports[`text renders body1 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -61,7 +63,6 @@ exports[`text renders body1 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -80,7 +81,6 @@ exports[`text renders body1 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -111,6 +111,7 @@ exports[`text renders body1 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -124,6 +125,7 @@ exports[`text renders body1 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -138,7 +140,6 @@ exports[`text renders body1 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -153,6 +154,7 @@ exports[`text renders body1 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -179,6 +181,7 @@ exports[`text renders body1 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -255,7 +258,6 @@ exports[`text renders body1 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -266,6 +268,8 @@ exports[`text renders body1 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={11}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -316,7 +320,6 @@ exports[`text renders body1 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -374,6 +377,7 @@ exports[`text renders body2 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -389,6 +393,7 @@ exports[`text renders body2 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -404,7 +409,6 @@ exports[`text renders body2 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -423,7 +427,6 @@ exports[`text renders body2 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -454,6 +457,7 @@ exports[`text renders body2 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -467,6 +471,7 @@ exports[`text renders body2 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -481,7 +486,6 @@ exports[`text renders body2 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -496,6 +500,7 @@ exports[`text renders body2 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -522,6 +527,7 @@ exports[`text renders body2 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -598,7 +604,6 @@ exports[`text renders body2 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -609,6 +614,8 @@ exports[`text renders body2 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={12}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -659,7 +666,6 @@ exports[`text renders body2 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -717,6 +723,7 @@ exports[`text renders button 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -732,6 +739,7 @@ exports[`text renders button 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -747,7 +755,6 @@ exports[`text renders button 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -766,7 +773,6 @@ exports[`text renders button 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -797,6 +803,7 @@ exports[`text renders button 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -810,6 +817,7 @@ exports[`text renders button 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -824,7 +832,6 @@ exports[`text renders button 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -839,6 +846,7 @@ exports[`text renders button 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -865,6 +873,7 @@ exports[`text renders button 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -941,7 +950,6 @@ exports[`text renders button 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -952,6 +960,8 @@ exports[`text renders button 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={13}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -1002,7 +1012,6 @@ exports[`text renders button 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -1060,6 +1069,7 @@ exports[`text renders button empty 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -1075,6 +1085,7 @@ exports[`text renders button empty 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -1090,7 +1101,6 @@ exports[`text renders button empty 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -1109,7 +1119,6 @@ exports[`text renders button empty 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -1140,6 +1149,7 @@ exports[`text renders button empty 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -1153,6 +1163,7 @@ exports[`text renders button empty 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -1167,7 +1178,6 @@ exports[`text renders button empty 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -1182,6 +1192,7 @@ exports[`text renders button empty 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -1208,6 +1219,7 @@ exports[`text renders button empty 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -1284,7 +1296,6 @@ exports[`text renders button empty 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -1295,6 +1306,8 @@ exports[`text renders button empty 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={14}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -1345,7 +1358,6 @@ exports[`text renders button empty 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -1403,6 +1415,7 @@ exports[`text renders caption 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -1418,6 +1431,7 @@ exports[`text renders caption 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -1433,7 +1447,6 @@ exports[`text renders caption 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -1452,7 +1465,6 @@ exports[`text renders caption 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -1483,6 +1495,7 @@ exports[`text renders caption 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -1496,6 +1509,7 @@ exports[`text renders caption 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -1510,7 +1524,6 @@ exports[`text renders caption 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -1525,6 +1538,7 @@ exports[`text renders caption 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -1551,6 +1565,7 @@ exports[`text renders caption 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -1627,7 +1642,6 @@ exports[`text renders caption 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -1638,6 +1652,8 @@ exports[`text renders caption 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={15}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -1688,7 +1704,6 @@ exports[`text renders caption 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -1746,6 +1761,7 @@ exports[`text renders correctly 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -1761,6 +1777,7 @@ exports[`text renders correctly 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -1776,7 +1793,6 @@ exports[`text renders correctly 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -1795,7 +1811,6 @@ exports[`text renders correctly 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -1826,6 +1841,7 @@ exports[`text renders correctly 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -1839,6 +1855,7 @@ exports[`text renders correctly 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -1853,7 +1870,6 @@ exports[`text renders correctly 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -1868,6 +1884,7 @@ exports[`text renders correctly 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -1894,6 +1911,7 @@ exports[`text renders correctly 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -1970,7 +1988,6 @@ exports[`text renders correctly 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -1981,6 +1998,8 @@ exports[`text renders correctly 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={1}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -2031,7 +2050,6 @@ exports[`text renders correctly 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -2089,6 +2107,7 @@ exports[`text renders empty 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -2104,6 +2123,7 @@ exports[`text renders empty 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -2119,7 +2139,6 @@ exports[`text renders empty 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -2138,7 +2157,6 @@ exports[`text renders empty 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -2169,6 +2187,7 @@ exports[`text renders empty 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -2182,6 +2201,7 @@ exports[`text renders empty 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -2196,7 +2216,6 @@ exports[`text renders empty 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -2211,6 +2230,7 @@ exports[`text renders empty 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -2237,6 +2257,7 @@ exports[`text renders empty 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -2313,7 +2334,6 @@ exports[`text renders empty 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -2324,6 +2344,8 @@ exports[`text renders empty 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={2}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -2374,7 +2396,6 @@ exports[`text renders empty 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -2432,6 +2453,7 @@ exports[`text renders h1 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -2447,6 +2469,7 @@ exports[`text renders h1 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -2462,7 +2485,6 @@ exports[`text renders h1 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -2481,7 +2503,6 @@ exports[`text renders h1 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -2512,6 +2533,7 @@ exports[`text renders h1 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -2525,6 +2547,7 @@ exports[`text renders h1 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -2539,7 +2562,6 @@ exports[`text renders h1 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -2554,6 +2576,7 @@ exports[`text renders h1 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -2580,6 +2603,7 @@ exports[`text renders h1 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -2656,7 +2680,6 @@ exports[`text renders h1 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -2667,6 +2690,8 @@ exports[`text renders h1 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={3}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -2717,7 +2742,6 @@ exports[`text renders h1 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -2775,6 +2799,7 @@ exports[`text renders h3 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -2790,6 +2815,7 @@ exports[`text renders h3 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -2805,7 +2831,6 @@ exports[`text renders h3 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -2824,7 +2849,6 @@ exports[`text renders h3 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -2855,6 +2879,7 @@ exports[`text renders h3 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -2868,6 +2893,7 @@ exports[`text renders h3 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -2882,7 +2908,6 @@ exports[`text renders h3 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -2897,6 +2922,7 @@ exports[`text renders h3 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -2923,6 +2949,7 @@ exports[`text renders h3 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -2999,7 +3026,6 @@ exports[`text renders h3 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -3010,6 +3036,8 @@ exports[`text renders h3 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={5}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -3060,7 +3088,6 @@ exports[`text renders h3 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -3118,6 +3145,7 @@ exports[`text renders h4 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -3133,6 +3161,7 @@ exports[`text renders h4 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -3148,7 +3177,6 @@ exports[`text renders h4 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -3167,7 +3195,6 @@ exports[`text renders h4 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -3198,6 +3225,7 @@ exports[`text renders h4 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -3211,6 +3239,7 @@ exports[`text renders h4 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -3225,7 +3254,6 @@ exports[`text renders h4 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -3240,6 +3268,7 @@ exports[`text renders h4 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -3266,6 +3295,7 @@ exports[`text renders h4 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -3342,7 +3372,6 @@ exports[`text renders h4 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -3353,6 +3382,8 @@ exports[`text renders h4 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={6}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -3403,7 +3434,6 @@ exports[`text renders h4 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -3461,6 +3491,7 @@ exports[`text renders h5 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -3476,6 +3507,7 @@ exports[`text renders h5 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -3491,7 +3523,6 @@ exports[`text renders h5 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -3510,7 +3541,6 @@ exports[`text renders h5 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -3541,6 +3571,7 @@ exports[`text renders h5 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -3554,6 +3585,7 @@ exports[`text renders h5 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -3568,7 +3600,6 @@ exports[`text renders h5 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -3583,6 +3614,7 @@ exports[`text renders h5 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -3609,6 +3641,7 @@ exports[`text renders h5 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -3685,7 +3718,6 @@ exports[`text renders h5 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -3696,6 +3728,8 @@ exports[`text renders h5 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={7}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -3746,7 +3780,6 @@ exports[`text renders h5 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -3804,6 +3837,7 @@ exports[`text renders h6 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -3819,6 +3853,7 @@ exports[`text renders h6 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -3834,7 +3869,6 @@ exports[`text renders h6 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -3853,7 +3887,6 @@ exports[`text renders h6 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -3884,6 +3917,7 @@ exports[`text renders h6 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -3897,6 +3931,7 @@ exports[`text renders h6 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -3911,7 +3946,6 @@ exports[`text renders h6 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -3926,6 +3960,7 @@ exports[`text renders h6 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -3952,6 +3987,7 @@ exports[`text renders h6 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -4028,7 +4064,6 @@ exports[`text renders h6 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -4039,6 +4074,8 @@ exports[`text renders h6 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={8}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -4089,7 +4126,6 @@ exports[`text renders h6 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -4147,6 +4183,7 @@ exports[`text renders overline 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -4162,6 +4199,7 @@ exports[`text renders overline 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -4177,7 +4215,6 @@ exports[`text renders overline 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -4196,7 +4233,6 @@ exports[`text renders overline 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -4227,6 +4263,7 @@ exports[`text renders overline 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -4240,6 +4277,7 @@ exports[`text renders overline 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -4254,7 +4292,6 @@ exports[`text renders overline 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -4269,6 +4306,7 @@ exports[`text renders overline 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -4295,6 +4333,7 @@ exports[`text renders overline 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -4371,7 +4410,6 @@ exports[`text renders overline 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -4382,6 +4420,8 @@ exports[`text renders overline 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={16}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -4432,7 +4472,6 @@ exports[`text renders overline 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -4490,6 +4529,7 @@ exports[`text renders subtitle1 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -4505,6 +4545,7 @@ exports[`text renders subtitle1 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -4520,7 +4561,6 @@ exports[`text renders subtitle1 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -4539,7 +4579,6 @@ exports[`text renders subtitle1 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -4570,6 +4609,7 @@ exports[`text renders subtitle1 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -4583,6 +4623,7 @@ exports[`text renders subtitle1 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -4597,7 +4638,6 @@ exports[`text renders subtitle1 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -4612,6 +4652,7 @@ exports[`text renders subtitle1 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -4638,6 +4679,7 @@ exports[`text renders subtitle1 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -4714,7 +4756,6 @@ exports[`text renders subtitle1 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -4725,6 +4766,8 @@ exports[`text renders subtitle1 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={9}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -4775,7 +4818,6 @@ exports[`text renders subtitle1 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -4833,6 +4875,7 @@ exports[`text renders subtitle2 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -4848,6 +4891,7 @@ exports[`text renders subtitle2 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -4863,7 +4907,6 @@ exports[`text renders subtitle2 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -4882,7 +4925,6 @@ exports[`text renders subtitle2 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -4913,6 +4955,7 @@ exports[`text renders subtitle2 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -4926,6 +4969,7 @@ exports[`text renders subtitle2 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -4940,7 +4984,6 @@ exports[`text renders subtitle2 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -4955,6 +4998,7 @@ exports[`text renders subtitle2 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -4981,6 +5025,7 @@ exports[`text renders subtitle2 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -5057,7 +5102,6 @@ exports[`text renders subtitle2 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -5068,6 +5112,8 @@ exports[`text renders subtitle2 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={10}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -5118,7 +5164,6 @@ exports[`text renders subtitle2 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {
@@ -5176,6 +5221,7 @@ exports[`text renders type="h2" 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -5191,6 +5237,7 @@ exports[`text renders type="h2" 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -5206,7 +5253,6 @@ exports[`text renders type="h2" 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -5225,7 +5271,6 @@ exports[`text renders type="h2" 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -5256,6 +5301,7 @@ exports[`text renders type="h2" 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -5269,6 +5315,7 @@ exports[`text renders type="h2" 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -5283,7 +5330,6 @@ exports[`text renders type="h2" 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -5298,6 +5344,7 @@ exports[`text renders type="h2" 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -5324,6 +5371,7 @@ exports[`text renders type="h2" 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -5400,7 +5448,6 @@ exports[`text renders type="h2" 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -5411,6 +5458,8 @@ exports[`text renders type="h2" 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={4}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -5461,7 +5510,6 @@ exports[`text renders type="h2" 1`] = `
                     >
                       <Text
                         collapsable={false}
-                        nativeID="animatedComponent"
                         onPress={[Function]}
                         style={
                           Object {

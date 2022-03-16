@@ -31,6 +31,7 @@ exports[`icon renders correctly 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -46,6 +47,7 @@ exports[`icon renders correctly 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -61,7 +63,6 @@ exports[`icon renders correctly 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -80,7 +81,6 @@ exports[`icon renders correctly 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -111,6 +111,7 @@ exports[`icon renders correctly 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -124,6 +125,7 @@ exports[`icon renders correctly 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -138,7 +140,6 @@ exports[`icon renders correctly 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -153,6 +154,7 @@ exports[`icon renders correctly 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -179,6 +181,7 @@ exports[`icon renders correctly 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -255,7 +258,6 @@ exports[`icon renders correctly 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -266,6 +268,8 @@ exports[`icon renders correctly 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={1}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -397,6 +401,7 @@ exports[`icon renders correctly with clear and max badge 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -412,6 +417,7 @@ exports[`icon renders correctly with clear and max badge 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -427,7 +433,6 @@ exports[`icon renders correctly with clear and max badge 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -446,7 +451,6 @@ exports[`icon renders correctly with clear and max badge 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -477,6 +481,7 @@ exports[`icon renders correctly with clear and max badge 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -490,6 +495,7 @@ exports[`icon renders correctly with clear and max badge 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -504,7 +510,6 @@ exports[`icon renders correctly with clear and max badge 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -519,6 +524,7 @@ exports[`icon renders correctly with clear and max badge 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -545,6 +551,7 @@ exports[`icon renders correctly with clear and max badge 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -621,7 +628,6 @@ exports[`icon renders correctly with clear and max badge 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -632,6 +638,8 @@ exports[`icon renders correctly with clear and max badge 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={3}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -735,7 +743,6 @@ exports[`icon renders correctly with clear and max badge 1`] = `
                         >
                           <Text
                             collapsable={false}
-                            nativeID="animatedComponent"
                             onPress={[Function]}
                             style={
                               Object {
@@ -796,6 +803,7 @@ exports[`icon renders correctly without defaults 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -811,6 +819,7 @@ exports[`icon renders correctly without defaults 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -826,7 +835,6 @@ exports[`icon renders correctly without defaults 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -845,7 +853,6 @@ exports[`icon renders correctly without defaults 1`] = `
           </View>
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             pointerEvents="box-none"
             style={
               Object {
@@ -876,6 +883,7 @@ exports[`icon renders correctly without defaults 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -889,6 +897,7 @@ exports[`icon renders correctly without defaults 1`] = `
                 }
               />
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -903,7 +912,6 @@ exports[`icon renders correctly without defaults 1`] = `
                   accessibilityRole="header"
                   aria-level="1"
                   collapsable={false}
-                  nativeID="animatedComponent"
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -918,6 +926,7 @@ exports[`icon renders correctly without defaults 1`] = `
                 </Text>
               </View>
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -944,6 +953,7 @@ exports[`icon renders correctly without defaults 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -1020,7 +1030,6 @@ exports[`icon renders correctly without defaults 1`] = `
           >
             <View
               collapsable={false}
-              nativeID="animatedComponent"
               pointerEvents="box-none"
               style={
                 Object {
@@ -1031,6 +1040,8 @@ exports[`icon renders correctly without defaults 1`] = `
               <View
                 collapsable={false}
                 forwardedRef={[Function]}
+                handlerTag={2}
+                handlerType="PanGestureHandler"
                 needsOffscreenAlphaCompositing={false}
                 onGestureHandlerEvent={[Function]}
                 onGestureHandlerStateChange={[Function]}
@@ -1134,7 +1145,6 @@ exports[`icon renders correctly without defaults 1`] = `
                         >
                           <Text
                             collapsable={false}
-                            nativeID="animatedComponent"
                             onPress={[Function]}
                             style={
                               Object {
