@@ -35,7 +35,7 @@
     "@react-native-community/async-storage": "1.12.1",
     "@react-native-community/google-signin": "5.0.0",
     "@react-native-community/masked-view": "0.1.11",
-    "@react-native-community/netinfo": "8.1.0",
+    "@react-native-community/netinfo": "8.2.0",
     "@react-native-community/slider": "4.2.1",
     "@react-native-firebase/analytics": "14.5.1",
     "@react-native-firebase/app": "14.5.1",
