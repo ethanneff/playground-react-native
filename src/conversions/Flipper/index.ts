@@ -1,8 +1,10 @@
+import { Platform } from 'react-native';
 import { RootMiddleware } from 'root-types';
 
 export const addFlipperMiddleware = (middlewares: RootMiddleware[]) => {
-  if (__DEV__ && !process.env.JEST_WORKER_ID) {
-    const createDebugger = require('redux-flipper').default;
-    middlewares.push(createDebugger());
+  if (Platform.OS === 'web' || process.env.JEST_WORKER_ID || !__DEV__) {
+    return;
   }
+  const createDebugger = require('redux-flipper').default;
+  middlewares.push(createDebugger());
 };

@@ -13,7 +13,9 @@ type UsePersistedState = {
   initialState: InitialState | undefined;
   isReady: boolean;
   onReady: () => void;
-  onRef: (ref: NavigationContainerRef<ReactNavigation.RootParamList>) => void;
+  onRef: (
+    ref: NavigationContainerRef<ReactNavigation.RootParamList> | null,
+  ) => void;
   onStateChange: (state: NavigationState | undefined) => void;
 };
 
@@ -38,7 +40,7 @@ export const usePersistedState = (): UsePersistedState => {
   }, []);
 
   const onRef = (
-    ref: NavigationContainerRef<ReactNavigation.RootParamList>,
+    ref: NavigationContainerRef<ReactNavigation.RootParamList> | null,
   ) => {
     navigationRef.current = ref;
   };

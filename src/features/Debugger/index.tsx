@@ -1,7 +1,8 @@
 import React from 'react';
+import { Platform } from 'react-native';
 
 export const debugDev = (): void => {
-  if (!__DEV__) return;
+  if (Platform.OS === 'web' || !__DEV__) return;
 
   const DevMenu = require('react-native-dev-menu');
   DevMenu.addItem('Highlight Renders', () => {

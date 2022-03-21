@@ -2,6 +2,7 @@ import React from 'react';
 import { AppRegistry, LogBox, Platform } from 'react-native';
 import 'react-native-get-random-values';
 import { ErrorBoundary } from './components';
+import { GestureHandlerProvider } from './conversions';
 import { AppProvider, debugDev } from './features';
 import { NavigationProvider } from './features/Navigation/core';
 import { ReduxProvider } from './redux/core';
@@ -13,13 +14,15 @@ LogBox.ignoreLogs([
 debugDev();
 export const Main = (): JSX.Element => {
   return (
-    <ReduxProvider>
-      <ErrorBoundary>
-        <AppProvider>
-          <NavigationProvider />
-        </AppProvider>
-      </ErrorBoundary>
-    </ReduxProvider>
+    <GestureHandlerProvider style={{ flex: 1 }}>
+      <ReduxProvider>
+        <ErrorBoundary>
+          <AppProvider>
+            <NavigationProvider />
+          </AppProvider>
+        </ErrorBoundary>
+      </ReduxProvider>
+    </GestureHandlerProvider>
   );
 };
 
