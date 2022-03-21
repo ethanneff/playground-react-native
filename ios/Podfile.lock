@@ -830,6 +830,8 @@ PODS:
     - React-Core
   - react-native-netinfo (8.2.0):
     - React-Core
+  - react-native-safe-area-context (3.4.1):
+    - React-Core
   - react-native-slider (4.2.1):
     - React-Core
   - React-perflogger (0.67.4)
@@ -1046,6 +1048,7 @@ DEPENDENCIES:
   - react-native-flipper (from `../node_modules/react-native-flipper`)
   - react-native-get-random-values (from `../node_modules/react-native-get-random-values`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
+  - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -1176,6 +1179,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-get-random-values"
   react-native-netinfo:
     :path: "../node_modules/@react-native-community/netinfo"
+  react-native-safe-area-context:
+    :path: "../node_modules/react-native-safe-area-context"
   react-native-slider:
     :path: "../node_modules/@react-native-community/slider"
   React-perflogger:
@@ -1311,6 +1316,7 @@ SPEC CHECKSUMS:
   react-native-flipper: 51a1b8f34ce185e028f8158382c3882d6ea3cccf
   react-native-get-random-values: 30b3f74ca34e30e2e480de48e4add2706a40ac8f
   react-native-netinfo: e922cb2e3eaf9ccdf16b8d4744a89657377aa4a1
+  react-native-safe-area-context: 9e40fb181dac02619414ba1294d6c2a807056ab9
   react-native-slider: 241935e3ea8e47599c317f512f96ee8de607d4cb
   React-perflogger: 0afaf2f01a47fd0fc368a93bfbb5bd3b26db6e7f
   React-RCTActionSheet: 59f35c4029e0b532fc42114241a06e170b7431a2
