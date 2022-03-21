@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.60.50](https://github.com/ethanneff/playground-react-native/compare/v2.60.49...v2.60.50) (2022-03-21)
+
+
+### Bug Fixes
+
+* revert safe area context to make work with web ([8c2ddd5](https://github.com/ethanneff/playground-react-native/commit/8c2ddd5e8e70a6daffcce3b02a77c2aa805a633f))
+* update deps ([5815ead](https://github.com/ethanneff/playground-react-native/commit/5815ead93a6d058a54e3091bc6452e98f7aa24ad))
+
 ## [2.60.49](https://github.com/ethanneff/playground-react-native/compare/v2.60.48...v2.60.49) (2022-03-16)
 
 
