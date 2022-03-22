@@ -39,7 +39,6 @@ module.exports = {
   root: true,
   rules: {
     // imports
-    'import/no-cycle': 'error', // no circular dependencies
     'import/no-unresolved': ['error', { ignore: ['root-types'] }], // redux typing imports
     // react-native
     '@typescript-eslint/no-var-requires': 'off', // images

@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppRegistry, LogBox, Platform } from 'react-native';
 import 'react-native-get-random-values';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ErrorBoundary } from './components';
 import { GestureHandlerProvider } from './conversions';
 import { AppProvider, debugDev } from './features';
@@ -14,15 +15,17 @@ LogBox.ignoreLogs([
 debugDev();
 export const Main = (): JSX.Element => {
   return (
-    <GestureHandlerProvider style={{ flex: 1 }}>
-      <ReduxProvider>
-        <ErrorBoundary>
-          <AppProvider>
-            <NavigationProvider />
-          </AppProvider>
-        </ErrorBoundary>
-      </ReduxProvider>
-    </GestureHandlerProvider>
+    <SafeAreaProvider>
+      <GestureHandlerProvider style={{ flex: 1 }}>
+        <ReduxProvider>
+          <ErrorBoundary>
+            <AppProvider>
+              <NavigationProvider />
+            </AppProvider>
+          </ErrorBoundary>
+        </ReduxProvider>
+      </GestureHandlerProvider>
+    </SafeAreaProvider>
   );
 };
 
