@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.60.51](https://github.com/ethanneff/playground-react-native/compare/v2.60.50...v2.60.51) (2022-03-22)
+
+
+### Bug Fixes
+
+* update deps. validate web, android, ios ([779ded5](https://github.com/ethanneff/playground-react-native/commit/779ded5945a0f042a2fa28e2b6eb01831654d826))
+
 ## [2.60.50](https://github.com/ethanneff/playground-react-native/compare/v2.60.49...v2.60.50) (2022-03-21)
 
 
