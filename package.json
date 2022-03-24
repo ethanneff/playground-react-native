@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@invertase/react-native-apple-authentication": "2.1.5",
-    "@mdi/js": "6.5.95",
+    "@mdi/js": "6.6.95",
     "@mdi/react": "1.5.0",
     "@react-native-community/async-storage": "1.12.1",
     "@react-native-community/google-signin": "5.0.0",
