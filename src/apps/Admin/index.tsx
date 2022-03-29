@@ -49,6 +49,7 @@ export default memo(function Admin() {
         },
         cancelTitle: 'Cancel',
         onCancelPress: () => {
+          console.log('ere');
           dispatch(toggleAlert({ visible: false }));
         },
       }),

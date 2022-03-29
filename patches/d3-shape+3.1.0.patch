@@ -1,0 +1,18 @@
+diff --git a/node_modules/d3-shape/package.json b/node_modules/d3-shape/package.json
+index 346b105..1bcf482 100644
+--- a/node_modules/d3-shape/package.json
++++ b/node_modules/d3-shape/package.json
+@@ -30,8 +30,11 @@
+   "jsdelivr": "dist/d3-shape.min.js",
+   "unpkg": "dist/d3-shape.min.js",
+   "exports": {
+-    "umd": "./dist/d3-shape.min.js",
+-    "default": "./src/index.js"
++    "./package.json": "./package.json",
++    ".": {
++      "umd": "./dist/d3-shape.min.js",
++      "default": "./src/index.js"
++    }
+   },
+   "sideEffects": false,
+   "dependencies": {

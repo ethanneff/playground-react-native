@@ -12,7 +12,7 @@ declare module 'root-types' {
 
   export type RootAction = ActionType<typeof import('../redux/core').actions>;
 
-  export type RootDispatch = typeof import('../redux/root').store.dispatch;
+  export type RootDispatch = typeof import('../redux/core').store.dispatch;
 
   export type RootThunkAction<R> = ThunkAction<R, RootState, void, RootAction>;
 

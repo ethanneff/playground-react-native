@@ -1,0 +1,18 @@
+diff --git a/node_modules/d3-scale/package.json b/node_modules/d3-scale/package.json
+index cd77039..026bf7e 100644
+--- a/node_modules/d3-scale/package.json
++++ b/node_modules/d3-scale/package.json
+@@ -28,8 +28,11 @@
+   "jsdelivr": "dist/d3-scale.min.js",
+   "unpkg": "dist/d3-scale.min.js",
+   "exports": {
+-    "umd": "./dist/d3-scale.min.js",
+-    "default": "./src/index.js"
++    "./package.json": "./package.json",
++    ".": {
++      "umd": "./dist/d3-scale.min.js",
++      "default": "./src/index.js"
++    }
+   },
+   "sideEffects": false,
+   "dependencies": {

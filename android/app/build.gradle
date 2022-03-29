@@ -162,6 +162,7 @@ android {
             keyPassword System.getenv("ANDROID_KEY_PASSWORD")
         }
     }
+    namespace 'com.eneff.app.core'
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
