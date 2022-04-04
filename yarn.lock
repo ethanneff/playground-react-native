@@ -3319,10 +3319,10 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
-"@welldone-software/why-did-you-render@6.2.3":
-  version "6.2.3"
-  resolved "https://registry.yarnpkg.com/@welldone-software/why-did-you-render/-/why-did-you-render-6.2.3.tgz#cdd5e27cf25b7e767c1c0b0e8808f67d3f6be833"
-  integrity sha512-FQgi90jvC9uw2aALlonJfqaWOvU5UUBBVvdAnS2iryXwCc4YJkKsPJY5Y/LzaND3OIyk8XGUn1vTRn6hcem28Q==
+"@welldone-software/why-did-you-render@7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@welldone-software/why-did-you-render/-/why-did-you-render-7.0.0.tgz#ddfb30377bd0249db3c5f959f496a96bd7c24392"
+  integrity sha512-8l5ipgA8RZgwAY5hjjEjqOX9G+N8vMqUJJ4kIST7kQfab4r1I580VW5sJDQ5H5X/ba5z9gFTtHsrL/qkoaCK/w==
   dependencies:
     lodash "^4"
 
