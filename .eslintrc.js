@@ -1,7 +1,7 @@
 module.exports = {
   extends: [
     'eslint:all',
-    'plugin:jest/recommended',
+    'plugin:jest/all',
     'plugin:react/all',
     'plugin:react-native/all',
     'plugin:sonarjs/recommended',
@@ -89,7 +89,8 @@ module.exports = {
     'react/jsx-newline': 'off',
     'react/jsx-indent': 'off',
     'react/jsx-indent-props': 'off',
-    // remove
+    // turn back on eventually
+    'jest/require-hook': 'off',
     'react-native/no-inline-styles': 'off',
     'react/forbid-component-props': 'off',
     'no-warning-comments': 'off',
