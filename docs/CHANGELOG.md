@@ -1,5 +1,24 @@
 # Changelog
 
+# [2.61.0](https://github.com/ethanneff/playground-react-native/compare/v2.60.52...v2.61.0) (2022-04-14)
+
+
+### Bug Fixes
+
+* increase jest linting rules ([b270b7b](https://github.com/ethanneff/playground-react-native/commit/b270b7bd20c8b5c77f0a8f46643788ab7525149e))
+* move retry logic to component instead of root ([de88f0f](https://github.com/ethanneff/playground-react-native/commit/de88f0fbd3d2da712cc499ade426780b8f5d5875))
+* put the app in strict mode ([e2a72fb](https://github.com/ethanneff/playground-react-native/commit/e2a72fbe6a2c20a3ac918045e9db04c225257cef))
+* remove duplicate logic in reset script ([94dd35f](https://github.com/ethanneff/playground-react-native/commit/94dd35f5f939e4419e1651aaea25ec7a0a0182ed))
+* remove snapshots from search ([5c1461d](https://github.com/ethanneff/playground-react-native/commit/5c1461d9480eddbb77f4b54c42c6402f766b00c6))
+* remove useless snapshots ([6a525b4](https://github.com/ethanneff/playground-react-native/commit/6a525b46c633c040aab4f2b2f60937be9d4cf1e3))
+* update layout rules for android for rn update ([122ef9c](https://github.com/ethanneff/playground-react-native/commit/122ef9c978b17baad8eb31546a76f7868a2ea655))
+* update reset script ([6e4a09a](https://github.com/ethanneff/playground-react-native/commit/6e4a09aa9393b173b88167d798792be2ea41618a))
+
+
+### Features
+
+* add draggable flatlist dep ([a1dc232](https://github.com/ethanneff/playground-react-native/commit/a1dc2323e196ba68e56a0ca989ffc8559bd97f1e))
+
 ## [2.60.52](https://github.com/ethanneff/playground-react-native/compare/v2.60.51...v2.60.52) (2022-03-29)
 
 
