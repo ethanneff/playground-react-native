@@ -58,9 +58,9 @@ type SyncQueue = {
   set: (value: Queue) => Promise<Queue>;
 };
 
-let retryTimeout = retryDefaultTimeout;
 export const useSync = (): void => {
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const retryTimeout = useRef(retryDefaultTimeout);
 
   const processSync = useCallback((data) => {
     console.log(data); // TODO: only update redux if data is different
@@ -71,14 +71,14 @@ export const useSync = (): void => {
   const attemptSync = useCallback(async () => {
     const refresh = () => {
       clearTimer();
-      retryTimeout = retryDefaultTimeout;
+      retryTimeout.current = retryDefaultTimeout;
       timer.current = setTimeout(() => attemptSync(), refreshTimeout);
     };
 
     const exponentialRetry = () => {
       clearTimer();
-      retryTimeout = Math.min(refreshTimeout, retryTimeout * 2);
-      timer.current = setTimeout(() => attemptSync(), retryTimeout);
+      retryTimeout.current = Math.min(refreshTimeout, retryTimeout.current * 2);
+      timer.current = setTimeout(() => attemptSync(), retryTimeout.current);
     };
 
     const queue = await syncQueue.get();
