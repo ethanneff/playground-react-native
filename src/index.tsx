@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import { AppRegistry, LogBox, Platform } from 'react-native';
 import 'react-native-get-random-values';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -15,17 +15,19 @@ LogBox.ignoreLogs([
 debugDev();
 export const Main = (): JSX.Element => {
   return (
-    <SafeAreaProvider>
-      <GestureHandlerProvider style={{ flex: 1 }}>
-        <ReduxProvider>
-          <ErrorBoundary>
-            <AppProvider>
-              <NavigationProvider />
-            </AppProvider>
-          </ErrorBoundary>
-        </ReduxProvider>
-      </GestureHandlerProvider>
-    </SafeAreaProvider>
+    <StrictMode>
+      <SafeAreaProvider>
+        <GestureHandlerProvider style={{ flex: 1 }}>
+          <ReduxProvider>
+            <ErrorBoundary>
+              <AppProvider>
+                <NavigationProvider />
+              </AppProvider>
+            </ErrorBoundary>
+          </ReduxProvider>
+        </GestureHandlerProvider>
+      </SafeAreaProvider>
+    </StrictMode>
   );
 };
 
