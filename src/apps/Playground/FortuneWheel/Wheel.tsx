@@ -1,4 +1,4 @@
-import * as d3 from 'd3-shape';
+import { arc as d3Arc, pie } from 'd3-shape';
 import React, { memo, useCallback, useEffect, useRef } from 'react';
 import { Animated, Dimensions, Easing, TouchableOpacity } from 'react-native';
 import Svg, { G, Path, Polygon, Text } from 'react-native-svg';
@@ -58,20 +58,17 @@ export const Wheel = memo(function WheelMemo({
   const location = useRef(0);
   const angle = useRef(new Animated.Value(0)).current;
   const yPosition = useRef(new Animated.Value(-1)).current;
-  const arcs = d3
-    .pie()(segments.map(() => 1))
-    .map((arc: any, index) => {
-      const instance = d3
-        .arc()
-        .padAngle(padAngle)
-        .outerRadius(radius)
-        .innerRadius(innerRadius);
-      return {
-        path: instance(arc),
-        centroid: instance.centroid(arc),
-        segment: segments[index],
-      };
-    });
+  const arcs = pie()(segments.map(() => 1)).map((arc: any, index) => {
+    const instance = d3Arc()
+      .padAngle(padAngle)
+      .outerRadius(radius)
+      .innerRadius(innerRadius);
+    return {
+      path: instance(arc),
+      centroid: instance.centroid(arc),
+      segment: segments[index],
+    };
+  });
 
   const onSpinComplete = useCallback(() => {
     spinning.current = false;

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { RootAction, RootState, RootThunkAction } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
-import * as yup from 'yup';
+import { object, string, number } from 'yup';
 
 /* ACTIONS */
 export const loginRequest = createAction('AUTH/LOGIN_REQUEST')();
@@ -27,7 +27,7 @@ export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
       timeout,
       url: 'https://reqres.in/api/login',
     });
-    const loginSchema = yup.object({ token: yup.string().required() });
+    const loginSchema = object({ token: string().required() });
     if (!loginSchema.isValidSync(res)) {
       throw new Error('invalid response');
     }
@@ -48,9 +48,9 @@ export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
       timeout,
       url: 'https://reqres.in/api/register',
     });
-    const registerScheme = yup.object({
-      token: yup.string().required(),
-      id: yup.number().required(),
+    const registerScheme = object({
+      token: string().required(),
+      id: number().required(),
     });
     if (!registerScheme.isValidSync(res)) {
       throw new Error('invalid response');

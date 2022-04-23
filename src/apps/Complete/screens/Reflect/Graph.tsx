@@ -1,5 +1,5 @@
 import { scaleLinear, scaleTime } from 'd3-scale';
-import * as shape from 'd3-shape';
+import { line, curveBasis } from 'd3-shape';
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Svg, { Defs, LinearGradient, Path, Stop } from 'react-native-svg';
@@ -33,11 +33,10 @@ export const Graph = ({
   const scaleY = scaleLinear()
     .domain(getDomain(data.map((d) => d.value)))
     .range([height - padding, padding]);
-  const d: string = shape
-    .line<DataPoint>()
+  const d: string = line<DataPoint>()
     .x((p) => scaleX(p.date))
     .y((p) => scaleY(p.value))
-    .curve(shape.curveBasis)(data) as string;
+    .curve(curveBasis)(data) as string;
   return (
     <View style={{ width, height }}>
       <Svg style={StyleSheet.absoluteFill}>
