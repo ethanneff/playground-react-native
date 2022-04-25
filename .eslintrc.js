@@ -39,6 +39,45 @@ module.exports = {
   rules: {
     // imports
     'import/no-unresolved': ['error', { ignore: ['root-types'] }], // redux typing imports
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          {
+            name: 'react-native',
+            importNames: [
+              'ActivityIndicator',
+              'Button',
+              'FlatList',
+
+              'ScrollView',
+              'Switch',
+              'Text',
+              'TextInput',
+              'TouchableHighlight',
+              'TouchableNativeFeedback',
+              'TouchableOpacity',
+              'TouchableWithoutFeedback',
+            ],
+            message: 'use Components',
+          },
+          {
+            name: 'react-native-gesture-handler',
+            importNames: [
+              'FlatList',
+              'ScrollView',
+              'Switch',
+              'TextInput',
+              'TouchableHighlight',
+              'TouchableNativeFeedback',
+              'TouchableOpacity',
+              'TouchableWithoutFeedback',
+            ],
+            message: 'use Components',
+          },
+        ],
+      },
+    ],
     // react-native
     '@typescript-eslint/no-var-requires': 'off', // images
     // vscode
