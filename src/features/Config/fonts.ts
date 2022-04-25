@@ -6,7 +6,7 @@ import { FontEmphases, FontSizes, FontWeight } from './types';
 
 export const fontWeight: { [key: string]: FontWeight } = {
   light: '100',
-  medium: '600',
+  medium: '500',
   regular: '300',
 };
 

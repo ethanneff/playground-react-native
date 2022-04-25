@@ -149,7 +149,7 @@ export type FontSize = {
   letterSpacing: number;
 };
 
-export type FontWeight = '100' | '300' | '600';
+export type FontWeight = '100' | '300' | '500';
 
 export type FontEmphasis = 'high' | 'medium' | 'low' | 'none';
 
