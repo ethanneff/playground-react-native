@@ -5,7 +5,7 @@ import {
   SensorTypes,
   setUpdateIntervalForType,
 } from 'react-native-sensors';
-import { useColor, useDriver } from '../../../features';
+import { useColors, useDriver } from '../../../features';
 import { DriftContext } from './Context';
 import { CanvasDimensions } from './types';
 import { getPosition } from './utils';
@@ -30,7 +30,7 @@ export const Character = memo(function Character({ canvas }: CharacterProps) {
   ).current;
   const useNativeDriver = useDriver();
   const { dispatch } = useContext(DriftContext);
-  const color = useColor();
+  const colors = useColors();
 
   const animate = useCallback(
     (dx: number, dy: number) => {
@@ -67,7 +67,7 @@ export const Character = memo(function Character({ canvas }: CharacterProps) {
           height: size,
           borderRadius: size,
           elevation,
-          shadowColor: color.background.primaryB,
+          shadowColor: colors.background.primaryB,
           shadowOffset: {
             height: 2,
             width: 0,
@@ -75,7 +75,7 @@ export const Character = memo(function Character({ canvas }: CharacterProps) {
           shadowOpacity,
           shadowRadius,
           zIndex: elevation,
-          backgroundColor: color.background.accent,
+          backgroundColor: colors.background.accent,
         },
       ]}
     />

@@ -2,7 +2,7 @@ import React, { memo, ReactNode } from 'react';
 import { Image, View } from 'react-native';
 import { Icon, Sentence, Text, TouchableOpacity } from '../../../components';
 import { SentenceType } from '../../../components/Sentence/types';
-import { padding, useColor } from '../../../features';
+import { padding, useColors } from '../../../features';
 
 const missingCallback = () => undefined;
 
@@ -18,7 +18,7 @@ const SignInButton = memo(function SignInButton({
   icon,
   title,
 }: SignInButtonProps) {
-  const color = useColor();
+  const colors = useColors();
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -26,7 +26,7 @@ const SignInButton = memo(function SignInButton({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
-        borderColor: color.border.primaryA,
+        borderColor: colors.border.primaryA,
         borderWidth: 2,
         padding: padding(2),
         marginBottom: padding(2),
@@ -49,7 +49,7 @@ const NavButton = memo(function NavButton({
   title,
   inverted,
 }: NavButtonProps) {
-  const color = useColor();
+  const colors = useColors();
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -59,8 +59,8 @@ const NavButton = memo(function NavButton({
         paddingVertical: padding(2),
         paddingHorizontal: padding(2),
         backgroundColor: inverted
-          ? color.background.primaryB
-          : color.background.primaryA,
+          ? colors.background.primaryB
+          : colors.background.primaryA,
       }}
     >
       <Text bold inverse={inverted} title={title} type="h5" />
@@ -73,16 +73,16 @@ interface HeaderProps {
 }
 
 export const Header = memo(function Header({ height }: HeaderProps) {
-  const color = useColor();
+  const colors = useColors();
   return (
     <View
       style={{
-        backgroundColor: color.background.primaryA,
+        backgroundColor: colors.background.primaryA,
         position: 'absolute',
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        borderColor: color.border.primaryA,
+        borderColor: colors.border.primaryA,
         padding: padding(4),
         borderBottomWidth: 1,
         zIndex: 2,
@@ -114,7 +114,7 @@ interface AppIconProps {
 }
 
 const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
-  const color = useColor();
+  const colors = useColors();
   const iconSize = '48px';
   const text = type === 'apple' ? 'Download on the' : 'GET IT ON';
   const store = type === 'apple' ? 'App Store' : 'Google Play';
@@ -126,7 +126,7 @@ const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
         justifyContent: 'center',
         borderRadius: padding(2),
         flexDirection: 'row',
-        backgroundColor: color.background.primaryB,
+        backgroundColor: colors.background.primaryB,
         paddingVertical: padding(2),
         paddingHorizontal: padding(4),
       }}
@@ -188,14 +188,17 @@ export const Landing = memo(function PortfolioLanding() {
       onPress: () => undefined,
     },
   ];
-  const color = useColor();
+  const colors = useColors();
 
   const onNavLinkPress = (url: string) => () => window.open(url, '_blank');
 
   return (
     <>
       <Header height={height} />
-      <Section backgroundColor={color.background.secondary} paddingTop={height}>
+      <Section
+        backgroundColor={colors.background.secondary}
+        paddingTop={height}
+      >
         <Sentence
           sentences={titleSentence}
           style={{ paddingVertical: padding(8), alignSelf: 'center' }}
@@ -230,7 +233,7 @@ export const Landing = memo(function PortfolioLanding() {
           <AppIcon onPress={missingCallback} type="google-play" />
         </View>
       </Section>
-      <Section backgroundColor={color.background.primaryA}>
+      <Section backgroundColor={colors.background.primaryA}>
         <View style={{ flex: 1 }} />
         <View
           style={{

@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text, TouchableOpacity } from '../../../components';
-import { MonoMultiColor, useColor } from '../../../features';
+import { MonoMultiColor, useColors } from '../../../features';
 
 interface RoundButtonProps {
   background: string;
@@ -18,7 +18,7 @@ export const ButtonRound = memo(function ButtonRound({
   onPress,
   disabled = false,
 }: RoundButtonProps) {
-  const colorScheme = useColor();
+  const colorScheme = useColors();
   const styles = StyleSheet.create({
     button: {
       alignItems: 'center',

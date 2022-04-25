@@ -1,9 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
 import { Image, ImageSourcePropType, View } from 'react-native';
-import { Screen, Text } from '../../../components';
-import { ScrollView } from '../../../conversions';
-import { padding, useColor } from '../../../features';
+import { Screen, ScrollView, Text } from '../../../components';
+import { padding, useColors } from '../../../features';
 import { getWidth, useRootSelector } from '../../../redux';
 
 // https://support.apple.com/en-us/HT211028
@@ -16,6 +15,7 @@ interface SectionProps {
   paddingHorizontal: number;
   title: string;
 }
+
 const Section = ({
   index,
   title,
@@ -24,7 +24,7 @@ const Section = ({
   paddingHorizontal,
   imageRatio = 0,
 }: SectionProps) => {
-  const color = useColor();
+  const colors = useColors();
   const width = useRootSelector(getWidth);
   const leftWidth = padding(12);
   const imageWidth = width - leftWidth - 2 * paddingHorizontal;
@@ -32,7 +32,7 @@ const Section = ({
     <View
       style={{
         paddingVertical: padding(8),
-        borderBottomColor: color.border.tertiary,
+        borderBottomColor: colors.border.tertiary,
         borderBottomWidth: 2,
       }}
     >
@@ -99,7 +99,7 @@ export const AppleMask = memo(function AppleMask() {
     },
   ];
 
-  const color = useColor();
+  const colors = useColors();
   const paddingHorizontal = padding(4);
 
   return (
@@ -107,7 +107,7 @@ export const AppleMask = memo(function AppleMask() {
       <ScrollView
         style={{
           paddingHorizontal: padding(4),
-          backgroundColor: color.background.secondary,
+          backgroundColor: colors.background.secondary,
         }}
       >
         <Text title="Assemble and adjust your Face Shield" type="h2" />

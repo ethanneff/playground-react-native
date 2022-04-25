@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
-import { padding, TagColor } from '../../features/Config';
-import { useColor } from '../../features/Theme';
+import { padding, TagColor, useColors } from '../../features';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 
@@ -17,14 +16,14 @@ export const Tag = memo(function Tag({
   color,
   disabled,
 }: TagProps): JSX.Element {
-  const colorScheme = useColor();
+  const colors = useColors();
   return (
     <TouchableOpacity
       disabled={disabled}
       onPress={onPress}
       style={{
-        backgroundColor: colorScheme.tag[color],
-        borderColor: colorScheme.border.primaryA,
+        backgroundColor: colors.tag[color],
+        borderColor: colors.border.primaryA,
         borderWidth: 1,
         borderRadius: padding(2),
         alignSelf: 'flex-start',

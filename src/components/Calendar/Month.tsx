@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { View } from 'react-native';
 import { v4 } from 'uuid';
-import { padding } from '../../features/Config';
+import { padding } from '../../features';
 import { CalendarDay } from './Day';
 import { CalendarMatrix } from './utils';
 

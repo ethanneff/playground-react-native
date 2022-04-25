@@ -7,11 +7,11 @@ import {
   Card,
   Masonry,
   Screen,
+  ScrollView,
   Slider,
   Text,
 } from '../../../components';
-import { ScrollView } from '../../../conversions';
-import { padding, useColor } from '../../../features';
+import { padding, useColors } from '../../../features';
 import {
   changeTheme,
   getLandscapeOrientation,
@@ -84,7 +84,7 @@ const cards: CardItem[] = [
 
 export const DarkMode = memo(function DarkMode() {
   const dispatch = useRootDispatch();
-  const color = useColor();
+  const colors = useColors();
   const { goBack } = useNavigation();
   const currentTheme = useRootSelector((state) => state.theme.currentTheme);
   const themePress = (theme: Theme) => () => dispatch(changeTheme(theme));
@@ -133,7 +133,7 @@ export const DarkMode = memo(function DarkMode() {
 
   return (
     <Screen dropShadow onLeftPress={goBack} title="Dark mode">
-      <ScrollView style={{ backgroundColor: color.background.primaryA }}>
+      <ScrollView style={{ backgroundColor: colors.background.primaryA }}>
         <View style={{ padding: padding(4) }}>
           <View
             style={{
@@ -155,7 +155,7 @@ export const DarkMode = memo(function DarkMode() {
           <Text title={`elevation: ${elevation}`} />
           <Slider
             maximumValue={10}
-            minimumTrackTintColor={color.background.accent}
+            minimumTrackTintColor={colors.background.accent}
             minimumValue={0}
             onValueChange={handleSlider}
             step={1}

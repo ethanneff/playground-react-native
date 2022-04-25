@@ -2,9 +2,8 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { View } from 'react-native';
 import { v4 } from 'uuid';
-import { Button, Screen, Text } from '../../../components';
-import { TouchableOpacity } from '../../../conversions';
-import { useColor } from '../../../features';
+import { Button, Screen, Text, TouchableOpacity } from '../../../components';
+import { useColors } from '../../../features';
 import {
   getLandscapeOrientation,
   getSmallestDimension,
@@ -21,7 +20,7 @@ import {
 
 export const TicTacToe = memo(function TicTacToe() {
   const boardSize = 3;
-  const color = useColor();
+  const colors = useColors();
   const { goBack } = useNavigation();
 
   const [game, setGame] = useState<State>(getInitialState(boardSize));
@@ -63,7 +62,7 @@ export const TicTacToe = memo(function TicTacToe() {
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: color.background.secondary,
+          backgroundColor: colors.background.secondary,
           flexDirection: landscape ? 'row' : 'column',
         }}
       >
@@ -82,9 +81,9 @@ export const TicTacToe = memo(function TicTacToe() {
                     height: size,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    backgroundColor: color.background.primaryA,
+                    backgroundColor: colors.background.primaryA,
                     borderWidth: 2,
-                    borderColor: color.background.secondary,
+                    borderColor: colors.background.secondary,
                   }}
                 >
                   <Text title={getValue(game.board[i][j])} type="h4" />

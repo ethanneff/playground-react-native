@@ -8,9 +8,7 @@ import { AppProvider, debugDev } from './features';
 import { NavigationProvider } from './features/Navigation/core';
 import { ReduxProvider } from './redux/core';
 
-LogBox.ignoreLogs([
-  "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
-]);
+LogBox.ignoreLogs(['Warning: Using UNSAFE']);
 
 debugDev();
 export const Main = (): JSX.Element => {

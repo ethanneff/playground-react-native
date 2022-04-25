@@ -1,16 +1,17 @@
 import { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { Platform, TextInput as OriginalTextInput } from 'react-native';
+import { Platform } from 'react-native';
 import {
-  ActivityIndicator,
   Button,
   Icon,
+  Loader,
   Modal,
   Text,
   TextInput,
+  TextInputRef,
   TouchableOpacity,
 } from '../../../../components';
-import { padding, useAuth, useColor } from '../../../../features';
+import { padding, useAuth, useColors } from '../../../../features';
 import { ModalHeader } from '../../components';
 
 type Props = {
@@ -38,7 +39,7 @@ const SignInButton = memo(function SignInButton({
   title,
   margin,
 }: SignInButtonProps) {
-  const color = useColor();
+  const colors = useColors();
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -46,7 +47,7 @@ const SignInButton = memo(function SignInButton({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
-        borderColor: color.background.secondary,
+        borderColor: colors.background.secondary,
         borderWidth: 1,
         padding: padding(2),
         marginBottom: padding(margin ? 4 : 0),
@@ -125,8 +126,8 @@ export const Login = memo(function Login({
   const successful = useRef(false);
   const form = useRef<Ref>(initialRef);
   const [state, setState] = useState<State>(initialState);
-  const emailRef = useRef<OriginalTextInput | null>(null);
-  const passwordRef = useRef<OriginalTextInput | null>(null);
+  const emailRef = useRef<TextInputRef>(null);
+  const passwordRef = useRef<TextInputRef>(null);
   const eyeIcon = state.eye ? 'eye-outline' : 'eye-off-outline';
 
   const onFormChange = useCallback(
@@ -178,7 +179,7 @@ export const Login = memo(function Login({
       <>
         {error && <Text center color="negative" title={error} />}
         {state.screen === 'loading' || type === 'initalizing' ? (
-          <ActivityIndicator />
+          <Loader />
         ) : state.screen === 'phoneCode' ? (
           <>
             <TextInput

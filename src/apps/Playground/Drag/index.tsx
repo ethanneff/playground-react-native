@@ -10,7 +10,12 @@ import {
   View,
 } from 'react-native';
 import { Screen, Text } from '../../../components';
-import { padding, useColor, useDriver, useDropShadow } from '../../../features';
+import {
+  padding,
+  useColors,
+  useDriver,
+  useDropShadow,
+} from '../../../features';
 
 const getPosition = (
   gestureState: PanResponderGestureState,
@@ -38,7 +43,7 @@ const getPosition = (
 
 export const Drag = memo(function PlaygroundDrag() {
   const { goBack } = useNavigation();
-  const color = useColor();
+  const colors = useColors();
   const dropShadow = useDropShadow();
   const useNativeDriver = useDriver();
   const [canvas, setCanvas] = useState({ x: 0, y: 0, height: 0, width: 0 });
@@ -55,7 +60,7 @@ export const Drag = memo(function PlaygroundDrag() {
       ...dropShadow(5),
     },
     canvas: {
-      backgroundColor: color.background.secondary,
+      backgroundColor: colors.background.secondary,
       flex: 1,
     },
   });

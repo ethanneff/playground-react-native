@@ -347,11 +347,16 @@ exports[`input renders correctly 1`] = `
                         >
                           <TextInput
                             blurOnSubmit={true}
+                            collapsable={false}
                             disableFullscreenUI={true}
                             editable={true}
+                            handlerTag={2}
+                            handlerType="NativeViewGestureHandler"
                             onBlur={[Function]}
                             onChangeText={[MockFunction]}
                             onFocus={[Function]}
+                            onGestureHandlerEvent={[Function]}
+                            onGestureHandlerStateChange={[Function]}
                             placeholderTextColor="hsl(0,0%,32.9%)"
                             selectionColor="hsl(219,87.8%,54.9%)"
                             style={
@@ -375,7 +380,7 @@ exports[`input renders correctly 1`] = `
                           <RNGestureHandlerButton
                             collapsable={false}
                             exclusive={true}
-                            handlerTag={2}
+                            handlerTag={3}
                             handlerType="NativeViewGestureHandler"
                             onGestureEvent={[Function]}
                             onGestureHandlerEvent={[Function]}
@@ -447,7 +452,7 @@ exports[`input renders correctly 1`] = `
                           <RNGestureHandlerButton
                             collapsable={false}
                             exclusive={true}
-                            handlerTag={3}
+                            handlerTag={4}
                             handlerType="NativeViewGestureHandler"
                             onGestureEvent={[Function]}
                             onGestureHandlerEvent={[Function]}
@@ -511,7 +516,7 @@ exports[`input renders correctly 1`] = `
                           <RNGestureHandlerButton
                             collapsable={false}
                             exclusive={true}
-                            handlerTag={4}
+                            handlerTag={5}
                             handlerType="NativeViewGestureHandler"
                             onGestureEvent={[Function]}
                             onGestureHandlerEvent={[Function]}

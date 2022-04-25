@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+// eslint-disable-next-line no-restricted-imports
 import { StyleProp, Text as OriginalText, TextStyle } from 'react-native';
 import { Text } from '../Text';
 import { SentenceType } from './types';

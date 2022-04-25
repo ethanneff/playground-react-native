@@ -1,15 +1,15 @@
 import React, { memo, useCallback, useRef } from 'react';
 import { Animated, StyleProp, StyleSheet, TextStyle } from 'react-native';
-import { useDriver } from '../../features/Animation';
 import {
   FontEmphasis,
   FontType,
   fontWeight,
   getFontStyles,
   MonoMultiColor,
-} from '../../features/Config';
+  useColors,
+} from '../../features';
+import { useDriver } from '../../features/Animation';
 import { SoundManager } from '../../features/Sound';
-import { useColor } from '../../features/Theme';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
 
@@ -52,13 +52,13 @@ export const Text = memo(function Text({
 }: TextProps) {
   const opacity = useRef(new Animated.Value(1)).current;
   const useNativeDriver = useDriver();
-  const colorScheme = useColor();
+  const colors = useColors();
   const { fontSize, textColor } = getFontStyles({
     emphasis,
     type,
     inverse,
     color,
-    colorScheme,
+    colors,
   });
   const text =
     type === 'button' || type === 'overline'

@@ -4,8 +4,8 @@ import React, { lazy, memo, Suspense } from 'react';
 import Config from 'react-native-config';
 import {
   ActionSheet,
-  ActivityIndicator,
   Button,
+  Loader,
   Modal,
   Notification,
   Text,
@@ -69,7 +69,7 @@ const linking = {
 export const NavigationProvider = memo(function NavigationProvider() {
   const { initialState, isReady, onStateChange, onRef } = usePersistedState();
   const { modalScreenOptions } = useNavScreenOptions();
-  const fallback = <ActivityIndicator />;
+  const fallback = <Loader />;
   const initialRouteName = Config.APP as keyof RootRoutes;
 
   if (!isReady) return fallback;

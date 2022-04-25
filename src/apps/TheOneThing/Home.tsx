@@ -1,8 +1,14 @@
 import React, { memo, useCallback, useState } from 'react';
 import { View } from 'react-native';
-import { Card, Icon, Screen, Text, TouchableOpacity } from '../../components';
-import { ScrollView } from '../../conversions';
-import { padding, useAdminNavBack, useColor } from '../../features';
+import {
+  Card,
+  Icon,
+  Screen,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+} from '../../components';
+import { padding, useAdminNavBack, useColors } from '../../features';
 
 interface SectionProps {
   description?: string;
@@ -74,7 +80,7 @@ const Section = ({
 };
 
 export const Home = memo(function Home() {
-  const color = useColor();
+  const colors = useColors();
   const { onLeftPress } = useAdminNavBack();
 
   return (
@@ -84,7 +90,7 @@ export const Home = memo(function Home() {
           paddingHorizontal: padding(4),
           paddingVertical: padding(2),
         }}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         <Section
           description="What’s the thing that gets you up in the morning and keeps you going when you’re tired and worn down - why you’re excited with your life?"

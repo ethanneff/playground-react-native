@@ -1,14 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
-import { Card, Content, Screen } from '../../../components';
-import { ScrollView } from '../../../conversions';
-import { padding, useColor } from '../../../features';
+import { Card, Content, Screen, ScrollView } from '../../../components';
+import { padding, useColors } from '../../../features';
 import { data } from './data';
 
 export const Article = memo(function PlaygroundArticle() {
   const { goBack } = useNavigation();
 
-  const color = useColor();
+  const colors = useColors();
   return (
     <Screen dropShadow onLeftPress={goBack} title="Article">
       <ScrollView
@@ -18,7 +17,7 @@ export const Article = memo(function PlaygroundArticle() {
         }}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>
           <Content sections={data} />

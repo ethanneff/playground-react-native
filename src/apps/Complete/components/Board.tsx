@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { View } from 'react-native';
-import { FlatList } from '../../../conversions';
+import { FlatList } from '../../../components';
 import { useRootSelector } from '../../../redux';
 import { completeConfig } from '../utils';
 import { AddItem } from './AddItem';

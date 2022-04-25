@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Animated, TouchableOpacity } from 'react-native';
+import { Animated } from 'react-native';
 import { v4 } from 'uuid';
-import { Text } from '../../../components';
-import { padding, SoundManager, useColor } from '../../../features';
+import { Text, TouchableOpacity } from '../../../components';
+import { padding, SoundManager, useColors } from '../../../features';
 import { CanvasDimensions } from './Canvas';
 import { Item } from './types';
 import {
@@ -35,7 +35,7 @@ export const Balls = ({
   maxMass = 1,
   mitosis = 0.1,
 }: Props): JSX.Element => {
-  const color = useColor();
+  const colors = useColors();
 
   const [items, setItems] = useState<Item[]>(() =>
     getItems({
@@ -107,7 +107,7 @@ export const Balls = ({
             onPress={onPress({ index })}
             style={{
               alignItems: 'center',
-              borderColor: color.border.accent,
+              borderColor: colors.border.accent,
               borderWidth: 1,
               borderRadius: item.radius,
               flex: 1,

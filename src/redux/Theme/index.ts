@@ -1,6 +1,6 @@
 import { RootAction, RootState } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
-import { ColorTheme, darkTheme, lightTheme } from '../../features/Config';
+import { ColorTheme, darkTheme, lightTheme } from '../../features';
 import { logout } from '../Auth';
 
 /*

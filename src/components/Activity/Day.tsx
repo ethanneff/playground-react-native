@@ -1,8 +1,7 @@
 import dayjs from 'dayjs';
 import isToday from 'dayjs/plugin/isToday';
 import React, { memo } from 'react';
-import { colorWithOpacity } from '../../features/Config';
-import { useColor } from '../../features/Theme';
+import { colorWithOpacity, useColors } from '../../features';
 import { TouchableOpacity } from '../TouchableOpacity';
 import { ActivityDay } from './types';
 dayjs.extend(isToday);
@@ -22,13 +21,13 @@ export const Day = memo(function Day({
   margin,
   onPress,
 }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const backgroundColor =
     day.count === 0
-      ? color.background.secondary
-      : colorWithOpacity(color.text.positive, day.count / max + 0.33);
+      ? colors.background.secondary
+      : colorWithOpacity(colors.text.positive, day.count / max + 0.33);
   const borderColor = dayjs(day.date).isToday()
-    ? color.border.negative
+    ? colors.border.negative
     : 'transparent';
   return (
     <TouchableOpacity

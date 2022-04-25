@@ -1,9 +1,10 @@
 import { arc as d3Arc, pie } from 'd3-shape';
 import React, { memo, useCallback, useEffect, useRef } from 'react';
-import { Animated, Dimensions, Easing, TouchableOpacity } from 'react-native';
+import { Animated, Dimensions, Easing } from 'react-native';
 import Svg, { G, Path, Polygon, Text } from 'react-native-svg';
 import { v4 } from 'uuid';
-import { useColor, useDriver, useDropShadow } from '../../../features';
+import { TouchableOpacity } from '../../../components';
+import { useColors, useDriver, useDropShadow } from '../../../features';
 import { getNewLocation, getWinnerIndex } from './utils';
 
 type Segment = {
@@ -43,11 +44,11 @@ export const Wheel = memo(function WheelMemo({
   maxSpin = 7,
   onComplete,
 }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const dropShadow = useDropShadow();
   const useNativeDriver = useDriver();
-  const background = backgroundColor || color.background.primaryA;
-  const text = textColor || color.text.primaryA;
+  const background = backgroundColor || colors.background.primaryA;
+  const text = textColor || colors.text.primaryA;
   const radius = size / 2;
   const knobSize = size / 8;
   const knobOffset = knobSize * 0.6;
@@ -157,11 +158,11 @@ export const Wheel = memo(function WheelMemo({
           }}
         >
           <Polygon
-            fill={color.background.tertiary}
+            fill={colors.background.tertiary}
             points={`${knobSize / 2},0 ${knobSize * 0.85},${knobSize / 3} ${
               knobSize / 2
             },${knobSize} ${knobSize * 0.15},${knobSize / 3},`}
-            stroke={color.background.secondary}
+            stroke={colors.background.secondary}
             strokeWidth={0.2}
           />
         </Svg>

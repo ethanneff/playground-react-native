@@ -1,6 +1,6 @@
 import React, { memo, ReactNode } from 'react';
 import { LayoutChangeEvent, StyleSheet, View } from 'react-native';
-import { useColor } from '../../../features';
+import { useColors } from '../../../features';
 
 type Props = {
   children: ReactNode;
@@ -15,10 +15,10 @@ export type CanvasDimensions = {
 };
 
 export const Canvas = memo(function Canvas({ children, onLayout }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background.secondary,
+      backgroundColor: colors.background.secondary,
       flex: 1,
     },
   });

@@ -1,5 +1,4 @@
 import React, { memo, ReactNode } from 'react';
-import { AlertScreen } from './AlertScreen';
 import {
   useAppState,
   useDeviceInfo,
@@ -7,7 +6,6 @@ import {
   useKeyboard,
   useNetInfo,
 } from './hooks';
-import { LoadingScreen } from './LoadingScreen';
 
 type Props = { children: ReactNode };
 
@@ -18,11 +16,5 @@ export const AppProvider = memo(function AppProvider({ children }: Props) {
   useAppState();
   useKeyboard();
 
-  return (
-    <>
-      {children}
-      <LoadingScreen />
-      <AlertScreen />
-    </>
-  );
+  return <>{children}</>;
 });

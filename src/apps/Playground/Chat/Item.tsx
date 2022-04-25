@@ -3,7 +3,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import React, { memo } from 'react';
 import { Image, View } from 'react-native';
 import { RelativeDate, Text } from '../../../components';
-import { padding, useColor } from '../../../features';
+import { padding, useColors } from '../../../features';
 import { Message } from './Messages';
 dayjs.extend(relativeTime);
 
@@ -13,7 +13,7 @@ type Props = {
 };
 
 export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const image = require('../../../assets/line-chart.png');
 
   return (
@@ -24,7 +24,7 @@ export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
         borderRadius: padding(4),
         flexDirection: 'row',
         marginBottom: marginBottom ? padding(6) : 0,
-        backgroundColor: color.background.primaryA,
+        backgroundColor: colors.background.primaryA,
       }}
     >
       <View style={{ width: 40 }}>

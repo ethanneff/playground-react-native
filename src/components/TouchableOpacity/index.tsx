@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode, useCallback } from 'react';
 import { StyleProp, ViewStyle } from 'react-native';
-import { TouchableOpacity as Original } from '../../conversions';
+import { GestureTouchableOpacity } from '../../conversions';
 import { SoundManager } from '../../features/Sound';
 
 type Props = {
@@ -38,7 +38,7 @@ export const TouchableOpacity = ({
 
   const styles = [{ flex: flex ? 1 : 0 }, style];
   return (
-    <Original
+    <GestureTouchableOpacity
       activeOpacity={activeOpacity}
       containerStyle={containerStyle}
       disabled={disabled}
@@ -48,6 +48,6 @@ export const TouchableOpacity = ({
       testID={testID}
     >
       {children}
-    </Original>
+    </GestureTouchableOpacity>
   );
 };

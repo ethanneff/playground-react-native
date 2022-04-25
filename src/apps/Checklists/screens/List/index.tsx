@@ -1,7 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { FlatList, ListRenderItem, View } from 'react-native';
-import { Button, Icon, Screen, TouchableOpacity } from '../../../../components';
+import { ListRenderItem, View } from 'react-native';
+import {
+  Button,
+  FlatList,
+  Icon,
+  Screen,
+  TouchableOpacity,
+} from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import {
   ChecklistItem,

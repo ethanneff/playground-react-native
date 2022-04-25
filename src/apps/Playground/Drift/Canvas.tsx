@@ -1,6 +1,6 @@
 import React, { memo, ReactNode } from 'react';
 import { LayoutChangeEvent, View } from 'react-native';
-import { useColor } from '../../../features';
+import { useColors } from '../../../features';
 
 type Props = {
   children: ReactNode;
@@ -8,11 +8,11 @@ type Props = {
 };
 
 export const Canvas = memo(function Canvas({ children, onLayout }: Props) {
-  const color = useColor();
+  const colors = useColors();
   return (
     <View
       onLayout={onLayout}
-      style={{ flex: 1, backgroundColor: color.background.secondary }}
+      style={{ flex: 1, backgroundColor: colors.background.secondary }}
     >
       {children}
     </View>

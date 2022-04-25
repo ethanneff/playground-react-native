@@ -1,8 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
 import { View } from 'react-native';
-import { Screen } from '../../../components';
-import { ScrollView } from '../../../conversions';
+import { Screen, ScrollView } from '../../../components';
 import { ButtonGroup } from './ButtonGroup';
 import { FontGroup } from './FontGroup';
 import { TagGroup } from './TagGroup';

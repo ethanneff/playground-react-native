@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useEffect, useState } from 'react';
-import { ScrollView, View } from 'react-native';
-import { Screen, Text } from '../../../components';
-import { padding, useColor } from '../../../features';
+import { View } from 'react-native';
+import { Screen, ScrollView, Text } from '../../../components';
+import { padding, useColors } from '../../../features';
 import { useRootDispatch } from '../../../redux';
 import { Buttons } from './Buttons';
 import { GameBoard } from './GameBoard';
@@ -10,7 +10,7 @@ import { Header } from './Header';
 import { resetBoard } from './redux';
 
 export const GameOfLife = memo(function PlaygroundGameOfLife() {
-  const color = useColor();
+  const colors = useColors();
   const [loading, setLoading] = useState(true);
   const dispatch = useRootDispatch();
   const { goBack } = useNavigation();
@@ -24,7 +24,7 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
     <Screen dropShadow onLeftPress={goBack} title="Game of life">
       <ScrollView
         style={{
-          backgroundColor: color.background.secondary,
+          backgroundColor: colors.background.secondary,
           padding: padding(4),
         }}
       >

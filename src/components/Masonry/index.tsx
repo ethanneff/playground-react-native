@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import { v4 } from 'uuid';
-import { padding } from '../../features/Config';
+import { padding } from '../../features';
 
 interface Item<T> {
   index: number;

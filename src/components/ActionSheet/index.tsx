@@ -6,10 +6,7 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import { useDriver } from '../../features/Animation';
-import { padding } from '../../features/Config';
-import { SoundManager } from '../../features/Sound';
-import { useColor } from '../../features/Theme';
+import { padding, SoundManager, useColors, useDriver } from '../../features';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
@@ -34,12 +31,12 @@ export const ActionSheet = memo(function ActionSheet({
   onCancel,
   onBackgroundPress,
 }: NotificationProps) {
-  const color = useColor();
+  const colors = useColors();
   const styles = StyleSheet.create({
     flex: { flex: 1 },
     modal: {
       alignItems: 'center',
-      backgroundColor: color.background.primaryA,
+      backgroundColor: colors.background.primaryA,
       flexDirection: 'row',
       height,
       padding: padding(4),
@@ -47,7 +44,7 @@ export const ActionSheet = memo(function ActionSheet({
     },
     notification: { elevation: 2, zIndex: 2 },
     notificationSafeArea: {
-      backgroundColor: color.background.primaryA,
+      backgroundColor: colors.background.primaryA,
       height,
       position: 'absolute',
       width: '100%',

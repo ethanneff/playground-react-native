@@ -1,15 +1,14 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { View } from 'react-native';
-import { Button, Screen, Text } from '../../../components';
-import { ScrollView } from '../../../conversions';
-import { padding, useColor } from '../../../features';
+import { Button, Screen, ScrollView, Text } from '../../../components';
+import { padding, useColors } from '../../../features';
 import { LoadingProfile } from './LoadingProfile';
 import { LoadingSection } from './LoadingSection';
 
 export const SkeletonLoading = memo(function PlaygroundTemplate() {
   const { goBack } = useNavigation();
-  const color = useColor();
+  const colors = useColors();
 
   const [loading, setLoading] = useState(true);
 
@@ -33,7 +32,7 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
     <Screen dropShadow onLeftPress={goBack} title="Skeleton Loading">
       <ScrollView
         contentContainerStyle={{ padding: padding(4) }}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         {loading ? (
           <View>

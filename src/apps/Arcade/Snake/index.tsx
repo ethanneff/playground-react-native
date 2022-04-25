@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { Button, Screen, Text } from '../../../components';
-import { useColor } from '../../../features';
+import { useColors } from '../../../features';
 import { Board } from './Board';
 import { EndGame } from './EndGame';
 import { useClock } from './useClock';
@@ -20,7 +20,7 @@ type Game = {
 // TODO: need to save the entire board to redux to load on app open
 
 export const Snake = memo(function Snake() {
-  const color = useColor();
+  const colors = useColors();
   const { goBack } = useNavigation();
   const size = 20;
   const frequency = 200;
@@ -71,7 +71,7 @@ export const Snake = memo(function Snake() {
           <Text title={`points: ${game.points}`} />
         </View>
         <View
-          style={{ flex: 1, backgroundColor: color.background.positive }}
+          style={{ flex: 1, backgroundColor: colors.background.positive }}
           {...panHandlers} // eslint-disable-line react/jsx-props-no-spreading
         >
           <Board matrix={game.board.matrix} />

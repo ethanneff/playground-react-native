@@ -1,12 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect } from 'react';
-import { Button, Screen, Text } from '../../../../components';
-import { ScrollView } from '../../../../conversions';
+import { Button, Screen, ScrollView, Text } from '../../../../components';
 import {
   padding,
   RootNavigation,
   useAuth,
-  useColor,
+  useColors,
   useTabTap,
 } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
@@ -20,7 +19,7 @@ import { logout } from '../../models';
 
 export const Account = memo(function Account() {
   useTabTap();
-  const color = useColor();
+  const colors = useColors();
   const dispatch = useRootDispatch();
   const { navigate } = useNavigation<RootNavigation>();
   const { onLogout, response } = useAuth();
@@ -36,9 +35,9 @@ export const Account = memo(function Account() {
       <ScrollView
         contentContainerStyle={{
           padding: padding(4),
-          backgroundColor: color.background.secondary,
+          backgroundColor: colors.background.secondary,
         }}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         <Card margin="bottom">
           <Text

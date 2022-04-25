@@ -3,7 +3,7 @@ import React, { memo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { v4 } from 'uuid';
 import { Screen, TouchableOpacity } from '../../../components';
-import { useColor } from '../../../features';
+import { useColors } from '../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../redux';
 
 const getRandom = (max: number) => {
@@ -59,21 +59,21 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
   const { goBack } = useNavigation();
   const dimension = useRootSelector(getSmallestDimension);
 
-  const color = useColor();
+  const colors = useColors();
   const styles = StyleSheet.create({
-    container: { backgroundColor: color.background.secondary },
+    container: { backgroundColor: colors.background.secondary },
   });
 
   const width = 6;
   const height = 6;
   const size = dimension / width;
   const gems: Gem[] = [
-    { key: 'primary', color: color.background.primaryA },
-    { key: 'brand', color: color.background.primaryB },
-    { key: 'success', color: color.background.positive },
-    { key: 'info', color: color.background.accent },
-    { key: 'warning', color: color.background.warning },
-    { key: 'danger', color: color.background.negative },
+    { key: 'primary', color: colors.background.primaryA },
+    { key: 'brand', color: colors.background.primaryB },
+    { key: 'success', color: colors.background.positive },
+    { key: 'info', color: colors.background.accent },
+    { key: 'warning', color: colors.background.warning },
+    { key: 'danger', color: colors.background.negative },
   ];
 
   const [board, setBoard] = useState<Board>(() =>
@@ -118,8 +118,8 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
                     flex: 1,
                     borderColor:
                       selected.x === x && selected.y === y
-                        ? color.border.primaryB
-                        : color.border.primaryA,
+                        ? colors.border.primaryB
+                        : colors.border.primaryA,
                     borderWidth: 4,
                     backgroundColor: gem.color,
                   }}

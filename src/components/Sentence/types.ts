@@ -1,4 +1,4 @@
-import { FontEmphasis, FontType } from '../../features/Config';
+import { FontEmphasis, FontType } from '../../features';
 export type SentenceType = {
   bold?: boolean;
   emphasis?: FontEmphasis;

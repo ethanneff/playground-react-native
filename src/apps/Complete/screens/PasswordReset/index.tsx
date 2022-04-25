@@ -1,22 +1,27 @@
 import { useIsFocused, useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { TextInput as OriginalTextInput } from 'react-native';
-import { Button, Modal, Text, TextInput } from '../../../../components';
-import { padding, useColor } from '../../../../features';
+import {
+  Button,
+  Modal,
+  Text,
+  TextInput,
+  TextInputRef,
+} from '../../../../components';
+import { padding, useColors } from '../../../../features';
 import { ModalHeader } from '../../components';
 import { LandingStackRoutes } from '../../navigationTypes';
 
 const initialRef = { email: '' };
 const initialState = { complete: false };
 export const PasswordReset = memo(function PasswordReset() {
-  const color = useColor();
+  const colors = useColors();
   const form = useRef(initialRef);
   const [state, setState] = useState(initialState);
   const { goBack, navigate } =
     useNavigation<StackNavigationProp<LandingStackRoutes>>();
   const focus = useIsFocused();
-  const emailRef = useRef<OriginalTextInput | null>(null);
+  const emailRef = useRef<TextInputRef>(null);
 
   const onSubmit = useCallback(() => {
     if (!state.complete) return;
@@ -43,7 +48,7 @@ export const PasswordReset = memo(function PasswordReset() {
 
   return focus ? (
     <Modal
-      backgroundColor={color.background.secondary}
+      backgroundColor={colors.background.secondary}
       onBackgroundPress={navWelcome}
     >
       <ModalHeader onRightPress={goBack} title="Password reset" />

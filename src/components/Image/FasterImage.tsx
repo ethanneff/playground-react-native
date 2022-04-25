@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { FastImage } from '../../conversions';
+import { FastImage } from '../FastImage';
 
 type Props = {
   height: number;

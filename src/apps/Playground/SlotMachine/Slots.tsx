@@ -2,7 +2,7 @@ import React, { memo, useCallback, useMemo, useState } from 'react';
 import { View } from 'react-native';
 import { v4 } from 'uuid';
 import { Button, Icon, Text, TouchableOpacity } from '../../../components';
-import { padding, useColor } from '../../../features';
+import { padding, useColors } from '../../../features';
 import { shuffleArray } from './utils';
 
 type Combinations = { [key: string]: number };
@@ -96,7 +96,7 @@ type ReelsProps = {
 };
 
 const Reels = memo(function Reels({ reelsArray, lineIndexes }: ReelsProps) {
-  const color = useColor();
+  const colors = useColors();
   return (
     <View style={{ flexDirection: 'row' }}>
       {reelsArray.map((reel, i) => (
@@ -108,8 +108,8 @@ const Reels = memo(function Reels({ reelsArray, lineIndexes }: ReelsProps) {
                 borderWidth: 2,
                 borderColor:
                   lineIndexes[i] === j
-                    ? color.border.accent
-                    : color.border.primaryA,
+                    ? colors.border.accent
+                    : colors.border.primaryA,
               }}
               title={item}
             />

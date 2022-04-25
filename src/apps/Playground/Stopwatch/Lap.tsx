@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text } from '../../../components';
-import { useColor } from '../../../features';
+import { useColors } from '../../../features';
 import { Timer } from './Timer';
 
 interface LapProps {
@@ -17,25 +17,25 @@ export const Lap = memo(function Lap({
   fastest,
   slowest,
 }: LapProps) {
-  const color = useColor();
+  const colors = useColors();
   const styles = StyleSheet.create({
     fastest: {
-      color: color.text.positive,
+      color: colors.text.positive,
     },
     lap: {
-      borderColor: color.border.secondary,
+      borderColor: colors.border.secondary,
       borderTopWidth: 1,
       flexDirection: 'row',
       justifyContent: 'space-between',
       paddingVertical: 10,
     },
     lapText: {
-      color: color.text.primaryB,
+      color: colors.text.primaryB,
       fontFamily: 'Courier',
       fontSize: 18,
     },
     slowest: {
-      color: color.text.negative,
+      color: colors.text.negative,
     },
   });
   const lapStyle = [

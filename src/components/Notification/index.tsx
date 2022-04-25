@@ -6,10 +6,8 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
+import { padding, SoundManager, useColors } from '../../features';
 import { useDriver } from '../../features/Animation';
-import { padding } from '../../features/Config';
-import { SoundManager } from '../../features/Sound';
-import { useColor } from '../../features/Theme';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
@@ -33,7 +31,7 @@ export const Notification = memo(function Notification({
   onCancel,
   onBackgroundPress,
 }: NotificationProps) {
-  const color = useColor();
+  const colors = useColors();
   const initialPosition = useMemo(() => ({ x: 0, y: -height }), [height]);
   const styles = StyleSheet.create({
     container: {
@@ -46,7 +44,7 @@ export const Notification = memo(function Notification({
     flex: { flex: 1 },
     modal: {
       alignItems: 'center',
-      backgroundColor: color.background.primaryA,
+      backgroundColor: colors.background.primaryA,
       flexDirection: 'row',
       height,
       padding: padding(4),
@@ -54,7 +52,7 @@ export const Notification = memo(function Notification({
     },
     notification: { elevation: 2, zIndex: 2 },
     notificationSafeArea: {
-      backgroundColor: color.background.primaryA,
+      backgroundColor: colors.background.primaryA,
       height,
       position: 'absolute',
       width: '100%',

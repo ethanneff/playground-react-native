@@ -2,12 +2,12 @@ import React, { memo, useCallback } from 'react';
 import { View } from 'react-native';
 import { v4 } from 'uuid';
 import { Tag } from '../../../components';
-import { padding, TagColor, useColor } from '../../../features';
+import { padding, TagColor, useColors } from '../../../features';
 
 export const TagGroup = memo(function TagGroup() {
-  const color = useColor();
+  const colors = useColors();
   const onPress = useCallback(() => undefined, []);
-  const keys = Object.keys(color.tag) as Array<keyof TagColor>;
+  const keys = Object.keys(colors.tag) as Array<keyof TagColor>;
   return (
     <>
       {keys.map((c) => (

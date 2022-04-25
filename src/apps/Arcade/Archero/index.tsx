@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import { Screen } from '../../../components';
-import { colorWithOpacity, useColor, useDriver } from '../../../features';
+import { colorWithOpacity, useColors, useDriver } from '../../../features';
 import { useRootSelector } from '../../../redux';
 
 const charSize = 50;
@@ -21,7 +21,7 @@ const getBounds = (value: number, limit: number, size: number) =>
   value > limit - size ? limit - size : value < 0 ? 0 : value;
 
 export const Archero = memo(function Archero() {
-  const color = useColor();
+  const colors = useColors();
   const { goBack } = useNavigation();
   const useNativeDriver = useDriver();
   const timer = useRef(false);
@@ -137,7 +137,7 @@ export const Archero = memo(function Archero() {
     <Screen onLeftPress={goBack} title="Archero">
       <View
         onLayout={onLayout}
-        style={{ flex: 1, backgroundColor: color.background.tertiary }}
+        style={{ flex: 1, backgroundColor: colors.background.tertiary }}
         {...panGesture.panHandlers} // eslint-disable-line react/jsx-props-no-spreading
       >
         <Animated.View
@@ -146,7 +146,7 @@ export const Archero = memo(function Archero() {
             {
               width: charSize,
               height: charSize,
-              backgroundColor: color.background.accent,
+              backgroundColor: colors.background.accent,
             },
           ]}
         />
@@ -159,7 +159,7 @@ export const Archero = memo(function Archero() {
               borderRadius: 500,
               width: joystickSize,
               height: joystickSize,
-              backgroundColor: color.overlay.light,
+              backgroundColor: colors.overlay.light,
             },
           ]}
         >
@@ -170,7 +170,7 @@ export const Archero = memo(function Archero() {
               borderRadius: 500,
               width: thumbSize,
               height: thumbSize,
-              backgroundColor: color.overlay.light,
+              backgroundColor: colors.overlay.light,
             }}
           >
             <Animated.View
@@ -181,7 +181,7 @@ export const Archero = memo(function Archero() {
                   width: thumbSize,
                   height: thumbSize,
                   backgroundColor: colorWithOpacity(
-                    color.background.accent,
+                    colors.background.accent,
                     0.8,
                   ),
                 },

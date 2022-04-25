@@ -1,8 +1,13 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { Keyboard, TextInput as OriginalTextInput, View } from 'react-native';
+import { Keyboard, View } from 'react-native';
 import { v4 } from 'uuid';
-import { Button, TextInput, TextInputIcon } from '../../../components';
-import { padding, useColor } from '../../../features';
+import {
+  Button,
+  TextInput,
+  TextInputIcon,
+  TextInputRef,
+} from '../../../components';
+import { padding, useColors } from '../../../features';
 import { useRootDispatch, useRootSelector } from '../../../redux';
 import { addItemToItem, createItem, Item } from '../models';
 import { completeConfig } from '../utils';
@@ -20,8 +25,8 @@ export const AddItem = memo(function AddItem({
   placeholder,
   title,
 }: AddItemProps) {
-  const color = useColor();
-  const textInputRef = useRef<OriginalTextInput | null>(null);
+  const colors = useColors();
+  const textInputRef = useRef<TextInputRef>(null);
   const [showInput, setShowInput] = useState(false);
   const dispatch = useRootDispatch();
   const userId = useRootSelector((s) => s.completeUser?.id);
@@ -81,7 +86,7 @@ export const AddItem = memo(function AddItem({
         width,
         height: padding(12),
         borderRadius: completeConfig.borderRadius,
-        backgroundColor: color.background.primaryA,
+        backgroundColor: colors.background.primaryA,
         justifyContent: 'center',
       }}
     >

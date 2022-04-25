@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { Icon, Text, TouchableOpacity } from '../../components';
-import { padding } from '../../features/Config';
-import { useColor } from '../Theme';
+import { padding } from '../../features';
+import { useColors } from '../Theme';
 
 type Props = {
   icon: string;
@@ -14,7 +14,7 @@ export const LoginButton = memo(function LoginButton({
   icon,
   title,
 }: Props) {
-  const color = useColor();
+  const colors = useColors();
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -22,7 +22,7 @@ export const LoginButton = memo(function LoginButton({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
-        borderColor: color.border.primaryA,
+        borderColor: colors.border.primaryA,
         borderWidth: 2,
         padding: padding(2),
         marginBottom: padding(2),

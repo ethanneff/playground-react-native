@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { Animated, FlatList, StyleSheet, View } from 'react-native';
-import { Icon, Input, Screen, Text } from '../../../components';
+import { Animated, StyleSheet, View } from 'react-native';
+import { FlatList, Icon, Input, Screen, Text } from '../../../components';
 import {
   colorWithOpacity,
   padding,
-  useColor,
+  useColors,
   useDriver,
 } from '../../../features';
 import { useRootSelector } from '../../../redux';
@@ -45,7 +45,7 @@ const animationDuration = 400;
 
 export const SearchBar = memo(function PlaygroundSearchbar() {
   const { goBack } = useNavigation();
-  const color = useColor();
+  const colors = useColors();
   const [state, setState] = useState<State>({
     animation: new Animated.Value(0),
     iconName: iconSearch,
@@ -60,8 +60,8 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
   const fadeContainer = state.animation.interpolate({
     inputRange: [0, 1],
     outputRange: [
-      color.background.primaryA,
-      colorWithOpacity(color.background.secondary),
+      colors.background.primaryA,
+      colorWithOpacity(colors.background.secondary),
     ],
   });
   const styles = StyleSheet.create({
@@ -69,19 +69,19 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
       flex: 1,
     },
     header: {
-      backgroundColor: color.background.secondary,
+      backgroundColor: colors.background.secondary,
       height: padding(20),
       justifyContent: 'center',
       padding: padding(2),
     },
     item: {
-      borderBottomColor: color.background.secondary,
+      borderBottomColor: colors.background.secondary,
       borderWidth: 0.2,
       padding: padding(6),
     },
     textContainer: {
       alignItems: 'center',
-      backgroundColor: color.background.primaryA,
+      backgroundColor: colors.background.primaryA,
       flexDirection: 'row',
       height: '100%',
       padding: padding(2),

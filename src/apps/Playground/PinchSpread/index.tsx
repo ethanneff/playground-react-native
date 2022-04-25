@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useState } from 'react';
 import { Animated, PanResponder, StyleSheet, View } from 'react-native';
 import { Screen, Text } from '../../../components';
-import { padding, useColor } from '../../../features';
+import { padding, useColors } from '../../../features';
 import { GestureHandler } from './logic';
 
 const minTouches = 2;
@@ -10,10 +10,10 @@ const title = `pinch or spread the screen with ${minTouches} fingers minimum`;
 
 export const PinchSpread = memo(function PinchSpread() {
   const [state, setState] = useState({ pinchCount: 0, spreadCount: 0 });
-  const color = useColor();
+  const colors = useColors();
   const { goBack } = useNavigation();
   const styles = StyleSheet.create({
-    container: { backgroundColor: color.background.secondary, flex: 1 },
+    container: { backgroundColor: colors.background.secondary, flex: 1 },
   });
   const gestureHandler = new GestureHandler({ minTouches });
   const panGesture = PanResponder.create({

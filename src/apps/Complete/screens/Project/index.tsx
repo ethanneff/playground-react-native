@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { LayoutChangeEvent } from 'react-native';
 import { KeyboardHandler, Screen } from '../../../../components';
-import { padding, useColor, useKeyboardHeight } from '../../../../features';
+import { padding, useColors, useKeyboardHeight } from '../../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../../redux';
 import { Board } from '../../components';
 
@@ -10,7 +10,7 @@ import { Board } from '../../components';
 
 export const Project = memo(function Project() {
   const { goBack } = useNavigation();
-  const color = useColor();
+  const colors = useColors();
   const screenWidth = useRootSelector(getSmallestDimension);
   const { projectItemId } = useRootSelector((s) => s.completeItem.nav);
   if (!projectItemId) throw new Error('missing projectItemId on board screen');
@@ -52,7 +52,7 @@ export const Project = memo(function Project() {
       title={projectItemTitle}
     >
       <KeyboardHandler
-        backgroundColor={color.background.secondary}
+        backgroundColor={colors.background.secondary}
         onLayout={onLayout}
       >
         <Board

@@ -1,7 +1,12 @@
 import React, { memo } from 'react';
 import { Platform, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import { ColorTheme, MonoMultiColor, padding } from '../../features/Config';
-import { useColor, useDropShadow } from '../../features/Theme';
+import {
+  ColorTheme,
+  MonoMultiColor,
+  padding,
+  useColors,
+  useDropShadow,
+} from '../../features';
 import { Badge } from './Badge';
 import { Source } from './Source';
 
@@ -65,7 +70,7 @@ export const Icon = memo(function Icon({
   padded,
   testID,
 }: Props) {
-  const colors = useColor();
+  const colors = useColors();
   const bgColor = backgroundColor
     ? colors.background[backgroundColor]
     : colors.text.accent;

@@ -1,21 +1,21 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import { Text, TouchableOpacity } from '../../components';
-import { padding, useColor } from '../../features';
+import { padding, useColors } from '../../features';
 
 type Props = {
   onPress?: () => void;
 };
 
 export const ProfileLevel = ({ onPress }: Props): JSX.Element => {
-  const color = useColor();
+  const colors = useColors();
   const image = require('../../assets/placeholder.png');
   const width = 0.2;
   const level = 22;
   const styles = StyleSheet.create({
     imageContainer: {
       alignSelf: 'center',
-      borderColor: color.border.primaryA,
+      borderColor: colors.border.primaryA,
       borderRadius: padding(2),
       borderWidth: 1,
       height: padding(18),
@@ -25,8 +25,8 @@ export const ProfileLevel = ({ onPress }: Props): JSX.Element => {
     },
     levelContainer: {
       alignItems: 'center',
-      backgroundColor: color.background.primaryA,
-      borderColor: color.border.primaryA,
+      backgroundColor: colors.background.primaryA,
+      borderColor: colors.border.primaryA,
       borderRadius: padding(20),
       borderWidth: 1,
       bottom: -padding(2),
@@ -39,16 +39,16 @@ export const ProfileLevel = ({ onPress }: Props): JSX.Element => {
       zIndex: 2,
     },
     progressBar: {
-      backgroundColor: color.background.positive,
+      backgroundColor: colors.background.positive,
       borderBottomLeftRadius: 0,
       borderRadius: padding(20),
       borderTopLeftRadius: 0,
       height: '100%',
     },
     progressContainer: {
-      backgroundColor: color.background.primaryA,
+      backgroundColor: colors.background.primaryA,
       borderBottomLeftRadius: 0,
-      borderColor: color.border.primaryA,
+      borderColor: colors.border.primaryA,
       borderRadius: padding(20),
       borderTopLeftRadius: 0,
       borderWidth: 1,

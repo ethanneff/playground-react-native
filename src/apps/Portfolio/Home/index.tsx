@@ -1,8 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { ScrollView } from 'react-native';
-import { Button, Screen } from '../../../components';
-import { padding, useAdminNavBack, useColor } from '../../../features';
+import { Button, Screen, ScrollView } from '../../../components';
+import { padding, useAdminNavBack, useColors } from '../../../features';
 import { PortfolioNavigation, PortfolioRoutes } from '../types';
 
 export const Home = memo(function PortfolioHome() {
@@ -12,13 +11,13 @@ export const Home = memo(function PortfolioHome() {
     [navigate],
   );
   const { onLeftPress } = useAdminNavBack();
-  const color = useColor();
+  const colors = useColors();
   return (
     <Screen dropShadow onLeftPress={onLeftPress} title="Home">
       <ScrollView
         style={{
           padding: padding(4),
-          backgroundColor: color.background.secondary,
+          backgroundColor: colors.background.secondary,
         }}
       >
         <Button center onPress={navTo('login')} title="logout" />

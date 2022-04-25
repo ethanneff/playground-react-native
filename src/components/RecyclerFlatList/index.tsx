@@ -16,7 +16,7 @@ import {
   RecyclerListViewProps,
   RecyclerListViewState,
 } from 'recyclerlistview/dist/reactnative/core/RecyclerListView';
-import { ActivityIndicator } from '../ActivityIndicator';
+import { Loader } from '../Loader';
 
 export type RecyclerFlatListRef = RecyclerListView<
   RecyclerListViewProps,
@@ -74,7 +74,7 @@ export const RecyclerFlatList = <T,>({
   ).current;
 
   const onRenderFooter = useCallback(
-    () => (loading ? <ActivityIndicator /> : null),
+    () => (loading ? <Loader /> : null),
     [loading],
   );
 

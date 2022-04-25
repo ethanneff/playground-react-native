@@ -3,7 +3,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback } from 'react';
 import { View } from 'react-native';
 import { Icon, Text, TouchableOpacity } from '../../../../components';
-import { padding, useColor, useDropShadow } from '../../../../features';
+import { padding, useColors, useDropShadow } from '../../../../features';
 import { AuthStackRoutes, Item } from '../../types';
 import { ListSection } from './ListSection';
 
@@ -20,7 +20,7 @@ export const ListItem = memo(function ListItem({
   showFooter,
   currentItem,
 }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const dropShadow = useDropShadow();
   const future = item.id > Date.now();
   const iconColor = future ? 'tertiary' : 'positive';
@@ -46,14 +46,14 @@ export const ListItem = memo(function ListItem({
           flex: 1,
           marginTop: showHeader ? padding(4) : padding(0),
           paddingBottom: showFooter ? padding(2) : padding(0),
-          backgroundColor: color.background.primaryA,
+          backgroundColor: colors.background.primaryA,
           borderTopRightRadius: showHeader ? padding(4) : 0,
           borderTopLeftRadius: showHeader ? padding(4) : 0,
           borderBottomRightRadius: showFooter ? padding(4) : 0,
           borderBottomLeftRadius: showFooter ? padding(4) : 0,
           borderColor: currentItem
-            ? color.background.accent
-            : color.background.primaryA,
+            ? colors.background.accent
+            : colors.background.primaryA,
           borderLeftWidth: padding(1),
           ...dropShadow(2),
         }}

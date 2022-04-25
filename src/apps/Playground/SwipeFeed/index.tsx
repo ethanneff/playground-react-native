@@ -13,11 +13,16 @@ import {
   Card,
   Icon,
   Screen,
+  ScrollView,
   Text,
   TouchableOpacity,
 } from '../../../components';
-import { ScrollView } from '../../../conversions';
-import { padding, useColor, useDriver, useDropShadow } from '../../../features';
+import {
+  padding,
+  useColors,
+  useDriver,
+  useDropShadow,
+} from '../../../features';
 import { getWidth, useRootSelector } from '../../../redux';
 import { formatRelativeDate } from './utils';
 
@@ -37,7 +42,7 @@ const SwipeCard = memo(function SwipeCard({
 }: SwipeCardProps) {
   const { icon, title, date, body, button, image } = item;
   const cardWidth = useRef(0);
-  const color = useColor();
+  const colors = useColors();
   const useNativeDriver = useDriver();
   const width = useRootSelector(getWidth);
   const dropShadow = useDropShadow();
@@ -92,9 +97,9 @@ const SwipeCard = memo(function SwipeCard({
         width: '100%',
         left: position.x,
         height,
-        backgroundColor: color.background.primaryA,
+        backgroundColor: colors.background.primaryA,
         borderRadius: padding(1),
-        borderColor: color.border.accent,
+        borderColor: colors.border.accent,
         ...dropShadow(4),
       }}
     >
@@ -222,7 +227,7 @@ interface BadgeProps {
 const Badge = memo(function Badge({ count, percent }: BadgeProps) {
   const size = padding(6);
   const badgeSize = size * percent;
-  const color = useColor();
+  const colors = useColors();
   return (
     <View
       style={{
@@ -241,7 +246,7 @@ const Badge = memo(function Badge({ count, percent }: BadgeProps) {
           width: badgeSize,
           height: badgeSize,
           borderRadius: size,
-          backgroundColor: color.background.negative,
+          backgroundColor: colors.background.negative,
           alignItems: 'center',
           justifyContent: 'center',
         }}
@@ -311,14 +316,14 @@ const ImagePlaceholder = memo(function ImagePlaceholder() {
 
 export const SwipeFeed = memo(function SwipeFeed() {
   const { goBack } = useNavigation();
-  const color = useColor();
+  const colors = useColors();
 
   return (
     <Screen dropShadow onLeftPress={goBack} title="Swipe Feed">
       <ScrollView
         style={{
           padding: padding(4),
-          backgroundColor: color.background.secondary,
+          backgroundColor: colors.background.secondary,
         }}
       >
         <ImagePlaceholder />

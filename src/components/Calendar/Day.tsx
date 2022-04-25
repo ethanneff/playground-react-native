@@ -1,8 +1,7 @@
 import dayjs from 'dayjs';
 import React from 'react';
 import { View } from 'react-native';
-import { padding } from '../../features/Config';
-import { useColor } from '../../features/Theme';
+import { padding, useColors } from '../../features';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 import { Day } from './utils';
@@ -20,21 +19,21 @@ export const CalendarDay = ({
   selectedDay,
   hiddenDays,
 }: Props): JSX.Element => {
-  const color = useColor();
+  const colors = useColors();
   const selected = day.id === selectedDay;
   const today = dayjs(day.id).isSame(dayjs(), 'day');
-  const backgroundColor = selected ? color.background.accent : 'transparent';
+  const backgroundColor = selected ? colors.background.accent : 'transparent';
   const nonMonthDay = hiddenDays && !day.current;
   const textColor =
     nonMonthDay && !day.header
       ? 'transparent'
       : selected
-      ? color.text.primaryB
+      ? colors.text.primaryB
       : today
-      ? color.text.positive
+      ? colors.text.positive
       : day.current
-      ? color.text.primaryA
-      : color.text.tertiary;
+      ? colors.text.primaryA
+      : colors.text.tertiary;
   const disabled = day.header || nonMonthDay;
 
   return (

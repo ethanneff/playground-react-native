@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
-import { Button, Input, Screen } from '../../../components';
-import { padding, useColor } from '../../../features';
+import { StyleSheet, View } from 'react-native';
+import { Button, Input, Screen, ScrollView } from '../../../components';
+import { padding, useColors } from '../../../features';
 import { PortfolioNavigation } from '../types';
 
 const styles = StyleSheet.create({
@@ -18,14 +18,14 @@ export const Login = memo(function PortfolioLogin() {
 
   const navPortfolio = useCallback(() => navigate('home'), [navigate]);
   const navPassword = useCallback(() => navigate('forgotPassword'), [navigate]);
-  const color = useColor();
+  const colors = useColors();
 
   return (
     <Screen dropShadow onLeftPress={goBack} title="Login">
       <ScrollView
         style={{
           padding: padding(4),
-          backgroundColor: color.background.secondary,
+          backgroundColor: colors.background.secondary,
         }}
       >
         <Input

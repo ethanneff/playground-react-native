@@ -1,12 +1,18 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
-import { Button, Input, Screen, Text, TextInput } from '../../../components';
-import { KeyboardAwareScrollView } from '../../../conversions';
-import { padding, useColor } from '../../../features';
+import {
+  Button,
+  Input,
+  KeyboardAwareScrollView,
+  Screen,
+  Text,
+  TextInput,
+} from '../../../components';
+import { padding, useColors } from '../../../features';
 
 export const Login = memo(function Login() {
   const { goBack } = useNavigation();
-  const color = useColor();
+  const colors = useColors();
 
   const [form, setForm] = useState({
     email: '',
@@ -31,7 +37,7 @@ export const Login = memo(function Login() {
       <KeyboardAwareScrollView
         keyboardShouldPersistTaps="handled"
         style={{
-          backgroundColor: color.background.secondary,
+          backgroundColor: colors.background.secondary,
           padding: padding(4),
         }}
       >

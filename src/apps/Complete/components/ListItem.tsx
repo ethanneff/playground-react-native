@@ -1,9 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef } from 'react';
-import { Keyboard, TextInput as OriginalTextInput } from 'react-native';
-import { TextInput, TextInputIcon } from '../../../components';
-import { TouchableWithoutFeedback } from '../../../conversions';
-import { useColor } from '../../../features';
+import { Keyboard } from 'react-native';
+import {
+  TextInput,
+  TextInputIcon,
+  TextInputRef,
+  TouchableWithoutFeedback,
+} from '../../../components';
+import { useColors } from '../../../features';
 import { useRootDispatch, useRootSelector } from '../../../redux';
 import {
   navItemDetails,
@@ -29,10 +33,10 @@ export const ListItem = memo(function ListItem({
   const parentChildrenCount = useRootSelector(
     (s) => s.completeItem.items[parentItemId].children.length,
   );
-  const textInputRef = useRef<OriginalTextInput | null>(null);
+  const textInputRef = useRef<TextInputRef>(null);
   const dispatch = useRootDispatch();
   const { navigate } = useNavigation<ImplementTabNavigation>();
-  const color = useColor();
+  const colors = useColors();
 
   const onItemTitleClose = useCallback(() => {
     Keyboard.dismiss();
@@ -100,7 +104,7 @@ export const ListItem = memo(function ListItem({
         flex: 1,
         borderRadius: completeConfig.borderRadius,
         margin: completeConfig.padding / 2,
-        backgroundColor: color.background.secondary,
+        backgroundColor: colors.background.secondary,
         flexDirection: 'row',
       }}
     >

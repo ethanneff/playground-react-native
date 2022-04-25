@@ -2,12 +2,12 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useEffect, useRef } from 'react';
 import { Animated, Easing, StyleSheet, View } from 'react-native';
 import { Screen } from '../../../components';
-import { useColor, useDriver, useDropShadow } from '../../../features';
+import { useColors, useDriver, useDropShadow } from '../../../features';
 
 type PapiProps = { size: number };
 
 const Papi = memo(function PapiMemo({ size }: PapiProps) {
-  const color = useColor();
+  const colors = useColors();
   const dropShadow = useDropShadow();
   const useNativeDriver = useDriver();
   const location = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
@@ -30,7 +30,7 @@ const Papi = memo(function PapiMemo({ size }: PapiProps) {
           height: size,
           width: size,
           borderRadius: size,
-          backgroundColor: color.background.positive,
+          backgroundColor: colors.background.positive,
           ...dropShadow(5),
         },
       ]}
@@ -39,11 +39,11 @@ const Papi = memo(function PapiMemo({ size }: PapiProps) {
 });
 
 export const PapiJump = memo(function PapiJump() {
-  const color = useColor();
+  const colors = useColors();
   const { goBack } = useNavigation();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background.secondary,
+      backgroundColor: colors.background.secondary,
       flex: 1,
     },
   });

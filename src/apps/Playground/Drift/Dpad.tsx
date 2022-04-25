@@ -1,14 +1,14 @@
 import React, { memo, useCallback, useContext } from 'react';
 import { View } from 'react-native';
 import { TouchableOpacity } from '../../../components';
-import { useColor, useDropShadow } from '../../../features';
+import { useColors, useDropShadow } from '../../../features';
 import { DriftContext } from './Context';
 import { ColorChoice } from './types';
 
 export const Dpad = memo(function Dpad() {
   const useShadow = useDropShadow();
   const { dispatch } = useContext(DriftContext);
-  const color = useColor();
+  const colors = useColors();
   const size = 50;
   const box = {
     width: size,
@@ -34,7 +34,7 @@ export const Dpad = memo(function Dpad() {
           onPress={onPress('violet')}
           style={{
             ...box,
-            backgroundColor: color.background.warning,
+            backgroundColor: colors.background.warning,
             borderTopLeftRadius: size,
             ...useShadow(10),
           }}
@@ -43,7 +43,7 @@ export const Dpad = memo(function Dpad() {
           onPress={onPress('mediumseagreen')}
           style={{
             ...box,
-            backgroundColor: color.background.positive,
+            backgroundColor: colors.background.positive,
             borderTopRightRadius: size,
             ...useShadow(10),
           }}
@@ -54,7 +54,7 @@ export const Dpad = memo(function Dpad() {
           onPress={onPress('slateblue')}
           style={{
             ...box,
-            backgroundColor: color.background.accent,
+            backgroundColor: colors.background.accent,
             borderBottomLeftRadius: size,
             ...useShadow(10),
           }}
@@ -63,7 +63,7 @@ export const Dpad = memo(function Dpad() {
           onPress={onPress('orange')}
           style={{
             ...box,
-            backgroundColor: color.background.negative,
+            backgroundColor: colors.background.negative,
             borderBottomRightRadius: size,
             ...useShadow(10),
           }}

@@ -1,12 +1,13 @@
-import React, { RefAttributes } from 'react';
+import React, { Ref } from 'react';
 import { FlatListProps } from 'react-native';
 import { GestureFlatList } from '../../conversions';
 
 export type FlatListRef = GestureFlatList | null;
+type Props<ItemT> = FlatListProps<ItemT> & {
+  onRef?: Ref<GestureFlatList<ItemT>>;
+};
 
-export const FlatList = <ItemT,>(
-  props: FlatListProps<ItemT> & RefAttributes<GestureFlatList>,
-) => {
+export const FlatList = <ItemT,>({ onRef, ...rest }: Props<ItemT>) => {
   // eslint-disable-next-line react/jsx-props-no-spreading
-  return <GestureFlatList {...props} />;
+  return <GestureFlatList {...rest} ref={onRef} />;
 };

@@ -10,16 +10,16 @@ import {
   ReturnKeyTypeOptions,
   StyleProp,
   StyleSheet,
-  TextInput as Original,
   TextStyle,
   View,
   ViewStyle,
 } from 'react-native';
-import { fontSizes, padding } from '../../features/Config';
-import { useColor } from '../../features/Theme';
+import { GestureTextInput } from '../../conversions';
+import { fontSizes, padding, useColors } from '../../features';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
+import { TextInputRef } from '../TextInput';
 import { TouchableOpacity } from '../TouchableOpacity';
 
 // styling https://uxdesign.cc/design-better-forms-96fadca0f49c
@@ -40,7 +40,7 @@ type Props = {
   flex?: boolean;
   keyboardType?: KeyboardTypeOptions;
   onChangeText(text: string): void;
-  onRef?: MutableRefObject<Original | null>;
+  onRef?: MutableRefObject<TextInputRef>;
   onSubmitEditing?: () => void;
   optional?: boolean;
   placeholder?: string;
@@ -78,7 +78,7 @@ export const Input = memo(function Input({
   value,
 }: Props) {
   const [focus, setFocus] = useState(false);
-  const color = useColor();
+  const colors = useColors();
   const styles = StyleSheet.create({
     clear: {
       paddingLeft: padding(2),
@@ -87,12 +87,12 @@ export const Input = memo(function Input({
       flex: 1,
     },
     input: {
-      backgroundColor: color.background.primaryA,
+      backgroundColor: colors.background.primaryA,
       borderColor: error
-        ? color.text.negative
+        ? colors.text.negative
         : focus
-        ? color.text.accent
-        : color.text.secondary,
+        ? colors.text.accent
+        : colors.text.secondary,
       borderRadius: padding(1),
       borderWidth: 2,
       flexDirection: 'row',
@@ -102,11 +102,11 @@ export const Input = memo(function Input({
       flexDirection: 'row',
     },
     textInput: {
-      color: color.text.primaryA,
+      color: colors.text.primaryA,
       flex: 1,
     },
   });
-  const textInput = useRef<Original | null>(null);
+  const textInput = useRef<TextInputRef>(null);
   const optionalText = ' - optional';
   const textInputStyles = [styles.textInput, fontSizes.body2, textStyle];
   const noValue = value.length === 0;
@@ -145,7 +145,7 @@ export const Input = memo(function Input({
         />
       </View>
       <View style={styles.input}>
-        <Original
+        <GestureTextInput
           autoCorrect={autoCorrect}
           blurOnSubmit={blurOnSubmit}
           disableFullscreenUI={disableFullscreenUI}
@@ -156,11 +156,11 @@ export const Input = memo(function Input({
           onFocus={onFocus}
           onSubmitEditing={onSubmitEditing}
           placeholder={placeholder}
-          placeholderTextColor={color.text.secondary}
+          placeholderTextColor={colors.text.secondary}
           ref={onRefInternal}
           returnKeyType={returnKeyType}
           secureTextEntry={secureTextEntry}
-          selectionColor={color.text.accent}
+          selectionColor={colors.text.accent}
           style={textInputStyles}
           textContentType={textContentType}
           underlineColorAndroid="transparent"

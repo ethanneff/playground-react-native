@@ -1,8 +1,8 @@
 import dayjs, { Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
-import { FlatList, ListRenderItem, View } from 'react-native';
-import { Icon, Text, TouchableOpacity } from '../../components';
-import { padding, useColor } from '../../features';
+import { ListRenderItem, View } from 'react-native';
+import { FlatList, Icon, Text, TouchableOpacity } from '../../components';
+import { padding, useColors } from '../../features';
 
 const generateHistory = () => {
   const data = [];
@@ -20,7 +20,7 @@ type ProgressItemProps = {
 };
 
 const ProgressItem = ({ item }: ProgressItemProps) => {
-  const color = useColor();
+  const colors = useColors();
   const [dateFormat, setDateFormat] = useState('ddd');
   const onPress = useCallback(() => {
     setDateFormat((prev) => (prev === 'ddd' ? 'MMM DD' : 'ddd'));
@@ -41,7 +41,7 @@ const ProgressItem = ({ item }: ProgressItemProps) => {
       <Icon color={iconColor} name={iconName} style={{ alignSelf: 'center' }} />
       <View
         style={{
-          borderTopColor: color.border.primaryA,
+          borderTopColor: colors.border.primaryA,
           borderTopWidth: 2,
           margin: padding(1),
           width: padding(12),

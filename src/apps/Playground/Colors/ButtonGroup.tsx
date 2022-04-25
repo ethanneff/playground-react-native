@@ -6,7 +6,7 @@ import {
   FontEmphasis,
   MonoMultiColor,
   padding,
-  useColor,
+  useColors,
 } from '../../../features';
 
 type ButtonGroupProps = {
@@ -16,8 +16,8 @@ type ButtonGroupProps = {
 export const ButtonGroup = memo(function ButtonGroup({
   emphasis,
 }: ButtonGroupProps) {
-  const color = useColor();
-  const keys = Object.keys(color.text) as Array<keyof MonoMultiColor>;
+  const colors = useColors();
+  const keys = Object.keys(colors.text) as Array<keyof MonoMultiColor>;
   return (
     <View style={{ flex: 1 }}>
       <Text

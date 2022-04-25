@@ -2,15 +2,15 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Screen } from '../../../components';
-import { useColor } from '../../../features';
+import { useColors } from '../../../features';
 
 export const Template = memo(function PlaygroundTemplate() {
-  const color = useColor();
+  const colors = useColors();
   const { goBack } = useNavigation();
 
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background.primaryA,
+      backgroundColor: colors.background.primaryA,
     },
   });
   return (

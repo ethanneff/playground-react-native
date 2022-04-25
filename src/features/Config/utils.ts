@@ -13,7 +13,7 @@ export const colorWithOpacity = (colorCode: string, opacity = 0.5): string => {
 
 type GetFontStylesProps = {
   color?: keyof MonoMultiColor;
-  colorScheme: ColorTheme;
+  colors: ColorTheme;
   emphasis?: FontEmphasis;
   inverse?: boolean;
   type?: FontType;
@@ -29,15 +29,15 @@ export const getFontStyles = ({
   type = 'body1',
   inverse,
   color = 'primaryA',
-  colorScheme,
+  colors,
 }: GetFontStylesProps): GetFontStylesReturn => {
   const textColorPercent = fontEmphases[emphasis];
   const fontSize = fontSizes[type];
   const textColor = inverse
-    ? colorScheme.text.primaryB
+    ? colors.text.primaryB
     : color
-    ? colorScheme.text[color]
-    : colorScheme.text.primaryA;
+    ? colors.text[color]
+    : colors.text.primaryA;
   const textColorWithOpacity = colorWithOpacity(textColor, textColorPercent);
   return { textColor: textColorWithOpacity, fontSize };
 };

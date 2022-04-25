@@ -2,14 +2,14 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useRef } from 'react';
 import { Animated, View } from 'react-native';
 import { Screen } from '../../../components';
-import { useColor, useDriver } from '../../../features';
+import { useColors, useDriver } from '../../../features';
 
 const Bird = () => {
-  const color = useColor();
+  const colors = useColors();
   return (
     <Animated.View
       style={{
-        backgroundColor: color.background.negative,
+        backgroundColor: colors.background.negative,
         width: 50,
         height: 50,
       }}
@@ -18,7 +18,7 @@ const Bird = () => {
 };
 
 const Pillar = () => {
-  const color = useColor();
+  const colors = useColors();
   const useNativeDriver = useDriver();
   const location = useRef(new Animated.ValueXY({ x: 0, y: 0 }));
   const state = useRef({ x: 0, y: 0, direction: 1 });
@@ -47,7 +47,7 @@ const Pillar = () => {
       style={[
         location.current.getLayout(),
         {
-          backgroundColor: color.background.positive,
+          backgroundColor: colors.background.positive,
           width: 50,
           height: 50,
         },
@@ -57,12 +57,12 @@ const Pillar = () => {
 };
 
 export const FlappyBird = memo(function FlappyBird() {
-  const color = useColor();
+  const colors = useColors();
   const { goBack } = useNavigation();
 
   return (
     <Screen onLeftPress={goBack} title="Flappy Bird">
-      <View style={{ flex: 1, backgroundColor: color.background.secondary }}>
+      <View style={{ flex: 1, backgroundColor: colors.background.secondary }}>
         <Bird />
         <Pillar />
       </View>

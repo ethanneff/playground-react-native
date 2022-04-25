@@ -1,8 +1,7 @@
 import React, { memo } from 'react';
 import { Dimensions, View } from 'react-native';
-import { Calendar, Screen, Text } from '../../../../components';
-import { ScrollView } from '../../../../conversions';
-import { padding, useColor, useTabTap } from '../../../../features';
+import { Calendar, Screen, ScrollView, Text } from '../../../../components';
+import { padding, useColors, useTabTap } from '../../../../features';
 import { Card } from '../../components';
 import { completeConfig } from '../../utils';
 import { Graph } from './Graph';
@@ -36,16 +35,16 @@ const data = [
 
 export const Reflect = memo(function Reflect() {
   useTabTap();
-  const color = useColor();
+  const colors = useColors();
 
   return (
     <Screen title="Reflect">
       <ScrollView
         contentContainerStyle={{
           padding: padding(4),
-          backgroundColor: color.background.secondary,
+          backgroundColor: colors.background.secondary,
         }}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         <Card margin="bottom">
           <View>

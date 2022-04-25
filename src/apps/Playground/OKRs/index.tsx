@@ -1,8 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
-import { Card, Screen, Text } from '../../../components';
-import { ScrollView } from '../../../conversions';
-import { padding, useColor } from '../../../features';
+import { Card, Screen, ScrollView, Text } from '../../../components';
+import { padding, useColors } from '../../../features';
 
 export type ItemType =
   | 'Mission'
@@ -17,13 +16,13 @@ export type ItemType =
 
 export const OKRs = memo(function PlaygroundOKRs() {
   const { goBack } = useNavigation();
-  const color = useColor();
+  const colors = useColors();
 
   return (
     <Screen dropShadow onLeftPress={goBack} title="OKRs">
       <ScrollView
         contentContainerStyle={{ padding: padding(4) }}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>
           <Text title="Company" type="h6" />

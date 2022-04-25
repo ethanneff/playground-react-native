@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { padding } from '../../features/Config';
-import { useColor, useDropShadow } from '../../features/Theme';
+import { padding, useColors, useDropShadow } from '../../features';
 import { Text } from '../Text';
 import { NavButton } from './NavButton';
 
@@ -32,17 +31,17 @@ export const NavBar = memo(function NavBar({
   onSecondLeftPress,
   onSecondRightPress,
 }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const shadow = useDropShadow();
   const showShadow = dropShadow ? shadow(4) : {};
   const secondary = onSecondRightPress || onSecondLeftPress;
   const styles = StyleSheet.create({
     container: {
       alignItems: 'center',
-      backgroundColor: color.background.primaryA,
+      backgroundColor: colors.background.primaryA,
       borderBottomColor: border
-        ? color.background.secondary
-        : color.background.primaryA,
+        ? colors.background.secondary
+        : colors.background.primaryA,
       borderBottomWidth: 1,
       flexDirection: 'row',
       justifyContent: 'space-between',
@@ -80,7 +79,7 @@ export const NavBar = memo(function NavBar({
       </View>
       <View
         style={{
-          backgroundColor: color.background.primaryA,
+          backgroundColor: colors.background.primaryA,
           width: '100%',
           height: 2,
           ...showShadow,

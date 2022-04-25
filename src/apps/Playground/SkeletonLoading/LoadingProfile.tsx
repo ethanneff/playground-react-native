@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Card, SkeletonLoader } from '../../../components';
-import { padding, useColor } from '../../../features';
+import { padding, useColors } from '../../../features';
 
 export const LoadingProfile = (): JSX.Element => {
-  const color = useColor();
+  const colors = useColors();
   const banner = padding(24);
 
   return (
@@ -19,7 +19,7 @@ export const LoadingProfile = (): JSX.Element => {
         style={{
           borderTopLeftRadius: padding(2),
           borderTopRightRadius: padding(2),
-          backgroundColor: color.background.tertiary,
+          backgroundColor: colors.background.tertiary,
           flex: 1,
           height: banner,
         }}

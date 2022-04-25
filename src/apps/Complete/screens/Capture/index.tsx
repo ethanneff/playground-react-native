@@ -3,7 +3,7 @@ import { LayoutChangeEvent } from 'react-native';
 import { Button, KeyboardHandler, Screen } from '../../../../components';
 import {
   padding,
-  useColor,
+  useColors,
   useKeyboardHeight,
   useTabTap,
 } from '../../../../features';
@@ -14,7 +14,7 @@ import { getInbox } from '../../models';
 const initialState = { container: 0, button: 0 };
 export const Capture = memo(function Capture() {
   useTabTap();
-  const color = useColor();
+  const colors = useColors();
   const containerRefs = useRef(initialState);
   const keyboardHeight = useKeyboardHeight();
   const [containerHeight, setContainerHeight] = useState(0);
@@ -47,7 +47,7 @@ export const Capture = memo(function Capture() {
   return (
     <Screen onRightPress={showSearchBar} rightIcon="magnify" title="Plan">
       <KeyboardHandler
-        backgroundColor={color.background.secondary}
+        backgroundColor={colors.background.secondary}
         onLayout={onLayout('container')}
       >
         <List

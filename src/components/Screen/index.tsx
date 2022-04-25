@@ -7,7 +7,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import { useColor } from '../../features/Theme';
+import { useColors } from '../../features';
 import { NavBar } from './NavBar';
 
 type Props = {
@@ -43,10 +43,10 @@ export const Screen = memo(function Screen({
   onSecondRightPress,
   dropShadow,
 }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background.primaryA,
+      backgroundColor: colors.background.primaryA,
       flex: 1,
     },
     flex: {
@@ -57,7 +57,7 @@ export const Screen = memo(function Screen({
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.flex}>
-        <StatusBar barStyle={color.statusBar} />
+        <StatusBar barStyle={colors.statusBar} />
         <NavBar
           border={border}
           dropShadow={dropShadow}

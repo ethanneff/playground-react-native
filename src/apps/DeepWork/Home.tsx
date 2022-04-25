@@ -6,11 +6,11 @@ import {
   Card,
   Icon,
   Screen,
+  ScrollView,
   Text,
   TouchableOpacity,
 } from '../../components';
-import { ScrollView } from '../../conversions';
-import { padding, useAdminNavBack, useColor } from '../../features';
+import { padding, useAdminNavBack, useColors } from '../../features';
 import { DeepWorkNavigation } from './types';
 
 /*
@@ -39,7 +39,7 @@ import { DeepWorkNavigation } from './types';
 
 export const Home = memo(function Home() {
   const { navigate } = useNavigation<DeepWorkNavigation>();
-  const color = useColor();
+  const colors = useColors();
   const { onLeftPress } = useAdminNavBack();
   const onItemAdd = useCallback(() => undefined, []);
   const navToAccount = useCallback(() => navigate('account'), [navigate]);
@@ -57,7 +57,7 @@ export const Home = memo(function Home() {
           paddingHorizontal: padding(4),
           paddingVertical: padding(2),
         }}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>
           <Text

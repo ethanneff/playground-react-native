@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { Keyboard, View } from 'react-native';
 import { Button, Modal, Text } from '../../../../components';
-import { padding, useColor } from '../../../../features';
+import { padding, useColors } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { Card, DeleteModal, ItemContext, ItemEdit } from '../../components';
 import { removeItem, removeItemFromItem, updateItem } from '../../models';
@@ -10,7 +10,7 @@ import { removeItem, removeItemFromItem, updateItem } from '../../models';
 export const ItemDetail = memo(function ItemDetail() {
   const dispatch = useRootDispatch();
   const { goBack } = useNavigation();
-  const color = useColor();
+  const colors = useColors();
 
   const { itemId, parentItemId } = useRootSelector((s) => s.completeItem.nav);
   const item = useRootSelector((s) => s.completeItem.items[itemId || '']);
@@ -39,7 +39,7 @@ export const ItemDetail = memo(function ItemDetail() {
   return item ? (
     <>
       <Modal
-        backgroundColor={color.background.secondary}
+        backgroundColor={colors.background.secondary}
         onBackgroundPress={goBack}
       >
         <View>

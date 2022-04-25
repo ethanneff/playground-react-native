@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { MonoMultiColor, useColor } from '../../../features';
+import { MonoMultiColor, useColors } from '../../../features';
 
 type Props = {
   backgroundColor: keyof MonoMultiColor;
@@ -11,10 +11,10 @@ export const CenterCircle = memo(function CenterCircle({
   radius,
   backgroundColor,
 }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const styles = StyleSheet.create({
     foreground: {
-      backgroundColor: color.background[backgroundColor],
+      backgroundColor: colors.background[backgroundColor],
       borderRadius: radius,
       height: radius * 2,
       width: radius * 2,

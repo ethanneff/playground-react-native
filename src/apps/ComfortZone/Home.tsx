@@ -1,8 +1,16 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { TextInput, View } from 'react-native';
-import { Button, Calendar, Card, Input, Screen, Text } from '../../components';
-import { ScrollView } from '../../conversions';
-import { padding, useAdminNavBack, useColor } from '../../features';
+import { View } from 'react-native';
+import {
+  Button,
+  Calendar,
+  Card,
+  Input,
+  Screen,
+  ScrollView,
+  Text,
+  TextInputRef,
+} from '../../components';
+import { padding, useAdminNavBack, useColors } from '../../features';
 
 const data = [
   'Set your alarm for 10 minutes earlier than usual',
@@ -147,8 +155,8 @@ const data = [
 
 export const Home = memo(function Home() {
   const { onLeftPress } = useAdminNavBack();
-  const color = useColor();
-  const inputRef = useRef<TextInput | null>(null);
+  const colors = useColors();
+  const inputRef = useRef<TextInputRef>(null);
   const [challenge, setChallenge] = useState('...');
   const [customInput, setCustomInput] = useState('');
   const [showCustomInput, setShowCustomInput] = useState(false);
@@ -180,7 +188,7 @@ export const Home = memo(function Home() {
         contentContainerStyle={{
           padding: padding(4),
         }}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>
           <Text

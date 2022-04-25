@@ -1,11 +1,17 @@
 import React, { memo, useCallback } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Calendar, Card, Input, Screen, Text } from '../../components';
-import { ScrollView } from '../../conversions';
-import { padding, useAdminNavBack, useColor } from '../../features';
+import {
+  Calendar,
+  Card,
+  Input,
+  Screen,
+  ScrollView,
+  Text,
+} from '../../components';
+import { padding, useAdminNavBack, useColors } from '../../features';
 
 export const Home = memo(function Home() {
-  const color = useColor();
+  const colors = useColors();
   const { onLeftPress } = useAdminNavBack();
   const styles = StyleSheet.create({
     bottom: {
@@ -22,7 +28,7 @@ export const Home = memo(function Home() {
           paddingHorizontal: padding(4),
           paddingVertical: padding(2),
         }}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>
           <Text style={styles.bottom} title="Calendar" type="h4" />

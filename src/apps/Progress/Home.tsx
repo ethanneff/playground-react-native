@@ -1,8 +1,7 @@
 import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
-import { Activity, Icon, Screen } from '../../components';
-import { ScrollView } from '../../conversions';
-import { padding, useAdminNavBack, useColor } from '../../features';
+import { Activity, Icon, Screen, ScrollView } from '../../components';
+import { padding, useAdminNavBack, useColors } from '../../features';
 
 // TODO: gitlab
 // TODO: selected
@@ -13,11 +12,11 @@ import { padding, useAdminNavBack, useColor } from '../../features';
 // TODO: unable to navigate back when loading
 
 export const Home = memo(function ActivityTracker() {
-  const color = useColor();
+  const colors = useColors();
   const { onLeftPress } = useAdminNavBack();
   const styles = StyleSheet.create({
     background: {
-      backgroundColor: color.background.secondary,
+      backgroundColor: colors.background.secondary,
     },
     container: {
       paddingHorizontal: padding(4),

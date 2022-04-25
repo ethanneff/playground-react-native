@@ -1,7 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef, useState } from 'react';
-import { Dimensions, FlatList, View } from 'react-native';
-import { Button, Screen, Text } from '../../../components';
+import { Dimensions, View } from 'react-native';
+import {
+  Button,
+  FlatList,
+  FlatListRef,
+  Screen,
+  Text,
+} from '../../../components';
 import { Questionnaires } from './screens/Questionnaires';
 
 const data = [
@@ -40,7 +46,7 @@ export const Questionnaire = memo(function Questionnaire() {
   const [output, setOutput] = useState<any>({});
   const currentIndex = useRef(0);
   const { goBack } = useNavigation();
-  const tableViewRef = useRef<FlatList | null>(null);
+  const tableViewRef = useRef<FlatListRef>(null);
   const handleViewableItemsChanged = useCallback(({ viewableItems }: any) => {
     currentIndex.current = viewableItems[0]?.index || 0;
   }, []);
@@ -133,9 +139,9 @@ export const Questionnaire = memo(function Questionnaire() {
         data={data}
         horizontal
         keyboardShouldPersistTaps="handled"
+        onRef={tableViewRef}
         onViewableItemsChanged={handleViewableItemsChanged}
         pagingEnabled
-        ref={tableViewRef}
         removeClippedSubviews
         renderItem={renderItem}
         scrollEnabled={false}

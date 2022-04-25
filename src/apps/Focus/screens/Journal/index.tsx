@@ -1,12 +1,7 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import {
-  ActivityIndicator,
-  FlatList,
-  ListRenderItem,
-  StyleSheet,
-} from 'react-native';
-import { Screen } from '../../../../components';
-import { padding, useAdminNavBack, useColor } from '../../../../features';
+import { ListRenderItem, StyleSheet } from 'react-native';
+import { FlatList, Loader, Screen } from '../../../../components';
+import { padding, useAdminNavBack, useColors } from '../../../../features';
 import { Item } from '../../types';
 import { ListItem } from './ListItem';
 import {
@@ -20,7 +15,7 @@ import {
 } from './utils';
 
 export const Journal = memo(function Journal() {
-  const color = useColor();
+  const colors = useColors();
   const { onLeftPress } = useAdminNavBack();
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState<Item[]>(() => getMoreItems([]));
@@ -32,7 +27,7 @@ export const Journal = memo(function Journal() {
 
   const styles = StyleSheet.create({
     list: {
-      backgroundColor: color.background.secondary,
+      backgroundColor: colors.background.secondary,
       opacity: loading ? 0 : 1,
       paddingVertical: padding(4),
     },
@@ -74,7 +69,7 @@ export const Journal = memo(function Journal() {
         renderItem={renderItem}
         style={styles.list}
       />
-      {loading && <ActivityIndicator size="large" style={styles.loading} />}
+      {loading && <Loader size="large" style={styles.loading} />}
     </Screen>
   );
 });

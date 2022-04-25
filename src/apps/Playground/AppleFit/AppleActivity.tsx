@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { MonoMultiColor, useColor } from '../../../features';
+import { MonoMultiColor, useColors } from '../../../features';
 import { CenterCircle } from './CenterCircle';
 import { CircularRing } from './CircularRing';
 import { Stickers } from './Stickers';
@@ -23,10 +23,10 @@ export const AppleActivity = ({
   animate,
   speed = 0.02,
 }: Props): JSX.Element => {
-  const color = useColor();
+  const colors = useColors();
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background[backgroundColor],
+      backgroundColor: colors.background[backgroundColor],
       height: size,
       width: size,
     },

@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { padding } from '../../features/Config';
-import { useColor } from '../../features/Theme';
+import { padding, useColors } from '../../features';
 import { Content } from '../Content';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
@@ -13,11 +12,11 @@ type Props = {
 };
 
 export const Item = memo(function Item({ item, width }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const styles = StyleSheet.create({
     item: {
       alignItems: 'center',
-      backgroundColor: item.backgroundColor || color.background.primaryA,
+      backgroundColor: item.backgroundColor || colors.background.primaryA,
       justifyContent: 'center',
       padding: padding(4),
       width,

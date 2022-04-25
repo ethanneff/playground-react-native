@@ -6,12 +6,16 @@ import React, {
   useRef,
 } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
-import { ScrollView, TouchableWithoutFeedback } from '../../conversions';
-import { useDriver } from '../../features/Animation';
-import { SoundManager } from '../../features/Sound';
-import { useColor, useDropShadow } from '../../features/Theme';
+import {
+  SoundManager,
+  useColors,
+  useDriver,
+  useDropShadow,
+} from '../../features';
 import { useRootSelector } from '../../redux';
 import { Card } from '../Card';
+import { ScrollView } from '../ScrollView';
+import { TouchableWithoutFeedback } from '../TouchableWithoutFeedback';
 
 type ModalProps = {
   backgroundColor?: string;
@@ -39,7 +43,7 @@ export const Modal = memo(function Modal({
   elevation,
   testID,
 }: ModalProps) {
-  const color = useColor();
+  const colors = useColors();
   const useNativeDriver = useDriver();
   const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
   const dropShadow = useDropShadow();
@@ -56,14 +60,14 @@ export const Modal = memo(function Modal({
       zIndex: 1,
     },
     modal: {
-      backgroundColor: backgroundColor || color.background.primaryA,
+      backgroundColor: backgroundColor || colors.background.primaryA,
       maxHeight,
       width: screen.width * widthPercent,
       ...dropShadow(10),
     },
     overlay: {
       alignItems: 'center',
-      backgroundColor: showOverlay ? color.overlay.light : undefined,
+      backgroundColor: showOverlay ? colors.overlay.light : undefined,
       height: '100%',
       justifyContent: 'center',
     },

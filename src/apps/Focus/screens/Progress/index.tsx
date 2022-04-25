@@ -1,7 +1,12 @@
 import React, { memo } from 'react';
-import { ScrollView } from 'react-native';
-import { Calendar, Card, Screen, Text } from '../../../../components';
-import { padding, useColor } from '../../../../features';
+import {
+  Calendar,
+  Card,
+  Screen,
+  ScrollView,
+  Text,
+} from '../../../../components';
+import { padding, useColors } from '../../../../features';
 import { Category } from '../../types';
 import { CategoryCard } from './CategoryCard';
 
@@ -31,7 +36,7 @@ const categories: Category[] = [
 ].sort((a, b) => b.total - a.total);
 
 export const Progress = memo(function Progress() {
-  const color = useColor();
+  const colors = useColors();
 
   return (
     <Screen dropShadow title="Progress">
@@ -40,7 +45,7 @@ export const Progress = memo(function Progress() {
           paddingHorizontal: padding(4),
           paddingVertical: padding(2),
         }}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>
           <Text

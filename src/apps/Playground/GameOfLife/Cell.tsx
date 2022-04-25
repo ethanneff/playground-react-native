@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { TouchableOpacity } from '../../../components';
-import { useColor } from '../../../features';
+import { useColors } from '../../../features';
 import {
   getSmallestDimension,
   useRootDispatch,
@@ -14,7 +14,7 @@ type Props = {
 };
 
 export const Cell = memo(function Cell({ x, y }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const dispatch = useRootDispatch();
   const smallest = useRootSelector(getSmallestDimension);
   const selected = useRootSelector(getCell(x, y));
@@ -35,10 +35,10 @@ export const Cell = memo(function Cell({ x, y }: Props) {
         height: size,
         width: size,
         backgroundColor: selected
-          ? color.background.accent
-          : color.background.primaryA,
+          ? colors.background.accent
+          : colors.background.primaryA,
         borderWidth: 1,
-        borderColor: color.background.secondary,
+        borderColor: colors.background.secondary,
       }}
     />
   );

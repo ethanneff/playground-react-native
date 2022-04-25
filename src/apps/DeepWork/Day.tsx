@@ -1,19 +1,18 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
-import { Calendar, Card, Screen, Text } from '../../components';
-import { ScrollView } from '../../conversions';
-import { padding, useColor } from '../../features';
+import { Calendar, Card, Screen, ScrollView, Text } from '../../components';
+import { padding, useColors } from '../../features';
 
 export const Day = memo(function Day() {
   const { goBack } = useNavigation();
-  const color = useColor();
+  const colors = useColors();
 
   return (
     <Screen dropShadow onLeftPress={goBack} title="Comfort Zone">
       <ScrollView
         contentContainerStyle={{
           padding: padding(4),
-          backgroundColor: color.background.secondary,
+          backgroundColor: colors.background.secondary,
         }}
       >
         <Card>

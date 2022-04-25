@@ -1,90 +1,31 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { Button, Screen, Text } from '../../components';
-import { ScrollView } from '../../conversions';
-import { padding, RootNavigation, RootRoutes, useColor } from '../../features';
-import {
-  toggleActionSheet,
-  toggleAlert,
-  toggleLoading,
-  toggleNotification,
-  useRootDispatch,
-} from '../../redux';
+import { Button, Screen, ScrollView, Text } from '../../components';
+import { padding, RootNavigation, RootRoutes, useColors } from '../../features';
+
+// <loading>
+// <notification>
+// <alert>
+// <actionsheet>
+
+// <Button onPress={handleLoading} title="loading" />
+// <Button onPress={handleAlert} title="alert" />
+// <Button onPress={handleActionSheet} title="action sheet" />
+// <Button onPress={handleNotification} title="notification" />
 
 export default memo(function Admin() {
-  const dispatch = useRootDispatch();
   const { navigate } = useNavigation<RootNavigation>();
   const onPress = useCallback(
     (to: keyof RootRoutes) => () => navigate(to),
     [navigate],
   );
-  const color = useColor();
-
-  const handleLoading = useCallback(() => {
-    dispatch(
-      toggleLoading({
-        visible: true,
-        onBackgroundPress: () => {
-          dispatch(toggleLoading({ visible: false }));
-        },
-      }),
-    );
-    setTimeout(() => {
-      dispatch(toggleLoading({ visible: false }));
-    }, 3000);
-  }, [dispatch]);
-
-  const handleAlert = useCallback(() => {
-    dispatch(
-      toggleAlert({
-        visible: true,
-        title: 'Alert',
-        description: 'This is an alert',
-        onBackgroundPress: () => {
-          dispatch(toggleAlert({ visible: false }));
-        },
-        confirmTitle: 'Confirm',
-        onConfirmPress: () => {
-          dispatch(toggleAlert({ visible: false }));
-        },
-        cancelTitle: 'Cancel',
-        onCancelPress: () => {
-          console.log('ere');
-          dispatch(toggleAlert({ visible: false }));
-        },
-      }),
-    );
-  }, [dispatch]);
-
-  const handleNotification = useCallback(() => {
-    dispatch(
-      toggleNotification({
-        visible: true,
-        title: 'Notification',
-        description: 'This is an notification',
-        type: 'accent',
-      }),
-    );
-  }, [dispatch]);
-
-  const handleActionSheet = useCallback(() => {
-    dispatch(
-      toggleActionSheet({
-        visible: true,
-        title: 'Action sheet',
-        description: 'This is an action sheet',
-        items: [],
-        onBackgroundPress: () => undefined,
-        onCancelPress: () => undefined,
-      }),
-    );
-  }, [dispatch]);
+  const colors = useColors();
 
   return (
     <Screen dropShadow title="Admin">
       <ScrollView
         contentContainerStyle={{ paddingHorizontal: padding(4) }}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         <Text emphasis="medium" title="Apps" type="h3" />
         <Button onPress={onPress('arcade')} title="arcade" />
@@ -100,10 +41,6 @@ export default memo(function Admin() {
         <Button onPress={onPress('deep-work')} title="deep work" />
 
         <Text emphasis="medium" title="Navigation" type="h3" />
-        <Button onPress={handleLoading} title="loading" />
-        <Button onPress={handleAlert} title="alert" />
-        <Button onPress={handleActionSheet} title="action sheet" />
-        <Button onPress={handleNotification} title="notification" />
 
         <Text emphasis="medium" title="Learning" type="h3" />
         <Button onPress={onPress('playground')} title="playground" />

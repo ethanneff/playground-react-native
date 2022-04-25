@@ -1,8 +1,13 @@
 import React, { memo, useCallback, useEffect, useRef } from 'react';
-import { Keyboard, TextInput, View } from 'react-native';
+import { Keyboard, View } from 'react-native';
 import { v4 } from 'uuid';
-import { Icon, Input, TouchableOpacity } from '../../../components';
-import { padding, useColor } from '../../../features';
+import {
+  Icon,
+  Input,
+  TextInputRef,
+  TouchableOpacity,
+} from '../../../components';
+import { padding, useColors } from '../../../features';
 import { useRootDispatch, useRootSelector } from '../../../redux';
 import {
   createChatMessage,
@@ -13,14 +18,14 @@ import {
 
 export const TextField = memo(function TextField() {
   const dispatch = useRootDispatch();
-  const textFieldRef = useRef<TextInput | null>(null);
+  const textFieldRef = useRef<TextInputRef>(null);
   const textField = useRootSelector((state) => state.chatMessage.textField);
   const submittable = useRootSelector(getChatSubmittable);
   const onMessageChange = useCallback(
     (message: string) => dispatch(typeChatMessage(message)),
     [dispatch],
   );
-  const color = useColor();
+  const colors = useColors();
 
   const onSubmit = useCallback(() => {
     if (textField.trim().length === 0) return;
@@ -50,7 +55,7 @@ export const TextField = memo(function TextField() {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: color.background.primaryA,
+        backgroundColor: colors.background.primaryA,
       }}
     >
       <Input

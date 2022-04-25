@@ -2,9 +2,8 @@ import { useNavigation } from '@react-navigation/native';
 import dayjs, { Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
 import { v4 } from 'uuid';
-import { Button, Modal, Screen, Text } from '../../../components';
-import { ScrollView } from '../../../conversions';
-import { RateApp, useColor } from '../../../features';
+import { Button, Modal, Screen, ScrollView, Text } from '../../../components';
+import { RateApp, useColors } from '../../../features';
 import { CreateReminderModal } from './CreateReminderModal';
 import { Reminder, ReminderType } from './types';
 
@@ -107,11 +106,11 @@ export const ReminderExample = memo(function PlaygroundReminder() {
 
   const handleRate = (value: boolean) => () => setShowRate(value);
 
-  const color = useColor();
+  const colors = useColors();
   return (
     <>
       <Screen dropShadow onLeftPress={goBack} title="Reminder">
-        <ScrollView style={{ backgroundColor: color.background.secondary }}>
+        <ScrollView style={{ backgroundColor: colors.background.secondary }}>
           <Text center emphasis="low" title="Modals" type="h4" />
           <Button
             center

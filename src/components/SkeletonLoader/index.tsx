@@ -1,9 +1,8 @@
 import React, { ReactElement, useEffect, useRef } from 'react';
 import { Animated, Easing, StyleSheet, View } from 'react-native';
-import { LinearGradient, MaskedView } from '../../conversions';
-import { useDriver } from '../../features/Animation';
-import { padding } from '../../features/Config';
-import { useColor } from '../../features/Theme';
+import { LinearGradient } from '../../components/LinearGradient';
+import { padding, useColors, useDriver } from '../../features';
+import { MaskedView } from '../MaskedView';
 
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
 
@@ -24,14 +23,14 @@ export const SkeletonLoader = ({
   foregroundColor,
   duration = 1200,
 }: Props): ReactElement => {
-  const color = useColor();
-  const bgColor = backgroundColor || color.background.secondary;
-  const fgColor = foregroundColor || color.background.primaryA;
+  const colors = useColors();
+  const bgColor = backgroundColor || colors.background.secondary;
+  const fgColor = foregroundColor || colors.background.primaryA;
   const value = useRef(new Animated.Value(0)).current;
   const useNativeDriver = useDriver();
   const end = { x: 1, y: 0 };
   const start = { x: 0, y: 0 };
-  const colors = [bgColor, fgColor, bgColor];
+  const gradient = [bgColor, fgColor, bgColor];
   const translateX = value.interpolate({
     inputRange: [0, 1],
     outputRange: [-width, width],
@@ -71,7 +70,7 @@ export const SkeletonLoader = ({
     >
       <View style={styles.background} />
       <AnimatedLinearGradient
-        colors={colors}
+        colors={gradient}
         end={end}
         start={start}
         style={foregroundStyles}

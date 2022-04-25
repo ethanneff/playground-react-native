@@ -3,9 +3,9 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import dayjs, { Dayjs } from 'dayjs';
 import isToday from 'dayjs/plugin/isToday';
 import React, { memo, useCallback } from 'react';
-import { FlatList, View } from 'react-native';
-import { Text, TouchableOpacity } from '../../../../components';
-import { padding, useColor } from '../../../../features';
+import { View } from 'react-native';
+import { FlatList, Text, TouchableOpacity } from '../../../../components';
+import { padding, useColors } from '../../../../features';
 import { AuthStackRoutes, Category } from '../../types';
 dayjs.extend(isToday);
 
@@ -23,7 +23,7 @@ const isWeekend = (d: Dayjs) => d.day() === 0 || d.day() === 6;
 
 export const CategoryCard = memo(function CategoryCard({ category }: Props) {
   const { navigate } = useNavigation<StackNavigationProp<AuthStackRoutes>>();
-  const color = useColor();
+  const colors = useColors();
 
   const handleCategoryPress = (categoryPress: Category) => () => {
     navigate('category-detail', { category: categoryPress });
@@ -35,17 +35,17 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
       const weekend = isWeekend(historical);
       const today = historical.isToday();
       const borderBottomColor = today
-        ? color.border.accent
+        ? colors.border.accent
         : weekend
-        ? color.border.secondary
-        : color.background.primaryA;
+        ? colors.border.secondary
+        : colors.background.primaryA;
       const borderColor = today
-        ? color.border.accent
-        : color.background.secondary;
+        ? colors.border.accent
+        : colors.background.secondary;
       return (
         <View
           style={{
-            backgroundColor: color.background.secondary,
+            backgroundColor: colors.background.secondary,
             padding: 2,
             borderWidth: 1,
             borderColor,
@@ -56,7 +56,7 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
         >
           <Text
             center
-            style={{ color: color.background.secondary }}
+            style={{ color: colors.background.secondary }}
             title="XX"
           />
           <Text
@@ -69,10 +69,10 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
       );
     },
     [
-      color.background.primaryA,
-      color.background.secondary,
-      color.border.accent,
-      color.border.secondary,
+      colors.background.primaryA,
+      colors.background.secondary,
+      colors.border.accent,
+      colors.border.secondary,
     ],
   );
 

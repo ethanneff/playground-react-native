@@ -1,7 +1,11 @@
 import React, { memo } from 'react';
 import { StyleProp, TextStyle, ViewStyle } from 'react-native';
-import { FontEmphasis, MonoMultiColor } from '../../features/Config';
-import { useColor, useDropShadow } from '../../features/Theme';
+import {
+  FontEmphasis,
+  MonoMultiColor,
+  useColors,
+  useDropShadow,
+} from '../../features';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 import { getStyles } from './utils';
@@ -57,10 +61,10 @@ export const Button = memo(function Button({
   textStyle,
   title,
 }: Props) {
-  const colorScheme = useColor();
+  const colors = useColors();
   const dropShadowStyling = useDropShadow();
   const styles = getStyles({
-    colorScheme,
+    colors,
     color,
     emphasis,
     disabled,

@@ -10,18 +10,18 @@ import {
   KeyboardTypeOptions,
   ReturnKeyTypeOptions,
   StyleProp,
-  TextInput as Original,
   View,
   ViewStyle,
 } from 'react-native';
+import { GestureTextInput } from '../../conversions';
 import {
   FontEmphasis,
   FontType,
   getFontStyles,
   MonoMultiColor,
   padding,
-} from '../../features/Config';
-import { useColor } from '../../features/Theme';
+  useColors,
+} from '../../features';
 import { Icon } from '../Icon';
 import { TouchableOpacity } from '../TouchableOpacity';
 import { PointerEvents, TextContentType } from './types';
@@ -36,6 +36,8 @@ export type TextInputIcon = {
   required?: boolean;
   reset?: boolean;
 };
+
+export type TextInputRef = GestureTextInput | null;
 
 type TextInputProps = {
   autoCorrect?: boolean;
@@ -54,7 +56,7 @@ type TextInputProps = {
   onBlur?: (text: string) => void;
   onChangeText?: (text: string) => void;
   onFocus?: (text: string) => void;
-  onRef?: MutableRefObject<Original | null>;
+  onRef?: MutableRefObject<TextInputRef>;
   onSubmitEditing?: (text: string) => void;
   placeholder?: string;
   pointerEvents?: PointerEvents;
@@ -98,16 +100,16 @@ export const TextInput = memo(function TextInput({
 }: TextInputProps) {
   const [focus, setFocus] = useState(false);
   const [text, setText] = useState(value);
-  const colorScheme = useColor();
-  const backColor = colorScheme.background[backgroundColor || 'primaryA'];
+  const colors = useColors();
+  const backColor = colors.background[backgroundColor || 'primaryA'];
   const { fontSize, textColor } = getFontStyles({
     emphasis,
     type,
     color,
-    colorScheme,
+    colors,
   });
 
-  const textInput = useRef<Original | null>(null);
+  const textInput = useRef<TextInputRef>(null);
 
   const onChangeTextInternal = useCallback(
     (val: string) => {
@@ -142,7 +144,7 @@ export const TextInput = memo(function TextInput({
   );
 
   const onInternalRef = useCallback(
-    (ref: Original | null) => {
+    (ref: TextInputRef) => {
       if (!ref) return;
       textInput.current = ref;
       if (onRef) onRef.current = ref;
@@ -162,9 +164,9 @@ export const TextInput = memo(function TextInput({
           alignItems: 'center',
           backgroundColor: backColor,
           borderBottomColor: error
-            ? colorScheme.text.negative
+            ? colors.text.negative
             : focus
-            ? colorScheme.text.accent
+            ? colors.text.accent
             : backColor,
           borderLeftColor: backColor,
           borderRadius: padding(1),
@@ -173,7 +175,7 @@ export const TextInput = memo(function TextInput({
           borderWidth: 2,
         }}
       >
-        <Original
+        <GestureTextInput
           autoCorrect={autoCorrect}
           blurOnSubmit={blurOnSubmit}
           disableFullscreenUI={disableFullscreenUI}
@@ -186,12 +188,12 @@ export const TextInput = memo(function TextInput({
           onFocus={onFocusInternal}
           onSubmitEditing={onSubmitEditingInternal}
           placeholder={placeholder}
-          placeholderTextColor={colorScheme.text.secondary}
+          placeholderTextColor={colors.text.secondary}
           pointerEvents={pointerEvents}
           ref={onInternalRef}
           returnKeyType={returnKeyType}
           secureTextEntry={secureTextEntry}
-          selectionColor={colorScheme.text.accent}
+          selectionColor={colors.text.accent}
           style={{
             color: textColor,
             flex: 1,

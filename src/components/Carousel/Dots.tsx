@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
-import { padding } from '../../features/Config';
-import { useColor } from '../../features/Theme';
+import { padding, useColors } from '../../features';
 import { TouchableOpacity } from '../TouchableOpacity';
 import { CarouselSlide } from './types';
 
@@ -18,7 +17,7 @@ export const Dots = memo(function Dots({
   dotSize,
   activeIndex,
 }: DotsProps) {
-  const color = useColor();
+  const colors = useColors();
   return (
     <View
       style={{
@@ -42,8 +41,8 @@ export const Dots = memo(function Dots({
               borderRadius: dotSize,
               backgroundColor:
                 activeIndex === index
-                  ? color.text.secondary
-                  : color.text.disabled,
+                  ? colors.text.secondary
+                  : colors.text.disabled,
             }}
           />
         );

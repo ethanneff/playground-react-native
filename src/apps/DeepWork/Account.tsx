@@ -1,18 +1,17 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
-import { Calendar, Card, Screen, Text } from '../../components';
-import { ScrollView } from '../../conversions';
-import { padding, useColor } from '../../features';
+import { Calendar, Card, Screen, ScrollView, Text } from '../../components';
+import { padding, useColors } from '../../features';
 
 export const Account = memo(function Account() {
   const { goBack } = useNavigation();
-  const color = useColor();
+  const colors = useColors();
 
   return (
     <Screen onLeftPress={goBack} title="Account">
       <ScrollView
         contentContainerStyle={{ padding: padding(4) }}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>
           <Text

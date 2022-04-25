@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { v4 } from 'uuid';
-import { padding } from '../../features/Config';
+import { padding } from '../../features';
 import { Sentence } from '../Sentence';
 import { Text } from '../Text';
 import { Sections } from './types';

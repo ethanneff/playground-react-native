@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { padding } from '../../features/Config';
-import { useColor } from '../../features/Theme';
+import { padding, useColors } from '../../features';
 import { Text } from '../Text';
 
 type Props = {
@@ -12,11 +11,11 @@ const badgeLimit = '!';
 const maxBadgeNumber = 99;
 
 export const Badge = memo(function IconMeme({ badge }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const styles = StyleSheet.create({
     badgeContainer: {
       alignItems: 'center',
-      backgroundColor: color.background.accent,
+      backgroundColor: colors.background.accent,
       borderRadius: padding(5),
       height: padding(5),
       justifyContent: 'center',
@@ -26,7 +25,7 @@ export const Badge = memo(function IconMeme({ badge }: Props) {
       width: padding(5),
     },
     badgeText: {
-      color: color.background.primaryA,
+      color: colors.background.primaryA,
       fontSize: padding(2),
     },
   });

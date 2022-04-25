@@ -1,7 +1,6 @@
 import React, { memo, ReactNode } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
-import { padding } from '../../features/Config';
-import { useColor, useDropShadow } from '../../features/Theme';
+import { padding, useColors, useDropShadow } from '../../features';
 import { TouchableOpacity } from '../TouchableOpacity';
 
 type Props = {
@@ -41,13 +40,13 @@ export const Card = memo(function Card({
   selected,
   style,
 }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const dropShadow = useDropShadow();
   const opacity = getOpacity(elevation);
   const styles = StyleSheet.create({
     containerStyle: {
-      backgroundColor: color.background.primaryA,
-      borderColor: color.background.primaryA,
+      backgroundColor: colors.background.primaryA,
+      borderColor: colors.background.primaryA,
       borderRadius,
       borderWidth,
       marginVertical: noMargin ? 0 : padding(2),
@@ -61,7 +60,7 @@ export const Card = memo(function Card({
     flex: {
       flex: 1,
     },
-    selected: { backgroundColor: color.background.positive },
+    selected: { backgroundColor: colors.background.positive },
   });
 
   const containerStyles = [

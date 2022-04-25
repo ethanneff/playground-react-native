@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
-import { useColor } from '../../../features';
+import { useColors } from '../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../redux';
 
 interface CellProps {
@@ -9,14 +9,14 @@ interface CellProps {
 }
 
 export const Cell = memo(function Cell({ value, length }: CellProps) {
-  const color = useColor();
+  const colors = useColors();
   const width = useRootSelector(getSmallestDimension) / length;
   const backgroundColor =
     value === 0
-      ? color.background.secondary
+      ? colors.background.secondary
       : value === 1
-      ? color.background.positive
-      : color.background.negative;
+      ? colors.background.positive
+      : colors.background.negative;
   return (
     <View
       style={{
@@ -24,7 +24,7 @@ export const Cell = memo(function Cell({ value, length }: CellProps) {
         width,
         height: width,
         borderWidth: 1,
-        borderColor: color.background.secondary,
+        borderColor: colors.background.secondary,
         backgroundColor,
       }}
     />

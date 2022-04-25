@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
-import { ScrollView, View } from 'react-native';
-import { Button, Card, Screen, Text } from '../../../../components';
-import { padding, useColor } from '../../../../features';
+import { View } from 'react-native';
+import { Button, Card, Screen, ScrollView, Text } from '../../../../components';
+import { padding, useColors } from '../../../../features';
 
 export const Profile = memo(function Profile() {
-  const color = useColor();
+  const colors = useColors();
 
   return (
     <Screen dropShadow title="Profile">
@@ -13,7 +13,7 @@ export const Profile = memo(function Profile() {
           paddingHorizontal: padding(4),
           paddingVertical: padding(2),
         }}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>
           <Text

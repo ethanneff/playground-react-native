@@ -5,11 +5,11 @@ import {
   Card,
   Icon,
   Screen,
+  ScrollView,
   Text,
   TouchableOpacity,
 } from '../../components';
-import { ScrollView } from '../../conversions';
-import { LoginFlow, padding, useAdminNavBack, useColor } from '../../features';
+import { LoginFlow, padding, useAdminNavBack, useColors } from '../../features';
 
 // Notification.show()
 // Alert.show()
@@ -19,7 +19,7 @@ import { LoginFlow, padding, useAdminNavBack, useColor } from '../../features';
 // Badge.show()
 
 export const Home = memo(function Checklists() {
-  const color = useColor();
+  const colors = useColors();
   const { onLeftPress } = useAdminNavBack();
   const styles = StyleSheet.create({
     bottom: {
@@ -37,7 +37,7 @@ export const Home = memo(function Checklists() {
             paddingHorizontal: padding(4),
             paddingVertical: padding(2),
           }}
-          style={{ backgroundColor: color.background.secondary }}
+          style={{ backgroundColor: colors.background.secondary }}
         >
           <Card>
             <Text

@@ -1,13 +1,10 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import {
-  ActivityIndicator,
-  FlatList,
-  ListRenderItem,
-  View,
-} from 'react-native';
-import { padding } from '../../features/Config';
+import { ListRenderItem, View } from 'react-native';
+import { padding } from '../../features';
 import { Button } from '../Button';
 import { Card } from '../Card';
+import { FlatList } from '../FlatList';
+import { Loader } from '../Loader';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 import { getApiActivity } from './api';
@@ -131,7 +128,7 @@ export const Activity = memo(function Activity({
         ) : null}
       </View>
       {state.request === 'loading' ? (
-        <ActivityIndicator size="large" />
+        <Loader size="large" />
       ) : state.request === 'failure' ? (
         <>
           <Text title="Missing network connection" />

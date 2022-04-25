@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import React, { memo } from 'react';
 import { View } from 'react-native';
-import { padding } from '../../features/Config';
+import { padding } from '../../features';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';

@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { ActivityIndicator } from '../ActivityIndicator';
+import { Loader } from '../Loader';
 import { FasterImage } from './FasterImage';
 
 type Props = {
@@ -38,7 +38,7 @@ export const Image = memo(function Image({
         uri={uri}
         width={width}
       />
-      <ActivityIndicator size={size} style={styles.indicatorOverlay} />
+      <Loader size={size} style={styles.indicatorOverlay} />
     </View>
   );
 });

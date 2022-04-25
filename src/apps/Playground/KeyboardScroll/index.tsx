@@ -3,18 +3,18 @@ import React, { memo, useCallback, useRef, useState } from 'react';
 import { Dimensions, View } from 'react-native';
 import {
   Button,
+  KeyboardAwareScrollView,
   RecyclerFlatList,
   RecyclerFlatListRef,
   Screen,
   Text,
   TextInput,
 } from '../../../components';
-import { KeyboardAwareScrollView } from '../../../conversions';
 import {
   ColorTheme,
   colorWithOpacity,
   padding,
-  useColor,
+  useColors,
 } from '../../../features';
 
 const lorem =
@@ -23,13 +23,13 @@ const lorem =
 type Data = { color: string; id: string; name: string };
 
 type GenerateItems = {
-  color: ColorTheme;
+  colors: ColorTheme;
   length: number;
   max?: number;
   min?: number;
 };
 const generateItems = ({
-  color,
+  colors,
   length,
   min = 0.4,
   max = 0.6,
@@ -40,14 +40,14 @@ const generateItems = ({
     output.push({
       id: String(i),
       name: String(i),
-      color: colorWithOpacity(color.text.accent, random),
+      color: colorWithOpacity(colors.text.accent, random),
     });
   }
   return output;
 };
 export const KeyboardScroll = memo(function KeyboardScroll() {
   const { goBack } = useNavigation();
-  const color = useColor();
+  const colors = useColors();
   const [message, setMessage] = useState('');
 
   const { width } = Dimensions.get('window');
@@ -85,7 +85,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
   }, []);
 
   const [data, setData] = useState<Data[]>(() =>
-    generateItems({ color, length: 200000 }),
+    generateItems({ colors, length: 200000 }),
   );
 
   const onChangeText = useCallback((v) => {
@@ -96,9 +96,9 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
 
   const onSubmit = useCallback(() => {
     const date = Date.now().toString();
-    setData((p) => [...p, { id: date, name: date, color: color.text.accent }]);
+    setData((p) => [...p, { id: date, name: date, color: colors.text.accent }]);
     listRef.current?.scrollToEnd(true);
-  }, [color.text.accent]);
+  }, [colors.text.accent]);
 
   return (
     <Screen onLeftPress={goBack} title="Keyboard">
@@ -111,7 +111,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
         <View
           style={{
             height: 200,
-            backgroundColor: color.background.secondary,
+            backgroundColor: colors.background.secondary,
             padding: padding(2),
           }}
         >

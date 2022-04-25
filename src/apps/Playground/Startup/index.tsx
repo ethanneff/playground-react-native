@@ -1,10 +1,15 @@
 import { useNavigation } from '@react-navigation/native';
 import dayjs from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
-import { Switch } from 'react-native';
-import { Button, Input, Screen, Text } from '../../../components';
-import { ScrollView } from '../../../conversions';
-import { padding, useColor } from '../../../features';
+import {
+  Button,
+  Input,
+  Screen,
+  ScrollView,
+  Switch,
+  Text,
+} from '../../../components';
+import { padding, useColors } from '../../../features';
 import { Section } from './Section';
 
 // https://www.startupschool.org/updates/250717/edit
@@ -34,7 +39,7 @@ const initialState: Form = {
 };
 
 export const Startup = memo(function PlaygroundStartup() {
-  const color = useColor();
+  const colors = useColors();
   const { goBack } = useNavigation();
   const [form, setForm] = useState<Form>(initialState);
   const launchWeeks = parseInt(form.launchWeeks, 10);
@@ -89,7 +94,7 @@ export const Startup = memo(function PlaygroundStartup() {
         contentContainerStyle={{
           padding: padding(4),
         }}
-        style={{ backgroundColor: color.background.secondary }}
+        style={{ backgroundColor: colors.background.secondary }}
       >
         <Text center title={dayjs().format('MMM DD, YYYY')} type="h4" />
         <Section title="Launch">
@@ -132,6 +137,7 @@ export const Startup = memo(function PlaygroundStartup() {
             value={form.biggestObstacle}
           />
         </Section>
+
         <Section title="Morale">
           <Input
             keyboardType="numeric"

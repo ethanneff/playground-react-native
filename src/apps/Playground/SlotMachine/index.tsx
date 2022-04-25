@@ -1,9 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Button, Screen, Text } from '../../../components';
-import { ScrollView } from '../../../conversions';
-import { useColor } from '../../../features';
+import { Button, Screen, ScrollView, Text } from '../../../components';
+import { useColors } from '../../../features';
 import { combinations, reels } from './config';
 import { Slots } from './Slots';
 import {
@@ -25,13 +24,13 @@ const getInitialState = () => ({
 });
 
 export const SlotMachine = memo(function PlaygroundSlotMachine() {
-  const color = useColor();
+  const colors = useColors();
   const { goBack } = useNavigation();
 
   const [state, setState] = useState(() => getInitialState());
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: color.background.primaryA,
+      backgroundColor: colors.background.primaryA,
     },
   });
 

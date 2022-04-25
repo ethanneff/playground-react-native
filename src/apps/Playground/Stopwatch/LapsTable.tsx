@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
 import { v4 } from 'uuid';
-import { ScrollView } from '../../../conversions';
+import { ScrollView } from '../../../components';
 import { Lap } from './Lap';
 
 interface LapTableProps {

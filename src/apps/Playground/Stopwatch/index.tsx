@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Screen } from '../../../components';
-import { useColor } from '../../../features';
+import { useColors } from '../../../features';
 import { ButtonRound } from './ButtonRound';
 import { ButtonsRow } from './ButtonsRow';
 import { LapsTable } from './LapsTable';
@@ -25,18 +25,18 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
   const elapsed = state.now - state.start;
   const interval =
     state.laps.reduce((total, curr) => total + curr, 0) + elapsed;
-  const color = useColor();
+  const colors = useColors();
 
   const styles = StyleSheet.create({
     container: {
       alignItems: 'center',
-      backgroundColor: color.background.primaryB,
+      backgroundColor: colors.background.primaryB,
       flex: 1,
       paddingHorizontal: 20,
       paddingTop: 130,
     },
     timer: {
-      color: color.text.primaryB,
+      color: colors.text.primaryB,
       fontFamily: 'Courier',
       fontSize: 54,
       fontWeight: '200',
@@ -101,14 +101,14 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
         {state.laps.length === 0 && (
           <ButtonsRow>
             <ButtonRound
-              background={color.background.disabled}
+              background={colors.background.disabled}
               color="disabled"
               disabled
               onPress={lap}
               title="Lap"
             />
             <ButtonRound
-              background={color.background.positive}
+              background={colors.background.positive}
               color="primaryA"
               onPress={start}
               title="Start"
@@ -118,13 +118,13 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
         {state.start > 0 && (
           <ButtonsRow>
             <ButtonRound
-              background={color.background.disabled}
+              background={colors.background.disabled}
               color="primaryA"
               onPress={lap}
               title="Lap"
             />
             <ButtonRound
-              background={color.background.negative}
+              background={colors.background.negative}
               color="primaryA"
               onPress={stop}
               title="Stop"
@@ -134,13 +134,13 @@ export const StopWatch = memo(function PlaygroundStopWatch() {
         {state.laps.length > 0 && state.start === 0 && (
           <ButtonsRow>
             <ButtonRound
-              background={color.background.negative}
+              background={colors.background.negative}
               color="primaryA"
               onPress={reset}
               title="Reset"
             />
             <ButtonRound
-              background={color.background.positive}
+              background={colors.background.positive}
               color="primaryA"
               onPress={resume}
               title="Start"

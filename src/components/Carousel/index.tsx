@@ -1,7 +1,8 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { FlatList, ListRenderItem, View } from 'react-native';
-import { padding } from '../../features/Config';
+import { ListRenderItem, View } from 'react-native';
+import { padding } from '../../features';
 import { getWidth, useRootSelector } from '../../redux';
+import { FlatList, FlatListRef } from '../FlatList';
 import { Dots } from './Dots';
 import { Item } from './Item';
 import { CarouselSlide } from './types';
@@ -21,7 +22,7 @@ export const Carousel = memo(function Carousel({
 }: Props) {
   const loopingEnabled = useRef(false);
   const width = useRootSelector(getWidth);
-  const flatList = useRef<FlatList | null>(null);
+  const flatList = useRef<FlatListRef>(null);
   const activeIndexRef = useRef(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const loopTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -87,9 +88,9 @@ export const Carousel = memo(function Carousel({
         data={slides}
         horizontal
         keyExtractor={keyExtractor}
+        onRef={flatList}
         onViewableItemsChanged={onViewableItemsChanged}
         pagingEnabled
-        ref={flatList}
         renderItem={renderItem}
         showsHorizontalScrollIndicator={false}
         viewabilityConfig={viewabilityConfig}

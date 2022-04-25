@@ -6,8 +6,8 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import { MaskedView } from '../../conversions';
-import { useDriver } from '../../features/Animation';
+import { MaskedView } from '../../components';
+import { useDriver } from '../../features';
 import { getSmallestDimension, useRootSelector } from '../../redux';
 
 // TODO: convert to svg, remove mask, fade in and out

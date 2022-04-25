@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
-import { Card, Icon, Text, TouchableOpacity } from '../../components';
-import { padding, useColor } from '../../features';
+import { StyleSheet, View } from 'react-native';
+import { Card, FlatList, Icon, Text, TouchableOpacity } from '../../components';
+import { padding, useColors } from '../../features';
 import { getLandscapeOrientation, useRootSelector } from '../../redux';
 import { DailyProgress } from './DailyProgress';
 import { app } from './data';
@@ -16,7 +16,7 @@ export const List = memo(function List({
   onProfilePress,
   onSettingsPress,
 }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const landscape = useRootSelector(getLandscapeOrientation);
   const columns = landscape ? 4 : 2;
 
@@ -104,7 +104,7 @@ export const List = memo(function List({
       numColumns={columns}
       renderItem={renderItem}
       showsVerticalScrollIndicator={false}
-      style={{ backgroundColor: color.background.secondary }}
+      style={{ backgroundColor: colors.background.secondary }}
     />
   );
 });

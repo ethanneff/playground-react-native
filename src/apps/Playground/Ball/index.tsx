@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
 import { Button, Screen } from '../../../components';
-import { padding, useColor, useDriver } from '../../../features';
+import { padding, useColors, useDriver } from '../../../features';
 import { getHeight, getWidth, useRootSelector } from '../../../redux';
 
 export const Ball = memo(function PlaygroundBall() {
@@ -13,7 +13,7 @@ export const Ball = memo(function PlaygroundBall() {
     new Animated.ValueXY({ x: width / 2, y: height / 2 }),
   ).current;
   const useNativeDriver = useDriver();
-  const color = useColor();
+  const colors = useColors();
   const size = padding(8);
   const styles = StyleSheet.create({
     ball: {
@@ -48,7 +48,7 @@ export const Ball = memo(function PlaygroundBall() {
     <Screen
       dropShadow
       onLeftPress={goBack}
-      style={{ backgroundColor: color.background.secondary }}
+      style={{ backgroundColor: colors.background.secondary }}
       testID="ballScreen"
       title="Ball"
     >

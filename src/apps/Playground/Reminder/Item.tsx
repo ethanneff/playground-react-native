@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { Icon, Text, TouchableOpacity } from '../../../components';
-import { padding, useColor } from '../../../features';
+import { padding, useColors } from '../../../features';
 
 type Props = {
   active?: boolean;
@@ -23,10 +23,10 @@ export const Item = memo(function ReminderItem({
   active,
   marginBottom,
 }: Props) {
-  const color = useColor();
+  const colors = useColors();
   const styles = StyleSheet.create({
     button: {
-      borderColor: color.border.primaryA,
+      borderColor: colors.border.primaryA,
       borderRadius: padding(1),
       borderWidth: 1,
       flexDirection: 'row',
@@ -51,7 +51,7 @@ export const Item = memo(function ReminderItem({
       justifyContent: 'center',
     },
     title: {
-      color: active ? color.text.accent : color.text.primaryA,
+      color: active ? colors.text.accent : colors.text.primaryA,
     },
   });
 

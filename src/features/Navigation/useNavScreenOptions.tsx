@@ -8,7 +8,7 @@ import React, { useCallback } from 'react';
 import { Platform, View } from 'react-native';
 import { Icon, Text } from '../../components';
 import { StringMethods } from '../../features/Extensions';
-import { useColor } from '../../features/Theme';
+import { useColors } from '../Theme';
 
 type TabIcons = { [key: string]: { focused: string; unFocused: string } };
 type NavOptions = { route: RouteProp<ParamListBase> };
@@ -26,7 +26,7 @@ type UseNavScreenOptions = {
 };
 
 export const useNavScreenOptions = (): UseNavScreenOptions => {
-  const color = useColor();
+  const colors = useColors();
 
   const modalScreenOptions: StackNavigationOptions = {
     cardOverlayEnabled: true,
@@ -46,7 +46,14 @@ export const useNavScreenOptions = (): UseNavScreenOptions => {
           const name = tabIcons[route.name][key];
           const title = StringMethods.capitalize(route.name);
           return (
-            <View style={{ alignItems: 'center' }}>
+            <View
+              style={{
+                alignItems: 'center',
+                flex: 1,
+                justifyContent: 'center',
+                width: '100%',
+              }}
+            >
               <Icon color={iconColor} name={name} size={size} />
               {titleShown && (
                 <Text emphasis={emphasis} title={title} type="caption" />
@@ -55,12 +62,14 @@ export const useNavScreenOptions = (): UseNavScreenOptions => {
           );
         },
         tabBarHideOnKeyboard: true,
-        tabBarActiveTintColor: color.text.primaryA,
-        tabBarInactiveTintColor: color.text.tertiary,
+        tabBarActiveTintColor: colors.text.primaryA,
+        tabBarInactiveTintColor: colors.text.tertiary,
         tabBarShowLabel: false,
-        tabBarStyle: { backgroundColor: color.background.primaryA },
+        tabBarStyle: {
+          backgroundColor: colors.background.primaryA,
+        },
       }),
-    [color.background.primaryA, color.text.primaryA, color.text.tertiary],
+    [colors.background.primaryA, colors.text.primaryA, colors.text.tertiary],
   );
 
   return { modalScreenOptions, tabScreenOptions };

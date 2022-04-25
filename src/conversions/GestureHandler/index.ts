@@ -1,16 +1,25 @@
-import 'react-native';
 import {
-  FlatList,
-  GestureHandlerRootView,
-  ScrollView,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
+  FlatList as GestureFlatList,
+  GestureHandlerRootView as GestureHandlerProvider,
+  NativeViewGestureHandlerProps as GestureNativeViewGestureHandlerProps,
+  ScrollView as GestureScrollView,
+  Switch as GestureSwitch,
+  TextInput as GestureTextInput,
+  TouchableHighlight as GestureTouchableHighlight,
+  TouchableNativeFeedback as GestureTouchableNativeFeedback,
+  TouchableOpacity as GestureTouchableOpacity,
+  TouchableWithoutFeedback as GestureTouchableWithoutFeedback,
 } from 'react-native-gesture-handler';
 
 export {
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  ScrollView,
-  FlatList,
-  GestureHandlerRootView as GestureHandlerProvider,
+  GestureFlatList,
+  GestureHandlerProvider,
+  GestureScrollView,
+  GestureSwitch,
+  GestureTextInput,
+  GestureTouchableHighlight,
+  GestureTouchableNativeFeedback,
+  GestureTouchableOpacity,
+  GestureTouchableWithoutFeedback,
+  type GestureNativeViewGestureHandlerProps,
 };

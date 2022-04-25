@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useState } from 'react';
 import { LayoutChangeEvent } from 'react-native';
 import { KeyboardHandler, Screen } from '../../../../components';
-import { padding, useColor, useKeyboardHeight } from '../../../../features';
+import { padding, useColors, useKeyboardHeight } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 import { List } from '../../components';
 import { getProjects } from '../../models';
@@ -14,7 +14,7 @@ import { getProjects } from '../../models';
 // TODO: render as <Board />
 
 export const Projects = memo(function Projects() {
-  const color = useColor();
+  const colors = useColors();
   const [dimensions, setDimensions] = useState(0);
   const keyboardHeight = useKeyboardHeight();
   const itemId = useRootSelector(getProjects);
@@ -35,7 +35,7 @@ export const Projects = memo(function Projects() {
   return (
     <Screen onRightPress={showSearchBar} rightIcon="magnify" title="Implement">
       <KeyboardHandler
-        backgroundColor={color.background.secondary}
+        backgroundColor={colors.background.secondary}
         onLayout={onLayout}
       >
         <List

@@ -1,9 +1,14 @@
 import { useIsFocused, useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { TextInput as OriginalTextInput } from 'react-native';
-import { Button, Modal, Text, TextInput } from '../../../../components';
-import { padding, useColor } from '../../../../features';
+import {
+  Button,
+  Modal,
+  Text,
+  TextInput,
+  TextInputRef,
+} from '../../../../components';
+import { padding, useColors } from '../../../../features';
 import { useRootDispatch } from '../../../../redux';
 import { ModalHeader } from '../../components';
 import { createItem, loadUser } from '../../models';
@@ -14,7 +19,7 @@ const initialRef = { email: '', password: '' };
 const initialState = { eye: false, completeForm: false, passwordError: false };
 
 export const SignUp = memo(function SignUp() {
-  const color = useColor();
+  const colors = useColors();
   const dispatch = useRootDispatch();
   const focus = useIsFocused();
   const form = useRef(initialRef);
@@ -24,8 +29,8 @@ export const SignUp = memo(function SignUp() {
 
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
   const onSecondary = useCallback(() => navigate('log-in'), [navigate]);
-  const emailRef = useRef<OriginalTextInput | null>(null);
-  const passwordRef = useRef<OriginalTextInput | null>(null);
+  const emailRef = useRef<TextInputRef>(null);
+  const passwordRef = useRef<TextInputRef>(null);
   const eyeIcon = state.eye ? 'eye-outline' : 'eye-off-outline';
 
   const onEye = useCallback(() => {
@@ -70,7 +75,7 @@ export const SignUp = memo(function SignUp() {
 
   return focus ? (
     <Modal
-      backgroundColor={color.background.secondary}
+      backgroundColor={colors.background.secondary}
       onBackgroundPress={navWelcome}
     >
       <ModalHeader onRightPress={goBack} title="Log in" />

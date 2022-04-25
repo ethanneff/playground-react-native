@@ -2,7 +2,7 @@ import React, { memo, useCallback } from 'react';
 import { View } from 'react-native';
 import { v4 } from 'uuid';
 import { Icon, TouchableOpacity } from '../../components';
-import { MonoMultiColor, padding } from '../../features/Config';
+import { MonoMultiColor, padding } from '../../features';
 
 type Props = {
   colorFilled?: keyof MonoMultiColor;
