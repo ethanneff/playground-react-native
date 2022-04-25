@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.61.2](https://github.com/ethanneff/playground-react-native/compare/v2.61.1...v2.61.2) (2022-04-25)
+
+
+### Bug Fixes
+
+* add 4 sections to playground ([c9ffed4](https://github.com/ethanneff/playground-react-native/commit/c9ffed41b5a138727c4922cf3e3506cb89f0546e))
+* correct tests by changing import ([d11310b](https://github.com/ethanneff/playground-react-native/commit/d11310b06158440d8c74bed95f608efd55d10919))
+* disable useDriver on emulators ([c2eddb4](https://github.com/ethanneff/playground-react-native/commit/c2eddb4d07cb4a732a946e1c02a76df138790e79))
+* migrate conversions to components ([850dd22](https://github.com/ethanneff/playground-react-native/commit/850dd22ed2cd0c17a4ab1455ff774c585bf35be6))
+* prevent imports from react-native and gesture-handler ([4016c2a](https://github.com/ethanneff/playground-react-native/commit/4016c2a7ee837d02e52a8323e96619311180a2e9))
+* random cleanup ([236f568](https://github.com/ethanneff/playground-react-native/commit/236f56847313377079d4a9e00ea9d9fcaeca6bc4))
+* remove ui reducer for component modals instead ([e30bcb5](https://github.com/ethanneff/playground-react-native/commit/e30bcb53e56c5fa097141af6cf85131648cc0266))
+* rename useColor to useColors ([94ebec4](https://github.com/ethanneff/playground-react-native/commit/94ebec4ac9aa2661006ece7e7016e61acd306ca2))
+* update imports for colors and components ([3f8d072](https://github.com/ethanneff/playground-react-native/commit/3f8d0720494f6af92495a4814e7a2a6589a6b535))
+* use safeareaview from context for android and web support ([59d0cbd](https://github.com/ethanneff/playground-react-native/commit/59d0cbd1305d42101cfcd9c33860fb7927e36d83))
+
 ## [2.61.1](https://github.com/ethanneff/playground-react-native/compare/v2.61.0...v2.61.1) (2022-04-23)
 
 
