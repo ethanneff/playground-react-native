@@ -15,8 +15,6 @@ import {
   networkReducer,
   themeActions,
   themeReducer,
-  uiActions,
-  uiReducer,
 } from '.';
 import {
   checklistActions,
@@ -70,7 +68,6 @@ export const actions = {
   completeUser: completeUserActions,
   completeAuth: completeAuthActions,
   gameOfLife: gameOfLifeActions,
-  ui: uiActions,
 };
 
 export const reducers = combineReducers({
@@ -90,7 +87,6 @@ export const reducers = combineReducers({
   completeUser: completeUserReducer,
   completeAuth: completeAuthReducer,
   gameOfLife: gameOfLifeReducer,
-  ui: uiReducer,
 });
 
 const blacklist = ['gameOfLife'];
