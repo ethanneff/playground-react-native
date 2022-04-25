@@ -1,7 +1,7 @@
 import React, { ReactElement, ReactNode, useCallback } from 'react';
 import { StyleProp, ViewStyle } from 'react-native';
 import { GestureTouchableOpacity } from '../../conversions';
-import { SoundManager } from '../../features/Sound';
+import { SoundManager } from '../../features';
 
 type Props = {
   activeOpacity?: number;

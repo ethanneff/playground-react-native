@@ -1,7 +1,6 @@
 import React, { memo, useCallback, useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
-import { useColors } from '../../features';
-import { useDriver } from '../../features/Animation';
+import { useColors, useDriver } from '../../features';
 import { Loader } from '../Loader';
 import { TouchableOpacity } from '../TouchableOpacity';
 

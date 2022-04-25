@@ -6,10 +6,10 @@ import {
   fontWeight,
   getFontStyles,
   MonoMultiColor,
+  SoundManager,
   useColors,
+  useDriver,
 } from '../../features';
-import { useDriver } from '../../features/Animation';
-import { SoundManager } from '../../features/Sound';
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
 

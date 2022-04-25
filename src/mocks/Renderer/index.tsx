@@ -5,7 +5,7 @@ import {
 } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React, { ReactNode } from 'react';
-import { Provider } from 'react-redux';
+import { Provider as ReduxProvider } from 'react-redux';
 import { create, ReactTestRenderer } from 'react-test-renderer';
 import { store } from '../../redux/core';
 
@@ -45,13 +45,13 @@ export const mockRenderer = ({
   );
 
   const Providers = () => (
-    <Provider store={store}>
+    <ReduxProvider store={store}>
       <BaseNavigationContainer>
         <Stack.Navigator>
           <Stack.Screen component={Component} name="MockedScreen" />
         </Stack.Navigator>
       </BaseNavigationContainer>
-    </Provider>
+    </ReduxProvider>
   );
 
   const tree = create(<Providers />);

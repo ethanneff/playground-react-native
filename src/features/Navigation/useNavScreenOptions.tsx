@@ -7,7 +7,7 @@ import {
 import React, { useCallback } from 'react';
 import { Platform, View } from 'react-native';
 import { Icon, Text } from '../../components';
-import { StringMethods } from '../../features/Extensions';
+import { StringMethods } from '../../features';
 import { useColors } from '../Theme';
 
 type TabIcons = { [key: string]: { focused: string; unFocused: string } };

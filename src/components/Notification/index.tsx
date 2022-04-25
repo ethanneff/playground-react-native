@@ -6,8 +6,7 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import { padding, SoundManager, useColors } from '../../features';
-import { useDriver } from '../../features/Animation';
+import { padding, SoundManager, useColors, useDriver } from '../../features';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';

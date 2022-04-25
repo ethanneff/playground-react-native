@@ -347,7 +347,7 @@ exports[`markdown renders correctly 1`] = `
                             Object {
                               "color": "hsla(0,0%,0%, 1)",
                               "fontSize": 16,
-                              "fontWeight": "600",
+                              "fontWeight": "500",
                               "letterSpacing": 0.5,
                               "opacity": 1,
                             }
