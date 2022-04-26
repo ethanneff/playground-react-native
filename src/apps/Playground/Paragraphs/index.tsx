@@ -4,12 +4,12 @@ import { Card, Content, Screen, ScrollView } from '../../../components';
 import { padding, useColors } from '../../../features';
 import { data } from './data';
 
-export const Article = memo(function PlaygroundArticle() {
+export const Paragraphs = memo(function Paragraphs() {
   const { goBack } = useNavigation();
 
   const colors = useColors();
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Article">
+    <Screen dropShadow onLeftPress={goBack} title="Paragraphs">
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: padding(4),

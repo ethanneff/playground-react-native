@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { memo, ReactNode, useCallback } from 'react';
+import React, { memo, useCallback } from 'react';
 import { View } from 'react-native';
 import {
   Card,
@@ -10,35 +10,47 @@ import {
 } from '../../../components';
 import { padding, useColors } from '../../../features';
 import { PortfolioNavigation, PortfolioRoutes } from '../../Portfolio/types';
-import { stackParams } from '../navParams';
+import { Row } from './Row';
+import { Title } from './Title';
 
-const screens = Object.keys(stackParams);
+const features = [
+  'chat',
+  'infiniteImages',
+  'skeletonLoader',
+  'recyclerFlatList',
+  'searchBar',
+  'swipeFeed',
+  'bouncingBalls',
+  'pinchSpread',
+];
 
-type TitleProps = { title: string };
+const storybook = [
+  'colors',
+  'themes',
+  'fonts',
+  'paragraphs',
+  'inputs',
+  'modals',
+];
+const games = [
+  'gameOfLife',
+  'bejeweled',
+  'slotMachine',
+  'fortuneWheel',
+  'drift',
+];
 
-const Title = ({ title }: TitleProps) => {
-  return (
-    <>
-      <Text emphasis="medium" title={title} type="h5" />
-      <View style={{ padding: padding(1) }} />
-    </>
-  );
-};
-
-type RowProps = { children: ReactNode };
-const Row = ({ children }: RowProps) => {
-  return (
-    <View
-      style={{
-        flex: 1,
-        flexDirection: 'row',
-        paddingHorizontal: padding(4),
-      }}
-    >
-      {children}
-    </View>
-  );
-};
+const creations = [
+  'ball',
+  'drag',
+  'okrs',
+  'startup',
+  'questionnaire',
+  'appleMask',
+  'appleStopWatch',
+  'appleFit',
+  'tinder',
+];
 
 export const Landing = memo(function Playground() {
   const colors = useColors();
@@ -70,10 +82,9 @@ export const Landing = memo(function Playground() {
       >
         <Row>
           <Card flex>
-            <Title title="components" />
-
+            <Title description="component examples" title="storybook" />
             <FlatList
-              data={screens}
+              data={storybook}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
@@ -81,10 +92,9 @@ export const Landing = memo(function Playground() {
           </Card>
           <View style={{ padding: padding(2) }} />
           <Card flex>
-            <Title title="features" />
-
+            <Title description="polished modules" title="features" />
             <FlatList
-              data={screens}
+              data={features}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
@@ -93,9 +103,9 @@ export const Landing = memo(function Playground() {
         </Row>
         <Row>
           <Card flex>
-            <Title title="games" />
+            <Title description="interactive fun" title="games" />
             <FlatList
-              data={screens}
+              data={games}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
@@ -103,9 +113,9 @@ export const Landing = memo(function Playground() {
           </Card>
           <View style={{ padding: padding(2) }} />
           <Card flex>
-            <Title title="random" />
+            <Title description="misc creations" title="creations" />
             <FlatList
-              data={screens}
+              data={creations}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}

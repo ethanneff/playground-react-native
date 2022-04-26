@@ -82,7 +82,7 @@ const cards: CardItem[] = [
   },
 ];
 
-export const DarkMode = memo(function DarkMode() {
+export const Themes = memo(function Themes() {
   const dispatch = useRootDispatch();
   const colors = useColors();
   const { goBack } = useNavigation();

@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
 import { Screen, ScrollView, Text } from '../../../components';
-import { useColors } from '../../../features';
+import { padding, useColors } from '../../../features';
 
 export const Fonts = memo(function PlaygroundFonts() {
   const { goBack } = useNavigation();
@@ -9,7 +9,12 @@ export const Fonts = memo(function PlaygroundFonts() {
 
   return (
     <Screen dropShadow onLeftPress={goBack} title="Fonts">
-      <ScrollView style={{ backgroundColor: colors.background.secondary }}>
+      <ScrollView
+        contentContainerStyle={{ padding: padding(4) }}
+        style={{
+          backgroundColor: colors.background.secondary,
+        }}
+      >
         <Text
           title="H1: The quick brown fox jumps over the lazy dog."
           type="h1"

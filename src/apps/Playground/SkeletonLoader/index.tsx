@@ -29,7 +29,7 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
   }, [load]);
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Skeleton Loading">
+    <Screen dropShadow onLeftPress={goBack} title="Skeleton Loader">
       <ScrollView
         contentContainerStyle={{ padding: padding(4) }}
         style={{ backgroundColor: colors.background.secondary }}
