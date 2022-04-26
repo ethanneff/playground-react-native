@@ -122,7 +122,7 @@ export const Text = memo(function Text({
       adjustsFontSizeToFit={adjustsFontSizeToFit}
       ellipsizeMode={ellipsizeMode}
       numberOfLines={numberOfLines}
-      onPress={handlePress}
+      onPress={onPress ? handlePress : undefined}
       style={textStyle}
     >
       {text}
