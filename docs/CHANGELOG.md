@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.61.4](https://github.com/ethanneff/playground-react-native/compare/v2.61.3...v2.61.4) (2022-04-26)
+
+
+### Bug Fixes
+
+* refactor playground to 4 sections ([b4a9a8b](https://github.com/ethanneff/playground-react-native/commit/b4a9a8bcf948b053f16c2e5e3c9094d9443fb86f))
+
 ## [2.61.3](https://github.com/ethanneff/playground-react-native/compare/v2.61.2...v2.61.3) (2022-04-26)
 
 
