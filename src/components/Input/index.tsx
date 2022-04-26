@@ -16,7 +16,6 @@ import {
 } from 'react-native';
 import { GestureTextInput } from '../../conversions';
 import { fontSizes, padding, useColors } from '../../features';
-import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
 import { TextInputRef } from '../TextInput';
@@ -110,7 +109,6 @@ export const Input = memo(function Input({
   const optionalText = ' - optional';
   const textInputStyles = [styles.textInput, fontSizes.body2, textStyle];
   const noValue = value.length === 0;
-  const noError = error.length === 0;
   const noTitle = title.length === 0;
   const containerStyles = [flex && styles.flex, containerStyle];
 
@@ -176,20 +174,23 @@ export const Input = memo(function Input({
         </TouchableOpacity>
       </View>
       {!removeError && (
-        <View style={{ flexDirection: 'row' }}>
-          <TouchableOpacity activeOpacity={1} onPress={focusOnInput}>
-            <Icon color="negative" invisible={noError} name={errorIcon} />
-          </TouchableOpacity>
-          <Button
-            activeOpacity={1}
+        <TouchableOpacity
+          onPress={focusOnInput}
+          style={{ flexDirection: 'row', alignItems: 'center' }}
+        >
+          <Icon
             color="negative"
-            invisible={noError}
-            lowercase
-            noPadding
-            onPress={focusOnInput}
-            title={error}
+            invisible={!error.length}
+            name={errorIcon}
+            size={padding(4)}
           />
-        </View>
+          <Text
+            color="negative"
+            invisible={!error.length}
+            style={{ paddingLeft: padding(1) }}
+            title={error || ' '}
+          />
+        </TouchableOpacity>
       )}
     </View>
   );
