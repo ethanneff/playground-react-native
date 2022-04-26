@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.61.3](https://github.com/ethanneff/playground-react-native/compare/v2.61.2...v2.61.3) (2022-04-26)
+
+
+### Bug Fixes
+
+* correct selecting text on iOS ([1ef5ab8](https://github.com/ethanneff/playground-react-native/commit/1ef5ab864e97bd8c92833d96b5f229203dc2f8e7))
+* make error text show on input ([9e98c76](https://github.com/ethanneff/playground-react-native/commit/9e98c7642dab6f3cf901fe4942c4f9817b643c9d))
+
 ## [2.61.2](https://github.com/ethanneff/playground-react-native/compare/v2.61.1...v2.61.2) (2022-04-25)
 
 
