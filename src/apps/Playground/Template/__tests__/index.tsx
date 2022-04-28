@@ -1,6 +1,6 @@
 import React from 'react';
 import { Template } from '..';
-import { mockRenderer } from '../../../../mocks/Renderer';
+import { mockRenderer } from '../../../../mocks';
 
 describe('template', () => {
   it('renders correctly', () => {
