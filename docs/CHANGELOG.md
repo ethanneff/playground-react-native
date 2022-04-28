@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.61.5](https://github.com/ethanneff/playground-react-native/compare/v2.61.4...v2.61.5) (2022-04-28)
+
+
+### Bug Fixes
+
+* add canvas hook ([2731188](https://github.com/ethanneff/playground-react-native/commit/27311888f93d7fa66ac8c954fd37ccdb88638fc5))
+* relocate games to playground ([08dde93](https://github.com/ethanneff/playground-react-native/commit/08dde938a99f06e4a26e7b353e99267352036a57))
+* relocate playground files ([00e2727](https://github.com/ethanneff/playground-react-native/commit/00e27278fc413a3923adf6755d6593cdd6ff501d))
+* update mock default export ([ccf83be](https://github.com/ethanneff/playground-react-native/commit/ccf83be4e84b1f405a0f545dc58429640b37c7eb))
+
 ## [2.61.4](https://github.com/ethanneff/playground-react-native/compare/v2.61.3...v2.61.4) (2022-04-26)
 
 
