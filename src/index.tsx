@@ -11,6 +11,7 @@ import { ReduxProvider } from './redux/core';
 LogBox.ignoreLogs(['Warning: Using UNSAFE']);
 
 debugDev();
+
 export const Main = (): JSX.Element => {
   return (
     <StrictMode>

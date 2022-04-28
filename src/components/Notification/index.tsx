@@ -24,7 +24,7 @@ type NotificationProps = {
 export const Notification = memo(function Notification({
   title,
   height = padding(18),
-  thresholdPercent = 0.9,
+  thresholdPercent = 0.5, // broken
   dismissDelay = 100,
   noSwipe,
   onCancel,
@@ -140,11 +140,11 @@ export const Notification = memo(function Notification({
           </View>
         </SafeAreaView>
       </Animated.View>
-      {/* <TouchableOpacity
-        disabled={!onBackgroundPress} // containerStyle?
+      <TouchableOpacity
+        containerStyle={styles.overlay} // containerStyle?
+        disabled={!onBackgroundPress}
         onPress={onBackgroundPress}
-        style={styles.overlay}
-      /> */}
+      />
     </View>
   );
 });

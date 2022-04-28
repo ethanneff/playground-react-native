@@ -1,146 +1,154 @@
 import { useNavigation } from '@react-navigation/native';
-import dayjs, { Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
-import { v4 } from 'uuid';
 import {
+  Alert,
   Button,
+  Input,
+  Loading,
   Modal,
+  Notification,
   Screen,
   ScrollView,
   Text,
 } from '../../../../components';
 import { RateApp, useColors } from '../../../../features';
-import { CreateReminderModal } from './CreateReminderModal';
-import { Reminder, ReminderType } from './types';
+import { Reminders } from './Reminders';
 
-type State = {
-  modals: {
-    createReminder: boolean;
-    customDate: boolean;
-    location: boolean;
-  };
-  reminders: Reminder[];
-  selected: {
-    location: string | undefined;
-  };
-  type: ReminderType;
+type Modal =
+  | 'alert'
+  | 'modal-large'
+  | 'modal-small'
+  | 'modal-keyboard'
+  | 'reminder'
+  | 'action-sheet'
+  | 'notification'
+  | 'loading'
+  | 'login'
+  | 'rate-app'
+  | null;
+
+type ModalManagerProps = {
+  modal: Modal;
+  onClose: (modal: Modal) => () => void;
 };
+
+const ModalManager = memo(function ModalManager({
+  modal,
+  onClose,
+}: ModalManagerProps) {
+  const handleClose = useCallback(() => {
+    onClose(null)();
+  }, [onClose]);
+  const [value, setValue] = useState('');
+  const handleTextChange = useCallback((v) => setValue(v), []);
+
+  switch (modal) {
+    case 'rate-app':
+      return <RateApp onComplete={handleClose} />;
+    case 'reminder':
+      return <Reminders onComplete={handleClose} />;
+    case 'alert':
+      return (
+        <Alert
+          description="do not do this"
+          onBackgroundPress={handleClose}
+          onCancelPress={handleClose}
+          onConfirmPress={handleClose}
+          title="warning"
+        />
+      );
+    case 'modal-small':
+      return (
+        <Modal onBackgroundPress={handleClose} showOverlay>
+          <Text title="Hello" />
+        </Modal>
+      );
+    case 'modal-large':
+      return (
+        <Modal onBackgroundPress={handleClose} showOverlay>
+          <Text
+            title="Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello"
+            type="h1"
+          />
+        </Modal>
+      );
+    case 'modal-keyboard':
+      return (
+        <Modal onBackgroundPress={handleClose} showOverlay>
+          <Text title="hello" type="h1" />
+          <Input onChangeText={handleTextChange} title="hello" value={value} />
+        </Modal>
+      );
+    case 'loading':
+      return <Loading onBackgroundPress={handleClose} />;
+    case 'notification':
+      return <Notification onCancel={handleClose} title="bob" />;
+    default:
+      return null;
+  }
+});
 
 export const Modals = memo(function Modals() {
   const { goBack } = useNavigation();
-  const [form, setForm] = useState<State>({
-    type: 'one time',
-    reminders: [],
-    modals: {
-      customDate: false,
-      createReminder: false,
-      location: false,
-    },
-    selected: {
-      location: undefined,
-    },
-  });
-
-  const handleOneTimeReminder = useCallback(
-    (date: Dayjs) => () => {
-      if (date.isBefore(dayjs())) {
-        setForm((prev) => ({
-          ...prev,
-          modals: { ...prev.modals, customDate: true },
-        }));
-        return;
-      }
-      setForm((prev) => ({
-        ...prev,
-        modals: {
-          ...prev.modals,
-          createReminder: false,
-        },
-        reminders: [
-          ...prev.reminders,
-          {
-            id: v4(),
-            date: date.valueOf(),
-            format: date.format('MMM DD, YYYY hh:mm A'),
-          },
-        ],
-      }));
-    },
-    [],
-  );
-
-  const handleCustomDateClose = useCallback(() => {
-    setForm((prev) => ({
-      ...prev,
-      modals: { ...prev.modals, customDate: false },
-    }));
-  }, []);
-
-  const handleCreateReminder = useCallback(() => {
-    setForm((prev) => ({
-      ...prev,
-      modals: { ...prev.modals, createReminder: true },
-    }));
-  }, []);
-
-  const handleCreateReminderClose = useCallback(() => {
-    setForm((prev) => ({
-      ...prev,
-      modals: { ...prev.modals, createReminder: false },
-    }));
-  }, []);
-
-  const handleLocation = useCallback(
-    (id: string) => () => {
-      setForm((prev) => ({
-        ...prev,
-        modals: { ...prev.modals, location: true },
-        selected: { location: id },
-      }));
-    },
-    [],
-  );
-
-  const handleLocationClose = useCallback(() => {
-    setForm((prev) => ({
-      ...prev,
-      modals: { ...prev.modals, location: false },
-    }));
-  }, []);
-
-  const [showRate, setShowRate] = useState(false);
-
-  const handleRate = (value: boolean) => () => setShowRate(value);
-
   const colors = useColors();
+  const [modal, setModal] = useState<Modal>(null);
+  const handleModalChange = useCallback(
+    (nextModal: Modal) => () => setModal(nextModal),
+    [],
+  );
+
   return (
     <>
       <Screen dropShadow onLeftPress={goBack} title="Reminder">
         <ScrollView style={{ backgroundColor: colors.background.secondary }}>
-          <Text center emphasis="low" title="Modals" type="h4" />
+          <Text emphasis="low" title="Components" type="h4" />
           <Button
-            center
-            color="accent"
-            onPress={handleCreateReminder}
-            title="create reminder"
+            onPress={handleModalChange('loading')}
+            title="loading ❌ animation"
           />
           <Button
-            center
-            color="accent"
-            onPress={handleRate(true)}
-            title="rate me"
+            onPress={handleModalChange('action-sheet')}
+            title="action sheet ❌ need to build"
+          />
+          <Button
+            onPress={handleModalChange('notification')}
+            title="notification ❌ missing background"
+          />
+          <Button onPress={handleModalChange('alert')} title="alert ✅" />
+          <Button
+            onPress={handleModalChange('modal-large')}
+            title="Modal large ✅"
+          />
+          <Button
+            onPress={handleModalChange('modal-small')}
+            title="Modal small ❌ width"
+          />
+          <Button
+            onPress={handleModalChange('modal-keyboard')}
+            title="Modal keyboard ✅"
+          />
+          <Text emphasis="low" title="Features" type="h4" />
+          <Button
+            onPress={handleModalChange('reminder')}
+            title="Reminder ❌ incomplete"
+          />
+          <Button onPress={handleModalChange('rate-app')} title="Rate app ✅" />
+          <Button
+            onPress={handleModalChange('login')}
+            title="login ❌ incomplete"
           />
           <Text center emphasis="low" title="Reminders" type="h4" />
-          {form.reminders.map((reminder, index) => (
+          {/* {form.reminders.map((reminder, index) => (
             <Text
               key={reminder.id}
               title={reminder.format}
               type={index === form.reminders.length - 1 ? 'button' : undefined}
             />
-          ))}
+          ))} */}
         </ScrollView>
       </Screen>
-      {showRate && <RateApp onComplete={handleRate(false)} />}
+      <ModalManager modal={modal} onClose={handleModalChange} />
+      {/* {showRate && <RateApp onComplete={handleRate(false)} />}
       {form.modals.createReminder && (
         <CreateReminderModal
           onBackgroundPress={handleCreateReminderClose}
@@ -157,7 +165,7 @@ export const Modals = memo(function Modals() {
         <Modal onBackgroundPress={handleLocationClose} showOverlay>
           <Text title="location" />
         </Modal>
-      )}
+      )} */}
     </>
   );
 });

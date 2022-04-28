@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useRef,
 } from 'react';
-import { Animated, StyleSheet, View } from 'react-native';
+import { Animated, StyleSheet } from 'react-native';
 import {
   SoundManager,
   useColors,
@@ -31,6 +31,7 @@ type ModalProps = {
 };
 
 const fadeDuration = 150;
+const defaultMargin = 0.8;
 export const Modal = memo(function Modal({
   onBackgroundPress,
   children,
@@ -38,8 +39,8 @@ export const Modal = memo(function Modal({
   duration,
   noScroll,
   showOverlay,
-  widthPercent = 0.8,
-  heightPercent = 0.8,
+  widthPercent = defaultMargin,
+  heightPercent = defaultMargin,
   elevation,
   testID,
 }: ModalProps) {
@@ -49,8 +50,16 @@ export const Modal = memo(function Modal({
   const dropShadow = useDropShadow();
   const screen = useRootSelector((s) => s.dimension.screen);
   const maxHeight = (screen.height - keyboardHeight) * heightPercent;
+  const width = screen.width * widthPercent;
+
   const styles = StyleSheet.create({
+    backgroundPress: {
+      alignItems: 'center',
+      height: '100%',
+      justifyContent: 'center',
+    },
     container: {
+      backgroundColor: showOverlay ? colors.overlay.light : undefined,
       bottom: keyboardHeight,
       elevation: 1,
       left: 0,
@@ -62,14 +71,8 @@ export const Modal = memo(function Modal({
     modal: {
       backgroundColor: backgroundColor || colors.background.primaryA,
       maxHeight,
-      width: screen.width * widthPercent,
+      width,
       ...dropShadow(10),
-    },
-    overlay: {
-      alignItems: 'center',
-      backgroundColor: showOverlay ? colors.overlay.light : undefined,
-      height: '100%',
-      justifyContent: 'center',
     },
   });
   const fade = useRef(new Animated.Value(0)).current;
@@ -116,29 +119,26 @@ export const Modal = memo(function Modal({
     <Animated.View style={containerStyle}>
       <TouchableWithoutFeedback
         onPress={dismiss(onBackgroundPress)}
+        style={styles.backgroundPress}
         testID={testID}
       >
-        <View style={styles.overlay}>
-          <TouchableWithoutFeedback>
-            <Card
-              elevation={elevation}
-              noMargin
-              style={styles.modal}
-              testID="modal"
+        <Card
+          elevation={elevation}
+          noMargin
+          style={styles.modal}
+          testID="modal"
+        >
+          {noScroll ? (
+            children
+          ) : (
+            <ScrollView
+              keyboardShouldPersistTaps="handled"
+              showsVerticalScrollIndicator={false}
             >
-              {noScroll ? (
-                children
-              ) : (
-                <ScrollView
-                  keyboardShouldPersistTaps="handled"
-                  showsVerticalScrollIndicator={false}
-                >
-                  {children}
-                </ScrollView>
-              )}
-            </Card>
-          </TouchableWithoutFeedback>
-        </View>
+              {children}
+            </ScrollView>
+          )}
+        </Card>
       </TouchableWithoutFeedback>
     </Animated.View>
   );

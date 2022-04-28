@@ -5,39 +5,35 @@ import { Loader } from '../Loader';
 import { TouchableOpacity } from '../TouchableOpacity';
 
 type Props = {
-  duration?: number;
-  onBackgroundPress: () => void;
+  onBackgroundPress?: () => void;
 };
 
 export const Loading = memo(function LoadingScreen({
   onBackgroundPress,
-  duration = 250,
 }: Props) {
   const colors = useColors();
   const useNativeDriver = useDriver();
-  const location = useRef(new Animated.Value(0)).current;
+  const opacity = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    Animated.timing(location, {
+    Animated.spring(opacity, {
       toValue: 1,
-      duration,
       useNativeDriver,
     }).start();
-  }, [duration, location, useNativeDriver]);
+  }, [opacity, useNativeDriver]);
 
   const onPress = useCallback(() => {
     if (!onBackgroundPress) return;
-    Animated.timing(location, {
+    Animated.spring(opacity, {
       toValue: 0,
-      duration,
       useNativeDriver,
     }).start(() => onBackgroundPress());
-  }, [duration, location, onBackgroundPress, useNativeDriver]);
+  }, [opacity, onBackgroundPress, useNativeDriver]);
 
   return (
     <Animated.View
       style={{
-        opacity: location,
+        opacity,
         zIndex: 1,
         position: 'absolute',
         left: 0,
@@ -52,7 +48,7 @@ export const Loading = memo(function LoadingScreen({
         disabled={!onBackgroundPress}
         onPress={onPress}
       >
-        <Loader color="primaryA" size="large" />
+        <Loader color="primaryB" size="large" />
       </TouchableOpacity>
     </Animated.View>
   );

@@ -1,8 +1,8 @@
 import { Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { Button, Modal, Text } from '../../../../components';
-import { padding } from '../../../../features';
+import { Button, Modal, Text } from '../../../../../components';
+import { padding } from '../../../../../features';
 import { Location } from './Location';
 import { OneTime } from './OneTime';
 import { Radio } from './Radio';
@@ -13,12 +13,11 @@ const reminderTypes: ReminderType[] = ['One time', 'Repeat', 'Location'];
 
 type Props = {
   onBackgroundPress: () => void;
-  // TODO: handle models better so don't have to pass up to parent
   onLocationPress: (id: string) => () => void;
   onOneTimePress: (date: Dayjs) => () => void;
 };
 
-export const CreateReminderModal = memo(function CreateReminderModal({
+export const Create = memo(function Create({
   onBackgroundPress,
   onOneTimePress,
   onLocationPress,

@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import { Icon, Text, TouchableOpacity } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { Icon, Text, TouchableOpacity } from '../../../../../components';
+import { padding, useColors } from '../../../../../features';
 
 type Props = {
   active?: boolean;
