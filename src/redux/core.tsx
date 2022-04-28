@@ -33,11 +33,11 @@ import {
 import {
   chatMessageActions,
   chatMessageReducer,
-} from '../apps/Playground/Chat/Messages';
+} from '../apps/Playground/Features/Chat/Messages';
 import {
   gameOfLifeActions,
   gameOfLifeReducer,
-} from '../apps/Playground/GameOfLife/redux';
+} from '../apps/Playground/Games/GameOfLife/redux';
 import {
   choicesActions,
   choicesReducer,
@@ -47,7 +47,7 @@ import {
   questionsReducer,
   responsesActions,
   responsesReducer,
-} from '../apps/Playground/Questionnaire/models';
+} from '../apps/Playground/Creations/Questionnaire/models';
 import { addFlipperMiddleware, Storage } from '../conversions';
 import { syncMiddleware, useSync } from './sync';
 

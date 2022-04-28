@@ -1,35 +1,43 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React, { memo } from 'react';
-import { AppleFit } from './AppleFit';
-import { AppleMask } from './AppleMask';
-import { Ball } from './Ball';
-import { Bejeweled } from './Bejeweled';
-import { BouncingBalls } from './BouncingBalls';
-import { Chat } from './Chat';
-import { Colors } from './Colors';
-import { Drag } from './Drag';
-import { Drift } from './Drift';
-import { Fonts } from './Fonts';
-import { FortuneWheel } from './FortuneWheel';
-import { GameOfLife } from './GameOfLife';
-import { ImageCollection } from './ImageCollection';
-import { Inputs } from './Inputs';
-import { KeyboardScroll } from './KeyboardScroll';
+import {
+  AppleFit,
+  AppleMask,
+  Ball,
+  Drag,
+  OKRs,
+  Questionnaire,
+  Startup,
+  AppleStopWatch,
+  Tinder,
+} from './Creations';
+import {
+  BouncingBalls,
+  Chat,
+  ImageCollection,
+  KeyboardScroll,
+  PinchSpread,
+  SearchBar,
+  SkeletonLoading,
+  SwipeFeed,
+} from './Features';
+import {
+  Colors,
+  Fonts,
+  Inputs,
+  Modals,
+  Paragraphs,
+  Themes,
+} from './Components';
+import {
+  Bejeweled,
+  Drift,
+  FortuneWheel,
+  GameOfLife,
+  SlotMachine,
+} from './Games';
 import { Landing } from './Landing';
 import { stackParams } from './navParams';
-import { OKRs } from './OKRs';
-import { Paragraphs } from './Paragraphs';
-import { PinchSpread } from './PinchSpread';
-import { Questionnaire } from './Questionnaire';
-import { ReminderExample } from './Reminder';
-import { SearchBar } from './SearchBar';
-import { SkeletonLoading } from './SkeletonLoader';
-import { SlotMachine } from './SlotMachine';
-import { Startup } from './Startup';
-import { StopWatch } from './Stopwatch';
-import { SwipeFeed } from './SwipeFeed';
-import { Themes } from './Themes';
-import { Tinder } from './Tinder';
 
 const noHeader = { headerShown: false };
 const Stack = createStackNavigator<typeof stackParams>();
@@ -44,7 +52,7 @@ export default memo(function Games() {
       <Stack.Screen component={Fonts} name="fonts" />
       <Stack.Screen component={Paragraphs} name="paragraphs" />
       <Stack.Screen component={Inputs} name="inputs" />
-      <Stack.Screen component={ReminderExample} name="modals" />
+      <Stack.Screen component={Modals} name="modals" />
 
       {/* games */}
       <Stack.Screen component={GameOfLife} name="gameOfLife" />
@@ -70,7 +78,7 @@ export default memo(function Games() {
       <Stack.Screen component={Startup} name="startup" />
       <Stack.Screen component={Questionnaire} name="questionnaire" />
       <Stack.Screen component={AppleMask} name="appleMask" />
-      <Stack.Screen component={StopWatch} name="appleStopWatch" />
+      <Stack.Screen component={AppleStopWatch} name="appleStopWatch" />
       <Stack.Screen component={AppleFit} name="appleFit" />
       <Stack.Screen component={Tinder} name="tinder" />
     </Stack.Navigator>
