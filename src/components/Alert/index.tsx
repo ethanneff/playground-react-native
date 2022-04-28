@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import { Button, Modal, Text } from '../../components';
+import { padding } from '../../features';
 import { Spacing } from '../Spacing';
 
 type Props = {
@@ -22,13 +23,12 @@ export const Alert = memo(function Alert({
     <Modal onBackgroundPress={onBackgroundPress} showOverlay>
       <Text center title={title} type="h6" />
       <Spacing padding={2} />
-      {description ? (
-        <>
-          <Text center title={description} />
-          <Spacing padding={2} />
-        </>
-      ) : null}
-
+      <Text
+        center
+        hidden={!description}
+        style={{ paddingBottom: padding(2) }}
+        title={description}
+      />
       <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
         {onCancelPress && <Button onPress={onCancelPress} title="cancel" />}
         <Spacing padding={2} />
