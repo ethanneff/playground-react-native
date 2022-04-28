@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useEffect, useRef } from 'react';
 import { Animated, Easing, StyleSheet, View } from 'react-native';
-import { Screen } from '../../../components';
-import { useColors, useDriver, useDropShadow } from '../../../features';
+import { Screen } from '../../../../components';
+import { useColors, useDriver, useDropShadow } from '../../../../features';
 
 type PapiProps = { size: number };
 

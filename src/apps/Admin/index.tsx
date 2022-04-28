@@ -3,16 +3,6 @@ import React, { memo, useCallback } from 'react';
 import { Button, Screen, ScrollView, Text } from '../../components';
 import { padding, RootNavigation, RootRoutes, useColors } from '../../features';
 
-// <loading>
-// <notification>
-// <alert>
-// <actionsheet>
-
-// <Button onPress={handleLoading} title="loading" />
-// <Button onPress={handleAlert} title="alert" />
-// <Button onPress={handleActionSheet} title="action sheet" />
-// <Button onPress={handleNotification} title="notification" />
-
 export default memo(function Admin() {
   const { navigate } = useNavigation<RootNavigation>();
   const onPress = useCallback(
@@ -28,7 +18,7 @@ export default memo(function Admin() {
         style={{ backgroundColor: colors.background.secondary }}
       >
         <Text emphasis="medium" title="Apps" type="h3" />
-        <Button onPress={onPress('arcade')} title="arcade" />
+
         <Button onPress={onPress('portfolio')} title="portfolio" />
         <Button onPress={onPress('cant-hurt-me')} title="can't hurt me" />
         <Button onPress={onPress('checklists')} title="checklists" />

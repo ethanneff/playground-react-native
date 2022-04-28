@@ -10,47 +10,9 @@ import {
 } from '../../../components';
 import { padding, useColors } from '../../../features';
 import { PortfolioNavigation, PortfolioRoutes } from '../../Portfolio/types';
+import { landingRoutes } from '../navParams';
 import { Row } from './Row';
 import { Title } from './Title';
-
-const features = [
-  'chat',
-  'infiniteImages',
-  'skeletonLoader',
-  'recyclerFlatList',
-  'searchBar',
-  'swipeFeed',
-  'bouncingBalls',
-  'pinchSpread',
-];
-
-const storybook = [
-  'colors',
-  'themes',
-  'fonts',
-  'paragraphs',
-  'inputs',
-  'modals',
-];
-const games = [
-  'gameOfLife',
-  'bejeweled',
-  'slotMachine',
-  'fortuneWheel',
-  'drift',
-];
-
-const creations = [
-  'ball',
-  'drag',
-  'okrs',
-  'startup',
-  'questionnaire',
-  'appleMask',
-  'appleStopWatch',
-  'appleFit',
-  'tinder',
-];
 
 export const Landing = memo(function Playground() {
   const colors = useColors();
@@ -84,7 +46,7 @@ export const Landing = memo(function Playground() {
           <Card flex>
             <Title description="component examples" title="storybook" />
             <FlatList
-              data={storybook}
+              data={landingRoutes.storybook}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
@@ -94,7 +56,7 @@ export const Landing = memo(function Playground() {
           <Card flex>
             <Title description="polished modules" title="features" />
             <FlatList
-              data={features}
+              data={landingRoutes.features}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
@@ -105,7 +67,7 @@ export const Landing = memo(function Playground() {
           <Card flex>
             <Title description="interactive fun" title="games" />
             <FlatList
-              data={games}
+              data={landingRoutes.games}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
@@ -115,7 +77,7 @@ export const Landing = memo(function Playground() {
           <Card flex>
             <Title description="misc creations" title="creations" />
             <FlatList
-              data={creations}
+              data={landingRoutes.creations}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}

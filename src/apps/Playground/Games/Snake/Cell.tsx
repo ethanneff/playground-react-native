@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
-import { useColors } from '../../../features';
-import { getSmallestDimension, useRootSelector } from '../../../redux';
+import { useColors } from '../../../../features';
+import { getSmallestDimension, useRootSelector } from '../../../../redux';
 
 interface CellProps {
   length: number;

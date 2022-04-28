@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { View } from 'react-native';
-import { Button, Screen, Text } from '../../../components';
-import { useColors } from '../../../features';
+import { Button, Screen, Text } from '../../../../components';
+import { useColors } from '../../../../features';
 import { Board } from './Board';
 import { EndGame } from './EndGame';
 import { useClock } from './useClock';

@@ -7,9 +7,9 @@ import {
   PanResponderInstance,
   View,
 } from 'react-native';
-import { Screen } from '../../../components';
-import { colorWithOpacity, useColors, useDriver } from '../../../features';
-import { useRootSelector } from '../../../redux';
+import { Screen } from '../../../../components';
+import { colorWithOpacity, useColors, useDriver } from '../../../../features';
+import { useRootSelector } from '../../../../redux';
 
 const charSize = 50;
 const charSpeed = 40;

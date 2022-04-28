@@ -2,13 +2,13 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { View } from 'react-native';
 import { v4 } from 'uuid';
-import { Button, Screen, Text, TouchableOpacity } from '../../../components';
-import { useColors } from '../../../features';
+import { Button, Screen, Text, TouchableOpacity } from '../../../../components';
+import { useColors } from '../../../../features';
 import {
   getLandscapeOrientation,
   getSmallestDimension,
   useRootSelector,
-} from '../../../redux';
+} from '../../../../redux';
 import { State } from './types';
 import {
   getInitialState,

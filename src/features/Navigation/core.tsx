@@ -14,7 +14,6 @@ import { RootRoutes } from './types';
 import { useNavScreenOptions } from './useNavScreenOptions';
 import { usePersistedState } from './usePersistedState';
 
-const Arcade = lazy(() => import('../../apps/Arcade'));
 const Portfolio = lazy(() => import('../../apps/Portfolio'));
 const Playground = lazy(() => import('../../apps/Playground'));
 const Admin = lazy(() => import('../../apps/Admin'));
@@ -88,7 +87,7 @@ export const NavigationProvider = memo(function NavigationProvider() {
           screenOptions={modalScreenOptions}
         >
           <Stack.Screen component={Admin} name="admin" />
-          <Stack.Screen component={Arcade} name="arcade" />
+
           <Stack.Screen component={Portfolio} name="portfolio" />
           <Stack.Screen component={Progress} name="progress" />
           <Stack.Screen component={Playground} name="playground" />
