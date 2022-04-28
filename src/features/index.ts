@@ -10,3 +10,4 @@ export * from './RateApp';
 export * from './Sound';
 export * from './SplashScreen';
 export * from './Theme';
+export * from './Canvas';
