@@ -1,5 +1,6 @@
 export * from './ActionSheet';
 export * from './Activity';
+export * from './Alert';
 export * from './Button';
 export * from './Calendar';
 export * from './Card';
@@ -29,6 +30,7 @@ export * from './ScrollView';
 export * from './Sentence';
 export * from './SkeletonLoader';
 export * from './Slider';
+export * from './Spacing';
 export * from './Swipe';
 export * from './Switch';
 export * from './Tag';
