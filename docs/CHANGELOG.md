@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.61.6](https://github.com/ethanneff/playground-react-native/compare/v2.61.5...v2.61.6) (2022-04-28)
+
+
+### Bug Fixes
+
+* add spacing component ([3f6f381](https://github.com/ethanneff/playground-react-native/commit/3f6f381d172efe32a39f558a30995c7b768f80f4))
+* refactor modals ([a7f4679](https://github.com/ethanneff/playground-react-native/commit/a7f4679202ce4161846c90f2e6283a16ea417634))
+
 ## [2.61.5](https://github.com/ethanneff/playground-react-native/compare/v2.61.4...v2.61.5) (2022-04-28)
 
 
