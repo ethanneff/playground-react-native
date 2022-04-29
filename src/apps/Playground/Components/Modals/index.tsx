@@ -11,7 +11,7 @@ import {
   ScrollView,
   Text,
 } from '../../../../components';
-import { RateApp, useColors } from '../../../../features';
+import { padding, RateApp, useColors } from '../../../../features';
 import { Reminders } from './Reminders';
 
 type Modal =
@@ -101,7 +101,10 @@ export const Modals = memo(function Modals() {
   return (
     <>
       <Screen dropShadow onLeftPress={goBack} title="Reminder">
-        <ScrollView style={{ backgroundColor: colors.background.secondary }}>
+        <ScrollView
+          contentContainerStyle={{ padding: padding(4) }}
+          style={{ backgroundColor: colors.background.secondary }}
+        >
           <Text emphasis="low" title="Components" type="h4" />
           <Button onPress={handleModalChange('loading')} title="loading" />
           <Button
