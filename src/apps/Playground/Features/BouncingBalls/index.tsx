@@ -2,22 +2,22 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import { Screen } from '../../../../components';
-import { useCanvas } from '../../../../features';
+import { useLayout } from '../../../../features';
 import { Balls } from './Balls';
 
 export const BouncingBalls = memo(function PlaygroundBouncingBalls() {
   const { goBack } = useNavigation();
-  const { canvas, onLayout } = useCanvas();
+  const { layout, onLayout } = useLayout();
 
   return (
     <Screen dropShadow onLeftPress={goBack} title="BouncingBalls">
       <View onLayout={onLayout}>
-        {canvas && (
+        {layout && (
           <Balls
-            canvas={canvas}
+            canvas={layout}
             count={1}
-            maxSize={canvas.width / 6}
-            minSize={canvas.width / 6}
+            maxSize={layout.width / 6}
+            minSize={layout.width / 6}
           />
         )}
       </View>

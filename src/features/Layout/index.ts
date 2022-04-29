@@ -1,20 +1,20 @@
 import { useCallback, useState } from 'react';
 import { LayoutChangeEvent } from 'react-native';
 
-export type CanvasDimensions = {
+export type layoutDimensions = {
   height: number;
   width: number;
   x: number;
   y: number;
 };
 
-export const useCanvas = () => {
-  const [canvas, setCanvas] = useState<CanvasDimensions | null>(null);
+export const useLayout = () => {
+  const [layout, setLayout] = useState<layoutDimensions | null>(null);
 
   const onLayout = useCallback((event: LayoutChangeEvent) => {
     const { x, y, height, width } = event.nativeEvent.layout;
-    setCanvas({ x, y, height, width });
+    setLayout({ x, y, height, width });
   }, []);
 
-  return { canvas, onLayout };
+  return { layout, onLayout };
 };
