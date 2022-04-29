@@ -26,9 +26,9 @@ export const Items = memo(function ChatMessageItems() {
     <FlatList
       contentContainerStyle={{ padding: padding(4) }}
       data={messages}
+      initialNumToRender={0}
       inverted
       keyExtractor={keyExtractor}
-      keyboardShouldPersistTaps="handled"
       onRef={itemsRef}
       renderItem={renderItem}
       style={{ backgroundColor: colors.background.secondary }}

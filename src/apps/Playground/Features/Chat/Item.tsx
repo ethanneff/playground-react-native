@@ -23,7 +23,7 @@ export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
         padding: padding(2),
         borderRadius: padding(4),
         flexDirection: 'row',
-        marginBottom: marginBottom ? padding(6) : 0,
+        marginBottom: marginBottom ? padding(4) : 0,
         backgroundColor: colors.background.primaryA,
       }}
     >

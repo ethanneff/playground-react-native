@@ -1,31 +1,29 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { memo, useCallback, useState } from 'react';
-import { LayoutChangeEvent, View } from 'react-native';
-import { KeyboardHandler, Screen } from '../../../../components';
-import { padding } from '../../../../features';
+import React, { memo } from 'react';
+import { View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Screen } from '../../../../components';
+import { useLayout } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 import { Items } from './Items';
 import { TextField } from './TextField';
 
 export const Chat = memo(function PlaygroundChat() {
   const { goBack } = useNavigation();
-  const [container, setContainer] = useState(0);
+  const { layout, onLayout } = useLayout();
+  const { bottom } = useSafeAreaInsets();
   const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
-  const keyboardPadding = keyboardHeight > 0 ? padding(8) : padding(0);
-  const height = container - keyboardHeight + keyboardPadding;
-  const onLayout = useCallback(
-    (e: LayoutChangeEvent) => setContainer(e.nativeEvent.layout.height),
-    [],
-  );
+  const bottomInset = keyboardHeight > 0 ? bottom : 0;
+  const height = (layout?.height || 0) - keyboardHeight + bottomInset;
 
   return (
     <Screen onLeftPress={goBack} title="Chat">
-      <KeyboardHandler onLayout={onLayout}>
+      <View onLayout={onLayout} style={{ flex: 1 }}>
         <View style={{ height }}>
           <Items />
           <TextField />
         </View>
-      </KeyboardHandler>
+      </View>
     </Screen>
   );
 });
