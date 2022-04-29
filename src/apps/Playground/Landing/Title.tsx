@@ -1,16 +1,13 @@
 import React from 'react';
-import { View } from 'react-native';
-import { Text } from '../../../components';
-import { padding } from '../../../features';
+import { Spacing, Text } from '../../../components';
 
 type TitleProps = { description: string; title: string };
 
 export const Title = ({ title, description }: TitleProps) => {
   return (
-    <>
+    <Spacing padding={4}>
       <Text title={title} type="h5" />
       <Text emphasis="medium" title={description} type="caption" />
-      <View style={{ padding: padding(1) }} />
-    </>
+    </Spacing>
   );
 };

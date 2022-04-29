@@ -5,6 +5,7 @@ import {
   Card,
   FlatList,
   Screen,
+  Spacing,
   Text,
   TouchableOpacity,
 } from '../../../components';
@@ -43,19 +44,27 @@ export const Landing = memo(function Playground() {
         }}
       >
         <Row>
-          <Card flex>
+          <Card flex noPadding>
             <Title description="component examples" title="storybook" />
             <FlatList
+              contentContainerStyle={{
+                paddingHorizontal: padding(4),
+                paddingBottom: padding(2),
+              }}
               data={landingRoutes.storybook}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
             />
           </Card>
-          <View style={{ padding: padding(2) }} />
-          <Card flex>
+          <Spacing padding={2} />
+          <Card flex noPadding>
             <Title description="polished modules" title="features" />
             <FlatList
+              contentContainerStyle={{
+                paddingHorizontal: padding(4),
+                paddingBottom: padding(2),
+              }}
               data={landingRoutes.features}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
@@ -64,19 +73,27 @@ export const Landing = memo(function Playground() {
           </Card>
         </Row>
         <Row>
-          <Card flex>
+          <Card flex noPadding>
             <Title description="interactive fun" title="games" />
             <FlatList
+              contentContainerStyle={{
+                paddingHorizontal: padding(4),
+                paddingBottom: padding(2),
+              }}
               data={landingRoutes.games}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
             />
           </Card>
-          <View style={{ padding: padding(2) }} />
-          <Card flex>
+          <Spacing padding={2} />
+          <Card flex noPadding>
             <Title description="misc creations" title="creations" />
             <FlatList
+              contentContainerStyle={{
+                paddingHorizontal: padding(4),
+                paddingBottom: padding(2),
+              }}
               data={landingRoutes.creations}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
