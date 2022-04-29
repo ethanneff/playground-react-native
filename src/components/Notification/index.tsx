@@ -1,11 +1,6 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
-import {
-  Animated,
-  PanResponder,
-  SafeAreaView,
-  StyleSheet,
-  View,
-} from 'react-native';
+import { Animated, PanResponder, StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { padding, SoundManager, useColors, useDriver } from '../../features';
 import { Icon } from '../Icon';
 import { Text } from '../Text';

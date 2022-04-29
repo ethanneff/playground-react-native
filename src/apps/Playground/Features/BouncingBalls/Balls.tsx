@@ -3,7 +3,7 @@ import { Animated } from 'react-native';
 import { v4 } from 'uuid';
 import { Text, TouchableOpacity } from '../../../../components';
 import {
-  CanvasDimensions,
+  LayoutDimensions,
   padding,
   SoundManager,
   useColors,
@@ -17,7 +17,7 @@ import {
 } from './utils';
 
 type Props = {
-  canvas: CanvasDimensions;
+  canvas: LayoutDimensions;
   count: number;
   maxMass?: number;
   maxSize?: number;

@@ -2,7 +2,12 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { LayoutChangeEvent } from 'react-native';
 import { KeyboardHandler, Screen } from '../../../../components';
-import { padding, useColors, useKeyboardHeight } from '../../../../features';
+import {
+  padding,
+  useColors,
+  useKeyboardHeight,
+  useLayout,
+} from '../../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../../redux';
 import { Board } from '../../components';
 
@@ -23,6 +28,7 @@ export const Project = memo(function Project() {
   if (!projectItemType)
     throw new Error('missing projectItemType on board screen');
   const listWidth = screenWidth * 0.7;
+  const { tabBarEdges } = useLayout();
   const [container, setContainer] = useState(0);
   const keyboardHeight = useKeyboardHeight();
   const typePadding = padding(projectItemType === 'list' ? 12 : 0);
@@ -46,6 +52,7 @@ export const Project = memo(function Project() {
 
   return (
     <Screen
+      edges={tabBarEdges}
       onLeftPress={navBack}
       onRightPress={showSearchBar}
       rightIcon="magnify"

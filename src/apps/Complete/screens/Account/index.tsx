@@ -6,6 +6,7 @@ import {
   RootNavigation,
   useAuth,
   useColors,
+  useLayout,
   useTabTap,
 } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
@@ -20,6 +21,7 @@ import { logout } from '../../models';
 export const Account = memo(function Account() {
   useTabTap();
   const colors = useColors();
+  const { tabBarEdges } = useLayout();
   const dispatch = useRootDispatch();
   const { navigate } = useNavigation<RootNavigation>();
   const { onLogout, response } = useAuth();
@@ -31,7 +33,7 @@ export const Account = memo(function Account() {
   }, [dispatch, response.type]);
 
   return (
-    <Screen title="Account">
+    <Screen edges={tabBarEdges} title="Account">
       <ScrollView
         contentContainerStyle={{
           padding: padding(4),

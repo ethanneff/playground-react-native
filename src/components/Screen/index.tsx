@@ -1,12 +1,12 @@
 import React, { memo, ReactNode } from 'react';
 import {
-  SafeAreaView,
   StatusBar,
   StyleProp,
   StyleSheet,
   View,
   ViewStyle,
 } from 'react-native';
+import { Edge, SafeAreaView } from 'react-native-safe-area-context';
 import { useColors } from '../../features';
 import { NavBar } from './NavBar';
 
@@ -14,6 +14,7 @@ type Props = {
   border?: boolean;
   children?: ReactNode;
   dropShadow?: boolean;
+  edges?: Edge[];
   leftIcon?: string;
   onLeftPress?: () => void;
   onRightPress?: () => void;
@@ -32,6 +33,7 @@ export const Screen = memo(function Screen({
   testID,
   border,
   style,
+  edges = ['top', 'left', 'right', 'bottom'],
   onLeftPress,
   onRightPress,
   children,
@@ -56,7 +58,7 @@ export const Screen = memo(function Screen({
 
   return (
     <View style={styles.container}>
-      <SafeAreaView style={styles.flex}>
+      <SafeAreaView edges={edges} style={styles.flex}>
         <StatusBar barStyle={colors.statusBar} />
         <NavBar
           border={border}

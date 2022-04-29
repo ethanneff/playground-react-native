@@ -1,13 +1,14 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import { Button, Card, Screen, ScrollView, Text } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { padding, useColors, useLayout } from '../../../../features';
 
 export const Profile = memo(function Profile() {
   const colors = useColors();
+  const { tabBarEdges } = useLayout();
 
   return (
-    <Screen dropShadow title="Profile">
+    <Screen dropShadow edges={tabBarEdges} title="Profile">
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: padding(4),

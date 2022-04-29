@@ -1,7 +1,12 @@
 import React, { memo, useCallback, useState } from 'react';
 import { LayoutChangeEvent } from 'react-native';
 import { KeyboardHandler, Screen } from '../../../../components';
-import { padding, useColors, useKeyboardHeight } from '../../../../features';
+import {
+  padding,
+  useColors,
+  useKeyboardHeight,
+  useLayout,
+} from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 import { List } from '../../components';
 import { getProjects } from '../../models';
@@ -15,6 +20,7 @@ import { getProjects } from '../../models';
 
 export const Projects = memo(function Projects() {
   const colors = useColors();
+  const { tabBarEdges } = useLayout();
   const [dimensions, setDimensions] = useState(0);
   const keyboardHeight = useKeyboardHeight();
   const itemId = useRootSelector(getProjects);
@@ -33,7 +39,12 @@ export const Projects = memo(function Projects() {
   const showSearchBar = useCallback(() => undefined, []);
 
   return (
-    <Screen onRightPress={showSearchBar} rightIcon="magnify" title="Implement">
+    <Screen
+      edges={tabBarEdges}
+      onRightPress={showSearchBar}
+      rightIcon="magnify"
+      title="Implement"
+    >
       <KeyboardHandler
         backgroundColor={colors.background.secondary}
         onLayout={onLayout}

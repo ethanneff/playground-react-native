@@ -48,8 +48,8 @@ module.exports = {
             importNames: [
               'ActivityIndicator',
               'Button',
+              'SafeAreaView',
               'FlatList',
-
               'ScrollView',
               'Switch',
               'Text',

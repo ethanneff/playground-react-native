@@ -6,7 +6,7 @@ import {
   ScrollView,
   Text,
 } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { padding, useColors, useLayout } from '../../../../features';
 import { Category } from '../../types';
 import { CategoryCard } from './CategoryCard';
 
@@ -37,9 +37,10 @@ const categories: Category[] = [
 
 export const Progress = memo(function Progress() {
   const colors = useColors();
+  const { tabBarEdges } = useLayout();
 
   return (
-    <Screen dropShadow title="Progress">
+    <Screen dropShadow edges={tabBarEdges} title="Progress">
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: padding(4),

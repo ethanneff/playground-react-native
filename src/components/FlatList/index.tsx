@@ -8,6 +8,13 @@ type Props<ItemT> = FlatListProps<ItemT> & {
 };
 
 export const FlatList = <ItemT,>({ onRef, ...rest }: Props<ItemT>) => {
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  return <GestureFlatList {...rest} ref={onRef} />;
+  return (
+    <GestureFlatList
+      keyboardShouldPersistTaps="handled"
+      removeClippedSubviews
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...rest}
+      ref={onRef}
+    />
+  );
 };
