@@ -75,7 +75,8 @@ const ModalManager = memo(function ModalManager({
     case 'modal-keyboard':
       return (
         <Modal onBackgroundPress={handleClose} showOverlay>
-          <Text title="hello" type="h1" />
+          <Text title="hello hello hello hello" type="h1" />
+
           <Input onChangeText={handleTextChange} title="hello" value={value} />
         </Modal>
       );
@@ -102,10 +103,7 @@ export const Modals = memo(function Modals() {
       <Screen dropShadow onLeftPress={goBack} title="Reminder">
         <ScrollView style={{ backgroundColor: colors.background.secondary }}>
           <Text emphasis="low" title="Components" type="h4" />
-          <Button
-            onPress={handleModalChange('loading')}
-            title="loading ❌ animation"
-          />
+          <Button onPress={handleModalChange('loading')} title="loading" />
           <Button
             onPress={handleModalChange('action-sheet')}
             title="action sheet ❌ need to build"
@@ -114,18 +112,18 @@ export const Modals = memo(function Modals() {
             onPress={handleModalChange('notification')}
             title="notification ❌ missing background"
           />
-          <Button onPress={handleModalChange('alert')} title="alert ✅" />
+          <Button onPress={handleModalChange('alert')} title="alert" />
           <Button
             onPress={handleModalChange('modal-large')}
-            title="Modal large ✅"
+            title="Modal large"
           />
           <Button
             onPress={handleModalChange('modal-small')}
-            title="Modal small ❌ width"
+            title="Modal small"
           />
           <Button
             onPress={handleModalChange('modal-keyboard')}
-            title="Modal keyboard ✅"
+            title="Modal keyboard"
           />
           <Text emphasis="low" title="Features" type="h4" />
           <Button
