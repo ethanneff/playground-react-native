@@ -3,7 +3,7 @@ import { StyleProp, View, ViewStyle } from 'react-native';
 import { padding } from '../../features';
 
 type Props = {
-  children?: ReactElement;
+  children?: ReactElement | ReactElement[];
   margin?: number;
   padding?: number;
   style?: StyleProp<ViewStyle>;
