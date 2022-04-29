@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.61.7](https://github.com/ethanneff/playground-react-native/compare/v2.61.6...v2.61.7) (2022-04-29)
+
+
+### Bug Fixes
+
+* allow spacing to allow multiple elements ([c7ac694](https://github.com/ethanneff/playground-react-native/commit/c7ac694937cf3bf138d456c0d436650db5160a91))
+* correct linting ([e4f07e9](https://github.com/ethanneff/playground-react-native/commit/e4f07e9ff97a2ba35e48a5f599b2fdd9cc070e7e))
+* make chat work with safeareaview insets ([4f232a6](https://github.com/ethanneff/playground-react-native/commit/4f232a646f31388ee7514acd60974a156194ee86))
+* make more modals work ([a6c0bb8](https://github.com/ethanneff/playground-react-native/commit/a6c0bb8ea4302fab88bea5e4451b0313963cf14f))
+* make startup work with keyboard ([00684be](https://github.com/ethanneff/playground-react-native/commit/00684be9b165167549d8cf893886badbf0ad9a27))
+* make switch make tap noise ([a8f0062](https://github.com/ethanneff/playground-react-native/commit/a8f0062cad0c432297d9e4eeb3825ec7a4d704fc))
+* make tabbar work with safeareaviewcontext ([3f0f730](https://github.com/ethanneff/playground-react-native/commit/3f0f7306bd2d2abffd2d4d767f5c10113589dcc2))
+
 ## [2.61.6](https://github.com/ethanneff/playground-react-native/compare/v2.61.5...v2.61.6) (2022-04-28)
 
 
