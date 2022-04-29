@@ -4,8 +4,9 @@ import React, { memo, useCallback, useState } from 'react';
 import {
   Button,
   Input,
+  KeyboardAwareScrollView,
   Screen,
-  ScrollView,
+  Spacing,
   Switch,
   Text,
 } from '../../../../components';
@@ -90,16 +91,15 @@ export const Startup = memo(function PlaygroundStartup() {
 
   return (
     <Screen dropShadow onLeftPress={goBack} title="Weekly Update">
-      <ScrollView
-        contentContainerStyle={{
-          padding: padding(4),
-        }}
+      <KeyboardAwareScrollView
+        contentContainerStyle={{ padding: padding(4) }}
         style={{ backgroundColor: colors.background.secondary }}
       >
         <Text center title={dayjs().format('MMM DD, YYYY')} type="h4" />
         <Section title="Launch">
           <Text title="Are you launched?" />
           <Switch onValueChange={handleLaunchChange} value={form.launched} />
+          <Spacing padding={2} />
           <Input
             keyboardType="numeric"
             onChangeText={handleWeeksToLaunchChange}
@@ -146,6 +146,7 @@ export const Startup = memo(function PlaygroundStartup() {
             value={form.morale} // 1 (we are totally burned out) to 10 (we couldn't be more excited and optimistic!)
           />
         </Section>
+        <Spacing padding={2} />
         <Button
           center
           color="accent"
@@ -153,7 +154,7 @@ export const Startup = memo(function PlaygroundStartup() {
           onPress={handleSubmit}
           title="submit"
         />
-      </ScrollView>
+      </KeyboardAwareScrollView>
     </Screen>
   );
 });
