@@ -42,9 +42,10 @@ export const updateActivitySquares = (
 ): ActivitySquares => {
   let max = 0;
   let total = 0;
+
   const matrix = squares.matrix.map((week) =>
     week.map((day) => {
-      const count = active[getDateFormat(day.date)] || 0;
+      const count = active.contributions[getDateFormat(day.date)] || 0;
       max = Math.max(count, max);
       total += count;
       return { ...day, count };

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { ApiInput, ApiPromise, ApiResponse } from './types';
 
-const endpoint = 'https://coding-contributions.vercel.app/api/';
+const endpoint = 'https://coding-contributions-api.vercel.app/api/';
 
 const getGithubActivity = async (username: string): Promise<ApiResponse> => {
   const url = `${endpoint}/github?username=${username}`;
@@ -9,13 +9,15 @@ const getGithubActivity = async (username: string): Promise<ApiResponse> => {
   return data;
 };
 
-const getLeetCodeActivity = async (username: string) => {
+const getLeetCodeActivity = async (username: string): Promise<ApiResponse> => {
   const url = `${endpoint}/leetcode?username=${username}`;
   const { data } = await axios.get<ApiResponse>(url);
   return data;
 };
 
-const getHackerRankActivity = async (username: string) => {
+const getHackerRankActivity = async (
+  username: string,
+): Promise<ApiResponse> => {
   const url = `${endpoint}/hackerrank?username=${username}`;
   const { data } = await axios.get<ApiResponse>(url);
   return data;
@@ -30,6 +32,6 @@ export const getApiActivity = ({ username, site }: ApiInput): ApiPromise => {
     case 'hackerRank':
       return getHackerRankActivity(username);
     default:
-      return Promise.resolve({});
+      return Promise.resolve({ contributions: {} });
   }
 };

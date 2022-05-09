@@ -49,13 +49,13 @@ export const Activity = memo(function Activity({
       const today = Date.now();
       const api = await getApiActivity({ username, site });
       const todayFormat = getDateFormat(today);
-      const count = api[todayFormat] || 0;
+      const todayCount = api.contributions[todayFormat] || 0;
       setState((prev) => ({
         ...prev,
         activity: updateActivitySquares(prev.activity, api),
         request: 'success',
         selected: {
-          submissions: getSubmissionFormat(count, today),
+          submissions: getSubmissionFormat(todayCount, today),
           day: 0,
         },
       }));
