@@ -2,12 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Animated } from 'react-native';
 import { v4 } from 'uuid';
 import { Text, TouchableOpacity } from '../../../../components';
-import {
-  LayoutDimensions,
-  padding,
-  SoundManager,
-  useColors,
-} from '../../../../features';
+import { LayoutDimensions, padding, useColors } from '../../../../features';
 import { Item } from './types';
 import {
   getItems,
@@ -81,6 +76,7 @@ export const Balls = ({
   }, [canvas, maxSpeed]);
 
   useEffect(() => {
+    // TODO: preventing the touch
     const interval = setInterval(draw);
     return () => clearInterval(interval);
   }, [draw]);
@@ -88,7 +84,6 @@ export const Balls = ({
   const onPress = useCallback(
     ({ index }) =>
       () => {
-        SoundManager.play('tap');
         setItems((prev) => {
           const item = prev[index];
           item.radius *= 1 - mitosis;
@@ -108,8 +103,7 @@ export const Balls = ({
       {items.map((item, index) => (
         <Animated.View key={v4()} style={item.position.getLayout()}>
           <TouchableOpacity
-            onPress={onPress({ index })}
-            style={{
+            containerStyle={{
               alignItems: 'center',
               borderColor: colors.border.accent,
               borderWidth: 1,
@@ -121,6 +115,7 @@ export const Balls = ({
               position: 'absolute',
               width: item.radius * 2,
             }}
+            onPress={onPress({ index })}
           >
             <Text adjustsFontSizeToFit title={String(index)} type="h3" />
           </TouchableOpacity>
