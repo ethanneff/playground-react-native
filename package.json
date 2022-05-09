@@ -107,7 +107,7 @@
     "@types/d3-shape": "3.0.2",
     "@types/howler": "2.2.7",
     "@types/jest": "27.4.1",
-    "@types/react": "17.0.43",
+    "@types/react": "18.0.9",
     "@types/react-native": "0.67.6",
     "@types/react-native-vector-icons": "6.4.10",
     "@types/react-test-renderer": "17.0.1",
