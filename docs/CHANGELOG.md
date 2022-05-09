@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.61.9](https://github.com/ethanneff/playground-react-native/compare/v2.61.8...v2.61.9) (2022-05-09)
+
+
+### Bug Fixes
+
+* correct activity api ([56d6c1b](https://github.com/ethanneff/playground-react-native/commit/56d6c1b0332ea3d9a3caf518139976feef518546))
+
 ## [2.61.8](https://github.com/ethanneff/playground-react-native/compare/v2.61.7...v2.61.8) (2022-04-29)
 
 ## [2.61.7](https://github.com/ethanneff/playground-react-native/compare/v2.61.6...v2.61.7) (2022-04-29)
