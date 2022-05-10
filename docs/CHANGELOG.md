@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.61.11](https://github.com/ethanneff/playground-react-native/compare/v2.61.10...v2.61.11) (2022-05-10)
+
+
+### Bug Fixes
+
+* cleanup canvas dimensions ([d21c1a7](https://github.com/ethanneff/playground-react-native/commit/d21c1a75f2c68b95dd2465cef38d8182321c9878))
+* make papi jump with animations ([c17ebf9](https://github.com/ethanneff/playground-react-native/commit/c17ebf9e6b74fa2cbd374438e60bbafc975304a1))
+
 ## [2.61.10](https://github.com/ethanneff/playground-react-native/compare/v2.61.9...v2.61.10) (2022-05-09)
 
 
