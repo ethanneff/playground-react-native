@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.61.10](https://github.com/ethanneff/playground-react-native/compare/v2.61.9...v2.61.10) (2022-05-09)
+
+
+### Bug Fixes
+
+* correct canvas height ([97ef42e](https://github.com/ethanneff/playground-react-native/commit/97ef42e38c9e36367f8210d5d9a8f909a472b846))
+
 ## [2.61.9](https://github.com/ethanneff/playground-react-native/compare/v2.61.8...v2.61.9) (2022-05-09)
 
 
