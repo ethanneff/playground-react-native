@@ -10,10 +10,3 @@ export type Item = {
   x: number;
   y: number;
 };
-
-export type CanvasDimensions = {
-  height: number;
-  width: number;
-  x: number;
-  y: number;
-};

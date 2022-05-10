@@ -1,5 +1,6 @@
 import { Animated } from 'react-native';
-import { CanvasDimensions, Item } from './types';
+import { LayoutDimensions } from '../../../../features';
+import { Item } from './types';
 
 const rotate = (dx: number, dy: number, angle: number) => {
   return {
@@ -90,7 +91,7 @@ export const getRandomNumber = (min: number, max: number): number =>
   Math.random() * (max - min) + min;
 
 type GetItems = {
-  canvas: CanvasDimensions;
+  canvas: LayoutDimensions;
   count: number;
   maxMass: number;
   maxSize: number;
@@ -156,7 +157,7 @@ export const getItems = ({
 
 export const resolveBoundCollision = (
   item: Item,
-  canvas: CanvasDimensions,
+  canvas: LayoutDimensions,
 ): void => {
   if (item.x <= canvas.x) {
     item.dx = -item.dx;
