@@ -1,46 +1,14 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { memo, useEffect, useRef } from 'react';
-import { Animated, Easing, StyleSheet, View } from 'react-native';
+import React, { memo } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { Screen } from '../../../../components';
-import { useColors, useDriver, useDropShadow } from '../../../../features';
-
-type PapiProps = { size: number };
-
-const Papi = memo(function PapiMemo({ size }: PapiProps) {
-  const colors = useColors();
-  const dropShadow = useDropShadow();
-  const useNativeDriver = useDriver();
-  const location = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
-
-  useEffect(() => {
-    const toValue = { x: 300, y: 600 };
-    Animated.timing(location, {
-      toValue,
-      duration: 3000,
-      easing: Easing.bounce,
-      useNativeDriver,
-    }).start();
-  }, [location, useNativeDriver]);
-
-  return (
-    <Animated.View
-      style={[
-        location.getLayout(),
-        {
-          height: size,
-          width: size,
-          borderRadius: size,
-          backgroundColor: colors.background.positive,
-          ...dropShadow(5),
-        },
-      ]}
-    />
-  );
-});
+import { useColors, useLayout } from '../../../../features';
+import { Papi } from './Papi';
 
 export const PapiJump = memo(function PapiJump() {
   const colors = useColors();
   const { goBack } = useNavigation();
+  const { layout, onLayout } = useLayout();
   const styles = StyleSheet.create({
     container: {
       backgroundColor: colors.background.secondary,
@@ -50,8 +18,8 @@ export const PapiJump = memo(function PapiJump() {
 
   return (
     <Screen onLeftPress={goBack} title="Papi Jump">
-      <View style={styles.container}>
-        <Papi size={50} />
+      <View onLayout={onLayout} style={styles.container}>
+        {layout && <Papi collision count={2} layout={layout} radius={80} />}
       </View>
     </Screen>
   );
