@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Screen } from '../../../../components';
 import { useColors, useLayout } from '../../../../features';
-import { Papi } from './Papi';
+import { Game } from './Game';
 
 export const PapiJump = memo(function PapiJump() {
   const colors = useColors();
@@ -19,7 +19,7 @@ export const PapiJump = memo(function PapiJump() {
   return (
     <Screen onLeftPress={goBack} title="Papi Jump">
       <View onLayout={onLayout} style={styles.container}>
-        {layout && <Papi collision count={2} layout={layout} radius={80} />}
+        {layout && <Game layout={layout} />}
       </View>
     </Screen>
   );

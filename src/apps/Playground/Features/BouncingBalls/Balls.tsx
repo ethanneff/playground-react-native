@@ -1,126 +1,132 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
-import { v4 } from 'uuid';
 import { Text, TouchableOpacity } from '../../../../components';
-import { LayoutDimensions, padding, useColors } from '../../../../features';
-import { Item } from './types';
+import { LayoutDimensions, useColors, useDriver } from '../../../../features';
 import {
-  getItems,
-  getOverlap,
-  resolveBoundCollision,
-  resolveItemCollision,
+  getInitialItems,
+  getItemCollision,
+  getItemOverlap,
+  getNextDraw,
 } from './utils';
 
 type Props = {
-  canvas: LayoutDimensions;
+  collision?: boolean;
   count: number;
-  maxMass?: number;
-  maxSize?: number;
-  maxSpeed?: number;
-  minMass?: number;
-  minSize?: number;
-  minSpeed?: number;
-  mitosis?: number;
+  difficulty?: number;
+  layout: LayoutDimensions;
+  radius: number;
+  speed?: number;
 };
 
-export const Balls = ({
+export const Balls = memo(function Balls({
+  radius,
   count,
-  canvas,
-  minSize = 50,
-  maxSize = 50,
-  minSpeed = 1,
-  maxSpeed = 5,
-  minMass = 1,
-  maxMass = 1,
-  mitosis = 0.1,
-}: Props): JSX.Element => {
+  layout,
+  speed = 5,
+  difficulty = 0.8,
+  collision,
+}: Props) {
   const colors = useColors();
-
-  const [items, setItems] = useState<Item[]>(() =>
-    getItems({
-      count,
-      canvas,
-      minSize,
-      maxSize,
-      minSpeed,
-      maxSpeed,
-      minMass,
-      maxMass,
-    }),
-  );
+  const useNativeDriver = useDriver();
+  const items = useRef(getInitialItems({ count, layout, radius, speed }));
+  const [score, setScore] = useState(0);
 
   const draw = useCallback(() => {
-    setItems((prev) => {
-      for (let i = 0; i < prev.length; i++) {
-        const a = prev[i];
-        for (let j = i + 1; j < prev.length; j++) {
-          const b = prev[j];
-          const overlap = getOverlap({
-            aX: a.x,
-            aY: a.y,
-            aRadius: a.radius,
-            bX: b.x,
-            bY: b.y,
-            bRadius: b.radius,
-            center: true,
-          });
-          if (overlap) resolveItemCollision(a, b, maxSpeed * 1.5);
+    Animated.parallel(
+      items.current.map((item) =>
+        Animated.timing(item.position, {
+          toValue: { x: item.x, y: item.y },
+          duration: 50,
+          useNativeDriver,
+        }),
+      ),
+    ).start(({ finished }) => {
+      if (!finished) return;
+      // TODO: method
+      // next step
+      items.current = items.current.map((item) => getNextDraw(item, layout));
+
+      // item collision
+      if (collision) {
+        for (let i = 0; i < items.current.length; i++) {
+          const a = items.current[i];
+          for (let j = i + 1; j < items.current.length; j++) {
+            const b = items.current[j];
+            const overlap = getItemOverlap(a, b);
+            if (overlap) getItemCollision(a, b, speed);
+          }
         }
-        resolveBoundCollision(a, canvas);
-        a.x += a.dx;
-        a.y += a.dy;
-        a.position = new Animated.ValueXY({ x: a.x, y: a.y });
       }
-      return [...prev];
+
+      draw();
     });
-  }, [canvas, maxSpeed]);
+  }, [collision, layout, speed, useNativeDriver]);
 
   useEffect(() => {
-    // TODO: preventing the touch
-    const interval = setInterval(draw);
-    return () => clearInterval(interval);
+    draw();
   }, [draw]);
 
-  const onPress = useCallback(
-    ({ index }) =>
-      () => {
-        setItems((prev) => {
-          const item = prev[index];
-          item.radius *= 1 - mitosis;
-          item.dx *= 2 - mitosis;
-          item.dy *= 2 - mitosis;
-          const copy = { ...prev[index] };
-          copy.dx *= -1;
-          copy.dy *= -1;
-          return [...prev, copy];
-        });
-      },
-    [mitosis],
+  const handlePress = useCallback(
+    (index: number) => () => {
+      const active = items.current[index];
+      const multiplier = 1.5 + difficulty;
+
+      // TODO updateCurrentItem()
+      items.current[index] = {
+        ...active,
+        radius: active.radius * difficulty,
+        dx: active.dx * multiplier,
+        dy: -active.dy * multiplier,
+      };
+
+      // TODO addNewItem()
+      const coordinates = { x: active.x, y: active.y };
+      items.current.push({
+        ...coordinates,
+        mass: 10,
+        position: new Animated.ValueXY(coordinates),
+        index: items.current.length,
+        radius: active.radius * difficulty,
+        dx: -active.dx * multiplier,
+        dy: active.dy * multiplier,
+      });
+
+      setScore((prev) => prev + 1);
+    },
+    [difficulty],
   );
 
   return (
     <>
-      {items.map((item, index) => (
-        <Animated.View key={v4()} style={item.position.getLayout()}>
+      <Text center title={String(score)} type="h2" />
+      {items.current.map((item) => (
+        <Animated.View
+          key={item.index}
+          style={{
+            ...item.position.getLayout(),
+            position: 'absolute',
+          }}
+        >
           <TouchableOpacity
-            containerStyle={{
-              alignItems: 'center',
-              borderColor: colors.border.accent,
-              borderWidth: 1,
-              borderRadius: item.radius,
-              flex: 1,
-              padding: padding(1),
+            onPress={handlePress(item.index)}
+            style={{
               height: item.radius * 2,
-              justifyContent: 'center',
-              position: 'absolute',
               width: item.radius * 2,
+              borderRadius: item.radius,
+              borderWidth: 1,
+              justifyContent: 'center',
+              borderColor: colors.border.accent,
             }}
-            onPress={onPress({ index })}
           >
-            <Text adjustsFontSizeToFit title={String(index)} type="h3" />
+            <Text
+              adjustsFontSizeToFit
+              center
+              title={String(item.index)}
+              type="h4"
+            />
           </TouchableOpacity>
         </Animated.View>
       ))}
     </>
   );
-};
+});

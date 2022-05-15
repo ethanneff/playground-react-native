@@ -1,6 +1,19 @@
 import { Animated } from 'react-native';
 import { LayoutDimensions } from '../../../../features';
-import { Item } from './types';
+
+export type Item = {
+  dx: number;
+  dy: number;
+  index: number;
+  mass: number;
+  position: Animated.ValueXY;
+  radius: number;
+  x: number;
+  y: number;
+};
+
+const getRandomNumber = (min: number, max: number): number =>
+  Math.random() * (max - min) + min;
 
 const rotate = (dx: number, dy: number, angle: number) => {
   return {
@@ -9,32 +22,98 @@ const rotate = (dx: number, dy: number, angle: number) => {
   };
 };
 
-export const resolveItemCollision = (
-  particle: Item,
-  otherParticle: Item,
-  maxSpeed: number,
-): void => {
-  const xVelocityDiff = particle.dx - otherParticle.dx;
-  const yVelocityDiff = particle.dy - otherParticle.dy;
+export const getNextDraw = (item: Item, layout: LayoutDimensions): Item => {
+  const next = { ...item };
 
-  const xDist = otherParticle.x - particle.x;
-  const yDist = otherParticle.y - particle.y;
+  next.x += next.dx;
+  next.y += next.dy;
+
+  const top = next.x - layout.x;
+  if (top <= 0) {
+    next.dx = -next.dx;
+    next.x = 0;
+  }
+  const right = layout.width - layout.x - next.x - next.radius * 2;
+  if (right <= 0) {
+    next.dx = -next.dx;
+    next.x = layout.x + layout.width - next.radius * 2;
+  }
+  const left = next.y - layout.y;
+  if (left <= 0) {
+    next.dy = -next.dy;
+    next.y = layout.y;
+  }
+  const bottom = layout.height - layout.y - next.y - next.radius * 2;
+  if (bottom <= 0) {
+    next.dy = -next.dy;
+    next.y = layout.y + layout.height - next.radius * 2;
+  }
+
+  return next;
+};
+
+type GetInitialItemsProps = {
+  count: number;
+  layout: LayoutDimensions;
+  radius: number;
+  speed: number;
+};
+
+export const getInitialItems = ({
+  count,
+  speed,
+  layout,
+  radius,
+}: GetInitialItemsProps): Item[] => {
+  const items: Item[] = [];
+
+  for (let i = 0; i < count; i++) {
+    const coordinate = {
+      x: getRandomNumber(layout.x, layout.x + layout.width - radius),
+      y: getRandomNumber(layout.y, layout.y + layout.height - radius),
+    };
+    items.push({
+      index: i,
+      ...coordinate,
+      position: new Animated.ValueXY(coordinate),
+      dx: getRandomNumber(-speed, speed),
+      dy: getRandomNumber(-speed, speed),
+      radius,
+      mass: radius,
+    });
+  }
+
+  return items;
+};
+
+export const getItemOverlap = (a: Item, b: Item): boolean => {
+  const ac = { x: a.x + a.radius, y: a.y + a.radius };
+  const bc = { x: b.x + b.radius, y: b.y + b.radius };
+  const distSq = (ac.x - bc.x) * (ac.x - bc.x) + (ac.y - bc.y) * (ac.y - bc.y);
+  const radSq = (a.radius + b.radius) * (a.radius + b.radius);
+  return distSq <= radSq;
+};
+
+// TODO: make better without velocity change
+export const getItemCollision = (a: Item, b: Item, maxSpeed: number): void => {
+  const xVelocityDiff = a.dx - b.dx;
+  const yVelocityDiff = a.dy - b.dy;
+
+  const xDist = b.x - a.x;
+  const yDist = b.y - a.y;
 
   // Prevent accidental overlap of particles
   if (xVelocityDiff * xDist + yVelocityDiff * yDist >= 0) {
     // Grab angle between the two colliding particles
-    const angle = -Math.atan2(
-      otherParticle.y - particle.y,
-      otherParticle.x - particle.x,
-    );
+    const angle = -Math.atan2(b.y - a.y, b.x - a.x);
 
     // Store mass in var for better readability in collision equation
-    const m1 = particle.mass;
-    const m2 = otherParticle.mass;
+    const m1 = a.mass;
+    const m2 = b.mass;
 
     // Velocity before equation
-    const u1 = rotate(particle.dx, particle.dy, angle);
-    const u2 = rotate(otherParticle.dx, otherParticle.dy, angle);
+    const u1 = rotate(a.dx, a.dy, angle);
+    const u2 = rotate(b.dx, b.dy, angle);
 
     // Velocity after 1d collision equation
     const v1 = {
@@ -51,128 +130,10 @@ export const resolveItemCollision = (
     const vFinal2 = rotate(v2.dx, v2.dy, -angle);
 
     // Swap particle velocities for realistic bounce effect
-    particle.dx = Math.min(vFinal1.x, maxSpeed);
-    particle.dy = Math.min(vFinal1.y, maxSpeed);
+    a.dx = Math.min(vFinal1.x, maxSpeed);
+    a.dy = Math.min(vFinal1.y, maxSpeed);
 
-    otherParticle.dx = Math.min(vFinal2.x, maxSpeed);
-    otherParticle.dy = Math.min(vFinal2.y, maxSpeed);
-  }
-};
-
-type OverlapProps = {
-  aRadius: number;
-  aX: number;
-  aY: number;
-  bRadius: number;
-  bX: number;
-  bY: number;
-  center: boolean;
-};
-
-export const getOverlap = ({
-  aX,
-  aY,
-  aRadius,
-  bX,
-  bY,
-  bRadius,
-  center,
-}: OverlapProps): boolean => {
-  const aCenter = { x: aX + aRadius, y: aY + aRadius };
-  const bCenter = { x: bX + bRadius, y: bY + bRadius };
-  const dx = center ? aCenter.x - bCenter.x : aX - bX;
-  const dy = center ? aCenter.y - bCenter.y : aY - bY;
-  const radius = aRadius + bRadius;
-  const distance = Math.sqrt(dx * dx + dy * dy);
-  return distance <= radius;
-};
-
-export const getRandomNumber = (min: number, max: number): number =>
-  Math.random() * (max - min) + min;
-
-type GetItems = {
-  canvas: LayoutDimensions;
-  count: number;
-  maxMass: number;
-  maxSize: number;
-  maxSpeed: number;
-  minMass: number;
-  minSize: number;
-  minSpeed: number;
-};
-
-export const getItems = ({
-  count,
-  canvas,
-  minSize,
-  maxSize,
-  minSpeed,
-  maxSpeed,
-  minMass,
-  maxMass,
-}: GetItems): Item[] => {
-  const initialItems: Item[] = [];
-
-  for (let i = 0; i < count; i++) {
-    const radius = getRandomNumber(minSize, maxSize);
-    const mass = getRandomNumber(minMass, maxMass);
-    const dx = getRandomNumber(-minSpeed, maxSpeed);
-    const dy = getRandomNumber(-minSpeed, maxSpeed);
-    let x = getRandomNumber(canvas.x, canvas.x + canvas.width - radius);
-    let y = getRandomNumber(canvas.x, canvas.x + canvas.height - radius);
-
-    if (i !== 0)
-      for (let j = 0; j < initialItems.length; j++) {
-        const item = initialItems[j];
-        const overlap = getOverlap({
-          aX: x,
-          aY: y,
-          aRadius: radius,
-          bX: item.x,
-          bY: item.y,
-          bRadius: item.radius,
-          center: false,
-        });
-        if (overlap) {
-          x = getRandomNumber(canvas.x, canvas.x + canvas.width - radius);
-          y = getRandomNumber(canvas.x, canvas.x + canvas.height - radius);
-          j = -1;
-        }
-      }
-
-    initialItems.push({
-      index: i,
-      x,
-      y,
-      dx,
-      dy,
-      radius,
-      mass,
-      position: new Animated.ValueXY({ x, y }),
-    });
-  }
-
-  return initialItems;
-};
-
-export const resolveBoundCollision = (
-  item: Item,
-  canvas: LayoutDimensions,
-): void => {
-  if (item.x <= canvas.x) {
-    item.dx = -item.dx;
-    item.x = canvas.x;
-  }
-  if (item.x + 2 * item.radius >= canvas.x + canvas.width) {
-    item.dx = -item.dx;
-    item.x = canvas.x + canvas.width - 2 * item.radius;
-  }
-  if (item.y <= canvas.y) {
-    item.dy = -item.dy;
-    item.y = canvas.y;
-  }
-  if (item.y + 2 * item.radius >= canvas.y + canvas.height) {
-    item.dy = -item.dy;
-    item.y = canvas.y + canvas.height - 2 * item.radius;
+    b.dx = Math.min(vFinal2.x, maxSpeed);
+    b.dy = Math.min(vFinal2.y, maxSpeed);
   }
 };
