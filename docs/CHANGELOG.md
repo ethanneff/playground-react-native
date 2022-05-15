@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.61.12](https://github.com/ethanneff/playground-react-native/compare/v2.61.11...v2.61.12) (2022-05-15)
+
+
+### Bug Fixes
+
+* correct bouncing balls and papi jump ([88ceba5](https://github.com/ethanneff/playground-react-native/commit/88ceba51ac8c467aa727fa1041c0307f3aeb7d01))
+
 ## [2.61.11](https://github.com/ethanneff/playground-react-native/compare/v2.61.10...v2.61.11) (2022-05-10)
 
 
