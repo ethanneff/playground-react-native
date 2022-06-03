@@ -21,7 +21,7 @@ export const ListHeader = memo(function ListHeader({
   const item = useRootSelector((s) => s.completeItem.items[itemId]);
 
   const onSave = useCallback(
-    (title) => {
+    (title: string) => {
       dispatch(updateItem({ ...item, title }));
       Keyboard.dismiss();
     },

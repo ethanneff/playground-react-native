@@ -35,7 +35,7 @@ export const LogIn = memo(function LogIn() {
   const onSubmit = useCallback(() => {
     if (!state.completeForm) return;
     const { user, items } = getDefaultUserTemplate();
-    items.map((item) => dispatch(createItem(item)));
+    items.forEach((item) => dispatch(createItem(item)));
     dispatch(loadUser({ ...user, email: form.current.email }));
   }, [dispatch, state.completeForm]);
 

@@ -5,6 +5,6 @@ export const useDriver = (): boolean => {
   return !(
     process.env.JEST_WORKER_ID ||
     Platform.OS === 'web' ||
-    DeviceInfo.isEmulator()
+    DeviceInfo.isEmulatorSync()
   );
 };

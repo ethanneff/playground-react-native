@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import React, { memo } from 'react';
-import { Image, View } from 'react-native';
+import { Image, ImageSourcePropType, View } from 'react-native';
 import { RelativeDate, Text } from '../../../../components';
 import { padding, useColors } from '../../../../features';
 import { Message } from './Messages';
@@ -14,7 +14,8 @@ type Props = {
 
 export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
   const colors = useColors();
-  const image = require('../../../../assets/line-chart.png');
+  const image =
+    require('../../../../assets/line-chart.png') as ImageSourcePropType;
 
   return (
     <View

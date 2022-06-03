@@ -5,6 +5,7 @@ import {
   Animated,
   Image,
   ImageSourcePropType,
+  LayoutChangeEvent,
   PanResponder,
   View,
 } from 'react-native';
@@ -52,7 +53,7 @@ const SwipeCard = memo(function SwipeCard({
   const position = new Animated.ValueXY();
 
   const onLayout = useCallback(
-    (event) => {
+    (event: LayoutChangeEvent) => {
       cardWidth.current = event.nativeEvent.layout.width;
     },
     [cardWidth],

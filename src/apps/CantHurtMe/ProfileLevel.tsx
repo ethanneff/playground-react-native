@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, ImageSourcePropType, StyleSheet, View } from 'react-native';
 import { Text, TouchableOpacity } from '../../components';
 import { padding, useColors } from '../../features';
 
@@ -9,7 +9,7 @@ type Props = {
 
 export const ProfileLevel = ({ onPress }: Props): JSX.Element => {
   const colors = useColors();
-  const image = require('../../assets/placeholder.png');
+  const image = require('../../assets/placeholder.png') as ImageSourcePropType;
   const width = 0.2;
   const level = 22;
   const styles = StyleSheet.create({

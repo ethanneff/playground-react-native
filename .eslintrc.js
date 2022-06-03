@@ -11,6 +11,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:typescript-sort-keys/recommended',
   ],
   ignorePatterns: [
@@ -24,6 +25,9 @@ module.exports = {
   ],
   env: { node: true },
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: ['./tsconfig.json'],
+  },
   plugins: [
     'react',
     'react-hooks',

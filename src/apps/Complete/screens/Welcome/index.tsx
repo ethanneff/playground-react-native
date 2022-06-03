@@ -135,7 +135,7 @@ export const Welcome = memo(function Welcome() {
       };
       dispatch(login(data));
       const { user, items } = getDefaultUserTemplate();
-      items.map((item) => dispatch(createItem(item)));
+      items.forEach((item) => dispatch(createItem(item)));
       dispatch(loadUser({ ...user, email }));
     },
     [dispatch],

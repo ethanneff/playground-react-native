@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ListRenderItem, StyleSheet, View } from 'react-native';
 import { Card, FlatList, Icon, Text, TouchableOpacity } from '../../components';
 import { padding, useColors } from '../../features';
 import { getLandscapeOrientation, useRootSelector } from '../../redux';
@@ -31,7 +31,7 @@ export const List = memo(function List({
 
   const onPress = useCallback(() => undefined, []);
 
-  const renderItem = useCallback(
+  const renderItem = useCallback<ListRenderItem<string>>(
     ({ item, index }) => {
       const data = app.goals.byId[item];
       return (

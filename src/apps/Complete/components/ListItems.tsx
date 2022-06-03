@@ -17,7 +17,7 @@ export const ListItems = memo(function ListItems({
   const listRef = useRef<FlatListRef>(null);
   const cardsLength = useRef(list.length);
 
-  const onKeyExtractor = useCallback((item) => item, []);
+  const onKeyExtractor = useCallback((item: string) => item, []);
 
   const onCardSizeChange = useCallback(() => {
     if (list.length > cardsLength.current) {

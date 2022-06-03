@@ -1,12 +1,13 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import { Item } from './Item';
+import { ReminderType } from './types';
 
 type Props = {
-  buttons: string[];
+  buttons: ReminderType[];
   horizontal?: boolean;
-  onChange: (id: string) => () => void;
-  value: string;
+  onChange: (id: ReminderType) => () => void;
+  value: ReminderType;
 };
 
 export const Radio = memo(function Radio({

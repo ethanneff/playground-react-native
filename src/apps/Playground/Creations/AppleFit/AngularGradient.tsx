@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, ImageSourcePropType, StyleSheet, View } from 'react-native';
 import { MaskedView } from '../../../../components';
 
 type Props = {
@@ -23,7 +23,8 @@ export const AngularGradient = ({
     image: { borderRadius, height: size, width: size },
     view: { backgroundColor: end, borderRadius, flex: 1 },
   });
-  const Mask = <Image source={require('./mask.png')} style={styles.image} />;
+  const image = require('./mask.png') as ImageSourcePropType;
+  const Mask = <Image source={image} style={styles.image} />;
   return (
     <View style={styles.container}>
       <MaskedView maskElement={Mask} style={styles.flex}>

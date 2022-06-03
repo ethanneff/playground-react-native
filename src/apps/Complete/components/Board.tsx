@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { View } from 'react-native';
+import { ListRenderItem, View } from 'react-native';
 import { FlatList } from '../../../components';
 import { useRootSelector } from '../../../redux';
 import { completeConfig } from '../utils';
@@ -19,9 +19,13 @@ export const Board = memo(function Board({
 }: BoardProps) {
   const listSize = listWidth + completeConfig.padding;
   const board = useRootSelector((s) => s.completeItem.items[projectItemId]);
-  const getItemId = useCallback((item) => item, []);
+  const getItemId = useCallback((item: string) => item, []);
   const getItemLayout = useCallback(
-    (_, index) => ({ length: listSize, offset: listSize * index, index }),
+    (_, index: number) => ({
+      length: listSize,
+      offset: listSize * index,
+      index,
+    }),
     [listSize],
   );
 
@@ -36,7 +40,7 @@ export const Board = memo(function Board({
     );
   }, [board.id, listWidth]);
 
-  const renderList = useCallback(
+  const renderList = useCallback<ListRenderItem<string>>(
     ({ item }) => {
       return (
         <List

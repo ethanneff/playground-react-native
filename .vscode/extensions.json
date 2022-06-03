@@ -1,19 +1,23 @@
 {
   "recommendations": [
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
     "formulahendry.auto-complete-tag",
-    "gimenete.github-linker",
-    "gurumukhi.selected-lines-count",
-    "humao.rest-client",
-    "mohsen1.prettify-json",
-    "ms-vscode.sublime-keybindings",
-    "ms-vscode.wordcount",
-    "quicktype.quicktype",
     "steoates.autoimport",
+    "robertz.code-snapshot",
     "streetsidesoftware.code-spell-checker",
-    "tyriar.sort-lines",
+    "ms-azuretools.vscode-docker",
+    "dbaeumer.vscode-eslint",
     "waderyan.gitblame",
-    "yzhang.markdown-all-in-one"
+    "GitHub.copilot",
+    "gimenete.github-linker",
+    "albymor.increment-selection",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "yzhang.markdown-all-in-one",
+    "quicktype.quicktype",
+    "esbenp.prettier-vscode",
+    "mohsen1.prettify-json",
+    "gurumukhi.selected-lines-count",
+    "Tyriar.sort-lines",
+    "ms-vscode.sublime-keybindings",
+    "ms-vscode.wordcount"
   ]
 }

@@ -7,9 +7,9 @@ import { Location } from './Location';
 import { OneTime } from './OneTime';
 import { Radio } from './Radio';
 import { Repeat } from './Repeat';
+import { ReminderType } from './types';
 
-type ReminderType = 'One time' | 'Repeat' | 'Location';
-const reminderTypes: ReminderType[] = ['One time', 'Repeat', 'Location'];
+const reminderTypes: ReminderType[] = ['one time', 'repeat', 'location'];
 
 type Props = {
   onBackgroundPress: () => void;
@@ -22,7 +22,7 @@ export const Create = memo(function Create({
   onOneTimePress,
   onLocationPress,
 }: Props) {
-  const [state, setState] = useState<ReminderType>('One time');
+  const [state, setState] = useState<ReminderType>('one time');
   const styles = StyleSheet.create({
     section: {
       paddingBottom: padding(2),
@@ -34,7 +34,7 @@ export const Create = memo(function Create({
   });
 
   const handleReminderTypePress = useCallback(
-    (type) => () => setState(type),
+    (type: ReminderType) => () => setState(type),
     [],
   );
 
@@ -48,11 +48,11 @@ export const Create = memo(function Create({
         value={state}
       />
       <Text style={styles.section} title="Reminder time" type="overline" />
-      {state === 'One time' ? (
+      {state === 'one time' ? (
         <OneTime onPress={onOneTimePress} />
-      ) : state === 'Repeat' ? (
+      ) : state === 'repeat' ? (
         <Repeat />
-      ) : state === 'Location' ? (
+      ) : state === 'location' ? (
         <Location onPress={onLocationPress} />
       ) : (
         <Text title="invalid form type" />
