@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.61.13](https://github.com/ethanneff/playground-react-native/compare/v2.61.12...v2.61.13) (2022-05-18)
+
+
+### Bug Fixes
+
+* change font family to fira code ([22cba7f](https://github.com/ethanneff/playground-react-native/commit/22cba7fe56cdc40975e7012b1288f75e5049fd1d))
+
 ## [2.61.12](https://github.com/ethanneff/playground-react-native/compare/v2.61.11...v2.61.12) (2022-05-15)
 
 
