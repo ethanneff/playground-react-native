@@ -10,6 +10,10 @@ export FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD=''
 export GIT_AUTH=''
 ```
 
+## Certs
+
+from https://github.com/ethanneff/playground-react-native-certs to `/certs`
+
 ## Commands
 
 ```sh
