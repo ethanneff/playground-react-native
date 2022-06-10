@@ -1,5 +1,6 @@
 {
   "editor.formatOnSave": true,
+  "typescript.validate.enable": true,
   "files.insertFinalNewline": true,
   "editor.codeActionsOnSave": ["source.organizeImports", "source.fixAll"],
   "editor.fontFamily": "Fira Code",
