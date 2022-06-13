@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.61.14](https://github.com/ethanneff/playground-react-native/compare/v2.61.13...v2.61.14) (2022-06-03)
+
+
+### Bug Fixes
+
+* better type safety ([a6fad8d](https://github.com/ethanneff/playground-react-native/commit/a6fad8dee16857a5be10884ab1666134f78a0118))
+
 ## [2.61.13](https://github.com/ethanneff/playground-react-native/compare/v2.61.12...v2.61.13) (2022-05-18)
 
 
