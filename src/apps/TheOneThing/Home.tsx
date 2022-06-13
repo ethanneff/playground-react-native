@@ -60,20 +60,21 @@ const Section = ({
   return (
     <Card>
       <Text title={title} type="h4" />
-      {subtitle && (
+      {subtitle ? (
         <Text
           emphasis="medium"
           style={{ paddingVertical: padding(1) }}
           title={subtitle}
           type="subtitle1"
         />
-      )}
+      ) : null}
       <View style={{ paddingTop: padding(2) }}>
-        {description && <Text title={description} />}
-        {items &&
-          items.map((item, index) => (
-            <ChecklistItem index={index} item={item} key={item} />
-          ))}
+        {description ? <Text title={description} /> : null}
+        {items
+          ? items.map((item, index) => (
+              <ChecklistItem index={index} item={item} key={item} />
+            ))
+          : null}
       </View>
     </Card>
   );

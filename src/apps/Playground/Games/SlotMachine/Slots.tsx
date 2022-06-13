@@ -51,7 +51,7 @@ const getWildCards = (
   reels: string[],
 ): WildCards => {
   const wildCards: WildCards = [];
-  Object.keys(combinations).map((combination) => {
+  Object.keys(combinations).forEach((combination) => {
     const unicodeCombination = [...(combination as any)];
     if (unicodeCombination.length < reels.length)
       wildCards.push({ line: combination, amount: combinations[combination] });

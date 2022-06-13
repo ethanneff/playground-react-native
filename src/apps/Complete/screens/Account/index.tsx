@@ -82,7 +82,9 @@ export const Account = memo(function Account() {
           <Text center emphasis="medium" title="..." type="h4" />
         </Card>
         <Button onPress={onLogout} title="logout" />
-        {response.error && <Text color="negative" title={response.error} />}
+        {response.error ? (
+          <Text color="negative" title={response.error} />
+        ) : null}
         <Button onPress={onNavToAdmin} title="go to admin" />
       </ScrollView>
     </Screen>

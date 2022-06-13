@@ -158,7 +158,7 @@ export const Welcome = memo(function Welcome() {
           </View>
         </View>
       </Screen>
-      {showLogin && (
+      {showLogin ? (
         <Login
           onBackgroundPress={onToggleLogin}
           onSuccess={onLoginSuccess}
@@ -168,7 +168,7 @@ export const Welcome = memo(function Welcome() {
           showGoogle
           showPhone
         />
-      )}
+      ) : null}
     </>
   );
 });

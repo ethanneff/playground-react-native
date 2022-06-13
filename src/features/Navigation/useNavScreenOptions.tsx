@@ -55,9 +55,9 @@ export const useNavScreenOptions = (): UseNavScreenOptions => {
               }}
             >
               <Icon color={iconColor} name={name} size={size} />
-              {titleShown && (
+              {titleShown ? (
                 <Text emphasis={emphasis} title={title} type="caption" />
-              )}
+              ) : null}
             </View>
           );
         },

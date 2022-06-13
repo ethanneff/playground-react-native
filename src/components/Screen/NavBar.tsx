@@ -54,22 +54,22 @@ export const NavBar = memo(function NavBar({
     <>
       <View style={styles.container}>
         <NavButton icon={leftIcon} onPress={onLeftPress} testID="leftNav" />
-        {secondary && (
+        {secondary ? (
           <NavButton
             icon={secondLeftIcon}
             onPress={onSecondLeftPress}
             testID="secondLeftNav"
           />
-        )}
+        ) : null}
         <Text center flex numberOfLines={1} title={title} type="h4" />
-        {secondary && (
+        {secondary ? (
           <NavButton
             icon={secondRightIcon}
             notLeft
             onPress={onSecondRightPress}
             testID="secondRightNav"
           />
-        )}
+        ) : null}
         <NavButton
           icon={rightIcon}
           notLeft

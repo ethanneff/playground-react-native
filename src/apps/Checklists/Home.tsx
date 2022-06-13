@@ -76,7 +76,7 @@ export const Home = memo(function Checklists() {
           <Icon color="primaryB" fab name="plus" />
         </TouchableOpacity>
       </Screen>
-      {showLogin && <LoginFlow onBackgroundPress={onToggleLogin} />}
+      {showLogin ? <LoginFlow onBackgroundPress={onToggleLogin} /> : null}
     </>
   );
 });

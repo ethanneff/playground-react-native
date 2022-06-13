@@ -68,7 +68,9 @@ export const Item = memo(function ReminderItem({
             <Text style={styles.subtitle} title={description} type="caption" />
           )}
         </View>
-        {icon && <Icon name={icon} size={padding(5)} style={styles.icon} />}
+        {icon ? (
+          <Icon name={icon} size={padding(5)} style={styles.icon} />
+        ) : null}
       </View>
     </TouchableOpacity>
   );

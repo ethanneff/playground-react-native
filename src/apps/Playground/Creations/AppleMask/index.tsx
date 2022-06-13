@@ -50,7 +50,7 @@ const Section = ({
             title={description}
             type="subtitle1"
           />
-          {image && (
+          {image ? (
             <Image
               source={image}
               style={{
@@ -59,7 +59,7 @@ const Section = ({
                 height: imageWidth / imageRatio,
               }}
             />
-          )}
+          ) : null}
         </View>
       </View>
     </View>

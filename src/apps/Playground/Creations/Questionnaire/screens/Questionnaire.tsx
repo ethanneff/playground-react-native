@@ -63,11 +63,11 @@ export const Questionnaire = (): JSX.Element => {
         keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
       />
-      {actionSheet && (
+      {actionSheet ? (
         <Modal onBackgroundPress={handleActionSheetClose}>
           <Text title="hello" />
         </Modal>
-      )}
+      ) : null}
     </>
   );
 };

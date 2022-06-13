@@ -13,12 +13,12 @@ export const Game = memo(function Game() {
       onLayout={onLayout}
       style={{ flex: 1, backgroundColor: colors.background.secondary }}
     >
-      {layout && (
+      {layout ? (
         <>
           <Character canvas={layout} />
           <Tracks />
         </>
-      )}
+      ) : null}
     </View>
   );
 });

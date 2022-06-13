@@ -177,7 +177,7 @@ export const Login = memo(function Login({
   return (
     <Modal onBackgroundPress={onBackgroundPress} showOverlay>
       <>
-        {error && <Text center color="negative" title={error} />}
+        {error ? <Text center color="negative" title={error} /> : null}
         {state.screen === 'loading' || type === 'initalizing' ? (
           <Loader />
         ) : state.screen === 'phoneCode' ? (
@@ -372,53 +372,53 @@ export const Login = memo(function Login({
         ) : (
           <>
             <ModalHeader onRightPress={onBackgroundPress} title="Get Started" />
-            {(Platform.OS === 'ios' || showApple) && (
+            {Platform.OS === 'ios' || showApple ? (
               <SignInButton
                 icon="apple"
                 margin
                 onPress={onApple}
                 title="Continue with Apple"
               />
-            )}
-            {showGoogle && (
+            ) : null}
+            {showGoogle ? (
               <SignInButton
                 icon="google"
                 margin
                 onPress={onGoogle}
                 title="Continue with Google"
               />
-            )}
-            {showFacebook && (
+            ) : null}
+            {showFacebook ? (
               <SignInButton
                 icon="facebook"
                 margin
                 onPress={onFacebook}
                 title="Continue with Facebook"
               />
-            )}
-            {showEmail && (
+            ) : null}
+            {showEmail ? (
               <SignInButton
                 icon="email"
                 margin
                 onPress={onScreenChange('signUp')}
                 title="Continue with Email"
               />
-            )}
-            {showPhone && (
+            ) : null}
+            {showPhone ? (
               <SignInButton
                 icon="phone"
                 margin
                 onPress={onScreenChange('phone')}
                 title="Continue with Phone"
               />
-            )}
-            {showAnonymous && (
+            ) : null}
+            {showAnonymous ? (
               <SignInButton
                 icon="account"
                 onPress={onAnonymous}
                 title="Continue Anonymously"
               />
-            )}
+            ) : null}
           </>
         )}
       </>

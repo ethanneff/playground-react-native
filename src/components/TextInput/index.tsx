@@ -211,13 +211,17 @@ export const TextInput = memo(function TextInput({
               (focus && !icon.focus) ||
               (!focus && icon.focus) ? null : (
                 <TouchableOpacity
-                  disabled={icon.required && text.trim().length === 0}
+                  disabled={
+                    icon.required ? text.trim().length === 0 : undefined
+                  }
                   key={`${icon.name}-focus`}
                   onPress={onIconPressInternal(icon)}
                 >
                   <Icon
                     color={icon.color}
-                    disabled={icon.required && text.trim().length === 0}
+                    disabled={
+                      icon.required ? text.trim().length === 0 : undefined
+                    }
                     name={icon.name}
                     padded
                     size={iconHeight}

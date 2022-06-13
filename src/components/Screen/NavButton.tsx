@@ -32,7 +32,7 @@ export const NavButton = memo(function NavButton({
         hidden={!onPress}
         name={icon}
         size={padding(8)}
-        style={notLeft && styles.buttonRight}
+        style={notLeft ? styles.buttonRight : null}
         testID={testID}
       />
     </TouchableOpacity>

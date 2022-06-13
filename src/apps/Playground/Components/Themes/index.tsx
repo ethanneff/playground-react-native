@@ -99,14 +99,14 @@ export const Themes = memo(function Themes() {
       <Card elevation={elevation} key={index} onPress={onPress}>
         <Text title={item.title} type="overline" />
         <Text style={{ marginTop: padding(2) }} title={item.value} type="h4" />
-        {item.target && (
+        {item.target ? (
           <Text
             style={{ marginTop: padding(2) }}
             title={item.target}
             type="body2"
           />
-        )}
-        {item.chart && (
+        ) : null}
+        {item.chart ? (
           <Image
             source={item.chart}
             style={{
@@ -116,8 +116,8 @@ export const Themes = memo(function Themes() {
               width: '100%',
             }}
           />
-        )}
-        {item.button && (
+        ) : null}
+        {item.button ? (
           <Button
             buttonStyle={{ marginTop: padding(2) }}
             center
@@ -125,7 +125,7 @@ export const Themes = memo(function Themes() {
             emphasis="high"
             title={item.button}
           />
-        )}
+        ) : null}
       </Card>
     ),
     [elevation, onPress],

@@ -50,7 +50,7 @@ describe('formatRelativeDate', () => {
   it('3 months ago', () => {
     expect.hasAssertions();
     const date = dayjs().subtract(3, 'month');
-    expect(formatRelativeDate(date)).toBe('12w');
+    expect(formatRelativeDate(date)).toBe('13w');
   });
   it('a year ago', () => {
     expect.hasAssertions();

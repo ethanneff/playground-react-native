@@ -19,7 +19,9 @@ export const BouncingBalls = memo(function BouncingBalls() {
   return (
     <Screen onLeftPress={goBack} title="Bouncing Balls">
       <View onLayout={onLayout} style={styles.container}>
-        {layout && <Balls collision count={2} layout={layout} radius={80} />}
+        {layout ? (
+          <Balls collision count={2} layout={layout} radius={80} />
+        ) : null}
       </View>
     </Screen>
   );

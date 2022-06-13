@@ -326,8 +326,15 @@ exports[`template renders correctly 1`] = `
                           }
                         }
                       >
-                        <RCTSafeAreaView
-                          emulateUnlessSupported={true}
+                        <RNCSafeAreaView
+                          edges={
+                            Array [
+                              "top",
+                              "left",
+                              "right",
+                              "bottom",
+                            ]
+                          }
                           style={
                             Object {
                               "flex": 1,
@@ -415,7 +422,6 @@ exports[`template renders correctly 1`] = `
                             <Text
                               collapsable={false}
                               numberOfLines={1}
-                              onPress={[Function]}
                               style={
                                 Object {
                                   "color": "hsla(0,0%,0%, 1)",
@@ -527,7 +533,7 @@ exports[`template renders correctly 1`] = `
                               <View />
                             </View>
                           </View>
-                        </RCTSafeAreaView>
+                        </RNCSafeAreaView>
                       </View>
                     </View>
                   </View>

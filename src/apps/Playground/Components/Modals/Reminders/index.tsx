@@ -99,23 +99,23 @@ export const Reminders = ({ onComplete }: Props) => {
 
   return (
     <>
-      {form.modals.createReminder && (
+      {form.modals.createReminder ? (
         <Create
           onBackgroundPress={handleCreateReminderClose}
           onLocationPress={handleLocation}
           onOneTimePress={handleOneTimeReminder}
         />
-      )}
-      {form.modals.customDate && (
+      ) : null}
+      {form.modals.customDate ? (
         <Modal onBackgroundPress={handleCustomDateClose} showOverlay>
           <Text title="hello" />
         </Modal>
-      )}
-      {form.modals.location && (
+      ) : null}
+      {form.modals.location ? (
         <Modal onBackgroundPress={handleLocationClose} showOverlay>
           <Text title="location" />
         </Modal>
-      )}
+      ) : null}
     </>
   );
 };

@@ -19,7 +19,7 @@ export const Content = memo(function Content({ sections, center }: Props) {
     <View>
       {sections.map((section) => (
         <View key={v4()} style={styles.section}>
-          {section.title && (
+          {section.title ? (
             <Text
               center={center}
               emphasis={section.titleEmphasis}
@@ -27,7 +27,7 @@ export const Content = memo(function Content({ sections, center }: Props) {
               title={section.title}
               type={section.titleType}
             />
-          )}
+          ) : null}
           {section.paragraphs.map((paragraph) => (
             <Sentence
               center={center}

@@ -58,7 +58,7 @@ export const ListItem = memo(function ListItem({
           ...dropShadow(2),
         }}
       >
-        {showHeader && <ListSection item={item} />}
+        {showHeader ? <ListSection item={item} /> : null}
         <TouchableOpacity
           disabled={future}
           onPress={onPress}

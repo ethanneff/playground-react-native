@@ -326,8 +326,15 @@ exports[`screen renders correctly 1`] = `
                           }
                         }
                       >
-                        <RCTSafeAreaView
-                          emulateUnlessSupported={true}
+                        <RNCSafeAreaView
+                          edges={
+                            Array [
+                              "top",
+                              "left",
+                              "right",
+                              "bottom",
+                            ]
+                          }
                           style={
                             Object {
                               "flex": 1,
@@ -501,7 +508,7 @@ exports[`screen renders correctly 1`] = `
                           >
                             <View />
                           </View>
-                        </RCTSafeAreaView>
+                        </RNCSafeAreaView>
                       </View>
                     </View>
                   </View>

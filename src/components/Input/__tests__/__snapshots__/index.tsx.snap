@@ -442,124 +442,87 @@ exports[`input renders correctly 1`] = `
                             </View>
                           </RNGestureHandlerButton>
                         </View>
-                        <View
-                          style={
-                            Object {
-                              "flexDirection": "row",
-                            }
-                          }
+                        <RNGestureHandlerButton
+                          collapsable={false}
+                          exclusive={true}
+                          handlerTag={4}
+                          handlerType="NativeViewGestureHandler"
+                          onGestureEvent={[Function]}
+                          onGestureHandlerEvent={[Function]}
+                          onGestureHandlerStateChange={[Function]}
+                          onHandlerStateChange={[Function]}
+                          rippleColor={0}
                         >
-                          <RNGestureHandlerButton
+                          <View
+                            accessible={true}
                             collapsable={false}
-                            exclusive={true}
-                            handlerTag={4}
-                            handlerType="NativeViewGestureHandler"
-                            onGestureEvent={[Function]}
-                            onGestureHandlerEvent={[Function]}
-                            onGestureHandlerStateChange={[Function]}
-                            onHandlerStateChange={[Function]}
-                            rippleColor={0}
-                          >
-                            <View
-                              accessible={true}
-                              collapsable={false}
-                              style={
-                                Object {
-                                  "flex": 0,
-                                  "opacity": 1,
-                                }
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "flex": 0,
+                                "flexDirection": "row",
+                                "opacity": 1,
                               }
-                            >
-                              <View
-                                style={
-                                  Array [
-                                    undefined,
-                                    undefined,
-                                    undefined,
-                                    undefined,
-                                    Object {
-                                      "justifyContent": "center",
-                                    },
-                                    undefined,
-                                  ]
-                                }
-                              >
-                                <Text
-                                  allowFontScaling={false}
-                                  selectable={false}
-                                  style={
-                                    Array [
-                                      Object {
-                                        "color": "hsl(7,100%,44.1%)",
-                                        "fontSize": 24,
-                                      },
-                                      Array [
-                                        Object {
-                                          "opacity": 0,
-                                        },
-                                        undefined,
-                                      ],
-                                      Object {
-                                        "fontFamily": "Material Design Icons",
-                                        "fontStyle": "normal",
-                                        "fontWeight": "normal",
-                                      },
-                                      Object {},
-                                    ]
-                                  }
-                                >
-                                  󰀨
-                                </Text>
-                              </View>
-                            </View>
-                          </RNGestureHandlerButton>
-                          <RNGestureHandlerButton
-                            collapsable={false}
-                            exclusive={true}
-                            handlerTag={5}
-                            handlerType="NativeViewGestureHandler"
-                            onGestureEvent={[Function]}
-                            onGestureHandlerEvent={[Function]}
-                            onGestureHandlerStateChange={[Function]}
-                            onHandlerStateChange={[Function]}
-                            rippleColor={0}
+                            }
                           >
                             <View
-                              accessible={true}
-                              collapsable={false}
                               style={
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "borderColor": "transparent",
-                                  "borderRadius": 4,
-                                  "borderWidth": 1,
-                                  "flex": 0,
-                                  "flexDirection": "row",
-                                  "opacity": 0,
-                                  "padding": 0,
-                                  "paddingHorizontal": 0,
-                                }
+                                Array [
+                                  undefined,
+                                  undefined,
+                                  undefined,
+                                  undefined,
+                                  Object {
+                                    "justifyContent": "center",
+                                  },
+                                  undefined,
+                                ]
                               }
                             >
                               <Text
-                                collapsable={false}
-                                onPress={[Function]}
+                                allowFontScaling={false}
+                                selectable={false}
                                 style={
-                                  Object {
-                                    "color": "hsl(7,100%,44.1%)",
-                                    "fontSize": 16,
-                                    "fontWeight": "300",
-                                    "letterSpacing": 0.5,
-                                    "opacity": 1,
-                                    "textAlign": "center",
-                                  }
+                                  Array [
+                                    Object {
+                                      "color": "hsl(7,100%,44.1%)",
+                                      "fontSize": 16,
+                                    },
+                                    Array [
+                                      Object {
+                                        "opacity": 0,
+                                      },
+                                      undefined,
+                                    ],
+                                    Object {
+                                      "fontFamily": "Material Design Icons",
+                                      "fontStyle": "normal",
+                                      "fontWeight": "normal",
+                                    },
+                                    Object {},
+                                  ]
                                 }
                               >
-                                
+                                󰀨
                               </Text>
                             </View>
-                          </RNGestureHandlerButton>
-                        </View>
+                            <Text
+                              collapsable={false}
+                              style={
+                                Object {
+                                  "color": "hsla(7,100%,44.1%, 1)",
+                                  "fontSize": 16,
+                                  "fontWeight": "300",
+                                  "letterSpacing": 0.5,
+                                  "opacity": 0,
+                                  "paddingLeft": 4,
+                                }
+                              }
+                            >
+                               
+                            </Text>
+                          </View>
+                        </RNGestureHandlerButton>
                       </View>
                     </View>
                   </View>

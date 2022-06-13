@@ -80,7 +80,7 @@ export const Journal = memo(function Journal() {
         renderItem={renderItem}
         style={styles.list}
       />
-      {loading && <Loader size="large" style={styles.loading} />}
+      {loading ? <Loader size="large" style={styles.loading} /> : null}
     </Screen>
   );
 });

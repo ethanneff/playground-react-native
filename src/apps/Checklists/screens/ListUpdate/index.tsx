@@ -62,7 +62,7 @@ export default memo(function ChecklistUpdate() {
         <Button onPress={handleSubmit} title="update" />
         <Button color="negative" onPress={handleDeletePress} title="delete" />
       </Screen>
-      {showDeleteModal && (
+      {showDeleteModal ? (
         <Modal onBackgroundPress={handleDeleteCancel}>
           <View>
             <Text title="are you sure" />
@@ -70,7 +70,7 @@ export default memo(function ChecklistUpdate() {
             <Button onPress={handleDelete} title="confirm" />
           </View>
         </Modal>
-      )}
+      ) : null}
     </>
   );
 });

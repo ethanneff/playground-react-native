@@ -92,11 +92,11 @@ export const Questionnaires = (): JSX.Element => {
           }}
         />
       </TouchableOpacity>
-      {actionSheet && (
+      {actionSheet ? (
         <Modal onBackgroundPress={handleActionSheetClose}>
           <Text title="hello" />
         </Modal>
-      )}
+      ) : null}
     </>
   );
 };

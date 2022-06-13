@@ -30,11 +30,13 @@ export const Alert = memo(function Alert({
         title={description}
       />
       <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-        {onCancelPress && <Button onPress={onCancelPress} title="cancel" />}
+        {onCancelPress ? (
+          <Button onPress={onCancelPress} title="cancel" />
+        ) : null}
         <Spacing padding={2} />
-        {onConfirmPress && (
+        {onConfirmPress ? (
           <Button color="accent" onPress={onConfirmPress} title="confirm" />
-        )}
+        ) : null}
       </View>
     </Modal>
   );

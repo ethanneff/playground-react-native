@@ -131,7 +131,7 @@ export const AppleStopWatch = memo(function AppleStopWatch() {
             />
           </ButtonsRow>
         )}
-        {state.laps.length > 0 && state.start === 0 && (
+        {state.laps.length > 0 && state.start === 0 ? (
           <ButtonsRow>
             <ButtonRound
               background={colors.background.negative}
@@ -146,7 +146,7 @@ export const AppleStopWatch = memo(function AppleStopWatch() {
               title="Start"
             />
           </ButtonsRow>
-        )}
+        ) : null}
         <LapsTable laps={state.laps} timer={elapsed} />
       </View>
     </Screen>

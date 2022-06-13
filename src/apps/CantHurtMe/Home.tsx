@@ -31,7 +31,7 @@ export const Home = memo(function CantHurtMeMain() {
           onSettingsPress={handleSettingsPress}
         />
       </Screen>
-      {showModal.profile && (
+      {showModal.profile ? (
         <Modal
           duration={2000}
           onBackgroundPress={handleModalBackgroundPress}
@@ -39,8 +39,8 @@ export const Home = memo(function CantHurtMeMain() {
         >
           <Text title="profile" />
         </Modal>
-      )}
-      {showModal.settings && (
+      ) : null}
+      {showModal.settings ? (
         <Modal
           duration={2000}
           onBackgroundPress={handleModalBackgroundPress}
@@ -48,7 +48,7 @@ export const Home = memo(function CantHurtMeMain() {
         >
           <Text title="settings" />
         </Modal>
-      )}
+      ) : null}
     </>
   );
 });
