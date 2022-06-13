@@ -9,9 +9,10 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
+    // 'plugin:react-perf/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    // 'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:typescript-sort-keys/recommended',
   ],
   ignorePatterns: [
