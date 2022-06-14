@@ -86,7 +86,7 @@
     "uuid": "8.3.2"
   },
   "devDependencies": {
-    "@babel/core": "7.18.2",
+    "@babel/core": "7.18.5",
     "@babel/plugin-proposal-nullish-coalescing-operator": "7.17.12",
     "@babel/plugin-proposal-optional-chaining": "7.17.12",
     "@babel/plugin-transform-arrow-functions": "7.17.12",
@@ -135,7 +135,7 @@
     "jsinspect": "0.12.7",
     "lint-staged": "13.0.1",
     "metro-react-native-babel-preset": "0.71.1",
-    "prettier": "2.6.2",
+    "prettier": "2.7.0",
     "react-native-bundle-visualizer": "3.1.1",
     "react-native-dev-menu": "4.0.2",
     "react-native-flipper": "0.146.1",
