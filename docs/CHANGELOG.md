@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.61.15](https://github.com/ethanneff/playground-react-native/compare/v2.61.14...v2.61.15) (2022-06-13)
+
+
+### Bug Fixes
+
+* add ffi for m1 macs ([8249623](https://github.com/ethanneff/playground-react-native/commit/8249623974646964a2f1b4ebf7a9407e4a56f30a))
+* add react native doctor ([c331255](https://github.com/ethanneff/playground-react-native/commit/c331255ad0d7949eb55a8988347aba14d5a39402))
+* add vscode validate typescript check ([ad3ad65](https://github.com/ethanneff/playground-react-native/commit/ad3ad65ce8e8fdcc87f601e31e218e95dda4f776))
+* correct removed google signin dep ([b1ef0ac](https://github.com/ethanneff/playground-react-native/commit/b1ef0aca443b0c6e063a9a32082b5350c0e190b0))
+* disable some lint rules ([1dd7d45](https://github.com/ethanneff/playground-react-native/commit/1dd7d45e5f50c53c33918da7031a12383181d639))
+* remove apple auth ([ad0c390](https://github.com/ethanneff/playground-react-native/commit/ad0c3903ca3a90d31e8e2e21a18fc07b20be170a))
+* remove unused patch for remove dep ([cb2505d](https://github.com/ethanneff/playground-react-native/commit/cb2505ddfd9c4423dee871ce33fc8f9c828c0773))
+* update cert repo location ([1d0b57d](https://github.com/ethanneff/playground-react-native/commit/1d0b57d9054bd8849edccf982c12474f901c9655))
+* update deps ([1b7528a](https://github.com/ethanneff/playground-react-native/commit/1b7528ac486364aa82996c681cda842ae07e489b))
+* update husky ([d7285c3](https://github.com/ethanneff/playground-react-native/commit/d7285c3c301c5bae2a3c7c16a0fe65be661cab4d))
+* update linting ([569f80c](https://github.com/ethanneff/playground-react-native/commit/569f80cdaacdd7181d63e201b137c40038cb1b01))
+
 ## [2.61.14](https://github.com/ethanneff/playground-react-native/compare/v2.61.13...v2.61.14) (2022-06-03)
 
 
