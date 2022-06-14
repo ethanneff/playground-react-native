@@ -37,6 +37,8 @@ Deploy Android App (Focus)
 * Bonus
 
 - [ ] Notification.show(), alert.show(), actionsheet.show()
+- [ ] remove Questionnaire
+- [ ] remove Checklist
 
 Deploy iOS App (Focus)
 
