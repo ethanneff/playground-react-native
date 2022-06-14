@@ -21,7 +21,11 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
   }, [dispatch]);
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Game of life">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Game of life"
+    >
       <ScrollView
         style={{
           backgroundColor: colors.background.secondary,
@@ -29,7 +33,12 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
         }}
       >
         {loading ? (
-          <Text center emphasis="medium" title="loading..." type="h5" />
+          <Text
+            center
+            emphasis="medium"
+            title="loading..."
+            type="h5"
+          />
         ) : (
           <View>
             <Header />

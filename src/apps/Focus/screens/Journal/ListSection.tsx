@@ -18,8 +18,14 @@ export const ListSection = memo(function ListSection({ item }: Props) {
         padding: padding(2),
       }}
     >
-      <Text title={item.dayOfMonth} type="h4" />
-      <Text title={` ${item.month}, ${item.dayOfWeek}`} type="overline" />
+      <Text
+        title={item.dayOfMonth}
+        type="h4"
+      />
+      <Text
+        title={` ${item.month}, ${item.dayOfWeek}`}
+        type="overline"
+      />
     </View>
   );
 });

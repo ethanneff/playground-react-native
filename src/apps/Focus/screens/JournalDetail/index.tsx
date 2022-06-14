@@ -42,7 +42,10 @@ export const JournalDetail = memo(function JournalDetail() {
         value={form.notes}
       />
       <Text title="goal" />
-      <Text emphasis="low" title="categories..." />
+      <Text
+        emphasis="low"
+        title="categories..."
+      />
     </Modal>
   );
 });

@@ -31,7 +31,10 @@ export const Tag = memo(function Tag({
         paddingVertical: padding(1),
       }}
     >
-      <Text color="primaryA" title={title} />
+      <Text
+        color="primaryA"
+        title={title}
+      />
     </TouchableOpacity>
   );
 });

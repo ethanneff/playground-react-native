@@ -44,14 +44,24 @@ export default memo(function ChecklistCreate() {
 
   const navBack = useCallback(() => navigate('checklists'), [navigate]);
   return (
-    <Screen onLeftPress={navBack} title="Create Checklist">
-      <Input onChangeText={handleNameChange} title="name" value={form.name} />
+    <Screen
+      onLeftPress={navBack}
+      title="Create Checklist"
+    >
+      <Input
+        onChangeText={handleNameChange}
+        title="name"
+        value={form.name}
+      />
       <Input
         onChangeText={handleDescriptionChange}
         title="description"
         value={form.description}
       />
-      <Button onPress={handleSubmit} title="create" />
+      <Button
+        onPress={handleSubmit}
+        title="create"
+      />
     </Screen>
   );
 });

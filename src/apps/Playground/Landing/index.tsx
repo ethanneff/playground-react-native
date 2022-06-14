@@ -24,9 +24,16 @@ export const Landing = memo(function Playground() {
   );
   const renderItem = useCallback<ListRenderItem<string>>(
     ({ item }) => (
-      <TouchableOpacity key={item} onPress={navToItem(item)}>
+      <TouchableOpacity
+        key={item}
+        onPress={navToItem(item)}
+      >
         <View style={{ paddingVertical: padding(2) }}>
-          <Text bold title={item} type="body2" />
+          <Text
+            bold
+            title={item}
+            type="body2"
+          />
         </View>
       </TouchableOpacity>
     ),
@@ -35,7 +42,11 @@ export const Landing = memo(function Playground() {
   const keyExtractor = useCallback((item: string) => item, []);
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Playground">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Playground"
+    >
       <View
         style={{
           flex: 1,
@@ -44,8 +55,14 @@ export const Landing = memo(function Playground() {
         }}
       >
         <Row>
-          <Card flex noPadding>
-            <Title description="component examples" title="storybook" />
+          <Card
+            flex
+            noPadding
+          >
+            <Title
+              description="component examples"
+              title="storybook"
+            />
             <FlatList
               contentContainerStyle={{
                 paddingHorizontal: padding(4),
@@ -58,8 +75,14 @@ export const Landing = memo(function Playground() {
             />
           </Card>
           <Spacing padding={2} />
-          <Card flex noPadding>
-            <Title description="polished modules" title="features" />
+          <Card
+            flex
+            noPadding
+          >
+            <Title
+              description="polished modules"
+              title="features"
+            />
             <FlatList
               contentContainerStyle={{
                 paddingHorizontal: padding(4),
@@ -73,8 +96,14 @@ export const Landing = memo(function Playground() {
           </Card>
         </Row>
         <Row>
-          <Card flex noPadding>
-            <Title description="interactive fun" title="games" />
+          <Card
+            flex
+            noPadding
+          >
+            <Title
+              description="interactive fun"
+              title="games"
+            />
             <FlatList
               contentContainerStyle={{
                 paddingHorizontal: padding(4),
@@ -87,8 +116,14 @@ export const Landing = memo(function Playground() {
             />
           </Card>
           <Spacing padding={2} />
-          <Card flex noPadding>
-            <Title description="misc creations" title="creations" />
+          <Card
+            flex
+            noPadding
+          >
+            <Title
+              description="misc creations"
+              title="creations"
+            />
             <FlatList
               contentContainerStyle={{
                 paddingHorizontal: padding(4),

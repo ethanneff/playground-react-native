@@ -24,7 +24,13 @@ export const FontGroup = memo(function FontGroup({ emphasis }: FontGroupProps) {
         type="h6"
       />
       {sizes.map((c) => (
-        <Text center emphasis={emphasis} key={c} title={c} type={c} />
+        <Text
+          center
+          emphasis={emphasis}
+          key={c}
+          title={c}
+          type={c}
+        />
       ))}
     </View>
   );

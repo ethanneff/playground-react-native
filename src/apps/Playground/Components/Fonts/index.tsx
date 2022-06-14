@@ -8,7 +8,11 @@ export const Fonts = memo(function PlaygroundFonts() {
   const colors = useColors();
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Fonts">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Fonts"
+    >
       <ScrollView
         contentContainerStyle={{ padding: padding(4) }}
         style={{

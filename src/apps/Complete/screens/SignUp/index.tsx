@@ -78,7 +78,10 @@ export const SignUp = memo(function SignUp() {
       backgroundColor={colors.background.secondary}
       onBackgroundPress={navWelcome}
     >
-      <ModalHeader onRightPress={goBack} title="Log in" />
+      <ModalHeader
+        onRightPress={goBack}
+        title="Log in"
+      />
       <TextInput
         autoCorrect={false}
         keyboardType="email-address"

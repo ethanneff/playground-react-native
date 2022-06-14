@@ -37,10 +37,25 @@ export const Graph = ({ data, width, height }: GraphProps) => {
     <View style={{ width, height }}>
       <Svg style={StyleSheet.absoluteFill}>
         <Defs>
-          <LinearGradient id="gradient" x1="50%" x2="50%" y1="0%" y2="100%">
-            <Stop offset="0%" stopColor="#cee3f9" />
-            <Stop offset="80%" stopColor="#ddedfa" />
-            <Stop offset="100%" stopColor="#feffff" />
+          <LinearGradient
+            id="gradient"
+            x1="50%"
+            x2="50%"
+            y1="0%"
+            y2="100%"
+          >
+            <Stop
+              offset="0%"
+              stopColor="#cee3f9"
+            />
+            <Stop
+              offset="80%"
+              stopColor="#ddedfa"
+            />
+            <Stop
+              offset="100%"
+              stopColor="#feffff"
+            />
           </LinearGradient>
         </Defs>
         <Path

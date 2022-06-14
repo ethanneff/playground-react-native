@@ -11,8 +11,15 @@ export const TagGroup = memo(function TagGroup() {
   return (
     <>
       {keys.map((c) => (
-        <View key={v4()} style={{ margin: padding(1) }}>
-          <Tag color={c} onPress={onPress} title={c} />
+        <View
+          key={v4()}
+          style={{ margin: padding(1) }}
+        >
+          <Tag
+            color={c}
+            onPress={onPress}
+            title={c}
+          />
         </View>
       ))}
     </>

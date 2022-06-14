@@ -53,7 +53,10 @@ export default memo(function ChecklistItemCreate() {
   const navItem = useCallback(() => navigate('checklistsList'), [navigate]);
 
   return (
-    <Screen onLeftPress={navItem} title="Create Item">
+    <Screen
+      onLeftPress={navItem}
+      title="Create Item"
+    >
       <Input
         blurOnSubmit
         onChangeText={handleNameChange}
@@ -65,7 +68,10 @@ export default memo(function ChecklistItemCreate() {
         title="description"
         value={form.description}
       />
-      <Button onPress={handleSubmit} title="create" />
+      <Button
+        onPress={handleSubmit}
+        title="create"
+      />
     </Screen>
   );
 });

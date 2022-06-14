@@ -26,7 +26,12 @@ export const Item = memo(function Item({ item, width }: Props) {
   return (
     <View style={styles.item}>
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        {item.icon ? <Icon name={item.icon} size={padding(40)} /> : null}
+        {item.icon ? (
+          <Icon
+            name={item.icon}
+            size={padding(40)}
+          />
+        ) : null}
       </View>
       <View style={{ flex: 1 }}>
         {item.title ? (
@@ -37,7 +42,12 @@ export const Item = memo(function Item({ item, width }: Props) {
             type="h4"
           />
         ) : null}
-        {item.sections ? <Content center sections={item.sections} /> : null}
+        {item.sections ? (
+          <Content
+            center
+            sections={item.sections}
+          />
+        ) : null}
       </View>
     </View>
   );

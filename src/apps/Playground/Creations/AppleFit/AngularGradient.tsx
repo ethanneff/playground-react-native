@@ -24,10 +24,18 @@ export const AngularGradient = ({
     view: { backgroundColor: end, borderRadius, flex: 1 },
   });
   const image = require('./mask.png') as ImageSourcePropType;
-  const Mask = <Image source={image} style={styles.image} />;
+  const Mask = (
+    <Image
+      source={image}
+      style={styles.image}
+    />
+  );
   return (
     <View style={styles.container}>
-      <MaskedView maskElement={Mask} style={styles.flex}>
+      <MaskedView
+        maskElement={Mask}
+        style={styles.flex}
+      >
         <View style={styles.view} />
       </MaskedView>
     </View>

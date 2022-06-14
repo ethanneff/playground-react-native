@@ -12,7 +12,10 @@ export const Items = memo(function ChatMessageItems() {
   const messages = useRootSelector(getActiveChatMessagesOrderByCreatedAt);
   const renderItem = useCallback<ListRenderItem<Message>>(
     ({ item }) => (
-      <Item item={item} marginBottom={item.id !== messages[0].id} />
+      <Item
+        item={item}
+        marginBottom={item.id !== messages[0].id}
+      />
     ),
     [messages],
   );

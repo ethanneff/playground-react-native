@@ -90,15 +90,26 @@ export const Startup = memo(function PlaygroundStartup() {
   const handleSubmit = useCallback(() => undefined, []);
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Weekly Update">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Weekly Update"
+    >
       <KeyboardAwareScrollView
         contentContainerStyle={{ padding: padding(4) }}
         style={{ backgroundColor: colors.background.secondary }}
       >
-        <Text center title={dayjs().format('MMM DD, YYYY')} type="h4" />
+        <Text
+          center
+          title={dayjs().format('MMM DD, YYYY')}
+          type="h4"
+        />
         <Section title="Launch">
           <Text title="Are you launched?" />
-          <Switch onValueChange={handleLaunchChange} value={form.launched} />
+          <Switch
+            onValueChange={handleLaunchChange}
+            value={form.launched}
+          />
           <Spacing padding={2} />
           <Input
             keyboardType="numeric"
@@ -106,7 +117,10 @@ export const Startup = memo(function PlaygroundStartup() {
             title="Weeks to launch?"
             value={form.launchWeeks}
           />
-          <Text hidden={launchSubText.length === 0} title={launchSubText} />
+          <Text
+            hidden={launchSubText.length === 0}
+            title={launchSubText}
+          />
         </Section>
         <Section title="Users">
           <Input

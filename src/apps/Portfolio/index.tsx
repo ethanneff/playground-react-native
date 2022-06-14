@@ -14,12 +14,30 @@ const Stack = createStackNavigator<PortfolioRoutes>();
 export default memo(function Portfolio() {
   return (
     <Stack.Navigator screenOptions={noHeader}>
-      <Stack.Screen component={Landing} name="landing" />
-      <Stack.Screen component={Login} name="login" />
-      <Stack.Screen component={ForgotPassword} name="forgotPassword" />
-      <Stack.Screen component={Home} name="home" />
-      <Stack.Screen component={NotFound} name="notFound" />
-      <Stack.Screen component={Settings} name="settings" />
+      <Stack.Screen
+        component={Landing}
+        name="landing"
+      />
+      <Stack.Screen
+        component={Login}
+        name="login"
+      />
+      <Stack.Screen
+        component={ForgotPassword}
+        name="forgotPassword"
+      />
+      <Stack.Screen
+        component={Home}
+        name="home"
+      />
+      <Stack.Screen
+        component={NotFound}
+        name="notFound"
+      />
+      <Stack.Screen
+        component={Settings}
+        name="settings"
+      />
     </Stack.Navigator>
   );
 });

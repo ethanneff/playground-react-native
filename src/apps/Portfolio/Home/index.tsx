@@ -13,16 +13,32 @@ export const Home = memo(function PortfolioHome() {
   const { onLeftPress } = useAdminNavBack();
   const colors = useColors();
   return (
-    <Screen dropShadow onLeftPress={onLeftPress} title="Home">
+    <Screen
+      dropShadow
+      onLeftPress={onLeftPress}
+      title="Home"
+    >
       <ScrollView
         style={{
           padding: padding(4),
           backgroundColor: colors.background.secondary,
         }}
       >
-        <Button center onPress={navTo('login')} title="logout" />
-        <Button center onPress={navTo('settings')} title="settings" />
-        <Button center onPress={navTo('notFound')} title="not found" />
+        <Button
+          center
+          onPress={navTo('login')}
+          title="logout"
+        />
+        <Button
+          center
+          onPress={navTo('settings')}
+          title="settings"
+        />
+        <Button
+          center
+          onPress={navTo('notFound')}
+          title="not found"
+        />
       </ScrollView>
     </Screen>
   );

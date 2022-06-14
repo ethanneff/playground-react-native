@@ -67,10 +67,26 @@ export const Home = memo(function Home() {
             type="h5"
           />
         </Card>
-        <Activity site="random" title="Be stronger" username="none" />
-        <Activity site="random" title="Ship apps" username="none" />
-        <Activity site="random" title="Master leetcode" username="none" />
-        <Activity site="random" title="Master system design" username="none" />
+        <Activity
+          site="random"
+          title="Be stronger"
+          username="none"
+        />
+        <Activity
+          site="random"
+          title="Ship apps"
+          username="none"
+        />
+        <Activity
+          site="random"
+          title="Master leetcode"
+          username="none"
+        />
+        <Activity
+          site="random"
+          title="Master system design"
+          username="none"
+        />
       </ScrollView>
       <View
         style={{
@@ -86,10 +102,19 @@ export const Home = memo(function Home() {
           onPress={onItemAdd}
           style={{ marginRight: padding(2) }}
         >
-          <Icon backgroundColor="secondary" color="primaryA" fab name="plus" />
+          <Icon
+            backgroundColor="secondary"
+            color="primaryA"
+            fab
+            name="plus"
+          />
         </TouchableOpacity>
         <TouchableOpacity onPress={onItemAdd}>
-          <Icon color="primaryA" fab name="pencil" />
+          <Icon
+            color="primaryA"
+            fab
+            name="pencil"
+          />
         </TouchableOpacity>
       </View>
     </Screen>

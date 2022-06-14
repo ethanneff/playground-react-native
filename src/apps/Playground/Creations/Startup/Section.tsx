@@ -9,7 +9,11 @@ type Props = {
 export const Section = ({ title, children }: Props): JSX.Element => {
   return (
     <Card>
-      <Text emphasis="low" title={title} type="h4" />
+      <Text
+        emphasis="low"
+        title={title}
+        type="h4"
+      />
       <Spacing padding={2} />
       {children}
     </Card>

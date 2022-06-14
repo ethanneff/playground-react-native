@@ -39,13 +39,19 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
   }, []);
 
   return (
-    <Screen onLeftPress={goBack} title="Slot Machine">
+    <Screen
+      onLeftPress={goBack}
+      title="Slot Machine"
+    >
       <ScrollView style={styles.container}>
         <Text title={`win percentage: ${winPercentage}%`} />
         <Text title={`return percentage: ${returnPercentage}%`} />
         <Text title={`${state}`} />
 
-        <Button onPress={onSpin} title="spin" />
+        <Button
+          onPress={onSpin}
+          title="spin"
+        />
         <View
           style={{
             flex: 1,

@@ -55,7 +55,10 @@ export const RecyclerFlatList = <T,>({
   scrollViewProps = {
     showsVerticalScrollIndicator: false,
     refreshControl: (
-      <RefreshControl onRefresh={onRefetch} refreshing={refreshing || false} />
+      <RefreshControl
+        onRefresh={onRefetch}
+        refreshing={refreshing || false}
+      />
     ),
   },
 }: RecyclerFlatListProps<T>) => {

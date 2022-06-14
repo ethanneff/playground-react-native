@@ -137,8 +137,15 @@ const Bet = memo(function Bet({ onBet, disabled, multiplier }: BetProps) {
         alignItems: 'center',
       }}
     >
-      <Text bold emphasis="high" title={`BET X${multiplier}`} />
-      <Icon color="accent" name="lightning-bolt" />
+      <Text
+        bold
+        emphasis="high"
+        title={`BET X${multiplier}`}
+      />
+      <Icon
+        color="accent"
+        name="lightning-bolt"
+      />
     </TouchableOpacity>
   );
 });
@@ -206,8 +213,15 @@ export const Slots = memo(function Slots({
 
   return (
     <View>
-      <Reels lineIndexes={state.lineIndexes} reelsArray={state.reelsArray} />
-      <Bet disabled={disabled} multiplier={multiplier} onBet={onMultiplier} />
+      <Reels
+        lineIndexes={state.lineIndexes}
+        reelsArray={state.reelsArray}
+      />
+      <Bet
+        disabled={disabled}
+        multiplier={multiplier}
+        onBet={onMultiplier}
+      />
       <Text
         center
         emphasis="high"

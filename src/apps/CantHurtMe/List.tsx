@@ -42,7 +42,10 @@ export const List = memo(function List({
             marginLeft: index % 2 === 0 ? 0 : padding(2),
           }}
         >
-          <Card key={data.id} onPress={onPress}>
+          <Card
+            key={data.id}
+            onPress={onPress}
+          >
             <Text
               bold
               center
@@ -50,7 +53,10 @@ export const List = memo(function List({
               title={`Challenge #${index + 1}`}
               type="subtitle1"
             />
-            <Text center title={data.challenge} />
+            <Text
+              center
+              title={data.challenge}
+            />
           </Card>
         </View>
       );

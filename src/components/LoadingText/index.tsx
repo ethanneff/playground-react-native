@@ -52,7 +52,12 @@ export const LoadingText = memo(function LoadingText({
 
   return (
     <View style={containerStyles}>
-      <Text bold center title={title} type="h3" />
+      <Text
+        bold
+        center
+        title={title}
+        type="h3"
+      />
       {ellipsis.map((dot, index) => (
         <Text
           bold

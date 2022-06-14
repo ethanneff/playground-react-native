@@ -56,7 +56,10 @@ export const TicTacToe = memo(function TicTacToe() {
   );
 
   return (
-    <Screen onLeftPress={goBack} title="Tic Tac Toe">
+    <Screen
+      onLeftPress={goBack}
+      title="Tic Tac Toe"
+    >
       <View
         style={{
           flex: 1,
@@ -68,7 +71,10 @@ export const TicTacToe = memo(function TicTacToe() {
       >
         <View>
           {game.board.map((row, i) => (
-            <View key={v4()} style={{ flexDirection: 'row' }}>
+            <View
+              key={v4()}
+              style={{ flexDirection: 'row' }}
+            >
               {row.map((_, j) => (
                 <TouchableOpacity
                   disabled={
@@ -86,7 +92,10 @@ export const TicTacToe = memo(function TicTacToe() {
                     borderColor: colors.background.secondary,
                   }}
                 >
-                  <Text title={getValue(game.board[i][j])} type="h4" />
+                  <Text
+                    title={getValue(game.board[i][j])}
+                    type="h4"
+                  />
                 </TouchableOpacity>
               ))}
             </View>
@@ -94,7 +103,10 @@ export const TicTacToe = memo(function TicTacToe() {
         </View>
         <View style={{ alignItems: 'center' }}>
           <Text title={turnTitle} />
-          <Button onPress={onButtonPress} title={buttonTitle} />
+          <Button
+            onPress={onButtonPress}
+            title={buttonTitle}
+          />
         </View>
       </View>
     </Screen>

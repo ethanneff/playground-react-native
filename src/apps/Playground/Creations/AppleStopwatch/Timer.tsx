@@ -20,9 +20,18 @@ export const Timer = memo(function Timer({ interval, style }: TimerProps) {
   });
   return (
     <View style={styles.timerContainer}>
-      <Text style={style} title={`${pad(minutes)}:`} />
-      <Text style={style} title={`${pad(seconds)}.`} />
-      <Text style={style} title={pad(milliseconds).substr(0, 2)} />
+      <Text
+        style={style}
+        title={`${pad(minutes)}:`}
+      />
+      <Text
+        style={style}
+        title={`${pad(seconds)}.`}
+      />
+      <Text
+        style={style}
+        title={pad(milliseconds).substr(0, 2)}
+      />
     </View>
   );
 });

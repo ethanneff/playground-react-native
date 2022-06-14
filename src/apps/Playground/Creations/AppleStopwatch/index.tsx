@@ -95,9 +95,15 @@ export const AppleStopWatch = memo(function AppleStopWatch() {
   }, [run]);
 
   return (
-    <Screen onLeftPress={goBack} title="Stop Watch">
+    <Screen
+      onLeftPress={goBack}
+      title="Stop Watch"
+    >
       <View style={styles.container}>
-        <Timer interval={interval} style={styles.timer} />
+        <Timer
+          interval={interval}
+          style={styles.timer}
+        />
         {state.laps.length === 0 && (
           <ButtonsRow>
             <ButtonRound
@@ -147,7 +153,10 @@ export const AppleStopWatch = memo(function AppleStopWatch() {
             />
           </ButtonsRow>
         ) : null}
-        <LapsTable laps={state.laps} timer={elapsed} />
+        <LapsTable
+          laps={state.laps}
+          timer={elapsed}
+        />
       </View>
     </Screen>
   );

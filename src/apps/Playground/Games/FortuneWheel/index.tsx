@@ -42,9 +42,18 @@ export const FortuneWheel = memo(function PlaygroundFortuneWheel() {
   // TODO: increase duration based on spin
 
   return (
-    <Screen onLeftPress={goBack} title="FortuneWheel">
-      <Wheel onComplete={onComplete} segments={segments} />
-      <Text center title={String(winner)} />
+    <Screen
+      onLeftPress={goBack}
+      title="FortuneWheel"
+    >
+      <Wheel
+        onComplete={onComplete}
+        segments={segments}
+      />
+      <Text
+        center
+        title={String(winner)}
+      />
     </Screen>
   );
 });

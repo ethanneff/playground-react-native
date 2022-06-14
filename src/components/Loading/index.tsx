@@ -48,7 +48,10 @@ export const Loading = memo(function LoadingScreen({
         disabled={!onBackgroundPress}
         onPress={onPress}
       >
-        <Loader color="primaryB" size="large" />
+        <Loader
+          color="primaryB"
+          size="large"
+        />
       </TouchableOpacity>
     </Animated.View>
   );

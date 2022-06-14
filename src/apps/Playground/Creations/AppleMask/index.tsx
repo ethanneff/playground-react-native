@@ -44,7 +44,11 @@ const Section = ({
           type="h2"
         />
         <View style={{ flex: 1 }}>
-          <Text style={{ marginBottom: padding(4) }} title={title} type="h5" />
+          <Text
+            style={{ marginBottom: padding(4) }}
+            title={title}
+            type="h5"
+          />
           <Text
             style={{ marginBottom: padding(4) }}
             title={description}
@@ -103,14 +107,21 @@ export const AppleMask = memo(function AppleMask() {
   const paddingHorizontal = padding(4);
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Apple Mask">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Apple Mask"
+    >
       <ScrollView
         style={{
           paddingHorizontal: padding(4),
           backgroundColor: colors.background.secondary,
         }}
       >
-        <Text title="Assemble and adjust your Face Shield" type="h2" />
+        <Text
+          title="Assemble and adjust your Face Shield"
+          type="h2"
+        />
         <Text
           style={{ paddingTop: padding(4) }}
           title="To assemble your face shield, follow these steps."

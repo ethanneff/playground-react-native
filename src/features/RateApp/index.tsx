@@ -88,7 +88,10 @@ export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
   }, [completeState, onComplete]);
 
   return (
-    <Modal onBackgroundPress={handleComplete} showOverlay>
+    <Modal
+      onBackgroundPress={handleComplete}
+      showOverlay
+    >
       {form.modal === 'review' ? (
         <>
           <Text
@@ -173,7 +176,12 @@ export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
         </>
       ) : (
         <>
-          <Text center style={styles.title} title="Hello!" type="h4" />
+          <Text
+            center
+            style={styles.title}
+            title="Hello!"
+            type="h4"
+          />
           <Text
             center
             style={styles.title}

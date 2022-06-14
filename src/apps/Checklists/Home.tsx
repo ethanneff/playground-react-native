@@ -31,7 +31,10 @@ export const Home = memo(function Checklists() {
 
   return (
     <>
-      <Screen onLeftPress={onLeftPress} title="Checklists">
+      <Screen
+        onLeftPress={onLeftPress}
+        title="Checklists"
+      >
         <ScrollView
           contentContainerStyle={{
             paddingHorizontal: padding(4),
@@ -46,9 +49,18 @@ export const Home = memo(function Checklists() {
               title="Weekly Goals"
               type="h4"
             />
-            <Text title="1. complete learn plan profit" type="caption" />
-            <Text title="2. ship checklist" type="caption" />
-            <Text title="3. complete 30 leetcode" type="caption" />
+            <Text
+              title="1. complete learn plan profit"
+              type="caption"
+            />
+            <Text
+              title="2. ship checklist"
+              type="caption"
+            />
+            <Text
+              title="3. complete 30 leetcode"
+              type="caption"
+            />
           </Card>
           <Card>
             <Text
@@ -57,12 +69,27 @@ export const Home = memo(function Checklists() {
               title="Daily Habits and Routines"
               type="h4"
             />
-            <Text title="After I wake up" type="caption" />
-            <Text title="After I shower" type="caption" />
-            <Text title="Before I one on one" type="caption" />
-            <Text title="Before I get on the train" type="caption" />
+            <Text
+              title="After I wake up"
+              type="caption"
+            />
+            <Text
+              title="After I shower"
+              type="caption"
+            />
+            <Text
+              title="Before I one on one"
+              type="caption"
+            />
+            <Text
+              title="Before I get on the train"
+              type="caption"
+            />
           </Card>
-          <Button onPress={onToggleLogin} title="showLogin" />
+          <Button
+            onPress={onToggleLogin}
+            title="showLogin"
+          />
         </ScrollView>
         <TouchableOpacity
           onPress={onToggleLogin}
@@ -73,7 +100,11 @@ export const Home = memo(function Checklists() {
             margin: padding(4),
           }}
         >
-          <Icon color="primaryB" fab name="plus" />
+          <Icon
+            color="primaryB"
+            fab
+            name="plus"
+          />
         </TouchableOpacity>
       </Screen>
       {showLogin ? <LoginFlow onBackgroundPress={onToggleLogin} /> : null}

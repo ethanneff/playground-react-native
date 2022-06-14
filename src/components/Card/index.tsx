@@ -83,7 +83,10 @@ export const Card = memo(function Card({
       {child}
     </TouchableOpacity>
   ) : (
-    <View style={containerStyles} testID={testID}>
+    <View
+      style={containerStyles}
+      testID={testID}
+    >
       {child}
     </View>
   );

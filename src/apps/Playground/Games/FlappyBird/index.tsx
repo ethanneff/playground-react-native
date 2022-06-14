@@ -61,7 +61,10 @@ export const FlappyBird = memo(function FlappyBird() {
   const { goBack } = useNavigation();
 
   return (
-    <Screen onLeftPress={goBack} title="Flappy Bird">
+    <Screen
+      onLeftPress={goBack}
+      title="Flappy Bird"
+    >
       <View style={{ flex: 1, backgroundColor: colors.background.secondary }}>
         <Bird />
         <Pillar />

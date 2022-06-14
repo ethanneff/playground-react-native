@@ -119,7 +119,11 @@ export const Activity = memo(function Activity({
       >
         {title ? (
           <TouchableOpacity onPress={refresh}>
-            <Text emphasis="medium" title={title} type="h4" />
+            <Text
+              emphasis="medium"
+              title={title}
+              type="h4"
+            />
           </TouchableOpacity>
         ) : null}
         {state.activity.total ? (
@@ -135,7 +139,11 @@ export const Activity = memo(function Activity({
       ) : state.request === 'failure' ? (
         <>
           <Text title="Missing network connection" />
-          <Button color="negative" onPress={refresh} title="Retry" />
+          <Button
+            color="negative"
+            onPress={refresh}
+            title="Retry"
+          />
         </>
       ) : (
         <>

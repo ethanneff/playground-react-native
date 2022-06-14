@@ -53,22 +53,42 @@ export default memo(function ChecklistUpdate() {
 
   return (
     <>
-      <Screen onLeftPress={navBack} title="Update Checklist">
-        <Input onChangeText={handleNameChange} title="name" value={form.name} />
+      <Screen
+        onLeftPress={navBack}
+        title="Update Checklist"
+      >
+        <Input
+          onChangeText={handleNameChange}
+          title="name"
+          value={form.name}
+        />
         <Input
           onChangeText={handleDescriptionChange}
           title="description"
           value={form.description}
         />
-        <Button onPress={handleSubmit} title="update" />
-        <Button color="negative" onPress={handleDeletePress} title="delete" />
+        <Button
+          onPress={handleSubmit}
+          title="update"
+        />
+        <Button
+          color="negative"
+          onPress={handleDeletePress}
+          title="delete"
+        />
       </Screen>
       {showDeleteModal ? (
         <Modal onBackgroundPress={handleDeleteCancel}>
           <View>
             <Text title="are you sure" />
-            <Button onPress={handleDeleteCancel} title="cancel" />
-            <Button onPress={handleDelete} title="confirm" />
+            <Button
+              onPress={handleDeleteCancel}
+              title="cancel"
+            />
+            <Button
+              onPress={handleDelete}
+              title="confirm"
+            />
           </View>
         </Modal>
       ) : null}

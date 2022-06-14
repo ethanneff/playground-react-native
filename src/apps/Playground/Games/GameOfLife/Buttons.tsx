@@ -25,8 +25,16 @@ export const Buttons = memo(function Buttons() {
         onPress={onStart}
         title={run ? 'stop' : 'start'}
       />
-      <Button emphasis="medium" onPress={onRandom} title="random" />
-      <Button emphasis="medium" onPress={onClear} title="clear" />
+      <Button
+        emphasis="medium"
+        onPress={onRandom}
+        title="random"
+      />
+      <Button
+        emphasis="medium"
+        onPress={onClear}
+        title="clear"
+      />
     </View>
   );
 });

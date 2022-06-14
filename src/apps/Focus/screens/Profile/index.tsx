@@ -8,7 +8,11 @@ export const Profile = memo(function Profile() {
   const { tabBarEdges } = useLayout();
 
   return (
-    <Screen dropShadow edges={tabBarEdges} title="Profile">
+    <Screen
+      dropShadow
+      edges={tabBarEdges}
+      title="Profile"
+    >
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: padding(4),
@@ -36,7 +40,10 @@ export const Profile = memo(function Profile() {
               <Text title="email" />
             </View>
           </View>
-          <Button color="accent" title="upgrade to premium" />
+          <Button
+            color="accent"
+            title="upgrade to premium"
+          />
           <Button title="reset password" />
           <Button title="delete account" />
           <Button title="restore transactions" />

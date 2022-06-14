@@ -39,7 +39,10 @@ export const Reflect = memo(function Reflect() {
   const { tabBarEdges } = useLayout();
 
   return (
-    <Screen edges={tabBarEdges} title="Reflect">
+    <Screen
+      edges={tabBarEdges}
+      title="Reflect"
+    >
       <ScrollView
         contentContainerStyle={{
           padding: padding(4),

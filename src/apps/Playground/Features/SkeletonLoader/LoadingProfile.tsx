@@ -34,7 +34,11 @@ export const LoadingProfile = (): JSX.Element => {
           zIndex: 1,
         }}
       >
-        <SkeletonLoader borderRadius={banner} height={banner} width={banner} />
+        <SkeletonLoader
+          borderRadius={banner}
+          height={banner}
+          width={banner}
+        />
       </View>
       <View style={{ marginTop: banner * 0.5, alignItems: 'center' }}>
         <View style={{ paddingVertical: padding(4) }}>

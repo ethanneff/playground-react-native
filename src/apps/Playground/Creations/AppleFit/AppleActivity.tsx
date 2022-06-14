@@ -57,7 +57,10 @@ export const AppleActivity = ({
   return (
     <View style={styles.container}>
       {rings.map((ring, index) => (
-        <View key={ring.icon} style={styles.overlay}>
+        <View
+          key={ring.icon}
+          style={styles.overlay}
+        >
           <CircularRing
             ring={ring}
             strokeWidth={strokeWidth}
@@ -72,7 +75,10 @@ export const AppleActivity = ({
           />
         </View>
       ))}
-      <CenterCircle backgroundColor={backgroundColor} radius={radius} />
+      <CenterCircle
+        backgroundColor={backgroundColor}
+        radius={radius}
+      />
     </View>
   );
 };

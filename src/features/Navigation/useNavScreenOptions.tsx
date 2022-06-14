@@ -54,9 +54,17 @@ export const useNavScreenOptions = (): UseNavScreenOptions => {
                 width: '100%',
               }}
             >
-              <Icon color={iconColor} name={name} size={size} />
+              <Icon
+                color={iconColor}
+                name={name}
+                size={size}
+              />
               {titleShown ? (
-                <Text emphasis={emphasis} title={title} type="caption" />
+                <Text
+                  emphasis={emphasis}
+                  title={title}
+                  type="caption"
+                />
               ) : null}
             </View>
           );

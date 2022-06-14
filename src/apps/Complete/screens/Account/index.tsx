@@ -33,7 +33,10 @@ export const Account = memo(function Account() {
   }, [dispatch, response.type]);
 
   return (
-    <Screen edges={tabBarEdges} title="Account">
+    <Screen
+      edges={tabBarEdges}
+      title="Account"
+    >
       <ScrollView
         contentContainerStyle={{
           padding: padding(4),
@@ -52,7 +55,12 @@ export const Account = memo(function Account() {
           <Text title={profile?.email || ''} />
           <Text title={String(profile?.emailVerified) || ''} />
           <Text title={profile?.uid || ''} />
-          <Text center emphasis="medium" title="..." type="h4" />
+          <Text
+            center
+            emphasis="medium"
+            title="..."
+            type="h4"
+          />
         </Card>
         <Card margin="bottom">
           <Text
@@ -61,7 +69,12 @@ export const Account = memo(function Account() {
             title="Reminders"
             type="h5"
           />
-          <Text center emphasis="medium" title="..." type="h4" />
+          <Text
+            center
+            emphasis="medium"
+            title="..."
+            type="h4"
+          />
         </Card>
         <Card margin="bottom">
           <Text
@@ -70,7 +83,12 @@ export const Account = memo(function Account() {
             title="Payment"
             type="h5"
           />
-          <Text center emphasis="medium" title="..." type="h4" />
+          <Text
+            center
+            emphasis="medium"
+            title="..."
+            type="h4"
+          />
         </Card>
         <Card margin="bottom">
           <Text
@@ -79,13 +97,27 @@ export const Account = memo(function Account() {
             title="Feedback"
             type="h5"
           />
-          <Text center emphasis="medium" title="..." type="h4" />
+          <Text
+            center
+            emphasis="medium"
+            title="..."
+            type="h4"
+          />
         </Card>
-        <Button onPress={onLogout} title="logout" />
+        <Button
+          onPress={onLogout}
+          title="logout"
+        />
         {response.error ? (
-          <Text color="negative" title={response.error} />
+          <Text
+            color="negative"
+            title={response.error}
+          />
         ) : null}
-        <Button onPress={onNavToAdmin} title="go to admin" />
+        <Button
+          onPress={onNavToAdmin}
+          title="go to admin"
+        />
       </ScrollView>
     </Screen>
   );

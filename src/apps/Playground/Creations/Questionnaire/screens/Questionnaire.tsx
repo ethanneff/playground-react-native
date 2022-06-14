@@ -43,8 +43,14 @@ export const Questionnaire = (): JSX.Element => {
             }}
           >
             <View style={{ flex: 0.9 }}>
-              <Text title={item.title} type="h3" />
-              <Text title={subtitle} type="caption" />
+              <Text
+                title={item.title}
+                type="h3"
+              />
+              <Text
+                title={subtitle}
+                type="caption"
+              />
             </View>
             <TouchableOpacity onPress={handleLongPress(item.id)}>
               <Icon name="dots-horizontal" />

@@ -45,7 +45,10 @@ export const Tracks = memo(function TracksMemo() {
   return (
     <>
       {state.tracks.map((track: TrackPositionWithColor) => (
-        <Track key={v4()} track={track} />
+        <Track
+          key={v4()}
+          track={track}
+        />
       ))}
     </>
   );

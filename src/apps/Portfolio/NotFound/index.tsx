@@ -8,14 +8,21 @@ export const NotFound = memo(function PortfolioNotFound() {
   const colors = useColors();
 
   return (
-    <Screen dropShadow title="404 :(">
+    <Screen
+      dropShadow
+      title="404 :("
+    >
       <ScrollView
         style={{
           padding: padding(4),
           backgroundColor: colors.background.secondary,
         }}
       >
-        <Button center onPress={goBack} title="go back" />
+        <Button
+          center
+          onPress={goBack}
+          title="go back"
+        />
       </ScrollView>
     </Screen>
   );

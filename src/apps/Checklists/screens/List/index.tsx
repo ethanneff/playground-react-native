@@ -42,12 +42,21 @@ export default memo(function Checklist() {
   const renderItem = useCallback<ListRenderItem<ChecklistItem>>(
     ({ item }) => (
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        <Icon color="positive" name="checkbox-marked-circle" />
+        <Icon
+          color="positive"
+          name="checkbox-marked-circle"
+        />
         <TouchableOpacity onPress={handleRemove(item.id)}>
-          <Icon color="negative" name="close-circle" />
+          <Icon
+            color="negative"
+            name="close-circle"
+          />
         </TouchableOpacity>
         <TouchableOpacity onPress={handleToggle(item.id)}>
-          <Icon color="warning" name="clock" />
+          <Icon
+            color="warning"
+            name="clock"
+          />
         </TouchableOpacity>
         <Button
           color={item.completed ? 'accent' : 'primaryA'}
@@ -67,7 +76,10 @@ export default memo(function Checklist() {
   );
 
   return (
-    <Screen onLeftPress={navBack} title="Checklist">
+    <Screen
+      onLeftPress={navBack}
+      title="Checklist"
+    >
       <FlatList
         data={items}
         keyExtractor={keyExtractor}
@@ -75,7 +87,12 @@ export default memo(function Checklist() {
         renderItem={renderItem}
       />
       <TouchableOpacity onPress={navCreate}>
-        <Icon color="primaryA" fab name="plus" right />
+        <Icon
+          color="primaryA"
+          fab
+          name="plus"
+          right
+        />
       </TouchableOpacity>
     </Screen>
   );

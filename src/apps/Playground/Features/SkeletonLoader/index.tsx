@@ -29,7 +29,11 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
   }, [load]);
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Skeleton Loader">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Skeleton Loader"
+    >
       <ScrollView
         contentContainerStyle={{ padding: padding(4) }}
         style={{ backgroundColor: colors.background.secondary }}
@@ -44,8 +48,15 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
           </View>
         ) : (
           <View>
-            <Text center title="loaded" />
-            <Button center onPress={onRetry} title="retry" />
+            <Text
+              center
+              title="loaded"
+            />
+            <Button
+              center
+              onPress={onRetry}
+              title="retry"
+            />
           </View>
         )}
       </ScrollView>

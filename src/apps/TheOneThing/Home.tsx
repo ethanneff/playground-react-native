@@ -35,15 +35,26 @@ const ChecklistItem = ({ item, index }: ChecklistItemProps) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
-        <Icon name={toggle} style={{ paddingRight: padding(2) }} />
+        <Icon
+          name={toggle}
+          style={{ paddingRight: padding(2) }}
+        />
         <View style={{ flex: 1 }}>
           <Text title={`${index + 1}. ${item}`} />
         </View>
       </View>
       <View style={{ flexDirection: 'row' }}>
         {days.map((day) => (
-          <View key={day} style={{ flex: 1 }}>
-            <Text center emphasis="low" title={day} type="caption" />
+          <View
+            key={day}
+            style={{ flex: 1 }}
+          >
+            <Text
+              center
+              emphasis="low"
+              title={day}
+              type="caption"
+            />
           </View>
         ))}
       </View>
@@ -59,7 +70,10 @@ const Section = ({
 }: SectionProps) => {
   return (
     <Card>
-      <Text title={title} type="h4" />
+      <Text
+        title={title}
+        type="h4"
+      />
       {subtitle ? (
         <Text
           emphasis="medium"
@@ -72,7 +86,11 @@ const Section = ({
         {description ? <Text title={description} /> : null}
         {items
           ? items.map((item, index) => (
-              <ChecklistItem index={index} item={item} key={item} />
+              <ChecklistItem
+                index={index}
+                item={item}
+                key={item}
+              />
             ))
           : null}
       </View>
@@ -85,7 +103,11 @@ export const Home = memo(function Home() {
   const { onLeftPress } = useAdminNavBack();
 
   return (
-    <Screen dropShadow onLeftPress={onLeftPress} title="The One Thing">
+    <Screen
+      dropShadow
+      onLeftPress={onLeftPress}
+      title="The One Thing"
+    >
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: padding(4),

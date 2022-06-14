@@ -38,7 +38,11 @@ const ProgressItem = ({ item }: ProgressItemProps) => {
 
   return (
     <TouchableOpacity onPress={onPress}>
-      <Icon color={iconColor} name={iconName} style={{ alignSelf: 'center' }} />
+      <Icon
+        color={iconColor}
+        name={iconName}
+        style={{ alignSelf: 'center' }}
+      />
       <View
         style={{
           borderTopColor: colors.border.primaryA,
@@ -47,7 +51,10 @@ const ProgressItem = ({ item }: ProgressItemProps) => {
           width: padding(12),
         }}
       >
-        <Text center title={item.date.format(dateFormat)} />
+        <Text
+          center
+          title={item.date.format(dateFormat)}
+        />
       </View>
     </TouchableOpacity>
   );

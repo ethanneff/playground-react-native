@@ -84,12 +84,20 @@ export const Carousel = memo(function Carousel({
   }, [duration, loop]);
 
   const renderItem = useCallback<ListRenderItem<CarouselSlide>>(
-    ({ item }) => <Item item={item} width={width} />,
+    ({ item }) => (
+      <Item
+        item={item}
+        width={width}
+      />
+    ),
     [width],
   );
 
   return (
-    <View onTouchStart={onTouchPauseLooping} style={{ flex: 1 }}>
+    <View
+      onTouchStart={onTouchPauseLooping}
+      style={{ flex: 1 }}
+    >
       <FlatList
         data={slides}
         horizontal

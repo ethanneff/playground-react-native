@@ -53,7 +53,11 @@ export const NavBar = memo(function NavBar({
   return (
     <>
       <View style={styles.container}>
-        <NavButton icon={leftIcon} onPress={onLeftPress} testID="leftNav" />
+        <NavButton
+          icon={leftIcon}
+          onPress={onLeftPress}
+          testID="leftNav"
+        />
         {secondary ? (
           <NavButton
             icon={secondLeftIcon}
@@ -61,7 +65,13 @@ export const NavBar = memo(function NavBar({
             testID="secondLeftNav"
           />
         ) : null}
-        <Text center flex numberOfLines={1} title={title} type="h4" />
+        <Text
+          center
+          flex
+          numberOfLines={1}
+          title={title}
+          type="h4"
+        />
         {secondary ? (
           <NavButton
             icon={secondRightIcon}

@@ -54,7 +54,11 @@ export const ButtonRound = memo(function ButtonRound({
       style={styles.button}
     >
       <View style={styles.buttonBorder}>
-        <Text color={color} style={styles.buttonTitle} title={title} />
+        <Text
+          color={color}
+          style={styles.buttonTitle}
+          title={title}
+        />
       </View>
     </TouchableOpacity>
   );

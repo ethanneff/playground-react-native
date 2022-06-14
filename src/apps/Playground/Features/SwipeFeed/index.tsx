@@ -104,7 +104,10 @@ const SwipeCard = memo(function SwipeCard({
         ...dropShadow(4),
       }}
     >
-      <TouchableOpacity onPress={onSwipeComplete} style={{ flex: 1 }}>
+      <TouchableOpacity
+        onPress={onSwipeComplete}
+        style={{ flex: 1 }}
+      >
         <View style={{ flex: 1, flexDirection: 'row' }}>
           {image ? (
             <Image
@@ -123,7 +126,10 @@ const SwipeCard = memo(function SwipeCard({
                 alignItems: 'center',
               }}
             >
-              <Icon name={icon} size={15} />
+              <Icon
+                name={icon}
+                size={15}
+              />
               <Text
                 bold
                 style={{ paddingHorizontal: padding(1) }}
@@ -138,7 +144,10 @@ const SwipeCard = memo(function SwipeCard({
               style={{ flex: 1, paddingTop: padding(2) }}
               title={body}
             />
-            <Text color="positive" title={button.toUpperCase()} />
+            <Text
+              color="positive"
+              title={button.toUpperCase()}
+            />
           </View>
         </View>
       </TouchableOpacity>
@@ -252,7 +261,11 @@ const Badge = memo(function Badge({ count, percent }: BadgeProps) {
           justifyContent: 'center',
         }}
       >
-        <Text adjustsFontSizeToFit color="primaryB" title={`${count}`} />
+        <Text
+          adjustsFontSizeToFit
+          color="primaryB"
+          title={`${count}`}
+        />
       </View>
     </View>
   );
@@ -299,7 +312,10 @@ const SwipeCards = memo(function SwipeCardList({
           onSwipePercentChange={onSwipePercentChange}
         />
       ))}
-      <Badge count={feed.items.length} percent={feed.percent} />
+      <Badge
+        count={feed.items.length}
+        percent={feed.percent}
+      />
     </View>
   ) : null;
 });
@@ -320,7 +336,11 @@ export const SwipeFeed = memo(function SwipeFeed() {
   const colors = useColors();
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Swipe Feed">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Swipe Feed"
+    >
       <ScrollView
         style={{
           padding: padding(4),

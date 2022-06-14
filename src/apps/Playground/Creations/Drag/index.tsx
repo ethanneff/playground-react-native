@@ -88,8 +88,15 @@ export const Drag = memo(function PlaygroundDrag() {
   }, []);
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Drag">
-      <View onLayout={handleCanvas} style={styles.canvas}>
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Drag"
+    >
+      <View
+        onLayout={handleCanvas}
+        style={styles.canvas}
+      >
         <Text
           center
           style={{

@@ -41,8 +41,14 @@ const Implement = () => {
   useTabTap();
   return (
     <ImplementStack.Navigator screenOptions={noHeader}>
-      <ImplementStack.Screen component={Projects} name="projects" />
-      <ImplementStack.Screen component={Project} name="project" />
+      <ImplementStack.Screen
+        component={Projects}
+        name="projects"
+      />
+      <ImplementStack.Screen
+        component={Project}
+        name="project"
+      />
     </ImplementStack.Navigator>
   );
 };
@@ -52,10 +58,22 @@ const Home = () => {
   const { tabScreenOptions } = useNavScreenOptions();
   return (
     <TabStack.Navigator screenOptions={tabScreenOptions({ tabIcons })}>
-      <TabStack.Screen component={Capture} name="plan" />
-      <TabStack.Screen component={Implement} name="implement" />
-      <TabStack.Screen component={Reflect} name="reflect" />
-      <TabStack.Screen component={Account} name="account" />
+      <TabStack.Screen
+        component={Capture}
+        name="plan"
+      />
+      <TabStack.Screen
+        component={Implement}
+        name="implement"
+      />
+      <TabStack.Screen
+        component={Reflect}
+        name="reflect"
+      />
+      <TabStack.Screen
+        component={Account}
+        name="account"
+      />
     </TabStack.Navigator>
   );
 };
@@ -65,10 +83,22 @@ export const Landing = () => {
   const { modalScreenOptions } = useNavScreenOptions();
   return (
     <LandingStack.Navigator screenOptions={modalScreenOptions}>
-      <LandingStack.Screen component={Welcome} name="welcome" />
-      <LandingStack.Screen component={SignUp} name="sign-up" />
-      <LandingStack.Screen component={LogIn} name="log-in" />
-      <LandingStack.Screen component={PasswordReset} name="password-reset" />
+      <LandingStack.Screen
+        component={Welcome}
+        name="welcome"
+      />
+      <LandingStack.Screen
+        component={SignUp}
+        name="sign-up"
+      />
+      <LandingStack.Screen
+        component={LogIn}
+        name="log-in"
+      />
+      <LandingStack.Screen
+        component={PasswordReset}
+        name="password-reset"
+      />
     </LandingStack.Navigator>
   );
 };
@@ -78,8 +108,14 @@ export const Main = () => {
   const { modalScreenOptions } = useNavScreenOptions();
   return (
     <MainStack.Navigator screenOptions={modalScreenOptions}>
-      <MainStack.Screen component={Home} name="home" />
-      <MainStack.Screen component={ItemDetail} name="item-detail" />
+      <MainStack.Screen
+        component={Home}
+        name="home"
+      />
+      <MainStack.Screen
+        component={ItemDetail}
+        name="item-detail"
+      />
     </MainStack.Navigator>
   );
 };

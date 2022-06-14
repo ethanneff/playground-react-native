@@ -13,9 +13,16 @@ export const Board = ({ matrix }: BoardProps): JSX.Element => {
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
       {matrix.map((x) => (
-        <View key={v4()} style={{ flexDirection: 'row' }}>
+        <View
+          key={v4()}
+          style={{ flexDirection: 'row' }}
+        >
           {x.map((y) => (
-            <Cell key={v4()} length={matrix.length} value={y} />
+            <Cell
+              key={v4()}
+              length={matrix.length}
+              value={y}
+            />
           ))}
         </View>
       ))}

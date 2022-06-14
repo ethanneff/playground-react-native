@@ -135,7 +135,11 @@ export const Input = memo(function Input({
   return (
     <View style={containerStyles}>
       <View style={styles.row}>
-        <Text hidden={noTitle} onPress={focusOnInput} title={title} />
+        <Text
+          hidden={noTitle}
+          onPress={focusOnInput}
+          title={title}
+        />
         <Text
           color="secondary"
           hidden={!optional}

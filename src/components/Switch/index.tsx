@@ -17,5 +17,10 @@ export const Switch = memo(function Switch({ value, onValueChange }: Props) {
     },
     [onValueChange],
   );
-  return <GestureSwitch onValueChange={handleValueChange} value={value} />;
+  return (
+    <GestureSwitch
+      onValueChange={handleValueChange}
+      value={value}
+    />
+  );
 });

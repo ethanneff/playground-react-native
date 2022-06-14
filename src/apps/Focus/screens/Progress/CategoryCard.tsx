@@ -90,9 +90,17 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
           alignItems: 'center',
         }}
       >
-        <Text emphasis="high" title={category.name} type="h5" />
+        <Text
+          emphasis="high"
+          title={category.name}
+          type="h5"
+        />
         {category.total ? (
-          <Text emphasis="low" title={`${category.total}h`} type="h6" />
+          <Text
+            emphasis="low"
+            title={`${category.total}h`}
+            type="h6"
+          />
         ) : null}
       </View>
       <FlatList

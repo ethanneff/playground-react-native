@@ -34,7 +34,11 @@ export const Inputs = memo(function Inputs() {
   }, []);
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Inputs">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Inputs"
+    >
       <KeyboardAwareScrollView
         contentContainerStyle={{
           paddingHorizontal: padding(4),
@@ -46,7 +50,12 @@ export const Inputs = memo(function Inputs() {
         }}
       >
         <Card>
-          <Text center emphasis="low" title="border" type="h4" />
+          <Text
+            center
+            emphasis="low"
+            title="border"
+            type="h4"
+          />
           <Input
             containerStyle={{ paddingBottom: padding(2) }}
             error={form.error}
@@ -84,7 +93,12 @@ export const Inputs = memo(function Inputs() {
           />
         </Card>
         <Card>
-          <Text center emphasis="low" title="non border" type="h4" />
+          <Text
+            center
+            emphasis="low"
+            title="non border"
+            type="h4"
+          />
           <TextInput
             onChangeText={handleChange('name')}
             placeholder="jane doe"

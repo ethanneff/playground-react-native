@@ -148,7 +148,10 @@ export const Welcome = memo(function Welcome() {
     <>
       <Screen>
         <View style={{ flex: 1 }}>
-          <Carousel duration={6000} slides={slides} />
+          <Carousel
+            duration={6000}
+            slides={slides}
+          />
           <View style={{ padding: completeConfig.padding }}>
             <Button
               buttonStyle={{ marginBottom: padding(2) }}

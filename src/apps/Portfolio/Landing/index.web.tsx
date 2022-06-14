@@ -33,8 +33,15 @@ const SignInButton = memo(function SignInButton({
         borderRadius: padding(10),
       }}
     >
-      <Icon name={icon} style={{ width: '30px', height: '30px' }} />
-      <Text style={{ paddingLeft: padding(2) }} title={title} type="h4" />
+      <Icon
+        name={icon}
+        style={{ width: '30px', height: '30px' }}
+      />
+      <Text
+        style={{ paddingLeft: padding(2) }}
+        title={title}
+        type="h4"
+      />
     </TouchableOpacity>
   );
 });
@@ -63,7 +70,12 @@ const NavButton = memo(function NavButton({
           : colors.background.primaryA,
       }}
     >
-      <Text bold inverse={inverted} title={title} type="h5" />
+      <Text
+        bold
+        inverse={inverted}
+        title={title}
+        type="h5"
+      />
     </TouchableOpacity>
   );
 });
@@ -90,19 +102,35 @@ export const Header = memo(function Header({ height }: HeaderProps) {
       }}
     >
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        <Image source={image} style={{ width: '30px', height: '30px' }} />
+        <Image
+          source={image}
+          style={{ width: '30px', height: '30px' }}
+        />
         <Text
           bold
           style={{ paddingHorizontal: padding(4) }}
           title="Core"
           type="h3"
         />
-        <NavButton onPress={missingCallback} title="Features" />
-        <NavButton onPress={missingCallback} title="Premium" />
+        <NavButton
+          onPress={missingCallback}
+          title="Features"
+        />
+        <NavButton
+          onPress={missingCallback}
+          title="Premium"
+        />
       </View>
       <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
-        <NavButton onPress={missingCallback} title="Sign In" />
-        <NavButton inverted onPress={missingCallback} title="Sign Up" />
+        <NavButton
+          onPress={missingCallback}
+          title="Sign In"
+        />
+        <NavButton
+          inverted
+          onPress={missingCallback}
+          title="Sign Up"
+        />
       </View>
     </View>
   );
@@ -137,8 +165,16 @@ const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
         style={{ width: iconSize, height: iconSize, alignSelf: 'center' }}
       />
       <View style={{ paddingLeft: padding(2) }}>
-        <Text inverse title={text} type="h5" />
-        <Text inverse title={store} type="h3" />
+        <Text
+          inverse
+          title={text}
+          type="h5"
+        />
+        <Text
+          inverse
+          title={store}
+          type="h3"
+        />
       </View>
     </TouchableOpacity>
   );
@@ -229,8 +265,14 @@ export const Landing = memo(function PortfolioLanding() {
         </View>
         <View style={{ flex: 1 }} />
         <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-          <AppIcon onPress={missingCallback} type="apple" />
-          <AppIcon onPress={missingCallback} type="google-play" />
+          <AppIcon
+            onPress={missingCallback}
+            type="apple"
+          />
+          <AppIcon
+            onPress={missingCallback}
+            type="google-play"
+          />
         </View>
       </Section>
       <Section backgroundColor={colors.background.primaryA}>
@@ -250,8 +292,14 @@ export const Landing = memo(function PortfolioLanding() {
             onPress={onNavLinkPress('mailto:ethan.neff@eneff.com')}
             title="Contact us"
           />
-          <NavButton onPress={missingCallback} title="Terms of Service" />
-          <NavButton onPress={missingCallback} title="Privacy Policy" />
+          <NavButton
+            onPress={missingCallback}
+            title="Terms of Service"
+          />
+          <NavButton
+            onPress={missingCallback}
+            title="Privacy Policy"
+          />
         </View>
       </Section>
     </>

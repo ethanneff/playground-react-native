@@ -19,26 +19,42 @@ export const OKRs = memo(function PlaygroundOKRs() {
   const colors = useColors();
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="OKRs">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="OKRs"
+    >
       <ScrollView
         contentContainerStyle={{ padding: padding(4) }}
         style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>
-          <Text title="Company" type="h6" />
+          <Text
+            title="Company"
+            type="h6"
+          />
           <Card>
-            <Text title="Mission" type="h6" />
+            <Text
+              title="Mission"
+              type="h6"
+            />
             <Text
               title="We strive to offer our customers the lowest possible prices
         the best available selection and the utmost convenience."
             />
           </Card>
           <Card>
-            <Text title="Vision" type="h6" />
+            <Text
+              title="Vision"
+              type="h6"
+            />
             <Text title="To be Earth’s most customer-centric company where customers can find and discover anything they might want to buy online." />
           </Card>
           <Card>
-            <Text title="Values" type="h6" />
+            <Text
+              title="Values"
+              type="h6"
+            />
             <Text title="Customer Obsession" />
             <Text title="Ownership" />
             <Text title="Invent and Simplify" />
@@ -56,14 +72,23 @@ export const OKRs = memo(function PlaygroundOKRs() {
           </Card>
         </Card>
         <Card>
-          <Text title="Product" type="h6" />
+          <Text
+            title="Product"
+            type="h6"
+          />
           <Card>
-            <Text title="Vision" type="h6" />
+            <Text
+              title="Vision"
+              type="h6"
+            />
             <Text title="Jim, owner" />
           </Card>
 
           <Card>
-            <Text title="KPIs" type="h6" />
+            <Text
+              title="KPIs"
+              type="h6"
+            />
             <Text title="Customer Lifetime Value" />
             <Text title="Average Revenue Per user" />
             <Text title="Customer Aquisition Cost" />
@@ -73,7 +98,10 @@ export const OKRs = memo(function PlaygroundOKRs() {
             <Text title="Contributing Margins" />
           </Card>
           <Card>
-            <Text title="Team" type="h6" />
+            <Text
+              title="Team"
+              type="h6"
+            />
             <Text title="Jim, owner" />
             <Text title="Bob, designer" />
             <Text title="Steve, engineer" />
@@ -81,23 +109,38 @@ export const OKRs = memo(function PlaygroundOKRs() {
           </Card>
 
           <Card>
-            <Text title="Objective" type="h6" />
+            <Text
+              title="Objective"
+              type="h6"
+            />
             <Text title="Jim, owner" />
             <Card>
-              <Text title="KeyResult" type="h6" />
+              <Text
+                title="KeyResult"
+                type="h6"
+              />
               <Text title="Jim, owner" />
             </Card>
             <Card>
-              <Text title="KeyResult" type="h6" />
+              <Text
+                title="KeyResult"
+                type="h6"
+              />
               <Text title="Jim, owner" />
             </Card>
             <Card>
-              <Text title="KeyResult" type="h6" />
+              <Text
+                title="KeyResult"
+                type="h6"
+              />
               <Text title="Jim, owner" />
             </Card>
           </Card>
           <Card>
-            <Text title="Objective" type="h6" />
+            <Text
+              title="Objective"
+              type="h6"
+            />
             <Text title="Jim, owner" />
           </Card>
         </Card>

@@ -63,13 +63,25 @@ export const Item = memo(function ReminderItem({
     >
       <View style={styles.container}>
         <View style={styles.textContainer}>
-          <Text style={styles.title} title={title} type="body1" />
+          <Text
+            style={styles.title}
+            title={title}
+            type="body1"
+          />
           {description.length > 0 && (
-            <Text style={styles.subtitle} title={description} type="caption" />
+            <Text
+              style={styles.subtitle}
+              title={description}
+              type="caption"
+            />
           )}
         </View>
         {icon ? (
-          <Icon name={icon} size={padding(5)} style={styles.icon} />
+          <Icon
+            name={icon}
+            size={padding(5)}
+            style={styles.icon}
+          />
         ) : null}
       </View>
     </TouchableOpacity>

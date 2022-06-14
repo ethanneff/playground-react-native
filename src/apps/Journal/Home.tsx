@@ -22,7 +22,11 @@ export const Home = memo(function Home() {
   const handleChangeText = useCallback(() => undefined, []);
 
   return (
-    <Screen dropShadow onLeftPress={onLeftPress} title="Journal">
+    <Screen
+      dropShadow
+      onLeftPress={onLeftPress}
+      title="Journal"
+    >
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: padding(4),
@@ -31,11 +35,19 @@ export const Home = memo(function Home() {
         style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>
-          <Text style={styles.bottom} title="Calendar" type="h4" />
+          <Text
+            style={styles.bottom}
+            title="Calendar"
+            type="h4"
+          />
           <Calendar hiddenDays />
         </Card>
         <Card>
-          <Text style={styles.bottom} title="Record" type="h4" />
+          <Text
+            style={styles.bottom}
+            title="Record"
+            type="h4"
+          />
           <Text
             emphasis="medium"
             style={styles.bottom}
@@ -110,7 +122,11 @@ export const Home = memo(function Home() {
           />
         </Card>
         <Card>
-          <Text style={styles.bottom} title="Review" type="h4" />
+          <Text
+            style={styles.bottom}
+            title="Review"
+            type="h4"
+          />
           <Input
             onChangeText={handleChangeText}
             placeholder="fill me"
@@ -125,7 +141,11 @@ export const Home = memo(function Home() {
           />
         </Card>
         <Card>
-          <Text style={styles.bottom} title="Retro" type="h4" />
+          <Text
+            style={styles.bottom}
+            title="Retro"
+            type="h4"
+          />
           <Input
             onChangeText={handleChangeText}
             placeholder="fill me"

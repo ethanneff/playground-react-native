@@ -138,9 +138,18 @@ export const Questionnaire = memo(function Questionnaire() {
               justifyContent: 'space-around',
             }}
           >
-            <Button onPress={updateProgress(-1)} title="prev" />
-            <Button onPress={updateProgress(1)} title="next" />
-            <Button onPress={updateProgress(2)} title="next2" />
+            <Button
+              onPress={updateProgress(-1)}
+              title="prev"
+            />
+            <Button
+              onPress={updateProgress(1)}
+              title="next"
+            />
+            <Button
+              onPress={updateProgress(2)}
+              title="next2"
+            />
           </View>
         </View>
       );
@@ -149,7 +158,10 @@ export const Questionnaire = memo(function Questionnaire() {
   );
 
   return (
-    <Screen onLeftPress={goBack} title="Questionnaire">
+    <Screen
+      onLeftPress={goBack}
+      title="Questionnaire"
+    >
       <FlatList
         data={data}
         horizontal

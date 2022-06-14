@@ -118,14 +118,21 @@ export const Game = memo(function Game({
           width: '100%',
         }}
       >
-        <Text center title={String(score)} type="h2" />
+        <Text
+          center
+          title={String(score)}
+          type="h2"
+        />
         <View>
           <Button
             color={pause ? 'primaryA' : 'positive'}
             onPress={handleOnPress}
             title={pause ? 'pause' : 'start'}
           />
-          <Button onPress={handleOnPress} title="reset" />
+          <Button
+            onPress={handleOnPress}
+            title="reset"
+          />
         </View>
       </View>
       <Animated.View

@@ -10,7 +10,10 @@ const Stack = createStackNavigator();
 export default memo(function Checklists() {
   return (
     <Stack.Navigator screenOptions={noHeader}>
-      <Stack.Screen component={Home} name="home" />
+      <Stack.Screen
+        component={Home}
+        name="home"
+      />
     </Stack.Navigator>
   );
 });

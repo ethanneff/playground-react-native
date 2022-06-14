@@ -9,7 +9,11 @@ export const Paragraphs = memo(function Paragraphs() {
 
   const colors = useColors();
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Paragraphs">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Paragraphs"
+    >
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: padding(4),

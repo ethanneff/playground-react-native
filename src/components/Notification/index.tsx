@@ -128,16 +128,32 @@ export const Notification = memo(function Notification({
   ).current;
 
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <View style={styles.container} {...panResponder.panHandlers}>
+    <View
+      style={styles.container}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...panResponder.panHandlers}
+    >
       <Animated.View style={[pan.getLayout(), styles.notification]}>
         <View style={styles.notificationSafeArea} />
         <SafeAreaView>
           <View style={styles.modal}>
-            <Icon color="primaryA" hidden name="close" size={padding(8)} />
-            <Text center style={styles.flex} title={title} type="h4" />
+            <Icon
+              color="primaryA"
+              hidden
+              name="close"
+              size={padding(8)}
+            />
+            <Text
+              center
+              style={styles.flex}
+              title={title}
+              type="h4"
+            />
             <TouchableOpacity onPress={onCancel}>
-              <Icon name="close" size={padding(8)} />
+              <Icon
+                name="close"
+                size={padding(8)}
+              />
             </TouchableOpacity>
           </View>
         </SafeAreaView>

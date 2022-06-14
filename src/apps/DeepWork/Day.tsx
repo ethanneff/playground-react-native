@@ -8,7 +8,11 @@ export const Day = memo(function Day() {
   const colors = useColors();
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Comfort Zone">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Comfort Zone"
+    >
       <ScrollView
         contentContainerStyle={{
           padding: padding(4),

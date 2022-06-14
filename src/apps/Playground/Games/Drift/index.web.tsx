@@ -5,5 +5,10 @@ import { Screen } from '../../../../components';
 export const Drift = memo(function Drift() {
   const { goBack } = useNavigation();
 
-  return <Screen onLeftPress={goBack} title="Drift" />;
+  return (
+    <Screen
+      onLeftPress={goBack}
+      title="Drift"
+    />
+  );
 });

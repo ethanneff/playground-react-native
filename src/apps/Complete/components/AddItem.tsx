@@ -102,7 +102,12 @@ export const AddItem = memo(function AddItem({
           submitClear
         />
       ) : (
-        <Button center color="accent" onPress={onAddItemPress} title={title} />
+        <Button
+          center
+          color="accent"
+          onPress={onAddItemPress}
+          title={title}
+        />
       )}
     </View>
   );

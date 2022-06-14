@@ -181,10 +181,16 @@ export const Wheel = memo(function WheelMemo({
               transform: [{ rotate: `-${angleOffset}deg` }],
             }}
           >
-            <G x={radius} y={radius}>
+            <G
+              x={radius}
+              y={radius}
+            >
               {arcs.map((arc, i) => (
                 <G key={v4()}>
-                  <Path d={String(arc.path)} fill={arc.segment.color} />
+                  <Path
+                    d={String(arc.path)}
+                    fill={arc.segment.color}
+                  />
                   <G
                     origin={`${arc.centroid}`}
                     rotation={(i * 360) / segments.length + angleOffset}

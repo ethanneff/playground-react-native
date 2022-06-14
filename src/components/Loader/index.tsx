@@ -32,7 +32,10 @@ export const Loader = memo(function Loader({
 
   return (
     <View style={[styles.container, style]}>
-      <ActivityIndicator color={loaderColor} size={size} />
+      <ActivityIndicator
+        color={loaderColor}
+        size={size}
+      />
     </View>
   );
 });

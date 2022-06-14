@@ -5,5 +5,10 @@ import { Screen } from '../../../../components';
 export const AppleFit = memo(function PlaygroundAppleFit() {
   const { goBack } = useNavigation();
 
-  return <Screen onLeftPress={goBack} title="Apple Fit" />;
+  return (
+    <Screen
+      onLeftPress={goBack}
+      title="Apple Fit"
+    />
+  );
 });

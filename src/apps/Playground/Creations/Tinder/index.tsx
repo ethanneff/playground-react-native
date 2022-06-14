@@ -14,7 +14,10 @@ export const Tinder = memo(function PlaygroundTinder() {
   });
 
   return (
-    <Screen onLeftPress={goBack} title="Tinder">
+    <Screen
+      onLeftPress={goBack}
+      title="Tinder"
+    >
       <View style={styles.container} />
     </Screen>
   );

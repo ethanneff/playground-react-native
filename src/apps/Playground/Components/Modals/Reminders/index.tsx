@@ -107,12 +107,18 @@ export const Reminders = ({ onComplete }: Props) => {
         />
       ) : null}
       {form.modals.customDate ? (
-        <Modal onBackgroundPress={handleCustomDateClose} showOverlay>
+        <Modal
+          onBackgroundPress={handleCustomDateClose}
+          showOverlay
+        >
           <Text title="hello" />
         </Modal>
       ) : null}
       {form.modals.location ? (
-        <Modal onBackgroundPress={handleLocationClose} showOverlay>
+        <Modal
+          onBackgroundPress={handleLocationClose}
+          showOverlay
+        >
           <Text title="location" />
         </Modal>
       ) : null}

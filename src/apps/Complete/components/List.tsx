@@ -28,8 +28,14 @@ export const List = memo(function List({
   const margin = horizontal ? 'right' : 'bottom';
   return (
     <View style={{ padding, maxHeight }}>
-      <Card margin={margin} width={listWidth}>
-        <ListHeader itemId={itemId} parentItemId={parentItemId} />
+      <Card
+        margin={margin}
+        width={listWidth}
+      >
+        <ListHeader
+          itemId={itemId}
+          parentItemId={parentItemId}
+        />
         <ListItems parentItemId={itemId} />
         <AddItem
           parentItemId={itemId}

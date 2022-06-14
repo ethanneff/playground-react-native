@@ -98,7 +98,10 @@ export const SplashScreen = memo(function SplashScreenMemo({
       <MaskedView
         maskElement={
           <Animated.View style={styles.centered}>
-            <Animated.Image source={source} style={imageStyles} />
+            <Animated.Image
+              source={source}
+              style={imageStyles}
+            />
           </Animated.View>
         }
         style={styles.flex}

@@ -15,7 +15,11 @@ export const ForgotPassword = memo(function PortfolioForgotPassword() {
   const navLogin = useCallback(() => goBack(), [goBack]);
   const colors = useColors();
   return (
-    <Screen dropShadow onLeftPress={navLogin} title="Forgot Password">
+    <Screen
+      dropShadow
+      onLeftPress={navLogin}
+      title="Forgot Password"
+    >
       <ScrollView
         style={{
           padding: padding(4),
@@ -29,7 +33,10 @@ export const ForgotPassword = memo(function PortfolioForgotPassword() {
           value={email}
         />
         <View style={styles.row}>
-          <Button onPress={navLogin} title="Send email" />
+          <Button
+            onPress={navLogin}
+            title="Send email"
+          />
         </View>
       </ScrollView>
     </Screen>

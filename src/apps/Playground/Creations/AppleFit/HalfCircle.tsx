@@ -17,7 +17,12 @@ export const HalfCircle = memo(function HalfCircle({
   ring,
 }: Props) {
   const colors: [string, string] = [ring.start, ring.end];
-  const fg = <AngularGradient colors={colors} size={ring.size} />;
+  const fg = (
+    <AngularGradient
+      colors={colors}
+      size={ring.size}
+    />
+  );
   const bg = <View style={{ backgroundColor: ring.bg, flex: 1 }} />;
   const styles = StyleSheet.create({
     circle: {

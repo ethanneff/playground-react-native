@@ -98,7 +98,11 @@ export const Balls = memo(function Balls({
 
   return (
     <>
-      <Text center title={String(score)} type="h2" />
+      <Text
+        center
+        title={String(score)}
+        type="h2"
+      />
       {items.current.map((item) => (
         <Animated.View
           key={item.index}

@@ -14,10 +14,17 @@ export const Drift = memo(function PlaygroundDrift() {
   const value = useMemo(() => ({ state, dispatch }), [state, dispatch]);
 
   return (
-    <Screen border onLeftPress={goBack} title="Drift">
+    <Screen
+      border
+      onLeftPress={goBack}
+      title="Drift"
+    >
       <DriftContext.Provider value={value}>
         {isEmulator ? (
-          <Text center title="simulators not supported" />
+          <Text
+            center
+            title="simulators not supported"
+          />
         ) : (
           <View style={{ flex: 1 }}>
             <Game />

@@ -11,6 +11,10 @@ type Props = {
 export const Source = memo(function IconSource({ name, color, style }: Props) {
   const path = Icons[name];
   return path ? (
-    <Original color={color} path={Icons[name]} style={style} />
+    <Original
+      color={color}
+      path={Icons[name]}
+      style={style}
+    />
   ) : null;
 });

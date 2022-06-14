@@ -25,7 +25,11 @@ export const Home = memo(function CantHurtMeMain() {
 
   return (
     <>
-      <Screen dropShadow onLeftPress={onLeftPress} title="Can't Hurt Me">
+      <Screen
+        dropShadow
+        onLeftPress={onLeftPress}
+        title="Can't Hurt Me"
+      >
         <List
           onProfilePress={handleProfilePress}
           onSettingsPress={handleSettingsPress}

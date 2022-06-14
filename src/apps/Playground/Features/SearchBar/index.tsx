@@ -135,7 +135,11 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
 
   const renderItem = useCallback<ListRenderItem<Data>>(
     ({ item }) => (
-      <Text style={styles.item} title={item.name} type="subtitle2" />
+      <Text
+        style={styles.item}
+        title={item.name}
+        type="subtitle2"
+      />
     ),
     [styles.item],
   );
@@ -148,7 +152,10 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
   );
 
   return (
-    <Screen onLeftPress={goBack} title="Search Bar">
+    <Screen
+      onLeftPress={goBack}
+      title="Search Bar"
+    >
       <View style={styles.header}>
         <View style={styles.textContainer}>
           <Animated.View

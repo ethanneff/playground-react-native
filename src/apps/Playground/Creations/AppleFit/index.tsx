@@ -39,7 +39,10 @@ export const AppleFit = memo(function PlaygroundAppleFit() {
   const { goBack } = useNavigation();
 
   return (
-    <Screen onLeftPress={goBack} title="Apple Fit">
+    <Screen
+      onLeftPress={goBack}
+      title="Apple Fit"
+    >
       <View style={{ alignItems: 'center' }}>
         <AppleActivity
           animate

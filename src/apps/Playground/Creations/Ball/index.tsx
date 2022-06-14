@@ -62,7 +62,11 @@ export const Ball = memo(function PlaygroundBall() {
           testID="initialButton"
           title="initial"
         />
-        <Button onPress={onRandomPress} testID="randomButton" title="random" />
+        <Button
+          onPress={onRandomPress}
+          testID="randomButton"
+          title="random"
+        />
       </View>
     </Screen>
   );

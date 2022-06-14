@@ -17,8 +17,14 @@ export const PapiJump = memo(function PapiJump() {
   });
 
   return (
-    <Screen onLeftPress={goBack} title="Papi Jump">
-      <View onLayout={onLayout} style={styles.container}>
+    <Screen
+      onLeftPress={goBack}
+      title="Papi Jump"
+    >
+      <View
+        onLayout={onLayout}
+        style={styles.container}
+      >
         {layout ? <Game layout={layout} /> : null}
       </View>
     </Screen>

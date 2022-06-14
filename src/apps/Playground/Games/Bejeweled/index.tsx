@@ -100,10 +100,16 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
   };
 
   return (
-    <Screen onLeftPress={goBack} title="Bejeweled">
+    <Screen
+      onLeftPress={goBack}
+      title="Bejeweled"
+    >
       <View style={styles.container}>
         {board.map((col, x) => (
-          <View key={v4()} style={{ flexDirection: 'row' }}>
+          <View
+            key={v4()}
+            style={{ flexDirection: 'row' }}
+          >
             {col.map((gem, y) => (
               <View
                 key={v4()}

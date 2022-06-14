@@ -25,7 +25,10 @@ export const Masonry = memo(function Masonry<T>({
   return (
     <View style={{ flexDirection: 'row', padding: padding(2) }}>
       {columns.map((column) => (
-        <View key={`column-${v4()}`} style={{ flex: 1, padding: padding(2) }}>
+        <View
+          key={`column-${v4()}`}
+          style={{ flex: 1, padding: padding(2) }}
+        >
           {column.map((item: T, index: number) => renderItem({ item, index }))}
         </View>
       ))}

@@ -33,7 +33,11 @@ export const Badge = memo(function IconMeme({ badge }: Props) {
   const num = badge > maxBadgeNumber ? badgeLimit : String(badge);
   return badge <= 0 ? null : (
     <View style={styles.badgeContainer}>
-      <Text center style={styles.badgeText} title={num} />
+      <Text
+        center
+        style={styles.badgeText}
+        title={num}
+      />
     </View>
   );
 });

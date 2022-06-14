@@ -40,8 +40,15 @@ export const RelativeDate = memo(function RelativeDate({
   }, []);
 
   return (
-    <TouchableOpacity onPress={toggleRelativeDate} style={style}>
-      <Text emphasis={emphasis} title={text} type={type} />
+    <TouchableOpacity
+      onPress={toggleRelativeDate}
+      style={style}
+    >
+      <Text
+        emphasis={emphasis}
+        title={text}
+        type={type}
+      />
     </TouchableOpacity>
   );
 });

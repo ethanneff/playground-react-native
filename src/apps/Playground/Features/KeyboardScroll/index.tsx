@@ -101,13 +101,19 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
   }, [colors.text.accent]);
 
   return (
-    <Screen onLeftPress={goBack} title="Keyboard">
+    <Screen
+      onLeftPress={goBack}
+      title="Keyboard"
+    >
       <KeyboardAwareScrollView
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
       >
         <Text title={lorem} />
-        <Text title="Header" type="h3" />
+        <Text
+          title="Header"
+          type="h3"
+        />
         <View
           style={{
             height: 200,
@@ -132,7 +138,10 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
           placeholder="Username"
           value={message}
         />
-        <Button onPress={onSubmit} title="Submit" />
+        <Button
+          onPress={onSubmit}
+          title="Submit"
+        />
         <Text title={lorem} />
       </KeyboardAwareScrollView>
     </Screen>

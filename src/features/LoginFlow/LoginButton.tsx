@@ -30,7 +30,11 @@ export const LoginButton = memo(function LoginButton({
       }}
     >
       <Icon name={icon} />
-      <Text style={{ paddingLeft: padding(2) }} title={title} type="button" />
+      <Text
+        style={{ paddingLeft: padding(2) }}
+        title={title}
+        type="button"
+      />
     </TouchableOpacity>
   );
 });

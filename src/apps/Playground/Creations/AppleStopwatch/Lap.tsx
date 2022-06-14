@@ -46,8 +46,14 @@ export const Lap = memo(function Lap({
 
   return (
     <View style={styles.lap}>
-      <Text style={lapStyle} title={`Lap ${num}`} />
-      <Timer interval={interval} style={lapStyle} />
+      <Text
+        style={lapStyle}
+        title={`Lap ${num}`}
+      />
+      <Timer
+        interval={interval}
+        style={lapStyle}
+      />
     </View>
   );
 });

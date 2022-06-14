@@ -42,7 +42,10 @@ export const Rating = memo(function RatingMemo({
       {Array(count)
         .fill(0)
         .map((_, index) => (
-          <TouchableOpacity key={v4()} onPress={handleOnPress(index)}>
+          <TouchableOpacity
+            key={v4()}
+            onPress={handleOnPress(index)}
+          >
             <Icon
               color={index > rating || !rating ? colorUnfilled : colorFilled}
               name={index > rating || !rating ? iconUnfilled : iconFilled}

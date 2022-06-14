@@ -52,7 +52,10 @@ export default memo(function Checklists() {
   const navCreate = useCallback(() => navigate('playground'), [navigate]);
 
   return (
-    <Screen onLeftPress={navBack} title="Checklists">
+    <Screen
+      onLeftPress={navBack}
+      title="Checklists"
+    >
       <FlatList
         data={items}
         keyExtractor={keyExtractor}
@@ -60,7 +63,12 @@ export default memo(function Checklists() {
         renderItem={renderItem}
       />
       <TouchableOpacity onPress={navCreate}>
-        <Icon color="primaryA" fab name="plus" right />
+        <Icon
+          color="primaryA"
+          fab
+          name="plus"
+          right
+        />
       </TouchableOpacity>
     </Screen>
   );

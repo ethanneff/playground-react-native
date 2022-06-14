@@ -42,7 +42,11 @@ export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
       </View>
       <View style={{ flex: 1 }}>
         <View style={{ flexDirection: 'row' }}>
-          <Text bold style={{ paddingRight: padding(2) }} title={item.userId} />
+          <Text
+            bold
+            style={{ paddingRight: padding(2) }}
+            title={item.userId}
+          />
           <RelativeDate date={item.createdAt} />
         </View>
         <Text

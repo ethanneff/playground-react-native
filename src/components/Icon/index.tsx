@@ -110,8 +110,16 @@ export const Icon = memo(function Icon({
     style,
   ];
   return name ? (
-    <View style={containerStyles} testID={testID}>
-      <Source color={colored} invisible={invisible} name={name} size={size} />
+    <View
+      style={containerStyles}
+      testID={testID}
+    >
+      <Source
+        color={colored}
+        invisible={invisible}
+        name={name}
+        size={size}
+      />
       <Badge badge={badge} />
     </View>
   ) : null;

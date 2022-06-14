@@ -20,8 +20,15 @@ export const Alert = memo(function Alert({
   title,
 }: Props) {
   return (
-    <Modal onBackgroundPress={onBackgroundPress} showOverlay>
-      <Text center title={title} type="h6" />
+    <Modal
+      onBackgroundPress={onBackgroundPress}
+      showOverlay
+    >
+      <Text
+        center
+        title={title}
+        type="h6"
+      />
       <Spacing padding={2} />
       <Text
         center
@@ -31,11 +38,18 @@ export const Alert = memo(function Alert({
       />
       <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
         {onCancelPress ? (
-          <Button onPress={onCancelPress} title="cancel" />
+          <Button
+            onPress={onCancelPress}
+            title="cancel"
+          />
         ) : null}
         <Spacing padding={2} />
         {onConfirmPress ? (
-          <Button color="accent" onPress={onConfirmPress} title="confirm" />
+          <Button
+            color="accent"
+            onPress={onConfirmPress}
+            title="confirm"
+          />
         ) : null}
       </View>
     </Modal>

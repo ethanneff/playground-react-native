@@ -38,7 +38,10 @@ export const Image = memo(function Image({
         uri={uri}
         width={width}
       />
-      <Loader size={size} style={styles.indicatorOverlay} />
+      <Loader
+        size={size}
+        style={styles.indicatorOverlay}
+      />
     </View>
   );
 });

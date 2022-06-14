@@ -59,13 +59,19 @@ const ModalManager = memo(function ModalManager({
       );
     case 'modal-small':
       return (
-        <Modal onBackgroundPress={handleClose} showOverlay>
+        <Modal
+          onBackgroundPress={handleClose}
+          showOverlay
+        >
           <Text title="Hello" />
         </Modal>
       );
     case 'modal-large':
       return (
-        <Modal onBackgroundPress={handleClose} showOverlay>
+        <Modal
+          onBackgroundPress={handleClose}
+          showOverlay
+        >
           <Text
             title="Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello"
             type="h1"
@@ -74,16 +80,31 @@ const ModalManager = memo(function ModalManager({
       );
     case 'modal-keyboard':
       return (
-        <Modal onBackgroundPress={handleClose} showOverlay>
-          <Text title="hello hello hello hello" type="h1" />
+        <Modal
+          onBackgroundPress={handleClose}
+          showOverlay
+        >
+          <Text
+            title="hello hello hello hello"
+            type="h1"
+          />
 
-          <Input onChangeText={handleTextChange} title="hello" value={value} />
+          <Input
+            onChangeText={handleTextChange}
+            title="hello"
+            value={value}
+          />
         </Modal>
       );
     case 'loading':
       return <Loading onBackgroundPress={handleClose} />;
     case 'notification':
-      return <Notification onCancel={handleClose} title="bob" />;
+      return (
+        <Notification
+          onCancel={handleClose}
+          title="bob"
+        />
+      );
     default:
       return null;
   }
@@ -100,13 +121,24 @@ export const Modals = memo(function Modals() {
 
   return (
     <>
-      <Screen dropShadow onLeftPress={goBack} title="Reminder">
+      <Screen
+        dropShadow
+        onLeftPress={goBack}
+        title="Reminder"
+      >
         <ScrollView
           contentContainerStyle={{ padding: padding(4) }}
           style={{ backgroundColor: colors.background.secondary }}
         >
-          <Text emphasis="low" title="Components" type="h4" />
-          <Button onPress={handleModalChange('loading')} title="loading" />
+          <Text
+            emphasis="low"
+            title="Components"
+            type="h4"
+          />
+          <Button
+            onPress={handleModalChange('loading')}
+            title="loading"
+          />
           <Button
             onPress={handleModalChange('action-sheet')}
             title="action sheet ❌ need to build"
@@ -115,7 +147,10 @@ export const Modals = memo(function Modals() {
             onPress={handleModalChange('notification')}
             title="notification ❌ missing background"
           />
-          <Button onPress={handleModalChange('alert')} title="alert" />
+          <Button
+            onPress={handleModalChange('alert')}
+            title="alert"
+          />
           <Button
             onPress={handleModalChange('modal-large')}
             title="Modal large"
@@ -128,17 +163,29 @@ export const Modals = memo(function Modals() {
             onPress={handleModalChange('modal-keyboard')}
             title="Modal keyboard"
           />
-          <Text emphasis="low" title="Features" type="h4" />
+          <Text
+            emphasis="low"
+            title="Features"
+            type="h4"
+          />
           <Button
             onPress={handleModalChange('reminder')}
             title="Reminder ❌ incomplete"
           />
-          <Button onPress={handleModalChange('rate-app')} title="Rate app ✅" />
+          <Button
+            onPress={handleModalChange('rate-app')}
+            title="Rate app ✅"
+          />
           <Button
             onPress={handleModalChange('login')}
             title="login ❌ incomplete"
           />
-          <Text center emphasis="low" title="Reminders" type="h4" />
+          <Text
+            center
+            emphasis="low"
+            title="Reminders"
+            type="h4"
+          />
           {/* {form.reminders.map((reminder, index) => (
             <Text
               key={reminder.id}
@@ -148,7 +195,10 @@ export const Modals = memo(function Modals() {
           ))} */}
         </ScrollView>
       </Screen>
-      <ModalManager modal={modal} onClose={handleModalChange} />
+      <ModalManager
+        modal={modal}
+        onClose={handleModalChange}
+      />
       {/* {showRate && <RateApp onComplete={handleRate(false)} />}
       {form.modals.createReminder && (
         <CreateReminderModal

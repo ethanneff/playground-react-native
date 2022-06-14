@@ -64,10 +64,19 @@ export const Snake = memo(function Snake() {
 
   return (
     <>
-      <Screen onLeftPress={goBack} title="Snake">
+      <Screen
+        onLeftPress={goBack}
+        title="Snake"
+      >
         <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-          <Button onPress={onStart} title="start" />
-          <Button onPress={onStop} title="stop" />
+          <Button
+            onPress={onStart}
+            title="start"
+          />
+          <Button
+            onPress={onStop}
+            title="stop"
+          />
           <Text title={`points: ${game.points}`} />
         </View>
         <View

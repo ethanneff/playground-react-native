@@ -21,7 +21,11 @@ export const Login = memo(function PortfolioLogin() {
   const colors = useColors();
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Login">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Login"
+    >
       <ScrollView
         style={{
           padding: padding(4),
@@ -41,8 +45,14 @@ export const Login = memo(function PortfolioLogin() {
           value={password}
         />
         <View style={styles.row}>
-          <Button onPress={navPortfolio} title="Login" />
-          <Button onPress={navPassword} title="Forgot" />
+          <Button
+            onPress={navPortfolio}
+            title="Login"
+          />
+          <Button
+            onPress={navPassword}
+            title="Forgot"
+          />
         </View>
       </ScrollView>
     </Screen>

@@ -17,9 +17,16 @@ export const Landing = memo(function PortfolioLanding() {
     { id: '4', title: 'jill', backgroundColor: colors.background.negative },
   ];
   return (
-    <Screen onLeftPress={goBack} title="Landing">
+    <Screen
+      onLeftPress={goBack}
+      title="Landing"
+    >
       <Carousel slides={slides} />
-      <Button center onPress={navPortfolioLogin} title="Login" />
+      <Button
+        center
+        onPress={navPortfolioLogin}
+        title="Login"
+      />
     </Screen>
   );
 });

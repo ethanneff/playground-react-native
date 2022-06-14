@@ -74,7 +74,11 @@ export const ItemDetail = memo(function ItemDetail() {
               }}
             >
               <Card flex>
-                <Button center onPress={goBack} title="close" />
+                <Button
+                  center
+                  onPress={goBack}
+                  title="close"
+                />
               </Card>
               <View style={{ padding: padding(2) }} />
               <Card flex>
@@ -88,13 +92,20 @@ export const ItemDetail = memo(function ItemDetail() {
             </View>
           ) : (
             <Card flex>
-              <Button center onPress={goBack} title="close" />
+              <Button
+                center
+                onPress={goBack}
+                title="close"
+              />
             </Card>
           )}
         </View>
       </Modal>
       {deleteModal ? (
-        <DeleteModal onCancel={onDeleteClose} onDelete={onItemDelete} />
+        <DeleteModal
+          onCancel={onDeleteClose}
+          onDelete={onItemDelete}
+        />
       ) : null}
     </>
   ) : null;

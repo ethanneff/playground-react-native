@@ -31,11 +31,23 @@ export const Settings = memo(function PortfolioSettings() {
     ),
     [currentTheme, themePress],
   );
-  const renderHeader = useCallback(() => <Button disabled title="Theme" />, []);
+  const renderHeader = useCallback(
+    () => (
+      <Button
+        disabled
+        title="Theme"
+      />
+    ),
+    [],
+  );
   const keyExtractor = useCallback((item: Theme) => item, []);
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Settings">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Settings"
+    >
       <FlatList
         ListHeaderComponent={renderHeader}
         data={themes}

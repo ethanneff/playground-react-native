@@ -11,9 +11,18 @@ const Stack = createStackNavigator<DeepWorkRoutes>();
 export default memo(function DeepWork() {
   return (
     <Stack.Navigator screenOptions={noHeader}>
-      <Stack.Screen component={Home} name="home" />
-      <Stack.Screen component={Day} name="day" />
-      <Stack.Screen component={Account} name="account" />
+      <Stack.Screen
+        component={Home}
+        name="home"
+      />
+      <Stack.Screen
+        component={Day}
+        name="day"
+      />
+      <Stack.Screen
+        component={Account}
+        name="account"
+      />
     </Stack.Navigator>
   );
 });

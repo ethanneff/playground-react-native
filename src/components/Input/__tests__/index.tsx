@@ -7,7 +7,12 @@ describe('input', () => {
     expect.hasAssertions();
     const callback = jest.fn();
     const { tree } = mockRenderer({
-      component: <Input onChangeText={callback} value="hello" />,
+      component: (
+        <Input
+          onChangeText={callback}
+          value="hello"
+        />
+      ),
     });
     expect(tree.toJSON()).toMatchSnapshot();
   });

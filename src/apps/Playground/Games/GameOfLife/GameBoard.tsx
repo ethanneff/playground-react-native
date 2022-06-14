@@ -18,7 +18,11 @@ export const GameBoard = memo(function GameBoard() {
           style={{ flexDirection: 'row', justifyContent: 'center' }}
         >
           {array.map((__, y) => (
-            <Cell key={v4()} x={x} y={y} />
+            <Cell
+              key={v4()}
+              x={x}
+              y={y}
+            />
           ))}
         </View>
       ))}

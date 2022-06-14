@@ -183,7 +183,10 @@ export const Home = memo(function Home() {
   }, [showCustomInput]);
 
   return (
-    <Screen onLeftPress={onLeftPress} title="Comfort Zone">
+    <Screen
+      onLeftPress={onLeftPress}
+      title="Comfort Zone"
+    >
       <ScrollView
         contentContainerStyle={{
           padding: padding(4),
@@ -227,8 +230,16 @@ export const Home = memo(function Home() {
               justifyContent: 'space-around',
             }}
           >
-            <Button color="accent" onPress={onRandom} title="random" />
-            <Button color="accent" onPress={onCustom} title="custom" />
+            <Button
+              color="accent"
+              onPress={onRandom}
+              title="random"
+            />
+            <Button
+              color="accent"
+              onPress={onCustom}
+              title="custom"
+            />
           </View>
           {showCustomInput ? (
             <View

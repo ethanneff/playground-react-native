@@ -23,7 +23,11 @@ export const CircularRing = ({
 
   return (
     <View style={styles.container}>
-      <CircularProgress radius={radius} ring={ring} theta={theta} />
+      <CircularProgress
+        radius={radius}
+        ring={ring}
+        theta={theta}
+      />
       <InitialKnob
         backgroundColor={ring.start}
         radius={radius}

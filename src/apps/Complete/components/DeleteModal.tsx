@@ -13,7 +13,11 @@ export const DeleteModal = memo(function DeleteModal({
   onDelete,
 }: DeleteModalProps) {
   return (
-    <Modal onBackgroundPress={onCancel} showOverlay widthPercent={0.5}>
+    <Modal
+      onBackgroundPress={onCancel}
+      showOverlay
+      widthPercent={0.5}
+    >
       <View style={{ alignItems: 'center' }}>
         <Text
           style={{ paddingBottom: padding(2) }}
@@ -21,8 +25,15 @@ export const DeleteModal = memo(function DeleteModal({
           type="h5"
         />
         <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-          <Button onPress={onCancel} title="close" />
-          <Button color="negative" onPress={onDelete} title="delete" />
+          <Button
+            onPress={onCancel}
+            title="close"
+          />
+          <Button
+            color="negative"
+            onPress={onDelete}
+            title="delete"
+          />
         </View>
       </View>
     </Modal>

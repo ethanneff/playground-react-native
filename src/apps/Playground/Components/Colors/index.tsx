@@ -12,7 +12,11 @@ export const Colors = memo(function DebugColors() {
   const { goBack } = useNavigation();
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Colors">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Colors"
+    >
       <ScrollView>
         <Title title="Theme" />
         <ThemeGroup />

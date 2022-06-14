@@ -134,7 +134,10 @@ export const Archero = memo(function Archero() {
   }, []);
 
   return (
-    <Screen onLeftPress={goBack} title="Archero">
+    <Screen
+      onLeftPress={goBack}
+      title="Archero"
+    >
       <View
         onLayout={onLayout}
         style={{ flex: 1, backgroundColor: colors.background.tertiary }}

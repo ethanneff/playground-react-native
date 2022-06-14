@@ -60,14 +60,23 @@ export const ProfileLevel = ({ onPress }: Props): JSX.Element => {
   });
 
   return (
-    <TouchableOpacity disabled={!onPress} onPress={onPress}>
-      <Image source={image} style={styles.imageContainer} />
+    <TouchableOpacity
+      disabled={!onPress}
+      onPress={onPress}
+    >
+      <Image
+        source={image}
+        style={styles.imageContainer}
+      />
       <View style={{ flex: 1 }}>
         <View style={styles.progressContainer}>
           <View style={[styles.progressBar, { width }]} />
         </View>
         <View style={styles.levelContainer}>
-          <Text title={String(level)} type="subtitle2" />
+          <Text
+            title={String(level)}
+            type="subtitle2"
+          />
         </View>
       </View>
     </TouchableOpacity>

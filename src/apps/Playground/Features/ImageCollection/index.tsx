@@ -33,7 +33,11 @@ export const ImageCollection = memo(function ImageCollection() {
   );
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Images">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Images"
+    >
       <FlatList
         contentContainerStyle={{ backgroundColor: colors.background.secondary }}
         data={data}

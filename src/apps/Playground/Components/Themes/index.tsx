@@ -96,9 +96,20 @@ export const Themes = memo(function Themes() {
 
   const renderItem = useCallback<ListRenderItem<CardItem>>(
     ({ item, index }) => (
-      <Card elevation={elevation} key={index} onPress={onPress}>
-        <Text title={item.title} type="overline" />
-        <Text style={{ marginTop: padding(2) }} title={item.value} type="h4" />
+      <Card
+        elevation={elevation}
+        key={index}
+        onPress={onPress}
+      >
+        <Text
+          title={item.title}
+          type="overline"
+        />
+        <Text
+          style={{ marginTop: padding(2) }}
+          title={item.value}
+          type="h4"
+        />
         {item.target ? (
           <Text
             style={{ marginTop: padding(2) }}
@@ -132,7 +143,11 @@ export const Themes = memo(function Themes() {
   );
 
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Dark mode">
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Dark mode"
+    >
       <ScrollView style={{ backgroundColor: colors.background.primaryA }}>
         <View style={{ padding: padding(4) }}>
           <View
@@ -162,8 +177,16 @@ export const Themes = memo(function Themes() {
             value={elevation}
           />
         </View>
-        <Text center title="Weekly Stats" type="h2" />
-        <Masonry data={cards} numColumns={columns} renderItem={renderItem} />
+        <Text
+          center
+          title="Weekly Stats"
+          type="h2"
+        />
+        <Masonry
+          data={cards}
+          numColumns={columns}
+          renderItem={renderItem}
+        />
       </ScrollView>
     </Screen>
   );

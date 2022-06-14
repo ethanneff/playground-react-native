@@ -31,12 +31,28 @@ export const PinchSpread = memo(function PinchSpread() {
 
   /* eslint-disable react/jsx-props-no-spreading */
   return (
-    <Screen dropShadow onLeftPress={goBack} title="Pinch Spread">
-      <Animated.View style={styles.container} {...panGesture.panHandlers} />
+    <Screen
+      dropShadow
+      onLeftPress={goBack}
+      title="Pinch Spread"
+    >
+      <Animated.View
+        style={styles.container}
+        {...panGesture.panHandlers}
+      />
       <View style={{ padding: padding(2) }}>
-        <Text center title={title} />
-        <Text center title={`spread: ${state.spreadCount}`} />
-        <Text center title={`pinch: ${state.pinchCount}`} />
+        <Text
+          center
+          title={title}
+        />
+        <Text
+          center
+          title={`spread: ${state.spreadCount}`}
+        />
+        <Text
+          center
+          title={`pinch: ${state.pinchCount}`}
+        />
       </View>
     </Screen>
   );

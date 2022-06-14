@@ -121,7 +121,10 @@ export const Crash = memo(function CrashMemo() {
   }, [loop]);
 
   return (
-    <Screen onLeftPress={goBack} title="Roobet Crash">
+    <Screen
+      onLeftPress={goBack}
+      title="Roobet Crash"
+    >
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: padding(4),
@@ -136,7 +139,10 @@ export const Crash = memo(function CrashMemo() {
             style={{ flexDirection: 'row', justifyContent: 'space-between' }}
           >
             <Text title="name" />
-            <Text emphasis="medium" title="cash" />
+            <Text
+              emphasis="medium"
+              title="cash"
+            />
           </View>
         </Card>
 

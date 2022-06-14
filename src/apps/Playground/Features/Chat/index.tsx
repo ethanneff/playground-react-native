@@ -15,8 +15,14 @@ export const Chat = memo(function PlaygroundChat() {
   const height = (layout?.height || 0) - keyboardHeight + bottomInset;
 
   return (
-    <Screen onLeftPress={goBack} title="Chat">
-      <View onLayout={onLayout} style={{ flex: 1 }}>
+    <Screen
+      onLeftPress={goBack}
+      title="Chat"
+    >
+      <View
+        onLayout={onLayout}
+        style={{ flex: 1 }}
+      >
         <View style={{ height }}>
           <Items />
           <TextField />

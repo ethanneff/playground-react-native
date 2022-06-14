@@ -55,7 +55,11 @@ const SignInButton = memo(function SignInButton({
       }}
     >
       <Icon name={icon} />
-      <Text style={{ paddingLeft: padding(2) }} title={title} type="button" />
+      <Text
+        style={{ paddingLeft: padding(2) }}
+        title={title}
+        type="button"
+      />
     </TouchableOpacity>
   );
 });
@@ -175,9 +179,18 @@ export const Login = memo(function Login({
   }, [onSuccess, user]);
 
   return (
-    <Modal onBackgroundPress={onBackgroundPress} showOverlay>
+    <Modal
+      onBackgroundPress={onBackgroundPress}
+      showOverlay
+    >
       <>
-        {error ? <Text center color="negative" title={error} /> : null}
+        {error ? (
+          <Text
+            center
+            color="negative"
+            title={error}
+          />
+        ) : null}
         {state.screen === 'loading' || type === 'initalizing' ? (
           <Loader />
         ) : state.screen === 'phoneCode' ? (
@@ -194,7 +207,10 @@ export const Login = memo(function Login({
               onPress={handleConfirm}
               title="verify phone confirmation code"
             />
-            <Button onPress={onScreenChange('landing')} title="go back" />
+            <Button
+              onPress={onScreenChange('landing')}
+              title="go back"
+            />
           </>
         ) : state.screen === 'phone' ? (
           <>
@@ -371,7 +387,10 @@ export const Login = memo(function Login({
           </>
         ) : (
           <>
-            <ModalHeader onRightPress={onBackgroundPress} title="Get Started" />
+            <ModalHeader
+              onRightPress={onBackgroundPress}
+              title="Get Started"
+            />
             {Platform.OS === 'ios' || showApple ? (
               <SignInButton
                 icon="apple"

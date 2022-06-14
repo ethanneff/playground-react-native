@@ -40,7 +40,11 @@ export const Progress = memo(function Progress() {
   const { tabBarEdges } = useLayout();
 
   return (
-    <Screen dropShadow edges={tabBarEdges} title="Progress">
+    <Screen
+      dropShadow
+      edges={tabBarEdges}
+      title="Progress"
+    >
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: padding(4),
@@ -65,7 +69,10 @@ export const Progress = memo(function Progress() {
             type="h4"
           />
           {categories.map((category) => (
-            <CategoryCard category={category} key={category.id} />
+            <CategoryCard
+              category={category}
+              key={category.id}
+            />
           ))}
         </Card>
       </ScrollView>

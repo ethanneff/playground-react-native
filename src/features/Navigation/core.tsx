@@ -46,18 +46,54 @@ export const NavigationProvider = memo(function NavigationProvider() {
           initialRouteName={initialRouteName}
           screenOptions={modalScreenOptions}
         >
-          <Stack.Screen component={Admin} name="admin" />
-          <Stack.Screen component={Portfolio} name="portfolio" />
-          <Stack.Screen component={Progress} name="progress" />
-          <Stack.Screen component={Playground} name="playground" />
-          <Stack.Screen component={CantHurtMe} name="cant-hurt-me" />
-          <Stack.Screen component={Checklists} name="checklists" />
-          <Stack.Screen component={Focus} name="focus" />
-          <Stack.Screen component={Complete} name="complete" />
-          <Stack.Screen component={Journal} name="journal" />
-          <Stack.Screen component={ComfortZone} name="comfort-zone" />
-          <Stack.Screen component={TheOneThing} name="the-one-thing" />
-          <Stack.Screen component={DeepWork} name="deep-work" />
+          <Stack.Screen
+            component={Admin}
+            name="admin"
+          />
+          <Stack.Screen
+            component={Portfolio}
+            name="portfolio"
+          />
+          <Stack.Screen
+            component={Progress}
+            name="progress"
+          />
+          <Stack.Screen
+            component={Playground}
+            name="playground"
+          />
+          <Stack.Screen
+            component={CantHurtMe}
+            name="cant-hurt-me"
+          />
+          <Stack.Screen
+            component={Checklists}
+            name="checklists"
+          />
+          <Stack.Screen
+            component={Focus}
+            name="focus"
+          />
+          <Stack.Screen
+            component={Complete}
+            name="complete"
+          />
+          <Stack.Screen
+            component={Journal}
+            name="journal"
+          />
+          <Stack.Screen
+            component={ComfortZone}
+            name="comfort-zone"
+          />
+          <Stack.Screen
+            component={TheOneThing}
+            name="the-one-thing"
+          />
+          <Stack.Screen
+            component={DeepWork}
+            name="deep-work"
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </Suspense>

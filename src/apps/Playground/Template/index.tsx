@@ -14,7 +14,10 @@ export const Template = memo(function PlaygroundTemplate() {
     },
   });
   return (
-    <Screen onLeftPress={goBack} title="Template">
+    <Screen
+      onLeftPress={goBack}
+      title="Template"
+    >
       <View style={styles.container}>
         <View />
       </View>

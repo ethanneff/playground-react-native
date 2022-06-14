@@ -49,7 +49,10 @@ export const mockRenderer = ({
     <ReduxProvider store={store}>
       <BaseNavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen component={Component} name="MockedScreen" />
+          <Stack.Screen
+            component={Component}
+            name="MockedScreen"
+          />
         </Stack.Navigator>
       </BaseNavigationContainer>
     </ReduxProvider>

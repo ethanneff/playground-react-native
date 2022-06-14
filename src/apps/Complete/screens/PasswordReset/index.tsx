@@ -51,7 +51,10 @@ export const PasswordReset = memo(function PasswordReset() {
       backgroundColor={colors.background.secondary}
       onBackgroundPress={navWelcome}
     >
-      <ModalHeader onRightPress={goBack} title="Password reset" />
+      <ModalHeader
+        onRightPress={goBack}
+        title="Password reset"
+      />
       <Text
         center
         style={{ paddingBottom: padding(4) }}

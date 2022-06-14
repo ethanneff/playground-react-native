@@ -25,11 +25,24 @@ export const ModalHeader = memo(function ModalHeader({
       }}
     >
       <TouchableOpacity onPress={onLeftPress}>
-        <Icon invisible={!onLeftPress} name="chevron-left" size={size} />
+        <Icon
+          invisible={!onLeftPress}
+          name="chevron-left"
+          size={size}
+        />
       </TouchableOpacity>
-      <Text center flex title={title} type="h4" />
+      <Text
+        center
+        flex
+        title={title}
+        type="h4"
+      />
       <TouchableOpacity onPress={onRightPress}>
-        <Icon invisible={!onRightPress} name="close" size={size} />
+        <Icon
+          invisible={!onRightPress}
+          name="close"
+          size={size}
+        />
       </TouchableOpacity>
     </View>
   );

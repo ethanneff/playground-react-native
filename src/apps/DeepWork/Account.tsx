@@ -8,7 +8,10 @@ export const Account = memo(function Account() {
   const colors = useColors();
 
   return (
-    <Screen onLeftPress={goBack} title="Account">
+    <Screen
+      onLeftPress={goBack}
+      title="Account"
+    >
       <ScrollView
         contentContainerStyle={{ padding: padding(4) }}
         style={{ backgroundColor: colors.background.secondary }}

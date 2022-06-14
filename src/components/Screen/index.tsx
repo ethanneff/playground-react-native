@@ -58,7 +58,10 @@ export const Screen = memo(function Screen({
 
   return (
     <View style={styles.container}>
-      <SafeAreaView edges={edges} style={styles.flex}>
+      <SafeAreaView
+        edges={edges}
+        style={styles.flex}
+      >
         <StatusBar barStyle={colors.statusBar} />
         <NavBar
           border={border}
@@ -73,7 +76,10 @@ export const Screen = memo(function Screen({
           secondRightIcon={secondRightIcon}
           title={title}
         />
-        <View style={[styles.flex, style]} testID={testID}>
+        <View
+          style={[styles.flex, style]}
+          testID={testID}
+        >
           {children}
         </View>
       </SafeAreaView>

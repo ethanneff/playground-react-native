@@ -25,14 +25,30 @@ export const Home = memo(function ActivityTracker() {
   });
 
   return (
-    <Screen dropShadow onLeftPress={onLeftPress} title="Progress">
+    <Screen
+      dropShadow
+      onLeftPress={onLeftPress}
+      title="Progress"
+    >
       <ScrollView
         contentContainerStyle={styles.container}
         style={styles.background}
       >
-        <Activity site="github" title="Github" username="ethanneff" />
-        <Activity site="leetCode" title="LeetCode" username="ethanneff" />
-        <Activity site="hackerRank" title="HackerRank" username="ethanneff" />
+        <Activity
+          site="github"
+          title="Github"
+          username="ethanneff"
+        />
+        <Activity
+          site="leetCode"
+          title="LeetCode"
+          username="ethanneff"
+        />
+        <Activity
+          site="hackerRank"
+          title="HackerRank"
+          username="ethanneff"
+        />
       </ScrollView>
       <Icon
         color="primaryB"

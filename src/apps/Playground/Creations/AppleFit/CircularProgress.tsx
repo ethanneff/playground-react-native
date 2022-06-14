@@ -41,13 +41,26 @@ export const CircularProgress = ({
   return (
     <Animated.View style={styles.container}>
       <View style={styles.top}>
-        <HalfCircle flip radius={radius} ring={ring} type="foreground" />
+        <HalfCircle
+          flip
+          radius={radius}
+          ring={ring}
+          type="foreground"
+        />
         <Animated.View style={styles.left}>
-          <HalfCircle radius={radius} ring={ring} type="background" />
+          <HalfCircle
+            radius={radius}
+            ring={ring}
+            type="background"
+          />
         </Animated.View>
       </View>
       <View style={styles.bottom}>
-        <HalfCircle radius={radius} ring={ring} type="foreground" />
+        <HalfCircle
+          radius={radius}
+          ring={ring}
+          type="foreground"
+        />
         <Animated.View
           style={{
             ...StyleSheet.absoluteFillObject,
@@ -59,7 +72,11 @@ export const CircularProgress = ({
             ],
           }}
         >
-          <HalfCircle radius={radius} ring={ring} type="background" />
+          <HalfCircle
+            radius={radius}
+            ring={ring}
+            type="background"
+          />
         </Animated.View>
       </View>
     </Animated.View>

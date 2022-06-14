@@ -65,7 +65,10 @@ export const TextField = memo(function TextField() {
         removeError
         value={textField}
       />
-      <TouchableOpacity disabled={!submittable} onPress={onSubmit}>
+      <TouchableOpacity
+        disabled={!submittable}
+        onPress={onSubmit}
+      >
         <Icon
           color={submittable ? 'accent' : 'primaryA'}
           disabled={!submittable}

@@ -128,7 +128,10 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
   }, [onLogout]);
 
   return (
-    <Modal onBackgroundPress={onBackgroundPress} showOverlay>
+    <Modal
+      onBackgroundPress={onBackgroundPress}
+      showOverlay
+    >
       {form.state === 'loading' ? (
         <Loader size="large" />
       ) : form.state === 'phone confirm' ? (
@@ -145,7 +148,10 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
             onPress={onPhoneConfirm}
             title="verify phone confirmation code"
           />
-          <Button onPress={onPhone} title="go back" />
+          <Button
+            onPress={onPhone}
+            title="go back"
+          />
         </>
       ) : form.state === 'phone' ? (
         <>
@@ -161,7 +167,10 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
             onPress={onPhoneSubmit}
             title="send confirmation code"
           />
-          <Button onPress={onLanding} title="go back" />
+          <Button
+            onPress={onLanding}
+            title="go back"
+          />
         </>
       ) : form.state === 'forgot password' ? (
         <>
@@ -178,7 +187,10 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
             onPress={onEmailSubmit}
             title="send password reset"
           />
-          <Button onPress={onEmail} title="go back" />
+          <Button
+            onPress={onEmail}
+            title="go back"
+          />
         </>
       ) : form.state === 'email' ? (
         <>
@@ -196,9 +208,19 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
             textContentType="password"
             value={form.password}
           />
-          <Button color="accent" emphasis="high" title="submit" />
-          <Button onPress={onForgotPassword} title="forgot password" />
-          <Button onPress={onLanding} title="go back" />
+          <Button
+            color="accent"
+            emphasis="high"
+            title="submit"
+          />
+          <Button
+            onPress={onForgotPassword}
+            title="forgot password"
+          />
+          <Button
+            onPress={onLanding}
+            title="go back"
+          />
         </>
       ) : (
         <>
