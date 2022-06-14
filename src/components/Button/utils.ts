@@ -25,7 +25,7 @@ export const getStyles = ({
   emphasis,
   noPadding,
   disabled,
-}: StyleInterface): any => {
+}: StyleInterface) => {
   const backgroundColor =
     disabled && emphasis === 'high'
       ? colors.background.disabled

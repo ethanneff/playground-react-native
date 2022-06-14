@@ -387,7 +387,7 @@ exports[`screen renders correctly 1`] = `
                                       Object {
                                         "justifyContent": "center",
                                       },
-                                      undefined,
+                                      null,
                                     ]
                                   }
                                   testID="leftNav"

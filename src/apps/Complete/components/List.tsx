@@ -1,4 +1,4 @@
-import React, { memo, ReactElement } from 'react';
+import React, { memo, ReactNode } from 'react';
 import { View } from 'react-native';
 import { completeConfig } from '../utils';
 import { AddItem } from './AddItem';
@@ -7,7 +7,7 @@ import { ListHeader } from './ListHeader';
 import { ListItems } from './ListItems';
 
 type ListProps = {
-  footer?: ReactElement;
+  footer?: ReactNode;
   itemId: string;
   listWidth?: number;
   maxHeight: number;

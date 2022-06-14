@@ -5,13 +5,9 @@ import Svg, { G, Path, Polygon, Text } from 'react-native-svg';
 import { v4 } from 'uuid';
 import { TouchableOpacity } from '../../../../components';
 import { useColors, useDriver, useDropShadow } from '../../../../features';
+import { SuperAny } from '../../../../types/types';
+import { Segment } from './types';
 import { getNewLocation, getWinnerIndex } from './utils';
-
-type Segment = {
-  color: string;
-  display: string;
-  value: string;
-};
 
 type Props = {
   backgroundColor?: string;
@@ -59,7 +55,7 @@ export const Wheel = memo(function WheelMemo({
   const location = useRef(0);
   const angle = useRef(new Animated.Value(0)).current;
   const yPosition = useRef(new Animated.Value(-1)).current;
-  const arcs = pie()(segments.map(() => 1)).map((arc: any, index) => {
+  const arcs = pie()(segments.map(() => 1)).map((arc: SuperAny, index) => {
     const instance = d3Arc()
       .padAngle(padAngle)
       .outerRadius(radius)

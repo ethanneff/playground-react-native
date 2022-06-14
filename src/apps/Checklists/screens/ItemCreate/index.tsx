@@ -4,12 +4,13 @@ import 'react-native-get-random-values';
 import { v4 } from 'uuid';
 import { Button, Input, Screen } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { SuperAny } from '../../../../types/types';
 import { createChecklistItem } from '../../models';
 
 const initialState = { name: '', description: '' };
 
 export default memo(function ChecklistItemCreate() {
-  const { navigate } = useNavigation<any>();
+  const { navigate } = useNavigation<SuperAny>();
   const dispatch = useRootDispatch();
   const [form, setForm] = useState(initialState);
   const currentChecklist = useRootSelector((state) => state.checklist.active);

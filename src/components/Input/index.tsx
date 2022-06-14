@@ -16,6 +16,7 @@ import {
 } from 'react-native';
 import { GestureTextInput } from '../../conversions';
 import { fontSizes, padding, useColors } from '../../features';
+import { SuperAny } from '../../types/types';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
 import { TextInputRef } from '../TextInput';
@@ -124,7 +125,7 @@ export const Input = memo(function Input({
   }, [onChangeText]);
 
   const onRefInternal = useCallback(
-    (ref) => {
+    (ref: SuperAny) => {
       textInput.current = ref;
       if (onRef) onRef.current = ref;
     },

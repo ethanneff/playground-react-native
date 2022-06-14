@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { Dimensions } from 'react-native';
+import { Dimensions, ListRenderItem } from 'react-native';
 import { FlatList, Image, Screen } from '../../../../components';
 import { useColors } from '../../../../features';
 
@@ -21,7 +21,7 @@ export const ImageCollection = memo(function ImageCollection() {
   }, []);
   const colors = useColors();
 
-  const renderImage = useCallback(
+  const renderImage = useCallback<ListRenderItem<number>>(
     ({ item }) => (
       <Image
         height={columnWidth}

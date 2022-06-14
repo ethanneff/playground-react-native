@@ -1,10 +1,4 @@
-import React, {
-  memo,
-  ReactElement,
-  useCallback,
-  useEffect,
-  useRef,
-} from 'react';
+import React, { memo, ReactNode, useCallback, useEffect, useRef } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import {
   SoundManager,
@@ -19,7 +13,7 @@ import { TouchableWithoutFeedback } from '../TouchableWithoutFeedback';
 
 type ModalProps = {
   backgroundColor?: string;
-  children: ReactElement | ReactElement[];
+  children: ReactNode;
   duration?: number;
   elevation?: number;
   heightPercent?: number;

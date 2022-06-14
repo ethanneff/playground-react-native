@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react';
+import React, { ReactNode } from 'react';
 import { StyleProp, View, ViewStyle } from 'react-native';
 import { padding } from '../../features';
 
 type Props = {
-  children?: ReactElement | ReactElement[];
+  children?: ReactNode;
   margin?: number;
   padding?: number;
   style?: StyleProp<ViewStyle>;

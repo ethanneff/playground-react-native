@@ -3,7 +3,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import dayjs, { Dayjs } from 'dayjs';
 import isToday from 'dayjs/plugin/isToday';
 import React, { memo, useCallback } from 'react';
-import { View } from 'react-native';
+import { ListRenderItem, View } from 'react-native';
 import { FlatList, Text, TouchableOpacity } from '../../../../components';
 import { padding, useColors } from '../../../../features';
 import { AuthStackRoutes, Category } from '../../types';
@@ -29,7 +29,7 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
     navigate('category-detail', { category: categoryPress });
   };
 
-  const renderItem = useCallback(
+  const renderItem = useCallback<ListRenderItem<number>>(
     ({ index }) => {
       const historical = day.subtract(index, 'day');
       const weekend = isWeekend(historical);

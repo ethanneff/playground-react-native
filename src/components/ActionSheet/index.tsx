@@ -1,5 +1,12 @@
 import React, { memo, useCallback, useRef } from 'react';
-import { Animated, PanResponder, StyleSheet, View } from 'react-native';
+import {
+  Animated,
+  GestureResponderEvent,
+  PanResponder,
+  PanResponderGestureState,
+  StyleSheet,
+  View,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { padding, SoundManager, useColors, useDriver } from '../../features';
 import { Icon } from '../Icon';
@@ -62,7 +69,7 @@ export const ActionSheet = memo(function ActionSheet({
   const useNativeDriver = useDriver();
 
   const onPanResponderRelease = useCallback(
-    (_, g) => {
+    (_: GestureResponderEvent, g: PanResponderGestureState) => {
       if (noSwipe) return;
 
       const min = thresholdPercent * height * -1;
@@ -93,7 +100,7 @@ export const ActionSheet = memo(function ActionSheet({
   );
 
   const onPanResponderMove = useCallback(
-    (_, g) => {
+    (_: GestureResponderEvent, g: PanResponderGestureState) => {
       if (g.dy > 0 || noSwipe) return;
 
       const toValue = { x: 0, y: g.dy };

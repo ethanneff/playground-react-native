@@ -139,7 +139,6 @@ module.exports = {
     'no-warning-comments': 'off',
     'react/no-multi-comp': 'off',
     'no-console': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
     'sonarjs/cognitive-complexity': 'off',
   },
   settings: {

@@ -1,11 +1,11 @@
-import React, { ReactElement, ReactNode, useCallback } from 'react';
+import React, { ReactNode, useCallback } from 'react';
 import { StyleProp, ViewStyle } from 'react-native';
 import { GestureTouchableOpacity } from '../../conversions';
 import { SoundManager } from '../../features';
 
 type Props = {
   activeOpacity?: number;
-  children?: ReactNode | ReactNode[];
+  children?: ReactNode;
   containerStyle?: StyleProp<ViewStyle>;
   disabled?: boolean;
   flex?: boolean;
@@ -25,7 +25,7 @@ export const TouchableOpacity = ({
   containerStyle,
   flex,
   style,
-}: Props): ReactElement => {
+}: Props) => {
   const onPressHandler = useCallback(() => {
     SoundManager.play('tap');
     if (onPress) onPress();

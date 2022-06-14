@@ -1,3 +1,4 @@
+import { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import React, { memo, useCallback, useState } from 'react';
 import { View } from 'react-native';
 import { Button, Carousel, Screen } from '../../../../components';
@@ -114,7 +115,8 @@ export const Welcome = memo(function Welcome() {
   const [showLogin, setShowLogin] = useState(false);
   const onToggleLogin = useCallback(() => setShowLogin((p) => !p), []);
   const onLoginSuccess = useCallback(
-    (auth) => {
+    (auth: FirebaseAuthTypes.User | null) => {
+      if (!auth) throw new Error('no login');
       const {
         displayName,
         email,
@@ -133,6 +135,7 @@ export const Welcome = memo(function Welcome() {
         photoURL,
         uid,
       };
+      if (!email) throw new Error('no email');
       dispatch(login(data));
       const { user, items } = getDefaultUserTemplate();
       items.forEach((item) => dispatch(createItem(item)));

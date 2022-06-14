@@ -32,7 +32,7 @@ export const Settings = memo(function PortfolioSettings() {
     [currentTheme, themePress],
   );
   const renderHeader = useCallback(() => <Button disabled title="Theme" />, []);
-  const keyExtractor = useCallback((item) => item, []);
+  const keyExtractor = useCallback((item: Theme) => item, []);
 
   return (
     <Screen dropShadow onLeftPress={goBack} title="Settings">

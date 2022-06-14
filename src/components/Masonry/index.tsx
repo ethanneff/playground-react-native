@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, ReactElement } from 'react';
 import { View } from 'react-native';
 import { v4 } from 'uuid';
 import { padding } from '../../features';
@@ -11,7 +11,7 @@ interface Item<T> {
 interface Props<T> {
   data: T[];
   numColumns: number;
-  renderItem({ item, index }: Item<T>): void;
+  renderItem({ item, index }: Item<T>): ReactElement | null;
 }
 
 export const Masonry = memo(function Masonry<T>({

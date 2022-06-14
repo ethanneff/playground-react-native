@@ -7,6 +7,8 @@
  * @format
  */
 
+import { SuperAny } from '../../types/types';
+
 export enum NetInfoStateType {
   Unknown = 'unknown',
   None = 'none',
@@ -29,7 +31,7 @@ export interface NetInfoConnectedDetails {
 }
 interface NetInfoConnectedState<
   T extends NetInfoStateType,
-  D extends any = any,
+  D extends SuperAny = SuperAny,
 > {
   type: T;
   isConnected: true;

@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
 } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { SuperAny } from '../../../../types/types';
 import {
   ChecklistItem,
   getCurrentActiveChecklistItemsOrderByCreatedAt,
@@ -18,7 +19,7 @@ import {
 } from '../../models';
 
 export default memo(function Checklist() {
-  const { navigate } = useNavigation<any>();
+  const { navigate } = useNavigation<SuperAny>();
   const dispatch = useRootDispatch();
   const items = useRootSelector(getCurrentActiveChecklistItemsOrderByCreatedAt);
 
@@ -58,7 +59,7 @@ export default memo(function Checklist() {
     ),
     [handleEdit, handleRemove, handleToggle],
   );
-  const keyExtractor = useCallback((item) => item.id, []);
+  const keyExtractor = useCallback((item: ChecklistItem) => item.id, []);
   const navBack = useCallback(() => navigate('checklists'), [navigate]);
   const navCreate = useCallback(
     () => navigate('checklistsItemCreate'),

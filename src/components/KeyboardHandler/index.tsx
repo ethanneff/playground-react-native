@@ -1,10 +1,10 @@
-import React, { memo, ReactElement, useCallback } from 'react';
+import React, { memo, ReactNode, useCallback } from 'react';
 import { Keyboard, LayoutChangeEvent, View } from 'react-native';
 import { TouchableWithoutFeedback } from '../TouchableWithoutFeedback';
 
 type HandleKeyboardProps = {
   backgroundColor?: string;
-  children: ReactElement | ReactElement[];
+  children: ReactNode;
   onLayout: (event: LayoutChangeEvent) => void;
 };
 

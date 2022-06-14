@@ -1,4 +1,4 @@
-import React, { memo, ReactElement } from 'react';
+import React, { memo, ReactNode } from 'react';
 import { LayoutChangeEvent, View } from 'react-native';
 import { useColors } from '../../../features';
 import { completeConfig } from '../utils';
@@ -6,7 +6,7 @@ import { completeConfig } from '../utils';
 // TODO: combine card components with global card
 
 type CardProps = {
-  children: ReactElement | ReactElement[];
+  children: ReactNode;
   flex?: boolean;
   margin?: 'bottom' | 'right' | 'none';
   onLayout?: (event: LayoutChangeEvent) => void;

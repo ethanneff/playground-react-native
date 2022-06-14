@@ -7,7 +7,7 @@ export type Element =
   | '🍊'
   | '🍒'
   | '🍋'
-  | 'any';
+  | 'anything';
 type Combination = [Element, Element, Element, number];
 export type Combinations = Combination[];
 
@@ -23,8 +23,8 @@ export const combinations: Combinations = [
   ['🍊', '🍊', '🍊', 10],
   ['🍊', '🍊', '🍇', 10],
   ['🍒', '🍒', '🍒', 8],
-  ['🍒', '🍒', 'any', 5],
-  ['🍒', 'any', 'any', 2],
+  ['🍒', '🍒', 'anything', 5],
+  ['🍒', 'anything', 'anything', 2],
 ];
 
 export type Reel = { [key in Element]: number };
@@ -40,7 +40,7 @@ export const reels: Reels = [
     '🍊': 5,
     '🍒': 4,
     '🍋': 2,
-    any: 0,
+    anything: 0,
   },
   {
     '🍓': 1,
@@ -51,7 +51,7 @@ export const reels: Reels = [
     '🍊': 5,
     '🍒': 7,
     '🍋': 2,
-    any: 0,
+    anything: 0,
   },
   {
     '🍓': 1,
@@ -62,6 +62,6 @@ export const reels: Reels = [
     '🍊': 5,
     '🍒': 5,
     '🍋': 5,
-    any: 0,
+    anything: 0,
   },
 ];

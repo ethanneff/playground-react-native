@@ -1,5 +1,5 @@
 import { scaleLinear, scaleTime } from 'd3-scale';
-import { line, curveBasis } from 'd3-shape';
+import { curveBasis, line } from 'd3-shape';
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Svg, { Defs, LinearGradient, Path, Stop } from 'react-native-svg';
@@ -22,11 +22,7 @@ const getDomain = (domain: number[]) => [
   Math.max(...domain),
 ];
 
-export const Graph = ({
-  data,
-  width,
-  height,
-}: GraphProps): React.ReactElement => {
+export const Graph = ({ data, width, height }: GraphProps) => {
   const scaleX = scaleTime()
     .domain(getDomain(data.map((d) => d.date)))
     .range([0, width]);

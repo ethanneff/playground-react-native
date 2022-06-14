@@ -90,7 +90,7 @@ export const questionnairesInitialState: Questionnaires = {
       title: 'System Usability Scale',
     },
   },
-  selected: undefined,
+  selected: '1',
 };
 
 export const questionnairesReducer = (

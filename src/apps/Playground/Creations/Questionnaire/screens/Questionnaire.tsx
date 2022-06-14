@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { View } from 'react-native';
+import { ListRenderItem, View } from 'react-native';
 import {
   Card,
   FlatList,
@@ -8,7 +8,10 @@ import {
   Text,
   TouchableOpacity,
 } from '../../../../../components';
-import { questionnairesInitialState } from '../models';
+import {
+  Questionnaire as QuestionnaireType,
+  questionnairesInitialState,
+} from '../models';
 
 export const Questionnaire = (): JSX.Element => {
   const [actionSheet, setActionSheet] = useState(false);
@@ -24,7 +27,7 @@ export const Questionnaire = (): JSX.Element => {
   );
   const handleActionSheetClose = useCallback(() => setActionSheet(false), []);
 
-  const renderItem = useCallback(
+  const renderItem = useCallback<ListRenderItem<QuestionnaireType>>(
     ({ item }) => {
       const { length } = item.questions;
       const subtitle = `${length} question${length === 1 ? '' : 's'}`;
@@ -53,7 +56,7 @@ export const Questionnaire = (): JSX.Element => {
     [activeItem, handleItemPress],
   );
 
-  const keyExtractor = useCallback((item) => item.id, []);
+  const keyExtractor = useCallback((item: QuestionnaireType) => item.id, []);
 
   return (
     <>

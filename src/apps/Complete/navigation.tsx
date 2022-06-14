@@ -3,7 +3,7 @@ import {
   createStackNavigator,
   StackNavigationOptions,
 } from '@react-navigation/stack';
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { useNavScreenOptions, useTabTap } from '../../features';
 import {
   HomeStackRoutes,
@@ -61,7 +61,7 @@ const Home = () => {
 };
 
 const LandingStack = createStackNavigator<LandingStackRoutes>();
-export const Landing = (): ReactElement => {
+export const Landing = () => {
   const { modalScreenOptions } = useNavScreenOptions();
   return (
     <LandingStack.Navigator screenOptions={modalScreenOptions}>
@@ -74,7 +74,7 @@ export const Landing = (): ReactElement => {
 };
 
 const MainStack = createStackNavigator<MainStackRoutes>();
-export const Main = (): ReactElement => {
+export const Main = () => {
   const { modalScreenOptions } = useNavScreenOptions();
   return (
     <MainStack.Navigator screenOptions={modalScreenOptions}>

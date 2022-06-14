@@ -1,5 +1,6 @@
 export * from './Archero';
 export * from './Bejeweled';
+export * from './Crash';
 export * from './Drift';
 export * from './FlappyBird';
 export * from './FortuneWheel';

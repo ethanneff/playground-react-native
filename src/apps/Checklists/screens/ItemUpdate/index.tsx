@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { Button, Input, Screen } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { SuperAny } from '../../../../types/types';
 import {
   getCurrentChecklistItem,
   removeChecklistItem,
@@ -9,7 +10,7 @@ import {
 } from '../../models';
 
 export default memo(function ChecklistUpdate() {
-  const { navigate } = useNavigation<any>();
+  const { navigate } = useNavigation<SuperAny>();
   const dispatch = useRootDispatch();
   const item = useRootSelector(getCurrentChecklistItem);
   const [form, setForm] = useState({

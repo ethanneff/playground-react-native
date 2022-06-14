@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { View } from 'react-native';
+import { ListRenderItem, View } from 'react-native';
 import {
   Card,
   FlatList,
@@ -10,19 +10,19 @@ import {
   TouchableOpacity,
 } from '../../../components';
 import { padding, useColors } from '../../../features';
-import { PortfolioNavigation, PortfolioRoutes } from '../../Portfolio/types';
+import { SuperAny } from '../../../types/types';
 import { landingRoutes } from '../navParams';
 import { Row } from './Row';
 import { Title } from './Title';
 
 export const Landing = memo(function Playground() {
   const colors = useColors();
-  const { goBack, navigate } = useNavigation<PortfolioNavigation>();
+  const { goBack, navigate } = useNavigation<SuperAny>();
   const navToItem = useCallback(
-    (item: keyof PortfolioRoutes) => () => navigate(item),
+    (item: string) => () => navigate(item),
     [navigate],
   );
-  const renderItem = useCallback(
+  const renderItem = useCallback<ListRenderItem<string>>(
     ({ item }) => (
       <TouchableOpacity key={item} onPress={navToItem(item)}>
         <View style={{ paddingVertical: padding(2) }}>

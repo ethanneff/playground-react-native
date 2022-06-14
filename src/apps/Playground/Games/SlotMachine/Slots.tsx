@@ -35,8 +35,8 @@ const getInitialState = ({
   credits,
 }: InitialState): State => {
   const reelsArray = randomize
-    ? reels.map((reel) => shuffleArray([...(reel as any)]))
-    : reels.map((reel) => [...(reel as any)]);
+    ? reels.map((reel) => shuffleArray([...reel]))
+    : reels.map((reel) => [...reel]);
   return {
     activity: 'idle',
     credits,
@@ -52,7 +52,7 @@ const getWildCards = (
 ): WildCards => {
   const wildCards: WildCards = [];
   Object.keys(combinations).forEach((combination) => {
-    const unicodeCombination = [...(combination as any)];
+    const unicodeCombination = [...combination];
     if (unicodeCombination.length < reels.length)
       wildCards.push({ line: combination, amount: combinations[combination] });
 

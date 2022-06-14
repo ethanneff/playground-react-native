@@ -58,7 +58,7 @@ export const RecyclerFlatList = <T,>({
       <RefreshControl onRefresh={onRefetch} refreshing={refreshing || false} />
     ),
   },
-}: RecyclerFlatListProps<T>): ReactElement => {
+}: RecyclerFlatListProps<T>) => {
   const [dataProvider, setDataProvider] = useState(
     new DataProvider((r1, r2) => r1.id !== r2.id),
   );
@@ -79,7 +79,7 @@ export const RecyclerFlatList = <T,>({
   );
 
   const onRowRenderer = useCallback(
-    (_, item: T, index: number) => onRowRender(item, index),
+    (_: string | number, item: T, index: number) => onRowRender(item, index),
     [onRowRender],
   );
 

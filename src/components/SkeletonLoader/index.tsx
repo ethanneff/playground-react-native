@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Animated, Easing, StyleSheet, View } from 'react-native';
 import { LinearGradient } from '../../components/LinearGradient';
 import { padding, useColors, useDriver } from '../../features';
@@ -22,7 +22,7 @@ export const SkeletonLoader = ({
   backgroundColor,
   foregroundColor,
   duration = 1200,
-}: Props): ReactElement => {
+}: Props) => {
   const colors = useColors();
   const bgColor = backgroundColor || colors.background.secondary;
   const fgColor = foregroundColor || colors.background.primaryA;

@@ -39,8 +39,8 @@ const ModalManager = memo(function ModalManager({
   const handleClose = useCallback(() => {
     onClose(null)();
   }, [onClose]);
-  const [value, setValue] = useState('');
-  const handleTextChange = useCallback((v) => setValue(v), []);
+  const [value, setValue] = useState<string>('');
+  const handleTextChange = useCallback((v: string) => setValue(v), []);
 
   switch (modal) {
     case 'rate-app':

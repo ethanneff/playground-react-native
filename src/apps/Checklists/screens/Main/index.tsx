@@ -1,5 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
+import { ListRenderItem } from 'react-native';
 import {
   Button,
   FlatList,
@@ -8,13 +9,15 @@ import {
   TouchableOpacity,
 } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { SuperAny } from '../../../../types/types';
 import {
+  Checklist,
   getActiveChecklistOrderByCreatedAt,
   setActiveList,
 } from '../../models';
 
 export default memo(function Checklists() {
-  const { navigate } = useNavigation<any>();
+  const { navigate } = useNavigation<SuperAny>();
   const dispatch = useRootDispatch();
   const items = useRootSelector(getActiveChecklistOrderByCreatedAt);
 
@@ -33,7 +36,7 @@ export default memo(function Checklists() {
     [dispatch],
   );
 
-  const renderItem = useCallback(
+  const renderItem = useCallback<ListRenderItem<Checklist>>(
     ({ item }) => (
       <Button
         onLongPress={handleItemLongPress(item.id)}
@@ -44,7 +47,7 @@ export default memo(function Checklists() {
     [handleItemLongPress, handleItemPress],
   );
 
-  const keyExtractor = useCallback((item) => item.id, []);
+  const keyExtractor = useCallback((item: Checklist) => item.id, []);
   const navBack = useCallback(() => navigate('portfolioLanding'), [navigate]);
   const navCreate = useCallback(() => navigate('playground'), [navigate]);
 

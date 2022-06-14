@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { ListRenderItem, View } from 'react-native';
+import { ListRenderItem, View, ViewToken } from 'react-native';
 import { padding } from '../../features';
 import { getWidth, useRootSelector } from '../../redux';
 import { FlatList, FlatListRef } from '../FlatList';
@@ -28,13 +28,19 @@ export const Carousel = memo(function Carousel({
   const loopTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const touchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const onViewableItemsChanged = useCallback(({ viewableItems }) => {
-    const index = viewableItems[0]?.index || 0;
-    setActiveIndex(index);
-    activeIndexRef.current = index;
-  }, []);
+  const onViewableItemsChanged = useCallback(
+    ({ viewableItems }: { viewableItems: ViewToken[] }) => {
+      const index = viewableItems[0]?.index || 0;
+      setActiveIndex(index);
+      activeIndexRef.current = index;
+    },
+    [],
+  );
 
-  const keyExtractor = useCallback((item) => String(item.id), []);
+  const keyExtractor = useCallback(
+    (item: CarouselSlide) => String(item.id),
+    [],
+  );
   const onDotPress = useCallback(
     (index: number) => () => {
       if (!flatList.current) return;

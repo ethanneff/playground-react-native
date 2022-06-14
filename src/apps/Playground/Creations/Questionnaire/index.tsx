@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef, useState } from 'react';
-import { Dimensions, View } from 'react-native';
+import { Dimensions, ListRenderItem, View, ViewToken } from 'react-native';
 import {
   Button,
   FlatList,
@@ -10,7 +10,20 @@ import {
 } from '../../../../components';
 import { Questionnaires } from './screens/Questionnaires';
 
-const data = [
+type Choice = {
+  key: string;
+  selected: boolean;
+  title: string;
+};
+type Data = {
+  choices?: Choice[];
+  key: string;
+  next?: string;
+  title: string;
+  type: 'radio' | 'button';
+};
+
+const data: Data[] = [
   {
     choices: [
       {
@@ -34,28 +47,31 @@ const data = [
     title: 'What type of counseling are you looking for',
     type: 'radio',
   },
-  { key: '2', title: '2' },
-  { key: '3', title: '3' },
-  { key: '4', title: '4' },
-  { key: '5', title: '5' },
+  { key: '2', title: '2', type: 'button' },
+  { key: '3', title: '3', type: 'button' },
+  { key: '4', title: '4', type: 'button' },
+  { key: '5', title: '5', type: 'button' },
 ];
 const { width } = Dimensions.get('window');
 const viewabilityConfig = { itemVisiblePercentThreshold: 50 };
 
 export const Questionnaire = memo(function Questionnaire() {
-  const [output, setOutput] = useState<any>({});
+  const [output, setOutput] = useState({});
   const currentIndex = useRef(0);
   const { goBack } = useNavigation();
   const tableViewRef = useRef<FlatListRef>(null);
-  const handleViewableItemsChanged = useCallback(({ viewableItems }: any) => {
-    currentIndex.current = viewableItems[0]?.index || 0;
-  }, []);
+  const handleViewableItemsChanged = useCallback(
+    ({ viewableItems }: { viewableItems: Array<ViewToken> }) => {
+      currentIndex.current = viewableItems[0]?.index || 0;
+    },
+    [],
+  );
 
   const onFinish = () => undefined;
 
   const onProgress = useCallback(
     (direction = 1) => {
-      const index = currentIndex + direction;
+      const index = currentIndex.current + direction;
       if (index < 0 || !tableViewRef.current) return;
 
       if (index >= data.length) {
@@ -71,11 +87,10 @@ export const Questionnaire = memo(function Questionnaire() {
   );
 
   const onSelection = useCallback(
-    (item: any, choice: any) => {
+    (item: Data, choice: Choice) => {
       setOutput({
         ...output,
         [item.key]: {
-          ...output[item.key],
           [choice.key]: true,
         },
       });
@@ -85,7 +100,7 @@ export const Questionnaire = memo(function Questionnaire() {
   );
 
   const updateSelection = useCallback(
-    (item: any, choice: any) => () => onSelection(item, choice),
+    (item: Data, choice: Choice) => () => onSelection(item, choice),
     [onSelection],
   );
 
@@ -94,14 +109,14 @@ export const Questionnaire = memo(function Questionnaire() {
     [onProgress],
   );
 
-  const renderItem = useCallback(
+  const renderItem = useCallback<ListRenderItem<Data>>(
     ({ item }) => {
-      let items: any = <View style={{ flex: 1 }} />;
+      let items = <View style={{ flex: 1 }} />;
 
       if (item.choices)
         items = (
           <View style={{ flex: 1 }}>
-            {item.choices.map((choice: any) => {
+            {item.choices.map((choice) => {
               return (
                 <Button
                   key={choice.title}

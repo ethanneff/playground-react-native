@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import axios, { AxiosRequestConfig } from 'axios';
 import { useCallback, useEffect, useRef } from 'react';
 import { RootAction, RootMiddleware } from 'root-types';
+import { SuperAny } from '../types/types';
 
 const enabled = false; // TODO: turn on
 const refreshTimeout = 2000;
@@ -28,7 +29,7 @@ const syncQueue: SyncQueue = {
       await AsyncStorage.setItem(syncQueue.key, stringify);
       return syncQueue.cache;
     } catch (e) {
-      if (e instanceof Error) console.log(e.message);
+      if (e instanceof Error) throw new Error(e.message);
       return [];
     }
   },
@@ -39,7 +40,7 @@ const syncQueue: SyncQueue = {
       syncQueue.cache = [...syncQueue.cache, ...parse];
       return syncQueue.cache;
     } catch (e) {
-      if (e instanceof Error) console.log(e.message);
+      if (e instanceof Error) throw new Error(e.message);
       return [];
     }
   },
@@ -62,8 +63,9 @@ export const useSync = (): void => {
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const retryTimeout = useRef(retryDefaultTimeout);
 
-  const processSync = useCallback((data) => {
-    console.log(data); // TODO: only update redux if data is different
+  const processSync = useCallback((data: SuperAny) => {
+    throw new Error(data);
+    // TODO: only update redux if data is different
   }, []);
 
   const clearTimer = () => timer.current && clearTimeout(timer.current);

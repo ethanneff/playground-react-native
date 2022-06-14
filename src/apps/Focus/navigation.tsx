@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { useNavScreenOptions } from '../../features';
 import { CategoryDetail, Journal, Landing, Profile, Progress } from './screens';
 import { JournalDetail } from './screens/JournalDetail';
@@ -41,7 +41,7 @@ const Tabs = () => {
   );
 };
 
-export const Navigation = (): ReactElement => {
+export const Navigation = () => {
   const { modalScreenOptions } = useNavScreenOptions();
   const login = false;
 

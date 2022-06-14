@@ -21,7 +21,7 @@ export const Board = memo(function Board({
   const board = useRootSelector((s) => s.completeItem.items[projectItemId]);
   const getItemId = useCallback((item: string) => item, []);
   const getItemLayout = useCallback(
-    (_, index: number) => ({
+    (_: string[] | null | undefined, index: number) => ({
       length: listSize,
       offset: listSize * index,
       index,

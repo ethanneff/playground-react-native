@@ -88,7 +88,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
     generateItems({ colors, length: 200000 }),
   );
 
-  const onChangeText = useCallback((v) => {
+  const onChangeText = useCallback((v: string) => {
     setMessage(v);
   }, []);
 

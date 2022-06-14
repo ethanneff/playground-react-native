@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { View } from 'react-native';
+import { ListRenderItem, View } from 'react-native';
 import {
   Card,
   FlatList,
@@ -38,7 +38,7 @@ export const Questionnaires = (): JSX.Element => {
   const handleItemMenu = useCallback(() => {
     setActionSheet((state) => !state);
   }, []);
-  const renderItem = useCallback(
+  const renderItem = useCallback<ListRenderItem<Questionnaire>>(
     ({ item }) => {
       const { length } = item.questions;
       const subtitle = `${length} question${length === 1 ? '' : 's'}`;

@@ -42,7 +42,10 @@ export const Activity = memo(function Activity({
   title,
 }: Props) {
   const [state, setState] = useState<ActivityModel>(initialActivity);
-  const keyExtractor = useCallback((item) => String(item[0].date), []);
+  const keyExtractor = useCallback(
+    (item: ActivityWeek) => String(item[0].date),
+    [],
+  );
 
   const getActivity = useCallback(async () => {
     try {

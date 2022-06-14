@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { Animated, StyleSheet, View } from 'react-native';
+import { Animated, ListRenderItem, StyleSheet, View } from 'react-native';
 import { FlatList, Icon, Input, Screen, Text } from '../../../../components';
 import {
   colorWithOpacity,
@@ -10,7 +10,12 @@ import {
 } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 
-const data = [
+type Data = {
+  id: number;
+  name: string;
+};
+
+const data: Data[] = [
   { id: 1, name: '1' },
   { id: 2, name: '2' },
   { id: 3, name: '3' },
@@ -128,14 +133,14 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     else onSearchBarUnFocus();
   });
 
-  const renderItem = useCallback(
+  const renderItem = useCallback<ListRenderItem<Data>>(
     ({ item }) => (
       <Text style={styles.item} title={item.name} type="subtitle2" />
     ),
     [styles.item],
   );
 
-  const keyExtractor = useCallback((item) => item.id.toString(), []);
+  const keyExtractor = useCallback((item: Data) => item.id.toString(), []);
 
   const onChangeText = useCallback(
     (value: string) => setState((prev) => ({ ...prev, input: value })),
