@@ -1,0 +1,285 @@
+diff --git a/node_modules/react-native-svg/android/build/intermediates/aar_metadata/debug/aar-metadata.properties b/node_modules/react-native-svg/android/build/intermediates/aar_metadata/debug/aar-metadata.properties
+index d8f70c0..d8560bd 100644
+--- a/node_modules/react-native-svg/android/build/intermediates/aar_metadata/debug/aar-metadata.properties
++++ b/node_modules/react-native-svg/android/build/intermediates/aar_metadata/debug/aar-metadata.properties
+@@ -1,3 +1,2 @@
+ aarFormatVersion=1.0
+ aarMetadataVersion=1.0
+-minCompileSdk=1
+diff --git a/node_modules/react-native-svg/src/index.d.ts b/node_modules/react-native-svg/src/index.d.ts
+index 891a99d..a983ee4 100644
+--- a/node_modules/react-native-svg/src/index.d.ts
++++ b/node_modules/react-native-svg/src/index.d.ts
+@@ -1,6 +1,6 @@
+ import * as React from 'react';
+ import * as ReactNative from 'react-native';
+-import { GestureResponderEvent, TransformsStyle, OpaqueColorValue } from 'react-native';
++import { GestureResponderEvent, OpaqueColorValue, TransformsStyle } from 'react-native';
+ 
+ // Common props
+ export type NumberProp = string | number;
+@@ -240,17 +240,17 @@ export interface CircleProps extends CommonPathProps {
+   opacity?: NumberProp;
+   r?: NumberProp;
+ }
+-export const Circle: React.ComponentClass<CircleProps>;
+-export type Circle = React.ComponentClass<CircleProps>;
++export const Circle: React.ReactNode<CircleProps>;
++export type Circle = React.ReactNode<CircleProps>;
+ 
+ export interface ClipPathProps {
+   id?: string;
+ }
+-export const ClipPath: React.ComponentClass<ClipPathProps>;
+-export type ClipPath = React.ComponentClass<ClipPathProps>;
++export const ClipPath: React.ReactNode<ClipPathProps>;
++export type ClipPath = React.ReactNode<ClipPathProps>;
+ 
+-export const Defs: React.ComponentClass<{}>;
+-export type Defs = React.ComponentClass<{}>;
++export const Defs: React.ReactNode<{}>;
++export type Defs = React.ReactNode<{}>;
+ 
+ export interface EllipseProps extends CommonPathProps {
+   cx?: NumberProp;
+@@ -259,14 +259,14 @@ export interface EllipseProps extends CommonPathProps {
+   rx?: NumberProp;
+   ry?: NumberProp;
+ }
+-export const Ellipse: React.ComponentClass<EllipseProps>;
+-export type Ellipse = React.ComponentClass<EllipseProps>;
++export const Ellipse: React.ReactNode<EllipseProps>;
++export type Ellipse = React.ReactNode<EllipseProps>;
+ 
+ export interface GProps extends CommonPathProps, FontProps {
+   opacity?: NumberProp;
+ }
+-export const G: React.ComponentClass<GProps>;
+-export type G = React.ComponentClass<GProps>;
++export const G: React.ReactNode<GProps>;
++export type G = React.ReactNode<GProps>;
+ 
+ export interface ForeignObjectProps {
+   x?: NumberProp;
+@@ -274,8 +274,8 @@ export interface ForeignObjectProps {
+   width?: NumberProp;
+   height?: NumberProp;
+ }
+-export const ForeignObject: React.ComponentClass<ForeignObjectProps>;
+-export type ForeignObject = React.ComponentClass<ForeignObjectProps>;
++export const ForeignObject: React.ReactNode<ForeignObjectProps>;
++export type ForeignObject = React.ReactNode<ForeignObjectProps>;
+ 
+ export interface ImageProps
+   extends ResponderProps,
+@@ -293,8 +293,8 @@ export interface ImageProps
+   clipPath?: string;
+   id?: string;
+ }
+-export const Image: React.ComponentClass<ImageProps>;
+-export type Image = React.ComponentClass<ImageProps>;
++export const Image: React.ReactNode<ImageProps>;
++export type Image = React.ReactNode<ImageProps>;
+ 
+ export interface LineProps extends CommonPathProps {
+   opacity?: NumberProp;
+@@ -303,8 +303,8 @@ export interface LineProps extends CommonPathProps {
+   y1?: NumberProp;
+   y2?: NumberProp;
+ }
+-export const Line: React.ComponentClass<LineProps>;
+-export type Line = React.ComponentClass<LineProps>;
++export const Line: React.ReactNode<LineProps>;
++export type Line = React.ReactNode<LineProps>;
+ 
+ export interface LinearGradientProps {
+   x1?: NumberProp;
+@@ -315,15 +315,15 @@ export interface LinearGradientProps {
+   gradientTransform?: ColumnMajorTransformMatrix | string;
+   id?: string;
+ }
+-export const LinearGradient: React.ComponentClass<LinearGradientProps>;
+-export type LinearGradient = React.ComponentClass<LinearGradientProps>;
++export const LinearGradient: React.ReactNode<LinearGradientProps>;
++export type LinearGradient = React.ReactNode<LinearGradientProps>;
+ 
+ export interface PathProps extends CommonPathProps {
+   d?: string;
+   opacity?: NumberProp;
+ }
+-export const Path: React.ComponentClass<PathProps>;
+-export type Path = React.ComponentClass<PathProps>;
++export const Path: React.ReactNode<PathProps>;
++export type Path = React.ReactNode<PathProps>;
+ 
+ export interface PatternProps {
+   id?: string;
+@@ -337,22 +337,22 @@ export interface PatternProps {
+   viewBox?: string;
+   preserveAspectRatio?: string;
+ }
+-export const Pattern: React.ComponentClass<PatternProps>;
+-export type Pattern = React.ComponentClass<PatternProps>;
++export const Pattern: React.ReactNode<PatternProps>;
++export type Pattern = React.ReactNode<PatternProps>;
+ 
+ export interface PolygonProps extends CommonPathProps {
+   opacity?: NumberProp;
+   points?: string | ReadonlyArray<NumberProp>;
+ }
+-export const Polygon: React.ComponentClass<PolygonProps>;
+-export type Polygon = React.ComponentClass<PolygonProps>;
++export const Polygon: React.ReactNode<PolygonProps>;
++export type Polygon = React.ReactNode<PolygonProps>;
+ 
+ export interface PolylineProps extends CommonPathProps {
+   opacity?: NumberProp;
+   points?: string | ReadonlyArray<NumberProp>;
+ }
+-export const Polyline: React.ComponentClass<PolylineProps>;
+-export type Polyline = React.ComponentClass<PolylineProps>;
++export const Polyline: React.ReactNode<PolylineProps>;
++export type Polyline = React.ReactNode<PolylineProps>;
+ 
+ export interface RadialGradientProps {
+   fx?: NumberProp;
+@@ -366,8 +366,8 @@ export interface RadialGradientProps {
+   gradientTransform?: ColumnMajorTransformMatrix | string;
+   id?: string;
+ }
+-export const RadialGradient: React.ComponentClass<RadialGradientProps>;
+-export type RadialGradient = React.ComponentClass<RadialGradientProps>;
++export const RadialGradient: React.ReactNode<RadialGradientProps>;
++export type RadialGradient = React.ReactNode<RadialGradientProps>;
+ 
+ export interface RectProps extends CommonPathProps {
+   x?: NumberProp;
+@@ -378,16 +378,16 @@ export interface RectProps extends CommonPathProps {
+   ry?: NumberProp;
+   opacity?: NumberProp;
+ }
+-export const Rect: React.ComponentClass<RectProps>;
+-export type Rect = React.ComponentClass<RectProps>;
++export const Rect: React.ReactNode<RectProps>;
++export type Rect = React.ReactNode<RectProps>;
+ 
+ export interface StopProps {
+   stopColor?: Color;
+   stopOpacity?: NumberProp;
+   offset?: NumberProp;
+ }
+-export const Stop: React.ComponentClass<StopProps>;
+-export type Stop = React.ComponentClass<StopProps>;
++export const Stop: React.ReactNode<StopProps>;
++export type Stop = React.ReactNode<StopProps>;
+ 
+ export interface SvgProps extends GProps, ReactNative.ViewProperties {
+   width?: NumberProp;
+@@ -399,8 +399,8 @@ export interface SvgProps extends GProps, ReactNative.ViewProperties {
+ }
+ 
+ // Svg is both regular and default exported
+-export const Svg: React.ComponentClass<SvgProps>;
+-export type Svg = React.ComponentClass<SvgProps>;
++export const Svg: React.ReactNode<SvgProps>;
++export type Svg = React.ReactNode<SvgProps>;
+ export default Svg;
+ 
+ export interface SymbolProps {
+@@ -409,8 +409,8 @@ export interface SymbolProps {
+   preserveAspectRatio?: string;
+   opacity?: NumberProp;
+ }
+-export const Symbol: React.ComponentClass<SymbolProps>;
+-export type Symbol = React.ComponentClass<SymbolProps>;
++export const Symbol: React.ReactNode<SymbolProps>;
++export type Symbol = React.ReactNode<SymbolProps>;
+ 
+ export interface TSpanProps extends CommonPathProps, FontProps {
+   x?: NumberArray;
+@@ -420,8 +420,8 @@ export interface TSpanProps extends CommonPathProps, FontProps {
+   rotate?: NumberArray;
+   inlineSize?: NumberProp;
+ }
+-export const TSpan: React.ComponentClass<TSpanProps>;
+-export type TSpan = React.ComponentClass<TSpanProps>;
++export const TSpan: React.ReactNode<TSpanProps>;
++export type TSpan = React.ReactNode<TSpanProps>;
+ 
+ export interface TextSpecificProps extends CommonPathProps, FontProps {
+   alignmentBaseline?: AlignmentBaseline;
+@@ -442,8 +442,8 @@ export interface TextProps extends TextSpecificProps {
+   opacity?: NumberProp;
+   inlineSize?: NumberProp;
+ }
+-export const Text: React.ComponentClass<TextProps>;
+-export type Text = React.ComponentClass<TextProps>;
++export const Text: React.ReactNode<TextProps>;
++export type Text = React.ReactNode<TextProps>;
+ 
+ export interface TextPathProps extends TextSpecificProps {
+   xlinkHref?: string;
+@@ -453,8 +453,8 @@ export interface TextPathProps extends TextSpecificProps {
+   spacing?: TextPathSpacing;
+   midLine?: TextPathMidLine;
+ }
+-export const TextPath: React.ComponentClass<TextPathProps>;
+-export type TextPath = React.ComponentClass<TextPathProps>;
++export const TextPath: React.ReactNode<TextPathProps>;
++export type TextPath = React.ReactNode<TextPathProps>;
+ 
+ export interface UseProps extends CommonPathProps {
+   xlinkHref?: string;
+@@ -465,8 +465,8 @@ export interface UseProps extends CommonPathProps {
+   y?: NumberProp;
+   opacity?: NumberProp;
+ }
+-export const Use: React.ComponentClass<UseProps>;
+-export type Use = React.ComponentClass<UseProps>;
++export const Use: React.ReactNode<UseProps>;
++export type Use = React.ReactNode<UseProps>;
+ 
+ export enum EMaskUnits {
+   USER_SPACE_ON_USE = 'userSpaceOnUse',
+@@ -487,8 +487,8 @@ export interface MaskProps extends CommonPathProps {
+   maskUnits?: TMaskUnits;
+   maskContentUnits?: TMaskUnits;
+ }
+-export const Mask: React.ComponentClass<MaskProps>;
+-export type Mask = React.ComponentClass<MaskProps>;
++export const Mask: React.ReactNode<MaskProps>;
++export type Mask = React.ReactNode<MaskProps>;
+ 
+ export enum MarkerUnits {
+   STROKE_WIDTH = 'strokeWidth',
+@@ -511,8 +511,8 @@ export interface MarkerProps {
+   markerUnits?: MarkerUnits;
+   orient?: Orient | NumberProp;
+ }
+-export const Marker: React.ComponentClass<MarkerProps>;
+-export type Marker = React.ComponentClass<MarkerProps>;
++export const Marker: React.ReactNode<MarkerProps>;
++export type Marker = React.ReactNode<MarkerProps>;
+ 
+ export type Styles = { [property: string]: string };
+ 
+@@ -562,15 +562,15 @@ export function parse(source: string, middleware?: Middleware): JsxAST | null;
+ export const SvgAst: React.FunctionComponent<AstProps>;
+ 
+ export const SvgXml: React.FunctionComponent<XmlProps>;
+-export const SvgFromXml: React.ComponentClass<XmlProps, XmlState>;
++export const SvgFromXml: React.ReactNode<XmlProps, XmlState>;
+ 
+ export const SvgUri: React.FunctionComponent<UriProps>;
+-export const SvgFromUri: React.ComponentClass<UriProps, UriState>;
++export const SvgFromUri: React.ReactNode<UriProps, UriState>;
+ 
+ export const SvgCss: React.FunctionComponent<XmlProps>;
+-export const SvgWithCss: React.ComponentClass<XmlProps, XmlState>;
++export const SvgWithCss: React.ReactNode<XmlProps, XmlState>;
+ 
+ export const SvgCssUri: React.FunctionComponent<UriProps>;
+-export const SvgWithCssUri: React.ComponentClass<UriProps, UriState>;
++export const SvgWithCssUri: React.ReactNode<UriProps, UriState>;
+ 
+ export const inlineStyles: Middleware;
