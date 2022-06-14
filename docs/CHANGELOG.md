@@ -1,5 +1,19 @@
 # Changelog
 
+# [2.62.0](https://github.com/ethanneff/playground-react-native/compare/v2.61.15...v2.62.0) (2022-06-14)
+
+
+### Bug Fixes
+
+* allow for children to be used in svg (react 18 fix) ([d1dfe2e](https://github.com/ethanneff/playground-react-native/commit/d1dfe2e44e5475f52f84a01c75c903290ea2c0c9))
+* clean up typings ([1ff7d66](https://github.com/ethanneff/playground-react-native/commit/1ff7d6640fd457ab97a4d3acc63ba48bb5065772))
+* new prettier rules ([03461b3](https://github.com/ethanneff/playground-react-native/commit/03461b3fc61b493248baab8a93b6044011178776))
+
+
+### Features
+
+* add crash game ([abcc16d](https://github.com/ethanneff/playground-react-native/commit/abcc16dccdc2c3226138606361a86e0573bf4b98))
+
 ## [2.61.15](https://github.com/ethanneff/playground-react-native/compare/v2.61.14...v2.61.15) (2022-06-13)
 
 
