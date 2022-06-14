@@ -12,6 +12,7 @@ const routeCategories: RouteCategories = {
   'papi-jump': 'games',
   snake: 'games',
   archero: 'games',
+  crash: 'games',
   'flappy-bird': 'games',
   'tic-tac-toe': 'games',
   'game-of-life': 'games',

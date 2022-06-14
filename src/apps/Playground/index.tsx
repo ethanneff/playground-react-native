@@ -32,6 +32,7 @@ import {
 import {
   Archero,
   Bejeweled,
+  Crash,
   Drift,
   FlappyBird,
   FortuneWheel,
@@ -63,6 +64,7 @@ export default memo(function Games() {
       <Stack.Screen component={PapiJump} name="papi-jump" />
       <Stack.Screen component={Snake} name="snake" />
       <Stack.Screen component={Archero} name="archero" />
+      <Stack.Screen component={Crash} name="crash" />
       <Stack.Screen component={FlappyBird} name="flappy-bird" />
       <Stack.Screen component={TicTacToe} name="tic-tac-toe" />
       <Stack.Screen component={GameOfLife} name="game-of-life" />
