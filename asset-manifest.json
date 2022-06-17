@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/playground-react-native/static/js/main.18778085.js",
+    "main.js": "/playground-react-native/static/js/main.479c5283.js",
     "static/js/623.f7b1ea58.chunk.js": "/playground-react-native/static/js/623.f7b1ea58.chunk.js",
     "static/js/552.b0ea63ef.chunk.js": "/playground-react-native/static/js/552.b0ea63ef.chunk.js",
     "static/js/597.79bbe224.chunk.js": "/playground-react-native/static/js/597.79bbe224.chunk.js",
@@ -14,7 +14,7 @@
     "static/js/354.510ade9c.chunk.js": "/playground-react-native/static/js/354.510ade9c.chunk.js",
     "static/js/413.16b27e68.chunk.js": "/playground-react-native/static/js/413.16b27e68.chunk.js",
     "static/js/253.e3133c43.chunk.js": "/playground-react-native/static/js/253.e3133c43.chunk.js",
-    "static/js/112.c8340ea4.chunk.js": "/playground-react-native/static/js/112.c8340ea4.chunk.js",
+    "static/js/112.babdfeaa.chunk.js": "/playground-react-native/static/js/112.babdfeaa.chunk.js",
     "static/js/349.d50709b8.chunk.js": "/playground-react-native/static/js/349.d50709b8.chunk.js",
     "static/media/three.gif": "/playground-react-native/static/media/three.8dc9824b468f9fecfcf8.gif",
     "static/media/four.gif": "/playground-react-native/static/media/four.7caa76a634387e0d4b22.gif",
@@ -23,7 +23,7 @@
     "static/media/placeholder.png": "/playground-react-native/static/media/placeholder.7ac84d6898a616d0b6f5.png",
     "static/media/tap.mp3": "/playground-react-native/static/media/tap.5016b35a366825ed8a6d.mp3",
     "index.html": "/playground-react-native/index.html",
-    "main.18778085.js.map": "/playground-react-native/static/js/main.18778085.js.map",
+    "main.479c5283.js.map": "/playground-react-native/static/js/main.479c5283.js.map",
     "623.f7b1ea58.chunk.js.map": "/playground-react-native/static/js/623.f7b1ea58.chunk.js.map",
     "552.b0ea63ef.chunk.js.map": "/playground-react-native/static/js/552.b0ea63ef.chunk.js.map",
     "597.79bbe224.chunk.js.map": "/playground-react-native/static/js/597.79bbe224.chunk.js.map",
@@ -37,10 +37,10 @@
     "354.510ade9c.chunk.js.map": "/playground-react-native/static/js/354.510ade9c.chunk.js.map",
     "413.16b27e68.chunk.js.map": "/playground-react-native/static/js/413.16b27e68.chunk.js.map",
     "253.e3133c43.chunk.js.map": "/playground-react-native/static/js/253.e3133c43.chunk.js.map",
-    "112.c8340ea4.chunk.js.map": "/playground-react-native/static/js/112.c8340ea4.chunk.js.map",
+    "112.babdfeaa.chunk.js.map": "/playground-react-native/static/js/112.babdfeaa.chunk.js.map",
     "349.d50709b8.chunk.js.map": "/playground-react-native/static/js/349.d50709b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.18778085.js"
+    "static/js/main.479c5283.js"
   ]
 }
