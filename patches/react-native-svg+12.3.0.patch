@@ -1,11 +1,3 @@
-diff --git a/node_modules/react-native-svg/android/build/intermediates/aar_metadata/debug/aar-metadata.properties b/node_modules/react-native-svg/android/build/intermediates/aar_metadata/debug/aar-metadata.properties
-index d8f70c0..d8560bd 100644
---- a/node_modules/react-native-svg/android/build/intermediates/aar_metadata/debug/aar-metadata.properties
-+++ b/node_modules/react-native-svg/android/build/intermediates/aar_metadata/debug/aar-metadata.properties
-@@ -1,3 +1,2 @@
- aarFormatVersion=1.0
- aarMetadataVersion=1.0
--minCompileSdk=1
 diff --git a/node_modules/react-native-svg/src/index.d.ts b/node_modules/react-native-svg/src/index.d.ts
 index 891a99d..a983ee4 100644
 --- a/node_modules/react-native-svg/src/index.d.ts

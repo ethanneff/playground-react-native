@@ -4,9 +4,9 @@
 | :---------------------------------------- | :--- | :------------- | :--------------------------------- |
 | @mdi/js                                   | prod |                | web icons                          |
 | @mdi/react                                | prod |                | web icons                          |
-| @react-native-community/async-storage     | prod |                | native storage                     |
+| @react-native-async-storage/async-storage | prod |                | native storage                     |
 | @react-native-community/netinfo           | prod |                | native network                     |
-| @react-native-community/masked-view       | prod |                | apple fit                          |
+| @react-native-masked-view/masked-view     | prod |                | apple fit                          |
 | axios                                     | prod |                | ajax                               |
 | howler                                    | prod |                | web sound                          |
 | moment                                    | prod |                | time                               |

@@ -11,6 +11,7 @@ module.exports = {
     '<rootDir>/node_modules/react-native-gesture-handler/jestSetup.js',
     '<rootDir>/src/mocks/Setup/index.ts',
   ],
+  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   rootDir: '../',
   globals: {
     window: {},

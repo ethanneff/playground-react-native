@@ -1,2 +1,2 @@
-import Original from '@react-native-community/masked-view';
+import Original from '@react-native-masked-view/masked-view';
 export const MaskedView = Original;
