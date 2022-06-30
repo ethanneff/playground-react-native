@@ -1200,7 +1200,7 @@ PODS:
     - React-Core
   - RNDeviceInfo (9.0.2):
     - React-Core
-  - RNDevMenu (4.0.2):
+  - RNDevMenu (4.1.0):
     - React-Core
     - React-Core/DevSupport
     - React-RCTNetwork
@@ -1624,7 +1624,7 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: 466b9df1a14bccda91da86e0b7d9a345d78e1673
   RNCMaskedView: c298b644a10c0c142055b3ae24d83879ecb13ccd
   RNDeviceInfo: 1e3f62b9ec32f7754fac60bd06b8f8a27124e7f0
-  RNDevMenu: fd325b5554b61fe7f48d9205a3877cf5ee88cd7c
+  RNDevMenu: 40dcdfb0653664c654b5afcf3e77a6fb9f280e34
   RNFastImage: 1f2cab428712a4baaf78d6169eaec7f622556dd7
   RNFBAnalytics: c26f7580934cb1563eb2239b4997c6aa62f7ccfc
   RNFBApp: b1b5a80a676a07dea17e778bda7c1e8b69b2f5ec
