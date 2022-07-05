@@ -13007,10 +13007,10 @@ react-native-device-info@9.0.2:
   resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-9.0.2.tgz#00c7ab139a620ac9650852cd0ef0fb69d9a4418d"
   integrity sha512-+IfYZ/OuKjnFf7SFfgIzEqynSeFngrIHc5KgHUIfXusLDXIFJ+LhRBCD7skqnraHrfmESUOMjLbNcvy4SVdwSA==
 
-react-native-draggable-flatlist@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/react-native-draggable-flatlist/-/react-native-draggable-flatlist-3.1.1.tgz#b27009035153ed8d897217392447fb3c98316aea"
-  integrity sha512-hvzfMgG+HPIYCpoYy+R+FaoylRc4HbcP+gvghG0ISGwsU8HETcM8WmUEAaDTr7EeKmnG1BbV43MMExMjIQXRmA==
+react-native-draggable-flatlist@3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-draggable-flatlist/-/react-native-draggable-flatlist-3.1.2.tgz#b66538007f645ccd851c729d4b8a8f7e07666d3f"
+  integrity sha512-cqBR+lZktTqHY/J7V0aq+TZNkuqeILxwZ5bBXKndokwH4qvZl7ifijM7LlfWhfhU1/pzjketTsX7P2zyojfAaQ==
 
 react-native-fast-image@8.5.11:
   version "8.5.11"
