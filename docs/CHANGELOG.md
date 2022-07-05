@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.62.3](https://github.com/ethanneff/playground-react-native/compare/v2.62.2...v2.62.3) (2022-07-05)
+
+
+### Bug Fixes
+
+* make android work again ([9677c08](https://github.com/ethanneff/playground-react-native/commit/9677c089ff295705c76e1034eb63b0f7d6f48f98))
+* remove unused extensions ([d5687ba](https://github.com/ethanneff/playground-react-native/commit/d5687ba468f02b7f79823c56fe9a0cb3e5abc4bd))
+* update deps ([cb897de](https://github.com/ethanneff/playground-react-native/commit/cb897deede09b9578911199e40817e7d4c42439d))
+* update deps ([a300351](https://github.com/ethanneff/playground-react-native/commit/a300351976e60020b25e4df747928a6fda69910c))
+
 ## [2.62.2](https://github.com/ethanneff/playground-react-native/compare/v2.62.1...v2.62.2) (2022-06-17)
 
 
