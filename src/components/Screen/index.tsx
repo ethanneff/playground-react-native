@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { Edge, SafeAreaView } from 'react-native-safe-area-context';
 import { useColors } from '../../features';
+import { IconName } from '../Icon';
 import { NavBar } from './NavBar';
 
 type Props = {
@@ -15,14 +16,14 @@ type Props = {
   children?: ReactNode;
   dropShadow?: boolean;
   edges?: Edge[];
-  leftIcon?: string;
+  leftIcon?: IconName;
   onLeftPress?: () => void;
   onRightPress?: () => void;
   onSecondLeftPress?: () => void;
   onSecondRightPress?: () => void;
-  rightIcon?: string;
-  secondLeftIcon?: string;
-  secondRightIcon?: string;
+  rightIcon?: IconName;
+  secondLeftIcon?: IconName;
+  secondRightIcon?: IconName;
   style?: StyleProp<ViewStyle>;
   testID?: string;
   title?: string;

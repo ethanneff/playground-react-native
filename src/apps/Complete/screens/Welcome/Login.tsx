@@ -4,6 +4,7 @@ import { Platform } from 'react-native';
 import {
   Button,
   Icon,
+  IconName,
   Loader,
   Modal,
   Text,
@@ -27,7 +28,7 @@ type Props = {
 
 // TODO: relocate to somewhere
 interface SignInButtonProps {
-  icon: string;
+  icon: IconName;
   margin?: boolean;
   onPress: () => void;
   title: string;

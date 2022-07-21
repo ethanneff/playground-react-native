@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import {
   Card,
   Icon,
+  IconName,
   Screen,
   ScrollView,
   Text,
@@ -23,7 +24,7 @@ type ChecklistItemProps = {
 };
 
 const ChecklistItem = ({ item, index }: ChecklistItemProps) => {
-  const [toggle, setToggle] = useState('checkbox-blank-outline');
+  const [toggle, setToggle] = useState<IconName>('checkbox-blank-outline');
   const onPress = useCallback(() => {
     setToggle((prev) =>
       prev === 'checkbox-marked-outline'

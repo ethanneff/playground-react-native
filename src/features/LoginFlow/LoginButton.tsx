@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
-import { Icon, Text, TouchableOpacity } from '../../components';
+import { Icon, IconName, Text, TouchableOpacity } from '../../components';
 import { padding } from '../../features';
 import { useColors } from '../Theme';
 
 type Props = {
-  icon: string;
+  icon: IconName;
   onPress: () => void;
   title: string;
 };

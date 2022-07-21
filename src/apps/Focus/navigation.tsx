@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { useNavScreenOptions } from '../../features';
+import { TabIcons, useNavScreenOptions } from '../../features';
 import { CategoryDetail, Journal, Landing, Profile, Progress } from './screens';
 import { JournalDetail } from './screens/JournalDetail';
 import { AuthStackRoutes, HomeTabRoutes, UnAuthStackRoutes } from './types';
@@ -9,10 +9,6 @@ import { AuthStackRoutes, HomeTabRoutes, UnAuthStackRoutes } from './types';
 const AuthStack = createStackNavigator<AuthStackRoutes>();
 const UnAuthStack = createStackNavigator<UnAuthStackRoutes>();
 const TabBar = createBottomTabNavigator<HomeTabRoutes>();
-
-type TabIcons = {
-  [key in keyof HomeTabRoutes]: { focused: string; unFocused: string };
-};
 
 const tabIcons: TabIcons = {
   journal: {
@@ -51,7 +47,7 @@ const Tabs = () => {
 };
 
 export const Navigation = () => {
-  const { modalScreenOptions } = useNavScreenOptions();
+  const { modalScreenOptions, bottomScreenOptions } = useNavScreenOptions();
   const login = false;
 
   return login ? (
@@ -62,7 +58,7 @@ export const Navigation = () => {
       />
     </UnAuthStack.Navigator>
   ) : (
-    <AuthStack.Navigator screenOptions={modalScreenOptions}>
+    <AuthStack.Navigator screenOptions={bottomScreenOptions}>
       <AuthStack.Screen
         component={Tabs}
         name="home"

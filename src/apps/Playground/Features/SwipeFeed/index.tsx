@@ -13,6 +13,7 @@ import { v4 } from 'uuid';
 import {
   Card,
   Icon,
+  IconName,
   Screen,
   ScrollView,
   Text,
@@ -159,7 +160,7 @@ interface SwipeItem {
   body: string;
   button: string;
   date: Dayjs;
-  icon: string;
+  icon: IconName;
   id: string;
   image: ImageSourcePropType | null;
   onPress(): void;
@@ -181,7 +182,7 @@ const initialItems: SwipeItem[] = [
     id: v4(),
     image: null,
     title: 'Marketwatch',
-    icon: 'file-document-box-outline',
+    icon: 'file-document-edit-outline',
     date: dayjs().subtract(11, 'hour'),
     body: 'Disney heiress Abigail Disney and other superrich American demand the 1% pay higher taxes than other Americans.',
     button: 'View Article',

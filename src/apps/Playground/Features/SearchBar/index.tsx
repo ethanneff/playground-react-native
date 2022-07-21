@@ -1,7 +1,14 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { Animated, ListRenderItem, StyleSheet, View } from 'react-native';
-import { FlatList, Icon, Input, Screen, Text } from '../../../../components';
+import {
+  FlatList,
+  Icon,
+  IconName,
+  Input,
+  Screen,
+  Text,
+} from '../../../../components';
 import {
   colorWithOpacity,
   padding,
@@ -39,7 +46,7 @@ const data: Data[] = [
 
 interface State {
   animation: Animated.Value;
-  iconName: string;
+  iconName: IconName;
   input: string;
 }
 
@@ -109,7 +116,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
   );
 
   const changeIcon = useCallback(
-    (iconName: string) => {
+    (iconName: IconName) => {
       const iconChangeTimeout = setTimeout(() => {
         clearTimeout(iconChangeTimeout);
         setState({ ...state, iconName });

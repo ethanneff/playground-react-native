@@ -1,6 +1,6 @@
 import * as I from '@mdi/js';
 
-export const Icons = {
+export const icon = {
   'ab-testing': I.mdiAbTesting,
   abacus: I.mdiAbacus,
   'abjad-arabic': I.mdiAbjadArabic,
@@ -6211,3 +6211,5 @@ export const Icons = {
   'zodiac-taurus': I.mdiZodiacTaurus,
   'zodiac-virgo': I.mdiZodiacVirgo,
 };
+
+export type IconName = keyof typeof icon;

@@ -1,13 +1,18 @@
 import React, { memo } from 'react';
 import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import { Icon, Text, TouchableOpacity } from '../../../../../components';
+import {
+  Icon,
+  IconName,
+  Text,
+  TouchableOpacity,
+} from '../../../../../components';
 import { padding, useColors } from '../../../../../features';
 
 type Props = {
   active?: boolean;
   description?: string;
   hidden?: boolean;
-  icon?: string;
+  icon?: IconName;
   marginBottom?: boolean;
   onPress: () => void;
   style?: StyleProp<ViewStyle>;

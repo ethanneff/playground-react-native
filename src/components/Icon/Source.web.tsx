@@ -1,19 +1,19 @@
 import Original from '@mdi/react';
 import React, { CSSProperties, memo } from 'react';
-import { Icons } from './config';
+import { icon, IconName } from './config';
 
 type Props = {
   color?: string;
-  name: keyof typeof Icons;
+  name: IconName;
   style?: CSSProperties | undefined;
 };
 
 export const Source = memo(function IconSource({ name, color, style }: Props) {
-  const path = Icons[name];
+  const path = icon[name];
   return path ? (
     <Original
       color={color}
-      path={Icons[name]}
+      path={icon[name]}
       style={style}
     />
   ) : null;

@@ -23,7 +23,7 @@ type Props = {
   disabled?: boolean;
   dropShadow?: boolean;
   elevation?: number;
-  /* color */
+  /* shape */
   emphasis?: FontEmphasis;
   /* state */
   hidden?: boolean;

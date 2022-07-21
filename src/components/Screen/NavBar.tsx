@@ -1,20 +1,21 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { padding, useColors, useDropShadow } from '../../features';
+import { IconName } from '../Icon';
 import { Text } from '../Text';
 import { NavButton } from './NavButton';
 
 type Props = {
   border?: boolean;
   dropShadow?: boolean;
-  leftIcon?: string;
+  leftIcon?: IconName;
   onLeftPress?: () => void;
   onRightPress?: () => void;
   onSecondLeftPress?: () => void;
   onSecondRightPress?: () => void;
-  rightIcon?: string;
-  secondLeftIcon?: string;
-  secondRightIcon?: string;
+  rightIcon?: IconName;
+  secondLeftIcon?: IconName;
+  secondRightIcon?: IconName;
   title?: string;
 };
 

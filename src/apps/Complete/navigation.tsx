@@ -4,7 +4,7 @@ import {
   StackNavigationOptions,
 } from '@react-navigation/stack';
 import React from 'react';
-import { useNavScreenOptions, useTabTap } from '../../features';
+import { TabIcons, useNavScreenOptions, useTabTap } from '../../features';
 import {
   HomeStackRoutes,
   ImplementStackRoutes,
@@ -26,7 +26,7 @@ import {
 
 const noHeader: StackNavigationOptions = { headerShown: false };
 
-const tabIcons = {
+const tabIcons: TabIcons = {
   plan: { focused: 'pencil-plus-outline', unFocused: 'pencil-plus-outline' },
   implement: {
     focused: 'checkbox-multiple-marked-outline',

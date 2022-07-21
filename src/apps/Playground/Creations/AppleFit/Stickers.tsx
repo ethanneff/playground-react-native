@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Icon } from '../../../../components';
+import { Icon, IconName } from '../../../../components';
 import { MonoMultiColor } from '../../../../features';
 
 type Props = {
   color: keyof MonoMultiColor;
-  icon: string;
+  icon: IconName;
   index: number;
   size: number;
   strokeWidth: number;

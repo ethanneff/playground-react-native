@@ -1,15 +1,15 @@
 import React, { memo, useCallback } from 'react';
 import { View } from 'react-native';
 import { v4 } from 'uuid';
-import { Icon, TouchableOpacity } from '../../components';
+import { Icon, IconName, TouchableOpacity } from '../../components';
 import { MonoMultiColor, padding } from '../../features';
 
 type Props = {
   colorFilled?: keyof MonoMultiColor;
   colorUnfilled?: keyof MonoMultiColor;
   count: number;
-  iconFilled?: string;
-  iconUnfilled?: string;
+  iconFilled?: IconName;
+  iconUnfilled?: IconName;
   onPress: (index: number) => void;
   rating: number;
   size: number;

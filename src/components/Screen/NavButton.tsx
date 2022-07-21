@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
 import { padding } from '../../features';
-import { Icon } from '../Icon';
+import { Icon, IconName } from '../Icon';
 import { TouchableOpacity } from '../TouchableOpacity';
 
 type Props = {
-  icon?: string;
+  icon?: IconName;
   notLeft?: boolean;
   onPress?: () => void;
   testID: string;

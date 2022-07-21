@@ -1,6 +1,12 @@
 import React, { memo, ReactNode } from 'react';
 import { Image, View } from 'react-native';
-import { Icon, Sentence, Text, TouchableOpacity } from '../../../components';
+import {
+  Icon,
+  IconName,
+  Sentence,
+  Text,
+  TouchableOpacity,
+} from '../../../components';
 import { SentenceType } from '../../../components/Sentence/types';
 import { padding, useColors } from '../../../features';
 
@@ -9,7 +15,7 @@ const missingCallback = () => undefined;
 const image = require('../../../assets/line-chart.png');
 
 interface SignInButtonProps {
-  icon: string;
+  icon: IconName;
   onPress: () => void;
   title: string;
 }
