@@ -5,6 +5,7 @@
 - hourly journal
 - notifications every hour
 - count deep work hours
+- haptic feedback
 
 ## Deep Work
 
