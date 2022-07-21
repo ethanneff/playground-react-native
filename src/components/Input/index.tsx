@@ -15,9 +15,9 @@ import {
   ViewStyle,
 } from 'react-native';
 import { GestureTextInput } from '../../conversions';
-import { fontSizes, padding, useColors } from '../../features';
+import { fontSizes, padding, SoundManager, useColors } from '../../features';
 import { SuperAny } from '../../types/types';
-import { Icon } from '../Icon';
+import { Icon, IconName } from '../Icon';
 import { Text } from '../Text';
 import { TextInputRef } from '../TextInput';
 import { TouchableOpacity } from '../TouchableOpacity';
@@ -31,12 +31,12 @@ type TextContentType = 'username' | 'password' | 'none';
 type Props = {
   autoCorrect?: boolean;
   blurOnSubmit?: boolean;
-  clearIcon?: string;
+  clearIcon?: IconName;
   containerStyle?: StyleProp<ViewStyle>;
   disableFullscreenUI?: boolean;
   editable?: boolean;
   error?: string;
-  errorIcon?: string;
+  errorIcon?: IconName;
   flex?: boolean;
   keyboardType?: KeyboardTypeOptions;
   onChangeText(text: string): void;
@@ -113,7 +113,10 @@ export const Input = memo(function Input({
   const noTitle = title.length === 0;
   const containerStyles = [flex && styles.flex, containerStyle];
 
-  const onFocus = useCallback(() => setFocus(true), []);
+  const onFocus = useCallback(() => {
+    SoundManager.play('tap');
+    setFocus(true);
+  }, []);
   const onBlur = useCallback(() => setFocus(false), []);
   const focusOnInput = useCallback(
     () => textInput.current && textInput.current.focus(),

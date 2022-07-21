@@ -20,9 +20,10 @@ import {
   getFontStyles,
   MonoMultiColor,
   padding,
+  SoundManager,
   useColors,
 } from '../../features';
-import { Icon } from '../Icon';
+import { Icon, IconName } from '../Icon';
 import { TouchableOpacity } from '../TouchableOpacity';
 import { PointerEvents, TextContentType } from './types';
 
@@ -31,7 +32,7 @@ export type TextInputIcon = {
   color?: keyof MonoMultiColor;
   focus?: boolean;
   hidden?: boolean;
-  name: string;
+  name: IconName;
   onPress: (text: string) => void;
   required?: boolean;
   reset?: boolean;
@@ -125,6 +126,7 @@ export const TextInput = memo(function TextInput({
   }, [onSubmitEditing, submitClear, text]);
 
   const onFocusInternal = useCallback(() => {
+    SoundManager.play('tap');
     setFocus(true);
     if (onFocus) onFocus(text);
   }, [onFocus, text]);
