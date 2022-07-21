@@ -6,11 +6,13 @@ import {
 } from '@react-navigation/stack';
 import React, { useCallback } from 'react';
 import { Platform, View } from 'react-native';
-import { Icon, Text } from '../../components';
+import { Icon, IconName, Text } from '../../components';
 import { StringMethods } from '../../features';
 import { useColors } from '../Theme';
 
-type TabIcons = { [key: string]: { focused: string; unFocused: string } };
+export type TabIcons = {
+  [key: string]: { focused: IconName; unFocused: IconName };
+};
 type NavOptions = { route: RouteProp<ParamListBase> };
 type TabScreenOptions = {
   headerShown?: boolean;
@@ -19,6 +21,7 @@ type TabScreenOptions = {
 };
 
 type UseNavScreenOptions = {
+  bottomScreenOptions: StackNavigationOptions;
   modalScreenOptions: StackNavigationOptions;
   tabScreenOptions: (
     options: TabScreenOptions,
@@ -33,6 +36,11 @@ export const useNavScreenOptions = (): UseNavScreenOptions => {
     presentation: Platform.OS === 'web' ? 'card' : 'transparentModal',
     headerShown: false,
     ...TransitionPresets.ModalFadeTransition,
+  };
+
+  const bottomScreenOptions: StackNavigationOptions = {
+    headerShown: false,
+    ...TransitionPresets.ModalSlideFromBottomIOS,
   };
 
   const tabScreenOptions = useCallback(
@@ -80,5 +88,5 @@ export const useNavScreenOptions = (): UseNavScreenOptions => {
     [colors.background.primaryA, colors.text.primaryA, colors.text.tertiary],
   );
 
-  return { modalScreenOptions, tabScreenOptions };
+  return { modalScreenOptions, tabScreenOptions, bottomScreenOptions };
 };
