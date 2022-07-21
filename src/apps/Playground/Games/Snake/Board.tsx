@@ -1,6 +1,6 @@
 import React from 'react';
-import { View } from 'react-native';
 import { v4 } from 'uuid';
+import { View } from '../../../../components';
 import { Cell } from './Cell';
 import { Matrix } from './utils';
 
@@ -15,7 +15,7 @@ export const Board = ({ matrix }: BoardProps): JSX.Element => {
       {matrix.map((x) => (
         <View
           key={v4()}
-          style={{ flexDirection: 'row' }}
+          row
         >
           {x.map((y) => (
             <Cell

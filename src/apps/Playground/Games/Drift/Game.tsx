@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
+import { View } from '../../../../components';
 import { useColors, useLayout } from '../../../../features';
 import { Character } from './Character';
 import { Tracks } from './Tracks';

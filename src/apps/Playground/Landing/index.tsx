@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem, View } from 'react-native';
+import { ListRenderItem } from 'react-native';
 import {
   Card,
   FlatList,
@@ -8,6 +8,7 @@ import {
   Spacing,
   Text,
   TouchableOpacity,
+  View,
 } from '../../../components';
 import { spacing, useColors } from '../../../features';
 import { SuperAny } from '../../../types/types';

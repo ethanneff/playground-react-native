@@ -1,8 +1,9 @@
 import { scaleLinear, scaleTime } from 'd3-scale';
 import { curveBasis, line } from 'd3-shape';
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Svg, { Defs, LinearGradient, Path, Stop } from 'react-native-svg';
+import { View } from '../../../../components';
 
 interface DataPoint {
   date: number;

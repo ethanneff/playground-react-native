@@ -1,7 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
-import { View } from 'react-native';
-import { Screen } from '../../../../components';
+import { Screen, View } from '../../../../components';
 import { useLayout } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 import { Items } from './Items';

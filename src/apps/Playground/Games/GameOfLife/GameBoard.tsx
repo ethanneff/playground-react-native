@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
-import { View } from 'react-native';
 import { v4 } from 'uuid';
+import { View } from '../../../../components';
 import { useRootSelector } from '../../../../redux';
 import { Cell } from './Cell';
 import { useLoop } from './useLoop';

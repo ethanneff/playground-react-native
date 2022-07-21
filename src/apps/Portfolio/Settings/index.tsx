@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem, View } from 'react-native';
-import { Button, FlatList, Screen } from '../../../components';
+import { ListRenderItem } from 'react-native';
+import { Button, FlatList, Screen, View } from '../../../components';
 import {
   changeTheme,
   Theme,

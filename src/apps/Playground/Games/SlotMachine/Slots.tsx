@@ -1,7 +1,12 @@
 import React, { memo, useCallback, useMemo, useState } from 'react';
-import { View } from 'react-native';
 import { v4 } from 'uuid';
-import { Button, Icon, Text, TouchableOpacity } from '../../../../components';
+import {
+  Button,
+  Icon,
+  Text,
+  TouchableOpacity,
+  View,
+} from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { shuffleArray } from './utils';
 
@@ -98,7 +103,7 @@ type ReelsProps = {
 const Reels = memo(function Reels({ reelsArray, lineIndexes }: ReelsProps) {
   const colors = useColors();
   return (
-    <View style={{ flexDirection: 'row' }}>
+    <View row>
       {reelsArray.map((reel, i) => (
         <View key={v4()}>
           {reel.map((item, j) => (

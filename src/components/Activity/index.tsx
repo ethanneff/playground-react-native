@@ -1,5 +1,6 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { ListRenderItem, View } from 'react-native';
+import { ListRenderItem } from 'react-native';
+import { View } from '../../components';
 import { spacing } from '../../features';
 import { Button } from '../Button';
 import { Card } from '../Card';

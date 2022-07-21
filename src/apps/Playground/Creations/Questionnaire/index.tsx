@@ -1,12 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef, useState } from 'react';
-import { Dimensions, ListRenderItem, View, ViewToken } from 'react-native';
+import { Dimensions, ListRenderItem, ViewToken } from 'react-native';
 import {
   Button,
   FlatList,
   FlatListRef,
   Screen,
   Text,
+  View,
 } from '../../../../components';
 import { Questionnaires } from './screens/Questionnaires';
 

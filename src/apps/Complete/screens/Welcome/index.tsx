@@ -1,7 +1,6 @@
 import { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import React, { memo, useCallback, useState } from 'react';
-import { View } from 'react-native';
-import { Button, Carousel, Screen } from '../../../../components';
+import { Button, Carousel, Screen, View } from '../../../../components';
 import { CarouselSlide } from '../../../../components/Carousel/types';
 import { spacing } from '../../../../features';
 import { useRootDispatch } from '../../../../redux';

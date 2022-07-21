@@ -1,7 +1,6 @@
 import React, { memo, useCallback } from 'react';
-import { View } from 'react-native';
 import { v4 } from 'uuid';
-import { Tag } from '../../../../components';
+import { Tag, View } from '../../../../components';
 import { spacing, TagColor, useColors } from '../../../../features';
 
 export const TagGroup = memo(function TagGroup() {

@@ -1,6 +1,5 @@
 import React, { memo, useCallback, useContext } from 'react';
-import { View } from 'react-native';
-import { TouchableOpacity } from '../../../../components';
+import { TouchableOpacity, View } from '../../../../components';
 import { useColors, useDropShadow } from '../../../../features';
 import { DriftContext } from './Context';
 import { ColorChoice } from './types';
@@ -29,7 +28,7 @@ export const Dpad = memo(function Dpad() {
         transform: [{ rotate: '45deg' }],
       }}
     >
-      <View style={{ flexDirection: 'row' }}>
+      <View row>
         <TouchableOpacity
           onPress={onPress('violet')}
           style={{
@@ -49,7 +48,7 @@ export const Dpad = memo(function Dpad() {
           }}
         />
       </View>
-      <View style={{ flexDirection: 'row' }}>
+      <View row>
         <TouchableOpacity
           onPress={onPress('slateblue')}
           style={{

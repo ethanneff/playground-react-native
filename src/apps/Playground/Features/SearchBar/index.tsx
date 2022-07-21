@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { Animated, ListRenderItem, StyleSheet, View } from 'react-native';
+import { Animated, ListRenderItem, StyleSheet } from 'react-native';
 import {
   FlatList,
   Icon,
@@ -8,6 +8,7 @@ import {
   Input,
   Screen,
   Text,
+  View,
 } from '../../../../components';
 import {
   colorWithOpacity,

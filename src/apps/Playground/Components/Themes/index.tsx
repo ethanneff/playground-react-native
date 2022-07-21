@@ -1,7 +1,7 @@
 // TODO: slider on web
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
-import { Image, ImageSourcePropType, ListRenderItem, View } from 'react-native';
+import { Image, ImageSourcePropType, ListRenderItem } from 'react-native';
 import {
   Button,
   Card,
@@ -10,6 +10,7 @@ import {
   ScrollView,
   Slider,
   Text,
+  View,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import {

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Image, ImageSourcePropType, StyleSheet, View } from 'react-native';
-import { MaskedView } from '../../../../components';
+import { Image, ImageSourcePropType, StyleSheet } from 'react-native';
+import { MaskedView, View } from '../../../../components';
 
 type Props = {
   colors: [string, string];

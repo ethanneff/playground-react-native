@@ -1,5 +1,4 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { View } from 'react-native';
 import {
   Button,
   Calendar,
@@ -9,6 +8,7 @@ import {
   ScrollView,
   Text,
   TextInputRef,
+  View,
 } from '../../components';
 import { spacing, useAdminNavBack, useColors } from '../../features';
 

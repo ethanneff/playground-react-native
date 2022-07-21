@@ -1,6 +1,13 @@
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem, StyleSheet, View } from 'react-native';
-import { Card, FlatList, Icon, Text, TouchableOpacity } from '../../components';
+import { ListRenderItem, StyleSheet } from 'react-native';
+import {
+  Card,
+  FlatList,
+  Icon,
+  Text,
+  TouchableOpacity,
+  View,
+} from '../../components';
 import { spacing, useColors } from '../../features';
 import { getLandscapeOrientation, useRootSelector } from '../../redux';
 import { DailyProgress } from './DailyProgress';

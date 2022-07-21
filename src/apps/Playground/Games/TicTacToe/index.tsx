@@ -1,8 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
-import { View } from 'react-native';
 import { v4 } from 'uuid';
-import { Button, Screen, Text, TouchableOpacity } from '../../../../components';
+import {
+  Button,
+  Screen,
+  Text,
+  TouchableOpacity,
+  View,
+} from '../../../../components';
 import { useColors } from '../../../../features';
 import {
   getLandscapeOrientation,
@@ -73,7 +78,7 @@ export const TicTacToe = memo(function TicTacToe() {
           {game.board.map((row, i) => (
             <View
               key={v4()}
-              style={{ flexDirection: 'row' }}
+              row
             >
               {row.map((_, j) => (
                 <TouchableOpacity

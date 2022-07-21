@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
-import { Keyboard, View } from 'react-native';
-import { TextInput, TextInputIcon } from '../../../components';
+import { Keyboard } from 'react-native';
+import { TextInput, TextInputIcon, View } from '../../../components';
 import { Card } from './Card';
 import { ItemDetailHeader } from './ItemDetailHeader';
 

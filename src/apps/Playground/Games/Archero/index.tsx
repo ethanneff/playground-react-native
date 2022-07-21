@@ -5,9 +5,8 @@ import {
   LayoutChangeEvent,
   PanResponder,
   PanResponderInstance,
-  View,
 } from 'react-native';
-import { Screen } from '../../../../components';
+import { Screen, View } from '../../../../components';
 import { colorWithOpacity, useColors, useDriver } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 

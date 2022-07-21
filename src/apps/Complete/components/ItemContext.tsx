@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
-import { RelativeDate, Text } from '../../../components';
+import { RelativeDate, Text, View } from '../../../components';
 import { spacing } from '../../../features';
 import { Card } from './Card';
 import { ItemDetailHeader } from './ItemDetailHeader';

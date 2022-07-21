@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
-import { Text } from '../../../../components';
+import { Text, View } from '../../../../components';
 import { spacing } from '../../../../features';
 import { Item } from '../../types';
 

@@ -4,9 +4,8 @@ import {
   Easing,
   ImageSourcePropType,
   StyleSheet,
-  View,
 } from 'react-native';
-import { MaskedView } from '../../components';
+import { MaskedView, View } from '../../components';
 import { useDriver } from '../../features';
 import { getSmallestDimension, useRootSelector } from '../../redux';
 

@@ -4,9 +4,9 @@ import {
   ActivityIndicator,
   StyleProp,
   StyleSheet,
-  View,
   ViewStyle,
 } from 'react-native';
+import { View } from '../../components';
 import { MonoMultiColor, useColors } from '../../features';
 
 type Props = {

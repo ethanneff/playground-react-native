@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { View } from 'react-native';
+import { View } from '../../../components';
 import { spacing } from '../../../features';
 
 type RowProps = { children: ReactNode };

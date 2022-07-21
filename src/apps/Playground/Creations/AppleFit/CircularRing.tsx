@@ -1,5 +1,6 @@
 import React from 'react';
-import { PixelRatio, StyleSheet, View } from 'react-native';
+import { PixelRatio, StyleSheet } from 'react-native';
+import { View } from '../../../../components';
 import { CircularProgress } from './CircularProgress';
 import { InitialKnob } from './InitialKnob';
 import { MovingKnob } from './MovingKnob';

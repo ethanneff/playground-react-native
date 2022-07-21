@@ -1,6 +1,7 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
 import { v4 } from 'uuid';
+import { View } from '../../components';
 import { Text } from '../Text';
 
 type Props = {

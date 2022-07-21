@@ -1,6 +1,6 @@
 import React from 'react';
-import { View } from 'react-native';
 import { Screen } from '..';
+import { View } from '../../../components';
 import { mockRenderer } from '../../../mocks/Renderer';
 
 describe('screen', () => {

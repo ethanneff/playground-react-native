@@ -1,12 +1,7 @@
 import React, { memo, ReactNode } from 'react';
-import {
-  StatusBar,
-  StyleProp,
-  StyleSheet,
-  View,
-  ViewStyle,
-} from 'react-native';
+import { StatusBar, StyleProp, StyleSheet, ViewStyle } from 'react-native';
 import { Edge, SafeAreaView } from 'react-native-safe-area-context';
+import { View } from '../../components';
 import { useColors } from '../../features';
 import { IconName } from '../Icon';
 import { NavBar } from './NavBar';

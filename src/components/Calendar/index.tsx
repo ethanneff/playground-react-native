@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useState } from 'react';
-import { View } from 'react-native';
+import { View } from '../../components';
 import { CalendarHeader } from './Header';
 import { CalendarMonth } from './Month';
 import { addMonths, CalendarMatrix, getCalendarMatrix } from './utils';

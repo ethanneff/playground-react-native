@@ -1,5 +1,6 @@
 import React, { memo, ReactNode } from 'react';
-import { LayoutChangeEvent, View } from 'react-native';
+import { LayoutChangeEvent } from 'react-native';
+import { View } from '../../../components';
 import { useColors } from '../../../features';
 import { completeConfig } from '../utils';
 

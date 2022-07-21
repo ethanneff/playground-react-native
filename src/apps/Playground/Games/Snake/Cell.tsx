@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
+import { View } from '../../../../components';
 import { useColors } from '../../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../../redux';
 

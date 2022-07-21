@@ -2,7 +2,6 @@ import { RouteProp } from '@react-navigation/core';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback, useState } from 'react';
-import { View } from 'react-native';
 import {
   Button,
   Card,
@@ -16,6 +15,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  View,
 } from '../../../../components';
 import { spacing, useColors, useDropShadow } from '../../../../features';
 import { AuthStackRoutes } from '../../types';
@@ -129,7 +129,8 @@ export const JournalDetail = memo(function JournalDetail() {
           </Card>
           <Card>
             <View
-              style={{ flexDirection: 'row', justifyContent: 'space-between' }}
+              row
+              style={{ justifyContent: 'space-between' }}
             >
               <Text
                 title="Goals"
@@ -210,7 +211,7 @@ export const JournalDetail = memo(function JournalDetail() {
             <Text title={title} />
           </Card>
         </ScrollView>
-        <View style={{ ...dropShadow(0, -3) }}>
+        <View style={{ ...dropShadow(1, -2) }}>
           <Spacing
             padding={4}
             style={{ backgroundColor: colors.background.primaryA }}

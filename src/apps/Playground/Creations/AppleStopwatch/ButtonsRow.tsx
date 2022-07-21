@@ -1,5 +1,6 @@
-import React, { ReactNode, memo } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { memo, ReactNode } from 'react';
+import { StyleSheet } from 'react-native';
+import { View } from '../../../../components';
 
 interface ButtonRowProps {
   children: ReactNode | ReactNode[];

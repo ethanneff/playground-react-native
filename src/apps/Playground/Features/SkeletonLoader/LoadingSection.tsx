@@ -1,13 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
-import { Card, SkeletonLoader } from '../../../../components';
+import { Card, SkeletonLoader, View } from '../../../../components';
 import { spacing } from '../../../../features';
 
 export const LoadingSection = (): JSX.Element => {
   return (
     <Card style={{ marginBottom: spacing(4) }}>
       <View>
-        <View style={{ flexDirection: 'row' }}>
+        <View row>
           <SkeletonLoader
             borderRadius={spacing(24)}
             height={spacing(24)}

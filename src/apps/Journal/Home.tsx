@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import {
   Calendar,
   Card,
@@ -7,6 +7,7 @@ import {
   Screen,
   ScrollView,
   Text,
+  View,
 } from '../../components';
 import { spacing, useAdminNavBack, useColors } from '../../features';
 

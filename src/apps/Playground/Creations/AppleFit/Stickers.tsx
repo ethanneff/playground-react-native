@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Icon, IconName } from '../../../../components';
+import { StyleSheet } from 'react-native';
+import { Icon, IconName, View } from '../../../../components';
 import { MonoMultiColor } from '../../../../features';
 
 type Props = {

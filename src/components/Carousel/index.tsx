@@ -1,5 +1,6 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { ListRenderItem, View, ViewToken } from 'react-native';
+import { ListRenderItem, ViewToken } from 'react-native';
+import { View } from '../../components';
 import { spacing } from '../../features';
 import { getWidth, useRootSelector } from '../../redux';
 import { FlatList, FlatListRef } from '../FlatList';

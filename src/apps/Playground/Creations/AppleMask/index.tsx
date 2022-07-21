@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
-import { Image, ImageSourcePropType, View } from 'react-native';
-import { Screen, ScrollView, Text } from '../../../../components';
+import { Image, ImageSourcePropType } from 'react-native';
+import { Screen, ScrollView, Text, View } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { getWidth, useRootSelector } from '../../../../redux';
 
@@ -36,7 +36,7 @@ const Section = ({
         borderBottomWidth: 2,
       }}
     >
-      <View style={{ flexDirection: 'row' }}>
+      <View row>
         <Text
           color="accent"
           style={{ width: leftWidth }}

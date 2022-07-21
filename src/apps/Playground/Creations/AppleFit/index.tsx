@@ -1,7 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
-import { View } from 'react-native';
-import { Screen } from '../../../../components';
+import { Screen, View } from '../../../../components';
 import { AppleActivity } from './AppleActivity';
 import { Ring } from './types';
 

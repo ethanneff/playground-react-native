@@ -51,6 +51,7 @@ module.exports = {
           {
             name: 'react-native',
             importNames: [
+              'View',
               'ActivityIndicator',
               'Button',
               'SafeAreaView',

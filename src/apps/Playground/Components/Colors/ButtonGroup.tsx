@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
 import { v4 } from 'uuid';
-import { Button, Text } from '../../../../components';
+import { Button, Text, View } from '../../../../components';
 import {
   FontEmphasis,
   MonoMultiColor,

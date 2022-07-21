@@ -1,6 +1,7 @@
 import React, { memo, useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { v4 } from 'uuid';
+import { View } from '../../../../components';
 import { DriftContext } from './Context';
 import { TrackPositionWithColor } from './types';
 

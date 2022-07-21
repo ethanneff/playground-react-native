@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
+import { View } from '../../components';
 import { spacing, useColors } from '../../features';
 import { TouchableOpacity } from '../TouchableOpacity';
 import { CarouselSlide } from './types';

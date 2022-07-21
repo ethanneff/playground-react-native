@@ -10,9 +10,9 @@ import {
   KeyboardTypeOptions,
   ReturnKeyTypeOptions,
   StyleProp,
-  View,
   ViewStyle,
 } from 'react-native';
+import { View } from '../../components';
 import { GestureTextInput } from '../../conversions';
 import {
   FontEmphasis,
@@ -207,7 +207,7 @@ export const TextInput = memo(function TextInput({
           value={text}
         />
         {icons.length > 0 && ( // TODO: refactor to declarative
-          <View style={{ flexDirection: 'row' }}>
+          <View row>
             {icons.map((icon) =>
               icon.hidden ||
               (focus && !icon.focus) ||

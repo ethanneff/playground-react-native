@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
-import { Icon, Text, TouchableOpacity } from '../../../components';
+import { Icon, Text, TouchableOpacity, View } from '../../../components';
 import { spacing } from '../../../features';
 
 type Props = {

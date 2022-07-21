@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { Animated, View } from 'react-native';
-import { Button, Text } from '../../../../components';
+import { Animated } from 'react-native';
+import { Button, Text, View } from '../../../../components';
 import { LayoutDimensions, useColors, useDriver } from '../../../../features';
 
 type Props = {

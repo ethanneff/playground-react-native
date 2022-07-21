@@ -1,7 +1,6 @@
 import React, { memo, useCallback } from 'react';
-import { View } from 'react-native';
 import { v4 } from 'uuid';
-import { Icon, IconName, TouchableOpacity } from '../../components';
+import { Icon, IconName, TouchableOpacity, View } from '../../components';
 import { MonoMultiColor, spacing } from '../../features';
 
 type Props = {

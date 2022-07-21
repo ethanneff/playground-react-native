@@ -5,8 +5,8 @@ import {
   TransitionPresets,
 } from '@react-navigation/stack';
 import React, { useCallback } from 'react';
-import { Platform, View } from 'react-native';
-import { Icon, IconName, Text } from '../../components';
+import { Platform } from 'react-native';
+import { Icon, IconName, Text, View } from '../../components';
 import { SoundManager, StringMethods } from '../../features';
 import { useColors } from '../Theme';
 

@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Screen } from '../../../../components';
+import { StyleSheet } from 'react-native';
+import { Screen, View } from '../../../../components';
 import { useColors, useLayout } from '../../../../features';
 import { Balls } from './Balls';
 

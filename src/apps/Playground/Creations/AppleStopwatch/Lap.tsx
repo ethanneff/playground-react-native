@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Text } from '../../../../components';
+import { StyleSheet } from 'react-native';
+import { Text, View } from '../../../../components';
 import { useColors } from '../../../../features';
 import { Timer } from './Timer';
 

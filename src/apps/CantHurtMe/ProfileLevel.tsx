@@ -1,6 +1,6 @@
 import React from 'react';
-import { Image, ImageSourcePropType, StyleSheet, View } from 'react-native';
-import { Text, TouchableOpacity } from '../../components';
+import { Image, ImageSourcePropType, StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, View } from '../../components';
 import { spacing, useColors } from '../../features';
 
 type Props = {

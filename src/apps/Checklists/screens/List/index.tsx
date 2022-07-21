@@ -1,12 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem, View } from 'react-native';
+import { ListRenderItem } from 'react-native';
 import {
   Button,
   FlatList,
   Icon,
   Screen,
   TouchableOpacity,
+  View,
 } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { SuperAny } from '../../../../types/types';

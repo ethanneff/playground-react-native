@@ -1,5 +1,6 @@
 import React, { memo, ReactNode, useCallback } from 'react';
-import { Keyboard, LayoutChangeEvent, View } from 'react-native';
+import { Keyboard, LayoutChangeEvent } from 'react-native';
+import { View } from '../../components';
 import { TouchableWithoutFeedback } from '../TouchableWithoutFeedback';
 
 type HandleKeyboardProps = {

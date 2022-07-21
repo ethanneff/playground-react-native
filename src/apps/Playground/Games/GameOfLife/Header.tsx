@@ -1,6 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { View } from 'react-native';
-import { Slider, Text } from '../../../../components';
+import { Slider, Text, View } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { updateCount, updateDelay } from './redux';
 
@@ -19,7 +18,7 @@ export const Header = memo(function Header() {
 
   return (
     <View>
-      <View style={{ flexDirection: 'row' }}>
+      <View row>
         <Text
           style={{ alignSelf: 'center' }}
           title={`count: ${count}`}
@@ -34,7 +33,7 @@ export const Header = memo(function Header() {
           value={10}
         />
       </View>
-      <View style={{ flexDirection: 'row' }}>
+      <View row>
         <Text
           style={{ alignSelf: 'center' }}
           title={`delay: ${Math.floor(delay)}`}

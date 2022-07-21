@@ -1,6 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { View } from 'react-native';
-import { Button } from '../../../../components';
+import { Button, View } from '../../../../components';
 import { spacing } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { resetBoard, toggleRun } from './redux';

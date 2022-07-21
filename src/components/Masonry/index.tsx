@@ -1,6 +1,6 @@
 import React, { memo, ReactElement } from 'react';
-import { View } from 'react-native';
 import { v4 } from 'uuid';
+import { View } from '../../components';
 import { spacing } from '../../features';
 
 interface Item<T> {

@@ -1,11 +1,12 @@
 import React, { memo, ReactNode } from 'react';
-import { Image, View } from 'react-native';
+import { Image } from 'react-native';
 import {
   Icon,
   IconName,
   Sentence,
   Text,
   TouchableOpacity,
+  View,
 } from '../../../components';
 import { SentenceType } from '../../../components/Sentence/types';
 import { spacing, useColors } from '../../../features';

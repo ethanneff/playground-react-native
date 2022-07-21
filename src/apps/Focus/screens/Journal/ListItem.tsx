@@ -1,8 +1,7 @@
 import { useNavigation } from '@react-navigation/core';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback } from 'react';
-import { View } from 'react-native';
-import { Icon, Text, TouchableOpacity } from '../../../../components';
+import { Icon, Text, TouchableOpacity, View } from '../../../../components';
 import { spacing, useColors, useDropShadow } from '../../../../features';
 import { AuthStackRoutes, Item } from '../../types';
 import { ListSection } from './ListSection';

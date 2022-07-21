@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import React, { memo } from 'react';
-import { View } from 'react-native';
+import { View } from '../../components';
 import { spacing } from '../../features';
 import { Text } from '../Text';
 import { Day } from './Day';

@@ -1,6 +1,12 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
-import { Button, Card, Screen, ScrollView, Text } from '../../../../components';
+import {
+  Button,
+  Card,
+  Screen,
+  ScrollView,
+  Text,
+  View,
+} from '../../../../components';
 import { spacing, useColors, useLayout } from '../../../../features';
 
 export const Profile = memo(function Profile() {

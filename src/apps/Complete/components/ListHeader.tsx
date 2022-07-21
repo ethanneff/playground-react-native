@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback } from 'react';
-import { Keyboard, View } from 'react-native';
-import { TextInput, TextInputIcon } from '../../../components';
+import { Keyboard } from 'react-native';
+import { TextInput, TextInputIcon, View } from '../../../components';
 import { useRootDispatch, useRootSelector } from '../../../redux';
 import { navItemDetails, updateItem } from '../models';
 import { MainStackRoutes } from '../navigationTypes';

@@ -1,6 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { View } from 'react-native';
 import {
   Button,
   Card,
@@ -9,6 +8,7 @@ import {
   ScrollView,
   Spacing,
   Text,
+  View,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 

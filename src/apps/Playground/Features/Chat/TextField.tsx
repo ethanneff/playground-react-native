@@ -1,11 +1,11 @@
 import React, { memo, useCallback, useEffect, useRef } from 'react';
-import { View } from 'react-native';
 import { v4 } from 'uuid';
 import {
   Icon,
   Input,
   TextInputRef,
   TouchableOpacity,
+  View,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';

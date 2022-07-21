@@ -1,10 +1,11 @@
 import React, { memo } from 'react';
-import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleProp, StyleSheet, ViewStyle } from 'react-native';
 import {
   Icon,
   IconName,
   Text,
   TouchableOpacity,
+  View,
 } from '../../../../../components';
 import { spacing, useColors } from '../../../../../features';
 

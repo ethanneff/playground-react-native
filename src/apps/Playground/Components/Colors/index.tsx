@@ -1,7 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
-import { View } from 'react-native';
-import { Screen, ScrollView } from '../../../../components';
+import { Screen, ScrollView, View } from '../../../../components';
 import { ButtonGroup } from './ButtonGroup';
 import { FontGroup } from './FontGroup';
 import { TagGroup } from './TagGroup';
@@ -21,7 +20,7 @@ export const Colors = memo(function DebugColors() {
         <Title title="Theme" />
         <ThemeGroup />
         <Title title="Buttons" />
-        <View style={{ flexDirection: 'row' }}>
+        <View row>
           <ButtonGroup emphasis="high" />
           <ButtonGroup emphasis="medium" />
           <ButtonGroup emphasis="low" />
@@ -29,7 +28,7 @@ export const Colors = memo(function DebugColors() {
         <Title title="Tags" />
         <TagGroup />
         <Title title="Fonts" />
-        <View style={{ flexDirection: 'row' }}>
+        <View row>
           <FontGroup emphasis="none" />
           <FontGroup emphasis="high" />
           <FontGroup emphasis="medium" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View } from '../../components';
 
 export const Swipe = (): JSX.Element => {
   return <View />;

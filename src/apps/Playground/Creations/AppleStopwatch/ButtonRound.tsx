@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Text, TouchableOpacity } from '../../../../components';
+import { StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, View } from '../../../../components';
 import { MonoMultiColor, useColors } from '../../../../features';
 
 interface RoundButtonProps {

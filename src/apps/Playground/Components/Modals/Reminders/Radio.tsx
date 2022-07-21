@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
+import { View } from '../../../../../components';
 import { Item } from './Item';
 import { ReminderType } from './types';
 

@@ -1,5 +1,4 @@
 import React, { memo, useCallback, useState } from 'react';
-import { View } from 'react-native';
 import {
   Card,
   Icon,
@@ -8,6 +7,7 @@ import {
   ScrollView,
   Text,
   TouchableOpacity,
+  View,
 } from '../../components';
 import { spacing, useAdminNavBack, useColors } from '../../features';
 
@@ -44,7 +44,7 @@ const ChecklistItem = ({ item, index }: ChecklistItemProps) => {
           <Text title={`${index + 1}. ${item}`} />
         </View>
       </View>
-      <View style={{ flexDirection: 'row' }}>
+      <View row>
         {days.map((day) => (
           <View
             key={day}

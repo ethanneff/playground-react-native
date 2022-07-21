@@ -7,9 +7,8 @@ import {
   PanResponderGestureState,
   PanResponderInstance,
   StyleSheet,
-  View,
 } from 'react-native';
-import { Screen, Text } from '../../../../components';
+import { Screen, Text, View } from '../../../../components';
 import {
   spacing,
   useColors,

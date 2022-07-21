@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Rate, { AndroidMarket } from 'react-native-rate';
-import { Button, Input, Modal, Text } from '../../components';
+import { Button, Input, Modal, Text, View } from '../../components';
 import { spacing } from '../Config';
 import { Rating } from './Rating';
 

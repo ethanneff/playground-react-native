@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { ListRenderItem, View } from 'react-native';
+import { ListRenderItem } from 'react-native';
 import {
   Card,
   FlatList,
@@ -7,6 +7,7 @@ import {
   Modal,
   Text,
   TouchableOpacity,
+  View,
 } from '../../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../../redux';
 import {

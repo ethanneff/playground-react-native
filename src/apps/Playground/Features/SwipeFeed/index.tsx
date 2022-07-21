@@ -7,7 +7,6 @@ import {
   ImageSourcePropType,
   LayoutChangeEvent,
   PanResponder,
-  View,
 } from 'react-native';
 import { v4 } from 'uuid';
 import {
@@ -18,6 +17,7 @@ import {
   ScrollView,
   Text,
   TouchableOpacity,
+  View,
 } from '../../../../components';
 import {
   spacing,

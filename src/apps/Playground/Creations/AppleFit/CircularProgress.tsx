@@ -1,5 +1,6 @@
 import React from 'react';
-import { Animated, StyleSheet, View } from 'react-native';
+import { Animated, StyleSheet } from 'react-native';
+import { View } from '../../../../components';
 import { HalfCircle } from './HalfCircle';
 import { Ring } from './types';
 

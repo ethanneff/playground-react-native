@@ -1,5 +1,5 @@
 import React, { memo, ReactNode } from 'react';
-import { View } from 'react-native';
+import { View } from '../../../components';
 import { completeConfig } from '../utils';
 import { AddItem } from './AddItem';
 import { Card } from './Card';

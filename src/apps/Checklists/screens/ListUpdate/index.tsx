@@ -1,7 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
-import { View } from 'react-native';
-import { Button, Input, Modal, Screen, Text } from '../../../../components';
+import {
+  Button,
+  Input,
+  Modal,
+  Screen,
+  Text,
+  View,
+} from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { SuperAny } from '../../../../types/types';
 import { getCurrentChecklist, removeList, updateList } from '../../models';

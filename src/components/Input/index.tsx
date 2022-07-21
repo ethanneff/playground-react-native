@@ -11,9 +11,9 @@ import {
   StyleProp,
   StyleSheet,
   TextStyle,
-  View,
   ViewStyle,
 } from 'react-native';
+import { View } from '../../components';
 import { GestureTextInput } from '../../conversions';
 import { fontSizes, SoundManager, spacing, useColors } from '../../features';
 import { SuperAny } from '../../types/types';

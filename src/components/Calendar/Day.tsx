@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import React from 'react';
-import { View } from 'react-native';
+import { View } from '../../components';
 import { spacing, useColors } from '../../features';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';

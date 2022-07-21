@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
-import { Platform, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import { Platform, StyleProp, StyleSheet, ViewStyle } from 'react-native';
+import { View } from '../../components';
 import {
   ColorTheme,
   MonoMultiColor,

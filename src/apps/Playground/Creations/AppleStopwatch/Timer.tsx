@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import { StyleProp, StyleSheet, TextStyle, View } from 'react-native';
-import { Text } from '../../../../components';
+import { StyleProp, StyleSheet, TextStyle } from 'react-native';
+import { Text, View } from '../../../../components';
 
 interface TimerProps {
   interval: number;

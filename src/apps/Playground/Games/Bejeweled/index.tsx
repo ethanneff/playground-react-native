@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { v4 } from 'uuid';
-import { Screen, TouchableOpacity } from '../../../../components';
+import { Screen, TouchableOpacity, View } from '../../../../components';
 import { useColors } from '../../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../../redux';
 
@@ -108,7 +108,7 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
         {board.map((col, x) => (
           <View
             key={v4()}
-            style={{ flexDirection: 'row' }}
+            row
           >
             {col.map((gem, y) => (
               <View

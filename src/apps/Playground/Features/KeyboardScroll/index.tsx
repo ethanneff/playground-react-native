@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef, useState } from 'react';
-import { Dimensions, View } from 'react-native';
+import { Dimensions } from 'react-native';
 import {
   Button,
   KeyboardAwareScrollView,
@@ -9,6 +9,7 @@ import {
   Screen,
   Text,
   TextInput,
+  View,
 } from '../../../../components';
 import {
   ColorTheme,

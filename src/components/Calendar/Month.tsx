@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
-import { View } from 'react-native';
 import { v4 } from 'uuid';
+import { View } from '../../components';
 import { spacing } from '../../features';
 import { CalendarDay } from './Day';
 import { CalendarMatrix } from './utils';

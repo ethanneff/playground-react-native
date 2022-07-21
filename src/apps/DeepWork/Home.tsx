@@ -1,6 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { View } from 'react-native';
 import {
   Activity,
   Card,
@@ -9,6 +8,7 @@ import {
   ScrollView,
   Text,
   TouchableOpacity,
+  View,
 } from '../../components';
 import { spacing, useAdminNavBack, useColors } from '../../features';
 import { DeepWorkNavigation } from './types';

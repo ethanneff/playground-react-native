@@ -5,9 +5,9 @@ import {
   PanResponder,
   PanResponderGestureState,
   StyleSheet,
-  View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { View } from '../../components';
 import { SoundManager, spacing, useColors, useDriver } from '../../features';
 import { Icon } from '../Icon';
 import { Text } from '../Text';

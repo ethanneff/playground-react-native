@@ -1,6 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
-import { Card, SkeletonLoader } from '../../../../components';
+import { Card, SkeletonLoader, View } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 
 export const LoadingProfile = (): JSX.Element => {

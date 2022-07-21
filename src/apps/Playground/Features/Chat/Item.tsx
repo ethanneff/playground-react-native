@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import React, { memo } from 'react';
-import { Image, ImageSourcePropType, View } from 'react-native';
-import { RelativeDate, Text } from '../../../../components';
+import { Image, ImageSourcePropType } from 'react-native';
+import { RelativeDate, Text, View } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { Message } from './Messages';
 dayjs.extend(relativeTime);
@@ -41,7 +41,7 @@ export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
         />
       </View>
       <View style={{ flex: 1 }}>
-        <View style={{ flexDirection: 'row' }}>
+        <View row>
           <Text
             bold
             style={{ paddingRight: spacing(2) }}

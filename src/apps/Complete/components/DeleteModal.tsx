@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
-import { Button, Modal, Text } from '../../../components';
+import { Button, Modal, Text, View } from '../../../components';
 import { spacing } from '../../../features';
 
 type DeleteModalProps = {
