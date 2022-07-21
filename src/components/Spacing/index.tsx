@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { StyleProp, View, ViewStyle } from 'react-native';
-import { padding } from '../../features';
+import { spacing } from '../../features';
 
 type Props = {
   children?: ReactNode;
@@ -16,7 +16,7 @@ export const Spacing = ({
   style,
 }: Props) => {
   return (
-    <View style={[{ padding: padding(p), margin: padding(m) }, style]}>
+    <View style={[{ padding: spacing(p), margin: spacing(m) }, style]}>
       {children}
     </View>
   );

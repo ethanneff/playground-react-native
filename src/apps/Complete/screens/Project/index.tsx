@@ -3,7 +3,7 @@ import React, { memo, useCallback, useState } from 'react';
 import { LayoutChangeEvent } from 'react-native';
 import { KeyboardHandler, Screen } from '../../../../components';
 import {
-  padding,
+  spacing,
   useColors,
   useKeyboardHeight,
   useLayout,
@@ -31,8 +31,8 @@ export const Project = memo(function Project() {
   const { tabBarEdges } = useLayout();
   const [container, setContainer] = useState(0);
   const keyboardHeight = useKeyboardHeight();
-  const typePadding = padding(projectItemType === 'list' ? 12 : 0);
-  const keyboardPadding = padding(keyboardHeight ? 28 : 48);
+  const typePadding = spacing(projectItemType === 'list' ? 12 : 0);
+  const keyboardPadding = spacing(keyboardHeight ? 28 : 48);
   const listMaxHeight =
     container - keyboardHeight - keyboardPadding + typePadding;
 

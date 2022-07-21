@@ -12,7 +12,7 @@ import {
   TextInputRef,
   TouchableOpacity,
 } from '../../../../components';
-import { padding, useAuth, useColors } from '../../../../features';
+import { spacing, useAuth, useColors } from '../../../../features';
 import { ModalHeader } from '../../components';
 
 type Props = {
@@ -50,14 +50,14 @@ const SignInButton = memo(function SignInButton({
         flexDirection: 'row',
         borderColor: colors.background.secondary,
         borderWidth: 1,
-        padding: padding(2),
-        marginBottom: padding(margin ? 4 : 0),
-        borderRadius: padding(2),
+        padding: spacing(2),
+        marginBottom: spacing(margin ? 4 : 0),
+        borderRadius: spacing(2),
       }}
     >
       <Icon name={icon} />
       <Text
-        style={{ paddingLeft: padding(2) }}
+        style={{ paddingLeft: spacing(2) }}
         title={title}
         type="button"
       />
@@ -229,7 +229,7 @@ export const Login = memo(function Login({
               onSubmitEditing={onSubmitEditing('phone')}
               placeholder="Phone number"
               returnKeyType="send"
-              style={{ marginBottom: padding(4) }}
+              style={{ marginBottom: spacing(4) }}
               value=""
             />
             <Button
@@ -248,12 +248,12 @@ export const Login = memo(function Login({
             />
             <Text
               center
-              style={{ paddingBottom: padding(4) }}
+              style={{ paddingBottom: spacing(4) }}
               title="Please enter the email address associated with your account."
             />
             <Text
               center
-              style={{ paddingBottom: padding(4) }}
+              style={{ paddingBottom: spacing(4) }}
               title="We'll send you an email with your login email as well as a password reset instructions."
             />
             <TextInput
@@ -266,7 +266,7 @@ export const Login = memo(function Login({
               onSubmitEditing={onSubmitEditing('email')}
               placeholder="Email address"
               returnKeyType="send"
-              style={{ marginBottom: padding(4) }}
+              style={{ marginBottom: spacing(4) }}
               textContentType="username"
               value=""
             />
@@ -295,7 +295,7 @@ export const Login = memo(function Login({
               onSubmitEditing={onSubmitEditing('email')}
               placeholder="Email address"
               returnKeyType="next"
-              style={{ marginBottom: padding(4) }}
+              style={{ marginBottom: spacing(4) }}
               textContentType="username"
               value=""
             />
@@ -311,12 +311,12 @@ export const Login = memo(function Login({
               placeholder="Password"
               returnKeyType="done"
               secureTextEntry={!state.eye}
-              style={{ marginBottom: padding(4) }}
+              style={{ marginBottom: spacing(4) }}
               textContentType="password"
               value=""
             />
             <Button
-              buttonStyle={{ marginBottom: padding(4) }}
+              buttonStyle={{ marginBottom: spacing(4) }}
               center
               color="accent"
               disabled={loading}
@@ -350,7 +350,7 @@ export const Login = memo(function Login({
               onSubmitEditing={onSubmitEditing('email')}
               placeholder="Email address"
               returnKeyType="next"
-              style={{ marginBottom: padding(4) }}
+              style={{ marginBottom: spacing(4) }}
               textContentType="username"
               value=""
             />
@@ -366,12 +366,12 @@ export const Login = memo(function Login({
               placeholder="Password"
               returnKeyType="done"
               secureTextEntry={!state.eye}
-              style={{ marginBottom: padding(4) }}
+              style={{ marginBottom: spacing(4) }}
               textContentType="password"
               value=""
             />
             <Button
-              buttonStyle={{ marginBottom: padding(4) }}
+              buttonStyle={{ marginBottom: spacing(4) }}
               center
               color="accent"
               lowercase

@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { padding, SoundManager, useColors, useDriver } from '../../features';
+import { SoundManager, spacing, useColors, useDriver } from '../../features';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
@@ -26,7 +26,7 @@ type NotificationProps = {
 const initialPosition = { x: 0, y: 0 };
 export const ActionSheet = memo(function ActionSheet({
   title,
-  height = padding(18),
+  height = spacing(18),
   thresholdPercent = 0.9,
   dismissDelay = 100,
   noSwipe,
@@ -41,7 +41,7 @@ export const ActionSheet = memo(function ActionSheet({
       backgroundColor: colors.background.primaryA,
       flexDirection: 'row',
       height,
-      padding: padding(4),
+      padding: spacing(4),
       width: '100%',
     },
     notification: { elevation: 2, zIndex: 2 },
@@ -134,7 +134,7 @@ export const ActionSheet = memo(function ActionSheet({
               color="primaryA"
               hidden
               name="close"
-              size={padding(8)}
+              size={spacing(8)}
             />
             <Text
               center
@@ -145,7 +145,7 @@ export const ActionSheet = memo(function ActionSheet({
             <TouchableOpacity onPress={onCancel}>
               <Icon
                 name="close"
-                size={padding(8)}
+                size={spacing(8)}
               />
             </TouchableOpacity>
           </View>

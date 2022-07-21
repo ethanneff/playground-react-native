@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Button, Input, Screen, ScrollView } from '../../../components';
-import { padding, useColors } from '../../../features';
+import { spacing, useColors } from '../../../features';
 import { PortfolioNavigation } from '../types';
 
 const styles = StyleSheet.create({
@@ -28,7 +28,7 @@ export const Login = memo(function PortfolioLogin() {
     >
       <ScrollView
         style={{
-          padding: padding(4),
+          padding: spacing(4),
           backgroundColor: colors.background.secondary,
         }}
       >

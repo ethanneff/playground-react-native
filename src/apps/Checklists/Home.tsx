@@ -9,7 +9,7 @@ import {
   Text,
   TouchableOpacity,
 } from '../../components';
-import { LoginFlow, padding, useAdminNavBack, useColors } from '../../features';
+import { LoginFlow, spacing, useAdminNavBack, useColors } from '../../features';
 
 // Notification.show()
 // Alert.show()
@@ -23,7 +23,7 @@ export const Home = memo(function Checklists() {
   const { onLeftPress } = useAdminNavBack();
   const styles = StyleSheet.create({
     bottom: {
-      paddingBottom: padding(4),
+      paddingBottom: spacing(4),
     },
   });
   const [showLogin, setShowLogin] = useState(false);
@@ -37,8 +37,8 @@ export const Home = memo(function Checklists() {
       >
         <ScrollView
           contentContainerStyle={{
-            paddingHorizontal: padding(4),
-            paddingVertical: padding(2),
+            paddingHorizontal: spacing(4),
+            paddingVertical: spacing(2),
           }}
           style={{ backgroundColor: colors.background.secondary }}
         >
@@ -97,7 +97,7 @@ export const Home = memo(function Checklists() {
             position: 'absolute',
             bottom: 0,
             right: 0,
-            margin: padding(4),
+            margin: spacing(4),
           }}
         >
           <Icon

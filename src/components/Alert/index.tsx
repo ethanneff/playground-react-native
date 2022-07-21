@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import { Button, Modal, Text } from '../../components';
-import { padding } from '../../features';
+import { spacing } from '../../features';
 import { Spacing } from '../Spacing';
 
 type Props = {
@@ -33,7 +33,7 @@ export const Alert = memo(function Alert({
       <Text
         center
         hidden={!description}
-        style={{ paddingBottom: padding(2) }}
+        style={{ paddingBottom: spacing(2) }}
         title={description}
       />
       <View style={{ flexDirection: 'row', justifyContent: 'center' }}>

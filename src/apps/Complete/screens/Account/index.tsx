@@ -2,8 +2,8 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect } from 'react';
 import { Button, Screen, ScrollView, Text } from '../../../../components';
 import {
-  padding,
   RootNavigation,
+  spacing,
   useAuth,
   useColors,
   useLayout,
@@ -37,7 +37,7 @@ export const Account = memo(function Account() {
     >
       <ScrollView
         contentContainerStyle={{
-          padding: padding(4),
+          padding: spacing(4),
           backgroundColor: colors.background.secondary,
         }}
         style={{ backgroundColor: colors.background.secondary }}
@@ -45,7 +45,7 @@ export const Account = memo(function Account() {
         <Card margin="bottom">
           <Text
             emphasis="low"
-            style={{ paddingBottom: padding(4) }}
+            style={{ paddingBottom: spacing(4) }}
             title="Profile"
             type="h5"
           />
@@ -63,7 +63,7 @@ export const Account = memo(function Account() {
         <Card margin="bottom">
           <Text
             emphasis="low"
-            style={{ paddingBottom: padding(4) }}
+            style={{ paddingBottom: spacing(4) }}
             title="Reminders"
             type="h5"
           />
@@ -77,7 +77,7 @@ export const Account = memo(function Account() {
         <Card margin="bottom">
           <Text
             emphasis="low"
-            style={{ paddingBottom: padding(4) }}
+            style={{ paddingBottom: spacing(4) }}
             title="Payment"
             type="h5"
           />
@@ -91,7 +91,7 @@ export const Account = memo(function Account() {
         <Card margin="bottom">
           <Text
             emphasis="low"
-            style={{ paddingBottom: padding(4) }}
+            style={{ paddingBottom: spacing(4) }}
             title="Feedback"
             type="h5"
           />

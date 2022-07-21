@@ -6,7 +6,7 @@ import {
   Text,
   TouchableOpacity,
 } from '../../../../../components';
-import { padding, useColors } from '../../../../../features';
+import { spacing, useColors } from '../../../../../features';
 
 type Props = {
   active?: boolean;
@@ -32,24 +32,24 @@ export const Item = memo(function ReminderItem({
   const styles = StyleSheet.create({
     button: {
       borderColor: colors.border.primaryA,
-      borderRadius: padding(1),
+      borderRadius: spacing(1),
       borderWidth: 1,
       flexDirection: 'row',
-      height: padding(13),
+      height: spacing(13),
       justifyContent: 'space-between',
-      marginBottom: marginBottom ? padding(2) : 0,
+      marginBottom: marginBottom ? spacing(2) : 0,
     },
     container: {
       flex: 1,
       flexDirection: 'row',
-      paddingHorizontal: padding(2),
+      paddingHorizontal: spacing(2),
     },
     icon: {
       justifyContent: 'center',
     },
     subtitle: {
       paddingLeft: 1,
-      paddingTop: padding(1),
+      paddingTop: spacing(1),
     },
     textContainer: {
       flex: 1,
@@ -84,7 +84,7 @@ export const Item = memo(function ReminderItem({
         {icon ? (
           <Icon
             name={icon}
-            size={padding(5)}
+            size={spacing(5)}
             style={styles.icon}
           />
         ) : null}

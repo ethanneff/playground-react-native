@@ -9,7 +9,7 @@ import {
   Text,
   TextInput,
 } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 
 export const Inputs = memo(function Inputs() {
   const { goBack } = useNavigation();
@@ -41,8 +41,8 @@ export const Inputs = memo(function Inputs() {
     >
       <KeyboardAwareScrollView
         contentContainerStyle={{
-          paddingHorizontal: padding(4),
-          paddingVertical: padding(2),
+          paddingHorizontal: spacing(4),
+          paddingVertical: spacing(2),
         }}
         keyboardShouldPersistTaps="handled"
         style={{
@@ -57,7 +57,7 @@ export const Inputs = memo(function Inputs() {
             type="h4"
           />
           <Input
-            containerStyle={{ paddingBottom: padding(2) }}
+            containerStyle={{ paddingBottom: spacing(2) }}
             error={form.error}
             onChangeText={handleChange('name')}
             optional
@@ -66,7 +66,7 @@ export const Inputs = memo(function Inputs() {
             value={form.name}
           />
           <Input
-            containerStyle={{ paddingBottom: padding(2) }}
+            containerStyle={{ paddingBottom: spacing(2) }}
             error={form.error}
             keyboardType="email-address"
             onChangeText={handleChange('email')}
@@ -76,7 +76,7 @@ export const Inputs = memo(function Inputs() {
             value={form.email}
           />
           <Input
-            containerStyle={{ paddingBottom: padding(2) }}
+            containerStyle={{ paddingBottom: spacing(2) }}
             onChangeText={handleChange('password')}
             placeholder="•••••••"
             secureTextEntry
@@ -102,14 +102,14 @@ export const Inputs = memo(function Inputs() {
           <TextInput
             onChangeText={handleChange('name')}
             placeholder="jane doe"
-            style={{ paddingTop: padding(4) }}
+            style={{ paddingTop: spacing(4) }}
             value={form.name}
           />
           <TextInput
             keyboardType="email-address"
             onChangeText={handleChange('email')}
             placeholder="example@gmail.com"
-            style={{ paddingTop: padding(4) }}
+            style={{ paddingTop: spacing(4) }}
             textContentType="username"
             value={form.email}
           />
@@ -117,7 +117,7 @@ export const Inputs = memo(function Inputs() {
             onChangeText={handleChange('password')}
             placeholder="•••••••"
             secureTextEntry
-            style={{ paddingVertical: padding(4) }}
+            style={{ paddingVertical: spacing(4) }}
             textContentType="password"
             value={form.password}
           />

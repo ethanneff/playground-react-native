@@ -13,7 +13,7 @@ import {
 import {
   ColorTheme,
   colorWithOpacity,
-  padding,
+  spacing,
   useColors,
 } from '../../../../features';
 
@@ -76,7 +76,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
           justifyContent: 'space-around',
           alignItems: 'center',
           backgroundColor: item.color,
-          marginBottom: padding(2),
+          marginBottom: spacing(2),
         }}
       >
         <Text title={item.name} />
@@ -118,7 +118,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
           style={{
             height: 200,
             backgroundColor: colors.background.secondary,
-            padding: padding(2),
+            padding: spacing(2),
           }}
         >
           <RecyclerFlatList

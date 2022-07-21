@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { View } from 'react-native';
 import { v4 } from 'uuid';
-import { padding } from '../../features';
+import { spacing } from '../../features';
 import { CalendarDay } from './Day';
 import { CalendarMatrix } from './utils';
 
@@ -23,7 +23,7 @@ export const CalendarMonth = memo(function Month({
     [onSelected],
   );
   return (
-    <View style={{ paddingHorizontal: padding(2) }}>
+    <View style={{ paddingHorizontal: spacing(2) }}>
       {matrix.map((row) => (
         <View
           key={v4()}

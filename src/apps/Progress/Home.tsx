@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
 import { Activity, Icon, Screen, ScrollView } from '../../components';
-import { padding, useAdminNavBack, useColors } from '../../features';
+import { spacing, useAdminNavBack, useColors } from '../../features';
 
 // TODO: gitlab
 // TODO: selected
@@ -19,8 +19,8 @@ export const Home = memo(function ActivityTracker() {
       backgroundColor: colors.background.secondary,
     },
     container: {
-      paddingHorizontal: padding(4),
-      paddingVertical: padding(2),
+      paddingHorizontal: spacing(4),
+      paddingVertical: spacing(2),
     },
   });
 
@@ -58,7 +58,7 @@ export const Home = memo(function ActivityTracker() {
           position: 'absolute',
           bottom: 0,
           right: 0,
-          margin: padding(4),
+          margin: spacing(4),
         }}
       />
     </Screen>

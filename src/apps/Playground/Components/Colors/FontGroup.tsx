@@ -5,7 +5,7 @@ import {
   FontEmphasis,
   fontSizes,
   FontType,
-  padding,
+  spacing,
 } from '../../../../features';
 
 type FontGroupProps = {
@@ -19,7 +19,7 @@ export const FontGroup = memo(function FontGroup({ emphasis }: FontGroupProps) {
       <Text
         bold
         center
-        style={{ paddingBottom: padding(10) }}
+        style={{ paddingBottom: spacing(10) }}
         title={emphasis}
         type="h6"
       />

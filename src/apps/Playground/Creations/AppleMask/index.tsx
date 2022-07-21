@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
 import { Image, ImageSourcePropType, View } from 'react-native';
 import { Screen, ScrollView, Text } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { getWidth, useRootSelector } from '../../../../redux';
 
 // https://support.apple.com/en-us/HT211028
@@ -26,12 +26,12 @@ const Section = ({
 }: SectionProps) => {
   const colors = useColors();
   const width = useRootSelector(getWidth);
-  const leftWidth = padding(12);
+  const leftWidth = spacing(12);
   const imageWidth = width - leftWidth - 2 * paddingHorizontal;
   return (
     <View
       style={{
-        paddingVertical: padding(8),
+        paddingVertical: spacing(8),
         borderBottomColor: colors.border.tertiary,
         borderBottomWidth: 2,
       }}
@@ -45,12 +45,12 @@ const Section = ({
         />
         <View style={{ flex: 1 }}>
           <Text
-            style={{ marginBottom: padding(4) }}
+            style={{ marginBottom: spacing(4) }}
             title={title}
             type="h5"
           />
           <Text
-            style={{ marginBottom: padding(4) }}
+            style={{ marginBottom: spacing(4) }}
             title={description}
             type="subtitle1"
           />
@@ -104,7 +104,7 @@ export const AppleMask = memo(function AppleMask() {
   ];
 
   const colors = useColors();
-  const paddingHorizontal = padding(4);
+  const paddingHorizontal = spacing(4);
 
   return (
     <Screen
@@ -114,7 +114,7 @@ export const AppleMask = memo(function AppleMask() {
     >
       <ScrollView
         style={{
-          paddingHorizontal: padding(4),
+          paddingHorizontal: spacing(4),
           backgroundColor: colors.background.secondary,
         }}
       >
@@ -123,7 +123,7 @@ export const AppleMask = memo(function AppleMask() {
           type="h2"
         />
         <Text
-          style={{ paddingTop: padding(4) }}
+          style={{ paddingTop: spacing(4) }}
           title="To assemble your face shield, follow these steps."
           type="subtitle1"
         />

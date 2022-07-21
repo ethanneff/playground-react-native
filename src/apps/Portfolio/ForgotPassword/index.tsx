@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Button, Input, Screen, ScrollView } from '../../../components';
-import { padding, useColors } from '../../../features';
+import { spacing, useColors } from '../../../features';
 
 const styles = StyleSheet.create({
   row: { flexDirection: 'row', justifyContent: 'space-around' },
@@ -22,7 +22,7 @@ export const ForgotPassword = memo(function PortfolioForgotPassword() {
     >
       <ScrollView
         style={{
-          padding: padding(4),
+          padding: spacing(4),
           backgroundColor: colors.background.secondary,
         }}
       >

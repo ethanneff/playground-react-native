@@ -19,8 +19,8 @@ import {
   FontType,
   getFontStyles,
   MonoMultiColor,
-  padding,
   SoundManager,
+  spacing,
   useColors,
 } from '../../features';
 import { Icon, IconName } from '../Icon';
@@ -76,7 +76,7 @@ export const TextInput = memo(function TextInput({
   autoCorrect,
   emphasis,
   disableFullscreenUI,
-  iconHeight = padding(5),
+  iconHeight = spacing(5),
   placeholder,
   submitClear,
   onChangeText,
@@ -171,7 +171,7 @@ export const TextInput = memo(function TextInput({
             ? colors.text.accent
             : backColor,
           borderLeftColor: backColor,
-          borderRadius: padding(1),
+          borderRadius: spacing(1),
           borderRightColor: backColor,
           borderTopColor: backColor,
           borderWidth: 2,
@@ -199,7 +199,7 @@ export const TextInput = memo(function TextInput({
           style={{
             color: textColor,
             flex: 1,
-            padding: padding(2),
+            padding: spacing(2),
             ...fontSize,
           }}
           textContentType={textContentType}

@@ -5,7 +5,7 @@ import isToday from 'dayjs/plugin/isToday';
 import React, { memo, useCallback } from 'react';
 import { ListRenderItem, View } from 'react-native';
 import { FlatList, Text, TouchableOpacity } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { AuthStackRoutes, Category } from '../../types';
 dayjs.extend(isToday);
 
@@ -80,7 +80,7 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
     <TouchableOpacity
       onPress={handleCategoryPress(category)}
       style={{
-        paddingVertical: padding(2),
+        paddingVertical: spacing(2),
       }}
     >
       <View
@@ -109,7 +109,7 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
         inverted
         renderItem={renderItem}
         showsHorizontalScrollIndicator={false}
-        style={{ marginTop: padding(2) }}
+        style={{ marginTop: spacing(2) }}
       />
     </TouchableOpacity>
   );

@@ -15,7 +15,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import { GestureTextInput } from '../../conversions';
-import { fontSizes, padding, SoundManager, useColors } from '../../features';
+import { fontSizes, SoundManager, spacing, useColors } from '../../features';
 import { SuperAny } from '../../types/types';
 import { Icon, IconName } from '../Icon';
 import { Text } from '../Text';
@@ -81,7 +81,7 @@ export const Input = memo(function Input({
   const colors = useColors();
   const styles = StyleSheet.create({
     clear: {
-      paddingLeft: padding(2),
+      paddingLeft: spacing(2),
     },
     flex: {
       flex: 1,
@@ -93,10 +93,10 @@ export const Input = memo(function Input({
         : focus
         ? colors.text.accent
         : colors.text.secondary,
-      borderRadius: padding(1),
+      borderRadius: spacing(1),
       borderWidth: 2,
       flexDirection: 'row',
-      padding: padding(2),
+      padding: spacing(2),
     },
     row: {
       flexDirection: 'row',
@@ -190,12 +190,12 @@ export const Input = memo(function Input({
             color="negative"
             invisible={!error.length}
             name={errorIcon}
-            size={padding(4)}
+            size={spacing(4)}
           />
           <Text
             color="negative"
             invisible={!error.length}
-            style={{ paddingLeft: padding(1) }}
+            style={{ paddingLeft: spacing(1) }}
             title={error || ' '}
           />
         </TouchableOpacity>

@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useState } from 'react';
 import { Animated, PanResponder, StyleSheet, View } from 'react-native';
 import { Screen, Text } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { GestureHandler } from './logic';
 
 const minTouches = 2;
@@ -40,7 +40,7 @@ export const PinchSpread = memo(function PinchSpread() {
         style={styles.container}
         {...panGesture.panHandlers}
       />
-      <View style={{ padding: padding(2) }}>
+      <View style={{ padding: spacing(2) }}>
         <Text
           center
           title={title}

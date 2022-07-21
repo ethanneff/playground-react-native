@@ -11,7 +11,7 @@ import {
   ScrollView,
   Text,
 } from '../../../../components';
-import { padding, RateApp, useColors } from '../../../../features';
+import { RateApp, spacing, useColors } from '../../../../features';
 import { Reminders } from './Reminders';
 
 type Modal =
@@ -127,7 +127,7 @@ export const Modals = memo(function Modals() {
         title="Reminder"
       >
         <ScrollView
-          contentContainerStyle={{ padding: padding(4) }}
+          contentContainerStyle={{ padding: spacing(4) }}
           style={{ backgroundColor: colors.background.secondary }}
         >
           <Text

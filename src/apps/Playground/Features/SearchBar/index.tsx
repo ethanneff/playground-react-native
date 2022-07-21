@@ -11,7 +11,7 @@ import {
 } from '../../../../components';
 import {
   colorWithOpacity,
-  padding,
+  spacing,
   useColors,
   useDriver,
 } from '../../../../features';
@@ -82,25 +82,25 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     },
     header: {
       backgroundColor: colors.background.secondary,
-      height: padding(20),
+      height: spacing(20),
       justifyContent: 'center',
-      padding: padding(2),
+      padding: spacing(2),
     },
     item: {
       borderBottomColor: colors.background.secondary,
       borderWidth: 0.2,
-      padding: padding(6),
+      padding: spacing(6),
     },
     textContainer: {
       alignItems: 'center',
       backgroundColor: colors.background.primaryA,
       flexDirection: 'row',
       height: '100%',
-      padding: padding(2),
+      padding: spacing(2),
     },
     textInput: {
       flex: 1,
-      marginLeft: padding(2),
+      marginLeft: spacing(2),
     },
   });
 

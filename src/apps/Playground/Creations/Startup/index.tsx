@@ -10,7 +10,7 @@ import {
   Switch,
   Text,
 } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { Section } from './Section';
 
 // https://www.startupschool.org/updates/250717/edit
@@ -96,7 +96,7 @@ export const Startup = memo(function PlaygroundStartup() {
       title="Weekly Update"
     >
       <KeyboardAwareScrollView
-        contentContainerStyle={{ padding: padding(4) }}
+        contentContainerStyle={{ padding: spacing(4) }}
         style={{ backgroundColor: colors.background.secondary }}
       >
         <Text

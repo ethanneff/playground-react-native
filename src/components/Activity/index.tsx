@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { ListRenderItem, View } from 'react-native';
-import { padding } from '../../features';
+import { spacing } from '../../features';
 import { Button } from '../Button';
 import { Card } from '../Card';
 import { FlatList } from '../FlatList';
@@ -35,7 +35,7 @@ const initialActivity: ActivityModel = {
 };
 
 export const Activity = memo(function Activity({
-  size = padding(6),
+  size = spacing(6),
   margin = 2,
   username,
   site,
@@ -112,7 +112,7 @@ export const Activity = memo(function Activity({
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
-          paddingBottom: padding(4),
+          paddingBottom: spacing(4),
           alignContent: 'center',
           alignItems: 'center',
         }}
@@ -160,7 +160,7 @@ export const Activity = memo(function Activity({
           <Text
             center
             emphasis="medium"
-            style={{ paddingTop: padding(3) }}
+            style={{ paddingTop: spacing(3) }}
             title={state.selected.submissions}
             type="overline"
           />

@@ -7,7 +7,7 @@ import {
   TextInputIcon,
   TextInputRef,
 } from '../../../components';
-import { padding, useColors } from '../../../features';
+import { spacing, useColors } from '../../../features';
 import { useRootDispatch, useRootSelector } from '../../../redux';
 import { addItemToItem, createItem, Item } from '../models';
 import { completeConfig } from '../utils';
@@ -84,7 +84,7 @@ export const AddItem = memo(function AddItem({
     <View
       style={{
         width,
-        height: padding(12),
+        height: spacing(12),
         borderRadius: completeConfig.borderRadius,
         backgroundColor: colors.background.primaryA,
         justifyContent: 'center',

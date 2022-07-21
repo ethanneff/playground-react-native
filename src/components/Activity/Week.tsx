@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import React, { memo } from 'react';
 import { View } from 'react-native';
-import { padding } from '../../features';
+import { spacing } from '../../features';
 import { Text } from '../Text';
 import { Day } from './Day';
 import { ActivityDay, ActivityWeek } from './types';
@@ -32,7 +32,7 @@ export const Week = memo(function Week({
       <Text
         center
         emphasis="medium"
-        style={{ paddingBottom: padding(3) }}
+        style={{ paddingBottom: spacing(3) }}
         title={header}
         type="overline"
       />

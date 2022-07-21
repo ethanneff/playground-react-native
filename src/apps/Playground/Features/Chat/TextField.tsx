@@ -7,7 +7,7 @@ import {
   TextInputRef,
   TouchableOpacity,
 } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import {
   createChatMessage,
@@ -49,7 +49,7 @@ export const TextField = memo(function TextField() {
   return (
     <View
       style={{
-        padding: padding(4),
+        padding: spacing(4),
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -74,7 +74,7 @@ export const TextField = memo(function TextField() {
           disabled={!submittable}
           name="send"
           style={{
-            paddingLeft: padding(2),
+            paddingLeft: spacing(2),
             justifyContent: 'center',
           }}
         />

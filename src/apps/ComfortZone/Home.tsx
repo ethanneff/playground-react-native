@@ -10,7 +10,7 @@ import {
   Text,
   TextInputRef,
 } from '../../components';
-import { padding, useAdminNavBack, useColors } from '../../features';
+import { spacing, useAdminNavBack, useColors } from '../../features';
 
 const data = [
   'Set your alarm for 10 minutes earlier than usual',
@@ -189,14 +189,14 @@ export const Home = memo(function Home() {
     >
       <ScrollView
         contentContainerStyle={{
-          padding: padding(4),
+          padding: spacing(4),
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>
           <Text
             center
-            style={{ paddingBottom: padding(4) }}
+            style={{ paddingBottom: spacing(4) }}
             title="Try something new every day"
             type="h4"
           />
@@ -210,14 +210,14 @@ export const Home = memo(function Home() {
         <Card>
           <Text
             center
-            style={{ paddingBottom: padding(4) }}
+            style={{ paddingBottom: spacing(4) }}
             title="Today's Challenge"
             type="h4"
           />
           <Text
             center
             emphasis="medium"
-            style={{ paddingBottom: padding(4) }}
+            style={{ paddingBottom: spacing(4) }}
             title={challenge}
             type="subtitle1"
           />
@@ -246,7 +246,7 @@ export const Home = memo(function Home() {
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingTop: padding(6),
+                paddingTop: spacing(6),
               }}
             >
               <Input
@@ -267,7 +267,7 @@ export const Home = memo(function Home() {
         <Card>
           <Text
             center
-            style={{ paddingBottom: padding(4) }}
+            style={{ paddingBottom: spacing(4) }}
             title="Progress"
             type="h4"
           />

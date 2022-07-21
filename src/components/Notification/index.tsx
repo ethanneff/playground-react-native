@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { padding, SoundManager, useColors, useDriver } from '../../features';
+import { SoundManager, spacing, useColors, useDriver } from '../../features';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
@@ -25,7 +25,7 @@ type NotificationProps = {
 
 export const Notification = memo(function Notification({
   title,
-  height = padding(18),
+  height = spacing(18),
   thresholdPercent = 0.5, // broken
   dismissDelay = 100,
   noSwipe,
@@ -48,7 +48,7 @@ export const Notification = memo(function Notification({
       backgroundColor: colors.background.primaryA,
       flexDirection: 'row',
       height,
-      padding: padding(4),
+      padding: spacing(4),
       width: '100%',
     },
     notification: { elevation: 2, zIndex: 2 },
@@ -141,7 +141,7 @@ export const Notification = memo(function Notification({
               color="primaryA"
               hidden
               name="close"
-              size={padding(8)}
+              size={spacing(8)}
             />
             <Text
               center
@@ -152,7 +152,7 @@ export const Notification = memo(function Notification({
             <TouchableOpacity onPress={onCancel}>
               <Icon
                 name="close"
-                size={padding(8)}
+                size={spacing(8)}
               />
             </TouchableOpacity>
           </View>

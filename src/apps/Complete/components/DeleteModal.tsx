@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import { Button, Modal, Text } from '../../../components';
-import { padding } from '../../../features';
+import { spacing } from '../../../features';
 
 type DeleteModalProps = {
   onCancel: () => void;
@@ -20,7 +20,7 @@ export const DeleteModal = memo(function DeleteModal({
     >
       <View style={{ alignItems: 'center' }}>
         <Text
-          style={{ paddingBottom: padding(2) }}
+          style={{ paddingBottom: spacing(2) }}
           title="Are you sure?"
           type="h5"
         />

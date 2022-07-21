@@ -3,7 +3,7 @@ import { Platform, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import {
   ColorTheme,
   MonoMultiColor,
-  padding,
+  spacing,
   useColors,
   useDropShadow,
 } from '../../features';
@@ -60,7 +60,7 @@ export const Icon = memo(function Icon({
   badge = 0,
   clear,
   elevation = 4,
-  size = padding(6),
+  size = spacing(6),
   color,
   backgroundColor,
   fab,
@@ -80,24 +80,24 @@ export const Icon = memo(function Icon({
     fab: {
       alignItems: 'center',
       backgroundColor: bgColor,
-      borderRadius: padding(15),
-      height: padding(15),
+      borderRadius: spacing(15),
+      height: spacing(15),
       justifyContent: 'center',
-      width: padding(15),
+      width: spacing(15),
       ...dropShadow(elevation),
     },
     icon: {
       justifyContent: 'center',
     },
     padded: {
-      padding: padding(2),
+      padding: spacing(2),
     },
     right: {
       alignSelf: 'flex-end',
     },
     web: {
-      height: padding(6),
-      width: padding(6),
+      height: spacing(6),
+      width: spacing(6),
     },
   });
   const colored = getColor({ hidden, color, colors, disabled, clear });

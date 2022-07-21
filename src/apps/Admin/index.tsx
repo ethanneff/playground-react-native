@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import { Button, Screen, ScrollView, Text } from '../../components';
-import { padding, RootNavigation, RootRoutes, useColors } from '../../features';
+import { RootNavigation, RootRoutes, spacing, useColors } from '../../features';
 
 export default memo(function Admin() {
   const { navigate } = useNavigation<RootNavigation>();
@@ -17,7 +17,7 @@ export default memo(function Admin() {
       title="Admin"
     >
       <ScrollView
-        contentContainerStyle={{ paddingHorizontal: padding(4) }}
+        contentContainerStyle={{ paddingHorizontal: spacing(4) }}
         style={{ backgroundColor: colors.background.secondary }}
       >
         <Text

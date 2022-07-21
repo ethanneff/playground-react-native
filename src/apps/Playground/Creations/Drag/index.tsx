@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { Screen, Text } from '../../../../components';
 import {
-  padding,
+  spacing,
   useColors,
   useDriver,
   useDropShadow,
@@ -104,7 +104,7 @@ export const Drag = memo(function PlaygroundDrag() {
             left: 0,
             right: 0,
             top: 0,
-            padding: padding(2),
+            padding: spacing(2),
           }}
           title="drag the circle"
           type="overline"

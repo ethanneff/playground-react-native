@@ -2,7 +2,7 @@ import React, { memo, useCallback, useState } from 'react';
 import { LayoutChangeEvent } from 'react-native';
 import { KeyboardHandler, Screen } from '../../../../components';
 import {
-  padding,
+  spacing,
   useColors,
   useKeyboardHeight,
   useLayout,
@@ -25,7 +25,7 @@ export const Projects = memo(function Projects() {
   const keyboardHeight = useKeyboardHeight();
   const itemId = useRootSelector(getProjects);
   if (!itemId) throw new Error('missing item id');
-  const keyboardPadding = padding(keyboardHeight ? 16 : 35);
+  const keyboardPadding = spacing(keyboardHeight ? 16 : 35);
   const maxHeight = dimensions - keyboardHeight - keyboardPadding;
 
   const onLayout = useCallback(

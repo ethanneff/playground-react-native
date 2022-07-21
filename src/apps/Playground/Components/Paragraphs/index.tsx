@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
 import { Card, Content, Screen, ScrollView } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { data } from './data';
 
 export const Paragraphs = memo(function Paragraphs() {
@@ -16,8 +16,8 @@ export const Paragraphs = memo(function Paragraphs() {
     >
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: padding(4),
-          paddingVertical: padding(2),
+          paddingHorizontal: spacing(4),
+          paddingVertical: spacing(2),
         }}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}

@@ -3,7 +3,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import React, { memo } from 'react';
 import { Image, ImageSourcePropType, View } from 'react-native';
 import { RelativeDate, Text } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { Message } from './Messages';
 dayjs.extend(relativeTime);
 
@@ -21,10 +21,10 @@ export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
     <View
       key={item.id}
       style={{
-        padding: padding(2),
-        borderRadius: padding(4),
+        padding: spacing(2),
+        borderRadius: spacing(4),
         flexDirection: 'row',
-        marginBottom: marginBottom ? padding(4) : 0,
+        marginBottom: marginBottom ? spacing(4) : 0,
         backgroundColor: colors.background.primaryA,
       }}
     >
@@ -34,7 +34,7 @@ export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
           style={{
             alignSelf: 'center',
             height: 20,
-            paddingTop: padding(4),
+            paddingTop: spacing(4),
             resizeMode: 'contain',
             width: 20,
           }}
@@ -44,13 +44,13 @@ export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
         <View style={{ flexDirection: 'row' }}>
           <Text
             bold
-            style={{ paddingRight: padding(2) }}
+            style={{ paddingRight: spacing(2) }}
             title={item.userId}
           />
           <RelativeDate date={item.createdAt} />
         </View>
         <Text
-          style={{ paddingTop: padding(1) }}
+          style={{ paddingTop: spacing(1) }}
           title={item.message}
           type="body1"
         />

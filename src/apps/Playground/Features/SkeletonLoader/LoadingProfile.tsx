@@ -1,24 +1,24 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Card, SkeletonLoader } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 
 export const LoadingProfile = (): JSX.Element => {
   const colors = useColors();
-  const banner = padding(24);
+  const banner = spacing(24);
 
   return (
     <Card
       noPadding
       style={{
-        marginBottom: padding(4),
-        paddingBottom: padding(20),
+        marginBottom: spacing(4),
+        paddingBottom: spacing(20),
       }}
     >
       <View
         style={{
-          borderTopLeftRadius: padding(2),
-          borderTopRightRadius: padding(2),
+          borderTopLeftRadius: spacing(2),
+          borderTopRightRadius: spacing(2),
           backgroundColor: colors.background.tertiary,
           flex: 1,
           height: banner,
@@ -41,17 +41,17 @@ export const LoadingProfile = (): JSX.Element => {
         />
       </View>
       <View style={{ marginTop: banner * 0.5, alignItems: 'center' }}>
-        <View style={{ paddingVertical: padding(4) }}>
+        <View style={{ paddingVertical: spacing(4) }}>
           <SkeletonLoader
             borderRadius={0}
-            height={padding(6)}
-            width={padding(16) * 4}
+            height={spacing(6)}
+            width={spacing(16) * 4}
           />
         </View>
         <SkeletonLoader
           borderRadius={0}
-          height={padding(6)}
-          width={padding(16) * 3}
+          height={spacing(6)}
+          width={spacing(16) * 3}
         />
       </View>
     </Card>

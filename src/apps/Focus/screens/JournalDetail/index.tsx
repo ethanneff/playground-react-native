@@ -17,7 +17,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from '../../../../components';
-import { padding, useColors, useDropShadow } from '../../../../features';
+import { spacing, useColors, useDropShadow } from '../../../../features';
 import { AuthStackRoutes } from '../../types';
 
 type State = {
@@ -95,8 +95,8 @@ export const JournalDetail = memo(function JournalDetail() {
       >
         <ScrollView
           contentContainerStyle={{
-            paddingHorizontal: padding(4),
-            paddingVertical: padding(2),
+            paddingHorizontal: spacing(4),
+            paddingVertical: spacing(2),
           }}
           style={{ backgroundColor: colors.background.secondary }}
         >
@@ -142,7 +142,7 @@ export const JournalDetail = memo(function JournalDetail() {
             {goalLength ? (
               <ScrollView
                 contentContainerStyle={{
-                  paddingTop: padding(4),
+                  paddingTop: spacing(4),
                 }}
                 horizontal
                 showsHorizontalScrollIndicator={false}
@@ -153,8 +153,8 @@ export const JournalDetail = memo(function JournalDetail() {
                     style={{
                       flex: 0,
                       backgroundColor: colors.background.secondary,
-                      padding: padding(2),
-                      marginRight: index < goalLength ? padding(2) : padding(0),
+                      padding: spacing(2),
+                      marginRight: index < goalLength ? spacing(2) : spacing(0),
                     }}
                   >
                     <Text title={g} />
@@ -245,7 +245,7 @@ export const JournalDetail = memo(function JournalDetail() {
             style={{
               flexDirection: 'row',
               justifyContent: 'space-around',
-              paddingTop: padding(4),
+              paddingTop: spacing(4),
             }}
           >
             <Button

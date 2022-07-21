@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { Dimensions, View } from 'react-native';
 import { Calendar, Screen, ScrollView, Text } from '../../../../components';
-import { padding, useColors, useLayout } from '../../../../features';
+import { spacing, useColors, useLayout } from '../../../../features';
 import { Card } from '../../components';
 import { completeConfig } from '../../utils';
 import { Graph } from './Graph';
@@ -44,7 +44,7 @@ export const Reflect = memo(function Reflect() {
     >
       <ScrollView
         contentContainerStyle={{
-          padding: padding(4),
+          padding: spacing(4),
           backgroundColor: colors.background.secondary,
         }}
         style={{ backgroundColor: colors.background.secondary }}

@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { View } from 'react-native';
 import { Button } from '../../../../components';
-import { padding } from '../../../../features';
+import { spacing } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { resetBoard, toggleRun } from './redux';
 
@@ -17,7 +17,7 @@ export const Buttons = memo(function Buttons() {
       style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: padding(4),
+        padding: spacing(4),
       }}
     >
       <Button

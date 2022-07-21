@@ -1,4 +1,4 @@
-import { padding } from '../../features';
+import { spacing } from '../../features';
 
-export const itemHeight = padding(10);
+export const itemHeight = spacing(10);
 export const infiniteScrollRegeneration = 100;

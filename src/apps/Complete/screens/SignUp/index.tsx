@@ -8,7 +8,7 @@ import {
   TextInput,
   TextInputRef,
 } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { useRootDispatch } from '../../../../redux';
 import { ModalHeader } from '../../components';
 import { createItem, loadUser } from '../../models';
@@ -90,7 +90,7 @@ export const SignUp = memo(function SignUp() {
         onSubmitEditing={onSubmitEditing('email')}
         placeholder="Email address"
         returnKeyType="next"
-        style={{ marginBottom: padding(4) }}
+        style={{ marginBottom: spacing(4) }}
         textContentType="username"
         value=""
       />
@@ -105,7 +105,7 @@ export const SignUp = memo(function SignUp() {
         placeholder="Password"
         returnKeyType="done"
         secureTextEntry={!state.eye}
-        style={{ marginBottom: padding(2) }}
+        style={{ marginBottom: spacing(2) }}
         textContentType="password"
         value=""
       />
@@ -115,7 +115,7 @@ export const SignUp = memo(function SignUp() {
         title="Password is too short."
       />
       <Button
-        buttonStyle={{ marginBottom: padding(4) }}
+        buttonStyle={{ marginBottom: spacing(4) }}
         center
         color="accent"
         lowercase

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
-import { padding, useColors } from '../../features';
+import { spacing, useColors } from '../../features';
 import { TouchableOpacity } from '../TouchableOpacity';
 import { CarouselSlide } from './types';
 
@@ -34,8 +34,8 @@ export const Dots = memo(function Dots({
             key={slide.id}
             onPress={onDotPress(index)}
             style={{
-              marginHorizontal: padding(1),
-              marginBottom: padding(2),
+              marginHorizontal: spacing(1),
+              marginBottom: spacing(2),
               width: dotSize,
               height: dotSize,
               borderRadius: dotSize,

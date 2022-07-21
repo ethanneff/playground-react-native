@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { padding, useColors } from '../../features';
+import { spacing, useColors } from '../../features';
 import { Text } from '../Text';
 
 type Props = {
@@ -16,17 +16,17 @@ export const Badge = memo(function IconMeme({ badge }: Props) {
     badgeContainer: {
       alignItems: 'center',
       backgroundColor: colors.background.accent,
-      borderRadius: padding(5),
-      height: padding(5),
+      borderRadius: spacing(5),
+      height: spacing(5),
       justifyContent: 'center',
       position: 'absolute',
-      right: -padding(2),
-      top: -padding(2),
-      width: padding(5),
+      right: -spacing(2),
+      top: -spacing(2),
+      width: spacing(5),
     },
     badgeText: {
       color: colors.background.primaryA,
-      fontSize: padding(2),
+      fontSize: spacing(2),
     },
   });
 

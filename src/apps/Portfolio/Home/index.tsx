@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import { Button, Screen, ScrollView } from '../../../components';
-import { padding, useAdminNavBack, useColors } from '../../../features';
+import { spacing, useAdminNavBack, useColors } from '../../../features';
 import { PortfolioNavigation, PortfolioRoutes } from '../types';
 
 export const Home = memo(function PortfolioHome() {
@@ -20,7 +20,7 @@ export const Home = memo(function PortfolioHome() {
     >
       <ScrollView
         style={{
-          padding: padding(4),
+          padding: spacing(4),
           backgroundColor: colors.background.secondary,
         }}
       >

@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
 import { Button, Screen } from '../../../../components';
-import { padding, useColors, useDriver } from '../../../../features';
+import { spacing, useColors, useDriver } from '../../../../features';
 import { getHeight, getWidth, useRootSelector } from '../../../../redux';
 
 export const Ball = memo(function PlaygroundBall() {
@@ -14,7 +14,7 @@ export const Ball = memo(function PlaygroundBall() {
   ).current;
   const useNativeDriver = useDriver();
   const colors = useColors();
-  const size = padding(8);
+  const size = spacing(8);
   const styles = StyleSheet.create({
     ball: {
       borderRadius: size,

@@ -20,7 +20,7 @@ import {
   TouchableOpacity,
 } from '../../../../components';
 import {
-  padding,
+  spacing,
   useColors,
   useDriver,
   useDropShadow,
@@ -100,7 +100,7 @@ const SwipeCard = memo(function SwipeCard({
         left: position.x,
         height,
         backgroundColor: colors.background.primaryA,
-        borderRadius: padding(1),
+        borderRadius: spacing(1),
         borderColor: colors.border.accent,
         ...dropShadow(4),
       }}
@@ -120,7 +120,7 @@ const SwipeCard = memo(function SwipeCard({
               }}
             />
           ) : null}
-          <View style={{ flex: 1, padding: padding(2) }}>
+          <View style={{ flex: 1, padding: spacing(2) }}>
             <View
               style={{
                 flexDirection: 'row',
@@ -133,7 +133,7 @@ const SwipeCard = memo(function SwipeCard({
               />
               <Text
                 bold
-                style={{ paddingHorizontal: padding(1) }}
+                style={{ paddingHorizontal: spacing(1) }}
                 title={title}
                 type="overline"
               />
@@ -142,7 +142,7 @@ const SwipeCard = memo(function SwipeCard({
             <Text
               ellipsizeMode="tail"
               numberOfLines={2}
-              style={{ flex: 1, paddingTop: padding(2) }}
+              style={{ flex: 1, paddingTop: spacing(2) }}
               title={body}
             />
             <Text
@@ -236,7 +236,7 @@ interface BadgeProps {
 }
 
 const Badge = memo(function Badge({ count, percent }: BadgeProps) {
-  const size = padding(6);
+  const size = spacing(6);
   const badgeSize = size * percent;
   const colors = useColors();
   return (
@@ -246,7 +246,7 @@ const Badge = memo(function Badge({ count, percent }: BadgeProps) {
         right: 0,
         width: size,
         height: size,
-        margin: padding(1),
+        margin: spacing(1),
         zIndex: count * 10,
         alignItems: 'center',
         justifyContent: 'center',
@@ -344,7 +344,7 @@ export const SwipeFeed = memo(function SwipeFeed() {
     >
       <ScrollView
         style={{
-          padding: padding(4),
+          padding: spacing(4),
           backgroundColor: colors.background.secondary,
         }}
       >

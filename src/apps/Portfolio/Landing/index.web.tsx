@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from '../../../components';
 import { SentenceType } from '../../../components/Sentence/types';
-import { padding, useColors } from '../../../features';
+import { spacing, useColors } from '../../../features';
 
 const missingCallback = () => undefined;
 
@@ -34,9 +34,9 @@ const SignInButton = memo(function SignInButton({
         flexDirection: 'row',
         borderColor: colors.border.primaryA,
         borderWidth: 2,
-        padding: padding(2),
-        marginBottom: padding(2),
-        borderRadius: padding(10),
+        padding: spacing(2),
+        marginBottom: spacing(2),
+        borderRadius: spacing(10),
       }}
     >
       <Icon
@@ -44,7 +44,7 @@ const SignInButton = memo(function SignInButton({
         style={{ width: '30px', height: '30px' }}
       />
       <Text
-        style={{ paddingLeft: padding(2) }}
+        style={{ paddingLeft: spacing(2) }}
         title={title}
         type="h4"
       />
@@ -68,9 +68,9 @@ const NavButton = memo(function NavButton({
       onPress={onPress}
       style={{
         justifyContent: 'center',
-        borderRadius: padding(10),
-        paddingVertical: padding(2),
-        paddingHorizontal: padding(2),
+        borderRadius: spacing(10),
+        paddingVertical: spacing(2),
+        paddingHorizontal: spacing(2),
         backgroundColor: inverted
           ? colors.background.primaryB
           : colors.background.primaryA,
@@ -101,7 +101,7 @@ export const Header = memo(function Header({ height }: HeaderProps) {
         flexDirection: 'row',
         justifyContent: 'space-between',
         borderColor: colors.border.primaryA,
-        padding: padding(4),
+        padding: spacing(4),
         borderBottomWidth: 1,
         zIndex: 2,
         height,
@@ -114,7 +114,7 @@ export const Header = memo(function Header({ height }: HeaderProps) {
         />
         <Text
           bold
-          style={{ paddingHorizontal: padding(4) }}
+          style={{ paddingHorizontal: spacing(4) }}
           title="Core"
           type="h3"
         />
@@ -158,11 +158,11 @@ const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
       style={{
         width: '248px',
         justifyContent: 'center',
-        borderRadius: padding(2),
+        borderRadius: spacing(2),
         flexDirection: 'row',
         backgroundColor: colors.background.primaryB,
-        paddingVertical: padding(2),
-        paddingHorizontal: padding(4),
+        paddingVertical: spacing(2),
+        paddingHorizontal: spacing(4),
       }}
     >
       <Icon
@@ -170,7 +170,7 @@ const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
         name={type}
         style={{ width: iconSize, height: iconSize, alignSelf: 'center' }}
       />
-      <View style={{ paddingLeft: padding(2) }}>
+      <View style={{ paddingLeft: spacing(2) }}>
         <Text
           inverse
           title={text}
@@ -211,7 +211,7 @@ const Section = memo(function Section({
 });
 
 export const Landing = memo(function PortfolioLanding() {
-  const height = padding(18);
+  const height = spacing(18);
   const titleSentence: SentenceType[] = [
     { title: 'Get started with ', type: 'h2' },
     { title: 'Core', bold: true, type: 'h2' },
@@ -243,7 +243,7 @@ export const Landing = memo(function PortfolioLanding() {
       >
         <Sentence
           sentences={titleSentence}
-          style={{ paddingVertical: padding(8), alignSelf: 'center' }}
+          style={{ paddingVertical: spacing(8), alignSelf: 'center' }}
         />
         <View style={{ width: '400px', alignSelf: 'center' }}>
           <SignInButton
@@ -265,7 +265,7 @@ export const Landing = memo(function PortfolioLanding() {
             sentences={passwordSentence}
             style={{
               alignSelf: 'center',
-              paddingVertical: padding(4),
+              paddingVertical: spacing(4),
             }}
           />
         </View>
@@ -287,7 +287,7 @@ export const Landing = memo(function PortfolioLanding() {
           style={{
             flexDirection: 'row',
             justifyContent: 'center',
-            marginBottom: padding(4),
+            marginBottom: spacing(4),
           }}
         >
           <NavButton

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { padding, useColors } from '../../features';
+import { spacing, useColors } from '../../features';
 import { Content } from '../Content';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
@@ -18,7 +18,7 @@ export const Item = memo(function Item({ item, width }: Props) {
       alignItems: 'center',
       backgroundColor: item.backgroundColor || colors.background.primaryA,
       justifyContent: 'center',
-      padding: padding(4),
+      padding: spacing(4),
       width,
     },
   });
@@ -29,7 +29,7 @@ export const Item = memo(function Item({ item, width }: Props) {
         {item.icon ? (
           <Icon
             name={item.icon}
-            size={padding(40)}
+            size={spacing(40)}
           />
         ) : null}
       </View>
@@ -37,7 +37,7 @@ export const Item = memo(function Item({ item, width }: Props) {
         {item.title ? (
           <Text
             center
-            style={{ paddingVertical: padding(8) }}
+            style={{ paddingVertical: spacing(8) }}
             title={item.title}
             type="h4"
           />

@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { Keyboard, View } from 'react-native';
 import { Button, Modal, Text } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { Card, DeleteModal, ItemContext, ItemEdit } from '../../components';
 import { removeItem, removeItemFromItem, updateItem } from '../../models';
@@ -80,7 +80,7 @@ export const ItemDetail = memo(function ItemDetail() {
                   title="close"
                 />
               </Card>
-              <View style={{ padding: padding(2) }} />
+              <View style={{ padding: spacing(2) }} />
               <Card flex>
                 <Button
                   center

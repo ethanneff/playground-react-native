@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { Button, Screen, ScrollView, Text } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { LoadingProfile } from './LoadingProfile';
 import { LoadingSection } from './LoadingSection';
 
@@ -35,7 +35,7 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
       title="Skeleton Loader"
     >
       <ScrollView
-        contentContainerStyle={{ padding: padding(4) }}
+        contentContainerStyle={{ padding: spacing(4) }}
         style={{ backgroundColor: colors.background.secondary }}
       >
         {loading ? (

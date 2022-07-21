@@ -2,7 +2,7 @@ import dayjs, { Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
 import { ListRenderItem, View } from 'react-native';
 import { FlatList, Icon, Text, TouchableOpacity } from '../../components';
-import { padding, useColors } from '../../features';
+import { spacing, useColors } from '../../features';
 
 const generateHistory = () => {
   const data = [];
@@ -47,8 +47,8 @@ const ProgressItem = ({ item }: ProgressItemProps) => {
         style={{
           borderTopColor: colors.border.primaryA,
           borderTopWidth: 2,
-          margin: padding(1),
-          width: padding(12),
+          margin: spacing(1),
+          width: spacing(12),
         }}
       >
         <Text

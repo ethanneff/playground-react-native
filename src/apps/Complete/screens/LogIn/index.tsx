@@ -2,7 +2,7 @@ import { useIsFocused, useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Button, Modal, TextInput, TextInputRef } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { useRootDispatch } from '../../../../redux';
 import { ModalHeader } from '../../components';
 import { createItem, loadUser } from '../../models';
@@ -84,7 +84,7 @@ export const LogIn = memo(function LogIn() {
         onSubmitEditing={onSubmitEditing('email')}
         placeholder="Email address"
         returnKeyType="next"
-        style={{ marginBottom: padding(4) }}
+        style={{ marginBottom: spacing(4) }}
         textContentType="username"
         value=""
       />
@@ -98,12 +98,12 @@ export const LogIn = memo(function LogIn() {
         placeholder="Password"
         returnKeyType="done"
         secureTextEntry={!state.eye}
-        style={{ marginBottom: padding(4) }}
+        style={{ marginBottom: spacing(4) }}
         textContentType="password"
         value=""
       />
       <Button
-        buttonStyle={{ marginBottom: padding(4) }}
+        buttonStyle={{ marginBottom: spacing(4) }}
         center
         color="accent"
         lowercase

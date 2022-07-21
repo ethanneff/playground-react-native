@@ -2,7 +2,7 @@ import { Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Button, Modal, Text } from '../../../../../components';
-import { padding } from '../../../../../features';
+import { spacing } from '../../../../../features';
 import { Location } from './Location';
 import { OneTime } from './OneTime';
 import { Radio } from './Radio';
@@ -25,11 +25,11 @@ export const Create = memo(function Create({
   const [state, setState] = useState<ReminderType>('one time');
   const styles = StyleSheet.create({
     section: {
-      paddingBottom: padding(2),
-      paddingTop: padding(6),
+      paddingBottom: spacing(2),
+      paddingTop: spacing(6),
     },
     submit: {
-      marginTop: padding(6),
+      marginTop: spacing(6),
     },
   });
 

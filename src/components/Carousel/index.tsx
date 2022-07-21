@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { ListRenderItem, View, ViewToken } from 'react-native';
-import { padding } from '../../features';
+import { spacing } from '../../features';
 import { getWidth, useRootSelector } from '../../redux';
 import { FlatList, FlatListRef } from '../FlatList';
 import { Dots } from './Dots';
@@ -15,7 +15,7 @@ type Props = {
 };
 
 export const Carousel = memo(function Carousel({
-  dotSize = padding(4),
+  dotSize = spacing(4),
   slides,
   duration,
   viewabilityConfig = { itemVisiblePercentThreshold: 50 },

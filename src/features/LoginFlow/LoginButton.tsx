@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Icon, IconName, Text, TouchableOpacity } from '../../components';
-import { padding } from '../../features';
+import { spacing } from '../Config';
 import { useColors } from '../Theme';
 
 type Props = {
@@ -24,14 +24,14 @@ export const LoginButton = memo(function LoginButton({
         flexDirection: 'row',
         borderColor: colors.border.primaryA,
         borderWidth: 2,
-        padding: padding(2),
-        marginBottom: padding(2),
-        borderRadius: padding(10),
+        padding: spacing(2),
+        marginBottom: spacing(2),
+        borderRadius: spacing(10),
       }}
     >
       <Icon name={icon} />
       <Text
-        style={{ paddingLeft: padding(2) }}
+        style={{ paddingLeft: spacing(2) }}
         title={title}
         type="button"
       />

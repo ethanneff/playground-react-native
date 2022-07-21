@@ -9,7 +9,7 @@ import {
   Text,
   TouchableOpacity,
 } from '../../../components';
-import { padding, useColors } from '../../../features';
+import { spacing, useColors } from '../../../features';
 import { SuperAny } from '../../../types/types';
 import { landingRoutes } from '../navParams';
 import { Row } from './Row';
@@ -28,7 +28,7 @@ export const Landing = memo(function Playground() {
         key={item}
         onPress={navToItem(item)}
       >
-        <View style={{ paddingVertical: padding(2) }}>
+        <View style={{ paddingVertical: spacing(2) }}>
           <Text
             bold
             title={item}
@@ -51,7 +51,7 @@ export const Landing = memo(function Playground() {
         style={{
           flex: 1,
           backgroundColor: colors.background.secondary,
-          paddingVertical: padding(2),
+          paddingVertical: spacing(2),
         }}
       >
         <Row>
@@ -65,8 +65,8 @@ export const Landing = memo(function Playground() {
             />
             <FlatList
               contentContainerStyle={{
-                paddingHorizontal: padding(4),
-                paddingBottom: padding(2),
+                paddingHorizontal: spacing(4),
+                paddingBottom: spacing(2),
               }}
               data={landingRoutes.storybook}
               keyExtractor={keyExtractor}
@@ -85,8 +85,8 @@ export const Landing = memo(function Playground() {
             />
             <FlatList
               contentContainerStyle={{
-                paddingHorizontal: padding(4),
-                paddingBottom: padding(2),
+                paddingHorizontal: spacing(4),
+                paddingBottom: spacing(2),
               }}
               data={landingRoutes.features}
               keyExtractor={keyExtractor}
@@ -106,8 +106,8 @@ export const Landing = memo(function Playground() {
             />
             <FlatList
               contentContainerStyle={{
-                paddingHorizontal: padding(4),
-                paddingBottom: padding(2),
+                paddingHorizontal: spacing(4),
+                paddingBottom: spacing(2),
               }}
               data={landingRoutes.games}
               keyExtractor={keyExtractor}
@@ -126,8 +126,8 @@ export const Landing = memo(function Playground() {
             />
             <FlatList
               contentContainerStyle={{
-                paddingHorizontal: padding(4),
-                paddingBottom: padding(2),
+                paddingHorizontal: spacing(4),
+                paddingBottom: spacing(2),
               }}
               data={landingRoutes.creations}
               keyExtractor={keyExtractor}

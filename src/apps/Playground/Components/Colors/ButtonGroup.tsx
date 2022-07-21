@@ -5,7 +5,7 @@ import { Button, Text } from '../../../../components';
 import {
   FontEmphasis,
   MonoMultiColor,
-  padding,
+  spacing,
   useColors,
 } from '../../../../features';
 
@@ -22,7 +22,7 @@ export const ButtonGroup = memo(function ButtonGroup({
     <View style={{ flex: 1 }}>
       <Text
         center
-        style={{ paddingBottom: padding(5) }}
+        style={{ paddingBottom: spacing(5) }}
         title={emphasis}
         type="h5"
       />

@@ -1,7 +1,7 @@
 import { fontEmphases, fontSizes } from './fonts';
 import { ColorTheme, FontEmphasis, FontType, MonoMultiColor } from './types';
 
-export const padding = (value: number): number => value * 4;
+export const spacing = (value: number): number => value * 4;
 
 export const colorWithOpacity = (colorCode: string, opacity = 0.5): string => {
   const boundedOpacity = opacity < 0 ? 0 : opacity > 1 ? 1 : opacity;

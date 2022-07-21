@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, ImageSourcePropType, StyleSheet, View } from 'react-native';
 import { Text, TouchableOpacity } from '../../components';
-import { padding, useColors } from '../../features';
+import { spacing, useColors } from '../../features';
 
 type Props = {
   onPress?: () => void;
@@ -16,32 +16,32 @@ export const ProfileLevel = ({ onPress }: Props): JSX.Element => {
     imageContainer: {
       alignSelf: 'center',
       borderColor: colors.border.primaryA,
-      borderRadius: padding(2),
+      borderRadius: spacing(2),
       borderWidth: 1,
-      height: padding(18),
+      height: spacing(18),
       justifyContent: 'center',
       resizeMode: 'contain',
-      width: padding(18),
+      width: spacing(18),
     },
     levelContainer: {
       alignItems: 'center',
       backgroundColor: colors.background.primaryA,
       borderColor: colors.border.primaryA,
-      borderRadius: padding(20),
+      borderRadius: spacing(20),
       borderWidth: 1,
-      bottom: -padding(2),
+      bottom: -spacing(2),
       elevation: 2,
       flex: 1,
-      height: padding(8),
+      height: spacing(8),
       justifyContent: 'center',
       position: 'absolute',
-      width: padding(8),
+      width: spacing(8),
       zIndex: 2,
     },
     progressBar: {
       backgroundColor: colors.background.positive,
       borderBottomLeftRadius: 0,
-      borderRadius: padding(20),
+      borderRadius: spacing(20),
       borderTopLeftRadius: 0,
       height: '100%',
     },
@@ -49,13 +49,13 @@ export const ProfileLevel = ({ onPress }: Props): JSX.Element => {
       backgroundColor: colors.background.primaryA,
       borderBottomLeftRadius: 0,
       borderColor: colors.border.primaryA,
-      borderRadius: padding(20),
+      borderRadius: spacing(20),
       borderTopLeftRadius: 0,
       borderWidth: 1,
-      height: padding(4),
+      height: spacing(4),
       marginLeft: 30,
-      marginTop: -padding(1),
-      width: padding(16),
+      marginTop: -spacing(1),
+      width: spacing(16),
     },
   });
 

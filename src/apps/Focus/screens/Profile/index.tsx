@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import { Button, Card, Screen, ScrollView, Text } from '../../../../components';
-import { padding, useColors, useLayout } from '../../../../features';
+import { spacing, useColors, useLayout } from '../../../../features';
 
 export const Profile = memo(function Profile() {
   const colors = useColors();
@@ -15,15 +15,15 @@ export const Profile = memo(function Profile() {
     >
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: padding(4),
-          paddingVertical: padding(2),
+          paddingHorizontal: spacing(4),
+          paddingVertical: spacing(2),
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>
           <Text
             emphasis="medium"
-            style={{ paddingBottom: padding(2) }}
+            style={{ paddingBottom: spacing(2) }}
             title="Profile"
             type="h4"
           />
@@ -53,7 +53,7 @@ export const Profile = memo(function Profile() {
         <Card>
           <Text
             emphasis="medium"
-            style={{ paddingBottom: padding(2) }}
+            style={{ paddingBottom: spacing(2) }}
             title="Preferences"
             type="h4"
           />
@@ -65,7 +65,7 @@ export const Profile = memo(function Profile() {
         <Card>
           <Text
             emphasis="medium"
-            style={{ paddingBottom: padding(2) }}
+            style={{ paddingBottom: spacing(2) }}
             title="App"
             type="h4"
           />

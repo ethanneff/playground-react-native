@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import { Text } from '../../../../components';
-import { padding } from '../../../../features';
+import { spacing } from '../../../../features';
 import { Item } from '../../types';
 
 type Props = {
@@ -15,7 +15,7 @@ export const ListSection = memo(function ListSection({ item }: Props) {
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
-        padding: padding(2),
+        padding: spacing(2),
       }}
     >
       <Text

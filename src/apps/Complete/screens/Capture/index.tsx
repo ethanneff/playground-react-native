@@ -2,7 +2,7 @@ import React, { memo, useCallback, useRef, useState } from 'react';
 import { LayoutChangeEvent } from 'react-native';
 import { Button, KeyboardHandler, Screen } from '../../../../components';
 import {
-  padding,
+  spacing,
   useColors,
   useKeyboardHeight,
   useLayout,
@@ -19,7 +19,7 @@ export const Capture = memo(function Capture() {
   const containerRefs = useRef(initialState);
   const keyboardHeight = useKeyboardHeight();
   const [containerHeight, setContainerHeight] = useState(0);
-  const keyboardPadding = padding(keyboardHeight ? 11 : 48);
+  const keyboardPadding = spacing(keyboardHeight ? 11 : 48);
   const maxHeight = containerHeight - keyboardHeight - keyboardPadding;
 
   const itemId = useRootSelector(getInbox);

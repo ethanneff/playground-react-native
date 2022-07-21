@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { Screen, ScrollView, Text } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { useRootDispatch } from '../../../../redux';
 import { Buttons } from './Buttons';
 import { GameBoard } from './GameBoard';
@@ -29,7 +29,7 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
       <ScrollView
         style={{
           backgroundColor: colors.background.secondary,
-          padding: padding(4),
+          padding: spacing(4),
         }}
       >
         {loading ? (

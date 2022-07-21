@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
-import { padding } from '../../features';
+import { spacing } from '../../features';
 import { Icon, IconName } from '../Icon';
 import { TouchableOpacity } from '../TouchableOpacity';
 
@@ -18,7 +18,7 @@ export const NavButton = memo(function NavButton({
   testID,
 }: Props) {
   const styles = StyleSheet.create({
-    button: { padding: padding(2) },
+    button: { padding: spacing(2) },
     buttonRight: { alignSelf: 'flex-end' },
   });
   return (
@@ -31,7 +31,7 @@ export const NavButton = memo(function NavButton({
         color="secondary"
         hidden={!onPress}
         name={icon}
-        size={padding(8)}
+        size={spacing(8)}
         style={notLeft ? styles.buttonRight : null}
         testID={testID}
       />

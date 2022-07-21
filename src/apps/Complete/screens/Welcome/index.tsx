@@ -3,7 +3,7 @@ import React, { memo, useCallback, useState } from 'react';
 import { View } from 'react-native';
 import { Button, Carousel, Screen } from '../../../../components';
 import { CarouselSlide } from '../../../../components/Carousel/types';
-import { padding } from '../../../../features';
+import { spacing } from '../../../../features';
 import { useRootDispatch } from '../../../../redux';
 import { createItem, loadUser, login } from '../../models';
 import { completeConfig, getDefaultUserTemplate } from '../../utils';
@@ -17,7 +17,7 @@ const slides: CarouselSlide[] = [
       {
         title: 'Welcome to Accomplish',
         titleType: 'h4',
-        titleStyle: { paddingBottom: padding(10) },
+        titleStyle: { paddingBottom: spacing(10) },
         paragraphs: [
           [{ title: 'Start investing commission-free' }],
           [
@@ -36,7 +36,7 @@ const slides: CarouselSlide[] = [
       {
         title: 'Enjoy commission-free stock trading',
         titleType: 'h4',
-        titleStyle: { paddingBottom: padding(10) },
+        titleStyle: { paddingBottom: spacing(10) },
         paragraphs: [
           [
             {
@@ -56,7 +56,7 @@ const slides: CarouselSlide[] = [
       {
         title: 'No account minimum',
         titleType: 'h4',
-        titleStyle: { paddingBottom: padding(10) },
+        titleStyle: { paddingBottom: spacing(10) },
         paragraphs: [
           [
             {
@@ -75,7 +75,7 @@ const slides: CarouselSlide[] = [
       {
         title: 'Everything at your fingertips',
         titleType: 'h4',
-        titleStyle: { paddingBottom: padding(10) },
+        titleStyle: { paddingBottom: spacing(10) },
         paragraphs: [
           [
             {
@@ -94,7 +94,7 @@ const slides: CarouselSlide[] = [
       {
         title: 'Account protection',
         titleType: 'h4',
-        titleStyle: { paddingBottom: padding(10) },
+        titleStyle: { paddingBottom: spacing(10) },
         paragraphs: [
           [
             {
@@ -154,7 +154,7 @@ export const Welcome = memo(function Welcome() {
           />
           <View style={{ padding: completeConfig.padding }}>
             <Button
-              buttonStyle={{ marginBottom: padding(2) }}
+              buttonStyle={{ marginBottom: spacing(2) }}
               center
               color="accent"
               emphasis="high"

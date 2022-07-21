@@ -9,7 +9,7 @@ import {
   Text,
   TouchableOpacity,
 } from '../../components';
-import { padding, useAdminNavBack, useColors } from '../../features';
+import { spacing, useAdminNavBack, useColors } from '../../features';
 
 interface SectionProps {
   description?: string;
@@ -38,7 +38,7 @@ const ChecklistItem = ({ item, index }: ChecklistItemProps) => {
       <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
         <Icon
           name={toggle}
-          style={{ paddingRight: padding(2) }}
+          style={{ paddingRight: spacing(2) }}
         />
         <View style={{ flex: 1 }}>
           <Text title={`${index + 1}. ${item}`} />
@@ -78,12 +78,12 @@ const Section = ({
       {subtitle ? (
         <Text
           emphasis="medium"
-          style={{ paddingVertical: padding(1) }}
+          style={{ paddingVertical: spacing(1) }}
           title={subtitle}
           type="subtitle1"
         />
       ) : null}
-      <View style={{ paddingTop: padding(2) }}>
+      <View style={{ paddingTop: spacing(2) }}>
         {description ? <Text title={description} /> : null}
         {items
           ? items.map((item, index) => (
@@ -111,8 +111,8 @@ export const Home = memo(function Home() {
     >
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: padding(4),
-          paddingVertical: padding(2),
+          paddingHorizontal: spacing(4),
+          paddingVertical: spacing(2),
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >

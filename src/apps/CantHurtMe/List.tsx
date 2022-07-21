@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { ListRenderItem, StyleSheet, View } from 'react-native';
 import { Card, FlatList, Icon, Text, TouchableOpacity } from '../../components';
-import { padding, useColors } from '../../features';
+import { spacing, useColors } from '../../features';
 import { getLandscapeOrientation, useRootSelector } from '../../redux';
 import { DailyProgress } from './DailyProgress';
 import { app } from './data';
@@ -24,8 +24,8 @@ export const List = memo(function List({
 
   const styles = StyleSheet.create({
     list: {
-      paddingBottom: padding(2),
-      paddingHorizontal: padding(4),
+      paddingBottom: spacing(2),
+      paddingHorizontal: spacing(4),
     },
   });
 
@@ -38,8 +38,8 @@ export const List = memo(function List({
         <View
           style={{
             flex: 1,
-            marginRight: index % 2 === 0 ? padding(2) : 0,
-            marginLeft: index % 2 === 0 ? 0 : padding(2),
+            marginRight: index % 2 === 0 ? spacing(2) : 0,
+            marginLeft: index % 2 === 0 ? 0 : spacing(2),
           }}
         >
           <Card
@@ -49,7 +49,7 @@ export const List = memo(function List({
             <Text
               bold
               center
-              style={{ paddingBottom: padding(4) }}
+              style={{ paddingBottom: spacing(4) }}
               title={`Challenge #${index + 1}`}
               type="subtitle1"
             />
@@ -69,7 +69,7 @@ export const List = memo(function List({
       <View>
         <Text
           center
-          style={{ padding: padding(4) }}
+          style={{ padding: spacing(4) }}
           title="Progress"
           type="h4"
         />
@@ -78,7 +78,7 @@ export const List = memo(function List({
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-              paddingBottom: padding(2),
+              paddingBottom: spacing(2),
             }}
           >
             <ProfileLevel onPress={onProfilePress} />
@@ -90,7 +90,7 @@ export const List = memo(function List({
         </Card>
         <Text
           center
-          style={{ padding: padding(4) }}
+          style={{ padding: spacing(4) }}
           title="Challenges"
           type="h4"
         />

@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { padding, TagColor, useColors } from '../../features';
+import { spacing, TagColor, useColors } from '../../features';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 
@@ -25,10 +25,10 @@ export const Tag = memo(function Tag({
         backgroundColor: colors.tag[color],
         borderColor: colors.border.primaryA,
         borderWidth: 1,
-        borderRadius: padding(2),
+        borderRadius: spacing(2),
         alignSelf: 'flex-start',
-        paddingHorizontal: padding(2),
-        paddingVertical: padding(1),
+        paddingHorizontal: spacing(2),
+        paddingVertical: spacing(1),
       }}
     >
       <Text

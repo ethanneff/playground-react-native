@@ -10,7 +10,7 @@ import {
   Spacing,
   Text,
 } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 
 // type GameHistory = {
 //   callout: number;
@@ -127,8 +127,8 @@ export const Crash = memo(function CrashMemo() {
     >
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: padding(4),
-          paddingVertical: padding(2),
+          paddingHorizontal: spacing(4),
+          paddingVertical: spacing(2),
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >
@@ -200,7 +200,7 @@ export const Crash = memo(function CrashMemo() {
             value={String(playerGame.autoCashOut)}
           />
           <Button
-            buttonStyle={{ padding: padding(3) }}
+            buttonStyle={{ padding: spacing(3) }}
             center
             color="positive"
             emphasis="high"

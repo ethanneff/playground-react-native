@@ -8,14 +8,14 @@ import {
   ScrollView,
   Text,
 } from '../../components';
-import { padding, useAdminNavBack, useColors } from '../../features';
+import { spacing, useAdminNavBack, useColors } from '../../features';
 
 export const Home = memo(function Home() {
   const colors = useColors();
   const { onLeftPress } = useAdminNavBack();
   const styles = StyleSheet.create({
     bottom: {
-      paddingBottom: padding(4),
+      paddingBottom: spacing(4),
     },
   });
 
@@ -29,8 +29,8 @@ export const Home = memo(function Home() {
     >
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: padding(4),
-          paddingVertical: padding(2),
+          paddingHorizontal: spacing(4),
+          paddingVertical: spacing(2),
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >
@@ -165,7 +165,7 @@ export const Home = memo(function Home() {
             value=""
           />
         </Card>
-        <View style={{ height: padding(4) }} />
+        <View style={{ height: spacing(4) }} />
       </ScrollView>
     </Screen>
   );

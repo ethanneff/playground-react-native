@@ -6,7 +6,7 @@ import {
   ScrollView,
   Text,
 } from '../../../../components';
-import { padding, useColors, useLayout } from '../../../../features';
+import { spacing, useColors, useLayout } from '../../../../features';
 import { Category } from '../../types';
 import { CategoryCard } from './CategoryCard';
 
@@ -47,15 +47,15 @@ export const Progress = memo(function Progress() {
     >
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: padding(4),
-          paddingVertical: padding(2),
+          paddingHorizontal: spacing(4),
+          paddingVertical: spacing(2),
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>
           <Text
             emphasis="medium"
-            style={{ paddingBottom: padding(2) }}
+            style={{ paddingBottom: spacing(2) }}
             title="Activity"
             type="h4"
           />
@@ -64,7 +64,7 @@ export const Progress = memo(function Progress() {
         <Card>
           <Text
             emphasis="medium"
-            style={{ paddingBottom: padding(2) }}
+            style={{ paddingBottom: spacing(2) }}
             title="Categories"
             type="h4"
           />

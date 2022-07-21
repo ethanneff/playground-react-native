@@ -8,7 +8,7 @@ import {
   TextInput,
   TextInputRef,
 } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { ModalHeader } from '../../components';
 import { LandingStackRoutes } from '../../navigationTypes';
 
@@ -57,12 +57,12 @@ export const PasswordReset = memo(function PasswordReset() {
       />
       <Text
         center
-        style={{ paddingBottom: padding(4) }}
+        style={{ paddingBottom: spacing(4) }}
         title="Please enter the email address associated with your account."
       />
       <Text
         center
-        style={{ paddingBottom: padding(4) }}
+        style={{ paddingBottom: spacing(4) }}
         title="We'll send you an email with your login email as well as a password reset instructions."
       />
       <TextInput
@@ -74,7 +74,7 @@ export const PasswordReset = memo(function PasswordReset() {
         onSubmitEditing={onSubmit}
         placeholder="Email address"
         returnKeyType="send"
-        style={{ marginBottom: padding(4) }}
+        style={{ marginBottom: spacing(4) }}
         textContentType="username"
         value=""
       />

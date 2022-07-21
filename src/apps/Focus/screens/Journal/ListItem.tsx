@@ -3,7 +3,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback } from 'react';
 import { View } from 'react-native';
 import { Icon, Text, TouchableOpacity } from '../../../../components';
-import { padding, useColors, useDropShadow } from '../../../../features';
+import { spacing, useColors, useDropShadow } from '../../../../features';
 import { AuthStackRoutes, Item } from '../../types';
 import { ListSection } from './ListSection';
 
@@ -38,23 +38,23 @@ export const ListItem = memo(function ListItem({
       style={{
         width: '100%',
         overflow: showFooter ? 'visible' : 'hidden',
-        paddingHorizontal: padding(4),
+        paddingHorizontal: spacing(4),
       }}
     >
       <View
         style={{
           flex: 1,
-          marginTop: showHeader ? padding(4) : padding(0),
-          paddingBottom: showFooter ? padding(2) : padding(0),
+          marginTop: showHeader ? spacing(4) : spacing(0),
+          paddingBottom: showFooter ? spacing(2) : spacing(0),
           backgroundColor: colors.background.primaryA,
-          borderTopRightRadius: showHeader ? padding(4) : 0,
-          borderTopLeftRadius: showHeader ? padding(4) : 0,
-          borderBottomRightRadius: showFooter ? padding(4) : 0,
-          borderBottomLeftRadius: showFooter ? padding(4) : 0,
+          borderTopRightRadius: showHeader ? spacing(4) : 0,
+          borderTopLeftRadius: showHeader ? spacing(4) : 0,
+          borderBottomRightRadius: showFooter ? spacing(4) : 0,
+          borderBottomLeftRadius: showFooter ? spacing(4) : 0,
           borderColor: currentItem
             ? colors.background.accent
             : colors.background.primaryA,
-          borderLeftWidth: padding(1),
+          borderLeftWidth: spacing(1),
           ...dropShadow(2),
         }}
       >
@@ -65,21 +65,21 @@ export const ListItem = memo(function ListItem({
           style={{
             flex: 1,
             flexDirection: 'row',
-            paddingHorizontal: padding(4),
-            paddingVertical: padding(2),
+            paddingHorizontal: spacing(4),
+            paddingVertical: spacing(2),
           }}
         >
           <View
             style={{
               flexDirection: 'row',
-              width: padding(20),
+              width: spacing(20),
             }}
           >
             <Icon
               color={iconColor}
               name={future ? 'cancel' : 'checkbox-blank-circle'}
               size={14}
-              style={{ paddingRight: padding(1) }}
+              style={{ paddingRight: spacing(1) }}
             />
             <Text title={`${item.hour} ${item.zone}`} />
           </View>

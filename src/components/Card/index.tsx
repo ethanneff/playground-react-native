@@ -1,6 +1,6 @@
 import React, { memo, ReactNode } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
-import { padding, useColors, useDropShadow } from '../../features';
+import { spacing, useColors, useDropShadow } from '../../features';
 import { TouchableOpacity } from '../TouchableOpacity';
 
 type Props = {
@@ -28,7 +28,7 @@ const touchOpacity = 0.3;
 
 export const Card = memo(function Card({
   testID,
-  borderRadius = padding(2),
+  borderRadius = spacing(2),
   borderWidth = 1,
   children,
   elevation = 2,
@@ -49,13 +49,13 @@ export const Card = memo(function Card({
       borderColor: colors.background.primaryA,
       borderRadius,
       borderWidth,
-      marginVertical: noMargin ? 0 : padding(2),
+      marginVertical: noMargin ? 0 : spacing(2),
       ...dropShadow(elevation),
     },
     contents: {
       backgroundColor: `hsla(0,0%,100%,${opacity})`,
       borderRadius,
-      padding: noPadding ? 0 : padding(4),
+      padding: noPadding ? 0 : spacing(4),
     },
     flex: {
       flex: 1,

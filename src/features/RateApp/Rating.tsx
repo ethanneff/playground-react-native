@@ -2,7 +2,7 @@ import React, { memo, useCallback } from 'react';
 import { View } from 'react-native';
 import { v4 } from 'uuid';
 import { Icon, IconName, TouchableOpacity } from '../../components';
-import { MonoMultiColor, padding } from '../../features';
+import { MonoMultiColor, spacing } from '../../features';
 
 type Props = {
   colorFilled?: keyof MonoMultiColor;
@@ -36,7 +36,7 @@ export const Rating = memo(function RatingMemo({
       style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingHorizontal: padding(4),
+        paddingHorizontal: spacing(4),
       }}
     >
       {Array(count)

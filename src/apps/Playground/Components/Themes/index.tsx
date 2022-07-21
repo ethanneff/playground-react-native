@@ -11,7 +11,7 @@ import {
   Slider,
   Text,
 } from '../../../../components';
-import { padding, useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import {
   changeTheme,
   getLandscapeOrientation,
@@ -106,13 +106,13 @@ export const Themes = memo(function Themes() {
           type="overline"
         />
         <Text
-          style={{ marginTop: padding(2) }}
+          style={{ marginTop: spacing(2) }}
           title={item.value}
           type="h4"
         />
         {item.target ? (
           <Text
-            style={{ marginTop: padding(2) }}
+            style={{ marginTop: spacing(2) }}
             title={item.target}
             type="body2"
           />
@@ -122,7 +122,7 @@ export const Themes = memo(function Themes() {
             source={item.chart}
             style={{
               height: 100,
-              marginTop: padding(2),
+              marginTop: spacing(2),
               resizeMode: 'cover',
               width: '100%',
             }}
@@ -130,7 +130,7 @@ export const Themes = memo(function Themes() {
         ) : null}
         {item.button ? (
           <Button
-            buttonStyle={{ marginTop: padding(2) }}
+            buttonStyle={{ marginTop: spacing(2) }}
             center
             color="accent"
             emphasis="high"
@@ -149,7 +149,7 @@ export const Themes = memo(function Themes() {
       title="Dark mode"
     >
       <ScrollView style={{ backgroundColor: colors.background.primaryA }}>
-        <View style={{ padding: padding(4) }}>
+        <View style={{ padding: spacing(4) }}>
           <View
             style={{
               flexDirection: 'row',

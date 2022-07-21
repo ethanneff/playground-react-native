@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import { RelativeDate, Text } from '../../../components';
-import { padding } from '../../../features';
+import { spacing } from '../../../features';
 import { Card } from './Card';
 import { ItemDetailHeader } from './ItemDetailHeader';
 
@@ -23,23 +23,23 @@ export const ItemContext = memo(function ItemContext({
       <Card margin="bottom">
         <ItemDetailHeader title="Type" />
         <Text
-          style={{ padding: padding(2) }}
+          style={{ padding: spacing(2) }}
           title={type}
         />
         <ItemDetailHeader title="Creator" />
         <Text
-          style={{ padding: padding(2) }}
+          style={{ padding: spacing(2) }}
           title={userId}
         />
         <ItemDetailHeader title="Created" />
         <RelativeDate
           date={createdAt}
-          style={{ padding: padding(2) }}
+          style={{ padding: spacing(2) }}
         />
         <ItemDetailHeader title="Updated" />
         <RelativeDate
           date={updatedAt}
-          style={{ padding: padding(2) }}
+          style={{ padding: spacing(2) }}
         />
       </Card>
     </View>

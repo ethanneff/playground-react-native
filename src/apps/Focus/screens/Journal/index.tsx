@@ -2,7 +2,7 @@ import React, { memo, useCallback, useEffect, useState } from 'react';
 import { ListRenderItem, StyleSheet } from 'react-native';
 import { FlatList, Loader, Screen } from '../../../../components';
 import {
-  padding,
+  spacing,
   useAdminNavBack,
   useColors,
   useLayout,
@@ -35,7 +35,7 @@ export const Journal = memo(function Journal() {
     list: {
       backgroundColor: colors.background.secondary,
       opacity: loading ? 0 : 1,
-      paddingVertical: padding(4),
+      paddingVertical: spacing(4),
     },
     loading: {
       height: '100%',

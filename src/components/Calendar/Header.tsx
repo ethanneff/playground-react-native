@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import React, { memo } from 'react';
 import { View } from 'react-native';
-import { padding } from '../../features';
+import { spacing } from '../../features';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
@@ -24,7 +24,7 @@ export const CalendarHeader = memo(function CalendarHeader({
         <Icon
           name="chevron-left"
           padded
-          size={padding(6)}
+          size={spacing(6)}
         />
       </TouchableOpacity>
       <TouchableOpacity
@@ -42,7 +42,7 @@ export const CalendarHeader = memo(function CalendarHeader({
         <Icon
           name="chevron-right"
           padded
-          size={padding(6)}
+          size={spacing(6)}
         />
       </TouchableOpacity>
     </View>

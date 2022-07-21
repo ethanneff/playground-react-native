@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
 import { Icon, Text, TouchableOpacity } from '../../../components';
-import { padding } from '../../../features';
+import { spacing } from '../../../features';
 
 type Props = {
   onLeftPress?: () => void;
@@ -13,7 +13,7 @@ type Props = {
 export const ModalHeader = memo(function ModalHeader({
   title,
   onLeftPress,
-  size = padding(8),
+  size = spacing(8),
   onRightPress,
 }: Props) {
   return (
@@ -21,7 +21,7 @@ export const ModalHeader = memo(function ModalHeader({
       style={{
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: padding(4),
+        marginBottom: spacing(4),
       }}
     >
       <TouchableOpacity onPress={onLeftPress}>

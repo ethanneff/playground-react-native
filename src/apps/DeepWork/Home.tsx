@@ -10,7 +10,7 @@ import {
   Text,
   TouchableOpacity,
 } from '../../components';
-import { padding, useAdminNavBack, useColors } from '../../features';
+import { spacing, useAdminNavBack, useColors } from '../../features';
 import { DeepWorkNavigation } from './types';
 
 /*
@@ -54,8 +54,8 @@ export const Home = memo(function Home() {
     >
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: padding(4),
-          paddingVertical: padding(2),
+          paddingHorizontal: spacing(4),
+          paddingVertical: spacing(2),
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >
@@ -94,13 +94,13 @@ export const Home = memo(function Home() {
           bottom: 0,
           right: 0,
           flexDirection: 'row',
-          margin: padding(4),
+          margin: spacing(4),
           justifyContent: 'center',
         }}
       >
         <TouchableOpacity
           onPress={onItemAdd}
-          style={{ marginRight: padding(2) }}
+          style={{ marginRight: spacing(2) }}
         >
           <Icon
             backgroundColor="secondary"

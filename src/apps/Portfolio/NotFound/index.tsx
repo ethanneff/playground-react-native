@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
 import { Button, Screen, ScrollView } from '../../../components';
-import { padding, useColors } from '../../../features';
+import { spacing, useColors } from '../../../features';
 
 export const NotFound = memo(function PortfolioNotFound() {
   const { goBack } = useNavigation();
@@ -14,7 +14,7 @@ export const NotFound = memo(function PortfolioNotFound() {
     >
       <ScrollView
         style={{
-          padding: padding(4),
+          padding: spacing(4),
           backgroundColor: colors.background.secondary,
         }}
       >

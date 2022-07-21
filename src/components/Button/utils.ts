@@ -1,10 +1,6 @@
+import { spacing } from './../../features/Config/utils';
 import { StyleSheet } from 'react-native';
-import {
-  ColorTheme,
-  FontEmphasis,
-  MonoMultiColor,
-  padding,
-} from '../../features';
+import { ColorTheme, FontEmphasis, MonoMultiColor } from '../../features';
 
 export const getButtonColor = (
   colors: ColorTheme,
@@ -60,11 +56,11 @@ export const getStyles = ({
     container: {
       backgroundColor,
       borderColor,
-      borderRadius: padding(1),
+      borderRadius: spacing(1),
       borderWidth: 1,
       flexDirection: 'row',
-      padding: noPadding ? padding(0) : padding(2),
-      paddingHorizontal: noPadding ? padding(0) : padding(4),
+      padding: noPadding ? spacing(0) : spacing(2),
+      paddingHorizontal: noPadding ? spacing(0) : spacing(4),
     },
     invisible: {
       opacity: 0,
