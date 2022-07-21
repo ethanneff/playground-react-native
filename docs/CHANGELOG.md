@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.63.1](https://github.com/ethanneff/playground-react-native/compare/v2.63.0...v2.63.1) (2022-07-21)
+
+
+### Bug Fixes
+
+* correct funky fonts ([111385e](https://github.com/ethanneff/playground-react-native/commit/111385e7c1c4729a0eddad9524e6a9441b64bd51))
+
 # [2.63.0](https://github.com/ethanneff/playground-react-native/compare/v2.62.4...v2.63.0) (2022-07-21)
 
 
