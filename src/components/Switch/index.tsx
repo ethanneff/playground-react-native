@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { GestureSwitch } from '../../conversions';
-import { SoundManager } from '../../features';
+import { SoundManager, useColors } from '../../features';
 
 export type SwitchRef = GestureSwitch | null;
 
@@ -17,9 +17,11 @@ export const Switch = memo(function Switch({ value, onValueChange }: Props) {
     },
     [onValueChange],
   );
+  const colors = useColors();
   return (
     <GestureSwitch
       onValueChange={handleValueChange}
+      trackColor={{ true: colors.background.accent }}
       value={value}
     />
   );
