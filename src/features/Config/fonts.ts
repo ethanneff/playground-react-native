@@ -45,7 +45,7 @@ export const fontSizes: FontSizes = {
   },
   h6: {
     fontSize: 20,
-    fontWeight: fontWeight.medium,
+    fontWeight: fontWeight.regular,
     letterSpacing: 0.15,
   },
   button: {
