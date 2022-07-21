@@ -1,5 +1,24 @@
 # Changelog
 
+# [2.63.0](https://github.com/ethanneff/playground-react-native/compare/v2.62.4...v2.63.0) (2022-07-21)
+
+
+### Bug Fixes
+
+* add bottom up navigation transition ([0f4eb5b](https://github.com/ethanneff/playground-react-native/commit/0f4eb5bf21490985dbbfd4d69684cdc82ba14ab7))
+* add type safety to icon names ([ddc53b3](https://github.com/ethanneff/playground-react-native/commit/ddc53b31d4846f22839812036dba0403b085db1d))
+* allow method to show drop shadow on top ([d5b3fd8](https://github.com/ethanneff/playground-react-native/commit/d5b3fd842e31760518b6d0e4d767531eda555ef5))
+* change switch color to accent ([a8efc05](https://github.com/ethanneff/playground-react-native/commit/a8efc05dc2a444a69c62d04df5d8e346529bb95d))
+* make h6 not bold ([0831df5](https://github.com/ethanneff/playground-react-native/commit/0831df54b214531d597cc942837e2c085d5ab554))
+* make sound on input press ([8354d1b](https://github.com/ethanneff/playground-react-native/commit/8354d1b56d0a3a408b3daf3fb611d130f0e2283d))
+* make sound on slider change ([29bfac7](https://github.com/ethanneff/playground-react-native/commit/29bfac7d0c0e1261be605ac1ab93034332287fa3))
+* make tap on tabbar press ([c6f8ce5](https://github.com/ethanneff/playground-react-native/commit/c6f8ce500c4cc71f8f2fd86dda9a074e84d1ec84))
+
+
+### Features
+
+* update journal detail to save state ([2795fb6](https://github.com/ethanneff/playground-react-native/commit/2795fb697073a9e521377d0a6836210c06216fec))
+
 ## [2.62.4](https://github.com/ethanneff/playground-react-native/compare/v2.62.3...v2.62.4) (2022-07-13)
 
 
