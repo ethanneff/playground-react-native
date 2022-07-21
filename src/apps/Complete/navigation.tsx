@@ -4,7 +4,7 @@ import {
   StackNavigationOptions,
 } from '@react-navigation/stack';
 import React from 'react';
-import { TabIcons, useNavScreenOptions, useTabTap } from '../../features';
+import { TabIcons, useNavScreenOptions } from '../../features';
 import {
   HomeStackRoutes,
   ImplementStackRoutes,
@@ -38,7 +38,6 @@ const tabIcons: TabIcons = {
 
 const ImplementStack = createStackNavigator<ImplementStackRoutes>();
 const Implement = () => {
-  useTabTap();
   return (
     <ImplementStack.Navigator screenOptions={noHeader}>
       <ImplementStack.Screen
@@ -55,9 +54,12 @@ const Implement = () => {
 
 const TabStack = createBottomTabNavigator<HomeStackRoutes>();
 const Home = () => {
-  const { tabScreenOptions } = useNavScreenOptions();
+  const { tabScreenOptions, tabScreenListeners } = useNavScreenOptions();
   return (
-    <TabStack.Navigator screenOptions={tabScreenOptions({ tabIcons })}>
+    <TabStack.Navigator
+      screenListeners={tabScreenListeners}
+      screenOptions={tabScreenOptions({ tabIcons })}
+    >
       <TabStack.Screen
         component={Capture}
         name="plan"

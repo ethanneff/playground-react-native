@@ -6,7 +6,6 @@ import {
   useColors,
   useKeyboardHeight,
   useLayout,
-  useTabTap,
 } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 import { Card, List } from '../../components';
@@ -15,7 +14,6 @@ import { getInbox } from '../../models';
 const initialState = { container: 0, button: 0 };
 
 export const Capture = memo(function Capture() {
-  useTabTap();
   const colors = useColors();
   const { tabBarEdges } = useLayout();
   const containerRefs = useRef(initialState);

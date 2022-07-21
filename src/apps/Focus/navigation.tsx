@@ -26,10 +26,14 @@ const tabIcons: TabIcons = {
 };
 
 const Tabs = () => {
-  const { tabScreenOptions } = useNavScreenOptions();
+  const { tabScreenOptions, tabScreenListeners } = useNavScreenOptions();
   const screenOptions = tabScreenOptions({ tabIcons, titleShown: true });
+
   return (
-    <TabBar.Navigator screenOptions={screenOptions}>
+    <TabBar.Navigator
+      screenListeners={tabScreenListeners}
+      screenOptions={screenOptions}
+    >
       <TabBar.Screen
         component={Journal}
         name="journal"

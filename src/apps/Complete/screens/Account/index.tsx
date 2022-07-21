@@ -7,7 +7,6 @@ import {
   useAuth,
   useColors,
   useLayout,
-  useTabTap,
 } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { Card } from '../../components';
@@ -19,7 +18,6 @@ import { logout } from '../../models';
 // TODO: add payment
 
 export const Account = memo(function Account() {
-  useTabTap();
   const colors = useColors();
   const { tabBarEdges } = useLayout();
   const dispatch = useRootDispatch();

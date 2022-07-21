@@ -7,7 +7,7 @@ import {
 import React, { useCallback } from 'react';
 import { Platform, View } from 'react-native';
 import { Icon, IconName, Text } from '../../components';
-import { StringMethods } from '../../features';
+import { SoundManager, StringMethods } from '../../features';
 import { useColors } from '../Theme';
 
 export type TabIcons = {
@@ -20,15 +20,7 @@ type TabScreenOptions = {
   titleShown?: boolean;
 };
 
-type UseNavScreenOptions = {
-  bottomScreenOptions: StackNavigationOptions;
-  modalScreenOptions: StackNavigationOptions;
-  tabScreenOptions: (
-    options: TabScreenOptions,
-  ) => (screenOptions: NavOptions) => BottomTabNavigationOptions;
-};
-
-export const useNavScreenOptions = (): UseNavScreenOptions => {
+export const useNavScreenOptions = () => {
   const colors = useColors();
 
   const modalScreenOptions: StackNavigationOptions = {
@@ -88,5 +80,14 @@ export const useNavScreenOptions = (): UseNavScreenOptions => {
     [colors.background.primaryA, colors.text.primaryA, colors.text.tertiary],
   );
 
-  return { modalScreenOptions, tabScreenOptions, bottomScreenOptions };
+  const tabScreenListeners = () => ({
+    tabPress: () => SoundManager.play('tap'),
+  });
+
+  return {
+    modalScreenOptions,
+    tabScreenOptions,
+    tabScreenListeners,
+    bottomScreenOptions,
+  };
 };

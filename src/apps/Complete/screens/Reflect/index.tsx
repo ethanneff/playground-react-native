@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { Dimensions, View } from 'react-native';
 import { Calendar, Screen, ScrollView, Text } from '../../../../components';
-import { padding, useColors, useLayout, useTabTap } from '../../../../features';
+import { padding, useColors, useLayout } from '../../../../features';
 import { Card } from '../../components';
 import { completeConfig } from '../../utils';
 import { Graph } from './Graph';
@@ -34,7 +34,6 @@ const data = [
 ];
 
 export const Reflect = memo(function Reflect() {
-  useTabTap();
   const colors = useColors();
   const { tabBarEdges } = useLayout();
 
