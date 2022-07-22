@@ -32,6 +32,10 @@ jest.mock('@react-native-google-signin/google-signin', () => ({
   },
 }));
 
+jest.mock('@react-native-firebase/crashlytics', () => () => ({
+  log: jest.fn(),
+}));
+
 jest.mock('@react-native-firebase/analytics', () => () => ({
   logEvent: jest.fn(),
   setUserProperties: jest.fn(),

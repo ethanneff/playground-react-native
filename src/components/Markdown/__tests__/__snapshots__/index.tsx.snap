@@ -320,9 +320,14 @@ exports[`markdown renders correctly 1`] = `
                     >
                       <View
                         style={
-                          Object {
-                            "flexDirection": "row",
-                          }
+                          Array [
+                            undefined,
+                            undefined,
+                            undefined,
+                            Object {
+                              "flexDirection": "row",
+                            },
+                          ]
                         }
                       >
                         <Text

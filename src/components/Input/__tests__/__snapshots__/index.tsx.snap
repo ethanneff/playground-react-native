@@ -323,26 +323,41 @@ exports[`input renders correctly 1`] = `
                           Array [
                             undefined,
                             undefined,
+                            undefined,
+                            Array [
+                              undefined,
+                              undefined,
+                            ],
                           ]
                         }
                       >
                         <View
                           style={
-                            Object {
-                              "flexDirection": "row",
-                            }
+                            Array [
+                              undefined,
+                              undefined,
+                              undefined,
+                              Object {
+                                "flexDirection": "row",
+                              },
+                            ]
                           }
                         />
                         <View
                           style={
-                            Object {
-                              "backgroundColor": "hsl(0,0%,100%)",
-                              "borderColor": "hsl(0,0%,32.9%)",
-                              "borderRadius": 4,
-                              "borderWidth": 2,
-                              "flexDirection": "row",
-                              "padding": 8,
-                            }
+                            Array [
+                              undefined,
+                              undefined,
+                              undefined,
+                              Object {
+                                "backgroundColor": "hsl(0,0%,100%)",
+                                "borderColor": "hsl(0,0%,32.9%)",
+                                "borderRadius": 4,
+                                "borderWidth": 2,
+                                "flexDirection": "row",
+                                "padding": 8,
+                              },
+                            ]
                           }
                         >
                           <TextInput
@@ -404,13 +419,18 @@ exports[`input renders correctly 1`] = `
                                     undefined,
                                     undefined,
                                     undefined,
-                                    undefined,
-                                    Object {
-                                      "justifyContent": "center",
-                                    },
-                                    Object {
-                                      "paddingLeft": 8,
-                                    },
+                                    Array [
+                                      undefined,
+                                      undefined,
+                                      undefined,
+                                      undefined,
+                                      Object {
+                                        "justifyContent": "center",
+                                      },
+                                      Object {
+                                        "paddingLeft": 8,
+                                      },
+                                    ],
                                   ]
                                 }
                               >
@@ -471,11 +491,16 @@ exports[`input renders correctly 1`] = `
                                   undefined,
                                   undefined,
                                   undefined,
-                                  undefined,
-                                  Object {
-                                    "justifyContent": "center",
-                                  },
-                                  undefined,
+                                  Array [
+                                    undefined,
+                                    undefined,
+                                    undefined,
+                                    undefined,
+                                    Object {
+                                      "justifyContent": "center",
+                                    },
+                                    undefined,
+                                  ],
                                 ]
                               }
                             >

@@ -320,10 +320,15 @@ exports[`screen renders correctly 1`] = `
                     >
                       <View
                         style={
-                          Object {
-                            "backgroundColor": "hsl(0,0%,100%)",
-                            "flex": 1,
-                          }
+                          Array [
+                            undefined,
+                            undefined,
+                            undefined,
+                            Object {
+                              "backgroundColor": "hsl(0,0%,100%)",
+                              "flex": 1,
+                            },
+                          ]
                         }
                       >
                         <RNCSafeAreaView
@@ -343,16 +348,21 @@ exports[`screen renders correctly 1`] = `
                         >
                           <View
                             style={
-                              Object {
-                                "alignItems": "center",
-                                "backgroundColor": "hsl(0,0%,100%)",
-                                "borderBottomColor": "hsl(0,0%,100%)",
-                                "borderBottomWidth": 1,
-                                "flexDirection": "row",
-                                "justifyContent": "space-between",
-                                "paddingHorizontal": 8,
-                                "zIndex": 2,
-                              }
+                              Array [
+                                undefined,
+                                undefined,
+                                undefined,
+                                Object {
+                                  "alignItems": "center",
+                                  "backgroundColor": "hsl(0,0%,100%)",
+                                  "borderBottomColor": "hsl(0,0%,100%)",
+                                  "borderBottomWidth": 1,
+                                  "flexDirection": "row",
+                                  "justifyContent": "space-between",
+                                  "paddingHorizontal": 8,
+                                  "zIndex": 2,
+                                },
+                              ]
                             }
                           >
                             <RNGestureHandlerButton
@@ -383,11 +393,16 @@ exports[`screen renders correctly 1`] = `
                                       undefined,
                                       undefined,
                                       undefined,
-                                      undefined,
-                                      Object {
-                                        "justifyContent": "center",
-                                      },
-                                      null,
+                                      Array [
+                                        undefined,
+                                        undefined,
+                                        undefined,
+                                        undefined,
+                                        Object {
+                                          "justifyContent": "center",
+                                        },
+                                        null,
+                                      ],
                                     ]
                                   }
                                   testID="leftNav"
@@ -447,13 +462,18 @@ exports[`screen renders correctly 1`] = `
                                       undefined,
                                       undefined,
                                       undefined,
-                                      undefined,
-                                      Object {
-                                        "justifyContent": "center",
-                                      },
-                                      Object {
-                                        "alignSelf": "flex-end",
-                                      },
+                                      Array [
+                                        undefined,
+                                        undefined,
+                                        undefined,
+                                        undefined,
+                                        Object {
+                                          "justifyContent": "center",
+                                        },
+                                        Object {
+                                          "alignSelf": "flex-end",
+                                        },
+                                      ],
                                     ]
                                   }
                                   testID="rightNav"
@@ -488,25 +508,44 @@ exports[`screen renders correctly 1`] = `
                           </View>
                           <View
                             style={
-                              Object {
-                                "backgroundColor": "hsl(0,0%,100%)",
-                                "height": 2,
-                                "width": "100%",
-                                "zIndex": 1,
-                              }
+                              Array [
+                                undefined,
+                                undefined,
+                                undefined,
+                                Object {
+                                  "backgroundColor": "hsl(0,0%,100%)",
+                                  "height": 2,
+                                  "width": "100%",
+                                  "zIndex": 1,
+                                },
+                              ]
                             }
                           />
                           <View
                             style={
                               Array [
-                                Object {
-                                  "flex": 1,
-                                },
                                 undefined,
+                                undefined,
+                                undefined,
+                                Array [
+                                  Object {
+                                    "flex": 1,
+                                  },
+                                  undefined,
+                                ],
                               ]
                             }
                           >
-                            <View />
+                            <View
+                              style={
+                                Array [
+                                  undefined,
+                                  undefined,
+                                  undefined,
+                                  undefined,
+                                ]
+                              }
+                            />
                           </View>
                         </RNCSafeAreaView>
                       </View>
