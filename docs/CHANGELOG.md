@@ -1,5 +1,23 @@
 # Changelog
 
+# [2.64.0](https://github.com/ethanneff/playground-react-native/compare/v2.63.1...v2.64.0) (2022-07-22)
+
+
+### Bug Fixes
+
+* add firebase analytics ([0214b87](https://github.com/ethanneff/playground-react-native/commit/0214b874fc297a7e599a4411af86303d5c96a489))
+* add flex to slider ([abd9512](https://github.com/ethanneff/playground-react-native/commit/abd9512a5b02fde16b73d32a4851c70234734075))
+* add view flex to component ([53d3b28](https://github.com/ethanneff/playground-react-native/commit/53d3b2881edeeafc8bb838c2752a7013566dc703))
+* correct undefined error ([4f020d3](https://github.com/ethanneff/playground-react-native/commit/4f020d3b5dd499d89bfdeb0aa28f6fa9547ebf7a))
+
+
+### Features
+
+* add auth handler to focus navigation ([c455299](https://github.com/ethanneff/playground-react-native/commit/c4552992e55a15be716af6b82ede6bdec143dfb0))
+* add landing and login to focus ([35f9530](https://github.com/ethanneff/playground-react-native/commit/35f9530e1803ffb9e68b4d99d9e49efd75f3052a))
+* add logout to focus ([7c2b862](https://github.com/ethanneff/playground-react-native/commit/7c2b86235b17457ad1a61681ec6d378b51ac5344))
+* add toast ([b308bd9](https://github.com/ethanneff/playground-react-native/commit/b308bd91490ea435662a6076d87dd93e858869cf))
+
 ## [2.63.1](https://github.com/ethanneff/playground-react-native/compare/v2.63.0...v2.63.1) (2022-07-21)
 
 
