@@ -1,12 +1,19 @@
 import Lottie from 'lottie-react-native';
 import React, { memo, useCallback } from 'react';
-import { Button, Screen, Spacing, Text, Toast, View } from '~components';
-import { Firebase } from '~conversions';
+import {
+  Button,
+  Screen,
+  Spacing,
+  Text,
+  Toast,
+  View,
+} from '../../../../components';
+import { Firebase } from '../../../../conversions';
 import {
   getLandscapeOrientation,
   getSmallestDimension,
   useRootSelector,
-} from '~redux';
+} from '../../../../redux';
 
 export const Landing = memo(function Landing() {
   const width = useRootSelector(getSmallestDimension);
