@@ -43,7 +43,7 @@ export const Progress = memo(function Progress() {
     <Screen
       dropShadow
       edges={tabBarEdges}
-      title="Progress"
+      title="Progression"
     >
       <ScrollView
         contentContainerStyle={{
