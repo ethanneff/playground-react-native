@@ -34,7 +34,7 @@ export const Item = memo(function Item({ item, width }: Props) {
           />
         ) : null}
       </View>
-      <View style={{ flex: 1 }}>
+      <View flex>
         {item.title ? (
           <Text
             center

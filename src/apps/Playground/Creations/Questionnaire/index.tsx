@@ -112,11 +112,11 @@ export const Questionnaire = memo(function Questionnaire() {
 
   const renderItem = useCallback<ListRenderItem<Data>>(
     ({ item }) => {
-      let items = <View style={{ flex: 1 }} />;
+      let items = <View flex />;
 
       if (item.choices)
         items = (
-          <View style={{ flex: 1 }}>
+          <View flex>
             {item.choices.map((choice) => {
               return (
                 <Button

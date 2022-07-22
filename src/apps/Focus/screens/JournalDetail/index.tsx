@@ -198,11 +198,11 @@ export const JournalDetail = memo(function JournalDetail() {
               />
               <Spacing padding={2} />
               <Slider
+                flex
                 maximumValue={10}
                 minimumValue={0}
                 onSlidingComplete={handleNps}
                 step={1}
-                style={{ flex: 1 }}
                 value={state.nps}
               />
             </View>

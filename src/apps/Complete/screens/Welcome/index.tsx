@@ -113,32 +113,14 @@ export const Welcome = memo(function Welcome() {
   const dispatch = useRootDispatch();
   const [showLogin, setShowLogin] = useState(false);
   const onToggleLogin = useCallback(() => setShowLogin((p) => !p), []);
+
   const onLoginSuccess = useCallback(
     (auth: FirebaseAuthTypes.User | null) => {
       if (!auth) throw new Error('no login');
-      const {
-        displayName,
-        email,
-        emailVerified,
-        isAnonymous,
-        phoneNumber,
-        photoURL,
-        uid,
-      } = auth;
-      const data = {
-        displayName,
-        email,
-        emailVerified,
-        isAnonymous,
-        phoneNumber,
-        photoURL,
-        uid,
-      };
-      if (!email) throw new Error('no email');
-      dispatch(login(data));
+      dispatch(login(auth));
       const { user, items } = getDefaultUserTemplate();
       items.forEach((item) => dispatch(createItem(item)));
-      dispatch(loadUser({ ...user, email }));
+      dispatch(loadUser({ ...user, email: auth.email || 'anonymous' }));
     },
     [dispatch],
   );
@@ -146,7 +128,7 @@ export const Welcome = memo(function Welcome() {
   return (
     <>
       <Screen>
-        <View style={{ flex: 1 }}>
+        <View flex>
           <Carousel
             duration={6000}
             slides={slides}

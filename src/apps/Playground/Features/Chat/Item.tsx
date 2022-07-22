@@ -40,7 +40,7 @@ export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
           }}
         />
       </View>
-      <View style={{ flex: 1 }}>
+      <View flex>
         <View row>
           <Text
             bold

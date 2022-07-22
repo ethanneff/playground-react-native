@@ -19,8 +19,8 @@ export const Chat = memo(function PlaygroundChat() {
       title="Chat"
     >
       <View
+        flex
         onLayout={onLayout}
-        style={{ flex: 1 }}
       >
         <View style={{ height }}>
           <Items />

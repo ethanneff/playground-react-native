@@ -68,7 +68,7 @@ export const ProfileLevel = ({ onPress }: Props): JSX.Element => {
         source={image}
         style={styles.imageContainer}
       />
-      <View style={{ flex: 1 }}>
+      <View flex>
         <View style={styles.progressContainer}>
           <View style={[styles.progressBar, { width }]} />
         </View>

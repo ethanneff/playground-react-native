@@ -31,14 +31,6 @@ import {
   completeUserReducer,
 } from '../apps/Complete/models';
 import {
-  chatMessageActions,
-  chatMessageReducer,
-} from '../apps/Playground/Features/Chat/Messages';
-import {
-  gameOfLifeActions,
-  gameOfLifeReducer,
-} from '../apps/Playground/Games/GameOfLife/redux';
-import {
   choicesActions,
   choicesReducer,
   questionnairesActions,
@@ -48,6 +40,14 @@ import {
   responsesActions,
   responsesReducer,
 } from '../apps/Playground/Creations/Questionnaire/models';
+import {
+  chatMessageActions,
+  chatMessageReducer,
+} from '../apps/Playground/Features/Chat/Messages';
+import {
+  gameOfLifeActions,
+  gameOfLifeReducer,
+} from '../apps/Playground/Games/GameOfLife/redux';
 import { addFlipperMiddleware, Storage } from '../conversions';
 import { syncMiddleware, useSync } from './sync';
 

@@ -25,11 +25,11 @@ export const Header = memo(function Header() {
           type="h5"
         />
         <Slider
+          flex
           maximumValue={100}
           minimumValue={1}
           onSlidingComplete={onCountSlide}
           step={1}
-          style={{ flex: 1 }}
           value={10}
         />
       </View>
@@ -40,11 +40,11 @@ export const Header = memo(function Header() {
           type="h5"
         />
         <Slider
+          flex
           maximumValue={100}
           minimumValue={1}
           onSlidingComplete={onDelaySlide}
           step={1}
-          style={{ flex: 1 }}
           value={10}
         />
       </View>

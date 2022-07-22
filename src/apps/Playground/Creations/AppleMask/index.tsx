@@ -43,7 +43,7 @@ const Section = ({
           title={String(index)}
           type="h2"
         />
-        <View style={{ flex: 1 }}>
+        <View flex>
           <Text
             style={{ marginBottom: spacing(4) }}
             title={title}

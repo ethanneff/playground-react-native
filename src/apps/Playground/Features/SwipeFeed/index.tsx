@@ -106,8 +106,8 @@ const SwipeCard = memo(function SwipeCard({
       }}
     >
       <TouchableOpacity
+        flex
         onPress={onSwipeComplete}
-        style={{ flex: 1 }}
       >
         <View style={{ flex: 1, flexDirection: 'row' }}>
           {image ? (
