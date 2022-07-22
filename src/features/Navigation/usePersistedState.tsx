@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import {
   InitialState,
   NavigationContainerRef,
@@ -6,6 +7,7 @@ import {
 } from '@react-navigation/native';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Linking, Platform } from 'react-native';
+import { Analytics } from '../Analytics';
 
 const persistanceKey = 'navigation';
 
@@ -31,8 +33,8 @@ export const usePersistedState = (): UsePersistedState => {
     const currentRouteName =
       navigationRef?.current?.getCurrentRoute()?.name || null;
 
-    if (previousRouteName !== currentRouteName) {
-      // TODO: send to mixpanel
+    if (previousRouteName !== currentRouteName && currentRouteName) {
+      Analytics.trackScreen(currentRouteName);
     }
 
     routeNameRef.current = currentRouteName;

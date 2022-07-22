@@ -1,3 +1,4 @@
+export * from './Analytics';
 export * from './Animation';
 export * from './App';
 export * from './Config';
