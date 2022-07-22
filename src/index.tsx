@@ -2,7 +2,7 @@ import React, { StrictMode } from 'react';
 import { AppRegistry, LogBox, Platform } from 'react-native';
 import 'react-native-get-random-values';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { ErrorBoundary } from './components';
+import { ErrorBoundary, Toast, toastConfig } from './components';
 import { GestureHandlerProvider } from './conversions';
 import { AppProvider, debugDev } from './features';
 import { NavigationProvider } from './features/Navigation/core';
@@ -22,6 +22,7 @@ export const Main = (): JSX.Element => {
               <AppProvider>
                 <NavigationProvider />
               </AppProvider>
+              <Toast config={toastConfig} />
             </ErrorBoundary>
           </ReduxProvider>
         </GestureHandlerProvider>
