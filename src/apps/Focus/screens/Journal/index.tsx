@@ -1,12 +1,7 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { ListRenderItem, StyleSheet } from 'react-native';
 import { FlatList, Loader, Screen } from '../../../../components';
-import {
-  spacing,
-  useAdminNavBack,
-  useColors,
-  useLayout,
-} from '../../../../features';
+import { spacing, useColors, useLayout } from '../../../../features';
 import { Item } from '../../types';
 import { ListItem } from './ListItem';
 import {
@@ -22,7 +17,7 @@ import {
 export const Journal = memo(function Journal() {
   const colors = useColors();
   const { tabBarEdges } = useLayout();
-  const { onLeftPress } = useAdminNavBack();
+
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState<Item[]>(() => getMoreItems([]));
 
@@ -64,8 +59,7 @@ export const Journal = memo(function Journal() {
     <Screen
       dropShadow
       edges={tabBarEdges}
-      onLeftPress={onLeftPress}
-      title="Journal"
+      title="Tracker"
     >
       <FlatList
         data={items}
