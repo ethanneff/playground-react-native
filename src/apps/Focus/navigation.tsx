@@ -4,7 +4,15 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Firebase } from '../../conversions';
 import { FirebaseAuthTypes } from '../../conversions/Firebase';
 import { TabIcons, useNavScreenOptions } from '../../features';
-import { CategoryDetail, Journal, Landing, Profile, Progress } from './screens';
+import {
+  CategoryDetail,
+  Journal,
+  Landing,
+  Onboarding,
+  Profile,
+  Progress,
+  SignUp,
+} from './screens';
 import { JournalDetail } from './screens/JournalDetail';
 import { AuthStackRoutes, HomeTabRoutes, UnAuthStackRoutes } from './types';
 
@@ -13,15 +21,15 @@ const UnAuthStack = createStackNavigator<UnAuthStackRoutes>();
 const TabBar = createBottomTabNavigator<HomeTabRoutes>();
 
 const tabIcons: TabIcons = {
-  journal: {
+  tracker: {
     focused: 'format-list-bulleted',
     unFocused: 'format-list-bulleted',
   },
-  progress: {
-    focused: 'calendar-month',
-    unFocused: 'calendar-month',
+  progression: {
+    focused: 'calendar-month-outline',
+    unFocused: 'calendar-month-outline',
   },
-  profile: {
+  account: {
     focused: 'account-outline',
     unFocused: 'account-outline',
   },
@@ -38,15 +46,15 @@ const Tabs = () => {
     >
       <TabBar.Screen
         component={Journal}
-        name="journal"
+        name="tracker"
       />
       <TabBar.Screen
         component={Progress}
-        name="progress"
+        name="progression"
       />
       <TabBar.Screen
         component={Profile}
-        name="profile"
+        name="account"
       />
     </TabBar.Navigator>
   );
@@ -90,6 +98,14 @@ export const Navigation = () => {
       <UnAuthStack.Screen
         component={Landing}
         name="landing"
+      />
+      <UnAuthStack.Screen
+        component={Onboarding}
+        name="onboarding"
+      />
+      <UnAuthStack.Screen
+        component={SignUp}
+        name="signup"
       />
     </UnAuthStack.Navigator>
   );

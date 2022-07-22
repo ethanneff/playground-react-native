@@ -21,10 +21,12 @@ export type AuthStackRoutes = {
 };
 export type UnAuthStackRoutes = {
   landing: undefined;
+  onboarding: undefined;
+  signup: undefined;
 };
 
 export type HomeTabRoutes = {
-  journal: undefined;
-  profile: undefined;
-  progress: undefined;
+  account: undefined;
+  progression: undefined;
+  tracker: undefined;
 };
