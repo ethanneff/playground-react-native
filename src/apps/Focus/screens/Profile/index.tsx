@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import {
   Button,
   Card,
@@ -7,11 +7,16 @@ import {
   Text,
   View,
 } from '../../../../components';
+import { auth } from '../../../../conversions/Firebase';
 import { spacing, useColors, useLayout } from '../../../../features';
 
 export const Profile = memo(function Profile() {
   const colors = useColors();
   const { tabBarEdges } = useLayout();
+
+  const handleLogout = useCallback(async () => {
+    await auth().signOut();
+  }, []);
 
   return (
     <Screen
@@ -53,7 +58,10 @@ export const Profile = memo(function Profile() {
           <Button title="reset password" />
           <Button title="delete account" />
           <Button title="restore transactions" />
-          <Button title="log out" />
+          <Button
+            onPress={handleLogout}
+            title="log out"
+          />
         </Card>
 
         <Card>
