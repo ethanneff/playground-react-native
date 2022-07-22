@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import {
   Button,
@@ -5,18 +6,42 @@ import {
   Screen,
   ScrollView,
   Text,
+  Toast,
   View,
 } from '../../../../components';
-import { auth } from '../../../../conversions/Firebase';
-import { spacing, useColors, useLayout } from '../../../../features';
+import { Firebase } from '../../../../conversions';
+import {
+  RootNavigation,
+  spacing,
+  useAdminNavBack,
+  useColors,
+  useLayout,
+} from '../../../../features';
 
 export const Profile = memo(function Profile() {
+  const { navigate } = useNavigation<RootNavigation>();
   const colors = useColors();
   const { tabBarEdges } = useLayout();
+  const { admin } = useAdminNavBack();
 
   const handleLogout = useCallback(async () => {
-    await auth().signOut();
+    try {
+      await Firebase.auth().signOut();
+    } catch (e) {
+      Toast.show({
+        type: 'accent',
+        props: {
+          title: 'bba1a7d0-6ab2-4a0a-a76e-ebbe05ae6d70',
+          description: 'bba1a7d0-6ab2-4a0a-a76e-ebbe05ae6d70',
+        },
+      });
+      Firebase.crashlytics().log('unable to sign out');
+    }
   }, []);
+
+  const handleAdmin = useCallback(() => {
+    navigate('admin');
+  }, [navigate]);
 
   return (
     <Screen
@@ -62,6 +87,12 @@ export const Profile = memo(function Profile() {
             onPress={handleLogout}
             title="log out"
           />
+          {admin ? (
+            <Button
+              onPress={handleAdmin}
+              title="admin"
+            />
+          ) : null}
         </Card>
 
         <Card>
