@@ -1,2 +1,8 @@
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
-export { auth, FirebaseAuthTypes };
+import crashlytics from '@react-native-firebase/crashlytics';
+
+export const Firebase = {
+  auth,
+  crashlytics,
+};
+export { FirebaseAuthTypes };

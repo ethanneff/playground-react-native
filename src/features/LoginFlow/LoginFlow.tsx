@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { Platform } from 'react-native';
 import { Button, Input, Loader, Modal } from '../../components';
-import { auth, FirebaseAuthTypes } from '../../conversions';
+import { Firebase, FirebaseAuthTypes } from '../../conversions';
 import { LoginButton } from './LoginButton';
 
 type Props = {
@@ -65,7 +65,9 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
   );
 
   const onPhoneSubmit = useCallback(async () => {
-    const phoneConfirmation = await auth().signInWithPhoneNumber(form.phone);
+    const phoneConfirmation = await Firebase.auth().signInWithPhoneNumber(
+      form.phone,
+    );
     setForm((prev) => ({ ...prev, state: 'phone confirm', phoneConfirmation }));
   }, [setForm, form.phone]);
 
@@ -83,7 +85,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
   }, [form.phoneCode, form.phoneConfirmation]);
 
   const onEmailSubmit = useCallback(() => {
-    auth()
+    Firebase.auth()
       .createUserWithEmailAndPassword(form.email, form.password)
       .then(() => {
         console.log('User account created & signed in!');
@@ -102,7 +104,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
   const onMissingCallback = useCallback(() => undefined, []);
 
   const onAnonymous = useCallback(() => {
-    auth()
+    Firebase.auth()
       .signInAnonymously()
       .then(() => {
         console.log('User signed in anonymously');
@@ -116,7 +118,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
   }, []);
 
   const onLogout = useCallback(() => {
-    auth()
+    Firebase.auth()
       .signOut()
       .then(() => console.log('User signed out!'))
       .catch(() => console.log('no user to sign out'))

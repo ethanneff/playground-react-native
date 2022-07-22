@@ -1,7 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import React, { useCallback, useEffect, useState } from 'react';
-import { auth, FirebaseAuthTypes } from '../../conversions/Firebase';
+import { Firebase } from '../../conversions';
+import { FirebaseAuthTypes } from '../../conversions/Firebase';
 import { TabIcons, useNavScreenOptions } from '../../features';
 import { CategoryDetail, Journal, Landing, Profile, Progress } from './screens';
 import { JournalDetail } from './screens/JournalDetail';
@@ -65,7 +66,7 @@ export const Navigation = () => {
   );
 
   useEffect(() => {
-    return auth().onAuthStateChanged(onAuthStateChanged);
+    return Firebase.auth().onAuthStateChanged(onAuthStateChanged);
   }, [onAuthStateChanged]);
 
   if (initializing) return null;
