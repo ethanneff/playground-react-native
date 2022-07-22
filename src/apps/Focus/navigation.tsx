@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { auth, FirebaseAuthTypes } from '../../conversions/Firebase';
 import { TabIcons, useNavScreenOptions } from '../../features';
 import { CategoryDetail, Journal, Landing, Profile, Progress } from './screens';
 import { JournalDetail } from './screens/JournalDetail';
@@ -52,16 +53,23 @@ const Tabs = () => {
 
 export const Navigation = () => {
   const { modalScreenOptions, bottomScreenOptions } = useNavScreenOptions();
-  const login = false;
+  const [login, setLogin] = useState<FirebaseAuthTypes.User | null>(null);
+  const [initializing, setInitializing] = useState(true);
 
+  const onAuthStateChanged = useCallback(
+    (user: FirebaseAuthTypes.User | null) => {
+      setLogin(user);
+      if (initializing) setInitializing(false);
+    },
+    [initializing],
+  );
+
+  useEffect(() => {
+    return auth().onAuthStateChanged(onAuthStateChanged);
+  }, [onAuthStateChanged]);
+
+  if (initializing) return null;
   return login ? (
-    <UnAuthStack.Navigator screenOptions={modalScreenOptions}>
-      <UnAuthStack.Screen
-        component={Landing}
-        name="landing"
-      />
-    </UnAuthStack.Navigator>
-  ) : (
     <AuthStack.Navigator screenOptions={bottomScreenOptions}>
       <AuthStack.Screen
         component={Tabs}
@@ -76,5 +84,12 @@ export const Navigation = () => {
         name="category-detail"
       />
     </AuthStack.Navigator>
+  ) : (
+    <UnAuthStack.Navigator screenOptions={modalScreenOptions}>
+      <UnAuthStack.Screen
+        component={Landing}
+        name="landing"
+      />
+    </UnAuthStack.Navigator>
   );
 };
