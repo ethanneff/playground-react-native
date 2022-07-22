@@ -91,7 +91,7 @@ export const JournalDetail = memo(function JournalDetail() {
         dropShadow
         leftIcon="close"
         onLeftPress={goBack}
-        title="details"
+        title="Update Interval"
       >
         <ScrollView
           contentContainerStyle={{
@@ -100,6 +100,14 @@ export const JournalDetail = memo(function JournalDetail() {
           }}
           style={{ backgroundColor: colors.background.secondary }}
         >
+          <Card>
+            <Text
+              title="Interval"
+              type="h5"
+            />
+            <Spacing padding={2} />
+            <Text title={title} />
+          </Card>
           <Card>
             <Text
               title="Status"
@@ -206,9 +214,6 @@ export const JournalDetail = memo(function JournalDetail() {
                 value={state.nps}
               />
             </View>
-          </Card>
-          <Card>
-            <Text title={title} />
           </Card>
         </ScrollView>
         <View style={{ ...dropShadow(1, -2) }}>
