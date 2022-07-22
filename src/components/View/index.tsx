@@ -3,19 +3,29 @@ import React from 'react';
 import { StyleSheet, View as Original, ViewProps } from 'react-native';
 
 type Props = ViewProps & {
+  center?: boolean;
   flex?: boolean;
   row?: boolean;
 };
 
 const styles = StyleSheet.create({
+  center: { justifyContent: 'center' },
   flex: { flex: 1 },
   row: { flexDirection: 'row' },
 });
 
-export const View = ({ flex, row, children, style, ...rest }: Props) => {
+export const View = ({
+  flex,
+  row,
+  children,
+  center,
+  style,
+  ...rest
+}: Props) => {
   const combinedStyles = [
     flex ? styles.flex : undefined,
     row ? styles.row : undefined,
+    center ? styles.center : undefined,
     style,
   ];
 
