@@ -13,7 +13,11 @@ const styles = StyleSheet.create({
 });
 
 export const View = ({ flex, row, children, style, ...rest }: Props) => {
-  const combinedStyles = [flex && styles.flex, row && styles.row, style];
+  const combinedStyles = [
+    flex ? styles.flex : undefined,
+    row ? styles.row : undefined,
+    style,
+  ];
 
   return (
     <Original

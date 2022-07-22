@@ -21,7 +21,7 @@ export const Slider = ({ onSlidingComplete, flex, style, ...rest }: Props) => {
     [onSlidingComplete],
   );
 
-  const combinedStyles = [flex && styles.flex, style];
+  const combinedStyles = [flex ? styles.flex : undefined, style];
 
   return (
     <Original
