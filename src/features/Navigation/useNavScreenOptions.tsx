@@ -61,6 +61,7 @@ export const useNavScreenOptions = () => {
               />
               {titleShown ? (
                 <Text
+                  bold={focused}
                   emphasis={emphasis}
                   title={title}
                   type="caption"
