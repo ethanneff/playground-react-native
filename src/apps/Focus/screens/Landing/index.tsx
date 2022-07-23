@@ -1,40 +1,29 @@
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import Lottie from 'lottie-react-native';
 import React, { memo, useCallback } from 'react';
-import {
-  Button,
-  Screen,
-  Spacing,
-  Text,
-  Toast,
-  View,
-} from '../../../../components';
-import { Firebase } from '../../../../conversions';
+import { Button, Screen, Spacing, Text, View } from '../../../../components';
+import { spacing } from '../../../../features';
 import {
   getLandscapeOrientation,
   getSmallestDimension,
   useRootSelector,
 } from '../../../../redux';
+import { UnAuthStackRoutes } from '../../types';
 
 export const Landing = memo(function Landing() {
+  const { navigate } = useNavigation<StackNavigationProp<UnAuthStackRoutes>>();
   const width = useRootSelector(getSmallestDimension);
   const landscape = useRootSelector(getLandscapeOrientation);
   const imageSize = width * 0.5;
-  const extraBottomPadding = landscape ? 0 : width / 20;
 
-  const handleSubmit = useCallback(async () => {
-    try {
-      await Firebase.auth().signInAnonymously();
-    } catch (e) {
-      Toast.show({
-        type: 'accent',
-        props: {
-          title: 'bba1a7d0-6ab2-4a0a-a76e-ebbe05ae6d70',
-          description: 'bba1a7d0-6ab2-4a0a-a76e-ebbe05ae6d70',
-        },
-      });
-      Firebase.crashlytics().log('unable to sign in anonymously');
-    }
-  }, []);
+  const handleGetStarted = useCallback(() => {
+    navigate('onboarding');
+  }, [navigate]);
+
+  const handleAccount = useCallback(() => {
+    navigate('sign-up');
+  }, [navigate]);
 
   return (
     <Screen>
@@ -69,30 +58,42 @@ export const Landing = memo(function Landing() {
             <Spacing padding={2} />
             <Text
               center
+              emphasis="high"
               title="Improve your habits. Hit your goals."
               type="h5"
             />
-            <Spacing padding={extraBottomPadding} />
+            {landscape ? null : <Spacing padding={10} />}
           </View>
         </View>
       </View>
-      <Spacing padding={4}>
-        <Button
-          center
-          color="accent"
-          emphasis="high"
-          onPress={handleSubmit}
-          title="Get Started"
-        />
+      <View
+        style={{
+          flexDirection: landscape ? 'row' : 'column',
+          justifyContent: 'space-between',
+          paddingHorizontal: spacing(10),
+          paddingVertical: spacing(4),
+        }}
+      >
+        <View flex={landscape}>
+          <Button
+            center
+            color="accent"
+            emphasis="high"
+            onPress={handleGetStarted}
+            title="Get Started"
+          />
+        </View>
         <Spacing padding={2} />
-        <Button
-          center
-          color="secondary"
-          emphasis="medium"
-          onPress={handleSubmit}
-          title="I already have an account"
-        />
-      </Spacing>
+        <View flex={landscape}>
+          <Button
+            center
+            color="secondary"
+            emphasis="medium"
+            onPress={handleAccount}
+            title="I already have an account"
+          />
+        </View>
+      </View>
     </Screen>
   );
 });
