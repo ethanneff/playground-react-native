@@ -35,6 +35,10 @@ export const useNavScreenOptions = () => {
     ...TransitionPresets.ModalSlideFromBottomIOS,
   };
 
+  const rightScreenOptions: StackNavigationOptions = {
+    headerShown: false,
+  };
+
   const tabScreenOptions = useCallback(
     ({ tabIcons, headerShown = false, titleShown = false }: TabScreenOptions) =>
       ({ route }: NavOptions): BottomTabNavigationOptions => ({
@@ -90,5 +94,6 @@ export const useNavScreenOptions = () => {
     tabScreenOptions,
     tabScreenListeners,
     bottomScreenOptions,
+    rightScreenOptions,
   };
 };
