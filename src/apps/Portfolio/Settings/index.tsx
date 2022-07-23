@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import { ListRenderItem } from 'react-native';
-import { Button, FlatList, Screen, View } from '../../../components';
+import { Button, FlatList, Screen, Text, View } from '../../../components';
 import {
   changeTheme,
   Theme,
@@ -33,9 +33,9 @@ export const Settings = memo(function PortfolioSettings() {
   );
   const renderHeader = useCallback(
     () => (
-      <Button
-        disabled
+      <Text
         title="Theme"
+        type="button"
       />
     ),
     [],

@@ -97,6 +97,7 @@ export const Startup = memo(function PlaygroundStartup() {
     >
       <KeyboardAwareScrollView
         contentContainerStyle={{ padding: spacing(4) }}
+        keyboardShouldPersistTaps="handled"
         style={{ backgroundColor: colors.background.secondary }}
       >
         <Text

@@ -135,6 +135,7 @@ export const Themes = memo(function Themes() {
             center
             color="accent"
             emphasis="high"
+            onPress={onPress}
             title={item.button}
           />
         ) : null}

@@ -33,7 +33,7 @@ type Props = {
   noPadding?: boolean;
   onLongPress?(): void;
   /* event */
-  onPress?(): void;
+  onPress(): void;
   right?: boolean;
   testID?: string;
   textStyle?: StyleProp<TextStyle>;

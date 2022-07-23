@@ -1,6 +1,6 @@
 import { Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { Alert, StyleSheet } from 'react-native';
 import { Button, Modal, Text } from '../../../../../components';
 import { spacing } from '../../../../../features';
 import { Location } from './Location';
@@ -37,6 +37,8 @@ export const Create = memo(function Create({
     (type: ReminderType) => () => setState(type),
     [],
   );
+
+  const handlePress = useCallback(() => Alert.alert('here'), []);
 
   return (
     <Modal
@@ -76,6 +78,7 @@ export const Create = memo(function Create({
         color="accent"
         disabled
         emphasis="high"
+        onPress={handlePress}
         title="submit"
       />
     </Modal>

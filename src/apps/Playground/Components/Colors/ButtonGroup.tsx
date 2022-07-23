@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { v4 } from 'uuid';
 import { Button, Text, View } from '../../../../components';
 import {
@@ -17,6 +17,7 @@ export const ButtonGroup = memo(function ButtonGroup({
 }: ButtonGroupProps) {
   const colors = useColors();
   const keys = Object.keys(colors.text) as Array<keyof MonoMultiColor>;
+  const handlePress = useCallback(() => null, []);
   return (
     <View flex>
       <Text
@@ -33,6 +34,7 @@ export const ButtonGroup = memo(function ButtonGroup({
           disabled={c === 'disabled'}
           emphasis={emphasis}
           key={v4()}
+          onPress={handlePress}
           title={c}
         />
       ))}
@@ -45,6 +47,7 @@ export const ButtonGroup = memo(function ButtonGroup({
           dropShadow
           emphasis={emphasis}
           key={v4()}
+          onPress={handlePress}
           title={c}
         />
       ))}

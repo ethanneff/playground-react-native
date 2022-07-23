@@ -213,6 +213,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
           <Button
             color="accent"
             emphasis="high"
+            onPress={onMissingCallback}
             title="submit"
           />
           <Button
