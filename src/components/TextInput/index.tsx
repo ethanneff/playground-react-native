@@ -19,7 +19,6 @@ import {
   FontType,
   getFontStyles,
   MonoMultiColor,
-  SoundManager,
   spacing,
   useColors,
 } from '../../features';
@@ -38,42 +37,84 @@ export type TextInputIcon = {
   reset?: boolean;
 };
 
+type AutoComplete =
+  | 'birthdate-day'
+  | 'birthdate-full'
+  | 'birthdate-month'
+  | 'birthdate-year'
+  | 'cc-csc'
+  | 'cc-exp'
+  | 'cc-exp-day'
+  | 'cc-exp-month'
+  | 'cc-exp-year'
+  | 'cc-number'
+  | 'email'
+  | 'gender'
+  | 'name'
+  | 'name-family'
+  | 'name-given'
+  | 'name-middle'
+  | 'name-middle-initial'
+  | 'name-prefix'
+  | 'name-suffix'
+  | 'password'
+  | 'password-new'
+  | 'postal-address'
+  | 'postal-address-country'
+  | 'postal-address-extended'
+  | 'postal-address-extended-postal-code'
+  | 'postal-address-locality'
+  | 'postal-address-region'
+  | 'postal-code'
+  | 'street-address'
+  | 'sms-otp'
+  | 'tel'
+  | 'tel-country-code'
+  | 'tel-national'
+  | 'tel-device'
+  | 'username'
+  | 'username-new'
+  | 'off';
+
 export type TextInputRef = GestureTextInput | null;
 
 type TextInputProps = {
-  autoCorrect?: boolean;
+  autoCapitalize: 'none' | 'sentences' | 'words' | 'characters';
+  autoComplete: AutoComplete;
+  autoCorrect: boolean;
   backgroundColor?: keyof MonoMultiColor;
-  blurOnSubmit?: boolean;
+  blurOnSubmit: boolean;
   color?: keyof MonoMultiColor;
   disableFullscreenUI?: boolean;
-  editable?: boolean;
+  editable: boolean;
   emphasis?: FontEmphasis;
   error?: boolean;
   iconHeight?: number;
   icons?: TextInputIcon[];
-  keyboardType?: KeyboardTypeOptions;
+  keyboardType: KeyboardTypeOptions;
   multiline?: boolean;
   numberOfLines?: number;
   onBlur?: (text: string) => void;
-  onChangeText?: (text: string) => void;
+  onChangeText: (text: string) => void;
   onFocus?: (text: string) => void;
   onRef?: MutableRefObject<TextInputRef>;
-  onSubmitEditing?: (text: string) => void;
-  placeholder?: string;
+  onSubmitEditing: () => void;
+  placeholder: string;
   pointerEvents?: PointerEvents;
-  returnKeyType?: ReturnKeyTypeOptions;
+  returnKeyType: ReturnKeyTypeOptions;
   secureTextEntry?: boolean;
   style?: StyleProp<ViewStyle>;
   submitClear?: boolean;
-  textContentType?: TextContentType;
+  textContentType: TextContentType;
   type?: FontType;
-  value?: string;
+  value: string;
 };
 
 export const TextInput = memo(function TextInput({
   value = '',
   multiline,
   autoCorrect,
+  autoCapitalize,
   emphasis,
   disableFullscreenUI,
   iconHeight = spacing(5),
@@ -89,6 +130,7 @@ export const TextInput = memo(function TextInput({
   blurOnSubmit,
   onFocus,
   numberOfLines,
+  autoComplete,
   onBlur,
   error,
   style,
@@ -121,12 +163,11 @@ export const TextInput = memo(function TextInput({
   );
 
   const onSubmitEditingInternal = useCallback(() => {
-    if (onSubmitEditing) onSubmitEditing(text);
+    if (onSubmitEditing) onSubmitEditing();
     if (submitClear) setText('');
-  }, [onSubmitEditing, submitClear, text]);
+  }, [onSubmitEditing, submitClear]);
 
   const onFocusInternal = useCallback(() => {
-    SoundManager.play('tap');
     setFocus(true);
     if (onFocus) onFocus(text);
   }, [onFocus, text]);
@@ -178,6 +219,8 @@ export const TextInput = memo(function TextInput({
         }}
       >
         <GestureTextInput
+          autoCapitalize={autoCapitalize}
+          autoComplete={autoComplete}
           autoCorrect={autoCorrect}
           blurOnSubmit={blurOnSubmit}
           disableFullscreenUI={disableFullscreenUI}
@@ -207,7 +250,10 @@ export const TextInput = memo(function TextInput({
           value={text}
         />
         {icons.length > 0 && ( // TODO: refactor to declarative
-          <View row>
+          <View
+            row
+            style={{ alignSelf: 'flex-end' }}
+          >
             {icons.map((icon) =>
               icon.hidden ||
               (focus && !icon.focus) ||
