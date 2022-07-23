@@ -30,16 +30,34 @@
 Deploy Android App (Focus)
 
 - [x] add tab bar (day view, calendar, settings)
-- [ ] landing screens
-- [ ] login/logout
-- [ ] backend storage
-- [ ] redux
+- [x] login/logout
+- [x] landing screens
+- [x] sign up
+- [ ] terms and privacy policy
+- [ ] create/edit/delete goal
+- [ ] create/edit/delete interval
+- [ ] interval notifications
+
+V2
+
+- [ ] onboarding
+- [ ] social sign up
+- [ ] payment
+- [ ] interval change
+
+v3
+
+- [ ] deeplinking
+- [ ] rate app
+- [ ] nps survey
+- [ ] ads
 
 * Bonus
 
 - [ ] Notification.show(), alert.show(), actionsheet.show()
 - [ ] remove Questionnaire
 - [ ] remove Checklist
+- [ ] migrate everything to libs
 
 Deploy iOS App (Focus)
 
