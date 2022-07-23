@@ -14,7 +14,7 @@ import {
   keyExtractor,
 } from './utils';
 
-export const Journal = memo(function Journal() {
+export const Interval = memo(function Interval() {
   const colors = useColors();
   const { tabBarEdges } = useLayout();
 

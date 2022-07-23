@@ -5,10 +5,12 @@ import React, { memo, useCallback } from 'react';
 import { Modal, Text } from '../../../../components';
 import { AuthStackRoutes } from '../../types';
 
-export const CategoryDetail = memo(function CategoryDetail() {
+export const ProgressionDetails = memo(function ProgressionDetails() {
   const { navigate } =
-    useNavigation<StackNavigationProp<AuthStackRoutes, 'category-detail'>>();
-  const route = useRoute<RouteProp<AuthStackRoutes, 'category-detail'>>();
+    useNavigation<
+      StackNavigationProp<AuthStackRoutes, 'progression-details'>
+    >();
+  const route = useRoute<RouteProp<AuthStackRoutes, 'progression-details'>>();
 
   const onModalClose = useCallback(() => {
     navigate('home');

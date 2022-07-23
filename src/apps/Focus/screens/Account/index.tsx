@@ -18,7 +18,7 @@ import {
   useLayout,
 } from '../../../../features';
 
-export const Profile = memo(function Profile() {
+export const Account = memo(function Account() {
   const { navigate } = useNavigation<RootNavigation>();
   const colors = useColors();
   const { tabBarEdges } = useLayout();
@@ -42,6 +42,8 @@ export const Profile = memo(function Profile() {
   const handleAdmin = useCallback(() => {
     navigate('admin');
   }, [navigate]);
+
+  const handlePress = useCallback(() => null, []);
 
   return (
     <Screen
@@ -78,11 +80,21 @@ export const Profile = memo(function Profile() {
           </View>
           <Button
             color="accent"
+            onPress={handlePress}
             title="upgrade to premium"
           />
-          <Button title="reset password" />
-          <Button title="delete account" />
-          <Button title="restore transactions" />
+          <Button
+            onPress={handlePress}
+            title="reset password"
+          />
+          <Button
+            onPress={handlePress}
+            title="delete account"
+          />
+          <Button
+            onPress={handlePress}
+            title="restore transactions"
+          />
           <Button
             onPress={handleLogout}
             title="log out"
@@ -102,9 +114,18 @@ export const Profile = memo(function Profile() {
             title="Preferences"
             type="h4"
           />
-          <Button title="intervals" />
-          <Button title="notifications" />
-          <Button title="theme" />
+          <Button
+            onPress={handlePress}
+            title="intervals"
+          />
+          <Button
+            onPress={handlePress}
+            title="notifications"
+          />
+          <Button
+            onPress={handlePress}
+            title="theme"
+          />
         </Card>
 
         <Card>
@@ -114,11 +135,26 @@ export const Profile = memo(function Profile() {
             title="App"
             type="h4"
           />
-          <Button title="support" />
-          <Button title="feedback" />
-          <Button title="about" />
-          <Button title="terms of use" />
-          <Button title="privacy policy" />
+          <Button
+            onPress={handlePress}
+            title="support"
+          />
+          <Button
+            onPress={handlePress}
+            title="feedback"
+          />
+          <Button
+            onPress={handlePress}
+            title="about"
+          />
+          <Button
+            onPress={handlePress}
+            title="terms of use"
+          />
+          <Button
+            onPress={handlePress}
+            title="privacy policy"
+          />
         </Card>
       </ScrollView>
     </Screen>

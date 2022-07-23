@@ -26,7 +26,7 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
   const colors = useColors();
 
   const handleCategoryPress = (categoryPress: Category) => () => {
-    navigate('category-detail', { category: categoryPress });
+    navigate('progression-details', { category: categoryPress });
   };
 
   const renderItem = useCallback<ListRenderItem<number>>(

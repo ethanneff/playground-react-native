@@ -32,10 +32,10 @@ type State = {
   well: string;
 };
 
-export const JournalDetail = memo(function JournalDetail() {
+export const IntervalDetails = memo(function IntervalDetails() {
   const { goBack } =
-    useNavigation<StackNavigationProp<AuthStackRoutes, 'journal-detail'>>();
-  const route = useRoute<RouteProp<AuthStackRoutes, 'journal-detail'>>();
+    useNavigation<StackNavigationProp<AuthStackRoutes, 'interval-details'>>();
+  const route = useRoute<RouteProp<AuthStackRoutes, 'interval-details'>>();
   const colors = useColors();
   const dropShadow = useDropShadow();
 

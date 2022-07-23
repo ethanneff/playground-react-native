@@ -35,7 +35,7 @@ const categories: Category[] = [
   { id: '2', name: 'Lead Others', total: 12 },
 ].sort((a, b) => b.total - a.total);
 
-export const Progress = memo(function Progress() {
+export const Progression = memo(function Progression() {
   const colors = useColors();
   const { tabBarEdges } = useLayout();
 

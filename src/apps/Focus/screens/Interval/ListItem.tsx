@@ -28,7 +28,7 @@ export const ListItem = memo(function ListItem({
     useNavigation<StackNavigationProp<AuthStackRoutes, 'home'>>();
 
   const onPress = useCallback(
-    () => navigate('journal-detail', { item }),
+    () => navigate('interval-details', { item }),
     [item, navigate],
   );
 

@@ -1,19 +1,21 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Firebase } from '../../conversions';
-import { FirebaseAuthTypes } from '../../conversions/Firebase';
+import { Firebase, FirebaseAuthTypes } from '../../conversions';
 import { TabIcons, useNavScreenOptions } from '../../features';
 import {
-  CategoryDetail,
-  Journal,
+  Account,
+  ForgotPassword,
+  Interval,
+  IntervalDetails,
   Landing,
   Onboarding,
-  Profile,
-  Progress,
+  Privacy,
+  Progression,
+  ProgressionDetails,
   SignUp,
+  Terms,
 } from './screens';
-import { JournalDetail } from './screens/JournalDetail';
 import { AuthStackRoutes, HomeTabRoutes, UnAuthStackRoutes } from './types';
 
 const AuthStack = createStackNavigator<AuthStackRoutes>();
@@ -45,15 +47,15 @@ const Tabs = () => {
       screenOptions={screenOptions}
     >
       <TabBar.Screen
-        component={Journal}
+        component={Interval}
         name="tracker"
       />
       <TabBar.Screen
-        component={Progress}
+        component={Progression}
         name="progression"
       />
       <TabBar.Screen
-        component={Profile}
+        component={Account}
         name="account"
       />
     </TabBar.Navigator>
@@ -61,7 +63,7 @@ const Tabs = () => {
 };
 
 export const Navigation = () => {
-  const { modalScreenOptions, bottomScreenOptions } = useNavScreenOptions();
+  const { rightScreenOptions, bottomScreenOptions } = useNavScreenOptions();
   const [login, setLogin] = useState<FirebaseAuthTypes.User | null>(null);
   const [initializing, setInitializing] = useState(true);
 
@@ -85,16 +87,16 @@ export const Navigation = () => {
         name="home"
       />
       <AuthStack.Screen
-        component={JournalDetail}
-        name="journal-detail"
+        component={IntervalDetails}
+        name="interval-details"
       />
       <AuthStack.Screen
-        component={CategoryDetail}
-        name="category-detail"
+        component={ProgressionDetails}
+        name="progression-details"
       />
     </AuthStack.Navigator>
   ) : (
-    <UnAuthStack.Navigator screenOptions={modalScreenOptions}>
+    <UnAuthStack.Navigator screenOptions={rightScreenOptions}>
       <UnAuthStack.Screen
         component={Landing}
         name="landing"
@@ -105,7 +107,19 @@ export const Navigation = () => {
       />
       <UnAuthStack.Screen
         component={SignUp}
-        name="signup"
+        name="sign-up"
+      />
+      <UnAuthStack.Screen
+        component={ForgotPassword}
+        name="forgot-password"
+      />
+      <UnAuthStack.Screen
+        component={Terms}
+        name="terms"
+      />
+      <UnAuthStack.Screen
+        component={Privacy}
+        name="privacy"
       />
     </UnAuthStack.Navigator>
   );

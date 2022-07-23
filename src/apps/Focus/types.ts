@@ -15,14 +15,17 @@ export type Item = {
 };
 
 export type AuthStackRoutes = {
-  'category-detail': { category: Category };
   home: undefined;
-  'journal-detail': { item: Item };
+  'interval-details': { item: Item };
+  'progression-details': { category: Category };
 };
 export type UnAuthStackRoutes = {
+  'forgot-password': { email: string };
   landing: undefined;
   onboarding: undefined;
-  signup: undefined;
+  privacy: undefined;
+  'sign-up': undefined;
+  terms: undefined;
 };
 
 export type HomeTabRoutes = {
