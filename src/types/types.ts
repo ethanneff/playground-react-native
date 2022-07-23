@@ -1,2 +1,1 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type SuperAny = any;
+export type SuperAny = any; // eslint-disable-line @typescript-eslint/no-explicit-any

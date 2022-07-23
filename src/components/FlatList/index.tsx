@@ -11,9 +11,8 @@ export const FlatList = <ItemT,>({ onRef, ...rest }: Props<ItemT>) => {
   return (
     <GestureFlatList
       keyboardShouldPersistTaps="handled"
-      removeClippedSubviews
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...rest}
+      // removeClippedSubviews // TODO: why add? this fixes Complete app
+      {...rest} // eslint-disable-line react/jsx-props-no-spreading
       ref={onRef}
     />
   );

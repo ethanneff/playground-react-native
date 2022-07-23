@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-imports */
 import {
   FlatList as GestureFlatList,
   GestureHandlerRootView as GestureHandlerProvider,

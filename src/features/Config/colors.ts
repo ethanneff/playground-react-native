@@ -2,7 +2,6 @@
 COLORS https://baseweb.design/guides/theming/
 DARK MODE https://material.io/design/color/dark-theme.html
 */
-
 import { ColorTheme, ColorTokens } from './types';
 
 const colors: ColorTokens = {

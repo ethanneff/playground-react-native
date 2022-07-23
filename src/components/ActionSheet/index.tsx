@@ -123,8 +123,7 @@ export const ActionSheet = memo(function ActionSheet({
   return (
     <View
       style={styles.top}
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...panResponder.panHandlers}
+      {...panResponder.panHandlers} // eslint-disable-line react/jsx-props-no-spreading
     >
       <Animated.View style={[pan.getLayout(), styles.notification]}>
         <View style={styles.notificationSafeArea} />

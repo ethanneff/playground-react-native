@@ -1,7 +1,6 @@
 /*
 SIZING https://material.io/design/typography/the-type-system.html#applying-the-type-scale
 */
-
 import { FontEmphases, FontSizes, FontWeight } from './types';
 
 export const fontWeight: { [key: string]: FontWeight } = {

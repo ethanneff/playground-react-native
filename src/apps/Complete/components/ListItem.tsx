@@ -37,18 +37,16 @@ export const ListItem = memo(function ListItem({
   const dispatch = useRootDispatch();
   const { navigate } = useNavigation<ImplementTabNavigation>();
   const colors = useColors();
+  const form = useRef('');
 
   const onItemTitleClose = useCallback(() => {
     Keyboard.dismiss();
   }, []);
 
-  const onItemTitleSubmit = useCallback(
-    (title: string) => {
-      dispatch(updateItem({ ...item, title }));
-      Keyboard.dismiss();
-    },
-    [dispatch, item],
-  );
+  const onItemTitleSubmit = useCallback(() => {
+    dispatch(updateItem({ ...item, title: form.current }));
+    Keyboard.dismiss();
+  }, [dispatch, item]);
 
   const onItemNav = useCallback(() => {
     dispatch(navItemProject({ projectItemId: itemId }));
@@ -95,6 +93,10 @@ export const ListItem = memo(function ListItem({
     },
   ];
 
+  const handleChange = useCallback((value: string) => {
+    form.current = value;
+  }, []);
+
   return (
     <TouchableWithoutFeedback
       key={item.id}
@@ -109,13 +111,21 @@ export const ListItem = memo(function ListItem({
       }}
     >
       <TextInput
+        autoCapitalize="sentences"
+        autoComplete="off"
+        autoCorrect
         backgroundColor="secondary"
+        blurOnSubmit
+        editable
         icons={icons}
+        keyboardType="default"
+        onChangeText={handleChange}
         onRef={textInputRef}
         onSubmitEditing={onItemTitleSubmit}
         placeholder="Item name..."
         pointerEvents="none"
         returnKeyType="done"
+        textContentType="none"
         value={item.title}
       />
     </TouchableWithoutFeedback>

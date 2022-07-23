@@ -135,8 +135,17 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
           />
         </View>
         <TextInput
+          autoCapitalize="none"
+          autoComplete="username"
+          autoCorrect={false}
+          blurOnSubmit={false}
+          editable={!loading}
+          keyboardType="default"
           onChangeText={onChangeText}
+          onSubmitEditing={onSubmit}
           placeholder="Username"
+          returnKeyType="done"
+          textContentType="username"
           value={message}
         />
         <Button

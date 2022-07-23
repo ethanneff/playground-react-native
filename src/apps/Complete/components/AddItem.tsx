@@ -28,38 +28,41 @@ export const AddItem = memo(function AddItem({
 }: AddItemProps) {
   const colors = useColors();
   const textInputRef = useRef<TextInputRef>(null);
+  const text = useRef('');
   const [showInput, setShowInput] = useState(false);
   const dispatch = useRootDispatch();
   const userId = useRootSelector((s) => s.completeUser?.id);
   if (!userId) throw new Error('missing userId on add item');
   if (!parentItemId) throw new Error('missing parentItemId on add item');
 
-  const onSubmit = useCallback(
-    (value: string) => {
-      if (!value) {
-        Keyboard.dismiss();
-        return;
-      }
-      const itemId = v4();
-      const date = Date.now();
-      const item: Item = {
-        id: itemId,
-        userId,
-        active: true,
-        title: value,
-        createdAt: date,
-        updatedAt: date,
-        children: [],
-        tags: [],
-        description: '',
-        editable: true,
-        type: 'note',
-      };
-      dispatch(createItem(item));
-      dispatch(addItemToItem({ parentItemId, itemId }));
-    },
-    [dispatch, parentItemId, userId],
-  );
+  const handleTextChange = useCallback((value: string) => {
+    text.current = value;
+  }, []);
+
+  const onSubmit = useCallback(() => {
+    const value = text.current;
+    if (!value) {
+      Keyboard.dismiss();
+      return;
+    }
+    const itemId = v4();
+    const date = Date.now();
+    const item: Item = {
+      id: itemId,
+      userId,
+      active: true,
+      title: value,
+      createdAt: date,
+      updatedAt: date,
+      children: [],
+      tags: [],
+      description: '',
+      editable: true,
+      type: 'note',
+    };
+    dispatch(createItem(item));
+    dispatch(addItemToItem({ parentItemId, itemId }));
+  }, [dispatch, parentItemId, userId]);
 
   const onAddItemPress = useCallback(() => setShowInput((p) => !p), []);
   const onClose = useCallback(() => setShowInput(false), []);
@@ -93,14 +96,22 @@ export const AddItem = memo(function AddItem({
     >
       {showInput ? (
         <TextInput
+          autoCapitalize="sentences"
+          autoComplete="off"
+          autoCorrect
           blurOnSubmit={false}
+          editable
           icons={icons}
+          keyboardType="default"
           onBlur={onBlur}
+          onChangeText={handleTextChange}
           onRef={textInputRef}
           onSubmitEditing={onSubmit}
           placeholder={placeholder}
           returnKeyType="done"
           submitClear
+          textContentType="none"
+          value=""
         />
       ) : (
         <Button

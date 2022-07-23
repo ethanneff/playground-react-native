@@ -12,8 +12,7 @@ export const ScrollView = ({ onRef, ...rest }: Props) => {
   return (
     <GestureScrollView
       keyboardShouldPersistTaps="handled"
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...rest}
+      {...rest} // eslint-disable-line react/jsx-props-no-spreading
       ref={onRef}
     />
   );

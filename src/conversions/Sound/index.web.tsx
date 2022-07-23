@@ -4,9 +4,10 @@ import { SuperAny } from '../../types/types';
 type Callback = (sound: Sound) => void;
 
 export class Sound {
-  static setCategory(): void {
-    return;
+  static setCategory() {
+    return null;
   }
+
   sound: Howl;
 
   constructor(asset: string, error: (soundId: number, e: Error) => void) {

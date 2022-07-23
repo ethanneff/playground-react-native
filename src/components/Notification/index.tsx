@@ -130,8 +130,7 @@ export const Notification = memo(function Notification({
   return (
     <View
       style={styles.container}
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...panResponder.panHandlers}
+      {...panResponder.panHandlers} // eslint-disable-line react/jsx-props-no-spreading
     >
       <Animated.View style={[pan.getLayout(), styles.notification]}>
         <View style={styles.notificationSafeArea} />

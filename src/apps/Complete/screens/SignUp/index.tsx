@@ -16,7 +16,12 @@ import { LandingStackRoutes } from '../../navigationTypes';
 import { getDefaultUserTemplate } from '../../utils';
 
 const initialRef = { email: '', password: '' };
-const initialState = { eye: false, completeForm: false, passwordError: false };
+const initialState = {
+  eye: false,
+  completeForm: false,
+  passwordError: false,
+  loading: false,
+};
 
 export const SignUp = memo(function SignUp() {
   const colors = useColors();
@@ -26,7 +31,6 @@ export const SignUp = memo(function SignUp() {
   const [state, setState] = useState(initialState);
   const { goBack, navigate } =
     useNavigation<StackNavigationProp<LandingStackRoutes>>();
-
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
   const onSecondary = useCallback(() => navigate('log-in'), [navigate]);
   const emailRef = useRef<TextInputRef>(null);
@@ -40,9 +44,11 @@ export const SignUp = memo(function SignUp() {
 
   const onSubmit = useCallback(() => {
     if (!state.completeForm) return;
+    setState((p) => ({ ...p, loading: true }));
     const { user, items } = getDefaultUserTemplate();
     items.forEach((item) => dispatch(createItem(item)));
     dispatch(loadUser({ ...user, email: form.current.email }));
+    setState((p) => ({ ...p, loading: false }));
   }, [dispatch, state.completeForm]);
 
   const onFormChange = useCallback(
@@ -83,7 +89,11 @@ export const SignUp = memo(function SignUp() {
         title="Log in"
       />
       <TextInput
+        autoCapitalize="none"
+        autoComplete="email"
         autoCorrect={false}
+        blurOnSubmit={false}
+        editable={!state.loading}
         keyboardType="email-address"
         onChangeText={onFormChange('email')}
         onRef={emailRef}
@@ -95,10 +105,14 @@ export const SignUp = memo(function SignUp() {
         value=""
       />
       <TextInput
+        autoCapitalize="none"
+        autoComplete="password"
         autoCorrect={false}
         blurOnSubmit={false}
+        editable={!state.loading}
         error={state.passwordError}
         icons={[{ name: eyeIcon, onPress: onEye, focus: true }]}
+        keyboardType="visible-password"
         onChangeText={onFormChange('password')}
         onRef={passwordRef}
         onSubmitEditing={onSubmitEditing('password')}

@@ -13,7 +13,7 @@ import { ModalHeader } from '../../components';
 import { LandingStackRoutes } from '../../navigationTypes';
 
 const initialRef = { email: '' };
-const initialState = { complete: false };
+const initialState = { complete: false, loading: false };
 export const PasswordReset = memo(function PasswordReset() {
   const colors = useColors();
   const form = useRef(initialRef);
@@ -25,9 +25,12 @@ export const PasswordReset = memo(function PasswordReset() {
 
   const onSubmit = useCallback(() => {
     if (!state.complete) return;
+    setState((p) => ({ ...p, loading: true }));
     goBack();
   }, [goBack, state.complete]);
+
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
+
   const onFormChange = useCallback(
     (key: keyof typeof initialRef) => (val: string) => {
       form.current = { ...form.current, [key]: val };
@@ -66,8 +69,11 @@ export const PasswordReset = memo(function PasswordReset() {
         title="We'll send you an email with your login email as well as a password reset instructions."
       />
       <TextInput
+        autoCapitalize="none"
+        autoComplete="email"
         autoCorrect={false}
         blurOnSubmit={false}
+        editable={!state.loading}
         keyboardType="email-address"
         onChangeText={onFormChange('email')}
         onRef={emailRef}

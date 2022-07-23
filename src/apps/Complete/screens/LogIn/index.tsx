@@ -10,7 +10,7 @@ import { LandingStackRoutes } from '../../navigationTypes';
 import { getDefaultUserTemplate } from '../../utils';
 
 const initialRef = { email: '', password: '' };
-const initialState = { eye: false, completeForm: false };
+const initialState = { eye: false, completeForm: false, loading: false };
 
 export const LogIn = memo(function LogIn() {
   const colors = useColors();
@@ -76,8 +76,11 @@ export const LogIn = memo(function LogIn() {
         title="Log in"
       />
       <TextInput
+        autoCapitalize="none"
+        autoComplete="email"
         autoCorrect={false}
         blurOnSubmit={false}
+        editable={!state.loading}
         keyboardType="email-address"
         onChangeText={onFormChange('email')}
         onRef={emailRef}
@@ -89,9 +92,13 @@ export const LogIn = memo(function LogIn() {
         value=""
       />
       <TextInput
+        autoCapitalize="none"
+        autoComplete="password"
         autoCorrect={false}
         blurOnSubmit={false}
+        editable={!state.loading}
         icons={[{ name: eyeIcon, onPress: onEye, focus: true }]}
+        keyboardType="visible-password"
         onChangeText={onFormChange('password')}
         onRef={passwordRef}
         onSubmitEditing={onSubmitEditing('password')}

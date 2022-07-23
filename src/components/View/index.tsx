@@ -1,6 +1,5 @@
 import React from 'react';
-// eslint-disable-next-line no-restricted-imports
-import { StyleSheet, View as Original, ViewProps } from 'react-native';
+import { StyleSheet, View as Original, ViewProps } from 'react-native'; // eslint-disable-line no-restricted-imports
 
 type Props = ViewProps & {
   center?: boolean;
@@ -31,8 +30,7 @@ export const View = ({
 
   return (
     <Original
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...rest}
+      {...rest} // eslint-disable-line react/jsx-props-no-spreading
       style={combinedStyles}
     >
       {children}

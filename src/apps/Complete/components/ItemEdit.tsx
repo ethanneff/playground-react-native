@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo, useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import { TextInput, TextInputIcon, View } from '../../../components';
 import { Card } from './Card';
@@ -14,6 +14,11 @@ type ItemEditProps = {
   titleEditable: boolean;
 };
 
+type Form = {
+  description: string;
+  title: string;
+};
+
 // TODO: need to clear on blur
 export const ItemEdit = memo(function ItemEdit({
   title,
@@ -23,6 +28,21 @@ export const ItemEdit = memo(function ItemEdit({
   onSubmit,
 }: ItemEditProps) {
   const onClose = useCallback(() => Keyboard.dismiss(), []);
+  const form = useRef({ title, description });
+
+  const handleChangeText = useCallback(
+    (key: keyof Form) => (value: string) => {
+      form.current[key] = value;
+    },
+    [],
+  );
+
+  const handleSubmit = useCallback(
+    (key: keyof Form) => () => {
+      onSubmit(key);
+    },
+    [onSubmit],
+  );
 
   const icons = useCallback(
     (type: string): TextInputIcon[] => [
@@ -43,18 +63,35 @@ export const ItemEdit = memo(function ItemEdit({
       <Card margin="bottom">
         <ItemDetailHeader title="Title" />
         <TextInput
+          autoCapitalize="sentences"
+          autoComplete="off"
+          autoCorrect
+          blurOnSubmit
           editable={titleEditable}
           icons={icons('title')}
-          onSubmitEditing={onSubmit('title')}
+          keyboardType="default"
+          onChangeText={handleChangeText('title')}
+          onSubmitEditing={handleSubmit('title')}
           placeholder={`${placeholder} title...`}
           returnKeyType="done"
+          textContentType="none"
           value={title}
         />
         <ItemDetailHeader title="Details" />
         <TextInput
+          autoCapitalize="sentences"
+          autoComplete="off"
+          autoCorrect
+          blurOnSubmit={false}
+          editable
           icons={icons('description')}
+          keyboardType="default"
           multiline
+          onChangeText={handleChangeText('description')}
+          onSubmitEditing={handleSubmit('description')}
           placeholder={`${placeholder} details...`}
+          returnKeyType="default"
+          textContentType="none"
           value={description || ''}
         />
       </Card>

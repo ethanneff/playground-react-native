@@ -1,4 +1,3 @@
-import { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import React, { memo, useCallback, useState } from 'react';
 import {
   Button,
@@ -7,6 +6,7 @@ import {
   Screen,
   View,
 } from '../../../../components';
+import { FirebaseAuthTypes } from '../../../../conversions';
 import { spacing } from '../../../../features';
 import { useRootDispatch } from '../../../../redux';
 import { createItem, loadUser, login } from '../../models';

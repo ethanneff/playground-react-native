@@ -1,11 +1,17 @@
 import { RouteProp } from '@react-navigation/core';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import {
+  useIsFocused,
+  useNavigation,
+  useRoute,
+} from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import React, { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { Keyboard } from 'react-native';
 import {
   Button,
   Card,
   Icon,
+  KeyboardAwareScrollView,
   Modal,
   Screen,
   ScrollView,
@@ -14,6 +20,7 @@ import {
   Switch,
   Text,
   TextInput,
+  TextInputRef,
   TouchableOpacity,
   View,
 } from '../../../../components';
@@ -27,6 +34,7 @@ type State = {
   goalModal: boolean;
   goals: string[];
   improve: string;
+  loading: boolean;
   nps: number;
   significant: boolean;
   well: string;
@@ -36,8 +44,12 @@ export const IntervalDetails = memo(function IntervalDetails() {
   const { goBack } =
     useNavigation<StackNavigationProp<AuthStackRoutes, 'interval-details'>>();
   const route = useRoute<RouteProp<AuthStackRoutes, 'interval-details'>>();
+  const inputWell = useRef<TextInputRef>(null);
+  const inputCommit = useRef<TextInputRef>(null);
+  const inputImprove = useRef<TextInputRef>(null);
   const colors = useColors();
   const dropShadow = useDropShadow();
+  const focus = useIsFocused();
 
   const [state, setState] = useState<State>({
     well: '',
@@ -49,6 +61,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
     focus: false,
     significant: false,
     nps: 0,
+    loading: false,
   });
 
   const handleChange = (key: string) => (value: string) => {
@@ -82,6 +95,20 @@ export const IntervalDetails = memo(function IntervalDetails() {
     goBack();
   }, [goBack]);
 
+  const handleSubmitEditing = useCallback(
+    (key: keyof State) => () => {
+      if (key === 'well') inputImprove.current?.focus();
+      if (key === 'improve') inputCommit.current?.focus();
+      if (key === 'commit') Keyboard.dismiss();
+    },
+    [],
+  );
+
+  useEffect(() => {
+    if (!focus) return;
+    inputWell.current?.focus();
+  }, [focus]);
+
   const title = route?.params?.item?.title || 'empty';
   const goalLength = state.goals.length;
 
@@ -93,7 +120,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
         onLeftPress={goBack}
         title="Update Interval"
       >
-        <ScrollView
+        <KeyboardAwareScrollView
           contentContainerStyle={{
             paddingHorizontal: spacing(4),
             paddingVertical: spacing(2),
@@ -102,50 +129,87 @@ export const IntervalDetails = memo(function IntervalDetails() {
         >
           <Card>
             <Text
+              emphasis="medium"
               title="Interval"
-              type="h5"
+              type="h4"
             />
             <Spacing padding={2} />
             <Text title={title} />
           </Card>
           <Card>
             <Text
+              emphasis="medium"
               title="Status"
-              type="h5"
+              type="h4"
             />
             <Spacing padding={2} />
             <TextInput
+              autoCapitalize="sentences"
+              autoComplete="off"
+              autoCorrect
               backgroundColor="secondary"
-              onChangeText={handleChange('effort')}
+              blurOnSubmit={false}
+              editable={!state.loading}
+              keyboardType="default"
+              onChangeText={handleChange('well')}
+              onRef={inputWell}
+              onSubmitEditing={handleSubmitEditing('well')}
               placeholder="what went well?"
+              returnKeyType="next"
+              textContentType="none"
               value={state.well}
             />
             <Spacing padding={2} />
             <TextInput
+              autoCapitalize="sentences"
+              autoComplete="off"
+              autoCorrect
               backgroundColor="secondary"
-              onChangeText={handleChange('effort')}
+              blurOnSubmit={false}
+              editable={!state.loading}
+              keyboardType="default"
+              onChangeText={handleChange('improve')}
+              onRef={inputImprove}
+              onSubmitEditing={handleSubmitEditing('improve')}
               placeholder="what could be improved?"
+              returnKeyType="next"
+              textContentType="none"
               value={state.improve}
             />
             <Spacing padding={2} />
             <TextInput
+              autoCapitalize="sentences"
+              autoComplete="off"
+              autoCorrect
               backgroundColor="secondary"
-              onChangeText={handleChange('effort')}
+              blurOnSubmit={false}
+              editable={!state.loading}
+              keyboardType="default"
+              onChangeText={handleChange('commit')}
+              onRef={inputCommit}
+              onSubmitEditing={handleSubmitEditing('commit')}
               placeholder="what will you commit to?"
+              returnKeyType="next"
+              textContentType="none"
               value={state.commit}
             />
           </Card>
           <Card>
             <View
               row
-              style={{ justifyContent: 'space-between' }}
+              style={{ justifyContent: 'space-between', alignItems: 'center' }}
             >
               <Text
+                emphasis="medium"
                 title="Goals"
-                type="h5"
+                type="h4"
               />
               <TouchableOpacity onPress={handleModal(true)}>
-                <Icon name="plus" />
+                <Icon
+                  color="tertiary"
+                  name="plus"
+                  size={spacing(8)}
+                />
               </TouchableOpacity>
             </View>
             {goalLength ? (
@@ -175,11 +239,11 @@ export const IntervalDetails = memo(function IntervalDetails() {
 
           <Card>
             <Text
+              emphasis="medium"
               title="Metrics"
-              type="h5"
+              type="h4"
             />
             <Spacing padding={2} />
-
             <Text title="Did you have intense focus?" />
             <Switch
               onValueChange={handleSwitchChange('focus')}
@@ -192,7 +256,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
               value={state.significant}
             />
             <Spacing padding={2} />
-            <Text title="How would you rate this interval?" />
+            <Text title="From 0 to 10, how does this interval rank?" />
             <View
               style={{
                 flexDirection: 'row',
@@ -215,11 +279,13 @@ export const IntervalDetails = memo(function IntervalDetails() {
               />
             </View>
           </Card>
-        </ScrollView>
+        </KeyboardAwareScrollView>
         <View style={{ ...dropShadow(1, -2) }}>
           <Spacing
             padding={4}
-            style={{ backgroundColor: colors.background.primaryA }}
+            style={{
+              backgroundColor: colors.background.primaryA,
+            }}
           >
             <Button
               center
@@ -231,7 +297,6 @@ export const IntervalDetails = memo(function IntervalDetails() {
           </Spacing>
         </View>
       </Screen>
-
       {state.goalModal ? (
         <Modal
           onBackgroundPress={handleModal(false)}
@@ -242,9 +307,18 @@ export const IntervalDetails = memo(function IntervalDetails() {
             type="h6"
           />
           <TextInput
+            autoCapitalize="sentences"
+            autoComplete="off"
+            autoCorrect
+            blurOnSubmit
+            editable={!state.loading}
+            keyboardType="default"
             onChangeText={handleChange('goal')}
+            onSubmitEditing={handleGoalAdd}
             placeholder="goal..."
+            returnKeyType="done"
             style={{ backgroundColor: colors.background.secondary }}
+            textContentType="none"
             value={state.goal}
           />
           <View

@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-imports */
 import {
   FlatList as GestureFlatList,
   ScrollView as GestureScrollView,
@@ -10,7 +11,7 @@ import {
   View as GestureHandlerProvider,
 } from 'react-native';
 
-type GestureNativeViewGestureHandlerProps = {};
+type GestureNativeViewGestureHandlerProps = Record<string, unknown>;
 
 export {
   GestureFlatList,

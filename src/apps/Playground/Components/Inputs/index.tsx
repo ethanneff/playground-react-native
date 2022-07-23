@@ -1,11 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
+import { Keyboard } from 'react-native';
 import {
   Button,
   Card,
   Input,
   KeyboardAwareScrollView,
   Screen,
+  Spacing,
   Text,
   TextInput,
 } from '../../../../components';
@@ -20,6 +22,7 @@ export const Inputs = memo(function Inputs() {
     error: '',
     name: '',
     password: '',
+    loading: false,
   });
 
   const handleChange = useCallback(
@@ -31,6 +34,10 @@ export const Inputs = memo(function Inputs() {
 
   const handleSubmit = useCallback(() => {
     setForm((prev) => ({ ...prev, error: 'Invalid Email' }));
+  }, []);
+
+  const handleOnSubmit = useCallback(() => {
+    Keyboard.dismiss();
   }, []);
 
   return (
@@ -99,28 +106,53 @@ export const Inputs = memo(function Inputs() {
             title="non border"
             type="h4"
           />
+          <Spacing padding={2} />
           <TextInput
+            autoCapitalize="words"
+            autoComplete="name"
+            autoCorrect
+            blurOnSubmit
+            editable={!form.loading}
+            keyboardType="default"
             onChangeText={handleChange('name')}
+            onSubmitEditing={handleOnSubmit}
             placeholder="jane doe"
-            style={{ paddingTop: spacing(4) }}
+            returnKeyType="next"
+            textContentType="none"
             value={form.name}
           />
+          <Spacing padding={2} />
           <TextInput
+            autoCapitalize="none"
+            autoComplete="username"
+            autoCorrect={false}
+            blurOnSubmit
+            editable={!form.loading}
             keyboardType="email-address"
             onChangeText={handleChange('email')}
+            onSubmitEditing={handleOnSubmit}
             placeholder="example@gmail.com"
-            style={{ paddingTop: spacing(4) }}
+            returnKeyType="next"
             textContentType="username"
             value={form.email}
           />
+          <Spacing padding={2} />
           <TextInput
+            autoCapitalize="none"
+            autoComplete="password"
+            autoCorrect={false}
+            blurOnSubmit
+            editable={!form.loading}
+            keyboardType="visible-password"
             onChangeText={handleChange('password')}
+            onSubmitEditing={handleOnSubmit}
             placeholder="•••••••"
+            returnKeyType="next"
             secureTextEntry
-            style={{ paddingVertical: spacing(4) }}
             textContentType="password"
             value={form.password}
           />
+          <Spacing padding={2} />
           <Button
             center
             color="accent"

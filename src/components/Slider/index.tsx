@@ -26,8 +26,7 @@ export const Slider = ({ onSlidingComplete, flex, style, ...rest }: Props) => {
   return (
     <Original
       style={combinedStyles}
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...rest}
+      {...rest} // eslint-disable-line react/jsx-props-no-spreading
       onSlidingComplete={handleSlidingComplete}
       tapToSeek
     />

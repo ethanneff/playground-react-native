@@ -197,10 +197,19 @@ export const Login = memo(function Login({
         ) : state.screen === 'phoneCode' ? (
           <>
             <TextInput
+              autoCapitalize="none"
+              autoComplete="off"
+              autoCorrect={false}
               backgroundColor="secondary"
+              blurOnSubmit={false}
+              editable
               keyboardType="number-pad"
               onChangeText={onFormChange('phoneCode')}
+              onSubmitEditing={handleConfirm}
               placeholder="phone confirmation code"
+              returnKeyType="done"
+              textContentType="none"
+              value=""
             />
             <Button
               color="accent"
@@ -220,9 +229,12 @@ export const Login = memo(function Login({
               title="Phone Confirmation"
             />
             <TextInput
+              autoCapitalize="none"
+              autoComplete="off"
               autoCorrect={false}
               backgroundColor="secondary"
               blurOnSubmit={false}
+              editable={!loading}
               keyboardType="number-pad"
               onChangeText={onFormChange('phone')}
               onRef={emailRef}
@@ -230,6 +242,7 @@ export const Login = memo(function Login({
               placeholder="Phone number"
               returnKeyType="send"
               style={{ marginBottom: spacing(4) }}
+              textContentType="none"
               value=""
             />
             <Button
@@ -257,9 +270,12 @@ export const Login = memo(function Login({
               title="We'll send you an email with your login email as well as a password reset instructions."
             />
             <TextInput
+              autoCapitalize="none"
+              autoComplete="email"
               autoCorrect={false}
               backgroundColor="secondary"
               blurOnSubmit={false}
+              editable={!loading}
               keyboardType="email-address"
               onChangeText={onFormChange('email')}
               onRef={emailRef}
@@ -285,6 +301,8 @@ export const Login = memo(function Login({
               title="Sign up"
             />
             <TextInput
+              autoCapitalize="none"
+              autoComplete="email"
               autoCorrect={false}
               backgroundColor="secondary"
               blurOnSubmit={false}
@@ -300,11 +318,14 @@ export const Login = memo(function Login({
               value=""
             />
             <TextInput
+              autoCapitalize="none"
+              autoComplete="password"
               autoCorrect={false}
               backgroundColor="secondary"
               blurOnSubmit={false}
               editable={!loading}
               icons={[{ name: eyeIcon, onPress: onEye, focus: true }]}
+              keyboardType="default"
               onChangeText={onFormChange('password')}
               onRef={passwordRef}
               onSubmitEditing={onSubmitEditing('password')}
@@ -340,6 +361,8 @@ export const Login = memo(function Login({
               title="Log in"
             />
             <TextInput
+              autoCapitalize="none"
+              autoComplete="email"
               autoCorrect={false}
               backgroundColor="secondary"
               blurOnSubmit={false}
@@ -355,11 +378,14 @@ export const Login = memo(function Login({
               value=""
             />
             <TextInput
+              autoCapitalize="none"
+              autoComplete="password"
               autoCorrect={false}
               backgroundColor="primaryA"
               blurOnSubmit={false}
               editable={!loading}
               icons={[{ name: eyeIcon, onPress: onEye, focus: true }]}
+              keyboardType="visible-password"
               onChangeText={onFormChange('password')}
               onRef={passwordRef}
               onSubmitEditing={onSubmitEditing('password')}
