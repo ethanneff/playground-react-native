@@ -1,12 +1,8 @@
 import { useIsFocused, useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-// eslint-disable-next-line no-restricted-imports
-import { Platform, Text as OriginalText } from 'react-native';
 import {
   Button,
-  Icon,
-  IconName,
   KeyboardAwareScrollView,
   Screen,
   Spacing,
@@ -14,125 +10,15 @@ import {
   TextInput,
   TextInputRef,
   Toast,
-  TouchableOpacity,
-  View,
 } from '../../../../components';
 import { Firebase, FirebaseAuthTypes } from '../../../../conversions';
-import { spacing, useColors } from '../../../../features';
+import { spacing } from '../../../../features';
 import { getLandscapeOrientation, useRootSelector } from '../../../../redux';
 import { UnAuthStackRoutes } from '../../types';
-
-type Props = {
-  icon: IconName;
-  onPress: () => void;
-  title: string;
-};
-
-const LoginButton = memo(function LoginButton({ onPress, icon, title }: Props) {
-  const colors = useColors();
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={{
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'row',
-        borderColor: colors.border.secondary,
-        borderWidth: 1,
-        padding: spacing(1),
-        borderRadius: spacing(1),
-      }}
-    >
-      <Icon
-        color="primaryA"
-        name={icon}
-      />
-      <Spacing padding={1} />
-      <Text
-        color="secondary"
-        title={title}
-        type="button"
-      />
-    </TouchableOpacity>
-  );
-});
+import { SocialAuth } from './SocialAuth';
 
 const initialRef = { email: '', password: '' };
-const initialState = { eye: false, completeForm: false };
-
-const SocialAuth = () => {
-  const handleMissingCallback = useCallback(() => null, []);
-  const landscape = useRootSelector(getLandscapeOrientation);
-
-  const { navigate } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();
-
-  const handleTerms = useCallback(() => {
-    navigate('terms');
-  }, [navigate]);
-
-  const handlePrivacy = useCallback(() => {
-    navigate('privacy');
-  }, [navigate]);
-
-  return (
-    <View
-      style={{
-        paddingHorizontal: spacing(landscape ? 0 : 8),
-        paddingVertical: spacing(landscape ? 0 : 4),
-        paddingTop: spacing(landscape ? 8 : 0),
-      }}
-    >
-      <Spacing padding={2} />
-      <LoginButton
-        icon="google"
-        onPress={handleMissingCallback}
-        title="Sign Up with Google"
-      />
-      <Spacing padding={2} />
-      <LoginButton
-        icon="facebook"
-        onPress={handleMissingCallback}
-        title="Sign Up with Facebook"
-      />
-      {Platform.OS === 'ios' && (
-        <>
-          <Spacing padding={2} />
-          <LoginButton
-            icon="apple"
-            onPress={handleMissingCallback}
-            title="Sign Up with Apple"
-          />
-        </>
-      )}
-      <Spacing padding={2} />
-      <OriginalText style={{ textAlign: 'center' }}>
-        <Text
-          emphasis="medium"
-          title="By signing in to Progression, you agree to our "
-        />
-        <Text
-          color="accent"
-          onPress={handleTerms}
-          title="Terms"
-        />
-        <Text
-          emphasis="medium"
-          title=" and "
-        />
-        <Text
-          color="accent"
-          onPress={handlePrivacy}
-          title="Privacy Policy"
-        />
-        <Text
-          emphasis="medium"
-          title="."
-        />
-      </OriginalText>
-    </View>
-  );
-};
+const initialState = { eye: false, loading: false };
 
 export const SignUp = memo(function SignUp() {
   const { goBack, navigate } =
@@ -144,6 +30,7 @@ export const SignUp = memo(function SignUp() {
   const eyeIcon = state.eye ? 'eye-outline' : 'eye-off-outline';
   const focus = useIsFocused();
   const landscape = useRootSelector(getLandscapeOrientation);
+  const disabled = state.loading;
 
   const handleErrorToast = useCallback((e: unknown, message: string) => {
     const err = e as FirebaseAuthTypes.NativeFirebaseAuthError;
@@ -162,6 +49,7 @@ export const SignUp = memo(function SignUp() {
     try {
       await Firebase.auth().createUserWithEmailAndPassword(email, password);
     } catch (e) {
+      setState((p) => ({ ...p, loading: false }));
       handleErrorToast(e, 'unable to sign up');
     }
   }, [handleErrorToast]);
@@ -179,14 +67,17 @@ export const SignUp = memo(function SignUp() {
       return;
     }
 
+    setState((p) => ({ ...p, loading: true }));
     try {
       await Firebase.auth().signInWithEmailAndPassword(email, password);
     } catch (e) {
       const err = e as FirebaseAuthTypes.NativeFirebaseAuthError;
+
       if (err.code === 'auth/user-not-found') {
         handleSignUp();
         return;
       }
+      setState((p) => ({ ...p, loading: false }));
       handleErrorToast(e, 'unable to sign in');
     }
   }, [handleErrorToast, handleSignUp]);
@@ -241,9 +132,12 @@ export const SignUp = memo(function SignUp() {
         />
         <Spacing padding={2} />
         <TextInput
+          autoCapitalize="none"
+          autoComplete="email"
           autoCorrect={false}
           backgroundColor="secondary"
           blurOnSubmit={false}
+          editable={!disabled}
           keyboardType="email-address"
           onChangeText={handleFormChange('email')}
           onRef={emailRef}
@@ -255,10 +149,14 @@ export const SignUp = memo(function SignUp() {
         />
         <Spacing padding={2} />
         <TextInput
+          autoCapitalize="none"
+          autoComplete="password"
           autoCorrect={false}
           backgroundColor="secondary"
           blurOnSubmit={false}
+          editable={!disabled}
           icons={[{ name: eyeIcon, onPress: handleEyePress, focus: true }]}
+          keyboardType="default"
           onChangeText={handleFormChange('password')}
           onRef={passwordRef}
           onSubmitEditing={handleSubmit('password')}
@@ -272,6 +170,7 @@ export const SignUp = memo(function SignUp() {
         <Button
           center
           color="accent"
+          disabled={disabled}
           emphasis="high"
           onPress={handleSignIn}
           title="sign up"
@@ -280,13 +179,14 @@ export const SignUp = memo(function SignUp() {
         <Button
           center
           color="secondary"
+          disabled={disabled}
           emphasis="medium"
           onPress={handleForgotPassword}
           title="forgot password"
         />
-        {landscape ? <SocialAuth /> : null}
+        {landscape ? <SocialAuth disabled={disabled} /> : null}
       </KeyboardAwareScrollView>
-      {landscape ? null : <SocialAuth />}
+      {landscape ? null : <SocialAuth disabled={disabled} />}
     </Screen>
   );
 });

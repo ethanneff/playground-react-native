@@ -5,7 +5,7 @@ import {
   useRoute,
 } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import React, { memo, useCallback, useEffect, useRef } from 'react';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
   KeyboardAwareScrollView,
@@ -20,11 +20,14 @@ import { Firebase, FirebaseAuthTypes } from '../../../../conversions';
 import { spacing } from '../../../../features';
 import { UnAuthStackRoutes } from '../../types';
 
+const initialState = { loading: false };
+
 export const ForgotPassword = memo(function ForgotPassword() {
   const { goBack } =
     useNavigation<StackNavigationProp<UnAuthStackRoutes, 'forgot-password'>>();
   const route = useRoute<RouteProp<UnAuthStackRoutes, 'forgot-password'>>();
   const email = useRef(route.params.email);
+  const [state, setState] = useState<typeof initialState>(initialState);
   const emailRef = useRef<TextInputRef>(null);
   const focus = useIsFocused();
 
@@ -39,14 +42,18 @@ export const ForgotPassword = memo(function ForgotPassword() {
       return;
     }
 
+    setState((p) => ({ ...p, loading: true }));
+
     try {
       await Firebase.auth().sendPasswordResetEmail(email.current);
+      setState((p) => ({ ...p, loading: false }));
       Toast.show({
         type: 'positive',
         props: { title: 'Please check your email to reset your password.' },
       });
       goBack();
     } catch (e) {
+      setState((p) => ({ ...p, loading: false }));
       const err = e as FirebaseAuthTypes.NativeFirebaseAuthError;
       Toast.show({
         type: 'negative',
@@ -64,9 +71,8 @@ export const ForgotPassword = memo(function ForgotPassword() {
   }, []);
 
   useEffect(() => {
-    if (focus) {
-      emailRef.current?.focus();
-    }
+    if (!focus) return;
+    emailRef.current?.focus();
   }, [focus]);
 
   return (
@@ -88,15 +94,19 @@ export const ForgotPassword = memo(function ForgotPassword() {
         />
         <Spacing padding={2} />
         <TextInput
+          autoCapitalize="none"
+          autoComplete="email"
           autoCorrect={false}
           backgroundColor="secondary"
           blurOnSubmit={false}
+          editable={state.loading}
           keyboardType="email-address"
           onChangeText={handleEmailChange}
           onRef={emailRef}
           onSubmitEditing={handleResetPassword}
           placeholder="Email address"
           returnKeyType="send"
+          secureTextEntry={false}
           textContentType="username"
           value={email.current}
         />
@@ -104,6 +114,7 @@ export const ForgotPassword = memo(function ForgotPassword() {
         <Button
           center
           color="accent"
+          disabled={state.loading}
           emphasis="high"
           onPress={handleResetPassword}
           title="send email"
