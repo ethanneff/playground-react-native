@@ -30,10 +30,10 @@ const CustomToast = ({
   return (
     <View
       style={{
-        borderTopColor: colors.background[color],
+        borderTopColor: colors.border[color],
         borderTopWidth: spacing(1),
         justifyContent: 'center',
-        padding: spacing(2),
+        padding: spacing(4),
         borderRadius: spacing(2),
         width: '90%',
         backgroundColor: colors.background.primaryA,
@@ -41,16 +41,16 @@ const CustomToast = ({
       }}
     >
       <Text
-        bold
         center={center}
         title={title}
+        type="h6"
       />
       {description ? (
         <>
           <Spacing padding={1} />
           <Text
             center={center}
-            emphasis="medium"
+            emphasis="high"
             title={description}
           />
         </>
