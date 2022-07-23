@@ -61,10 +61,10 @@ const initialRef = { email: '', password: '' };
 const initialState = { eye: false, completeForm: false };
 
 const SocialAuth = () => {
-  const handleMissingCallback = useCallback(() => {}, []);
+  const handleMissingCallback = useCallback(() => null, []);
   const landscape = useRootSelector(getLandscapeOrientation);
 
-  const { goBack, navigate } =
+  const { navigate } =
     useNavigation<StackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();
 
   const handleTerms = useCallback(() => {
