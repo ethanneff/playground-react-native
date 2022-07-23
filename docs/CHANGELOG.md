@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.66.1](https://github.com/ethanneff/playground-react-native/compare/v2.66.0...v2.66.1) (2022-07-23)
+
+
+### Bug Fixes
+
+* correct circular dep ([1bd9bf9](https://github.com/ethanneff/playground-react-native/commit/1bd9bf97ed64177ae650cd6d5b1ba08c93922532))
+
 # [2.66.0](https://github.com/ethanneff/playground-react-native/compare/v2.65.0...v2.66.0) (2022-07-23)
 
 
