@@ -1,5 +1,30 @@
 # Changelog
 
+# [2.66.0](https://github.com/ethanneff/playground-react-native/compare/v2.65.0...v2.66.0) (2022-07-23)
+
+
+### Bug Fixes
+
+* add missing onPress handlers for button ([6879d65](https://github.com/ethanneff/playground-react-native/commit/6879d650c8f2c79502c47fdb20e97a4f813ca9b0))
+* add required TextInputs to all inputs ([574456b](https://github.com/ethanneff/playground-react-native/commit/574456bf96685a4a588b3f5a1b563dbd887a2c34))
+* adding loading state to login ([c5bacf4](https://github.com/ethanneff/playground-react-native/commit/c5bacf46299c0471cc14bac552f45651b6855962))
+* enable linting for conversions ([c344e1a](https://github.com/ethanneff/playground-react-native/commit/c344e1a0b5c8a9a367900088a67fb300df31e7c4))
+* make TextInput props required ([504ed4f](https://github.com/ethanneff/playground-react-native/commit/504ed4fddae25b3a8d630aba6aafbf0e09eaefbe))
+* remove unused varaibles ([9cf6e9f](https://github.com/ethanneff/playground-react-native/commit/9cf6e9f2998b9ea131899c4959c61e0daa7dbded))
+* update deps ([ac56194](https://github.com/ethanneff/playground-react-native/commit/ac5619491a9614a3cc8b5a03befa6f032189fb0c))
+* update landing to navigate to pages instead of login ([d7e0a49](https://github.com/ethanneff/playground-react-native/commit/d7e0a4928b0e37322ee9e7982e234e408c3b0ff8))
+
+
+### Features
+
+* add download page ([c1d7853](https://github.com/ethanneff/playground-react-native/commit/c1d7853ff6c7726d69ae87ed56a1bd63995d75b2))
+* add forgot password page ([ad2f86e](https://github.com/ethanneff/playground-react-native/commit/ad2f86ee4ad51cb6e0077db3ba49626859cd85ee))
+* add right navigation transition ([a2e25f9](https://github.com/ethanneff/playground-react-native/commit/a2e25f906eebc8f8f41fb4786b3da3347bf16428))
+* add sign up page ([6511241](https://github.com/ethanneff/playground-react-native/commit/6511241f70033bbd4738ae22ceb1ed06fd1e64b3))
+* add terms and privacy pages ([92d5189](https://github.com/ethanneff/playground-react-native/commit/92d5189078ef2e12825dc659ed347b0581ae0206))
+* begin onboarding page ([164f6cf](https://github.com/ethanneff/playground-react-native/commit/164f6cf2476e9b190d7d8ee8112d86c334a4632c))
+* make TextGroup for dynamic sentences ([1438901](https://github.com/ethanneff/playground-react-native/commit/1438901d8944dd245ed71f8a3408136d97f6f655))
+
 # [2.65.0](https://github.com/ethanneff/playground-react-native/compare/v2.64.0...v2.65.0) (2022-07-22)
 
 
