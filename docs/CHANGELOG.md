@@ -1,5 +1,25 @@
 # Changelog
 
+# [2.65.0](https://github.com/ethanneff/playground-react-native/compare/v2.64.0...v2.65.0) (2022-07-22)
+
+
+### Bug Fixes
+
+* correct broken tests from crashalytics ([5202322](https://github.com/ethanneff/playground-react-native/commit/52023220645047a6e7223e78246dc5398296c639))
+* make web work with toast ([481f7ef](https://github.com/ethanneff/playground-react-native/commit/481f7ef7b947cbbd2e355565cf8d6bd9b19c2bbc))
+* move title on interval detail page ([e86f929](https://github.com/ethanneff/playground-react-native/commit/e86f929e742d730ee9e6f66daec2e6b8ccdc386f))
+* remove admin back on nav bar ([6269dd7](https://github.com/ethanneff/playground-react-native/commit/6269dd7613afc67ffd46f7a7b185c78205b16f16))
+
+
+### Features
+
+* add admin back to account page ([c2d24fd](https://github.com/ethanneff/playground-react-native/commit/c2d24fd1ae2aad50ac39e97ebb0c66a4b67bd7e0))
+* add center view prop ([aa1db56](https://github.com/ethanneff/playground-react-native/commit/aa1db565e817960da3e9e24e0764eae65b7d894c))
+* add crashalytics to signout ([8330df5](https://github.com/ethanneff/playground-react-native/commit/8330df59400444ecefbb7a21bb3f89d168b24a2c))
+* add lottie dependency ([d43987b](https://github.com/ethanneff/playground-react-native/commit/d43987b406abbe6556bb1713d0c2812cf3d54c9b))
+* add onboarding and signup page ([deaae60](https://github.com/ethanneff/playground-react-native/commit/deaae60e96ab4d5e8d7b38c7d2cbe876c0f22b1c))
+* change landing page to lottie ([83276bc](https://github.com/ethanneff/playground-react-native/commit/83276bc28c36dc598e82e1c121660a68f95d63b4))
+
 # [2.64.0](https://github.com/ethanneff/playground-react-native/compare/v2.63.1...v2.64.0) (2022-07-22)
 
 
