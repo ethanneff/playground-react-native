@@ -5,6 +5,7 @@ import { Firebase, FirebaseAuthTypes } from '../../conversions';
 import { TabIcons, useNavScreenOptions } from '../../features';
 import {
   Account,
+  Download,
   ForgotPassword,
   Interval,
   IntervalDetails,
@@ -89,6 +90,10 @@ export const Navigation = () => {
       <AuthStack.Screen
         component={IntervalDetails}
         name="interval-details"
+      />
+      <AuthStack.Screen
+        component={Download}
+        name="download"
       />
       <AuthStack.Screen
         component={ProgressionDetails}

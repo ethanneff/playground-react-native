@@ -15,6 +15,7 @@ export type Item = {
 };
 
 export type AuthStackRoutes = {
+  download: undefined;
   home: undefined;
   'interval-details': { item: Item };
   'progression-details': { category: Category };

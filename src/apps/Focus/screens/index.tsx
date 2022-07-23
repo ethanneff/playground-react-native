@@ -1,4 +1,5 @@
 export * from './Account';
+export * from './Download';
 export * from './ForgotPassword';
 export * from './Interval';
 export * from './IntervalDetails';
