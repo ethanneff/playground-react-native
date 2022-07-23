@@ -22,7 +22,6 @@ module.exports = {
     'ios/',
     'build/',
     'src/mocks/',
-    'src/conversions/',
   ],
   env: { node: true },
   parser: '@typescript-eslint/parser',
