@@ -12,7 +12,6 @@ import {
   StyleProp,
   ViewStyle,
 } from 'react-native';
-import { View } from '../../components';
 import { GestureTextInput } from '../../conversions';
 import {
   FontEmphasis,
@@ -23,7 +22,10 @@ import {
   useColors,
 } from '../../features';
 import { Icon, IconName } from '../Icon';
+import { Spacing } from '../Spacing';
+import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
+import { View } from '../View';
 import { PointerEvents, TextContentType } from './types';
 
 export type TextInputIcon = {
@@ -106,6 +108,7 @@ type TextInputProps = {
   style?: StyleProp<ViewStyle>;
   submitClear?: boolean;
   textContentType: TextContentType;
+  title?: string;
   type?: FontType;
   value: string;
 };
@@ -132,6 +135,7 @@ export const TextInput = memo(function TextInput({
   numberOfLines,
   autoComplete,
   onBlur,
+  title,
   error,
   style,
   onRef,
@@ -195,12 +199,25 @@ export const TextInput = memo(function TextInput({
     [onRef],
   );
 
+  const handleTitlePress = useCallback(() => {
+    textInput.current?.focus();
+  }, []);
+
   useEffect(() => {
     setText(value);
   }, [value]);
 
   return (
     <View style={[{ flex: 1 }, style]}>
+      {title ? (
+        <>
+          <Text
+            onPress={handleTitlePress}
+            title={title}
+          />
+          <Spacing padding={1} />
+        </>
+      ) : null}
       <View
         style={{
           flexDirection: 'row',
