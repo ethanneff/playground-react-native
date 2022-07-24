@@ -7,12 +7,12 @@ import {
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Keyboard } from 'react-native';
+
 import {
   Button,
   Card,
   Icon,
   KeyboardAwareScrollView,
-  Modal,
   Screen,
   ScrollView,
   Slider,
@@ -26,6 +26,7 @@ import {
 } from '../../../../components';
 import { spacing, useColors, useDropShadow } from '../../../../features';
 import { AuthStackRoutes } from '../../types';
+import { CreateGoalModal } from './CreateGoalModal';
 
 type State = {
   commit: string;
@@ -154,9 +155,10 @@ export const IntervalDetails = memo(function IntervalDetails() {
               onChangeText={handleChange('well')}
               onRef={inputWell}
               onSubmitEditing={handleSubmitEditing('well')}
-              placeholder="what went well?"
+              placeholder="I did..."
               returnKeyType="next"
               textContentType="none"
+              title="What went well?"
               value={state.well}
             />
             <Spacing padding={2} />
@@ -171,9 +173,10 @@ export const IntervalDetails = memo(function IntervalDetails() {
               onChangeText={handleChange('improve')}
               onRef={inputImprove}
               onSubmitEditing={handleSubmitEditing('improve')}
-              placeholder="what could be improved?"
+              placeholder="I should have..."
               returnKeyType="next"
               textContentType="none"
+              title="What could be improved?"
               value={state.improve}
             />
             <Spacing padding={2} />
@@ -188,9 +191,10 @@ export const IntervalDetails = memo(function IntervalDetails() {
               onChangeText={handleChange('commit')}
               onRef={inputCommit}
               onSubmitEditing={handleSubmitEditing('commit')}
-              placeholder="what will you commit to?"
+              placeholder="I will..."
               returnKeyType="next"
               textContentType="none"
+              title="What will you commit to?"
               value={state.commit}
             />
           </Card>
@@ -245,18 +249,21 @@ export const IntervalDetails = memo(function IntervalDetails() {
             />
             <Spacing padding={2} />
             <Text title="Did you have intense focus?" />
+            <Spacing padding={1} />
             <Switch
               onValueChange={handleSwitchChange('focus')}
               value={state.focus}
             />
             <Spacing padding={2} />
             <Text title="Did you make any significant progress?" />
+            <Spacing padding={1} />
             <Switch
               onValueChange={handleSwitchChange('significant')}
               value={state.significant}
             />
             <Spacing padding={2} />
             <Text title="From 0 to 10, how does this interval rank?" />
+            <Spacing padding={1} />
             <View
               style={{
                 flexDirection: 'row',
@@ -265,6 +272,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
               }}
             >
               <Text
+                emphasis="medium"
                 title={`${state.nps}`}
                 type="h6"
               />
@@ -298,49 +306,12 @@ export const IntervalDetails = memo(function IntervalDetails() {
         </View>
       </Screen>
       {state.goalModal ? (
-        <Modal
-          onBackgroundPress={handleModal(false)}
-          showOverlay
-        >
-          <Text
-            title="Goal Name"
-            type="h6"
-          />
-          <TextInput
-            autoCapitalize="sentences"
-            autoComplete="off"
-            autoCorrect
-            blurOnSubmit
-            editable={!state.loading}
-            keyboardType="default"
-            onChangeText={handleChange('goal')}
-            onSubmitEditing={handleGoalAdd}
-            placeholder="goal..."
-            returnKeyType="done"
-            style={{ backgroundColor: colors.background.secondary }}
-            textContentType="none"
-            value={state.goal}
-          />
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              paddingTop: spacing(4),
-            }}
-          >
-            <Button
-              emphasis="high"
-              onPress={handleModal(false)}
-              title="cancel"
-            />
-            <Button
-              color="accent"
-              emphasis="high"
-              onPress={handleGoalAdd}
-              title="create"
-            />
-          </View>
-        </Modal>
+        <CreateGoalModal
+          loading={state.loading}
+          onChangeText={handleChange('goal')}
+          onModalClose={handleModal(false)}
+          onSubmit={handleGoalAdd}
+        />
       ) : null}
     </>
   );
