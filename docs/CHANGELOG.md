@@ -1,5 +1,28 @@
 # Changelog
 
+# [2.68.0](https://github.com/ethanneff/playground-react-native/compare/v2.67.0...v2.68.0) (2022-07-26)
+
+
+### Bug Fixes
+
+* add more mocking to firebase for web support ([89bcfe2](https://github.com/ethanneff/playground-react-native/commit/89bcfe297749f37fa30b1eada3ca1eb31a53d2dc))
+* prevent shadow background on admin for null pages ([5098472](https://github.com/ethanneff/playground-react-native/commit/50984720b2af567b74af1a79c9c33776a64d2287))
+* remove bug where did not sign in on first try ([bcf2738](https://github.com/ethanneff/playground-react-native/commit/bcf2738005400fc533903be66c584d9e296ae45f))
+
+
+### Features
+
+* add collapsible component ([24d9c8b](https://github.com/ethanneff/playground-react-native/commit/24d9c8b7e92558fd95c4e0ba46913fe1c09ccdcd))
+* add debug page ([7c62fb5](https://github.com/ethanneff/playground-react-native/commit/7c62fb53d190296d1e5091aa8170aa5d8146a387))
+* add firebase sync for redux (flux pattern) ([0afdf66](https://github.com/ethanneff/playground-react-native/commit/0afdf665b3a2ffbc9daeedef38af9e51a104c82e))
+* add json tree component ([2ba0acf](https://github.com/ethanneff/playground-react-native/commit/2ba0acfd64139c86f5f26990c16440dfaaa3ef22))
+* add redux for firebase (b/c context re-renders all) ([4656eda](https://github.com/ethanneff/playground-react-native/commit/4656edac5ab17095d61e67797f7f132ba156e0d3))
+* add timezone library ([4fabead](https://github.com/ethanneff/playground-react-native/commit/4fabead04480ae66b67c7d464c3720736a389c84))
+* add zod typings for server checks ([b7c96b8](https://github.com/ethanneff/playground-react-native/commit/b7c96b8eb9d72f6cf40ba53135fa39eaae63db13))
+* generate default user and preferences on signin ([ad392cf](https://github.com/ethanneff/playground-react-native/commit/ad392cffe9234a4d35e9c369d7351e9f4360566d))
+* make download page wait until data ([d8d86ce](https://github.com/ethanneff/playground-react-native/commit/d8d86ce6ce94229db4dd098c688c43649cad3fe3))
+* make text selectable ([07c507e](https://github.com/ethanneff/playground-react-native/commit/07c507e235635a3e64f8717610b04c3865330878))
+
 # [2.67.0](https://github.com/ethanneff/playground-react-native/compare/v2.66.1...v2.67.0) (2022-07-24)
 
 
