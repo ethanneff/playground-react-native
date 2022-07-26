@@ -27,6 +27,7 @@ export interface TextProps {
   invisible?: boolean;
   numberOfLines?: number;
   onPress?(): void;
+  selectable?: boolean;
   style?: StyleProp<TextStyle>;
   title?: string;
   type?: FontType;
@@ -36,6 +37,7 @@ export const Text = memo(function Text({
   type,
   emphasis,
   title,
+  selectable,
   onPress,
   hidden,
   center,
@@ -123,6 +125,7 @@ export const Text = memo(function Text({
       ellipsizeMode={ellipsizeMode}
       numberOfLines={numberOfLines}
       onPress={onPress ? handlePress : undefined}
+      selectable={selectable}
       style={textStyle}
     >
       {text}
