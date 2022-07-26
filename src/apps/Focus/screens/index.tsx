@@ -1,4 +1,5 @@
 export * from './Account';
+export * from './Debug';
 export * from './Download';
 export * from './ForgotPassword';
 export * from './Interval';

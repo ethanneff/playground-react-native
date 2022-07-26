@@ -15,12 +15,15 @@ export type Item = {
 };
 
 export type AuthStackRoutes = {
+  admin: undefined;
+  debug: undefined;
   download: undefined;
   home: undefined;
   'interval-details': { item: Item };
   'progression-details': { category: Category };
 };
 export type UnAuthStackRoutes = {
+  debug: undefined;
   'forgot-password': { email: string };
   landing: undefined;
   onboarding: undefined;

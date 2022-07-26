@@ -1,4 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback } from 'react';
 import {
   Button,
@@ -11,15 +12,16 @@ import {
 } from '../../../../components';
 import { Firebase } from '../../../../conversions';
 import {
-  RootNavigation,
   spacing,
   useAdminNavBack,
   useColors,
   useLayout,
 } from '../../../../features';
+import { AuthStackRoutes } from '../../types';
 
 export const Account = memo(function Account() {
-  const { navigate } = useNavigation<RootNavigation>();
+  const { navigate } =
+    useNavigation<StackNavigationProp<AuthStackRoutes, 'home'>>();
   const colors = useColors();
   const { tabBarEdges } = useLayout();
   const { admin } = useAdminNavBack();
@@ -41,6 +43,10 @@ export const Account = memo(function Account() {
 
   const handleAdmin = useCallback(() => {
     navigate('admin');
+  }, [navigate]);
+
+  const handleDebug = useCallback(() => {
+    navigate('debug');
   }, [navigate]);
 
   const handlePress = useCallback(() => null, []);
@@ -103,6 +109,12 @@ export const Account = memo(function Account() {
             <Button
               onPress={handleAdmin}
               title="admin"
+            />
+          ) : null}
+          {admin ? (
+            <Button
+              onPress={handleDebug}
+              title="debug"
             />
           ) : null}
         </Card>

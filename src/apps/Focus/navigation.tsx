@@ -5,6 +5,7 @@ import { Firebase, FirebaseAuthTypes } from '../../conversions';
 import { TabIcons, useNavScreenOptions } from '../../features';
 import {
   Account,
+  Debug,
   Download,
   ForgotPassword,
   Interval,
@@ -82,7 +83,18 @@ export const Navigation = () => {
 
   if (initializing) return null;
   return login ? (
-    <AuthStack.Navigator screenOptions={bottomScreenOptions}>
+    <AuthStack.Navigator
+      initialRouteName="download"
+      screenOptions={bottomScreenOptions}
+    >
+      <AuthStack.Screen
+        component={Download}
+        name="download"
+      />
+      <AuthStack.Screen
+        component={Debug}
+        name="debug"
+      />
       <AuthStack.Screen
         component={Tabs}
         name="home"
@@ -92,16 +104,15 @@ export const Navigation = () => {
         name="interval-details"
       />
       <AuthStack.Screen
-        component={Download}
-        name="download"
-      />
-      <AuthStack.Screen
         component={ProgressionDetails}
         name="progression-details"
       />
     </AuthStack.Navigator>
   ) : (
-    <UnAuthStack.Navigator screenOptions={rightScreenOptions}>
+    <UnAuthStack.Navigator
+      initialRouteName="landing"
+      screenOptions={rightScreenOptions}
+    >
       <UnAuthStack.Screen
         component={Landing}
         name="landing"
@@ -125,6 +136,10 @@ export const Navigation = () => {
       <UnAuthStack.Screen
         component={Privacy}
         name="privacy"
+      />
+      <UnAuthStack.Screen
+        component={Debug}
+        name="debug"
       />
     </UnAuthStack.Navigator>
   );
