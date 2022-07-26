@@ -101,9 +101,9 @@ export const SignUp = memo(function SignUp() {
   const handleSubmit = useCallback(
     (key: keyof typeof initialRef) => () => {
       if (key === 'email') passwordRef.current?.focus();
-      if (key === 'password') handleSignUp();
+      if (key === 'password') handleSignIn();
     },
-    [handleSignUp],
+    [handleSignIn],
   );
 
   useEffect(() => {
