@@ -14,11 +14,53 @@ import {
 import { Firebase, FirebaseAuthTypes } from '../../../../conversions';
 import { spacing } from '../../../../features';
 import { getLandscapeOrientation, useRootSelector } from '../../../../redux';
+import { Collections, Preferences, User } from '../../data';
 import { UnAuthStackRoutes } from '../../types';
 import { SocialAuth } from './SocialAuth';
 
 const initialRef = { email: '', password: '' };
 const initialState = { eye: false, loading: false };
+
+const createUser = (user: FirebaseAuthTypes.User) => {
+  const data: User = {
+    id: user.uid,
+    email: user.email,
+    emailVerified: user.emailVerified,
+    phoneNumber: user.phoneNumber,
+    photoUrl: user.photoURL,
+    displayName: user.displayName,
+  };
+
+  return Collections.users.doc(user.uid).set(data);
+};
+
+const createUserPreferences = async (
+  user: FirebaseAuthTypes.User,
+  timezone: string,
+) => {
+  let availability = '';
+  for (let i = 0; i < 96; i++) {
+    availability += '0';
+  }
+  const data: Preferences = {
+    availability,
+    theme: 'light',
+    cadence: 60,
+    notifications: ['mobile'],
+    timezone,
+    uid: user.uid,
+  };
+
+  const query = await Collections.preferences
+    .where('uid', '==', user.uid)
+    .get();
+
+  if (!query.size) {
+    await Collections.preferences.add(data);
+    return;
+  }
+  await Collections.preferences.doc(query.docs[0].id).set(data);
+};
 
 export const SignUp = memo(function SignUp() {
   const { goBack, navigate } =
@@ -31,6 +73,7 @@ export const SignUp = memo(function SignUp() {
   const focus = useIsFocused();
   const landscape = useRootSelector(getLandscapeOrientation);
   const disabled = state.loading;
+  const timezone = useRootSelector((root) => root.device.timezone);
 
   const handleErrorToast = useCallback((e: unknown, message: string) => {
     const err = e as FirebaseAuthTypes.NativeFirebaseAuthError;
@@ -47,32 +90,36 @@ export const SignUp = memo(function SignUp() {
   const handleSignUp = useCallback(async () => {
     const { email, password } = form.current;
     try {
-      await Firebase.auth().createUserWithEmailAndPassword(email, password);
+      const { user } = await Firebase.auth().createUserWithEmailAndPassword(
+        email,
+        password,
+      );
+      await createUser(user);
+      await createUserPreferences(user, timezone);
     } catch (e) {
       setState((p) => ({ ...p, loading: false }));
       handleErrorToast(e, 'unable to sign up');
     }
-  }, [handleErrorToast]);
+  }, [handleErrorToast, timezone]);
 
   const handleSignIn = useCallback(async () => {
     const { email, password } = form.current;
+    const error =
+      'Please enter your email address and password before submitting.';
     if (!email || !password) {
-      Toast.show({
-        type: 'negative',
-        props: {
-          title:
-            'Please enter your email address and password before submitting.',
-        },
-      });
+      Toast.show({ type: 'negative', props: { title: error } });
       return;
     }
-
     setState((p) => ({ ...p, loading: true }));
     try {
-      await Firebase.auth().signInWithEmailAndPassword(email, password);
+      const { user } = await Firebase.auth().signInWithEmailAndPassword(
+        email,
+        password,
+      );
+      await createUser(user);
+      await createUserPreferences(user, timezone);
     } catch (e) {
       const err = e as FirebaseAuthTypes.NativeFirebaseAuthError;
-
       if (err.code === 'auth/user-not-found') {
         handleSignUp();
         return;
@@ -80,7 +127,7 @@ export const SignUp = memo(function SignUp() {
       setState((p) => ({ ...p, loading: false }));
       handleErrorToast(e, 'unable to sign in');
     }
-  }, [handleErrorToast, handleSignUp]);
+  }, [handleErrorToast, handleSignUp, timezone]);
 
   const handleForgotPassword = useCallback(() => {
     navigate('forgot-password', { email: form.current.email });
