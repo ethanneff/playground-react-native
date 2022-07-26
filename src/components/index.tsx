@@ -31,7 +31,6 @@ export * from './Sentence';
 export * from './SkeletonLoader';
 export * from './Slider';
 export * from './Spacing';
-export * from './Swipe';
 export * from './Switch';
 export * from './Tag';
 export * from './Text';
