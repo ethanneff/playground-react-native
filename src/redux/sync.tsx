@@ -101,7 +101,7 @@ export const useSync = (): void => {
       refresh();
     } catch (e) {
       exponentialRetry();
-      if (e instanceof Error) console.log(e.message);
+      if (e instanceof Error) console.error(e.message);
     }
   }, [processSync]);
 
