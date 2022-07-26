@@ -37,6 +37,7 @@ Deploy Android App (Focus)
 - [x] debug page
 - [x] download page
 - [ ] gracefully handle server errors
+- [ ] error boundary
 - [ ] splash screen
 - [ ] terms and privacy policy
 - [ ] create/edit/delete goal
