@@ -6,3 +6,4 @@ export * from './GoogleSignIn';
 export * from './NetInfo';
 export * from './Sound';
 export * from './Storage';
+export * from './JsonTree';
