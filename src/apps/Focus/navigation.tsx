@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import React, { useCallback, useEffect, useState } from 'react';
-import { Firebase, FirebaseAuthTypes } from '../../conversions';
+import React, { memo } from 'react';
 import { TabIcons, useNavScreenOptions } from '../../features';
+import { useRootSelector } from '../../redux';
 import {
   Account,
   Debug,
@@ -64,25 +64,13 @@ const Tabs = () => {
   );
 };
 
-export const Navigation = () => {
+export const Navigation = memo(function Navigation() {
   const { rightScreenOptions, bottomScreenOptions } = useNavScreenOptions();
-  const [login, setLogin] = useState<FirebaseAuthTypes.User | null>(null);
-  const [initializing, setInitializing] = useState(true);
+  const auth = useRootSelector((state) => state.focus.auth.status);
 
-  const onAuthStateChanged = useCallback(
-    (user: FirebaseAuthTypes.User | null) => {
-      setLogin(user);
-      if (initializing) setInitializing(false);
-    },
-    [initializing],
-  );
+  if (auth === 'initializing') return null;
 
-  useEffect(() => {
-    return Firebase.auth().onAuthStateChanged(onAuthStateChanged);
-  }, [onAuthStateChanged]);
-
-  if (initializing) return null;
-  return login ? (
+  return auth === 'authenticated' ? (
     <AuthStack.Navigator
       initialRouteName="download"
       screenOptions={bottomScreenOptions}
@@ -143,4 +131,4 @@ export const Navigation = () => {
       />
     </UnAuthStack.Navigator>
   );
-};
+});
