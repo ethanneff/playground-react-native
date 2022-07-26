@@ -22,19 +22,19 @@ const DeepWork = lazy(() => import('../../apps/DeepWork'));
 
 const Stack = createStackNavigator<RootRoutes>();
 const linking = {
-  prefixes: ['https://app.example.com', 'mychat://'],
+  prefixes: ['https://app.example.com', 'eneff://'],
 };
 
 export const NavigationProvider = memo(function NavigationProvider() {
   const { initialState, isReady, onStateChange, onRef } = usePersistedState();
-  const { modalScreenOptions } = useNavScreenOptions();
+  const { rightScreenOptions } = useNavScreenOptions();
   const fallback = <Loader />;
   const initialRouteName = Config.APP as keyof RootRoutes;
 
-  if (!isReady) return fallback;
+  if (!isReady) return null;
 
   return (
-    <Suspense fallback={fallback}>
+    <Suspense fallback>
       <NavigationContainer
         fallback={fallback}
         initialState={initialState}
@@ -44,7 +44,7 @@ export const NavigationProvider = memo(function NavigationProvider() {
       >
         <Stack.Navigator
           initialRouteName={initialRouteName}
-          screenOptions={modalScreenOptions}
+          screenOptions={rightScreenOptions}
         >
           <Stack.Screen
             component={Admin}
