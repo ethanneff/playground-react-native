@@ -1,5 +1,11 @@
 import { AppState, AppStateStatus, ScaledSize } from 'react-native';
 import { LocationProviderInfo, PowerState } from 'react-native-device-info';
+import {
+  Calendar,
+  Locale,
+  NumberFormatSettings,
+  TemperatureUnit,
+} from 'react-native-localize';
 import { RootAction } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 import { logout } from '../Auth';
@@ -37,8 +43,11 @@ export interface DeviceInfo {
   buildId: string;
   buildNumber: string;
   bundleId: string;
+  calendar: Calendar;
   carrier: string;
   codename: string;
+  country: string;
+  currencies: string[];
   device: string;
   deviceId: string;
   deviceName: string;
@@ -69,10 +78,12 @@ export interface DeviceInfo {
   isPinOrFingerprintSet: boolean;
   isTablet: boolean;
   lastUpdateTime: number;
+  locales: Locale[];
   macAddress: string;
   manufacturer: string;
   maxMemory: number;
   model: string;
+  numberFormatSettings: NumberFormatSettings;
   phoneNumber: string;
   powerState: Partial<PowerState> | null;
   previewSdkInt: number;
@@ -88,12 +99,18 @@ export interface DeviceInfo {
   systemName: string;
   systemVersion: string;
   tags: string;
+  temperatureUnit: TemperatureUnit;
+  timezone: string;
   totalDiskCapacity: number;
   totalMemory: number;
   type: string;
   uniqueId: string;
   usedMemory: number;
   userAgent: string;
+  uses24HourClock: boolean;
+  usesAutoDateAndTime: boolean | undefined;
+  usesAutoTimeZone: boolean | undefined;
+  usesMetricSystem: boolean;
   version: string;
 }
 
@@ -119,6 +136,27 @@ export const deviceInfoInitialState: DeviceInfo = {
   carrier: '',
   codename: '',
   device: '',
+  numberFormatSettings: {
+    decimalSeparator: '.',
+    groupingSeparator: ',',
+  },
+  calendar: 'gregorian',
+  country: '',
+  locales: [
+    {
+      countryCode: 'US',
+      languageTag: 'en-US',
+      languageCode: 'en',
+      isRTL: false,
+    },
+  ],
+  currencies: [],
+  temperatureUnit: 'fahrenheit',
+  timezone: '',
+  uses24HourClock: false,
+  usesMetricSystem: false,
+  usesAutoDateAndTime: false,
+  usesAutoTimeZone: false,
   deviceId: '',
   deviceType: '',
   deviceToken: '',

@@ -9,6 +9,7 @@ import {
   Platform,
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
+import * as Localize from 'react-native-localize';
 import {
   changeAppStatus,
   changeKeyboardStatus,
@@ -157,6 +158,17 @@ export const useDeviceInfo = (): void => {
         hasGms: await DeviceInfo.hasGms(),
         hasHms: await DeviceInfo.hasHms(),
         hasNotch: DeviceInfo.hasNotch(),
+        numberFormatSettings: Localize.getNumberFormatSettings(),
+        calendar: Localize.getCalendar(),
+        country: Localize.getCountry(),
+        locales: Localize.getLocales(),
+        currencies: Localize.getCurrencies(),
+        temperatureUnit: Localize.getTemperatureUnit(),
+        timezone: Localize.getTimeZone(),
+        uses24HourClock: Localize.uses24HourClock(),
+        usesMetricSystem: Localize.usesMetricSystem(),
+        usesAutoDateAndTime: Localize.usesAutoDateAndTime(),
+        usesAutoTimeZone: Localize.usesAutoTimeZone(),
         isAirplaneMode: await DeviceInfo.isAirplaneMode(),
         isBatteryCharging: isEmulator
           ? false
