@@ -33,6 +33,11 @@ Deploy Android App (Focus)
 - [x] login/logout
 - [x] landing screens
 - [x] sign up
+- [x] redux layer
+- [x] debug page
+- [x] download page
+- [ ] gracefully handle server errors
+- [ ] splash screen
 - [ ] terms and privacy policy
 - [ ] create/edit/delete goal
 - [ ] create/edit/delete interval
@@ -40,6 +45,9 @@ Deploy Android App (Focus)
 
 V2
 
+- [ ] data migrations
+- [ ] codepush
+- [ ] progress page
 - [ ] onboarding
 - [ ] social sign up
 - [ ] payment
