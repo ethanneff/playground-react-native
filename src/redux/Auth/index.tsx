@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { RootAction, RootState, RootThunkAction } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
-import { object, string, number } from 'yup';
+import { z } from 'zod';
 
 /* ACTIONS */
 export const loginRequest = createAction('AUTH/LOGIN_REQUEST')();
@@ -18,7 +18,7 @@ const timeout = 5000;
 export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
   dispatch(loginRequest());
   try {
-    const res = await axios({
+    const { data } = await axios({
       data: {
         email: 'sydney@fife',
         password: 'pistol',
@@ -27,11 +27,10 @@ export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
       timeout,
       url: 'https://reqres.in/api/login',
     });
-    const loginSchema = object({ token: string().required() });
-    if (!loginSchema.isValidSync(res)) {
-      throw new Error('invalid response');
-    }
-    dispatch(loginSuccess(res.token));
+    const loginSchema = z.object({ token: z.string() });
+    loginSchema.parse(data);
+
+    dispatch(loginSuccess(data.token));
   } catch (e) {
     if (e instanceof Error) dispatch(loginFailure(e));
   }
@@ -39,7 +38,7 @@ export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
 export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
   dispatch(loginRequest());
   try {
-    const res = await axios({
+    const { data } = await axios({
       data: {
         email: 'sydney@fife',
         password: 'pistol',
@@ -48,14 +47,12 @@ export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
       timeout,
       url: 'https://reqres.in/api/register',
     });
-    const registerScheme = object({
-      token: string().required(),
-      id: number().required(),
+    const registerScheme = z.object({
+      token: z.string(),
+      id: z.number(),
     });
-    if (!registerScheme.isValidSync(res)) {
-      throw new Error('invalid response');
-    }
-    dispatch(loginSuccess(res.token));
+    registerScheme.parse(data);
+    dispatch(loginSuccess(data.token));
   } catch (e) {
     if (e instanceof Error) dispatch(loginFailure(e));
   }

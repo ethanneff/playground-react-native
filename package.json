@@ -88,7 +88,8 @@
     "reselect": "4.1.6",
     "typesafe-actions": "5.1.0",
     "utility-types": "3.10.0",
-    "uuid": "8.3.2"
+    "uuid": "8.3.2",
+    "zod": "3.17.10"
   },
   "devDependencies": {
     "@babel/core": "7.18.6",
@@ -151,8 +152,7 @@
     "semantic-release": "19.0.3",
     "travis-deploy-once": "5.0.11",
     "ts-essentials": "9.2.0",
-    "typescript": "4.7.4",
-    "yup": "0.32.11"
+    "typescript": "4.7.4"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
