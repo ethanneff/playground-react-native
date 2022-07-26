@@ -1,6 +1,7 @@
 export const Firebase = {
-  auth: {},
-  crashlytics: {},
+  auth: () => ({ onAuthStateChanged: () => null }),
+  firestore: () => ({ collection: () => null }),
+  crashlytics: () => null,
 };
 
 type FirebaseAuthTypes = null;

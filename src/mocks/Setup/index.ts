@@ -1,6 +1,8 @@
 import { NativeModules } from 'react-native';
 import 'react-native-gesture-handler/jestSetup';
 
+jest.mock('react-native-localize', () => null);
+
 jest.mock('@invertase/react-native-apple-authentication', () => () => ({
   appleAuth: jest.fn(),
 }));
@@ -34,6 +36,20 @@ jest.mock('@react-native-google-signin/google-signin', () => ({
 
 jest.mock('@react-native-firebase/crashlytics', () => () => ({
   log: jest.fn(),
+}));
+
+jest.mock('@react-native-firebase/auth', () => () => ({
+  signOut: jest.fn(),
+  currentUser: jest.fn(),
+  createUserWithEmailAndPassword: jest.fn(),
+  sendPasswordResetEmail: jest.fn(),
+  signInAnonymously: jest.fn(),
+  signInWithCredential: jest.fn(),
+  signInWithPhoneNumber: jest.fn(),
+}));
+
+jest.mock('@react-native-firebase/firestore', () => () => ({
+  collection: jest.fn(),
 }));
 
 jest.mock('@react-native-firebase/analytics', () => () => ({
