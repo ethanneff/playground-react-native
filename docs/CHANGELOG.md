@@ -1,5 +1,13 @@
 # Changelog
 
+# [2.67.0](https://github.com/ethanneff/playground-react-native/compare/v2.66.1...v2.67.0) (2022-07-24)
+
+
+### Features
+
+* add title to text input ([01e9e26](https://github.com/ethanneff/playground-react-native/commit/01e9e26eb8199ab94e1cbff5875230bf71727d85))
+* add ux to interval details ([4748f7e](https://github.com/ethanneff/playground-react-native/commit/4748f7ef00df8e472f0edf63a0109d62fcf6297c))
+
 ## [2.66.1](https://github.com/ethanneff/playground-react-native/compare/v2.66.0...v2.66.1) (2022-07-23)
 
 
