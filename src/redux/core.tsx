@@ -31,6 +31,18 @@ import {
   completeUserReducer,
 } from '../apps/Complete/models';
 import {
+  focusAuthActions,
+  focusAuthReducer,
+  focusGoalsActions,
+  focusGoalsReducer,
+  focusIntervalsActions,
+  focusIntervalsReducer,
+  focusPreferencesActions,
+  focusPreferencesReducer,
+  focusUsersActions,
+  focusUsersReducer,
+} from '../apps/Focus/data';
+import {
   choicesActions,
   choicesReducer,
   questionnairesActions,
@@ -49,9 +61,16 @@ import {
   gameOfLifeReducer,
 } from '../apps/Playground/Games/GameOfLife/redux';
 import { addFlipperMiddleware, Storage } from '../conversions';
-import { syncMiddleware, useSync } from './sync';
+import { syncMiddleware } from './sync';
 
 export const actions = {
+  focus: {
+    ...focusAuthActions,
+    ...focusUsersActions,
+    ...focusGoalsActions,
+    ...focusPreferencesActions,
+    ...focusIntervalsActions,
+  },
   auth: authActions,
   choices: choicesActions,
   dimension: dimensionActions,
@@ -71,6 +90,13 @@ export const actions = {
 };
 
 export const reducers = combineReducers({
+  focus: combineReducers({
+    auth: focusAuthReducer,
+    users: focusUsersReducer,
+    intervals: focusIntervalsReducer,
+    goals: focusGoalsReducer,
+    preferences: focusPreferencesReducer,
+  }),
   auth: authReducer,
   choices: choicesReducer,
   dimension: dimensionReducer,
@@ -102,7 +128,6 @@ const persistor = persistStore(store);
 
 type Props = { children: ReactNode };
 export const ReduxProvider = memo(function ReduxProvider({ children }: Props) {
-  useSync();
   return (
     <Provider store={store}>
       <PersistGate
