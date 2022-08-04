@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import { useDriver } from '../../../../features';
 
+// TODO: move to storybook
 export const useHeartBeatAnimation = () => {
   const useNativeDriver = useDriver();
   const loadingAnimation = useRef(new Animated.Value(1)).current;
