@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.69.5](https://github.com/ethanneff/playground-react-native/compare/v2.69.4...v2.69.5) (2022-08-04)
+
+
+### Bug Fixes
+
+* generate apk as well ([8152dbe](https://github.com/ethanneff/playground-react-native/commit/8152dbecd8f40db399c88db7a4623bf26d8db18c))
+* rename certs ([06121c5](https://github.com/ethanneff/playground-react-native/commit/06121c5bf4d64d589a7c011a3715ede8c5c1d45a))
+
 ## [2.69.4](https://github.com/ethanneff/playground-react-native/compare/v2.69.3...v2.69.4) (2022-08-04)
 
 ## [2.69.3](https://github.com/ethanneff/playground-react-native/compare/v2.69.2...v2.69.3) (2022-08-04)
