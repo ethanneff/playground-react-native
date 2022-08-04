@@ -12,7 +12,6 @@ export const useUsers = () => {
     if (!uid) return () => undefined;
 
     const subscription = Collections.users.doc(uid).onSnapshot((snapshot) => {
-      if (!snapshot.exists) return;
       const data = userSchema.parse({ ...snapshot.data(), id: snapshot.id });
       dispatch(loadUsers(data));
     });

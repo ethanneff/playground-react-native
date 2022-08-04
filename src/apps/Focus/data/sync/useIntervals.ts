@@ -15,7 +15,6 @@ export const useIntervals = () => {
     const subscription = Collections.intervals
       .where('uid', '==', uid)
       .onSnapshot((snapshot) => {
-        if (!snapshot.size) return;
         const data = z
           .array(intervalSchema)
           .parse(

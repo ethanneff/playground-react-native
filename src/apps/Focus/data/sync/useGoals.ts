@@ -15,7 +15,6 @@ export const useGoals = () => {
     const subscription = Collections.goals
       .where('uid', '==', uid)
       .onSnapshot((snapshot) => {
-        if (!snapshot.size) return;
         const data = z
           .array(goalSchema)
           .parse(

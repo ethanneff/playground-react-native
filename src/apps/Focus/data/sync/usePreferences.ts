@@ -14,7 +14,6 @@ export const usePreferences = () => {
     const subscription = Collections.preferences
       .where('uid', '==', uid)
       .onSnapshot((snapshot) => {
-        if (!snapshot.size) return;
         const data = preferenceSchema.parse(snapshot.docs[0].data());
         dispatch(loadPreferences(data));
       });
