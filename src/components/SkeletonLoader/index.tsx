@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated, Easing, StyleSheet } from 'react-native';
+import { Defs, LinearGradient, Rect, Stop, Svg } from 'react-native-svg';
 import { spacing, useColors, useDriver } from '../../features';
-import { LinearGradient } from '../LinearGradient';
+import { getWidth, useRootSelector } from '../../redux';
 import { MaskedView } from '../MaskedView';
 import { View } from '../View';
-
-const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
 
 type Props = {
   backgroundColor?: string;
@@ -27,18 +26,16 @@ export const SkeletonLoader = ({
   const colors = useColors();
   const bgColor = backgroundColor || colors.background.secondary;
   const fgColor = foregroundColor || colors.background.primaryA;
-  const value = useRef(new Animated.Value(0)).current;
+  const deviceWidth = useRootSelector(getWidth);
   const useNativeDriver = useDriver();
-  const end = { x: 1, y: 0 };
-  const start = { x: 0, y: 0 };
-  const gradient = [bgColor, fgColor, bgColor];
+  const value = useRef(new Animated.Value(0)).current;
   const translateX = value.interpolate({
     inputRange: [0, 1],
-    outputRange: [-width, width],
+    outputRange: [-deviceWidth, deviceWidth],
   });
+
   const styles = StyleSheet.create({
     background: { ...StyleSheet.absoluteFillObject, backgroundColor: bgColor },
-    foreground: { ...StyleSheet.absoluteFillObject },
     maskElement: {
       backgroundColor: bgColor,
       borderColor: fgColor,
@@ -51,14 +48,13 @@ export const SkeletonLoader = ({
       width,
     },
   });
-  const foregroundStyles = [styles.foreground, { transform: [{ translateX }] }];
 
   useEffect(() => {
     Animated.loop(
       Animated.timing(value, {
         toValue: 1,
         duration,
-        easing: Easing.bezier(0.5, 0, 0.25, 1),
+        easing: Easing.bezier(0.5, 0, 0.75, 1),
         useNativeDriver,
       }),
     ).start();
@@ -70,12 +66,37 @@ export const SkeletonLoader = ({
       style={styles.maskElementContainer}
     >
       <View style={styles.background} />
-      <AnimatedLinearGradient
-        colors={gradient}
-        end={end}
-        start={start}
-        style={foregroundStyles}
-      />
+      <Animated.View style={{ transform: [{ translateX }] }}>
+        <Svg
+          height="100%"
+          width={deviceWidth}
+        >
+          <Defs>
+            <LinearGradient id="grad-1">
+              <Stop
+                offset="0%"
+                stopColor={bgColor}
+                stopOpacity="1"
+              />
+              <Stop
+                offset="50%"
+                stopColor={fgColor}
+                stopOpacity="1"
+              />
+              <Stop
+                offset="100%"
+                stopColor={bgColor}
+                stopOpacity="1"
+              />
+            </LinearGradient>
+          </Defs>
+          <Rect
+            fill="url(#grad-1)"
+            height="100%"
+            width="100%"
+          />
+        </Svg>
+      </Animated.View>
     </MaskedView>
   );
 };
