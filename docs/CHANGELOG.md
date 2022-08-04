@@ -1,5 +1,25 @@
 # Changelog
 
+# [2.69.0](https://github.com/ethanneff/playground-react-native/compare/v2.68.0...v2.69.0) (2022-08-04)
+
+
+### Bug Fixes
+
+* abstract logout ([ae6ffb3](https://github.com/ethanneff/playground-react-native/commit/ae6ffb337e0a7946083704ac2b3b904f97da3af5))
+* add logout on loading page ([812e8a4](https://github.com/ethanneff/playground-react-native/commit/812e8a4e7cdb9fc6c035ec5b66a3c9d168af9340))
+* correct eslint errors on reset ([7fe7317](https://github.com/ethanneff/playground-react-native/commit/7fe73171cd3b7f453d2c9532999fe9cc8424c0b2))
+* don't block loading page if no intervals or goals ([0c98fba](https://github.com/ethanneff/playground-react-native/commit/0c98fba3aed641d6264c47f7a04d3215ce10bb4b))
+* kill metro ([7c396ab](https://github.com/ethanneff/playground-react-native/commit/7c396ab104103676b9eaa964ce11df24766b571c))
+* remove patches ([904cd0d](https://github.com/ethanneff/playground-react-native/commit/904cd0d2898cb3c9b970008a225c9b585c31a907))
+* update deps ([0d0e945](https://github.com/ethanneff/playground-react-native/commit/0d0e9450f1b691bcfd9ade59e8266619580a718d))
+* update snapshots ([9ce7c59](https://github.com/ethanneff/playground-react-native/commit/9ce7c594c2c5876c617d1bd7c3751b4c162248a6))
+
+
+### Features
+
+* add heartbeat animation ([daa609a](https://github.com/ethanneff/playground-react-native/commit/daa609ad70275124561dcf18c24aefb556d0bb04))
+* add pulse animation ([8ba5902](https://github.com/ethanneff/playground-react-native/commit/8ba5902b86ca5ac0de715647ffd8e4f69f909b17))
+
 # [2.68.0](https://github.com/ethanneff/playground-react-native/compare/v2.67.0...v2.68.0) (2022-07-26)
 
 
