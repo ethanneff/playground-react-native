@@ -151,7 +151,7 @@ export const useDeviceInfo = (): void => {
         type: await DeviceInfo.getType(),
         totalDiskCapacity: await DeviceInfo.getTotalDiskCapacity(),
         totalMemory: await DeviceInfo.getTotalMemory(),
-        uniqueId: DeviceInfo.getUniqueId(),
+        uniqueId: await DeviceInfo.getUniqueId(),
         usedMemory: await DeviceInfo.getUsedMemory(),
         userAgent: await DeviceInfo.getUserAgent(),
         version: DeviceInfo.getVersion(),
