@@ -15,7 +15,6 @@ export * from './Image';
 export * from './Input';
 export * from './KeyboardAwareScrollView';
 export * from './KeyboardHandler';
-export * from './LinearGradient';
 export * from './Loader';
 export * from './Loading';
 export * from './LoadingText';
