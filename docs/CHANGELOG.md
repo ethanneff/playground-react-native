@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.69.1](https://github.com/ethanneff/playground-react-native/compare/v2.69.0...v2.69.1) (2022-08-04)
+
+
+### Bug Fixes
+
+* remove linear gradient ([f73cf4f](https://github.com/ethanneff/playground-react-native/commit/f73cf4f19b28953a39b558f069587f1cd756084e))
+* update skeleton loader to use svg ([9be71bd](https://github.com/ethanneff/playground-react-native/commit/9be71bd1b5698bc81450f64bb927bf349e83e6f6))
+* use correct hook to logout ([d040505](https://github.com/ethanneff/playground-react-native/commit/d04050509d9584dd843ee8691b9e1d392fc61fc6))
+
 # [2.69.0](https://github.com/ethanneff/playground-react-native/compare/v2.68.0...v2.69.0) (2022-08-04)
 
 
