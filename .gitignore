@@ -67,3 +67,6 @@ fastlane/README.md
 fastlane/report.xml
 core.app.dSYM.zip
 tsconfig.tsbuildinfo
+*.p12
+*.pem
+*.pkey
