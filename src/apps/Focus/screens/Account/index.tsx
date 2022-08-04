@@ -7,10 +7,8 @@ import {
   Screen,
   ScrollView,
   Text,
-  Toast,
   View,
 } from '../../../../components';
-import { Firebase } from '../../../../conversions';
 import {
   spacing,
   useAdminNavBack,
@@ -18,6 +16,7 @@ import {
   useLayout,
 } from '../../../../features';
 import { AuthStackRoutes } from '../../types';
+import { useLogout } from '../../utils/useLogout';
 
 export const Account = memo(function Account() {
   const { navigate } =
@@ -25,21 +24,7 @@ export const Account = memo(function Account() {
   const colors = useColors();
   const { tabBarEdges } = useLayout();
   const { admin } = useAdminNavBack();
-
-  const handleLogout = useCallback(async () => {
-    try {
-      await Firebase.auth().signOut();
-    } catch (e) {
-      Toast.show({
-        type: 'accent',
-        props: {
-          title: 'bba1a7d0-6ab2-4a0a-a76e-ebbe05ae6d70',
-          description: 'bba1a7d0-6ab2-4a0a-a76e-ebbe05ae6d70',
-        },
-      });
-      Firebase.crashlytics().log('unable to sign out');
-    }
-  }, []);
+  const { handleLogout } = useLogout();
 
   const handleAdmin = useCallback(() => {
     navigate('admin');

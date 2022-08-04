@@ -9,7 +9,8 @@ import {
   Text,
   Toast,
 } from '../../../../components';
-import { Firebase, JsonTree } from '../../../../conversions';
+import { JsonTree } from '../../../../conversions';
+import { useLayout } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 import { Collections, Goal, Interval } from '../../data';
 import { UnAuthStackRoutes } from '../../types';
@@ -19,6 +20,7 @@ export const Debug = memo(function Debug() {
     useNavigation<StackNavigationProp<UnAuthStackRoutes, 'debug'>>();
   const data = useRootSelector((state) => state.focus);
   const uid = data.auth.uid || '';
+  const { handleLogout } = useLayout();
 
   const showToast = useCallback((e: unknown) => {
     Toast.show({
@@ -77,14 +79,6 @@ export const Debug = memo(function Debug() {
     }
   }, [showToast, uid]);
 
-  const logout = useCallback(async () => {
-    try {
-      await Firebase.auth().signOut();
-    } catch (e) {
-      showToast(e);
-    }
-  }, [showToast]);
-
   return (
     <Screen
       onLeftPress={goBack}
@@ -139,7 +133,7 @@ export const Debug = memo(function Debug() {
             title="update user"
           />
           <Button
-            onPress={logout}
+            onPress={handleLogout}
             title="logout"
           />
         </Collapsible>
