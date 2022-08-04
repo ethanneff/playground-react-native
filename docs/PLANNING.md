@@ -27,7 +27,7 @@
 
 ## Top goals
 
-Deploy Android App (Focus)
+Deploy Android + iOS App (Focus)
 
 - [x] add tab bar (day view, calendar, settings)
 - [x] login/logout
@@ -36,12 +36,21 @@ Deploy Android App (Focus)
 - [x] redux layer
 - [x] debug page
 - [x] download page
+
 - [ ] gracefully handle server errors
 - [ ] error boundary
-- [ ] splash screen
+- [ ] android working
+
+- [ ] complete debug page (interval, goal)
 - [ ] terms and privacy policy
-- [ ] create/edit/delete goal
-- [ ] create/edit/delete interval
+
+- [ ] splash screen
+
+- [ ] interval page
+- [ ] goal page
+- [ ] progress page
+- [ ] account page
+
 - [ ] interval notifications
 
 V2
