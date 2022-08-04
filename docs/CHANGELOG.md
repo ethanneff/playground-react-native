@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.69.8](https://github.com/ethanneff/playground-react-native/compare/v2.69.7...v2.69.8) (2022-08-04)
+
+
+### Bug Fixes
+
+* dont store certs in source control ([5cf5d41](https://github.com/ethanneff/playground-react-native/commit/5cf5d413ccae5121f0f20339ec22b42164a3ef6d))
+
 ## [2.69.7](https://github.com/ethanneff/playground-react-native/compare/v2.69.6...v2.69.7) (2022-08-04)
 
 ## [2.69.6](https://github.com/ethanneff/playground-react-native/compare/v2.69.5...v2.69.6) (2022-08-04)
