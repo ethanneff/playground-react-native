@@ -1,7 +1,7 @@
 import React from 'react';
 import { act, ReactTestRenderer } from 'react-test-renderer';
 import { Ball } from '..';
-import { mockRenderer } from '../../../../../mocks';
+import { mockGoBack, mockRenderer } from '../../../../../mocks';
 
 const getBallLocation = (tree: ReactTestRenderer) => {
   const ball = tree.root.findByProps({ testID: 'ball' });
@@ -19,10 +19,11 @@ describe('ball', () => {
 
   it('navigates back correctly', () => {
     expect.hasAssertions();
-    const { tree, navigation } = mockRenderer({ component: <Ball /> });
+    const { tree } = mockRenderer({ component: <Ball /> });
     const leftNav = tree.root.findByProps({ testID: 'leftNav' });
     act(() => leftNav.props.onPress());
-    expect(navigation.goBack).toHaveBeenCalledWith();
+    expect(mockGoBack).toHaveBeenCalledWith();
+    mockGoBack.mockClear();
   });
 
   it('handles initial state', () => {
