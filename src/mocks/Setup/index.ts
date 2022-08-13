@@ -1,38 +1,97 @@
 import { NativeModules } from 'react-native';
 import 'react-native-gesture-handler/jestSetup';
+import { mockGoBack, mockNavigate } from '../Navigation';
 
-jest.mock('react-native-localize', () => null);
+jest.mock('react-native-localize', () => ({
+  getLocales: () => [
+    {
+      countryCode: 'GB',
+      languageTag: 'en-GB',
+      languageCode: 'en',
+      isRTL: false,
+    },
+    {
+      countryCode: 'US',
+      languageTag: 'en-US',
+      languageCode: 'en',
+      isRTL: false,
+    },
+    {
+      countryCode: 'FR',
+      languageTag: 'fr-FR',
+      languageCode: 'fr',
+      isRTL: false,
+    },
+  ],
+  getNumberFormatSettings: () => ({
+    decimalSeparator: '.',
+    groupingSeparator: ',',
+  }),
+  getCalendar: () => 'gregorian',
+  getCountry: () => 'US',
+  getCurrencies: () => ['USD', 'EUR'],
+  getTemperatureUnit: () => 'celsius',
+  getTimeZone: () => 'Europe/Paris',
+  uses24HourClock: () => true,
+  usesMetricSystem: () => true,
+  addEventListener: jest.fn(),
+  removeEventListener: jest.fn(),
+}));
+
+jest.mock('react-native-mmkv-storage', () => ({
+  MMKVLoader: class Mock {
+    constructor() {}
+    withEncryption = () => this;
+    initialize = () => this;
+    getItem = () => Promise.resolve(jest.fn());
+    setItem = () => Promise.resolve(jest.fn());
+  },
+}));
+
+jest.mock('@react-navigation/core', () => ({
+  ...jest.requireActual('@react-navigation/core'),
+  useFocusEffect: () => jest.fn(),
+  useNavigation: () => ({
+    getState: () => ({
+      routes: [],
+    }),
+    goBack: mockGoBack,
+    navigate: mockNavigate,
+  }),
+}));
 
 jest.mock('@invertase/react-native-apple-authentication', () => () => ({
   appleAuth: jest.fn(),
 }));
 
-const mockUserInfo = {
-  idToken: 'mockIdToken',
-  accessToken: null,
-  accessTokenExpirationDate: null,
-  serverAuthCode: 'mockServerAuthCode',
-  scopes: [],
-  user: {
-    email: 'mockEmail',
-    id: 'mockId',
-    givenName: 'mockGivenName',
-    familyName: 'mockFamilyName',
-    photo: 'mockPhotoUtl',
-    name: 'mockFullName',
-  },
-};
+jest.mock('@react-native-google-signin/google-signin', () => {
+  const mockUserInfo = {
+    idToken: 'mockIdToken',
+    accessToken: null,
+    accessTokenExpirationDate: null,
+    serverAuthCode: 'mockServerAuthCode',
+    scopes: [],
+    user: {
+      email: 'mockEmail',
+      id: 'mockId',
+      givenName: 'mockGivenName',
+      familyName: 'mockFamilyName',
+      photo: 'mockPhotoUtl',
+      name: 'mockFullName',
+    },
+  };
 
-jest.mock('@react-native-google-signin/google-signin', () => ({
-  GoogleSignin: {
-    configure: jest.fn(),
-    hasPlayServices: jest.fn(() => Promise.resolve(true)),
-    signIn: jest.fn(() => Promise.resolve(mockUserInfo)),
-    signInSilently: jest.fn(() => Promise.resolve(mockUserInfo)),
-    revokeAccess: jest.fn(() => Promise.resolve(true)),
-    signOut: jest.fn(() => Promise.resolve(true)),
-  },
-}));
+  return {
+    GoogleSignin: {
+      configure: jest.fn(),
+      hasPlayServices: jest.fn(() => Promise.resolve(true)),
+      signIn: jest.fn(() => Promise.resolve(mockUserInfo)),
+      signInSilently: jest.fn(() => Promise.resolve(mockUserInfo)),
+      revokeAccess: jest.fn(() => Promise.resolve(true)),
+      signOut: jest.fn(() => Promise.resolve(true)),
+    },
+  };
+});
 
 jest.mock('@react-native-firebase/crashlytics', () => () => ({
   log: jest.fn(),
@@ -59,16 +118,18 @@ jest.mock('@react-native-firebase/analytics', () => () => ({
   setCurrentScreen: jest.fn(),
 }));
 
-jest.mock('react-native-sound', () => {
-  return class Mock {
-    constructor() {}
-    setVolume = jest.fn();
-    setNumberOfLoops = jest.fn();
-    play = jest.fn();
-    stop = jest.fn();
-    static setCategory = jest.fn();
-  };
-});
+jest.mock(
+  'react-native-sound',
+  () =>
+    class Mock {
+      constructor() {}
+      setVolume = jest.fn();
+      setNumberOfLoops = jest.fn();
+      play = jest.fn();
+      stop = jest.fn();
+      static setCategory = jest.fn();
+    },
+);
 
 jest.mock('react-native-device-info', () => ({
   getAPILevel: jest.fn(),
@@ -108,6 +169,12 @@ jest.mock('react-native-device-info', () => ({
   isTablet: jest.fn(() => false),
 }));
 
+jest.mock('react-native-reanimated', () => {
+  const Reanimated = require('react-native-reanimated/mock');
+  Reanimated.default.call = () => {};
+  return Reanimated;
+});
+
 NativeModules.RNCNetInfo = {
   addListener: jest.fn(),
   getCurrentState: jest.fn(() => Promise.resolve()),
@@ -131,11 +198,6 @@ NativeModules.RNCAsyncStorage = {
 jest.useFakeTimers();
 
 global.__reanimatedWorkletInit = jest.fn();
-jest.mock('react-native-reanimated', () => {
-  const Reanimated = require('react-native-reanimated/mock');
-  Reanimated.default.call = () => {};
-  return Reanimated;
-});
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
