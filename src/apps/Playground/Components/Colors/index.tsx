@@ -29,7 +29,7 @@ export const Colors = memo(function DebugColors() {
         <TagGroup />
         <Title title="Fonts" />
         <View row>
-          <FontGroup emphasis="none" />
+          <FontGroup emphasis="default" />
           <FontGroup emphasis="high" />
           <FontGroup emphasis="medium" />
           <FontGroup emphasis="low" />

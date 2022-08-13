@@ -25,7 +25,7 @@ type GetFontStylesReturn = {
 };
 
 export const getFontStyles = ({
-  emphasis = 'none',
+  emphasis = 'default',
   type = 'body1',
   inverse,
   color = 'primaryA',

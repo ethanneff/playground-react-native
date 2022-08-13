@@ -45,7 +45,7 @@ export const useNavScreenOptions = () => {
         headerShown,
         tabBarIcon: function tabBarIcon({ focused, size }) {
           const iconColor = focused ? 'primaryA' : 'tertiary';
-          const emphasis = focused ? 'none' : 'low';
+          const emphasis = focused ? 'default' : 'low';
           const key = focused ? 'focused' : 'unFocused';
           const name = tabIcons[route.name][key];
           const title = StringMethods.capitalize(route.name);

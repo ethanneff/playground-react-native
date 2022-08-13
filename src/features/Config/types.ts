@@ -151,7 +151,7 @@ export type FontSize = {
 
 export type FontWeight = '100' | '300' | '500';
 
-export type FontEmphasis = 'high' | 'medium' | 'low' | 'none';
+export type FontEmphasis = 'high' | 'medium' | 'low' | 'default';
 
 export type FontSizes = { [key in FontType]: FontSize };
 

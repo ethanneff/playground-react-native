@@ -10,7 +10,7 @@ export const fontWeight: { [key: string]: FontWeight } = {
 };
 
 export const fontEmphases: FontEmphases = {
-  none: 1.0,
+  default: 1.0,
   high: 0.87,
   medium: 0.6,
   low: 0.38,

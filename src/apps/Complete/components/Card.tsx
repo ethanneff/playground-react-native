@@ -9,7 +9,7 @@ import { completeConfig } from '../utils';
 type CardProps = {
   children: ReactNode;
   flex?: boolean;
-  margin?: 'bottom' | 'right' | 'none';
+  margin?: 'bottom' | 'right';
   onLayout?: (event: LayoutChangeEvent) => void;
   width?: number;
 };
@@ -17,7 +17,7 @@ type CardProps = {
 export const Card = memo(function Card({
   children,
   onLayout,
-  margin = 'none',
+  margin,
   width,
   flex,
 }: CardProps) {
