@@ -1,7 +1,7 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios, { AxiosRequestConfig } from 'axios';
 import { useCallback, useEffect, useRef } from 'react';
 import { RootAction, RootMiddleware } from 'root-types';
+import { Storage } from '../conversions';
 import { SuperAny } from '../types/types';
 
 const enabled = false; // TODO: turn on
@@ -26,7 +26,7 @@ const syncQueue: SyncQueue = {
       const combined = [...syncQueue.cache, ...value];
       const stringify = JSON.stringify(combined);
       syncQueue.cache = combined;
-      await AsyncStorage.setItem(syncQueue.key, stringify);
+      await Storage.setItem(syncQueue.key, stringify);
       return syncQueue.cache;
     } catch (e) {
       if (e instanceof Error) throw new Error(e.message);
@@ -35,8 +35,8 @@ const syncQueue: SyncQueue = {
   },
   get: async () => {
     try {
-      const get = await AsyncStorage.getItem(syncQueue.key);
-      const parse = get === null ? [] : JSON.parse(get);
+      const get = await Storage.getItem(syncQueue.key);
+      const parse = get === null ? [] : JSON.parse(get || '');
       syncQueue.cache = [...syncQueue.cache, ...parse];
       return syncQueue.cache;
     } catch (e) {

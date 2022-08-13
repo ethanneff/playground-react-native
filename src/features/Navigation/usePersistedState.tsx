@@ -1,4 +1,3 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   InitialState,
   NavigationContainerRef,
@@ -6,6 +5,7 @@ import {
 } from '@react-navigation/native';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Linking, Platform } from 'react-native';
+import { Storage } from '../../conversions';
 import { Analytics } from '../Analytics';
 
 const persistanceKey = 'navigation';
@@ -37,7 +37,7 @@ export const usePersistedState = (): UsePersistedState => {
     }
 
     routeNameRef.current = currentRouteName;
-    AsyncStorage.setItem(persistanceKey, JSON.stringify(state));
+    Storage.setItem(persistanceKey, JSON.stringify(state));
   }, []);
 
   const onRef = (
@@ -56,7 +56,7 @@ export const usePersistedState = (): UsePersistedState => {
       const initialUrl = await Linking.getInitialURL();
 
       if (Platform.OS !== 'web' && initialUrl === null) {
-        const savedStateString = await AsyncStorage.getItem(persistanceKey);
+        const savedStateString = await Storage.getItem(persistanceKey);
         const state = savedStateString
           ? JSON.parse(savedStateString)
           : undefined;

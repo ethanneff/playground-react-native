@@ -1,2 +1,2 @@
-import NativeStorage from '@react-native-async-storage/async-storage';
-export const Storage = NativeStorage;
+import { MMKVLoader } from 'react-native-mmkv-storage';
+export const Storage = new MMKVLoader().withEncryption().initialize();
