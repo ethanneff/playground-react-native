@@ -1,5 +1,20 @@
 # Changelog
 
+# [2.70.0](https://github.com/ethanneff/playground-react-native/compare/v2.69.8...v2.70.0) (2022-08-13)
+
+
+### Bug Fixes
+
+* add emphasis as default instead of none ([bdc1d61](https://github.com/ethanneff/playground-react-native/commit/bdc1d61bebb04f7d07499078010555ee388c315a))
+* clean up jest mocks ([91d1615](https://github.com/ethanneff/playground-react-native/commit/91d161500571b41d1a782367445e19af8f59299d))
+* dont have mocked navigation provider in jest ([07ddedd](https://github.com/ethanneff/playground-react-native/commit/07ddedde779e9263cce2af668100ba125bf1b03a))
+* remove mock navigation provider snapshots ([c8fc0dc](https://github.com/ethanneff/playground-react-native/commit/c8fc0dc6f3460ac0337553f26f2f56a90af1f1b7))
+
+
+### Features
+
+* add faster storage with mmkv ([68af800](https://github.com/ethanneff/playground-react-native/commit/68af8008f6cfa74c396213e2527deb18d6b2181d))
+
 ## [2.69.8](https://github.com/ethanneff/playground-react-native/compare/v2.69.7...v2.69.8) (2022-08-04)
 
 
