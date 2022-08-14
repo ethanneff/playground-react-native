@@ -16,8 +16,6 @@ jobs:
         with:
           node-version: 16
           cache: 'yarn'
-          registry-url: https://npm.pkg.github.com/
-          scope: '@ethanneff'
 
       - name: Install Dependencies
         run: yarn ci-install
@@ -26,6 +24,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn ci-release
+
+      - name: Setup Github
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+          registry-url: https://npm.pkg.github.com/
+          scope: '@ethanneff'
 
       - name: Deploy to Github Packages
         run: yarn publish
