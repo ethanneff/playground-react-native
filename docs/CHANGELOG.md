@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.70.1](https://github.com/ethanneff/playground-react-native/compare/v2.70.0...v2.70.1) (2022-08-14)
+
+
+### Bug Fixes
+
+* convert yarn to pnpm ([#797](https://github.com/ethanneff/playground-react-native/issues/797)) ([cd4d2ec](https://github.com/ethanneff/playground-react-native/commit/cd4d2ec4a4846fa1fa3f7cb58b9e9bcae9735aff))
+
 # [2.70.0](https://github.com/ethanneff/playground-react-native/compare/v2.69.8...v2.70.0) (2022-08-13)
 
 
