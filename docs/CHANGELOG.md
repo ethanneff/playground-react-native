@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.70.3](https://github.com/ethanneff/playground-react-native/compare/v2.70.2...v2.70.3) (2022-08-14)
+
+
+### Bug Fixes
+
+* better deploy ([e6983b3](https://github.com/ethanneff/playground-react-native/commit/e6983b3492e0c1c9eed29f4b3b9407eb1e075955))
+
 ## [2.70.2](https://github.com/ethanneff/playground-react-native/compare/v2.70.1...v2.70.2) (2022-08-14)
 
 
