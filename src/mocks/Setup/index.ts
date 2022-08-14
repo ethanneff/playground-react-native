@@ -1,5 +1,6 @@
 import { NativeModules } from 'react-native';
 import 'react-native-gesture-handler/jestSetup';
+import 'react-native-get-random-values';
 import { mockGoBack, mockNavigate } from '../Navigation';
 
 jest.mock('react-native-localize', () => ({
