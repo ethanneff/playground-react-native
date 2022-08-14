@@ -11,24 +11,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7.9.1
-
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'pnpm'
+          cache: 'yarn'
 
       - name: Install Dependencies
-        run: pnpm ci-install
+        run: yarn ci-install
 
       - name: Build Web
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm build
+        run: yarn build
 
       - name: Deploy Web
         uses: peaceiris/actions-gh-pages@v3

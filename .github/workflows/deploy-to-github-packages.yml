@@ -11,28 +11,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7.9.1
-
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'pnpm'
+          cache: 'yarn'
           registry-url: https://npm.pkg.github.com/
           scope: '@ethanneff'
 
       - name: Install Dependencies
-        run: pnpm ci-install
+        run: yarn ci-install
 
       - name: Update Version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm ci-release
+        run: yarn ci-release
 
       - name: Deploy to Github Packages
-        run: pnpm publish
+        run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
