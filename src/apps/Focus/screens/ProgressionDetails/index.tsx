@@ -1,5 +1,4 @@
-import { RouteProp } from '@react-navigation/core';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback } from 'react';
 import { Modal, Text } from '../../../../components';

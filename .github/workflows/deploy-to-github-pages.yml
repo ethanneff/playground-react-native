@@ -17,12 +17,12 @@ jobs:
           node-version: 14
 
       - name: Install Dependencies
-        run: yarn ci-install
+        run: pnpm ci-install
 
       - name: Build Web
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: yarn build
+        run: pnpm build
 
       - name: Deploy Web
         uses: peaceiris/actions-gh-pages@v3

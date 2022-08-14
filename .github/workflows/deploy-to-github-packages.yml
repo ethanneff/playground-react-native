@@ -20,12 +20,12 @@ jobs:
           node-version: 14
 
       - name: Install Dependencies
-        run: yarn ci-install
+        run: pnpm ci-install
 
       - name: Update Version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: yarn ci-release
+        run: pnpm ci-release
 
       - name: Setup Github
         uses: actions/setup-node@v1

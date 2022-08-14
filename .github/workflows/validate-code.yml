@@ -14,16 +14,16 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install modules
-        run: yarn ci-install
+        run: pnpm ci-install
 
       - name: Run prettier
-        run: yarn ci-prettify
+        run: pnpm ci-prettify
 
       - name: Run code dupe
-        run: yarn ci-dupe
+        run: pnpm ci-dupe
 
       - name: Run lint
-        run: yarn ci-lint
+        run: pnpm ci-lint
 
       - name: Run tests
-        run: yarn ci-test
+        run: pnpm ci-test
