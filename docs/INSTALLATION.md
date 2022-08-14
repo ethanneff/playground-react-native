@@ -3,40 +3,40 @@
 ## Download
 
 ```sh
-brew install pnpm
+npm i -g yarn
 git clone git@github.com:ethanneff/playground-react-native.git
 cd example
-pnpm install
+yarn install
 ```
 
 ## Run
 
 ```sh
-pnpm ios
+yarn ios
 ```
 
 ```sh
-pnpm android
+yarn android
 ```
 
 ```sh
-pnpm web
+yarn web
 ```
 
 ## Lint
 
 ```sh
-pnpm lint
+yarn lint
 ```
 
 ## Test
 
 ```sh
-pnpm test
+yarn test
 ```
 
 ## Deploy
 
 ```sh
-pnpm build
+yarn build
 ```
