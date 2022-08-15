@@ -58,7 +58,7 @@
     "react-dom": "17.0.2",
     "react-native": "0.67.4",
     "react-native-config": "1.4.6",
-    "react-native-dev-menu": "4.1.0",
+    "react-native-dev-menu": "4.1.1",
     "react-native-device-info": "10.0.2",
     "react-native-draggable-flatlist": "3.1.2",
     "react-native-fast-image": "8.5.11",
