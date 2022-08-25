@@ -3,11 +3,11 @@
 exports[`screen renders correctly 1`] = `
 <View
   style={
-    Array [
+    [
       undefined,
       undefined,
       undefined,
-      Object {
+      {
         "backgroundColor": "hsl(0,0%,100%)",
         "flex": 1,
       },
@@ -16,7 +16,7 @@ exports[`screen renders correctly 1`] = `
 >
   <RNCSafeAreaView
     edges={
-      Array [
+      [
         "top",
         "left",
         "right",
@@ -24,18 +24,18 @@ exports[`screen renders correctly 1`] = `
       ]
     }
     style={
-      Object {
+      {
         "flex": 1,
       }
     }
   >
     <View
       style={
-        Array [
+        [
           undefined,
           undefined,
           undefined,
-          Object {
+          {
             "alignItems": "center",
             "backgroundColor": "hsl(0,0%,100%)",
             "borderBottomColor": "hsl(0,0%,100%)",
@@ -50,6 +50,8 @@ exports[`screen renders correctly 1`] = `
     >
       <RNGestureHandlerButton
         collapsable={false}
+        delayLongPress={600}
+        enabled={false}
         exclusive={true}
         handlerTag={1}
         handlerType="NativeViewGestureHandler"
@@ -64,7 +66,7 @@ exports[`screen renders correctly 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Object {
+            {
               "flex": 0,
               "opacity": 1,
               "padding": 8,
@@ -73,16 +75,16 @@ exports[`screen renders correctly 1`] = `
         >
           <View
             style={
-              Array [
+              [
                 undefined,
                 undefined,
                 undefined,
-                Array [
+                [
                   undefined,
                   undefined,
                   undefined,
                   undefined,
-                  Object {
+                  {
                     "justifyContent": "center",
                   },
                   null,
@@ -95,21 +97,21 @@ exports[`screen renders correctly 1`] = `
               allowFontScaling={false}
               selectable={false}
               style={
-                Array [
-                  Object {
+                [
+                  {
                     "color": "transparent",
                     "fontSize": 32,
                   },
-                  Array [
+                  [
                     undefined,
                     undefined,
                   ],
-                  Object {
+                  {
                     "fontFamily": "Material Design Icons",
                     "fontStyle": "normal",
                     "fontWeight": "normal",
                   },
-                  Object {},
+                  {},
                 ]
               }
             >
@@ -120,6 +122,8 @@ exports[`screen renders correctly 1`] = `
       </RNGestureHandlerButton>
       <RNGestureHandlerButton
         collapsable={false}
+        delayLongPress={600}
+        enabled={false}
         exclusive={true}
         handlerTag={2}
         handlerType="NativeViewGestureHandler"
@@ -134,7 +138,7 @@ exports[`screen renders correctly 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Object {
+            {
               "flex": 0,
               "opacity": 1,
               "padding": 8,
@@ -143,19 +147,19 @@ exports[`screen renders correctly 1`] = `
         >
           <View
             style={
-              Array [
+              [
                 undefined,
                 undefined,
                 undefined,
-                Array [
+                [
                   undefined,
                   undefined,
                   undefined,
                   undefined,
-                  Object {
+                  {
                     "justifyContent": "center",
                   },
-                  Object {
+                  {
                     "alignSelf": "flex-end",
                   },
                 ],
@@ -167,21 +171,21 @@ exports[`screen renders correctly 1`] = `
               allowFontScaling={false}
               selectable={false}
               style={
-                Array [
-                  Object {
+                [
+                  {
                     "color": "transparent",
                     "fontSize": 32,
                   },
-                  Array [
+                  [
                     undefined,
                     undefined,
                   ],
-                  Object {
+                  {
                     "fontFamily": "Material Design Icons",
                     "fontStyle": "normal",
                     "fontWeight": "normal",
                   },
-                  Object {},
+                  {},
                 ]
               }
             >
@@ -193,11 +197,11 @@ exports[`screen renders correctly 1`] = `
     </View>
     <View
       style={
-        Array [
+        [
           undefined,
           undefined,
           undefined,
-          Object {
+          {
             "backgroundColor": "hsl(0,0%,100%)",
             "height": 2,
             "width": "100%",
@@ -208,12 +212,12 @@ exports[`screen renders correctly 1`] = `
     />
     <View
       style={
-        Array [
+        [
           undefined,
           undefined,
           undefined,
-          Array [
-            Object {
+          [
+            {
               "flex": 1,
             },
             undefined,
@@ -223,7 +227,7 @@ exports[`screen renders correctly 1`] = `
     >
       <View
         style={
-          Array [
+          [
             undefined,
             undefined,
             undefined,

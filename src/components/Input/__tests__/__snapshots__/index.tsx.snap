@@ -3,11 +3,11 @@
 exports[`input renders correctly 1`] = `
 <View
   style={
-    Array [
+    [
       undefined,
       undefined,
       undefined,
-      Array [
+      [
         undefined,
         undefined,
       ],
@@ -16,11 +16,11 @@ exports[`input renders correctly 1`] = `
 >
   <View
     style={
-      Array [
+      [
         undefined,
         undefined,
         undefined,
-        Object {
+        {
           "flexDirection": "row",
         },
       ]
@@ -28,11 +28,11 @@ exports[`input renders correctly 1`] = `
   />
   <View
     style={
-      Array [
+      [
         undefined,
         undefined,
         undefined,
-        Object {
+        {
           "backgroundColor": "hsl(0,0%,100%)",
           "borderColor": "hsl(0,0%,32.9%)",
           "borderRadius": 4,
@@ -58,12 +58,12 @@ exports[`input renders correctly 1`] = `
       placeholderTextColor="hsl(0,0%,32.9%)"
       selectionColor="hsl(219,87.8%,54.9%)"
       style={
-        Array [
-          Object {
+        [
+          {
             "color": "hsl(0,0%,0%)",
             "flex": 1,
           },
-          Object {
+          {
             "fontSize": 14,
             "fontWeight": "300",
             "letterSpacing": 0.25,
@@ -77,6 +77,8 @@ exports[`input renders correctly 1`] = `
     />
     <RNGestureHandlerButton
       collapsable={false}
+      delayLongPress={600}
+      enabled={true}
       exclusive={true}
       handlerTag={2}
       handlerType="NativeViewGestureHandler"
@@ -91,7 +93,7 @@ exports[`input renders correctly 1`] = `
         accessible={true}
         collapsable={false}
         style={
-          Object {
+          {
             "flex": 0,
             "opacity": 1,
           }
@@ -99,19 +101,19 @@ exports[`input renders correctly 1`] = `
       >
         <View
           style={
-            Array [
+            [
               undefined,
               undefined,
               undefined,
-              Array [
+              [
                 undefined,
                 undefined,
                 undefined,
                 undefined,
-                Object {
+                {
                   "justifyContent": "center",
                 },
-                Object {
+                {
                   "paddingLeft": 8,
                 },
               ],
@@ -122,21 +124,21 @@ exports[`input renders correctly 1`] = `
             allowFontScaling={false}
             selectable={false}
             style={
-              Array [
-                Object {
+              [
+                {
                   "color": "hsl(0,0%,45.9%)",
                   "fontSize": 24,
                 },
-                Array [
+                [
                   undefined,
                   undefined,
                 ],
-                Object {
+                {
                   "fontFamily": "Material Design Icons",
                   "fontStyle": "normal",
                   "fontWeight": "normal",
                 },
-                Object {},
+                {},
               ]
             }
           >
@@ -148,6 +150,8 @@ exports[`input renders correctly 1`] = `
   </View>
   <RNGestureHandlerButton
     collapsable={false}
+    delayLongPress={600}
+    enabled={true}
     exclusive={true}
     handlerTag={3}
     handlerType="NativeViewGestureHandler"
@@ -162,7 +166,7 @@ exports[`input renders correctly 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
+        {
           "alignItems": "center",
           "flex": 0,
           "flexDirection": "row",
@@ -172,16 +176,16 @@ exports[`input renders correctly 1`] = `
     >
       <View
         style={
-          Array [
+          [
             undefined,
             undefined,
             undefined,
-            Array [
+            [
               undefined,
               undefined,
               undefined,
               undefined,
-              Object {
+              {
                 "justifyContent": "center",
               },
               undefined,
@@ -193,23 +197,23 @@ exports[`input renders correctly 1`] = `
           allowFontScaling={false}
           selectable={false}
           style={
-            Array [
-              Object {
+            [
+              {
                 "color": "hsl(7,100%,44.1%)",
                 "fontSize": 16,
               },
-              Array [
-                Object {
+              [
+                {
                   "opacity": 0,
                 },
                 undefined,
               ],
-              Object {
+              {
                 "fontFamily": "Material Design Icons",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
               },
-              Object {},
+              {},
             ]
           }
         >
@@ -219,7 +223,7 @@ exports[`input renders correctly 1`] = `
       <Text
         collapsable={false}
         style={
-          Object {
+          {
             "color": "hsla(7,100%,44.1%, 1)",
             "fontSize": 16,
             "fontWeight": "300",
