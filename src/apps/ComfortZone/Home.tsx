@@ -184,6 +184,7 @@ export const Home = memo(function Home() {
 
   return (
     <Screen
+      dropShadow
       onLeftPress={onLeftPress}
       title="Comfort Zone"
     >
@@ -207,21 +208,7 @@ export const Home = memo(function Home() {
             type="subtitle1"
           />
         </Card>
-        <Card>
-          <Text
-            center
-            style={{ paddingBottom: spacing(4) }}
-            title="Today's Challenge"
-            type="h4"
-          />
-          <Text
-            center
-            emphasis="medium"
-            style={{ paddingBottom: spacing(4) }}
-            title={challenge}
-            type="subtitle1"
-          />
-        </Card>
+
         <Card>
           <View
             style={{
@@ -244,8 +231,6 @@ export const Home = memo(function Home() {
           {showCustomInput ? (
             <View
               style={{
-                justifyContent: 'center',
-                alignItems: 'center',
                 paddingTop: spacing(6),
               }}
             >
@@ -257,12 +242,28 @@ export const Home = memo(function Home() {
                 value={customInput}
               />
               <Button
+                center
                 color="accent"
                 onPress={onCustomInputSubmit}
                 title="submit"
               />
             </View>
           ) : null}
+        </Card>
+        <Card>
+          <Text
+            center
+            style={{ paddingBottom: spacing(4) }}
+            title="Today's Challenge"
+            type="h4"
+          />
+          <Text
+            center
+            emphasis="medium"
+            style={{ paddingBottom: spacing(4) }}
+            title={challenge}
+            type="subtitle1"
+          />
         </Card>
         <Card>
           <Text
