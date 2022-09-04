@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { memo, useCallback, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Button, Screen, ScrollView, Text, View } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { LoadingProfile } from './LoadingProfile';
@@ -8,11 +8,12 @@ import { LoadingSection } from './LoadingSection';
 export const SkeletonLoading = memo(function PlaygroundTemplate() {
   const { goBack } = useNavigation();
   const colors = useColors();
-
+  const mounted = useRef(true);
   const [loading, setLoading] = useState(true);
 
   const load = useCallback(() => {
     const timeout = setTimeout(() => {
+      if (!mounted.current) return;
       setLoading(false);
     }, 5000);
     return () => clearTimeout(timeout);
@@ -25,6 +26,10 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
 
   useEffect(() => {
     load();
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
   }, [load]);
 
   return (
