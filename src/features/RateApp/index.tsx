@@ -72,7 +72,7 @@ export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
     setTimeout(() => {
       const success = ratingRef.current >= ratingMin;
       setForm((prev) => ({ ...prev, modal: success ? 'review' : 'feedback' }));
-    }, 300);
+    }, 200);
   }, []);
 
   const handleTextChange = useCallback((feedback: string) => {
