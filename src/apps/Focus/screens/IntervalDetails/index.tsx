@@ -38,6 +38,7 @@ type State = {
   loading: boolean;
   nps: number;
   significant: boolean;
+  uncomfortable: boolean;
   well: string;
 };
 
@@ -59,6 +60,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
     goals: [],
     goalModal: false,
     goal: '',
+    uncomfortable: false,
     focus: false,
     significant: false,
     nps: 0,
@@ -248,11 +250,18 @@ export const IntervalDetails = memo(function IntervalDetails() {
               type="h4"
             />
             <Spacing padding={2} />
-            <Text title="Did you have intense focus?" />
+            <Text title="Was your focus intense?" />
             <Spacing padding={1} />
             <Switch
               onValueChange={handleSwitchChange('focus')}
               value={state.focus}
+            />
+            <Spacing padding={2} />
+            <Text title="Were you outside your comfort zone?" />
+            <Spacing padding={1} />
+            <Switch
+              onValueChange={handleSwitchChange('uncomfortable')}
+              value={state.uncomfortable}
             />
             <Spacing padding={2} />
             <Text title="Did you make any significant progress?" />
@@ -262,7 +271,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
               value={state.significant}
             />
             <Spacing padding={2} />
-            <Text title="From 0 to 10, how does this interval rank?" />
+            <Text title="How would you rank this interval?" />
             <Spacing padding={1} />
             <View
               style={{
