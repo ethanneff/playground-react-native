@@ -8,11 +8,11 @@ import { ButtonsRow } from './ButtonsRow';
 import { LapsTable } from './LapsTable';
 import { Timer } from './Timer';
 
-interface State {
+type State = {
   laps: number[];
   now: number;
   start: number;
-}
+};
 
 export const AppleStopWatch = memo(function AppleStopWatch() {
   const { goBack } = useNavigation();

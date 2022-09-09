@@ -68,7 +68,7 @@ export const Questionnaire = (): JSX.Element => {
   return (
     <>
       <FlatList
-        data={Object.values(questionnairesInitialState)}
+        data={Object.values(questionnairesInitialState.items)}
         keyExtractor={keyExtractor}
         keyboardShouldPersistTaps="handled"
         renderItem={renderItem}

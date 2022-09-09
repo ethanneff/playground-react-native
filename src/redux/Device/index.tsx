@@ -1,4 +1,4 @@
-import { AppState, AppStateStatus, ScaledSize } from 'react-native';
+import { AppState, AppStateStatus } from 'react-native';
 import { LocationProviderInfo, PowerState } from 'react-native-device-info';
 import {
   Calendar,
@@ -10,28 +10,8 @@ import { RootAction } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 import { logout } from '../Auth';
 
-/* ACTIONS */
-export const loadDevice = createAction('device/LOAD')<DeviceInfo>();
-export const changeAppStatus = createAction(
-  'device/UPDATE_STATUS',
-)<AppStateStatus>();
-export const changeKeyboardStatus = createAction(
-  'device/UPDATE_KEYBOARD_VISIBILITY',
-)<number>();
-
-export const deviceActions = {
-  loadDevice,
-  changeAppStatus,
-  changeKeyboardStatus,
-};
-
 /* INTERFACES */
-export interface DimensionsProps {
-  screen: ScaledSize;
-  window: ScaledSize;
-}
-
-export interface DeviceInfo {
+type DeviceInfo = {
   androidId: string;
   apiLevel: number;
   applicationName: string;
@@ -112,13 +92,28 @@ export interface DeviceInfo {
   usesAutoTimeZone: boolean | undefined;
   usesMetricSystem: boolean;
   version: string;
-}
+};
 
-export type DeviceState = {
+type DeviceState = {
   appStatus: AppStateStatus;
   keyboardHeight: number;
   keyboardVisible: boolean;
 } & DeviceInfo;
+
+/* ACTIONS */
+export const loadDevice = createAction('device/LOAD')<DeviceInfo>();
+export const changeAppStatus = createAction(
+  'device/UPDATE_STATUS',
+)<AppStateStatus>();
+export const changeKeyboardStatus = createAction(
+  'device/UPDATE_KEYBOARD_VISIBILITY',
+)<number>();
+
+export const deviceActions = {
+  loadDevice,
+  changeAppStatus,
+  changeKeyboardStatus,
+};
 
 /* REDUCERS */
 export const deviceInfoInitialState: DeviceInfo = {

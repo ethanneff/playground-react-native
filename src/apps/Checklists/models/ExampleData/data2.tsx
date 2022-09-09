@@ -73,22 +73,22 @@ export type ListAccess = 'Read' | 'Write' | 'Comment';
 
 export type ListFrequency = 'Single' | 'Multiple';
 
-export interface User {
+export type User = {
   email: string;
   firstName: string;
   id: UserId;
   lastName: string;
   lists: ListId[];
-}
+};
 
-export interface Action {
+export type Action = {
   createdAt: Date;
   id: ActionId;
   listId: ListId;
   userId: UserId;
-}
+};
 
-export interface List {
+export type List = {
   active: boolean;
   copied: ActionId[];
   createdAt: Date;
@@ -103,9 +103,9 @@ export interface List {
   userId: UserId;
   viewed: ActionId[];
   visibility: ListVisibility;
-}
+};
 
-export interface Item {
+export type Item = {
   active: boolean;
   createdAt: Date;
   description?: string;
@@ -113,16 +113,16 @@ export interface Item {
   name: string;
   sources?: SourceId[];
   updatedAt: Date;
-}
+};
 
-export interface Source {
+export type Source = {
   createdAt: Date;
   id: SourceId;
   image?: string;
   title: string;
   updatedAt: Date;
   url?: string;
-}
+};
 
 export const a = {
   email: 'bob@gmail.com',

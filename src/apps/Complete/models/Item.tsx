@@ -4,6 +4,21 @@ import { createAction, getType } from 'typesafe-actions';
 import { logout } from './Auth';
 import { getUser } from './User';
 
+/* INTERFACES */
+export type Item = {
+  active: boolean;
+  children: ReadonlyArray<string>;
+  createdAt: number;
+  description: string;
+  editable: boolean;
+  id: string;
+  tags: ReadonlyArray<string>;
+  title: string;
+  type: 'board' | 'list' | 'note';
+  updatedAt: number;
+  userId: string;
+};
+type Items = { [key: string]: Item };
 type ItemUpdateIds = { itemId: string; parentItemId: string };
 type ItemSwapId = { i: number; j: number; parentItemId: string };
 type ItemMoveId = {
@@ -17,6 +32,10 @@ type ItemNav = {
   itemId: string | null;
   parentItemId: string | null;
   projectItemId: string | null;
+};
+type CompleteItemReducer = {
+  items: Items;
+  nav: ItemNav;
 };
 
 /* ACTIONS */
@@ -73,27 +92,6 @@ export const getProjects = createSelector(
   (items, user) =>
     user?.items.filter((id) => items[id].title === 'Projects')[0],
 );
-
-/* INTERFACES */
-export type CompleteItemReducer = {
-  items: Items;
-  nav: ItemNav;
-};
-
-export type Item = {
-  active: boolean;
-  children: ReadonlyArray<string>;
-  createdAt: number;
-  description: string;
-  editable: boolean;
-  id: string;
-  tags: ReadonlyArray<string>;
-  title: string;
-  type: 'board' | 'list' | 'note';
-  updatedAt: number;
-  userId: string;
-};
-export type Items = { [key: string]: Item };
 
 /* REDUCER */
 const initialState: CompleteItemReducer = {

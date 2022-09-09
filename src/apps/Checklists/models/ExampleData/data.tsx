@@ -1,24 +1,43 @@
-interface Source {
+type Source = {
   id: string;
   title: string;
   url: string;
-}
+};
 
-interface Reminder {
+type Reminder = {
   day: string;
   id: string;
   time: string;
-}
+};
 
-interface Tag {
+type Tag = {
   id: string;
   name: string;
-}
+};
 
 type ChecklistItemStatus = 'Todo' | 'InProgress' | 'Reminded' | 'Done';
-export type ChecklistAccess = 'Read' | 'Write' | 'Comment';
 
-interface ChecklistItem {
+type ChecklistItemHistory = {
+  createdAt: number;
+  id: string;
+  itemId: number;
+  status: ChecklistItemStatus;
+  updatedAt: number;
+};
+
+type ChecklistItemHistories = {
+  [id: string]: ChecklistItemHistory;
+};
+
+type Reminders = {
+  [id: string]: Reminder;
+};
+
+type Sources = {
+  [id: string]: Source;
+};
+
+type ChecklistItem = {
   active: boolean;
   checklistId: string;
   history?: ChecklistItemHistories;
@@ -27,17 +46,9 @@ interface ChecklistItem {
   source: Sources;
   status: ChecklistItemStatus;
   title: string;
-}
+};
 
-interface ChecklistItemHistory {
-  createdAt: number;
-  id: string;
-  itemId: number;
-  status: ChecklistItemStatus;
-  updatedAt: number;
-}
-
-interface Checklist {
+type Checklist = {
   completedAt: string[];
   createdAt: string;
   id: string;
@@ -46,39 +57,27 @@ interface Checklist {
   updatedAt: string;
   userId: string;
   viewedAt: string[];
-}
+};
 
-interface User {
+type User = {
   checklists: string[];
   email: string;
   firstName: string;
   id: string;
   lastName: string;
-}
+};
 
-interface Reminders {
-  [id: string]: Reminder;
-}
-
-interface Sources {
-  [id: string]: Source;
-}
-
-interface ChecklistItemHistories {
-  [id: string]: ChecklistItemHistory;
-}
-
-export interface ChecklistItems {
+export type ChecklistItems = {
   [id: string]: ChecklistItem;
-}
+};
 
-export interface Checklists {
+export type Checklists = {
   [id: string]: Checklist;
-}
+};
 
-export interface Tags {
+export type Tags = {
   [id: string]: Tag;
-}
+};
 
 export const user: User = {
   id: '123',

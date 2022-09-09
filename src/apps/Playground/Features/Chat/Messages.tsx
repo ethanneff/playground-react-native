@@ -2,6 +2,24 @@ import { createSelector } from 'reselect';
 import { RootAction, RootState } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 
+/* INTERFACES */
+export type Message = {
+  active: boolean;
+  // history?: string[];
+  // attachments?:string[]
+  conversationId: string;
+  createdAt: number;
+  id: string;
+  message: string;
+  updatedAt: number;
+  userId: string; // Need name and id
+};
+type Messages = { [key: string]: Message };
+type ChatMessageReducer = {
+  items: Messages;
+  textField: string;
+};
+
 /* ACTIONS */
 export const createChatMessage = createAction('chat/create')<Message>();
 export const updateChatMessage = createAction('chat/update')<Message>();
@@ -27,24 +45,6 @@ export const getActiveChatMessagesOrderByCreatedAt = createSelector(
 
 export const getChatSubmittable = (state: RootState): boolean =>
   state.chatMessage.textField.trim().length > 0;
-
-/* INTERFACES */
-export type ChatMessageReducer = {
-  items: Messages;
-  textField: string;
-};
-export type Message = {
-  active: boolean;
-  // history?: string[];
-  // attachments?:string[]
-  conversationId: string;
-  createdAt: number;
-  id: string;
-  message: string;
-  updatedAt: number;
-  userId: string; // Need name and id
-};
-type Messages = { [key: string]: Message };
 
 /* REDUCER */
 const initialState: ChatMessageReducer = {

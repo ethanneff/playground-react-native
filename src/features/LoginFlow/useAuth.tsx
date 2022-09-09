@@ -11,6 +11,12 @@ import {
 
 GoogleSignin.configure({ webClientId: Config.GOOGLE_SIGN_IN });
 
+type NullType = 'initializing' | 'waiting' | 'logout' | 'loading';
+type Response =
+  | { error: null; type: NullType; user: null }
+  | { error: string; type: 'error'; user: null }
+  | { error: null; type: 'login'; user: FirebaseAuthTypes.User };
+
 type UseAuth = {
   onAnonymous: () => void;
   onApple: () => void;
@@ -24,14 +30,8 @@ type UseAuth = {
   response: Response;
 };
 
-type NullType = 'initalizing' | 'waiting' | 'logout' | 'loading';
-type Response =
-  | { error: null; type: NullType; user: null }
-  | { error: string; type: 'error'; user: null }
-  | { error: null; type: 'login'; user: FirebaseAuthTypes.User };
-
 const initialResponse: Response = {
-  type: 'initalizing',
+  type: 'initializing',
   user: null,
   error: null,
 };

@@ -4,6 +4,22 @@ import { createAction, createCustomAction, getType } from 'typesafe-actions';
 import { v4 } from 'uuid';
 import { logout } from '../../../../../redux';
 
+/* INTERFACES */
+export type Questionnaire = {
+  acronym?: string;
+  formula?: string;
+  id: string;
+  questions: ReadonlyArray<string>;
+  title: string;
+};
+type QuestionnairesObject = {
+  [id: string]: Questionnaire;
+};
+type Questionnaires = {
+  items: QuestionnairesObject;
+  selected: string | undefined;
+};
+
 /* ACTIONS */
 export const createQuestionnaire = createCustomAction(
   'questionnaires/CREATE',
@@ -40,22 +56,6 @@ export const getQuestionnaireArray = createSelector(
   [getQuestionnaires],
   (questionnaires) => Object.values(questionnaires).filter((item) => item),
 );
-
-/* INTERFACES */
-export interface Questionnaire {
-  acronym?: string;
-  formula?: string;
-  id: string;
-  questions: ReadonlyArray<string>;
-  title: string;
-}
-interface QuestionnairesObject {
-  [id: string]: Questionnaire;
-}
-export interface Questionnaires {
-  items: QuestionnairesObject;
-  selected: string | undefined;
-}
 
 /* REDUCERS */
 export const questionnairesInitialState: Questionnaires = {

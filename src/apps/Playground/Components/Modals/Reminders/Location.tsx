@@ -2,11 +2,11 @@ import React, { memo, useCallback } from 'react';
 import { v4 } from 'uuid';
 import { Item } from './Item';
 
-interface LocationItem {
+type LocationItem = {
   id: string;
   subtitle?: string;
   title: string;
-}
+};
 
 type Props = {
   onPress: (value: string) => () => void;

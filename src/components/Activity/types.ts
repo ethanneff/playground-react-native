@@ -1,5 +1,11 @@
 export type Site = 'github' | 'leetCode' | 'hackerRank' | 'gitlab' | 'random';
 
+export type ActivityDay = {
+  count: number;
+  date: number;
+};
+
+export type ActivityWeek = Array<ActivityDay>;
 export type ActivityMatrix = Array<ActivityWeek>;
 
 export type ActivityModel = {
@@ -13,13 +19,6 @@ export type ActivityModel = {
     day: number;
     submissions: string;
   };
-};
-
-export type ActivityWeek = Array<ActivityDay>;
-
-export type ActivityDay = {
-  count: number;
-  date: number;
 };
 
 export type ApiResponse = {

@@ -86,11 +86,11 @@ export const getAuthToken = (state: RootState): string | undefined =>
 export const getAuthLoading = (state: RootState): boolean => state.auth.loading;
 
 /* INTERFACES */
-export interface AuthState {
+type AuthState = {
   error?: string;
   loading: boolean;
   token?: string;
-}
+};
 
 /* REDUCERS */
 export const authInitialState: AuthState = {

@@ -4,12 +4,12 @@ import { Text, View } from '../../../../components';
 import { useColors } from '../../../../features';
 import { Timer } from './Timer';
 
-interface LapProps {
+type LapProps = {
   fastest: boolean;
   interval: number;
   num: number;
   slowest: boolean;
-}
+};
 
 export const Lap = memo(function Lap({
   num,

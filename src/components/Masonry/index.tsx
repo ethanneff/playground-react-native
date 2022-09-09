@@ -3,16 +3,16 @@ import { v4 } from 'uuid';
 import { View } from '../../components';
 import { spacing } from '../../features';
 
-interface Item<T> {
+type Item<T> = {
   index: number;
   item: T;
-}
+};
 
-interface Props<T> {
+type Props<T> = {
   data: T[];
   numColumns: number;
   renderItem({ item, index }: Item<T>): ReactElement | null;
-}
+};
 
 export const Masonry = memo(function Masonry<T>({
   data,

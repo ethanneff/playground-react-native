@@ -27,12 +27,12 @@ type Props = {
 };
 
 // TODO: relocate to somewhere
-interface SignInButtonProps {
+type SignInButtonProps = {
   icon: IconName;
   margin?: boolean;
   onPress: () => void;
   title: string;
-}
+};
 
 const SignInButton = memo(function SignInButton({
   onPress,
@@ -192,7 +192,7 @@ export const Login = memo(function Login({
             title={error}
           />
         ) : null}
-        {state.screen === 'loading' || type === 'initalizing' ? (
+        {state.screen === 'loading' || type === 'initializing' ? (
           <Loader />
         ) : state.screen === 'phoneCode' ? (
           <>

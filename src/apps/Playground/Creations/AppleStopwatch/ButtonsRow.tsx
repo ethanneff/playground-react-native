@@ -2,9 +2,9 @@ import React, { memo, ReactNode } from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '../../../../components';
 
-interface ButtonRowProps {
+type ButtonRowProps = {
   children: ReactNode | ReactNode[];
-}
+};
 
 export const ButtonsRow = memo(function ButtonsRow({
   children,

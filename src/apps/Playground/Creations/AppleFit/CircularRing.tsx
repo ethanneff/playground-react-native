@@ -6,11 +6,11 @@ import { InitialKnob } from './InitialKnob';
 import { MovingKnob } from './MovingKnob';
 import { Ring } from './types';
 
-interface RingProps {
+type RingProps = {
   ring: Ring;
   strokeWidth: number;
   theta: number;
-}
+};
 
 export const CircularRing = ({
   ring,

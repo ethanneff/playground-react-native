@@ -2,10 +2,10 @@ import React, { memo } from 'react';
 import { StyleProp, StyleSheet, TextStyle } from 'react-native';
 import { Text, View } from '../../../../components';
 
-interface TimerProps {
+type TimerProps = {
   interval: number;
   style: StyleProp<TextStyle>;
-}
+};
 
 export const Timer = memo(function Timer({ interval, style }: TimerProps) {
   const pad = (n: number): string =>

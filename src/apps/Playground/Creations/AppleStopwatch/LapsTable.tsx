@@ -4,10 +4,10 @@ import { v4 } from 'uuid';
 import { ScrollView } from '../../../../components';
 import { Lap } from './Lap';
 
-interface LapTableProps {
+type LapTableProps = {
   laps: number[];
   timer: number;
-}
+};
 
 export const LapsTable = memo(function LapsTable({
   laps,

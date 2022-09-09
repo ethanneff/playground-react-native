@@ -28,6 +28,16 @@ import {
 import { getWidth, useRootSelector } from '../../../../redux';
 import { formatRelativeDate } from './utils';
 
+type SwipeItem = {
+  body: string;
+  button: string;
+  date: Dayjs;
+  icon: IconName;
+  id: string;
+  image: ImageSourcePropType | null;
+  onPress(): void;
+  title: string;
+};
 type SwipeCardProps = {
   height: number;
   index: number;
@@ -156,17 +166,6 @@ const SwipeCard = memo(function SwipeCard({
   );
 });
 
-interface SwipeItem {
-  body: string;
-  button: string;
-  date: Dayjs;
-  icon: IconName;
-  id: string;
-  image: ImageSourcePropType | null;
-  onPress(): void;
-  title: string;
-}
-
 const initialItems: SwipeItem[] = [
   {
     id: v4(),
@@ -230,10 +229,10 @@ const initialItems: SwipeItem[] = [
   },
 ];
 
-interface BadgeProps {
+type BadgeProps = {
   count: number;
   percent: number;
-}
+};
 
 const Badge = memo(function Badge({ count, percent }: BadgeProps) {
   const size = spacing(6);
@@ -272,10 +271,10 @@ const Badge = memo(function Badge({ count, percent }: BadgeProps) {
   );
 });
 
-interface SwipeCardsProps {
+type SwipeCardsProps = {
   height?: number;
   items: SwipeItem[];
-}
+};
 
 const SwipeCards = memo(function SwipeCardList({
   height = 100,

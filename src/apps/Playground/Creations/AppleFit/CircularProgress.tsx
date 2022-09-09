@@ -4,11 +4,11 @@ import { View } from '../../../../components';
 import { HalfCircle } from './HalfCircle';
 import { Ring } from './types';
 
-interface CircularProgressProps {
+type CircularProgressProps = {
   radius: number;
   ring: Ring;
   theta: number;
-}
+};
 
 export const CircularProgress = ({
   theta,

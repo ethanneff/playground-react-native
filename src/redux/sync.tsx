@@ -18,6 +18,14 @@ const reduxWhiteList: ReduxWhitelist = {
   'device/LOAD': 1,
 };
 
+type Queue = string[]; // TODO: better typing with {type, payload}
+type SyncQueue = {
+  cache: Queue;
+  get: () => Promise<Queue>;
+  key: '@syncQuery';
+  set: (value: Queue) => Promise<Queue>;
+};
+
 const syncQueue: SyncQueue = {
   key: '@syncQuery',
   cache: [],
@@ -49,14 +57,6 @@ const syncQueue: SyncQueue = {
 export const syncMiddleware: RootMiddleware = () => (dispatch) => (action) => {
   if (reduxWhiteList[action.type] && enabled) syncQueue.set([action.type]);
   return dispatch(action);
-};
-
-type Queue = string[]; // TODO: better typing with {type, payload}
-type SyncQueue = {
-  cache: Queue;
-  get: () => Promise<Queue>;
-  key: '@syncQuery';
-  set: (value: Queue) => Promise<Queue>;
 };
 
 export const useSync = (): void => {

@@ -3,6 +3,12 @@ import { RootAction, RootState } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 import { logout } from '../Auth';
 
+/* INTERFACES */
+type DimensionState = {
+  screen: ScaledSize;
+  window: ScaledSize;
+};
+
 /* ACTIONS */
 export const updateDimension = createAction(
   'dimension/UPDATE_DIMENSION',
@@ -25,12 +31,6 @@ export const getWidth = (state: RootState): number =>
   state.dimension.window.width;
 export const getHeight = (state: RootState): number =>
   state.dimension.window.height;
-
-/* INTERFACES */
-export type DimensionState = {
-  screen: ScaledSize;
-  window: ScaledSize;
-};
 
 /* REDUCERS */
 export const dimensionInitialState: DimensionState = {

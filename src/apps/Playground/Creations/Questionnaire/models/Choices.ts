@@ -1,23 +1,23 @@
 import { RootAction } from 'root-types';
 import { createAction } from 'typesafe-actions';
 
+/* INTERFACES */
+type Choice = {
+  display: string;
+  id: string;
+  value?: number;
+};
+
+type Choices = {
+  [id: string]: Choice;
+};
+
 /* ACTIONS */
 export const createChoice = createAction('choices/CREATE')<Choice>();
 export const updateChoice = createAction('choices/UPDATE')<Choice>();
 export const removeChoice = createAction('choices/REMOVE')<string>();
 
 export const choicesActions = { createChoice, updateChoice, removeChoice };
-
-/* INTERFACES */
-interface Choice {
-  display: string;
-  id: string;
-  value?: number;
-}
-
-export interface Choices {
-  [id: string]: Choice;
-}
 
 /* REDUCERS */
 export const choicesInitialState: Choices = {

@@ -45,11 +45,11 @@ const data: Data[] = [
   { id: 19, name: '19' },
 ];
 
-interface State {
+type State = {
   animation: Animated.Value;
   iconName: IconName;
   input: string;
-}
+};
 
 const iconSearch = 'magnify';
 const iconBack = 'arrow-left';

@@ -5,9 +5,9 @@ import { View } from '../../../../components';
 import { DriftContext } from './Context';
 import { TrackPositionWithColor } from './types';
 
-interface TrackProps {
+type TrackProps = {
   track: TrackPositionWithColor;
-}
+};
 
 const Track = memo(function TrackMemo({ track }: TrackProps) {
   const size = track.size / 4;

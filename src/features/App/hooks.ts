@@ -13,12 +13,12 @@ import * as Localize from 'react-native-localize';
 import {
   changeAppStatus,
   changeKeyboardStatus,
-  DimensionsProps,
   loadDevice,
   updateDimension,
   updateNetwork,
   useRootDispatch,
 } from '../../redux';
+import { DimensionsProps } from './types';
 
 export const useKeyboard = (): void => {
   const dispatch = useRootDispatch();

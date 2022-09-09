@@ -1,6 +1,21 @@
 import { RootAction } from 'root-types';
 import { createAction } from 'typesafe-actions';
 
+/* INTERFACES */
+type QuestionType = 'Input' | 'Checkbox' | 'Slider' | 'Button';
+
+type Question = {
+  choices: string[];
+  description?: string;
+  id: string;
+  title: string;
+  type: QuestionType;
+};
+
+type Questions = {
+  [id: string]: Question;
+};
+
 /* ACTIONS */
 export const createQuestion = createAction('questions/CREATE')<Question>();
 export const updateQuestion = createAction('questions/UPDATE')<Question>();
@@ -10,21 +25,6 @@ export const questionsActions = {
   updateQuestion,
   removeQuestion,
 };
-
-/* INTERFACES */
-type QuestionType = 'Input' | 'Checkbox' | 'Slider' | 'Button';
-
-interface Question {
-  choices: string[];
-  description?: string;
-  id: string;
-  title: string;
-  type: QuestionType;
-}
-
-export interface Questions {
-  [id: string]: Question;
-}
 
 /* REDUCERS */
 export const questionsInitialState: Questions = {

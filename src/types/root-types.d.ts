@@ -16,10 +16,10 @@ declare module 'root-types' {
 
   export type RootThunkAction<R> = ThunkAction<R, RootState, void, RootAction>;
 
-  interface MiddlewareAPI<S, E extends AnyAction> {
+  type MiddlewareAPI<S, E extends AnyAction> = {
     dispatch: Dispatch<E>;
     getState(): S;
-  }
+  };
 
   type Middleware<S, E extends AnyAction> = (
     api: MiddlewareAPI<S, E>,

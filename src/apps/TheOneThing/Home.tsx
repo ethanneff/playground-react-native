@@ -11,12 +11,12 @@ import {
 } from '../../components';
 import { spacing, useAdminNavBack, useColors } from '../../features';
 
-interface SectionProps {
+type SectionProps = {
   description?: string;
   items?: string[];
   subtitle?: string;
   title: string;
-}
+};
 
 type ChecklistItemProps = {
   index: number;

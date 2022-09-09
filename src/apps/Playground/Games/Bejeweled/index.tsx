@@ -6,6 +6,11 @@ import { Screen, TouchableOpacity, View } from '../../../../components';
 import { useColors } from '../../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../../redux';
 
+type Vector = { x: number; y: number };
+type Gem = { color: string; key: string };
+type Board = Gem[][];
+type Matches = { [key: string]: Vector };
+
 const getRandom = (max: number) => {
   return Math.floor(Math.random() * max);
 };
@@ -20,11 +25,6 @@ const getInitialState = (rows: number, cols: number, gems: Gem[]): Board => {
   }
   return col;
 };
-
-type Vector = { x: number; y: number };
-type Gem = { color: string; key: string };
-type Board = Gem[][];
-type Matches = { [key: string]: Vector };
 
 const getMatches = (board: Board): Matches => {
   const matches: Matches = {};

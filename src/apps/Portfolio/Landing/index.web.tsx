@@ -15,11 +15,11 @@ const missingCallback = () => undefined;
 
 const image = require('../../../assets/line-chart.png');
 
-interface SignInButtonProps {
+type SignInButtonProps = {
   icon: IconName;
   onPress: () => void;
   title: string;
-}
+};
 const SignInButton = memo(function SignInButton({
   onPress,
   icon,
@@ -53,11 +53,11 @@ const SignInButton = memo(function SignInButton({
   );
 });
 
-interface NavButtonProps {
+type NavButtonProps = {
   inverted?: boolean;
   onPress: () => void;
   title: string;
-}
+};
 const NavButton = memo(function NavButton({
   onPress,
   title,
@@ -87,9 +87,9 @@ const NavButton = memo(function NavButton({
   );
 });
 
-interface HeaderProps {
+type HeaderProps = {
   height: number;
-}
+};
 
 export const Header = memo(function Header({ height }: HeaderProps) {
   const colors = useColors();
@@ -143,10 +143,10 @@ export const Header = memo(function Header({ height }: HeaderProps) {
   );
 });
 
-interface AppIconProps {
+type AppIconProps = {
   onPress: () => void;
   type: 'google-play' | 'apple';
-}
+};
 
 const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
   const colors = useColors();
@@ -187,11 +187,11 @@ const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
   );
 });
 
-interface SectionProps {
+type SectionProps = {
   backgroundColor: string;
   children: ReactNode | ReactNode[];
   paddingTop?: number;
-}
+};
 
 const Section = memo(function Section({
   paddingTop,

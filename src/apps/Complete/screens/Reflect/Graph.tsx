@@ -5,16 +5,16 @@ import { StyleSheet } from 'react-native';
 import Svg, { Defs, LinearGradient, Path, Stop } from 'react-native-svg';
 import { View } from '../../../../components';
 
-interface DataPoint {
+type DataPoint = {
   date: number;
   value: number;
-}
+};
 
-interface GraphProps {
+type GraphProps = {
   data: DataPoint[];
   height: number;
   width: number;
-}
+};
 
 const strokeWidth = 4;
 const padding = strokeWidth / 2;

@@ -1,14 +1,8 @@
 import { RootAction } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 
-/* ACTIONS */
-export const login = createAction('complete/auth/login')<Auth>();
-export const logout = createAction('complete/auth/logout')();
-export const completeAuthActions = { login, logout };
-
 /* INTERFACES */
-export type CompleteAuthReducer = Auth | null;
-export type Auth = {
+type Auth = {
   displayName: string | null;
   email: string | null;
   emailVerified: boolean;
@@ -17,6 +11,12 @@ export type Auth = {
   photoURL: string | null;
   uid: string;
 };
+type CompleteAuthReducer = Auth | null;
+
+/* ACTIONS */
+export const login = createAction('complete/auth/login')<Auth>();
+export const logout = createAction('complete/auth/logout')();
+export const completeAuthActions = { login, logout };
 
 /* REDUCER */
 const initialState: CompleteAuthReducer = null;

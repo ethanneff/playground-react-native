@@ -3,13 +3,13 @@ import { StyleSheet } from 'react-native';
 import { Text, TouchableOpacity, View } from '../../../../components';
 import { MonoMultiColor, useColors } from '../../../../features';
 
-interface RoundButtonProps {
+type RoundButtonProps = {
   background: string;
   color: keyof MonoMultiColor;
   disabled?: boolean;
   onPress(): void;
   title: string;
-}
+};
 
 export const ButtonRound = memo(function ButtonRound({
   title,

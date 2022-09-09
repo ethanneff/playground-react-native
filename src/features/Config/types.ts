@@ -143,13 +143,13 @@ export type FontType =
   | 'caption'
   | 'overline';
 
+export type FontWeight = '100' | '300' | '500';
+
 export type FontSize = {
   fontSize: number;
   fontWeight: FontWeight;
   letterSpacing: number;
 };
-
-export type FontWeight = '100' | '300' | '500';
 
 export type FontEmphasis = 'high' | 'medium' | 'low' | 'default';
 

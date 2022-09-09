@@ -1,29 +1,29 @@
-interface App {
-  goals: Goals;
-  users: Users;
-}
-
-interface Goals {
-  byId: { [id: string]: Goal };
-  orderById: string[];
-}
-
-interface Users {
-  byId: { [id: string]: User };
-}
-
-interface User {
-  createdAt: number;
-  email: string;
-  id: string;
-}
-
-interface Goal {
+type Goal = {
   challenge: string;
   id: string;
   mission: string;
   task: string;
-}
+};
+
+type Goals = {
+  byId: { [id: string]: Goal };
+  orderById: string[];
+};
+
+type User = {
+  createdAt: number;
+  email: string;
+  id: string;
+};
+
+type Users = {
+  byId: { [id: string]: User };
+};
+
+type App = {
+  goals: Goals;
+  users: Users;
+};
 
 export const app: App = {
   goals: {

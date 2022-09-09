@@ -3,10 +3,10 @@ import { View } from '../../../../components';
 import { useColors } from '../../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../../redux';
 
-interface CellProps {
+type CellProps = {
   length: number;
   value: number;
-}
+};
 
 export const Cell = memo(function Cell({ value, length }: CellProps) {
   const colors = useColors();

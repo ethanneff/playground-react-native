@@ -4,14 +4,14 @@ import {
   PointPropType,
 } from 'react-native';
 
-interface Touches {
+type Touches = {
   [key: string]: PointPropType;
-}
+};
 
-interface Outcome {
+type Outcome = {
   pinch: boolean;
   spread: boolean;
-}
+};
 
 export class GestureHandler {
   minTouches: number;

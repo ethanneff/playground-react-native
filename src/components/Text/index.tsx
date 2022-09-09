@@ -13,7 +13,7 @@ import {
 
 type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
 
-export interface TextProps {
+type TextProps = {
   adjustsFontSizeToFit?: boolean;
   bold?: boolean;
   center?: boolean;
@@ -31,7 +31,7 @@ export interface TextProps {
   style?: StyleProp<TextStyle>;
   title?: string;
   type?: FontType;
-}
+};
 
 export const Text = memo(function Text({
   type,

@@ -3,6 +3,26 @@ import { RootAction, RootState } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 import { getCurrentChecklist } from '../Checklist';
 
+/* INTERFACES */
+export type ChecklistItem = {
+  active: boolean;
+  checklistId: string;
+  completed: boolean;
+  createdAt: number;
+  description?: string;
+  id: string;
+  name: string;
+  // sources?: string[]; // TODO: move into other reducer
+  order?: number;
+  updatedAt: number;
+  userId: string;
+};
+export type ChecklistItems = { [key: string]: ChecklistItem };
+export type ChecklistItemReducer = {
+  active: string | undefined;
+  items: ChecklistItems;
+};
+
 /* ACTIONS */
 export const createChecklistItem = createAction(
   'checklistItem/create',
@@ -44,26 +64,6 @@ export const getCurrentActiveChecklistItemsOrderByCreatedAt = createSelector(
       .filter((item) => item.checklistId === checklist.id && item.active)
       .sort((a, b) => a.createdAt - b.createdAt),
 );
-
-/* INTERFACES */
-export type ChecklistItemReducer = {
-  active: string | undefined;
-  items: ChecklistItems;
-};
-export type ChecklistItem = {
-  active: boolean;
-  checklistId: string;
-  completed: boolean;
-  createdAt: number;
-  description?: string;
-  id: string;
-  name: string;
-  // sources?: string[]; // TODO: move into other reducer
-  order?: number;
-  updatedAt: number;
-  userId: string;
-};
-export type ChecklistItems = { [key: string]: ChecklistItem };
 
 /* REDUCER */
 const initialState: ChecklistItemReducer = {

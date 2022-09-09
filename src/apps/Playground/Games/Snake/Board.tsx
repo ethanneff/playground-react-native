@@ -4,9 +4,9 @@ import { View } from '../../../../components';
 import { Cell } from './Cell';
 import { Matrix } from './utils';
 
-interface BoardProps {
+type BoardProps = {
   matrix: Matrix;
-}
+};
 
 // TODO: figure out why board is updating with memo
 export const Board = ({ matrix }: BoardProps): JSX.Element => {

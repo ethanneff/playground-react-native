@@ -91,11 +91,9 @@ module.exports = {
     'sort-imports': 'off',
     // typescript
     'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
-    '@typescript-eslint/no-use-before-define': 'error',
-    'no-use-before-define': 'off',
-    'default-param-last': 'off',
     'react/jsx-filename-extension': 'off',
     'react/require-default-props': 'off',
+    'default-param-last': 'off',
     // style
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': [

@@ -7,14 +7,14 @@ import { getWidth, useRootSelector } from '../../../../redux';
 
 // https://support.apple.com/en-us/HT211028
 
-interface SectionProps {
+type SectionProps = {
   description?: string;
   image?: ImageSourcePropType;
   imageRatio?: number;
   index: number;
   paddingHorizontal: number;
   title: string;
-}
+};
 
 const Section = ({
   index,

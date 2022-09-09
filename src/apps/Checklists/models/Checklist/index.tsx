@@ -2,6 +2,31 @@ import { createSelector } from 'reselect';
 import { RootAction, RootState } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 
+/* INTERFACES */
+export type Checklist = {
+  active: boolean;
+  // frequency: string[];
+  // visibility: UserId[];
+  createdAt: number;
+  description?: string;
+  id: string;
+  name: string;
+  updatedAt: number;
+  userId: string;
+  // item: string[];
+  // history: string[];
+  // viewed: string[];
+  // liked: UserId[];
+  // copied: UserId[];
+  // modified: string[];
+};
+export type Checklists = { [key: string]: Checklist };
+
+export type ChecklistReducer = {
+  active: string | undefined;
+  items: Checklists;
+};
+
 /* ACTIONS */
 export const createList = createAction('checklist/create')<Checklist>();
 export const updateList = createAction('checklist/update')<Checklist>();
@@ -30,30 +55,6 @@ export const getActiveChecklistOrderByCreatedAt = createSelector(
       .filter((item) => item.active)
       .sort((a, b) => a.createdAt - b.createdAt),
 );
-
-/* INTERFACES */
-export type ChecklistReducer = {
-  active: string | undefined;
-  items: Checklists;
-};
-export type Checklist = {
-  active: boolean;
-  // frequency: string[];
-  // visibility: UserId[];
-  createdAt: number;
-  description?: string;
-  id: string;
-  name: string;
-  updatedAt: number;
-  userId: string;
-  // item: string[];
-  // history: string[];
-  // viewed: string[];
-  // liked: UserId[];
-  // copied: UserId[];
-  // modified: string[];
-};
-export type Checklists = { [key: string]: Checklist };
 
 /* REDUCER */
 const initialState: ChecklistReducer = {

@@ -1,6 +1,18 @@
 import { RootAction } from 'root-types';
 import { createAction } from 'typesafe-actions';
 
+/* INTERFACES */
+type Response = {
+  createdAt: string;
+  id: string;
+  responses: { [questionId: string]: string[] };
+  userId: string;
+};
+
+type Responses = {
+  [id: string]: Response;
+};
+
 /* ACTIONS */
 export const createResponse = createAction('responses/CREATE')<Response>();
 export const updateResponse = createAction('responses/UPDATE')<Response>();
@@ -10,18 +22,6 @@ export const responsesActions = {
   updateResponse,
   removeResponse,
 };
-
-/* INTERFACES */
-interface Response {
-  createdAt: string;
-  id: string;
-  responses: { [questionId: string]: string[] };
-  userId: string;
-}
-
-export interface Responses {
-  [id: string]: Response;
-}
 
 /* REDUCERS */
 const responsesInitialState = {};
