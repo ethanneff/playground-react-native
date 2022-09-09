@@ -1,8 +1,8 @@
-import { Sections } from '../../../../components/Content/types';
+import { ContentSections } from '../../../../components';
 
 const onPress = (): void => undefined;
 
-export const data: Sections = [
+export const data: ContentSections = [
   {
     paragraphs: [[{ title: 'best way to get your life together' }]],
     title: 'h1 title',

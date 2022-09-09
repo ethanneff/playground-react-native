@@ -1,13 +1,13 @@
 import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
 import { v4 } from 'uuid';
-import { View } from '../../components';
+import { View } from '..';
 import { spacing } from '../../features';
 import { Sentence } from '../Sentence';
 import { Text } from '../Text';
-import { Sections } from './types';
+import { ContentSections } from './types';
 
-type Props = { center?: boolean; sections: Sections };
+type Props = { center?: boolean; sections: ContentSections };
 
 export const Content = memo(function Content({ sections, center }: Props) {
   const styles = StyleSheet.create({
