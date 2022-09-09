@@ -7,9 +7,9 @@ export type Frame = {
 };
 
 const initialFrame = {
-  start: Date.now(),
-  current: Date.now(),
   count: 0,
+  current: Date.now(),
+  start: Date.now(),
 };
 
 type UseGameLoop = {
@@ -31,8 +31,8 @@ export const useGameLoop = (callback: Callback): UseGameLoop => {
 
       frame.current = {
         ...frame.current,
-        current: Date.now(),
         count: frame.current.count + 1,
+        current: Date.now(),
       };
       callback(frame.current);
       loop();

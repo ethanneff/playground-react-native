@@ -13,7 +13,7 @@ const dfs = ({ m, d, i, j, t, c = 0 }: DfsProps): number => {
   if (i < 0 || j < 0 || i >= m.length || j >= m[0].length || m[i][j] !== t)
     return 0;
   const next = c + 1;
-  return Math.max(dfs({ m, d, i: i + d[0], j: j + d[1], t, c: next }), next);
+  return Math.max(dfs({ c: next, d, i: i + d[0], j: j + d[1], m, t }), next);
 };
 
 type WinnerProps = { board: Board; boardSize: number; i: number; j: number };
@@ -26,20 +26,20 @@ export const getWinner = ({
 }: WinnerProps): BoardValue => {
   const t = board[i][j];
   const row =
-    dfs({ m: board, d: [0, -1], i, j, t }) +
-    dfs({ m: board, d: [0, 1], i, j, t }) -
+    dfs({ d: [0, -1], i, j, m: board, t }) +
+    dfs({ d: [0, 1], i, j, m: board, t }) -
     1;
   const col =
-    dfs({ m: board, d: [-1, 0], i, j, t }) +
-    dfs({ m: board, d: [1, 0], i, j, t }) -
+    dfs({ d: [-1, 0], i, j, m: board, t }) +
+    dfs({ d: [1, 0], i, j, m: board, t }) -
     1;
   const dRow =
-    dfs({ m: board, d: [-1, -1], i, j, t }) +
-    dfs({ m: board, d: [1, 1], i, j, t }) -
+    dfs({ d: [-1, -1], i, j, m: board, t }) +
+    dfs({ d: [1, 1], i, j, m: board, t }) -
     1;
   const dCol =
-    dfs({ m: board, d: [-1, 1], i, j, t }) +
-    dfs({ m: board, d: [1, -1], i, j, t }) -
+    dfs({ d: [-1, 1], i, j, m: board, t }) +
+    dfs({ d: [1, -1], i, j, m: board, t }) -
     1;
   return Math.max(row, col, dRow, dCol) === boardSize ? t : 0;
 };
@@ -70,5 +70,5 @@ export const getInitialState = (boardSize: number): State => {
     for (let j = 0; j < boardSize; j++) row.push(0);
     board.push(row);
   }
-  return { board, turn: 'white', state: 'playing', winner: null };
+  return { board, state: 'playing', turn: 'white', winner: null };
 };

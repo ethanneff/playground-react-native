@@ -25,8 +25,8 @@ export const useNavScreenOptions = () => {
 
   const modalScreenOptions: StackNavigationOptions = {
     cardOverlayEnabled: true,
-    presentation: Platform.OS === 'web' ? 'card' : 'transparentModal',
     headerShown: false,
+    presentation: Platform.OS === 'web' ? 'card' : 'transparentModal',
     ...TransitionPresets.ModalFadeTransition,
   };
 
@@ -43,6 +43,8 @@ export const useNavScreenOptions = () => {
     ({ tabIcons, headerShown = false, titleShown = false }: TabScreenOptions) =>
       ({ route }: NavOptions): BottomTabNavigationOptions => ({
         headerShown,
+        tabBarActiveTintColor: colors.text.primaryA,
+        tabBarHideOnKeyboard: true,
         tabBarIcon: function tabBarIcon({ focused, size }) {
           const iconColor = focused ? 'primaryA' : 'tertiary';
           const emphasis = focused ? 'default' : 'low';
@@ -74,8 +76,6 @@ export const useNavScreenOptions = () => {
             </View>
           );
         },
-        tabBarHideOnKeyboard: true,
-        tabBarActiveTintColor: colors.text.primaryA,
         tabBarInactiveTintColor: colors.text.tertiary,
         tabBarShowLabel: false,
         tabBarStyle: {
@@ -90,10 +90,10 @@ export const useNavScreenOptions = () => {
   });
 
   return {
-    modalScreenOptions,
-    tabScreenOptions,
-    tabScreenListeners,
     bottomScreenOptions,
+    modalScreenOptions,
     rightScreenOptions,
+    tabScreenListeners,
+    tabScreenOptions,
   };
 };

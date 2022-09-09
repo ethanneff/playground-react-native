@@ -23,16 +23,16 @@ type Props = {
 const getInterpolate = (progress: Animated.Value) => ({
   bleed: {
     opacity: progress.interpolate({
+      extrapolate: 'clamp',
       inputRange: [0, 25, 50],
       outputRange: [0, 0, 1],
-      extrapolate: 'clamp',
     }),
   },
   fade: {
     opacity: progress.interpolate({
+      extrapolate: 'clamp',
       inputRange: [0, 25, 75],
       outputRange: [1, 1, 0],
-      extrapolate: 'clamp',
     }),
   },
   imageScale: {
@@ -58,8 +58,8 @@ export const SplashScreen = memo(function SplashScreenMemo({
   const smallest = useRootSelector(getSmallestDimension);
   const useNativeDriver = useDriver();
   const [state, setState] = useState({
-    progress: new Animated.Value(0),
     complete: false,
+    progress: new Animated.Value(0),
   });
   const width = smallest * 4;
   const { imageScale, fade, bleed } = getInterpolate(state.progress);
@@ -68,7 +68,7 @@ export const SplashScreen = memo(function SplashScreenMemo({
     { backgroundColor: primaryColor },
     fade,
   ];
-  const imageStyles = [{ width, height: width }, imageScale];
+  const imageStyles = [{ height: width, width }, imageScale];
   const childrenStyles = [{ flex: 1 }, bleed];
   const backgroundColorStyles = [
     StyleSheet.absoluteFill,
@@ -83,11 +83,11 @@ export const SplashScreen = memo(function SplashScreenMemo({
 
   useEffect(() => {
     Animated.timing(state.progress, {
-      toValue: 100,
-      duration,
-      useNativeDriver,
       delay,
+      duration,
       easing: Easing.in(Easing.cubic),
+      toValue: 100,
+      useNativeDriver,
     }).start(() => setState((p) => ({ ...p, complete: true })));
   }, [delay, duration, state.progress, useNativeDriver]);
 

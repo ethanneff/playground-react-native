@@ -30,7 +30,7 @@ export const CalendarHeader = memo(function CalendarHeader({
       <TouchableOpacity
         flex
         onPress={onTitlePress}
-        style={{ justifyContent: 'center', alignItems: 'center' }}
+        style={{ alignItems: 'center', justifyContent: 'center' }}
       >
         <Text
           center

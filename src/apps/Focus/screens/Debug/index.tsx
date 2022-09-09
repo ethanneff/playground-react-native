@@ -24,21 +24,21 @@ export const Debug = memo(function Debug() {
 
   const showToast = useCallback((e: unknown) => {
     Toast.show({
-      type: 'negative',
       props: {
-        title: 'Error',
         description: `${e}`,
+        title: 'Error',
       },
+      type: 'negative',
     });
   }, []);
 
   const addGoal = useCallback(async () => {
     try {
       const item: Goal = {
+        active: true,
         id: Math.random().toString(),
         name: new Date().toISOString(),
         uid,
-        active: true,
       };
       await Collections.goals.add(item);
     } catch (e) {
@@ -95,7 +95,6 @@ export const Debug = memo(function Debug() {
             data={data}
             invertTheme
             theme={{
-              scheme: 'google',
               base00: '#1d1f21',
               base01: '#282a2e',
               base02: '#373b41',
@@ -112,6 +111,7 @@ export const Debug = memo(function Debug() {
               base0D: '#3971ED',
               base0E: '#A36AC7',
               base0F: '#3971ED',
+              scheme: 'google',
             }}
           />
         </Collapsible>

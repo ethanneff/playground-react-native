@@ -20,7 +20,7 @@ export const getNewLocation = ({
   numOfSegments,
   location,
 }: GetNewLocation): number => {
-  const spins = getRandomRange({ min: minSpin, max: maxSpin }) * 360;
+  const spins = getRandomRange({ max: maxSpin, min: minSpin }) * 360;
   const winner = Math.floor(Math.random() * numOfSegments);
   const winnerSection = (winner * 360) / numOfSegments;
   return location + spins + winnerSection;

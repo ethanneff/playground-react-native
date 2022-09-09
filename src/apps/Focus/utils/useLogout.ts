@@ -8,11 +8,11 @@ export const useLogout = () => {
       await Firebase.auth().signOut();
     } catch (e) {
       Toast.show({
-        type: 'accent',
         props: {
-          title: 'Unable to log out',
           description: `${e}`,
+          title: 'Unable to log out',
         },
+        type: 'accent',
       });
       Firebase.crashlytics().log('unable to sign out');
     }

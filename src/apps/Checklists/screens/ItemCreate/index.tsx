@@ -7,7 +7,7 @@ import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { SuperAny } from '../../../../types/types';
 import { createChecklistItem } from '../../models';
 
-const initialState = { name: '', description: '' };
+const initialState = { description: '', name: '' };
 
 export default memo(function ChecklistItemCreate() {
   const { navigate } = useNavigation<SuperAny>();
@@ -26,13 +26,13 @@ export default memo(function ChecklistItemCreate() {
 
     dispatch(
       createChecklistItem({
-        name,
-        description,
-        completed: false,
         active: true,
-        createdAt: now,
-        id: v4(),
         checklistId: currentChecklist,
+        completed: false,
+        createdAt: now,
+        description,
+        id: v4(),
+        name,
         order: now,
         updatedAt: now,
         userId: '1',

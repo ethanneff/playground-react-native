@@ -10,20 +10,20 @@ export const Dpad = memo(function Dpad() {
   const colors = useColors();
   const size = 50;
   const box = {
-    width: size,
     height: size,
+    width: size,
   };
 
   const onPress = useCallback(
-    (payload: ColorChoice) => () => dispatch({ type: 'addColor', payload }),
+    (payload: ColorChoice) => () => dispatch({ payload, type: 'addColor' }),
     [dispatch],
   );
 
   return (
     <View
       style={{
-        position: 'absolute',
         bottom: size,
+        position: 'absolute',
         right: size,
         transform: [{ rotate: '45deg' }],
       }}

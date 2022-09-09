@@ -35,8 +35,8 @@ export const setActiveList = createAction('checklist/setActive')<string>();
 export const checklistActions = {
   createList,
   removeList,
-  updateList,
   setActiveList,
+  updateList,
 };
 
 /* SELECTORS */

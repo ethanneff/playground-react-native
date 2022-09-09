@@ -53,13 +53,13 @@ export const RecyclerFlatList = <T,>({
   onRef,
   isHorizontal,
   scrollViewProps = {
-    showsVerticalScrollIndicator: false,
     refreshControl: (
       <RefreshControl
         onRefresh={onRefetch}
         refreshing={refreshing || false}
       />
     ),
+    showsVerticalScrollIndicator: false,
   },
 }: RecyclerFlatListProps<T>) => {
   const [dataProvider, setDataProvider] = useState(

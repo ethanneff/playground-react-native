@@ -50,8 +50,8 @@ export const Landing = memo(function Playground() {
     >
       <View
         style={{
-          flex: 1,
           backgroundColor: colors.background.secondary,
+          flex: 1,
           paddingVertical: spacing(2),
         }}
       >
@@ -66,8 +66,8 @@ export const Landing = memo(function Playground() {
             />
             <FlatList
               contentContainerStyle={{
-                paddingHorizontal: spacing(4),
                 paddingBottom: spacing(2),
+                paddingHorizontal: spacing(4),
               }}
               data={landingRoutes.storybook}
               keyExtractor={keyExtractor}
@@ -86,8 +86,8 @@ export const Landing = memo(function Playground() {
             />
             <FlatList
               contentContainerStyle={{
-                paddingHorizontal: spacing(4),
                 paddingBottom: spacing(2),
+                paddingHorizontal: spacing(4),
               }}
               data={landingRoutes.features}
               keyExtractor={keyExtractor}
@@ -107,8 +107,8 @@ export const Landing = memo(function Playground() {
             />
             <FlatList
               contentContainerStyle={{
-                paddingHorizontal: spacing(4),
                 paddingBottom: spacing(2),
+                paddingHorizontal: spacing(4),
               }}
               data={landingRoutes.games}
               keyExtractor={keyExtractor}
@@ -127,8 +127,8 @@ export const Landing = memo(function Playground() {
             />
             <FlatList
               contentContainerStyle={{
-                paddingHorizontal: spacing(4),
                 paddingBottom: spacing(2),
+                paddingHorizontal: spacing(4),
               }}
               data={landingRoutes.creations}
               keyExtractor={keyExtractor}

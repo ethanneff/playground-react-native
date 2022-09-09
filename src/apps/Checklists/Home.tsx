@@ -94,10 +94,10 @@ export const Home = memo(function Checklists() {
         <TouchableOpacity
           onPress={onToggleLogin}
           style={{
-            position: 'absolute',
             bottom: 0,
-            right: 0,
             margin: spacing(4),
+            position: 'absolute',
+            right: 0,
           }}
         >
           <Icon

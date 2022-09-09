@@ -22,11 +22,11 @@ export const Tag = memo(function Tag({
       disabled={disabled}
       onPress={onPress}
       style={{
+        alignSelf: 'flex-start',
         backgroundColor: colors.tag[color],
         borderColor: colors.border.primaryA,
-        borderWidth: 1,
         borderRadius: spacing(2),
-        alignSelf: 'flex-start',
+        borderWidth: 1,
         paddingHorizontal: spacing(2),
         paddingVertical: spacing(1),
       }}

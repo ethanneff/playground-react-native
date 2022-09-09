@@ -16,15 +16,15 @@ type Props = {
 
 const today = new Date();
 const initialState = {
-  today,
   matrix: getCalendarMatrix(today),
   selected: undefined,
+  today,
 };
 
 const getState = (date: Date) => ({
-  today: date,
   matrix: getCalendarMatrix(date),
   selected: undefined,
+  today: date,
 });
 
 export const Calendar = memo(function Calendar({ hiddenDays }: Props) {

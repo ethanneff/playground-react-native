@@ -20,7 +20,7 @@ export const ItemDetail = memo(function ItemDetail() {
     if (!itemId || !parentItemId)
       throw new Error('missing listId or itemId on item detail screen');
     dispatch(removeItem(itemId));
-    dispatch(removeItemFromItem({ parentItemId, itemId }));
+    dispatch(removeItemFromItem({ itemId, parentItemId }));
     setDeleteModal(false);
     goBack();
   }, [dispatch, goBack, itemId, parentItemId]);
@@ -68,8 +68,8 @@ export const ItemDetail = memo(function ItemDetail() {
           {item.editable ? (
             <View
               style={{
-                flexDirection: 'row',
                 flex: 1,
+                flexDirection: 'row',
                 justifyContent: 'space-between',
               }}
             >

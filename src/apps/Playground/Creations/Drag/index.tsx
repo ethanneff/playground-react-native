@@ -45,7 +45,7 @@ export const Drag = memo(function PlaygroundDrag() {
   const colors = useColors();
   const dropShadow = useDropShadow();
   const useNativeDriver = useDriver();
-  const [canvas, setCanvas] = useState({ x: 0, y: 0, height: 0, width: 0 });
+  const [canvas, setCanvas] = useState({ height: 0, width: 0, x: 0, y: 0 });
   const initialPosition = { x: canvas.width / 2, y: canvas.height / 2 };
   const size = 30;
   const styles = StyleSheet.create({
@@ -66,6 +66,12 @@ export const Drag = memo(function PlaygroundDrag() {
   const ballPosition: Animated.ValueXY = new Animated.ValueXY(initialPosition);
   const panGesture: PanResponderInstance = PanResponder.create({
     onMoveShouldSetPanResponderCapture: () => true,
+    onPanResponderEnd: () => {
+      Animated.spring(ballPosition, {
+        toValue: initialPosition,
+        useNativeDriver,
+      }).start();
+    },
     onPanResponderMove: (_, gestureState) => {
       const toValue = getPosition(gestureState, initialPosition, size);
       Animated.spring(ballPosition, {
@@ -73,17 +79,11 @@ export const Drag = memo(function PlaygroundDrag() {
         useNativeDriver,
       }).start();
     },
-    onPanResponderEnd: () => {
-      Animated.spring(ballPosition, {
-        toValue: initialPosition,
-        useNativeDriver,
-      }).start();
-    },
   });
 
   const handleCanvas = useCallback((event: LayoutChangeEvent) => {
     const { x, y, height, width } = event.nativeEvent.layout;
-    setCanvas({ x, y, height, width });
+    setCanvas({ height, width, x, y });
   }, []);
 
   return (
@@ -99,11 +99,11 @@ export const Drag = memo(function PlaygroundDrag() {
         <Text
           center
           style={{
-            position: 'absolute',
             left: 0,
+            padding: spacing(2),
+            position: 'absolute',
             right: 0,
             top: 0,
-            padding: spacing(2),
           }}
           title="drag the circle"
           type="overline"

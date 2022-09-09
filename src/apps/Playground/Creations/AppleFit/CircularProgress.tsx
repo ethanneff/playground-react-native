@@ -20,9 +20,9 @@ export const CircularProgress = ({
   const progress = new Animated.Value(theta);
   const opacity = theta < PI;
   const spin = progress.interpolate({
+    extrapolate: 'clamp',
     inputRange: [PI, 2 * PI],
     outputRange: ['0rad', `${PI}rad`],
-    extrapolate: 'clamp',
   });
   const styles = StyleSheet.create({
     bottom: { transform: [{ rotate: '180deg' }] },

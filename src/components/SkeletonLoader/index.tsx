@@ -52,9 +52,9 @@ export const SkeletonLoader = ({
   useEffect(() => {
     Animated.loop(
       Animated.timing(value, {
-        toValue: 1,
         duration,
         easing: Easing.bezier(0.5, 0, 0.75, 1),
+        toValue: 1,
         useNativeDriver,
       }),
     ).start();

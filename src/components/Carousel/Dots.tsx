@@ -21,11 +21,11 @@ export const Dots = memo(function Dots({
   return (
     <View
       style={{
-        position: 'absolute',
-        flexDirection: 'row',
         bottom: 0,
-        width: '100%',
+        flexDirection: 'row',
         justifyContent: 'center',
+        position: 'absolute',
+        width: '100%',
       }}
     >
       {slides.map((slide, index) => {
@@ -34,15 +34,15 @@ export const Dots = memo(function Dots({
             key={slide.id}
             onPress={onDotPress(index)}
             style={{
-              marginHorizontal: spacing(1),
-              marginBottom: spacing(2),
-              width: dotSize,
-              height: dotSize,
-              borderRadius: dotSize,
               backgroundColor:
                 activeIndex === index
                   ? colors.text.secondary
                   : colors.text.disabled,
+              borderRadius: dotSize,
+              height: dotSize,
+              marginBottom: spacing(2),
+              marginHorizontal: spacing(1),
+              width: dotSize,
             }}
           />
         );

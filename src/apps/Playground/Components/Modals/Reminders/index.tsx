@@ -24,16 +24,16 @@ type Props = {
 
 export const Reminders = ({ onComplete }: Props) => {
   const [form, setForm] = useState<State>({
-    type: 'one time',
-    reminders: [],
     modals: {
-      customDate: false,
       createReminder: true,
+      customDate: false,
       location: false,
     },
+    reminders: [],
     selected: {
       location: undefined,
     },
+    type: 'one time',
   });
 
   const handleOneTimeReminder = useCallback(
@@ -54,9 +54,9 @@ export const Reminders = ({ onComplete }: Props) => {
         reminders: [
           ...prev.reminders,
           {
-            id: v4(),
             date: date.valueOf(),
             format: date.format('MMM DD, YYYY hh:mm A'),
+            id: v4(),
           },
         ],
       }));

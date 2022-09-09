@@ -42,7 +42,7 @@ export default memo(function Checklist() {
 
   const renderItem = useCallback<ListRenderItem<ChecklistItem>>(
     ({ item }) => (
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <View style={{ alignItems: 'center', flexDirection: 'row' }}>
         <Icon
           color="positive"
           name="checkbox-marked-circle"

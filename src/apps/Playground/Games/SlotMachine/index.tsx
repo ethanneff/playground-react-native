@@ -17,10 +17,10 @@ const returnPercentage = (
 ).toFixed(2);
 
 const getInitialState = () => ({
-  tokens: 14,
-  spinning: false,
   active: reels.map(() => 0),
   reels: getRandomReelArrays(reels),
+  spinning: false,
+  tokens: 14,
 });
 
 export const SlotMachine = memo(function PlaygroundSlotMachine() {
@@ -54,26 +54,26 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
         />
         <View
           style={{
+            alignItems: 'center',
             flex: 1,
             justifyContent: 'center',
-            alignItems: 'center',
           }}
         />
         <Slots
           combinations={{
-            '🍓🍓🍓': 200,
             '🍇🍇🍇': 100,
-            '🍉🍉🍉': 100,
             '🍉🍉🍇': 100,
-            '🥭🥭🥭': 18,
-            '🥭🥭🍇': 18,
-            '🍏🍏🍏': 14,
-            '🍏🍏🍇': 14,
-            '🍊🍊🍊': 10,
+            '🍉🍉🍉': 100,
             '🍊🍊🍇': 10,
-            '🍒🍒🍒': 8,
-            '🍒🍒': 5,
+            '🍊🍊🍊': 10,
+            '🍏🍏🍇': 14,
+            '🍏🍏🍏': 14,
             '🍒': 2,
+            '🍒🍒': 5,
+            '🍒🍒🍒': 8,
+            '🍓🍓🍓': 200,
+            '🥭🥭🍇': 18,
+            '🥭🥭🥭': 18,
           }}
           credits={20}
           randomize

@@ -3,7 +3,7 @@ import { Modal, Screen, Text } from '../../components';
 import { useAdminNavBack } from '../../features';
 import { List } from './List';
 
-const initialState = { settings: false, profile: false };
+const initialState = { profile: false, settings: false };
 
 export const Home = memo(function CantHurtMeMain() {
   const [showModal, setShowModal] = useState(initialState);

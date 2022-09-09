@@ -27,9 +27,9 @@ export const deleteChatMessage = createAction('chat/delete')<string>();
 export const typeChatMessage = createAction('chat/type')<string>();
 export const chatMessageActions = {
   createChatMessage,
-  updateChatMessage,
   deleteChatMessage,
   typeChatMessage,
+  updateChatMessage,
 };
 
 /* SELECTORS */
@@ -48,8 +48,8 @@ export const getChatSubmittable = (state: RootState): boolean =>
 
 /* REDUCER */
 const initialState: ChatMessageReducer = {
-  textField: '',
   items: {},
+  textField: '',
 };
 export const chatMessageReducer = (
   state: ChatMessageReducer = initialState,
@@ -61,11 +61,11 @@ export const chatMessageReducer = (
     case getType(createChatMessage):
       return {
         ...state,
-        textField: '',
         items: {
           ...state.items,
           [action.payload.id]: action.payload,
         },
+        textField: '',
       };
     case getType(updateChatMessage):
       return {

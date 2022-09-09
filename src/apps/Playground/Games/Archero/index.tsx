@@ -25,9 +25,9 @@ export const Archero = memo(function Archero() {
   const useNativeDriver = useDriver();
   const timer = useRef(false);
   const interval = useRef<ReturnType<typeof setInterval> | null>(null);
-  const gesture = useRef({ x0: 0, y0: 0, dx: 0, dy: 0 });
+  const gesture = useRef({ dx: 0, dy: 0, x0: 0, y0: 0 });
   const window = useRootSelector((state) => state.dimension.window);
-  const [dimensions, setDimensions] = useState({ width: 1000, height: 1000 });
+  const [dimensions, setDimensions] = useState({ height: 1000, width: 1000 });
   const { width, height } = dimensions;
   const smallest = width > height ? height : width;
   const joystickSize = smallest / 3;
@@ -112,24 +112,24 @@ export const Archero = memo(function Archero() {
   };
 
   const panGesture: PanResponderInstance = PanResponder.create({
-    onStartShouldSetPanResponder: () => true,
     onMoveShouldSetPanResponderCapture: () => true,
-    onPanResponderStart: (_, g) => {
-      timer.current = true;
-      gesture.current = { x0: g.x0, y0: g.y0, dx: g.dx, dy: g.dy };
-      onUpdate();
-    },
     onPanResponderMove: (_, g) => {
-      gesture.current = { x0: g.x0, y0: g.y0, dx: g.dx, dy: g.dy };
+      gesture.current = { dx: g.dx, dy: g.dy, x0: g.x0, y0: g.y0 };
     },
     onPanResponderRelease: () => {
       timer.current = false;
     },
+    onPanResponderStart: (_, g) => {
+      timer.current = true;
+      gesture.current = { dx: g.dx, dy: g.dy, x0: g.x0, y0: g.y0 };
+      onUpdate();
+    },
+    onStartShouldSetPanResponder: () => true,
   });
 
   const onLayout = useCallback((event: LayoutChangeEvent) => {
     const { layout } = event.nativeEvent;
-    setDimensions({ width: layout.width, height: layout.height });
+    setDimensions({ height: layout.height, width: layout.width });
   }, []);
 
   return (
@@ -139,16 +139,16 @@ export const Archero = memo(function Archero() {
     >
       <View
         onLayout={onLayout}
-        style={{ flex: 1, backgroundColor: colors.background.tertiary }}
+        style={{ backgroundColor: colors.background.tertiary, flex: 1 }}
         {...panGesture.panHandlers} // eslint-disable-line react/jsx-props-no-spreading
       >
         <Animated.View
           style={[
             character.getLayout(),
             {
-              width: charSize,
-              height: charSize,
               backgroundColor: colors.background.accent,
+              height: charSize,
+              width: charSize,
             },
           ]}
         />
@@ -156,36 +156,36 @@ export const Archero = memo(function Archero() {
           style={[
             joystick.getLayout(),
             {
-              justifyContent: 'center',
               alignItems: 'center',
-              borderRadius: 500,
-              width: joystickSize,
-              height: joystickSize,
               backgroundColor: colors.overlay.light,
+              borderRadius: 500,
+              height: joystickSize,
+              justifyContent: 'center',
+              width: joystickSize,
             },
           ]}
         >
           <View
             style={{
-              justifyContent: 'center',
               alignItems: 'center',
-              borderRadius: 500,
-              width: thumbSize,
-              height: thumbSize,
               backgroundColor: colors.overlay.light,
+              borderRadius: 500,
+              height: thumbSize,
+              justifyContent: 'center',
+              width: thumbSize,
             }}
           >
             <Animated.View
               style={[
                 thumb.getLayout(),
                 {
-                  borderRadius: 500,
-                  width: thumbSize,
-                  height: thumbSize,
                   backgroundColor: colorWithOpacity(
                     colors.background.accent,
                     0.8,
                   ),
+                  borderRadius: 500,
+                  height: thumbSize,
+                  width: thumbSize,
                 },
               ]}
             />

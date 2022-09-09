@@ -22,9 +22,9 @@ export const Board = memo(function Board({
   const getItemId = useCallback((item: string) => item, []);
   const getItemLayout = useCallback(
     (_: string[] | null | undefined, index: number) => ({
+      index,
       length: listSize,
       offset: listSize * index,
-      index,
     }),
     [listSize],
   );

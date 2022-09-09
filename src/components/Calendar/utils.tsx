@@ -44,10 +44,10 @@ const createDayObj = ({
   current = false,
   header = false,
 }: DayObject): Day => ({
-  id: String(id),
-  display: String(display),
   current,
+  display: String(display),
   header,
+  id: String(id),
 });
 
 const generateCalendarMatrix = (date: Date) => {
@@ -60,7 +60,7 @@ const generateCalendarMatrix = (date: Date) => {
   const calendarMatrix: CalendarMatrix = [];
   calendarMatrix.push(
     days.map((day) =>
-      createDayObj({ id: day, display: day, current: false, header: true }),
+      createDayObj({ current: false, display: day, header: true, id: day }),
     ),
   );
   for (let row = 1; row < 7; row++) {
@@ -69,18 +69,18 @@ const generateCalendarMatrix = (date: Date) => {
       calendarMatrix[row][col] =
         row === 1 && col < firstDay
           ? createDayObj({
-              id: addDays(addMonths(date, -1), prevDayCounter).valueOf(),
               display: prevDayCounter++,
+              id: addDays(addMonths(date, -1), prevDayCounter).valueOf(),
             })
           : row > 1 && dayCounter > maxDays
           ? createDayObj({
-              id: addDays(addMonths(date, 1), nextDayCounter).valueOf(),
               display: nextDayCounter++,
+              id: addDays(addMonths(date, 1), nextDayCounter).valueOf(),
             })
           : createDayObj({
-              id: addDays(addMonths(date, 0), dayCounter).valueOf(),
-              display: dayCounter++,
               current: true,
+              display: dayCounter++,
+              id: addDays(addMonths(date, 0), dayCounter).valueOf(),
             });
   }
   return calendarMatrix;

@@ -14,7 +14,7 @@ export const FasterImage = memo(function FasterImage({
   width,
   height,
 }: Props) {
-  const containerStyle = { width, height };
+  const containerStyle = { height, width };
   return (
     <FastImage
       onLoad={onImageLoad}

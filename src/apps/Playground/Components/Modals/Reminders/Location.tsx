@@ -17,18 +17,18 @@ export const Location = memo(function Location({ onPress }: Props) {
   const locations: LocationItem[] = [
     {
       id: v4(),
+      subtitle,
       title: 'Home',
-      subtitle,
     },
     {
       id: v4(),
+      subtitle,
       title: 'Work',
-      subtitle,
     },
     {
       id: v4(),
-      title: 'Gym',
       subtitle,
+      title: 'Gym',
     },
     {
       id: v4(),

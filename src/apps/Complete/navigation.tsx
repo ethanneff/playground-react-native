@@ -27,13 +27,13 @@ import {
 const noHeader: StackNavigationOptions = { headerShown: false };
 
 const tabIcons: TabIcons = {
-  plan: { focused: 'pencil-plus-outline', unFocused: 'pencil-plus-outline' },
+  account: { focused: 'account', unFocused: 'account' },
   implement: {
     focused: 'checkbox-multiple-marked-outline',
     unFocused: 'checkbox-multiple-marked-outline',
   },
+  plan: { focused: 'pencil-plus-outline', unFocused: 'pencil-plus-outline' },
   reflect: { focused: 'finance', unFocused: 'finance' },
-  account: { focused: 'account', unFocused: 'account' },
 };
 
 const ImplementStack = createStackNavigator<ImplementStackRoutes>();

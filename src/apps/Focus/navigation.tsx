@@ -25,17 +25,17 @@ const UnAuthStack = createStackNavigator<UnAuthStackRoutes>();
 const TabBar = createBottomTabNavigator<HomeTabRoutes>();
 
 const tabIcons: TabIcons = {
-  tracker: {
-    focused: 'format-list-bulleted',
-    unFocused: 'format-list-bulleted',
+  account: {
+    focused: 'account-outline',
+    unFocused: 'account-outline',
   },
   progression: {
     focused: 'calendar-month-outline',
     unFocused: 'calendar-month-outline',
   },
-  account: {
-    focused: 'account-outline',
-    unFocused: 'account-outline',
+  tracker: {
+    focused: 'format-list-bulleted',
+    unFocused: 'format-list-bulleted',
   },
 };
 

@@ -11,10 +11,10 @@ export const Landing = memo(function PortfolioLanding() {
   const navPortfolioLogin = useCallback(() => navigate('login'), [navigate]);
 
   const slides: CarouselSlide[] = [
-    { id: '1', title: 'hello', backgroundColor: colors.background.accent },
-    { id: '2', title: 'bob', backgroundColor: colors.background.warning },
-    { id: '3', title: 'steve', backgroundColor: colors.background.positive },
-    { id: '4', title: 'jill', backgroundColor: colors.background.negative },
+    { backgroundColor: colors.background.accent, id: '1', title: 'hello' },
+    { backgroundColor: colors.background.warning, id: '2', title: 'bob' },
+    { backgroundColor: colors.background.positive, id: '3', title: 'steve' },
+    { backgroundColor: colors.background.negative, id: '4', title: 'jill' },
   ];
   return (
     <Screen

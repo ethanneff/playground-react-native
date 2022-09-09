@@ -45,8 +45,8 @@ export const List = memo(function List({
         <View
           style={{
             flex: 1,
-            marginRight: index % 2 === 0 ? spacing(2) : 0,
             marginLeft: index % 2 === 0 ? 0 : spacing(2),
+            marginRight: index % 2 === 0 ? spacing(2) : 0,
           }}
         >
           <Card

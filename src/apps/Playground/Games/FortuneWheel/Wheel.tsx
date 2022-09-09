@@ -61,8 +61,8 @@ export const Wheel = memo(function WheelMemo({
       .outerRadius(radius)
       .innerRadius(innerRadius);
     return {
-      path: instance(arc),
       centroid: instance.centroid(arc),
+      path: instance(arc),
       segment: segments[index],
     };
   });
@@ -70,26 +70,26 @@ export const Wheel = memo(function WheelMemo({
   const onSpinComplete = useCallback(() => {
     spinning.current = false;
     const winnerIndex = getWinnerIndex({
+      angleOfSegment,
       location: location.current,
       numOfSegments,
-      angleOfSegment,
     });
     onComplete(segments[winnerIndex]);
   }, [angleOfSegment, numOfSegments, onComplete, segments]);
 
   const spin = useCallback(() => {
     const newLocation = getNewLocation({
-      minSpin,
-      maxSpin,
-      numOfSegments,
       location: location.current,
+      maxSpin,
+      minSpin,
+      numOfSegments,
     });
     location.current = newLocation;
     spinning.current = true;
     Animated.timing(angle, {
-      toValue: newLocation,
       duration: spinSpeed,
       easing: Easing.inOut(Easing.sin),
+      toValue: newLocation,
       useNativeDriver,
     }).start(onSpinComplete);
   }, [
@@ -109,7 +109,7 @@ export const Wheel = memo(function WheelMemo({
 
   const bounce = useCallback(
     (toValue: number) => {
-      const config = { toValue, duration: bounceSpeed, useNativeDriver };
+      const config = { duration: bounceSpeed, toValue, useNativeDriver };
       Animated.timing(yPosition, config).start(() =>
         bounce(toValue === 1 ? -1 : 1),
       );
@@ -127,6 +127,11 @@ export const Wheel = memo(function WheelMemo({
     <TouchableOpacity onPress={onPress}>
       <Animated.View
         style={{
+          alignItems: 'center',
+          backgroundColor: background,
+          borderRadius: size,
+          height: size,
+          marginTop: knobOffset,
           transform: [
             {
               translateY: yPosition.interpolate({
@@ -135,21 +140,16 @@ export const Wheel = memo(function WheelMemo({
               }),
             },
           ],
-          backgroundColor: background,
           width: size,
-          height: size,
-          borderRadius: size,
-          alignItems: 'center',
-          marginTop: knobOffset,
           ...dropShadow(3),
         }}
       >
         <Svg
           style={{
+            height: knobSize,
             marginTop: -knobOffset,
             position: 'absolute',
             width: knobSize,
-            height: knobSize,
             ...dropShadow(6),
           }}
         >
@@ -164,7 +164,6 @@ export const Wheel = memo(function WheelMemo({
         </Svg>
         <Animated.View
           style={{
-            width: size,
             height: size,
             transform: [
               {
@@ -174,6 +173,7 @@ export const Wheel = memo(function WheelMemo({
                 }),
               },
             ],
+            width: size,
           }}
         >
           <Svg

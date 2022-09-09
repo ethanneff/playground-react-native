@@ -29,9 +29,9 @@ export const Collapsible = ({ children, title }: Props) => {
   const handlePress = useCallback(() => {
     const toValue = open ? 0 : 1;
     Animated.timing(animation, {
-      toValue,
       duration: 200,
       easing: Easing.quad,
+      toValue,
       useNativeDriver,
     }).start();
     setOpen(Boolean(toValue));
@@ -43,10 +43,10 @@ export const Collapsible = ({ children, title }: Props) => {
         <View
           row
           style={{
+            backgroundColor,
+            justifyContent: 'space-between',
             paddingHorizontal: spacing(4),
             paddingVertical: spacing(2),
-            justifyContent: 'space-between',
-            backgroundColor,
           }}
         >
           <Text

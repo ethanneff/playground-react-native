@@ -35,25 +35,25 @@ export const ListItem = memo(function ListItem({
   return (
     <View
       style={{
-        width: '100%',
         overflow: showFooter ? 'visible' : 'hidden',
         paddingHorizontal: spacing(4),
+        width: '100%',
       }}
     >
       <View
         style={{
-          flex: 1,
-          marginTop: showHeader ? spacing(4) : spacing(0),
-          paddingBottom: showFooter ? spacing(2) : spacing(0),
           backgroundColor: colors.background.primaryA,
-          borderTopRightRadius: showHeader ? spacing(4) : 0,
-          borderTopLeftRadius: showHeader ? spacing(4) : 0,
-          borderBottomRightRadius: showFooter ? spacing(4) : 0,
           borderBottomLeftRadius: showFooter ? spacing(4) : 0,
+          borderBottomRightRadius: showFooter ? spacing(4) : 0,
           borderColor: currentItem
             ? colors.background.accent
             : colors.background.primaryA,
           borderLeftWidth: spacing(1),
+          borderTopLeftRadius: showHeader ? spacing(4) : 0,
+          borderTopRightRadius: showHeader ? spacing(4) : 0,
+          flex: 1,
+          marginTop: showHeader ? spacing(4) : spacing(0),
+          paddingBottom: showFooter ? spacing(2) : spacing(0),
           ...dropShadow(2),
         }}
       >

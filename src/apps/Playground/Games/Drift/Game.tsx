@@ -11,7 +11,7 @@ export const Game = memo(function Game() {
   return (
     <View
       onLayout={onLayout}
-      style={{ flex: 1, backgroundColor: colors.background.secondary }}
+      style={{ backgroundColor: colors.background.secondary, flex: 1 }}
     >
       {layout ? (
         <>

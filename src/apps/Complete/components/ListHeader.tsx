@@ -31,19 +31,19 @@ export const ListHeader = memo(function ListHeader({
   }, []);
 
   const onDetail = useCallback(() => {
-    dispatch(navItemDetails({ parentItemId, itemId }));
+    dispatch(navItemDetails({ itemId, parentItemId }));
     navigate('item-detail');
   }, [dispatch, itemId, navigate, parentItemId]);
 
   const onClose = useCallback(() => Keyboard.dismiss(), []);
 
   const icons: TextInputIcon[] = [
-    { name: 'close', onPress: onClose, focus: true, reset: true },
+    { focus: true, name: 'close', onPress: onClose, reset: true },
     {
-      name: 'send',
-      onPress: onSave,
       color: 'accent',
       focus: true,
+      name: 'send',
+      onPress: onSave,
       required: true,
     },
     { name: 'dots-horizontal', onPress: onDetail },
@@ -52,8 +52,8 @@ export const ListHeader = memo(function ListHeader({
   return (
     <View
       style={{
-        flexDirection: 'row',
         alignItems: 'center',
+        flexDirection: 'row',
         justifyContent: 'space-between',
       }}
     >

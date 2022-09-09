@@ -58,8 +58,8 @@ export const Account = memo(function Account() {
           />
           <View
             style={{
-              flexDirection: 'row',
               alignItems: 'center',
+              flexDirection: 'row',
               justifyContent: 'space-between',
             }}
           >

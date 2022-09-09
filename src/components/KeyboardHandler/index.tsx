@@ -21,7 +21,7 @@ export const KeyboardHandler = memo(function KeyboardHandler({
       onPress={onDismissKeyboard}
       style={{ height: '100%' }}
     >
-      <View style={{ flex: 1, backgroundColor }}>{children}</View>
+      <View style={{ backgroundColor, flex: 1 }}>{children}</View>
     </TouchableWithoutFeedback>
   );
 });

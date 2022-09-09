@@ -150,10 +150,10 @@ export const TextInput = memo(function TextInput({
   const colors = useColors();
   const backColor = colors.background[backgroundColor || 'primaryA'];
   const { fontSize, textColor } = getFontStyles({
-    emphasis,
-    type,
     color,
     colors,
+    emphasis,
+    type,
   });
 
   const textInput = useRef<TextInputRef>(null);
@@ -220,7 +220,6 @@ export const TextInput = memo(function TextInput({
       ) : null}
       <View
         style={{
-          flexDirection: 'row',
           alignItems: 'center',
           backgroundColor: backColor,
           borderBottomColor: error
@@ -233,6 +232,7 @@ export const TextInput = memo(function TextInput({
           borderRightColor: backColor,
           borderTopColor: backColor,
           borderWidth: 2,
+          flexDirection: 'row',
         }}
       >
         <GestureTextInput

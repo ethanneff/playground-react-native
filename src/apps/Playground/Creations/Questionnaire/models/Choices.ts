@@ -17,7 +17,7 @@ export const createChoice = createAction('choices/CREATE')<Choice>();
 export const updateChoice = createAction('choices/UPDATE')<Choice>();
 export const removeChoice = createAction('choices/REMOVE')<string>();
 
-export const choicesActions = { createChoice, updateChoice, removeChoice };
+export const choicesActions = { createChoice, removeChoice, updateChoice };
 
 /* REDUCERS */
 export const choicesInitialState: Choices = {

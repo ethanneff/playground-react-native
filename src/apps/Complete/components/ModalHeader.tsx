@@ -18,8 +18,8 @@ export const ModalHeader = memo(function ModalHeader({
   return (
     <View
       style={{
-        flexDirection: 'row',
         alignItems: 'center',
+        flexDirection: 'row',
         marginBottom: spacing(4),
       }}
     >

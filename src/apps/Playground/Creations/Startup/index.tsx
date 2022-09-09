@@ -28,15 +28,15 @@ type Form = {
 };
 
 const initialState: Form = {
-  launched: false,
-  launchWeeks: '',
-  usersTalkedTo: '',
-  usersLearnedFrom: '',
-  topGoals: '',
-  primaryMetric: '',
   biggestObstacle: '',
+  launchWeeks: '',
+  launched: false,
   morale: '',
+  primaryMetric: '',
   targetCustomer: '',
+  topGoals: '',
+  usersLearnedFrom: '',
+  usersTalkedTo: '',
 };
 
 export const Startup = memo(function PlaygroundStartup() {

@@ -51,7 +51,7 @@ export const getBoard = (size: number): BoardContext => {
   matrix[center][center] = 1;
   matrix[food[0]][food[1]] = 2;
 
-  return { matrix, head, tail, food, state: 'ok' };
+  return { food, head, matrix, state: 'ok', tail };
 };
 
 const getNext = (

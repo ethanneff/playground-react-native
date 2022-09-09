@@ -9,13 +9,13 @@ const useSegments = () => {
   const colors = useColors();
   return useMemo(
     () => [
-      { display: '1', value: '1', color: colors.background.positive },
-      { display: '2', value: '2', color: colors.background.negative },
-      { display: '3', value: '3', color: colors.background.secondary },
-      { display: '4', value: '4', color: colors.background.warning },
-      { display: '5', value: '5', color: colors.background.tertiary },
-      { display: '6', value: '6', color: colors.background.accent },
-      { display: '7', value: '7', color: colors.background.primaryA },
+      { color: colors.background.positive, display: '1', value: '1' },
+      { color: colors.background.negative, display: '2', value: '2' },
+      { color: colors.background.secondary, display: '3', value: '3' },
+      { color: colors.background.warning, display: '4', value: '4' },
+      { color: colors.background.tertiary, display: '5', value: '5' },
+      { color: colors.background.accent, display: '6', value: '6' },
+      { color: colors.background.primaryA, display: '7', value: '7' },
     ],
     [
       colors.background.accent,

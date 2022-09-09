@@ -20,9 +20,9 @@ export const Inputs = memo(function Inputs() {
   const [form, setForm] = useState({
     email: '',
     error: '',
+    loading: false,
     name: '',
     password: '',
-    loading: false,
   });
 
   const handleChange = useCallback(

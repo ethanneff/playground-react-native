@@ -22,8 +22,8 @@ export const ForgotPassword = memo(function PortfolioForgotPassword() {
     >
       <ScrollView
         style={{
-          padding: spacing(4),
           backgroundColor: colors.background.secondary,
+          padding: spacing(4),
         }}
       >
         <Input

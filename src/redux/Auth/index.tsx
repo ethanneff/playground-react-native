@@ -48,8 +48,8 @@ export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
       url: 'https://reqres.in/api/register',
     });
     const registerScheme = z.object({
-      token: z.string(),
       id: z.number(),
+      token: z.string(),
     });
     registerScheme.parse(data);
     dispatch(loginSuccess(data.token));
@@ -71,13 +71,13 @@ export const onLogout = (): RootThunkAction<void> => (dispatch, getState) => {
 };
 
 export const authActions = {
+  loginFailure,
   loginRequest,
   loginSuccess,
-  loginFailure,
+  logout,
+  registerFailure,
   registerRequest,
   registerSuccess,
-  registerFailure,
-  logout,
 };
 
 /* SELECTORS */

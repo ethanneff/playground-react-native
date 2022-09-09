@@ -90,12 +90,12 @@ export const Home = memo(function Home() {
       </ScrollView>
       <View
         style={{
-          position: 'absolute',
           bottom: 0,
-          right: 0,
           flexDirection: 'row',
-          margin: spacing(4),
           justifyContent: 'center',
+          margin: spacing(4),
+          position: 'absolute',
+          right: 0,
         }}
       >
         <TouchableOpacity

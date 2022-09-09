@@ -78,7 +78,6 @@ const SwipeCard = memo(function SwipeCard({
   );
 
   const panResponder = PanResponder.create({
-    onStartShouldSetPanResponder: () => true,
     onMoveShouldSetPanResponder: (_, gesture) =>
       Math.abs(gesture.dx) > touchThreshold ||
       Math.abs(gesture.dy) > touchThreshold,
@@ -98,6 +97,7 @@ const SwipeCard = memo(function SwipeCard({
         useNativeDriver,
       }).start();
     },
+    onStartShouldSetPanResponder: () => true,
   });
 
   return (
@@ -105,13 +105,13 @@ const SwipeCard = memo(function SwipeCard({
       onLayout={onLayout}
       {...panResponder.panHandlers} // eslint-disable-line react/jsx-props-no-spreading
       style={{
+        backgroundColor: colors.background.primaryA,
+        borderColor: colors.border.accent,
+        borderRadius: spacing(1),
+        height,
+        left: position.x,
         position: 'absolute',
         width: '100%',
-        left: position.x,
-        height,
-        backgroundColor: colors.background.primaryA,
-        borderRadius: spacing(1),
-        borderColor: colors.border.accent,
         ...dropShadow(4),
       }}
     >
@@ -124,17 +124,17 @@ const SwipeCard = memo(function SwipeCard({
             <Image
               source={image}
               style={{
+                alignSelf: 'center',
                 height: imageHeight,
                 width: imageHeight,
-                alignSelf: 'center',
               }}
             />
           ) : null}
           <View style={{ flex: 1, padding: spacing(2) }}>
             <View
               style={{
-                flexDirection: 'row',
                 alignItems: 'center',
+                flexDirection: 'row',
               }}
             >
               <Icon
@@ -168,64 +168,64 @@ const SwipeCard = memo(function SwipeCard({
 
 const initialItems: SwipeItem[] = [
   {
-    id: v4(),
-    image: null,
-    title: 'Price Movement',
-    icon: 'arrow-bottom-right',
-    date: dayjs().subtract(5, 'minute'),
     body: 'BABA is down 4.41% to $204.433.',
     button: 'View BABA',
-    onPress: () => undefined,
-  },
-  {
+    date: dayjs().subtract(5, 'minute'),
+    icon: 'arrow-bottom-right',
     id: v4(),
     image: null,
-    title: 'Marketwatch',
-    icon: 'file-document-edit-outline',
-    date: dayjs().subtract(11, 'hour'),
+    onPress: () => undefined,
+    title: 'Price Movement',
+  },
+  {
     body: 'Disney heiress Abigail Disney and other superrich American demand the 1% pay higher taxes than other Americans.',
     button: 'View Article',
-    onPress: () => undefined,
-  },
-  {
+    date: dayjs().subtract(11, 'hour'),
+    icon: 'file-document-edit-outline',
     id: v4(),
     image: null,
-    title: 'Reuters',
-    icon: 'book',
-    date: dayjs().subtract(1, 'day'),
+    onPress: () => undefined,
+    title: 'Marketwatch',
+  },
+  {
     body: "Amazon files motion to halt Microsoft's work on Pentagon's JEDI contract",
     button: 'View Article',
-    onPress: () => undefined,
-  },
-  {
-    id: v4(),
-    image: require('./placeholder.png'),
-    title: 'Congratulations',
-    icon: 'star-outline',
-    date: dayjs(),
-    body: "You're invited! Start trading Bitcoin & Ethereum",
-    button: 'Get Started',
-    onPress: () => undefined,
-  },
-  {
-    id: v4(),
-    image: require('./placeholder.png'),
-    title: 'Enjoying robinhood?',
-    icon: 'star-outline',
-    date: dayjs(),
-    body: "Invite your friends! When they sign up, you'll both get a free stock",
-    button: 'Invite friends',
-    onPress: () => undefined,
-  },
-  {
+    date: dayjs().subtract(1, 'day'),
+    icon: 'book',
     id: v4(),
     image: null,
-    title: 'Introducing cards',
-    icon: 'lightbulb-outline',
+    onPress: () => undefined,
+    title: 'Reuters',
+  },
+  {
+    body: "You're invited! Start trading Bitcoin & Ethereum",
+    button: 'Get Started',
     date: dayjs(),
+    icon: 'star-outline',
+    id: v4(),
+    image: require('./placeholder.png'),
+    onPress: () => undefined,
+    title: 'Congratulations',
+  },
+  {
+    body: "Invite your friends! When they sign up, you'll both get a free stock",
+    button: 'Invite friends',
+    date: dayjs(),
+    icon: 'star-outline',
+    id: v4(),
+    image: require('./placeholder.png'),
+    onPress: () => undefined,
+    title: 'Enjoying robinhood?',
+  },
+  {
     body: 'Swipe through cards to see your personalized notifications and news stories.',
     button: 'Swipe to dismiss',
+    date: dayjs(),
+    icon: 'lightbulb-outline',
+    id: v4(),
+    image: null,
     onPress: () => undefined,
+    title: 'Introducing cards',
   },
 ];
 
@@ -241,24 +241,24 @@ const Badge = memo(function Badge({ count, percent }: BadgeProps) {
   return (
     <View
       style={{
+        alignItems: 'center',
+        height: size,
+        justifyContent: 'center',
+        margin: spacing(1),
         position: 'absolute',
         right: 0,
         width: size,
-        height: size,
-        margin: spacing(1),
         zIndex: count * 10,
-        alignItems: 'center',
-        justifyContent: 'center',
       }}
     >
       <View
         style={{
-          width: badgeSize,
-          height: badgeSize,
-          borderRadius: size,
-          backgroundColor: colors.background.negative,
           alignItems: 'center',
+          backgroundColor: colors.background.negative,
+          borderRadius: size,
+          height: badgeSize,
           justifyContent: 'center',
+          width: badgeSize,
         }}
       >
         <Text
@@ -288,8 +288,8 @@ const SwipeCards = memo(function SwipeCardList({
   const onSwipeComplete = useCallback(() => {
     setFeed((state) => ({
       ...state,
-      percent: 1,
       items: state.items.filter((_, i) => i !== state.items.length - 1),
+      percent: 1,
     }));
   }, []);
 
@@ -325,7 +325,7 @@ const ImagePlaceholder = memo(function ImagePlaceholder() {
     <Card noPadding>
       <Image
         source={require('./placeholder.png')}
-        style={{ width: '100%', height: 100, borderRadius: 4 }}
+        style={{ borderRadius: 4, height: 100, width: '100%' }}
       />
     </Card>
   );
@@ -343,8 +343,8 @@ export const SwipeFeed = memo(function SwipeFeed() {
     >
       <ScrollView
         style={{
-          padding: spacing(4),
           backgroundColor: colors.background.secondary,
+          padding: spacing(4),
         }}
       >
         <ImagePlaceholder />

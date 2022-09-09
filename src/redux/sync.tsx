@@ -14,8 +14,8 @@ type ReduxWhitelist = { [key in RootActionTypes]?: 1 };
 const reduxWhiteList: ReduxWhitelist = {
   'complete/item/createItem': 1,
   'complete/item/updateItem': 1,
-  'sync/download': 1,
   'device/LOAD': 1,
+  'sync/download': 1,
 };
 
 type Queue = string[]; // TODO: better typing with {type, payload}
@@ -27,25 +27,25 @@ type SyncQueue = {
 };
 
 const syncQueue: SyncQueue = {
-  key: '@syncQuery',
   cache: [],
-  set: async (value) => {
+  get: async () => {
     try {
-      const combined = [...syncQueue.cache, ...value];
-      const stringify = JSON.stringify(combined);
-      syncQueue.cache = combined;
-      await Storage.setItem(syncQueue.key, stringify);
+      const get = await Storage.getItem(syncQueue.key);
+      const parse = get === null ? [] : JSON.parse(get || '');
+      syncQueue.cache = [...syncQueue.cache, ...parse];
       return syncQueue.cache;
     } catch (e) {
       if (e instanceof Error) throw new Error(e.message);
       return [];
     }
   },
-  get: async () => {
+  key: '@syncQuery',
+  set: async (value) => {
     try {
-      const get = await Storage.getItem(syncQueue.key);
-      const parse = get === null ? [] : JSON.parse(get || '');
-      syncQueue.cache = [...syncQueue.cache, ...parse];
+      const combined = [...syncQueue.cache, ...value];
+      const stringify = JSON.stringify(combined);
+      syncQueue.cache = combined;
+      await Storage.setItem(syncQueue.key, stringify);
       return syncQueue.cache;
     } catch (e) {
       if (e instanceof Error) throw new Error(e.message);
@@ -93,7 +93,7 @@ export const useSync = (): void => {
       const len = queue.length;
       const url = 'https://jsonplaceholder.typicode.com/posts';
       const method = 'POST';
-      const payload: AxiosRequestConfig = { method, url, data: queue, timeout };
+      const payload: AxiosRequestConfig = { data: queue, method, timeout, url };
       const res = await axios(payload);
       processSync(res.data);
       queue.splice(0, len);

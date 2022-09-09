@@ -40,9 +40,9 @@ export const Landing = memo(function Landing() {
               source={require('./trophy.json')}
               speed={0.75}
               style={{
-                width: imageSize,
-                height: imageSize,
                 alignSelf: 'center',
+                height: imageSize,
+                width: imageSize,
               }}
             />
           </View>

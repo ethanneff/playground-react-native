@@ -50,8 +50,8 @@ export const Reflect = memo(function Reflect() {
     >
       <ScrollView
         contentContainerStyle={{
-          padding: spacing(4),
           backgroundColor: colors.background.secondary,
+          padding: spacing(4),
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >
@@ -75,9 +75,9 @@ export const Reflect = memo(function Reflect() {
             <Title name="Review (Progress)" />
             <View
               style={{
+                alignItems: 'center',
                 flex: 1,
                 justifyContent: 'center',
-                alignItems: 'center',
               }}
             >
               <Graph

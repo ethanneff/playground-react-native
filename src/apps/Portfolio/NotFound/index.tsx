@@ -14,8 +14,8 @@ export const NotFound = memo(function PortfolioNotFound() {
     >
       <ScrollView
         style={{
-          padding: spacing(4),
           backgroundColor: colors.background.secondary,
+          padding: spacing(4),
         }}
       >
         <Button

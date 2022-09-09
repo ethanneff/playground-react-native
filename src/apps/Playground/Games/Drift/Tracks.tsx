@@ -26,15 +26,15 @@ const Track = memo(function TrackMemo({ track }: TrackProps) {
       <View
         style={{
           ...styles.tracks,
-          top: track.y - track.size / 2 - size / 2,
           left: track.x + track.size / 2 - track.size / 2,
+          top: track.y - track.size / 2 - size / 2,
         }}
       />
       <View
         style={{
           ...styles.tracks,
-          top: track.y - track.size / 2 - size / 2,
           left: track.x + track.size / 2 + track.size / 2 - size,
+          top: track.y - track.size / 2 - size / 2,
         }}
       />
     </>

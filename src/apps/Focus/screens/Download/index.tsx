@@ -74,7 +74,7 @@ export const Download = memo(function Download() {
         <TouchableOpacity
           activeOpacity={1}
           onPress={handleTapAnimation}
-          style={{ justifyContent: 'center', alignItems: 'center' }}
+          style={{ alignItems: 'center', justifyContent: 'center' }}
         >
           <Lottie
             autoPlay
@@ -82,10 +82,10 @@ export const Download = memo(function Download() {
             source={require('./loader.json')}
             speed={0.75}
             style={{
-              zIndex: 1,
-              width: imageSize,
-              height: imageSize,
               alignSelf: 'center',
+              height: imageSize,
+              width: imageSize,
+              zIndex: 1,
             }}
           />
           {pulses.map((pulse, index) => (
@@ -93,13 +93,13 @@ export const Download = memo(function Download() {
               key={pulse}
               repeat={index === 0}
               style={{
+                backgroundColor: colors.background.secondary,
+                borderColor: colors.border.secondary,
+                borderRadius: tapWidth,
+                borderWidth: 4,
+                height: tapWidth,
                 position: 'absolute',
                 width: tapWidth,
-                height: tapWidth,
-                borderRadius: tapWidth,
-                borderColor: colors.border.secondary,
-                borderWidth: 4,
-                backgroundColor: colors.background.secondary,
               }}
             />
           ))}

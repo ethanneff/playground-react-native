@@ -46,11 +46,11 @@ export const CalendarDay = ({
     >
       <View
         style={{
-          height: spacing(8),
-          width: spacing(8),
-          borderRadius: spacing(20),
-          justifyContent: 'center',
           backgroundColor,
+          borderRadius: spacing(20),
+          height: spacing(8),
+          justifyContent: 'center',
+          width: spacing(8),
         }}
       >
         <Text

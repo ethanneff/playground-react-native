@@ -12,20 +12,22 @@ type State = {
   rating: number;
 };
 const initialState: State = {
-  rating: 0,
-  modal: 'default',
   feedback: '',
+  modal: 'default',
+  rating: 0,
 };
 const ratingMin = 4;
 const ratingOptions = {
-  AppleAppID: '899247664',
-  GooglePackageName: 'com.google.android.apps.maps', // TODO: use configs
+  // TODO: use configs
   AmazonPackageName: 'com.google.android.apps.maps',
+
+  AppleAppID: '899247664',
+  GooglePackageName: 'com.google.android.apps.maps',
   OtherAndroidURL: 'http://www.mywebsite.com/app/47172391',
-  preferredAndroidMarket: AndroidMarket.Google,
-  preferInApp: true,
-  openAppStoreIfInAppFails: true,
   fallbackPlatformURL: 'http://www.mywebsite.com/myapp',
+  openAppStoreIfInAppFails: true,
+  preferInApp: true,
+  preferredAndroidMarket: AndroidMarket.Google,
 };
 
 type CompleteState = {
@@ -48,9 +50,9 @@ export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
   });
   const completeState = useMemo(
     () => ({
-      rating: form.rating,
       feedback: form.feedback,
       navigatedToAppStore: navigatedToAppStore.current,
+      rating: form.rating,
     }),
     [form.feedback, form.rating],
   );

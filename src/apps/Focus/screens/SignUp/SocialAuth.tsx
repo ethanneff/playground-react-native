@@ -31,8 +31,8 @@ export const SocialAuth = ({ disabled }: Props) => {
     <View
       style={{
         paddingHorizontal: spacing(landscape ? 0 : 8),
-        paddingVertical: spacing(landscape ? 0 : 4),
         paddingTop: spacing(landscape ? 8 : 0),
+        paddingVertical: spacing(landscape ? 0 : 4),
       }}
     >
       <Spacing padding={2} />

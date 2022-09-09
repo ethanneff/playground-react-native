@@ -10,7 +10,7 @@ export const Drift = memo(function PlaygroundDrift() {
   const { goBack } = useNavigation();
   const [state, dispatch] = useReducer(driftReducer, driftInitialState);
   const isEmulator = DeviceInfo.isEmulatorSync();
-  const value = useMemo(() => ({ state, dispatch }), [state, dispatch]);
+  const value = useMemo(() => ({ dispatch, state }), [state, dispatch]);
 
   return (
     <Screen

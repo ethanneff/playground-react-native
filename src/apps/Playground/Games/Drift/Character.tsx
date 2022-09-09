@@ -41,7 +41,7 @@ export const Character = memo(function Character({ canvas }: CharacterProps) {
         size,
       });
       initialPositionRef.current = toValue;
-      dispatch({ type: 'addTrack', payload: { ...toValue, size } });
+      dispatch({ payload: { ...toValue, size }, type: 'addTrack' });
       Animated.spring(position, {
         toValue,
         useNativeDriver,
@@ -63,10 +63,10 @@ export const Character = memo(function Character({ canvas }: CharacterProps) {
       style={[
         position.getLayout(),
         {
-          width: size,
-          height: size,
+          backgroundColor: colors.background.accent,
           borderRadius: size,
           elevation,
+          height: size,
           shadowColor: colors.background.primaryB,
           shadowOffset: {
             height: 2,
@@ -74,8 +74,8 @@ export const Character = memo(function Character({ canvas }: CharacterProps) {
           },
           shadowOpacity,
           shadowRadius,
+          width: size,
           zIndex: elevation,
-          backgroundColor: colors.background.accent,
         },
       ]}
     />

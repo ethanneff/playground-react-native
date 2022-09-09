@@ -28,12 +28,12 @@ export const SocialButton = memo(function LoginButton({
       onPress={onPress}
       style={{
         alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'row',
         borderColor: colors.border.secondary,
-        borderWidth: 1,
-        padding: spacing(1),
         borderRadius: spacing(1),
+        borderWidth: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        padding: spacing(1),
       }}
     >
       <Icon

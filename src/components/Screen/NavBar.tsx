@@ -92,8 +92,8 @@ export const NavBar = memo(function NavBar({
       <View
         style={{
           backgroundColor: colors.background.primaryA,
-          width: '100%',
           height: 2,
+          width: '100%',
           ...showShadow,
           zIndex: 1,
         }}

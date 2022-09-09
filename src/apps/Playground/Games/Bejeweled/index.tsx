@@ -68,12 +68,12 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
   const height = 6;
   const size = dimension / width;
   const gems: Gem[] = [
-    { key: 'primary', color: colors.background.primaryA },
-    { key: 'brand', color: colors.background.primaryB },
-    { key: 'success', color: colors.background.positive },
-    { key: 'info', color: colors.background.accent },
-    { key: 'warning', color: colors.background.warning },
-    { key: 'danger', color: colors.background.negative },
+    { color: colors.background.primaryA, key: 'primary' },
+    { color: colors.background.primaryB, key: 'brand' },
+    { color: colors.background.positive, key: 'success' },
+    { color: colors.background.accent, key: 'info' },
+    { color: colors.background.warning, key: 'warning' },
+    { color: colors.background.negative, key: 'danger' },
   ];
 
   const [board, setBoard] = useState<Board>(() =>
@@ -114,20 +114,20 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
               <View
                 key={v4()}
                 style={{
-                  width: size,
                   height: size,
+                  width: size,
                 }}
               >
                 <TouchableOpacity
                   onPress={onPress(x, y)}
                   style={{
-                    flex: 1,
+                    backgroundColor: gem.color,
                     borderColor:
                       selected.x === x && selected.y === y
                         ? colors.border.primaryB
                         : colors.border.primaryA,
                     borderWidth: 4,
-                    backgroundColor: gem.color,
+                    flex: 1,
                   }}
                 />
               </View>

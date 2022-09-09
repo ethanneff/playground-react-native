@@ -16,9 +16,9 @@ export const LoadingProfile = (): JSX.Element => {
     >
       <View
         style={{
+          backgroundColor: colors.background.tertiary,
           borderTopLeftRadius: spacing(2),
           borderTopRightRadius: spacing(2),
-          backgroundColor: colors.background.tertiary,
           flex: 1,
           height: banner,
         }}
@@ -26,10 +26,10 @@ export const LoadingProfile = (): JSX.Element => {
       <View
         style={{
           alignItems: 'center',
-          width: '100%',
-          position: 'absolute',
           left: 0,
+          position: 'absolute',
           top: banner * 0.5,
+          width: '100%',
           zIndex: 1,
         }}
       >
@@ -39,7 +39,7 @@ export const LoadingProfile = (): JSX.Element => {
           width={banner}
         />
       </View>
-      <View style={{ marginTop: banner * 0.5, alignItems: 'center' }}>
+      <View style={{ alignItems: 'center', marginTop: banner * 0.5 }}>
         <View style={{ paddingVertical: spacing(4) }}>
           <SkeletonLoader
             borderRadius={0}

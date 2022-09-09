@@ -46,13 +46,13 @@ export const TicTacToe = memo(function TicTacToe() {
       setGame((p) => {
         const v = getNextValue(p.turn);
         const updatedBoard = getUpdatedBoard({ board: p.board, i, j, v });
-        const didWin = getWinner({ board: p.board, i, j, boardSize });
+        const didWin = getWinner({ board: p.board, boardSize, i, j });
         const winner = didWin === 1 ? 'white' : didWin === -1 ? 'black' : null;
         return {
           ...p,
           board: updatedBoard,
-          turn: p.turn === 'white' ? 'black' : 'white',
           state: didWin === 0 ? 'playing' : 'game-over',
+          turn: p.turn === 'white' ? 'black' : 'white',
           winner,
         };
       });
@@ -67,11 +67,11 @@ export const TicTacToe = memo(function TicTacToe() {
     >
       <View
         style={{
-          flex: 1,
-          justifyContent: 'center',
           alignItems: 'center',
           backgroundColor: colors.background.secondary,
+          flex: 1,
           flexDirection: landscape ? 'row' : 'column',
+          justifyContent: 'center',
         }}
       >
         <View>
@@ -88,13 +88,13 @@ export const TicTacToe = memo(function TicTacToe() {
                   key={v4()}
                   onPress={onCellPress(i, j)}
                   style={{
-                    width: size,
-                    height: size,
-                    justifyContent: 'center',
                     alignItems: 'center',
                     backgroundColor: colors.background.primaryA,
-                    borderWidth: 2,
                     borderColor: colors.background.secondary,
+                    borderWidth: 2,
+                    height: size,
+                    justifyContent: 'center',
+                    width: size,
                   }}
                 >
                   <Text

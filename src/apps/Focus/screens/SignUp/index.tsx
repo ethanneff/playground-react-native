@@ -23,12 +23,12 @@ const initialState = { eye: false, loading: false };
 
 const createUser = (user: FirebaseAuthTypes.User) => {
   const data: User = {
-    id: user.uid,
+    displayName: user.displayName,
     email: user.email,
     emailVerified: user.emailVerified,
+    id: user.uid,
     phoneNumber: user.phoneNumber,
     photoUrl: user.photoURL,
-    displayName: user.displayName,
   };
 
   return Collections.users.doc(user.uid).set(data);
@@ -44,9 +44,9 @@ const createUserPreferences = async (
   }
   const data: Preferences = {
     availability,
-    theme: 'light',
     cadence: 60,
     notifications: ['mobile'],
+    theme: 'light',
     timezone,
     uid: user.uid,
   };
@@ -78,11 +78,11 @@ export const SignUp = memo(function SignUp() {
   const handleErrorToast = useCallback((e: unknown, message: string) => {
     const err = e as FirebaseAuthTypes.NativeFirebaseAuthError;
     Toast.show({
-      type: 'negative',
       props: {
-        title: 'Unable to login.',
         description: `${err.nativeErrorMessage}`,
+        title: 'Unable to login.',
       },
+      type: 'negative',
     });
     Firebase.crashlytics().log(message);
   }, []);
@@ -107,7 +107,7 @@ export const SignUp = memo(function SignUp() {
     const error =
       'Please enter your email address and password before submitting.';
     if (!email || !password) {
-      Toast.show({ type: 'negative', props: { title: error } });
+      Toast.show({ props: { title: error }, type: 'negative' });
       return;
     }
     setState((p) => ({ ...p, loading: true }));
@@ -202,7 +202,7 @@ export const SignUp = memo(function SignUp() {
           backgroundColor="secondary"
           blurOnSubmit={false}
           editable={!disabled}
-          icons={[{ name: eyeIcon, onPress: handleEyePress, focus: true }]}
+          icons={[{ focus: true, name: eyeIcon, onPress: handleEyePress }]}
           keyboardType="default"
           onChangeText={handleFormChange('password')}
           onRef={passwordRef}

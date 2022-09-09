@@ -102,8 +102,8 @@ describe('reducer', () => {
       }),
     ).toStrictEqual({
       ...deviceInitialState,
-      keyboardVisible: true,
       keyboardHeight: 12,
+      keyboardVisible: true,
     });
   });
 

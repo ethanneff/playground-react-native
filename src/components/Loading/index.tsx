@@ -33,14 +33,14 @@ export const Loading = memo(function LoadingScreen({
   return (
     <Animated.View
       style={{
-        opacity,
-        zIndex: 1,
-        position: 'absolute',
+        backgroundColor: colors.overlay.dark,
+        bottom: 0,
         left: 0,
+        opacity,
+        position: 'absolute',
         right: 0,
         top: 0,
-        bottom: 0,
-        backgroundColor: colors.overlay.dark,
+        zIndex: 1,
       }}
     >
       <TouchableOpacity

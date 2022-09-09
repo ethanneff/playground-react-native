@@ -64,10 +64,10 @@ export const Button = memo(function Button({
   const colors = useColors();
   const dropShadowStyling = useDropShadow();
   const styles = getStyles({
-    colors,
     color,
-    emphasis,
+    colors,
     disabled,
+    emphasis,
     noPadding,
   });
   const buttonStyleGroup = [

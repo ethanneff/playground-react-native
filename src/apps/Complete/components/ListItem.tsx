@@ -54,7 +54,7 @@ export const ListItem = memo(function ListItem({
   }, [dispatch, itemId, navigate]);
 
   const onItemDetails = useCallback(() => {
-    dispatch(navItemDetails({ parentItemId, itemId }));
+    dispatch(navItemDetails({ itemId, parentItemId }));
     navigate('item-detail');
   }, [dispatch, itemId, navigate, parentItemId]);
 
@@ -66,30 +66,30 @@ export const ListItem = memo(function ListItem({
 
   const onItemUp = useCallback(() => {
     if (index === 0) return;
-    dispatch(swapItemOrderInItem({ parentItemId, i: index, j: index - 1 }));
+    dispatch(swapItemOrderInItem({ i: index, j: index - 1, parentItemId }));
   }, [dispatch, index, parentItemId]);
 
   const onItemDown = useCallback(() => {
     if (index >= parentChildrenCount - 1) return;
-    dispatch(swapItemOrderInItem({ parentItemId, i: index, j: index + 1 }));
+    dispatch(swapItemOrderInItem({ i: index, j: index + 1, parentItemId }));
   }, [dispatch, index, parentChildrenCount, parentItemId]);
 
   const icons: TextInputIcon[] = [
-    { name: 'close', onPress: onItemTitleClose, focus: true, reset: true },
+    { focus: true, name: 'close', onPress: onItemTitleClose, reset: true },
     {
-      name: 'send',
-      onPress: onItemTitleSubmit,
       color: 'accent',
       focus: true,
+      name: 'send',
+      onPress: onItemTitleSubmit,
       required: true,
     },
-    { name: 'chevron-up', onPress: onItemUp, hidden: true },
-    { name: 'chevron-down', onPress: onItemDown, hidden: true },
+    { hidden: true, name: 'chevron-up', onPress: onItemUp },
+    { hidden: true, name: 'chevron-down', onPress: onItemDown },
     { name: 'dots-horizontal', onPress: onItemDetails },
     {
+      hidden: !item.children.length,
       name: 'chevron-right',
       onPress: onItemNav,
-      hidden: !item.children.length,
     },
   ];
 
@@ -103,11 +103,11 @@ export const ListItem = memo(function ListItem({
       onLongPress={onItemLongPress}
       onPress={onItemPress}
       style={{
-        flex: 1,
-        borderRadius: completeConfig.borderRadius,
-        margin: completeConfig.padding / 2,
         backgroundColor: colors.background.secondary,
+        borderRadius: completeConfig.borderRadius,
+        flex: 1,
         flexDirection: 'row',
+        margin: completeConfig.padding / 2,
       }}
     >
       <TextInput

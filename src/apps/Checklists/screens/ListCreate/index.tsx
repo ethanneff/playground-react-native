@@ -7,7 +7,7 @@ import { useRootDispatch } from '../../../../redux';
 import { SuperAny } from '../../../../types/types';
 import { createList } from '../../models';
 
-const initialState = { name: '', description: '' };
+const initialState = { description: '', name: '' };
 
 export default memo(function ChecklistCreate() {
   const { navigate } = useNavigation<SuperAny>();
@@ -22,13 +22,13 @@ export default memo(function ChecklistCreate() {
     const now = Date.now();
     dispatch(
       createList({
+        active: true,
+        createdAt: now,
+        description,
         id: v4(),
         name,
-        active: true,
-        userId: '1',
-        description,
-        createdAt: now,
         updatedAt: now,
+        userId: '1',
       }),
     );
     navigate('checklists');

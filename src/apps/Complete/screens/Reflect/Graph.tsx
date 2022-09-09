@@ -35,7 +35,7 @@ export const Graph = ({ data, width, height }: GraphProps) => {
     .y((p) => scaleY(p.value))
     .curve(curveBasis)(data) as string;
   return (
-    <View style={{ width, height }}>
+    <View style={{ height, width }}>
       <Svg style={StyleSheet.absoluteFill}>
         <Defs>
           <LinearGradient

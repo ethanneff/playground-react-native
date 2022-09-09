@@ -27,7 +27,7 @@ export const List = memo(function List({
   const padding = horizontal ? 0 : completeConfig.padding;
   const margin = horizontal ? 'right' : 'bottom';
   return (
-    <View style={{ padding, maxHeight }}>
+    <View style={{ maxHeight, padding }}>
       <Card
         margin={margin}
         width={listWidth}

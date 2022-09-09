@@ -15,32 +15,29 @@ import { Login } from './Login';
 
 const slides: CarouselSlide[] = [
   {
-    id: '1',
     icon: 'trophy-outline',
+    id: '1',
     sections: [
       {
-        title: 'Welcome to Accomplish',
-        titleType: 'h4',
-        titleStyle: { paddingBottom: spacing(10) },
         paragraphs: [
           [{ title: 'Start investing commission-free' }],
           [
             { title: 'Other fees may apply. View our' },
-            { title: 'fee schedule', onPress: () => undefined },
+            { onPress: () => undefined, title: 'fee schedule' },
             { title: 'to learn more. All investments have risks.' },
           ],
         ],
+        title: 'Welcome to Accomplish',
+        titleStyle: { paddingBottom: spacing(10) },
+        titleType: 'h4',
       },
     ],
   },
   {
-    id: '2',
     icon: 'trophy-outline',
+    id: '2',
     sections: [
       {
-        title: 'Enjoy commission-free stock trading',
-        titleType: 'h4',
-        titleStyle: { paddingBottom: spacing(10) },
         paragraphs: [
           [
             {
@@ -48,19 +45,19 @@ const slides: CarouselSlide[] = [
                 'Invest in thousands of US an global stocks without paying commission or foreign exchange fees.',
             },
           ],
-          [{ title: 'View fee disclosures', onPress: () => undefined }],
+          [{ onPress: () => undefined, title: 'View fee disclosures' }],
         ],
+        title: 'Enjoy commission-free stock trading',
+        titleStyle: { paddingBottom: spacing(10) },
+        titleType: 'h4',
       },
     ],
   },
   {
-    id: '3',
     icon: 'trophy-outline',
+    id: '3',
     sections: [
       {
-        title: 'No account minimum',
-        titleType: 'h4',
-        titleStyle: { paddingBottom: spacing(10) },
         paragraphs: [
           [
             {
@@ -69,17 +66,17 @@ const slides: CarouselSlide[] = [
             },
           ],
         ],
+        title: 'No account minimum',
+        titleStyle: { paddingBottom: spacing(10) },
+        titleType: 'h4',
       },
     ],
   },
   {
-    id: '4',
     icon: 'trophy-outline',
+    id: '4',
     sections: [
       {
-        title: 'Everything at your fingertips',
-        titleType: 'h4',
-        titleStyle: { paddingBottom: spacing(10) },
         paragraphs: [
           [
             {
@@ -88,27 +85,30 @@ const slides: CarouselSlide[] = [
             },
           ],
         ],
+        title: 'Everything at your fingertips',
+        titleStyle: { paddingBottom: spacing(10) },
+        titleType: 'h4',
       },
     ],
   },
   {
-    id: '5',
     icon: 'trophy-outline',
+    id: '5',
     sections: [
       {
-        title: 'Account protection',
-        titleType: 'h4',
-        titleStyle: { paddingBottom: spacing(10) },
         paragraphs: [
           [
             {
               title:
                 'Robinhood Financial is a member of SIPC. Securities in your account are protected up to $500,000. For details, please see',
             },
-            { title: 'www.sipc.org', onPress: () => undefined },
+            { onPress: () => undefined, title: 'www.sipc.org' },
             { title: '.' },
           ],
         ],
+        title: 'Account protection',
+        titleStyle: { paddingBottom: spacing(10) },
+        titleType: 'h4',
       },
     ],
   },

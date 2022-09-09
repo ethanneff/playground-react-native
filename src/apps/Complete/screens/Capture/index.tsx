@@ -11,7 +11,7 @@ import { useRootSelector } from '../../../../redux';
 import { Card, List } from '../../components';
 import { getInbox } from '../../models';
 
-const initialState = { container: 0, button: 0 };
+const initialState = { button: 0, container: 0 };
 
 export const Capture = memo(function Capture() {
   const colors = useColors();

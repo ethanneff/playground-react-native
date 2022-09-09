@@ -12,11 +12,31 @@ export const fontWeight: { [key: string]: FontWeight } = {
 export const fontEmphases: FontEmphases = {
   default: 1.0,
   high: 0.87,
-  medium: 0.6,
   low: 0.38,
+  medium: 0.6,
 };
 
 export const fontSizes: FontSizes = {
+  body1: {
+    fontSize: 16,
+    fontWeight: fontWeight.regular,
+    letterSpacing: 0.5,
+  },
+  body2: {
+    fontSize: 14,
+    fontWeight: fontWeight.regular,
+    letterSpacing: 0.25,
+  },
+  button: {
+    fontSize: 14,
+    fontWeight: fontWeight.medium,
+    letterSpacing: 0.75,
+  },
+  caption: {
+    fontSize: 12,
+    fontWeight: fontWeight.regular,
+    letterSpacing: 0.4,
+  },
   h1: {
     fontSize: 96,
     fontWeight: fontWeight.light,
@@ -47,10 +67,10 @@ export const fontSizes: FontSizes = {
     fontWeight: fontWeight.regular,
     letterSpacing: 0.15,
   },
-  button: {
-    fontSize: 14,
-    fontWeight: fontWeight.medium,
-    letterSpacing: 0.75,
+  overline: {
+    fontSize: 10,
+    fontWeight: fontWeight.regular,
+    letterSpacing: 1.5,
   },
   subtitle1: {
     fontSize: 16,
@@ -61,25 +81,5 @@ export const fontSizes: FontSizes = {
     fontSize: 14,
     fontWeight: fontWeight.medium,
     letterSpacing: 0.1,
-  },
-  body1: {
-    fontSize: 16,
-    fontWeight: fontWeight.regular,
-    letterSpacing: 0.5,
-  },
-  body2: {
-    fontSize: 14,
-    fontWeight: fontWeight.regular,
-    letterSpacing: 0.25,
-  },
-  overline: {
-    fontSize: 10,
-    fontWeight: fontWeight.regular,
-    letterSpacing: 1.5,
-  },
-  caption: {
-    fontSize: 12,
-    fontWeight: fontWeight.regular,
-    letterSpacing: 0.4,
   },
 };

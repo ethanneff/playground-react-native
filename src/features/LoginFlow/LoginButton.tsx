@@ -20,13 +20,13 @@ export const LoginButton = memo(function LoginButton({
       onPress={onPress}
       style={{
         alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'row',
         borderColor: colors.border.primaryA,
-        borderWidth: 2,
-        padding: spacing(2),
-        marginBottom: spacing(2),
         borderRadius: spacing(10),
+        borderWidth: 2,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginBottom: spacing(2),
+        padding: spacing(2),
       }}
     >
       <Icon name={icon} />

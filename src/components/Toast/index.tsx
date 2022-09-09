@@ -30,13 +30,13 @@ const CustomToast = ({
   return (
     <View
       style={{
+        backgroundColor: colors.background.primaryA,
+        borderRadius: spacing(2),
         borderTopColor: colors.border[color],
         borderTopWidth: spacing(1),
         justifyContent: 'center',
         padding: spacing(4),
-        borderRadius: spacing(2),
         width: '90%',
-        backgroundColor: colors.background.primaryA,
         ...dropShadow(4),
       }}
     >
@@ -110,8 +110,8 @@ const AccentToast = ({ props: { description, title, center } }: ToastProps) => {
 };
 
 export const toastConfig = {
-  positive: PositiveToast,
-  negative: NegativeToast,
-  warning: WarningToast,
   accent: AccentToast,
+  negative: NegativeToast,
+  positive: PositiveToast,
+  warning: WarningToast,
 };

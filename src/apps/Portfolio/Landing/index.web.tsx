@@ -31,18 +31,18 @@ const SignInButton = memo(function SignInButton({
       onPress={onPress}
       style={{
         alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'row',
         borderColor: colors.border.primaryA,
-        borderWidth: 2,
-        padding: spacing(2),
-        marginBottom: spacing(2),
         borderRadius: spacing(10),
+        borderWidth: 2,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginBottom: spacing(2),
+        padding: spacing(2),
       }}
     >
       <Icon
         name={icon}
-        style={{ width: '30px', height: '30px' }}
+        style={{ height: '30px', width: '30px' }}
       />
       <Text
         style={{ paddingLeft: spacing(2) }}
@@ -68,13 +68,13 @@ const NavButton = memo(function NavButton({
     <TouchableOpacity
       onPress={onPress}
       style={{
-        justifyContent: 'center',
-        borderRadius: spacing(10),
-        paddingVertical: spacing(2),
-        paddingHorizontal: spacing(2),
         backgroundColor: inverted
           ? colors.background.primaryB
           : colors.background.primaryA,
+        borderRadius: spacing(10),
+        justifyContent: 'center',
+        paddingHorizontal: spacing(2),
+        paddingVertical: spacing(2),
       }}
     >
       <Text
@@ -97,21 +97,21 @@ export const Header = memo(function Header({ height }: HeaderProps) {
     <View
       style={{
         backgroundColor: colors.background.primaryA,
+        borderBottomWidth: 1,
+        borderColor: colors.border.primaryA,
+        flexDirection: 'row',
+        height,
+        justifyContent: 'space-between',
+        padding: spacing(4),
         position: 'absolute',
         width: '100%',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        borderColor: colors.border.primaryA,
-        padding: spacing(4),
-        borderBottomWidth: 1,
         zIndex: 2,
-        height,
       }}
     >
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <View style={{ alignItems: 'center', flexDirection: 'row' }}>
         <Image
           source={image}
-          style={{ width: '30px', height: '30px' }}
+          style={{ height: '30px', width: '30px' }}
         />
         <Text
           bold
@@ -157,19 +157,19 @@ const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
     <TouchableOpacity
       onPress={onPress}
       style={{
-        width: '248px',
-        justifyContent: 'center',
+        backgroundColor: colors.background.primaryB,
         borderRadius: spacing(2),
         flexDirection: 'row',
-        backgroundColor: colors.background.primaryB,
-        paddingVertical: spacing(2),
+        justifyContent: 'center',
         paddingHorizontal: spacing(4),
+        paddingVertical: spacing(2),
+        width: '248px',
       }}
     >
       <Icon
         color="primaryA"
         name={type}
-        style={{ width: iconSize, height: iconSize, alignSelf: 'center' }}
+        style={{ alignSelf: 'center', height: iconSize, width: iconSize }}
       />
       <View style={{ paddingLeft: spacing(2) }}>
         <Text
@@ -201,9 +201,9 @@ const Section = memo(function Section({
   return (
     <View
       style={{
-        paddingTop,
-        height: '100vh',
         backgroundColor,
+        height: '100vh',
+        paddingTop,
       }}
     >
       {children}
@@ -215,20 +215,20 @@ export const Landing = memo(function PortfolioLanding() {
   const height = spacing(18);
   const titleSentence: SentenceType[] = [
     { title: 'Get started with ', type: 'h2' },
-    { title: 'Core', bold: true, type: 'h2' },
+    { bold: true, title: 'Core', type: 'h2' },
   ];
   const passwordSentence: SentenceType[] = [
     { title: 'Or use your password to ' },
     {
-      title: 'sign up ',
       bold: true,
       onPress: () => undefined,
+      title: 'sign up ',
     },
     { title: 'or ' },
     {
-      title: 'sign in ',
       bold: true,
       onPress: () => undefined,
+      title: 'sign in ',
     },
   ];
   const colors = useColors();
@@ -244,9 +244,9 @@ export const Landing = memo(function PortfolioLanding() {
       >
         <Sentence
           sentences={titleSentence}
-          style={{ paddingVertical: spacing(8), alignSelf: 'center' }}
+          style={{ alignSelf: 'center', paddingVertical: spacing(8) }}
         />
-        <View style={{ width: '400px', alignSelf: 'center' }}>
+        <View style={{ alignSelf: 'center', width: '400px' }}>
           <SignInButton
             icon="apple"
             onPress={missingCallback}

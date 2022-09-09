@@ -28,7 +28,7 @@ export const ItemEdit = memo(function ItemEdit({
   onSubmit,
 }: ItemEditProps) {
   const onClose = useCallback(() => Keyboard.dismiss(), []);
-  const form = useRef({ title, description });
+  const form = useRef({ description, title });
 
   const handleChangeText = useCallback(
     (key: keyof Form) => (value: string) => {
@@ -46,12 +46,12 @@ export const ItemEdit = memo(function ItemEdit({
 
   const icons = useCallback(
     (type: string): TextInputIcon[] => [
-      { name: 'close', onPress: onClose, focus: true, reset: true },
+      { focus: true, name: 'close', onPress: onClose, reset: true },
       {
-        name: 'send',
-        onPress: onSubmit(type),
         color: 'accent',
         focus: true,
+        name: 'send',
+        onPress: onSubmit(type),
         required: true,
       },
     ],

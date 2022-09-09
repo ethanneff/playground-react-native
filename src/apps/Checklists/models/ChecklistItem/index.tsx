@@ -43,9 +43,9 @@ export const setActiveChecklistItem = createAction(
 export const checklistItemActions = {
   createChecklistItem,
   removeChecklistItem,
-  updateChecklistItem,
   setActiveChecklistItem,
   toggleChecklistItemComplete,
+  updateChecklistItem,
 };
 
 /* SELECTORS */

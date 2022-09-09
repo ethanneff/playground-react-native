@@ -182,7 +182,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
           />
         </View>
       </View>
-      <Animated.View style={{ flex: 1, backgroundColor: fadeContainer }}>
+      <Animated.View style={{ backgroundColor: fadeContainer, flex: 1 }}>
         <FlatList
           data={data}
           keyExtractor={keyExtractor}

@@ -112,6 +112,6 @@ export class GestureHandler {
       pinch = isPinch;
       spread = isSpread;
     }
-    return { spread, pinch };
+    return { pinch, spread };
   }
 }

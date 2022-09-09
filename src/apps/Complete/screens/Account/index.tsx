@@ -37,8 +37,8 @@ export const Account = memo(function Account() {
     >
       <ScrollView
         contentContainerStyle={{
-          padding: spacing(4),
           backgroundColor: colors.background.secondary,
+          padding: spacing(4),
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >

@@ -21,15 +21,15 @@ export const focusUsersReducer = (
     case getType(loadUsers):
       return {
         ...state,
+        updatedAt: Date.now(),
         user: {
           displayName: action.payload.displayName,
           email: action.payload.email,
-          phoneNumber: action.payload.phoneNumber,
-          photoUrl: action.payload.photoUrl,
           emailVerified: action.payload.emailVerified,
           id: action.payload.id,
+          phoneNumber: action.payload.phoneNumber,
+          photoUrl: action.payload.photoUrl,
         },
-        updatedAt: Date.now(),
       };
     case getType(logoutAuth):
       return initialState;

@@ -64,6 +64,16 @@ import { addFlipperMiddleware, Storage } from '../conversions';
 import { syncMiddleware } from './sync';
 
 export const actions = {
+  auth: authActions,
+  chatMessage: chatMessageActions,
+  checklist: checklistActions,
+  checklistItem: checklistItemActions,
+  choices: choicesActions,
+  completeAuth: completeAuthActions,
+  completeItem: completeItemActions,
+  completeUser: completeUserActions,
+  device: deviceActions,
+  dimension: dimensionActions,
   focus: {
     ...focusAuthActions,
     ...focusUsersActions,
@@ -71,52 +81,42 @@ export const actions = {
     ...focusPreferencesActions,
     ...focusIntervalsActions,
   },
-  auth: authActions,
-  choices: choicesActions,
-  dimension: dimensionActions,
-  device: deviceActions,
-  checklistItem: checklistItemActions,
-  checklist: checklistActions,
-  chatMessage: chatMessageActions,
+  gameOfLife: gameOfLifeActions,
   network: networkActions,
   questionnaires: questionnairesActions,
   questions: questionsActions,
   responses: responsesActions,
   theme: themeActions,
-  completeItem: completeItemActions,
-  completeUser: completeUserActions,
-  completeAuth: completeAuthActions,
-  gameOfLife: gameOfLifeActions,
 };
 
 export const reducers = combineReducers({
+  auth: authReducer,
+  chatMessage: chatMessageReducer,
+  checklist: checklistReducer,
+  checklistItem: checklistItemReducer,
+  choices: choicesReducer,
+  completeAuth: completeAuthReducer,
+  completeItem: completeItemReducer,
+  completeUser: completeUserReducer,
+  device: deviceReducer,
+  dimension: dimensionReducer,
   focus: combineReducers({
     auth: focusAuthReducer,
-    users: focusUsersReducer,
-    intervals: focusIntervalsReducer,
     goals: focusGoalsReducer,
+    intervals: focusIntervalsReducer,
     preferences: focusPreferencesReducer,
+    users: focusUsersReducer,
   }),
-  auth: authReducer,
-  choices: choicesReducer,
-  dimension: dimensionReducer,
-  device: deviceReducer,
-  checklistItem: checklistItemReducer,
-  checklist: checklistReducer,
-  chatMessage: chatMessageReducer,
+  gameOfLife: gameOfLifeReducer,
   network: networkReducer,
   questionnaires: questionnairesReducer,
   questions: questionsReducer,
   responses: responsesReducer,
   theme: themeReducer,
-  completeItem: completeItemReducer,
-  completeUser: completeUserReducer,
-  completeAuth: completeAuthReducer,
-  gameOfLife: gameOfLifeReducer,
 });
 
 const blacklist = ['gameOfLife'];
-const persistConfig = { key: 'root', storage: Storage, blacklist };
+const persistConfig = { blacklist, key: 'root', storage: Storage };
 const middlewares = [thunk, syncMiddleware];
 addFlipperMiddleware(middlewares);
 const persistedReducer = persistReducer(persistConfig, reducers);

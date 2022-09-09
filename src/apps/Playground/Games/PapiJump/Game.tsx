@@ -78,8 +78,8 @@ export const Game = memo(function Game({
 
   const draw = useCallback(() => {
     const papiAnimation = Animated.timing(papi.current.position, {
-      toValue: { x: papi.current.x, y: papi.current.y },
       duration,
+      toValue: { x: papi.current.x, y: papi.current.y },
       useNativeDriver,
     });
 
@@ -111,11 +111,11 @@ export const Game = memo(function Game({
       <View
         style={{
           display: 'flex',
-          justifyContent: 'space-between',
-          zIndex: 2,
-          position: 'absolute',
           flexDirection: 'row',
+          justifyContent: 'space-between',
+          position: 'absolute',
           width: '100%',
+          zIndex: 2,
         }}
       >
         <Text
@@ -138,14 +138,14 @@ export const Game = memo(function Game({
       <Animated.View
         style={{
           ...papi.current.position.getLayout(),
-          position: 'absolute',
-          height: radius * 2,
-          width: radius * 2,
-          borderRadius: radius,
-          borderWidth: 1,
-          justifyContent: 'center',
           backgroundColor: colors.tag.green,
           borderColor: colors.border.positive,
+          borderRadius: radius,
+          borderWidth: 1,
+          height: radius * 2,
+          justifyContent: 'center',
+          position: 'absolute',
+          width: radius * 2,
         }}
       />
     </>

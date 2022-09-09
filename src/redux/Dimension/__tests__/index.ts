@@ -89,7 +89,7 @@ describe('actions', () => {
       scale: 1,
       width: 1,
     };
-    const payload = { window: size, screen: size };
+    const payload = { screen: size, window: size };
     const expectedAction = {
       payload,
       type: getType(updateDimension),

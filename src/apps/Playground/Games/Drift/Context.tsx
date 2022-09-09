@@ -7,8 +7,8 @@ export type DriftState = {
 };
 
 export const driftInitialState: DriftState = {
-  tracks: [],
   color: 'lightgrey',
+  tracks: [],
 };
 
 type Action =
@@ -39,6 +39,6 @@ type Context = {
 };
 
 export const DriftContext = createContext<Context>({
-  state: driftInitialState,
   dispatch: () => undefined,
+  state: driftInitialState,
 });

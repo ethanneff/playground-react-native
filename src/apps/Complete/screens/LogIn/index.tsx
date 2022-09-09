@@ -10,7 +10,7 @@ import { LandingStackRoutes } from '../../navigationTypes';
 import { getDefaultUserTemplate } from '../../utils';
 
 const initialRef = { email: '', password: '' };
-const initialState = { eye: false, completeForm: false, loading: false };
+const initialState = { completeForm: false, eye: false, loading: false };
 
 export const LogIn = memo(function LogIn() {
   const colors = useColors();
@@ -97,7 +97,7 @@ export const LogIn = memo(function LogIn() {
         autoCorrect={false}
         blurOnSubmit={false}
         editable={!state.loading}
-        icons={[{ name: eyeIcon, onPress: onEye, focus: true }]}
+        icons={[{ focus: true, name: eyeIcon, onPress: onEye }]}
         keyboardType="visible-password"
         onChangeText={onFormChange('password')}
         onRef={passwordRef}

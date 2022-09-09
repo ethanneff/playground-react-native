@@ -37,11 +37,11 @@ export const getCell =
   };
 
 export const gameOfLifeActions = {
-  updateDelay,
-  toggleRun,
-  updateCount,
-  updateBoard,
   resetBoard,
+  toggleRun,
+  updateBoard,
+  updateCount,
+  updateDelay,
 };
 
 export type GameOfLifeState = {
@@ -52,10 +52,10 @@ export type GameOfLifeState = {
 };
 
 export const gameOfLifeInitialState: GameOfLifeState = {
-  run: false,
-  delay: 16,
-  count: 20,
   board: [],
+  count: 20,
+  delay: 16,
+  run: false,
 };
 export const gameOfLifeReducer = (
   state: GameOfLifeState = gameOfLifeInitialState,
@@ -75,15 +75,15 @@ export const gameOfLifeReducer = (
     case getType(updateCount):
       return {
         ...state,
+        board: generateBoard(action.payload, 0.5),
         count: action.payload,
         run: false,
-        board: generateBoard(action.payload, 0.5),
       };
     case getType(resetBoard):
       return {
         ...state,
-        run: false,
         board: generateBoard(state.count, action.payload),
+        run: false,
       };
     case getType(updateBoard):
       return {

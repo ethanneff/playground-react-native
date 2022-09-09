@@ -45,13 +45,13 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
       return (
         <View
           style={{
-            backgroundColor: colors.background.secondary,
-            padding: 2,
-            borderWidth: 1,
-            borderColor,
-            borderBottomColor,
-            justifyContent: 'center',
             alignItems: 'center',
+            backgroundColor: colors.background.secondary,
+            borderBottomColor,
+            borderColor,
+            borderWidth: 1,
+            justifyContent: 'center',
+            padding: 2,
           }}
         >
           <Text
@@ -85,9 +85,9 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
     >
       <View
         style={{
+          alignItems: 'center',
           flexDirection: 'row',
           justifyContent: 'space-between',
-          alignItems: 'center',
         }}
       >
         <Text

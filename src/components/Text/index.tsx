@@ -56,11 +56,11 @@ export const Text = memo(function Text({
   const useNativeDriver = useDriver();
   const colors = useColors();
   const { fontSize, textColor } = getFontStyles({
-    emphasis,
-    type,
-    inverse,
     color,
     colors,
+    emphasis,
+    inverse,
+    type,
   });
   const text =
     type === 'button' || type === 'overline'

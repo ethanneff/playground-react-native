@@ -35,8 +35,8 @@ export const Balls = memo(function Balls({
     Animated.parallel(
       items.current.map((item) =>
         Animated.timing(item.position, {
-          toValue: { x: item.x, y: item.y },
           duration: 50,
+          toValue: { x: item.x, y: item.y },
           useNativeDriver,
         }),
       ),
@@ -74,21 +74,21 @@ export const Balls = memo(function Balls({
       // TODO updateCurrentItem()
       items.current[index] = {
         ...active,
-        radius: active.radius * difficulty,
         dx: active.dx * multiplier,
         dy: -active.dy * multiplier,
+        radius: active.radius * difficulty,
       };
 
       // TODO addNewItem()
       const coordinates = { x: active.x, y: active.y };
       items.current.push({
         ...coordinates,
-        mass: 10,
-        position: new Animated.ValueXY(coordinates),
-        index: items.current.length,
-        radius: active.radius * difficulty,
         dx: -active.dx * multiplier,
         dy: active.dy * multiplier,
+        index: items.current.length,
+        mass: 10,
+        position: new Animated.ValueXY(coordinates),
+        radius: active.radius * difficulty,
       });
 
       setScore((prev) => prev + 1);
@@ -114,12 +114,12 @@ export const Balls = memo(function Balls({
           <TouchableOpacity
             onPress={handlePress(item.index)}
             style={{
-              height: item.radius * 2,
-              width: item.radius * 2,
+              borderColor: colors.border.accent,
               borderRadius: item.radius,
               borderWidth: 1,
+              height: item.radius * 2,
               justifyContent: 'center',
-              borderColor: colors.border.accent,
+              width: item.radius * 2,
             }}
           >
             <Text

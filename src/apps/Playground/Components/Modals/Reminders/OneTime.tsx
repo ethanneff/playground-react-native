@@ -22,37 +22,37 @@ const generateButtons = () => {
 
   return [
     {
-      title: 'Later today',
       description: laterToday.format('hh:mm A'),
+      title: 'Later today',
       value: laterToday,
       visible: dayjs().set('hour', 18),
     },
     {
-      title: 'This Evening',
       description: evening.format('hh:mm A'),
+      title: 'This Evening',
       value: evening,
       visible: dayjs().set('hour', 18),
     },
     {
-      title: 'Tomorrow',
       description: `${daysOfWeek[tomorrow.day()]} ${tomorrow.format(
         'hh:mm A',
       )}`,
+      title: 'Tomorrow',
       value: tomorrow,
     },
     {
-      title: 'Next Week',
       description: `${nextWeek.format('MMM DD, hh:mm A')}`,
+      title: 'Next Week',
       value: nextWeek,
     },
     {
-      title: 'Someday',
       description: '',
+      title: 'Someday',
       value: nextMonth,
     },
     {
-      title: 'Custom',
       description: '',
+      title: 'Custom',
       value: yesterday,
     },
   ];

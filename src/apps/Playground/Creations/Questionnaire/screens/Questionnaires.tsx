@@ -92,9 +92,9 @@ export const Questionnaires = (): JSX.Element => {
           fab
           name="plus"
           style={{
+            bottom: 0,
             margin: 10,
             position: 'absolute',
-            bottom: 0,
             right: 0,
           }}
         />

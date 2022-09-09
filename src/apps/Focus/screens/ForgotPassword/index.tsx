@@ -34,10 +34,10 @@ export const ForgotPassword = memo(function ForgotPassword() {
   const handleResetPassword = useCallback(async () => {
     if (!email.current) {
       Toast.show({
-        type: 'negative',
         props: {
           title: 'Please enter your email address.',
         },
+        type: 'negative',
       });
       return;
     }
@@ -48,19 +48,19 @@ export const ForgotPassword = memo(function ForgotPassword() {
       await Firebase.auth().sendPasswordResetEmail(email.current);
       setState((p) => ({ ...p, loading: false }));
       Toast.show({
-        type: 'positive',
         props: { title: 'Please check your email to reset your password.' },
+        type: 'positive',
       });
       goBack();
     } catch (e) {
       setState((p) => ({ ...p, loading: false }));
       const err = e as FirebaseAuthTypes.NativeFirebaseAuthError;
       Toast.show({
-        type: 'negative',
         props: {
-          title: 'Unable to reset your password.',
           description: `${err.nativeErrorMessage}`,
+          title: 'Unable to reset your password.',
         },
+        type: 'negative',
       });
       Firebase.crashlytics().log('unable to reset password');
     }

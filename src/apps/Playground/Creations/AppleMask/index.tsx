@@ -31,9 +31,9 @@ const Section = ({
   return (
     <View
       style={{
-        paddingVertical: spacing(8),
         borderBottomColor: colors.border.tertiary,
         borderBottomWidth: 2,
+        paddingVertical: spacing(8),
       }}
     >
       <View row>
@@ -59,8 +59,8 @@ const Section = ({
               source={image}
               style={{
                 flex: 1,
-                width: imageWidth,
                 height: imageWidth / imageRatio,
+                width: imageWidth,
               }}
             />
           ) : null}
@@ -75,27 +75,27 @@ export const AppleMask = memo(function AppleMask() {
 
   const sections = [
     {
-      title: 'Align your preferred slots on the face shield and forehead band',
       description: 'Either side of the face shield can act as the front.',
       image: require('./one.png'),
       imageRatio: 1560 / 750,
+      title: 'Align your preferred slots on the face shield and forehead band',
     },
     {
-      title:
-        'Remove thin protective films from the face shield and forehead band by peeling from either edge',
       image: require('./two.gif'),
       imageRatio: 1560 / 1750,
+      title:
+        'Remove thin protective films from the face shield and forehead band by peeling from either edge',
     },
     {
-      title: 'Thread the strap through the slots and pull to adjust',
       image: require('./three.gif'),
       imageRatio: 1560 / 950,
+      title: 'Thread the strap through the slots and pull to adjust',
     },
     { title: 'Repeat on other side' },
     {
-      title: 'Adjust your face shield',
       image: require('./four.gif'),
       imageRatio: 1560 / 950,
+      title: 'Adjust your face shield',
     },
     {
       title:
@@ -114,8 +114,8 @@ export const AppleMask = memo(function AppleMask() {
     >
       <ScrollView
         style={{
-          paddingHorizontal: spacing(4),
           backgroundColor: colors.background.secondary,
+          paddingHorizontal: spacing(4),
         }}
       >
         <Text

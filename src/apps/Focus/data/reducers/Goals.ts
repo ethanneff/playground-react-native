@@ -12,8 +12,8 @@ export const focusGoalsActions = { loadGoals };
 
 /* REDUCER */
 const initialState: FocusGoalsReducer = {
-  updatedAt: 0,
   items: [],
+  updatedAt: 0,
 };
 
 export const focusGoalsReducer = (

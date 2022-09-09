@@ -17,7 +17,7 @@ export const Spacing = ({
   style,
 }: Props) => {
   return (
-    <View style={[{ padding: spacing(p), margin: spacing(m) }, style]}>
+    <View style={[{ margin: spacing(m), padding: spacing(p) }, style]}>
       {children}
     </View>
   );

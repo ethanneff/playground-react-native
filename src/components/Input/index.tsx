@@ -184,7 +184,7 @@ export const Input = memo(function Input({
       {!removeError && (
         <TouchableOpacity
           onPress={focusOnInput}
-          style={{ flexDirection: 'row', alignItems: 'center' }}
+          style={{ alignItems: 'center', flexDirection: 'row' }}
         >
           <Icon
             color="negative"

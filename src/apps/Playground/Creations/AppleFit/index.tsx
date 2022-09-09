@@ -9,28 +9,28 @@ const size = 300;
 const strokeWidth = 40;
 const rings: Ring[] = [
   {
-    start: 'rgb(249, 18, 78)',
-    end: 'rgb(249, 56, 133)',
     bg: 'rgb(50, 1, 14)',
-    theta: 1.7 * TAU,
-    size,
+    end: 'rgb(249, 56, 133)',
     icon: 'chevron-right',
+    size,
+    start: 'rgb(249, 18, 78)',
+    theta: 1.7 * TAU,
   },
   {
-    start: 'rgb(153, 255, 0)',
-    end: 'rgb(216, 255, 1)',
     bg: 'rgb(47, 78, 0)',
-    theta: 0.6 * TAU,
-    size: size - strokeWidth * 2,
+    end: 'rgb(216, 255, 1)',
     icon: 'chevron-double-right',
+    size: size - strokeWidth * 2,
+    start: 'rgb(153, 255, 0)',
+    theta: 0.6 * TAU,
   },
   {
-    start: 'rgb(0, 217, 253)',
-    end: 'rgb(0, 255, 169)',
     bg: 'rgb(0, 72, 77)',
-    theta: 2.3 * TAU,
-    size: size - strokeWidth * 4,
+    end: 'rgb(0, 255, 169)',
     icon: 'chevron-up',
+    size: size - strokeWidth * 4,
+    start: 'rgb(0, 217, 253)',
+    theta: 2.3 * TAU,
   },
 ];
 

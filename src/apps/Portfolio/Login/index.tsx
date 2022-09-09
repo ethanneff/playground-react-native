@@ -28,8 +28,8 @@ export const Login = memo(function PortfolioLogin() {
     >
       <ScrollView
         style={{
-          padding: spacing(4),
           backgroundColor: colors.background.secondary,
+          padding: spacing(4),
         }}
       >
         <Input

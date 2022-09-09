@@ -80,11 +80,11 @@ export type Tags = {
 };
 
 export const user: User = {
-  id: '123',
-  firstName: 'bob',
-  lastName: 'smith',
-  email: 'bob.smith@email.com',
   checklists: [],
+  email: 'bob.smith@email.com',
+  firstName: 'bob',
+  id: '123',
+  lastName: 'smith',
 };
 
 export const data = {

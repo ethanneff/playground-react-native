@@ -54,17 +54,17 @@ export const IntervalDetails = memo(function IntervalDetails() {
   const focus = useIsFocused();
 
   const [state, setState] = useState<State>({
-    well: '',
-    improve: '',
     commit: '',
-    goals: [],
-    goalModal: false,
-    goal: '',
-    uncomfortable: false,
     focus: false,
-    significant: false,
-    nps: 0,
+    goal: '',
+    goalModal: false,
+    goals: [],
+    improve: '',
     loading: false,
+    nps: 0,
+    significant: false,
+    uncomfortable: false,
+    well: '',
   });
 
   const handleChange = (key: string) => (value: string) => {
@@ -78,9 +78,9 @@ export const IntervalDetails = memo(function IntervalDetails() {
   const handleGoalAdd = useCallback(() => {
     setState((p) => ({
       ...p,
-      goals: [...p.goals, p.goal],
       goal: '',
       goalModal: false,
+      goals: [...p.goals, p.goal],
     }));
   }, []);
 
@@ -90,7 +90,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
 
   const handleModal = useCallback(
     (goalModal: boolean) => () =>
-      setState((p) => ({ ...p, goalModal, goal: '' })),
+      setState((p) => ({ ...p, goal: '', goalModal })),
     [],
   );
 
@@ -203,7 +203,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
           <Card>
             <View
               row
-              style={{ justifyContent: 'space-between', alignItems: 'center' }}
+              style={{ alignItems: 'center', justifyContent: 'space-between' }}
             >
               <Text
                 emphasis="medium"
@@ -230,10 +230,10 @@ export const IntervalDetails = memo(function IntervalDetails() {
                   <TouchableOpacity
                     key={g}
                     style={{
-                      flex: 0,
                       backgroundColor: colors.background.secondary,
-                      padding: spacing(2),
+                      flex: 0,
                       marginRight: index < goalLength ? spacing(2) : spacing(0),
+                      padding: spacing(2),
                     }}
                   >
                     <Text title={g} />
@@ -275,9 +275,9 @@ export const IntervalDetails = memo(function IntervalDetails() {
             <Spacing padding={1} />
             <View
               style={{
+                alignItems: 'center',
                 flexDirection: 'row',
                 justifyContent: 'center',
-                alignItems: 'center',
               }}
             >
               <Text

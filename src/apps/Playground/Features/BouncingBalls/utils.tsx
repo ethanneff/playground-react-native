@@ -75,11 +75,11 @@ export const getInitialItems = ({
     items.push({
       index: i,
       ...coordinate,
-      position: new Animated.ValueXY(coordinate),
       dx: getRandomNumber(-speed, speed),
       dy: getRandomNumber(-speed, speed),
-      radius,
       mass: radius,
+      position: new Animated.ValueXY(coordinate),
+      radius,
     });
   }
 

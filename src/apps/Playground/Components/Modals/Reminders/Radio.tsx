@@ -19,8 +19,8 @@ export const Radio = memo(function Radio({
   return (
     <View
       style={{
-        justifyContent: 'center',
         flexDirection: horizontal ? 'row' : 'column',
+        justifyContent: 'center',
       }}
     >
       {buttons.map((button, index) => (

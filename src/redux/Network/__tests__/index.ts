@@ -18,8 +18,8 @@ describe('network', () => {
       details: {
         isConnectionExpensive: true,
       },
-      isInternetReachable: true,
       isConnected: true,
+      isInternetReachable: true,
       type: NetInfoStateType.other,
     };
     const expectedAction = {
@@ -35,8 +35,8 @@ describe('network', () => {
       details: {
         isConnectionExpensive: true,
       },
-      isInternetReachable: false,
       isConnected: true,
+      isInternetReachable: false,
       type: NetInfoStateType.other,
     };
     expect(
@@ -46,11 +46,11 @@ describe('network', () => {
       }),
     ).toStrictEqual({
       connected: true,
-      reachable: false,
-      type: NetInfoStateType.other,
       details: {
         isConnectionExpensive: true,
       },
+      reachable: false,
+      type: NetInfoStateType.other,
     });
   });
 

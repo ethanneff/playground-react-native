@@ -68,7 +68,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
     const phoneConfirmation = await Firebase.auth().signInWithPhoneNumber(
       form.phone,
     );
-    setForm((prev) => ({ ...prev, state: 'phone confirm', phoneConfirmation }));
+    setForm((prev) => ({ ...prev, phoneConfirmation, state: 'phone confirm' }));
   }, [setForm, form.phone]);
 
   const onPhoneConfirm = useCallback(async () => {

@@ -39,5 +39,5 @@ export const getFontStyles = ({
     ? colors.text[color]
     : colors.text.primaryA;
   const textColorWithOpacity = colorWithOpacity(textColor, textColorPercent);
-  return { textColor: textColorWithOpacity, fontSize };
+  return { fontSize, textColor: textColorWithOpacity };
 };

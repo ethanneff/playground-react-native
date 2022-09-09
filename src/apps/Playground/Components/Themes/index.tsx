@@ -48,10 +48,10 @@ const cards: CardItem[] = [
     value: '42.1 M',
   },
   {
+    chart: image,
     target: '11% of target',
     title: 'Sales',
     value: '35.8 M',
-    chart: image,
   },
   {
     button: 'view',
@@ -72,10 +72,10 @@ const cards: CardItem[] = [
     value: '12%',
   },
   {
+    button: 'view',
+    target: '+45.1 of target',
     title: 'Churn',
     value: '8%',
-    target: '+45.1 of target',
-    button: 'view',
   },
   {
     title: 'Spend',
@@ -154,8 +154,8 @@ export const Themes = memo(function Themes() {
         <View style={{ padding: spacing(4) }}>
           <View
             style={{
-              flexDirection: 'row',
               alignItems: 'center',
+              flexDirection: 'row',
             }}
           >
             <Text title="theme: " />

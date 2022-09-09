@@ -26,13 +26,13 @@ export const Card = memo(function Card({
     <View
       onLayout={onLayout}
       style={{
-        flex: flex ? 1 : 0,
-        width,
-        borderRadius: completeConfig.borderRadius,
         backgroundColor: colors.background.primaryA,
-        padding: completeConfig.padding / 2,
-        marginRight: margin === 'right' ? completeConfig.padding : 0,
+        borderRadius: completeConfig.borderRadius,
+        flex: flex ? 1 : 0,
         marginBottom: margin === 'bottom' ? completeConfig.padding : 0,
+        marginRight: margin === 'right' ? completeConfig.padding : 0,
+        padding: completeConfig.padding / 2,
+        width,
       }}
     >
       {children}

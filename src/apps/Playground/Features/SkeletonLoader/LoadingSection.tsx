@@ -14,8 +14,8 @@ export const LoadingSection = (): JSX.Element => {
           />
           <View
             style={{
-              padding: spacing(4),
               justifyContent: 'space-between',
+              padding: spacing(4),
             }}
           >
             <SkeletonLoader

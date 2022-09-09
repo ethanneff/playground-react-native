@@ -12,10 +12,10 @@ type Props = {
 };
 
 const inverse: { [key: string]: Direction } = {
+  down: 'up',
   left: 'right',
   right: 'left',
   up: 'down',
-  down: 'up',
 };
 
 export const useGesture = ({
@@ -26,7 +26,6 @@ export const useGesture = ({
 } => {
   const direction = useRef<Direction>('up');
   const panResponder: PanResponderInstance = PanResponder.create({
-    onStartShouldSetPanResponder: () => true,
     onPanResponderRelease: (_, g) => {
       let direct: Direction = 'up';
       if (Math.abs(g.dx) >= Math.abs(g.dy))
@@ -36,6 +35,7 @@ export const useGesture = ({
       const reverse = noReverse && inverse[direct] === direction.current;
       direction.current = reverse ? direction.current : direct;
     },
+    onStartShouldSetPanResponder: () => true,
   });
 
   return { direction, panHandlers: panResponder.panHandlers };

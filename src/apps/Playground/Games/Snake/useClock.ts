@@ -47,5 +47,5 @@ export const useClock = ({
     return () => stop();
   }, [stop]);
 
-  return { stop, start };
+  return { start, stop };
 };

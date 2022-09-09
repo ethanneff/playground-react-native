@@ -43,9 +43,9 @@ export const selectQuestionnaire = createAction(
 
 export const questionnairesActions = {
   createQuestionnaire,
-  updateQuestionnaire,
   removeQuestionnaire,
   selectQuestionnaire,
+  updateQuestionnaire,
 };
 
 /* SELECTORS */

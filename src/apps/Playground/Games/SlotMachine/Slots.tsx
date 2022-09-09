@@ -45,9 +45,9 @@ const getInitialState = ({
   return {
     activity: 'idle',
     credits,
-    reelsArray,
-    multiplierIndex: 0,
     lineIndexes: [0, 0, 0],
+    multiplierIndex: 0,
+    reelsArray,
   };
 };
 
@@ -59,7 +59,7 @@ const getWildCards = (
   Object.keys(combinations).forEach((combination) => {
     const unicodeCombination = [...combination];
     if (unicodeCombination.length < reels.length)
-      wildCards.push({ line: combination, amount: combinations[combination] });
+      wildCards.push({ amount: combinations[combination], line: combination });
 
     return combination;
   });
@@ -110,11 +110,11 @@ const Reels = memo(function Reels({ reelsArray, lineIndexes }: ReelsProps) {
             <Text
               key={v4()}
               style={{
-                borderWidth: 2,
                 borderColor:
                   lineIndexes[i] === j
                     ? colors.border.accent
                     : colors.border.primaryA,
+                borderWidth: 2,
               }}
               title={item}
             />
@@ -137,9 +137,9 @@ const Bet = memo(function Bet({ onBet, disabled, multiplier }: BetProps) {
       disabled={disabled}
       onPress={onBet}
       style={{
+        alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center',
       }}
     >
       <Text
@@ -163,7 +163,7 @@ export const Slots = memo(function Slots({
   credits,
 }: Props) {
   const [state, setState] = useState<State>(() =>
-    getInitialState({ randomize, reels, credits }),
+    getInitialState({ credits, randomize, reels }),
   );
   const multiplier = multipliers[state.multiplierIndex];
   const disabled = state.activity === 'spinning';
@@ -192,8 +192,8 @@ export const Slots = memo(function Slots({
     setState((p) => ({
       ...p,
       activity: 'spinning',
-      lineIndexes,
       credits: remainingCredits,
+      lineIndexes,
     }));
     setTimeout(() => {
       console.log(winningLine, winningAmount);

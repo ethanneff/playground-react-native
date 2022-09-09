@@ -32,12 +32,12 @@ export const TextField = memo(function TextField() {
     const date = Date.now();
     const message: Message = {
       active: true,
+      conversationId: '1',
       createdAt: date,
-      userId: 'User bob',
       id: v4(),
       message: textField.trim(),
       updatedAt: date,
-      conversationId: '1',
+      userId: 'User bob',
     };
     dispatch(createChatMessage(message));
   }, [dispatch, textField]);
@@ -49,11 +49,11 @@ export const TextField = memo(function TextField() {
   return (
     <View
       style={{
-        padding: spacing(4),
-        flexDirection: 'row',
-        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: colors.background.primaryA,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        padding: spacing(4),
       }}
     >
       <Input
@@ -74,8 +74,8 @@ export const TextField = memo(function TextField() {
           disabled={!submittable}
           name="send"
           style={{
-            paddingLeft: spacing(2),
             justifyContent: 'center',
+            paddingLeft: spacing(2),
           }}
         />
       </TouchableOpacity>

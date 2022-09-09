@@ -17,8 +17,8 @@ export const useLayout = () => {
 
   const onLayout = useCallback((event: LayoutChangeEvent) => {
     const { x, y, height, width } = event.nativeEvent.layout;
-    setLayout({ x, y, height, width });
+    setLayout({ height, width, x, y });
   }, []);
 
-  return { layout, onLayout, tabBarEdges, insets };
+  return { insets, layout, onLayout, tabBarEdges };
 };

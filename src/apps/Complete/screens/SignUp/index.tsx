@@ -17,10 +17,10 @@ import { getDefaultUserTemplate } from '../../utils';
 
 const initialRef = { email: '', password: '' };
 const initialState = {
-  eye: false,
   completeForm: false,
-  passwordError: false,
+  eye: false,
   loading: false,
+  passwordError: false,
 };
 
 export const SignUp = memo(function SignUp() {
@@ -111,7 +111,7 @@ export const SignUp = memo(function SignUp() {
         blurOnSubmit={false}
         editable={!state.loading}
         error={state.passwordError}
-        icons={[{ name: eyeIcon, onPress: onEye, focus: true }]}
+        icons={[{ focus: true, name: eyeIcon, onPress: onEye }]}
         keyboardType="visible-password"
         onChangeText={onFormChange('password')}
         onRef={passwordRef}

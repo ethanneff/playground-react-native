@@ -64,18 +64,18 @@ export const Crash = memo(function CrashMemo() {
 
   const [playerGame, setPlayerGame] = useState<PlayerGame>({
     activeTab: 'manual',
-    bidAmount: 2,
     autoCashOut: 4,
+    bidAmount: 2,
     status: 'idle',
   });
 
   const [game, setGame] = useState<Game>({
-    status: 'start',
-    startTime: 0,
     endTime: 0,
-    payout: 0,
-    maxPayout: 0,
     history: [],
+    maxPayout: 0,
+    payout: 0,
+    startTime: 0,
+    status: 'start',
   });
   const gameSeconds = game.endTime - game.startTime;
 
@@ -165,8 +165,8 @@ export const Crash = memo(function CrashMemo() {
           <Spacing padding={2} />
           <View
             style={{
-              flexDirection: 'row',
               alignItems: 'center',
+              flexDirection: 'row',
             }}
           >
             <Input

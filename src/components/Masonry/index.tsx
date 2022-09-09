@@ -29,7 +29,7 @@ export const Masonry = memo(function Masonry<T>({
           key={`column-${v4()}`}
           style={{ flex: 1, padding: spacing(2) }}
         >
-          {column.map((item: T, index: number) => renderItem({ item, index }))}
+          {column.map((item: T, index: number) => renderItem({ index, item }))}
         </View>
       ))}
     </View>

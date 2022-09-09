@@ -46,13 +46,13 @@ const SignInButton = memo(function SignInButton({
       onPress={onPress}
       style={{
         alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'row',
         borderColor: colors.background.secondary,
-        borderWidth: 1,
-        padding: spacing(2),
-        marginBottom: spacing(margin ? 4 : 0),
         borderRadius: spacing(2),
+        borderWidth: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginBottom: spacing(margin ? 4 : 0),
+        padding: spacing(2),
       }}
     >
       <Icon name={icon} />
@@ -98,9 +98,9 @@ type State = {
 };
 
 const initialState: State = {
-  eye: false,
-  error: null,
   completeForm: false,
+  error: null,
+  eye: false,
   passwordError: false,
   screen: 'landing',
 };
@@ -324,7 +324,7 @@ export const Login = memo(function Login({
               backgroundColor="secondary"
               blurOnSubmit={false}
               editable={!loading}
-              icons={[{ name: eyeIcon, onPress: onEye, focus: true }]}
+              icons={[{ focus: true, name: eyeIcon, onPress: onEye }]}
               keyboardType="default"
               onChangeText={onFormChange('password')}
               onRef={passwordRef}
@@ -384,7 +384,7 @@ export const Login = memo(function Login({
               backgroundColor="primaryA"
               blurOnSubmit={false}
               editable={!loading}
-              icons={[{ name: eyeIcon, onPress: onEye, focus: true }]}
+              icons={[{ focus: true, name: eyeIcon, onPress: onEye }]}
               keyboardType="visible-password"
               onChangeText={onFormChange('password')}
               onRef={passwordRef}

@@ -39,9 +39,9 @@ const generateItems = ({
   for (let i = 0; i < length; i++) {
     const random = Math.random() * (max - min) + min;
     output.push({
+      color: colorWithOpacity(colors.text.accent, random),
       id: String(i),
       name: String(i),
-      color: colorWithOpacity(colors.text.accent, random),
     });
   }
   return output;
@@ -73,10 +73,10 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
     return (
       <View
         style={{
-          flex: 1,
-          justifyContent: 'space-around',
           alignItems: 'center',
           backgroundColor: item.color,
+          flex: 1,
+          justifyContent: 'space-around',
           marginBottom: spacing(2),
         }}
       >
@@ -97,7 +97,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
 
   const onSubmit = useCallback(() => {
     const date = Date.now().toString();
-    setData((p) => [...p, { id: date, name: date, color: colors.text.accent }]);
+    setData((p) => [...p, { color: colors.text.accent, id: date, name: date }]);
     listRef.current?.scrollToEnd(true);
   }, [colors.text.accent]);
 
@@ -117,8 +117,8 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
         />
         <View
           style={{
-            height: 200,
             backgroundColor: colors.background.secondary,
+            height: 200,
             padding: spacing(2),
           }}
         >

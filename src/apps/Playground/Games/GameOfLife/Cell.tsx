@@ -32,13 +32,13 @@ export const Cell = memo(function Cell({ x, y }: Props) {
     <TouchableOpacity
       onPress={onItemPress(x, y)}
       style={{
-        height: size,
-        width: size,
         backgroundColor: selected
           ? colors.background.accent
           : colors.background.primaryA,
-        borderWidth: 1,
         borderColor: colors.background.secondary,
+        borderWidth: 1,
+        height: size,
+        width: size,
       }}
     />
   );

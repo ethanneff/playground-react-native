@@ -37,14 +37,14 @@ export const focusAuthReducer = (
   switch (action.type) {
     case getType(loginAuth):
       return {
-        uid: action.payload.uid,
         status: 'authenticated',
+        uid: action.payload.uid,
         updatedAt: Date.now(),
       };
     case getType(logoutAuth):
       return {
-        uid: null,
         status: 'unauthenticated',
+        uid: null,
         updatedAt: Date.now(),
       };
     default:

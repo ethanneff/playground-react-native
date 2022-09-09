@@ -31,11 +31,11 @@ type ThemeState = {
 
 /* REDUCERS */
 export const themeInitialState: ThemeState = {
+  currentTheme: 'light',
   themes: {
     dark: darkTheme,
     light: lightTheme,
   },
-  currentTheme: 'light',
 };
 
 export const themeReducer = (

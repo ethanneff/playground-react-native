@@ -79,7 +79,7 @@ export const Snake = memo(function Snake() {
           <Text title={`points: ${game.points}`} />
         </View>
         <View
-          style={{ flex: 1, backgroundColor: colors.background.positive }}
+          style={{ backgroundColor: colors.background.positive, flex: 1 }}
           {...panHandlers} // eslint-disable-line react/jsx-props-no-spreading
         >
           <Board matrix={game.board.matrix} />

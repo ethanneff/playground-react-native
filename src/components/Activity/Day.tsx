@@ -34,12 +34,12 @@ export const Day = memo(function Day({
       key={String(day.date)}
       onPress={onPress(day)}
       style={{
-        width: size,
-        height: size,
-        margin,
         backgroundColor,
         borderColor,
         borderWidth: 2,
+        height: size,
+        margin,
+        width: size,
       }}
     />
   );

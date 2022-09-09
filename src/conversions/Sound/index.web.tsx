@@ -10,8 +10,8 @@ export class Sound {
 
   constructor(asset: string, error: (soundId: number, e: Error) => void) {
     this.sound = new Howl({
-      src: [asset],
       onloaderror: error as SuperAny,
+      src: [asset],
     });
   }
 

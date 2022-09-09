@@ -30,8 +30,8 @@ const initialActivity: ActivityModel = {
   activity: getActivitySquares(),
   request: 'loading',
   selected: {
-    submissions: ' ',
     day: 0,
+    submissions: ' ',
   },
 };
 
@@ -51,7 +51,7 @@ export const Activity = memo(function Activity({
   const getActivity = useCallback(async () => {
     try {
       const today = Date.now();
-      const api = await getApiActivity({ username, site });
+      const api = await getApiActivity({ site, username });
       const todayFormat = getDateFormat(today);
       const todayCount = api.contributions[todayFormat] || 0;
       setState((prev) => ({
@@ -59,8 +59,8 @@ export const Activity = memo(function Activity({
         activity: updateActivitySquares(prev.activity, api),
         request: 'success',
         selected: {
-          submissions: getSubmissionFormat(todayCount, today),
           day: 0,
+          submissions: getSubmissionFormat(todayCount, today),
         },
       }));
     } catch (error) {
@@ -85,8 +85,8 @@ export const Activity = memo(function Activity({
       setState((data) => ({
         ...data,
         selected: {
-          submissions: getSubmissionFormat(item.count, item.date),
           day: item.date,
+          submissions: getSubmissionFormat(item.count, item.date),
         },
       }));
     },
@@ -111,11 +111,11 @@ export const Activity = memo(function Activity({
     <Card>
       <View
         style={{
+          alignContent: 'center',
+          alignItems: 'center',
           flexDirection: 'row',
           justifyContent: 'space-between',
           paddingBottom: spacing(4),
-          alignContent: 'center',
-          alignItems: 'center',
         }}
       >
         {title ? (

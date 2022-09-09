@@ -19,8 +19,8 @@ export const updateResponse = createAction('responses/UPDATE')<Response>();
 export const removeResponse = createAction('responses/REMOVE')<string>();
 export const responsesActions = {
   createResponse,
-  updateResponse,
   removeResponse,
+  updateResponse,
 };
 
 /* REDUCERS */

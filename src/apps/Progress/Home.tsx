@@ -55,10 +55,10 @@ export const Home = memo(function ActivityTracker() {
         fab
         name="plus"
         style={{
-          position: 'absolute',
           bottom: 0,
-          right: 0,
           margin: spacing(4),
+          position: 'absolute',
+          right: 0,
         }}
       />
     </Screen>

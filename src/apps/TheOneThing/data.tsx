@@ -7,7 +7,6 @@ type Example = {
 export const examples: Example[] = [
   {
     category: 'Your personal life',
-    goal: "Let the ONE Thing bring clarity to the key areas of your life. Here's a short sampling.",
     examples: [
       "What's the ONE Thing I can do this week to discover or affirm my life's purpose... ?",
       "What's the ONE Thing I can do in 90 days to get in the physical shape I want... ?",
@@ -16,36 +15,37 @@ export const examples: Example[] = [
       "What's the ONE Thing I can do to knock five strokes off my golf game in 90 days... ? ",
       "What's the ONT thing I can do to to learn to paint in six months... ?",
     ],
+    goal: "Let the ONE Thing bring clarity to the key areas of your life. Here's a short sampling.",
   },
   {
     category: 'Your family',
-    goal: 'Use the ONE Thing with your family for fun and rewarding experiences',
     examples: [
       "What's the ONE Thing we can do this week to improve our marriage... ?",
       "What's the ONE Thing we can do every week to spend more quality family time together... ?",
       "What's the ONE Thing we can do tonight to support our kid's schoolwork... ?",
       "What's the ONE Thing we can do to make our next vacation the best ever... ? Our next Christmas the best ever... ? Thanksgiving the best ever... ?",
     ],
+    goal: 'Use the ONE Thing with your family for fun and rewarding experiences',
   },
   {
     category: 'Your job',
-    goal: 'Use the ONE Thing to be effective and productive at work',
     examples: [
       "What's the ONE Thing I can do today to complete my current project ahead of schedule... ?",
       "What's the ONE Thing I can do this month to produce better work... ?",
       "What's the ONE Thing I can do before my next review to get the raise I want... ?",
       "What's the ONE Thing I can do everyday to finish my work and still get home on time... ?",
     ],
+    goal: 'Use the ONE Thing to be effective and productive at work',
   },
   {
     category: 'Your team',
-    goal: 'Use the ONE Thing thinking into your everyday work situations to drive productivity upward.',
     examples: [
       "What's the ONE Thing I accomplish in this meeting and end early... ?",
       "What's the ONE Thing I can do in the next six months to find and develop incredible talent... ?",
       "What's the ONE Thing we can do right now to accomplish our goals ahead of schedule and under budget... ?",
       "What's the ONE Thing we can do in the next 90 days to create a ONE Thing culture... ?",
     ],
+    goal: 'Use the ONE Thing thinking into your everyday work situations to drive productivity upward.',
   },
 ];
 

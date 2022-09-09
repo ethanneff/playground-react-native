@@ -61,15 +61,15 @@ export const moveItemToItem = createAction(
   'complete/item/moveItemToItem',
 )<ItemMoveId>();
 export const completeItemActions = {
-  createItem,
-  removeItem,
-  updateItem,
-  navItemProject,
-  navItemDetails,
   addItemToItem,
+  createItem,
+  moveItemToItem,
+  navItemDetails,
+  navItemProject,
+  removeItem,
   removeItemFromItem,
   swapItemOrderInItem,
-  moveItemToItem,
+  updateItem,
 };
 
 /* SELECTORS */
@@ -95,8 +95,8 @@ export const getProjects = createSelector(
 
 /* REDUCER */
 const initialState: CompleteItemReducer = {
-  nav: { projectItemId: null, parentItemId: null, itemId: null },
   items: {},
+  nav: { itemId: null, parentItemId: null, projectItemId: null },
 };
 export const completeItemReducer = (
   state: CompleteItemReducer = initialState,

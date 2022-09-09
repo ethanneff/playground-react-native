@@ -101,7 +101,7 @@ export const Icon = memo(function Icon({
       width: spacing(6),
     },
   });
-  const colored = getColor({ hidden, color, colors, disabled, clear });
+  const colored = getColor({ clear, color, colors, disabled, hidden });
 
   const containerStyles = [
     Platform.OS === 'web' ? styles.web : undefined,

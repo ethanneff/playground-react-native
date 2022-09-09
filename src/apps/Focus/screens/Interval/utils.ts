@@ -9,9 +9,9 @@ export const getItemLayout = (
   _: Item[] | null | undefined,
   index: number,
 ): { index: number; length: number; offset: number } => ({
+  index,
   length: itemHeight,
   offset: itemHeight * index,
-  index,
 });
 
 export const getCurrentItem = (item: Item): boolean => {
@@ -49,12 +49,12 @@ export const getMoreItems = (items: Item[]): Item[] => {
     const next = dayjs(lastItem).subtract(1, 'hour');
     const id = next.valueOf();
     group.push({
-      title: String(Math.random()) + String(Math.random()),
       dayOfMonth: next.format('D'),
       dayOfWeek: next.format('ddd'),
       hour: next.format('h'),
       id,
       month: next.format('MMM'),
+      title: String(Math.random()) + String(Math.random()),
       zone: next.format('a'),
     });
   }

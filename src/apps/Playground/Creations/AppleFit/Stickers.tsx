@@ -36,9 +36,9 @@ export const Stickers = memo(function Sticker({
           name={icon}
           size={strokeWidth}
           style={{
+            left: size / 2 - strokeWidth / 2,
             position: 'absolute',
             top: strokeWidth * index,
-            left: size / 2 - strokeWidth / 2,
           }}
         />
       </View>

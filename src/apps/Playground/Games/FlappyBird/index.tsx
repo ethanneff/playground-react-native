@@ -10,8 +10,8 @@ const Bird = () => {
     <Animated.View
       style={{
         backgroundColor: colors.background.negative,
-        width: 50,
         height: 50,
+        width: 50,
       }}
     />
   );
@@ -21,7 +21,7 @@ const Pillar = () => {
   const colors = useColors();
   const useNativeDriver = useDriver();
   const location = useRef(new Animated.ValueXY({ x: 0, y: 0 }));
-  const state = useRef({ x: 0, y: 0, direction: 1 });
+  const state = useRef({ direction: 1, x: 0, y: 0 });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,8 +48,8 @@ const Pillar = () => {
         location.current.getLayout(),
         {
           backgroundColor: colors.background.positive,
-          width: 50,
           height: 50,
+          width: 50,
         },
       ]}
     />
@@ -65,7 +65,7 @@ export const FlappyBird = memo(function FlappyBird() {
       onLeftPress={goBack}
       title="Flappy Bird"
     >
-      <View style={{ flex: 1, backgroundColor: colors.background.secondary }}>
+      <View style={{ backgroundColor: colors.background.secondary, flex: 1 }}>
         <Bird />
         <Pillar />
       </View>

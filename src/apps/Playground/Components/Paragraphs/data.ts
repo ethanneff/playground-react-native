@@ -12,12 +12,12 @@ export const data: Sections = [
     paragraphs: [
       [
         { title: 'first paragraph1' },
-        { title: 'nav here', onPress },
+        { onPress, title: 'nav here' },
         { title: 'blah bldah blah. blah blah blah' },
       ],
       [
         { title: 'second paragraph1' },
-        { title: 'nav here', onPress },
+        { onPress, title: 'nav here' },
         {
           title:
             'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
@@ -31,12 +31,12 @@ export const data: Sections = [
     paragraphs: [
       [
         { title: 'first paragraph2' },
-        { title: 'nav here', onPress },
+        { onPress, title: 'nav here' },
         { title: 'blah bldah blah. blah blah blah' },
       ],
       [
         { title: 'second paragraph2' },
-        { title: 'nav here', onPress },
+        { onPress, title: 'nav here' },
         {
           title:
             'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
@@ -44,7 +44,7 @@ export const data: Sections = [
       ],
       [
         { title: 'third paragraph2' },
-        { title: 'nav here', onPress },
+        { onPress, title: 'nav here' },
         {
           title:
             'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
@@ -58,12 +58,12 @@ export const data: Sections = [
     paragraphs: [
       [
         { title: 'first paragraph3' },
-        { title: 'nav here', onPress },
+        { onPress, title: 'nav here' },
         { title: 'blah bldah blah. blah blah blah' },
       ],
       [
         { title: 'second paragraph3' },
-        { title: 'nav here', onPress },
+        { onPress, title: 'nav here' },
         {
           title:
             'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
@@ -71,7 +71,7 @@ export const data: Sections = [
       ],
       [
         { title: 'third paragraph3' },
-        { title: 'nav here', onPress },
+        { onPress, title: 'nav here' },
         {
           title:
             'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',

@@ -20,12 +20,12 @@ export const Cell = memo(function Cell({ value, length }: CellProps) {
   return (
     <View
       style={{
-        flex: 1,
-        width,
-        height: width,
-        borderWidth: 1,
-        borderColor: colors.background.secondary,
         backgroundColor,
+        borderColor: colors.background.secondary,
+        borderWidth: 1,
+        flex: 1,
+        height: width,
+        width,
       }}
     />
   );

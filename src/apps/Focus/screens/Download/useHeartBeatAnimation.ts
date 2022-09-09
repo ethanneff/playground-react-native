@@ -11,14 +11,14 @@ export const useHeartBeatAnimation = () => {
     Animated.loop(
       Animated.sequence([
         Animated.timing(loadingAnimation, {
+          duration: 500,
           toValue: 1.1,
           useNativeDriver,
-          duration: 500,
         }),
         Animated.timing(loadingAnimation, {
+          duration: 500,
           toValue: 1,
           useNativeDriver,
-          duration: 500,
         }),
       ]),
     ).start();

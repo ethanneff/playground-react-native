@@ -22,7 +22,7 @@ export const getActivitySquares = (): ActivitySquares => {
   let day = 0;
   let week = [];
   while (end >= begin) {
-    week.unshift({ date: end, count: 0 });
+    week.unshift({ count: 0, date: end });
     if (day > 5) {
       matrix.push(week);
       week = [];

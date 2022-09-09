@@ -74,5 +74,5 @@ export const usePersistedState = (): UsePersistedState => {
     restoreState();
   }, [isReady, restoreState]);
 
-  return { isReady, initialState, onStateChange, onReady, onRef };
+  return { initialState, isReady, onReady, onRef, onStateChange };
 };

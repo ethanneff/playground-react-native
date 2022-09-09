@@ -37,9 +37,9 @@ export const networkReducer = (
     case getType(updateNetwork):
       return {
         ...state,
-        reachable: action.payload.isInternetReachable || false,
         connected: action.payload.isConnected,
         details: action.payload.details,
+        reachable: action.payload.isInternetReachable || false,
         type: action.payload.type,
       };
     case getType(logout):

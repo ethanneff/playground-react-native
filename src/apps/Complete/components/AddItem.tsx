@@ -48,20 +48,20 @@ export const AddItem = memo(function AddItem({
     const itemId = v4();
     const date = Date.now();
     const item: Item = {
-      id: itemId,
-      userId,
       active: true,
-      title: value,
-      createdAt: date,
-      updatedAt: date,
       children: [],
-      tags: [],
+      createdAt: date,
       description: '',
       editable: true,
+      id: itemId,
+      tags: [],
+      title: value,
       type: 'note',
+      updatedAt: date,
+      userId,
     };
     dispatch(createItem(item));
-    dispatch(addItemToItem({ parentItemId, itemId }));
+    dispatch(addItemToItem({ itemId, parentItemId }));
   }, [dispatch, parentItemId, userId]);
 
   const onAddItemPress = useCallback(() => setShowInput((p) => !p), []);
@@ -69,14 +69,14 @@ export const AddItem = memo(function AddItem({
   const onBlur = useCallback(() => setShowInput(false), []);
 
   const icons: TextInputIcon[] = [
-    { name: 'close', onPress: onClose, focus: true, reset: true },
+    { focus: true, name: 'close', onPress: onClose, reset: true },
     {
-      name: 'send',
-      onPress: onSubmit,
+      clear: true,
       color: 'accent',
       focus: true,
+      name: 'send',
+      onPress: onSubmit,
       required: true,
-      clear: true,
     },
   ];
 
@@ -87,11 +87,11 @@ export const AddItem = memo(function AddItem({
   return (
     <View
       style={{
-        width,
-        height: spacing(12),
-        borderRadius: completeConfig.borderRadius,
         backgroundColor: colors.background.primaryA,
+        borderRadius: completeConfig.borderRadius,
+        height: spacing(12),
         justifyContent: 'center',
+        width,
       }}
     >
       {showInput ? (

@@ -15,8 +15,8 @@ export const Day = memo(function Day() {
     >
       <ScrollView
         contentContainerStyle={{
-          padding: spacing(4),
           backgroundColor: colors.background.secondary,
+          padding: spacing(4),
         }}
       >
         <Card>

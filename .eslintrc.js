@@ -87,7 +87,6 @@ module.exports = {
     // react-native
     '@typescript-eslint/no-var-requires': 'off', // images
     // vscode
-    'sort-keys': 'off',
     'sort-imports': 'off',
     // typescript
     'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
@@ -95,6 +94,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'default-param-last': 'off',
     // style
+    'sort-keys-fix/sort-keys-fix': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': [
       'error',

@@ -21,11 +21,11 @@ export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
     <View
       key={item.id}
       style={{
-        padding: spacing(2),
+        backgroundColor: colors.background.primaryA,
         borderRadius: spacing(4),
         flexDirection: 'row',
         marginBottom: marginBottom ? spacing(4) : 0,
-        backgroundColor: colors.background.primaryA,
+        padding: spacing(2),
       }}
     >
       <View style={{ width: 40 }}>
