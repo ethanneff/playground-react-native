@@ -1,7 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { Button, Carousel, Screen } from '../../../components';
-import { CarouselSlide } from '../../../components/Carousel/types';
+import { Button, Carousel, CarouselSlide, Screen } from '../../../components';
 import { useColors } from '../../../features';
 import { PortfolioNavigation } from '../types';
 

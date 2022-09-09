@@ -4,11 +4,11 @@ import {
   Icon,
   IconName,
   Sentence,
+  SentenceType,
   Text,
   TouchableOpacity,
   View,
 } from '../../../components';
-import { SentenceType } from '../../../components/Sentence/types';
 import { spacing, useColors } from '../../../features';
 
 const missingCallback = () => undefined;

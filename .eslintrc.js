@@ -1,3 +1,41 @@
+const restrictedImports = {
+  paths: [
+    {
+      name: 'react-native',
+      importNames: [
+        'View',
+        'ActivityIndicator',
+        'Button',
+        'SafeAreaView',
+        'FlatList',
+        'ScrollView',
+        'Switch',
+        'Text',
+        'TextInput',
+        'TouchableHighlight',
+        'TouchableNativeFeedback',
+        'TouchableOpacity',
+        'TouchableWithoutFeedback',
+      ],
+      message: 'use Components',
+    },
+    {
+      name: 'react-native-gesture-handler',
+      importNames: [
+        'FlatList',
+        'ScrollView',
+        'Switch',
+        'TextInput',
+        'TouchableHighlight',
+        'TouchableNativeFeedback',
+        'TouchableOpacity',
+        'TouchableWithoutFeedback',
+      ],
+      message: 'use Components',
+    },
+  ],
+};
+
 module.exports = {
   extends: [
     'eslint:all',
@@ -44,56 +82,16 @@ module.exports = {
     // imports
     'import/no-cycle': 'error',
     'import/no-unresolved': ['error', { ignore: ['root-types'] }], // redux typing imports
-    'no-restricted-imports': [
-      'error',
-      {
-        paths: [
-          {
-            name: 'react-native',
-            importNames: [
-              'View',
-              'ActivityIndicator',
-              'Button',
-              'SafeAreaView',
-              'FlatList',
-              'ScrollView',
-              'Switch',
-              'Text',
-              'TextInput',
-              'TouchableHighlight',
-              'TouchableNativeFeedback',
-              'TouchableOpacity',
-              'TouchableWithoutFeedback',
-            ],
-            message: 'use Components',
-          },
-          {
-            name: 'react-native-gesture-handler',
-            importNames: [
-              'FlatList',
-              'ScrollView',
-              'Switch',
-              'TextInput',
-              'TouchableHighlight',
-              'TouchableNativeFeedback',
-              'TouchableOpacity',
-              'TouchableWithoutFeedback',
-            ],
-            message: 'use Components',
-          },
-        ],
-      },
-    ],
+    'no-restricted-imports': ['error', restrictedImports],
     // react-native
     '@typescript-eslint/no-var-requires': 'off', // images
-    // vscode
-    'sort-imports': 'off',
     // typescript
     'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
     'react/jsx-filename-extension': 'off',
     'react/require-default-props': 'off',
     'default-param-last': 'off',
     // style
+    'sort-imports': 'off',
     'sort-keys-fix/sort-keys-fix': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': [
