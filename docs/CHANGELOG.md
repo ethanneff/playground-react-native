@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.70.5](https://github.com/ethanneff/playground-react-native/compare/v2.70.4...v2.70.5) (2022-09-08)
+
+
+### Bug Fixes
+
+* add uncomfortable question ([ff41048](https://github.com/ethanneff/playground-react-native/commit/ff4104830415214e3816783f3e2cb2d3c212c5cf))
+* correct placement of buttons ([351b692](https://github.com/ethanneff/playground-react-native/commit/351b69286d1298ad171019ac1e2412b58d79b30f))
+* prevent update state error on skeleton loader ([823d95c](https://github.com/ethanneff/playground-react-native/commit/823d95c5eb2e0111678c14bae97f544a5061f3f0))
+* reduce time for app rate ([a58af94](https://github.com/ethanneff/playground-react-native/commit/a58af94f16a38aed21297ac1b4a84d264d1bd8d2))
+* update deps ([e70a69d](https://github.com/ethanneff/playground-react-native/commit/e70a69d9573451df5788f7ca3b7feb187afc9154))
+
 ## [2.70.4](https://github.com/ethanneff/playground-react-native/compare/v2.70.3...v2.70.4) (2022-08-25)
 
 
