@@ -61,7 +61,6 @@ import {
   gameOfLifeReducer,
 } from '../apps/Playground/Games/GameOfLife/redux';
 import { addFlipperMiddleware, Storage } from '../conversions';
-import { syncMiddleware } from './sync';
 
 export const actions = {
   auth: authActions,
@@ -117,7 +116,7 @@ export const reducers = combineReducers({
 
 const blacklist = ['gameOfLife'];
 const persistConfig = { blacklist, key: 'root', storage: Storage };
-const middlewares = [thunk, syncMiddleware];
+const middlewares = [thunk];
 addFlipperMiddleware(middlewares);
 const persistedReducer = persistReducer(persistConfig, reducers);
 export const store = createStore(
@@ -126,7 +125,9 @@ export const store = createStore(
 );
 const persistor = persistStore(store);
 
-type Props = { children: ReactNode };
+type Props = {
+  children: ReactNode;
+};
 export const ReduxProvider = memo(function ReduxProvider({ children }: Props) {
   return (
     <Provider store={store}>

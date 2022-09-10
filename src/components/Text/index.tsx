@@ -64,7 +64,7 @@ export const Text = memo(function Text({
   });
   const text =
     type === 'button' || type === 'overline'
-      ? (title || '').toUpperCase()
+      ? (title ?? '').toUpperCase()
       : title;
   const styles = StyleSheet.create({
     bold: {

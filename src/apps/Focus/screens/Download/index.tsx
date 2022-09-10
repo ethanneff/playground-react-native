@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import Lottie from 'lottie-react-native';
+import Lottie, { AnimationObject } from 'lottie-react-native';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { Animated, ImageSourcePropType } from 'react-native';
+import { Animated } from 'react-native';
 import {
   Button,
   Screen,
@@ -22,7 +22,7 @@ import { useHeartBeatAnimation } from './useHeartBeatAnimation';
 const minTime = 1500;
 const maxTime = 10000;
 
-const loader = require('./loader.json') as ImageSourcePropType;
+const loader = require('./loader.json') as AnimationObject;
 
 export const Download = memo(function Download() {
   const { navigate } =

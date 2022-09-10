@@ -11,7 +11,7 @@ export const Chat = memo(function PlaygroundChat() {
   const { layout, onLayout, insets } = useLayout();
   const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
   const bottomInset = keyboardHeight > 0 ? insets.bottom : 0;
-  const height = (layout?.height || 0) - keyboardHeight + bottomInset;
+  const height = (layout?.height ?? 0) - keyboardHeight + bottomInset;
 
   return (
     <Screen

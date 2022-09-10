@@ -25,8 +25,7 @@ export const Project = memo(function Project() {
   const projectItemTitle = useRootSelector(
     (s) => s.completeItem.items[projectItemId].title,
   );
-  if (!projectItemType)
-    throw new Error('missing projectItemType on board screen');
+
   const listWidth = screenWidth * 0.7;
   const { tabBarEdges } = useLayout();
   const [container, setContainer] = useState(0);

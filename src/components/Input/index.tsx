@@ -118,10 +118,7 @@ export const Input = memo(function Input({
     setFocus(true);
   }, []);
   const onBlur = useCallback(() => setFocus(false), []);
-  const focusOnInput = useCallback(
-    () => textInput.current && textInput.current.focus(),
-    [],
-  );
+  const focusOnInput = useCallback(() => textInput.current?.focus(), []);
   const textClear = useCallback(() => {
     if (textInput.current) textInput.current.clear();
     onChangeText('');

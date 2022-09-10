@@ -6,10 +6,16 @@ import { Screen, TouchableOpacity, View } from '../../../../components';
 import { useColors } from '../../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../../redux';
 
-type Vector = { x: number; y: number };
-type Gem = { color: string; key: string };
+type Vector = {
+  x: number;
+  y: number;
+};
+type Gem = {
+  color: string;
+  key: string;
+};
 type Board = Gem[][];
-type Matches = { [key: string]: Vector };
+type Matches = Record<string, Vector>;
 
 const getRandom = (max: number) => {
   return Math.floor(Math.random() * max);

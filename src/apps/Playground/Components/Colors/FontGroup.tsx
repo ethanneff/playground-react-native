@@ -12,7 +12,7 @@ type FontGroupProps = {
 };
 
 export const FontGroup = memo(function FontGroup({ emphasis }: FontGroupProps) {
-  const sizes = Object.keys(fontSizes) as Array<FontType>;
+  const sizes = Object.keys(fontSizes) as FontType[];
   return (
     <View style={{ alignItems: 'center', flex: 1 }}>
       <Text

@@ -11,14 +11,13 @@ export const ItemDetail = memo(function ItemDetail() {
   const dispatch = useRootDispatch();
   const { goBack } = useNavigation();
   const colors = useColors();
-
   const { itemId, parentItemId } = useRootSelector((s) => s.completeItem.nav);
-  const item = useRootSelector((s) => s.completeItem.items[itemId || '']);
+  if (!itemId || !parentItemId)
+    throw new Error('missing listId or itemId on item detail screen');
+  const item = useRootSelector((s) => s.completeItem.items[itemId]);
   const [deleteModal, setDeleteModal] = useState(false);
 
   const onItemDelete = useCallback(() => {
-    if (!itemId || !parentItemId)
-      throw new Error('missing listId or itemId on item detail screen');
     dispatch(removeItem(itemId));
     dispatch(removeItemFromItem({ itemId, parentItemId }));
     setDeleteModal(false);
@@ -36,7 +35,7 @@ export const ItemDetail = memo(function ItemDetail() {
   const onDeletePress = useCallback(() => setDeleteModal(true), []);
   const onDeleteClose = useCallback(() => setDeleteModal(false), []);
 
-  return item ? (
+  return (
     <>
       <Modal
         backgroundColor={colors.background.secondary}
@@ -108,5 +107,5 @@ export const ItemDetail = memo(function ItemDetail() {
         />
       ) : null}
     </>
-  ) : null;
+  );
 });

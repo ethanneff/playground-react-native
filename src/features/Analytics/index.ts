@@ -6,7 +6,7 @@ export const Analytics = {
   setUserId: async (userId: string) => {
     await analytics().setUserId(userId);
   },
-  setUserProperties: async (properties: { [key: string]: string | null }) => {
+  setUserProperties: async (properties: Record<string, string | null>) => {
     await analytics().setUserProperties(properties);
   },
   trackEvent: async (event: Event, properties = {}) => {

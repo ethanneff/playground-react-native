@@ -8,9 +8,7 @@ type Choice = {
   value?: number;
 };
 
-type Choices = {
-  [id: string]: Choice;
-};
+type Choices = Record<string, Choice>;
 
 /* ACTIONS */
 export const createChoice = createAction('choices/CREATE')<Choice>();

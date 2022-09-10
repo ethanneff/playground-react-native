@@ -4,12 +4,13 @@ import { Interval } from '../types';
 import { logoutAuth } from './Auth';
 
 /* INTERFACES */
-type FocusIntervalsReducer = { items: Array<Interval>; updatedAt: number };
+type FocusIntervalsReducer = {
+  items: Interval[];
+  updatedAt: number;
+};
 
 /* ACTIONS */
-export const loadIntervals = createAction('focus/intervals/load')<
-  Array<Interval>
->();
+export const loadIntervals = createAction('focus/intervals/load')<Interval[]>();
 export const focusIntervalsActions = { loadIntervals };
 
 /* REDUCER */

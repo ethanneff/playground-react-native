@@ -1,7 +1,10 @@
 import React from 'react';
 import { Spacing, Text } from '../../../components';
 
-type TitleProps = { description: string; title: string };
+type TitleProps = {
+  description: string;
+  title: string;
+};
 
 export const Title = ({ title, description }: TitleProps) => {
   return (

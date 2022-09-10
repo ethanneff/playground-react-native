@@ -31,7 +31,7 @@ export const Carousel = memo(function Carousel({
 
   const onViewableItemsChanged = useCallback(
     ({ viewableItems }: { viewableItems: ViewToken[] }) => {
-      const index = viewableItems[0]?.index || 0;
+      const index = viewableItems[0]?.index ?? 0;
       setActiveIndex(index);
       activeIndexRef.current = index;
     },

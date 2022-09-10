@@ -17,7 +17,7 @@ export type ChecklistItem = {
   updatedAt: number;
   userId: string;
 };
-export type ChecklistItems = { [key: string]: ChecklistItem };
+export type ChecklistItems = Record<string, ChecklistItem>;
 export type ChecklistItemReducer = {
   active: string | undefined;
   items: ChecklistItems;

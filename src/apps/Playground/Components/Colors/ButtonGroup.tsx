@@ -16,7 +16,7 @@ export const ButtonGroup = memo(function ButtonGroup({
   emphasis,
 }: ButtonGroupProps) {
   const colors = useColors();
-  const keys = Object.keys(colors.text) as Array<keyof MonoMultiColor>;
+  const keys = Object.keys(colors.text) as (keyof MonoMultiColor)[];
   const handlePress = useCallback(() => null, []);
   return (
     <View flex>

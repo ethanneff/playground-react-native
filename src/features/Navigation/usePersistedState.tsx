@@ -30,7 +30,7 @@ export const usePersistedState = (): UsePersistedState => {
   const onStateChange = useCallback((state: NavigationState | undefined) => {
     const previousRouteName = routeNameRef.current;
     const currentRouteName =
-      navigationRef?.current?.getCurrentRoute()?.name || null;
+      navigationRef.current?.getCurrentRoute()?.name ?? null;
 
     if (previousRouteName !== currentRouteName && currentRouteName) {
       Analytics.trackScreen(currentRouteName);
@@ -48,7 +48,7 @@ export const usePersistedState = (): UsePersistedState => {
 
   const onReady = () => {
     routeNameRef.current =
-      navigationRef?.current?.getCurrentRoute()?.name || null;
+      navigationRef.current?.getCurrentRoute()?.name ?? null;
   };
 
   const restoreState = useCallback(async () => {

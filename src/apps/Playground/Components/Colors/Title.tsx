@@ -2,7 +2,9 @@ import React, { memo } from 'react';
 import { Text } from '../../../../components';
 import { spacing } from '../../../../features';
 
-type Props = { title: string };
+type Props = {
+  title: string;
+};
 
 export const Title = memo(function Title({ title }: Props) {
   return (

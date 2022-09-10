@@ -148,7 +148,7 @@ export const TextInput = memo(function TextInput({
   const [focus, setFocus] = useState(false);
   const [text, setText] = useState(value);
   const colors = useColors();
-  const backColor = colors.background[backgroundColor || 'primaryA'];
+  const backColor = colors.background[backgroundColor ?? 'primaryA'];
   const { fontSize, textColor } = getFontStyles({
     color,
     colors,
@@ -161,13 +161,13 @@ export const TextInput = memo(function TextInput({
   const onChangeTextInternal = useCallback(
     (val: string) => {
       setText(val);
-      if (onChangeText) onChangeText(val);
+      onChangeText(val);
     },
     [onChangeText],
   );
 
   const onSubmitEditingInternal = useCallback(() => {
-    if (onSubmitEditing) onSubmitEditing();
+    onSubmitEditing();
     if (submitClear) setText('');
   }, [onSubmitEditing, submitClear]);
 

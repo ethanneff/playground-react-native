@@ -89,12 +89,10 @@ export const shuffleArray = <T>(array: T[]): T[] => {
 
 export const getRandomReelArrays = (reels: Reels): Element[][] => {
   const arrays: Element[][] = [];
-  for (let i = 0; i < reels.length; i++) {
+  for (const reel of reels) {
     const array: Element[] = [];
-    const reel = reels[i];
-    const keys = Object.keys(reel);
-    for (let j = 0; j < keys.length; j++) {
-      const key = keys[j] as Element;
+    const keys = Object.keys(reel) as Element[];
+    for (const key of keys) {
       const amount = reel[key];
       for (let k = 0; k < amount; k++) array.push(key);
     }

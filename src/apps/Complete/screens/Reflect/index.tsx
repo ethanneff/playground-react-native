@@ -17,7 +17,9 @@ import { Graph } from './Graph';
 // TODO: add purpose
 // TODO: add goals
 
-type TitleProps = { name: string };
+type TitleProps = {
+  name: string;
+};
 
 const Title = ({ name }: TitleProps) => {
   return (

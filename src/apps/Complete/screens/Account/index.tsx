@@ -49,10 +49,10 @@ export const Account = memo(function Account() {
             title="Profile"
             type="h5"
           />
-          <Text title={profile?.displayName || ''} />
-          <Text title={profile?.email || ''} />
-          <Text title={String(profile?.emailVerified) || ''} />
-          <Text title={profile?.uid || ''} />
+          <Text title={profile?.displayName ?? ''} />
+          <Text title={profile?.email ?? ''} />
+          <Text title={String(profile?.emailVerified ?? '')} />
+          <Text title={profile?.uid ?? ''} />
           <Text
             center
             emphasis="medium"

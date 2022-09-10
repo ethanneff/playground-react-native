@@ -6,7 +6,7 @@ import { spacing, TagColor, useColors } from '../../../../features';
 export const TagGroup = memo(function TagGroup() {
   const colors = useColors();
   const onPress = useCallback(() => undefined, []);
-  const keys = Object.keys(colors.tag) as Array<keyof TagColor>;
+  const keys = Object.keys(colors.tag) as (keyof TagColor)[];
   return (
     <>
       {keys.map((c) => (

@@ -33,11 +33,7 @@ export const getFontStyles = ({
 }: GetFontStylesProps): GetFontStylesReturn => {
   const textColorPercent = fontEmphases[emphasis];
   const fontSize = fontSizes[type];
-  const textColor = inverse
-    ? colors.text.primaryB
-    : color
-    ? colors.text[color]
-    : colors.text.primaryA;
+  const textColor = inverse ? colors.text.primaryB : colors.text[color];
   const textColorWithOpacity = colorWithOpacity(textColor, textColorPercent);
   return { fontSize, textColor: textColorWithOpacity };
 };

@@ -19,9 +19,9 @@ export const ProgressionDetails = memo(function ProgressionDetails() {
     <Modal onBackgroundPress={onModalClose}>
       <Text title="category detail" />
       {/* <Activity site="random" title="Deep Work" username="random" /> */}
-      <Text title={route?.params?.category?.id} />
-      <Text title={route?.params?.category?.name} />
-      <Text title={route?.params?.category?.total.toString()} />
+      <Text title={route.params.category.id} />
+      <Text title={route.params.category.name} />
+      <Text title={route.params.category.total.toString()} />
     </Modal>
   );
 });

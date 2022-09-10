@@ -4,9 +4,7 @@ import {
   PointPropType,
 } from 'react-native';
 
-type Touches = {
-  [key: string]: PointPropType;
-};
+type Touches = Record<string, PointPropType>;
 
 type Outcome = {
   pinch: boolean;
@@ -40,16 +38,11 @@ export class GestureHandler {
   }
 
   recordStart(touch: NativeTouchEvent): void {
-    if (this.isStartAlreadyRecorded(touch)) return;
-
-    this.start[String(touch.identifier)] = {
+    if (touch.identifier in this.start) return;
+    this.start[touch.identifier] = {
       x: touch.locationX,
       y: touch.locationY,
     };
-  }
-
-  isStartAlreadyRecorded(touch: NativeTouchEvent): PointPropType {
-    return this.start[String(touch.identifier)];
   }
 
   recordFinish(touch: NativeTouchEvent): void {

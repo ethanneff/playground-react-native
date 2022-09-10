@@ -8,7 +8,10 @@ type Props = {
 
 type State = 'off' | 'on';
 
-type UseClock = { start: () => void; stop: () => void };
+type UseClock = {
+  start: () => void;
+  stop: () => void;
+};
 
 export const useClock = ({
   precision = 16,

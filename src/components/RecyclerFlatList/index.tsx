@@ -56,7 +56,7 @@ export const RecyclerFlatList = <T,>({
     refreshControl: (
       <RefreshControl
         onRefresh={onRefetch}
-        refreshing={refreshing || false}
+        refreshing={refreshing ?? false}
       />
     ),
     showsVerticalScrollIndicator: false,

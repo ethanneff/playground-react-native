@@ -3,7 +3,7 @@ SIZING https://material.io/design/typography/the-type-system.html#applying-the-t
 */
 import { FontEmphases, FontSizes, FontWeight } from './types';
 
-export const fontWeight: { [key: string]: FontWeight } = {
+export const fontWeight: Record<string, FontWeight> = {
   light: '100',
   medium: '500',
   regular: '300',

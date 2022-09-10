@@ -14,7 +14,7 @@ export const Terms = memo(function Terms() {
       title="Terms of service"
     >
       <ScrollView>
-        <Text title="ehlleo" />
+        <Text title="hello" />
       </ScrollView>
     </Screen>
   );

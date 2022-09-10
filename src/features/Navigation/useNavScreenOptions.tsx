@@ -10,10 +10,13 @@ import { Icon, IconName, Text, View } from '../../components';
 import { SoundManager, StringMethods } from '../../features';
 import { useColors } from '../Theme';
 
-export type TabIcons = {
-  [key: string]: { focused: IconName; unFocused: IconName };
+export type TabIcons = Record<
+  string,
+  { focused: IconName; unFocused: IconName }
+>;
+type NavOptions = {
+  route: RouteProp<ParamListBase>;
 };
-type NavOptions = { route: RouteProp<ParamListBase> };
 type TabScreenOptions = {
   headerShown?: boolean;
   tabIcons: TabIcons;

@@ -5,7 +5,11 @@ export type ColorChoice =
   | 'violet'
   | 'lightgrey';
 
-export type TrackPosition = { size: number; x: number; y: number };
+export type TrackPosition = {
+  size: number;
+  x: number;
+  y: number;
+};
 
 export type TrackPositionWithColor = TrackPosition & { color: ColorChoice };
 

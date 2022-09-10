@@ -11,7 +11,7 @@ type Props = {
   noReverse?: boolean;
 };
 
-const inverse: { [key: string]: Direction } = {
+const inverse: Record<string, Direction> = {
   down: 'up',
   left: 'right',
   right: 'left',

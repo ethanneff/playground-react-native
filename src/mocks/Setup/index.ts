@@ -4,47 +4,51 @@ import 'react-native-get-random-values';
 import { mockGoBack, mockNavigate } from '../Navigation';
 
 jest.mock('react-native-localize', () => ({
+  addEventListener: jest.fn(),
+  getCalendar: () => 'gregorian',
+  getCountry: () => 'US',
+  getCurrencies: () => ['USD', 'EUR'],
   getLocales: () => [
     {
       countryCode: 'GB',
-      languageTag: 'en-GB',
-      languageCode: 'en',
       isRTL: false,
+      languageCode: 'en',
+      languageTag: 'en-GB',
     },
     {
       countryCode: 'US',
-      languageTag: 'en-US',
-      languageCode: 'en',
       isRTL: false,
+      languageCode: 'en',
+      languageTag: 'en-US',
     },
     {
       countryCode: 'FR',
-      languageTag: 'fr-FR',
-      languageCode: 'fr',
       isRTL: false,
+      languageCode: 'fr',
+      languageTag: 'fr-FR',
     },
   ],
   getNumberFormatSettings: () => ({
     decimalSeparator: '.',
     groupingSeparator: ',',
   }),
-  getCalendar: () => 'gregorian',
-  getCountry: () => 'US',
-  getCurrencies: () => ['USD', 'EUR'],
   getTemperatureUnit: () => 'celsius',
   getTimeZone: () => 'Europe/Paris',
+  removeEventListener: jest.fn(),
   uses24HourClock: () => true,
   usesMetricSystem: () => true,
-  addEventListener: jest.fn(),
-  removeEventListener: jest.fn(),
 }));
 
 jest.mock('react-native-mmkv-storage', () => ({
   MMKVLoader: class Mock {
     constructor() {}
+
     withEncryption = () => this;
+
     initialize = () => this;
+
     getItem = () => Promise.resolve(jest.fn());
+
     setItem = () => Promise.resolve(jest.fn());
   },
 }));
@@ -67,18 +71,18 @@ jest.mock('@invertase/react-native-apple-authentication', () => () => ({
 
 jest.mock('@react-native-google-signin/google-signin', () => {
   const mockUserInfo = {
-    idToken: 'mockIdToken',
     accessToken: null,
     accessTokenExpirationDate: null,
-    serverAuthCode: 'mockServerAuthCode',
+    idToken: 'mockIdToken',
     scopes: [],
+    serverAuthCode: 'mockServerAuthCode',
     user: {
       email: 'mockEmail',
-      id: 'mockId',
-      givenName: 'mockGivenName',
       familyName: 'mockFamilyName',
-      photo: 'mockPhotoUtl',
+      givenName: 'mockGivenName',
+      id: 'mockId',
       name: 'mockFullName',
+      photo: 'mockPhotoUtl',
     },
   };
 
@@ -86,9 +90,9 @@ jest.mock('@react-native-google-signin/google-signin', () => {
     GoogleSignin: {
       configure: jest.fn(),
       hasPlayServices: jest.fn(() => Promise.resolve(true)),
+      revokeAccess: jest.fn(() => Promise.resolve(true)),
       signIn: jest.fn(() => Promise.resolve(mockUserInfo)),
       signInSilently: jest.fn(() => Promise.resolve(mockUserInfo)),
-      revokeAccess: jest.fn(() => Promise.resolve(true)),
       signOut: jest.fn(() => Promise.resolve(true)),
     },
   };
@@ -99,13 +103,13 @@ jest.mock('@react-native-firebase/crashlytics', () => () => ({
 }));
 
 jest.mock('@react-native-firebase/auth', () => () => ({
-  signOut: jest.fn(),
-  currentUser: jest.fn(),
   createUserWithEmailAndPassword: jest.fn(),
+  currentUser: jest.fn(),
   sendPasswordResetEmail: jest.fn(),
   signInAnonymously: jest.fn(),
   signInWithCredential: jest.fn(),
   signInWithPhoneNumber: jest.fn(),
+  signOut: jest.fn(),
 }));
 
 jest.mock('@react-native-firebase/firestore', () => () => ({
@@ -114,9 +118,9 @@ jest.mock('@react-native-firebase/firestore', () => () => ({
 
 jest.mock('@react-native-firebase/analytics', () => () => ({
   logEvent: jest.fn(),
-  setUserProperties: jest.fn(),
-  setUserId: jest.fn(),
   setCurrentScreen: jest.fn(),
+  setUserId: jest.fn(),
+  setUserProperties: jest.fn(),
 }));
 
 jest.mock(
@@ -124,10 +128,15 @@ jest.mock(
   () =>
     class Mock {
       constructor() {}
+
       setVolume = jest.fn();
+
       setNumberOfLoops = jest.fn();
+
       play = jest.fn();
+
       stop = jest.fn();
+
       static setCategory = jest.fn();
     },
 );
@@ -183,22 +192,22 @@ NativeModules.RNCNetInfo = {
 };
 
 NativeModules.RNCAsyncStorage = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  removeChecklistItem: jest.fn(),
-  mergeItem: jest.fn(),
   clear: jest.fn(),
-  getAllKeys: jest.fn(),
   flushGetRequests: jest.fn(),
+  getAllKeys: jest.fn(),
+  getItem: jest.fn(),
+  mergeItem: jest.fn(),
   multiGet: jest.fn(),
-  multiSet: jest.fn(),
-  multiRemove: jest.fn(),
   multiMerge: jest.fn(),
+  multiRemove: jest.fn(),
+  multiSet: jest.fn(),
+  removeChecklistItem: jest.fn(),
+  setItem: jest.fn(),
 };
 
 jest.useFakeTimers();
 
-global.__reanimatedWorkletInit = jest.fn();
+jest.spyOn(global, '__reanimatedWorkletInit').mockImplementation();
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');

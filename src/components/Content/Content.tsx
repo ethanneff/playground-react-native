@@ -7,7 +7,10 @@ import { Sentence } from '../Sentence';
 import { Text } from '../Text';
 import { ContentSections } from './types';
 
-type Props = { center?: boolean; sections: ContentSections };
+type Props = {
+  center?: boolean;
+  sections: ContentSections;
+};
 
 export const Content = memo(function Content({ sections, center }: Props) {
   const styles = StyleSheet.create({

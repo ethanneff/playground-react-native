@@ -18,7 +18,7 @@ export default memo(function ChecklistUpdate() {
   const checklist = useRootSelector(getCurrentChecklist);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [form, setForm] = useState({
-    description: checklist.description || '',
+    description: checklist.description ?? '',
     name: checklist.name,
   });
   const isInvalidForm = form.name.trim().length === 0;

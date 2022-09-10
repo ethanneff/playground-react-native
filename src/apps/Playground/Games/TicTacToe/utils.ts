@@ -16,7 +16,12 @@ const dfs = ({ m, d, i, j, t, c = 0 }: DfsProps): number => {
   return Math.max(dfs({ c: next, d, i: i + d[0], j: j + d[1], m, t }), next);
 };
 
-type WinnerProps = { board: Board; boardSize: number; i: number; j: number };
+type WinnerProps = {
+  board: Board;
+  boardSize: number;
+  i: number;
+  j: number;
+};
 
 export const getWinner = ({
   board,
@@ -50,7 +55,12 @@ export const getValue = (n: number): string =>
 export const getNextValue = (turn: PlayerTurn): BoardValue =>
   turn === 'white' ? 1 : -1;
 
-type UpdateBoardProps = { board: Board; i: number; j: number; v: BoardValue };
+type UpdateBoardProps = {
+  board: Board;
+  i: number;
+  j: number;
+  v: BoardValue;
+};
 
 export const getUpdatedBoard = ({
   board,

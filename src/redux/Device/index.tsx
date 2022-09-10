@@ -71,11 +71,11 @@ type DeviceInfo = {
   readableVersion: string;
   securityPatch: string;
   serialNumber: string;
-  supported32BitAbis: ReadonlyArray<string>;
-  supported64BitAbis: ReadonlyArray<string>;
-  supportedAbis: ReadonlyArray<string>;
+  supported32BitAbis: readonly string[];
+  supported64BitAbis: readonly string[];
+  supportedAbis: readonly string[];
   syncUniqueId: string;
-  systemAvailableFeatures: ReadonlyArray<string>;
+  systemAvailableFeatures: readonly string[];
   systemName: string;
   systemVersion: string;
   tags: string;

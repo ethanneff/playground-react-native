@@ -50,8 +50,10 @@ module.exports = {
     // 'plugin:react-perf/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/strict',
     // 'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:typescript-sort-keys/recommended',
+    'prettier',
   ],
   ignorePatterns: [
     'node_modules/',
@@ -63,9 +65,7 @@ module.exports = {
   ],
   env: { node: true },
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: ['./tsconfig.json'],
-  },
+  parserOptions: { project: ['./tsconfig.json'] },
   plugins: [
     'react',
     'react-hooks',
@@ -91,6 +91,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'default-param-last': 'off',
     // style
+    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     'sort-imports': 'off',
     'sort-keys-fix/sort-keys-fix': 'error',
     'react-hooks/rules-of-hooks': 'error',

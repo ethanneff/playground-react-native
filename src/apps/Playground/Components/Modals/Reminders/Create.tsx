@@ -68,10 +68,8 @@ export const Create = memo(function Create({
         <OneTime onPress={onOneTimePress} />
       ) : state === 'repeat' ? (
         <Repeat />
-      ) : state === 'location' ? (
-        <Location onPress={onLocationPress} />
       ) : (
-        <Text title="invalid form type" />
+        <Location onPress={onLocationPress} />
       )}
       <Button
         buttonStyle={styles.submit}

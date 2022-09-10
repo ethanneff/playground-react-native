@@ -5,8 +5,8 @@ export type ActivityDay = {
   date: number;
 };
 
-export type ActivityWeek = Array<ActivityDay>;
-export type ActivityMatrix = Array<ActivityWeek>;
+export type ActivityWeek = ActivityDay[];
+export type ActivityMatrix = ActivityWeek[];
 
 export type ActivityModel = {
   activity: {
@@ -22,7 +22,7 @@ export type ActivityModel = {
 };
 
 export type ApiResponse = {
-  contributions: { [unix: string]: number };
+  contributions: Record<string, number>;
 };
 
 export type ActivitySquares = {

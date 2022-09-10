@@ -83,7 +83,7 @@ export const Button = memo(function Button({
   return hidden ? null : (
     <TouchableOpacity
       activeOpacity={activeOpacity}
-      disabled={disabled || invisible}
+      disabled={disabled ?? invisible}
       onLongPress={onLongPress}
       onPress={onPress}
       style={buttonStyleGroup}

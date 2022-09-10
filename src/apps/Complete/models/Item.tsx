@@ -7,27 +7,39 @@ import { getUser } from './User';
 /* INTERFACES */
 export type Item = {
   active: boolean;
-  children: ReadonlyArray<string>;
+  children: readonly string[];
   createdAt: number;
   description: string;
   editable: boolean;
   id: string;
-  tags: ReadonlyArray<string>;
+  tags: readonly string[];
   title: string;
   type: 'board' | 'list' | 'note';
   updatedAt: number;
   userId: string;
 };
-type Items = { [key: string]: Item };
-type ItemUpdateIds = { itemId: string; parentItemId: string };
-type ItemSwapId = { i: number; j: number; parentItemId: string };
+type Items = Record<string, Item>;
+type ItemUpdateIds = {
+  itemId: string;
+  parentItemId: string;
+};
+type ItemSwapId = {
+  i: number;
+  j: number;
+  parentItemId: string;
+};
 type ItemMoveId = {
   fromParentItemId: string;
   itemId: string;
   toParentItemId: string;
 };
-type ItemDetailsIds = { itemId: string; parentItemId: string | null };
-type ItemProjectIds = { projectItemId: string };
+type ItemDetailsIds = {
+  itemId: string;
+  parentItemId: string | null;
+};
+type ItemProjectIds = {
+  projectItemId: string;
+};
 type ItemNav = {
   itemId: string | null;
   parentItemId: string | null;

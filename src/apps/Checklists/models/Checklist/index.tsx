@@ -20,7 +20,7 @@ export type Checklist = {
   // copied: UserId[];
   // modified: string[];
 };
-export type Checklists = { [key: string]: Checklist };
+export type Checklists = Record<string, Checklist>;
 
 export type ChecklistReducer = {
   active: string | undefined;

@@ -8,7 +8,7 @@ export type User = {
   createdAt: number;
   email: string;
   id: string;
-  items: ReadonlyArray<string>;
+  items: readonly string[];
   name: string;
   updatedAt: number;
 };

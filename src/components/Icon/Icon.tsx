@@ -111,7 +111,7 @@ export const Icon = memo(function Icon({
     styles.icon,
     style,
   ];
-  return name ? (
+  return (
     <View
       style={containerStyles}
       testID={testID}
@@ -124,5 +124,5 @@ export const Icon = memo(function Icon({
       />
       <Badge badge={badge} />
     </View>
-  ) : null;
+  );
 });

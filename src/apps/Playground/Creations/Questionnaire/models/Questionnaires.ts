@@ -9,12 +9,10 @@ export type Questionnaire = {
   acronym?: string;
   formula?: string;
   id: string;
-  questions: ReadonlyArray<string>;
+  questions: readonly string[];
   title: string;
 };
-type QuestionnairesObject = {
-  [id: string]: Questionnaire;
-};
+type QuestionnairesObject = Record<string, Questionnaire>;
 type Questionnaires = {
   items: QuestionnairesObject;
   selected: string | undefined;
@@ -54,7 +52,7 @@ export const getQuestionnaires = (state: RootState): QuestionnairesObject =>
 
 export const getQuestionnaireArray = createSelector(
   [getQuestionnaires],
-  (questionnaires) => Object.values(questionnaires).filter((item) => item),
+  (questionnaires) => Object.values(questionnaires),
 );
 
 /* REDUCERS */

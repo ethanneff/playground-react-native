@@ -86,11 +86,11 @@ const generateCalendarMatrix = (date: Date) => {
   return calendarMatrix;
 };
 
-const calendarMatrixMemo: { [key: string]: CalendarMatrix } = {};
-export const getCalendarMatrix = (date: Date): CalendarMatrix => {
-  const memo = calendarMatrixMemo[date.valueOf()];
-  if (memo) return memo;
+const calendarMatrixMemo: Record<string, CalendarMatrix> = {};
 
+export const getCalendarMatrix = (date: Date): CalendarMatrix => {
+  const today = date.valueOf();
+  if (today in calendarMatrixMemo) return calendarMatrixMemo[today];
   const matrix = generateCalendarMatrix(date);
   calendarMatrixMemo[date.valueOf()] = matrix;
   return matrix;

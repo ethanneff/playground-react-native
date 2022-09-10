@@ -31,7 +31,6 @@ export const getCell =
   (x: number, y: number) =>
   (state: RootState): number => {
     const { board } = state.gameOfLife;
-    if (!board) return 0;
     if (board.length <= x || board.length <= y) return 0;
     return board[x][y];
   };

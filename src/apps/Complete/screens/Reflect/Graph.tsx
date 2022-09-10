@@ -30,11 +30,12 @@ export const Graph = ({ data, width, height }: GraphProps) => {
   const scaleY = scaleLinear()
     .domain(getDomain(data.map((d) => d.value)))
     .range([height - padding, padding]);
-  const d: string = line<DataPoint>()
+  const d: string | null = line<DataPoint>()
     .x((p) => scaleX(p.date))
     .y((p) => scaleY(p.value))
-    .curve(curveBasis)(data) as string;
-  return (
+    .curve(curveBasis)(data);
+
+  return d ? (
     <View style={{ height, width }}>
       <Svg style={StyleSheet.absoluteFill}>
         <Defs>
@@ -71,5 +72,5 @@ export const Graph = ({ data, width, height }: GraphProps) => {
         />
       </Svg>
     </View>
-  );
+  ) : null;
 };

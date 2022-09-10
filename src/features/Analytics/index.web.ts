@@ -2,7 +2,7 @@ export const Analytics = {
   setUserId: (userId: string) => {
     return userId;
   },
-  setUserProperties: (properties: { [key: string]: string | null }) => {
+  setUserProperties: (properties: Record<string, string | null>) => {
     return properties;
   },
   trackEvent: (event: Event, properties = {}) => {

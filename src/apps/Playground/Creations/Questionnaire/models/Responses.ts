@@ -5,13 +5,11 @@ import { createAction } from 'typesafe-actions';
 type Response = {
   createdAt: string;
   id: string;
-  responses: { [questionId: string]: string[] };
+  responses: Record<string, string[]>;
   userId: string;
 };
 
-type Responses = {
-  [id: string]: Response;
-};
+type Responses = Record<string, Response>;
 
 /* ACTIONS */
 export const createResponse = createAction('responses/CREATE')<Response>();

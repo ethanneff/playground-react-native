@@ -63,7 +63,7 @@ export const Modal = memo(function Modal({
       zIndex: 1,
     },
     modal: {
-      backgroundColor: backgroundColor || colors.background.primaryA,
+      backgroundColor: backgroundColor ?? colors.background.primaryA,
       maxHeight,
       width,
       ...dropShadow(10),

@@ -4,7 +4,6 @@ import { RootAction, RootMiddleware } from 'root-types';
 import { Storage } from '../conversions';
 import { SuperAny } from '../types/types';
 
-const enabled = false; // TODO: turn on
 const refreshTimeout = 2000;
 const timeout = 10000;
 const retryDefaultTimeout = 250;
@@ -31,7 +30,7 @@ const syncQueue: SyncQueue = {
   get: async () => {
     try {
       const get = await Storage.getItem(syncQueue.key);
-      const parse = get === null ? [] : JSON.parse(get || '');
+      const parse = get === null ? [] : JSON.parse(get ?? '');
       syncQueue.cache = [...syncQueue.cache, ...parse];
       return syncQueue.cache;
     } catch (e) {
@@ -55,7 +54,7 @@ const syncQueue: SyncQueue = {
 };
 
 export const syncMiddleware: RootMiddleware = () => (dispatch) => (action) => {
-  if (reduxWhiteList[action.type] && enabled) syncQueue.set([action.type]);
+  if (reduxWhiteList[action.type]) syncQueue.set([action.type]);
   return dispatch(action);
 };
 
@@ -111,7 +110,7 @@ export const useSync = (): void => {
   }, [attemptSync]);
 
   useEffect(() => {
-    if (enabled) onLoad();
+    onLoad();
     return () => {
       clearTimer();
     };

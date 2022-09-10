@@ -112,7 +112,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
     inputWell.current?.focus();
   }, [focus]);
 
-  const title = route?.params?.item?.title || 'empty';
+  const title = route.params.item.title || 'empty';
   const goalLength = state.goals.length;
 
   return (

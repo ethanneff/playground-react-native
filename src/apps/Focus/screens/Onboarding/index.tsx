@@ -13,7 +13,7 @@ export const Onboarding = memo(function Onboarding() {
       title="Begin your journey"
     >
       <ScrollView>
-        <Text title="ehlleo" />
+        <Text title="hello" />
       </ScrollView>
     </Screen>
   );

@@ -19,7 +19,7 @@ export const Debug = memo(function Debug() {
   const { goBack } =
     useNavigation<StackNavigationProp<UnAuthStackRoutes, 'debug'>>();
   const data = useRootSelector((state) => state.focus);
-  const uid = data.auth.uid || '';
+  const uid = data.auth.uid ?? '';
   const { handleLogout } = useLogout();
 
   const showToast = useCallback((e: unknown) => {

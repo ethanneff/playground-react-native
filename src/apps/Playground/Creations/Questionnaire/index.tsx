@@ -62,8 +62,8 @@ export const Questionnaire = memo(function Questionnaire() {
   const { goBack } = useNavigation();
   const tableViewRef = useRef<FlatListRef>(null);
   const handleViewableItemsChanged = useCallback(
-    ({ viewableItems }: { viewableItems: Array<ViewToken> }) => {
-      currentIndex.current = viewableItems[0]?.index || 0;
+    ({ viewableItems }: { viewableItems: ViewToken[] }) => {
+      currentIndex.current = viewableItems[0]?.index ?? 0;
     },
     [],
   );

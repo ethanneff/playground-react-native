@@ -23,8 +23,8 @@ export class Markdown extends React.PureComponent<Props> {
   isWordBold(word: string): boolean {
     return (
       word.length > this.withoutSyntaxIndex &&
-      word[0] === this.boldSyntax &&
-      word[word.length - 1] === this.boldSyntax
+      word.startsWith(this.boldSyntax) &&
+      word.endsWith(this.boldSyntax)
     );
   }
 

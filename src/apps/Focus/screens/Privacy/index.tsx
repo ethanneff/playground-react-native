@@ -14,7 +14,7 @@ export const Privacy = memo(function Privacy() {
       title="Privacy policy"
     >
       <ScrollView>
-        <Text title="ehlleo" />
+        <Text title="hello" />
       </ScrollView>
     </Screen>
   );

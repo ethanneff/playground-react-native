@@ -46,8 +46,7 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
       <ScrollView style={styles.container}>
         <Text title={`win percentage: ${winPercentage}%`} />
         <Text title={`return percentage: ${returnPercentage}%`} />
-        <Text title={`${state}`} />
-
+        <Text title={JSON.stringify(state)} />
         <Button
           onPress={onSpin}
           title="spin"

@@ -1,5 +1,5 @@
 type Category = 'features' | 'games' | 'storybook' | 'creations' | 'none';
-type RouteCategories = { [key: string]: Category };
+type RouteCategories = Record<string, Category>;
 
 const routeCategories: RouteCategories = {
   'apple-fit': 'creations',
@@ -39,7 +39,7 @@ const routeCategories: RouteCategories = {
   tinder: 'creations',
 };
 
-type NavParams = { [key: string]: undefined };
+type NavParams = Record<string, undefined>;
 
 export const navParams: NavParams = Object.keys(routeCategories).reduce(
   (acc, key) => ({ ...acc, [key]: undefined }),

@@ -14,7 +14,7 @@ export type Message = {
   updatedAt: number;
   userId: string; // Need name and id
 };
-type Messages = { [key: string]: Message };
+type Messages = Record<string, Message>;
 type ChatMessageReducer = {
   items: Messages;
   textField: string;

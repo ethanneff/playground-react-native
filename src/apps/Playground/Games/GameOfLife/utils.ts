@@ -29,15 +29,14 @@ export const determineBoardItem = (
   let neighbors = 0;
   const item = board[i][j];
   const { length } = board;
-  for (let k = 0; k < operations.length; k++) {
-    const [x, y] = operations[k];
+  for (const operation of operations) {
+    const [x, y] = operation;
     const newI = i + x;
     const newK = j + y;
     if (newI >= 0 && newI < length && newK >= 0 && newK < length)
       neighbors += board[newI][newK];
     if (neighbors > 3) break;
   }
-
   return neighbors < 2 || neighbors > 3
     ? 0
     : item === 0 && neighbors === 3

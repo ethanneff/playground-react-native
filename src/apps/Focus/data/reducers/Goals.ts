@@ -4,10 +4,13 @@ import { Goal } from '../types';
 import { logoutAuth } from './Auth';
 
 /* INTERFACES */
-type FocusGoalsReducer = { items: Array<Goal>; updatedAt: number };
+type FocusGoalsReducer = {
+  items: Goal[];
+  updatedAt: number;
+};
 
 /* ACTIONS */
-export const loadGoals = createAction('focus/goals/load')<Array<Goal>>();
+export const loadGoals = createAction('focus/goals/load')<Goal[]>();
 export const focusGoalsActions = { loadGoals };
 
 /* REDUCER */

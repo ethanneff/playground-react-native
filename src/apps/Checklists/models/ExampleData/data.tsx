@@ -25,17 +25,11 @@ type ChecklistItemHistory = {
   updatedAt: number;
 };
 
-type ChecklistItemHistories = {
-  [id: string]: ChecklistItemHistory;
-};
+type ChecklistItemHistories = Record<string, ChecklistItemHistory>;
 
-type Reminders = {
-  [id: string]: Reminder;
-};
+type Reminders = Record<string, Reminder>;
 
-type Sources = {
-  [id: string]: Source;
-};
+type Sources = Record<string, Source>;
 
 type ChecklistItem = {
   active: boolean;
@@ -67,17 +61,11 @@ type User = {
   lastName: string;
 };
 
-export type ChecklistItems = {
-  [id: string]: ChecklistItem;
-};
+export type ChecklistItems = Record<string, ChecklistItem>;
 
-export type Checklists = {
-  [id: string]: Checklist;
-};
+export type Checklists = Record<string, Checklist>;
 
-export type Tags = {
-  [id: string]: Tag;
-};
+export type Tags = Record<string, Tag>;
 
 export const user: User = {
   checklists: [],

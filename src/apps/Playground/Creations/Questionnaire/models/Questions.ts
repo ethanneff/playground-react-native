@@ -12,9 +12,7 @@ type Question = {
   type: QuestionType;
 };
 
-type Questions = {
-  [id: string]: Question;
-};
+type Questions = Record<string, Question>;
 
 /* ACTIONS */
 export const createQuestion = createAction('questions/CREATE')<Question>();

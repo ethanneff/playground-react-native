@@ -6,7 +6,7 @@ type Goal = {
 };
 
 type Goals = {
-  byId: { [id: string]: Goal };
+  byId: Record<string, Goal>;
   orderById: string[];
 };
 
@@ -17,7 +17,7 @@ type User = {
 };
 
 type Users = {
-  byId: { [id: string]: User };
+  byId: Record<string, User>;
 };
 
 type App = {

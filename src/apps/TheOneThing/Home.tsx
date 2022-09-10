@@ -85,7 +85,7 @@ const Section = ({
       ) : null}
       <View style={{ paddingTop: spacing(2) }}>
         {description ? <Text title={description} /> : null}
-        {items
+        {items.length
           ? items.map((item, index) => (
               <ChecklistItem
                 index={index}

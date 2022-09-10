@@ -36,7 +36,7 @@ export const NavBar = memo(function NavBar({
   const colors = useColors();
   const shadow = useDropShadow();
   const showShadow = dropShadow ? shadow(4) : {};
-  const secondary = onSecondRightPress || onSecondLeftPress;
+  const secondary = onSecondRightPress ?? onSecondLeftPress;
   const styles = StyleSheet.create({
     container: {
       alignItems: 'center',

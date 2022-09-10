@@ -10,7 +10,7 @@ import {
 import { spacing, useColors } from '../../../../features';
 import { shuffleArray } from './utils';
 
-type Combinations = { [key: string]: number };
+type Combinations = Record<string, number>;
 type WildCards = { amount: number; line: string }[];
 type Props = {
   combinations: Combinations;
@@ -87,9 +87,7 @@ const getWinningAmount = (
 ): number => {
   const combination = combinations[line];
   if (combination) return combination;
-
-  for (let i = 0; i < wildCards.length; i++) {
-    const wildCard = wildCards[i];
+  for (const wildCard of wildCards) {
     if (line.includes(wildCard.line)) return wildCard.amount;
   }
   return 0;
