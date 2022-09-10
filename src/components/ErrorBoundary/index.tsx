@@ -19,8 +19,9 @@ export class ErrorBoundary extends React.PureComponent<Props, State> {
     this.state = { hasError: false };
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.log(error, errorInfo);
+    return this;
   }
 
   render(): JSX.Element {

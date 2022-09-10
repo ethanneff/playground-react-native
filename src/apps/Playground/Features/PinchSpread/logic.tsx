@@ -52,29 +52,27 @@ export class GestureHandler {
     };
   }
 
-  isSpread(
-    start: PointPropType,
-    finish: PointPropType,
-    center: PointPropType,
-  ): boolean {
-    const startXDistance = Math.abs(start.x - center.x);
-    const startYDistance = Math.abs(start.y - center.y);
-    const finishXDistance = Math.abs(finish.x - center.x);
-    const finishYDistance = Math.abs(finish.y - center.y);
+  isSpread(touch: number): boolean {
+    const center = this.determineCenter();
+    const startXDistance = Math.abs(this.start[touch].x - center.x);
+    const startYDistance = Math.abs(this.start[touch].y - center.y);
+    const finishXDistance = Math.abs(this.finish[touch].x - center.x);
+    const finishYDistance = Math.abs(this.finish[touch].y - center.y);
     return (
       startXDistance <= finishXDistance && startYDistance <= finishYDistance
     );
   }
 
-  determineCenter(points: Touches): { x: number; y: number } {
-    const numRecordedTouched = Object.keys(points).length;
+  determineCenter(): { x: number; y: number } {
+    const numRecordedTouched = Object.keys(this.start).length;
     let x = 0;
     let y = 0;
     for (let i = 1; i <= numRecordedTouched; i++) {
-      const point = points[i];
+      const point = this.start[i];
       x += point.x;
       y += point.x;
     }
+
     return { x: x / numRecordedTouched, y: y / numRecordedTouched };
   }
 
@@ -85,23 +83,15 @@ export class GestureHandler {
       spread: false,
     };
     if (numRecordedTouched < this.minTouches) return outcome;
-
     let spread = false;
     let pinch = false;
-    const center = this.determineCenter(this.start);
     for (let i = 1; i <= numRecordedTouched; i++) {
-      const start = this.start[i];
-      const finish = this.finish[i];
-      const isPinch = !this.isSpread(start, finish, center);
-      const isSpread = this.isSpread(start, finish, center);
+      const isSpread = this.isSpread(i);
+      const isPinch = !this.isSpread(i);
       if (isPinch && isSpread) return outcome;
-
       if (!isPinch && !isSpread) return outcome;
-
       if (isPinch && spread) return outcome;
-
       if (isSpread && pinch) return outcome;
-
       pinch = isPinch;
       spread = isSpread;
     }

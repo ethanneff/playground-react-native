@@ -13,14 +13,14 @@ export const data: ContentSections = [
       [
         { title: 'first paragraph1' },
         { onPress, title: 'nav here' },
-        { title: 'blah bldah blah. blah blah blah' },
+        { title: 'blah asd blah. blah blah blah' },
       ],
       [
         { title: 'second paragraph1' },
         { onPress, title: 'nav here' },
         {
           title:
-            'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
+            'blah blah da donas odinasod nasn asd. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
         },
       ],
     ],
@@ -39,7 +39,7 @@ export const data: ContentSections = [
         { onPress, title: 'nav here' },
         {
           title:
-            'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
+            'blah blah da donas s nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
         },
       ],
       [
@@ -47,7 +47,7 @@ export const data: ContentSections = [
         { onPress, title: 'nav here' },
         {
           title:
-            'blah blah da donas odinasod nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
+            'blah blah da donas sa nasn dioaondlah. blah bl asdoi asnd oasnd oansod naosdn oasnodi nasoidn oias as dasoidn asoidn oaah blah',
         },
       ],
     ],

@@ -114,8 +114,6 @@ module.exports = {
     'max-statements': 'off',
     'max-lines': 'off',
     'no-nested-ternary': 'off',
-    'class-methods-use-this': 'off',
-    'sonarjs/no-duplicate-string': 'off',
     'no-plusplus': 'off', // for loops
     'id-length': 'off', // 'x' and 'y' variables
     'no-undefined': 'off', // react navigation types
@@ -132,6 +130,7 @@ module.exports = {
     'react/no-multi-comp': 'off',
     'no-console': 'off',
     'sonarjs/cognitive-complexity': 'off',
+    'sonarjs/no-duplicate-string': 'off',
   },
   settings: {
     'import/ignore': ['react-native'],
