@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Lottie from 'lottie-react-native';
 import React, { memo, useCallback } from 'react';
+import { ImageSourcePropType } from 'react-native';
 import { Button, Screen, Spacing, Text, View } from '../../../../components';
 import { spacing } from '../../../../features';
 import {
@@ -10,6 +11,8 @@ import {
   useRootSelector,
 } from '../../../../redux';
 import { UnAuthStackRoutes } from '../../types';
+
+const trophy = require('./trophy.json') as ImageSourcePropType;
 
 export const Landing = memo(function Landing() {
   const { navigate } = useNavigation<StackNavigationProp<UnAuthStackRoutes>>();
@@ -37,7 +40,7 @@ export const Landing = memo(function Landing() {
             <Lottie
               autoPlay
               loop
-              source={require('./trophy.json')}
+              source={trophy}
               speed={0.75}
               style={{
                 alignSelf: 'center',

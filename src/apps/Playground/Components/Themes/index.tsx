@@ -30,7 +30,8 @@ type CardItem = {
   value: string;
 };
 
-const image = require('../../../../assets/placeholder.png');
+const image =
+  require('../../../../assets/placeholder.png') as ImageSourcePropType;
 const cards: CardItem[] = [
   {
     title: 'Marketing',
