@@ -124,12 +124,6 @@ module.exports = {
     'multiline-comment-style': 'off',
     'no-inline-comments': 'off',
     'line-comment-position': 'off',
-    // prettier
-    'react/jsx-one-expression-per-line': 'off',
-    'react/jsx-max-props-per-line': 'off',
-    'react/jsx-newline': 'off',
-    'react/jsx-indent': 'off',
-    'react/jsx-indent-props': 'off',
     // turn back on eventually
     'jest/require-hook': 'off',
     'react-native/no-inline-styles': 'off',
