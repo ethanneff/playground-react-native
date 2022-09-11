@@ -86,7 +86,6 @@ module.exports = {
     // react-native
     '@typescript-eslint/no-var-requires': 'off', // images
     // typescript
-    'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
     'react/jsx-filename-extension': 'off',
     'react/require-default-props': 'off',
     'default-param-last': 'off',
@@ -94,7 +93,6 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     'sort-imports': 'off',
     'sort-keys-fix/sort-keys-fix': 'error',
-    'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': [
       'error',
       { enableDangerousAutofixThisMayCauseInfiniteLoops: true },
@@ -115,7 +113,7 @@ module.exports = {
     'max-lines': 'off',
     'no-nested-ternary': 'off',
     'no-plusplus': 'off', // for loops
-    'id-length': 'off', // 'x' and 'y' variables
+    'id-length': 'off', // x and y variables
     'no-undefined': 'off', // react navigation types
     // comments
     'capitalized-comments': 'off',
