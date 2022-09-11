@@ -32,6 +32,10 @@ static void InitializeFlipper(UIApplication *application) {
   InitializeFlipper(application);
 #endif
 
+#if !TARGET_OS_TV
+  [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+#endif
+
   if ([FIRApp defaultApp] == nil) {
     [FIRApp configure];
   }
@@ -62,6 +66,13 @@ static void InitializeFlipper(UIApplication *application) {
 #else
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+#if !TARGET_OS_TV
+  [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+#endif 
 }
 
 @end
