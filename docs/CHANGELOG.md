@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.70.9](https://github.com/ethanneff/playground-react-native/compare/v2.70.8...v2.70.9) (2022-09-10)
+
+
+### Bug Fixes
+
+* add eslint strict ([c25756a](https://github.com/ethanneff/playground-react-native/commit/c25756afe1945c098e7444fe5c7a64d2c763d40b))
+* less eslint rules ([0b6fe4f](https://github.com/ethanneff/playground-react-native/commit/0b6fe4f408c004e5114054d70a39b6754016a8e6))
+* remove prettier eslint ([8946553](https://github.com/ethanneff/playground-react-native/commit/8946553d15dd04627486e90df52a7acd7cb83942))
+
 ## [2.70.8](https://github.com/ethanneff/playground-react-native/compare/v2.70.7...v2.70.8) (2022-09-10)
 
 
