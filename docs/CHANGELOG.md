@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.70.10](https://github.com/ethanneff/playground-react-native/compare/v2.70.9...v2.70.10) (2022-09-13)
+
+
+### Bug Fixes
+
+* add react native screen native configs ([1e20e06](https://github.com/ethanneff/playground-react-native/commit/1e20e063011a3badaae6a385bca5a8912ce42467))
+* less lint rules ([f066dcb](https://github.com/ethanneff/playground-react-native/commit/f066dcb4b3b57d124a5e5fc528810314b9dabfb1))
+* remove unused eslint deps ([e8a8ae1](https://github.com/ethanneff/playground-react-native/commit/e8a8ae1349587a8cfec7897833419e9cdc005e25))
+
 ## [2.70.9](https://github.com/ethanneff/playground-react-native/compare/v2.70.8...v2.70.9) (2022-09-10)
 
 
