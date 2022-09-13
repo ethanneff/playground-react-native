@@ -7,6 +7,7 @@ import { GestureHandlerProvider } from './conversions';
 import { AppProvider, debugDev, NavigationProvider } from './features';
 import { ReduxProvider } from './redux/core';
 
+// TODO: why
 LogBox.ignoreLogs(['Warning: Using UNSAFE']);
 
 debugDev();
