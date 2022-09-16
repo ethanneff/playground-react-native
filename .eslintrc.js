@@ -80,7 +80,6 @@ module.exports = {
   root: true,
   rules: {
     // imports
-    'import/no-cycle': 'error',
     'import/no-unresolved': ['error', { ignore: ['root-types'] }], // redux typing imports
     'no-restricted-imports': ['error', restrictedImports],
     // react-native
