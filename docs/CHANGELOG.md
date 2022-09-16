@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.70.12](https://github.com/ethanneff/playground-react-native/compare/v2.70.11...v2.70.12) (2022-09-16)
+
+
+### Bug Fixes
+
+* make android work ([00f4ef9](https://github.com/ethanneff/playground-react-native/commit/00f4ef93f8697504abe1e16e92babdd54abf5a89))
+
 ## [2.70.11](https://github.com/ethanneff/playground-react-native/compare/v2.70.10...v2.70.11) (2022-09-16)
 
 
