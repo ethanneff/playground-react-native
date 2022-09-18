@@ -6,7 +6,7 @@ import {
   themeReducer,
 } from '..';
 import { loginRequest, logout } from '../../Auth';
-import { store } from '../../core';
+import { store } from '../../../store';
 
 describe('theme', () => {
   it('getCurrentTheme dark', () => {

@@ -10,9 +10,8 @@ type DimensionState = {
 };
 
 /* ACTIONS */
-export const updateDimension = createAction(
-  'dimension/UPDATE_DIMENSION',
-)<DimensionState>();
+export const updateDimension =
+  createAction('dimension/update')<DimensionState>();
 
 export const dimensionActions = { updateDimension };
 

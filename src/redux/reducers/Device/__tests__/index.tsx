@@ -2,6 +2,7 @@ import { getType } from 'typesafe-actions';
 import {
   changeAppStatus,
   changeKeyboardStatus,
+  DeviceData,
   deviceInitialState,
   deviceReducer,
   loadDevice,
@@ -87,7 +88,7 @@ describe('reducer', () => {
     };
     expect(
       deviceReducer(deviceInitialState, {
-        payload: data,
+        payload: data as DeviceData,
         type: getType(loadDevice),
       }),
     ).toStrictEqual(data);

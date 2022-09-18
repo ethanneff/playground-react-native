@@ -4,13 +4,11 @@ import {
   NetInfoConnectedDetails,
   NetInfoState,
   NetInfoStateType,
-} from '../../conversions';
+} from '../../../conversions';
 import { logout } from '../Auth';
 
 /* ACTIONS */
-export const updateNetwork = createAction(
-  'network/UPDATE_NETWORK',
-)<NetInfoState>();
+export const updateNetwork = createAction('network/update')<NetInfoState>();
 export const networkActions = { updateNetwork };
 
 /* INTERFACES */

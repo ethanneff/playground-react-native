@@ -7,11 +7,12 @@ import {
   TemperatureUnit,
 } from 'react-native-localize';
 import { RootAction } from 'root-types';
+import { DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
 import { logout } from '../Auth';
 
 /* INTERFACES */
-type DeviceInfo = {
+export type DeviceData = DeepReadonly<{
   androidId: string;
   apiLevel: number;
   applicationName: string;
@@ -71,11 +72,11 @@ type DeviceInfo = {
   readableVersion: string;
   securityPatch: string;
   serialNumber: string;
-  supported32BitAbis: readonly string[];
-  supported64BitAbis: readonly string[];
-  supportedAbis: readonly string[];
+  supported32BitAbis: string[];
+  supported64BitAbis: string[];
+  supportedAbis: string[];
   syncUniqueId: string;
-  systemAvailableFeatures: readonly string[];
+  systemAvailableFeatures: string[];
   systemName: string;
   systemVersion: string;
   tags: string;
@@ -92,22 +93,21 @@ type DeviceInfo = {
   usesAutoTimeZone: boolean | undefined;
   usesMetricSystem: boolean;
   version: string;
-};
+}>;
 
-type DeviceState = {
-  appStatus: AppStateStatus;
-  keyboardHeight: number;
-  keyboardVisible: boolean;
-} & DeviceInfo;
+type DeviceState = DeepReadonly<
+  {
+    appStatus: AppStateStatus;
+    keyboardHeight: number;
+    keyboardVisible: boolean;
+  } & DeviceData
+>;
 
 /* ACTIONS */
-export const loadDevice = createAction('device/LOAD')<DeviceInfo>();
-export const changeAppStatus = createAction(
-  'device/UPDATE_STATUS',
-)<AppStateStatus>();
-export const changeKeyboardStatus = createAction(
-  'device/UPDATE_KEYBOARD_VISIBILITY',
-)<number>();
+export const loadDevice = createAction('device/load')<DeviceData>();
+export const changeAppStatus = createAction('device/update')<AppStateStatus>();
+export const changeKeyboardStatus =
+  createAction('device/setKeyboard')<number>();
 
 export const deviceActions = {
   changeAppStatus,
@@ -116,7 +116,7 @@ export const deviceActions = {
 };
 
 /* REDUCERS */
-export const deviceInfoInitialState: DeviceInfo = {
+export const deviceInfoInitialState: DeviceData = {
   androidId: '',
   apiLevel: 0,
   applicationName: '',

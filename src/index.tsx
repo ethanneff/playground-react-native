@@ -5,7 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ErrorBoundary, Toast, toastConfig } from './components';
 import { GestureHandlerProvider } from './conversions';
 import { AppProvider, debugDev, NavigationProvider } from './features';
-import { ReduxProvider } from './redux/core';
+import { ReduxProvider } from './redux';
 
 // TODO: why
 LogBox.ignoreLogs(['Warning: Using UNSAFE']);

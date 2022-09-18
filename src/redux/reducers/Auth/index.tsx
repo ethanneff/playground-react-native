@@ -4,13 +4,13 @@ import { createAction, getType } from 'typesafe-actions';
 import { z } from 'zod';
 
 /* ACTIONS */
-export const loginRequest = createAction('AUTH/LOGIN_REQUEST')();
-export const loginSuccess = createAction('AUTH/REGISTER_SUCCESS')<string>();
-export const loginFailure = createAction('AUTH/REGISTER_FAILURE')<Error>();
-export const registerRequest = createAction('AUTH/REGISTER_REQUEST')();
-export const registerSuccess = createAction('AUTH/REGISTER_SUCCESS')<string>();
-export const registerFailure = createAction('AUTH/REGISTER_FAILURE')<Error>();
-export const logout = createAction('Auth/LOGOUT')();
+export const loginRequest = createAction('auth/login/request')();
+export const loginSuccess = createAction('auth/login/success')<string>();
+export const loginFailure = createAction('auth/login/failure')<Error>();
+export const registerRequest = createAction('auth/register/request')();
+export const registerSuccess = createAction('auth/register/success')<string>();
+export const registerFailure = createAction('auth/register/failure')<Error>();
+export const logout = createAction('auth/logout')();
 
 const timeout = 5000;
 

@@ -1,8 +1,6 @@
-import React, { memo, ReactNode } from 'react';
-import { Provider } from 'react-redux';
+import DeviceInfo from 'react-native-device-info';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
-import { PersistGate } from 'redux-persist/integration/react';
 import thunk from 'redux-thunk';
 import {
   authActions,
@@ -11,6 +9,7 @@ import {
   deviceReducer,
   dimensionActions,
   dimensionReducer,
+  historyReducer,
   networkActions,
   networkReducer,
   themeActions,
@@ -107,6 +106,7 @@ export const reducers = combineReducers({
     users: focusUsersReducer,
   }),
   gameOfLife: gameOfLifeReducer,
+  history: historyReducer,
   network: networkReducer,
   questionnaires: questionnairesReducer,
   questions: questionsReducer,
@@ -114,29 +114,16 @@ export const reducers = combineReducers({
   theme: themeReducer,
 });
 
-const blacklist = ['gameOfLife'];
-const persistConfig = { blacklist, key: 'root', storage: Storage };
-const middlewares = [thunk];
-addFlipperMiddleware(middlewares);
+const blacklist = ['gameOfLife', 'history'];
+const key = DeviceInfo.getBundleId() || '123';
+const persistConfig = { blacklist, key, storage: Storage };
 const persistedReducer = persistReducer(persistConfig, reducers);
+const middleware = [thunk];
+addFlipperMiddleware(middleware);
+
 export const store = createStore(
   persistedReducer,
-  applyMiddleware(...middlewares),
+  applyMiddleware(...middleware),
 );
-const persistor = persistStore(store);
 
-type Props = {
-  children: ReactNode;
-};
-export const ReduxProvider = memo(function ReduxProvider({ children }: Props) {
-  return (
-    <Provider store={store}>
-      <PersistGate
-        loading={null}
-        persistor={persistor}
-      >
-        {children}
-      </PersistGate>
-    </Provider>
-  );
-});
+export const persistor = persistStore(store);

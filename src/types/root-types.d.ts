@@ -4,15 +4,15 @@ declare module 'root-types' {
   import { DeepReadonly } from 'ts-essentials';
   import { ActionType, StateType } from 'typesafe-actions';
 
-  export type RootStore = StateType<typeof import('../redux/core').store>;
+  export type RootStore = StateType<typeof import('../redux/store').store>;
 
   export type RootState = DeepReadonly<
-    StateType<typeof import('../redux/core').reducers>
+    StateType<typeof import('../redux/store').reducers>
   >;
 
-  export type RootAction = ActionType<typeof import('../redux/core').actions>;
+  export type RootAction = ActionType<typeof import('../redux/store').actions>;
 
-  export type RootDispatch = typeof import('../redux/core').store.dispatch;
+  export type RootDispatch = typeof import('../redux/store').store.dispatch;
 
   export type RootThunkAction<R> = ThunkAction<R, RootState, void, RootAction>;
 

@@ -9,8 +9,8 @@ import {
   getWidth,
   updateDimension,
 } from '..';
+import { store } from '../../../store';
 import { loginRequest, logout } from '../../Auth';
-import { store } from '../../core';
 
 const setupSelectors = () => {
   const dimensionChange = {

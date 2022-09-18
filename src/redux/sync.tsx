@@ -13,7 +13,7 @@ type ReduxWhitelist = { [key in RootActionTypes]?: 1 };
 const reduxWhiteList: ReduxWhitelist = {
   'complete/item/createItem': 1,
   'complete/item/updateItem': 1,
-  'device/LOAD': 1,
+  'device/load': 1,
   'sync/download': 1,
 };
 
