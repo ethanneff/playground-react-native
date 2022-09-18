@@ -1,0 +1,381 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`navBar shows border 1`] = `
+[
+  <View
+    style={
+      [
+        undefined,
+        undefined,
+        undefined,
+        {
+          "alignItems": "center",
+          "backgroundColor": "hsl(0,0%,100%)",
+          "borderBottomColor": "hsl(0,0%,96.5%)",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 8,
+          "zIndex": 2,
+        },
+      ]
+    }
+  >
+    <RNGestureHandlerButton
+      collapsable={false}
+      delayLongPress={600}
+      enabled={false}
+      exclusive={true}
+      handlerTag={9}
+      handlerType="NativeViewGestureHandler"
+      onGestureEvent={[Function]}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+      onHandlerStateChange={[Function]}
+      rippleColor={0}
+      touchSoundDisabled={false}
+    >
+      <View
+        accessible={true}
+        collapsable={false}
+        style={
+          {
+            "flex": 0,
+            "opacity": 1,
+            "padding": 8,
+          }
+        }
+      >
+        <View
+          style={
+            [
+              undefined,
+              undefined,
+              undefined,
+              [
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                {
+                  "justifyContent": "center",
+                },
+                null,
+              ],
+            ]
+          }
+          testID="leftNav"
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              [
+                {
+                  "color": "transparent",
+                  "fontSize": 32,
+                },
+                [
+                  undefined,
+                  undefined,
+                ],
+                {
+                  "fontFamily": "Material Design Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                {},
+              ]
+            }
+          >
+            󰅁
+          </Text>
+        </View>
+      </View>
+    </RNGestureHandlerButton>
+    <RNGestureHandlerButton
+      collapsable={false}
+      delayLongPress={600}
+      enabled={false}
+      exclusive={true}
+      handlerTag={10}
+      handlerType="NativeViewGestureHandler"
+      onGestureEvent={[Function]}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+      onHandlerStateChange={[Function]}
+      rippleColor={0}
+      touchSoundDisabled={false}
+    >
+      <View
+        accessible={true}
+        collapsable={false}
+        style={
+          {
+            "flex": 0,
+            "opacity": 1,
+            "padding": 8,
+          }
+        }
+      >
+        <View
+          style={
+            [
+              undefined,
+              undefined,
+              undefined,
+              [
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                {
+                  "justifyContent": "center",
+                },
+                {
+                  "alignSelf": "flex-end",
+                },
+              ],
+            ]
+          }
+          testID="rightNav"
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              [
+                {
+                  "color": "transparent",
+                  "fontSize": 32,
+                },
+                [
+                  undefined,
+                  undefined,
+                ],
+                {
+                  "fontFamily": "Material Design Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                {},
+              ]
+            }
+          >
+            󰅖
+          </Text>
+        </View>
+      </View>
+    </RNGestureHandlerButton>
+  </View>,
+  <View
+    style={
+      [
+        undefined,
+        undefined,
+        undefined,
+        {
+          "backgroundColor": "hsl(0,0%,100%)",
+          "height": 2,
+          "width": "100%",
+          "zIndex": 1,
+        },
+      ]
+    }
+  />,
+]
+`;
+
+exports[`navBar shows dropshadow 1`] = `
+[
+  <View
+    style={
+      [
+        undefined,
+        undefined,
+        undefined,
+        {
+          "alignItems": "center",
+          "backgroundColor": "hsl(0,0%,100%)",
+          "borderBottomColor": "hsl(0,0%,100%)",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 8,
+          "zIndex": 2,
+        },
+      ]
+    }
+  >
+    <RNGestureHandlerButton
+      collapsable={false}
+      delayLongPress={600}
+      enabled={false}
+      exclusive={true}
+      handlerTag={11}
+      handlerType="NativeViewGestureHandler"
+      onGestureEvent={[Function]}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+      onHandlerStateChange={[Function]}
+      rippleColor={0}
+      touchSoundDisabled={false}
+    >
+      <View
+        accessible={true}
+        collapsable={false}
+        style={
+          {
+            "flex": 0,
+            "opacity": 1,
+            "padding": 8,
+          }
+        }
+      >
+        <View
+          style={
+            [
+              undefined,
+              undefined,
+              undefined,
+              [
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                {
+                  "justifyContent": "center",
+                },
+                null,
+              ],
+            ]
+          }
+          testID="leftNav"
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              [
+                {
+                  "color": "transparent",
+                  "fontSize": 32,
+                },
+                [
+                  undefined,
+                  undefined,
+                ],
+                {
+                  "fontFamily": "Material Design Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                {},
+              ]
+            }
+          >
+            󰅁
+          </Text>
+        </View>
+      </View>
+    </RNGestureHandlerButton>
+    <RNGestureHandlerButton
+      collapsable={false}
+      delayLongPress={600}
+      enabled={false}
+      exclusive={true}
+      handlerTag={12}
+      handlerType="NativeViewGestureHandler"
+      onGestureEvent={[Function]}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+      onHandlerStateChange={[Function]}
+      rippleColor={0}
+      touchSoundDisabled={false}
+    >
+      <View
+        accessible={true}
+        collapsable={false}
+        style={
+          {
+            "flex": 0,
+            "opacity": 1,
+            "padding": 8,
+          }
+        }
+      >
+        <View
+          style={
+            [
+              undefined,
+              undefined,
+              undefined,
+              [
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                {
+                  "justifyContent": "center",
+                },
+                {
+                  "alignSelf": "flex-end",
+                },
+              ],
+            ]
+          }
+          testID="rightNav"
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              [
+                {
+                  "color": "transparent",
+                  "fontSize": 32,
+                },
+                [
+                  undefined,
+                  undefined,
+                ],
+                {
+                  "fontFamily": "Material Design Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                {},
+              ]
+            }
+          >
+            󰅖
+          </Text>
+        </View>
+      </View>
+    </RNGestureHandlerButton>
+  </View>,
+  <View
+    style={
+      [
+        undefined,
+        undefined,
+        undefined,
+        {
+          "backgroundColor": "hsl(0,0%,100%)",
+          "elevation": 4,
+          "height": 2,
+          "shadowColor": "black",
+          "shadowOffset": {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.264,
+          "shadowRadius": 2.6399999999999997,
+          "width": "100%",
+          "zIndex": 1,
+        },
+      ]
+    }
+  />,
+]
+`;

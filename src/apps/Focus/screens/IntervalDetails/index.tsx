@@ -7,7 +7,6 @@ import {
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Keyboard } from 'react-native';
-
 import {
   Button,
   Card,

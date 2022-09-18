@@ -1,7 +1,11 @@
+import '@testing-library/jest-native/extend-expect';
 import { NativeModules } from 'react-native';
 import 'react-native-gesture-handler/jestSetup';
 import 'react-native-get-random-values';
+
 import { mockGoBack, mockNavigate } from '../Navigation';
+
+global.__reanimatedWorkletInit = jest.fn();
 
 jest.mock('react-native-localize', () => ({
   addEventListener: jest.fn(),
@@ -204,8 +208,6 @@ NativeModules.RNCAsyncStorage = {
   removeChecklistItem: jest.fn(),
   setItem: jest.fn(),
 };
-
-jest.useFakeTimers();
 
 jest.spyOn(global, '__reanimatedWorkletInit').mockImplementation();
 

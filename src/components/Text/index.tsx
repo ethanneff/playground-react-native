@@ -29,6 +29,7 @@ type TextProps = {
   onPress?(): void;
   selectable?: boolean;
   style?: StyleProp<TextStyle>;
+  testID?: string;
   title?: string;
   type?: FontType;
 };
@@ -44,6 +45,7 @@ export const Text = memo(function Text({
   bold,
   color,
   inverse,
+  testID,
   flex,
   ellipsizeMode,
   centerVertically,
@@ -127,6 +129,7 @@ export const Text = memo(function Text({
       onPress={onPress ? handlePress : undefined}
       selectable={selectable}
       style={textStyle}
+      testID={testID}
     >
       {text}
     </Animated.Text>
