@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.70.13](https://github.com/ethanneff/playground-react-native/compare/v2.70.12...v2.70.13) (2022-09-18)
+
+
+### Bug Fixes
+
+* add testing library ([576f530](https://github.com/ethanneff/playground-react-native/commit/576f53095b89ceca9a15754b7c8fe9f5a6d5ba73))
+* ios error on android keyboard type ([2b1cf5c](https://github.com/ethanneff/playground-react-native/commit/2b1cf5c390e8019554a092032f16e5fccf0258e0))
+* make deep readonly reducers ([fae90d3](https://github.com/ethanneff/playground-react-native/commit/fae90d3a8340578b2b95a32f0009c8ff6f810a93))
+* relocate redux reducers ([b738684](https://github.com/ethanneff/playground-react-native/commit/b738684d9af250fa178022d9f40997431cb66667))
+* update native deps ([e212d29](https://github.com/ethanneff/playground-react-native/commit/e212d29090a7fd73e4e24a1b6e787479eb9954f6))
+
 ## [2.70.12](https://github.com/ethanneff/playground-react-native/compare/v2.70.11...v2.70.12) (2022-09-16)
 
 
