@@ -143,7 +143,7 @@ export const Inputs = memo(function Inputs() {
             autoCorrect={false}
             blurOnSubmit
             editable={!form.loading}
-            keyboardType="visible-password"
+            keyboardType="default"
             onChangeText={handleChange('password')}
             onSubmitEditing={handleOnSubmit}
             placeholder="•••••••"
