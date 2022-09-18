@@ -36,6 +36,7 @@ Deploy Android + iOS App (Focus)
 - [x] redux layer
 - [x] debug page
 - [x] download page
+- [x] validate ios, android, web
 
 - [ ] gracefully handle server errors
 - [ ] error boundary
