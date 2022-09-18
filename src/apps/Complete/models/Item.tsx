@@ -1,23 +1,24 @@
 import { createSelector } from 'reselect';
 import { RootAction, RootState } from 'root-types';
+import { DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
 import { logout } from './Auth';
 import { getUser } from './User';
 
 /* INTERFACES */
-export type Item = {
+export type Item = DeepReadonly<{
   active: boolean;
-  children: readonly string[];
+  children: string[];
   createdAt: number;
   description: string;
   editable: boolean;
   id: string;
-  tags: readonly string[];
+  tags: string[];
   title: string;
   type: 'board' | 'list' | 'note';
   updatedAt: number;
   userId: string;
-};
+}>;
 type Items = Record<string, Item>;
 type ItemUpdateIds = {
   itemId: string;

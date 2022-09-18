@@ -1,17 +1,18 @@
 import { RootAction, RootState } from 'root-types';
+import { DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
 import { logout } from './Auth';
 
 /* INTERFACES */
-export type User = {
+export type User = DeepReadonly<{
   active: boolean;
   createdAt: number;
   email: string;
   id: string;
-  items: readonly string[];
+  items: string[];
   name: string;
   updatedAt: number;
-};
+}>;
 type CompleteUserReducer = User | null;
 
 /* ACTIONS */

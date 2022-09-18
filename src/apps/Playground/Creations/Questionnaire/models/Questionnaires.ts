@@ -1,17 +1,18 @@
 import { createSelector } from 'reselect';
 import { RootAction, RootState } from 'root-types';
+import { DeepReadonly } from 'ts-essentials';
 import { createAction, createCustomAction, getType } from 'typesafe-actions';
 import { v4 } from 'uuid';
 import { logout } from '../../../../../redux';
 
 /* INTERFACES */
-export type Questionnaire = {
+export type Questionnaire = DeepReadonly<{
   acronym?: string;
   formula?: string;
   id: string;
-  questions: readonly string[];
+  questions: string[];
   title: string;
-};
+}>;
 type QuestionnairesObject = Record<string, Questionnaire>;
 type Questionnaires = {
   items: QuestionnairesObject;

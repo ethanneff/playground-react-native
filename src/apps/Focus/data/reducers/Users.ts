@@ -4,7 +4,10 @@ import { User } from '../types';
 import { logoutAuth } from './Auth';
 
 /* INTERFACES */
-type FocusUsersReducer = { updatedAt: number; user: User } | null;
+type FocusUsersReducer = {
+  updatedAt: number;
+  user: User;
+} | null;
 
 /* ACTIONS */
 export const loadUsers = createAction('focus/users/load')<User>();

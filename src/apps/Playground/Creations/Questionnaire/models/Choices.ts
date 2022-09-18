@@ -1,12 +1,13 @@
 import { RootAction } from 'root-types';
+import { DeepReadonly } from 'ts-essentials';
 import { createAction } from 'typesafe-actions';
 
 /* INTERFACES */
-type Choice = {
+type Choice = DeepReadonly<{
   display: string;
   id: string;
   value?: number;
-};
+}>;
 
 type Choices = Record<string, Choice>;
 

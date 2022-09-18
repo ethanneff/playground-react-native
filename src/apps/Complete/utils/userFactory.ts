@@ -61,8 +61,9 @@ export const getDefaultUserTemplate = (): GetDefaultUserTemplate => {
     { ...dItem(u), title: 'do laundry' },
     { ...dItem(u), title: 'fix sink' },
   ];
-  const homeItems: Item[] = dKanban(u);
-  homeItems[0].children = homeTodoItems.map((i) => i.id);
+  const homeItems: Item[] = dKanban(u).map((item, index) =>
+    index === 0 ? { ...item, children: homeTodoItems.map((i) => i.id) } : item,
+  );
   const townItems: Item[] = dKanban(u);
   const workItems: Item[] = dKanban(u);
   const gymItems: Item[] = dKanban(u);

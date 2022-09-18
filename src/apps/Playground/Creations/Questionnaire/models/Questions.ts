@@ -1,16 +1,17 @@
 import { RootAction } from 'root-types';
+import { DeepReadonly } from 'ts-essentials';
 import { createAction } from 'typesafe-actions';
 
 /* INTERFACES */
 type QuestionType = 'Input' | 'Checkbox' | 'Slider' | 'Button';
 
-type Question = {
+type Question = DeepReadonly<{
   choices: string[];
   description?: string;
   id: string;
   title: string;
   type: QuestionType;
-};
+}>;
 
 type Questions = Record<string, Question>;
 

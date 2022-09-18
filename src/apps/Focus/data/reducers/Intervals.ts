@@ -1,13 +1,14 @@
 import { RootAction } from 'root-types';
+import { DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
 import { Interval } from '../types';
 import { logoutAuth } from './Auth';
 
 /* INTERFACES */
-type FocusIntervalsReducer = {
+type FocusIntervalsReducer = DeepReadonly<{
   items: Interval[];
   updatedAt: number;
-};
+}>;
 
 /* ACTIONS */
 export const loadIntervals = createAction('focus/intervals/load')<Interval[]>();

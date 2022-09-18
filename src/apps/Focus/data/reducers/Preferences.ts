@@ -1,13 +1,14 @@
 import { RootAction } from 'root-types';
+import { DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
 import { Preferences } from '../types';
 import { logoutAuth } from './Auth';
 
 /* INTERFACES */
-type FocusPreferencesReducer = {
+type FocusPreferencesReducer = DeepReadonly<{
   preference: Preferences | null;
   updatedAt: number;
-} | null;
+}> | null;
 
 /* ACTIONS */
 export const loadPreferences = createAction(

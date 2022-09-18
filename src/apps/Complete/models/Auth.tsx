@@ -1,8 +1,9 @@
 import { RootAction } from 'root-types';
+import { DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
 
 /* INTERFACES */
-type Auth = {
+type Auth = DeepReadonly<{
   displayName: string | null;
   email: string | null;
   emailVerified: boolean;
@@ -10,7 +11,7 @@ type Auth = {
   phoneNumber: string | null;
   photoURL: string | null;
   uid: string;
-};
+}>;
 type CompleteAuthReducer = Auth | null;
 
 /* ACTIONS */

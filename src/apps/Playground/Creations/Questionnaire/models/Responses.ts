@@ -1,13 +1,14 @@
 import { RootAction } from 'root-types';
+import { DeepReadonly } from 'ts-essentials';
 import { createAction } from 'typesafe-actions';
 
 /* INTERFACES */
-type Response = {
+type Response = DeepReadonly<{
   createdAt: string;
   id: string;
   responses: Record<string, string[]>;
   userId: string;
-};
+}>;
 
 type Responses = Record<string, Response>;
 

@@ -1,13 +1,14 @@
 import { RootAction } from 'root-types';
+import { DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
 import { Goal } from '../types';
 import { logoutAuth } from './Auth';
 
 /* INTERFACES */
-type FocusGoalsReducer = {
+type FocusGoalsReducer = DeepReadonly<{
   items: Goal[];
   updatedAt: number;
-};
+}>;
 
 /* ACTIONS */
 export const loadGoals = createAction('focus/goals/load')<Goal[]>();
