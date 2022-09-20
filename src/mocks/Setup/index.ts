@@ -7,6 +7,13 @@ import { mockGoBack, mockNavigate } from '../Navigation';
 
 global.__reanimatedWorkletInit = jest.fn();
 
+jest.mock('react-native-sensors', () => null);
+jest.mock('d3-scale', () => null);
+jest.mock('d3-shape', () => null);
+jest.mock('uuid', () => ({
+  v4: jest.fn(() => 'uuid'),
+}));
+
 jest.mock('react-native-localize', () => ({
   addEventListener: jest.fn(),
   getCalendar: () => 'gregorian',

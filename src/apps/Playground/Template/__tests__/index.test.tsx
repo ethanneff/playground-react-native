@@ -10,7 +10,6 @@ describe('template', () => {
     const { getByTestId } = getMockRender(<Template />);
     fireEvent.press(getByTestId('increase-button'));
     const value = getByTestId('increase-value');
-
     expect(value).toHaveTextContent('1');
   });
 
