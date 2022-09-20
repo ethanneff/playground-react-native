@@ -1,26 +1,26 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import React, { lazy, memo, Suspense } from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, { memo, Suspense } from 'react';
 import Config from 'react-native-config';
+import Admin from '../../apps/Admin';
 import { Loader } from '../../components';
 import { RootRoutes } from './types';
 import { useNavScreenOptions } from './useNavScreenOptions';
 import { usePersistedState } from './usePersistedState';
 
-const Portfolio = lazy(() => import('../../apps/Portfolio'));
-const Playground = lazy(() => import('../../apps/Playground'));
-const Admin = lazy(() => import('../../apps/Admin'));
-const Progress = lazy(() => import('../../apps/Progress'));
-const CantHurtMe = lazy(() => import('../../apps/CantHurtMe'));
-const Checklists = lazy(() => import('../../apps/Checklists'));
-const Focus = lazy(() => import('../../apps/Focus'));
-const Journal = lazy(() => import('../../apps/Journal'));
-const ComfortZone = lazy(() => import('../../apps/ComfortZone'));
-const TheOneThing = lazy(() => import('../../apps/TheOneThing'));
-const Complete = lazy(() => import('../../apps/Complete'));
-const DeepWork = lazy(() => import('../../apps/DeepWork'));
+import CantHurtMe from '../../apps/CantHurtMe';
+import Checklists from '../../apps/Checklists';
+import ComfortZone from '../../apps/ComfortZone';
+import Complete from '../../apps/Complete';
+import DeepWork from '../../apps/DeepWork';
+import Focus from '../../apps/Focus';
+import Journal from '../../apps/Journal';
+import Playground from '../../apps/Playground';
+import Portfolio from '../../apps/Portfolio';
+import Progress from '../../apps/Progress';
+import TheOneThing from '../../apps/TheOneThing';
 
-const Stack = createStackNavigator<RootRoutes>();
+const Stack = createNativeStackNavigator<RootRoutes>();
 const linking = {
   prefixes: ['https://app.example.com', 'eneff://'],
 };
@@ -34,7 +34,7 @@ export const NavigationProvider = memo(function NavigationProvider() {
   if (!isReady) return null;
 
   return (
-    <Suspense fallback>
+    <Suspense fallback={fallback}>
       <NavigationContainer
         fallback={fallback}
         initialState={initialState}
