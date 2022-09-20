@@ -1,7 +1,4 @@
-import DeviceInfo from 'react-native-device-info';
-import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { persistReducer, persistStore } from 'redux-persist';
-import thunk from 'redux-thunk';
+import { combineReducers } from 'redux';
 import {
   authActions,
   authReducer,
@@ -59,7 +56,6 @@ import {
   gameOfLifeActions,
   gameOfLifeReducer,
 } from '../apps/Playground/Games/GameOfLife/redux';
-import { addFlipperMiddleware, Storage } from '../conversions';
 
 export const actions = {
   auth: authActions,
@@ -113,17 +109,3 @@ export const reducers = combineReducers({
   responses: responsesReducer,
   theme: themeReducer,
 });
-
-const blacklist = ['gameOfLife', 'history'];
-const key = DeviceInfo.getBundleId() || '123';
-const persistConfig = { blacklist, key, storage: Storage };
-const persistedReducer = persistReducer(persistConfig, reducers);
-const middleware = [thunk];
-addFlipperMiddleware(middleware);
-
-export const store = createStore(
-  persistedReducer,
-  applyMiddleware(...middleware),
-);
-
-export const persistor = persistStore(store);
