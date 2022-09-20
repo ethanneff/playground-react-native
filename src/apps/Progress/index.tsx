@@ -1,9 +1,9 @@
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { memo } from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
 import { Home } from './Home';
 
 const noHeader = { headerShown: false };
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default memo(function Activity() {
   return (

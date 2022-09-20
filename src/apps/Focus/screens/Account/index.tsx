@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback } from 'react';
 import {
   Button,
@@ -20,7 +20,7 @@ import { useLogout } from '../../utils/useLogout';
 
 export const Account = memo(function Account() {
   const { navigate } =
-    useNavigation<StackNavigationProp<AuthStackRoutes, 'home'>>();
+    useNavigation<NativeStackNavigationProp<AuthStackRoutes, 'home'>>();
   const colors = useColors();
   const { tabBarEdges } = useLayout();
   const { admin } = useAdminNavBack();

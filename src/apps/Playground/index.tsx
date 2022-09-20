@@ -1,4 +1,4 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { memo } from 'react';
 import {
   Colors,
@@ -46,7 +46,7 @@ import { Landing } from './Landing';
 import { navParams } from './navParams';
 
 const noHeader = { headerShown: false };
-const Stack = createStackNavigator<typeof navParams>();
+const Stack = createNativeStackNavigator<typeof navParams>();
 
 export default memo(function Games() {
   return (

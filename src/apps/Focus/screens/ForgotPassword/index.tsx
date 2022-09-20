@@ -4,7 +4,7 @@ import {
   useNavigation,
   useRoute,
 } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
@@ -24,7 +24,9 @@ const initialState = { loading: false };
 
 export const ForgotPassword = memo(function ForgotPassword() {
   const { goBack } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'forgot-password'>>();
+    useNavigation<
+      NativeStackNavigationProp<UnAuthStackRoutes, 'forgot-password'>
+    >();
   const route = useRoute<RouteProp<UnAuthStackRoutes, 'forgot-password'>>();
   const email = useRef(route.params.email);
   const [state, setState] = useState<typeof initialState>(initialState);

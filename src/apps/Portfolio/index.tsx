@@ -1,4 +1,4 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { memo } from 'react';
 import { ForgotPassword } from './ForgotPassword';
 import { Home } from './Home';
@@ -9,7 +9,7 @@ import { Settings } from './Settings';
 import { PortfolioRoutes } from './types';
 
 const noHeader = { headerShown: false };
-const Stack = createStackNavigator<PortfolioRoutes>();
+const Stack = createNativeStackNavigator<PortfolioRoutes>();
 
 export default memo(function Portfolio() {
   return (

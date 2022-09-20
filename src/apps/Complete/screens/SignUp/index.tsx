@@ -1,5 +1,5 @@
 import { useIsFocused, useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
@@ -30,7 +30,7 @@ export const SignUp = memo(function SignUp() {
   const form = useRef(initialRef);
   const [state, setState] = useState(initialState);
   const { goBack, navigate } =
-    useNavigation<StackNavigationProp<LandingStackRoutes>>();
+    useNavigation<NativeStackNavigationProp<LandingStackRoutes>>();
   const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
   const onSecondary = useCallback(() => navigate('log-in'), [navigate]);
   const emailRef = useRef<TextInputRef>(null);

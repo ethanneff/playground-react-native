@@ -1,9 +1,6 @@
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 import { ParamListBase, RouteProp } from '@react-navigation/native';
-import {
-  StackNavigationOptions,
-  TransitionPresets,
-} from '@react-navigation/stack';
+import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 import React, { useCallback } from 'react';
 import { Platform } from 'react-native';
 import { Icon, IconName, Text, View } from '../../components';
@@ -26,19 +23,18 @@ type TabScreenOptions = {
 export const useNavScreenOptions = () => {
   const colors = useColors();
 
-  const modalScreenOptions: StackNavigationOptions = {
-    cardOverlayEnabled: true,
+  const modalScreenOptions: NativeStackNavigationOptions = {
+    animation: 'fade',
     headerShown: false,
     presentation: Platform.OS === 'web' ? 'card' : 'transparentModal',
-    ...TransitionPresets.ModalFadeTransition,
   };
 
-  const bottomScreenOptions: StackNavigationOptions = {
+  const bottomScreenOptions: NativeStackNavigationOptions = {
+    animation: 'slide_from_bottom',
     headerShown: false,
-    ...TransitionPresets.ModalSlideFromBottomIOS,
   };
 
-  const rightScreenOptions: StackNavigationOptions = {
+  const rightScreenOptions: NativeStackNavigationOptions = {
     headerShown: false,
   };
 

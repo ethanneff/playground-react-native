@@ -1,5 +1,5 @@
 import { useIsFocused, useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
@@ -19,7 +19,7 @@ export const PasswordReset = memo(function PasswordReset() {
   const form = useRef(initialRef);
   const [state, setState] = useState(initialState);
   const { goBack, navigate } =
-    useNavigation<StackNavigationProp<LandingStackRoutes>>();
+    useNavigation<NativeStackNavigationProp<LandingStackRoutes>>();
   const focus = useIsFocused();
   const emailRef = useRef<TextInputRef>(null);
 

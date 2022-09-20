@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import { TextInput, TextInputIcon, View } from '../../../components';
@@ -17,7 +17,8 @@ export const ListHeader = memo(function ListHeader({
   parentItemId,
 }: ListHeaderProps) {
   const dispatch = useRootDispatch();
-  const { navigate } = useNavigation<StackNavigationProp<MainStackRoutes>>();
+  const { navigate } =
+    useNavigation<NativeStackNavigationProp<MainStackRoutes>>();
   const item = useRootSelector((s) => s.completeItem.items[itemId]);
   const form = useRef('');
 

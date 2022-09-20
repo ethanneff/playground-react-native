@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import Lottie, { AnimationObject } from 'lottie-react-native';
 import React, { memo, useCallback } from 'react';
 import { Button, Screen, Spacing, Text, View } from '../../../../components';
@@ -14,7 +14,8 @@ import { UnAuthStackRoutes } from '../../types';
 const trophy = require('./trophy.json') as AnimationObject;
 
 export const Landing = memo(function Landing() {
-  const { navigate } = useNavigation<StackNavigationProp<UnAuthStackRoutes>>();
+  const { navigate } =
+    useNavigation<NativeStackNavigationProp<UnAuthStackRoutes>>();
   const width = useRootSelector(getSmallestDimension);
   const landscape = useRootSelector(getLandscapeOrientation);
   const imageSize = width * 0.5;

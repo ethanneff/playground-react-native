@@ -1,12 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo } from 'react';
 import { Screen, ScrollView, Text } from '../../../../components';
 import { UnAuthStackRoutes } from '../../types';
 
 export const Terms = memo(function Terms() {
   const { goBack } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'terms'>>();
+    useNavigation<NativeStackNavigationProp<UnAuthStackRoutes, 'terms'>>();
 
   return (
     <Screen

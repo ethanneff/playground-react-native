@@ -4,7 +4,7 @@ import {
   useNavigation,
   useRoute,
 } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Keyboard } from 'react-native';
 import {
@@ -43,7 +43,9 @@ type State = {
 
 export const IntervalDetails = memo(function IntervalDetails() {
   const { goBack } =
-    useNavigation<StackNavigationProp<AuthStackRoutes, 'interval-details'>>();
+    useNavigation<
+      NativeStackNavigationProp<AuthStackRoutes, 'interval-details'>
+    >();
   const route = useRoute<RouteProp<AuthStackRoutes, 'interval-details'>>();
   const inputWell = useRef<TextInputRef>(null);
   const inputCommit = useRef<TextInputRef>(null);

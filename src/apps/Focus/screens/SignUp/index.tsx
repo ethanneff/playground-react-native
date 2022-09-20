@@ -1,5 +1,5 @@
 import { useIsFocused, useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
@@ -64,7 +64,7 @@ const createUserPreferences = async (
 
 export const SignUp = memo(function SignUp() {
   const { goBack, navigate } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();
+    useNavigation<NativeStackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();
   const emailRef = useRef<TextInputRef>(null);
   const passwordRef = useRef<TextInputRef>(null);
   const form = useRef(initialRef);

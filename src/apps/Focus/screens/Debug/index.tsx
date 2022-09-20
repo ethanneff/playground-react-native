@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback } from 'react';
 import {
   Button,
@@ -17,7 +17,7 @@ import { useLogout } from '../../utils';
 
 export const Debug = memo(function Debug() {
   const { goBack } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'debug'>>();
+    useNavigation<NativeStackNavigationProp<UnAuthStackRoutes, 'debug'>>();
   const data = useRootSelector((state) => state.focus);
   const uid = data.auth.uid ?? '';
   const { handleLogout } = useLogout();

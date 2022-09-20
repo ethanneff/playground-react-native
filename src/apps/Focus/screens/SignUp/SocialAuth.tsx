@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { useCallback } from 'react';
 import { Platform } from 'react-native';
 import { Spacing, Text, TextGroup, View } from '../../../../components';
@@ -17,7 +17,7 @@ export const SocialAuth = ({ disabled }: Props) => {
   const landscape = useRootSelector(getLandscapeOrientation);
 
   const { navigate } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();
+    useNavigation<NativeStackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();
 
   const handleTerms = useCallback(() => {
     navigate('terms');

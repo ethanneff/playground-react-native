@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import Lottie, { AnimationObject } from 'lottie-react-native';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
@@ -26,7 +26,7 @@ const loader = require('./loader.json') as AnimationObject;
 
 export const Download = memo(function Download() {
   const { navigate } =
-    useNavigation<StackNavigationProp<AuthStackRoutes, 'download'>>();
+    useNavigation<NativeStackNavigationProp<AuthStackRoutes, 'download'>>();
   const width = useRootSelector(getSmallestDimension);
   const loaded = useRootSelector(getLoaded);
   const [showLogout, setShowLogout] = useState(false);
