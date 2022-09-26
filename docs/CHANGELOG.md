@@ -1,5 +1,21 @@
 # Changelog
 
+# [2.71.0](https://github.com/ethanneff/playground-react-native/compare/v2.70.14...v2.71.0) (2022-09-26)
+
+
+### Bug Fixes
+
+* relocate redux persist from tests ([56226cd](https://github.com/ethanneff/playground-react-native/commit/56226cdc866af70985ac1de597e7b4aefdc74cc5))
+* remove cycle import ([5c99e71](https://github.com/ethanneff/playground-react-native/commit/5c99e71a4e0b963bf782709363738bcec16690af))
+* remove lazy loading nav to prevent blank screens ([727fc3e](https://github.com/ethanneff/playground-react-native/commit/727fc3ebaec9c932a11456390f6c45920ed9a4b3))
+* update deps ([3eb75aa](https://github.com/ethanneff/playground-react-native/commit/3eb75aa9e2aa8877885e254df3613f791b32d9e5))
+* update tests to have no open handles ([438222b](https://github.com/ethanneff/playground-react-native/commit/438222bfe1b8c27563fb35ea3c76530189e24b1a))
+
+
+### Features
+
+* use native-stack for native performance ([152411a](https://github.com/ethanneff/playground-react-native/commit/152411a77bb8a0d4a4a072b4eb706bde6c2d8cfd))
+
 ## [2.70.14](https://github.com/ethanneff/playground-react-native/compare/v2.70.13...v2.70.14) (2022-09-19)
 
 
