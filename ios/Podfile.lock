@@ -1127,7 +1127,7 @@ PODS:
     - React-Core
   - react-native-netinfo (9.3.2):
     - React-Core
-  - react-native-safe-area-context (4.3.4):
+  - react-native-safe-area-context (4.4.1):
     - RCT-Folly
     - RCTRequired
     - RCTTypeSafety
@@ -1242,7 +1242,7 @@ PODS:
   - RNGoogleSignin (8.0.0):
     - GoogleSignIn (~> 6.2.2)
     - React-Core
-  - RNLocalize (2.2.3):
+  - RNLocalize (2.2.4):
     - React-Core
   - RNRate (1.2.9):
     - React-Core
@@ -1626,7 +1626,7 @@ SPEC CHECKSUMS:
   react-native-get-random-values: a6ea6a8a65dc93e96e24a11105b1a9c8cfe1d72a
   react-native-mmkv-storage: 8ba3c0216a6df283ece11205b442a3e435aec4e5
   react-native-netinfo: 687904c63baa828543bb6e94c265977e0ac70f14
-  react-native-safe-area-context: dfe5aa13bee37a0c7e8059d14f72ffc076d120e9
+  react-native-safe-area-context: 99b24a0c5acd0d5dcac2b1a7f18c49ea317be99a
   react-native-slider: d3ae4270cf8a8cc45a69912db0cc42b151560d5a
   React-perflogger: 0afaf2f01a47fd0fc368a93bfbb5bd3b26db6e7f
   React-RCTActionSheet: 59f35c4029e0b532fc42114241a06e170b7431a2
@@ -1653,7 +1653,7 @@ SPEC CHECKSUMS:
   RNFBRemoteConfig: 29ac04a2c3e7513c9ed4a5dac70d8feae603067a
   RNGestureHandler: 4defbd70b2faf3d6761b82fa7880285241762cb0
   RNGoogleSignin: b2179ba653c759b936404a7746fc5302f9de6a5a
-  RNLocalize: a64514b46a01375fdfae9349036b4dc7130333b5
+  RNLocalize: 0df7970cfc60389f00eb62fd7c097dc75af3fb4f
   RNRate: 94f57c773e155ca0d0aeeba9c10a32bce9030daf
   RNReanimated: c38d82b0e910e2478439686c58c02bac6e4232e9
   RNScreens: 0df01424e9e0ed7827200d6ed1087ddd06c493f9

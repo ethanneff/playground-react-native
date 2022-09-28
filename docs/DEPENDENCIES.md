@@ -58,7 +58,6 @@
 | metro-react-native-babel-preset           | dev  |                | react-native dep                   |
 | react-test-renderer                       | dev  |                | testing framework                  |
 | semantic-release                          | dev  |                | ci builder                         |
-| travis-deploy-once                        | dev  |                | ci builder run once                |
 | typescript                                | dev  |                | type safe code                     |
 | react-native-reanimated                   | not  | no web support | no js thread animations            |
 | react-native-gesture-handler              | not  | no web support | no js thread transitions           |
