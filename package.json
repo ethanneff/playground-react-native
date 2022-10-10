@@ -45,7 +45,7 @@
     "@react-navigation/bottom-tabs": "6.4.0",
     "@react-navigation/native": "6.0.13",
     "@react-navigation/native-stack": "6.9.0",
-    "axios": "0.27.2",
+    "axios": "1.1.2",
     "d3-scale": "4.0.2",
     "d3-shape": "3.1.0",
     "dayjs": "1.11.5",
