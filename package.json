@@ -40,7 +40,7 @@
     "@react-native-firebase/crashlytics": "14.11.0",
     "@react-native-firebase/firestore": "14.11.0",
     "@react-native-firebase/remote-config": "14.11.0",
-    "@react-native-google-signin/google-signin": "8.0.0",
+    "@react-native-google-signin/google-signin": "8.0.1",
     "@react-native-masked-view/masked-view": "0.2.8",
     "@react-navigation/bottom-tabs": "6.4.0",
     "@react-navigation/native": "6.0.13",
