@@ -22,9 +22,6 @@ jobs:
       - name: Install modules
         run: yarn ci-install
 
-      - name: Run prettier
-        run: yarn ci-prettify
-
       - name: Run code dupe
         run: yarn ci-dupe
 
