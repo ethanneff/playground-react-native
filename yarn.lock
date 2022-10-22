@@ -2646,10 +2646,10 @@
   dependencies:
     "@types/react-test-renderer" "^18.0.0"
 
-"@react-native-firebase/analytics@14.11.0":
-  version "14.11.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-14.11.0.tgz#99a3bb96f0ed6362907a120a40489f9a8bcf9ccd"
-  integrity sha512-hYc2avm4S1vicBdKLtBif87SFGru85LOMPqDblC9GM7cGFRR5WlkOiECvNTzzs+a5Jrfq1zPJsK1YQKxD7CRfQ==
+"@react-native-firebase/analytics@16.1.1":
+  version "16.1.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-16.1.1.tgz#54b929b3a0bc83531ccb8ba3114ff616f7231251"
+  integrity sha512-QBLMPGtNNGW4Y5n8AlJhHXakgG+r8LMaZbde9p66jmyMwhqdoIwfuUrH+zV3oC4ruWKbP//KU+ZCHGjPYOtW3w==
 
 "@react-native-firebase/app@14.11.0":
   version "14.11.0"
