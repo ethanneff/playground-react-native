@@ -1210,7 +1210,7 @@ PODS:
     - React-Core
     - React-Core/DevSupport
     - React-RCTNetwork
-  - RNFastImage (8.6.1):
+  - RNFastImage (8.6.3):
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
@@ -1237,7 +1237,7 @@ PODS:
     - Firebase/RemoteConfig (= 8.15.0)
     - React-Core
     - RNFBApp
-  - RNGestureHandler (2.8.0):
+  - RNGestureHandler (2.7.1):
     - React-Core
   - RNGoogleSignin (8.0.1):
     - GoogleSignIn (~> 6.2)
@@ -1644,14 +1644,14 @@ SPEC CHECKSUMS:
   RNCMaskedView: bc0170f389056201c82a55e242e5d90070e18e5a
   RNDeviceInfo: 4701f0bf2a06b34654745053db0ce4cb0c53ada7
   RNDevMenu: 72807568fe4188bd4c40ce32675d82434b43c45d
-  RNFastImage: 3207b9eb17c2425d574ca40db35185db6e324f4e
+  RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
   RNFBAnalytics: c26f7580934cb1563eb2239b4997c6aa62f7ccfc
   RNFBApp: b1b5a80a676a07dea17e778bda7c1e8b69b2f5ec
   RNFBAuth: e28fb7cd1b956086e68233b9ea19fb97c428f86b
   RNFBCrashlytics: 357955a1564721ca9001960e57b395c6a319f9be
   RNFBFirestore: 20b84abc6368c37297429f810705c203022d8110
   RNFBRemoteConfig: 29ac04a2c3e7513c9ed4a5dac70d8feae603067a
-  RNGestureHandler: 62232ba8f562f7dea5ba1b3383494eb5bf97a4d3
+  RNGestureHandler: b7a872907ee289ada902127f2554fa1d2c076122
   RNGoogleSignin: ec96ded826fcdca71ab5f58b1d086e969cabe67b
   RNLocalize: 0df7970cfc60389f00eb62fd7c097dc75af3fb4f
   RNRate: 94f57c773e155ca0d0aeeba9c10a32bce9030daf

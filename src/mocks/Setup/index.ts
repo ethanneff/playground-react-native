@@ -2,10 +2,11 @@ import '@testing-library/jest-native/extend-expect';
 import { NativeModules } from 'react-native';
 import 'react-native-gesture-handler/jestSetup';
 import 'react-native-get-random-values';
-
+// @ts-ignore:next-line
+import { setUpTests } from 'react-native-reanimated/lib/reanimated2/jestUtils';
 import { mockGoBack, mockNavigate } from '../Navigation';
 
-global.__reanimatedWorkletInit = jest.fn();
+setUpTests();
 
 jest.mock('react-native-sensors', () => null);
 jest.mock('d3-scale', () => null);
@@ -215,8 +216,6 @@ NativeModules.RNCAsyncStorage = {
   removeChecklistItem: jest.fn(),
   setItem: jest.fn(),
 };
-
-jest.spyOn(global, '__reanimatedWorkletInit').mockImplementation();
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
