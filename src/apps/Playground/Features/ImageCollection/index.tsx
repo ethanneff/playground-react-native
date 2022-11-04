@@ -1,25 +1,53 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { memo, useCallback } from 'react';
-import { Dimensions, ListRenderItem } from 'react-native';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { ListRenderItem } from 'react-native';
+import { useSelector } from 'react-redux';
 import { FlatList, Image, Screen } from '../../../../components';
 import { useColors } from '../../../../features';
+import { getLandscapeOrientation, getWidth } from '../../../../redux';
 
-const numColumns = 3;
-const handleInfiniteScrollThreshold = 0.3;
-const batch = 50;
-const columnWidth = Dimensions.get('window').width / numColumns;
-const imageUrl = `https://source.unsplash.com/random`;
-const data: number[] = Array(batch)
-  .fill(0)
-  .map((_, x) => Date.now() + x);
+const batch = 20;
+const imageUrl = 'https://source.unsplash.com/random';
+
+const addNewBatch = (data: number[]): number[] => {
+  const newData = new Array(batch).fill(0).map((_, i) => Date.now() + i);
+  return [...data, ...newData];
+};
 
 export const ImageCollection = memo(function ImageCollection() {
   const { goBack } = useNavigation();
-  const keyExtractor = useCallback((d: number) => d.toString(), []);
-  const handleFetchMore = useCallback(() => {
-    for (let i = 0; i < batch; i++) data.push(Date.now() + i);
-  }, []);
+  const width = useSelector(getWidth);
+  const landscape = useSelector(getLandscapeOrientation);
+  const numColumns = landscape ? 10 : 3;
+  const columnWidth = width / numColumns;
+  const keyExtractor = useCallback((d: number) => String(d), []);
+  const [data, setData] = useState<number[]>([]);
+  const [refreshing, setRefreshing] = useState(false);
+  const loaded = useRef(false);
   const colors = useColors();
+
+  const initialLoad = useCallback(() => {
+    setTimeout(() => {
+      setData(addNewBatch([]));
+      setRefreshing(false);
+    }, 1000);
+  }, []);
+
+  const handleRefresh = useCallback(() => {
+    setRefreshing(true);
+    setData([]);
+    initialLoad();
+  }, [initialLoad]);
+
+  const handleFetchMore = useCallback(() => {
+    setData((p) => addNewBatch(p));
+  }, []);
+
+  useEffect(() => {
+    if (loaded.current) return;
+    loaded.current = true;
+    initialLoad();
+  }, [initialLoad]);
 
   const renderImage = useCallback<ListRenderItem<number>>(
     ({ item }) => (
@@ -29,7 +57,7 @@ export const ImageCollection = memo(function ImageCollection() {
         width={columnWidth}
       />
     ),
-    [],
+    [columnWidth],
   );
 
   return (
@@ -45,7 +73,8 @@ export const ImageCollection = memo(function ImageCollection() {
         keyboardShouldPersistTaps="handled"
         numColumns={numColumns}
         onEndReached={handleFetchMore}
-        onEndReachedThreshold={handleInfiniteScrollThreshold}
+        onRefresh={handleRefresh}
+        refreshing={refreshing}
         renderItem={renderImage}
       />
     </Screen>
