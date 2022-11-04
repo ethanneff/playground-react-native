@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.71.9](https://github.com/ethanneff/playground-react-native/compare/v2.71.8...v2.71.9) (2022-11-04)
+
+
+### Bug Fixes
+
+* correct image loader ([d634961](https://github.com/ethanneff/playground-react-native/commit/d634961295b7c8994cb04597d154aa91ccc85c01))
+* downgrade recyclerlistview ([014000f](https://github.com/ethanneff/playground-react-native/commit/014000f22a6f97346c0fe64e1b465944e00ff5ab))
+* update deps (ios, web) ([28eefa6](https://github.com/ethanneff/playground-react-native/commit/28eefa633ab15781486c8e3b4684d1b63fe770f1))
+
 ## [2.71.8](https://github.com/ethanneff/playground-react-native/compare/v2.71.7...v2.71.8) (2022-10-31)
 
 
