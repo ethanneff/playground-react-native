@@ -3,7 +3,7 @@ export * from './Firebase';
 export * from './Flipper';
 export * from './GestureHandler';
 export * from './GoogleSignIn';
+export * from './JsonTree';
 export * from './NetInfo';
 export * from './Sound';
 export * from './Storage';
-export * from './JsonTree';

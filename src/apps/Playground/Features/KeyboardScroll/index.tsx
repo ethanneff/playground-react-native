@@ -1,11 +1,10 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef, useState } from 'react';
-import { Dimensions } from 'react-native';
 import {
   Button,
+  FlatList,
+  FlatListRef,
   KeyboardAwareScrollView,
-  RecyclerFlatList,
-  RecyclerFlatListRef,
   Screen,
   Text,
   TextInput,
@@ -55,7 +54,6 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
   const colors = useColors();
   const [message, setMessage] = useState('');
 
-  const { width } = Dimensions.get('window');
   const [loading, setLoading] = useState(false);
   const onEndReached = useCallback(() => {
     const timeout = setTimeout(() => {
@@ -65,6 +63,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
   }, []);
 
   const [refreshing, setRefreshing] = useState(false);
+
   const onRefetch = useCallback(() => {
     setRefreshing(true);
     const timeout = setTimeout(() => {
@@ -97,7 +96,7 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
     setMessage(v);
   }, []);
 
-  const listRef = useRef<RecyclerFlatListRef>(null);
+  const listRef = useRef<FlatListRef>(null);
 
   const onSubmit = useCallback(() => {
     const date = Date.now().toString();
@@ -126,16 +125,13 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
             padding: spacing(2),
           }}
         >
-          <RecyclerFlatList
+          <FlatList
             data={data}
-            itemHeight={40}
-            itemWidth={width}
-            loading={loading}
             onEndReached={onEndReached}
             onRef={listRef}
-            onRefetch={onRefetch}
-            onRowRender={onRowRender}
+            onRefresh={onRefetch}
             refreshing={refreshing}
+            renderItem={onRowRender}
           />
         </View>
         <TextInput

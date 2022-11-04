@@ -1,9 +1,9 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem } from 'react-native';
 import {
   Card,
   FlatList,
+  ListRenderItem,
   Screen,
   Spacing,
   Text,
@@ -66,8 +66,7 @@ export const Landing = memo(function Playground() {
             />
             <FlatList
               contentContainerStyle={{
-                paddingBottom: spacing(2),
-                paddingHorizontal: spacing(4),
+                margin: spacing(10),
               }}
               data={landingRoutes.storybook}
               keyExtractor={keyExtractor}

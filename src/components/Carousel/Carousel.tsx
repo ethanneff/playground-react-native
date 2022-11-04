@@ -23,7 +23,7 @@ export const Carousel = memo(function Carousel({
 }: Props) {
   const loopingEnabled = useRef(false);
   const width = useRootSelector(getWidth);
-  const flatList = useRef<FlatListRef>(null);
+  const flatList = useRef<FlatListRef<CarouselSlide>>(null);
   const activeIndexRef = useRef(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const loopTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);

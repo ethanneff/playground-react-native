@@ -8,6 +8,7 @@ const restrictedImports = {
         'Button',
         'SafeAreaView',
         'FlatList',
+        'ListRenderItem',
         'ScrollView',
         'Switch',
         'Text',
