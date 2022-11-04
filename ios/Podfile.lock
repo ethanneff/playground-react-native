@@ -1237,9 +1237,9 @@ PODS:
     - Firebase/RemoteConfig (= 8.15.0)
     - React-Core
     - RNFBApp
-  - RNGestureHandler (2.7.1):
+  - RNGestureHandler (2.8.0):
     - React-Core
-  - RNGoogleSignin (8.0.1):
+  - RNGoogleSignin (8.2.0):
     - GoogleSignIn (~> 6.2)
     - React-Core
   - RNLocalize (2.2.4):
@@ -1283,7 +1283,7 @@ PODS:
     - RNSound/Core (= 0.11.2)
   - RNSound/Core (0.11.2):
     - React-Core
-  - RNSVG (13.4.0):
+  - RNSVG (13.5.0):
     - React-Core
   - RNVectorIcons (9.2.0):
     - React-Core
@@ -1651,15 +1651,15 @@ SPEC CHECKSUMS:
   RNFBCrashlytics: 357955a1564721ca9001960e57b395c6a319f9be
   RNFBFirestore: 20b84abc6368c37297429f810705c203022d8110
   RNFBRemoteConfig: 29ac04a2c3e7513c9ed4a5dac70d8feae603067a
-  RNGestureHandler: b7a872907ee289ada902127f2554fa1d2c076122
-  RNGoogleSignin: ec96ded826fcdca71ab5f58b1d086e969cabe67b
+  RNGestureHandler: 62232ba8f562f7dea5ba1b3383494eb5bf97a4d3
+  RNGoogleSignin: 05c56dd5cc815262db0f8f45133feb892fe06663
   RNLocalize: 0df7970cfc60389f00eb62fd7c097dc75af3fb4f
   RNRate: 94f57c773e155ca0d0aeeba9c10a32bce9030daf
   RNReanimated: 3dd02d6e115cb20bb999a07cd1ce19369c59afb8
   RNScreens: 34cc502acf1b916c582c60003dc3089fa01dc66d
   RNSensors: e74c8bd9606400c1048ab67af7f41eb2091cb2fc
   RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
-  RNSVG: 07dbd870b0dcdecc99b3a202fa37c8ca163caec2
+  RNSVG: 38ca962c970dbce1ca38991a5aebf26d163f9efb
   RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
