@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/playground-react-native/static/js/main.be4fb808.js",
+    "main.js": "/playground-react-native/static/js/main.e0aea6cf.js",
     "static/media/three.gif": "/playground-react-native/static/media/three.8dc9824b468f9fecfcf8.gif",
     "static/media/four.gif": "/playground-react-native/static/media/four.7caa76a634387e0d4b22.gif",
     "static/media/two.gif": "/playground-react-native/static/media/two.f5ce8fb000326bdcac80.gif",
@@ -8,9 +8,9 @@
     "static/media/placeholder.png": "/playground-react-native/static/media/placeholder.7ac84d6898a616d0b6f5.png",
     "static/media/tap.mp3": "/playground-react-native/static/media/tap.5016b35a366825ed8a6d.mp3",
     "index.html": "/playground-react-native/index.html",
-    "main.be4fb808.js.map": "/playground-react-native/static/js/main.be4fb808.js.map"
+    "main.e0aea6cf.js.map": "/playground-react-native/static/js/main.e0aea6cf.js.map"
   },
   "entrypoints": [
-    "static/js/main.be4fb808.js"
+    "static/js/main.e0aea6cf.js"
   ]
 }
