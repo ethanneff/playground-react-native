@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.71.11](https://github.com/ethanneff/playground-react-native/compare/v2.71.10...v2.71.11) (2022-11-08)
+
+
+### Bug Fixes
+
+* update deps ([06e2b27](https://github.com/ethanneff/playground-react-native/commit/06e2b27a9e704ec0fa9d14bfa92c46d212c1c25f))
+* update deps ([6cee4a2](https://github.com/ethanneff/playground-react-native/commit/6cee4a2f755009c96aa4e329725eb8fe0be7df1d))
+
 ## [2.71.10](https://github.com/ethanneff/playground-react-native/compare/v2.71.9...v2.71.10) (2022-11-05)
 
 
