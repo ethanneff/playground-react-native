@@ -2,20 +2,14 @@
 
 ## Focus
 
-- hourly journal
-- notifications every hour
-- count deep work hours
-- haptic feedback
-
-## Deep Work
-
-- notifications every 30 mins
-- record intensity (y/n) + focus (y/n) + category (work, investments, workout)
+- hourly notification journal
+- count deep work hours (intensity + focus + category [work, investment, physical])
 - timeline count of number of hours spent in each category
 
 ## Complete
 
 - kanban todos
+- ranked based on impact + effort
 - project management
 
 ## Checklists
@@ -25,9 +19,9 @@
 
 # Planning
 
-## Top goals
+## Top goals (FOCUS)
 
-Deploy Android + iOS App (Focus)
+Deploy Android + iOS App
 
 - [x] add tab bar (day view, calendar, settings)
 - [x] login/logout
