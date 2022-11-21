@@ -119,7 +119,7 @@
     "@types/react-native-vector-icons": "6.4.12",
     "@types/react-test-renderer": "17.0.1",
     "@types/uuid": "8.3.4",
-    "@typescript-eslint/eslint-plugin": "5.42.1",
+    "@typescript-eslint/eslint-plugin": "5.43.0",
     "@typescript-eslint/parser": "5.42.1",
     "@welldone-software/why-did-you-render": "7.0.1",
     "babel-plugin-transform-remove-console": "6.9.4",
