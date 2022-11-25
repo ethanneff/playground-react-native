@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.71.13](https://github.com/ethanneff/playground-react-native/compare/v2.71.12...v2.71.13) (2022-11-16)
+
+
+### Bug Fixes
+
+* update planning ([a9b1725](https://github.com/ethanneff/playground-react-native/commit/a9b17256dc038ac6afce801934b1d038c792d6f4))
+
 ## [2.71.12](https://github.com/ethanneff/playground-react-native/compare/v2.71.11...v2.71.12) (2022-11-12)
 
 
