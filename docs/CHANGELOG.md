@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.71.16](https://github.com/ethanneff/playground-react-native/compare/v2.71.15...v2.71.16) (2022-12-18)
+
+
+### Bug Fixes
+
+* turn off merge editor ([4e362f5](https://github.com/ethanneff/playground-react-native/commit/4e362f5295d19af4f6157f1950e4eb13d7d0aff8))
+
 ## [2.71.15](https://github.com/ethanneff/playground-react-native/compare/v2.71.14...v2.71.15) (2022-12-07)
 
 
