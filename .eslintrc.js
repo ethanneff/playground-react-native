@@ -53,7 +53,6 @@ module.exports = {
     'plugin:@typescript-eslint/strict',
     // 'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:typescript-sort-keys/recommended',
-    'prettier',
   ],
   ignorePatterns: [
     'node_modules/',

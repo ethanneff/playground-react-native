@@ -1,10 +1,10 @@
 import {
   GestureResponderEvent,
   NativeTouchEvent,
-  PointPropType,
+  PointProp,
 } from 'react-native';
 
-type Touches = Record<string, PointPropType>;
+type Touches = Record<string, PointProp>;
 
 type Outcome = {
   pinch: boolean;

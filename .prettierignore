@@ -3,3 +3,4 @@ ios/
 coverage/
 docs/CHANGELOG.md
 build/
+vendor/

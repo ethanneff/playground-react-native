@@ -14,7 +14,7 @@
     "start": "react-native start --reset-cache",
     "web": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "tsc && eslint '**/*.[jt]s?(x)' --cache --fix && prettier --write --cache --loglevel silent .",
+    "lint": "tsc; eslint '**/*.[jt]s?(x)' --cache --fix; prettier --write --cache --loglevel silent .",
     "test": "jest -u --coverage --cache --config .github/jest.config.js",
     "watch": "jest -u --watchAll --cache --config .github/jest.config.js",
     "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
