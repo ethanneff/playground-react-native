@@ -5,6 +5,7 @@
   "editor.codeActionsOnSave": ["source.organizeImports", "source.fixAll"],
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": false,
+  "git.mergeEditor": false,
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "editor.gotoLocation.multipleImplementations": "goto",
