@@ -1,5 +1,19 @@
 # Changelog
 
+# [2.73.0](https://github.com/ethanneff/playground-react-native/compare/v2.72.1...v2.73.0) (2022-12-19)
+
+
+### Bug Fixes
+
+* add accessibility to touchable opacity ([b423b2a](https://github.com/ethanneff/playground-react-native/commit/b423b2aceef5d187c2bfbabab6f06e1306621e2b))
+* allow input to focus on load ([14e915b](https://github.com/ethanneff/playground-react-native/commit/14e915bdb5792bf7c93ed539f18ed7ad65f7344a))
+* run rn doctor ([90d7332](https://github.com/ethanneff/playground-react-native/commit/90d7332846a266a153acbaad6823219c44501e93))
+
+
+### Features
+
+* add goals to weekend planner ([841e579](https://github.com/ethanneff/playground-react-native/commit/841e57919eff51cab3b9abd4c254a7b58fa61051))
+
 ## [2.72.1](https://github.com/ethanneff/playground-react-native/compare/v2.72.0...v2.72.1) (2022-12-19)
 
 
