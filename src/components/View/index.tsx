@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import {
+  AccessibilityRole,
   FlexAlignType,
   LayoutChangeEvent,
   StyleProp,
@@ -11,6 +12,8 @@ import {
 import { MonoMultiColor, useColors } from '../../features';
 
 type Props = {
+  accessibilityRole?: AccessibilityRole;
+  accessible?: boolean;
   alignContent?:
     | 'flex-start'
     | 'flex-end'
@@ -60,6 +63,7 @@ export const View = ({
   children,
   cursor,
   display,
+  accessible,
   flex,
   flexBasis,
   flexDirection,
@@ -75,6 +79,7 @@ export const View = ({
   padding,
   position,
   style,
+  accessibilityRole,
   width,
   onTouchStart,
   onLayout,
@@ -111,6 +116,8 @@ export const View = ({
 
   return (
     <Original
+      accessibilityRole={accessibilityRole}
+      accessible={accessible}
       onLayout={onLayout}
       onTouchStart={onTouchStart}
       style={[styles.view, style]}

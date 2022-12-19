@@ -2,6 +2,7 @@ import React, { ReactNode, useCallback } from 'react';
 import { StyleProp, ViewStyle } from 'react-native';
 import { GestureTouchableOpacity } from '../../conversions';
 import { SoundManager } from '../../features';
+import { View } from '../View';
 
 type Props = {
   activeOpacity?: number;
@@ -36,7 +37,7 @@ export const TouchableOpacity = ({
     if (onLongPress) onLongPress();
   }, [onLongPress]);
 
-  const styles = [{ flex: flex ? 1 : 0 }, style];
+  const styles = [{ flex: flex ? 1 : undefined }, style];
   return (
     <GestureTouchableOpacity
       activeOpacity={activeOpacity}
@@ -47,7 +48,12 @@ export const TouchableOpacity = ({
       style={styles}
       testID={testID}
     >
-      {children}
+      <View
+        accessibilityRole="button"
+        accessible
+      >
+        {children}
+      </View>
     </GestureTouchableOpacity>
   );
 };
