@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.73.1](https://github.com/ethanneff/playground-react-native/compare/v2.73.0...v2.73.1) (2022-12-19)
+
+
+### Bug Fixes
+
+* make corrections for dark mode ([eead5df](https://github.com/ethanneff/playground-react-native/commit/eead5dfb7dff516ad636a21e576fc44b46b98e91))
+
 # [2.73.0](https://github.com/ethanneff/playground-react-native/compare/v2.72.1...v2.73.0) (2022-12-19)
 
 
