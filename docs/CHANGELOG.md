@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.72.0](https://github.com/ethanneff/playground-react-native/compare/v2.71.17...v2.72.0) (2022-12-19)
+
+
+### Features
+
+* add weekend planner app ([9e9175c](https://github.com/ethanneff/playground-react-native/commit/9e9175c3e5720caf5ea106a52c257afa9095a5e1))
+
 ## [2.71.17](https://github.com/ethanneff/playground-react-native/compare/v2.71.16...v2.71.17) (2022-12-18)
 
 
