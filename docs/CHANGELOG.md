@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.71.17](https://github.com/ethanneff/playground-react-native/compare/v2.71.16...v2.71.17) (2022-12-18)
+
+
+### Bug Fixes
+
+* make linting and testing work ([013f4be](https://github.com/ethanneff/playground-react-native/commit/013f4be82299855163cb7841d7fcba74802ee19a))
+* update to RN 70 (android, ios, web) ([c020958](https://github.com/ethanneff/playground-react-native/commit/c0209585d9683e7fa9b56c6dbb568ff5f915a7b2))
+
 ## [2.71.16](https://github.com/ethanneff/playground-react-native/compare/v2.71.15...v2.71.16) (2022-12-18)
 
 
