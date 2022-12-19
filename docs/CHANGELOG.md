@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.72.1](https://github.com/ethanneff/playground-react-native/compare/v2.72.0...v2.72.1) (2022-12-19)
+
+
+### Bug Fixes
+
+* add vendor to eslint ([e8a6791](https://github.com/ethanneff/playground-react-native/commit/e8a6791a8d4440600b726362e8d7efecd05a55e9))
+
 # [2.72.0](https://github.com/ethanneff/playground-react-native/compare/v2.71.17...v2.72.0) (2022-12-19)
 
 
