@@ -61,6 +61,7 @@ module.exports = {
     'ios/',
     'build/',
     'src/mocks/',
+    'vendor/',
   ],
   root: true,
   env: { node: true },
