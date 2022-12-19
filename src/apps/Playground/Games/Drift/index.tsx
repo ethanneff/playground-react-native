@@ -25,7 +25,7 @@ export const Drift = memo(function PlaygroundDrift() {
             title="simulators not supported"
           />
         ) : (
-          <View flex>
+          <View flex={1}>
             <Game />
             <Dpad />
           </View>

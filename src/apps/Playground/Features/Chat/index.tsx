@@ -15,14 +15,15 @@ export const Chat = memo(function PlaygroundChat() {
 
   return (
     <Screen
+      dropShadow
       onLeftPress={goBack}
       title="Chat"
     >
       <View
-        flex
+        flex={1}
         onLayout={onLayout}
       >
-        <View style={{ height }}>
+        <View height={height}>
           <Items />
           <TextField />
         </View>

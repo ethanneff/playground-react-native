@@ -36,14 +36,14 @@ const Section = ({
         paddingVertical: spacing(8),
       }}
     >
-      <View row>
+      <View flexDirection="row">
         <Text
           color="accent"
           style={{ width: leftWidth }}
           title={String(index)}
           type="h2"
         />
-        <View flex>
+        <View flex={1}>
           <Text
             style={{ marginBottom: spacing(4) }}
             title={title}

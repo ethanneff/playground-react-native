@@ -28,7 +28,7 @@ export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
         padding: spacing(2),
       }}
     >
-      <View style={{ width: 40 }}>
+      <View width={spacing(20)}>
         <Image
           source={image}
           style={{
@@ -40,8 +40,8 @@ export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
           }}
         />
       </View>
-      <View flex>
-        <View row>
+      <View flex={1}>
+        <View flexDirection="row">
           <Text
             bold
             style={{ paddingRight: spacing(2) }}

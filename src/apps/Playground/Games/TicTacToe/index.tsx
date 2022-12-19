@@ -77,8 +77,8 @@ export const TicTacToe = memo(function TicTacToe() {
         <View>
           {game.board.map((row, i) => (
             <View
+              flexDirection="row"
               key={v4()}
-              row
             >
               {row.map((_, j) => (
                 <TouchableOpacity

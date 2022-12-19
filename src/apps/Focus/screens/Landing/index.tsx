@@ -30,13 +30,13 @@ export const Landing = memo(function Landing() {
 
   return (
     <Screen>
-      <View flex>
+      <View flex={1}>
         <View
-          center
-          flex
-          row={landscape}
+          flex={1}
+          flexDirection={landscape ? 'row' : 'column'}
+          justifyContent="center"
         >
-          <View flex={landscape}>
+          <View flex={landscape ? 1 : 0}>
             <Lottie
               autoPlay
               loop
@@ -50,8 +50,8 @@ export const Landing = memo(function Landing() {
             />
           </View>
           <View
-            center
-            flex={landscape}
+            flex={landscape ? 1 : 0}
+            justifyContent="center"
           >
             <Text
               center
@@ -77,7 +77,7 @@ export const Landing = memo(function Landing() {
           paddingVertical: spacing(4),
         }}
       >
-        <View flex={landscape}>
+        <View flex={landscape ? 1 : 0}>
           <Button
             center
             color="accent"
@@ -87,7 +87,7 @@ export const Landing = memo(function Landing() {
           />
         </View>
         <Spacing padding={2} />
-        <View flex={landscape}>
+        <View flex={landscape ? 1 : 0}>
           <Button
             center
             color="secondary"

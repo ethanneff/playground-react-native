@@ -270,8 +270,11 @@ export const Landing = memo(function PortfolioLanding() {
             }}
           />
         </View>
-        <View flex />
-        <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
+        <View flex={1} />
+        <View
+          flexDirection="row"
+          justifyContent="space-around"
+        >
           <AppIcon
             onPress={missingCallback}
             type="apple"
@@ -283,7 +286,7 @@ export const Landing = memo(function PortfolioLanding() {
         </View>
       </Section>
       <Section backgroundColor={colors.background.primaryA}>
-        <View flex />
+        <View flex={1} />
         <View
           style={{
             flexDirection: 'row',

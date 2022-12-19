@@ -1,37 +1,120 @@
-import React from 'react';
-import { StyleSheet, View as Original, ViewProps } from 'react-native'; // eslint-disable-line no-restricted-imports
+import React, { ReactNode } from 'react';
+import {
+  FlexAlignType,
+  LayoutChangeEvent,
+  StyleProp,
+  StyleSheet,
+  // eslint-disable-next-line no-restricted-imports
+  View as Original,
+  ViewStyle,
+} from 'react-native';
+import { MonoMultiColor, useColors } from '../../features';
 
-type Props = ViewProps & {
-  center?: boolean;
-  flex?: boolean;
-  row?: boolean;
+type Props = {
+  alignContent?:
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'stretch'
+    | 'space-between'
+    | 'space-around';
+  alignItems?: FlexAlignType;
+  alignSelf?: FlexAlignType;
+  backgroundColor?: keyof MonoMultiColor;
+  borderRadius?: number;
+  children?: ReactNode;
+  cursor?: 'default' | 'pointer';
+  display?: 'flex' | 'none';
+  flex?: number;
+  flexBasis?: number;
+  flexDirection?: 'row' | 'column';
+  flexGrow?: number;
+  flexShrink?: number;
+  flexWrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
+  height?: number;
+  justifyContent?:
+    | 'center'
+    | 'flex-end'
+    | 'flex-start'
+    | 'space-between'
+    | 'space-around'
+    | 'space-evenly';
+  margin?: number;
+  onLayout?: (event: LayoutChangeEvent) => void;
+  onTouchStart?: () => void;
+  opacity?: number;
+  overflow?: 'scroll' | 'visible' | 'hidden';
+  padding?: number;
+  position?: 'absolute' | 'relative';
+  style?: StyleProp<ViewStyle>;
+  testID?: string;
+  width?: number;
 };
 
-const styles = StyleSheet.create({
-  center: { justifyContent: 'center' },
-  flex: { flex: 1 },
-  row: { flexDirection: 'row' },
-});
-
 export const View = ({
-  flex,
-  row,
+  alignContent,
+  alignItems,
+  alignSelf,
+  backgroundColor,
+  borderRadius,
   children,
-  center,
+  cursor,
+  display,
+  flex,
+  flexBasis,
+  flexDirection,
+  flexGrow,
+  flexShrink,
+  flexWrap,
+  height,
+  justifyContent,
+  testID,
+  margin,
+  opacity,
+  overflow,
+  padding,
+  position,
   style,
-  ...rest
+  width,
+  onTouchStart,
+  onLayout,
 }: Props) => {
-  const combinedStyles = [
-    flex ? styles.flex : undefined,
-    row ? styles.row : undefined,
-    center ? styles.center : undefined,
-    style,
-  ];
+  const colors = useColors();
+
+  const styles = StyleSheet.create({
+    view: {
+      alignContent,
+      alignItems,
+      alignSelf,
+      backgroundColor: backgroundColor
+        ? colors.background[backgroundColor]
+        : undefined,
+      borderRadius,
+      cursor,
+      display,
+      flex,
+      flexBasis,
+      flexDirection,
+      flexGrow,
+      flexShrink,
+      flexWrap,
+      height,
+      justifyContent,
+      margin,
+      opacity,
+      overflow,
+      padding,
+      position,
+      width,
+    },
+  });
 
   return (
     <Original
-      {...rest} // eslint-disable-line react/jsx-props-no-spreading
-      style={combinedStyles}
+      onLayout={onLayout}
+      onTouchStart={onTouchStart}
+      style={[styles.view, style]}
+      testID={testID}
     >
       {children}
     </Original>

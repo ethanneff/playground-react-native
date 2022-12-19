@@ -37,6 +37,7 @@ const routeCategories: RouteCategories = {
   themes: 'storybook',
   'tic-tac-toe': 'games',
   tinder: 'creations',
+  'weekend-planner': 'creations',
 };
 
 type NavParams = Record<string, undefined>;

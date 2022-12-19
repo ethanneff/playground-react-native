@@ -19,7 +19,7 @@ export const ButtonGroup = memo(function ButtonGroup({
   const keys = Object.keys(colors.text) as (keyof MonoMultiColor)[];
   const handlePress = useCallback(() => null, []);
   return (
-    <View flex>
+    <View flex={1}>
       <Text
         center
         style={{ paddingBottom: spacing(5) }}

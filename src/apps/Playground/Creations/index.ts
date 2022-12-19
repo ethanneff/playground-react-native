@@ -7,3 +7,4 @@ export * from './OKRs';
 export * from './Questionnaire';
 export * from './Startup';
 export * from './Tinder';
+export * from './WeekendPlanner';

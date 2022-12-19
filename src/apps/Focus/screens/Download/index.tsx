@@ -70,8 +70,8 @@ export const Download = memo(function Download() {
   return (
     <Screen>
       <View
-        center
-        flex
+        flex={1}
+        justifyContent="center"
       >
         <TouchableOpacity
           activeOpacity={1}

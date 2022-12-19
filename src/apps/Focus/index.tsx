@@ -5,7 +5,7 @@ import { Navigation } from './navigation';
 
 export default memo(function Focus() {
   return (
-    <View flex>
+    <View flex={1}>
       <Navigation />
       <FirebaseSync />
     </View>

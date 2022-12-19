@@ -268,8 +268,8 @@ export const TextInput = memo(function TextInput({
         />
         {icons.length > 0 && ( // TODO: refactor to declarative
           <View
-            row
-            style={{ alignSelf: 'flex-end' }}
+            alignSelf="flex-end"
+            flexDirection="row"
           >
             {icons.map((icon) =>
               icon.hidden ||

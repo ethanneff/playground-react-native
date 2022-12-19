@@ -96,7 +96,7 @@ export const Carousel = memo(function Carousel({
 
   return (
     <View
-      flex
+      flex={1}
       onTouchStart={onTouchPauseLooping}
     >
       <FlatList

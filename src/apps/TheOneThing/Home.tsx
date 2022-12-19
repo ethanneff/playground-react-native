@@ -40,14 +40,14 @@ const ChecklistItem = ({ item, index }: ChecklistItemProps) => {
           name={toggle}
           style={{ paddingRight: spacing(2) }}
         />
-        <View flex>
+        <View flex={1}>
           <Text title={`${index + 1}. ${item}`} />
         </View>
       </View>
-      <View row>
+      <View flexDirection="row">
         {days.map((day) => (
           <View
-            flex
+            flex={1}
             key={day}
           >
             <Text

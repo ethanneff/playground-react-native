@@ -18,7 +18,7 @@ export const Header = memo(function Header() {
 
   return (
     <View>
-      <View row>
+      <View flexDirection="row">
         <Text
           style={{ alignSelf: 'center' }}
           title={`count: ${count}`}
@@ -33,7 +33,7 @@ export const Header = memo(function Header() {
           value={10}
         />
       </View>
-      <View row>
+      <View flexDirection="row">
         <Text
           style={{ alignSelf: 'center' }}
           title={`delay: ${Math.floor(delay)}`}

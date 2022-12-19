@@ -113,8 +113,8 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
       <View style={styles.container}>
         {board.map((col, x) => (
           <View
+            flexDirection="row"
             key={v4()}
-            row
           >
             {col.map((gem, y) => (
               <View

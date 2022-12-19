@@ -41,10 +41,10 @@ export const Collapsible = ({ children, title }: Props) => {
     <View>
       <TouchableOpacity onPress={handlePress}>
         <View
-          row
+          flexDirection="row"
+          justifyContent="space-between"
           style={{
             backgroundColor,
-            justifyContent: 'space-between',
             paddingHorizontal: spacing(4),
             paddingVertical: spacing(2),
           }}

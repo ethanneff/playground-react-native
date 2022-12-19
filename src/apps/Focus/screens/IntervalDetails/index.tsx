@@ -203,8 +203,9 @@ export const IntervalDetails = memo(function IntervalDetails() {
           </Card>
           <Card>
             <View
-              row
-              style={{ alignItems: 'center', justifyContent: 'space-between' }}
+              alignItems="center"
+              flexDirection="row"
+              justifyContent="space-between"
             >
               <Text
                 emphasis="medium"

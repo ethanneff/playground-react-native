@@ -6,7 +6,7 @@ export const LoadingSection = (): JSX.Element => {
   return (
     <Card style={{ marginBottom: spacing(4) }}>
       <View>
-        <View row>
+        <View flexDirection="row">
           <SkeletonLoader
             borderRadius={spacing(24)}
             height={spacing(24)}

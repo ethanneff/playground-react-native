@@ -27,7 +27,7 @@ export const Welcome = memo(function Welcome() {
   return (
     <>
       <Screen>
-        <View flex>
+        <View flex={1}>
           <Carousel
             duration={6000}
             slides={slides}

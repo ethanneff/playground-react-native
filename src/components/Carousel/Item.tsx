@@ -26,7 +26,10 @@ export const Item = memo(function Item({ item, width }: Props) {
 
   return (
     <View style={styles.item}>
-      <View style={{ flex: 1, justifyContent: 'center' }}>
+      <View
+        flex={1}
+        justifyContent="center"
+      >
         {item.icon ? (
           <Icon
             name={item.icon}
@@ -34,7 +37,7 @@ export const Item = memo(function Item({ item, width }: Props) {
           />
         ) : null}
       </View>
-      <View flex>
+      <View flex={1}>
         {item.title ? (
           <Text
             center

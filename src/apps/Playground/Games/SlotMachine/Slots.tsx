@@ -101,7 +101,7 @@ type ReelsProps = {
 const Reels = memo(function Reels({ reelsArray, lineIndexes }: ReelsProps) {
   const colors = useColors();
   return (
-    <View row>
+    <View flexDirection="row">
       {reelsArray.map((reel, i) => (
         <View key={v4()}>
           {reel.map((item, j) => (

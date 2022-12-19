@@ -20,7 +20,7 @@ export const Colors = memo(function DebugColors() {
         <Title title="Theme" />
         <ThemeGroup />
         <Title title="Buttons" />
-        <View row>
+        <View flexDirection="row">
           <ButtonGroup emphasis="high" />
           <ButtonGroup emphasis="medium" />
           <ButtonGroup emphasis="low" />
@@ -28,7 +28,7 @@ export const Colors = memo(function DebugColors() {
         <Title title="Tags" />
         <TagGroup />
         <Title title="Fonts" />
-        <View row>
+        <View flexDirection="row">
           <FontGroup emphasis="default" />
           <FontGroup emphasis="high" />
           <FontGroup emphasis="medium" />

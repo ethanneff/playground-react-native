@@ -28,7 +28,7 @@ export const Dpad = memo(function Dpad() {
         transform: [{ rotate: '45deg' }],
       }}
     >
-      <View row>
+      <View flexDirection="row">
         <TouchableOpacity
           onPress={onPress('violet')}
           style={{
@@ -48,7 +48,7 @@ export const Dpad = memo(function Dpad() {
           }}
         />
       </View>
-      <View row>
+      <View flexDirection="row">
         <TouchableOpacity
           onPress={onPress('slateblue')}
           style={{
