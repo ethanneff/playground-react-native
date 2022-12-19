@@ -32,7 +32,7 @@ export const Card = memo(function Card({
   borderRadius = spacing(2),
   borderWidth = 1,
   children,
-  elevation = 2,
+  elevation = 0,
   onLongPress,
   onPress,
   noMargin,

@@ -150,7 +150,9 @@ export const TextInput = memo(function TextInput({
   const [focus, setFocus] = useState(false);
   const [text, setText] = useState(value);
   const colors = useColors();
-  const backColor = colors.background[backgroundColor ?? 'primaryA'];
+  const backColor = backgroundColor
+    ? colors.background[backgroundColor]
+    : 'transparent';
   const { fontSize, textColor } = getFontStyles({
     color,
     colors,

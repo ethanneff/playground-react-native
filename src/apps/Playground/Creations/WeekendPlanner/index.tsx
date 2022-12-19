@@ -163,7 +163,6 @@ export const WeekendPlanner = memo(function Playground52Weeks() {
                 flexDirection="row"
                 key={goal.id}
               >
-                <Spacing padding={1} />
                 <TouchableOpacity
                   onPress={handleGoalComplete(goal)}
                   style={{ padding: spacing(2) }}
@@ -207,7 +206,6 @@ export const WeekendPlanner = memo(function Playground52Weeks() {
               >
                 <View
                   alignItems="center"
-                  backgroundColor="primaryA"
                   flex={1}
                   height={height / 20}
                   justifyContent="center"
