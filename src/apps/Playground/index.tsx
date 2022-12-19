@@ -18,6 +18,7 @@ import {
   Questionnaire,
   Startup,
   Tinder,
+  WeekendPlanner,
 } from './Creations';
 import {
   BouncingBalls,
@@ -43,10 +44,10 @@ import {
   TicTacToe,
 } from './Games';
 import { Landing } from './Landing';
-import { navParams } from './navParams';
+import { NavParams } from './navParams';
 
 const noHeader = { headerShown: false };
-const Stack = createNativeStackNavigator<typeof navParams>();
+const Stack = createNativeStackNavigator<NavParams>();
 
 export default memo(function Games() {
   return (
@@ -162,6 +163,10 @@ export default memo(function Games() {
       />
 
       {/* creations */}
+      <Stack.Screen
+        component={WeekendPlanner}
+        name="weekend-planner"
+      />
       <Stack.Screen
         component={Ball}
         name="ball"

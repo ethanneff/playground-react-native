@@ -1,7 +1,55 @@
-type Category = 'features' | 'games' | 'storybook' | 'creations' | 'none';
-type RouteCategories = Record<string, Category>;
+const routes = [
+  'apple-fit',
+  'apple-mask',
+  'apple-stopwatch',
+  'archero',
+  'ball',
+  'bejeweled',
+  'bouncing-balls',
+  'chat',
+  'colors',
+  'crash',
+  'drag',
+  'drift',
+  'flappy-bird',
+  'fonts',
+  'fortune-wheel',
+  'game-of-life',
+  'infinite-images',
+  'inputs',
+  'landing',
+  'modals',
+  'okrs',
+  'papi-jump',
+  'paragraphs',
+  'pinch-spread',
+  'questionnaire',
+  'recycler-flatList',
+  'search-bar',
+  'skeleton-loader',
+  'slot-machine',
+  'snake',
+  'startup',
+  'swipe-feed',
+  'themes',
+  'tic-tac-toe',
+  'tinder',
+  'weekend-planner',
+] as const;
 
-const routeCategories: RouteCategories = {
+const categories = [
+  'features',
+  'games',
+  'storybook',
+  'creations',
+  'none',
+] as const;
+
+type Route = typeof routes[number];
+type Category = typeof categories[number];
+export type NavParams = Record<Route, undefined>;
+
+export const routeCategory: Record<Route, Category> = {
   'apple-fit': 'creations',
   'apple-mask': 'creations',
   'apple-stopwatch': 'creations',
@@ -40,18 +88,13 @@ const routeCategories: RouteCategories = {
   'weekend-planner': 'creations',
 };
 
-type NavParams = Record<string, undefined>;
-
-export const navParams: NavParams = Object.keys(routeCategories).reduce(
-  (acc, key) => ({ ...acc, [key]: undefined }),
-  {},
-);
-
 type LandingRoutes = { [key in Category]: string[] };
-export const landingRoutes: LandingRoutes = Object.keys(routeCategories).reduce(
-  (acc, key) => ({
-    ...acc,
-    [routeCategories[key]]: [...acc[routeCategories[key]], key],
-  }),
+
+export const landingRoutes = Object.keys(routeCategory).reduce<LandingRoutes>(
+  (hash, key) => {
+    const category = routeCategory[key as Route];
+    hash[category].push(key);
+    return hash;
+  },
   { creations: [], features: [], games: [], none: [], storybook: [] },
 );
