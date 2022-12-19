@@ -91,6 +91,7 @@ type TextInputProps = {
   editable: boolean;
   emphasis?: FontEmphasis;
   error?: boolean;
+  focusOnLoad?: boolean;
   iconHeight?: number;
   icons?: TextInputIcon[];
   keyboardType: KeyboardTypeOptions;
@@ -128,6 +129,7 @@ export const TextInput = memo(function TextInput({
   editable,
   pointerEvents,
   icons = [],
+  focusOnLoad,
   type,
   onSubmitEditing,
   blurOnSubmit,
@@ -203,6 +205,11 @@ export const TextInput = memo(function TextInput({
     textInput.current?.focus();
   }, []);
 
+  const handleLayout = useCallback(() => {
+    if (!focusOnLoad) return;
+    textInput.current?.focus();
+  }, [focusOnLoad]);
+
   useEffect(() => {
     setText(value);
   }, [value]);
@@ -248,6 +255,7 @@ export const TextInput = memo(function TextInput({
           onBlur={onBlurInternal}
           onChangeText={onChangeTextInternal}
           onFocus={onFocusInternal}
+          onLayout={handleLayout}
           onSubmitEditing={onSubmitEditingInternal}
           placeholder={placeholder}
           placeholderTextColor={colors.text.secondary}
