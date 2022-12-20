@@ -60,13 +60,15 @@ exports[`navBar shows border 1`] = `
         collapsable={false}
         style={
           {
-            "flex": 0,
+            "flex": undefined,
             "opacity": 1,
             "padding": 8,
           }
         }
       >
         <View
+          accessibilityRole="button"
+          accessible={true}
           style={
             [
               {
@@ -92,44 +94,75 @@ exports[`navBar shows border 1`] = `
                 "position": undefined,
                 "width": undefined,
               },
-              [
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                {
-                  "justifyContent": "center",
-                },
-                null,
-              ],
+              undefined,
             ]
           }
-          testID="leftNav"
         >
-          <Text
-            allowFontScaling={false}
-            selectable={false}
+          <View
             style={
               [
                 {
-                  "color": "transparent",
-                  "fontSize": 32,
+                  "alignContent": undefined,
+                  "alignItems": undefined,
+                  "alignSelf": undefined,
+                  "backgroundColor": undefined,
+                  "borderRadius": undefined,
+                  "cursor": undefined,
+                  "display": undefined,
+                  "flex": undefined,
+                  "flexBasis": undefined,
+                  "flexDirection": undefined,
+                  "flexGrow": undefined,
+                  "flexShrink": undefined,
+                  "flexWrap": undefined,
+                  "height": undefined,
+                  "justifyContent": undefined,
+                  "margin": undefined,
+                  "opacity": undefined,
+                  "overflow": undefined,
+                  "padding": undefined,
+                  "position": undefined,
+                  "width": undefined,
                 },
                 [
                   undefined,
                   undefined,
+                  undefined,
+                  undefined,
+                  {
+                    "justifyContent": "center",
+                  },
+                  null,
                 ],
-                {
-                  "fontFamily": "Material Design Icons",
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-                {},
               ]
             }
+            testID="leftNav"
           >
-            󰅁
-          </Text>
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "transparent",
+                    "fontSize": 32,
+                  },
+                  [
+                    undefined,
+                    undefined,
+                  ],
+                  {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              󰅁
+            </Text>
+          </View>
         </View>
       </View>
     </RNGestureHandlerButton>
@@ -152,13 +185,15 @@ exports[`navBar shows border 1`] = `
         collapsable={false}
         style={
           {
-            "flex": 0,
+            "flex": undefined,
             "opacity": 1,
             "padding": 8,
           }
         }
       >
         <View
+          accessibilityRole="button"
+          accessible={true}
           style={
             [
               {
@@ -184,46 +219,77 @@ exports[`navBar shows border 1`] = `
                 "position": undefined,
                 "width": undefined,
               },
-              [
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                {
-                  "justifyContent": "center",
-                },
-                {
-                  "alignSelf": "flex-end",
-                },
-              ],
+              undefined,
             ]
           }
-          testID="rightNav"
         >
-          <Text
-            allowFontScaling={false}
-            selectable={false}
+          <View
             style={
               [
                 {
-                  "color": "transparent",
-                  "fontSize": 32,
+                  "alignContent": undefined,
+                  "alignItems": undefined,
+                  "alignSelf": undefined,
+                  "backgroundColor": undefined,
+                  "borderRadius": undefined,
+                  "cursor": undefined,
+                  "display": undefined,
+                  "flex": undefined,
+                  "flexBasis": undefined,
+                  "flexDirection": undefined,
+                  "flexGrow": undefined,
+                  "flexShrink": undefined,
+                  "flexWrap": undefined,
+                  "height": undefined,
+                  "justifyContent": undefined,
+                  "margin": undefined,
+                  "opacity": undefined,
+                  "overflow": undefined,
+                  "padding": undefined,
+                  "position": undefined,
+                  "width": undefined,
                 },
                 [
                   undefined,
                   undefined,
+                  undefined,
+                  undefined,
+                  {
+                    "justifyContent": "center",
+                  },
+                  {
+                    "alignSelf": "flex-end",
+                  },
                 ],
-                {
-                  "fontFamily": "Material Design Icons",
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-                {},
               ]
             }
+            testID="rightNav"
           >
-            󰅖
-          </Text>
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "transparent",
+                    "fontSize": 32,
+                  },
+                  [
+                    undefined,
+                    undefined,
+                  ],
+                  {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              󰅖
+            </Text>
+          </View>
         </View>
       </View>
     </RNGestureHandlerButton>
@@ -326,13 +392,15 @@ exports[`navBar shows dropshadow 1`] = `
         collapsable={false}
         style={
           {
-            "flex": 0,
+            "flex": undefined,
             "opacity": 1,
             "padding": 8,
           }
         }
       >
         <View
+          accessibilityRole="button"
+          accessible={true}
           style={
             [
               {
@@ -358,44 +426,75 @@ exports[`navBar shows dropshadow 1`] = `
                 "position": undefined,
                 "width": undefined,
               },
-              [
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                {
-                  "justifyContent": "center",
-                },
-                null,
-              ],
+              undefined,
             ]
           }
-          testID="leftNav"
         >
-          <Text
-            allowFontScaling={false}
-            selectable={false}
+          <View
             style={
               [
                 {
-                  "color": "transparent",
-                  "fontSize": 32,
+                  "alignContent": undefined,
+                  "alignItems": undefined,
+                  "alignSelf": undefined,
+                  "backgroundColor": undefined,
+                  "borderRadius": undefined,
+                  "cursor": undefined,
+                  "display": undefined,
+                  "flex": undefined,
+                  "flexBasis": undefined,
+                  "flexDirection": undefined,
+                  "flexGrow": undefined,
+                  "flexShrink": undefined,
+                  "flexWrap": undefined,
+                  "height": undefined,
+                  "justifyContent": undefined,
+                  "margin": undefined,
+                  "opacity": undefined,
+                  "overflow": undefined,
+                  "padding": undefined,
+                  "position": undefined,
+                  "width": undefined,
                 },
                 [
                   undefined,
                   undefined,
+                  undefined,
+                  undefined,
+                  {
+                    "justifyContent": "center",
+                  },
+                  null,
                 ],
-                {
-                  "fontFamily": "Material Design Icons",
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-                {},
               ]
             }
+            testID="leftNav"
           >
-            󰅁
-          </Text>
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "transparent",
+                    "fontSize": 32,
+                  },
+                  [
+                    undefined,
+                    undefined,
+                  ],
+                  {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              󰅁
+            </Text>
+          </View>
         </View>
       </View>
     </RNGestureHandlerButton>
@@ -418,13 +517,15 @@ exports[`navBar shows dropshadow 1`] = `
         collapsable={false}
         style={
           {
-            "flex": 0,
+            "flex": undefined,
             "opacity": 1,
             "padding": 8,
           }
         }
       >
         <View
+          accessibilityRole="button"
+          accessible={true}
           style={
             [
               {
@@ -450,46 +551,77 @@ exports[`navBar shows dropshadow 1`] = `
                 "position": undefined,
                 "width": undefined,
               },
-              [
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                {
-                  "justifyContent": "center",
-                },
-                {
-                  "alignSelf": "flex-end",
-                },
-              ],
+              undefined,
             ]
           }
-          testID="rightNav"
         >
-          <Text
-            allowFontScaling={false}
-            selectable={false}
+          <View
             style={
               [
                 {
-                  "color": "transparent",
-                  "fontSize": 32,
+                  "alignContent": undefined,
+                  "alignItems": undefined,
+                  "alignSelf": undefined,
+                  "backgroundColor": undefined,
+                  "borderRadius": undefined,
+                  "cursor": undefined,
+                  "display": undefined,
+                  "flex": undefined,
+                  "flexBasis": undefined,
+                  "flexDirection": undefined,
+                  "flexGrow": undefined,
+                  "flexShrink": undefined,
+                  "flexWrap": undefined,
+                  "height": undefined,
+                  "justifyContent": undefined,
+                  "margin": undefined,
+                  "opacity": undefined,
+                  "overflow": undefined,
+                  "padding": undefined,
+                  "position": undefined,
+                  "width": undefined,
                 },
                 [
                   undefined,
                   undefined,
+                  undefined,
+                  undefined,
+                  {
+                    "justifyContent": "center",
+                  },
+                  {
+                    "alignSelf": "flex-end",
+                  },
                 ],
-                {
-                  "fontFamily": "Material Design Icons",
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-                {},
               ]
             }
+            testID="rightNav"
           >
-            󰅖
-          </Text>
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "transparent",
+                    "fontSize": 32,
+                  },
+                  [
+                    undefined,
+                    undefined,
+                  ],
+                  {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              󰅖
+            </Text>
+          </View>
         </View>
       </View>
     </RNGestureHandlerButton>
