@@ -9,10 +9,10 @@ type Props = {
 };
 
 export const FasterImage = memo(function FasterImage({
+  height,
   onImageLoad,
   uri,
   width,
-  height,
 }: Props) {
   const containerStyle = { height, width };
   return (

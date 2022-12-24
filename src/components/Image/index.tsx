@@ -12,10 +12,10 @@ type Props = {
 };
 
 export const Image = memo(function Image({
-  uri,
   height,
-  width,
   size = 'small',
+  uri,
+  width,
 }: Props) {
   const [opacity, setOpacity] = useState(1);
   const styles = StyleSheet.create({

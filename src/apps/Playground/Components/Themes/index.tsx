@@ -97,7 +97,7 @@ export const Themes = memo(function Themes() {
   const onPress = useCallback(() => undefined, []);
 
   const renderItem = useCallback<ListRenderItem<CardItem>>(
-    ({ item, index }) => (
+    ({ index, item }) => (
       <Card
         elevation={elevation}
         key={index}

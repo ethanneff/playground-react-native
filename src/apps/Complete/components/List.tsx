@@ -16,12 +16,12 @@ type ListProps = {
 };
 
 export const List = memo(function List({
+  footer,
   itemId,
-  parentItemId,
-  orientation = 'vertical',
   listWidth,
   maxHeight,
-  footer,
+  orientation = 'vertical',
+  parentItemId,
 }: ListProps) {
   const horizontal = orientation === 'horizontal';
   const padding = horizontal ? 0 : completeConfig.padding;

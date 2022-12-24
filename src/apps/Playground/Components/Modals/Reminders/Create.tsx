@@ -19,8 +19,8 @@ type Props = {
 
 export const Create = memo(function Create({
   onBackgroundPress,
-  onOneTimePress,
   onLocationPress,
+  onOneTimePress,
 }: Props) {
   const [state, setState] = useState<ReminderType>('one time');
   const styles = StyleSheet.create({

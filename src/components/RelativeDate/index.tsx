@@ -18,10 +18,10 @@ type Props = {
 const minute = 60 * 1000;
 export const RelativeDate = memo(function RelativeDate({
   date,
-  type,
   emphasis,
-  style,
   format = 'MMM D YYYY, h:mm a',
+  style,
+  type,
 }: Props) {
   const [showRelativeDate, setShowRelativeDate] = useState(true);
   const [update, setUpdate] = useState(1);

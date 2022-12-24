@@ -17,15 +17,15 @@ type Props = {
 };
 
 export const TouchableOpacity = ({
-  testID,
-  onPress,
-  onLongPress,
-  children,
-  disabled,
   activeOpacity,
+  children,
   containerStyle,
+  disabled,
   flex,
+  onLongPress,
+  onPress,
   style,
+  testID,
 }: Props) => {
   const onPressHandler = useCallback(() => {
     SoundManager.play('tap');

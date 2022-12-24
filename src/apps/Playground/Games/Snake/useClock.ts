@@ -14,9 +14,9 @@ type UseClock = {
 };
 
 export const useClock = ({
-  precision = 16,
   frequency = 60,
   onUpdate,
+  precision = 16,
 }: Props): UseClock => {
   const state = useRef<State>('off');
   const prev = useRef(0);

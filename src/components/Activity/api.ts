@@ -23,7 +23,7 @@ const getHackerRankActivity = async (
   return data;
 };
 
-export const getApiActivity = ({ username, site }: ApiInput): ApiPromise => {
+export const getApiActivity = ({ site, username }: ApiInput): ApiPromise => {
   switch (site) {
     case 'github':
       return getGithubActivity(username);

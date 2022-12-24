@@ -13,8 +13,8 @@ type Props = {
 };
 
 export const CalendarMonth = memo(function Month({
-  matrix,
   hiddenDays,
+  matrix,
   onSelected,
   selected,
 }: Props) {

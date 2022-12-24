@@ -12,11 +12,11 @@ type RoundButtonProps = {
 };
 
 export const ButtonRound = memo(function ButtonRound({
-  title,
-  color,
   background,
-  onPress,
+  color,
   disabled = false,
+  onPress,
+  title,
 }: RoundButtonProps) {
   const colorScheme = useColors();
   const styles = StyleSheet.create({

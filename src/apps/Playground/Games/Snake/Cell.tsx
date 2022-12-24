@@ -8,7 +8,7 @@ type CellProps = {
   value: number;
 };
 
-export const Cell = memo(function Cell({ value, length }: CellProps) {
+export const Cell = memo(function Cell({ length, value }: CellProps) {
   const colors = useColors();
   const width = useRootSelector(getSmallestDimension) / length;
   const backgroundColor =

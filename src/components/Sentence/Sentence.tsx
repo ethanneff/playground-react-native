@@ -10,13 +10,13 @@ type Props = {
 };
 
 export const Sentence = memo(function Sentence({
+  center,
   sentences,
   style,
-  center,
 }: Props) {
   return (
     <OriginalText style={style}>
-      {sentences.map(({ bold, title, onPress, type, emphasis }) => (
+      {sentences.map(({ bold, emphasis, onPress, title, type }) => (
         <Text
           bold={bold}
           center={center}

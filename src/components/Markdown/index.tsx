@@ -37,7 +37,7 @@ export class Markdown extends React.PureComponent<Props> {
   }
 
   render(): JSX.Element {
-    const { title, style } = this.props;
+    const { style, title } = this.props;
     const words = title.split(' ');
     return (
       <View style={styles.container}>

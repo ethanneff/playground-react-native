@@ -23,7 +23,7 @@ const getDomain = (domain: number[]) => [
   Math.max(...domain),
 ];
 
-export const Graph = ({ data, width, height }: GraphProps) => {
+export const Graph = ({ data, height, width }: GraphProps) => {
   const scaleX = scaleTime()
     .domain(getDomain(data.map((d) => d.date)))
     .range([0, width]);

@@ -17,7 +17,7 @@ export const Welcome = memo(function Welcome() {
     (auth: FirebaseAuthTypes.User | null) => {
       if (!auth) throw new Error('no login');
       dispatch(login(auth));
-      const { user, items } = getDefaultUserTemplate();
+      const { items, user } = getDefaultUserTemplate();
       items.forEach((item) => dispatch(createItem(item)));
       dispatch(loadUser({ ...user, email: auth.email ?? 'anonymous' }));
     },

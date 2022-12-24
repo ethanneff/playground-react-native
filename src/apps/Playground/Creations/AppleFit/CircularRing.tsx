@@ -14,8 +14,8 @@ type RingProps = {
 
 export const CircularRing = ({
   ring,
-  theta,
   strokeWidth,
+  theta,
 }: RingProps): JSX.Element => {
   const radius = PixelRatio.roundToNearestPixel(ring.size / 2);
   const styles = StyleSheet.create({

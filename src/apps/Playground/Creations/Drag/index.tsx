@@ -82,7 +82,7 @@ export const Drag = memo(function PlaygroundDrag() {
   });
 
   const handleCanvas = useCallback((event: LayoutChangeEvent) => {
-    const { x, y, height, width } = event.nativeEvent.layout;
+    const { height, width, x, y } = event.nativeEvent.layout;
     setCanvas({ height, width, x, y });
   }, []);
 

@@ -3,7 +3,7 @@ type GetRandomRange = {
   min: number;
 };
 
-const getRandomRange = ({ min, max }: GetRandomRange) => {
+const getRandomRange = ({ max, min }: GetRandomRange) => {
   return Math.floor(Math.random() * (max - min) + min);
 };
 
@@ -15,10 +15,10 @@ type GetNewLocation = {
 };
 
 export const getNewLocation = ({
-  minSpin,
-  maxSpin,
-  numOfSegments,
   location,
+  maxSpin,
+  minSpin,
+  numOfSegments,
 }: GetNewLocation): number => {
   const spins = getRandomRange({ max: maxSpin, min: minSpin }) * 360;
   const winner = Math.floor(Math.random() * numOfSegments);
@@ -33,9 +33,9 @@ type GetWinnerIndex = {
 };
 
 export const getWinnerIndex = ({
+  angleOfSegment,
   location,
   numOfSegments,
-  angleOfSegment,
 }: GetWinnerIndex): number => {
   const deg = 360 - Math.floor(location % 360);
   const index = Math.floor(deg / angleOfSegment);

@@ -9,8 +9,8 @@ type Props = {
 };
 
 export const CenterCircle = memo(function CenterCircle({
-  radius,
   backgroundColor,
+  radius,
 }: Props) {
   const colors = useColors();
   const styles = StyleSheet.create({

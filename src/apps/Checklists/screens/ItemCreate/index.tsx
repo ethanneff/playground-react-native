@@ -19,7 +19,7 @@ export default memo(function ChecklistItemCreate() {
   const handleSubmit = useCallback(() => {
     if (isInvalidForm) return;
 
-    const { name, description } = form;
+    const { description, name } = form;
     const now = Date.now();
     if (!currentChecklist)
       throw new Error('missing current checklist item when creating');

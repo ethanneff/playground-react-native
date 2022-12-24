@@ -12,7 +12,7 @@ type Props = {
   sections: ContentSections;
 };
 
-export const Content = memo(function Content({ sections, center }: Props) {
+export const Content = memo(function Content({ center, sections }: Props) {
   const styles = StyleSheet.create({
     paragraph: { paddingBottom: spacing(4) },
     section: { paddingBottom: spacing(2) },

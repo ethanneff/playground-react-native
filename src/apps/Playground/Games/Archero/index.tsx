@@ -28,7 +28,7 @@ export const Archero = memo(function Archero() {
   const gesture = useRef({ dx: 0, dy: 0, x0: 0, y0: 0 });
   const window = useRootSelector((state) => state.dimension.window);
   const [dimensions, setDimensions] = useState({ height: 1000, width: 1000 });
-  const { width, height } = dimensions;
+  const { height, width } = dimensions;
   const smallest = width > height ? height : width;
   const joystickSize = smallest / 3;
   const joystickCenter = joystickSize / 2;

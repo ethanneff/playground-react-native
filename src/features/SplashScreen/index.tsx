@@ -49,11 +49,11 @@ const getInterpolate = (progress: Animated.Value) => ({
 
 export const SplashScreen = memo(function SplashScreenMemo({
   backgroundColor,
+  children,
+  delay = 300,
+  duration = 1000,
   primaryColor,
   source,
-  duration = 1000,
-  delay = 300,
-  children,
 }: Props) {
   const smallest = useRootSelector(getSmallestDimension);
   const useNativeDriver = useDriver();
@@ -62,7 +62,7 @@ export const SplashScreen = memo(function SplashScreenMemo({
     progress: new Animated.Value(0),
   });
   const width = smallest * 4;
-  const { imageScale, fade, bleed } = getInterpolate(state.progress);
+  const { bleed, fade, imageScale } = getInterpolate(state.progress);
   const primaryColorStyles = [
     StyleSheet.absoluteFill,
     { backgroundColor: primaryColor },

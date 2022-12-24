@@ -10,9 +10,9 @@ type HandleKeyboardProps = {
 };
 
 export const KeyboardHandler = memo(function KeyboardHandler({
-  onLayout,
   backgroundColor,
   children,
+  onLayout,
 }: HandleKeyboardProps) {
   const onDismissKeyboard = useCallback(() => Keyboard.dismiss(), []);
   return (

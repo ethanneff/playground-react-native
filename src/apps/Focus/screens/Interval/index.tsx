@@ -40,7 +40,7 @@ export const Interval = memo(function Interval() {
   });
 
   const renderItem = useCallback<ListRenderItem<Item>>(
-    ({ item, index }) => (
+    ({ index, item }) => (
       <ListItem
         currentItem={getCurrentItem(item)}
         item={item}

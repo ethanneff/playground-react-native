@@ -16,12 +16,12 @@ type Props = {
 };
 
 export const Week = memo(function Week({
-  item,
-  max,
   index,
-  size,
+  item,
   margin,
+  max,
   onPress,
+  size,
 }: Props) {
   const first = item[0].date;
   const showHeader = Number(dayjs(first).format('DD')) <= 7;

@@ -12,10 +12,10 @@ type ItemContextProps = {
 };
 
 export const ItemContext = memo(function ItemContext({
-  type,
-  userId,
   createdAt,
+  type,
   updatedAt,
+  userId,
 }: ItemContextProps) {
   return (
     <View>

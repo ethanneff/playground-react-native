@@ -19,10 +19,10 @@ type ToastProps = {
 };
 
 const CustomToast = ({
+  center,
+  color,
   description,
   title,
-  color,
-  center,
 }: CustomToastProps) => {
   const colors = useColors();
   const dropShadow = useDropShadow();
@@ -60,7 +60,7 @@ const CustomToast = ({
 };
 
 const PositiveToast = ({
-  props: { description, title, center },
+  props: { center, description, title },
 }: ToastProps) => {
   return (
     <CustomToast
@@ -73,7 +73,7 @@ const PositiveToast = ({
 };
 
 const WarningToast = ({
-  props: { description, title, center },
+  props: { center, description, title },
 }: ToastProps) => {
   return (
     <CustomToast
@@ -86,7 +86,7 @@ const WarningToast = ({
 };
 
 const NegativeToast = ({
-  props: { description, title, center },
+  props: { center, description, title },
 }: ToastProps) => {
   return (
     <CustomToast
@@ -98,7 +98,7 @@ const NegativeToast = ({
   );
 };
 
-const AccentToast = ({ props: { description, title, center } }: ToastProps) => {
+const AccentToast = ({ props: { center, description, title } }: ToastProps) => {
   return (
     <CustomToast
       center={center}

@@ -11,9 +11,9 @@ type Props = {
 };
 
 export const Spacing = ({
-  padding: p = 0,
-  margin: m = 0,
   children,
+  margin: m = 0,
+  padding: p = 0,
   style,
 }: Props) => {
   return (

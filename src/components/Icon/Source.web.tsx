@@ -8,7 +8,7 @@ type Props = {
   style?: CSSProperties | undefined;
 };
 
-export const Source = memo(function IconSource({ name, color, style }: Props) {
+export const Source = memo(function IconSource({ color, name, style }: Props) {
   const path = icon[name];
   return path ? (
     <Original

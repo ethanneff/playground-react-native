@@ -9,10 +9,10 @@ type InitialKnobProps = {
 };
 
 export const InitialKnob = ({
-  theta,
   backgroundColor,
   radius,
   strokeWidth,
+  theta,
 }: InitialKnobProps): JSX.Element => {
   const visible = Number(theta < Math.PI * 2);
   const half = strokeWidth / 2;

@@ -66,9 +66,9 @@ const getNextDraw = (
 };
 
 export const Game = memo(function Game({
+  duration = 50,
   layout,
   radius = 20,
-  duration = 50,
 }: Props) {
   const colors = useColors();
   const useNativeDriver = useDriver();

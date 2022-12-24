@@ -55,6 +55,8 @@ type Props = {
 };
 
 export const View = ({
+  accessibilityRole,
+  accessible,
   alignContent,
   alignItems,
   alignSelf,
@@ -63,7 +65,6 @@ export const View = ({
   children,
   cursor,
   display,
-  accessible,
   flex,
   flexBasis,
   flexDirection,
@@ -72,17 +73,16 @@ export const View = ({
   flexWrap,
   height,
   justifyContent,
-  testID,
   margin,
+  onLayout,
+  onTouchStart,
   opacity,
   overflow,
   padding,
   position,
   style,
-  accessibilityRole,
+  testID,
   width,
-  onTouchStart,
-  onLayout,
 }: Props) => {
   const colors = useColors();
 

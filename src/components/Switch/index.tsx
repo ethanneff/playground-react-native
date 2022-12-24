@@ -9,7 +9,7 @@ type Props = {
   value: boolean;
 };
 
-export const Switch = memo(function Switch({ value, onValueChange }: Props) {
+export const Switch = memo(function Switch({ onValueChange, value }: Props) {
   const handleValueChange = useCallback(
     (result: boolean) => {
       SoundManager.play('tap');

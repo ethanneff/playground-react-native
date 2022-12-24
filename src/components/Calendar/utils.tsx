@@ -39,10 +39,10 @@ type DayObject = {
   id: string | number;
 };
 const createDayObj = ({
-  id,
-  display,
   current = false,
+  display,
   header = false,
+  id,
 }: DayObject): Day => ({
   current,
   display: String(display),

@@ -12,9 +12,9 @@ type Props = {
 };
 
 export const NavButton = memo(function NavButton({
-  onPress,
   icon = 'chevron-up',
   notLeft,
+  onPress,
   testID,
 }: Props) {
   const styles = StyleSheet.create({

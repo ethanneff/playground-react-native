@@ -13,9 +13,9 @@ type BoardProps = {
 };
 
 export const Board = memo(function Board({
-  projectItemId,
   listMaxHeight,
   listWidth,
+  projectItemId,
 }: BoardProps) {
   const listSize = listWidth + completeConfig.padding;
   const board = useRootSelector((s) => s.completeItem.items[projectItemId]);

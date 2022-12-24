@@ -5,7 +5,7 @@ import { useColors } from '../../../features';
 import { PortfolioNavigation } from '../types';
 
 export const Landing = memo(function PortfolioLanding() {
-  const { navigate, goBack } = useNavigation<PortfolioNavigation>();
+  const { goBack, navigate } = useNavigation<PortfolioNavigation>();
   const colors = useColors();
   const navPortfolioLogin = useCallback(() => navigate('login'), [navigate]);
 

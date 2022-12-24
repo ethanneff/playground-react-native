@@ -12,9 +12,9 @@ type Props = {
 
 export const Radio = memo(function Radio({
   buttons,
-  value,
-  onChange,
   horizontal,
+  onChange,
+  value,
 }: Props) {
   return (
     <View

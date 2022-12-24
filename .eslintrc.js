@@ -76,6 +76,7 @@ module.exports = {
     '@typescript-eslint',
     'sonarjs',
     'sort-keys-fix',
+    'sort-destructure-keys',
     'typescript-sort-keys',
   ],
   root: true,
@@ -89,10 +90,14 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/require-default-props': 'off',
     'default-param-last': 'off',
+    // sorting
+    'sort-destructure-keys/sort-destructure-keys': 'error',
+    'sort-keys-fix/sort-keys-fix': 'warn',
+    'typescript-sort-keys/interface': 'error',
+    'typescript-sort-keys/string-enum': 'error',
+    'sort-imports': 'off',
     // style
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
-    'sort-imports': 'off',
-    'sort-keys-fix/sort-keys-fix': 'error',
     'react-hooks/exhaustive-deps': [
       'error',
       { enableDangerousAutofixThisMayCauseInfiniteLoops: true },

@@ -10,8 +10,8 @@ type Props = {
 };
 
 export const LoginButton = memo(function LoginButton({
-  onPress,
   icon,
+  onPress,
   title,
 }: Props) {
   const colors = useColors();

@@ -9,7 +9,7 @@ type DfsProps = {
   t: BoardValue;
 };
 
-const dfs = ({ m, d, i, j, t, c = 0 }: DfsProps): number => {
+const dfs = ({ c = 0, d, i, j, m, t }: DfsProps): number => {
   if (i < 0 || j < 0 || i >= m.length || j >= m[0].length || m[i][j] !== t)
     return 0;
   const next = c + 1;
@@ -25,9 +25,9 @@ type WinnerProps = {
 
 export const getWinner = ({
   board,
+  boardSize,
   i,
   j,
-  boardSize,
 }: WinnerProps): BoardValue => {
   const t = board[i][j];
   const row =

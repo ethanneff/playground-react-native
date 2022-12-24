@@ -21,10 +21,10 @@ type AddItemProps = {
 };
 
 export const AddItem = memo(function AddItem({
-  width,
   parentItemId,
   placeholder,
   title,
+  width,
 }: AddItemProps) {
   const colors = useColors();
   const textInputRef = useRef<TextInputRef>(null);

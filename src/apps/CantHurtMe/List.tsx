@@ -39,7 +39,7 @@ export const List = memo(function List({
   const onPress = useCallback(() => undefined, []);
 
   const renderItem = useCallback<ListRenderItem<string>>(
-    ({ item, index }) => {
+    ({ index, item }) => {
       const data = app.goals.byId[item];
       return (
         <View

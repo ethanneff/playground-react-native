@@ -11,7 +11,7 @@ type Props = SliderProps & {
   flex?: boolean;
 };
 
-export const Slider = ({ onSlidingComplete, flex, style, ...rest }: Props) => {
+export const Slider = ({ flex, onSlidingComplete, style, ...rest }: Props) => {
   const handleSlidingComplete = useCallback(
     (value: number) => {
       if (!onSlidingComplete) return;

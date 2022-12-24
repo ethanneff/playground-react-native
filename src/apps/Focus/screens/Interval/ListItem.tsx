@@ -14,10 +14,10 @@ type Props = {
 };
 
 export const ListItem = memo(function ListItem({
-  showHeader,
+  currentItem,
   item,
   showFooter,
-  currentItem,
+  showHeader,
 }: Props) {
   const colors = useColors();
   const dropShadow = useDropShadow();

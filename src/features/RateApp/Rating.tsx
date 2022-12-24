@@ -15,14 +15,14 @@ type Props = {
 };
 
 export const Rating = memo(function RatingMemo({
-  size,
-  count,
-  onPress,
-  rating,
   colorFilled = 'accent',
   colorUnfilled = 'secondary',
+  count,
   iconFilled = 'star',
   iconUnfilled = 'star-outline',
+  onPress,
+  rating,
+  size,
 }: Props) {
   const handleOnPress = useCallback(
     (index: number) => () => {

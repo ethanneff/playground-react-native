@@ -55,7 +55,7 @@ const Implement = () => {
 
 const TabStack = createBottomTabNavigator<HomeStackRoutes>();
 const Home = () => {
-  const { tabScreenOptions, tabScreenListeners } = useNavScreenOptions();
+  const { tabScreenListeners, tabScreenOptions } = useNavScreenOptions();
   return (
     <TabStack.Navigator
       screenListeners={tabScreenListeners}

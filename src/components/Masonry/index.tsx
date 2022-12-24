@@ -11,7 +11,7 @@ type Item<T> = {
 type Props<T> = {
   data: T[];
   numColumns: number;
-  renderItem({ item, index }: Item<T>): ReactElement | null;
+  renderItem({ index, item }: Item<T>): ReactElement | null;
 };
 
 export const Masonry = memo(function Masonry<T>({

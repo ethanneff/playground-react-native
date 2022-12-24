@@ -12,10 +12,10 @@ type DotsProps = {
 };
 
 export const Dots = memo(function Dots({
-  slides,
-  onDotPress,
-  dotSize,
   activeIndex,
+  dotSize,
+  onDotPress,
+  slides,
 }: DotsProps) {
   const colors = useColors();
   return (

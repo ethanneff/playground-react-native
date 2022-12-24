@@ -94,7 +94,7 @@ export const Activity = memo(function Activity({
   );
 
   const renderItem = useCallback<ListRenderItem<ActivityWeek>>(
-    ({ item, index }) => (
+    ({ index, item }) => (
       <Week
         index={index}
         item={item}

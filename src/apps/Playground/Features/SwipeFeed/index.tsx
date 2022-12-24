@@ -47,12 +47,12 @@ type SwipeCardProps = {
 };
 
 const SwipeCard = memo(function SwipeCard({
-  item,
   height,
+  item,
   onSwipeComplete,
   onSwipePercentChange,
 }: SwipeCardProps) {
-  const { icon, title, date, body, button, image } = item;
+  const { body, button, date, icon, image, title } = item;
   const cardWidth = useRef(0);
   const colors = useColors();
   const useNativeDriver = useDriver();

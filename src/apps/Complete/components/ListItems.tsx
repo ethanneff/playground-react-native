@@ -27,7 +27,7 @@ export const ListItems = memo(function ListItems({
   }, [list.length]);
 
   const onRenderItem: ListRenderItem<string> = useCallback(
-    ({ item, index }) => (
+    ({ index, item }) => (
       <ListItem
         index={index}
         itemId={item}

@@ -19,12 +19,12 @@ type Props = {
 };
 
 export const Balls = memo(function Balls({
-  radius,
-  count,
-  layout,
-  speed = 5,
-  difficulty = 0.8,
   collision,
+  count,
+  difficulty = 0.8,
+  layout,
+  radius,
+  speed = 5,
 }: Props) {
   const colors = useColors();
   const useNativeDriver = useDriver();

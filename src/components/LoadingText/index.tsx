@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
 });
 
 export const LoadingText = memo(function LoadingText({
-  title,
   center,
   style,
+  title,
 }: Props) {
   const containerStyles = [
     styles.row,

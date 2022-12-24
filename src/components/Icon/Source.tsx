@@ -18,11 +18,11 @@ const styles = StyleSheet.create({
 });
 
 export const Source = memo(function IconSource({
+  color,
+  invisible,
   name,
   size,
-  color,
   style,
-  invisible,
 }: Props) {
   const containerStyle = [invisible ? styles.invisible : undefined, style];
   return (

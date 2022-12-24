@@ -11,10 +11,10 @@ type TagProps = {
 };
 
 export const Tag = memo(function Tag({
-  title,
-  onPress,
   color,
   disabled,
+  onPress,
+  title,
 }: TagProps): JSX.Element {
   const colors = useColors();
   return (

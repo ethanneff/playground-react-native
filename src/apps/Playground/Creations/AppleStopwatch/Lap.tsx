@@ -12,9 +12,9 @@ type LapProps = {
 };
 
 export const Lap = memo(function Lap({
-  num,
-  interval,
   fastest,
+  interval,
+  num,
   slowest,
 }: LapProps) {
   const colors = useColors();

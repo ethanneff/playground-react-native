@@ -6,7 +6,7 @@ type TitleProps = {
   title: string;
 };
 
-export const Title = ({ title, description }: TitleProps) => {
+export const Title = ({ description, title }: TitleProps) => {
   return (
     <Spacing padding={4}>
       <Text

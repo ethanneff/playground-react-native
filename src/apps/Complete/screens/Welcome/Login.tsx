@@ -35,10 +35,10 @@ type SignInButtonProps = {
 };
 
 const SignInButton = memo(function SignInButton({
-  onPress,
   icon,
-  title,
   margin,
+  onPress,
+  title,
 }: SignInButtonProps) {
   const colors = useColors();
   return (
@@ -107,26 +107,26 @@ const initialState: State = {
 
 export const Login = memo(function Login({
   onBackgroundPress,
+  onSuccess,
+  showAnonymous,
+  showApple,
+  showEmail,
   showFacebook,
   showGoogle,
-  showApple,
   showPhone,
-  showEmail,
-  showAnonymous,
-  onSuccess,
 }: Props) {
   const {
-    response,
-    onApple,
-    onGoogle,
-    onFacebook,
-    onPhoneConfirm,
-    onPhone,
-    onEmail,
-    onPasswordReset,
     onAnonymous,
+    onApple,
+    onEmail,
+    onFacebook,
+    onGoogle,
+    onPasswordReset,
+    onPhone,
+    onPhoneConfirm,
+    response,
   } = useAuth();
-  const { type, error, user } = response;
+  const { error, type, user } = response;
   const loading = type === 'loading';
   const successful = useRef(false);
   const form = useRef<Ref>(initialRef);

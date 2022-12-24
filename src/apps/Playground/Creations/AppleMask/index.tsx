@@ -17,12 +17,12 @@ type SectionProps = {
 };
 
 const Section = ({
-  index,
-  title,
   description,
   image,
-  paddingHorizontal,
   imageRatio = 0,
+  index,
+  paddingHorizontal,
+  title,
 }: SectionProps) => {
   const colors = useColors();
   const width = useRootSelector(getWidth);
@@ -127,7 +127,7 @@ export const AppleMask = memo(function AppleMask() {
           title="To assemble your face shield, follow these steps."
           type="subtitle1"
         />
-        {sections.map(({ title, description, image, imageRatio }, index) => (
+        {sections.map(({ description, image, imageRatio, title }, index) => (
           <Section
             description={description}
             image={image}

@@ -36,8 +36,8 @@ type GenerateItems = {
 const generateItems = ({
   colors,
   length,
-  min = 0.4,
   max = 0.6,
+  min = 0.4,
 }: GenerateItems): Data[] => {
   const output = [];
   for (let i = 0; i < length; i++) {

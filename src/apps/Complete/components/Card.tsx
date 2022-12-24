@@ -16,10 +16,10 @@ type CardProps = {
 
 export const Card = memo(function Card({
   children,
-  onLayout,
-  margin,
-  width,
   flex,
+  margin,
+  onLayout,
+  width,
 }: CardProps) {
   const colors = useColors();
   return (

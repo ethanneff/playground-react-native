@@ -32,7 +32,7 @@ export default memo(function ChecklistUpdate() {
     [],
   );
   const handleSubmit = useCallback(() => {
-    const { name, description } = form;
+    const { description, name } = form;
     const now = Date.now();
     if (isInvalidForm) return;
 

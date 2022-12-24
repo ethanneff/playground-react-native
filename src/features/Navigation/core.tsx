@@ -26,7 +26,7 @@ const linking = {
 };
 
 export const NavigationProvider = memo(function NavigationProvider() {
-  const { initialState, isReady, onStateChange, onRef } = usePersistedState();
+  const { initialState, isReady, onRef, onStateChange } = usePersistedState();
   const { rightScreenOptions } = useNavScreenOptions();
   const fallback = <Loader />;
   const initialRouteName = Config.APP as keyof RootRoutes;

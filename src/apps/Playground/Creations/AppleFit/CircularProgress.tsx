@@ -11,9 +11,9 @@ type CircularProgressProps = {
 };
 
 export const CircularProgress = ({
-  theta,
-  ring,
   radius,
+  ring,
+  theta,
 }: CircularProgressProps): JSX.Element => {
   const { PI } = Math;
   const rotate = Math.max(0, theta - PI * 2);

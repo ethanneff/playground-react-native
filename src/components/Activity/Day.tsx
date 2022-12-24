@@ -16,10 +16,10 @@ type Props = {
 
 export const Day = memo(function Day({
   day,
-  max,
-  size,
   margin,
+  max,
   onPress,
+  size,
 }: Props) {
   const colors = useColors();
   const backgroundColor =

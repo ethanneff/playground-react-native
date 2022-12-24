@@ -35,9 +35,9 @@ type InitialState = {
 };
 
 const getInitialState = ({
+  credits,
   randomize,
   reels,
-  credits,
 }: InitialState): State => {
   const reelsArray = randomize
     ? reels.map((reel) => shuffleArray([...reel]))
@@ -98,7 +98,7 @@ type ReelsProps = {
   reelsArray: string[][];
 };
 
-const Reels = memo(function Reels({ reelsArray, lineIndexes }: ReelsProps) {
+const Reels = memo(function Reels({ lineIndexes, reelsArray }: ReelsProps) {
   const colors = useColors();
   return (
     <View flexDirection="row">
@@ -129,7 +129,7 @@ type BetProps = {
   onBet: () => void;
 };
 
-const Bet = memo(function Bet({ onBet, disabled, multiplier }: BetProps) {
+const Bet = memo(function Bet({ disabled, multiplier, onBet }: BetProps) {
   return (
     <TouchableOpacity
       disabled={disabled}

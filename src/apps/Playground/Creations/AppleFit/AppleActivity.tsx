@@ -17,12 +17,12 @@ type Props = {
 };
 
 export const AppleActivity = ({
+  animate,
   backgroundColor,
   rings,
-  strokeWidth,
   size,
-  animate,
   speed = 0.02,
+  strokeWidth,
 }: Props): JSX.Element => {
   const colors = useColors();
   const styles = StyleSheet.create({

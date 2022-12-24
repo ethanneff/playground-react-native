@@ -20,11 +20,11 @@ type StyleInterface = {
 };
 
 export const getStyles = ({
-  colors,
   color,
+  colors,
+  disabled,
   emphasis,
   noPadding,
-  disabled,
 }: StyleInterface) => {
   const backgroundColor =
     disabled && emphasis === 'high'

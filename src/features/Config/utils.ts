@@ -25,11 +25,11 @@ type GetFontStylesReturn = {
 };
 
 export const getFontStyles = ({
-  emphasis = 'default',
-  type = 'body1',
-  inverse,
   color = 'primaryA',
   colors,
+  emphasis = 'default',
+  inverse,
+  type = 'body1',
 }: GetFontStylesProps): GetFontStylesReturn => {
   const textColorPercent = fontEmphases[emphasis];
   const fontSize = fontSizes[type];

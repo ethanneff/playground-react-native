@@ -13,10 +13,10 @@ type Props = {
   unix: number;
 };
 export const CalendarHeader = memo(function CalendarHeader({
-  unix,
-  onTitlePress,
-  onMonthIncrease,
   onMonthDecrease,
+  onMonthIncrease,
+  onTitlePress,
+  unix,
 }: Props) {
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>

@@ -61,9 +61,9 @@ type GetInitialItemsProps = {
 
 export const getInitialItems = ({
   count,
-  speed,
   layout,
   radius,
+  speed,
 }: GetInitialItemsProps): Item[] => {
   const items: Item[] = [];
 

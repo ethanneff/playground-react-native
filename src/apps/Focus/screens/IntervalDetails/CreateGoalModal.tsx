@@ -20,8 +20,8 @@ type Props = {
 
 export const CreateGoalModal = memo(function CreateGoalModal({
   loading,
-  onModalClose,
   onChangeText,
+  onModalClose,
   onSubmit,
 }: Props) {
   const inputGoal = useRef<TextInputRef>(null);

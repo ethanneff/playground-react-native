@@ -21,11 +21,11 @@ type Form = {
 
 // TODO: need to clear on blur
 export const ItemEdit = memo(function ItemEdit({
+  description = '',
+  onSubmit,
+  placeholder,
   title,
   titleEditable,
-  description = '',
-  placeholder,
-  onSubmit,
 }: ItemEditProps) {
   const onClose = useCallback(() => Keyboard.dismiss(), []);
   const form = useRef({ description, title });

@@ -23,7 +23,7 @@ type ChecklistItemProps = {
   item: string;
 };
 
-const ChecklistItem = ({ item, index }: ChecklistItemProps) => {
+const ChecklistItem = ({ index, item }: ChecklistItemProps) => {
   const [toggle, setToggle] = useState<IconName>('checkbox-blank-outline');
   const onPress = useCallback(() => {
     setToggle((prev) =>

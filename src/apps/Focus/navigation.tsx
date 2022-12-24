@@ -40,7 +40,7 @@ const tabIcons: TabIcons = {
 };
 
 const Tabs = () => {
-  const { tabScreenOptions, tabScreenListeners } = useNavScreenOptions();
+  const { tabScreenListeners, tabScreenOptions } = useNavScreenOptions();
   const screenOptions = tabScreenOptions({ tabIcons, titleShown: true });
 
   return (
@@ -65,7 +65,7 @@ const Tabs = () => {
 };
 
 export const Navigation = memo(function Navigation() {
-  const { rightScreenOptions, bottomScreenOptions } = useNavScreenOptions();
+  const { bottomScreenOptions, rightScreenOptions } = useNavScreenOptions();
   const auth = useRootSelector((state) => state.focus.auth.status);
 
   if (auth === 'initializing') return null;

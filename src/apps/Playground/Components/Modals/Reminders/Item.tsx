@@ -20,14 +20,14 @@ type Props = {
   title: string;
 };
 export const Item = memo(function ReminderItem({
-  title,
-  description = '',
-  onPress,
-  icon,
-  style,
-  hidden,
   active,
+  description = '',
+  hidden,
+  icon,
   marginBottom,
+  onPress,
+  style,
+  title,
 }: Props) {
   const colors = useColors();
   const styles = StyleSheet.create({

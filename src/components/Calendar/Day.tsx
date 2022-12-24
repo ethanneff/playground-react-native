@@ -15,9 +15,9 @@ type Props = {
 
 export const CalendarDay = ({
   day,
+  hiddenDays,
   onSelected,
   selectedDay,
-  hiddenDays,
 }: Props): JSX.Element => {
   const colors = useColors();
   const selected = day.id === selectedDay;

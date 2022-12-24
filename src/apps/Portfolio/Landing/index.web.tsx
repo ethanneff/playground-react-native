@@ -21,8 +21,8 @@ type SignInButtonProps = {
   title: string;
 };
 const SignInButton = memo(function SignInButton({
-  onPress,
   icon,
+  onPress,
   title,
 }: SignInButtonProps) {
   const colors = useColors();
@@ -59,9 +59,9 @@ type NavButtonProps = {
   title: string;
 };
 const NavButton = memo(function NavButton({
+  inverted,
   onPress,
   title,
-  inverted,
 }: NavButtonProps) {
   const colors = useColors();
   return (
@@ -194,9 +194,9 @@ type SectionProps = {
 };
 
 const Section = memo(function Section({
-  paddingTop,
-  children,
   backgroundColor,
+  children,
+  paddingTop,
 }: SectionProps) {
   return (
     <View

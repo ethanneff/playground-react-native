@@ -39,7 +39,7 @@ export const useNavScreenOptions = () => {
   };
 
   const tabScreenOptions = useCallback(
-    ({ tabIcons, headerShown = false, titleShown = false }: TabScreenOptions) =>
+    ({ headerShown = false, tabIcons, titleShown = false }: TabScreenOptions) =>
       ({ route }: NavOptions): BottomTabNavigationOptions => ({
         headerShown,
         tabBarActiveTintColor: colors.text.primaryA,

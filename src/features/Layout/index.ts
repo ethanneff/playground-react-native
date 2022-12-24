@@ -16,7 +16,7 @@ export const useLayout = () => {
   const insets = useSafeAreaInsets();
 
   const onLayout = useCallback((event: LayoutChangeEvent) => {
-    const { x, y, height, width } = event.nativeEvent.layout;
+    const { height, width, x, y } = event.nativeEvent.layout;
     setLayout({ height, width, x, y });
   }, []);
 

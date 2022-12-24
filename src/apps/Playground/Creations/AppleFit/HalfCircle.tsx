@@ -12,10 +12,10 @@ type Props = {
 };
 
 export const HalfCircle = memo(function HalfCircle({
-  type,
-  radius,
   flip,
+  radius,
   ring,
+  type,
 }: Props) {
   const colors: [string, string] = [ring.start, ring.end];
   const fg = (

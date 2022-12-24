@@ -12,9 +12,9 @@ type Props = {
 };
 
 export const Stickers = memo(function Sticker({
+  color,
   icon,
   index,
-  color,
   size,
   strokeWidth,
 }: Props) {

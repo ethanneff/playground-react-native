@@ -21,17 +21,17 @@ type Props = {
 };
 
 export const NavBar = memo(function NavBar({
-  title,
+  border,
+  dropShadow,
+  leftIcon = 'chevron-left',
   onLeftPress,
   onRightPress,
-  border,
-  leftIcon = 'chevron-left',
-  rightIcon = 'close',
-  dropShadow,
-  secondLeftIcon,
-  secondRightIcon,
   onSecondLeftPress,
   onSecondRightPress,
+  rightIcon = 'close',
+  secondLeftIcon,
+  secondRightIcon,
+  title,
 }: Props) {
   const colors = useColors();
   const shadow = useDropShadow();

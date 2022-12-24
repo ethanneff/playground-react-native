@@ -43,7 +43,7 @@ type GetColors = {
   hidden?: boolean;
 };
 
-const getColor = ({ hidden, color, colors, disabled, clear }: GetColors) => {
+const getColor = ({ clear, color, colors, disabled, hidden }: GetColors) => {
   return hidden
     ? 'transparent'
     : disabled
