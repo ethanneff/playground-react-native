@@ -144,7 +144,6 @@
     "jsinspect": "0.12.7",
     "metro-react-native-babel-preset": "0.73.6",
     "prettier": "2.8.1",
-    "react-devtools-core": "4.27.1",
     "react-native-bundle-visualizer": "3.1.1",
     "react-native-flipper": "0.176.1",
     "react-native-flipper-performance-plugin": "0.3.1",
