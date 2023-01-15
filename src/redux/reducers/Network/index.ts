@@ -1,8 +1,8 @@
-import { RootAction } from 'root-types';
+import { type RootAction } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 import {
-  NetInfoConnectedDetails,
-  NetInfoState,
+  type NetInfoConnectedDetails,
+  type NetInfoState,
   NetInfoStateType,
 } from '../../../conversions';
 import { logout } from '../Auth';

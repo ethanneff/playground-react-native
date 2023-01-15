@@ -4,7 +4,7 @@ import { View } from '../../components';
 import { spacing } from '../../features';
 import { Text } from '../Text';
 import { Day } from './Day';
-import { ActivityDay, ActivityWeek } from './types';
+import { type ActivityDay, type ActivityWeek } from './types';
 
 type Props = {
   index: number;

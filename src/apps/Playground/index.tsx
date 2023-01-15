@@ -44,7 +44,7 @@ import {
   TicTacToe,
 } from './Games';
 import { Landing } from './Landing';
-import { NavParams } from './navParams';
+import { type NavParams } from './navParams';
 
 const noHeader = { headerShown: false };
 const Stack = createNativeStackNavigator<NavParams>();

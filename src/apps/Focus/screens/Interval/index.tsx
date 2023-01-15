@@ -1,8 +1,8 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { ListRenderItem, StyleSheet } from 'react-native';
+import { type ListRenderItem, StyleSheet } from 'react-native';
 import { FlatList, Loader, Screen } from '../../../../components';
 import { spacing, useColors, useLayout } from '../../../../features';
-import { Item } from '../../types';
+import { type Item } from '../../types';
 import { ListItem } from './ListItem';
 import {
   getCurrentItem,
@@ -52,7 +52,10 @@ export const Interval = memo(function Interval() {
   );
 
   useEffect(() => {
-    if (loading && items.length > 0) setTimeout(() => setLoading(false), 1000);
+    if (loading && items.length > 0)
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
   }, [items.length, loading]);
 
   return (

@@ -1,5 +1,5 @@
 import { Platform } from 'react-native';
-import { RootMiddleware } from 'root-types';
+import { type RootMiddleware } from 'root-types';
 
 export const addFlipperMiddleware = (middlewares: RootMiddleware[]) => {
   if (Platform.OS === 'web' || process.env.JEST_WORKER_ID || !__DEV__) {

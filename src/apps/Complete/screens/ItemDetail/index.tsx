@@ -32,8 +32,12 @@ export const ItemDetail = memo(function ItemDetail() {
     [dispatch, item],
   );
 
-  const onDeletePress = useCallback(() => setDeleteModal(true), []);
-  const onDeleteClose = useCallback(() => setDeleteModal(false), []);
+  const onDeletePress = useCallback(() => {
+    setDeleteModal(true);
+  }, []);
+  const onDeleteClose = useCallback(() => {
+    setDeleteModal(false);
+  }, []);
 
   return (
     <>

@@ -18,7 +18,9 @@ export const PinchSpread = memo(function PinchSpread() {
   const gestureHandler = new GestureHandler({ minTouches });
   const panGesture = PanResponder.create({
     onMoveShouldSetPanResponderCapture: () => true,
-    onPanResponderMove: (event) => gestureHandler.onPanResponderMove(event),
+    onPanResponderMove: (event) => {
+      gestureHandler.onPanResponderMove(event);
+    },
     onPanResponderRelease: () => {
       const outcome = gestureHandler.onPanResponderRelease();
       if (outcome.spread)

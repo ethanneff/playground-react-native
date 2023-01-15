@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
-import { StyleProp, TextStyle, ViewStyle } from 'react-native';
+import { type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 import {
-  FontEmphasis,
-  MonoMultiColor,
+  type FontEmphasis,
+  type MonoMultiColor,
   useColors,
   useDropShadow,
 } from '../../features';
@@ -31,9 +31,9 @@ type Props = {
   lowercase?: boolean;
   /* size */
   noPadding?: boolean;
-  onLongPress?(): void;
+  onLongPress?: () => void;
   /* event */
-  onPress(): void;
+  onPress: () => void;
   right?: boolean;
   testID?: string;
   textStyle?: StyleProp<TextStyle>;

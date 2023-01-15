@@ -1,4 +1,4 @@
-import { ContentSections } from '../../../../components';
+import { type ContentSections } from '../../../../components';
 
 const onPress = (): void => undefined;
 

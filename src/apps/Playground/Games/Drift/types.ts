@@ -1,9 +1,9 @@
 export type ColorChoice =
-  | 'slateblue'
-  | 'orange'
+  | 'lightgrey'
   | 'mediumseagreen'
-  | 'violet'
-  | 'lightgrey';
+  | 'orange'
+  | 'slateblue'
+  | 'violet';
 
 export type TrackPosition = {
   size: number;

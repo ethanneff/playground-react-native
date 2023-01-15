@@ -1,5 +1,5 @@
 import { Animated } from 'react-native';
-import { LayoutDimensions } from '../../../../features';
+import { type LayoutDimensions } from '../../../../features';
 
 export type Item = {
   dx: number;

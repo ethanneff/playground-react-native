@@ -3,7 +3,7 @@ import isToday from 'dayjs/plugin/isToday';
 import React, { memo } from 'react';
 import { colorWithOpacity, useColors } from '../../features';
 import { TouchableOpacity } from '../TouchableOpacity';
-import { ActivityDay } from './types';
+import { type ActivityDay } from './types';
 dayjs.extend(isToday);
 
 type Props = {

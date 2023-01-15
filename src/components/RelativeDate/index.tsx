@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { ViewStyle } from 'react-native';
-import { FontEmphasis, FontType } from '../../features';
+import { type ViewStyle } from 'react-native';
+import { type FontEmphasis, type FontType } from '../../features';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 dayjs.extend(relativeTime);
@@ -35,8 +35,12 @@ export const RelativeDate = memo(function RelativeDate({
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => setUpdate((prev) => prev + 1), minute);
-    return () => clearInterval(interval);
+    const interval = setInterval(() => {
+      setUpdate((prev) => prev + 1);
+    }, minute);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (

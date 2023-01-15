@@ -1,2 +1,2 @@
-export type TextContentType = 'username' | 'password' | 'none';
-export type PointerEvents = 'box-none' | 'none' | 'box-only' | 'auto';
+export type TextContentType = 'none' | 'password' | 'username';
+export type PointerEvents = 'auto' | 'box-none' | 'box-only' | 'none';

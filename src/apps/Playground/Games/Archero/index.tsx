@@ -2,9 +2,9 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef, useState } from 'react';
 import {
   Animated,
-  LayoutChangeEvent,
+  type LayoutChangeEvent,
   PanResponder,
-  PanResponderInstance,
+  type PanResponderInstance,
 } from 'react-native';
 import { Screen, View } from '../../../../components';
 import { colorWithOpacity, useColors, useDriver } from '../../../../features';

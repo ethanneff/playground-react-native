@@ -1,12 +1,12 @@
 export type Element =
-  | '🍓'
   | '🍇'
   | '🍉'
-  | '🥭'
-  | '🍏'
   | '🍊'
-  | '🍒'
   | '🍋'
+  | '🍏'
+  | '🍒'
+  | '🍓'
+  | '🥭'
   | 'anything';
 type Combination = [Element, Element, Element, number];
 export type Combinations = Combination[];

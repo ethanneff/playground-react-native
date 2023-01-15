@@ -1,12 +1,12 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { ListRenderItem, ViewToken } from 'react-native';
+import { type ListRenderItem, type ViewToken } from 'react-native';
 import { View } from '../../components';
 import { spacing } from '../../features';
 import { getWidth, useRootSelector } from '../../redux';
-import { FlatList, FlatListRef } from '../FlatList';
+import { FlatList, type FlatListRef } from '../FlatList';
 import { Dots } from './Dots';
 import { Item } from './Item';
-import { CarouselSlide } from './types';
+import { type CarouselSlide } from './types';
 
 type Props = {
   dotSize?: number;

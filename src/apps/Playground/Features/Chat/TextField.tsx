@@ -3,7 +3,7 @@ import { v4 } from 'uuid';
 import {
   Icon,
   Input,
-  TextInputRef,
+  type TextInputRef,
   TouchableOpacity,
   View,
 } from '../../../../components';
@@ -12,7 +12,7 @@ import { useRootDispatch, useRootSelector } from '../../../../redux';
 import {
   createChatMessage,
   getChatSubmittable,
-  Message,
+  type Message,
   typeChatMessage,
 } from './Messages';
 

@@ -1,8 +1,8 @@
-import { Direction } from './useGesture';
+import { type Direction } from './useGesture';
 
 export type Matrix = (0 | 1 | 2)[][];
 type Cell = [number, number];
-type BoardState = 'ok' | 'hit wall' | 'hit snake' | 'ate food' | 'won';
+type BoardState = 'ate food' | 'hit snake' | 'hit wall' | 'ok' | 'won';
 
 // TODO: need to store the snake instead of tail to know the next tail
 export type BoardContext = {

@@ -1,5 +1,5 @@
-import React, { Ref } from 'react';
-import { FlatListProps } from 'react-native';
+import React, { type Ref } from 'react';
+import { type FlatListProps } from 'react-native';
 import { GestureFlatList } from '../../conversions';
 
 export type FlatListRef = GestureFlatList | null;

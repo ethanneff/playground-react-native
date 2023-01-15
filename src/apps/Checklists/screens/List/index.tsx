@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem } from 'react-native';
+import { type ListRenderItem } from 'react-native';
 import {
   Button,
   FlatList,
@@ -10,9 +10,9 @@ import {
   View,
 } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
-import { SuperAny } from '../../../../types/types';
+import { type SuperAny } from '../../../../types/types';
 import {
-  ChecklistItem,
+  type ChecklistItem,
   getCurrentActiveChecklistItemsOrderByCreatedAt,
   removeChecklistItem,
   setActiveChecklistItem,

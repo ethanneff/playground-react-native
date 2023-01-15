@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { ListRenderItem } from 'react-native';
+import { type ListRenderItem } from 'react-native';
 import {
   Card,
   FlatList,
@@ -13,7 +13,7 @@ import { useRootDispatch, useRootSelector } from '../../../../../redux';
 import {
   createQuestionnaire,
   getQuestionnaireArray,
-  Questionnaire,
+  type Questionnaire,
   removeQuestionnaire,
   selectQuestionnaire,
 } from '../models';
@@ -31,7 +31,9 @@ export const Questionnaires = (): JSX.Element => {
     (id: string) => () => dispatch(selectQuestionnaire(id)),
     [dispatch],
   );
-  const handleActionSheetClose = useCallback(() => setActionSheet(false), []);
+  const handleActionSheetClose = useCallback(() => {
+    setActionSheet(false);
+  }, []);
   const handleCreate = useCallback(
     () => dispatch(createQuestionnaire(String(Date.now()))),
     [dispatch],

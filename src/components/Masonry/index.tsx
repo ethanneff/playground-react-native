@@ -1,4 +1,4 @@
-import React, { memo, ReactElement } from 'react';
+import React, { memo, type ReactElement } from 'react';
 import { v4 } from 'uuid';
 import { View } from '../../components';
 import { spacing } from '../../features';
@@ -11,7 +11,7 @@ type Item<T> = {
 type Props<T> = {
   data: T[];
   numColumns: number;
-  renderItem({ index, item }: Item<T>): ReactElement | null;
+  renderItem: ({ index, item }: Item<T>) => ReactElement | null;
 };
 
 export const Masonry = memo(function Masonry<T>({

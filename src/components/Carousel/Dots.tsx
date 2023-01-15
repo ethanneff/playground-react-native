@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { View } from '../../components';
 import { spacing, useColors } from '../../features';
 import { TouchableOpacity } from '../TouchableOpacity';
-import { CarouselSlide } from './types';
+import { type CarouselSlide } from './types';
 
 type DotsProps = {
   activeIndex: number;

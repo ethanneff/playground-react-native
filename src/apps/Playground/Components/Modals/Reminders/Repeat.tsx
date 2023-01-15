@@ -1,11 +1,13 @@
 import React, { memo, useState } from 'react';
 import { Item } from './Item';
 
-type RepeatType = 'Daily' | 'Weekly' | 'Monthly' | 'Yearly';
+type RepeatType = 'Daily' | 'Monthly' | 'Weekly' | 'Yearly';
 
 export const Repeat = memo(function Repeat() {
   const [active, setActive] = useState<RepeatType>('Daily');
-  const onPress = (type: RepeatType) => () => setActive(type);
+  const onPress = (type: RepeatType) => () => {
+    setActive(type);
+  };
 
   const items: RepeatType[] = ['Daily', 'Weekly', 'Monthly', 'Yearly'];
   return (

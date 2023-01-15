@@ -2,7 +2,7 @@
 import {
   FlatList as GestureFlatList,
   GestureHandlerRootView as GestureHandlerProvider,
-  NativeViewGestureHandlerProps as GestureNativeViewGestureHandlerProps,
+  type NativeViewGestureHandlerProps as GestureNativeViewGestureHandlerProps,
   ScrollView as GestureScrollView,
   Switch as GestureSwitch,
   TextInput as GestureTextInput,

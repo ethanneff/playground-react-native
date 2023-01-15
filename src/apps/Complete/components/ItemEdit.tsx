@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
-import { TextInput, TextInputIcon, View } from '../../../components';
+import { TextInput, type TextInputIcon, View } from '../../../components';
 import { Card } from './Card';
 import { ItemDetailHeader } from './ItemDetailHeader';
 
@@ -27,7 +27,9 @@ export const ItemEdit = memo(function ItemEdit({
   title,
   titleEditable,
 }: ItemEditProps) {
-  const onClose = useCallback(() => Keyboard.dismiss(), []);
+  const onClose = useCallback(() => {
+    Keyboard.dismiss();
+  }, []);
   const form = useRef({ description, title });
 
   const handleChangeText = useCallback(

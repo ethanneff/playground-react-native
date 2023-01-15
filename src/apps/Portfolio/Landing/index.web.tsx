@@ -1,10 +1,10 @@
-import React, { memo, ReactNode } from 'react';
+import React, { memo, type ReactNode } from 'react';
 import { Image } from 'react-native';
 import {
   Icon,
-  IconName,
+  type IconName,
   Sentence,
-  SentenceType,
+  type SentenceType,
   Text,
   TouchableOpacity,
   View,
@@ -145,7 +145,7 @@ export const Header = memo(function Header({ height }: HeaderProps) {
 
 type AppIconProps = {
   onPress: () => void;
-  type: 'google-play' | 'apple';
+  type: 'apple' | 'google-play';
 };
 
 const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {

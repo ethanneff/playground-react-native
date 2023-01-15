@@ -1,9 +1,9 @@
 import React, { memo, useCallback, useRef } from 'react';
 import {
   Animated,
-  GestureResponderEvent,
+  type GestureResponderEvent,
   PanResponder,
-  PanResponderGestureState,
+  type PanResponderGestureState,
   StyleSheet,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';

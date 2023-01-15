@@ -58,7 +58,7 @@ const getMatches = (board: Board): Matches => {
   return matches;
 };
 
-export type States = 'idle' | 'swap' | 'validate' | 'swap back' | 'fill gems';
+export type States = 'fill gems' | 'idle' | 'swap back' | 'swap' | 'validate';
 
 const initialSelected = { x: -10, y: -10 };
 export const Bejeweled = memo(function PlaygroundBejeweled() {

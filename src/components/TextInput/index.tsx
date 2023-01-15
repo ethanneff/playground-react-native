@@ -1,32 +1,32 @@
 import React, {
   memo,
-  MutableRefObject,
+  type MutableRefObject,
   useCallback,
   useEffect,
   useRef,
   useState,
 } from 'react';
 import {
-  KeyboardTypeOptions,
-  ReturnKeyTypeOptions,
-  StyleProp,
-  ViewStyle,
+  type KeyboardTypeOptions,
+  type ReturnKeyTypeOptions,
+  type StyleProp,
+  type ViewStyle,
 } from 'react-native';
 import { GestureTextInput } from '../../conversions';
 import {
-  FontEmphasis,
-  FontType,
+  type FontEmphasis,
+  type FontType,
   getFontStyles,
-  MonoMultiColor,
+  type MonoMultiColor,
   spacing,
   useColors,
 } from '../../features';
-import { Icon, IconName } from '../Icon';
+import { Icon, type IconName } from '../Icon';
 import { Spacing } from '../Spacing';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 import { View } from '../View';
-import { PointerEvents, TextContentType } from './types';
+import { type PointerEvents, type TextContentType } from './types';
 
 export type TextInputIcon = {
   clear?: boolean;
@@ -45,43 +45,43 @@ type AutoComplete =
   | 'birthdate-month'
   | 'birthdate-year'
   | 'cc-csc'
-  | 'cc-exp'
   | 'cc-exp-day'
   | 'cc-exp-month'
   | 'cc-exp-year'
+  | 'cc-exp'
   | 'cc-number'
   | 'email'
   | 'gender'
-  | 'name'
   | 'name-family'
   | 'name-given'
-  | 'name-middle'
   | 'name-middle-initial'
+  | 'name-middle'
   | 'name-prefix'
   | 'name-suffix'
-  | 'password'
+  | 'name'
+  | 'off'
   | 'password-new'
-  | 'postal-address'
+  | 'password'
   | 'postal-address-country'
-  | 'postal-address-extended'
   | 'postal-address-extended-postal-code'
+  | 'postal-address-extended'
   | 'postal-address-locality'
   | 'postal-address-region'
+  | 'postal-address'
   | 'postal-code'
-  | 'street-address'
   | 'sms-otp'
-  | 'tel'
+  | 'street-address'
   | 'tel-country-code'
-  | 'tel-national'
   | 'tel-device'
-  | 'username'
+  | 'tel-national'
+  | 'tel'
   | 'username-new'
-  | 'off';
+  | 'username';
 
 export type TextInputRef = GestureTextInput | null;
 
 type TextInputProps = {
-  autoCapitalize: 'none' | 'sentences' | 'words' | 'characters';
+  autoCapitalize: 'characters' | 'none' | 'sentences' | 'words';
   autoComplete: AutoComplete;
   autoCorrect: boolean;
   backgroundColor?: keyof MonoMultiColor;

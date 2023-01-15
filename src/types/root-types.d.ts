@@ -1,8 +1,8 @@
 declare module 'root-types' {
-  import { AnyAction, Dispatch } from 'redux';
-  import { ThunkAction } from 'redux-thunk';
-  import { DeepReadonly } from 'ts-essentials';
-  import { ActionType, StateType } from 'typesafe-actions';
+  import { type AnyAction, type Dispatch } from 'redux';
+  import { type ThunkAction } from 'redux-thunk';
+  import { type DeepReadonly } from 'ts-essentials';
+  import { type ActionType, type StateType } from 'typesafe-actions';
 
   export type RootStore = StateType<typeof import('../redux/store').store>;
 
@@ -18,7 +18,7 @@ declare module 'root-types' {
 
   type MiddlewareAPI<S, E extends AnyAction> = {
     dispatch: Dispatch<E>;
-    getState(): S;
+    getState: () => S;
   };
 
   type Middleware<S, E extends AnyAction> = (

@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { Platform } from 'react-native';
 import { Button, Input, Loader, Modal } from '../../components';
-import { Firebase, FirebaseAuthTypes } from '../../conversions';
+import { Firebase, type FirebaseAuthTypes } from '../../conversions';
 import { LoginButton } from './LoginButton';
 
 type Props = {
@@ -9,12 +9,12 @@ type Props = {
 };
 
 type FormState =
-  | 'loading'
-  | 'landing'
   | 'email'
   | 'forgot password'
-  | 'phone'
-  | 'phone confirm';
+  | 'landing'
+  | 'loading'
+  | 'phone confirm'
+  | 'phone';
 
 type State = {
   email: string;
@@ -35,32 +35,28 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
     state: 'loading',
   });
 
-  const onEmail = useCallback(
-    () => setForm((prev) => ({ ...prev, password: '', state: 'email' })),
-    [],
-  );
-  const onForgotPassword = useCallback(
-    () => setForm((prev) => ({ ...prev, state: 'forgot password' })),
-    [],
-  );
-  const onLanding = useCallback(
-    () =>
-      setForm((prev) => ({
-        ...prev,
-        email: '',
-        password: '',
-        state: 'landing',
-      })),
-    [],
-  );
-  const onPhone = useCallback(
-    () => setForm((prev) => ({ ...prev, state: 'phone' })),
-    [],
-  );
+  const onEmail = useCallback(() => {
+    setForm((prev) => ({ ...prev, password: '', state: 'email' }));
+  }, []);
+  const onForgotPassword = useCallback(() => {
+    setForm((prev) => ({ ...prev, state: 'forgot password' }));
+  }, []);
+  const onLanding = useCallback(() => {
+    setForm((prev) => ({
+      ...prev,
+      email: '',
+      password: '',
+      state: 'landing',
+    }));
+  }, []);
+  const onPhone = useCallback(() => {
+    setForm((prev) => ({ ...prev, state: 'phone' }));
+  }, []);
 
   const onChange = useCallback(
-    (key: keyof State) => (value: string) =>
-      setForm((prev) => ({ ...prev, [key]: value })),
+    (key: keyof State) => (value: string) => {
+      setForm((prev) => ({ ...prev, [key]: value }));
+    },
     [],
   );
 
@@ -120,9 +116,15 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
   const onLogout = useCallback(() => {
     Firebase.auth()
       .signOut()
-      .then(() => console.log('User signed out!'))
-      .catch(() => console.log('no user to sign out'))
-      .finally(() => setForm((prev) => ({ ...prev, state: 'landing' })));
+      .then(() => {
+        console.log('User signed out!');
+      })
+      .catch(() => {
+        console.log('no user to sign out');
+      })
+      .finally(() => {
+        setForm((prev) => ({ ...prev, state: 'landing' }));
+      });
   }, []);
 
   useEffect(() => {

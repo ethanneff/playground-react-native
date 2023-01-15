@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '../../../../components';
-import { MonoMultiColor, useColors } from '../../../../features';
+import { type MonoMultiColor, useColors } from '../../../../features';
 import { CenterCircle } from './CenterCircle';
 import { CircularRing } from './CircularRing';
 import { Stickers } from './Stickers';
-import { Ring } from './types';
+import { type Ring } from './types';
 
 type Props = {
   animate?: boolean;
@@ -52,7 +52,9 @@ export const AppleActivity = ({
       }
       setProgress((p) => p + speed);
     }, 16);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [animate, progress, speed]);
 
   return (

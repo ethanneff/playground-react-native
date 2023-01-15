@@ -1,10 +1,10 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem } from 'react-native';
+import { type ListRenderItem } from 'react-native';
 import { Button, FlatList, Screen, Text, View } from '../../../components';
 import {
   changeTheme,
-  Theme,
+  type Theme,
   themes,
   useRootDispatch,
   useRootSelector,

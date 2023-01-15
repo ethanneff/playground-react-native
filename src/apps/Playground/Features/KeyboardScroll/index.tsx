@@ -5,14 +5,14 @@ import {
   Button,
   KeyboardAwareScrollView,
   RecyclerFlatList,
-  RecyclerFlatListRef,
+  type RecyclerFlatListRef,
   Screen,
   Text,
   TextInput,
   View,
 } from '../../../../components';
 import {
-  ColorTheme,
+  type ColorTheme,
   colorWithOpacity,
   spacing,
   useColors,
@@ -61,7 +61,9 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
     const timeout = setTimeout(() => {
       setLoading(false);
     }, 2000);
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
   const [refreshing, setRefreshing] = useState(false);
@@ -70,7 +72,9 @@ export const KeyboardScroll = memo(function KeyboardScroll() {
     const timeout = setTimeout(() => {
       setRefreshing(false);
     }, 2000);
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
   const onRowRender = useCallback((item: Data) => {

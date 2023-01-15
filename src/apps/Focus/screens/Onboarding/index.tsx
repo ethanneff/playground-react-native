@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo } from 'react';
 import { Screen, ScrollView, Text } from '../../../../components';
-import { UnAuthStackRoutes } from '../../types';
+import { type UnAuthStackRoutes } from '../../types';
 
 export const Onboarding = memo(function Onboarding() {
   const { goBack } =

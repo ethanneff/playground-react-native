@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
-import { StyleProp, StyleSheet, ViewStyle } from 'react-native';
+import { type StyleProp, StyleSheet, type ViewStyle } from 'react-native';
 import {
   Icon,
-  IconName,
+  type IconName,
   Text,
   TouchableOpacity,
   View,

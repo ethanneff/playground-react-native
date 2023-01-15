@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { ListRenderItem } from 'react-native';
+import { type ListRenderItem } from 'react-native';
 import {
   Card,
   FlatList,
@@ -10,7 +10,7 @@ import {
   View,
 } from '../../../../../components';
 import {
-  Questionnaire as QuestionnaireType,
+  type Questionnaire as QuestionnaireType,
   questionnairesInitialState,
 } from '../models';
 
@@ -23,10 +23,14 @@ export const Questionnaire = (): JSX.Element => {
     setActiveItem(id);
   };
   const handleItemPress = useCallback(
-    (id: string) => () => setActiveItem(id),
+    (id: string) => () => {
+      setActiveItem(id);
+    },
     [],
   );
-  const handleActionSheetClose = useCallback(() => setActionSheet(false), []);
+  const handleActionSheetClose = useCallback(() => {
+    setActionSheet(false);
+  }, []);
 
   const renderItem = useCallback<ListRenderItem<QuestionnaireType>>(
     ({ item }) => {

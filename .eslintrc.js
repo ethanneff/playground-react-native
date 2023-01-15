@@ -92,6 +92,17 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/require-default-props': 'off',
     'default-param-last': 'off',
+    '@typescript-eslint/member-delimiter-style': 'error',
+    '@typescript-eslint/method-signature-style': 'error',
+    '@typescript-eslint/no-confusing-void-expression': 'error',
+    '@typescript-eslint/no-unnecessary-qualifier': 'error',
+    '@typescript-eslint/no-useless-empty-export': 'error',
+    '@typescript-eslint/prefer-readonly': 'error',
+    '@typescript-eslint/prefer-regexp-exec': 'error',
+    '@typescript-eslint/promise-function-async': 'error',
+    '@typescript-eslint/sort-type-constituents': 'error',
+    '@typescript-eslint/sort-type-union-intersection-members': 'error',
+    '@typescript-eslint/type-annotation-spacing': 'error',
     // sorting
     'sort-destructure-keys/sort-destructure-keys': 'error',
     'sort-keys-fix/sort-keys-fix': 'warn',
@@ -100,6 +111,14 @@ module.exports = {
     'sort-imports': 'off',
     // style
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      {
+        prefer: 'type-imports',
+        fixStyle: 'inline-type-imports',
+        disallowTypeAnnotations: false,
+      },
+    ],
     'react-hooks/exhaustive-deps': [
       'error',
       { enableDangerousAutofixThisMayCauseInfiniteLoops: true },

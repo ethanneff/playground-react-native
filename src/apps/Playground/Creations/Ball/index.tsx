@@ -38,11 +38,12 @@ export const Ball = memo(function PlaygroundBall() {
     },
     [ballPosition, height, useNativeDriver, width],
   );
-  const onInitialPress = useCallback(() => animate(0.5, 0.5), [animate]);
-  const onRandomPress = useCallback(
-    () => animate(Math.random(), Math.random()),
-    [animate],
-  );
+  const onInitialPress = useCallback(() => {
+    animate(0.5, 0.5);
+  }, [animate]);
+  const onRandomPress = useCallback(() => {
+    animate(Math.random(), Math.random());
+  }, [animate]);
 
   return (
     <Screen

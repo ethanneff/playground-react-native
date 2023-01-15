@@ -1,4 +1,4 @@
-import { CarouselSlide } from '../../../../components';
+import { type CarouselSlide } from '../../../../components';
 import { spacing } from '../../../../features';
 
 export const slides: CarouselSlide[] = [

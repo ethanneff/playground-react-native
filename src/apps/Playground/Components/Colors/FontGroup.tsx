@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import { Text, View } from '../../../../components';
 import {
-  FontEmphasis,
+  type FontEmphasis,
   fontSizes,
-  FontType,
+  type FontType,
   spacing,
 } from '../../../../features';
 

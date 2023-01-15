@@ -1,4 +1,10 @@
-import { Board, BoardValue, Direction, PlayerTurn, State } from './types';
+import {
+  type Board,
+  type BoardValue,
+  type Direction,
+  type PlayerTurn,
+  type State,
+} from './types';
 
 type DfsProps = {
   c?: number;

@@ -1,30 +1,30 @@
 import React, {
   memo,
-  MutableRefObject,
+  type MutableRefObject,
   useCallback,
   useRef,
   useState,
 } from 'react';
 import {
-  KeyboardTypeOptions,
-  ReturnKeyTypeOptions,
-  StyleProp,
+  type KeyboardTypeOptions,
+  type ReturnKeyTypeOptions,
+  type StyleProp,
   StyleSheet,
-  TextStyle,
-  ViewStyle,
+  type TextStyle,
+  type ViewStyle,
 } from 'react-native';
 import { View } from '../../components';
 import { GestureTextInput } from '../../conversions';
 import { fontSizes, SoundManager, spacing, useColors } from '../../features';
-import { SuperAny } from '../../types/types';
-import { Icon, IconName } from '../Icon';
+import { type SuperAny } from '../../types/types';
+import { Icon, type IconName } from '../Icon';
 import { Text } from '../Text';
-import { TextInputRef } from '../TextInput';
+import { type TextInputRef } from '../TextInput';
 import { TouchableOpacity } from '../TouchableOpacity';
 
 // styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 
-type TextContentType = 'username' | 'password' | 'none';
+type TextContentType = 'none' | 'password' | 'username';
 
 // TODO: fix blurOnSubmit=false
 
@@ -39,7 +39,7 @@ type Props = {
   errorIcon?: IconName;
   flex?: boolean;
   keyboardType?: KeyboardTypeOptions;
-  onChangeText(text: string): void;
+  onChangeText: (text: string) => void;
   onRef?: MutableRefObject<TextInputRef>;
   onSubmitEditing?: () => void;
   optional?: boolean;
@@ -117,7 +117,9 @@ export const Input = memo(function Input({
     SoundManager.play('tap');
     setFocus(true);
   }, []);
-  const onBlur = useCallback(() => setFocus(false), []);
+  const onBlur = useCallback(() => {
+    setFocus(false);
+  }, []);
   const focusOnInput = useCallback(() => textInput.current?.focus(), []);
   const textClear = useCallback(() => {
     if (textInput.current) textInput.current.clear();

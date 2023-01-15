@@ -16,7 +16,9 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
       if (!mounted.current) return;
       setLoading(false);
     }, 5000);
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
   const onRetry = useCallback(() => {

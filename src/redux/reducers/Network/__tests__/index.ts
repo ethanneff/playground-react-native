@@ -1,12 +1,12 @@
 import {
-  NetInfoState,
+  type NetInfoState,
   NetInfoStateType,
 } from '@react-native-community/netinfo';
 import { getType } from 'typesafe-actions';
 import {
   networkInitialState,
   networkReducer,
-  NetworkState,
+  type NetworkState,
   updateNetwork,
 } from '..';
 import { loginRequest, logout } from '../../Auth';

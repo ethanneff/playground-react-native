@@ -1,5 +1,5 @@
-import React, { memo, ReactNode } from 'react';
-import { StyleSheet, ViewStyle } from 'react-native';
+import React, { memo, type ReactNode } from 'react';
+import { StyleSheet, type ViewStyle } from 'react-native';
 import { View } from '../../components';
 import { spacing, useColors, useDropShadow } from '../../features';
 import { TouchableOpacity } from '../TouchableOpacity';

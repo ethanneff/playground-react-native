@@ -1,7 +1,11 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
 import { Text, TouchableOpacity } from '../../../../components';
-import { LayoutDimensions, useColors, useDriver } from '../../../../features';
+import {
+  type LayoutDimensions,
+  useColors,
+  useDriver,
+} from '../../../../features';
 import {
   getInitialItems,
   getItemCollision,

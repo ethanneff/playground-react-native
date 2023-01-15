@@ -1,5 +1,5 @@
-import { ContentSections } from '../Content';
-import { IconName } from '../Icon';
+import { type ContentSections } from '../Content';
+import { type IconName } from '../Icon';
 
 export type CarouselSlide = {
   backgroundColor?: string;

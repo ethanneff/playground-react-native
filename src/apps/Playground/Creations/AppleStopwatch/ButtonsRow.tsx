@@ -1,4 +1,4 @@
-import React, { memo, ReactNode } from 'react';
+import React, { memo, type ReactNode } from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '../../../../components';
 

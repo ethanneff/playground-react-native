@@ -1,20 +1,24 @@
 import React, {
-  ReactElement,
-  RefObject,
+  type ReactElement,
+  type RefObject,
   useCallback,
   useEffect,
   useRef,
   useState,
 } from 'react';
-import { RefreshControl, ScrollViewProps, ViewStyle } from 'react-native';
+import {
+  RefreshControl,
+  type ScrollViewProps,
+  type ViewStyle,
+} from 'react-native';
 import {
   DataProvider,
   LayoutProvider,
   RecyclerListView,
 } from 'recyclerlistview';
 import {
-  RecyclerListViewProps,
-  RecyclerListViewState,
+  type RecyclerListViewProps,
+  type RecyclerListViewState,
 } from 'recyclerlistview/dist/reactnative/core/RecyclerListView';
 import { Loader } from '../Loader';
 
@@ -82,14 +86,13 @@ export const RecyclerFlatList = <T,>({
   );
 
   const onRowRenderer = useCallback(
-    (_: string | number, item: T, index: number) => onRowRender(item, index),
+    (_: number | string, item: T, index: number) => onRowRender(item, index),
     [onRowRender],
   );
 
-  useEffect(
-    () => setDataProvider((prevState) => prevState.cloneWithRows(data)),
-    [data],
-  );
+  useEffect(() => {
+    setDataProvider((prevState) => prevState.cloneWithRows(data));
+  }, [data]);
 
   return (
     <RecyclerListView

@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { ListRenderItem } from 'react-native';
+import { type ListRenderItem } from 'react-native';
 import { View } from '../../components';
 import { spacing } from '../../features';
 import { Button } from '../Button';
@@ -10,7 +10,12 @@ import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 import { Week } from './Week';
 import { getApiActivity } from './api';
-import { ActivityDay, ActivityModel, ActivityWeek, Site } from './types';
+import {
+  type ActivityDay,
+  type ActivityModel,
+  type ActivityWeek,
+  type Site,
+} from './types';
 import {
   getActivitySquares,
   getDateFormat,

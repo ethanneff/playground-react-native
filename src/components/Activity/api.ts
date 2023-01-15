@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ApiInput, ApiPromise, ApiResponse } from './types';
+import { type ApiInput, type ApiPromise, type ApiResponse } from './types';
 
 const endpoint = 'https://coding-contributions-api.vercel.app/api/';
 
@@ -23,7 +23,11 @@ const getHackerRankActivity = async (
   return data;
 };
 
-export const getApiActivity = ({ site, username }: ApiInput): ApiPromise => {
+export const getApiActivity = async ({
+  site,
+  username,
+}: // eslint-disable-next-line require-await
+ApiInput): ApiPromise => {
   switch (site) {
     case 'github':
       return getGithubActivity(username);

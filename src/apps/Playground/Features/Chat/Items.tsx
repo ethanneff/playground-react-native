@@ -1,10 +1,13 @@
 import React, { memo, useCallback, useEffect, useRef } from 'react';
-import { ListRenderItem } from 'react-native';
-import { FlatList, FlatListRef } from '../../../../components';
+import { type ListRenderItem } from 'react-native';
+import { FlatList, type FlatListRef } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 import { Item } from './Item';
-import { getActiveChatMessagesOrderByCreatedAt, Message } from './Messages';
+import {
+  getActiveChatMessagesOrderByCreatedAt,
+  type Message,
+} from './Messages';
 
 export const Items = memo(function ChatMessageItems() {
   const itemsRef = useRef<FlatListRef>(null);

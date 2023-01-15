@@ -6,7 +6,7 @@ import { Landing } from './Landing';
 import { Login } from './Login';
 import { NotFound } from './NotFound';
 import { Settings } from './Settings';
-import { PortfolioRoutes } from './types';
+import { type PortfolioRoutes } from './types';
 
 const noHeader = { headerShown: false };
 const Stack = createNativeStackNavigator<PortfolioRoutes>();

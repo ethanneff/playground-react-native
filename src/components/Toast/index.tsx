@@ -1,6 +1,11 @@
 import React from 'react';
 import Original from 'react-native-toast-message';
-import { MultiColor, spacing, useColors, useDropShadow } from '../../features';
+import {
+  spacing,
+  useColors,
+  useDropShadow,
+  type MultiColor,
+} from '../../features';
 import { Spacing } from '../Spacing';
 import { Text } from '../Text';
 import { View } from '../View';

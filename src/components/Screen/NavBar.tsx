@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '../../components';
 import { spacing, useColors, useDropShadow } from '../../features';
-import { IconName } from '../Icon';
+import { type IconName } from '../Icon';
 import { Text } from '../Text';
 import { NavButton } from './NavButton';
 

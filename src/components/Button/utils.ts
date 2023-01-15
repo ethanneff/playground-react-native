@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 import {
-  ColorTheme,
-  FontEmphasis,
-  MonoMultiColor,
+  type ColorTheme,
+  type FontEmphasis,
+  type MonoMultiColor,
   spacing,
 } from '../../features';
 

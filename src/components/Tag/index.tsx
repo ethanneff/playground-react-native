@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { spacing, TagColor, useColors } from '../../features';
+import { spacing, type TagColor, useColors } from '../../features';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 

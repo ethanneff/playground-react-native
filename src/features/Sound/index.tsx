@@ -35,7 +35,9 @@ export const SoundManager: SoundManagerType = {
       playSound(soundName);
       return;
     }
-    stopSound(() => playSound(soundName));
+    stopSound(() => {
+      playSound(soundName);
+    });
   },
   stop: () => stopSound,
 };

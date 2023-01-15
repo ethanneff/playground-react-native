@@ -4,7 +4,7 @@ import { View } from '../../components';
 import { spacing, useColors } from '../../features';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
-import { Day } from './utils';
+import { type Day } from './utils';
 
 type Props = {
   day: Day;

@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
 import { spacing } from '../../features';
-import { Icon, IconName } from '../Icon';
+import { Icon, type IconName } from '../Icon';
 import { TouchableOpacity } from '../TouchableOpacity';
 
 type Props = {

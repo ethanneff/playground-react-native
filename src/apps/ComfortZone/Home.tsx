@@ -7,7 +7,7 @@ import {
   Screen,
   ScrollView,
   Text,
-  TextInputRef,
+  type TextInputRef,
   View,
 } from '../../components';
 import { spacing, useAdminNavBack, useColors } from '../../features';

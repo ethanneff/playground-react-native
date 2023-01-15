@@ -21,7 +21,7 @@ type Props = {
 };
 
 type State = {
-  activity: 'idle' | 'spinning' | 'insufficient credits';
+  activity: 'idle' | 'insufficient credits' | 'spinning';
   credits: number;
   lineIndexes: number[];
   multiplierIndex: number;

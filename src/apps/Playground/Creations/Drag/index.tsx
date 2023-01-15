@@ -2,10 +2,10 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import {
   Animated,
-  LayoutChangeEvent,
+  type LayoutChangeEvent,
   PanResponder,
-  PanResponderGestureState,
-  PanResponderInstance,
+  type PanResponderGestureState,
+  type PanResponderInstance,
   StyleSheet,
 } from 'react-native';
 import { Screen, Text, View } from '../../../../components';

@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Lottie, { AnimationObject } from 'lottie-react-native';
+import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
+import Lottie, { type AnimationObject } from 'lottie-react-native';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
 import {
@@ -14,7 +14,7 @@ import {
 import { useColors } from '../../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../../redux';
 import { getLoaded } from '../../data';
-import { AuthStackRoutes } from '../../types';
+import { type AuthStackRoutes } from '../../types';
 import { useLogout } from '../../utils/useLogout';
 import { PulseAnimation } from './PulseAnimation';
 import { useHeartBeatAnimation } from './useHeartBeatAnimation';
@@ -50,7 +50,9 @@ export const Download = memo(function Download() {
       if (!visible.current) return;
       setShowLogout(true);
     }, maxTime);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [showLogout]);
 
   useEffect(() => {
@@ -60,7 +62,9 @@ export const Download = memo(function Download() {
     const tooSoon = diff < minTime;
     const next = minTime - diff;
     const timer = setTimeout(navNext, tooSoon ? next : 0);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [loaded, navNext, navigate]);
 
   const handleTapAnimation = useCallback(() => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import { View } from '../../../../components';
 import { HalfCircle } from './HalfCircle';
-import { Ring } from './types';
+import { type Ring } from './types';
 
 type CircularProgressProps = {
   radius: number;

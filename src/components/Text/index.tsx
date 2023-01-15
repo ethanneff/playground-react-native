@@ -1,17 +1,22 @@
 import React, { memo, useCallback, useRef } from 'react';
-import { Animated, StyleProp, StyleSheet, TextStyle } from 'react-native';
 import {
-  FontEmphasis,
-  FontType,
+  Animated,
+  type StyleProp,
+  StyleSheet,
+  type TextStyle,
+} from 'react-native';
+import {
+  type FontEmphasis,
+  type FontType,
   fontWeight,
   getFontStyles,
-  MonoMultiColor,
+  type MonoMultiColor,
   SoundManager,
   useColors,
   useDriver,
 } from '../../features';
 
-type EllipsizeMode = 'head' | 'middle' | 'tail' | 'clip';
+type EllipsizeMode = 'clip' | 'head' | 'middle' | 'tail';
 
 type TextProps = {
   adjustsFontSizeToFit?: boolean;
@@ -26,7 +31,7 @@ type TextProps = {
   inverse?: boolean;
   invisible?: boolean;
   numberOfLines?: number;
-  onPress?(): void;
+  onPress?: () => void;
   selectable?: boolean;
   style?: StyleProp<TextStyle>;
   testID?: string;

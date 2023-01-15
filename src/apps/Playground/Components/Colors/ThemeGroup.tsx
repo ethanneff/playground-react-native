@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { Button, View } from '../../../../components';
 import {
   changeTheme,
-  Theme,
+  type Theme,
   useRootDispatch,
   useRootSelector,
 } from '../../../../redux';

@@ -1,8 +1,8 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios, { type AxiosRequestConfig } from 'axios';
 import { useCallback, useEffect, useRef } from 'react';
-import { RootAction, RootMiddleware } from 'root-types';
+import { type RootAction, type RootMiddleware } from 'root-types';
 import { Storage } from '../conversions';
-import { SuperAny } from '../types/types';
+import { type SuperAny } from '../types/types';
 
 const refreshTimeout = 2000;
 const timeout = 10000;
@@ -67,19 +67,25 @@ export const useSync = (): void => {
     // TODO: only update redux if data is different
   }, []);
 
-  const clearTimer = () => timer.current && clearTimeout(timer.current);
+  const clearTimer = () => {
+    if (timer.current) clearTimeout(timer.current);
+  };
 
   const attemptSync = useCallback(async () => {
     const refresh = () => {
       clearTimer();
       retryTimeout.current = retryDefaultTimeout;
-      timer.current = setTimeout(() => attemptSync(), refreshTimeout);
+      timer.current = setTimeout(async () => {
+        await attemptSync();
+      }, refreshTimeout);
     };
 
     const exponentialRetry = () => {
       clearTimer();
       retryTimeout.current = Math.min(refreshTimeout, retryTimeout.current * 2);
-      timer.current = setTimeout(() => attemptSync(), retryTimeout.current);
+      timer.current = setTimeout(async () => {
+        await attemptSync();
+      }, retryTimeout.current);
     };
 
     const queue = await syncQueue.get();

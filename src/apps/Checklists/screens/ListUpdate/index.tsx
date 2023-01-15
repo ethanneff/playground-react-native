@@ -9,7 +9,7 @@ import {
   View,
 } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
-import { SuperAny } from '../../../../types/types';
+import { type SuperAny } from '../../../../types/types';
 import { getCurrentChecklist, removeList, updateList } from '../../models';
 
 export default memo(function ChecklistUpdate() {
@@ -23,14 +23,12 @@ export default memo(function ChecklistUpdate() {
   });
   const isInvalidForm = form.name.trim().length === 0;
 
-  const handleNameChange = useCallback(
-    (name: string) => setForm((state) => ({ ...state, name })),
-    [],
-  );
-  const handleDescriptionChange = useCallback(
-    (description: string) => setForm((state) => ({ ...state, description })),
-    [],
-  );
+  const handleNameChange = useCallback((name: string) => {
+    setForm((state) => ({ ...state, name }));
+  }, []);
+  const handleDescriptionChange = useCallback((description: string) => {
+    setForm((state) => ({ ...state, description }));
+  }, []);
   const handleSubmit = useCallback(() => {
     const { description, name } = form;
     const now = Date.now();
@@ -53,8 +51,12 @@ export default memo(function ChecklistUpdate() {
     navigate('checklists');
   }, [dispatch, checklist.id, navigate]);
 
-  const handleDeletePress = useCallback(() => setShowDeleteModal(true), []);
-  const handleDeleteCancel = useCallback(() => setShowDeleteModal(false), []);
+  const handleDeletePress = useCallback(() => {
+    setShowDeleteModal(true);
+  }, []);
+  const handleDeleteCancel = useCallback(() => {
+    setShowDeleteModal(false);
+  }, []);
   const navBack = useCallback(() => navigate('checklists'), [navigate]);
 
   return (

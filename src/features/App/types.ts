@@ -1,4 +1,4 @@
-import { ScaledSize } from 'react-native';
+import { type ScaledSize } from 'react-native';
 
 export type DimensionsProps = {
   screen: ScaledSize;

@@ -6,7 +6,7 @@ import {
   Spacing,
   Text,
   TextInput,
-  TextInputRef,
+  type TextInputRef,
   View,
 } from '../../../../components';
 import { spacing } from '../../../../features';

@@ -1,5 +1,9 @@
 import axios from 'axios';
-import { RootAction, RootState, RootThunkAction } from 'root-types';
+import {
+  type RootAction,
+  type RootState,
+  type RootThunkAction,
+} from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 import { z } from 'zod';
 

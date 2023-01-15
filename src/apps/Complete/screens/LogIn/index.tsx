@@ -1,12 +1,17 @@
 import { useIsFocused, useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { Button, Modal, TextInput, TextInputRef } from '../../../../components';
+import {
+  Button,
+  Modal,
+  TextInput,
+  type TextInputRef,
+} from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { useRootDispatch } from '../../../../redux';
 import { ModalHeader } from '../../components';
 import { createItem, loadUser } from '../../models';
-import { LandingStackRoutes } from '../../navigationTypes';
+import { type LandingStackRoutes } from '../../navigationTypes';
 import { getDefaultUserTemplate } from '../../utils';
 
 const initialRef = { email: '', password: '' };
@@ -21,8 +26,12 @@ export const LogIn = memo(function LogIn() {
   const { goBack, navigate } =
     useNavigation<NativeStackNavigationProp<LandingStackRoutes>>();
 
-  const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
-  const onSecondary = useCallback(() => navigate('password-reset'), [navigate]);
+  const navWelcome = useCallback(() => {
+    navigate('welcome');
+  }, [navigate]);
+  const onSecondary = useCallback(() => {
+    navigate('password-reset');
+  }, [navigate]);
   const emailRef = useRef<TextInputRef>(null);
   const passwordRef = useRef<TextInputRef>(null);
   const eyeIcon = state.eye ? 'eye-outline' : 'eye-off-outline';

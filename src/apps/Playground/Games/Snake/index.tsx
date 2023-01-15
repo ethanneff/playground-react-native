@@ -6,9 +6,9 @@ import { Board } from './Board';
 import { EndGame } from './EndGame';
 import { useClock } from './useClock';
 import { useGesture } from './useGesture';
-import { BoardContext, getBoard, updateBoard } from './utils';
+import { type BoardContext, getBoard, updateBoard } from './utils';
 
-type State = 'on' | 'off' | 'error' | 'win';
+type State = 'error' | 'off' | 'on' | 'win';
 
 type Game = {
   board: BoardContext;

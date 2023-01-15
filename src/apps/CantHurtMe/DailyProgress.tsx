@@ -1,6 +1,6 @@
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs, { type Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
-import { ListRenderItem } from 'react-native';
+import { type ListRenderItem } from 'react-native';
 import { FlatList, Icon, Text, TouchableOpacity, View } from '../../components';
 import { spacing, useColors } from '../../features';
 

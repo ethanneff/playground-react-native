@@ -5,8 +5,8 @@ import Svg, { G, Path, Polygon, Text } from 'react-native-svg';
 import { v4 } from 'uuid';
 import { TouchableOpacity } from '../../../../components';
 import { useColors, useDriver, useDropShadow } from '../../../../features';
-import { SuperAny } from '../../../../types/types';
-import { Segment } from './types';
+import { type SuperAny } from '../../../../types/types';
+import { type Segment } from './types';
 import { getNewLocation, getWinnerIndex } from './utils';
 
 type Props = {
@@ -110,9 +110,9 @@ export const Wheel = memo(function WheelMemo({
   const bounce = useCallback(
     (toValue: number) => {
       const config = { duration: bounceSpeed, toValue, useNativeDriver };
-      Animated.timing(yPosition, config).start(() =>
-        bounce(toValue === 1 ? -1 : 1),
-      );
+      Animated.timing(yPosition, config).start(() => {
+        bounce(toValue === 1 ? -1 : 1);
+      });
     },
     [bounceSpeed, useNativeDriver, yPosition],
   );

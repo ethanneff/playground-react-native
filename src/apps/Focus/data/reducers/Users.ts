@@ -1,6 +1,6 @@
-import { RootAction } from 'root-types';
+import { type RootAction } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
-import { User } from '../types';
+import { type User } from '../types';
 import { logoutAuth } from './Auth';
 
 /* INTERFACES */

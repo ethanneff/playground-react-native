@@ -3,8 +3,8 @@ import React, { memo, useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import {
   TextInput,
-  TextInputIcon,
-  TextInputRef,
+  type TextInputIcon,
+  type TextInputRef,
   TouchableWithoutFeedback,
 } from '../../../components';
 import { useColors } from '../../../features';
@@ -15,7 +15,7 @@ import {
   swapItemOrderInItem,
   updateItem,
 } from '../models';
-import { ImplementTabNavigation } from '../navigationTypes';
+import { type ImplementTabNavigation } from '../navigationTypes';
 import { completeConfig } from '../utils';
 
 type ListItemProps = {

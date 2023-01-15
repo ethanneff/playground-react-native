@@ -3,7 +3,7 @@ import React, { memo, useCallback, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Button, Input, Screen, ScrollView, View } from '../../../components';
 import { spacing, useColors } from '../../../features';
-import { PortfolioNavigation } from '../types';
+import { type PortfolioNavigation } from '../types';
 
 const styles = StyleSheet.create({
   row: { flexDirection: 'row', justifyContent: 'space-around' },
@@ -13,11 +13,19 @@ export const Login = memo(function PortfolioLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { goBack, navigate } = useNavigation<PortfolioNavigation>();
-  const handlePassword = useCallback((val: string) => setPassword(val), []);
-  const handleEmail = useCallback((val: string) => setEmail(val), []);
+  const handlePassword = useCallback((val: string) => {
+    setPassword(val);
+  }, []);
+  const handleEmail = useCallback((val: string) => {
+    setEmail(val);
+  }, []);
 
-  const navPortfolio = useCallback(() => navigate('home'), [navigate]);
-  const navPassword = useCallback(() => navigate('forgotPassword'), [navigate]);
+  const navPortfolio = useCallback(() => {
+    navigate('home');
+  }, [navigate]);
+  const navPassword = useCallback(() => {
+    navigate('forgotPassword');
+  }, [navigate]);
   const colors = useColors();
 
   return (

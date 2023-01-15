@@ -1,7 +1,12 @@
 import React, { memo } from 'react';
-import { StyleProp, Text as OriginalText, TextStyle } from 'react-native'; // eslint-disable-line no-restricted-imports
+import {
+  // eslint-disable-next-line no-restricted-imports
+  Text as OriginalText,
+  type StyleProp,
+  type TextStyle,
+} from 'react-native';
 import { Text } from '../Text';
-import { SentenceType } from './types';
+import { type SentenceType } from './types';
 
 type Props = {
   center?: boolean;

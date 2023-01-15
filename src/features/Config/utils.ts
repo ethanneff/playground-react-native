@@ -1,5 +1,10 @@
 import { fontEmphases, fontSizes } from './fonts';
-import { ColorTheme, FontEmphasis, FontType, MonoMultiColor } from './types';
+import {
+  type ColorTheme,
+  type FontEmphasis,
+  type FontType,
+  type MonoMultiColor,
+} from './types';
 
 export const spacing = (value: number): number => value * 4;
 

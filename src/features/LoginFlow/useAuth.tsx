@@ -3,7 +3,7 @@ import Config from 'react-native-config';
 import {
   appleAuth,
   Firebase,
-  FirebaseAuthTypes,
+  type FirebaseAuthTypes,
   GoogleSignin,
 } from '../../conversions';
 
@@ -11,11 +11,11 @@ import {
 
 GoogleSignin.configure({ webClientId: Config.GOOGLE_SIGN_IN });
 
-type NullType = 'initializing' | 'waiting' | 'logout' | 'loading';
+type NullType = 'initializing' | 'loading' | 'logout' | 'waiting';
 type Response =
+  | { error: null; type: 'login'; user: FirebaseAuthTypes.User }
   | { error: null; type: NullType; user: null }
-  | { error: string; type: 'error'; user: null }
-  | { error: null; type: 'login'; user: FirebaseAuthTypes.User };
+  | { error: string; type: 'error'; user: null };
 
 type UseAuth = {
   onAnonymous: () => void;

@@ -7,7 +7,7 @@ import {
 } from 'react-native-sensors';
 import { useColors, useDriver } from '../../../../features';
 import { DriftContext } from './Context';
-import { CanvasDimensions } from './types';
+import { type CanvasDimensions } from './types';
 import { getPosition } from './utils';
 
 type CharacterProps = {
@@ -52,7 +52,9 @@ export const Character = memo(function Character({ canvas }: CharacterProps) {
 
   useEffect(() => {
     setUpdateIntervalForType(SensorTypes.accelerometer, rate);
-    const acc = accelerometer.subscribe(({ x, y }) => animate(x, y));
+    const acc = accelerometer.subscribe(({ x, y }) => {
+      animate(x, y);
+    });
     return () => {
       acc.unsubscribe();
     };

@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/react-native';
 import React from 'react';
-import { RootState } from 'root-types';
+import { type RootState } from 'root-types';
 import { Template } from '..';
 import { getMockRender, getMockStore, mockGoBack } from '../../../../mocks';
 

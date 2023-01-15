@@ -1,18 +1,18 @@
 import { useNavigation } from '@react-navigation/native';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs, { type Dayjs } from 'dayjs';
 import React, { memo, useCallback, useRef, useState } from 'react';
 import {
   Animated,
   Image,
-  ImageSourcePropType,
-  LayoutChangeEvent,
+  type ImageSourcePropType,
+  type LayoutChangeEvent,
   PanResponder,
 } from 'react-native';
 import { v4 } from 'uuid';
 import {
   Card,
   Icon,
-  IconName,
+  type IconName,
   Screen,
   ScrollView,
   Text,
@@ -35,15 +35,15 @@ type SwipeItem = {
   icon: IconName;
   id: string;
   image: ImageSourcePropType | null;
-  onPress(): void;
+  onPress: () => void;
   title: string;
 };
 type SwipeCardProps = {
   height: number;
   index: number;
   item: SwipeItem;
-  onSwipeComplete(): void;
-  onSwipePercentChange(percent: number): void;
+  onSwipeComplete: () => void;
+  onSwipePercentChange: (percent: number) => void;
 };
 
 const SwipeCard = memo(function SwipeCard({

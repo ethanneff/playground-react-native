@@ -15,7 +15,7 @@ type Tag = {
   name: string;
 };
 
-type ChecklistItemStatus = 'Todo' | 'InProgress' | 'Reminded' | 'Done';
+type ChecklistItemStatus = 'Done' | 'InProgress' | 'Reminded' | 'Todo';
 
 type ChecklistItemHistory = {
   createdAt: number;

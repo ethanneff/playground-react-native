@@ -1,26 +1,26 @@
-import React, { ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import {
-  AccessibilityRole,
-  FlexAlignType,
-  LayoutChangeEvent,
-  StyleProp,
+  type AccessibilityRole,
+  type FlexAlignType,
+  type LayoutChangeEvent,
+  type StyleProp,
   StyleSheet,
   // eslint-disable-next-line no-restricted-imports
   View as Original,
-  ViewStyle,
+  type ViewStyle,
 } from 'react-native';
-import { MonoMultiColor, useColors } from '../../features';
+import { type MonoMultiColor, useColors } from '../../features';
 
 type Props = {
   accessibilityRole?: AccessibilityRole;
   accessible?: boolean;
   alignContent?:
-    | 'flex-start'
-    | 'flex-end'
     | 'center'
-    | 'stretch'
+    | 'flex-end'
+    | 'flex-start'
+    | 'space-around'
     | 'space-between'
-    | 'space-around';
+    | 'stretch';
   alignItems?: FlexAlignType;
   alignSelf?: FlexAlignType;
   backgroundColor?: keyof MonoMultiColor;
@@ -30,23 +30,23 @@ type Props = {
   display?: 'flex' | 'none';
   flex?: number;
   flexBasis?: number;
-  flexDirection?: 'row' | 'column';
+  flexDirection?: 'column' | 'row';
   flexGrow?: number;
   flexShrink?: number;
-  flexWrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
+  flexWrap?: 'nowrap' | 'wrap-reverse' | 'wrap';
   height?: number;
   justifyContent?:
     | 'center'
     | 'flex-end'
     | 'flex-start'
-    | 'space-between'
     | 'space-around'
+    | 'space-between'
     | 'space-evenly';
   margin?: number;
   onLayout?: (event: LayoutChangeEvent) => void;
   onTouchStart?: () => void;
   opacity?: number;
-  overflow?: 'scroll' | 'visible' | 'hidden';
+  overflow?: 'hidden' | 'scroll' | 'visible';
   padding?: number;
   position?: 'absolute' | 'relative';
   style?: StyleProp<ViewStyle>;

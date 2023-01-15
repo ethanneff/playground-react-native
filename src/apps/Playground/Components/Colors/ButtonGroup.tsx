@@ -2,8 +2,8 @@ import React, { memo, useCallback } from 'react';
 import { v4 } from 'uuid';
 import { Button, Text, View } from '../../../../components';
 import {
-  FontEmphasis,
-  MonoMultiColor,
+  type FontEmphasis,
+  type MonoMultiColor,
   spacing,
   useColors,
 } from '../../../../features';

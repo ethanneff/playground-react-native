@@ -1,11 +1,11 @@
-import NetInfo, { NetInfoState } from '@react-native-community/netinfo';
+import NetInfo, { type NetInfoState } from '@react-native-community/netinfo';
 import { useCallback, useEffect } from 'react';
 import {
   AppState,
-  AppStateStatus,
+  type AppStateStatus,
   Dimensions,
   Keyboard,
-  KeyboardEvent,
+  type KeyboardEvent,
   Platform,
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
@@ -18,7 +18,7 @@ import {
   updateNetwork,
   useRootDispatch,
 } from '../../redux';
-import { DimensionsProps } from './types';
+import { type DimensionsProps } from './types';
 
 export const useKeyboard = (): void => {
   const dispatch = useRootDispatch();

@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { Button, Input, Screen } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
-import { SuperAny } from '../../../../types/types';
+import { type SuperAny } from '../../../../types/types';
 import {
   getCurrentChecklistItem,
   removeChecklistItem,
@@ -19,14 +19,12 @@ export default memo(function ChecklistUpdate() {
   });
   const isInvalidForm = form.name.trim().length === 0;
 
-  const handleNameChange = useCallback(
-    (name: string) => setForm((state) => ({ ...state, name })),
-    [],
-  );
-  const handleDescriptionChange = useCallback(
-    (description: string) => setForm((state) => ({ ...state, description })),
-    [],
-  );
+  const handleNameChange = useCallback((name: string) => {
+    setForm((state) => ({ ...state, name }));
+  }, []);
+  const handleDescriptionChange = useCallback((description: string) => {
+    setForm((state) => ({ ...state, description }));
+  }, []);
   const handleSubmit = useCallback(() => {
     const { description, name } = form;
     const now = Date.now();

@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
-import { Image, ImageSourcePropType } from 'react-native';
+import { Image, type ImageSourcePropType } from 'react-native';
 import { Screen, ScrollView, Text, View } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { getWidth, useRootSelector } from '../../../../redux';

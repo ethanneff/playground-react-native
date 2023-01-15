@@ -1,5 +1,5 @@
-import { Dimensions, ScaledSize } from 'react-native';
-import { RootAction, RootState } from 'root-types';
+import { Dimensions, type ScaledSize } from 'react-native';
+import { type RootAction, type RootState } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 import { logout } from '../Auth';
 

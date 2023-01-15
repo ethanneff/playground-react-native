@@ -1,8 +1,8 @@
-import React, { memo, ReactNode, useEffect, useState } from 'react';
+import React, { memo, type ReactNode, useEffect, useState } from 'react';
 import {
   Animated,
   Easing,
-  ImageSourcePropType,
+  type ImageSourcePropType,
   StyleSheet,
 } from 'react-native';
 import { MaskedView, View } from '../../components';
@@ -88,7 +88,9 @@ export const SplashScreen = memo(function SplashScreenMemo({
       easing: Easing.in(Easing.cubic),
       toValue: 100,
       useNativeDriver,
-    }).start(() => setState((p) => ({ ...p, complete: true })));
+    }).start(() => {
+      setState((p) => ({ ...p, complete: true }));
+    });
   }, [delay, duration, state.progress, useNativeDriver]);
 
   return (

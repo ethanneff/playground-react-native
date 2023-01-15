@@ -7,7 +7,7 @@ import {
   Text,
 } from '../../../../components';
 import { spacing, useColors, useLayout } from '../../../../features';
-import { Category } from '../../types';
+import { type Category } from '../../types';
 import { CategoryCard } from './CategoryCard';
 
 // TODO: create CategoryDetail screen (activity, stats [total, streak, best], details, schedule [offdays])

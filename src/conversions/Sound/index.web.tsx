@@ -1,5 +1,5 @@
 import { Howl } from 'howler';
-import { SuperAny } from '../../types/types';
+import { type SuperAny } from '../../types/types';
 
 export class Sound {
   static setCategory() {

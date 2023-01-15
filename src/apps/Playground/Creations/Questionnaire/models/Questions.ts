@@ -1,9 +1,9 @@
-import { RootAction } from 'root-types';
-import { DeepReadonly } from 'ts-essentials';
+import { type RootAction } from 'root-types';
+import { type DeepReadonly } from 'ts-essentials';
 import { createAction } from 'typesafe-actions';
 
 /* INTERFACES */
-type QuestionType = 'Input' | 'Checkbox' | 'Slider' | 'Button';
+type QuestionType = 'Button' | 'Checkbox' | 'Input' | 'Slider';
 
 type Question = DeepReadonly<{
   choices: string[];

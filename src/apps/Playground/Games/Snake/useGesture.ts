@@ -1,11 +1,11 @@
-import { MutableRefObject, useRef } from 'react';
+import { type MutableRefObject, useRef } from 'react';
 import {
-  GestureResponderHandlers,
+  type GestureResponderHandlers,
   PanResponder,
-  PanResponderInstance,
+  type PanResponderInstance,
 } from 'react-native';
 
-export type Direction = 'left' | 'right' | 'up' | 'down';
+export type Direction = 'down' | 'left' | 'right' | 'up';
 
 type Props = {
   noReverse?: boolean;

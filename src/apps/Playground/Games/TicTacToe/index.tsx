@@ -14,7 +14,7 @@ import {
   getSmallestDimension,
   useRootSelector,
 } from '../../../../redux';
-import { State } from './types';
+import { type State } from './types';
 import {
   getInitialState,
   getNextValue,

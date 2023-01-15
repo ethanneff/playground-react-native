@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem, StyleSheet } from 'react-native';
+import { type ListRenderItem, StyleSheet } from 'react-native';
 import {
   Card,
   FlatList,
@@ -15,8 +15,8 @@ import { app } from './data';
 import { ProfileLevel } from './ProfileLevel';
 
 type Props = {
-  onProfilePress(): void;
-  onSettingsPress(): void;
+  onProfilePress: () => void;
+  onSettingsPress: () => void;
 };
 
 export const List = memo(function List({

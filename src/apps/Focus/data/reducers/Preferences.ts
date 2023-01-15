@@ -1,7 +1,7 @@
-import { RootAction } from 'root-types';
-import { DeepReadonly } from 'ts-essentials';
+import { type RootAction } from 'root-types';
+import { type DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
-import { Preferences } from '../types';
+import { type Preferences } from '../types';
 import { logoutAuth } from './Auth';
 
 /* INTERFACES */

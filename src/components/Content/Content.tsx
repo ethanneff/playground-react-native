@@ -5,7 +5,7 @@ import { View } from '..';
 import { spacing } from '../../features';
 import { Sentence } from '../Sentence';
 import { Text } from '../Text';
-import { ContentSections } from './types';
+import { type ContentSections } from './types';
 
 type Props = {
   center?: boolean;

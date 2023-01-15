@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { ListRenderItem } from 'react-native';
+import { type ListRenderItem } from 'react-native';
 import { useSelector } from 'react-redux';
 import { FlatList, Image, Screen } from '../../../../components';
 import { useColors } from '../../../../features';

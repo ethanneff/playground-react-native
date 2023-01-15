@@ -2,7 +2,7 @@ import React, { memo, useCallback, useState } from 'react';
 import {
   Card,
   Icon,
-  IconName,
+  type IconName,
   Screen,
   ScrollView,
   Text,

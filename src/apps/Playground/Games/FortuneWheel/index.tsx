@@ -3,7 +3,7 @@ import React, { memo, useCallback, useMemo, useState } from 'react';
 import { Screen, Text } from '../../../../components';
 import { useColors } from '../../../../features';
 import { Wheel } from './Wheel';
-import { Segment } from './types';
+import { type Segment } from './types';
 
 const useSegments = () => {
   const colors = useColors();
@@ -32,7 +32,7 @@ const useSegments = () => {
 export const FortuneWheel = memo(function PlaygroundFortuneWheel() {
   const segments = useSegments();
   const { goBack } = useNavigation();
-  const [winner, setWinner] = useState<null | string>(null);
+  const [winner, setWinner] = useState<string | null>(null);
 
   const onComplete = useCallback((a: Segment) => {
     setWinner(a.display);

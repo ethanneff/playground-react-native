@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { v4 } from 'uuid';
 import { View } from '../../../../components';
 import { DriftContext } from './Context';
-import { TrackPositionWithColor } from './types';
+import { type TrackPositionWithColor } from './types';
 
 type TrackProps = {
   track: TrackPositionWithColor;

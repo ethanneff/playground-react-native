@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback } from 'react';
 import {
   Button,
@@ -11,8 +11,8 @@ import {
 } from '../../../../components';
 import { JsonTree } from '../../../../conversions';
 import { useRootSelector } from '../../../../redux';
-import { Collections, Goal, Interval } from '../../data';
-import { UnAuthStackRoutes } from '../../types';
+import { Collections, type Goal, type Interval } from '../../data';
+import { type UnAuthStackRoutes } from '../../types';
 import { useLogout } from '../../utils';
 
 export const Debug = memo(function Debug() {

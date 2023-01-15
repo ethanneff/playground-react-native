@@ -1,10 +1,10 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { Animated, ListRenderItem, StyleSheet } from 'react-native';
+import { Animated, type ListRenderItem, StyleSheet } from 'react-native';
 import {
   FlatList,
   Icon,
-  IconName,
+  type IconName,
   Input,
   Screen,
   Text,
@@ -154,10 +154,9 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
 
   const keyExtractor = useCallback((item: Data) => item.id.toString(), []);
 
-  const onChangeText = useCallback(
-    (value: string) => setState((prev) => ({ ...prev, input: value })),
-    [],
-  );
+  const onChangeText = useCallback((value: string) => {
+    setState((prev) => ({ ...prev, input: value }));
+  }, []);
 
   return (
     <Screen

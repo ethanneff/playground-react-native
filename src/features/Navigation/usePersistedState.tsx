@@ -1,7 +1,7 @@
 import {
-  InitialState,
-  NavigationContainerRef,
-  NavigationState,
+  type InitialState,
+  type NavigationContainerRef,
+  type NavigationState,
 } from '@react-navigation/native';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Linking, Platform } from 'react-native';

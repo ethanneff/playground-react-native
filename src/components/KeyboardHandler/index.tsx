@@ -1,5 +1,5 @@
-import React, { memo, ReactNode, useCallback } from 'react';
-import { Keyboard, LayoutChangeEvent } from 'react-native';
+import React, { memo, type ReactNode, useCallback } from 'react';
+import { Keyboard, type LayoutChangeEvent } from 'react-native';
 import { View } from '../../components';
 import { TouchableWithoutFeedback } from '../TouchableWithoutFeedback';
 
@@ -14,7 +14,9 @@ export const KeyboardHandler = memo(function KeyboardHandler({
   children,
   onLayout,
 }: HandleKeyboardProps) {
-  const onDismissKeyboard = useCallback(() => Keyboard.dismiss(), []);
+  const onDismissKeyboard = useCallback(() => {
+    Keyboard.dismiss();
+  }, []);
   return (
     <TouchableWithoutFeedback
       onLayout={onLayout}

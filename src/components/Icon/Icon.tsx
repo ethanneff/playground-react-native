@@ -1,16 +1,21 @@
 import React, { memo } from 'react';
-import { Platform, StyleProp, StyleSheet, ViewStyle } from 'react-native';
+import {
+  Platform,
+  type StyleProp,
+  StyleSheet,
+  type ViewStyle,
+} from 'react-native';
 import { View } from '../../components';
 import {
-  ColorTheme,
-  MonoMultiColor,
+  type ColorTheme,
+  type MonoMultiColor,
   spacing,
   useColors,
   useDropShadow,
 } from '../../features';
 import { Badge } from './Badge';
 import { Source } from './Source';
-import { IconName } from './config';
+import { type IconName } from './config';
 
 /*
 Usage: <Icon name='check' />

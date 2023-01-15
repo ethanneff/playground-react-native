@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { RootAction, RootState } from 'root-types';
+import { type RootAction, type RootState } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 import { getCurrentChecklist } from '../Checklist';
 

@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
-import { Icon, IconName, View } from '../../../../components';
-import { MonoMultiColor } from '../../../../features';
+import { Icon, type IconName, View } from '../../../../components';
+import { type MonoMultiColor } from '../../../../features';
 
 type Props = {
   color: keyof MonoMultiColor;

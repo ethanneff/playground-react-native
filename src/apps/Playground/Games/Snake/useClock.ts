@@ -47,7 +47,9 @@ export const useClock = ({
   }, [stop, loop, onUpdate]);
 
   useEffect(() => {
-    return () => stop();
+    return () => {
+      stop();
+    };
   }, [stop]);
 
   return { start, stop };

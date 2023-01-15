@@ -1,4 +1,10 @@
-import React, { memo, ReactNode, useCallback, useEffect, useRef } from 'react';
+import React, {
+  memo,
+  useCallback,
+  useEffect,
+  useRef,
+  type ReactNode,
+} from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import {
   SoundManager,
@@ -76,8 +82,8 @@ export const Modal = memo(function Modal({
 
   // TODO: animation is not clean on devices
   const animate = useCallback(
-    (toValue: number) => {
-      return new Promise((resolve) => {
+    async (toValue: number) => {
+      await new Promise((resolve) => {
         Animated.timing(fade, {
           duration: fadeDuration,
           toValue,

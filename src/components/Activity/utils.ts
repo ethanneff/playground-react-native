@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import isToday from 'dayjs/plugin/isToday';
-import { ActivitySquares, ApiResponse } from './types';
+import { type ActivitySquares, type ApiResponse } from './types';
 dayjs.extend(isToday);
 
 export const getDateFormat = (date: number): string =>

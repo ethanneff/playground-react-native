@@ -27,7 +27,9 @@ export const Loading = memo(function LoadingScreen({
     Animated.spring(opacity, {
       toValue: 0,
       useNativeDriver,
-    }).start(() => onBackgroundPress());
+    }).start(() => {
+      onBackgroundPress();
+    });
   }, [opacity, onBackgroundPress, useNativeDriver]);
 
   return (

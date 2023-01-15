@@ -1,4 +1,4 @@
-export type ReminderType = 'one time' | 'repeat' | 'location';
+export type ReminderType = 'location' | 'one time' | 'repeat';
 export type Reminder = {
   date: number;
   format: string;

@@ -34,9 +34,9 @@ const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 type DayObject = {
   current?: boolean;
-  display: string | number;
+  display: number | string;
   header?: boolean;
-  id: string | number;
+  id: number | string;
 };
 const createDayObj = ({
   current = false,

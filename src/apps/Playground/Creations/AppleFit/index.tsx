@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
 import { Screen, View } from '../../../../components';
 import { AppleActivity } from './AppleActivity';
-import { Ring } from './types';
+import { type Ring } from './types';
 
 const TAU = 2 * Math.PI;
 const size = 300;

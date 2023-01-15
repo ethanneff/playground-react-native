@@ -2,7 +2,7 @@ import { getType } from 'typesafe-actions';
 import {
   changeAppStatus,
   changeKeyboardStatus,
-  DeviceData,
+  type DeviceData,
   deviceInitialState,
   deviceReducer,
   loadDevice,

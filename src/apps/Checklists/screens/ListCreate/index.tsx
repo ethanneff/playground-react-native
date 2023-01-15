@@ -4,7 +4,7 @@ import 'react-native-get-random-values';
 import { v4 } from 'uuid';
 import { Button, Input, Screen } from '../../../../components';
 import { useRootDispatch } from '../../../../redux';
-import { SuperAny } from '../../../../types/types';
+import { type SuperAny } from '../../../../types/types';
 import { createList } from '../../models';
 
 const initialState = { description: '', name: '' };
@@ -33,14 +33,12 @@ export default memo(function ChecklistCreate() {
     );
     navigate('checklists');
   }, [dispatch, form, isInvalidForm, navigate]);
-  const handleNameChange = useCallback(
-    (name: string) => setForm((state) => ({ ...state, name })),
-    [],
-  );
-  const handleDescriptionChange = useCallback(
-    (description: string) => setForm((state) => ({ ...state, description })),
-    [],
-  );
+  const handleNameChange = useCallback((name: string) => {
+    setForm((state) => ({ ...state, name }));
+  }, []);
+  const handleDescriptionChange = useCallback((description: string) => {
+    setForm((state) => ({ ...state, description }));
+  }, []);
 
   const navBack = useCallback(() => navigate('checklists'), [navigate]);
   return (

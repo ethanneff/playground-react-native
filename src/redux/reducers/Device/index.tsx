@@ -1,13 +1,16 @@
-import { AppState, AppStateStatus } from 'react-native';
-import { LocationProviderInfo, PowerState } from 'react-native-device-info';
+import { AppState, type AppStateStatus } from 'react-native';
 import {
-  Calendar,
-  Locale,
-  NumberFormatSettings,
-  TemperatureUnit,
+  type LocationProviderInfo,
+  type PowerState,
+} from 'react-native-device-info';
+import {
+  type Calendar,
+  type Locale,
+  type NumberFormatSettings,
+  type TemperatureUnit,
 } from 'react-native-localize';
-import { RootAction } from 'root-types';
-import { DeepReadonly } from 'ts-essentials';
+import { type RootAction } from 'root-types';
+import { type DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
 import { logout } from '../Auth';
 
@@ -96,11 +99,11 @@ export type DeviceData = DeepReadonly<{
 }>;
 
 type DeviceState = DeepReadonly<
-  {
+  DeviceData & {
     appStatus: AppStateStatus;
     keyboardHeight: number;
     keyboardVisible: boolean;
-  } & DeviceData
+  }
 >;
 
 /* ACTIONS */
