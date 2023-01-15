@@ -2,8 +2,8 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useMemo, useState } from 'react';
 import { Screen, Text } from '../../../../components';
 import { useColors } from '../../../../features';
-import { Segment } from './types';
 import { Wheel } from './Wheel';
+import { Segment } from './types';
 
 const useSegments = () => {
   const colors = useColors();

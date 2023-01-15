@@ -29,7 +29,6 @@ export const PinchSpread = memo(function PinchSpread() {
     },
   });
 
-  /* eslint-disable react/jsx-props-no-spreading */
   return (
     <Screen
       dropShadow
@@ -38,6 +37,7 @@ export const PinchSpread = memo(function PinchSpread() {
     >
       <Animated.View
         style={styles.container}
+        // eslint-disable-next-line react/jsx-props-no-spreading
         {...panGesture.panHandlers}
       />
       <View style={{ padding: spacing(2) }}>

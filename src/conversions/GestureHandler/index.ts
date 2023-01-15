@@ -11,6 +11,7 @@ import {
   TouchableOpacity as GestureTouchableOpacity,
   TouchableWithoutFeedback as GestureTouchableWithoutFeedback,
 } from 'react-native-gesture-handler';
+/* eslint-enable no-restricted-imports */
 
 export {
   GestureFlatList,
