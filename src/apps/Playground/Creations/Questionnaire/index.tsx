@@ -1,10 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef, useState } from 'react';
-import { Dimensions, ListRenderItem, ViewToken } from 'react-native';
+import { Dimensions, ViewToken } from 'react-native';
 import {
   Button,
   FlatList,
   FlatListRef,
+  FlatListRenderItem,
   Screen,
   Text,
   View,
@@ -60,7 +61,7 @@ export const Questionnaire = memo(function Questionnaire() {
   const [output, setOutput] = useState({});
   const currentIndex = useRef(0);
   const { goBack } = useNavigation();
-  const tableViewRef = useRef<FlatListRef>(null);
+  const tableViewRef = useRef<FlatListRef<Data>>(null);
   const handleViewableItemsChanged = useCallback(
     ({ viewableItems }: { viewableItems: ViewToken[] }) => {
       currentIndex.current = viewableItems[0]?.index ?? 0;
@@ -110,7 +111,7 @@ export const Questionnaire = memo(function Questionnaire() {
     [onProgress],
   );
 
-  const renderItem = useCallback<ListRenderItem<Data>>(
+  const renderItem = useCallback<FlatListRenderItem<Data>>(
     ({ item }) => {
       let items = <View flex={1} />;
 
@@ -165,6 +166,7 @@ export const Questionnaire = memo(function Questionnaire() {
     >
       <FlatList
         data={data}
+        estimatedItemSize={161}
         horizontal
         keyboardShouldPersistTaps="handled"
         onRef={tableViewRef}

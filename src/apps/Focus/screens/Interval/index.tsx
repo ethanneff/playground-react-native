@@ -1,13 +1,18 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { ListRenderItem, StyleSheet } from 'react-native';
-import { FlatList, Loader, Screen } from '../../../../components';
-import { spacing, useColors, useLayout } from '../../../../features';
+import { StyleSheet } from 'react-native';
+import {
+  FlatList,
+  FlatListRenderItem,
+  Loader,
+  Screen,
+  View,
+} from '../../../../components';
+import { spacing, useLayout } from '../../../../features';
 import { Item } from '../../types';
 import { ListItem } from './ListItem';
 import {
   getCurrentItem,
   getFirstItemOfDay,
-  getItemLayout,
   getLastItemOfDay,
   getMoreItems,
   initialIndex,
@@ -15,9 +20,7 @@ import {
 } from './utils';
 
 export const Interval = memo(function Interval() {
-  const colors = useColors();
   const { tabBarEdges } = useLayout();
-
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState<Item[]>(() => getMoreItems([]));
 
@@ -28,9 +31,7 @@ export const Interval = memo(function Interval() {
 
   const styles = StyleSheet.create({
     list: {
-      backgroundColor: colors.background.secondary,
       opacity: loading ? 0 : 1,
-      paddingVertical: spacing(4),
     },
     loading: {
       height: '100%',
@@ -39,7 +40,7 @@ export const Interval = memo(function Interval() {
     },
   });
 
-  const renderItem = useCallback<ListRenderItem<Item>>(
+  const renderItem = useCallback<FlatListRenderItem<Item>>(
     ({ index, item }) => (
       <ListItem
         currentItem={getCurrentItem(item)}
@@ -61,25 +62,34 @@ export const Interval = memo(function Interval() {
       edges={tabBarEdges}
       title="Tracker"
     >
-      <FlatList
-        data={items}
-        getItemLayout={getItemLayout}
-        initialNumToRender={0}
-        initialScrollIndex={initialIndex}
-        inverted
-        keyExtractor={keyExtractor}
-        keyboardShouldPersistTaps="handled"
-        onEndReached={addMoreItems}
-        onEndReachedThreshold={0.5}
-        renderItem={renderItem}
-        style={styles.list}
-      />
-      {loading ? (
-        <Loader
-          size="large"
-          style={styles.loading}
-        />
-      ) : null}
+      <View
+        backgroundColor="secondary"
+        flex={1}
+      >
+        <View
+          flex={1}
+          style={styles.list}
+        >
+          <FlatList
+            contentContainerStyle={{ paddingVertical: spacing(4) }}
+            data={items}
+            estimatedItemSize={55}
+            initialScrollIndex={initialIndex}
+            inverted
+            keyExtractor={keyExtractor}
+            keyboardShouldPersistTaps="handled"
+            onEndReached={addMoreItems}
+            onEndReachedThreshold={0.5}
+            renderItem={renderItem}
+          />
+        </View>
+        {loading ? (
+          <Loader
+            size="large"
+            style={styles.loading}
+          />
+        ) : null}
+      </View>
     </Screen>
   );
 });

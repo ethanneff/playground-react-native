@@ -8,14 +8,11 @@ type Props = {
   borderRadius?: number;
   borderWidth?: number;
   children?: ReactNode | ReactNode[];
+  containerStyle?: ViewStyle;
+  contentStyle?: ViewStyle;
   elevation?: number;
-  flex?: boolean;
-  noMargin?: boolean;
-  noPadding?: boolean;
   onLongPress?: () => void;
   onPress?: () => void;
-  selected?: boolean;
-  style?: ViewStyle;
   testID?: string;
 };
 
@@ -35,14 +32,12 @@ export const Card = memo(function Card({
   elevation = 0,
   onLongPress,
   onPress,
-  noMargin,
-  noPadding,
-  flex,
-  selected,
-  style,
+  containerStyle,
+  contentStyle,
 }: Props) {
   const colors = useColors();
   const dropShadow = useDropShadow();
+  const shadow = elevation ? dropShadow(elevation) : {};
   const opacity = getOpacity(elevation);
   const styles = StyleSheet.create({
     containerStyle: {
@@ -50,28 +45,18 @@ export const Card = memo(function Card({
       borderColor: colors.background.primaryA,
       borderRadius,
       borderWidth,
-      marginVertical: noMargin ? 0 : spacing(2),
-      ...dropShadow(elevation),
+      marginVertical: spacing(2),
+      ...shadow,
     },
     contents: {
       backgroundColor: `hsla(0,0%,100%,${opacity})`,
       borderRadius,
-      padding: noPadding ? 0 : spacing(4),
+      padding: spacing(4),
     },
-    flex: {
-      flex: 1,
-    },
-    selected: { backgroundColor: colors.background.positive },
   });
 
-  const containerStyles = [
-    styles.containerStyle,
-    selected ? styles.selected : undefined,
-    flex ? styles.flex : undefined,
-    style,
-  ];
-  const contentStyles = [styles.contents, flex ? styles.flex : undefined];
-  const child = <View style={contentStyles}>{children}</View>;
+  const containerStyles = [styles.containerStyle, containerStyle];
+  const contentStyles = [styles.contents, contentStyle];
 
   return onPress || onLongPress ? (
     <TouchableOpacity
@@ -81,14 +66,14 @@ export const Card = memo(function Card({
       style={containerStyles}
       testID={testID}
     >
-      {child}
+      <View style={contentStyles}>{children}</View>
     </TouchableOpacity>
   ) : (
     <View
       style={containerStyles}
       testID={testID}
     >
-      {child}
+      <View style={contentStyles}>{children}</View>
     </View>
   );
 });

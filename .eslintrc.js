@@ -10,6 +10,7 @@ const restrictedImports = {
         'FlatList',
         'ScrollView',
         'Switch',
+        'ListRenderItem',
         'Text',
         'TextInput',
         'TouchableHighlight',

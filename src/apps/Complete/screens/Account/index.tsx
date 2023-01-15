@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect } from 'react';
-import { Button, Screen, ScrollView, Text } from '../../../../components';
+import { Button, Card, Screen, ScrollView, Text } from '../../../../components';
 import {
   RootNavigation,
   spacing,
@@ -9,7 +9,6 @@ import {
   useLayout,
 } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
-import { Card } from '../../components';
 import { logout } from '../../models';
 
 // TODO: figure out a place for this

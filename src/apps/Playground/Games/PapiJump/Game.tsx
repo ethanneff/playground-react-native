@@ -125,9 +125,9 @@ export const Game = memo(function Game({
         />
         <View>
           <Button
-            color={pause ? 'primaryA' : 'positive'}
+            color={pause ? 'positive' : 'primaryA'}
             onPress={handleOnPress}
-            title={pause ? 'pause' : 'start'}
+            title={pause ? 'start' : 'pause'}
           />
           <Button
             onPress={handleOnPress}

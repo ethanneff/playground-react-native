@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
-import { RelativeDate, Text, View } from '../../../components';
+import { Card, RelativeDate, Text, View } from '../../../components';
 import { spacing } from '../../../features';
-import { Card } from './Card';
 import { ItemDetailHeader } from './ItemDetailHeader';
 
 type ItemContextProps = {

@@ -2,13 +2,13 @@ import React, { memo } from 'react';
 import { Dimensions } from 'react-native';
 import {
   Calendar,
+  Card,
   Screen,
   ScrollView,
   Text,
   View,
 } from '../../../../components';
 import { spacing, useColors, useLayout } from '../../../../features';
-import { Card } from '../../components';
 import { completeConfig } from '../../utils';
 import { Graph } from './Graph';
 

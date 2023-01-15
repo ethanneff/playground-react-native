@@ -1,4 +1,5 @@
 import React, { memo, useCallback, useState } from 'react';
+import { v4 } from 'uuid';
 import {
   Card,
   Icon,
@@ -48,7 +49,7 @@ const ChecklistItem = ({ index, item }: ChecklistItemProps) => {
         {days.map((day) => (
           <View
             flex={1}
-            key={day}
+            key={v4()}
           >
             <Text
               center

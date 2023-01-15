@@ -1,9 +1,9 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem } from 'react-native';
 import {
   Button,
   FlatList,
+  FlatListRenderItem,
   Icon,
   Screen,
   TouchableOpacity,
@@ -36,7 +36,7 @@ export default memo(function Checklists() {
     [dispatch],
   );
 
-  const renderItem = useCallback<ListRenderItem<Checklist>>(
+  const renderItem = useCallback<FlatListRenderItem<Checklist>>(
     ({ item }) => (
       <Button
         onLongPress={handleItemLongPress(item.id)}
@@ -58,6 +58,7 @@ export default memo(function Checklists() {
     >
       <FlatList
         data={items}
+        estimatedItemSize={0}
         keyExtractor={keyExtractor}
         keyboardShouldPersistTaps="handled"
         renderItem={renderItem}

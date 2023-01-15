@@ -99,7 +99,6 @@ export const ListItem = memo(function ListItem({
 
   return (
     <TouchableWithoutFeedback
-      key={item.id}
       onLongPress={onItemLongPress}
       onPress={onItemPress}
       style={{

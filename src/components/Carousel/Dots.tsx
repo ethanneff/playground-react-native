@@ -21,7 +21,7 @@ export const Dots = memo(function Dots({
   return (
     <View
       style={{
-        bottom: 0,
+        bottom: spacing(2),
         flexDirection: 'row',
         justifyContent: 'center',
         position: 'absolute',

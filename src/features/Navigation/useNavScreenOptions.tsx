@@ -52,12 +52,8 @@ export const useNavScreenOptions = () => {
           const title = StringMethods.capitalize(route.name);
           return (
             <View
-              style={{
-                alignItems: 'center',
-                flex: 1,
-                justifyContent: 'center',
-                width: '100%',
-              }}
+              alignItems="center"
+              justifyContent="center"
             >
               <Icon
                 color={iconColor}
@@ -66,7 +62,7 @@ export const useNavScreenOptions = () => {
               />
               {titleShown ? (
                 <Text
-                  bold={focused}
+                  color={iconColor}
                   emphasis={emphasis}
                   title={title}
                   type="caption"

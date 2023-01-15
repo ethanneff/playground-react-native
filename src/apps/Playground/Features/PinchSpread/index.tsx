@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useState } from 'react';
 import { Animated, PanResponder, StyleSheet } from 'react-native';
 import { Screen, Text, View } from '../../../../components';
-import { spacing, useColors } from '../../../../features';
+import { spacing, useColors, useDropShadow } from '../../../../features';
 import { GestureHandler } from './logic';
 
 const minTouches = 2;
@@ -15,6 +15,9 @@ export const PinchSpread = memo(function PinchSpread() {
   const styles = StyleSheet.create({
     container: { backgroundColor: colors.background.secondary, flex: 1 },
   });
+
+  const dropShadow = useDropShadow();
+
   const gestureHandler = new GestureHandler({ minTouches });
   const panGesture = PanResponder.create({
     onMoveShouldSetPanResponderCapture: () => true,
@@ -40,7 +43,13 @@ export const PinchSpread = memo(function PinchSpread() {
         style={styles.container}
         {...panGesture.panHandlers}
       />
-      <View style={{ padding: spacing(2) }}>
+      <View
+        style={{
+          padding: spacing(2),
+          ...dropShadow(0.2, -4),
+          backgroundColor: colors.background.primaryA,
+        }}
+      >
         <Text
           center
           title={title}

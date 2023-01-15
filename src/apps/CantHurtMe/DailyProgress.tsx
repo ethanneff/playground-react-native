@@ -1,7 +1,13 @@
 import dayjs, { Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
-import { ListRenderItem } from 'react-native';
-import { FlatList, Icon, Text, TouchableOpacity, View } from '../../components';
+import {
+  FlatList,
+  FlatListRenderItem,
+  Icon,
+  Text,
+  TouchableOpacity,
+  View,
+} from '../../components';
 import { spacing, useColors } from '../../features';
 
 const generateHistory = () => {
@@ -63,7 +69,7 @@ const ProgressItem = ({ item }: ProgressItemProps) => {
 export const DailyProgress = memo(function DailyProgress() {
   const data: Item[] = generateHistory();
 
-  const renderItem = useCallback<ListRenderItem<Item>>(
+  const renderItem = useCallback<FlatListRenderItem<Item>>(
     ({ item }) => <ProgressItem item={item} />,
     [],
   );
@@ -73,6 +79,7 @@ export const DailyProgress = memo(function DailyProgress() {
   return (
     <FlatList
       data={data}
+      estimatedItemSize={56}
       horizontal
       inverted
       keyExtractor={keyExtractor}

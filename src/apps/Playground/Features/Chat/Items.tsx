@@ -1,16 +1,21 @@
 import React, { memo, useCallback, useEffect, useRef } from 'react';
-import { ListRenderItem } from 'react-native';
-import { FlatList, FlatListRef } from '../../../../components';
+import {} from 'react-native';
+import {
+  FlatList,
+  FlatListRef,
+  FlatListRenderItem,
+  View,
+} from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 import { Item } from './Item';
 import { getActiveChatMessagesOrderByCreatedAt, Message } from './Messages';
 
 export const Items = memo(function ChatMessageItems() {
-  const itemsRef = useRef<FlatListRef>(null);
+  const itemsRef = useRef<FlatListRef<Message>>(null);
   const colors = useColors();
   const messages = useRootSelector(getActiveChatMessagesOrderByCreatedAt);
-  const renderItem = useCallback<ListRenderItem<Message>>(
+  const renderItem = useCallback<FlatListRenderItem<Message>>(
     ({ item }) => (
       <Item
         item={item}
@@ -26,15 +31,22 @@ export const Items = memo(function ChatMessageItems() {
   }, [messages]);
 
   return (
-    <FlatList
-      contentContainerStyle={{ padding: spacing(4) }}
-      data={messages}
-      initialNumToRender={0}
-      inverted
-      keyExtractor={keyExtractor}
-      onRef={itemsRef}
-      renderItem={renderItem}
-      style={{ backgroundColor: colors.background.secondary }}
-    />
+    <View
+      backgroundColor="secondary"
+      flex={1}
+    >
+      <FlatList
+        contentContainerStyle={{
+          backgroundColor: colors.background.secondary,
+          padding: spacing(4),
+        }}
+        data={messages}
+        estimatedItemSize={100}
+        inverted
+        keyExtractor={keyExtractor}
+        onRef={itemsRef}
+        renderItem={renderItem}
+      />
+    </View>
   );
 });

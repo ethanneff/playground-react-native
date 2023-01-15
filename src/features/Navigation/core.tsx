@@ -3,11 +3,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { memo, Suspense } from 'react';
 import Config from 'react-native-config';
 import Admin from '../../apps/Admin';
-import { Loader } from '../../components';
-import { RootRoutes } from './types';
-import { useNavScreenOptions } from './useNavScreenOptions';
-import { usePersistedState } from './usePersistedState';
-
 import CantHurtMe from '../../apps/CantHurtMe';
 import Checklists from '../../apps/Checklists';
 import ComfortZone from '../../apps/ComfortZone';
@@ -19,6 +14,10 @@ import Playground from '../../apps/Playground';
 import Portfolio from '../../apps/Portfolio';
 import Progress from '../../apps/Progress';
 import TheOneThing from '../../apps/TheOneThing';
+import { Loader } from '../../components';
+import { RootRoutes } from './types';
+import { useNavScreenOptions } from './useNavScreenOptions';
+import { usePersistedState } from './usePersistedState';
 
 const Stack = createNativeStackNavigator<RootRoutes>();
 const linking = {

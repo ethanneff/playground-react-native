@@ -1,6 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem } from 'react-native';
-import { FlatList, View } from '../../../components';
+import { FlatList, FlatListRenderItem, View } from '../../../components';
 import { useRootSelector } from '../../../redux';
 import { completeConfig } from '../utils';
 import { AddItem } from './AddItem';
@@ -20,14 +19,6 @@ export const Board = memo(function Board({
   const listSize = listWidth + completeConfig.padding;
   const board = useRootSelector((s) => s.completeItem.items[projectItemId]);
   const getItemId = useCallback((item: string) => item, []);
-  const getItemLayout = useCallback(
-    (_: string[] | null | undefined, index: number) => ({
-      index,
-      length: listSize,
-      offset: listSize * index,
-    }),
-    [listSize],
-  );
 
   const renderAddList = useCallback(() => {
     return (
@@ -40,12 +31,11 @@ export const Board = memo(function Board({
     );
   }, [board.id, listWidth]);
 
-  const renderList = useCallback<ListRenderItem<string>>(
+  const renderList = useCallback<FlatListRenderItem<string>>(
     ({ item }) => {
       return (
         <List
           itemId={item}
-          key={item}
           listWidth={listWidth}
           maxHeight={listMaxHeight}
           orientation="horizontal"
@@ -70,7 +60,6 @@ export const Board = memo(function Board({
           contentContainerStyle={{ padding: completeConfig.padding }}
           data={board.children}
           decelerationRate="fast"
-          getItemLayout={getItemLayout}
           horizontal
           keyExtractor={getItemId}
           keyboardShouldPersistTaps="handled"

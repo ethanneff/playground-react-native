@@ -1,18 +1,20 @@
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import {
   Card,
-  FlatList,
+  FlatListRenderItem,
   Icon,
+  MasonryFlashList,
+  Spacing,
   Text,
   TouchableOpacity,
   View,
 } from '../../components';
-import { spacing, useColors } from '../../features';
+import { spacing } from '../../features';
 import { getLandscapeOrientation, useRootSelector } from '../../redux';
 import { DailyProgress } from './DailyProgress';
-import { app } from './data';
 import { ProfileLevel } from './ProfileLevel';
+import { app } from './data';
 
 type Props = {
   onProfilePress(): void;
@@ -23,9 +25,8 @@ export const List = memo(function List({
   onProfilePress,
   onSettingsPress,
 }: Props) {
-  const colors = useColors();
   const landscape = useRootSelector(getLandscapeOrientation);
-  const columns = landscape ? 4 : 2;
+  const columns = landscape ? 5 : 3;
 
   const keyExtractor = useCallback((id: string) => app.goals.byId[id].id, []);
 
@@ -38,28 +39,19 @@ export const List = memo(function List({
 
   const onPress = useCallback(() => undefined, []);
 
-  const renderItem = useCallback<ListRenderItem<string>>(
+  const renderItem = useCallback<FlatListRenderItem<string>>(
     ({ index, item }) => {
       const data = app.goals.byId[item];
       return (
-        <View
-          style={{
-            flex: 1,
-            marginLeft: index % 2 === 0 ? 0 : spacing(2),
-            marginRight: index % 2 === 0 ? spacing(2) : 0,
-          }}
-        >
-          <Card
-            key={data.id}
-            onPress={onPress}
-          >
+        <View style={{ padding: spacing(2), paddingBottom: 0 }}>
+          <Card onPress={onPress}>
             <Text
               bold
               center
-              style={{ paddingBottom: spacing(4) }}
-              title={`Challenge #${index + 1}`}
+              title={`#${index + 1}`}
               type="subtitle1"
             />
+            <Spacing padding={1} />
             <Text
               center
               title={data.challenge}
@@ -107,17 +99,21 @@ export const List = memo(function List({
   );
 
   return (
-    <FlatList
-      ListHeaderComponent={renderHeader}
-      contentContainerStyle={styles.list}
-      data={app.goals.orderById}
-      key={columns}
-      keyExtractor={keyExtractor}
-      keyboardShouldPersistTaps="handled"
-      numColumns={columns}
-      renderItem={renderItem}
-      showsVerticalScrollIndicator={false}
-      style={{ backgroundColor: colors.background.secondary }}
-    />
+    <View
+      backgroundColor="secondary"
+      flex={1}
+    >
+      <MasonryFlashList
+        ListHeaderComponent={renderHeader}
+        contentContainerStyle={styles.list}
+        data={app.goals.orderById}
+        estimatedItemSize={120}
+        keyExtractor={keyExtractor}
+        keyboardShouldPersistTaps="handled"
+        numColumns={columns}
+        renderItem={renderItem}
+        showsVerticalScrollIndicator={false}
+      />
+    </View>
   );
 });

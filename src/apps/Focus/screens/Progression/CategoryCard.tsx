@@ -3,8 +3,14 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import dayjs, { Dayjs } from 'dayjs';
 import isToday from 'dayjs/plugin/isToday';
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem } from 'react-native';
-import { FlatList, Text, TouchableOpacity, View } from '../../../../components';
+import {
+  FlatList,
+  FlatListRenderItem,
+  Spacing,
+  Text,
+  TouchableOpacity,
+  View,
+} from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { AuthStackRoutes, Category } from '../../types';
 dayjs.extend(isToday);
@@ -30,7 +36,7 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
     navigate('progression-details', { category: categoryPress });
   };
 
-  const renderItem = useCallback<ListRenderItem<number>>(
+  const renderItem = useCallback<FlatListRenderItem<number>>(
     ({ index }) => {
       const historical = day.subtract(index, 'day');
       const weekend = isWeekend(historical);
@@ -104,13 +110,14 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
           />
         ) : null}
       </View>
+      <Spacing padding={1} />
       <FlatList
         data={mockData}
+        estimatedItemSize={28}
         horizontal
         inverted
         renderItem={renderItem}
         showsHorizontalScrollIndicator={false}
-        style={{ marginTop: spacing(2) }}
       />
     </TouchableOpacity>
   );

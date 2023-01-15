@@ -40,7 +40,6 @@ export const CalendarDay = ({
     <TouchableOpacity
       disabled={disabled}
       flex
-      key={day.id}
       onPress={onSelected}
       style={{ alignItems: 'center' }}
     >

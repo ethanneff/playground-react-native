@@ -1,13 +1,13 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { ListRenderItem } from 'react-native';
 import { View } from '../../components';
 import { spacing } from '../../features';
 import { Button } from '../Button';
 import { Card } from '../Card';
-import { FlatList } from '../FlatList';
+import { FlatList, FlatListRenderItem } from '../FlatList';
 import { Loader } from '../Loader';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
+import { Week } from './Week';
 import { getApiActivity } from './api';
 import { ActivityDay, ActivityModel, ActivityWeek, Site } from './types';
 import {
@@ -16,7 +16,6 @@ import {
   getSubmissionFormat,
   updateActivitySquares,
 } from './utils';
-import { Week } from './Week';
 
 type Props = {
   margin?: number;
@@ -93,10 +92,9 @@ export const Activity = memo(function Activity({
     [],
   );
 
-  const renderItem = useCallback<ListRenderItem<ActivityWeek>>(
-    ({ index, item }) => (
+  const renderItem = useCallback<FlatListRenderItem<ActivityWeek>>(
+    ({ item }) => (
       <Week
-        index={index}
         item={item}
         margin={margin}
         max={state.activity.max}
@@ -150,8 +148,8 @@ export const Activity = memo(function Activity({
         <>
           <FlatList
             data={state.activity.matrix}
+            estimatedItemSize={28}
             horizontal
-            initialNumToRender={0}
             inverted
             keyExtractor={keyExtractor}
             keyboardShouldPersistTaps="handled"

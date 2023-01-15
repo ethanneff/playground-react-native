@@ -51,7 +51,6 @@ export const Projects = memo(function Projects() {
       >
         <List
           itemId={itemId}
-          key={itemId}
           maxHeight={maxHeight}
           parentItemId={null}
         />

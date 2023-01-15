@@ -1,7 +1,6 @@
 import React, { memo, useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
-import { TextInput, TextInputIcon, View } from '../../../components';
-import { Card } from './Card';
+import { Card, TextInput, TextInputIcon, View } from '../../../components';
 import { ItemDetailHeader } from './ItemDetailHeader';
 
 type OnSubmit = (text: string) => void;

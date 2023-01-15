@@ -88,7 +88,6 @@ const ModalManager = memo(function ModalManager({
             title="hello hello hello hello"
             type="h1"
           />
-
           <Input
             onChangeText={handleTextChange}
             title="hello"
@@ -137,31 +136,31 @@ export const Modals = memo(function Modals() {
           />
           <Button
             onPress={handleModalChange('loading')}
-            title="loading"
+            title="✅ loading"
           />
           <Button
             onPress={handleModalChange('action-sheet')}
-            title="action sheet ❌ need to build"
+            title="❌ action sheet"
           />
           <Button
             onPress={handleModalChange('notification')}
-            title="notification ❌ missing background"
+            title="❌ notification"
           />
           <Button
             onPress={handleModalChange('alert')}
-            title="alert"
+            title="✅ alert"
           />
           <Button
             onPress={handleModalChange('modal-large')}
-            title="Modal large"
+            title="✅ Modal large"
           />
           <Button
             onPress={handleModalChange('modal-small')}
-            title="Modal small"
+            title="✅ Modal small"
           />
           <Button
             onPress={handleModalChange('modal-keyboard')}
-            title="Modal keyboard"
+            title="❌ Modal keyboard"
           />
           <Text
             emphasis="low"
@@ -170,15 +169,15 @@ export const Modals = memo(function Modals() {
           />
           <Button
             onPress={handleModalChange('reminder')}
-            title="Reminder ❌ incomplete"
+            title="❌ Reminder incomplete"
           />
           <Button
             onPress={handleModalChange('rate-app')}
-            title="Rate app ✅"
+            title="✅ Rate app"
           />
           <Button
             onPress={handleModalChange('login')}
-            title="login ❌ incomplete"
+            title="❌ login incomplete"
           />
           <Text
             center

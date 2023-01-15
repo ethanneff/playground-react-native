@@ -4,11 +4,12 @@ import { v4 } from 'uuid';
 import {
   Button,
   Screen,
+  Spacing,
   Text,
   TouchableOpacity,
   View,
 } from '../../../../components';
-import { useColors } from '../../../../features';
+import { spacing, useColors, useDropShadow } from '../../../../features';
 import {
   getLandscapeOrientation,
   getSmallestDimension,
@@ -60,6 +61,8 @@ export const TicTacToe = memo(function TicTacToe() {
     [],
   );
 
+  const dropShadow = useDropShadow();
+
   return (
     <Screen
       onLeftPress={goBack}
@@ -74,6 +77,12 @@ export const TicTacToe = memo(function TicTacToe() {
           justifyContent: 'center',
         }}
       >
+        <Text
+          emphasis="medium"
+          title={turnTitle}
+          type="h5"
+        />
+        <Spacing padding={2} />
         <View>
           {game.board.map((row, i) => (
             <View
@@ -90,11 +99,11 @@ export const TicTacToe = memo(function TicTacToe() {
                   style={{
                     alignItems: 'center',
                     backgroundColor: colors.background.primaryA,
-                    borderColor: colors.background.secondary,
-                    borderWidth: 2,
                     height: size,
                     justifyContent: 'center',
+                    margin: spacing(1),
                     width: size,
+                    ...dropShadow(1),
                   }}
                 >
                   <Text
@@ -106,13 +115,14 @@ export const TicTacToe = memo(function TicTacToe() {
             </View>
           ))}
         </View>
-        <View style={{ alignItems: 'center' }}>
-          <Text title={turnTitle} />
-          <Button
-            onPress={onButtonPress}
-            title={buttonTitle}
-          />
-        </View>
+        <Spacing padding={2} />
+
+        <Button
+          center
+          emphasis="medium"
+          onPress={onButtonPress}
+          title={buttonTitle}
+        />
       </View>
     </Screen>
   );

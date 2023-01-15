@@ -10,21 +10,17 @@ import {
 } from 'react-native';
 import { v4 } from 'uuid';
 import {
+  Button,
   Card,
   Icon,
   IconName,
   Screen,
   ScrollView,
+  Spacing,
   Text,
-  TouchableOpacity,
   View,
 } from '../../../../components';
-import {
-  spacing,
-  useColors,
-  useDriver,
-  useDropShadow,
-} from '../../../../features';
+import { spacing, useColors, useDriver } from '../../../../features';
 import { getWidth, useRootSelector } from '../../../../redux';
 import { formatRelativeDate } from './utils';
 
@@ -42,6 +38,7 @@ type SwipeCardProps = {
   height: number;
   index: number;
   item: SwipeItem;
+  onSwipe: (value: boolean) => void;
   onSwipeComplete(): void;
   onSwipePercentChange(percent: number): void;
 };
@@ -49,15 +46,16 @@ type SwipeCardProps = {
 const SwipeCard = memo(function SwipeCard({
   height,
   item,
+  onSwipe,
   onSwipeComplete,
   onSwipePercentChange,
 }: SwipeCardProps) {
   const { body, button, date, icon, image, title } = item;
   const cardWidth = useRef(0);
   const colors = useColors();
+
   const useNativeDriver = useDriver();
   const width = useRootSelector(getWidth);
-  const dropShadow = useDropShadow();
   const imageHeight = height / 1.5;
   const swipeThreshold = width / 3;
   const touchThreshold = 50;
@@ -77,28 +75,34 @@ const SwipeCard = memo(function SwipeCard({
     [cardWidth, onSwipePercentChange],
   );
 
-  const panResponder = PanResponder.create({
-    onMoveShouldSetPanResponder: (_, gesture) =>
-      Math.abs(gesture.dx) > touchThreshold ||
-      Math.abs(gesture.dy) > touchThreshold,
-    onPanResponderMove: (_, gesture) => {
-      setCardWidth(gesture.dx);
-      position.setValue({ x: gesture.dx, y: gesture.dy });
-    },
-    onPanResponderRelease: (_, gesture) => {
-      const x =
-        gesture.dx > swipeThreshold
-          ? width
-          : gesture.dx < -swipeThreshold
-          ? -width
-          : 0;
-      Animated.spring(position, {
-        toValue: { x, y: 0 },
-        useNativeDriver,
-      }).start();
-    },
-    onStartShouldSetPanResponder: () => true,
-  });
+  const panResponder = useRef(
+    PanResponder.create({
+      onMoveShouldSetPanResponder: (_, gesture) =>
+        Math.abs(gesture.dx) > touchThreshold ||
+        Math.abs(gesture.dy) > touchThreshold,
+      onPanResponderMove: (_, gesture) => {
+        setCardWidth(gesture.dx);
+        position.setValue({ x: gesture.dx, y: gesture.dy });
+      },
+      onPanResponderRelease: (_, gesture) => {
+        const x =
+          gesture.dx > swipeThreshold
+            ? width
+            : gesture.dx < -swipeThreshold
+            ? -width
+            : 0;
+        Animated.spring(position, {
+          toValue: { x, y: 0 },
+          useNativeDriver,
+        }).start();
+        onSwipe(false);
+      },
+      onPanResponderStart: () => {
+        onSwipe(true);
+      },
+      onStartShouldSetPanResponder: () => true,
+    }),
+  ).current;
 
   return (
     <Animated.View
@@ -106,20 +110,21 @@ const SwipeCard = memo(function SwipeCard({
       {...panResponder.panHandlers} // eslint-disable-line react/jsx-props-no-spreading
       style={{
         backgroundColor: colors.background.primaryA,
-        borderColor: colors.border.accent,
+        borderColor: colors.border.secondary,
         borderRadius: spacing(1),
+        borderWidth: 1,
         height,
         left: position.x,
+        overflow: 'hidden',
         position: 'absolute',
         width: '100%',
-        ...dropShadow(4),
       }}
     >
-      <TouchableOpacity
-        flex
-        onPress={onSwipeComplete}
+      <View
+        flex={1}
+        flexShrink={1}
       >
-        <View style={{ flex: 1, flexDirection: 'row' }}>
+        <View style={{ flexDirection: 'row' }}>
           {image ? (
             <Image
               source={image}
@@ -130,7 +135,10 @@ const SwipeCard = memo(function SwipeCard({
               }}
             />
           ) : null}
-          <View style={{ flex: 1, padding: spacing(2) }}>
+          <View
+            flexShrink={1}
+            style={{ padding: spacing(2) }}
+          >
             <View
               style={{
                 alignItems: 'center',
@@ -149,19 +157,22 @@ const SwipeCard = memo(function SwipeCard({
               />
               <Text title={formatRelativeDate(date)} />
             </View>
+            <Spacing padding={2} />
             <Text
               ellipsizeMode="tail"
               numberOfLines={2}
-              style={{ flex: 1, paddingTop: spacing(2) }}
               title={body}
             />
-            <Text
+            <Spacing padding={2} />
+            <Button
               color="positive"
+              noPadding
+              onPress={onSwipeComplete}
               title={button.toUpperCase()}
             />
           </View>
         </View>
-      </TouchableOpacity>
+      </View>
     </Animated.View>
   );
 });
@@ -274,11 +285,13 @@ const Badge = memo(function Badge({ count, percent }: BadgeProps) {
 type SwipeCardsProps = {
   height?: number;
   items: SwipeItem[];
+  onSwipe: (value: boolean) => void;
 };
 
 const SwipeCards = memo(function SwipeCardList({
-  height = 100,
+  height = 125,
   items,
+  onSwipe,
 }: SwipeCardsProps) {
   const [feed, setFeed] = useState({
     items,
@@ -308,6 +321,7 @@ const SwipeCards = memo(function SwipeCardList({
           index={index}
           item={item}
           key={item.id}
+          onSwipe={onSwipe}
           onSwipeComplete={onSwipeComplete}
           onSwipePercentChange={onSwipePercentChange}
         />
@@ -334,6 +348,11 @@ const ImagePlaceholder = memo(function ImagePlaceholder() {
 export const SwipeFeed = memo(function SwipeFeed() {
   const { goBack } = useNavigation();
   const colors = useColors();
+  const [swiping, setSwiping] = useState(false);
+
+  const onSwipe = useCallback((value: boolean) => {
+    setSwiping(value);
+  }, []);
 
   return (
     <Screen
@@ -342,6 +361,7 @@ export const SwipeFeed = memo(function SwipeFeed() {
       title="Swipe Feed"
     >
       <ScrollView
+        scrollEnabled={!swiping}
         style={{
           backgroundColor: colors.background.secondary,
           padding: spacing(4),
@@ -349,7 +369,10 @@ export const SwipeFeed = memo(function SwipeFeed() {
       >
         <ImagePlaceholder />
         <ImagePlaceholder />
-        <SwipeCards items={initialItems} />
+        <SwipeCards
+          items={initialItems}
+          onSwipe={onSwipe}
+        />
         <ImagePlaceholder />
         <ImagePlaceholder />
         <ImagePlaceholder />

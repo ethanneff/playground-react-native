@@ -63,7 +63,6 @@ export const Item = memo(function ReminderItem({
 
   return hidden ? null : (
     <TouchableOpacity
-      key={title}
       onPress={onPress}
       style={[styles.button, style]}
     >

@@ -2,6 +2,7 @@ import React, { memo, ReactNode, useCallback, useEffect, useRef } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import {
   SoundManager,
+  spacing,
   useColors,
   useDriver,
   useDropShadow,
@@ -10,6 +11,7 @@ import { useRootSelector } from '../../redux';
 import { Card } from '../Card';
 import { ScrollView } from '../ScrollView';
 import { TouchableWithoutFeedback } from '../TouchableWithoutFeedback';
+import { View } from '../View';
 
 type ModalProps = {
   backgroundColor?: string;
@@ -119,13 +121,17 @@ export const Modal = memo(function Modal({
         <Card
           elevation={elevation}
           noMargin
+          noPadding
           style={styles.modal}
           testID="modal"
         >
           {noScroll ? (
-            children
+            <View padding={spacing(4)}>{children}</View>
           ) : (
             <ScrollView
+              contentContainerStyle={{
+                padding: spacing(4),
+              }}
               keyboardShouldPersistTaps="handled"
               showsVerticalScrollIndicator={false}
             >

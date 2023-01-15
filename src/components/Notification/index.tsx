@@ -119,7 +119,7 @@ export const Notification = memo(function Notification({
     [noSwipe, pan, useNativeDriver],
   );
 
-  const panResponder = React.useRef(
+  const panResponder = useRef(
     PanResponder.create({
       onMoveShouldSetPanResponder: () => true,
       onPanResponderMove,

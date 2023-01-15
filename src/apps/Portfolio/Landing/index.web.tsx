@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from '../../../components';
-import { spacing, useColors } from '../../../features';
+import { spacing, useColors } from '../../../features'; // eslint-disable-line import/order
 
 const missingCallback = () => undefined;
 

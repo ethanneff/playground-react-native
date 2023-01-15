@@ -1,9 +1,9 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem } from 'react-native';
 import {
   Card,
   FlatList,
+  FlatListRenderItem,
   Screen,
   Spacing,
   Text,
@@ -23,12 +23,9 @@ export const Landing = memo(function Playground() {
     (item: string) => () => navigate(item),
     [navigate],
   );
-  const renderItem = useCallback<ListRenderItem<string>>(
+  const renderItem = useCallback<FlatListRenderItem<string>>(
     ({ item }) => (
-      <TouchableOpacity
-        key={item}
-        onPress={navToItem(item)}
-      >
+      <TouchableOpacity onPress={navToItem(item)}>
         <View style={{ paddingVertical: spacing(2) }}>
           <Text
             bold
@@ -70,6 +67,7 @@ export const Landing = memo(function Playground() {
                 paddingHorizontal: spacing(4),
               }}
               data={landingRoutes.storybook}
+              estimatedItemSize={33}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
@@ -90,6 +88,7 @@ export const Landing = memo(function Playground() {
                 paddingHorizontal: spacing(4),
               }}
               data={landingRoutes.features}
+              estimatedItemSize={33}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
@@ -111,6 +110,7 @@ export const Landing = memo(function Playground() {
                 paddingHorizontal: spacing(4),
               }}
               data={landingRoutes.games}
+              estimatedItemSize={33}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
@@ -131,6 +131,7 @@ export const Landing = memo(function Playground() {
                 paddingHorizontal: spacing(4),
               }}
               data={landingRoutes.creations}
+              estimatedItemSize={33}
               keyExtractor={keyExtractor}
               keyboardShouldPersistTaps="handled"
               renderItem={renderItem}

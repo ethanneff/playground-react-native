@@ -1,8 +1,7 @@
 import React, { memo, ReactNode } from 'react';
-import { View } from '../../../components';
+import { Card, View } from '../../../components';
 import { completeConfig } from '../utils';
 import { AddItem } from './AddItem';
-import { Card } from './Card';
 import { ListHeader } from './ListHeader';
 import { ListItems } from './ListItems';
 
@@ -27,10 +26,15 @@ export const List = memo(function List({
   const padding = horizontal ? 0 : completeConfig.padding;
   const margin = horizontal ? 'right' : 'bottom';
   return (
-    <View style={{ maxHeight, padding }}>
+    <View style={{ flex: 1, maxHeight, padding }}>
       <Card
-        margin={margin}
-        width={listWidth}
+        containerStyle={{
+          flex: 1,
+          marginBottom: margin === 'bottom' ? completeConfig.padding : 0,
+          marginRight: margin === 'right' ? completeConfig.padding : 0,
+        }}
+        contentStyle={{ flex: 1, margin, width: listWidth }}
+        elevation={0}
       >
         <ListHeader
           itemId={itemId}

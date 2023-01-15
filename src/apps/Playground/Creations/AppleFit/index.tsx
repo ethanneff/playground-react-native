@@ -42,7 +42,7 @@ export const AppleFit = memo(function PlaygroundAppleFit() {
       onLeftPress={goBack}
       title="Apple Fit"
     >
-      <View style={{ alignItems: 'center' }}>
+      <View alignItems="center">
         <AppleActivity
           animate
           backgroundColor="primaryA"

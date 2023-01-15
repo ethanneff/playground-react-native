@@ -1,9 +1,9 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem } from 'react-native';
 import {
   Button,
   FlatList,
+  FlatListRenderItem,
   Icon,
   Screen,
   TouchableOpacity,
@@ -40,7 +40,7 @@ export default memo(function Checklist() {
     [dispatch, navigate],
   );
 
-  const renderItem = useCallback<ListRenderItem<ChecklistItem>>(
+  const renderItem = useCallback<FlatListRenderItem<ChecklistItem>>(
     ({ item }) => (
       <View style={{ alignItems: 'center', flexDirection: 'row' }}>
         <Icon
@@ -83,6 +83,7 @@ export default memo(function Checklist() {
     >
       <FlatList
         data={items}
+        estimatedItemSize={0}
         keyExtractor={keyExtractor}
         keyboardShouldPersistTaps="handled"
         renderItem={renderItem}

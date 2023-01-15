@@ -1,6 +1,5 @@
 export * from './AddItem';
 export * from './Board';
-export * from './Card';
 export * from './DeleteModal';
 export * from './ItemContext';
 export * from './ItemDetailHeader';

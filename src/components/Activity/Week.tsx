@@ -7,7 +7,6 @@ import { Day } from './Day';
 import { ActivityDay, ActivityWeek } from './types';
 
 type Props = {
-  index: number;
   item: ActivityWeek;
   margin: number;
   max: number;
@@ -16,7 +15,6 @@ type Props = {
 };
 
 export const Week = memo(function Week({
-  index,
   item,
   margin,
   max,
@@ -28,7 +26,7 @@ export const Week = memo(function Week({
   const header = showHeader ? dayjs(first).format('MMM') : ' ';
 
   return (
-    <View key={index}>
+    <View>
       <Text
         center
         emphasis="medium"

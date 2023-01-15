@@ -25,18 +25,20 @@ export const useGesture = ({
   panHandlers: GestureResponderHandlers;
 } => {
   const direction = useRef<Direction>('up');
-  const panResponder: PanResponderInstance = PanResponder.create({
-    onPanResponderRelease: (_, g) => {
-      let direct: Direction = 'up';
-      if (Math.abs(g.dx) >= Math.abs(g.dy))
-        direct = g.dx >= 0 ? 'right' : 'left';
-      else direct = g.dy >= 0 ? 'down' : 'up';
+  const panResponder: PanResponderInstance = useRef(
+    PanResponder.create({
+      onPanResponderRelease: (_, g) => {
+        let direct: Direction = 'up';
+        if (Math.abs(g.dx) >= Math.abs(g.dy))
+          direct = g.dx >= 0 ? 'right' : 'left';
+        else direct = g.dy >= 0 ? 'down' : 'up';
 
-      const reverse = noReverse && inverse[direct] === direction.current;
-      direction.current = reverse ? direction.current : direct;
-    },
-    onStartShouldSetPanResponder: () => true,
-  });
+        const reverse = noReverse && inverse[direct] === direction.current;
+        direction.current = reverse ? direction.current : direct;
+      },
+      onStartShouldSetPanResponder: () => true,
+    }),
+  ).current;
 
   return { direction, panHandlers: panResponder.panHandlers };
 };

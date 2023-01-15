@@ -9,8 +9,8 @@ import {
   useDropShadow,
 } from '../../features';
 import { Badge } from './Badge';
-import { IconName } from './config';
 import { Source } from './Source';
+import { IconName } from './config';
 
 /*
 Usage: <Icon name='check' />

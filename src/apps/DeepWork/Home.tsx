@@ -63,7 +63,7 @@ export const Home = memo(function Home() {
           <Text
             center
             emphasis="medium"
-            title="Deep Work = Focus + Intensity"
+            title="Deep Work = Time + Intensity"
             type="h5"
           />
         </Card>
@@ -111,7 +111,7 @@ export const Home = memo(function Home() {
         </TouchableOpacity>
         <TouchableOpacity onPress={onItemAdd}>
           <Icon
-            color="primaryA"
+            color="primaryB"
             fab
             name="pencil"
           />

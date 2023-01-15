@@ -211,7 +211,10 @@ export const WeekendPlanner = memo(function Playground52Weeks() {
                   justifyContent="center"
                   margin={spacing(1)}
                 >
-                  <Text title={month} />
+                  <Text
+                    emphasis="medium"
+                    title={month}
+                  />
                 </View>
                 {weeks.map((week) => (
                   <View

@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
-import { ListRenderItem } from 'react-native';
 import {
   Card,
   FlatList,
+  FlatListRenderItem,
   Icon,
   Modal,
   Text,
@@ -39,7 +39,7 @@ export const Questionnaires = (): JSX.Element => {
   const handleItemMenu = useCallback(() => {
     setActionSheet((state) => !state);
   }, []);
-  const renderItem = useCallback<ListRenderItem<Questionnaire>>(
+  const renderItem = useCallback<FlatListRenderItem<Questionnaire>>(
     ({ item }) => {
       const { length } = item.questions;
       const subtitle = `${length} question${length === 1 ? '' : 's'}`;
@@ -81,6 +81,7 @@ export const Questionnaires = (): JSX.Element => {
     <>
       <FlatList
         data={questionnaires}
+        estimatedItemSize={161}
         extraData={selected}
         keyExtractor={keyExtractor}
         keyboardShouldPersistTaps="handled"

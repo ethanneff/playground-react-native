@@ -23,7 +23,6 @@ export * from './MaskedView';
 export * from './Masonry';
 export * from './Modal';
 export * from './Notification';
-export * from './RecyclerFlatList';
 export * from './RelativeDate';
 export * from './Screen';
 export * from './ScrollView';

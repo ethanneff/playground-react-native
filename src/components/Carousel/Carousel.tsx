@@ -1,9 +1,9 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { ListRenderItem, ViewToken } from 'react-native';
+import { ViewToken } from 'react-native';
 import { View } from '../../components';
 import { spacing } from '../../features';
 import { getWidth, useRootSelector } from '../../redux';
-import { FlatList, FlatListRef } from '../FlatList';
+import { FlatList, FlatListRef, FlatListRenderItem } from '../FlatList';
 import { Dots } from './Dots';
 import { Item } from './Item';
 import { CarouselSlide } from './types';
@@ -23,7 +23,7 @@ export const Carousel = memo(function Carousel({
 }: Props) {
   const loopingEnabled = useRef(false);
   const width = useRootSelector(getWidth);
-  const flatList = useRef<FlatListRef>(null);
+  const flatList = useRef<FlatListRef<CarouselSlide>>(null);
   const activeIndexRef = useRef(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const loopTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -84,7 +84,7 @@ export const Carousel = memo(function Carousel({
     };
   }, [duration, loop]);
 
-  const renderItem = useCallback<ListRenderItem<CarouselSlide>>(
+  const renderItem = useCallback<FlatListRenderItem<CarouselSlide>>(
     ({ item }) => (
       <Item
         item={item}
@@ -101,6 +101,9 @@ export const Carousel = memo(function Carousel({
     >
       <FlatList
         data={slides}
+        // disableAutoLayout
+        // disableHorizontalListHeightMeasurement
+        estimatedItemSize={500}
         horizontal
         keyExtractor={keyExtractor}
         onRef={flatList}

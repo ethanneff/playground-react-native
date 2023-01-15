@@ -4,7 +4,7 @@ import { spacing } from '../../../../features';
 
 export const LoadingSection = (): JSX.Element => {
   return (
-    <Card style={{ marginBottom: spacing(4) }}>
+    <Card containerStyle={{ marginBottom: spacing(4) }}>
       <View>
         <View flexDirection="row">
           <SkeletonLoader

@@ -3,7 +3,6 @@ import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
-
 import React from 'react';
 import { TabIcons, useNavScreenOptions } from '../../features';
 import {

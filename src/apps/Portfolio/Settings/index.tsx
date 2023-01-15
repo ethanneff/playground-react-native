@@ -1,7 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { ListRenderItem } from 'react-native';
-import { Button, FlatList, Screen, Text, View } from '../../../components';
+import {
+  Button,
+  FlatList,
+  FlatListRenderItem,
+  Screen,
+  Text,
+  View,
+} from '../../../components';
 import {
   changeTheme,
   Theme,
@@ -18,12 +24,11 @@ export const Settings = memo(function PortfolioSettings() {
     (theme: Theme) => () => dispatch(changeTheme(theme)),
     [dispatch],
   );
-  const renderItem = useCallback<ListRenderItem<Theme>>(
+  const renderItem = useCallback<FlatListRenderItem<Theme>>(
     ({ item }) => (
       <View>
         <Button
           color={currentTheme === item ? 'positive' : 'primaryA'}
-          key={item}
           onPress={themePress(item)}
           title={item}
         />
@@ -51,6 +56,7 @@ export const Settings = memo(function PortfolioSettings() {
       <FlatList
         ListHeaderComponent={renderHeader}
         data={themes}
+        estimatedItemSize={51}
         keyExtractor={keyExtractor}
         keyboardShouldPersistTaps="handled"
         renderItem={renderItem}

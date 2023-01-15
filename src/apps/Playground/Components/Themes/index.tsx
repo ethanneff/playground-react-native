@@ -1,10 +1,11 @@
 // TODO: slider on web
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
-import { Image, ImageSourcePropType, ListRenderItem } from 'react-native';
+import { Image, ImageSourcePropType } from 'react-native';
 import {
   Button,
   Card,
+  FlatListRenderItem,
   Masonry,
   Screen,
   ScrollView,
@@ -96,11 +97,11 @@ export const Themes = memo(function Themes() {
   const columns = landscape ? 5 : 2;
   const onPress = useCallback(() => undefined, []);
 
-  const renderItem = useCallback<ListRenderItem<CardItem>>(
-    ({ index, item }) => (
+  const renderItem = useCallback<FlatListRenderItem<CardItem>>(
+    ({ item }) => (
       <Card
         elevation={elevation}
-        key={index}
+        key={item.value}
         onPress={onPress}
       >
         <Text

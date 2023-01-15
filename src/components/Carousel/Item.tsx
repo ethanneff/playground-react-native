@@ -18,6 +18,7 @@ export const Item = memo(function Item({ item, width }: Props) {
     item: {
       alignItems: 'center',
       backgroundColor: item.backgroundColor ?? colors.background.primaryA,
+      height: '100%',
       justifyContent: 'center',
       padding: spacing(4),
       width,
@@ -26,10 +27,7 @@ export const Item = memo(function Item({ item, width }: Props) {
 
   return (
     <View style={styles.item}>
-      <View
-        flex={1}
-        justifyContent="center"
-      >
+      <View justifyContent="center">
         {item.icon ? (
           <Icon
             name={item.icon}
@@ -37,7 +35,7 @@ export const Item = memo(function Item({ item, width }: Props) {
           />
         ) : null}
       </View>
-      <View flex={1}>
+      <View>
         {item.title ? (
           <Text
             center

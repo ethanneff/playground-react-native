@@ -1,8 +1,9 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { memo, useCallback, useEffect, useState } from 'react';
-import { Animated, ListRenderItem, StyleSheet } from 'react-native';
+import React, { memo, useCallback, useState } from 'react';
+import { Animated, StyleSheet } from 'react-native';
 import {
   FlatList,
+  FlatListRenderItem,
   Icon,
   IconName,
   Input,
@@ -10,13 +11,7 @@ import {
   Text,
   View,
 } from '../../../../components';
-import {
-  colorWithOpacity,
-  spacing,
-  useColors,
-  useDriver,
-} from '../../../../features';
-import { useRootSelector } from '../../../../redux';
+import { colorWithOpacity, spacing, useColors } from '../../../../features';
 
 type Data = {
   id: number;
@@ -52,9 +47,7 @@ type State = {
 };
 
 const iconSearch = 'magnify';
-const iconBack = 'arrow-left';
 const textInputPlaceHolder = 'Search';
-const animationDuration = 400;
 
 export const SearchBar = memo(function PlaygroundSearchbar() {
   const { goBack } = useNavigation();
@@ -64,8 +57,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     iconName: iconSearch,
     input: '',
   });
-  const keyboardVisible = useRootSelector((s) => s.device.keyboardVisible);
-  const useNativeDriver = useDriver();
+
   const translateIcon = state.animation.interpolate({
     inputRange: [0, 0.5, 1],
     outputRange: [1, -60, 1],
@@ -105,43 +97,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     },
   });
 
-  const animate = useCallback(
-    (value: number) => {
-      Animated.timing(state.animation, {
-        duration: animationDuration,
-        toValue: value,
-        useNativeDriver,
-      }).start();
-    },
-    [state.animation, useNativeDriver],
-  );
-
-  const changeIcon = useCallback(
-    (iconName: IconName) => {
-      const iconChangeTimeout = setTimeout(() => {
-        clearTimeout(iconChangeTimeout);
-        setState({ ...state, iconName });
-      }, animationDuration / 2);
-    },
-    [state],
-  );
-
-  const onSearchBarFocus = useCallback(() => {
-    animate(1);
-    changeIcon(iconBack);
-  }, [animate, changeIcon]);
-
-  const onSearchBarUnFocus = useCallback(() => {
-    animate(0);
-    changeIcon(iconSearch);
-  }, [animate, changeIcon]);
-
-  useEffect(() => {
-    if (keyboardVisible) onSearchBarFocus();
-    else onSearchBarUnFocus();
-  });
-
-  const renderItem = useCallback<ListRenderItem<Data>>(
+  const renderItem = useCallback<FlatListRenderItem<Data>>(
     ({ item }) => (
       <Text
         style={styles.item}
@@ -185,6 +141,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
       <Animated.View style={{ backgroundColor: fadeContainer, flex: 1 }}>
         <FlatList
           data={data}
+          estimatedItemSize={65}
           keyExtractor={keyExtractor}
           keyboardShouldPersistTaps="handled"
           renderItem={renderItem}

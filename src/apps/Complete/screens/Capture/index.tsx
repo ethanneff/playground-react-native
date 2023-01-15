@@ -1,14 +1,9 @@
 import React, { memo, useCallback, useRef, useState } from 'react';
 import { LayoutChangeEvent } from 'react-native';
-import { Button, KeyboardHandler, Screen } from '../../../../components';
-import {
-  spacing,
-  useColors,
-  useKeyboardHeight,
-  useLayout,
-} from '../../../../features';
+import { Button, Card, KeyboardHandler, Screen } from '../../../../components';
+import { useColors, useKeyboardHeight, useLayout } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
-import { Card, List } from '../../components';
+import { List } from '../../components';
 import { getInbox } from '../../models';
 
 const initialState = { button: 0, container: 0 };
@@ -19,8 +14,10 @@ export const Capture = memo(function Capture() {
   const containerRefs = useRef(initialState);
   const keyboardHeight = useKeyboardHeight();
   const [containerHeight, setContainerHeight] = useState(0);
-  const keyboardPadding = spacing(keyboardHeight ? 11 : 48);
-  const maxHeight = containerHeight - keyboardHeight - keyboardPadding;
+
+  const maxHeight = containerHeight - keyboardHeight;
+
+  console.log(containerHeight, maxHeight);
 
   const itemId = useRootSelector(getInbox);
   if (!itemId) throw new Error('missing item id');

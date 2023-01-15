@@ -32,7 +32,6 @@ export const Stickers = memo(function Sticker({
       <View style={styles.canvas}>
         <Icon
           color={color}
-          key={icon}
           name={icon}
           size={strokeWidth}
           style={{

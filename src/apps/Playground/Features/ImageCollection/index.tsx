@@ -1,8 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { ListRenderItem } from 'react-native';
 import { useSelector } from 'react-redux';
-import { FlatList, Image, Screen } from '../../../../components';
+import {
+  FlatList,
+  FlatListRenderItem,
+  Image,
+  Screen,
+} from '../../../../components';
 import { useColors } from '../../../../features';
 import { getLandscapeOrientation, getWidth } from '../../../../redux';
 
@@ -49,7 +53,7 @@ export const ImageCollection = memo(function ImageCollection() {
     initialLoad();
   }, [initialLoad]);
 
-  const renderImage = useCallback<ListRenderItem<number>>(
+  const renderImage = useCallback<FlatListRenderItem<number>>(
     ({ item }) => (
       <Image
         height={columnWidth}
@@ -69,6 +73,7 @@ export const ImageCollection = memo(function ImageCollection() {
       <FlatList
         contentContainerStyle={{ backgroundColor: colors.background.secondary }}
         data={data}
+        estimatedItemSize={width / numColumns}
         keyExtractor={keyExtractor}
         keyboardShouldPersistTaps="handled"
         numColumns={numColumns}

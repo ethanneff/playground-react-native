@@ -24,7 +24,6 @@ import {
   BouncingBalls,
   Chat,
   ImageCollection,
-  KeyboardScroll,
   PinchSpread,
   SearchBar,
   SkeletonLoading,
@@ -141,10 +140,7 @@ export default memo(function Games() {
         component={SkeletonLoading}
         name="skeleton-loader"
       />
-      <Stack.Screen
-        component={KeyboardScroll}
-        name="recycler-flatList"
-      />
+
       <Stack.Screen
         component={SearchBar}
         name="search-bar"

@@ -31,7 +31,6 @@ export const Day = memo(function Day({
     : 'transparent';
   return (
     <TouchableOpacity
-      key={String(day.date)}
       onPress={onPress(day)}
       style={{
         backgroundColor,

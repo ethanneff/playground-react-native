@@ -1,19 +1,32 @@
+import {
+  FlashList,
+  FlashListProps,
+  ListRenderItem as RenderItem,
+  MasonryFlashList as Masonry,
+} from '@shopify/flash-list';
 import React, { Ref } from 'react';
-import { FlatListProps } from 'react-native';
-import { GestureFlatList } from '../../conversions';
 
-export type FlatListRef = GestureFlatList | null;
-type Props<ItemT> = FlatListProps<ItemT> & {
-  onRef?: Ref<GestureFlatList<ItemT>>;
+export type FlatListRef<T> = FlashList<T> | null;
+export type FlatListRenderItem<T> = RenderItem<T>;
+
+type Props<ItemT> = FlashListProps<ItemT> & {
+  estimatedItemSize: number;
+  onRef?: Ref<FlashList<ItemT>>;
 };
 
-export const FlatList = <ItemT,>({ onRef, ...rest }: Props<ItemT>) => {
+export const MasonryFlashList = Masonry;
+
+export const FlatList = <ItemT,>({
+  estimatedItemSize,
+  onRef,
+  ...rest
+}: Props<ItemT>) => {
   return (
-    <GestureFlatList
+    <FlashList
+      estimatedItemSize={estimatedItemSize}
       keyboardShouldPersistTaps="handled"
-      // removeClippedSubviews // TODO: why add? this fixes Complete app
-      {...rest} // eslint-disable-line react/jsx-props-no-spreading
       ref={onRef}
+      {...rest} // eslint-disable-line react/jsx-props-no-spreading
     />
   );
 };
