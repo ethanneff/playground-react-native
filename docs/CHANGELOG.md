@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.74.0](https://github.com/ethanneff/playground-react-native/compare/v2.73.1...v2.74.0) (2022-12-20)
+
+
+### Features
+
+* add flipper performance ([5696c85](https://github.com/ethanneff/playground-react-native/commit/5696c85562f5534a56e1a6cc3b1f6eafc84aa9cb))
+
 ## [2.73.1](https://github.com/ethanneff/playground-react-native/compare/v2.73.0...v2.73.1) (2022-12-19)
 
 
