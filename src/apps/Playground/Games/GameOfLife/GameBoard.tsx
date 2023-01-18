@@ -7,7 +7,7 @@ import { useLoop } from './useLoop';
 
 export const GameBoard = memo(function GameBoard() {
   const count = useRootSelector((state) => state.gameOfLife.count);
-  const array = useMemo(() => Array(count).fill(0), [count]);
+  const array = useMemo(() => Array<number>(count).fill(0), [count]);
   useLoop();
 
   return (

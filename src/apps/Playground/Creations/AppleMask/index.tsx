@@ -76,24 +76,24 @@ export const AppleMask = memo(function AppleMask() {
   const sections = [
     {
       description: 'Either side of the face shield can act as the front.',
-      image: require('./one.png'),
+      image: require('./one.png') as ImageSourcePropType,
       imageRatio: 1560 / 750,
       title: 'Align your preferred slots on the face shield and forehead band',
     },
     {
-      image: require('./two.gif'),
+      image: require('./two.gif') as ImageSourcePropType,
       imageRatio: 1560 / 1750,
       title:
         'Remove thin protective films from the face shield and forehead band by peeling from either edge',
     },
     {
-      image: require('./three.gif'),
+      image: require('./three.gif') as ImageSourcePropType,
       imageRatio: 1560 / 950,
       title: 'Thread the strap through the slots and pull to adjust',
     },
     { title: 'Repeat on other side' },
     {
-      image: require('./four.gif'),
+      image: require('./four.gif') as ImageSourcePropType,
       imageRatio: 1560 / 950,
       title: 'Adjust your face shield',
     },

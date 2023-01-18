@@ -7,9 +7,10 @@ export const useLogout = () => {
     try {
       await Firebase.auth().signOut();
     } catch (e) {
+      const error = e instanceof Error ? e.message : e;
       Toast.show({
         props: {
-          description: `${e}`,
+          description: error,
           title: 'Unable to log out',
         },
         type: 'accent',

@@ -87,9 +87,10 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
         console.log('User account created & signed in!');
       })
       .catch((error) => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         if (error.code === 'auth/email-already-in-use')
           console.log('That email address is already in use!');
-
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         if (error.code === 'auth/invalid-email')
           console.log('That email address is invalid!');
 
@@ -106,6 +107,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
         console.log('User signed in anonymously');
       })
       .catch((error) => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         if (error.code === 'auth/operation-not-allowed')
           console.log('Enable anonymous in your firebase console.');
 

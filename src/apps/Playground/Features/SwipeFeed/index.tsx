@@ -4,20 +4,20 @@ import React, { memo, useCallback, useRef, useState } from 'react';
 import {
   Animated,
   Image,
+  PanResponder,
   type ImageSourcePropType,
   type LayoutChangeEvent,
-  PanResponder,
 } from 'react-native';
 import { v4 } from 'uuid';
 import {
   Card,
   Icon,
-  type IconName,
   Screen,
   ScrollView,
   Text,
   TouchableOpacity,
   View,
+  type IconName,
 } from '../../../../components';
 import {
   spacing,
@@ -203,7 +203,7 @@ const initialItems: SwipeItem[] = [
     date: dayjs(),
     icon: 'star-outline',
     id: v4(),
-    image: require('./placeholder.png'),
+    image: require('./placeholder.png') as ImageSourcePropType,
     onPress: () => undefined,
     title: 'Congratulations',
   },
@@ -213,7 +213,7 @@ const initialItems: SwipeItem[] = [
     date: dayjs(),
     icon: 'star-outline',
     id: v4(),
-    image: require('./placeholder.png'),
+    image: require('./placeholder.png') as ImageSourcePropType,
     onPress: () => undefined,
     title: 'Enjoying robinhood?',
   },
@@ -320,11 +320,13 @@ const SwipeCards = memo(function SwipeCardList({
   ) : null;
 });
 
+const placeholder = require('./placeholder.png') as ImageSourcePropType;
+
 const ImagePlaceholder = memo(function ImagePlaceholder() {
   return (
     <Card noPadding>
       <Image
-        source={require('./placeholder.png')}
+        source={placeholder}
         style={{ borderRadius: 4, height: 100, width: '100%' }}
       />
     </Card>

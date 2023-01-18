@@ -22,7 +22,7 @@ export const Debug = memo(function Debug() {
   const uid = data.auth.uid ?? '';
   const { handleLogout } = useLogout();
 
-  const showToast = useCallback((e: unknown) => {
+  const showToast = useCallback((e: string) => {
     Toast.show({
       props: {
         description: `${e}`,
@@ -42,7 +42,9 @@ export const Debug = memo(function Debug() {
       };
       await Collections.goals.add(item);
     } catch (e) {
-      showToast(e);
+      if (e instanceof Error) {
+        showToast(e.message);
+      }
     }
   }, [showToast, uid]);
 
@@ -55,7 +57,9 @@ export const Debug = memo(function Debug() {
       };
       await Collections.intervals.add(item);
     } catch (e) {
-      showToast(e);
+      if (e instanceof Error) {
+        showToast(e.message);
+      }
     }
   }, [showToast, uid]);
 
@@ -65,7 +69,9 @@ export const Debug = memo(function Debug() {
         uid: Math.random().toString(),
       });
     } catch (e) {
-      showToast(e);
+      if (e instanceof Error) {
+        showToast(e.message);
+      }
     }
   }, [showToast]);
 
@@ -75,7 +81,9 @@ export const Debug = memo(function Debug() {
         photoUrl: 'none',
       });
     } catch (e) {
-      showToast(e);
+      if (e instanceof Error) {
+        showToast(e.message);
+      }
     }
   }, [showToast, uid]);
 

@@ -1,19 +1,19 @@
 import React, { memo, type ReactNode } from 'react';
-import { Image } from 'react-native';
+import { Image, type ImageSourcePropType } from 'react-native';
 import {
   Icon,
-  type IconName,
   Sentence,
-  type SentenceType,
   Text,
   TouchableOpacity,
   View,
+  type IconName,
+  type SentenceType,
 } from '../../../components';
 import { spacing, useColors } from '../../../features';
 
 const missingCallback = () => undefined;
 
-const image = require('../../../assets/line-chart.png');
+const image = require('../../../assets/line-chart.png') as ImageSourcePropType;
 
 type SignInButtonProps = {
   icon: IconName;

@@ -2,7 +2,6 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { Button, Input, Screen } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
-import { type SuperAny } from '../../../../types/types';
 import {
   getCurrentChecklistItem,
   removeChecklistItem,
@@ -10,7 +9,7 @@ import {
 } from '../../models';
 
 export default memo(function ChecklistUpdate() {
-  const { navigate } = useNavigation<SuperAny>();
+  const { navigate } = useNavigation();
   const dispatch = useRootDispatch();
   const item = useRootSelector(getCurrentChecklistItem);
   const [form, setForm] = useState({
@@ -38,14 +37,19 @@ export default memo(function ChecklistUpdate() {
         updatedAt: now,
       }),
     );
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
     navigate('checklistsList');
   }, [dispatch, form, isInvalidForm, item, navigate]);
   const handleDelete = useCallback(() => {
     dispatch(removeChecklistItem(item.id));
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
     navigate('checklistsList');
   }, [dispatch, item.id, navigate]);
 
-  const navItem = useCallback(() => navigate('checklistsList'), [navigate]);
+  const navItem = useCallback(() => {
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
+    navigate('checklistsList');
+  }, [navigate]);
   return (
     <Screen
       onLeftPress={navItem}

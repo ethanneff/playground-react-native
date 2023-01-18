@@ -1,10 +1,10 @@
 import React, {
-  type ReactElement,
-  type RefObject,
   useCallback,
   useEffect,
   useRef,
   useState,
+  type ReactElement,
+  type RefObject,
 } from 'react';
 import {
   RefreshControl,
@@ -67,6 +67,7 @@ export const RecyclerFlatList = <T,>({
   },
 }: RecyclerFlatListProps<T>) => {
   const [dataProvider, setDataProvider] = useState(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     new DataProvider((r1, r2) => r1.id !== r2.id),
   );
 

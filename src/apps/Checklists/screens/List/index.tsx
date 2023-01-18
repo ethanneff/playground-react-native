@@ -10,17 +10,16 @@ import {
   View,
 } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
-import { type SuperAny } from '../../../../types/types';
 import {
-  type ChecklistItem,
   getCurrentActiveChecklistItemsOrderByCreatedAt,
   removeChecklistItem,
   setActiveChecklistItem,
   toggleChecklistItemComplete,
+  type ChecklistItem,
 } from '../../models';
 
 export default memo(function Checklist() {
-  const { navigate } = useNavigation<SuperAny>();
+  const { navigate } = useNavigation();
   const dispatch = useRootDispatch();
   const items = useRootSelector(getCurrentActiveChecklistItemsOrderByCreatedAt);
 
@@ -35,6 +34,7 @@ export default memo(function Checklist() {
   const handleEdit = useCallback(
     (id: string) => () => {
       dispatch(setActiveChecklistItem(id));
+      // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
       navigate('checklistsItemUpdate');
     },
     [dispatch, navigate],
@@ -70,11 +70,14 @@ export default memo(function Checklist() {
     [handleEdit, handleRemove, handleToggle],
   );
   const keyExtractor = useCallback((item: ChecklistItem) => item.id, []);
-  const navBack = useCallback(() => navigate('checklists'), [navigate]);
-  const navCreate = useCallback(
-    () => navigate('checklistsItemCreate'),
-    [navigate],
-  );
+  const navBack = useCallback(() => {
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
+    navigate('checklists');
+  }, [navigate]);
+  const navCreate = useCallback(() => {
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
+    navigate('checklistsItemCreate');
+  }, [navigate]);
 
   return (
     <Screen

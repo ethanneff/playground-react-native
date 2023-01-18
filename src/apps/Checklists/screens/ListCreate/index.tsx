@@ -4,13 +4,12 @@ import 'react-native-get-random-values';
 import { v4 } from 'uuid';
 import { Button, Input, Screen } from '../../../../components';
 import { useRootDispatch } from '../../../../redux';
-import { type SuperAny } from '../../../../types/types';
 import { createList } from '../../models';
 
 const initialState = { description: '', name: '' };
 
 export default memo(function ChecklistCreate() {
-  const { navigate } = useNavigation<SuperAny>();
+  const { navigate } = useNavigation();
   const dispatch = useRootDispatch();
   const [form, setForm] = useState(initialState);
   const isInvalidForm = form.name.trim().length === 0;
@@ -31,6 +30,7 @@ export default memo(function ChecklistCreate() {
         userId: '1',
       }),
     );
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
     navigate('checklists');
   }, [dispatch, form, isInvalidForm, navigate]);
   const handleNameChange = useCallback((name: string) => {
@@ -40,7 +40,10 @@ export default memo(function ChecklistCreate() {
     setForm((state) => ({ ...state, description }));
   }, []);
 
-  const navBack = useCallback(() => navigate('checklists'), [navigate]);
+  const navBack = useCallback(() => {
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
+    navigate('checklists');
+  }, [navigate]);
   return (
     <Screen
       onLeftPress={navBack}

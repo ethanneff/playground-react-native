@@ -8,7 +8,6 @@ import { FlatList } from '../FlatList';
 import { Loader } from '../Loader';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
-import { Week } from './Week';
 import { getApiActivity } from './api';
 import {
   type ActivityDay,
@@ -22,6 +21,7 @@ import {
   getSubmissionFormat,
   updateActivitySquares,
 } from './utils';
+import { Week } from './Week';
 
 type Props = {
   margin?: number;

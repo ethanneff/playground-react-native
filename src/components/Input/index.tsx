@@ -1,22 +1,21 @@
 import React, {
   memo,
-  type MutableRefObject,
   useCallback,
   useRef,
   useState,
+  type MutableRefObject,
 } from 'react';
 import {
+  StyleSheet,
   type KeyboardTypeOptions,
   type ReturnKeyTypeOptions,
   type StyleProp,
-  StyleSheet,
   type TextStyle,
   type ViewStyle,
 } from 'react-native';
 import { View } from '../../components';
 import { GestureTextInput } from '../../conversions';
 import { fontSizes, SoundManager, spacing, useColors } from '../../features';
-import { type SuperAny } from '../../types/types';
 import { Icon, type IconName } from '../Icon';
 import { Text } from '../Text';
 import { type TextInputRef } from '../TextInput';
@@ -127,7 +126,7 @@ export const Input = memo(function Input({
   }, [onChangeText]);
 
   const onRefInternal = useCallback(
-    (ref: SuperAny) => {
+    (ref: GestureTextInput) => {
       textInput.current = ref;
       if (onRef) onRef.current = ref;
     },

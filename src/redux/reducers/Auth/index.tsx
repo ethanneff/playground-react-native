@@ -22,7 +22,7 @@ const timeout = 5000;
 export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
   dispatch(loginRequest());
   try {
-    const { data } = await axios({
+    const res = await axios({
       data: {
         email: 'sydney@fife',
         password: 'pistol',
@@ -32,8 +32,7 @@ export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
       url: 'https://reqres.in/api/login',
     });
     const loginSchema = z.object({ token: z.string() });
-    loginSchema.parse(data);
-
+    const data = loginSchema.parse(res.data);
     dispatch(loginSuccess(data.token));
   } catch (e) {
     if (e instanceof Error) dispatch(loginFailure(e));
@@ -42,7 +41,7 @@ export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
 export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
   dispatch(loginRequest());
   try {
-    const { data } = await axios({
+    const res = await axios({
       data: {
         email: 'sydney@fife',
         password: 'pistol',
@@ -55,7 +54,7 @@ export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
       id: z.number(),
       token: z.string(),
     });
-    registerScheme.parse(data);
+    const data = registerScheme.parse(res.data);
     dispatch(loginSuccess(data.token));
   } catch (e) {
     if (e instanceof Error) dispatch(loginFailure(e));

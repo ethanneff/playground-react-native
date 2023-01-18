@@ -25,7 +25,9 @@ export const usePersistedState = (): UsePersistedState => {
   const navigationRef =
     useRef<NavigationContainerRef<ReactNavigation.RootParamList> | null>(null);
   const [isReady, setIsReady] = useState(false);
-  const [initialState, setInitialState] = useState();
+  const [initialState, setInitialState] = useState<NavigationState | undefined>(
+    undefined,
+  );
 
   const onStateChange = useCallback((state: NavigationState | undefined) => {
     const previousRouteName = routeNameRef.current;
@@ -58,7 +60,7 @@ export const usePersistedState = (): UsePersistedState => {
       if (Platform.OS !== 'web' && initialUrl === null) {
         const savedStateString = await Storage.getItem(persistanceKey);
         const state = savedStateString
-          ? JSON.parse(savedStateString)
+          ? (JSON.parse(savedStateString) as NavigationState)
           : undefined;
 
         if (state !== undefined) setInitialState(state);

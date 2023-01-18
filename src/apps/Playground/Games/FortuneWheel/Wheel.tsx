@@ -5,7 +5,6 @@ import Svg, { G, Path, Polygon, Text } from 'react-native-svg';
 import { v4 } from 'uuid';
 import { TouchableOpacity } from '../../../../components';
 import { useColors, useDriver, useDropShadow } from '../../../../features';
-import { type SuperAny } from '../../../../types/types';
 import { type Segment } from './types';
 import { getNewLocation, getWinnerIndex } from './utils';
 
@@ -55,13 +54,15 @@ export const Wheel = memo(function WheelMemo({
   const location = useRef(0);
   const angle = useRef(new Animated.Value(0)).current;
   const yPosition = useRef(new Animated.Value(-1)).current;
-  const arcs = pie()(segments.map(() => 1)).map((arc: SuperAny, index) => {
+  const arcs = pie()(segments.map(() => 1)).map((arc, index) => {
     const instance = d3Arc()
       .padAngle(padAngle)
       .outerRadius(radius)
       .innerRadius(innerRadius);
     return {
+      // @ts-expect-error Type 'PieArcDatum<number | { valueOf(): number; }>' is missing the following properties from type 'DefaultArcObject': innerRadius, outerRadius
       centroid: instance.centroid(arc),
+      // @ts-expect-error Type 'PieArcDatum<number | { valueOf(): number; }>' is missing the following properties from type 'DefaultArcObject': innerRadius, outerRadius
       path: instance(arc),
       segment: segments[index],
     };
@@ -192,7 +193,7 @@ export const Wheel = memo(function WheelMemo({
                     fill={arc.segment.color}
                   />
                   <G
-                    origin={`${arc.centroid}`}
+                    origin={arc.centroid.toString()}
                     rotation={(i * 360) / segments.length + angleOffset}
                   >
                     <Text

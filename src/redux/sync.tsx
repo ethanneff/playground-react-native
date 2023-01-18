@@ -2,7 +2,6 @@ import axios, { type AxiosRequestConfig } from 'axios';
 import { useCallback, useEffect, useRef } from 'react';
 import { type RootAction, type RootMiddleware } from 'root-types';
 import { Storage } from '../conversions';
-import { type SuperAny } from '../types/types';
 
 const refreshTimeout = 2000;
 const timeout = 10000;
@@ -30,7 +29,9 @@ const syncQueue: SyncQueue = {
   get: async () => {
     try {
       const get = await Storage.getItem(syncQueue.key);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const parse = get === null ? [] : JSON.parse(get ?? '');
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       syncQueue.cache = [...syncQueue.cache, ...parse];
       return syncQueue.cache;
     } catch (e) {
@@ -62,7 +63,7 @@ export const useSync = (): void => {
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const retryTimeout = useRef(retryDefaultTimeout);
 
-  const processSync = useCallback((data: SuperAny) => {
+  const processSync = useCallback((data: string | undefined) => {
     throw new Error(data);
     // TODO: only update redux if data is different
   }, []);
@@ -100,6 +101,7 @@ export const useSync = (): void => {
       const method = 'POST';
       const payload: AxiosRequestConfig = { data: queue, method, timeout, url };
       const res = await axios(payload);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       processSync(res.data);
       queue.splice(0, len);
       await syncQueue.set(queue);

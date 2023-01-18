@@ -53,7 +53,7 @@ module.exports = {
     'plugin:eslint-comments/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/strict',
-    // 'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:typescript-sort-keys/recommended',
   ],
   ignorePatterns: [
@@ -155,6 +155,8 @@ module.exports = {
     'no-console': 'off',
     'sonarjs/cognitive-complexity': 'off',
     'sonarjs/no-duplicate-string': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
   },
   settings: {
     'import/ignore': ['react-native'],

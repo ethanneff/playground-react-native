@@ -4,13 +4,12 @@ import 'react-native-get-random-values';
 import { v4 } from 'uuid';
 import { Button, Input, Screen } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
-import { type SuperAny } from '../../../../types/types';
 import { createChecklistItem } from '../../models';
 
 const initialState = { description: '', name: '' };
 
 export default memo(function ChecklistItemCreate() {
-  const { navigate } = useNavigation<SuperAny>();
+  const { navigate } = useNavigation();
   const dispatch = useRootDispatch();
   const [form, setForm] = useState(initialState);
   const currentChecklist = useRootSelector((state) => state.checklist.active);
@@ -38,6 +37,7 @@ export default memo(function ChecklistItemCreate() {
         userId: '1',
       }),
     );
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
     navigate('checklistsList');
   }, [currentChecklist, dispatch, form, isInvalidForm, navigate]);
 
@@ -48,7 +48,10 @@ export default memo(function ChecklistItemCreate() {
     setForm((state) => ({ ...state, description }));
   }, []);
 
-  const navItem = useCallback(() => navigate('checklistsList'), [navigate]);
+  const navItem = useCallback(() => {
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
+    navigate('checklistsList');
+  }, [navigate]);
 
   return (
     <Screen
