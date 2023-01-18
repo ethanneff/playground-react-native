@@ -47,6 +47,7 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
+    'plugin:testing-library/react',
     'plugin:react-redux/recommended',
     // 'plugin:react-perf/recommended',
     'plugin:react-hooks/recommended',

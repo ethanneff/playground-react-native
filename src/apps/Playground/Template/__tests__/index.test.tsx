@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/react-native';
+import { fireEvent, screen } from '@testing-library/react-native';
 import React from 'react';
 import { type RootState } from 'root-types';
 import { Template } from '..';
@@ -7,9 +7,9 @@ import { getMockRender, getMockStore, mockGoBack } from '../../../../mocks';
 describe('template', () => {
   it('handles component state', () => {
     expect.hasAssertions();
-    const { getByTestId } = getMockRender(<Template />);
-    fireEvent.press(getByTestId('increase-button'));
-    const value = getByTestId('increase-value');
+    getMockRender(<Template />);
+    fireEvent.press(screen.getByTestId('increase-button'));
+    const value = screen.getByTestId('increase-value');
     expect(value).toHaveTextContent('1');
   });
 
@@ -21,16 +21,15 @@ describe('template', () => {
       ...state,
       theme: { ...state.theme, currentTheme: 'dark' },
     };
-    const { getByText } = getMockRender(<Template />, { initialState });
-    fireEvent.press(getByText('TOGGLE THEME'));
-    const theme = getByText(/Theme color:/iu);
-    expect(theme.props.children).toBe('Theme color: light');
+    getMockRender(<Template />, { initialState });
+    fireEvent.press(screen.getByText('TOGGLE THEME'));
+    expect(screen.getByText(/Theme color: light/iu)).toBeVisible();
   });
 
   it('handles navigation', () => {
     expect.hasAssertions();
-    const { getByTestId } = getMockRender(<Template />);
-    fireEvent.press(getByTestId('leftNav'));
+    getMockRender(<Template />);
+    fireEvent.press(screen.getByTestId('leftNav'));
     expect(mockGoBack).toHaveBeenCalledTimes(1);
     mockGoBack.mockReset();
   });
