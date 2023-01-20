@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.74.2](https://github.com/ethanneff/playground-react-native/compare/v2.74.1...v2.74.2) (2023-01-20)
+
+
+### Bug Fixes
+
+* add linting for testing library ([21ded60](https://github.com/ethanneff/playground-react-native/commit/21ded605541d62151a0bd3df9b1504c19ddfd2f6))
+* update deps (ios, android, web) ([4f57312](https://github.com/ethanneff/playground-react-native/commit/4f573123e7574102ee1e875f3b56e89a6ca959bc))
+
 ## [2.74.1](https://github.com/ethanneff/playground-react-native/compare/v2.74.0...v2.74.1) (2023-01-18)
 
 
