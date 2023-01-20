@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.74.1](https://github.com/ethanneff/playground-react-native/compare/v2.74.0...v2.74.1) (2023-01-18)
+
+
+### Bug Fixes
+
+* add redux and comment lint rules ([2288d3d](https://github.com/ethanneff/playground-react-native/commit/2288d3d8f109abea3ab77f77c088bd60f3658197))
+* correct imports ([5052c29](https://github.com/ethanneff/playground-react-native/commit/5052c29f6e899af8d999f8bfd261099dd2f3aa6f))
+* increase typescript eslint rules ([9710553](https://github.com/ethanneff/playground-react-native/commit/971055372d161a30736d24cbc688a2eefefb4f85))
+* increase typescript types ([19c1d12](https://github.com/ethanneff/playground-react-native/commit/19c1d12c0079a162b02e01f7bccf3a464fc50917))
+* more eslint sorting ([61371b8](https://github.com/ethanneff/playground-react-native/commit/61371b8a6f055ee9704e3e3d06b21b6d47da7a0b))
+* remove dev tools ([0616555](https://github.com/ethanneff/playground-react-native/commit/0616555713b8a1d693d3e708747b56689232cb22))
+
 # [2.74.0](https://github.com/ethanneff/playground-react-native/compare/v2.73.1...v2.74.0) (2022-12-20)
 
 
