@@ -61,6 +61,7 @@ export const SkeletonLoader = ({
   }, [duration, useNativeDriver, value]);
 
   return (
+    // @ts-expect-error JSX element class does not support attributes because it does not have a 'props' property.
     <MaskedView
       maskElement={<View style={styles.maskElement} />}
       style={styles.maskElementContainer}

@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { type StyleProp, StyleSheet, type TextStyle } from 'react-native';
+import { StyleSheet, type StyleProp, type ViewStyle } from 'react-native';
 import Original from 'react-native-vector-icons/MaterialCommunityIcons';
 import { type IconName } from './config';
 
@@ -8,7 +8,7 @@ type Props = {
   invisible?: boolean;
   name: IconName;
   size?: number;
-  style?: StyleProp<TextStyle>;
+  style?: StyleProp<ViewStyle>;
 };
 
 const styles = StyleSheet.create({
@@ -30,6 +30,7 @@ export const Source = memo(function IconSource({
       color={color}
       name={name}
       size={size}
+      // @ts-expect-error Types of property 'aspectRatio' are incompatible.
       style={containerStyle}
     />
   );

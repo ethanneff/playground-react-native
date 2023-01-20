@@ -45,8 +45,8 @@ const categories = [
   'none',
 ] as const;
 
-type Route = typeof routes[number];
-type Category = typeof categories[number];
+type Route = (typeof routes)[number];
+type Category = (typeof categories)[number];
 export type NavParams = Record<Route, undefined>;
 
 export const routeCategory: Record<Route, Category> = {

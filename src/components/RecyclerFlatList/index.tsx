@@ -46,25 +46,17 @@ type RecyclerFlatListProps<T> = {
 
 export const RecyclerFlatList = <T,>({
   data,
+  isHorizontal,
+  itemHeight,
+  itemWidth,
+  loading,
   onEndReached,
+  onRef,
   onRefetch,
   onRowRender,
   refreshing,
-  loading,
-  itemWidth,
-  itemHeight,
-  style = { flex: 1 },
-  onRef,
-  isHorizontal,
-  scrollViewProps = {
-    refreshControl: (
-      <RefreshControl
-        onRefresh={onRefetch}
-        refreshing={refreshing ?? false}
-      />
-    ),
-    showsVerticalScrollIndicator: false,
-  },
+  scrollViewProps,
+  style,
 }: RecyclerFlatListProps<T>) => {
   const [dataProvider, setDataProvider] = useState(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -104,8 +96,18 @@ export const RecyclerFlatList = <T,>({
       ref={onRef}
       renderFooter={onRenderFooter}
       rowRenderer={onRowRenderer}
-      scrollViewProps={scrollViewProps}
-      style={style}
+      scrollViewProps={
+        scrollViewProps ?? {
+          refreshControl: (
+            <RefreshControl
+              onRefresh={onRefetch}
+              refreshing={refreshing ?? false}
+            />
+          ),
+          showsVerticalScrollIndicator: false,
+        }
+      }
+      style={style ?? { flex: 1 }}
     />
   );
 };
