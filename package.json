@@ -55,7 +55,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.70.6",
-    "react-native-config": "1.4.12",
+    "react-native-config": "1.5.0",
     "react-native-dev-menu": "4.1.1",
     "react-native-device-info": "10.3.0",
     "react-native-draggable-flatlist": "4.0.0",
