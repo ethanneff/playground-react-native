@@ -41,11 +41,11 @@ const initialActivity: ActivityModel = {
 };
 
 export const Activity = memo(function Activity({
-  size = spacing(6),
   margin = 2,
-  username,
   site,
+  size = spacing(6),
   title,
+  username,
 }: Props) {
   const [state, setState] = useState<ActivityModel>(initialActivity);
   const keyExtractor = useCallback(

@@ -33,16 +33,16 @@ type ModalProps = {
 const fadeDuration = 150;
 const defaultMargin = 0.8;
 export const Modal = memo(function Modal({
-  onBackgroundPress,
-  children,
   backgroundColor,
+  children,
   duration,
-  noScroll,
-  showOverlay,
-  widthPercent = defaultMargin,
-  heightPercent = defaultMargin,
   elevation,
+  heightPercent = defaultMargin,
+  noScroll,
+  onBackgroundPress,
+  showOverlay,
   testID,
+  widthPercent = defaultMargin,
 }: ModalProps) {
   const colors = useColors();
   const useNativeDriver = useDriver();

@@ -17,8 +17,8 @@ type Props = {
 
 export const Carousel = memo(function Carousel({
   dotSize = spacing(4),
-  slides,
   duration,
+  slides,
   viewabilityConfig = { itemVisiblePercentThreshold: 50 },
 }: Props) {
   const loopingEnabled = useRef(false);

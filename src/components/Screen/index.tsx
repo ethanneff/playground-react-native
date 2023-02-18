@@ -30,21 +30,21 @@ type Props = {
 };
 
 export const Screen = memo(function Screen({
-  title,
-  testID,
   border,
-  style,
+  children,
+  dropShadow,
   edges = ['top', 'left', 'right', 'bottom'],
+  leftIcon,
   onLeftPress,
   onRightPress,
-  children,
-  leftIcon,
+  onSecondLeftPress,
+  onSecondRightPress,
   rightIcon,
   secondLeftIcon,
   secondRightIcon,
-  onSecondLeftPress,
-  onSecondRightPress,
-  dropShadow,
+  style,
+  testID,
+  title,
 }: Props) {
   const colors = useColors();
   const styles = StyleSheet.create({

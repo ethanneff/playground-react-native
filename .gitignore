@@ -65,4 +65,5 @@ yarn-error.log
 # Custom
 coverage/
 certs/
+.eslintcache
 tsconfig.tsbuildinfo

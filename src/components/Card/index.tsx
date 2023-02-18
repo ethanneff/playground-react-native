@@ -28,18 +28,18 @@ const getOpacity = (elevation: number) =>
 const touchOpacity = 0.3;
 
 export const Card = memo(function Card({
-  testID,
   borderRadius = spacing(2),
   borderWidth = 1,
   children,
   elevation = 0,
-  onLongPress,
-  onPress,
+  flex,
   noMargin,
   noPadding,
-  flex,
+  onLongPress,
+  onPress,
   selected,
   style,
+  testID,
 }: Props) {
   const colors = useColors();
   const dropShadow = useDropShadow();

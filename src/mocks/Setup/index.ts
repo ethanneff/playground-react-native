@@ -1,8 +1,10 @@
 import '@testing-library/jest-native/extend-expect';
 import { NativeModules } from 'react-native';
+// @ts-expect-error Could not find a declaration file
+import mockRNDeviceInfo from 'react-native-device-info/jest/react-native-device-info-mock';
 import 'react-native-gesture-handler/jestSetup';
 import 'react-native-get-random-values';
-// @ts-ignore:next-line
+// @ts-expect-error Could not find a declaration file
 import { setUpTests } from 'react-native-reanimated/lib/reanimated2/jestUtils';
 import { mockGoBack, mockNavigate } from '../Navigation';
 
@@ -54,13 +56,9 @@ jest.mock('react-native-localize', () => ({
 jest.mock('react-native-mmkv-storage', () => ({
   MMKVLoader: class Mock {
     constructor() {}
-
     withEncryption = () => this;
-
     initialize = () => this;
-
     getItem = () => Promise.resolve(jest.fn());
-
     setItem = () => Promise.resolve(jest.fn());
   },
 }));
@@ -140,56 +138,13 @@ jest.mock(
   () =>
     class Mock {
       constructor() {}
-
       setVolume = jest.fn();
-
       setNumberOfLoops = jest.fn();
-
       play = jest.fn();
-
       stop = jest.fn();
-
       static setCategory = jest.fn();
     },
 );
-
-jest.mock('react-native-device-info', () => ({
-  getAPILevel: jest.fn(),
-  getApplicationName: jest.fn(),
-  getBatteryLevel: jest.fn(() => Promise.resolve(1)),
-  getBrand: jest.fn(),
-  getBuildNumber: jest.fn(),
-  getBundleId: jest.fn(),
-  getCarrier: jest.fn(),
-  getDeviceCountry: jest.fn(),
-  getDeviceId: jest.fn(),
-  getDeviceLocale: jest.fn(),
-  getDeviceName: jest.fn(),
-  getFirstInstallTime: jest.fn(),
-  getFontScale: jest.fn(),
-  getFreeDiskStorage: jest.fn(),
-  getInstallReferrer: jest.fn(),
-  getInstanceID: jest.fn(),
-  getLastUpdateTime: jest.fn(),
-  getManufacturer: jest.fn(),
-  getMaxMemory: jest.fn(),
-  getModel: jest.fn(),
-  getPhoneNumber: jest.fn(),
-  getReadableVersion: jest.fn(),
-  getSerialNumber: jest.fn(),
-  getSystemName: jest.fn(),
-  getSystemVersion: jest.fn(),
-  getTimezone: jest.fn(() => 'America/Los_Angeles'),
-  getTotalDiskCapacity: jest.fn(),
-  getTotalMemory: jest.fn(),
-  getUniqueID: jest.fn(),
-  getUserAgent: jest.fn(),
-  getVersion: jest.fn(),
-  is24Hour: jest.fn(),
-  isEmulator: jest.fn(),
-  isPinOrFingerprintSet: jest.fn(),
-  isTablet: jest.fn(() => false),
-}));
 
 jest.mock('react-native-reanimated', () => {
   const Reanimated = require('react-native-reanimated/mock');
@@ -197,11 +152,20 @@ jest.mock('react-native-reanimated', () => {
   return Reanimated;
 });
 
-NativeModules.RNCNetInfo = {
-  addListener: jest.fn(),
-  getCurrentState: jest.fn(() => Promise.resolve()),
-  removeListeners: jest.fn(),
-};
+jest.mock('@react-native-community/netinfo', () => ({
+  NetInfoStateType: {
+    unknown: 'unknown',
+    none: 'none',
+    cellular: 'cellular',
+    wifi: 'wifi',
+    bluetooth: 'bluetooth',
+    ethernet: 'ethernet',
+    wimax: 'wimax',
+    vpn: 'vpn',
+    other: 'other',
+  },
+}));
+jest.mock('react-native-device-info', () => mockRNDeviceInfo);
 
 NativeModules.RNCAsyncStorage = {
   clear: jest.fn(),

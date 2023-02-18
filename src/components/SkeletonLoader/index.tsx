@@ -16,12 +16,12 @@ type Props = {
 };
 
 export const SkeletonLoader = ({
+  backgroundColor,
+  borderRadius = spacing(5),
+  duration = 1200,
+  foregroundColor,
   height = spacing(10),
   width = spacing(10),
-  borderRadius = spacing(5),
-  backgroundColor,
-  foregroundColor,
-  duration = 1200,
 }: Props) => {
   const colors = useColors();
   const bgColor = backgroundColor ?? colors.background.secondary;

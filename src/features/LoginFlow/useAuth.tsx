@@ -3,8 +3,8 @@ import Config from 'react-native-config';
 import {
   appleAuth,
   Firebase,
-  type FirebaseAuthTypes,
   GoogleSignin,
+  type FirebaseAuthTypes,
 } from '../../conversions';
 
 // import {AccessToken, LoginManager} from 'react-native-fbsdk';
