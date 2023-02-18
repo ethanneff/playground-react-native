@@ -10,10 +10,10 @@ type Props = {
 };
 
 export const ModalHeader = memo(function ModalHeader({
-  title,
   onLeftPress,
-  size = spacing(8),
   onRightPress,
+  size = spacing(8),
+  title,
 }: Props) {
   return (
     <View

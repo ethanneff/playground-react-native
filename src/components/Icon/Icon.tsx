@@ -61,20 +61,20 @@ const getColor = ({ clear, color, colors, disabled, hidden }: GetColors) => {
 };
 
 export const Icon = memo(function Icon({
-  name,
-  style,
+  backgroundColor,
   badge = 0,
   clear,
-  elevation = 4,
-  size = spacing(6),
   color,
-  backgroundColor,
+  disabled,
+  elevation = 4,
   fab,
   hidden,
-  right,
   invisible,
-  disabled,
+  name,
   padded,
+  right,
+  size = spacing(6),
+  style,
   testID,
 }: Props) {
   const colors = useColors();

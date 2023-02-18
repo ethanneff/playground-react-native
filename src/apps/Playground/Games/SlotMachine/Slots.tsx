@@ -155,10 +155,10 @@ const Bet = memo(function Bet({ disabled, multiplier, onBet }: BetProps) {
 
 export const Slots = memo(function Slots({
   combinations,
-  reels,
+  credits,
   multipliers = [1, 2, 3, 5, 10, 20],
   randomize,
-  credits,
+  reels,
 }: Props) {
   const [state, setState] = useState<State>(() =>
     getInitialState({ credits, randomize, reels }),

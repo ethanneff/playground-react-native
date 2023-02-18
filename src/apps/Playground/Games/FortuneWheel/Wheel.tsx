@@ -25,19 +25,19 @@ type Props = {
 };
 
 export const Wheel = memo(function WheelMemo({
-  size = Dimensions.get('screen').width,
   backgroundColor,
-  textColor,
-  fontSize = 24,
-  segments,
-  noBounce,
-  padAngle = 0.02,
-  innerRadius = 60,
-  spinSpeed = 1000,
   bounceSpeed = 5000,
-  minSpin = 3,
+  fontSize = 24,
+  innerRadius = 60,
   maxSpin = 7,
+  minSpin = 3,
+  noBounce,
   onComplete,
+  padAngle = 0.02,
+  segments,
+  size = Dimensions.get('screen').width,
+  spinSpeed = 1000,
+  textColor,
 }: Props) {
   const colors = useColors();
   const dropShadow = useDropShadow();
