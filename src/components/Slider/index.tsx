@@ -24,7 +24,6 @@ export const Slider = ({ flex, onSlidingComplete, style, ...rest }: Props) => {
   const combinedStyles = [flex ? styles.flex : undefined, style];
 
   return (
-    // @ts-expect-error JSX element class does not support attributes because it does not have a 'props' property.
     <Original
       style={combinedStyles}
       {...rest} // eslint-disable-line react/jsx-props-no-spreading

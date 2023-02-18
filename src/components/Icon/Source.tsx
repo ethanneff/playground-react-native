@@ -30,7 +30,6 @@ export const Source = memo(function IconSource({
       color={color}
       name={name}
       size={size}
-      // @ts-expect-error Types of property 'aspectRatio' are incompatible.
       style={containerStyle}
     />
   );
