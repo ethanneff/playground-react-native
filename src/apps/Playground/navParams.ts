@@ -34,6 +34,7 @@ const routes = [
   'themes',
   'tic-tac-toe',
   'tinder',
+  'scroll-views',
   'weekend-planner',
 ] as const;
 
@@ -76,6 +77,7 @@ export const routeCategory: Record<Route, Category> = {
   'pinch-spread': 'features',
   questionnaire: 'creations',
   'recycler-flatList': 'features',
+  'scroll-views': 'storybook',
   'search-bar': 'features',
   'skeleton-loader': 'features',
   'slot-machine': 'games',

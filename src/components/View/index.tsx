@@ -1,15 +1,17 @@
-import React, { type ReactNode } from 'react';
+import React, { type ReactNode, type RefObject } from 'react';
 import {
+  StyleSheet,
+  // eslint-disable-next-line no-restricted-imports
+  View as Original,
   type AccessibilityRole,
   type FlexAlignType,
   type LayoutChangeEvent,
   type StyleProp,
-  StyleSheet,
-  // eslint-disable-next-line no-restricted-imports
-  View as Original,
   type ViewStyle,
 } from 'react-native';
-import { type MonoMultiColor, useColors } from '../../features';
+import { useColors, type MonoMultiColor } from '../../features';
+
+export type ViewRef = Original | null;
 
 type Props = {
   accessibilityRole?: AccessibilityRole;
@@ -26,6 +28,7 @@ type Props = {
   backgroundColor?: keyof MonoMultiColor;
   borderRadius?: number;
   children?: ReactNode;
+  collapsable?: boolean;
   cursor?: 'default' | 'pointer';
   display?: 'flex' | 'none';
   flex?: number;
@@ -44,6 +47,7 @@ type Props = {
     | 'space-evenly';
   margin?: number;
   onLayout?: (event: LayoutChangeEvent) => void;
+  onRef?: RefObject<Original>;
   onTouchStart?: () => void;
   opacity?: number;
   overflow?: 'hidden' | 'scroll' | 'visible';
@@ -63,6 +67,7 @@ export const View = ({
   backgroundColor,
   borderRadius,
   children,
+  collapsable,
   cursor,
   display,
   flex,
@@ -75,6 +80,7 @@ export const View = ({
   justifyContent,
   margin,
   onLayout,
+  onRef,
   onTouchStart,
   opacity,
   overflow,
@@ -118,8 +124,10 @@ export const View = ({
     <Original
       accessibilityRole={accessibilityRole}
       accessible={accessible}
+      collapsable={collapsable}
       onLayout={onLayout}
       onTouchStart={onTouchStart}
+      ref={onRef}
       style={[styles.view, style]}
       testID={testID}
     >
