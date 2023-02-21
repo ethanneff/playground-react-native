@@ -1,5 +1,18 @@
 # Changelog
 
+# [2.75.0](https://github.com/ethanneff/playground-react-native/compare/v2.74.2...v2.75.0) (2023-02-21)
+
+
+### Bug Fixes
+
+* update ci node ([b03b5f6](https://github.com/ethanneff/playground-react-native/commit/b03b5f6434ea42a6c60eb0862da65910386e6730))
+* update deps (and, ios, web) ([3466324](https://github.com/ethanneff/playground-react-native/commit/34663247fa8d528fd10a1ea008cc95b1894635aa))
+
+
+### Features
+
+* add scroll listener and scroll button ([7ee1735](https://github.com/ethanneff/playground-react-native/commit/7ee1735e210129f673a196ba14f2b1a0f7fb2adc))
+
 ## [2.74.2](https://github.com/ethanneff/playground-react-native/compare/v2.74.1...v2.74.2) (2023-01-20)
 
 
