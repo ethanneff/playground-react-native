@@ -1,5 +1,43 @@
 # Changelog
 
+## [2.75.2](https://github.com/ethanneff/playground-react-native/compare/v2.75.1...v2.75.2) (2023-02-27)
+
+
+### Bug Fixes
+
+* add xcode precheck ([185e4bc](https://github.com/ethanneff/playground-react-native/commit/185e4bcadc92aea77879d2da62e25c47308c74c0))
+* prevent Cannot find module '@babel/plugin-transform-shorthand-properties' error ([7d57d28](https://github.com/ethanneff/playground-react-native/commit/7d57d28cf720cdab0f18beca1e9653c69757f4f8))
+* update deps (ios, android, web) ([a618466](https://github.com/ethanneff/playground-react-native/commit/a61846606e5725489c6759fd1d880f21fa768d66))
+* use nvmrc instead of node-version ([55a50ba](https://github.com/ethanneff/playground-react-native/commit/55a50ba544035444089eac2a961e61d06777a2d4))
+
+## [2.75.1](https://github.com/ethanneff/playground-react-native/compare/v2.75.0...v2.75.1) (2023-02-21)
+
+
+### Bug Fixes
+
+* update deps ([593cc4f](https://github.com/ethanneff/playground-react-native/commit/593cc4f3cf0fb657258fffe2d35091f74d5c9fe3))
+
+# [2.75.0](https://github.com/ethanneff/playground-react-native/compare/v2.74.2...v2.75.0) (2023-02-21)
+
+
+### Bug Fixes
+
+* update ci node ([b03b5f6](https://github.com/ethanneff/playground-react-native/commit/b03b5f6434ea42a6c60eb0862da65910386e6730))
+* update deps (and, ios, web) ([3466324](https://github.com/ethanneff/playground-react-native/commit/34663247fa8d528fd10a1ea008cc95b1894635aa))
+
+
+### Features
+
+* add scroll listener and scroll button ([7ee1735](https://github.com/ethanneff/playground-react-native/commit/7ee1735e210129f673a196ba14f2b1a0f7fb2adc))
+
+## [2.74.2](https://github.com/ethanneff/playground-react-native/compare/v2.74.1...v2.74.2) (2023-01-20)
+
+
+### Bug Fixes
+
+* add linting for testing library ([21ded60](https://github.com/ethanneff/playground-react-native/commit/21ded605541d62151a0bd3df9b1504c19ddfd2f6))
+* update deps (ios, android, web) ([4f57312](https://github.com/ethanneff/playground-react-native/commit/4f573123e7574102ee1e875f3b56e89a6ca959bc))
+
 ## [2.74.1](https://github.com/ethanneff/playground-react-native/compare/v2.74.0...v2.74.1) (2023-01-18)
 
 

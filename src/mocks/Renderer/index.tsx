@@ -1,14 +1,14 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { render, RenderAPI } from '@testing-library/react-native';
-import React, { ReactElement, ReactNode } from 'react';
+import { render, type RenderAPI } from '@testing-library/react-native';
+import React, { type ReactElement, type ReactNode } from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { RootState } from 'root-types';
+import { type RootState } from 'root-types';
 import { reducers } from '../../redux/store';
 
 type OptionalOptions = {
-  initialState?: RootState;
   initialProps?: Record<string, unknown>;
+  initialState?: RootState;
 };
 type WrapperProps = {
   children?: ReactNode;
@@ -33,7 +33,7 @@ export const getMockRender = (
 
 export const getMockHook = (
   hook: WrapperHook,
-  { initialState, initialProps }: OptionalOptions = {},
+  { initialProps, initialState }: OptionalOptions = {},
 ) => {
   const store = getMockStore(initialState);
   return renderHook(hook, {

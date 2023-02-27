@@ -901,7 +901,7 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - OpenSSL-Universal (1.1.1100)
-  - PromisesObjC (2.1.1)
+  - PromisesObjC (2.2.0)
   - RCT-Folly (2021.07.22.00):
     - boost
     - DoubleConversion
@@ -1157,7 +1157,7 @@ PODS:
     - react-native-config/App (= 1.5.0)
   - react-native-config/App (1.5.0):
     - React-Core
-  - react-native-flipper (0.180.0):
+  - react-native-flipper (0.182.0):
     - React-Core
   - react-native-flipper-performance-plugin (0.3.1):
     - React-Core
@@ -1277,26 +1277,26 @@ PODS:
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
-  - RNFBAnalytics (14.11.0):
+  - RNFBAnalytics (14.12.0):
     - Firebase/Analytics (= 8.15.0)
     - React-Core
     - RNFBApp
-  - RNFBApp (14.11.0):
+  - RNFBApp (14.12.0):
     - Firebase/CoreOnly (= 8.15.0)
     - React-Core
-  - RNFBAuth (14.11.0):
+  - RNFBAuth (14.12.0):
     - Firebase/Auth (= 8.15.0)
     - React-Core
     - RNFBApp
-  - RNFBCrashlytics (14.11.0):
+  - RNFBCrashlytics (14.12.0):
     - Firebase/Crashlytics (= 8.15.0)
     - React-Core
     - RNFBApp
-  - RNFBFirestore (14.11.0):
+  - RNFBFirestore (14.12.0):
     - Firebase/Firestore (= 8.15.0)
     - React-Core
     - RNFBApp
-  - RNFBRemoteConfig (14.11.0):
+  - RNFBRemoteConfig (14.12.0):
     - Firebase/RemoteConfig (= 8.15.0)
     - React-Core
     - RNFBApp
@@ -1682,7 +1682,7 @@ SPEC CHECKSUMS:
   MMKVCore: ddf41b9d9262f058419f9ba7598719af56c02cd3
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
-  PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
+  PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   RCT-Folly: 424b8c9a7a0b9ab2886ffe9c3b041ef628fd4fb1
   RCTRequired: bec48f07daf7bcdc2655a0cde84e07d24d2a9e2a
   RCTTypeSafety: 171394eebacf71e1cfad79dbfae7ee8fc16ca80a
@@ -1698,7 +1698,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 9f7c9137605e72ca0343db4cea88006cb94856dd
   React-logger: 957e5dc96d9dbffc6e0f15e0ee4d2b42829ff207
   react-native-config: 5330c8258265c1e5fdb8c009d2cabd6badd96727
-  react-native-flipper: a17f62b481820ea743ca3d7c19d43ad2ae234f07
+  react-native-flipper: 6e4e344a0104a34a4e189a9ef2b3b5634b516dc8
   react-native-flipper-performance-plugin: 2b873b68da3e368afeaf29c9c7a8c2b0ff908c4f
   react-native-get-random-values: a6ea6a8a65dc93e96e24a11105b1a9c8cfe1d72a
   react-native-mmkv-storage: 8ba3c0216a6df283ece11205b442a3e435aec4e5
@@ -1723,12 +1723,12 @@ SPEC CHECKSUMS:
   RNDeviceInfo: 749f2e049dcd79e2e44f134f66b73a06951b5066
   RNDevMenu: 72807568fe4188bd4c40ce32675d82434b43c45d
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
-  RNFBAnalytics: c26f7580934cb1563eb2239b4997c6aa62f7ccfc
-  RNFBApp: b1b5a80a676a07dea17e778bda7c1e8b69b2f5ec
-  RNFBAuth: e28fb7cd1b956086e68233b9ea19fb97c428f86b
-  RNFBCrashlytics: 357955a1564721ca9001960e57b395c6a319f9be
-  RNFBFirestore: 20b84abc6368c37297429f810705c203022d8110
-  RNFBRemoteConfig: 29ac04a2c3e7513c9ed4a5dac70d8feae603067a
+  RNFBAnalytics: ea1421b49a0bf5e5bb7274df4a330713d0e85d2e
+  RNFBApp: e4439717c23252458da2b41b81b4b475c86f90c4
+  RNFBAuth: 50ac123123b27241927e639c0ac9c8af17f05aa1
+  RNFBCrashlytics: 94e1f78e2a9aa9e02edbfb0d3f1f0921ce00094b
+  RNFBFirestore: 24c46940b96579c50bd39a72566f6d48c6165f2f
+  RNFBRemoteConfig: 92fbb75ceb69fec44ae727b70d23c5d1798f7648
   RNGestureHandler: 071d7a9ad81e8b83fe7663b303d132406a7d8f39
   RNGoogleSignin: 22e468a9474dbcb8618d8847205ad4f0b2575d13
   RNLocalize: 0df7970cfc60389f00eb62fd7c097dc75af3fb4f

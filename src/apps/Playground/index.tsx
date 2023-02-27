@@ -6,6 +6,7 @@ import {
   Inputs,
   Modals,
   Paragraphs,
+  ScrollViews,
   Themes,
 } from './Components';
 import {
@@ -80,6 +81,10 @@ export default memo(function Games() {
       <Stack.Screen
         component={Modals}
         name="modals"
+      />
+      <Stack.Screen
+        component={ScrollViews}
+        name="scroll-views"
       />
 
       {/* games */}

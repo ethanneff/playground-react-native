@@ -12,11 +12,7 @@ yarn install
 ## Run
 
 ```sh
-yarn ios
-```
-
-```sh
-yarn android
+yarn start
 ```
 
 ```sh

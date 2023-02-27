@@ -1,21 +1,21 @@
 import React, { memo } from 'react';
 import {
   Platform,
-  type StyleProp,
   StyleSheet,
+  type StyleProp,
   type ViewStyle,
 } from 'react-native';
 import { View } from '../../components';
 import {
-  type ColorTheme,
-  type MonoMultiColor,
   spacing,
   useColors,
   useDropShadow,
+  type MonoMultiColor,
 } from '../../features';
 import { Badge } from './Badge';
-import { Source } from './Source';
 import { type IconName } from './config';
+import { Source } from './Source';
+import { getColor } from './utils';
 
 /*
 Usage: <Icon name='check' />
@@ -38,26 +38,6 @@ type Props = {
   size?: number;
   style?: StyleProp<ViewStyle>;
   testID?: string;
-};
-
-type GetColors = {
-  clear?: boolean;
-  color?: keyof MonoMultiColor;
-  colors: ColorTheme;
-  disabled?: boolean;
-  hidden?: boolean;
-};
-
-const getColor = ({ clear, color, colors, disabled, hidden }: GetColors) => {
-  return hidden
-    ? 'transparent'
-    : disabled
-    ? colors.text.disabled
-    : clear
-    ? colors.text.primaryB
-    : color
-    ? colors.text[color]
-    : colors.text.secondary;
 };
 
 export const Icon = memo(function Icon({
