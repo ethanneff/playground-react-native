@@ -11,6 +11,8 @@ import { mockGoBack, mockNavigate } from '../Navigation';
 setUpTests();
 
 jest.mock('react-native-sensors', () => null);
+jest.mock('react-native-fast-image', () => null);
+jest.mock('@react-native-masked-view/masked-view', () => null);
 jest.mock('d3-scale', () => null);
 jest.mock('d3-shape', () => null);
 jest.mock('uuid', () => ({
