@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.75.2](https://github.com/ethanneff/playground-react-native/compare/v2.75.1...v2.75.2) (2023-02-27)
+
+
+### Bug Fixes
+
+* add xcode precheck ([185e4bc](https://github.com/ethanneff/playground-react-native/commit/185e4bcadc92aea77879d2da62e25c47308c74c0))
+* prevent Cannot find module '@babel/plugin-transform-shorthand-properties' error ([7d57d28](https://github.com/ethanneff/playground-react-native/commit/7d57d28cf720cdab0f18beca1e9653c69757f4f8))
+* update deps (ios, android, web) ([a618466](https://github.com/ethanneff/playground-react-native/commit/a61846606e5725489c6759fd1d880f21fa768d66))
+* use nvmrc instead of node-version ([55a50ba](https://github.com/ethanneff/playground-react-native/commit/55a50ba544035444089eac2a961e61d06777a2d4))
+
 ## [2.75.1](https://github.com/ethanneff/playground-react-native/compare/v2.75.0...v2.75.1) (2023-02-21)
 
 
