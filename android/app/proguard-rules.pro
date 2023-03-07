@@ -22,3 +22,9 @@
   **[] $VALUES;
   public *;
 }
+
+# react-native-device-info
+-keep class com.google.android.gms.common.** {*;}
+-keepclassmembers class com.android.installreferrer.api.** {
+  *;
+}
