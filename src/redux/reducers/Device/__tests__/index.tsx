@@ -2,7 +2,6 @@ import { getType } from 'typesafe-actions';
 import {
   deviceInitialState,
   deviceReducer,
-  setDetails,
   setDimensions,
   setKeyboard,
   setStatus,
@@ -24,7 +23,7 @@ describe('actions', () => {
     };
     const expectedAction = {
       payload,
-      type: getType(setDetails),
+      type: getType(setDimensions),
     };
     expect(setDimensions(payload)).toStrictEqual(expectedAction);
   });
@@ -70,6 +69,7 @@ describe('reducer', () => {
     };
     const data = {
       ...deviceInitialState,
+      dimensions: payload,
     };
     expect(
       deviceReducer(deviceInitialState, {
@@ -105,7 +105,7 @@ describe('reducer', () => {
         payload: 'background',
         type: getType(setStatus),
       }),
-    ).toStrictEqual({ ...deviceInitialState, appStatus: 'background' });
+    ).toStrictEqual({ ...deviceInitialState, status: 'background' });
   });
 
   it('logout', () => {

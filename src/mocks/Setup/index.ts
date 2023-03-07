@@ -4,11 +4,7 @@ import { NativeModules } from 'react-native';
 import mockRNDeviceInfo from 'react-native-device-info/jest/react-native-device-info-mock';
 import 'react-native-gesture-handler/jestSetup';
 import 'react-native-get-random-values';
-// @ts-expect-error Could not find a declaration file
-import { setUpTests } from 'react-native-reanimated/lib/reanimated2/jestUtils';
 import { mockGoBack, mockNavigate } from '../Navigation';
-
-setUpTests();
 
 jest.mock('react-native-sensors', () => null);
 jest.mock('react-native-fast-image', () => null);
@@ -17,6 +13,12 @@ jest.mock('d3-scale', () => null);
 jest.mock('d3-shape', () => null);
 jest.mock('uuid', () => ({
   v4: jest.fn(() => 'uuid'),
+}));
+jest.mock('@react-navigation/native-stack', () => ({
+  createNativeStackNavigator: jest.fn(),
+}));
+jest.mock('@react-navigation/bottom-tabs', () => ({
+  createBottomTabNavigator: jest.fn(),
 }));
 
 jest.mock('react-native-localize', () => ({
