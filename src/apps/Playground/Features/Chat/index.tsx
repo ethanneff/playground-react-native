@@ -9,7 +9,7 @@ import { TextField } from './TextField';
 export const Chat = memo(function PlaygroundChat() {
   const { goBack } = useNavigation();
   const { insets, layout, onLayout } = useLayout();
-  const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
+  const keyboardHeight = useRootSelector((s) => s.device.keyboard?.height) ?? 0;
   const bottomInset = keyboardHeight > 0 ? insets.bottom : 0;
   const height = (layout?.height ?? 0) - keyboardHeight + bottomInset;
 
