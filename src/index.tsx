@@ -1,11 +1,13 @@
 import React, { StrictMode } from 'react';
-import { AppRegistry, Platform } from 'react-native';
+import { AppRegistry, LogBox, Platform } from 'react-native';
 import 'react-native-get-random-values';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ErrorBoundary, Toast, toastConfig } from './components';
 import { GestureHandlerProvider } from './conversions';
 import { ApplicationProvider, debugDev, NavigationProvider } from './features';
 import { ReduxProvider } from './redux/ReduxProvider';
+
+LogBox.ignoreLogs(['UNSAFE_']);
 
 debugDev();
 

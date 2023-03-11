@@ -4,7 +4,7 @@
   "compilerOptions": {
     "jsx": "react-native",
     "lib": ["esnext", "dom"],
-    "types": ["jest", "@testing-library/jest-dom"],
+
     "module": "esnext",
     "target": "esnext",
     "moduleResolution": "node",

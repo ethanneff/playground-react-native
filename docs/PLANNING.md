@@ -74,7 +74,8 @@ v3
 - [ ] migrate everything to libs
 
 - [ ] update to react-native-mmkv
-- [ ] upgrade 71
+- [x] upgrade 71
+- [ ] move all to .cache
 - [ ] upgrade to flashlist
 
 Deploy iOS App (Focus)
