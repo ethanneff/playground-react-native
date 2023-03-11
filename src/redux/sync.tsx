@@ -12,7 +12,7 @@ type ReduxWhitelist = { [key in RootActionTypes]?: 1 };
 const reduxWhiteList: ReduxWhitelist = {
   'complete/item/createItem': 1,
   'complete/item/updateItem': 1,
-  'device/load': 1,
+  'device/details': 1,
   'sync/download': 1,
 };
 
@@ -30,7 +30,7 @@ const syncQueue: SyncQueue = {
     try {
       const get = await Storage.getItem(syncQueue.key);
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      const parse = get === null ? [] : JSON.parse(get ?? '');
+      const parse = typeof get === 'string' ? JSON.parse(get) : [];
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       syncQueue.cache = [...syncQueue.cache, ...parse];
       return syncQueue.cache;

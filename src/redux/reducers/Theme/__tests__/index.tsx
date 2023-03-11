@@ -5,13 +5,13 @@ import {
   themeInitialState,
   themeReducer,
 } from '..';
-import { getMockStore } from '../../../../mocks';
+import { Testing } from '../../../../mocks';
 import { loginRequest, logout } from '../../Auth';
 
 describe('theme', () => {
   it('getCurrentTheme dark', () => {
     expect.hasAssertions();
-    const store = getMockStore();
+    const store = Testing.reduxStore();
     store.dispatch(changeTheme('dark'));
     expect(getCurrentTheme(store.getState())).toMatchObject({
       statusBar: 'light-content',
@@ -20,7 +20,7 @@ describe('theme', () => {
 
   it('getCurrentTheme light', () => {
     expect.hasAssertions();
-    const store = getMockStore();
+    const store = Testing.reduxStore();
     store.dispatch(changeTheme('light'));
     expect(getCurrentTheme(store.getState())).toMatchObject({
       statusBar: 'dark-content',

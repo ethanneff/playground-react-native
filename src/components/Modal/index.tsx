@@ -46,7 +46,7 @@ export const Modal = memo(function Modal({
 }: ModalProps) {
   const colors = useColors();
   const useNativeDriver = useDriver();
-  const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
+  const keyboardHeight = useRootSelector((s) => s.device.keyboard?.height) ?? 0;
   const dropShadow = useDropShadow();
   const screen = useRootSelector((s) => s.dimension.screen);
   const maxHeight = (screen.height - keyboardHeight) * heightPercent;

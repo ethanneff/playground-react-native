@@ -10,7 +10,7 @@ import {
   updateDimension,
 } from '..';
 import { loginRequest, logout } from '../../Auth';
-import { getMockStore } from './../../../../mocks';
+import { Testing } from './../../../../mocks';
 
 const setupSelectors = () => {
   const dimensionChange = {
@@ -27,7 +27,7 @@ const setupSelectors = () => {
       width: 123,
     },
   };
-  const store = getMockStore();
+  const store = Testing.reduxStore();
   store.dispatch(updateDimension(dimensionChange));
   return store;
 };
@@ -63,27 +63,27 @@ describe('selectors', () => {
 describe('selectors with no initial state', () => {
   it('getLandscapeOrientation null', () => {
     expect.hasAssertions();
-    const store = getMockStore();
+    const store = Testing.reduxStore();
     expect(getLandscapeOrientation(store.getState())).toBe(false);
   });
   it('getSmallestDimension null', () => {
     expect.hasAssertions();
-    const store = getMockStore();
+    const store = Testing.reduxStore();
     expect(getSmallestDimension(store.getState())).toBe(750);
   });
   it('getLargestDimension null', () => {
     expect.hasAssertions();
-    const store = getMockStore();
+    const store = Testing.reduxStore();
     expect(getLargestDimension(store.getState())).toBe(1334);
   });
   it('getHeight null', () => {
     expect.hasAssertions();
-    const store = getMockStore();
+    const store = Testing.reduxStore();
     expect(getHeight(store.getState())).toBe(1334);
   });
   it('getWidth null', () => {
     expect.hasAssertions();
-    const store = getMockStore();
+    const store = Testing.reduxStore();
     expect(getWidth(store.getState())).toBe(750);
   });
 });

@@ -4,11 +4,10 @@ import 'react-native-get-random-values';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ErrorBoundary, Toast, toastConfig } from './components';
 import { GestureHandlerProvider } from './conversions';
-import { AppProvider, debugDev, NavigationProvider } from './features';
+import { ApplicationProvider, debugDev, NavigationProvider } from './features';
 import { ReduxProvider } from './redux/ReduxProvider';
 
-// TODO: why
-LogBox.ignoreLogs(['Warning: Using UNSAFE']);
+LogBox.ignoreLogs(['UNSAFE_']);
 
 debugDev();
 
@@ -19,9 +18,9 @@ export const Main = (): JSX.Element => {
         <GestureHandlerProvider style={{ flex: 1 }}>
           <ReduxProvider>
             <ErrorBoundary>
-              <AppProvider>
+              <ApplicationProvider>
                 <NavigationProvider />
-              </AppProvider>
+              </ApplicationProvider>
               <Toast config={toastConfig} />
             </ErrorBoundary>
           </ReduxProvider>

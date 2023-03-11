@@ -1,21 +1,45 @@
-import { AppState, type AppStateStatus } from 'react-native';
+import { type NetInfoState } from '@react-native-community/netinfo';
+import {
+  type AppStateStatus,
+  type KeyboardMetrics,
+  type ScaledSize,
+} from 'react-native';
 import {
   type LocationProviderInfo,
   type PowerState,
 } from 'react-native-device-info';
-import {
-  type Calendar,
-  type Locale,
-  type NumberFormatSettings,
-  type TemperatureUnit,
-} from 'react-native-localize';
 import { type RootAction } from 'root-types';
 import { type DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
 import { logout } from '../Auth';
 
 /* INTERFACES */
-export type DeviceData = DeepReadonly<{
+export type DimensionState = {
+  screen: ScaledSize;
+  window: ScaledSize;
+};
+
+export type LocalizeState = {
+  calendar: string;
+  country: string;
+  currencies: string[];
+  locales: {
+    countryCode: string;
+    isRTL: boolean;
+    languageCode: string;
+    languageTag: string;
+    scriptCode?: string | undefined;
+  }[];
+  numberFormatSettings: { decimalSeparator: string; groupingSeparator: string };
+  temperatureUnit: string;
+  timeZone: string;
+  uses24HourClock: boolean;
+  usesAutoDateAndTime: boolean | undefined;
+  usesAutoTimeZone: boolean | undefined;
+  usesMetricSystem: boolean;
+};
+
+export type DetailsState = {
   androidId: string;
   apiLevel: number;
   applicationName: string;
@@ -24,14 +48,12 @@ export type DeviceData = DeepReadonly<{
   batteryLevel: number;
   bootloader: string;
   brand: string;
+  brightness: number;
   buildId: string;
   buildNumber: string;
   bundleId: string;
-  calendar: Calendar;
   carrier: string;
   codename: string;
-  country: string;
-  currencies: string[];
   device: string;
   deviceId: string;
   deviceName: string;
@@ -42,7 +64,9 @@ export type DeviceData = DeepReadonly<{
   firstInstallTime: number;
   fontScale: number;
   freeDiskStorage: number;
+  freeDiskStorageOld: number;
   hardware: string;
+  hasDynamicIsland: boolean;
   hasGms: boolean;
   hasHms: boolean;
   hasNotch: boolean;
@@ -55,21 +79,23 @@ export type DeviceData = DeepReadonly<{
   isAirplaneMode: boolean;
   isBatteryCharging: boolean;
   isCameraPresent: boolean;
+  isDisplayZoomed: boolean;
   isEmulator: boolean;
   isHeadphonesConnected: boolean;
+  isKeyboardConnected: boolean;
   isLandscape: boolean;
   isLocationEnabled: boolean;
+  isMouseConnected: boolean;
   isPinOrFingerprintSet: boolean;
   isTablet: boolean;
+  isTabletMode: boolean;
   lastUpdateTime: number;
-  locales: Locale[];
   macAddress: string;
   manufacturer: string;
   maxMemory: number;
   model: string;
-  numberFormatSettings: NumberFormatSettings;
   phoneNumber: string;
-  powerState: Partial<PowerState> | null;
+  powerState: Partial<PowerState>;
   previewSdkInt: number;
   product: string;
   readableVersion: string;
@@ -78,144 +104,57 @@ export type DeviceData = DeepReadonly<{
   supported32BitAbis: string[];
   supported64BitAbis: string[];
   supportedAbis: string[];
-  syncUniqueId: string;
   systemAvailableFeatures: string[];
   systemName: string;
   systemVersion: string;
   tags: string;
-  temperatureUnit: TemperatureUnit;
-  timezone: string;
   totalDiskCapacity: number;
+  totalDiskCapacityOld: number;
   totalMemory: number;
   type: string;
   uniqueId: string;
   usedMemory: number;
   userAgent: string;
-  uses24HourClock: boolean;
-  usesAutoDateAndTime: boolean | undefined;
-  usesAutoTimeZone: boolean | undefined;
-  usesMetricSystem: boolean;
   version: string;
+};
+
+type DeviceState = DeepReadonly<{
+  details: DetailsState | null;
+  dimensions: DimensionState | null;
+  keyboard: KeyboardMetrics | null;
+  localization: LocalizeState | null;
+  network: NetInfoState | null;
+  status: AppStateStatus;
 }>;
 
-type DeviceState = DeepReadonly<
-  DeviceData & {
-    appStatus: AppStateStatus;
-    keyboardHeight: number;
-    keyboardVisible: boolean;
-  }
->;
-
 /* ACTIONS */
-export const loadDevice = createAction('device/load')<DeviceData>();
-export const changeAppStatus = createAction('device/update')<AppStateStatus>();
-export const changeKeyboardStatus =
-  createAction('device/setKeyboard')<number>();
+export const setDetails = createAction('device/details')<DetailsState>();
+export const setLocalization = createAction(
+  'device/localization',
+)<LocalizeState>();
+export const setNetwork = createAction('device/network')<NetInfoState>();
+export const setStatus = createAction('device/status')<AppStateStatus>();
+export const setDimensions =
+  createAction('device/dimensions')<DimensionState>();
+export const setKeyboard = createAction('device/keyboard')<KeyboardMetrics>();
 
 export const deviceActions = {
-  changeAppStatus,
-  changeKeyboardStatus,
-  loadDevice,
+  setDetails,
+  setDimensions,
+  setKeyboard,
+  setLocalization,
+  setNetwork,
+  setStatus,
 };
 
 /* REDUCERS */
-export const deviceInfoInitialState: DeviceData = {
-  androidId: '',
-  apiLevel: 0,
-  applicationName: '',
-  availableLocationProviders: {},
-  baseOs: '',
-  batteryLevel: 0,
-  bootloader: '',
-  brand: '',
-  buildId: '',
-  buildNumber: '',
-  bundleId: '',
-  calendar: 'gregorian',
-  carrier: '',
-  codename: '',
-  country: '',
-  currencies: [],
-  device: '',
-  deviceId: '',
-  deviceName: '',
-  deviceToken: '',
-  deviceType: '',
-  display: '',
-  fingerprint: '',
-  firstInstallTime: 0,
-  fontScale: 0,
-  freeDiskStorage: 0,
-  hardware: '',
-  hasGms: false,
-  hasHms: false,
-  hasNotch: false,
-  host: '',
-  incremental: '',
-  installReferrer: '',
-  installerPackageName: '',
-  instanceId: '',
-  ipAddress: '',
-  isAirplaneMode: false,
-  isBatteryCharging: false,
-  isCameraPresent: false,
-  isEmulator: false,
-  isHeadphonesConnected: false,
-  isLandscape: false,
-  isLocationEnabled: false,
-  isPinOrFingerprintSet: false,
-  isTablet: false,
-  lastUpdateTime: 0,
-  locales: [
-    {
-      countryCode: 'US',
-      isRTL: false,
-      languageCode: 'en',
-      languageTag: 'en-US',
-    },
-  ],
-  macAddress: '',
-  manufacturer: '',
-  maxMemory: 0,
-  model: '',
-  numberFormatSettings: {
-    decimalSeparator: '.',
-    groupingSeparator: ',',
-  },
-  phoneNumber: '',
-  powerState: null,
-  previewSdkInt: 0,
-  product: '',
-  readableVersion: '',
-  securityPatch: '',
-  serialNumber: '',
-  supported32BitAbis: [],
-  supported64BitAbis: [],
-  supportedAbis: [],
-  syncUniqueId: '',
-  systemAvailableFeatures: [],
-  systemName: '',
-  systemVersion: '',
-  tags: '',
-  temperatureUnit: 'fahrenheit',
-  timezone: '',
-  totalDiskCapacity: 0,
-  totalMemory: 0,
-  type: '',
-  uniqueId: '',
-  usedMemory: 0,
-  userAgent: '',
-  uses24HourClock: false,
-  usesAutoDateAndTime: false,
-  usesAutoTimeZone: false,
-  usesMetricSystem: false,
-  version: '',
-};
 export const deviceInitialState: DeviceState = {
-  ...deviceInfoInitialState,
-  appStatus: AppState.currentState,
-  keyboardHeight: 0,
-  keyboardVisible: false,
+  details: null,
+  dimensions: null,
+  keyboard: null,
+  localization: null,
+  network: null,
+  status: 'unknown',
 };
 
 export const deviceReducer = (
@@ -223,22 +162,35 @@ export const deviceReducer = (
   action: RootAction,
 ): DeviceState => {
   switch (action.type) {
-    case getType(changeAppStatus):
+    case getType(setDetails):
       return {
         ...state,
-        appStatus: action.payload,
+        details: action.payload,
       };
-    case getType(changeKeyboardStatus):
+    case getType(setDimensions):
       return {
         ...state,
-        keyboardHeight: action.payload,
-        keyboardVisible: action.payload > 0,
+        dimensions: action.payload,
       };
-    case getType(loadDevice):
+    case getType(setKeyboard):
       return {
         ...state,
-        ...action.payload,
-        keyboardHeight: 0,
+        keyboard: action.payload,
+      };
+    case getType(setLocalization):
+      return {
+        ...state,
+        localization: action.payload,
+      };
+    case getType(setNetwork):
+      return {
+        ...state,
+        network: action.payload,
+      };
+    case getType(setStatus):
+      return {
+        ...state,
+        status: action.payload,
       };
     case getType(logout):
       return deviceInitialState;

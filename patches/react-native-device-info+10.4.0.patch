@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-native-device-info/jest/react-native-device-info-mock.js b/node_modules/react-native-device-info/jest/react-native-device-info-mock.js
+index 481f1e5..0a9886a 100755
+--- a/node_modules/react-native-device-info/jest/react-native-device-info-mock.js
++++ b/node_modules/react-native-device-info/jest/react-native-device-info-mock.js
+@@ -146,6 +146,7 @@ const diMock = {
+   isKeyboardConnectedSync: booleanFnSync(),
+   isTabletMode: booleanFnAsync(),
+   isTablet: booleanFnSync(),
++  isDisplayZoomed: booleanFnSync(),
+   supported32BitAbis: arrayFnAsync(),
+   supported32BitAbisSync: arrayFnSync(),
+   supported64BitAbis: arrayFnAsync(),

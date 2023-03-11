@@ -4,6 +4,7 @@ import {
   useDeviceInfo,
   useDimensions,
   useKeyboard,
+  useLocalization,
   useNetInfo,
 } from './hooks';
 
@@ -11,12 +12,13 @@ type Props = {
   children: ReactElement;
 };
 
-export const AppProvider = ({ children }: Props) => {
+export const ApplicationProvider = ({ children }: Props) => {
   useNetInfo();
-  useDeviceInfo();
   useDimensions();
-  useAppState();
   useKeyboard();
+  useAppState();
+  useLocalization();
+  useDeviceInfo();
 
   return children;
 };

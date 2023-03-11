@@ -73,7 +73,8 @@ export const SignUp = memo(function SignUp() {
   const focus = useIsFocused();
   const landscape = useRootSelector(getLandscapeOrientation);
   const disabled = state.loading;
-  const timezone = useRootSelector((root) => root.device.timezone);
+  const timezone =
+    useRootSelector((root) => root.device.localization?.timeZone) ?? '';
 
   const handleErrorToast = useCallback((e: unknown, message: string) => {
     const err = e as FirebaseAuthTypes.NativeFirebaseAuthError;

@@ -1,16 +1,15 @@
 import { getType } from 'typesafe-actions';
 import {
-  changeAppStatus,
-  changeKeyboardStatus,
-  type DeviceData,
   deviceInitialState,
   deviceReducer,
-  loadDevice,
+  setDimensions,
+  setKeyboard,
+  setStatus,
 } from '..';
 import { logout } from '../../Auth';
 
 describe('actions', () => {
-  it('loadDevice', () => {
+  it('setDimensions', () => {
     expect.hasAssertions();
     const size = {
       fontScale: 1,
@@ -19,41 +18,44 @@ describe('actions', () => {
       width: 1,
     };
     const payload = {
-      ...deviceInitialState,
-      manufacturer: 'apple',
-      screenDimensions: size,
-      windowDimensions: size,
+      screen: size,
+      window: size,
     };
     const expectedAction = {
       payload,
-      type: getType(loadDevice),
+      type: getType(setDimensions),
     };
-    expect(loadDevice(payload)).toStrictEqual(expectedAction);
+    expect(setDimensions(payload)).toStrictEqual(expectedAction);
   });
 
-  it('changeAppStatus', () => {
+  it('setStatus', () => {
     expect.hasAssertions();
     const payload = 'background';
     const expectedAction = {
       payload,
-      type: getType(changeAppStatus),
+      type: getType(setStatus),
     };
-    expect(changeAppStatus(payload)).toStrictEqual(expectedAction);
+    expect(setStatus(payload)).toStrictEqual(expectedAction);
   });
 
-  it('changeKeyboardStatus', () => {
+  it('setKeyboard', () => {
     expect.hasAssertions();
-    const payload = 43;
+    const payload = {
+      height: 100,
+      screenX: 200,
+      screenY: 400,
+      width: 200,
+    };
     const expectedAction = {
       payload,
-      type: getType(changeKeyboardStatus),
+      type: getType(setKeyboard),
     };
-    expect(changeKeyboardStatus(payload)).toStrictEqual(expectedAction);
+    expect(setKeyboard(payload)).toStrictEqual(expectedAction);
   });
 });
 
 describe('reducer', () => {
-  it('loadDevice', () => {
+  it('setDimensions', () => {
     expect.hasAssertions();
     const size = {
       fontScale: 1,
@@ -61,61 +63,49 @@ describe('reducer', () => {
       scale: 1,
       width: 1,
     };
+    const payload = {
+      screen: size,
+      window: size,
+    };
     const data = {
       ...deviceInitialState,
-      brand: 'string',
-      deviceCountry: 'string',
-      deviceId: 'string',
-      deviceLocale: 'string',
-      deviceName: 'string',
-      firstInstallTime: 123,
-      fontScale: 123,
-      installReferrer: 'string',
-      instanceId: 'string',
-      is24Hour: true,
-      isEmulator: true,
-      isPinOrFingerprintSet: true,
-      isTablet: true,
-      lastUpdateTime: 123,
-      manufacturer: 'string',
-      model: 'string',
-      screenDimensions: size,
-      systemName: 'string',
-      systemVersion: 'string',
-      timezone: 'string',
-      userAgent: 'string',
-      windowDimensions: size,
+      dimensions: payload,
     };
     expect(
       deviceReducer(deviceInitialState, {
-        payload: data as DeviceData,
-        type: getType(loadDevice),
+        payload,
+        type: getType(setDimensions),
       }),
     ).toStrictEqual(data);
   });
 
-  it('changeKeyboardStatus', () => {
+  it('setKeyboard', () => {
     expect.hasAssertions();
+    const payload = {
+      height: 100,
+      screenX: 200,
+      screenY: 400,
+      width: 200,
+    };
     expect(
       deviceReducer(deviceInitialState, {
-        payload: 12,
-        type: getType(changeKeyboardStatus),
+        payload,
+        type: getType(setKeyboard),
       }),
     ).toStrictEqual({
       ...deviceInitialState,
-      keyboardHeight: 12,
-      keyboardVisible: true,
+      keyboard: payload,
     });
   });
 
-  it('changeAppStatus', () => {
+  it('setStatus', () => {
     expect.hasAssertions();
     expect(
       deviceReducer(deviceInitialState, {
         payload: 'background',
-        type: getType(changeAppStatus),
+        type: getType(setStatus),
       }),
-    ).toStrictEqual({ ...deviceInitialState, appStatus: 'background' });
+    ).toStrictEqual({ ...deviceInitialState, status: 'background' });
   });
 
   it('logout', () => {
