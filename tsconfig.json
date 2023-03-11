@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
-  "include": ["./src/**/*", "./.github/jest.setup.js"],
+  "include": ["./src/**/*", "./.github/**/*"],
   "compilerOptions": {
     "jsx": "react-native",
     "lib": ["esnext", "dom"],
