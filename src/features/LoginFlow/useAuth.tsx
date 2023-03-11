@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import Config from 'react-native-config';
 import {
   appleAuth,
   Firebase,
@@ -9,7 +8,7 @@ import {
 
 // import {AccessToken, LoginManager} from 'react-native-fbsdk';
 
-GoogleSignin.configure({ webClientId: Config.GOOGLE_SIGN_IN });
+// GoogleSignin.configure({ webClientId: Config.GOOGLE_SIGN_IN });
 
 type NullType = 'initializing' | 'loading' | 'logout' | 'waiting';
 type Response =
