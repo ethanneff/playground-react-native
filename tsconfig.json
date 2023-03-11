@@ -1,9 +1,10 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
-  "include": ["src/**/*"],
+  "include": ["./src/**/*"],
   "compilerOptions": {
     "jsx": "react-native",
     "lib": ["esnext", "dom"],
+    "types": ["jest", "@testing-library/jest-dom"],
     "module": "esnext",
     "target": "esnext",
     "moduleResolution": "node",

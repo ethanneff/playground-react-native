@@ -1,45 +1,53 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { render, type RenderAPI } from '@testing-library/react-native';
-import React, { type ReactElement, type ReactNode } from 'react';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import React, { type PropsWithChildren, type ReactElement } from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Provider as ReduxProvider } from 'react-redux';
+import { createStore, type Store } from 'redux';
 import { type RootState } from 'root-types';
+import { ApplicationProvider } from '../../features';
 import { reducers } from '../../redux/store';
 
-type OptionalOptions = {
-  initialProps?: Record<string, unknown>;
+type OptionalOptions<TProps> = {
+  initialProps?: TProps;
   initialState?: RootState;
 };
-type WrapperProps = {
-  children?: ReactNode;
-};
-type WrapperHook = (props: WrapperProps) => unknown;
 
-export const getMockStore = (initialState?: RootState) => {
-  if (initialState) return createStore(reducers, initialState);
-  return createStore(reducers);
+type ProviderProps = PropsWithChildren & {
+  store: Store<RootState>;
 };
 
-export const getMockRender = (
-  ui: ReactElement,
-  { initialState }: OptionalOptions = {},
-): RenderAPI => {
-  const store = getMockStore(initialState);
-  const Wrapper = ({ children }: WrapperProps) => (
-    <Provider store={store}>{children}</Provider>
-  );
-  return render(ui, { wrapper: Wrapper });
-};
+const Providers = ({ children, store }: ProviderProps) => (
+  <ReduxProvider store={store}>
+    <ApplicationProvider>
+      <SafeAreaProvider>{children}</SafeAreaProvider>
+    </ApplicationProvider>
+  </ReduxProvider>
+);
 
-export const getMockHook = (
-  hook: WrapperHook,
-  { initialProps, initialState }: OptionalOptions = {},
-) => {
-  const store = getMockStore(initialState);
-  return renderHook(hook, {
-    initialProps,
-    wrapper: ({ children }: WrapperProps) => (
-      <Provider store={store}>{children}</Provider>
-    ),
-  });
+export const Testing = {
+  reduxStore: (preloadedState?: RootState) => {
+    if (preloadedState) return createStore(reducers, preloadedState);
+    return createStore(reducers);
+  },
+  renderComponent: <TProps,>(
+    ui: ReactElement,
+    options: OptionalOptions<TProps> = {},
+  ): RenderAPI => {
+    const store = Testing.reduxStore(options.initialState);
+    const wrapper = ({ children }: PropsWithChildren) => (
+      <Providers store={store}>{children}</Providers>
+    );
+    return render(ui, { wrapper });
+  },
+  renderHook: <TResult, TProps extends PropsWithChildren>(
+    hook: (props: TProps) => TResult,
+    options: OptionalOptions<TProps> = {},
+  ) => {
+    const store = Testing.reduxStore(options.initialState);
+    const wrapper = ({ children }: PropsWithChildren) => (
+      <Providers store={store}>{children}</Providers>
+    );
+    return renderHook(hook, { initialProps: options.initialProps, wrapper });
+  },
 };

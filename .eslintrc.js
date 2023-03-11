@@ -57,7 +57,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:typescript-sort-keys/recommended',
   ],
-  ignorePatterns: ['src/mocks/'],
   root: true,
   env: { node: true },
   parser: '@typescript-eslint/parser',

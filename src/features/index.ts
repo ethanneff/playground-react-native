@@ -1,6 +1,6 @@
 export * from './Analytics';
 export * from './Animation';
-export * from './App';
+export * from './Application';
 export * from './Config';
 export * from './Debugger';
 export * from './Extensions';

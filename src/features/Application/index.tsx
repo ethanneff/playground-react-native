@@ -12,7 +12,7 @@ type Props = {
   children: ReactElement;
 };
 
-export const AppProvider = ({ children }: Props) => {
+export const ApplicationProvider = ({ children }: Props) => {
   useNetInfo();
   useDimensions();
   useKeyboard();

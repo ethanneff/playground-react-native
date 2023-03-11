@@ -4,11 +4,10 @@ declare module 'root-types' {
   import { type DeepReadonly } from 'ts-essentials';
   import { type ActionType, type StateType } from 'typesafe-actions';
 
-  export type RootStore = StateType<typeof import('../redux/store').store>;
-
   export type RootState = DeepReadonly<
     StateType<typeof import('../redux/store').reducers>
   >;
+  export type RootStore = Store<RootState>;
 
   export type RootAction = ActionType<typeof import('../redux/store').actions>;
 

@@ -7,6 +7,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Linking, Platform } from 'react-native';
 import { Storage } from '../../conversions';
 import { Analytics } from '../Analytics';
+import { Globals } from '../Config';
 
 const persistanceKey = 'navigation';
 
@@ -20,11 +21,13 @@ type UsePersistedState = {
   onStateChange: (state: NavigationState | undefined) => void;
 };
 
+const initialIsReady = Globals.environment === 'test';
+
 export const usePersistedState = (): UsePersistedState => {
   const routeNameRef = useRef<string | null>(null);
   const navigationRef =
     useRef<NavigationContainerRef<ReactNavigation.RootParamList> | null>(null);
-  const [isReady, setIsReady] = useState(false);
+  const [isReady, setIsReady] = useState(initialIsReady);
   const [initialState, setInitialState] = useState<NavigationState | undefined>(
     undefined,
   );
@@ -59,9 +62,10 @@ export const usePersistedState = (): UsePersistedState => {
 
       if (Platform.OS !== 'web' && initialUrl === null) {
         const savedStateString = await Storage.getItem(persistanceKey);
-        const state = savedStateString
-          ? (JSON.parse(savedStateString) as NavigationState)
-          : undefined;
+        const state =
+          typeof savedStateString === 'string'
+            ? (JSON.parse(savedStateString) as NavigationState)
+            : undefined;
 
         if (state !== undefined) setInitialState(state);
       }

@@ -30,7 +30,7 @@ const syncQueue: SyncQueue = {
     try {
       const get = await Storage.getItem(syncQueue.key);
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      const parse = get === null ? [] : JSON.parse(get ?? '');
+      const parse = typeof get === 'string' ? JSON.parse(get) : [];
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       syncQueue.cache = [...syncQueue.cache, ...parse];
       return syncQueue.cache;
