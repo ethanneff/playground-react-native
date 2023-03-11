@@ -33,7 +33,6 @@ jest.mock('react-native-safe-area-context', () => {
     useSafeAreaInsets: jest.fn().mockImplementation(() => inset),
   };
 });
-jest.mock('react-native-toast-message', () => null);
 jest.mock('react-native-mmkv-storage', () => ({
   MMKVLoader: class Mock {
     constructor() {}
