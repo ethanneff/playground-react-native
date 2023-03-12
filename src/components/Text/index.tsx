@@ -36,8 +36,8 @@ type TextProps = {
   style?: StyleProp<TextStyle>;
   testID?: string;
   title?: string;
-  withoutTap?: boolean;
   type?: FontType;
+  withoutTap?: boolean;
 };
 
 export const Text = memo(function Text({
