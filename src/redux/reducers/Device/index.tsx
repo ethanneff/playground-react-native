@@ -1,9 +1,5 @@
 import { type NetInfoState } from '@react-native-community/netinfo';
-import {
-  type AppStateStatus,
-  type KeyboardMetrics,
-  type ScaledSize,
-} from 'react-native';
+import { type AppStateStatus, type ScaledSize } from 'react-native';
 import {
   type LocationProviderInfo,
   type PowerState,
@@ -121,7 +117,7 @@ export type DetailsState = {
 type DeviceState = DeepReadonly<{
   details: DetailsState | null;
   dimensions: DimensionState | null;
-  keyboard: KeyboardMetrics | null;
+  keyboardHeight: number;
   localization: LocalizeState | null;
   network: NetInfoState | null;
   status: AppStateStatus;
@@ -136,12 +132,12 @@ export const setNetwork = createAction('device/network')<NetInfoState>();
 export const setStatus = createAction('device/status')<AppStateStatus>();
 export const setDimensions =
   createAction('device/dimensions')<DimensionState>();
-export const setKeyboard = createAction('device/keyboard')<KeyboardMetrics>();
+export const setKeyboardHeight = createAction('device/keyboard')<number>();
 
 export const deviceActions = {
   setDetails,
   setDimensions,
-  setKeyboard,
+  setKeyboardHeight,
   setLocalization,
   setNetwork,
   setStatus,
@@ -151,7 +147,7 @@ export const deviceActions = {
 export const deviceInitialState: DeviceState = {
   details: null,
   dimensions: null,
-  keyboard: null,
+  keyboardHeight: 0,
   localization: null,
   network: null,
   status: 'unknown',
@@ -172,10 +168,10 @@ export const deviceReducer = (
         ...state,
         dimensions: action.payload,
       };
-    case getType(setKeyboard):
+    case getType(setKeyboardHeight):
       return {
         ...state,
-        keyboard: action.payload,
+        keyboardHeight: action.payload,
       };
     case getType(setLocalization):
       return {

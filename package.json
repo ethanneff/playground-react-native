@@ -1,6 +1,6 @@
 {
   "name": "@ethanneff/playground-react-native",
-  "version": "2.75.3",
+  "version": "2.75.4",
   "description": "A playground for react-native",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@ethanneff"

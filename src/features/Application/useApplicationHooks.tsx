@@ -12,7 +12,7 @@ import * as Localize from 'react-native-localize';
 import {
   setDetails,
   setDimensions,
-  setKeyboard,
+  setKeyboardHeight,
   setLocalization,
   setNetwork,
   setStatus,
@@ -60,34 +60,28 @@ export const useDimensions = () => {
 export const useKeyboard = () => {
   const dispatch = useRootDispatch();
 
-  const handleChange = useCallback(
+  const handleShow = useCallback(
     (event: KeyboardEvent) => {
-      dispatch(setKeyboard(event.endCoordinates));
+      dispatch(setKeyboardHeight(event.endCoordinates.height));
     },
     [dispatch],
   );
 
+  const handleHide = useCallback(() => {
+    dispatch(setKeyboardHeight(0));
+  }, [dispatch]);
+
   useEffect(() => {
-    const event = Keyboard.metrics() ?? {
-      height: 0,
-      screenX: 0,
-      screenY: 0,
-      width: 0,
-    };
-    dispatch(setKeyboard(event));
-    const showSubscription = Keyboard.addListener(
-      android ? 'keyboardDidShow' : 'keyboardWillShow',
-      handleChange,
-    );
-    const hideSubscription = Keyboard.addListener(
-      android ? 'keyboardDidHide' : 'keyboardWillHide',
-      handleChange,
-    );
+    dispatch(setKeyboardHeight(0));
+    const show = android ? 'keyboardDidShow' : 'keyboardWillShow';
+    const hide = android ? 'keyboardDidHide' : 'keyboardWillHide';
+    const showSubscription = Keyboard.addListener(show, handleShow);
+    const hideSubscription = Keyboard.addListener(hide, handleHide);
     return () => {
       showSubscription.remove();
       hideSubscription.remove();
     };
-  }, [dispatch, handleChange]);
+  }, [dispatch, handleShow, handleHide]);
 };
 
 export const useAppState = () => {
