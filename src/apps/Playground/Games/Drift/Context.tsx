@@ -1,5 +1,9 @@
 import { createContext } from 'react';
-import { ColorChoice, TrackPosition, TrackPositionWithColor } from './types';
+import {
+  type ColorChoice,
+  type TrackPosition,
+  type TrackPositionWithColor,
+} from './types';
 
 export type DriftState = {
   color: ColorChoice;

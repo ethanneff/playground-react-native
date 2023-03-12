@@ -1,10 +1,10 @@
 import {
   FlashList,
-  FlashListProps,
-  ListRenderItem as RenderItem,
+  type FlashListProps,
+  type ListRenderItem as RenderItem,
   MasonryFlashList as Masonry,
 } from '@shopify/flash-list';
-import React, { Ref } from 'react';
+import React, { type Ref } from 'react';
 
 export type FlatListRef<T> = FlashList<T> | null;
 export type FlatListRenderItem<T> = RenderItem<T>;

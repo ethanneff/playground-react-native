@@ -1,18 +1,18 @@
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import dayjs, { Dayjs } from 'dayjs';
+import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
+import dayjs, { type Dayjs } from 'dayjs';
 import isToday from 'dayjs/plugin/isToday';
 import React, { memo, useCallback } from 'react';
 import {
   FlatList,
-  FlatListRenderItem,
+  type FlatListRenderItem,
   Spacing,
   Text,
   TouchableOpacity,
   View,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
-import { AuthStackRoutes, Category } from '../../types';
+import { type AuthStackRoutes, type Category } from '../../types';
 dayjs.extend(isToday);
 
 type Props = {

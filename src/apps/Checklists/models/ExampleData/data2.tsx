@@ -69,9 +69,9 @@ type ActionId = string;
 
 type ListVisibility = 'Private' | 'Public';
 
-export type ListAccess = 'Read' | 'Write' | 'Comment';
+export type ListAccess = 'Comment' | 'Read' | 'Write';
 
-export type ListFrequency = 'Single' | 'Multiple';
+export type ListFrequency = 'Multiple' | 'Single';
 
 export type User = {
   email: string;

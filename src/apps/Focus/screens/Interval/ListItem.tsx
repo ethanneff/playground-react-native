@@ -1,9 +1,9 @@
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback } from 'react';
 import { Icon, Text, TouchableOpacity, View } from '../../../../components';
 import { spacing, useColors, useDropShadow } from '../../../../features';
-import { AuthStackRoutes, Item } from '../../types';
+import { type AuthStackRoutes, type Item } from '../../types';
 import { ListSection } from './ListSection';
 
 type Props = {
@@ -27,10 +27,9 @@ export const ListItem = memo(function ListItem({
   const { navigate } =
     useNavigation<NativeStackNavigationProp<AuthStackRoutes, 'home'>>();
 
-  const onPress = useCallback(
-    () => navigate('interval-details', { item }),
-    [item, navigate],
-  );
+  const onPress = useCallback(() => {
+    navigate('interval-details', { item });
+  }, [item, navigate]);
 
   return (
     <View

@@ -1,5 +1,5 @@
-import React, { memo, ReactNode } from 'react';
-import { StyleSheet, ViewStyle } from 'react-native';
+import React, { memo, type ReactNode } from 'react';
+import { StyleSheet, type ViewStyle } from 'react-native';
 import { View } from '../../components';
 import { spacing, useColors, useDropShadow } from '../../features';
 import { TouchableOpacity } from '../TouchableOpacity';
@@ -25,15 +25,15 @@ const getOpacity = (elevation: number) =>
 const touchOpacity = 0.3;
 
 export const Card = memo(function Card({
-  testID,
   borderRadius = spacing(2),
   borderWidth = 1,
   children,
+  containerStyle,
+  contentStyle,
   elevation = 0,
   onLongPress,
   onPress,
-  containerStyle,
-  contentStyle,
+  testID,
 }: Props) {
   const colors = useColors();
   const dropShadow = useDropShadow();

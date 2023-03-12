@@ -9,11 +9,10 @@ import {
   View,
 } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
-import { SuperAny } from '../../../../types/types';
 import { getCurrentChecklist, removeList, updateList } from '../../models';
 
 export default memo(function ChecklistUpdate() {
-  const { navigate } = useNavigation<SuperAny>();
+  const { navigate } = useNavigation();
   const dispatch = useRootDispatch();
   const checklist = useRootSelector(getCurrentChecklist);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -23,14 +22,12 @@ export default memo(function ChecklistUpdate() {
   });
   const isInvalidForm = form.name.trim().length === 0;
 
-  const handleNameChange = useCallback(
-    (name: string) => setForm((state) => ({ ...state, name })),
-    [],
-  );
-  const handleDescriptionChange = useCallback(
-    (description: string) => setForm((state) => ({ ...state, description })),
-    [],
-  );
+  const handleNameChange = useCallback((name: string) => {
+    setForm((state) => ({ ...state, name }));
+  }, []);
+  const handleDescriptionChange = useCallback((description: string) => {
+    setForm((state) => ({ ...state, description }));
+  }, []);
   const handleSubmit = useCallback(() => {
     const { description, name } = form;
     const now = Date.now();
@@ -44,18 +41,27 @@ export default memo(function ChecklistUpdate() {
         updatedAt: now,
       }),
     );
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
     navigate('checklists');
   }, [checklist, dispatch, form, isInvalidForm, navigate]);
 
   const handleDelete = useCallback(() => {
     setShowDeleteModal(false);
     dispatch(removeList(checklist.id));
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
     navigate('checklists');
   }, [dispatch, checklist.id, navigate]);
 
-  const handleDeletePress = useCallback(() => setShowDeleteModal(true), []);
-  const handleDeleteCancel = useCallback(() => setShowDeleteModal(false), []);
-  const navBack = useCallback(() => navigate('checklists'), [navigate]);
+  const handleDeletePress = useCallback(() => {
+    setShowDeleteModal(true);
+  }, []);
+  const handleDeleteCancel = useCallback(() => {
+    setShowDeleteModal(false);
+  }, []);
+  const navBack = useCallback(() => {
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
+    navigate('checklists');
+  }, [navigate]);
 
   return (
     <>

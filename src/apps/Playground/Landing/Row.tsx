@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import { View } from '../../../components';
 import { spacing } from '../../../features';
 

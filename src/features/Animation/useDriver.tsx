@@ -1,9 +1,7 @@
-import { Platform } from 'react-native';
-import DeviceInfo from 'react-native-device-info';
+import { Globals } from '../Config';
 
 export const useDriver = (): boolean => {
-  return !(
-    process.env.JEST_WORKER_ID ??
-    (Platform.OS === 'web' || DeviceInfo.isEmulatorSync())
-  );
+  if (Globals.environment === 'test') return false;
+  if (Globals.platform === 'web') return false;
+  return Globals.device !== 'emulator';
 };

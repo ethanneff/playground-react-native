@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect } from 'react';
 import { Button, Card, Screen, ScrollView, Text } from '../../../../components';
 import {
-  RootNavigation,
+  type RootNavigation,
   spacing,
   useAuth,
   useColors,
@@ -23,7 +23,9 @@ export const Account = memo(function Account() {
   const { navigate } = useNavigation<RootNavigation>();
   const { onLogout, response } = useAuth();
   const profile = useRootSelector((s) => s.completeAuth);
-  const onNavToAdmin = useCallback(() => navigate('admin'), [navigate]);
+  const onNavToAdmin = useCallback(() => {
+    navigate('admin');
+  }, [navigate]);
 
   useEffect(() => {
     if (response.type === 'logout') dispatch(logout());

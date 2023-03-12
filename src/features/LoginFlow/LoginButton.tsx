@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Icon, IconName, Text, TouchableOpacity } from '../../components';
+import { Icon, type IconName, Text, TouchableOpacity } from '../../components';
 import { spacing } from '../Config';
 import { useColors } from '../Theme';
 

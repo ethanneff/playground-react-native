@@ -49,41 +49,55 @@ export const Startup = memo(function PlaygroundStartup() {
       ? "That's a long way out! Think hard: is there an MVP you could launch earlier?"
       : 'Almost there, looking forward to your launch!';
 
-  const updateForm = useCallback(
-    (key: keyof Form, value: string | boolean) =>
-      setForm((state) => ({ ...state, [key]: value })),
-    [],
-  );
+  const updateForm = useCallback((key: keyof Form, value: boolean | string) => {
+    setForm((state) => ({ ...state, [key]: value }));
+  }, []);
   const handleLaunchChange = useCallback(
-    (value?: boolean) => updateForm('launched', Boolean(value)),
+    (value?: boolean) => {
+      updateForm('launched', Boolean(value));
+    },
     [updateForm],
   );
   const handleUserChange = useCallback(
-    (value: string) => updateForm('usersTalkedTo', value),
+    (value: string) => {
+      updateForm('usersTalkedTo', value);
+    },
     [updateForm],
   );
   const handleMoraleChange = useCallback(
-    (value: string) => updateForm('morale', value),
+    (value: string) => {
+      updateForm('morale', value);
+    },
     [updateForm],
   );
   const handleObstacleChange = useCallback(
-    (value: string) => updateForm('biggestObstacle', value),
+    (value: string) => {
+      updateForm('biggestObstacle', value);
+    },
     [updateForm],
   );
   const handleLearnChange = useCallback(
-    (value: string) => updateForm('usersLearnedFrom', value),
+    (value: string) => {
+      updateForm('usersLearnedFrom', value);
+    },
     [updateForm],
   );
   const handleMetricChange = useCallback(
-    (value: string) => updateForm('primaryMetric', value),
+    (value: string) => {
+      updateForm('primaryMetric', value);
+    },
     [updateForm],
   );
   const handleGoalChange = useCallback(
-    (value: string) => updateForm('topGoals', value),
+    (value: string) => {
+      updateForm('topGoals', value);
+    },
     [updateForm],
   );
   const handleWeeksToLaunchChange = useCallback(
-    (value: string) => updateForm('launchWeeks', value),
+    (value: string) => {
+      updateForm('launchWeeks', value);
+    },
     [updateForm],
   );
 

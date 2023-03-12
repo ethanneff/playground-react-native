@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
-import { StyleProp, ViewStyle } from 'react-native';
+import React, { type ReactNode } from 'react';
+import { type StyleProp, type ViewStyle } from 'react-native';
 import { View } from '../../components';
 import { spacing } from '../../features';
 

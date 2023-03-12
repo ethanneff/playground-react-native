@@ -26,7 +26,9 @@ export const ItemEdit = memo(function ItemEdit({
   title,
   titleEditable,
 }: ItemEditProps) {
-  const onClose = useCallback(() => Keyboard.dismiss(), []);
+  const onClose = useCallback(() => {
+    Keyboard.dismiss();
+  }, []);
   const form = useRef({ description, title });
 
   const handleChangeText = useCallback(

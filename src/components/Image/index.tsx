@@ -6,7 +6,7 @@ import { FasterImage } from './FasterImage';
 
 type Props = {
   height: number;
-  size?: number | 'small' | 'large';
+  size?: number | 'large' | 'small';
   uri: string;
   width: number;
 };

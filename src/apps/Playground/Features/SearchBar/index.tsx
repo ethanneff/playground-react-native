@@ -3,13 +3,13 @@ import React, { memo, useCallback, useState } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import {
   FlatList,
-  FlatListRenderItem,
+  type FlatListRenderItem,
   Icon,
-  IconName,
   Input,
   Screen,
   Text,
   View,
+  type IconName,
 } from '../../../../components';
 import { colorWithOpacity, spacing, useColors } from '../../../../features';
 
@@ -57,7 +57,6 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     iconName: iconSearch,
     input: '',
   });
-
   const translateIcon = state.animation.interpolate({
     inputRange: [0, 0.5, 1],
     outputRange: [1, -60, 1],
@@ -110,10 +109,9 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
 
   const keyExtractor = useCallback((item: Data) => item.id.toString(), []);
 
-  const onChangeText = useCallback(
-    (value: string) => setState((prev) => ({ ...prev, input: value })),
-    [],
-  );
+  const onChangeText = useCallback((value: string) => {
+    setState((prev) => ({ ...prev, input: value }));
+  }, []);
 
   return (
     <Screen

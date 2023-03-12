@@ -3,7 +3,7 @@ import { v4 } from 'uuid';
 import { View } from '../../components';
 import { spacing } from '../../features';
 import { CalendarDay } from './Day';
-import { CalendarMatrix } from './utils';
+import { type CalendarMatrix } from './utils';
 
 type Props = {
   hiddenDays?: boolean;
@@ -19,7 +19,9 @@ export const CalendarMonth = memo(function Month({
   selected,
 }: Props) {
   const handleSelected = useCallback(
-    (id: string) => () => onSelected(id),
+    (id: string) => () => {
+      onSelected(id);
+    },
     [onSelected],
   );
   return (

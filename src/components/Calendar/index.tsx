@@ -2,7 +2,7 @@ import React, { memo, useCallback, useState } from 'react';
 import { View } from '../../components';
 import { CalendarHeader } from './Header';
 import { CalendarMonth } from './Month';
-import { addMonths, CalendarMatrix, getCalendarMatrix } from './utils';
+import { addMonths, type CalendarMatrix, getCalendarMatrix } from './utils';
 
 type State = {
   matrix: CalendarMatrix;

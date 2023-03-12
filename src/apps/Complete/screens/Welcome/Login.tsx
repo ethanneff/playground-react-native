@@ -1,15 +1,15 @@
-import { FirebaseAuthTypes } from '@react-native-firebase/auth';
+import { type FirebaseAuthTypes } from '@react-native-firebase/auth';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Platform } from 'react-native';
 import {
   Button,
   Icon,
-  IconName,
+  type IconName,
   Loader,
   Modal,
   Text,
   TextInput,
-  TextInputRef,
+  type TextInputRef,
   TouchableOpacity,
 } from '../../../../components';
 import { spacing, useAuth, useColors } from '../../../../features';
@@ -66,14 +66,14 @@ const SignInButton = memo(function SignInButton({
 });
 
 type Screen =
-  | 'loading'
-  | 'landing'
-  | 'signUp'
-  | 'logIn'
+  | 'anonymous'
   | 'forgotPassword'
+  | 'landing'
+  | 'loading'
+  | 'logIn'
   | 'phone'
   | 'phoneCode'
-  | 'anonymous';
+  | 'signUp';
 
 type Ref = {
   email: string;
@@ -142,16 +142,16 @@ export const Login = memo(function Login({
     [],
   );
 
-  const handleConfirm = useCallback(
-    () => onPhoneConfirm(form.current.phoneCode),
-    [onPhoneConfirm],
-  );
+  const handleConfirm = useCallback(() => {
+    onPhoneConfirm(form.current.phoneCode);
+  }, [onPhoneConfirm]);
 
-  const handlePhone = useCallback(() => onPhone(form.current.phone), [onPhone]);
-  const handleReset = useCallback(
-    () => onPasswordReset(form.current.email),
-    [onPasswordReset],
-  );
+  const handlePhone = useCallback(() => {
+    onPhone(form.current.phone);
+  }, [onPhone]);
+  const handleReset = useCallback(() => {
+    onPasswordReset(form.current.email);
+  }, [onPasswordReset]);
 
   const onEye = useCallback(() => {
     setState((p) => ({ ...p, eye: !p.eye }));
@@ -168,7 +168,9 @@ export const Login = memo(function Login({
   );
 
   const onScreenChange = useCallback(
-    (screen: Screen) => () => setState((p) => ({ ...p, screen })),
+    (screen: Screen) => () => {
+      setState((p) => ({ ...p, screen }));
+    },
     [],
   );
 

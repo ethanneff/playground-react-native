@@ -1,26 +1,26 @@
 // TODO: slider on web
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
-import { Image, ImageSourcePropType } from 'react-native';
+import { Image, type ImageSourcePropType } from 'react-native';
 import {
   Button,
   Card,
-  FlatListRenderItem,
   Masonry,
   Screen,
   ScrollView,
   Slider,
   Text,
   View,
+  type FlatListRenderItem,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import {
   changeTheme,
   getLandscapeOrientation,
-  Theme,
   themes,
   useRootDispatch,
   useRootSelector,
+  type Theme,
 } from '../../../../redux';
 
 type CardItem = {
@@ -92,7 +92,9 @@ export const Themes = memo(function Themes() {
   const currentTheme = useRootSelector((state) => state.theme.currentTheme);
   const themePress = (theme: Theme) => () => dispatch(changeTheme(theme));
   const [elevation, setElevation] = useState(2);
-  const handleSlider = useCallback((value: number) => setElevation(value), []);
+  const handleSlider = useCallback((value: number) => {
+    setElevation(value);
+  }, []);
   const landscape = useRootSelector(getLandscapeOrientation);
   const columns = landscape ? 5 : 2;
   const onPress = useCallback(() => undefined, []);
@@ -189,6 +191,7 @@ export const Themes = memo(function Themes() {
         <Masonry
           data={cards}
           numColumns={columns}
+          // @ts-expect-error Type 'Record<string, unknown>' is missing the following properties from type 'ListRenderItemInfo<CardItem>': item, index, separators
           renderItem={renderItem}
         />
       </ScrollView>

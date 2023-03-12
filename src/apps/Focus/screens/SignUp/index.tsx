@@ -1,5 +1,5 @@
 import { useIsFocused, useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
@@ -8,20 +8,20 @@ import {
   Spacing,
   Text,
   TextInput,
-  TextInputRef,
   Toast,
+  type TextInputRef,
 } from '../../../../components';
-import { Firebase, FirebaseAuthTypes } from '../../../../conversions';
+import { Firebase, type FirebaseAuthTypes } from '../../../../conversions';
 import { spacing } from '../../../../features';
 import { getLandscapeOrientation, useRootSelector } from '../../../../redux';
-import { Collections, Preferences, User } from '../../data';
-import { UnAuthStackRoutes } from '../../types';
+import { Collections, type Preferences, type User } from '../../data';
+import { type UnAuthStackRoutes } from '../../types';
 import { SocialAuth } from './SocialAuth';
 
 const initialRef = { email: '', password: '' };
 const initialState = { eye: false, loading: false };
 
-const createUser = (user: FirebaseAuthTypes.User) => {
+const createUser = async (user: FirebaseAuthTypes.User) => {
   const data: User = {
     displayName: user.displayName,
     email: user.email,
@@ -31,7 +31,7 @@ const createUser = (user: FirebaseAuthTypes.User) => {
     photoUrl: user.photoURL,
   };
 
-  return Collections.users.doc(user.uid).set(data);
+  await Collections.users.doc(user.uid).set(data);
 };
 
 const createUserPreferences = async (
@@ -73,7 +73,8 @@ export const SignUp = memo(function SignUp() {
   const focus = useIsFocused();
   const landscape = useRootSelector(getLandscapeOrientation);
   const disabled = state.loading;
-  const timezone = useRootSelector((root) => root.device.timezone);
+  const timezone =
+    useRootSelector((root) => root.device.localization?.timeZone) ?? '';
 
   const handleErrorToast = useCallback((e: unknown, message: string) => {
     const err = e as FirebaseAuthTypes.NativeFirebaseAuthError;

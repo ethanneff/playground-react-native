@@ -1,5 +1,5 @@
-import React, { Ref } from 'react';
-import { ScrollViewProps } from 'react-native';
+import React, { type Ref } from 'react';
+import { type ScrollViewProps } from 'react-native';
 import { GestureScrollView } from '../../conversions';
 
 export type ScrollViewRef = GestureScrollView | null;

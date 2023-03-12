@@ -1,4 +1,10 @@
-import React, { memo, ReactNode, useCallback, useEffect, useRef } from 'react';
+import React, {
+  memo,
+  useCallback,
+  useEffect,
+  useRef,
+  type ReactNode,
+} from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import {
   SoundManager,
@@ -29,20 +35,20 @@ type ModalProps = {
 const fadeDuration = 150;
 const defaultMargin = 0.8;
 export const Modal = memo(function Modal({
-  onBackgroundPress,
-  children,
   backgroundColor,
+  children,
   duration,
-  noScroll,
-  showOverlay,
-  widthPercent = defaultMargin,
-  heightPercent = defaultMargin,
   elevation,
+  heightPercent = defaultMargin,
+  noScroll,
+  onBackgroundPress,
+  showOverlay,
   testID,
+  widthPercent = defaultMargin,
 }: ModalProps) {
   const colors = useColors();
   const useNativeDriver = useDriver();
-  const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
+  const keyboardHeight = useRootSelector((s) => s.device.keyboard?.height) ?? 0;
   const dropShadow = useDropShadow();
   const screen = useRootSelector((s) => s.dimension.screen);
   const maxHeight = (screen.height - keyboardHeight) * heightPercent;
@@ -78,8 +84,8 @@ export const Modal = memo(function Modal({
 
   // TODO: animation is not clean on devices
   const animate = useCallback(
-    (toValue: number) => {
-      return new Promise((resolve) => {
+    async (toValue: number) => {
+      await new Promise((resolve) => {
         Animated.timing(fade, {
           duration: fadeDuration,
           toValue,

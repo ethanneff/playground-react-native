@@ -6,6 +6,7 @@ import {
   Inputs,
   Modals,
   Paragraphs,
+  ScrollViews,
   Themes,
 } from './Components';
 import {
@@ -43,7 +44,7 @@ import {
   TicTacToe,
 } from './Games';
 import { Landing } from './Landing';
-import { NavParams } from './navParams';
+import { type NavParams } from './navParams';
 
 const noHeader = { headerShown: false };
 const Stack = createNativeStackNavigator<NavParams>();
@@ -79,6 +80,10 @@ export default memo(function Games() {
       <Stack.Screen
         component={Modals}
         name="modals"
+      />
+      <Stack.Screen
+        component={ScrollViews}
+        name="scroll-views"
       />
 
       {/* games */}

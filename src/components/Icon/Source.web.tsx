@@ -1,6 +1,6 @@
 import Original from '@mdi/react';
-import React, { CSSProperties, memo } from 'react';
-import { icon, IconName } from './config';
+import React, { type CSSProperties, memo } from 'react';
+import { icon, type IconName } from './config';
 
 type Props = {
   color?: string;

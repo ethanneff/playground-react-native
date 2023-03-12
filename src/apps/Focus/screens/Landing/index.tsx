@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Lottie, { AnimationObject } from 'lottie-react-native';
+import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
+import Lottie, { type AnimationObject } from 'lottie-react-native';
 import React, { memo, useCallback } from 'react';
 import { Button, Screen, Spacing, Text, View } from '../../../../components';
 import { spacing } from '../../../../features';
@@ -9,7 +9,7 @@ import {
   getSmallestDimension,
   useRootSelector,
 } from '../../../../redux';
-import { UnAuthStackRoutes } from '../../types';
+import { type UnAuthStackRoutes } from '../../types';
 
 const trophy = require('./trophy.json') as AnimationObject;
 

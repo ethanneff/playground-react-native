@@ -15,16 +15,16 @@ import { RateApp, spacing, useColors } from '../../../../features';
 import { Reminders } from './Reminders';
 
 type Modal =
-  | 'alert'
-  | 'modal-large'
-  | 'modal-small'
-  | 'modal-keyboard'
-  | 'reminder'
   | 'action-sheet'
-  | 'notification'
+  | 'alert'
   | 'loading'
   | 'login'
+  | 'modal-keyboard'
+  | 'modal-large'
+  | 'modal-small'
+  | 'notification'
   | 'rate-app'
+  | 'reminder'
   | null;
 
 type ModalManagerProps = {
@@ -40,7 +40,9 @@ const ModalManager = memo(function ModalManager({
     onClose(null)();
   }, [onClose]);
   const [value, setValue] = useState<string>('');
-  const handleTextChange = useCallback((v: string) => setValue(v), []);
+  const handleTextChange = useCallback((v: string) => {
+    setValue(v);
+  }, []);
 
   switch (modal) {
     case 'rate-app':
@@ -114,7 +116,9 @@ export const Modals = memo(function Modals() {
   const colors = useColors();
   const [modal, setModal] = useState<Modal>(null);
   const handleModalChange = useCallback(
-    (nextModal: Modal) => () => setModal(nextModal),
+    (nextModal: Modal) => () => {
+      setModal(nextModal);
+    },
     [],
   );
 

@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { Text, View } from '../../../../components';
 import { spacing } from '../../../../features';
-import { Item } from '../../types';
+import { type Item } from '../../types';
 
 type Props = {
   item: Item;

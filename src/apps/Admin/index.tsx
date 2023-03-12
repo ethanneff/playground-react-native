@@ -1,12 +1,19 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import { Button, Screen, ScrollView, Text } from '../../components';
-import { RootNavigation, RootRoutes, spacing, useColors } from '../../features';
+import {
+  type RootNavigation,
+  type RootRoutes,
+  spacing,
+  useColors,
+} from '../../features';
 
 export default memo(function Admin() {
   const { navigate } = useNavigation<RootNavigation>();
   const onPress = useCallback(
-    (to: keyof RootRoutes) => () => navigate(to),
+    (to: keyof RootRoutes) => () => {
+      navigate(to);
+    },
     [navigate],
   );
   const colors = useColors();

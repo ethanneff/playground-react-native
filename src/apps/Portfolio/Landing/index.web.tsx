@@ -1,19 +1,19 @@
-import React, { memo, ReactNode } from 'react';
-import { Image } from 'react-native';
+import React, { memo, type ReactNode } from 'react';
+import { Image, type ImageSourcePropType } from 'react-native';
 import {
   Icon,
-  IconName,
   Sentence,
-  SentenceType,
   Text,
   TouchableOpacity,
   View,
+  type IconName,
+  type SentenceType,
 } from '../../../components';
 import { spacing, useColors } from '../../../features'; // eslint-disable-line import/order
 
 const missingCallback = () => undefined;
 
-const image = require('../../../assets/line-chart.png');
+const image = require('../../../assets/line-chart.png') as ImageSourcePropType;
 
 type SignInButtonProps = {
   icon: IconName;
@@ -145,7 +145,7 @@ export const Header = memo(function Header({ height }: HeaderProps) {
 
 type AppIconProps = {
   onPress: () => void;
-  type: 'google-play' | 'apple';
+  type: 'apple' | 'google-play';
 };
 
 const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {

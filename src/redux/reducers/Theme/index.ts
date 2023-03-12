@@ -1,6 +1,6 @@
-import { RootAction, RootState } from 'root-types';
+import { type RootAction, type RootState } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
-import { ColorTheme } from '../../../features';
+import { type ColorTheme } from '../../../features';
 import { logout } from '../Auth';
 import { darkTheme, lightTheme } from './../../../features/Config/colors';
 
@@ -9,7 +9,7 @@ https://material.io/design/color/dark-theme.html#ui-application
 https://material.io/design/color/the-color-system.html#tools-for-picking-themes
 */
 
-export type Theme = 'light' | 'dark';
+export type Theme = 'dark' | 'light';
 export const themes: Theme[] = ['light', 'dark'];
 
 /* ACTIONS */

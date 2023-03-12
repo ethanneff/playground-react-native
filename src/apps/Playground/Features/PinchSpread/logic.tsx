@@ -1,7 +1,7 @@
 import {
-  GestureResponderEvent,
-  NativeTouchEvent,
-  PointProp,
+  type GestureResponderEvent,
+  type NativeTouchEvent,
+  type PointProp,
 } from 'react-native';
 
 type Touches = Record<string, PointProp>;

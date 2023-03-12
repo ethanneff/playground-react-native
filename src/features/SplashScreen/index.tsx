@@ -1,9 +1,9 @@
-import React, { memo, ReactNode, useEffect, useState } from 'react';
+import React, { memo, useEffect, useState, type ReactNode } from 'react';
 import {
   Animated,
   Easing,
-  ImageSourcePropType,
   StyleSheet,
+  type ImageSourcePropType,
 } from 'react-native';
 import { MaskedView, View } from '../../components';
 import { useDriver } from '../../features';
@@ -88,12 +88,15 @@ export const SplashScreen = memo(function SplashScreenMemo({
       easing: Easing.in(Easing.cubic),
       toValue: 100,
       useNativeDriver,
-    }).start(() => setState((p) => ({ ...p, complete: true })));
+    }).start(() => {
+      setState((p) => ({ ...p, complete: true }));
+    });
   }, [delay, duration, state.progress, useNativeDriver]);
 
   return (
     <View style={styles.container}>
       <Animated.View style={primaryColorStyles} />
+      {/* @ts-expect-error JSX element class does not support attributes because it does not have a 'props' property. */}
       <MaskedView
         maskElement={
           <Animated.View style={styles.centered}>

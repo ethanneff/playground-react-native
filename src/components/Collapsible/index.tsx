@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback, useRef, useState } from 'react';
+import React, { type ReactNode, useCallback, useRef, useState } from 'react';
 import { Animated, Easing } from 'react-native';
 import { spacing, useColors, useDriver } from '../../features';
 import { Icon } from '../Icon';

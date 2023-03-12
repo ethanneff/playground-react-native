@@ -1,4 +1,4 @@
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs, { type Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
 import {
   FlatList,

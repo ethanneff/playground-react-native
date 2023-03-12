@@ -1,4 +1,4 @@
-import React, { memo, ReactNode } from 'react';
+import React, { memo, type ReactNode } from 'react';
 import DeviceInfo from 'react-native-device-info';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';

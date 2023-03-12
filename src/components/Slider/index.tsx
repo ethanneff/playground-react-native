@@ -1,4 +1,4 @@
-import Original, { SliderProps } from '@react-native-community/slider';
+import Original, { type SliderProps } from '@react-native-community/slider';
 import React, { useCallback } from 'react';
 import { StyleSheet } from 'react-native';
 import { SoundManager } from '../../features';

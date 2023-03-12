@@ -73,6 +73,11 @@ v3
 - [ ] remove Checklist
 - [ ] migrate everything to libs
 
+- [ ] update to react-native-mmkv
+- [x] upgrade 71
+- [ ] move all to .cache
+- [ ] upgrade to flashlist
+
 Deploy iOS App (Focus)
 
 - [ ] assets

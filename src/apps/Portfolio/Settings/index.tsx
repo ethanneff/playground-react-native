@@ -3,17 +3,17 @@ import React, { memo, useCallback } from 'react';
 import {
   Button,
   FlatList,
-  FlatListRenderItem,
+  type FlatListRenderItem,
   Screen,
   Text,
   View,
 } from '../../../components';
 import {
   changeTheme,
-  Theme,
   themes,
   useRootDispatch,
   useRootSelector,
+  type Theme,
 } from '../../../redux';
 
 export const Settings = memo(function PortfolioSettings() {

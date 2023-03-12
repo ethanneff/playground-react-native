@@ -9,19 +9,16 @@ export const Home = memo(function CantHurtMeMain() {
   const [showModal, setShowModal] = useState(initialState);
   const { onLeftPress } = useAdminNavBack();
 
-  const handleModalBackgroundPress = useCallback(
-    () => setShowModal(initialState),
-    [],
-  );
-  const handleProfilePress = useCallback(
-    () => setShowModal({ ...initialState, profile: true }),
-    [],
-  );
+  const handleModalBackgroundPress = useCallback(() => {
+    setShowModal(initialState);
+  }, []);
+  const handleProfilePress = useCallback(() => {
+    setShowModal({ ...initialState, profile: true });
+  }, []);
 
-  const handleSettingsPress = useCallback(
-    () => setShowModal({ ...initialState, settings: true }),
-    [],
-  );
+  const handleSettingsPress = useCallback(() => {
+    setShowModal({ ...initialState, settings: true });
+  }, []);
 
   return (
     <>

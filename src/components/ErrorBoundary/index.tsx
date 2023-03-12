@@ -1,4 +1,4 @@
-import React, { ErrorInfo, ReactNode } from 'react';
+import React, { type ErrorInfo, type ReactNode } from 'react';
 import { Text } from '../Text';
 
 type Props = {

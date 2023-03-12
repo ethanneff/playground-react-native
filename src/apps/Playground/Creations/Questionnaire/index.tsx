@@ -22,7 +22,7 @@ type Data = {
   key: string;
   next?: string;
   title: string;
-  type: 'radio' | 'button';
+  type: 'button' | 'radio';
 };
 
 const data: Data[] = [
@@ -102,12 +102,16 @@ export const Questionnaire = memo(function Questionnaire() {
   );
 
   const updateSelection = useCallback(
-    (item: Data, choice: Choice) => () => onSelection(item, choice),
+    (item: Data, choice: Choice) => () => {
+      onSelection(item, choice);
+    },
     [onSelection],
   );
 
   const updateProgress = useCallback(
-    (value: number) => () => onProgress(value),
+    (value: number) => () => {
+      onProgress(value);
+    },
     [onProgress],
   );
 

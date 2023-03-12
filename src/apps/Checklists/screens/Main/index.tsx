@@ -9,21 +9,22 @@ import {
   TouchableOpacity,
 } from '../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
-import { SuperAny } from '../../../../types/types';
+
 import {
-  Checklist,
   getActiveChecklistOrderByCreatedAt,
   setActiveList,
+  type Checklist,
 } from '../../models';
 
 export default memo(function Checklists() {
-  const { navigate } = useNavigation<SuperAny>();
+  const { navigate } = useNavigation();
   const dispatch = useRootDispatch();
   const items = useRootSelector(getActiveChecklistOrderByCreatedAt);
 
   const handleItemPress = useCallback(
     (id: string) => () => {
       dispatch(setActiveList(id));
+      // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
       navigate('checklistsList');
     },
     [dispatch, navigate],
@@ -48,8 +49,14 @@ export default memo(function Checklists() {
   );
 
   const keyExtractor = useCallback((item: Checklist) => item.id, []);
-  const navBack = useCallback(() => navigate('portfolioLanding'), [navigate]);
-  const navCreate = useCallback(() => navigate('playground'), [navigate]);
+  const navBack = useCallback(() => {
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
+    navigate('portfolioLanding');
+  }, [navigate]);
+  const navCreate = useCallback(() => {
+    // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
+    navigate('playground');
+  }, [navigate]);
 
   return (
     <Screen

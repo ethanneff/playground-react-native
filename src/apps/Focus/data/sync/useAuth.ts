@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Firebase, FirebaseAuthTypes } from '../../../../conversions';
+import { Firebase, type FirebaseAuthTypes } from '../../../../conversions';
 import { loginAuth, logoutAuth } from '../reducers';
 import { useRootDispatch } from './../../../../redux';
 

@@ -3,7 +3,7 @@ import React, { memo, useCallback } from 'react';
 import {
   Card,
   FlatList,
-  FlatListRenderItem,
+  type FlatListRenderItem,
   Screen,
   Spacing,
   Text,
@@ -11,16 +11,18 @@ import {
   View,
 } from '../../../components';
 import { spacing, useColors } from '../../../features';
-import { SuperAny } from '../../../types/types';
 import { landingRoutes } from '../navParams';
 import { Row } from './Row';
 import { Title } from './Title';
 
 export const Landing = memo(function Playground() {
   const colors = useColors();
-  const { goBack, navigate } = useNavigation<SuperAny>();
+  const { goBack, navigate } = useNavigation();
   const navToItem = useCallback(
-    (item: string) => () => navigate(item),
+    (item: string) => () => {
+      // @ts-expect-error Argument of type 'string' is not assignable to parameter of type 'never'.
+      navigate(item);
+    },
     [navigate],
   );
   const renderItem = useCallback<FlatListRenderItem<string>>(

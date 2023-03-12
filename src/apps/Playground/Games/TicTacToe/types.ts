@@ -1,9 +1,9 @@
 export type PlayerTurn = 'black' | 'white';
-export type BoardValue = 0 | 1 | -1;
+export type BoardValue = -1 | 0 | 1;
 export type Board = BoardValue[][];
 export type State = {
   board: Board;
-  state: 'playing' | 'game-over';
+  state: 'game-over' | 'playing';
   turn: PlayerTurn;
   winner: PlayerTurn | null;
 };

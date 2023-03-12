@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useState } from 'react';
 import { Button, Carousel, Screen, View } from '../../../../components';
-import { FirebaseAuthTypes } from '../../../../conversions';
+import { type FirebaseAuthTypes } from '../../../../conversions';
 import { spacing } from '../../../../features';
 import { useRootDispatch } from '../../../../redux';
 import { createItem, loadUser, login } from '../../models';
@@ -11,7 +11,9 @@ import { slides } from './slides';
 export const Welcome = memo(function Welcome() {
   const dispatch = useRootDispatch();
   const [showLogin, setShowLogin] = useState(false);
-  const onToggleLogin = useCallback(() => setShowLogin((p) => !p), []);
+  const onToggleLogin = useCallback(() => {
+    setShowLogin((p) => !p);
+  }, []);
 
   const onLoginSuccess = useCallback(
     (auth: FirebaseAuthTypes.User | null) => {

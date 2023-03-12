@@ -10,6 +10,7 @@ import {
   TouchableWithoutFeedback as GestureTouchableWithoutFeedback,
   View as GestureHandlerProvider,
 } from 'react-native';
+/* eslint-enable no-restricted-imports */
 
 type GestureNativeViewGestureHandlerProps = Record<string, unknown>;
 

@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
-import { RootAction, RootState } from 'root-types';
-import { DeepReadonly } from 'ts-essentials';
+import { type RootAction, type RootState } from 'root-types';
+import { type DeepReadonly } from 'ts-essentials';
 import { createAction, createCustomAction, getType } from 'typesafe-actions';
 import { v4 } from 'uuid';
 import { logout } from '../../../../../redux';

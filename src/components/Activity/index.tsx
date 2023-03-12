@@ -3,19 +3,24 @@ import { View } from '../../components';
 import { spacing } from '../../features';
 import { Button } from '../Button';
 import { Card } from '../Card';
-import { FlatList, FlatListRenderItem } from '../FlatList';
+import { FlatList, type FlatListRenderItem } from '../FlatList';
 import { Loader } from '../Loader';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
-import { Week } from './Week';
 import { getApiActivity } from './api';
-import { ActivityDay, ActivityModel, ActivityWeek, Site } from './types';
+import {
+  type ActivityDay,
+  type ActivityModel,
+  type ActivityWeek,
+  type Site,
+} from './types';
 import {
   getActivitySquares,
   getDateFormat,
   getSubmissionFormat,
   updateActivitySquares,
 } from './utils';
+import { Week } from './Week';
 
 type Props = {
   margin?: number;
@@ -35,11 +40,11 @@ const initialActivity: ActivityModel = {
 };
 
 export const Activity = memo(function Activity({
-  size = spacing(6),
   margin = 2,
-  username,
   site,
+  size = spacing(6),
   title,
+  username,
 }: Props) {
   const [state, setState] = useState<ActivityModel>(initialActivity);
   const keyExtractor = useCallback(

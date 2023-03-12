@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageSourcePropType, StyleSheet } from 'react-native';
+import { Image, type ImageSourcePropType, StyleSheet } from 'react-native';
 import { Text, TouchableOpacity, View } from '../../components';
 import { spacing, useColors } from '../../features';
 

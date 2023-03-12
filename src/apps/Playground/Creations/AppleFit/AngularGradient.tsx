@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageSourcePropType, StyleSheet } from 'react-native';
+import { Image, StyleSheet, type ImageSourcePropType } from 'react-native';
 import { MaskedView, View } from '../../../../components';
 
 type Props = {
@@ -8,8 +8,8 @@ type Props = {
 };
 
 export const AngularGradient = ({
-  size,
   colors: [start, end],
+  size,
 }: Props): JSX.Element => {
   const borderRadius = size / 2;
   const styles = StyleSheet.create({
@@ -32,6 +32,7 @@ export const AngularGradient = ({
   );
   return (
     <View style={styles.container}>
+      {/* @ts-expect-error JSX element class does not support attributes because it does not have a 'props' property. */}
       <MaskedView
         maskElement={Mask}
         style={styles.flex}

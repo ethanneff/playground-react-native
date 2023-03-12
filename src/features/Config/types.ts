@@ -123,25 +123,25 @@ export type ColorTheme = {
     dark: string;
     light: string;
   };
-  statusBar: 'default' | 'light-content' | 'dark-content';
+  statusBar: 'dark-content' | 'default' | 'light-content';
   tag: TagColor;
   text: MonoMultiColor;
 };
 
 export type FontType =
+  | 'body1'
+  | 'body2'
+  | 'button'
+  | 'caption'
   | 'h1'
   | 'h2'
   | 'h3'
   | 'h4'
   | 'h5'
   | 'h6'
+  | 'overline'
   | 'subtitle1'
-  | 'subtitle2'
-  | 'body1'
-  | 'body2'
-  | 'button'
-  | 'caption'
-  | 'overline';
+  | 'subtitle2';
 
 export type FontWeight = '100' | '300' | '500';
 
@@ -151,7 +151,7 @@ export type FontSize = {
   letterSpacing: number;
 };
 
-export type FontEmphasis = 'high' | 'medium' | 'low' | 'default';
+export type FontEmphasis = 'default' | 'high' | 'low' | 'medium';
 
 export type FontSizes = { [key in FontType]: FontSize };
 

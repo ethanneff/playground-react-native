@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useRef, useState } from 'react';
-import { LayoutChangeEvent } from 'react-native';
+import { type LayoutChangeEvent } from 'react-native';
 import { Button, Card, KeyboardHandler, Screen } from '../../../../components';
 import { useColors, useKeyboardHeight, useLayout } from '../../../../features';
 import { useRootSelector } from '../../../../redux';

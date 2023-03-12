@@ -1,4 +1,4 @@
-import React, { memo, ReactNode } from 'react';
+import React, { memo, type ReactNode } from 'react';
 import { Card, View } from '../../../components';
 import { completeConfig } from '../utils';
 import { AddItem } from './AddItem';
@@ -10,7 +10,7 @@ type ListProps = {
   itemId: string;
   listWidth?: number;
   maxHeight: number;
-  orientation?: 'vertical' | 'horizontal';
+  orientation?: 'horizontal' | 'vertical';
   parentItemId: string | null;
 };
 

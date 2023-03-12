@@ -2,7 +2,7 @@ import React, { memo, useCallback, useContext } from 'react';
 import { TouchableOpacity, View } from '../../../../components';
 import { useColors, useDropShadow } from '../../../../features';
 import { DriftContext } from './Context';
-import { ColorChoice } from './types';
+import { type ColorChoice } from './types';
 
 export const Dpad = memo(function Dpad() {
   const useShadow = useDropShadow();
@@ -15,7 +15,9 @@ export const Dpad = memo(function Dpad() {
   };
 
   const onPress = useCallback(
-    (payload: ColorChoice) => () => dispatch({ payload, type: 'addColor' }),
+    (payload: ColorChoice) => () => {
+      dispatch({ payload, type: 'addColor' });
+    },
     [dispatch],
   );
 

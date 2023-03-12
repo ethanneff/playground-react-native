@@ -1,4 +1,9 @@
-import { Combinations, Element, Reel, Reels } from './config';
+import {
+  type Combinations,
+  type Element,
+  type Reel,
+  type Reels,
+} from './config';
 
 const getSumOfReel = (reel: Reel): number => {
   return Object.values(reel).reduce((sum, item) => sum + item, 0);

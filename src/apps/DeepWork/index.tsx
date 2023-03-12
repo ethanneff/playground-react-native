@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { Account } from './Account';
 import { Day } from './Day';
 import { Home } from './Home';
-import { DeepWorkRoutes } from './types';
+import { type DeepWorkRoutes } from './types';
 
 const noHeader = { headerShown: false };
 const Stack = createNativeStackNavigator<DeepWorkRoutes>();

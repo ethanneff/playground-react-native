@@ -1,4 +1,4 @@
 import { getCurrentTheme, useRootSelector } from '../../redux';
-import { ColorTheme } from '../Config';
+import { type ColorTheme } from '../Config';
 
 export const useColors = (): ColorTheme => useRootSelector(getCurrentTheme);

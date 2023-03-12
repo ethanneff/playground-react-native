@@ -1,5 +1,5 @@
-import { RootAction } from 'root-types';
-import { DeepReadonly } from 'ts-essentials';
+import { type RootAction } from 'root-types';
+import { type DeepReadonly } from 'ts-essentials';
 
 type HistoryState = DeepReadonly<
   {

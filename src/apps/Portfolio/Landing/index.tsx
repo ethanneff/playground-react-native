@@ -1,13 +1,20 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
-import { Button, Carousel, CarouselSlide, Screen } from '../../../components';
+import {
+  Button,
+  Carousel,
+  type CarouselSlide,
+  Screen,
+} from '../../../components';
 import { useColors } from '../../../features';
-import { PortfolioNavigation } from '../types';
+import { type PortfolioNavigation } from '../types';
 
 export const Landing = memo(function PortfolioLanding() {
   const { goBack, navigate } = useNavigation<PortfolioNavigation>();
   const colors = useColors();
-  const navPortfolioLogin = useCallback(() => navigate('login'), [navigate]);
+  const navPortfolioLogin = useCallback(() => {
+    navigate('login');
+  }, [navigate]);
 
   const slides: CarouselSlide[] = [
     { backgroundColor: colors.background.accent, id: '1', title: 'hello' },

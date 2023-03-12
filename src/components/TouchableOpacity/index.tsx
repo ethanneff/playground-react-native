@@ -1,5 +1,5 @@
-import React, { ReactNode, useCallback } from 'react';
-import { StyleProp, ViewStyle } from 'react-native';
+import React, { type ReactNode, useCallback } from 'react';
+import { type StyleProp, type ViewStyle } from 'react-native';
 import { GestureTouchableOpacity } from '../../conversions';
 import { SoundManager } from '../../features';
 import { View } from '../View';
@@ -10,8 +10,8 @@ type Props = {
   containerStyle?: StyleProp<ViewStyle>;
   disabled?: boolean;
   flex?: boolean;
-  onLongPress?(): void;
-  onPress?(): void;
+  onLongPress?: () => void;
+  onPress?: () => void;
   style?: StyleProp<ViewStyle>;
   testID?: string;
 };

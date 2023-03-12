@@ -5,7 +5,7 @@ import { spacing, useColors } from '../../features';
 import { Content } from '../Content';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
-import { CarouselSlide } from './types';
+import { type CarouselSlide } from './types';
 
 type Props = {
   item: CarouselSlide;

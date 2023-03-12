@@ -1,4 +1,4 @@
-import { DeepReadonly } from 'ts-essentials';
+import { type DeepReadonly } from 'ts-essentials';
 
 const operations = [
   [0, 1],
@@ -16,9 +16,16 @@ type BoardItem = 0 | 1;
 export type Board = DeepReadonly<BoardItem[][]>;
 
 export const generateBoard = (size: number, random = 0): Board => {
-  return Array.from(Array(size), () =>
-    Array(size).fill(Math.random() > random ? 0 : 1),
-  );
+  const board: BoardItem[][] = [];
+  for (let i = 0; i < size; i++) {
+    const row: BoardItem[] = [];
+    for (let j = 0; j < size; j++) {
+      const val = Math.random() > random ? 0 : 1;
+      row.push(val);
+    }
+    board.push(row);
+  }
+  return board;
 };
 
 export const determineBoardItem = (

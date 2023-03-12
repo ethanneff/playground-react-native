@@ -3,18 +3,18 @@ import { v4 } from 'uuid';
 import {
   Card,
   Icon,
-  IconName,
   Screen,
   ScrollView,
   Text,
   TouchableOpacity,
   View,
+  type IconName,
 } from '../../components';
 import { spacing, useAdminNavBack, useColors } from '../../features';
 
 type SectionProps = {
   description?: string;
-  items?: string[];
+  items: string[];
   subtitle?: string;
   title: string;
 };
@@ -64,12 +64,7 @@ const ChecklistItem = ({ index, item }: ChecklistItemProps) => {
   );
 };
 
-const Section = ({
-  title,
-  subtitle,
-  description,
-  items = [],
-}: SectionProps) => {
+const Section = ({ description, items, subtitle, title }: SectionProps) => {
   return (
     <Card>
       <Text
@@ -119,11 +114,13 @@ export const Home = memo(function Home() {
       >
         <Section
           description="What’s the thing that gets you up in the morning and keeps you going when you’re tired and worn down - why you’re excited with your life?"
+          items={[]}
           subtitle="Your Life Missioxn"
           title="Purpose"
         />
         <Section
           description="Your most important priority is the ONE Thing you can do right now that will help you achieve what matters most to you - big and specific"
+          items={[]}
           subtitle="Your ONE Goal"
           title="Priority"
         />

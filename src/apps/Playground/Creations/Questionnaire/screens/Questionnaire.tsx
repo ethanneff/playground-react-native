@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import {
   Card,
   FlatList,
-  FlatListRenderItem,
+  type FlatListRenderItem,
   Icon,
   Modal,
   Text,
@@ -10,8 +10,8 @@ import {
   View,
 } from '../../../../../components';
 import {
-  Questionnaire as QuestionnaireType,
   questionnairesInitialState,
+  type Questionnaire as QuestionnaireType,
 } from '../models';
 
 export const Questionnaire = (): JSX.Element => {
@@ -23,10 +23,14 @@ export const Questionnaire = (): JSX.Element => {
     setActiveItem(id);
   };
   const handleItemPress = useCallback(
-    (id: string) => () => setActiveItem(id),
+    (id: string) => () => {
+      setActiveItem(id);
+    },
     [],
   );
-  const handleActionSheetClose = useCallback(() => setActionSheet(false), []);
+  const handleActionSheetClose = useCallback(() => {
+    setActionSheet(false);
+  }, []);
 
   const renderItem = useCallback<FlatListRenderItem<QuestionnaireType>>(
     ({ item }) => {

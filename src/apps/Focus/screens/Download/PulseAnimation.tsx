@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated, StyleProp, ViewStyle } from 'react-native';
+import { Animated, type StyleProp, type ViewStyle } from 'react-native';
 import { useDriver } from '../../../../features';
 
 type PulseAnimationProps = {

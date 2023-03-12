@@ -1,13 +1,13 @@
 import React, { memo, useCallback } from 'react';
 import { StyleSheet } from 'react-native';
 import { Text, TouchableOpacity, View } from '../../../../components';
-import { MonoMultiColor, useColors } from '../../../../features';
+import { useColors, type MonoMultiColor } from '../../../../features';
 
 type RoundButtonProps = {
   background: string;
   color: keyof MonoMultiColor;
   disabled?: boolean;
-  onPress(): void;
+  onPress: () => void;
   title: string;
 };
 
@@ -42,10 +42,10 @@ export const ButtonRound = memo(function ButtonRound({
     },
   });
 
-  const handlePress = useCallback(
-    () => !disabled && onPress(),
-    [onPress, disabled],
-  );
+  const handlePress = useCallback(() => {
+    if (disabled) return;
+    onPress();
+  }, [onPress, disabled]);
 
   return (
     <TouchableOpacity

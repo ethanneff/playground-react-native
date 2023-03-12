@@ -1,12 +1,16 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { ViewToken } from 'react-native';
+import { type ViewToken } from 'react-native';
 import { View } from '../../components';
 import { spacing } from '../../features';
 import { getWidth, useRootSelector } from '../../redux';
-import { FlatList, FlatListRef, FlatListRenderItem } from '../FlatList';
+import {
+  FlatList,
+  type FlatListRef,
+  type FlatListRenderItem,
+} from '../FlatList';
 import { Dots } from './Dots';
 import { Item } from './Item';
-import { CarouselSlide } from './types';
+import { type CarouselSlide } from './types';
 
 type Props = {
   dotSize?: number;
@@ -17,8 +21,8 @@ type Props = {
 
 export const Carousel = memo(function Carousel({
   dotSize = spacing(4),
-  slides,
   duration,
+  slides,
   viewabilityConfig = { itemVisiblePercentThreshold: 50 },
 }: Props) {
   const loopingEnabled = useRef(false);

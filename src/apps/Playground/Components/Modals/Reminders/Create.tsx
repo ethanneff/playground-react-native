@@ -1,4 +1,4 @@
-import { Dayjs } from 'dayjs';
+import { type Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
 import { Alert, StyleSheet } from 'react-native';
 import { Button, Modal, Text } from '../../../../../components';
@@ -7,7 +7,7 @@ import { Location } from './Location';
 import { OneTime } from './OneTime';
 import { Radio } from './Radio';
 import { Repeat } from './Repeat';
-import { ReminderType } from './types';
+import { type ReminderType } from './types';
 
 const reminderTypes: ReminderType[] = ['one time', 'repeat', 'location'];
 
@@ -34,11 +34,15 @@ export const Create = memo(function Create({
   });
 
   const handleReminderTypePress = useCallback(
-    (type: ReminderType) => () => setState(type),
+    (type: ReminderType) => () => {
+      setState(type);
+    },
     [],
   );
 
-  const handlePress = useCallback(() => Alert.alert('here'), []);
+  const handlePress = useCallback(() => {
+    Alert.alert('here');
+  }, []);
 
   return (
     <Modal

@@ -17,8 +17,8 @@ import { ProfileLevel } from './ProfileLevel';
 import { app } from './data';
 
 type Props = {
-  onProfilePress(): void;
-  onSettingsPress(): void;
+  onProfilePress: () => void;
+  onSettingsPress: () => void;
 };
 
 export const List = memo(function List({

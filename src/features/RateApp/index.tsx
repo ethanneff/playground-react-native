@@ -5,7 +5,7 @@ import { Button, Input, Modal, Text, View } from '../../components';
 import { spacing } from '../Config';
 import { Rating } from './Rating';
 
-type ModalState = 'default' | 'thank you' | 'review' | 'feedback';
+type ModalState = 'default' | 'feedback' | 'review' | 'thank you';
 type State = {
   feedback: string;
   modal: ModalState;

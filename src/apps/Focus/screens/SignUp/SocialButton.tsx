@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import {
   Icon,
-  IconName,
+  type IconName,
   Spacing,
   Text,
   TouchableOpacity,

@@ -1,9 +1,9 @@
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs, { type Dayjs } from 'dayjs';
 import React, { useCallback, useState } from 'react';
 import { v4 } from 'uuid';
 import { Modal, Text } from '../../../../../components';
 import { Create } from './Create';
-import { Reminder, ReminderType } from './types';
+import { type Reminder, type ReminderType } from './types';
 
 type State = {
   modals: {

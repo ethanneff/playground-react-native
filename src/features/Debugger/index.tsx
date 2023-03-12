@@ -4,6 +4,7 @@ import { Platform } from 'react-native';
 export const debugDev = (): void => {
   if (Platform.OS === 'web' || !__DEV__) return;
 
+  /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access  */
   const DevMenu = require('react-native-dev-menu');
   DevMenu.addItem('Highlight Renders', () => {
     require('react-native-highlight-updates');
@@ -14,4 +15,5 @@ export const debugDev = (): void => {
       trackExtraHooks: [[ReactRedux, 'useSelector']],
     });
   });
+  /* eslint-enable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access  */
 };

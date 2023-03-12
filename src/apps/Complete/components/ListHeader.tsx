@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
-import { TextInput, TextInputIcon, View } from '../../../components';
+import { TextInput, type TextInputIcon, View } from '../../../components';
 import { useRootDispatch, useRootSelector } from '../../../redux';
 import { navItemDetails, updateItem } from '../models';
-import { MainStackRoutes } from '../navigationTypes';
+import { type MainStackRoutes } from '../navigationTypes';
 
 type ListHeaderProps = {
   itemId: string;
@@ -36,7 +36,9 @@ export const ListHeader = memo(function ListHeader({
     navigate('item-detail');
   }, [dispatch, itemId, navigate, parentItemId]);
 
-  const onClose = useCallback(() => Keyboard.dismiss(), []);
+  const onClose = useCallback(() => {
+    Keyboard.dismiss();
+  }, []);
 
   const icons: TextInputIcon[] = [
     { focus: true, name: 'close', onPress: onClose, reset: true },

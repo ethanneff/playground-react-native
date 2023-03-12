@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback } from 'react';
 import {
   Button,
@@ -15,7 +15,7 @@ import {
   useColors,
   useLayout,
 } from '../../../../features';
-import { AuthStackRoutes } from '../../types';
+import { type AuthStackRoutes } from '../../types';
 import { useLogout } from '../../utils/useLogout';
 
 export const Account = memo(function Account() {

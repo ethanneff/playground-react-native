@@ -5,8 +5,7 @@ import Svg, { G, Path, Polygon, Text } from 'react-native-svg';
 import { v4 } from 'uuid';
 import { TouchableOpacity } from '../../../../components';
 import { useColors, useDriver, useDropShadow } from '../../../../features';
-import { SuperAny } from '../../../../types/types';
-import { Segment } from './types';
+import { type Segment } from './types';
 import { getNewLocation, getWinnerIndex } from './utils';
 
 type Props = {
@@ -26,19 +25,19 @@ type Props = {
 };
 
 export const Wheel = memo(function WheelMemo({
-  size = Dimensions.get('screen').width,
   backgroundColor,
-  textColor,
-  fontSize = 24,
-  segments,
-  noBounce,
-  padAngle = 0.02,
-  innerRadius = 60,
-  spinSpeed = 1000,
   bounceSpeed = 5000,
-  minSpin = 3,
+  fontSize = 24,
+  innerRadius = 60,
   maxSpin = 7,
+  minSpin = 3,
+  noBounce,
   onComplete,
+  padAngle = 0.02,
+  segments,
+  size = Dimensions.get('screen').width,
+  spinSpeed = 1000,
+  textColor,
 }: Props) {
   const colors = useColors();
   const dropShadow = useDropShadow();
@@ -55,13 +54,15 @@ export const Wheel = memo(function WheelMemo({
   const location = useRef(0);
   const angle = useRef(new Animated.Value(0)).current;
   const yPosition = useRef(new Animated.Value(-1)).current;
-  const arcs = pie()(segments.map(() => 1)).map((arc: SuperAny, index) => {
+  const arcs = pie()(segments.map(() => 1)).map((arc, index) => {
     const instance = d3Arc()
       .padAngle(padAngle)
       .outerRadius(radius)
       .innerRadius(innerRadius);
     return {
+      // @ts-expect-error Type 'PieArcDatum<number | { valueOf(): number; }>' is missing the following properties from type 'DefaultArcObject': innerRadius, outerRadius
       centroid: instance.centroid(arc),
+      // @ts-expect-error Type 'PieArcDatum<number | { valueOf(): number; }>' is missing the following properties from type 'DefaultArcObject': innerRadius, outerRadius
       path: instance(arc),
       segment: segments[index],
     };
@@ -110,9 +111,9 @@ export const Wheel = memo(function WheelMemo({
   const bounce = useCallback(
     (toValue: number) => {
       const config = { duration: bounceSpeed, toValue, useNativeDriver };
-      Animated.timing(yPosition, config).start(() =>
-        bounce(toValue === 1 ? -1 : 1),
-      );
+      Animated.timing(yPosition, config).start(() => {
+        bounce(toValue === 1 ? -1 : 1);
+      });
     },
     [bounceSpeed, useNativeDriver, yPosition],
   );
@@ -192,7 +193,7 @@ export const Wheel = memo(function WheelMemo({
                     fill={arc.segment.color}
                   />
                   <G
-                    origin={`${arc.centroid}`}
+                    origin={arc.centroid.toString()}
                     rotation={(i * 360) / segments.length + angleOffset}
                   >
                     <Text

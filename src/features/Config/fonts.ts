@@ -1,7 +1,7 @@
 /*
 SIZING https://material.io/design/typography/the-type-system.html#applying-the-type-scale
 */
-import { FontEmphases, FontSizes, FontWeight } from './types';
+import { type FontEmphases, type FontSizes, type FontWeight } from './types';
 
 export const fontWeight: Record<string, FontWeight> = {
   light: '100',

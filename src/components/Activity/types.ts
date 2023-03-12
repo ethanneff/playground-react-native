@@ -1,4 +1,4 @@
-export type Site = 'github' | 'leetCode' | 'hackerRank' | 'gitlab' | 'random';
+export type Site = 'github' | 'gitlab' | 'hackerRank' | 'leetCode' | 'random';
 
 export type ActivityDay = {
   count: number;
@@ -14,7 +14,7 @@ export type ActivityModel = {
     max: number;
     total: number;
   };
-  request: 'loading' | 'failure' | 'success';
+  request: 'failure' | 'loading' | 'success';
   selected: {
     day: number;
     submissions: string;

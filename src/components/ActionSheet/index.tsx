@@ -1,9 +1,9 @@
 import React, { memo, useCallback, useRef } from 'react';
 import {
   Animated,
-  GestureResponderEvent,
+  type GestureResponderEvent,
   PanResponder,
-  PanResponderGestureState,
+  type PanResponderGestureState,
   StyleSheet,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -25,13 +25,13 @@ type NotificationProps = {
 
 const initialPosition = { x: 0, y: 0 };
 export const ActionSheet = memo(function ActionSheet({
-  title,
-  height = spacing(18),
-  thresholdPercent = 0.9,
   dismissDelay = 100,
+  height = spacing(18),
   noSwipe,
-  onCancel,
   onBackgroundPress,
+  onCancel,
+  thresholdPercent = 0.9,
+  title,
 }: NotificationProps) {
   const colors = useColors();
   const styles = StyleSheet.create({

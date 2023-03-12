@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { memo } from 'react';
-import { TabIcons, useNavScreenOptions } from '../../features';
+import { type TabIcons, useNavScreenOptions } from '../../features';
 import { useRootSelector } from '../../redux';
 import {
   Account,
@@ -18,7 +18,11 @@ import {
   SignUp,
   Terms,
 } from './screens';
-import { AuthStackRoutes, HomeTabRoutes, UnAuthStackRoutes } from './types';
+import {
+  type AuthStackRoutes,
+  type HomeTabRoutes,
+  type UnAuthStackRoutes,
+} from './types';
 
 const AuthStack = createNativeStackNavigator<AuthStackRoutes>();
 const UnAuthStack = createNativeStackNavigator<UnAuthStackRoutes>();

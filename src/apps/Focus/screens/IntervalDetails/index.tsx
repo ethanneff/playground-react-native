@@ -1,10 +1,10 @@
 import {
-  RouteProp,
+  type RouteProp,
   useIsFocused,
   useNavigation,
   useRoute,
 } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Keyboard } from 'react-native';
 import {
@@ -19,12 +19,12 @@ import {
   Switch,
   Text,
   TextInput,
-  TextInputRef,
+  type TextInputRef,
   TouchableOpacity,
   View,
 } from '../../../../components';
 import { spacing, useColors, useDropShadow } from '../../../../features';
-import { AuthStackRoutes } from '../../types';
+import { type AuthStackRoutes } from '../../types';
 import { CreateGoalModal } from './CreateGoalModal';
 
 type State = {
@@ -90,8 +90,9 @@ export const IntervalDetails = memo(function IntervalDetails() {
   }, []);
 
   const handleModal = useCallback(
-    (goalModal: boolean) => () =>
-      setState((p) => ({ ...p, goal: '', goalModal })),
+    (goalModal: boolean) => () => {
+      setState((p) => ({ ...p, goal: '', goalModal }));
+    },
     [],
   );
 

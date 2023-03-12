@@ -1,9 +1,9 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 import {
   Animated,
-  GestureResponderEvent,
+  type GestureResponderEvent,
   PanResponder,
-  PanResponderGestureState,
+  type PanResponderGestureState,
   StyleSheet,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -24,13 +24,13 @@ type NotificationProps = {
 };
 
 export const Notification = memo(function Notification({
-  title,
-  height = spacing(18),
-  thresholdPercent = 0.5, // broken
   dismissDelay = 100,
-  noSwipe,
-  onCancel,
+  height = spacing(18),
+  noSwipe, // broken
   onBackgroundPress,
+  onCancel,
+  thresholdPercent = 0.5,
+  title,
 }: NotificationProps) {
   const colors = useColors();
   const initialPosition = useMemo(() => ({ x: 0, y: -height }), [height]);

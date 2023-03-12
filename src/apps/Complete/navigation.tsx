@@ -1,15 +1,15 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   createNativeStackNavigator,
-  NativeStackNavigationOptions,
+  type NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 import React from 'react';
-import { TabIcons, useNavScreenOptions } from '../../features';
+import { type TabIcons, useNavScreenOptions } from '../../features';
 import {
-  HomeStackRoutes,
-  ImplementStackRoutes,
-  LandingStackRoutes,
-  MainStackRoutes,
+  type HomeStackRoutes,
+  type ImplementStackRoutes,
+  type LandingStackRoutes,
+  type MainStackRoutes,
 } from './navigationTypes';
 import {
   Account,

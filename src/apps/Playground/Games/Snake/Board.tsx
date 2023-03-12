@@ -2,7 +2,7 @@ import React from 'react';
 import { v4 } from 'uuid';
 import { View } from '../../../../components';
 import { Cell } from './Cell';
-import { Matrix } from './utils';
+import { type Matrix } from './utils';
 
 type BoardProps = {
   matrix: Matrix;

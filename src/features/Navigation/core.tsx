@@ -15,7 +15,7 @@ import Portfolio from '../../apps/Portfolio';
 import Progress from '../../apps/Progress';
 import TheOneThing from '../../apps/TheOneThing';
 import { Loader } from '../../components';
-import { RootRoutes } from './types';
+import { type RootRoutes } from './types';
 import { useNavScreenOptions } from './useNavScreenOptions';
 import { usePersistedState } from './usePersistedState';
 

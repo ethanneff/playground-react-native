@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { StyleProp, StyleSheet, TextStyle } from 'react-native';
+import { type StyleProp, StyleSheet, type TextStyle } from 'react-native';
 import { Text, View } from '../../../../components';
 
 type TimerProps = {

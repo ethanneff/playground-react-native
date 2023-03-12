@@ -1,9 +1,9 @@
-import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
-import { ParamListBase, RouteProp } from '@react-navigation/native';
-import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
+import { type BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
+import { type ParamListBase, type RouteProp } from '@react-navigation/native';
+import { type NativeStackNavigationOptions } from '@react-navigation/native-stack';
 import React, { useCallback } from 'react';
 import { Platform } from 'react-native';
-import { Icon, IconName, Text, View } from '../../components';
+import { Icon, type IconName, Text, View } from '../../components';
 import { SoundManager, StringMethods } from '../../features';
 import { useColors } from '../Theme';
 
@@ -81,7 +81,9 @@ export const useNavScreenOptions = () => {
   );
 
   const tabScreenListeners = () => ({
-    tabPress: () => SoundManager.play('tap'),
+    tabPress: () => {
+      SoundManager.play('tap');
+    },
   });
 
   return {

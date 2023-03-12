@@ -1,10 +1,13 @@
-import { Platform } from 'react-native';
-import { RootMiddleware } from 'root-types';
+import { type RootMiddleware } from 'root-types';
+import { Globals } from '../../features';
 
 export const addFlipperMiddleware = (middlewares: RootMiddleware[]) => {
-  if (Platform.OS === 'web' || process.env.JEST_WORKER_ID || !__DEV__) {
-    return;
-  }
+  if (Globals.platform === 'web') return;
+  if (Globals.environment === 'test') return;
+  if (Globals.environment === 'prod') return;
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
   const createDebugger = require('redux-flipper').default;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-call
   middlewares.push(createDebugger());
 };

@@ -1,10 +1,10 @@
 import {
-  RouteProp,
+  type RouteProp,
   useIsFocused,
   useNavigation,
   useRoute,
 } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
@@ -13,12 +13,12 @@ import {
   Spacing,
   Text,
   TextInput,
-  TextInputRef,
+  type TextInputRef,
   Toast,
 } from '../../../../components';
-import { Firebase, FirebaseAuthTypes } from '../../../../conversions';
+import { Firebase, type FirebaseAuthTypes } from '../../../../conversions';
 import { spacing } from '../../../../features';
-import { UnAuthStackRoutes } from '../../types';
+import { type UnAuthStackRoutes } from '../../types';
 
 const initialState = { loading: false };
 

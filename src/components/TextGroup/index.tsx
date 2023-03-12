@@ -1,5 +1,10 @@
-import React, { ReactNode } from 'react';
-import { StyleProp, Text as OriginalText, TextStyle } from 'react-native'; // eslint-disable-line no-restricted-imports
+import React, { type ReactNode } from 'react';
+import {
+  // eslint-disable-next-line no-restricted-imports
+  Text as OriginalText,
+  type StyleProp,
+  type TextStyle,
+} from 'react-native';
 
 type Props = {
   children: ReactNode | ReactNode[];

@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { v4 } from 'uuid';
 import { Tag, View } from '../../../../components';
-import { spacing, TagColor, useColors } from '../../../../features';
+import { spacing, type TagColor, useColors } from '../../../../features';
 
 export const TagGroup = memo(function TagGroup() {
   const colors = useColors();

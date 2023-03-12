@@ -2,13 +2,13 @@ import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '../../../../components';
 import { AngularGradient } from './AngularGradient';
-import { Ring } from './types';
+import { type Ring } from './types';
 
 type Props = {
   flip?: boolean;
   radius: number;
   ring: Ring;
-  type: 'foreground' | 'background';
+  type: 'background' | 'foreground';
 };
 
 export const HalfCircle = memo(function HalfCircle({

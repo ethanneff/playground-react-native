@@ -1,6 +1,6 @@
-import { StyleProp, ViewStyle } from 'react-native';
-import { FontEmphasis, FontType } from '../../features';
-import { SentenceType } from '../Sentence';
+import { type StyleProp, type ViewStyle } from 'react-native';
+import { type FontEmphasis, type FontType } from '../../features';
+import { type SentenceType } from '../Sentence';
 
 export type ContentSections = {
   paragraphs: SentenceType[][];

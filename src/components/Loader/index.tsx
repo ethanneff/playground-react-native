@@ -2,16 +2,16 @@ import React, { memo } from 'react';
 import {
   // eslint-disable-next-line no-restricted-imports
   ActivityIndicator,
-  StyleProp,
+  type StyleProp,
   StyleSheet,
-  ViewStyle,
+  type ViewStyle,
 } from 'react-native';
 import { View } from '../../components';
-import { MonoMultiColor, useColors } from '../../features';
+import { type MonoMultiColor, useColors } from '../../features';
 
 type Props = {
   color?: keyof MonoMultiColor;
-  size?: number | 'small' | 'large';
+  size?: number | 'large' | 'small';
   style?: StyleProp<ViewStyle>;
 };
 

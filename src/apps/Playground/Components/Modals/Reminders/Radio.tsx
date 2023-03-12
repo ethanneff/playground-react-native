@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View } from '../../../../../components';
 import { Item } from './Item';
-import { ReminderType } from './types';
+import { type ReminderType } from './types';
 
 type Props = {
   buttons: ReminderType[];

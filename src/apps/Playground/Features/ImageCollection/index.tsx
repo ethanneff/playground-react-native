@@ -3,7 +3,7 @@ import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import {
   FlatList,
-  FlatListRenderItem,
+  type FlatListRenderItem,
   Image,
   Screen,
 } from '../../../../components';

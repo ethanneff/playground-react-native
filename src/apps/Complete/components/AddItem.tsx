@@ -4,13 +4,13 @@ import { v4 } from 'uuid';
 import {
   Button,
   TextInput,
-  TextInputIcon,
-  TextInputRef,
+  type TextInputIcon,
+  type TextInputRef,
   View,
 } from '../../../components';
 import { spacing, useColors } from '../../../features';
 import { useRootDispatch, useRootSelector } from '../../../redux';
-import { addItemToItem, createItem, Item } from '../models';
+import { addItemToItem, createItem, type Item } from '../models';
 import { completeConfig } from '../utils';
 
 type AddItemProps = {
@@ -64,9 +64,15 @@ export const AddItem = memo(function AddItem({
     dispatch(addItemToItem({ itemId, parentItemId }));
   }, [dispatch, parentItemId, userId]);
 
-  const onAddItemPress = useCallback(() => setShowInput((p) => !p), []);
-  const onClose = useCallback(() => setShowInput(false), []);
-  const onBlur = useCallback(() => setShowInput(false), []);
+  const onAddItemPress = useCallback(() => {
+    setShowInput((p) => !p);
+  }, []);
+  const onClose = useCallback(() => {
+    setShowInput(false);
+  }, []);
+  const onBlur = useCallback(() => {
+    setShowInput(false);
+  }, []);
 
   const icons: TextInputIcon[] = [
     { focus: true, name: 'close', onPress: onClose, reset: true },

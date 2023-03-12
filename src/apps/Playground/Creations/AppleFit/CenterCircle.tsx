@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '../../../../components';
-import { MonoMultiColor, useColors } from '../../../../features';
+import { type MonoMultiColor, useColors } from '../../../../features';
 
 type Props = {
   backgroundColor: keyof MonoMultiColor;

@@ -4,7 +4,7 @@ import { View } from '../../../../components';
 import { CircularProgress } from './CircularProgress';
 import { InitialKnob } from './InitialKnob';
 import { MovingKnob } from './MovingKnob';
-import { Ring } from './types';
+import { type Ring } from './types';
 
 type RingProps = {
   ring: Ring;

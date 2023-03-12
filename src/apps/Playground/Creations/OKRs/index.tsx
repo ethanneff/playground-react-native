@@ -4,15 +4,15 @@ import { Card, Screen, ScrollView, Text } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 
 export type ItemType =
-  | 'Mission'
-  | 'Vision'
-  | 'Values'
-  | 'KPI'
-  | 'Objective'
-  | 'Key Result'
-  | 'Problem'
   | 'Idea'
-  | 'Learning';
+  | 'Key Result'
+  | 'KPI'
+  | 'Learning'
+  | 'Mission'
+  | 'Objective'
+  | 'Problem'
+  | 'Values'
+  | 'Vision';
 
 export const OKRs = memo(function PlaygroundOKRs() {
   const { goBack } = useNavigation();

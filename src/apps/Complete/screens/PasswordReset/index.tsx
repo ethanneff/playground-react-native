@@ -1,16 +1,16 @@
 import { useIsFocused, useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
   Modal,
   Text,
   TextInput,
-  TextInputRef,
+  type TextInputRef,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { ModalHeader } from '../../components';
-import { LandingStackRoutes } from '../../navigationTypes';
+import { type LandingStackRoutes } from '../../navigationTypes';
 
 const initialRef = { email: '' };
 const initialState = { complete: false, loading: false };
@@ -29,7 +29,9 @@ export const PasswordReset = memo(function PasswordReset() {
     goBack();
   }, [goBack, state.complete]);
 
-  const navWelcome = useCallback(() => navigate('welcome'), [navigate]);
+  const navWelcome = useCallback(() => {
+    navigate('welcome');
+  }, [navigate]);
 
   const onFormChange = useCallback(
     (key: keyof typeof initialRef) => (val: string) => {

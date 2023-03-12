@@ -1,5 +1,5 @@
 import { v4 } from 'uuid';
-import { Item, User } from '../models';
+import { type Item, type User } from '../models';
 
 type GetDefaultUserTemplate = {
   items: Item[];

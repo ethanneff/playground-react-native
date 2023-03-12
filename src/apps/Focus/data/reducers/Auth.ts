@@ -1,11 +1,11 @@
-import { RootAction, RootState } from 'root-types';
+import { type RootAction, type RootState } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
-import { FirebaseAuthTypes } from '../../../../conversions';
+import { type FirebaseAuthTypes } from '../../../../conversions';
 
 /* INTERFACES */
 type User = FirebaseAuthTypes.User;
 type FocusAuthReducer = {
-  status: 'initializing' | 'authenticated' | 'unauthenticated';
+  status: 'authenticated' | 'initializing' | 'unauthenticated';
   uid: string | null;
   updatedAt: number;
 };

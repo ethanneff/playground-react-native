@@ -40,12 +40,12 @@ import { spacing, useColors } from '../../../../features';
 //   name: string;
 // };
 
-type Tab = 'manual' | 'auto';
+type Tab = 'auto' | 'manual';
 type PlayerGame = {
   activeTab: Tab;
   autoCashOut: number;
   bidAmount: number;
-  status: 'idle' | 'bid';
+  status: 'bid' | 'idle';
 };
 
 type Game = {
@@ -54,7 +54,7 @@ type Game = {
   maxPayout: number;
   payout: number;
   startTime: number;
-  status: 'start' | 'finish' | 'run';
+  status: 'finish' | 'run' | 'start';
 };
 
 // https://www.youtube.com/watch?v=sRq1_B8raPg
@@ -80,25 +80,24 @@ export const Crash = memo(function CrashMemo() {
   const gameSeconds = game.endTime - game.startTime;
 
   const handleTabPress = useCallback(
-    (activeTab: Tab) => () => setPlayerGame((p) => ({ ...p, activeTab })),
+    (activeTab: Tab) => () => {
+      setPlayerGame((p) => ({ ...p, activeTab }));
+    },
     [],
   );
 
-  const handleAmountInputChange = useCallback(
-    (amount: string) =>
-      setPlayerGame((p) => ({ ...p, bidAmount: Number(amount) })),
-    [],
-  );
+  const handleAmountInputChange = useCallback((amount: string) => {
+    setPlayerGame((p) => ({ ...p, bidAmount: Number(amount) }));
+  }, []);
 
-  const handleAutoCashOutChange = useCallback(
-    (amount: string) =>
-      setPlayerGame((p) => ({ ...p, autoCashOut: Number(amount) })),
-    [],
-  );
+  const handleAutoCashOutChange = useCallback((amount: string) => {
+    setPlayerGame((p) => ({ ...p, autoCashOut: Number(amount) }));
+  }, []);
 
   const handleAmountPress = useCallback(
-    (amount: number) => () =>
-      setPlayerGame((p) => ({ ...p, bidAmount: p.bidAmount * amount })),
+    (amount: number) => () => {
+      setPlayerGame((p) => ({ ...p, bidAmount: p.bidAmount * amount }));
+    },
     [],
   );
 

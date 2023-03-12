@@ -1,52 +1,56 @@
-import React, { ReactNode } from 'react';
+import React, { type ReactNode, type RefObject } from 'react';
 import {
-  AccessibilityRole,
-  FlexAlignType,
-  LayoutChangeEvent,
-  StyleProp,
   StyleSheet,
   // eslint-disable-next-line no-restricted-imports
   View as Original,
-  ViewStyle,
+  type AccessibilityRole,
+  type FlexAlignType,
+  type LayoutChangeEvent,
+  type StyleProp,
+  type ViewStyle,
 } from 'react-native';
-import { MonoMultiColor, useColors } from '../../features';
+import { useColors, type MonoMultiColor } from '../../features';
+
+export type ViewRef = Original | null;
 
 type Props = {
   accessibilityRole?: AccessibilityRole;
   accessible?: boolean;
   alignContent?:
-    | 'flex-start'
-    | 'flex-end'
     | 'center'
-    | 'stretch'
+    | 'flex-end'
+    | 'flex-start'
+    | 'space-around'
     | 'space-between'
-    | 'space-around';
+    | 'stretch';
   alignItems?: FlexAlignType;
   alignSelf?: FlexAlignType;
   backgroundColor?: keyof MonoMultiColor;
   borderRadius?: number;
   children?: ReactNode;
+  collapsable?: boolean;
   cursor?: 'default' | 'pointer';
   display?: 'flex' | 'none';
   flex?: number;
   flexBasis?: number;
-  flexDirection?: 'row' | 'column';
+  flexDirection?: 'column' | 'row';
   flexGrow?: number;
   flexShrink?: number;
-  flexWrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
+  flexWrap?: 'nowrap' | 'wrap-reverse' | 'wrap';
   height?: number;
   justifyContent?:
     | 'center'
     | 'flex-end'
     | 'flex-start'
-    | 'space-between'
     | 'space-around'
+    | 'space-between'
     | 'space-evenly';
   margin?: number;
   onLayout?: (event: LayoutChangeEvent) => void;
+  onRef?: RefObject<Original>;
   onTouchStart?: () => void;
   opacity?: number;
-  overflow?: 'scroll' | 'visible' | 'hidden';
+  overflow?: 'hidden' | 'scroll' | 'visible';
   padding?: number;
   position?: 'absolute' | 'relative';
   style?: StyleProp<ViewStyle>;
@@ -63,6 +67,7 @@ export const View = ({
   backgroundColor,
   borderRadius,
   children,
+  collapsable,
   cursor,
   display,
   flex,
@@ -75,6 +80,7 @@ export const View = ({
   justifyContent,
   margin,
   onLayout,
+  onRef,
   onTouchStart,
   opacity,
   overflow,
@@ -118,8 +124,10 @@ export const View = ({
     <Original
       accessibilityRole={accessibilityRole}
       accessible={accessible}
+      collapsable={collapsable}
       onLayout={onLayout}
       onTouchStart={onTouchStart}
+      ref={onRef}
       style={[styles.view, style]}
       testID={testID}
     >

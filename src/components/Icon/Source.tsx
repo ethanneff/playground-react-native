@@ -1,14 +1,14 @@
 import React, { memo } from 'react';
-import { StyleProp, StyleSheet, TextStyle } from 'react-native';
+import { StyleSheet, type StyleProp, type ViewStyle } from 'react-native';
 import Original from 'react-native-vector-icons/MaterialCommunityIcons';
-import { IconName } from './config';
+import { type IconName } from './config';
 
 type Props = {
   color?: string;
   invisible?: boolean;
   name: IconName;
   size?: number;
-  style?: StyleProp<TextStyle>;
+  style?: StyleProp<ViewStyle>;
 };
 
 const styles = StyleSheet.create({

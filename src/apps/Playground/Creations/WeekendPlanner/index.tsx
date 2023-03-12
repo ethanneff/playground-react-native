@@ -47,7 +47,7 @@ type ActiveGoal = {
   title: string;
 };
 
-type GoalModal = 'close' | 'edit' | 'add';
+type GoalModal = 'add' | 'close' | 'edit';
 
 export const WeekendPlanner = memo(function Playground52Weeks() {
   const colors = useColors();

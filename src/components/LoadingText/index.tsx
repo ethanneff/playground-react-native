@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet, type ViewStyle } from 'react-native';
 import { v4 } from 'uuid';
 import { View } from '../../components';
 import { Text } from '../Text';

@@ -1,24 +1,24 @@
 import { useNavigation } from '@react-navigation/native';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs, { type Dayjs } from 'dayjs';
 import React, { memo, useCallback, useRef, useState } from 'react';
 import {
   Animated,
   Image,
-  ImageSourcePropType,
-  LayoutChangeEvent,
   PanResponder,
+  type ImageSourcePropType,
+  type LayoutChangeEvent,
 } from 'react-native';
 import { v4 } from 'uuid';
 import {
   Button,
   Card,
   Icon,
-  IconName,
   Screen,
   ScrollView,
   Spacing,
   Text,
   View,
+  type IconName,
 } from '../../../../components';
 import { spacing, useColors, useDriver } from '../../../../features';
 import { getWidth, useRootSelector } from '../../../../redux';
@@ -31,7 +31,7 @@ type SwipeItem = {
   icon: IconName;
   id: string;
   image: ImageSourcePropType | null;
-  onPress(): void;
+  onPress: () => void;
   title: string;
 };
 type SwipeCardProps = {
@@ -39,8 +39,8 @@ type SwipeCardProps = {
   index: number;
   item: SwipeItem;
   onSwipe: (value: boolean) => void;
-  onSwipeComplete(): void;
-  onSwipePercentChange(percent: number): void;
+  onSwipeComplete: () => void;
+  onSwipePercentChange: (percent: number) => void;
 };
 
 const SwipeCard = memo(function SwipeCard({
@@ -214,7 +214,7 @@ const initialItems: SwipeItem[] = [
     date: dayjs(),
     icon: 'star-outline',
     id: v4(),
-    image: require('./placeholder.png'),
+    image: require('./placeholder.png') as ImageSourcePropType,
     onPress: () => undefined,
     title: 'Congratulations',
   },
@@ -224,7 +224,7 @@ const initialItems: SwipeItem[] = [
     date: dayjs(),
     icon: 'star-outline',
     id: v4(),
-    image: require('./placeholder.png'),
+    image: require('./placeholder.png') as ImageSourcePropType,
     onPress: () => undefined,
     title: 'Enjoying robinhood?',
   },
@@ -334,11 +334,13 @@ const SwipeCards = memo(function SwipeCardList({
   ) : null;
 });
 
+const placeholder = require('./placeholder.png') as ImageSourcePropType;
+
 const ImagePlaceholder = memo(function ImagePlaceholder() {
   return (
     <Card noPadding>
       <Image
-        source={require('./placeholder.png')}
+        source={placeholder}
         style={{ borderRadius: 4, height: 100, width: '100%' }}
       />
     </Card>

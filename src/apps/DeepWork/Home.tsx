@@ -11,7 +11,7 @@ import {
   View,
 } from '../../components';
 import { spacing, useAdminNavBack, useColors } from '../../features';
-import { DeepWorkNavigation } from './types';
+import { type DeepWorkNavigation } from './types';
 
 /*
 # Purpose
@@ -42,7 +42,9 @@ export const Home = memo(function Home() {
   const colors = useColors();
   const { onLeftPress } = useAdminNavBack();
   const onItemAdd = useCallback(() => undefined, []);
-  const navToAccount = useCallback(() => navigate('account'), [navigate]);
+  const navToAccount = useCallback(() => {
+    navigate('account');
+  }, [navigate]);
 
   return (
     <Screen

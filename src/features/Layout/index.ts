@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
-import { LayoutChangeEvent } from 'react-native';
-import { Edge, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { type LayoutChangeEvent } from 'react-native';
+import { type Edge, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export type LayoutDimensions = {
   height: number;

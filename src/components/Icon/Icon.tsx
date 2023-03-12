@@ -1,12 +1,16 @@
 import React, { memo } from 'react';
-import { Platform, StyleProp, StyleSheet, ViewStyle } from 'react-native';
+import {
+  Platform,
+  StyleSheet,
+  type StyleProp,
+  type ViewStyle,
+} from 'react-native';
 import { View } from '../../components';
 import {
-  ColorTheme,
-  MonoMultiColor,
   spacing,
   useColors,
   useDropShadow,
+  type MonoMultiColor,
 } from '../../features';
 import { Badge } from './Badge';
 import { Source } from './Source';
@@ -35,41 +39,21 @@ type Props = {
   testID?: string;
 };
 
-type GetColors = {
-  clear?: boolean;
-  color?: keyof MonoMultiColor;
-  colors: ColorTheme;
-  disabled?: boolean;
-  hidden?: boolean;
-};
-
-const getColor = ({ clear, color, colors, disabled, hidden }: GetColors) => {
-  return hidden
-    ? 'transparent'
-    : disabled
-    ? colors.text.disabled
-    : clear
-    ? colors.text.primaryB
-    : color
-    ? colors.text[color]
-    : colors.text.secondary;
-};
-
 export const Icon = memo(function Icon({
-  name,
-  style,
+  backgroundColor,
   badge = 0,
   clear,
-  elevation = 4,
-  size = spacing(6),
   color,
-  backgroundColor,
+  disabled,
+  elevation = 4,
   fab,
   hidden,
-  right,
   invisible,
-  disabled,
+  name,
   padded,
+  right,
+  size = spacing(6),
+  style,
   testID,
 }: Props) {
   const colors = useColors();

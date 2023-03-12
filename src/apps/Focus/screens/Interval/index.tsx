@@ -53,7 +53,10 @@ export const Interval = memo(function Interval() {
   );
 
   useEffect(() => {
-    if (loading && items.length > 0) setTimeout(() => setLoading(false), 1000);
+    if (loading && items.length > 0)
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
   }, [items.length, loading]);
 
   return (
