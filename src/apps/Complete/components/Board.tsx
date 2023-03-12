@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { FlatList, FlatListRenderItem, View } from '../../../components';
+import { FlatList, type FlatListRenderItem, View } from '../../../components';
 import { useRootSelector } from '../../../redux';
 import { completeConfig } from '../utils';
 import { AddItem } from './AddItem';

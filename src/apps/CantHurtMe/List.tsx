@@ -2,7 +2,7 @@ import React, { memo, useCallback } from 'react';
 import { StyleSheet } from 'react-native';
 import {
   Card,
-  FlatListRenderItem,
+  type FlatListRenderItem,
   Icon,
   MasonryFlashList,
   Spacing,

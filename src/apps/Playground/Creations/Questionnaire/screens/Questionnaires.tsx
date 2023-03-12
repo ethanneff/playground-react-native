@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import {
   Card,
   FlatList,
-  FlatListRenderItem,
+  type FlatListRenderItem,
   Icon,
   Modal,
   Text,

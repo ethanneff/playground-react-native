@@ -3,7 +3,7 @@ import React, { memo, useCallback } from 'react';
 import {
   Button,
   FlatList,
-  FlatListRenderItem,
+  type FlatListRenderItem,
   Icon,
   Screen,
   TouchableOpacity,

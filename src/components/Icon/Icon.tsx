@@ -14,7 +14,7 @@ import {
 } from '../../features';
 import { Badge } from './Badge';
 import { Source } from './Source';
-import { IconName } from './config';
+import { type IconName } from './config';
 
 /*
 Usage: <Icon name='check' />

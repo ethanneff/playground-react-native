@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef, useState } from 'react';
-import { Dimensions, ViewToken } from 'react-native';
+import { Dimensions, type ViewToken } from 'react-native';
 import {
   Button,
   FlatList,
-  FlatListRef,
-  FlatListRenderItem,
+  type FlatListRef,
+  type FlatListRenderItem,
   Screen,
   Text,
   View,

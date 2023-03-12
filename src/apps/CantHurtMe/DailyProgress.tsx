@@ -2,7 +2,7 @@ import dayjs, { type Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
 import {
   FlatList,
-  FlatListRenderItem,
+  type FlatListRenderItem,
   Icon,
   Text,
   TouchableOpacity,

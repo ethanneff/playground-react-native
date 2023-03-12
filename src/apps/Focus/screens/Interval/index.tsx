@@ -2,13 +2,13 @@ import React, { memo, useCallback, useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import {
   FlatList,
-  FlatListRenderItem,
+  type FlatListRenderItem,
   Loader,
   Screen,
   View,
 } from '../../../../components';
 import { spacing, useLayout } from '../../../../features';
-import { Item } from '../../types';
+import { type Item } from '../../types';
 import { ListItem } from './ListItem';
 import {
   getCurrentItem,

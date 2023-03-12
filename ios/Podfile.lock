@@ -1300,7 +1300,7 @@ PODS:
     - Firebase/RemoteConfig (= 8.15.0)
     - React-Core
     - RNFBApp
-  - RNFlashList (1.4.0):
+  - RNFlashList (1.4.1):
     - React-Core
   - RNGestureHandler (2.9.0):
     - React-Core
@@ -1734,7 +1734,7 @@ SPEC CHECKSUMS:
   RNFBCrashlytics: 94e1f78e2a9aa9e02edbfb0d3f1f0921ce00094b
   RNFBFirestore: 24c46940b96579c50bd39a72566f6d48c6165f2f
   RNFBRemoteConfig: 92fbb75ceb69fec44ae727b70d23c5d1798f7648
-  RNFlashList: 399bf6a0db68f594ad2c86aaff3ea39564f39f8a
+  RNFlashList: 8ec7f7454721145fe84566bb9e88bcf58981c9fe
   RNGestureHandler: 071d7a9ad81e8b83fe7663b303d132406a7d8f39
   RNGoogleSignin: 22e468a9474dbcb8618d8847205ad4f0b2575d13
   RNLocalize: d4b8af4e442d4bcca54e68fc687a2129b4d71a81
