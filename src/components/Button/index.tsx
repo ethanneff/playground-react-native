@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import { type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 import {
-  type FontEmphasis,
-  type MonoMultiColor,
   useColors,
   useDropShadow,
+  type FontEmphasis,
+  type MonoMultiColor,
 } from '../../features';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';

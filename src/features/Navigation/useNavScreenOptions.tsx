@@ -3,7 +3,7 @@ import { type ParamListBase, type RouteProp } from '@react-navigation/native';
 import { type NativeStackNavigationOptions } from '@react-navigation/native-stack';
 import React, { useCallback } from 'react';
 import { Platform } from 'react-native';
-import { Icon, type IconName, Text, View } from '../../components';
+import { Icon, Text, View, type IconName } from '../../components';
 import { SoundManager, StringMethods } from '../../features';
 import { useColors } from '../Theme';
 

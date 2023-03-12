@@ -103,7 +103,6 @@ export const Themes = memo(function Themes() {
     ({ item }) => (
       <Card
         elevation={elevation}
-        key={item.value}
         onPress={onPress}
       >
         <Text

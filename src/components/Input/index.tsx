@@ -37,13 +37,13 @@ type Props = {
   error?: string;
   errorIcon?: IconName;
   flex?: boolean;
+  hideError?: boolean;
   keyboardType?: KeyboardTypeOptions;
   onChangeText: (text: string) => void;
   onRef?: MutableRefObject<TextInputRef>;
   onSubmitEditing?: () => void;
   optional?: boolean;
   placeholder?: string;
-  removeError?: boolean;
   returnKeyType?: ReturnKeyTypeOptions;
   secureTextEntry?: boolean;
   textContentType?: TextContentType;
@@ -62,13 +62,13 @@ export const Input = memo(function Input({
   error = '',
   errorIcon = 'alert-circle',
   flex,
+  hideError,
   keyboardType,
   onChangeText,
   onRef,
   onSubmitEditing,
   optional,
   placeholder,
-  removeError,
   returnKeyType,
   secureTextEntry,
   textContentType = 'none',
@@ -140,12 +140,14 @@ export const Input = memo(function Input({
           hidden={noTitle}
           onPress={focusOnInput}
           title={title}
+          withoutTap
         />
         <Text
           color="secondary"
           hidden={!optional}
           onPress={focusOnInput}
           title={optionalText}
+          withoutTap
         />
       </View>
       <View style={styles.input}>
@@ -179,8 +181,9 @@ export const Input = memo(function Input({
           />
         </TouchableOpacity>
       </View>
-      {!removeError && (
+      {!hideError && (
         <TouchableOpacity
+          disabled={!error.length}
           onPress={focusOnInput}
           style={{ alignItems: 'center', flexDirection: 'row' }}
         >

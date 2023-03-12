@@ -4,13 +4,13 @@ import { Platform } from 'react-native';
 import {
   Button,
   Icon,
-  type IconName,
   Loader,
   Modal,
   Text,
   TextInput,
-  type TextInputRef,
   TouchableOpacity,
+  type IconName,
+  type TextInputRef,
 } from '../../../../components';
 import { spacing, useAuth, useColors } from '../../../../features';
 import { ModalHeader } from '../../components';

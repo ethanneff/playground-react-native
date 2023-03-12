@@ -19,7 +19,6 @@ export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
 
   return (
     <View
-      key={item.id}
       style={{
         backgroundColor: colors.background.primaryA,
         borderRadius: spacing(4),

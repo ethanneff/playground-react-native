@@ -1,4 +1,4 @@
-import React, { type ReactNode, useCallback } from 'react';
+import React, { useCallback, type ReactNode } from 'react';
 import { type StyleProp, type ViewStyle } from 'react-native';
 import { GestureTouchableOpacity } from '../../conversions';
 import { SoundManager } from '../../features';
@@ -28,13 +28,15 @@ export const TouchableOpacity = ({
   testID,
 }: Props) => {
   const onPressHandler = useCallback(() => {
+    if (!onPress) return;
     SoundManager.play('tap');
-    if (onPress) onPress();
+    onPress();
   }, [onPress]);
 
   const onLongPressHandler = useCallback(() => {
+    if (!onLongPress) return;
     SoundManager.play('tap');
-    if (onLongPress) onLongPress();
+    onLongPress();
   }, [onLongPress]);
 
   const styles = [{ flex: flex ? 1 : undefined }, style];

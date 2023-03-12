@@ -1,19 +1,19 @@
 import React, { memo, useCallback, useRef } from 'react';
 import {
   Animated,
-  type StyleProp,
   StyleSheet,
+  type StyleProp,
   type TextStyle,
 } from 'react-native';
 import {
-  type FontEmphasis,
-  type FontType,
   fontWeight,
   getFontStyles,
-  type MonoMultiColor,
   SoundManager,
   useColors,
   useDriver,
+  type FontEmphasis,
+  type FontType,
+  type MonoMultiColor,
 } from '../../features';
 
 type EllipsizeMode = 'clip' | 'head' | 'middle' | 'tail';
@@ -36,6 +36,7 @@ type TextProps = {
   style?: StyleProp<TextStyle>;
   testID?: string;
   title?: string;
+  withoutTap?: boolean;
   type?: FontType;
 };
 
@@ -58,6 +59,7 @@ export const Text = memo(function Text({
   testID,
   title,
   type,
+  withoutTap,
 }: TextProps) {
   const opacity = useRef(new Animated.Value(1)).current;
   const useNativeDriver = useDriver();
@@ -97,8 +99,7 @@ export const Text = memo(function Text({
 
   const handlePress = useCallback(() => {
     if (!onPress) return;
-
-    SoundManager.play('tap');
+    if (!withoutTap) SoundManager.play('tap');
     Animated.sequence([
       Animated.timing(opacity, {
         duration: 50,
@@ -112,7 +113,7 @@ export const Text = memo(function Text({
       }),
     ]).start();
     onPress();
-  }, [onPress, opacity, useNativeDriver]);
+  }, [onPress, opacity, useNativeDriver, withoutTap]);
 
   const textStyle = [
     styles.color,

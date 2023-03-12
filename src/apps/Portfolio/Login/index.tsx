@@ -1,13 +1,15 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
-import { StyleSheet } from 'react-native';
-import { Button, Input, Screen, ScrollView, View } from '../../../components';
+import {
+  Button,
+  Input,
+  Screen,
+  ScrollView,
+  Spacing,
+  View,
+} from '../../../components';
 import { spacing, useColors } from '../../../features';
 import { type PortfolioNavigation } from '../types';
-
-const styles = StyleSheet.create({
-  row: { flexDirection: 'row', justifyContent: 'space-around' },
-});
 
 export const Login = memo(function PortfolioLogin() {
   const [email, setEmail] = useState('');
@@ -41,18 +43,25 @@ export const Login = memo(function PortfolioLogin() {
         }}
       >
         <Input
+          hideError
           onChangeText={handleEmail}
           placeholder="example@gmail.com"
           title="email"
           value={email}
         />
+        <Spacing padding={2} />
         <Input
+          hideError
           onChangeText={handlePassword}
           placeholder="•••••••"
           title="password"
           value={password}
         />
-        <View style={styles.row}>
+        <Spacing padding={2} />
+        <View
+          flexDirection="row"
+          justifyContent="space-around"
+        >
           <Button
             onPress={navPortfolio}
             title="Login"

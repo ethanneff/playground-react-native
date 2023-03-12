@@ -28,25 +28,23 @@ export const Dots = memo(function Dots({
         width: '100%',
       }}
     >
-      {slides.map((slide, index) => {
-        return (
-          <TouchableOpacity
-            key={slide.id}
-            onPress={onDotPress(index)}
-            style={{
-              backgroundColor:
-                activeIndex === index
-                  ? colors.text.secondary
-                  : colors.text.disabled,
-              borderRadius: dotSize,
-              height: dotSize,
-              marginBottom: spacing(2),
-              marginHorizontal: spacing(1),
-              width: dotSize,
-            }}
-          />
-        );
-      })}
+      {slides.map((slide, index) => (
+        <TouchableOpacity
+          key={slide.id}
+          onPress={onDotPress(index)}
+          style={{
+            backgroundColor:
+              activeIndex === index
+                ? colors.text.secondary
+                : colors.text.disabled,
+            borderRadius: dotSize,
+            height: dotSize,
+            marginBottom: spacing(2),
+            marginHorizontal: spacing(1),
+            width: dotSize,
+          }}
+        />
+      ))}
     </View>
   );
 });
