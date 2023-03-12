@@ -5,11 +5,11 @@ import isToday from 'dayjs/plugin/isToday';
 import React, { memo, useCallback } from 'react';
 import {
   FlatList,
-  type FlatListRenderItem,
   Spacing,
   Text,
   TouchableOpacity,
   View,
+  type FlatListRenderItem,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { type AuthStackRoutes, type Category } from '../../types';
@@ -20,8 +20,8 @@ type Props = {
 };
 
 const mockData = [
-  1, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 22, 2, 2, 2, 2, 2,
-  2, 2, 2, 2, 2, 22, 2, 2, 2, 2, 22,
+  1, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+  2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
 ];
 
 const day = dayjs();
