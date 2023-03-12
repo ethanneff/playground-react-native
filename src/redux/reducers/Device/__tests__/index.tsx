@@ -3,7 +3,7 @@ import {
   deviceInitialState,
   deviceReducer,
   setDimensions,
-  setKeyboard,
+  setKeyboardHeight,
   setStatus,
 } from '..';
 import { logout } from '../../Auth';
@@ -40,17 +40,12 @@ describe('actions', () => {
 
   it('setKeyboard', () => {
     expect.hasAssertions();
-    const payload = {
-      height: 100,
-      screenX: 200,
-      screenY: 400,
-      width: 200,
-    };
+    const payload = 400;
     const expectedAction = {
       payload,
-      type: getType(setKeyboard),
+      type: getType(setKeyboardHeight),
     };
-    expect(setKeyboard(payload)).toStrictEqual(expectedAction);
+    expect(setKeyboardHeight(payload)).toStrictEqual(expectedAction);
   });
 });
 
@@ -79,18 +74,14 @@ describe('reducer', () => {
     ).toStrictEqual(data);
   });
 
-  it('setKeyboard', () => {
+  it('setKeyboardHeight', () => {
     expect.hasAssertions();
-    const payload = {
-      height: 100,
-      screenX: 200,
-      screenY: 400,
-      width: 200,
-    };
+    const payload = 123;
+
     expect(
       deviceReducer(deviceInitialState, {
         payload,
-        type: getType(setKeyboard),
+        type: getType(setKeyboardHeight),
       }),
     ).toStrictEqual({
       ...deviceInitialState,
