@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.75.4](https://github.com/ethanneff/playground-react-native/compare/v2.75.3...v2.75.4) (2023-03-12)
+
+
+### Bug Fixes
+
+* default keyboard on load ([fe86796](https://github.com/ethanneff/playground-react-native/commit/fe8679621ba5e01b2fa331fb38e876ec988a22a1))
+
 ## [2.75.3](https://github.com/ethanneff/playground-react-native/compare/v2.75.2...v2.75.3) (2023-03-11)
 
 
