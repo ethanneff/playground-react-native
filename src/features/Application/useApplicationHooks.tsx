@@ -60,24 +60,34 @@ export const useDimensions = () => {
 export const useKeyboard = () => {
   const dispatch = useRootDispatch();
 
+  const handleChange = useCallback(
+    (event: KeyboardEvent) => {
+      dispatch(setKeyboard(event.endCoordinates));
+    },
+    [dispatch],
+  );
+
   useEffect(() => {
+    const event = Keyboard.metrics() ?? {
+      height: 0,
+      screenX: 0,
+      screenY: 0,
+      width: 0,
+    };
+    dispatch(setKeyboard(event));
     const showSubscription = Keyboard.addListener(
       android ? 'keyboardDidShow' : 'keyboardWillShow',
-      (event: KeyboardEvent) => {
-        dispatch(setKeyboard(event.endCoordinates));
-      },
+      handleChange,
     );
     const hideSubscription = Keyboard.addListener(
       android ? 'keyboardDidHide' : 'keyboardWillHide',
-      (event: KeyboardEvent) => {
-        dispatch(setKeyboard(event.endCoordinates));
-      },
+      handleChange,
     );
     return () => {
       showSubscription.remove();
       hideSubscription.remove();
     };
-  }, [dispatch]);
+  }, [dispatch, handleChange]);
 };
 
 export const useAppState = () => {

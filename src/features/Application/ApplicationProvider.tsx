@@ -6,7 +6,7 @@ import {
   useKeyboard,
   useLocalization,
   useNetInfo,
-} from './hooks';
+} from './useApplicationHooks';
 
 type Props = {
   children: ReactElement;
