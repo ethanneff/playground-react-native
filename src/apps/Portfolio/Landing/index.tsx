@@ -3,8 +3,8 @@ import React, { memo, useCallback } from 'react';
 import {
   Button,
   Carousel,
-  type CarouselSlide,
   Screen,
+  type CarouselSlide,
 } from '../../../components';
 import { useColors } from '../../../features';
 import { type PortfolioNavigation } from '../types';
@@ -27,7 +27,10 @@ export const Landing = memo(function PortfolioLanding() {
       onLeftPress={goBack}
       title="Landing"
     >
-      <Carousel slides={slides} />
+      <Carousel
+        duration={2000}
+        slides={slides}
+      />
       <Button
         center
         onPress={navPortfolioLogin}

@@ -3,11 +3,11 @@ import React, { memo, useCallback } from 'react';
 import {
   Button,
   FlatList,
-  type FlatListRenderItem,
   Screen,
   Text,
-  View,
+  type FlatListRenderItem,
 } from '../../../components';
+import { spacing } from '../../../features';
 import {
   changeTheme,
   themes,
@@ -24,15 +24,14 @@ export const Settings = memo(function PortfolioSettings() {
     (theme: Theme) => () => dispatch(changeTheme(theme)),
     [dispatch],
   );
+
   const renderItem = useCallback<FlatListRenderItem<Theme>>(
     ({ item }) => (
-      <View>
-        <Button
-          color={currentTheme === item ? 'positive' : 'primaryA'}
-          onPress={themePress(item)}
-          title={item}
-        />
-      </View>
+      <Button
+        color={currentTheme === item ? 'positive' : 'primaryA'}
+        onPress={themePress(item)}
+        title={item}
+      />
     ),
     [currentTheme, themePress],
   );
@@ -55,6 +54,7 @@ export const Settings = memo(function PortfolioSettings() {
     >
       <FlatList
         ListHeaderComponent={renderHeader}
+        contentContainerStyle={{ padding: spacing(4) }}
         data={themes}
         estimatedItemSize={51}
         keyExtractor={keyExtractor}

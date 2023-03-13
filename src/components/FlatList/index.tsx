@@ -1,8 +1,8 @@
 import {
   FlashList,
+  MasonryFlashList as Masonry,
   type FlashListProps,
   type ListRenderItem as RenderItem,
-  MasonryFlashList as Masonry,
 } from '@shopify/flash-list';
 import React, { type Ref } from 'react';
 

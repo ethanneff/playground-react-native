@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
-import { View } from '../../components';
+import { View } from '..';
 import { spacing, useColors } from '../../features';
 import { Content } from '../Content';
 import { Icon } from '../Icon';
@@ -12,7 +12,7 @@ type Props = {
   width: number;
 };
 
-export const Item = memo(function Item({ item, width }: Props) {
+export const CarouselItem = memo(function Item({ item, width }: Props) {
   const colors = useColors();
   const styles = StyleSheet.create({
     item: {

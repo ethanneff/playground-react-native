@@ -2,14 +2,9 @@ import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { type ViewToken } from 'react-native';
 import { View } from '../../components';
 import { spacing } from '../../features';
-import { getWidth, useRootSelector } from '../../redux';
-import {
-  FlatList,
-  type FlatListRef,
-  type FlatListRenderItem,
-} from '../FlatList';
-import { Dots } from './Dots';
-import { Item } from './Item';
+import { type FlatListRef } from '../FlatList';
+import { CarouselDots } from './CarouselDots';
+import { CarouselList } from './CarouselList';
 import { type CarouselSlide } from './types';
 
 type Props = {
@@ -23,10 +18,12 @@ export const Carousel = memo(function Carousel({
   dotSize = spacing(4),
   duration,
   slides,
-  viewabilityConfig = { itemVisiblePercentThreshold: 50 },
+  viewabilityConfig,
 }: Props) {
+  const viewabilityConfigRef = useRef(
+    viewabilityConfig ? viewabilityConfig : { itemVisiblePercentThreshold: 50 },
+  ).current;
   const loopingEnabled = useRef(false);
-  const width = useRootSelector(getWidth);
   const flatList = useRef<FlatListRef<CarouselSlide>>(null);
   const activeIndexRef = useRef(0);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -36,16 +33,13 @@ export const Carousel = memo(function Carousel({
   const onViewableItemsChanged = useCallback(
     ({ viewableItems }: { viewableItems: ViewToken[] }) => {
       const index = viewableItems[0]?.index ?? 0;
+      if (!viewableItems.length) return;
       setActiveIndex(index);
       activeIndexRef.current = index;
     },
     [],
   );
 
-  const keyExtractor = useCallback(
-    (item: CarouselSlide) => String(item.id),
-    [],
-  );
   const onDotPress = useCallback(
     (index: number) => () => {
       if (!flatList.current) return;
@@ -88,40 +82,22 @@ export const Carousel = memo(function Carousel({
     };
   }, [duration, loop]);
 
-  const renderItem = useCallback<FlatListRenderItem<CarouselSlide>>(
-    ({ item }) => (
-      <Item
-        item={item}
-        width={width}
-      />
-    ),
-    [width],
-  );
-
   return (
     <View
       flex={1}
       onTouchStart={onTouchPauseLooping}
     >
-      <FlatList
-        data={slides}
-        // disableAutoLayout
-        // disableHorizontalListHeightMeasurement
-        estimatedItemSize={500}
-        horizontal
-        keyExtractor={keyExtractor}
+      <CarouselList
         onRef={flatList}
         onViewableItemsChanged={onViewableItemsChanged}
-        pagingEnabled
-        renderItem={renderItem}
-        showsHorizontalScrollIndicator={false}
-        viewabilityConfig={viewabilityConfig}
+        slides={slides}
+        viewabilityConfig={viewabilityConfigRef}
       />
-      <Dots
+      <CarouselDots
         activeIndex={activeIndex}
         dotSize={dotSize}
+        length={slides.length}
         onDotPress={onDotPress}
-        slides={slides}
       />
     </View>
   );

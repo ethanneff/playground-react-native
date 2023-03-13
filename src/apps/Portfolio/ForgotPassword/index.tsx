@@ -1,7 +1,14 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { Button, Input, Screen, ScrollView, View } from '../../../components';
+import {
+  Button,
+  Input,
+  Screen,
+  ScrollView,
+  Spacing,
+  View,
+} from '../../../components';
 import { spacing, useColors } from '../../../features';
 
 const styles = StyleSheet.create({
@@ -31,11 +38,13 @@ export const ForgotPassword = memo(function PortfolioForgotPassword() {
         }}
       >
         <Input
+          hideError
           onChangeText={handleEmail}
           placeholder="example@gmail.com"
           title="email"
           value={email}
         />
+        <Spacing padding={2} />
         <View style={styles.row}>
           <Button
             onPress={navLogin}

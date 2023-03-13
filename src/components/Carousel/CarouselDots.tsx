@@ -1,22 +1,22 @@
-import React, { memo } from 'react';
-import { View } from '../../components';
+import React, { memo, useMemo } from 'react';
+import { View } from '..';
 import { spacing, useColors } from '../../features';
 import { TouchableOpacity } from '../TouchableOpacity';
-import { type CarouselSlide } from './types';
 
 type DotsProps = {
   activeIndex: number;
   dotSize: number;
+  length: number;
   onDotPress: (index: number) => () => void;
-  slides: CarouselSlide[];
 };
 
-export const Dots = memo(function Dots({
+export const CarouselDots = memo(function Dots({
   activeIndex,
   dotSize,
+  length,
   onDotPress,
-  slides,
 }: DotsProps) {
+  const dots = useMemo(() => Array.from({ length }, (_, i) => i), [length]);
   const colors = useColors();
   return (
     <View
@@ -28,9 +28,9 @@ export const Dots = memo(function Dots({
         width: '100%',
       }}
     >
-      {slides.map((slide, index) => (
+      {dots.map((dot, index) => (
         <TouchableOpacity
-          key={slide.id}
+          key={`dot-${dot}`}
           onPress={onDotPress(index)}
           style={{
             backgroundColor:
