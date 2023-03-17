@@ -1157,12 +1157,12 @@ PODS:
     - react-native-config/App (= 1.5.0)
   - react-native-config/App (1.5.0):
     - React-Core
-  - react-native-flipper (0.183.0):
+  - react-native-flipper (0.184.0):
     - React-Core
-  - react-native-flipper-performance-plugin (0.3.1):
+  - react-native-flipper-performance-plugin (0.4.0):
     - React-Core
-    - react-native-flipper-performance-plugin/FBDefines (= 0.3.1)
-  - react-native-flipper-performance-plugin/FBDefines (0.3.1):
+    - react-native-flipper-performance-plugin/FBDefines (= 0.4.0)
+  - react-native-flipper-performance-plugin/FBDefines (0.4.0):
     - React-Core
   - react-native-get-random-values (1.8.0):
     - React-Core
@@ -1703,8 +1703,8 @@ SPEC CHECKSUMS:
   React-jsinspector: 1f51e775819199d3fe9410e69ee8d4c4161c7b06
   React-logger: 0d58569ec51d30d1792c5e86a8e3b78d24b582c6
   react-native-config: 5330c8258265c1e5fdb8c009d2cabd6badd96727
-  react-native-flipper: fe6db6651d338f516899ebe8dad573d0f2d7aa76
-  react-native-flipper-performance-plugin: 2b873b68da3e368afeaf29c9c7a8c2b0ff908c4f
+  react-native-flipper: f5b2b27bfbbf64ffbf8d1e7030905e43a22144c1
+  react-native-flipper-performance-plugin: 42ec5017abd26e7c5a1f527f2db92c14a90cabdb
   react-native-get-random-values: a6ea6a8a65dc93e96e24a11105b1a9c8cfe1d72a
   react-native-mmkv-storage: cfb6854594cfdc5f7383a9e464bb025417d1721c
   react-native-netinfo: 2517ad504b3d303e90d7a431b0fcaef76d207983

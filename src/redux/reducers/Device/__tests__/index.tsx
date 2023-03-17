@@ -85,7 +85,7 @@ describe('reducer', () => {
       }),
     ).toStrictEqual({
       ...deviceInitialState,
-      keyboard: payload,
+      keyboardHeight: payload,
     });
   });
 
