@@ -73,9 +73,10 @@ v3
 - [ ] remove Checklist
 - [ ] migrate everything to libs
 
-- [ ] update to react-native-mmkv
+- [ ] update to react-native-mmkv??
 - [x] upgrade 71
 - [ ] move all to .cache
+- [ ] add pressable component with onPressIn
 - [ ] upgrade to flashlist
 
 Deploy iOS App (Focus)
