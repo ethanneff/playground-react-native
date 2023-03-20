@@ -50,7 +50,7 @@ export const Modal = memo(function Modal({
   const useNativeDriver = useDriver();
   const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
   const dropShadow = useDropShadow();
-  const screen = useRootSelector((s) => s.dimension.screen);
+  const screen = useRootSelector((s) => s.device.dimensions.screen);
   const maxHeight = (screen.height - keyboardHeight) * heightPercent;
   const width = screen.width * widthPercent;
 

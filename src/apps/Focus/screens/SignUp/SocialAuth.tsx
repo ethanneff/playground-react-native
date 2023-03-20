@@ -3,7 +3,6 @@ import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { useCallback } from 'react';
 import { Platform } from 'react-native';
 import { Spacing, Text, TextGroup, View } from '../../../../components';
-import { spacing } from '../../../../features';
 import { getLandscapeOrientation, useRootSelector } from '../../../../redux';
 import { type UnAuthStackRoutes } from '../../types';
 import { SocialButton } from './SocialButton';
@@ -28,14 +27,8 @@ export const SocialAuth = ({ disabled }: Props) => {
   }, [navigate]);
 
   return (
-    <View
-      style={{
-        paddingHorizontal: spacing(landscape ? 0 : 8),
-        paddingTop: spacing(landscape ? 8 : 0),
-        paddingVertical: spacing(landscape ? 0 : 4),
-      }}
-    >
-      <Spacing padding={2} />
+    <View>
+      <Spacing padding={10} />
       <SocialButton
         disabled={disabled}
         icon="google"

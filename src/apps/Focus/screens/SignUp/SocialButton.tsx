@@ -1,10 +1,11 @@
 import React, { memo } from 'react';
 import {
   Icon,
-  type IconName,
   Spacing,
   Text,
   TouchableOpacity,
+  View,
+  type IconName,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 
@@ -26,26 +27,30 @@ export const SocialButton = memo(function LoginButton({
     <TouchableOpacity
       disabled={disabled}
       onPress={onPress}
-      style={{
-        alignItems: 'center',
-        borderColor: colors.border.secondary,
-        borderRadius: spacing(1),
-        borderWidth: 1,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        padding: spacing(1),
-      }}
     >
-      <Icon
-        color="primaryA"
-        name={icon}
-      />
-      <Spacing padding={1} />
-      <Text
-        color="secondary"
-        title={title}
-        type="button"
-      />
+      <View
+        alignItems="center"
+        flexDirection="row"
+        justifyContent="center"
+        padding={spacing(2)}
+        style={{
+          borderColor: colors.border.secondary,
+          borderRadius: spacing(1),
+          borderWidth: 1,
+        }}
+      >
+        <Icon
+          color="primaryA"
+          name={icon}
+          size={spacing(5)}
+        />
+        <Spacing padding={1} />
+        <Text
+          color="secondary"
+          title={title}
+          type="button"
+        />
+      </View>
     </TouchableOpacity>
   );
 });

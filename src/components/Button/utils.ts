@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 import {
+  spacing,
   type ColorTheme,
   type FontEmphasis,
   type MonoMultiColor,
-  spacing,
 } from '../../features';
 
 export const getButtonColor = (

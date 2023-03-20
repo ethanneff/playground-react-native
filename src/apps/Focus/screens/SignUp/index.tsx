@@ -9,6 +9,7 @@ import {
   Text,
   TextInput,
   Toast,
+  View,
   type TextInputRef,
 } from '../../../../components';
 import { Firebase, type FirebaseAuthTypes } from '../../../../conversions';
@@ -173,68 +174,69 @@ export const SignUp = memo(function SignUp() {
         }}
         keyboardShouldPersistTaps="handled"
       >
-        <Text
-          center
-          emphasis="medium"
-          title="Enter your credential to continue."
-        />
-        <Spacing padding={2} />
-        <TextInput
-          autoCapitalize="none"
-          autoComplete="email"
-          autoCorrect={false}
-          backgroundColor="secondary"
-          blurOnSubmit={false}
-          editable={!disabled}
-          keyboardType="email-address"
-          onChangeText={handleFormChange('email')}
-          onRef={emailRef}
-          onSubmitEditing={handleSubmit('email')}
-          placeholder="Email address"
-          returnKeyType="next"
-          textContentType="username"
-          value=""
-        />
-        <Spacing padding={2} />
-        <TextInput
-          autoCapitalize="none"
-          autoComplete="password"
-          autoCorrect={false}
-          backgroundColor="secondary"
-          blurOnSubmit={false}
-          editable={!disabled}
-          icons={[{ focus: true, name: eyeIcon, onPress: handleEyePress }]}
-          keyboardType="default"
-          onChangeText={handleFormChange('password')}
-          onRef={passwordRef}
-          onSubmitEditing={handleSubmit('password')}
-          placeholder="Password"
-          returnKeyType="done"
-          secureTextEntry={!state.eye}
-          textContentType="password"
-          value=""
-        />
-        <Spacing padding={2} />
-        <Button
-          center
-          color="accent"
-          disabled={disabled}
-          emphasis="high"
-          onPress={handleSignIn}
-          title="sign up"
-        />
-        <Spacing padding={2} />
-        <Button
-          center
-          color="secondary"
-          disabled={disabled}
-          emphasis="medium"
-          onPress={handleForgotPassword}
-          title="forgot password"
-        />
-        {landscape ? <SocialAuth disabled={disabled} /> : null}
+        <View>
+          <Text
+            center
+            emphasis="medium"
+            title="Enter your credential to continue."
+          />
+          <Spacing padding={2} />
+          <TextInput
+            autoCapitalize="none"
+            autoComplete="email"
+            autoCorrect={false}
+            backgroundColor="secondary"
+            blurOnSubmit={false}
+            editable={!disabled}
+            keyboardType="email-address"
+            onChangeText={handleFormChange('email')}
+            onRef={emailRef}
+            onSubmitEditing={handleSubmit('email')}
+            placeholder="Email address"
+            returnKeyType="next"
+            textContentType="username"
+            value=""
+          />
+          <Spacing padding={2} />
+          <TextInput
+            autoCapitalize="none"
+            autoComplete="password"
+            autoCorrect={false}
+            backgroundColor="secondary"
+            blurOnSubmit={false}
+            editable={!disabled}
+            icons={[{ focus: true, name: eyeIcon, onPress: handleEyePress }]}
+            keyboardType="default"
+            onChangeText={handleFormChange('password')}
+            onRef={passwordRef}
+            onSubmitEditing={handleSubmit('password')}
+            placeholder="Password"
+            returnKeyType="done"
+            secureTextEntry={!state.eye}
+            textContentType="password"
+            value=""
+          />
+          <Spacing padding={2} />
+          <Button
+            center
+            color="accent"
+            disabled={disabled}
+            emphasis="high"
+            onPress={handleSignIn}
+            title="sign up"
+          />
+          <Spacing padding={2} />
+          <Button
+            center
+            color="secondary"
+            disabled={disabled}
+            emphasis="medium"
+            onPress={handleForgotPassword}
+            title="forgot password"
+          />
+        </View>
+        <SocialAuth disabled={disabled} />
       </KeyboardAwareScrollView>
-      {landscape ? null : <SocialAuth disabled={disabled} />}
     </Screen>
   );
 });
