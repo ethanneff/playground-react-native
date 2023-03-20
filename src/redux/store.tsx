@@ -1,5 +1,16 @@
 import { combineReducers } from 'redux';
 import {
+  authActions,
+  authReducer,
+  deviceActions,
+  deviceReducer,
+  historyReducer,
+  networkActions,
+  networkReducer,
+  themeActions,
+  themeReducer,
+} from '.';
+import {
   checklistActions,
   checklistItemActions,
   checklistItemReducer,
@@ -43,19 +54,6 @@ import {
   gameOfLifeActions,
   gameOfLifeReducer,
 } from '../apps/Playground/Games/GameOfLife/redux';
-import {
-  authActions,
-  authReducer,
-  deviceActions,
-  deviceReducer,
-  dimensionActions,
-  dimensionReducer,
-  historyReducer,
-  networkActions,
-  networkReducer,
-  themeActions,
-  themeReducer,
-} from '.';
 
 export const actions = {
   auth: authActions,
@@ -67,7 +65,6 @@ export const actions = {
   completeItem: completeItemActions,
   completeUser: completeUserActions,
   device: deviceActions,
-  dimension: dimensionActions,
   focus: {
     ...focusAuthActions,
     ...focusUsersActions,
@@ -93,7 +90,6 @@ export const reducers = combineReducers({
   completeItem: completeItemReducer,
   completeUser: completeUserReducer,
   device: deviceReducer,
-  dimension: dimensionReducer,
   focus: combineReducers({
     auth: focusAuthReducer,
     goals: focusGoalsReducer,

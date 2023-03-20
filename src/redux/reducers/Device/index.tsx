@@ -1,10 +1,13 @@
-import { type NetInfoState } from '@react-native-community/netinfo';
-import { type AppStateStatus, type ScaledSize } from 'react-native';
+import {
+  NetInfoStateType,
+  type NetInfoState,
+} from '@react-native-community/netinfo';
+import { Dimensions, type AppStateStatus, type ScaledSize } from 'react-native';
 import {
   type LocationProviderInfo,
   type PowerState,
 } from 'react-native-device-info';
-import { type RootAction } from 'root-types';
+import { type RootAction, type RootState } from 'root-types';
 import { type DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
 import { logout } from '../Auth';
@@ -116,10 +119,10 @@ export type DetailsState = {
 
 type DeviceState = DeepReadonly<{
   details: DetailsState | null;
-  dimensions: DimensionState | null;
+  dimensions: DimensionState;
   keyboardHeight: number;
   localization: LocalizeState | null;
-  network: NetInfoState | null;
+  network: NetInfoState;
   status: AppStateStatus;
 }>;
 
@@ -143,13 +146,37 @@ export const deviceActions = {
   setStatus,
 };
 
+/* SELECTORS */
+export const getLandscapeOrientation = (state: RootState): boolean =>
+  state.device.dimensions.window.height < state.device.dimensions.window.width;
+export const getSmallestDimension = (state: RootState): number =>
+  state.device.dimensions.window.height > state.device.dimensions.window.width
+    ? state.device.dimensions.window.width
+    : state.device.dimensions.window.height;
+export const getLargestDimension = (state: RootState): number =>
+  state.device.dimensions.window.height > state.device.dimensions.window.width
+    ? state.device.dimensions.window.height
+    : state.device.dimensions.window.width;
+export const getWidth = (state: RootState): number =>
+  state.device.dimensions.window.width;
+export const getHeight = (state: RootState): number =>
+  state.device.dimensions.window.height;
+
 /* REDUCERS */
 export const deviceInitialState: DeviceState = {
   details: null,
-  dimensions: null,
+  dimensions: {
+    screen: Dimensions.get('screen'),
+    window: Dimensions.get('window'),
+  },
   keyboardHeight: 0,
   localization: null,
-  network: null,
+  network: {
+    details: null,
+    isConnected: null,
+    isInternetReachable: null,
+    type: NetInfoStateType.unknown,
+  },
   status: 'unknown',
 };
 
