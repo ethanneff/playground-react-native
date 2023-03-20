@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@invertase/react-native-apple-authentication": "2.2.2",
-    "@mdi/js": "7.1.96",
+    "@mdi/js": "7.2.96",
     "@mdi/react": "1.6.1",
     "@react-native-community/netinfo": "9.3.7",
     "@react-native-community/slider": "4.4.2",
