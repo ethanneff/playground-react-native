@@ -78,6 +78,14 @@ v3
 - [ ] move all to .cache
 - [ ] add pressable component with onPressIn
 - [ ] upgrade to flashlist
+- [ ] make modal global like toast (https://github.com/timolins/react-hot-toast)
+  ```ts
+  const Modal = {};
+  Modal.push();
+  Modal.pop();
+  Modal.popToTop();
+  Modal.popAll();
+  ```
 
 Deploy iOS App (Focus)
 

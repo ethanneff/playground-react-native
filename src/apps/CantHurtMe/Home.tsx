@@ -1,11 +1,11 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Modal, Screen, Text } from '../../components';
 import { useAdminNavBack } from '../../features';
 import { List } from './List';
 
 const initialState = { profile: false, settings: false };
 
-export const Home = memo(function CantHurtMeMain() {
+export const Home = () => {
   const [showModal, setShowModal] = useState(initialState);
   const { onLeftPress } = useAdminNavBack();
 
@@ -52,4 +52,4 @@ export const Home = memo(function CantHurtMeMain() {
       ) : null}
     </>
   );
-});
+};

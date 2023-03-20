@@ -56,7 +56,7 @@ export const app: App = {
         task: 'Write out a list of what is challenging you today. What problems and limitations do you encounter? What excuses are you making? Don’t hold back. Don’t be nice to yourself.          ',
       },
       '553c1ff9-c2ef-4ef9-9d6f-2c74c432594e': {
-        challenge: ' Accountability Mirror',
+        challenge: 'Accountability Mirror',
         id: '553c1ff9-c2ef-4ef9-9d6f-2c74c432594e',
         mission:
           'If you are trying to lose weight, your first Post-It may be to lose two pounds in the first week.Once that goal is achieved, remove the note and post the next goal of two to five pounds until your ultimate goal is realized.',
