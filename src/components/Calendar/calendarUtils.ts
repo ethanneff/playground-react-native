@@ -61,6 +61,9 @@ export const calendarUtils = {
       selected: { col: 0, row: 0 },
     };
     month.days.push(header);
+    daysOfWeek.forEach((key, index) => {
+      month.indexDays[key] = { col: index, row: 0 };
+    });
     for (let row = 1; row < 7; row++) {
       month.days[row] = [];
       for (let col = 0; col < 7; col++) {

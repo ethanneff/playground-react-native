@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { View } from '..';
 import { spacing, useColors } from '../../features';
-import { useRootDispatch } from '../../redux';
+import { useRootDispatch, useRootSelector } from '../../redux';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 import { calendarActions } from './calendarReducer';
@@ -9,7 +9,7 @@ import { calendarUtils } from './calendarUtils';
 import { type DayState } from './types';
 
 type Props = {
-  day: DayState;
+  dayKey: string;
   hiddenDays?: boolean;
 };
 
@@ -34,7 +34,15 @@ const useConfig = (day: DayState, hiddenDays?: boolean) => {
   return { backgroundColor, bold, disabled, textColor };
 };
 
-export const CalendarDay = ({ day, hiddenDays }: Props) => {
+export const CalendarDay = ({ dayKey, hiddenDays }: Props) => {
+  const selectedMonth = useRootSelector((state) => state.calendar.selected);
+  const monthKey = calendarUtils.getFormat(new Date(selectedMonth), 'YYYY-MM');
+  const location = useRootSelector(
+    (state) => state.calendar.months[monthKey].indexDays[dayKey],
+  );
+  const day = useRootSelector(
+    (state) => state.calendar.months[monthKey].days[location.row][location.col],
+  );
   const { backgroundColor, bold, disabled, textColor } = useConfig(
     day,
     hiddenDays,

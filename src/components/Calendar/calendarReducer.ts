@@ -54,10 +54,13 @@ export const calendarReducer = (
       const monthKey = calendarUtils.getFormat(state.selected, 'YYYY-MM');
       const dayKey = calendarUtils.getFormat(action.payload, 'YYYY-MM-DD');
       const location = state.months[monthKey].indexDays[dayKey];
-      const month = { ...state.months[monthKey], selected: location };
-      // TODO: NOT WORKING
+      const month = {
+        ...state.months[monthKey],
+      };
+      // TODO not working
       month.days[location.row][location.col].isSelected = true;
-
+      month.days[month.selected.row][month.selected.col].isSelected = false;
+      month.selected = location;
       return { ...state, months: { ...state.months, [monthKey]: month } };
     }
     default:

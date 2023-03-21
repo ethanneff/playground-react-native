@@ -24,6 +24,7 @@ export const CalendarHeader = () => {
     dispatch(calendarActions.nav(0));
   }, [dispatch]);
 
+  console.log('header');
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
       <TouchableOpacity onPress={handleMonthDecrease}>
