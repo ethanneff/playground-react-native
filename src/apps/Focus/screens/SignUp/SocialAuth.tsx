@@ -3,7 +3,6 @@ import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { useCallback } from 'react';
 import { Platform } from 'react-native';
 import { Spacing, Text, TextGroup, View } from '../../../../components';
-import { getLandscapeOrientation, useRootSelector } from '../../../../redux';
 import { type UnAuthStackRoutes } from '../../types';
 import { SocialButton } from './SocialButton';
 
@@ -13,7 +12,6 @@ type Props = {
 
 export const SocialAuth = ({ disabled }: Props) => {
   const handleMissingCallback = useCallback(() => null, []);
-  const landscape = useRootSelector(getLandscapeOrientation);
 
   const { navigate } =
     useNavigation<NativeStackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();

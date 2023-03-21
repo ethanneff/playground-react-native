@@ -75,6 +75,7 @@ export const routeCategory: Record<Route, Category> = {
   paragraphs: 'storybook',
   'pinch-spread': 'features',
   questionnaire: 'creations',
+  'scroll-views': 'storybook',
   'search-bar': 'features',
   'skeleton-loader': 'features',
   'slot-machine': 'games',

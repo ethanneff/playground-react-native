@@ -14,7 +14,7 @@ import {
 } from '../../../../components';
 import { Firebase, type FirebaseAuthTypes } from '../../../../conversions';
 import { spacing } from '../../../../features';
-import { getLandscapeOrientation, useRootSelector } from '../../../../redux';
+import { useRootSelector } from '../../../../redux';
 import { Collections, type Preferences, type User } from '../../data';
 import { type UnAuthStackRoutes } from '../../types';
 import { SocialAuth } from './SocialAuth';
@@ -72,7 +72,6 @@ export const SignUp = memo(function SignUp() {
   const [state, setState] = useState(initialState);
   const eyeIcon = state.eye ? 'eye-outline' : 'eye-off-outline';
   const focus = useIsFocused();
-  const landscape = useRootSelector(getLandscapeOrientation);
   const disabled = state.loading;
   const timezone =
     useRootSelector((root) => root.device.localization?.timeZone) ?? '';

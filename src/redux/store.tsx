@@ -54,9 +54,14 @@ import {
   gameOfLifeActions,
   gameOfLifeReducer,
 } from '../apps/Playground/Games/GameOfLife/redux';
+import {
+  calendarActions,
+  calendarReducer,
+} from '../components/Calendar/calendarReducer';
 
 export const actions = {
   auth: authActions,
+  calendar: calendarActions,
   chatMessage: chatMessageActions,
   checklist: checklistActions,
   checklistItem: checklistItemActions,
@@ -82,6 +87,7 @@ export const actions = {
 
 export const reducers = combineReducers({
   auth: authReducer,
+  calendar: calendarReducer,
   chatMessage: chatMessageReducer,
   checklist: checklistReducer,
   checklistItem: checklistItemReducer,

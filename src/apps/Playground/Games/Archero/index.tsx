@@ -2,8 +2,8 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef, useState } from 'react';
 import {
   Animated,
-  type LayoutChangeEvent,
   PanResponder,
+  type LayoutChangeEvent,
   type PanResponderInstance,
 } from 'react-native';
 import { Screen, View } from '../../../../components';
@@ -26,7 +26,7 @@ export const Archero = memo(function Archero() {
   const timer = useRef(false);
   const interval = useRef<ReturnType<typeof setInterval> | null>(null);
   const gesture = useRef({ dx: 0, dy: 0, x0: 0, y0: 0 });
-  const window = useRootSelector((state) => state.dimension.window);
+  const window = useRootSelector((state) => state.device.dimensions.window);
   const [dimensions, setDimensions] = useState({ height: 1000, width: 1000 });
   const { height, width } = dimensions;
   const smallest = width > height ? height : width;

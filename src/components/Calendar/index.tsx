@@ -1,72 +1,28 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { memo, useEffect } from 'react';
 import { View } from '../../components';
-import { CalendarHeader } from './Header';
-import { CalendarMonth } from './Month';
-import { addMonths, type CalendarMatrix, getCalendarMatrix } from './utils';
-
-type State = {
-  matrix: CalendarMatrix;
-  selected: string | undefined;
-  today: Date;
-};
+import { useRootDispatch, useRootSelector } from '../../redux';
+import { CalendarHeader } from './CalendarHeader';
+import { CalendarMonth } from './CalendarMonth';
+import { calendarActions } from './calendarReducer';
 
 type Props = {
   hiddenDays?: boolean;
 };
 
-const today = new Date();
-const initialState = {
-  matrix: getCalendarMatrix(today),
-  selected: undefined,
-  today,
-};
+export const Calendar = memo(function CalenderMemo({ hiddenDays }: Props) {
+  const dispatch = useRootDispatch();
+  const loading = useRootSelector((state) => state.calendar.loading);
 
-const getState = (date: Date) => ({
-  matrix: getCalendarMatrix(date),
-  selected: undefined,
-  today: date,
-});
+  useEffect(() => {
+    dispatch(calendarActions.init());
+  }, [dispatch]);
 
-export const Calendar = memo(function Calendar({ hiddenDays }: Props) {
-  const [calendar, setCalendar] = useState<State>(initialState);
+  console.log('calendar');
 
-  const onSelected = useCallback(
-    (id: string) => {
-      // TODO: navigate to month if pressing previous or next month
-      setCalendar((state) => ({
-        ...state,
-        selected: id === calendar.selected ? undefined : id,
-      }));
-    },
-    [calendar.selected],
-  );
-
-  const onMonthIncrease = useCallback(() => {
-    setCalendar(getState(addMonths(calendar.today, 1)));
-  }, [calendar.today]);
-
-  const onMonthDecrease = useCallback(() => {
-    setCalendar(getState(addMonths(calendar.today, -1)));
-  }, [calendar.today]);
-
-  const onTitlePress = useCallback(() => {
-    setCalendar(getState(new Date()));
-  }, []);
-
-  return (
+  return loading ? null : (
     <View>
-      <CalendarHeader
-        onMonthDecrease={onMonthDecrease}
-        onMonthIncrease={onMonthIncrease}
-        onTitlePress={onTitlePress}
-        unix={calendar.today.valueOf()}
-      />
-      <CalendarMonth
-        hiddenDays={hiddenDays}
-        matrix={calendar.matrix} // TODO: pass through redux instead... object is causing re-renders
-        onSelected={onSelected}
-        selected={calendar.selected}
-      />
+      <CalendarHeader />
+      <CalendarMonth hiddenDays={hiddenDays} />
     </View>
   );
 });

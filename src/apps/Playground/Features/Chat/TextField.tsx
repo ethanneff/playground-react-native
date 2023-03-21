@@ -3,17 +3,17 @@ import { v4 } from 'uuid';
 import {
   Icon,
   Input,
-  type TextInputRef,
   TouchableOpacity,
   View,
+  type TextInputRef,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import {
   createChatMessage,
   getChatSubmittable,
-  type Message,
   typeChatMessage,
+  type Message,
 } from './Messages';
 
 export const TextField = memo(function TextField() {
@@ -58,11 +58,11 @@ export const TextField = memo(function TextField() {
     >
       <Input
         flex
+        hideError
         onChangeText={onMessageChange}
         onRef={textFieldRef}
         onSubmitEditing={onSubmit}
         placeholder="Write something..."
-        removeError
         value={textField}
       />
       <TouchableOpacity

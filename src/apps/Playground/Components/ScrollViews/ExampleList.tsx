@@ -1,11 +1,12 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { type ListRenderItem, type ViewToken } from 'react-native';
+import { type ViewToken } from 'react-native';
 import {
   FlatList,
   ScrollButton,
   Text,
   View,
   type FlatListRef,
+  type FlatListRenderItem,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 
@@ -68,7 +69,7 @@ export const ExampleList = ({ horizontal, location }: Props) => {
   const [showBottom, setShowBottom] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const colors = useColors();
-  const flatListRef = useRef<FlatListRef>(null);
+  const flatListRef = useRef<FlatListRef<string>>(null);
 
   const handleViewableItemsChanged = useCallback(
     ({ viewableItems }: OnViewableItemsChangedProps) => {
@@ -89,7 +90,7 @@ export const ExampleList = ({ horizontal, location }: Props) => {
     });
   }, [location]);
 
-  const renderItem = useCallback<ListRenderItem<string>>(
+  const renderItem = useCallback<FlatListRenderItem<string>>(
     ({ index, item }) => (
       <View
         style={{ paddingHorizontal: spacing(2), paddingVertical: spacing(1) }}
