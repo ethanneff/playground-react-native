@@ -2,7 +2,7 @@ import { type RootAction } from 'root-types';
 import { type DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
 import { calendarUtils } from './calendarUtils';
-import { type CalendarState } from './types';
+import { type CalendarState, type MonthState } from './types';
 
 // INTERFACES
 type State = DeepReadonly<CalendarState>;
@@ -54,12 +54,15 @@ export const calendarReducer = (
       const monthKey = calendarUtils.getFormat(state.selected, 'YYYY-MM');
       const dayKey = calendarUtils.getFormat(action.payload, 'YYYY-MM-DD');
       const location = state.months[monthKey].indexDays[dayKey];
-      const month = {
-        ...state.months[monthKey],
+      const month = { ...state.months[monthKey] } as MonthState;
+      month.days[location.row][location.col] = {
+        ...month.days[location.row][location.col],
+        isSelected: true,
       };
-      // TODO not working
-      month.days[location.row][location.col].isSelected = true;
-      month.days[month.selected.row][month.selected.col].isSelected = false;
+      month.days[month.selected.row][month.selected.col] = {
+        ...month.days[month.selected.row][month.selected.col],
+        isSelected: false,
+      };
       month.selected = location;
       return { ...state, months: { ...state.months, [monthKey]: month } };
     }
