@@ -17,8 +17,6 @@ export const Calendar = memo(function CalenderMemo({ hiddenDays }: Props) {
     dispatch(calendarActions.init());
   }, [dispatch]);
 
-  console.log('calendar');
-
   return loading ? null : (
     <View>
       <CalendarHeader />

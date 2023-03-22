@@ -2,7 +2,8 @@ import { type RootAction } from 'root-types';
 import { type DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
 import { calendarUtils } from './calendarUtils';
-import { type CalendarState, type MonthState } from './types';
+import { daysOfWeek } from './constants';
+import { type CalendarState } from './types';
 
 // INTERFACES
 type State = DeepReadonly<CalendarState>;
@@ -14,11 +15,11 @@ const init = createAction('calendar/init')();
 export const calendarActions = { init, nav, select };
 
 // CONSTANTS
-const day = new Date();
 const initialState: State = {
+  activeMonth: calendarUtils.getFormat(new Date(), 'YYYY-MM'),
+  days: {},
   loading: true,
   months: {},
-  selected: day,
 };
 
 // REDUCER
@@ -30,41 +31,52 @@ export const calendarReducer = (
     case getType(calendarActions.init): {
       const today = new Date();
       const key = calendarUtils.getFormat(today, 'YYYY-MM');
-      const month = calendarUtils.getMonthMatrix(today);
-      return { loading: false, months: { [key]: month }, selected: today };
+      const { days, months } = calendarUtils.getMonthAndDays(today);
+      daysOfWeek.forEach((dayOfWeek) => {
+        days[dayOfWeek] = {
+          display: dayOfWeek,
+          isHeader: true,
+          isSelected: false,
+          isWithinMonth: false,
+          value: new Date(0),
+        };
+      });
+      return { activeMonth: key, days, loading: false, months };
     }
     case getType(calendarActions.nav): {
       if (action.payload === 0) {
         const today = new Date();
-        return { ...state, selected: today };
+        const key = calendarUtils.getFormat(today, 'YYYY-MM');
+        return { ...state, activeMonth: key };
       }
-      const newMonth = calendarUtils.addMonths(state.selected, action.payload);
-      const key = calendarUtils.getFormat(newMonth, 'YYYY-MM');
+      const nextMonth = calendarUtils.addMonths(
+        state.activeMonth,
+        action.payload,
+      );
+      const key = calendarUtils.getFormat(nextMonth, 'YYYY-MM');
       if (key in state.months) {
-        return { ...state, selected: newMonth };
+        return { ...state, activeMonth: key };
       }
-      const month = calendarUtils.getMonthMatrix(newMonth);
+      const { days, months } = calendarUtils.getMonthAndDays(nextMonth);
       return {
         ...state,
-        months: { ...state.months, [key]: month },
-        selected: newMonth,
+        activeMonth: key,
+        days: { ...state.days, ...days },
+        months: { ...state.months, ...months },
       };
     }
     case getType(calendarActions.select): {
-      const monthKey = calendarUtils.getFormat(state.selected, 'YYYY-MM');
-      const dayKey = calendarUtils.getFormat(action.payload, 'YYYY-MM-DD');
-      const location = state.months[monthKey].indexDays[dayKey];
-      const month = { ...state.months[monthKey] } as MonthState;
-      month.days[location.row][location.col] = {
-        ...month.days[location.row][location.col],
-        isSelected: true,
+      const key = calendarUtils.getFormat(action.payload, 'YYYY-MM-DD');
+      return {
+        ...state,
+        days: {
+          ...state.days,
+          [key]: {
+            ...state.days[key],
+            isSelected: !state.days[key].isSelected,
+          },
+        },
       };
-      month.days[month.selected.row][month.selected.col] = {
-        ...month.days[month.selected.row][month.selected.col],
-        isSelected: false,
-      };
-      month.selected = location;
-      return { ...state, months: { ...state.months, [monthKey]: month } };
     }
     default:
       return state;

@@ -35,14 +35,7 @@ const useConfig = (day: DayState, hiddenDays?: boolean) => {
 };
 
 export const CalendarDay = ({ dayKey, hiddenDays }: Props) => {
-  const selectedMonth = useRootSelector((state) => state.calendar.selected);
-  const monthKey = calendarUtils.getFormat(new Date(selectedMonth), 'YYYY-MM');
-  const location = useRootSelector(
-    (state) => state.calendar.months[monthKey].indexDays[dayKey],
-  );
-  const day = useRootSelector(
-    (state) => state.calendar.months[monthKey].days[location.row][location.col],
-  );
+  const day = useRootSelector((state) => state.calendar.days[dayKey]);
   const { backgroundColor, bold, disabled, textColor } = useConfig(
     day,
     hiddenDays,

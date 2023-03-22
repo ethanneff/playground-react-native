@@ -10,7 +10,8 @@ import { calendarActions } from './calendarReducer';
 
 export const CalendarHeader = () => {
   const dispatch = useRootDispatch();
-  const month = useRootSelector((state) => state.calendar.selected);
+  const activeMonth = useRootSelector((state) => state.calendar.activeMonth);
+  const month = dayjs(activeMonth).format('MMMM YYYY');
 
   const handleMonthDecrease = useCallback(() => {
     dispatch(calendarActions.nav(-1));
@@ -24,7 +25,6 @@ export const CalendarHeader = () => {
     dispatch(calendarActions.nav(0));
   }, [dispatch]);
 
-  console.log('header');
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
       <TouchableOpacity onPress={handleMonthDecrease}>
@@ -41,7 +41,7 @@ export const CalendarHeader = () => {
       >
         <Text
           center
-          title={dayjs(month).format('MMMM YYYY')}
+          title={month}
           type="h5"
         />
       </TouchableOpacity>

@@ -41,7 +41,7 @@ export const Home = memo(function Home() {
             title="Calendar"
             type="h4"
           />
-          <Calendar hiddenDays />
+          <Calendar />
         </Card>
         <Card>
           <Text

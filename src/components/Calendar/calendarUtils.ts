@@ -1,29 +1,21 @@
+import dayjs from 'dayjs';
+import { daysOfWeek } from './constants';
 import { type DayState, type MonthState } from './types';
 
-const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const header: DayState[] = daysOfWeek.map((day) => ({
-  display: day,
-  isHeader: true,
-  isSelected: false,
-  isWithinMonth: false,
-  value: new Date(0),
-}));
+type MonthAndDays = {
+  days: Record<string, DayState>;
+  months: Record<string, MonthState>;
+};
 
 export const calendarUtils = {
-  addDays: (date: Date, days: number): Date => {
-    const result = new Date(date);
-    result.setDate(result.getDate() + days);
-    return result;
+  addDays: (date: Date | string, days: number): Date => {
+    return dayjs(date).add(days, 'day').toDate();
   },
-  addMonths: (date: Date, months: number): Date => {
-    const result = new Date(date);
-    const dayOfMonth = date.getDate();
-    result.setMonth(result.getMonth() + months);
-    if (result.getDate() !== dayOfMonth) result.setDate(0);
-    return result;
+  addMonths: (date: Date | string, months: number): Date => {
+    return dayjs(date).add(months, 'month').toDate();
   },
-  getFirstDayOfMonth: (date: Date): Date => {
-    return new Date(date.getFullYear(), date.getMonth(), 1);
+  getFirstDayOfMonth: (date: Date | string): Date => {
+    return dayjs(date).startOf('month').toDate();
   },
   getFormat: (
     date: Date,
@@ -52,34 +44,28 @@ export const calendarUtils = {
   getLastDayOfMonth: (date: Date): Date => {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0);
   },
-  getMonthMatrix: (date: Date): MonthState => {
+  getMonthAndDays: (date: Date): MonthAndDays => {
     const firstDayOfMonth = calendarUtils.getFirstDayOfMonth(date);
     let day = calendarUtils.addDays(firstDayOfMonth, -firstDayOfMonth.getDay());
-    const month: MonthState = {
-      days: [],
-      indexDays: {},
-      selected: { col: 0, row: 0 },
-    };
-    month.days.push(header);
-    daysOfWeek.forEach((key, index) => {
-      month.indexDays[key] = { col: index, row: 0 };
-    });
+    const monthKey = calendarUtils.getFormat(date, 'YYYY-MM');
+    const result: MonthAndDays = { days: {}, months: {} };
+    result.months[monthKey] = { days: [daysOfWeek] };
     for (let row = 1; row < 7; row++) {
-      month.days[row] = [];
+      result.months[monthKey].days[row] = [];
       for (let col = 0; col < 7; col++) {
-        month.days[row][col] = {
+        const key = calendarUtils.getFormat(day, 'YYYY-MM-DD');
+        result.days[key] = {
           display: calendarUtils.getFormat(day, 'D'),
           isHeader: false,
           isSelected: false,
           isWithinMonth: calendarUtils.isSameMonth(date, day),
           value: day,
         };
-        const dayFormat = calendarUtils.getFormat(day, 'YYYY-MM-DD');
-        month.indexDays[dayFormat] = { col, row };
+        result.months[monthKey].days[row][col] = key;
         day = calendarUtils.addDays(day, 1);
       }
     }
-    return month;
+    return result;
   },
   isSameDay: (first: Date, second: Date): boolean => {
     return (
