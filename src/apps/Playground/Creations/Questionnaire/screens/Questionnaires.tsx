@@ -2,20 +2,20 @@ import React, { useCallback, useState } from 'react';
 import {
   Card,
   FlatList,
-  type FlatListRenderItem,
   Icon,
   Modal,
   Text,
   TouchableOpacity,
   View,
+  type FlatListRenderItem,
 } from '../../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../../redux';
 import {
   createQuestionnaire,
   getQuestionnaireArray,
-  type Questionnaire,
   removeQuestionnaire,
   selectQuestionnaire,
+  type Questionnaire,
 } from '../models';
 
 export const Questionnaires = (): JSX.Element => {
@@ -49,7 +49,6 @@ export const Questionnaires = (): JSX.Element => {
         <Card
           onLongPress={handleLongPress(item.id)}
           onPress={handleItemPress(item.id)}
-          selected={selected === item.id}
         >
           <View
             style={{
@@ -74,7 +73,7 @@ export const Questionnaires = (): JSX.Element => {
         </Card>
       );
     },
-    [handleItemMenu, handleItemPress, handleLongPress, selected],
+    [handleItemMenu, handleItemPress, handleLongPress],
   );
 
   const keyExtractor = useCallback((item: Questionnaire) => item.id, []);

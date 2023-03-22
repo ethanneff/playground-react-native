@@ -2,12 +2,12 @@ import React, { useCallback, useState } from 'react';
 import {
   Card,
   FlatList,
-  type FlatListRenderItem,
   Icon,
   Modal,
   Text,
   TouchableOpacity,
   View,
+  type FlatListRenderItem,
 } from '../../../../../components';
 import {
   questionnairesInitialState,
@@ -37,10 +37,7 @@ export const Questionnaire = (): JSX.Element => {
       const { length } = item.questions;
       const subtitle = `${length} question${length === 1 ? '' : 's'}`;
       return (
-        <Card
-          onPress={handleItemPress(item.id)}
-          selected={activeItem === item.id}
-        >
+        <Card onPress={handleItemPress(item.id)}>
           <View
             style={{
               flexDirection: 'row',
@@ -64,7 +61,7 @@ export const Questionnaire = (): JSX.Element => {
         </Card>
       );
     },
-    [activeItem, handleItemPress],
+    [handleItemPress],
   );
 
   const keyExtractor = useCallback((item: QuestionnaireType) => item.id, []);
