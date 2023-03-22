@@ -9,6 +9,7 @@ import {
   type FlatListRenderItem,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
+import { getSize } from './utils';
 
 const data = [
   '1',
@@ -74,8 +75,8 @@ export const ExampleList = ({ horizontal, location }: Props) => {
   const handleViewableItemsChanged = useCallback(
     ({ viewableItems }: OnViewableItemsChangedProps) => {
       const visible = viewableItems.some((item) => item.index === location);
-      const bottom = Number(viewableItems[viewableItems.length - 1].index);
-      const top = Number(viewableItems[0].index);
+      const bottom = Number(viewableItems[viewableItems.length - 1]?.index);
+      const top = Number(viewableItems[0]?.index);
       setShowTop(visible ? false : bottom > location);
       setShowBottom(visible ? false : top < location);
     },
@@ -93,7 +94,8 @@ export const ExampleList = ({ horizontal, location }: Props) => {
   const renderItem = useCallback<FlatListRenderItem<string>>(
     ({ index, item }) => (
       <View
-        style={{ paddingHorizontal: spacing(2), paddingVertical: spacing(1) }}
+        paddingHorizontal={spacing(2)}
+        paddingVertical={spacing(1)}
       >
         <View
           style={{
@@ -102,8 +104,8 @@ export const ExampleList = ({ horizontal, location }: Props) => {
                 ? colors.background.positive
                 : colors.background.primaryA,
             borderRadius: spacing(2),
-            flex: 1,
             padding: spacing(2),
+            ...getSize(undefined, !horizontal),
           }}
         >
           <Text
@@ -123,6 +125,7 @@ export const ExampleList = ({ horizontal, location }: Props) => {
       colors.background.primaryA,
       colors.text.primaryA,
       colors.text.primaryB,
+      horizontal,
       location,
     ],
   );
@@ -130,16 +133,18 @@ export const ExampleList = ({ horizontal, location }: Props) => {
   const keyExtractor = useCallback((key: string) => key, []);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ backgroundColor: colors.background.secondary, flex: 1 }}>
       <FlatList
-        contentContainerStyle={{ paddingVertical: spacing(2) }}
+        contentContainerStyle={{
+          paddingVertical: spacing(2),
+        }}
         data={data}
+        estimatedItemSize={50}
         horizontal={horizontal}
         keyExtractor={keyExtractor}
         onRef={flatListRef}
         onViewableItemsChanged={handleViewableItemsChanged}
         renderItem={renderItem}
-        style={{ backgroundColor: colors.background.secondary }}
         viewabilityConfig={viewabilityConfig}
       />
       <ScrollButton

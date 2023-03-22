@@ -9,13 +9,10 @@ import {
   type VisibilitySensorChange,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
+import { getSize } from './utils';
 
 type Props = {
   horizontal?: boolean;
-};
-
-const getSize = (size: number, horizontal?: boolean) => {
-  return horizontal ? { width: size } : { height: size };
 };
 
 export const ExampleScroll = ({ horizontal }: Props) => {

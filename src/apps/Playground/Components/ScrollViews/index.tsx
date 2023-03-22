@@ -13,14 +13,17 @@ export const ScrollViews = memo(function ScrollViews() {
       onLeftPress={goBack}
       title="ScrollViews"
     >
-      <View style={{ flex: 1 }}>
+      <View flex={1}>
         <ExampleList
           horizontal
           location={27}
         />
         <ExampleScroll horizontal />
       </View>
-      <View style={{ flex: 1, flexDirection: 'row' }}>
+      <View
+        flex={1}
+        flexDirection="row"
+      >
         <ExampleList location={22} />
         <ExampleScroll />
       </View>
