@@ -1,4 +1,5 @@
 export type Element =
+  | '*'
   | '🍇'
   | '🍉'
   | '🍊'
@@ -6,8 +7,7 @@ export type Element =
   | '🍏'
   | '🍒'
   | '🍓'
-  | '🥭'
-  | 'anything';
+  | '🥭';
 type Combination = [Element, Element, Element, number];
 export type Combinations = Combination[];
 
@@ -23,16 +23,19 @@ export const combinations: Combinations = [
   ['🍊', '🍊', '🍊', 10],
   ['🍊', '🍊', '🍇', 10],
   ['🍒', '🍒', '🍒', 8],
-  ['🍒', '🍒', 'anything', 5],
-  ['🍒', 'anything', 'anything', 2],
+  ['🍒', '🍒', '*', 5],
+  ['🍒', '*', '*', 2],
 ];
+
+// add bonus https://www.youtube.com/watch?v=JyIWQIdxaOA
+// dynamic slot machine logic https://www.youtube.com/watch?v=hnTrectlTxM
 
 export type Reel = { [key in Element]: number };
 export type Reels = [Reel, Reel, Reel];
 
 export const reels: Reels = [
   {
-    anything: 0,
+    '*': 0,
     '🍇': 1,
     '🍉': 2,
     '🍊': 5,
@@ -43,7 +46,7 @@ export const reels: Reels = [
     '🥭': 5,
   },
   {
-    anything: 0,
+    '*': 0,
     '🍇': 2,
     '🍉': 2,
     '🍊': 5,
@@ -54,7 +57,7 @@ export const reels: Reels = [
     '🥭': 3,
   },
   {
-    anything: 0,
+    '*': 0,
     '🍇': 1,
     '🍉': 2,
     '🍊': 5,
