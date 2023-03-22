@@ -3,16 +3,14 @@ import React, { memo, useCallback } from 'react';
 import {
   Card,
   FlatList,
-  type FlatListRenderItem,
   Screen,
-  Spacing,
   Text,
   TouchableOpacity,
   View,
+  type FlatListRenderItem,
 } from '../../../components';
 import { spacing, useColors } from '../../../features';
 import { landingRoutes } from '../navParams';
-import { Row } from './Row';
 import { Title } from './Title';
 
 export const Landing = memo(function Playground() {
@@ -48,17 +46,17 @@ export const Landing = memo(function Playground() {
       title="Playground"
     >
       <View
-        style={{
-          backgroundColor: colors.background.secondary,
-          flex: 1,
-          paddingVertical: spacing(2),
-        }}
+        backgroundColor="secondary"
+        flex={1}
+        paddingHorizontal={spacing(4)}
+        paddingVertical={spacing(2)}
       >
-        <Row>
-          <Card
-            flex
-            noPadding
-          >
+        <View
+          flex={1}
+          flexDirection="row"
+          gap={spacing(4)}
+        >
+          <Card>
             <Title
               description="component examples"
               title="storybook"
@@ -75,11 +73,7 @@ export const Landing = memo(function Playground() {
               renderItem={renderItem}
             />
           </Card>
-          <Spacing padding={2} />
-          <Card
-            flex
-            noPadding
-          >
+          <Card>
             <Title
               description="polished modules"
               title="features"
@@ -96,12 +90,13 @@ export const Landing = memo(function Playground() {
               renderItem={renderItem}
             />
           </Card>
-        </Row>
-        <Row>
-          <Card
-            flex
-            noPadding
-          >
+        </View>
+        <View
+          flex={1}
+          flexDirection="row"
+          gap={spacing(4)}
+        >
+          <Card contentStyle={{ flex: 1 }}>
             <Title
               description="interactive fun"
               title="games"
@@ -118,11 +113,8 @@ export const Landing = memo(function Playground() {
               renderItem={renderItem}
             />
           </Card>
-          <Spacing padding={2} />
-          <Card
-            flex
-            noPadding
-          >
+
+          <Card contentStyle={{ flex: 1 }}>
             <Title
               description="misc creations"
               title="creations"
@@ -139,7 +131,7 @@ export const Landing = memo(function Playground() {
               renderItem={renderItem}
             />
           </Card>
-        </Row>
+        </View>
       </View>
     </Screen>
   );

@@ -85,7 +85,6 @@ export default memo(function Games() {
         component={ScrollViews}
         name="scroll-views"
       />
-
       {/* games */}
       <Stack.Screen
         component={PapiJump}
@@ -131,7 +130,6 @@ export default memo(function Games() {
         component={Drift}
         name="drift"
       />
-
       {/* features */}
       <Stack.Screen
         component={Chat}
@@ -145,7 +143,6 @@ export default memo(function Games() {
         component={SkeletonLoading}
         name="skeleton-loader"
       />
-
       <Stack.Screen
         component={SearchBar}
         name="search-bar"
@@ -162,7 +159,6 @@ export default memo(function Games() {
         component={PinchSpread}
         name="pinch-spread"
       />
-
       {/* creations */}
       <Stack.Screen
         component={WeekendPlanner}

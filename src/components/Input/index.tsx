@@ -185,20 +185,25 @@ export const Input = memo(function Input({
         <TouchableOpacity
           disabled={!error.length}
           onPress={focusOnInput}
-          style={{ alignItems: 'center', flexDirection: 'row' }}
         >
-          <Icon
-            color="negative"
-            invisible={!error.length}
-            name={errorIcon}
-            size={spacing(4)}
-          />
-          <Text
-            color="negative"
-            invisible={!error.length}
-            style={{ paddingLeft: spacing(1) }}
-            title={error || ' '}
-          />
+          <View
+            alignItems="center"
+            flexDirection="row"
+            paddingVertical={spacing(1)}
+          >
+            <Icon
+              color="negative"
+              invisible={!error.length}
+              name={errorIcon}
+              size={spacing(4)}
+            />
+            <Text
+              color="negative"
+              invisible={!error.length}
+              style={{ paddingLeft: spacing(1) }}
+              title={error || ' '}
+            />
+          </View>
         </TouchableOpacity>
       )}
     </View>

@@ -127,7 +127,7 @@ export const Modals = memo(function Modals() {
       <Screen
         dropShadow
         onLeftPress={goBack}
-        title="Reminder"
+        title="Modals"
       >
         <ScrollView
           contentContainerStyle={{ padding: spacing(4) }}

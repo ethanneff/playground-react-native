@@ -193,14 +193,13 @@ export const Slots = memo(function Slots({
       credits: remainingCredits,
       lineIndexes,
     }));
-    setTimeout(() => {
-      console.log(winningLine, winningAmount);
-      setState((p) => ({
-        ...p,
-        activity: 'idle',
-        credits: p.credits + winningAmount * multiplier,
-      }));
-    }, 500);
+
+    console.log(winningLine, winningAmount);
+    setState((p) => ({
+      ...p,
+      activity: 'idle',
+      credits: p.credits + winningAmount * multiplier,
+    }));
   }, [combinations, multiplier, state.credits, state.reelsArray, wildCards]);
 
   const onMultiplier = useCallback(() => {

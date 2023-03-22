@@ -37,6 +37,7 @@ type Props = {
   flexGrow?: number;
   flexShrink?: number;
   flexWrap?: 'nowrap' | 'wrap-reverse' | 'wrap';
+  gap?: number;
   height?: number;
   justifyContent?:
     | 'center'
@@ -52,6 +53,8 @@ type Props = {
   opacity?: number;
   overflow?: 'hidden' | 'scroll' | 'visible';
   padding?: number;
+  paddingHorizontal?: number;
+  paddingVertical?: number;
   position?: 'absolute' | 'relative';
   style?: StyleProp<ViewStyle>;
   testID?: string;
@@ -76,6 +79,7 @@ export const View = ({
   flexGrow,
   flexShrink,
   flexWrap,
+  gap,
   height,
   justifyContent,
   margin,
@@ -85,6 +89,8 @@ export const View = ({
   opacity,
   overflow,
   padding,
+  paddingHorizontal,
+  paddingVertical,
   position,
   style,
   testID,
@@ -109,12 +115,15 @@ export const View = ({
       flexGrow,
       flexShrink,
       flexWrap,
+      gap,
       height,
       justifyContent,
       margin,
       opacity,
       overflow,
       padding,
+      paddingHorizontal,
+      paddingVertical,
       position,
       width,
     },

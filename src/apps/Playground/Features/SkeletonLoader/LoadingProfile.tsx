@@ -7,13 +7,7 @@ export const LoadingProfile = (): JSX.Element => {
   const banner = spacing(24);
 
   return (
-    <Card
-      noPadding
-      style={{
-        marginBottom: spacing(4),
-        paddingBottom: spacing(20),
-      }}
-    >
+    <Card>
       <View
         style={{
           backgroundColor: colors.background.tertiary,

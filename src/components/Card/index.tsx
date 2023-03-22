@@ -11,6 +11,7 @@ type Props = {
   containerStyle?: ViewStyle;
   contentStyle?: ViewStyle;
   elevation?: number;
+  nonFlex?: boolean;
   onLongPress?: () => void;
   onPress?: () => void;
   testID?: string;
@@ -31,6 +32,7 @@ export const Card = memo(function Card({
   containerStyle,
   contentStyle,
   elevation = 0,
+  nonFlex,
   onLongPress,
   onPress,
   testID,
@@ -45,13 +47,15 @@ export const Card = memo(function Card({
       borderColor: colors.background.primaryA,
       borderRadius,
       borderWidth,
+      flex: nonFlex ? 0 : 1,
       marginVertical: spacing(2),
       ...shadow,
     },
     contents: {
       backgroundColor: `hsla(0,0%,100%,${opacity})`,
       borderRadius,
-      padding: spacing(4),
+      flex: nonFlex ? 0 : 1,
+      padding: spacing(2),
     },
   });
 

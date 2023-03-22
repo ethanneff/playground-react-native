@@ -127,6 +127,7 @@ export const Modal = memo(function Modal({
         <Card
           containerStyle={styles.modal}
           elevation={elevation}
+          nonFlex
           testID="modal"
         >
           {noScroll ? (

@@ -113,6 +113,7 @@ export const Inputs = memo(function Inputs() {
             autoCorrect
             blurOnSubmit
             editable={!form.loading}
+            error={Boolean(form.error)}
             keyboardType="default"
             onChangeText={handleChange('name')}
             onSubmitEditing={handleOnSubmit}
@@ -128,6 +129,7 @@ export const Inputs = memo(function Inputs() {
             autoCorrect={false}
             blurOnSubmit
             editable={!form.loading}
+            error={Boolean(form.error)}
             keyboardType="email-address"
             onChangeText={handleChange('email')}
             onSubmitEditing={handleOnSubmit}

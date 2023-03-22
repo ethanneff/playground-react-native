@@ -3,12 +3,12 @@ import React, { memo, useCallback, useState } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import {
   FlatList,
-  type FlatListRenderItem,
   Icon,
   Input,
   Screen,
   Text,
   View,
+  type FlatListRenderItem,
   type IconName,
 } from '../../../../components';
 import { colorWithOpacity, spacing, useColors } from '../../../../features';
@@ -129,9 +129,9 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
           </Animated.View>
           <Input
             containerStyle={styles.textInput}
+            hideError
             onChangeText={onChangeText}
             placeholder={textInputPlaceHolder}
-            removeError
             value={state.input}
           />
         </View>
