@@ -1,23 +1,26 @@
-import React, { memo, useCallback, useRef, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import { type LayoutChangeEvent } from 'react-native';
-import { Button, Card, KeyboardHandler, Screen } from '../../../../components';
+import {
+  Button,
+  Card,
+  KeyboardHandler,
+  Screen,
+  Spacing,
+  View,
+} from '../../../../components';
 import { useColors, useKeyboardHeight, useLayout } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 import { List } from '../../components';
 import { getInbox } from '../../models';
 
-const initialState = { button: 0, container: 0 };
-
-export const Capture = memo(function Capture() {
+export const Plan = memo(function Plan() {
   const colors = useColors();
   const { tabBarEdges } = useLayout();
-  const containerRefs = useRef(initialState);
   const keyboardHeight = useKeyboardHeight();
   const [containerHeight, setContainerHeight] = useState(0);
-
-  const maxHeight = containerHeight - keyboardHeight;
-
-  console.log(containerHeight, maxHeight);
+  const [footerHeight, setFooterHeight] = useState(0);
+  const keyboardFooter = keyboardHeight ? footerHeight : 0;
+  const maxHeight = containerHeight - keyboardHeight + keyboardFooter;
 
   const itemId = useRootSelector(getInbox);
   if (!itemId) throw new Error('missing item id');
@@ -28,25 +31,21 @@ export const Capture = memo(function Capture() {
   const onOrganize = useCallback(() => undefined, []);
 
   const onLayout = useCallback(
-    (key: keyof typeof initialState) => (event: LayoutChangeEvent) => {
+    (type: 'container' | 'footer') => (event: LayoutChangeEvent) => {
       const { height } = event.nativeEvent.layout;
-      if (!containerRefs.current[key]) containerRefs.current[key] = height;
-      const { button, container } = containerRefs.current;
-      if (container > 0 && button > 0 && !containerHeight) {
-        const dimensions = container - button;
-        setContainerHeight(dimensions);
+      if (type === 'container') {
+        setContainerHeight(height);
+      } else {
+        setFooterHeight(height);
       }
     },
-    [containerHeight],
+    [],
   );
-
-  const showSearchBar = useCallback(() => undefined, []);
 
   return (
     <Screen
+      dropShadow
       edges={tabBarEdges}
-      onRightPress={showSearchBar}
-      rightIcon="magnify"
       title="Plan"
     >
       <KeyboardHandler
@@ -55,15 +54,21 @@ export const Capture = memo(function Capture() {
       >
         <List
           footer={
-            <Card onLayout={onLayout('button')}>
-              <Button
-                center
-                color="accent"
-                disabled={noItemChildren}
-                onPress={onOrganize}
-                title="Organize"
-              />
-            </Card>
+            <View onLayout={onLayout('footer')}>
+              <Spacing padding={2} />
+              <Card
+                elevation={4}
+                nonFlex
+              >
+                <Button
+                  center
+                  color="accent"
+                  disabled={noItemChildren}
+                  onPress={onOrganize}
+                  title="Organize"
+                />
+              </Card>
+            </View>
           }
           itemId={itemId}
           maxHeight={maxHeight}

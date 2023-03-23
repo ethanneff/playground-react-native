@@ -25,7 +25,6 @@ export const Project = memo(function Project() {
   const projectItemTitle = useRootSelector(
     (s) => s.completeItem.items[projectItemId].title,
   );
-
   const listWidth = screenWidth * 0.7;
   const { tabBarEdges } = useLayout();
   const [container, setContainer] = useState(0);
@@ -47,14 +46,10 @@ export const Project = memo(function Project() {
     goBack();
   }, [goBack]);
 
-  const showSearchBar = useCallback(() => undefined, []);
-
   return (
     <Screen
       edges={tabBarEdges}
       onLeftPress={navBack}
-      onRightPress={showSearchBar}
-      rightIcon="magnify"
       title={projectItemTitle}
     >
       <KeyboardHandler

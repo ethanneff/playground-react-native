@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
-import { TextInput, type TextInputIcon, View } from '../../../components';
+import { TextInput, View, type TextInputIcon } from '../../../components';
 import { useRootDispatch, useRootSelector } from '../../../redux';
 import { navItemDetails, updateItem } from '../models';
 import { type MainStackRoutes } from '../navigationTypes';

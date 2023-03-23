@@ -29,12 +29,11 @@ export const List = memo(function List({
     <View style={{ flex: 1, maxHeight, padding }}>
       <Card
         containerStyle={{
-          flex: 1,
-          marginBottom: margin === 'bottom' ? completeConfig.padding : 0,
           marginRight: margin === 'right' ? completeConfig.padding : 0,
+          width: listWidth,
         }}
-        contentStyle={{ flex: 1, margin, width: listWidth }}
-        elevation={0}
+        elevation={4}
+        nonFlex
       >
         <ListHeader
           itemId={itemId}

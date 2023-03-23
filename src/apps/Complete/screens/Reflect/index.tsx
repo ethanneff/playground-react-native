@@ -8,7 +8,7 @@ import {
   Text,
   View,
 } from '../../../../components';
-import { spacing, useColors, useLayout } from '../../../../features';
+import { useColors, useLayout } from '../../../../features';
 import { completeConfig } from '../../utils';
 import { Graph } from './Graph';
 
@@ -47,23 +47,25 @@ export const Reflect = memo(function Reflect() {
 
   return (
     <Screen
+      dropShadow
       edges={tabBarEdges}
       title="Reflect"
     >
       <ScrollView
         contentContainerStyle={{
           backgroundColor: colors.background.secondary,
-          padding: spacing(4),
+          gap: completeConfig.padding,
+          padding: completeConfig.padding,
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >
-        <Card margin="bottom">
+        <Card elevation={4}>
           <View>
             <Title name="Purpose" />
             <Text title="Make a significant positive difference in global productivity" />
           </View>
         </Card>
-        <Card margin="bottom">
+        <Card elevation={4}>
           <View>
             <Title name="Goals" />
             <Text title="Top 3" />
@@ -72,7 +74,7 @@ export const Reflect = memo(function Reflect() {
             <Text title="1 More Rep" />
           </View>
         </Card>
-        <Card margin="bottom">
+        <Card elevation={4}>
           <View>
             <Title name="Review (Progress)" />
             <View
@@ -92,10 +94,10 @@ export const Reflect = memo(function Reflect() {
             </View>
           </View>
         </Card>
-        <Card>
+        <Card elevation={4}>
           <View>
             <Title name="Reflect (Journal)" />
-            <Calendar />
+            <Calendar hiddenDays />
           </View>
         </Card>
       </ScrollView>

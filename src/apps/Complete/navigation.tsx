@@ -4,7 +4,7 @@ import {
   type NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 import React from 'react';
-import { type TabIcons, useNavScreenOptions } from '../../features';
+import { useNavScreenOptions, type TabIcons } from '../../features';
 import {
   type HomeStackRoutes,
   type ImplementStackRoutes,
@@ -13,10 +13,10 @@ import {
 } from './navigationTypes';
 import {
   Account,
-  Capture,
   ItemDetail,
   LogIn,
   PasswordReset,
+  Plan,
   Project,
   Projects,
   Reflect,
@@ -61,7 +61,7 @@ const Home = () => {
       screenOptions={tabScreenOptions({ tabIcons })}
     >
       <TabStack.Screen
-        component={Capture}
+        component={Plan}
         name="plan"
       />
       <TabStack.Screen

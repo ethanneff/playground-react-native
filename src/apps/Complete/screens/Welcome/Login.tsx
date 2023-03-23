@@ -9,10 +9,11 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  View,
   type IconName,
   type TextInputRef,
 } from '../../../../components';
-import { spacing, useAuth, useColors } from '../../../../features';
+import { spacing, useAuth } from '../../../../features';
 import { ModalHeader } from '../../components';
 
 type Props = {
@@ -40,27 +41,26 @@ const SignInButton = memo(function SignInButton({
   onPress,
   title,
 }: SignInButtonProps) {
-  const colors = useColors();
   return (
     <TouchableOpacity
       onPress={onPress}
       style={{
-        alignItems: 'center',
-        borderColor: colors.background.secondary,
-        borderRadius: spacing(2),
-        borderWidth: 1,
-        flexDirection: 'row',
-        justifyContent: 'center',
         marginBottom: spacing(margin ? 4 : 0),
-        padding: spacing(2),
       }}
     >
-      <Icon name={icon} />
-      <Text
-        style={{ paddingLeft: spacing(2) }}
-        title={title}
-        type="button"
-      />
+      <View
+        alignItems="center"
+        alignSelf="center"
+        flexDirection="row"
+        padding={spacing(2)}
+      >
+        <Icon name={icon} />
+        <Text
+          style={{ paddingLeft: spacing(2) }}
+          title={title}
+          type="button"
+        />
+      </View>
     </TouchableOpacity>
   );
 });

@@ -1,12 +1,7 @@
 import React, { memo, useCallback, useState } from 'react';
 import { type LayoutChangeEvent } from 'react-native';
 import { KeyboardHandler, Screen } from '../../../../components';
-import {
-  spacing,
-  useColors,
-  useKeyboardHeight,
-  useLayout,
-} from '../../../../features';
+import { useColors, useKeyboardHeight, useLayout } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 import { List } from '../../components';
 import { getProjects } from '../../models';
@@ -25,24 +20,16 @@ export const Projects = memo(function Projects() {
   const keyboardHeight = useKeyboardHeight();
   const itemId = useRootSelector(getProjects);
   if (!itemId) throw new Error('missing item id');
-  const keyboardPadding = spacing(keyboardHeight ? 16 : 35);
-  const maxHeight = dimensions - keyboardHeight - keyboardPadding;
+  const maxHeight = dimensions - keyboardHeight;
 
-  const onLayout = useCallback(
-    (event: LayoutChangeEvent) => {
-      if (dimensions > 0) return;
-      setDimensions(event.nativeEvent.layout.height);
-    },
-    [dimensions],
-  );
-
-  const showSearchBar = useCallback(() => undefined, []);
+  const onLayout = useCallback((event: LayoutChangeEvent) => {
+    setDimensions(event.nativeEvent.layout.height);
+  }, []);
 
   return (
     <Screen
+      dropShadow
       edges={tabBarEdges}
-      onRightPress={showSearchBar}
-      rightIcon="magnify"
       title="Implement"
     >
       <KeyboardHandler

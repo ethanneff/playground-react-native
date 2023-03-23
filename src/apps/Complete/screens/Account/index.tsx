@@ -2,14 +2,14 @@ import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect } from 'react';
 import { Button, Card, Screen, ScrollView, Text } from '../../../../components';
 import {
-  type RootNavigation,
-  spacing,
   useAuth,
   useColors,
   useLayout,
+  type RootNavigation,
 } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { logout } from '../../models';
+import { completeConfig } from '../../utils';
 
 // TODO: figure out a place for this
 // TODO: add reminders
@@ -33,20 +33,22 @@ export const Account = memo(function Account() {
 
   return (
     <Screen
+      dropShadow
       edges={tabBarEdges}
       title="Account"
     >
       <ScrollView
         contentContainerStyle={{
           backgroundColor: colors.background.secondary,
-          padding: spacing(4),
+          gap: completeConfig.padding,
+          padding: completeConfig.padding,
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >
-        <Card margin="bottom">
+        <Card elevation={4}>
           <Text
-            emphasis="low"
-            style={{ paddingBottom: spacing(4) }}
+            emphasis="medium"
+            style={{ paddingBottom: completeConfig.padding }}
             title="Profile"
             type="h5"
           />
@@ -61,10 +63,10 @@ export const Account = memo(function Account() {
             type="h4"
           />
         </Card>
-        <Card margin="bottom">
+        <Card elevation={4}>
           <Text
-            emphasis="low"
-            style={{ paddingBottom: spacing(4) }}
+            emphasis="medium"
+            style={{ paddingBottom: completeConfig.padding }}
             title="Reminders"
             type="h5"
           />
@@ -75,10 +77,10 @@ export const Account = memo(function Account() {
             type="h4"
           />
         </Card>
-        <Card margin="bottom">
+        <Card elevation={4}>
           <Text
-            emphasis="low"
-            style={{ paddingBottom: spacing(4) }}
+            emphasis="medium"
+            style={{ paddingBottom: completeConfig.padding }}
             title="Payment"
             type="h5"
           />
@@ -89,10 +91,10 @@ export const Account = memo(function Account() {
             type="h4"
           />
         </Card>
-        <Card margin="bottom">
+        <Card elevation={4}>
           <Text
-            emphasis="low"
-            style={{ paddingBottom: spacing(4) }}
+            emphasis="medium"
+            style={{ paddingBottom: completeConfig.padding }}
             title="Feedback"
             type="h5"
           />
@@ -103,20 +105,28 @@ export const Account = memo(function Account() {
             type="h4"
           />
         </Card>
-        <Button
-          onPress={onLogout}
-          title="logout"
-        />
-        {response.error ? (
+        <Card elevation={4}>
           <Text
-            color="negative"
-            title={response.error}
+            emphasis="medium"
+            style={{ paddingBottom: completeConfig.padding }}
+            title="Settings"
+            type="h5"
           />
-        ) : null}
-        <Button
-          onPress={onNavToAdmin}
-          title="go to admin"
-        />
+          <Button
+            onPress={onLogout}
+            title="logout"
+          />
+          {response.error ? (
+            <Text
+              color="negative"
+              title={response.error}
+            />
+          ) : null}
+          <Button
+            onPress={onNavToAdmin}
+            title="go to admin"
+          />
+        </Card>
       </ScrollView>
     </Screen>
   );

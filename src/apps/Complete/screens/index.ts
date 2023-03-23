@@ -1,5 +1,5 @@
 export * from './Account';
-export * from './Capture';
+export * from './Plan';
 export * from './ItemDetail';
 export * from './LogIn';
 export * from './PasswordReset';
