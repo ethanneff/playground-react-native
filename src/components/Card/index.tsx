@@ -1,5 +1,9 @@
 import React, { memo, type ReactNode } from 'react';
-import { StyleSheet, type ViewStyle } from 'react-native';
+import {
+  StyleSheet,
+  type LayoutChangeEvent,
+  type ViewStyle,
+} from 'react-native';
 import { View } from '../../components';
 import { spacing, useColors, useDropShadow } from '../../features';
 import { TouchableOpacity } from '../TouchableOpacity';
@@ -12,6 +16,7 @@ type Props = {
   contentStyle?: ViewStyle;
   elevation?: number;
   nonFlex?: boolean;
+  onLayout?: (event: LayoutChangeEvent) => void;
   onLongPress?: () => void;
   onPress?: () => void;
   testID?: string;
@@ -33,6 +38,7 @@ export const Card = memo(function Card({
   contentStyle,
   elevation = 0,
   nonFlex,
+  onLayout,
   onLongPress,
   onPress,
   testID,
@@ -48,7 +54,6 @@ export const Card = memo(function Card({
       borderRadius,
       borderWidth,
       flex: nonFlex ? 0 : 1,
-      marginVertical: spacing(2),
       ...shadow,
     },
     contents: {
@@ -65,6 +70,7 @@ export const Card = memo(function Card({
   return onPress || onLongPress ? (
     <TouchableOpacity
       activeOpacity={onPress ? touchOpacity : 1}
+      onLayout={onLayout}
       onLongPress={onLongPress}
       onPress={onPress}
       style={containerStyles}
@@ -74,6 +80,7 @@ export const Card = memo(function Card({
     </TouchableOpacity>
   ) : (
     <View
+      onLayout={onLayout}
       style={containerStyles}
       testID={testID}
     >
