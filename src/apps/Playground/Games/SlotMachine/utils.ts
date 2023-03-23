@@ -22,9 +22,7 @@ const getWinsPerCombination = (
       const reel = reels[j];
       const sum = getSumOfReel(reel);
       freq *=
-        element !== 'anything' && typeof element !== 'number'
-          ? reel[element]
-          : sum;
+        element !== '*' && typeof element !== 'number' ? reel[element] : sum;
     }
     output[i][3] = freq;
   }
