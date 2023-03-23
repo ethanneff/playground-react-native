@@ -20,7 +20,6 @@ export * from './Loading';
 export * from './LoadingText';
 export * from './Markdown';
 export * from './MaskedView';
-export * from './Masonry';
 export * from './Modal';
 export * from './Notification';
 export * from './RelativeDate';

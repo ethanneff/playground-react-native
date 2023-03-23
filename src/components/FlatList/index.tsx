@@ -1,20 +1,20 @@
 import {
   FlashList,
-  MasonryFlashList as Masonry,
+  MasonryFlashList,
   type FlashListProps,
-  type ListRenderItem as RenderItem,
+  type ListRenderItem,
 } from '@shopify/flash-list';
 import React, { type Ref } from 'react';
 
 export type FlatListRef<T> = FlashList<T> | null;
-export type FlatListRenderItem<T> = RenderItem<T>;
+export type FlatListRenderItem<T> = ListRenderItem<T>;
 
 type Props<ItemT> = FlashListProps<ItemT> & {
   estimatedItemSize: number;
   onRef?: Ref<FlashList<ItemT>>;
 };
 
-export const MasonryFlashList = Masonry;
+export const MasonryFlatList = MasonryFlashList;
 
 export const FlatList = <ItemT,>({
   estimatedItemSize,
