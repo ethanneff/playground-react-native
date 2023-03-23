@@ -16,7 +16,7 @@ export const slotMachineConfigs: Configs = {
     { amount: 1, combo: '🫐', name: 'single blueberry' },
   ],
   reelFreq: {
-    '🍇': 10,
+    '🍇': 12,
     '🍉': 2,
     '🍊': 5,
     '🍋': 7,
@@ -25,6 +25,6 @@ export const slotMachineConfigs: Configs = {
     '🍑': 3,
     '🍒': 1,
     '🥭': 6,
-    '🫐': 3,
+    '🫐': 4,
   },
 };

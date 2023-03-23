@@ -3,11 +3,16 @@ import { Spacing, Text, View } from '../../../../../components';
 import { slotMachineConfigs } from '../utils/slotMachineConfigs';
 
 type Props = {
+  multiplier: number;
   payout: string;
   wins: string;
 };
 
-export const Header = memo(function HeaderMemo({ payout, wins }: Props) {
+export const Header = memo(function HeaderMemo({
+  multiplier,
+  payout,
+  wins,
+}: Props) {
   return (
     <View
       flexDirection="row"
@@ -25,7 +30,7 @@ export const Header = memo(function HeaderMemo({ payout, wins }: Props) {
             />
             <Text
               emphasis="medium"
-              title={`$${amount}`}
+              title={`$${amount * multiplier}`}
               type="h5"
             />
           </View>
@@ -64,7 +69,7 @@ export const Header = memo(function HeaderMemo({ payout, wins }: Props) {
           >
             <Text
               emphasis="medium"
-              title={`$${amount}`}
+              title={`$${amount * multiplier}`}
               type="h5"
             />
             <Text

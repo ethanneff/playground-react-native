@@ -21,7 +21,6 @@ import {
 } from './utils/types';
 
 // TODO: track wins
-// TODO: increase payout to 96% and wins to 25%
 // TODO: add confetti on win
 // TODO: handle horizontal
 // TODO: add reel animation
@@ -40,6 +39,7 @@ type Game = {
 export const SlotMachine = memo(function PlaygroundSlotMachine() {
   const { goBack } = useNavigation();
   const [game, setGame] = useState<Game | null>(null);
+  const multiplier = game?.multipleArray[game.multipleIndex] ?? 1;
 
   const setGameState = useCallback(() => {
     const combos = slotMachineUtils.getCombos(slotMachineConfigs.combinations);
@@ -106,6 +106,7 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
       >
         <ScrollView>
           <Header
+            multiplier={multiplier}
             payout={game.percentages.payout}
             wins={game.percentages.wins}
           />
@@ -129,7 +130,7 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
             <Spacing padding={4} />
             <Multiplier
               disabled={game.spinning}
-              multiplier={game.multipleArray[game.multipleIndex]}
+              multiplier={multiplier}
               onPress={handleMultiplier}
             />
             <Spacing padding={2} />
@@ -140,17 +141,11 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
               center
               color="accent"
               disabled={
-                !game.credits ||
-                game.multipleArray[game.multipleIndex] > game.credits ||
-                game.spinning
+                !game.credits || multiplier > game.credits || game.spinning
               }
               emphasis="high"
               onPress={handleSpin}
-              title={
-                game.multipleArray[game.multipleIndex] < game.credits
-                  ? 'spin'
-                  : 'add credits to play'
-              }
+              title={multiplier < game.credits ? 'spin' : 'add credits to play'}
             />
             <Spacing padding={2} />
             <Button
