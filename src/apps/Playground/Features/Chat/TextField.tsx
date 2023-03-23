@@ -1,12 +1,6 @@
-import React, { memo, useCallback, useEffect, useRef } from 'react';
+import React, { memo, useCallback } from 'react';
 import { v4 } from 'uuid';
-import {
-  Icon,
-  Input,
-  TouchableOpacity,
-  View,
-  type TextInputRef,
-} from '../../../../components';
+import { Icon, Input, TouchableOpacity, View } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import {
@@ -18,7 +12,7 @@ import {
 
 export const TextField = memo(function TextField() {
   const dispatch = useRootDispatch();
-  const textFieldRef = useRef<TextInputRef>(null);
+
   const textField = useRootSelector((state) => state.chatMessage.textField);
   const submittable = useRootSelector(getChatSubmittable);
   const onMessageChange = useCallback(
@@ -42,10 +36,6 @@ export const TextField = memo(function TextField() {
     dispatch(createChatMessage(message));
   }, [dispatch, textField]);
 
-  useEffect(() => {
-    textFieldRef.current?.focus();
-  }, []);
-
   return (
     <View
       style={{
@@ -58,9 +48,9 @@ export const TextField = memo(function TextField() {
     >
       <Input
         flex
+        focusOnMount
         hideError
         onChangeText={onMessageChange}
-        onRef={textFieldRef}
         onSubmitEditing={onSubmit}
         placeholder="Write something..."
         value={textField}
