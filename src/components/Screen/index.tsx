@@ -1,11 +1,12 @@
 import React, { memo, type ReactNode } from 'react';
 import {
+  type LayoutChangeEvent,
   StatusBar,
-  type StyleProp,
   StyleSheet,
+  type StyleProp,
   type ViewStyle,
 } from 'react-native';
-import { type Edge, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, type Edge } from 'react-native-safe-area-context';
 import { View } from '../../components';
 import { useColors } from '../../features';
 import { type IconName } from '../Icon';
@@ -17,6 +18,7 @@ type Props = {
   dropShadow?: boolean;
   edges?: Edge[];
   leftIcon?: IconName;
+  onLayout?: (event: LayoutChangeEvent) => void;
   onLeftPress?: () => void;
   onRightPress?: () => void;
   onSecondLeftPress?: () => void;
@@ -35,6 +37,7 @@ export const Screen = memo(function Screen({
   dropShadow,
   edges = ['top', 'left', 'right', 'bottom'],
   leftIcon,
+  onLayout,
   onLeftPress,
   onRightPress,
   onSecondLeftPress,
@@ -78,6 +81,7 @@ export const Screen = memo(function Screen({
           title={title}
         />
         <View
+          onLayout={onLayout}
           style={[styles.flex, style]}
           testID={testID}
         >

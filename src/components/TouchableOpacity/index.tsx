@@ -1,5 +1,9 @@
 import React, { useCallback, type ReactNode } from 'react';
-import { type StyleProp, type ViewStyle } from 'react-native';
+import {
+  type LayoutChangeEvent,
+  type StyleProp,
+  type ViewStyle,
+} from 'react-native';
 import { GestureTouchableOpacity } from '../../conversions';
 import { SoundManager } from '../../features';
 import { View } from '../View';
@@ -10,6 +14,7 @@ type Props = {
   containerStyle?: StyleProp<ViewStyle>;
   disabled?: boolean;
   flex?: boolean;
+  onLayout?: (event: LayoutChangeEvent) => void;
   onLongPress?: () => void;
   onPress?: () => void;
   style?: StyleProp<ViewStyle>;
@@ -22,6 +27,7 @@ export const TouchableOpacity = ({
   containerStyle,
   disabled,
   flex,
+  onLayout,
   onLongPress,
   onPress,
   style,
@@ -45,6 +51,7 @@ export const TouchableOpacity = ({
       activeOpacity={activeOpacity}
       containerStyle={containerStyle}
       disabled={disabled}
+      onLayout={onLayout}
       onLongPress={onLongPressHandler}
       onPress={onPressHandler}
       style={styles}

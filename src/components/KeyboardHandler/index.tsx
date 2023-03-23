@@ -1,4 +1,4 @@
-import React, { memo, type ReactNode, useCallback } from 'react';
+import React, { memo, useCallback, type ReactNode } from 'react';
 import { Keyboard, type LayoutChangeEvent } from 'react-native';
 import { View } from '../../components';
 import { TouchableWithoutFeedback } from '../TouchableWithoutFeedback';
@@ -19,11 +19,15 @@ export const KeyboardHandler = memo(function KeyboardHandler({
   }, []);
   return (
     <TouchableWithoutFeedback
-      onLayout={onLayout}
       onPress={onDismissKeyboard}
       style={{ height: '100%' }}
     >
-      <View style={{ backgroundColor, flex: 1 }}>{children}</View>
+      <View
+        onLayout={onLayout}
+        style={{ backgroundColor, flex: 1 }}
+      >
+        {children}
+      </View>
     </TouchableWithoutFeedback>
   );
 });
