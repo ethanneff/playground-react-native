@@ -194,7 +194,6 @@ export const Slots = memo(function Slots({
       lineIndexes,
     }));
 
-    console.log(winningLine, winningAmount);
     setState((p) => ({
       ...p,
       activity: 'idle',
