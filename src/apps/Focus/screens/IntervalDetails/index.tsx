@@ -1,8 +1,8 @@
 import {
-  type RouteProp,
   useIsFocused,
   useNavigation,
   useRoute,
+  type RouteProp,
 } from '@react-navigation/native';
 import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
@@ -19,9 +19,9 @@ import {
   Switch,
   Text,
   TextInput,
-  type TextInputRef,
   TouchableOpacity,
   View,
+  type TextInputRef,
 } from '../../../../components';
 import { spacing, useColors, useDropShadow } from '../../../../features';
 import { type AuthStackRoutes } from '../../types';
@@ -290,12 +290,12 @@ export const IntervalDetails = memo(function IntervalDetails() {
               />
               <Spacing padding={2} />
               <Slider
+                defaultValue={state.nps}
                 flex
                 maximumValue={10}
                 minimumValue={0}
                 onSlidingComplete={handleNps}
                 step={1}
-                value={state.nps}
               />
             </View>
           </Card>

@@ -18,7 +18,7 @@ export const ItemContext = memo(function ItemContext({
 }: ItemContextProps) {
   return (
     <View>
-      <Card margin="bottom">
+      <Card>
         <ItemDetailHeader title="Type" />
         <Text
           style={{ padding: spacing(2) }}

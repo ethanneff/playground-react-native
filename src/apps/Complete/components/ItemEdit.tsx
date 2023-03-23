@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
-import { Card, TextInput, type TextInputIcon, View } from '../../../components';
+import { Card, TextInput, View, type TextInputIcon } from '../../../components';
 import { ItemDetailHeader } from './ItemDetailHeader';
 
 type OnSubmit = (text: string) => void;
@@ -61,7 +61,7 @@ export const ItemEdit = memo(function ItemEdit({
 
   return (
     <View>
-      <Card margin="bottom">
+      <Card>
         <ItemDetailHeader title="Title" />
         <TextInput
           autoCapitalize="sentences"
