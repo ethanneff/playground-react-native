@@ -1,63 +1,76 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { memo, useCallback, useRef } from 'react';
+import React, { memo, useCallback, useEffect, useRef } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import { Button, Screen, View } from '../../../../components';
-import { spacing, useColors, useDriver } from '../../../../features';
-import { getHeight, getWidth, useRootSelector } from '../../../../redux';
+import { spacing, useColors, useDriver, useLayout } from '../../../../features';
 
+const getBoundedRandom = (min: number, max: number) => {
+  const random = Math.random() * (max - min) + min;
+  return Math.min(max, Math.max(min, random));
+};
+
+const size = spacing(8);
 export const Ball = memo(function PlaygroundBall() {
-  const height = useRootSelector(getHeight);
-  const width = useRootSelector(getWidth);
+  const { layout, onLayout } = useLayout();
   const { goBack } = useNavigation();
-  const ballPosition = useRef(
-    new Animated.ValueXY({ x: width / 2, y: height / 2 }),
-  ).current;
+  const ballPosition = useRef(new Animated.ValueXY({ x: 0, y: 0 }));
   const useNativeDriver = useDriver();
   const colors = useColors();
-  const size = spacing(8);
+
   const styles = StyleSheet.create({
     ball: {
       borderRadius: size,
       borderWidth: size,
       height: size * 2,
-      marginLeft: -size,
-      marginTop: -size,
+      position: 'absolute',
       width: size * 2,
     },
-    buttons: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-    },
   });
+
+  useEffect(() => {
+    if (!layout) return;
+    ballPosition.current.setValue({
+      x: layout.width / 2 - size,
+      y: layout.height / 2 - size,
+    });
+  }, [layout]);
+
   const animate = useCallback(
-    (dx: number, dy: number) => {
-      Animated.spring(ballPosition, {
-        toValue: { x: width * dx, y: height * dy },
+    (x: number, y: number) => {
+      Animated.spring(ballPosition.current, {
+        toValue: { x, y },
         useNativeDriver,
       }).start();
     },
-    [ballPosition, height, useNativeDriver, width],
+    [ballPosition, useNativeDriver],
   );
+
   const onInitialPress = useCallback(() => {
-    animate(0.5, 0.5);
-  }, [animate]);
+    if (!layout) return;
+    animate(layout.width / 2 - size, layout.height / 2 - size);
+  }, [animate, layout]);
+
   const onRandomPress = useCallback(() => {
-    animate(Math.random(), Math.random());
-  }, [animate]);
+    if (!layout) return;
+    const x = getBoundedRandom(0, layout.width - size * 2);
+    const y = getBoundedRandom(0, layout.height - size * 2);
+
+    animate(x, y);
+  }, [animate, layout]);
 
   return (
     <Screen
       dropShadow
+      onLayout={onLayout}
       onLeftPress={goBack}
       style={{ backgroundColor: colors.background.secondary }}
       testID="ballScreen"
       title="Ball"
     >
-      <Animated.View
-        style={[ballPosition.getLayout(), styles.ball]}
-        testID="ball"
-      />
-      <View style={styles.buttons}>
+      <View
+        flexDirection="row"
+        justifyContent="space-around"
+      >
         <Button
           onPress={onInitialPress}
           testID="initialButton"
@@ -69,6 +82,10 @@ export const Ball = memo(function PlaygroundBall() {
           title="random"
         />
       </View>
+      <Animated.View
+        style={[ballPosition.current.getLayout(), styles.ball]}
+        testID="ball"
+      />
     </Screen>
   );
 });
