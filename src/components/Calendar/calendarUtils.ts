@@ -44,10 +44,9 @@ export const calendarUtils = {
   getLastDayOfMonth: (date: Date): Date => {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0);
   },
-  getMonthAndDays: (date: Date): MonthAndDays => {
-    const firstDayOfMonth = calendarUtils.getFirstDayOfMonth(date);
+  getMonthAndDays: (monthKey: string): MonthAndDays => {
+    const firstDayOfMonth = calendarUtils.getFirstDayOfMonth(monthKey);
     let day = calendarUtils.addDays(firstDayOfMonth, -firstDayOfMonth.getDay());
-    const monthKey = calendarUtils.getFormat(date, 'YYYY-MM');
     const result: MonthAndDays = { days: {}, months: {} };
     result.months[monthKey] = { days: [daysOfWeek] };
     for (let row = 1; row < 7; row++) {
@@ -58,7 +57,6 @@ export const calendarUtils = {
           display: calendarUtils.getFormat(day, 'D'),
           isHeader: false,
           isSelected: false,
-          isWithinMonth: calendarUtils.isSameMonth(date, day),
           value: day,
         };
         result.months[monthKey].days[row][col] = key;
@@ -74,7 +72,7 @@ export const calendarUtils = {
       first.getDate() === second.getDate()
     );
   },
-  isSameMonth: (first: Date, second: Date): boolean => {
-    return first.getMonth() === second.getMonth();
+  isSameMonth: (first: string, second: string): boolean => {
+    return dayjs(first).isSame(dayjs(second), 'month');
   },
 };

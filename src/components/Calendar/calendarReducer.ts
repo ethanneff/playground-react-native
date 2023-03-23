@@ -31,13 +31,12 @@ export const calendarReducer = (
     case getType(calendarActions.init): {
       const today = new Date();
       const key = calendarUtils.getFormat(today, 'YYYY-MM');
-      const { days, months } = calendarUtils.getMonthAndDays(today);
+      const { days, months } = calendarUtils.getMonthAndDays(key);
       daysOfWeek.forEach((dayOfWeek) => {
         days[dayOfWeek] = {
           display: dayOfWeek,
           isHeader: true,
           isSelected: false,
-          isWithinMonth: false,
           value: new Date(0),
         };
       });
@@ -57,7 +56,7 @@ export const calendarReducer = (
       if (key in state.months) {
         return { ...state, activeMonth: key };
       }
-      const { days, months } = calendarUtils.getMonthAndDays(nextMonth);
+      const { days, months } = calendarUtils.getMonthAndDays(key);
       return {
         ...state,
         activeMonth: key,

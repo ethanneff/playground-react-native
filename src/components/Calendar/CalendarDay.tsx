@@ -13,20 +13,28 @@ type Props = {
   hiddenDays?: boolean;
 };
 
-const useConfig = (day: DayState, hiddenDays?: boolean) => {
+type ConfigProps = {
+  day: DayState;
+  dayKey: string;
+  hiddenDays?: boolean;
+  monthKey: string;
+};
+
+const useConfig = ({ day, dayKey, hiddenDays, monthKey }: ConfigProps) => {
   const colors = useColors();
   const today = new Date();
   const isToday = calendarUtils.isSameDay(new Date(day.value), today);
+  const isWithinMonth = calendarUtils.isSameMonth(monthKey, dayKey);
   const backgroundColor = day.isSelected
     ? colors.background.accent
     : 'transparent';
-  const nonMonthDay = hiddenDays && !day.isWithinMonth;
+  const nonMonthDay = hiddenDays && !isWithinMonth;
   const hiddenDay = nonMonthDay && !day.isHeader;
   const textColor = hiddenDay
     ? 'transparent'
     : day.isSelected
     ? colors.text.primaryB
-    : day.isWithinMonth
+    : isWithinMonth
     ? colors.text.primaryA
     : colors.text.tertiary;
   const disabled = day.isHeader || nonMonthDay;
@@ -35,11 +43,14 @@ const useConfig = (day: DayState, hiddenDays?: boolean) => {
 };
 
 export const CalendarDay = ({ dayKey, hiddenDays }: Props) => {
+  const monthKey = useRootSelector((state) => state.calendar.activeMonth);
   const day = useRootSelector((state) => state.calendar.days[dayKey]);
-  const { backgroundColor, bold, disabled, textColor } = useConfig(
+  const { backgroundColor, bold, disabled, textColor } = useConfig({
     day,
+    dayKey,
     hiddenDays,
-  );
+    monthKey,
+  });
   const dispatch = useRootDispatch();
 
   const handleSelect = useCallback(() => {

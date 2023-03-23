@@ -2,7 +2,6 @@ export type DayState = {
   display: string;
   isHeader: boolean;
   isSelected: boolean;
-  isWithinMonth: boolean;
   value: Date;
 };
 
