@@ -11,7 +11,10 @@ type BoardProps = {
 // TODO: figure out why board is updating with memo
 export const Board = ({ matrix }: BoardProps): JSX.Element => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center' }}>
+    <View
+      flex={1}
+      justifyContent="center"
+    >
       {matrix.map((x) => (
         <View
           flexDirection="row"

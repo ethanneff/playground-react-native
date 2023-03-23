@@ -51,7 +51,7 @@ export const ExampleScroll = ({ horizontal }: Props) => {
   }, []);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View flex={1}>
       <ScrollView
         contentContainerStyle={{
           paddingHorizontal: spacing(2),

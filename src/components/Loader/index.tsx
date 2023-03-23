@@ -3,11 +3,10 @@ import {
   // eslint-disable-next-line no-restricted-imports
   ActivityIndicator,
   type StyleProp,
-  StyleSheet,
   type ViewStyle,
 } from 'react-native';
 import { View } from '../../components';
-import { type MonoMultiColor, useColors } from '../../features';
+import { useColors, type MonoMultiColor } from '../../features';
 
 type Props = {
   color?: keyof MonoMultiColor;
@@ -21,17 +20,16 @@ export const Loader = memo(function Loader({
   style,
 }: Props) {
   const colors = useColors();
-  const styles = StyleSheet.create({
-    container: {
-      backgroundColor: colors.background.primaryA,
-      flex: 1,
-      justifyContent: 'center',
-    },
-  });
+
   const loaderColor = color ? colors.text[color] : colors.text.secondary;
 
   return (
-    <View style={[styles.container, style]}>
+    <View
+      backgroundColor="primaryA"
+      flex={1}
+      justifyContent="center"
+      style={style}
+    >
       <ActivityIndicator
         color={loaderColor}
         size={size}

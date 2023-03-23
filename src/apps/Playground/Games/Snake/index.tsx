@@ -1,12 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { Button, Screen, Text, View } from '../../../../components';
-import { useColors } from '../../../../features';
 import { Board } from './Board';
 import { EndGame } from './EndGame';
 import { useClock } from './useClock';
 import { useGesture } from './useGesture';
-import { type BoardContext, getBoard, updateBoard } from './utils';
+import { getBoard, updateBoard, type BoardContext } from './utils';
 
 type State = 'error' | 'off' | 'on' | 'win';
 
@@ -19,7 +18,6 @@ type Game = {
 // TODO: need to save the entire board to redux to load on app open
 
 export const Snake = memo(function Snake() {
-  const colors = useColors();
   const { goBack } = useNavigation();
   const size = 20;
   const frequency = 200;
@@ -79,7 +77,8 @@ export const Snake = memo(function Snake() {
           <Text title={`points: ${game.points}`} />
         </View>
         <View
-          style={{ backgroundColor: colors.background.positive, flex: 1 }}
+          backgroundColor="positive"
+          flex={1}
           {...panHandlers} // eslint-disable-line react/jsx-props-no-spreading
         >
           <Board matrix={game.board.matrix} />

@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import {
   Card,
   Icon,
-  MasonryFlashList,
+  MasonryFlatList,
   Spacing,
   Text,
   TouchableOpacity,
@@ -100,7 +100,7 @@ export const List = memo(function List({
       backgroundColor="secondary"
       flex={1}
     >
-      <MasonryFlashList
+      <MasonryFlatList
         ListHeaderComponent={
           <Header
             onProfilePress={onProfilePress}

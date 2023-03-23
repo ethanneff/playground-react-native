@@ -7,8 +7,8 @@ import {
   Screen,
   ScrollView,
   Text,
-  type TextInputRef,
   View,
+  type TextInputRef,
 } from '../../components';
 import { spacing, useAdminNavBack, useColors } from '../../features';
 
@@ -211,11 +211,9 @@ export const Home = memo(function Home() {
 
         <Card>
           <View
-            style={{
-              flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-            }}
+            flex={1}
+            flexDirection="row"
+            justifyContent="space-around"
           >
             <Button
               color="accent"

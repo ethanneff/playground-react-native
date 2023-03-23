@@ -1,8 +1,8 @@
 import React, { memo, type ReactNode } from 'react';
 import {
-  type LayoutChangeEvent,
   StatusBar,
   StyleSheet,
+  type LayoutChangeEvent,
   type StyleProp,
   type ViewStyle,
 } from 'react-native';
@@ -51,17 +51,16 @@ export const Screen = memo(function Screen({
 }: Props) {
   const colors = useColors();
   const styles = StyleSheet.create({
-    container: {
-      backgroundColor: colors.background.primaryA,
-      flex: 1,
-    },
     flex: {
       flex: 1,
     },
   });
 
   return (
-    <View style={styles.container}>
+    <View
+      backgroundColor="primaryA"
+      flex={1}
+    >
       <SafeAreaView
         edges={edges}
         style={styles.flex}

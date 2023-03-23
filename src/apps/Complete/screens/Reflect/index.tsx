@@ -78,11 +78,9 @@ export const Reflect = memo(function Reflect() {
           <View>
             <Title name="Review (Progress)" />
             <View
-              style={{
-                alignItems: 'center',
-                flex: 1,
-                justifyContent: 'center',
-              }}
+              alignItems="center"
+              flex={1}
+              justifyContent="center"
             >
               <Graph
                 data={data}

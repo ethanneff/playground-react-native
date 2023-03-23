@@ -69,13 +69,11 @@ export const TicTacToe = memo(function TicTacToe() {
       title="Tic Tac Toe"
     >
       <View
-        style={{
-          alignItems: 'center',
-          backgroundColor: colors.background.secondary,
-          flex: 1,
-          flexDirection: landscape ? 'row' : 'column',
-          justifyContent: 'center',
-        }}
+        alignItems="center"
+        backgroundColor="secondary"
+        flex={1}
+        flexDirection={landscape ? 'row' : 'column'}
+        justifyContent="center"
       >
         <Text
           emphasis="medium"

@@ -36,7 +36,11 @@ const ChecklistItem = ({ index, item }: ChecklistItemProps) => {
   const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
   return (
     <TouchableOpacity onPress={onPress}>
-      <View style={{ alignItems: 'center', flex: 1, flexDirection: 'row' }}>
+      <View
+        alignItems="center"
+        flex={1}
+        flexDirection="row"
+      >
         <Icon
           name={toggle}
           style={{ paddingRight: spacing(2) }}

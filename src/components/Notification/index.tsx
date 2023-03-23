@@ -1,10 +1,10 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 import {
   Animated,
-  type GestureResponderEvent,
   PanResponder,
-  type PanResponderGestureState,
   StyleSheet,
+  type GestureResponderEvent,
+  type PanResponderGestureState,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { View } from '../../components';

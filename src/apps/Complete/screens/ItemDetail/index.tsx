@@ -53,13 +53,13 @@ export const ItemDetail = memo(function ItemDetail() {
             title={item.title}
             titleEditable={item.editable}
           />
-          <Card margin="bottom">
+          <Card>
             <Text title="Reminders" />
           </Card>
-          <Card margin="bottom">
+          <Card>
             <Text title="Tags" />
           </Card>
-          <Card margin="bottom">
+          <Card>
             <Text title="Comments" />
           </Card>
           <ItemContext
@@ -70,21 +70,19 @@ export const ItemDetail = memo(function ItemDetail() {
           />
           {item.editable ? (
             <View
-              style={{
-                flex: 1,
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}
+              flex={1}
+              flexDirection="row"
+              justifyContent="space-between"
             >
-              <Card flex>
+              <Card>
                 <Button
                   center
                   onPress={goBack}
                   title="close"
                 />
               </Card>
-              <View style={{ padding: spacing(2) }} />
-              <Card flex>
+              <View padding={spacing(2)} />
+              <Card>
                 <Button
                   center
                   color="negative"
@@ -94,7 +92,7 @@ export const ItemDetail = memo(function ItemDetail() {
               </Card>
             </View>
           ) : (
-            <Card flex>
+            <Card>
               <Button
                 center
                 onPress={goBack}
