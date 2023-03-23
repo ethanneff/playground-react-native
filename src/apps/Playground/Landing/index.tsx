@@ -9,12 +9,11 @@ import {
   View,
   type FlatListRenderItem,
 } from '../../../components';
-import { spacing, useColors } from '../../../features';
+import { spacing } from '../../../features';
 import { landingRoutes } from '../navParams';
 import { Title } from './Title';
 
 export const Landing = memo(function Playground() {
-  const colors = useColors();
   const { goBack, navigate } = useNavigation();
   const navToItem = useCallback(
     (item: string) => () => {
@@ -48,8 +47,8 @@ export const Landing = memo(function Playground() {
       <View
         backgroundColor="secondary"
         flex={1}
-        paddingHorizontal={spacing(4)}
-        paddingVertical={spacing(2)}
+        gap={spacing(4)}
+        padding={spacing(4)}
       >
         <View
           flex={1}
@@ -96,7 +95,7 @@ export const Landing = memo(function Playground() {
           flexDirection="row"
           gap={spacing(4)}
         >
-          <Card contentStyle={{ flex: 1 }}>
+          <Card>
             <Title
               description="interactive fun"
               title="games"
@@ -113,8 +112,7 @@ export const Landing = memo(function Playground() {
               renderItem={renderItem}
             />
           </Card>
-
-          <Card contentStyle={{ flex: 1 }}>
+          <Card>
             <Title
               description="misc creations"
               title="creations"
