@@ -20,7 +20,7 @@ export class ErrorBoundary extends React.PureComponent<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.log(error, errorInfo);
+    console.log('error boundary', error, errorInfo);
     return this;
   }
 
