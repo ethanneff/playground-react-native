@@ -1,5 +1,6 @@
 import React from 'react';
-import { Spacing, Text } from '../../../components';
+import { Spacing, Text, View } from '../../../components';
+import { spacing } from '../../../features';
 
 type TitleProps = {
   description: string;
@@ -8,16 +9,17 @@ type TitleProps = {
 
 export const Title = ({ description, title }: TitleProps) => {
   return (
-    <Spacing padding={4}>
+    <View padding={spacing(2)}>
       <Text
         title={title}
         type="h5"
       />
+      <Spacing padding={0.5} />
       <Text
         emphasis="medium"
         title={description}
-        type="caption"
+        type="body2"
       />
-    </Spacing>
+    </View>
   );
 };

@@ -338,7 +338,7 @@ const placeholder = require('./placeholder.png') as ImageSourcePropType;
 
 const ImagePlaceholder = memo(function ImagePlaceholder() {
   return (
-    <Card noPadding>
+    <Card>
       <Image
         source={placeholder}
         style={{ borderRadius: 4, height: 100, width: '100%' }}

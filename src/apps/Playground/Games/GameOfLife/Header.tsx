@@ -25,12 +25,12 @@ export const Header = memo(function Header() {
           type="h5"
         />
         <Slider
+          defaultValue={10}
           flex
           maximumValue={100}
           minimumValue={1}
           onSlidingComplete={onCountSlide}
           step={1}
-          value={10}
         />
       </View>
       <View flexDirection="row">
@@ -40,12 +40,12 @@ export const Header = memo(function Header() {
           type="h5"
         />
         <Slider
+          defaultValue={10}
           flex
           maximumValue={100}
           minimumValue={1}
           onSlidingComplete={onDelaySlide}
           step={1}
-          value={10}
         />
       </View>
     </View>

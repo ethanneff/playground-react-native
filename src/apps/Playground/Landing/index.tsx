@@ -55,15 +55,15 @@ export const Landing = memo(function Playground() {
           flexDirection="row"
           gap={spacing(4)}
         >
-          <Card>
+          <Card elevation={4}>
             <Title
-              description="component examples"
+              description="app components"
               title="storybook"
             />
             <FlatList
               contentContainerStyle={{
                 paddingBottom: spacing(2),
-                paddingHorizontal: spacing(4),
+                paddingHorizontal: spacing(2),
               }}
               data={landingRoutes.storybook}
               estimatedItemSize={33}
@@ -72,7 +72,7 @@ export const Landing = memo(function Playground() {
               renderItem={renderItem}
             />
           </Card>
-          <Card>
+          <Card elevation={4}>
             <Title
               description="polished modules"
               title="features"
@@ -80,7 +80,7 @@ export const Landing = memo(function Playground() {
             <FlatList
               contentContainerStyle={{
                 paddingBottom: spacing(2),
-                paddingHorizontal: spacing(4),
+                paddingHorizontal: spacing(2),
               }}
               data={landingRoutes.features}
               estimatedItemSize={33}
@@ -95,15 +95,15 @@ export const Landing = memo(function Playground() {
           flexDirection="row"
           gap={spacing(4)}
         >
-          <Card>
+          <Card elevation={4}>
             <Title
-              description="interactive fun"
+              description="interactive demos"
               title="games"
             />
             <FlatList
               contentContainerStyle={{
                 paddingBottom: spacing(2),
-                paddingHorizontal: spacing(4),
+                paddingHorizontal: spacing(2),
               }}
               data={landingRoutes.games}
               estimatedItemSize={33}
@@ -112,15 +112,15 @@ export const Landing = memo(function Playground() {
               renderItem={renderItem}
             />
           </Card>
-          <Card>
+          <Card elevation={4}>
             <Title
-              description="misc creations"
+              description="misc ideas"
               title="creations"
             />
             <FlatList
               contentContainerStyle={{
                 paddingBottom: spacing(2),
-                paddingHorizontal: spacing(4),
+                paddingHorizontal: spacing(2),
               }}
               data={landingRoutes.creations}
               estimatedItemSize={33}
