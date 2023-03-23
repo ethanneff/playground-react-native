@@ -5,9 +5,8 @@ import { Image, type ImageSourcePropType } from 'react-native';
 import {
   Button,
   Card,
-  Masonry,
+  MasonryFlatList,
   Screen,
-  ScrollView,
   Slider,
   Text,
   View,
@@ -85,13 +84,58 @@ const cards: CardItem[] = [
   },
 ];
 
-export const Themes = memo(function Themes() {
+const initialElevation = 2;
+
+type HeaderProps = {
+  elevation: number;
+  onValueChange: (value: number) => void;
+};
+const Header = ({ elevation, onValueChange }: HeaderProps) => {
   const dispatch = useRootDispatch();
   const colors = useColors();
-  const { goBack } = useNavigation();
   const currentTheme = useRootSelector((state) => state.theme.currentTheme);
   const themePress = (theme: Theme) => () => dispatch(changeTheme(theme));
-  const [elevation, setElevation] = useState(2);
+
+  return (
+    <View>
+      <View padding={spacing(4)}>
+        <View
+          alignItems="center"
+          flexDirection="row"
+        >
+          <Text title="theme: " />
+          {themes.map((item) => (
+            <Button
+              color={currentTheme === item ? 'positive' : 'primaryA'}
+              emphasis="low"
+              key={item}
+              onPress={themePress(item)}
+              title={item}
+            />
+          ))}
+        </View>
+        <Text title={`elevation: ${elevation}`} />
+        <Slider
+          defaultValue={initialElevation}
+          maximumValue={10}
+          minimumTrackTintColor={colors.background.accent}
+          minimumValue={0}
+          onValueChange={onValueChange}
+          step={1}
+        />
+      </View>
+      <Text
+        center
+        title="Weekly Stats"
+        type="h2"
+      />
+    </View>
+  );
+};
+
+export const Themes = memo(function Themes() {
+  const { goBack } = useNavigation();
+  const [elevation, setElevation] = useState(initialElevation);
   const handleSlider = useCallback((value: number) => {
     setElevation(value);
   }, []);
@@ -100,50 +144,53 @@ export const Themes = memo(function Themes() {
   const onPress = useCallback(() => undefined, []);
 
   const renderItem = useCallback<FlatListRenderItem<CardItem>>(
-    ({ item }) => (
-      <Card
-        elevation={elevation}
-        onPress={onPress}
-      >
-        <Text
-          title={item.title}
-          type="overline"
-        />
-        <Text
-          style={{ marginTop: spacing(2) }}
-          title={item.value}
-          type="h4"
-        />
-        {item.target ? (
+    ({ item }) => {
+      return (
+        <Card
+          containerStyle={{ margin: spacing(2) }}
+          elevation={elevation}
+          onPress={onPress}
+        >
+          <Text
+            title={item.title}
+            type="overline"
+          />
           <Text
             style={{ marginTop: spacing(2) }}
-            title={item.target}
-            type="body2"
+            title={item.value}
+            type="h4"
           />
-        ) : null}
-        {item.chart ? (
-          <Image
-            source={item.chart}
-            style={{
-              height: 100,
-              marginTop: spacing(2),
-              resizeMode: 'cover',
-              width: '100%',
-            }}
-          />
-        ) : null}
-        {item.button ? (
-          <Button
-            buttonStyle={{ marginTop: spacing(2) }}
-            center
-            color="accent"
-            emphasis="high"
-            onPress={onPress}
-            title={item.button}
-          />
-        ) : null}
-      </Card>
-    ),
+          {item.target ? (
+            <Text
+              style={{ marginTop: spacing(2) }}
+              title={item.target}
+              type="body2"
+            />
+          ) : null}
+          {item.chart ? (
+            <Image
+              source={item.chart}
+              style={{
+                height: 100,
+                marginTop: spacing(2),
+                resizeMode: 'cover',
+                width: '100%',
+              }}
+            />
+          ) : null}
+          {item.button ? (
+            <Button
+              buttonStyle={{ marginTop: spacing(2) }}
+              center
+              color="accent"
+              emphasis="high"
+              onPress={onPress}
+              title={item.button}
+            />
+          ) : null}
+        </Card>
+      );
+    },
     [elevation, onPress],
   );
 
@@ -151,49 +198,24 @@ export const Themes = memo(function Themes() {
     <Screen
       dropShadow
       onLeftPress={goBack}
-      title="Dark mode"
+      title="Themes"
     >
-      <ScrollView style={{ backgroundColor: colors.background.primaryA }}>
-        <View style={{ padding: spacing(4) }}>
-          <View
-            style={{
-              alignItems: 'center',
-              flexDirection: 'row',
-            }}
-          >
-            <Text title="theme: " />
-            {themes.map((item) => (
-              <Button
-                color={currentTheme === item ? 'positive' : 'primaryA'}
-                emphasis="low"
-                key={item}
-                onPress={themePress(item)}
-                title={item}
-              />
-            ))}
-          </View>
-          <Text title={`elevation: ${elevation}`} />
-          <Slider
-            maximumValue={10}
-            minimumTrackTintColor={colors.background.accent}
-            minimumValue={0}
+      <MasonryFlatList
+        ListHeaderComponent={
+          <Header
+            elevation={elevation}
             onValueChange={handleSlider}
-            step={1}
-            value={elevation}
           />
-        </View>
-        <Text
-          center
-          title="Weekly Stats"
-          type="h2"
-        />
-        <Masonry
-          data={cards}
-          numColumns={columns}
-          // @ts-expect-error Type 'Record<string, unknown>' is missing the following properties from type 'ListRenderItemInfo<CardItem>': item, index, separators
-          renderItem={renderItem}
-        />
-      </ScrollView>
+        }
+        contentContainerStyle={{
+          padding: spacing(2),
+        }}
+        data={cards}
+        estimatedItemSize={144}
+        extraData={elevation}
+        numColumns={columns}
+        renderItem={renderItem}
+      />
     </Screen>
   );
 });

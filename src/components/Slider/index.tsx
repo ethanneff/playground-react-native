@@ -8,14 +8,21 @@ const styles = StyleSheet.create({
 });
 
 type Props = SliderProps & {
+  defaultValue: number;
   flex?: boolean;
 };
 
-export const Slider = ({ flex, onSlidingComplete, style, ...rest }: Props) => {
+export const Slider = ({
+  defaultValue,
+  flex,
+  onSlidingComplete,
+  style,
+  ...rest
+}: Props) => {
   const handleSlidingComplete = useCallback(
     (value: number) => {
-      if (!onSlidingComplete) return;
       SoundManager.play('tap');
+      if (!onSlidingComplete) return;
       onSlidingComplete(value);
     },
     [onSlidingComplete],
@@ -26,6 +33,7 @@ export const Slider = ({ flex, onSlidingComplete, style, ...rest }: Props) => {
   return (
     <Original
       style={combinedStyles}
+      value={defaultValue}
       {...rest} // eslint-disable-line react/jsx-props-no-spreading
       onSlidingComplete={handleSlidingComplete}
       tapToSeek
