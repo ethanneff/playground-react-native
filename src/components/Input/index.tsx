@@ -1,6 +1,7 @@
 import React, {
   memo,
   useCallback,
+  useEffect,
   useRef,
   useState,
   type MutableRefObject,
@@ -37,6 +38,7 @@ type Props = {
   error?: string;
   errorIcon?: IconName;
   flex?: boolean;
+  focusOnMount?: boolean;
   hideError?: boolean;
   keyboardType?: KeyboardTypeOptions;
   onChangeText: (text: string) => void;
@@ -62,6 +64,7 @@ export const Input = memo(function Input({
   error = '',
   errorIcon = 'alert-circle',
   flex,
+  focusOnMount,
   hideError,
   keyboardType,
   onChangeText,
@@ -76,6 +79,7 @@ export const Input = memo(function Input({
   title = '',
   value,
 }: Props) {
+  const fromOnMount = useRef(false);
   const [focus, setFocus] = useState(false);
   const colors = useColors();
   const styles = StyleSheet.create({
@@ -113,13 +117,25 @@ export const Input = memo(function Input({
   const containerStyles = [flex && styles.flex, containerStyle];
 
   const onFocus = useCallback(() => {
-    SoundManager.play('tap');
+    if (!fromOnMount.current) SoundManager.play('tap');
+    fromOnMount.current = false;
     setFocus(true);
   }, []);
+
+  useEffect(() => {
+    if (!focusOnMount) return;
+    fromOnMount.current = true;
+    textInput.current?.focus();
+  }, [focusOnMount, onFocus]);
+
   const onBlur = useCallback(() => {
     setFocus(false);
   }, []);
-  const focusOnInput = useCallback(() => textInput.current?.focus(), []);
+
+  const handleOnFocus = useCallback(() => {
+    textInput.current?.focus();
+  }, []);
+
   const textClear = useCallback(() => {
     if (textInput.current) textInput.current.clear();
     onChangeText('');
@@ -138,14 +154,14 @@ export const Input = memo(function Input({
       <View style={styles.row}>
         <Text
           hidden={noTitle}
-          onPress={focusOnInput}
+          onPress={handleOnFocus}
           title={title}
           withoutTap
         />
         <Text
           color="secondary"
           hidden={!optional}
-          onPress={focusOnInput}
+          onPress={handleOnFocus}
           title={optionalText}
           withoutTap
         />
@@ -184,7 +200,7 @@ export const Input = memo(function Input({
       {!hideError && (
         <TouchableOpacity
           disabled={!error.length}
-          onPress={focusOnInput}
+          onPress={handleOnFocus}
         >
           <View
             alignItems="center"
