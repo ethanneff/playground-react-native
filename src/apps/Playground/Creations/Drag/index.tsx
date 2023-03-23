@@ -1,12 +1,10 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { memo, useCallback, useState } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import {
   Animated,
-  type LayoutChangeEvent,
   PanResponder,
-  type PanResponderGestureState,
-  type PanResponderInstance,
   StyleSheet,
+  type PanResponderGestureState,
 } from 'react-native';
 import { Screen, Text, View } from '../../../../components';
 import {
@@ -14,9 +12,10 @@ import {
   useColors,
   useDriver,
   useDropShadow,
+  useLayout,
 } from '../../../../features';
 
-const getPosition = (
+const getBoundedPosition = (
   gestureState: PanResponderGestureState,
   initialPosition: { x: number; y: number },
   size: number,
@@ -40,14 +39,16 @@ const getPosition = (
   return { x, y };
 };
 
+const size = 30;
 export const Drag = memo(function PlaygroundDrag() {
   const { goBack } = useNavigation();
   const colors = useColors();
   const dropShadow = useDropShadow();
   const useNativeDriver = useDriver();
-  const [canvas, setCanvas] = useState({ height: 0, width: 0, x: 0, y: 0 });
-  const initialPosition = { x: canvas.width / 2, y: canvas.height / 2 };
-  const size = 30;
+  const { layout, onLayout } = useLayout();
+  const initialPosition = useRef({ x: 0, y: 0 });
+  const ballPosition = useRef(new Animated.ValueXY(initialPosition.current));
+  const opacity = useRef(new Animated.Value(0));
   const styles = StyleSheet.create({
     ball: {
       borderRadius: size,
@@ -55,6 +56,7 @@ export const Drag = memo(function PlaygroundDrag() {
       height: size,
       marginLeft: -size,
       marginTop: -size,
+      position: 'absolute',
       width: size,
       ...dropShadow(5),
     },
@@ -63,28 +65,34 @@ export const Drag = memo(function PlaygroundDrag() {
       flex: 1,
     },
   });
-  const ballPosition: Animated.ValueXY = new Animated.ValueXY(initialPosition);
-  const panGesture: PanResponderInstance = PanResponder.create({
+
+  useEffect(() => {
+    if (!layout) return;
+    initialPosition.current = { x: layout.width / 2, y: layout.height / 2 };
+    ballPosition.current.setValue(initialPosition.current);
+    opacity.current.setValue(1);
+  }, [layout, useNativeDriver]);
+
+  const panGesture = PanResponder.create({
     onMoveShouldSetPanResponderCapture: () => true,
     onPanResponderEnd: () => {
-      Animated.spring(ballPosition, {
-        toValue: initialPosition,
+      Animated.spring(ballPosition.current, {
+        toValue: initialPosition.current,
         useNativeDriver,
       }).start();
     },
     onPanResponderMove: (_, gestureState) => {
-      const toValue = getPosition(gestureState, initialPosition, size);
-      Animated.spring(ballPosition, {
+      const toValue = getBoundedPosition(
+        gestureState,
+        initialPosition.current,
+        size,
+      );
+      Animated.spring(ballPosition.current, {
         toValue,
         useNativeDriver,
       }).start();
     },
   });
-
-  const handleCanvas = useCallback((event: LayoutChangeEvent) => {
-    const { height, width, x, y } = event.nativeEvent.layout;
-    setCanvas({ height, width, x, y });
-  }, []);
 
   return (
     <Screen
@@ -93,7 +101,7 @@ export const Drag = memo(function PlaygroundDrag() {
       title="Drag"
     >
       <View
-        onLayout={handleCanvas}
+        onLayout={onLayout}
         style={styles.canvas}
       >
         <Text
@@ -109,7 +117,11 @@ export const Drag = memo(function PlaygroundDrag() {
           type="overline"
         />
         <Animated.View
-          style={[ballPosition.getLayout(), styles.ball]}
+          style={[
+            ballPosition.current.getLayout(),
+            { opacity: opacity.current },
+            styles.ball,
+          ]}
           {...panGesture.panHandlers} // eslint-disable-line react/jsx-props-no-spreading
         />
       </View>
