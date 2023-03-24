@@ -23,7 +23,7 @@ import {
 
 // TODO: add confetti on win
 // TODO: handle horizontal
-// TODO: add bonus round
+// TODO: add bonus round https://www.youtube.com/watch?v=JyIWQIdxaOA
 
 type Game = {
   combos: CombinationAmount;
