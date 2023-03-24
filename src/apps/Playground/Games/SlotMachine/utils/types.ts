@@ -26,5 +26,10 @@ export type Percentages = {
   payout: string;
   wins: string;
 };
-type Multiples = 1 | 2 | 5 | 10 | 25;
+type Multiples = 1 | 2 | 5 | 10;
 export type MultipleArray = Multiples[];
+export type History = {
+  amount: number;
+  spin: string;
+  time: number;
+};

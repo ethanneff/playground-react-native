@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { Spacing, Text, View } from '../../../../../components';
+import { spacing } from '../../../../../features';
 import { slotMachineConfigs } from '../utils/slotMachineConfigs';
 
 type Props = {
@@ -29,7 +30,7 @@ export const Header = memo(function HeaderMemo({
               type="h5"
             />
             <Text
-              emphasis="medium"
+              emphasis="low"
               title={`$${amount * multiplier}`}
               type="h5"
             />
@@ -37,28 +38,38 @@ export const Header = memo(function HeaderMemo({
         ))}
       </View>
       <View
-        alignItems="center"
-        justifyContent="center"
+        style={{
+          justifyContent: 'center',
+          left: 0,
+          position: 'absolute',
+          right: 0,
+          top: 0,
+        }}
       >
-        <Text
-          emphasis="medium"
-          title="WINS"
-          type="h6"
-        />
-        <Text
-          title={wins}
-          type="h5"
-        />
-        <Spacing padding={2} />
-        <Text
-          emphasis="medium"
-          title="PAYOUT"
-          type="h6"
-        />
-        <Text
-          title={payout}
-          type="h5"
-        />
+        <View
+          alignItems="center"
+          style={{ paddingTop: spacing(10) }}
+        >
+          <Text
+            emphasis="low"
+            title="ODDS"
+            type="h6"
+          />
+          <Text
+            title={wins}
+            type="h5"
+          />
+          <Spacing padding={2} />
+          <Text
+            emphasis="low"
+            title="PAYOUT"
+            type="h6"
+          />
+          <Text
+            title={payout}
+            type="h5"
+          />
+        </View>
       </View>
       <View justifyContent="center">
         {slotMachineConfigs.combinations.map(({ amount, combo, name }) => (
@@ -68,7 +79,7 @@ export const Header = memo(function HeaderMemo({
             key={name}
           >
             <Text
-              emphasis="medium"
+              emphasis="low"
               title={`$${amount * multiplier}`}
               type="h5"
             />

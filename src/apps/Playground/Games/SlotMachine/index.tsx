@@ -1,5 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { memo, useCallback, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { Animated } from 'react-native';
 import {
   Button,
   Screen,
@@ -8,26 +9,26 @@ import {
   Text,
   View,
 } from '../../../../components';
-import { spacing } from '../../../../features';
+import { spacing, useDriver } from '../../../../features';
 import { Header } from './components/Header';
-import { Multiplier } from './components/Multiplier';
 import { slotMachineConfigs } from './utils/slotMachineConfigs';
 import { slotMachineUtils } from './utils/slotMachineUtils';
 import {
   type CombinationAmount,
+  type History,
   type MultipleArray,
   type Percentages,
   type Reels,
 } from './utils/types';
 
-// TODO: track wins
 // TODO: add confetti on win
 // TODO: handle horizontal
-// TODO: add reel animation
+// TODO: add bonus round
 
 type Game = {
   combos: CombinationAmount;
   credits: number;
+  history: History[];
   multipleArray: MultipleArray;
   multipleIndex: number;
   percentages: Percentages;
@@ -38,8 +39,11 @@ type Game = {
 
 export const SlotMachine = memo(function PlaygroundSlotMachine() {
   const { goBack } = useNavigation();
+  const useNativeDriver = useDriver();
   const [game, setGame] = useState<Game | null>(null);
+  const spinAnimation = useRef(new Animated.Value(1)).current;
   const multiplier = game?.multipleArray[game.multipleIndex] ?? 1;
+  const lastSpinAmount = game?.history[game.history.length - 1]?.amount ?? 0;
 
   const setGameState = useCallback(() => {
     const combos = slotMachineUtils.getCombos(slotMachineConfigs.combinations);
@@ -49,7 +53,8 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
     setGame({
       combos,
       credits: 0,
-      multipleArray: [1, 2, 5, 10, 25],
+      history: [],
+      multipleArray: [1, 2, 5, 10],
       multipleIndex: 0,
       percentages,
       reels,
@@ -67,26 +72,44 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
         },
     );
   }, []);
+
   const handleSpin = useCallback(() => {
-    setGame((prev) => {
-      if (!prev) return null;
-      const spin = slotMachineUtils.getSpin(prev.reels);
-      const amount = slotMachineUtils.getWin(spin, prev.combos);
-      const multiple = prev.multipleArray[prev.multipleIndex];
-      const wins = amount === 0 ? -multiple : amount * multiple;
-      const credits = prev.credits + wins;
-      return { ...prev, credits, spin };
+    setGame((prev) => prev && { ...prev, spinning: true });
+    Animated.timing(spinAnimation, {
+      duration: 200,
+      toValue: 0,
+      useNativeDriver,
+    }).start(({ finished }) => {
+      if (!finished) return;
+      setGame((prev) => {
+        if (!prev) return null;
+        const spin = slotMachineUtils.getSpin(prev.reels);
+        const amount = slotMachineUtils.getWin(spin, prev.combos);
+        const multiple = prev.multipleArray[prev.multipleIndex];
+        const payout = amount === 0 ? -multiple : amount * multiple;
+        const history = [
+          ...prev.history,
+          { amount: payout, spin, time: Date.now() },
+        ];
+        const credits = prev.credits + payout;
+        return { ...prev, credits, history, spin };
+      });
+      Animated.sequence([
+        Animated.delay(200),
+        Animated.timing(spinAnimation, {
+          duration: 200,
+          toValue: 1,
+          useNativeDriver,
+        }),
+      ]).start(({ finished: nestedFinished }) => {
+        if (!nestedFinished) return;
+        setGame((prev) => prev && { ...prev, spinning: false });
+      });
     });
-  }, []);
+  }, [spinAnimation, useNativeDriver]);
 
   const handleCredits = useCallback(() => {
-    setGame(
-      (prev) =>
-        prev && {
-          ...prev,
-          credits: prev.credits + 50,
-        },
-    );
+    setGame((prev) => prev && { ...prev, credits: prev.credits + 50 });
   }, []);
 
   useEffect(() => {
@@ -100,7 +123,6 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
       title="Slot Machine"
     >
       <View
-        backgroundColor="secondary"
         flex={1}
         paddingVertical={spacing(4)}
       >
@@ -112,27 +134,64 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
           />
           <View
             alignItems="center"
-            style={{ marginTop: -spacing(12) }}
+            style={{ marginTop: -spacing(20) }}
+          >
+            <Animated.View
+              style={{
+                opacity: spinAnimation,
+              }}
+            >
+              <Text
+                color="positive"
+                style={{ opacity: lastSpinAmount > 0 ? 1 : 0 }}
+                title={`+$${lastSpinAmount}`}
+                type="h3"
+              />
+            </Animated.View>
+            <View flexDirection="row">
+              <Text
+                emphasis="low"
+                title="$"
+                type="h1"
+              />
+              <Text
+                title={`${game.credits}`}
+                type="h1"
+              />
+            </View>
+          </View>
+          <Animated.View
+            style={{
+              opacity: spinAnimation,
+              transform: [{ scale: spinAnimation }],
+            }}
           >
             <Text
-              title={`$${game.credits}`}
-              type="h1"
-            />
-          </View>
-          <Spacing padding={2} />
-          <View alignItems="center">
-            <Text
+              center
               title={game.spin}
               type="h1"
             />
-          </View>
+          </Animated.View>
           <View paddingHorizontal={spacing(10)}>
             <Spacing padding={4} />
-            <Multiplier
-              disabled={game.spinning}
-              multiplier={multiplier}
-              onPress={handleMultiplier}
-            />
+            <View
+              alignItems="center"
+              flexDirection="row"
+              justifyContent="space-between"
+            >
+              <Button
+                center
+                disabled={game.spinning}
+                onPress={handleMultiplier}
+                title={`⚡️ BET X${multiplier} ⚡️`}
+              />
+              <Button
+                center
+                disabled={game.spinning}
+                onPress={handleCredits}
+                title="💰 add $50 💰"
+              />
+            </View>
             <Spacing padding={2} />
             <Button
               buttonStyle={{
@@ -146,13 +205,6 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
               emphasis="high"
               onPress={handleSpin}
               title={multiplier < game.credits ? 'spin' : 'add credits to play'}
-            />
-            <Spacing padding={2} />
-            <Button
-              center
-              disabled={game.spinning}
-              onPress={handleCredits}
-              title="add 50 credits"
             />
           </View>
         </ScrollView>
