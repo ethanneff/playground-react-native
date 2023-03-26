@@ -1476,10 +1476,36 @@
     xcode "^3.0.1"
     xml2js "0.4.23"
 
+"@expo/config-plugins@^5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-5.0.4.tgz#216fea6558fe66615af1370de55193f4181cb23e"
+  integrity sha512-vzUcVpqOMs3h+hyRdhGwk+eGIOhXa5xYdd92yO17RMNHav3v/+ekMbs7XA2c3lepMO8Yd4/5hqmRw9ZTL6jGzg==
+  dependencies:
+    "@expo/config-types" "^47.0.0"
+    "@expo/json-file" "8.2.36"
+    "@expo/plist" "0.0.18"
+    "@expo/sdk-runtime-versions" "^1.0.0"
+    "@react-native/normalize-color" "^2.0.0"
+    chalk "^4.1.2"
+    debug "^4.3.1"
+    find-up "~5.0.0"
+    getenv "^1.0.0"
+    glob "7.1.6"
+    resolve-from "^5.0.0"
+    semver "^7.3.5"
+    slash "^3.0.0"
+    xcode "^3.0.1"
+    xml2js "0.4.23"
+
 "@expo/config-types@^45.0.0":
   version "45.0.0"
   resolved "https://registry.yarnpkg.com/@expo/config-types/-/config-types-45.0.0.tgz#963c2fdce8fbcbd003758b92ed8a25375f437ef6"
   integrity sha512-/QGhhLWyaGautgEyU50UJr5YqKJix5t77ePTwreOVAhmZH+ff3nrrtYTTnccx+qF08ZNQmfAyYMCD3rQfzpiJA==
+
+"@expo/config-types@^47.0.0":
+  version "47.0.0"
+  resolved "https://registry.yarnpkg.com/@expo/config-types/-/config-types-47.0.0.tgz#99eeabe0bba7a776e0f252b78beb0c574692c38d"
+  integrity sha512-r0pWfuhkv7KIcXMUiNACJmJKKwlTBGMw9VZHNdppS8/0Nve8HZMTkNRFQzTHW1uH3pBj8jEXpyw/2vSWDHex9g==
 
 "@expo/json-file@8.2.36":
   version "8.2.36"
@@ -2646,12 +2672,12 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-14.12.0.tgz#1cb5815e623aa83b070df3e47680db5f5886e8cc"
   integrity sha512-2XiVpppZuxHSjR1Tjtwg/Aigapk4R2yupqUFJplBSijbg4Mets3XuUWLYURDBQIH/+GuheQuOGHALix4afGpDg==
 
-"@react-native-firebase/crashlytics@14.12.0":
-  version "14.12.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-14.12.0.tgz#5b619fc492a507e61847be3dbe14410c18152ebd"
-  integrity sha512-Qhcu8fYi9YjpBSwht/jTCW2aSyQzKhwc2PRqdp8frdVLsdgikOeGRElJ6DqUA8RgPtvsebAB1+v93lRfs6FTeQ==
+"@react-native-firebase/crashlytics@17.4.0":
+  version "17.4.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-17.4.0.tgz#584584b0030b2fb91d7b0b0746917a083b250fba"
+  integrity sha512-TX8NgyWoxYvYa7joTlDvpY+iQDGE68EdY3ylZiaRCWS1079cEGjiPcFjQs1Mv4dX9z9zqRlW8Bvke2wZJXk20w==
   dependencies:
-    "@expo/config-plugins" "^4.1.5"
+    "@expo/config-plugins" "^5.0.4"
     stacktrace-js "^2.0.0"
 
 "@react-native-firebase/firestore@14.12.0":
