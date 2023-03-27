@@ -61,6 +61,7 @@ export const Board = memo(function Board({
           contentContainerStyle={{ padding: completeConfig.padding }}
           data={board.children}
           decelerationRate="fast"
+          estimatedItemSize={100}
           horizontal
           keyExtractor={getItemId}
           keyboardShouldPersistTaps="handled"
