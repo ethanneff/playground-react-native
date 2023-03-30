@@ -1,10 +1,18 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { Keyboard } from 'react-native';
-import { Button, Card, Modal, Text, View } from '../../../../components';
-import { useColors } from '../../../../features';
+import {
+  Button,
+  Card,
+  Modal,
+  RelativeDate,
+  Spacing,
+  Text,
+  View,
+} from '../../../../components';
+import { useNavigation } from '../../../../conversions';
+import { spacing, useColors } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
-import { DeleteModal, ItemContext, ItemEdit } from '../../components';
+import { DeleteModal, ItemDetailHeader, ItemEdit } from '../../components';
 import { removeItem, removeItemFromItem, updateItem } from '../../models';
 
 export const ItemDetail = memo(function ItemDetail() {
@@ -44,8 +52,9 @@ export const ItemDetail = memo(function ItemDetail() {
       <Modal
         backgroundColor={colors.background.secondary}
         onBackgroundPress={goBack}
+        showOverlay
       >
-        <View>
+        <View style={{ gap: spacing(4) }}>
           <ItemEdit
             description={item.description}
             onSubmit={onItemSubmit}
@@ -53,46 +62,84 @@ export const ItemDetail = memo(function ItemDetail() {
             title={item.title}
             titleEditable={item.editable}
           />
-          <Card>
-            <Text title="Reminders" />
+          <Card elevation={4}>
+            <View padding={spacing(2)}>
+              <ItemDetailHeader title="Reminders" />
+              <Text
+                style={{ padding: spacing(2) }}
+                title={item.tags.join(', ')}
+              />
+              <Spacing padding={2} />
+              <ItemDetailHeader title="Tags" />
+              <Text
+                style={{ padding: spacing(2) }}
+                title={item.tags.join(', ')}
+              />
+              <Spacing padding={2} />
+              <ItemDetailHeader title="Comments" />
+              <Text
+                style={{ padding: spacing(2) }}
+                title={item.tags.join(', ')}
+              />
+            </View>
           </Card>
-          <Card>
-            <Text title="Tags" />
+          <Card elevation={4}>
+            <View padding={spacing(2)}>
+              <ItemDetailHeader title="Type" />
+              <Text
+                style={{ padding: spacing(2) }}
+                title={item.type}
+              />
+              <Spacing padding={2} />
+              <ItemDetailHeader title="Creator" />
+              <Text
+                style={{ padding: spacing(2) }}
+                title={item.userId}
+              />
+              <Spacing padding={2} />
+              <ItemDetailHeader title="Created" />
+              <RelativeDate
+                date={item.createdAt}
+                style={{ padding: spacing(2) }}
+              />
+              <Spacing padding={2} />
+              <ItemDetailHeader title="Updated" />
+              <RelativeDate
+                date={item.updatedAt}
+                style={{ padding: spacing(2) }}
+              />
+            </View>
           </Card>
-          <Card>
-            <Text title="Comments" />
-          </Card>
-          <ItemContext
-            createdAt={item.createdAt}
-            type={item.type}
-            updatedAt={item.updatedAt}
-            userId={item.userId}
-          />
           {item.editable ? (
             <View
               flex={1}
               flexDirection="row"
+              gap={spacing(4)}
               justifyContent="space-between"
             >
-              <Card>
-                <Button
-                  center
-                  onPress={goBack}
-                  title="close"
-                />
-              </Card>
-              <View padding={2} />
-              <Card>
-                <Button
-                  center
-                  color="negative"
-                  onPress={onDeletePress}
-                  title="delete"
-                />
-              </Card>
+              <Button
+                dropShadow
+                emphasis="high"
+                onPress={goBack}
+                title="close"
+              />
+              <Button
+                color="negative"
+                dropShadow
+                emphasis="high"
+                onPress={onDeletePress}
+                title="delete"
+              />
+              <Button
+                color="accent"
+                dropShadow
+                emphasis="high"
+                onPress={goBack}
+                title="save"
+              />
             </View>
           ) : (
-            <Card>
+            <Card elevation={4}>
               <Button
                 center
                 onPress={goBack}

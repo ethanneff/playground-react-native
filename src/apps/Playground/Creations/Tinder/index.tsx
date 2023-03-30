@@ -1,7 +1,7 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
 import { Screen, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { useColors } from '../../../../features';
 
 export const Tinder = memo(function PlaygroundTinder() {

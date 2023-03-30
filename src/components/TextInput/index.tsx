@@ -1,10 +1,10 @@
 import React, {
   memo,
-  type MutableRefObject,
   useCallback,
   useEffect,
   useRef,
   useState,
+  type MutableRefObject,
 } from 'react';
 import {
   type KeyboardTypeOptions,
@@ -14,12 +14,12 @@ import {
 } from 'react-native';
 import { GestureTextInput } from '../../conversions';
 import {
-  type FontEmphasis,
-  type FontType,
   getFontStyles,
-  type MonoMultiColor,
   spacing,
   useColors,
+  type FontEmphasis,
+  type FontType,
+  type MonoMultiColor,
 } from '../../features';
 import { Icon, type IconName } from '../Icon';
 import { Spacing } from '../Spacing';

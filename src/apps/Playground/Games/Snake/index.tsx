@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { Button, Screen, Text, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { Board } from './Board';
 import { EndGame } from './EndGame';
 import { useClock } from './useClock';

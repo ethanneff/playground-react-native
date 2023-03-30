@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect } from 'react';
 import { Button, Card, Screen, ScrollView, Text } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import {
   useAuth,
   useColors,

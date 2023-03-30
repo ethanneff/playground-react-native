@@ -34,6 +34,10 @@ const restrictedImports = {
       ],
       message: 'use Components',
     },
+    { name: '@react-navigation/core', message: 'use Wrapper' },
+    { name: '@react-navigation/native', message: 'use Wrapper' },
+    { name: '@react-navigation/native-stack', message: 'use Wrapper' },
+    { name: '@react-navigation/bottom-tabs', message: 'use Wrapper' },
   ],
 };
 

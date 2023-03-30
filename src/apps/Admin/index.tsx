@@ -1,11 +1,11 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import { Button, Screen, ScrollView, Text } from '../../components';
+import { useNavigation } from '../../conversions';
 import {
-  type RootNavigation,
-  type RootRoutes,
   spacing,
   useColors,
+  type RootNavigation,
+  type RootRoutes,
 } from '../../features';
 
 export default memo(function Admin() {

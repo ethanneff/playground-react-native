@@ -1,5 +1,3 @@
-import { useIsFocused, useNavigation } from '@react-navigation/native';
-import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
@@ -12,7 +10,13 @@ import {
   View,
   type TextInputRef,
 } from '../../../../components';
-import { Firebase, type FirebaseAuthTypes } from '../../../../conversions';
+import {
+  Firebase,
+  useIsFocused,
+  useNavigation,
+  type FirebaseAuthTypes,
+  type StackNavigationProp,
+} from '../../../../conversions';
 import { spacing } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 import { Collections, type Preferences, type User } from '../../data';
@@ -65,7 +69,7 @@ const createUserPreferences = async (
 
 export const SignUp = memo(function SignUp() {
   const { goBack, navigate } =
-    useNavigation<NativeStackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();
+    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();
   const emailRef = useRef<TextInputRef>(null);
   const passwordRef = useRef<TextInputRef>(null);
   const form = useRef(initialRef);

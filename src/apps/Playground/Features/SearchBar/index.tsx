@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import {
@@ -11,6 +10,7 @@ import {
   type FlatListRenderItem,
   type IconName,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { colorWithOpacity, spacing, useColors } from '../../../../features';
 
 type Data = {

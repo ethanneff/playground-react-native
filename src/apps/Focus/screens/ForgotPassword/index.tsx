@@ -1,10 +1,3 @@
-import {
-  type RouteProp,
-  useIsFocused,
-  useNavigation,
-  useRoute,
-} from '@react-navigation/native';
-import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
@@ -13,10 +6,18 @@ import {
   Spacing,
   Text,
   TextInput,
-  type TextInputRef,
   Toast,
+  type TextInputRef,
 } from '../../../../components';
-import { Firebase, type FirebaseAuthTypes } from '../../../../conversions';
+import {
+  Firebase,
+  useIsFocused,
+  useNavigation,
+  useRoute,
+  type FirebaseAuthTypes,
+  type RouteProp,
+  type StackNavigationProp,
+} from '../../../../conversions';
 import { spacing } from '../../../../features';
 import { type UnAuthStackRoutes } from '../../types';
 
@@ -24,9 +25,7 @@ const initialState = { loading: false };
 
 export const ForgotPassword = memo(function ForgotPassword() {
   const { goBack } =
-    useNavigation<
-      NativeStackNavigationProp<UnAuthStackRoutes, 'forgot-password'>
-    >();
+    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'forgot-password'>>();
   const route = useRoute<RouteProp<UnAuthStackRoutes, 'forgot-password'>>();
   const email = useRef(route.params.email);
   const [state, setState] = useState<typeof initialState>(initialState);

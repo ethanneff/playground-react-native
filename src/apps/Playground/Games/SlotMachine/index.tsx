@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
 import {
@@ -9,6 +8,7 @@ import {
   Text,
   View,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { spacing, useDriver } from '../../../../features';
 import { Header } from './components/Header';
 import { slotMachineConfigs } from './utils/slotMachineConfigs';

@@ -1,12 +1,14 @@
-import { useNavigation } from '@react-navigation/native';
-import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo } from 'react';
 import { Screen, ScrollView, Text } from '../../../../components';
+import {
+  useNavigation,
+  type StackNavigationProp,
+} from '../../../../conversions';
 import { type UnAuthStackRoutes } from '../../types';
 
 export const Privacy = memo(function Privacy() {
   const { goBack } =
-    useNavigation<NativeStackNavigationProp<UnAuthStackRoutes, 'privacy'>>();
+    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'privacy'>>();
 
   return (
     <Screen

@@ -1,11 +1,10 @@
 import {
-  type NetInfoState,
   NetInfoStateType,
   type NetInfoConnectedDetails,
+  type NetInfoState,
 } from '@react-native-community/netinfo';
 import { type RootAction } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
-
 import { logout } from '../Auth';
 
 /* ACTIONS */

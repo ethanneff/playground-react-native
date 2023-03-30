@@ -1,7 +1,7 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { type LayoutChangeEvent } from 'react-native';
 import { KeyboardHandler, Screen } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import {
   spacing,
   useColors,

@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { v4 } from 'uuid';
 import {
@@ -9,6 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { spacing, useColors, useDropShadow } from '../../../../features';
 import {
   getLandscapeOrientation,
@@ -28,7 +28,7 @@ export const TicTacToe = memo(function TicTacToe() {
   const boardSize = 3;
   const colors = useColors();
   const { goBack } = useNavigation();
-
+  const dropShadow = useDropShadow();
   const [game, setGame] = useState<State>(getInitialState(boardSize));
   const smallest = useRootSelector(getSmallestDimension);
   const landscape = useRootSelector(getLandscapeOrientation);
@@ -60,8 +60,6 @@ export const TicTacToe = memo(function TicTacToe() {
     },
     [],
   );
-
-  const dropShadow = useDropShadow();
 
   return (
     <Screen

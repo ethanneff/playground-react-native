@@ -5,7 +5,6 @@
  * directory of this source tree.
  */
 package com.eneff.app.core;
-
 import android.content.Context;
 import com.facebook.react.ReactInstanceManager;
 

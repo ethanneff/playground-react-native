@@ -1,6 +1,13 @@
 import React, { memo, useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
-import { Card, TextInput, View, type TextInputIcon } from '../../../components';
+import {
+  Card,
+  Spacing,
+  TextInput,
+  View,
+  type TextInputIcon,
+} from '../../../components';
+import { spacing } from '../../../features';
 import { ItemDetailHeader } from './ItemDetailHeader';
 
 type OnSubmit = (text: string) => void;
@@ -60,8 +67,8 @@ export const ItemEdit = memo(function ItemEdit({
   );
 
   return (
-    <View>
-      <Card>
+    <Card elevation={4}>
+      <View padding={spacing(2)}>
         <ItemDetailHeader title="Title" />
         <TextInput
           autoCapitalize="sentences"
@@ -78,6 +85,7 @@ export const ItemEdit = memo(function ItemEdit({
           textContentType="none"
           value={title}
         />
+        <Spacing padding={2} />
         <ItemDetailHeader title="Details" />
         <TextInput
           autoCapitalize="sentences"
@@ -95,7 +103,7 @@ export const ItemEdit = memo(function ItemEdit({
           textContentType="none"
           value={description || ''}
         />
-      </Card>
-    </View>
+      </View>
+    </Card>
   );
 });

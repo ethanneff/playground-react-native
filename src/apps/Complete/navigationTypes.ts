@@ -1,6 +1,8 @@
-import { type BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { type CompositeNavigationProp } from '@react-navigation/native';
-import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
+import {
+  type BottomTabNavigationProp,
+  type CompositeNavigationProp,
+  type StackNavigationProp,
+} from '../../conversions';
 
 export type MainStackRoutes = {
   home: undefined;
@@ -24,9 +26,9 @@ export type HomeStackRoutes = {
 };
 
 export type ImplementTabNavigation = CompositeNavigationProp<
-  NativeStackNavigationProp<MainStackRoutes, 'home'>,
+  StackNavigationProp<MainStackRoutes, 'home'>,
   CompositeNavigationProp<
     BottomTabNavigationProp<HomeStackRoutes>,
-    NativeStackNavigationProp<ImplementStackRoutes>
+    StackNavigationProp<ImplementStackRoutes>
   >
 >;

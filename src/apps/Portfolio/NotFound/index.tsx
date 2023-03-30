@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
 import { Button, Screen, ScrollView } from '../../../components';
+import { useNavigation } from '../../../conversions';
 import { spacing, useColors } from '../../../features';
 
 export const NotFound = memo(function PortfolioNotFound() {

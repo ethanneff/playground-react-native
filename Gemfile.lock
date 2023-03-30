@@ -281,7 +281,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cocoapods (~> 1.11, >= 1.11.3)
+  cocoapods (>= 1.11.3)
   fastlane
   fastlane-plugin-load_json
   fastlane-plugin-rename_android_package
@@ -293,4 +293,4 @@ RUBY VERSION
    ruby 2.7.6p219
 
 BUNDLED WITH
-   2.1.4
+   2.2.3

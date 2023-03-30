@@ -1,5 +1,3 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { memo, Suspense } from 'react';
 import Config from 'react-native-config';
 import Admin from '../../apps/Admin';
@@ -15,11 +13,12 @@ import Portfolio from '../../apps/Portfolio';
 import Progress from '../../apps/Progress';
 import TheOneThing from '../../apps/TheOneThing';
 import { Loader } from '../../components';
+import { createStackNavigator, NavigationContainer } from '../../conversions';
 import { type RootRoutes } from './types';
 import { useNavScreenOptions } from './useNavScreenOptions';
 import { usePersistedState } from './usePersistedState';
 
-const Stack = createNativeStackNavigator<RootRoutes>();
+const Stack = createStackNavigator<RootRoutes>();
 const linking = {
   prefixes: ['https://app.example.com', 'eneff://'],
 };

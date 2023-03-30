@@ -1,7 +1,6 @@
 export * from './AddItem';
 export * from './Board';
 export * from './DeleteModal';
-export * from './ItemContext';
 export * from './ItemDetailHeader';
 export * from './ItemEdit';
 export * from './List';

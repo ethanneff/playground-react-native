@@ -1,7 +1,7 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { useCallback, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Button, Screen, Text, View } from '../../../components';
+import { useNavigation } from '../../../conversions';
 import { useColors } from '../../../features';
 import { themeActions, useRootDispatch, useRootSelector } from '../../../redux';
 

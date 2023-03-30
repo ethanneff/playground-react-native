@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import {
   Button,
@@ -7,6 +6,7 @@ import {
   Text,
   type FlatListRenderItem,
 } from '../../../components';
+import { useNavigation } from '../../../conversions';
 import { spacing } from '../../../features';
 import {
   changeTheme,

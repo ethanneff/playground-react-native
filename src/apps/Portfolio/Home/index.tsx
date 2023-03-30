@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import { Button, Screen, ScrollView } from '../../../components';
+import { useNavigation } from '../../../conversions';
 import { spacing, useAdminNavBack, useColors } from '../../../features';
 import { type PortfolioNavigation, type PortfolioRoutes } from '../types';
 

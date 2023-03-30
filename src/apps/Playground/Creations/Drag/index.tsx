@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useEffect, useRef } from 'react';
 import {
   Animated,
@@ -7,6 +6,7 @@ import {
   type PanResponderGestureState,
 } from 'react-native';
 import { Screen, Text, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import {
   spacing,
   useColors,

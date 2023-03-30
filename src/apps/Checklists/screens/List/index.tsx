@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import {
   Button,
@@ -9,6 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import {
   getCurrentActiveChecklistItemsOrderByCreatedAt,

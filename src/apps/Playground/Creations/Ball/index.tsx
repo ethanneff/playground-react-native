@@ -1,7 +1,7 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useRef } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import { Button, Screen, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { spacing, useColors, useDriver, useLayout } from '../../../../features';
 
 const getBoundedRandom = (min: number, max: number) => {

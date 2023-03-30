@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import {
@@ -7,6 +6,7 @@ import {
   Image,
   Screen,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { useColors } from '../../../../features';
 import { getLandscapeOrientation, getWidth } from '../../../../redux';
 

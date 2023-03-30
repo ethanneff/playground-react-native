@@ -4,5 +4,6 @@ export * from './Flipper';
 export * from './GestureHandler';
 export * from './GoogleSignIn';
 export * from './JsonTree';
+export * from './Navigation';
 export * from './Sound';
 export * from './Storage';

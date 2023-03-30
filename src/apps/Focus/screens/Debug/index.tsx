@@ -1,5 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
-import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback } from 'react';
 import {
   Button,
@@ -9,7 +7,11 @@ import {
   Text,
   Toast,
 } from '../../../../components';
-import { JsonTree } from '../../../../conversions';
+import {
+  JsonTree,
+  useNavigation,
+  type StackNavigationProp,
+} from '../../../../conversions';
 import { useRootSelector } from '../../../../redux';
 import { Collections, type Goal, type Interval } from '../../data';
 import { type UnAuthStackRoutes } from '../../types';
@@ -17,7 +19,7 @@ import { useLogout } from '../../utils';
 
 export const Debug = memo(function Debug() {
   const { goBack } =
-    useNavigation<NativeStackNavigationProp<UnAuthStackRoutes, 'debug'>>();
+    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'debug'>>();
   const data = useRootSelector((state) => state.focus);
   const uid = data.auth.uid ?? '';
   const { handleLogout } = useLogout();

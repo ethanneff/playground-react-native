@@ -1,8 +1,8 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import 'react-native-get-random-values';
 import { v4 } from 'uuid';
 import { Button, Input, Screen } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { createChecklistItem } from '../../models';
 

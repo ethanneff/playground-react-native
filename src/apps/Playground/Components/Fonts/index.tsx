@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
 import { Screen, ScrollView, Text } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 
 export const Fonts = memo(function PlaygroundFonts() {

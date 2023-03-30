@@ -1,10 +1,9 @@
 import React, { memo, useCallback, useEffect, useRef } from 'react';
-
 import {
   FlatList,
+  View,
   type FlatListRef,
   type FlatListRenderItem,
-  View,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { useRootSelector } from '../../../../redux';

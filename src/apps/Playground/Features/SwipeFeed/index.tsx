@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import dayjs, { type Dayjs } from 'dayjs';
 import React, { memo, useCallback, useRef, useState } from 'react';
 import {
@@ -20,6 +19,7 @@ import {
   View,
   type IconName,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { spacing, useColors, useDriver } from '../../../../features';
 import { getWidth, useRootSelector } from '../../../../redux';
 import { formatRelativeDate } from './utils';

@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import {
   Card,
@@ -9,6 +8,7 @@ import {
   View,
   type FlatListRenderItem,
 } from '../../../components';
+import { useNavigation } from '../../../conversions';
 import { spacing } from '../../../features';
 import { landingRoutes } from '../navParams';
 import { Title } from './Title';

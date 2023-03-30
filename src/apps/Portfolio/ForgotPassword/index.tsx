@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import {
@@ -9,6 +8,7 @@ import {
   Spacing,
   View,
 } from '../../../components';
+import { useNavigation } from '../../../conversions';
 import { spacing, useColors } from '../../../features';
 
 const styles = StyleSheet.create({

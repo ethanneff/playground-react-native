@@ -131,11 +131,11 @@ export const Modal = memo(function Modal({
           testID="modal"
         >
           {noScroll ? (
-            <View padding={spacing(4)}>{children}</View>
+            <View padding={spacing(2)}>{children}</View>
           ) : (
             <ScrollView
               contentContainerStyle={{
-                padding: spacing(4),
+                padding: spacing(2),
               }}
               keyboardShouldPersistTaps="handled"
               showsVerticalScrollIndicator={false}

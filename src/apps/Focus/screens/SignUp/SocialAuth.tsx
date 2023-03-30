@@ -1,8 +1,10 @@
-import { useNavigation } from '@react-navigation/native';
-import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { useCallback } from 'react';
 import { Platform } from 'react-native';
 import { Spacing, Text, TextGroup, View } from '../../../../components';
+import {
+  useNavigation,
+  type StackNavigationProp,
+} from '../../../../conversions';
 import { type UnAuthStackRoutes } from '../../types';
 import { SocialButton } from './SocialButton';
 
@@ -14,7 +16,7 @@ export const SocialAuth = ({ disabled }: Props) => {
   const handleMissingCallback = useCallback(() => null, []);
 
   const { navigate } =
-    useNavigation<NativeStackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();
+    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();
 
   const handleTerms = useCallback(() => {
     navigate('terms');

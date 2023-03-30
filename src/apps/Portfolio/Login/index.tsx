@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import {
   Button,
@@ -8,6 +7,7 @@ import {
   Spacing,
   View,
 } from '../../../components';
+import { useNavigation } from '../../../conversions';
 import { spacing, useColors } from '../../../features';
 import { type PortfolioNavigation } from '../types';
 

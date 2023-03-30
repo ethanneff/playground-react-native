@@ -1,4 +1,3 @@
-import { useIsFocused } from '@react-navigation/native';
 import React, { memo, useEffect, useRef } from 'react';
 import {
   Button,
@@ -6,9 +5,10 @@ import {
   Spacing,
   Text,
   TextInput,
-  type TextInputRef,
   View,
+  type TextInputRef,
 } from '../../../../components';
+import { useIsFocused } from '../../../../conversions';
 import { spacing } from '../../../../features';
 
 type Props = {
