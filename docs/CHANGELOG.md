@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.75.5](https://github.com/ethanneff/playground-react-native/compare/v2.75.4...v2.75.5) (2023-03-12)
+
+
+### Bug Fixes
+
+* correct keyboard height ([ba495b2](https://github.com/ethanneff/playground-react-native/commit/ba495b239843b65632b577fd07f5046f22b86967))
+
 ## [2.75.4](https://github.com/ethanneff/playground-react-native/compare/v2.75.3...v2.75.4) (2023-03-12)
 
 
