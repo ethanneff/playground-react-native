@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import {
   Activity,
@@ -10,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from '../../components';
+import { useNavigation } from '../../conversions';
 import { spacing, useAdminNavBack, useColors } from '../../features';
 import { type DeepWorkNavigation } from './types';
 

@@ -1,12 +1,12 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import {
   TextInput,
+  TouchableWithoutFeedback,
   type TextInputIcon,
   type TextInputRef,
-  TouchableWithoutFeedback,
 } from '../../../components';
+import { useNavigation } from '../../../conversions';
 import { useColors } from '../../../features';
 import { useRootDispatch, useRootSelector } from '../../../redux';
 import {

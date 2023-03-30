@@ -1,10 +1,12 @@
-import { useNavigation } from '@react-navigation/native';
-import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import dayjs, { type Dayjs } from 'dayjs';
 import isToday from 'dayjs/plugin/isToday';
 import React, { memo, useCallback } from 'react';
 import { type ListRenderItem } from 'react-native';
 import { FlatList, Text, TouchableOpacity, View } from '../../../../components';
+import {
+  useNavigation,
+  type StackNavigationProp,
+} from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { type AuthStackRoutes, type Category } from '../../types';
 dayjs.extend(isToday);
@@ -22,8 +24,7 @@ const day = dayjs();
 const isWeekend = (d: Dayjs) => d.day() === 0 || d.day() === 6;
 
 export const CategoryCard = memo(function CategoryCard({ category }: Props) {
-  const { navigate } =
-    useNavigation<NativeStackNavigationProp<AuthStackRoutes>>();
+  const { navigate } = useNavigation<StackNavigationProp<AuthStackRoutes>>();
   const colors = useColors();
 
   const handleCategoryPress = (categoryPress: Category) => () => {

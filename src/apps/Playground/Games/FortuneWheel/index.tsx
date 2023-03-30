@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useMemo, useState } from 'react';
 import { Screen, Text } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { useColors } from '../../../../features';
 import { Wheel } from './Wheel';
 import { type Segment } from './types';

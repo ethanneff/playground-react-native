@@ -1,7 +1,7 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import { Screen, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { useColors, useDriver } from '../../../../features';
 
 const Bird = () => {

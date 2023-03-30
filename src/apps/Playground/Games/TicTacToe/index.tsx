@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { v4 } from 'uuid';
 import {
@@ -8,6 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { useColors } from '../../../../features';
 import {
   getLandscapeOrientation,

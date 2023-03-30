@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import { type ListRenderItem } from 'react-native';
 import {
@@ -10,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from '../../../components';
+import { useNavigation } from '../../../conversions';
 import { spacing, useColors } from '../../../features';
 import { landingRoutes } from '../navParams';
 import { Row } from './Row';

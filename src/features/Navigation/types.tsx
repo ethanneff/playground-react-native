@@ -1,4 +1,4 @@
-import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { type StackNavigationProp } from '../../conversions';
 
 export type RootRoutes = {
   admin: undefined;
@@ -15,4 +15,4 @@ export type RootRoutes = {
   'the-one-thing': undefined;
 };
 
-export type RootNavigation = NativeStackNavigationProp<RootRoutes>;
+export type RootNavigation = StackNavigationProp<RootRoutes>;

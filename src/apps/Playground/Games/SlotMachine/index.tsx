@@ -1,10 +1,10 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Button, Screen, ScrollView, Text, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { useColors } from '../../../../features';
-import { Slots } from './Slots';
 import { combinations, reels } from './config';
+import { Slots } from './Slots';
 import {
   getRandomReelArrays,
   getReturnPercentage,

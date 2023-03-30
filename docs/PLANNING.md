@@ -202,7 +202,7 @@ Deploy 3nd App (Complete)
 - [x] fix android https://github.com/fastlane/fastlane/issues/18403
 - [x] color
 - [x] date-fns to dayjs
-- [x] use createNativeStackNavigator instead of createNativeStackNavigator (from 45fps to 55fps. does not work with modals)
+- [x] use createStackNavigator instead of createStackNavigator (from 45fps to 55fps. does not work with modals)
 - [x] use react-native-fast-image
 - [x] `{showReview && <Review onComplete />`
 - [x] install accelerator

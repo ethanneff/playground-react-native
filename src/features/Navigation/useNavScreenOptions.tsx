@@ -1,9 +1,12 @@
-import { type BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
-import { type ParamListBase, type RouteProp } from '@react-navigation/native';
-import { type NativeStackNavigationOptions } from '@react-navigation/native-stack';
 import React, { useCallback } from 'react';
 import { Platform } from 'react-native';
-import { Icon, type IconName, Text, View } from '../../components';
+import { Icon, Text, View, type IconName } from '../../components';
+import {
+  type BottomTabNavigationOptions,
+  type ParamListBase,
+  type RouteProp,
+  type StackNavigationOptions,
+} from '../../conversions';
 import { SoundManager, StringMethods } from '../../features';
 import { useColors } from '../Theme';
 
@@ -23,18 +26,18 @@ type TabScreenOptions = {
 export const useNavScreenOptions = () => {
   const colors = useColors();
 
-  const modalScreenOptions: NativeStackNavigationOptions = {
+  const modalScreenOptions: StackNavigationOptions = {
     animation: 'fade',
     headerShown: false,
     presentation: Platform.OS === 'web' ? 'card' : 'transparentModal',
   };
 
-  const bottomScreenOptions: NativeStackNavigationOptions = {
+  const bottomScreenOptions: StackNavigationOptions = {
     animation: 'slide_from_bottom',
     headerShown: false,
   };
 
-  const rightScreenOptions: NativeStackNavigationOptions = {
+  const rightScreenOptions: StackNavigationOptions = {
     headerShown: false,
   };
 

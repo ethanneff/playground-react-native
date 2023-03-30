@@ -1,7 +1,7 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useMemo, useReducer } from 'react';
 import DeviceInfo from 'react-native-device-info';
 import { Screen, Text, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { DriftContext, driftInitialState, driftReducer } from './Context';
 import { Dpad } from './Dpad';
 import { Game } from './Game';

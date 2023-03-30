@@ -1,5 +1,5 @@
-import { useNavigation } from '@react-navigation/native';
 import Config from 'react-native-config';
+import { useNavigation } from '../../conversions';
 
 export const useAdminNavBack = () => {
   const { goBack } = useNavigation();

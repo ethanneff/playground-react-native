@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import {
   Button,
@@ -6,6 +5,7 @@ import {
   type CarouselSlide,
   Screen,
 } from '../../../components';
+import { useNavigation } from '../../../conversions';
 import { useColors } from '../../../features';
 import { type PortfolioNavigation } from '../types';
 

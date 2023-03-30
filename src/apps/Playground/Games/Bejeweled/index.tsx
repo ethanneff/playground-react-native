@@ -1,8 +1,8 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { v4 } from 'uuid';
 import { Screen, TouchableOpacity, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { useColors } from '../../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../../redux';
 

@@ -1,5 +1,3 @@
-import { useIsFocused, useNavigation } from '@react-navigation/native';
-import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
@@ -8,6 +6,11 @@ import {
   TextInput,
   type TextInputRef,
 } from '../../../../components';
+import {
+  useIsFocused,
+  useNavigation,
+  type StackNavigationProp,
+} from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { ModalHeader } from '../../components';
 import { type LandingStackRoutes } from '../../navigationTypes';
@@ -19,7 +22,7 @@ export const PasswordReset = memo(function PasswordReset() {
   const form = useRef(initialRef);
   const [state, setState] = useState(initialState);
   const { goBack, navigate } =
-    useNavigation<NativeStackNavigationProp<LandingStackRoutes>>();
+    useNavigation<StackNavigationProp<LandingStackRoutes>>();
   const focus = useIsFocused();
   const emailRef = useRef<TextInputRef>(null);
 

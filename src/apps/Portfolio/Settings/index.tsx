@@ -1,13 +1,13 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback } from 'react';
 import { type ListRenderItem } from 'react-native';
 import { Button, FlatList, Screen, Text, View } from '../../../components';
+import { useNavigation } from '../../../conversions';
 import {
   changeTheme,
-  type Theme,
   themes,
   useRootDispatch,
   useRootSelector,
+  type Theme,
 } from '../../../redux';
 
 export const Settings = memo(function PortfolioSettings() {

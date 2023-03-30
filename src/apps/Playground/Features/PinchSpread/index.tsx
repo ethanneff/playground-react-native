@@ -1,7 +1,7 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useState } from 'react';
 import { Animated, PanResponder, StyleSheet } from 'react-native';
 import { Screen, Text, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { GestureHandler } from './logic';
 

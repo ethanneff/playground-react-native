@@ -1,18 +1,18 @@
-import {
-  type InitialState,
-  type NavigationContainerRef,
-  type NavigationState,
-} from '@react-navigation/native';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Linking, Platform } from 'react-native';
-import { Storage } from '../../conversions';
+import {
+  Storage,
+  type NavigationContainerRef,
+  type NavigationInitialState,
+  type NavigationState,
+} from '../../conversions';
 import { Analytics } from '../Analytics';
 import { Globals } from '../Config';
 
 const persistanceKey = 'navigation';
 
 type UsePersistedState = {
-  initialState: InitialState | undefined;
+  initialState: NavigationInitialState | undefined;
   isReady: boolean;
   onReady: () => void;
   onRef: (

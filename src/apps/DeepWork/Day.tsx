@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo } from 'react';
 import { Calendar, Card, Screen, ScrollView, Text } from '../../components';
+import { useNavigation } from '../../conversions';
 import { spacing, useColors } from '../../features';
 
 export const Day = memo(function Day() {

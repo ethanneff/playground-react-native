@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import {
   Alert,
@@ -11,6 +10,7 @@ import {
   ScrollView,
   Text,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { RateApp, spacing, useColors } from '../../../../features';
 import { Reminders } from './Reminders';
 

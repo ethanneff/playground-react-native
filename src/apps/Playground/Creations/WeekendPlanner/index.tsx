@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { v4 } from 'uuid';
 import {
@@ -14,6 +13,7 @@ import {
   TouchableOpacity,
   View,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { spacing, useColors, useDropShadow } from '../../../../features';
 import { getLargestDimension, useRootSelector } from '../../../../redux';
 

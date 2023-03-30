@@ -1,7 +1,7 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import { Button, Screen, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { spacing, useColors, useDriver } from '../../../../features';
 import { getHeight, getWidth, useRootSelector } from '../../../../redux';
 

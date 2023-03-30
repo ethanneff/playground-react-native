@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef, useState } from 'react';
 import {
   Animated,
@@ -7,6 +6,7 @@ import {
   type PanResponderInstance,
 } from 'react-native';
 import { Screen, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { colorWithOpacity, useColors, useDriver } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 

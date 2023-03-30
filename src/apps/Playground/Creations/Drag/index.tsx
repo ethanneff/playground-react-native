@@ -1,14 +1,14 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import {
   Animated,
-  type LayoutChangeEvent,
   PanResponder,
+  StyleSheet,
+  type LayoutChangeEvent,
   type PanResponderGestureState,
   type PanResponderInstance,
-  StyleSheet,
 } from 'react-native';
 import { Screen, Text, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import {
   spacing,
   useColors,

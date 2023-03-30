@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import {
   Button,
@@ -10,6 +9,7 @@ import {
   Text,
   View,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 
 // type GameHistory = {

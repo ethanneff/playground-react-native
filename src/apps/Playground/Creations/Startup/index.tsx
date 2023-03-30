@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import dayjs from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
 import {
@@ -10,6 +9,7 @@ import {
   Switch,
   Text,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { Section } from './Section';
 

@@ -1,7 +1,9 @@
-import { useNavigation } from '@react-navigation/native';
-import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback } from 'react';
 import { Icon, Text, TouchableOpacity, View } from '../../../../components';
+import {
+  useNavigation,
+  type StackNavigationProp,
+} from '../../../../conversions';
 import { spacing, useColors, useDropShadow } from '../../../../features';
 import { type AuthStackRoutes, type Item } from '../../types';
 import { ListSection } from './ListSection';
@@ -25,7 +27,7 @@ export const ListItem = memo(function ListItem({
   const iconColor = future ? 'tertiary' : 'positive';
   const title = currentItem ? 'current' : future ? 'future' : item.title;
   const { navigate } =
-    useNavigation<NativeStackNavigationProp<AuthStackRoutes, 'home'>>();
+    useNavigation<StackNavigationProp<AuthStackRoutes, 'home'>>();
 
   const onPress = useCallback(() => {
     navigate('interval-details', { item });

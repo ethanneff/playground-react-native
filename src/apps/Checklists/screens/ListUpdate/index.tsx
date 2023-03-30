@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import {
   Button,
@@ -8,6 +7,7 @@ import {
   Text,
   View,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { getCurrentChecklist, removeList, updateList } from '../../models';
 

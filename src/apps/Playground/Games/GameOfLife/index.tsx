@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useEffect, useState } from 'react';
 import { Screen, ScrollView, Text, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { useRootDispatch } from '../../../../redux';
 import { Buttons } from './Buttons';

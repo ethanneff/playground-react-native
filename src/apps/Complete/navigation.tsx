@@ -1,10 +1,10 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {
-  createNativeStackNavigator,
-  type NativeStackNavigationOptions,
-} from '@react-navigation/native-stack';
 import React from 'react';
-import { type TabIcons, useNavScreenOptions } from '../../features';
+import {
+  createBottomTabNavigator,
+  createStackNavigator,
+  type StackNavigationOptions,
+} from '../../conversions';
+import { useNavScreenOptions, type TabIcons } from '../../features';
 import {
   type HomeStackRoutes,
   type ImplementStackRoutes,
@@ -24,7 +24,7 @@ import {
   Welcome,
 } from './screens';
 
-const noHeader: NativeStackNavigationOptions = { headerShown: false };
+const noHeader: StackNavigationOptions = { headerShown: false };
 
 const tabIcons: TabIcons = {
   account: { focused: 'account', unFocused: 'account' },
@@ -36,7 +36,7 @@ const tabIcons: TabIcons = {
   reflect: { focused: 'finance', unFocused: 'finance' },
 };
 
-const ImplementStack = createNativeStackNavigator<ImplementStackRoutes>();
+const ImplementStack = createStackNavigator<ImplementStackRoutes>();
 const Implement = () => {
   return (
     <ImplementStack.Navigator screenOptions={noHeader}>
@@ -80,7 +80,7 @@ const Home = () => {
   );
 };
 
-const LandingStack = createNativeStackNavigator<LandingStackRoutes>();
+const LandingStack = createStackNavigator<LandingStackRoutes>();
 export const Landing = () => {
   const { modalScreenOptions } = useNavScreenOptions();
   return (
@@ -105,7 +105,7 @@ export const Landing = () => {
   );
 };
 
-const MainStack = createNativeStackNavigator<MainStackRoutes>();
+const MainStack = createStackNavigator<MainStackRoutes>();
 export const Main = () => {
   const { modalScreenOptions } = useNavScreenOptions();
   return (

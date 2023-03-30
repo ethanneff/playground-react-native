@@ -1,7 +1,7 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useState } from 'react';
 import { Keyboard } from 'react-native';
 import { Button, Modal, Text, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { Card, DeleteModal, ItemContext, ItemEdit } from '../../components';

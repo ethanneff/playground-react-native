@@ -1,4 +1,4 @@
-import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { type StackNavigationProp } from '../../conversions';
 
 export type DeepWorkRoutes = {
   account: undefined;
@@ -6,4 +6,4 @@ export type DeepWorkRoutes = {
   home: undefined;
 };
 
-export type DeepWorkNavigation = NativeStackNavigationProp<DeepWorkRoutes>;
+export type DeepWorkNavigation = StackNavigationProp<DeepWorkRoutes>;

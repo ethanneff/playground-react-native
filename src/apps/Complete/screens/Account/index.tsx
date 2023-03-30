@@ -1,12 +1,12 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect } from 'react';
 import { Button, Screen, ScrollView, Text } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import {
-  type RootNavigation,
   spacing,
   useAuth,
   useColors,
   useLayout,
+  type RootNavigation,
 } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import { Card } from '../../components';

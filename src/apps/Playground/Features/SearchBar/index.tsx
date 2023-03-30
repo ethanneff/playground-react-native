@@ -1,6 +1,5 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { Animated, StyleSheet, type ListRenderItem } from 'react-native';
+import { Animated, type ListRenderItem, StyleSheet } from 'react-native';
 import {
   FlatList,
   Icon,
@@ -10,6 +9,7 @@ import {
   View,
   type IconName,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import {
   colorWithOpacity,
   spacing,
@@ -64,8 +64,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     iconName: iconSearch,
     input: '',
   });
-  const keyboardVisible =
-    useRootSelector((s) => s.device.keyboard?.height) ?? 0;
+  const keyboardVisible = useRootSelector((s) => s.device.keyboardHeight);
   const useNativeDriver = useDriver();
   const translateIcon = state.animation.interpolate({
     inputRange: [0, 0.5, 1],

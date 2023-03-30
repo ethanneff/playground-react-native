@@ -1,14 +1,14 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef, useState } from 'react';
 import { Dimensions, type ListRenderItem, type ViewToken } from 'react-native';
 import {
   Button,
   FlatList,
-  type FlatListRef,
   Screen,
   Text,
   View,
+  type FlatListRef,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { Questionnaires } from './screens/Questionnaires';
 
 type Choice = {

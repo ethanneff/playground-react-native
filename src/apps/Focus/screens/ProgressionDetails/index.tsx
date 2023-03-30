@@ -1,17 +1,17 @@
-import {
-  type RouteProp,
-  useNavigation,
-  useRoute,
-} from '@react-navigation/native';
-import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { memo, useCallback } from 'react';
 import { Modal, Text } from '../../../../components';
+import {
+  useNavigation,
+  useRoute,
+  type RouteProp,
+  type StackNavigationProp,
+} from '../../../../conversions';
 import { type AuthStackRoutes } from '../../types';
 
 export const ProgressionDetails = memo(function ProgressionDetails() {
   const { navigate } =
     useNavigation<
-      NativeStackNavigationProp<AuthStackRoutes, 'progression-details'>
+      StackNavigationProp<AuthStackRoutes, 'progression-details'>
     >();
   const route = useRoute<RouteProp<AuthStackRoutes, 'progression-details'>>();
 

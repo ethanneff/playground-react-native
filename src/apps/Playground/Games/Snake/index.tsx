@@ -1,12 +1,12 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { Button, Screen, Text, View } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import { useColors } from '../../../../features';
 import { Board } from './Board';
 import { EndGame } from './EndGame';
 import { useClock } from './useClock';
 import { useGesture } from './useGesture';
-import { type BoardContext, getBoard, updateBoard } from './utils';
+import { getBoard, updateBoard, type BoardContext } from './utils';
 
 type State = 'error' | 'off' | 'on' | 'win';
 

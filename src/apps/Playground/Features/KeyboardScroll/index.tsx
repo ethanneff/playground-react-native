@@ -1,21 +1,21 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { memo, useCallback, useRef, useState } from 'react';
 import { Dimensions } from 'react-native';
 import {
   Button,
   KeyboardAwareScrollView,
   RecyclerFlatList,
-  type RecyclerFlatListRef,
   Screen,
   Text,
   TextInput,
   View,
+  type RecyclerFlatListRef,
 } from '../../../../components';
+import { useNavigation } from '../../../../conversions';
 import {
-  type ColorTheme,
   colorWithOpacity,
   spacing,
   useColors,
+  type ColorTheme,
 } from '../../../../features';
 
 const lorem =

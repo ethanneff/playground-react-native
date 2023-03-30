@@ -1,4 +1,4 @@
-import { type NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { type StackNavigationProp } from '../../conversions';
 export type PortfolioRoutes = {
   forgotPassword: undefined;
   home: undefined;
@@ -8,4 +8,4 @@ export type PortfolioRoutes = {
   settings: undefined;
 };
 
-export type PortfolioNavigation = NativeStackNavigationProp<PortfolioRoutes>;
+export type PortfolioNavigation = StackNavigationProp<PortfolioRoutes>;
