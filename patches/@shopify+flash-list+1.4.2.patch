@@ -1,0 +1,82 @@
+diff --git a/node_modules/@shopify/flash-list/dist/FlashList.js b/node_modules/@shopify/flash-list/dist/FlashList.js
+index 8b05441..fcb2a96 100644
+--- a/node_modules/@shopify/flash-list/dist/FlashList.js
++++ b/node_modules/@shopify/flash-list/dist/FlashList.js
+@@ -272,7 +272,7 @@ var FlashList = /** @class */ (function (_super) {
+         }
+         // `createAnimatedComponent` always passes a blank style object. To avoid warning while using AnimatedFlashList we've modified the check
+         // `style` prop can be an array. So we need to validate every object in array. Check: https://github.com/Shopify/flash-list/issues/651
+-        if (__DEV__ &&
++        if (react_native_1.Platform.OS !== 'web' && __DEV__ &&
+             Object.keys(react_native_1.StyleSheet.flatten((_b = this.props.style) !== null && _b !== void 0 ? _b : {})).length > 0) {
+             console.warn(Warnings_1.default.styleUnsupported);
+         }
+diff --git a/node_modules/@shopify/flash-list/src/FlashList.tsx b/node_modules/@shopify/flash-list/src/FlashList.tsx
+index 39e5c94..225cbee 100644
+--- a/node_modules/@shopify/flash-list/src/FlashList.tsx
++++ b/node_modules/@shopify/flash-list/src/FlashList.tsx
+@@ -1,11 +1,12 @@
+ import React from "react";
+ import {
+-  View,
+-  RefreshControl,
+   LayoutChangeEvent,
++  NativeScrollEvent,
+   NativeSyntheticEvent,
++  Platform,
++  RefreshControl,
+   StyleSheet,
+-  NativeScrollEvent,
++  View,
+ } from "react-native";
+ import {
+   BaseItemAnimator,
+@@ -17,24 +18,23 @@ import {
+ } from "recyclerlistview";
+ import StickyContainer, { StickyContainerProps } from "recyclerlistview/sticky";
+ 
+-import AutoLayoutView from "./native/auto-layout/AutoLayoutView";
+-import CellContainer from "./native/cell-container/CellContainer";
+-import { PureComponentWrapper } from "./PureComponentWrapper";
+-import GridLayoutProviderWithProps from "./GridLayoutProviderWithProps";
+-import CustomError from "./errors/CustomError";
+-import ExceptionList from "./errors/ExceptionList";
+-import WarningList from "./errors/Warnings";
+-import ViewabilityManager from "./viewability/ViewabilityManager";
+ import {
+   FlashListProps,
+   RenderTarget,
+   RenderTargetOptions,
+ } from "./FlashListProps";
++import GridLayoutProviderWithProps from "./GridLayoutProviderWithProps";
++import { PureComponentWrapper } from "./PureComponentWrapper";
++import CustomError from "./errors/CustomError";
++import ExceptionList from "./errors/ExceptionList";
++import WarningList from "./errors/Warnings";
++import AutoLayoutView from "./native/auto-layout/AutoLayoutView";
++import CellContainer from "./native/cell-container/CellContainer";
+ import {
++  PlatformConfig,
+   getCellContainerPlatformStyles,
+   getFooterContainer,
+   getItemAnimator,
+-  PlatformConfig,
+ } from "./native/config/PlatformHelper";
+ import {
+   ContentStyleExplicit,
+@@ -42,6 +42,7 @@ import {
+   hasUnsupportedKeysInContentContainerStyle,
+   updateContentStyle,
+ } from "./utils/ContentContainerUtils";
++import ViewabilityManager from "./viewability/ViewabilityManager";
+ 
+ interface StickyProps extends StickyContainerProps {
+   children: any;
+@@ -140,6 +141,7 @@ class FlashList<T> extends React.PureComponent<
+     // `createAnimatedComponent` always passes a blank style object. To avoid warning while using AnimatedFlashList we've modified the check
+     // `style` prop can be an array. So we need to validate every object in array. Check: https://github.com/Shopify/flash-list/issues/651
+     if (
++      Platform.OS !== 'web' &&
+       __DEV__ &&
+       Object.keys(StyleSheet.flatten(this.props.style ?? {})).length > 0
+     ) {
