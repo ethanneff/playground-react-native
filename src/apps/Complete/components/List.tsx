@@ -39,6 +39,7 @@ export const List = memo(function List({
         }}
         contentStyle={{ flexShrink: 1 }}
         elevation={4}
+        nonFlex
       >
         <ListHeader
           itemId={itemId}

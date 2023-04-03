@@ -53,13 +53,13 @@ export const Card = memo(function Card({
       borderColor: colors.background.primaryA,
       borderRadius,
       borderWidth,
-      // flex: nonFlex ? 0 : 1,
+      flex: nonFlex ? 0 : 1,
       ...shadow,
     },
     contents: {
       backgroundColor: `hsla(0,0%,100%,${opacity})`,
       borderRadius,
-      // flex: nonFlex ? 0 : 1,
+      flex: nonFlex ? 0 : 1,
       padding: spacing(2),
     },
   });
