@@ -37,7 +37,7 @@
     "@react-native-firebase/firestore": "14.12.0",
     "@react-native-firebase/remote-config": "14.12.0",
     "@react-native-google-signin/google-signin": "9.0.2",
-    "@react-native-masked-view/masked-view": "0.2.8",
+    "@react-native-masked-view/masked-view": "0.2.9",
     "@react-navigation/bottom-tabs": "6.5.7",
     "@react-navigation/native": "6.1.6",
     "@react-navigation/native-stack": "6.9.12",
