@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.75.6](https://github.com/ethanneff/playground-react-native/compare/v2.75.5...v2.75.6) (2023-03-30)
+
+
+### Bug Fixes
+
+* update deps ([baea025](https://github.com/ethanneff/playground-react-native/commit/baea0259c47524cce2c3550e62071449f7b66a65))
+
 ## [2.75.5](https://github.com/ethanneff/playground-react-native/compare/v2.75.4...v2.75.5) (2023-03-12)
 
 
