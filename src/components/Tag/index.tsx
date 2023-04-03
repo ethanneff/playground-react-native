@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { spacing, type TagColor, useColors } from '../../features';
+import { spacing, useColors, type TagColor } from '../../features';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
 
@@ -15,7 +15,7 @@ export const Tag = memo(function Tag({
   disabled,
   onPress,
   title,
-}: TagProps): JSX.Element {
+}: TagProps) {
   const colors = useColors();
   return (
     <TouchableOpacity

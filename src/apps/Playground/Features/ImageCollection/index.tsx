@@ -1,10 +1,10 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import {
-  FlatList,
-  type FlatListRenderItem,
+  FlashList,
   Image,
   Screen,
+  type FlashListRenderItem,
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { useColors } from '../../../../features';
@@ -53,7 +53,7 @@ export const ImageCollection = memo(function ImageCollection() {
     initialLoad();
   }, [initialLoad]);
 
-  const renderImage = useCallback<FlatListRenderItem<number>>(
+  const renderImage = useCallback<FlashListRenderItem<number>>(
     ({ item }) => (
       <Image
         height={columnWidth}
@@ -70,12 +70,11 @@ export const ImageCollection = memo(function ImageCollection() {
       onLeftPress={goBack}
       title="Images"
     >
-      <FlatList
+      <FlashList
         contentContainerStyle={{ backgroundColor: colors.background.secondary }}
         data={data}
         estimatedItemSize={width / numColumns}
         keyExtractor={keyExtractor}
-        keyboardShouldPersistTaps="handled"
         numColumns={numColumns}
         onEndReached={handleFetchMore}
         onRefresh={handleRefresh}

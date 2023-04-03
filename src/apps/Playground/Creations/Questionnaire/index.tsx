@@ -2,12 +2,12 @@ import React, { memo, useCallback, useRef, useState } from 'react';
 import { Dimensions, type ViewToken } from 'react-native';
 import {
   Button,
-  FlatList,
+  FlashList,
   Screen,
   Text,
   View,
-  type FlatListRef,
-  type FlatListRenderItem,
+  type FlashListRef,
+  type FlashListRenderItem,
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { Questionnaires } from './screens/Questionnaires';
@@ -61,7 +61,7 @@ export const Questionnaire = memo(function Questionnaire() {
   const [output, setOutput] = useState({});
   const currentIndex = useRef(0);
   const { goBack } = useNavigation();
-  const tableViewRef = useRef<FlatListRef<Data>>(null);
+  const tableViewRef = useRef<FlashListRef<Data>>(null);
   const handleViewableItemsChanged = useCallback(
     ({ viewableItems }: { viewableItems: ViewToken[] }) => {
       currentIndex.current = viewableItems[0]?.index ?? 0;
@@ -115,7 +115,7 @@ export const Questionnaire = memo(function Questionnaire() {
     [onProgress],
   );
 
-  const renderItem = useCallback<FlatListRenderItem<Data>>(
+  const renderItem = useCallback<FlashListRenderItem<Data>>(
     ({ item }) => {
       let items = <View flex={1} />;
 
@@ -168,11 +168,10 @@ export const Questionnaire = memo(function Questionnaire() {
       onLeftPress={goBack}
       title="Questionnaire"
     >
-      <FlatList
+      <FlashList
         data={data}
         estimatedItemSize={161}
         horizontal
-        keyboardShouldPersistTaps="handled"
         onRef={tableViewRef}
         onViewableItemsChanged={handleViewableItemsChanged}
         pagingEnabled

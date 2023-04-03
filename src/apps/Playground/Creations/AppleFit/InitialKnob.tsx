@@ -13,7 +13,7 @@ export const InitialKnob = ({
   radius,
   strokeWidth,
   theta,
-}: InitialKnobProps): JSX.Element => {
+}: InitialKnobProps) => {
   const visible = Number(theta < Math.PI * 2);
   const half = strokeWidth / 2;
   const styles = StyleSheet.create({

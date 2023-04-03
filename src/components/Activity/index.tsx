@@ -1,12 +1,12 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { View } from '../../components';
+import { FlashList, View, type FlashListRenderItem } from '../../components';
 import { spacing } from '../../features';
 import { Button } from '../Button';
 import { Card } from '../Card';
-import { FlatList, type FlatListRenderItem } from '../FlatList';
 import { Loader } from '../Loader';
 import { Text } from '../Text';
 import { TouchableOpacity } from '../TouchableOpacity';
+import { Week } from './Week';
 import { getApiActivity } from './api';
 import {
   type ActivityDay,
@@ -20,7 +20,6 @@ import {
   getSubmissionFormat,
   updateActivitySquares,
 } from './utils';
-import { Week } from './Week';
 
 type Props = {
   margin?: number;
@@ -97,7 +96,7 @@ export const Activity = memo(function Activity({
     [],
   );
 
-  const renderItem = useCallback<FlatListRenderItem<ActivityWeek>>(
+  const renderItem = useCallback<FlashListRenderItem<ActivityWeek>>(
     ({ item }) => (
       <Week
         item={item}
@@ -151,13 +150,12 @@ export const Activity = memo(function Activity({
         </>
       ) : (
         <>
-          <FlatList
+          <FlashList
             data={state.activity.matrix}
             estimatedItemSize={28}
             horizontal
             inverted
             keyExtractor={keyExtractor}
-            keyboardShouldPersistTaps="handled"
             renderItem={renderItem}
             showsHorizontalScrollIndicator={false}
           />

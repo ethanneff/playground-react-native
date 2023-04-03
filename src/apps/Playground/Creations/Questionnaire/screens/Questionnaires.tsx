@@ -1,13 +1,13 @@
 import React, { useCallback, useState } from 'react';
 import {
   Card,
-  FlatList,
+  FlashList,
   Icon,
   Modal,
   Text,
   TouchableOpacity,
   View,
-  type FlatListRenderItem,
+  type FlashListRenderItem,
 } from '../../../../../components';
 import { useRootDispatch, useRootSelector } from '../../../../../redux';
 import {
@@ -18,7 +18,7 @@ import {
   type Questionnaire,
 } from '../models';
 
-export const Questionnaires = (): JSX.Element => {
+export const Questionnaires = () => {
   const questionnaires = useRootSelector(getQuestionnaireArray);
   const selected = useRootSelector((state) => state.questionnaires.selected);
   const [actionSheet, setActionSheet] = useState(false);
@@ -41,7 +41,7 @@ export const Questionnaires = (): JSX.Element => {
   const handleItemMenu = useCallback(() => {
     setActionSheet((state) => !state);
   }, []);
-  const renderItem = useCallback<FlatListRenderItem<Questionnaire>>(
+  const renderItem = useCallback<FlashListRenderItem<Questionnaire>>(
     ({ item }) => {
       const { length } = item.questions;
       const subtitle = `${length} question${length === 1 ? '' : 's'}`;
@@ -80,12 +80,11 @@ export const Questionnaires = (): JSX.Element => {
 
   return (
     <>
-      <FlatList
+      <FlashList
         data={questionnaires}
         estimatedItemSize={161}
         extraData={selected}
         keyExtractor={keyExtractor}
-        keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
       />
       <TouchableOpacity onPress={handleCreate}>

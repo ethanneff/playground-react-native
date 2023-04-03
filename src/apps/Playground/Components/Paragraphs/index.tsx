@@ -19,7 +19,6 @@ export const Paragraphs = memo(function Paragraphs() {
           paddingHorizontal: spacing(4),
           paddingVertical: spacing(2),
         }}
-        keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
         style={{ backgroundColor: colors.background.secondary }}
       >

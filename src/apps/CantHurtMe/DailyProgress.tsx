@@ -1,12 +1,12 @@
 import dayjs, { type Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
 import {
-  FlatList,
-  type FlatListRenderItem,
+  FlashList,
   Icon,
   Text,
   TouchableOpacity,
   View,
+  type FlashListRenderItem,
 } from '../../components';
 import { spacing, useColors } from '../../features';
 
@@ -69,7 +69,7 @@ const ProgressItem = ({ item }: ProgressItemProps) => {
 export const DailyProgress = memo(function DailyProgress() {
   const data: Item[] = generateHistory();
 
-  const renderItem = useCallback<FlatListRenderItem<Item>>(
+  const renderItem = useCallback<FlashListRenderItem<Item>>(
     ({ item }) => <ProgressItem item={item} />,
     [],
   );
@@ -77,13 +77,12 @@ export const DailyProgress = memo(function DailyProgress() {
   const keyExtractor = useCallback((item: Item) => String(item.date), []);
 
   return (
-    <FlatList
+    <FlashList
       data={data}
       estimatedItemSize={56}
       horizontal
       inverted
       keyExtractor={keyExtractor}
-      keyboardShouldPersistTaps="handled"
       renderItem={renderItem}
     />
   );

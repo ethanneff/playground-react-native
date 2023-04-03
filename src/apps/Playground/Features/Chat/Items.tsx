@@ -1,9 +1,9 @@
 import React, { memo, useCallback, useEffect, useRef } from 'react';
 import {
-  FlatList,
+  FlashList,
   View,
-  type FlatListRef,
-  type FlatListRenderItem,
+  type FlashListRef,
+  type FlashListRenderItem,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
@@ -14,10 +14,10 @@ import {
 } from './Messages';
 
 export const Items = memo(function ChatMessageItems() {
-  const itemsRef = useRef<FlatListRef<Message>>(null);
+  const itemsRef = useRef<FlashListRef<Message>>(null);
   const colors = useColors();
   const messages = useRootSelector(getActiveChatMessagesOrderByCreatedAt);
-  const renderItem = useCallback<FlatListRenderItem<Message>>(
+  const renderItem = useCallback<FlashListRenderItem<Message>>(
     ({ item }) => (
       <Item
         item={item}
@@ -37,7 +37,7 @@ export const Items = memo(function ChatMessageItems() {
       backgroundColor="secondary"
       flex={1}
     >
-      <FlatList
+      <FlashList
         contentContainerStyle={{
           backgroundColor: colors.background.secondary,
           padding: spacing(4),

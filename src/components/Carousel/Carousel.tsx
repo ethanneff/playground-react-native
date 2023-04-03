@@ -1,8 +1,7 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { type ViewToken } from 'react-native';
-import { View } from '../../components';
+import { View, type FlashListRef } from '../../components';
 import { spacing } from '../../features';
-import { type FlatListRef } from '../FlatList';
 import { CarouselDots } from './CarouselDots';
 import { CarouselList } from './CarouselList';
 import { type CarouselSlide } from './types';
@@ -24,7 +23,7 @@ export const Carousel = memo(function Carousel({
     viewabilityConfig ? viewabilityConfig : { itemVisiblePercentThreshold: 50 },
   ).current;
   const loopingEnabled = useRef(false);
-  const flatList = useRef<FlatListRef<CarouselSlide>>(null);
+  const flatList = useRef<FlashListRef<CarouselSlide>>(null);
   const activeIndexRef = useRef(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const loopTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);

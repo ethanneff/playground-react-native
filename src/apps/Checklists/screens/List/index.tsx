@@ -1,12 +1,12 @@
 import React, { memo, useCallback } from 'react';
 import {
   Button,
-  FlatList,
-  type FlatListRenderItem,
+  FlashList,
   Icon,
   Screen,
   TouchableOpacity,
   View,
+  type FlashListRenderItem,
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
@@ -40,7 +40,7 @@ export default memo(function Checklist() {
     [dispatch, navigate],
   );
 
-  const renderItem = useCallback<FlatListRenderItem<ChecklistItem>>(
+  const renderItem = useCallback<FlashListRenderItem<ChecklistItem>>(
     ({ item }) => (
       <View style={{ alignItems: 'center', flexDirection: 'row' }}>
         <Icon
@@ -84,11 +84,10 @@ export default memo(function Checklist() {
       onLeftPress={navBack}
       title="Checklist"
     >
-      <FlatList
+      <FlashList
         data={items}
         estimatedItemSize={0}
         keyExtractor={keyExtractor}
-        keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
       />
       <TouchableOpacity onPress={navCreate}>

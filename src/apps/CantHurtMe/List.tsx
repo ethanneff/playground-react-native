@@ -3,18 +3,18 @@ import { StyleSheet } from 'react-native';
 import {
   Card,
   Icon,
-  MasonryFlatList,
+  MasonryFlashList,
   Spacing,
   Text,
   TouchableOpacity,
   View,
-  type FlatListRenderItem,
+  type FlashListRenderItem,
 } from '../../components';
 import { spacing } from '../../features';
 import { getLandscapeOrientation, useRootSelector } from '../../redux';
 import { DailyProgress } from './DailyProgress';
-import { app } from './data';
 import { ProfileLevel } from './ProfileLevel';
+import { app } from './data';
 
 type Props = {
   onProfilePress: () => void;
@@ -71,7 +71,7 @@ export const List = memo(function List({
 
   const onPress = useCallback(() => undefined, []);
 
-  const renderItem = useCallback<FlatListRenderItem<string>>(
+  const renderItem = useCallback<FlashListRenderItem<string>>(
     ({ index, item }) => {
       const data = app.goals.byId[item];
       return (
@@ -100,7 +100,7 @@ export const List = memo(function List({
       backgroundColor="secondary"
       flex={1}
     >
-      <MasonryFlatList
+      <MasonryFlashList
         ListHeaderComponent={
           <Header
             onProfilePress={onProfilePress}
@@ -111,7 +111,6 @@ export const List = memo(function List({
         data={app.goals.orderById}
         estimatedItemSize={20}
         keyExtractor={keyExtractor}
-        keyboardShouldPersistTaps="handled"
         numColumns={columns}
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}

@@ -86,7 +86,6 @@ export const ForgotPassword = memo(function ForgotPassword() {
           paddingHorizontal: spacing(8),
           paddingVertical: spacing(4),
         }}
-        keyboardShouldPersistTaps="handled"
       >
         <Text
           center

@@ -1,10 +1,10 @@
 import React, { memo, useCallback } from 'react';
 import {
   Button,
-  FlatList,
+  FlashList,
   Screen,
   Text,
-  type FlatListRenderItem,
+  type FlashListRenderItem,
 } from '../../../components';
 import { useNavigation } from '../../../conversions';
 import { spacing } from '../../../features';
@@ -25,7 +25,7 @@ export const Settings = memo(function PortfolioSettings() {
     [dispatch],
   );
 
-  const renderItem = useCallback<FlatListRenderItem<Theme>>(
+  const renderItem = useCallback<FlashListRenderItem<Theme>>(
     ({ item }) => (
       <Button
         color={currentTheme === item ? 'positive' : 'primaryA'}
@@ -52,13 +52,12 @@ export const Settings = memo(function PortfolioSettings() {
       onLeftPress={goBack}
       title="Settings"
     >
-      <FlatList
+      <FlashList
         ListHeaderComponent={renderHeader}
         contentContainerStyle={{ padding: spacing(4) }}
         data={themes}
         estimatedItemSize={51}
         keyExtractor={keyExtractor}
-        keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
       />
     </Screen>

@@ -1,11 +1,11 @@
 import React, { memo, useCallback } from 'react';
 import {
   Button,
-  FlatList,
+  FlashList,
   Icon,
   Screen,
   TouchableOpacity,
-  type FlatListRenderItem,
+  type FlashListRenderItem,
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
@@ -36,7 +36,7 @@ export default memo(function Checklists() {
     [dispatch],
   );
 
-  const renderItem = useCallback<FlatListRenderItem<Checklist>>(
+  const renderItem = useCallback<FlashListRenderItem<Checklist>>(
     ({ item }) => (
       <Button
         onLongPress={handleItemLongPress(item.id)}
@@ -62,11 +62,10 @@ export default memo(function Checklists() {
       onLeftPress={navBack}
       title="Checklists"
     >
-      <FlatList
+      <FlashList
         data={items}
         estimatedItemSize={0}
         keyExtractor={keyExtractor}
-        keyboardShouldPersistTaps="handled"
         renderItem={renderItem}
       />
       <TouchableOpacity onPress={navCreate}>

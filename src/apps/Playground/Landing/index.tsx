@@ -1,12 +1,12 @@
 import React, { memo, useCallback } from 'react';
 import {
   Card,
-  FlatList,
+  FlashList,
   Screen,
   Text,
   TouchableOpacity,
   View,
-  type FlatListRenderItem,
+  type FlashListRenderItem,
 } from '../../../components';
 import { useNavigation } from '../../../conversions';
 import { spacing } from '../../../features';
@@ -22,7 +22,7 @@ export const Landing = memo(function Playground() {
     },
     [navigate],
   );
-  const renderItem = useCallback<FlatListRenderItem<string>>(
+  const renderItem = useCallback<FlashListRenderItem<string>>(
     ({ item }) => (
       <TouchableOpacity onPress={navToItem(item)}>
         <View style={{ paddingVertical: spacing(2) }}>
@@ -60,7 +60,7 @@ export const Landing = memo(function Playground() {
               description="app components"
               title="storybook"
             />
-            <FlatList
+            <FlashList
               contentContainerStyle={{
                 paddingBottom: spacing(2),
                 paddingHorizontal: spacing(2),
@@ -68,7 +68,6 @@ export const Landing = memo(function Playground() {
               data={landingRoutes.storybook}
               estimatedItemSize={33}
               keyExtractor={keyExtractor}
-              keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
             />
           </Card>
@@ -77,7 +76,7 @@ export const Landing = memo(function Playground() {
               description="polished modules"
               title="features"
             />
-            <FlatList
+            <FlashList
               contentContainerStyle={{
                 paddingBottom: spacing(2),
                 paddingHorizontal: spacing(2),
@@ -85,7 +84,6 @@ export const Landing = memo(function Playground() {
               data={landingRoutes.features}
               estimatedItemSize={33}
               keyExtractor={keyExtractor}
-              keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
             />
           </Card>
@@ -100,7 +98,7 @@ export const Landing = memo(function Playground() {
               description="interactive demos"
               title="games"
             />
-            <FlatList
+            <FlashList
               contentContainerStyle={{
                 paddingBottom: spacing(2),
                 paddingHorizontal: spacing(2),
@@ -108,7 +106,6 @@ export const Landing = memo(function Playground() {
               data={landingRoutes.games}
               estimatedItemSize={33}
               keyExtractor={keyExtractor}
-              keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
             />
           </Card>
@@ -117,7 +114,7 @@ export const Landing = memo(function Playground() {
               description="misc ideas"
               title="creations"
             />
-            <FlatList
+            <FlashList
               contentContainerStyle={{
                 paddingBottom: spacing(2),
                 paddingHorizontal: spacing(2),
@@ -125,7 +122,6 @@ export const Landing = memo(function Playground() {
               data={landingRoutes.creations}
               estimatedItemSize={33}
               keyExtractor={keyExtractor}
-              keyboardShouldPersistTaps="handled"
               renderItem={renderItem}
             />
           </Card>

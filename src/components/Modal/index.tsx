@@ -137,7 +137,6 @@ export const Modal = memo(function Modal({
               contentContainerStyle={{
                 padding: spacing(2),
               }}
-              keyboardShouldPersistTaps="handled"
               showsVerticalScrollIndicator={false}
             >
               {children}

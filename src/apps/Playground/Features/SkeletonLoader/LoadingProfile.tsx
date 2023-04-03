@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, SkeletonLoader, View } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 
-export const LoadingProfile = (): JSX.Element => {
+export const LoadingProfile = () => {
   const colors = useColors();
   const banner = spacing(24);
 

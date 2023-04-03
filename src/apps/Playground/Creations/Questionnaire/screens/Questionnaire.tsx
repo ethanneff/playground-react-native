@@ -1,20 +1,20 @@
 import React, { useCallback } from 'react';
 import {
   Card,
-  FlatList,
+  FlashList,
   Icon,
   Text,
   TouchableOpacity,
   View,
-  type FlatListRenderItem,
+  type FlashListRenderItem,
 } from '../../../../../components';
 import {
   questionnairesInitialState,
   type Questionnaire as QuestionnaireType,
 } from '../models';
 
-export const Questionnaire = (): JSX.Element => {
-  const renderItem = useCallback<FlatListRenderItem<QuestionnaireType>>(
+export const Questionnaire = () => {
+  const renderItem = useCallback<FlashListRenderItem<QuestionnaireType>>(
     ({ item }) => {
       const { length } = item.questions;
       const subtitle = `${length} question${length === 1 ? '' : 's'}`;
@@ -49,11 +49,10 @@ export const Questionnaire = (): JSX.Element => {
   const keyExtractor = useCallback((item: QuestionnaireType) => item.id, []);
 
   return (
-    <FlatList
+    <FlashList
       data={Object.values(questionnairesInitialState.items)}
       estimatedItemSize={161}
       keyExtractor={keyExtractor}
-      keyboardShouldPersistTaps="handled"
       renderItem={renderItem}
     />
   );

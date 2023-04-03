@@ -1,13 +1,16 @@
-import { type FlashList } from '@shopify/flash-list';
-import React, { memo, useCallback, type Ref } from 'react';
+import React, { memo, useCallback, type RefObject } from 'react';
 import { type ViewToken } from 'react-native';
 import { getWidth, useRootSelector } from '../../redux';
-import { FlatList, type FlatListRenderItem } from '../FlatList';
+import {
+  FlashList,
+  type FlashListType,
+  type FlashListRenderItem,
+} from '../FlashList';
 import { CarouselItem } from './CarouselItem';
 import { type CarouselSlide } from './types';
 
 type ListProps = {
-  onRef?: Ref<FlashList<CarouselSlide>>;
+  onRef?: RefObject<FlashListType<CarouselSlide>>;
   onViewableItemsChanged: (props: { viewableItems: ViewToken[] }) => void;
   slides: CarouselSlide[];
   viewabilityConfig?: Record<string, unknown>;
@@ -21,7 +24,7 @@ export const CarouselList = memo(function CarouselListMemo({
 }: ListProps) {
   const width = useRootSelector(getWidth);
 
-  const renderItem = useCallback<FlatListRenderItem<CarouselSlide>>(
+  const renderItem = useCallback<FlashListRenderItem<CarouselSlide>>(
     ({ item }) => (
       <CarouselItem
         item={item}
@@ -37,7 +40,7 @@ export const CarouselList = memo(function CarouselListMemo({
   );
 
   return (
-    <FlatList
+    <FlashList
       data={slides}
       estimatedItemSize={width}
       horizontal

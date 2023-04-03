@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from '../Text';
 
-export const Slider = (): JSX.Element => {
+export const Slider = () => {
   return <Text title="missing slider" />;
 };

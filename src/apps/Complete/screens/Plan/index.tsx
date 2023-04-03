@@ -21,7 +21,6 @@ export const Plan = memo(function Plan() {
   const [footerHeight, setFooterHeight] = useState(0);
   const keyboardFooter = keyboardHeight ? footerHeight : 0;
   const maxHeight = containerHeight - keyboardHeight + keyboardFooter;
-
   const itemId = useRootSelector(getInbox);
   if (!itemId) throw new Error('missing item id');
   const noItemChildren = useRootSelector(
@@ -52,6 +51,7 @@ export const Plan = memo(function Plan() {
         backgroundColor={colors.background.secondary}
         onLayout={onLayout('container')}
       >
+        {/* TODO: use a <Board /> similar screens/project */}
         <List
           footer={
             <View onLayout={onLayout('footer')}>

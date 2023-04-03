@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, SkeletonLoader, View } from '../../../../components';
 import { spacing } from '../../../../features';
 
-export const LoadingSection = (): JSX.Element => {
+export const LoadingSection = () => {
   return (
     <Card containerStyle={{ marginBottom: spacing(4) }}>
       <View>

@@ -1,11 +1,11 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import {
-  FlatList,
-  type FlatListRenderItem,
+  FlashList,
   Loader,
   Screen,
   View,
+  type FlashListRenderItem,
 } from '../../../../components';
 import { spacing, useLayout } from '../../../../features';
 import { type Item } from '../../types';
@@ -40,7 +40,7 @@ export const Interval = memo(function Interval() {
     },
   });
 
-  const renderItem = useCallback<FlatListRenderItem<Item>>(
+  const renderItem = useCallback<FlashListRenderItem<Item>>(
     ({ index, item }) => (
       <ListItem
         currentItem={getCurrentItem(item)}
@@ -73,14 +73,13 @@ export const Interval = memo(function Interval() {
           flex={1}
           style={styles.list}
         >
-          <FlatList
+          <FlashList
             contentContainerStyle={{ paddingVertical: spacing(4) }}
             data={items}
             estimatedItemSize={55}
             initialScrollIndex={initialIndex}
             inverted
             keyExtractor={keyExtractor}
-            keyboardShouldPersistTaps="handled"
             onEndReached={addMoreItems}
             onEndReachedThreshold={0.5}
             renderItem={renderItem}

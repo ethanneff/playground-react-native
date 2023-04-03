@@ -6,7 +6,7 @@ type Props = {
   title: string;
 };
 
-export const Section = ({ children, title }: Props): JSX.Element => {
+export const Section = ({ children, title }: Props) => {
   return (
     <Card>
       <Text

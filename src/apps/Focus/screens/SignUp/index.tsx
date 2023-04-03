@@ -175,7 +175,6 @@ export const SignUp = memo(function SignUp() {
           paddingHorizontal: spacing(8),
           paddingVertical: spacing(4),
         }}
-        keyboardShouldPersistTaps="handled"
       >
         <View>
           <Text

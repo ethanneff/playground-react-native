@@ -4,12 +4,12 @@ import { Image, type ImageSourcePropType } from 'react-native';
 import {
   Button,
   Card,
-  MasonryFlatList,
+  MasonryFlashList,
   Screen,
   Slider,
   Text,
   View,
-  type FlatListRenderItem,
+  type FlashListRenderItem,
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
@@ -143,7 +143,7 @@ export const Themes = memo(function Themes() {
   const columns = landscape ? 5 : 2;
   const onPress = useCallback(() => undefined, []);
 
-  const renderItem = useCallback<FlatListRenderItem<CardItem>>(
+  const renderItem = useCallback<FlashListRenderItem<CardItem>>(
     ({ item }) => {
       return (
         <Card
@@ -200,7 +200,7 @@ export const Themes = memo(function Themes() {
       onLeftPress={goBack}
       title="Themes"
     >
-      <MasonryFlatList
+      <MasonryFlashList
         ListHeaderComponent={
           <Header
             elevation={elevation}

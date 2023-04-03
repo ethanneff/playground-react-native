@@ -25,15 +25,20 @@ export const List = memo(function List({
   const horizontal = orientation === 'horizontal';
   const padding = horizontal ? 0 : completeConfig.padding;
   const margin = horizontal ? 'right' : 'bottom';
+
   return (
-    <View style={{ flex: 1, maxHeight, padding }}>
+    <View
+      padding={padding}
+      style={{ maxHeight }}
+    >
       <Card
         containerStyle={{
+          flexShrink: 1,
           marginRight: margin === 'right' ? completeConfig.padding : 0,
           width: listWidth,
         }}
+        contentStyle={{ flexShrink: 1 }}
         elevation={4}
-        nonFlex
       >
         <ListHeader
           itemId={itemId}

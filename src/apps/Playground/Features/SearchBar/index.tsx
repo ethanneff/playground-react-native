@@ -1,13 +1,13 @@
 import React, { memo, useCallback, useState } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import {
-  FlatList,
+  FlashList,
   Icon,
   Input,
   Screen,
   Text,
   View,
-  type FlatListRenderItem,
+  type FlashListRenderItem,
   type IconName,
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
@@ -96,7 +96,7 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     },
   });
 
-  const renderItem = useCallback<FlatListRenderItem<Data>>(
+  const renderItem = useCallback<FlashListRenderItem<Data>>(
     ({ item }) => (
       <Text
         style={styles.item}
@@ -137,11 +137,10 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
         </View>
       </View>
       <Animated.View style={{ backgroundColor: fadeContainer, flex: 1 }}>
-        <FlatList
+        <FlashList
           data={data}
           estimatedItemSize={65}
           keyExtractor={keyExtractor}
-          keyboardShouldPersistTaps="handled"
           renderItem={renderItem}
         />
       </Animated.View>

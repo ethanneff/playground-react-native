@@ -1,5 +1,6 @@
 import React, { memo, useCallback } from 'react';
-import { FlatList, View, type FlatListRenderItem } from '../../../components';
+import { FlatList, type ListRenderItem } from 'react-native';
+import { View } from '../../../components';
 import { useRootSelector } from '../../../redux';
 import { completeConfig } from '../utils';
 import { AddItem } from './AddItem';
@@ -31,7 +32,7 @@ export const Board = memo(function Board({
     );
   }, [board.id, listWidth]);
 
-  const renderList = useCallback<FlatListRenderItem<string>>(
+  const renderList = useCallback<ListRenderItem<string>>(
     ({ item }) => {
       return (
         <List
@@ -60,7 +61,6 @@ export const Board = memo(function Board({
           contentContainerStyle={{ padding: completeConfig.padding }}
           data={board.children}
           decelerationRate="fast"
-          estimatedItemSize={100}
           horizontal
           keyExtractor={getItemId}
           keyboardShouldPersistTaps="handled"

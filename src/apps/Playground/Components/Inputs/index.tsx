@@ -51,7 +51,6 @@ export const Inputs = memo(function Inputs() {
           paddingHorizontal: spacing(4),
           paddingVertical: spacing(2),
         }}
-        keyboardShouldPersistTaps="handled"
         style={{
           backgroundColor: colors.background.secondary,
         }}

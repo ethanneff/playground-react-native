@@ -2,12 +2,12 @@ import dayjs, { type Dayjs } from 'dayjs';
 import isToday from 'dayjs/plugin/isToday';
 import React, { memo, useCallback } from 'react';
 import {
-  FlatList,
-  type FlatListRenderItem,
+  FlashList,
+  Spacing,
   Text,
   TouchableOpacity,
   View,
-  Spacing,
+  type FlashListRenderItem,
 } from '../../../../components';
 import {
   useNavigation,
@@ -37,7 +37,7 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
     navigate('progression-details', { category: categoryPress });
   };
 
-  const renderItem = useCallback<FlatListRenderItem<number>>(
+  const renderItem = useCallback<FlashListRenderItem<number>>(
     ({ index }) => {
       const historical = day.subtract(index, 'day');
       const weekend = isWeekend(historical);
@@ -112,7 +112,7 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
         ) : null}
       </View>
       <Spacing padding={1} />
-      <FlatList
+      <FlashList
         data={mockData}
         estimatedItemSize={28}
         horizontal

@@ -9,7 +9,7 @@ export * from './Collapsible';
 export * from './Content';
 export * from './ErrorBoundary';
 export * from './FastImage';
-export * from './FlatList';
+export * from './FlashList';
 export * from './Icon';
 export * from './Image';
 export * from './Input';

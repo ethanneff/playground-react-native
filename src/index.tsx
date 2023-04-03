@@ -5,7 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { enableFreeze } from 'react-native-screens';
 import { ErrorBoundary, Toast, toastConfig } from './components';
 import { GestureHandlerProvider } from './conversions';
-import { ApplicationProvider, debugDev, NavigationProvider } from './features';
+import { ApplicationProvider, NavigationProvider, debugDev } from './features';
 import { ReduxProvider } from './redux/ReduxProvider';
 
 LogBox.ignoreLogs(['UNSAFE_']);
@@ -13,7 +13,7 @@ LogBox.ignoreLogs(['UNSAFE_']);
 debugDev();
 enableFreeze(true);
 
-export const Main = (): JSX.Element => {
+export const Main = () => {
   return (
     <StrictMode>
       <SafeAreaProvider>

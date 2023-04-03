@@ -7,10 +7,7 @@ type Props = {
   size: number;
 };
 
-export const AngularGradient = ({
-  colors: [start, end],
-  size,
-}: Props): JSX.Element => {
+export const AngularGradient = ({ colors: [start, end], size }: Props) => {
   const borderRadius = size / 2;
   const styles = StyleSheet.create({
     container: {

@@ -9,7 +9,7 @@ type BoardProps = {
 };
 
 // TODO: figure out why board is updating with memo
-export const Board = ({ matrix }: BoardProps): JSX.Element => {
+export const Board = ({ matrix }: BoardProps) => {
   return (
     <View
       flex={1}
