@@ -96,7 +96,7 @@ export const SplashScreen = memo(function SplashScreenMemo({
   return (
     <View style={styles.container}>
       <Animated.View style={primaryColorStyles} />
-      {/* @ts-expect-error JSX element class does not support attributes because it does not have a 'props' property. */}
+
       <MaskedView
         maskElement={
           <Animated.View style={styles.centered}>
