@@ -70,7 +70,6 @@ v3
 
 * Bonus
 
-- [ ] Notification.show(), alert.show(), actionsheet.show()
 - [ ] remove Questionnaire
 - [ ] remove Checklist
 - [x] migrate everything to libs (wont do)
@@ -83,6 +82,7 @@ v3
 - [ ] update redux (toolkit, slices based on apps)
 - [ ] remove dayjs
 - [ ] make modal global like toast (https://github.com/timolins/react-hot-toast)
+- [ ] Notification.show(), alert.show(), actionsheet.show()
 
   ```ts
   const Modal = {};

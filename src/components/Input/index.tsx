@@ -16,11 +16,11 @@ import {
 } from 'react-native';
 import { View } from '../../components';
 import { GestureTextInput } from '../../conversions';
-import { fontSizes, SoundManager, spacing, useColors } from '../../features';
+import { SoundManager, fontSizes, spacing, useColors } from '../../features';
 import { Icon, type IconName } from '../Icon';
+import { Pressable } from '../Pressable';
 import { Text } from '../Text';
 import { type TextInputRef } from '../TextInput';
-import { Pressable } from '../Pressable';
 
 // styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 

@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { v4 } from 'uuid';
-import { Icon, type IconName, Pressable, View } from '../../components';
-import { type MonoMultiColor, spacing } from '../../features';
+import { Icon, Pressable, View, type IconName } from '../../components';
+import { spacing, type MonoMultiColor } from '../../features';
 
 type Props = {
   colorFilled?: keyof MonoMultiColor;

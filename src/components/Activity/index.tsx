@@ -4,8 +4,8 @@ import { spacing } from '../../features';
 import { Button } from '../Button';
 import { Card } from '../Card';
 import { Loader } from '../Loader';
-import { Text } from '../Text';
 import { Pressable } from '../Pressable';
+import { Text } from '../Text';
 import { Week } from './Week';
 import { getApiActivity } from './api';
 import {

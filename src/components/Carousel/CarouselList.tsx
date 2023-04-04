@@ -3,8 +3,8 @@ import { type ViewToken } from 'react-native';
 import { getWidth, useRootSelector } from '../../redux';
 import {
   FlashList,
-  type FlashListType,
   type FlashListRenderItem,
+  type FlashListType,
 } from '../FlashList';
 import { CarouselItem } from './CarouselItem';
 import { type CarouselSlide } from './types';

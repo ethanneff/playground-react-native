@@ -4,8 +4,8 @@ import {
   FlashList,
   Icon,
   Modal,
-  Text,
   Pressable,
+  Text,
   View,
   type FlashListRenderItem,
 } from '../../../../../components';

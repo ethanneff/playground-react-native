@@ -1,8 +1,8 @@
 import React, { type ReactNode, type RefObject } from 'react';
 import {
-  StyleSheet,
   // eslint-disable-next-line no-restricted-imports
   View as Original,
+  StyleSheet,
   type AccessibilityRole,
   type FlexAlignType,
   type LayoutChangeEvent,

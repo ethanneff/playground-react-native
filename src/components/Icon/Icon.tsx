@@ -13,8 +13,8 @@ import {
   type MonoMultiColor,
 } from '../../features';
 import { Badge } from './Badge';
-import { type IconName } from './config';
 import { Source } from './Source';
+import { type IconName } from './config';
 import { getColor } from './utils';
 
 /*

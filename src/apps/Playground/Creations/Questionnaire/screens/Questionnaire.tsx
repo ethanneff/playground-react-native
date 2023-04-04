@@ -3,8 +3,8 @@ import {
   Card,
   FlashList,
   Icon,
-  Text,
   Pressable,
+  Text,
   View,
   type FlashListRenderItem,
 } from '../../../../../components';

@@ -1,9 +1,9 @@
-import React, { type ReactNode, useCallback, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState, type ReactNode } from 'react';
 import { Animated, Easing } from 'react-native';
 import { spacing, useColors, useDriver } from '../../features';
 import { Icon } from '../Icon';
-import { Text } from '../Text';
 import { Pressable } from '../Pressable';
+import { Text } from '../Text';
 import { View } from '../View';
 
 type Props = {

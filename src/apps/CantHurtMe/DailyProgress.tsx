@@ -3,8 +3,8 @@ import React, { memo, useCallback, useState } from 'react';
 import {
   FlashList,
   Icon,
-  Text,
   Pressable,
+  Text,
   View,
   type FlashListRenderItem,
 } from '../../components';

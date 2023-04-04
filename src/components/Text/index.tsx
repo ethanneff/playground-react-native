@@ -6,9 +6,9 @@ import {
   type TextStyle,
 } from 'react-native';
 import {
+  SoundManager,
   fontWeight,
   getFontStyles,
-  SoundManager,
   useColors,
   useDriver,
   type FontEmphasis,

@@ -6,13 +6,7 @@ import React, {
   type ReactNode,
 } from 'react';
 import { Animated, StyleSheet } from 'react-native';
-import {
-  SoundManager,
-  spacing,
-  useColors,
-  useDriver,
-  useDropShadow,
-} from '../../features';
+import { spacing, useColors, useDriver, useDropShadow } from '../../features';
 import { useRootSelector } from '../../redux';
 import { Card } from '../Card';
 import { Pressable } from '../Pressable';
@@ -103,7 +97,7 @@ export const Modal = memo(function Modal({
     (callback?: () => void) => async () => {
       if (!callback || preventDismissSpam.current) return;
       preventDismissSpam.current = true;
-      SoundManager.play('tap');
+
       await animate(0);
       callback();
     },
