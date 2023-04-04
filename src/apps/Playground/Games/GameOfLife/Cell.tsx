@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { TouchableOpacity } from '../../../../components';
+import { Pressable } from '../../../../components';
 import { useColors } from '../../../../features';
 import {
   getSmallestDimension,
@@ -29,9 +29,8 @@ export const Cell = memo(function Cell({ x, y }: Props) {
   );
 
   return (
-    <TouchableOpacity
-      onPress={onItemPress(x, y)}
-      style={{
+    <Pressable
+      containerStyle={{
         backgroundColor: selected
           ? colors.background.accent
           : colors.background.primaryA,
@@ -40,6 +39,7 @@ export const Cell = memo(function Cell({ x, y }: Props) {
         height: size,
         width: size,
       }}
+      onPress={onItemPress(x, y)}
     />
   );
 });

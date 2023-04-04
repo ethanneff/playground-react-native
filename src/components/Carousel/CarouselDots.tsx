@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import { View } from '..';
 import { spacing, useColors } from '../../features';
-import { TouchableOpacity } from '../TouchableOpacity';
+import { Pressable } from '../Pressable';
 
 type DotsProps = {
   activeIndex: number;
@@ -29,20 +29,20 @@ export const CarouselDots = memo(function Dots({
       }}
     >
       {dots.map((dot, index) => (
-        <TouchableOpacity
-          key={`dot-${dot}`}
-          onPress={onDotPress(index)}
-          style={{
+        <Pressable
+          containerStyle={{
             backgroundColor:
               activeIndex === index
                 ? colors.text.secondary
                 : colors.text.disabled,
-            borderRadius: dotSize,
+            borderRadius: dotSize / 2,
             height: dotSize,
             marginBottom: spacing(2),
             marginHorizontal: spacing(1),
             width: dotSize,
           }}
+          key={`dot-${dot}`}
+          onPress={onDotPress(index)}
         />
       ))}
     </View>

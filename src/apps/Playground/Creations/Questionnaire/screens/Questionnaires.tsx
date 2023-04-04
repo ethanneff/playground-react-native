@@ -5,7 +5,7 @@ import {
   Icon,
   Modal,
   Text,
-  TouchableOpacity,
+  Pressable,
   View,
   type FlashListRenderItem,
 } from '../../../../../components';
@@ -66,9 +66,9 @@ export const Questionnaires = () => {
                 type="caption"
               />
             </View>
-            <TouchableOpacity onPress={handleItemMenu}>
+            <Pressable onPress={handleItemMenu}>
               <Icon name="dots-horizontal" />
-            </TouchableOpacity>
+            </Pressable>
           </View>
         </Card>
       );
@@ -87,7 +87,7 @@ export const Questionnaires = () => {
         keyExtractor={keyExtractor}
         renderItem={renderItem}
       />
-      <TouchableOpacity onPress={handleCreate}>
+      <Pressable onPress={handleCreate}>
         <Icon
           color="primaryA"
           fab
@@ -99,7 +99,7 @@ export const Questionnaires = () => {
             right: 0,
           }}
         />
-      </TouchableOpacity>
+      </Pressable>
       {actionSheet ? (
         <Modal onBackgroundPress={handleActionSheetClose}>
           <Text title="hello" />

@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
 import { spacing } from '../../features';
 import { Icon, type IconName } from '../Icon';
-import { TouchableOpacity } from '../TouchableOpacity';
+import { Pressable } from '../Pressable';
 
 type Props = {
   icon?: IconName;
@@ -22,10 +22,10 @@ export const NavButton = memo(function NavButton({
     buttonRight: { alignSelf: 'flex-end' },
   });
   return (
-    <TouchableOpacity
+    <Pressable
+      containerStyle={styles.button}
       disabled={!onPress}
       onPress={onPress}
-      style={styles.button}
     >
       <Icon
         color="secondary"
@@ -35,6 +35,6 @@ export const NavButton = memo(function NavButton({
         style={notLeft ? styles.buttonRight : null}
         testID={testID}
       />
-    </TouchableOpacity>
+    </Pressable>
   );
 });

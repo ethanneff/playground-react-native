@@ -1,11 +1,5 @@
 import React, { memo } from 'react';
-import {
-  Icon,
-  Text,
-  TouchableOpacity,
-  View,
-  type IconName,
-} from '../../components';
+import { Icon, Pressable, Text, View, type IconName } from '../../components';
 import { spacing } from '../Config';
 import { useColors } from '../Theme';
 
@@ -22,25 +16,24 @@ export const LoginButton = memo(function LoginButton({
 }: Props) {
   const colors = useColors();
   return (
-    <TouchableOpacity
+    <Pressable
       containerStyle={{
-        alignItems: 'center',
-      }}
-      onPress={onPress}
-      style={{
         borderColor: colors.border.primaryA,
         borderRadius: spacing(10),
         borderWidth: 2,
-
         marginBottom: spacing(2),
       }}
+      contentStyle={{
+        alignItems: 'center',
+      }}
+      onPress={onPress}
     >
       <View
         alignItems="center"
         flexDirection="row"
         style={{
-          paddingHorizontal: spacing(4),
-          paddingVertical: spacing(2),
+          gap: spacing(4),
+          padding: spacing(4),
         }}
       >
         <Icon name={icon} />
@@ -50,6 +43,6 @@ export const LoginButton = memo(function LoginButton({
           type="button"
         />
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 });

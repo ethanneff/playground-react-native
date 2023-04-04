@@ -48,8 +48,8 @@ export const Inputs = memo(function Inputs() {
     >
       <KeyboardAwareScrollView
         contentContainerStyle={{
-          paddingHorizontal: spacing(4),
-          paddingVertical: spacing(2),
+          gap: spacing(4),
+          padding: spacing(4),
         }}
         style={{
           backgroundColor: colors.background.secondary,
@@ -105,7 +105,7 @@ export const Inputs = memo(function Inputs() {
             title="non border"
             type="h4"
           />
-          <Spacing padding={2} />
+          <Spacing padding={spacing(2)} />
           <TextInput
             autoCapitalize="words"
             autoComplete="name"
@@ -121,7 +121,7 @@ export const Inputs = memo(function Inputs() {
             textContentType="none"
             value={form.name}
           />
-          <Spacing padding={2} />
+          <Spacing padding={spacing(2)} />
           <TextInput
             autoCapitalize="none"
             autoComplete="username"
@@ -137,7 +137,7 @@ export const Inputs = memo(function Inputs() {
             textContentType="username"
             value={form.email}
           />
-          <Spacing padding={2} />
+          <Spacing padding={spacing(2)} />
           <TextInput
             autoCapitalize="none"
             autoComplete="password"
@@ -153,7 +153,7 @@ export const Inputs = memo(function Inputs() {
             textContentType="password"
             value={form.password}
           />
-          <Spacing padding={2} />
+          <Spacing padding={spacing(2)} />
           <Button
             center
             color="accent"

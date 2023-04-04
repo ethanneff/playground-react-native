@@ -8,13 +8,12 @@ import {
   Spacing,
   View,
 } from '../../../../components';
-import { useColors, useKeyboardHeight, useLayout } from '../../../../features';
+import { spacing, useKeyboardHeight, useLayout } from '../../../../features';
 import { useRootSelector } from '../../../../redux';
 import { List } from '../../components';
 import { getInbox } from '../../models';
 
 export const Plan = memo(function Plan() {
-  const colors = useColors();
   const { tabBarEdges } = useLayout();
   const keyboardHeight = useKeyboardHeight();
   const [containerHeight, setContainerHeight] = useState(0);
@@ -48,17 +47,17 @@ export const Plan = memo(function Plan() {
       title="Plan"
     >
       <KeyboardHandler
-        backgroundColor={colors.background.secondary}
+        backgroundColor="secondary"
         onLayout={onLayout('container')}
       >
         {/* TODO: use a <Board /> similar screens/project */}
         <List
           footer={
             <View onLayout={onLayout('footer')}>
-              <Spacing padding={2} />
+              <Spacing padding={spacing(2)} />
               <Card
-                elevation={4}
-                nonFlex
+                containerStyle={{ flex: 0 }}
+                contentStyle={{ flex: 0 }}
               >
                 <Button
                   center

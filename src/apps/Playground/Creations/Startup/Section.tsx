@@ -1,5 +1,6 @@
 import React, { type ReactNode } from 'react';
 import { Card, Spacing, Text } from '../../../../components';
+import { spacing } from '../../../../features';
 
 type Props = {
   children: ReactNode;
@@ -14,7 +15,7 @@ export const Section = ({ children, title }: Props) => {
         title={title}
         type="h4"
       />
-      <Spacing padding={2} />
+      <Spacing padding={spacing(2)} />
       {children}
     </Card>
   );

@@ -62,20 +62,20 @@ export const ItemDetail = memo(function ItemDetail() {
             title={item.title}
             titleEditable={item.editable}
           />
-          <Card elevation={4}>
+          <Card>
             <View padding={spacing(2)}>
               <ItemDetailHeader title="Reminders" />
               <Text
                 style={{ padding: spacing(2) }}
                 title={item.tags.join(', ')}
               />
-              <Spacing padding={2} />
+              <Spacing padding={spacing(2)} />
               <ItemDetailHeader title="Tags" />
               <Text
                 style={{ padding: spacing(2) }}
                 title={item.tags.join(', ')}
               />
-              <Spacing padding={2} />
+              <Spacing padding={spacing(2)} />
               <ItemDetailHeader title="Comments" />
               <Text
                 style={{ padding: spacing(2) }}
@@ -83,26 +83,26 @@ export const ItemDetail = memo(function ItemDetail() {
               />
             </View>
           </Card>
-          <Card elevation={4}>
+          <Card>
             <View padding={spacing(2)}>
               <ItemDetailHeader title="Type" />
               <Text
                 style={{ padding: spacing(2) }}
                 title={item.type}
               />
-              <Spacing padding={2} />
+              <Spacing padding={spacing(2)} />
               <ItemDetailHeader title="Creator" />
               <Text
                 style={{ padding: spacing(2) }}
                 title={item.userId}
               />
-              <Spacing padding={2} />
+              <Spacing padding={spacing(2)} />
               <ItemDetailHeader title="Created" />
               <RelativeDate
                 date={item.createdAt}
                 style={{ padding: spacing(2) }}
               />
-              <Spacing padding={2} />
+              <Spacing padding={spacing(2)} />
               <ItemDetailHeader title="Updated" />
               <RelativeDate
                 date={item.updatedAt}
@@ -139,7 +139,7 @@ export const ItemDetail = memo(function ItemDetail() {
               />
             </View>
           ) : (
-            <Card elevation={4}>
+            <Card>
               <Button
                 center
                 onPress={goBack}

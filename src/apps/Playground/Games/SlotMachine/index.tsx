@@ -173,7 +173,7 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
             />
           </Animated.View>
           <View paddingHorizontal={spacing(10)}>
-            <Spacing padding={4} />
+            <Spacing padding={spacing(4)} />
             <View
               alignItems="center"
               flexDirection="row"
@@ -192,7 +192,7 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
                 title="💰 add $50 💰"
               />
             </View>
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <Button
               buttonStyle={{
                 padding: spacing(4),

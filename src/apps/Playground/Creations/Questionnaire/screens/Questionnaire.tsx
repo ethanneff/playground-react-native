@@ -4,7 +4,7 @@ import {
   FlashList,
   Icon,
   Text,
-  TouchableOpacity,
+  Pressable,
   View,
   type FlashListRenderItem,
 } from '../../../../../components';
@@ -36,9 +36,9 @@ export const Questionnaire = () => {
                 type="caption"
               />
             </View>
-            <TouchableOpacity>
+            <Pressable>
               <Icon name="dots-horizontal" />
-            </TouchableOpacity>
+            </Pressable>
           </View>
         </Card>
       );

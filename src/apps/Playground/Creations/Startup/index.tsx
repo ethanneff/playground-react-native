@@ -110,7 +110,7 @@ export const Startup = memo(function PlaygroundStartup() {
       title="Weekly Update"
     >
       <KeyboardAwareScrollView
-        contentContainerStyle={{ padding: spacing(4) }}
+        contentContainerStyle={{ gap: spacing(4), padding: spacing(4) }}
         style={{ backgroundColor: colors.background.secondary }}
       >
         <Text
@@ -124,7 +124,7 @@ export const Startup = memo(function PlaygroundStartup() {
             onValueChange={handleLaunchChange}
             value={form.launched}
           />
-          <Spacing padding={2} />
+          <Spacing padding={spacing(2)} />
           <Input
             keyboardType="numeric"
             onChangeText={handleWeeksToLaunchChange}
@@ -165,7 +165,6 @@ export const Startup = memo(function PlaygroundStartup() {
             value={form.biggestObstacle}
           />
         </Section>
-
         <Section title="Morale">
           <Input
             keyboardType="numeric"
@@ -174,7 +173,6 @@ export const Startup = memo(function PlaygroundStartup() {
             value={form.morale} // 1 (we are totally burned out) to 10 (we couldn't be more excited and optimistic!)
           />
         </Section>
-        <Spacing padding={2} />
         <Button
           center
           color="accent"

@@ -44,7 +44,7 @@ export const ForgotPassword = memo(function PortfolioForgotPassword() {
           title="email"
           value={email}
         />
-        <Spacing padding={2} />
+        <Spacing padding={spacing(2)} />
         <View style={styles.row}>
           <Button
             onPress={navLogin}

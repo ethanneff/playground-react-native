@@ -3,10 +3,10 @@ import {
   Activity,
   Card,
   Icon,
+  Pressable,
   Screen,
   ScrollView,
   Text,
-  TouchableOpacity,
   View,
 } from '../../components';
 import { useNavigation } from '../../conversions';
@@ -56,8 +56,8 @@ export const Home = memo(function Home() {
     >
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: spacing(4),
-          paddingVertical: spacing(2),
+          gap: spacing(4),
+          padding: spacing(4),
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >
@@ -100,9 +100,9 @@ export const Home = memo(function Home() {
           right: 0,
         }}
       >
-        <TouchableOpacity
+        <Pressable
+          containerStyle={{ marginRight: spacing(2) }}
           onPress={onItemAdd}
-          style={{ marginRight: spacing(2) }}
         >
           <Icon
             backgroundColor="secondary"
@@ -110,14 +110,14 @@ export const Home = memo(function Home() {
             fab
             name="plus"
           />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={onItemAdd}>
+        </Pressable>
+        <Pressable onPress={onItemAdd}>
           <Icon
             color="primaryB"
             fab
             name="pencil"
           />
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </Screen>
   );

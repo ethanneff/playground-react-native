@@ -59,7 +59,7 @@ export const Header = memo(function HeaderMemo({
             title={wins}
             type="h5"
           />
-          <Spacing padding={2} />
+          <Spacing padding={spacing(2)} />
           <Text
             emphasis="low"
             title="PAYOUT"

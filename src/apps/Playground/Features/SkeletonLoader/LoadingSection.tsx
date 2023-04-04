@@ -4,7 +4,7 @@ import { spacing } from '../../../../features';
 
 export const LoadingSection = () => {
   return (
-    <Card containerStyle={{ marginBottom: spacing(4) }}>
+    <Card>
       <View>
         <View flexDirection="row">
           <SkeletonLoader

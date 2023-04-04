@@ -14,7 +14,7 @@ export const Title = ({ description, title }: TitleProps) => {
         title={title}
         type="h5"
       />
-      <Spacing padding={0.5} />
+      <Spacing padding={spacing(0.5)} />
       <Text
         emphasis="medium"
         title={description}

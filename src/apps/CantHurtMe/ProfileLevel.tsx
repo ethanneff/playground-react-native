@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, type ImageSourcePropType } from 'react-native';
-import { Text, TouchableOpacity, View } from '../../components';
+import { Text, Pressable, View } from '../../components';
 import { spacing, useColors } from '../../features';
 
 type Props = {
@@ -60,7 +60,7 @@ export const ProfileLevel = ({ onPress }: Props) => {
   });
 
   return (
-    <TouchableOpacity
+    <Pressable
       disabled={!onPress}
       onPress={onPress}
     >
@@ -79,6 +79,6 @@ export const ProfileLevel = ({ onPress }: Props) => {
           />
         </View>
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };

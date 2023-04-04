@@ -2,9 +2,9 @@ import React, { memo, useCallback } from 'react';
 import {
   Card,
   FlashList,
+  Pressable,
   Screen,
   Text,
-  TouchableOpacity,
   View,
   type FlashListRenderItem,
 } from '../../../components';
@@ -24,7 +24,7 @@ export const Landing = memo(function Playground() {
   );
   const renderItem = useCallback<FlashListRenderItem<string>>(
     ({ item }) => (
-      <TouchableOpacity onPress={navToItem(item)}>
+      <Pressable onPress={navToItem(item)}>
         <View style={{ paddingVertical: spacing(2) }}>
           <Text
             bold
@@ -32,7 +32,7 @@ export const Landing = memo(function Playground() {
             type="body2"
           />
         </View>
-      </TouchableOpacity>
+      </Pressable>
     ),
     [navToItem],
   );
@@ -55,7 +55,7 @@ export const Landing = memo(function Playground() {
           flexDirection="row"
           gap={spacing(4)}
         >
-          <Card elevation={4}>
+          <Card>
             <Title
               description="app components"
               title="storybook"
@@ -71,7 +71,7 @@ export const Landing = memo(function Playground() {
               renderItem={renderItem}
             />
           </Card>
-          <Card elevation={4}>
+          <Card>
             <Title
               description="polished modules"
               title="features"
@@ -93,7 +93,7 @@ export const Landing = memo(function Playground() {
           flexDirection="row"
           gap={spacing(4)}
         >
-          <Card elevation={4}>
+          <Card>
             <Title
               description="interactive demos"
               title="games"
@@ -109,7 +109,7 @@ export const Landing = memo(function Playground() {
               renderItem={renderItem}
             />
           </Card>
-          <Card elevation={4}>
+          <Card>
             <Title
               description="misc ideas"
               title="creations"

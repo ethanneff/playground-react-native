@@ -40,7 +40,7 @@ export const List = memo(function List({
     ({ index, item }) => {
       const data = app.goals.byId[item];
       return (
-        <View style={{ padding: spacing(2), paddingBottom: 0 }}>
+        <View padding={spacing(2)}>
           <Card onPress={onPress}>
             <Text
               bold
@@ -48,7 +48,7 @@ export const List = memo(function List({
               title={`#${index + 1}`}
               type="subtitle1"
             />
-            <Spacing padding={1} />
+            <Spacing padding={spacing(1)} />
             <Text
               center
               title={data.challenge}

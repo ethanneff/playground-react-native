@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
-import { type StyleProp, StyleSheet, type ViewStyle } from 'react-native';
+import { StyleSheet, type StyleProp, type ViewStyle } from 'react-native';
 import {
   Icon,
-  type IconName,
+  Pressable,
   Text,
-  TouchableOpacity,
   View,
+  type IconName,
 } from '../../../../../components';
 import { spacing, useColors } from '../../../../../features';
 
@@ -62,9 +62,9 @@ export const Item = memo(function ReminderItem({
   });
 
   return hidden ? null : (
-    <TouchableOpacity
+    <Pressable
+      containerStyle={[styles.button, style]}
       onPress={onPress}
-      style={[styles.button, style]}
     >
       <View style={styles.container}>
         <View style={styles.textContainer}>
@@ -89,6 +89,6 @@ export const Item = memo(function ReminderItem({
           />
         ) : null}
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 });

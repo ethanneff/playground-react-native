@@ -2,20 +2,18 @@ import React, { memo, type ReactNode } from 'react';
 import {
   StyleSheet,
   type LayoutChangeEvent,
+  type StyleProp,
   type ViewStyle,
 } from 'react-native';
-import { View } from '../../components';
 import { spacing, useColors, useDropShadow } from '../../features';
-import { TouchableOpacity } from '../TouchableOpacity';
+import { useRootSelector } from '../../redux';
+import { Pressable } from '../Pressable';
 
 type Props = {
-  borderRadius?: number;
-  borderWidth?: number;
   children?: ReactNode | ReactNode[];
-  containerStyle?: ViewStyle;
-  contentStyle?: ViewStyle;
+  containerStyle?: StyleProp<ViewStyle>;
+  contentStyle?: StyleProp<ViewStyle>;
   elevation?: number;
-  nonFlex?: boolean;
   onLayout?: (event: LayoutChangeEvent) => void;
   onLongPress?: () => void;
   onPress?: () => void;
@@ -28,16 +26,12 @@ const getOpacity = (elevation: number) =>
     : elevation === 1
     ? 0.05
     : ((elevation - 2) * 0.01 + 0.07).toFixed(2);
-const touchOpacity = 0.3;
 
 export const Card = memo(function Card({
-  borderRadius = spacing(2),
-  borderWidth = 1,
   children,
   containerStyle,
   contentStyle,
-  elevation = 0,
-  nonFlex,
+  elevation = 4,
   onLayout,
   onLongPress,
   onPress,
@@ -45,46 +39,41 @@ export const Card = memo(function Card({
 }: Props) {
   const colors = useColors();
   const dropShadow = useDropShadow();
+  const currentTheme = useRootSelector((state) => state.theme.currentTheme);
   const shadow = elevation ? dropShadow(elevation) : {};
   const opacity = getOpacity(elevation);
   const styles = StyleSheet.create({
-    containerStyle: {
-      backgroundColor: colors.background.primaryA,
-      borderColor: colors.background.primaryA,
-      borderRadius,
-      borderWidth,
-      flex: nonFlex ? 0 : 1,
-      ...shadow,
+    container: {
+      flex: 1,
     },
-    contents: {
-      backgroundColor: `hsla(0,0%,100%,${opacity})`,
-      borderRadius,
-      flex: nonFlex ? 0 : 1,
+    content: {
+      backgroundColor:
+        currentTheme === 'light'
+          ? colors.background.primaryA
+          : `hsla(0,0%,100%,${opacity})`,
+      borderColor: colors.background.primaryA,
+      borderRadius: spacing(2),
+      borderWidth: 1,
+      flex: 1,
       padding: spacing(2),
+      ...shadow,
     },
   });
 
-  const containerStyles = [styles.containerStyle, containerStyle];
-  const contentStyles = [styles.contents, contentStyle];
+  const contentStyles = [styles.content, contentStyle];
+  const containerStyles = [styles.container, containerStyle];
 
-  return onPress || onLongPress ? (
-    <TouchableOpacity
-      activeOpacity={onPress ? touchOpacity : 1}
+  return (
+    <Pressable
+      containerStyle={containerStyles}
+      contentStyle={contentStyles}
       onLayout={onLayout}
       onLongPress={onLongPress}
       onPress={onPress}
-      style={containerStyles}
       testID={testID}
+      withoutFeedback={!onPress && !onLongPress}
     >
-      <View style={contentStyles}>{children}</View>
-    </TouchableOpacity>
-  ) : (
-    <View
-      onLayout={onLayout}
-      style={containerStyles}
-      testID={testID}
-    >
-      <View style={contentStyles}>{children}</View>
-    </View>
+      {children}
+    </Pressable>
   );
 });

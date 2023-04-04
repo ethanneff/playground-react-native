@@ -2,9 +2,9 @@ import React, { memo, type ReactNode } from 'react';
 import { Image, type ImageSourcePropType } from 'react-native';
 import {
   Icon,
+  Pressable,
   Sentence,
   Text,
-  TouchableOpacity,
   View,
   type IconName,
   type SentenceType,
@@ -27,9 +27,8 @@ const SignInButton = memo(function SignInButton({
 }: SignInButtonProps) {
   const colors = useColors();
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={{
+    <Pressable
+      containerStyle={{
         alignItems: 'center',
         borderColor: colors.border.primaryA,
         borderRadius: spacing(10),
@@ -39,6 +38,7 @@ const SignInButton = memo(function SignInButton({
         marginBottom: spacing(2),
         padding: spacing(2),
       }}
+      onPress={onPress}
     >
       <Icon
         name={icon}
@@ -49,7 +49,7 @@ const SignInButton = memo(function SignInButton({
         title={title}
         type="h4"
       />
-    </TouchableOpacity>
+    </Pressable>
   );
 });
 
@@ -65,9 +65,8 @@ const NavButton = memo(function NavButton({
 }: NavButtonProps) {
   const colors = useColors();
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={{
+    <Pressable
+      containerStyle={{
         backgroundColor: inverted
           ? colors.background.primaryB
           : colors.background.primaryA,
@@ -76,6 +75,7 @@ const NavButton = memo(function NavButton({
         paddingHorizontal: spacing(2),
         paddingVertical: spacing(2),
       }}
+      onPress={onPress}
     >
       <Text
         bold
@@ -83,7 +83,7 @@ const NavButton = memo(function NavButton({
         title={title}
         type="h5"
       />
-    </TouchableOpacity>
+    </Pressable>
   );
 });
 
@@ -154,9 +154,8 @@ const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
   const text = type === 'apple' ? 'Download on the' : 'GET IT ON';
   const store = type === 'apple' ? 'App Store' : 'Google Play';
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={{
+    <Pressable
+      contentStyle={{
         backgroundColor: colors.background.primaryB,
         borderRadius: spacing(2),
         flexDirection: 'row',
@@ -165,6 +164,7 @@ const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
         paddingVertical: spacing(2),
         width: '248px',
       }}
+      onPress={onPress}
     >
       <Icon
         color="primaryA"
@@ -183,7 +183,7 @@ const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
           type="h3"
         />
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 });
 

@@ -15,8 +15,8 @@ import {
 } from '../../features';
 import { useRootSelector } from '../../redux';
 import { Card } from '../Card';
+import { Pressable } from '../Pressable';
 import { ScrollView } from '../ScrollView';
-import { TouchableWithoutFeedback } from '../TouchableWithoutFeedback';
 import { View } from '../View';
 
 type ModalProps = {
@@ -34,6 +34,7 @@ type ModalProps = {
 
 const fadeDuration = 150;
 const defaultMargin = 0.8;
+
 export const Modal = memo(function Modal({
   backgroundColor,
   children,
@@ -72,10 +73,12 @@ export const Modal = memo(function Modal({
     },
     modal: {
       backgroundColor: backgroundColor ?? colors.background.primaryA,
+      flex: 0,
       maxHeight,
       width,
       ...dropShadow(10),
     },
+    nonFlex: { flex: 0 },
   });
   const fade = useRef(new Animated.Value(0)).current;
   const opacity = fade;
@@ -119,15 +122,16 @@ export const Modal = memo(function Modal({
 
   return (
     <Animated.View style={containerStyle}>
-      <TouchableWithoutFeedback
+      <Pressable
+        containerStyle={styles.backgroundPress}
         onPress={dismiss(onBackgroundPress)}
-        style={styles.backgroundPress}
         testID={testID}
+        withoutFeedback
       >
         <Card
           containerStyle={styles.modal}
+          contentStyle={styles.nonFlex}
           elevation={elevation}
-          nonFlex
           testID="modal"
         >
           {noScroll ? (
@@ -143,7 +147,7 @@ export const Modal = memo(function Modal({
             </ScrollView>
           )}
         </Card>
-      </TouchableWithoutFeedback>
+      </Pressable>
     </Animated.View>
   );
 });

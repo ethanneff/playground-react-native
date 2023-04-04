@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { spacing, useColors, type TagColor } from '../../features';
+import { Pressable } from '../Pressable';
 import { Text } from '../Text';
-import { TouchableOpacity } from '../TouchableOpacity';
 
 type TagProps = {
   color: keyof TagColor;
@@ -18,10 +18,8 @@ export const Tag = memo(function Tag({
 }: TagProps) {
   const colors = useColors();
   return (
-    <TouchableOpacity
-      disabled={disabled}
-      onPress={onPress}
-      style={{
+    <Pressable
+      containerStyle={{
         alignSelf: 'flex-start',
         backgroundColor: colors.tag[color],
         borderColor: colors.border.primaryA,
@@ -30,11 +28,13 @@ export const Tag = memo(function Tag({
         paddingHorizontal: spacing(2),
         paddingVertical: spacing(1),
       }}
+      disabled={disabled}
+      onPress={onPress}
     >
       <Text
         color="primaryA"
         title={title}
       />
-    </TouchableOpacity>
+    </Pressable>
   );
 });

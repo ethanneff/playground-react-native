@@ -5,7 +5,7 @@ import { Button } from '../Button';
 import { Card } from '../Card';
 import { Loader } from '../Loader';
 import { Text } from '../Text';
-import { TouchableOpacity } from '../TouchableOpacity';
+import { Pressable } from '../Pressable';
 import { Week } from './Week';
 import { getApiActivity } from './api';
 import {
@@ -121,13 +121,13 @@ export const Activity = memo(function Activity({
         }}
       >
         {title ? (
-          <TouchableOpacity onPress={refresh}>
+          <Pressable onPress={refresh}>
             <Text
               emphasis="medium"
               title={title}
               type="h4"
             />
-          </TouchableOpacity>
+          </Pressable>
         ) : null}
         {state.activity.total ? (
           <Text

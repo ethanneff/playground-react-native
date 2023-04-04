@@ -3,8 +3,8 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { type ViewStyle } from 'react-native';
 import { type FontEmphasis, type FontType } from '../../features';
+import { Pressable } from '../Pressable';
 import { Text } from '../Text';
-import { TouchableOpacity } from '../TouchableOpacity';
 dayjs.extend(relativeTime);
 
 type Props = {
@@ -44,15 +44,15 @@ export const RelativeDate = memo(function RelativeDate({
   }, []);
 
   return (
-    <TouchableOpacity
+    <Pressable
+      containerStyle={style}
       onPress={toggleRelativeDate}
-      style={style}
     >
       <Text
         emphasis={emphasis}
         title={text}
         type={type}
       />
-    </TouchableOpacity>
+    </Pressable>
   );
 });

@@ -1,10 +1,10 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
-import { Text, TouchableOpacity } from '../../../../components';
+import { Pressable, Text } from '../../../../components';
 import {
-  type LayoutDimensions,
   useColors,
   useDriver,
+  type LayoutDimensions,
 } from '../../../../features';
 import {
   getInitialItems,
@@ -115,9 +115,8 @@ export const Balls = memo(function Balls({
             position: 'absolute',
           }}
         >
-          <TouchableOpacity
-            onPress={handlePress(item.index)}
-            style={{
+          <Pressable
+            containerStyle={{
               borderColor: colors.border.accent,
               borderRadius: item.radius,
               borderWidth: 1,
@@ -125,6 +124,7 @@ export const Balls = memo(function Balls({
               justifyContent: 'center',
               width: item.radius * 2,
             }}
+            onPress={handlePress(item.index)}
           >
             <Text
               adjustsFontSizeToFit
@@ -132,7 +132,7 @@ export const Balls = memo(function Balls({
               title={String(item.index)}
               type="h4"
             />
-          </TouchableOpacity>
+          </Pressable>
         </Animated.View>
       ))}
     </>

@@ -3,7 +3,7 @@ import { Animated, Easing } from 'react-native';
 import { spacing, useColors, useDriver } from '../../features';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
-import { TouchableOpacity } from '../TouchableOpacity';
+import { Pressable } from '../Pressable';
 import { View } from '../View';
 
 type Props = {
@@ -39,7 +39,7 @@ export const Collapsible = ({ children, title }: Props) => {
 
   return (
     <View>
-      <TouchableOpacity onPress={handlePress}>
+      <Pressable onPress={handlePress}>
         <View
           flexDirection="row"
           justifyContent="space-between"
@@ -59,7 +59,7 @@ export const Collapsible = ({ children, title }: Props) => {
             name={icon}
           />
         </View>
-      </TouchableOpacity>
+      </Pressable>
       <Animated.View
         style={{
           maxHeight,

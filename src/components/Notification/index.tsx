@@ -10,8 +10,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { View } from '../../components';
 import { SoundManager, spacing, useColors, useDriver } from '../../features';
 import { Icon } from '../Icon';
+import { Pressable } from '../Pressable';
 import { Text } from '../Text';
-import { TouchableOpacity } from '../TouchableOpacity';
 
 type NotificationProps = {
   dismissDelay?: number;
@@ -148,19 +148,19 @@ export const Notification = memo(function Notification({
               title={title}
               type="h4"
             />
-            <TouchableOpacity onPress={onCancel}>
+            <Pressable onPress={onCancel}>
               <Icon
                 name="close"
                 size={spacing(8)}
               />
-            </TouchableOpacity>
+            </Pressable>
           </View>
         </SafeAreaView>
       </Animated.View>
-      <TouchableOpacity
+      <Pressable
+        containerStyle={styles.overlay}
         disabled={!onBackgroundPress}
         onPress={onBackgroundPress}
-        style={styles.overlay}
       />
     </View>
   );

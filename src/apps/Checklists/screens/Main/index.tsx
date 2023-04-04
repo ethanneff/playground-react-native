@@ -4,7 +4,7 @@ import {
   FlashList,
   Icon,
   Screen,
-  TouchableOpacity,
+  Pressable,
   type FlashListRenderItem,
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
@@ -68,14 +68,14 @@ export default memo(function Checklists() {
         keyExtractor={keyExtractor}
         renderItem={renderItem}
       />
-      <TouchableOpacity onPress={navCreate}>
+      <Pressable onPress={navCreate}>
         <Icon
           color="primaryA"
           fab
           name="plus"
           right
         />
-      </TouchableOpacity>
+      </Pressable>
     </Screen>
   );
 });

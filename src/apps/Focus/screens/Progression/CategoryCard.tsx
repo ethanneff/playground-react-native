@@ -3,9 +3,9 @@ import isToday from 'dayjs/plugin/isToday';
 import React, { memo, useCallback } from 'react';
 import {
   FlashList,
+  Pressable,
   Spacing,
   Text,
-  TouchableOpacity,
   View,
   type FlashListRenderItem,
 } from '../../../../components';
@@ -42,34 +42,34 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
       const historical = day.subtract(index, 'day');
       const weekend = isWeekend(historical);
       const today = historical.isToday();
-      const borderBottomColor = today
-        ? colors.border.accent
+      const backgroundColor = today
+        ? colors.background.accent
         : weekend
-        ? colors.border.secondary
-        : colors.background.primaryA;
-      const borderColor = today
-        ? colors.border.accent
+        ? colors.background.tertiary
         : colors.background.secondary;
+
       return (
         <View
           style={{
             alignItems: 'center',
-            backgroundColor: colors.background.secondary,
-            borderBottomColor,
-            borderColor,
-            borderWidth: 1,
+            backgroundColor,
             justifyContent: 'center',
-            padding: 2,
+            margin: spacing(0.25),
+            padding: spacing(3),
           }}
         >
           <Text
             center
-            style={{ color: colors.background.secondary }}
-            title="XX"
+            style={{ color: undefined }}
+            type="overline"
           />
           <Text
+            bold={weekend}
             center
-            style={{ position: 'absolute' }}
+            style={{
+              color: today ? colors.text.primaryB : colors.text.primaryA,
+              position: 'absolute',
+            }}
             title={historical.format('D')}
             type="overline"
           />
@@ -77,19 +77,20 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
       );
     },
     [
-      colors.background.primaryA,
+      colors.background.accent,
       colors.background.secondary,
-      colors.border.accent,
-      colors.border.secondary,
+      colors.background.tertiary,
+      colors.text.primaryA,
+      colors.text.primaryB,
     ],
   );
 
   return (
-    <TouchableOpacity
-      onPress={handleCategoryPress(category)}
-      style={{
+    <Pressable
+      containerStyle={{
         paddingVertical: spacing(2),
       }}
+      onPress={handleCategoryPress(category)}
     >
       <View
         style={{
@@ -111,7 +112,7 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
           />
         ) : null}
       </View>
-      <Spacing padding={1} />
+      <Spacing padding={spacing(1)} />
       <FlashList
         data={mockData}
         estimatedItemSize={28}
@@ -120,6 +121,6 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
         renderItem={renderItem}
         showsHorizontalScrollIndicator={false}
       />
-    </TouchableOpacity>
+    </Pressable>
   );
 });

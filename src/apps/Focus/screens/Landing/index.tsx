@@ -59,14 +59,14 @@ export const Landing = memo(function Landing() {
               title="Progression"
               type="h3"
             />
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <Text
               center
               emphasis="high"
               title="Improve your habits. Hit your goals."
               type="h5"
             />
-            {landscape ? null : <Spacing padding={10} />}
+            {landscape ? null : <Spacing padding={spacing(10)} />}
           </View>
         </View>
       </View>
@@ -87,7 +87,7 @@ export const Landing = memo(function Landing() {
             title="Get Started"
           />
         </View>
-        <Spacing padding={2} />
+        <Spacing padding={spacing(2)} />
         <View flex={landscape ? 1 : 0}>
           <Button
             center

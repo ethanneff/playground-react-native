@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { Icon, Text, TouchableOpacity, View } from '../../../../components';
+import { Icon, Pressable, Text, View } from '../../../../components';
 import {
   useNavigation,
   type StackNavigationProp,
@@ -59,15 +59,14 @@ export const ListItem = memo(function ListItem({
         }}
       >
         {showHeader ? <ListSection item={item} /> : null}
-        <TouchableOpacity
-          disabled={future}
-          onPress={onPress}
-          style={{
-            flex: 1,
+        <Pressable
+          contentStyle={{
             flexDirection: 'row',
             paddingHorizontal: spacing(4),
             paddingVertical: spacing(2),
           }}
+          disabled={future}
+          onPress={onPress}
         >
           <View
             style={{
@@ -91,7 +90,7 @@ export const ListItem = memo(function ListItem({
             title={title}
             type="body1"
           />
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </View>
   );

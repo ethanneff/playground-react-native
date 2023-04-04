@@ -25,7 +25,7 @@ export const OKRs = memo(function PlaygroundOKRs() {
       title="OKRs"
     >
       <ScrollView
-        contentContainerStyle={{ padding: spacing(4) }}
+        contentContainerStyle={{ gap: spacing(4), padding: spacing(4) }}
         style={{ backgroundColor: colors.background.secondary }}
       >
         <Card>

@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { v4 } from 'uuid';
-import { Icon, Input, TouchableOpacity, View } from '../../../../components';
-import { spacing, useColors } from '../../../../features';
+import { Icon, Input, Pressable, View } from '../../../../components';
+import { spacing, useColors, useDropShadow } from '../../../../features';
 import { useRootDispatch, useRootSelector } from '../../../../redux';
 import {
   createChatMessage,
@@ -20,6 +20,7 @@ export const TextField = memo(function TextField() {
     [dispatch],
   );
   const colors = useColors();
+  const dropShadow = useDropShadow();
 
   const onSubmit = useCallback(() => {
     if (textField.trim().length === 0) return;
@@ -44,6 +45,7 @@ export const TextField = memo(function TextField() {
         flexDirection: 'row',
         justifyContent: 'center',
         padding: spacing(4),
+        ...dropShadow(0, -2),
       }}
     >
       <Input
@@ -55,7 +57,7 @@ export const TextField = memo(function TextField() {
         placeholder="Write something..."
         value={textField}
       />
-      <TouchableOpacity
+      <Pressable
         disabled={!submittable}
         onPress={onSubmit}
       >
@@ -68,7 +70,7 @@ export const TextField = memo(function TextField() {
             paddingLeft: spacing(2),
           }}
         />
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 });

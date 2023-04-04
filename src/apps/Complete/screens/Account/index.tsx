@@ -45,7 +45,7 @@ export const Account = memo(function Account() {
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >
-        <Card elevation={4}>
+        <Card>
           <Text
             emphasis="medium"
             style={{ paddingBottom: completeConfig.padding }}
@@ -63,7 +63,7 @@ export const Account = memo(function Account() {
             type="h4"
           />
         </Card>
-        <Card elevation={4}>
+        <Card>
           <Text
             emphasis="medium"
             style={{ paddingBottom: completeConfig.padding }}
@@ -77,7 +77,7 @@ export const Account = memo(function Account() {
             type="h4"
           />
         </Card>
-        <Card elevation={4}>
+        <Card>
           <Text
             emphasis="medium"
             style={{ paddingBottom: completeConfig.padding }}
@@ -91,7 +91,7 @@ export const Account = memo(function Account() {
             type="h4"
           />
         </Card>
-        <Card elevation={4}>
+        <Card>
           <Text
             emphasis="medium"
             style={{ paddingBottom: completeConfig.padding }}
@@ -105,7 +105,7 @@ export const Account = memo(function Account() {
             type="h4"
           />
         </Card>
-        <Card elevation={4}>
+        <Card>
           <Text
             emphasis="medium"
             style={{ paddingBottom: completeConfig.padding }}

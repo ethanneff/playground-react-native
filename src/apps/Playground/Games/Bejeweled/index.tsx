@@ -1,9 +1,9 @@
 import React, { memo, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { v4 } from 'uuid';
-import { Screen, TouchableOpacity, View } from '../../../../components';
+import { Pressable, Screen, ScrollView, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
-import { useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../../redux';
 
 type Vector = {
@@ -67,7 +67,10 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
 
   const colors = useColors();
   const styles = StyleSheet.create({
-    container: { backgroundColor: colors.background.secondary },
+    container: {
+      backgroundColor: colors.background.secondary,
+      padding: spacing(4),
+    },
   });
 
   const width = 6;
@@ -110,37 +113,37 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
       onLeftPress={goBack}
       title="Bejeweled"
     >
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         {board.map((col, x) => (
           <View
             flexDirection="row"
+            gap={spacing(2)}
             key={v4()}
           >
             {col.map((gem, y) => (
               <View
+                flex={1}
+                gap={spacing(2)}
+                height={size - spacing(4)}
                 key={v4()}
-                style={{
-                  height: size,
-                  width: size,
-                }}
               >
-                <TouchableOpacity
-                  onPress={onPress(x, y)}
-                  style={{
+                <Pressable
+                  containerStyle={{
                     backgroundColor: gem.color,
                     borderColor:
                       selected.x === x && selected.y === y
-                        ? colors.border.primaryB
-                        : colors.border.primaryA,
+                        ? colors.background.primaryB
+                        : colors.background.secondary,
                     borderWidth: 4,
                     flex: 1,
                   }}
+                  onPress={onPress(x, y)}
                 />
               </View>
             ))}
           </View>
         ))}
-      </View>
+      </ScrollView>
     </Screen>
   );
 });

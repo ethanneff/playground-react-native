@@ -6,9 +6,9 @@ import {
   Icon,
   Loader,
   Modal,
+  Pressable,
   Text,
   TextInput,
-  TouchableOpacity,
   View,
   type IconName,
   type TextInputRef,
@@ -42,11 +42,9 @@ const SignInButton = memo(function SignInButton({
   title,
 }: SignInButtonProps) {
   return (
-    <TouchableOpacity
+    <Pressable
+      containerStyle={{ marginBottom: spacing(margin ? 4 : 0) }}
       onPress={onPress}
-      style={{
-        marginBottom: spacing(margin ? 4 : 0),
-      }}
     >
       <View
         alignItems="center"
@@ -61,7 +59,7 @@ const SignInButton = memo(function SignInButton({
           type="button"
         />
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 });
 

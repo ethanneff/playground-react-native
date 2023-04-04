@@ -22,9 +22,9 @@ import {
   type MonoMultiColor,
 } from '../../features';
 import { Icon, type IconName } from '../Icon';
+import { Pressable } from '../Pressable';
 import { Spacing } from '../Spacing';
 import { Text } from '../Text';
-import { TouchableOpacity } from '../TouchableOpacity';
 import { View } from '../View';
 import { type PointerEvents, type TextContentType } from './types';
 
@@ -217,14 +217,17 @@ export const TextInput = memo(function TextInput({
   }, [value]);
 
   return (
-    <View style={[{ flex: 1 }, style]}>
+    <View
+      flex={1}
+      style={style}
+    >
       {title ? (
         <>
           <Text
             onPress={handleTitlePress}
             title={title}
           />
-          <Spacing padding={1} />
+          <Spacing padding={spacing(1)} />
         </>
       ) : null}
       <View
@@ -285,7 +288,7 @@ export const TextInput = memo(function TextInput({
               icon.hidden ||
               (focus && !icon.focus) ||
               (!focus && icon.focus) ? null : (
-                <TouchableOpacity
+                <Pressable
                   disabled={
                     icon.required ? text.trim().length === 0 : undefined
                   }
@@ -301,7 +304,7 @@ export const TextInput = memo(function TextInput({
                     padded
                     size={iconHeight}
                   />
-                </TouchableOpacity>
+                </Pressable>
               ),
             )}
           </View>

@@ -14,6 +14,7 @@ const restrictedImports = {
         'FlatListProps',
         'Text',
         'TextInput',
+        'Pressable',
         'TouchableHighlight',
         'TouchableNativeFeedback',
         'TouchableOpacity',

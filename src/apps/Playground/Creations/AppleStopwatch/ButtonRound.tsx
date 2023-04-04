@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { StyleSheet } from 'react-native';
-import { Text, TouchableOpacity, View } from '../../../../components';
+import { Pressable, Text, View } from '../../../../components';
 import { useColors, type MonoMultiColor } from '../../../../features';
 
 type RoundButtonProps = {
@@ -48,10 +48,10 @@ export const ButtonRound = memo(function ButtonRound({
   }, [onPress, disabled]);
 
   return (
-    <TouchableOpacity
+    <Pressable
+      containerStyle={styles.button}
       disabled={disabled}
       onPress={handlePress}
-      style={styles.button}
     >
       <View style={styles.buttonBorder}>
         <Text
@@ -60,6 +60,6 @@ export const ButtonRound = memo(function ButtonRound({
           title={title}
         />
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 });

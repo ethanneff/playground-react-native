@@ -6,8 +6,8 @@ import {
   type FontEmphasis,
   type MonoMultiColor,
 } from '../../features';
+import { Pressable } from '../Pressable';
 import { Text } from '../Text';
-import { TouchableOpacity } from '../TouchableOpacity';
 import { getStyles } from './utils';
 
 /*
@@ -15,7 +15,6 @@ styling: https://material.io/design/components/buttons.html#usage
 */
 
 type Props = {
-  activeOpacity?: number;
   /* styling */
   buttonStyle?: StyleProp<ViewStyle>;
   center?: boolean;
@@ -42,7 +41,6 @@ type Props = {
 };
 
 export const Button = memo(function Button({
-  activeOpacity,
   buttonStyle,
   center,
   color = 'primaryA',
@@ -81,12 +79,11 @@ export const Button = memo(function Button({
   const textStyleGroup = [styles.text, textStyle];
 
   return hidden ? null : (
-    <TouchableOpacity
-      activeOpacity={activeOpacity}
+    <Pressable
+      containerStyle={buttonStyleGroup}
       disabled={disabled ?? invisible}
       onLongPress={onLongPress}
       onPress={onPress}
-      style={buttonStyleGroup}
       testID={testID}
     >
       <Text
@@ -95,6 +92,6 @@ export const Button = memo(function Button({
         title={title}
         type={lowercase ? undefined : 'button'}
       />
-    </TouchableOpacity>
+    </Pressable>
   );
 });

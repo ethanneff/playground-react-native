@@ -1,8 +1,8 @@
 import React, { memo, useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import {
+  Pressable,
   TextInput,
-  TouchableWithoutFeedback,
   type TextInputIcon,
   type TextInputRef,
 } from '../../../components';
@@ -98,16 +98,16 @@ export const ListItem = memo(function ListItem({
   }, []);
 
   return (
-    <TouchableWithoutFeedback
-      onLongPress={onItemLongPress}
-      onPress={onItemPress}
-      style={{
+    <Pressable
+      contentStyle={{
         backgroundColor: colors.background.secondary,
         borderRadius: completeConfig.borderRadius,
-        flex: 1,
         flexDirection: 'row',
-        margin: completeConfig.padding / 2,
+        margin: completeConfig.padding / 4,
       }}
+      onLongPress={onItemLongPress}
+      onPress={onItemPress}
+      withoutFeedback
     >
       <TextInput
         autoCapitalize="sentences"
@@ -127,6 +127,6 @@ export const ListItem = memo(function ListItem({
         textContentType="none"
         value={item.title}
       />
-    </TouchableWithoutFeedback>
+    </Pressable>
   );
 });

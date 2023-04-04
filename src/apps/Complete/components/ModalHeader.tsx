@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Icon, Text, TouchableOpacity, View } from '../../../components';
+import { Icon, Text, Pressable, View } from '../../../components';
 import { spacing } from '../../../features';
 
 type Props = {
@@ -23,26 +23,26 @@ export const ModalHeader = memo(function ModalHeader({
         marginBottom: spacing(4),
       }}
     >
-      <TouchableOpacity onPress={onLeftPress}>
+      <Pressable onPress={onLeftPress}>
         <Icon
           invisible={!onLeftPress}
           name="chevron-left"
           size={size}
         />
-      </TouchableOpacity>
+      </Pressable>
       <Text
         center
         flex
         title={title}
         type="h4"
       />
-      <TouchableOpacity onPress={onRightPress}>
+      <Pressable onPress={onRightPress}>
         <Icon
           invisible={!onRightPress}
           name="close"
           size={size}
         />
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 });

@@ -3,7 +3,7 @@ import React, { memo, useCallback, useEffect, useRef } from 'react';
 import { Animated, Dimensions, Easing } from 'react-native';
 import Svg, { G, Path, Polygon, Text } from 'react-native-svg';
 import { v4 } from 'uuid';
-import { TouchableOpacity } from '../../../../components';
+import { Pressable } from '../../../../components';
 import { useColors, useDriver, useDropShadow } from '../../../../features';
 import { type Segment } from './types';
 import { getNewLocation, getWinnerIndex } from './utils';
@@ -125,7 +125,7 @@ export const Wheel = memo(function WheelMemo({
   }, [bounce, noBounce]);
 
   return (
-    <TouchableOpacity onPress={onPress}>
+    <Pressable onPress={onPress}>
       <Animated.View
         style={{
           alignItems: 'center',
@@ -212,6 +212,6 @@ export const Wheel = memo(function WheelMemo({
           </Svg>
         </Animated.View>
       </Animated.View>
-    </TouchableOpacity>
+    </Pressable>
   );
 });

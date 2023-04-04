@@ -2,7 +2,7 @@ import React, { memo, useCallback, useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import { useColors, useDriver } from '../../features';
 import { Loader } from '../Loader';
-import { TouchableOpacity } from '../TouchableOpacity';
+import { Pressable } from '../Pressable';
 
 type Props = {
   onBackgroundPress?: () => void;
@@ -45,7 +45,7 @@ export const Loading = memo(function LoadingScreen({
         zIndex: 1,
       }}
     >
-      <TouchableOpacity
+      <Pressable
         containerStyle={{ flex: 1, justifyContent: 'center' }}
         disabled={!onBackgroundPress}
         onPress={onPress}
@@ -54,7 +54,7 @@ export const Loading = memo(function LoadingScreen({
           color="primaryB"
           size="large"
         />
-      </TouchableOpacity>
+      </Pressable>
     </Animated.View>
   );
 });

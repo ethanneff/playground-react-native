@@ -3,10 +3,10 @@ import { v4 } from 'uuid';
 import {
   Card,
   Icon,
+  Pressable,
   Screen,
   ScrollView,
   Text,
-  TouchableOpacity,
   View,
   type IconName,
 } from '../../components';
@@ -35,7 +35,7 @@ const ChecklistItem = ({ index, item }: ChecklistItemProps) => {
   }, []);
   const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
   return (
-    <TouchableOpacity onPress={onPress}>
+    <Pressable onPress={onPress}>
       <View
         alignItems="center"
         flex={1}
@@ -64,7 +64,7 @@ const ChecklistItem = ({ index, item }: ChecklistItemProps) => {
           </View>
         ))}
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
@@ -111,8 +111,8 @@ export const Home = memo(function Home() {
     >
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: spacing(4),
-          paddingVertical: spacing(2),
+          gap: spacing(4),
+          padding: spacing(4),
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >

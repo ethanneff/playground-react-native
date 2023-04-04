@@ -2,8 +2,8 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import React, { memo } from 'react';
 import { Image, type ImageSourcePropType } from 'react-native';
-import { RelativeDate, Text, View } from '../../../../components';
-import { spacing, useColors } from '../../../../features';
+import { Card, RelativeDate, Text, View } from '../../../../components';
+import { spacing } from '../../../../features';
 import { type Message } from './Messages';
 dayjs.extend(relativeTime);
 
@@ -12,48 +12,49 @@ type Props = {
   marginBottom: boolean;
 };
 
+const image =
+  require('../../../../assets/line-chart.png') as ImageSourcePropType;
 export const Item = memo(function ChatMessage({ item, marginBottom }: Props) {
-  const colors = useColors();
-  const image =
-    require('../../../../assets/line-chart.png') as ImageSourcePropType;
-
   return (
-    <View
-      style={{
-        backgroundColor: colors.background.primaryA,
-        borderRadius: spacing(4),
+    <Card
+      contentStyle={{
         flexDirection: 'row',
         marginBottom: marginBottom ? spacing(4) : 0,
-        padding: spacing(2),
       }}
     >
-      <View width={spacing(20)}>
+      <View
+        flex={1}
+        justifyContent="center"
+      >
         <Image
           source={image}
           style={{
             alignSelf: 'center',
-            height: 20,
+            height: 25,
             paddingTop: spacing(4),
             resizeMode: 'contain',
-            width: 20,
+            width: 25,
           }}
         />
       </View>
-      <View flex={1}>
+      <View flex={5}>
         <View flexDirection="row">
           <Text
             bold
+            emphasis="medium"
             style={{ paddingRight: spacing(2) }}
             title={item.userId}
           />
-          <RelativeDate date={item.createdAt} />
+          <RelativeDate
+            date={item.createdAt}
+            emphasis="medium"
+          />
         </View>
         <Text
           style={{ paddingTop: spacing(1) }}
           title={item.message}
-          type="body1"
         />
       </View>
-    </View>
+    </Card>
   );
 });

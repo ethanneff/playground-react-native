@@ -5,6 +5,7 @@ import {
   useNavigation,
   type StackNavigationProp,
 } from '../../../../conversions';
+import { spacing } from '../../../../features';
 import { type UnAuthStackRoutes } from '../../types';
 import { SocialButton } from './SocialButton';
 
@@ -28,14 +29,14 @@ export const SocialAuth = ({ disabled }: Props) => {
 
   return (
     <View>
-      <Spacing padding={10} />
+      <Spacing padding={spacing(10)} />
       <SocialButton
         disabled={disabled}
         icon="google"
         onPress={handleMissingCallback}
         title="Sign Up with Google"
       />
-      <Spacing padding={2} />
+      <Spacing padding={spacing(2)} />
       <SocialButton
         disabled={disabled}
         icon="facebook"
@@ -44,7 +45,7 @@ export const SocialAuth = ({ disabled }: Props) => {
       />
       {Platform.OS === 'ios' && (
         <>
-          <Spacing padding={2} />
+          <Spacing padding={spacing(2)} />
           <SocialButton
             disabled={disabled}
             icon="apple"
@@ -53,7 +54,7 @@ export const SocialAuth = ({ disabled }: Props) => {
           />
         </>
       )}
-      <Spacing padding={2} />
+      <Spacing padding={spacing(2)} />
       <TextGroup style={{ textAlign: 'center' }}>
         <Text
           emphasis="medium"

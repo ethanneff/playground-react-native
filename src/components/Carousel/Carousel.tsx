@@ -42,6 +42,7 @@ export const Carousel = memo(function Carousel({
   const onDotPress = useCallback(
     (index: number) => () => {
       if (!flatList.current) return;
+      setActiveIndex(index);
       flatList.current.scrollToIndex({ index });
     },
     [],

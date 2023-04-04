@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Text, TouchableOpacity, View } from '../../components';
+import { Card, Icon, Text, Pressable, View } from '../../components';
 import { spacing } from '../../features';
 import { DailyProgress } from './DailyProgress';
 import { ProfileLevel } from './ProfileLevel';
@@ -26,9 +26,9 @@ export const Header = ({ onProfilePress, onSettingsPress }: Props) => (
         }}
       >
         <ProfileLevel onPress={onProfilePress} />
-        <TouchableOpacity onPress={onSettingsPress}>
+        <Pressable onPress={onSettingsPress}>
           <Icon name="cog" />
-        </TouchableOpacity>
+        </Pressable>
       </View>
       <DailyProgress />
     </Card>

@@ -45,7 +45,7 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
         style={{ backgroundColor: colors.background.secondary }}
       >
         {loading ? (
-          <View>
+          <View gap={spacing(4)}>
             <LoadingProfile />
             <LoadingSection />
             <LoadingSection />

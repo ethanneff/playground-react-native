@@ -5,12 +5,12 @@ import {
   Card,
   Icon,
   Modal,
+  Pressable,
   Screen,
   ScrollView,
   Spacing,
   Text,
   TextInput,
-  TouchableOpacity,
   View,
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
@@ -132,8 +132,8 @@ export const WeekendPlanner = memo(function Playground52Weeks() {
       >
         <ScrollView
           contentContainerStyle={{
-            paddingHorizontal: spacing(4),
-            paddingVertical: spacing(4),
+            gap: spacing(4),
+            padding: spacing(4),
           }}
           style={{ backgroundColor: colors.background.secondary }}
         >
@@ -148,24 +148,24 @@ export const WeekendPlanner = memo(function Playground52Weeks() {
                 title="Goals"
                 type="h4"
               />
-              <TouchableOpacity onPress={handleGoalModalAdd}>
+              <Pressable onPress={handleGoalModalAdd}>
                 <Icon
                   color="accent"
                   name="plus"
                   padded
                 />
-              </TouchableOpacity>
+              </Pressable>
             </View>
-            {goals.length ? <Spacing padding={2} /> : null}
+            {goals.length ? <Spacing padding={spacing(2)} /> : null}
             {goals.map((goal) => (
               <View
                 alignItems="center"
                 flexDirection="row"
                 key={goal.id}
               >
-                <TouchableOpacity
+                <Pressable
+                  containerStyle={{ padding: spacing(2) }}
                   onPress={handleGoalComplete(goal)}
-                  style={{ padding: spacing(2) }}
                 >
                   <Icon
                     name={
@@ -174,9 +174,9 @@ export const WeekendPlanner = memo(function Playground52Weeks() {
                         : 'checkbox-blank-outline'
                     }
                   />
-                </TouchableOpacity>
-                <Spacing padding={1} />
-                <TouchableOpacity onPress={handleGoalModalEdit(goal)}>
+                </Pressable>
+                <Spacing padding={spacing(1)} />
+                <Pressable onPress={handleGoalModalEdit(goal)}>
                   <Text
                     centerVertically
                     style={{
@@ -186,7 +186,7 @@ export const WeekendPlanner = memo(function Playground52Weeks() {
                     }}
                     title={goal.title}
                   />
-                </TouchableOpacity>
+                </Pressable>
               </View>
             ))}
           </Card>
@@ -196,7 +196,7 @@ export const WeekendPlanner = memo(function Playground52Weeks() {
               title="Plan"
               type="h4"
             />
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             {months.map((month) => (
               <View
                 flex={1}
@@ -262,7 +262,7 @@ export const WeekendPlanner = memo(function Playground52Weeks() {
               textContentType="none"
               value={activeGoal.title}
             />
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <View
               flexDirection="row"
               justifyContent="space-between"

@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { v4 } from 'uuid';
-import { Icon, type IconName, TouchableOpacity, View } from '../../components';
+import { Icon, type IconName, Pressable, View } from '../../components';
 import { type MonoMultiColor, spacing } from '../../features';
 
 type Props = {
@@ -41,7 +41,7 @@ export const Rating = memo(function RatingMemo({
       {Array(count)
         .fill(0)
         .map((_, index) => (
-          <TouchableOpacity
+          <Pressable
             key={v4()}
             onPress={handleOnPress(index)}
           >
@@ -50,7 +50,7 @@ export const Rating = memo(function RatingMemo({
               name={index > rating || !rating ? iconUnfilled : iconFilled}
               size={size}
             />
-          </TouchableOpacity>
+          </Pressable>
         ))}
     </View>
   );

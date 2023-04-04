@@ -73,17 +73,17 @@ v3
 - [ ] Notification.show(), alert.show(), actionsheet.show()
 - [ ] remove Questionnaire
 - [ ] remove Checklist
-- [ ] migrate everything to libs
-
-- [ ] update to react-native-mmkv??
+- [x] migrate everything to libs (wont do)
+- [x] update to react-native-mmkv (wont do)
 - [x] upgrade 71
-- [ ] add pressable component with onPressIn (remove touchable compnoents)
 - [x] move all to .cache
+- [x] add pressable component with onPressIn (remove touchable compnoents)
 - [x] upgrade to flashlist
 - [ ] update text inputs (1 component, remove value, useRef instead of useState)
 - [ ] update redux (toolkit, slices based on apps)
 - [ ] remove dayjs
 - [ ] make modal global like toast (https://github.com/timolins/react-hot-toast)
+
   ```ts
   const Modal = {};
   Modal.push();

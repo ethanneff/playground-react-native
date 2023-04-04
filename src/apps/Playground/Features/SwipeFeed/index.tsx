@@ -124,7 +124,7 @@ const SwipeCard = memo(function SwipeCard({
         flex={1}
         flexShrink={1}
       >
-        <View style={{ flexDirection: 'row' }}>
+        <View flexDirection="row">
           {image ? (
             <Image
               source={image}
@@ -157,13 +157,13 @@ const SwipeCard = memo(function SwipeCard({
               />
               <Text title={formatRelativeDate(date)} />
             </View>
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <Text
               ellipsizeMode="tail"
               numberOfLines={2}
               title={body}
             />
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <Button
               color="positive"
               noPadding
@@ -363,10 +363,13 @@ export const SwipeFeed = memo(function SwipeFeed() {
       title="Swipe Feed"
     >
       <ScrollView
+        contentContainerStyle={{
+          gap: spacing(4),
+          padding: spacing(4),
+        }}
         scrollEnabled={!swiping}
         style={{
           backgroundColor: colors.background.secondary,
-          padding: spacing(4),
         }}
       >
         <ImagePlaceholder />

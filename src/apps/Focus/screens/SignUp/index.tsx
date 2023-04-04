@@ -172,8 +172,8 @@ export const SignUp = memo(function SignUp() {
     >
       <KeyboardAwareScrollView
         contentContainerStyle={{
-          paddingHorizontal: spacing(8),
-          paddingVertical: spacing(4),
+          paddingHorizontal: spacing(10),
+          paddingVertical: spacing(2),
         }}
       >
         <View>
@@ -182,7 +182,7 @@ export const SignUp = memo(function SignUp() {
             emphasis="medium"
             title="Enter your credential to continue."
           />
-          <Spacing padding={2} />
+          <Spacing padding={spacing(2)} />
           <TextInput
             autoCapitalize="none"
             autoComplete="email"
@@ -199,7 +199,7 @@ export const SignUp = memo(function SignUp() {
             textContentType="username"
             value=""
           />
-          <Spacing padding={2} />
+          <Spacing padding={spacing(2)} />
           <TextInput
             autoCapitalize="none"
             autoComplete="password"
@@ -218,7 +218,7 @@ export const SignUp = memo(function SignUp() {
             textContentType="password"
             value=""
           />
-          <Spacing padding={2} />
+          <Spacing padding={spacing(2)} />
           <Button
             center
             color="accent"
@@ -227,7 +227,7 @@ export const SignUp = memo(function SignUp() {
             onPress={handleSignIn}
             title="sign up"
           />
-          <Spacing padding={2} />
+          <Spacing padding={spacing(2)} />
           <Button
             center
             color="secondary"

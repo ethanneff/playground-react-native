@@ -4,7 +4,7 @@ import {
   FlashList,
   Icon,
   Screen,
-  TouchableOpacity,
+  Pressable,
   View,
   type FlashListRenderItem,
 } from '../../../../components';
@@ -47,18 +47,18 @@ export default memo(function Checklist() {
           color="positive"
           name="checkbox-marked-circle"
         />
-        <TouchableOpacity onPress={handleRemove(item.id)}>
+        <Pressable onPress={handleRemove(item.id)}>
           <Icon
             color="negative"
             name="close-circle"
           />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={handleToggle(item.id)}>
+        </Pressable>
+        <Pressable onPress={handleToggle(item.id)}>
           <Icon
             color="warning"
             name="clock"
           />
-        </TouchableOpacity>
+        </Pressable>
         <Button
           color={item.completed ? 'accent' : 'primaryA'}
           lowercase
@@ -90,14 +90,14 @@ export default memo(function Checklist() {
         keyExtractor={keyExtractor}
         renderItem={renderItem}
       />
-      <TouchableOpacity onPress={navCreate}>
+      <Pressable onPress={navCreate}>
         <Icon
           color="primaryA"
           fab
           name="plus"
           right
         />
-      </TouchableOpacity>
+      </Pressable>
     </Screen>
   );
 });

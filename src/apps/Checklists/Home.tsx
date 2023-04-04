@@ -4,10 +4,10 @@ import {
   Button,
   Card,
   Icon,
+  Pressable,
   Screen,
   ScrollView,
   Text,
-  TouchableOpacity,
 } from '../../components';
 import { LoginFlow, spacing, useAdminNavBack, useColors } from '../../features';
 
@@ -39,8 +39,8 @@ export const Home = memo(function Checklists() {
       >
         <ScrollView
           contentContainerStyle={{
-            paddingHorizontal: spacing(4),
-            paddingVertical: spacing(2),
+            gap: spacing(4),
+            padding: spacing(4),
           }}
           style={{ backgroundColor: colors.background.secondary }}
         >
@@ -93,21 +93,21 @@ export const Home = memo(function Checklists() {
             title="showLogin"
           />
         </ScrollView>
-        <TouchableOpacity
-          onPress={onToggleLogin}
-          style={{
+        <Pressable
+          containerStyle={{
             bottom: 0,
             margin: spacing(4),
             position: 'absolute',
             right: 0,
           }}
+          onPress={onToggleLogin}
         >
           <Icon
             color="primaryB"
             fab
             name="plus"
           />
-        </TouchableOpacity>
+        </Pressable>
       </Screen>
       {showLogin ? <LoginFlow onBackgroundPress={onToggleLogin} /> : null}
     </>

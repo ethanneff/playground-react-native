@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import isToday from 'dayjs/plugin/isToday';
 import React, { memo } from 'react';
 import { colorWithOpacity, useColors } from '../../features';
-import { TouchableOpacity } from '../TouchableOpacity';
+import { Pressable } from '../Pressable';
 import { type ActivityDay } from './types';
 dayjs.extend(isToday);
 
@@ -30,9 +30,8 @@ export const Day = memo(function Day({
     ? colors.border.negative
     : 'transparent';
   return (
-    <TouchableOpacity
-      onPress={onPress(day)}
-      style={{
+    <Pressable
+      containerStyle={{
         backgroundColor,
         borderColor,
         borderWidth: 2,
@@ -40,6 +39,7 @@ export const Day = memo(function Day({
         margin,
         width: size,
       }}
+      onPress={onPress(day)}
     />
   );
 });

@@ -121,18 +121,17 @@ export const Crash = memo(function CrashMemo() {
 
   return (
     <Screen
+      dropShadow
       onLeftPress={goBack}
       title="Roobet Crash"
     >
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: spacing(4),
-          paddingVertical: spacing(2),
+          gap: spacing(4),
+          padding: spacing(4),
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >
-        <View />
-
         <Card>
           <View
             style={{ flexDirection: 'row', justifyContent: 'space-between' }}
@@ -153,7 +152,7 @@ export const Crash = memo(function CrashMemo() {
               onPress={handleTabPress('manual')}
               title="manual"
             />
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <Button
               color={playerGame.activeTab === 'auto' ? 'accent' : 'primaryA'}
               emphasis="medium"
@@ -161,7 +160,7 @@ export const Crash = memo(function CrashMemo() {
               title="auto"
             />
           </View>
-          <Spacing padding={2} />
+          <Spacing padding={spacing(2)} />
           <View
             style={{
               alignItems: 'center',
@@ -174,19 +173,19 @@ export const Crash = memo(function CrashMemo() {
               title="bet amount"
               value={String(playerGame.bidAmount)}
             />
-            <Spacing padding={1} />
+            <Spacing padding={spacing(1)} />
             <Button
               emphasis="medium"
               onPress={handleAmountPress(0.5)}
               title="1/2"
             />
-            <Spacing padding={1} />
+            <Spacing padding={spacing(1)} />
             <Button
               emphasis="medium"
               onPress={handleAmountPress(2)}
               title="2x"
             />
-            <Spacing padding={1} />
+            <Spacing padding={spacing(1)} />
             <Button
               emphasis="medium"
               onPress={handleAmountPress(100)}

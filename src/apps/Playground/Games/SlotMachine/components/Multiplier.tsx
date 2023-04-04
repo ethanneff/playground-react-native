@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Icon, Text, TouchableOpacity, View } from '../../../../../components';
+import { Icon, Text, Pressable, View } from '../../../../../components';
 
 type Props = {
   disabled: boolean;
@@ -13,7 +13,7 @@ export const Multiplier = memo(function Multiplier({
   onPress,
 }: Props) {
   return (
-    <TouchableOpacity
+    <Pressable
       disabled={disabled}
       onPress={onPress}
     >
@@ -37,6 +37,6 @@ export const Multiplier = memo(function Multiplier({
           name="lightning-bolt"
         />
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 });

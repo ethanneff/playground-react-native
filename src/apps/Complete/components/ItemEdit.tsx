@@ -85,7 +85,7 @@ export const ItemEdit = memo(function ItemEdit({
           textContentType="none"
           value={title}
         />
-        <Spacing padding={2} />
+        <Spacing padding={spacing(2)} />
         <ItemDetailHeader title="Details" />
         <TextInput
           autoCapitalize="sentences"

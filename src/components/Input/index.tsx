@@ -20,7 +20,7 @@ import { fontSizes, SoundManager, spacing, useColors } from '../../features';
 import { Icon, type IconName } from '../Icon';
 import { Text } from '../Text';
 import { type TextInputRef } from '../TextInput';
-import { TouchableOpacity } from '../TouchableOpacity';
+import { Pressable } from '../Pressable';
 
 // styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 
@@ -188,17 +188,17 @@ export const Input = memo(function Input({
           underlineColorAndroid="transparent"
           value={value}
         />
-        <TouchableOpacity onPress={textClear}>
+        <Pressable onPress={textClear}>
           <Icon
             color="tertiary"
             hidden={noValue}
             name={clearIcon}
             style={styles.clear}
           />
-        </TouchableOpacity>
+        </Pressable>
       </View>
       {!hideError && (
-        <TouchableOpacity
+        <Pressable
           disabled={!error.length}
           onPress={handleOnFocus}
         >
@@ -220,7 +220,7 @@ export const Input = memo(function Input({
               title={error || ' '}
             />
           </View>
-        </TouchableOpacity>
+        </Pressable>
       )}
     </View>
   );

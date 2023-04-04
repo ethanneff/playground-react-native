@@ -20,7 +20,10 @@ export const ProgressionDetails = memo(function ProgressionDetails() {
   }, [navigate]);
 
   return (
-    <Modal onBackgroundPress={onModalClose}>
+    <Modal
+      onBackgroundPress={onModalClose}
+      showOverlay
+    >
       <Text title="category detail" />
       {/* <Activity site="random" title="Deep Work" username="random" /> */}
       <Text title={route.params.category.id} />

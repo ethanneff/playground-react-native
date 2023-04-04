@@ -7,8 +7,8 @@ import {
   type MonoMultiColor,
 } from '../../features';
 import { Icon } from '../Icon';
+import { Pressable } from '../Pressable';
 import { Text } from '../Text';
-import { TouchableOpacity } from '../TouchableOpacity';
 import { View } from '../View';
 import { getIcon, getPlacement } from './utils';
 
@@ -59,14 +59,14 @@ export const ScrollButton = ({
         ...placement,
       }}
     >
-      <TouchableOpacity
-        disabled={!onPress}
-        onPress={onPress}
-        style={{
+      <Pressable
+        containerStyle={{
           backgroundColor: colors.background[backgroundColor],
           borderRadius: spacing(4),
           margin: spacing(2),
         }}
+        disabled={!onPress}
+        onPress={onPress}
       >
         <View
           style={{
@@ -94,7 +94,7 @@ export const ScrollButton = ({
             />
           )}
         </View>
-      </TouchableOpacity>
+      </Pressable>
     </Animated.View>
   );
 };

@@ -28,7 +28,7 @@ export const Alert = memo(function Alert({
         title={title}
         type="h6"
       />
-      <Spacing padding={2} />
+      <Spacing padding={spacing(2)} />
       <Text
         center
         hidden={!description}
@@ -42,7 +42,7 @@ export const Alert = memo(function Alert({
             title="cancel"
           />
         ) : null}
-        <Spacing padding={2} />
+        <Spacing padding={spacing(2)} />
         {onConfirmPress ? (
           <Button
             color="accent"

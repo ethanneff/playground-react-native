@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useContext } from 'react';
-import { TouchableOpacity, View } from '../../../../components';
+import { Pressable, View } from '../../../../components';
 import { useColors, useDropShadow } from '../../../../features';
 import { DriftContext } from './Context';
 import { type ColorChoice } from './types';
@@ -31,43 +31,43 @@ export const Dpad = memo(function Dpad() {
       }}
     >
       <View flexDirection="row">
-        <TouchableOpacity
-          onPress={onPress('violet')}
-          style={{
+        <Pressable
+          containerStyle={{
             ...box,
             backgroundColor: colors.background.warning,
             borderTopLeftRadius: size,
             ...useShadow(10),
           }}
+          onPress={onPress('violet')}
         />
-        <TouchableOpacity
-          onPress={onPress('mediumseagreen')}
-          style={{
+        <Pressable
+          containerStyle={{
             ...box,
             backgroundColor: colors.background.positive,
             borderTopRightRadius: size,
             ...useShadow(10),
           }}
+          onPress={onPress('mediumseagreen')}
         />
       </View>
       <View flexDirection="row">
-        <TouchableOpacity
-          onPress={onPress('slateblue')}
-          style={{
+        <Pressable
+          containerStyle={{
             ...box,
             backgroundColor: colors.background.accent,
             borderBottomLeftRadius: size,
             ...useShadow(10),
           }}
+          onPress={onPress('slateblue')}
         />
-        <TouchableOpacity
-          onPress={onPress('orange')}
-          style={{
+        <Pressable
+          containerStyle={{
             ...box,
             backgroundColor: colors.background.negative,
             borderBottomRightRadius: size,
             ...useShadow(10),
           }}
+          onPress={onPress('orange')}
         />
       </View>
     </View>

@@ -52,7 +52,7 @@ const CustomToast = ({
       />
       {description ? (
         <>
-          <Spacing padding={1} />
+          <Spacing padding={spacing(1)} />
           <Text
             center={center}
             emphasis="high"

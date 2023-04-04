@@ -92,7 +92,7 @@ export const ForgotPassword = memo(function ForgotPassword() {
           emphasis="medium"
           title="Enter your email address to receive a link to reset your password."
         />
-        <Spacing padding={2} />
+        <Spacing padding={spacing(2)} />
         <TextInput
           autoCapitalize="none"
           autoComplete="email"
@@ -110,7 +110,7 @@ export const ForgotPassword = memo(function ForgotPassword() {
           textContentType="username"
           value={email.current}
         />
-        <Spacing padding={2} />
+        <Spacing padding={spacing(2)} />
         <Button
           center
           color="accent"

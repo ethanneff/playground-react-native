@@ -49,7 +49,7 @@ export const Login = memo(function PortfolioLogin() {
           title="email"
           value={email}
         />
-        <Spacing padding={2} />
+        <Spacing padding={spacing(2)} />
         <Input
           hideError
           onChangeText={handlePassword}
@@ -57,7 +57,7 @@ export const Login = memo(function PortfolioLogin() {
           title="password"
           value={password}
         />
-        <Spacing padding={2} />
+        <Spacing padding={spacing(2)} />
         <View
           flexDirection="row"
           justifyContent="space-around"

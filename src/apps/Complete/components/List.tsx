@@ -33,13 +33,13 @@ export const List = memo(function List({
     >
       <Card
         containerStyle={{
+          flex: 0,
           flexShrink: 1,
           marginRight: margin === 'right' ? completeConfig.padding : 0,
           width: listWidth,
         }}
-        contentStyle={{ flexShrink: 1 }}
+        contentStyle={{ flex: 0, flexShrink: 1 }}
         elevation={4}
-        nonFlex
       >
         <ListHeader
           itemId={itemId}

@@ -64,7 +64,6 @@ export const Board = memo(function Board({
       showsHorizontalScrollIndicator={false}
       snapToAlignment="center"
       snapToInterval={listSize}
-      style={{ height: '100%' }}
     />
   );
 });

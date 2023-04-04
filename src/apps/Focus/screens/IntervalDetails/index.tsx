@@ -5,6 +5,7 @@ import {
   Card,
   Icon,
   KeyboardAwareScrollView,
+  Pressable,
   Screen,
   ScrollView,
   Slider,
@@ -12,7 +13,6 @@ import {
   Switch,
   Text,
   TextInput,
-  TouchableOpacity,
   View,
   type TextInputRef,
 } from '../../../../components';
@@ -125,8 +125,8 @@ export const IntervalDetails = memo(function IntervalDetails() {
       >
         <KeyboardAwareScrollView
           contentContainerStyle={{
-            paddingHorizontal: spacing(4),
-            paddingVertical: spacing(2),
+            gap: spacing(4),
+            padding: spacing(4),
           }}
           style={{ backgroundColor: colors.background.secondary }}
         >
@@ -136,7 +136,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
               title="Interval"
               type="h4"
             />
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <Text title={title} />
           </Card>
           <Card>
@@ -145,7 +145,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
               title="Status"
               type="h4"
             />
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <TextInput
               autoCapitalize="sentences"
               autoComplete="off"
@@ -163,7 +163,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
               title="What went well?"
               value={state.well}
             />
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <TextInput
               autoCapitalize="sentences"
               autoComplete="off"
@@ -181,7 +181,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
               title="What could be improved?"
               value={state.improve}
             />
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <TextInput
               autoCapitalize="sentences"
               autoComplete="off"
@@ -211,13 +211,13 @@ export const IntervalDetails = memo(function IntervalDetails() {
                 title="Goals"
                 type="h4"
               />
-              <TouchableOpacity onPress={handleModal(true)}>
+              <Pressable onPress={handleModal(true)}>
                 <Icon
                   color="tertiary"
                   name="plus"
                   size={spacing(8)}
                 />
-              </TouchableOpacity>
+              </Pressable>
             </View>
             {goalLength ? (
               <ScrollView
@@ -228,17 +228,17 @@ export const IntervalDetails = memo(function IntervalDetails() {
                 showsHorizontalScrollIndicator={false}
               >
                 {state.goals.map((g, index) => (
-                  <TouchableOpacity
-                    key={g}
-                    style={{
+                  <Pressable
+                    containerStyle={{
                       backgroundColor: colors.background.secondary,
                       flex: 0,
                       marginRight: index < goalLength ? spacing(2) : spacing(0),
                       padding: spacing(2),
                     }}
+                    key={g}
                   >
                     <Text title={g} />
-                  </TouchableOpacity>
+                  </Pressable>
                 ))}
               </ScrollView>
             ) : null}
@@ -250,30 +250,30 @@ export const IntervalDetails = memo(function IntervalDetails() {
               title="Metrics"
               type="h4"
             />
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <Text title="Was your focus intense?" />
-            <Spacing padding={1} />
+            <Spacing padding={spacing(1)} />
             <Switch
               onValueChange={handleSwitchChange('focus')}
               value={state.focus}
             />
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <Text title="Were you outside your comfort zone?" />
-            <Spacing padding={1} />
+            <Spacing padding={spacing(1)} />
             <Switch
               onValueChange={handleSwitchChange('uncomfortable')}
               value={state.uncomfortable}
             />
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <Text title="Did you make any significant progress?" />
-            <Spacing padding={1} />
+            <Spacing padding={spacing(1)} />
             <Switch
               onValueChange={handleSwitchChange('significant')}
               value={state.significant}
             />
-            <Spacing padding={2} />
+            <Spacing padding={spacing(2)} />
             <Text title="How would you rank this interval?" />
-            <Spacing padding={1} />
+            <Spacing padding={spacing(1)} />
             <View
               style={{
                 alignItems: 'center',
@@ -286,7 +286,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
                 title={`${state.nps}`}
                 type="h6"
               />
-              <Spacing padding={2} />
+              <Spacing padding={spacing(2)} />
               <Slider
                 defaultValue={state.nps}
                 flex

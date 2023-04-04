@@ -4,7 +4,7 @@ import {
   FlashList,
   Icon,
   Text,
-  TouchableOpacity,
+  Pressable,
   View,
   type FlashListRenderItem,
 } from '../../components';
@@ -43,7 +43,7 @@ const ProgressItem = ({ item }: ProgressItemProps) => {
     : 'close';
 
   return (
-    <TouchableOpacity onPress={onPress}>
+    <Pressable onPress={onPress}>
       <Icon
         color={iconColor}
         name={iconName}
@@ -62,7 +62,7 @@ const ProgressItem = ({ item }: ProgressItemProps) => {
           title={item.date.format(dateFormat)}
         />
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 

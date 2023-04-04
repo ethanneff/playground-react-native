@@ -42,7 +42,7 @@ export const CreateGoalModal = memo(function CreateGoalModal({
         title="Create Goal"
         type="h4"
       />
-      <Spacing padding={2} />
+      <Spacing padding={spacing(2)} />
       <TextInput
         autoCapitalize="sentences"
         autoComplete="off"

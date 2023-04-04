@@ -48,7 +48,7 @@ export const PinchSpread = memo(function PinchSpread() {
       <View
         style={{
           padding: spacing(2),
-          ...dropShadow(0, -3),
+          ...dropShadow(0, -2),
           backgroundColor: colors.background.primaryA,
         }}
       >

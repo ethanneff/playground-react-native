@@ -16,8 +16,8 @@ export const Paragraphs = memo(function Paragraphs() {
     >
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: spacing(4),
-          paddingVertical: spacing(2),
+          gap: spacing(4),
+          padding: spacing(4),
         }}
         showsVerticalScrollIndicator={false}
         style={{ backgroundColor: colors.background.secondary }}

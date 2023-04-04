@@ -3,7 +3,7 @@ import { View } from '..';
 import { spacing, useColors } from '../../features';
 import { useRootDispatch, useRootSelector } from '../../redux';
 import { Text } from '../Text';
-import { TouchableOpacity } from '../TouchableOpacity';
+import { Pressable } from '../Pressable';
 import { calendarActions } from './calendarReducer';
 import { calendarUtils } from './calendarUtils';
 import { type DayState } from './types';
@@ -58,7 +58,7 @@ export const CalendarDay = ({ dayKey, hiddenDays }: Props) => {
   }, [day.value, dispatch]);
 
   return (
-    <TouchableOpacity
+    <Pressable
       disabled={disabled}
       onPress={handleSelect}
     >
@@ -78,6 +78,6 @@ export const CalendarDay = ({ dayKey, hiddenDays }: Props) => {
           title={day.display}
         />
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };

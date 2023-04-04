@@ -37,7 +37,6 @@ export * from './Text';
 export * from './TextGroup';
 export * from './TextInput';
 export * from './Toast';
-export * from './TouchableOpacity';
-export * from './TouchableWithoutFeedback';
 export * from './View';
 export * from './VisibilitySensor';
+export * from './Pressable';

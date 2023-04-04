@@ -3,17 +3,17 @@ import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
 import {
   Button,
+  Pressable,
   Screen,
   Spacing,
   Text,
-  TouchableOpacity,
   View,
 } from '../../../../components';
 import {
   useNavigation,
   type StackNavigationProp,
 } from '../../../../conversions';
-import { useColors } from '../../../../features';
+import { spacing, useColors } from '../../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../../redux';
 import { getLoaded } from '../../data';
 import { type AuthStackRoutes } from '../../types';
@@ -79,10 +79,10 @@ export const Download = memo(function Download() {
         flex={1}
         justifyContent="center"
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <Pressable
+          containerStyle={{ alignItems: 'center', justifyContent: 'center' }}
           onPress={handleTapAnimation}
-          style={{ alignItems: 'center', justifyContent: 'center' }}
+          withoutFeedback
         >
           <Lottie
             autoPlay
@@ -111,7 +111,7 @@ export const Download = memo(function Download() {
               }}
             />
           ))}
-        </TouchableOpacity>
+        </Pressable>
         <Animated.View style={heartBeatStyles}>
           <Text
             center
@@ -120,13 +120,13 @@ export const Download = memo(function Download() {
           />
         </Animated.View>
         <View style={{ opacity: showLogout ? 1 : 0 }}>
-          <Spacing padding={5} />
+          <Spacing padding={spacing(5)} />
           <Text
             center
             title="Taking too long?"
             type="body1"
           />
-          <Spacing padding={0.5} />
+          <Spacing padding={spacing(0.5)} />
           <Button
             center
             color="secondary"

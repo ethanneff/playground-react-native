@@ -46,8 +46,8 @@ export const Account = memo(function Account() {
     >
       <ScrollView
         contentContainerStyle={{
-          paddingHorizontal: spacing(4),
-          paddingVertical: spacing(2),
+          gap: spacing(4),
+          padding: spacing(4),
         }}
         style={{ backgroundColor: colors.background.secondary }}
       >
@@ -105,7 +105,6 @@ export const Account = memo(function Account() {
             />
           ) : null}
         </Card>
-
         <Card>
           <Text
             emphasis="medium"
@@ -126,7 +125,6 @@ export const Account = memo(function Account() {
             title="theme"
           />
         </Card>
-
         <Card>
           <Text
             emphasis="medium"

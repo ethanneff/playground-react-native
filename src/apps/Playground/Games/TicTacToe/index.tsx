@@ -2,10 +2,10 @@ import React, { memo, useCallback, useState } from 'react';
 import { v4 } from 'uuid';
 import {
   Button,
+  Pressable,
   Screen,
   Spacing,
   Text,
-  TouchableOpacity,
   View,
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
@@ -78,7 +78,7 @@ export const TicTacToe = memo(function TicTacToe() {
           title={turnTitle}
           type="h5"
         />
-        <Spacing padding={2} />
+        <Spacing padding={spacing(2)} />
         <View>
           {game.board.map((row, i) => (
             <View
@@ -86,13 +86,8 @@ export const TicTacToe = memo(function TicTacToe() {
               key={v4()}
             >
               {row.map((_, j) => (
-                <TouchableOpacity
-                  disabled={
-                    game.board[i][j] !== 0 || game.state === 'game-over'
-                  }
-                  key={v4()}
-                  onPress={onCellPress(i, j)}
-                  style={{
+                <Pressable
+                  containerStyle={{
                     alignItems: 'center',
                     backgroundColor: colors.background.primaryA,
                     height: size,
@@ -101,17 +96,22 @@ export const TicTacToe = memo(function TicTacToe() {
                     width: size,
                     ...dropShadow(1),
                   }}
+                  disabled={
+                    game.board[i][j] !== 0 || game.state === 'game-over'
+                  }
+                  key={v4()}
+                  onPress={onCellPress(i, j)}
                 >
                   <Text
                     title={getValue(game.board[i][j])}
                     type="h4"
                   />
-                </TouchableOpacity>
+                </Pressable>
               ))}
             </View>
           ))}
         </View>
-        <Spacing padding={2} />
+        <Spacing padding={spacing(2)} />
 
         <Button
           center

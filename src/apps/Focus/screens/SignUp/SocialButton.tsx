@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import {
   Icon,
+  Pressable,
   Spacing,
   Text,
-  TouchableOpacity,
   View,
   type IconName,
 } from '../../../../components';
@@ -24,7 +24,7 @@ export const SocialButton = memo(function LoginButton({
 }: Props) {
   const colors = useColors();
   return (
-    <TouchableOpacity
+    <Pressable
       disabled={disabled}
       onPress={onPress}
     >
@@ -44,13 +44,13 @@ export const SocialButton = memo(function LoginButton({
           name={icon}
           size={spacing(5)}
         />
-        <Spacing padding={1} />
+        <Spacing padding={spacing(1)} />
         <Text
           color="secondary"
           title={title}
           type="button"
         />
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 });

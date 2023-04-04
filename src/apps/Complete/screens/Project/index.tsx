@@ -2,7 +2,7 @@ import React, { memo, useCallback, useState } from 'react';
 import { type LayoutChangeEvent } from 'react-native';
 import { KeyboardHandler, Screen } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
-import { useColors, useKeyboardHeight, useLayout } from '../../../../features';
+import { useKeyboardHeight, useLayout } from '../../../../features';
 import { getSmallestDimension, useRootSelector } from '../../../../redux';
 import { Board } from '../../components';
 
@@ -10,7 +10,6 @@ import { Board } from '../../components';
 
 export const Project = memo(function Project() {
   const { goBack } = useNavigation();
-  const colors = useColors();
   const screenWidth = useRootSelector(getSmallestDimension);
   const { projectItemId } = useRootSelector((s) => s.completeItem.nav);
   if (!projectItemId) throw new Error('missing projectItemId on board screen');
@@ -23,13 +22,9 @@ export const Project = memo(function Project() {
   const keyboardHeight = useKeyboardHeight();
   const listMaxHeight = container - keyboardHeight;
 
-  const onLayout = useCallback(
-    (event: LayoutChangeEvent) => {
-      if (container > 0) return;
-      setContainer(event.nativeEvent.layout.height);
-    },
-    [container],
-  );
+  const onLayout = useCallback((event: LayoutChangeEvent) => {
+    setContainer(event.nativeEvent.layout.height);
+  }, []);
 
   const navBack = useCallback(() => {
     goBack();
@@ -42,7 +37,7 @@ export const Project = memo(function Project() {
       title={projectItemTitle}
     >
       <KeyboardHandler
-        backgroundColor={colors.background.secondary}
+        backgroundColor="secondary"
         onLayout={onLayout}
       >
         <Board

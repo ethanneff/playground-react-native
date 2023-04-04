@@ -144,53 +144,51 @@ export const Themes = memo(function Themes() {
   const onPress = useCallback(() => undefined, []);
 
   const renderItem = useCallback<FlashListRenderItem<CardItem>>(
-    ({ item }) => {
-      return (
-        <Card
-          containerStyle={{ margin: spacing(2) }}
-          elevation={elevation}
-          onPress={onPress}
-        >
-          <Text
-            title={item.title}
-            type="overline"
-          />
+    ({ item }) => (
+      <Card
+        containerStyle={{ margin: spacing(2) }}
+        elevation={elevation}
+        onPress={onPress}
+      >
+        <Text
+          title={item.title}
+          type="overline"
+        />
+        <Text
+          style={{ marginTop: spacing(2) }}
+          title={item.value}
+          type="h4"
+        />
+        {item.target ? (
           <Text
             style={{ marginTop: spacing(2) }}
-            title={item.value}
-            type="h4"
+            title={item.target}
+            type="body2"
           />
-          {item.target ? (
-            <Text
-              style={{ marginTop: spacing(2) }}
-              title={item.target}
-              type="body2"
-            />
-          ) : null}
-          {item.chart ? (
-            <Image
-              source={item.chart}
-              style={{
-                height: 100,
-                marginTop: spacing(2),
-                resizeMode: 'cover',
-                width: '100%',
-              }}
-            />
-          ) : null}
-          {item.button ? (
-            <Button
-              buttonStyle={{ marginTop: spacing(2) }}
-              center
-              color="accent"
-              emphasis="high"
-              onPress={onPress}
-              title={item.button}
-            />
-          ) : null}
-        </Card>
-      );
-    },
+        ) : null}
+        {item.chart ? (
+          <Image
+            source={item.chart}
+            style={{
+              height: 100,
+              marginTop: spacing(2),
+              resizeMode: 'cover',
+              width: '100%',
+            }}
+          />
+        ) : null}
+        {item.button ? (
+          <Button
+            buttonStyle={{ marginTop: spacing(2) }}
+            center
+            color="accent"
+            emphasis="high"
+            onPress={onPress}
+            title={item.button}
+          />
+        ) : null}
+      </Card>
+    ),
     [elevation, onPress],
   );
 
