@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.76.1](https://github.com/ethanneff/playground-react-native/compare/v2.76.0...v2.76.1) (2023-04-04)
+
+
+### Bug Fixes
+
+* add docs ([e21bfb9](https://github.com/ethanneff/playground-react-native/commit/e21bfb971e325f71c53f610d3afdd2bb793f518f))
+* remove nested ([c28b466](https://github.com/ethanneff/playground-react-native/commit/c28b4665d5a57ee3fb928e33f0d72728a7b4a68f))
+
 # [2.76.0](https://github.com/ethanneff/playground-react-native/compare/v2.75.7...v2.76.0) (2023-04-04)
 
 
