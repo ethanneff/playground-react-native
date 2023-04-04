@@ -23,6 +23,8 @@
 
 Deploy Android + iOS App
 
+V1
+
 - [x] add tab bar (day view, calendar, settings)
 - [x] login/logout
 - [x] landing screens
@@ -76,8 +78,11 @@ v3
 - [ ] update to react-native-mmkv??
 - [x] upgrade 71
 - [ ] move all to .cache
-- [ ] add pressable component with onPressIn
-- [ ] upgrade to flashlist
+- [ ] add pressable component with onPressIn (remove touchable compnoents)
+- [x] upgrade to flashlist
+- [ ] update text inputs (1 component, remove value, useRef instead of useState)
+- [ ] update redux (toolkit, slices based on apps)
+- [ ] remove dayjs
 - [ ] make modal global like toast (https://github.com/timolins/react-hot-toast)
   ```ts
   const Modal = {};
