@@ -1,10 +1,10 @@
 import React, { memo, useCallback, type ReactNode } from 'react';
 import { Keyboard, type LayoutChangeEvent } from 'react-native';
-import { View } from '../../components';
+import { type MonoMultiColor } from '../../features';
 import { TouchableWithoutFeedback } from '../TouchableWithoutFeedback';
 
 type HandleKeyboardProps = {
-  backgroundColor?: string;
+  backgroundColor?: keyof MonoMultiColor;
   children: ReactNode;
   onLayout: (event: LayoutChangeEvent) => void;
 };
@@ -19,15 +19,11 @@ export const KeyboardHandler = memo(function KeyboardHandler({
   }, []);
   return (
     <TouchableWithoutFeedback
+      onLayout={onLayout}
       onPress={onDismissKeyboard}
-      style={{ height: '100%' }}
+      style={{ backgroundColor, height: '100%' }}
     >
-      <View
-        onLayout={onLayout}
-        style={{ backgroundColor, flex: 1 }}
-      >
-        {children}
-      </View>
+      {children}
     </TouchableWithoutFeedback>
   );
 });
