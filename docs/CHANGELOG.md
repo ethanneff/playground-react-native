@@ -1,5 +1,62 @@
 # Changelog
 
+# [2.76.0](https://github.com/ethanneff/playground-react-native/compare/v2.75.7...v2.76.0) (2023-04-04)
+
+
+### Bug Fixes
+
+* add console error to error boundary ([5f71853](https://github.com/ethanneff/playground-react-native/commit/5f71853e370079f13eb8cf537e5db79fe729cc19))
+* add onlayout to components ([98ed441](https://github.com/ethanneff/playground-react-native/commit/98ed44117cd29c41aa328d3d65b88d5881640a28))
+* allow flatlist ([2bfa317](https://github.com/ethanneff/playground-react-native/commit/2bfa3177ba44dd07e6a0edd381b0ae31a3c016ec))
+* always admin on dev ([2724d53](https://github.com/ethanneff/playground-react-native/commit/2724d534815bbf28026cbea5f068b219e8caaf1f))
+* bring back card flex ([8f889eb](https://github.com/ethanneff/playground-react-native/commit/8f889ebbdeddd741dfac9f27ce1ef4aef2b7b59b))
+* calendar ([ea9d747](https://github.com/ethanneff/playground-react-native/commit/ea9d747a5ee151a91af8f1b949ba9aba41029776))
+* correct cant hurt me ([dabf65f](https://github.com/ethanneff/playground-react-native/commit/dabf65f15e69b30dc712b2216c50dd2b79326c9b))
+* correct carousel dot reloading ([e0987b6](https://github.com/ethanneff/playground-react-native/commit/e0987b61e1e5b97ca22b1de32802e7c4348ca824))
+* correct linting on questionnaire ([2a88cf0](https://github.com/ethanneff/playground-react-native/commit/2a88cf0bb489a168002c7c07ce04fb77dd0b0ea8))
+* correct modal padding ([fe1fa5c](https://github.com/ethanneff/playground-react-native/commit/fe1fa5c3f0b666876616a870d2f8a8f067fb329d))
+* correct scrollviews ([ad6e8b2](https://github.com/ethanneff/playground-react-native/commit/ad6e8b2945d4d7710f9a79613b4894c935aa796e))
+* correct slot linting ([88a4b21](https://github.com/ethanneff/playground-react-native/commit/88a4b2160ceecc63ced4f9306a951ab2509987bc))
+* correct sound ([91335b2](https://github.com/ethanneff/playground-react-native/commit/91335b2ec933034deffdfbb33366dc30c073176e))
+* freeze hidden navigation screens ([a1dc0e1](https://github.com/ethanneff/playground-react-native/commit/a1dc0e1672ba490e1187b1b06ff072db15f34928))
+* increase odds on slots ([540f438](https://github.com/ethanneff/playground-react-native/commit/540f4385b63741df13f176648e702a778fb120bc))
+* linting ([a88d421](https://github.com/ethanneff/playground-react-native/commit/a88d4211ae94bce1da7de14596ef9b533fea935b))
+* make calendar not show prev or next months ([be402d9](https://github.com/ethanneff/playground-react-native/commit/be402d9c7d2c72117f5f828070c7968cfb618ee2))
+* make calendar select work ([6bf0d55](https://github.com/ethanneff/playground-react-native/commit/6bf0d55544697063a830167f7f0e107f0a8cd738))
+* make general flashlist changes to complete ([9c889bb](https://github.com/ethanneff/playground-react-native/commit/9c889bba0ef4b4df468b538ffcfa5c347fde9bab))
+* make social work ([b65ce11](https://github.com/ethanneff/playground-react-native/commit/b65ce11a1f46042ed89293b80aa8cbd19499e257))
+* mock data ([89477e0](https://github.com/ethanneff/playground-react-native/commit/89477e07f8b398f3d7c52f05c70b57c69a400aaf))
+* normalize calendar data ([9293b3e](https://github.com/ethanneff/playground-react-native/commit/9293b3e56851c9eb47962377466d265ba3ccb28b))
+* patch flashlist for web ([b875ada](https://github.com/ethanneff/playground-react-native/commit/b875ada989f4022e456ed5ac7f2f53017ec2d7aa))
+* prevent ball from going off screen ([8d7dd5f](https://github.com/ethanneff/playground-react-native/commit/8d7dd5f219a5ab6670d45a536f60d225352ff7d8))
+* prevent double tap sound on input onmount ([88bf4d5](https://github.com/ethanneff/playground-react-native/commit/88bf4d53cabe878e4dd11a6e184a26c3f36daec7))
+* prevent glitchy slider ([a14e370](https://github.com/ethanneff/playground-react-native/commit/a14e370fe395871e32c44b3f765e078ba1a9355f))
+* remove anything on slots ([212a70d](https://github.com/ethanneff/playground-react-native/commit/212a70dd60cd394489562496124e075e98183984))
+* remove flex on cards ([e15a684](https://github.com/ethanneff/playground-react-native/commit/e15a6846ffd534bc22117cf27a0c2a47c15e5d42))
+* remove margin from cards ([555a6f1](https://github.com/ethanneff/playground-react-native/commit/555a6f1ad8118a8dfa19d1652f2fa057a9bae702))
+* rename to flashlist ([e706cdf](https://github.com/ethanneff/playground-react-native/commit/e706cdf4d3cba218e7b78eee8ce489e2d8a6a9e4))
+* show playground scrollviews ([b34b36c](https://github.com/ethanneff/playground-react-native/commit/b34b36c6a71efdc17a2708a924f234cbc03c220a))
+* speed up calendar ([c322664](https://github.com/ethanneff/playground-react-native/commit/c322664061b87aa6f044b1512a6838d4a5dc7a98))
+* support landscape ([56e24a6](https://github.com/ethanneff/playground-react-native/commit/56e24a63b32be72149ac2628355e599648113daf))
+* track wins and animate reel ([3548157](https://github.com/ethanneff/playground-react-native/commit/354815708d84c2ed2dd65a8b441eb5a904e85cb9))
+* update deps ([013f331](https://github.com/ethanneff/playground-react-native/commit/013f331daf582103bdf9c5e911e49f6af524a867))
+* update deps ([2832034](https://github.com/ethanneff/playground-react-native/commit/2832034ccf49f132f8e38f00e622e80a7a0d610e))
+* update deps ([fd4f022](https://github.com/ethanneff/playground-react-native/commit/fd4f022925073225716c941fc9b96fbedaceddb0))
+* update deps ([b7f42b0](https://github.com/ethanneff/playground-react-native/commit/b7f42b09cc8ab8505e8c8235ea806b61c252ccbc))
+* update deps ([b9fca5d](https://github.com/ethanneff/playground-react-native/commit/b9fca5d1579366118d48f595237c8d87e2d93f97))
+* update deps ([20a09a2](https://github.com/ethanneff/playground-react-native/commit/20a09a21ae90126abb120a74a2e25b5bfef6b741))
+* update deps (web, ios) ([aaec3d3](https://github.com/ethanneff/playground-react-native/commit/aaec3d345b83d4cbeeeec2bb1a30a418f9afbb56))
+* update linting ([9bd6f16](https://github.com/ethanneff/playground-react-native/commit/9bd6f16c45cc274d4a330cac363fd586a9629ce9))
+* update planning ([f325fe4](https://github.com/ethanneff/playground-react-native/commit/f325fe40bb02d463e76c181e7292afc6abe89b35))
+* use flashlist masonry ([25b9cd7](https://github.com/ethanneff/playground-react-native/commit/25b9cd79609ea921bbd2ac94f708d70a0663fd85))
+* use gesture flatlist ([c529683](https://github.com/ethanneff/playground-react-native/commit/c5296835dfd4a2f9b542936ed84d8e9974dac22e))
+* use input prop to focus on chat ([00ddbd5](https://github.com/ethanneff/playground-react-native/commit/00ddbd5dc25ca264a2da86ec9007454fd1ba2b9e))
+
+
+### Features
+
+* redo slot machine ([0da72e0](https://github.com/ethanneff/playground-react-native/commit/0da72e06a05c470f70f21a176819a48904f8c55b))
+
 ## [2.75.7](https://github.com/ethanneff/playground-react-native/compare/v2.75.6...v2.75.7) (2023-04-03)
 
 
