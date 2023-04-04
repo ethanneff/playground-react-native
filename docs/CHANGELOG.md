@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.76.2](https://github.com/ethanneff/playground-react-native/compare/v2.76.1...v2.76.2) (2023-04-04)
+
+
+### Bug Fixes
+
+* move everything to .cache dir ([f8410d0](https://github.com/ethanneff/playground-react-native/commit/f8410d00e86b1e6bad73af0770d6b13b9f60b3b4))
+* remove touchable for pressable ([7b1790e](https://github.com/ethanneff/playground-react-native/commit/7b1790e4511e4a44438c301d6b69bd4e697a2f18))
+
 ## [2.76.1](https://github.com/ethanneff/playground-react-native/compare/v2.76.0...v2.76.1) (2023-04-04)
 
 
