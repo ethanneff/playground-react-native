@@ -63,7 +63,5 @@ yarn-error.log
 .metro-health-check*
 
 # Custom
-coverage/
 certs/
-.eslintcache
-tsconfig.tsbuildinfo
+.cache/

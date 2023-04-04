@@ -13,6 +13,7 @@ module.exports = {
     '<rootDir>/node_modules/@react-native-google-signin/google-signin/jest/build/setup.js',
     '<rootDir>/.github/jest.setup.js',
   ],
+  coverageDirectory: '<rootDir>/.cache/jest',
   rootDir: '../',
   globals: {
     window: {},

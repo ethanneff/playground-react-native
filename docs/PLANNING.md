@@ -77,8 +77,8 @@ v3
 
 - [ ] update to react-native-mmkv??
 - [x] upgrade 71
-- [ ] move all to .cache
 - [ ] add pressable component with onPressIn (remove touchable compnoents)
+- [x] move all to .cache
 - [x] upgrade to flashlist
 - [ ] update text inputs (1 component, remove value, useRef instead of useState)
 - [ ] update redux (toolkit, slices based on apps)
