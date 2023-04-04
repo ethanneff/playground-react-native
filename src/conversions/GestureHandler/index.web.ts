@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-imports */
 import {
   FlatList as GestureFlatList,
+  View as GestureHandlerProvider,
   ScrollView as GestureScrollView,
   Switch as GestureSwitch,
   TextInput as GestureTextInput,
@@ -8,7 +9,6 @@ import {
   TouchableNativeFeedback as GestureTouchableNativeFeedback,
   TouchableOpacity as GestureTouchableOpacity,
   TouchableWithoutFeedback as GestureTouchableWithoutFeedback,
-  View as GestureHandlerProvider,
 } from 'react-native';
 /* eslint-enable no-restricted-imports */
 

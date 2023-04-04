@@ -10,6 +10,7 @@ export * from './Content';
 export * from './ErrorBoundary';
 export * from './FastImage';
 export * from './FlashList';
+export * from './FlatList';
 export * from './Icon';
 export * from './Image';
 export * from './Input';

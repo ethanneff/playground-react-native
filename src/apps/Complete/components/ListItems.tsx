@@ -1,5 +1,9 @@
 import React, { memo, useCallback, useRef } from 'react';
-import { FlatList, type ListRenderItem } from 'react-native';
+import {
+  FlatList,
+  type FlatListRef,
+  type FlatListRenderItem,
+} from '../../../components';
 import { useRootSelector } from '../../../redux';
 import { ListItem } from './ListItem';
 
@@ -13,7 +17,7 @@ export const ListItems = memo(function ListItems({
   const list = useRootSelector(
     (s) => s.completeItem.items[parentItemId].children,
   );
-  const listRef = useRef<FlatList | null>(null);
+  const listRef = useRef<FlatListRef<string>>(null);
   const cardsLength = useRef(list.length);
 
   const onKeyExtractor = useCallback((item: string) => item, []);
@@ -23,9 +27,9 @@ export const ListItems = memo(function ListItems({
       listRef.current?.scrollToEnd();
       cardsLength.current = list.length;
     }
-  }, [list.length]);
+  }, [list.length, listRef]);
 
-  const onRenderItem = useCallback<ListRenderItem<string>>(
+  const onRenderItem = useCallback<FlatListRenderItem<string>>(
     ({ index, item }) => (
       <ListItem
         index={index}
@@ -42,7 +46,7 @@ export const ListItems = memo(function ListItems({
       keyExtractor={onKeyExtractor}
       keyboardShouldPersistTaps="handled"
       onContentSizeChange={onCardSizeChange}
-      ref={listRef}
+      onRef={listRef}
       renderItem={onRenderItem}
       showsVerticalScrollIndicator={false}
     />

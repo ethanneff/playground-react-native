@@ -2,56 +2,21 @@ import React, { memo, useCallback } from 'react';
 import { StyleSheet } from 'react-native';
 import {
   Card,
-  Icon,
   MasonryFlashList,
   Spacing,
   Text,
-  TouchableOpacity,
   View,
   type FlashListRenderItem,
 } from '../../components';
 import { spacing } from '../../features';
 import { getLandscapeOrientation, useRootSelector } from '../../redux';
-import { DailyProgress } from './DailyProgress';
-import { ProfileLevel } from './ProfileLevel';
+import { Header } from './Header';
 import { app } from './data';
 
 type Props = {
   onProfilePress: () => void;
   onSettingsPress: () => void;
 };
-
-const Header = ({ onProfilePress, onSettingsPress }: Props) => (
-  <View>
-    <Text
-      center
-      style={{ padding: spacing(4) }}
-      title="Progress"
-      type="h4"
-    />
-    <Card>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          paddingBottom: spacing(2),
-        }}
-      >
-        <ProfileLevel onPress={onProfilePress} />
-        <TouchableOpacity onPress={onSettingsPress}>
-          <Icon name="cog" />
-        </TouchableOpacity>
-      </View>
-      <DailyProgress />
-    </Card>
-    <Text
-      center
-      style={{ padding: spacing(4) }}
-      title="Challenges"
-      type="h4"
-    />
-  </View>
-);
 
 export const List = memo(function List({
   onProfilePress,
