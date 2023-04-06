@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.76.3](https://github.com/ethanneff/playground-react-native/compare/v2.76.2...v2.76.3) (2023-04-04)
+
+
+### Bug Fixes
+
+* correct linting ([f2c6ff7](https://github.com/ethanneff/playground-react-native/commit/f2c6ff74929df3af93cd13f5bc7c01cf67062bc2))
+
 ## [2.76.2](https://github.com/ethanneff/playground-react-native/compare/v2.76.1...v2.76.2) (2023-04-04)
 
 
