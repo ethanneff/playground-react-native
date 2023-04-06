@@ -8,7 +8,7 @@ import {
   TouchableHighlight as GestureTouchableHighlight,
   TouchableNativeFeedback as GestureTouchableNativeFeedback,
   TouchableOpacity as GestureTouchableOpacity,
-  TouchableWithoutFeedback as GestureTouchableWithoutFeedback,
+  Pressable as GestureTouchableWithoutFeedback,
 } from 'react-native';
 /* eslint-enable no-restricted-imports */
 
