@@ -32,7 +32,7 @@
     "@react-native-community/slider": "4.4.2",
     "@react-native-firebase/analytics": "14.12.0",
     "@react-native-firebase/app": "14.12.0",
-    "@react-native-firebase/auth": "14.12.0",
+    "@react-native-firebase/auth": "17.4.2",
     "@react-native-firebase/crashlytics": "14.12.0",
     "@react-native-firebase/firestore": "14.12.0",
     "@react-native-firebase/remote-config": "14.12.0",
