@@ -4,9 +4,9 @@ import { v4 } from 'uuid';
 import {
   Button,
   TextInput,
+  View,
   type TextInputIcon,
   type TextInputRef,
-  View,
 } from '../../../components';
 import { spacing, useColors } from '../../../features';
 import { useRootDispatch, useRootSelector } from '../../../redux';
@@ -117,7 +117,6 @@ export const AddItem = memo(function AddItem({
           returnKeyType="done"
           submitClear
           textContentType="none"
-          value=""
         />
       ) : (
         <Button

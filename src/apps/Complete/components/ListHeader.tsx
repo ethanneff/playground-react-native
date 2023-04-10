@@ -63,6 +63,7 @@ export const ListHeader = memo(function ListHeader({
         autoComplete="off"
         autoCorrect
         blurOnSubmit
+        defaultValue={item.title}
         editable={item.editable}
         icons={icons}
         keyboardType="default"
@@ -72,7 +73,6 @@ export const ListHeader = memo(function ListHeader({
         returnKeyType="done"
         textContentType="none"
         type="h4"
-        value={item.title}
       />
     </View>
   );

@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '../../components';
-import { Loader } from '../Loader';
+import { Spinner } from '../Spinner';
 import { FasterImage } from './FasterImage';
 
 type Props = {
@@ -39,7 +39,7 @@ export const Image = memo(function Image({
         uri={uri}
         width={width}
       />
-      <Loader
+      <Spinner
         size={size}
         style={styles.indicatorOverlay}
       />

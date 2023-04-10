@@ -78,6 +78,7 @@ export const PasswordReset = memo(function PasswordReset() {
         autoComplete="email"
         autoCorrect={false}
         blurOnSubmit={false}
+        defaultValue=""
         editable={!state.loading}
         keyboardType="email-address"
         onChangeText={onFormChange('email')}
@@ -87,7 +88,6 @@ export const PasswordReset = memo(function PasswordReset() {
         returnKeyType="send"
         style={{ marginBottom: spacing(4) }}
         textContentType="username"
-        value=""
       />
       <Button
         center

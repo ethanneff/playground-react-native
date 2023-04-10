@@ -12,7 +12,7 @@ import Playground from '../../apps/Playground';
 import Portfolio from '../../apps/Portfolio';
 import Progress from '../../apps/Progress';
 import TheOneThing from '../../apps/TheOneThing';
-import { Loader } from '../../components';
+import { Spinner } from '../../components';
 import { createStackNavigator, NavigationContainer } from '../../conversions';
 import { type RootRoutes } from './types';
 import { useNavScreenOptions } from './useNavScreenOptions';
@@ -26,7 +26,7 @@ const linking = {
 export const NavigationProvider = memo(function NavigationProvider() {
   const { initialState, isReady, onRef, onStateChange } = usePersistedState();
   const { rightScreenOptions } = useNavScreenOptions();
-  const fallback = <Loader />;
+  const fallback = <Spinner />;
   const initialRouteName = Config.APP as keyof RootRoutes;
 
   if (!isReady) return null;

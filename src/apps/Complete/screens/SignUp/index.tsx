@@ -100,6 +100,7 @@ export const SignUp = memo(function SignUp() {
         autoComplete="email"
         autoCorrect={false}
         blurOnSubmit={false}
+        defaultValue=""
         editable={!state.loading}
         keyboardType="email-address"
         onChangeText={onFormChange('email')}
@@ -109,13 +110,13 @@ export const SignUp = memo(function SignUp() {
         returnKeyType="next"
         style={{ marginBottom: spacing(4) }}
         textContentType="username"
-        value=""
       />
       <TextInput
         autoCapitalize="none"
         autoComplete="password"
         autoCorrect={false}
         blurOnSubmit={false}
+        defaultValue=""
         editable={!state.loading}
         error={state.passwordError}
         icons={[{ focus: true, name: eyeIcon, onPress: onEye }]}
@@ -128,7 +129,6 @@ export const SignUp = memo(function SignUp() {
         secureTextEntry={!state.eye}
         style={{ marginBottom: spacing(2) }}
         textContentType="password"
-        value=""
       />
       <Text
         color="negative"

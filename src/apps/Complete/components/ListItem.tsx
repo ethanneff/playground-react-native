@@ -115,6 +115,7 @@ export const ListItem = memo(function ListItem({
         autoCorrect
         backgroundColor="secondary"
         blurOnSubmit
+        defaultValue={item.title}
         editable
         icons={icons}
         keyboardType="default"
@@ -125,7 +126,6 @@ export const ListItem = memo(function ListItem({
         pointerEvents="none"
         returnKeyType="done"
         textContentType="none"
-        value={item.title}
       />
     </Pressable>
   );

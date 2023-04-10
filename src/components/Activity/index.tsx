@@ -3,8 +3,8 @@ import { FlashList, View, type FlashListRenderItem } from '../../components';
 import { spacing } from '../../features';
 import { Button } from '../Button';
 import { Card } from '../Card';
-import { Loader } from '../Loader';
 import { Pressable } from '../Pressable';
+import { Loader, Spinner } from '../Spinner';
 import { Text } from '../Text';
 import { Week } from './Week';
 import { getApiActivity } from './api';
@@ -138,7 +138,7 @@ export const Activity = memo(function Activity({
         ) : null}
       </View>
       {state.request === 'loading' ? (
-        <Loader size="large" />
+        <Spinner size="large" />
       ) : state.request === 'failure' ? (
         <>
           <Text title="Missing network connection" />

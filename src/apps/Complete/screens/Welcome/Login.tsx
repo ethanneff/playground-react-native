@@ -12,6 +12,7 @@ import {
   View,
   type IconName,
   type TextInputRef,
+  Spinner,
 } from '../../../../components';
 import { spacing, useAuth } from '../../../../features';
 import { ModalHeader } from '../../components';
@@ -193,7 +194,7 @@ export const Login = memo(function Login({
           />
         ) : null}
         {state.screen === 'loading' || type === 'initializing' ? (
-          <Loader />
+          <Spinner />
         ) : state.screen === 'phoneCode' ? (
           <>
             <TextInput
@@ -202,6 +203,7 @@ export const Login = memo(function Login({
               autoCorrect={false}
               backgroundColor="secondary"
               blurOnSubmit={false}
+              defaultValue=""
               editable
               keyboardType="number-pad"
               onChangeText={onFormChange('phoneCode')}
@@ -209,7 +211,6 @@ export const Login = memo(function Login({
               placeholder="phone confirmation code"
               returnKeyType="done"
               textContentType="none"
-              value=""
             />
             <Button
               color="accent"

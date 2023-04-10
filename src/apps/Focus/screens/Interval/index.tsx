@@ -2,8 +2,8 @@ import React, { memo, useCallback, useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import {
   FlashList,
-  Loader,
   Screen,
+  Spinner,
   View,
   type FlashListRenderItem,
 } from '../../../../components';
@@ -86,7 +86,7 @@ export const Interval = memo(function Interval() {
           />
         </View>
         {loading ? (
-          <Loader
+          <Spinner
             size="large"
             style={styles.loading}
           />

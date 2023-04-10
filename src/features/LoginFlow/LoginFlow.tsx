@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { Platform } from 'react-native';
-import { Button, Input, Loader, Modal } from '../../components';
+import { Button, Input, Modal, Spinner } from '../../components';
 import { Firebase, type FirebaseAuthTypes } from '../../conversions';
 import { LoginButton } from './LoginButton';
 
@@ -139,7 +139,7 @@ export const LoginFlow = memo(function LoginFlow({ onBackgroundPress }: Props) {
       showOverlay
     >
       {form.state === 'loading' ? (
-        <Loader size="large" />
+        <Spinner size="large" />
       ) : form.state === 'phone confirm' ? (
         <>
           <Input

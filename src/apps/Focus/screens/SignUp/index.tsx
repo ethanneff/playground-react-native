@@ -189,6 +189,7 @@ export const SignUp = memo(function SignUp() {
             autoCorrect={false}
             backgroundColor="secondary"
             blurOnSubmit={false}
+            defaultValue=""
             editable={!disabled}
             keyboardType="email-address"
             onChangeText={handleFormChange('email')}
@@ -197,7 +198,6 @@ export const SignUp = memo(function SignUp() {
             placeholder="Email address"
             returnKeyType="next"
             textContentType="username"
-            value=""
           />
           <Spacing padding={spacing(2)} />
           <TextInput

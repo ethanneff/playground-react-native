@@ -5,7 +5,6 @@ import {
   type StyleProp,
   type ViewStyle,
 } from 'react-native';
-import { View } from '../../components';
 import { useColors, type MonoMultiColor } from '../../features';
 
 type Props = {
@@ -14,26 +13,18 @@ type Props = {
   style?: StyleProp<ViewStyle>;
 };
 
-export const Loader = memo(function Loader({
-  color,
+export const Spinner = memo(function Spinner({
+  color = 'primaryB',
   size = 'large',
   style,
 }: Props) {
   const colors = useColors();
 
-  const loaderColor = color ? colors.text[color] : colors.text.secondary;
-
   return (
-    <View
-      backgroundColor="primaryA"
-      flex={1}
-      justifyContent="center"
+    <ActivityIndicator
+      color={colors.text[color]}
+      size={size}
       style={style}
-    >
-      <ActivityIndicator
-        color={loaderColor}
-        size={size}
-      />
-    </View>
+    />
   );
 });

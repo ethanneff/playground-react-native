@@ -28,15 +28,36 @@ import { Text } from '../Text';
 import { View } from '../View';
 import { type PointerEvents, type TextContentType } from './types';
 
-export type TextInputIcon = {
-  clear?: boolean;
+type TextInputIconProps = {
   color?: keyof MonoMultiColor;
-  focus?: boolean;
-  hidden?: boolean;
   name: IconName;
-  onPress: (text: string) => void;
-  required?: boolean;
-  reset?: boolean;
+  onPress: () => void;
+  size: number;
+};
+
+const TextInputIcon = ({
+  color = 'secondary',
+  name,
+  onPress,
+  size,
+}: TextInputIconProps) => {
+  return (
+    <Pressable
+      contentStyle={{
+        flex: 1,
+        justifyContent: 'center',
+        padding: spacing(1),
+        zIndex: 1,
+      }}
+      onPress={onPress}
+    >
+      <Icon
+        color={color}
+        name={name}
+        size={size}
+      />
+    </Pressable>
+  );
 };
 
 type AutoComplete =
@@ -87,19 +108,25 @@ type TextInputProps = {
   backgroundColor?: keyof MonoMultiColor;
   blurOnSubmit: boolean;
   color?: keyof MonoMultiColor;
+  defaultValue: string;
   disableFullscreenUI?: boolean;
   editable: boolean;
   emphasis?: FontEmphasis;
-  error?: boolean;
+  error?: string;
   focusOnLoad?: boolean;
+  hideError?: boolean;
+  iconClear?: boolean;
+  iconEdit?: boolean;
+  iconEye?: boolean;
   iconHeight?: number;
-  icons?: TextInputIcon[];
+  iconNext?: boolean;
+  iconSend?: boolean;
   keyboardType: KeyboardTypeOptions;
   multiline?: boolean;
   numberOfLines?: number;
-  onBlur?: (text: string) => void;
+  onBlur?: () => void;
   onChangeText: (text: string) => void;
-  onFocus?: (text: string) => void;
+  onFocus?: () => void;
   onRef?: MutableRefObject<TextInputRef>;
   onSubmitEditing: () => void;
   placeholder: string;
@@ -111,9 +138,9 @@ type TextInputProps = {
   textContentType: TextContentType;
   title?: string;
   type?: FontType;
-  value: string;
 };
 
+// eslint-disable-next-line complexity
 export const TextInput = memo(function TextInput({
   autoCapitalize,
   autoComplete,
@@ -121,13 +148,19 @@ export const TextInput = memo(function TextInput({
   backgroundColor,
   blurOnSubmit,
   color,
+  defaultValue,
   disableFullscreenUI,
   editable,
   emphasis,
   error,
   focusOnLoad,
+  hideError,
+  iconClear = true,
+  iconEdit = true,
+  iconEye = true,
   iconHeight = spacing(5),
-  icons = [],
+  iconNext = true,
+  iconSend = true,
   keyboardType,
   multiline,
   numberOfLines,
@@ -145,10 +178,12 @@ export const TextInput = memo(function TextInput({
   textContentType = 'none',
   title,
   type,
-  value = '',
 }: TextInputProps) {
   const [focus, setFocus] = useState(false);
-  const [text, setText] = useState(value);
+  const [value, setValue] = useState(defaultValue);
+  const [errorState, setErrorState] = useState(error);
+  const [secure, setSecure] = useState(secureTextEntry);
+  const textInput = useRef<TextInputRef>(null);
   const colors = useColors();
   const backColor = backgroundColor
     ? colors.background[backgroundColor]
@@ -159,40 +194,36 @@ export const TextInput = memo(function TextInput({
     emphasis,
     type,
   });
-
-  const textInput = useRef<TextInputRef>(null);
+  const hasLength = value.trim().length > 0;
 
   const onChangeTextInternal = useCallback(
     (val: string) => {
-      setText(val);
+      setValue(val);
       onChangeText(val);
+      setErrorState('');
     },
     [onChangeText],
   );
 
   const onSubmitEditingInternal = useCallback(() => {
     onSubmitEditing();
-    if (submitClear) setText('');
+    if (!submitClear) return;
+    setValue('');
   }, [onSubmitEditing, submitClear]);
+
+  const handleClear = useCallback(() => {
+    setValue('');
+  }, []);
 
   const onFocusInternal = useCallback(() => {
     setFocus(true);
-    if (onFocus) onFocus(text);
-  }, [onFocus, text]);
+    if (onFocus) onFocus();
+  }, [onFocus]);
 
   const onBlurInternal = useCallback(() => {
     setFocus(false);
-    if (onBlur) onBlur(text);
-  }, [onBlur, text]);
-
-  const onIconPressInternal = useCallback(
-    (icon: TextInputIcon) => () => {
-      icon.onPress(text);
-      if (icon.clear) setText('');
-      if (icon.reset) setText(value);
-    },
-    [text, value],
-  );
+    if (onBlur) onBlur();
+  }, [onBlur]);
 
   const onInternalRef = useCallback(
     (ref: TextInputRef) => {
@@ -202,6 +233,10 @@ export const TextInput = memo(function TextInput({
     },
     [onRef],
   );
+
+  const handleEyePress = useCallback(() => {
+    setSecure((prev) => !prev);
+  }, []);
 
   const handleTitlePress = useCallback(() => {
     textInput.current?.focus();
@@ -213,8 +248,8 @@ export const TextInput = memo(function TextInput({
   }, [focusOnLoad]);
 
   useEffect(() => {
-    setText(value);
-  }, [value]);
+    setErrorState(error);
+  }, [error]);
 
   return (
     <View
@@ -234,10 +269,10 @@ export const TextInput = memo(function TextInput({
         style={{
           alignItems: 'center',
           backgroundColor: backColor,
-          borderBottomColor: error
-            ? colors.text.negative
-            : focus
+          borderBottomColor: focus
             ? colors.text.accent
+            : errorState
+            ? colors.text.negative
             : backColor,
           borderLeftColor: backColor,
           borderRadius: spacing(1),
@@ -252,6 +287,7 @@ export const TextInput = memo(function TextInput({
           autoComplete={autoComplete}
           autoCorrect={autoCorrect}
           blurOnSubmit={blurOnSubmit}
+          defaultValue={defaultValue}
           disableFullscreenUI={disableFullscreenUI}
           editable={editable}
           keyboardType={keyboardType}
@@ -267,7 +303,7 @@ export const TextInput = memo(function TextInput({
           pointerEvents={pointerEvents}
           ref={onInternalRef}
           returnKeyType={returnKeyType}
-          secureTextEntry={secureTextEntry}
+          secureTextEntry={secure}
           selectionColor={colors.text.accent}
           style={{
             color: textColor,
@@ -277,38 +313,76 @@ export const TextInput = memo(function TextInput({
           }}
           textContentType={textContentType}
           underlineColorAndroid="transparent"
-          value={text}
+          value={value}
         />
-        {icons.length > 0 && ( // TODO: refactor to declarative
-          <View
-            alignSelf="flex-end"
-            flexDirection="row"
-          >
-            {icons.map((icon) =>
-              icon.hidden ||
-              (focus && !icon.focus) ||
-              (!focus && icon.focus) ? null : (
-                <Pressable
-                  disabled={
-                    icon.required ? text.trim().length === 0 : undefined
-                  }
-                  key={`${icon.name}-focus`}
-                  onPress={onIconPressInternal(icon)}
-                >
-                  <Icon
-                    color={icon.color}
-                    disabled={
-                      icon.required ? text.trim().length === 0 : undefined
-                    }
-                    name={icon.name}
-                    padded
-                    size={iconHeight}
-                  />
-                </Pressable>
-              ),
-            )}
-          </View>
-        )}
+        <View
+          alignContent="center"
+          alignItems="center"
+          alignSelf="flex-end"
+          flexDirection="row"
+          justifyContent="center"
+          style={{ paddingRight: spacing(1) }}
+        >
+          {iconClear && editable && hasLength ? (
+            <TextInputIcon
+              name="close"
+              onPress={handleClear}
+              size={iconHeight}
+            />
+          ) : null}
+          {iconEye && editable && hasLength ? (
+            <TextInputIcon
+              name={secure ? 'eye-outline' : 'eye-off-outline'}
+              onPress={handleEyePress}
+              size={iconHeight}
+            />
+          ) : null}
+          {iconSend && editable && hasLength && focus ? (
+            <TextInputIcon
+              color="accent"
+              name="send"
+              onPress={onSubmitEditing}
+              size={iconHeight}
+            />
+          ) : null}
+          {iconEdit && editable && hasLength ? (
+            <TextInputIcon
+              color="secondary"
+              name="dots-horizontal"
+              onPress={onSubmitEditing}
+              size={iconHeight}
+            />
+          ) : null}
+          {iconNext && editable && hasLength ? (
+            <TextInputIcon
+              color="secondary"
+              name="chevron-right"
+              onPress={onSubmitEditing}
+              size={iconHeight}
+            />
+          ) : null}
+        </View>
+      </View>
+      <View
+        alignItems="center"
+        display={hideError ? 'none' : 'flex'}
+        flexDirection="row"
+        opacity={errorState ? 1 : 0}
+        padding={spacing(1)}
+      >
+        <Icon
+          color="negative"
+          name="alarm"
+          size={spacing(4)}
+        />
+        <Text
+          color="negative"
+          title=" "
+        />
+        <Text
+          color="negative"
+          title={errorState}
+        />
       </View>
     </View>
   );

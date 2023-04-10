@@ -75,6 +75,7 @@ export const ItemEdit = memo(function ItemEdit({
           autoComplete="off"
           autoCorrect
           blurOnSubmit
+          defaultValue={title}
           editable={titleEditable}
           icons={icons('title')}
           keyboardType="default"
@@ -83,7 +84,6 @@ export const ItemEdit = memo(function ItemEdit({
           placeholder={`${placeholder} title...`}
           returnKeyType="done"
           textContentType="none"
-          value={title}
         />
         <Spacing padding={spacing(2)} />
         <ItemDetailHeader title="Details" />

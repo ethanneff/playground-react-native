@@ -92,6 +92,7 @@ export const LogIn = memo(function LogIn() {
         autoComplete="email"
         autoCorrect={false}
         blurOnSubmit={false}
+        defaultValue=""
         editable={!state.loading}
         keyboardType="email-address"
         onChangeText={onFormChange('email')}
@@ -101,7 +102,6 @@ export const LogIn = memo(function LogIn() {
         returnKeyType="next"
         style={{ marginBottom: spacing(4) }}
         textContentType="username"
-        value=""
       />
       <TextInput
         autoCapitalize="none"

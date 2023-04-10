@@ -1,8 +1,8 @@
 import React, { memo, useCallback, useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import { useColors, useDriver } from '../../features';
-import { Loader } from '../Loader';
 import { Pressable } from '../Pressable';
+import { Loader, Spinner } from '../Spinner';
 
 type Props = {
   onBackgroundPress?: () => void;
@@ -50,7 +50,7 @@ export const Loading = memo(function LoadingScreen({
         disabled={!onBackgroundPress}
         onPress={onPress}
       >
-        <Loader
+        <Spinner
           color="primaryB"
           size="large"
         />
