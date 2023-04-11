@@ -1,4 +1,4 @@
-import dayjs, { type Dayjs } from 'dayjs';
+import { format, isBefore } from 'date-fns';
 import React, { useCallback, useState } from 'react';
 import { v4 } from 'uuid';
 import { Modal, Text } from '../../../../../components';
@@ -37,8 +37,8 @@ export const Reminders = ({ onComplete }: Props) => {
   });
 
   const handleOneTimeReminder = useCallback(
-    (date: Dayjs) => () => {
-      if (date.isBefore(dayjs())) {
+    (date: Date) => () => {
+      if (isBefore(date, new Date())) {
         setForm((prev) => ({
           ...prev,
           modals: { ...prev.modals, customDate: true },
@@ -55,7 +55,7 @@ export const Reminders = ({ onComplete }: Props) => {
           ...prev.reminders,
           {
             date: date.valueOf(),
-            format: date.format('MMM DD, YYYY hh:mm A'),
+            format: format(date, 'MMM dd, yyyy hh:mm A'),
             id: v4(),
           },
         ],

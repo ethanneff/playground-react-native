@@ -1,4 +1,6 @@
-import dayjs, { type Dayjs } from 'dayjs';
+import add from 'date-fns/add';
+import format from 'date-fns/format';
+import isSameDay from 'date-fns/isSameDay';
 import React, { memo, useCallback, useState } from 'react';
 import {
   FlashList,
@@ -11,14 +13,17 @@ import {
 import { spacing, useColors } from '../../features';
 
 const generateHistory = () => {
+  const today = new Date();
   const data = [];
-  for (let i = 2; i >= -20; i--) data.push({ date: dayjs().add(i, 'day') });
+  for (let i = 2; i >= -20; i--) {
+    data.push({ date: add(today, { days: i }) });
+  }
 
   return data;
 };
 
 type Item = {
-  date: Dayjs;
+  date: Date;
 };
 
 type ProgressItemProps = {
@@ -26,19 +31,20 @@ type ProgressItemProps = {
 };
 
 const ProgressItem = ({ item }: ProgressItemProps) => {
+  const today = new Date();
   const colors = useColors();
-  const [dateFormat, setDateFormat] = useState('ddd');
+  const [visibleDate, setVisibleDate] = useState(false);
   const onPress = useCallback(() => {
-    setDateFormat((prev) => (prev === 'ddd' ? 'MMM DD' : 'ddd'));
+    setVisibleDate((prev) => !prev);
   }, []);
-  const iconColor = item.date.isSame(dayjs(), 'day')
+  const iconColor = isSameDay(today, item.date)
     ? 'positive'
-    : item.date > dayjs()
+    : item.date > today
     ? 'tertiary'
     : 'negative';
-  const iconName = item.date.isSame(dayjs(), 'day')
+  const iconName = isSameDay(today, item.date)
     ? 'check'
-    : item.date > dayjs()
+    : item.date > today
     ? 'cancel'
     : 'close';
 
@@ -54,12 +60,25 @@ const ProgressItem = ({ item }: ProgressItemProps) => {
           borderTopColor: colors.border.primaryA,
           borderTopWidth: 2,
           margin: spacing(1),
-          width: spacing(12),
+          width: spacing(15),
         }}
       >
         <Text
           center
-          title={item.date.format(dateFormat)}
+          style={{
+            opacity: visibleDate ? 1 : 0,
+            width: '100%',
+          }}
+          title={format(item.date, 'EEE')}
+        />
+        <Text
+          center
+          style={{
+            opacity: visibleDate ? 0 : 1,
+            position: 'absolute',
+            width: '100%',
+          }}
+          title={format(item.date, 'MMM dd')}
         />
       </View>
     </Pressable>

@@ -1,4 +1,3 @@
-import { type Dayjs } from 'dayjs';
 import React, { memo, useCallback, useState } from 'react';
 import { Alert, StyleSheet } from 'react-native';
 import { Button, Modal, Text } from '../../../../../components';
@@ -14,7 +13,7 @@ const reminderTypes: ReminderType[] = ['one time', 'repeat', 'location'];
 type Props = {
   onBackgroundPress: () => void;
   onLocationPress: (id: string) => () => void;
-  onOneTimePress: (date: Dayjs) => () => void;
+  onOneTimePress: (date: Date) => () => void;
 };
 
 export const Create = memo(function Create({

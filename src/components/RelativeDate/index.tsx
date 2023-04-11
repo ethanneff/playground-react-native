@@ -1,11 +1,10 @@
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
+import { formatDistance } from 'date-fns';
+import formatDate from 'date-fns/format';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { type ViewStyle } from 'react-native';
 import { type FontEmphasis, type FontType } from '../../features';
 import { Pressable } from '../Pressable';
 import { Text } from '../Text';
-dayjs.extend(relativeTime);
 
 type Props = {
   date: number;
@@ -19,7 +18,7 @@ const minute = 60 * 1000;
 export const RelativeDate = memo(function RelativeDate({
   date,
   emphasis,
-  format = 'MMM D YYYY, h:mm a',
+  format = 'MMM dd, yyyy h:mm a',
   style,
   type,
 }: Props) {
@@ -27,8 +26,8 @@ export const RelativeDate = memo(function RelativeDate({
   const [update, setUpdate] = useState(1);
   const text =
     showRelativeDate && update
-      ? dayjs(date).fromNow()
-      : dayjs(date).format(format);
+      ? formatDistance(date, new Date(), { addSuffix: true })
+      : formatDate(date, format);
 
   const toggleRelativeDate = useCallback(() => {
     setShowRelativeDate((prev) => !prev);

@@ -1,47 +1,42 @@
-import dayjs, { type Dayjs } from 'dayjs';
+import { add, format, set, startOfMonth, startOfWeek, sub } from 'date-fns';
 import React, { memo } from 'react';
 import { Item } from './Item';
 
-const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const generateButtons = () => {
-  const laterToday = dayjs().add(3, 'hour').add(30, 'minute').set('minute', 0);
-
-  const evening = dayjs().set('hour', 18).set('minute', 0);
-
-  const tomorrow = dayjs().add(1, 'day').set('hour', 6).set('minute', 0);
-
-  const nextWeek = dayjs()
-    .add(1, 'week')
-    .set('hour', 6)
-    .set('minute', 0)
-    .set('day', 1);
-
-  const nextMonth = dayjs().add(2, 'month').set('hour', 6).set('minute', 0);
-
-  const yesterday = dayjs().subtract(1, 'day');
+  const today = new Date();
+  const laterToday = set(add(today, { minutes: 30 }), { hours: 3, minutes: 0 });
+  const yesterday = sub(today, { days: 1 });
+  const evening = set(today, { hours: 18, minutes: 0 });
+  const tomorrow = set(add(today, { days: 1 }), { hours: 6, minutes: 0 });
+  const nextWeek = set(startOfWeek(add(today, { weeks: 1 })), {
+    hours: 6,
+    minutes: 0,
+  });
+  const nextMonth = set(startOfMonth(add(today, { months: 2 })), {
+    hours: 6,
+    minutes: 0,
+  });
 
   return [
     {
-      description: laterToday.format('hh:mm A'),
+      description: format(laterToday, 'hh:mm A'),
       title: 'Later today',
       value: laterToday,
-      visible: dayjs().set('hour', 18),
+      visible: set(today, { hours: 2 }),
     },
     {
-      description: evening.format('hh:mm A'),
+      description: format(evening, 'hh:mm A'),
       title: 'This Evening',
       value: evening,
-      visible: dayjs().set('hour', 18),
+      visible: set(today, { hours: 18 }),
     },
     {
-      description: `${daysOfWeek[tomorrow.day()]} ${tomorrow.format(
-        'hh:mm A',
-      )}`,
+      description: format(tomorrow, 'EEE, hh:mm A'),
       title: 'Tomorrow',
       value: tomorrow,
     },
     {
-      description: `${nextWeek.format('MMM DD, hh:mm A')}`,
+      description: `${format(nextWeek, 'MMM dd, hh:mm A')}`,
       title: 'Next Week',
       value: nextWeek,
     },
@@ -59,16 +54,16 @@ const generateButtons = () => {
 };
 
 type Props = {
-  onPress: (value: Dayjs) => () => void;
+  onPress: (value: Date) => () => void;
 };
 
 export const OneTime = memo(function OneTime({ onPress }: Props) {
   const buttons = generateButtons();
+  const today = new Date().valueOf();
   return (
     <>
       {buttons.map((button, index) => {
-        const hidden =
-          button.visible && dayjs().valueOf() > button.visible.valueOf();
+        const hidden = button.visible && today > button.visible.valueOf();
         return (
           <Item
             description={button.description}

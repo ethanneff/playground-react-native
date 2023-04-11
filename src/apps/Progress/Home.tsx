@@ -19,8 +19,8 @@ export const Home = memo(function ActivityTracker() {
       backgroundColor: colors.background.secondary,
     },
     container: {
-      paddingHorizontal: spacing(4),
-      paddingVertical: spacing(2),
+      gap: spacing(4),
+      padding: spacing(4),
     },
   });
 
