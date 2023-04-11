@@ -1,4 +1,4 @@
-import dayjs, { type Dayjs } from 'dayjs';
+import { sub } from 'date-fns';
 import React, { memo, useCallback, useRef, useState } from 'react';
 import {
   Animated,
@@ -27,7 +27,7 @@ import { formatRelativeDate } from './utils';
 type SwipeItem = {
   body: string;
   button: string;
-  date: Dayjs;
+  date: Date;
   icon: IconName;
   id: string;
   image: ImageSourcePropType | null;
@@ -181,7 +181,7 @@ const initialItems: SwipeItem[] = [
   {
     body: 'BABA is down 4.41% to $204.433.',
     button: 'View BABA',
-    date: dayjs().subtract(5, 'minute'),
+    date: sub(new Date(), { minutes: 5 }),
     icon: 'arrow-bottom-right',
     id: v4(),
     image: null,
@@ -191,7 +191,7 @@ const initialItems: SwipeItem[] = [
   {
     body: 'Disney heiress Abigail Disney and other superrich American demand the 1% pay higher taxes than other Americans.',
     button: 'View Article',
-    date: dayjs().subtract(11, 'hour'),
+    date: sub(new Date(), { hours: 11 }),
     icon: 'file-document-edit-outline',
     id: v4(),
     image: null,
@@ -201,7 +201,7 @@ const initialItems: SwipeItem[] = [
   {
     body: "Amazon files motion to halt Microsoft's work on Pentagon's JEDI contract",
     button: 'View Article',
-    date: dayjs().subtract(1, 'day'),
+    date: sub(new Date(), { days: 1 }),
     icon: 'book',
     id: v4(),
     image: null,
@@ -211,7 +211,7 @@ const initialItems: SwipeItem[] = [
   {
     body: "You're invited! Start trading Bitcoin & Ethereum",
     button: 'Get Started',
-    date: dayjs(),
+    date: new Date(),
     icon: 'star-outline',
     id: v4(),
     image: require('./placeholder.png') as ImageSourcePropType,
@@ -221,7 +221,7 @@ const initialItems: SwipeItem[] = [
   {
     body: "Invite your friends! When they sign up, you'll both get a free stock",
     button: 'Invite friends',
-    date: dayjs(),
+    date: new Date(),
     icon: 'star-outline',
     id: v4(),
     image: require('./placeholder.png') as ImageSourcePropType,
@@ -231,7 +231,7 @@ const initialItems: SwipeItem[] = [
   {
     body: 'Swipe through cards to see your personalized notifications and news stories.',
     button: 'Swipe to dismiss',
-    date: dayjs(),
+    date: new Date(),
     icon: 'lightbulb-outline',
     id: v4(),
     image: null,

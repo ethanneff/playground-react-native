@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import format from 'date-fns/format';
 import React, { useCallback } from 'react';
 import { View } from '..';
 import { spacing } from '../../features';
@@ -11,7 +11,7 @@ import { calendarActions } from './calendarReducer';
 export const CalendarHeader = () => {
   const dispatch = useRootDispatch();
   const activeMonth = useRootSelector((state) => state.calendar.activeMonth);
-  const month = dayjs(activeMonth).format('MMMM YYYY');
+  const month = format(activeMonth, 'MMMM yyyy');
 
   const handleMonthDecrease = useCallback(() => {
     dispatch(calendarActions.nav(-1));

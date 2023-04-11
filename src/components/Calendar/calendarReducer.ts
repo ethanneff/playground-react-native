@@ -1,8 +1,9 @@
+import { format } from 'date-fns';
 import { type RootAction } from 'root-types';
 import { type DeepReadonly } from 'ts-essentials';
 import { createAction, getType } from 'typesafe-actions';
 import { calendarUtils } from './calendarUtils';
-import { daysOfWeek } from './constants';
+import { daysOfWeek, keyOfDay, keyOfMonth } from './constants';
 import { type CalendarState } from './types';
 
 // INTERFACES
@@ -16,7 +17,7 @@ export const calendarActions = { init, nav, select };
 
 // CONSTANTS
 const initialState: State = {
-  activeMonth: calendarUtils.getFormat(new Date(), 'YYYY-MM'),
+  activeMonth: new Date(),
   days: {},
   loading: true,
   months: {},
@@ -30,8 +31,7 @@ export const calendarReducer = (
   switch (action.type) {
     case getType(calendarActions.init): {
       const today = new Date();
-      const key = calendarUtils.getFormat(today, 'YYYY-MM');
-      const { days, months } = calendarUtils.getMonthAndDays(key);
+      const { days, months } = calendarUtils.getMonthAndDays(today);
       daysOfWeek.forEach((dayOfWeek) => {
         days[dayOfWeek] = {
           display: dayOfWeek,
@@ -40,32 +40,31 @@ export const calendarReducer = (
           value: new Date(0),
         };
       });
-      return { activeMonth: key, days, loading: false, months };
+      return { activeMonth: today, days, loading: false, months };
     }
     case getType(calendarActions.nav): {
       if (action.payload === 0) {
         const today = new Date();
-        const key = calendarUtils.getFormat(today, 'YYYY-MM');
-        return { ...state, activeMonth: key };
+        return { ...state, activeMonth: today };
       }
       const nextMonth = calendarUtils.addMonths(
         state.activeMonth,
         action.payload,
       );
-      const key = calendarUtils.getFormat(nextMonth, 'YYYY-MM');
+      const key = format(nextMonth, keyOfMonth);
       if (key in state.months) {
-        return { ...state, activeMonth: key };
+        return { ...state, activeMonth: nextMonth };
       }
-      const { days, months } = calendarUtils.getMonthAndDays(key);
+      const { days, months } = calendarUtils.getMonthAndDays(nextMonth);
       return {
         ...state,
-        activeMonth: key,
+        activeMonth: nextMonth,
         days: { ...state.days, ...days },
         months: { ...state.months, ...months },
       };
     }
     case getType(calendarActions.select): {
-      const key = calendarUtils.getFormat(action.payload, 'YYYY-MM-DD');
+      const key = format(action.payload, keyOfDay);
       return {
         ...state,
         days: {

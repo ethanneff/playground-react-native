@@ -1,61 +1,59 @@
+import { isSameDay, isSameMonth } from 'date-fns';
 import React, { useCallback } from 'react';
 import { View } from '..';
 import { spacing, useColors } from '../../features';
 import { useRootDispatch, useRootSelector } from '../../redux';
-import { Text } from '../Text';
 import { Pressable } from '../Pressable';
+import { Text } from '../Text';
 import { calendarActions } from './calendarReducer';
-import { calendarUtils } from './calendarUtils';
 import { type DayState } from './types';
 
 type Props = {
-  dayKey: string;
+  day: string;
   hiddenDays?: boolean;
 };
 
 type ConfigProps = {
-  day: DayState;
-  dayKey: string;
+  dayState: DayState;
   hiddenDays?: boolean;
-  monthKey: string;
+  month: Date;
 };
 
-const useConfig = ({ day, dayKey, hiddenDays, monthKey }: ConfigProps) => {
+const useConfig = ({ dayState, hiddenDays, month }: ConfigProps) => {
   const colors = useColors();
   const today = new Date();
-  const isToday = calendarUtils.isSameDay(new Date(day.value), today);
-  const isWithinMonth = calendarUtils.isSameMonth(monthKey, dayKey);
-  const backgroundColor = day.isSelected
+  const isToday = isSameDay(new Date(dayState.value), today);
+  const isWithinMonth = isSameMonth(month, dayState.value);
+  const backgroundColor = dayState.isSelected
     ? colors.background.accent
     : 'transparent';
   const nonMonthDay = hiddenDays && !isWithinMonth;
-  const hiddenDay = nonMonthDay && !day.isHeader;
+  const hiddenDay = nonMonthDay && !dayState.isHeader;
   const textColor = hiddenDay
     ? 'transparent'
-    : day.isSelected
+    : dayState.isSelected
     ? colors.text.primaryB
     : isWithinMonth
     ? colors.text.primaryA
     : colors.text.tertiary;
-  const disabled = day.isHeader || nonMonthDay;
-  const bold = isToday || day.isHeader;
+  const disabled = dayState.isHeader || nonMonthDay;
+  const bold = isToday || dayState.isHeader;
   return { backgroundColor, bold, disabled, textColor };
 };
 
-export const CalendarDay = ({ dayKey, hiddenDays }: Props) => {
-  const monthKey = useRootSelector((state) => state.calendar.activeMonth);
-  const day = useRootSelector((state) => state.calendar.days[dayKey]);
+export const CalendarDay = ({ day, hiddenDays }: Props) => {
+  const month = useRootSelector((state) => state.calendar.activeMonth);
+  const dayState = useRootSelector((state) => state.calendar.days[day]);
   const { backgroundColor, bold, disabled, textColor } = useConfig({
-    day,
-    dayKey,
+    dayState,
     hiddenDays,
-    monthKey,
+    month,
   });
   const dispatch = useRootDispatch();
 
   const handleSelect = useCallback(() => {
-    dispatch(calendarActions.select(day.value));
-  }, [day.value, dispatch]);
+    dispatch(calendarActions.select(dayState.value));
+  }, [dayState.value, dispatch]);
 
   return (
     <Pressable
@@ -75,7 +73,7 @@ export const CalendarDay = ({ dayKey, hiddenDays }: Props) => {
           bold={bold}
           center
           style={{ color: textColor }}
-          title={day.display}
+          title={dayState.display}
         />
       </View>
     </Pressable>

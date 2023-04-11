@@ -1,10 +1,8 @@
-import dayjs from 'dayjs';
-import isToday from 'dayjs/plugin/isToday';
+import { isToday } from 'date-fns';
 import React, { memo } from 'react';
 import { colorWithOpacity, useColors } from '../../features';
 import { Pressable } from '../Pressable';
 import { type ActivityDay } from './types';
-dayjs.extend(isToday);
 
 type Props = {
   day: ActivityDay;
@@ -26,7 +24,7 @@ export const Day = memo(function Day({
     day.count === 0
       ? colors.background.secondary
       : colorWithOpacity(colors.text.positive, day.count / max + 0.33);
-  const borderColor = dayjs(day.date).isToday()
+  const borderColor = isToday(day.date)
     ? colors.border.negative
     : 'transparent';
   return (

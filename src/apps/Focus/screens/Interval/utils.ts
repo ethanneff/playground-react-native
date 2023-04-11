@@ -1,9 +1,10 @@
-import dayjs from 'dayjs';
+import { add, differenceInHours, format, startOfDay, sub } from 'date-fns';
 import { infiniteScrollRegeneration, itemHeight } from '../../configs';
 import { type Item } from '../../types';
 
+const today = new Date();
 export const initialIndex =
-  dayjs().startOf('day').add(2, 'day').diff(dayjs(), 'hour') - 4;
+  differenceInHours(add(startOfDay(today), { days: 2 }), new Date()) - 4;
 
 export const getItemLayout = (
   _: Item[] | null | undefined,
@@ -44,18 +45,18 @@ export const getMoreItems = (items: Item[]): Item[] => {
   for (let i = 0; i < infiniteScrollRegeneration; i++) {
     const lastItem =
       group.length === 0
-        ? dayjs().startOf('day').add(2, 'day').valueOf()
+        ? add(startOfDay(new Date()), { days: 2 })
         : group[group.length - 1].id;
-    const next = dayjs(lastItem).subtract(1, 'hour');
+    const next = sub(lastItem, { hours: 1 });
     const id = next.valueOf();
     group.push({
-      dayOfMonth: next.format('D'),
-      dayOfWeek: next.format('ddd'),
-      hour: next.format('h'),
+      dayOfMonth: format(next, 'd'),
+      dayOfWeek: format(next, 'ddd'),
+      hour: format(next, 'h'),
       id,
-      month: next.format('MMM'),
+      month: format(next, 'MMM'),
       title: String(Math.random()) + String(Math.random()),
-      zone: next.format('a'),
+      zone: format(next, 'a'),
     });
   }
   return group;

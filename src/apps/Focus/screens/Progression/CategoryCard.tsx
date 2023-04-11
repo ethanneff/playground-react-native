@@ -1,5 +1,4 @@
-import dayjs, { type Dayjs } from 'dayjs';
-import isToday from 'dayjs/plugin/isToday';
+import { format, isToday, isWeekend, sub } from 'date-fns';
 import React, { memo, useCallback } from 'react';
 import {
   FlashList,
@@ -15,7 +14,6 @@ import {
 } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { type AuthStackRoutes, type Category } from '../../types';
-dayjs.extend(isToday);
 
 type Props = {
   category: Category;
@@ -25,9 +23,6 @@ const mockData = [
   1, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
   2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
 ];
-
-const day = dayjs();
-const isWeekend = (d: Dayjs) => d.day() === 0 || d.day() === 6;
 
 export const CategoryCard = memo(function CategoryCard({ category }: Props) {
   const { navigate } = useNavigation<StackNavigationProp<AuthStackRoutes>>();
@@ -39,9 +34,9 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
 
   const renderItem = useCallback<FlashListRenderItem<number>>(
     ({ index }) => {
-      const historical = day.subtract(index, 'day');
+      const historical = sub(new Date(), { days: index });
       const weekend = isWeekend(historical);
-      const today = historical.isToday();
+      const today = isToday(historical);
       const backgroundColor = today
         ? colors.background.accent
         : weekend
@@ -70,7 +65,7 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
               color: today ? colors.text.primaryB : colors.text.primaryA,
               position: 'absolute',
             }}
-            title={historical.format('D')}
+            title={format(historical, 'd')}
             type="overline"
           />
         </View>
