@@ -1,12 +1,18 @@
-import dayjs, { type Dayjs } from 'dayjs';
+import {
+  differenceInDays,
+  differenceInHours,
+  differenceInMinutes,
+  differenceInWeeks,
+  differenceInYears,
+} from 'date-fns';
 
-export const formatRelativeDate = (date: Dayjs): string => {
-  const now = dayjs();
-  const years = now.diff(date, 'year');
-  const weeks = now.diff(date, 'week');
-  const days = now.diff(date, 'day');
-  const hours = now.diff(date, 'hour');
-  const minutes = now.diff(date, 'minute');
+export const formatRelativeDate = (date: Date): string => {
+  const today = new Date();
+  const years = differenceInYears(today, date);
+  const weeks = differenceInWeeks(today, date);
+  const days = differenceInDays(today, date);
+  const hours = differenceInHours(today, date);
+  const minutes = differenceInMinutes(today, date);
   return years
     ? `${years}y`
     : weeks

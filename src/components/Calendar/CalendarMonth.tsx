@@ -1,9 +1,11 @@
+import { format } from 'date-fns';
 import React from 'react';
 import { v4 } from 'uuid';
 import { View } from '..';
 import { spacing } from '../../features';
 import { useRootSelector } from '../../redux';
 import { CalendarDay } from './CalendarDay';
+import { keyOfMonth } from './constants';
 
 type Props = {
   hiddenDays?: boolean;
@@ -11,7 +13,8 @@ type Props = {
 
 export const CalendarMonth = ({ hiddenDays }: Props) => {
   const activeMonth = useRootSelector((s) => s.calendar.activeMonth);
-  const days = useRootSelector((s) => s.calendar.months[activeMonth].days);
+  const monthKey = format(activeMonth, keyOfMonth);
+  const days = useRootSelector((s) => s.calendar.months[monthKey].days);
 
   return (
     <View style={{ paddingHorizontal: spacing(2) }}>
@@ -23,7 +26,7 @@ export const CalendarMonth = ({ hiddenDays }: Props) => {
         >
           {row.map((col) => (
             <CalendarDay
-              dayKey={col}
+              day={col}
               hiddenDays={hiddenDays}
               key={v4()}
             />

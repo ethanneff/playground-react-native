@@ -190,6 +190,7 @@ export const Home = memo(function Home() {
     >
       <ScrollView
         contentContainerStyle={{
+          gap: spacing(4),
           padding: spacing(4),
         }}
         style={{ backgroundColor: colors.background.secondary }}

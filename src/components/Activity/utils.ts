@@ -1,24 +1,21 @@
-import dayjs from 'dayjs';
-import isToday from 'dayjs/plugin/isToday';
+import { endOfWeek, format, isToday, startOfWeek, sub } from 'date-fns';
+
 import { type ActivitySquares, type ApiResponse } from './types';
-dayjs.extend(isToday);
 
 export const getDateFormat = (date: number): string =>
-  dayjs(date).format('YYYY-MM-DD');
+  format(date, 'yyyy-MM-dd');
 
 export const getSubmissionFormat = (count: number, date: number): string => {
   const submissions = count === 1 ? 'submission' : 'submissions';
-  const day = dayjs(date).isToday()
-    ? 'today'
-    : `on ${dayjs(date).format('MMM DD, YYYY')}`;
+  const day = isToday(date) ? 'today' : `on ${format(date, 'MMM dd, yyyy')}`;
   return `${count} ${submissions} ${day}`;
 };
 
 export const getActivitySquares = (): ActivitySquares => {
   const matrix = [];
   const oneDay = 60 * 60 * 24 * 1000;
-  const begin = dayjs().startOf('week').subtract(1, 'year').valueOf();
-  let end = dayjs().endOf('week').valueOf();
+  const begin = sub(startOfWeek(new Date()), { years: 1 }).valueOf();
+  let end = endOfWeek(new Date()).valueOf();
   let day = 0;
   let week = [];
   while (end >= begin) {

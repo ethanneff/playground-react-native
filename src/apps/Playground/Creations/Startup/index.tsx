@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import { format } from 'date-fns';
 import React, { memo, useCallback, useState } from 'react';
 import {
   Button,
@@ -115,7 +115,7 @@ export const Startup = memo(function PlaygroundStartup() {
       >
         <Text
           center
-          title={dayjs().format('MMM DD, YYYY')}
+          title={format(new Date(), 'MMM dd, yyyy')}
           type="h4"
         />
         <Section title="Launch">

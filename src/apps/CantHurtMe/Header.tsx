@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Text, Pressable, View } from '../../components';
+import { Card, Icon, Pressable, Text, View } from '../../components';
 import { spacing } from '../../features';
 import { DailyProgress } from './DailyProgress';
 import { ProfileLevel } from './ProfileLevel';

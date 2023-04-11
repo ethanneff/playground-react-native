@@ -10,7 +10,7 @@ export type MonthState = {
 };
 
 export type CalendarState = {
-  activeMonth: string;
+  activeMonth: Date;
   days: Record<string, DayState>;
   loading: boolean;
   months: Record<string, MonthState>;

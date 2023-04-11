@@ -1,4 +1,5 @@
-import dayjs from 'dayjs';
+import { format, toDate } from 'date-fns';
+
 import React, { memo } from 'react';
 import { View } from '../../components';
 import { spacing } from '../../features';
@@ -21,9 +22,9 @@ export const Week = memo(function Week({
   onPress,
   size,
 }: Props) {
-  const first = item[0].date;
-  const showHeader = Number(dayjs(first).format('DD')) <= 7;
-  const header = showHeader ? dayjs(first).format('MMM') : ' ';
+  const first = toDate(item[0].date);
+  const showHeader = Number(format(first, 'dd')) <= 7;
+  const header = showHeader ? format(first, 'MMM') : ' ';
 
   return (
     <View>

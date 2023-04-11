@@ -1,11 +1,8 @@
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
 import React, { memo } from 'react';
 import { Image, type ImageSourcePropType } from 'react-native';
 import { Card, RelativeDate, Text, View } from '../../../../components';
 import { spacing } from '../../../../features';
 import { type Message } from './Messages';
-dayjs.extend(relativeTime);
 
 type Props = {
   item: Message;
