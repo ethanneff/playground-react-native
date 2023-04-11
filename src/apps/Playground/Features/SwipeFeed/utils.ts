@@ -8,11 +8,11 @@ import {
 
 export const formatRelativeDate = (date: Date): string => {
   const today = new Date();
-  const years = differenceInYears(date, today);
-  const weeks = differenceInWeeks(date, today);
-  const days = differenceInDays(date, today);
-  const hours = differenceInHours(date, today);
-  const minutes = differenceInMinutes(date, today);
+  const years = differenceInYears(today, date);
+  const weeks = differenceInWeeks(today, date);
+  const days = differenceInDays(today, date);
+  const hours = differenceInHours(today, date);
+  const minutes = differenceInMinutes(today, date);
   return years
     ? `${years}y`
     : weeks
