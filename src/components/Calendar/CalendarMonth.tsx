@@ -3,7 +3,7 @@ import React from 'react';
 import { v4 } from 'uuid';
 import { View } from '..';
 import { spacing } from '../../features';
-import { useRootSelector } from '../../redux';
+import { useAppSelector } from '../../redux';
 import { CalendarDay } from './CalendarDay';
 import { keyOfMonth } from './constants';
 
@@ -12,9 +12,9 @@ type Props = {
 };
 
 export const CalendarMonth = ({ hiddenDays }: Props) => {
-  const activeMonth = useRootSelector((s) => s.calendar.activeMonth);
+  const activeMonth = useAppSelector((s) => s.calendar.activeMonth);
   const monthKey = format(activeMonth, keyOfMonth);
-  const days = useRootSelector((s) => s.calendar.months[monthKey].days);
+  const days = useAppSelector((s) => s.calendar.months[monthKey].days);
 
   return (
     <View style={{ paddingHorizontal: spacing(2) }}>

@@ -2,15 +2,15 @@ import React, { memo } from 'react';
 import { Button, View } from '../../../../components';
 import {
   changeTheme,
+  useAppSelector,
+  useAppDispatch,
   type Theme,
-  useRootDispatch,
-  useRootSelector,
 } from '../../../../redux';
 
 export const ThemeGroup = memo(function ThemeGroup() {
-  const dispatch = useRootDispatch();
-  const currentTheme = useRootSelector((state) => state.theme.currentTheme);
-  const themes = useRootSelector((state) => state.theme.themes);
+  const dispatch = useAppDispatch();
+  const currentTheme = useAppSelector((state) => state.theme.currentTheme);
+  const themes = useAppSelector((state) => state.theme.themes);
   const themePress = (theme: Theme) => () => dispatch(changeTheme(theme));
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'center' }}>

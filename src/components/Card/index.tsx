@@ -6,7 +6,7 @@ import {
   type ViewStyle,
 } from 'react-native';
 import { spacing, useColors, useDropShadow } from '../../features';
-import { useRootSelector } from '../../redux';
+import { useAppSelector } from '../../redux';
 import { Pressable } from '../Pressable';
 
 type Props = {
@@ -39,7 +39,7 @@ export const Card = memo(function Card({
 }: Props) {
   const colors = useColors();
   const dropShadow = useDropShadow();
-  const currentTheme = useRootSelector((state) => state.theme.currentTheme);
+  const currentTheme = useAppSelector((state) => state.theme.currentTheme);
   const shadow = elevation ? dropShadow(elevation) : {};
   const opacity = getOpacity(elevation);
   const styles = StyleSheet.create({

@@ -2,14 +2,14 @@ import React, { memo, useCallback, useState } from 'react';
 import { Button, Carousel, Screen, View } from '../../../../components';
 import { type FirebaseAuthTypes } from '../../../../conversions';
 import { spacing } from '../../../../features';
-import { useRootDispatch } from '../../../../redux';
+import { useAppDispatch } from '../../../../redux';
 import { createItem, loadUser, login } from '../../models';
 import { completeConfig, getDefaultUserTemplate } from '../../utils';
 import { Login } from './Login';
 import { slides } from './slides';
 
 export const Welcome = memo(function Welcome() {
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
   const [showLogin, setShowLogin] = useState(false);
   const onToggleLogin = useCallback(() => {
     setShowLogin((p) => !p);

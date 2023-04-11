@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { MaskedView, View } from '../../components';
 import { useDriver } from '../../features';
-import { getSmallestDimension, useRootSelector } from '../../redux';
+import { getSmallestDimension, useAppSelector } from '../../redux';
 
 // TODO: convert to svg, remove mask, fade in and out
 
@@ -55,7 +55,7 @@ export const SplashScreen = memo(function SplashScreenMemo({
   primaryColor,
   source,
 }: Props) {
-  const smallest = useRootSelector(getSmallestDimension);
+  const smallest = useAppSelector(getSmallestDimension);
   const useNativeDriver = useDriver();
   const [state, setState] = useState({
     complete: false,

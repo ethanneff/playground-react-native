@@ -1,5 +1,4 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { useSelector } from 'react-redux';
 import {
   FlashList,
   Image,
@@ -8,7 +7,11 @@ import {
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { useColors } from '../../../../features';
-import { getLandscapeOrientation, getWidth } from '../../../../redux';
+import {
+  getLandscapeOrientation,
+  getWidth,
+  useAppSelector,
+} from '../../../../redux';
 
 const batch = 20;
 const imageUrl = 'https://source.unsplash.com/random';
@@ -20,8 +23,8 @@ const addNewBatch = (data: number[]): number[] => {
 
 export const ImageCollection = memo(function ImageCollection() {
   const { goBack } = useNavigation();
-  const width = useSelector(getWidth);
-  const landscape = useSelector(getLandscapeOrientation);
+  const width = useAppSelector(getWidth);
+  const landscape = useAppSelector(getLandscapeOrientation);
   const numColumns = landscape ? 10 : 3;
   const columnWidth = width / numColumns;
   const keyExtractor = useCallback((d: number) => String(d), []);

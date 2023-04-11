@@ -16,13 +16,13 @@ import {
   setLocalization,
   setNetwork,
   setStatus,
-  useRootDispatch,
+  useAppDispatch,
 } from '../../redux';
 
 const android = Platform.OS === 'android';
 
 export const useNetInfo = () => {
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
 
   const handleChange = useCallback(() => {
     NetInfo.fetch().then((state) => dispatch(setNetwork(state)));
@@ -38,7 +38,7 @@ export const useNetInfo = () => {
 };
 
 export const useDimensions = () => {
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
 
   const handleChange = useCallback(() => {
     const state = {
@@ -58,7 +58,7 @@ export const useDimensions = () => {
 };
 
 export const useKeyboard = () => {
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
 
   const handleShow = useCallback(
     (event: KeyboardEvent) => {
@@ -85,7 +85,7 @@ export const useKeyboard = () => {
 };
 
 export const useAppState = () => {
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
 
   const handleChange = useCallback(() => {
     dispatch(setStatus(AppState.currentState));
@@ -101,7 +101,7 @@ export const useAppState = () => {
 };
 
 export const useLocalization = () => {
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
 
   const handleChange = useCallback(() => {
     const state = {
@@ -130,7 +130,7 @@ export const useLocalization = () => {
 };
 
 export const useDeviceInfo = () => {
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
 
   const handleChange = useCallback(async () => {
     const isEmulator = await DeviceInfo.isEmulator();

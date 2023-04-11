@@ -4,7 +4,7 @@ import { v4 } from 'uuid';
 import { Pressable, Screen, ScrollView, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
-import { getSmallestDimension, useRootSelector } from '../../../../redux';
+import { getSmallestDimension, useAppSelector } from '../../../../redux';
 
 type Vector = {
   x: number;
@@ -63,7 +63,7 @@ export type States = 'fill gems' | 'idle' | 'swap back' | 'swap' | 'validate';
 const initialSelected = { x: -10, y: -10 };
 export const Bejeweled = memo(function PlaygroundBejeweled() {
   const { goBack } = useNavigation();
-  const dimension = useRootSelector(getSmallestDimension);
+  const dimension = useAppSelector(getSmallestDimension);
 
   const colors = useColors();
   const styles = StyleSheet.create({

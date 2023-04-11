@@ -3,11 +3,11 @@ import { z } from 'zod';
 import { Collections } from '../Collections';
 import { loadGoals } from '../reducers';
 import { goalSchema } from '../types';
-import { useRootDispatch, useRootSelector } from './../../../../redux';
+import { useAppSelector, useAppDispatch } from './../../../../redux';
 
 export const useGoals = () => {
-  const dispatch = useRootDispatch();
-  const uid = useRootSelector((state) => state.focus.auth.uid);
+  const dispatch = useAppDispatch();
+  const uid = useAppSelector((state) => state.focus.auth.uid);
 
   useEffect(() => {
     if (!uid) return () => undefined;

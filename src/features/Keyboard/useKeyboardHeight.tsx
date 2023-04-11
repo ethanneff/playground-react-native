@@ -1,10 +1,8 @@
 import { useIsFocused } from '../../conversions';
-import { useRootSelector } from '../../redux';
+import { useAppSelector } from '../../redux';
 
 export const useKeyboardHeight = (): number => {
   const isFocused = useIsFocused();
-  const keyboardHeight = useRootSelector(
-    (state) => state.device.keyboardHeight,
-  );
+  const keyboardHeight = useAppSelector((state) => state.device.keyboardHeight);
   return isFocused && keyboardHeight ? keyboardHeight : 0;
 };

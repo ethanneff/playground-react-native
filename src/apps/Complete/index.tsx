@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
-import { useRootSelector } from '../../redux';
+import { useAppSelector } from '../../redux';
 import { Landing, Main } from './navigation';
 
 export default memo(function Complete() {
-  const user = useRootSelector((s) => s.completeUser);
+  const user = useAppSelector((s) => s.completeUser);
   const App = user ? Main : Landing;
   return <App />;
 });

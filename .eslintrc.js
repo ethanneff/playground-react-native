@@ -41,6 +41,11 @@ const restrictedImports = {
     { name: '@react-navigation/native-stack', message: 'use Wrapper' },
     { name: '@react-navigation/bottom-tabs', message: 'use Wrapper' },
     { name: '@shopify/flash-list', message: 'use Components' },
+    {
+      name: 'react-redux',
+      importNames: ['useSelector', 'useDispatch'],
+      message: 'use Wrappers',
+    },
   ],
 };
 

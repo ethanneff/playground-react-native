@@ -3,12 +3,12 @@ import {
   Button,
   FlashList,
   Icon,
-  Screen,
   Pressable,
+  Screen,
   type FlashListRenderItem,
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
-import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../../redux';
 import {
   getActiveChecklistOrderByCreatedAt,
   setActiveList,
@@ -17,8 +17,8 @@ import {
 
 export default memo(function Checklists() {
   const { navigate } = useNavigation();
-  const dispatch = useRootDispatch();
-  const items = useRootSelector(getActiveChecklistOrderByCreatedAt);
+  const dispatch = useAppDispatch();
+  const items = useAppSelector(getActiveChecklistOrderByCreatedAt);
 
   const handleItemPress = useCallback(
     (id: string) => () => {

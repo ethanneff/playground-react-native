@@ -3,8 +3,8 @@ import { Pressable } from '../../../../components';
 import { useColors } from '../../../../features';
 import {
   getSmallestDimension,
-  useRootDispatch,
-  useRootSelector,
+  useAppSelector,
+  useAppDispatch,
 } from '../../../../redux';
 import { getCell, updateCell } from './redux';
 
@@ -15,10 +15,10 @@ type Props = {
 
 export const Cell = memo(function Cell({ x, y }: Props) {
   const colors = useColors();
-  const dispatch = useRootDispatch();
-  const smallest = useRootSelector(getSmallestDimension);
-  const selected = useRootSelector(getCell(x, y));
-  const count = useRootSelector((state) => state.gameOfLife.count);
+  const dispatch = useAppDispatch();
+  const smallest = useAppSelector(getSmallestDimension);
+  const selected = useAppSelector(getCell(x, y));
+  const count = useAppSelector((state) => state.gameOfLife.count);
   const size = smallest / count;
 
   const onItemPress = useCallback(

@@ -8,13 +8,13 @@ import {
   View,
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
-import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../../redux';
 import { getCurrentChecklist, removeList, updateList } from '../../models';
 
 export default memo(function ChecklistUpdate() {
   const { navigate } = useNavigation();
-  const dispatch = useRootDispatch();
-  const checklist = useRootSelector(getCurrentChecklist);
+  const dispatch = useAppDispatch();
+  const checklist = useAppSelector(getCurrentChecklist);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [form, setForm] = useState({
     description: checklist.description ?? '',

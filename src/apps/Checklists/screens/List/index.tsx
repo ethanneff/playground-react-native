@@ -3,13 +3,13 @@ import {
   Button,
   FlashList,
   Icon,
-  Screen,
   Pressable,
+  Screen,
   View,
   type FlashListRenderItem,
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
-import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../../redux';
 import {
   getCurrentActiveChecklistItemsOrderByCreatedAt,
   removeChecklistItem,
@@ -20,8 +20,8 @@ import {
 
 export default memo(function Checklist() {
   const { navigate } = useNavigation();
-  const dispatch = useRootDispatch();
-  const items = useRootSelector(getCurrentActiveChecklistItemsOrderByCreatedAt);
+  const dispatch = useAppDispatch();
+  const items = useAppSelector(getCurrentActiveChecklistItemsOrderByCreatedAt);
 
   const handleRemove = useCallback(
     (id: string) => () => dispatch(removeChecklistItem(id)),

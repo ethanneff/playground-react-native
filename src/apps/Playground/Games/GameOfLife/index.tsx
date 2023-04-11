@@ -2,7 +2,7 @@ import React, { memo, useEffect, useState } from 'react';
 import { Screen, ScrollView, Text, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
-import { useRootDispatch } from '../../../../redux';
+import { useAppDispatch } from '../../../../redux';
 import { Buttons } from './Buttons';
 import { GameBoard } from './GameBoard';
 import { Header } from './Header';
@@ -11,7 +11,7 @@ import { resetBoard } from './redux';
 export const GameOfLife = memo(function PlaygroundGameOfLife() {
   const colors = useColors();
   const [loading, setLoading] = useState(true);
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
   const { goBack } = useNavigation();
 
   useEffect(() => {

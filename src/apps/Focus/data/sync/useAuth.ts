@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { Firebase, type FirebaseAuthTypes } from '../../../../conversions';
 import { loginAuth, logoutAuth } from '../reducers';
-import { useRootDispatch } from './../../../../redux';
+import { useAppDispatch } from './../../../../redux';
 
 export const useAuth = () => {
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const subscription = Firebase.auth().onAuthStateChanged(

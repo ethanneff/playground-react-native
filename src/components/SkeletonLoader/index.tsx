@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Animated, Easing, StyleSheet } from 'react-native';
 import { Defs, LinearGradient, Rect, Stop, Svg } from 'react-native-svg';
 import { spacing, useColors, useDriver } from '../../features';
-import { getWidth, useRootSelector } from '../../redux';
+import { getWidth, useAppSelector } from '../../redux';
 import { MaskedView } from '../MaskedView';
 import { View } from '../View';
 
@@ -26,7 +26,7 @@ export const SkeletonLoader = ({
   const colors = useColors();
   const bgColor = backgroundColor ?? colors.background.secondary;
   const fgColor = foregroundColor ?? colors.background.primaryA;
-  const deviceWidth = useRootSelector(getWidth);
+  const deviceWidth = useAppSelector(getWidth);
   const useNativeDriver = useDriver();
   const value = useRef(new Animated.Value(0)).current;
   const translateX = value.interpolate({

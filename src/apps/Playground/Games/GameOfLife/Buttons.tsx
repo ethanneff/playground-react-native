@@ -1,12 +1,12 @@
 import React, { memo, useCallback } from 'react';
 import { Button, View } from '../../../../components';
 import { spacing } from '../../../../features';
-import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../../redux';
 import { resetBoard, toggleRun } from './redux';
 
 export const Buttons = memo(function Buttons() {
-  const dispatch = useRootDispatch();
-  const run = useRootSelector((state) => state.gameOfLife.run);
+  const dispatch = useAppDispatch();
+  const run = useAppSelector((state) => state.gameOfLife.run);
   const onRandom = useCallback(() => dispatch(resetBoard(0.5)), [dispatch]);
   const onStart = useCallback(() => dispatch(toggleRun()), [dispatch]);
   const onClear = useCallback(() => dispatch(resetBoard(0)), [dispatch]);

@@ -3,7 +3,7 @@ import { Image, type ImageSourcePropType } from 'react-native';
 import { Screen, ScrollView, Text, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
-import { getWidth, useRootSelector } from '../../../../redux';
+import { getWidth, useAppSelector } from '../../../../redux';
 
 // https://support.apple.com/en-us/HT211028
 
@@ -25,7 +25,7 @@ const Section = ({
   title,
 }: SectionProps) => {
   const colors = useColors();
-  const width = useRootSelector(getWidth);
+  const width = useAppSelector(getWidth);
   const leftWidth = spacing(12);
   const imageWidth = width - leftWidth - 2 * paddingHorizontal;
   return (

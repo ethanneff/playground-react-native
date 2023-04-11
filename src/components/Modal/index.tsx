@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import { spacing, useColors, useDriver, useDropShadow } from '../../features';
-import { useRootSelector } from '../../redux';
+import { useAppSelector } from '../../redux';
 import { Card } from '../Card';
 import { Pressable } from '../Pressable';
 import { ScrollView } from '../ScrollView';
@@ -43,9 +43,9 @@ export const Modal = memo(function Modal({
 }: ModalProps) {
   const colors = useColors();
   const useNativeDriver = useDriver();
-  const keyboardHeight = useRootSelector((s) => s.device.keyboardHeight);
+  const keyboardHeight = useAppSelector((s) => s.device.keyboardHeight);
   const dropShadow = useDropShadow();
-  const screen = useRootSelector((s) => s.device.dimensions.screen);
+  const screen = useAppSelector((s) => s.device.dimensions.screen);
   const maxHeight = (screen.height - keyboardHeight) * heightPercent;
   const width = screen.width * widthPercent;
 

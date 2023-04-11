@@ -8,7 +8,7 @@ import {
 import { Screen, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { colorWithOpacity, useColors, useDriver } from '../../../../features';
-import { useRootSelector } from '../../../../redux';
+import { useAppSelector } from '../../../../redux';
 
 const charSize = 50;
 const charSpeed = 40;
@@ -26,7 +26,7 @@ export const Archero = memo(function Archero() {
   const timer = useRef(false);
   const interval = useRef<ReturnType<typeof setInterval> | null>(null);
   const gesture = useRef({ dx: 0, dy: 0, x0: 0, y0: 0 });
-  const window = useRootSelector((state) => state.device.dimensions.window);
+  const window = useAppSelector((state) => state.device.dimensions.window);
   const [dimensions, setDimensions] = useState({ height: 1000, width: 1000 });
   const { height, width } = dimensions;
   const smallest = width > height ? height : width;
