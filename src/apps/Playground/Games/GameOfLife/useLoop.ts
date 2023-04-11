@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../../redux';
 import { loopBoard } from './redux';
 
 export const useLoop = (): void => {
-  const dispatch = useRootDispatch();
-  const run = useRootSelector((state) => state.gameOfLife.run);
-  const delay = useRootSelector((state) => state.gameOfLife.delay);
+  const dispatch = useAppDispatch();
+  const run = useAppSelector((state) => state.gameOfLife.run);
+  const delay = useAppSelector((state) => state.gameOfLife.delay);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const loop = useCallback(() => {

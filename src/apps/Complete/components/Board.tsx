@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { FlatList, type FlatListRenderItem } from '../../../components';
-import { useRootSelector } from '../../../redux';
+import { useAppSelector } from '../../../redux';
 import { completeConfig } from '../utils';
 import { AddItem } from './AddItem';
 import { List } from './List';
@@ -17,7 +17,7 @@ export const Board = memo(function Board({
   projectItemId,
 }: BoardProps) {
   const listSize = listWidth + completeConfig.padding;
-  const board = useRootSelector((s) => s.completeItem.items[projectItemId]);
+  const board = useAppSelector((s) => s.completeItem.items[projectItemId]);
   const getItemId = useCallback((item: string) => item, []);
 
   const renderAddList = useCallback(

@@ -1,6 +1,6 @@
 import React, { memo, useCallback, type RefObject } from 'react';
 import { type ViewToken } from 'react-native';
-import { getWidth, useRootSelector } from '../../redux';
+import { getWidth, useAppSelector } from '../../redux';
 import {
   FlashList,
   type FlashListRenderItem,
@@ -22,7 +22,7 @@ export const CarouselList = memo(function CarouselListMemo({
   slides,
   viewabilityConfig,
 }: ListProps) {
-  const width = useRootSelector(getWidth);
+  const width = useAppSelector(getWidth);
 
   const renderItem = useCallback<FlashListRenderItem<CarouselSlide>>(
     ({ item }) => (

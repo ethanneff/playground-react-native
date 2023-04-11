@@ -2,7 +2,7 @@ import React, { memo, useCallback } from 'react';
 import { v4 } from 'uuid';
 import { Icon, Input, Pressable, View } from '../../../../components';
 import { spacing, useColors, useDropShadow } from '../../../../features';
-import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../../redux';
 import {
   createChatMessage,
   getChatSubmittable,
@@ -11,10 +11,10 @@ import {
 } from './Messages';
 
 export const TextField = memo(function TextField() {
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
 
-  const textField = useRootSelector((state) => state.chatMessage.textField);
-  const submittable = useRootSelector(getChatSubmittable);
+  const textField = useAppSelector((state) => state.chatMessage.textField);
+  const submittable = useAppSelector(getChatSubmittable);
   const onMessageChange = useCallback(
     (message: string) => dispatch(typeChatMessage(message)),
     [dispatch],

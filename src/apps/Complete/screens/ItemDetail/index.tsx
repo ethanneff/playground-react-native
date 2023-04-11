@@ -11,18 +11,18 @@ import {
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
-import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../../redux';
 import { DeleteModal, ItemDetailHeader, ItemEdit } from '../../components';
 import { removeItem, removeItemFromItem, updateItem } from '../../models';
 
 export const ItemDetail = memo(function ItemDetail() {
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
   const { goBack } = useNavigation();
   const colors = useColors();
-  const { itemId, parentItemId } = useRootSelector((s) => s.completeItem.nav);
+  const { itemId, parentItemId } = useAppSelector((s) => s.completeItem.nav);
   if (!itemId || !parentItemId)
     throw new Error('missing listId or itemId on item detail screen');
-  const item = useRootSelector((s) => s.completeItem.items[itemId]);
+  const item = useAppSelector((s) => s.completeItem.items[itemId]);
   const [deleteModal, setDeleteModal] = useState(false);
 
   const onItemDelete = useCallback(() => {

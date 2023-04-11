@@ -21,7 +21,7 @@ import {
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors, useDriver } from '../../../../features';
-import { getWidth, useRootSelector } from '../../../../redux';
+import { getWidth, useAppSelector } from '../../../../redux';
 import { formatRelativeDate } from './utils';
 
 type SwipeItem = {
@@ -55,7 +55,7 @@ const SwipeCard = memo(function SwipeCard({
   const colors = useColors();
 
   const useNativeDriver = useDriver();
-  const width = useRootSelector(getWidth);
+  const width = useAppSelector(getWidth);
   const imageHeight = height / 1.5;
   const swipeThreshold = width / 3;
   const touchThreshold = 50;

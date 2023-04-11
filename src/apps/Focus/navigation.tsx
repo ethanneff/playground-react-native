@@ -4,7 +4,7 @@ import {
   createStackNavigator,
 } from '../../conversions';
 import { useNavScreenOptions, type TabIcons } from '../../features';
-import { useRootSelector } from '../../redux';
+import { useAppSelector } from '../../redux';
 import {
   Account,
   Debug,
@@ -72,7 +72,7 @@ const Tabs = () => {
 
 export const Navigation = memo(function Navigation() {
   const { bottomScreenOptions, rightScreenOptions } = useNavScreenOptions();
-  const auth = useRootSelector((state) => state.focus.auth.status);
+  const auth = useAppSelector((state) => state.focus.auth.status);
 
   if (auth === 'initializing') return null;
 

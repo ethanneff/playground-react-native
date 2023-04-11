@@ -7,7 +7,7 @@ import {
   useLayout,
   type RootNavigation,
 } from '../../../../features';
-import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../../redux';
 import { logout } from '../../models';
 import { completeConfig } from '../../utils';
 
@@ -19,10 +19,10 @@ import { completeConfig } from '../../utils';
 export const Account = memo(function Account() {
   const colors = useColors();
   const { tabBarEdges } = useLayout();
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
   const { navigate } = useNavigation<RootNavigation>();
   const { onLogout, response } = useAuth();
-  const profile = useRootSelector((s) => s.completeAuth);
+  const profile = useAppSelector((s) => s.completeAuth);
   const onNavToAdmin = useCallback(() => {
     navigate('admin');
   }, [navigate]);

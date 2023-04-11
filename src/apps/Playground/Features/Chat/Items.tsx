@@ -6,7 +6,7 @@ import {
   type FlashListRenderItem,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
-import { useRootSelector } from '../../../../redux';
+import { useAppSelector } from '../../../../redux';
 import { Item } from './Item';
 import {
   getActiveChatMessagesOrderByCreatedAt,
@@ -16,7 +16,7 @@ import {
 export const Items = memo(function ChatMessageItems() {
   const itemsRef = useRef<FlashListRef<Message>>(null);
   const colors = useColors();
-  const messages = useRootSelector(getActiveChatMessagesOrderByCreatedAt);
+  const messages = useAppSelector(getActiveChatMessagesOrderByCreatedAt);
   const renderItem = useCallback<FlashListRenderItem<Message>>(
     ({ item }) => (
       <Item

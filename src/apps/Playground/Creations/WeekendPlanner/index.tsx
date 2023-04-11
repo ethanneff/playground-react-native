@@ -15,7 +15,7 @@ import {
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors, useDropShadow } from '../../../../features';
-import { getLargestDimension, useRootSelector } from '../../../../redux';
+import { getLargestDimension, useAppSelector } from '../../../../redux';
 
 const months = [
   'Jan',
@@ -53,7 +53,7 @@ export const WeekendPlanner = memo(function Playground52Weeks() {
   const colors = useColors();
   const { goBack } = useNavigation();
   const dropShadow = useDropShadow();
-  const height = useRootSelector(getLargestDimension);
+  const height = useAppSelector(getLargestDimension);
   const [goals, setGoals] = useState<Goal[]>([]);
   const [activeGoal, setActiveGoal] = useState<ActiveGoal>({
     id: null,

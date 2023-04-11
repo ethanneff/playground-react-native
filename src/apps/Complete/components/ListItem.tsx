@@ -8,7 +8,7 @@ import {
 } from '../../../components';
 import { useNavigation } from '../../../conversions';
 import { useColors } from '../../../features';
-import { useRootDispatch, useRootSelector } from '../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../redux';
 import {
   navItemDetails,
   navItemProject,
@@ -29,12 +29,12 @@ export const ListItem = memo(function ListItem({
   itemId,
   parentItemId,
 }: ListItemProps) {
-  const item = useRootSelector((s) => s.completeItem.items[itemId]);
-  const parentChildrenCount = useRootSelector(
+  const item = useAppSelector((s) => s.completeItem.items[itemId]);
+  const parentChildrenCount = useAppSelector(
     (s) => s.completeItem.items[parentItemId].children.length,
   );
   const textInputRef = useRef<TextInputRef>(null);
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
   const { navigate } = useNavigation<ImplementTabNavigation>();
   const colors = useColors();
   const form = useRef('');

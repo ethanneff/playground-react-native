@@ -9,7 +9,7 @@ import {
   View,
   type FlashListRenderItem,
 } from '../../../../../components';
-import { useRootDispatch, useRootSelector } from '../../../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../../../redux';
 import {
   createQuestionnaire,
   getQuestionnaireArray,
@@ -19,10 +19,10 @@ import {
 } from '../models';
 
 export const Questionnaires = () => {
-  const questionnaires = useRootSelector(getQuestionnaireArray);
-  const selected = useRootSelector((state) => state.questionnaires.selected);
+  const questionnaires = useAppSelector(getQuestionnaireArray);
+  const selected = useAppSelector((state) => state.questionnaires.selected);
   const [actionSheet, setActionSheet] = useState(false);
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
   const handleLongPress = useCallback(
     (id: string) => () => dispatch(removeQuestionnaire(id)),
     [dispatch],

@@ -17,8 +17,8 @@ import {
   changeTheme,
   getLandscapeOrientation,
   themes,
-  useRootDispatch,
-  useRootSelector,
+  useAppSelector,
+  useAppDispatch,
   type Theme,
 } from '../../../../redux';
 
@@ -91,9 +91,9 @@ type HeaderProps = {
   onValueChange: (value: number) => void;
 };
 const Header = ({ elevation, onValueChange }: HeaderProps) => {
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
   const colors = useColors();
-  const currentTheme = useRootSelector((state) => state.theme.currentTheme);
+  const currentTheme = useAppSelector((state) => state.theme.currentTheme);
   const themePress = (theme: Theme) => () => dispatch(changeTheme(theme));
 
   return (
@@ -139,7 +139,7 @@ export const Themes = memo(function Themes() {
   const handleSlider = useCallback((value: number) => {
     setElevation(value);
   }, []);
-  const landscape = useRootSelector(getLandscapeOrientation);
+  const landscape = useAppSelector(getLandscapeOrientation);
   const columns = landscape ? 5 : 2;
   const onPress = useCallback(() => undefined, []);
 

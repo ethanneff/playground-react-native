@@ -9,7 +9,7 @@ import { spacing } from '../../../../features';
 import {
   getLandscapeOrientation,
   getSmallestDimension,
-  useRootSelector,
+  useAppSelector,
 } from '../../../../redux';
 import { type UnAuthStackRoutes } from '../../types';
 
@@ -17,8 +17,8 @@ const trophy = require('./trophy.json') as AnimationObject;
 
 export const Landing = memo(function Landing() {
   const { navigate } = useNavigation<StackNavigationProp<UnAuthStackRoutes>>();
-  const width = useRootSelector(getSmallestDimension);
-  const landscape = useRootSelector(getLandscapeOrientation);
+  const width = useAppSelector(getSmallestDimension);
+  const landscape = useAppSelector(getLandscapeOrientation);
   const imageSize = width * 0.5;
 
   const handleGetStarted = useCallback(() => {

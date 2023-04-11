@@ -9,7 +9,7 @@ import {
   type FlashListRenderItem,
 } from '../../components';
 import { spacing } from '../../features';
-import { getLandscapeOrientation, useRootSelector } from '../../redux';
+import { getLandscapeOrientation, useAppSelector } from '../../redux';
 import { Header } from './Header';
 import { app } from './data';
 
@@ -22,7 +22,7 @@ export const List = memo(function List({
   onProfilePress,
   onSettingsPress,
 }: Props) {
-  const landscape = useRootSelector(getLandscapeOrientation);
+  const landscape = useAppSelector(getLandscapeOrientation);
   const columns = landscape ? 5 : 2;
 
   const keyExtractor = useCallback((id: string) => app.goals.byId[id].id, []);

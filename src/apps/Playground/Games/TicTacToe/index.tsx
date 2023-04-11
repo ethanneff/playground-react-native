@@ -13,7 +13,7 @@ import { spacing, useColors, useDropShadow } from '../../../../features';
 import {
   getLandscapeOrientation,
   getSmallestDimension,
-  useRootSelector,
+  useAppSelector,
 } from '../../../../redux';
 import { type State } from './types';
 import {
@@ -30,8 +30,8 @@ export const TicTacToe = memo(function TicTacToe() {
   const { goBack } = useNavigation();
   const dropShadow = useDropShadow();
   const [game, setGame] = useState<State>(getInitialState(boardSize));
-  const smallest = useRootSelector(getSmallestDimension);
-  const landscape = useRootSelector(getLandscapeOrientation);
+  const smallest = useAppSelector(getSmallestDimension);
+  const landscape = useAppSelector(getLandscapeOrientation);
   const size = smallest / (boardSize + 1);
   const buttonTitle = game.state === 'game-over' ? 'new game' : 'reset';
   const turnTitle = game.winner

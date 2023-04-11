@@ -12,7 +12,7 @@ import {
   useNavigation,
   type StackNavigationProp,
 } from '../../../../conversions';
-import { useRootSelector } from '../../../../redux';
+import { useAppSelector } from '../../../../redux';
 import { Collections, type Goal, type Interval } from '../../data';
 import { type UnAuthStackRoutes } from '../../types';
 import { useLogout } from '../../utils';
@@ -20,7 +20,7 @@ import { useLogout } from '../../utils';
 export const Debug = memo(function Debug() {
   const { goBack } =
     useNavigation<StackNavigationProp<UnAuthStackRoutes, 'debug'>>();
-  const data = useRootSelector((state) => state.focus);
+  const data = useAppSelector((state) => state.focus);
   const uid = data.auth.uid ?? '';
   const { handleLogout } = useLogout();
 

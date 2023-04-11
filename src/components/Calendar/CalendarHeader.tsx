@@ -2,15 +2,15 @@ import format from 'date-fns/format';
 import React, { useCallback } from 'react';
 import { View } from '..';
 import { spacing } from '../../features';
-import { useRootDispatch, useRootSelector } from '../../redux';
+import { useAppSelector, useAppDispatch } from '../../redux';
 import { Icon } from '../Icon';
 import { Pressable } from '../Pressable';
 import { Text } from '../Text';
 import { calendarActions } from './calendarReducer';
 
 export const CalendarHeader = () => {
-  const dispatch = useRootDispatch();
-  const activeMonth = useRootSelector((state) => state.calendar.activeMonth);
+  const dispatch = useAppDispatch();
+  const activeMonth = useAppSelector((state) => state.calendar.activeMonth);
   const month = format(activeMonth, 'MMMM yyyy');
 
   const handleMonthDecrease = useCallback(() => {

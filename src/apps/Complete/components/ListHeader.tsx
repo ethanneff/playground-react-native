@@ -2,7 +2,7 @@ import React, { memo, useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import { TextInput, View, type TextInputIcon } from '../../../components';
 import { useNavigation, type StackNavigationProp } from '../../../conversions';
-import { useRootDispatch, useRootSelector } from '../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../redux';
 import { navItemDetails, updateItem } from '../models';
 import { type MainStackRoutes } from '../navigationTypes';
 
@@ -15,9 +15,9 @@ export const ListHeader = memo(function ListHeader({
   itemId,
   parentItemId,
 }: ListHeaderProps) {
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
   const { navigate } = useNavigation<StackNavigationProp<MainStackRoutes>>();
-  const item = useRootSelector((s) => s.completeItem.items[itemId]);
+  const item = useAppSelector((s) => s.completeItem.items[itemId]);
   const form = useRef('');
 
   const onSave = useCallback(() => {

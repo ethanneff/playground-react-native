@@ -1,12 +1,12 @@
 import React, { memo, useCallback } from 'react';
 import { Slider, Text, View } from '../../../../components';
-import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../../redux';
 import { updateCount, updateDelay } from './redux';
 
 export const Header = memo(function Header() {
-  const dispatch = useRootDispatch();
-  const delay = useRootSelector((state) => state.gameOfLife.delay);
-  const count = useRootSelector((state) => state.gameOfLife.count);
+  const dispatch = useAppDispatch();
+  const delay = useAppSelector((state) => state.gameOfLife.delay);
+  const count = useAppSelector((state) => state.gameOfLife.count);
   const onCountSlide = useCallback(
     (v: number) => dispatch(updateCount(v)),
     [dispatch],

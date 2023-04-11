@@ -4,7 +4,7 @@ import {
   type FlatListRef,
   type FlatListRenderItem,
 } from '../../../components';
-import { useRootSelector } from '../../../redux';
+import { useAppSelector } from '../../../redux';
 import { ListItem } from './ListItem';
 
 type ListItemsProps = {
@@ -14,7 +14,7 @@ type ListItemsProps = {
 export const ListItems = memo(function ListItems({
   parentItemId,
 }: ListItemsProps) {
-  const list = useRootSelector(
+  const list = useAppSelector(
     (s) => s.completeItem.items[parentItemId].children,
   );
   const listRef = useRef<FlatListRef<string>>(null);

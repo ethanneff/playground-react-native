@@ -12,7 +12,7 @@ import {
   type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
-import { useRootDispatch } from '../../../../redux';
+import { useAppDispatch } from '../../../../redux';
 import { ModalHeader } from '../../components';
 import { createItem, loadUser } from '../../models';
 import { type LandingStackRoutes } from '../../navigationTypes';
@@ -28,7 +28,7 @@ const initialState = {
 
 export const SignUp = memo(function SignUp() {
   const colors = useColors();
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
   const focus = useIsFocused();
   const form = useRef(initialRef);
   const [state, setState] = useState(initialState);

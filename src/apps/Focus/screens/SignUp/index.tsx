@@ -18,7 +18,7 @@ import {
   type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing } from '../../../../features';
-import { useRootSelector } from '../../../../redux';
+import { useAppSelector } from '../../../../redux';
 import { Collections, type Preferences, type User } from '../../data';
 import { type UnAuthStackRoutes } from '../../types';
 import { SocialAuth } from './SocialAuth';
@@ -78,7 +78,7 @@ export const SignUp = memo(function SignUp() {
   const focus = useIsFocused();
   const disabled = state.loading;
   const timezone =
-    useRootSelector((root) => root.device.localization?.timeZone) ?? '';
+    useAppSelector((root) => root.device.localization?.timeZone) ?? '';
 
   const handleErrorToast = useCallback((e: unknown, message: string) => {
     const err = e as FirebaseAuthTypes.NativeFirebaseAuthError;

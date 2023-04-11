@@ -11,14 +11,14 @@ import { spacing } from '../../../features';
 import {
   changeTheme,
   themes,
-  useRootDispatch,
-  useRootSelector,
+  useAppSelector,
+  useAppDispatch,
   type Theme,
 } from '../../../redux';
 
 export const Settings = memo(function PortfolioSettings() {
-  const dispatch = useRootDispatch();
-  const currentTheme = useRootSelector((state) => state.theme.currentTheme);
+  const dispatch = useAppDispatch();
+  const currentTheme = useAppSelector((state) => state.theme.currentTheme);
   const { goBack } = useNavigation();
   const themePress = useCallback(
     (theme: Theme) => () => dispatch(changeTheme(theme)),

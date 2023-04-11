@@ -2,7 +2,7 @@ import React, { memo, useCallback, useState } from 'react';
 import { type LayoutChangeEvent } from 'react-native';
 import { KeyboardHandler, Screen } from '../../../../components';
 import { useKeyboardHeight, useLayout } from '../../../../features';
-import { useRootSelector } from '../../../../redux';
+import { useAppSelector } from '../../../../redux';
 import { List } from '../../components';
 import { getProjects } from '../../models';
 
@@ -17,7 +17,7 @@ export const Projects = memo(function Projects() {
   const { tabBarEdges } = useLayout();
   const [dimensions, setDimensions] = useState(0);
   const keyboardHeight = useKeyboardHeight();
-  const itemId = useRootSelector(getProjects);
+  const itemId = useAppSelector(getProjects);
   if (!itemId) throw new Error('missing item id');
   const maxHeight = dimensions - keyboardHeight;
 

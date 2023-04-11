@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useState } from 'react';
 import { Button, Input, Screen } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
-import { useRootDispatch, useRootSelector } from '../../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../../redux';
 import {
   getCurrentChecklistItem,
   removeChecklistItem,
@@ -10,8 +10,8 @@ import {
 
 export default memo(function ChecklistUpdate() {
   const { navigate } = useNavigation();
-  const dispatch = useRootDispatch();
-  const item = useRootSelector(getCurrentChecklistItem);
+  const dispatch = useAppDispatch();
+  const item = useAppSelector(getCurrentChecklistItem);
   const [form, setForm] = useState({
     description: item.description ?? '',
     name: item.name,

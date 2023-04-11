@@ -3,14 +3,14 @@ import 'react-native-get-random-values';
 import { v4 } from 'uuid';
 import { Button, Input, Screen } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
-import { useRootDispatch } from '../../../../redux';
+import { useAppDispatch } from '../../../../redux';
 import { createList } from '../../models';
 
 const initialState = { description: '', name: '' };
 
 export default memo(function ChecklistCreate() {
   const { navigate } = useNavigation();
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
   const [form, setForm] = useState(initialState);
   const isInvalidForm = form.name.trim().length === 0;
 

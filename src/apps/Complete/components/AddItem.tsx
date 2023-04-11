@@ -4,12 +4,12 @@ import { v4 } from 'uuid';
 import {
   Button,
   TextInput,
+  View,
   type TextInputIcon,
   type TextInputRef,
-  View,
 } from '../../../components';
 import { spacing, useColors } from '../../../features';
-import { useRootDispatch, useRootSelector } from '../../../redux';
+import { useAppSelector, useAppDispatch } from '../../../redux';
 import { addItemToItem, createItem, type Item } from '../models';
 import { completeConfig } from '../utils';
 
@@ -30,8 +30,8 @@ export const AddItem = memo(function AddItem({
   const textInputRef = useRef<TextInputRef>(null);
   const text = useRef('');
   const [showInput, setShowInput] = useState(false);
-  const dispatch = useRootDispatch();
-  const userId = useRootSelector((s) => s.completeUser?.id);
+  const dispatch = useAppDispatch();
+  const userId = useAppSelector((s) => s.completeUser?.id);
   if (!userId) throw new Error('missing userId on add item');
   if (!parentItemId) throw new Error('missing parentItemId on add item');
 

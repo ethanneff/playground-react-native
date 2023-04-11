@@ -14,7 +14,7 @@ import {
   type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
-import { getSmallestDimension, useRootSelector } from '../../../../redux';
+import { getSmallestDimension, useAppSelector } from '../../../../redux';
 import { getLoaded } from '../../data';
 import { type AuthStackRoutes } from '../../types';
 import { useLogout } from '../../utils/useLogout';
@@ -29,8 +29,8 @@ const loader = require('./loader.json') as AnimationObject;
 export const Download = memo(function Download() {
   const { navigate } =
     useNavigation<StackNavigationProp<AuthStackRoutes, 'download'>>();
-  const width = useRootSelector(getSmallestDimension);
-  const loaded = useRootSelector(getLoaded);
+  const width = useAppSelector(getSmallestDimension);
+  const loaded = useAppSelector(getLoaded);
   const [showLogout, setShowLogout] = useState(false);
   const imageSize = width * 0.65;
   const visible = useRef(true);

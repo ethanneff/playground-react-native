@@ -2,7 +2,7 @@ import { isSameDay, isSameMonth } from 'date-fns';
 import React, { useCallback } from 'react';
 import { View } from '..';
 import { spacing, useColors } from '../../features';
-import { useRootDispatch, useRootSelector } from '../../redux';
+import { useAppSelector, useAppDispatch } from '../../redux';
 import { Pressable } from '../Pressable';
 import { Text } from '../Text';
 import { calendarActions } from './calendarReducer';
@@ -42,14 +42,14 @@ const useConfig = ({ dayState, hiddenDays, month }: ConfigProps) => {
 };
 
 export const CalendarDay = ({ day, hiddenDays }: Props) => {
-  const month = useRootSelector((state) => state.calendar.activeMonth);
-  const dayState = useRootSelector((state) => state.calendar.days[day]);
+  const month = useAppSelector((state) => state.calendar.activeMonth);
+  const dayState = useAppSelector((state) => state.calendar.days[day]);
   const { backgroundColor, bold, disabled, textColor } = useConfig({
     dayState,
     hiddenDays,
     month,
   });
-  const dispatch = useRootDispatch();
+  const dispatch = useAppDispatch();
 
   const handleSelect = useCallback(() => {
     dispatch(calendarActions.select(dayState.value));

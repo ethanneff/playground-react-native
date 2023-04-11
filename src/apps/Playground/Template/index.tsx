@@ -3,14 +3,14 @@ import { StyleSheet } from 'react-native';
 import { Button, Screen, Text, View } from '../../../components';
 import { useNavigation } from '../../../conversions';
 import { useColors } from '../../../features';
-import { themeActions, useRootDispatch, useRootSelector } from '../../../redux';
+import { themeActions, useAppSelector, useAppDispatch } from '../../../redux';
 
 export const Template = () => {
   const colors = useColors();
   const { goBack } = useNavigation();
   const [value, setValue] = useState(0);
-  const dispatch = useRootDispatch();
-  const theme = useRootSelector((state) => state.theme.currentTheme);
+  const dispatch = useAppDispatch();
+  const theme = useAppSelector((state) => state.theme.currentTheme);
 
   const styles = StyleSheet.create({
     container: {
