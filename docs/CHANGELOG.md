@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.76.4](https://github.com/ethanneff/playground-react-native/compare/v2.76.3...v2.76.4) (2023-04-11)
+
 ## [2.76.3](https://github.com/ethanneff/playground-react-native/compare/v2.76.2...v2.76.3) (2023-04-04)
 
 
