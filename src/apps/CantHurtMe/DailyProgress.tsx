@@ -2,10 +2,10 @@ import add from 'date-fns/add';
 import format from 'date-fns/format';
 import isSameDay from 'date-fns/isSameDay';
 import React, { memo, useCallback, useState } from 'react';
-import { TouchableOpacity } from 'react-native';
 import {
   FlashList,
   Icon,
+  Pressable,
   Text,
   View,
   type FlashListRenderItem,
@@ -49,7 +49,7 @@ const ProgressItem = ({ item }: ProgressItemProps) => {
     : 'close';
 
   return (
-    <TouchableOpacity onPress={onPress}>
+    <Pressable onPress={onPress}>
       <Icon
         color={iconColor}
         name={iconName}
@@ -81,7 +81,7 @@ const ProgressItem = ({ item }: ProgressItemProps) => {
           title={format(item.date, 'MMM dd')}
         />
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
