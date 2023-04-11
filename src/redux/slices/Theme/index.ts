@@ -1,8 +1,8 @@
 import { type RootAction, type RootState } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
 import { type ColorTheme } from '../../../features';
+import { darkTheme, lightTheme } from '../../../features/Config/colors';
 import { logout } from '../Auth';
-import { darkTheme, lightTheme } from './../../../features/Config/colors';
 
 /*
 https://material.io/design/color/dark-theme.html#ui-application

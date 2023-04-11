@@ -1,3 +1,4 @@
+import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import {
   type RootAction,
@@ -73,32 +74,53 @@ export const onLogout = (): RootThunkAction<void> => (dispatch, getState) => {
   });
 };
 
-export const authActions = {
-  loginFailure,
-  loginRequest,
-  loginSuccess,
-  logout,
-  registerFailure,
-  registerRequest,
-  registerSuccess,
-};
-
 /* SELECTORS */
 export const getAuthToken = (state: RootState): string | undefined =>
   state.auth.token;
 export const getAuthLoading = (state: RootState): boolean => state.auth.loading;
 
-/* INTERFACES */
 type AuthState = {
   error?: string;
   loading: boolean;
   token?: string;
 };
 
-/* REDUCERS */
-export const authInitialState: AuthState = {
+const initialState: AuthState = {
   loading: false,
 };
+
+export const authSlice = createSlice({
+  initialState,
+  name: 'auth',
+  reducers: {
+    loginRequest
+    case getType(registerRequest):
+      return {
+        ...state,
+        loading: true,
+      };
+    case getType(loginFailure):
+    case getType(registerFailure):
+      return {
+        ...state,
+        error: action.payload.message,
+        loading: false,
+      };
+    case getType(loginSuccess):
+    case getType(registerSuccess):
+      return {
+        ...state,
+        loading: false,
+        token: action.payload,
+      };
+    case getType(logout):
+      return authInitialState;
+    default:
+      return state;
+
+
+  },
+});
 export const authReducer = (
   state: AuthState = authInitialState,
   action: RootAction,

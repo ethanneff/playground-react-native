@@ -1,89 +1,36 @@
 import { combineReducers } from 'redux';
 import {
-  authActions,
   authReducer,
-  deviceActions,
   deviceReducer,
   historyReducer,
-  networkActions,
   networkReducer,
-  themeActions,
   themeReducer,
 } from '.';
 import {
-  checklistActions,
-  checklistItemActions,
   checklistItemReducer,
   checklistReducer,
 } from '../apps/Checklists/models';
 import {
-  completeAuthActions,
   completeAuthReducer,
-  completeItemActions,
   completeItemReducer,
-  completeUserActions,
   completeUserReducer,
 } from '../apps/Complete/models';
 import {
-  focusAuthActions,
   focusAuthReducer,
-  focusGoalsActions,
   focusGoalsReducer,
-  focusIntervalsActions,
   focusIntervalsReducer,
-  focusPreferencesActions,
   focusPreferencesReducer,
-  focusUsersActions,
   focusUsersReducer,
 } from '../apps/Focus/data';
 import {
-  choicesActions,
   choicesReducer,
-  questionnairesActions,
   questionnairesReducer,
-  questionsActions,
   questionsReducer,
-  responsesActions,
   responsesReducer,
 } from '../apps/Playground/Creations/Questionnaire/models';
-import {
-  chatMessageActions,
-  chatMessageReducer,
-} from '../apps/Playground/Features/Chat/Messages';
-import {
-  gameOfLifeActions,
-  gameOfLifeReducer,
-} from '../apps/Playground/Games/GameOfLife/redux';
-import {
-  calendarActions,
-  calendarReducer,
-} from '../components/Calendar/calendarReducer';
-
-export const actions = {
-  auth: authActions,
-  calendar: calendarActions,
-  chatMessage: chatMessageActions,
-  checklist: checklistActions,
-  checklistItem: checklistItemActions,
-  choices: choicesActions,
-  completeAuth: completeAuthActions,
-  completeItem: completeItemActions,
-  completeUser: completeUserActions,
-  device: deviceActions,
-  focus: {
-    ...focusAuthActions,
-    ...focusUsersActions,
-    ...focusGoalsActions,
-    ...focusPreferencesActions,
-    ...focusIntervalsActions,
-  },
-  gameOfLife: gameOfLifeActions,
-  network: networkActions,
-  questionnaires: questionnairesActions,
-  questions: questionsActions,
-  responses: responsesActions,
-  theme: themeActions,
-};
+import { chatMessageReducer } from '../apps/Playground/Features/Chat/Messages';
+import { gameOfLifeReducer } from '../apps/Playground/Games/GameOfLife/redux';
+import { calendarReducer } from '../components/Calendar/calendarReducer';
 
 export const reducers = combineReducers({
   auth: authReducer,

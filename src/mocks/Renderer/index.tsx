@@ -6,7 +6,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { createStore, type Store } from 'redux';
 import { type RootState } from 'root-types';
 import { ApplicationProvider } from '../../features';
-import { reducers } from '../../redux/store';
+import { reducers } from '../../redux/reducers';
 
 type OptionalOptions<TProps> = {
   initialProps?: TProps;
