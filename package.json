@@ -67,7 +67,7 @@
     "redux": "4.2.1",
     "redux-persist": "6.0.0",
     "redux-thunk": "2.4.2",
-    "reselect": "4.1.7",
+    "reselect": "4.1.8",
     "typesafe-actions": "5.1.0",
     "uuid": "9.0.0",
     "zod": "3.21.4"
