@@ -1,5 +1,5 @@
 diff --git a/node_modules/@shopify/flash-list/dist/FlashList.js b/node_modules/@shopify/flash-list/dist/FlashList.js
-index 8b05441..fcb2a96 100644
+index 86495d4..6c35097 100644
 --- a/node_modules/@shopify/flash-list/dist/FlashList.js
 +++ b/node_modules/@shopify/flash-list/dist/FlashList.js
 @@ -272,7 +272,7 @@ var FlashList = /** @class */ (function (_super) {
@@ -12,7 +12,7 @@ index 8b05441..fcb2a96 100644
              console.warn(Warnings_1.default.styleUnsupported);
          }
 diff --git a/node_modules/@shopify/flash-list/src/FlashList.tsx b/node_modules/@shopify/flash-list/src/FlashList.tsx
-index 39e5c94..225cbee 100644
+index 0bf59bf..94dc678 100644
 --- a/node_modules/@shopify/flash-list/src/FlashList.tsx
 +++ b/node_modules/@shopify/flash-list/src/FlashList.tsx
 @@ -1,11 +1,12 @@
