@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '>= 2.6.10'
+ruby
 gem 'fastlane'
 gem 'ffi'
 gem 'fastlane-plugin-load_json'
