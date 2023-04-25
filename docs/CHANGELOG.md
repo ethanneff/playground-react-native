@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.76.7](https://github.com/ethanneff/playground-react-native/compare/v2.76.6...v2.76.7) (2023-04-25)
+
+
+### Bug Fixes
+
+* rename workflow ([54e270c](https://github.com/ethanneff/playground-react-native/commit/54e270c0b4ef63b1fb056753ef95aaf20c250174))
+* update deps ([465bd26](https://github.com/ethanneff/playground-react-native/commit/465bd269baf673e9536e831978d6c23cf3287d9f))
+
 ## [2.76.6](https://github.com/ethanneff/playground-react-native/compare/v2.76.5...v2.76.6) (2023-04-18)
 
 
