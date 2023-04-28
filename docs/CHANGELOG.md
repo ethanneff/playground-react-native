@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.76.8](https://github.com/ethanneff/playground-react-native/compare/v2.76.7...v2.76.8) (2023-04-25)
+
+
+### Bug Fixes
+
+* make ci clone smaller ([9dd5faa](https://github.com/ethanneff/playground-react-native/commit/9dd5faac075f1fa2936802b6fad87ad4503257dd))
+* remove repo warning ([3510403](https://github.com/ethanneff/playground-react-native/commit/35104032db0f43539d9a72a2ccb21d2b8ea0d390))
+
 ## [2.76.7](https://github.com/ethanneff/playground-react-native/compare/v2.76.6...v2.76.7) (2023-04-25)
 
 
