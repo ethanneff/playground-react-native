@@ -62,16 +62,18 @@ export const Card = memo(function Card({
 
   const contentStyles = [styles.content, contentStyle];
   const containerStyles = [styles.container, containerStyle];
+  const hasPress = Boolean(onPress) || Boolean(onLongPress);
 
   return (
     <Pressable
+      accessible={hasPress}
       containerStyle={containerStyles}
       contentStyle={contentStyles}
       onLayout={onLayout}
       onLongPress={onLongPress}
       onPress={onPress}
       testID={testID}
-      withoutFeedback={!onPress && !onLongPress}
+      withoutFeedback={!hasPress}
     >
       {children}
     </Pressable>
