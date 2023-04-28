@@ -102,6 +102,7 @@ export const Icon = memo(function Icon({
       testID={testID}
     >
       <Source
+        accessibilityLabel={name}
         color={colored}
         invisible={invisible}
         name={name}
