@@ -165,5 +165,5 @@
     "e2e-create": "maestro studio",
     "e2e-test": "maestro test e2e/flows/happy-path.yaml"
   },
-  "version": "2.76.10"
+  "version": "2.77.0"
 }
