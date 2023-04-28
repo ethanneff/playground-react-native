@@ -1157,7 +1157,7 @@ PODS:
     - react-native-config/App (= 1.5.0)
   - react-native-config/App (1.5.0):
     - React-Core
-  - react-native-flipper (0.189.0):
+  - react-native-flipper (0.190.0):
     - React-Core
   - react-native-flipper-performance-plugin (0.4.0):
     - React-Core
@@ -1311,7 +1311,7 @@ PODS:
     - React-Core
   - RNRate (1.2.12):
     - React-Core
-  - RNReanimated (3.0.2):
+  - RNReanimated (3.1.0):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -1348,7 +1348,7 @@ PODS:
     - RNSound/Core (= 0.11.2)
   - RNSound/Core (0.11.2):
     - React-Core
-  - RNSVG (13.8.0):
+  - RNSVG (13.9.0):
     - React-Core
   - RNVectorIcons (9.2.0):
     - React-Core
@@ -1703,7 +1703,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 9885f6f94d231b95a739ef7bb50536fb87ce7539
   React-logger: 3f8ebad1be1bf3299d1ab6d7f971802d7395c7ef
   react-native-config: 5330c8258265c1e5fdb8c009d2cabd6badd96727
-  react-native-flipper: e0e154c742a3c5020ec97362de664880b608dab1
+  react-native-flipper: 72420e806d82b268f4c95b9c90d6994536014435
   react-native-flipper-performance-plugin: 42ec5017abd26e7c5a1f527f2db92c14a90cabdb
   react-native-get-random-values: a6ea6a8a65dc93e96e24a11105b1a9c8cfe1d72a
   react-native-mmkv-storage: cfb6854594cfdc5f7383a9e464bb025417d1721c
@@ -1739,11 +1739,11 @@ SPEC CHECKSUMS:
   RNGoogleSignin: 22e468a9474dbcb8618d8847205ad4f0b2575d13
   RNLocalize: d4b8af4e442d4bcca54e68fc687a2129b4d71a81
   RNRate: ef3bcff84f39bb1d1e41c5593d3eea4aab2bd73a
-  RNReanimated: f0dd6b881808e635ef0673f89642937d6c141314
+  RNReanimated: b1220a0e5168745283ff5d53bfc7d2144b2cee1b
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   RNSensors: 117ba71c7eeeea0407ea0c0bb79e3495d602049b
   RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
-  RNSVG: c1e76b81c76cdcd34b4e1188852892dc280eb902
+  RNSVG: 53c661b76829783cdaf9b7a57258f3d3b4c28315
   RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
