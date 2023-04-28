@@ -80,6 +80,7 @@ export const Button = memo(function Button({
 
   return hidden ? null : (
     <Pressable
+      accessibilityLabel={title}
       containerStyle={buttonStyleGroup}
       disabled={disabled ?? invisible}
       onLongPress={onLongPress}
