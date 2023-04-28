@@ -1,5 +1,20 @@
 # Changelog
 
+# [2.77.0](https://github.com/ethanneff/playground-react-native/compare/v2.76.10...v2.77.0) (2023-04-28)
+
+
+### Bug Fixes
+
+* allow accessible labels in views and pressable ([428252e](https://github.com/ethanneff/playground-react-native/commit/428252e30ca891ced5f5aac318b73e46e68b6142))
+* make buttons accessible ([5d156ff](https://github.com/ethanneff/playground-react-native/commit/5d156ff89cdd26f036af885432de608bce570b51))
+* make card contents accessible ([a2acd39](https://github.com/ethanneff/playground-react-native/commit/a2acd3944d1fb74dd40871559ec99eb9be068a1b))
+* make icons accessible ([cc02cdc](https://github.com/ethanneff/playground-react-native/commit/cc02cdc12da2d775f8f360efa9183c01c8e3e4eb))
+
+
+### Features
+
+* add e2e tests with maestro ([04f2029](https://github.com/ethanneff/playground-react-native/commit/04f2029ef870b93b1c076694a6543f6016e4177c))
+
 ## [2.76.10](https://github.com/ethanneff/playground-react-native/compare/v2.76.9...v2.76.10) (2023-04-28)
 
 
