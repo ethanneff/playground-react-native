@@ -36,3 +36,7 @@ yarn test
 ```sh
 yarn build
 ```
+
+## End to end test
+
+https://console.mobile.dev/quickstart

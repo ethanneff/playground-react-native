@@ -1,0 +1,11 @@
+appId: com.eneff.app.core
+---
+- launchApp:
+    clearState: true
+- assertVisible: 'Admin'
+- tapOn: 'Playground'
+- tapOn: 'colors'
+- tapOn: 'dark'
+- tapOn: 'light'
+- tapOn: 'chevron-left'
+- tapOn: 'Playground'

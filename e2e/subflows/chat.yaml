@@ -1,0 +1,15 @@
+appId: com.eneff.app.core
+---
+- launchApp:
+    clearState: true
+- assertVisible: 'Admin'
+- tapOn: 'Playground'
+- tapOn: 'chat'
+- tapOn: 'Write something...'
+- inputText: 'Hello World'
+- tapOn: 'Send'
+- assertVisible: 'User bob'
+- inputText: 'Hello You'
+- pressKey: Enter
+- tapOn: 'chevron-left'
+- assertVisible: 'Playground'

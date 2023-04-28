@@ -1,0 +1,7 @@
+appId: com.eneff.app.core
+---
+- launchApp:
+    clearState: true
+- assertVisible: 'Admin'
+- runFlow: ../subflows/dark-mode.yaml
+- runFlow: ../subflows/chat.yaml
