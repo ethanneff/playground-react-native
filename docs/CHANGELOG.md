@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.77.1](https://github.com/ethanneff/playground-react-native/compare/v2.77.0...v2.77.1) (2023-04-28)
+
+
+### Bug Fixes
+
+* change directory of e2e ci ([0d6069a](https://github.com/ethanneff/playground-react-native/commit/0d6069ad6d42d4c12c4f60fd2abb959ed0c8953d))
+
 # [2.77.0](https://github.com/ethanneff/playground-react-native/compare/v2.76.10...v2.77.0) (2023-04-28)
 
 
