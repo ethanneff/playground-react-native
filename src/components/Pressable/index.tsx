@@ -11,6 +11,8 @@ import {
 import { SoundManager } from '../../features';
 
 type Props = {
+  accessibilityLabel?: string;
+  accessible?: boolean;
   children?: ReactNode;
   containerStyle?: StyleProp<ViewStyle>;
   contentStyle?: StyleProp<ViewStyle>;
@@ -25,6 +27,8 @@ type Props = {
 };
 
 export const Pressable = ({
+  accessibilityLabel,
+  accessible,
   children,
   containerStyle,
   contentStyle,
@@ -63,8 +67,9 @@ export const Pressable = ({
 
   return withoutFeedback ? (
     <GestureTouchableWithoutFeedback
+      accessibilityLabel={accessibilityLabel}
       accessibilityRole="button"
-      accessible
+      accessible={accessible}
       containerStyle={containerStyle}
       disabled={disabled}
       onLayout={onLayout}
@@ -79,8 +84,9 @@ export const Pressable = ({
     </GestureTouchableWithoutFeedback>
   ) : (
     <GestureTouchableOpacity
+      accessibilityLabel={accessibilityLabel}
       accessibilityRole="button"
-      accessible
+      accessible={accessible}
       containerStyle={containerStyle}
       disabled={disabled}
       onLayout={onLayout}

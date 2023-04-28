@@ -14,6 +14,7 @@ import { useColors, type MonoMultiColor } from '../../features';
 export type ViewRef = Original | null;
 
 type Props = {
+  accessibilityLabel?: string;
   accessibilityRole?: AccessibilityRole;
   accessible?: boolean;
   alignContent?:
@@ -62,6 +63,7 @@ type Props = {
 };
 
 export const View = ({
+  accessibilityLabel,
   accessibilityRole,
   accessible,
   alignContent,
@@ -131,6 +133,7 @@ export const View = ({
 
   return (
     <Original
+      accessibilityLabel={accessibilityLabel}
       accessibilityRole={accessibilityRole}
       accessible={accessible}
       collapsable={collapsable}

@@ -4,6 +4,8 @@ import Original from 'react-native-vector-icons/MaterialCommunityIcons';
 import { type IconName } from './config';
 
 type Props = {
+  accessibilityLabel?: string;
+  accessible?: boolean;
   color?: string;
   invisible?: boolean;
   name: IconName;
@@ -18,6 +20,8 @@ const styles = StyleSheet.create({
 });
 
 export const Source = memo(function IconSource({
+  accessibilityLabel,
+  accessible,
   color,
   invisible,
   name,
@@ -27,6 +31,8 @@ export const Source = memo(function IconSource({
   const containerStyle = [invisible ? styles.invisible : undefined, style];
   return (
     <Original
+      accessibilityLabel={accessibilityLabel}
+      accessible={accessible}
       color={color}
       name={name}
       size={size}
