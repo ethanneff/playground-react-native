@@ -173,10 +173,11 @@ platform :android do
         update_android_strings(block: ->(strings) { strings['app_name'] = app_name })
       end
 
-      desc 'build aab'
+      desc 'build aab and apk (tests)'
       changelog_from_git_commits
       gradle(task: 'clean', project_dir: './android/')
       gradle(task: 'bundle', build_type: 'Release', project_dir: './android/') 
+      gradle(task: 'assemble', build_type: 'Release', project_dir: './android/') 
 
       desc 'clean configs'
       if new_package_name != default_app
@@ -192,8 +193,9 @@ platform :android do
 
       desc 'submit to google'
       upload_to_play_store(
-        track: 'beta', 
+        track: 'beta',
         package_name: new_package_name,
+        skip_upload_apk: true,
         skip_upload_changelogs: true,
         skip_upload_metadata: true,
         skip_upload_images: true,
