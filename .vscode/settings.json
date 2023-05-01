@@ -2,6 +2,7 @@
   "editor.formatOnSave": true,
   "typescript.validate.enable": true,
   "files.insertFinalNewline": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": ["source.organizeImports", "source.fixAll"],
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": false,
