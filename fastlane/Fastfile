@@ -26,7 +26,7 @@ api_key = app_store_connect_api_key(
 
 before_all do
   setup_ci if ENV['CI']
-  ensure_git_branch
+  # ensure_git_branch
   # ensure_git_status_clean
   git_pull
 end
@@ -171,11 +171,10 @@ platform :android do
         update_android_strings(block: ->(strings) { strings['app_name'] = app_name })
       end
 
-      desc 'build aab (bundle) and apk (assemble)'
+      desc 'build aab'
       changelog_from_git_commits
       gradle(task: 'clean', project_dir: './android/')
       gradle(task: 'bundle', build_type: 'Release', project_dir: './android/') 
-      gradle(task: 'assemble', build_type: 'Release', project_dir: './android/')
 
       desc 'clean configs'
       if new_package_name != default_app
