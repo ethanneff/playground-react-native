@@ -2,7 +2,7 @@ name: Deploy Android
 
 on:
   push:
-    branches: [a] # TODO: change to master
+    branches: [master]
 
 jobs:
   deploy-android:
@@ -33,12 +33,13 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 11
-          distribution: 'temurin'
+          distribution: 'zulu'
+          cache: 'gradle'
 
       - name: Deploy Android
         uses: maierj/fastlane-action@v3.0.0
         with:
-          lane: 'android deploy app:core method:beta'
+          lane: android deploy app:core method:beta
 
       - name: Deploy Tests
         uses: mobile-dev-inc/action-maestro-cloud@v1.2.3
