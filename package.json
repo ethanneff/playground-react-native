@@ -150,6 +150,7 @@
   "scripts": {
     "build": "react-scripts build",
     "ci-dupe": "jsinspect ./src",
+    "ci-env": "mkdir -p certs; echo $ANDROID_STORE_FILE_RELEASE | base64 --decode > certs/release.jks; echo $ANDROID_STORE_FILE_DEBUG | base64 --decode > certs/debug.jks; echo $ANDROID_GOOGLE_KEY | base64 --decode > certs/google-key.json; echo $IOS_APPLE_KEY | base64 --decode > certs/apple-key.p8; ",
     "ci-install": "yarn install --frozen-lockfile",
     "ci-lint": "tsc && eslint './src/**/*.[jt]s?(x)' --cache --cache-location '.cache/eslint' --max-warnings=0 && prettier --check .",
     "ci-release": "semantic-release -e ./.github/release.config.js",

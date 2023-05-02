@@ -29,10 +29,13 @@ jobs:
           ruby-version: '3.2.2'
           bundler-cache: true
 
+      - name: Install Environment Variables
+        run: yarn ci-env
+
       - name: Deploy iOS
         uses: maierj/fastlane-action@v3.0.0
         with:
-          lane: 'ios deploy app:core method:beta'
+          lane: ios deploy app:core method:beta
 
       - name: Deploy Tests
         uses: mobile-dev-inc/action-maestro-cloud@v1.2.3

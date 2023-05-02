@@ -26,6 +26,16 @@ cd android
 ./gradlew bundleDebug
 ```
 
+### encode .jks storeFile
+
+```sh
+openssl base64 -A -in release.jks
+```
+
+```sh
+echo $RELEASE_KEYSTORE_BASE64 | base64 -d > release.jks
+```
+
 ## iOS
 
 ### archive
