@@ -2,7 +2,7 @@ name: Deploy Android
 
 on:
   push:
-    branches: [master]
+    branches: [master, ci-fastlane]
 
 jobs:
   deploy-android:
