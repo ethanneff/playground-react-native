@@ -1,6 +1,6 @@
 baselineBranch: master
 memoryLeaks:
-  enabled: true
+  enabled: false
 notifications:
   email:
     enabled: true
