@@ -164,7 +164,7 @@
     "watch": "jest -u --watchAll --cache --config .github/jest.config.js",
     "web": "react-scripts start",
     "e2e-create": "maestro studio",
-    "e2e-test": "maestro test e2e/flows/happy-path.yaml"
+    "e2e-test": "maestro test .maestro/happy-path.yaml"
   },
   "version": "2.77.1"
 }
