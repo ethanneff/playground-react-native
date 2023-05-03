@@ -14,22 +14,22 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Setup Node
+      - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: 'yarn'
 
-      - name: Install Node Dependencies
+      - name: Install node dependencies
         run: yarn ci-install
 
-      - name: Install Ruby Dependencies
+      - name: Install ruby dependencies
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2.2'
           bundler-cache: true
 
-      - name: Install Environment Variables
+      - name: Install environment variables
         run: yarn ci-env
 
       - name: Deploy iOS
@@ -37,7 +37,7 @@ jobs:
         with:
           lane: ios deploy app:core method:beta
 
-      - name: Deploy Tests
+      - name: Deploy tests
         uses: mobile-dev-inc/action-maestro-cloud@v1.2.3
         with:
           api-key: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
