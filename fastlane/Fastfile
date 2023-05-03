@@ -195,11 +195,16 @@ platform :android do
       upload_to_play_store(
         track: 'beta',
         package_name: new_package_name,
-        skip_upload_apk: true
+        skip_upload_apk: true,
+        json_key: './certs/google-key.json'
       )
       case method_name
       when 'prod'
-        upload_to_play_store(package_name: new_package_name)
+        upload_to_play_store(
+          package_name: new_package_name,
+          skip_upload_apk: true,
+          json_key: './certs/google-key.json'
+        )
       when 'beta'
         next
       when 'codepush'
