@@ -2,9 +2,7 @@ name: Deploy Android
 
 on:
   push:
-    branches: [master, ci-fastlane]
-  pull_request:
-    branches: [ci-fastlane]
+    branches: [master]
 
 env:
   ANDROID_GOOGLE_KEY: ${{ secrets.ANDROID_GOOGLE_KEY }}
