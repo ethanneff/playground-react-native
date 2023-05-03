@@ -3,8 +3,8 @@ name: Test iOS
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [ci-fastlane]
+  # pull_request:
+  # branches: [ci-fastlane]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -41,7 +41,7 @@ jobs:
           bundler-cache: true
 
       - name: Install environment variables
-        run: yarn ci-env
+        run: yarn ci-env-vars
 
       - name: Deploy iOS
         uses: maierj/fastlane-action@v3.0.0

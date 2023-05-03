@@ -52,7 +52,7 @@ jobs:
           cache: 'gradle'
 
       - name: Install environment variables
-        run: yarn ci-env
+        run: yarn ci-env-vars
 
       - name: Deploy android
         uses: maierj/fastlane-action@v3.0.0

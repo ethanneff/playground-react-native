@@ -7,6 +7,7 @@ npm i -g yarn
 git clone git@github.com:ethanneff/playground-react-native.git
 cd example
 yarn install
+yarn ci-env-vars
 ```
 
 ## Run
