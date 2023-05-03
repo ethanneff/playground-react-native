@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.77.3](https://github.com/ethanneff/playground-react-native/compare/v2.77.2...v2.77.3) (2023-05-03)
+
+
+### Bug Fixes
+
+* ci fastlane ([#1064](https://github.com/ethanneff/playground-react-native/issues/1064)) ([b3378e4](https://github.com/ethanneff/playground-react-native/commit/b3378e4ae991cf45f88f90af038a54d42061781b))
+* don't do ios deploy on master ([8549752](https://github.com/ethanneff/playground-react-native/commit/8549752c857ab3a625fb016a0b616efbdb84164d))
+
 ## [2.77.2](https://github.com/ethanneff/playground-react-native/compare/v2.77.1...v2.77.2) (2023-05-03)
 
 
