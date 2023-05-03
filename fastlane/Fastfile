@@ -195,11 +195,7 @@ platform :android do
       upload_to_play_store(
         track: 'beta',
         package_name: new_package_name,
-        skip_upload_apk: true,
-        skip_upload_changelogs: true,
-        skip_upload_metadata: true,
-        skip_upload_images: true,
-        skip_upload_screenshots: true
+        skip_upload_apk: true
       )
       case method_name
       when 'prod'
