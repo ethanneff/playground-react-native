@@ -1,6 +1,10 @@
 baselineBranch: master
 memoryLeaks:
-  enabled: false
+  enabled: true
+appStartup:
+  enabled: true
+appSize:
+  enabled: true
 notifications:
   email:
     enabled: true
