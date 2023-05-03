@@ -173,7 +173,7 @@ platform :android do
         update_android_strings(block: ->(strings) { strings['app_name'] = app_name })
       end
 
-      desc 'build aab and apk (tests)'
+      desc 'build aab (bundle) for google and apk (assemble) for tests'
       changelog_from_git_commits
       gradle(task: 'clean', project_dir: './android/')
       gradle(task: 'bundle', build_type: 'Release', project_dir: './android/') 
