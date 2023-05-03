@@ -2,7 +2,13 @@ name: Test iOS
 
 on:
   push:
-    branches: [a] # TODO: change to master
+    branches: [master]
+  pull_request:
+    branches: [ci-fastlane]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
   deploy-ios:
