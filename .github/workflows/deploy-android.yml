@@ -31,8 +31,8 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Check Connect VPN
-        run: echo $ANDROID_GOOGLE_KEY
+      - name: Check environment variables
+        run: mkdir -p certs; echo $ANDROID_STORE_FILE_RELEASE | base64 --decode > certs/release.jks;
       # - name: Setup node
       #   uses: actions/setup-node@v3
       #   with:
