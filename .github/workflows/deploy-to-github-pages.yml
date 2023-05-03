@@ -13,21 +13,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node
+      - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: 'yarn'
 
-      - name: Install Dependencies
+      - name: Install node dependencies
         run: yarn ci-install
 
-      - name: Build Web
+      - name: Build web
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn build
 
-      - name: Deploy Web
+      - name: Deploy web
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

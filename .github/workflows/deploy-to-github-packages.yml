@@ -14,21 +14,21 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Setup Node
+      - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: 'yarn'
 
-      - name: Install Dependencies
+      - name: Install node dependencies
         run: yarn ci-install
 
-      - name: Update Version
+      - name: Update version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn ci-release
 
-      - name: Setup Github
+      - name: Setup github
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -36,7 +36,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@ethanneff'
 
-      - name: Deploy to Github Packages
+      - name: Deploy to github packages
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

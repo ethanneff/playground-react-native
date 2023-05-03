@@ -1,3 +1,4 @@
+# ios upload
 force(true)
 automatic_release(false)
 reset_ratings(false)

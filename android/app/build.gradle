@@ -99,8 +99,8 @@ android {
         applicationId "com.eneff.app.core"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1659639989
-        versionName "2.69.3"
+        versionCode 1
+        versionName "1.0.0"
     }
 
     splits {
@@ -162,7 +162,6 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-    implementation project(':react-native-config')
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
 

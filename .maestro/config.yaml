@@ -1,0 +1,12 @@
+baselineBranch: master
+memoryLeaks:
+  enabled: false
+appStartup:
+  enabled: false
+appSize:
+  enabled: false
+notifications:
+  email:
+    enabled: true
+    recipients:
+      - ethan.neff@eneff.com

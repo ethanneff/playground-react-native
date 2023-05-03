@@ -21,7 +21,7 @@ fastlane
 ios|android
 deploy
 app:core|progress|journal|complete
-method:prod|test|codepush
+method:prod|beta|codepush
 ```
 
 ## Usage
