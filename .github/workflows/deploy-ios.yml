@@ -1,14 +1,17 @@
 name: Test iOS
 
 on:
-  # push:
-  # branches: [master]
-  # pull_request:
-  # branches: [ci-fastlane]
+  push:
+    branches: [master]
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+env:
+  ANDROID_GOOGLE_KEY: ${{ secrets.ANDROID_GOOGLE_KEY }}
+  ANDROID_STORE_FILE_DEBUG: ${{ secrets.ANDROID_STORE_FILE_DEBUG }}
+  ANDROID_STORE_FILE_RELEASE: ${{ secrets.ANDROID_STORE_FILE_RELEASE }}
+  FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+  FASTLANE_GIT_TOKEN: ${{ secrets.FASTLANE_GIT_TOKEN }}
+  IOS_APPLE_KEY: ${{ secrets.IOS_APPLE_KEY }}
+  MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
 
 jobs:
   deploy-ios:
