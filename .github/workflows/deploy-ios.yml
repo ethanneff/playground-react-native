@@ -12,6 +12,8 @@ env:
   FASTLANE_GIT_TOKEN: ${{ secrets.FASTLANE_GIT_TOKEN }}
   IOS_APPLE_KEY: ${{ secrets.IOS_APPLE_KEY }}
   MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+  MATCH_KEYCHAIN_PASSWORD: ''
+  SLACK_URL: ${{ secrets.SLACK_URL }}
 
 jobs:
   deploy-ios:
