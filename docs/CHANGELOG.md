@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.78.2](https://github.com/ethanneff/playground-react-native/compare/v2.78.1...v2.78.2) (2023-05-06)
+
+
+### Bug Fixes
+
+* turn ios ci back on ([b65c5bc](https://github.com/ethanneff/playground-react-native/commit/b65c5bc4bf6d69faa1b51f7c51b1525a693db7f0))
+
 ## [2.78.1](https://github.com/ethanneff/playground-react-native/compare/v2.78.0...v2.78.1) (2023-05-06)
 
 
