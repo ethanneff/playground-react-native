@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.78.3](https://github.com/ethanneff/playground-react-native/compare/v2.78.2...v2.78.3) (2023-05-06)
+
+
+### Bug Fixes
+
+* don't ensure clean branch ([54d8ee7](https://github.com/ethanneff/playground-react-native/commit/54d8ee7bc6ae13b70edb1bbb418a8dc272632e72))
+
 ## [2.78.2](https://github.com/ethanneff/playground-react-native/compare/v2.78.1...v2.78.2) (2023-05-06)
 
 
