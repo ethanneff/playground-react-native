@@ -45,13 +45,15 @@ jobs:
       - name: Install environment variables
         run: yarn ci-env-vars
 
-      - name: Install pods
+      - name: Cache pods
         uses: actions/cache@v2
         with:
-          path: Pods
+          path: ios/Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('**/ios/Podfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-pods-
+
+      - name: Install pods
         run: NO_FLIPPER=1 pod install --project-directory=ios
 
       - name: Deploy iOS
