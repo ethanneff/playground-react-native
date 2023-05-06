@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.78.1](https://github.com/ethanneff/playground-react-native/compare/v2.78.0...v2.78.1) (2023-05-06)
+
+
+### Bug Fixes
+
+* add keys ([ce685b1](https://github.com/ethanneff/playground-react-native/commit/ce685b175827bc33faea6e723de356829208b05c))
+
 # [2.78.0](https://github.com/ethanneff/playground-react-native/compare/v2.77.3...v2.78.0) (2023-05-06)
 
 
