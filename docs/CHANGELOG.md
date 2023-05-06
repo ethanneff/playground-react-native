@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.78.0](https://github.com/ethanneff/playground-react-native/compare/v2.77.3...v2.78.0) (2023-05-06)
+
+
+### Features
+
+* fastlane ios ([#1065](https://github.com/ethanneff/playground-react-native/issues/1065)) ([1b5852b](https://github.com/ethanneff/playground-react-native/commit/1b5852bb8536fff83455b3d939b1d1a0b63f7a2b))
+
 ## [2.77.3](https://github.com/ethanneff/playground-react-native/compare/v2.77.2...v2.77.3) (2023-05-03)
 
 

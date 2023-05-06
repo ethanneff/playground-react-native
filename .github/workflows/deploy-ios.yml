@@ -1,4 +1,4 @@
-name: Test iOS
+name: Deploy iOS
 
 on:
   push:
@@ -45,6 +45,17 @@ jobs:
 
       - name: Install environment variables
         run: yarn ci-env-vars
+
+      - name: Cache pods
+        uses: actions/cache@v2
+        with:
+          path: ios/Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/ios/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+
+      - name: Install pods
+        run: NO_FLIPPER=1 pod install --project-directory=ios
 
       - name: Deploy iOS
         uses: maierj/fastlane-action@v3.0.0

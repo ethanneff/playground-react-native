@@ -19,7 +19,7 @@ apps = {
   'progress' => { 'name' => 'Progress - Coding Tracker' }
 }
 api_key = app_store_connect_api_key(
-  key_id: 'P4P5NVV843',
+  key_id: 'KPX64T6SCF',
   issuer_id: '69a6de8c-6c9d-47e3-e053-5b8c7c11a4d1',
   key_filepath: './certs/apple-key.p8'
 )
@@ -123,13 +123,12 @@ platform :ios do
         update_info_plist(xcodeproj: xcodeproj, scheme: 'core', display_name: 'Core', app_identifier: default_app)
         sh("sed -i '' 's/#{new_package_name}/com.eneff.app.core/g' ../ios/core.xcodeproj/project.pbxproj")
       end
-      increment_build_number(xcodeproj: 1, build_number: timestamp)
-      increment_version_number(xcodeproj: '1.0.0', version_number: version)
+      increment_build_number(xcodeproj: xcodeproj, build_number: "1")
+      increment_version_number(xcodeproj: xcodeproj, version_number: "1.0.0")
 
       desc 'submit to apple'
-      changelog_from_git_commits
       upload_app_privacy_details_to_app_store(app_identifier: new_package_name, json_path: './fastlane/privacy.json')
-      upload_to_testflight(skip_waiting_for_build_processing: true)
+      upload_to_testflight(skip_waiting_for_build_processing: true, api_key: api_key)
       case method_name
       when 'prod'
         upload_to_app_store
@@ -174,7 +173,6 @@ platform :android do
       end
 
       desc 'build aab (bundle) for google and apk (assemble) for tests'
-      changelog_from_git_commits
       gradle(task: 'clean', project_dir: './android/')
       gradle(task: 'bundle', build_type: 'Release', project_dir: './android/') 
       gradle(task: 'assemble', build_type: 'Release', project_dir: './android/') 

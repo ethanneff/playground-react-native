@@ -1,5 +1,5 @@
 # ios certs
-git_url('git@github.com:ethanneff/playground-react-native-certs.git')
+git_url('git@github.com:ethanneff/certs.git')
 git_basic_authorization(ENV['FASTLANE_GIT_TOKEN'])
 storage_mode('git')
 username('ethan.neff@eneff.com')
