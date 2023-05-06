@@ -31,9 +31,9 @@ Deploy locally. No free CI.
 ## Examples
 
 ```sh
-fastlane ios deploy app:core method:prod
+fastlane ios deploy app:core method:beta
 ```
 
 ```sh
-fastlane android deploy app:core method:prod
+fastlane android deploy app:core method:beta
 ```

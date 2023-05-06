@@ -1,14 +1,14 @@
-name: Test iOS
+name: Deploy iOS
 
 on:
-  # push:
-  # branches: [master]
-  # pull_request:
-  # branches: [ci-fastlane]
+  push:
+    branches: [master]
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+env:
+  FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+  FASTLANE_GIT_TOKEN: ${{ secrets.FASTLANE_GIT_TOKEN }}
+  IOS_APPLE_KEY: ${{ secrets.IOS_APPLE_KEY }}
+  MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
 
 jobs:
   deploy-ios:
@@ -42,6 +42,17 @@ jobs:
 
       - name: Install environment variables
         run: yarn ci-env-vars
+
+      - name: Cache pods
+        uses: actions/cache@v2
+        with:
+          path: ios/Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/ios/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+
+      - name: Install pods
+        run: NO_FLIPPER=1 pod install --project-directory=ios
 
       - name: Deploy iOS
         uses: maierj/fastlane-action@v3.0.0
