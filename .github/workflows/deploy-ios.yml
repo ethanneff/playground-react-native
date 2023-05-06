@@ -1,14 +1,29 @@
-name: Test iOS
+name: Deploy iOS
 
 on:
-  # push:
-  # branches: [master]
-  # pull_request:
-  # branches: [ci-fastlane]
+  push:
+    branches: [master]
+  pull_request:
+    branches: [ci-fastlane]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+env:
+  ANDROID_GOOGLE_KEY: ${{ secrets.ANDROID_GOOGLE_KEY }}
+  ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+  ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+  ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+  ANDROID_STORE_FILE_DEBUG: ${{ secrets.ANDROID_STORE_FILE_DEBUG }}
+  ANDROID_STORE_FILE_RELEASE: ${{ secrets.ANDROID_STORE_FILE_RELEASE }}
+  APP_CENTER_API: ${{ secrets.APP_CENTER_API }}
+  FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+  FASTLANE_GIT_TOKEN: ${{ secrets.FASTLANE_GIT_TOKEN }}
+  IOS_APPLE_KEY: ${{ secrets.IOS_APPLE_KEY }}
+  MAESTRO_CLOUD_API_KEY: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
+  MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+  SLACK_URL: ${{ secrets.SLACK_URL }}
 
 jobs:
   deploy-ios:
@@ -42,6 +57,15 @@ jobs:
 
       - name: Install environment variables
         run: yarn ci-env-vars
+
+      - name: Install pods
+        uses: actions/cache@v2
+        with:
+          path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/ios/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+        run: NO_FLIPPER=1 pod install --project-directory=ios
 
       - name: Deploy iOS
         uses: maierj/fastlane-action@v3.0.0
