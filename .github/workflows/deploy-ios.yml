@@ -3,8 +3,6 @@ name: Deploy iOS
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [ios-build]
 
 env:
   FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
