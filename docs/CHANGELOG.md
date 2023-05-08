@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.78.4](https://github.com/ethanneff/playground-react-native/compare/v2.78.3...v2.78.4) (2023-05-08)
+
+
+### Bug Fixes
+
+* no tests on ios ([674f08c](https://github.com/ethanneff/playground-react-native/commit/674f08c372a0811f6e7c5d94a5a5d627b40f772d))
+* prevent concurrency of previous builds for ci ([4c66709](https://github.com/ethanneff/playground-react-native/commit/4c667090c0183bdd789d7b4779aa4ffd058d8173))
+* update deps ([7452d5d](https://github.com/ethanneff/playground-react-native/commit/7452d5d64f9018eac27509c582e0a5e9d09cbde5))
+
 ## [2.78.3](https://github.com/ethanneff/playground-react-native/compare/v2.78.2...v2.78.3) (2023-05-06)
 
 
