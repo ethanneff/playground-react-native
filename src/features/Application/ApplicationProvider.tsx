@@ -4,7 +4,6 @@ import {
   useDeviceInfo,
   useDimensions,
   useKeyboard,
-  useLocalization,
   useNetInfo,
 } from './useApplicationHooks';
 
@@ -17,7 +16,6 @@ export const ApplicationProvider = ({ children }: Props) => {
   useDimensions();
   useKeyboard();
   useAppState();
-  useLocalization();
   useDeviceInfo();
 
   return children;

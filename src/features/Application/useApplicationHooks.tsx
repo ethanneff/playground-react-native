@@ -88,23 +88,7 @@ export const useAppState = () => {
   const dispatch = useAppDispatch();
 
   const handleChange = useCallback(() => {
-    dispatch(setStatus(AppState.currentState));
-  }, [dispatch]);
-
-  useEffect(() => {
-    handleChange();
-    const subscription = AppState.addEventListener('change', handleChange);
-    return () => {
-      subscription.remove();
-    };
-  }, [handleChange]);
-};
-
-export const useLocalization = () => {
-  const dispatch = useAppDispatch();
-
-  const handleChange = useCallback(() => {
-    const state = {
+    const localizeState = {
       calendar: Localize.getCalendar(),
       country: Localize.getCountry(),
       currencies: Localize.getCurrencies(),
@@ -117,14 +101,15 @@ export const useLocalization = () => {
       usesAutoTimeZone: Localize.usesAutoTimeZone(),
       usesMetricSystem: Localize.usesMetricSystem(),
     };
-    dispatch(setLocalization(state));
+    dispatch(setLocalization(localizeState));
+    dispatch(setStatus(AppState.currentState));
   }, [dispatch]);
 
   useEffect(() => {
     handleChange();
-    Localize.addEventListener('change', handleChange);
+    const subscription = AppState.addEventListener('change', handleChange);
     return () => {
-      Localize.removeEventListener('change', handleChange);
+      subscription.remove();
     };
   }, [handleChange]);
 };
