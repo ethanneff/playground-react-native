@@ -7,6 +7,13 @@ import 'react-native-get-random-values';
 import mockRNLocalize from 'react-native-localize/mock';
 import { mockGoBack, mockNavigate } from '../src/mocks/Navigation';
 
+jest.mock('react-native-code-push', () => ({
+  CheckFrequency: {
+    MANUAL: null,
+    ON_APP_START: null,
+    ON_APP_RESUME: null,
+  },
+}));
 jest.mock('react-native-sensors', () => null);
 jest.mock('react-native-config', () => ({
   APP: null,
