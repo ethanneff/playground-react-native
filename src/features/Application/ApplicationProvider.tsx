@@ -1,4 +1,5 @@
-import { type ReactElement } from 'react';
+import React, { type PropsWithChildren } from 'react';
+import { View } from '../../components';
 import {
   useAppState,
   useDeviceInfo,
@@ -7,16 +8,12 @@ import {
   useNetInfo,
 } from './useApplicationHooks';
 
-type Props = {
-  children: ReactElement;
-};
-
-export const ApplicationProvider = ({ children }: Props) => {
+export const ApplicationProvider = ({ children }: PropsWithChildren) => {
   useNetInfo();
   useDimensions();
   useKeyboard();
   useAppState();
   useDeviceInfo();
 
-  return children;
+  return <View flex={1}>{children}</View>;
 };
