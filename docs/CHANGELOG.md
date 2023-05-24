@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.79.2](https://github.com/ethanneff/playground-react-native/compare/v2.79.1...v2.79.2) (2023-05-24)
+
+
+### Bug Fixes
+
+* no clean android ci ([b526034](https://github.com/ethanneff/playground-react-native/commit/b526034edcd577383e540ab769d33ad33a4e4b62))
+
 ## [2.79.1](https://github.com/ethanneff/playground-react-native/compare/v2.79.0...v2.79.1) (2023-05-24)
 
 
