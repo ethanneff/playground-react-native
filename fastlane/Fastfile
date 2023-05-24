@@ -172,7 +172,7 @@ platform :android do
       end
 
       desc 'build aab (bundle) for google and apk (assemble) for tests'
-      gradle(task: 'clean', project_dir: './android/')
+      # gradle(task: 'clean', project_dir: './android/')
       gradle(task: 'bundle', build_type: 'Release', project_dir: './android/') 
       gradle(task: 'assemble', build_type: 'Release', project_dir: './android/') 
 
