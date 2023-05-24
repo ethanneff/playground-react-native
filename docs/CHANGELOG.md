@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.79.1](https://github.com/ethanneff/playground-react-native/compare/v2.79.0...v2.79.1) (2023-05-24)
+
+
+### Bug Fixes
+
+* cache pods ([4606731](https://github.com/ethanneff/playground-react-native/commit/460673140e4e310798baa6c1fa5e861e05cd2de6))
+* update deps (ios, web, and) ([a59b30d](https://github.com/ethanneff/playground-react-native/commit/a59b30daddc23aa3193b29045a3a3141f98ed000))
+
 # [2.79.0](https://github.com/ethanneff/playground-react-native/compare/v2.78.4...v2.79.0) (2023-05-10)
 
 
