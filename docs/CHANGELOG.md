@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.79.5](https://github.com/ethanneff/playground-react-native/compare/v2.79.4...v2.79.5) (2023-05-29)
+
+
+### Bug Fixes
+
+* don't do push certs ([9ef9136](https://github.com/ethanneff/playground-react-native/commit/9ef9136396a6fd1010b128f41ad0929abef17ab1))
+* make deps work ([a6f102f](https://github.com/ethanneff/playground-react-native/commit/a6f102ff12ab3fd8080d3c9e09fcc4e61dfbfc6d))
+* update lockfile ([db129e3](https://github.com/ethanneff/playground-react-native/commit/db129e3ed7a26997bbea1060b4bf68d13c3f22b8))
+
 ## [2.79.4](https://github.com/ethanneff/playground-react-native/compare/v2.79.3...v2.79.4) (2023-05-29)
 
 
