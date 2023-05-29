@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.79.4](https://github.com/ethanneff/playground-react-native/compare/v2.79.3...v2.79.4) (2023-05-29)
+
+
+### Bug Fixes
+
+* add fastlane session ([5a2f6dd](https://github.com/ethanneff/playground-react-native/commit/5a2f6dd96290f3095419f58c80d935e222ff8207))
+* add missing slack url to android pipeline ([ff2e42b](https://github.com/ethanneff/playground-react-native/commit/ff2e42b120f7470c790900b6ad97d18c6cc28da4))
+* update deps ([3e6fe8a](https://github.com/ethanneff/playground-react-native/commit/3e6fe8a6424783b76a3c0d33a87a83a2bf198549))
+
 ## [2.79.3](https://github.com/ethanneff/playground-react-native/compare/v2.79.2...v2.79.3) (2023-05-29)
 
 
