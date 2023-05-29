@@ -110,7 +110,7 @@ platform :ios do
       end
 
       desc 'build ipa'
-      get_push_certificate(app_identifier: new_package_name, force: true)
+      # get_push_certificate(app_identifier: new_package_name, force: true)
       sync_code_signing(app_identifier: new_package_name, readonly: true)
       build_app(scheme: 'core', workspace: './ios/core.xcworkspace')
 
