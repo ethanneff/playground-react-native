@@ -17,6 +17,7 @@ env:
   ANDROID_STORE_FILE_RELEASE: ${{ secrets.ANDROID_STORE_FILE_RELEASE }}
   IOS_APPLE_KEY: ${{ secrets.IOS_APPLE_KEY }}
   MAESTRO_CLOUD_API_KEY: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
+  SLACK_URL: ${{ secrets.SLACK_URL }}
 
 jobs:
   deploy-android:
