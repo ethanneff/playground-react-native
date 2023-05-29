@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.79.3](https://github.com/ethanneff/playground-react-native/compare/v2.79.2...v2.79.3) (2023-05-29)
+
+
+### Bug Fixes
+
+* attempt blank fastlane ([e841b0b](https://github.com/ethanneff/playground-react-native/commit/e841b0bbaac9fc6517c2871d646a691623bac5b2))
+* update deps ([73d0350](https://github.com/ethanneff/playground-react-native/commit/73d0350012699e4bd08dbacb47f5db57a615c999))
+
 ## [2.79.2](https://github.com/ethanneff/playground-react-native/compare/v2.79.1...v2.79.2) (2023-05-24)
 
 
