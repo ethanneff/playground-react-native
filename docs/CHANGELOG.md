@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.79.7](https://github.com/ethanneff/playground-react-native/compare/v2.79.6...v2.79.7) (2023-05-30)
+
+
+### Bug Fixes
+
+* remove extra view from screen ([410a766](https://github.com/ethanneff/playground-react-native/commit/410a7661c53b8334a25ca5bb846f2f107a8da29a))
+
 ## [2.79.6](https://github.com/ethanneff/playground-react-native/compare/v2.79.5...v2.79.6) (2023-05-30)
 
 
