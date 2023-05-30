@@ -51,42 +51,36 @@ export const Screen = memo(function Screen({
 }: Props) {
   const colors = useColors();
   const styles = StyleSheet.create({
-    flex: {
-      flex: 1,
-    },
+    container: { backgroundColor: colors.background.primaryA, flex: 1 },
   });
 
   return (
-    <View
-      backgroundColor="primaryA"
-      flex={1}
+    <SafeAreaView
+      edges={edges}
+      style={styles.container}
     >
-      <SafeAreaView
-        edges={edges}
-        style={styles.flex}
+      <StatusBar barStyle={colors.statusBar} />
+      <NavBar
+        border={border}
+        dropShadow={dropShadow}
+        leftIcon={leftIcon}
+        onLeftPress={onLeftPress}
+        onRightPress={onRightPress}
+        onSecondLeftPress={onSecondLeftPress}
+        onSecondRightPress={onSecondRightPress}
+        rightIcon={rightIcon}
+        secondLeftIcon={secondLeftIcon}
+        secondRightIcon={secondRightIcon}
+        title={title}
+      />
+      <View
+        flex={1}
+        onLayout={onLayout}
+        style={style}
+        testID={testID}
       >
-        <StatusBar barStyle={colors.statusBar} />
-        <NavBar
-          border={border}
-          dropShadow={dropShadow}
-          leftIcon={leftIcon}
-          onLeftPress={onLeftPress}
-          onRightPress={onRightPress}
-          onSecondLeftPress={onSecondLeftPress}
-          onSecondRightPress={onSecondRightPress}
-          rightIcon={rightIcon}
-          secondLeftIcon={secondLeftIcon}
-          secondRightIcon={secondRightIcon}
-          title={title}
-        />
-        <View
-          onLayout={onLayout}
-          style={[styles.flex, style]}
-          testID={testID}
-        >
-          {children}
-        </View>
-      </SafeAreaView>
-    </View>
+        {children}
+      </View>
+    </SafeAreaView>
   );
 });

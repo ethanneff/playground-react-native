@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '../../components';
-import { spacing, useColors, useDropShadow } from '../../features';
+import { useColors, useDropShadow } from '../../features';
 import { type IconName } from '../Icon';
 import { Text } from '../Text';
 import { NavButton } from './NavButton';
@@ -47,7 +47,6 @@ export const NavBar = memo(function NavBar({
       borderBottomWidth: 1,
       flexDirection: 'row',
       justifyContent: 'space-between',
-      paddingHorizontal: spacing(2),
       zIndex: 2,
     },
   });
