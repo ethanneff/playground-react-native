@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.79.9](https://github.com/ethanneff/playground-react-native/compare/v2.79.8...v2.79.9) (2023-06-01)
+
+
+### Bug Fixes
+
+* test flipper ([49a623d](https://github.com/ethanneff/playground-react-native/commit/49a623deb194c30cf620a9b51f413474a5616cfe))
+* update firebase (ios, web, android) ([ffcff36](https://github.com/ethanneff/playground-react-native/commit/ffcff36cc0f8c6a32071bcdb99473042356b79bc))
+
 ## [2.79.8](https://github.com/ethanneff/playground-react-native/compare/v2.79.7...v2.79.8) (2023-05-30)
 
 
