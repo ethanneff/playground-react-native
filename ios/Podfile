@@ -18,6 +18,7 @@ flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : Flip
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
   Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
+  # https://github.com/invertase/react-native-firebase/issues/6425
   use_frameworks! :linkage => :static # firebase
   $RNFirebaseAsStaticFramework = true # firebase
 end
