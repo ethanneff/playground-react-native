@@ -20,7 +20,6 @@ export const Loader = memo(function Loader({
   style,
 }: Props) {
   const colors = useColors();
-
   const loaderColor = color ? colors.text[color] : colors.text.secondary;
 
   return (

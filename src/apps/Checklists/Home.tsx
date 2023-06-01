@@ -11,13 +11,6 @@ import {
 } from '../../components';
 import { LoginFlow, spacing, useAdminNavBack, useColors } from '../../features';
 
-// Notification.show()
-// Alert.show()
-// ShareSheet.show()
-// Badge.show()
-// Badge.show()
-// Badge.show()
-
 export const Home = memo(function Checklists() {
   const colors = useColors();
   const { onLeftPress } = useAdminNavBack();

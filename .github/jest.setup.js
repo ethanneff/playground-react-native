@@ -14,6 +14,10 @@ jest.mock('react-native-code-push', () => ({
     ON_APP_RESUME: null,
   },
 }));
+jest.mock(
+  'react-native-fbsdk-next',
+  () => require('react-native-fbsdk-next/jest/mocks').default,
+);
 jest.mock('react-native-sensors', () => null);
 jest.mock('react-native-config', () => ({
   APP: null,

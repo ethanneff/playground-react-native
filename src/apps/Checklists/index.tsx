@@ -1,19 +1,13 @@
 import React, { memo } from 'react';
-import { createStackNavigator } from '../../conversions';
-import { Home } from './Home';
-
-const noHeader = { headerShown: false };
-const Stack = createStackNavigator();
-
-// TODO: remove unused checklist screens and redux
+import { View } from '../../components';
+import { Navigation } from './Navigation';
+import { FirebaseSync } from './data';
 
 export default memo(function Checklists() {
   return (
-    <Stack.Navigator screenOptions={noHeader}>
-      <Stack.Screen
-        component={Home}
-        name="home"
-      />
-    </Stack.Navigator>
+    <View flex={1}>
+      <Navigation />
+      <FirebaseSync />
+    </View>
   );
 });
