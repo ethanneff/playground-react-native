@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.80.0](https://github.com/ethanneff/playground-react-native/compare/v2.79.9...v2.80.0) (2023-06-01)
+
+
+### Features
+
+* add checklist app ([d2473ee](https://github.com/ethanneff/playground-react-native/commit/d2473eeb8e7f6fbf7753f6420dd7a2610f5b3a0b))
+
 ## [2.79.9](https://github.com/ethanneff/playground-react-native/compare/v2.79.8...v2.79.9) (2023-06-01)
 
 
