@@ -11,13 +11,13 @@ type Reducer = {
 };
 
 /* ACTIONS */
-export const loginAuth = createAction('checklist/auth/login')<User>();
-export const logoutAuth = createAction('checklist/auth/logout')();
-export const checklistAuthActions = { loginAuth, logoutAuth };
+export const loginAuth = createAction('checklists/auth/login')<User>();
+export const logoutAuth = createAction('checklists/auth/logout')();
+export const checklistsAuthActions = { loginAuth, logoutAuth };
 
 /* SELECTORS */
 export const getLoaded = (state: RootState): boolean =>
-  Boolean(state.checklist.auth.updatedAt);
+  Boolean(state.checklists.auth.updatedAt);
 
 /* REDUCER */
 const initialState: Reducer = {
@@ -26,7 +26,7 @@ const initialState: Reducer = {
   updatedAt: 0,
 };
 
-export const checklistAuthReducer = (
+export const checklistsAuthReducer = (
   state: Reducer = initialState,
   action: RootAction,
 ): Reducer => {

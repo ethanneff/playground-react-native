@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { Collections } from '../Collections';
 import { loadGoals } from '../reducers';
 import { goalSchema } from '../types';
-import { useAppSelector, useAppDispatch } from './../../../../redux';
+import { useAppDispatch, useAppSelector } from './../../../../redux';
 
 export const useGoals = () => {
   const dispatch = useAppDispatch();

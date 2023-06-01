@@ -59,7 +59,7 @@ const Tabs = () => {
 
 export const Navigation = memo(function Navigation() {
   const { bottomScreenOptions, rightScreenOptions } = useNavScreenOptions();
-  const auth = useAppSelector((state) => state.checklist.auth.status);
+  const auth = useAppSelector((state) => state.checklists.auth.status);
 
   if (auth === 'initializing') return null;
 

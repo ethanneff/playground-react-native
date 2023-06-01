@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { Collections } from '../Collections';
 import { loadIntervals } from '../reducers';
 import { intervalSchema } from '../types';
-import { useAppSelector, useAppDispatch } from './../../../../redux';
+import { useAppDispatch, useAppSelector } from './../../../../redux';
 
 export const useIntervals = () => {
   const dispatch = useAppDispatch();

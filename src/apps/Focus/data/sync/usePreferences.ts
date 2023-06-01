@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Collections } from '../Collections';
 import { loadPreferences } from '../reducers';
 import { preferenceSchema } from '../types';
-import { useAppSelector, useAppDispatch } from './../../../../redux';
+import { useAppDispatch, useAppSelector } from './../../../../redux';
 
 export const usePreferences = () => {
   const dispatch = useAppDispatch();

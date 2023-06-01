@@ -2,6 +2,6 @@ import { Firebase } from '../../../../conversions';
 
 export const Collections = {
   auth: Firebase.auth(),
-  checklist: Firebase.firestore().collection('checklist'),
-  user: Firebase.firestore().collection('user'),
+  checklists: Firebase.firestore().collection('checklists-checklists'),
+  users: Firebase.firestore().collection('users'),
 };
