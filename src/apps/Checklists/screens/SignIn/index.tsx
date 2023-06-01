@@ -15,6 +15,7 @@ import {
 } from '../../../../components';
 import { Firebase } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
+import { useAppSelector } from '../../../../redux';
 
 export const SignIn = () => {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -23,6 +24,9 @@ export const SignIn = () => {
   const eyeIcon = eye ? 'eye-outline' : 'eye-off-outline';
   const emailRef = useRef<TextInputRef>(null);
   const passwordRef = useRef<TextInputRef>(null);
+  const isAppleDevice = useAppSelector(
+    (state) => state.device.details?.manufacturer === 'Apple',
+  );
 
   const handleFacebook = useCallback(async () => {
     setLoading(true);
@@ -41,19 +45,30 @@ export const SignIn = () => {
 
   const handleApple = useCallback(async () => {
     setLoading(true);
-    const appleAuthRequestResponse = await appleAuth.performRequest({
-      requestedOperation: appleAuth.Operation.LOGIN,
-      requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
-    });
-    if (!appleAuthRequestResponse.identityToken) {
-      throw new Error('Apple Sign-In failed - no identify token returned');
+
+    try {
+      const appleAuthRequestResponse = await appleAuth.performRequest({
+        requestedOperation: appleAuth.Operation.LOGIN,
+        requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
+      });
+      if (!appleAuthRequestResponse.identityToken) {
+        throw new Error('Apple Sign-In failed - no identify token returned');
+      }
+      const { identityToken, nonce, user } = appleAuthRequestResponse;
+      const credentialState = await appleAuth.getCredentialStateForUser(user);
+      if (credentialState !== appleAuth.State.AUTHORIZED) {
+        throw new Error('Apple Sign-In failed - not authorized');
+      }
+      const appleCredential = Firebase.auth.AppleAuthProvider.credential(
+        identityToken,
+        nonce,
+      );
+      await Firebase.auth().signInWithCredential(appleCredential);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
     }
-    const { identityToken, nonce } = appleAuthRequestResponse;
-    const appleCredential = Firebase.auth.AppleAuthProvider.credential(
-      identityToken,
-      nonce,
-    );
-    Firebase.auth().signInWithCredential(appleCredential);
   }, []);
 
   const handleGoogle = useCallback(async () => {
@@ -113,12 +128,14 @@ export const SignIn = () => {
       >
         <Card>
           <Spacing padding={spacing(2)}>
-            <Button
-              center
-              disabled={loading}
-              onPress={handleApple}
-              title="apple"
-            />
+            {isAppleDevice ? (
+              <Button
+                center
+                disabled={loading}
+                onPress={handleApple}
+                title="apple"
+              />
+            ) : null}
             <Button
               center
               disabled={loading}
