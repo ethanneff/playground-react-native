@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.81.2](https://github.com/ethanneff/playground-react-native/compare/v2.81.1...v2.81.2) (2023-06-02)
+
+
+### Bug Fixes
+
+* add facebook wrapper for web ([fce9fe8](https://github.com/ethanneff/playground-react-native/commit/fce9fe89d5231b90ee2f26ef4227c38cf24b317c))
+
 ## [2.81.1](https://github.com/ethanneff/playground-react-native/compare/v2.81.0...v2.81.1) (2023-06-02)
 
 
