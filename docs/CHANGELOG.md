@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.81.1](https://github.com/ethanneff/playground-react-native/compare/v2.81.0...v2.81.1) (2023-06-02)
+
+
+### Bug Fixes
+
+* add facebook login ([#1096](https://github.com/ethanneff/playground-react-native/issues/1096)) ([aecc8ab](https://github.com/ethanneff/playground-react-native/commit/aecc8abc266dd4412df3d727eeb88244bb1696ee))
+
 # [2.81.0](https://github.com/ethanneff/playground-react-native/compare/v2.80.0...v2.81.0) (2023-06-02)
 
 
