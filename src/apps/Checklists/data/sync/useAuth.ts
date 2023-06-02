@@ -9,7 +9,6 @@ export const useAuth = () => {
   useEffect(() => {
     const subscription = Firebase.auth().onAuthStateChanged(
       (data: FirebaseAuthTypes.User | null) => {
-        console.log(data);
         dispatch(data ? loginAuth(data) : logoutAuth());
       },
     );
