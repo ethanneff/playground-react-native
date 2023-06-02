@@ -61,7 +61,6 @@ export const SignIn = () => {
       const facebookCredential = Firebase.auth.FacebookAuthProvider.credential(
         data.accessToken,
       );
-
       await Firebase.auth().signInWithCredential(facebookCredential);
     } catch (e) {
       handleError(e);
@@ -146,7 +145,6 @@ export const SignIn = () => {
     GoogleSignin.configure({
       webClientId: Config.GOOGLE_SIGN_IN,
     });
-
     Settings.setAppID(Config.FACEBOOK_APP_ID ?? '');
   }, []);
 
