@@ -1,1 +1,1 @@
-export const appleAuth = {};
+export const Apple = () => undefined;

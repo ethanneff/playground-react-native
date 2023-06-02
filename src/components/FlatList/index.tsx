@@ -1,7 +1,7 @@
 import React, { type RefObject } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import { type FlatListProps, type ListRenderItem } from 'react-native';
-import { GestureFlatList } from '../../conversions/GestureHandler';
+import { GestureFlatList } from '../../conversions';
 
 export type FlatListRef<T> = GestureFlatList<T> | null;
 export type FlatListRenderItem<T> = ListRenderItem<T>;

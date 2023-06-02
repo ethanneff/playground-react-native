@@ -1,5 +1,6 @@
 export * from './AppleAuthentication';
 export * from './CodePush';
+export * from './Facebook';
 export * from './Firebase';
 export * from './Flipper';
 export * from './GestureHandler';

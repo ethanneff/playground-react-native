@@ -1,8 +1,5 @@
-import { appleAuth } from '@invertase/react-native-apple-authentication';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Config from 'react-native-config';
-import { AccessToken, LoginManager, Settings } from 'react-native-fbsdk-next';
 import {
   Button,
   Card,
@@ -14,7 +11,13 @@ import {
   View,
   type TextInputRef,
 } from '../../../../components';
-import { Firebase, type FirebaseAuthTypes } from '../../../../conversions';
+import {
+  Apple,
+  Facebook,
+  Firebase,
+  GoogleSignin,
+  type FirebaseAuthTypes,
+} from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { useAppSelector } from '../../../../redux';
 
@@ -47,14 +50,14 @@ export const SignIn = () => {
   const handleFacebook = useCallback(async () => {
     try {
       setLoading(true);
-      const result = await LoginManager.logInWithPermissions([
+      const result = await Facebook.LoginManager.logInWithPermissions([
         'public_profile',
         'email',
       ]);
       if (result.isCancelled) {
         throw new Error('User cancelled the login process');
       }
-      const data = await AccessToken.getCurrentAccessToken();
+      const data = await Facebook.AccessToken.getCurrentAccessToken();
       if (!data) {
         throw new Error('Something went wrong obtaining access token');
       }
@@ -72,16 +75,16 @@ export const SignIn = () => {
   const handleApple = useCallback(async () => {
     try {
       setLoading(true);
-      const appleAuthRequestResponse = await appleAuth.performRequest({
-        requestedOperation: appleAuth.Operation.LOGIN,
-        requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
+      const appleAuthRequestResponse = await Apple.performRequest({
+        requestedOperation: Apple.Operation.LOGIN,
+        requestedScopes: [Apple.Scope.EMAIL, Apple.Scope.FULL_NAME],
       });
       if (!appleAuthRequestResponse.identityToken) {
         throw new Error('Apple Sign-In failed - no identify token returned');
       }
       const { identityToken, nonce, user } = appleAuthRequestResponse;
-      const credentialState = await appleAuth.getCredentialStateForUser(user);
-      if (credentialState !== appleAuth.State.AUTHORIZED) {
+      const credentialState = await Apple.getCredentialStateForUser(user);
+      if (credentialState !== Apple.State.AUTHORIZED) {
         throw new Error('Apple Sign-In failed - not authorized');
       }
       const appleCredential = Firebase.auth.AppleAuthProvider.credential(
@@ -145,7 +148,7 @@ export const SignIn = () => {
     GoogleSignin.configure({
       webClientId: Config.GOOGLE_SIGN_IN,
     });
-    Settings.setAppID(Config.FACEBOOK_APP_ID ?? '');
+    Facebook.Settings.setAppID(Config.FACEBOOK_APP_ID ?? '');
   }, []);
 
   return (

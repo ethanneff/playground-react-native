@@ -1,14 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
-  appleAuth,
+  Apple,
   Firebase,
   GoogleSignin,
   type FirebaseAuthTypes,
 } from '../../conversions';
-
-// import {AccessToken, LoginManager} from 'react-native-fbsdk';
-
-// GoogleSignin.configure({ webClientId: Config.GOOGLE_SIGN_IN });
 
 type NullType = 'initializing' | 'loading' | 'logout' | 'waiting';
 type Response =
@@ -90,9 +86,9 @@ export const useAuth = (): UseAuth => {
   const onApple = useCallback(async () => {
     try {
       setResponse({ ...initialResponse, type: 'loading' });
-      const res = await appleAuth.performRequest({
-        requestedOperation: appleAuth.Operation.LOGIN,
-        requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
+      const res = await Apple.performRequest({
+        requestedOperation: Apple.Operation.LOGIN,
+        requestedScopes: [Apple.Scope.EMAIL, Apple.Scope.FULL_NAME],
       });
       if (!res.identityToken) throw new Error('missing identify token');
       const { identityToken, nonce } = res;
