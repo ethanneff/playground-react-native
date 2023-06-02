@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Core</string>
     <string moduleConfig="true" name="CodePushDeploymentKey">9830f46a-890c-4fe3-a8ad-805211a7c870</string>
-    <string name="facebook_app_id">1234</string>
-    <string name="facebook_client_token">56789</string>
+    <string name="facebook_app_id">1448530295279102</string>
+    <string name="facebook_client_token">0bae07239609786e4c1ea00f38dbf306</string>
 </resources>

@@ -51,13 +51,17 @@ export const SignIn = () => {
         'public_profile',
         'email',
       ]);
-      if (result.isCancelled)
+      if (result.isCancelled) {
         throw new Error('User cancelled the login process');
+      }
       const data = await AccessToken.getCurrentAccessToken();
-      if (!data) throw new Error('Something went wrong obtaining access token');
+      if (!data) {
+        throw new Error('Something went wrong obtaining access token');
+      }
       const facebookCredential = Firebase.auth.FacebookAuthProvider.credential(
         data.accessToken,
       );
+
       await Firebase.auth().signInWithCredential(facebookCredential);
     } catch (e) {
       handleError(e);
@@ -102,7 +106,7 @@ export const SignIn = () => {
       const { idToken } = await GoogleSignin.signIn();
       const googleCredential =
         Firebase.auth.GoogleAuthProvider.credential(idToken);
-      Firebase.auth().signInWithCredential(googleCredential);
+      await Firebase.auth().signInWithCredential(googleCredential);
     } catch (e) {
       handleError(e);
     } finally {
@@ -142,8 +146,8 @@ export const SignIn = () => {
     GoogleSignin.configure({
       webClientId: Config.GOOGLE_SIGN_IN,
     });
+
     Settings.setAppID(Config.FACEBOOK_APP_ID ?? '');
-    console.log('here');
   }, []);
 
   return (
