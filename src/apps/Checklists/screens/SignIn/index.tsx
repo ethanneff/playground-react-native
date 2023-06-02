@@ -2,7 +2,7 @@ import { appleAuth } from '@invertase/react-native-apple-authentication';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Config from 'react-native-config';
-import { AccessToken, LoginManager } from 'react-native-fbsdk-next';
+import { AccessToken, LoginManager, Settings } from 'react-native-fbsdk-next';
 import {
   Button,
   Card,
@@ -10,10 +10,11 @@ import {
   Screen,
   Spacing,
   TextInput,
+  Toast,
   View,
   type TextInputRef,
 } from '../../../../components';
-import { Firebase } from '../../../../conversions';
+import { Firebase, type FirebaseAuthTypes } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { useAppSelector } from '../../../../redux';
 
@@ -27,26 +28,50 @@ export const SignIn = () => {
   const isAppleDevice = useAppSelector(
     (state) => state.device.details?.manufacturer === 'Apple',
   );
+  const colors = useColors();
 
-  const handleFacebook = useCallback(async () => {
-    setLoading(true);
-    const result = await LoginManager.logInWithPermissions([
-      'public_profile',
-      'email',
-    ]);
-    if (result.isCancelled) throw new Error('User cancelled the login process');
-    const data = await AccessToken.getCurrentAccessToken();
-    if (!data) throw new Error('Something went wrong obtaining access token');
-    const facebookCredential = Firebase.auth.FacebookAuthProvider.credential(
-      data.accessToken,
-    );
-    Firebase.auth().signInWithCredential(facebookCredential);
+  const handleError = useCallback((e: unknown) => {
+    const description =
+      e instanceof Error
+        ? e.message
+        : (e as FirebaseAuthTypes.NativeFirebaseAuthError).nativeErrorMessage;
+    Toast.show({
+      props: {
+        description,
+        title: 'Unable to sign in',
+      },
+      type: 'negative',
+    });
   }, []);
 
-  const handleApple = useCallback(async () => {
-    setLoading(true);
-
+  const handleFacebook = useCallback(async () => {
     try {
+      setLoading(true);
+      const result = await LoginManager.logInWithPermissions([
+        'public_profile',
+        'email',
+      ]);
+      if (result.isCancelled) {
+        throw new Error('User cancelled the login process');
+      }
+      const data = await AccessToken.getCurrentAccessToken();
+      if (!data) {
+        throw new Error('Something went wrong obtaining access token');
+      }
+      const facebookCredential = Firebase.auth.FacebookAuthProvider.credential(
+        data.accessToken,
+      );
+      await Firebase.auth().signInWithCredential(facebookCredential);
+    } catch (e) {
+      handleError(e);
+    } finally {
+      setLoading(false);
+    }
+  }, [handleError]);
+
+  const handleApple = useCallback(async () => {
+    try {
+      setLoading(true);
       const appleAuthRequestResponse = await appleAuth.performRequest({
         requestedOperation: appleAuth.Operation.LOGIN,
         requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
@@ -64,21 +89,29 @@ export const SignIn = () => {
         nonce,
       );
       await Firebase.auth().signInWithCredential(appleCredential);
-    } catch (error) {
-      console.log(error);
+    } catch (e) {
+      handleError(e);
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [handleError]);
 
   const handleGoogle = useCallback(async () => {
-    setLoading(true);
-    await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
-    const { idToken } = await GoogleSignin.signIn();
-    const googleCredential =
-      Firebase.auth.GoogleAuthProvider.credential(idToken);
-    Firebase.auth().signInWithCredential(googleCredential);
-  }, []);
+    try {
+      setLoading(true);
+      await GoogleSignin.hasPlayServices({
+        showPlayServicesUpdateDialog: true,
+      });
+      const { idToken } = await GoogleSignin.signIn();
+      const googleCredential =
+        Firebase.auth.GoogleAuthProvider.credential(idToken);
+      await Firebase.auth().signInWithCredential(googleCredential);
+    } catch (e) {
+      handleError(e);
+    } finally {
+      setLoading(false);
+    }
+  }, [handleError]);
 
   const handleEmail = useCallback(() => {
     setLoading(true);
@@ -112,9 +145,9 @@ export const SignIn = () => {
     GoogleSignin.configure({
       webClientId: Config.GOOGLE_SIGN_IN,
     });
+    Settings.setAppID(Config.FACEBOOK_APP_ID ?? '');
   }, []);
 
-  const colors = useColors();
   return (
     <Screen
       dropShadow
