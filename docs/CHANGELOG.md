@@ -1,5 +1,17 @@
 # Changelog
 
+# [2.81.0](https://github.com/ethanneff/playground-react-native/compare/v2.80.0...v2.81.0) (2023-06-02)
+
+
+### Bug Fixes
+
+* minor changes ([cbdfb49](https://github.com/ethanneff/playground-react-native/commit/cbdfb496d7a144942be20b3973979e045a46492d))
+
+
+### Features
+
+* add apple sign in ([7d1f9b2](https://github.com/ethanneff/playground-react-native/commit/7d1f9b2361e9de00cd8e66a64760472f408150ab))
+
 # [2.80.0](https://github.com/ethanneff/playground-react-native/compare/v2.79.9...v2.80.0) (2023-06-01)
 
 
