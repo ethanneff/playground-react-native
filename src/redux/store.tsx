@@ -11,10 +11,10 @@ import {
   themeReducer,
 } from '.';
 import {
-  checklistAuthActions,
-  checklistAuthReducer,
-  checklistUserActions,
-  checklistUserReducer,
+  checklistsAuthActions,
+  checklistsAuthReducer,
+  checklistsUsersActions,
+  checklistsUsersReducer,
 } from '../apps/Checklists/data';
 import {
   completeAuthActions,
@@ -63,9 +63,9 @@ export const actions = {
   auth: authActions,
   calendar: calendarActions,
   chatMessage: chatMessageActions,
-  checklist: {
-    ...checklistAuthActions,
-    ...checklistUserActions,
+  checklists: {
+    ...checklistsAuthActions,
+    ...checklistsUsersActions,
   },
   choices: choicesActions,
   completeAuth: completeAuthActions,
@@ -91,9 +91,9 @@ export const reducers = combineReducers({
   auth: authReducer,
   calendar: calendarReducer,
   chatMessage: chatMessageReducer,
-  checklist: combineReducers({
-    auth: checklistAuthReducer,
-    user: checklistUserReducer,
+  checklists: combineReducers({
+    auth: checklistsAuthReducer,
+    users: checklistsUsersReducer,
   }),
   choices: choicesReducer,
   completeAuth: completeAuthReducer,

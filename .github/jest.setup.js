@@ -23,6 +23,7 @@ jest.mock('react-native-config', () => ({
   APP: null,
   GOOGLE_SIGN_IN: null,
   DISABLE_ESLINT_PLUGIN: null,
+  FACEBOOK_APP_ID: null,
 }));
 jest.mock('react-native-rate', () => ({
   AndroidMarket: { Google: null },

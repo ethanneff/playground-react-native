@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Collections } from '../Collections';
 import { loadUsers } from '../reducers';
 import { userSchema } from '../types';
-import { useAppSelector, useAppDispatch } from './../../../../redux';
+import { useAppDispatch, useAppSelector } from './../../../../redux';
 
 export const useUsers = () => {
   const dispatch = useAppDispatch();

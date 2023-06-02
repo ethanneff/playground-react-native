@@ -2,7 +2,7 @@ import { appleAuth } from '@invertase/react-native-apple-authentication';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Config from 'react-native-config';
-import { AccessToken, LoginManager } from 'react-native-fbsdk-next';
+import { AccessToken, LoginManager, Settings } from 'react-native-fbsdk-next';
 import {
   Button,
   Card,
@@ -10,11 +10,13 @@ import {
   Screen,
   Spacing,
   TextInput,
+  Toast,
   View,
   type TextInputRef,
 } from '../../../../components';
-import { Firebase } from '../../../../conversions';
+import { Firebase, type FirebaseAuthTypes } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
+import { useAppSelector } from '../../../../redux';
 
 export const SignIn = () => {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -23,47 +25,90 @@ export const SignIn = () => {
   const eyeIcon = eye ? 'eye-outline' : 'eye-off-outline';
   const emailRef = useRef<TextInputRef>(null);
   const passwordRef = useRef<TextInputRef>(null);
+  const isAppleDevice = useAppSelector(
+    (state) => state.device.details?.manufacturer === 'Apple',
+  );
+  const colors = useColors();
+
+  const handleError = useCallback((e: unknown) => {
+    const description =
+      e instanceof Error
+        ? e.message
+        : (e as FirebaseAuthTypes.NativeFirebaseAuthError).nativeErrorMessage;
+    Toast.show({
+      props: {
+        description,
+        title: 'Unable to sign in',
+      },
+      type: 'negative',
+    });
+  }, []);
 
   const handleFacebook = useCallback(async () => {
-    setLoading(true);
-    const result = await LoginManager.logInWithPermissions([
-      'public_profile',
-      'email',
-    ]);
-    if (result.isCancelled) throw new Error('User cancelled the login process');
-    const data = await AccessToken.getCurrentAccessToken();
-    if (!data) throw new Error('Something went wrong obtaining access token');
-    const facebookCredential = Firebase.auth.FacebookAuthProvider.credential(
-      data.accessToken,
-    );
-    Firebase.auth().signInWithCredential(facebookCredential);
-  }, []);
+    try {
+      setLoading(true);
+      const result = await LoginManager.logInWithPermissions([
+        'public_profile',
+        'email',
+      ]);
+      if (result.isCancelled)
+        throw new Error('User cancelled the login process');
+      const data = await AccessToken.getCurrentAccessToken();
+      if (!data) throw new Error('Something went wrong obtaining access token');
+      const facebookCredential = Firebase.auth.FacebookAuthProvider.credential(
+        data.accessToken,
+      );
+      await Firebase.auth().signInWithCredential(facebookCredential);
+    } catch (e) {
+      handleError(e);
+    } finally {
+      setLoading(false);
+    }
+  }, [handleError]);
 
   const handleApple = useCallback(async () => {
-    setLoading(true);
-    const appleAuthRequestResponse = await appleAuth.performRequest({
-      requestedOperation: appleAuth.Operation.LOGIN,
-      requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
-    });
-    if (!appleAuthRequestResponse.identityToken) {
-      throw new Error('Apple Sign-In failed - no identify token returned');
+    try {
+      setLoading(true);
+      const appleAuthRequestResponse = await appleAuth.performRequest({
+        requestedOperation: appleAuth.Operation.LOGIN,
+        requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
+      });
+      if (!appleAuthRequestResponse.identityToken) {
+        throw new Error('Apple Sign-In failed - no identify token returned');
+      }
+      const { identityToken, nonce, user } = appleAuthRequestResponse;
+      const credentialState = await appleAuth.getCredentialStateForUser(user);
+      if (credentialState !== appleAuth.State.AUTHORIZED) {
+        throw new Error('Apple Sign-In failed - not authorized');
+      }
+      const appleCredential = Firebase.auth.AppleAuthProvider.credential(
+        identityToken,
+        nonce,
+      );
+      await Firebase.auth().signInWithCredential(appleCredential);
+    } catch (e) {
+      handleError(e);
+    } finally {
+      setLoading(false);
     }
-    const { identityToken, nonce } = appleAuthRequestResponse;
-    const appleCredential = Firebase.auth.AppleAuthProvider.credential(
-      identityToken,
-      nonce,
-    );
-    Firebase.auth().signInWithCredential(appleCredential);
-  }, []);
+  }, [handleError]);
 
   const handleGoogle = useCallback(async () => {
-    setLoading(true);
-    await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
-    const { idToken } = await GoogleSignin.signIn();
-    const googleCredential =
-      Firebase.auth.GoogleAuthProvider.credential(idToken);
-    Firebase.auth().signInWithCredential(googleCredential);
-  }, []);
+    try {
+      setLoading(true);
+      await GoogleSignin.hasPlayServices({
+        showPlayServicesUpdateDialog: true,
+      });
+      const { idToken } = await GoogleSignin.signIn();
+      const googleCredential =
+        Firebase.auth.GoogleAuthProvider.credential(idToken);
+      Firebase.auth().signInWithCredential(googleCredential);
+    } catch (e) {
+      handleError(e);
+    } finally {
+      setLoading(false);
+    }
+  }, [handleError]);
 
   const handleEmail = useCallback(() => {
     setLoading(true);
@@ -97,9 +142,10 @@ export const SignIn = () => {
     GoogleSignin.configure({
       webClientId: Config.GOOGLE_SIGN_IN,
     });
+    Settings.setAppID(Config.FACEBOOK_APP_ID ?? '');
+    console.log('here');
   }, []);
 
-  const colors = useColors();
   return (
     <Screen
       dropShadow
@@ -113,12 +159,14 @@ export const SignIn = () => {
       >
         <Card>
           <Spacing padding={spacing(2)}>
-            <Button
-              center
-              disabled={loading}
-              onPress={handleApple}
-              title="apple"
-            />
+            {isAppleDevice ? (
+              <Button
+                center
+                disabled={loading}
+                onPress={handleApple}
+                title="apple"
+              />
+            ) : null}
             <Button
               center
               disabled={loading}

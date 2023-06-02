@@ -10,13 +10,13 @@ type Reducer = {
 } | null;
 
 /* ACTIONS */
-export const loadUser = createAction('checklist/user/load')<User>();
-export const checklistUserActions = { loadUser };
+export const loadUser = createAction('checklists/users/load')<User>();
+export const checklistsUsersActions = { loadUser };
 
 /* REDUCER */
 const initialState: Reducer = null;
 
-export const checklistUserReducer = (
+export const checklistsUsersReducer = (
   state: Reducer = initialState,
   action: RootAction,
 ): Reducer => {
