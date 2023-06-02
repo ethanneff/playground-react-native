@@ -30,6 +30,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+				<string>fb1934342970260614</string>
 			</array>
 		</dict>
 		<dict>
@@ -41,6 +42,10 @@
 			</array>
 		</dict>
 	</array>
+  <key>FacebookAppID</key>
+  <string>1934342970260614</string>
+  <key>FacebookClientToken</key>
+  <string>c647ee98bad534c65b17b4b0ce7ba16b</string>	
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
