@@ -14,6 +14,7 @@ type Props = {
   containerStyle?: StyleProp<ViewStyle>;
   contentStyle?: StyleProp<ViewStyle>;
   elevation?: number;
+  noFlex?: boolean;
   onLayout?: (event: LayoutChangeEvent) => void;
   onLongPress?: () => void;
   onPress?: () => void;
@@ -32,6 +33,7 @@ export const Card = memo(function Card({
   containerStyle,
   contentStyle,
   elevation = 4,
+  noFlex,
   onLayout,
   onLongPress,
   onPress,
@@ -44,7 +46,7 @@ export const Card = memo(function Card({
   const opacity = getOpacity(elevation);
   const styles = StyleSheet.create({
     container: {
-      flex: 1,
+      flex: noFlex ? 0 : 1,
     },
     content: {
       backgroundColor:
@@ -54,7 +56,7 @@ export const Card = memo(function Card({
       borderColor: colors.background.primaryA,
       borderRadius: spacing(2),
       borderWidth: 1,
-      flex: 1,
+      flex: noFlex ? 0 : 1,
       padding: spacing(2),
       ...shadow,
     },
