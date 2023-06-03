@@ -10,6 +10,7 @@ import {
   Checklists,
   Download,
   ForgotPassword,
+  Landing,
   Privacy,
   SignIn,
   SignUp,
@@ -79,9 +80,13 @@ export const Navigation = memo(function Navigation() {
     </AuthStack.Navigator>
   ) : (
     <UnAuthStack.Navigator
-      initialRouteName="sign-in"
+      initialRouteName="landing"
       screenOptions={rightScreenOptions}
     >
+      <UnAuthStack.Screen
+        component={Landing}
+        name="landing"
+      />
       <UnAuthStack.Screen
         component={SignIn}
         name="sign-in"
