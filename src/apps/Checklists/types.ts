@@ -1,5 +1,6 @@
 export type UnAuthStackRoutes = {
-  'forgot-password': { email: string };
+  'forgot-password': undefined;
+  landing: undefined;
   privacy: undefined;
   'sign-in': undefined;
   'sign-up': undefined;
