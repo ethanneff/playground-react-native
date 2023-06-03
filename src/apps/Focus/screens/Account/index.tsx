@@ -14,11 +14,11 @@ import {
 import {
   spacing,
   useAdminNavBack,
+  useAuth,
   useColors,
   useLayout,
 } from '../../../../features';
 import { type AuthStackRoutes } from '../../types';
-import { useLogout } from '../../utils/useLogout';
 
 export const Account = memo(function Account() {
   const { navigate } =
@@ -26,7 +26,7 @@ export const Account = memo(function Account() {
   const colors = useColors();
   const { tabBarEdges } = useLayout();
   const { admin } = useAdminNavBack();
-  const { handleLogout } = useLogout();
+  const { logout } = useAuth();
 
   const handleAdmin = useCallback(() => {
     navigate('admin');
@@ -89,7 +89,7 @@ export const Account = memo(function Account() {
             title="restore transactions"
           />
           <Button
-            onPress={handleLogout}
+            onPress={logout}
             title="log out"
           />
           {admin ? (

@@ -12,17 +12,17 @@ import {
   useNavigation,
   type StackNavigationProp,
 } from '../../../../conversions';
+import { useAuth } from '../../../../features';
 import { useAppSelector } from '../../../../redux';
 import { Collections, type Goal, type Interval } from '../../data';
 import { type UnAuthStackRoutes } from '../../types';
-import { useLogout } from '../../utils';
 
 export const Debug = memo(function Debug() {
   const { goBack } =
     useNavigation<StackNavigationProp<UnAuthStackRoutes, 'debug'>>();
   const data = useAppSelector((state) => state.focus);
   const uid = data.auth.uid ?? '';
-  const { handleLogout } = useLogout();
+  const { logout } = useAuth();
 
   const showToast = useCallback((e: string) => {
     Toast.show({
@@ -143,7 +143,7 @@ export const Debug = memo(function Debug() {
             title="update user"
           />
           <Button
-            onPress={handleLogout}
+            onPress={logout}
             title="logout"
           />
         </Collapsible>

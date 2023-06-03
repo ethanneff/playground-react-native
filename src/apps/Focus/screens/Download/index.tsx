@@ -13,11 +13,10 @@ import {
   useNavigation,
   type StackNavigationProp,
 } from '../../../../conversions';
-import { spacing, useColors } from '../../../../features';
+import { spacing, useAuth, useColors } from '../../../../features';
 import { getSmallestDimension, useAppSelector } from '../../../../redux';
 import { getLoaded } from '../../data';
 import { type AuthStackRoutes } from '../../types';
-import { useLogout } from '../../utils/useLogout';
 import { PulseAnimation } from './PulseAnimation';
 import { useHeartBeatAnimation } from './useHeartBeatAnimation';
 
@@ -39,13 +38,12 @@ export const Download = memo(function Download() {
   const tapWidth = width / 1.5;
   const colors = useColors();
   const [pulses, setPulses] = useState([0]);
+  const { logout } = useAuth();
 
   const navNext = useCallback(() => {
     visible.current = false;
     navigate('home');
   }, [navigate]);
-
-  const { handleLogout } = useLogout();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -131,7 +129,7 @@ export const Download = memo(function Download() {
             center
             color="secondary"
             emphasis="low"
-            onPress={handleLogout}
+            onPress={logout}
             title="try logging out"
           />
         </View>
