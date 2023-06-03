@@ -1,62 +1,42 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback } from 'react';
 import { Button, Carousel, Screen, View } from '../../../../components';
-import { type FirebaseAuthTypes } from '../../../../conversions';
-import { spacing } from '../../../../features';
+import { spacing, useAuth } from '../../../../features';
 import { useAppDispatch } from '../../../../redux';
 import { createItem, loadUser, login } from '../../models';
 import { completeConfig, getDefaultUserTemplate } from '../../utils';
-import { Login } from './Login';
 import { slides } from './slides';
 
 export const Welcome = memo(function Welcome() {
   const dispatch = useAppDispatch();
-  const [showLogin, setShowLogin] = useState(false);
-  const onToggleLogin = useCallback(() => {
-    setShowLogin((p) => !p);
-  }, []);
+  const { signInAnonymously } = useAuth();
 
-  const onLoginSuccess = useCallback(
-    (auth: FirebaseAuthTypes.User | null) => {
-      if (!auth) throw new Error('no login');
-      dispatch(login(auth));
-      const { items, user } = getDefaultUserTemplate();
-      items.forEach((item) => dispatch(createItem(item)));
-      dispatch(loadUser({ ...user, email: auth.email ?? 'anonymous' }));
-    },
-    [dispatch],
-  );
+  const handleLogin = useCallback(async () => {
+    const res = await signInAnonymously();
+    if (!res) throw new Error('Sign in failed');
+    dispatch(login(res.user));
+    const { items, user } = getDefaultUserTemplate();
+    items.forEach((item) => dispatch(createItem(item)));
+    dispatch(loadUser({ ...user, email: res.user.email ?? 'anonymous' }));
+  }, [dispatch, signInAnonymously]);
 
   return (
-    <>
-      <Screen>
-        <View flex={1}>
-          <Carousel
-            duration={6000}
-            slides={slides}
-          />
-          <View style={{ padding: completeConfig.padding }}>
-            <Button
-              buttonStyle={{ marginBottom: spacing(2) }}
-              center
-              color="accent"
-              emphasis="high"
-              onPress={onToggleLogin}
-              title="Get Started"
-            />
-          </View>
-        </View>
-      </Screen>
-      {showLogin ? (
-        <Login
-          onBackgroundPress={onToggleLogin}
-          onSuccess={onLoginSuccess}
-          showAnonymous
-          showEmail
-          showFacebook
-          showGoogle
-          showPhone
+    <Screen>
+      <View flex={1}>
+        <Carousel
+          duration={6000}
+          slides={slides}
         />
-      ) : null}
-    </>
+        <View style={{ padding: completeConfig.padding }}>
+          <Button
+            buttonStyle={{ marginBottom: spacing(2) }}
+            center
+            color="accent"
+            emphasis="high"
+            onPress={handleLogin}
+            title="Get Started"
+          />
+        </View>
+      </View>
+    </Screen>
   );
 });

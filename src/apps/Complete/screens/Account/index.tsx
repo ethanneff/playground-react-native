@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect } from 'react';
+import React, { memo, useCallback } from 'react';
 import { Button, Card, Screen, ScrollView, Text } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import {
@@ -7,7 +7,7 @@ import {
   useLayout,
   type RootNavigation,
 } from '../../../../features';
-import { useAppSelector, useAppDispatch } from '../../../../redux';
+import { useAppDispatch, useAppSelector } from '../../../../redux';
 import { logout } from '../../models';
 import { completeConfig } from '../../utils';
 
@@ -21,15 +21,17 @@ export const Account = memo(function Account() {
   const { tabBarEdges } = useLayout();
   const dispatch = useAppDispatch();
   const { navigate } = useNavigation<RootNavigation>();
-  const { onLogout, response } = useAuth();
+  const { logout: logoutUser } = useAuth();
   const profile = useAppSelector((s) => s.completeAuth);
+
   const onNavToAdmin = useCallback(() => {
     navigate('admin');
   }, [navigate]);
 
-  useEffect(() => {
-    if (response.type === 'logout') dispatch(logout());
-  }, [dispatch, response.type]);
+  const handleLogout = useCallback(async () => {
+    await logoutUser();
+    dispatch(logout());
+  }, [dispatch, logoutUser]);
 
   return (
     <Screen
@@ -113,15 +115,9 @@ export const Account = memo(function Account() {
             type="h5"
           />
           <Button
-            onPress={onLogout}
+            onPress={handleLogout}
             title="logout"
           />
-          {response.error ? (
-            <Text
-              color="negative"
-              title={response.error}
-            />
-          ) : null}
           <Button
             onPress={onNavToAdmin}
             title="go to admin"
