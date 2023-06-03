@@ -186,18 +186,18 @@ export const SignIn = () => {
           <LoginButton
             icon="facebook"
             onPress={handleFacebook}
-            title="Sign up with Facebook"
+            title="Sign in with Facebook"
           />
           <LoginButton
             icon="google"
             onPress={handleGoogle}
-            title="Sign up with Google"
+            title="Sign in with Google"
           />
           {isAppleDevice ? (
             <LoginButton
               icon="apple"
               onPress={handleApple}
-              title="Sign up with Apple"
+              title="Sign in with Apple"
             />
           ) : null}
         </View>
