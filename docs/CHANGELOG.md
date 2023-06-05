@@ -1,5 +1,24 @@
 # Changelog
 
+# [2.82.0](https://github.com/ethanneff/playground-react-native/compare/v2.81.2...v2.82.0) (2023-06-03)
+
+
+### Bug Fixes
+
+* add noFlex to card ([fcfb92d](https://github.com/ethanneff/playground-react-native/commit/fcfb92d9280c438d3434887ab9a4b8cd3ff27416))
+* default anonymous login for complete ([fc305f1](https://github.com/ethanneff/playground-react-native/commit/fc305f158ca3c0bf726c20c487729cf2136f1658))
+* remove login flow ([065f826](https://github.com/ethanneff/playground-react-native/commit/065f8264c2e541829f4104d699e798305c7b5c0d))
+* use auth hook for focus ([1636752](https://github.com/ethanneff/playground-react-native/commit/16367529de173a4f1c123296f0c1b28c6872171c))
+
+
+### Features
+
+* add forgot password page ([fa3577e](https://github.com/ethanneff/playground-react-native/commit/fa3577e34dad44dba9bf6ecc62db07a8bdaae40a))
+* add landing page ([a4de8cb](https://github.com/ethanneff/playground-react-native/commit/a4de8cb9dd4fed00953f13ffcf6bfed941ff36a4))
+* add sharable auth hook ([f9ed99f](https://github.com/ethanneff/playground-react-native/commit/f9ed99f3fac65f6ba8d5c0e782dfbedb4b4967a7))
+* add sign up page ([39a7b6b](https://github.com/ethanneff/playground-react-native/commit/39a7b6bab96fc172663ff7ccd7db6ac3c9dd55f2))
+* use auth hook for sign in ([3bec681](https://github.com/ethanneff/playground-react-native/commit/3bec681627b520312d50320a682457cba6b937da))
+
 ## [2.81.2](https://github.com/ethanneff/playground-react-native/compare/v2.81.1...v2.81.2) (2023-06-02)
 
 
