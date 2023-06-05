@@ -1218,7 +1218,7 @@ PODS:
     - FBSDKGamingServicesKit (~> 15.0.0)
     - FBSDKShareKit (~> 15.0.0)
     - React-Core
-  - react-native-flipper (0.192.0):
+  - react-native-flipper (0.193.0):
     - React-Core
   - react-native-flipper-performance-plugin (0.4.0):
     - React-Core
@@ -1804,7 +1804,7 @@ SPEC CHECKSUMS:
   React-logger: 342f358b8decfbf8f272367f4eacf4b6154061be
   react-native-config: 86038147314e2e6d10ea9972022aa171e6b1d4d8
   react-native-fbsdk-next: 5291a5d67aab4e649d072c50988033ff0d05b915
-  react-native-flipper: 1ff68d2514c4c3f3577c8d528419488f2394c553
+  react-native-flipper: 2517aa70554b388e81bae1cf1abfdfd8be7ef086
   react-native-flipper-performance-plugin: 42ec5017abd26e7c5a1f527f2db92c14a90cabdb
   react-native-get-random-values: dee677497c6a740b71e5612e8dbd83e7539ed5bb
   react-native-mmkv-storage: cfb6854594cfdc5f7383a9e464bb025417d1721c
