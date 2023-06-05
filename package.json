@@ -85,7 +85,7 @@
     "@react-native-community/eslint-config": "3.2.0",
     "@rnx-kit/dep-check": "1.14.0",
     "@semantic-release/changelog": "6.0.3",
-    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/commit-analyzer": "10.0.0",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "8.1.0",
     "@semantic-release/npm": "10.0.3",
