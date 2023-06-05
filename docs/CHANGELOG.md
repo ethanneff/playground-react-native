@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.82.1](https://github.com/ethanneff/playground-react-native/compare/v2.82.0...v2.82.1) (2023-06-05)
+
+
+### Bug Fixes
+
+* copy change on sign in ([2741965](https://github.com/ethanneff/playground-react-native/commit/27419659fb383d8971182fbbe846b92b43b0a739))
+
 # [2.82.0](https://github.com/ethanneff/playground-react-native/compare/v2.81.2...v2.82.0) (2023-06-03)
 
 
