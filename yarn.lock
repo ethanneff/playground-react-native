@@ -2727,10 +2727,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-17.5.0.tgz#f0b1edd66b3678743f18ba9240d335d53141cc91"
   integrity sha512-6pfvp2x28parK3F2CvL6dGketzl8cPspjoE/SsSWem7EhtCluDwCT+qZjPJgJXyEHLhJVtnPHkHOHQGzH3he0Q==
 
-"@react-native-firebase/remote-config@17.5.0":
-  version "17.5.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-17.5.0.tgz#142a2d9f6eebfadd1f4a942d4c8dd601846393e9"
-  integrity sha512-qfNGhj1kcPZaaeTMZup+Dy146Fw99cKeRZEYIUvcMNtN2NLWz0FE0rw8RZ9kb0vkxhjcXwHXrG4M8DU7SmRAjw==
+"@react-native-firebase/remote-config@18.0.0":
+  version "18.0.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-18.0.0.tgz#0d7c9294939101433c1c57636855820c4326acf9"
+  integrity sha512-NYfSjn1NT5S3eJvI4mmVhRNLNiRQUCkl9FoZVQi7yzLe24NSWxQVOmOx7HW6iKJcpomVoTz0GHDBzaDzWDUKgA==
 
 "@react-native-google-signin/google-signin@10.0.1":
   version "10.0.1"
