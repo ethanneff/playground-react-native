@@ -21,6 +21,7 @@ const timeout = 5000;
 /* ACTION CREATORS */
 export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
   dispatch(loginRequest());
+
   try {
     const res = await axios({
       data: {

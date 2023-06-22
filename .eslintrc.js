@@ -51,6 +51,7 @@ const restrictedImports = {
 
 module.exports = {
   extends: [
+    '@react-native',
     'eslint:all',
     'plugin:jest/all',
     'plugin:react/all',
