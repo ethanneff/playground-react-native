@@ -2722,10 +2722,10 @@
   dependencies:
     stacktrace-js "^2.0.0"
 
-"@react-native-firebase/firestore@17.5.0":
-  version "17.5.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-17.5.0.tgz#f0b1edd66b3678743f18ba9240d335d53141cc91"
-  integrity sha512-6pfvp2x28parK3F2CvL6dGketzl8cPspjoE/SsSWem7EhtCluDwCT+qZjPJgJXyEHLhJVtnPHkHOHQGzH3he0Q==
+"@react-native-firebase/firestore@18.1.0":
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-18.1.0.tgz#d47f634c370565816a9520b3c041ba0bbdec98ee"
+  integrity sha512-Bgpuig7FBnd7wlQvElgZVhsai3wCwxiXE4IkNOehU1pNwShntZK+KEk8d3wAuxnwt10ZUWB9YpQYjkreB1GSCw==
 
 "@react-native-firebase/remote-config@17.5.0":
   version "17.5.0"
