@@ -42,6 +42,7 @@ const SignInButton = memo(function SignInButton({
     >
       <Icon
         name={icon}
+        // @ts-expect-error web specific dimensions
         style={{ height: '30px', width: '30px' }}
       />
       <Text
@@ -111,6 +112,7 @@ export const Header = memo(function Header({ height }: HeaderProps) {
       <View style={{ alignItems: 'center', flexDirection: 'row' }}>
         <Image
           source={image}
+          // @ts-expect-error web specific dimensions
           style={{ height: '30px', width: '30px' }}
         />
         <Text
@@ -155,6 +157,7 @@ const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
   const store = type === 'apple' ? 'App Store' : 'Google Play';
   return (
     <Pressable
+      // @ts-expect-error web specific dimensions
       contentStyle={{
         backgroundColor: colors.background.primaryB,
         borderRadius: spacing(2),
@@ -169,6 +172,7 @@ const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
       <Icon
         color="primaryA"
         name={type}
+        // @ts-expect-error web specific dimensions
         style={{ alignSelf: 'center', height: iconSize, width: iconSize }}
       />
       <View style={{ paddingLeft: spacing(2) }}>
@@ -200,6 +204,7 @@ const Section = memo(function Section({
 }: SectionProps) {
   return (
     <View
+      // @ts-expect-error web specific dimensions
       style={{
         backgroundColor,
         height: '100vh',
@@ -246,6 +251,7 @@ export const Landing = memo(function PortfolioLanding() {
           sentences={titleSentence}
           style={{ alignSelf: 'center', paddingVertical: spacing(8) }}
         />
+        {/* @ts-expect-error web specific dimensions */}
         <View style={{ alignSelf: 'center', width: '400px' }}>
           <SignInButton
             icon="apple"
