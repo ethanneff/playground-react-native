@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {
   type RootAction,
   type RootState,
@@ -23,17 +22,15 @@ export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
   dispatch(loginRequest());
 
   try {
-    const res = await axios({
-      data: {
+    const res = await fetch('https://reqres.in/api/login', {
+      body: JSON.stringify({
         email: 'sydney@fife',
         password: 'pistol',
-      },
+      }),
       method: 'post',
-      timeout,
-      url: 'https://reqres.in/api/login',
     });
     const loginSchema = z.object({ token: z.string() });
-    const data = loginSchema.parse(res.data);
+    const data = loginSchema.parse(res.json());
     dispatch(loginSuccess(data.token));
   } catch (e) {
     if (e instanceof Error) dispatch(loginFailure(e));
@@ -42,20 +39,18 @@ export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
 export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
   dispatch(loginRequest());
   try {
-    const res = await axios({
-      data: {
+    const res = await fetch('https://reqres.in/api/register', {
+      body: JSON.stringify({
         email: 'sydney@fife',
         password: 'pistol',
-      },
+      }),
       method: 'post',
-      timeout,
-      url: 'https://reqres.in/api/register',
     });
     const registerScheme = z.object({
       id: z.number(),
       token: z.string(),
     });
-    const data = registerScheme.parse(res.data);
+    const data = registerScheme.parse(res.json());
     dispatch(loginSuccess(data.token));
   } catch (e) {
     if (e instanceof Error) dispatch(loginFailure(e));
@@ -64,13 +59,11 @@ export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
 export const onLogout = (): RootThunkAction<void> => (dispatch, getState) => {
   const { token } = getState().auth;
   dispatch(logout());
-  axios({
-    data: {
+  fetch('https://reqres.in/api/logout', {
+    body: JSON.stringify({
       token,
-    },
+    }),
     method: 'post',
-    timeout,
-    url: 'https://reqres.in/api/logout',
   });
 };
 

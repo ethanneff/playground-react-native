@@ -1,4 +1,3 @@
-import axios, { type AxiosRequestConfig } from 'axios';
 import { useCallback, useEffect, useRef } from 'react';
 import { type RootAction, type RootMiddleware } from 'root-types';
 import { Storage } from '../conversions';
@@ -99,8 +98,8 @@ export const useSync = (): void => {
       const len = queue.length;
       const url = 'https://jsonplaceholder.typicode.com/posts';
       const method = 'POST';
-      const payload: AxiosRequestConfig = { data: queue, method, timeout, url };
-      const res = await axios(payload);
+      const payload = { data: queue, method, timeout, url };
+      const res = await fetch(url, payload);
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       processSync(res.data);
       queue.splice(0, len);

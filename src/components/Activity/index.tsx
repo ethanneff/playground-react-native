@@ -109,6 +109,8 @@ export const Activity = memo(function Activity({
     [state.activity.max, margin, onItemPress, size],
   );
 
+  return null;
+
   return (
     <Card>
       <View
