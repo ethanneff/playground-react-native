@@ -139,7 +139,7 @@
     "react-native-highlight-updates": "1.2.0",
     "react-test-renderer": "18.2.0",
     "redux-flipper": "2.0.2",
-    "semantic-release": "21.0.5",
+    "semantic-release": "21.0.6",
     "ts-essentials": "9.3.2",
     "typescript": "5.1.3"
   },
