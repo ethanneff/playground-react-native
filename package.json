@@ -141,7 +141,7 @@
     "redux-flipper": "2.0.2",
     "semantic-release": "21.0.5",
     "ts-essentials": "9.3.2",
-    "typescript": "5.1.3"
+    "typescript": "5.1.6"
   },
   "homepage": "https://ethanneff.github.io/playground-react-native",
   "license": "MIT",
