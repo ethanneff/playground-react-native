@@ -137,7 +137,7 @@ export const Archero = memo(function Archero() {
       onLeftPress={goBack}
       title="Archero"
     >
-      <View
+      <Animated.View
         onLayout={onLayout}
         style={{ backgroundColor: colors.background.tertiary, flex: 1 }}
         {...panGesture.panHandlers} // eslint-disable-line react/jsx-props-no-spreading
@@ -191,7 +191,7 @@ export const Archero = memo(function Archero() {
             />
           </View>
         </Animated.View>
-      </View>
+      </Animated.View>
     </Screen>
   );
 });
