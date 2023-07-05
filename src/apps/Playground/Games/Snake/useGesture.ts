@@ -1,7 +1,9 @@
-import { type MutableRefObject, useRef } from 'react';
+import { useRef, type MutableRefObject } from 'react';
 import {
-  type GestureResponderHandlers,
   PanResponder,
+  type GestureResponderEvent,
+  type GestureResponderHandlers,
+  type PanResponderGestureState,
   type PanResponderInstance,
 } from 'react-native';
 
@@ -25,14 +27,17 @@ export const useGesture = ({
   panHandlers: GestureResponderHandlers;
 } => {
   const direction = useRef<Direction>('up');
+
   const panResponder: PanResponderInstance = useRef(
     PanResponder.create({
-      onPanResponderRelease: (_, g) => {
+      onPanResponderRelease: (
+        _: GestureResponderEvent,
+        g: PanResponderGestureState,
+      ) => {
         let direct: Direction = 'up';
         if (Math.abs(g.dx) >= Math.abs(g.dy))
           direct = g.dx >= 0 ? 'right' : 'left';
         else direct = g.dy >= 0 ? 'down' : 'up';
-
         const reverse = noReverse && inverse[direct] === direction.current;
         direction.current = reverse ? direction.current : direct;
       },

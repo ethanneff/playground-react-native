@@ -22,7 +22,7 @@ export const Cell = memo(function Cell({ length, value }: CellProps) {
       style={{
         backgroundColor,
         borderColor: colors.background.secondary,
-        borderWidth: 1,
+        borderWidth: 0.5,
         flex: 1,
         height: width,
         width,

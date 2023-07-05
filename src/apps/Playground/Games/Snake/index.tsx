@@ -1,4 +1,5 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
+import { Animated } from 'react-native';
 import { Button, Screen, Text, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { Board } from './Board';
@@ -76,12 +77,13 @@ export const Snake = memo(function Snake() {
           />
           <Text title={`points: ${game.points}`} />
         </View>
-        <View
-          backgroundColor="positive"
-          flex={1}
-          {...panHandlers} // eslint-disable-line react/jsx-props-no-spreading
-        >
-          <Board matrix={game.board.matrix} />
+        <View flex={1}>
+          <Animated.View
+            style={{ flex: 1 }}
+            {...panHandlers} // eslint-disable-line react/jsx-props-no-spreading
+          >
+            <Board matrix={game.board.matrix} />
+          </Animated.View>
         </View>
       </Screen>
       {game.state === 'error' && <EndGame onPress={onStart} />}

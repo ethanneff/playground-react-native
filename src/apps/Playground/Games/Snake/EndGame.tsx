@@ -7,7 +7,7 @@ type Props = {
 
 export const EndGame = memo(function EndGame({ onPress }: Props) {
   return (
-    <Modal>
+    <Modal showOverlay>
       <Text title="good try" />
       <Button
         onPress={onPress}
