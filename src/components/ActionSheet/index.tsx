@@ -121,7 +121,7 @@ export const ActionSheet = memo(function ActionSheet({
   ).current;
 
   return (
-    <View
+    <Animated.View
       style={styles.top}
       {...panResponder.panHandlers} // eslint-disable-line react/jsx-props-no-spreading
     >
@@ -155,6 +155,6 @@ export const ActionSheet = memo(function ActionSheet({
         disabled={!onBackgroundPress}
         onPress={onBackgroundPress}
       />
-    </View>
+    </Animated.View>
   );
 });

@@ -128,7 +128,7 @@ export const Notification = memo(function Notification({
   ).current;
 
   return (
-    <View
+    <Animated.View
       style={styles.container}
       {...panResponder.panHandlers} // eslint-disable-line react/jsx-props-no-spreading
     >
@@ -162,6 +162,6 @@ export const Notification = memo(function Notification({
         disabled={!onBackgroundPress}
         onPress={onBackgroundPress}
       />
-    </View>
+    </Animated.View>
   );
 });
