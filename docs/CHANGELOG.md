@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.82.3](https://github.com/ethanneff/playground-react-native/compare/v2.82.2...v2.82.3) (2023-06-27)
+
+
+### Bug Fixes
+
+* remove unused eslint rule ([2e785c4](https://github.com/ethanneff/playground-react-native/commit/2e785c4d7e7e918410614c2a6d2d88c37575d550))
+* update deps (web, and, ios) ([d3da913](https://github.com/ethanneff/playground-react-native/commit/d3da913eeb39473ddf3173756c5d9c2eb6d9655f))
+
 ## [2.82.2](https://github.com/ethanneff/playground-react-native/compare/v2.82.1...v2.82.2) (2023-06-05)
 
 
