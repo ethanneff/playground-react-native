@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.82.4](https://github.com/ethanneff/playground-react-native/compare/v2.82.3...v2.82.4) (2023-07-05)
+
+
+### Bug Fixes
+
+* improvements to snake ([645d012](https://github.com/ethanneff/playground-react-native/commit/645d012122587316d7b25d9b21a48b1289523a78))
+* make archero work for ios ([2534e6f](https://github.com/ethanneff/playground-react-native/commit/2534e6f8a28328395776f3fb22b337fd0053f88d))
+* pangesture must be within animated ([a4e85c6](https://github.com/ethanneff/playground-react-native/commit/a4e85c6d181912216e610d7d4227e93e27579c65))
+
 ## [2.82.3](https://github.com/ethanneff/playground-react-native/compare/v2.82.2...v2.82.3) (2023-06-27)
 
 
