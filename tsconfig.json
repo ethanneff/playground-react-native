@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
-  "include": ["./src/**/*", "./.github/**/*"],
+  "include": ["./src/**/*", "./.github/**/*", "./functions/**/*"],
   "compilerOptions": {
     "jsx": "react-native",
     "lib": ["esnext", "dom"],
