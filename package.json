@@ -101,7 +101,7 @@
     "@types/d3-scale": "4.0.3",
     "@types/d3-shape": "3.1.1",
     "@types/howler": "2.2.7",
-    "@types/jest": "29.5.2",
+    "@types/jest": "29.5.3",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-native-vector-icons": "6.4.13",
