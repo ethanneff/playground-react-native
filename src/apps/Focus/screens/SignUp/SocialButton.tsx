@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import {
   Icon,
   Pressable,
@@ -10,18 +10,13 @@ import {
 import { spacing, useColors } from '../../../../features';
 
 type Props = {
-  disabled: boolean;
-  icon: IconName;
-  onPress: () => void;
-  title: string;
+  readonly disabled: boolean;
+  readonly icon: IconName;
+  readonly onPress: () => void;
+  readonly title: string;
 };
 
-export const SocialButton = memo(function LoginButton({
-  disabled,
-  icon,
-  onPress,
-  title,
-}: Props) {
+export const SocialButton = ({ disabled, icon, onPress, title }: Props) => {
   const colors = useColors();
   return (
     <Pressable
@@ -53,4 +48,4 @@ export const SocialButton = memo(function LoginButton({
       </View>
     </Pressable>
   );
-});
+};

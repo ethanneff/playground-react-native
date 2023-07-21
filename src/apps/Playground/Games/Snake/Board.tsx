@@ -5,30 +5,28 @@ import { Cell } from './Cell';
 import { type Matrix } from './utils';
 
 type BoardProps = {
-  matrix: Matrix;
+  readonly matrix: Matrix;
 };
 
 // TODO: figure out why board is updating with memo
-export const Board = ({ matrix }: BoardProps) => {
-  return (
-    <View
-      flex={1}
-      justifyContent="center"
-    >
-      {matrix.map((x) => (
-        <View
-          flexDirection="row"
-          key={v4()}
-        >
-          {x.map((y) => (
-            <Cell
-              key={v4()}
-              length={matrix.length}
-              value={y}
-            />
-          ))}
-        </View>
-      ))}
-    </View>
-  );
-};
+export const Board = ({ matrix }: BoardProps) => (
+  <View
+    flex={1}
+    justifyContent="center"
+  >
+    {matrix.map((x) => (
+      <View
+        flexDirection="row"
+        key={v4()}
+      >
+        {x.map((y) => (
+          <Cell
+            key={v4()}
+            length={matrix.length}
+            value={y}
+          />
+        ))}
+      </View>
+    ))}
+  </View>
+);

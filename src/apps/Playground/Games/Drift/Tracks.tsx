@@ -1,4 +1,4 @@
-import React, { memo, useContext } from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { v4 } from 'uuid';
 import { View } from '../../../../components';
@@ -6,10 +6,10 @@ import { DriftContext } from './Context';
 import { type TrackPositionWithColor } from './types';
 
 type TrackProps = {
-  track: TrackPositionWithColor;
+  readonly track: TrackPositionWithColor;
 };
 
-const Track = memo(function TrackMemo({ track }: TrackProps) {
+const Track = ({ track }: TrackProps) => {
   const size = track.size / 4;
   const styles = StyleSheet.create({
     tracks: {
@@ -39,9 +39,9 @@ const Track = memo(function TrackMemo({ track }: TrackProps) {
       />
     </>
   );
-});
+};
 
-export const Tracks = memo(function TracksMemo() {
+export const Tracks = () => {
   const { state } = useContext(DriftContext);
   return (
     <>
@@ -53,4 +53,4 @@ export const Tracks = memo(function TracksMemo() {
       ))}
     </>
   );
-});
+};

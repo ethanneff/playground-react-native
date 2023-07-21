@@ -1,5 +1,5 @@
 import { format, isToday, isWeekend, sub } from 'date-fns';
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import {
   FlashList,
   Pressable,
@@ -16,7 +16,7 @@ import { spacing, useColors } from '../../../../features';
 import { type AuthStackRoutes, type Category } from '../../types';
 
 type Props = {
-  category: Category;
+  readonly category: Category;
 };
 
 const mockData = [
@@ -24,7 +24,7 @@ const mockData = [
   2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
 ];
 
-export const CategoryCard = memo(function CategoryCard({ category }: Props) {
+export const CategoryCard = ({ category }: Props) => {
   const { navigate } = useNavigation<StackNavigationProp<AuthStackRoutes>>();
   const colors = useColors();
 
@@ -118,4 +118,4 @@ export const CategoryCard = memo(function CategoryCard({ category }: Props) {
       />
     </Pressable>
   );
-});
+};

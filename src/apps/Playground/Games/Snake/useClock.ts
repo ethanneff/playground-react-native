@@ -46,11 +46,12 @@ export const useClock = ({
     loop();
   }, [stop, loop, onUpdate]);
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       stop();
-    };
-  }, [stop]);
+    },
+    [stop],
+  );
 
   return { start, stop };
 };

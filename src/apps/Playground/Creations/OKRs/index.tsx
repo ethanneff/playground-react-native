@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Card, Screen, ScrollView, Text } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
@@ -14,7 +14,7 @@ export type ItemType =
   | 'Values'
   | 'Vision';
 
-export const OKRs = memo(function PlaygroundOKRs() {
+export const OKRs = () => {
   const { goBack } = useNavigation();
   const colors = useColors();
 
@@ -147,4 +147,4 @@ export const OKRs = memo(function PlaygroundOKRs() {
       </ScrollView>
     </Screen>
   );
-});
+};

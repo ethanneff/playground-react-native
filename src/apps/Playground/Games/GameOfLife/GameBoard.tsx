@@ -1,11 +1,11 @@
-import React, { memo, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { v4 } from 'uuid';
 import { View } from '../../../../components';
 import { useAppSelector } from '../../../../redux';
 import { Cell } from './Cell';
 import { useLoop } from './useLoop';
 
-export const GameBoard = memo(function GameBoard() {
+export const GameBoard = () => {
   const count = useAppSelector((state) => state.gameOfLife.count);
   const array = useMemo(() => Array<number>(count).fill(0), [count]);
   useLoop();
@@ -28,4 +28,4 @@ export const GameBoard = memo(function GameBoard() {
       ))}
     </View>
   );
-});
+};

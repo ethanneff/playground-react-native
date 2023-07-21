@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import { Button, Screen, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
@@ -10,7 +10,7 @@ const getBoundedRandom = (min: number, max: number) => {
 };
 
 const size = spacing(8);
-export const Ball = memo(function PlaygroundBall() {
+export const Ball = () => {
   const { layout, onLayout } = useLayout();
   const { goBack } = useNavigation();
   const ballPosition = useRef(new Animated.ValueXY({ x: 0, y: 0 }));
@@ -88,4 +88,4 @@ export const Ball = memo(function PlaygroundBall() {
       />
     </Screen>
   );
-});
+};

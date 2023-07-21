@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Screen, ScrollView, Text } from '../../../../components';
 import {
   useNavigation,
@@ -6,7 +6,7 @@ import {
 } from '../../../../conversions';
 import { type UnAuthStackRoutes } from '../../types';
 
-export const Onboarding = memo(function Onboarding() {
+export const Onboarding = () => {
   const { goBack } = useNavigation<StackNavigationProp<UnAuthStackRoutes>>();
 
   return (
@@ -19,4 +19,4 @@ export const Onboarding = memo(function Onboarding() {
       </ScrollView>
     </Screen>
   );
-});
+};

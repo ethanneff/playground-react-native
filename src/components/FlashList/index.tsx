@@ -13,41 +13,37 @@ export type FlashListRef<T> = List<T> | null;
 export type FlashListRenderItem<T> = ListRenderItem<T>;
 
 type MasonryProps<ItemT> = FlashListProps<ItemT> & {
-  estimatedItemSize: number;
-  onRef?: RefObject<MasonryFlashListRef<ItemT>>;
+  readonly estimatedItemSize: number;
+  readonly onRef?: RefObject<MasonryFlashListRef<ItemT>>;
 };
 
 export const MasonryFlashList = <ItemT,>({
   estimatedItemSize,
   onRef,
   ...rest
-}: MasonryProps<ItemT>) => {
-  return (
-    <MasonryList
-      estimatedItemSize={estimatedItemSize}
-      keyboardShouldPersistTaps="handled"
-      ref={onRef}
-      {...rest} // eslint-disable-line react/jsx-props-no-spreading
-    />
-  );
-};
+}: MasonryProps<ItemT>) => (
+  <MasonryList
+    estimatedItemSize={estimatedItemSize}
+    keyboardShouldPersistTaps="handled"
+    ref={onRef}
+    {...rest} // eslint-disable-line react/jsx-props-no-spreading
+  />
+);
 
 type ListProps<ItemT> = FlashListProps<ItemT> & {
-  estimatedItemSize: number;
-  onRef?: RefObject<List<ItemT>>;
+  readonly estimatedItemSize: number;
+  readonly onRef?: RefObject<List<ItemT>>;
 };
 
 export const FlashList = <ItemT,>({
   estimatedItemSize,
   onRef,
   ...rest
-}: ListProps<ItemT>) => {
-  return (
-    <List
-      estimatedItemSize={estimatedItemSize}
-      keyboardShouldPersistTaps="handled"
-      ref={onRef}
-      {...rest} // eslint-disable-line react/jsx-props-no-spreading
-    />
-  );
-};
+}: ListProps<ItemT>) => (
+  <List
+    estimatedItemSize={estimatedItemSize}
+    keyboardShouldPersistTaps="handled"
+    ref={onRef}
+    {...rest} // eslint-disable-line react/jsx-props-no-spreading
+  />
+);

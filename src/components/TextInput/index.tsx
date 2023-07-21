@@ -1,5 +1,4 @@
 import React, {
-  memo,
   useCallback,
   useEffect,
   useRef,
@@ -81,40 +80,40 @@ type AutoComplete =
 export type TextInputRef = GestureTextInput | null;
 
 type TextInputProps = {
-  autoCapitalize: 'characters' | 'none' | 'sentences' | 'words';
-  autoComplete: AutoComplete;
-  autoCorrect: boolean;
-  backgroundColor?: keyof MonoMultiColor;
-  blurOnSubmit: boolean;
-  color?: keyof MonoMultiColor;
-  disableFullscreenUI?: boolean;
-  editable: boolean;
-  emphasis?: FontEmphasis;
-  error?: boolean;
-  focusOnLoad?: boolean;
-  iconHeight?: number;
-  icons?: TextInputIcon[];
-  keyboardType: KeyboardTypeOptions;
-  multiline?: boolean;
-  numberOfLines?: number;
-  onBlur?: (text: string) => void;
-  onChangeText: (text: string) => void;
-  onFocus?: (text: string) => void;
-  onRef?: MutableRefObject<TextInputRef>;
-  onSubmitEditing: () => void;
-  placeholder: string;
-  pointerEvents?: PointerEvents;
-  returnKeyType: ReturnKeyTypeOptions;
-  secureTextEntry?: boolean;
-  style?: StyleProp<ViewStyle>;
-  submitClear?: boolean;
-  textContentType: TextContentType;
-  title?: string;
-  type?: FontType;
-  value: string;
+  readonly autoCapitalize: 'characters' | 'none' | 'sentences' | 'words';
+  readonly autoComplete: AutoComplete;
+  readonly autoCorrect: boolean;
+  readonly backgroundColor?: keyof MonoMultiColor;
+  readonly blurOnSubmit: boolean;
+  readonly color?: keyof MonoMultiColor;
+  readonly disableFullscreenUI?: boolean;
+  readonly editable: boolean;
+  readonly emphasis?: FontEmphasis;
+  readonly error?: boolean;
+  readonly focusOnLoad?: boolean;
+  readonly iconHeight?: number;
+  readonly icons?: TextInputIcon[];
+  readonly keyboardType: KeyboardTypeOptions;
+  readonly multiline?: boolean;
+  readonly numberOfLines?: number;
+  readonly onBlur?: (text: string) => void;
+  readonly onChangeText: (text: string) => void;
+  readonly onFocus?: (text: string) => void;
+  readonly onRef?: MutableRefObject<TextInputRef>;
+  readonly onSubmitEditing: () => void;
+  readonly placeholder: string;
+  readonly pointerEvents?: PointerEvents;
+  readonly returnKeyType: ReturnKeyTypeOptions;
+  readonly secureTextEntry?: boolean;
+  readonly style?: StyleProp<ViewStyle>;
+  readonly submitClear?: boolean;
+  readonly textContentType: TextContentType;
+  readonly title?: string;
+  readonly type?: FontType;
+  readonly value: string;
 };
 
-export const TextInput = memo(function TextInput({
+export const TextInput = ({
   autoCapitalize,
   autoComplete,
   autoCorrect,
@@ -127,7 +126,7 @@ export const TextInput = memo(function TextInput({
   error,
   focusOnLoad,
   iconHeight = spacing(5),
-  icons = [],
+  icons,
   keyboardType,
   multiline,
   numberOfLines,
@@ -146,7 +145,7 @@ export const TextInput = memo(function TextInput({
   title,
   type,
   value = '',
-}: TextInputProps) {
+}: TextInputProps) => {
   const [focus, setFocus] = useState(false);
   const [text, setText] = useState(value);
   const colors = useColors();
@@ -279,7 +278,7 @@ export const TextInput = memo(function TextInput({
           underlineColorAndroid="transparent"
           value={text}
         />
-        {icons.length > 0 && ( // TODO: refactor to declarative
+        {icons && icons.length > 0 ? (
           <View
             alignSelf="flex-end"
             flexDirection="row"
@@ -308,8 +307,8 @@ export const TextInput = memo(function TextInput({
               ),
             )}
           </View>
-        )}
+        ) : null}
       </View>
     </View>
   );
-});
+};

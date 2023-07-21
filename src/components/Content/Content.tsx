@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { v4 } from 'uuid';
 import { View } from '..';
@@ -8,11 +8,11 @@ import { Text } from '../Text';
 import { type ContentSections } from './types';
 
 type Props = {
-  center?: boolean;
-  sections: ContentSections;
+  readonly center?: boolean;
+  readonly sections: ContentSections;
 };
 
-export const Content = memo(function Content({ center, sections }: Props) {
+export const Content = ({ center, sections }: Props) => {
   const styles = StyleSheet.create({
     paragraph: { paddingBottom: spacing(4) },
     section: { paddingBottom: spacing(2) },
@@ -47,4 +47,4 @@ export const Content = memo(function Content({ center, sections }: Props) {
       ))}
     </View>
   );
-});
+};

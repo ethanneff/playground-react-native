@@ -1,16 +1,16 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet, type StyleProp, type ViewStyle } from 'react-native';
 import Original from 'react-native-vector-icons/MaterialCommunityIcons';
 import { type IconName } from './config';
 
 type Props = {
-  accessibilityLabel?: string;
-  accessible?: boolean;
-  color?: string;
-  invisible?: boolean;
-  name: IconName;
-  size?: number;
-  style?: StyleProp<ViewStyle>;
+  readonly accessibilityLabel?: string;
+  readonly accessible?: boolean;
+  readonly color?: string;
+  readonly invisible?: boolean;
+  readonly name: IconName;
+  readonly size?: number;
+  readonly style?: StyleProp<ViewStyle>;
 };
 
 const styles = StyleSheet.create({
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const Source = memo(function IconSource({
+export const Source = ({
   accessibilityLabel,
   accessible,
   color,
@@ -27,7 +27,7 @@ export const Source = memo(function IconSource({
   name,
   size,
   style,
-}: Props) {
+}: Props) => {
   const containerStyle = [invisible ? styles.invisible : undefined, style];
   return (
     <Original
@@ -39,4 +39,4 @@ export const Source = memo(function IconSource({
       style={containerStyle}
     />
   );
-});
+};

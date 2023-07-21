@@ -62,8 +62,8 @@ type OnViewableItemsChangedProps = {
 };
 
 type Props = {
-  horizontal?: boolean;
-  location: number;
+  readonly horizontal?: boolean;
+  readonly location: number;
 };
 
 export const ExampleList = ({ horizontal, location }: Props) => {

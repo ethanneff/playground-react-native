@@ -1,18 +1,16 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Button, Modal, Text } from '../../../../components';
 
 type Props = {
-  onPress: () => void;
+  readonly onPress: () => void;
 };
 
-export const EndGame = memo(function EndGame({ onPress }: Props) {
-  return (
-    <Modal showOverlay>
-      <Text title="good try" />
-      <Button
-        onPress={onPress}
-        title="again"
-      />
-    </Modal>
-  );
-});
+export const EndGame = ({ onPress }: Props) => (
+  <Modal showOverlay>
+    <Text title="good try" />
+    <Button
+      onPress={onPress}
+      title="again"
+    />
+  </Modal>
+);

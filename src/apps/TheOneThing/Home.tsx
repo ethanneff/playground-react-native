@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { v4 } from 'uuid';
 import {
   Card,
@@ -13,15 +13,15 @@ import {
 import { spacing, useAdminNavBack, useColors } from '../../features';
 
 type SectionProps = {
-  description?: string;
-  items: string[];
-  subtitle?: string;
-  title: string;
+  readonly description?: string;
+  readonly items: string[];
+  readonly subtitle?: string;
+  readonly title: string;
 };
 
 type ChecklistItemProps = {
-  index: number;
-  item: string;
+  readonly index: number;
+  readonly item: string;
 };
 
 const ChecklistItem = ({ index, item }: ChecklistItemProps) => {
@@ -68,38 +68,36 @@ const ChecklistItem = ({ index, item }: ChecklistItemProps) => {
   );
 };
 
-const Section = ({ description, items, subtitle, title }: SectionProps) => {
-  return (
-    <Card>
+const Section = ({ description, items, subtitle, title }: SectionProps) => (
+  <Card>
+    <Text
+      title={title}
+      type="h4"
+    />
+    {subtitle ? (
       <Text
-        title={title}
-        type="h4"
+        emphasis="medium"
+        style={{ paddingVertical: spacing(1) }}
+        title={subtitle}
+        type="subtitle1"
       />
-      {subtitle ? (
-        <Text
-          emphasis="medium"
-          style={{ paddingVertical: spacing(1) }}
-          title={subtitle}
-          type="subtitle1"
-        />
-      ) : null}
-      <View style={{ paddingTop: spacing(2) }}>
-        {description ? <Text title={description} /> : null}
-        {items.length
-          ? items.map((item, index) => (
-              <ChecklistItem
-                index={index}
-                item={item}
-                key={item}
-              />
-            ))
-          : null}
-      </View>
-    </Card>
-  );
-};
+    ) : null}
+    <View style={{ paddingTop: spacing(2) }}>
+      {description ? <Text title={description} /> : null}
+      {items.length
+        ? items.map((item, index) => (
+            <ChecklistItem
+              index={index}
+              item={item}
+              key={item}
+            />
+          ))
+        : null}
+    </View>
+  </Card>
+);
 
-export const Home = memo(function Home() {
+export const Home = () => {
   const colors = useColors();
   const { onLeftPress } = useAdminNavBack();
 
@@ -172,4 +170,4 @@ export const Home = memo(function Home() {
       </ScrollView>
     </Screen>
   );
-});
+};

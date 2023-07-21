@@ -1,11 +1,11 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Screen, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { useColors, useLayout } from '../../../../features';
 import { Balls } from './Balls';
 
-export const BouncingBalls = memo(function BouncingBalls() {
+export const BouncingBalls = () => {
   const colors = useColors();
   const { goBack } = useNavigation();
   const { layout, onLayout } = useLayout();
@@ -36,4 +36,4 @@ export const BouncingBalls = memo(function BouncingBalls() {
       </View>
     </Screen>
   );
-});
+};

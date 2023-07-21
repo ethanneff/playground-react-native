@@ -1,4 +1,4 @@
-import React, { memo, type ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import DeviceInfo from 'react-native-device-info';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
@@ -9,7 +9,7 @@ import { addFlipperMiddleware, Storage } from '../conversions';
 import { reducers } from './store';
 
 type Props = {
-  children: ReactNode;
+  readonly children: ReactNode;
 };
 
 const blacklist = ['gameOfLife', 'history'];
@@ -21,15 +21,13 @@ addFlipperMiddleware(middleware);
 const store = createStore(persistedReducer, applyMiddleware(...middleware));
 const persistor = persistStore(store);
 
-export const ReduxProvider = memo(function ReduxProvider({ children }: Props) {
-  return (
-    <Provider store={store}>
-      <PersistGate
-        loading={null}
-        persistor={persistor}
-      >
-        {children}
-      </PersistGate>
-    </Provider>
-  );
-});
+export const ReduxProvider = ({ children }: Props) => (
+  <Provider store={store}>
+    <PersistGate
+      loading={null}
+      persistor={persistor}
+    >
+      {children}
+    </PersistGate>
+  </Provider>
+);

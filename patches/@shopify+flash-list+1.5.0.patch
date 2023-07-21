@@ -1,5 +1,5 @@
 diff --git a/node_modules/@shopify/flash-list/dist/FlashList.js b/node_modules/@shopify/flash-list/dist/FlashList.js
-index 86495d4..6c35097 100644
+index ef5adf1..d13894c 100644
 --- a/node_modules/@shopify/flash-list/dist/FlashList.js
 +++ b/node_modules/@shopify/flash-list/dist/FlashList.js
 @@ -272,7 +272,7 @@ var FlashList = /** @class */ (function (_super) {
@@ -12,7 +12,7 @@ index 86495d4..6c35097 100644
              console.warn(Warnings_1.default.styleUnsupported);
          }
 diff --git a/node_modules/@shopify/flash-list/src/FlashList.tsx b/node_modules/@shopify/flash-list/src/FlashList.tsx
-index 0bf59bf..94dc678 100644
+index 4b1080c..9214b1d 100644
 --- a/node_modules/@shopify/flash-list/src/FlashList.tsx
 +++ b/node_modules/@shopify/flash-list/src/FlashList.tsx
 @@ -1,11 +1,12 @@
@@ -72,7 +72,7 @@ index 0bf59bf..94dc678 100644
  
  interface StickyProps extends StickyContainerProps {
    children: any;
-@@ -140,6 +141,7 @@ class FlashList<T> extends React.PureComponent<
+@@ -142,6 +143,7 @@ class FlashList<T> extends React.PureComponent<
      // `createAnimatedComponent` always passes a blank style object. To avoid warning while using AnimatedFlashList we've modified the check
      // `style` prop can be an array. So we need to validate every object in array. Check: https://github.com/Shopify/flash-list/issues/651
      if (

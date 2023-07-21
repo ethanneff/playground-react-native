@@ -1,9 +1,9 @@
-import React, { memo, useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { Screen, Text } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { useColors } from '../../../../features';
-import { type Segment } from './types';
 import { Wheel } from './Wheel';
+import { type Segment } from './types';
 
 const useSegments = () => {
   const colors = useColors();
@@ -29,7 +29,7 @@ const useSegments = () => {
   );
 };
 
-export const FortuneWheel = memo(function PlaygroundFortuneWheel() {
+export const FortuneWheel = () => {
   const segments = useSegments();
   const { goBack } = useNavigation();
   const [winner, setWinner] = useState<string | null>(null);
@@ -56,4 +56,4 @@ export const FortuneWheel = memo(function PlaygroundFortuneWheel() {
       />
     </Screen>
   );
-});
+};

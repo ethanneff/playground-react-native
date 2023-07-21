@@ -1,21 +1,16 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { spacing, useColors, type TagColor } from '../../features';
 import { Pressable } from '../Pressable';
 import { Text } from '../Text';
 
 type TagProps = {
-  color: keyof TagColor;
-  disabled?: boolean;
-  onPress?: () => void;
-  title: string;
+  readonly color: keyof TagColor;
+  readonly disabled?: boolean;
+  readonly onPress?: () => void;
+  readonly title: string;
 };
 
-export const Tag = memo(function Tag({
-  color,
-  disabled,
-  onPress,
-  title,
-}: TagProps) {
+export const Tag = ({ color, disabled, onPress, title }: TagProps) => {
   const colors = useColors();
   return (
     <Pressable
@@ -37,4 +32,4 @@ export const Tag = memo(function Tag({
       />
     </Pressable>
   );
-});
+};

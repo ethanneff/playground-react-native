@@ -1,4 +1,4 @@
-import React, { memo, type ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import {
   StyleSheet,
   type LayoutChangeEvent,
@@ -10,15 +10,15 @@ import { useAppSelector } from '../../redux';
 import { Pressable } from '../Pressable';
 
 type Props = {
-  children?: ReactNode | ReactNode[];
-  containerStyle?: StyleProp<ViewStyle>;
-  contentStyle?: StyleProp<ViewStyle>;
-  elevation?: number;
-  noFlex?: boolean;
-  onLayout?: (event: LayoutChangeEvent) => void;
-  onLongPress?: () => void;
-  onPress?: () => void;
-  testID?: string;
+  readonly children?: ReactNode | ReactNode[];
+  readonly containerStyle?: StyleProp<ViewStyle>;
+  readonly contentStyle?: StyleProp<ViewStyle>;
+  readonly elevation?: number;
+  readonly noFlex?: boolean;
+  readonly onLayout?: (event: LayoutChangeEvent) => void;
+  readonly onLongPress?: () => void;
+  readonly onPress?: () => void;
+  readonly testID?: string;
 };
 
 const getOpacity = (elevation: number) =>
@@ -28,7 +28,7 @@ const getOpacity = (elevation: number) =>
     ? 0.05
     : ((elevation - 2) * 0.01 + 0.07).toFixed(2);
 
-export const Card = memo(function Card({
+export const Card = ({
   children,
   containerStyle,
   contentStyle,
@@ -38,7 +38,7 @@ export const Card = memo(function Card({
   onLongPress,
   onPress,
   testID,
-}: Props) {
+}: Props) => {
   const colors = useColors();
   const dropShadow = useDropShadow();
   const currentTheme = useAppSelector((state) => state.theme.currentTheme);
@@ -80,4 +80,4 @@ export const Card = memo(function Card({
       {children}
     </Pressable>
   );
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
 import { Pressable, Text } from '../../../../components';
 import {
@@ -14,22 +14,22 @@ import {
 } from './utils';
 
 type Props = {
-  collision?: boolean;
-  count: number;
-  difficulty?: number;
-  layout: LayoutDimensions;
-  radius: number;
-  speed?: number;
+  readonly collision?: boolean;
+  readonly count: number;
+  readonly difficulty?: number;
+  readonly layout: LayoutDimensions;
+  readonly radius: number;
+  readonly speed?: number;
 };
 
-export const Balls = memo(function Balls({
+export const Balls = ({
   collision,
   count,
   difficulty = 0.8,
   layout,
   radius,
   speed = 5,
-}: Props) {
+}: Props) => {
   const colors = useColors();
   const useNativeDriver = useDriver();
   const items = useRef(getInitialItems({ count, layout, radius, speed }));
@@ -137,4 +137,4 @@ export const Balls = memo(function Balls({
       ))}
     </>
   );
-});
+};

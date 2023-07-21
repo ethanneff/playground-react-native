@@ -37,20 +37,18 @@ const tabIcons: TabIcons = {
 };
 
 const ImplementStack = createStackNavigator<ImplementStackRoutes>();
-const Implement = () => {
-  return (
-    <ImplementStack.Navigator screenOptions={noHeader}>
-      <ImplementStack.Screen
-        component={Projects}
-        name="projects"
-      />
-      <ImplementStack.Screen
-        component={Project}
-        name="project"
-      />
-    </ImplementStack.Navigator>
-  );
-};
+const Implement = () => (
+  <ImplementStack.Navigator screenOptions={noHeader}>
+    <ImplementStack.Screen
+      component={Projects}
+      name="projects"
+    />
+    <ImplementStack.Screen
+      component={Project}
+      name="project"
+    />
+  </ImplementStack.Navigator>
+);
 
 const TabStack = createBottomTabNavigator<HomeStackRoutes>();
 const Home = () => {

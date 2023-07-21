@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Card, Content, Screen, ScrollView } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { data } from './data';
 
-export const Paragraphs = memo(function Paragraphs() {
+export const Paragraphs = () => {
   const { goBack } = useNavigation();
 
   const colors = useColors();
@@ -28,4 +28,4 @@ export const Paragraphs = memo(function Paragraphs() {
       </ScrollView>
     </Screen>
   );
-});
+};

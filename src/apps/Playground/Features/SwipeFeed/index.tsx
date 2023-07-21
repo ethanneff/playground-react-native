@@ -1,5 +1,5 @@
 import { sub } from 'date-fns';
-import React, { memo, useCallback, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import {
   Animated,
   Image,
@@ -35,21 +35,21 @@ type SwipeItem = {
   title: string;
 };
 type SwipeCardProps = {
-  height: number;
-  index: number;
-  item: SwipeItem;
-  onSwipe: (value: boolean) => void;
-  onSwipeComplete: () => void;
-  onSwipePercentChange: (percent: number) => void;
+  readonly height: number;
+  readonly index: number;
+  readonly item: SwipeItem;
+  readonly onSwipe: (value: boolean) => void;
+  readonly onSwipeComplete: () => void;
+  readonly onSwipePercentChange: (percent: number) => void;
 };
 
-const SwipeCard = memo(function SwipeCard({
+const SwipeCard = ({
   height,
   item,
   onSwipe,
   onSwipeComplete,
   onSwipePercentChange,
-}: SwipeCardProps) {
+}: SwipeCardProps) => {
   const { body, button, date, icon, image, title } = item;
   const cardWidth = useRef(0);
   const colors = useColors();
@@ -175,7 +175,7 @@ const SwipeCard = memo(function SwipeCard({
       </View>
     </Animated.View>
   );
-});
+};
 
 const initialItems: SwipeItem[] = [
   {
@@ -241,11 +241,11 @@ const initialItems: SwipeItem[] = [
 ];
 
 type BadgeProps = {
-  count: number;
-  percent: number;
+  readonly count: number;
+  readonly percent: number;
 };
 
-const Badge = memo(function Badge({ count, percent }: BadgeProps) {
+const Badge = ({ count, percent }: BadgeProps) => {
   const size = spacing(6);
   const badgeSize = size * percent;
   const colors = useColors();
@@ -275,24 +275,20 @@ const Badge = memo(function Badge({ count, percent }: BadgeProps) {
         <Text
           adjustsFontSizeToFit
           color="primaryB"
-          title={`${count}`}
+          title={String(count)}
         />
       </View>
     </View>
   );
-});
-
-type SwipeCardsProps = {
-  height?: number;
-  items: SwipeItem[];
-  onSwipe: (value: boolean) => void;
 };
 
-const SwipeCards = memo(function SwipeCardList({
-  height = 125,
-  items,
-  onSwipe,
-}: SwipeCardsProps) {
+type SwipeCardsProps = {
+  readonly height?: number;
+  readonly items: SwipeItem[];
+  readonly onSwipe: (value: boolean) => void;
+};
+
+const SwipeCards = ({ height = 125, items, onSwipe }: SwipeCardsProps) => {
   const [feed, setFeed] = useState({
     items,
     percent: 1,
@@ -332,22 +328,20 @@ const SwipeCards = memo(function SwipeCardList({
       />
     </View>
   ) : null;
-});
+};
 
 const placeholder = require('./placeholder.png') as ImageSourcePropType;
 
-const ImagePlaceholder = memo(function ImagePlaceholder() {
-  return (
-    <Card>
-      <Image
-        source={placeholder}
-        style={{ borderRadius: 4, height: 100, width: '100%' }}
-      />
-    </Card>
-  );
-});
+const ImagePlaceholder = () => (
+  <Card>
+    <Image
+      source={placeholder}
+      style={{ borderRadius: 4, height: 100, width: '100%' }}
+    />
+  </Card>
+);
 
-export const SwipeFeed = memo(function SwipeFeed() {
+export const SwipeFeed = () => {
   const { goBack } = useNavigation();
   const colors = useColors();
   const [swiping, setSwiping] = useState(false);
@@ -387,4 +381,4 @@ export const SwipeFeed = memo(function SwipeFeed() {
       </ScrollView>
     </Screen>
   );
-});
+};

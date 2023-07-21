@@ -1,13 +1,13 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { StyleSheet, type ViewStyle } from 'react-native';
 import { v4 } from 'uuid';
 import { View } from '../../components';
 import { Text } from '../Text';
 
 type Props = {
-  center?: boolean;
-  style?: ViewStyle;
-  title: string;
+  readonly center?: boolean;
+  readonly style?: ViewStyle;
+  readonly title: string;
 };
 
 const ellipsis = ['', '.', '.', '.'];
@@ -21,11 +21,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const LoadingText = memo(function LoadingText({
-  center,
-  style,
-  title,
-}: Props) {
+export const LoadingText = ({ center, style, title }: Props) => {
   const containerStyles = [
     styles.row,
     center ? styles.center : undefined,
@@ -71,4 +67,4 @@ export const LoadingText = memo(function LoadingText({
       ))}
     </View>
   );
-});
+};

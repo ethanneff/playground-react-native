@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '..';
 import { spacing, useColors } from '../../features';
@@ -8,11 +8,11 @@ import { Text } from '../Text';
 import { type CarouselSlide } from './types';
 
 type Props = {
-  item: CarouselSlide;
-  width: number;
+  readonly item: CarouselSlide;
+  readonly width: number;
 };
 
-export const CarouselItem = memo(function Item({ item, width }: Props) {
+export const CarouselItem = ({ item, width }: Props) => {
   const colors = useColors();
   const styles = StyleSheet.create({
     item: {
@@ -53,4 +53,4 @@ export const CarouselItem = memo(function Item({ item, width }: Props) {
       </View>
     </View>
   );
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import {
   createBottomTabNavigator,
   createStackNavigator,
@@ -70,7 +70,7 @@ const Tabs = () => {
   );
 };
 
-export const Navigation = memo(function Navigation() {
+export const Navigation = () => {
   const { bottomScreenOptions, rightScreenOptions } = useNavScreenOptions();
   const auth = useAppSelector((state) => state.focus.auth.status);
 
@@ -137,4 +137,4 @@ export const Navigation = memo(function Navigation() {
       />
     </UnAuthStack.Navigator>
   );
-});
+};

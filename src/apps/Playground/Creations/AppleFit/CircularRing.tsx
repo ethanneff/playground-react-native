@@ -7,9 +7,9 @@ import { MovingKnob } from './MovingKnob';
 import { type Ring } from './types';
 
 type RingProps = {
-  ring: Ring;
-  strokeWidth: number;
-  theta: number;
+  readonly ring: Ring;
+  readonly strokeWidth: number;
+  readonly theta: number;
 };
 
 export const CircularRing = ({ ring, strokeWidth, theta }: RingProps) => {

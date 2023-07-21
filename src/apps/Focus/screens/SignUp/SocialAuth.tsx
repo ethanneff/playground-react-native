@@ -10,7 +10,7 @@ import { type UnAuthStackRoutes } from '../../types';
 import { SocialButton } from './SocialButton';
 
 type Props = {
-  disabled: boolean;
+  readonly disabled: boolean;
 };
 
 export const SocialAuth = ({ disabled }: Props) => {

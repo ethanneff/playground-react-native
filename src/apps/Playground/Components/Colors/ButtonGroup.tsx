@@ -1,20 +1,18 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { v4 } from 'uuid';
 import { Button, Text, View } from '../../../../components';
 import {
-  type FontEmphasis,
-  type MonoMultiColor,
   spacing,
   useColors,
+  type FontEmphasis,
+  type MonoMultiColor,
 } from '../../../../features';
 
 type ButtonGroupProps = {
-  emphasis: FontEmphasis;
+  readonly emphasis: FontEmphasis;
 };
 
-export const ButtonGroup = memo(function ButtonGroup({
-  emphasis,
-}: ButtonGroupProps) {
+export const ButtonGroup = ({ emphasis }: ButtonGroupProps) => {
   const colors = useColors();
   const keys = Object.keys(colors.text) as (keyof MonoMultiColor)[];
   const handlePress = useCallback(() => null, []);
@@ -53,4 +51,4 @@ export const ButtonGroup = memo(function ButtonGroup({
       ))}
     </View>
   );
-});
+};

@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Screen, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { ExampleList } from './ExampleList';
 import { ExampleScroll } from './ExampleScroll';
 
-export const ScrollViews = memo(function ScrollViews() {
+export const ScrollViews = () => {
   const { goBack } = useNavigation();
 
   return (
@@ -29,4 +29,4 @@ export const ScrollViews = memo(function ScrollViews() {
       </View>
     </Screen>
   );
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
   KeyboardAwareScrollView,
@@ -67,7 +67,7 @@ const createUserPreferences = async (
   await Collections.preferences.doc(query.docs[0].id).set(data);
 };
 
-export const SignUp = memo(function SignUp() {
+export const SignUp = () => {
   const { goBack, navigate } =
     useNavigation<StackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();
   const emailRef = useRef<TextInputRef>(null);
@@ -241,4 +241,4 @@ export const SignUp = memo(function SignUp() {
       </KeyboardAwareScrollView>
     </Screen>
   );
-});
+};

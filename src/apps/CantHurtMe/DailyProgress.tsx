@@ -1,7 +1,7 @@
 import add from 'date-fns/add';
 import format from 'date-fns/format';
 import isSameDay from 'date-fns/isSameDay';
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   FlashList,
   Icon,
@@ -27,7 +27,7 @@ type Item = {
 };
 
 type ProgressItemProps = {
-  item: Item;
+  readonly item: Item;
 };
 
 const ProgressItem = ({ item }: ProgressItemProps) => {
@@ -85,7 +85,7 @@ const ProgressItem = ({ item }: ProgressItemProps) => {
   );
 };
 
-export const DailyProgress = memo(function DailyProgress() {
+export const DailyProgress = () => {
   const data: Item[] = generateHistory();
 
   const renderItem = useCallback<FlashListRenderItem<Item>>(
@@ -105,4 +105,4 @@ export const DailyProgress = memo(function DailyProgress() {
       renderItem={renderItem}
     />
   );
-});
+};

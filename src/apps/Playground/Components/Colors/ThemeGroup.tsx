@@ -1,13 +1,13 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Button, View } from '../../../../components';
 import {
   changeTheme,
-  useAppSelector,
   useAppDispatch,
+  useAppSelector,
   type Theme,
 } from '../../../../redux';
 
-export const ThemeGroup = memo(function ThemeGroup() {
+export const ThemeGroup = () => {
   const dispatch = useAppDispatch();
   const currentTheme = useAppSelector((state) => state.theme.currentTheme);
   const themes = useAppSelector((state) => state.theme.themes);
@@ -26,4 +26,4 @@ export const ThemeGroup = memo(function ThemeGroup() {
       ))}
     </View>
   );
-});
+};

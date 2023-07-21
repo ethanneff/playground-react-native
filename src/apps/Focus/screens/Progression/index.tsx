@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import {
   Calendar,
   Card,
@@ -35,7 +35,7 @@ const categories: Category[] = [
   { id: '2', name: 'Lead Others', total: 12 },
 ].sort((a, b) => b.total - a.total);
 
-export const Progression = memo(function Progression() {
+export const Progression = () => {
   const colors = useColors();
   const { tabBarEdges } = useLayout();
 
@@ -78,4 +78,4 @@ export const Progression = memo(function Progression() {
       </ScrollView>
     </Screen>
   );
-});
+};

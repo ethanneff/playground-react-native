@@ -1,22 +1,22 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { spacing } from '../../features';
 import { Icon, type IconName } from '../Icon';
 import { Pressable } from '../Pressable';
 
 type Props = {
-  icon?: IconName;
-  notLeft?: boolean;
-  onPress?: () => void;
-  testID: string;
+  readonly icon?: IconName;
+  readonly notLeft?: boolean;
+  readonly onPress?: () => void;
+  readonly testID: string;
 };
 
-export const NavButton = memo(function NavButton({
+export const NavButton = ({
   icon = 'chevron-up',
   notLeft,
   onPress,
   testID,
-}: Props) {
+}: Props) => {
   const styles = StyleSheet.create({
     button: { padding: spacing(2) },
     buttonRight: { alignSelf: 'flex-end' },
@@ -37,4 +37,4 @@ export const NavButton = memo(function NavButton({
       />
     </Pressable>
   );
-});
+};

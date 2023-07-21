@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Screen, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { useColors } from '../../../../features';
 
-export const Tinder = memo(function PlaygroundTinder() {
+export const Tinder = () => {
   const colors = useColors();
   const { goBack } = useNavigation();
   const styles = StyleSheet.create({
@@ -21,4 +21,4 @@ export const Tinder = memo(function PlaygroundTinder() {
       <View style={styles.container} />
     </Screen>
   );
-});
+};

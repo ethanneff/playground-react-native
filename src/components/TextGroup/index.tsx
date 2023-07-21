@@ -7,10 +7,10 @@ import {
 } from 'react-native';
 
 type Props = {
-  children: ReactNode | ReactNode[];
-  style: StyleProp<TextStyle>;
+  readonly children: ReactNode | ReactNode[];
+  readonly style: StyleProp<TextStyle>;
 };
 
-export const TextGroup = ({ children, style }: Props) => {
-  return <OriginalText style={style}>{children}</OriginalText>;
-};
+export const TextGroup = ({ children, style }: Props) => (
+  <OriginalText style={style}>{children}</OriginalText>
+);

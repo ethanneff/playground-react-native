@@ -1,14 +1,14 @@
 import Original from '@mdi/react';
-import React, { type CSSProperties, memo } from 'react';
+import React, { type CSSProperties } from 'react';
 import { icon, type IconName } from './config';
 
 type Props = {
-  color?: string;
-  name: IconName;
-  style?: CSSProperties | undefined;
+  readonly color?: string;
+  readonly name: IconName;
+  readonly style?: CSSProperties | undefined;
 };
 
-export const Source = memo(function IconSource({ color, name, style }: Props) {
+export const Source = ({ color, name, style }: Props) => {
   const path = icon[name];
   return path ? (
     <Original
@@ -17,4 +17,4 @@ export const Source = memo(function IconSource({ color, name, style }: Props) {
       style={style}
     />
   ) : null;
-});
+};

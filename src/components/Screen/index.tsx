@@ -1,4 +1,4 @@
-import React, { memo, type ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import {
   StatusBar,
   StyleSheet,
@@ -13,29 +13,31 @@ import { type IconName } from '../Icon';
 import { NavBar } from './NavBar';
 
 type Props = {
-  border?: boolean;
-  children?: ReactNode;
-  dropShadow?: boolean;
-  edges?: Edge[];
-  leftIcon?: IconName;
-  onLayout?: (event: LayoutChangeEvent) => void;
-  onLeftPress?: () => void;
-  onRightPress?: () => void;
-  onSecondLeftPress?: () => void;
-  onSecondRightPress?: () => void;
-  rightIcon?: IconName;
-  secondLeftIcon?: IconName;
-  secondRightIcon?: IconName;
-  style?: StyleProp<ViewStyle>;
-  testID?: string;
-  title?: string;
+  readonly border?: boolean;
+  readonly children?: ReactNode;
+  readonly dropShadow?: boolean;
+  readonly edges?: Edge[];
+  readonly leftIcon?: IconName;
+  readonly onLayout?: (event: LayoutChangeEvent) => void;
+  readonly onLeftPress?: () => void;
+  readonly onRightPress?: () => void;
+  readonly onSecondLeftPress?: () => void;
+  readonly onSecondRightPress?: () => void;
+  readonly rightIcon?: IconName;
+  readonly secondLeftIcon?: IconName;
+  readonly secondRightIcon?: IconName;
+  readonly style?: StyleProp<ViewStyle>;
+  readonly testID?: string;
+  readonly title?: string;
 };
 
-export const Screen = memo(function Screen({
+const defaultEdges: Edge[] = ['top', 'left', 'right', 'bottom'];
+
+export const Screen = ({
   border,
   children,
   dropShadow,
-  edges = ['top', 'left', 'right', 'bottom'],
+  edges,
   leftIcon,
   onLayout,
   onLeftPress,
@@ -48,7 +50,7 @@ export const Screen = memo(function Screen({
   style,
   testID,
   title,
-}: Props) {
+}: Props) => {
   const colors = useColors();
   const styles = StyleSheet.create({
     container: { backgroundColor: colors.background.primaryA, flex: 1 },
@@ -56,7 +58,7 @@ export const Screen = memo(function Screen({
 
   return (
     <SafeAreaView
-      edges={edges}
+      edges={edges ?? defaultEdges}
       style={styles.container}
     >
       <StatusBar barStyle={colors.statusBar} />
@@ -83,4 +85,4 @@ export const Screen = memo(function Screen({
       </View>
     </SafeAreaView>
   );
-});
+};

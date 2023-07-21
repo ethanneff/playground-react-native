@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import Rate, { AndroidMarket } from 'react-native-rate';
 import { Button, Input, Modal, Text, View } from '../../components';
@@ -37,15 +37,14 @@ type CompleteState = {
 };
 
 type Props = {
-  onComplete: (completeState: CompleteState) => void;
+  readonly onComplete: (completeState: CompleteState) => void;
 };
 
-export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
+export const RateApp = ({ onComplete }: Props) => {
   const ratingRef = useRef(0);
   const navigatedToAppStore = useRef(false);
   const [form, setForm] = useState<State>(initialState);
   const styles = StyleSheet.create({
-    modal: { padding: spacing(6) },
     title: { paddingBottom: spacing(4) },
   });
   const completeState = useMemo(
@@ -199,4 +198,4 @@ export const RateApp = memo(function RateAppMemo({ onComplete }: Props) {
       )}
     </Modal>
   );
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import {
   FlashList,
@@ -49,7 +49,7 @@ type State = {
 const iconSearch = 'magnify';
 const textInputPlaceHolder = 'Search';
 
-export const SearchBar = memo(function PlaygroundSearchbar() {
+export const SearchBar = () => {
   const { goBack } = useNavigation();
   const colors = useColors();
   const [state, setState] = useState<State>({
@@ -69,9 +69,6 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
     ],
   });
   const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
     header: {
       backgroundColor: colors.background.secondary,
       height: spacing(20),
@@ -146,4 +143,4 @@ export const SearchBar = memo(function PlaygroundSearchbar() {
       </Animated.View>
     </Screen>
   );
-});
+};

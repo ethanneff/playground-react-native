@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { v4 } from 'uuid';
 import {
   Button,
@@ -24,7 +24,7 @@ import {
   getWinner,
 } from './utils';
 
-export const TicTacToe = memo(function TicTacToe() {
+export const TicTacToe = () => {
   const boardSize = 3;
   const colors = useColors();
   const { goBack } = useNavigation();
@@ -122,4 +122,4 @@ export const TicTacToe = memo(function TicTacToe() {
       </View>
     </Screen>
   );
-});
+};

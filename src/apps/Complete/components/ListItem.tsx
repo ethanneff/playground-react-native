@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import {
   Pressable,
@@ -8,7 +8,7 @@ import {
 } from '../../../components';
 import { useNavigation } from '../../../conversions';
 import { useColors } from '../../../features';
-import { useAppSelector, useAppDispatch } from '../../../redux';
+import { useAppDispatch, useAppSelector } from '../../../redux';
 import {
   navItemDetails,
   navItemProject,
@@ -19,16 +19,12 @@ import { type ImplementTabNavigation } from '../navigationTypes';
 import { completeConfig } from '../utils';
 
 type ListItemProps = {
-  index: number;
-  itemId: string;
-  parentItemId: string;
+  readonly index: number;
+  readonly itemId: string;
+  readonly parentItemId: string;
 };
 
-export const ListItem = memo(function ListItem({
-  index,
-  itemId,
-  parentItemId,
-}: ListItemProps) {
+export const ListItem = ({ index, itemId, parentItemId }: ListItemProps) => {
   const item = useAppSelector((s) => s.completeItem.items[itemId]);
   const parentChildrenCount = useAppSelector(
     (s) => s.completeItem.items[parentItemId].children.length,
@@ -129,4 +125,4 @@ export const ListItem = memo(function ListItem({
       />
     </Pressable>
   );
-});
+};

@@ -1,10 +1,10 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Button, View } from '../../../../components';
 import { spacing } from '../../../../features';
-import { useAppSelector, useAppDispatch } from '../../../../redux';
+import { useAppDispatch, useAppSelector } from '../../../../redux';
 import { resetBoard, toggleRun } from './redux';
 
-export const Buttons = memo(function Buttons() {
+export const Buttons = () => {
   const dispatch = useAppDispatch();
   const run = useAppSelector((state) => state.gameOfLife.run);
   const onRandom = useCallback(() => dispatch(resetBoard(0.5)), [dispatch]);
@@ -36,4 +36,4 @@ export const Buttons = memo(function Buttons() {
       />
     </View>
   );
-});
+};

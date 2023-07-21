@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Keyboard } from 'react-native';
 import {
   Button,
@@ -11,11 +11,11 @@ import {
 } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
-import { useAppSelector, useAppDispatch } from '../../../../redux';
+import { useAppDispatch, useAppSelector } from '../../../../redux';
 import { DeleteModal, ItemDetailHeader, ItemEdit } from '../../components';
 import { removeItem, removeItemFromItem, updateItem } from '../../models';
 
-export const ItemDetail = memo(function ItemDetail() {
+export const ItemDetail = () => {
   const dispatch = useAppDispatch();
   const { goBack } = useNavigation();
   const colors = useColors();
@@ -157,4 +157,4 @@ export const ItemDetail = memo(function ItemDetail() {
       ) : null}
     </>
   );
-});
+};

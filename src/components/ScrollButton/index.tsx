@@ -14,12 +14,12 @@ import { getIcon, getPlacement } from './utils';
 
 type Position = 'bottom' | 'left' | 'right' | 'top';
 type Props = {
-  backgroundColor: keyof MonoMultiColor;
-  duration?: number;
-  onPress?: () => void;
-  position: Position;
-  title: string;
-  visible: boolean;
+  readonly backgroundColor: keyof MonoMultiColor;
+  readonly duration?: number;
+  readonly onPress?: () => void;
+  readonly position: Position;
+  readonly title: string;
+  readonly visible: boolean;
 };
 
 export const ScrollButton = ({

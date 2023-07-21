@@ -7,12 +7,12 @@ import { MaskedView } from '../MaskedView';
 import { View } from '../View';
 
 type Props = {
-  backgroundColor?: string;
-  borderRadius?: number;
-  duration?: number;
-  foregroundColor?: string;
-  height?: number;
-  width?: number;
+  readonly backgroundColor?: string;
+  readonly borderRadius?: number;
+  readonly duration?: number;
+  readonly foregroundColor?: string;
+  readonly height?: number;
+  readonly width?: number;
 };
 
 export const SkeletonLoader = ({

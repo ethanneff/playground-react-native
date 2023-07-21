@@ -5,8 +5,8 @@ import { DailyProgress } from './DailyProgress';
 import { ProfileLevel } from './ProfileLevel';
 
 type Props = {
-  onProfilePress: () => void;
-  onSettingsPress: () => void;
+  readonly onProfilePress: () => void;
+  readonly onSettingsPress: () => void;
 };
 
 export const Header = ({ onProfilePress, onSettingsPress }: Props) => (

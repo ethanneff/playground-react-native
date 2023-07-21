@@ -3,9 +3,8 @@ type GetRandomRange = {
   min: number;
 };
 
-const getRandomRange = ({ max, min }: GetRandomRange) => {
-  return Math.floor(Math.random() * (max - min) + min);
-};
+const getRandomRange = ({ max, min }: GetRandomRange) =>
+  Math.floor(Math.random() * (max - min) + min);
 
 type GetNewLocation = {
   location: number;

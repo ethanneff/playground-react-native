@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   FlashList,
   Image,
@@ -21,7 +21,7 @@ const addNewBatch = (data: number[]): number[] => {
   return [...data, ...newData];
 };
 
-export const ImageCollection = memo(function ImageCollection() {
+export const ImageCollection = () => {
   const { goBack } = useNavigation();
   const width = useAppSelector(getWidth);
   const landscape = useAppSelector(getLandscapeOrientation);
@@ -86,4 +86,4 @@ export const ImageCollection = memo(function ImageCollection() {
       />
     </Screen>
   );
-});
+};

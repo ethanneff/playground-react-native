@@ -1,17 +1,17 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Text, View } from '../../../../components';
 import {
-  type FontEmphasis,
   fontSizes,
-  type FontType,
   spacing,
+  type FontEmphasis,
+  type FontType,
 } from '../../../../features';
 
 type FontGroupProps = {
-  emphasis: FontEmphasis;
+  readonly emphasis: FontEmphasis;
 };
 
-export const FontGroup = memo(function FontGroup({ emphasis }: FontGroupProps) {
+export const FontGroup = ({ emphasis }: FontGroupProps) => {
   const sizes = Object.keys(fontSizes) as FontType[];
   return (
     <View style={{ alignItems: 'center', flex: 1 }}>
@@ -33,4 +33,4 @@ export const FontGroup = memo(function FontGroup({ emphasis }: FontGroupProps) {
       ))}
     </View>
   );
-});
+};

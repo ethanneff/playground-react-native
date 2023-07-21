@@ -1,19 +1,19 @@
-import React, { memo, useCallback, type ReactNode } from 'react';
+import React, { useCallback, type ReactNode } from 'react';
 import { Keyboard, type LayoutChangeEvent } from 'react-native';
 import { useColors, type MonoMultiColor } from '../../features';
 import { Pressable } from '../Pressable';
 
 type HandleKeyboardProps = {
-  backgroundColor?: keyof MonoMultiColor;
-  children: ReactNode;
-  onLayout: (event: LayoutChangeEvent) => void;
+  readonly backgroundColor?: keyof MonoMultiColor;
+  readonly children: ReactNode;
+  readonly onLayout: (event: LayoutChangeEvent) => void;
 };
 
-export const KeyboardHandler = memo(function KeyboardHandler({
+export const KeyboardHandler = ({
   backgroundColor,
   children,
   onLayout,
-}: HandleKeyboardProps) {
+}: HandleKeyboardProps) => {
   const colors = useColors();
 
   const onDismissKeyboard = useCallback(() => {
@@ -34,4 +34,4 @@ export const KeyboardHandler = memo(function KeyboardHandler({
       {children}
     </Pressable>
   );
-});
+};

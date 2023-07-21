@@ -3,8 +3,8 @@ import { Image, StyleSheet, type ImageSourcePropType } from 'react-native';
 import { MaskedView, View } from '../../../../components';
 
 type Props = {
-  colors: [string, string];
-  size: number;
+  readonly colors: [string, string];
+  readonly size: number;
 };
 
 export const AngularGradient = ({ colors: [start, end], size }: Props) => {

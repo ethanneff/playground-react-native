@@ -59,7 +59,6 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
-    'plugin:prettier/recommended',
     'plugin:testing-library/react',
     'plugin:react-redux/recommended',
     // 'plugin:react-perf/recommended',
@@ -69,6 +68,7 @@ module.exports = {
     'plugin:@typescript-eslint/strict',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:typescript-sort-keys/recommended',
+    'prettier',
   ],
   root: true,
   env: { node: true },
@@ -109,7 +109,6 @@ module.exports = {
     '@typescript-eslint/prefer-regexp-exec': 'error',
     '@typescript-eslint/promise-function-async': 'error',
     '@typescript-eslint/sort-type-constituents': 'error',
-    '@typescript-eslint/sort-type-union-intersection-members': 'error',
     '@typescript-eslint/type-annotation-spacing': 'error',
     // sorting
     'sort-destructure-keys/sort-destructure-keys': 'error',

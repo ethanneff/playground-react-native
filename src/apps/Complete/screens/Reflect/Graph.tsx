@@ -11,9 +11,9 @@ type DataPoint = {
 };
 
 type GraphProps = {
-  data: DataPoint[];
-  height: number;
-  width: number;
+  readonly data: DataPoint[];
+  readonly height: number;
+  readonly width: number;
 };
 
 const strokeWidth = 4;

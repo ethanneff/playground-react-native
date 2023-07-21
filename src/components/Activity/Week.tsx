@@ -1,6 +1,6 @@
 import { format, toDate } from 'date-fns';
 
-import React, { memo } from 'react';
+import React from 'react';
 import { View } from '../../components';
 import { spacing } from '../../features';
 import { Text } from '../Text';
@@ -8,20 +8,14 @@ import { Day } from './Day';
 import { type ActivityDay, type ActivityWeek } from './types';
 
 type Props = {
-  item: ActivityWeek;
-  margin: number;
-  max: number;
-  onPress: (item: ActivityDay) => () => void;
-  size: number;
+  readonly item: ActivityWeek;
+  readonly margin: number;
+  readonly max: number;
+  readonly onPress: (item: ActivityDay) => () => void;
+  readonly size: number;
 };
 
-export const Week = memo(function Week({
-  item,
-  margin,
-  max,
-  onPress,
-  size,
-}: Props) {
+export const Week = ({ item, margin, max, onPress, size }: Props) => {
   const first = toDate(item[0].date);
   const showHeader = Number(format(first, 'dd')) <= 7;
   const header = showHeader ? format(first, 'MMM') : ' ';
@@ -47,4 +41,4 @@ export const Week = memo(function Week({
       ))}
     </View>
   );
-});
+};

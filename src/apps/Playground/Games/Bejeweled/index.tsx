@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { v4 } from 'uuid';
 import { Pressable, Screen, ScrollView, View } from '../../../../components';
@@ -17,9 +17,7 @@ type Gem = {
 type Board = Gem[][];
 type Matches = Record<string, Vector>;
 
-const getRandom = (max: number) => {
-  return Math.floor(Math.random() * max);
-};
+const getRandom = (max: number) => Math.floor(Math.random() * max);
 
 const getInitialState = (rows: number, cols: number, gems: Gem[]): Board => {
   const col = [];
@@ -61,7 +59,7 @@ const getMatches = (board: Board): Matches => {
 export type States = 'fill gems' | 'idle' | 'swap back' | 'swap' | 'validate';
 
 const initialSelected = { x: -10, y: -10 };
-export const Bejeweled = memo(function PlaygroundBejeweled() {
+export const Bejeweled = () => {
   const { goBack } = useNavigation();
   const dimension = useAppSelector(getSmallestDimension);
 
@@ -146,4 +144,4 @@ export const Bejeweled = memo(function PlaygroundBejeweled() {
       </ScrollView>
     </Screen>
   );
-});
+};

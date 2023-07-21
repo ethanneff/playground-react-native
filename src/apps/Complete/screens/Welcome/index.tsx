@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Button, Carousel, Screen, View } from '../../../../components';
 import { spacing, useAuth } from '../../../../features';
 import { useAppDispatch } from '../../../../redux';
@@ -6,7 +6,7 @@ import { createItem, loadUser, login } from '../../models';
 import { completeConfig, getDefaultUserTemplate } from '../../utils';
 import { slides } from './slides';
 
-export const Welcome = memo(function Welcome() {
+export const Welcome = () => {
   const dispatch = useAppDispatch();
   const { signInAnonymously } = useAuth();
 
@@ -39,4 +39,4 @@ export const Welcome = memo(function Welcome() {
       </View>
     </Screen>
   );
-});
+};

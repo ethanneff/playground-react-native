@@ -1,5 +1,4 @@
 import React, {
-  memo,
   useCallback,
   useEffect,
   useRef,
@@ -29,32 +28,32 @@ type TextContentType = 'none' | 'password' | 'username';
 // TODO: fix blurOnSubmit=false
 
 type Props = {
-  autoCorrect?: boolean;
-  blurOnSubmit?: boolean;
-  clearIcon?: IconName;
-  containerStyle?: StyleProp<ViewStyle>;
-  disableFullscreenUI?: boolean;
-  editable?: boolean;
-  error?: string;
-  errorIcon?: IconName;
-  flex?: boolean;
-  focusOnMount?: boolean;
-  hideError?: boolean;
-  keyboardType?: KeyboardTypeOptions;
-  onChangeText: (text: string) => void;
-  onRef?: MutableRefObject<TextInputRef>;
-  onSubmitEditing?: () => void;
-  optional?: boolean;
-  placeholder?: string;
-  returnKeyType?: ReturnKeyTypeOptions;
-  secureTextEntry?: boolean;
-  textContentType?: TextContentType;
-  textStyle?: StyleProp<TextStyle>;
-  title?: string;
-  value: string;
+  readonly autoCorrect?: boolean;
+  readonly blurOnSubmit?: boolean;
+  readonly clearIcon?: IconName;
+  readonly containerStyle?: StyleProp<ViewStyle>;
+  readonly disableFullscreenUI?: boolean;
+  readonly editable?: boolean;
+  readonly error?: string;
+  readonly errorIcon?: IconName;
+  readonly flex?: boolean;
+  readonly focusOnMount?: boolean;
+  readonly hideError?: boolean;
+  readonly keyboardType?: KeyboardTypeOptions;
+  readonly onChangeText: (text: string) => void;
+  readonly onRef?: MutableRefObject<TextInputRef>;
+  readonly onSubmitEditing?: () => void;
+  readonly optional?: boolean;
+  readonly placeholder?: string;
+  readonly returnKeyType?: ReturnKeyTypeOptions;
+  readonly secureTextEntry?: boolean;
+  readonly textContentType?: TextContentType;
+  readonly textStyle?: StyleProp<TextStyle>;
+  readonly title?: string;
+  readonly value: string;
 };
 
-export const Input = memo(function Input({
+export const Input = ({
   autoCorrect,
   blurOnSubmit = true,
   clearIcon = 'close-circle',
@@ -78,7 +77,7 @@ export const Input = memo(function Input({
   textStyle,
   title = '',
   value,
-}: Props) {
+}: Props) => {
   const fromOnMount = useRef(false);
   const [focus, setFocus] = useState(false);
   const colors = useColors();
@@ -224,4 +223,4 @@ export const Input = memo(function Input({
       )}
     </View>
   );
-});
+};

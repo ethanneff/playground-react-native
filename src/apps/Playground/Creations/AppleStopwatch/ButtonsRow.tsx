@@ -1,14 +1,12 @@
-import React, { memo, type ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '../../../../components';
 
 type ButtonRowProps = {
-  children: ReactNode | ReactNode[];
+  readonly children: ReactNode | ReactNode[];
 };
 
-export const ButtonsRow = memo(function ButtonsRow({
-  children,
-}: ButtonRowProps) {
+export const ButtonsRow = ({ children }: ButtonRowProps) => {
   const styles = StyleSheet.create({
     buttonsRow: {
       alignSelf: 'stretch',
@@ -19,4 +17,4 @@ export const ButtonsRow = memo(function ButtonsRow({
     },
   });
   return <View style={styles.buttonsRow}>{children}</View>;
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
   Modal,
@@ -17,7 +17,7 @@ import { type LandingStackRoutes } from '../../navigationTypes';
 
 const initialRef = { email: '' };
 const initialState = { complete: false, loading: false };
-export const PasswordReset = memo(function PasswordReset() {
+export const PasswordReset = () => {
   const colors = useColors();
   const form = useRef(initialRef);
   const [state, setState] = useState(initialState);
@@ -99,4 +99,4 @@ export const PasswordReset = memo(function PasswordReset() {
       />
     </Modal>
   ) : null;
-});
+};

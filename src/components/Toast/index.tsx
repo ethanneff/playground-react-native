@@ -13,14 +13,14 @@ import { View } from '../View';
 export const Toast = Original;
 
 type CustomToastProps = {
-  center?: boolean;
-  color: keyof MultiColor;
-  description?: string;
-  title: string;
+  readonly center?: boolean;
+  readonly color: keyof MultiColor;
+  readonly description?: string;
+  readonly title: string;
 };
 
 type ToastProps = {
-  props: CustomToastProps;
+  readonly props: CustomToastProps;
 };
 
 const CustomToast = ({
@@ -66,53 +66,45 @@ const CustomToast = ({
 
 const PositiveToast = ({
   props: { center, description, title },
-}: ToastProps) => {
-  return (
-    <CustomToast
-      center={center}
-      color="positive"
-      description={description}
-      title={title}
-    />
-  );
-};
+}: ToastProps) => (
+  <CustomToast
+    center={center}
+    color="positive"
+    description={description}
+    title={title}
+  />
+);
 
 const WarningToast = ({
   props: { center, description, title },
-}: ToastProps) => {
-  return (
-    <CustomToast
-      center={center}
-      color="warning"
-      description={description}
-      title={title}
-    />
-  );
-};
+}: ToastProps) => (
+  <CustomToast
+    center={center}
+    color="warning"
+    description={description}
+    title={title}
+  />
+);
 
 const NegativeToast = ({
   props: { center, description, title },
-}: ToastProps) => {
-  return (
-    <CustomToast
-      center={center}
-      color="negative"
-      description={description}
-      title={title}
-    />
-  );
-};
+}: ToastProps) => (
+  <CustomToast
+    center={center}
+    color="negative"
+    description={description}
+    title={title}
+  />
+);
 
-const AccentToast = ({ props: { center, description, title } }: ToastProps) => {
-  return (
-    <CustomToast
-      center={center}
-      color="accent"
-      description={description}
-      title={title}
-    />
-  );
-};
+const AccentToast = ({ props: { center, description, title } }: ToastProps) => (
+  <CustomToast
+    center={center}
+    color="accent"
+    description={description}
+    title={title}
+  />
+);
 
 export const toastConfig = {
   accent: AccentToast,

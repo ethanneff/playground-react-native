@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Screen } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 
-export const SlotMachine = memo(function SlotMachine() {
+export const SlotMachine = () => {
   const { goBack } = useNavigation();
 
   return (
@@ -11,4 +11,4 @@ export const SlotMachine = memo(function SlotMachine() {
       title="Slot Machine"
     />
   );
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import {
   Animated,
   PanResponder,
@@ -14,17 +14,17 @@ import { Pressable } from '../Pressable';
 import { Text } from '../Text';
 
 type NotificationProps = {
-  dismissDelay?: number;
-  height?: number;
-  noSwipe?: boolean;
-  onBackgroundPress?: () => void;
-  onCancel?: () => void;
-  thresholdPercent?: number;
-  title: string;
+  readonly dismissDelay?: number;
+  readonly height?: number;
+  readonly noSwipe?: boolean;
+  readonly onBackgroundPress?: () => void;
+  readonly onCancel?: () => void;
+  readonly thresholdPercent?: number;
+  readonly title: string;
 };
 
 const initialPosition = { x: 0, y: 0 };
-export const ActionSheet = memo(function ActionSheet({
+export const ActionSheet = ({
   dismissDelay = 100,
   height = spacing(18),
   noSwipe,
@@ -32,7 +32,7 @@ export const ActionSheet = memo(function ActionSheet({
   onCancel,
   thresholdPercent = 0.9,
   title,
-}: NotificationProps) {
+}: NotificationProps) => {
   const colors = useColors();
   const styles = StyleSheet.create({
     flex: { flex: 1 },
@@ -157,4 +157,4 @@ export const ActionSheet = memo(function ActionSheet({
       />
     </Animated.View>
   );
-});
+};

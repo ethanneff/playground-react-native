@@ -1,23 +1,17 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Icon, type IconName, View } from '../../../../components';
+import { Icon, View, type IconName } from '../../../../components';
 import { type MonoMultiColor } from '../../../../features';
 
 type Props = {
-  color: keyof MonoMultiColor;
-  icon: IconName;
-  index: number;
-  size: number;
-  strokeWidth: number;
+  readonly color: keyof MonoMultiColor;
+  readonly icon: IconName;
+  readonly index: number;
+  readonly size: number;
+  readonly strokeWidth: number;
 };
 
-export const Stickers = memo(function Sticker({
-  color,
-  icon,
-  index,
-  size,
-  strokeWidth,
-}: Props) {
+export const Stickers = ({ color, icon, index, size, strokeWidth }: Props) => {
   const styles = StyleSheet.create({
     canvas: { height: size, width: size },
     overlay: {
@@ -43,4 +37,4 @@ export const Stickers = memo(function Sticker({
       </View>
     </View>
   );
-});
+};

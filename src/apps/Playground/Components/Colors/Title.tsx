@@ -1,18 +1,16 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Text } from '../../../../components';
 import { spacing } from '../../../../features';
 
 type Props = {
-  title: string;
+  readonly title: string;
 };
 
-export const Title = memo(function Title({ title }: Props) {
-  return (
-    <Text
-      center
-      style={{ padding: spacing(8) }}
-      title={title}
-      type="h4"
-    />
-  );
-});
+export const Title = ({ title }: Props) => (
+  <Text
+    center
+    style={{ padding: spacing(8) }}
+    title={title}
+    type="h4"
+  />
+);

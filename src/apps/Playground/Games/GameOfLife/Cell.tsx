@@ -1,19 +1,19 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Pressable } from '../../../../components';
 import { useColors } from '../../../../features';
 import {
   getSmallestDimension,
-  useAppSelector,
   useAppDispatch,
+  useAppSelector,
 } from '../../../../redux';
 import { getCell, updateCell } from './redux';
 
 type Props = {
-  x: number;
-  y: number;
+  readonly x: number;
+  readonly y: number;
 };
 
-export const Cell = memo(function Cell({ x, y }: Props) {
+export const Cell = ({ x, y }: Props) => {
   const colors = useColors();
   const dispatch = useAppDispatch();
   const smallest = useAppSelector(getSmallestDimension);
@@ -42,4 +42,4 @@ export const Cell = memo(function Cell({ x, y }: Props) {
       onPress={onItemPress(x, y)}
     />
   );
-});
+};

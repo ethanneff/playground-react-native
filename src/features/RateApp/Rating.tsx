@@ -1,20 +1,20 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { v4 } from 'uuid';
 import { Icon, Pressable, View, type IconName } from '../../components';
 import { spacing, type MonoMultiColor } from '../../features';
 
 type Props = {
-  colorFilled?: keyof MonoMultiColor;
-  colorUnfilled?: keyof MonoMultiColor;
-  count: number;
-  iconFilled?: IconName;
-  iconUnfilled?: IconName;
-  onPress: (index: number) => void;
-  rating: number;
-  size: number;
+  readonly colorFilled?: keyof MonoMultiColor;
+  readonly colorUnfilled?: keyof MonoMultiColor;
+  readonly count: number;
+  readonly iconFilled?: IconName;
+  readonly iconUnfilled?: IconName;
+  readonly onPress: (index: number) => void;
+  readonly rating: number;
+  readonly size: number;
 };
 
-export const Rating = memo(function RatingMemo({
+export const Rating = ({
   colorFilled = 'accent',
   colorUnfilled = 'secondary',
   count,
@@ -23,7 +23,7 @@ export const Rating = memo(function RatingMemo({
   onPress,
   rating,
   size,
-}: Props) {
+}: Props) => {
   const handleOnPress = useCallback(
     (index: number) => () => {
       onPress(index);
@@ -54,4 +54,4 @@ export const Rating = memo(function RatingMemo({
         ))}
     </View>
   );
-});
+};

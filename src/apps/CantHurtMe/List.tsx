@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { StyleSheet } from 'react-native';
 import {
   Card,
@@ -14,14 +14,11 @@ import { Header } from './Header';
 import { app } from './data';
 
 type Props = {
-  onProfilePress: () => void;
-  onSettingsPress: () => void;
+  readonly onProfilePress: () => void;
+  readonly onSettingsPress: () => void;
 };
 
-export const List = memo(function List({
-  onProfilePress,
-  onSettingsPress,
-}: Props) {
+export const List = ({ onProfilePress, onSettingsPress }: Props) => {
   const landscape = useAppSelector(getLandscapeOrientation);
   const columns = landscape ? 5 : 2;
 
@@ -82,4 +79,4 @@ export const List = memo(function List({
       />
     </View>
   );
-});
+};

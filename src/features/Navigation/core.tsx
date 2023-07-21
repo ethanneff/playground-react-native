@@ -1,17 +1,17 @@
-import React, { memo, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import Config from 'react-native-config';
-import Admin from '../../apps/Admin';
-import CantHurtMe from '../../apps/CantHurtMe';
-import Checklists from '../../apps/Checklists';
-import ComfortZone from '../../apps/ComfortZone';
-import Complete from '../../apps/Complete';
-import DeepWork from '../../apps/DeepWork';
-import Focus from '../../apps/Focus';
-import Journal from '../../apps/Journal';
-import Playground from '../../apps/Playground';
-import Portfolio from '../../apps/Portfolio';
-import Progress from '../../apps/Progress';
-import TheOneThing from '../../apps/TheOneThing';
+import { Admin } from '../../apps/Admin';
+import { CantHurtMe } from '../../apps/CantHurtMe';
+import { Checklists } from '../../apps/Checklists';
+import { ComfortZone } from '../../apps/ComfortZone';
+import { Complete } from '../../apps/Complete';
+import { DeepWork } from '../../apps/DeepWork';
+import { Focus } from '../../apps/Focus';
+import { Journal } from '../../apps/Journal';
+import { Playground } from '../../apps/Playground';
+import { Portfolio } from '../../apps/Portfolio';
+import { Progress } from '../../apps/Progress';
+import { TheOneThing } from '../../apps/TheOneThing';
 import { Loader } from '../../components';
 import { createStackNavigator, NavigationContainer } from '../../conversions';
 import { type RootRoutes } from './types';
@@ -23,7 +23,7 @@ const linking = {
   prefixes: ['https://app.example.com', 'eneff://'],
 };
 
-export const NavigationProvider = memo(function NavigationProvider() {
+export const NavigationProvider = () => {
   const { initialState, isReady, onRef, onStateChange } = usePersistedState();
   const { rightScreenOptions } = useNavScreenOptions();
   const fallback = <Loader />;
@@ -96,4 +96,4 @@ export const NavigationProvider = memo(function NavigationProvider() {
       </NavigationContainer>
     </Suspense>
   );
-});
+};

@@ -1,24 +1,18 @@
 import { isToday } from 'date-fns';
-import React, { memo } from 'react';
+import React from 'react';
 import { colorWithOpacity, useColors } from '../../features';
 import { Pressable } from '../Pressable';
 import { type ActivityDay } from './types';
 
 type Props = {
-  day: ActivityDay;
-  margin: number;
-  max: number;
-  onPress: (item: ActivityDay) => () => void;
-  size: number;
+  readonly day: ActivityDay;
+  readonly margin: number;
+  readonly max: number;
+  readonly onPress: (item: ActivityDay) => () => void;
+  readonly size: number;
 };
 
-export const Day = memo(function Day({
-  day,
-  margin,
-  max,
-  onPress,
-  size,
-}: Props) {
+export const Day = ({ day, margin, max, onPress, size }: Props) => {
   const colors = useColors();
   const backgroundColor =
     day.count === 0
@@ -40,4 +34,4 @@ export const Day = memo(function Day({
       onPress={onPress(day)}
     />
   );
-});
+};

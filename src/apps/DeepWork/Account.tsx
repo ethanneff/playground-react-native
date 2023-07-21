@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Calendar, Card, Screen, ScrollView, Text } from '../../components';
 import { useNavigation } from '../../conversions';
 import { spacing, useColors } from '../../features';
 
-export const Account = memo(function Account() {
+export const Account = () => {
   const { goBack } = useNavigation();
   const colors = useColors();
 
@@ -28,4 +28,4 @@ export const Account = memo(function Account() {
       </ScrollView>
     </Screen>
   );
-});
+};

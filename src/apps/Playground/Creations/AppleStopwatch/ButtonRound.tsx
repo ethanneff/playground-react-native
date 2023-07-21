@@ -1,23 +1,23 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { StyleSheet } from 'react-native';
 import { Pressable, Text, View } from '../../../../components';
 import { useColors, type MonoMultiColor } from '../../../../features';
 
 type RoundButtonProps = {
-  background: string;
-  color: keyof MonoMultiColor;
-  disabled?: boolean;
-  onPress: () => void;
-  title: string;
+  readonly background: string;
+  readonly color: keyof MonoMultiColor;
+  readonly disabled?: boolean;
+  readonly onPress: () => void;
+  readonly title: string;
 };
 
-export const ButtonRound = memo(function ButtonRound({
+export const ButtonRound = ({
   background,
   color,
   disabled = false,
   onPress,
   title,
-}: RoundButtonProps) {
+}: RoundButtonProps) => {
   const colorScheme = useColors();
   const styles = StyleSheet.create({
     button: {
@@ -62,4 +62,4 @@ export const ButtonRound = memo(function ButtonRound({
       </View>
     </Pressable>
   );
-});
+};

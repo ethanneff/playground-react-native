@@ -14,52 +14,52 @@ import { useColors, type MonoMultiColor } from '../../features';
 export type ViewRef = Original | null;
 
 type Props = {
-  accessibilityLabel?: string;
-  accessibilityRole?: AccessibilityRole;
-  accessible?: boolean;
-  alignContent?:
+  readonly accessibilityLabel?: string;
+  readonly accessibilityRole?: AccessibilityRole;
+  readonly accessible?: boolean;
+  readonly alignContent?:
     | 'center'
     | 'flex-end'
     | 'flex-start'
     | 'space-around'
     | 'space-between'
     | 'stretch';
-  alignItems?: FlexAlignType;
-  alignSelf?: FlexAlignType;
-  backgroundColor?: keyof MonoMultiColor;
-  borderRadius?: number;
-  children?: ReactNode;
-  collapsable?: boolean;
-  cursor?: 'default' | 'pointer';
-  display?: 'flex' | 'none';
-  flex?: number;
-  flexBasis?: number;
-  flexDirection?: 'column' | 'row';
-  flexGrow?: number;
-  flexShrink?: number;
-  flexWrap?: 'nowrap' | 'wrap-reverse' | 'wrap';
-  gap?: number;
-  height?: number;
-  justifyContent?:
+  readonly alignItems?: FlexAlignType;
+  readonly alignSelf?: FlexAlignType;
+  readonly backgroundColor?: keyof MonoMultiColor;
+  readonly borderRadius?: number;
+  readonly children?: ReactNode;
+  readonly collapsable?: boolean;
+  readonly cursor?: 'default' | 'pointer';
+  readonly display?: 'flex' | 'none';
+  readonly flex?: number;
+  readonly flexBasis?: number;
+  readonly flexDirection?: 'column' | 'row';
+  readonly flexGrow?: number;
+  readonly flexShrink?: number;
+  readonly flexWrap?: 'nowrap' | 'wrap-reverse' | 'wrap';
+  readonly gap?: number;
+  readonly height?: number;
+  readonly justifyContent?:
     | 'center'
     | 'flex-end'
     | 'flex-start'
     | 'space-around'
     | 'space-between'
     | 'space-evenly';
-  margin?: number;
-  onLayout?: (event: LayoutChangeEvent) => void;
-  onRef?: RefObject<Original>;
-  onTouchStart?: () => void;
-  opacity?: number;
-  overflow?: 'hidden' | 'scroll' | 'visible';
-  padding?: number;
-  paddingHorizontal?: number;
-  paddingVertical?: number;
-  position?: 'absolute' | 'relative';
-  style?: StyleProp<ViewStyle>;
-  testID?: string;
-  width?: number;
+  readonly margin?: number;
+  readonly onLayout?: (event: LayoutChangeEvent) => void;
+  readonly onRef?: RefObject<Original>;
+  readonly onTouchStart?: () => void;
+  readonly opacity?: number;
+  readonly overflow?: 'hidden' | 'scroll' | 'visible';
+  readonly padding?: number;
+  readonly paddingHorizontal?: number;
+  readonly paddingVertical?: number;
+  readonly position?: 'absolute' | 'relative';
+  readonly style?: StyleProp<ViewStyle>;
+  readonly testID?: string;
+  readonly width?: number;
 };
 
 export const View = ({

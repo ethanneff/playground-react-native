@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Button, Card, Screen, ScrollView, Text } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import {
@@ -16,7 +16,7 @@ import { completeConfig } from '../../utils';
 // TODO: add profile information
 // TODO: add payment
 
-export const Account = memo(function Account() {
+export const Account = () => {
   const colors = useColors();
   const { tabBarEdges } = useLayout();
   const dispatch = useAppDispatch();
@@ -126,4 +126,4 @@ export const Account = memo(function Account() {
       </ScrollView>
     </Screen>
   );
-});
+};

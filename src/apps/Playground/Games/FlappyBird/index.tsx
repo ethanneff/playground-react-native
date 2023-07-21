@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import { Screen, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
@@ -56,7 +56,7 @@ const Pillar = () => {
   );
 };
 
-export const FlappyBird = memo(function FlappyBird() {
+export const FlappyBird = () => {
   const colors = useColors();
   const { goBack } = useNavigation();
 
@@ -71,4 +71,4 @@ export const FlappyBird = memo(function FlappyBird() {
       </View>
     </Screen>
   );
-});
+};

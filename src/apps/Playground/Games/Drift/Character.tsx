@@ -1,8 +1,8 @@
-import React, { memo, useCallback, useContext, useEffect, useRef } from 'react';
+import React, { useCallback, useContext, useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import {
-  accelerometer,
   SensorTypes,
+  accelerometer,
   setUpdateIntervalForType,
 } from 'react-native-sensors';
 import { useColors, useDriver } from '../../../../features';
@@ -11,10 +11,10 @@ import { type CanvasDimensions } from './types';
 import { getPosition } from './utils';
 
 type CharacterProps = {
-  canvas: CanvasDimensions;
+  readonly canvas: CanvasDimensions;
 };
 
-export const Character = memo(function Character({ canvas }: CharacterProps) {
+export const Character = ({ canvas }: CharacterProps) => {
   const elevation = 5;
   const size = 30;
   const speed = 6;
@@ -82,4 +82,4 @@ export const Character = memo(function Character({ canvas }: CharacterProps) {
       ]}
     />
   );
-});
+};

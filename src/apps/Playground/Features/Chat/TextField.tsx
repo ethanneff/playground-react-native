@@ -1,8 +1,8 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { v4 } from 'uuid';
 import { Icon, Input, Pressable, View } from '../../../../components';
 import { spacing, useColors, useDropShadow } from '../../../../features';
-import { useAppSelector, useAppDispatch } from '../../../../redux';
+import { useAppDispatch, useAppSelector } from '../../../../redux';
 import {
   createChatMessage,
   getChatSubmittable,
@@ -10,7 +10,7 @@ import {
   type Message,
 } from './Messages';
 
-export const TextField = memo(function TextField() {
+export const TextField = () => {
   const dispatch = useAppDispatch();
 
   const textField = useAppSelector((state) => state.chatMessage.textField);
@@ -73,4 +73,4 @@ export const TextField = memo(function TextField() {
       </Pressable>
     </View>
   );
-});
+};

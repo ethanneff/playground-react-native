@@ -1,5 +1,5 @@
 import { add, format, set, startOfMonth, startOfWeek, sub } from 'date-fns';
-import React, { memo } from 'react';
+import React from 'react';
 import { Item } from './Item';
 
 const generateButtons = () => {
@@ -54,10 +54,10 @@ const generateButtons = () => {
 };
 
 type Props = {
-  onPress: (value: Date) => () => void;
+  readonly onPress: (value: Date) => () => void;
 };
 
-export const OneTime = memo(function OneTime({ onPress }: Props) {
+export const OneTime = ({ onPress }: Props) => {
   const buttons = generateButtons();
   const today = new Date().valueOf();
   return (
@@ -78,4 +78,4 @@ export const OneTime = memo(function OneTime({ onPress }: Props) {
       })}
     </>
   );
-});
+};

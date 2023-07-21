@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   Animated,
   PanResponder,
@@ -40,7 +40,7 @@ const getBoundedPosition = (
 };
 
 const size = 30;
-export const Drag = memo(function PlaygroundDrag() {
+export const Drag = () => {
   const { goBack } = useNavigation();
   const colors = useColors();
   const dropShadow = useDropShadow();
@@ -127,4 +127,4 @@ export const Drag = memo(function PlaygroundDrag() {
       </View>
     </Screen>
   );
-});
+};

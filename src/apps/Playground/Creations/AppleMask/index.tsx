@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Image, type ImageSourcePropType } from 'react-native';
 import { Screen, ScrollView, Text, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
@@ -8,12 +8,12 @@ import { getWidth, useAppSelector } from '../../../../redux';
 // https://support.apple.com/en-us/HT211028
 
 type SectionProps = {
-  description?: string;
-  image?: ImageSourcePropType;
-  imageRatio?: number;
-  index: number;
-  paddingHorizontal: number;
-  title: string;
+  readonly description?: string;
+  readonly image?: ImageSourcePropType;
+  readonly imageRatio?: number;
+  readonly index: number;
+  readonly paddingHorizontal: number;
+  readonly title: string;
 };
 
 const Section = ({
@@ -70,7 +70,7 @@ const Section = ({
   );
 };
 
-export const AppleMask = memo(function AppleMask() {
+export const AppleMask = () => {
   const { goBack } = useNavigation();
 
   const sections = [
@@ -141,4 +141,4 @@ export const AppleMask = memo(function AppleMask() {
       </ScrollView>
     </Screen>
   );
-});
+};

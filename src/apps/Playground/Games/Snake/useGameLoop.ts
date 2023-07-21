@@ -49,11 +49,12 @@ export const useGameLoop = (callback: Callback): UseGameLoop => {
     frame.current = initialFrame;
   }, []);
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       stop();
-    };
-  }, [stop]);
+    },
+    [stop],
+  );
 
   return {
     frame,

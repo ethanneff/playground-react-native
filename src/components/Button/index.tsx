@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 import {
   useColors,
@@ -16,31 +16,31 @@ styling: https://material.io/design/components/buttons.html#usage
 
 type Props = {
   /* styling */
-  buttonStyle?: StyleProp<ViewStyle>;
-  center?: boolean;
-  color?: keyof MonoMultiColor;
-  disabled?: boolean;
-  dropShadow?: boolean;
-  elevation?: number;
+  readonly buttonStyle?: StyleProp<ViewStyle>;
+  readonly center?: boolean;
+  readonly color?: keyof MonoMultiColor;
+  readonly disabled?: boolean;
+  readonly dropShadow?: boolean;
+  readonly elevation?: number;
   /* shape */
-  emphasis?: FontEmphasis;
+  readonly emphasis?: FontEmphasis;
   /* state */
-  hidden?: boolean;
-  invisible?: boolean;
-  lowercase?: boolean;
+  readonly hidden?: boolean;
+  readonly invisible?: boolean;
+  readonly lowercase?: boolean;
   /* size */
-  noPadding?: boolean;
-  onLongPress?: () => void;
+  readonly noPadding?: boolean;
+  readonly onLongPress?: () => void;
   /* event */
-  onPress: () => void;
-  right?: boolean;
-  testID?: string;
-  textStyle?: StyleProp<TextStyle>;
+  readonly onPress: () => void;
+  readonly right?: boolean;
+  readonly testID?: string;
+  readonly textStyle?: StyleProp<TextStyle>;
   /* content */
-  title: string;
+  readonly title: string;
 };
 
-export const Button = memo(function Button({
+export const Button = ({
   buttonStyle,
   center,
   color = 'primaryA',
@@ -58,7 +58,7 @@ export const Button = memo(function Button({
   testID,
   textStyle,
   title,
-}: Props) {
+}: Props) => {
   const colors = useColors();
   const dropShadowStyling = useDropShadow();
   const styles = getStyles({
@@ -95,4 +95,4 @@ export const Button = memo(function Button({
       />
     </Pressable>
   );
-});
+};

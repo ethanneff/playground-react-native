@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import {
   Button,
   Collapsible,
@@ -17,7 +17,7 @@ import { useAppSelector } from '../../../../redux';
 import { Collections, type Goal, type Interval } from '../../data';
 import { type UnAuthStackRoutes } from '../../types';
 
-export const Debug = memo(function Debug() {
+export const Debug = () => {
   const { goBack } =
     useNavigation<StackNavigationProp<UnAuthStackRoutes, 'debug'>>();
   const data = useAppSelector((state) => state.focus);
@@ -150,4 +150,4 @@ export const Debug = memo(function Debug() {
       </ScrollView>
     </Screen>
   );
-});
+};

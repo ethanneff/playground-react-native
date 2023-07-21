@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import {
   // eslint-disable-next-line no-restricted-imports
   ActivityIndicator,
@@ -9,16 +9,12 @@ import { View } from '../../components';
 import { useColors, type MonoMultiColor } from '../../features';
 
 type Props = {
-  color?: keyof MonoMultiColor;
-  size?: number | 'large' | 'small';
-  style?: StyleProp<ViewStyle>;
+  readonly color?: keyof MonoMultiColor;
+  readonly size?: number | 'large' | 'small';
+  readonly style?: StyleProp<ViewStyle>;
 };
 
-export const Loader = memo(function Loader({
-  color,
-  size = 'large',
-  style,
-}: Props) {
+export const Loader = ({ color, size = 'large', style }: Props) => {
   const colors = useColors();
   const loaderColor = color ? colors.text[color] : colors.text.secondary;
 
@@ -35,4 +31,4 @@ export const Loader = memo(function Loader({
       />
     </View>
   );
-});
+};

@@ -3,10 +3,10 @@ import { type StyleProp, type ViewStyle } from 'react-native';
 import { View } from '../../components';
 
 type Props = {
-  children?: ReactNode;
-  margin?: number;
-  padding?: number;
-  style?: StyleProp<ViewStyle>;
+  readonly children?: ReactNode;
+  readonly margin?: number;
+  readonly padding?: number;
+  readonly style?: StyleProp<ViewStyle>;
 };
 
 export const Spacing = ({
@@ -14,6 +14,4 @@ export const Spacing = ({
   margin = 0,
   padding = 0,
   style,
-}: Props) => {
-  return <View style={[{ margin, padding }, style]}>{children}</View>;
-};
+}: Props) => <View style={[{ margin, padding }, style]}>{children}</View>;

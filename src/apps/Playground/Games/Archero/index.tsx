@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import {
   Animated,
   PanResponder,
@@ -19,7 +19,7 @@ const getLimit = (value: number, limit: number) =>
 const getBounds = (value: number, limit: number, size: number) =>
   value > limit - size ? limit - size : value < 0 ? 0 : value;
 
-export const Archero = memo(function Archero() {
+export const Archero = () => {
   const colors = useColors();
   const { goBack } = useNavigation();
   const useNativeDriver = useDriver();
@@ -194,4 +194,4 @@ export const Archero = memo(function Archero() {
       </Animated.View>
     </Screen>
   );
-});
+};

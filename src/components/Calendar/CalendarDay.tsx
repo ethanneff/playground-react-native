@@ -9,8 +9,8 @@ import { calendarActions } from './calendarReducer';
 import { type DayState } from './types';
 
 type Props = {
-  day: string;
-  hiddenDays?: boolean;
+  readonly day: string;
+  readonly hiddenDays?: boolean;
 };
 
 type ConfigProps = {

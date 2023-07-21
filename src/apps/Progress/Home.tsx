@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Activity, Icon, Screen, ScrollView } from '../../components';
 import { spacing, useAdminNavBack, useColors } from '../../features';
@@ -11,7 +11,7 @@ import { spacing, useAdminNavBack, useColors } from '../../features';
 // TODO: new
 // TODO: unable to navigate back when loading
 
-export const Home = memo(function ActivityTracker() {
+export const Home = () => {
   const colors = useColors();
   const { onLeftPress } = useAdminNavBack();
   const styles = StyleSheet.create({
@@ -63,4 +63,4 @@ export const Home = memo(function ActivityTracker() {
       />
     </Screen>
   );
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Screen, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
@@ -14,7 +14,7 @@ type State = {
   start: number;
 };
 
-export const AppleStopWatch = memo(function AppleStopWatch() {
+export const AppleStopWatch = () => {
   const { goBack } = useNavigation();
   const [state, setState] = useState<State>({
     laps: [],
@@ -43,11 +43,12 @@ export const AppleStopWatch = memo(function AppleStopWatch() {
     },
   });
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       if (timer.current) clearTimeout(timer.current);
-    };
-  }, [timer]);
+    },
+    [timer],
+  );
 
   const lap = useCallback(() => {
     const timestamp = new Date().getTime();
@@ -160,4 +161,4 @@ export const AppleStopWatch = memo(function AppleStopWatch() {
       </View>
     </Screen>
   );
-});
+};

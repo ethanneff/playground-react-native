@@ -1,10 +1,10 @@
-import React, { memo, useCallback, useContext } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { Pressable, View } from '../../../../components';
 import { useColors, useDropShadow } from '../../../../features';
 import { DriftContext } from './Context';
 import { type ColorChoice } from './types';
 
-export const Dpad = memo(function Dpad() {
+export const Dpad = () => {
   const useShadow = useDropShadow();
   const { dispatch } = useContext(DriftContext);
   const colors = useColors();
@@ -72,4 +72,4 @@ export const Dpad = memo(function Dpad() {
       </View>
     </View>
   );
-});
+};

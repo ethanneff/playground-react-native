@@ -1,4 +1,4 @@
-import React, { memo, type ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import { Image, type ImageSourcePropType } from 'react-native';
 import {
   Icon,
@@ -16,15 +16,11 @@ const missingCallback = () => undefined;
 const image = require('../../../assets/line-chart.png') as ImageSourcePropType;
 
 type SignInButtonProps = {
-  icon: IconName;
-  onPress: () => void;
-  title: string;
+  readonly icon: IconName;
+  readonly onPress: () => void;
+  readonly title: string;
 };
-const SignInButton = memo(function SignInButton({
-  icon,
-  onPress,
-  title,
-}: SignInButtonProps) {
+const SignInButton = ({ icon, onPress, title }: SignInButtonProps) => {
   const colors = useColors();
   return (
     <Pressable
@@ -51,18 +47,14 @@ const SignInButton = memo(function SignInButton({
       />
     </Pressable>
   );
-});
+};
 
 type NavButtonProps = {
-  inverted?: boolean;
-  onPress: () => void;
-  title: string;
+  readonly inverted?: boolean;
+  readonly onPress: () => void;
+  readonly title: string;
 };
-const NavButton = memo(function NavButton({
-  inverted,
-  onPress,
-  title,
-}: NavButtonProps) {
+const NavButton = ({ inverted, onPress, title }: NavButtonProps) => {
   const colors = useColors();
   return (
     <Pressable
@@ -85,13 +77,13 @@ const NavButton = memo(function NavButton({
       />
     </Pressable>
   );
-});
-
-type HeaderProps = {
-  height: number;
 };
 
-export const Header = memo(function Header({ height }: HeaderProps) {
+type HeaderProps = {
+  readonly height: number;
+};
+
+export const Header = ({ height }: HeaderProps) => {
   const colors = useColors();
   return (
     <View
@@ -141,14 +133,14 @@ export const Header = memo(function Header({ height }: HeaderProps) {
       </View>
     </View>
   );
-});
-
-type AppIconProps = {
-  onPress: () => void;
-  type: 'apple' | 'google-play';
 };
 
-const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
+type AppIconProps = {
+  readonly onPress: () => void;
+  readonly type: 'apple' | 'google-play';
+};
+
+const AppIcon = ({ onPress, type }: AppIconProps) => {
   const colors = useColors();
   const iconSize = '48px';
   const text = type === 'apple' ? 'Download on the' : 'GET IT ON';
@@ -185,33 +177,27 @@ const AppIcon = memo(function AppIcon({ onPress, type }: AppIconProps) {
       </View>
     </Pressable>
   );
-});
-
-type SectionProps = {
-  backgroundColor: string;
-  children: ReactNode | ReactNode[];
-  paddingTop?: number;
 };
 
-const Section = memo(function Section({
-  backgroundColor,
-  children,
-  paddingTop,
-}: SectionProps) {
-  return (
-    <View
-      style={{
-        backgroundColor,
-        height: '100vh',
-        paddingTop,
-      }}
-    >
-      {children}
-    </View>
-  );
-});
+type SectionProps = {
+  readonly backgroundColor: string;
+  readonly children: ReactNode | ReactNode[];
+  readonly paddingTop?: number;
+};
 
-export const Landing = memo(function PortfolioLanding() {
+const Section = ({ backgroundColor, children, paddingTop }: SectionProps) => (
+  <View
+    style={{
+      backgroundColor,
+      height: '100vh',
+      paddingTop,
+    }}
+  >
+    {children}
+  </View>
+);
+
+export const Landing = () => {
   const height = spacing(18);
   const titleSentence: SentenceType[] = [
     { title: 'Get started with ', type: 'h2' },
@@ -314,4 +300,4 @@ export const Landing = memo(function PortfolioLanding() {
       </Section>
     </>
   );
-});
+};

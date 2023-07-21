@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   Alert,
   Button,
@@ -28,14 +28,11 @@ type Modal =
   | null;
 
 type ModalManagerProps = {
-  modal: Modal;
-  onClose: (modal: Modal) => () => void;
+  readonly modal: Modal;
+  readonly onClose: (modal: Modal) => () => void;
 };
 
-const ModalManager = memo(function ModalManager({
-  modal,
-  onClose,
-}: ModalManagerProps) {
+const ModalManager = ({ modal, onClose }: ModalManagerProps) => {
   const handleClose = useCallback(() => {
     onClose(null)();
   }, [onClose]);
@@ -109,9 +106,9 @@ const ModalManager = memo(function ModalManager({
     default:
       return null;
   }
-});
+};
 
-export const Modals = memo(function Modals() {
+export const Modals = () => {
   const { goBack } = useNavigation();
   const colors = useColors();
   const [modal, setModal] = useState<Modal>(null);
@@ -222,4 +219,4 @@ export const Modals = memo(function Modals() {
       )} */}
     </>
   );
-});
+};

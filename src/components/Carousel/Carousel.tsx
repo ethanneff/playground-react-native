@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { type ViewToken } from 'react-native';
 import { View, type FlashListRef } from '../../components';
 import { spacing } from '../../features';
@@ -7,18 +7,18 @@ import { CarouselList } from './CarouselList';
 import { type CarouselSlide } from './types';
 
 type Props = {
-  dotSize?: number;
-  duration?: number;
-  slides: CarouselSlide[];
-  viewabilityConfig?: Record<string, unknown>;
+  readonly dotSize?: number;
+  readonly duration?: number;
+  readonly slides: CarouselSlide[];
+  readonly viewabilityConfig?: Record<string, unknown>;
 };
 
-export const Carousel = memo(function Carousel({
+export const Carousel = ({
   dotSize = spacing(4),
   duration,
   slides,
   viewabilityConfig,
-}: Props) {
+}: Props) => {
   const viewabilityConfigRef = useRef(
     viewabilityConfig ? viewabilityConfig : { itemVisiblePercentThreshold: 50 },
   ).current;
@@ -101,4 +101,4 @@ export const Carousel = memo(function Carousel({
       />
     </View>
   );
-});
+};

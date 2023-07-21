@@ -1,5 +1,5 @@
 import Lottie, { type AnimationObject } from 'lottie-react-native';
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
 import {
   Button,
@@ -25,7 +25,7 @@ const maxTime = 10000;
 
 const loader = require('./loader.json') as AnimationObject;
 
-export const Download = memo(function Download() {
+export const Download = () => {
   const { navigate } =
     useNavigation<StackNavigationProp<AuthStackRoutes, 'download'>>();
   const width = useAppSelector(getSmallestDimension);
@@ -136,4 +136,4 @@ export const Download = memo(function Download() {
       </View>
     </Screen>
   );
-});
+};

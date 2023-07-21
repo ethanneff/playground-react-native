@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Screen, ScrollView, Text, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
@@ -8,7 +8,7 @@ import { GameBoard } from './GameBoard';
 import { Header } from './Header';
 import { resetBoard } from './redux';
 
-export const GameOfLife = memo(function PlaygroundGameOfLife() {
+export const GameOfLife = () => {
   const colors = useColors();
   const [loading, setLoading] = useState(true);
   const dispatch = useAppDispatch();
@@ -48,4 +48,4 @@ export const GameOfLife = memo(function PlaygroundGameOfLife() {
       </ScrollView>
     </Screen>
   );
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { type LayoutChangeEvent } from 'react-native';
 import { KeyboardHandler, Screen } from '../../../../components';
 import { useKeyboardHeight, useLayout } from '../../../../features';
@@ -13,7 +13,7 @@ import { getProjects } from '../../models';
 
 // TODO: render as <Board />
 
-export const Projects = memo(function Projects() {
+export const Projects = () => {
   const { tabBarEdges } = useLayout();
   const [dimensions, setDimensions] = useState(0);
   const keyboardHeight = useKeyboardHeight();
@@ -43,4 +43,4 @@ export const Projects = memo(function Projects() {
       </KeyboardHandler>
     </Screen>
   );
-});
+};

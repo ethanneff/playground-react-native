@@ -4,7 +4,7 @@ import { Text, Pressable, View } from '../../components';
 import { spacing, useColors } from '../../features';
 
 type Props = {
-  onPress?: () => void;
+  readonly onPress?: () => void;
 };
 
 export const ProfileLevel = ({ onPress }: Props) => {

@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import {
   Button,
   Card,
@@ -20,7 +20,7 @@ import {
 } from '../../../../features';
 import { type AuthStackRoutes } from '../../types';
 
-export const Account = memo(function Account() {
+export const Account = () => {
   const { navigate } =
     useNavigation<StackNavigationProp<AuthStackRoutes, 'home'>>();
   const colors = useColors();
@@ -156,4 +156,4 @@ export const Account = memo(function Account() {
       </ScrollView>
     </Screen>
   );
-});
+};

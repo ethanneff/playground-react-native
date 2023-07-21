@@ -5,11 +5,11 @@ import { type VisibilitySensorChange } from './types';
 import { getDirection, getVisible } from './utils';
 
 type Props = {
-  children: ReactNode;
-  container: LayoutRectangle | null;
-  duration?: number;
-  onChange: (callback: VisibilitySensorChange) => void;
-  style?: ViewStyle;
+  readonly children: ReactNode;
+  readonly container: LayoutRectangle | null;
+  readonly duration?: number;
+  readonly onChange: (callback: VisibilitySensorChange) => void;
+  readonly style?: ViewStyle;
 };
 
 export const VisibilitySensor = ({

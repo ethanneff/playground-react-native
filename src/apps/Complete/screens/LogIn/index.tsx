@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
   Modal,
@@ -20,7 +20,7 @@ import { getDefaultUserTemplate } from '../../utils';
 const initialRef = { email: '', password: '' };
 const initialState = { completeForm: false, eye: false, loading: false };
 
-export const LogIn = memo(function LogIn() {
+export const LogIn = () => {
   const colors = useColors();
   const dispatch = useAppDispatch();
   const focus = useIsFocused();
@@ -139,4 +139,4 @@ export const LogIn = memo(function LogIn() {
       />
     </Modal>
   ) : null;
-});
+};

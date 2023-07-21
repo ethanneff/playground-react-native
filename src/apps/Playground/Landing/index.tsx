@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import {
   Card,
   FlashList,
@@ -13,7 +13,7 @@ import { spacing } from '../../../features';
 import { landingRoutes } from '../navParams';
 import { Title } from './Title';
 
-export const Landing = memo(function Playground() {
+export const Landing = () => {
   const { goBack, navigate } = useNavigation();
   const navToItem = useCallback(
     (item: string) => () => {
@@ -129,4 +129,4 @@ export const Landing = memo(function Playground() {
       </View>
     </Screen>
   );
-});
+};

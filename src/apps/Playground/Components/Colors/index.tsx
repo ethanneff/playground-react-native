@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Screen, ScrollView, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { ButtonGroup } from './ButtonGroup';
@@ -7,7 +7,7 @@ import { TagGroup } from './TagGroup';
 import { ThemeGroup } from './ThemeGroup';
 import { Title } from './Title';
 
-export const Colors = memo(function DebugColors() {
+export const Colors = () => {
   const { goBack } = useNavigation();
 
   return (
@@ -37,4 +37,4 @@ export const Colors = memo(function DebugColors() {
       </ScrollView>
     </Screen>
   );
-});
+};

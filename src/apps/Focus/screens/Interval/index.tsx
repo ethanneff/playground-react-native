@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import {
   FlashList,
@@ -19,7 +19,7 @@ import {
   keyExtractor,
 } from './utils';
 
-export const Interval = memo(function Interval() {
+export const Interval = () => {
   const { tabBarEdges } = useLayout();
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState<Item[]>(() => getMoreItems([]));
@@ -94,4 +94,4 @@ export const Interval = memo(function Interval() {
       </View>
     </Screen>
   );
-});
+};

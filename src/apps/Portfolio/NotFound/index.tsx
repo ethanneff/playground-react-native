@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Button, Screen, ScrollView } from '../../../components';
 import { useNavigation } from '../../../conversions';
 import { spacing, useColors } from '../../../features';
 
-export const NotFound = memo(function PortfolioNotFound() {
+export const NotFound = () => {
   const { goBack } = useNavigation();
   const colors = useColors();
 
@@ -26,4 +26,4 @@ export const NotFound = memo(function PortfolioNotFound() {
       </ScrollView>
     </Screen>
   );
-});
+};

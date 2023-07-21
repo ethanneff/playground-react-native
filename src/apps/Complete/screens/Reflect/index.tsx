@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Dimensions } from 'react-native';
 import {
   Calendar,
@@ -18,19 +18,17 @@ import { Graph } from './Graph';
 // TODO: add goals
 
 type TitleProps = {
-  name: string;
+  readonly name: string;
 };
 
-const Title = ({ name }: TitleProps) => {
-  return (
-    <Text
-      emphasis="high"
-      style={{ paddingBottom: completeConfig.padding }}
-      title={name}
-      type="h4"
-    />
-  );
-};
+const Title = ({ name }: TitleProps) => (
+  <Text
+    emphasis="high"
+    style={{ paddingBottom: completeConfig.padding }}
+    title={name}
+    type="h4"
+  />
+);
 
 const data = [
   { date: new Date(2018, 9, 1).getTime(), value: 0 },
@@ -41,7 +39,7 @@ const data = [
   { date: new Date(2018, 10, 5).getTime(), value: 300 },
 ];
 
-export const Reflect = memo(function Reflect() {
+export const Reflect = () => {
   const colors = useColors();
   const { tabBarEdges } = useLayout();
 
@@ -101,4 +99,4 @@ export const Reflect = memo(function Reflect() {
       </ScrollView>
     </Screen>
   );
-});
+};

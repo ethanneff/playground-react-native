@@ -1,18 +1,15 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { v4 } from 'uuid';
 import { ScrollView } from '../../../../components';
 import { Lap } from './Lap';
 
 type LapTableProps = {
-  laps: number[];
-  timer: number;
+  readonly laps: number[];
+  readonly timer: number;
 };
 
-export const LapsTable = memo(function LapsTable({
-  laps,
-  timer,
-}: LapTableProps) {
+export const LapsTable = ({ laps, timer }: LapTableProps) => {
   const finishedLaps = laps.slice(1);
   let min = Number.MAX_SAFE_INTEGER;
   let max = Number.MIN_SAFE_INTEGER;
@@ -41,4 +38,4 @@ export const LapsTable = memo(function LapsTable({
       ))}
     </ScrollView>
   );
-});
+};

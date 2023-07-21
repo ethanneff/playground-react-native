@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import {
   Platform,
   StyleSheet,
@@ -23,24 +23,24 @@ source: https://materialdesignicons.com/
 */
 
 type Props = {
-  backgroundColor?: keyof MonoMultiColor;
-  badge?: number;
-  clear?: boolean;
-  color?: keyof MonoMultiColor;
-  disabled?: boolean;
-  elevation?: number;
-  fab?: boolean;
-  hidden?: boolean;
-  invisible?: boolean;
-  name: IconName;
-  padded?: boolean;
-  right?: boolean;
-  size?: number;
-  style?: StyleProp<ViewStyle>;
-  testID?: string;
+  readonly backgroundColor?: keyof MonoMultiColor;
+  readonly badge?: number;
+  readonly clear?: boolean;
+  readonly color?: keyof MonoMultiColor;
+  readonly disabled?: boolean;
+  readonly elevation?: number;
+  readonly fab?: boolean;
+  readonly hidden?: boolean;
+  readonly invisible?: boolean;
+  readonly name: IconName;
+  readonly padded?: boolean;
+  readonly right?: boolean;
+  readonly size?: number;
+  readonly style?: StyleProp<ViewStyle>;
+  readonly testID?: string;
 };
 
-export const Icon = memo(function Icon({
+export const Icon = ({
   backgroundColor,
   badge = 0,
   clear,
@@ -56,7 +56,7 @@ export const Icon = memo(function Icon({
   size = spacing(6),
   style,
   testID,
-}: Props) {
+}: Props) => {
   const colors = useColors();
   const bgColor = backgroundColor
     ? colors.background[backgroundColor]
@@ -111,4 +111,4 @@ export const Icon = memo(function Icon({
       <Badge badge={badge} />
     </View>
   );
-});
+};

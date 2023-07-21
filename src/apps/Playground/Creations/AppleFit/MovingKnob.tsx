@@ -3,10 +3,10 @@ import { Animated, StyleSheet } from 'react-native';
 import { Shadow } from './Shadow';
 
 type MovingKnobProps = {
-  backgroundColor: string;
-  radius: number;
-  strokeWidth: number;
-  theta: number;
+  readonly backgroundColor: string;
+  readonly radius: number;
+  readonly strokeWidth: number;
+  readonly theta: number;
 };
 
 export const MovingKnob = ({

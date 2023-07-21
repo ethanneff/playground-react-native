@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { type LayoutChangeEvent } from 'react-native';
 import { KeyboardHandler, Screen } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
@@ -8,7 +8,7 @@ import { Board } from '../../components';
 
 // TODO: figure out centering of list
 
-export const Project = memo(function Project() {
+export const Project = () => {
   const { goBack } = useNavigation();
   const screenWidth = useAppSelector(getSmallestDimension);
   const { projectItemId } = useAppSelector((s) => s.completeItem.nav);
@@ -48,4 +48,4 @@ export const Project = memo(function Project() {
       </KeyboardHandler>
     </Screen>
   );
-});
+};

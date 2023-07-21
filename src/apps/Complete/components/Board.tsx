@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { FlatList, type FlatListRenderItem } from '../../../components';
 import { useAppSelector } from '../../../redux';
 import { completeConfig } from '../utils';
@@ -6,16 +6,16 @@ import { AddItem } from './AddItem';
 import { List } from './List';
 
 type BoardProps = {
-  listMaxHeight: number;
-  listWidth: number;
-  projectItemId: string;
+  readonly listMaxHeight: number;
+  readonly listWidth: number;
+  readonly projectItemId: string;
 };
 
-export const Board = memo(function Board({
+export const Board = ({
   listMaxHeight,
   listWidth,
   projectItemId,
-}: BoardProps) {
+}: BoardProps) => {
   const listSize = listWidth + completeConfig.padding;
   const board = useAppSelector((s) => s.completeItem.items[projectItemId]);
   const getItemId = useCallback((item: string) => item, []);
@@ -66,4 +66,4 @@ export const Board = memo(function Board({
       snapToInterval={listSize}
     />
   );
-});
+};

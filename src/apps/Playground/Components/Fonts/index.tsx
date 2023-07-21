@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Screen, ScrollView, Text } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 
-export const Fonts = memo(function PlaygroundFonts() {
+export const Fonts = () => {
   const { goBack } = useNavigation();
   const colors = useColors();
 
@@ -75,4 +75,4 @@ export const Fonts = memo(function PlaygroundFonts() {
       </ScrollView>
     </Screen>
   );
-});
+};

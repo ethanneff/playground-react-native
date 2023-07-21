@@ -2,7 +2,7 @@ import React, { type ErrorInfo, type ReactNode } from 'react';
 import { Text } from '../Text';
 
 type Props = {
-  children: ReactNode;
+  readonly children: ReactNode;
 };
 
 type State = {

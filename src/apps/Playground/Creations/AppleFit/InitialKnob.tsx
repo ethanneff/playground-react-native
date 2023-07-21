@@ -2,10 +2,10 @@ import React from 'react';
 import { Animated, StyleSheet } from 'react-native';
 
 type InitialKnobProps = {
-  backgroundColor: string;
-  radius: number;
-  strokeWidth: number;
-  theta: number;
+  readonly backgroundColor: string;
+  readonly radius: number;
+  readonly strokeWidth: number;
+  readonly theta: number;
 };
 
 export const InitialKnob = ({

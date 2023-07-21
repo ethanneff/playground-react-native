@@ -1,4 +1,4 @@
-import React, { memo, useMemo, useReducer } from 'react';
+import React, { useMemo, useReducer } from 'react';
 import DeviceInfo from 'react-native-device-info';
 import { Screen, Text, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
@@ -6,7 +6,7 @@ import { DriftContext, driftInitialState, driftReducer } from './Context';
 import { Dpad } from './Dpad';
 import { Game } from './Game';
 
-export const Drift = memo(function PlaygroundDrift() {
+export const Drift = () => {
   const { goBack } = useNavigation();
   const [state, dispatch] = useReducer(driftReducer, driftInitialState);
   const isEmulator = DeviceInfo.isEmulatorSync();
@@ -33,4 +33,4 @@ export const Drift = memo(function PlaygroundDrift() {
       </DriftContext.Provider>
     </Screen>
   );
-});
+};

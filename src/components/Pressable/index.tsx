@@ -11,19 +11,19 @@ import {
 import { SoundManager } from '../../features';
 
 type Props = {
-  accessibilityLabel?: string;
-  accessible?: boolean;
-  children?: ReactNode;
-  containerStyle?: StyleProp<ViewStyle>;
-  contentStyle?: StyleProp<ViewStyle>;
-  disabled?: boolean;
-  onLayout?: (event: LayoutChangeEvent) => void;
-  onLongPress?: () => void;
-  onPress?: () => void;
-  onPressIn?: () => void;
-  onPressOut?: () => void;
-  testID?: string;
-  withoutFeedback?: boolean;
+  readonly accessibilityLabel?: string;
+  readonly accessible?: boolean;
+  readonly children?: ReactNode;
+  readonly containerStyle?: StyleProp<ViewStyle>;
+  readonly contentStyle?: StyleProp<ViewStyle>;
+  readonly disabled?: boolean;
+  readonly onLayout?: (event: LayoutChangeEvent) => void;
+  readonly onLongPress?: () => void;
+  readonly onPress?: () => void;
+  readonly onPressIn?: () => void;
+  readonly onPressOut?: () => void;
+  readonly testID?: string;
+  readonly withoutFeedback?: boolean;
 };
 
 export const Pressable = ({

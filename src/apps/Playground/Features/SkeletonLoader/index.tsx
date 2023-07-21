@@ -1,11 +1,11 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Button, Screen, ScrollView, Text, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { LoadingProfile } from './LoadingProfile';
 import { LoadingSection } from './LoadingSection';
 
-export const SkeletonLoading = memo(function PlaygroundTemplate() {
+export const SkeletonLoading = () => {
   const { goBack } = useNavigation();
   const colors = useColors();
   const mounted = useRef(true);
@@ -68,4 +68,4 @@ export const SkeletonLoading = memo(function PlaygroundTemplate() {
       </ScrollView>
     </Screen>
   );
-});
+};

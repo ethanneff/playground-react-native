@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Dimensions } from 'react-native';
 import { Screen, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
@@ -7,7 +7,7 @@ import { useAppSelector } from '../../../../redux';
 import { Items } from './Items';
 import { TextField } from './TextField';
 
-export const Chat = memo(function PlaygroundChat() {
+export const Chat = () => {
   const { goBack } = useNavigation();
   const { insets, layout, onLayout } = useLayout();
   const keyboardHeight = useAppSelector((s) => s.device.keyboardHeight);
@@ -34,4 +34,4 @@ export const Chat = memo(function PlaygroundChat() {
       </View>
     </Screen>
   );
-});
+};

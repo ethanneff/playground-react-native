@@ -3,8 +3,8 @@ import { Animated, type StyleProp, type ViewStyle } from 'react-native';
 import { useDriver } from '../../../../features';
 
 type PulseAnimationProps = {
-  repeat: boolean;
-  style: StyleProp<ViewStyle>;
+  readonly repeat: boolean;
+  readonly style: StyleProp<ViewStyle>;
 };
 
 // TODO: move to storybook

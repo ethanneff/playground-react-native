@@ -15,12 +15,10 @@ export type Item = {
 const getRandomNumber = (min: number, max: number): number =>
   Math.random() * (max - min) + min;
 
-const rotate = (dx: number, dy: number, angle: number) => {
-  return {
-    x: dx * Math.cos(angle) - dy * Math.sin(angle),
-    y: dx * Math.sin(angle) + dy * Math.cos(angle),
-  };
-};
+const rotate = (dx: number, dy: number, angle: number) => ({
+  x: dx * Math.cos(angle) - dy * Math.sin(angle),
+  y: dx * Math.sin(angle) + dy * Math.cos(angle),
+});
 
 export const getNextDraw = (item: Item, layout: LayoutDimensions): Item => {
   const next = { ...item };

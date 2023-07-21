@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Modal, Text } from '../../../../components';
 import {
   useNavigation,
@@ -8,7 +8,7 @@ import {
 } from '../../../../conversions';
 import { type AuthStackRoutes } from '../../types';
 
-export const ProgressionDetails = memo(function ProgressionDetails() {
+export const ProgressionDetails = () => {
   const { navigate } =
     useNavigation<
       StackNavigationProp<AuthStackRoutes, 'progression-details'>
@@ -31,4 +31,4 @@ export const ProgressionDetails = memo(function ProgressionDetails() {
       <Text title={route.params.category.total.toString()} />
     </Modal>
   );
-});
+};

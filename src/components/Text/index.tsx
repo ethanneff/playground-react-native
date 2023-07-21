@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import {
   Animated,
   StyleSheet,
@@ -19,28 +19,28 @@ import {
 type EllipsizeMode = 'clip' | 'head' | 'middle' | 'tail';
 
 type TextProps = {
-  adjustsFontSizeToFit?: boolean;
-  bold?: boolean;
-  center?: boolean;
-  centerVertically?: boolean;
-  color?: keyof MonoMultiColor;
-  ellipsizeMode?: EllipsizeMode;
-  emphasis?: FontEmphasis;
-  flex?: boolean;
-  hidden?: boolean;
-  inverse?: boolean;
-  invisible?: boolean;
-  numberOfLines?: number;
-  onPress?: () => void;
-  selectable?: boolean;
-  style?: StyleProp<TextStyle>;
-  testID?: string;
-  title?: string;
-  type?: FontType;
-  withoutTap?: boolean;
+  readonly adjustsFontSizeToFit?: boolean;
+  readonly bold?: boolean;
+  readonly center?: boolean;
+  readonly centerVertically?: boolean;
+  readonly color?: keyof MonoMultiColor;
+  readonly ellipsizeMode?: EllipsizeMode;
+  readonly emphasis?: FontEmphasis;
+  readonly flex?: boolean;
+  readonly hidden?: boolean;
+  readonly inverse?: boolean;
+  readonly invisible?: boolean;
+  readonly numberOfLines?: number;
+  readonly onPress?: () => void;
+  readonly selectable?: boolean;
+  readonly style?: StyleProp<TextStyle>;
+  readonly testID?: string;
+  readonly title?: string;
+  readonly type?: FontType;
+  readonly withoutTap?: boolean;
 };
 
-export const Text = memo(function Text({
+export const Text = ({
   adjustsFontSizeToFit,
   bold,
   center,
@@ -60,7 +60,7 @@ export const Text = memo(function Text({
   title,
   type,
   withoutTap,
-}: TextProps) {
+}: TextProps) => {
   const opacity = useRef(new Animated.Value(1)).current;
   const useNativeDriver = useDriver();
   const colors = useColors();
@@ -140,4 +140,4 @@ export const Text = memo(function Text({
       {text}
     </Animated.Text>
   );
-});
+};

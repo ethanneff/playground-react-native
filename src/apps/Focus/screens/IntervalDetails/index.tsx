@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Keyboard } from 'react-native';
 import {
   Button,
@@ -41,7 +41,7 @@ type State = {
   well: string;
 };
 
-export const IntervalDetails = memo(function IntervalDetails() {
+export const IntervalDetails = () => {
   const { goBack } =
     useNavigation<StackNavigationProp<AuthStackRoutes, 'interval-details'>>();
   const route = useRoute<RouteProp<AuthStackRoutes, 'interval-details'>>();
@@ -283,7 +283,7 @@ export const IntervalDetails = memo(function IntervalDetails() {
             >
               <Text
                 emphasis="medium"
-                title={`${state.nps}`}
+                title={String(state.nps)}
                 type="h6"
               />
               <Spacing padding={spacing(2)} />
@@ -325,4 +325,4 @@ export const IntervalDetails = memo(function IntervalDetails() {
       ) : null}
     </>
   );
-});
+};

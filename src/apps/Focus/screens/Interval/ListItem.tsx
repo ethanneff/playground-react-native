@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Icon, Pressable, Text, View } from '../../../../components';
 import {
   useNavigation,
@@ -9,18 +9,18 @@ import { type AuthStackRoutes, type Item } from '../../types';
 import { ListSection } from './ListSection';
 
 type Props = {
-  currentItem: boolean;
-  item: Item;
-  showFooter: boolean;
-  showHeader: boolean;
+  readonly currentItem: boolean;
+  readonly item: Item;
+  readonly showFooter: boolean;
+  readonly showHeader: boolean;
 };
 
-export const ListItem = memo(function ListItem({
+export const ListItem = ({
   currentItem,
   item,
   showFooter,
   showHeader,
-}: Props) {
+}: Props) => {
   const colors = useColors();
   const dropShadow = useDropShadow();
   const future = item.id > Date.now();
@@ -94,4 +94,4 @@ export const ListItem = memo(function ListItem({
       </View>
     </View>
   );
-});
+};

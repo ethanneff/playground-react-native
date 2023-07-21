@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { View } from '../../../../components';
 import { useColors, useLayout } from '../../../../features';
 import { Character } from './Character';
 import { Tracks } from './Tracks';
 
-export const Game = memo(function Game() {
+export const Game = () => {
   const { layout, onLayout } = useLayout();
   const colors = useColors();
 
@@ -21,4 +21,4 @@ export const Game = memo(function Game() {
       ) : null}
     </View>
   );
-});
+};

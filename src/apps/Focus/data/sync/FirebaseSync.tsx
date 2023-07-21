@@ -1,11 +1,10 @@
-import { memo } from 'react';
 import { useAuth } from './useAuth';
 import { useGoals } from './useGoals';
 import { useIntervals } from './useIntervals';
 import { usePreferences } from './usePreferences';
 import { useUsers } from './useUsers';
 
-export const FirebaseSync = memo(function FirebaseSync() {
+export const FirebaseSync = () => {
   useAuth();
   useUsers();
   useGoals();
@@ -13,4 +12,4 @@ export const FirebaseSync = memo(function FirebaseSync() {
   usePreferences();
 
   return null;
-});
+};

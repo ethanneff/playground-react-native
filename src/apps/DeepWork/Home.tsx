@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import {
   Activity,
   Card,
@@ -37,7 +37,7 @@ import { type DeepWorkNavigation } from './types';
 - ship
 */
 
-export const Home = memo(function Home() {
+export const Home = () => {
   const { navigate } = useNavigation<DeepWorkNavigation>();
   const colors = useColors();
   const { onLeftPress } = useAdminNavBack();
@@ -121,4 +121,4 @@ export const Home = memo(function Home() {
       </View>
     </Screen>
   );
-});
+};

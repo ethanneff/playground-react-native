@@ -7,8 +7,8 @@ import { Text } from '../Text';
 import { View } from '../View';
 
 type Props = {
-  children: ReactNode;
-  title: string;
+  readonly children: ReactNode;
+  readonly title: string;
 };
 
 export const Collapsible = ({ children, title }: Props) => {

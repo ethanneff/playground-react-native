@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet, type StyleProp, type ViewStyle } from 'react-native';
 import {
   Icon,
@@ -10,16 +10,16 @@ import {
 import { spacing, useColors } from '../../../../../features';
 
 type Props = {
-  active?: boolean;
-  description?: string;
-  hidden?: boolean;
-  icon?: IconName;
-  marginBottom?: boolean;
-  onPress: () => void;
-  style?: StyleProp<ViewStyle>;
-  title: string;
+  readonly active?: boolean;
+  readonly description?: string;
+  readonly hidden?: boolean;
+  readonly icon?: IconName;
+  readonly marginBottom?: boolean;
+  readonly onPress: () => void;
+  readonly style?: StyleProp<ViewStyle>;
+  readonly title: string;
 };
-export const Item = memo(function ReminderItem({
+export const Item = ({
   active,
   description = '',
   hidden,
@@ -28,7 +28,7 @@ export const Item = memo(function ReminderItem({
   onPress,
   style,
   title,
-}: Props) {
+}: Props) => {
   const colors = useColors();
   const styles = StyleSheet.create({
     button: {
@@ -91,4 +91,4 @@ export const Item = memo(function ReminderItem({
       </View>
     </Pressable>
   );
-});
+};

@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
 });
 
 type Props = {
-  style?: TextStyle;
-  title: string;
+  readonly style?: TextStyle;
+  readonly title: string;
 };
 
 export class Markdown extends React.PureComponent<Props> {

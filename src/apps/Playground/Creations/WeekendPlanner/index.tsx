@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { v4 } from 'uuid';
 import {
   Button,
@@ -49,7 +49,7 @@ type ActiveGoal = {
 
 type GoalModal = 'add' | 'close' | 'edit';
 
-export const WeekendPlanner = memo(function Playground52Weeks() {
+export const WeekendPlanner = () => {
   const colors = useColors();
   const { goBack } = useNavigation();
   const dropShadow = useDropShadow();
@@ -284,4 +284,4 @@ export const WeekendPlanner = memo(function Playground52Weeks() {
       )}
     </>
   );
-});
+};

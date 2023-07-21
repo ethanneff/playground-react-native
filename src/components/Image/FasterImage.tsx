@@ -1,19 +1,14 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { FastImage } from '../FastImage';
 
 type Props = {
-  height: number;
-  onImageLoad: () => void;
-  uri: string;
-  width: number;
+  readonly height: number;
+  readonly onImageLoad: () => void;
+  readonly uri: string;
+  readonly width: number;
 };
 
-export const FasterImage = memo(function FasterImage({
-  height,
-  onImageLoad,
-  uri,
-  width,
-}: Props) {
+export const FasterImage = ({ height, onImageLoad, uri, width }: Props) => {
   const containerStyle = { height, width };
   return (
     <FastImage
@@ -23,4 +18,4 @@ export const FasterImage = memo(function FasterImage({
       style={containerStyle}
     />
   );
-});
+};

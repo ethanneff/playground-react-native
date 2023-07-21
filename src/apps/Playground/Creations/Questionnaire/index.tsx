@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { Dimensions, type ViewToken } from 'react-native';
 import {
   Button,
@@ -57,7 +57,7 @@ const data: Data[] = [
 const { width } = Dimensions.get('window');
 const viewabilityConfig = { itemVisiblePercentThreshold: 50 };
 
-export const Questionnaire = memo(function Questionnaire() {
+export const Questionnaire = () => {
   const [output, setOutput] = useState({});
   const currentIndex = useRef(0);
   const { goBack } = useNavigation();
@@ -122,15 +122,13 @@ export const Questionnaire = memo(function Questionnaire() {
       if (item.choices)
         items = (
           <View flex={1}>
-            {item.choices.map((choice) => {
-              return (
-                <Button
-                  key={choice.title}
-                  onPress={updateSelection(item, choice)}
-                  title={choice.title}
-                />
-              );
-            })}
+            {item.choices.map((choice) => (
+              <Button
+                key={choice.title}
+                onPress={updateSelection(item, choice)}
+                title={choice.title}
+              />
+            ))}
           </View>
         );
 
@@ -185,4 +183,4 @@ export const Questionnaire = memo(function Questionnaire() {
       <Questionnaires />
     </Screen>
   );
-});
+};

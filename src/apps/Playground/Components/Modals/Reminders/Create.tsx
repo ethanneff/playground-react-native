@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Alert, StyleSheet } from 'react-native';
 import { Button, Modal, Text } from '../../../../../components';
 import { spacing } from '../../../../../features';
@@ -11,16 +11,16 @@ import { type ReminderType } from './types';
 const reminderTypes: ReminderType[] = ['one time', 'repeat', 'location'];
 
 type Props = {
-  onBackgroundPress: () => void;
-  onLocationPress: (id: string) => () => void;
-  onOneTimePress: (date: Date) => () => void;
+  readonly onBackgroundPress: () => void;
+  readonly onLocationPress: (id: string) => () => void;
+  readonly onOneTimePress: (date: Date) => () => void;
 };
 
-export const Create = memo(function Create({
+export const Create = ({
   onBackgroundPress,
   onLocationPress,
   onOneTimePress,
-}: Props) {
+}: Props) => {
   const [state, setState] = useState<ReminderType>('one time');
   const styles = StyleSheet.create({
     section: {
@@ -84,4 +84,4 @@ export const Create = memo(function Create({
       />
     </Modal>
   );
-});
+};

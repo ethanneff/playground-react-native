@@ -1,14 +1,14 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { View } from '../../../../components';
 import { useColors } from '../../../../features';
 import { getSmallestDimension, useAppSelector } from '../../../../redux';
 
 type CellProps = {
-  length: number;
-  value: number;
+  readonly length: number;
+  readonly value: number;
 };
 
-export const Cell = memo(function Cell({ length, value }: CellProps) {
+export const Cell = ({ length, value }: CellProps) => {
   const colors = useColors();
   const width = useAppSelector(getSmallestDimension) / length;
   const backgroundColor =
@@ -29,4 +29,4 @@ export const Cell = memo(function Cell({ length, value }: CellProps) {
       }}
     />
   );
-});
+};

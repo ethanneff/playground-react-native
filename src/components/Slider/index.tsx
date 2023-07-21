@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
 });
 
 type Props = SliderProps & {
-  defaultValue: number;
-  flex?: boolean;
+  readonly defaultValue: number;
+  readonly flex?: boolean;
 };
 
 export const Slider = ({

@@ -1,12 +1,12 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { useAppSelector } from '../../redux';
 import { Landing, Main } from './navigation';
 
-export default memo(function Complete() {
+export const Complete = () => {
   const user = useAppSelector((s) => s.completeUser);
   const App = user ? Main : Landing;
   return <App />;
-});
+};
 
 /*
 

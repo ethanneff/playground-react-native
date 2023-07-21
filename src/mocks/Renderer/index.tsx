@@ -16,7 +16,7 @@ type OptionalOptions<TProps> = {
 };
 
 type ProviderProps = PropsWithChildren & {
-  store: Store<RootState>;
+  readonly store: Store<RootState>;
 };
 
 const Providers = ({ children, store }: ProviderProps) => (

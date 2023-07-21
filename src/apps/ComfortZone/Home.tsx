@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
   Calendar,
@@ -153,7 +153,7 @@ const data = [
   'When ordering a drink at a restaurant, tell the waiter to surprise you',
 ];
 
-export const Home = memo(function Home() {
+export const Home = () => {
   const { onLeftPress } = useAdminNavBack();
   const colors = useColors();
   const inputRef = useRef<TextInputRef>(null);
@@ -276,4 +276,4 @@ export const Home = memo(function Home() {
       </ScrollView>
     </Screen>
   );
-});
+};

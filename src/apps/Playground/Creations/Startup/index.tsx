@@ -1,5 +1,5 @@
 import { format } from 'date-fns';
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   Button,
   Input,
@@ -39,7 +39,7 @@ const initialState: Form = {
   usersTalkedTo: '',
 };
 
-export const Startup = memo(function PlaygroundStartup() {
+export const Startup = () => {
   const colors = useColors();
   const { goBack } = useNavigation();
   const [form, setForm] = useState<Form>(initialState);
@@ -183,4 +183,4 @@ export const Startup = memo(function PlaygroundStartup() {
       </KeyboardAwareScrollView>
     </Screen>
   );
-});
+};

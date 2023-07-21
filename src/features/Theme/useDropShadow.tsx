@@ -13,8 +13,9 @@ type UseDropShadow = (
   zIndex: number;
 };
 
-export const useDropShadow = (): UseDropShadow => {
-  return (elevation = 10, height = 2) => {
+export const useDropShadow =
+  (): UseDropShadow =>
+  (elevation = 10, height = 2) => {
     const shadowOpacity = elevation * 0.036 + 0.12;
     const shadowRadius = elevation * 0.36 + 1.2;
     return {
@@ -29,4 +30,3 @@ export const useDropShadow = (): UseDropShadow => {
       zIndex: elevation,
     };
   };
-};

@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Calendar, Card, Screen, ScrollView, Text } from '../../components';
 import { useNavigation } from '../../conversions';
 import { spacing, useColors } from '../../features';
 
-export const Day = memo(function Day() {
+export const Day = () => {
   const { goBack } = useNavigation();
   const colors = useColors();
 
@@ -31,4 +31,4 @@ export const Day = memo(function Day() {
       </ScrollView>
     </Screen>
   );
-});
+};

@@ -1,16 +1,16 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
 import { Button, Text, View } from '../../../../components';
 import {
-  type LayoutDimensions,
   useColors,
   useDriver,
+  type LayoutDimensions,
 } from '../../../../features';
 
 type Props = {
-  duration?: number;
-  layout: LayoutDimensions;
-  radius?: number;
+  readonly duration?: number;
+  readonly layout: LayoutDimensions;
+  readonly radius?: number;
 };
 
 type PapiObject = {
@@ -69,11 +69,7 @@ const getNextDraw = (
   return next;
 };
 
-export const Game = memo(function Game({
-  duration = 50,
-  layout,
-  radius = 20,
-}: Props) {
+export const Game = ({ duration = 50, layout, radius = 20 }: Props) => {
   const colors = useColors();
   const useNativeDriver = useDriver();
   const papi = useRef(getInitialPapiLocation(layout, radius));
@@ -154,4 +150,4 @@ export const Game = memo(function Game({
       />
     </>
   );
-});
+};

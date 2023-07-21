@@ -1,10 +1,10 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Button, Screen, ScrollView } from '../../../components';
 import { useNavigation } from '../../../conversions';
 import { spacing, useAdminNavBack, useColors } from '../../../features';
 import { type PortfolioNavigation, type PortfolioRoutes } from '../types';
 
-export const Home = memo(function PortfolioHome() {
+export const Home = () => {
   const { navigate } = useNavigation<PortfolioNavigation>();
   const navTo = useCallback(
     (to: keyof PortfolioRoutes) => () => {
@@ -44,4 +44,4 @@ export const Home = memo(function PortfolioHome() {
       </ScrollView>
     </Screen>
   );
-});
+};

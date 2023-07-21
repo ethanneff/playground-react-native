@@ -5,9 +5,9 @@ import { HalfCircle } from './HalfCircle';
 import { type Ring } from './types';
 
 type CircularProgressProps = {
-  radius: number;
-  ring: Ring;
-  theta: number;
+  readonly radius: number;
+  readonly ring: Ring;
+  readonly theta: number;
 };
 
 export const CircularProgress = ({

@@ -1,22 +1,17 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '../../../../components';
 import { AngularGradient } from './AngularGradient';
 import { type Ring } from './types';
 
 type Props = {
-  flip?: boolean;
-  radius: number;
-  ring: Ring;
-  type: 'background' | 'foreground';
+  readonly flip?: boolean;
+  readonly radius: number;
+  readonly ring: Ring;
+  readonly type: 'background' | 'foreground';
 };
 
-export const HalfCircle = memo(function HalfCircle({
-  flip,
-  radius,
-  ring,
-  type,
-}: Props) {
+export const HalfCircle = ({ flip, radius, ring, type }: Props) => {
   const colors: [string, string] = [ring.start, ring.end];
   const fg = (
     <AngularGradient
@@ -45,4 +40,4 @@ export const HalfCircle = memo(function HalfCircle({
       <View style={styles.circle}>{type === 'foreground' ? fg : bg}</View>
     </View>
   );
-});
+};

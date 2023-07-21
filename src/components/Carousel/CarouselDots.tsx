@@ -1,21 +1,21 @@
-import React, { memo, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { View } from '..';
 import { spacing, useColors } from '../../features';
 import { Pressable } from '../Pressable';
 
 type DotsProps = {
-  activeIndex: number;
-  dotSize: number;
-  length: number;
-  onDotPress: (index: number) => () => void;
+  readonly activeIndex: number;
+  readonly dotSize: number;
+  readonly length: number;
+  readonly onDotPress: (index: number) => () => void;
 };
 
-export const CarouselDots = memo(function Dots({
+export const CarouselDots = ({
   activeIndex,
   dotSize,
   length,
   onDotPress,
-}: DotsProps) {
+}: DotsProps) => {
   const dots = useMemo(() => Array.from({ length }, (_, i) => i), [length]);
   const colors = useColors();
   return (
@@ -47,4 +47,4 @@ export const CarouselDots = memo(function Dots({
       ))}
     </View>
   );
-});
+};

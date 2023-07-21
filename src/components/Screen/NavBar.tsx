@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '../../components';
 import { useColors, useDropShadow } from '../../features';
@@ -7,20 +7,20 @@ import { Text } from '../Text';
 import { NavButton } from './NavButton';
 
 type Props = {
-  border?: boolean;
-  dropShadow?: boolean;
-  leftIcon?: IconName;
-  onLeftPress?: () => void;
-  onRightPress?: () => void;
-  onSecondLeftPress?: () => void;
-  onSecondRightPress?: () => void;
-  rightIcon?: IconName;
-  secondLeftIcon?: IconName;
-  secondRightIcon?: IconName;
-  title?: string;
+  readonly border?: boolean;
+  readonly dropShadow?: boolean;
+  readonly leftIcon?: IconName;
+  readonly onLeftPress?: () => void;
+  readonly onRightPress?: () => void;
+  readonly onSecondLeftPress?: () => void;
+  readonly onSecondRightPress?: () => void;
+  readonly rightIcon?: IconName;
+  readonly secondLeftIcon?: IconName;
+  readonly secondRightIcon?: IconName;
+  readonly title?: string;
 };
 
-export const NavBar = memo(function NavBar({
+export const NavBar = ({
   border,
   dropShadow,
   leftIcon = 'chevron-left',
@@ -32,7 +32,7 @@ export const NavBar = memo(function NavBar({
   secondLeftIcon,
   secondRightIcon,
   title,
-}: Props) {
+}: Props) => {
   const colors = useColors();
   const shadow = useDropShadow();
   const showShadow = dropShadow ? shadow(4) : {};
@@ -99,4 +99,4 @@ export const NavBar = memo(function NavBar({
       />
     </>
   );
-});
+};

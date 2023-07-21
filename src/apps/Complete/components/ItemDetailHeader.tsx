@@ -1,18 +1,14 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Text } from '../../../components';
 
 type ItemDetailHeaderProps = {
-  title: string;
+  readonly title: string;
 };
 
-export const ItemDetailHeader = memo(function ItemDetailHeader({
-  title,
-}: ItemDetailHeaderProps) {
-  return (
-    <Text
-      emphasis="high"
-      title={title}
-      type="overline"
-    />
-  );
-});
+export const ItemDetailHeader = ({ title }: ItemDetailHeaderProps) => (
+  <Text
+    emphasis="high"
+    title={title}
+    type="overline"
+  />
+);

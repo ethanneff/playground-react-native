@@ -1,9 +1,9 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { v4 } from 'uuid';
 import { Tag, View } from '../../../../components';
-import { spacing, type TagColor, useColors } from '../../../../features';
+import { spacing, useColors, type TagColor } from '../../../../features';
 
-export const TagGroup = memo(function TagGroup() {
+export const TagGroup = () => {
   const colors = useColors();
   const onPress = useCallback(() => undefined, []);
   const keys = Object.keys(colors.tag) as (keyof TagColor)[];
@@ -23,4 +23,4 @@ export const TagGroup = memo(function TagGroup() {
       ))}
     </>
   );
-});
+};

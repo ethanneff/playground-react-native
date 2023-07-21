@@ -12,7 +12,7 @@ import { spacing, useColors } from '../../../../features';
 import { getSize } from './utils';
 
 type Props = {
-  horizontal?: boolean;
+  readonly horizontal?: boolean;
 };
 
 export const ExampleScroll = ({ horizontal }: Props) => {

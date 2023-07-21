@@ -1,4 +1,4 @@
-import React, { memo, useCallback, type RefObject } from 'react';
+import React, { useCallback, type RefObject } from 'react';
 import { type ViewToken } from 'react-native';
 import { getWidth, useAppSelector } from '../../redux';
 import {
@@ -10,18 +10,20 @@ import { CarouselItem } from './CarouselItem';
 import { type CarouselSlide } from './types';
 
 type ListProps = {
-  onRef?: RefObject<FlashListType<CarouselSlide>>;
-  onViewableItemsChanged: (props: { viewableItems: ViewToken[] }) => void;
-  slides: CarouselSlide[];
-  viewabilityConfig?: Record<string, unknown>;
+  readonly onRef?: RefObject<FlashListType<CarouselSlide>>;
+  readonly onViewableItemsChanged: (props: {
+    viewableItems: ViewToken[];
+  }) => void;
+  readonly slides: CarouselSlide[];
+  readonly viewabilityConfig?: Record<string, unknown>;
 };
 
-export const CarouselList = memo(function CarouselListMemo({
+export const CarouselList = ({
   onRef,
   onViewableItemsChanged,
   slides,
   viewabilityConfig,
-}: ListProps) {
+}: ListProps) => {
   const width = useAppSelector(getWidth);
 
   const renderItem = useCallback<FlashListRenderItem<CarouselSlide>>(
@@ -53,4 +55,4 @@ export const CarouselList = memo(function CarouselListMemo({
       viewabilityConfig={viewabilityConfig}
     />
   );
-});
+};

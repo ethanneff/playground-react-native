@@ -8,7 +8,7 @@ import { CalendarDay } from './CalendarDay';
 import { keyOfMonth } from './constants';
 
 type Props = {
-  hiddenDays?: boolean;
+  readonly hiddenDays?: boolean;
 };
 
 export const CalendarMonth = ({ hiddenDays }: Props) => {

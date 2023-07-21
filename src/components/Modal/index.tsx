@@ -1,10 +1,4 @@
-import React, {
-  memo,
-  useCallback,
-  useEffect,
-  useRef,
-  type ReactNode,
-} from 'react';
+import React, { useCallback, useEffect, useRef, type ReactNode } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import { spacing, useColors, useDriver, useDropShadow } from '../../features';
 import { useAppSelector } from '../../redux';
@@ -14,22 +8,22 @@ import { ScrollView } from '../ScrollView';
 import { View } from '../View';
 
 type ModalProps = {
-  backgroundColor?: string;
-  children: ReactNode;
-  duration?: number;
-  elevation?: number;
-  heightPercent?: number;
-  noScroll?: boolean;
-  onBackgroundPress?: () => void;
-  showOverlay?: boolean;
-  testID?: string;
-  widthPercent?: number;
+  readonly backgroundColor?: string;
+  readonly children: ReactNode;
+  readonly duration?: number;
+  readonly elevation?: number;
+  readonly heightPercent?: number;
+  readonly noScroll?: boolean;
+  readonly onBackgroundPress?: () => void;
+  readonly showOverlay?: boolean;
+  readonly testID?: string;
+  readonly widthPercent?: number;
 };
 
 const fadeDuration = 150;
 const defaultMargin = 0.8;
 
-export const Modal = memo(function Modal({
+export const Modal = ({
   backgroundColor,
   children,
   duration,
@@ -40,7 +34,7 @@ export const Modal = memo(function Modal({
   showOverlay,
   testID,
   widthPercent = defaultMargin,
-}: ModalProps) {
+}: ModalProps) => {
   const colors = useColors();
   const useNativeDriver = useDriver();
   const keyboardHeight = useAppSelector((s) => s.device.keyboardHeight);
@@ -144,4 +138,4 @@ export const Modal = memo(function Modal({
       </Pressable>
     </Animated.View>
   );
-});
+};

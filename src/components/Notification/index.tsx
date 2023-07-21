@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import {
   Animated,
   PanResponder,
@@ -14,16 +14,16 @@ import { Pressable } from '../Pressable';
 import { Text } from '../Text';
 
 type NotificationProps = {
-  dismissDelay?: number;
-  height?: number;
-  noSwipe?: boolean;
-  onBackgroundPress?: () => void;
-  onCancel?: () => void;
-  thresholdPercent?: number;
-  title: string;
+  readonly dismissDelay?: number;
+  readonly height?: number;
+  readonly noSwipe?: boolean;
+  readonly onBackgroundPress?: () => void;
+  readonly onCancel?: () => void;
+  readonly thresholdPercent?: number;
+  readonly title: string;
 };
 
-export const Notification = memo(function Notification({
+export const Notification = ({
   dismissDelay = 100,
   height = spacing(18),
   noSwipe, // broken
@@ -31,7 +31,7 @@ export const Notification = memo(function Notification({
   onCancel,
   thresholdPercent = 0.5,
   title,
-}: NotificationProps) {
+}: NotificationProps) => {
   const colors = useColors();
   const initialPosition = useMemo(() => ({ x: 0, y: -height }), [height]);
   const styles = StyleSheet.create({
@@ -164,4 +164,4 @@ export const Notification = memo(function Notification({
       />
     </Animated.View>
   );
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
 import {
   Button,
@@ -37,7 +37,7 @@ type Game = {
   spinning: boolean;
 };
 
-export const SlotMachine = memo(function PlaygroundSlotMachine() {
+export const SlotMachine = () => {
   const { goBack } = useNavigation();
   const useNativeDriver = useDriver();
   const [game, setGame] = useState<Game | null>(null);
@@ -155,7 +155,7 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
                 type="h1"
               />
               <Text
-                title={`${game.credits}`}
+                title={String(game.credits)}
                 type="h1"
               />
             </View>
@@ -211,4 +211,4 @@ export const SlotMachine = memo(function PlaygroundSlotMachine() {
       </View>
     </Screen>
   );
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import {
   Button,
   Carousel,
@@ -9,7 +9,7 @@ import { useNavigation } from '../../../conversions';
 import { useColors } from '../../../features';
 import { type PortfolioNavigation } from '../types';
 
-export const Landing = memo(function PortfolioLanding() {
+export const Landing = () => {
   const { goBack, navigate } = useNavigation<PortfolioNavigation>();
   const colors = useColors();
   const navPortfolioLogin = useCallback(() => {
@@ -38,4 +38,4 @@ export const Landing = memo(function PortfolioLanding() {
       />
     </Screen>
   );
-});
+};

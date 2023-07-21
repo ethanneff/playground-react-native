@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   Button,
   Input,
@@ -11,7 +11,7 @@ import { useNavigation } from '../../../conversions';
 import { spacing, useColors } from '../../../features';
 import { type PortfolioNavigation } from '../types';
 
-export const Login = memo(function PortfolioLogin() {
+export const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { goBack, navigate } = useNavigation<PortfolioNavigation>();
@@ -74,4 +74,4 @@ export const Login = memo(function PortfolioLogin() {
       </ScrollView>
     </Screen>
   );
-});
+};

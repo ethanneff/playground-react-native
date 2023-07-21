@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Animated } from 'react-native';
 import { Button, Screen, Text, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
@@ -18,7 +18,7 @@ type Game = {
 
 // TODO: need to save the entire board to redux to load on app open
 
-export const Snake = memo(function Snake() {
+export const Snake = () => {
   const { goBack } = useNavigation();
   const size = 20;
   const frequency = 200;
@@ -89,4 +89,4 @@ export const Snake = memo(function Snake() {
       {game.state === 'error' && <EndGame onPress={onStart} />}
     </>
   );
-});
+};

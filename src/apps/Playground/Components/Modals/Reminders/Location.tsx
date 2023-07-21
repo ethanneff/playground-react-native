@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { v4 } from 'uuid';
 import { Item } from './Item';
 
@@ -9,10 +9,10 @@ type LocationItem = {
 };
 
 type Props = {
-  onPress: (value: string) => () => void;
+  readonly onPress: (value: string) => () => void;
 };
 
-export const Location = memo(function Location({ onPress }: Props) {
+export const Location = ({ onPress }: Props) => {
   const subtitle = 'Tap to add';
   const locations: LocationItem[] = [
     {
@@ -51,4 +51,4 @@ export const Location = memo(function Location({ onPress }: Props) {
       ))}
     </>
   );
-});
+};

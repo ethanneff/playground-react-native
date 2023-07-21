@@ -1,9 +1,9 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Slider, Text, View } from '../../../../components';
-import { useAppSelector, useAppDispatch } from '../../../../redux';
+import { useAppDispatch, useAppSelector } from '../../../../redux';
 import { updateCount, updateDelay } from './redux';
 
-export const Header = memo(function Header() {
+export const Header = () => {
   const dispatch = useAppDispatch();
   const delay = useAppSelector((state) => state.gameOfLife.delay);
   const count = useAppSelector((state) => state.gameOfLife.count);
@@ -50,4 +50,4 @@ export const Header = memo(function Header() {
       </View>
     </View>
   );
-});
+};

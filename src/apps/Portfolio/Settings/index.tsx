@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import {
   Button,
   FlashList,
@@ -11,12 +11,12 @@ import { spacing } from '../../../features';
 import {
   changeTheme,
   themes,
-  useAppSelector,
   useAppDispatch,
+  useAppSelector,
   type Theme,
 } from '../../../redux';
 
-export const Settings = memo(function PortfolioSettings() {
+export const Settings = () => {
   const dispatch = useAppDispatch();
   const currentTheme = useAppSelector((state) => state.theme.currentTheme);
   const { goBack } = useNavigation();
@@ -62,4 +62,4 @@ export const Settings = memo(function PortfolioSettings() {
       />
     </Screen>
   );
-});
+};

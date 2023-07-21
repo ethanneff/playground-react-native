@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Button, Screen, ScrollView, Text } from '../../components';
 import { useNavigation } from '../../conversions';
 import {
@@ -8,7 +8,7 @@ import {
   type RootRoutes,
 } from '../../features';
 
-export default memo(function Admin() {
+export const Admin = () => {
   const { navigate } = useNavigation<RootNavigation>();
   const onPress = useCallback(
     (to: keyof RootRoutes) => () => {
@@ -86,4 +86,4 @@ export default memo(function Admin() {
       </ScrollView>
     </Screen>
   );
-});
+};

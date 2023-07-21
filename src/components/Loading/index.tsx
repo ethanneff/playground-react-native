@@ -1,16 +1,14 @@
-import React, { memo, useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import { useColors, useDriver } from '../../features';
 import { Loader } from '../Loader';
 import { Pressable } from '../Pressable';
 
 type Props = {
-  onBackgroundPress?: () => void;
+  readonly onBackgroundPress?: () => void;
 };
 
-export const Loading = memo(function LoadingScreen({
-  onBackgroundPress,
-}: Props) {
+export const Loading = ({ onBackgroundPress }: Props) => {
   const colors = useColors();
   const useNativeDriver = useDriver();
   const opacity = useRef(new Animated.Value(0)).current;
@@ -57,4 +55,4 @@ export const Loading = memo(function LoadingScreen({
       </Pressable>
     </Animated.View>
   );
-});
+};

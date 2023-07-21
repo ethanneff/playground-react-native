@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import {
   FlatList,
   type FlatListRef,
@@ -8,12 +8,10 @@ import { useAppSelector } from '../../../redux';
 import { ListItem } from './ListItem';
 
 type ListItemsProps = {
-  parentItemId: string;
+  readonly parentItemId: string;
 };
 
-export const ListItems = memo(function ListItems({
-  parentItemId,
-}: ListItemsProps) {
+export const ListItems = ({ parentItemId }: ListItemsProps) => {
   const list = useAppSelector(
     (s) => s.completeItem.items[parentItemId].children,
   );
@@ -51,4 +49,4 @@ export const ListItems = memo(function ListItems({
       showsVerticalScrollIndicator={false}
     />
   );
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import {
   FlashList,
   View,
@@ -13,7 +13,7 @@ import {
   type Message,
 } from './Messages';
 
-export const Items = memo(function ChatMessageItems() {
+export const Items = () => {
   const itemsRef = useRef<FlashListRef<Message>>(null);
   const colors = useColors();
   const messages = useAppSelector(getActiveChatMessagesOrderByCreatedAt);
@@ -51,4 +51,4 @@ export const Items = memo(function ChatMessageItems() {
       />
     </View>
   );
-});
+};

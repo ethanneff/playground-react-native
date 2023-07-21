@@ -1,22 +1,17 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '../../components';
 import { Loader } from '../Loader';
 import { FasterImage } from './FasterImage';
 
 type Props = {
-  height: number;
-  size?: number | 'large' | 'small';
-  uri: string;
-  width: number;
+  readonly height: number;
+  readonly size?: number | 'large' | 'small';
+  readonly uri: string;
+  readonly width: number;
 };
 
-export const Image = memo(function Image({
-  height,
-  size = 'small',
-  uri,
-  width,
-}: Props) {
+export const Image = ({ height, size = 'small', uri, width }: Props) => {
   const [opacity, setOpacity] = useState(1);
   const styles = StyleSheet.create({
     indicatorOverlay: {
@@ -45,4 +40,4 @@ export const Image = memo(function Image({
       />
     </View>
   );
-});
+};

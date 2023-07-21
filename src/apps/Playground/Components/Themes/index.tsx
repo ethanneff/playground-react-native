@@ -1,5 +1,5 @@
 // TODO: slider on web
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Image, type ImageSourcePropType } from 'react-native';
 import {
   Button,
@@ -17,8 +17,8 @@ import {
   changeTheme,
   getLandscapeOrientation,
   themes,
-  useAppSelector,
   useAppDispatch,
+  useAppSelector,
   type Theme,
 } from '../../../../redux';
 
@@ -87,8 +87,8 @@ const cards: CardItem[] = [
 const initialElevation = 2;
 
 type HeaderProps = {
-  elevation: number;
-  onValueChange: (value: number) => void;
+  readonly elevation: number;
+  readonly onValueChange: (value: number) => void;
 };
 const Header = ({ elevation, onValueChange }: HeaderProps) => {
   const dispatch = useAppDispatch();
@@ -133,7 +133,7 @@ const Header = ({ elevation, onValueChange }: HeaderProps) => {
   );
 };
 
-export const Themes = memo(function Themes() {
+export const Themes = () => {
   const { goBack } = useNavigation();
   const [elevation, setElevation] = useState(initialElevation);
   const handleSlider = useCallback((value: number) => {
@@ -216,4 +216,4 @@ export const Themes = memo(function Themes() {
       />
     </Screen>
   );
-});
+};

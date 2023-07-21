@@ -1,15 +1,15 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { GestureSwitch } from '../../conversions';
 import { SoundManager, useColors } from '../../features';
 
 export type SwitchRef = GestureSwitch | null;
 
 type Props = {
-  onValueChange: (value: boolean) => void;
-  value: boolean;
+  readonly onValueChange: (value: boolean) => void;
+  readonly value: boolean;
 };
 
-export const Switch = memo(function Switch({ onValueChange, value }: Props) {
+export const Switch = ({ onValueChange, value }: Props) => {
   const handleValueChange = useCallback(
     (result: boolean) => {
       SoundManager.play('tap');
@@ -25,4 +25,4 @@ export const Switch = memo(function Switch({ onValueChange, value }: Props) {
       value={value}
     />
   );
-});
+};

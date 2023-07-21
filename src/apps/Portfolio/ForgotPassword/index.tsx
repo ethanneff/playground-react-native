@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import {
   Button,
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row', justifyContent: 'space-around' },
 });
 
-export const ForgotPassword = memo(function PortfolioForgotPassword() {
+export const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const { goBack } = useNavigation();
   const handleEmail = useCallback((val: string) => {
@@ -54,4 +54,4 @@ export const ForgotPassword = memo(function PortfolioForgotPassword() {
       </ScrollView>
     </Screen>
   );
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { useState } from 'react';
 import { Animated, PanResponder, StyleSheet } from 'react-native';
 import { Screen, Text, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
@@ -8,7 +8,7 @@ import { GestureHandler } from './logic';
 const minTouches = 2;
 const title = `pinch or spread the screen with ${minTouches} fingers minimum`;
 
-export const PinchSpread = memo(function PinchSpread() {
+export const PinchSpread = () => {
   const [state, setState] = useState({ pinchCount: 0, spreadCount: 0 });
   const colors = useColors();
   const { goBack } = useNavigation();
@@ -67,4 +67,4 @@ export const PinchSpread = memo(function PinchSpread() {
       </View>
     </Screen>
   );
-});
+};

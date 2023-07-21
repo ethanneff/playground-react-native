@@ -1,22 +1,17 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Text, View } from '../../../../components';
 import { useColors } from '../../../../features';
 import { Timer } from './Timer';
 
 type LapProps = {
-  fastest: boolean;
-  interval: number;
-  num: number;
-  slowest: boolean;
+  readonly fastest: boolean;
+  readonly interval: number;
+  readonly num: number;
+  readonly slowest: boolean;
 };
 
-export const Lap = memo(function Lap({
-  fastest,
-  interval,
-  num,
-  slowest,
-}: LapProps) {
+export const Lap = ({ fastest, interval, num, slowest }: LapProps) => {
   const colors = useColors();
   const styles = StyleSheet.create({
     fastest: {
@@ -56,4 +51,4 @@ export const Lap = memo(function Lap({
       />
     </View>
   );
-});
+};

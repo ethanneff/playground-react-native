@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { type LayoutChangeEvent } from 'react-native';
 import {
   Button,
@@ -13,7 +13,7 @@ import { useAppSelector } from '../../../../redux';
 import { List } from '../../components';
 import { getInbox } from '../../models';
 
-export const Plan = memo(function Plan() {
+export const Plan = () => {
   const { tabBarEdges } = useLayout();
   const keyboardHeight = useKeyboardHeight();
   const [containerHeight, setContainerHeight] = useState(0);
@@ -76,4 +76,4 @@ export const Plan = memo(function Plan() {
       </KeyboardHandler>
     </Screen>
   );
-});
+};

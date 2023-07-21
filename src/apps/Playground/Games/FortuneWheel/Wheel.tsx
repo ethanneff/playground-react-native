@@ -1,5 +1,5 @@
 import { arc as d3Arc, pie } from 'd3-shape';
-import React, { memo, useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { Animated, Dimensions, Easing } from 'react-native';
 import Svg, { G, Path, Polygon, Text } from 'react-native-svg';
 import { v4 } from 'uuid';
@@ -9,22 +9,22 @@ import { type Segment } from './types';
 import { getNewLocation, getWinnerIndex } from './utils';
 
 type Props = {
-  backgroundColor?: string;
-  bounceSpeed?: number;
-  fontSize?: number;
-  innerRadius?: number;
-  maxSpin?: number;
-  minSpin?: number;
-  noBounce?: boolean;
-  onComplete: (segment: Segment) => void;
-  padAngle?: number;
-  segments: Segment[];
-  size?: number;
-  spinSpeed?: number;
-  textColor?: string;
+  readonly backgroundColor?: string;
+  readonly bounceSpeed?: number;
+  readonly fontSize?: number;
+  readonly innerRadius?: number;
+  readonly maxSpin?: number;
+  readonly minSpin?: number;
+  readonly noBounce?: boolean;
+  readonly onComplete: (segment: Segment) => void;
+  readonly padAngle?: number;
+  readonly segments: Segment[];
+  readonly size?: number;
+  readonly spinSpeed?: number;
+  readonly textColor?: string;
 };
 
-export const Wheel = memo(function WheelMemo({
+export const Wheel = ({
   backgroundColor,
   bounceSpeed = 5000,
   fontSize = 24,
@@ -38,7 +38,7 @@ export const Wheel = memo(function WheelMemo({
   size = Dimensions.get('screen').width,
   spinSpeed = 1000,
   textColor,
-}: Props) {
+}: Props) => {
   const colors = useColors();
   const dropShadow = useDropShadow();
   const useNativeDriver = useDriver();
@@ -214,4 +214,4 @@ export const Wheel = memo(function WheelMemo({
       </Animated.View>
     </Pressable>
   );
-});
+};

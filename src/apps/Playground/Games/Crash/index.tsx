@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   Button,
   Card,
@@ -58,7 +58,7 @@ type Game = {
 };
 
 // https://www.youtube.com/watch?v=sRq1_B8raPg
-export const Crash = memo(function CrashMemo() {
+export const Crash = () => {
   const colors = useColors();
   const { goBack } = useNavigation();
 
@@ -216,14 +216,14 @@ export const Crash = memo(function CrashMemo() {
               </View>
             ) : game.status === 'finish' ? (
               <View>
-                <Text title={`${game.payout}`} />
+                <Text title={String(game.payout)} />
                 <Text title="Round Over" />
               </View>
             ) : (
               <View>
-                <Text title={`${game.payout}`} />
+                <Text title={String(game.payout)} />
                 <Text title="Current Payout" />
-                <Text title={`${game.payout * playerGame.bidAmount}`} />
+                <Text title={String(game.payout * playerGame.bidAmount)} />
               </View>
             )}
           </View>
@@ -231,4 +231,4 @@ export const Crash = memo(function CrashMemo() {
       </ScrollView>
     </Screen>
   );
-});
+};

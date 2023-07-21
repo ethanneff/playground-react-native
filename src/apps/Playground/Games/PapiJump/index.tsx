@@ -1,11 +1,11 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Screen, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { useColors, useLayout } from '../../../../features';
 import { Game } from './Game';
 
-export const PapiJump = memo(function PapiJump() {
+export const PapiJump = () => {
   const colors = useColors();
   const { goBack } = useNavigation();
   const { layout, onLayout } = useLayout();
@@ -29,4 +29,4 @@ export const PapiJump = memo(function PapiJump() {
       </View>
     </Screen>
   );
-});
+};

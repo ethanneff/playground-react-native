@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import {
   Card,
@@ -13,11 +13,11 @@ import { ItemDetailHeader } from './ItemDetailHeader';
 type OnSubmit = (text: string) => void;
 
 type ItemEditProps = {
-  description?: string;
-  onSubmit: (type: string) => OnSubmit;
-  placeholder: string;
-  title: string;
-  titleEditable: boolean;
+  readonly description?: string;
+  readonly onSubmit: (type: string) => OnSubmit;
+  readonly placeholder: string;
+  readonly title: string;
+  readonly titleEditable: boolean;
 };
 
 type Form = {
@@ -26,13 +26,13 @@ type Form = {
 };
 
 // TODO: need to clear on blur
-export const ItemEdit = memo(function ItemEdit({
+export const ItemEdit = ({
   description = '',
   onSubmit,
   placeholder,
   title,
   titleEditable,
-}: ItemEditProps) {
+}: ItemEditProps) => {
   const onClose = useCallback(() => {
     Keyboard.dismiss();
   }, []);
@@ -106,4 +106,4 @@ export const ItemEdit = memo(function ItemEdit({
       </View>
     </Card>
   );
-});
+};

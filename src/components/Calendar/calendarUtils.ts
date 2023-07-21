@@ -8,15 +8,10 @@ type MonthAndDays = {
 };
 
 export const calendarUtils = {
-  addDays: (date: Date, days: number): Date => {
-    return toDate(add(date, { days }));
-  },
-  addMonths: (date: Date, months: number): Date => {
-    return toDate(add(date, { months }));
-  },
-  getFirstDayOfMonth: (date: Date): Date => {
-    return toDate(startOfMonth(date));
-  },
+  addDays: (date: Date, days: number): Date => toDate(add(date, { days })),
+  addMonths: (date: Date, months: number): Date =>
+    toDate(add(date, { months })),
+  getFirstDayOfMonth: (date: Date): Date => toDate(startOfMonth(date)),
   getMonthAndDays: (month: Date): MonthAndDays => {
     const firstDayOfMonth = calendarUtils.getFirstDayOfMonth(month);
     const monthKey = format(firstDayOfMonth, keyOfMonth);

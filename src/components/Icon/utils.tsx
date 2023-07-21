@@ -14,8 +14,8 @@ export const getColor = ({
   colors,
   disabled,
   hidden,
-}: GetColors) => {
-  return hidden
+}: GetColors) =>
+  hidden
     ? 'transparent'
     : disabled
     ? colors.text.disabled
@@ -24,4 +24,3 @@ export const getColor = ({
     : color
     ? colors.text[color]
     : colors.text.secondary;
-};

@@ -19,7 +19,7 @@ type State = {
 };
 
 type Props = {
-  onComplete: () => void;
+  readonly onComplete: () => void;
 };
 
 export const Reminders = ({ onComplete }: Props) => {

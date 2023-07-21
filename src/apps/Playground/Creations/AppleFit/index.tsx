@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Screen, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { AppleActivity } from './AppleActivity';
@@ -34,7 +34,7 @@ const rings: Ring[] = [
   },
 ];
 
-export const AppleFit = memo(function PlaygroundAppleFit() {
+export const AppleFit = () => {
   const { goBack } = useNavigation();
 
   return (
@@ -53,4 +53,4 @@ export const AppleFit = memo(function PlaygroundAppleFit() {
       </View>
     </Screen>
   );
-});
+};

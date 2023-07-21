@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Keyboard } from 'react-native';
 import { v4 } from 'uuid';
 import {
@@ -9,23 +9,23 @@ import {
   type TextInputRef,
 } from '../../../components';
 import { spacing, useColors } from '../../../features';
-import { useAppSelector, useAppDispatch } from '../../../redux';
+import { useAppDispatch, useAppSelector } from '../../../redux';
 import { addItemToItem, createItem, type Item } from '../models';
 import { completeConfig } from '../utils';
 
 type AddItemProps = {
-  parentItemId: string;
-  placeholder: string;
-  title: string;
-  width?: number;
+  readonly parentItemId: string;
+  readonly placeholder: string;
+  readonly title: string;
+  readonly width?: number;
 };
 
-export const AddItem = memo(function AddItem({
+export const AddItem = ({
   parentItemId,
   placeholder,
   title,
   width,
-}: AddItemProps) {
+}: AddItemProps) => {
   const colors = useColors();
   const textInputRef = useRef<TextInputRef>(null);
   const text = useRef('');
@@ -129,4 +129,4 @@ export const AddItem = memo(function AddItem({
       )}
     </View>
   );
-});
+};

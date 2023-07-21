@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   Button,
   Modal,
@@ -12,18 +12,18 @@ import { useIsFocused } from '../../../../conversions';
 import { spacing } from '../../../../features';
 
 type Props = {
-  loading: boolean;
-  onChangeText: (value: string) => void;
-  onModalClose: () => void;
-  onSubmit: () => void;
+  readonly loading: boolean;
+  readonly onChangeText: (value: string) => void;
+  readonly onModalClose: () => void;
+  readonly onSubmit: () => void;
 };
 
-export const CreateGoalModal = memo(function CreateGoalModal({
+export const CreateGoalModal = ({
   loading,
   onChangeText,
   onModalClose,
   onSubmit,
-}: Props) {
+}: Props) => {
   const inputGoal = useRef<TextInputRef>(null);
   const focus = useIsFocused();
 
@@ -81,4 +81,4 @@ export const CreateGoalModal = memo(function CreateGoalModal({
       </View>
     </Modal>
   );
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { FlashList, View, type FlashListRenderItem } from '../../components';
 import { spacing } from '../../features';
 import { Button } from '../Button';
@@ -22,11 +22,11 @@ import {
 } from './utils';
 
 type Props = {
-  margin?: number;
-  site: Site;
-  size?: number;
-  title?: string;
-  username: string;
+  readonly margin?: number;
+  readonly site: Site;
+  readonly size?: number;
+  readonly title?: string;
+  readonly username: string;
 };
 
 const initialActivity: ActivityModel = {
@@ -38,13 +38,13 @@ const initialActivity: ActivityModel = {
   },
 };
 
-export const Activity = memo(function Activity({
+export const Activity = ({
   margin = 2,
   site,
   size = spacing(6),
   title,
   username,
-}: Props) {
+}: Props) => {
   const [state, setState] = useState<ActivityModel>(initialActivity);
   const keyExtractor = useCallback(
     (item: ActivityWeek) => String(item[0].date),
@@ -170,4 +170,4 @@ export const Activity = memo(function Activity({
       )}
     </Card>
   );
-});
+};

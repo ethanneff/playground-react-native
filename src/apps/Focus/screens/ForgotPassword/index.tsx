@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
   KeyboardAwareScrollView,
@@ -23,7 +23,7 @@ import { type UnAuthStackRoutes } from '../../types';
 
 const initialState = { loading: false };
 
-export const ForgotPassword = memo(function ForgotPassword() {
+export const ForgotPassword = () => {
   const { goBack } =
     useNavigation<StackNavigationProp<UnAuthStackRoutes, 'forgot-password'>>();
   const route = useRoute<RouteProp<UnAuthStackRoutes, 'forgot-password'>>();
@@ -122,4 +122,4 @@ export const ForgotPassword = memo(function ForgotPassword() {
       </KeyboardAwareScrollView>
     </Screen>
   );
-});
+};

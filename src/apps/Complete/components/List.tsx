@@ -1,4 +1,4 @@
-import React, { memo, type ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import { Card, View } from '../../../components';
 import { completeConfig } from '../utils';
 import { AddItem } from './AddItem';
@@ -6,22 +6,22 @@ import { ListHeader } from './ListHeader';
 import { ListItems } from './ListItems';
 
 type ListProps = {
-  footer?: ReactNode;
-  itemId: string;
-  listWidth?: number;
-  maxHeight: number;
-  orientation?: 'horizontal' | 'vertical';
-  parentItemId: string | null;
+  readonly footer?: ReactNode;
+  readonly itemId: string;
+  readonly listWidth?: number;
+  readonly maxHeight: number;
+  readonly orientation?: 'horizontal' | 'vertical';
+  readonly parentItemId: string | null;
 };
 
-export const List = memo(function List({
+export const List = ({
   footer,
   itemId,
   listWidth,
   maxHeight,
   orientation = 'vertical',
   parentItemId,
-}: ListProps) {
+}: ListProps) => {
   const horizontal = orientation === 'horizontal';
   const padding = horizontal ? 0 : completeConfig.padding;
   const margin = horizontal ? 'right' : 'bottom';
@@ -55,4 +55,4 @@ export const List = memo(function List({
       {footer ? footer : null}
     </View>
   );
-});
+};

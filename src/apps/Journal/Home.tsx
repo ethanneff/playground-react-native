@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { StyleSheet } from 'react-native';
 import {
   Calendar,
@@ -11,7 +11,7 @@ import {
 } from '../../components';
 import { spacing, useAdminNavBack, useColors } from '../../features';
 
-export const Home = memo(function Home() {
+export const Home = () => {
   const colors = useColors();
   const { onLeftPress } = useAdminNavBack();
   const styles = StyleSheet.create({
@@ -170,4 +170,4 @@ export const Home = memo(function Home() {
       </ScrollView>
     </Screen>
   );
-});
+};

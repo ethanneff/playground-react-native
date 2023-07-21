@@ -31,9 +31,8 @@ const getAvailable = (matrix: Matrix): Cell[] => {
   return available;
 };
 
-const getRandomFood = (available: Cell[]) => {
-  return Math.floor(Math.random() * available.length);
-};
+const getRandomFood = (available: Cell[]) =>
+  Math.floor(Math.random() * available.length);
 
 const getFood = (matrix: Matrix): Cell => {
   const available = getAvailable(matrix);

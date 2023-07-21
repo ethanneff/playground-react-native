@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Keyboard } from 'react-native';
 import {
   Button,
@@ -13,7 +13,7 @@ import {
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 
-export const Inputs = memo(function Inputs() {
+export const Inputs = () => {
   const { goBack } = useNavigation();
   const colors = useColors();
 
@@ -165,4 +165,4 @@ export const Inputs = memo(function Inputs() {
       </KeyboardAwareScrollView>
     </Screen>
   );
-});
+};

@@ -1,20 +1,17 @@
-import React, { memo, useCallback, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import { TextInput, View, type TextInputIcon } from '../../../components';
 import { useNavigation, type StackNavigationProp } from '../../../conversions';
-import { useAppSelector, useAppDispatch } from '../../../redux';
+import { useAppDispatch, useAppSelector } from '../../../redux';
 import { navItemDetails, updateItem } from '../models';
 import { type MainStackRoutes } from '../navigationTypes';
 
 type ListHeaderProps = {
-  itemId: string;
-  parentItemId: string | null;
+  readonly itemId: string;
+  readonly parentItemId: string | null;
 };
 
-export const ListHeader = memo(function ListHeader({
-  itemId,
-  parentItemId,
-}: ListHeaderProps) {
+export const ListHeader = ({ itemId, parentItemId }: ListHeaderProps) => {
   const dispatch = useAppDispatch();
   const { navigate } = useNavigation<StackNavigationProp<MainStackRoutes>>();
   const item = useAppSelector((s) => s.completeItem.items[itemId]);
@@ -76,4 +73,4 @@ export const ListHeader = memo(function ListHeader({
       />
     </View>
   );
-});
+};

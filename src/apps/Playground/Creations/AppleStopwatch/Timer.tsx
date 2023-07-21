@@ -1,13 +1,13 @@
-import React, { memo } from 'react';
-import { type StyleProp, StyleSheet, type TextStyle } from 'react-native';
+import React from 'react';
+import { StyleSheet, type StyleProp, type TextStyle } from 'react-native';
 import { Text, View } from '../../../../components';
 
 type TimerProps = {
-  interval: number;
-  style: StyleProp<TextStyle>;
+  readonly interval: number;
+  readonly style: StyleProp<TextStyle>;
 };
 
-export const Timer = memo(function Timer({ interval, style }: TimerProps) {
+export const Timer = ({ interval, style }: TimerProps) => {
   const pad = (n: number): string =>
     (n < 10 ? `0${n.toString()}` : n).toString();
   const minutes = Math.floor(interval / 60000);
@@ -34,4 +34,4 @@ export const Timer = memo(function Timer({ interval, style }: TimerProps) {
       />
     </View>
   );
-});
+};

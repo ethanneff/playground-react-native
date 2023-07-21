@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Button,
   Modal,
@@ -26,7 +26,7 @@ const initialState = {
   passwordError: false,
 };
 
-export const SignUp = memo(function SignUp() {
+export const SignUp = () => {
   const colors = useColors();
   const dispatch = useAppDispatch();
   const focus = useIsFocused();
@@ -153,4 +153,4 @@ export const SignUp = memo(function SignUp() {
       />
     </Modal>
   ) : null;
-});
+};

@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState, type ReactNode } from 'react';
+import React, { useEffect, useState, type ReactNode } from 'react';
 import {
   Animated,
   Easing,
@@ -12,12 +12,12 @@ import { getSmallestDimension, useAppSelector } from '../../redux';
 // TODO: convert to svg, remove mask, fade in and out
 
 type Props = {
-  backgroundColor: string;
-  children: ReactNode;
-  delay?: number;
-  duration?: number;
-  primaryColor: string;
-  source: ImageSourcePropType;
+  readonly backgroundColor: string;
+  readonly children: ReactNode;
+  readonly delay?: number;
+  readonly duration?: number;
+  readonly primaryColor: string;
+  readonly source: ImageSourcePropType;
 };
 
 const getInterpolate = (progress: Animated.Value) => ({
@@ -47,14 +47,14 @@ const getInterpolate = (progress: Animated.Value) => ({
   },
 });
 
-export const SplashScreen = memo(function SplashScreenMemo({
+export const SplashScreen = ({
   backgroundColor,
   children,
   delay = 300,
   duration = 1000,
   primaryColor,
   source,
-}: Props) {
+}: Props) => {
   const smallest = useAppSelector(getSmallestDimension);
   const useNativeDriver = useDriver();
   const [state, setState] = useState({
@@ -113,4 +113,4 @@ export const SplashScreen = memo(function SplashScreenMemo({
       </MaskedView>
     </View>
   );
-});
+};
