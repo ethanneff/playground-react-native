@@ -1,4 +1,3 @@
-import Lottie, { type AnimationObject } from 'lottie-react-native';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
 import {
@@ -10,7 +9,9 @@ import {
   View,
 } from '../../../../components';
 import {
+  Lottie,
   useNavigation,
+  type AnimationObject,
   type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing, useAuth, useColors } from '../../../../features';
