@@ -1,8 +1,9 @@
-import Lottie, { type AnimationObject } from 'lottie-react-native';
 import React, { useCallback } from 'react';
 import { Button, Screen, Spacing, Text, View } from '../../../../components';
 import {
+  Lottie,
   useNavigation,
+  type AnimationObject,
   type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing } from '../../../../features';

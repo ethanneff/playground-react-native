@@ -26,7 +26,7 @@ const restrictedImports = {
       name: 'react-native-gesture-handler',
       importNames: [
         'FlatList',
-        'ScrollView',
+        'ScrollView',kotlin
         'Switch',
         'TextInput',
         'TouchableHighlight',
@@ -36,6 +36,7 @@ const restrictedImports = {
       ],
       message: 'use Components',
     },
+    { name: 'lottie-react-native', message: 'use Wrapper' },
     { name: '@react-navigation/core', message: 'use Wrapper' },
     { name: '@react-navigation/native', message: 'use Wrapper' },
     { name: '@react-navigation/native-stack', message: 'use Wrapper' },

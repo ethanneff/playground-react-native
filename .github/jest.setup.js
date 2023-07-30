@@ -30,6 +30,7 @@ jest.mock('react-native-rate', () => ({
 }));
 jest.mock('d3-scale', () => null);
 jest.mock('d3-shape', () => null);
+jest.mock('lottie-react-native', () => null);
 jest.mock('uuid', () => ({ v4: jest.fn(() => 'uuid') }));
 jest.mock('react-native-localize', () => mockRNLocalize);
 jest.mock('@react-native-community/netinfo', () => mockRNNetInfo);
