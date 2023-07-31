@@ -15290,10 +15290,10 @@ react-native-flipper-performance-plugin@0.4.0:
   resolved "https://registry.yarnpkg.com/react-native-flipper-performance-plugin/-/react-native-flipper-performance-plugin-0.4.0.tgz#961ff2f9ccc942d2a4cabd4f6d401034c5402007"
   integrity sha512-D9Z5VrktJjUenYB4X9qfKcqg9YSyQWOD7fKoxkzXoKxbyalGoWib79iD3OBHOBZEsk5RbQ006zYL7VQwA3D4Wg==
 
-react-native-flipper@0.193.0:
-  version "0.193.0"
-  resolved "https://registry.yarnpkg.com/react-native-flipper/-/react-native-flipper-0.193.0.tgz#55e85e64cb63c0b0effb1349f0234f5a068e59cd"
-  integrity sha512-Y/MEHE7X5AvdOOKzPo0KnKw+Db9ny6vxiFxpPQFn+p4iEo90r9zFVKTExAXY5UtAy8UGKrv1ycwZ7T4cLfbYdQ==
+react-native-flipper@0.209.0:
+  version "0.209.0"
+  resolved "https://registry.yarnpkg.com/react-native-flipper/-/react-native-flipper-0.209.0.tgz#4d4306001d6994fbca04aba71ac8d3021b1368f8"
+  integrity sha512-NAR3Axb2HpLLgkefGyBnovcP5eyfS5ybn6xLxdFt8zOlZ3rBf+Cae/jhGo0Wz77uf+8Sym5ogPbsGVc1LsxMNg==
 
 react-native-gesture-handler@2.12.0:
   version "2.12.0"
