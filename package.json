@@ -166,5 +166,5 @@
     "e2e-create": "maestro studio",
     "e2e-test": "maestro test .maestro/happy-path.yaml"
   },
-  "version": "2.82.8"
+  "version": "2.82.9"
 }
