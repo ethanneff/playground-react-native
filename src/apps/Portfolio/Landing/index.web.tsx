@@ -1,5 +1,9 @@
 import React, { type ReactNode } from 'react';
-import { Image, type ImageSourcePropType } from 'react-native';
+import {
+  type DimensionValue,
+  Image,
+  type ImageSourcePropType,
+} from 'react-native';
 import {
   Icon,
   Pressable,
@@ -38,7 +42,10 @@ const SignInButton = ({ icon, onPress, title }: SignInButtonProps) => {
     >
       <Icon
         name={icon}
-        style={{ height: '30px', width: '30px' }}
+        style={{
+          height: '30px' as DimensionValue,
+          width: '30px' as DimensionValue,
+        }}
       />
       <Text
         style={{ paddingLeft: spacing(2) }}
@@ -103,7 +110,10 @@ export const Header = ({ height }: HeaderProps) => {
       <View style={{ alignItems: 'center', flexDirection: 'row' }}>
         <Image
           source={image}
-          style={{ height: '30px', width: '30px' }}
+          style={{
+            height: '30px' as DimensionValue,
+            width: '30px' as DimensionValue,
+          }}
         />
         <Text
           bold
@@ -142,7 +152,7 @@ type AppIconProps = {
 
 const AppIcon = ({ onPress, type }: AppIconProps) => {
   const colors = useColors();
-  const iconSize = '48px';
+  const iconSize = '48px' as DimensionValue;
   const text = type === 'apple' ? 'Download on the' : 'GET IT ON';
   const store = type === 'apple' ? 'App Store' : 'Google Play';
   return (
@@ -154,7 +164,7 @@ const AppIcon = ({ onPress, type }: AppIconProps) => {
         justifyContent: 'center',
         paddingHorizontal: spacing(4),
         paddingVertical: spacing(2),
-        width: '248px',
+        width: '248px' as DimensionValue,
       }}
       onPress={onPress}
     >
@@ -189,7 +199,7 @@ const Section = ({ backgroundColor, children, paddingTop }: SectionProps) => (
   <View
     style={{
       backgroundColor,
-      height: '100vh',
+      height: '100vh' as DimensionValue,
       paddingTop,
     }}
   >
@@ -232,7 +242,7 @@ export const Landing = () => {
           sentences={titleSentence}
           style={{ alignSelf: 'center', paddingVertical: spacing(8) }}
         />
-        <View style={{ alignSelf: 'center', width: '400px' }}>
+        <View style={{ alignSelf: 'center', width: '400px' as DimensionValue }}>
           <SignInButton
             icon="apple"
             onPress={missingCallback}
