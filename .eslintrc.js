@@ -56,7 +56,6 @@ module.exports = {
     'plugin:jest/all',
     'plugin:react/all',
     'plugin:react-native/all',
-    // '@react-native',
     'plugin:sonarjs/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
