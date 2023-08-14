@@ -93,7 +93,7 @@
     "@semantic-release/github": "9.0.4",
     "@semantic-release/npm": "10.0.4",
     "@semantic-release/release-notes-generator": "11.0.4",
-    "@testing-library/jest-dom": "5.17.0",
+    "@testing-library/jest-dom": "6.0.0",
     "@testing-library/jest-native": "5.4.2",
     "@testing-library/react-hooks": "8.0.1",
     "@testing-library/react-native": "12.2.0",
