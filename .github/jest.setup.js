@@ -18,6 +18,15 @@ jest.mock(
   'react-native-fbsdk-next',
   () => require('react-native-fbsdk-next/jest/mocks').default,
 );
+jest.mock('redux-persist', () => {
+  const real = jest.requireActual('redux-persist');
+  return {
+    ...real,
+    persistReducer: jest
+      .fn()
+      .mockImplementation((config, reducers) => reducers),
+  };
+});
 jest.mock('react-native-sensors', () => null);
 jest.mock('react-native-config', () => ({
   APP: null,

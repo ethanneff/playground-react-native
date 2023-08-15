@@ -83,6 +83,7 @@ v3
 - [ ] remove dayjs
 - [ ] make modal global like toast (https://github.com/timolins/react-hot-toast)
 - [ ] Notification.show(), alert.show(), actionsheet.show()
+- [ ] cache test in ci
 
   ```ts
   const Modal = {};
