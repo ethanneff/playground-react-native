@@ -33,6 +33,54 @@ export const questionsInitialState: Questions = {
     title: 'what type of counseling are you looking for?',
     type: 'Checkbox',
   },
+  '2': {
+    choices: ['1', '2', '3'],
+    id: '2',
+    title: 'what is your gender?',
+    type: 'Button',
+  },
+  '3': {
+    choices: ['32', '33', '34'],
+    id: '3',
+    title: 'how old are you?',
+    type: 'Slider',
+  },
+  '4': {
+    choices: ['10', '11', '12'],
+    id: '4',
+    title: 'where do you live?',
+    type: 'Button',
+  },
+  '5': {
+    choices: ['234'],
+    id: '5',
+    title: "How's life",
+    type: 'Input',
+  },
+  '6': {
+    choices: ['236', '237', '238', '239', '240'],
+    id: '5',
+    title: 'How satisfied are you with our service?',
+    type: 'Button',
+  },
+  '7': {
+    choices: ['241', '242', '238', '243', '244'],
+    id: '7',
+    title: 'I think that I would like to use this system frequently.',
+    type: 'Button',
+  },
+  '8': {
+    choices: ['241', '242', '238', '243', '244'],
+    id: '8',
+    title: 'I found the system unnecessarily complex.',
+    type: 'Button',
+  },
+  '9': {
+    choices: ['241', '242', '238', '243', '244'],
+    id: '9',
+    title: 'I thought the system was easy to use.',
+    type: 'Button',
+  },
   '10': {
     choices: ['241', '242', '238', '243', '244'],
     id: '10',
@@ -40,6 +88,7 @@ export const questionsInitialState: Questions = {
       'I think that I would need the support of a technical person to be able to use this system.',
     type: 'Button',
   },
+
   '11': {
     choices: ['241', '242', '238', '243', '244'],
     id: '11',
@@ -101,55 +150,6 @@ export const questionsInitialState: Questions = {
     id: '18',
     title: 'What is the primary reason fro your score?',
     type: 'Input',
-  },
-
-  '2': {
-    choices: ['1', '2', '3'],
-    id: '2',
-    title: 'what is your gender?',
-    type: 'Button',
-  },
-  '3': {
-    choices: ['32', '33', '34'],
-    id: '3',
-    title: 'how old are you?',
-    type: 'Slider',
-  },
-  '4': {
-    choices: ['10', '11', '12'],
-    id: '4',
-    title: 'where do you live?',
-    type: 'Button',
-  },
-  '5': {
-    choices: ['234'],
-    id: '5',
-    title: "How's life",
-    type: 'Input',
-  },
-  '6': {
-    choices: ['236', '237', '238', '239', '240'],
-    id: '5',
-    title: 'How satisfied are you with our service?',
-    type: 'Button',
-  },
-  '7': {
-    choices: ['241', '242', '238', '243', '244'],
-    id: '7',
-    title: 'I think that I would like to use this system frequently.',
-    type: 'Button',
-  },
-  '8': {
-    choices: ['241', '242', '238', '243', '244'],
-    id: '8',
-    title: 'I found the system unnecessarily complex.',
-    type: 'Button',
-  },
-  '9': {
-    choices: ['241', '242', '238', '243', '244'],
-    id: '9',
-    title: 'I thought the system was easy to use.',
-    type: 'Button',
   },
 };
 

@@ -113,7 +113,16 @@ module.exports = {
     '@typescript-eslint/type-annotation-spacing': 'error',
     // sorting
     'sort-destructure-keys/sort-destructure-keys': 'error',
-    'sort-keys-fix/sort-keys-fix': 'warn',
+    'sort-keys': [
+      'error',
+      'asc',
+      { caseSensitive: true, natural: true, minKeys: 2 },
+    ],
+    'sort-keys-fix/sort-keys-fix': [
+      'error',
+      'asc',
+      { caseSensitive: true, natural: true },
+    ],
     'typescript-sort-keys/interface': 'error',
     'typescript-sort-keys/string-enum': 'error',
     'sort-imports': 'off',
