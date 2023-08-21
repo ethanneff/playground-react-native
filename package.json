@@ -16,7 +16,7 @@
     "@mdi/js": "7.2.96",
     "@mdi/react": "1.6.1",
     "@react-native-community/netinfo": "9.4.1",
-    "@react-native-community/slider": "4.4.2",
+    "@react-native-community/slider": "4.4.3",
     "@react-native-firebase/analytics": "18.3.0",
     "@react-native-firebase/app": "18.3.0",
     "@react-native-firebase/auth": "18.3.0",
