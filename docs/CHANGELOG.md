@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.82.11](https://github.com/ethanneff/playground-react-native/compare/v2.82.10...v2.82.11) (2023-08-15)
+
+
+### Bug Fixes
+
+* make tests not leak ([2403383](https://github.com/ethanneff/playground-react-native/commit/240338390fc4369fe186405ff5dd23630836749a))
+* sort keys naturally ([f59184d](https://github.com/ethanneff/playground-react-native/commit/f59184d10892d354ff72eb6d92a5f1edddfb23e3))
+* update deps ([851a1aa](https://github.com/ethanneff/playground-react-native/commit/851a1aa83743b08265d43bab34b0047a09617601))
+
 ## [2.82.10](https://github.com/ethanneff/playground-react-native/compare/v2.82.9...v2.82.10) (2023-08-11)
 
 
