@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { type ViewToken } from 'react-native';
 import { View, type FlashListRef } from '../../components';
-import { spacing } from '../../features';
+import { spacing, useLayout } from '../../features';
 import { CarouselDots } from './CarouselDots';
 import { CarouselList } from './CarouselList';
 import { type CarouselSlide } from './types';
@@ -28,6 +28,7 @@ export const Carousel = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const loopTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const touchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { layout, onLayout } = useLayout();
 
   const onViewableItemsChanged = useCallback(
     ({ viewableItems }: { viewableItems: ViewToken[] }) => {
@@ -85,6 +86,7 @@ export const Carousel = ({
   return (
     <View
       flex={1}
+      onLayout={onLayout}
       onTouchStart={onTouchPauseLooping}
     >
       <CarouselList
@@ -92,6 +94,7 @@ export const Carousel = ({
         onViewableItemsChanged={onViewableItemsChanged}
         slides={slides}
         viewabilityConfig={viewabilityConfigRef}
+        width={layout?.width || 0}
       />
       <CarouselDots
         activeIndex={activeIndex}

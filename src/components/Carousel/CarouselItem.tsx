@@ -31,7 +31,7 @@ export const CarouselItem = ({ item, width }: Props) => {
         {item.icon ? (
           <Icon
             name={item.icon}
-            size={spacing(40)}
+            size={spacing(25)}
           />
         ) : null}
       </View>
