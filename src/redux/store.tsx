@@ -37,16 +37,6 @@ import {
   focusUsersReducer,
 } from '../apps/Focus/data';
 import {
-  choicesActions,
-  choicesReducer,
-  questionnairesActions,
-  questionnairesReducer,
-  questionsActions,
-  questionsReducer,
-  responsesActions,
-  responsesReducer,
-} from '../apps/Playground/Creations/Questionnaire/models';
-import {
   chatMessageActions,
   chatMessageReducer,
 } from '../apps/Playground/Features/Chat/Messages';
@@ -67,10 +57,11 @@ export const actions = {
     ...checklistsAuthActions,
     ...checklistsUsersActions,
   },
-  choices: choicesActions,
-  completeAuth: completeAuthActions,
-  completeItem: completeItemActions,
-  completeUser: completeUserActions,
+  complete: {
+    auth: completeAuthActions,
+    item: completeItemActions,
+    user: completeUserActions,
+  },
   device: deviceActions,
   focus: {
     ...focusAuthActions,
@@ -81,9 +72,6 @@ export const actions = {
   },
   gameOfLife: gameOfLifeActions,
   network: networkActions,
-  questionnaires: questionnairesActions,
-  questions: questionsActions,
-  responses: responsesActions,
   theme: themeActions,
 };
 
@@ -95,10 +83,11 @@ export const reducers = combineReducers({
     auth: checklistsAuthReducer,
     users: checklistsUsersReducer,
   }),
-  choices: choicesReducer,
-  completeAuth: completeAuthReducer,
-  completeItem: completeItemReducer,
-  completeUser: completeUserReducer,
+  complete: combineReducers({
+    auth: completeAuthReducer,
+    item: completeItemReducer,
+    user: completeUserReducer,
+  }),
   device: deviceReducer,
   focus: combineReducers({
     auth: focusAuthReducer,
@@ -110,8 +99,5 @@ export const reducers = combineReducers({
   gameOfLife: gameOfLifeReducer,
   history: historyReducer,
   network: networkReducer,
-  questionnaires: questionnairesReducer,
-  questions: questionsReducer,
-  responses: responsesReducer,
   theme: themeReducer,
 });
