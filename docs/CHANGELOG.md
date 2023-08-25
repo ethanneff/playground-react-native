@@ -1,5 +1,20 @@
 # Changelog
 
+# [2.83.0](https://github.com/ethanneff/playground-react-native/compare/v2.82.11...v2.83.0) (2023-08-25)
+
+
+### Bug Fixes
+
+* make carousel responsive ([7800493](https://github.com/ethanneff/playground-react-native/commit/7800493214d8cd1ce628d900fcf2b50df9fbac76))
+* update deps (ios, web, android) ([7cb6b99](https://github.com/ethanneff/playground-react-native/commit/7cb6b99f18660bbfcb5b348f8b8b0e82c4e6ca8e))
+* update yarnlock ([b2e064f](https://github.com/ethanneff/playground-react-native/commit/b2e064f405120b1fb84369c9310e53a2ff13ec74))
+
+
+### Features
+
+* add knip ([2c2a91a](https://github.com/ethanneff/playground-react-native/commit/2c2a91a9923147ae1d1e48bd7bfc3a81e9b9d99f))
+* add knip to find unused code ([3c51e15](https://github.com/ethanneff/playground-react-native/commit/3c51e1581d78ae7f5732775c2d7e46d5b5e8766f))
+
 ## [2.82.11](https://github.com/ethanneff/playground-react-native/compare/v2.82.10...v2.82.11) (2023-08-15)
 
 
