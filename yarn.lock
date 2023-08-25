@@ -11948,7 +11948,7 @@ klona@^2.0.4, klona@^2.0.5:
   resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.6.tgz#85bffbf819c03b2f53270412420a4555ef882e22"
   integrity sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==
 
-knip@^2.19.11:
+knip@2.19.11:
   version "2.19.11"
   resolved "https://registry.yarnpkg.com/knip/-/knip-2.19.11.tgz#e7e45355658dd7714a3145fbe55a76e83bf9b740"
   integrity sha512-rNxkdrP0mBSXaq2gl3MtM2NyyXLeGqS9W7cqmEswqrMA8BMNUK7edZFCr9rT414NfbyKubjYWtJ05mGBOFjp7A==
