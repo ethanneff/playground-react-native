@@ -4457,10 +4457,10 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
-"@testing-library/jest-native@5.4.2":
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/@testing-library/jest-native/-/jest-native-5.4.2.tgz#6b0c987cc57f8d900763e763025d00d26ccbc85f"
-  integrity sha512-Vo/CE1uvCVH1H8YPoOEXLXVsm+BjzSQTq35+wkri1fr0O5D+A2WZ+m3ni5g6f1OCzNKNGIAHmisBEWkDs1P1mw==
+"@testing-library/jest-native@5.4.3":
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/@testing-library/jest-native/-/jest-native-5.4.3.tgz#9334c68eaf45db9eb20d0876728cc5d7fc2c3ea2"
+  integrity sha512-/sSDGaOuE+PJ1Z9Kp4u7PQScSVVXGud59I/qsBFFJvIbcn4P6yYw6cBnBmbPF+X9aRIsTJRDl6gzw5ZkJNm66w==
   dependencies:
     chalk "^4.1.2"
     jest-diff "^29.0.1"
@@ -11948,7 +11948,7 @@ klona@^2.0.4, klona@^2.0.5:
   resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.6.tgz#85bffbf819c03b2f53270412420a4555ef882e22"
   integrity sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==
 
-knip@^2.19.11:
+knip@2.19.11:
   version "2.19.11"
   resolved "https://registry.yarnpkg.com/knip/-/knip-2.19.11.tgz#e7e45355658dd7714a3145fbe55a76e83bf9b740"
   integrity sha512-rNxkdrP0mBSXaq2gl3MtM2NyyXLeGqS9W7cqmEswqrMA8BMNUK7edZFCr9rT414NfbyKubjYWtJ05mGBOFjp7A==
