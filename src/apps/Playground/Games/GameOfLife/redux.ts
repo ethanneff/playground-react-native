@@ -4,12 +4,12 @@ import {
   type RootThunkAction,
 } from 'root-types';
 import { createAction, getType } from 'typesafe-actions';
-import { type Board, determineBoardItem, generateBoard } from './utils';
+import { determineBoardItem, generateBoard, type Board } from './utils';
 
 export const updateDelay = createAction('gameOfLife/updateDelay')<number>();
 export const toggleRun = createAction('gameOfLife/toggleRun')();
 export const updateCount = createAction('gameOfLife/updateCount')<number>();
-export const updateBoard = createAction('gameOfLife/updateBoard')<Board>();
+const updateBoard = createAction('gameOfLife/updateBoard')<Board>();
 export const resetBoard = createAction('gameOfLife/resetBoard')<number>();
 export const loopBoard = (): RootThunkAction<void> => (dispatch, getState) => {
   const { board } = getState().gameOfLife;
@@ -47,14 +47,14 @@ export const gameOfLifeActions = {
   updateDelay,
 };
 
-export type GameOfLifeState = {
+type GameOfLifeState = {
   board: Board;
   count: number;
   delay: number;
   run: boolean;
 };
 
-export const gameOfLifeInitialState: GameOfLifeState = {
+const gameOfLifeInitialState: GameOfLifeState = {
   board: [],
   count: 20,
   delay: 16,

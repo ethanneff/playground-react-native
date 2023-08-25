@@ -3,7 +3,7 @@ import { useAppSelector } from '../../redux';
 import { Landing, Main } from './navigation';
 
 export const Complete = () => {
-  const user = useAppSelector((s) => s.completeUser);
+  const user = useAppSelector((s) => s.complete.user);
   const App = user ? Main : Landing;
   return <App />;
 };

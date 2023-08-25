@@ -5,7 +5,7 @@ import {
   type TrackPositionWithColor,
 } from './types';
 
-export type DriftState = {
+type DriftState = {
   color: ColorChoice;
   tracks: TrackPositionWithColor[];
 };

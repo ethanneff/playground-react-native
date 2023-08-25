@@ -19,10 +19,10 @@ export const ItemDetail = () => {
   const dispatch = useAppDispatch();
   const { goBack } = useNavigation();
   const colors = useColors();
-  const { itemId, parentItemId } = useAppSelector((s) => s.completeItem.nav);
+  const { itemId, parentItemId } = useAppSelector((s) => s.complete.item.nav);
   if (!itemId || !parentItemId)
     throw new Error('missing listId or itemId on item detail screen');
-  const item = useAppSelector((s) => s.completeItem.items[itemId]);
+  const item = useAppSelector((s) => s.complete.item.items[itemId]);
   const [deleteModal, setDeleteModal] = useState(false);
 
   const onItemDelete = useCallback(() => {

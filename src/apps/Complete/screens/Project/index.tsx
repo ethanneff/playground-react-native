@@ -11,10 +11,10 @@ import { Board } from '../../components';
 export const Project = () => {
   const { goBack } = useNavigation();
   const screenWidth = useAppSelector(getSmallestDimension);
-  const { projectItemId } = useAppSelector((s) => s.completeItem.nav);
+  const { projectItemId } = useAppSelector((s) => s.complete.item.nav);
   if (!projectItemId) throw new Error('missing projectItemId on board screen');
   const projectItemTitle = useAppSelector(
-    (s) => s.completeItem.items[projectItemId].title,
+    (s) => s.complete.item.items[projectItemId].title,
   );
   const listWidth = screenWidth * 0.7;
   const { tabBarEdges } = useLayout();

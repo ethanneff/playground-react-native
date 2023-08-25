@@ -14,7 +14,7 @@ type ListHeaderProps = {
 export const ListHeader = ({ itemId, parentItemId }: ListHeaderProps) => {
   const dispatch = useAppDispatch();
   const { navigate } = useNavigation<StackNavigationProp<MainStackRoutes>>();
-  const item = useAppSelector((s) => s.completeItem.items[itemId]);
+  const item = useAppSelector((s) => s.complete.item.items[itemId]);
   const form = useRef('');
 
   const onSave = useCallback(() => {

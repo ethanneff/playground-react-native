@@ -31,6 +31,9 @@ jobs:
       - name: Run code dupe
         run: yarn ci-dupe
 
+      - name: Run code unused
+        run: yarn ci-knip
+
       - name: Run lint
         run: yarn ci-lint
 

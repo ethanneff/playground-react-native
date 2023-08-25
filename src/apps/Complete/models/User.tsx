@@ -22,7 +22,7 @@ export const completeUserActions = { loadUser, updateUser };
 
 /* SELECTORS */
 export const getUser = (state: RootState): CompleteUserReducer =>
-  state.completeUser;
+  state.complete.user;
 
 /* REDUCER */
 const initialState: CompleteUserReducer = null;

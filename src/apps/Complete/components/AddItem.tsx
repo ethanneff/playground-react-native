@@ -31,7 +31,7 @@ export const AddItem = ({
   const text = useRef('');
   const [showInput, setShowInput] = useState(false);
   const dispatch = useAppDispatch();
-  const userId = useAppSelector((s) => s.completeUser?.id);
+  const userId = useAppSelector((s) => s.complete.user?.id);
   if (!userId) throw new Error('missing userId on add item');
   if (!parentItemId) throw new Error('missing parentItemId on add item');
 

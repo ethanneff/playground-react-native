@@ -12,11 +12,10 @@ import {
 import {
   AppleFit,
   AppleMask,
-  AppleStopWatch,
+  AppleStopwatch,
   Ball,
   Drag,
   OKRs,
-  Questionnaire,
   Startup,
   Tinder,
   WeekendPlanner,
@@ -180,15 +179,11 @@ export const Playground = () => (
       name="startup"
     />
     <Stack.Screen
-      component={Questionnaire}
-      name="questionnaire"
-    />
-    <Stack.Screen
       component={AppleMask}
       name="apple-mask"
     />
     <Stack.Screen
-      component={AppleStopWatch}
+      component={AppleStopwatch}
       name="apple-stopwatch"
     />
     <Stack.Screen

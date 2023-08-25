@@ -4,6 +4,7 @@ import { Screen, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { useLayout } from '../../../../features';
 import { useAppSelector } from '../../../../redux';
+import { EditItem } from './EditItem';
 import { Items } from './Items';
 import { TextField } from './TextField';
 
@@ -18,20 +19,23 @@ export const Chat = () => {
     bottomInset;
 
   return (
-    <Screen
-      dropShadow
-      onLeftPress={goBack}
-      title="Chat"
-    >
-      <View
-        flex={1}
-        onLayout={onLayout}
+    <>
+      <Screen
+        dropShadow
+        onLeftPress={goBack}
+        title="Chat"
       >
-        <View height={height}>
-          <Items />
-          <TextField />
+        <View
+          flex={1}
+          onLayout={onLayout}
+        >
+          <View height={height}>
+            <Items />
+            <TextField />
+          </View>
         </View>
-      </View>
-    </Screen>
+      </Screen>
+      <EditItem />
+    </>
   );
 };

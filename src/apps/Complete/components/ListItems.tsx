@@ -13,7 +13,7 @@ type ListItemsProps = {
 
 export const ListItems = ({ parentItemId }: ListItemsProps) => {
   const list = useAppSelector(
-    (s) => s.completeItem.items[parentItemId].children,
+    (s) => s.complete.item.items[parentItemId].children,
   );
   const listRef = useRef<FlatListRef<string>>(null);
   const cardsLength = useRef(list.length);

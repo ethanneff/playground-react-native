@@ -70,7 +70,7 @@ v3
 
 * Bonus
 
-- [ ] remove Questionnaire
+- [x] remove Questionnaire
 - [ ] remove Checklist
 - [x] migrate everything to libs (wont do)
 - [x] update to react-native-mmkv (wont do)

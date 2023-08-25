@@ -6,7 +6,7 @@ export type ActivityDay = {
 };
 
 export type ActivityWeek = ActivityDay[];
-export type ActivityMatrix = ActivityWeek[];
+type ActivityMatrix = ActivityWeek[];
 
 export type ActivityModel = {
   activity: {

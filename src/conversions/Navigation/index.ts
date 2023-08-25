@@ -23,23 +23,21 @@ import {
 } from '@react-navigation/native-stack';
 /* eslint-enable no-restricted-imports */
 
-export type {
-  NavigationInitialState,
-  NavigationContainerRef,
-  NavigationState,
-  BottomTabNavigationProp,
-  CompositeNavigationProp,
-  BottomTabNavigationOptions,
-  ParamListBase,
-  RouteProp,
-  StackNavigationProp,
-  StackNavigationOptions,
-};
 export {
-  createStackNavigator,
-  createBottomTabNavigator,
   NavigationContainer,
+  createBottomTabNavigator,
+  createStackNavigator,
   useIsFocused,
   useNavigation,
   useRoute,
+  type BottomTabNavigationOptions,
+  type BottomTabNavigationProp,
+  type CompositeNavigationProp,
+  type NavigationContainerRef,
+  type NavigationInitialState,
+  type NavigationState,
+  type ParamListBase,
+  type RouteProp,
+  type StackNavigationOptions,
+  type StackNavigationProp,
 };

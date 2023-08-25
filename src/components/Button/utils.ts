@@ -6,11 +6,6 @@ import {
   type MonoMultiColor,
 } from '../../features';
 
-export const getButtonColor = (
-  colors: ColorTheme,
-  color: keyof MonoMultiColor,
-): string => colors.background[color];
-
 type StyleInterface = {
   color: keyof MonoMultiColor;
   colors: ColorTheme;

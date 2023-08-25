@@ -14,7 +14,7 @@ type State = {
   start: number;
 };
 
-export const AppleStopWatch = () => {
+export const AppleStopwatch = () => {
   const { goBack } = useNavigation();
   const [state, setState] = useState<State>({
     laps: [],

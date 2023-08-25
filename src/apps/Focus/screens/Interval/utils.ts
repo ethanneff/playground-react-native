@@ -1,19 +1,9 @@
 import { add, differenceInHours, format, startOfDay, sub } from 'date-fns';
-import { infiniteScrollRegeneration, itemHeight } from '../../configs';
 import { type Item } from '../../types';
 
 const today = new Date();
 export const initialIndex =
   differenceInHours(add(startOfDay(today), { days: 2 }), new Date()) - 4;
-
-export const getItemLayout = (
-  _: Item[] | null | undefined,
-  index: number,
-): { index: number; length: number; offset: number } => ({
-  index,
-  length: itemHeight,
-  offset: itemHeight * index,
-});
 
 export const getCurrentItem = (item: Item): boolean => {
   const currentTime = new Date();
@@ -42,7 +32,7 @@ export const keyExtractor = (item: Item): string => String(item.id);
 
 export const getMoreItems = (items: Item[]): Item[] => {
   const group = [...items];
-  for (let i = 0; i < infiniteScrollRegeneration; i++) {
+  for (let i = 0; i < 100; i++) {
     const lastItem =
       group.length === 0
         ? add(startOfDay(new Date()), { days: 2 })

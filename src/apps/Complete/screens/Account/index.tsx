@@ -22,7 +22,7 @@ export const Account = () => {
   const dispatch = useAppDispatch();
   const { navigate } = useNavigation<RootNavigation>();
   const { logout: logoutUser } = useAuth();
-  const profile = useAppSelector((s) => s.completeAuth);
+  const profile = useAppSelector((s) => s.complete.auth);
 
   const onNavToAdmin = useCallback(() => {
     navigate('admin');

@@ -25,9 +25,9 @@ type ListItemProps = {
 };
 
 export const ListItem = ({ index, itemId, parentItemId }: ListItemProps) => {
-  const item = useAppSelector((s) => s.completeItem.items[itemId]);
+  const item = useAppSelector((s) => s.complete.item.items[itemId]);
   const parentChildrenCount = useAppSelector(
-    (s) => s.completeItem.items[parentItemId].children.length,
+    (s) => s.complete.item.items[parentItemId].children.length,
   );
   const textInputRef = useRef<TextInputRef>(null);
   const dispatch = useAppDispatch();

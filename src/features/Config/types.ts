@@ -145,7 +145,7 @@ export type FontType =
 
 export type FontWeight = '100' | '300' | '500';
 
-export type FontSize = {
+type FontSize = {
   fontSize: number;
   fontWeight: FontWeight;
   letterSpacing: number;

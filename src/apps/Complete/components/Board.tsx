@@ -17,7 +17,7 @@ export const Board = ({
   projectItemId,
 }: BoardProps) => {
   const listSize = listWidth + completeConfig.padding;
-  const board = useAppSelector((s) => s.completeItem.items[projectItemId]);
+  const board = useAppSelector((s) => s.complete.item.items[projectItemId]);
   const getItemId = useCallback((item: string) => item, []);
 
   const renderAddList = useCallback(

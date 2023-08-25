@@ -23,7 +23,6 @@ const routes = [
   'papi-jump',
   'paragraphs',
   'pinch-spread',
-  'questionnaire',
   'search-bar',
   'skeleton-loader',
   'slot-machine',
@@ -49,7 +48,7 @@ type Route = (typeof routes)[number];
 type Category = (typeof categories)[number];
 export type NavParams = Record<Route, undefined>;
 
-export const routeCategory: Record<Route, Category> = {
+const routeCategory: Record<Route, Category> = {
   'apple-fit': 'creations',
   'apple-mask': 'creations',
   'apple-stopwatch': 'creations',
@@ -74,7 +73,6 @@ export const routeCategory: Record<Route, Category> = {
   'papi-jump': 'games',
   paragraphs: 'storybook',
   'pinch-spread': 'features',
-  questionnaire: 'creations',
   'scroll-views': 'storybook',
   'search-bar': 'features',
   'skeleton-loader': 'features',

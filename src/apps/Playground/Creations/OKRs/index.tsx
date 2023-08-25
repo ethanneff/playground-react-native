@@ -3,17 +3,6 @@ import { Card, Screen, ScrollView, Text } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 
-export type ItemType =
-  | 'Idea'
-  | 'Key Result'
-  | 'KPI'
-  | 'Learning'
-  | 'Mission'
-  | 'Objective'
-  | 'Problem'
-  | 'Values'
-  | 'Vision';
-
 export const OKRs = () => {
   const { goBack } = useNavigation();
   const colors = useColors();

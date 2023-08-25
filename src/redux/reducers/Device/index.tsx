@@ -13,12 +13,12 @@ import { createAction, getType } from 'typesafe-actions';
 import { logout } from '../Auth';
 
 /* INTERFACES */
-export type DimensionState = {
+type DimensionState = {
   screen: ScaledSize;
   window: ScaledSize;
 };
 
-export type LocalizeState = {
+type LocalizeState = {
   calendar: string;
   country: string;
   currencies: string[];
@@ -38,7 +38,7 @@ export type LocalizeState = {
   usesMetricSystem: boolean;
 };
 
-export type DetailsState = {
+type DetailsState = {
   androidId: string;
   apiLevel: number;
   applicationName: string;
@@ -159,8 +159,6 @@ export const getLargestDimension = (state: RootState): number =>
     : state.device.dimensions.window.width;
 export const getWidth = (state: RootState): number =>
   state.device.dimensions.window.width;
-export const getHeight = (state: RootState): number =>
-  state.device.dimensions.window.height;
 
 /* REDUCERS */
 export const deviceInitialState: DeviceState = {

@@ -86,7 +86,7 @@ export const completeItemActions = {
 };
 
 /* SELECTORS */
-export const getItems = (state: RootState): Items => state.completeItem.items;
+export const getItems = (state: RootState): Items => state.complete.item.items;
 export const getActiveItemOrderByCreatedAt = createSelector(
   [getItems],
   (items) =>

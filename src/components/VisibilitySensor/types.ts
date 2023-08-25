@@ -7,12 +7,3 @@ export type VisibilitySensorChange = {
   location: LayoutRectangle;
   visible: boolean;
 };
-
-export type MeasurementProps = {
-  height: number;
-  pageX: number;
-  pageY: number;
-  width: number;
-  x: number;
-  y: number;
-};

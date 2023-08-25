@@ -23,7 +23,7 @@ export const Plan = () => {
   const itemId = useAppSelector(getInbox);
   if (!itemId) throw new Error('missing item id');
   const noItemChildren = useAppSelector(
-    (s) => s.completeItem.items[itemId].children.length === 0,
+    (s) => s.complete.item.items[itemId].children.length === 0,
   );
 
   const onOrganize = useCallback(() => undefined, []);
