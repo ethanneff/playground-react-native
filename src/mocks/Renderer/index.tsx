@@ -5,7 +5,6 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider as ReduxProvider } from 'react-redux';
 import { createStore, type Store } from 'redux';
 import { type RootState } from 'root-types';
-import { ErrorBoundary } from '../../components';
 import { GestureHandlerProvider } from '../../conversions';
 import { ApplicationProvider } from '../../features';
 import { reducers } from '../../redux/store';
@@ -23,9 +22,7 @@ const Providers = ({ children, store }: ProviderProps) => (
   <SafeAreaProvider>
     <GestureHandlerProvider style={{ flex: 1 }}>
       <ReduxProvider store={store}>
-        <ErrorBoundary>
-          <ApplicationProvider>{children}</ApplicationProvider>
-        </ErrorBoundary>
+        <ApplicationProvider>{children}</ApplicationProvider>
       </ReduxProvider>
     </GestureHandlerProvider>
   </SafeAreaProvider>

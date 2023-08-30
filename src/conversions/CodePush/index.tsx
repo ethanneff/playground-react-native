@@ -7,7 +7,10 @@ const options: CodePushOptions = {
 
 type ComponentType = () => ReactElement;
 
+const instance = codePush(options);
+
 export const CodePush = {
-  wrapper: (component: ComponentType) =>
-    codePush(options)(component) as ComponentType,
+  instance,
+  sdk: codePush,
+  wrapper: (component: ComponentType) => instance(component) as ComponentType,
 };

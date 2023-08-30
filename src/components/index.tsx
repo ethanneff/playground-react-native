@@ -7,7 +7,7 @@ export * from './Card';
 export * from './Carousel';
 export * from './Collapsible';
 export * from './Content';
-export * from './ErrorBoundary';
+export * from './ErrorFallback';
 export * from './FastImage';
 export * from './FlashList';
 export * from './FlatList';

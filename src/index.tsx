@@ -1,11 +1,17 @@
-import React, { StrictMode } from 'react';
+import React from 'react';
+import { ErrorBoundary as ErrorBoundaryProvider } from 'react-error-boundary';
 import { AppRegistry, LogBox, Platform } from 'react-native';
 import 'react-native-get-random-values';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { enableFreeze } from 'react-native-screens';
-import { ErrorBoundary, Toast, toastConfig } from './components';
+import { ErrorFallback, Toast, toastConfig } from './components';
 import { CodePush, GestureHandlerProvider } from './conversions';
-import { ApplicationProvider, NavigationProvider, debugDev } from './features';
+import {
+  ApplicationProvider,
+  NavigationProvider,
+  StrictModeProvider,
+  debugDev,
+} from './features';
 import { ReduxProvider } from './redux/ReduxProvider';
 
 LogBox.ignoreLogs(['UNSAFE_']);
@@ -18,12 +24,12 @@ const Providers = () => (
     <SafeAreaProvider>
       <GestureHandlerProvider style={{ flex: 1 }}>
         <ReduxProvider>
-          <ErrorBoundary>
+          <ErrorBoundaryProvider FallbackComponent={ErrorFallback}>
             <ApplicationProvider>
               <NavigationProvider />
             </ApplicationProvider>
             <Toast config={toastConfig} />
-          </ErrorBoundary>
+          </ErrorBoundaryProvider>
         </ReduxProvider>
       </GestureHandlerProvider>
     </SafeAreaProvider>

@@ -5,7 +5,7 @@ import { applyMiddleware, createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import thunk from 'redux-thunk';
-import { addFlipperMiddleware, Storage } from '../conversions';
+import { Storage, addFlipperMiddleware } from '../conversions';
 import { reducers } from './store';
 
 type Props = {
@@ -19,7 +19,7 @@ const persistedReducer = persistReducer(persistConfig, reducers);
 const middleware = [thunk];
 addFlipperMiddleware(middleware);
 const store = createStore(persistedReducer, applyMiddleware(...middleware));
-const persistor = persistStore(store);
+export const persistor = persistStore(store);
 
 export const ReduxProvider = ({ children }: Props) => (
   <Provider store={store}>
