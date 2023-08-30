@@ -36,7 +36,7 @@
     "howler": "2.2.3",
     "jest-offline": "^1.0.1",
     "lottie-ios": "4.2.0",
-    "lottie-react-native": "6.1.2",
+    "lottie-react-native": "6.2.0",
     "patch-package": "8.0.0",
     "postinstall-postinstall": "2.1.0",
     "react": "18.2.0",
