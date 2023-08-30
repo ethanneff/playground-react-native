@@ -24,8 +24,17 @@ const android = Platform.OS === 'android';
 export const useNetInfo = () => {
   const dispatch = useAppDispatch();
 
-  const handleChange = useCallback(() => {
-    NetInfo.fetch().then((state) => dispatch(setNetwork(state)));
+  const handleChange = useCallback(async () => {
+    try {
+      const state = await NetInfo.fetch();
+      dispatch(setNetwork(state));
+    } catch (e) {
+      if (e instanceof Error) {
+        throw new Error(e.message);
+      } else {
+        throw new Error('Unknown error when checking netinfo state');
+      }
+    }
   }, [dispatch]);
 
   useEffect(() => {

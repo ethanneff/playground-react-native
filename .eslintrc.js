@@ -59,6 +59,7 @@ module.exports = {
     'plugin:sonarjs/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
+    'plugin:promise/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:testing-library/react',
     'plugin:react-redux/recommended',
