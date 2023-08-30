@@ -1,5 +1,17 @@
 # Changelog
 
+# [2.84.0](https://github.com/ethanneff/playground-react-native/compare/v2.83.0...v2.84.0) (2023-08-30)
+
+
+### Bug Fixes
+
+* update deps (web, ios, android) ([0c01dbc](https://github.com/ethanneff/playground-react-native/commit/0c01dbcc5c0e7e4dd7e0f423d8d0ddc232cc268a))
+
+
+### Features
+
+* add promise recommended linting ([f96eb4a](https://github.com/ethanneff/playground-react-native/commit/f96eb4a61b849d7b703903692920521fd40eca8f))
+
 # [2.83.0](https://github.com/ethanneff/playground-react-native/compare/v2.82.11...v2.83.0) (2023-08-25)
 
 
