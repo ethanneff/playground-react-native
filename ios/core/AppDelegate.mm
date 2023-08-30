@@ -1,8 +1,13 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
+// firebase
 #import <Firebase.h>
+// codepush
 #import <CodePush/CodePush.h>
+// fb-sdk
+#import <AuthenticationServices/AuthenticationServices.h>
+#import <SafariServices/SafariServices.h>
 #import <FBSDKCoreKit/FBSDKCoreKit-swift.h>
 #import <React/RCTLinkingManager.h> 
 
