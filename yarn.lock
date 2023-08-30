@@ -1825,16 +1825,6 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.22.5"
 
-"@babel/plugin-transform-typescript@^7.21.3", "@babel/plugin-transform-typescript@^7.5.0":
-  version "7.22.3"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.22.3.tgz#8f662cec8ba88c873f1c7663c0c94e3f68592f09"
-  integrity sha512-pyjnCIniO5PNaEuGxT28h0HbMru3qCVrMqVgVOz/krComdIrY9W6FCLBq9NWHY8HDGaUlan+UhmZElDENIfCcw==
-  dependencies:
-    "@babel/helper-annotate-as-pure" "^7.18.6"
-    "@babel/helper-create-class-features-plugin" "^7.22.1"
-    "@babel/helper-plugin-utils" "^7.21.5"
-    "@babel/plugin-syntax-typescript" "^7.21.4"
-
 "@babel/plugin-transform-typescript@^7.22.11":
   version "7.22.11"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.22.11.tgz#9f27fb5e51585729374bb767ab6a6d9005a23329"
@@ -1844,6 +1834,16 @@
     "@babel/helper-create-class-features-plugin" "^7.22.11"
     "@babel/helper-plugin-utils" "^7.22.5"
     "@babel/plugin-syntax-typescript" "^7.22.5"
+
+"@babel/plugin-transform-typescript@^7.5.0":
+  version "7.22.3"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.22.3.tgz#8f662cec8ba88c873f1c7663c0c94e3f68592f09"
+  integrity sha512-pyjnCIniO5PNaEuGxT28h0HbMru3qCVrMqVgVOz/krComdIrY9W6FCLBq9NWHY8HDGaUlan+UhmZElDENIfCcw==
+  dependencies:
+    "@babel/helper-annotate-as-pure" "^7.18.6"
+    "@babel/helper-create-class-features-plugin" "^7.22.1"
+    "@babel/helper-plugin-utils" "^7.21.5"
+    "@babel/plugin-syntax-typescript" "^7.21.4"
 
 "@babel/plugin-transform-unicode-escapes@^7.21.5":
   version "7.21.5"
@@ -2120,7 +2120,7 @@
     "@babel/plugin-transform-react-jsx-development" "^7.18.6"
     "@babel/plugin-transform-react-pure-annotations" "^7.18.6"
 
-"@babel/preset-typescript@7.22.11":
+"@babel/preset-typescript@7.22.11", "@babel/preset-typescript@^7.13.0", "@babel/preset-typescript@^7.16.0", "@babel/preset-typescript@^7.16.7", "@babel/preset-typescript@^7.17.12":
   version "7.22.11"
   resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.22.11.tgz#f218cd0345524ac888aa3dc32f029de5b064b575"
   integrity sha512-tWY5wyCZYBGY7IlalfKI1rLiGlIfnwsRHZqlky0HVv8qviwQ1Uo/05M6+s+TcTCVa6Bmoo2uJW5TMFX6Wa4qVg==
@@ -2130,17 +2130,6 @@
     "@babel/plugin-syntax-jsx" "^7.22.5"
     "@babel/plugin-transform-modules-commonjs" "^7.22.11"
     "@babel/plugin-transform-typescript" "^7.22.11"
-
-"@babel/preset-typescript@^7.13.0", "@babel/preset-typescript@^7.16.0", "@babel/preset-typescript@^7.16.7", "@babel/preset-typescript@^7.17.12":
-  version "7.21.5"
-  resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.21.5.tgz#68292c884b0e26070b4d66b202072d391358395f"
-  integrity sha512-iqe3sETat5EOrORXiQ6rWfoOg2y68Cs75B9wNxdPW4kixJxh7aXQE1KPdWLDniC24T/6dSnguF33W9j/ZZQcmA==
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.21.5"
-    "@babel/helper-validator-option" "^7.21.0"
-    "@babel/plugin-syntax-jsx" "^7.21.4"
-    "@babel/plugin-transform-modules-commonjs" "^7.21.5"
-    "@babel/plugin-transform-typescript" "^7.21.3"
 
 "@babel/register@^7.13.16":
   version "7.21.0"
@@ -15642,10 +15631,10 @@ react-native-rate@1.2.12:
   resolved "https://registry.yarnpkg.com/react-native-rate/-/react-native-rate-1.2.12.tgz#d4307b2994f9c849b987eb65599ec467db4aee04"
   integrity sha512-A/z3s7Zth08aXcJnru6S4p71NG8acx2w5LhIfItwTJUbQruNJugk8WrN51dLBCSDv8W33kbS5YoUT4M9jOP5gA==
 
-react-native-reanimated@3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.3.0.tgz#80f9d58e28fddf62fe4c1bc792337b8ab57936ab"
-  integrity sha512-LzfpPZ1qXBGy5BcUHqw3pBC0qSd22qXS3t8hWSbozXNrBkzMhhOrcILE/nEg/PHpNNp1xvGOW8NwpAMF006roQ==
+react-native-reanimated@3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.4.2.tgz#744154fead6d8d31d5bd9ac617d8c84d74a6f697"
+  integrity sha512-FbtG+f1PB005vDTJSv4zAnTK7nNXi+FjFgbAM5gOzIZDajfph2BFMSUstzIsN8T77+OKuugUBmcTqLnQ24EBVg==
   dependencies:
     "@babel/plugin-transform-object-assign" "^7.16.7"
     "@babel/preset-typescript" "^7.16.7"
