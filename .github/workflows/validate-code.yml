@@ -32,7 +32,7 @@ jobs:
         run: yarn ci-dupe
 
       - name: Run code unused
-        run: yarn ci-knip
+        run: yarn ci-unused
 
       - name: Run lint
         run: yarn ci-lint
