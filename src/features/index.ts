@@ -11,4 +11,5 @@ export * from './Navigation';
 export * from './RateApp';
 export * from './Sound';
 export * from './SplashScreen';
+export * from './StrictMode';
 export * from './Theme';

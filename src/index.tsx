@@ -14,7 +14,7 @@ debugDev();
 enableFreeze(true);
 
 const Providers = () => (
-  <StrictMode>
+  <StrictModeProvider>
     <SafeAreaProvider>
       <GestureHandlerProvider style={{ flex: 1 }}>
         <ReduxProvider>
@@ -27,7 +27,7 @@ const Providers = () => (
         </ReduxProvider>
       </GestureHandlerProvider>
     </SafeAreaProvider>
-  </StrictMode>
+  </StrictModeProvider>
 );
 
 export const Main = CodePush.wrapper(Providers);
