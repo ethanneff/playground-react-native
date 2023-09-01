@@ -12043,10 +12043,10 @@ klona@^2.0.4, klona@^2.0.5:
   resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.6.tgz#85bffbf819c03b2f53270412420a4555ef882e22"
   integrity sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==
 
-knip@2.21.0:
-  version "2.21.0"
-  resolved "https://registry.yarnpkg.com/knip/-/knip-2.21.0.tgz#278abf8cb5f28a54d44774ba0e54ca452b9d83eb"
-  integrity sha512-tiK6B7+KsvS64kydT0I9EEZfURW25wzC5suxlf6MBqn80oGchP2ih2SbJzUPSAP4JRJFz2/bHKcEk9O5kEzCvg==
+knip@2.21.1:
+  version "2.21.1"
+  resolved "https://registry.yarnpkg.com/knip/-/knip-2.21.1.tgz#853704ad041588e4d67694138d5c1da03c0b908a"
+  integrity sha512-Zb5y9oISNsotK7DYiG6OEhWAy20PuR7uUchQAFmWC5MzQhQozNAiQ6P2ZOVvOCVIBHe/2pInuRHZ7pmDab8/mQ==
   dependencies:
     "@ericcornelissen/bash-parser" "^0.5.2"
     "@npmcli/map-workspaces" "^3.0.4"
