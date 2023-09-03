@@ -9,6 +9,7 @@ import {
   type KeyboardTypeOptions,
   type ReturnKeyTypeOptions,
   type StyleProp,
+  type TextInputProps,
   type ViewStyle,
 } from 'react-native';
 import { GestureTextInput } from '../../conversions';
@@ -79,7 +80,7 @@ type AutoComplete =
 
 export type TextInputRef = GestureTextInput | null;
 
-type TextInputProps = {
+type Props = TextInputProps & {
   readonly autoCapitalize: 'characters' | 'none' | 'sentences' | 'words';
   readonly autoComplete: AutoComplete;
   readonly autoCorrect: boolean;
@@ -145,7 +146,7 @@ export const TextInput = ({
   title,
   type,
   value = '',
-}: TextInputProps) => {
+}: Props) => {
   const [focus, setFocus] = useState(false);
   const [text, setText] = useState(value);
   const colors = useColors();
