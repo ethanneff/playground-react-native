@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.84.1](https://github.com/ethanneff/playground-react-native/compare/v2.84.0...v2.84.1) (2023-08-30)
+
+
+### Bug Fixes
+
+* add error boundary reset ([be3aa3e](https://github.com/ethanneff/playground-react-native/commit/be3aa3e3bf2c8d4c2f50b95bf2a41cab63065dc5))
+* update react native web ([c2b3a75](https://github.com/ethanneff/playground-react-native/commit/c2b3a75e05b31166a0db384599966b4d6a071d9b))
+
 # [2.84.0](https://github.com/ethanneff/playground-react-native/compare/v2.83.0...v2.84.0) (2023-08-30)
 
 
