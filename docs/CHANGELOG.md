@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.84.2](https://github.com/ethanneff/playground-react-native/compare/v2.84.1...v2.84.2) (2023-09-03)
+
+
+### Bug Fixes
+
+* rename scripts ([9072458](https://github.com/ethanneff/playground-react-native/commit/907245800b4d310e662e9529e494495154b26e0c))
+* run unused code ([e938af6](https://github.com/ethanneff/playground-react-native/commit/e938af6df8c9a9a00df488d624d560d809a6b63a))
+* update deps (ios, android, web) ([7593c8b](https://github.com/ethanneff/playground-react-native/commit/7593c8baaa152b33f83681264b102832a6918f5e))
+
 ## [2.84.1](https://github.com/ethanneff/playground-react-native/compare/v2.84.0...v2.84.1) (2023-08-30)
 
 
