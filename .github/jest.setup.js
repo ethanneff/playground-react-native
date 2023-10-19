@@ -7,13 +7,27 @@ import 'react-native-get-random-values';
 import mockRNLocalize from 'react-native-localize/mock';
 import { mockGoBack, mockNavigate } from '../src/mocks/Navigation';
 
-jest.mock('react-native-code-push', () => ({
-  CheckFrequency: {
-    MANUAL: null,
-    ON_APP_START: null,
-    ON_APP_RESUME: null,
-  },
-}));
+jest.mock('react-native-code-push', () => {
+  const cp = () => (app) => app;
+  Object.assign(cp, {
+    InstallMode: {},
+    CheckFrequency: { MANUAL: null, ON_APP_START: null, ON_APP_RESUME: null },
+    SyncStatus: {},
+    UpdateState: {},
+    DeploymentStatus: {},
+    DEFAULT_UPDATE_DIALOG: {},
+    allowRestart: jest.fn(),
+    checkForUpdate: jest.fn(() => Promise.resolve(null)),
+    disallowRestart: jest.fn(),
+    getCurrentPackage: jest.fn(() => Promise.resolve(null)),
+    getUpdateMetadata: jest.fn(() => Promise.resolve(null)),
+    notifyAppReady: jest.fn(() => Promise.resolve()),
+    restartApp: jest.fn(),
+    sync: jest.fn(() => Promise.resolve(1)),
+    clearUpdates: jest.fn(),
+  });
+  return cp;
+});
 jest.mock(
   'react-native-fbsdk-next',
   () => require('react-native-fbsdk-next/jest/mocks').default,

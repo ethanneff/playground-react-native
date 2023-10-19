@@ -6,6 +6,7 @@ import { persistReducer, persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import thunk from 'redux-thunk';
 import { Storage, addFlipperMiddleware } from '../conversions';
+import { Globals } from '../features/Config/globals';
 import { reducers } from './store';
 
 type Props = {
@@ -17,7 +18,10 @@ const key = DeviceInfo.getBundleId() || '123';
 const persistConfig = { blacklist, key, storage: Storage };
 const persistedReducer = persistReducer(persistConfig, reducers);
 const middleware = [thunk];
-addFlipperMiddleware(middleware);
+if (Globals.platform !== 'web' && Globals.environment === 'dev') {
+  addFlipperMiddleware(middleware);
+}
+
 const store = createStore(persistedReducer, applyMiddleware(...middleware));
 export const persistor = persistStore(store);
 
