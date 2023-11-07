@@ -16,7 +16,7 @@
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.fontFamily": "Fira Code",
-  "workbench.editor.showTabs": true,
+  "workbench.editor.showTabs": "multiple",
   "workbench.editor.labelFormat": "short",
   "typescript.preferences.importModuleSpecifier": "relative",
   "search.exclude": {
