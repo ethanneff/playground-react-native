@@ -167,6 +167,7 @@ module.exports = {
     // turn back on eventually
     'jest/require-hook': 'off',
     'react-native/no-inline-styles': 'off',
+    'react-redux/useSelector-prefer-selectors': 'off',
     'react/forbid-component-props': 'off',
     'no-warning-comments': 'off',
     'react/no-multi-comp': 'off',
