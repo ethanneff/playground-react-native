@@ -89,8 +89,8 @@ const SwipeCard = ({
           gesture.dx > swipeThreshold
             ? width
             : gesture.dx < -swipeThreshold
-            ? -width
-            : 0;
+              ? -width
+              : 0;
         Animated.spring(position, {
           toValue: { x, y: 0 },
           useNativeDriver,

@@ -93,8 +93,8 @@ export const Input = ({
       borderColor: error
         ? colors.text.negative
         : focus
-        ? colors.text.accent
-        : colors.text.secondary,
+          ? colors.text.accent
+          : colors.text.secondary,
       borderRadius: spacing(1),
       borderWidth: 2,
       flexDirection: 'row',

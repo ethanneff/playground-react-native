@@ -47,6 +47,6 @@ export const determineBoardItem = (
   return neighbors < 2 || neighbors > 3
     ? 0
     : item === 0 && neighbors === 3
-    ? 1
-    : item;
+      ? 1
+      : item;
 };

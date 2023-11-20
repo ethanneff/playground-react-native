@@ -25,8 +25,8 @@ const getOpacity = (elevation: number) =>
   elevation === 0
     ? 0
     : elevation === 1
-    ? 0.05
-    : ((elevation - 2) * 0.01 + 0.07).toFixed(2);
+      ? 0.05
+      : ((elevation - 2) * 0.01 + 0.07).toFixed(2);
 
 export const Card = ({
   children,

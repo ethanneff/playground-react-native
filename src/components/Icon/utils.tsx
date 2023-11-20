@@ -18,9 +18,9 @@ export const getColor = ({
   hidden
     ? 'transparent'
     : disabled
-    ? colors.text.disabled
-    : clear
-    ? colors.text.primaryB
-    : color
-    ? colors.text[color]
-    : colors.text.secondary;
+      ? colors.text.disabled
+      : clear
+        ? colors.text.primaryB
+        : color
+          ? colors.text[color]
+          : colors.text.secondary;

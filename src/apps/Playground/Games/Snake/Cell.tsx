@@ -15,8 +15,8 @@ export const Cell = ({ length, value }: CellProps) => {
     value === 0
       ? colors.background.secondary
       : value === 1
-      ? colors.background.positive
-      : colors.background.negative;
+        ? colors.background.positive
+        : colors.background.negative;
   return (
     <View
       style={{

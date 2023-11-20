@@ -28,14 +28,14 @@ const getBoundedPosition = (
     minY <= 0
       ? size
       : maxY >= 0
-      ? initialPosition.y * 2 - size
-      : initialPosition.y + gestureState.dy;
+        ? initialPosition.y * 2 - size
+        : initialPosition.y + gestureState.dy;
   const x =
     minX <= 0
       ? size
       : maxX >= 0
-      ? initialPosition.x * 2 - size
-      : initialPosition.x + gestureState.dx;
+        ? initialPosition.x * 2 - size
+        : initialPosition.x + gestureState.dx;
   return { x, y };
 };
 

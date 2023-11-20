@@ -32,10 +32,10 @@ const useConfig = ({ dayState, hiddenDays, month }: ConfigProps) => {
   const textColor = hiddenDay
     ? 'transparent'
     : dayState.isSelected
-    ? colors.text.primaryB
-    : isWithinMonth
-    ? colors.text.primaryA
-    : colors.text.tertiary;
+      ? colors.text.primaryB
+      : isWithinMonth
+        ? colors.text.primaryA
+        : colors.text.tertiary;
   const disabled = dayState.isHeader || nonMonthDay;
   const bold = isToday || dayState.isHeader;
   return { backgroundColor, bold, disabled, textColor };

@@ -40,13 +40,13 @@ const ProgressItem = ({ item }: ProgressItemProps) => {
   const iconColor = isSameDay(today, item.date)
     ? 'positive'
     : item.date > today
-    ? 'tertiary'
-    : 'negative';
+      ? 'tertiary'
+      : 'negative';
   const iconName = isSameDay(today, item.date)
     ? 'check'
     : item.date > today
-    ? 'cancel'
-    : 'close';
+      ? 'cancel'
+      : 'close';
 
   return (
     <Pressable onPress={onPress}>

@@ -16,12 +16,12 @@ export const formatRelativeDate = (date: Date): string => {
   return years
     ? `${years}y`
     : weeks
-    ? `${weeks}w`
-    : days
-    ? `${days}d`
-    : hours
-    ? `${hours}h`
-    : minutes
-    ? `${minutes}m`
-    : '';
+      ? `${weeks}w`
+      : days
+        ? `${days}d`
+        : hours
+          ? `${hours}h`
+          : minutes
+            ? `${minutes}m`
+            : '';
 };

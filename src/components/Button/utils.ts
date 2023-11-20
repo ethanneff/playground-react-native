@@ -25,28 +25,28 @@ export const getStyles = ({
     disabled && emphasis === 'high'
       ? colors.background.disabled
       : emphasis === 'high'
-      ? colors.background[color]
-      : emphasis === 'medium'
-      ? colors.background.primaryA
-      : 'transparent';
+        ? colors.background[color]
+        : emphasis === 'medium'
+          ? colors.background.primaryA
+          : 'transparent';
 
   const borderColor =
     disabled && emphasis === 'medium'
       ? colors.border.disabled
       : emphasis === 'medium'
-      ? colors.border[color]
-      : 'transparent';
+        ? colors.border[color]
+        : 'transparent';
 
   const textColor = disabled
     ? colors.text.disabled
     : emphasis === 'high' &&
-      ['primaryA', 'secondary', 'tertiary'].some((c) => c === color)
-    ? colors.text.primaryA
-    : emphasis !== 'high' && ['primaryB'].some((c) => c === color)
-    ? colors.text.primaryA
-    : emphasis === 'high'
-    ? colors.text.primaryB
-    : colors.text[color];
+        ['primaryA', 'secondary', 'tertiary'].some((c) => c === color)
+      ? colors.text.primaryA
+      : emphasis !== 'high' && ['primaryB'].some((c) => c === color)
+        ? colors.text.primaryA
+        : emphasis === 'high'
+          ? colors.text.primaryB
+          : colors.text[color];
 
   return StyleSheet.create({
     center: {

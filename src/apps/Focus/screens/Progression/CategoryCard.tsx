@@ -40,8 +40,8 @@ export const CategoryCard = ({ category }: Props) => {
       const backgroundColor = today
         ? colors.background.accent
         : weekend
-        ? colors.background.tertiary
-        : colors.background.secondary;
+          ? colors.background.tertiary
+          : colors.background.secondary;
 
       return (
         <View

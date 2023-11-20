@@ -17,13 +17,13 @@ export const getPosition = (position: Position): Vector => {
     dy < 0
       ? 0
       : dy + position.size > position.canvas.height
-      ? position.canvas.height - position.size
-      : dy;
+        ? position.canvas.height - position.size
+        : dy;
   const x =
     dx < 0
       ? 0
       : dx + position.size > position.canvas.width
-      ? position.canvas.width - position.size
-      : dx;
+        ? position.canvas.width - position.size
+        : dx;
   return { x, y };
 };

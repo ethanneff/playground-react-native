@@ -237,8 +237,8 @@ export const TextInput = ({
           borderBottomColor: error
             ? colors.text.negative
             : focus
-            ? colors.text.accent
-            : backColor,
+              ? colors.text.accent
+              : backColor,
           borderLeftColor: backColor,
           borderRadius: spacing(1),
           borderRightColor: backColor,
