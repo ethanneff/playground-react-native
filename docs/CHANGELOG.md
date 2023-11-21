@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.84.8](https://github.com/ethanneff/playground-react-native/compare/v2.84.7...v2.84.8) (2023-11-21)
+
+
+### Bug Fixes
+
+* update deps ([dd48456](https://github.com/ethanneff/playground-react-native/commit/dd48456777b1030fb82006f1a511b3ed95e2fcce))
+
 ## [2.84.7](https://github.com/ethanneff/playground-react-native/compare/v2.84.6...v2.84.7) (2023-11-20)
 
 
