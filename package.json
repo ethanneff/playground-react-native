@@ -19,7 +19,7 @@
     "@react-native-community/slider": "4.4.3",
     "@react-native-firebase/analytics": "18.6.0",
     "@react-native-firebase/app": "18.6.0",
-    "@react-native-firebase/auth": "18.6.0",
+    "@react-native-firebase/auth": "18.6.2",
     "@react-native-firebase/crashlytics": "18.6.0",
     "@react-native-firebase/firestore": "18.6.0",
     "@react-native-firebase/remote-config": "18.6.0",
