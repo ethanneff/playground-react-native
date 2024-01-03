@@ -1,6 +1,4 @@
-import add from 'date-fns/add';
-import format from 'date-fns/format';
-import isSameDay from 'date-fns/isSameDay';
+import { add, format, isSameDay } from 'date-fns';
 import React, { useCallback, useState } from 'react';
 import {
   FlashList,

@@ -1,5 +1,4 @@
-import { formatDistance } from 'date-fns';
-import formatDate from 'date-fns/format';
+import { format as formatDate, formatDistance } from 'date-fns';
 import React, { useCallback, useEffect, useState } from 'react';
 import { type ViewStyle } from 'react-native';
 import { type FontEmphasis, type FontType } from '../../features';

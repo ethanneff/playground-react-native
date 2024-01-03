@@ -1,8 +1,8 @@
-import format from 'date-fns/format';
+import { format } from 'date-fns';
 import React, { useCallback } from 'react';
 import { View } from '..';
 import { spacing } from '../../features';
-import { useAppSelector, useAppDispatch } from '../../redux';
+import { useAppDispatch, useAppSelector } from '../../redux';
 import { Icon } from '../Icon';
 import { Pressable } from '../Pressable';
 import { Text } from '../Text';
