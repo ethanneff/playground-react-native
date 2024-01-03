@@ -42,7 +42,7 @@ export const slides: CarouselSlide[] = [
     ],
   },
   {
-    icon: 'trophy-outline',
+    icon: 'cat',
     id: '3',
     sections: [
       {
@@ -61,7 +61,7 @@ export const slides: CarouselSlide[] = [
     ],
   },
   {
-    icon: 'trophy-outline',
+    icon: 'dog',
     id: '4',
     sections: [
       {
@@ -80,7 +80,7 @@ export const slides: CarouselSlide[] = [
     ],
   },
   {
-    icon: 'trophy-outline',
+    icon: 'bird',
     id: '5',
     sections: [
       {

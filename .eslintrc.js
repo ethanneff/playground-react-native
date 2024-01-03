@@ -173,7 +173,6 @@ module.exports = {
     'react/no-multi-comp': 'off',
     'no-console': 'off',
     'sonarjs/cognitive-complexity': 'off',
-    'sonarjs/no-duplicate-string': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
   },
