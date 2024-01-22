@@ -72,7 +72,6 @@ module.exports = {
     'plugin:typescript-sort-keys/recommended',
     'prettier',
   ],
-  root: true,
   env: { node: true },
   parser: '@typescript-eslint/parser',
   parserOptions: { project: ['./tsconfig.json'] },
