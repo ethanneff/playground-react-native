@@ -2,12 +2,12 @@ import React from 'react';
 import { Spacing, Text, View } from '../../../components';
 import { spacing } from '../../../features';
 
-type TitleProps = {
+type TitleProperties = {
   readonly description: string;
   readonly title: string;
 };
 
-export const Title = ({ description, title }: TitleProps) => (
+export const Title = ({ description, title }: TitleProperties) => (
   <View padding={spacing(2)}>
     <Text
       title={title}

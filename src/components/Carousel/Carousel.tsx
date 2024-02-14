@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { type ViewToken } from 'react-native';
-import { View, type FlashListRef } from '../../components';
+import { View, type FlashListReference } from '../../components';
 import { spacing, useLayout } from '../../features';
 import { CarouselDots } from './CarouselDots';
 import { CarouselList } from './CarouselList';
 import { type CarouselSlide } from './types';
 
-type Props = {
+type Properties = {
   readonly dotSize?: number;
   readonly duration?: number;
   readonly slides: CarouselSlide[];
@@ -18,13 +18,13 @@ export const Carousel = ({
   duration,
   slides,
   viewabilityConfig,
-}: Props) => {
-  const viewabilityConfigRef = useRef(
-    viewabilityConfig ? viewabilityConfig : { itemVisiblePercentThreshold: 50 },
+}: Properties) => {
+  const viewabilityConfigReference = useRef(
+    viewabilityConfig ?? { itemVisiblePercentThreshold: 50 },
   ).current;
   const loopingEnabled = useRef(false);
-  const flatList = useRef<FlashListRef<CarouselSlide>>(null);
-  const activeIndexRef = useRef(0);
+  const flatList = useRef<FlashListReference<CarouselSlide>>(null);
+  const activeIndexReference = useRef(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const loopTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const touchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -33,9 +33,9 @@ export const Carousel = ({
   const onViewableItemsChanged = useCallback(
     ({ viewableItems }: { viewableItems: ViewToken[] }) => {
       const index = viewableItems[0]?.index ?? 0;
-      if (!viewableItems.length) return;
+      if (viewableItems.length === 0) return;
       setActiveIndex(index);
-      activeIndexRef.current = index;
+      activeIndexReference.current = index;
     },
     [],
   );
@@ -51,7 +51,7 @@ export const Carousel = ({
 
   const scrollToIndex = useCallback(() => {
     if (!loopingEnabled.current) return;
-    const index = (activeIndexRef.current + 1) % slides.length;
+    const index = (activeIndexReference.current + 1) % slides.length;
     flatList.current?.scrollToIndex({ index });
   }, [slides.length]);
 
@@ -93,8 +93,8 @@ export const Carousel = ({
         onRef={flatList}
         onViewableItemsChanged={onViewableItemsChanged}
         slides={slides}
-        viewabilityConfig={viewabilityConfigRef}
-        width={layout?.width || 0}
+        viewabilityConfig={viewabilityConfigReference}
+        width={layout?.width ?? 0}
       />
       <CarouselDots
         activeIndex={activeIndex}

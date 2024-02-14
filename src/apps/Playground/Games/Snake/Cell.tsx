@@ -3,12 +3,12 @@ import { View } from '../../../../components';
 import { useColors } from '../../../../features';
 import { getSmallestDimension, useAppSelector } from '../../../../redux';
 
-type CellProps = {
+type CellProperties = {
   readonly length: number;
   readonly value: number;
 };
 
-export const Cell = ({ length, value }: CellProps) => {
+export const Cell = ({ length, value }: CellProperties) => {
   const colors = useColors();
   const width = useAppSelector(getSmallestDimension) / length;
   const backgroundColor =

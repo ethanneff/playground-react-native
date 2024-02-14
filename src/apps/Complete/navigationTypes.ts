@@ -1,7 +1,7 @@
 import {
-  type BottomTabNavigationProp,
-  type CompositeNavigationProp,
-  type StackNavigationProp,
+  type StackNavigationProperty,
+  type BottomTabNavigationProp as BottomTabNavigationProperty,
+  type CompositeNavigationProp as CompositeNavigationProperty,
 } from '../../conversions';
 
 export type MainStackRoutes = {
@@ -25,10 +25,10 @@ export type HomeStackRoutes = {
   reflect: undefined;
 };
 
-export type ImplementTabNavigation = CompositeNavigationProp<
-  StackNavigationProp<MainStackRoutes, 'home'>,
-  CompositeNavigationProp<
-    BottomTabNavigationProp<HomeStackRoutes>,
-    StackNavigationProp<ImplementStackRoutes>
+export type ImplementTabNavigation = CompositeNavigationProperty<
+  StackNavigationProperty<MainStackRoutes, 'home'>,
+  CompositeNavigationProperty<
+    BottomTabNavigationProperty<HomeStackRoutes>,
+    StackNavigationProperty<ImplementStackRoutes>
   >
 >;

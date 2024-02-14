@@ -10,23 +10,23 @@ import { DriftContext } from './Context';
 import { type CanvasDimensions } from './types';
 import { getPosition } from './utils';
 
-type CharacterProps = {
+type CharacterProperties = {
   readonly canvas: CanvasDimensions;
 };
 
-export const Character = ({ canvas }: CharacterProps) => {
+export const Character = ({ canvas }: CharacterProperties) => {
   const elevation = 5;
   const size = 30;
   const speed = 6;
   const rate = 16;
   const shadowOpacity = elevation * 0.036 + 0.12;
   const shadowRadius = elevation * 0.36 + 1.2;
-  const initialPositionRef = useRef({
+  const initialPositionReference = useRef({
     x: canvas.width / 2 - size,
     y: canvas.height / 2 - size,
   });
   const position = useRef(
-    new Animated.ValueXY(initialPositionRef.current),
+    new Animated.ValueXY(initialPositionReference.current),
   ).current;
   const useNativeDriver = useDriver();
   const { dispatch } = useContext(DriftContext);
@@ -37,10 +37,10 @@ export const Character = ({ canvas }: CharacterProps) => {
       const toValue = getPosition({
         canvas,
         change: { dx: dx * speed, dy: dy * speed },
-        current: initialPositionRef.current,
+        current: initialPositionReference.current,
         size,
       });
-      initialPositionRef.current = toValue;
+      initialPositionReference.current = toValue;
       dispatch({ payload: { ...toValue, size }, type: 'addTrack' });
       Animated.spring(position, {
         toValue,
@@ -52,11 +52,11 @@ export const Character = ({ canvas }: CharacterProps) => {
 
   useEffect(() => {
     setUpdateIntervalForType(SensorTypes.accelerometer, rate);
-    const acc = accelerometer.subscribe(({ x, y }) => {
+    const accumulator = accelerometer.subscribe(({ x, y }) => {
       animate(x, y);
     });
     return () => {
-      acc.unsubscribe();
+      accumulator.unsubscribe();
     };
   }, [rate, animate]);
 

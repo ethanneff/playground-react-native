@@ -3,14 +3,14 @@ import React, { type RefObject } from 'react';
 import { type FlatListProps, type ListRenderItem } from 'react-native';
 import { GestureFlatList } from '../../conversions';
 
-export type FlatListRef<T> = GestureFlatList<T> | null;
+export type FlatListReference<T> = GestureFlatList<T> | null;
 export type FlatListRenderItem<T> = ListRenderItem<T>;
 
-type ListProps<ItemT> = FlatListProps<ItemT> & {
+type ListProperties<ItemT> = FlatListProps<ItemT> & {
   readonly onRef?: RefObject<GestureFlatList<ItemT>>;
 };
 
-export const FlatList = <ItemT,>({ onRef, ...rest }: ListProps<ItemT>) => (
+export const FlatList = <ItemT,>({ onRef, ...rest }: ListProperties<ItemT>) => (
   <GestureFlatList
     keyboardShouldPersistTaps="handled"
     ref={onRef}

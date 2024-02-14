@@ -8,11 +8,11 @@ type LocationItem = {
   title: string;
 };
 
-type Props = {
+type Properties = {
   readonly onPress: (value: string) => () => void;
 };
 
-export const Location = ({ onPress }: Props) => {
+export const Location = ({ onPress }: Properties) => {
   const subtitle = 'Tap to add';
   const locations: LocationItem[] = [
     {

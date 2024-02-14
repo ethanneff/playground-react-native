@@ -9,16 +9,16 @@ import { GestureHandlerProvider } from '../../conversions';
 import { ApplicationProvider } from '../../features';
 import { reducers } from '../../redux/store';
 
-type OptionalOptions<TProps> = {
-  initialProps?: TProps;
+type OptionalOptions<TProperties> = {
+  initialProps?: TProperties;
   initialState?: RootState;
 };
 
-type ProviderProps = PropsWithChildren & {
+type ProviderProperties = PropsWithChildren & {
   readonly store: Store<RootState>;
 };
 
-const Providers = ({ children, store }: ProviderProps) => (
+const Providers = ({ children, store }: ProviderProperties) => (
   <SafeAreaProvider>
     <GestureHandlerProvider style={{ flex: 1 }}>
       <ReduxProvider store={store}>
@@ -29,13 +29,12 @@ const Providers = ({ children, store }: ProviderProps) => (
 );
 
 export const Testing = {
-  reduxStore: (preloadedState?: RootState) => {
-    if (preloadedState) return createStore(reducers, preloadedState);
-    return createStore(reducers);
-  },
-  renderComponent: <TProps,>(
+  reduxStore: (preloadedState?: RootState) =>
+    // eslint-disable-next-line etc/no-deprecated
+    createStore(reducers, preloadedState),
+  renderComponent: <TProperties,>(
     ui: ReactElement,
-    options: OptionalOptions<TProps> = {},
+    options: OptionalOptions<TProperties> = {},
   ): RenderAPI => {
     const store = Testing.reduxStore(options.initialState);
     const wrapper = ({ children }: PropsWithChildren) => (
@@ -43,9 +42,9 @@ export const Testing = {
     );
     return render(ui, { wrapper });
   },
-  renderHook: <TResult, TProps extends PropsWithChildren>(
-    hook: (props: TProps) => TResult,
-    options: OptionalOptions<TProps> = {},
+  renderHook: <TResult, TProperties extends PropsWithChildren>(
+    hook: (properties: TProperties) => TResult,
+    options: OptionalOptions<TProperties> = {},
   ) => {
     const store = Testing.reduxStore(options.initialState);
     const wrapper = ({ children }: PropsWithChildren) => (

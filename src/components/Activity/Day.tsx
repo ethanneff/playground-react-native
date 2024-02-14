@@ -4,7 +4,7 @@ import { colorWithOpacity, useColors } from '../../features';
 import { Pressable } from '../Pressable';
 import { type ActivityDay } from './types';
 
-type Props = {
+type Properties = {
   readonly day: ActivityDay;
   readonly margin: number;
   readonly max: number;
@@ -12,7 +12,7 @@ type Props = {
   readonly size: number;
 };
 
-export const Day = ({ day, margin, max, onPress, size }: Props) => {
+export const Day = ({ day, margin, max, onPress, size }: Properties) => {
   const colors = useColors();
   const backgroundColor =
     day.count === 0

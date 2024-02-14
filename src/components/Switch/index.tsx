@@ -2,15 +2,15 @@ import React, { useCallback } from 'react';
 import { GestureSwitch } from '../../conversions';
 import { SoundManager, useColors } from '../../features';
 
-type SwitchRef = GestureSwitch | null;
+type SwitchReference = GestureSwitch | null;
 
-type Props = {
-  readonly onRef?: (ref: SwitchRef) => void;
+type Properties = {
+  readonly onRef?: (reference: SwitchReference) => void;
   readonly onValueChange: (value: boolean) => void;
   readonly value: boolean;
 };
 
-export const Switch = ({ onRef, onValueChange, value }: Props) => {
+export const Switch = ({ onRef, onValueChange, value }: Properties) => {
   const handleValueChange = useCallback(
     (result: boolean) => {
       SoundManager.play('tap');

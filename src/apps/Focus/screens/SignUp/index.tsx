@@ -8,14 +8,14 @@ import {
   TextInput,
   Toast,
   View,
-  type TextInputRef,
+  type TextInputReference,
 } from '../../../../components';
 import {
   Firebase,
+  type StackNavigationProperty,
   useIsFocused,
   useNavigation,
   type FirebaseAuthTypes,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing } from '../../../../features';
 import { useAppSelector } from '../../../../redux';
@@ -23,7 +23,7 @@ import { Collections, type Preferences, type User } from '../../data';
 import { type UnAuthStackRoutes } from '../../types';
 import { SocialAuth } from './SocialAuth';
 
-const initialRef = { email: '', password: '' };
+const initialReference = { email: '', password: '' };
 const initialState = { eye: false, loading: false };
 
 const createUser = async (user: FirebaseAuthTypes.User) => {
@@ -44,7 +44,7 @@ const createUserPreferences = async (
   timezone: string,
 ) => {
   let availability = '';
-  for (let i = 0; i < 96; i++) {
+  for (let index = 0; index < 96; index++) {
     availability += '0';
   }
   const data: Preferences = {
@@ -60,7 +60,7 @@ const createUserPreferences = async (
     .where('uid', '==', user.uid)
     .get();
 
-  if (!query.size) {
+  if (query.size === 0) {
     await Collections.preferences.add(data);
     return;
   }
@@ -69,10 +69,10 @@ const createUserPreferences = async (
 
 export const SignUp = () => {
   const { goBack, navigate } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();
-  const emailRef = useRef<TextInputRef>(null);
-  const passwordRef = useRef<TextInputRef>(null);
-  const form = useRef(initialRef);
+    useNavigation<StackNavigationProperty<UnAuthStackRoutes, 'sign-up'>>();
+  const emailReference = useRef<TextInputReference>(null);
+  const passwordReference = useRef<TextInputReference>(null);
+  const form = useRef(initialReference);
   const [state, setState] = useState(initialState);
   const eyeIcon = state.eye ? 'eye-outline' : 'eye-off-outline';
   const focus = useIsFocused();
@@ -80,11 +80,11 @@ export const SignUp = () => {
   const timezone =
     useAppSelector((root) => root.device.localization?.timeZone) ?? '';
 
-  const handleErrorToast = useCallback((e: unknown, message: string) => {
-    const err = e as FirebaseAuthTypes.NativeFirebaseAuthError;
+  const handleErrorToast = useCallback((error: unknown, message: string) => {
+    const firebaseError = error as FirebaseAuthTypes.NativeFirebaseAuthError;
     Toast.show({
       props: {
-        description: `${err.nativeErrorMessage}`,
+        description: firebaseError.nativeErrorMessage,
         title: 'Unable to login.',
       },
       type: 'negative',
@@ -101,18 +101,18 @@ export const SignUp = () => {
       );
       await createUser(user);
       await createUserPreferences(user, timezone);
-    } catch (e) {
+    } catch (error) {
       setState((p) => ({ ...p, loading: false }));
-      handleErrorToast(e, 'unable to sign up');
+      handleErrorToast(error, 'unable to sign up');
     }
   }, [handleErrorToast, timezone]);
 
   const handleSignIn = useCallback(async () => {
     const { email, password } = form.current;
-    const error =
+    const errorMessage =
       'Please enter your email address and password before submitting.';
     if (!email || !password) {
-      Toast.show({ props: { title: error }, type: 'negative' });
+      Toast.show({ props: { title: errorMessage }, type: 'negative' });
       return;
     }
     setState((p) => ({ ...p, loading: true }));
@@ -123,14 +123,14 @@ export const SignUp = () => {
       );
       await createUser(user);
       await createUserPreferences(user, timezone);
-    } catch (e) {
-      const err = e as FirebaseAuthTypes.NativeFirebaseAuthError;
-      if (err.code === 'auth/user-not-found') {
+    } catch (error) {
+      const firebaseError = error as FirebaseAuthTypes.NativeFirebaseAuthError;
+      if (firebaseError.code === 'auth/user-not-found') {
         handleSignUp();
         return;
       }
       setState((p) => ({ ...p, loading: false }));
-      handleErrorToast(e, 'unable to sign in');
+      handleErrorToast(error, 'unable to sign in');
     }
   }, [handleErrorToast, handleSignUp, timezone]);
 
@@ -140,19 +140,19 @@ export const SignUp = () => {
 
   const handleEyePress = useCallback(() => {
     setState((p) => ({ ...p, eye: !p.eye }));
-    passwordRef.current?.focus();
+    passwordReference.current?.focus();
   }, []);
 
   const handleFormChange = useCallback(
-    (key: keyof typeof initialRef) => (val: string) => {
-      form.current = { ...form.current, [key]: val };
+    (key: keyof typeof initialReference) => (value: string) => {
+      form.current = { ...form.current, [key]: value };
     },
     [],
   );
 
   const handleSubmit = useCallback(
-    (key: keyof typeof initialRef) => () => {
-      if (key === 'email') passwordRef.current?.focus();
+    (key: keyof typeof initialReference) => () => {
+      if (key === 'email') passwordReference.current?.focus();
       if (key === 'password') handleSignIn();
     },
     [handleSignIn],
@@ -160,7 +160,7 @@ export const SignUp = () => {
 
   useEffect(() => {
     if (!focus) {
-      form.current = initialRef;
+      form.current = initialReference;
       setState(initialState);
     }
   }, [focus]);
@@ -192,7 +192,7 @@ export const SignUp = () => {
             editable={!disabled}
             keyboardType="email-address"
             onChangeText={handleFormChange('email')}
-            onRef={emailRef}
+            onRef={emailReference}
             onSubmitEditing={handleSubmit('email')}
             placeholder="Email address"
             returnKeyType="next"
@@ -210,7 +210,7 @@ export const SignUp = () => {
             icons={[{ focus: true, name: eyeIcon, onPress: handleEyePress }]}
             keyboardType="default"
             onChangeText={handleFormChange('password')}
-            onRef={passwordRef}
+            onRef={passwordReference}
             onSubmitEditing={handleSubmit('password')}
             placeholder="Password"
             returnKeyType="done"

@@ -8,18 +8,18 @@ import { Text } from '../Text';
 import { calendarActions } from './calendarReducer';
 import { type DayState } from './types';
 
-type Props = {
+type Properties = {
   readonly day: string;
   readonly hiddenDays?: boolean;
 };
 
-type ConfigProps = {
+type ConfigProperties = {
   dayState: DayState;
   hiddenDays?: boolean;
   month: Date;
 };
 
-const useConfig = ({ dayState, hiddenDays, month }: ConfigProps) => {
+const useConfig = ({ dayState, hiddenDays, month }: ConfigProperties) => {
   const colors = useColors();
   const today = new Date();
   const isToday = isSameDay(new Date(dayState.value), today);
@@ -41,7 +41,7 @@ const useConfig = ({ dayState, hiddenDays, month }: ConfigProps) => {
   return { backgroundColor, bold, disabled, textColor };
 };
 
-export const CalendarDay = ({ day, hiddenDays }: Props) => {
+export const CalendarDay = ({ day, hiddenDays }: Properties) => {
   const month = useAppSelector((state) => state.calendar.activeMonth);
   const dayState = useAppSelector((state) => state.calendar.days[day]);
   const { backgroundColor, bold, disabled, textColor } = useConfig({

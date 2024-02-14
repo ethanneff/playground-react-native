@@ -2,13 +2,13 @@ import React, { type Ref } from 'react';
 import { type ScrollViewProps } from 'react-native';
 import { GestureScrollView } from '../../conversions';
 
-export type ScrollViewRef = GestureScrollView | null;
+export type ScrollViewReference = GestureScrollView | null;
 
-type Props = ScrollViewProps & {
+type Properties = ScrollViewProps & {
   readonly onRef?: Ref<GestureScrollView>;
 };
 
-export const ScrollView = ({ onRef, ...rest }: Props) => (
+export const ScrollView = ({ onRef, ...rest }: Properties) => (
   <GestureScrollView
     {...rest} // eslint-disable-line react/jsx-props-no-spreading
     ref={onRef}

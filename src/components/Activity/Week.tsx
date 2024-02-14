@@ -7,7 +7,7 @@ import { Text } from '../Text';
 import { Day } from './Day';
 import { type ActivityDay, type ActivityWeek } from './types';
 
-type Props = {
+type Properties = {
   readonly item: ActivityWeek;
   readonly margin: number;
   readonly max: number;
@@ -15,7 +15,7 @@ type Props = {
   readonly size: number;
 };
 
-export const Week = ({ item, margin, max, onPress, size }: Props) => {
+export const Week = ({ item, margin, max, onPress, size }: Properties) => {
   const first = toDate(item[0].date);
   const showHeader = Number(format(first, 'dd')) <= 7;
   const header = showHeader ? format(first, 'MMM') : ' ';

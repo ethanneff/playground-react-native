@@ -34,7 +34,7 @@ type SwipeItem = {
   onPress: () => void;
   title: string;
 };
-type SwipeCardProps = {
+type SwipeCardProperties = {
   readonly height: number;
   readonly index: number;
   readonly item: SwipeItem;
@@ -49,7 +49,7 @@ const SwipeCard = ({
   onSwipe,
   onSwipeComplete,
   onSwipePercentChange,
-}: SwipeCardProps) => {
+}: SwipeCardProperties) => {
   const { body, button, date, icon, image, title } = item;
   const cardWidth = useRef(0);
   const colors = useColors();
@@ -185,7 +185,7 @@ const initialItems: SwipeItem[] = [
     icon: 'arrow-bottom-right',
     id: v4(),
     image: null,
-    onPress: () => undefined,
+    onPress: () => false,
     title: 'Price Movement',
   },
   {
@@ -195,7 +195,7 @@ const initialItems: SwipeItem[] = [
     icon: 'file-document-edit-outline',
     id: v4(),
     image: null,
-    onPress: () => undefined,
+    onPress: () => false,
     title: 'Marketwatch',
   },
   {
@@ -205,7 +205,7 @@ const initialItems: SwipeItem[] = [
     icon: 'book',
     id: v4(),
     image: null,
-    onPress: () => undefined,
+    onPress: () => false,
     title: 'Reuters',
   },
   {
@@ -215,7 +215,7 @@ const initialItems: SwipeItem[] = [
     icon: 'star-outline',
     id: v4(),
     image: require('./placeholder.png') as ImageSourcePropType,
-    onPress: () => undefined,
+    onPress: () => false,
     title: 'Congratulations',
   },
   {
@@ -225,7 +225,7 @@ const initialItems: SwipeItem[] = [
     icon: 'star-outline',
     id: v4(),
     image: require('./placeholder.png') as ImageSourcePropType,
-    onPress: () => undefined,
+    onPress: () => false,
     title: 'Enjoying robinhood?',
   },
   {
@@ -235,17 +235,17 @@ const initialItems: SwipeItem[] = [
     icon: 'lightbulb-outline',
     id: v4(),
     image: null,
-    onPress: () => undefined,
+    onPress: () => false,
     title: 'Introducing cards',
   },
 ];
 
-type BadgeProps = {
+type BadgeProperties = {
   readonly count: number;
   readonly percent: number;
 };
 
-const Badge = ({ count, percent }: BadgeProps) => {
+const Badge = ({ count, percent }: BadgeProperties) => {
   const size = spacing(6);
   const badgeSize = size * percent;
   const colors = useColors();
@@ -282,13 +282,13 @@ const Badge = ({ count, percent }: BadgeProps) => {
   );
 };
 
-type SwipeCardsProps = {
+type SwipeCardsProperties = {
   readonly height?: number;
   readonly items: SwipeItem[];
   readonly onSwipe: (value: boolean) => void;
 };
 
-const SwipeCards = ({ height = 125, items, onSwipe }: SwipeCardsProps) => {
+const SwipeCards = ({ height = 125, items, onSwipe }: SwipeCardsProperties) => {
   const [feed, setFeed] = useState({
     items,
     percent: 1,
@@ -297,7 +297,7 @@ const SwipeCards = ({ height = 125, items, onSwipe }: SwipeCardsProps) => {
   const onSwipeComplete = useCallback(() => {
     setFeed((state) => ({
       ...state,
-      items: state.items.filter((_, i) => i !== state.items.length - 1),
+      items: state.items.filter((_, index) => index !== state.items.length - 1),
       percent: 1,
     }));
   }, []);
@@ -309,7 +309,7 @@ const SwipeCards = ({ height = 125, items, onSwipe }: SwipeCardsProps) => {
     }));
   }, []);
 
-  return feed.items.length ? (
+  return feed.items.length > 0 ? (
     <View style={{ height }}>
       {feed.items.map((item, index) => (
         <SwipeCard

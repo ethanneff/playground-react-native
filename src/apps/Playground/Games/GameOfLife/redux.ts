@@ -14,8 +14,8 @@ export const resetBoard = createAction('gameOfLife/resetBoard')<number>();
 export const loopBoard = (): RootThunkAction<void> => (dispatch, getState) => {
   const { board } = getState().gameOfLife;
   // TODO: save change list.. only iterate through items that changed instead of whole board https://stackoverflow.com/a/40564
-  const newBoard = board.map((rows, i) =>
-    rows.map((_, j) => determineBoardItem(board, i, j)),
+  const newBoard = board.map((rows, rowIndex) =>
+    rows.map((_, colIndex) => determineBoardItem(board, rowIndex, colIndex)),
   );
   dispatch(updateBoard(newBoard));
 };
@@ -25,8 +25,10 @@ export const updateCell =
   (dispatch, getState) => {
     const { board } = getState().gameOfLife;
     const flip = board[x][y] === 1 ? 0 : 1;
-    const copy = board.map((rows, i) =>
-      rows.map((_, j) => (i === x && y === j ? flip : board[i][j])),
+    const copy = board.map((rows, rowIndex) =>
+      rows.map((_, colIndex) =>
+        rowIndex === x && y === colIndex ? flip : board[rowIndex][colIndex],
+      ),
     );
     dispatch(updateBoard(copy));
   };
@@ -65,35 +67,41 @@ export const gameOfLifeReducer = (
   action: RootAction,
 ): GameOfLifeState => {
   switch (action.type) {
-    case getType(updateDelay):
+    case getType(updateDelay): {
       return {
         ...state,
         delay: action.payload,
       };
-    case getType(toggleRun):
+    }
+    case getType(toggleRun): {
       return {
         ...state,
         run: !state.run,
       };
-    case getType(updateCount):
+    }
+    case getType(updateCount): {
       return {
         ...state,
         board: generateBoard(action.payload, 0.5),
         count: action.payload,
         run: false,
       };
-    case getType(resetBoard):
+    }
+    case getType(resetBoard): {
       return {
         ...state,
         board: generateBoard(state.count, action.payload),
         run: false,
       };
-    case getType(updateBoard):
+    }
+    case getType(updateBoard): {
       return {
         ...state,
         board: action.payload,
       };
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

@@ -14,14 +14,14 @@ import {
   Text,
   TextInput,
   View,
-  type TextInputRef,
+  type TextInputReference,
 } from '../../../../components';
 import {
+  type StackNavigationProperty,
   useIsFocused,
   useNavigation,
   useRoute,
-  type RouteProp,
-  type StackNavigationProp,
+  type RouteProp as RouteProperty,
 } from '../../../../conversions';
 import { spacing, useColors, useDropShadow } from '../../../../features';
 import { type AuthStackRoutes } from '../../types';
@@ -43,11 +43,13 @@ type State = {
 
 export const IntervalDetails = () => {
   const { goBack } =
-    useNavigation<StackNavigationProp<AuthStackRoutes, 'interval-details'>>();
-  const route = useRoute<RouteProp<AuthStackRoutes, 'interval-details'>>();
-  const inputWell = useRef<TextInputRef>(null);
-  const inputCommit = useRef<TextInputRef>(null);
-  const inputImprove = useRef<TextInputRef>(null);
+    useNavigation<
+      StackNavigationProperty<AuthStackRoutes, 'interval-details'>
+    >();
+  const route = useRoute<RouteProperty<AuthStackRoutes, 'interval-details'>>();
+  const inputWell = useRef<TextInputReference>(null);
+  const inputCommit = useRef<TextInputReference>(null);
+  const inputImprove = useRef<TextInputReference>(null);
   const colors = useColors();
   const dropShadow = useDropShadow();
   const focus = useIsFocused();

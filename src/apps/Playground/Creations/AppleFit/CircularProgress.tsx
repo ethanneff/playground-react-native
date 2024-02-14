@@ -4,7 +4,7 @@ import { View } from '../../../../components';
 import { HalfCircle } from './HalfCircle';
 import { type Ring } from './types';
 
-type CircularProgressProps = {
+type CircularProgressProperties = {
   readonly radius: number;
   readonly ring: Ring;
   readonly theta: number;
@@ -14,7 +14,7 @@ export const CircularProgress = ({
   radius,
   ring,
   theta,
-}: CircularProgressProps) => {
+}: CircularProgressProperties) => {
   const { PI } = Math;
   const rotate = Math.max(0, theta - PI * 2);
   const progress = new Animated.Value(theta);

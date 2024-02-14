@@ -4,7 +4,7 @@ import { v4 } from 'uuid';
 import { View } from '../../components';
 import { Text } from '../Text';
 
-type Props = {
+type Properties = {
   readonly center?: boolean;
   readonly style?: ViewStyle;
   readonly title: string;
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const LoadingText = ({ center, style, title }: Props) => {
+export const LoadingText = ({ center, style, title }: Properties) => {
   const containerStyles = [
     styles.row,
     center ? styles.center : undefined,

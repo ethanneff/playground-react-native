@@ -6,7 +6,7 @@ import { type IconName } from '../Icon';
 import { Text } from '../Text';
 import { NavButton } from './NavButton';
 
-type Props = {
+type Properties = {
   readonly border?: boolean;
   readonly dropShadow?: boolean;
   readonly leftIcon?: IconName;
@@ -32,7 +32,7 @@ export const NavBar = ({
   secondLeftIcon,
   secondRightIcon,
   title,
-}: Props) => {
+}: Properties) => {
   const colors = useColors();
   const shadow = useDropShadow();
   const showShadow = dropShadow ? shadow(4) : {};

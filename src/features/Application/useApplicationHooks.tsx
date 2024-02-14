@@ -28,12 +28,10 @@ export const useNetInfo = () => {
     try {
       const state = await NetInfo.fetch();
       dispatch(setNetwork(state));
-    } catch (e) {
-      if (e instanceof Error) {
-        throw new Error(e.message);
-      } else {
-        throw new Error('Unknown error when checking netinfo state');
-      }
+    } catch (error_) {
+      throw error_ instanceof Error
+        ? new Error(error_.message)
+        : new Error('Unknown error when checking netinfo state');
     }
   }, [dispatch]);
 

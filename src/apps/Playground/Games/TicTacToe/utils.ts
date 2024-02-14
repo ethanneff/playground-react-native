@@ -6,7 +6,7 @@ import {
   type State,
 } from './types';
 
-type DfsProps = {
+type DfsProperties = {
   c?: number;
   d: Direction;
   i: number;
@@ -15,14 +15,14 @@ type DfsProps = {
   t: BoardValue;
 };
 
-const dfs = ({ c = 0, d, i, j, m, t }: DfsProps): number => {
+const dfs = ({ c = 0, d, i, j, m, t }: DfsProperties): number => {
   if (i < 0 || j < 0 || i >= m.length || j >= m[0].length || m[i][j] !== t)
     return 0;
   const next = c + 1;
   return Math.max(dfs({ c: next, d, i: i + d[0], j: j + d[1], m, t }), next);
 };
 
-type WinnerProps = {
+type WinnerProperties = {
   board: Board;
   boardSize: number;
   i: number;
@@ -34,7 +34,7 @@ export const getWinner = ({
   boardSize,
   i,
   j,
-}: WinnerProps): BoardValue => {
+}: WinnerProperties): BoardValue => {
   const t = board[i][j];
   const row =
     dfs({ d: [0, -1], i, j, m: board, t }) +
@@ -61,7 +61,7 @@ export const getValue = (n: number): string =>
 export const getNextValue = (turn: PlayerTurn): BoardValue =>
   turn === 'white' ? 1 : -1;
 
-type UpdateBoardProps = {
+type UpdateBoardProperties = {
   board: Board;
   i: number;
   j: number;
@@ -73,7 +73,7 @@ export const getUpdatedBoard = ({
   i,
   j,
   v,
-}: UpdateBoardProps): Board => {
+}: UpdateBoardProperties): Board => {
   const copy = [...board];
   copy[i][j] = v;
   return copy;
@@ -81,9 +81,9 @@ export const getUpdatedBoard = ({
 
 export const getInitialState = (boardSize: number): State => {
   const board: Board = [];
-  for (let i = 0; i < boardSize; i++) {
+  for (let rowIndex = 0; rowIndex < boardSize; rowIndex++) {
     const row: BoardValue[] = [];
-    for (let j = 0; j < boardSize; j++) row.push(0);
+    for (let colIndex = 0; colIndex < boardSize; colIndex++) row.push(0);
     board.push(row);
   }
   return { board, state: 'playing', turn: 'white', winner: null };

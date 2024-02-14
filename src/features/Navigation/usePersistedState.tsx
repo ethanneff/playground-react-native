@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Linking, Platform } from 'react-native';
 import {
   Storage,
-  type NavigationContainerRef,
+  type NavigationContainerRef as NavigationContainerReference,
   type NavigationInitialState,
   type NavigationState,
 } from '../../conversions';
@@ -16,7 +16,7 @@ type UsePersistedState = {
   isReady: boolean;
   onReady: () => void;
   onRef: (
-    ref: NavigationContainerRef<ReactNavigation.RootParamList> | null,
+    reference: NavigationContainerReference<ReactNavigation.RootParamList> | null,
   ) => void;
   onStateChange: (state: NavigationState | undefined) => void;
 };
@@ -24,36 +24,38 @@ type UsePersistedState = {
 const initialIsReady = Globals.environment === 'test';
 
 export const usePersistedState = (): UsePersistedState => {
-  const routeNameRef = useRef<string | null>(null);
-  const navigationRef =
-    useRef<NavigationContainerRef<ReactNavigation.RootParamList> | null>(null);
+  const routeNameReference = useRef<string | null>(null);
+  const navigationReference =
+    useRef<NavigationContainerReference<ReactNavigation.RootParamList> | null>(
+      null,
+    );
   const [isReady, setIsReady] = useState(initialIsReady);
-  const [initialState, setInitialState] = useState<NavigationState | undefined>(
-    undefined,
-  );
+  const [initialState, setInitialState] = useState<
+    NavigationState | undefined
+  >();
 
   const onStateChange = useCallback((state: NavigationState | undefined) => {
-    const previousRouteName = routeNameRef.current;
+    const previousRouteName = routeNameReference.current;
     const currentRouteName =
-      navigationRef.current?.getCurrentRoute()?.name ?? null;
+      navigationReference.current?.getCurrentRoute()?.name ?? null;
 
     if (previousRouteName !== currentRouteName && currentRouteName) {
       Analytics.trackScreen(currentRouteName);
     }
 
-    routeNameRef.current = currentRouteName;
+    routeNameReference.current = currentRouteName;
     Storage.setItem(persistanceKey, JSON.stringify(state));
   }, []);
 
-  const onRef = (
-    ref: NavigationContainerRef<ReactNavigation.RootParamList> | null,
+  const onReference = (
+    reference: NavigationContainerReference<ReactNavigation.RootParamList> | null,
   ) => {
-    navigationRef.current = ref;
+    navigationReference.current = reference;
   };
 
   const onReady = () => {
-    routeNameRef.current =
-      navigationRef.current?.getCurrentRoute()?.name ?? null;
+    routeNameReference.current =
+      navigationReference.current?.getCurrentRoute()?.name ?? null;
   };
 
   const restoreState = useCallback(async () => {
@@ -80,5 +82,5 @@ export const usePersistedState = (): UsePersistedState => {
     restoreState();
   }, [isReady, restoreState]);
 
-  return { initialState, isReady, onReady, onRef, onStateChange };
+  return { initialState, isReady, onReady, onRef: onReference, onStateChange };
 };

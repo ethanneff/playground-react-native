@@ -1,7 +1,7 @@
 import React, { type ReactNode } from 'react';
 import {
-  type DimensionValue,
   Image,
+  type DimensionValue,
   type ImageSourcePropType,
 } from 'react-native';
 import {
@@ -15,16 +15,16 @@ import {
 } from '../../../components';
 import { spacing, useColors } from '../../../features'; // eslint-disable-line import/order
 
-const missingCallback = () => undefined;
+const missingCallback = () => false;
 
 const image = require('../../../assets/line-chart.png') as ImageSourcePropType;
 
-type SignInButtonProps = {
+type SignInButtonProperties = {
   readonly icon: IconName;
   readonly onPress: () => void;
   readonly title: string;
 };
-const SignInButton = ({ icon, onPress, title }: SignInButtonProps) => {
+const SignInButton = ({ icon, onPress, title }: SignInButtonProperties) => {
   const colors = useColors();
   return (
     <Pressable
@@ -56,12 +56,12 @@ const SignInButton = ({ icon, onPress, title }: SignInButtonProps) => {
   );
 };
 
-type NavButtonProps = {
+type NavButtonProperties = {
   readonly inverted?: boolean;
   readonly onPress: () => void;
   readonly title: string;
 };
-const NavButton = ({ inverted, onPress, title }: NavButtonProps) => {
+const NavButton = ({ inverted, onPress, title }: NavButtonProperties) => {
   const colors = useColors();
   return (
     <Pressable
@@ -86,11 +86,11 @@ const NavButton = ({ inverted, onPress, title }: NavButtonProps) => {
   );
 };
 
-type HeaderProps = {
+type HeaderProperties = {
   readonly height: number;
 };
 
-export const Header = ({ height }: HeaderProps) => {
+export const Header = ({ height }: HeaderProperties) => {
   const colors = useColors();
   return (
     <View
@@ -145,12 +145,12 @@ export const Header = ({ height }: HeaderProps) => {
   );
 };
 
-type AppIconProps = {
+type AppIconProperties = {
   readonly onPress: () => void;
   readonly type: 'apple' | 'google-play';
 };
 
-const AppIcon = ({ onPress, type }: AppIconProps) => {
+const AppIcon = ({ onPress, type }: AppIconProperties) => {
   const colors = useColors();
   const iconSize = '48px' as DimensionValue;
   const text = type === 'apple' ? 'Download on the' : 'GET IT ON';
@@ -189,13 +189,17 @@ const AppIcon = ({ onPress, type }: AppIconProps) => {
   );
 };
 
-type SectionProps = {
+type SectionProperties = {
   readonly backgroundColor: string;
   readonly children: ReactNode | ReactNode[];
   readonly paddingTop?: number;
 };
 
-const Section = ({ backgroundColor, children, paddingTop }: SectionProps) => (
+const Section = ({
+  backgroundColor,
+  children,
+  paddingTop,
+}: SectionProperties) => (
   <View
     style={{
       backgroundColor,
@@ -217,13 +221,13 @@ export const Landing = () => {
     { title: 'Or use your password to ' },
     {
       bold: true,
-      onPress: () => undefined,
+      onPress: () => false,
       title: 'sign up ',
     },
     { title: 'or ' },
     {
       bold: true,
-      onPress: () => undefined,
+      onPress: () => false,
       title: 'sign in ',
     },
   ];

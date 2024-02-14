@@ -52,29 +52,42 @@ const restrictedImports = {
 
 module.exports = {
   extends: [
+    // generic
     'eslint:all',
-    'plugin:jest/all',
-    'plugin:react/all',
-    'plugin:react-native/all',
     'plugin:sonarjs/recommended',
     'plugin:import/recommended',
-    'plugin:import/typescript',
     'plugin:promise/recommended',
     'plugin:jsx-a11y/recommended',
-    'plugin:testing-library/react',
-    'plugin:react-redux/recommended',
-    // 'plugin:react-perf/recommended',
-    'plugin:react-hooks/recommended',
+    'plugin:etc/recommended',
     'plugin:eslint-comments/recommended',
+    'plugin:unicorn/recommended',
+    'plugin:regexp/recommended',
+    // testing
+    'plugin:testing-library/react',
+    'plugin:jest/all',
+    // react
+    'plugin:react/all',
+    'plugin:react-native/all',
+    'plugin:react-redux/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:import/react',
+    // typescript
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:@typescript-eslint/strict',
+    'plugin:@typescript-eslint/strict-type-checked',
+    'plugin:@typescript-eslint/stylistic',
+    'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:typescript-sort-keys/recommended',
+    'plugin:import/typescript',
+    // styling
     'prettier',
   ],
   env: { node: true },
   parser: '@typescript-eslint/parser',
   parserOptions: { project: ['./tsconfig.json'] },
+  ignorePatterns: ['react-app-env.d.ts'],
   plugins: [
     'react',
     'react-hooks',
@@ -84,6 +97,7 @@ module.exports = {
     'jsx-a11y',
     'import',
     'jest',
+    'etc',
     '@typescript-eslint',
     'sonarjs',
     'sort-keys-fix',
@@ -97,6 +111,7 @@ module.exports = {
     'no-restricted-imports': ['error', restrictedImports],
     // react-native
     '@typescript-eslint/no-var-requires': 'off', // images
+    'unicorn/prefer-module': 'off',
     // typescript
     'react/jsx-filename-extension': 'off',
     'react/require-default-props': 'off',
@@ -127,6 +142,8 @@ module.exports = {
     'typescript-sort-keys/string-enum': 'error',
     'sort-imports': 'off',
     // style
+    'unicorn/filename-case': 'off',
+    'unicorn/no-null': 'off',
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     '@typescript-eslint/consistent-type-imports': [
       'error',
@@ -165,6 +182,7 @@ module.exports = {
     'line-comment-position': 'off',
     // turn back on eventually
     'jest/require-hook': 'off',
+    'unicorn/consistent-function-scoping': 'off',
     'react-native/no-inline-styles': 'off',
     'react-redux/useSelector-prefer-selectors': 'off',
     'react/forbid-component-props': 'off',

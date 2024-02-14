@@ -43,7 +43,7 @@ export const Startup = () => {
   const colors = useColors();
   const { goBack } = useNavigation();
   const [form, setForm] = useState<Form>(initialState);
-  const launchWeeks = parseInt(form.launchWeeks, 10);
+  const launchWeeks = Number.parseInt(form.launchWeeks, 10);
   const launchSubText =
     launchWeeks >= 5
       ? "That's a long way out! Think hard: is there an MVP you could launch earlier?"
@@ -101,7 +101,7 @@ export const Startup = () => {
     [updateForm],
   );
 
-  const handleSubmit = useCallback(() => undefined, []);
+  const handleSubmit = useCallback(() => false, []);
 
   return (
     <Screen

@@ -1,2 +1,1 @@
-import Original from 'react-native-sound';
-export const Sound = Original;
+export { default as Sound } from 'react-native-sound';

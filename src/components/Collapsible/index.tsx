@@ -6,19 +6,19 @@ import { Pressable } from '../Pressable';
 import { Text } from '../Text';
 import { View } from '../View';
 
-type Props = {
+type Properties = {
   readonly children: ReactNode;
   readonly title: string;
 };
 
-export const Collapsible = ({ children, title }: Props) => {
+export const Collapsible = ({ children, title }: Properties) => {
   const animation = useRef(new Animated.Value(0)).current;
   const [open, setOpen] = useState(false);
   const useNativeDriver = useDriver();
   const colors = useColors();
   const maxHeight = animation.interpolate({
     inputRange: [0, 1],
-    outputRange: [0, 200000],
+    outputRange: [0, 200_000],
   });
   const icon = open ? 'minus' : 'plus';
   const backgroundColor = open

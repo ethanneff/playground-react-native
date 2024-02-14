@@ -25,15 +25,18 @@ export const focusIntervalsReducer = (
   action: RootAction,
 ): FocusIntervalsReducer => {
   switch (action.type) {
-    case getType(loadIntervals):
+    case getType(loadIntervals): {
       return {
         ...state,
         items: action.payload,
         updatedAt: Date.now(),
       };
-    case getType(logoutAuth):
+    }
+    case getType(logoutAuth): {
       return initialState;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

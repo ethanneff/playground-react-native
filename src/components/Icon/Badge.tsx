@@ -4,14 +4,14 @@ import { View } from '../../components';
 import { spacing, useColors } from '../../features';
 import { Text } from '../Text';
 
-type Props = {
+type Properties = {
   readonly badge: number;
 };
 
 const badgeLimit = '!';
 const maxBadgeNumber = 99;
 
-export const Badge = ({ badge }: Props) => {
+export const Badge = ({ badge }: Properties) => {
   const colors = useColors();
   const styles = StyleSheet.create({
     badgeContainer: {
@@ -31,13 +31,13 @@ export const Badge = ({ badge }: Props) => {
     },
   });
 
-  const num = badge > maxBadgeNumber ? badgeLimit : String(badge);
+  const number = badge > maxBadgeNumber ? badgeLimit : String(badge);
   return badge <= 0 ? null : (
     <View style={styles.badgeContainer}>
       <Text
         center
         style={styles.badgeText}
-        title={num}
+        title={number}
       />
     </View>
   );

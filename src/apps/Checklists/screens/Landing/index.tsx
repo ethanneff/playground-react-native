@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import { Button, Card, Carousel, Screen, View } from '../../../../components';
 import {
+  type StackNavigationProperty,
   useNavigation,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing } from '../../../../features';
 import { type UnAuthStackRoutes } from '../../types';
@@ -10,7 +10,7 @@ import { slides } from './slides';
 
 export const Landing = () => {
   const { navigate } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'landing'>>();
+    useNavigation<StackNavigationProperty<UnAuthStackRoutes, 'landing'>>();
 
   const handleSignIn = useCallback(() => {
     navigate('sign-in');

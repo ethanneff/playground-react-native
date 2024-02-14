@@ -1,5 +1,5 @@
 export const Facebook = {
-  AccessToken: () => undefined,
-  LoginManager: () => undefined,
-  Settings: () => undefined,
+  AccessToken: () => false,
+  LoginManager: () => false,
+  Settings: () => false,
 };

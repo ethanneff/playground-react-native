@@ -4,11 +4,11 @@ import { useColors, useDriver } from '../../features';
 import { Loader } from '../Loader';
 import { Pressable } from '../Pressable';
 
-type Props = {
+type Properties = {
   readonly onBackgroundPress?: () => void;
 };
 
-export const Loading = ({ onBackgroundPress }: Props) => {
+export const Loading = ({ onBackgroundPress }: Properties) => {
   const colors = useColors();
   const useNativeDriver = useDriver();
   const opacity = useRef(new Animated.Value(0)).current;

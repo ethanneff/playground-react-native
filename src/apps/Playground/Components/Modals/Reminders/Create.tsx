@@ -10,7 +10,7 @@ import { type ReminderType } from './types';
 
 const reminderTypes: ReminderType[] = ['one time', 'repeat', 'location'];
 
-type Props = {
+type Properties = {
   readonly onBackgroundPress: () => void;
   readonly onLocationPress: (id: string) => () => void;
   readonly onOneTimePress: (date: Date) => () => void;
@@ -20,7 +20,7 @@ export const Create = ({
   onBackgroundPress,
   onLocationPress,
   onOneTimePress,
-}: Props) => {
+}: Properties) => {
   const [state, setState] = useState<ReminderType>('one time');
   const styles = StyleSheet.create({
     section: {

@@ -183,39 +183,47 @@ export const deviceReducer = (
   action: RootAction,
 ): DeviceState => {
   switch (action.type) {
-    case getType(setDetails):
+    case getType(setDetails): {
       return {
         ...state,
         details: action.payload,
       };
-    case getType(setDimensions):
+    }
+    case getType(setDimensions): {
       return {
         ...state,
         dimensions: action.payload,
       };
-    case getType(setKeyboardHeight):
+    }
+    case getType(setKeyboardHeight): {
       return {
         ...state,
         keyboardHeight: action.payload,
       };
-    case getType(setLocalization):
+    }
+    case getType(setLocalization): {
       return {
         ...state,
         localization: action.payload,
       };
-    case getType(setNetwork):
+    }
+    case getType(setNetwork): {
       return {
         ...state,
         network: action.payload,
       };
-    case getType(setStatus):
+    }
+    case getType(setStatus): {
       return {
         ...state,
         status: action.payload,
       };
-    case getType(logout):
+    }
+    case getType(logout): {
       return deviceInitialState;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

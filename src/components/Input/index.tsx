@@ -19,7 +19,7 @@ import { SoundManager, fontSizes, spacing, useColors } from '../../features';
 import { Icon, type IconName } from '../Icon';
 import { Pressable } from '../Pressable';
 import { Text } from '../Text';
-import { type TextInputRef } from '../TextInput';
+import { type TextInputReference } from '../TextInput';
 
 // styling https://uxdesign.cc/design-better-forms-96fadca0f49c
 
@@ -27,7 +27,7 @@ type TextContentType = 'none' | 'password' | 'username';
 
 // TODO: fix blurOnSubmit=false
 
-type Props = {
+type Properties = {
   readonly autoCorrect?: boolean;
   readonly blurOnSubmit?: boolean;
   readonly clearIcon?: IconName;
@@ -41,7 +41,7 @@ type Props = {
   readonly hideError?: boolean;
   readonly keyboardType?: KeyboardTypeOptions;
   readonly onChangeText: (text: string) => void;
-  readonly onRef?: MutableRefObject<TextInputRef>;
+  readonly onRef?: MutableRefObject<TextInputReference>;
   readonly onSubmitEditing?: () => void;
   readonly optional?: boolean;
   readonly placeholder?: string;
@@ -77,7 +77,7 @@ export const Input = ({
   textStyle,
   title = '',
   value,
-}: Props) => {
+}: Properties) => {
   const fromOnMount = useRef(false);
   const [focus, setFocus] = useState(false);
   const colors = useColors();
@@ -108,7 +108,7 @@ export const Input = ({
       flex: 1,
     },
   });
-  const textInput = useRef<TextInputRef>(null);
+  const textInput = useRef<TextInputReference>(null);
   const optionalText = ' - optional';
   const textInputStyles = [styles.textInput, fontSizes.body2, textStyle];
   const noValue = value.length === 0;
@@ -140,10 +140,10 @@ export const Input = ({
     onChangeText('');
   }, [onChangeText]);
 
-  const onRefInternal = useCallback(
-    (ref: GestureTextInput) => {
-      textInput.current = ref;
-      if (onRef) onRef.current = ref;
+  const onReferenceInternal = useCallback(
+    (reference: GestureTextInput) => {
+      textInput.current = reference;
+      if (onRef) onRef.current = reference;
     },
     [onRef],
   );
@@ -178,7 +178,7 @@ export const Input = ({
           onSubmitEditing={onSubmitEditing}
           placeholder={placeholder}
           placeholderTextColor={colors.text.secondary}
-          ref={onRefInternal}
+          ref={onReferenceInternal}
           returnKeyType={returnKeyType}
           secureTextEntry={secureTextEntry}
           selectionColor={colors.text.accent}
@@ -198,7 +198,7 @@ export const Input = ({
       </View>
       {!hideError && (
         <Pressable
-          disabled={!error.length}
+          disabled={error.length === 0}
           onPress={handleOnFocus}
         >
           <View
@@ -208,13 +208,13 @@ export const Input = ({
           >
             <Icon
               color="negative"
-              invisible={!error.length}
+              invisible={error.length === 0}
               name={errorIcon}
               size={spacing(4)}
             />
             <Text
               color="negative"
-              invisible={!error.length}
+              invisible={error.length === 0}
               style={{ paddingLeft: spacing(1) }}
               title={error || ' '}
             />

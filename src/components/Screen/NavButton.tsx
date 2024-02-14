@@ -4,7 +4,7 @@ import { spacing } from '../../features';
 import { Icon, type IconName } from '../Icon';
 import { Pressable } from '../Pressable';
 
-type Props = {
+type Properties = {
   readonly icon?: IconName;
   readonly notLeft?: boolean;
   readonly onPress?: () => void;
@@ -16,7 +16,7 @@ export const NavButton = ({
   notLeft,
   onPress,
   testID,
-}: Props) => {
+}: Properties) => {
   const styles = StyleSheet.create({
     button: { padding: spacing(2) },
     buttonRight: { alignSelf: 'flex-end' },

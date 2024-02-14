@@ -26,14 +26,14 @@ export const Inputs = () => {
   });
 
   const handleChange = useCallback(
-    (key: string) => (val: string) => {
-      setForm((prev) => ({ ...prev, [key]: val }));
+    (key: string) => (value: string) => {
+      setForm((previous) => ({ ...previous, [key]: value }));
     },
     [],
   );
 
   const handleSubmit = useCallback(() => {
-    setForm((prev) => ({ ...prev, error: 'Invalid Email' }));
+    setForm((previous) => ({ ...previous, error: 'Invalid Email' }));
   }, []);
 
   const handleOnSubmit = useCallback(() => {

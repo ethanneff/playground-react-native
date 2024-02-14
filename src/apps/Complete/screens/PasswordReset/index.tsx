@@ -4,27 +4,27 @@ import {
   Modal,
   Text,
   TextInput,
-  type TextInputRef,
+  type TextInputReference,
 } from '../../../../components';
 import {
+  type StackNavigationProperty,
   useIsFocused,
   useNavigation,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { ModalHeader } from '../../components';
 import { type LandingStackRoutes } from '../../navigationTypes';
 
-const initialRef = { email: '' };
+const initialReference = { email: '' };
 const initialState = { complete: false, loading: false };
 export const PasswordReset = () => {
   const colors = useColors();
-  const form = useRef(initialRef);
+  const form = useRef(initialReference);
   const [state, setState] = useState(initialState);
   const { goBack, navigate } =
-    useNavigation<StackNavigationProp<LandingStackRoutes>>();
+    useNavigation<StackNavigationProperty<LandingStackRoutes>>();
   const focus = useIsFocused();
-  const emailRef = useRef<TextInputRef>(null);
+  const emailReference = useRef<TextInputReference>(null);
 
   const onSubmit = useCallback(() => {
     if (!state.complete) return;
@@ -37,9 +37,9 @@ export const PasswordReset = () => {
   }, [navigate]);
 
   const onFormChange = useCallback(
-    (key: keyof typeof initialRef) => (val: string) => {
-      form.current = { ...form.current, [key]: val };
-      const complete = val.length > 0;
+    (key: keyof typeof initialReference) => (value: string) => {
+      form.current = { ...form.current, [key]: value };
+      const complete = value.length > 0;
       setState((p) => ({ ...p, complete }));
     },
     [],
@@ -47,9 +47,9 @@ export const PasswordReset = () => {
 
   useEffect(() => {
     if (focus) {
-      emailRef.current?.focus();
+      emailReference.current?.focus();
     } else {
-      form.current = initialRef;
+      form.current = initialReference;
       setState(initialState);
     }
   }, [focus]);
@@ -81,7 +81,7 @@ export const PasswordReset = () => {
         editable={!state.loading}
         keyboardType="email-address"
         onChangeText={onFormChange('email')}
-        onRef={emailRef}
+        onRef={emailReference}
         onSubmitEditing={onSubmit}
         placeholder="Email address"
         returnKeyType="send"

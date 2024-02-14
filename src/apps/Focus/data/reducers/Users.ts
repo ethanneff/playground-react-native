@@ -21,7 +21,7 @@ export const focusUsersReducer = (
   action: RootAction,
 ): FocusUsersReducer => {
   switch (action.type) {
-    case getType(loadUsers):
+    case getType(loadUsers): {
       return {
         ...state,
         updatedAt: Date.now(),
@@ -34,9 +34,12 @@ export const focusUsersReducer = (
           photoUrl: action.payload.photoUrl,
         },
       };
-    case getType(logoutAuth):
+    }
+    case getType(logoutAuth): {
       return initialState;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

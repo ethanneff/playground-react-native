@@ -10,7 +10,7 @@ export const fontWeight: Record<string, FontWeight> = {
 };
 
 export const fontEmphases: FontEmphases = {
-  default: 1.0,
+  default: 1,
   high: 0.87,
   low: 0.38,
   medium: 0.6,

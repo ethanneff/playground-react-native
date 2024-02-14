@@ -66,11 +66,13 @@ export const chatMessageReducer = (
   action: RootAction,
 ): ChatMessageReducer => {
   switch (action.type) {
-    case getType(setActiveChatMessage):
+    case getType(setActiveChatMessage): {
       return { ...state, active: action.payload };
-    case getType(typeChatMessage):
+    }
+    case getType(typeChatMessage): {
       return { ...state, textField: action.payload };
-    case getType(createChatMessage):
+    }
+    case getType(createChatMessage): {
       return {
         ...state,
         items: {
@@ -79,7 +81,8 @@ export const chatMessageReducer = (
         },
         textField: '',
       };
-    case getType(updateChatMessage):
+    }
+    case getType(updateChatMessage): {
       return {
         ...state,
         items: {
@@ -91,7 +94,8 @@ export const chatMessageReducer = (
           },
         },
       };
-    case getType(deleteChatMessage):
+    }
+    case getType(deleteChatMessage): {
       return {
         ...state,
         items: {
@@ -103,7 +107,9 @@ export const chatMessageReducer = (
           },
         },
       };
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

@@ -6,12 +6,12 @@ import {
   Text,
   TextInput,
   View,
-  type TextInputRef,
+  type TextInputReference,
 } from '../../../../components';
 import { useIsFocused } from '../../../../conversions';
 import { spacing } from '../../../../features';
 
-type Props = {
+type Properties = {
   readonly loading: boolean;
   readonly onChangeText: (value: string) => void;
   readonly onModalClose: () => void;
@@ -23,8 +23,8 @@ export const CreateGoalModal = ({
   onChangeText,
   onModalClose,
   onSubmit,
-}: Props) => {
-  const inputGoal = useRef<TextInputRef>(null);
+}: Properties) => {
+  const inputGoal = useRef<TextInputReference>(null);
   const focus = useIsFocused();
 
   useEffect(() => {

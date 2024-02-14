@@ -7,11 +7,11 @@ import { useAppSelector } from '../../redux';
 import { CalendarDay } from './CalendarDay';
 import { keyOfMonth } from './constants';
 
-type Props = {
+type Properties = {
   readonly hiddenDays?: boolean;
 };
 
-export const CalendarMonth = ({ hiddenDays }: Props) => {
+export const CalendarMonth = ({ hiddenDays }: Properties) => {
   const activeMonth = useAppSelector((s) => s.calendar.activeMonth);
   const monthKey = format(activeMonth, keyOfMonth);
   const days = useAppSelector((s) => s.calendar.months[monthKey].days);

@@ -46,7 +46,7 @@ const categories = [
 
 type Route = (typeof routes)[number];
 type Category = (typeof categories)[number];
-export type NavParams = Record<Route, undefined>;
+export type NavParameters = Record<Route, undefined>;
 
 const routeCategory: Record<Route, Category> = {
   'apple-fit': 'creations',
@@ -88,6 +88,7 @@ const routeCategory: Record<Route, Category> = {
 
 type LandingRoutes = { [key in Category]: string[] };
 
+// eslint-disable-next-line unicorn/no-array-reduce
 export const landingRoutes = Object.keys(routeCategory).reduce<LandingRoutes>(
   (hash, key) => {
     const category = routeCategory[key as Route];

@@ -13,7 +13,7 @@ import { Icon } from '../Icon';
 import { Pressable } from '../Pressable';
 import { Text } from '../Text';
 
-type NotificationProps = {
+type NotificationProperties = {
   readonly dismissDelay?: number;
   readonly height?: number;
   readonly noSwipe?: boolean;
@@ -31,7 +31,7 @@ export const Notification = ({
   onCancel,
   thresholdPercent = 0.5,
   title,
-}: NotificationProps) => {
+}: NotificationProperties) => {
   const colors = useColors();
   const initialPosition = useMemo(() => ({ x: 0, y: -height }), [height]);
   const styles = StyleSheet.create({

@@ -40,9 +40,9 @@ export const getStyles = ({
   const textColor = disabled
     ? colors.text.disabled
     : emphasis === 'high' &&
-        ['primaryA', 'secondary', 'tertiary'].some((c) => c === color)
+        ['primaryA', 'secondary', 'tertiary'].includes(color)
       ? colors.text.primaryA
-      : emphasis !== 'high' && ['primaryB'].some((c) => c === color)
+      : emphasis !== 'high' && ['primaryB'].includes(color)
         ? colors.text.primaryA
         : emphasis === 'high'
           ? colors.text.primaryB

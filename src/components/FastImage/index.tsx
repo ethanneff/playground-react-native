@@ -1,2 +1,1 @@
-import Original from 'react-native-fast-image';
-export const FastImage = Original;
+export { default as FastImage } from 'react-native-fast-image';

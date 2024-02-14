@@ -13,8 +13,8 @@ import { spacing, useColors } from '../../features';
 const generateHistory = () => {
   const today = new Date();
   const data = [];
-  for (let i = 2; i >= -20; i--) {
-    data.push({ date: add(today, { days: i }) });
+  for (let index = 2; index >= -20; index--) {
+    data.push({ date: add(today, { days: index }) });
   }
 
   return data;
@@ -24,16 +24,16 @@ type Item = {
   date: Date;
 };
 
-type ProgressItemProps = {
+type ProgressItemProperties = {
   readonly item: Item;
 };
 
-const ProgressItem = ({ item }: ProgressItemProps) => {
+const ProgressItem = ({ item }: ProgressItemProperties) => {
   const today = new Date();
   const colors = useColors();
   const [visibleDate, setVisibleDate] = useState(false);
   const onPress = useCallback(() => {
-    setVisibleDate((prev) => !prev);
+    setVisibleDate((previous) => !previous);
   }, []);
   const iconColor = isSameDay(today, item.date)
     ? 'positive'

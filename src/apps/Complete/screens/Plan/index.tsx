@@ -26,7 +26,7 @@ export const Plan = () => {
     (s) => s.complete.item.items[itemId].children.length === 0,
   );
 
-  const onOrganize = useCallback(() => undefined, []);
+  const onOrganize = useCallback(() => false, []);
 
   const onLayout = useCallback(
     (type: 'container' | 'footer') => (event: LayoutChangeEvent) => {

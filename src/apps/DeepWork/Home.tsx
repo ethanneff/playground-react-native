@@ -41,7 +41,7 @@ export const Home = () => {
   const { navigate } = useNavigation<DeepWorkNavigation>();
   const colors = useColors();
   const { onLeftPress } = useAdminNavBack();
-  const onItemAdd = useCallback(() => undefined, []);
+  const onItemAdd = useCallback(() => false, []);
   const navToAccount = useCallback(() => {
     navigate('account');
   }, [navigate]);

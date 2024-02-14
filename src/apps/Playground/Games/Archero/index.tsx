@@ -65,7 +65,7 @@ export const Archero = () => {
   const moveThumb = () => {
     const { dx, dy } = gesture.current;
     const angle = Math.atan2(dx, dy);
-    const dz = Math.sqrt(dx ** 2 + dy ** 2);
+    const dz = Math.hypot(dx, dy);
     const z = getLimit(dz, thumbSize);
     const x = z * Math.sin(angle);
     const y = z * Math.cos(angle);
@@ -77,8 +77,8 @@ export const Archero = () => {
 
   const moveJoystick = () => {
     const { x0, y0 } = gesture.current;
-    const offset = window.height - dimensions.height;
-    const offset2 = window.width - dimensions.width;
+    const offset = window.height - height;
+    const offset2 = window.width - width;
     const toValue = {
       x: x0 - joystickCenter - offset2 / 2,
       y: y0 - joystickCenter - offset / 2 - joystickSize / 1.5,

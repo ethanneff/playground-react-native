@@ -3,13 +3,13 @@ import { Button, Screen } from '../../../../components';
 import {
   Firebase,
   useNavigation,
-  type StackNavigationProp,
+  type StackNavigationProperty,
 } from '../../../../conversions';
 import { type AuthStackRoutes } from '../../types';
 
 export const Account = () => {
   const { navigate } =
-    useNavigation<StackNavigationProp<AuthStackRoutes, 'home'>>();
+    useNavigation<StackNavigationProperty<AuthStackRoutes, 'home'>>();
 
   const handleLogout = useCallback(async () => {
     await Firebase.auth().signOut();

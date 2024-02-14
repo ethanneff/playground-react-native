@@ -3,7 +3,7 @@ import { v4 } from 'uuid';
 import { Icon, Pressable, View, type IconName } from '../../components';
 import { spacing, type MonoMultiColor } from '../../features';
 
-type Props = {
+type Properties = {
   readonly colorFilled?: keyof MonoMultiColor;
   readonly colorUnfilled?: keyof MonoMultiColor;
   readonly count: number;
@@ -23,7 +23,7 @@ export const Rating = ({
   onPress,
   rating,
   size,
-}: Props) => {
+}: Properties) => {
   const handleOnPress = useCallback(
     (index: number) => () => {
       onPress(index);
@@ -38,7 +38,7 @@ export const Rating = ({
         paddingHorizontal: spacing(4),
       }}
     >
-      {Array(count)
+      {Array.from({ length: count })
         .fill(0)
         .map((_, index) => (
           <Pressable

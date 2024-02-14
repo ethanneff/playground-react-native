@@ -8,13 +8,13 @@ import {
 import { View } from '../../components';
 import { useColors, type MonoMultiColor } from '../../features';
 
-type Props = {
+type Properties = {
   readonly color?: keyof MonoMultiColor;
   readonly size?: number | 'large' | 'small';
   readonly style?: StyleProp<ViewStyle>;
 };
 
-export const Loader = ({ color, size = 'large', style }: Props) => {
+export const Loader = ({ color, size = 'large', style }: Properties) => {
   const colors = useColors();
   const loaderColor = color ? colors.text[color] : colors.text.secondary;
 

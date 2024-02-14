@@ -3,14 +3,14 @@ import { spacing, useColors, type TagColor } from '../../features';
 import { Pressable } from '../Pressable';
 import { Text } from '../Text';
 
-type TagProps = {
+type TagProperties = {
   readonly color: keyof TagColor;
   readonly disabled?: boolean;
   readonly onPress?: () => void;
   readonly title: string;
 };
 
-export const Tag = ({ color, disabled, onPress, title }: TagProps) => {
+export const Tag = ({ color, disabled, onPress, title }: TagProperties) => {
   const colors = useColors();
   return (
     <Pressable

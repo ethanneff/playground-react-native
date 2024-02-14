@@ -29,13 +29,17 @@ export const getApiActivity = async ({
 }: // eslint-disable-next-line require-await
 ApiInput): ApiPromise => {
   switch (site) {
-    case 'github':
+    case 'github': {
       return getGithubActivity(username);
-    case 'leetCode':
+    }
+    case 'leetCode': {
       return getLeetCodeActivity(username);
-    case 'hackerRank':
+    }
+    case 'hackerRank': {
       return getHackerRankActivity(username);
-    default:
-      return Promise.resolve({ contributions: {} });
+    }
+    default: {
+      return { contributions: {} };
+    }
   }
 };

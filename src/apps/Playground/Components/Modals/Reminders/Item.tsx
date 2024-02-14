@@ -9,7 +9,7 @@ import {
 } from '../../../../../components';
 import { spacing, useColors } from '../../../../../features';
 
-type Props = {
+type Properties = {
   readonly active?: boolean;
   readonly description?: string;
   readonly hidden?: boolean;
@@ -28,7 +28,7 @@ export const Item = ({
   onPress,
   style,
   title,
-}: Props) => {
+}: Properties) => {
   const colors = useColors();
   const styles = StyleSheet.create({
     button: {

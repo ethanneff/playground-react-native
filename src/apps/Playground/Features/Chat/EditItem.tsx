@@ -11,18 +11,18 @@ import {
 export const EditItem = () => {
   const dispatch = useAppDispatch();
   const activeMessage = useAppSelector(getActiveChatMessage);
-  const messageRef = useRef(activeMessage?.message ?? '');
+  const messageReference = useRef(activeMessage?.message ?? '');
 
   const handleModalClose = useCallback(() => {
     dispatch(setActiveChatMessage(null));
   }, [dispatch]);
 
   const handleUpdate = useCallback(() => {
-    if (!activeMessage || !messageRef.current.trim().length) return;
+    if (!activeMessage || messageReference.current.trim().length === 0) return;
     dispatch(
       updateChatMessage({
         ...activeMessage,
-        message: messageRef.current.trim(),
+        message: messageReference.current.trim(),
       }),
     );
     handleModalClose();
@@ -30,12 +30,12 @@ export const EditItem = () => {
 
   const handleDelete = useCallback(() => {
     if (!activeMessage) return;
-    dispatch(deleteChatMessage(activeMessage?.id));
+    dispatch(deleteChatMessage(activeMessage.id));
     handleModalClose();
   }, [activeMessage, dispatch, handleModalClose]);
 
   const handleTextChange = useCallback((value: string) => {
-    messageRef.current = value;
+    messageReference.current = value;
   }, []);
 
   if (!activeMessage) return null;

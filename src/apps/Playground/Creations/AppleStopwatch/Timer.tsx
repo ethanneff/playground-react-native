@@ -2,17 +2,17 @@ import React from 'react';
 import { StyleSheet, type StyleProp, type TextStyle } from 'react-native';
 import { Text, View } from '../../../../components';
 
-type TimerProps = {
+type TimerProperties = {
   readonly interval: number;
   readonly style: StyleProp<TextStyle>;
 };
 
-export const Timer = ({ interval, style }: TimerProps) => {
+export const Timer = ({ interval, style }: TimerProperties) => {
   const pad = (n: number): string =>
     (n < 10 ? `0${n.toString()}` : n).toString();
-  const minutes = Math.floor(interval / 60000);
-  const seconds = Math.floor((interval % 60000) / 1000);
-  const milliseconds = Math.floor((interval % 60000) % 1000);
+  const minutes = Math.floor(interval / 60_000);
+  const seconds = Math.floor((interval % 60_000) / 1000);
+  const milliseconds = Math.floor((interval % 60_000) % 1000);
   const styles = StyleSheet.create({
     timerContainer: {
       flexDirection: 'row',
@@ -30,7 +30,7 @@ export const Timer = ({ interval, style }: TimerProps) => {
       />
       <Text
         style={style}
-        title={pad(milliseconds).substr(0, 2)}
+        title={pad(milliseconds).slice(0, 2)}
       />
     </View>
   );

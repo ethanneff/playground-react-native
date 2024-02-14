@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Icon, View, type IconName } from '../../../../components';
 import { type MonoMultiColor } from '../../../../features';
 
-type Props = {
+type Properties = {
   readonly color: keyof MonoMultiColor;
   readonly icon: IconName;
   readonly index: number;
@@ -11,7 +11,13 @@ type Props = {
   readonly strokeWidth: number;
 };
 
-export const Stickers = ({ color, icon, index, size, strokeWidth }: Props) => {
+export const Stickers = ({
+  color,
+  icon,
+  index,
+  size,
+  strokeWidth,
+}: Properties) => {
   const styles = StyleSheet.create({
     canvas: { height: size, width: size },
     overlay: {

@@ -10,13 +10,13 @@ import {
   ApplicationProvider,
   NavigationProvider,
   StrictModeProvider,
-  debugDev,
+  debugDevelopment,
 } from './features';
 import { ReduxProvider } from './redux/ReduxProvider';
 
 LogBox.ignoreLogs(['UNSAFE_']);
 
-debugDev();
+debugDevelopment();
 enableFreeze(true);
 
 const Providers = () => (
@@ -39,6 +39,6 @@ const Providers = () => (
 export const Main = CodePush.wrapper(Providers);
 AppRegistry.registerComponent('core', () => Main);
 if (Platform.OS === 'web') {
-  const rootTag = document.getElementById('root');
+  const rootTag = document.querySelector('#root');
   AppRegistry.runApplication('core', { rootTag });
 }

@@ -5,7 +5,7 @@ import { type FontEmphasis, type FontType } from '../../features';
 import { Pressable } from '../Pressable';
 import { Text } from '../Text';
 
-type Props = {
+type Properties = {
   readonly date: number;
   readonly emphasis?: FontEmphasis;
   readonly format?: string;
@@ -20,7 +20,7 @@ export const RelativeDate = ({
   format = 'MMM dd, yyyy h:mm a',
   style,
   type,
-}: Props) => {
+}: Properties) => {
   const [showRelativeDate, setShowRelativeDate] = useState(true);
   const [update, setUpdate] = useState(1);
   const text =
@@ -29,12 +29,12 @@ export const RelativeDate = ({
       : formatDate(date, format);
 
   const toggleRelativeDate = useCallback(() => {
-    setShowRelativeDate((prev) => !prev);
+    setShowRelativeDate((previous) => !previous);
   }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setUpdate((prev) => prev + 1);
+      setUpdate((previous) => previous + 1);
     }, minute);
     return () => {
       clearInterval(interval);

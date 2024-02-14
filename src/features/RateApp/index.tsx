@@ -36,12 +36,12 @@ type CompleteState = {
   rating: number;
 };
 
-type Props = {
+type Properties = {
   readonly onComplete: (completeState: CompleteState) => void;
 };
 
-export const RateApp = ({ onComplete }: Props) => {
-  const ratingRef = useRef(0);
+export const RateApp = ({ onComplete }: Properties) => {
+  const ratingReference = useRef(0);
   const navigatedToAppStore = useRef(false);
   const [form, setForm] = useState<State>(initialState);
   const styles = StyleSheet.create({
@@ -57,31 +57,34 @@ export const RateApp = ({ onComplete }: Props) => {
   );
 
   const handleReset = useCallback(() => {
-    ratingRef.current = 0;
+    ratingReference.current = 0;
     setForm(initialState);
   }, []);
 
   const handleReviewApp = useCallback(() => {
     handleReset();
     onComplete({ ...completeState, navigatedToAppStore: true });
-    Rate.rate(ratingOptions, () => undefined);
+    Rate.rate(ratingOptions, () => false);
   }, [completeState, onComplete, handleReset]);
 
   const handleRating = useCallback((rating: number) => {
-    ratingRef.current = rating;
-    setForm((prev) => ({ ...prev, rating }));
+    ratingReference.current = rating;
+    setForm((previous) => ({ ...previous, rating }));
     setTimeout(() => {
-      const success = ratingRef.current >= ratingMin;
-      setForm((prev) => ({ ...prev, modal: success ? 'review' : 'feedback' }));
+      const success = ratingReference.current >= ratingMin;
+      setForm((previous) => ({
+        ...previous,
+        modal: success ? 'review' : 'feedback',
+      }));
     }, 200);
   }, []);
 
   const handleTextChange = useCallback((feedback: string) => {
-    setForm((prev) => ({ ...prev, feedback }));
+    setForm((previous) => ({ ...previous, feedback }));
   }, []);
 
   const handleFeedbackSubmit = useCallback(() => {
-    setForm((prev) => ({ ...prev, modal: 'thank you' }));
+    setForm((previous) => ({ ...previous, modal: 'thank you' }));
   }, []);
 
   const handleComplete = useCallback(() => {

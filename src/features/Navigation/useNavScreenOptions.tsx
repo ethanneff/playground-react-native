@@ -3,8 +3,8 @@ import { Platform } from 'react-native';
 import { Icon, Text, View, type IconName } from '../../components';
 import {
   type BottomTabNavigationOptions,
-  type ParamListBase,
-  type RouteProp,
+  type ParamListBase as ParameterListBase,
+  type RouteProp as RouteProperty,
   type StackNavigationOptions,
 } from '../../conversions';
 import { SoundManager, StringMethods } from '../../features';
@@ -15,7 +15,7 @@ export type TabIcons = Record<
   { focused: IconName; unFocused: IconName }
 >;
 type NavOptions = {
-  route: RouteProp<ParamListBase>;
+  route: RouteProperty<ParameterListBase>;
 };
 type TabScreenOptions = {
   headerShown?: boolean;

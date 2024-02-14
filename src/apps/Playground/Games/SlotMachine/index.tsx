@@ -43,12 +43,12 @@ export const SlotMachine = () => {
   const [game, setGame] = useState<Game | null>(null);
   const spinAnimation = useRef(new Animated.Value(1)).current;
   const multiplier = game?.multipleArray[game.multipleIndex] ?? 1;
-  const lastSpinAmount = game?.history[game.history.length - 1]?.amount ?? 0;
+  const lastSpinAmount = game?.history.at(-1)?.amount ?? 0;
 
   const setGameState = useCallback(() => {
     const combos = slotMachineUtils.getCombos(slotMachineConfigs.combinations);
     const reels = slotMachineUtils.getReels(slotMachineConfigs.reelFreq);
-    const percentages = slotMachineUtils.getPercentages(combos, reels, 100000);
+    const percentages = slotMachineUtils.getPercentages(combos, reels, 100_000);
     const spin = slotMachineUtils.getSpin(reels);
     setGame({
       combos,
@@ -65,34 +65,35 @@ export const SlotMachine = () => {
 
   const handleMultiplier = useCallback(() => {
     setGame(
-      (prev) =>
-        prev && {
-          ...prev,
-          multipleIndex: (prev.multipleIndex + 1) % prev.multipleArray.length,
+      (previous) =>
+        previous && {
+          ...previous,
+          multipleIndex:
+            (previous.multipleIndex + 1) % previous.multipleArray.length,
         },
     );
   }, []);
 
   const handleSpin = useCallback(() => {
-    setGame((prev) => prev && { ...prev, spinning: true });
+    setGame((previous) => previous && { ...previous, spinning: true });
     Animated.timing(spinAnimation, {
       duration: 200,
       toValue: 0,
       useNativeDriver,
     }).start(({ finished }) => {
       if (!finished) return;
-      setGame((prev) => {
-        if (!prev) return null;
-        const spin = slotMachineUtils.getSpin(prev.reels);
-        const amount = slotMachineUtils.getWin(spin, prev.combos);
-        const multiple = prev.multipleArray[prev.multipleIndex];
+      setGame((previous) => {
+        if (!previous) return null;
+        const spin = slotMachineUtils.getSpin(previous.reels);
+        const amount = slotMachineUtils.getWin(spin, previous.combos);
+        const multiple = previous.multipleArray[previous.multipleIndex];
         const payout = amount === 0 ? -multiple : amount * multiple;
         const history = [
-          ...prev.history,
+          ...previous.history,
           { amount: payout, spin, time: Date.now() },
         ];
-        const credits = prev.credits + payout;
-        return { ...prev, credits, history, spin };
+        const credits = previous.credits + payout;
+        return { ...previous, credits, history, spin };
       });
       Animated.sequence([
         Animated.delay(200),
@@ -103,13 +104,15 @@ export const SlotMachine = () => {
         }),
       ]).start(({ finished: nestedFinished }) => {
         if (!nestedFinished) return;
-        setGame((prev) => prev && { ...prev, spinning: false });
+        setGame((previous) => previous && { ...previous, spinning: false });
       });
     });
   }, [spinAnimation, useNativeDriver]);
 
   const handleCredits = useCallback(() => {
-    setGame((prev) => prev && { ...prev, credits: prev.credits + 50 });
+    setGame(
+      (previous) => previous && { ...previous, credits: previous.credits + 50 },
+    );
   }, []);
 
   useEffect(() => {

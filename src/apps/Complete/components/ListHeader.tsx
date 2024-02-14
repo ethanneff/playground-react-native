@@ -1,19 +1,23 @@
 import React, { useCallback, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import { TextInput, View, type TextInputIcon } from '../../../components';
-import { useNavigation, type StackNavigationProp } from '../../../conversions';
+import {
+  type StackNavigationProperty,
+  useNavigation,
+} from '../../../conversions';
 import { useAppDispatch, useAppSelector } from '../../../redux';
 import { navItemDetails, updateItem } from '../models';
 import { type MainStackRoutes } from '../navigationTypes';
 
-type ListHeaderProps = {
+type ListHeaderProperties = {
   readonly itemId: string;
   readonly parentItemId: string | null;
 };
 
-export const ListHeader = ({ itemId, parentItemId }: ListHeaderProps) => {
+export const ListHeader = ({ itemId, parentItemId }: ListHeaderProperties) => {
   const dispatch = useAppDispatch();
-  const { navigate } = useNavigation<StackNavigationProp<MainStackRoutes>>();
+  const { navigate } =
+    useNavigation<StackNavigationProperty<MainStackRoutes>>();
   const item = useAppSelector((s) => s.complete.item.items[itemId]);
   const form = useRef('');
 

@@ -6,14 +6,14 @@ import {
   TextInput,
   View,
   type TextInputIcon,
-  type TextInputRef,
+  type TextInputReference,
 } from '../../../components';
 import { spacing, useColors } from '../../../features';
 import { useAppDispatch, useAppSelector } from '../../../redux';
 import { addItemToItem, createItem, type Item } from '../models';
 import { completeConfig } from '../utils';
 
-type AddItemProps = {
+type AddItemProperties = {
   readonly parentItemId: string;
   readonly placeholder: string;
   readonly title: string;
@@ -25,9 +25,9 @@ export const AddItem = ({
   placeholder,
   title,
   width,
-}: AddItemProps) => {
+}: AddItemProperties) => {
   const colors = useColors();
-  const textInputRef = useRef<TextInputRef>(null);
+  const textInputReference = useRef<TextInputReference>(null);
   const text = useRef('');
   const [showInput, setShowInput] = useState(false);
   const dispatch = useAppDispatch();
@@ -87,7 +87,7 @@ export const AddItem = ({
   ];
 
   useEffect(() => {
-    if (showInput) textInputRef.current?.focus();
+    if (showInput) textInputReference.current?.focus();
   }, [showInput]);
 
   return (
@@ -111,7 +111,7 @@ export const AddItem = ({
           keyboardType="default"
           onBlur={onBlur}
           onChangeText={handleTextChange}
-          onRef={textInputRef}
+          onRef={textInputReference}
           onSubmitEditing={onSubmit}
           placeholder={placeholder}
           returnKeyType="done"

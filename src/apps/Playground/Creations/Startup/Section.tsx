@@ -2,12 +2,12 @@ import React, { type ReactNode } from 'react';
 import { Card, Spacing, Text } from '../../../../components';
 import { spacing } from '../../../../features';
 
-type Props = {
+type Properties = {
   readonly children: ReactNode;
   readonly title: string;
 };
 
-export const Section = ({ children, title }: Props) => (
+export const Section = ({ children, title }: Properties) => (
   <Card>
     <Text
       emphasis="low"

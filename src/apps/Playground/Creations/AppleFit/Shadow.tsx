@@ -1,11 +1,11 @@
 import React from 'react';
 import Svg, { Circle, Defs, RadialGradient, Stop } from 'react-native-svg';
 
-type Props = {
+type Properties = {
   readonly strokeWidth: number;
 };
 
-export const Shadow = ({ strokeWidth }: Props) => {
+export const Shadow = ({ strokeWidth }: Properties) => {
   const center = strokeWidth / 2;
   return (
     <Svg

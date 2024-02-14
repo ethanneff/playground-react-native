@@ -4,12 +4,12 @@ import { View } from '../../../../components';
 import { Cell } from './Cell';
 import { type Matrix } from './utils';
 
-type BoardProps = {
+type BoardProperties = {
   readonly matrix: Matrix;
 };
 
 // TODO: figure out why board is updating with memo
-export const Board = ({ matrix }: BoardProps) => (
+export const Board = ({ matrix }: BoardProperties) => (
   <View
     flex={1}
     justifyContent="center"

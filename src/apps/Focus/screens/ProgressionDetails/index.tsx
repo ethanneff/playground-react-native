@@ -1,19 +1,20 @@
 import React, { useCallback } from 'react';
 import { Modal, Text } from '../../../../components';
 import {
+  type StackNavigationProperty,
   useNavigation,
   useRoute,
-  type RouteProp,
-  type StackNavigationProp,
+  type RouteProp as RouteProperty,
 } from '../../../../conversions';
 import { type AuthStackRoutes } from '../../types';
 
 export const ProgressionDetails = () => {
   const { navigate } =
     useNavigation<
-      StackNavigationProp<AuthStackRoutes, 'progression-details'>
+      StackNavigationProperty<AuthStackRoutes, 'progression-details'>
     >();
-  const route = useRoute<RouteProp<AuthStackRoutes, 'progression-details'>>();
+  const route =
+    useRoute<RouteProperty<AuthStackRoutes, 'progression-details'>>();
 
   const onModalClose = useCallback(() => {
     navigate('home');

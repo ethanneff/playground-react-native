@@ -1,14 +1,14 @@
 import React from 'react';
 import { Screen, ScrollView, Text } from '../../../../components';
 import {
+  type StackNavigationProperty,
   useNavigation,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { type UnAuthStackRoutes } from '../../types';
 
 export const Privacy = () => {
   const { goBack } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'privacy'>>();
+    useNavigation<StackNavigationProperty<UnAuthStackRoutes, 'privacy'>>();
 
   return (
     <Screen

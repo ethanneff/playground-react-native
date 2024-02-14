@@ -13,7 +13,7 @@ import {
   getNextDraw,
 } from './utils';
 
-type Props = {
+type Properties = {
   readonly collision?: boolean;
   readonly count: number;
   readonly difficulty?: number;
@@ -29,7 +29,7 @@ export const Balls = ({
   layout,
   radius,
   speed = 5,
-}: Props) => {
+}: Properties) => {
   const colors = useColors();
   const useNativeDriver = useDriver();
   const items = useRef(getInitialItems({ count, layout, radius, speed }));
@@ -52,10 +52,14 @@ export const Balls = ({
 
       // item collision
       if (collision) {
-        for (let i = 0; i < items.current.length; i++) {
-          const a = items.current[i];
-          for (let j = i + 1; j < items.current.length; j++) {
-            const b = items.current[j];
+        for (let aIndex = 0; aIndex < items.current.length; aIndex++) {
+          const a = items.current[aIndex];
+          for (
+            let bIndex = aIndex + 1;
+            bIndex < items.current.length;
+            bIndex++
+          ) {
+            const b = items.current[bIndex];
             const overlap = getItemOverlap(a, b);
             if (overlap) getItemCollision(a, b, speed);
           }
@@ -95,7 +99,7 @@ export const Balls = ({
         radius: active.radius * difficulty,
       });
 
-      setScore((prev) => prev + 1);
+      setScore((previous) => previous + 1);
     },
     [difficulty],
   );

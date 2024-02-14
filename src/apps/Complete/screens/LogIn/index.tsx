@@ -3,12 +3,12 @@ import {
   Button,
   Modal,
   TextInput,
-  type TextInputRef,
+  type TextInputReference,
 } from '../../../../components';
 import {
   useIsFocused,
   useNavigation,
-  type StackNavigationProp,
+  type StackNavigationProperty,
 } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { useAppDispatch } from '../../../../redux';
@@ -17,17 +17,17 @@ import { createItem, loadUser } from '../../models';
 import { type LandingStackRoutes } from '../../navigationTypes';
 import { getDefaultUserTemplate } from '../../utils';
 
-const initialRef = { email: '', password: '' };
+const initialReference = { email: '', password: '' };
 const initialState = { completeForm: false, eye: false, loading: false };
 
 export const LogIn = () => {
   const colors = useColors();
   const dispatch = useAppDispatch();
   const focus = useIsFocused();
-  const form = useRef(initialRef);
+  const form = useRef(initialReference);
   const [state, setState] = useState(initialState);
   const { goBack, navigate } =
-    useNavigation<StackNavigationProp<LandingStackRoutes>>();
+    useNavigation<StackNavigationProperty<LandingStackRoutes>>();
 
   const navWelcome = useCallback(() => {
     navigate('welcome');
@@ -35,25 +35,25 @@ export const LogIn = () => {
   const onSecondary = useCallback(() => {
     navigate('password-reset');
   }, [navigate]);
-  const emailRef = useRef<TextInputRef>(null);
-  const passwordRef = useRef<TextInputRef>(null);
+  const emailReference = useRef<TextInputReference>(null);
+  const passwordReference = useRef<TextInputReference>(null);
   const eyeIcon = state.eye ? 'eye-outline' : 'eye-off-outline';
 
   const onEye = useCallback(() => {
     setState((p) => ({ ...p, eye: !p.eye }));
-    passwordRef.current?.focus();
+    passwordReference.current?.focus();
   }, []);
 
   const onSubmit = useCallback(() => {
     if (!state.completeForm) return;
     const { items, user } = getDefaultUserTemplate();
-    items.forEach((item) => dispatch(createItem(item)));
+    for (const item of items) dispatch(createItem(item));
     dispatch(loadUser({ ...user, email: form.current.email }));
   }, [dispatch, state.completeForm]);
 
   const onFormChange = useCallback(
-    (key: keyof typeof initialRef) => (val: string) => {
-      form.current = { ...form.current, [key]: val };
+    (key: keyof typeof initialReference) => (value: string) => {
+      form.current = { ...form.current, [key]: value };
       const { email, password } = form.current;
       const completeForm = email.length > 0 && password.length > 0;
       setState((p) => ({ ...p, completeForm }));
@@ -62,8 +62,8 @@ export const LogIn = () => {
   );
 
   const onSubmitEditing = useCallback(
-    (key: keyof typeof initialRef) => () => {
-      if (key === 'email') passwordRef.current?.focus();
+    (key: keyof typeof initialReference) => () => {
+      if (key === 'email') passwordReference.current?.focus();
       if (key === 'password') onSubmit();
     },
     [onSubmit],
@@ -71,9 +71,9 @@ export const LogIn = () => {
 
   useEffect(() => {
     if (focus) {
-      emailRef.current?.focus();
+      emailReference.current?.focus();
     } else {
-      form.current = initialRef;
+      form.current = initialReference;
       setState(initialState);
     }
   }, [focus]);
@@ -95,7 +95,7 @@ export const LogIn = () => {
         editable={!state.loading}
         keyboardType="email-address"
         onChangeText={onFormChange('email')}
-        onRef={emailRef}
+        onRef={emailReference}
         onSubmitEditing={onSubmitEditing('email')}
         placeholder="Email address"
         returnKeyType="next"
@@ -112,7 +112,7 @@ export const LogIn = () => {
         icons={[{ focus: true, name: eyeIcon, onPress: onEye }]}
         keyboardType="default"
         onChangeText={onFormChange('password')}
-        onRef={passwordRef}
+        onRef={passwordReference}
         onSubmitEditing={onSubmitEditing('password')}
         placeholder="Password"
         returnKeyType="done"

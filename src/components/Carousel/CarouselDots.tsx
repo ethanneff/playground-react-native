@@ -3,7 +3,7 @@ import { View } from '..';
 import { spacing, useColors } from '../../features';
 import { Pressable } from '../Pressable';
 
-type DotsProps = {
+type DotsProperties = {
   readonly activeIndex: number;
   readonly dotSize: number;
   readonly length: number;
@@ -15,8 +15,11 @@ export const CarouselDots = ({
   dotSize,
   length,
   onDotPress,
-}: DotsProps) => {
-  const dots = useMemo(() => Array.from({ length }, (_, i) => i), [length]);
+}: DotsProperties) => {
+  const dots = useMemo(
+    () => Array.from({ length }, (_, index) => index),
+    [length],
+  );
   const colors = useColors();
   return (
     <View

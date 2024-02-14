@@ -5,7 +5,7 @@ import { completeConfig } from '../utils';
 import { AddItem } from './AddItem';
 import { List } from './List';
 
-type BoardProps = {
+type BoardProperties = {
   readonly listMaxHeight: number;
   readonly listWidth: number;
   readonly projectItemId: string;
@@ -15,7 +15,7 @@ export const Board = ({
   listMaxHeight,
   listWidth,
   projectItemId,
-}: BoardProps) => {
+}: BoardProperties) => {
   const listSize = listWidth + completeConfig.padding;
   const board = useAppSelector((s) => s.complete.item.items[projectItemId]);
   const getItemId = useCallback((item: string) => item, []);

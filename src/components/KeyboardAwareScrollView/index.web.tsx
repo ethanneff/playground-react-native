@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react';
 
-type Props = {
+type Properties = {
   children: ReactNode;
 };
-export const KeyboardAwareScrollView = ({ children }: Props): ReactNode =>
+export const KeyboardAwareScrollView = ({ children }: Properties): ReactNode =>
   children;

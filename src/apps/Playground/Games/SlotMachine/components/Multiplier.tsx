@@ -1,13 +1,13 @@
 import React from 'react';
 import { Icon, Pressable, Text, View } from '../../../../../components';
 
-type Props = {
+type Properties = {
   readonly disabled: boolean;
   readonly multiplier: number;
   readonly onPress: () => void;
 };
 
-export const Multiplier = ({ disabled, multiplier, onPress }: Props) => (
+export const Multiplier = ({ disabled, multiplier, onPress }: Properties) => (
   <Pressable
     disabled={disabled}
     onPress={onPress}

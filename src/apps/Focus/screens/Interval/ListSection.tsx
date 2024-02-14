@@ -3,11 +3,11 @@ import { Text, View } from '../../../../components';
 import { spacing } from '../../../../features';
 import { type Item } from '../../types';
 
-type Props = {
+type Properties = {
   readonly item: Item;
 };
 
-export const ListSection = ({ item }: Props) => (
+export const ListSection = ({ item }: Properties) => (
   <View
     style={{
       alignItems: 'center',

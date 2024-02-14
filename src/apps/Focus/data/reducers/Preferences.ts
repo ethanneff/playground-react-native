@@ -24,15 +24,18 @@ export const focusPreferencesReducer = (
   action: RootAction,
 ): FocusPreferencesReducer => {
   switch (action.type) {
-    case getType(loadPreferences):
+    case getType(loadPreferences): {
       return {
         ...state,
         preference: action.payload,
         updatedAt: Date.now(),
       };
-    case getType(logoutAuth):
+    }
+    case getType(logoutAuth): {
       return initialState;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

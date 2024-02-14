@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import {
   FlashList,
   View,
-  type FlashListRef,
+  type FlashListReference,
   type FlashListRenderItem,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
@@ -14,7 +14,7 @@ import {
 } from './Messages';
 
 export const Items = () => {
-  const itemsRef = useRef<FlashListRef<Message>>(null);
+  const itemsReference = useRef<FlashListReference<Message>>(null);
   const colors = useColors();
   const messages = useAppSelector(getActiveChatMessagesOrderByCreatedAt);
   const renderItem = useCallback<FlashListRenderItem<Message>>(
@@ -29,7 +29,7 @@ export const Items = () => {
   const keyExtractor = useCallback((item: Message) => item.id, []);
 
   useEffect(() => {
-    itemsRef.current?.scrollToItem({ item: messages[0] });
+    itemsReference.current?.scrollToItem({ item: messages[0] });
   }, [messages]);
 
   return (
@@ -46,7 +46,7 @@ export const Items = () => {
         estimatedItemSize={100}
         inverted
         keyExtractor={keyExtractor}
-        onRef={itemsRef}
+        onRef={itemsReference}
         renderItem={renderItem}
       />
     </View>

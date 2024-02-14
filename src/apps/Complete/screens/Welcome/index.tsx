@@ -11,12 +11,12 @@ export const Welcome = () => {
   const { signInAnonymously } = useAuth();
 
   const handleLogin = useCallback(async () => {
-    const res = await signInAnonymously();
-    if (!res) throw new Error('Sign in failed');
-    dispatch(login(res.user));
+    const response = await signInAnonymously();
+    if (!response) throw new Error('Sign in failed');
+    dispatch(login(response.user));
     const { items, user } = getDefaultUserTemplate();
-    items.forEach((item) => dispatch(createItem(item)));
-    dispatch(loadUser({ ...user, email: res.user.email ?? 'anonymous' }));
+    for (const item of items) dispatch(createItem(item));
+    dispatch(loadUser({ ...user, email: response.user.email ?? 'anonymous' }));
   }, [dispatch, signInAnonymously]);
 
   return (

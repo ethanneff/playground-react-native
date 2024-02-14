@@ -5,37 +5,37 @@ import {
   ScrollView,
   View,
   VisibilitySensor,
-  type ScrollViewRef,
+  type ScrollViewReference,
   type VisibilitySensorChange,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 import { getSize } from './utils';
 
-type Props = {
+type Properties = {
   readonly horizontal?: boolean;
 };
 
-export const ExampleScroll = ({ horizontal }: Props) => {
+export const ExampleScroll = ({ horizontal }: Properties) => {
   const [visibility, setVisibility] = useState<VisibilitySensorChange | null>(
     null,
   );
   const [container, setContainer] = useState<LayoutRectangle | null>(null);
-  const scrollViewRef = useRef<ScrollViewRef>(null);
+  const scrollViewReference = useRef<ScrollViewReference>(null);
   const colors = useColors();
 
   const handleChange = useCallback(
-    (props: VisibilitySensorChange) => {
-      setVisibility(props);
+    (properties: VisibilitySensorChange) => {
+      setVisibility(properties);
     },
     [setVisibility],
   );
 
   useEffect(() => {
-    if (!scrollViewRef.current) return;
+    if (!scrollViewReference.current) return;
 
     // @ts-expect-error measure does not exist on ScrollView
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    scrollViewRef.current.measure(
+    scrollViewReference.current.measure(
       (
         _x: number,
         _y: number,
@@ -58,7 +58,7 @@ export const ExampleScroll = ({ horizontal }: Props) => {
           paddingVertical: spacing(4),
         }}
         horizontal={horizontal}
-        onRef={scrollViewRef}
+        onRef={scrollViewReference}
         style={{
           backgroundColor: colors.background.secondary,
           flex: 1,

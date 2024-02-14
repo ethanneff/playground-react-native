@@ -3,7 +3,7 @@ import { StyleSheet, type StyleProp, type ViewStyle } from 'react-native';
 import Original from 'react-native-vector-icons/MaterialCommunityIcons';
 import { type IconName } from './config';
 
-type Props = {
+type Properties = {
   readonly accessibilityLabel?: string;
   readonly accessible?: boolean;
   readonly color?: string;
@@ -27,7 +27,7 @@ export const Source = ({
   name,
   size,
   style,
-}: Props) => {
+}: Properties) => {
   const containerStyle = [invisible ? styles.invisible : undefined, style];
   return (
     <Original

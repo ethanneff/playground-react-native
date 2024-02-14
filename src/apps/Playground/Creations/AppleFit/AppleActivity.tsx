@@ -7,7 +7,7 @@ import { CircularRing } from './CircularRing';
 import { Stickers } from './Stickers';
 import { type Ring } from './types';
 
-type Props = {
+type Properties = {
   readonly animate?: boolean;
   readonly backgroundColor: keyof MonoMultiColor;
   readonly rings: Ring[];
@@ -23,7 +23,7 @@ export const AppleActivity = ({
   size,
   speed = 0.02,
   strokeWidth,
-}: Props) => {
+}: Properties) => {
   const colors = useColors();
   const styles = StyleSheet.create({
     container: {
@@ -39,11 +39,11 @@ export const AppleActivity = ({
       width: size,
     },
   });
-  const radius = rings[rings.length - 1].size / 2 - strokeWidth;
+  const radius = (rings.at(-1)?.size ?? 10) / 2 - strokeWidth;
   const [progress, setProgress] = useState(animate ? 0 : 1);
 
   useEffect(() => {
-    if (!animate) return undefined;
+    if (!animate) return () => null;
 
     const interval = setInterval(() => {
       if (progress >= 1) {

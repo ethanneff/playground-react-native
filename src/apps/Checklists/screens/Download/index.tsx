@@ -9,18 +9,18 @@ import {
 } from '../../../../components';
 import {
   Firebase,
+  type StackNavigationProperty,
   useNavigation,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing } from '../../../../features';
 import { useAppSelector } from '../../../../redux';
 import { getLoaded } from '../../data';
 import { type AuthStackRoutes } from '../../types';
 
-const tenSeconds = 10000;
+const tenSeconds = 10_000;
 export const Download = () => {
   const { navigate } =
-    useNavigation<StackNavigationProp<AuthStackRoutes, 'download'>>();
+    useNavigation<StackNavigationProperty<AuthStackRoutes, 'download'>>();
   const [showLogout, setShowLogout] = useState(false);
   const loaded = useAppSelector(getLoaded);
   const mounted = useRef(true);

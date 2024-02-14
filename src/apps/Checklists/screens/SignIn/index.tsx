@@ -8,11 +8,11 @@ import {
   Text,
   TextInput,
   View,
-  type TextInputRef,
+  type TextInputReference,
 } from '../../../../components';
 import {
+  type StackNavigationProperty,
   useNavigation,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing, useAuth, useColors } from '../../../../features';
 import { useAppSelector } from '../../../../redux';
@@ -21,13 +21,13 @@ import { LoginButton } from './LoginButton';
 
 export const SignIn = () => {
   const { goBack, navigate } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'sign-in'>>();
+    useNavigation<StackNavigationProperty<UnAuthStackRoutes, 'sign-in'>>();
   const [form, setForm] = useState({ email: '', password: '' });
   const [loading, setLoading] = useState(false);
   const [eye, setEye] = useState(false);
   const eyeIcon = eye ? 'eye-outline' : 'eye-off-outline';
-  const emailRef = useRef<TextInputRef>(null);
-  const passwordRef = useRef<TextInputRef>(null);
+  const emailReference = useRef<TextInputReference>(null);
+  const passwordReference = useRef<TextInputReference>(null);
   const isAppleDevice = useAppSelector(
     (state) => state.device.details?.manufacturer === 'Apple',
   );
@@ -59,15 +59,15 @@ export const SignIn = () => {
   }, [form.email, form.password, signInEmail]);
 
   const handleFormChange = useCallback(
-    (key: string) => (val: string) => {
-      setForm((prev) => ({ ...prev, [key]: val }));
+    (key: string) => (value: string) => {
+      setForm((previous) => ({ ...previous, [key]: value }));
     },
     [],
   );
 
   const handleEyePress = useCallback(() => {
-    setEye((prev) => !prev);
-    passwordRef.current?.focus();
+    setEye((previous) => !previous);
+    passwordReference.current?.focus();
   }, []);
 
   const handleFormSubmit = useCallback(
@@ -76,7 +76,7 @@ export const SignIn = () => {
         handleEmail();
       }
       if (key === 'email') {
-        passwordRef.current?.focus();
+        passwordReference.current?.focus();
       }
     },
     [handleEmail],
@@ -121,7 +121,7 @@ export const SignIn = () => {
               editable={!loading}
               keyboardType="email-address"
               onChangeText={handleFormChange('email')}
-              onRef={emailRef}
+              onRef={emailReference}
               onSubmitEditing={handleFormSubmit('email')}
               placeholder="Email address"
               returnKeyType="next"
@@ -138,7 +138,7 @@ export const SignIn = () => {
               icons={[{ focus: true, name: eyeIcon, onPress: handleEyePress }]}
               keyboardType="default"
               onChangeText={handleFormChange('password')}
-              onRef={passwordRef}
+              onRef={passwordReference}
               onSubmitEditing={handleFormSubmit('password')}
               placeholder="Password"
               returnKeyType="done"

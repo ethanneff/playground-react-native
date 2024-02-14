@@ -4,14 +4,14 @@ import { View } from '../../components';
 import { Loader } from '../Loader';
 import { FasterImage } from './FasterImage';
 
-type Props = {
+type Properties = {
   readonly height: number;
   readonly size?: number | 'large' | 'small';
   readonly uri: string;
   readonly width: number;
 };
 
-export const Image = ({ height, size = 'small', uri, width }: Props) => {
+export const Image = ({ height, size = 'small', uri, width }: Properties) => {
   const [opacity, setOpacity] = useState(1);
   const styles = StyleSheet.create({
     indicatorOverlay: {

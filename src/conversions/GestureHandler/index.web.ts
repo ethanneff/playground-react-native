@@ -1,5 +1,9 @@
 /* eslint-disable no-restricted-imports */
-import {
+type GestureNativeViewGestureHandlerProperties = Record<string, unknown>;
+
+export { type GestureNativeViewGestureHandlerProperties as GestureNativeViewGestureHandlerProps };
+
+export {
   FlatList as GestureFlatList,
   View as GestureHandlerProvider,
   ScrollView as GestureScrollView,
@@ -11,18 +15,3 @@ import {
   Pressable as GestureTouchableWithoutFeedback,
 } from 'react-native';
 /* eslint-enable no-restricted-imports */
-
-type GestureNativeViewGestureHandlerProps = Record<string, unknown>;
-
-export {
-  GestureFlatList,
-  GestureHandlerProvider,
-  GestureScrollView,
-  GestureSwitch,
-  GestureTextInput,
-  GestureTouchableHighlight,
-  GestureTouchableNativeFeedback,
-  GestureTouchableOpacity,
-  GestureTouchableWithoutFeedback,
-  type GestureNativeViewGestureHandlerProps,
-};

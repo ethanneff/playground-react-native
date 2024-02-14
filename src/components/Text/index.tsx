@@ -18,7 +18,7 @@ import {
 
 type EllipsizeMode = 'clip' | 'head' | 'middle' | 'tail';
 
-type TextProps = {
+type TextProperties = {
   readonly adjustsFontSizeToFit?: boolean;
   readonly bold?: boolean;
   readonly center?: boolean;
@@ -60,7 +60,7 @@ export const Text = ({
   title,
   type,
   withoutTap,
-}: TextProps) => {
+}: TextProperties) => {
   const opacity = useRef(new Animated.Value(1)).current;
   const useNativeDriver = useDriver();
   const colors = useColors();

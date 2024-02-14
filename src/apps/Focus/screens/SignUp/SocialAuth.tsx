@@ -2,22 +2,22 @@ import React, { useCallback } from 'react';
 import { Platform } from 'react-native';
 import { Spacing, Text, TextGroup, View } from '../../../../components';
 import {
+  type StackNavigationProperty,
   useNavigation,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing } from '../../../../features';
 import { type UnAuthStackRoutes } from '../../types';
 import { SocialButton } from './SocialButton';
 
-type Props = {
+type Properties = {
   readonly disabled: boolean;
 };
 
-export const SocialAuth = ({ disabled }: Props) => {
+export const SocialAuth = ({ disabled }: Properties) => {
   const handleMissingCallback = useCallback(() => null, []);
 
   const { navigate } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'sign-up'>>();
+    useNavigation<StackNavigationProperty<UnAuthStackRoutes, 'sign-up'>>();
 
   const handleTerms = useCallback(() => {
     navigate('terms');

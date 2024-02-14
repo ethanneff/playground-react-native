@@ -10,9 +10,9 @@ import {
 } from '../../../../components';
 import {
   Lottie,
+  type StackNavigationProperty,
   useNavigation,
   type AnimationObject,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing, useAuth, useColors } from '../../../../features';
 import { getSmallestDimension, useAppSelector } from '../../../../redux';
@@ -22,13 +22,13 @@ import { PulseAnimation } from './PulseAnimation';
 import { useHeartBeatAnimation } from './useHeartBeatAnimation';
 
 const minTime = 1500;
-const maxTime = 10000;
+const maxTime = 10_000;
 
 const loader = require('./loader.json') as AnimationObject;
 
 export const Download = () => {
   const { navigate } =
-    useNavigation<StackNavigationProp<AuthStackRoutes, 'download'>>();
+    useNavigation<StackNavigationProperty<AuthStackRoutes, 'download'>>();
   const width = useAppSelector(getSmallestDimension);
   const loaded = useAppSelector(getLoaded);
   const [showLogout, setShowLogout] = useState(false);
@@ -57,7 +57,7 @@ export const Download = () => {
   }, [showLogout]);
 
   useEffect(() => {
-    if (!loaded) return () => undefined;
+    if (!loaded) return () => false;
     const now = Date.now();
     const diff = now - init.current;
     const tooSoon = diff < minTime;

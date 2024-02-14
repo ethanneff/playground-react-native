@@ -2,13 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import { Animated, type StyleProp, type ViewStyle } from 'react-native';
 import { useDriver } from '../../../../features';
 
-type PulseAnimationProps = {
+type PulseAnimationProperties = {
   readonly repeat: boolean;
   readonly style: StyleProp<ViewStyle>;
 };
 
 // TODO: move to storybook
-export const PulseAnimation = ({ repeat, style }: PulseAnimationProps) => {
+export const PulseAnimation = ({ repeat, style }: PulseAnimationProperties) => {
   const useNativeDriver = useDriver();
   const animation = useRef(new Animated.Value(0)).current;
   const opacity = animation.interpolate({

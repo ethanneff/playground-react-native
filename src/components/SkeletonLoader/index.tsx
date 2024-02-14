@@ -6,7 +6,7 @@ import { getWidth, useAppSelector } from '../../redux';
 import { MaskedView } from '../MaskedView';
 import { View } from '../View';
 
-type Props = {
+type Properties = {
   readonly backgroundColor?: string;
   readonly borderRadius?: number;
   readonly duration?: number;
@@ -22,7 +22,7 @@ export const SkeletonLoader = ({
   foregroundColor,
   height = spacing(10),
   width = spacing(10),
-}: Props) => {
+}: Properties) => {
   const colors = useColors();
   const bgColor = backgroundColor ?? colors.background.secondary;
   const fgColor = foregroundColor ?? colors.background.primaryA;

@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 
-type Props = {
+type Properties = {
   children: ReactNode;
 };
-export const MaskedView = ({ children }: Props) => children;
+export const MaskedView = ({ children }: Properties) => children;

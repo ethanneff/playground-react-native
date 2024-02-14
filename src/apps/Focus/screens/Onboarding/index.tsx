@@ -1,13 +1,14 @@
 import React from 'react';
 import { Screen, ScrollView, Text } from '../../../../components';
 import {
+  type StackNavigationProperty,
   useNavigation,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { type UnAuthStackRoutes } from '../../types';
 
 export const Onboarding = () => {
-  const { goBack } = useNavigation<StackNavigationProp<UnAuthStackRoutes>>();
+  const { goBack } =
+    useNavigation<StackNavigationProperty<UnAuthStackRoutes>>();
 
   return (
     <Screen

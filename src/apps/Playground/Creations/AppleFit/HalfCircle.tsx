@@ -4,14 +4,14 @@ import { View } from '../../../../components';
 import { AngularGradient } from './AngularGradient';
 import { type Ring } from './types';
 
-type Props = {
+type Properties = {
   readonly flip?: boolean;
   readonly radius: number;
   readonly ring: Ring;
   readonly type: 'background' | 'foreground';
 };
 
-export const HalfCircle = ({ flip, radius, ring, type }: Props) => {
+export const HalfCircle = ({ flip, radius, ring, type }: Properties) => {
   const colors: [string, string] = [ring.start, ring.end];
   const fg = (
     <AngularGradient

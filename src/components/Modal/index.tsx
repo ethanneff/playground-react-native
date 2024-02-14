@@ -7,7 +7,7 @@ import { Pressable } from '../Pressable';
 import { ScrollView } from '../ScrollView';
 import { View } from '../View';
 
-type ModalProps = {
+type ModalProperties = {
   readonly backgroundColor?: string;
   readonly children: ReactNode;
   readonly duration?: number;
@@ -34,7 +34,7 @@ export const Modal = ({
   showOverlay,
   testID,
   widthPercent = defaultMargin,
-}: ModalProps) => {
+}: ModalProperties) => {
   const colors = useColors();
   const useNativeDriver = useDriver();
   const keyboardHeight = useAppSelector((s) => s.device.keyboardHeight);
@@ -100,7 +100,7 @@ export const Modal = ({
 
   useEffect(() => {
     animate(1);
-    if (!duration) return () => undefined;
+    if (!duration) return () => false;
 
     const alertTimeout = setTimeout(dismiss(onBackgroundPress), duration);
     return () => {

@@ -9,7 +9,7 @@ import { spacing, useColors, useDropShadow } from '../../features';
 import { useAppSelector } from '../../redux';
 import { Pressable } from '../Pressable';
 
-type Props = {
+type Properties = {
   readonly children?: ReactNode | ReactNode[];
   readonly containerStyle?: StyleProp<ViewStyle>;
   readonly contentStyle?: StyleProp<ViewStyle>;
@@ -38,7 +38,7 @@ export const Card = ({
   onLongPress,
   onPress,
   testID,
-}: Props) => {
+}: Properties) => {
   const colors = useColors();
   const dropShadow = useDropShadow();
   const currentTheme = useAppSelector((state) => state.theme.currentTheme);

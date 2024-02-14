@@ -1,7 +1,7 @@
 import { sub, toDate } from 'date-fns';
 import { formatRelativeDate } from '../utils';
 
-jest.useFakeTimers({ now: 1673445238335 });
+jest.useFakeTimers({ now: 1_673_445_238_335 });
 
 describe('formatRelativeDate', () => {
   it('a few seconds ago', () => {

@@ -7,7 +7,7 @@ import { getWidth, useAppSelector } from '../../../../redux';
 
 // https://support.apple.com/en-us/HT211028
 
-type SectionProps = {
+type SectionProperties = {
   readonly description?: string;
   readonly image?: ImageSourcePropType;
   readonly imageRatio?: number;
@@ -23,7 +23,7 @@ const Section = ({
   index,
   paddingHorizontal,
   title,
-}: SectionProps) => {
+}: SectionProperties) => {
   const colors = useColors();
   const width = useAppSelector(getWidth);
   const leftWidth = spacing(12);

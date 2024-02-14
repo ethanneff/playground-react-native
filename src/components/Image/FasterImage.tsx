@@ -1,14 +1,19 @@
 import React from 'react';
 import { FastImage } from '../FastImage';
 
-type Props = {
+type Properties = {
   readonly height: number;
   readonly onImageLoad: () => void;
   readonly uri: string;
   readonly width: number;
 };
 
-export const FasterImage = ({ height, onImageLoad, uri, width }: Props) => {
+export const FasterImage = ({
+  height,
+  onImageLoad,
+  uri,
+  width,
+}: Properties) => {
   const containerStyle = { height, width };
   return (
     <FastImage

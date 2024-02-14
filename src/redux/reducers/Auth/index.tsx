@@ -22,7 +22,7 @@ const timeout = 5000;
 export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
   dispatch(loginRequest());
   try {
-    const res = await axios({
+    const response = await axios({
       data: {
         email: 'sydney@fife',
         password: 'pistol',
@@ -32,16 +32,16 @@ export const onLogin = (): RootThunkAction<void> => async (dispatch) => {
       url: 'https://reqres.in/api/login',
     });
     const loginSchema = z.object({ token: z.string() });
-    const data = loginSchema.parse(res.data);
+    const data = loginSchema.parse(response.data);
     dispatch(loginSuccess(data.token));
-  } catch (e) {
-    if (e instanceof Error) dispatch(loginFailure(e));
+  } catch (error) {
+    if (error instanceof Error) dispatch(loginFailure(error));
   }
 };
 export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
   dispatch(loginRequest());
   try {
-    const res = await axios({
+    const response = await axios({
       data: {
         email: 'sydney@fife',
         password: 'pistol',
@@ -54,10 +54,10 @@ export const onRegister = (): RootThunkAction<void> => async (dispatch) => {
       id: z.number(),
       token: z.string(),
     });
-    const data = registerScheme.parse(res.data);
+    const data = registerScheme.parse(response.data);
     dispatch(loginSuccess(data.token));
-  } catch (e) {
-    if (e instanceof Error) dispatch(loginFailure(e));
+  } catch (error) {
+    if (error instanceof Error) dispatch(loginFailure(error));
   }
 };
 export const onLogout = (): RootThunkAction<void> => (dispatch, getState) => {
@@ -105,28 +105,33 @@ export const authReducer = (
 ): AuthState => {
   switch (action.type) {
     case getType(loginRequest):
-    case getType(registerRequest):
+    case getType(registerRequest): {
       return {
         ...state,
         loading: true,
       };
+    }
     case getType(loginFailure):
-    case getType(registerFailure):
+    case getType(registerFailure): {
       return {
         ...state,
         error: action.payload.message,
         loading: false,
       };
+    }
     case getType(loginSuccess):
-    case getType(registerSuccess):
+    case getType(registerSuccess): {
       return {
         ...state,
         loading: false,
         token: action.payload,
       };
-    case getType(logout):
+    }
+    case getType(logout): {
       return authInitialState;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

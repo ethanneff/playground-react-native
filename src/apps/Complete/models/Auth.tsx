@@ -26,11 +26,14 @@ export const completeAuthReducer = (
   action: RootAction,
 ): CompleteAuthReducer => {
   switch (action.type) {
-    case getType(login):
+    case getType(login): {
       return action.payload;
-    case getType(logout):
+    }
+    case getType(logout): {
       return initialState;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

@@ -17,11 +17,11 @@ export type Board = DeepReadonly<BoardItem[][]>;
 
 export const generateBoard = (size: number, random = 0): Board => {
   const board: BoardItem[][] = [];
-  for (let i = 0; i < size; i++) {
+  for (let rowIndex = 0; rowIndex < size; rowIndex++) {
     const row: BoardItem[] = [];
-    for (let j = 0; j < size; j++) {
-      const val = Math.random() > random ? 0 : 1;
-      row.push(val);
+    for (let colIndex = 0; colIndex < size; colIndex++) {
+      const value = Math.random() > random ? 0 : 1;
+      row.push(value);
     }
     board.push(row);
   }
@@ -30,16 +30,16 @@ export const generateBoard = (size: number, random = 0): Board => {
 
 export const determineBoardItem = (
   board: Board,
-  i: number,
-  j: number,
+  rowIndex: number,
+  colIndex: number,
 ): BoardItem => {
   let neighbors = 0;
-  const item = board[i][j];
+  const item = board[rowIndex][colIndex];
   const { length } = board;
   for (const operation of operations) {
     const [x, y] = operation;
-    const newI = i + x;
-    const newK = j + y;
+    const newI = rowIndex + x;
+    const newK = colIndex + y;
     if (newI >= 0 && newI < length && newK >= 0 && newK < length)
       neighbors += board[newI][newK];
     if (neighbors > 3) break;

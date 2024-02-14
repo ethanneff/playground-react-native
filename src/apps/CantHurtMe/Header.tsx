@@ -4,12 +4,12 @@ import { spacing } from '../../features';
 import { DailyProgress } from './DailyProgress';
 import { ProfileLevel } from './ProfileLevel';
 
-type Props = {
+type Properties = {
   readonly onProfilePress: () => void;
   readonly onSettingsPress: () => void;
 };
 
-export const Header = ({ onProfilePress, onSettingsPress }: Props) => (
+export const Header = ({ onProfilePress, onSettingsPress }: Properties) => (
   <View>
     <Text
       center

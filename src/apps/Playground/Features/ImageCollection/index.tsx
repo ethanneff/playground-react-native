@@ -17,7 +17,9 @@ const batch = 20;
 const imageUrl = 'https://source.unsplash.com/random';
 
 const addNewBatch = (data: number[]): number[] => {
-  const newData = new Array(batch).fill(0).map((_, i) => Date.now() + i);
+  const newData = Array.from({ length: batch })
+    .fill(0)
+    .map((_, index) => Date.now() + index);
   return [...data, ...newData];
 };
 
@@ -25,9 +27,9 @@ export const ImageCollection = () => {
   const { goBack } = useNavigation();
   const width = useAppSelector(getWidth);
   const landscape = useAppSelector(getLandscapeOrientation);
-  const numColumns = landscape ? 10 : 3;
-  const columnWidth = width / numColumns;
-  const keyExtractor = useCallback((d: number) => String(d), []);
+  const numberColumns = landscape ? 10 : 3;
+  const columnWidth = width / numberColumns;
+  const keyExtractor = useCallback(String, []);
   const [data, setData] = useState<number[]>([]);
   const [refreshing, setRefreshing] = useState(false);
   const loaded = useRef(false);
@@ -76,9 +78,9 @@ export const ImageCollection = () => {
       <FlashList
         contentContainerStyle={{ backgroundColor: colors.background.secondary }}
         data={data}
-        estimatedItemSize={width / numColumns}
+        estimatedItemSize={width / numberColumns}
         keyExtractor={keyExtractor}
-        numColumns={numColumns}
+        numColumns={numberColumns}
         onEndReached={handleFetchMore}
         onRefresh={handleRefresh}
         refreshing={refreshing}

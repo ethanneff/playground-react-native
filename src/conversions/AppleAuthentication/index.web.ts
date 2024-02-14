@@ -1,1 +1,1 @@
-export const Apple = () => undefined;
+export const Apple = () => false;

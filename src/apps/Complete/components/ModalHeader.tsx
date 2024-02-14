@@ -2,7 +2,7 @@ import React from 'react';
 import { Icon, Pressable, Text, View } from '../../../components';
 import { spacing } from '../../../features';
 
-type Props = {
+type Properties = {
   readonly onLeftPress?: () => void;
   readonly onRightPress?: () => void;
   readonly size?: number;
@@ -14,7 +14,7 @@ export const ModalHeader = ({
   onRightPress,
   size = spacing(8),
   title,
-}: Props) => (
+}: Properties) => (
   <View
     style={{
       alignItems: 'center',

@@ -27,12 +27,12 @@ type Modal =
   | 'reminder'
   | null;
 
-type ModalManagerProps = {
+type ModalManagerProperties = {
   readonly modal: Modal;
   readonly onClose: (modal: Modal) => () => void;
 };
 
-const ModalManager = ({ modal, onClose }: ModalManagerProps) => {
+const ModalManager = ({ modal, onClose }: ModalManagerProperties) => {
   const handleClose = useCallback(() => {
     onClose(null)();
   }, [onClose]);
@@ -42,11 +42,13 @@ const ModalManager = ({ modal, onClose }: ModalManagerProps) => {
   }, []);
 
   switch (modal) {
-    case 'rate-app':
+    case 'rate-app': {
       return <RateApp onComplete={handleClose} />;
-    case 'reminder':
+    }
+    case 'reminder': {
       return <Reminders onComplete={handleClose} />;
-    case 'alert':
+    }
+    case 'alert': {
       return (
         <Alert
           description="do not do this"
@@ -56,7 +58,8 @@ const ModalManager = ({ modal, onClose }: ModalManagerProps) => {
           title="warning"
         />
       );
-    case 'modal-small':
+    }
+    case 'modal-small': {
       return (
         <Modal
           onBackgroundPress={handleClose}
@@ -65,7 +68,8 @@ const ModalManager = ({ modal, onClose }: ModalManagerProps) => {
           <Text title="Hello" />
         </Modal>
       );
-    case 'modal-large':
+    }
+    case 'modal-large': {
       return (
         <Modal
           onBackgroundPress={handleClose}
@@ -77,7 +81,8 @@ const ModalManager = ({ modal, onClose }: ModalManagerProps) => {
           />
         </Modal>
       );
-    case 'modal-keyboard':
+    }
+    case 'modal-keyboard': {
       return (
         <Modal
           onBackgroundPress={handleClose}
@@ -94,17 +99,21 @@ const ModalManager = ({ modal, onClose }: ModalManagerProps) => {
           />
         </Modal>
       );
-    case 'loading':
+    }
+    case 'loading': {
       return <Loading onBackgroundPress={handleClose} />;
-    case 'notification':
+    }
+    case 'notification': {
       return (
         <Notification
           onCancel={handleClose}
           title="bob"
         />
       );
-    default:
+    }
+    default: {
       return null;
+    }
   }
 };
 

@@ -1,2 +1,1 @@
-import LocalStorage from 'redux-persist/lib/storage';
-export const Storage = LocalStorage;
+export { default as Storage } from 'redux-persist/lib/storage';

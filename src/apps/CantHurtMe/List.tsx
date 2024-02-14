@@ -13,12 +13,12 @@ import { getLandscapeOrientation, useAppSelector } from '../../redux';
 import { Header } from './Header';
 import { app } from './data';
 
-type Props = {
+type Properties = {
   readonly onProfilePress: () => void;
   readonly onSettingsPress: () => void;
 };
 
-export const List = ({ onProfilePress, onSettingsPress }: Props) => {
+export const List = ({ onProfilePress, onSettingsPress }: Properties) => {
   const landscape = useAppSelector(getLandscapeOrientation);
   const columns = landscape ? 5 : 2;
 
@@ -31,7 +31,7 @@ export const List = ({ onProfilePress, onSettingsPress }: Props) => {
     },
   });
 
-  const onPress = useCallback(() => undefined, []);
+  const onPress = useCallback(() => false, []);
 
   const renderItem = useCallback<FlashListRenderItem<string>>(
     ({ index, item }) => {

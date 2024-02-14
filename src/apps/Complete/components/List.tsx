@@ -5,7 +5,7 @@ import { AddItem } from './AddItem';
 import { ListHeader } from './ListHeader';
 import { ListItems } from './ListItems';
 
-type ListProps = {
+type ListProperties = {
   readonly footer?: ReactNode;
   readonly itemId: string;
   readonly listWidth?: number;
@@ -21,7 +21,7 @@ export const List = ({
   maxHeight,
   orientation = 'vertical',
   parentItemId,
-}: ListProps) => {
+}: ListProperties) => {
   const horizontal = orientation === 'horizontal';
   const padding = horizontal ? 0 : completeConfig.padding;
   const margin = horizontal ? 'right' : 'bottom';
@@ -52,7 +52,7 @@ export const List = ({
           title="Add item"
         />
       </Card>
-      {footer ? footer : null}
+      {footer ?? null}
     </View>
   );
 };

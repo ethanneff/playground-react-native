@@ -8,7 +8,7 @@ import { useColors, useDriver, useDropShadow } from '../../../../features';
 import { type Segment } from './types';
 import { getNewLocation, getWinnerIndex } from './utils';
 
-type Props = {
+type Properties = {
   readonly backgroundColor?: string;
   readonly bounceSpeed?: number;
   readonly fontSize?: number;
@@ -38,7 +38,7 @@ export const Wheel = ({
   size = Dimensions.get('screen').width,
   spinSpeed = 1000,
   textColor,
-}: Props) => {
+}: Properties) => {
   const colors = useColors();
   const dropShadow = useDropShadow();
   const useNativeDriver = useDriver();
@@ -47,8 +47,8 @@ export const Wheel = ({
   const radius = size / 2;
   const knobSize = size / 8;
   const knobOffset = knobSize * 0.6;
-  const numOfSegments = segments.length;
-  const angleOfSegment = 360 / numOfSegments;
+  const numberOfSegments = segments.length;
+  const angleOfSegment = 360 / numberOfSegments;
   const angleOffset = angleOfSegment / 2;
   const spinning = useRef(false);
   const location = useRef(0);
@@ -73,17 +73,17 @@ export const Wheel = ({
     const winnerIndex = getWinnerIndex({
       angleOfSegment,
       location: location.current,
-      numOfSegments,
+      numOfSegments: numberOfSegments,
     });
     onComplete(segments[winnerIndex]);
-  }, [angleOfSegment, numOfSegments, onComplete, segments]);
+  }, [angleOfSegment, numberOfSegments, onComplete, segments]);
 
   const spin = useCallback(() => {
     const newLocation = getNewLocation({
       location: location.current,
       maxSpin,
       minSpin,
-      numOfSegments,
+      numOfSegments: numberOfSegments,
     });
     location.current = newLocation;
     spinning.current = true;
@@ -97,7 +97,7 @@ export const Wheel = ({
     angle,
     maxSpin,
     minSpin,
-    numOfSegments,
+    numberOfSegments,
     onSpinComplete,
     spinSpeed,
     useNativeDriver,
@@ -186,7 +186,7 @@ export const Wheel = ({
               x={radius}
               y={radius}
             >
-              {arcs.map((arc, i) => (
+              {arcs.map((arc, index) => (
                 <G key={v4()}>
                   <Path
                     d={String(arc.path)}
@@ -194,7 +194,7 @@ export const Wheel = ({
                   />
                   <G
                     origin={arc.centroid.toString()}
-                    rotation={(i * 360) / segments.length + angleOffset}
+                    rotation={(index * 360) / segments.length + angleOffset}
                   >
                     <Text
                       fill={text}

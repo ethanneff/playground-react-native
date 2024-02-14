@@ -1,11 +1,11 @@
 export const StringMethods = {
-  capitalize: (str: string): string =>
-    str.charAt(0).toUpperCase() + str.slice(1),
-  padZero: (str: string, length: number): string => {
-    let res = '';
-    while (str.length < length) {
-      res = `0${str}`;
+  capitalize: (string_: string): string =>
+    string_.charAt(0).toUpperCase() + string_.slice(1),
+  padZero: (string_: string, length: number): string => {
+    let result = '';
+    while (string_.length < length) {
+      result = `0${string_}`;
     }
-    return res;
+    return result;
   },
 };

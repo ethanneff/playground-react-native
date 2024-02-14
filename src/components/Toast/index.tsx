@@ -1,5 +1,5 @@
 import React from 'react';
-import Original from 'react-native-toast-message';
+
 import {
   spacing,
   useColors,
@@ -10,17 +10,15 @@ import { Spacing } from '../Spacing';
 import { Text } from '../Text';
 import { View } from '../View';
 
-export const Toast = Original;
-
-type CustomToastProps = {
+type CustomToastProperties = {
   readonly center?: boolean;
   readonly color: keyof MultiColor;
   readonly description?: string;
   readonly title: string;
 };
 
-type ToastProps = {
-  readonly props: CustomToastProps;
+type ToastProperties = {
+  readonly props: CustomToastProperties;
 };
 
 const CustomToast = ({
@@ -28,7 +26,7 @@ const CustomToast = ({
   color,
   description,
   title,
-}: CustomToastProps) => {
+}: CustomToastProperties) => {
   const colors = useColors();
   const dropShadow = useDropShadow();
 
@@ -66,7 +64,7 @@ const CustomToast = ({
 
 const PositiveToast = ({
   props: { center, description, title },
-}: ToastProps) => (
+}: ToastProperties) => (
   <CustomToast
     center={center}
     color="positive"
@@ -77,7 +75,7 @@ const PositiveToast = ({
 
 const WarningToast = ({
   props: { center, description, title },
-}: ToastProps) => (
+}: ToastProperties) => (
   <CustomToast
     center={center}
     color="warning"
@@ -88,7 +86,7 @@ const WarningToast = ({
 
 const NegativeToast = ({
   props: { center, description, title },
-}: ToastProps) => (
+}: ToastProperties) => (
   <CustomToast
     center={center}
     color="negative"
@@ -97,7 +95,9 @@ const NegativeToast = ({
   />
 );
 
-const AccentToast = ({ props: { center, description, title } }: ToastProps) => (
+const AccentToast = ({
+  props: { center, description, title },
+}: ToastProperties) => (
   <CustomToast
     center={center}
     color="accent"
@@ -112,3 +112,5 @@ export const toastConfig = {
   positive: PositiveToast,
   warning: WarningToast,
 };
+
+export { default as Toast } from 'react-native-toast-message';

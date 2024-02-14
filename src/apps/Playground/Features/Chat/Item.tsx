@@ -5,14 +5,14 @@ import { spacing } from '../../../../features';
 import { useAppDispatch } from '../../../../redux';
 import { setActiveChatMessage, type Message } from './Messages';
 
-type Props = {
+type Properties = {
   readonly item: Message;
   readonly marginBottom: boolean;
 };
 
 const image =
   require('../../../../assets/line-chart.png') as ImageSourcePropType;
-export const Item = ({ item, marginBottom }: Props) => {
+export const Item = ({ item, marginBottom }: Properties) => {
   const dispatch = useAppDispatch();
 
   const handleLongPress = useCallback(() => {

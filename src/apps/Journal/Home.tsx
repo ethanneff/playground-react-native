@@ -20,7 +20,7 @@ export const Home = () => {
     },
   });
 
-  const handleChangeText = useCallback(() => undefined, []);
+  const handleChangeText = useCallback(() => false, []);
 
   return (
     <Screen

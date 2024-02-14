@@ -21,8 +21,9 @@ type Action =
 
 export const driftReducer = (state: DriftState, action: Action): DriftState => {
   switch (action.type) {
-    case 'addColor':
+    case 'addColor': {
       return { ...state, color: action.payload };
+    }
     case 'addTrack': {
       const tracks = [...state.tracks];
       while (tracks.length > 10) tracks.pop();
@@ -32,8 +33,9 @@ export const driftReducer = (state: DriftState, action: Action): DriftState => {
         tracks: [{ ...action.payload, color: state.color }, ...tracks],
       };
     }
-    default:
+    default: {
       return state;
+    }
   }
 };
 
@@ -43,6 +45,6 @@ type Context = {
 };
 
 export const DriftContext = createContext<Context>({
-  dispatch: () => undefined,
+  dispatch: () => false,
   state: driftInitialState,
 });

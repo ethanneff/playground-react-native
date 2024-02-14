@@ -22,7 +22,7 @@ Usage: <Icon name='check' />
 source: https://materialdesignicons.com/
 */
 
-type Props = {
+type Properties = {
   readonly backgroundColor?: keyof MonoMultiColor;
   readonly badge?: number;
   readonly clear?: boolean;
@@ -56,7 +56,7 @@ export const Icon = ({
   size = spacing(6),
   style,
   testID,
-}: Props) => {
+}: Properties) => {
   const colors = useColors();
   const bgColor = backgroundColor
     ? colors.background[backgroundColor]

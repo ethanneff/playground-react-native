@@ -4,7 +4,7 @@ import { type RootAction, type RootMiddleware } from 'root-types';
 import { Storage } from '../conversions';
 
 const refreshTimeout = 2000;
-const timeout = 10000;
+const timeout = 10_000;
 const retryDefaultTimeout = 250;
 
 type RootActionTypes = RootAction['type'] | 'sync/download';
@@ -34,8 +34,8 @@ const syncQueue: SyncQueue = {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       syncQueue.cache = [...syncQueue.cache, ...parse];
       return syncQueue.cache;
-    } catch (e) {
-      if (e instanceof Error) throw new Error(e.message);
+    } catch (error) {
+      if (error instanceof Error) throw new Error(error.message);
       return [];
     }
   },
@@ -47,8 +47,8 @@ const syncQueue: SyncQueue = {
       syncQueue.cache = combined;
       await Storage.setItem(syncQueue.key, stringify);
       return syncQueue.cache;
-    } catch (e) {
-      if (e instanceof Error) throw new Error(e.message);
+    } catch (error) {
+      if (error instanceof Error) throw new Error(error.message);
       return [];
     }
   },
@@ -90,25 +90,25 @@ export const useSync = (): void => {
     };
 
     const queue = await syncQueue.get();
-    if (!queue.length) {
+    if (queue.length === 0) {
       refresh();
       return;
     }
 
     try {
-      const len = queue.length;
+      const { length } = queue;
       const url = 'https://jsonplaceholder.typicode.com/posts';
       const method = 'POST';
       const payload: AxiosRequestConfig = { data: queue, method, timeout, url };
-      const res = await axios(payload);
+      const response = await axios(payload);
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      processSync(res.data);
-      queue.splice(0, len);
+      processSync(response.data);
+      queue.splice(0, length);
       await syncQueue.set(queue);
       refresh();
-    } catch (e) {
+    } catch (error) {
       exponentialRetry();
-      if (e instanceof Error) console.error(e.message);
+      if (error instanceof Error) console.error(error.message);
     }
   }, [processSync]);
 

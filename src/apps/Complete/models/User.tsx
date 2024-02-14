@@ -31,17 +31,21 @@ export const completeUserReducer = (
   action: RootAction,
 ): CompleteUserReducer => {
   switch (action.type) {
-    case getType(loadUser):
+    case getType(loadUser): {
       return action.payload;
-    case getType(updateUser):
+    }
+    case getType(updateUser): {
       return {
         ...state,
         ...action.payload,
         updatedAt: Date.now(),
       };
-    case getType(logout):
+    }
+    case getType(logout): {
       return initialState;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

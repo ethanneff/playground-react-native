@@ -24,10 +24,11 @@ export class GestureHandler {
 
   onPanResponderMove(event: GestureResponderEvent): void {
     const { touches } = event.nativeEvent;
-    touches.forEach((touch: NativeTouchEvent) => {
+
+    for (const touch of touches) {
       this.recordFinish(touch);
       this.recordStart(touch);
-    });
+    }
   }
 
   onPanResponderRelease(): Outcome {
@@ -64,30 +65,30 @@ export class GestureHandler {
   }
 
   determineCenter(): { x: number; y: number } {
-    const numRecordedTouched = Object.keys(this.start).length;
+    const numberRecordedTouched = Object.keys(this.start).length;
     let x = 0;
     let y = 0;
-    for (let i = 1; i <= numRecordedTouched; i++) {
-      const point = this.start[i];
+    for (let index = 1; index <= numberRecordedTouched; index++) {
+      const point = this.start[index];
       x += point.x;
       y += point.x;
     }
 
-    return { x: x / numRecordedTouched, y: y / numRecordedTouched };
+    return { x: x / numberRecordedTouched, y: y / numberRecordedTouched };
   }
 
   determineOutcome(): Outcome {
-    const numRecordedTouched = Object.keys(this.start).length;
+    const numberRecordedTouched = Object.keys(this.start).length;
     const outcome = {
       pinch: false,
       spread: false,
     };
-    if (numRecordedTouched < this.minTouches) return outcome;
+    if (numberRecordedTouched < this.minTouches) return outcome;
     let spread = false;
     let pinch = false;
-    for (let i = 1; i <= numRecordedTouched; i++) {
-      const isSpread = this.isSpread(i);
-      const isPinch = !this.isSpread(i);
+    for (let index = 1; index <= numberRecordedTouched; index++) {
+      const isSpread = this.isSpread(index);
+      const isPinch = !this.isSpread(index);
       if (isPinch && isSpread) return outcome;
       if (!isPinch && !isSpread) return outcome;
       if (isPinch && spread) return outcome;

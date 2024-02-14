@@ -1,4 +1,4 @@
-import { type StackNavigationProp } from '../../conversions';
+import { type StackNavigationProperty } from '../../conversions';
 
 export type DeepWorkRoutes = {
   account: undefined;
@@ -6,4 +6,4 @@ export type DeepWorkRoutes = {
   home: undefined;
 };
 
-export type DeepWorkNavigation = StackNavigationProp<DeepWorkRoutes>;
+export type DeepWorkNavigation = StackNavigationProperty<DeepWorkRoutes>;

@@ -1,4 +1,4 @@
-import { type StackNavigationProp } from '../../conversions';
+import { type StackNavigationProperty } from '../../conversions';
 
 export type RootRoutes = {
   admin: undefined;
@@ -15,4 +15,4 @@ export type RootRoutes = {
   'the-one-thing': undefined;
 };
 
-export type RootNavigation = StackNavigationProp<RootRoutes>;
+export type RootNavigation = StackNavigationProperty<RootRoutes>;

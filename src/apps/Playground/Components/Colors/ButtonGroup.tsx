@@ -8,11 +8,11 @@ import {
   type MonoMultiColor,
 } from '../../../../features';
 
-type ButtonGroupProps = {
+type ButtonGroupProperties = {
   readonly emphasis: FontEmphasis;
 };
 
-export const ButtonGroup = ({ emphasis }: ButtonGroupProps) => {
+export const ButtonGroup = ({ emphasis }: ButtonGroupProperties) => {
   const colors = useColors();
   const keys = Object.keys(colors.text) as (keyof MonoMultiColor)[];
   const handlePress = useCallback(() => null, []);

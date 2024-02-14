@@ -6,13 +6,13 @@ import { InitialKnob } from './InitialKnob';
 import { MovingKnob } from './MovingKnob';
 import { type Ring } from './types';
 
-type RingProps = {
+type RingProperties = {
   readonly ring: Ring;
   readonly strokeWidth: number;
   readonly theta: number;
 };
 
-export const CircularRing = ({ ring, strokeWidth, theta }: RingProps) => {
+export const CircularRing = ({ ring, strokeWidth, theta }: RingProperties) => {
   const radius = PixelRatio.roundToNearestPixel(ring.size / 2);
   const styles = StyleSheet.create({
     container: { transform: [{ rotate: '-270deg' }] },

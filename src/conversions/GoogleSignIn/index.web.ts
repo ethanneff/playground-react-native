@@ -1,4 +1,4 @@
 export const GoogleSignin = {
-  configure: () => undefined,
-  signIn: () => undefined,
+  configure: () => false,
+  signIn: () => false,
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import { Shadow } from './Shadow';
 
-type MovingKnobProps = {
+type MovingKnobProperties = {
   readonly backgroundColor: string;
   readonly radius: number;
   readonly strokeWidth: number;
@@ -14,7 +14,7 @@ export const MovingKnob = ({
   radius,
   strokeWidth,
   theta,
-}: MovingKnobProps) => {
+}: MovingKnobProperties) => {
   const half = strokeWidth / 2;
   const transform = [
     { translateX: radius - half },

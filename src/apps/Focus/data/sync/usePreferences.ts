@@ -9,7 +9,7 @@ export const usePreferences = () => {
   const uid = useAppSelector((state) => state.focus.auth.uid);
 
   useEffect(() => {
-    if (!uid) return () => undefined;
+    if (!uid) return () => false;
 
     const subscription = Collections.preferences
       .where('uid', '==', uid)

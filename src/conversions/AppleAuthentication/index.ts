@@ -1,2 +1,1 @@
-import { appleAuth } from '@invertase/react-native-apple-authentication';
-export const Apple = appleAuth;
+export { appleAuth as Apple } from '@invertase/react-native-apple-authentication';

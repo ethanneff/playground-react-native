@@ -7,11 +7,11 @@ import {
   type FontType,
 } from '../../../../features';
 
-type FontGroupProps = {
+type FontGroupProperties = {
   readonly emphasis: FontEmphasis;
 };
 
-export const FontGroup = ({ emphasis }: FontGroupProps) => {
+export const FontGroup = ({ emphasis }: FontGroupProperties) => {
   const sizes = Object.keys(fontSizes) as FontType[];
   return (
     <View style={{ alignItems: 'center', flex: 1 }}>

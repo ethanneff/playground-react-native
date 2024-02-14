@@ -1,4 +1,2 @@
 // eslint-disable-next-line no-restricted-imports
-import Lottie, { type AnimationObject } from 'lottie-react-native';
-
-export { Lottie, type AnimationObject };
+export { default as Lottie, type AnimationObject } from 'lottie-react-native';

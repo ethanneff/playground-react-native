@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Pressable, Text, View } from '../../../../components';
 import { useColors, type MonoMultiColor } from '../../../../features';
 
-type RoundButtonProps = {
+type RoundButtonProperties = {
   readonly background: string;
   readonly color: keyof MonoMultiColor;
   readonly disabled?: boolean;
@@ -17,7 +17,7 @@ export const ButtonRound = ({
   disabled = false,
   onPress,
   title,
-}: RoundButtonProps) => {
+}: RoundButtonProperties) => {
   const colorScheme = useColors();
   const styles = StyleSheet.create({
     button: {

@@ -10,7 +10,7 @@ import {
 } from '../../conversions';
 import { SoundManager } from '../../features';
 
-type Props = {
+type Properties = {
   readonly accessibilityLabel?: string;
   readonly accessible?: boolean;
   readonly children?: ReactNode;
@@ -40,7 +40,7 @@ export const Pressable = ({
   onPressOut,
   testID,
   withoutFeedback,
-}: Props) => {
+}: Properties) => {
   const onPressInHandler = useCallback(() => {
     if (!onPressIn) return;
     SoundManager.play('tap');

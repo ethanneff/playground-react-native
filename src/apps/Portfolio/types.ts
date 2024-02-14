@@ -1,4 +1,4 @@
-import { type StackNavigationProp } from '../../conversions';
+import { type StackNavigationProperty } from '../../conversions';
 export type PortfolioRoutes = {
   forgotPassword: undefined;
   home: undefined;
@@ -8,4 +8,4 @@ export type PortfolioRoutes = {
   settings: undefined;
 };
 
-export type PortfolioNavigation = StackNavigationProp<PortfolioRoutes>;
+export type PortfolioNavigation = StackNavigationProperty<PortfolioRoutes>;

@@ -12,7 +12,7 @@ import { useColors } from '../../features';
 import { type IconName } from '../Icon';
 import { NavBar } from './NavBar';
 
-type Props = {
+type Properties = {
   readonly border?: boolean;
   readonly children?: ReactNode;
   readonly dropShadow?: boolean;
@@ -50,7 +50,7 @@ export const Screen = ({
   style,
   testID,
   title,
-}: Props) => {
+}: Properties) => {
   const colors = useColors();
   const styles = StyleSheet.create({
     container: { backgroundColor: colors.background.primaryA, flex: 1 },

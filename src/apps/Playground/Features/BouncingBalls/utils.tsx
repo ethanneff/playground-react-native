@@ -50,7 +50,7 @@ export const getNextDraw = (item: Item, layout: LayoutDimensions): Item => {
   return next;
 };
 
-type GetInitialItemsProps = {
+type GetInitialItemsProperties = {
   count: number;
   layout: LayoutDimensions;
   radius: number;
@@ -62,16 +62,16 @@ export const getInitialItems = ({
   layout,
   radius,
   speed,
-}: GetInitialItemsProps): Item[] => {
+}: GetInitialItemsProperties): Item[] => {
   const items: Item[] = [];
 
-  for (let i = 0; i < count; i++) {
+  for (let index = 0; index < count; index++) {
     const coordinate = {
       x: getRandomNumber(layout.x, layout.x + layout.width - radius),
       y: getRandomNumber(layout.y, layout.y + layout.height - radius),
     };
     items.push({
-      index: i,
+      index,
       ...coordinate,
       dx: getRandomNumber(-speed, speed),
       dy: getRandomNumber(-speed, speed),
@@ -87,9 +87,10 @@ export const getInitialItems = ({
 export const getItemOverlap = (a: Item, b: Item): boolean => {
   const ac = { x: a.x + a.radius, y: a.y + a.radius };
   const bc = { x: b.x + b.radius, y: b.y + b.radius };
-  const distSq = (ac.x - bc.x) * (ac.x - bc.x) + (ac.y - bc.y) * (ac.y - bc.y);
+  const distributionSq =
+    (ac.x - bc.x) * (ac.x - bc.x) + (ac.y - bc.y) * (ac.y - bc.y);
   const radSq = (a.radius + b.radius) * (a.radius + b.radius);
-  return distSq <= radSq;
+  return distributionSq <= radSq;
 };
 
 // TODO: make better without velocity change
@@ -97,11 +98,11 @@ export const getItemCollision = (a: Item, b: Item, maxSpeed: number): void => {
   const xVelocityDiff = a.dx - b.dx;
   const yVelocityDiff = a.dy - b.dy;
 
-  const xDist = b.x - a.x;
-  const yDist = b.y - a.y;
+  const xDistribution = b.x - a.x;
+  const yDistribution = b.y - a.y;
 
   // Prevent accidental overlap of particles
-  if (xVelocityDiff * xDist + yVelocityDiff * yDist >= 0) {
+  if (xVelocityDiff * xDistribution + yVelocityDiff * yDistribution >= 0) {
     // Grab angle between the two colliding particles
     const angle = -Math.atan2(b.y - a.y, b.x - a.x);
 

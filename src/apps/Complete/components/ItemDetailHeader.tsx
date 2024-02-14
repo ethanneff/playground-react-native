@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text } from '../../../components';
 
-type ItemDetailHeaderProps = {
+type ItemDetailHeaderProperties = {
   readonly title: string;
 };
 
-export const ItemDetailHeader = ({ title }: ItemDetailHeaderProps) => (
+export const ItemDetailHeader = ({ title }: ItemDetailHeaderProperties) => (
   <Text
     emphasis="high"
     title={title}

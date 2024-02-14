@@ -15,11 +15,11 @@ export const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { goBack, navigate } = useNavigation<PortfolioNavigation>();
-  const handlePassword = useCallback((val: string) => {
-    setPassword(val);
+  const handlePassword = useCallback((value: string) => {
+    setPassword(value);
   }, []);
-  const handleEmail = useCallback((val: string) => {
-    setEmail(val);
+  const handleEmail = useCallback((value: string) => {
+    setEmail(value);
   }, []);
 
   const navPortfolio = useCallback(() => {

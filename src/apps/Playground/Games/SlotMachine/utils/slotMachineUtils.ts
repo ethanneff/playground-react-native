@@ -10,9 +10,9 @@ import {
 export const slotMachineUtils = {
   getCombos: (combinations: Combination[]): CombinationAmount => {
     const combos: CombinationAmount = {};
-    combinations.forEach((combination) => {
+    for (const combination of combinations) {
       combos[combination.combo] = combination.amount;
-    });
+    }
     return combos;
   },
   getPercentages: (
@@ -22,7 +22,7 @@ export const slotMachineUtils = {
   ): Percentages => {
     let wins = 0;
     let payout = games;
-    for (let i = 0; i < games; i++) {
+    for (let index = 0; index < games; index++) {
       const spin = slotMachineUtils.getSpin(reels);
       const win = slotMachineUtils.getWin(spin, combinationAmount);
       if (win) {
@@ -39,21 +39,21 @@ export const slotMachineUtils = {
   },
   getReels: (reelFreq: ReelFreq): Reels => {
     const reel: Element[] = [];
-    Object.keys(reelFreq).forEach((item) => {
+    for (const item of Object.keys(reelFreq)) {
       const key = item as Element;
-      const val = reelFreq[key];
-      for (let i = 0; i < val; i++) {
+      const value = reelFreq[key];
+      for (let index = 0; index < value; index++) {
         reel.push(key);
       }
-    });
+    }
     return [reel, reel, reel];
   },
   getSpin: (reels: Reels): string => {
     let output = '';
-    reels.forEach((reel) => {
+    for (const reel of reels) {
       const randomIndex = Math.floor(Math.random() * reel.length);
       output += reel[randomIndex];
-    });
+    }
     return output;
   },
   getWin: (spin: string, combinationAmount: CombinationAmount): number => {

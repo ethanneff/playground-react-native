@@ -36,7 +36,7 @@ const generateButtons = () => {
       value: tomorrow,
     },
     {
-      description: `${format(nextWeek, 'MMM dd, hh:mm A')}`,
+      description: format(nextWeek, 'MMM dd, hh:mm A'),
       title: 'Next Week',
       value: nextWeek,
     },
@@ -53,13 +53,13 @@ const generateButtons = () => {
   ];
 };
 
-type Props = {
+type Properties = {
   readonly onPress: (value: Date) => () => void;
 };
 
-export const OneTime = ({ onPress }: Props) => {
+export const OneTime = ({ onPress }: Properties) => {
   const buttons = generateButtons();
-  const today = new Date().valueOf();
+  const today = Date.now();
   return (
     <>
       {buttons.map((button, index) => {

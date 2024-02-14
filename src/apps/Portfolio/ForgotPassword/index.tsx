@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
 export const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const { goBack } = useNavigation();
-  const handleEmail = useCallback((val: string) => {
-    setEmail(val);
+  const handleEmail = useCallback((value: string) => {
+    setEmail(value);
   }, []);
   const navLogin = useCallback(() => {
     goBack();

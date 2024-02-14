@@ -25,15 +25,18 @@ export const focusGoalsReducer = (
   action: RootAction,
 ): FocusGoalsReducer => {
   switch (action.type) {
-    case getType(loadGoals):
+    case getType(loadGoals): {
       return {
         ...state,
         items: action.payload,
         updatedAt: Date.now(),
       };
-    case getType(logoutAuth):
+    }
+    case getType(logoutAuth): {
       return initialState;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

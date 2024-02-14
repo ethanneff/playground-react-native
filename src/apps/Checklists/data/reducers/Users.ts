@@ -21,7 +21,7 @@ export const checklistsUsersReducer = (
   action: RootAction,
 ): Reducer => {
   switch (action.type) {
-    case getType(loadUser):
+    case getType(loadUser): {
       return {
         ...state,
         updatedAt: Date.now(),
@@ -34,9 +34,12 @@ export const checklistsUsersReducer = (
           photoUrl: action.payload.photoUrl,
         },
       };
-    case getType(logoutAuth):
+    }
+    case getType(logoutAuth): {
       return initialState;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

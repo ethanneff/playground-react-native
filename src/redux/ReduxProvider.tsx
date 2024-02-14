@@ -9,7 +9,7 @@ import { Storage, addFlipperMiddleware } from '../conversions';
 import { Globals } from '../features/Config/globals';
 import { reducers } from './store';
 
-type Props = {
+type Properties = {
   readonly children: ReactNode;
 };
 
@@ -22,10 +22,11 @@ if (Globals.platform !== 'web' && Globals.environment === 'dev') {
   addFlipperMiddleware(middleware);
 }
 
+// eslint-disable-next-line etc/no-deprecated
 const store = createStore(persistedReducer, applyMiddleware(...middleware));
 export const persistor = persistStore(store);
 
-export const ReduxProvider = ({ children }: Props) => (
+export const ReduxProvider = ({ children }: Properties) => (
   <Provider store={store}>
     <PersistGate
       loading={null}

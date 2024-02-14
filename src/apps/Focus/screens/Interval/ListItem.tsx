@@ -1,14 +1,14 @@
 import React, { useCallback } from 'react';
 import { Icon, Pressable, Text, View } from '../../../../components';
 import {
+  type StackNavigationProperty,
   useNavigation,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing, useColors, useDropShadow } from '../../../../features';
 import { type AuthStackRoutes, type Item } from '../../types';
 import { ListSection } from './ListSection';
 
-type Props = {
+type Properties = {
   readonly currentItem: boolean;
   readonly item: Item;
   readonly showFooter: boolean;
@@ -20,14 +20,14 @@ export const ListItem = ({
   item,
   showFooter,
   showHeader,
-}: Props) => {
+}: Properties) => {
   const colors = useColors();
   const dropShadow = useDropShadow();
   const future = item.id > Date.now();
   const iconColor = future ? 'tertiary' : 'positive';
   const title = currentItem ? 'current' : future ? 'future' : item.title;
   const { navigate } =
-    useNavigation<StackNavigationProp<AuthStackRoutes, 'home'>>();
+    useNavigation<StackNavigationProperty<AuthStackRoutes, 'home'>>();
 
   const onPress = useCallback(() => {
     navigate('interval-details', { item });

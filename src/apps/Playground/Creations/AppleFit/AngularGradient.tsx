@@ -2,12 +2,12 @@ import React from 'react';
 import { Image, StyleSheet, type ImageSourcePropType } from 'react-native';
 import { MaskedView, View } from '../../../../components';
 
-type Props = {
+type Properties = {
   readonly colors: [string, string];
   readonly size: number;
 };
 
-export const AngularGradient = ({ colors: [start, end], size }: Props) => {
+export const AngularGradient = ({ colors: [start, end], size }: Properties) => {
   const borderRadius = size / 2;
   const styles = StyleSheet.create({
     container: {

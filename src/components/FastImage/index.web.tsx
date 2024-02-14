@@ -1,2 +1,1 @@
-import { Image } from 'react-native';
-export const FastImage = Image;
+export { Image as FastImage } from 'react-native';

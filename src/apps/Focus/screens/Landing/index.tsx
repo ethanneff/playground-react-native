@@ -2,9 +2,9 @@ import React, { useCallback } from 'react';
 import { Button, Screen, Spacing, Text, View } from '../../../../components';
 import {
   Lottie,
+  type StackNavigationProperty,
   useNavigation,
   type AnimationObject,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing } from '../../../../features';
 import {
@@ -17,7 +17,8 @@ import { type UnAuthStackRoutes } from '../../types';
 const trophy = require('./trophy.json') as AnimationObject;
 
 export const Landing = () => {
-  const { navigate } = useNavigation<StackNavigationProp<UnAuthStackRoutes>>();
+  const { navigate } =
+    useNavigation<StackNavigationProperty<UnAuthStackRoutes>>();
   const width = useAppSelector(getSmallestDimension);
   const landscape = useAppSelector(getLandscapeOrientation);
   const imageSize = width * 0.5;

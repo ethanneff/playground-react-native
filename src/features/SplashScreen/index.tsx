@@ -11,7 +11,7 @@ import { getSmallestDimension, useAppSelector } from '../../redux';
 
 // TODO: convert to svg, remove mask, fade in and out
 
-type Props = {
+type Properties = {
   readonly backgroundColor: string;
   readonly children: ReactNode;
   readonly delay?: number;
@@ -54,7 +54,7 @@ export const SplashScreen = ({
   duration = 1000,
   primaryColor,
   source,
-}: Props) => {
+}: Properties) => {
   const smallest = useAppSelector(getSmallestDimension);
   const useNativeDriver = useDriver();
   const [state, setState] = useState({

@@ -4,12 +4,12 @@ import {
   Modal,
   Text,
   TextInput,
-  type TextInputRef,
+  type TextInputReference,
 } from '../../../../components';
 import {
+  type StackNavigationProperty,
   useIsFocused,
   useNavigation,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { useAppDispatch } from '../../../../redux';
@@ -18,7 +18,7 @@ import { createItem, loadUser } from '../../models';
 import { type LandingStackRoutes } from '../../navigationTypes';
 import { getDefaultUserTemplate } from '../../utils';
 
-const initialRef = { email: '', password: '' };
+const initialReference = { email: '', password: '' };
 const initialState = {
   completeForm: false,
   eye: false,
@@ -30,37 +30,37 @@ export const SignUp = () => {
   const colors = useColors();
   const dispatch = useAppDispatch();
   const focus = useIsFocused();
-  const form = useRef(initialRef);
+  const form = useRef(initialReference);
   const [state, setState] = useState(initialState);
   const { goBack, navigate } =
-    useNavigation<StackNavigationProp<LandingStackRoutes>>();
+    useNavigation<StackNavigationProperty<LandingStackRoutes>>();
   const navWelcome = useCallback(() => {
     navigate('welcome');
   }, [navigate]);
   const onSecondary = useCallback(() => {
     navigate('log-in');
   }, [navigate]);
-  const emailRef = useRef<TextInputRef>(null);
-  const passwordRef = useRef<TextInputRef>(null);
+  const emailReference = useRef<TextInputReference>(null);
+  const passwordReference = useRef<TextInputReference>(null);
   const eyeIcon = state.eye ? 'eye-outline' : 'eye-off-outline';
 
   const onEye = useCallback(() => {
     setState((p) => ({ ...p, eye: !p.eye }));
-    passwordRef.current?.focus();
+    passwordReference.current?.focus();
   }, []);
 
   const onSubmit = useCallback(() => {
     if (!state.completeForm) return;
     setState((p) => ({ ...p, loading: true }));
     const { items, user } = getDefaultUserTemplate();
-    items.forEach((item) => dispatch(createItem(item)));
+    for (const item of items) dispatch(createItem(item));
     dispatch(loadUser({ ...user, email: form.current.email }));
     setState((p) => ({ ...p, loading: false }));
   }, [dispatch, state.completeForm]);
 
   const onFormChange = useCallback(
-    (key: keyof typeof initialRef) => (val: string) => {
-      form.current = { ...form.current, [key]: val };
+    (key: keyof typeof initialReference) => (value: string) => {
+      form.current = { ...form.current, [key]: value };
       const { email, password } = form.current;
       const passwordError = password.length < 10 && key === 'password';
       const completeForm = email.length > 0 && password.length >= 10;
@@ -70,8 +70,8 @@ export const SignUp = () => {
   );
 
   const onSubmitEditing = useCallback(
-    (key: keyof typeof initialRef) => () => {
-      if (key === 'email') passwordRef.current?.focus();
+    (key: keyof typeof initialReference) => () => {
+      if (key === 'email') passwordReference.current?.focus();
       if (key === 'password') onSubmit();
     },
     [onSubmit],
@@ -79,9 +79,9 @@ export const SignUp = () => {
 
   useEffect(() => {
     if (focus) {
-      emailRef.current?.focus();
+      emailReference.current?.focus();
     } else {
-      form.current = initialRef;
+      form.current = initialReference;
       setState(initialState);
     }
   }, [focus]);
@@ -103,7 +103,7 @@ export const SignUp = () => {
         editable={!state.loading}
         keyboardType="email-address"
         onChangeText={onFormChange('email')}
-        onRef={emailRef}
+        onRef={emailReference}
         onSubmitEditing={onSubmitEditing('email')}
         placeholder="Email address"
         returnKeyType="next"
@@ -121,7 +121,7 @@ export const SignUp = () => {
         icons={[{ focus: true, name: eyeIcon, onPress: onEye }]}
         keyboardType="default"
         onChangeText={onFormChange('password')}
-        onRef={passwordRef}
+        onRef={passwordReference}
         onSubmitEditing={onSubmitEditing('password')}
         placeholder="Password"
         returnKeyType="done"

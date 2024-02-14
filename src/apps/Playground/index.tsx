@@ -43,10 +43,10 @@ import {
   TicTacToe,
 } from './Games';
 import { Landing } from './Landing';
-import { type NavParams } from './navParams';
+import { type NavParameters } from './navParameters';
 
 const noHeader = { headerShown: false };
-const Stack = createStackNavigator<NavParams>();
+const Stack = createStackNavigator<NavParameters>();
 
 export const Playground = () => (
   <Stack.Navigator screenOptions={noHeader}>

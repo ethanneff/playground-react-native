@@ -643,7 +643,7 @@ PODS:
     - BoringSSL-GRPC/Interface (= 0.0.24)
   - BoringSSL-GRPC/Interface (0.0.24)
   - CocoaAsyncSocket (7.6.5)
-  - CodePush (8.2.0):
+  - CodePush (8.2.1):
     - Base64 (~> 1.1)
     - JWT (~> 3.0.0-beta.12)
     - React-Core
@@ -971,9 +971,9 @@ PODS:
   - libwebp/sharpyuv (1.3.2)
   - libwebp/webp (1.3.2):
     - libwebp/sharpyuv
-  - lottie-ios (4.3.4)
-  - lottie-react-native (6.5.1):
-    - lottie-ios (~> 4.3.3)
+  - lottie-ios (4.4.0)
+  - lottie-react-native (6.6.0):
+    - lottie-ios (~> 4.4.0)
     - React-Core
   - MMKV (1.2.13):
     - MMKVCore (~> 1.2.13)
@@ -1322,7 +1322,7 @@ PODS:
     - React-Core
   - react-native-restart (0.0.27):
     - React-Core
-  - react-native-safe-area-context (4.8.2):
+  - react-native-safe-area-context (4.9.0):
     - React-Core
   - react-native-slider (4.5.0):
     - RCT-Folly (= 2021.07.22.00)
@@ -1479,7 +1479,7 @@ PODS:
     - RNFBApp
   - RNFlashList (1.6.3):
     - React-Core
-  - RNGestureHandler (2.14.1):
+  - RNGestureHandler (2.15.0):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
   - RNGoogleSignin (11.0.0):
@@ -1489,7 +1489,7 @@ PODS:
     - React-Core
   - RNRate (1.2.12):
     - React-Core
-  - RNReanimated (3.6.1):
+  - RNReanimated (3.7.0):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
     - ReactCommon/turbomodule/core
@@ -1844,7 +1844,7 @@ SPEC CHECKSUMS:
   boost: 57d2868c099736d80fcd648bf211b4431e51a558
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
-  CodePush: b1a3535b4e085dddf0f717993d5abdb124c97631
+  CodePush: 84c9a5792cb3c8e311197d595610c803f0b01739
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBAEMKit: af2972f39bb0f3f7c45998f435b007833c32ffb2
   FBLazyVector: 5fbbff1d7734827299274638deb8ba3024f6c597
@@ -1890,8 +1890,8 @@ SPEC CHECKSUMS:
   leveldb-library: f03246171cce0484482ec291f88b6d563699ee06
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
-  lottie-ios: 3d98679b41fa6fd6aff2352b3953dbd3df8a397e
-  lottie-react-native: cdeae481649c11d586084b8662f03251c4dd8249
+  lottie-ios: ef1be1f90d54255f08e09d767950e43714661178
+  lottie-react-native: 00ac19344296ae018260aabd14d6b36dd816b0e2
   MMKV: aac95d817a100479445633f2b3ed8961b4ac5043
   MMKVCore: 9cfef4c48c6c46f66226fc2e4634d78490206a48
   nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
@@ -1921,7 +1921,7 @@ SPEC CHECKSUMS:
   react-native-mmkv-storage: cfb6854594cfdc5f7383a9e464bb025417d1721c
   react-native-netinfo: 8a7fd3f7130ef4ad2fb4276d5c9f8d3f28d2df3d
   react-native-restart: 7595693413fe3ca15893702f2c8306c62a708162
-  react-native-safe-area-context: 0ee144a6170530ccc37a0fd9388e28d06f516a89
+  react-native-safe-area-context: b97eb6f9e3b7f437806c2ce5983f479f8eb5de4b
   react-native-slider: cc89964e1432fa31aa9db7a0fa9b21e26b5d5152
   React-NativeModulesApple: b6868ee904013a7923128892ee4a032498a1024a
   React-perflogger: 31ea61077185eb1428baf60c0db6e2886f141a5a
@@ -1953,11 +1953,11 @@ SPEC CHECKSUMS:
   RNFBFirestore: 04909ab2513b8510fdd18af4d309524dcd54085f
   RNFBRemoteConfig: f45f8e526c84531c101703f71959e15a12d5d676
   RNFlashList: 4b4b6b093afc0df60ae08f9cbf6ccd4c836c667a
-  RNGestureHandler: fe2be3be5598dc74329b211c58c9f2d231461769
+  RNGestureHandler: 7909c50383a18f0cb10ce1db7262b9a6da504c03
   RNGoogleSignin: fc408799f1990a12497a32f64280c0fe353ffcc1
   RNLocalize: 4222a3756cdbe2dc9a5bdf445765a4d2572107cb
   RNRate: ef3bcff84f39bb1d1e41c5593d3eea4aab2bd73a
-  RNReanimated: fdbaa9c964bbab7fac50c90862b6cc5f041679b9
+  RNReanimated: 9dfe7a19dd7c3e123b23db42e74bf051725f2ea3
   RNScreens: 3c5b9f4a9dcde752466854b6109b79c0e205dad3
   RNSensors: 117ba71c7eeeea0407ea0c0bb79e3495d602049b
   RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
@@ -1972,4 +1972,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 250ac1cc9362fd5b2cb6bce4beb5d69455572523
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2

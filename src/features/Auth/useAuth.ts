@@ -10,11 +10,12 @@ import {
 } from '../../conversions';
 
 export const useAuth = () => {
-  const handleError = useCallback((e: unknown) => {
+  const handleError = useCallback((error: unknown) => {
     const description =
-      e instanceof Error
-        ? e.message
-        : (e as FirebaseAuthTypes.NativeFirebaseAuthError).nativeErrorMessage;
+      error instanceof Error
+        ? error.message
+        : (error as FirebaseAuthTypes.NativeFirebaseAuthError)
+            .nativeErrorMessage;
     Toast.show({
       props: { description, title: 'Unable to sign in' },
       type: 'negative',
@@ -24,8 +25,8 @@ export const useAuth = () => {
   const signInAnonymously = useCallback(async () => {
     try {
       return await Firebase.auth().signInAnonymously();
-    } catch (e) {
-      handleError(e);
+    } catch (error) {
+      handleError(error);
       return null;
     }
   }, [handleError]);
@@ -47,8 +48,8 @@ export const useAuth = () => {
         data.accessToken,
       );
       return await Firebase.auth().signInWithCredential(facebookCredential);
-    } catch (e) {
-      handleError(e);
+    } catch (error) {
+      handleError(error);
       return null;
     }
   }, [handleError]);
@@ -72,8 +73,8 @@ export const useAuth = () => {
         nonce,
       );
       return await Firebase.auth().signInWithCredential(appleCredential);
-    } catch (e) {
-      handleError(e);
+    } catch (error) {
+      handleError(error);
       return null;
     }
   }, [handleError]);
@@ -87,8 +88,8 @@ export const useAuth = () => {
       const googleCredential =
         Firebase.auth.GoogleAuthProvider.credential(idToken);
       return await Firebase.auth().signInWithCredential(googleCredential);
-    } catch (e) {
-      handleError(e);
+    } catch (error) {
+      handleError(error);
       return null;
     }
   }, [handleError]);
@@ -100,8 +101,8 @@ export const useAuth = () => {
           email.trim(),
           password,
         );
-      } catch (e) {
-        handleError(e);
+      } catch (error) {
+        handleError(error);
         return null;
       }
     },
@@ -115,8 +116,8 @@ export const useAuth = () => {
           email.trim(),
           password,
         );
-      } catch (e) {
-        handleError(e);
+      } catch (error) {
+        handleError(error);
         return null;
       }
     },
@@ -127,8 +128,8 @@ export const useAuth = () => {
     async (email: string) => {
       try {
         await Firebase.auth().sendPasswordResetEmail(email.trim());
-      } catch (e) {
-        handleError(e);
+      } catch (error) {
+        handleError(error);
       }
     },
     [handleError],
@@ -137,8 +138,8 @@ export const useAuth = () => {
   const logout = useCallback(async () => {
     try {
       await Firebase.auth().signOut();
-    } catch (e) {
-      handleError(e);
+    } catch (error) {
+      handleError(error);
     }
   }, [handleError]);
 

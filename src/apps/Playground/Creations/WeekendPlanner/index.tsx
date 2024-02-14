@@ -108,8 +108,8 @@ export const WeekendPlanner = () => {
   const handleGoalComplete = useCallback(
     (goal: Goal) => () => {
       const now = Date.now();
-      setGoals((prev) =>
-        prev.map((item) =>
+      setGoals((previous) =>
+        previous.map((item) =>
           goal.id === item.id
             ? {
                 ...item,
@@ -156,7 +156,7 @@ export const WeekendPlanner = () => {
                 />
               </Pressable>
             </View>
-            {goals.length ? <Spacing padding={spacing(2)} /> : null}
+            {goals.length > 0 ? <Spacing padding={spacing(2)} /> : null}
             {goals.map((goal) => (
               <View
                 alignItems="center"

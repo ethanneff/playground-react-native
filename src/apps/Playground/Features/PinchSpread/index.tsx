@@ -27,10 +27,16 @@ export const PinchSpread = () => {
     onPanResponderRelease: () => {
       const outcome = gestureHandler.onPanResponderRelease();
       if (outcome.spread)
-        setState((prev) => ({ ...prev, spreadCount: prev.spreadCount++ }));
+        setState((previous) => ({
+          ...previous,
+          spreadCount: previous.spreadCount++,
+        }));
 
       if (outcome.pinch)
-        setState((prev) => ({ ...prev, pinchCount: prev.pinchCount++ }));
+        setState((previous) => ({
+          ...previous,
+          pinchCount: previous.pinchCount++,
+        }));
     },
   });
 

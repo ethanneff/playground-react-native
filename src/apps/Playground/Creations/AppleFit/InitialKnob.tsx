@@ -1,7 +1,7 @@
 import React from 'react';
 import { Animated, StyleSheet } from 'react-native';
 
-type InitialKnobProps = {
+type InitialKnobProperties = {
   readonly backgroundColor: string;
   readonly radius: number;
   readonly strokeWidth: number;
@@ -13,7 +13,7 @@ export const InitialKnob = ({
   radius,
   strokeWidth,
   theta,
-}: InitialKnobProps) => {
+}: InitialKnobProperties) => {
   const visible = Number(theta < Math.PI * 2);
   const half = strokeWidth / 2;
   const styles = StyleSheet.create({

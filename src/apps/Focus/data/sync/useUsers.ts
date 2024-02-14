@@ -9,7 +9,7 @@ export const useUsers = () => {
   const uid = useAppSelector((state) => state.focus.auth.uid);
 
   useEffect(() => {
-    if (!uid) return () => undefined;
+    if (!uid) return () => false;
 
     const subscription = Collections.users.doc(uid).onSnapshot((snapshot) => {
       const data = userSchema.parse({ ...snapshot.data(), id: snapshot.id });

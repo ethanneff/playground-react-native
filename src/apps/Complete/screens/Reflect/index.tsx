@@ -17,11 +17,11 @@ import { Graph } from './Graph';
 // TODO: add purpose
 // TODO: add goals
 
-type TitleProps = {
+type TitleProperties = {
   readonly name: string;
 };
 
-const Title = ({ name }: TitleProps) => (
+const Title = ({ name }: TitleProperties) => (
   <Text
     emphasis="high"
     style={{ paddingBottom: completeConfig.padding }}

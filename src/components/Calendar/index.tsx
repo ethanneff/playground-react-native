@@ -5,11 +5,11 @@ import { CalendarHeader } from './CalendarHeader';
 import { CalendarMonth } from './CalendarMonth';
 import { calendarActions } from './calendarReducer';
 
-type Props = {
+type Properties = {
   readonly hiddenDays?: boolean;
 };
 
-export const Calendar = ({ hiddenDays }: Props) => {
+export const Calendar = ({ hiddenDays }: Properties) => {
   const dispatch = useAppDispatch();
   const loading = useAppSelector((state) => state.calendar.loading);
 

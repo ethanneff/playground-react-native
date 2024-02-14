@@ -5,7 +5,7 @@ import { spacing, useColors, type TagColor } from '../../../../features';
 
 export const TagGroup = () => {
   const colors = useColors();
-  const onPress = useCallback(() => undefined, []);
+  const onPress = useCallback(() => false, []);
   const keys = Object.keys(colors.tag) as (keyof TagColor)[];
   return (
     <>

@@ -8,9 +8,9 @@ import {
 import { CarouselItem } from './CarouselItem';
 import { type CarouselSlide } from './types';
 
-type ListProps = {
+type ListProperties = {
   readonly onRef?: RefObject<FlashListType<CarouselSlide>>;
-  readonly onViewableItemsChanged: (props: {
+  readonly onViewableItemsChanged: (properties: {
     viewableItems: ViewToken[];
   }) => void;
   readonly slides: CarouselSlide[];
@@ -24,7 +24,7 @@ export const CarouselList = ({
   slides,
   viewabilityConfig,
   width,
-}: ListProps) => {
+}: ListProperties) => {
   const renderItem = useCallback<FlashListRenderItem<CarouselSlide>>(
     ({ item }) => (
       <CarouselItem

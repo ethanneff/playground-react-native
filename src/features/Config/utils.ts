@@ -12,11 +12,11 @@ export const colorWithOpacity = (colorCode: string, opacity = 0.5): string => {
   const boundedOpacity = opacity < 0 ? 0 : opacity > 1 ? 1 : opacity;
   const leading = 4;
   if (!colorCode.startsWith('hsl')) return colorCode;
-  const substr = colorCode.substring(leading, colorCode.length - 1);
+  const substr = colorCode.slice(leading, -1);
   return `hsla(${substr}, ${boundedOpacity})`;
 };
 
-type GetFontStylesProps = {
+type GetFontStylesProperties = {
   color?: keyof MonoMultiColor;
   colors: ColorTheme;
   emphasis?: FontEmphasis;
@@ -35,7 +35,7 @@ export const getFontStyles = ({
   emphasis = 'default',
   inverse,
   type = 'body1',
-}: GetFontStylesProps): GetFontStylesReturn => {
+}: GetFontStylesProperties): GetFontStylesReturn => {
   const textColorPercent = fontEmphases[emphasis];
   const fontSize = fontSizes[type];
   const textColor = inverse ? colors.text.primaryB : colors.text[color];

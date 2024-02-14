@@ -8,8 +8,8 @@ import {
   View,
 } from '../../../../components';
 import {
+  type StackNavigationProperty,
   useNavigation,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import {
   spacing,
@@ -22,7 +22,7 @@ import { type AuthStackRoutes } from '../../types';
 
 export const Account = () => {
   const { navigate } =
-    useNavigation<StackNavigationProp<AuthStackRoutes, 'home'>>();
+    useNavigation<StackNavigationProperty<AuthStackRoutes, 'home'>>();
   const colors = useColors();
   const { tabBarEdges } = useLayout();
   const { admin } = useAdminNavBack();

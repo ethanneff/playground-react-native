@@ -7,7 +7,7 @@ import {
   type LayoutDimensions,
 } from '../../../../features';
 
-type Props = {
+type Properties = {
   readonly duration?: number;
   readonly layout: LayoutDimensions;
   readonly radius?: number;
@@ -69,7 +69,7 @@ const getNextDraw = (
   return next;
 };
 
-export const Game = ({ duration = 50, layout, radius = 20 }: Props) => {
+export const Game = ({ duration = 50, layout, radius = 20 }: Properties) => {
   const colors = useColors();
   const useNativeDriver = useDriver();
   const papi = useRef(getInitialPapiLocation(layout, radius));

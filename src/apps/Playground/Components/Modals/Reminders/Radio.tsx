@@ -3,14 +3,14 @@ import { View } from '../../../../../components';
 import { Item } from './Item';
 import { type ReminderType } from './types';
 
-type Props = {
+type Properties = {
   readonly buttons: ReminderType[];
   readonly horizontal?: boolean;
   readonly onChange: (id: ReminderType) => () => void;
   readonly value: ReminderType;
 };
 
-export const Radio = ({ buttons, horizontal, onChange, value }: Props) => (
+export const Radio = ({ buttons, horizontal, onChange, value }: Properties) => (
   <View
     style={{
       flexDirection: horizontal ? 'row' : 'column',

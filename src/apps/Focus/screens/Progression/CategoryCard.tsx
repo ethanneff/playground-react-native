@@ -9,13 +9,13 @@ import {
   type FlashListRenderItem,
 } from '../../../../components';
 import {
+  type StackNavigationProperty,
   useNavigation,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { spacing, useColors } from '../../../../features';
 import { type AuthStackRoutes, type Category } from '../../types';
 
-type Props = {
+type Properties = {
   readonly category: Category;
 };
 
@@ -24,8 +24,9 @@ const mockData = [
   2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
 ];
 
-export const CategoryCard = ({ category }: Props) => {
-  const { navigate } = useNavigation<StackNavigationProp<AuthStackRoutes>>();
+export const CategoryCard = ({ category }: Properties) => {
+  const { navigate } =
+    useNavigation<StackNavigationProperty<AuthStackRoutes>>();
   const colors = useColors();
 
   const handleCategoryPress = (categoryPress: Category) => () => {

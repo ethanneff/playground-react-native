@@ -8,13 +8,13 @@ import {
 } from '../../../../components';
 import { spacing } from '../../../../features';
 
-type Props = {
+type Properties = {
   readonly icon: IconName;
   readonly onPress: () => void;
   readonly title: string;
 };
 
-export const LoginButton = ({ icon, onPress, title }: Props) => (
+export const LoginButton = ({ icon, onPress, title }: Properties) => (
   <Pressable onPress={onPress}>
     <View
       alignItems="center"

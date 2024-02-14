@@ -44,11 +44,14 @@ export const themeReducer = (
   action: RootAction,
 ): ThemeState => {
   switch (action.type) {
-    case getType(changeTheme):
+    case getType(changeTheme): {
       return { ...state, currentTheme: action.payload };
-    case getType(logout):
+    }
+    case getType(logout): {
       return themeInitialState;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

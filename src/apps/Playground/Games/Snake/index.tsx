@@ -32,9 +32,14 @@ export const Snake = () => {
   const update = useCallback(() => {
     const board = updateBoard(game.board, direction.current);
     if (board.state === 'ate food')
-      setGame((prev) => ({ ...prev, board, points: prev.points + 1 }));
-    else if (board.state === 'ok') setGame((prev) => ({ ...prev, board }));
-    else setGame((prev) => ({ ...prev, board, state: 'error' }));
+      setGame((previous) => ({
+        ...previous,
+        board,
+        points: previous.points + 1,
+      }));
+    else if (board.state === 'ok')
+      setGame((previous) => ({ ...previous, board }));
+    else setGame((previous) => ({ ...previous, board, state: 'error' }));
   }, [direction, game.board]);
 
   const { start, stop } = useClock({
@@ -44,11 +49,11 @@ export const Snake = () => {
 
   const onStart = useCallback(() => {
     const board = getBoard(size);
-    setGame((prev) => ({ ...prev, board, points: 0, state: 'on' }));
+    setGame((previous) => ({ ...previous, board, points: 0, state: 'on' }));
   }, []);
 
   const onStop = useCallback(() => {
-    setGame((prev) => ({ ...prev, state: 'off' }));
+    setGame((previous) => ({ ...previous, state: 'off' }));
   }, []);
 
   useEffect(() => {

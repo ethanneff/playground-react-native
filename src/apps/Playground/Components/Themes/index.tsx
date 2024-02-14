@@ -86,11 +86,11 @@ const cards: CardItem[] = [
 
 const initialElevation = 2;
 
-type HeaderProps = {
+type HeaderProperties = {
   readonly elevation: number;
   readonly onValueChange: (value: number) => void;
 };
-const Header = ({ elevation, onValueChange }: HeaderProps) => {
+const Header = ({ elevation, onValueChange }: HeaderProperties) => {
   const dispatch = useAppDispatch();
   const colors = useColors();
   const currentTheme = useAppSelector((state) => state.theme.currentTheme);
@@ -141,7 +141,7 @@ export const Themes = () => {
   }, []);
   const landscape = useAppSelector(getLandscapeOrientation);
   const columns = landscape ? 5 : 2;
-  const onPress = useCallback(() => undefined, []);
+  const onPress = useCallback(() => false, []);
 
   const renderItem = useCallback<FlashListRenderItem<CardItem>>(
     ({ item }) => (

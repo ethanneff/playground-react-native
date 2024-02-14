@@ -9,8 +9,8 @@ import {
 } from '../../../../components';
 import {
   JsonTree,
+  type StackNavigationProperty,
   useNavigation,
-  type StackNavigationProp,
 } from '../../../../conversions';
 import { useAuth } from '../../../../features';
 import { useAppSelector } from '../../../../redux';
@@ -19,15 +19,15 @@ import { type UnAuthStackRoutes } from '../../types';
 
 export const Debug = () => {
   const { goBack } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'debug'>>();
+    useNavigation<StackNavigationProperty<UnAuthStackRoutes, 'debug'>>();
   const data = useAppSelector((state) => state.focus);
   const uid = data.auth.uid ?? '';
   const { logout } = useAuth();
 
-  const showToast = useCallback((e: string) => {
+  const showToast = useCallback((description: string) => {
     Toast.show({
       props: {
-        description: `${e}`,
+        description,
         title: 'Error',
       },
       type: 'negative',
@@ -43,9 +43,9 @@ export const Debug = () => {
         uid,
       };
       await Collections.goals.add(item);
-    } catch (e) {
-      if (e instanceof Error) {
-        showToast(e.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        showToast(error.message);
       }
     }
   }, [showToast, uid]);
@@ -58,9 +58,9 @@ export const Debug = () => {
         uid,
       };
       await Collections.intervals.add(item);
-    } catch (e) {
-      if (e instanceof Error) {
-        showToast(e.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        showToast(error.message);
       }
     }
   }, [showToast, uid]);
@@ -70,9 +70,9 @@ export const Debug = () => {
       await Collections.preferences.add({
         uid: Math.random().toString(),
       });
-    } catch (e) {
-      if (e instanceof Error) {
-        showToast(e.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        showToast(error.message);
       }
     }
   }, [showToast]);
@@ -82,9 +82,9 @@ export const Debug = () => {
       await Collections.users.doc(uid).set({
         photoUrl: 'none',
       });
-    } catch (e) {
-      if (e instanceof Error) {
-        showToast(e.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        showToast(error.message);
       }
     }
   }, [showToast, uid]);

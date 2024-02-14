@@ -5,11 +5,11 @@ import { View } from '../../../../components';
 import { DriftContext } from './Context';
 import { type TrackPositionWithColor } from './types';
 
-type TrackProps = {
+type TrackProperties = {
   readonly track: TrackPositionWithColor;
 };
 
-const Track = ({ track }: TrackProps) => {
+const Track = ({ track }: TrackProperties) => {
   const size = track.size / 4;
   const styles = StyleSheet.create({
     tracks: {

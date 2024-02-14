@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useRef, type ReactNode } from 'react';
 import { type LayoutRectangle, type ViewStyle } from 'react-native';
-import { View, type ViewRef } from '../View';
+import { View, type ViewReference } from '../View';
 import { type VisibilitySensorChange } from './types';
 import { getDirection, getVisible } from './utils';
 
-type Props = {
+type Properties = {
   readonly children: ReactNode;
   readonly container: LayoutRectangle | null;
   readonly duration?: number;
@@ -18,13 +18,13 @@ export const VisibilitySensor = ({
   duration = 300,
   onChange,
   style,
-}: Props) => {
-  const viewRef = useRef<ViewRef>(null);
+}: Properties) => {
+  const viewReference = useRef<ViewReference>(null);
   const lastValue = useRef<VisibilitySensorChange | null>(null);
 
   const getDimensions = useCallback(() => {
-    if (!viewRef.current || !container) return;
-    viewRef.current.measure(
+    if (!viewReference.current || !container) return;
+    viewReference.current.measure(
       (
         _x: number,
         _y: number,
@@ -63,7 +63,7 @@ export const VisibilitySensor = ({
   return (
     <View
       collapsable={false}
-      onRef={viewRef}
+      onRef={viewReference}
       style={style}
     >
       {children}

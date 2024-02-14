@@ -1,1 +1,1 @@
-export const debugDev = (): void => undefined;
+export const debugDevelopment = (): void => undefined;

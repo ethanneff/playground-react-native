@@ -21,19 +21,20 @@ export const symbols = {
 export const min = 1500;
 export const max = 3000;
 export const timing = Math.random() * (max - min) + min;
-export const oneCoin = 13600; // 13800 (20)
-export const twoCoin = 16400; // 16700 (20)
-export const threeCoins = 102900; // 104900 (20)
-export const oneBag = 29100; // 29600 (20)
-export const twoBag = 61000; // 62200 (20)
-export const threeBag = 260000; // 270000 (20)
-export const hammer = 825000; // 225000
-export const threePig = 5912400; // 7495800 1770000 254000 678000 112000 260000 390000 756000 362000 370000 795000 260000
+export const oneCoin = 13_600; // 13800 (20)
+export const twoCoin = 16_400; // 16700 (20)
+export const threeCoins = 102_900; // 104900 (20)
+export const oneBag = 29_100; // 29600 (20)
+export const twoBag = 61_000; // 62200 (20)
+export const threeBag = 260_000; // 270000 (20)
+export const hammer = 825_000; // 225000
+export const threePig = 5_912_400; // 7495800 1770000 254000 678000 112000 260000 390000 756000 362000 370000 795000 260000
 export const threeEnergy = 10;
 export const strawberry = 10;
 
 export const bonus = ['threeShield', 'threeHammer']; // X2/3/4 each, 5 (2/4) (50 energy) 10 (2) (700k) 15 (4) (1.5m) 20 (10m, 120 energy)
 
 export const wheel = [
-  250000, 12500000, 650000, 2500000, 400000, 50000000, 1200000, 4000000,
+  250_000, 12_500_000, 650_000, 2_500_000, 400_000, 50_000_000, 1_200_000,
+  4_000_000,
 ];

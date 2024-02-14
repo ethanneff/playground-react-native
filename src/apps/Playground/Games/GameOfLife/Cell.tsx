@@ -8,12 +8,12 @@ import {
 } from '../../../../redux';
 import { getCell, updateCell } from './redux';
 
-type Props = {
+type Properties = {
   readonly x: number;
   readonly y: number;
 };
 
-export const Cell = ({ x, y }: Props) => {
+export const Cell = ({ x, y }: Properties) => {
   const colors = useColors();
   const dispatch = useAppDispatch();
   const smallest = useAppSelector(getSmallestDimension);

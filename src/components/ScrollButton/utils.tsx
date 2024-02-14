@@ -4,26 +4,34 @@ type Position = 'bottom' | 'left' | 'right' | 'top';
 
 export const getIcon = (position: Position): IconName => {
   switch (position) {
-    case 'bottom':
+    case 'bottom': {
       return 'chevron-down';
-    case 'top':
+    }
+    case 'top': {
       return 'chevron-up';
-    case 'left':
+    }
+    case 'left': {
       return 'chevron-left';
-    default:
+    }
+    default: {
       return 'chevron-right';
+    }
   }
 };
 
 export const getPlacement = (position: Position) => {
   switch (position) {
-    case 'bottom':
+    case 'bottom': {
       return { bottom: 0 };
-    case 'top':
+    }
+    case 'top': {
       return { top: 0 };
-    case 'left':
+    }
+    case 'left': {
       return { left: 0 };
-    default:
+    }
+    default: {
       return { right: 0 };
+    }
   }
 };

@@ -15,18 +15,20 @@ export type BoardContext = {
 
 const getBlankMatrix = (size: number) => {
   const matrix: Matrix = [];
-  for (let i = 0; i < size; i++) {
-    matrix[i] = [];
-    for (let j = 0; j < size; j++) matrix[i][j] = 0;
+  for (let rowIndex = 0; rowIndex < size; rowIndex++) {
+    matrix[rowIndex] = [];
+    for (let colIndex = 0; colIndex < size; colIndex++)
+      matrix[rowIndex][colIndex] = 0;
   }
   return matrix;
 };
 
 const getAvailable = (matrix: Matrix): Cell[] => {
   const available: Cell[] = [];
-  for (let i = 0; i < matrix.length; i++)
-    for (let j = 0; j < matrix[i].length; j++)
-      if (matrix[i][j] === 0) available.push([i, j]);
+  for (let rowIndex = 0; rowIndex < matrix.length; rowIndex++)
+    for (let colIndex = 0; colIndex < matrix[rowIndex].length; colIndex++)
+      if (matrix[rowIndex][colIndex] === 0)
+        available.push([rowIndex, colIndex]);
 
   return available;
 };
@@ -61,28 +63,33 @@ const getNext = (
   let x = 0;
   let y = 0;
   switch (direction) {
-    case 'up':
+    case 'up': {
       x = head[0] - 1;
       [, y] = head;
       if (x < 0) return null;
       return [x, y];
-    case 'down':
+    }
+    case 'down': {
       x = head[0] + 1;
       [, y] = head;
       if (x >= matrix.length) return null;
       return [x, y];
-    case 'left':
+    }
+    case 'left': {
       [x] = head;
       y = head[1] - 1;
       if (y < 0) return null;
       return [x, y];
-    case 'right':
+    }
+    case 'right': {
       [x] = head;
       y = head[1] + 1;
       if (y >= matrix[0].length) return null;
       return [x, y];
-    default:
+    }
+    default: {
       return null;
+    }
   }
 };
 

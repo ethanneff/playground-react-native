@@ -10,12 +10,12 @@ const styles = StyleSheet.create({
   },
 });
 
-type Props = {
+type Properties = {
   readonly style?: TextStyle;
   readonly title: string;
 };
 
-export class Markdown extends React.PureComponent<Props> {
+export class Markdown extends React.PureComponent<Properties> {
   boldSyntax = '*';
 
   withoutSyntaxIndex = 2;
@@ -30,9 +30,7 @@ export class Markdown extends React.PureComponent<Props> {
 
   formattedWord(words: string[], word: string, index: number): string {
     const space = words.length - 1 === index ? '' : ' ';
-    const trimmed = this.isWordBold(word)
-      ? word.substring(1, word.length - 1)
-      : word;
+    const trimmed = this.isWordBold(word) ? word.slice(1, -1) : word;
     return trimmed + space;
   }
 

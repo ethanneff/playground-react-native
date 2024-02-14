@@ -1,1 +1,1 @@
-export const addFlipperMiddleware = () => undefined;
+export const addFlipperMiddleware = () => false;

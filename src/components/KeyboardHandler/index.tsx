@@ -3,7 +3,7 @@ import { Keyboard, type LayoutChangeEvent } from 'react-native';
 import { useColors, type MonoMultiColor } from '../../features';
 import { Pressable } from '../Pressable';
 
-type HandleKeyboardProps = {
+type HandleKeyboardProperties = {
   readonly backgroundColor?: keyof MonoMultiColor;
   readonly children: ReactNode;
   readonly onLayout: (event: LayoutChangeEvent) => void;
@@ -13,7 +13,7 @@ export const KeyboardHandler = ({
   backgroundColor,
   children,
   onLayout,
-}: HandleKeyboardProps) => {
+}: HandleKeyboardProperties) => {
   const colors = useColors();
 
   const onDismissKeyboard = useCallback(() => {

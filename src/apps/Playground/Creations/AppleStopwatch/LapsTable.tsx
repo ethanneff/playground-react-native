@@ -4,21 +4,21 @@ import { v4 } from 'uuid';
 import { ScrollView } from '../../../../components';
 import { Lap } from './Lap';
 
-type LapTableProps = {
+type LapTableProperties = {
   readonly laps: number[];
   readonly timer: number;
 };
 
-export const LapsTable = ({ laps, timer }: LapTableProps) => {
+export const LapsTable = ({ laps, timer }: LapTableProperties) => {
   const finishedLaps = laps.slice(1);
   let min = Number.MAX_SAFE_INTEGER;
   let max = Number.MIN_SAFE_INTEGER;
   if (finishedLaps.length >= 2)
-    finishedLaps.forEach((lap) => {
+    for (const lap of finishedLaps) {
       if (lap < min) min = lap;
 
       if (lap > max) max = lap;
-    });
+    }
 
   const styles = StyleSheet.create({
     scrollView: {

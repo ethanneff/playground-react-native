@@ -3,11 +3,11 @@ import { Image, StyleSheet, type ImageSourcePropType } from 'react-native';
 import { Text, Pressable, View } from '../../components';
 import { spacing, useColors } from '../../features';
 
-type Props = {
+type Properties = {
   readonly onPress?: () => void;
 };
 
-export const ProfileLevel = ({ onPress }: Props) => {
+export const ProfileLevel = ({ onPress }: Properties) => {
   const colors = useColors();
   const image = require('../../assets/placeholder.png') as ImageSourcePropType;
   const width = 0.2;

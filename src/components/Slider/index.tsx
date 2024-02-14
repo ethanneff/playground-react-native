@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
 });
 
-type Props = SliderProps & {
+type Properties = SliderProps & {
   readonly defaultValue: number;
   readonly flex?: boolean;
 };
@@ -18,7 +18,7 @@ export const Slider = ({
   onSlidingComplete,
   style,
   ...rest
-}: Props) => {
+}: Properties) => {
   const handleSlidingComplete = useCallback(
     (value: number) => {
       SoundManager.play('tap');

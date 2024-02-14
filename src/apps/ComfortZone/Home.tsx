@@ -8,7 +8,7 @@ import {
   ScrollView,
   Text,
   View,
-  type TextInputRef,
+  type TextInputReference,
 } from '../../components';
 import { spacing, useAdminNavBack, useColors } from '../../features';
 
@@ -156,7 +156,7 @@ const data = [
 export const Home = () => {
   const { onLeftPress } = useAdminNavBack();
   const colors = useColors();
-  const inputRef = useRef<TextInputRef>(null);
+  const inputReference = useRef<TextInputReference>(null);
   const [challenge, setChallenge] = useState('...');
   const [customInput, setCustomInput] = useState('');
   const [showCustomInput, setShowCustomInput] = useState(false);
@@ -179,7 +179,7 @@ export const Home = () => {
 
   useEffect(() => {
     if (!showCustomInput) return;
-    inputRef.current?.focus();
+    inputReference.current?.focus();
   }, [showCustomInput]);
 
   return (
@@ -235,7 +235,7 @@ export const Home = () => {
             >
               <Input
                 onChangeText={onCustomInputChange}
-                onRef={inputRef}
+                onRef={inputReference}
                 onSubmitEditing={onCustomInputSubmit}
                 placeholder="what is something that outside your comfort zone?"
                 value={customInput}

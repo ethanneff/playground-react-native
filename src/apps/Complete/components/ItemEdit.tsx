@@ -12,7 +12,7 @@ import { ItemDetailHeader } from './ItemDetailHeader';
 
 type OnSubmit = (text: string) => void;
 
-type ItemEditProps = {
+type ItemEditProperties = {
   readonly description?: string;
   readonly onSubmit: (type: string) => OnSubmit;
   readonly placeholder: string;
@@ -32,7 +32,7 @@ export const ItemEdit = ({
   placeholder,
   title,
   titleEditable,
-}: ItemEditProps) => {
+}: ItemEditProperties) => {
   const onClose = useCallback(() => {
     Keyboard.dismiss();
   }, []);

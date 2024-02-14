@@ -21,7 +21,7 @@ import {
   updateActivitySquares,
 } from './utils';
 
-type Props = {
+type Properties = {
   readonly margin?: number;
   readonly site: Site;
   readonly size?: number;
@@ -44,7 +44,7 @@ export const Activity = ({
   size = spacing(6),
   title,
   username,
-}: Props) => {
+}: Properties) => {
   const [state, setState] = useState<ActivityModel>(initialActivity);
   const keyExtractor = useCallback(
     (item: ActivityWeek) => String(item[0].date),
@@ -57,16 +57,16 @@ export const Activity = ({
       const api = await getApiActivity({ site, username });
       const todayFormat = getDateFormat(today);
       const todayCount = api.contributions[todayFormat] || 0;
-      setState((prev) => ({
-        ...prev,
-        activity: updateActivitySquares(prev.activity, api),
+      setState((previous) => ({
+        ...previous,
+        activity: updateActivitySquares(previous.activity, api),
         request: 'success',
         selected: {
           day: 0,
           submissions: getSubmissionFormat(todayCount, today),
         },
       }));
-    } catch (error) {
+    } catch {
       setState({
         ...initialActivity,
         request: 'failure',

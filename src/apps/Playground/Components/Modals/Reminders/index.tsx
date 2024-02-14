@@ -18,11 +18,11 @@ type State = {
   type: ReminderType;
 };
 
-type Props = {
+type Properties = {
   readonly onComplete: () => void;
 };
 
-export const Reminders = ({ onComplete }: Props) => {
+export const Reminders = ({ onComplete }: Properties) => {
   const [form, setForm] = useState<State>({
     modals: {
       createReminder: true,
@@ -39,20 +39,20 @@ export const Reminders = ({ onComplete }: Props) => {
   const handleOneTimeReminder = useCallback(
     (date: Date) => () => {
       if (isBefore(date, new Date())) {
-        setForm((prev) => ({
-          ...prev,
-          modals: { ...prev.modals, customDate: true },
+        setForm((previous) => ({
+          ...previous,
+          modals: { ...previous.modals, customDate: true },
         }));
         return;
       }
-      setForm((prev) => ({
-        ...prev,
+      setForm((previous) => ({
+        ...previous,
         modals: {
-          ...prev.modals,
+          ...previous.modals,
           createReminder: false,
         },
         reminders: [
-          ...prev.reminders,
+          ...previous.reminders,
           {
             date: date.valueOf(),
             format: format(date, 'MMM dd, yyyy hh:mm A'),
@@ -66,24 +66,24 @@ export const Reminders = ({ onComplete }: Props) => {
   );
 
   const handleCustomDateClose = useCallback(() => {
-    setForm((prev) => ({
-      ...prev,
-      modals: { ...prev.modals, customDate: false },
+    setForm((previous) => ({
+      ...previous,
+      modals: { ...previous.modals, customDate: false },
     }));
   }, []);
 
   const handleCreateReminderClose = useCallback(() => {
-    setForm((prev) => ({
-      ...prev,
-      modals: { ...prev.modals, createReminder: false },
+    setForm((previous) => ({
+      ...previous,
+      modals: { ...previous.modals, createReminder: false },
     }));
   }, []);
 
   const handleLocation = useCallback(
     (id: string) => () => {
-      setForm((prev) => ({
-        ...prev,
-        modals: { ...prev.modals, location: true },
+      setForm((previous) => ({
+        ...previous,
+        modals: { ...previous.modals, location: true },
         selected: { location: id },
       }));
     },
@@ -91,9 +91,9 @@ export const Reminders = ({ onComplete }: Props) => {
   );
 
   const handleLocationClose = useCallback(() => {
-    setForm((prev) => ({
-      ...prev,
-      modals: { ...prev.modals, location: false },
+    setForm((previous) => ({
+      ...previous,
+      modals: { ...previous.modals, location: false },
     }));
   }, []);
 

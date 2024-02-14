@@ -95,15 +95,12 @@ export const getActiveItemOrderByCreatedAt = createSelector(
       .sort((a, b) => a.createdAt - b.createdAt),
 );
 
-export const getInbox = createSelector(
-  [getItems, getUser],
-  (items, user) => user?.items.filter((id) => items[id].title === 'Inbox')[0],
+export const getInbox = createSelector([getItems, getUser], (items, user) =>
+  user?.items.find((id) => items[id].title === 'Inbox'),
 );
 
-export const getProjects = createSelector(
-  [getItems, getUser],
-  (items, user) =>
-    user?.items.filter((id) => items[id].title === 'Projects')[0],
+export const getProjects = createSelector([getItems, getUser], (items, user) =>
+  user?.items.find((id) => items[id].title === 'Projects'),
 );
 
 /* REDUCER */
@@ -117,7 +114,7 @@ export const completeItemReducer = (
 ): CompleteItemReducer => {
   switch (action.type) {
     case getType(navItemProject):
-    case getType(navItemDetails):
+    case getType(navItemDetails): {
       return {
         ...state,
         nav: {
@@ -125,12 +122,13 @@ export const completeItemReducer = (
           ...action.payload,
         },
       };
+    }
     case getType(swapItemOrderInItem): {
       const swapParent = state.items[action.payload.parentItemId];
       const children = [...swapParent.children];
-      const temp = children[action.payload.i];
+      const temporary = children[action.payload.i];
       children[action.payload.i] = children[action.payload.j];
-      children[action.payload.j] = temp;
+      children[action.payload.j] = temporary;
       return {
         ...state,
         items: {
@@ -166,7 +164,7 @@ export const completeItemReducer = (
         },
       };
     }
-    case getType(createItem):
+    case getType(createItem): {
       return {
         ...state,
         items: {
@@ -174,7 +172,8 @@ export const completeItemReducer = (
           [action.payload.id]: action.payload,
         },
       };
-    case getType(updateItem):
+    }
+    case getType(updateItem): {
       return {
         ...state,
         items: {
@@ -186,6 +185,7 @@ export const completeItemReducer = (
           },
         },
       };
+    }
     case getType(addItemToItem): {
       const addParent = state.items[action.payload.parentItemId];
       return {
@@ -216,7 +216,7 @@ export const completeItemReducer = (
         },
       };
     }
-    case getType(removeItem):
+    case getType(removeItem): {
       return {
         ...state,
         items: {
@@ -228,9 +228,12 @@ export const completeItemReducer = (
           },
         },
       };
-    case getType(logout):
+    }
+    case getType(logout): {
       return initialState;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

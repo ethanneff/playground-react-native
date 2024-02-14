@@ -7,12 +7,12 @@ import { Sentence } from '../Sentence';
 import { Text } from '../Text';
 import { type ContentSections } from './types';
 
-type Props = {
+type Properties = {
   readonly center?: boolean;
   readonly sections: ContentSections;
 };
 
-export const Content = ({ center, sections }: Props) => {
+export const Content = ({ center, sections }: Properties) => {
   const styles = StyleSheet.create({
     paragraph: { paddingBottom: spacing(4) },
     section: { paddingBottom: spacing(2) },

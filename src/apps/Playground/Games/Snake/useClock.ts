@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-type Props = {
+type Properties = {
   frequency?: number;
   onUpdate: (time: number) => void;
   precision?: number;
@@ -17,15 +17,15 @@ export const useClock = ({
   frequency = 60,
   onUpdate,
   precision = 16,
-}: Props): UseClock => {
+}: Properties): UseClock => {
   const state = useRef<State>('off');
-  const prev = useRef(0);
+  const previous = useRef(0);
   const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const loop = useCallback(() => {
     timeout.current = setTimeout(() => {
       const time = Date.now();
-      if (time - prev.current >= frequency) {
-        prev.current = time;
+      if (time - previous.current >= frequency) {
+        previous.current = time;
         onUpdate(time);
       }
       loop();
@@ -41,7 +41,7 @@ export const useClock = ({
     stop();
     state.current = 'on';
     const time = Date.now();
-    prev.current = time;
+    previous.current = time;
     onUpdate(time);
     loop();
   }, [stop, loop, onUpdate]);

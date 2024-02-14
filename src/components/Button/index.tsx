@@ -14,7 +14,7 @@ import { getStyles } from './utils';
 styling: https://material.io/design/components/buttons.html#usage
 */
 
-type Props = {
+type Properties = {
   /* styling */
   readonly buttonStyle?: StyleProp<ViewStyle>;
   readonly center?: boolean;
@@ -58,7 +58,7 @@ export const Button = ({
   testID,
   textStyle,
   title,
-}: Props) => {
+}: Properties) => {
   const colors = useColors();
   const dropShadowStyling = useDropShadow();
   const styles = getStyles({

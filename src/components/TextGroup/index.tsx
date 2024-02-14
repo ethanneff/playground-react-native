@@ -6,11 +6,11 @@ import {
   type TextStyle,
 } from 'react-native';
 
-type Props = {
+type Properties = {
   readonly children: ReactNode | ReactNode[];
   readonly style: StyleProp<TextStyle>;
 };
 
-export const TextGroup = ({ children, style }: Props) => (
+export const TextGroup = ({ children, style }: Properties) => (
   <OriginalText style={style}>{children}</OriginalText>
 );

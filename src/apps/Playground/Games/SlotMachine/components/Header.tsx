@@ -3,13 +3,13 @@ import { Spacing, Text, View } from '../../../../../components';
 import { spacing } from '../../../../../features';
 import { slotMachineConfigs } from '../utils/slotMachineConfigs';
 
-type Props = {
+type Properties = {
   readonly multiplier: number;
   readonly payout: string;
   readonly wins: string;
 };
 
-export const Header = ({ multiplier, payout, wins }: Props) => (
+export const Header = ({ multiplier, payout, wins }: Properties) => (
   <View
     flexDirection="row"
     justifyContent="space-between"

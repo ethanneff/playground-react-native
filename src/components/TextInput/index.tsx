@@ -78,9 +78,9 @@ type AutoComplete =
   | 'username-new'
   | 'username';
 
-export type TextInputRef = GestureTextInput | null;
+export type TextInputReference = GestureTextInput | null;
 
-type Props = TextInputProps & {
+type Properties = TextInputProps & {
   readonly autoCapitalize: 'characters' | 'none' | 'sentences' | 'words';
   readonly autoComplete: AutoComplete;
   readonly autoCorrect: boolean;
@@ -100,7 +100,7 @@ type Props = TextInputProps & {
   readonly onBlur?: (text: string) => void;
   readonly onChangeText: (text: string) => void;
   readonly onFocus?: (text: string) => void;
-  readonly onRef?: MutableRefObject<TextInputRef>;
+  readonly onRef?: MutableRefObject<TextInputReference>;
   readonly onSubmitEditing: () => void;
   readonly placeholder: string;
   readonly pointerEvents?: PointerEvents;
@@ -146,7 +146,7 @@ export const TextInput = ({
   title,
   type,
   value = '',
-}: Props) => {
+}: Properties) => {
   const [focus, setFocus] = useState(false);
   const [text, setText] = useState(value);
   const colors = useColors();
@@ -160,12 +160,12 @@ export const TextInput = ({
     type,
   });
 
-  const textInput = useRef<TextInputRef>(null);
+  const textInput = useRef<TextInputReference>(null);
 
   const onChangeTextInternal = useCallback(
-    (val: string) => {
-      setText(val);
-      onChangeText(val);
+    (value_: string) => {
+      setText(value_);
+      onChangeText(value_);
     },
     [onChangeText],
   );
@@ -194,11 +194,11 @@ export const TextInput = ({
     [text, value],
   );
 
-  const onInternalRef = useCallback(
-    (ref: TextInputRef) => {
-      if (!ref) return;
-      textInput.current = ref;
-      if (onRef) onRef.current = ref;
+  const onInternalReference = useCallback(
+    (reference: TextInputReference) => {
+      if (!reference) return;
+      textInput.current = reference;
+      if (onRef) onRef.current = reference;
     },
     [onRef],
   );
@@ -265,7 +265,7 @@ export const TextInput = ({
           placeholder={placeholder}
           placeholderTextColor={colors.text.secondary}
           pointerEvents={pointerEvents}
-          ref={onInternalRef}
+          ref={onInternalReference}
           returnKeyType={returnKeyType}
           secureTextEntry={secureTextEntry}
           selectionColor={colors.text.accent}
@@ -285,9 +285,8 @@ export const TextInput = ({
             flexDirection="row"
           >
             {icons.map((icon) =>
-              icon.hidden ||
-              (focus && !icon.focus) ||
-              (!focus && icon.focus) ? null : (
+              icon.hidden ??
+              ((focus && !icon.focus) || (!focus && icon.focus)) ? null : (
                 <Pressable
                   disabled={
                     icon.required ? text.trim().length === 0 : undefined

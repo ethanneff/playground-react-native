@@ -32,7 +32,7 @@ export const networkReducer = (
   action: RootAction,
 ): NetworkState => {
   switch (action.type) {
-    case getType(updateNetwork):
+    case getType(updateNetwork): {
       return {
         ...state,
         connected: action.payload.isConnected,
@@ -40,9 +40,12 @@ export const networkReducer = (
         reachable: action.payload.isInternetReachable ?? false,
         type: action.payload.type,
       };
-    case getType(logout):
+    }
+    case getType(logout): {
       return networkInitialState;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };

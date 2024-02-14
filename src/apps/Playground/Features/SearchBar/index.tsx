@@ -107,7 +107,7 @@ export const SearchBar = () => {
   const keyExtractor = useCallback((item: Data) => item.id.toString(), []);
 
   const onChangeText = useCallback((value: string) => {
-    setState((prev) => ({ ...prev, input: value }));
+    setState((previous) => ({ ...previous, input: value }));
   }, []);
 
   return (

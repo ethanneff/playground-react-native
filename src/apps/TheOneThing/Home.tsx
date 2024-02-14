@@ -12,23 +12,23 @@ import {
 } from '../../components';
 import { spacing, useAdminNavBack, useColors } from '../../features';
 
-type SectionProps = {
+type SectionProperties = {
   readonly description?: string;
   readonly items: string[];
   readonly subtitle?: string;
   readonly title: string;
 };
 
-type ChecklistItemProps = {
+type ChecklistItemProperties = {
   readonly index: number;
   readonly item: string;
 };
 
-const ChecklistItem = ({ index, item }: ChecklistItemProps) => {
+const ChecklistItem = ({ index, item }: ChecklistItemProperties) => {
   const [toggle, setToggle] = useState<IconName>('checkbox-blank-outline');
   const onPress = useCallback(() => {
-    setToggle((prev) =>
-      prev === 'checkbox-marked-outline'
+    setToggle((previous) =>
+      previous === 'checkbox-marked-outline'
         ? 'checkbox-blank-outline'
         : 'checkbox-marked-outline',
     );
@@ -68,7 +68,12 @@ const ChecklistItem = ({ index, item }: ChecklistItemProps) => {
   );
 };
 
-const Section = ({ description, items, subtitle, title }: SectionProps) => (
+const Section = ({
+  description,
+  items,
+  subtitle,
+  title,
+}: SectionProperties) => (
   <Card>
     <Text
       title={title}
@@ -84,7 +89,7 @@ const Section = ({ description, items, subtitle, title }: SectionProps) => (
     ) : null}
     <View style={{ paddingTop: spacing(2) }}>
       {description ? <Text title={description} /> : null}
-      {items.length
+      {items.length > 0
         ? items.map((item, index) => (
             <ChecklistItem
               index={index}

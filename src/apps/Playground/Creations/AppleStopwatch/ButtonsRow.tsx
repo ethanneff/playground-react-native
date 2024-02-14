@@ -2,11 +2,11 @@ import React, { type ReactNode } from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from '../../../../components';
 
-type ButtonRowProps = {
+type ButtonRowProperties = {
   readonly children: ReactNode | ReactNode[];
 };
 
-export const ButtonsRow = ({ children }: ButtonRowProps) => {
+export const ButtonsRow = ({ children }: ButtonRowProperties) => {
   const styles = StyleSheet.create({
     buttonsRow: {
       alignSelf: 'stretch',

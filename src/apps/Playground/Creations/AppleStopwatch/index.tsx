@@ -24,7 +24,7 @@ export const AppleStopwatch = () => {
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
   const elapsed = state.now - state.start;
   const interval =
-    state.laps.reduce((total, curr) => total + curr, 0) + elapsed;
+    state.laps.reduce((total, current) => total + current, 0) + elapsed;
   const colors = useColors();
 
   const styles = StyleSheet.create({
@@ -51,7 +51,7 @@ export const AppleStopwatch = () => {
   );
 
   const lap = useCallback(() => {
-    const timestamp = new Date().getTime();
+    const timestamp = Date.now();
     const { laps, now, start } = state;
     const [firstLap, ...other] = laps;
     setState({
@@ -75,20 +75,20 @@ export const AppleStopwatch = () => {
 
   const run = useCallback(() => {
     timer.current = setInterval(() => {
-      setState((prev) => ({ ...prev, now: new Date().getTime() }));
+      setState((previous) => ({ ...previous, now: Date.now() }));
     }, 100);
   }, []);
 
   const start = useCallback(() => {
-    const now = new Date().getTime();
+    const now = Date.now();
     setState({ laps: [0], now, start: now });
     run();
   }, [run]);
 
   const resume = useCallback(() => {
-    const now = new Date().getTime();
-    setState((prev) => ({
-      ...prev,
+    const now = Date.now();
+    setState((previous) => ({
+      ...previous,
       now,
       start: now,
     }));

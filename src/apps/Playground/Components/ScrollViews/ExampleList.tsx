@@ -5,7 +5,7 @@ import {
   ScrollButton,
   Text,
   View,
-  type FlashListRef,
+  type FlashListReference,
   type FlashListRenderItem,
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
@@ -56,26 +56,26 @@ const data = [
 
 const viewabilityConfig = { itemVisiblePercentThreshold: 50 };
 
-type OnViewableItemsChangedProps = {
+type OnViewableItemsChangedProperties = {
   changed: ViewToken[];
   viewableItems: ViewToken[];
 };
 
-type Props = {
+type Properties = {
   readonly horizontal?: boolean;
   readonly location: number;
 };
 
-export const ExampleList = ({ horizontal, location }: Props) => {
+export const ExampleList = ({ horizontal, location }: Properties) => {
   const [showBottom, setShowBottom] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const colors = useColors();
-  const flatListRef = useRef<FlashListRef<string>>(null);
+  const flatListReference = useRef<FlashListReference<string>>(null);
 
   const handleViewableItemsChanged = useCallback(
-    ({ viewableItems }: OnViewableItemsChangedProps) => {
+    ({ viewableItems }: OnViewableItemsChangedProperties) => {
       const visible = viewableItems.some((item) => item.index === location);
-      const bottom = Number(viewableItems[viewableItems.length - 1]?.index);
+      const bottom = Number(viewableItems.at(-1)?.index);
       const top = Number(viewableItems[0]?.index);
       setShowTop(visible ? false : bottom > location);
       setShowBottom(visible ? false : top < location);
@@ -84,7 +84,7 @@ export const ExampleList = ({ horizontal, location }: Props) => {
   );
 
   const handleScrollToItem = useCallback(() => {
-    flatListRef.current?.scrollToIndex({
+    flatListReference.current?.scrollToIndex({
       animated: true,
       index: location,
       viewPosition: 0.5,
@@ -142,7 +142,7 @@ export const ExampleList = ({ horizontal, location }: Props) => {
         estimatedItemSize={50}
         horizontal={horizontal}
         keyExtractor={keyExtractor}
-        onRef={flatListRef}
+        onRef={flatListReference}
         onViewableItemsChanged={handleViewableItemsChanged}
         renderItem={renderItem}
         viewabilityConfig={viewabilityConfig}

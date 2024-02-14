@@ -3,7 +3,7 @@ import { Button, Modal, Text, View } from '../../components';
 import { spacing } from '../../features';
 import { Spacing } from '../Spacing';
 
-type Props = {
+type Properties = {
   readonly description?: string;
   readonly onBackgroundPress?: () => void;
   readonly onCancelPress?: () => void;
@@ -17,7 +17,7 @@ export const Alert = ({
   onCancelPress,
   onConfirmPress,
   title,
-}: Props) => (
+}: Properties) => (
   <Modal
     onBackgroundPress={onBackgroundPress}
     showOverlay

@@ -4,7 +4,7 @@ import {
   Pressable,
   TextInput,
   type TextInputIcon,
-  type TextInputRef,
+  type TextInputReference,
 } from '../../../components';
 import { useNavigation } from '../../../conversions';
 import { useColors } from '../../../features';
@@ -18,18 +18,22 @@ import {
 import { type ImplementTabNavigation } from '../navigationTypes';
 import { completeConfig } from '../utils';
 
-type ListItemProps = {
+type ListItemProperties = {
   readonly index: number;
   readonly itemId: string;
   readonly parentItemId: string;
 };
 
-export const ListItem = ({ index, itemId, parentItemId }: ListItemProps) => {
+export const ListItem = ({
+  index,
+  itemId,
+  parentItemId,
+}: ListItemProperties) => {
   const item = useAppSelector((s) => s.complete.item.items[itemId]);
   const parentChildrenCount = useAppSelector(
     (s) => s.complete.item.items[parentItemId].children.length,
   );
-  const textInputRef = useRef<TextInputRef>(null);
+  const textInputReference = useRef<TextInputReference>(null);
   const dispatch = useAppDispatch();
   const { navigate } = useNavigation<ImplementTabNavigation>();
   const colors = useColors();
@@ -54,10 +58,10 @@ export const ListItem = ({ index, itemId, parentItemId }: ListItemProps) => {
     navigate('item-detail');
   }, [dispatch, itemId, navigate, parentItemId]);
 
-  const onItemLongPress = useCallback(() => undefined, []);
+  const onItemLongPress = useCallback(() => false, []);
 
   const onItemPress = useCallback(() => {
-    textInputRef.current?.focus();
+    textInputReference.current?.focus();
   }, []);
 
   const onItemUp = useCallback(() => {
@@ -83,7 +87,7 @@ export const ListItem = ({ index, itemId, parentItemId }: ListItemProps) => {
     { hidden: true, name: 'chevron-down', onPress: onItemDown },
     { name: 'dots-horizontal', onPress: onItemDetails },
     {
-      hidden: !item.children.length,
+      hidden: item.children.length === 0,
       name: 'chevron-right',
       onPress: onItemNav,
     },
@@ -115,7 +119,7 @@ export const ListItem = ({ index, itemId, parentItemId }: ListItemProps) => {
         icons={icons}
         keyboardType="default"
         onChangeText={handleChange}
-        onRef={textInputRef}
+        onRef={textInputReference}
         onSubmitEditing={onItemTitleSubmit}
         placeholder="Item name..."
         pointerEvents="none"

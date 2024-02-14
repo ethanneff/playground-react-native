@@ -4,14 +4,14 @@ import { Text, View } from '../../../../components';
 import { useColors } from '../../../../features';
 import { Timer } from './Timer';
 
-type LapProps = {
+type LapProperties = {
   readonly fastest: boolean;
   readonly interval: number;
   readonly num: number;
   readonly slowest: boolean;
 };
 
-export const Lap = ({ fastest, interval, num, slowest }: LapProps) => {
+export const Lap = ({ fastest, interval, num, slowest }: LapProperties) => {
   const colors = useColors();
   const styles = StyleSheet.create({
     fastest: {

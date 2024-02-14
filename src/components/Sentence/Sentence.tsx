@@ -8,13 +8,13 @@ import {
 import { Text } from '../Text';
 import { type SentenceType } from './types';
 
-type Props = {
+type Properties = {
   readonly center?: boolean;
   readonly sentences: SentenceType[];
   readonly style: StyleProp<TextStyle>;
 };
 
-export const Sentence = ({ center, sentences, style }: Props) => (
+export const Sentence = ({ center, sentences, style }: Properties) => (
   <OriginalText style={style}>
     {sentences.map(({ bold, emphasis, onPress, title, type }) => (
       <Text

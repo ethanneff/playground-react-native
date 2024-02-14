@@ -9,7 +9,7 @@ import {
 
 export type Direction = 'down' | 'left' | 'right' | 'up';
 
-type Props = {
+type Properties = {
   noReverse?: boolean;
 };
 
@@ -22,7 +22,7 @@ const inverse: Record<string, Direction> = {
 
 export const useGesture = ({
   noReverse,
-}: Props): {
+}: Properties): {
   direction: MutableRefObject<Direction>;
   panHandlers: GestureResponderHandlers;
 } => {

@@ -9,14 +9,19 @@ import {
 } from '../../../../components';
 import { spacing, useColors } from '../../../../features';
 
-type Props = {
+type Properties = {
   readonly disabled: boolean;
   readonly icon: IconName;
   readonly onPress: () => void;
   readonly title: string;
 };
 
-export const SocialButton = ({ disabled, icon, onPress, title }: Props) => {
+export const SocialButton = ({
+  disabled,
+  icon,
+  onPress,
+  title,
+}: Properties) => {
   const colors = useColors();
   return (
     <Pressable

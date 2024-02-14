@@ -11,7 +11,7 @@ export const slides: CarouselSlide[] = [
           [{ title: 'Start investing commission-free' }],
           [
             { title: 'Other fees may apply. View our' },
-            { onPress: () => undefined, title: 'fee schedule' },
+            { onPress: () => false, title: 'fee schedule' },
             { title: 'to learn more. All investments have risks.' },
           ],
         ],
@@ -33,7 +33,7 @@ export const slides: CarouselSlide[] = [
                 'Invest in thousands of US an global stocks without paying commission or foreign exchange fees.',
             },
           ],
-          [{ onPress: () => undefined, title: 'View fee disclosures' }],
+          [{ onPress: () => false, title: 'View fee disclosures' }],
         ],
         title: 'Enjoy commission-free stock trading',
         titleStyle: { paddingBottom: spacing(10) },
@@ -90,7 +90,7 @@ export const slides: CarouselSlide[] = [
               title:
                 'Robinhood Financial is a member of SIPC. Securities in your account are protected up to $500,000. For details, please see',
             },
-            { onPress: () => undefined, title: 'www.sipc.org' },
+            { onPress: () => false, title: 'www.sipc.org' },
             { title: '.' },
           ],
         ],

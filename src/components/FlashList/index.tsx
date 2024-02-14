@@ -9,10 +9,10 @@ import {
 import React, { type RefObject } from 'react';
 
 export type FlashListType<T> = List<T>;
-export type FlashListRef<T> = List<T> | null;
+export type FlashListReference<T> = List<T> | null;
 export type FlashListRenderItem<T> = ListRenderItem<T>;
 
-type MasonryProps<ItemT> = FlashListProps<ItemT> & {
+type MasonryProperties<ItemT> = FlashListProps<ItemT> & {
   readonly estimatedItemSize: number;
   readonly onRef?: RefObject<MasonryFlashListRef<ItemT>>;
 };
@@ -21,7 +21,7 @@ export const MasonryFlashList = <ItemT,>({
   estimatedItemSize,
   onRef,
   ...rest
-}: MasonryProps<ItemT>) => (
+}: MasonryProperties<ItemT>) => (
   <MasonryList
     estimatedItemSize={estimatedItemSize}
     keyboardShouldPersistTaps="handled"
@@ -30,7 +30,7 @@ export const MasonryFlashList = <ItemT,>({
   />
 );
 
-type ListProps<ItemT> = FlashListProps<ItemT> & {
+type ListProperties<ItemT> = FlashListProps<ItemT> & {
   readonly estimatedItemSize: number;
   readonly onRef?: RefObject<List<ItemT>>;
 };
@@ -39,7 +39,7 @@ export const FlashList = <ItemT,>({
   estimatedItemSize,
   onRef,
   ...rest
-}: ListProps<ItemT>) => (
+}: ListProperties<ItemT>) => (
   <List
     estimatedItemSize={estimatedItemSize}
     keyboardShouldPersistTaps="handled"

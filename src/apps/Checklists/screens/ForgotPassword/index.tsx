@@ -8,23 +8,25 @@ import {
   TextInput,
   Toast,
   View,
-  type TextInputRef,
+  type TextInputReference,
 } from '../../../../components';
 import {
   useNavigation,
-  type StackNavigationProp,
+  type StackNavigationProperty,
 } from '../../../../conversions';
 import { spacing, useAuth, useColors } from '../../../../features';
 import { type UnAuthStackRoutes } from '../../types';
 
 export const ForgotPassword = () => {
   const { goBack } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'forgot-password'>>();
+    useNavigation<
+      StackNavigationProperty<UnAuthStackRoutes, 'forgot-password'>
+    >();
   const { resetPassword } = useAuth();
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const colors = useColors();
-  const emailRef = useRef<TextInputRef>(null);
+  const emailReference = useRef<TextInputReference>(null);
 
   const handleForgotPassword = useCallback(async () => {
     if (!email) {
@@ -32,7 +34,7 @@ export const ForgotPassword = () => {
         props: { title: 'Please enter a valid email address.' },
         type: 'negative',
       });
-      emailRef.current?.focus();
+      emailReference.current?.focus();
       return;
     }
     setLoading(true);
@@ -81,7 +83,7 @@ export const ForgotPassword = () => {
               focusOnLoad
               keyboardType="email-address"
               onChangeText={handleChange}
-              onRef={emailRef}
+              onRef={emailReference}
               onSubmitEditing={handleForgotPassword}
               placeholder="Email address"
               returnKeyType="next"

@@ -10,7 +10,7 @@ import {
 } from '../../../components';
 import { useNavigation } from '../../../conversions';
 import { spacing } from '../../../features';
-import { landingRoutes } from '../navParams';
+import { landingRoutes } from '../navParameters';
 import { Title } from './Title';
 
 export const Landing = () => {

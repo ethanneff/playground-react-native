@@ -4,23 +4,26 @@ import { NativeModules } from 'react-native';
 import mockRNDeviceInfo from 'react-native-device-info/jest/react-native-device-info-mock';
 import 'react-native-gesture-handler/jestSetup';
 import 'react-native-get-random-values';
-import mockRNLocalize from 'react-native-localize/mock';
 import { mockGoBack, mockNavigate } from '../src/mocks/Navigation';
 
 jest.mock('react-native-code-push', () => {
   const cp = () => (app) => app;
   Object.assign(cp, {
     InstallMode: {},
-    CheckFrequency: { MANUAL: null, ON_APP_START: null, ON_APP_RESUME: null },
+    CheckFrequency: {
+      MANUAL: undefined,
+      ON_APP_START: undefined,
+      ON_APP_RESUME: undefined,
+    },
     SyncStatus: {},
     UpdateState: {},
     DeploymentStatus: {},
     DEFAULT_UPDATE_DIALOG: {},
     allowRestart: jest.fn(),
-    checkForUpdate: jest.fn(() => Promise.resolve(null)),
+    checkForUpdate: jest.fn(() => Promise.resolve(undefined)),
     disallowRestart: jest.fn(),
-    getCurrentPackage: jest.fn(() => Promise.resolve(null)),
-    getUpdateMetadata: jest.fn(() => Promise.resolve(null)),
+    getCurrentPackage: jest.fn(() => Promise.resolve(undefined)),
+    getUpdateMetadata: jest.fn(() => Promise.resolve(undefined)),
     notifyAppReady: jest.fn(() => Promise.resolve()),
     restartApp: jest.fn(),
     sync: jest.fn(() => Promise.resolve(1)),
@@ -41,21 +44,36 @@ jest.mock('redux-persist', () => {
       .mockImplementation((config, reducers) => reducers),
   };
 });
-jest.mock('react-native-sensors', () => null);
+jest.mock('react-native-sensors', () => undefined);
 jest.mock('react-native-config', () => ({
-  APP: null,
-  GOOGLE_SIGN_IN: null,
-  DISABLE_ESLINT_PLUGIN: null,
-  FACEBOOK_APP_ID: null,
+  APP: undefined,
+  GOOGLE_SIGN_IN: undefined,
+  DISABLE_ESLINT_PLUGIN: undefined,
+  FACEBOOK_APP_ID: undefined,
 }));
 jest.mock('react-native-rate', () => ({
-  AndroidMarket: { Google: null },
+  AndroidMarket: { Google: undefined },
 }));
-jest.mock('d3-scale', () => null);
-jest.mock('d3-shape', () => null);
-jest.mock('lottie-react-native', () => null);
+jest.mock('d3-scale', () => undefined);
+jest.mock('d3-shape', () => undefined);
+jest.mock('lottie-react-native', () => undefined);
 jest.mock('uuid', () => ({ v4: jest.fn(() => 'uuid') }));
-jest.mock('react-native-localize', () => mockRNLocalize);
+jest.mock('react-native-localize', () => ({
+  getCountry: jest.fn(() => 'US'),
+  getLocales: jest.fn(() => ['en-US']),
+  getTimeZone: jest.fn(() => 'America/New_York'),
+  uses24HourClock: jest.fn(() => true),
+  getCalendar: jest.fn(() => 'gregorian'),
+  getCurrencies: jest.fn(() => ['USD']),
+  getLocales: jest.fn(() => ['en-US']),
+  getNumberFormatSettings: jest.fn(() => ({})),
+  getTemperatureUnit: jest.fn(() => 'celsius'),
+  getTimeZone: jest.fn(() => 'America/New_York'),
+  uses24HourClock: jest.fn(() => true),
+  usesAutoDateAndTime: jest.fn(() => true),
+  usesAutoTimeZone: jest.fn(() => true),
+  usesMetricSystem: jest.fn(() => true),
+}));
 jest.mock('@react-native-community/netinfo', () => mockRNNetInfo);
 jest.mock('react-native-device-info', () => mockRNDeviceInfo);
 jest.mock('react-native-safe-area-context', () => {
@@ -92,8 +110,8 @@ jest.mock('@invertase/react-native-apple-authentication', () => () => ({
 }));
 jest.mock('@react-native-google-signin/google-signin', () => {
   const mockUserInfo = {
-    accessToken: null,
-    accessTokenExpirationDate: null,
+    accessToken: undefined,
+    accessTokenExpirationDate: undefined,
     idToken: 'mockIdToken',
     scopes: [],
     serverAuthCode: 'mockServerAuthCode',
@@ -153,7 +171,7 @@ jest.mock(
 );
 jest.mock('react-native-reanimated', () => {
   const Reanimated = require('react-native-reanimated/mock');
-  Reanimated.default.call = () => {};
+  Reanimated.default.call = () => false;
   return Reanimated;
 });
 

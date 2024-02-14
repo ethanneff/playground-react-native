@@ -11,9 +11,9 @@ import {
 } from 'react-native';
 import { useColors, type MonoMultiColor } from '../../features';
 
-export type ViewRef = Original | null;
+export type ViewReference = Original | null;
 
-type Props = {
+type Properties = {
   readonly accessibilityLabel?: string;
   readonly accessibilityRole?: AccessibilityRole;
   readonly accessible?: boolean;
@@ -97,7 +97,7 @@ export const View = ({
   style,
   testID,
   width,
-}: Props) => {
+}: Properties) => {
   const colors = useColors();
 
   const styles = StyleSheet.create({

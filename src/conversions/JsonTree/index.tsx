@@ -1,2 +1,1 @@
-import JsonTree from 'react-native-json-tree';
-export { JsonTree };
+export { default as JsonTree } from 'react-native-json-tree';

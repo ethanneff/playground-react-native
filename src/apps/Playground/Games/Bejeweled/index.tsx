@@ -21,10 +21,10 @@ const getRandom = (max: number) => Math.floor(Math.random() * max);
 
 const getInitialState = (rows: number, cols: number, gems: Gem[]): Board => {
   const col = [];
-  for (let i = 0; i < cols; i++) {
+  for (let rowIndex = 0; rowIndex < cols; rowIndex++) {
     const row = [];
-    for (let j = 0; j < rows; j++) row.push(gems[getRandom(gems.length)]);
-
+    for (let colIndex = 0; colIndex < rows; colIndex++)
+      row.push(gems[getRandom(gems.length)]);
     col.push(row);
   }
   return col;
@@ -32,24 +32,42 @@ const getInitialState = (rows: number, cols: number, gems: Gem[]): Board => {
 
 const getMatches = (board: Board): Matches => {
   const matches: Matches = {};
-  for (let i = 0; i < board.length; i++)
-    for (let j = 0; j < board[i].length; j++) {
-      const mid = board[i][j];
-      const left = i - 1 < 0 ? undefined : board[i - 1][j];
-      const right = i + 1 >= board.length ? undefined : board[i + 1][j];
-      const up = j - 1 < 0 ? undefined : board[i][j - 1];
-      const down = j + 1 >= board[i].length ? undefined : board[i][j + 1];
+  for (let rowIndex = 0; rowIndex < board.length; rowIndex++)
+    for (let colIndex = 0; colIndex < board[rowIndex].length; colIndex++) {
+      const mid = board[rowIndex][colIndex];
+      const left = rowIndex - 1 < 0 ? undefined : board[rowIndex - 1][colIndex];
+      const right =
+        rowIndex + 1 >= board.length
+          ? undefined
+          : board[rowIndex + 1][colIndex];
+      const up = colIndex - 1 < 0 ? undefined : board[rowIndex][colIndex - 1];
+      const down =
+        colIndex + 1 >= board[rowIndex].length
+          ? undefined
+          : board[rowIndex][colIndex + 1];
       const vertical = up?.key === mid.key && down?.key === mid.key;
       const horizontal = left?.key === mid.key && right?.key === mid.key;
       if (vertical) {
-        matches[`${i}${j - 1}`] = { x: i, y: j - 1 };
-        matches[`${i}${j}`] = { x: i, y: j };
-        matches[`${i}${j + 1}`] = { x: i, y: j + 1 };
+        matches[`${rowIndex}${colIndex - 1}`] = {
+          x: rowIndex,
+          y: colIndex - 1,
+        };
+        matches[`${rowIndex}${colIndex}`] = { x: rowIndex, y: colIndex };
+        matches[`${rowIndex}${colIndex + 1}`] = {
+          x: rowIndex,
+          y: colIndex + 1,
+        };
       }
       if (horizontal) {
-        matches[`${i - 1}${j}`] = { x: i - 1, y: j };
-        matches[`${i}${j}`] = { x: i, y: j };
-        matches[`${i + 1}${j}`] = { x: i + 1, y: j };
+        matches[`${rowIndex - 1}${colIndex}`] = {
+          x: rowIndex - 1,
+          y: colIndex,
+        };
+        matches[`${rowIndex}${colIndex}`] = { x: rowIndex, y: colIndex };
+        matches[`${rowIndex + 1}${colIndex}`] = {
+          x: rowIndex + 1,
+          y: colIndex,
+        };
       }
     }
 
@@ -93,11 +111,11 @@ export const Bejeweled = () => {
     if (sum === 0) {
       setSelected(initialSelected);
     } else if (sum === 1) {
-      setBoard((prev) => {
-        const temp = prev[x][y];
-        prev[x][y] = prev[selected.x][selected.y];
-        prev[selected.x][selected.y] = temp;
-        return [...prev];
+      setBoard((previous) => {
+        const temporary = previous[x][y];
+        previous[x][y] = previous[selected.x][selected.y];
+        previous[selected.x][selected.y] = temporary;
+        return [...previous];
       });
       setSelected(initialSelected);
     } else {

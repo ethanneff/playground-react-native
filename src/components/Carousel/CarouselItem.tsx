@@ -7,12 +7,12 @@ import { Icon } from '../Icon';
 import { Text } from '../Text';
 import { type CarouselSlide } from './types';
 
-type Props = {
+type Properties = {
   readonly item: CarouselSlide;
   readonly width: number;
 };
 
-export const CarouselItem = ({ item, width }: Props) => {
+export const CarouselItem = ({ item, width }: Properties) => {
   const colors = useColors();
   const styles = StyleSheet.create({
     item: {

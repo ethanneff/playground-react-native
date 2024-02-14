@@ -43,11 +43,21 @@ export const TicTacToe = () => {
   }, []);
 
   const onCellPress = useCallback(
-    (i: number, j: number) => () => {
+    (index: number, index_: number) => () => {
       setGame((p) => {
         const v = getNextValue(p.turn);
-        const updatedBoard = getUpdatedBoard({ board: p.board, i, j, v });
-        const didWin = getWinner({ board: p.board, boardSize, i, j });
+        const updatedBoard = getUpdatedBoard({
+          board: p.board,
+          i: index,
+          j: index_,
+          v,
+        });
+        const didWin = getWinner({
+          board: p.board,
+          boardSize,
+          i: index,
+          j: index_,
+        });
         const winner = didWin === 1 ? 'white' : didWin === -1 ? 'black' : null;
         return {
           ...p,
@@ -80,12 +90,12 @@ export const TicTacToe = () => {
         />
         <Spacing padding={spacing(2)} />
         <View>
-          {game.board.map((row, i) => (
+          {game.board.map((row, rowIndex) => (
             <View
               flexDirection="row"
               key={v4()}
             >
-              {row.map((_, j) => (
+              {row.map((_, colIndex) => (
                 <Pressable
                   containerStyle={{
                     alignItems: 'center',
@@ -97,13 +107,14 @@ export const TicTacToe = () => {
                     ...dropShadow(1),
                   }}
                   disabled={
-                    game.board[i][j] !== 0 || game.state === 'game-over'
+                    game.board[rowIndex][colIndex] !== 0 ||
+                    game.state === 'game-over'
                   }
                   key={v4()}
-                  onPress={onCellPress(i, j)}
+                  onPress={onCellPress(rowIndex, colIndex)}
                 >
                   <Text
-                    title={getValue(game.board[i][j])}
+                    title={getValue(game.board[rowIndex][colIndex])}
                     type="h4"
                   />
                 </Pressable>

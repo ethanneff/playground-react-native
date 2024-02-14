@@ -7,16 +7,16 @@ import {
   Text,
   TextInput,
   Toast,
-  type TextInputRef,
+  type TextInputReference,
 } from '../../../../components';
 import {
   Firebase,
+  type StackNavigationProperty,
   useIsFocused,
   useNavigation,
   useRoute,
   type FirebaseAuthTypes,
-  type RouteProp,
-  type StackNavigationProp,
+  type RouteProp as RouteProperty,
 } from '../../../../conversions';
 import { spacing } from '../../../../features';
 import { type UnAuthStackRoutes } from '../../types';
@@ -25,11 +25,13 @@ const initialState = { loading: false };
 
 export const ForgotPassword = () => {
   const { goBack } =
-    useNavigation<StackNavigationProp<UnAuthStackRoutes, 'forgot-password'>>();
-  const route = useRoute<RouteProp<UnAuthStackRoutes, 'forgot-password'>>();
+    useNavigation<
+      StackNavigationProperty<UnAuthStackRoutes, 'forgot-password'>
+    >();
+  const route = useRoute<RouteProperty<UnAuthStackRoutes, 'forgot-password'>>();
   const email = useRef(route.params.email);
   const [state, setState] = useState<typeof initialState>(initialState);
-  const emailRef = useRef<TextInputRef>(null);
+  const emailReference = useRef<TextInputReference>(null);
   const focus = useIsFocused();
 
   const handleResetPassword = useCallback(async () => {
@@ -53,12 +55,12 @@ export const ForgotPassword = () => {
         type: 'positive',
       });
       goBack();
-    } catch (e) {
+    } catch (error) {
       setState((p) => ({ ...p, loading: false }));
-      const err = e as FirebaseAuthTypes.NativeFirebaseAuthError;
+      const firebaseError = error as FirebaseAuthTypes.NativeFirebaseAuthError;
       Toast.show({
         props: {
-          description: `${err.nativeErrorMessage}`,
+          description: firebaseError.nativeErrorMessage,
           title: 'Unable to reset your password.',
         },
         type: 'negative',
@@ -73,7 +75,7 @@ export const ForgotPassword = () => {
 
   useEffect(() => {
     if (!focus) return;
-    emailRef.current?.focus();
+    emailReference.current?.focus();
   }, [focus]);
 
   return (
@@ -102,7 +104,7 @@ export const ForgotPassword = () => {
           editable={state.loading}
           keyboardType="email-address"
           onChangeText={handleEmailChange}
-          onRef={emailRef}
+          onRef={emailReference}
           onSubmitEditing={handleResetPassword}
           placeholder="Email address"
           returnKeyType="send"

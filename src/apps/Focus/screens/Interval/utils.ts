@@ -32,11 +32,11 @@ export const keyExtractor = (item: Item): string => String(item.id);
 
 export const getMoreItems = (items: Item[]): Item[] => {
   const group = [...items];
-  for (let i = 0; i < 100; i++) {
+  for (let index = 0; index < 100; index++) {
     const lastItem =
       group.length === 0
         ? add(startOfDay(new Date()), { days: 2 })
-        : group[group.length - 1].id;
+        : group.at(-1)?.id ?? 0;
     const next = sub(lastItem, { hours: 1 });
     const id = next.valueOf();
     group.push({

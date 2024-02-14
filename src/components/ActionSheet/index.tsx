@@ -13,7 +13,7 @@ import { Icon } from '../Icon';
 import { Pressable } from '../Pressable';
 import { Text } from '../Text';
 
-type NotificationProps = {
+type NotificationProperties = {
   readonly dismissDelay?: number;
   readonly height?: number;
   readonly noSwipe?: boolean;
@@ -32,7 +32,7 @@ export const ActionSheet = ({
   onCancel,
   thresholdPercent = 0.9,
   title,
-}: NotificationProps) => {
+}: NotificationProperties) => {
   const colors = useColors();
   const styles = StyleSheet.create({
     flex: { flex: 1 },

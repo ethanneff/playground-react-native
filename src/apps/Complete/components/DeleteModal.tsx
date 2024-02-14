@@ -2,12 +2,12 @@ import React from 'react';
 import { Button, Modal, Text, View } from '../../../components';
 import { spacing } from '../../../features';
 
-type DeleteModalProps = {
+type DeleteModalProperties = {
   readonly onCancel: () => void;
   readonly onDelete: () => void;
 };
 
-export const DeleteModal = ({ onCancel, onDelete }: DeleteModalProps) => (
+export const DeleteModal = ({ onCancel, onDelete }: DeleteModalProperties) => (
   <Modal
     onBackgroundPress={onCancel}
     showOverlay

@@ -13,7 +13,7 @@ import { View } from '../View';
 import { getIcon, getPlacement } from './utils';
 
 type Position = 'bottom' | 'left' | 'right' | 'top';
-type Props = {
+type Properties = {
   readonly backgroundColor: keyof MonoMultiColor;
   readonly duration?: number;
   readonly onPress?: () => void;
@@ -29,7 +29,7 @@ export const ScrollButton = ({
   position,
   title,
   visible,
-}: Props) => {
+}: Properties) => {
   const icon = getIcon(position);
   const colors = useColors();
   const useNativeDriver = useDriver();
