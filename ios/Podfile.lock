@@ -971,7 +971,7 @@ PODS:
   - libwebp/sharpyuv (1.3.2)
   - libwebp/webp (1.3.2):
     - libwebp/sharpyuv
-  - lottie-ios (4.4.0)
+  - lottie-ios (4.4.1)
   - lottie-react-native (6.6.0):
     - lottie-ios (~> 4.4.0)
     - React-Core
@@ -1318,7 +1318,7 @@ PODS:
   - react-native-mmkv-storage (0.9.1):
     - MMKV (= 1.2.13)
     - React-Core
-  - react-native-netinfo (11.2.1):
+  - react-native-netinfo (11.3.0):
     - React-Core
   - react-native-restart (0.0.27):
     - React-Core
@@ -1442,7 +1442,7 @@ PODS:
     - React-Core
   - RNCMaskedView (0.3.1):
     - React-Core
-  - RNDeviceInfo (10.12.0):
+  - RNDeviceInfo (10.13.0):
     - React-Core
   - RNDevMenu (4.1.1):
     - React-Core
@@ -1489,7 +1489,7 @@ PODS:
     - React-Core
   - RNRate (1.2.12):
     - React-Core
-  - RNReanimated (3.7.0):
+  - RNReanimated (3.7.1):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
     - ReactCommon/turbomodule/core
@@ -1890,7 +1890,7 @@ SPEC CHECKSUMS:
   leveldb-library: f03246171cce0484482ec291f88b6d563699ee06
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
-  lottie-ios: ef1be1f90d54255f08e09d767950e43714661178
+  lottie-ios: e047b1d2e6239b787cc5e9755b988869cf190494
   lottie-react-native: 00ac19344296ae018260aabd14d6b36dd816b0e2
   MMKV: aac95d817a100479445633f2b3ed8961b4ac5043
   MMKVCore: 9cfef4c48c6c46f66226fc2e4634d78490206a48
@@ -1919,7 +1919,7 @@ SPEC CHECKSUMS:
   react-native-flipper-performance-plugin: 42ec5017abd26e7c5a1f527f2db92c14a90cabdb
   react-native-get-random-values: 384787fd76976f5aec9465aff6fa9e9129af1e74
   react-native-mmkv-storage: cfb6854594cfdc5f7383a9e464bb025417d1721c
-  react-native-netinfo: 8a7fd3f7130ef4ad2fb4276d5c9f8d3f28d2df3d
+  react-native-netinfo: 299dad906cdbf3b67bcc6f693c807f98bdd127cc
   react-native-restart: 7595693413fe3ca15893702f2c8306c62a708162
   react-native-safe-area-context: b97eb6f9e3b7f437806c2ce5983f479f8eb5de4b
   react-native-slider: cc89964e1432fa31aa9db7a0fa9b21e26b5d5152
@@ -1943,7 +1943,7 @@ SPEC CHECKSUMS:
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   RNAppleAuthentication: e99eaf3c4c01ad8ecb6125dd6f0cfd98871685b5
   RNCMaskedView: 090213d32d8b3bb83a4dcb7d12c18f0152591906
-  RNDeviceInfo: db5c64a060e66e5db3102d041ebe3ef307a85120
+  RNDeviceInfo: 5e4695f906aeb624855cee8d568a46037e4a50f7
   RNDevMenu: 72807568fe4188bd4c40ce32675d82434b43c45d
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
   RNFBAnalytics: 468af995e05d72cd13dae34262514b2b41ea48ba
@@ -1957,7 +1957,7 @@ SPEC CHECKSUMS:
   RNGoogleSignin: fc408799f1990a12497a32f64280c0fe353ffcc1
   RNLocalize: 4222a3756cdbe2dc9a5bdf445765a4d2572107cb
   RNRate: ef3bcff84f39bb1d1e41c5593d3eea4aab2bd73a
-  RNReanimated: 9dfe7a19dd7c3e123b23db42e74bf051725f2ea3
+  RNReanimated: 43675f1f0e704abe8ebf953fd79b00e66302cda2
   RNScreens: 3c5b9f4a9dcde752466854b6109b79c0e205dad3
   RNSensors: 117ba71c7eeeea0407ea0c0bb79e3495d602049b
   RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
