@@ -4154,10 +4154,10 @@
     opencollective-postinstall "^2.0.3"
     superstruct "^0.6.2"
 
-"@react-native-firebase/auth@18.6.0":
-  version "18.6.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-18.6.0.tgz#0940644fceec3454e2351d33205e1074fa93bd69"
-  integrity sha512-Z0UL1nLEy/98Lb4HTeemTbvezEDO9boVEy0bPijH/SYw3gOUoKzHCBVgTIhQb8X6BHpcSYsSHSD+pwp4bfcbzw==
+"@react-native-firebase/auth@20.4.0":
+  version "20.4.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-20.4.0.tgz#2619179226077e6c34d8f6cf13de0df0cde1310d"
+  integrity sha512-LUmlS9m62QdDoqJKxPyZIBLne1O7ZznY3QjGh5tfU1QVk4DM/b1iG4wR06nyEK9PqzFY5BdqWwWAKbquXl78HQ==
   dependencies:
     plist "^3.1.0"
 
