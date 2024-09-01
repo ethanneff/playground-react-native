@@ -29,7 +29,7 @@
     "@react-navigation/native": "6.1.12",
     "@react-navigation/native-stack": "6.9.20",
     "@shopify/flash-list": "1.6.3",
-    "axios": "1.6.7",
+    "axios": "1.7.7",
     "d3-scale": "4.0.2",
     "d3-shape": "3.2.0",
     "date-fns": "3.3.1",
