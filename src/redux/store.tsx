@@ -41,6 +41,10 @@ import {
   chatMessageReducer,
 } from '../apps/Playground/Features/Chat/Messages';
 import {
+  bejeweledActions,
+  bejeweledReducer,
+} from '../apps/Playground/Games/Bejeweled/redux';
+import {
   gameOfLifeActions,
   gameOfLifeReducer,
 } from '../apps/Playground/Games/GameOfLife/redux';
@@ -70,7 +74,10 @@ export const actions = {
     ...focusPreferencesActions,
     ...focusIntervalsActions,
   },
-  gameOfLife: gameOfLifeActions,
+  games: {
+    bejeweled: bejeweledActions,
+    life: gameOfLifeActions,
+  },
   network: networkActions,
   theme: themeActions,
 };
@@ -96,7 +103,10 @@ export const reducers = combineReducers({
     preferences: focusPreferencesReducer,
     users: focusUsersReducer,
   }),
-  gameOfLife: gameOfLifeReducer,
+  games: combineReducers({
+    bejeweled: bejeweledReducer,
+    life: gameOfLifeReducer,
+  }),
   history: historyReducer,
   network: networkReducer,
   theme: themeReducer,

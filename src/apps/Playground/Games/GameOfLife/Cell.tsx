@@ -18,7 +18,7 @@ export const Cell = ({ x, y }: Properties) => {
   const dispatch = useAppDispatch();
   const smallest = useAppSelector(getSmallestDimension);
   const selected = useAppSelector(getCell(x, y));
-  const count = useAppSelector((state) => state.gameOfLife.count);
+  const count = useAppSelector((state) => state.games.life.count);
   const size = smallest / count;
 
   const onItemPress = useCallback(

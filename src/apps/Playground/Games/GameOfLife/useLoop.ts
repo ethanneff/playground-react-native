@@ -4,8 +4,8 @@ import { loopBoard } from './redux';
 
 export const useLoop = (): void => {
   const dispatch = useAppDispatch();
-  const run = useAppSelector((state) => state.gameOfLife.run);
-  const delay = useAppSelector((state) => state.gameOfLife.delay);
+  const run = useAppSelector((state) => state.games.life.run);
+  const delay = useAppSelector((state) => state.games.life.delay);
   const timeoutReference = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const loop = useCallback(() => {

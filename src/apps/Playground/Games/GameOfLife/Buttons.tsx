@@ -6,7 +6,7 @@ import { resetBoard, toggleRun } from './redux';
 
 export const Buttons = () => {
   const dispatch = useAppDispatch();
-  const run = useAppSelector((state) => state.gameOfLife.run);
+  const run = useAppSelector((state) => state.games.life.run);
   const onRandom = useCallback(() => dispatch(resetBoard(0.5)), [dispatch]);
   const onStart = useCallback(() => dispatch(toggleRun()), [dispatch]);
   const onClear = useCallback(() => dispatch(resetBoard(0)), [dispatch]);

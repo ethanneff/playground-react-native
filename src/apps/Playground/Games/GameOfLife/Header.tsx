@@ -5,8 +5,8 @@ import { updateCount, updateDelay } from './redux';
 
 export const Header = () => {
   const dispatch = useAppDispatch();
-  const delay = useAppSelector((state) => state.gameOfLife.delay);
-  const count = useAppSelector((state) => state.gameOfLife.count);
+  const delay = useAppSelector((state) => state.games.life.delay);
+  const count = useAppSelector((state) => state.games.life.count);
   const onCountSlide = useCallback(
     (v: number) => dispatch(updateCount(v)),
     [dispatch],

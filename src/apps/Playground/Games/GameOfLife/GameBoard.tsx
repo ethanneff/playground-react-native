@@ -6,7 +6,7 @@ import { Cell } from './Cell';
 import { useLoop } from './useLoop';
 
 export const GameBoard = () => {
-  const count = useAppSelector((state) => state.gameOfLife.count);
+  const count = useAppSelector((state) => state.games.life.count);
   const array = useMemo(() => Array.from({ length: count }).fill(0), [count]);
   useLoop();
 
