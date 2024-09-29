@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { type ViewToken } from 'react-native';
-import { View, type FlashListReference } from '../../components';
+import { Pressable, View, type FlashListReference } from '../../components';
 import { spacing, useLayout } from '../../features';
 import { CarouselDots } from './CarouselDots';
 import { CarouselList } from './CarouselList';
@@ -84,24 +84,25 @@ export const Carousel = ({
   }, [duration, loop]);
 
   return (
-    <View
-      flex={1}
-      onLayout={onLayout}
-      onTouchStart={onTouchPauseLooping}
-    >
-      <CarouselList
-        onRef={flatList}
-        onViewableItemsChanged={onViewableItemsChanged}
-        slides={slides}
-        viewabilityConfig={viewabilityConfigReference}
-        width={layout?.width ?? 0}
-      />
-      <CarouselDots
-        activeIndex={activeIndex}
-        dotSize={dotSize}
-        length={slides.length}
-        onDotPress={onDotPress}
-      />
-    </View>
+    <Pressable onPressIn={onTouchPauseLooping}>
+      <View
+        flex={1}
+        onLayout={onLayout}
+      >
+        <CarouselList
+          onRef={flatList}
+          onViewableItemsChanged={onViewableItemsChanged}
+          slides={slides}
+          viewabilityConfig={viewabilityConfigReference}
+          width={layout?.width ?? 0}
+        />
+        <CarouselDots
+          activeIndex={activeIndex}
+          dotSize={dotSize}
+          length={slides.length}
+          onDotPress={onDotPress}
+        />
+      </View>
+    </Pressable>
   );
 };

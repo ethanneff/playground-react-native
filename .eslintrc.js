@@ -142,6 +142,7 @@ module.exports = {
     'typescript-sort-keys/string-enum': 'error',
     'sort-imports': 'off',
     // style
+    'eslint-comments/no-unused-disable': 'error',
     'unicorn/filename-case': 'off',
     'unicorn/no-null': 'off',
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],

@@ -184,7 +184,6 @@ export const useDeviceInfo = () => {
       manufacturer: await DeviceInfo.getManufacturer(),
       maxMemory: await DeviceInfo.getMaxMemory(),
       model: DeviceInfo.getModel(),
-      phoneNumber: await DeviceInfo.getPhoneNumber(),
       powerState: isEmulator ? {} : await DeviceInfo.getPowerState(),
       previewSdkInt: await DeviceInfo.getPreviewSdkInt(),
       product: await DeviceInfo.getProduct(),

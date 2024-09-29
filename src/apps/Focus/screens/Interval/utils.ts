@@ -36,7 +36,7 @@ export const getMoreItems = (items: Item[]): Item[] => {
     const lastItem =
       group.length === 0
         ? add(startOfDay(new Date()), { days: 2 })
-        : group.at(-1)?.id ?? 0;
+        : (group.at(-1)?.id ?? 0);
     const next = sub(lastItem, { hours: 1 });
     const id = next.valueOf();
     group.push({

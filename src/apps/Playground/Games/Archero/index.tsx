@@ -1,13 +1,17 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import {
   Animated,
   PanResponder,
-  type LayoutChangeEvent,
   type PanResponderInstance,
 } from 'react-native';
 import { Screen, View } from '../../../../components';
 import { useNavigation } from '../../../../conversions';
-import { colorWithOpacity, useColors, useDriver } from '../../../../features';
+import {
+  colorWithOpacity,
+  useColors,
+  useDriver,
+  useLayout,
+} from '../../../../features';
 import { useAppSelector } from '../../../../redux';
 
 const charSize = 50;
@@ -27,8 +31,8 @@ export const Archero = () => {
   const interval = useRef<ReturnType<typeof setInterval> | null>(null);
   const gesture = useRef({ dx: 0, dy: 0, x0: 0, y0: 0 });
   const window = useAppSelector((state) => state.device.dimensions.window);
-  const [dimensions, setDimensions] = useState({ height: 1000, width: 1000 });
-  const { height, width } = dimensions;
+  const { layout, onLayout } = useLayout();
+  const { height, width } = layout ?? window;
   const smallest = width > height ? height : width;
   const joystickSize = smallest / 3;
   const joystickCenter = joystickSize / 2;
@@ -126,11 +130,6 @@ export const Archero = () => {
     },
     onStartShouldSetPanResponder: () => true,
   });
-
-  const onLayout = useCallback((event: LayoutChangeEvent) => {
-    const { layout } = event.nativeEvent;
-    setDimensions({ height: layout.height, width: layout.width });
-  }, []);
 
   return (
     <Screen

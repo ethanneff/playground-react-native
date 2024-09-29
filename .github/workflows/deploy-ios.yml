@@ -64,7 +64,7 @@ jobs:
 
       - name: Install pods
         if: steps.cocoapods-cache.outputs.cache-hit != 'true'
-        run: NO_FLIPPER=1 pod install --project-directory=ios
+        run: pod install --project-directory=ios
 
       - name: Deploy iOS
         uses: maierj/fastlane-action@v3.0.0

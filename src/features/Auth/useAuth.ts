@@ -84,9 +84,13 @@ export const useAuth = () => {
       await GoogleSignin.hasPlayServices({
         showPlayServicesUpdateDialog: true,
       });
-      const { idToken } = await GoogleSignin.signIn();
-      const googleCredential =
-        Firebase.auth.GoogleAuthProvider.credential(idToken);
+      const response = await GoogleSignin.signIn();
+      if (!response.data?.idToken) {
+        throw new Error('Google Sign-In failed - no id token returned');
+      }
+      const googleCredential = Firebase.auth.GoogleAuthProvider.credential(
+        response.data.idToken,
+      );
       return await Firebase.auth().signInWithCredential(googleCredential);
     } catch (error) {
       handleError(error);

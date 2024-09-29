@@ -30,7 +30,6 @@ before_all do
   git_pull
 end
 
-
 def slack_success(platform, app_name, method_name)
   slack(
     message: 'Success',

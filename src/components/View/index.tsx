@@ -1,149 +1,91 @@
-import React, { type ReactNode, type RefObject } from 'react';
+import React, { type MutableRefObject, type ReactNode } from 'react';
 import {
   // eslint-disable-next-line no-restricted-imports
-  View as Original,
+  View as RNView,
   StyleSheet,
-  type AccessibilityRole,
-  type FlexAlignType,
   type LayoutChangeEvent,
   type StyleProp,
   type ViewStyle,
 } from 'react-native';
-import { useColors, type MonoMultiColor } from '../../features';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useColors } from '../../features';
 
-export type ViewReference = Original | null;
+export type ViewReference = RNView | null;
 
-type Properties = {
-  readonly accessibilityLabel?: string;
-  readonly accessibilityRole?: AccessibilityRole;
+type ViewProperties = ViewStyle & {
+  readonly absoluteFillObject?: boolean;
   readonly accessible?: boolean;
-  readonly alignContent?:
-    | 'center'
-    | 'flex-end'
-    | 'flex-start'
-    | 'space-around'
-    | 'space-between'
-    | 'stretch';
-  readonly alignItems?: FlexAlignType;
-  readonly alignSelf?: FlexAlignType;
-  readonly backgroundColor?: keyof MonoMultiColor;
-  readonly borderRadius?: number;
   readonly children?: ReactNode;
   readonly collapsable?: boolean;
-  readonly cursor?: 'default' | 'pointer';
-  readonly display?: 'flex' | 'none';
-  readonly flex?: number;
-  readonly flexBasis?: number;
-  readonly flexDirection?: 'column' | 'row';
-  readonly flexGrow?: number;
-  readonly flexShrink?: number;
-  readonly flexWrap?: 'nowrap' | 'wrap-reverse' | 'wrap';
-  readonly gap?: number;
-  readonly height?: number;
-  readonly justifyContent?:
-    | 'center'
-    | 'flex-end'
-    | 'flex-start'
-    | 'space-around'
-    | 'space-between'
-    | 'space-evenly';
-  readonly margin?: number;
-  readonly onLayout?: (event: LayoutChangeEvent) => void;
-  readonly onRef?: RefObject<Original>;
-  readonly onTouchStart?: () => void;
-  readonly opacity?: number;
-  readonly overflow?: 'hidden' | 'scroll' | 'visible';
-  readonly padding?: number;
-  readonly paddingHorizontal?: number;
-  readonly paddingVertical?: number;
-  readonly position?: 'absolute' | 'relative';
+  readonly onLayout?: ((event: LayoutChangeEvent) => void) | undefined;
+  readonly onRef?: MutableRefObject<ViewReference>;
+  readonly safeArea?: boolean;
+  readonly safeAreaEdges?: ['top', 'right', 'bottom', 'left'];
   readonly style?: StyleProp<ViewStyle>;
   readonly testID?: string;
-  readonly width?: number;
+  readonly withDropShadow?: boolean;
 };
 
 export const View = ({
-  accessibilityLabel,
-  accessibilityRole,
+  absoluteFillObject,
   accessible,
-  alignContent,
-  alignItems,
-  alignSelf,
-  backgroundColor,
-  borderRadius,
   children,
   collapsable,
-  cursor,
-  display,
-  flex,
-  flexBasis,
-  flexDirection,
-  flexGrow,
-  flexShrink,
-  flexWrap,
-  gap,
-  height,
-  justifyContent,
-  margin,
   onLayout,
   onRef,
-  onTouchStart,
-  opacity,
-  overflow,
-  padding,
-  paddingHorizontal,
-  paddingVertical,
-  position,
+  safeArea,
+  safeAreaEdges,
   style,
   testID,
-  width,
-}: Properties) => {
+  withDropShadow,
+  ...rest
+}: ViewProperties) => {
   const colors = useColors();
-
+  const absolute = absoluteFillObject ? StyleSheet.absoluteFillObject : {};
+  const dropShadow =
+    withDropShadow && !__DEV__
+      ? {
+          elevation: 5,
+          shadowColor: colors.border.primaryA,
+          shadowOffset: { height: 2, width: 0 },
+          shadowOpacity: 0.2,
+          shadowRadius: 1,
+        }
+      : {};
   const styles = StyleSheet.create({
     view: {
-      alignContent,
-      alignItems,
-      alignSelf,
-      backgroundColor: backgroundColor
-        ? colors.background[backgroundColor]
-        : undefined,
-      borderRadius,
-      cursor,
-      display,
-      flex,
-      flexBasis,
-      flexDirection,
-      flexGrow,
-      flexShrink,
-      flexWrap,
-      gap,
-      height,
-      justifyContent,
-      margin,
-      opacity,
-      overflow,
-      padding,
-      paddingHorizontal,
-      paddingVertical,
-      position,
-      width,
+      ...absolute,
+      ...dropShadow,
+      ...rest,
     },
   });
 
+  if (safeArea) {
+    return (
+      <SafeAreaView
+        accessible={accessible}
+        collapsable={collapsable}
+        edges={safeAreaEdges}
+        onLayout={onLayout}
+        ref={onRef}
+        style={[styles.view, style]}
+        testID={testID}
+      >
+        {children}
+      </SafeAreaView>
+    );
+  }
+
   return (
-    <Original
-      accessibilityLabel={accessibilityLabel}
-      accessibilityRole={accessibilityRole}
+    <RNView
       accessible={accessible}
       collapsable={collapsable}
       onLayout={onLayout}
-      onTouchStart={onTouchStart}
       ref={onRef}
       style={[styles.view, style]}
       testID={testID}
     >
       {children}
-    </Original>
+    </RNView>
   );
 };

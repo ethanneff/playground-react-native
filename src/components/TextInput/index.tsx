@@ -285,8 +285,8 @@ export const TextInput = ({
             flexDirection="row"
           >
             {icons.map((icon) =>
-              icon.hidden ??
-              ((focus && !icon.focus) || (!focus && icon.focus)) ? null : (
+              (icon.hidden ??
+              ((focus && !icon.focus) || (!focus && icon.focus))) ? null : (
                 <Pressable
                   disabled={
                     icon.required ? text.trim().length === 0 : undefined

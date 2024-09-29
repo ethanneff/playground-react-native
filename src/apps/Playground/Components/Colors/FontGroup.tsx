@@ -22,13 +22,13 @@ export const FontGroup = ({ emphasis }: FontGroupProperties) => {
         title={emphasis}
         type="h6"
       />
-      {sizes.map((c) => (
+      {sizes.map((size) => (
         <Text
           center
           emphasis={emphasis}
-          key={c}
-          title={c}
-          type={c}
+          key={size}
+          title={size}
+          type={size}
         />
       ))}
     </View>

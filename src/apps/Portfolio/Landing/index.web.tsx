@@ -13,7 +13,7 @@ import {
   type IconName,
   type SentenceType,
 } from '../../../components';
-import { spacing, useColors } from '../../../features'; // eslint-disable-line import/order
+import { spacing, useColors } from '../../../features';
 
 const missingCallback = () => false;
 

@@ -93,7 +93,6 @@ type DetailsState = {
   manufacturer: string;
   maxMemory: number;
   model: string;
-  phoneNumber: string;
   powerState: Partial<PowerState>;
   previewSdkInt: number;
   product: string;

@@ -1,12 +1,12 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json",
+  "extends": "@react-native/typescript-config/tsconfig.json",
   "include": ["./src/**/*", "./.github/**/*"],
   "compilerOptions": {
     "jsx": "react-native",
     "lib": ["esnext", "dom"],
-    "module": "esnext",
+    "module": "Node16",
     "target": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

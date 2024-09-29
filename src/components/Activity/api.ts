@@ -26,8 +26,7 @@ const getHackerRankActivity = async (
 export const getApiActivity = async ({
   site,
   username,
-}: // eslint-disable-next-line require-await
-ApiInput): ApiPromise => {
+}: ApiInput): ApiPromise => {
   switch (site) {
     case 'github': {
       return getGithubActivity(username);
