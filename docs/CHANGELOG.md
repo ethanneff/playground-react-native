@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.84.19](https://github.com/ethanneff/playground-react-native/compare/v2.84.18...v2.84.19) (2024-10-01)
+
+
+### Bug Fixes
+
+* add more wordle logic ([a274724](https://github.com/ethanneff/playground-react-native/commit/a274724e0708531542c220a0b5baaed737de78e8))
+* make bejeweled work ([e7fe710](https://github.com/ethanneff/playground-react-native/commit/e7fe71091c790fba4cad2c61826ca6dfc74e5db0))
+* update ruby version in ci ([f3f453a](https://github.com/ethanneff/playground-react-native/commit/f3f453ab342ec088c354250a8296dafdcf87ed19))
+
 ## [2.84.18](https://github.com/ethanneff/playground-react-native/compare/v2.84.17...v2.84.18) (2024-09-29)
 
 
