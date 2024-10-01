@@ -41,6 +41,7 @@ import {
   SlotMachine,
   Snake,
   TicTacToe,
+  Wordle,
 } from './Games';
 import { Landing } from './Landing';
 import { type NavParameters } from './navParameters';
@@ -115,6 +116,10 @@ export const Playground = () => (
     <Stack.Screen
       component={Bejeweled}
       name="bejeweled"
+    />
+    <Stack.Screen
+      component={Wordle}
+      name="wordle"
     />
     <Stack.Screen
       component={SlotMachine}

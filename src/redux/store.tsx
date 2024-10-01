@@ -49,6 +49,10 @@ import {
   gameOfLifeReducer,
 } from '../apps/Playground/Games/GameOfLife/redux';
 import {
+  wordleActions,
+  wordleReducer,
+} from '../apps/Playground/Games/Wordle/redux';
+import {
   calendarActions,
   calendarReducer,
 } from '../components/Calendar/calendarReducer';
@@ -77,6 +81,7 @@ export const actions = {
   games: {
     bejeweled: bejeweledActions,
     life: gameOfLifeActions,
+    wordle: wordleActions,
   },
   network: networkActions,
   theme: themeActions,
@@ -106,6 +111,7 @@ export const reducers = combineReducers({
   games: combineReducers({
     bejeweled: bejeweledReducer,
     life: gameOfLifeReducer,
+    wordle: wordleReducer,
   }),
   history: historyReducer,
   network: networkReducer,

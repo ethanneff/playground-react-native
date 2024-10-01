@@ -9,3 +9,4 @@ export * from './PapiJump';
 export * from './SlotMachine';
 export * from './Snake';
 export * from './TicTacToe';
+export * from './Wordle';

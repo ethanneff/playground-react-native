@@ -36,7 +36,13 @@ const getBoard = (count: number): Board => {
     const row: Cell[] = [];
     for (let y = 0; y < count; y++) {
       const gem = getUniqueGemColor({ board, row, x, y });
-      const cell: Cell = { gem, position: { x, y }, selected: false };
+      const cell: Cell = {
+        bonus: false,
+        gem,
+        hint: false,
+        position: { x, y },
+        selected: false,
+      };
       row.push(cell);
     }
     board.push(row);
@@ -46,5 +52,5 @@ const getBoard = (count: number): Board => {
 
 export const getGame = (count: number): Game => {
   const board = getBoard(count);
-  return { board, score: 0, selected: null };
+  return { board, level: 1, score: 0, selected: null, state: 'idle' };
 };

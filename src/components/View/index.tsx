@@ -42,16 +42,15 @@ export const View = ({
 }: ViewProperties) => {
   const colors = useColors();
   const absolute = absoluteFillObject ? StyleSheet.absoluteFillObject : {};
-  const dropShadow =
-    withDropShadow && !__DEV__
-      ? {
-          elevation: 5,
-          shadowColor: colors.border.primaryA,
-          shadowOffset: { height: 2, width: 0 },
-          shadowOpacity: 0.2,
-          shadowRadius: 1,
-        }
-      : {};
+  const dropShadow = withDropShadow
+    ? {
+        elevation: 5,
+        shadowColor: colors.border.primaryA,
+        shadowOffset: { height: 1, width: 0 },
+        shadowOpacity: 0.2,
+        shadowRadius: 1,
+      }
+    : {};
   const styles = StyleSheet.create({
     view: {
       ...absolute,

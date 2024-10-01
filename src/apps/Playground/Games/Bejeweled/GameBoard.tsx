@@ -7,22 +7,21 @@ import { GameCell } from './GameCell';
 export const GameBoard = () => {
   const length = useAppSelector((state) => state.games.bejeweled.board.length);
 
-  const temporaryBoard = Array.from({ length }, () =>
-    Array.from({ length }, () => 0),
+  return Array.from({ length }, () => Array.from({ length }, () => 0)).map(
+    (col, x) => (
+      <View
+        flexDirection="row"
+        key={v4()}
+      >
+        {col.map((_, y) => (
+          <View key={v4()}>
+            <GameCell
+              x={x}
+              y={y}
+            />
+          </View>
+        ))}
+      </View>
+    ),
   );
-
-  return temporaryBoard.map((col, x) => (
-    <View
-      flexDirection="row"
-      key={v4()}
-    >
-      {col.map((_, y) => (
-        <GameCell
-          key={v4()}
-          x={x}
-          y={y}
-        />
-      ))}
-    </View>
-  ));
 };

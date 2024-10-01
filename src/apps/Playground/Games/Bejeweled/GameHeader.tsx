@@ -49,12 +49,28 @@ export const GameHeader = () => {
           />
         </View>
       </View>
-      <View alignSelf="center">
+      <View
+        flexDirection="row"
+        gap={spacing(4)}
+        justifyContent="center"
+      >
         <Button
           color="accent"
           emphasis="high"
           onPress={handleStartGame}
           title="play game"
+        />
+        <Button
+          color="accent"
+          emphasis="high"
+          onPress={handleStartGame}
+          title="hint"
+        />
+        <Button
+          color="accent"
+          emphasis="high"
+          onPress={handleStartGame}
+          title="menu"
         />
       </View>
     </View>

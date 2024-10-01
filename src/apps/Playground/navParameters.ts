@@ -11,6 +11,7 @@ const routes = [
   'crash',
   'drag',
   'drift',
+  'wordle',
   'flappy-bird',
   'fonts',
   'fortune-wheel',
@@ -84,6 +85,7 @@ const routeCategory: Record<Route, Category> = {
   'tic-tac-toe': 'games',
   tinder: 'creations',
   'weekend-planner': 'creations',
+  wordle: 'games',
 };
 
 type LandingRoutes = { [key in Category]: string[] };

@@ -4,8 +4,10 @@ import { type Board, type Cell, type Game, type Vector } from './types';
 
 const initialState: Game = {
   board: [],
+  level: 1,
   score: 0,
   selected: null,
+  state: 'idle',
 };
 
 export const bejeweledActions = {
@@ -15,6 +17,16 @@ export const bejeweledActions = {
   updateScore: createAction('bejeweled/updateDelay')<number>(),
   updateSelected: createAction('bejeweled/updateSelected')<Vector | null>(),
 };
+
+export const getAbleToSwap =
+  ({ x, y }: Vector): RootThunkAction<boolean> =>
+  (_, getState) => {
+    const { selected } = getState().games.bejeweled;
+    if (!selected) return false;
+    const distance = Math.abs(selected.x - x) + Math.abs(selected.y - y);
+
+    return distance === 1;
+  };
 
 export const selectCell =
   ({ x, y }: Vector): RootThunkAction<void> =>
@@ -33,7 +45,7 @@ export const selectCell =
       case 0: {
         dispatch(updateCell({ ...current, selected: false }));
         dispatch(updateSelected(null));
-        return;
+        break;
       }
       case 1: {
         dispatch(
@@ -43,7 +55,7 @@ export const selectCell =
           updateCell({ ...current, gem: previous.gem, selected: false }),
         );
         dispatch(updateSelected(null));
-        return;
+        break;
       }
       default: {
         dispatch(updateCell({ ...previous, selected: false }));
