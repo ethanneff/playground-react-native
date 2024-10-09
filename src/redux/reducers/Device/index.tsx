@@ -149,13 +149,15 @@ export const deviceActions = {
 export const getLandscapeOrientation = (state: RootState): boolean =>
   state.device.dimensions.window.height < state.device.dimensions.window.width;
 export const getSmallestDimension = (state: RootState): number =>
-  state.device.dimensions.window.height > state.device.dimensions.window.width
-    ? state.device.dimensions.window.width
-    : state.device.dimensions.window.height;
+  Math.min(
+    state.device.dimensions.window.height,
+    state.device.dimensions.window.width,
+  );
 export const getLargestDimension = (state: RootState): number =>
-  state.device.dimensions.window.height > state.device.dimensions.window.width
-    ? state.device.dimensions.window.height
-    : state.device.dimensions.window.width;
+  Math.max(
+    state.device.dimensions.window.height,
+    state.device.dimensions.window.width,
+  );
 export const getWidth = (state: RootState): number =>
   state.device.dimensions.window.width;
 

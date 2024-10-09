@@ -1,52 +1,43 @@
-const routes = [
-  'apple-fit',
-  'apple-mask',
-  'apple-stopwatch',
-  'archero',
-  'ball',
-  'bejeweled',
-  'bouncing-balls',
-  'chat',
-  'colors',
-  'crash',
-  'drag',
-  'drift',
-  'wordle',
-  'flappy-bird',
-  'fonts',
-  'fortune-wheel',
-  'game-of-life',
-  'infinite-images',
-  'inputs',
-  'landing',
-  'modals',
-  'okrs',
-  'papi-jump',
-  'paragraphs',
-  'pinch-spread',
-  'search-bar',
-  'skeleton-loader',
-  'slot-machine',
-  'snake',
-  'startup',
-  'swipe-feed',
-  'themes',
-  'tic-tac-toe',
-  'tinder',
-  'scroll-views',
-  'weekend-planner',
-] as const;
+type Route =
+  | 'apple-fit'
+  | 'apple-mask'
+  | 'apple-stopwatch'
+  | 'archero'
+  | 'ball'
+  | 'bejeweled'
+  | 'bouncing-balls'
+  | 'chat'
+  | 'colors'
+  | 'crash'
+  | 'drag'
+  | 'drift'
+  | 'flappy-bird'
+  | 'fonts'
+  | 'fortune-wheel'
+  | 'game-of-life'
+  | 'infinite-images'
+  | 'inputs'
+  | 'landing'
+  | 'modals'
+  | 'okrs'
+  | 'papi-jump'
+  | 'paragraphs'
+  | 'pinch-spread'
+  | 'scroll-views'
+  | 'search-bar'
+  | 'skeleton-loader'
+  | 'slot-machine'
+  | 'snake'
+  | 'startup'
+  | 'swipe-feed'
+  | 'themes'
+  | 'tic-tac-toe'
+  | 'tinder'
+  | 'weekend-planner'
+  | 'wordle';
 
-const categories = [
-  'features',
-  'games',
-  'storybook',
-  'creations',
-  'none',
-] as const;
+type Category = 'creations' | 'features' | 'games' | 'none' | 'storybook';
 
-type Route = (typeof routes)[number];
-type Category = (typeof categories)[number];
 export type NavParameters = Record<Route, undefined>;
 
 const routeCategory: Record<Route, Category> = {

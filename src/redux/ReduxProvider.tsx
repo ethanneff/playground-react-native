@@ -1,7 +1,7 @@
 import React, { type ReactNode } from 'react';
 import DeviceInfo from 'react-native-device-info';
 import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, legacy_createStore as createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import thunk from 'redux-thunk';
@@ -18,7 +18,6 @@ const persistConfig = { blacklist, key, storage: Storage };
 const persistedReducer = persistReducer(persistConfig, reducers);
 const middleware = [thunk];
 
-// eslint-disable-next-line etc/no-deprecated
 const store = createStore(persistedReducer, applyMiddleware(...middleware));
 export const persistor = persistStore(store);
 

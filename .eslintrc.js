@@ -103,6 +103,7 @@ module.exports = {
     'sort-keys-fix',
     'sort-destructure-keys',
     'typescript-sort-keys',
+    '@stylistic',
   ],
   root: true,
   rules: {
@@ -111,12 +112,13 @@ module.exports = {
     'no-restricted-imports': ['error', restrictedImports],
     // react-native
     '@typescript-eslint/no-var-requires': 'off', // images
+    '@typescript-eslint/no-require-imports': 'off', // images
     'unicorn/prefer-module': 'off',
     // typescript
     'react/jsx-filename-extension': 'off',
     'react/require-default-props': 'off',
     'default-param-last': 'off',
-    '@typescript-eslint/member-delimiter-style': 'error',
+    '@stylistic/member-delimiter-style': 'error',
     '@typescript-eslint/method-signature-style': 'error',
     '@typescript-eslint/no-confusing-void-expression': 'error',
     '@typescript-eslint/no-unnecessary-qualifier': 'error',
@@ -125,7 +127,11 @@ module.exports = {
     '@typescript-eslint/prefer-regexp-exec': 'error',
     '@typescript-eslint/promise-function-async': 'error',
     '@typescript-eslint/sort-type-constituents': 'error',
-    '@typescript-eslint/type-annotation-spacing': 'error',
+    '@typescript-eslint/restrict-template-expressions': [
+      'error',
+      { allowNumber: true },
+    ],
+    '@stylistic/type-annotation-spacing': 'error',
     // sorting
     'sort-destructure-keys/sort-destructure-keys': 'error',
     'sort-keys': [

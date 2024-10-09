@@ -9,7 +9,7 @@ import {
 export const spacing = (value: number): number => value * 4;
 
 export const colorWithOpacity = (colorCode: string, opacity = 0.5): string => {
-  const boundedOpacity = opacity < 0 ? 0 : opacity > 1 ? 1 : opacity;
+  const boundedOpacity = opacity < 0 ? 0 : Math.min(opacity, 1);
   const leading = 4;
   if (!colorCode.startsWith('hsl')) return colorCode;
   const substr = colorCode.slice(leading, -1);

@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import {
   NetInfoStateType,
   type NetInfoState,
@@ -14,6 +15,7 @@ import { loginRequest, logout } from '../../Auth';
 describe('network', () => {
   it('updateNetwork action', () => {
     expect.hasAssertions();
+
     const payload: NetInfoState = {
       details: {
         isConnectionExpensive: true,
@@ -26,11 +28,13 @@ describe('network', () => {
       payload,
       type: getType(updateNetwork),
     };
+
     expect(updateNetwork(payload)).toStrictEqual(expectedAction);
   });
 
   it('updateNetwork', () => {
     expect.hasAssertions();
+
     const payload: NetInfoState = {
       details: {
         isConnectionExpensive: true,
@@ -39,6 +43,7 @@ describe('network', () => {
       isInternetReachable: false,
       type: NetInfoStateType.other,
     };
+
     expect(
       networkReducer(networkInitialState, {
         payload,
@@ -56,10 +61,12 @@ describe('network', () => {
 
   it('logout', () => {
     expect.hasAssertions();
+
     const customState: NetworkState = {
       ...networkInitialState,
       reachable: true,
     };
+
     expect(
       networkReducer(customState, {
         type: getType(logout),

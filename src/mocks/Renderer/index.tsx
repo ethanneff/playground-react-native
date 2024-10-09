@@ -3,7 +3,7 @@ import { render, type RenderAPI } from '@testing-library/react-native';
 import React, { type PropsWithChildren, type ReactElement } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider as ReduxProvider } from 'react-redux';
-import { createStore, type Store } from 'redux';
+import { legacy_createStore as createStore, type Store } from 'redux';
 import { type RootState } from 'root-types';
 import { GestureHandlerProvider } from '../../conversions';
 import { ApplicationProvider } from '../../features';
@@ -30,7 +30,6 @@ const Providers = ({ children, store }: ProviderProperties) => (
 
 export const Testing = {
   reduxStore: (preloadedState?: RootState) =>
-    // eslint-disable-next-line etc/no-deprecated
     createStore(reducers, preloadedState),
   renderComponent: <TProperties,>(
     ui: ReactElement,

@@ -19,9 +19,9 @@ const charSpeed = 40;
 const fps = 1000 / 60;
 
 const getLimit = (value: number, limit: number) =>
-  value > limit ? limit : value < -limit ? -limit : value;
+  value > limit ? limit : Math.max(value, -limit);
 const getBounds = (value: number, limit: number, size: number) =>
-  value > limit - size ? limit - size : value < 0 ? 0 : value;
+  value > limit - size ? limit - size : Math.max(value, 0);
 
 export const Archero = () => {
   const colors = useColors();
@@ -33,7 +33,7 @@ export const Archero = () => {
   const window = useAppSelector((state) => state.device.dimensions.window);
   const { layout, onLayout } = useLayout();
   const { height, width } = layout ?? window;
-  const smallest = width > height ? height : width;
+  const smallest = Math.min(width, height);
   const joystickSize = smallest / 3;
   const joystickCenter = joystickSize / 2;
   const thumbSize = joystickSize / 3;
