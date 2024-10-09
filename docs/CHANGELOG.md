@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.84.20](https://github.com/ethanneff/playground-react-native/compare/v2.84.19...v2.84.20) (2024-10-09)
+
+
+### Bug Fixes
+
+* update deps ([bd7ab03](https://github.com/ethanneff/playground-react-native/commit/bd7ab0326068c590ce3062833a07b3b588590473))
+* update more linting ([5a340d9](https://github.com/ethanneff/playground-react-native/commit/5a340d9ad740f9d79443c4eb0e9e91eb81be51aa))
+
 ## [2.84.19](https://github.com/ethanneff/playground-react-native/compare/v2.84.18...v2.84.19) (2024-10-01)
 
 
