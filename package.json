@@ -119,7 +119,7 @@
     "babel-plugin-transform-remove-console": "6.9.4",
     "codecov": "3.8.3",
     "conventional-changelog-conventionalcommits": "8.0.0",
-    "eslint": "8.57.0",
+    "eslint": "10.0.3",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-eslint-comments": "3.2.0",
     "eslint-plugin-etc": "2.0.3",
