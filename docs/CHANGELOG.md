@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.84.21](https://github.com/ethanneff/playground-react-native/compare/v2.84.20...v2.84.21) (2026-11-01)
+
 ## [2.84.20](https://github.com/ethanneff/playground-react-native/compare/v2.84.19...v2.84.20) (2024-10-09)
 
 
