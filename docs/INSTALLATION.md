@@ -3,42 +3,42 @@
 ## Download
 
 ```sh
-npm i -g yarn
+corepack enable pnpm
 git clone git@github.com:ethanneff/playground-react-native.git
 cd example
-yarn install
+pnpm install
 bundle install
 cd ios
 pod install
-yarn ci-env-vars
+pnpm ci-env-vars
 ```
 
 ## Run
 
 ```sh
-yarn start
+pnpm start
 ```
 
 ```sh
-yarn web
+pnpm web
 ```
 
 ## Lint
 
 ```sh
-yarn lint
+pnpm lint
 ```
 
 ## Test
 
 ```sh
-yarn test
+pnpm test
 ```
 
 ## Deploy
 
 ```sh
-yarn build
+pnpm build
 ```
 
 ## End to end test

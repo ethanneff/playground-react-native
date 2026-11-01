@@ -13,19 +13,22 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 20
-          cache: 'yarn'
+          node-version-file: .nvmrc
+          cache: 'pnpm'
 
       - name: Install node dependencies
-        run: yarn ci-install
+        run: pnpm ci-install
 
       - name: Build web
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: yarn build
+        run: pnpm build
 
       - name: Deploy web
         uses: peaceiris/actions-gh-pages@v3

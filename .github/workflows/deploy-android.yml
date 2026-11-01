@@ -29,14 +29,17 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 20
-          cache: 'yarn'
+          node-version-file: .nvmrc
+          cache: 'pnpm'
 
       - name: Install node dependencies
-        run: yarn ci-install
+        run: pnpm ci-install
 
       - name: Install ruby dependencies
         uses: ruby/setup-ruby@v1
@@ -52,7 +55,7 @@ jobs:
           cache: 'gradle'
 
       - name: Install environment variables
-        run: yarn ci-env-vars
+        run: pnpm ci-env-vars
 
       - name: Deploy android
         uses: maierj/fastlane-action@v3.0.0
