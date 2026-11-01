@@ -27,7 +27,7 @@
   "search.exclude": {
     "**/node_modules/": true,
     "**/coverage/": true,
-    "**/yarn.lock": true,
+    "**/pnpm-lock.yaml": true,
     "**/Podfile.lock": true
   }
 }

@@ -38,7 +38,6 @@
     "lottie-ios": "4.5.0",
     "lottie-react-native": "7.0.0",
     "patch-package": "8.0.0",
-    "postinstall-postinstall": "2.1.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-error-boundary": "4.0.13",
@@ -192,12 +191,13 @@
     "ci-dupe-code": "jsinspect ./src",
     "ci-unused-code": "knip",
     "ci-env-vars": "mkdir -p certs; echo \"$ANDROID_STORE_FILE_RELEASE\" | base64 --decode > certs/release.jks; echo \"$ANDROID_STORE_FILE_DEBUG\" | base64 --decode > certs/debug.jks; echo \"$ANDROID_GOOGLE_KEY\" | base64 --decode > certs/google-key.json; echo \"$IOS_APPLE_KEY\" | base64 --decode > certs/apple-key.p8; ",
-    "ci-install": "yarn install --frozen-lockfile",
+    "ci-install": "pnpm install --frozen-lockfile",
     "ci-lint": "tsc && eslint './src/**/*.[jt]s?(x)' --cache --cache-location '.cache/eslint' --max-warnings=0 && prettier --check .",
     "ci-release": "semantic-release -e ./.github/release.config.js",
     "ci-test": "TZ=America/Los_Angeles jest --ci --bail --detectOpenHandles --maxWorkers=50% --silent --coverage --config .github/jest.config.js",
     "lint": "tsc; eslint './src/**/*.[jt]s?(x)' --cache --cache-location '.cache/eslint' --fix; prettier --write --cache --log-level silent .",
     "postinstall": "patch-package",
+    "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
     "reset": "watchman watch-del-all; watchman shutdown-server; kill $(lsof -ti :8081); rm -rf .cache /tmp/metro-bundler-cache-* ./android/build ./android/.gradle ./android/app/build ~/Library/Developer/Xcode/DerivedData /tmp/haste-map-react-native-packager-* ./ios/build ./ios/Pods/* ./ios/Podfile.lock ./ios/core.xcworkspace; xcrun simctl shutdown all; jest --clearCache; gem install fastlane; bundler install; cd ios; pod install; cd ..; npx jetify; cd android; ./gradlew clean; cd ..; react-native start --reset-cache; npx react-native doctor; npx @rnx-kit/align-deps",
     "start": "react-native start --reset-cache",
@@ -209,6 +209,8 @@
   },
   "version": "2.84.20",
   "engines": {
-    "node": ">=18"
-  }
+    "node": "24",
+    "pnpm": "10.33.2"
+  },
+  "packageManager": "pnpm@10.33.2"
 }

@@ -19,23 +19,26 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'yarn'
+          node-version-file: .nvmrc
+          cache: 'pnpm'
 
       - name: Install node dependencies
-        run: yarn ci-install
+        run: pnpm ci-install
 
       - name: Run code dupe
-        run: yarn ci-dupe-code
+        run: pnpm ci-dupe-code
 
       - name: Run code unused
-        run: yarn ci-unused-code
+        run: pnpm ci-unused-code
 
       - name: Run lint
-        run: yarn ci-lint
+        run: pnpm ci-lint
 
       - name: Run tests
-        run: yarn ci-test
+        run: pnpm ci-test

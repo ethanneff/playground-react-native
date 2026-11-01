@@ -4,3 +4,4 @@ coverage/
 docs/CHANGELOG.md
 build/
 vendor/
+pnpm-lock.yaml
