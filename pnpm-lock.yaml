@@ -349,8 +349,8 @@ importers:
         specifier: 4.6.2
         version: 4.6.2(eslint@8.57.0)
       eslint-plugin-react-native:
-        specifier: 4.1.0
-        version: 4.1.0(eslint@8.57.0)
+        specifier: 5.0.0
+        version: 5.0.0(eslint@8.57.0)
       eslint-plugin-react-perf:
         specifier: 3.3.2
         version: 3.3.2(eslint@8.57.0)
@@ -4456,6 +4456,11 @@ packages:
     resolution: {integrity: sha512-QLo7rzTBOl43FvVqDdq5Ql9IoElIuTdjrz9SKAXCvULvBoRZ44JGSkx9z4999ZusCsb4rK3gjS8gOGyeYqZv2Q==, tarball: https://registry.npmjs.org/eslint-plugin-react-native/-/eslint-plugin-react-native-4.1.0.tgz}
     peerDependencies:
       eslint: ^3.17.0 || ^4 || ^5 || ^6 || ^7 || ^8
+
+  eslint-plugin-react-native@5.0.0:
+    resolution: {integrity: sha512-VyWlyCC/7FC/aONibOwLkzmyKg4j9oI8fzrk9WYNs4I8/m436JuOTAFwLvEn1CVvc7La4cPfbCyspP4OYpP52Q==, tarball: https://registry.npmjs.org/eslint-plugin-react-native/-/eslint-plugin-react-native-5.0.0.tgz}
+    peerDependencies:
+      eslint: ^3.17.0 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
   eslint-plugin-react-perf@3.3.2:
     resolution: {integrity: sha512-boVn4IDHAjgGoAuAQ5Zrewt8fNbMDdiR7B2AkuiSK8lrJ9FwlOZc085kCs7+8u6B+YZ+pOn+tYG00xktnGAfOw==, tarball: https://registry.npmjs.org/eslint-plugin-react-perf/-/eslint-plugin-react-perf-3.3.2.tgz}
@@ -14726,6 +14731,11 @@ snapshots:
   eslint-plugin-react-native-globals@0.1.2: {}
 
   eslint-plugin-react-native@4.1.0(eslint@8.57.0):
+    dependencies:
+      eslint: 8.57.0
+      eslint-plugin-react-native-globals: 0.1.2
+
+  eslint-plugin-react-native@5.0.0(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
       eslint-plugin-react-native-globals: 0.1.2
