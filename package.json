@@ -43,7 +43,7 @@
     "react-error-boundary": "4.0.13",
     "react-native": "0.75.4",
     "react-native-code-push": "9.0.0",
-    "react-native-config": "1.5.3",
+    "react-native-config": "1.7.2",
     "react-native-dev-menu": "4.1.1",
     "react-native-device-info": "13.0.0",
     "react-native-draggable-flatlist": "4.0.1",
