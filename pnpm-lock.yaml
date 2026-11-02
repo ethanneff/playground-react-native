@@ -102,8 +102,8 @@ importers:
         specifier: 9.0.0
         version: 9.0.0
       react-native-config:
-        specifier: 1.5.3
-        version: 1.5.3
+        specifier: 1.7.2
+        version: 1.7.2(react-native@0.75.4(@babel/core@7.25.7)(@babel/preset-env@7.25.7(@babel/core@7.25.7))(@types/react@18.3.11)(react@18.3.1)(typescript@5.6.3))(react@18.3.1)
       react-native-dev-menu:
         specifier: 4.1.1
         version: 4.1.1(react-native@0.75.4(@babel/core@7.25.7)(@babel/preset-env@7.25.7(@babel/core@7.25.7))(@types/react@18.3.11)(react@18.3.1)(typescript@5.6.3))
@@ -7643,9 +7643,11 @@ packages:
     resolution: {integrity: sha512-9Tf5t1xixIRi23fsCI5EODB20TpOs9BONCm57yDEAWO9+TQuw5VoF0eJXYBFjyK2ZAxhTxxPvxzkrHcZKItKUQ==, tarball: https://registry.npmjs.org/react-native-code-push/-/react-native-code-push-9.0.0.tgz}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
-  react-native-config@1.5.3:
-    resolution: {integrity: sha512-3D05Abgk5DfDw9w258EzXvX5AkU7eqj3u9H0H0L4gUga4nYg/zuupcrpGbpF4QeXBcJ84jjs6g8JaEP6VBT7Pg==, tarball: https://registry.npmjs.org/react-native-config/-/react-native-config-1.5.3.tgz}
+  react-native-config@1.7.2:
+    resolution: {integrity: sha512-sOzjs2oGPqlgJu7WjlYa/zA8/uShebQeQVYumgPd8pO+l/TrHWhOZPWrDAphxrshpnFVgPgQeXXT3eVSTNQGpg==, tarball: https://registry.npmjs.org/react-native-config/-/react-native-config-1.7.2.tgz}
     peerDependencies:
+      react: '*'
+      react-native: '*'
       react-native-windows: '>=0.61'
     peerDependenciesMeta:
       react-native-windows:
@@ -18616,7 +18618,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  react-native-config@1.5.3: {}
+  react-native-config@1.7.2(react-native@0.75.4(@babel/core@7.25.7)(@babel/preset-env@7.25.7(@babel/core@7.25.7))(@types/react@18.3.11)(react@18.3.1)(typescript@5.6.3))(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+      react-native: 0.75.4(@babel/core@7.25.7)(@babel/preset-env@7.25.7(@babel/core@7.25.7))(@types/react@18.3.11)(react@18.3.1)(typescript@5.6.3)
 
   react-native-dev-menu@4.1.1(react-native@0.75.4(@babel/core@7.25.7)(@babel/preset-env@7.25.7(@babel/core@7.25.7))(@types/react@18.3.11)(react@18.3.1)(typescript@5.6.3)):
     dependencies:
